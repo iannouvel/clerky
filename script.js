@@ -783,46 +783,56 @@ async function loadGuidelinesFromFirestore() {
             // Show content repair option
             showMetadataProgress(`⚠️ Found ${contentStatus.stats.missingBoth} guidelines missing content - starting automatic repair...`, false);
             
-            // AUTOMATICALLY trigger content repair when significant issues are detected
-            console.log('[CONTENT_STATUS] Starting automatic content repair...');
-            setTimeout(async () => {
-                try {
-                    await diagnoseAndRepairContent();
-                    console.log('[CONTENT_STATUS] Automatic content repair completed successfully');
-                } catch (error) {
-                    console.error('[CONTENT_STATUS] Automatic content repair failed:', error);
-                    
-                    // If automatic repair fails, show manual repair button
-                    const repairHtml = `
-                        <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
-                            <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
-                            <p style="margin: 0 0 10px 0; color: #856404;">
-                                Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
-                                <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
-                                Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
-                            </p>
-                            <p style="margin: 0 0 10px 0; color: #856404;">
-                                Automatic repair failed: ${error.message}
-                            </p>
-                            <p style="margin: 0 0 15px 0; color: #856404;">
-                                This severely impacts AI analysis quality. Try manual repair below.
-                            </p>
-                            <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
-                                🔧 Retry Content Repair
-                            </button>
-                            <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
-                                Dismiss
-                            </button>
-                        </div>
-                    `;
-                    
-                    // Try to add the repair notice to the summary area
-                    const summary1 = document.getElementById('summary1');
-                    if (summary1 && !document.getElementById('content-repair-notice')) {
-                        summary1.insertAdjacentHTML('afterbegin', repairHtml);
+            // AUTOMATICALLY trigger content repair when significant issues are detected (with debouncing)
+            if (!window.contentRepairInProgress && !window.autoRepairTriggered) {
+                window.autoRepairTriggered = true;
+                console.log('[CONTENT_STATUS] Starting automatic content repair...');
+                setTimeout(async () => {
+                    try {
+                        await diagnoseAndRepairContent();
+                        console.log('[CONTENT_STATUS] Automatic content repair completed successfully');
+                    } catch (error) {
+                        console.error('[CONTENT_STATUS] Automatic content repair failed:', error);
+                        
+                        // If automatic repair fails, show manual repair button
+                        const repairHtml = `
+                            <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                                <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
+                                <p style="margin: 0 0 10px 0; color: #856404;">
+                                    Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
+                                    <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
+                                    Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
+                                </p>
+                                <p style="margin: 0 0 10px 0; color: #856404;">
+                                    Automatic repair failed: ${error.message}
+                                </p>
+                                <p style="margin: 0 0 15px 0; color: #856404;">
+                                    This severely impacts AI analysis quality. Try manual repair below.
+                                </p>
+                                <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                                    🔧 Retry Content Repair
+                                </button>
+                                <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+                                    Dismiss
+                                </button>
+                            </div>
+                        `;
+                        
+                        // Try to add the repair notice to the summary area
+                        const summary1 = document.getElementById('summary1');
+                        if (summary1 && !document.getElementById('content-repair-notice')) {
+                            summary1.insertAdjacentHTML('afterbegin', repairHtml);
+                        }
+                    } finally {
+                        // Reset flags to allow future repairs
+                        setTimeout(() => {
+                            window.autoRepairTriggered = false;
+                        }, 300000); // 5 minutes
                     }
-                }
-            }, 2000);
+                }, 2000);
+            } else {
+                console.log('[CONTENT_STATUS] Auto-repair already triggered or in progress, skipping to prevent loops');
+            }
         } else {
             console.log('[CONTENT_STATUS] Content quality looks good:', {
                 fullyPopulated: contentStatus.stats.fullyPopulated,
@@ -5542,6 +5552,13 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
 
 // Use existing migrateNullMetadata endpoint for content repair
 async function diagnoseAndRepairContent() {
+    // Prevent multiple simultaneous repairs
+    if (window.contentRepairInProgress) {
+        console.log('[REPAIR] ⏳ Content repair already in progress, skipping...');
+        return;
+    }
+    
+    window.contentRepairInProgress = true;
     console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
     console.log('[REPAIR] This will check all guidelines for missing content/condensed text and attempt to generate them');
     
@@ -5635,6 +5652,10 @@ async function diagnoseAndRepairContent() {
         console.error('[REPAIR] ❌ Content repair error:', error);
         showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
         throw error;
+    } finally {
+        // Always reset the flag when repair completes or fails
+        window.contentRepairInProgress = false;
+        console.log('[REPAIR] 🏁 Content repair process finished, flag reset');
     }
 }
 
