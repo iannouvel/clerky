@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 32/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy",
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy",
+    "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf: UHSx Maternity Smoking & Smoke Free Pregnancy guideline",
+    "uhsx-maternity-vaping-protocol-pdf: UHSx Maternity Vaping Protocol",
+    "uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol",
+    "uhsx-midwives-exemption-pdf: UHSx Midwives Exemption",
+    "uhsx-obstetric-vte-guideline-pdf: UHSx Obstetric VTE guideline",
+    "uhsx-perinatal-mental-health-guideline-pdf: UHSx Perinatal Mental Health guideline"
+  ],
+  "chunkIndex": 32,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsx-obstetric-vte-guideline-pdf\", \"title\": \"UHSx Obstetric VTE guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"uhsx-perinatal-mental-health-guideline-pdf\", \"title\": \"UHSx Perinatal Mental Health guideline\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsx-midwives-exemption-pdf\", \"title\": \"UHSx Midwives Exemption\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-midwifery-preceptorship-protocol-pdf\", \"title\": \"UHSx Midwifery Preceptorship Protocol\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\", \"title\": \"UHSx Maternity Smoking & Smoke Free Pregnancy guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-maternity-vaping-protocol-pdf\", \"title\": \"UHSx Maternity Vaping Protocol\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1086
+}
