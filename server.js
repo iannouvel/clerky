@@ -377,6 +377,30 @@ async function extractTextFromPDF(pdfBuffer) {
 // Function to fetch PDF from GitHub and extract text
 async function fetchAndExtractPDFText(pdfFileName) {
     try {
+        // First try to fetch from Firebase Storage
+        console.log(`[FETCH_PDF] Attempting to fetch PDF from Firebase Storage: ${pdfFileName}`);
+        
+        try {
+            const bucket = admin.storage().bucket();
+            const file = bucket.file(`pdfs/${pdfFileName}`);
+            
+            const [exists] = await file.exists();
+            if (exists) {
+                console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
+                const [buffer] = await file.download();
+                console.log(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
+                
+                // Extract text from PDF
+                const extractedText = await extractTextFromPDF(buffer);
+                return extractedText;
+            } else {
+                console.log(`[FETCH_PDF] PDF not found in Firebase Storage, trying GitHub: ${pdfFileName}`);
+            }
+        } catch (storageError) {
+            console.log(`[FETCH_PDF] Firebase Storage fetch failed, trying GitHub: ${storageError.message}`);
+        }
+        
+        // Fallback to GitHub if not in Firebase Storage
         const pdfPath = `guidance/${encodeURIComponent(pdfFileName)}`;
         console.log(`[FETCH_PDF] Fetching PDF from GitHub: ${pdfPath}`);
         
@@ -393,7 +417,7 @@ async function fetchAndExtractPDFText(pdfFileName) {
         
         // Decode base64 content to buffer
         const pdfBuffer = Buffer.from(response.data.content, 'base64');
-        console.log(`[FETCH_PDF] Successfully fetched PDF, size: ${pdfBuffer.length} bytes`);
+        console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub, size: ${pdfBuffer.length} bytes`);
         
         // Extract text from PDF
         const extractedText = await extractTextFromPDF(pdfBuffer);
@@ -6380,8 +6404,101 @@ app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
   }
 });
 
-// Endpoint to trigger PDF content upload to Firestore
-app.post('/uploadPDFContent', authenticateUser, async (req, res) => {
+// Function to upload PDFs from GitHub to Firebase Storage
+async function uploadPDFsToFirebaseStorage() {
+  try {
+    console.log('[PDF_STORAGE] Starting PDF upload to Firebase Storage...');
+    
+    const bucket = admin.storage().bucket();
+    let uploadedCount = 0;
+    let errorCount = 0;
+    const results = [];
+    
+    // Get list of PDF files from GitHub guidance directory
+    const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/guidance`, {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+        'Authorization': `token ${githubToken}`
+      }
+    });
+    
+    const pdfFiles = response.data.filter(item => 
+      item.type === 'file' && item.name.toLowerCase().endsWith('.pdf')
+    );
+    
+    console.log(`[PDF_STORAGE] Found ${pdfFiles.length} PDF files in GitHub`);
+    
+    for (const pdfFile of pdfFiles) {
+      try {
+        console.log(`[PDF_STORAGE] Processing: ${pdfFile.name}`);
+        
+        // Check if already exists in Firebase Storage
+        const file = bucket.file(`pdfs/${pdfFile.name}`);
+        const [exists] = await file.exists();
+        
+        if (exists) {
+          console.log(`[PDF_STORAGE] Already exists in Firebase Storage: ${pdfFile.name}`);
+          results.push({ name: pdfFile.name, status: 'already_exists' });
+          continue;
+        }
+        
+        // Download from GitHub
+        const pdfResponse = await axios.get(pdfFile.download_url, {
+          responseType: 'arraybuffer',
+          headers: {
+            'Authorization': `token ${githubToken}`
+          }
+        });
+        
+        // Upload to Firebase Storage
+        await file.save(Buffer.from(pdfResponse.data), {
+          metadata: {
+            contentType: 'application/pdf',
+            metadata: {
+              originalSource: 'github',
+              uploadDate: new Date().toISOString(),
+              size: pdfResponse.data.byteLength
+            }
+          }
+        });
+        
+        console.log(`[PDF_STORAGE] Uploaded successfully: ${pdfFile.name} (${Math.round(pdfResponse.data.byteLength / 1024)} KB)`);
+        uploadedCount++;
+        results.push({ 
+          name: pdfFile.name, 
+          status: 'uploaded',
+          size: pdfResponse.data.byteLength 
+        });
+        
+      } catch (error) {
+        console.error(`[PDF_STORAGE] Error uploading ${pdfFile.name}:`, error.message);
+        errorCount++;
+        results.push({ 
+          name: pdfFile.name, 
+          status: 'error',
+          error: error.message 
+        });
+      }
+    }
+    
+    console.log(`[PDF_STORAGE] Upload complete: ${uploadedCount} uploaded, ${errorCount} errors`);
+    
+    return {
+      success: true,
+      totalFiles: pdfFiles.length,
+      uploaded: uploadedCount,
+      errors: errorCount,
+      results: results
+    };
+    
+  } catch (error) {
+    console.error('[PDF_STORAGE] Error uploading PDFs to Firebase Storage:', error);
+    throw error;
+  }
+}
+
+// Endpoint to upload PDFs to Firebase Storage
+app.post('/uploadPDFsToStorage', authenticateUser, async (req, res) => {
   try {
     // Check if user is admin
     const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
@@ -6389,30 +6506,27 @@ app.post('/uploadPDFContent', authenticateUser, async (req, res) => {
       return res.status(403).json({ error: 'Unauthorized' });
     }
 
-    console.log('[PDF_UPLOAD] Starting PDF content upload to Firestore...');
+    console.log('[PDF_STORAGE] Starting PDF upload to Firebase Storage...');
     
-    // Since we can't run Python scripts with dependencies on the server,
-    // let's use the content repair functionality which is already working
-    console.log('[PDF_UPLOAD] Using existing content repair system...');
+    const results = await uploadPDFsToFirebaseStorage();
     
-    const results = await migrateNullMetadata();
-    
-    console.log('[PDF_UPLOAD] Content repair completed');
     res.json({
       success: true,
-      message: 'PDF content upload completed using existing repair system',
+      message: `PDF upload completed: ${results.uploaded} uploaded, ${results.errors} errors`,
       results: results
     });
     
   } catch (error) {
-    console.error('[PDF_UPLOAD] Endpoint error:', error);
+    console.error('[PDF_STORAGE] Endpoint error:', error);
     res.status(500).json({ 
       success: false,
-      error: 'PDF upload failed', 
+      error: 'PDF upload to storage failed', 
       details: error.message 
     });
   }
 });
+
+
 
 // Add endpoint to trigger database migration to single collection
 app.post('/migrateToSingleCollection', authenticateUser, async (req, res) => {
