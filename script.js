@@ -170,71 +170,71 @@ function displayRelevantGuidelines(categories) {
     }));
 
     // Enhanced logging to verify storage
-    console.log('[DEBUG] Stored relevant guidelines:', {
-        total: window.relevantGuidelines.length,
-        byCategory: {
-            mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
-            potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
-            lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
-        },
-        samples: window.relevantGuidelines.slice(0, 3).map(g => ({
-            id: g.id, // Use the mapped 'id' property
-            title: g.title.substring(0, 50) + '...',
-            score: g.relevance,
-            category: g.category
-        }))
-    });
+    // console.log('[DEBUG] Stored relevant guidelines:', {
+    //     total: window.relevantGuidelines.length,
+    //     byCategory: {
+    //         mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
+    //         potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
+    //         lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
+    //     },
+    //     samples: window.relevantGuidelines.slice(0, 3).map(g => ({
+    //         id: g.id, // Use the mapped 'id' property
+    //         title: g.title.substring(0, 50) + '...',
+    //         score: g.relevance,
+    //         category: g.category
+    //     }))
+    // });
 
     let formattedGuidelines = '';
 
     // Helper function to create PDF download link
     function createPdfDownloadLink(guideline) {
         if (!guideline) {
-            console.warn('[DEBUG] No guideline provided to createPdfDownloadLink');
+            // console.warn('[DEBUG] No guideline provided to createPdfDownloadLink');
             return '';
         }
 
         // Enhanced debugging - log the full guideline object structure
-        console.log('[DEBUG] createPdfDownloadLink called with guideline:', {
-            fullObject: guideline,
-            allKeys: Object.keys(guideline),
-            hasDownloadUrl: !!guideline.downloadUrl,
-            hasOriginalFilename: !!guideline.originalFilename,
-            hasFilename: !!guideline.filename,
-            downloadUrlValue: guideline.downloadUrl,
-            originalFilenameValue: guideline.originalFilename,
-            filenameValue: guideline.filename,
-            id: guideline.id,
-            title: guideline.title
-        });
+        // console.log('[DEBUG] createPdfDownloadLink called with guideline:', {
+        //     fullObject: guideline,
+        //     allKeys: Object.keys(guideline),
+        //     hasDownloadUrl: !!guideline.downloadUrl,
+        //     hasOriginalFilename: !!guideline.originalFilename,
+        //     hasFilename: !!guideline.filename,
+        //     downloadUrlValue: guideline.downloadUrl,
+        //     originalFilenameValue: guideline.originalFilename,
+        //     filenameValue: guideline.filename,
+        //     id: guideline.id,
+        //     title: guideline.title
+        // });
 
         // Only use downloadUrl field if available
         let downloadUrl;
         if (guideline.downloadUrl) {
             downloadUrl = guideline.downloadUrl;
-            console.log('[DEBUG] Using stored downloadUrl:', downloadUrl);
+            // console.log('[DEBUG] Using stored downloadUrl:', downloadUrl);
         } else if (guideline.originalFilename) {
             // Use original filename if available
             const encodedFilename = encodeURIComponent(guideline.originalFilename);
             downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
-            console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
+            // console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
         } else {
             // No reliable download information available - don't show a link
-            console.warn('[DEBUG] No downloadUrl or originalFilename available for guideline:', {
-                id: guideline.id,
-                title: guideline.title,
-                allAvailableFields: Object.keys(guideline),
-                fullGuidelineObject: guideline
-            });
-            console.warn('[DEBUG] Database should provide downloadUrl or originalFilename field');
+            // console.warn('[DEBUG] No downloadUrl or originalFilename available for guideline:', {
+            //     id: guideline.id,
+            //     title: guideline.title,
+            //     allAvailableFields: Object.keys(guideline),
+            //     fullGuidelineObject: guideline
+            // });
+            // console.warn('[DEBUG] Database should provide downloadUrl or originalFilename field');
             return '';
         }
         
-        console.log('[DEBUG] Created PDF download link:', {
-            guidelineId: guideline.id,
-            guidelineTitle: guideline.title,
-            downloadUrl: downloadUrl
-        });
+        // console.log('[DEBUG] Created PDF download link:', {
+        //     guidelineId: guideline.id,
+        //     guidelineTitle: guideline.title,
+        //     downloadUrl: downloadUrl
+        // });
         
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
@@ -4640,7 +4640,7 @@ function cancelGuidelineSelection() {
 
 // Generate dynamic advice for multiple selected guidelines
 async function generateMultiGuidelineAdvice() {
-    console.log('[DEBUG] generateMultiGuidelineAdvice called');
+    // console.log('[DEBUG] generateMultiGuidelineAdvice called');
     
     // Get selected guidelines
     const selectedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
@@ -4651,10 +4651,7 @@ async function generateMultiGuidelineAdvice() {
         return;
     }
     
-    console.log('[DEBUG] Selected guidelines:', {
-        count: selectedGuidelineIds.length,
-        ids: selectedGuidelineIds
-    });
+    console.log('🔄 Processing', selectedGuidelineIds.length, 'selected guidelines');
     
     // Update UI to show loading state
     const generateBtn = document.querySelector('.generate-advice-btn');
@@ -4683,7 +4680,12 @@ async function generateMultiGuidelineAdvice() {
             };
         });
         
-        console.log('[DEBUG] Processing selected guidelines:', selectedGuidelines.map(g => ({ id: g.id, title: g.title })));
+        console.log('📋 Selected guidelines:', selectedGuidelines.map(g => g.title));
+        
+        // Validate essential data
+        if (!window.latestAnalysis || !window.latestAnalysis.transcript) {
+            throw new Error('No clinical transcript available. Please enter a transcript first.');
+        }
         
         // Add progress message
         const progressHtml = `
@@ -4740,7 +4742,7 @@ async function generateMultiGuidelineAdvice() {
         await multiGuidelineDynamicAdvice(selectedGuidelines);
         
     } catch (error) {
-        console.error('[DEBUG] Error in generateMultiGuidelineAdvice:', error);
+        console.error('❌ Error in generateMultiGuidelineAdvice:', error);
         
         const errorHtml = `
             <div class="multi-guideline-error">
@@ -4764,7 +4766,7 @@ async function generateMultiGuidelineAdvice() {
 
 // Multi-guideline dynamic advice - processes multiple guidelines in parallel
 async function multiGuidelineDynamicAdvice(selectedGuidelines) {
-    console.log('[DEBUG] multiGuidelineDynamicAdvice called with', selectedGuidelines.length, 'guidelines');
+    console.log('🔄 Processing', selectedGuidelines.length, 'guidelines in parallel...');
     
     try {
         // Get user ID token
@@ -4775,23 +4777,33 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
         
         const idToken = await user.getIdToken();
         
+        // Validate essential data again
+        if (!window.latestAnalysis || !window.latestAnalysis.transcript || !window.latestAnalysis.analysis) {
+            throw new Error('Essential data missing. Please ensure you have entered a transcript and it has been analyzed.');
+        }
+        
         // Update processing status for each guideline
         const updateProcessingStatus = (guidelineId, status, emoji = '⏳') => {
             const statusElement = document.querySelector(`[data-guideline-id="${guidelineId}"] .processing-status`);
             if (statusElement) {
                 statusElement.textContent = emoji;
-                console.log(`[DEBUG] Updated status for ${guidelineId}: ${status}`);
+                // console.log(`Updated status for ${guidelineId}: ${status}`);
             }
         };
         
-        // Process all guidelines in parallel
-        console.log('[DEBUG] Starting parallel processing of guidelines...');
+        // Process all guidelines in parallel with proper error handling
+        console.log('⚡ Starting parallel processing...');
         
         const guidelinePromises = selectedGuidelines.map(async (guideline, index) => {
             try {
                 updateProcessingStatus(guideline.id, 'processing', '🔄');
                 
-                console.log(`[DEBUG] Processing guideline ${index + 1}/${selectedGuidelines.length}: ${guideline.title}`);
+                console.log(`📋 Processing ${index + 1}/${selectedGuidelines.length}: ${guideline.title}`);
+                
+                // Validate individual guideline data
+                if (!guideline.id || !guideline.title) {
+                    throw new Error(`Invalid guideline data for ${guideline.title || 'unknown guideline'}`);
+                }
                 
                 // Call the dynamicAdvice API for this specific guideline
                 const response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
@@ -4810,20 +4822,18 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 
                 if (!response.ok) {
                     const errorText = await response.text();
-                    throw new Error(`API error for ${guideline.title}: ${response.status} - ${errorText}`);
+                    throw new Error(`API error (${response.status}): ${errorText}`);
                 }
                 
                 const result = await response.json();
                 
                 if (!result.success) {
-                    throw new Error(result.error || `Dynamic advice generation failed for ${guideline.title}`);
+                    throw new Error(result.error || 'Dynamic advice generation failed');
                 }
                 
                 updateProcessingStatus(guideline.id, 'completed', '✅');
                 
-                console.log(`[DEBUG] Successfully processed guideline: ${guideline.title}`, {
-                    suggestionsCount: result.suggestions?.length || 0
-                });
+                console.log(`✅ Completed: ${guideline.title} (${result.suggestions?.length || 0} suggestions)`);
                 
                 return {
                     guideline: guideline,
@@ -4832,7 +4842,7 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 };
                 
             } catch (error) {
-                console.error(`[DEBUG] Error processing guideline ${guideline.title}:`, error);
+                console.error(`❌ Error processing ${guideline.title}:`, error.message);
                 updateProcessingStatus(guideline.id, 'error', '❌');
                 
                 return {
@@ -4844,15 +4854,30 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
         });
         
         // Wait for all guidelines to be processed
-        console.log('[DEBUG] Waiting for all guideline processing to complete...');
-        const results = await Promise.all(guidelinePromises);
+        console.log('⏳ Waiting for all processing to complete...');
+        const results = await Promise.allSettled(guidelinePromises);
+        
+        // Process results from Promise.allSettled
+        const processedResults = results.map(result => {
+            if (result.status === 'fulfilled') {
+                return result.value;
+            } else {
+                // Handle rejected promises
+                console.error('Promise rejected:', result.reason);
+                return {
+                    guideline: { title: 'Unknown', id: 'unknown' },
+                    error: result.reason?.message || 'Promise rejected',
+                    success: false
+                };
+            }
+        });
         
         // Separate successful and failed results
-        const successfulResults = results.filter(r => r.success);
-        const failedResults = results.filter(r => !r.success);
+        const successfulResults = processedResults.filter(r => r.success);
+        const failedResults = processedResults.filter(r => !r.success);
         
-        console.log('[DEBUG] Processing completed:', {
-            total: results.length,
+        console.log('📊 Processing completed:', {
+            total: processedResults.length,
             successful: successfulResults.length,
             failed: failedResults.length
         });
@@ -4863,15 +4888,15 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
             const completionHtml = `
                 <div class="processing-completion">
                     <p><strong>Processing Complete!</strong></p>
-                    <p>✅ Successfully processed: ${successfulResults.length} guidelines</p>
-                    ${failedResults.length > 0 ? `<p>❌ Failed: ${failedResults.length} guidelines</p>` : ''}
+                    <p>✅ Successfully processed: ${successfulResults.length} guideline${successfulResults.length !== 1 ? 's' : ''}</p>
+                    ${failedResults.length > 0 ? `<p>❌ Failed: ${failedResults.length} guideline${failedResults.length !== 1 ? 's' : ''}</p>` : ''}
                 </div>
             `;
             progressContainer.innerHTML += completionHtml;
         }
         
         if (successfulResults.length === 0) {
-            throw new Error('No guidelines were successfully processed. Please check the error messages above.');
+            throw new Error('No guidelines were successfully processed. Please check the error messages above and try again.');
         }
         
         // Combine and display all suggestions from successful results
@@ -4883,10 +4908,10 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
         currentSuggestions = []; // Will be populated with combined suggestions
         userDecisions = {};
         
-        console.log('[DEBUG] Multi-guideline dynamic advice completed successfully');
+        console.log('✅ Multi-guideline dynamic advice completed successfully');
         
     } catch (error) {
-        console.error('[DEBUG] Error in multiGuidelineDynamicAdvice:', error);
+        console.error('❌ Error in multiGuidelineDynamicAdvice:', error);
         
         const errorHtml = `
             <div class="multi-guideline-error">
@@ -4903,36 +4928,43 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
 
 // Display combined suggestions from multiple guidelines
 async function displayCombinedSuggestions(successfulResults, failedResults) {
-    console.log('[DEBUG] displayCombinedSuggestions called', {
-        successfulCount: successfulResults.length,
-        failedCount: failedResults.length
-    });
+    console.log('📋 Combining suggestions from', successfulResults.length, 'successful guidelines');
+    
+    // Validate input
+    if (!successfulResults || !Array.isArray(successfulResults)) {
+        throw new Error('Invalid successful results provided to displayCombinedSuggestions');
+    }
     
     // Combine all suggestions from successful results
     let allSuggestions = [];
     let suggestionCounter = 1;
     
-    successfulResults.forEach(result => {
-        const guidelines = result.result.suggestions || [];
-        guidelines.forEach(suggestion => {
+    successfulResults.forEach((result, index) => {
+        if (!result || !result.result) {
+            console.warn(`⚠️ Invalid result at index ${index}, skipping`);
+            return;
+        }
+        
+        const suggestions = result.result.suggestions || [];
+        suggestions.forEach(suggestion => {
+            // Validate suggestion structure
+            if (!suggestion || typeof suggestion !== 'object') {
+                console.warn(`⚠️ Invalid suggestion in ${result.guideline?.title || 'unknown guideline'}, skipping`);
+                return;
+            }
+            
             // Add guideline source information and renumber
             allSuggestions.push({
                 ...suggestion,
                 id: `multi_${suggestionCounter++}`,
-                sourceGuideline: result.guideline.title,
-                sourceGuidelineId: result.guideline.id,
+                sourceGuideline: result.guideline?.title || 'Unknown Guideline',
+                sourceGuidelineId: result.guideline?.id || 'unknown',
                 originalId: suggestion.id
             });
         });
     });
     
-    console.log('[DEBUG] Combined suggestions:', {
-        totalSuggestions: allSuggestions.length,
-        byGuideline: successfulResults.map(r => ({
-            guideline: r.guideline.title,
-            suggestions: r.result.suggestions?.length || 0
-        }))
-    });
+    console.log('💡 Combined', allSuggestions.length, 'suggestions from', successfulResults.length, 'guidelines');
     
     // Group suggestions by priority and category for better organization
     const priorityOrder = { 'high': 1, 'medium': 2, 'low': 3 };
@@ -5220,18 +5252,34 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
         </style>
     `;
     
-    // Display the combined suggestions
-    appendToSummary1(combinedHtml, false);
-    
-    // Update global suggestions for existing functionality
-    currentSuggestions = allSuggestions;
-    
-    console.log('[DEBUG] Combined suggestions displayed successfully');
+    try {
+        // Display the combined suggestions
+        appendToSummary1(combinedHtml, false);
+        
+        // Update global suggestions for existing functionality
+        currentSuggestions = allSuggestions;
+        
+        console.log('✅ Combined suggestions displayed successfully');
+        
+    } catch (error) {
+        console.error('❌ Error displaying combined suggestions:', error);
+        
+        const errorHtml = `
+            <div class="display-error">
+                <h3>❌ Error Displaying Suggestions</h3>
+                <p><strong>Error:</strong> ${error.message}</p>
+                <p>Please try refreshing the page or contact support if the problem persists.</p>
+            </div>
+        `;
+        
+        appendToSummary1(errorHtml, false);
+        throw error;
+    }
 }
 
 // Bulk accept suggestions based on priority filter
 function bulkAcceptSuggestions(priorityFilter) {
-    console.log('[DEBUG] bulkAcceptSuggestions called with filter:', priorityFilter);
+    console.log('📋 Bulk accepting suggestions with filter:', priorityFilter);
     
     const suggestions = document.querySelectorAll('.suggestion-item');
     let actionCount = 0;
@@ -5260,7 +5308,7 @@ function bulkAcceptSuggestions(priorityFilter) {
         }
     });
     
-    console.log(`[DEBUG] Bulk accepted ${actionCount} suggestions with filter: ${priorityFilter}`);
+    console.log(`✅ Bulk accepted ${actionCount} suggestions with filter: ${priorityFilter}`);
     
     // Update decisions summary
     setTimeout(() => {
@@ -5270,7 +5318,7 @@ function bulkAcceptSuggestions(priorityFilter) {
 
 // Bulk reject suggestions
 function bulkRejectSuggestions(priorityFilter) {
-    console.log('[DEBUG] bulkRejectSuggestions called with filter:', priorityFilter);
+    console.log('📋 Bulk rejecting suggestions with filter:', priorityFilter);
     
     const suggestions = document.querySelectorAll('.suggestion-item');
     let actionCount = 0;
@@ -5299,7 +5347,7 @@ function bulkRejectSuggestions(priorityFilter) {
         }
     });
     
-    console.log(`[DEBUG] Bulk rejected ${actionCount} suggestions with filter: ${priorityFilter}`);
+    console.log(`✅ Bulk rejected ${actionCount} suggestions with filter: ${priorityFilter}`);
     
     // Update decisions summary
     setTimeout(() => {
@@ -5309,7 +5357,7 @@ function bulkRejectSuggestions(priorityFilter) {
 
 // Automatically generate combined interactive suggestions from multiple analysis results
 async function generateCombinedInteractiveSuggestions(analysisResults) {
-    console.log('[DEBUG] generateCombinedInteractiveSuggestions called with', analysisResults.length, 'results');
+    console.log('🔄 Generating combined suggestions from', analysisResults.length, 'analysis results');
 
     try {
         // Get user ID token
@@ -5327,7 +5375,7 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
             analysis: result.analysis
         }));
 
-        console.log('[DEBUG] Sending multiple analyses to dynamicAdvice API');
+        console.log('📡 Sending multiple analyses to API...');
 
         // Send all analyses to the dynamic advice API
         const response = await fetch(`${window.SERVER_URL}/multiGuidelineDynamicAdvice`, {
@@ -5342,16 +5390,16 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
             })
         });
 
-        console.log('[DEBUG] Multi-guideline dynamic advice API response:', response.status);
+        console.log('📡 API response status:', response.status);
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('[DEBUG] Multi-guideline API error:', errorText);
+            console.error('❌ Multi-guideline API error:', errorText);
             throw new Error(`API error: ${response.status} - ${errorText}`);
         }
 
         const result = await response.json();
-        console.log('[DEBUG] Multi-guideline API result:', {
+        console.log('✅ API result received:', {
             success: result.success,
             sessionId: result.sessionId,
             totalSuggestions: result.combinedSuggestions?.length
@@ -5372,10 +5420,10 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
         return result;
 
     } catch (error) {
-        console.error('[DEBUG] Error generating combined suggestions:', error);
+        console.error('❌ Error generating combined suggestions:', error);
         
         // Fallback to single guideline approach
-        console.log('[DEBUG] Falling back to single guideline dynamic advice');
+        console.log('🔄 Falling back to single guideline dynamic advice');
         const firstResult = analysisResults[0];
         await dynamicAdvice(
             window.latestAnalysis.transcript, 
@@ -5820,5 +5868,136 @@ window.clearAllChatHistory = async function() {
         console.error('❌ Failed to clear chat history:', error);
     }
 };
+
+// ========== DEBUGGING AND TROUBLESHOOTING HELPERS ==========
+
+// Comprehensive debugging helper for multi-guideline processing
+window.debugMultiGuideline = function() {
+    console.group('🔍 Multi-Guideline Debug Information');
+    
+    // Check essential data
+    console.log('📊 Essential Data Status:');
+    console.log('  - window.latestAnalysis:', !!window.latestAnalysis);
+    console.log('  - transcript available:', !!(window.latestAnalysis?.transcript));
+    console.log('  - analysis available:', !!(window.latestAnalysis?.analysis));
+    console.log('  - relevantGuidelines:', window.relevantGuidelines?.length || 0);
+    console.log('  - globalGuidelines loaded:', !!(window.globalGuidelines && Object.keys(window.globalGuidelines).length > 0));
+    
+    // Check user authentication
+    const user = window.auth?.currentUser;
+    console.log('👤 Authentication Status:');
+    console.log('  - User authenticated:', !!user);
+    console.log('  - User email:', user?.email || 'N/A');
+    
+    // Check selected guidelines
+    const selectedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+    console.log('📋 Selection Status:');
+    console.log('  - Selected guidelines:', selectedCheckboxes.length);
+    if (selectedCheckboxes.length > 0) {
+        console.log('  - Selected IDs:', Array.from(selectedCheckboxes).map(cb => cb.dataset.guidelineId));
+    }
+    
+    // Check current session state
+    console.log('🗂️ Session State:');
+    console.log('  - currentAdviceSession:', currentAdviceSession);
+    console.log('  - currentSuggestions:', currentSuggestions?.length || 0);
+    console.log('  - userDecisions:', Object.keys(userDecisions || {}).length);
+    
+    // Server connectivity
+    console.log('🌐 Server Configuration:');
+    console.log('  - SERVER_URL:', window.SERVER_URL);
+    
+    console.groupEnd();
+    
+    // Return summary for programmatic use
+    return {
+        hasEssentialData: !!(window.latestAnalysis?.transcript && window.latestAnalysis?.analysis),
+        isUserAuthenticated: !!user,
+        selectedCount: selectedCheckboxes.length,
+        hasRelevantGuidelines: (window.relevantGuidelines?.length || 0) > 0,
+        serverConfigured: !!window.SERVER_URL
+    };
+};
+
+// Test function to validate multi-guideline setup
+window.testMultiGuidelineSetup = async function() {
+    console.log('🧪 Testing Multi-Guideline Setup...');
+    
+    const debug = window.debugMultiGuideline();
+    const issues = [];
+    
+    if (!debug.hasEssentialData) {
+        issues.push('❌ Missing essential data (transcript/analysis). Please enter and analyze a clinical transcript first.');
+    }
+    
+    if (!debug.isUserAuthenticated) {
+        issues.push('❌ User not authenticated. Please sign in first.');
+    }
+    
+    if (!debug.hasRelevantGuidelines) {
+        issues.push('❌ No relevant guidelines available. Please find relevant guidelines first.');
+    }
+    
+    if (!debug.serverConfigured) {
+        issues.push('❌ Server URL not configured.');
+    }
+    
+    if (debug.selectedCount === 0) {
+        issues.push('⚠️ No guidelines selected. Please select at least one guideline for processing.');
+    }
+    
+    if (issues.length === 0) {
+        console.log('✅ Multi-guideline setup looks good! Ready for processing.');
+        return true;
+    } else {
+        console.log('❌ Issues found:');
+        issues.forEach(issue => console.log('  ' + issue));
+        return false;
+    }
+};
+
+// Manual trigger for multi-guideline processing with validation
+window.runMultiGuidelineAdvice = async function() {
+    console.log('🚀 Manual Multi-Guideline Advice Trigger');
+    
+    const isReady = await window.testMultiGuidelineSetup();
+    if (!isReady) {
+        console.log('❌ Setup validation failed. Please resolve the issues above.');
+        return;
+    }
+    
+    try {
+        await generateMultiGuidelineAdvice();
+    } catch (error) {
+        console.error('❌ Multi-guideline processing failed:', error);
+        throw error;
+    }
+};
+
+// Clear all current selections and state
+window.clearMultiGuidelineState = function() {
+    console.log('🧹 Clearing multi-guideline state...');
+    
+    // Clear selections
+    const checkboxes = document.querySelectorAll('.guideline-checkbox:checked');
+    checkboxes.forEach(cb => cb.checked = false);
+    
+    // Clear session state
+    currentAdviceSession = null;
+    currentSuggestions = [];
+    userDecisions = {};
+    
+    // Clear any progress displays
+    const progressContainers = document.querySelectorAll('.multi-guideline-progress, .multi-guideline-error');
+    progressContainers.forEach(container => container.remove());
+    
+    console.log('✅ Multi-guideline state cleared');
+};
+
+console.log('🔧 Multi-guideline debugging helpers loaded. Use:');
+console.log('  - window.debugMultiGuideline() - Check current state');
+console.log('  - window.testMultiGuidelineSetup() - Validate setup');
+console.log('  - window.runMultiGuidelineAdvice() - Manual trigger');
+console.log('  - window.clearMultiGuidelineState() - Reset state');
 
 
