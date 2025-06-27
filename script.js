@@ -679,10 +679,19 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             display: inline-block;
         }
         
-        .pdf-download-link {
-            text-decoration: none;
-            color: #dc3545;
+        .guideline-selection-interface .pdf-download-link {
+            text-decoration: none !important;
+            color: #dc3545 !important;
             font-size: 1.1em;
+            background: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            display: inline !important;
+            width: auto !important;
+            height: auto !important;
         }
         
         .selection-info {
@@ -5237,9 +5246,17 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     appendToSummary1(dynamicAdviceTitle, false);
 
     try {
+        // For sequential processing, use existing analysis if available, otherwise create a basic one
+        let analysisToUse = window.latestAnalysis?.analysis;
+        if (!analysisToUse) {
+            // Create a basic analysis description for this guideline
+            analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${guidelineData.humanFriendlyTitle || guidelineData.title}. ` +
+                           `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
+        }
+        
         await dynamicAdvice(
             transcript,
-            null, // No separate analysis - dynamic advice will handle everything
+            analysisToUse,
             guidelineId,
             guidelineData.humanFriendlyTitle || guidelineData.title
         );
