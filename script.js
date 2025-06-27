@@ -595,7 +595,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-weight: 500;
         }
         
-        .selection-btn:hover, .action-btn:hover {
+        .selection-btn:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+        }
+        
+        .guideline-selection-interface .action-btn:hover {
             background: #f8f9fa;
             border-color: #007bff;
         }
