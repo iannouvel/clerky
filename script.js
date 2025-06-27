@@ -373,14 +373,32 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Helper function to format relevance score
     function formatRelevanceScore(relevanceValue) {
+        console.log('[DEBUG] formatRelevanceScore called with:', {
+            value: relevanceValue,
+            type: typeof relevanceValue
+        });
+        
         // If it's already a number, format it nicely
         if (typeof relevanceValue === 'number') {
-            return `${(relevanceValue * 100).toFixed(0)}%`;
+            const percentage = Math.round(relevanceValue * 100);
+            return `${percentage}%`;
         }
         
-        // Extract numeric score if it's a text description
-        const numericScore = extractRelevanceScoreLocal(relevanceValue);
-        return `${(numericScore * 100).toFixed(0)}%`;
+        // If it's a string, extract numeric score
+        if (typeof relevanceValue === 'string') {
+            const numericScore = extractRelevanceScoreLocal(relevanceValue);
+            const percentage = Math.round(numericScore * 100);
+            console.log('[DEBUG] Extracted score:', {
+                original: relevanceValue,
+                numeric: numericScore,
+                percentage: percentage
+            });
+            return `${percentage}%`;
+        }
+        
+        // Fallback for unexpected types
+        console.warn('[DEBUG] Unexpected relevance value type:', typeof relevanceValue, relevanceValue);
+        return '50%';
     }
 
     // Create the new guideline selection interface
@@ -654,6 +672,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         .relevance {
             color: #28a745;
             font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 80px;
+            display: inline-block;
         }
         
         .pdf-download-link {
@@ -1382,7 +1405,9 @@ async function findRelevantGuidelines(suppressHeader = false) {
             sampleMostRelevant: data.categories.mostRelevant?.[0],
             sampleKeys: data.categories.mostRelevant?.[0] ? Object.keys(data.categories.mostRelevant[0]) : 'no most relevant',
             hasDownloadUrl: !!(data.categories.mostRelevant?.[0] && data.categories.mostRelevant[0].downloadUrl),
-            downloadUrlValue: data.categories.mostRelevant?.[0] ? data.categories.mostRelevant[0].downloadUrl : 'no most relevant'
+            downloadUrlValue: data.categories.mostRelevant?.[0] ? data.categories.mostRelevant[0].downloadUrl : 'no most relevant',
+            sampleRelevanceValue: data.categories.mostRelevant?.[0] ? data.categories.mostRelevant[0].relevance : 'no most relevant',
+            sampleRelevanceType: data.categories.mostRelevant?.[0] ? typeof data.categories.mostRelevant[0].relevance : 'no most relevant'
         });
 
         // Update progress with completion
@@ -4988,6 +5013,10 @@ function selectAllGuidelines(select) {
     
     console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all guidelines');
 }
+
+// Make functions globally accessible
+window.selectAllGuidelines = selectAllGuidelines;
+window.processSelectedGuidelines = processSelectedGuidelines;
 
 // Cancel guideline selection
 function cancelGuidelineSelection() {
