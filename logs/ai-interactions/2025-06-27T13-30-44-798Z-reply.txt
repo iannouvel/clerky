@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 32/34",
+  "transcriptLength": 3813,
+  "transcriptPreview": "Here’s a professional medical clerking in SBAR format for a fictional patient with **adenomyosis**, incorporating obstetric/gynecological terminology, abbreviations, and clinical detail:  \n\n---\n\n### **SITUATION:**  \n**Patient:** 38-year-old **G3P2** (2 SVD, 1 TOP) female, BMI 28, presented to Gynecology Clinic at **1000 hours** with a **6-month history of worsening secondary dysmenorrhea, menorrhagia (soaking >6 pads/day), and chronic pelvic pain (VAS 8/10)**. Symptoms refractory to **PO NSAIDs ...",
+  "chunkGuidelines": [
+    "uhsx-maternity-education-policy-pdf: UHSx Maternity Education Policy",
+    "uhsx-maternity-escalation-policy-pdf: UHSx Maternity Escalation Policy",
+    "uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf: UHSx Maternity Smoking & Smoke Free Pregnancy guideline",
+    "uhsx-maternity-vaping-protocol-pdf: UHSx Maternity Vaping Protocol",
+    "uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol",
+    "uhsx-midwives-exemption-pdf: UHSx Midwives Exemption",
+    "uhsx-obstetric-vte-guideline-pdf: UHSx Obstetric VTE guideline",
+    "uhsx-perinatal-mental-health-guideline-pdf: UHSx Perinatal Mental Health guideline"
+  ],
+  "chunkIndex": 32,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsx-obstetric-vte-guideline-pdf\", \"title\": \"UHSx Obstetric VTE guideline\", \"relevance\": \"0.7\"},\n    {\"id\": \"uhsx-perinatal-mental-health-guideline-pdf\", \"title\": \"UHSx Perinatal Mental Health guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-midwives-exemption-pdf\", \"title\": \"UHSx Midwives Exemption\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-maternity-education-policy-pdf\", \"title\": \"UHSx Maternity Education Policy\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-maternity-escalation-policy-pdf\", \"title\": \"UHSx Maternity Escalation Policy\", \"relevance\": \"0.3\"},\n    {\"id\": \"uhsx-midwifery-preceptorship-protocol-pdf\", \"title\": \"UHSx Midwifery Preceptorship Protocol\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\", \"title\": \"UHSx Maternity Smoking & Smoke Free Pregnancy guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-maternity-vaping-protocol-pdf\", \"title\": \"UHSx Maternity Vaping Protocol\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1086
+}
