@@ -578,7 +578,17 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             flex-wrap: wrap;
         }
         
-        .selection-btn, .action-btn {
+        .selection-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        
+        .guideline-selection-interface .action-btn {
             padding: 8px 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
