@@ -292,9 +292,8 @@ function displayRelevantGuidelines(categories) {
 
     formattedGuidelines = htmlContent;
 
-    // Create the new guideline selection interface instead of just displaying
-    const selectionInterface = createGuidelineSelectionInterface(categories, allRelevantGuidelines);
-    appendToSummary1(selectionInterface);
+    // Create and display the new guideline selection interface
+    createGuidelineSelectionInterface(categories, allRelevantGuidelines);
 }
 
 // New function to create guideline selection interface with checkboxes
@@ -674,7 +673,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         </style>
     `;
 
-         return htmlContent;
+    htmlContent += `</div>`; // Close the main container div
+
+    // Append the generated HTML to the summary view
+    appendToSummary1(htmlContent, false);
 }
 
 function createGuidelineElement(guideline) {
