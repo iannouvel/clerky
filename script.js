@@ -592,7 +592,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             padding: 8px 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            background: white;
             cursor: pointer;
             font-size: 0.9em;
             transition: all 0.2s;
@@ -2329,13 +2328,13 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
                 </div>
                 
                 <div class="suggestion-actions">
-                    <button class="action-btn accept-btn" onclick="handleSuggestionAction('${suggestion.id}', 'accept')">
+                    <button class="action-btn accept-btn" style="background: #27ae60 !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'accept')">
                         ✅ Accept
                     </button>
-                    <button class="action-btn reject-btn" onclick="handleSuggestionAction('${suggestion.id}', 'reject')">
+                    <button class="action-btn reject-btn" style="background: #e74c3c !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'reject')">
                         ❌ Reject
                     </button>
-                    <button class="action-btn modify-btn" onclick="handleSuggestionAction('${suggestion.id}', 'modify')">
+                    <button class="action-btn modify-btn" style="background: #f39c12 !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'modify')">
                         ✏️ Modify
                     </button>
                 </div>
@@ -2345,10 +2344,10 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
                     <textarea id="modify-text-${suggestion.id}" class="modify-textarea" 
                               placeholder="Enter your custom text here...">${suggestion.suggestedText}</textarea>
                     <div class="modify-actions">
-                        <button class="action-btn confirm-btn" onclick="confirmModification('${suggestion.id}')">
+                        <button class="action-btn confirm-btn" style="background: #00b894 !important; color: white !important;" onclick="confirmModification('${suggestion.id}')">
                             ✅ Confirm Modification
                         </button>
-                        <button class="action-btn cancel-btn" onclick="cancelModification('${suggestion.id}')">
+                        <button class="action-btn cancel-btn" style="background: #636e72 !important; color: white !important;" onclick="cancelModification('${suggestion.id}')">
                             ❌ Cancel
                         </button>
                     </div>
