@@ -299,22 +299,18 @@ function displayRelevantGuidelines(categories) {
 
 // New function to create guideline selection interface with checkboxes
 function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
-    // Helper function to create PDF download link
-    function createPdfDownloadLink(guideline) {
-        if (!guideline) return '';
+    console.log('[DEBUG] createGuidelineSelectionInterface called with:', {
+        categories: categories,
+        allRelevantGuidelinesLength: allRelevantGuidelines?.length || 0
+    });
 
-        let downloadUrl;
-        if (guideline.downloadUrl) {
-            downloadUrl = guideline.downloadUrl;
-        } else if (guideline.originalFilename) {
-            const encodedFilename = encodeURIComponent(guideline.originalFilename);
-            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
-        } else {
-            return '';
-        }
-        
-        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
-    }
+    // Store ALL relevant guidelines (exclude notRelevant) globally
+    const allRelevantGuidelinesArray = [
+        ...(categories.mostRelevant || []).map(g => ({...g, category: 'mostRelevant'})),
+        ...(categories.potentiallyRelevant || []).map(g => ({...g, category: 'potentiallyRelevant'})),
+        ...(categories.lessRelevant || []).map(g => ({...g, category: 'lessRelevant'}))
+        // Exclude notRelevant as they're truly not applicable for checking
+    ];
 
     // Helper function to extract numeric relevance score (redefined for scope)
     function extractRelevanceScoreLocal(relevanceText) {
@@ -336,6 +332,44 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         if (text.includes('not') || text.includes('irrelevant')) return 0.1;
         
         return 0.5; // Default fallback
+    }
+
+    window.relevantGuidelines = allRelevantGuidelinesArray.map(g => ({
+        id: g.id, // Use clean document ID only
+        title: g.title,
+        filename: g.filename || g.title, // Keep both for compatibility
+        originalFilename: g.originalFilename || g.title, // Preserve original filename if available
+        downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
+        relevance: extractRelevanceScoreLocal(g.relevance), // Convert to numeric score
+        category: g.category,
+        originalRelevance: g.relevance, // Keep original for display purposes
+        organisation: g.organisation // Preserve organisation for display
+    }));
+
+    console.log('[DEBUG] Set window.relevantGuidelines:', {
+        total: window.relevantGuidelines.length,
+        byCategory: {
+            mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
+            potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
+            lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
+        }
+    });
+
+    // Helper function to create PDF download link
+    function createPdfDownloadLink(guideline) {
+        if (!guideline) return '';
+
+        let downloadUrl;
+        if (guideline.downloadUrl) {
+            downloadUrl = guideline.downloadUrl;
+        } else if (guideline.originalFilename) {
+            const encodedFilename = encodeURIComponent(guideline.originalFilename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+        } else {
+            return '';
+        }
+        
+        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
     // Helper function to format relevance score
@@ -3653,6 +3687,12 @@ async function processWorkflow() {
         }
 
         // Check if we have relevant guidelines before proceeding
+        console.log('[DEBUG] processWorkflow: Checking relevant guidelines:', {
+            hasRelevantGuidelines: !!window.relevantGuidelines,
+            guidelinesLength: window.relevantGuidelines?.length || 0,
+            guidelinesArray: window.relevantGuidelines
+        });
+        
         if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
             console.log('[DEBUG] processWorkflow: No relevant guidelines found, cannot proceed');
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
