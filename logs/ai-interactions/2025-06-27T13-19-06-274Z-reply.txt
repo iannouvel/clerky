@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 31/34",
+  "transcriptLength": 4020,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---\n\n### **SITUATION:**  \n**Patient Demographics:**  \n- 32-year-old **G3P1+1** (1 SVD, 1 TOP, 1 miscarriage)  \n- Presented to **GYN OPD** with **secondary amenorrhea x 6 months** and **infertility x 1 year** post-D&C for **incomplete miscarriage at 10+3 weeks** (18 months ago).  \n- Reports **scant, dark spotting** intermittently but no normal menses.  \n- **No cyclical pelvic pain**, no signs of infection (no fever, no malodorous discharge).  \n- ...",
+  "chunkGuidelines": [
+    "uhsussex-obstetric-vte-2025-pdf: Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period",
+    "uhsx-baby-abduction-security-guideline-pdf: UHSx Baby Abduction & Security guideline",
+    "uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline",
+    "uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023",
+    "uhsx-cord-prolapse-protocol-pdf: UHSx Cord Prolapse Protocol",
+    "uhsx-homebirth-freebirth-guideline-pdf: UHSx Homebirth & Freebirth guideline",
+    "uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP",
+    "uhsx-maternal-death-protocol-pdf: UHSx Maternal Death Protocol"
+  ],
+  "chunkIndex": 31,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-obstetric-vte-2025-pdf\", \"title\": \"Obstetric VTE: Prevention and Management of Venous Thromboembolism (VTE) in Pregnancy and the Postnatal Period\", \"relevance\": \"0.2\"},\n    {\"id\": \"uhsx-bladder-care-guideline-pdf\", \"title\": \"UHSx Bladder Care guideline\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-baby-abduction-security-guideline-pdf\", \"title\": \"UHSx Baby Abduction & Security guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023-pdf\", \"title\": \"UHSx Conflict of Clinical Opinion UHS-CG-0004-2023\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-cord-prolapse-protocol-pdf\", \"title\": \"UHSx Cord Prolapse Protocol\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-homebirth-freebirth-guideline-pdf\", \"title\": \"UHSx Homebirth & Freebirth guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-local-requirements-pmrt-sop-pdf\", \"title\": \"UHSx Local Requirements PMRT SOP\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-maternal-death-protocol-pdf\", \"title\": \"UHSx Maternal Death Protocol\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1149
+}
