@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 4020,
+    "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---\n\n### **SITUATION:**  \n**Patient Demographics:**  \n- 32-year-old **G3P1+1** (1 SVD, 1 TOP, 1 miscarriage)  \n- Presented to **GYN OPD** with **secondary amenorrhea x 6 months** and **infertility x 1 year** post-D&C for **incomplete miscarriage at 10+3 weeks** (18 months ago).  \n- Reports **scant, dark spotting** intermittently but no normal menses.  \n- **No cyclical pelvic pain**, no signs of infection (no fever, no malodorous discharge).  \n- ...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.6\\\"\\n    }\\n  ],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-06-27T12-54-24",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 4020,\n  \"transcriptPreview\": \"**Professional Medical Clerking – SBAR Format**  \\n\\n---\\n\\n### **SITUATION:**  \\n**Patient Demographics:**  \\n- 32-year-old **G3P1+1** (1 SVD, 1 TOP, 1 miscarriage)  \\n- Presented to **GYN OPD** with **secondary amenorrhea x 6 months** and **infertility x 1 year** post-D&C for **incomplete miscarriage at 10+3 weeks** (18 months ago).  \\n- Reports **scant, dark spotting** intermittently but no normal menses.  \\n- **No cyclical pelvic pain**, no signs of infection (no fever, no malodorous discharge).  \\n- ...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.6\\\"\\n    }\\n  ],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.3\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 9/34",
+  "transcriptLength": 4020,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---\n\n### **SITUATION:**  \n**Patient Demographics:**  \n- 32-year-old **G3P1+1** (1 SVD, 1 TOP, 1 miscarriage)  \n- Presented to **GYN OPD** with **secondary amenorrhea x 6 months** and **infertility x 1 year** post-D&C for **incomplete miscarriage at 10+3 weeks** (18 months ago).  \n- Reports **scant, dark spotting** intermittently but no normal menses.  \n- **No cyclical pelvic pain**, no signs of infection (no fever, no malodorous discharge).  \n- ...",
+  "chunkGuidelines": [
+    "cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf: CG16016 Management of pregnancies with previous Bariatric Surgery",
+    "cg17003-nipe-guideline-pdf: CG17003 NIPE guideline",
+    "cg17004-newborn-hearing-screening-programme-sop-pdf: CG17004 Newborn Hearing Screening Programme SOP",
+    "cg18005-newborn-bcg-immunisation-guideline-pdf: CG18005 Newborn BCG Immunisation guideline",
+    "cg18006-nipe-sop-pdf: CG18006 NIPE SOP",
+    "cg18007-newborn-screening-failsafes-pdf: CG18007 Newborn screening failsafes",
+    "cg19002-accidentally-dropped-babies-in-hospital-pdf: CG19002 Accidentally dropped babies in hospital",
+    "cg20003-first-trimester-dating-uss-protocol-pdf: CG20003 First Trimester Dating USS Protocol"
+  ],
+  "chunkIndex": 9,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg20003-first-trimester-dating-uss-protocol-pdf\", \"title\": \"First Trimester Dating USS Protocol\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf\", \"title\": \"Management of pregnancies with previous Bariatric Surgery\", \"relevance\": \"0.2\"},\n    {\"id\": \"cg17003-nipe-guideline-pdf\", \"title\": \"NIPE guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg17004-newborn-hearing-screening-programme-sop-pdf\", \"title\": \"Newborn Hearing Screening Programme SOP\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg18005-newborn-bcg-immunisation-guideline-pdf\", \"title\": \"Newborn BCG Immunisation guideline\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg18006-nipe-sop-pdf\", \"title\": \"NIPE SOP\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg18007-newborn-screening-failsafes-pdf\", \"title\": \"Newborn screening failsafes\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg19002-accidentally-dropped-babies-in-hospital-pdf\", \"title\": \"Accidentally dropped babies in hospital\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1106
+}
