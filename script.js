@@ -316,6 +316,18 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
+    // Helper function to format relevance score
+    function formatRelevanceScore(relevanceValue) {
+        // If it's already a number, format it nicely
+        if (typeof relevanceValue === 'number') {
+            return `${(relevanceValue * 100).toFixed(0)}%`;
+        }
+        
+        // Extract numeric score if it's a text description
+        const numericScore = extractRelevanceScore(relevanceValue);
+        return `${(numericScore * 100).toFixed(0)}%`;
+    }
+
     // Create the new guideline selection interface
     let htmlContent = `
         <div class="guideline-selection-interface">
@@ -357,7 +369,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
                             <div class="guideline-meta">
-                                <span class="relevance">${g.relevance}</span>
+                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
                         </div>
@@ -387,7 +399,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
                             <div class="guideline-meta">
-                                <span class="relevance">${g.relevance}</span>
+                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
                         </div>
@@ -417,7 +429,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
                             <div class="guideline-meta">
-                                <span class="relevance">${g.relevance}</span>
+                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
                         </div>
@@ -447,7 +459,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
                             <div class="guideline-meta">
-                                <span class="relevance">${g.relevance}</span>
+                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
                         </div>
