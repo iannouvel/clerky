@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 13/34",
+  "transcriptLength": 3778,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---  \n\n### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  \n- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  \n- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  \n- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic i...",
+  "chunkGuidelines": [
+    "gp006-management-of-bartholins-cyst-abscess-n-pdf: GP006 Management of Bartholins Cyst Abscess N",
+    "gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf: GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2",
+    "gp010-termination-of-pregnancy-pdf: GP010 Termination of Pregnancy",
+    "gp011-referral-criteria-for-outpatient-hysteroscopy-pdf: GP011 Referral criteria for Outpatient Hysteroscopy",
+    "gp012-ovarian-cysts-v10-pdf: GP012 Ovarian Cysts (v1.0)",
+    "gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf: GP013 Management of patients admitted for urinary incontinence surgery N",
+    "gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf: GP014 Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)",
+    "gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf: GP015  Management of Patients Admitted for Vaginal Wall Repair"
+  ],
+  "chunkIndex": 13,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gp011-referral-criteria-for-outpatient-hysteroscopy-pdf\", \"title\": \"Referral criteria for Outpatient Hysteroscopy\", \"relevance\": \"0.95\"},\n    {\"id\": \"gp012-ovarian-cysts-v10-pdf\", \"title\": \"Ovarian Cysts (v1.0)\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gp010-termination-of-pregnancy-pdf\", \"title\": \"Termination of Pregnancy\", \"relevance\": \"0.60\"},\n    {\"id\": \"gp007-ovarian-hyperstimulation-syndrome-ohss-v2-pdf\", \"title\": \"Ovarian Hyperstimulation Syndrome (OHSS) V2\", \"relevance\": \"0.40\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gp006-management-of-bartholins-cyst-abscess-n-pdf\", \"title\": \"Management of Bartholins Cyst Abscess N\", \"relevance\": \"0.30\"},\n    {\"id\": \"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf\", \"title\": \"Management of patients admitted for urinary incontinence surgery N\", \"relevance\": \"0.20\"},\n    {\"id\": \"gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-pdf\", \"title\": \"Management of Patients Admitted for Major Vaginal Surgery for Pelvic Organ Prolapse (POP)\", \"relevance\": \"0.20\"},\n    {\"id\": \"gp015-management-of-patients-admitted-for-vaginal-wall-repair-pdf\", \"title\": \"Management of Patients Admitted for Vaginal Wall Repair\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1349
+}
