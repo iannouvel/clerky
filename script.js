@@ -4933,13 +4933,24 @@ function cancelGuidelineSelection() {
 
 // NEW: Process selected guidelines sequentially (one-by-one)
 async function processSelectedGuidelines() {
+    console.log('[DEBUG] processSelectedGuidelines function called!');
     const button = document.querySelector('.process-selected-btn');
+    
+    if (!button) {
+        console.error('[DEBUG] Process button not found!');
+        alert('Process button not found. Please try refreshing the page.');
+        return;
+    }
+    
     const originalText = button.textContent;
     
     try {
         // Get all checked guidelines
         const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+        console.log('[DEBUG] Found checkboxes:', checkedCheckboxes.length);
+        
         const selectedGuidelineIds = Array.from(checkedCheckboxes).map(cb => cb.dataset.guidelineId);
+        console.log('[DEBUG] Selected guideline IDs:', selectedGuidelineIds);
         
         if (selectedGuidelineIds.length === 0) {
             alert('Please select at least one guideline to process');
@@ -5183,6 +5194,9 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 
     console.log(`[DEBUG] Successfully processed guideline: ${guidelineId}`);
 }
+
+// Make the function globally accessible
+window.processSelectedGuidelines = processSelectedGuidelines;
 
 // Generate dynamic advice for multiple selected guidelines
 async function generateMultiGuidelineAdvice() {
