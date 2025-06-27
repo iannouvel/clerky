@@ -316,6 +316,28 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
+    // Helper function to extract numeric relevance score (redefined for scope)
+    function extractRelevanceScoreLocal(relevanceText) {
+        if (typeof relevanceText === 'number') {
+            return relevanceText; // Already numeric
+        }
+        
+        // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
+        const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
+        if (match) {
+            return parseFloat(match[1] || match[2]);
+        }
+        
+        // Fallback based on text description
+        const text = relevanceText.toLowerCase();
+        if (text.includes('high') || text.includes('most')) return 0.9;
+        if (text.includes('medium') || text.includes('potentially')) return 0.65;
+        if (text.includes('low') || text.includes('less')) return 0.35;
+        if (text.includes('not') || text.includes('irrelevant')) return 0.1;
+        
+        return 0.5; // Default fallback
+    }
+
     // Helper function to format relevance score
     function formatRelevanceScore(relevanceValue) {
         // If it's already a number, format it nicely
@@ -324,7 +346,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         // Extract numeric score if it's a text description
-        const numericScore = extractRelevanceScore(relevanceValue);
+        const numericScore = extractRelevanceScoreLocal(relevanceValue);
         return `${(numericScore * 100).toFixed(0)}%`;
     }
 
