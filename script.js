@@ -1353,8 +1353,8 @@ async function findRelevantGuidelines(suppressHeader = false) {
         const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
         appendToSummary1(completionMessage, false);
 
-        // Process and display the results
-        displayRelevantGuidelines(data.categories);
+        // Process and display the results with the new selection interface
+        createGuidelineSelectionInterface(data.categories, window.relevantGuidelines);
 
         // Add final summary
         const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
@@ -5152,47 +5152,11 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
     appendToSummary1(analyzeMessage, false);
 
-    // Call the server to analyze against this specific guideline
-    const response = await fetch(`${window.SERVER_URL}/checkAgainstGuidelines`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${idToken}`
-        },
-        body: JSON.stringify({
-            transcript: transcript,
-            guideline: {
-                id: guidelineId,
-                title: guidelineData.title,
-                summary: guidelineData.summary,
-                condensed: guidelineData.condensed,
-                keywords: guidelineData.keywords,
-                downloadUrl: guidelineData.downloadUrl,
-                filename: guidelineData.filename,
-                organisation: guidelineData.organisation
-            }
-        })
-    });
-
-    if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Server error: ${response.status} - ${errorText}`);
-    }
-
-    const data = await response.json();
-    if (!data.success) {
-        throw new Error(data.error || 'Failed to analyze against guideline');
-    }
-
-    // Display the analysis results
-    if (data.analysis) {
-        appendToSummary1(data.analysis + '\n\n', false);
-    }
-
+    // Directly generate dynamic advice for this guideline without server analysis
     // Store the latest analysis for potential dynamic advice
     window.latestAnalysis = {
         transcript: transcript,
-        analysis: data.analysis,
+        analysis: null, // No separate analysis step
         guidelineId: guidelineId,
         guidelineTitle: guidelineData.humanFriendlyTitle || guidelineData.title
     };
@@ -5204,7 +5168,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     try {
         await dynamicAdvice(
             transcript,
-            data.analysis,
+            null, // No separate analysis - dynamic advice will handle everything
             guidelineId,
             guidelineData.humanFriendlyTitle || guidelineData.title
         );
