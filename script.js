@@ -292,7 +292,321 @@ function displayRelevantGuidelines(categories) {
 
     formattedGuidelines = htmlContent;
 
-    appendToSummary1(formattedGuidelines);
+    // Create the new guideline selection interface instead of just displaying
+    const selectionInterface = createGuidelineSelectionInterface(categories, allRelevantGuidelines);
+    appendToSummary1(selectionInterface);
+}
+
+// New function to create guideline selection interface with checkboxes
+function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
+    // Helper function to create PDF download link
+    function createPdfDownloadLink(guideline) {
+        if (!guideline) return '';
+
+        let downloadUrl;
+        if (guideline.downloadUrl) {
+            downloadUrl = guideline.downloadUrl;
+        } else if (guideline.originalFilename) {
+            const encodedFilename = encodeURIComponent(guideline.originalFilename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+        } else {
+            return '';
+        }
+        
+        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
+    }
+
+    // Create the new guideline selection interface
+    let htmlContent = `
+        <div class="guideline-selection-interface">
+            <div class="selection-header">
+                <h2>📋 Select Guidelines for Dynamic Advice</h2>
+                <p>Check which guidelines to generate dynamic advice for. Most relevant guidelines are pre-selected.</p>
+                <div class="selection-controls">
+                    <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)">
+                        ✅ Select All
+                    </button>
+                    <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)">
+                        ❌ Deselect All
+                    </button>
+                    <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines()">
+                        <span class="btn-icon">🚀</span>
+                        <span class="btn-text">Process Selected Guidelines</span>
+                    </button>
+                </div>
+            </div>
+    `;
+
+    // Add Most Relevant Guidelines (auto-checked)
+    if (categories.mostRelevant && categories.mostRelevant.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
+        categories.mostRelevant.forEach((g, index) => {
+            const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            htmlContent += `
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" 
+                               class="guideline-checkbox" 
+                               data-guideline-id="${g.id}" 
+                               data-category="mostRelevant"
+                               checked="checked">
+                        <span class="checkmark"></span>
+                        <div class="guideline-info">
+                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
+                            <div class="guideline-meta">
+                                <span class="relevance">${g.relevance}</span>
+                                ${pdfLink}
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+        htmlContent += '</div></div>';
+    }
+
+    // Add Potentially Relevant Guidelines (not checked)
+    if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
+        categories.potentiallyRelevant.forEach((g, index) => {
+            const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            htmlContent += `
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" 
+                               class="guideline-checkbox" 
+                               data-guideline-id="${g.id}" 
+                               data-category="potentiallyRelevant">
+                        <span class="checkmark"></span>
+                        <div class="guideline-info">
+                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
+                            <div class="guideline-meta">
+                                <span class="relevance">${g.relevance}</span>
+                                ${pdfLink}
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+        htmlContent += '</div></div>';
+    }
+
+    // Add Less Relevant Guidelines (not checked)
+    if (categories.lessRelevant && categories.lessRelevant.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
+        categories.lessRelevant.forEach((g, index) => {
+            const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            htmlContent += `
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" 
+                               class="guideline-checkbox" 
+                               data-guideline-id="${g.id}" 
+                               data-category="lessRelevant">
+                        <span class="checkmark"></span>
+                        <div class="guideline-info">
+                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
+                            <div class="guideline-meta">
+                                <span class="relevance">${g.relevance}</span>
+                                ${pdfLink}
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+        htmlContent += '</div></div>';
+    }
+
+    // Add Not Relevant Guidelines (for completeness, not checked)
+    if (categories.notRelevant && categories.notRelevant.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
+        categories.notRelevant.forEach((g, index) => {
+            const pdfLink = createPdfDownloadLink(g);
+            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            htmlContent += `
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" 
+                               class="guideline-checkbox" 
+                               data-guideline-id="${g.id}" 
+                               data-category="notRelevant">
+                        <span class="checkmark"></span>
+                        <div class="guideline-info">
+                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
+                            <div class="guideline-meta">
+                                <span class="relevance">${g.relevance}</span>
+                                ${pdfLink}
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+        htmlContent += '</div></div>';
+    }
+
+    htmlContent += `
+            <div class="selection-info">
+                <p><strong>How it works:</strong> Selected guidelines will be processed one-by-one. After each guideline is processed and changes are incorporated into your transcript, the system will move to the next selected guideline.</p>
+            </div>
+        </div>
+        
+        <style>
+        .guideline-selection-interface {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .selection-header h2 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.3em;
+        }
+        
+        .selection-header p {
+            margin: 0 0 15px 0;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .selection-controls {
+            margin: 15px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .selection-btn, .action-btn {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        
+        .action-btn.primary {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+            font-weight: 500;
+        }
+        
+        .selection-btn:hover, .action-btn:hover {
+            background: #f8f9fa;
+            border-color: #007bff;
+        }
+        
+        .action-btn.primary:hover {
+            background: #0056b3;
+        }
+        
+        .guideline-category {
+            margin: 20px 0;
+        }
+        
+        .guideline-category h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        
+        .guidelines-list {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .guideline-item {
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        
+        .guideline-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .guideline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .guideline-checkbox-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .guideline-checkbox {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .guideline-info {
+            flex: 1;
+        }
+        
+        .guideline-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        
+        .guideline-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+        
+        .relevance {
+            color: #28a745;
+            font-weight: 500;
+        }
+        
+        .pdf-download-link {
+            text-decoration: none;
+            color: #dc3545;
+            font-size: 1.1em;
+        }
+        
+        .selection-info {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #1976d2;
+        }
+        </style>
+    `;
+
+         return htmlContent;
 }
 
 function createGuidelineElement(guideline) {
@@ -3310,69 +3624,20 @@ async function processWorkflow() {
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
         }
 
-        console.log('[DEBUG] processWorkflow: Starting step 2 - Check Against Guidelines');
+        console.log('[DEBUG] processWorkflow: Step 1 completed - now showing guideline selection interface');
         
-        // Step 2: Check Against Guidelines
-        const step2Status = '## Step 2: Analysing Against Guidelines\n\n';
+        // Step 2: Show Guideline Selection Interface
+        const step2Status = `## Step 2: Select Guidelines to Process\n\n` +
+                           `✅ **Step 1 Complete:** Found ${window.relevantGuidelines.length} relevant guidelines\n\n` +
+                           `**Next:** Use the interface above to select which guidelines to process. ` +
+                           `Most relevant guidelines are pre-selected. Click "Process Selected Guidelines" when ready.\n\n` +
+                           `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
+                           `incorporated before moving to the next guideline.\n\n`;
+        
         appendToSummary1(step2Status, false);
         
-        try {
-            await checkAgainstGuidelines(true); // Suppress header since we show our own step header
-            console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
-            
-            const step2Complete = '✅ **Step 2 Complete:** Guideline analysis finished\n\n';
-            appendToSummary1(step2Complete, false);
-            
-        } catch (error) {
-            console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
-            throw new Error(`Step 2 (Check Guidelines) failed: ${error.message}`);
-        }
-
-        // Check if we have analysis data before proceeding
-        if (!window.latestAnalysis) {
-            console.log('[DEBUG] processWorkflow: No analysis data found, cannot proceed');
-            throw new Error('No analysis data was generated. Cannot proceed with dynamic advice.');
-        }
-
-        console.log('[DEBUG] processWorkflow: Starting step 3 - Make Advice Dynamic');
-        
-        // Step 3: Make Advice Dynamic
-        const step3Status = '## Step 3: Creating Interactive Suggestions\n\n';
-        appendToSummary1(step3Status, false);
-        
-        try {
-            await dynamicAdvice(
-                window.latestAnalysis.transcript,
-                window.latestAnalysis.analysis,
-                window.latestAnalysis.guidelineId,
-                window.latestAnalysis.guidelineTitle
-            );
-            console.log('[DEBUG] processWorkflow: Step 3 completed successfully');
-            
-            const step3Complete = '✅ **Step 3 Complete:** Interactive suggestions ready\n\n';
-            appendToSummary1(step3Complete, false);
-            
-            // Hide the "Make Advice Dynamic" button since it's now redundant
-            const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
-            if (makeDynamicAdviceBtn) {
-                makeDynamicAdviceBtn.style.display = 'none';
-                console.log('[DEBUG] processWorkflow: Hidden makeDynamicAdviceBtn as it\'s now redundant');
-            }
-            
-        } catch (error) {
-            console.error('[DEBUG] processWorkflow: Step 3 failed:', error.message);
-            throw new Error(`Step 3 (Dynamic Advice) failed: ${error.message}`);
-        }
-
-        // Workflow completion summary
-        const workflowComplete = `## 🎉 Workflow Complete!\n\n` +
-                                `All three steps have been completed successfully:\n` +
-                                `1. ✅ Found relevant guidelines\n` +
-                                `2. ✅ Analyzed against most relevant guideline\n` +
-                                `3. ✅ Generated interactive suggestions\n\n` +
-                                `**Next Steps:** Review the suggestions above and make your decisions (Accept/Reject/Modify), then click "Apply All Decisions" to update your transcript.\n\n`;
-        
-        appendToSummary1(workflowComplete, false);
+        // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
+        console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
         
         console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
 
@@ -4652,6 +4917,259 @@ function selectAllGuidelines(select) {
 function cancelGuidelineSelection() {
     // Just scroll to the end, the selection interface will remain visible but user can continue with other actions
     console.log('[DEBUG] Guideline selection cancelled');
+}
+
+// NEW: Process selected guidelines sequentially (one-by-one)
+async function processSelectedGuidelines() {
+    const button = document.querySelector('.process-selected-btn');
+    const originalText = button.textContent;
+    
+    try {
+        // Get all checked guidelines
+        const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+        const selectedGuidelineIds = Array.from(checkedCheckboxes).map(cb => cb.dataset.guidelineId);
+        
+        if (selectedGuidelineIds.length === 0) {
+            alert('Please select at least one guideline to process');
+            return;
+        }
+
+        // Set loading state
+        button.disabled = true;
+        button.innerHTML = '⏳ Processing...';
+
+        console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
+
+        const sequentialProcessingMessage = `
+            <div class="sequential-processing-container">
+                <h3>🔄 Sequential Guideline Processing</h3>
+                <p>Processing ${selectedGuidelineIds.length} selected guidelines one-by-one...</p>
+                <div class="processing-status" id="processing-status"></div>
+            </div>
+            
+            <style>
+            .sequential-processing-container {
+                background: #e8f5e8;
+                border: 1px solid #4caf50;
+                border-radius: 6px;
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .processing-status {
+                margin-top: 10px;
+                font-family: monospace;
+                font-size: 0.9em;
+            }
+            .processing-step {
+                padding: 5px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            .processing-step.current {
+                background: #fff3cd;
+                font-weight: bold;
+                padding: 8px;
+                border-radius: 4px;
+            }
+            .processing-step.completed {
+                color: #28a745;
+            }
+            .processing-step.pending {
+                color: #6c757d;
+            }
+            </style>
+        `;
+        
+        appendToSummary1(sequentialProcessingMessage, false);
+
+        // Process each guideline sequentially
+        for (let i = 0; i < selectedGuidelineIds.length; i++) {
+            const guidelineId = selectedGuidelineIds[i];
+            const stepNumber = i + 1;
+            
+            // Update status display
+            const statusDiv = document.getElementById('processing-status');
+            if (statusDiv) {
+                statusDiv.innerHTML = selectedGuidelineIds.map((id, index) => {
+                    const guideline = window.relevantGuidelines.find(g => g.id === id);
+                    const title = guideline ? (guideline.title || id) : id;
+                    const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+                    
+                    let className = 'processing-step pending';
+                    let emoji = '⏳';
+                    
+                    if (index < i) {
+                        className = 'processing-step completed';
+                        emoji = '✅';
+                    } else if (index === i) {
+                        className = 'processing-step current';
+                        emoji = '🔄';
+                    }
+                    
+                    return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
+                }).join('');
+            }
+
+            console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
+            
+            const processingStepMessage = `
+                <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
+            `;
+            appendToSummary1(processingStepMessage, false);
+
+            try {
+                // Process this single guideline
+                await processSingleGuideline(guidelineId, stepNumber, selectedGuidelineIds.length);
+                
+                const completionMessage = `✅ **Guideline ${stepNumber} completed successfully**\n\n`;
+                appendToSummary1(completionMessage, false);
+                
+                // If not the last guideline, wait a bit before continuing
+                if (i < selectedGuidelineIds.length - 1) {
+                    const waitMessage = `Incorporating changes and preparing for next guideline...\n\n`;
+                    appendToSummary1(waitMessage, false);
+                    await new Promise(resolve => setTimeout(resolve, 1000)); // Brief pause
+                }
+                
+            } catch (error) {
+                console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
+                const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\nContinuing with next guideline...\n\n`;
+                appendToSummary1(errorMessage, false);
+            }
+        }
+
+        // Final completion message
+        const finalMessage = `
+            <div class="sequential-processing-complete">
+                <h3>🎉 Sequential Processing Complete!</h3>
+                <p>Successfully processed ${selectedGuidelineIds.length} guidelines sequentially.</p>
+                <p><strong>Next Steps:</strong> Review all the suggestions above and use "Apply All Decisions" to incorporate your choices into the transcript.</p>
+            </div>
+            
+            <style>
+            .sequential-processing-complete {
+                background: #d4edda;
+                border: 1px solid #28a745;
+                border-radius: 6px;
+                padding: 15px;
+                margin: 15px 0;
+                color: #155724;
+            }
+            </style>
+        `;
+        
+        appendToSummary1(finalMessage, false);
+        
+        console.log('[DEBUG] Sequential processing completed successfully');
+
+    } catch (error) {
+        console.error('[DEBUG] Error in processSelectedGuidelines:', error);
+        const errorMessage = `\n❌ **Sequential Processing Error:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
+        appendToSummary1(errorMessage, false);
+        alert('Error processing selected guidelines: ' + error.message);
+        
+    } finally {
+        // Reset button state
+        button.disabled = false;
+        button.textContent = originalText;
+    }
+}
+
+// Function to process a single guideline (extracted from existing checkAgainstGuidelines logic)
+async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
+    console.log(`[DEBUG] processSingleGuideline called for: ${guidelineId}`);
+    
+    const transcript = document.getElementById('userInput').value;
+    if (!transcript) {
+        throw new Error('No transcript found');
+    }
+
+    // Get user authentication
+    const user = auth.currentUser;
+    if (!user) {
+        throw new Error('User not authenticated');
+    }
+    const idToken = await user.getIdToken();
+
+    // Find the guideline in our global cache
+    const targetGuideline = window.relevantGuidelines.find(g => g.id === guidelineId);
+    if (!targetGuideline) {
+        throw new Error(`Guideline ${guidelineId} not found in relevant guidelines`);
+    }
+
+    // Find the full guideline data
+    const guidelineData = window.globalGuidelines[guidelineId];
+    if (!guidelineData) {
+        throw new Error(`Guideline data not found for ${guidelineId}`);
+    }
+
+    console.log(`[DEBUG] Processing guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title}`);
+
+    const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
+    appendToSummary1(analyzeMessage, false);
+
+    // Call the server to analyze against this specific guideline
+    const response = await fetch(`${window.SERVER_URL}/checkAgainstGuidelines`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${idToken}`
+        },
+        body: JSON.stringify({
+            transcript: transcript,
+            guideline: {
+                id: guidelineId,
+                title: guidelineData.title,
+                summary: guidelineData.summary,
+                condensed: guidelineData.condensed,
+                keywords: guidelineData.keywords,
+                downloadUrl: guidelineData.downloadUrl,
+                filename: guidelineData.filename,
+                organisation: guidelineData.organisation
+            }
+        })
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+    }
+
+    const data = await response.json();
+    if (!data.success) {
+        throw new Error(data.error || 'Failed to analyze against guideline');
+    }
+
+    // Display the analysis results
+    if (data.analysis) {
+        appendToSummary1(data.analysis + '\n\n', false);
+    }
+
+    // Store the latest analysis for potential dynamic advice
+    window.latestAnalysis = {
+        transcript: transcript,
+        analysis: data.analysis,
+        guidelineId: guidelineId,
+        guidelineTitle: guidelineData.humanFriendlyTitle || guidelineData.title
+    };
+
+    // Automatically generate dynamic advice for this guideline
+    const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${guidelineData.humanFriendlyTitle || guidelineData.title}\n\n`;
+    appendToSummary1(dynamicAdviceTitle, false);
+
+    try {
+        await dynamicAdvice(
+            transcript,
+            data.analysis,
+            guidelineId,
+            guidelineData.humanFriendlyTitle || guidelineData.title
+        );
+    } catch (dynamicError) {
+        console.error(`[DEBUG] Error generating dynamic advice for ${guidelineId}:`, dynamicError);
+        const dynamicErrorMessage = `⚠️ **Note:** Dynamic advice generation failed for this guideline: ${dynamicError.message}\n\n`;
+        appendToSummary1(dynamicErrorMessage, false);
+    }
+
+    console.log(`[DEBUG] Successfully processed guideline: ${guidelineId}`);
 }
 
 // Generate dynamic advice for multiple selected guidelines
