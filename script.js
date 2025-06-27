@@ -6065,6 +6065,39 @@ const ClinicalConditionsService = {
                 throw new Error(data.error || 'Failed to load clinical conditions');
             }
             
+            // Check if Firebase collection is empty
+            const totalConditions = data.summary?.totalConditions || 0;
+            if (totalConditions === 0) {
+                console.log('[CLINICAL-SERVICE] Firebase collection is empty, initializing...');
+                await this._initializeFirebaseCollection();
+                
+                // Retry loading after initialization
+                const retryResponse = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (retryResponse.ok) {
+                    const retryData = await retryResponse.json();
+                    if (retryData.success && retryData.summary?.totalConditions > 0) {
+                        clinicalConditionsFirebaseCache = retryData.conditions;
+                        console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions after initialization:', {
+                            totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
+                            totalConditions: retryData.summary.totalConditions,
+                            categoriesWithCounts: retryData.summary.categoriesWithCounts
+                        });
+                        return clinicalConditionsFirebaseCache;
+                    }
+                }
+                
+                // If initialization didn't work, fall back to JSON
+                console.log('[CLINICAL-SERVICE] Initialization failed, falling back to JSON...');
+                return this._loadFromJsonFallback();
+            }
+            
             clinicalConditionsFirebaseCache = data.conditions;
             
             console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
@@ -6079,6 +6112,45 @@ const ClinicalConditionsService = {
             console.error('[CLINICAL-SERVICE] Error loading clinical conditions:', error);
             // Fallback to JSON file if Firebase fails
             return this._loadFromJsonFallback();
+        }
+    },
+    
+    async _initializeFirebaseCollection() {
+        try {
+            console.log('[CLINICAL-SERVICE] Initializing Firebase collection...');
+            
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('User not authenticated');
+            }
+            
+            const idToken = await user.getIdToken();
+            
+            const response = await fetch(`${window.SERVER_URL}/initializeClinicalConditions`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to initialize clinical conditions: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            if (!data.success) {
+                throw new Error(data.error || 'Failed to initialize clinical conditions');
+            }
+            
+            console.log('[CLINICAL-SERVICE] Firebase collection initialized successfully:', data.message);
+            return true;
+            
+        } catch (error) {
+            console.error('[CLINICAL-SERVICE] Error initializing Firebase collection:', error);
+            throw error;
         }
     },
     
