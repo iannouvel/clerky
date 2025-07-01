@@ -3690,7 +3690,7 @@ function createDefaultPrompts() {
     testTranscript: {
       title: "EHR-Style Medical Note Generation",
       description: "Used to generate concise medical notes using EHR shorthand and abbreviations",
-      prompt: "Generate a brief medical note in EHR style for the following condition. Use medical shorthand, abbreviations, and concise documentation as doctors write in electronic health records.\n\nRequirements:\n- Keep it SHORT and concise (max 3-4 sentences)\n- Use standard medical abbreviations (BP, HR, NAD, WNL, etc.)\n- Include key clinical points only\n- Use bullet points or brief phrases\n- Mimic actual EHR documentation style\n- Include relevant vitals/findings if applicable\n- This is for educational/testing purposes only\n\nCondition: "
+      prompt: "Generate a brief medical note in EHR style for the following condition. Use British medical shorthand including commonnly understood abbreviations, and concise documentation as doctors write in electronic health records.\n\nRequirements:\n- Keep it SHORT and concise (max 3-4 sentences)\n- Use standard medical abbreviations (BP, HR, NAD, WNL, etc.)\n- Include key clinical points only\n- Use bullet points or brief phrases\n- Mimic actual EHR documentation style\n- Include relevant vitals/findings if applicable\n- This is for educational/testing purposes only\n\nCondition: "
     }
   };
 }
