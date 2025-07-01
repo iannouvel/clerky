@@ -3688,9 +3688,9 @@ function createDefaultPrompts() {
       system_prompt: "You are a medical AI assistant helping identify clinical issues from patient information."
     },
     testTranscript: {
-      title: "EHR-Style Medical Note Generation",
-      description: "Used to generate medical notes using EHR shorthand and abbreviations",
-      prompt: "Generate a brief medical note in EHR style for the following condition. Use British medical shorthand including commonly understood abbreviations, and concise documentation as doctors write in electronic health records.\n\nRequirements:\n- Keep it concise \n- Use standard medical abbreviations (BP, HR, NAD, etc.)\n- Use bullet points or brief phrases\n- Mimic actual EHR documentation style\n- Include relevant vitals/findings if applicable\n- This is for educational/testing purposes only\n\nCondition: "
+      title: "Medical SBAR Transcript Generation",
+      description: "Used to generate medical-grade clinical clerkings with heavy medical jargon and abbreviations",
+      prompt: "Create a professional medical clerking using SBAR format (Situation, Background, Assessment, Recommendation) for the following clinical scenario. Use medical terminology, commonly used British abbreviations, and jargon as would be used in real hospital documentation.\n\nRequirements:\n- Use proper medical abbreviations (e.g., G2P1, BP, HR, CTG, USS, FBC, CRP, LFTs, U&Es, etc.)\n- Include specific measurements, values, and clinical observations with units\n- Follow realistic hospital workflow and terminology\n- Make it appropriately detailed and clinically authentic with realistic patient demographics\n- Use appropriate specialty-specific language (obstetric/gynecological terminology)\n- Include investigations, observations, and management plans\n- Use medical time notation (e.g., 34+2 weeks, 0800 hours)\n- Include relevant risk factors and clinical decision-making\n- This is for educational/testing purposes only - entirely fictional\n\nFormat as:\nSITUATION: [Demographics, presentation, key clinical issue]\nBACKGROUND: [Relevant history, previous episodes, risk factors, medications]\nASSESSMENT: [Clinical findings, vital signs, test results, differential diagnosis]\nRECOMMENDATION: [Management plan, monitoring, follow-up, further investigations]\n\nClinical scenario: "
     }
   };
 }
