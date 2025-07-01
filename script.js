@@ -2245,9 +2245,17 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             throw new Error(result.error || 'Dynamic advice generation failed');
         }
 
-        // Store session data globally
+        // Store session data globally and ensure unique suggestion IDs
         currentAdviceSession = result.sessionId;
-        currentSuggestions = result.suggestions || [];
+        
+        // Add session prefix to suggestion IDs to prevent conflicts in sequential processing
+        const prefixedSuggestions = (result.suggestions || []).map(suggestion => ({
+            ...suggestion,
+            originalId: suggestion.id, // Keep original ID for server communication
+            id: `${result.sessionId}-${suggestion.id}` // Use prefixed ID for DOM elements
+        }));
+        
+        currentSuggestions = prefixedSuggestions;
         userDecisions = {};
 
         console.log('[DEBUG] dynamicAdvice: Stored session data', {
@@ -2320,12 +2328,7 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
 
     // Add each suggestion
     suggestions.forEach((suggestion, index) => {
-        console.log('[DEBUG] displayInteractiveSuggestions: Processing suggestion', {
-            index,
-            id: suggestion.id,
-            category: suggestion.category,
-            priority: suggestion.priority
-        });
+        // Processing each suggestion
 
         const priorityClass = `priority-${suggestion.priority || 'medium'}`;
         const categoryIcon = getCategoryIcon(suggestion.category);
@@ -2596,12 +2599,6 @@ function cancelModification(suggestionId) {
 
 // Update suggestion status UI
 function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
-    console.log('[DEBUG] updateSuggestionStatus called', {
-        suggestionId,
-        action,
-        hasModifiedText: !!modifiedText
-    });
-
     const statusElement = document.getElementById(`status-${suggestionId}`);
     if (!statusElement) {
         console.error('[DEBUG] updateSuggestionStatus: Status element not found:', suggestionId);
@@ -2638,7 +2635,6 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
         setTimeout(() => {
             actionButtonsElement.style.display = 'none';
         }, 300);
-        console.log('[DEBUG] updateSuggestionStatus: Hidden action buttons for suggestion:', suggestionId);
     }
 
     // Update suggestion item styling and then hide the entire suggestion with animation
@@ -2654,20 +2650,14 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
             // After animation completes, completely hide the element
             setTimeout(() => {
                 suggestionElement.style.display = 'none';
-                console.log('[DEBUG] updateSuggestionStatus: Completely hidden suggestion element:', suggestionId);
             }, 500);
         }, 1500); // Wait 1.5 seconds to let user see the decision status
-        
-        console.log('[DEBUG] updateSuggestionStatus: Scheduled suggestion hiding for:', suggestionId);
     }
 }
 
 // Update decisions summary and enable/disable apply button
 function updateDecisionsSummary() {
-    console.log('[DEBUG] updateDecisionsSummary called', {
-        totalSuggestions: currentSuggestions.length,
-        totalDecisions: Object.keys(userDecisions).length
-    });
+    // Update decisions summary and enable/disable apply button
 
     const summaryElement = document.getElementById('decisionsSummary');
     const applyButton = document.getElementById('applyAllDecisionsBtn');
@@ -2685,12 +2675,7 @@ function updateDecisionsSummary() {
     const rejectedCount = decisions.filter(d => d.action === 'reject').length;
     const modifiedCount = decisions.filter(d => d.action === 'modify').length;
 
-    console.log('[DEBUG] updateDecisionsSummary: Decision counts', {
-        total: totalDecisions,
-        accepted: acceptedCount,
-        rejected: rejectedCount,
-        modified: modifiedCount
-    });
+    // Calculate decision counts
 
     let summaryText = '';
     if (totalDecisions === 0) {
@@ -2739,10 +2724,14 @@ async function applyAllDecisions() {
 
         console.log('[DEBUG] applyAllDecisions: UI updated to loading state');
 
-        // Prepare decisions data for API
+        // Prepare decisions data for API (map prefixed IDs back to original IDs)
         const decisionsData = {};
-        Object.entries(userDecisions).forEach(([suggestionId, decision]) => {
-            decisionsData[suggestionId] = {
+        Object.entries(userDecisions).forEach(([prefixedId, decision]) => {
+            // Find the original ID by looking up the suggestion
+            const suggestion = currentSuggestions.find(s => s.id === prefixedId);
+            const originalId = suggestion ? suggestion.originalId : prefixedId;
+            
+            decisionsData[originalId] = {
                 action: decision.action,
                 modifiedText: decision.modifiedText || null
             };
@@ -3997,7 +3986,7 @@ async function saveChatToFirestore(chat) {
 
         const result = await response.json();
         if (result.success) {
-            console.log(`[FIRESTORE] Saved chat: ${chat.id}`);
+            // Chat saved to Firestore
             return true;
         } else {
             throw new Error(result.error || 'Unknown error saving chat');
@@ -4281,15 +4270,7 @@ async function deleteChat(chatId, event) {
 
 
 function renderChatHistory() {
-    console.log('[DEBUG] renderChatHistory called');
     const historyList = document.getElementById('historyList');
-    
-    console.log('[DEBUG] renderChatHistory:', {
-        historyListExists: !!historyList,
-        chatHistoryLength: chatHistory.length,
-        currentChatId: currentChatId,
-        chatHistoryData: chatHistory
-    });
     
     if (!historyList) {
         console.error('[DEBUG] historyList element not found!');
@@ -4297,22 +4278,13 @@ function renderChatHistory() {
     }
 
     historyList.innerHTML = '';
-    console.log('[DEBUG] Cleared historyList innerHTML');
     
     if (chatHistory.length === 0) {
-        console.log('[DEBUG] No chat history to render');
         historyList.innerHTML = '<div class="no-chats">No chat history yet</div>';
         return;
     }
     
     chatHistory.forEach((chat, index) => {
-        console.log(`[DEBUG] Rendering chat ${index}:`, {
-            id: chat.id,
-            title: chat.title,
-            preview: chat.preview,
-            isActive: chat.id === currentChatId
-        });
-        
         const item = document.createElement('div');
         item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
         item.setAttribute('data-chat-id', chat.id);
@@ -4324,10 +4296,7 @@ function renderChatHistory() {
             <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
         `;
         historyList.appendChild(item);
-        console.log(`[DEBUG] Added chat item ${index} to historyList`);
     });
-    
-    console.log('[DEBUG] renderChatHistory completed, historyList.children.length:', historyList.children.length);
 }
 
 async function initializeChatHistory() {
