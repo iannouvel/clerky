@@ -2207,3 +2207,8 @@ div.third-column,
 .logo-link:hover {
     text-decoration: none !important;
 }
+
+/* Settings button icon styling */
+#settingsBtn {
+    font-size: 18px;
+}
