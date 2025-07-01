@@ -2185,13 +2185,16 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         }
 
         // Store session data globally
+        const previousSession = currentAdviceSession;
         currentAdviceSession = result.sessionId;
         currentSuggestions = result.suggestions || [];
         userDecisions = {};
 
         console.log('[DEBUG] dynamicAdvice: Stored session data', {
-            sessionId: currentAdviceSession,
-            suggestionsCount: currentSuggestions.length
+            previousSessionId: previousSession,
+            newSessionId: currentAdviceSession,
+            suggestionsCount: currentSuggestions.length,
+            sessionChanged: previousSession !== currentAdviceSession
         });
 
         // Display interactive suggestions using appendToSummary1
@@ -2383,19 +2386,30 @@ function getOriginalTextLabel(originalText, category) {
 function handleSuggestionAction(suggestionId, action) {
     console.log('[DEBUG] handleSuggestionAction called', {
         suggestionId,
-        action
+        action,
+        currentSuggestionsCount: currentSuggestions?.length,
+        currentSuggestionIds: currentSuggestions?.map(s => s.id),
+        currentAdviceSession
     });
 
     const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
     if (!suggestionElement) {
-        console.error('[DEBUG] handleSuggestionAction: Suggestion element not found:', suggestionId);
+        console.error('[DEBUG] handleSuggestionAction: Suggestion element not found:', {
+            suggestionId,
+            allSuggestionElements: Array.from(document.querySelectorAll('[data-suggestion-id]')).map(el => el.getAttribute('data-suggestion-id'))
+        });
         return;
     }
 
     // Find the suggestion data
     const suggestion = currentSuggestions.find(s => s.id === suggestionId);
     if (!suggestion) {
-        console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', suggestionId);
+        console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', {
+            suggestionId,
+            currentSuggestionsCount: currentSuggestions?.length,
+            availableSuggestionIds: currentSuggestions?.map(s => s.id),
+            searchedFor: suggestionId
+        });
         return;
     }
 
@@ -2756,9 +2770,9 @@ async function applyAllDecisions() {
                 console.log('[DEBUG] Updated userInput with new transcript for next guideline');
             }
 
-            // Clear decisions and session for next guideline (suggestions will be replaced automatically)
+            // Clear decisions for next guideline (session and suggestions will be replaced automatically)
             window.userDecisions = {};
-            window.currentAdviceSession = null;
+            // Note: Keep currentAdviceSession until new one is created
 
             // Move to next step and process next guideline
             window.currentSequentialStep++;
@@ -2880,9 +2894,9 @@ function replaceOriginalTranscript() {
                 );
                 
                 if (continuePrompt) {
-                    // Clear decisions and session for next guideline (suggestions will be replaced automatically)
+                    // Clear decisions for next guideline (session and suggestions will be replaced automatically)
                     window.userDecisions = {};
-                    window.currentAdviceSession = null;
+                    // Note: Keep currentAdviceSession until new one is created
 
                     // Move to next step
                     window.currentSequentialStep++;
