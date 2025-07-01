@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 24/34",
+  "transcriptLength": 2870,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format (Obstetrics & Gynaecology)**  \n\n#### **SITUATION:**  \n- **Patient:** 62F, PMHx of HTN, T2DM, obesity (BMI 38)  \n- **Presenting complaint:** Postmenopausal bleeding (PMB) x 3 months, intermittent, heavy at times. No pain.  \n- **Key clinical issue:** ?Endometrial cancer – urgent assessment required due to high-risk profile (age, obesity, diabetes).  \n\n#### **BACKGROUND:**  \n- **Obstetric/Gynae Hx:** G3P2, LMP 10y ago, no HRT. No previous abnormal smears.  \n- **...",
+  "chunkGuidelines": [
+    "mp072-newborn-feeding-pdf: MP072 Newborn Feeding",
+    "mp073-pregnancy-loss-pdf: MP073 Pregnancy Loss",
+    "mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf: MP074 Assessment and Management of babies accidently dropped in Hospital",
+    "mp077-cervical-cerclage-cervical-sutre-pdf: MP077 Cervical Cerclage (Cervical Sutre)",
+    "mp079-newborn-blood-spot-screening-pdf: MP079 Newborn Blood Spot Screening",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline"
+  ],
+  "chunkIndex": 24,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.3\"},\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.2\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp077-cervical-cerclage-cervical-sutre-pdf\", \"title\": \"Cervical Cerclage (Cervical Sutre)\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp073-pregnancy-loss-pdf\", \"title\": \"Pregnancy Loss\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp072-newborn-feeding-pdf\", \"title\": \"Newborn Feeding\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf\", \"title\": \"Assessment and Management of babies accidently dropped in Hospital\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp079-newborn-blood-spot-screening-pdf\", \"title\": \"Newborn Blood Spot Screening\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1136
+}
