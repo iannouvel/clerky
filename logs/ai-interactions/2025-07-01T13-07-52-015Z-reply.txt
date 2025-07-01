@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "### **Medical Clerking – SBAR Format (Obstetrics & Gynaecology)**  \n\n#### **SITUATION:**  \n- **Patient:** 62F, PMHx of HTN, T2DM, obesity (BMI 38)  \n- **Presenting complaint:** Postmenopausal bleeding (PMB) x 3 months, intermittent, heavy at times. No pain.  \n- **Key clinical issue:** ?Endometrial cancer – urgent assessment required due to high-risk profile (age, obesity, diabetes).  \n\n#### **BACKGROUND:**  \n- **Obstetric/Gynae Hx:** G3P2, LMP 10y ago, no HRT. No previous abnormal smears.  \n- **PMHx:** HTN (amlodipine 5mg OD), T2DM (metformin 1g BD), OSA (CPAP at night).  \n- **SHx:** Non-smoker, occasional ETOH. No FHx of gynae cancers.  \n- **Medications:** As above, no anticoagulants.  \n- **Recent investigations:**  \n  - **TV USS (today):** Endometrial thickness 12mm, heterogeneous appearance, no fibroids.  \n  - **FBC (today):** Hb 112 (mild anaemia), WCC 6.2, Plt 320.  \n\n#### **ASSESSMENT:**  \n- **Clinical exam:**  \n  - **Vitals:** BP 148/86, HR 78, SpO2 98% RA, afebrile.  \n  - **Abdomen:** Soft, non-tender, obese, no masses.  \n  - **PV exam:** No vulval/vaginal lesions, cervix appears normal, scant dark blood in vault. Uterus bulky, no adnexal masses.  \n- **Key findings:**  \n  - **High suspicion for endometrial pathology** (PMB + thickened endometrium).  \n  - **Differentials:**  \n    1. Endometrial cancer (most likely)  \n    2. Endometrial hyperplasia  \n    3. Atrophic endometritis (less likely given USS findings)  \n- **Urgency:** Requires urgent **hysteroscopy + biopsy** for definitive diagnosis.  \n\n#### **RECOMMENDATION:**  \n- **Immediate actions:**  \n  - **Refer to Gynae Oncology MDT** (2WW pathway for PMB).  \n  - **Book urgent hysteroscopy + endometrial biopsy** (OP/inpatient depending on capacity).  \n  - **Pre-op bloods:** FBC, U&E, LFTs, clotting, G&S (in case of anaemia or surgical planning).  \n  - **Consider CT CAP** if biopsy confirms malignancy for staging.  \n- **Monitoring:**  \n  - Repeat Hb pre-op if symptomatic anaemia (consider iron if Hb <100).  \n  - BP/glucose monitoring (optimise HTN/DM pre-op).  \n- **Follow-up:**  \n  - **MDT discussion** post-biopsy for further management (TAH+BSO vs. adjuvant therapy if malignancy confirmed).  \n  - **Counselling re: potential diagnosis & surgical options.**  \n\n**Documented by:** [Your Name]  \n**Role:** FY2 / SHO in Obstetrics & Gynaecology  \n**Date/Time:** [DD/MM/YYYY HH:MM]  \n\n*(For educational purposes only – fictional case.)*  \n\n---  \n**Notes:**  \n- Uses UK-appropriate terminology (e.g., \"2WW pathway\", \"OP\" for outpatient).  \n- Includes key gynae-oncology red flags (PMB, thickened endometrium).  \n- Follows realistic workflow (urgent biopsy, MDT referral).  \n- Abbreviations: PMHx (past medical history), TV USS (transvaginal ultrasound), FBC (full blood count), MDT (multidisciplinary team), TAH+BSO (total abdominal hysterectomy + bilateral salpingo-oophorectomy).",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 15,
+  "potentiallyRelevantCount": 15,
+  "lessRelevantCount": 56,
+  "notRelevantCount": 180
+}
