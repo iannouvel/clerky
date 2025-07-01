@@ -1219,7 +1219,8 @@ div.third-column,
 
 .user-input-section {
     padding: 0;
-    background: var(--card-background);
+    /* Light green background to visually separate the user input area */
+    background: #eaffea;
     border-top: 1px solid var(--border-color);
     margin-top: 0;
     width: 100%;
@@ -1276,7 +1277,7 @@ div.third-column,
     justify-content: flex-start;
     position: relative;
     z-index: 15; /* Ensure buttons stay above expanded sections */
-    background: var(--card-background, white);
+    background: transparent; /* inherit light green from parent */
     padding: 5px 0 5px 10px;
 }
 
@@ -1325,10 +1326,10 @@ div.third-column,
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
-/* Enhanced visibility for buttons during expansion */
+/* Maintain subtle green tint on hover/focus */
 .user-input-section:hover .input-buttons,
 .user-input-section:focus-within .input-buttons {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(234, 255, 234, 0.95); /* light-green with slight opacity */
     backdrop-filter: blur(5px);
     border-radius: 4px;
     margin: 10px -5px 0 -5px;
@@ -2212,3 +2213,5 @@ div.third-column,
 #settingsBtn {
     font-size: 18px;
 }
+
+/* test comment */
