@@ -2398,22 +2398,29 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
         `;
     });
 
-    // Add apply all button
+    // Add apply all button (with unique IDs based on current session)
+    const buttonId = `applyAllDecisionsBtn-${currentAdviceSession}`;
+    const summaryId = `decisionsSummary-${currentAdviceSession}`;
+    
     suggestionsHtml += `
             </div>
             <div class="advice-footer">
-                <button id="applyAllDecisionsBtn" class="apply-all-btn" onclick="applyAllDecisions()" disabled>
+                <button id="${buttonId}" class="apply-all-btn" onclick="applyAllDecisions()" disabled>
                     <span class="apply-spinner" style="display: none;">⏳</span>
                     <span class="apply-text">Apply All Decisions</span>
                 </button>
-                <div class="decisions-summary" id="decisionsSummary">
+                <div class="decisions-summary" id="${summaryId}">
                     Make your decisions above, then click "Apply All Decisions" to update the transcript.
                 </div>
             </div>
         </div>
     `;
 
-    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to summary1');
+    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to summary1', {
+        buttonId,
+        summaryId,
+        currentSession: currentAdviceSession
+    });
     appendToSummary1(suggestionsHtml, false);
 
     // Update the decisions summary
@@ -2659,13 +2666,18 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
 
 // Update decisions summary and enable/disable apply button
 function updateDecisionsSummary() {
-    // Update decisions summary and enable/disable apply button
+    // Update decisions summary and enable/disable apply button for current session
+    
+    if (!currentAdviceSession) {
+        console.error('[DEBUG] updateDecisionsSummary: No current advice session');
+        return;
+    }
 
-    const summaryElement = document.getElementById('decisionsSummary');
-    const applyButton = document.getElementById('applyAllDecisionsBtn');
+    const summaryElement = document.getElementById(`decisionsSummary-${currentAdviceSession}`);
+    const applyButton = document.getElementById(`applyAllDecisionsBtn-${currentAdviceSession}`);
     
     if (!summaryElement || !applyButton) {
-        console.error('[DEBUG] updateDecisionsSummary: Required elements not found');
+        console.error('[DEBUG] updateDecisionsSummary: Required elements not found for session:', currentAdviceSession);
         return;
     }
 
@@ -2714,7 +2726,7 @@ async function applyAllDecisions() {
         return;
     }
 
-    const applyButton = document.getElementById('applyAllDecisionsBtn');
+    const applyButton = document.getElementById(`applyAllDecisionsBtn-${currentAdviceSession}`);
     const applySpinner = applyButton?.querySelector('.apply-spinner');
     const applyText = applyButton?.querySelector('.apply-text');
 
