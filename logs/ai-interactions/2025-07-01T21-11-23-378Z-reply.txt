@@ -1,0 +1,132 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Professional Medical Clerking – SBAR Format**  \n\n---  \n\n### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  \n- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  \n- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  \n- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic instability at present.  \n\n### **BACKGROUND:**  \n**Relevant PMHx:**  \n- **OBGYN Hx:**  \n  - G4P2 (2x SVD, 1x LSCS for FTP, 1x TOP)  \n  - Previous IUD (Mirena®) removed 6/12 ago due to expulsion  \n  - No known fibroids or endometriosis  \n- **Medical Hx:**  \n  - Hypothyroidism (on levothyroxine 75mcg OD)  \n  - Obesity (BMI 32)  \n  - No known coagulopathy  \n- **Surgical Hx:**  \n  - LSCS (2018)  \n  - Appendicectomy (2005)  \n- **Medications:**  \n  - Levothyroxine 75mcg OD  \n  - NSAIDs PRN for dysmenorrhea (no recent use)  \n- **Allergies:** NKDA  \n- **Social Hx:**  \n  - Non-smoker, occasional ETOH  \n  - Works as a teacher, moderately active  \n\n**Risk Factors for AUB:**  \n- Obesity (↑ endometrial hyperplasia risk)  \n- Hypothyroidism (may exacerbate HMB)  \n- Previous IUD expulsion (possible structural cause)  \n\n### **ASSESSMENT:**  \n**Clinical Findings (0800 hours):**  \n- **Vitals:**  \n  - BP: 128/78 mmHg  \n  - HR: 88 bpm (regular)  \n  - Temp: 36.7°C  \n  - SpO₂: 98% RA  \n  - RR: 14/min  \n- **General Exam:**  \n  - Pale conjunctivae (clinical anemia)  \n  - No signs of hemodynamic compromise  \n- **Abdo Exam:**  \n  - Soft, non-tender, no palpable masses  \n- **PV Exam (consented & chaperoned):**  \n  - No active bleeding at time of exam  \n  - Cervix appears normal, no cervical excitation  \n  - Uterus anteverted, non-tender, normal size  \n  - No adnexal masses  \n\n**Investigations:**  \n- **Bloods (FBC, LFTs, U&Es, CRP, TFTs, coagulation screen):**  \n  - Hb: 98 g/L (↓ from 112 g/L 6/12 ago)  \n  - MCV: 78 fL (microcytic)  \n  - Ferritin: 12 μg/L (↓)  \n  - TSH: 2.1 mIU/L (well-controlled)  \n  - Platelets: 220 x10⁹/L  \n  - INR/APTT: Normal  \n- **Imaging:**  \n  - **TV USS:**  \n    - Endometrial thickness: 12mm (heterogeneous)  \n    - No fibroids/polyps seen  \n    - Normal adnexa  \n  - **Pipelle biopsy (awaiting histology)**  \n\n**Differential Diagnosis (PALM-COEIN):**  \n1. **Polyp/Adenomyosis** (USS inconclusive, biopsy pending)  \n2. **Endometrial hyperplasia** (↑ risk due to obesity)  \n3. **Coagulopathy** (unlikely given normal coagulation)  \n4. **Ovulatory dysfunction** (secondary to hypothyroidism?)  \n5. **Iatrogenic** (none identified)  \n\n### **RECOMMENDATION:**  \n**Immediate Management:**  \n- **Iron supplementation:** Ferrous sulfate 200mg BD + vitamin C (monitor Hb in 4/52)  \n- **Hormonal therapy:**  \n  - Start norethisterone 5mg TDS for 21/7 (to regulate bleeding)  \n  - Consider Mirena® IUD reinsertion if biopsy normal  \n- **Analgesia:** Mefenamic acid 500mg TDS PRN (if dysmenorrhea)  \n\n**Monitoring & Follow-Up:**  \n- **Repeat Hb in 4/52** (target >110 g/L)  \n- **Await endometrial biopsy results** (exclude hyperplasia/malignancy)  \n- **GYN OPD follow-up in 6/52 with hysteroscopy planning including: safety checklist (pregnancy exclusion), consent discussion about potential pain, and arrangement of dedicated recovery area**  \n\n**Further Investigations if Needed:**  \n- **If hysteroscopy is required, use vaginoscopic approach with miniaturised hysteroscope (≤3.5mm) and saline distension at lowest effective pressure**  \n- **Thyroid antibody testing** if TFTs fluctuate  \n\n**Contingencies:**  \n- If hemodynamically unstable → admit for IV iron/transfusion  \n- If biopsy shows hyperplasia → consider progestogens/hysterectomy (if completed family)  \n\n**Additional Considerations:**  \n- **Provide written information to the patient prior to hysteroscopy appointment, including details about the procedure, benefits and risks, advice regarding pre-operative analgesia, and contact details for the hysteroscopy unit**  \n- **If hysteroscopy is planned, recommend pre-procedure NSAIDs (e.g., mefenamic acid 500mg 1 hour prior) and consider TENS as first-line analgesia options**  \n- **Ensure standardized documentation of hysteroscopic technique and findings if procedure is performed, including: scope size, approach (vaginoscopic), distension medium (saline), pressure, and any interventions**  \n\n---  \n**Documented by:** [Your Name] (FY2)  \n**Reviewed by:** [Consultant Name] (Obstetrics & Gynaecology)  \n**Time/Date:** 0800 hours, 05/06/2024  \n\n*(This is a fictional case for educational purposes only.)*\n\nApply these changes:\nACCEPT: Replace \"GYN OPD follow-up in 6/52 with hysteroscopy planning including: safety checklist (pregnancy exclusion), consent discussion about potential pain, and arrangement of dedicated recovery area\" with \"GYN OPD follow-up in 6/52 with outpatient hysteroscopy planning including: written patient information provision, confirmation of speculum tolerance, safety checklist (pregnancy exclusion), consent discussion about potential pain, and arrangement of dedicated recovery area\" (Reason: According to the guideline: 'Written patient information should be provided before the appointment' (section 1.4) and 'She is able to tolerate a speculum examination' (section 3.1.2). These elements are critical for outpatient hysteroscopy preparation and should be explicitly documented. The patient meets criteria for OPH referral (section 2.1) due to persistent AUB >3 months in a woman >40 years with potential benefit from cavity assessment.)\nACCEPT: Replace \"Consider Mirena® IUD reinsertion if biopsy normal\" with \"Consider Mirena® IUD reinsertion during outpatient hysteroscopy if biopsy normal\" (Reason: The guideline specifies that OPH appointments include 'insertion of Mirena coil if indicated' (section 9.1). Since this patient has a history of IUD expulsion and meets OPH criteria, combining these procedures would be efficient. The guideline supports this approach for patients with AUB where endometrial assessment is needed (section 2.1).)\nACCEPT: Replace \"If hysteroscopy is required, use vaginoscopic approach with miniaturised hysteroscope (≤3.5mm) and saline distension at lowest effective pressure\" with \"If outpatient hysteroscopy is performed, document: scope size (≤3.5mm), vaginoscopic approach, saline distension medium, pressure used, and any interventions\" (Reason: The guideline requires 'standardized documentation of hysteroscopic technique and findings' (Additional Considerations). This patient meets OPH suitability criteria (section 3.1) and the detailed documentation aligns with protocol requirements for procedure quality assurance.)\nACCEPT: Replace \"Missing: documentation of patient's ability to tolerate speculum examination\" with \"Document confirmation of patient's ability to tolerate speculum examination (required for OPH suitability per section 3.1.2)\" (Reason: The guideline specifies 'She is able to tolerate a speculum examination' as a key suitability criterion for OPH (section 3.1.2). While the PV exam was performed, this specific tolerance assessment should be explicitly documented as it directly impacts OPH feasibility.)\nACCEPT: Replace \"Provide written information to the patient prior to hysteroscopy appointment\" with \"Provide standardized written information about outpatient hysteroscopy prior to appointment, including procedure details, benefits/risks, pre-procedure analgesia advice, and unit contact details\" (Reason: The guideline mandates 'Written patient information should be provided before the appointment' (section 1.4). This expansion ensures all required elements are covered, which is particularly important as this patient is new to OPH (previous IUD was inserted under different circumstances).)\nACCEPT: Replace \"If hysteroscopy is planned, recommend pre-procedure NSAIDs (e.g., mefenamic acid 500mg 1 hour prior) and consider TENS as first-line analgesia options\" with \"If outpatient hysteroscopy is planned, implement pre-procedure analgesic regimen: paracetamol 1g PO, codeine 30mg PO, and diclofenac 100mg PR 1 hour prior (per Appendix B)\" (Reason: The guideline provides specific analgesic protocols in Appendix B. For this patient with no NSAID contraindications, following the standardized regimen for Myosure morcellation (though not planned) provides adequate coverage for diagnostic OPH. This replaces the less specific NSAID recommendation.)\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1751404211709_vd2unrhaf",
+  "original_transcript_length": 4635,
+  "changes_applied": 6,
+  "decisions_summary": {
+    "accepted": 6,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: **Professional Medical Clerking – SBAR Format**  
+
+---  
+
+### **SITUATION:**  
+**Patient Demographics:**  
+- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  
+- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  
+- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  
+- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic instability at present.  
+
+### **BACKGROUND:**  
+**Relevant PMHx:**  
+- **OBGYN Hx:**  
+  - G4P2 (2x SVD, 1x LSCS for FTP, 1x TOP)  
+  - Previous IUD (Mirena®) removed 6/12 ago due to expulsion  
+  - No known fibroids or endometriosis  
+- **Medical Hx:**  
+  - Hypothyroidism (on levothyroxine 75mcg OD)  
+  - Obesity (BMI 32)  
+  - No known coagulopathy  
+- **Surgical Hx:**  
+  - LSCS (2018)  
+  - Appendicectomy (2005)  
+- **Medications:**  
+  - Levothyroxine 75mcg OD  
+  - NSAIDs PRN for dysmenorrhea (no recent use)  
+- **Allergies:** NKDA  
+- **Social Hx:**  
+  - Non-smoker, occasional ETOH  
+  - Works as a teacher, moderately active  
+
+**Risk Factors for AUB:**  
+- Obesity (↑ endometrial hyperplasia risk)  
+- Hypothyroidism (may exacerbate HMB)  
+- Previous IUD expulsion (possible structural cause)  
+
+### **ASSESSMENT:**  
+**Clinical Findings (0800 hours):**  
+- **Vitals:**  
+  - BP: 128/78 mmHg  
+  - HR: 88 bpm (regular)  
+  - Temp: 36.7°C  
+  - SpO₂: 98% RA  
+  - RR: 14/min  
+- **General Exam:**  
+  - Pale conjunctivae (clinical anemia)  
+  - No signs of hemodynamic compromise  
+- **Abdo Exam:**  
+  - Soft, non-tender, no palpable masses  
+- **PV Exam (consented & chaperoned):**  
+  - No active bleeding at time of exam  
+  - Cervix appears normal, no cervical excitation  
+  - Uterus anteverted, non-tender, normal size  
+  - No adnexal masses  
+  - **Document confirmation of patient's ability to tolerate speculum examination (required for OPH suitability per section 3.1.2)**  
+
+**Investigations:**  
+- **Bloods (FBC, LFTs, U&Es, CRP, TFTs, coagulation screen):**  
+  - Hb: 98 g/L (↓ from 112 g/L 6/12 ago)  
+  - MCV: 78 fL (microcytic)  
+  - Ferritin: 12 μg/L (↓)  
+  - TSH: 2.1 mIU/L (well-controlled)  
+  - Platelets: 220 x10⁹/L  
+  - INR/APTT: Normal  
+- **Imaging:**  
+  - **TV USS:**  
+    - Endometrial thickness: 12mm (heterogeneous)  
+    - No fibroids/polyps seen  
+    - Normal adnexa  
+  - **Pipelle biopsy (awaiting histology)**  
+
+**Differential Diagnosis (PALM-COEIN):**  
+1. **Polyp/Adenomyosis** (USS inconclusive, biopsy pending)  
+2. **Endometrial hyperplasia** (↑ risk due to obesity)  
+3. **Coagulopathy** (unlikely given normal coagulation)  
+4. **Ovulatory dysfunction** (secondary to hypothyroidism?)  
+5. **Iatrogenic** (none identified)  
+
+### **RECOMMENDATION:**  
+**Immediate Management:**  
+- **Iron supplementation:** Ferrous sulfate 200mg BD + vitamin C (monitor Hb in 4/52)  
+- **Hormonal therapy:**  
+  - Start norethisterone 5mg TDS for 21/7 (to regulate bleeding)  
+  - **Consider Mirena® IUD reinsertion during outpatient hysteroscopy if biopsy normal**  
+- **Analgesia:** Mefenamic acid 500mg TDS PRN (if dysmenorrhea)  
+
+**Monitoring & Follow-Up:**  
+- **Repeat Hb in 4/52** (target >110 g/L)  
+- **Await endometrial biopsy results** (exclude hyperplasia/malignancy)  
+- **GYN OPD follow-up in 6/52 with outpatient hysteroscopy planning including: written patient information provision, confirmation of speculum tolerance, safety checklist (pregnancy exclusion), consent discussion about potential pain, and arrangement of dedicated recovery area**  
+
+**Further Investigations if Needed:**  
+- **If outpatient hysteroscopy is performed, document: scope size (≤3.5mm), vaginoscopic approach, saline distension medium, pressure used, and any interventions**  
+- **Thyroid antibody testing** if TFTs fluctuate  
+
+**Contingencies:**  
+- If hemodynamically unstable → admit for IV iron/transfusion  
+- If biopsy shows hyperplasia → consider progestogens/hysterectomy (if completed family)  
+
+**Additional Considerations:**  
+- **Provide standardized written information about outpatient hysteroscopy prior to appointment, including procedure details, benefits/risks, pre-procedure analgesia advice, and unit contact details**  
+- **If outpatient hysteroscopy is planned, implement pre-procedure analgesic regimen: paracetamol 1g PO, codeine 30mg PO, and diclofenac 100mg PR 1 hour prior (per Appendix B)**  
+- **Ensure standardized documentation of hysteroscopic technique and findings if procedure is performed, including: scope size, approach (vaginoscopic), distension medium (saline), pressure, and any interventions**  
+
+---  
+**Documented by:** [Your Name] (FY2)  
+**Reviewed by:** [Consultant Name] (Obstetrics & Gynaecology)  
+**Time/Date:** 0800 hours, 05/06/2024  
+
+*(This is a fictional case for educational purposes only.)*
+
+--- Token Usage Report ---
+Prompt tokens: 2343
+Completion tokens: 1394
+Total tokens: 3737
+Estimated cost: $0.001868
