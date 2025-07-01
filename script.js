@@ -2260,11 +2260,13 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
 
         console.log('[DEBUG] dynamicAdvice: Stored session data', {
             sessionId: currentAdviceSession,
-            suggestionsCount: currentSuggestions.length
+            suggestionsCount: currentSuggestions.length,
+            firstSuggestionId: currentSuggestions[0]?.id,
+            firstOriginalId: currentSuggestions[0]?.originalId
         });
 
-        // Display interactive suggestions using appendToSummary1
-        await displayInteractiveSuggestions(result.suggestions, result.guidelineTitle);
+        // Display interactive suggestions using appendToSummary1 (use prefixed suggestions)
+        await displayInteractiveSuggestions(prefixedSuggestions, result.guidelineTitle);
 
         return result;
 
