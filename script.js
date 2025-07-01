@@ -2541,12 +2541,44 @@ function cancelModification(suggestionId) {
 
 // Update suggestion status UI
 function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
+    console.log('[DEBUG] updateSuggestionStatus: Looking for element:', `status-${suggestionId}`);
+    
     const statusElement = document.getElementById(`status-${suggestionId}`);
     if (!statusElement) {
-        console.error('[DEBUG] updateSuggestionStatus: Status element not found:', suggestionId);
+        console.error('[DEBUG] updateSuggestionStatus: Status element not found:', {
+            suggestionId,
+            expectedId: `status-${suggestionId}`,
+            allStatusElements: Array.from(document.querySelectorAll('[id^="status-"]')).map(el => ({
+                id: el.id,
+                suggestionId: el.id.replace('status-', '')
+            })),
+            allSuggestionElements: Array.from(document.querySelectorAll('[data-suggestion-id]')).map(el => ({
+                dataId: el.getAttribute('data-suggestion-id'),
+                statusElementExists: !!el.querySelector(`#status-${el.getAttribute('data-suggestion-id')}`)
+            }))
+        });
+        
+        // Try to find the status element within the suggestion container as a fallback
+        const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
+        if (suggestionElement) {
+            const fallbackStatusElement = suggestionElement.querySelector('.decision-status');
+            if (fallbackStatusElement) {
+                console.log('[DEBUG] updateSuggestionStatus: Found fallback status element, updating ID');
+                fallbackStatusElement.id = `status-${suggestionId}`;
+                // Continue with this element
+                updateSuggestionStatusWithElement(fallbackStatusElement, action, modifiedText, suggestionId);
+                return;
+            }
+        }
+        
         return;
     }
+    
+    updateSuggestionStatusWithElement(statusElement, action, modifiedText, suggestionId);
+}
 
+// Helper function to update the status element
+function updateSuggestionStatusWithElement(statusElement, action, modifiedText, suggestionId) {
     let statusHtml = '';
     let statusClass = '';
 
@@ -2569,6 +2601,13 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
     statusElement.className = `decision-status ${statusClass}`;
     statusElement.style.display = 'block';
 
+    console.log('[DEBUG] updateSuggestionStatusWithElement: Updated status element', {
+        suggestionId,
+        action,
+        statusClass,
+        elementId: statusElement.id
+    });
+
     // Hide the action buttons after decision is made with animation
     const actionButtonsElement = document.querySelector(`[data-suggestion-id="${suggestionId}"] .suggestion-actions`);
     if (actionButtonsElement) {
@@ -2577,6 +2616,7 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
         setTimeout(() => {
             actionButtonsElement.style.display = 'none';
         }, 300);
+        console.log('[DEBUG] updateSuggestionStatusWithElement: Hiding action buttons');
     }
 
     // Update suggestion item styling and then hide the entire suggestion with animation
@@ -2594,6 +2634,8 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
                 suggestionElement.style.display = 'none';
             }, 500);
         }, 1500); // Wait 1.5 seconds to let user see the decision status
+        
+        console.log('[DEBUG] updateSuggestionStatusWithElement: Applied styling and scheduled hiding');
     }
 }
 
