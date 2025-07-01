@@ -2756,8 +2756,7 @@ async function applyAllDecisions() {
                 console.log('[DEBUG] Updated userInput with new transcript for next guideline');
             }
 
-            // Clear current suggestions and reset session for next guideline
-            window.currentSuggestions = [];
+            // Clear decisions and session for next guideline (suggestions will be replaced automatically)
             window.userDecisions = {};
             window.currentAdviceSession = null;
 
@@ -2881,8 +2880,7 @@ function replaceOriginalTranscript() {
                 );
                 
                 if (continuePrompt) {
-                    // Clear current suggestions and reset session for next guideline
-                    window.currentSuggestions = [];
+                    // Clear decisions and session for next guideline (suggestions will be replaced automatically)
                     window.userDecisions = {};
                     window.currentAdviceSession = null;
 
