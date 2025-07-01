@@ -2955,6 +2955,12 @@ document.addEventListener('DOMContentLoaded', () => {
         findGuidelinesBtn.addEventListener('click', findRelevantGuidelines);
     }
 
+    // Add click handler for ask guidelines question button
+    const askGuidelinesQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
+    if (askGuidelinesQuestionBtn) {
+        askGuidelinesQuestionBtn.addEventListener('click', askGuidelinesQuestion);
+    }
+
     // Add click handler for dev button
     const devBtn = document.getElementById('devBtn');
     if (devBtn) {
@@ -6950,4 +6956,483 @@ const ClinicalConditionsService = {
     }
 };
 
+// Ask Guidelines Question functionality
+async function askGuidelinesQuestion() {
+    const askQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
+    const questionSpinner = document.getElementById('askQuestionSpinner');
+    const originalText = askQuestionBtn.textContent;
+    
+    try {
+        const question = document.getElementById('userInput').value;
+        if (!question) {
+            alert('Please enter a question first');
+            return;
+        }
 
+        // Set loading state
+        askQuestionBtn.classList.add('loading');
+        askQuestionBtn.disabled = true;
+        questionSpinner.style.display = 'inline-block';
+
+        // Initialize the question search summary
+        let searchProgress = '## Asking Guidelines A Question\n\n';
+        searchProgress += `**Your Question:** ${question}\n\n`;
+        appendToSummary1(searchProgress);
+
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        // Update progress
+        const loadingMessage = 'Loading guidelines from database...\n';
+        appendToSummary1(loadingMessage, false);
+
+        // Get guidelines and summaries from Firestore (reuse existing logic)
+        const guidelines = await loadGuidelinesFromFirestore();
+        
+        // Format guidelines for relevancy matching
+        const guidelinesList = guidelines.map(g => ({
+            id: g.id,
+            title: g.title,
+            summary: g.summary,
+            condensed: g.condensed,
+            keywords: g.keywords,
+            downloadUrl: g.downloadUrl,
+            originalFilename: g.originalFilename,  
+            filename: g.filename,
+            organisation: g.organisation
+        }));
+
+        // Update progress with guideline count
+        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...\n`;
+        appendToSummary1(analyzeMessage, false);
+
+        console.log('[DEBUG] Sending request to /findRelevantGuidelines for question:', {
+            questionLength: question.length,
+            guidelinesCount: guidelinesList.length
+        });
+
+        const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                transcript: question,
+                guidelines: guidelinesList
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to find relevant guidelines');
+        }
+
+        // Update progress with completion
+        const completionMessage = 'Analysis complete! Please select guidelines to search for your answer...\n\n';
+        appendToSummary1(completionMessage, false);
+
+        // Show custom selection interface for Q&A
+        await showQuestionGuidelineSelectionInterface(data.categories, question);
+
+    } catch (error) {
+        console.error('[DEBUG] Error in askGuidelinesQuestion:', {
+            error: error.message,
+            stack: error.stack
+        });
+        
+        // Display error in summary1
+        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
+        appendToSummary1(errorMessage, false);
+        
+        alert('Error finding relevant guidelines: ' + error.message);
+    } finally {
+        // Reset button state
+        askQuestionBtn.classList.remove('loading');
+        askQuestionBtn.disabled = false;
+        questionSpinner.style.display = 'none';
+        askQuestionBtn.textContent = originalText;
+    }
+}
+
+// Show guideline selection interface specifically for Q&A
+async function showQuestionGuidelineSelectionInterface(categories, question) {
+    console.log('[DEBUG] showQuestionGuidelineSelectionInterface called with question:', question);
+
+    // Store question globally for later use
+    window.currentQuestion = question;
+
+    // Helper function to create PDF download link
+    function createPdfDownloadLink(guideline) {
+        if (!guideline) return '';
+
+        let downloadUrl;
+        if (guideline.downloadUrl) {
+            downloadUrl = guideline.downloadUrl;
+        } else if (guideline.originalFilename) {
+            const encodedFilename = encodeURIComponent(guideline.originalFilename);
+            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
+        } else {
+            return '';
+        }
+        
+        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
+    }
+
+    // Helper function to format relevance score
+    function formatRelevanceScore(relevanceValue) {
+        if (typeof relevanceValue === 'number') {
+            const percentage = Math.round(relevanceValue * 100);
+            return `${percentage}%`;
+        }
+        
+        if (typeof relevanceValue === 'string') {
+            const match = relevanceValue.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
+            if (match) {
+                const score = parseFloat(match[1] || match[2]);
+                const percentage = Math.round(score * 100);
+                return `${percentage}%`;
+            }
+        }
+        
+        return '50%';
+    }
+
+    // Create the Q&A selection interface HTML
+    const selectionHtml = `
+        <div class="question-guideline-selection-container">
+            <div class="selection-header">
+                <h3>❓ Select Guidelines to Search for Your Answer</h3>
+                <p><strong>Question:</strong> ${question}</p>
+                <p>Choose which guidelines to search for the answer to your question. Each selected guideline will be analyzed individually.</p>
+                <div class="selection-stats">
+                    <span><strong>Most Relevant:</strong> ${categories.mostRelevant?.length || 0} guidelines</span> |
+                    <span><strong>Potentially Relevant:</strong> ${categories.potentiallyRelevant?.length || 0} guidelines</span> |
+                    <span><strong>Less Relevant:</strong> ${categories.lessRelevant?.length || 0} guidelines</span>
+                </div>
+            </div>
+            
+            <div class="selection-controls">
+                <button type="button" class="selection-btn select-all-btn" onclick="selectAllQuestionGuidelines(true)">
+                    ✅ Select All Relevant
+                </button>
+                <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllQuestionGuidelines(false)">
+                    ❌ Deselect All
+                </button>
+            </div>
+            
+            <div class="guidelines-selection-list">
+                ${categories.mostRelevant && categories.mostRelevant.length > 0 ? `
+                    <div class="guideline-category">
+                        <h4>🎯 Most Relevant Guidelines</h4>
+                        ${categories.mostRelevant.map((guideline, index) => {
+                            const displayTitle = guideline.title || guideline.id;
+                            const organization = guideline.organisation || 'Unknown';
+                            const relevanceScore = formatRelevanceScore(guideline.relevance);
+                            const pdfLink = createPdfDownloadLink(guideline);
+                            
+                            return `
+                                <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
+                                    <div class="selection-checkbox">
+                                        <input type="checkbox" id="question-guideline-${index}" checked="checked" 
+                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                        <label for="question-guideline-${index}"></label>
+                                    </div>
+                                    <div class="guideline-info">
+                                        <div class="guideline-title">${displayTitle}</div>
+                                        <div class="guideline-meta">
+                                            <span class="organization">${organization}</span>
+                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
+                                        </div>
+                                    </div>
+                                    <div class="guideline-actions">
+                                        ${pdfLink}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                ` : ''}
+                
+                ${categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0 ? `
+                    <div class="guideline-category">
+                        <h4>⚠️ Potentially Relevant Guidelines</h4>
+                        ${categories.potentiallyRelevant.map((guideline, index) => {
+                            const displayTitle = guideline.title || guideline.id;
+                            const organization = guideline.organisation || 'Unknown';
+                            const relevanceScore = formatRelevanceScore(guideline.relevance);
+                            const pdfLink = createPdfDownloadLink(guideline);
+                            const checkboxIndex = (categories.mostRelevant?.length || 0) + index;
+                            
+                            return `
+                                <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
+                                    <div class="selection-checkbox">
+                                        <input type="checkbox" id="question-guideline-${checkboxIndex}" 
+                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                        <label for="question-guideline-${checkboxIndex}"></label>
+                                    </div>
+                                    <div class="guideline-info">
+                                        <div class="guideline-title">${displayTitle}</div>
+                                        <div class="guideline-meta">
+                                            <span class="organization">${organization}</span>
+                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
+                                        </div>
+                                    </div>
+                                    <div class="guideline-actions">
+                                        ${pdfLink}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                ` : ''}
+                
+                ${categories.lessRelevant && categories.lessRelevant.length > 0 ? `
+                    <div class="guideline-category">
+                        <h4>📉 Less Relevant Guidelines</h4>
+                        ${categories.lessRelevant.map((guideline, index) => {
+                            const displayTitle = guideline.title || guideline.id;
+                            const organization = guideline.organisation || 'Unknown';
+                            const relevanceScore = formatRelevanceScore(guideline.relevance);
+                            const pdfLink = createPdfDownloadLink(guideline);
+                            const checkboxIndex = (categories.mostRelevant?.length || 0) + (categories.potentiallyRelevant?.length || 0) + index;
+                            
+                            return `
+                                <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
+                                    <div class="selection-checkbox">
+                                        <input type="checkbox" id="question-guideline-${checkboxIndex}" 
+                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                        <label for="question-guideline-${checkboxIndex}"></label>
+                                    </div>
+                                    <div class="guideline-info">
+                                        <div class="guideline-title">${displayTitle}</div>
+                                        <div class="guideline-meta">
+                                            <span class="organization">${organization}</span>
+                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
+                                        </div>
+                                    </div>
+                                    <div class="guideline-actions">
+                                        ${pdfLink}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                ` : ''}
+            </div>
+            
+            <div class="selection-actions">
+                <button type="button" class="action-btn primary search-guidelines-btn" onclick="processQuestionAgainstGuidelines()">
+                    <span class="btn-icon">🔍</span>
+                    <span class="btn-text">Search Selected Guidelines</span>
+                    <span class="btn-spinner" style="display: none;">⏳</span>
+                </button>
+                <button type="button" class="action-btn secondary cancel-question-selection-btn" onclick="cancelQuestionSelection()">
+                    Cancel
+                </button>
+            </div>
+            
+            <div class="selection-info">
+                <p><strong>How it works:</strong></p>
+                <ul>
+                    <li>Each selected guideline will be searched individually for your question</li>
+                    <li>Guidelines that contain relevant information will show the answer with context</li>
+                    <li>Guidelines without relevant information will be marked as "No answer found"</li>
+                    <li>Processing time depends on the number of selected guidelines</li>
+                </ul>
+            </div>
+        </div>
+        
+        <style>
+        .question-guideline-selection-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .question-guideline-selection-container .selection-header h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        
+        .question-guideline-selection-container .selection-header p {
+            margin: 0 0 10px 0;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .question-guideline-selection-container .guideline-category {
+            margin: 15px 0;
+        }
+        
+        .question-guideline-selection-container .guideline-category h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+            font-size: 1em;
+            padding: 8px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        </style>
+    `;
+
+    // Display the selection interface
+    appendToSummary1(selectionHtml, false);
+}
+
+// Helper functions for Q&A guideline selection
+function selectAllQuestionGuidelines(select) {
+    const checkboxes = document.querySelectorAll('.question-guideline-checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = select;
+    });
+}
+
+function cancelQuestionSelection() {
+    const message = 'Question search cancelled.\n\n';
+    appendToSummary1(message, false);
+}
+
+// Process question against selected guidelines
+async function processQuestionAgainstGuidelines() {
+    const searchBtn = document.querySelector('.search-guidelines-btn');
+    const btnSpinner = document.querySelector('.search-guidelines-btn .btn-spinner');
+    const btnText = document.querySelector('.search-guidelines-btn .btn-text');
+    const originalText = btnText.textContent;
+    
+    try {
+        // Get selected guidelines
+        const selectedCheckboxes = document.querySelectorAll('.question-guideline-checkbox:checked');
+        if (selectedCheckboxes.length === 0) {
+            alert('Please select at least one guideline to search');
+            return;
+        }
+
+        const selectedGuidelineIds = Array.from(selectedCheckboxes).map(cb => cb.dataset.guidelineId);
+        const question = window.currentQuestion;
+
+        if (!question) {
+            alert('Question not found. Please try again.');
+            return;
+        }
+
+        // Set loading state
+        searchBtn.disabled = true;
+        btnSpinner.style.display = 'inline-block';
+        btnText.textContent = 'Searching...';
+
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            alert('Please sign in to use this feature');
+            return;
+        }
+        const idToken = await user.getIdToken();
+
+        // Start the search process
+        let searchProgress = `\n## 🔍 Searching Guidelines for Your Answer\n\n`;
+        searchProgress += `**Question:** ${question}\n\n`;
+        searchProgress += `**Selected Guidelines:** ${selectedGuidelineIds.length}\n\n`;
+        searchProgress += `**Status:** Processing guidelines one by one...\n\n`;
+        appendToSummary1(searchProgress, false);
+
+        const results = [];
+        
+        // Process each guideline individually
+        for (let i = 0; i < selectedGuidelineIds.length; i++) {
+            const guidelineId = selectedGuidelineIds[i];
+            const stepNumber = i + 1;
+            const totalSteps = selectedGuidelineIds.length;
+            
+            try {
+                // Update progress
+                const progressMessage = `### 📋 Processing Guideline ${stepNumber}/${totalSteps}: ${guidelineId}\n\n`;
+                appendToSummary1(progressMessage, false);
+
+                // Call the server endpoint to analyze the question against this guideline
+                const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        transcript: question,
+                        guideline: guidelineId
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                if (!data.success) {
+                    throw new Error(data.error || 'Analysis failed');
+                }
+
+                // Store the result
+                results.push({
+                    guidelineId: guidelineId,
+                    success: true,
+                    analysis: data.analysis
+                });
+
+                // Display the result immediately
+                const resultMessage = `**Result:** ✅ Analysis complete\n\n${data.analysis}\n\n---\n\n`;
+                appendToSummary1(resultMessage, false);
+
+            } catch (error) {
+                console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
+                
+                // Store the error result
+                results.push({
+                    guidelineId: guidelineId,
+                    success: false,
+                    error: error.message
+                });
+
+                // Display the error
+                const errorMessage = `**Result:** ❌ Error - ${error.message}\n\n---\n\n`;
+                appendToSummary1(errorMessage, false);
+            }
+        }
+
+        // Display final summary
+        const successCount = results.filter(r => r.success).length;
+        const errorCount = results.filter(r => !r.success).length;
+        
+        const summaryMessage = `## 📊 Search Complete\n\n` +
+                              `**Total Guidelines Searched:** ${selectedGuidelineIds.length}\n` +
+                              `**Successful Analyses:** ${successCount}\n` +
+                              `**Errors:** ${errorCount}\n\n` +
+                              `💡 **Tip:** Review the individual results above to find the most relevant answers to your question.\n\n`;
+        
+        appendToSummary1(summaryMessage, false);
+
+    } catch (error) {
+        console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);
+        
+        const errorMessage = `\n❌ **Error searching guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
+        appendToSummary1(errorMessage, false);
+        
+        alert('Error searching guidelines: ' + error.message);
+    } finally {
+        // Reset button state
+        searchBtn.disabled = false;
+        btnSpinner.style.display = 'none';
+        btnText.textContent = originalText;
+    }
