@@ -2422,6 +2422,15 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
         currentSession: currentAdviceSession
     });
     appendToSummary1(suggestionsHtml, false);
+    
+    // Add a data attribute to mark this as the current session's suggestions
+    setTimeout(() => {
+        const dynamicAdviceContainer = document.querySelector('.dynamic-advice-container:last-of-type');
+        if (dynamicAdviceContainer) {
+            dynamicAdviceContainer.setAttribute('data-session-id', currentAdviceSession);
+            dynamicAdviceContainer.classList.add('active-session');
+        }
+    }, 100);
 
     // Update the decisions summary
     updateDecisionsSummary();
@@ -2464,7 +2473,10 @@ function getOriginalTextLabel(originalText, category) {
 function handleSuggestionAction(suggestionId, action) {
     console.log('[DEBUG] handleSuggestionAction called', {
         suggestionId,
-        action
+        action,
+        currentChatId: window.currentChatId,
+        hasCurrentSuggestions: !!window.currentSuggestions,
+        currentSuggestionsCount: window.currentSuggestions?.length || 0
     });
 
     const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
@@ -2477,6 +2489,31 @@ function handleSuggestionAction(suggestionId, action) {
     const suggestion = currentSuggestions.find(s => s.id === suggestionId);
     if (!suggestion) {
         console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', suggestionId);
+        
+        // Show helpful error message to user
+        const errorMessage = `
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 15px; margin: 10px 0; color: #856404;">
+                <h4>⚠️ Action Not Available</h4>
+                <p><strong>Issue:</strong> You're trying to interact with suggestions from a different chat session.</p>
+                <p><strong>Solution:</strong> Please switch back to the original chat where these suggestions were generated, or generate new suggestions in the current chat.</p>
+                <p><small>Suggestion ID: ${suggestionId} | Current Chat: ${window.currentChatId}</small></p>
+            </div>
+        `;
+        
+        // Find the suggestion container and add the error message
+        const suggestionContainer = suggestionElement.closest('.suggestion-item');
+        if (suggestionContainer) {
+            suggestionContainer.insertAdjacentHTML('afterend', errorMessage);
+            
+            // Remove the error message after 10 seconds
+            setTimeout(() => {
+                const errorDiv = suggestionContainer.nextElementSibling;
+                if (errorDiv && errorDiv.innerHTML.includes('Action Not Available')) {
+                    errorDiv.remove();
+                }
+            }, 10000);
+        }
+        
         return;
     }
 
@@ -4153,6 +4190,52 @@ function loadChatState(state) {
     window.currentSuggestions = state.currentSuggestions || [];
     window.userDecisions = state.userDecisions || {};
     window.lastUpdatedTranscript = state.lastUpdatedTranscript || null;
+    
+    // Mark suggestion containers as active/inactive based on current session
+    setTimeout(() => {
+        markSuggestionContainersState();
+    }, 100);
+}
+
+function markSuggestionContainersState() {
+    const allContainers = document.querySelectorAll('.dynamic-advice-container');
+    allContainers.forEach(container => {
+        const sessionId = container.getAttribute('data-session-id');
+        if (sessionId === window.currentAdviceSession) {
+            container.classList.add('active-session');
+            container.classList.remove('inactive-session');
+        } else if (sessionId) {
+            container.classList.remove('active-session');
+            container.classList.add('inactive-session');
+            
+            // Add a visual overlay to inactive sessions
+            if (!container.querySelector('.inactive-overlay')) {
+                const overlay = document.createElement('div');
+                overlay.className = 'inactive-overlay';
+                overlay.innerHTML = `
+                    <div style="background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 4px; text-align: center; margin: 10px;">
+                        💤 <strong>Inactive Session</strong><br>
+                        <small>Switch back to the original chat to interact with these suggestions</small>
+                    </div>
+                `;
+                overlay.style.cssText = `
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(255, 255, 255, 0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10;
+                    border-radius: 6px;
+                `;
+                container.style.position = 'relative';
+                container.appendChild(overlay);
+            }
+        }
+    });
 }
 
 async function saveCurrentChatState() {
