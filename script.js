@@ -373,11 +373,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Helper function to format relevance score
     function formatRelevanceScore(relevanceValue) {
-        console.log('[DEBUG] formatRelevanceScore called with:', {
-            value: relevanceValue,
-            type: typeof relevanceValue
-        });
-        
         // If it's already a number, format it nicely
         if (typeof relevanceValue === 'number') {
             const percentage = Math.round(relevanceValue * 100);
@@ -388,11 +383,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         if (typeof relevanceValue === 'string') {
             const numericScore = extractRelevanceScoreLocal(relevanceValue);
             const percentage = Math.round(numericScore * 100);
-            console.log('[DEBUG] Extracted score:', {
-                original: relevanceValue,
-                numeric: numericScore,
-                percentage: percentage
-            });
             return `${percentage}%`;
         }
         
@@ -1574,12 +1564,6 @@ let scrollTimeout = null;
 let pendingScrollTarget = null;
 
 function appendToSummary1(content, clearExisting = false) {
-    console.log('[DEBUG] appendToSummary1 called with:', {
-        contentLength: content?.length,
-        clearExisting,
-        contentPreview: content?.substring(0, 100) + '...'
-    });
-
     const summary1 = document.getElementById('summary1');
     if (!summary1) {
         console.error('[DEBUG] summary1 element not found');
@@ -1604,7 +1588,6 @@ function appendToSummary1(content, clearExisting = false) {
 
         // Check if content is already HTML
         const isHtml = /<[a-z][\s\S]*>/i.test(content);
-        console.log('[DEBUG] Content type check:', { isHtml });
 
         let processedContent;
         if (isHtml) {
@@ -1618,7 +1601,6 @@ function appendToSummary1(content, clearExisting = false) {
             } else {
                 try {
                     processedContent = window.marked.parse(content);
-                    console.log('[DEBUG] Marked parsing successful');
                 } catch (parseError) {
                     console.error('[DEBUG] Error parsing with marked:', parseError);
                     processedContent = content;
@@ -1637,12 +1619,10 @@ function appendToSummary1(content, clearExisting = false) {
 
         // Append the sanitized content
         summary1.appendChild(newContentWrapper);
-        console.log('[DEBUG] Content appended successfully');
 
         // Store the first new content element for scrolling (if we don't have one yet)
         if (!pendingScrollTarget || clearExisting) {
             pendingScrollTarget = newContentWrapper;
-            console.log('[DEBUG] Set new scroll target');
         }
 
         // Clear any existing scroll timeout
@@ -1669,14 +1649,6 @@ function appendToSummary1(content, clearExisting = false) {
                             const targetScrollTop = Math.max(0, newContentOffsetTop - 20);
                             
                             summary1.scrollTop = targetScrollTop;
-                            
-                            console.log('[DEBUG] Debounced scroll to show top of first new content:', {
-                                newContentOffsetTop,
-                                containerHeight,
-                                targetScrollTop,
-                                finalScrollTop: summary1.scrollTop,
-                                summary1ScrollHeight: summary1.scrollHeight
-                            });
                         }
 
                         // Reset the scroll target after scrolling
@@ -2287,13 +2259,6 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
 
     // Add each suggestion
     suggestions.forEach((suggestion, index) => {
-        console.log('[DEBUG] displayInteractiveSuggestions: Processing suggestion', {
-            index,
-            id: suggestion.id,
-            category: suggestion.category,
-            priority: suggestion.priority
-        });
-
         const priorityClass = `priority-${suggestion.priority || 'medium'}`;
         const categoryIcon = getCategoryIcon(suggestion.category);
         
@@ -2375,7 +2340,6 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
         </div>
     `;
 
-    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to summary1');
     appendToSummary1(suggestionsHtml, false);
 
     // Update the decisions summary
@@ -2563,12 +2527,6 @@ function cancelModification(suggestionId) {
 
 // Update suggestion status UI
 function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
-    console.log('[DEBUG] updateSuggestionStatus called', {
-        suggestionId,
-        action,
-        hasModifiedText: !!modifiedText
-    });
-
     const statusElement = document.getElementById(`status-${suggestionId}`);
     if (!statusElement) {
         console.error('[DEBUG] updateSuggestionStatus: Status element not found:', suggestionId);
@@ -2605,7 +2563,6 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
         setTimeout(() => {
             actionButtonsElement.style.display = 'none';
         }, 300);
-        console.log('[DEBUG] updateSuggestionStatus: Hidden action buttons for suggestion:', suggestionId);
     }
 
     // Update suggestion item styling and then hide the entire suggestion with animation
@@ -2621,21 +2578,13 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
             // After animation completes, completely hide the element
             setTimeout(() => {
                 suggestionElement.style.display = 'none';
-                console.log('[DEBUG] updateSuggestionStatus: Completely hidden suggestion element:', suggestionId);
             }, 500);
         }, 1500); // Wait 1.5 seconds to let user see the decision status
-        
-        console.log('[DEBUG] updateSuggestionStatus: Scheduled suggestion hiding for:', suggestionId);
     }
 }
 
 // Update decisions summary and enable/disable apply button
 function updateDecisionsSummary() {
-    console.log('[DEBUG] updateDecisionsSummary called', {
-        totalSuggestions: currentSuggestions.length,
-        totalDecisions: Object.keys(userDecisions).length
-    });
-
     const summaryElement = document.getElementById('decisionsSummary');
     const applyButton = document.getElementById('applyAllDecisionsBtn');
     
@@ -2651,13 +2600,6 @@ function updateDecisionsSummary() {
     const acceptedCount = decisions.filter(d => d.action === 'accept').length;
     const rejectedCount = decisions.filter(d => d.action === 'reject').length;
     const modifiedCount = decisions.filter(d => d.action === 'modify').length;
-
-    console.log('[DEBUG] updateDecisionsSummary: Decision counts', {
-        total: totalDecisions,
-        accepted: acceptedCount,
-        rejected: rejectedCount,
-        modified: modifiedCount
-    });
 
     let summaryText = '';
     if (totalDecisions === 0) {
@@ -4140,13 +4082,6 @@ function renderChatHistory() {
     }
     
     chatHistory.forEach((chat, index) => {
-        console.log(`[DEBUG] Rendering chat ${index}:`, {
-            id: chat.id,
-            title: chat.title,
-            preview: chat.preview,
-            isActive: chat.id === currentChatId
-        });
-        
         const item = document.createElement('div');
         item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
         item.setAttribute('data-chat-id', chat.id);
@@ -4158,10 +4093,7 @@ function renderChatHistory() {
             <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
         `;
         historyList.appendChild(item);
-        console.log(`[DEBUG] Added chat item ${index} to historyList`);
     });
-    
-    console.log('[DEBUG] renderChatHistory completed, historyList.children.length:', historyList.children.length);
 }
 
 async function initializeChatHistory() {
@@ -5286,7 +5218,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         appendToSummary1(dynamicErrorMessage, false);
     }
 
-    console.log(`[DEBUG] Successfully processed guideline: ${guidelineId}`);
+    
 }
 
 // Make the function globally accessible
