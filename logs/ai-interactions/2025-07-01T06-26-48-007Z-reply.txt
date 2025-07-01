@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 33/34",
+  "transcriptLength": 3882,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 32-year-old **G3P2** (2 SVD, 0 miscarriages) **AFAB** presenting with **chronic pelvic pain (CPP)** for **6+ months**, worsening over the last **4 weeks**. Pain is **dull, intermittent**, localized to **lower quadrants (LQ > RQ)**, **radiating to lower back**, **exacerbated by menstruation and intercourse (dyspareunia)**. No acute red flags (e.g., hemodynamic instability, peritonism). Last menstrual period **(LMP) 10 da...",
+  "chunkGuidelines": [
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline",
+    "uhsx-protocol-for-nrt-pdf: UHSx Protocol for NRT",
+    "uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol",
+    "uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity",
+    "uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management",
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids"
+  ],
+  "chunkIndex": 33,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.85\"},\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.20\"},\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.10\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsx-surrogacy-protocol-pdf\", \"title\": \"UHSx Surrogacy protocol\", \"relevance\": \"0.30\"},\n    {\"id\": \"uhsx-role-of-the-rn-within-maternity-pdf\", \"title\": \"UHSx Role of the RN within Maternity\", \"relevance\": \"0.25\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-retained-placenta-protocol-pdf\", \"title\": \"UHSx Retained Placenta protocol\", \"relevance\": \"0.15\"},\n    {\"id\": \"uhsx-protocol-for-nrt-pdf\", \"title\": \"UHSx Protocol for NRT\", \"relevance\": \"0.05\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"UHSx Perineal Trauma & Repair Guideline\", \"relevance\": \"0.00\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1219
+}
