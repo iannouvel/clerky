@@ -2167,21 +2167,54 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         const idToken = await user.getIdToken();
         console.log('[DEBUG] dynamicAdvice: Got ID token');
 
-        // Call the dynamicAdvice API
+        // Call the dynamicAdvice API with retry logic
         console.log('[DEBUG] dynamicAdvice: Calling API endpoint');
-        const response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                transcript,
-                analysis,
-                guidelineId,
-                guidelineTitle
-            })
-        });
+        let response;
+        let retryCount = 0;
+        const maxRetries = 3;
+        
+        while (retryCount <= maxRetries) {
+            try {
+                response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        transcript,
+                        analysis,
+                        guidelineId,
+                        guidelineTitle
+                    })
+                });
+                
+                // If successful, break out of retry loop
+                if (response.ok) {
+                    break;
+                }
+                
+                // If 502/503/504 (server errors), retry
+                if ([502, 503, 504].includes(response.status)) {
+                    throw new Error(`Server error ${response.status} - retrying...`);
+                }
+                
+                // For other errors, don't retry
+                break;
+                
+            } catch (error) {
+                retryCount++;
+                console.log(`[DEBUG] dynamicAdvice: Attempt ${retryCount} failed:`, error.message);
+                
+                if (retryCount <= maxRetries) {
+                    const waitTime = Math.min(1000 * Math.pow(2, retryCount - 1), 10000); // Exponential backoff, max 10s
+                    console.log(`[DEBUG] dynamicAdvice: Waiting ${waitTime}ms before retry ${retryCount}/${maxRetries}`);
+                    await new Promise(resolve => setTimeout(resolve, waitTime));
+                } else {
+                    throw error;
+                }
+            }
+        }
 
         console.log('[DEBUG] dynamicAdvice: API response received', {
             status: response.status,
@@ -2859,7 +2892,37 @@ async function applyAllDecisions() {
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
                         console.error(`[DEBUG] Error processing next guideline ${nextGuidelineId}:`, error);
-                        const errorMessage = `❌ **Error processing guideline ${nextStepNumber}:** ${error.message}\n\n`;
+                        
+                        // Show detailed error with retry option
+                        const errorMessage = `
+                            <div class="sequential-processing-error">
+                                <h4>❌ Error Processing Guideline ${nextStepNumber}</h4>
+                                <p><strong>Error:</strong> ${error.message}</p>
+                                <p>This is often due to server deployment or network issues.</p>
+                                <div class="error-actions">
+                                    <button onclick="retryCurrentGuideline()" class="retry-btn" style="background: #f39c12; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">
+                                        🔄 Retry This Guideline
+                                    </button>
+                                    <button onclick="skipCurrentGuideline()" class="skip-btn" style="background: #6c757d; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">
+                                        ⏭️ Skip This Guideline
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <style>
+                            .sequential-processing-error {
+                                background: #fff3cd;
+                                border: 1px solid #ffc107;
+                                border-radius: 6px;
+                                padding: 15px;
+                                margin: 15px 0;
+                                color: #856404;
+                            }
+                            .error-actions {
+                                margin-top: 10px;
+                            }
+                            </style>
+                        `;
                         appendToSummary1(errorMessage, false);
                     }
                 }, 1000);
@@ -5370,6 +5433,69 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 
 // Make the function globally accessible
 window.processSelectedGuidelines = processSelectedGuidelines;
+
+// Helper functions for sequential processing error handling
+window.retryCurrentGuideline = async function() {
+    if (!window.sequentialProcessingActive) return;
+    
+    const queue = window.sequentialProcessingQueue || [];
+    const currentIndex = window.sequentialProcessingIndex || 0;
+    const guidelineId = queue[currentIndex];
+    const stepNumber = currentIndex + 1;
+    
+    console.log('[DEBUG] Retrying current guideline:', guidelineId);
+    
+    const retryMessage = `**🔄 Retrying Guideline ${stepNumber}...**\n\n`;
+    appendToSummary1(retryMessage, false);
+    
+    try {
+        await processSingleGuideline(guidelineId, stepNumber, queue.length);
+    } catch (error) {
+        console.error('[DEBUG] Retry failed:', error);
+        const failMessage = `❌ **Retry failed:** ${error.message}\n\nYou can try again or skip this guideline.\n\n`;
+        appendToSummary1(failMessage, false);
+    }
+};
+
+window.skipCurrentGuideline = function() {
+    if (!window.sequentialProcessingActive) return;
+    
+    const queue = window.sequentialProcessingQueue || [];
+    const currentIndex = window.sequentialProcessingIndex || 0;
+    const stepNumber = currentIndex + 1;
+    
+    console.log('[DEBUG] Skipping current guideline');
+    
+    const skipMessage = `**⏭️ Skipped Guideline ${stepNumber}**\n\n`;
+    appendToSummary1(skipMessage, false);
+    
+    // Move to next guideline or complete sequence
+    if (currentIndex < queue.length - 1) {
+        window.sequentialProcessingIndex = currentIndex + 1;
+        const nextGuidelineId = queue[currentIndex + 1];
+        const nextStepNumber = currentIndex + 2;
+        
+        setTimeout(async () => {
+            try {
+                const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
+                appendToSummary1(processingStepMessage, false);
+                await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
+            } catch (error) {
+                console.error('[DEBUG] Error processing next guideline after skip:', error);
+            }
+        }, 500);
+    } else {
+        // All done
+        window.sequentialProcessingActive = false;
+        const finalMessage = `
+            <div class="sequential-processing-complete">
+                <h3>🎉 Sequential Processing Complete!</h3>
+                <p>Processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).</p>
+            </div>
+        `;
+        appendToSummary1(finalMessage, false);
+    }
+};
 
 // Generate dynamic advice for multiple selected guidelines
 async function generateMultiGuidelineAdvice() {
