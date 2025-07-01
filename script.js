@@ -2801,6 +2801,109 @@ async function applyAllDecisions() {
         console.log('[DEBUG] applyAllDecisions: Results displayed successfully');
         debouncedSaveState();
 
+        // Check if we're in sequential processing mode and need to continue to next guideline
+        if (window.sequentialProcessingActive) {
+            const queue = window.sequentialProcessingQueue || [];
+            const currentIndex = window.sequentialProcessingIndex || 0;
+            
+            if (currentIndex < queue.length - 1) {
+                // Move to next guideline
+                window.sequentialProcessingIndex = currentIndex + 1;
+                const nextGuidelineId = queue[currentIndex + 1];
+                const nextStepNumber = currentIndex + 2;
+                
+                console.log(`[DEBUG] Sequential processing: Moving to guideline ${nextStepNumber}/${queue.length}`);
+                
+                // Update status display
+                const statusDiv = document.getElementById('processing-status');
+                if (statusDiv) {
+                    statusDiv.innerHTML = queue.map((id, index) => {
+                        const guideline = window.relevantGuidelines.find(g => g.id === id);
+                        const title = guideline ? (guideline.title || id) : id;
+                        const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+                        
+                        let className = 'processing-step pending';
+                        let emoji = '⏳';
+                        
+                        if (index < window.sequentialProcessingIndex) {
+                            className = 'processing-step completed';
+                            emoji = '✅';
+                        } else if (index === window.sequentialProcessingIndex) {
+                            className = 'processing-step current';
+                            emoji = '🔄';
+                        }
+                        
+                        return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
+                    }).join('');
+                }
+                
+                // Show transition message
+                const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
+                appendToSummary1(transitionMessage, false);
+                
+                // Update the transcript with applied changes automatically
+                if (result.updatedTranscript) {
+                    const userInput = document.getElementById('userInput');
+                    if (userInput) {
+                        userInput.value = result.updatedTranscript;
+                        console.log('[DEBUG] Sequential processing: Updated transcript automatically');
+                    }
+                }
+                
+                // Process next guideline after a brief delay
+                setTimeout(async () => {
+                    try {
+                        const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
+                        appendToSummary1(processingStepMessage, false);
+                        
+                        await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
+                    } catch (error) {
+                        console.error(`[DEBUG] Error processing next guideline ${nextGuidelineId}:`, error);
+                        const errorMessage = `❌ **Error processing guideline ${nextStepNumber}:** ${error.message}\n\n`;
+                        appendToSummary1(errorMessage, false);
+                    }
+                }, 1000);
+                
+            } else {
+                // All guidelines completed
+                window.sequentialProcessingActive = false;
+                
+                // Update final status
+                const statusDiv = document.getElementById('processing-status');
+                if (statusDiv) {
+                    statusDiv.innerHTML = queue.map((id, index) => {
+                        const guideline = window.relevantGuidelines.find(g => g.id === id);
+                        const title = guideline ? (guideline.title || id) : id;
+                        const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+                        return `<div class="processing-step completed">✅ ${index + 1}. ${shortTitle}</div>`;
+                    }).join('');
+                }
+                
+                // Show completion message
+                const finalMessage = `
+                    <div class="sequential-processing-complete">
+                        <h3>🎉 Sequential Processing Complete!</h3>
+                        <p>Successfully processed ${queue.length} guidelines sequentially.</p>
+                        <p><strong>All changes have been incorporated into your transcript.</strong></p>
+                    </div>
+                    
+                    <style>
+                    .sequential-processing-complete {
+                        background: #d4edda;
+                        border: 1px solid #28a745;
+                        border-radius: 6px;
+                        padding: 15px;
+                        margin: 15px 0;
+                        color: #155724;
+                    }
+                    </style>
+                `;
+                
+                appendToSummary1(finalMessage, false);
+                console.log('[DEBUG] Sequential processing completed successfully');
+            }
+        }
+
     } catch (error) {
         console.error('[DEBUG] applyAllDecisions: Error applying decisions:', {
             error: error.message,
@@ -5085,6 +5188,11 @@ async function processSelectedGuidelines() {
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
 
+        // Set up sequential processing globals
+        window.sequentialProcessingActive = true;
+        window.sequentialProcessingQueue = selectedGuidelineIds;
+        window.sequentialProcessingIndex = 0;
+
         const sequentialProcessingMessage = `
             <div class="sequential-processing-container">
                 <h3>🔄 Sequential Guideline Processing</h3>
@@ -5097,8 +5205,7 @@ async function processSelectedGuidelines() {
                 background: #e8f5e8;
                 border: 1px solid #4caf50;
                 border-radius: 6px;
-                padding: 15px;
-                margin: 15px 0;
+                padding: 15px 0;
             }
             .processing-status {
                 margin-top: 10px;
@@ -5126,12 +5233,8 @@ async function processSelectedGuidelines() {
         
         appendToSummary1(sequentialProcessingMessage, false);
 
-        // Process each guideline sequentially
-        for (let i = 0; i < selectedGuidelineIds.length; i++) {
-            const guidelineId = selectedGuidelineIds[i];
-            const stepNumber = i + 1;
-            
-            // Update status display
+        // Function to update status display
+        function updateSequentialStatus() {
             const statusDiv = document.getElementById('processing-status');
             if (statusDiv) {
                 statusDiv.innerHTML = selectedGuidelineIds.map((id, index) => {
@@ -5142,10 +5245,10 @@ async function processSelectedGuidelines() {
                     let className = 'processing-step pending';
                     let emoji = '⏳';
                     
-                    if (index < i) {
+                    if (index < window.sequentialProcessingIndex) {
                         className = 'processing-step completed';
                         emoji = '✅';
-                    } else if (index === i) {
+                    } else if (index === window.sequentialProcessingIndex) {
                         className = 'processing-step current';
                         emoji = '🔄';
                     }
@@ -5153,6 +5256,15 @@ async function processSelectedGuidelines() {
                     return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
                 }).join('');
             }
+        }
+
+        // Process only the first guideline - rest will be handled by applyAllDecisions
+        const i = 0;
+            const guidelineId = selectedGuidelineIds[i];
+            const stepNumber = i + 1;
+            
+            // Update status display for first guideline
+            updateSequentialStatus();
 
             console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
             
@@ -5162,49 +5274,16 @@ async function processSelectedGuidelines() {
             appendToSummary1(processingStepMessage, false);
 
             try {
-                // Process this single guideline
+                // Process only the first guideline - the rest will be handled in applyAllDecisions
                 await processSingleGuideline(guidelineId, stepNumber, selectedGuidelineIds.length);
-                
-                const completionMessage = `✅ **Guideline ${stepNumber} completed successfully**\n\n`;
-                appendToSummary1(completionMessage, false);
-                
-                // If not the last guideline, wait a bit before continuing
-                if (i < selectedGuidelineIds.length - 1) {
-                    const waitMessage = `Incorporating changes and preparing for next guideline...\n\n`;
-                    appendToSummary1(waitMessage, false);
-                    await new Promise(resolve => setTimeout(resolve, 1000)); // Brief pause
-                }
                 
             } catch (error) {
                 console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
-                const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\nContinuing with next guideline...\n\n`;
+                const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\n`;
                 appendToSummary1(errorMessage, false);
             }
-        }
 
-        // Final completion message
-        const finalMessage = `
-            <div class="sequential-processing-complete">
-                <h3>🎉 Sequential Processing Complete!</h3>
-                <p>Successfully processed ${selectedGuidelineIds.length} guidelines sequentially.</p>
-                <p><strong>Next Steps:</strong> Review all the suggestions above and use "Apply All Decisions" to incorporate your choices into the transcript.</p>
-            </div>
-            
-            <style>
-            .sequential-processing-complete {
-                background: #d4edda;
-                border: 1px solid #28a745;
-                border-radius: 6px;
-                padding: 15px;
-                margin: 15px 0;
-                color: #155724;
-            }
-            </style>
-        `;
-        
-        appendToSummary1(finalMessage, false);
-        
-        console.log('[DEBUG] Sequential processing completed successfully');
+            // Don't show completion message yet - will be shown when all guidelines are done
 
     } catch (error) {
         console.error('[DEBUG] Error in processSelectedGuidelines:', error);
