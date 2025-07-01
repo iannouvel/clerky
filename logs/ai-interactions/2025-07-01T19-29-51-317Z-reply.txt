@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 21/34",
+  "transcriptLength": 3778,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---  \n\n### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  \n- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  \n- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  \n- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic i...",
+  "chunkGuidelines": [
+    "mp035-care-of-women-in-labour-pdf: MP035 Care of Women in Labour",
+    "mp036-care-of-women-with-haemoglobinopathies-pdf: MP036 Care of Women with Haemoglobinopathies",
+    "mp037-fetal-heart-monitoring-guideline-2023final-pdf: MP037 Fetal Heart Monitoring guideline 2023_Final",
+    "mp038-fetal-blood-sampling-pdf: MP038 Fetal Blood Sampling",
+    "mp039-waterbirth-pdf: MP039 Waterbirth",
+    "mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf: MP041 (2024) Delay in Labour and use of Oxytocin v4.1",
+    "mp042-epidurals-in-labour-pdf: MP042 Epidurals in Labour",
+    "mp043-prevention-of-acid-aspiration-pdf: MP043 Prevention of Acid Aspiration"
+  ],
+  "chunkIndex": 21,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"mp036-care-of-women-with-haemoglobinopathies-pdf\", \"title\": \"Care of Women with Haemoglobinopathies\", \"relevance\": \"0.3\"},\n    {\"id\": \"mp037-fetal-heart-monitoring-guideline-2023final-pdf\", \"title\": \"Fetal Heart Monitoring guideline 2023_Final\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp038-fetal-blood-sampling-pdf\", \"title\": \"Fetal Blood Sampling\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp039-waterbirth-pdf\", \"title\": \"Waterbirth\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf\", \"title\": \"Delay in Labour and use of Oxytocin v4.1\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp042-epidurals-in-labour-pdf\", \"title\": \"Epidurals in Labour\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp043-prevention-of-acid-aspiration-pdf\", \"title\": \"Prevention of Acid Aspiration\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp035-care-of-women-in-labour-pdf\", \"title\": \"Care of Women in Labour\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1031
+}
