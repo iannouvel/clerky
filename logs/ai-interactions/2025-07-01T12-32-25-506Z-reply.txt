@@ -1,0 +1,20 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 34/34",
+  "transcriptLength": 2958,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female.  \n**Presenting complaint:** Chronic pelvic pain (CPP) worsening over 6 months, dyspareunia, and secondary dysmenorrhoea. Pain now **8/10** on VAS, refractory to **paracetamol/NSAIDs**.  \n**Key clinical issue:** Suspected **severe endometriosis** with possible **deep infiltrating disease (DIE)**.  \n\n#### **BACKGROUND:**  \n- **PMHx:**  \n  - Diagnosed **endometriosis** aged 26 (l...",
+  "chunkGuidelines": [
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 34,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.2\"},\n    {\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 447
+}
