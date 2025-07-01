@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 23/34",
+  "transcriptLength": 3778,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---  \n\n### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  \n- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  \n- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  \n- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic i...",
+  "chunkGuidelines": [
+    "mp056-obstetric-high-dependency-care-pdf: MP056 Obstetric High Dependency Care",
+    "mp057-communication-and-handover-of-care-betweeen-professionals-pdf: MP057 Communication and Handover of Care betweeen Professionals",
+    "mp064-hyponatraemia-in-labour-pdf: MP064 Hyponatraemia in Labour",
+    "mp065-neonatal-bcg-immunisation-programme-pdf: MP065 Neonatal BCG Immunisation Programme",
+    "mp066-neonatal-resuscitation-term-and-pre-term-pdf: MP066 Neonatal Resuscitation (Term and Pre-term)",
+    "mp069-care-of-the-newborn-pdf: MP069 Care of the Newborn",
+    "mp070-examination-of-the-newborn-pdf: MP070 Examination of the Newborn",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: MP071 Provisions and Schedules of Postnatal Care"
+  ],
+  "chunkIndex": 23,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\", \"title\": \"MP057 Communication and Handover of Care between Professionals\", \"relevance\": \"0.7\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp056-obstetric-high-dependency-care-pdf\", \"title\": \"MP056 Obstetric High Dependency Care\", \"relevance\": \"0.3\"},\n    {\"id\": \"mp064-hyponatraemia-in-labour-pdf\", \"title\": \"MP064 Hyponatraemia in Labour\", \"relevance\": \"0.2\"},\n    {\"id\": \"mp065-neonatal-bcg-immunisation-programme-pdf\", \"title\": \"MP065 Neonatal BCG Immunisation Programme\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp066-neonatal-resuscitation-term-and-pre-term-pdf\", \"title\": \"MP066 Neonatal Resuscitation (Term and Pre-term)\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp069-care-of-the-newborn-pdf\", \"title\": \"MP069 Care of the Newborn\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp070-examination-of-the-newborn-pdf\", \"title\": \"MP070 Examination of the Newborn\", \"relevance\": \"0.1\"},\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"MP071 Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1177
+}
