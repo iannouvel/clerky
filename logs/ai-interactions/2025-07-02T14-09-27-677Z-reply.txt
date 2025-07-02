@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 23/34",
+  "transcriptLength": 882,
+  "transcriptPreview": "42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\n\nAttended with DFM\n\nHPC\nClinically well\nNo SROM/PVB/abn discharge\nSlight reduction in FM today\nAttended MAU\nIx reassuringly N (obs/urine/CTG)\n\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\n\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\n\nDiscussed transverse presentatio...",
+  "chunkGuidelines": [
+    "mp056-obstetric-high-dependency-care-pdf: MP056 Obstetric High Dependency Care",
+    "mp057-communication-and-handover-of-care-betweeen-professionals-pdf: MP057 Communication and Handover of Care betweeen Professionals",
+    "mp064-hyponatraemia-in-labour-pdf: MP064 Hyponatraemia in Labour",
+    "mp065-neonatal-bcg-immunisation-programme-pdf: MP065 Neonatal BCG Immunisation Programme",
+    "mp066-neonatal-resuscitation-term-and-pre-term-pdf: MP066 Neonatal Resuscitation (Term and Pre-term)",
+    "mp069-care-of-the-newborn-pdf: MP069 Care of the Newborn",
+    "mp070-examination-of-the-newborn-pdf: MP070 Examination of the Newborn",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: MP071 Provisions and Schedules of Postnatal Care"
+  ],
+  "chunkIndex": 23,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp066-neonatal-resuscitation-term-and-pre-term-pdf\", \"title\": \"Neonatal Resuscitation (Term and Pre-term)\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp069-care-of-the-newborn-pdf\", \"title\": \"Care of the Newborn\", \"relevance\": \"0.85\"},\n    {\"id\": \"mp070-examination-of-the-newborn-pdf\", \"title\": \"Examination of the Newborn\", \"relevance\": \"0.85\"},\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\", \"title\": \"Communication and Handover of Care between Professionals\", \"relevance\": \"0.7\"},\n    {\"id\": \"mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp064-hyponatraemia-in-labour-pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp065-neonatal-bcg-immunisation-programme-pdf\", \"title\": \"Neonatal BCG Immunisation Programme\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1136
+}
