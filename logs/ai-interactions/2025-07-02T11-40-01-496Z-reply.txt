@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/34",
+  "transcriptLength": 1221,
+  "transcriptPreview": "25yo, P0, 34+5, BMI 30\n\nSituation: PPROM @ 0400\nHealthy pregnancy so far\nFirst MAU admission\nAttending triage ?SROM\nNo PVB/not contracting\n\nMed hx:\nNKDA\nO+\n\nBloods yesterday\nCRP 6\nHb 110\nPLT 255\nWBC 10.3\n\nFND seizure 2x week, sees neurologist every three months, on CBT therapy\nWrist surgery\n\nSocial and PNMH:\nAnxiety\nDepression\nPTSD\nPsychosis\nOutpatient Psychiatric unit\n- on VENLAFLAXINE 150mg OD and PROPRANOLOL 10mg prn\n- Declined PNMH referral\nStopped smoking cannabis, tobacco and vaping more t...",
+  "chunkGuidelines": [
+    "bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf: External Cephalic Version (ECV)",
+    "bjog-2017-management-of-breech-presentation-pdf: Management of Breech Presentation",
+    "bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf: Management of Inherited Bleeding Disorders in Pregnancy",
+    "bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf: Prevention of Early-onset Neonatal Group B Streptococcal Disease",
+    "bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf: Care of Women with Obesity in Pregnancy",
+    "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf: Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management",
+    "bjog-2020-management-of-gestational-trophoblastic-disease-pdf: Management of Gestational Trophoblastic Disease",
+    "bjog-2020-murphy-assisted-vaginal-birth-pdf: Assisted Vaginal Birth"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf\", \"title\": \"Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\", \"relevance\": \"0.95\"},\n    {\"id\": \"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\", \"title\": \"Care of Women with Obesity in Pregnancy\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf\", \"title\": \"Prevention of Early-onset Neonatal Group B Streptococcal Disease\", \"relevance\": \"0.65\"},\n    {\"id\": \"bjog-2020-murphy-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2017-management-of-breech-presentation-pdf\", \"title\": \"Management of Breech Presentation\", \"relevance\": \"0.35\"},\n    {\"id\": \"bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf\", \"title\": \"External Cephalic Version (ECV)\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf\", \"title\": \"Management of Inherited Bleeding Disorders in Pregnancy\", \"relevance\": \"0.10\"},\n    {\"id\": \"bjog-2020-management-of-gestational-trophoblastic-disease-pdf\", \"title\": \"Management of Gestational Trophoblastic Disease\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1450
+}
