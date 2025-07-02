@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 15/34",
+  "transcriptLength": 1221,
+  "transcriptPreview": "25yo, P0, 34+5, BMI 30\n\nSituation: PPROM @ 0400\nHealthy pregnancy so far\nFirst MAU admission\nAttending triage ?SROM\nNo PVB/not contracting\n\nMed hx:\nNKDA\nO+\n\nBloods yesterday\nCRP 6\nHb 110\nPLT 255\nWBC 10.3\n\nFND seizure 2x week, sees neurologist every three months, on CBT therapy\nWrist surgery\n\nSocial and PNMH:\nAnxiety\nDepression\nPTSD\nPsychosis\nOutpatient Psychiatric unit\n- on VENLAFLAXINE 150mg OD and PROPRANOLOL 10mg prn\n- Declined PNMH referral\nStopped smoking cannabis, tobacco and vaping more t...",
+  "chunkGuidelines": [
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia",
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth",
+    "gtg-2015-blood-transfusion-in-obstetrics-pdf: Blood Transfusion in Obstetrics",
+    "gtg-2015-chickenpox-in-pregnancy-pdf: Varicella Prevention and Management in Pregnancy",
+    "gtg-2015-fgm-pdf: Female Genital Mutilation and its Management"
+  ],
+  "chunkIndex": 15,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.9\"},\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2015-blood-transfusion-in-obstetrics-pdf\", \"title\": \"Blood Transfusion in Obstetrics\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2015-fgm-pdf\", \"title\": \"Female Genital Mutilation and its Management\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.0\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.0\"},\n    {\"id\": \"gtg-2015-chickenpox-in-pregnancy-pdf\", \"title\": \"Varicella Prevention and Management in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1068
+}
