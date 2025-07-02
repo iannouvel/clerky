@@ -1,0 +1,20 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 34/34",
+  "transcriptLength": 882,
+  "transcriptPreview": "42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\n\nAttended with DFM\n\nHPC\nClinically well\nNo SROM/PVB/abn discharge\nSlight reduction in FM today\nAttended MAU\nIx reassuringly N (obs/urine/CTG)\n\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\n\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\n\nDiscussed transverse presentatio...",
+  "chunkGuidelines": [
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 34,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [],\n  \"notRelevant\": [\n    {\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.0\"},\n    {\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 447
+}
