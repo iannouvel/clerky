@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 15/34",
+  "transcriptLength": 882,
+  "transcriptPreview": "42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\n\nAttended with DFM\n\nHPC\nClinically well\nNo SROM/PVB/abn discharge\nSlight reduction in FM today\nAttended MAU\nIx reassuringly N (obs/urine/CTG)\n\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\n\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\n\nDiscussed transverse presentatio...",
+  "chunkGuidelines": [
+    "gtg-2011-aph-pdf: Antepartum Haemorrhage",
+    "gtg-2011-pregnancy-and-breast-cancer-pdf: Pregnancy and Breast Cancer",
+    "gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf: The Initial Management of Chronic Pelvic Pain",
+    "gtg-2014-endometrial-hyperplasia-pdf: Management of Endometrial Hyperplasia",
+    "gtg-2015-birth-after-previous-cs-pdf: Birth After Previous Caesarean Birth",
+    "gtg-2015-blood-transfusion-in-obstetrics-pdf: Blood Transfusion in Obstetrics",
+    "gtg-2015-chickenpox-in-pregnancy-pdf: Varicella Prevention and Management in Pregnancy",
+    "gtg-2015-fgm-pdf: Female Genital Mutilation and its Management"
+  ],
+  "chunkIndex": 15,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2015-birth-after-previous-cs-pdf\", \"title\": \"Birth After Previous Caesarean Birth\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gtg-2011-aph-pdf\", \"title\": \"Antepartum Haemorrhage\", \"relevance\": \"0.6\"},\n    {\"id\": \"gtg-2015-blood-transfusion-in-obstetrics-pdf\", \"title\": \"Blood Transfusion in Obstetrics\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gtg-2015-chickenpox-in-pregnancy-pdf\", \"title\": \"Varicella Prevention and Management in Pregnancy\", \"relevance\": \"0.3\"},\n    {\"id\": \"gtg-2015-fgm-pdf\", \"title\": \"Female Genital Mutilation and its Management\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2011-pregnancy-and-breast-cancer-pdf\", \"title\": \"Pregnancy and Breast Cancer\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\", \"title\": \"The Initial Management of Chronic Pelvic Pain\", \"relevance\": \"0.1\"},\n    {\"id\": \"gtg-2014-endometrial-hyperplasia-pdf\", \"title\": \"Management of Endometrial Hyperplasia\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1067
+}
