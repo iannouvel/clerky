@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 30/34",
+  "transcriptLength": 882,
+  "transcriptPreview": "42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\n\nAttended with DFM\n\nHPC\nClinically well\nNo SROM/PVB/abn discharge\nSlight reduction in FM today\nAttended MAU\nIx reassuringly N (obs/urine/CTG)\n\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\n\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\n\nDiscussed transverse presentatio...",
+  "chunkGuidelines": [
+    "uhsussex-mp050-caesarean-section-pdf: Caesarean Section Protocol",
+    "uhsussex-mp053-obstetric-haemorrhage-pdf: Obstetric Haemorrhage Protocol: MP053",
+    "uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol",
+    "uhsussex-mp056-obstetric-high-dependency-care-pdf: Obstetric High Dependency Care",
+    "uhsussex-mp059-baby-abduction-policy-pdf: Baby Abduction Policy",
+    "uhsussex-mp064-hyponatraemia-in-labour-pdf: Hyponatraemia in Labour",
+    "uhsussex-mp076-maternal-death-pdf: UHSussex - MP076 - Maternal death.pdf",
+    "uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf: Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum"
+  ],
+  "chunkIndex": 30,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-mp050-caesarean-section-pdf\", \"title\": \"Caesarean Section Protocol\", \"relevance\": \"0.95\"},\n    {\"id\": \"uhsussex-mp053-obstetric-haemorrhage-pdf\", \"title\": \"Obstetric Haemorrhage Protocol: MP053\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"0.65\"},\n    {\"id\": \"uhsussex-mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp064-hyponatraemia-in-labour-pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"0.40\"},\n    {\"id\": \"uhsussex-mp076-maternal-death-pdf\", \"title\": \"UHSussex - MP076 - Maternal death.pdf\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp059-baby-abduction-policy-pdf\", \"title\": \"Baby Abduction Policy\", \"relevance\": \"0.10\"},\n    {\"id\": \"uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf\", \"title\": \"Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1200
+}
