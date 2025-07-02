@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "transcript": "42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\n\nAttended with DFM\n\nHPC\nClinically well\nNo SROM/PVB/abn discharge\nSlight reduction in FM today\nAttended MAU\nIx reassuringly N (obs/urine/CTG)\n\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\n\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\n\nDiscussed transverse presentation at term\nOffered admission \nExplained risk of cord prolapse: with SROM would be very risky, need an emergency CS\nIf out of hospital, assume 'child's pose', explained position, call triage and ambulance\nOffered earlier CS - agreed tomorrow, booked\nConsented for CS\nEilidh keen on staying in for a few hours, then home to sleep, back in the morning, will call if anything transpires.",
+    "guidelinesCount": 266,
+    "chunksProcessed": 34,
+    "chunksFailed": 0
+  },
+  "response": "{\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 47,\n  \"potentiallyRelevantCount\": 38,\n  \"lessRelevantCount\": 67,\n  \"notRelevantCount\": 114\n}",
+  "endpoint": "findRelevantGuidelines",
+  "timestamp": "2025-07-02T14-09-34",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"transcript\": \"42yo, P1 - CS, 38+2, BMI 26.5, Rh+ve\\n\\nAttended with DFM\\n\\nHPC\\nClinically well\\nNo SROM/PVB/abn discharge\\nSlight reduction in FM today\\nAttended MAU\\nIx reassuringly N (obs/urine/CTG)\\n\\nWas awaiting clinic appt this afternoon to discuss timing of planned CS\\n\\nBedside scan by MAU lead midwife as part of learning to do presentation scanning under my (SpR Nouvel) guidance\\nBaby transverse, head on maternal right, back up, DVP 4.5cm, nothing in the pelvis (no feet, no cord)\\n\\nDiscussed transverse presentation at term\\nOffered admission \\nExplained risk of cord prolapse: with SROM would be very risky, need an emergency CS\\nIf out of hospital, assume 'child's pose', explained position, call triage and ambulance\\nOffered earlier CS - agreed tomorrow, booked\\nConsented for CS\\nEilidh keen on staying in for a few hours, then home to sleep, back in the morning, will call if anything transpires.\",\n  \"guidelinesCount\": 266,\n  \"chunksProcessed\": 34,\n  \"chunksFailed\": 0\n}\n\nA: {\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 47,\n  \"potentiallyRelevantCount\": 38,\n  \"lessRelevantCount\": 67,\n  \"notRelevantCount\": 114\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
