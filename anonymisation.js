@@ -15,8 +15,8 @@ async function loadRedactPII() {
     if (redactPII) return redactPII;
     
     try {
-        // Try to load from CDN
-        const response = await fetch('https://unpkg.com/@libretto/redact-pii-light@1.0.1/dist/index.js');
+        // Try to load from CDN - using a more reliable URL
+        const response = await fetch('https://cdn.jsdelivr.net/npm/@libretto/redact-pii-light@1.0.1/dist/index.js');
         const script = await response.text();
         
         // Create a temporary module environment
@@ -299,8 +299,10 @@ class ClinicalDataAnonymiser {
         
         // Basic patterns for common PII
         const patterns = [
-            // Names with titles
-            { pattern: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor)\s+[A-Z][a-z]+/g, replacement: '[NAME]' },
+            // Names with titles (more comprehensive)
+            { pattern: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.|Miss)\s+[A-Z][a-z]+/g, replacement: '[NAME]' },
+            // Names without titles
+            { pattern: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g, replacement: '[NAME]' },
             // NHS numbers
             { pattern: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g, replacement: '[NHS_NUMBER]' },
             // Phone numbers
@@ -310,7 +312,9 @@ class ClinicalDataAnonymiser {
             // Dates
             { pattern: /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g, replacement: '[DATE]' },
             // Hospital names
-            { pattern: /(University Hospital|Royal Hospital|General Hospital|Medical Centre)/gi, replacement: '[HOSPITAL]' }
+            { pattern: /(University Hospital|Royal Hospital|General Hospital|Medical Centre|NHS Trust|Foundation Trust)/gi, replacement: '[HOSPITAL]' },
+            // Medical staff titles
+            { pattern: /(Consultant|Registrar|Fellow|Specialist)\s+[A-Z][a-z]+/g, replacement: '[MEDICAL_STAFF]' }
         ];
         
         patterns.forEach(({ pattern, replacement }) => {
