@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "what are the criteria for a 3rd trimester growth ultrasound",
+  "guidelinesCount": 266,
+  "chunksProcessed": 33,
+  "chunksFailed": 1
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 258,
+  "mostRelevantCount": 9,
+  "potentiallyRelevantCount": 31,
+  "lessRelevantCount": 64,
+  "notRelevantCount": 154
+}
