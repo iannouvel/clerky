@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "transcript": "what are the criteria for a 3rd trimester growth ultrasound",
+    "guidelinesCount": 266,
+    "chunksProcessed": 33,
+    "chunksFailed": 1
+  },
+  "response": "{\n  \"success\": true,\n  \"categoriesFound\": 258,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 31,\n  \"lessRelevantCount\": 64,\n  \"notRelevantCount\": 154\n}",
+  "endpoint": "findRelevantGuidelines",
+  "timestamp": "2025-07-07T15-45-12",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"transcript\": \"what are the criteria for a 3rd trimester growth ultrasound\",\n  \"guidelinesCount\": 266,\n  \"chunksProcessed\": 33,\n  \"chunksFailed\": 1\n}\n\nA: {\n  \"success\": true,\n  \"categoriesFound\": 258,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 31,\n  \"lessRelevantCount\": 64,\n  \"notRelevantCount\": 154\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
