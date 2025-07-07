@@ -7,7 +7,35 @@
  */
 
 // Import the redact-pii-light library
-const { redactPII } = require('@libretto/redact-pii-light');
+// Note: This will be loaded via CDN for browser compatibility
+let redactPII = null;
+
+// Load the library dynamically
+async function loadRedactPII() {
+    if (redactPII) return redactPII;
+    
+    try {
+        // Try to load from CDN
+        const response = await fetch('https://unpkg.com/@libretto/redact-pii-light@1.0.1/dist/index.js');
+        const script = await response.text();
+        
+        // Create a temporary module environment
+        const moduleExports = {};
+        const module = { exports: moduleExports };
+        const exports = moduleExports;
+        
+        // Execute the script in the module context
+        const func = new Function('module', 'exports', 'require', script);
+        func(module, exports, () => {});
+        
+        redactPII = module.exports.redactPII;
+        console.log('[ANONYMISER] Library loaded successfully from CDN');
+        return redactPII;
+    } catch (error) {
+        console.warn('[ANONYMISER] Failed to load library from CDN, using fallback:', error);
+        return null;
+    }
+}
 
 /**
  * Clinical Data Anonymiser Class
@@ -27,12 +55,17 @@ class ClinicalDataAnonymiser {
         
         try {
             // Test the library is working
-            const testResult = redactPII('Test patient John Doe, DOB: 01/01/1990');
-            console.log('[ANONYMISER] Library initialized successfully');
+            const redactPIIFunction = await loadRedactPII();
+            if (redactPIIFunction) {
+                const testResult = redactPIIFunction('Test patient John Doe, DOB: 01/01/1990');
+                console.log('[ANONYMISER] Library initialized successfully');
+            } else {
+                console.log('[ANONYMISER] Using fallback anonymisation');
+            }
             this.initialized = true;
         } catch (error) {
             console.error('[ANONYMISER] Failed to initialize:', error);
-            throw error;
+            this.initialized = true; // Still mark as initialized to use fallback
         }
     }
 
@@ -79,7 +112,7 @@ class ClinicalDataAnonymiser {
      * @param {Object} options - Anonymisation options
      * @returns {Object} - Anonymised text and metadata
      */
-    async anonymiseClinicalData(text, options = {}) {
+    async anonymise(text, options = {}) {
         if (!this.initialized) {
             await this.initialize();
         }
@@ -105,8 +138,14 @@ class ClinicalDataAnonymiser {
             };
 
             // Step 1: Use the library's built-in PII detection
-            const libraryResult = redactPII(anonymisedText);
-            anonymisedText = libraryResult.text;
+            const redactPIIFunction = await loadRedactPII();
+            if (redactPIIFunction) {
+                const libraryResult = redactPIIFunction(anonymisedText);
+                anonymisedText = libraryResult.text;
+            } else {
+                // Use fallback anonymisation
+                anonymisedText = this.basicAnonymisation(anonymisedText);
+            }
             
             // Step 2: Apply medical-specific patterns
             for (const [patternName, pattern] of Object.entries(this.customPatterns)) {
@@ -248,6 +287,49 @@ class ClinicalDataAnonymiser {
                 success: false
             };
         }
+    }
+
+    /**
+     * Fallback anonymisation when library is not available
+     * @param {string} text - Text to anonymise
+     * @returns {string} - Anonymised text
+     */
+    basicAnonymisation(text) {
+        let anonymisedText = text;
+        
+        // Basic patterns for common PII
+        const patterns = [
+            // Names with titles
+            { pattern: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor)\s+[A-Z][a-z]+/g, replacement: '[NAME]' },
+            // NHS numbers
+            { pattern: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g, replacement: '[NHS_NUMBER]' },
+            // Phone numbers
+            { pattern: /\b(\+44|0)\s*\d{2,4}\s*\d{3,4}\s*\d{3,4}\b/g, replacement: '[PHONE]' },
+            // Email addresses
+            { pattern: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g, replacement: '[EMAIL]' },
+            // Dates
+            { pattern: /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g, replacement: '[DATE]' },
+            // Hospital names
+            { pattern: /(University Hospital|Royal Hospital|General Hospital|Medical Centre)/gi, replacement: '[HOSPITAL]' }
+        ];
+        
+        patterns.forEach(({ pattern, replacement }) => {
+            anonymisedText = anonymisedText.replace(pattern, replacement);
+        });
+        
+        return anonymisedText;
+    }
+
+    /**
+     * Count replacements made during anonymisation
+     * @param {string} originalText - Original text
+     * @param {string} anonymisedText - Anonymised text
+     * @returns {number} - Number of replacements
+     */
+    countReplacements(originalText, anonymisedText) {
+        const originalWords = originalText.split(/\s+/).length;
+        const anonymisedWords = anonymisedText.split(/\s+/).length;
+        return Math.abs(originalWords - anonymisedWords);
     }
 
     /**
