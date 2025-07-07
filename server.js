@@ -2770,8 +2770,19 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
-    const { transcript, guidelines } = req.body;
+    const { transcript, guidelines, anonymisationInfo } = req.body;
     const userId = req.user.uid;
+    
+    // Log anonymisation information if provided
+    if (anonymisationInfo) {
+      console.log('[ANONYMISER] Server received anonymised data:', {
+        originalLength: anonymisationInfo.originalLength,
+        anonymisedLength: anonymisationInfo.anonymisedLength,
+        replacementsCount: anonymisationInfo.replacementsCount,
+        riskLevel: anonymisationInfo.riskLevel,
+        piiTypes: anonymisationInfo.piiTypes
+      });
+    }
     
     console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
     
@@ -5133,10 +5144,21 @@ app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
 
 // Endpoint for generating clinical notes
 app.post('/generateClinicalNote', authenticateUser, async (req, res) => {
-    const { transcript } = req.body;
+    const { transcript, anonymisationInfo } = req.body;
 
     if (!transcript) {
         return res.status(400).json({ success: false, message: 'Transcript is required' });
+    }
+
+    // Log anonymisation information if provided
+    if (anonymisationInfo) {
+        console.log('[ANONYMISER] Server received anonymised data for clinical note generation:', {
+            originalLength: anonymisationInfo.originalLength,
+            anonymisedLength: anonymisationInfo.anonymisedLength,
+            replacementsCount: anonymisationInfo.replacementsCount,
+            riskLevel: anonymisationInfo.riskLevel,
+            piiTypes: anonymisationInfo.piiTypes
+        });
     }
 
     try {

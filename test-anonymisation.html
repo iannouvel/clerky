@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymisation Test - Clerky</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+        }
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .success { border-left: 4px solid #28a745; }
+        .warning { border-left: 4px solid #ffc107; }
+        .error { border-left: 4px solid #dc3545; }
+        .info { border-left: 4px solid #17a2b8; }
+    </style>
+</head>
+<body>
+    <h1>🔒 Clerky Anonymisation Test</h1>
+    
+    <div class="container">
+        <h2>Test Clinical Data Anonymisation</h2>
+        <p>This page tests the anonymisation module to ensure it properly removes personally identifiable information while preserving clinical relevance.</p>
+        
+        <div class="test-section">
+            <h3>Sample Clinical Data</h3>
+            <p>Enter or use the sample data below to test anonymisation:</p>
+            <textarea id="testInput" placeholder="Enter clinical data here...">Patient: Mrs. Sarah Johnson, DOB: 15/03/1985, NHS Number: 123 456 7890
+Hospital: Royal London Hospital, Ward: Maternity Ward 3
+Consultant: Dr. Michael Smith
+Case: 32-year-old patient presenting with gestational diabetes at 28 weeks gestation. Blood pressure 140/90, BMI 28.5. Previous pregnancy in 2020 ended in miscarriage at 12 weeks. Current medications: Metformin 500mg twice daily. Contact: sarah.johnson@email.com, Phone: 020 7123 4567</textarea>
+        </div>
+        
+        <div class="test-section">
+            <button onclick="testPIIAnalysis()">🔍 Check for PII</button>
+            <button onclick="testAnonymisation()">🔒 Anonymise Data</button>
+            <button onclick="loadSampleData()">📋 Load Sample Data</button>
+            <button onclick="clearResults()">🗑️ Clear Results</button>
+        </div>
+        
+        <div class="test-section">
+            <h3>Results</h3>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <!-- Load the anonymisation module -->
+    <script type="module" src="anonymisation.js"></script>
+    
+    <script>
+        // Wait for the anonymisation module to load
+        window.addEventListener('DOMContentLoaded', async function() {
+            console.log('Testing anonymisation module...');
+            
+            // Check if the anonymiser is available
+            if (typeof window.clinicalAnonymiser !== 'undefined') {
+                console.log('✅ Anonymisation module loaded successfully');
+                document.getElementById('results').innerHTML = '<div class="result success">✅ Anonymisation module loaded successfully</div>';
+            } else {
+                console.error('❌ Anonymisation module not found');
+                document.getElementById('results').innerHTML = '<div class="result error">❌ Anonymisation module not found</div>';
+            }
+        });
+
+        async function testPIIAnalysis() {
+            const input = document.getElementById('testInput').value;
+            const resultsDiv = document.getElementById('results');
+            
+            if (!input.trim()) {
+                resultsDiv.innerHTML = '<div class="result error">❌ Please enter some text to test</div>';
+                return;
+            }
+
+            try {
+                if (typeof window.clinicalAnonymiser === 'undefined') {
+                    resultsDiv.innerHTML = '<div class="result error">❌ Anonymisation module not available</div>';
+                    return;
+                }
+
+                resultsDiv.innerHTML = '<div class="result info">🔍 Analysing text for PII...</div>';
+                
+                const analysis = await window.clinicalAnonymiser.checkForPII(input);
+                
+                let resultHtml = '<div class="result info">';
+                resultHtml += '<h4>PII Analysis Results:</h4>';
+                resultHtml += `<p><strong>Contains PII:</strong> ${analysis.containsPII ? 'Yes' : 'No'}</p>`;
+                resultHtml += `<p><strong>Risk Level:</strong> ${analysis.riskLevel.toUpperCase()}</p>`;
+                
+                if (analysis.piiTypes && analysis.piiTypes.length > 0) {
+                    resultHtml += '<p><strong>PII Types Found:</strong></p><ul>';
+                    analysis.piiTypes.forEach(type => {
+                        resultHtml += `<li>${type.type}: ${type.count} instances`;
+                        if (type.examples && type.examples.length > 0) {
+                            resultHtml += ` (examples: ${type.examples.join(', ')})`;
+                        }
+                        resultHtml += '</li>';
+                    });
+                    resultHtml += '</ul>';
+                }
+                
+                if (analysis.recommendations && analysis.recommendations.length > 0) {
+                    resultHtml += '<p><strong>Recommendations:</strong></p><ul>';
+                    analysis.recommendations.forEach(rec => {
+                        resultHtml += `<li>${rec}</li>`;
+                    });
+                    resultHtml += '</ul>';
+                }
+                
+                resultHtml += '</div>';
+                resultsDiv.innerHTML = resultHtml;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Error during PII analysis: ${error.message}</div>`;
+                console.error('PII Analysis error:', error);
+            }
+        }
+
+        async function testAnonymisation() {
+            const input = document.getElementById('testInput').value;
+            const resultsDiv = document.getElementById('results');
+            
+            if (!input.trim()) {
+                resultsDiv.innerHTML = '<div class="result error">❌ Please enter some text to test</div>';
+                return;
+            }
+
+            try {
+                if (typeof window.clinicalAnonymiser === 'undefined') {
+                    resultsDiv.innerHTML = '<div class="result error">❌ Anonymisation module not available</div>';
+                    return;
+                }
+
+                resultsDiv.innerHTML = '<div class="result info">🔒 Anonymising data...</div>';
+                
+                const result = await window.clinicalAnonymiser.anonymiseClinicalData(input, {
+                    preserveClinicalInfo: true,
+                    preserveDates: false,
+                    preserveAges: false,
+                    preserveGenders: false
+                });
+                
+                let resultHtml = '<div class="result success">';
+                resultHtml += '<h4>Anonymisation Results:</h4>';
+                resultHtml += `<p><strong>Success:</strong> ${result.success ? 'Yes' : 'No'}</p>`;
+                
+                if (result.success) {
+                    resultHtml += `<p><strong>Original Length:</strong> ${result.metadata.originalLength} characters</p>`;
+                    resultHtml += `<p><strong>Anonymised Length:</strong> ${result.metadata.anonymisedLength} characters</p>`;
+                    resultHtml += `<p><strong>Replacements Made:</strong> ${result.metadata.replacementsCount}</p>`;
+                    
+                    if (result.metadata.replacements && result.metadata.replacements.length > 0) {
+                        resultHtml += '<p><strong>Replacement Types:</strong></p><ul>';
+                        const typeCounts = {};
+                        result.metadata.replacements.forEach(rep => {
+                            typeCounts[rep.type] = (typeCounts[rep.type] || 0) + rep.count;
+                        });
+                        Object.entries(typeCounts).forEach(([type, count]) => {
+                            resultHtml += `<li>${type}: ${count} instances</li>`;
+                        });
+                        resultHtml += '</ul>';
+                    }
+                    
+                    resultHtml += '<h5>Anonymised Text:</h5>';
+                    resultHtml += `<div style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 10px;">${result.anonymisedText}</div>`;
+                } else {
+                    resultHtml += `<p><strong>Error:</strong> ${result.metadata.error || 'Unknown error'}</p>`;
+                }
+                
+                resultHtml += '</div>';
+                resultsDiv.innerHTML = resultHtml;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Error during anonymisation: ${error.message}</div>`;
+                console.error('Anonymisation error:', error);
+            }
+        }
+
+        function loadSampleData() {
+            const sampleData = `Patient: Mrs. Sarah Johnson, DOB: 15/03/1985, NHS Number: 123 456 7890
+Hospital: Royal London Hospital, Ward: Maternity Ward 3
+Consultant: Dr. Michael Smith
+Case: 32-year-old patient presenting with gestational diabetes at 28 weeks gestation. Blood pressure 140/90, BMI 28.5. Previous pregnancy in 2020 ended in miscarriage at 12 weeks. Current medications: Metformin 500mg twice daily. Contact: sarah.johnson@email.com, Phone: 020 7123 4567
+
+Clinical Assessment:
+- Patient reports increased thirst and frequent urination
+- Blood glucose readings consistently above 7.0 mmol/L
+- Fundal height measures 28cm at 28 weeks
+- Fetal movements normal
+- No proteinuria detected
+- Weight gain of 8kg since booking
+
+Plan:
+- Continue Metformin 500mg BD
+- Weekly blood glucose monitoring
+- Ultrasound scan at 32 weeks
+- Review by diabetes team next week
+- Patient education on diet and exercise`;
+
+            document.getElementById('testInput').value = sampleData;
+            document.getElementById('results').innerHTML = '<div class="result info">📋 Sample data loaded. Click "Check for PII" or "Anonymise Data" to test.</div>';
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+    </script>
+</body>
+</html> 

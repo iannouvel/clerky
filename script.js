@@ -1343,6 +1343,65 @@ async function findRelevantGuidelines(suppressHeader = false) {
             appendToSummary1(searchProgress);
         }
 
+        // ANONYMISATION STEP: Check and anonymise clinical data before sending to server
+        console.log('[ANONYMISER] Checking transcript for PII before processing...');
+        let anonymisedTranscript = transcript;
+        let anonymisationInfo = null;
+
+        try {
+            // Check if anonymiser is available
+            if (typeof window.clinicalAnonymiser !== 'undefined') {
+                // Check for PII first
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
+                console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
+
+                if (piiAnalysis.containsPII) {
+                    console.log('[ANONYMISER] PII detected, anonymising data...');
+                    
+                    // Anonymise the transcript
+                    const anonymisationResult = await window.clinicalAnonymiser.anonymiseClinicalData(transcript, {
+                        preserveClinicalInfo: true,
+                        preserveDates: false,
+                        preserveAges: false,
+                        preserveGenders: false
+                    });
+
+                    if (anonymisationResult.success) {
+                        anonymisedTranscript = anonymisationResult.anonymisedText;
+                        anonymisationInfo = {
+                            originalLength: anonymisationResult.metadata.originalLength,
+                            anonymisedLength: anonymisationResult.metadata.anonymisedLength,
+                            replacementsCount: anonymisationResult.metadata.replacementsCount,
+                            riskLevel: piiAnalysis.riskLevel,
+                            piiTypes: piiAnalysis.piiTypes
+                        };
+
+                        console.log('[ANONYMISER] Anonymisation completed:', anonymisationInfo);
+                        
+                        // Add anonymisation notice to the summary
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                            `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
+                            `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
+                            `- Replacements Made: ${anonymisationResult.metadata.replacementsCount}\n` +
+                            `- Clinical Information: Preserved\n\n`;
+                        appendToSummary1(anonymisationNotice, false);
+                    } else {
+                        console.warn('[ANONYMISER] Anonymisation failed, using original transcript');
+                        appendToSummary1('\n⚠️ **Privacy Note:** Anonymisation failed, using original data\n\n', false);
+                    }
+                } else {
+                    console.log('[ANONYMISER] No significant PII detected');
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false);
+                }
+            } else {
+                console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
+            }
+        } catch (anonymisationError) {
+            console.error('[ANONYMISER] Error during anonymisation:', anonymisationError);
+            // Continue with original transcript if anonymisation fails
+            anonymisedTranscript = transcript;
+        }
+
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
@@ -1391,8 +1450,10 @@ async function findRelevantGuidelines(suppressHeader = false) {
         appendToSummary1(analyzeMessage, false);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
-            transcriptLength: transcript.length,
-            guidelinesCount: guidelinesList.length
+            transcriptLength: anonymisedTranscript.length,
+            originalLength: transcript.length,
+            guidelinesCount: guidelinesList.length,
+            anonymisationApplied: anonymisationInfo !== null
         });
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
@@ -1402,8 +1463,9 @@ async function findRelevantGuidelines(suppressHeader = false) {
                 'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({
-                transcript,
-                guidelines: guidelinesList
+                transcript: anonymisedTranscript, // Use anonymised transcript
+                guidelines: guidelinesList,
+                anonymisationInfo: anonymisationInfo // Include anonymisation metadata
             })
         });
 
@@ -1503,6 +1565,65 @@ async function generateClinicalNote() {
             throw new Error('No transcript found or transcript is empty');
         }
 
+        // ANONYMISATION STEP: Check and anonymise clinical data before sending to server
+        console.log('[ANONYMISER] Checking transcript for PII before generating clinical note...');
+        let anonymisedTranscript = transcript;
+        let anonymisationInfo = null;
+
+        try {
+            // Check if anonymiser is available
+            if (typeof window.clinicalAnonymiser !== 'undefined') {
+                // Check for PII first
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
+                console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
+
+                if (piiAnalysis.containsPII) {
+                    console.log('[ANONYMISER] PII detected, anonymising data...');
+                    
+                    // Anonymise the transcript
+                    const anonymisationResult = await window.clinicalAnonymiser.anonymiseClinicalData(transcript, {
+                        preserveClinicalInfo: true,
+                        preserveDates: false,
+                        preserveAges: false,
+                        preserveGenders: false
+                    });
+
+                    if (anonymisationResult.success) {
+                        anonymisedTranscript = anonymisationResult.anonymisedText;
+                        anonymisationInfo = {
+                            originalLength: anonymisationResult.metadata.originalLength,
+                            anonymisedLength: anonymisationResult.metadata.anonymisedLength,
+                            replacementsCount: anonymisationResult.metadata.replacementsCount,
+                            riskLevel: piiAnalysis.riskLevel,
+                            piiTypes: piiAnalysis.piiTypes
+                        };
+
+                        console.log('[ANONYMISER] Anonymisation completed:', anonymisationInfo);
+                        
+                        // Add anonymisation notice to the summary
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                            `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
+                            `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
+                            `- Replacements Made: ${anonymisationResult.metadata.replacementsCount}\n` +
+                            `- Clinical Information: Preserved\n\n`;
+                        appendToSummary1(anonymisationNotice, false);
+                    } else {
+                        console.warn('[ANONYMISER] Anonymisation failed, using original transcript');
+                        appendToSummary1('\n⚠️ **Privacy Note:** Anonymisation failed, using original data\n\n', false);
+                    }
+                } else {
+                    console.log('[ANONYMISER] No significant PII detected');
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false);
+                }
+            } else {
+                console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
+            }
+        } catch (anonymisationError) {
+            console.error('[ANONYMISER] Error during anonymisation:', anonymisationError);
+            // Continue with original transcript if anonymisation fails
+            anonymisedTranscript = transcript;
+        }
+
         // Get the current user using imported auth object
         const user = auth.currentUser;
         if (!user) {
@@ -1525,7 +1646,10 @@ async function generateClinicalNote() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${idToken}`
             },
-            body: JSON.stringify({ transcript })
+            body: JSON.stringify({ 
+                transcript: anonymisedTranscript, // Use anonymised transcript
+                anonymisationInfo: anonymisationInfo // Include anonymisation metadata
+            })
         });
 
         console.log('[DEBUG] Server response status:', response.status);
