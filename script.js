@@ -1359,7 +1359,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
                     console.log('[ANONYMISER] PII detected, anonymising data...');
                     
                     // Anonymise the transcript
-                    const anonymisationResult = await window.clinicalAnonymiser.anonymiseClinicalData(transcript, {
+                    const anonymisationResult = await window.clinicalAnonymiser.anonymise(transcript, {
                         preserveClinicalInfo: true,
                         preserveDates: false,
                         preserveAges: false,
@@ -1581,7 +1581,7 @@ async function generateClinicalNote() {
                     console.log('[ANONYMISER] PII detected, anonymising data...');
                     
                     // Anonymise the transcript
-                    const anonymisationResult = await window.clinicalAnonymiser.anonymiseClinicalData(transcript, {
+                    const anonymisationResult = await window.clinicalAnonymiser.anonymise(transcript, {
                         preserveClinicalInfo: true,
                         preserveDates: false,
                         preserveAges: false,

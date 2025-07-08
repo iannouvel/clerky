@@ -79,6 +79,7 @@ Case: 32-year-old patient presenting with gestational diabetes at 28 weeks gesta
             <button onclick="testPIIAnalysis()">🔍 Check for PII</button>
             <button onclick="testAnonymisation()">🔒 Anonymise Data</button>
             <button onclick="loadSampleData()">📋 Load Sample Data</button>
+            <button onclick="testNameDetection()">👤 Test Name Detection</button>
             <button onclick="clearResults()">🗑️ Clear Results</button>
         </div>
         
@@ -176,7 +177,7 @@ Case: 32-year-old patient presenting with gestational diabetes at 28 weeks gesta
 
                 resultsDiv.innerHTML = '<div class="result info">🔒 Anonymising data...</div>';
                 
-                const result = await window.clinicalAnonymiser.anonymiseClinicalData(input, {
+                const result = await window.clinicalAnonymiser.anonymise(input, {
                     preserveClinicalInfo: true,
                     preserveDates: false,
                     preserveAges: false,
@@ -242,6 +243,62 @@ Plan:
 
             document.getElementById('testInput').value = sampleData;
             document.getElementById('results').innerHTML = '<div class="result info">📋 Sample data loaded. Click "Check for PII" or "Anonymise Data" to test.</div>';
+        }
+
+        async function testNameDetection() {
+            const resultsDiv = document.getElementById('results');
+            
+            try {
+                if (typeof window.clinicalAnonymiser === 'undefined') {
+                    resultsDiv.innerHTML = '<div class="result error">❌ Anonymisation module not available</div>';
+                    return;
+                }
+
+                resultsDiv.innerHTML = '<div class="result info">👤 Testing name detection...</div>';
+                
+                // Test various name formats
+                const testCases = [
+                    { text: "Patient John Smith", description: "Simple first and last name" },
+                    { text: "Dr. Sarah Johnson", description: "Name with title" },
+                    { text: "Consultant Michael Brown", description: "Medical title with name" },
+                    { text: "Patient: Mrs. Emily Davis", description: "Name with Mrs. title" },
+                    { text: "The patient Alice reported symptoms", description: "Name in sentence" },
+                    { text: "Contact: Robert Wilson at 020 1234 5678", description: "Name with contact info" },
+                    { text: "No names in this clinical text", description: "Text without names" }
+                ];
+                
+                let resultHtml = '<div class="result info">';
+                resultHtml += '<h4>Name Detection Test Results:</h4>';
+                
+                for (const testCase of testCases) {
+                    const analysis = await window.clinicalAnonymiser.checkForPII(testCase.text);
+                    const hasNames = analysis.piiTypes.some(type => 
+                        type.type === 'namesWithTitles' || 
+                        type.type === 'fullNames' || 
+                        type.type === 'singleNames'
+                    );
+                    
+                    resultHtml += `<p><strong>${testCase.description}:</strong> `;
+                    resultHtml += `${hasNames ? '✅ DETECTED' : '❌ NOT DETECTED'}</p>`;
+                    resultHtml += `<small>Text: "${testCase.text}"</small><br>`;
+                    if (hasNames) {
+                        const nameTypes = analysis.piiTypes.filter(type => 
+                            type.type === 'namesWithTitles' || 
+                            type.type === 'fullNames' || 
+                            type.type === 'singleNames'
+                        );
+                        resultHtml += `<small>Detected as: ${nameTypes.map(t => t.type).join(', ')}</small>`;
+                    }
+                    resultHtml += '<br><br>';
+                }
+                
+                resultHtml += '</div>';
+                resultsDiv.innerHTML = resultHtml;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Error during name detection test: ${error.message}</div>`;
+                console.error('Name detection test error:', error);
+            }
         }
 
         function clearResults() {

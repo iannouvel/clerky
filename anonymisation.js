@@ -10,31 +10,51 @@
 // Note: This will be loaded via CDN for browser compatibility
 let redactPII = null;
 
-// Load the library dynamically
+// Load the library dynamically with multiple fallback options
 async function loadRedactPII() {
     if (redactPII) return redactPII;
     
-    try {
-        // Try to load from CDN - using a more reliable URL
-        const response = await fetch('https://cdn.jsdelivr.net/npm/@libretto/redact-pii-light@1.0.1/dist/index.js');
-        const script = await response.text();
-        
-        // Create a temporary module environment
-        const moduleExports = {};
-        const module = { exports: moduleExports };
-        const exports = moduleExports;
-        
-        // Execute the script in the module context
-        const func = new Function('module', 'exports', 'require', script);
-        func(module, exports, () => {});
-        
-        redactPII = module.exports.redactPII;
-        console.log('[ANONYMISER] Library loaded successfully from CDN');
-        return redactPII;
-    } catch (error) {
-        console.warn('[ANONYMISER] Failed to load library from CDN, using fallback:', error);
-        return null;
+    const cdnUrls = [
+        'https://unpkg.com/@libretto/redact-pii-light@1.0.1/dist/index.js',
+        'https://cdn.jsdelivr.net/npm/@libretto/redact-pii-light@1.0.1/dist/index.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/libretto-redact-pii-light/1.0.1/index.js'
+    ];
+    
+    for (const url of cdnUrls) {
+        try {
+            console.log(`[ANONYMISER] Attempting to load library from: ${url}`);
+            const response = await fetch(url);
+            
+            if (!response.ok) {
+                console.warn(`[ANONYMISER] Failed to load from ${url}: ${response.status}`);
+                continue;
+            }
+            
+            const script = await response.text();
+            
+            // Create a temporary module environment
+            const moduleExports = {};
+            const module = { exports: moduleExports };
+            const exports = moduleExports;
+            
+            // Execute the script in the module context
+            const func = new Function('module', 'exports', 'require', script);
+            func(module, exports, () => {});
+            
+            if (module.exports && module.exports.redactPII) {
+                redactPII = module.exports.redactPII;
+                console.log(`[ANONYMISER] Library loaded successfully from ${url}`);
+                return redactPII;
+            } else {
+                console.warn(`[ANONYMISER] Library loaded but redactPII function not found from ${url}`);
+            }
+        } catch (error) {
+            console.warn(`[ANONYMISER] Failed to load library from ${url}:`, error.message);
+        }
     }
+    
+    console.warn('[ANONYMISER] All CDN attempts failed, using enhanced fallback anonymisation');
+    return null;
 }
 
 /**
@@ -45,6 +65,7 @@ class ClinicalDataAnonymiser {
     constructor() {
         this.initialized = false;
         this.customPatterns = this.getMedicalPatterns();
+        this.enhancedPatterns = this.getEnhancedPIIPatterns();
     }
 
     /**
@@ -60,13 +81,71 @@ class ClinicalDataAnonymiser {
                 const testResult = redactPIIFunction('Test patient John Doe, DOB: 01/01/1990');
                 console.log('[ANONYMISER] Library initialized successfully');
             } else {
-                console.log('[ANONYMISER] Using fallback anonymisation');
+                console.log('[ANONYMISER] Using enhanced fallback anonymisation');
             }
             this.initialized = true;
         } catch (error) {
             console.error('[ANONYMISER] Failed to initialize:', error);
             this.initialized = true; // Still mark as initialized to use fallback
         }
+    }
+
+    /**
+     * Get enhanced PII patterns for comprehensive detection
+     */
+    getEnhancedPIIPatterns() {
+        return {
+            // Names with titles (comprehensive)
+            namesWithTitles: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.|Miss|Sir|Lady|Lord)\s+[A-Z][a-z]+/g,
+            
+            // Standalone names (first and last name combinations)
+            fullNames: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g,
+            
+            // Single capitalized names (likely proper nouns) - more specific
+            singleNames: /\b[A-Z][a-z]{2,}\b(?!\s+(?:Hospital|Trust|Centre|Clinic|Ward|Department|Unit))/g,
+            
+            // Email addresses
+            emails: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
+            
+            // Phone numbers (UK and international)
+            ukPhones: /\b(\+44|0)\s*\d{2,4}\s*\d{3,4}\s*\d{3,4}\b/g,
+            internationalPhones: /\b\+\d{1,3}\s*\d{1,4}\s*\d{1,4}\s*\d{1,4}\b/g,
+            
+            // NHS numbers (UK format)
+            nhsNumbers: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g,
+            
+            // Dates (various formats)
+            dates: /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/g,
+            isoDates: /\b\d{4}-\d{2}-\d{2}\b/g,
+            
+            // Addresses
+            addresses: /\b\d+\s+[A-Za-z\s]+(?:Street|Road|Avenue|Lane|Close|Drive|Way|Place|Court)\b/gi,
+            postcodes: /\b[A-Z]{1,2}\d{1,2}\s*\d[A-Z]{2}\b/gi,
+            
+            // Medical identifiers
+            medicalRecordNumbers: /MRN[:\s]*(\d{6,})/gi,
+            hospitalNumbers: /Hosp[:\s]*(\d{6,})/gi,
+            patientIds: /Patient[:\s]*ID[:\s]*(\w+)/gi,
+            caseNumbers: /Case[:\s]*(\d+)/gi,
+            
+            // Hospital/Clinic names
+            hospitalNames: /(University Hospital|Royal Hospital|General Hospital|Medical Centre|Clinic|NHS Trust|Foundation Trust)/gi,
+            
+            // Medical staff titles
+            medicalTitles: /(Consultant|Registrar|Fellow|Specialist|Nurse|Midwife)\s+[A-Z][a-z]+/g,
+            
+            // Ward/Department names
+            wardNames: /(Ward|Department|Unit)\s+[A-Z0-9]+/gi,
+            
+            // Medical device serial numbers
+            deviceSerials: /(Device|Equipment|Machine)\s+ID[:\s]*(\w+)/gi,
+            
+            // Social security numbers (US format)
+            ssn: /\b\d{3}-\d{2}-\d{4}\b/g,
+            
+            // Credit card numbers (basic pattern)
+            creditCards: /\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/g
+        };
     }
 
     /**
@@ -143,8 +222,8 @@ class ClinicalDataAnonymiser {
                 const libraryResult = redactPIIFunction(anonymisedText);
                 anonymisedText = libraryResult.text;
             } else {
-                // Use fallback anonymisation
-                anonymisedText = this.basicAnonymisation(anonymisedText);
+                // Use enhanced fallback anonymisation
+                anonymisedText = this.enhancedAnonymisation(anonymisedText);
             }
             
             // Step 2: Apply medical-specific patterns
@@ -290,36 +369,62 @@ class ClinicalDataAnonymiser {
     }
 
     /**
-     * Fallback anonymisation when library is not available
+     * Enhanced anonymisation with medical context awareness
      * @param {string} text - Text to anonymise
      * @returns {string} - Anonymised text
      */
-    basicAnonymisation(text) {
+    enhancedAnonymisation(text) {
         let anonymisedText = text;
         
-        // Basic patterns for common PII
-        const patterns = [
-            // Names with titles (more comprehensive)
-            { pattern: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.|Miss)\s+[A-Z][a-z]+/g, replacement: '[NAME]' },
-            // Names without titles
-            { pattern: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g, replacement: '[NAME]' },
-            // NHS numbers
-            { pattern: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g, replacement: '[NHS_NUMBER]' },
-            // Phone numbers
-            { pattern: /\b(\+44|0)\s*\d{2,4}\s*\d{3,4}\s*\d{3,4}\b/g, replacement: '[PHONE]' },
-            // Email addresses
-            { pattern: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g, replacement: '[EMAIL]' },
-            // Dates
-            { pattern: /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g, replacement: '[DATE]' },
-            // Hospital names
-            { pattern: /(University Hospital|Royal Hospital|General Hospital|Medical Centre|NHS Trust|Foundation Trust)/gi, replacement: '[HOSPITAL]' },
-            // Medical staff titles
-            { pattern: /(Consultant|Registrar|Fellow|Specialist)\s+[A-Z][a-z]+/g, replacement: '[MEDICAL_STAFF]' }
+        // List of medical terms that should NOT be anonymised
+        const medicalTerms = [
+            'Hospital', 'Trust', 'Centre', 'Clinic', 'Ward', 'Department', 'Unit',
+            'Consultant', 'Registrar', 'Fellow', 'Specialist', 'Nurse', 'Midwife',
+            'Patient', 'Case', 'Diagnosis', 'Treatment', 'Medication', 'Dose',
+            'Blood', 'Pressure', 'Heart', 'Rate', 'Temperature', 'Weight', 'Height',
+            'BMI', 'Lab', 'Results', 'Test', 'Scan', 'Ultrasound', 'X-ray',
+            'Gestational', 'Diabetes', 'Pregnancy', 'Fetal', 'Maternal', 'Obstetric',
+            'Gynaecology', 'Miscarriage', 'Delivery', 'Birth', 'Labour', 'Contraction'
         ];
         
-        patterns.forEach(({ pattern, replacement }) => {
-            anonymisedText = anonymisedText.replace(pattern, replacement);
-        });
+        // Apply enhanced PII patterns with medical context awareness
+        for (const [patternName, pattern] of Object.entries(this.enhancedPatterns)) {
+            if (Array.isArray(pattern)) {
+                pattern.forEach(p => {
+                    const matches = anonymisedText.match(p);
+                    if (matches) {
+                        // Check if matches contain medical terms that should be preserved
+                        const filteredMatches = matches.filter(match => {
+                            return !medicalTerms.some(term => 
+                                match.toLowerCase().includes(term.toLowerCase())
+                            );
+                        });
+                        
+                        if (filteredMatches.length > 0) {
+                            anonymisedText = anonymisedText.replace(p, `[${patternName.toUpperCase()}]`);
+                        }
+                    }
+                });
+            } else {
+                const matches = anonymisedText.match(pattern);
+                if (matches) {
+                    // For single names, be more careful about medical context
+                    if (patternName === 'singleNames') {
+                        const filteredMatches = matches.filter(match => {
+                            return !medicalTerms.some(term => 
+                                match.toLowerCase() === term.toLowerCase()
+                            );
+                        });
+                        
+                        if (filteredMatches.length > 0) {
+                            anonymisedText = anonymisedText.replace(pattern, `[${patternName.toUpperCase()}]`);
+                        }
+                    } else {
+                        anonymisedText = anonymisedText.replace(pattern, `[${patternName.toUpperCase()}]`);
+                    }
+                }
+            }
+        }
         
         return anonymisedText;
     }
@@ -354,15 +459,8 @@ class ClinicalDataAnonymiser {
         };
 
         try {
-            // Check for common PII patterns
-            const piiPatterns = {
-                names: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor)\s+[A-Z][a-z]+/g,
-                emails: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
-                phones: /\b(\+44|0)\s*\d{2,4}\s*\d{3,4}\s*\d{3,4}\b/g,
-                nhsNumbers: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g,
-                dates: /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g,
-                addresses: /\b\d+\s+[A-Za-z\s]+(?:Street|Road|Avenue|Lane|Close|Drive)\b/gi
-            };
+            // Use enhanced PII patterns for comprehensive detection
+            const piiPatterns = this.enhancedPatterns;
 
             for (const [type, pattern] of Object.entries(piiPatterns)) {
                 const matches = text.match(pattern);
@@ -405,7 +503,7 @@ class ClinicalDataAnonymiser {
 
     /**
      * Create a summary of anonymisation changes
-     * @param {Object} anonymisationResult - Result from anonymiseClinicalData
+     * @param {Object} anonymisationResult - Result from anonymise
      * @returns {string} - Human-readable summary
      */
     createAnonymisationSummary(anonymisationResult) {
