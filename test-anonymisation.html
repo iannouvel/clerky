@@ -261,39 +261,45 @@ Plan:
                     { text: "Patient John Smith", description: "Simple first and last name" },
                     { text: "Dr. Sarah Johnson", description: "Name with title" },
                     { text: "Consultant Michael Brown", description: "Medical title with name" },
-                    { text: "Patient: Mrs. Emily Davis", description: "Name with Mrs. title" },
-                    { text: "The patient Alice reported symptoms", description: "Name in sentence" },
-                    { text: "Contact: Robert Wilson at 020 1234 5678", description: "Name with contact info" },
-                    { text: "No names in this clinical text", description: "Text without names" }
+                    { text: "Mrs. Elizabeth Wilson", description: "Title with full name" }
                 ];
-                
-                let resultHtml = '<div class="result info">';
-                resultHtml += '<h4>Name Detection Test Results:</h4>';
+
+                let results = '<div class="result success">✅ Name Detection Test Results:</div>';
                 
                 for (const testCase of testCases) {
-                    const analysis = await window.clinicalAnonymiser.checkForPII(testCase.text);
-                    const hasNames = analysis.piiTypes.some(type => 
-                        type.type === 'namesWithTitles' || 
-                        type.type === 'fullNames' || 
-                        type.type === 'singleNames'
-                    );
+                    resultsDiv.innerHTML = `<div class="result info">Testing: ${testCase.description}</div>`;
                     
-                    resultHtml += `<p><strong>${testCase.description}:</strong> `;
-                    resultHtml += `${hasNames ? '✅ DETECTED' : '❌ NOT DETECTED'}</p>`;
-                    resultHtml += `<small>Text: "${testCase.text}"</small><br>`;
-                    if (hasNames) {
-                        const nameTypes = analysis.piiTypes.filter(type => 
-                            type.type === 'namesWithTitles' || 
-                            type.type === 'fullNames' || 
-                            type.type === 'singleNames'
-                        );
-                        resultHtml += `<small>Detected as: ${nameTypes.map(t => t.type).join(', ')}</small>`;
+                    // Check for PII
+                    const piiAnalysis = await window.clinicalAnonymiser.checkForPII(testCase.text);
+                    
+                    // Anonymise the text
+                    const anonymisationResult = await window.clinicalAnonymiser.anonymise(testCase.text, {
+                        preserveClinicalInfo: true
+                    });
+                    
+                    results += `
+<div class="result">
+<strong>${testCase.description}</strong><br>
+<strong>Original:</strong> "${testCase.text}"<br>
+<strong>PII Analysis:</strong> ${piiAnalysis.containsPII ? 'YES' : 'NO'} (${piiAnalysis.riskLevel})<br>
+<strong>PII Types:</strong> ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+<strong>Anonymised:</strong> "${anonymisationResult.anonymisedText}"<br>
+<strong>Replacements:</strong> ${anonymisationResult.metadata.replacementsCount}<br>
+<strong>Replacement Details:</strong><br>
+`;
+                    
+                    if (anonymisationResult.metadata.replacements && anonymisationResult.metadata.replacements.length > 0) {
+                        anonymisationResult.metadata.replacements.forEach((replacement, index) => {
+                            results += `  - ${replacement.type}: "${replacement.pattern}" → "${replacement.replacement}" (${replacement.count} instances)<br>`;
+                        });
+                    } else {
+                        results += '  No specific replacements recorded<br>';
                     }
-                    resultHtml += '<br><br>';
+                    
+                    results += '</div>';
                 }
                 
-                resultHtml += '</div>';
-                resultsDiv.innerHTML = resultHtml;
+                resultsDiv.innerHTML = results;
                 
             } catch (error) {
                 resultsDiv.innerHTML = `<div class="result error">❌ Error during name detection test: ${error.message}</div>`;

@@ -6,55 +6,67 @@
  * while preserving clinical relevance.
  */
 
-// Import the redact-pii-light library
-// Note: This will be loaded via CDN for browser compatibility
+// Import the bundled redact-pii-light library
 let redactPII = null;
 
-// Load the library dynamically with multiple fallback options
+// Load the bundled library
 async function loadRedactPII() {
     if (redactPII) return redactPII;
     
-    const cdnUrls = [
-        'https://unpkg.com/@libretto/redact-pii-light@1.0.1/dist/index.js',
-        'https://cdn.jsdelivr.net/npm/@libretto/redact-pii-light@1.0.1/dist/index.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/libretto-redact-pii-light/1.0.1/index.js'
-    ];
-    
-    for (const url of cdnUrls) {
-        try {
-            console.log(`[ANONYMISER] Attempting to load library from: ${url}`);
-            const response = await fetch(url);
-            
-            if (!response.ok) {
-                console.warn(`[ANONYMISER] Failed to load from ${url}: ${response.status}`);
-                continue;
-            }
-            
-            const script = await response.text();
-            
-            // Create a temporary module environment
-            const moduleExports = {};
-            const module = { exports: moduleExports };
-            const exports = moduleExports;
-            
-            // Execute the script in the module context
-            const func = new Function('module', 'exports', 'require', script);
-            func(module, exports, () => {});
-            
-            if (module.exports && module.exports.redactPII) {
-                redactPII = module.exports.redactPII;
-                console.log(`[ANONYMISER] Library loaded successfully from ${url}`);
-                return redactPII;
-            } else {
-                console.warn(`[ANONYMISER] Library loaded but redactPII function not found from ${url}`);
-            }
-        } catch (error) {
-            console.warn(`[ANONYMISER] Failed to load library from ${url}:`, error.message);
+    try {
+        // Check if the bundled library is available
+        if (typeof LibrettoRedact !== 'undefined') {
+            redactPII = LibrettoRedact;
+            console.log('[ANONYMISER] Bundled library loaded successfully');
+            return redactPII;
         }
+        
+        // Also check for the function directly
+        if (typeof redactPii !== 'undefined') {
+            redactPII = redactPii;
+            console.log('[ANONYMISER] redactPii function found globally');
+            return redactPII;
+        }
+        
+        // Fallback: try to load the bundle file
+        console.log('[ANONYMISER] Attempting to load bundled library...');
+        
+        // If we're in a browser environment, we need to load the script
+        if (typeof window !== 'undefined') {
+            // Check if the script is already loaded
+            if (document.querySelector('script[src*="libretto-bundle.js"]')) {
+                console.log('[ANONYMISER] Bundle script already loaded');
+                return redactPII;
+            }
+            
+            // Load the bundle script
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = '/dist/libretto-bundle.js';
+                script.onload = () => {
+                    if (typeof LibrettoRedact !== 'undefined') {
+                        redactPII = LibrettoRedact;
+                        console.log('[ANONYMISER] Bundled library loaded successfully');
+                        resolve(redactPII);
+                    } else {
+                        console.warn('[ANONYMISER] Bundle loaded but LibrettoRedact not found');
+                        resolve(null);
+                    }
+                };
+                script.onerror = () => {
+                    console.warn('[ANONYMISER] Failed to load bundled library');
+                    resolve(null);
+                };
+                document.head.appendChild(script);
+            });
+        }
+        
+        console.warn('[ANONYMISER] Using enhanced fallback anonymisation');
+        return null;
+    } catch (error) {
+        console.warn('[ANONYMISER] Error loading bundled library:', error.message);
+        return null;
     }
-    
-    console.warn('[ANONYMISER] All CDN attempts failed, using enhanced fallback anonymisation');
-    return null;
 }
 
 /**
@@ -95,14 +107,15 @@ class ClinicalDataAnonymiser {
      */
     getEnhancedPIIPatterns() {
         return {
-            // Names with titles (comprehensive)
-            namesWithTitles: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.|Miss|Sir|Lady|Lord)\s+[A-Z][a-z]+/g,
+            // Very conservative fallback patterns - rely primarily on Libretto library
             
-            // Standalone names (first and last name combinations)
+            // Only the most obvious PII patterns
+            
+            // Names with titles (only common titles)
+            namesWithTitles: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.)\s+[A-Z][a-z]+/g,
+            
+            // Full names (only obvious name patterns)
             fullNames: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g,
-            
-            // Single capitalized names (likely proper nouns) - more specific
-            singleNames: /\b[A-Z][a-z]{2,}\b(?!\s+(?:Hospital|Trust|Centre|Clinic|Ward|Department|Unit))/g,
             
             // Email addresses
             emails: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
@@ -219,8 +232,24 @@ class ClinicalDataAnonymiser {
             // Step 1: Use the library's built-in PII detection
             const redactPIIFunction = await loadRedactPII();
             if (redactPIIFunction) {
-                const libraryResult = redactPIIFunction(anonymisedText);
-                anonymisedText = libraryResult.text;
+                try {
+                    const libraryResult = redactPIIFunction(anonymisedText);
+                    // The bundled library returns a string directly, not an object with .text property
+                    if (typeof libraryResult === 'string') {
+                        // Track library replacements by comparing original and anonymised text
+                        const libraryReplacements = this.detectLibraryReplacements(text, libraryResult);
+                        replacements.push(...libraryReplacements);
+                        anonymisedText = libraryResult;
+                    } else if (libraryResult && libraryResult.text) {
+                        anonymisedText = libraryResult.text;
+                    } else {
+                        console.warn('[ANONYMISER] Library returned unexpected result type:', typeof libraryResult);
+                        anonymisedText = this.enhancedAnonymisation(anonymisedText);
+                    }
+                } catch (error) {
+                    console.warn('[ANONYMISER] Library anonymisation failed, using fallback:', error.message);
+                    anonymisedText = this.enhancedAnonymisation(anonymisedText);
+                }
             } else {
                 // Use enhanced fallback anonymisation
                 anonymisedText = this.enhancedAnonymisation(anonymisedText);
@@ -369,6 +398,155 @@ class ClinicalDataAnonymiser {
     }
 
     /**
+     * Detect replacements made by the library by comparing original and anonymised text
+     * @param {string} originalText - Original text
+     * @param {string} anonymisedText - Anonymised text from library
+     * @returns {Array} - Array of replacement objects
+     */
+    detectLibraryReplacements(originalText, anonymisedText) {
+        const replacements = [];
+        
+        // Common library replacement patterns
+        const libraryPatterns = [
+            { pattern: /PERSON_NAME/g, type: 'name', description: 'Person name' },
+            { pattern: /DIGITS/g, type: 'digits', description: 'Numeric data' },
+            { pattern: /EMAIL_ADDRESS/g, type: 'email', description: 'Email address' },
+            { pattern: /PHONE_NUMBER/g, type: 'phone', description: 'Phone number' },
+            { pattern: /ZIPCODE/g, type: 'postcode', description: 'Postal code' },
+            { pattern: /CREDIT_CARD_NUMBER/g, type: 'credit_card', description: 'Credit card number' },
+            { pattern: /SSN/g, type: 'ssn', description: 'Social security number' },
+            { pattern: /IP_ADDRESS/g, type: 'ip', description: 'IP address' },
+            { pattern: /STREET_ADDRESS/g, type: 'address', description: 'Street address' },
+            { pattern: /CITY/g, type: 'city', description: 'City name' },
+            { pattern: /STATE/g, type: 'state', description: 'State/province' },
+            { pattern: /COUNTRY/g, type: 'country', description: 'Country name' }
+        ];
+        
+        // Count library replacements
+        let totalReplacements = 0;
+        libraryPatterns.forEach(({ pattern, type, description }) => {
+            const matches = anonymisedText.match(pattern);
+            if (matches) {
+                replacements.push({
+                    type: `library_${type}`,
+                    pattern: pattern.toString(),
+                    replacement: description,
+                    count: matches.length,
+                    source: 'libretto-library'
+                });
+                totalReplacements += matches.length;
+            }
+        });
+        
+        // Add summary replacement if any were found
+        if (totalReplacements > 0) {
+            replacements.push({
+                type: 'library_summary',
+                pattern: 'libretto-library',
+                replacement: `${totalReplacements} PII elements`,
+                count: totalReplacements,
+                source: 'libretto-library'
+            });
+        }
+        
+        return replacements;
+    }
+
+    /**
+     * Identify what the Libretto library detected by comparing original and anonymised text
+     * @param {string} originalText - Original text
+     * @param {string} anonymisedText - Anonymised text from library
+     * @returns {Array} - Array of detected items
+     */
+    identifyLibraryDetections(originalText, anonymisedText) {
+        const detectedItems = [];
+        
+        // List of medical terms that should NOT be considered PII
+        const medicalTerms = [
+            'Hospital', 'Trust', 'Centre', 'Clinic', 'Ward', 'Department', 'Unit',
+            'Consultant', 'Registrar', 'Fellow', 'Specialist', 'Nurse', 'Midwife',
+            'Patient', 'Case', 'Diagnosis', 'Treatment', 'Medication', 'Dose',
+            'Blood', 'Pressure', 'Heart', 'Rate', 'Temperature', 'Weight', 'Height',
+            'BMI', 'Lab', 'Results', 'Test', 'Scan', 'Ultrasound', 'X-ray',
+            'Gestational', 'Diabetes', 'Pregnancy', 'Fetal', 'Maternal', 'Obstetric',
+            'Gynaecology', 'Miscarriage', 'Delivery', 'Birth', 'Labour', 'Contraction',
+            'Twin', 'Twins', 'Previous', 'Current', 'Booking', 'History', 'Presenting',
+            'Complaint', 'Relevant', 'Medical', 'Mild', 'Medications', 'Currently',
+            'Social', 'Lives', 'Works', 'Examination', 'Alert', 'Uterus', 'Notable',
+            'Omissions', 'Growth', 'Management', 'Serum', 'Fasting', 'Full', 'Weekly',
+            'Increase', 'Aim', 'Consider', 'Counseling', 'Provided', 'Discussed',
+            'Reassured', 'Ongoing', 'Advised', 'Dictated', 'This', 'Pruritus',
+            'Unremarkable', 'She', 'Dopplers', 'Start', 'Weekly'
+        ];
+        
+        // Look for specific name patterns that the library would detect
+        const namePatterns = [
+            // Full names in structured format
+            /Name:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g,
+            /Patient:\s*([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g,
+            // Names with titles
+            /Ms\.\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g,
+            /Mr\.\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g,
+            /Dr\.\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)/g,
+            // Standalone capitalized names (likely first/last names)
+            /\b([A-Z][a-z]+)\b/g
+        ];
+        
+        // Check each name pattern in the original text
+        namePatterns.forEach(pattern => {
+            let match;
+            while ((match = pattern.exec(originalText)) !== null) {
+                const detectedName = match[1];
+                
+                // Skip if it's a medical term
+                if (medicalTerms.some(term => 
+                    detectedName.toLowerCase() === term.toLowerCase() ||
+                    detectedName.toLowerCase().includes(term.toLowerCase())
+                )) {
+                    continue;
+                }
+                
+                // Check if this name was changed in the anonymised version
+                const namePattern = new RegExp(this.escapeRegExp(detectedName), 'g');
+                if (!namePattern.test(anonymisedText)) {
+                    // The name was changed, so it's likely PII
+                    detectedItems.push(detectedName);
+                }
+            }
+        });
+        
+        // Also look for other PII patterns
+        const otherPatterns = [
+            // Ages
+            { pattern: /Age:\s*(\d+)/g, type: 'age' },
+            // Phone numbers
+            { pattern: /(\d{3}[-.\s]?\d{3}[-.\s]?\d{4})/g, type: 'phone' },
+            // NHS numbers
+            { pattern: /(\d{3}-\d{3}-\d{4})/g, type: 'nhs' },
+            // Emails
+            { pattern: /([^\s@]+@[^\s@]+\.[^\s@]+)/g, type: 'email' },
+            // Dates
+            { pattern: /(\d{1,2}\/\d{1,2}\/\d{2,4})/g, type: 'date' },
+            { pattern: /(\d{1,2}-\d{1,2}-\d{2,4})/g, type: 'date' }
+        ];
+        
+        otherPatterns.forEach(({ pattern, type }) => {
+            let match;
+            while ((match = pattern.exec(originalText)) !== null) {
+                const detectedText = match[1];
+                
+                // Check if this text was changed in the anonymised version
+                const anonymisedPattern = new RegExp(this.escapeRegExp(detectedText), 'g');
+                if (!anonymisedPattern.test(anonymisedText)) {
+                    detectedItems.push(detectedText);
+                }
+            }
+        });
+        
+        return [...new Set(detectedItems)]; // Remove duplicates
+    }
+
+    /**
      * Enhanced anonymisation with medical context awareness
      * @param {string} text - Text to anonymise
      * @returns {string} - Anonymised text
@@ -451,15 +629,71 @@ class ClinicalDataAnonymiser {
             await this.initialize();
         }
 
+        // Store the text for consolidation
+        this.lastCheckedText = text;
+
         const analysis = {
             containsPII: false,
             piiTypes: [],
             riskLevel: 'low',
-            recommendations: []
+            recommendations: [],
+            matches: [] // Add matches array for consolidation
         };
 
         try {
-            // Use enhanced PII patterns for comprehensive detection
+            // First, try to use the Libretto library for PII detection
+            const redactPIIFunction = await loadRedactPII();
+            if (redactPIIFunction) {
+                try {
+                    // Use the library to detect PII
+                    const libraryResult = redactPIIFunction(text);
+                    
+                    // If the library made changes, it detected PII
+                    if (libraryResult !== text) {
+                        analysis.containsPII = true;
+                        
+                        // Try to identify what the library detected by comparing original and anonymised text
+                        const detectedItems = this.identifyLibraryDetections(text, libraryResult);
+                        
+                        if (detectedItems.length > 0) {
+                            // Add specific detected items
+                            analysis.piiTypes.push({
+                                type: 'libretto_detected',
+                                count: detectedItems.length,
+                                examples: detectedItems.slice(0, 3)
+                            });
+                            analysis.matches.push({
+                                type: 'libretto_detected',
+                                count: detectedItems.length,
+                                examples: detectedItems
+                            });
+                        } else {
+                            // Fallback if we can't identify specific items
+                            analysis.piiTypes.push({
+                                type: 'libretto_detected',
+                                count: 1,
+                                examples: ['PII detected by Libretto library']
+                            });
+                            analysis.matches.push({
+                                type: 'libretto_detected',
+                                count: 1,
+                                examples: ['PII detected by Libretto library']
+                            });
+                        }
+                        
+                        analysis.riskLevel = 'medium';
+                        analysis.recommendations.push('PII detected by advanced library, recommend anonymisation');
+                        
+                        console.log('[ANONYMISER] Libretto library detected PII:', detectedItems);
+                        return analysis;
+                    }
+                } catch (error) {
+                    console.warn('[ANONYMISER] Libretto library failed, using fallback patterns:', error.message);
+                }
+            }
+
+            // Fallback to conservative patterns only if library fails
+            console.log('[ANONYMISER] Using conservative fallback patterns');
             const piiPatterns = this.enhancedPatterns;
 
             for (const [type, pattern] of Object.entries(piiPatterns)) {
@@ -470,6 +704,12 @@ class ClinicalDataAnonymiser {
                         type,
                         count: matches.length,
                         examples: matches.slice(0, 3) // Show first 3 examples
+                    });
+                    // Store all matches for consolidation
+                    analysis.matches.push({
+                        type,
+                        count: matches.length,
+                        examples: matches
                     });
                 }
             }
@@ -496,7 +736,8 @@ class ClinicalDataAnonymiser {
                 piiTypes: [],
                 riskLevel: 'unknown',
                 recommendations: ['Error occurred during PII analysis'],
-                error: error.message
+                error: error.message,
+                matches: []
             };
         }
     }
@@ -532,6 +773,145 @@ class ClinicalDataAnonymiser {
         }
 
         return summary.join('\n');
+    }
+
+    /**
+     * Consolidate PII matches to merge overlapping and adjacent matches
+     * @param {Array} matches - Array of PII matches from checkForPII
+     * @returns {Array} - Consolidated matches with start/end positions
+     */
+    consolidatePIIMatches(matches) {
+        if (!matches || !Array.isArray(matches)) {
+            return [];
+        }
+
+        // Flatten matches from all PII types
+        const allMatches = [];
+        matches.forEach(piiType => {
+            if (piiType.examples && Array.isArray(piiType.examples)) {
+                piiType.examples.forEach(example => {
+                    allMatches.push({
+                        text: example,
+                        type: piiType.type,
+                        start: 0, // Will be calculated
+                        end: 0    // Will be calculated
+                    });
+                });
+            }
+        });
+
+        // Find positions of matches in the original text
+        const text = this.lastCheckedText || '';
+        const positionedMatches = [];
+
+        allMatches.forEach(match => {
+            const regex = new RegExp(this.escapeRegExp(match.text), 'gi');
+            let result;
+            while ((result = regex.exec(text)) !== null) {
+                positionedMatches.push({
+                    text: match.text,
+                    type: match.type,
+                    start: result.index,
+                    end: result.index + match.text.length
+                });
+            }
+        });
+
+        // Sort by start position
+        positionedMatches.sort((a, b) => a.start - b.start);
+
+        // Consolidate overlapping and adjacent matches
+        const consolidated = [];
+        let i = 0;
+
+        while (i < positionedMatches.length) {
+            let current = positionedMatches[i];
+            let j = i + 1;
+
+            // Look for overlapping or adjacent matches
+            while (j < positionedMatches.length) {
+                const next = positionedMatches[j];
+                
+                // Check if matches overlap or are adjacent (within 1 character)
+                if (next.start <= current.end + 1) {
+                    // Merge the matches
+                    current = {
+                        text: text.substring(current.start, Math.max(current.end, next.end)),
+                        type: current.type, // Keep the first type
+                        start: current.start,
+                        end: Math.max(current.end, next.end)
+                    };
+                    j++;
+                } else {
+                    break;
+                }
+            }
+
+            // Clean up the merged text (remove medical prefixes)
+            current.text = this.cleanMedicalPrefixes(current.text);
+            
+            consolidated.push(current);
+            i = j;
+        }
+
+        console.log('[ANONYMISER] Consolidated matches:', consolidated);
+        return consolidated;
+    }
+
+    /**
+     * Get appropriate replacement for a PII match
+     * @param {Object} match - PII match object
+     * @returns {string} - Replacement text
+     */
+    getReplacementForMatch(match) {
+        const type = match.type;
+        
+        // Define replacements based on PII type
+        const replacements = {
+            'names': '[NAME]',
+            'singleNames': '[NAME]',
+            'fullNames': '[FULL_NAME]',
+            'emails': '[EMAIL]',
+            'phones': '[PHONE]',
+            'addresses': '[ADDRESS]',
+            'dates': '[DATE]',
+            'ages': '[AGE]',
+            'postcodes': '[POSTCODE]',
+            'nhsNumbers': '[NHS_NUMBER]',
+            'hospitalNumbers': '[HOSPITAL_NUMBER]',
+            'medicalIdentifiers': '[MEDICAL_ID]'
+        };
+
+        return replacements[type] || '[PII]';
+    }
+
+    /**
+     * Escape special regex characters
+     * @param {string} string - String to escape
+     * @returns {string} - Escaped string
+     */
+    escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    /**
+     * Clean medical prefixes from names
+     * @param {string} text - Text to clean
+     * @returns {string} - Cleaned text
+     */
+    cleanMedicalPrefixes(text) {
+        const medicalPrefixes = [
+            'Patient', 'Dr.', 'Dr ', 'Doctor', 'Mr.', 'Mr ', 'Mrs.', 'Mrs ', 
+            'Ms.', 'Ms ', 'Prof.', 'Professor', 'Consultant', 'Registrar'
+        ];
+
+        let cleaned = text;
+        medicalPrefixes.forEach(prefix => {
+            const regex = new RegExp(`^${this.escapeRegExp(prefix)}\\s+`, 'i');
+            cleaned = cleaned.replace(regex, '');
+        });
+
+        return cleaned.trim();
     }
 }
 
