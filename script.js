@@ -10,6 +10,256 @@ window.auth = auth;
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
+// PII Review Interface Function
+async function showPIIReviewInterface(originalText, piiAnalysis) {
+    return new Promise((resolve) => {
+        // Create modal overlay
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        `;
+
+        // Create modal content
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        `;
+
+        // Get consolidated PII matches
+        const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
+        
+        // Create header
+        const header = document.createElement('div');
+        header.innerHTML = `
+            <h2 style="margin: 0 0 20px 0; color: #d32f2f;">🔒 Privacy Review Required</h2>
+            <p style="margin: 0 0 15px 0; color: #666;">
+                The following personal information was detected in your transcript. 
+                Please review each item and choose whether to replace it or keep it as is.
+            </p>
+            <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
+                <strong>Risk Level:</strong> ${piiAnalysis.riskLevel.toUpperCase()}<br>
+                <strong>PII Types:</strong> ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}
+            </div>
+        `;
+
+        // Create matches container
+        const matchesContainer = document.createElement('div');
+        matchesContainer.style.cssText = `
+            margin: 15px 0;
+            max-height: 400px;
+            overflow-y: auto;
+        `;
+
+        // Track user decisions
+        const userDecisions = new Map();
+        let approvedMatches = 0;
+        let totalMatches = consolidatedMatches.length;
+
+        // Create match items
+        consolidatedMatches.forEach((match, index) => {
+            const matchDiv = document.createElement('div');
+            matchDiv.style.cssText = `
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 8px 0;
+                background: #f9f9f9;
+            `;
+
+            const replacement = window.clinicalAnonymiser.getReplacementForMatch(match);
+            
+            matchDiv.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <strong style="color: #d32f2f;">${match.type}</strong>
+                    <div>
+                        <button class="replace-btn" data-index="${index}" style="
+                            background: #4caf50;
+                            color: white;
+                            border: none;
+                            padding: 5px 10px;
+                            border-radius: 3px;
+                            cursor: pointer;
+                            margin-right: 5px;
+                        ">Replace</button>
+                        <button class="keep-btn" data-index="${index}" style="
+                            background: #ff9800;
+                            color: white;
+                            border: none;
+                            padding: 5px 10px;
+                            border-radius: 3px;
+                            cursor: pointer;
+                        ">Keep</button>
+                    </div>
+                </div>
+                <div style="margin-bottom: 8px;">
+                    <strong>Original:</strong> <span style="background: #ffebee; padding: 2px 4px; border-radius: 2px;">${match.text}</span>
+                </div>
+                <div>
+                    <strong>Replacement:</strong> <span style="background: #e8f5e8; padding: 2px 4px; border-radius: 2px;">${replacement}</span>
+                </div>
+            `;
+
+            // Add event listeners
+            const replaceBtn = matchDiv.querySelector('.replace-btn');
+            const keepBtn = matchDiv.querySelector('.keep-btn');
+
+            replaceBtn.addEventListener('click', () => {
+                userDecisions.set(index, 'replace');
+                replaceBtn.style.background = '#2e7d32';
+                keepBtn.style.background = '#ccc';
+                replaceBtn.disabled = true;
+                keepBtn.disabled = true;
+                approvedMatches++;
+                updateSummary();
+            });
+
+            keepBtn.addEventListener('click', () => {
+                userDecisions.set(index, 'keep');
+                keepBtn.style.background = '#e65100';
+                replaceBtn.style.background = '#ccc';
+                replaceBtn.disabled = true;
+                keepBtn.disabled = true;
+                updateSummary();
+            });
+
+            matchesContainer.appendChild(matchDiv);
+        });
+
+        // Create summary section
+        const summaryDiv = document.createElement('div');
+        summaryDiv.style.cssText = `
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 15px 0;
+            text-align: center;
+        `;
+
+        function updateSummary() {
+            const replacements = Array.from(userDecisions.values()).filter(d => d === 'replace').length;
+            const kept = Array.from(userDecisions.values()).filter(d => d === 'keep').length;
+            const totalReviewed = replacements + kept;
+            
+            summaryDiv.innerHTML = `
+                <strong>Progress:</strong> ${totalReviewed}/${totalMatches} items reviewed<br>
+                <strong>Replacements:</strong> ${replacements}<br>
+                <strong>Kept:</strong> ${kept}
+            `;
+        }
+        updateSummary();
+
+        // Create action buttons
+        const actionButtons = document.createElement('div');
+        actionButtons.style.cssText = `
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 10px;
+        `;
+
+        const cancelBtn = document.createElement('button');
+        cancelBtn.textContent = 'Cancel';
+        cancelBtn.style.cssText = `
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        `;
+        cancelBtn.addEventListener('click', () => {
+            document.body.removeChild(modal);
+            resolve({ approved: false });
+        });
+
+        const approveBtn = document.createElement('button');
+        approveBtn.textContent = 'Apply Anonymisation';
+        approveBtn.style.cssText = `
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        `;
+        approveBtn.addEventListener('click', () => {
+            const totalReviewed = Array.from(userDecisions.values()).length;
+            if (totalReviewed === totalMatches) {
+                // Apply user decisions to create anonymised text
+                let anonymisedText = originalText;
+                const replacements = [];
+
+                // Sort matches by position (last to first) to avoid index shifting
+                const sortedMatches = consolidatedMatches
+                    .map((match, index) => ({ ...match, originalIndex: index }))
+                    .sort((a, b) => b.start - a.start);
+
+                sortedMatches.forEach((match) => {
+                    const decision = userDecisions.get(match.originalIndex);
+                    if (decision === 'replace') {
+                        const replacement = window.clinicalAnonymiser.getReplacementForMatch(match);
+                        anonymisedText = anonymisedText.substring(0, match.start) + 
+                                       replacement + 
+                                       anonymisedText.substring(match.end);
+                        replacements.push({
+                            original: match.text,
+                            replacement: replacement,
+                            type: match.type
+                        });
+                    }
+                });
+
+                document.body.removeChild(modal);
+                resolve({
+                    approved: true,
+                    anonymisedText: anonymisedText,
+                    replacementsCount: replacements.length,
+                    replacements: replacements
+                });
+            } else {
+                alert('Please review all items before proceeding.');
+            }
+        });
+
+        actionButtons.appendChild(cancelBtn);
+        actionButtons.appendChild(approveBtn);
+
+        // Assemble modal
+        modalContent.appendChild(header);
+        modalContent.appendChild(matchesContainer);
+        modalContent.appendChild(summaryDiv);
+        modalContent.appendChild(actionButtons);
+        modal.appendChild(modalContent);
+
+        // Add to page
+        document.body.appendChild(modal);
+
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+                resolve({ approved: false });
+            }
+        });
+    });
+}
+
 // Function to display relevant guidelines in the summary
 function displayRelevantGuidelines(categories) {
     if (!categories || typeof categories !== 'object') {
@@ -1356,38 +1606,37 @@ async function findRelevantGuidelines(suppressHeader = false) {
                 console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
 
                 if (piiAnalysis.containsPII) {
-                    console.log('[ANONYMISER] PII detected, anonymising data...');
+                    console.log('[ANONYMISER] PII detected, showing review interface...');
                     
-                    // Anonymise the transcript
-                    const anonymisationResult = await window.clinicalAnonymiser.anonymise(transcript, {
-                        preserveClinicalInfo: true,
-                        preserveDates: false,
-                        preserveAges: false,
-                        preserveGenders: false
-                    });
-
-                    if (anonymisationResult.success) {
-                        anonymisedTranscript = anonymisationResult.anonymisedText;
+                    // Show PII review interface
+                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
+                    
+                    if (reviewResult.approved) {
+                        // Use the user-approved anonymised text
+                        anonymisedTranscript = reviewResult.anonymisedText;
                         anonymisationInfo = {
-                            originalLength: anonymisationResult.metadata.originalLength,
-                            anonymisedLength: anonymisationResult.metadata.anonymisedLength,
-                            replacementsCount: anonymisationResult.metadata.replacementsCount,
+                            originalLength: transcript.length,
+                            anonymisedLength: anonymisedTranscript.length,
+                            replacementsCount: reviewResult.replacementsCount,
                             riskLevel: piiAnalysis.riskLevel,
-                            piiTypes: piiAnalysis.piiTypes
+                            piiTypes: piiAnalysis.piiTypes,
+                            userReviewed: true
                         };
 
-                        console.log('[ANONYMISER] Anonymisation completed:', anonymisationInfo);
+                        console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
                         // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied (User Reviewed)**\n` +
                             `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
                             `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
-                            `- Replacements Made: ${anonymisationResult.metadata.replacementsCount}\n` +
+                            `- Replacements Made: ${reviewResult.replacementsCount}\n` +
                             `- Clinical Information: Preserved\n\n`;
                         appendToSummary1(anonymisationNotice, false);
                     } else {
-                        console.warn('[ANONYMISER] Anonymisation failed, using original transcript');
-                        appendToSummary1('\n⚠️ **Privacy Note:** Anonymisation failed, using original data\n\n', false);
+                        // User cancelled the review, use original transcript
+                        console.log('[ANONYMISER] User cancelled PII review, using original transcript');
+                        anonymisedTranscript = transcript;
+                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
@@ -1578,38 +1827,37 @@ async function generateClinicalNote() {
                 console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
 
                 if (piiAnalysis.containsPII) {
-                    console.log('[ANONYMISER] PII detected, anonymising data...');
+                    console.log('[ANONYMISER] PII detected, showing review interface...');
                     
-                    // Anonymise the transcript
-                    const anonymisationResult = await window.clinicalAnonymiser.anonymise(transcript, {
-                        preserveClinicalInfo: true,
-                        preserveDates: false,
-                        preserveAges: false,
-                        preserveGenders: false
-                    });
-
-                    if (anonymisationResult.success) {
-                        anonymisedTranscript = anonymisationResult.anonymisedText;
+                    // Show PII review interface
+                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
+                    
+                    if (reviewResult.approved) {
+                        // Use the user-approved anonymised text
+                        anonymisedTranscript = reviewResult.anonymisedText;
                         anonymisationInfo = {
-                            originalLength: anonymisationResult.metadata.originalLength,
-                            anonymisedLength: anonymisationResult.metadata.anonymisedLength,
-                            replacementsCount: anonymisationResult.metadata.replacementsCount,
+                            originalLength: transcript.length,
+                            anonymisedLength: anonymisedTranscript.length,
+                            replacementsCount: reviewResult.replacementsCount,
                             riskLevel: piiAnalysis.riskLevel,
-                            piiTypes: piiAnalysis.piiTypes
+                            piiTypes: piiAnalysis.piiTypes,
+                            userReviewed: true
                         };
 
-                        console.log('[ANONYMISER] Anonymisation completed:', anonymisationInfo);
+                        console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
                         // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied (User Reviewed)**\n` +
                             `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
                             `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
-                            `- Replacements Made: ${anonymisationResult.metadata.replacementsCount}\n` +
+                            `- Replacements Made: ${reviewResult.replacementsCount}\n` +
                             `- Clinical Information: Preserved\n\n`;
                         appendToSummary1(anonymisationNotice, false);
                     } else {
-                        console.warn('[ANONYMISER] Anonymisation failed, using original transcript');
-                        appendToSummary1('\n⚠️ **Privacy Note:** Anonymisation failed, using original data\n\n', false);
+                        // User cancelled the review, use original transcript
+                        console.log('[ANONYMISER] User cancelled PII review, using original transcript');
+                        anonymisedTranscript = transcript;
+                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
