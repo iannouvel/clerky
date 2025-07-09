@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD), presents to gynaecology clinic with a 6-month history of worsening vulval pruritus and discomfort. Reports dyspareunia and visible white, atrophic patches on vulva. No urinary symptoms.  \n\n#### **BACKGROUND:**  \n- **PMHx:** Hypothyroidism, well-controlled. No DM, no autoimmune conditions.  \n- **ObGyn Hx:** G2P2, menopause at 51, no HRT. No previous vulval pathology.  \n- **Medications:** Levothyroxine 50mcg OD, no allergies.  \n- **SHx:** Non-smoker, occasional alcohol.  \n- **No FHx** of vulval dermatoses or malignancy.  \n\n#### **ASSESSMENT:**  \n- **Examination:**  \n  - **Vulva:** Well-demarcated, porcelain-white plaques with epidermal thinning and fissuring at posterior fourchette. No ulceration or suspicious lesions.  \n  - **No inguinal lymphadenopathy.**  \n  - **PV exam deferred** (patient declined due to discomfort).  \n- **Vitals:** BP 128/76, HR 72, afebrile.  \n- **Differential:**  \n  1. **Lichen sclerosus (most likely)** – classic appearance.  \n  2. **Lichen planus** – less likely without erosions/[PII]’s striae.  \n  3. **Vulval intraepithelial neoplasia (VIN)** – low suspicion but biopsy if atypical features.  \n- **Investigations pending:**  \n  - **Vulval biopsy** (if diagnostic uncertainty or poor response to treatment).  \n  - **FBC, TFTs** (monitor thyroid function).  \n\n#### **RECOMMENDATION:**  \n1. **First-line treatment:**  \n   - **Topical clobetasol propionate 0.05% ointment** OD for 4 weeks, then taper.  \n   - **Emollients** (e.g., Diprobase) for symptomatic relief.  \n2. **Follow-up:**  \n   - **Gynaecology clinic review in 6/52** to assess response.  \n   - **Biopsy if no improvement** or suspicious changes.  \n3. **Patient education:**  \n   - Avoid irritants (soaps, tight clothing).  \n   - Self-examination advice; report any ulceration/bleeding.  \n4. **Long-term monitoring:**  \n   - Annual review due to **small ↑ risk of vulval SCC**.  \n\n**Plan documented by:** [Your Name]  \n**Role:** [FY2/ST1 in Obs & Gynae]  \n**For educational purposes only.**  \n\n---  \n*Note: This clerking uses UK terminology (e.g., \"6/52\" for 6 weeks) and follows NHS documentation standards.*",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 4,
+  "potentiallyRelevantCount": 3,
+  "lessRelevantCount": 29,
+  "notRelevantCount": 230
+}

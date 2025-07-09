@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "transcript": "**EHR Medical Note – Labia Minora Hypertrophy**  \n\n- **HPI**: Pt c/o enlarged labia minora, asymptomatic. No pain, pruritus, or dyspareunia. No hx trauma or infection.  \n- **Exam**:  \n  - VSS: BP 120/80, HR 72, afebrile.  \n  - NAD.  \n  - Gynae: Bilateral labia minora hypertrophy, symmetrical, no erythema/lesions/discharge. No vulvar tenderness.  \n- **A/P**:  \n  - Benign labial hypertrophy, no intervention required.  \n  - Reassure pt – normal anatomical variant.  \n  - Advised hygiene measures, avoid irritants.  \n  - FU prn if symptoms develop.  \n\n*For educational purposes only.*",
+    "guidelinesCount": 266,
+    "chunksProcessed": 34,
+    "chunksFailed": 0
+  },
+  "response": "{\n  \"success\": true,\n  \"categoriesFound\": 274,\n  \"mostRelevantCount\": 3,\n  \"potentiallyRelevantCount\": 0,\n  \"lessRelevantCount\": 31,\n  \"notRelevantCount\": 240\n}",
+  "endpoint": "findRelevantGuidelines",
+  "timestamp": "2025-07-09T21-02-20",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"transcript\": \"**EHR Medical Note – Labia Minora Hypertrophy**  \\n\\n- **HPI**: Pt c/o enlarged labia minora, asymptomatic. No pain, pruritus, or dyspareunia. No hx trauma or infection.  \\n- **Exam**:  \\n  - VSS: BP 120/80, HR 72, afebrile.  \\n  - NAD.  \\n  - Gynae: Bilateral labia minora hypertrophy, symmetrical, no erythema/lesions/discharge. No vulvar tenderness.  \\n- **A/P**:  \\n  - Benign labial hypertrophy, no intervention required.  \\n  - Reassure pt – normal anatomical variant.  \\n  - Advised hygiene measures, avoid irritants.  \\n  - FU prn if symptoms develop.  \\n\\n*For educational purposes only.*\",\n  \"guidelinesCount\": 266,\n  \"chunksProcessed\": 34,\n  \"chunksFailed\": 0\n}\n\nA: {\n  \"success\": true,\n  \"categoriesFound\": 274,\n  \"mostRelevantCount\": 3,\n  \"potentiallyRelevantCount\": 0,\n  \"lessRelevantCount\": 31,\n  \"notRelevantCount\": 240\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}

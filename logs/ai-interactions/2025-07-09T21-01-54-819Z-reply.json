@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 584,
+    "transcriptPreview": "**EHR Medical Note – Labia Minora Hypertrophy**  \n\n- **HPI**: Pt c/o enlarged labia minora, asymptomatic. No pain, pruritus, or dyspareunia. No hx trauma or infection.  \n- **Exam**:  \n  - VSS: BP 120/80, HR 72, afebrile.  \n  - NAD.  \n  - Gynae: Bilateral labia minora hypertrophy, symmetrical, no erythema/lesions/discharge. No vulvar tenderness.  \n- **A/P**:  \n  - Benign labial hypertrophy, no intervention required.  \n  - Reassure pt – normal anatomical variant.  \n  - Advised hygiene measures, av...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-07-09T21-01-54",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 584,\n  \"transcriptPreview\": \"**EHR Medical Note – Labia Minora Hypertrophy**  \\n\\n- **HPI**: Pt c/o enlarged labia minora, asymptomatic. No pain, pruritus, or dyspareunia. No hx trauma or infection.  \\n- **Exam**:  \\n  - VSS: BP 120/80, HR 72, afebrile.  \\n  - NAD.  \\n  - Gynae: Bilateral labia minora hypertrophy, symmetrical, no erythema/lesions/discharge. No vulvar tenderness.  \\n- **A/P**:  \\n  - Benign labial hypertrophy, no intervention required.  \\n  - Reassure pt – normal anatomical variant.  \\n  - Advised hygiene measures, av...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
