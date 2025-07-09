@@ -34,11 +34,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         const buttons = document.querySelectorAll('.nav-btn');
         const contents = document.querySelectorAll('.tab-content');
-        const modelToggle = document.getElementById('modelToggle');
-        // Set initial model toggle text
-        const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-        modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
-        modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+        const modelSelect = document.getElementById('modelSelect');
+        // Set initial model select value
+        modelSelect.value = currentModel;
         
         let currentLogIndex = 0;
         let logs = [];
@@ -239,12 +237,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         // Function to update the AI model
         async function updateAIModel() {
-            const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
+            const modelSelect = document.getElementById('modelSelect');
+            const newModel = modelSelect.value;
             
-            // Disable the button and show loading state
-            modelToggle.disabled = true;
-            const originalText = modelToggle.textContent;
-            modelToggle.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">&#x21BB;</span> Switching...';
+                            // Disable the select and show loading state
+                modelSelect.disabled = true;
+                const originalValue = modelSelect.value;
+                const originalText = modelSelect.options[modelSelect.selectedIndex].text;
+                modelSelect.innerHTML = '<option>Switching...</option>';
             
             try {
                 console.log(`Attempting to switch to ${newModel}`);
@@ -282,9 +282,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 if (response.ok || response.status === 202) {
                     currentModel = newModel;
-                    const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-                    modelToggle.textContent = `AI: ${newModel} (${modelName})`;
-                    modelToggle.classList.toggle('active', newModel === 'DeepSeek');
                     console.log(`Successfully switched to ${newModel}`);
                     
                     // Show warning if preference might not persist
@@ -309,11 +306,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                     showLoginPrompt();
                 }
             } finally {
-                // Always restore button state
-                if (modelToggle.textContent.includes('Switching')) {
-                    modelToggle.textContent = originalText;
-                }
-                modelToggle.disabled = false;
+                // Always restore select state
+                modelSelect.disabled = false;
+                // Restore the original options
+                modelSelect.innerHTML = `
+                    <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
+                    <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
+                    <option value="Anthropic">Claude (claude-3-sonnet)</option>
+                    <option value="Mistral">Mistral (mistral-large)</option>
+                `;
+                modelSelect.value = currentModel;
             }
         }
 
@@ -336,8 +338,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             document.querySelector('.top-bar-center').appendChild(loginButton);
         }
 
-        // Add click event listener for model toggle
-        modelToggle.addEventListener('click', updateAIModel);
+        // Add change event listener for model select
+        modelSelect.addEventListener('change', updateAIModel);
 
         // Check authentication state on page load
         onAuthStateChanged(auth, (user) => {
@@ -345,7 +347,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (user) {
                 // User is signed in
                 console.log('User is signed in:', user.email);
-                modelToggle.disabled = false;
+                modelSelect.disabled = false;
                 // Remove login prompt if it exists
                 const loginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
                 if (loginButton) {
@@ -354,7 +356,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             } else {
                 // User is signed out
                 console.log('User is signed out');
-                modelToggle.disabled = true;
+                modelSelect.disabled = true;
                 showLoginPrompt();
             }
         });
