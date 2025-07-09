@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved PII Detection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin: 10px 0;
+        }
+        button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1976d2;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <h1>Improved PII Detection Test</h1>
+    <p>This test verifies that the system now relies primarily on the Libretto library and uses very conservative fallback patterns.</p>
+    
+    <div class="test-section">
+        <h2>Test 1: Medical Text (Should NOT detect PII)</h2>
+        <p>This medical text should NOT trigger PII detection:</p>
+        <textarea id="medicalText">Clinical Interaction: Twin Pregnancy with Obstetric Cholestasis
+
+Patient Details:
+- Age: 28 years
+- Gravida: 2, Para: 1
+- Previous delivery: SVD at 40+2 weeks
+- Current gestation: 26+3 weeks
+- Booking BMI: 24 kg/m²
+
+Relevant Obstetric History:
+Previous pregnancy was unremarkable with normal delivery at term.
+
+Relevant Medical History:
+Mild gestational diabetes in previous pregnancy, well controlled with diet.
+
+Social History:
+Lives with partner, non-smoker, works as teacher.
+
+Examination Findings:
+General: Alert and well
+Abdomen: Uterus palpable at 26 weeks gestation
+Age: 28 years
+Twins: Dichorionic diamniotic
+
+Notable Omissions:
+Booking scan not available
+Fetal growth scans not performed
+Current fetal wellbeing assessment pending
+
+Impression:
+Twin pregnancy with obstetric cholestasis
+
+Management Plan:
+Investigations:
+- Serum bile acids
+- Fasting glucose
+- Full blood count
+- Fetal growth scan
+- Dopplers
+
+Medical Management:
+Start ursodeoxycholic acid
+Consider induction at 37 weeks
+
+Ongoing Care:
+Weekly bile acid monitoring
+Increase ursodeoxycholic acid as needed
+Weekly growth scans
+Aim for delivery at 37 weeks
+Consider caesarean section if indicated
+Delivery planning to be discussed
+
+Counseling Provided:
+Discussed obstetric cholestasis risks
+Increase in stillbirth risk with twins
+Reassured about ongoing monitoring
+Ongoing delivery plan discussed
+Advised fetal movement monitoring
+Provided contact details for concerns
+
+Dictated by: Fictional Name
+Date: Fictional Date
+Note: This is a fictional dictation for testing purposes.</textarea>
+        <button onclick="testMedicalText()">Test Medical Text</button>
+        <div id="result1" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Text with Real PII (Should detect PII)</h2>
+        <p>This text contains real PII that should be detected:</p>
+        <textarea id="piiText">Patient Sarah Ahmed, aged 28, presented to Dr. James Wilson at Brighton General Hospital on 15/03/2024. Contact: sarah.ahmed@nhs.net, phone: 01273 123456. NHS number: 1234567890. Address: 42 High Street, Brighton, BN1 1AA. The patient reported symptoms of gestational diabetes during her pregnancy at 28 weeks gestation.</textarea>
+        <button onclick="testPIIText()">Test PII Text</button>
+        <div id="result2" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Mixed Text (Should detect only real PII)</h2>
+        <p>This text has both medical terms and real PII:</p>
+        <textarea id="mixedText">Dr. Emily Brown saw Patient Mary Johnson (DOB: 15/06/1985) at University Hospitals Sussex. Contact: mary.johnson@nhs.net, tel: 01273 987654. NHS: 9876543210. Address: 15 Park Lane, Brighton, BN2 1AA. Diagnosis: gestational diabetes at 26 weeks. The patient reported pruritus and cholestasis symptoms. Twin pregnancy with obstetric complications.</textarea>
+        <button onclick="testMixedText()">Test Mixed Text</button>
+        <div id="result3" class="result"></div>
+    </div>
+
+    <!-- Load the bundled library -->
+    <script src="dist/libretto-bundle.js"></script>
+    
+    <!-- Load anonymisation module -->
+    <script type="module" src="anonymisation.js"></script>
+
+    <script>
+        // Wait for modules to load
+        window.addEventListener('load', async () => {
+            // Initialize the anonymiser
+            if (window.clinicalAnonymiser) {
+                await window.clinicalAnonymiser.initialize();
+                console.log('Anonymiser initialized');
+            }
+        });
+
+        async function testMedicalText() {
+            const resultDiv = document.getElementById('result1');
+            const input = document.getElementById('medicalText').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    resultDiv.innerHTML = `
+                        <div class="warning">
+                            <strong>⚠️ PII Detected (Unexpected):</strong><br>
+                            Risk Level: ${piiAnalysis.riskLevel}<br>
+                            PII Types: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+                            <br>
+                            This medical text should NOT have triggered PII detection.
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ No PII Detected (Correct):</strong><br>
+                            Medical text properly ignored by PII detection system.
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testPIIText() {
+            const resultDiv = document.getElementById('result2');
+            const input = document.getElementById('piiText').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ PII Detected (Correct):</strong><br>
+                            Risk Level: ${piiAnalysis.riskLevel}<br>
+                            PII Types: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+                            <br>
+                            Real PII was properly detected.
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="warning">
+                            <strong>⚠️ No PII Detected (Unexpected):</strong><br>
+                            This text contains real PII that should have been detected.
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testMixedText() {
+            const resultDiv = document.getElementById('result3');
+            const input = document.getElementById('mixedText').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            <strong>✅ PII Detected (Correct):</strong><br>
+                            Risk Level: ${piiAnalysis.riskLevel}<br>
+                            PII Types: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+                            <br>
+                            Only real PII was detected, medical terms were ignored.
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="warning">
+                            <strong>⚠️ No PII Detected (Unexpected):</strong><br>
+                            This text contains real PII that should have been detected.
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Bundled Libretto Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Bundled Libretto Library</h1>
+    
+    <div class="test-section info">
+        <h3>Library Status</h3>
+        <div id="library-status">Checking library availability...</div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test PII Detection</h3>
+        <p>Enter text with PII to test the bundled library:</p>
+        <textarea id="test-input" placeholder="Enter text with names, emails, phone numbers, etc...">Patient John Smith, DOB: 15/03/1985, NHS: 123 456 7890, email: john.smith@nhs.uk, phone: 07700 900123</textarea>
+        <button onclick="testPIIDetection()">Test PII Detection</button>
+        <div id="pii-results"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test Anonymisation</h3>
+        <button onclick="testAnonymisation()">Test Full Anonymisation</button>
+        <div id="anonymisation-results"></div>
+    </div>
+
+    <!-- Load the bundled library -->
+    <script src="/dist/libretto-bundle.js"></script>
+    <script src="/anonymisation.js"></script>
+    
+    <script>
+        let anonymiser;
+        
+        // Check library availability on page load
+        window.addEventListener('load', async () => {
+            const statusDiv = document.getElementById('library-status');
+            
+            try {
+                // Check if bundled library is available
+                if (typeof LibrettoRedact !== 'undefined') {
+                    statusDiv.innerHTML = '<span style="color: green;">✓ Bundled library loaded successfully</span>';
+                    statusDiv.parentElement.className = 'test-section success';
+                    
+                    // Initialize anonymiser
+                    anonymiser = new ClinicalDataAnonymiser();
+                    await anonymiser.initialize();
+                    
+                    console.log('Library loaded and anonymiser initialized');
+                } else {
+                    statusDiv.innerHTML = '<span style="color: red;">✗ Bundled library not found</span>';
+                    statusDiv.parentElement.className = 'test-section error';
+                }
+            } catch (error) {
+                statusDiv.innerHTML = `<span style="color: red;">✗ Error: ${error.message}</span>`;
+                statusDiv.parentElement.className = 'test-section error';
+            }
+        });
+        
+        async function testPIIDetection() {
+            const input = document.getElementById('test-input').value;
+            const resultsDiv = document.getElementById('pii-results');
+            
+            if (!anonymiser) {
+                resultsDiv.innerHTML = '<div class="error">Anonymiser not initialized</div>';
+                return;
+            }
+            
+            try {
+                const piiCheck = await anonymiser.checkForPII(input);
+                
+                let html = '<h4>PII Detection Results:</h4>';
+                html += '<pre>' + JSON.stringify(piiCheck, null, 2) + '</pre>';
+                
+                if (piiCheck.hasPII) {
+                    html += '<div class="success">✓ PII detected</div>';
+                } else {
+                    html += '<div class="info">No PII detected</div>';
+                }
+                
+                resultsDiv.innerHTML = html;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testAnonymisation() {
+            const input = document.getElementById('test-input').value;
+            const resultsDiv = document.getElementById('anonymisation-results');
+            
+            if (!anonymiser) {
+                resultsDiv.innerHTML = '<div class="error">Anonymiser not initialized</div>';
+                return;
+            }
+            
+            try {
+                const result = await anonymiser.anonymise(input);
+                
+                let html = '<h4>Anonymisation Results:</h4>';
+                html += '<h5>Original Text:</h5>';
+                html += '<pre>' + input + '</pre>';
+                html += '<h5>Anonymised Text:</h5>';
+                html += '<pre>' + result.anonymisedText + '</pre>';
+                html += '<h5>Metadata:</h5>';
+                html += '<pre>' + JSON.stringify(result.metadata, null, 2) + '</pre>';
+                
+                resultsDiv.innerHTML = html;
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html> 

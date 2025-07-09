@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PII Review Prototype (Integrated)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #f0f0f0; }
+    .actions button { margin-right: 8px; }
+    .final-output { margin-top: 30px; background: #f8f8f8; padding: 15px; border-radius: 6px; }
+    .no-pii { color: green; font-weight: bold; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>PII Review Prototype (Integrated)</h2>
+  <textarea id="inputText" rows="4" style="width:100%;">Patient John Smith reported symptoms. Dr. Sarah Johnson examined the patient. Contact: 020 1234 5678</textarea>
+  <br>
+  <button onclick="detectPII()">Detect PII</button>
+
+  <div id="reviewSection"></div>
+  <div class="final-output" id="finalOutput"></div>
+
+  <script src="anonymisation.js"></script>
+  <script>
+    window.clinicalAnonymiser = null;
+
+    window.detectPII = async function() {
+      const text = document.getElementById('inputText').value;
+      document.getElementById('finalOutput').innerHTML = '';
+      document.getElementById('reviewSection').innerHTML = '<div class="info">Detecting PII...</div>';
+      if (!window.clinicalAnonymiser) {
+        window.clinicalAnonymiser = new ClinicalDataAnonymiser();
+        await window.clinicalAnonymiser.initialize();
+      }
+      // Use checkForPII to get all matches
+      const piiAnalysis = await window.clinicalAnonymiser.checkForPII(text);
+      // Build matches array with type, value, start, end
+      const matches = [];
+      if (piiAnalysis.piiTypes && piiAnalysis.piiTypes.length > 0) {
+        piiAnalysis.piiTypes.forEach(typeObj => {
+          if (typeObj.examples && typeObj.examples.length > 0) {
+            // Find actual positions of examples in the text
+            typeObj.examples.forEach(example => {
+              const index = text.indexOf(example);
+              if (index !== -1) {
+                matches.push({
+                  type: typeObj.type,
+                  value: example,
+                  start: index,
+                  end: index + example.length
+                });
+              }
+            });
+          }
+        });
+      }
+      
+      // Consolidate overlapping matches into meaningful entities
+      const consolidatedMatches = window.consolidatePIIMatches(matches);
+      if (consolidatedMatches.length === 0) {
+        document.getElementById('reviewSection').innerHTML = '<div class="no-pii">No PII detected.</div>';
+        return;
+      }
+      window.showReviewUI(text, consolidatedMatches);
+    };
+
+    window.showReviewUI = function(originalText, matches) {
+      let html = '<h3>Review Detected PII</h3>';
+      html += '<table><tr><th>Type</th><th>Value</th><th>Action</th></tr>';
+      matches.forEach((m, i) => {
+        html += `<tr>
+          <td>${m.type}</td>
+          <td>${m.value}</td>
+          <td class="actions">
+            <button onclick="setPIIAction(${i}, 'replace')">Replace</button>
+            <button onclick="setPIIAction(${i}, 'ignore')">Ignore</button>
+            <span id="action-${i}"></span>
+          </td>
+        </tr>`;
+      });
+      html += '</table>';
+      html += '<button onclick="applyPIIReview()">Apply Choices</button>';
+      document.getElementById('reviewSection').innerHTML = html;
+      window.piiReviewState = { originalText, matches, actions: Array(matches.length).fill('replace') };
+      matches.forEach((_, i) => window.setPIIAction(i, 'replace', true));
+    };
+
+    window.consolidatePIIMatches = function(matches) {
+      if (matches.length === 0) return [];
+      
+      console.log('Original matches:', JSON.stringify(matches, null, 2));
+      
+      // Sort matches by start position
+      const sortedMatches = [...matches].sort((a, b) => a.start - b.start);
+      const consolidated = [];
+      
+      for (let i = 0; i < sortedMatches.length; i++) {
+        const current = sortedMatches[i];
+        let shouldAdd = true;
+        
+        // Check if this match overlaps with or is contained within a previous match
+        for (let j = 0; j < consolidated.length; j++) {
+          const existing = consolidated[j];
+          
+          // Check for overlap or containment
+          if ((current.start >= existing.start && current.start < existing.end) ||
+              (current.end > existing.start && current.end <= existing.end) ||
+              (current.start <= existing.start && current.end >= existing.end)) {
+            
+            // If current match is larger or more specific, replace the existing one
+            if (current.end - current.start > existing.end - existing.start) {
+              consolidated[j] = current;
+            }
+            shouldAdd = false;
+            break;
+          }
+        }
+        
+        if (shouldAdd) {
+          consolidated.push(current);
+        }
+      }
+      
+      console.log('After overlap removal:', JSON.stringify(consolidated, null, 2));
+      
+      // Further consolidate by looking for complete names
+      const finalConsolidated = [];
+      for (let i = 0; i < consolidated.length; i++) {
+        const current = consolidated[i];
+        let merged = false;
+        
+        // Look for adjacent name parts that form a complete name
+        for (let j = 0; j < finalConsolidated.length; j++) {
+          const existing = finalConsolidated[j];
+          
+          // Check if they form a complete name (adjacent or close and both are name-related)
+          const isAdjacent = (current.start === existing.end || existing.start === current.end);
+          const isClose = Math.abs(current.start - existing.end) <= 1 || Math.abs(existing.start - current.end) <= 1;
+          const bothAreNames = (current.type.includes('Name') || current.type.includes('name')) &&
+                              (existing.type.includes('Name') || existing.type.includes('name'));
+          
+          if ((isAdjacent || isClose) && bothAreNames) {
+            // Merge into a complete name
+            let mergedValue = existing.start < current.start ? 
+              existing.value + ' ' + current.value : 
+              current.value + ' ' + existing.value;
+            
+            // Clean up the merged value to remove medical terms
+            const medicalTerms = ['Patient', 'Dr.', 'Dr', 'Mr.', 'Mr', 'Mrs.', 'Mrs', 'Ms.', 'Ms', 'Prof.', 'Prof'];
+            medicalTerms.forEach(term => {
+              if (mergedValue.startsWith(term + ' ')) {
+                mergedValue = mergedValue.substring(term.length + 1);
+              }
+            });
+            
+            const mergedMatch = {
+              type: 'completeName',
+              value: mergedValue,
+              start: Math.min(existing.start, current.start),
+              end: Math.max(existing.end, current.end)
+            };
+            
+            finalConsolidated[j] = mergedMatch;
+            merged = true;
+            break;
+          }
+        }
+        
+        if (!merged) {
+          finalConsolidated.push(current);
+        }
+      }
+      
+      console.log('Final consolidated:', JSON.stringify(finalConsolidated, null, 2));
+      return finalConsolidated;
+    };
+
+    window.setPIIAction = function(index, action, silent) {
+      window.piiReviewState.actions[index] = action;
+      if (!silent) {
+        document.getElementById(`action-${index}`).textContent = `Selected: ${action}`;
+      } else {
+        document.getElementById(`action-${index}`).textContent = '';
+      }
+    };
+
+    window.applyPIIReview = function() {
+      let { originalText, matches, actions } = window.piiReviewState;
+      // Sort matches by start index descending to avoid messing up indices
+      const sorted = matches.map((m, i) => ({...m, action: actions[i]}))
+                            .sort((a, b) => b.start - a.start);
+      let result = originalText;
+      sorted.forEach(m => {
+        if (m.action === 'replace') {
+          result = result.slice(0, m.start) + `[${m.type.toUpperCase()}]` + result.slice(m.end);
+        }
+        // else ignore: leave as-is
+      });
+      document.getElementById('finalOutput').innerHTML =
+        `<strong>Final Anonymised Text:</strong><br><pre>${result}</pre>`;
+    };
+  </script>
+</body>
+</html> 

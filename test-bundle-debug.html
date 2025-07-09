@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Bundle Exports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .debug-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+        }
+        pre {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Debug Bundle Exports</h1>
+    
+    <div class="debug-section">
+        <h3>Global Variables Check</h3>
+        <div id="globals-check"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>LibrettoRedact Object</h3>
+        <div id="libretto-object"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Test Function Call</h3>
+        <button onclick="testFunction()">Test redactPii Function</button>
+        <div id="function-test"></div>
+    </div>
+
+    <!-- Load the bundled library -->
+    <script src="/dist/libretto-bundle.js"></script>
+    
+    <script>
+        function displayObject(obj, containerId) {
+            const container = document.getElementById(containerId);
+            if (obj === undefined) {
+                container.innerHTML = '<p><strong>undefined</strong></p>';
+            } else if (obj === null) {
+                container.innerHTML = '<p><strong>null</strong></p>';
+            } else if (typeof obj === 'function') {
+                container.innerHTML = '<p><strong>Function:</strong> ' + obj.toString().substring(0, 100) + '...</p>';
+            } else if (typeof obj === 'object') {
+                container.innerHTML = '<pre>' + JSON.stringify(obj, null, 2) + '</pre>';
+            } else {
+                container.innerHTML = '<p><strong>' + typeof obj + ':</strong> ' + obj + '</p>';
+            }
+        }
+        
+        // Check global variables
+        window.addEventListener('load', () => {
+            const globalsCheck = document.getElementById('globals-check');
+            let html = '<h4>Available Global Variables:</h4><ul>';
+            
+            const globals = [
+                'LibrettoRedact',
+                'redactPii',
+                'window.LibrettoRedact',
+                'window.redactPii'
+            ];
+            
+            globals.forEach(global => {
+                const value = eval(global);
+                const status = value !== undefined ? '✓ Available' : '✗ Not found';
+                const type = value !== undefined ? typeof value : 'undefined';
+                html += `<li><strong>${global}:</strong> ${status} (${type})</li>`;
+            });
+            
+            html += '</ul>';
+            globalsCheck.innerHTML = html;
+            
+            // Display LibrettoRedact object
+            displayObject(LibrettoRedact, 'libretto-object');
+        });
+        
+        function testFunction() {
+            const testDiv = document.getElementById('function-test');
+            
+            try {
+                if (typeof LibrettoRedact === 'function') {
+                    const testText = 'Patient John Smith, DOB: 15/03/1985';
+                    const result = LibrettoRedact(testText);
+                    testDiv.innerHTML = `
+                        <h4>Function Test Results:</h4>
+                        <p><strong>Input:</strong> ${testText}</p>
+                        <p><strong>Output:</strong> ${result}</p>
+                        <p><strong>Type:</strong> ${typeof result}</p>
+                    `;
+                } else if (typeof redactPii === 'function') {
+                    const testText = 'Patient John Smith, DOB: 15/03/1985';
+                    const result = redactPii(testText);
+                    testDiv.innerHTML = `
+                        <h4>Function Test Results:</h4>
+                        <p><strong>Input:</strong> ${testText}</p>
+                        <p><strong>Output:</strong> ${result}</p>
+                        <p><strong>Type:</strong> ${typeof result}</p>
+                    `;
+                } else {
+                    testDiv.innerHTML = '<p><strong>Error:</strong> No redactPii function found</p>';
+                }
+            } catch (error) {
+                testDiv.innerHTML = `<p><strong>Error:</strong> ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html> 

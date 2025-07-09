@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymisation Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result { margin: 10px 0; padding: 10px; border: 1px solid #ccc; }
+        .success { background-color: #d4edda; }
+        .error { background-color: #f8d7da; }
+        .info { background-color: #d1ecf1; }
+        button { margin: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Anonymisation Debug Test</h1>
+    <button onclick="testAnonymisation()">Test Anonymisation</button>
+    <div id="results"></div>
+
+    <script src="anonymisation.js"></script>
+    <script>
+        async function testAnonymisation() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="result info">Testing anonymisation...</div>';
+            
+            try {
+                // Initialize the anonymiser
+                window.clinicalAnonymiser = new ClinicalDataAnonymiser();
+                await window.clinicalAnonymiser.initialize();
+                
+                // Test text with names
+                const testText = "Patient John Smith reported symptoms. Dr. Sarah Johnson examined the patient. Contact: 020 1234 5678";
+                
+                resultsDiv.innerHTML = '<div class="result info">Testing with text: "' + testText + '"</div>';
+                
+                // Check for PII
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(testText);
+                
+                // Anonymise
+                const anonymisationResult = await window.clinicalAnonymiser.anonymise(testText, {
+                    preserveClinicalInfo: true
+                });
+                
+                let results = '<div class="result success">✅ Anonymisation Test Results:</div>';
+                results += '<div class="result">';
+                results += '<strong>Original Text:</strong> "' + testText + '"<br>';
+                results += '<strong>PII Analysis:</strong> ' + (piiAnalysis.containsPII ? 'YES' : 'NO') + ' (' + piiAnalysis.riskLevel + ')<br>';
+                results += '<strong>PII Types:</strong> ' + piiAnalysis.piiTypes.map(t => t.type).join(', ') + '<br>';
+                results += '<strong>Anonymised Text:</strong> "' + anonymisationResult.anonymisedText + '"<br>';
+                results += '<strong>Replacements Count:</strong> ' + anonymisationResult.metadata.replacementsCount + '<br>';
+                results += '<strong>Metadata:</strong><br>';
+                results += '<pre>' + JSON.stringify(anonymisationResult.metadata, null, 2) + '</pre>';
+                results += '</div>';
+                
+                resultsDiv.innerHTML = results;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="result error">❌ Error: ' + error.message + '</div>';
+                console.error('Anonymisation test error:', error);
+            }
+        }
+    </script>
+</body>
+</html> 

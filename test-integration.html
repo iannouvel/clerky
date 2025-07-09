@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PII Review Integration Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin: 10px 0;
+        }
+        button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1976d2;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>PII Review Integration Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Find Relevant Guidelines with PII Review</h2>
+        <p>This simulates the "Find relevant guidelines" workflow with PII detection:</p>
+        <textarea id="testInput1">Patient John Smith, aged 35, presented to Dr. Sarah Johnson at Brighton General Hospital on 15/03/2024. Contact: john.smith@email.com, phone: 01273 123456. NHS number: 1234567890. The patient reported symptoms of gestational diabetes during her pregnancy at 28 weeks gestation.</textarea>
+        <button onclick="testFindGuidelines()">Test Find Guidelines Workflow</button>
+        <div id="result1" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Generate Clinical Note with PII Review</h2>
+        <p>This simulates the "Generate clinical note" workflow with PII detection:</p>
+        <textarea id="testInput2">Mrs. Emily Brown, 28 years old, was seen by Dr. Michael Wilson in the maternity clinic. Her hospital number is BH123456. She lives at 42 High Street, Brighton, BN1 1AA. Her phone number is 07700 900123. The consultation revealed concerns about pre-eclampsia at 32 weeks gestation.</textarea>
+        <button onclick="testGenerateNote()">Test Generate Note Workflow</button>
+        <div id="result2" class="result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Direct PII Review Interface</h2>
+        <p>Test the PII review interface directly:</p>
+        <textarea id="testInput3">Dr. James Wilson saw Patient Mary Johnson (DOB: 15/06/1985) at University Hospitals Sussex. Contact: mary.johnson@nhs.net, tel: 01273 987654. NHS: 9876543210. Address: 15 Park Lane, Brighton, BN2 1AA. Diagnosis: gestational diabetes at 26 weeks.</textarea>
+        <button onclick="testDirectReview()">Test Direct PII Review</button>
+        <div id="result3" class="result"></div>
+    </div>
+
+    <!-- Load the bundled library -->
+    <script src="dist/libretto-bundle.js"></script>
+    
+    <!-- Load anonymisation module -->
+    <script type="module" src="anonymisation.js"></script>
+    
+    <!-- Load main script -->
+    <script type="module" src="script.js"></script>
+
+    <script>
+        // Wait for modules to load
+        window.addEventListener('load', async () => {
+            // Initialize the anonymiser
+            if (window.clinicalAnonymiser) {
+                await window.clinicalAnonymiser.initialize();
+                console.log('Anonymiser initialized');
+            }
+        });
+
+        async function testFindGuidelines() {
+            const resultDiv = document.getElementById('result1');
+            const input = document.getElementById('testInput1').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                // Simulate the findRelevantGuidelines workflow
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    resultDiv.innerHTML = `
+                        <strong>PII Detected:</strong><br>
+                        Risk Level: ${piiAnalysis.riskLevel}<br>
+                        PII Types: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+                        <br>
+                        <strong>Next step:</strong> The PII review interface would appear here in the real application.
+                    `;
+                } else {
+                    resultDiv.innerHTML = '<strong>No PII detected</strong>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testGenerateNote() {
+            const resultDiv = document.getElementById('result2');
+            const input = document.getElementById('testInput2').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                // Simulate the generateClinicalNote workflow
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    resultDiv.innerHTML = `
+                        <strong>PII Detected:</strong><br>
+                        Risk Level: ${piiAnalysis.riskLevel}<br>
+                        PII Types: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}<br>
+                        <br>
+                        <strong>Next step:</strong> The PII review interface would appear here in the real application.
+                    `;
+                } else {
+                    resultDiv.innerHTML = '<strong>No PII detected</strong>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+
+        async function testDirectReview() {
+            const resultDiv = document.getElementById('result3');
+            const input = document.getElementById('testInput3').value;
+            
+            resultDiv.innerHTML = 'Testing...';
+            
+            try {
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(input);
+                console.log('PII Analysis:', piiAnalysis);
+                
+                if (piiAnalysis.containsPII) {
+                    // Test the direct review interface
+                    const reviewResult = await window.showPIIReviewInterface(input, piiAnalysis);
+                    
+                    if (reviewResult.approved) {
+                        resultDiv.innerHTML = `
+                            <strong>PII Review Completed:</strong><br>
+                            Replacements: ${reviewResult.replacementsCount}<br>
+                            <br>
+                            <strong>Anonymised Text:</strong><br>
+                            <pre>${reviewResult.anonymisedText}</pre>
+                        `;
+                    } else {
+                        resultDiv.innerHTML = '<strong>PII Review Cancelled</strong>';
+                    }
+                } else {
+                    resultDiv.innerHTML = '<strong>No PII detected</strong>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            }
+        }
+    </script>
+</body>
+</html> 
