@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 2242,
+    "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD), presents to gynaecology clinic with a 6-month history of worsening vulval pruritus and discomfort. Reports dyspareunia and visible white, atrophic patches on vulva. No urinary symptoms.  \n\n#### **BACKGROUND:**  \n- **PMHx:** Hypothyroidism, well-controlled. No DM, no autoimmune conditions.  \n- **ObGyn Hx:** G2P2, menopause at 51, no HRT. No previous vulval patholog...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\",\n  \"responseType\": \"string\",\n  \"responseLength\": 435\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-07-09T20-49-58",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 2242,\n  \"transcriptPreview\": \"### **Medical Clerking – SBAR Format**  \\n\\n#### **SITUATION:**  \\n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD), presents to gynaecology clinic with a 6-month history of worsening vulval pruritus and discomfort. Reports dyspareunia and visible white, atrophic patches on vulva. No urinary symptoms.  \\n\\n#### **BACKGROUND:**  \\n- **PMHx:** Hypothyroidism, well-controlled. No DM, no autoimmune conditions.  \\n- **ObGyn Hx:** G2P2, menopause at 51, no HRT. No previous vulval patholog...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\",\n  \"responseType\": \"string\",\n  \"responseLength\": 435\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
