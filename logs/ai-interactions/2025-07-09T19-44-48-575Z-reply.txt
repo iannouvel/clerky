@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 17/34",
+  "transcriptLength": 2978,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** Candida Spladonik - 32-year-old **G2P1** (1 SVD, 1 TOP) female.  \n**Presenting complaint:** Chronic pelvic pain (CPP) worsening over 6 months, dyspareunia, and secondary dysmenorrhoea. Pain now **8/10** on VAS, refractory to **paracetamol/NSAIDs**.  \n**Key clinical issue:** Suspected **severe endometriosis** with possible **deep infiltrating disease (DIE)**.  \n\n#### **BACKGROUND:**  \n- **PMHx:**  \n  - Diagnosed **endome...",
+  "chunkGuidelines": [
+    "lone-worker-checklist-pdf: Lone worker checklist",
+    "management-of-acute-pelvic-inflammatory-disease-pdf: Management of Acute Pelvic Inflammatory Disease",
+    "md086-maternity-service-staffing-pdf: MD086 Maternity Service Staffing",
+    "md089-labour-ward-staffing-pdf: MD089 Labour Ward Staffing",
+    "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: MD090 Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow",
+    "mp001-provision-and-schedules-of-antenatal-care-pdf: MP001 Provision and Schedules of Antenatal Care",
+    "mp002-fetal-anomaly-screening-programme-sr-sept-pdf: MP002 Fetal Anomaly Screening Programme SR Sept",
+    "mp003-antenatal-screening-sickle-cell-and-thalassaemia-pdf: MP003 Antenatal Screening - Sickle Cell and Thalassaemia"
+  ],
+  "chunkIndex": 17,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"management-of-acute-pelvic-inflammatory-disease-pdf\", \"title\": \"Management of Acute Pelvic Inflammatory Disease\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp001-provision-and-schedules-of-antenatal-care-pdf\", \"title\": \"Provision and Schedules of Antenatal Care\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp003-antenatal-screening-sickle-cell-and-thalassaemia-pdf\", \"title\": \"Antenatal Screening - Sickle Cell and Thalassaemia\", \"relevance\": \"0.3\"},\n    {\"id\": \"mp002-fetal-anomaly-screening-programme-sr-sept-pdf\", \"title\": \"Fetal Anomaly Screening Programme SR Sept\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"lone-worker-checklist-pdf\", \"title\": \"Lone worker checklist\", \"relevance\": \"0.0\"},\n    {\"id\": \"md086-maternity-service-staffing-pdf\", \"title\": \"MD086 Maternity Service Staffing\", \"relevance\": \"0.0\"},\n    {\"id\": \"md089-labour-ward-staffing-pdf\", \"title\": \"MD089 Labour Ward Staffing\", \"relevance\": \"0.0\"},\n    {\"id\": \"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"MD090 Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1216
+}
