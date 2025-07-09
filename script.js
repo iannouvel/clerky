@@ -4427,7 +4427,63 @@ async function processWorkflow() {
 
 let saveStateTimeout = null;
 
-// Firestore chat history functions
+// Function to generate AI summary for chat content
+async function generateChatSummary(userInput) {
+    if (!userInput || userInput.trim().length === 0) {
+        return 'Empty chat';
+    }
+    
+    try {
+        const response = await fetch(`${window.SERVER_URL}/generateChatSummary`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${await window.auth.currentUser.getIdToken()}`
+            },
+            body: JSON.stringify({
+                userInput: userInput.trim()
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.success && result.summary) {
+            return result.summary;
+        } else {
+            throw new Error(result.error || 'Failed to generate summary');
+        }
+    } catch (error) {
+        console.error('[CHAT_SUMMARY] Error generating summary:', error);
+        // Fallback to simple preview
+        return userInput.substring(0, 40).replace(/\n/g, ' ') + (userInput.length > 40 ? '...' : '');
+    }
+}
+
+// Function to format date in the requested format
+function formatChatDate(timestamp) {
+    const date = new Date(timestamp);
+    const day = date.getDate();
+    const suffix = getDaySuffix(day);
+    const month = date.toLocaleDateString('en-GB', { month: 'long' });
+    const year = date.getFullYear();
+    const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    
+    return `${month} ${day}${suffix} (${time})`;
+}
+
+function getDaySuffix(day) {
+    if (day >= 11 && day <= 13) return 'th';
+    switch (day % 10) {
+        case 1: return 'st';
+        case 2: return 'nd';
+        case 3: return 'rd';
+        default: return 'th';
+    }
+}
+
 async function saveChatToFirestore(chat) {
     const user = window.auth.currentUser;
     if (!user) {
@@ -4669,10 +4725,10 @@ async function saveCurrentChatState() {
     }
 
     const state = getChatState();
-    const previewText = state.userInputContent.substring(0, 40).replace(/\n/g, ' ') || 'Empty chat';
+    const previewText = await generateChatSummary(state.userInputContent);
 
     chatHistory[chatIndex].state = state;
-    chatHistory[chatIndex].preview = `${previewText}...`;
+    chatHistory[chatIndex].preview = previewText;
     
     // Move the current chat to the top of the list
     const currentChat = chatHistory.splice(chatIndex, 1)[0];
@@ -4713,7 +4769,6 @@ async function startNewChat() {
 
     const newChat = {
         id: newChatId,
-        title: `Chat - ${new Date(newChatId).toLocaleString()}`,
         preview: 'New chat...',
         state: {
             userInputContent: '',
@@ -4808,9 +4863,9 @@ function renderChatHistory() {
         item.setAttribute('data-chat-id', chat.id);
         item.onclick = () => switchChat(chat.id);
         
+        const chatDate = formatChatDate(chat.id);
         item.innerHTML = `
-            <div class="history-item-title">${chat.title}</div>
-            <div class="history-item-preview">${chat.preview}</div>
+            <div class="history-item-title">${chatDate}: ${chat.preview}</div>
             <button class="delete-chat-btn" onclick="deleteChat(${chat.id}, event)" title="Delete Chat">&times;</button>
         `;
         historyList.appendChild(item);
