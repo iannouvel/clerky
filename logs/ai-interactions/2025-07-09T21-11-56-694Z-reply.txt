@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "**EHR Note – Bicornuate Uterus**  \n\n- **HPI**: 32F G2P1, h/o recurrent pregnancy loss (2 SABs), referred for pelvic anatomy eval.  \n- **Imaging**: TVUS/MRI confirms bicornuate uterus – fundal indentation >1 cm, two endometrial cavities, single cervix.  \n- **PE**: VSS (BP 120/78, HR 72), NAD, pelvic exam WNL.  \n- **Plan**: Counsel on pregnancy risks (PTB, malpresentation). Offer HSG if TTC. F/U with OB-GYN for surveillance.  \n\n*(Educational use only)*",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 49,
+  "potentiallyRelevantCount": 55,
+  "lessRelevantCount": 72,
+  "notRelevantCount": 90
+}
