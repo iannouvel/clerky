@@ -1,0 +1,84 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female.  \n**Presenting complaint:** Chronic pelvic pain (CPP) worsening over 6 months, dyspareunia, and secondary dysmenorrhoea. Pain now **8/10** on VAS, refractory to **paracetamol/NSAIDs**.  \n**Key clinical issue:** Suspected **severe endometriosis** with possible **deep infiltrating disease (DIE)**.  \n\n#### **BACKGROUND:**  \n- **PMHx:**  \n  - Diagnosed **endometriosis** aged 26 (laparoscopically confirmed, **ASRM Stage III**).  \n  - Previous **laparoscopic cystectomy** for **endometrioma (L ovary, 2019)**.  \n  - **Chronic iron-deficiency anaemia** (on **ferrous sulfate**).  \n- **ObGyn Hx:**  \n  - **Menarche** 12yo, cycles **28/5**, heavy (**PBAC 180**), clots.  \n  - **Subfertility** – TTC ×18 months, no conception.  \n  - **Contraception:** COCP (Microgynon) until 2021, now condoms.  \n- **Drugs:**  \n  - **Mefenamic acid 500mg TDS PRN**, **Omeprazole 20mg OD**, **Ferrous sulfate 200mg OD**.  \n- **Allergies:** NKDA.  \n- **SHx:** Non-smoker, occasional alcohol. Works as teacher.  \n\n#### **ASSESSMENT:**  \n- **Examination:**  \n  - **Abdomen:** Soft, non-distended. **Tenderness** in **LIF** and **suprapubic** region. No guarding/rigidity.  \n  - **PV:** **Cervical motion tenderness**, **fixed retroverted uterus**, **nodularity** in **Pouch of Douglas**.  \n- **Vitals (0800h):**  \n  - **BP** 112/74, **HR** 82, **Temp** 36.8°C, **RR** 14, **SpO₂** 98% RA.  \n- **Investigations:**  \n  - **Recent USS (2/52 ago):** **L ovarian endometrioma (4cm)**, no hydronephrosis.  \n  - **Bloods (today):**  \n    - **FBC:** Hb **98 g/L** (↓), MCV **76 fL** (↓), WCC **6.2**, Plts **320**.  \n    - **CRP** **<5**, **LFTs/U&Es** NAD.  \n    - **CA-125** **85 IU/mL** (↑).  \n  - **Awaiting:** MRI pelvis (requested for **DIE assessment**).  \n\n**Differentials:**  \n1. **Severe endometriosis (DIE)** – likely given history, exam, and imaging.  \n2. **Adenomyosis** – fixed uterus, dysmenorrhoea.  \n3. **Chronic PID** – less likely (no fever, normal CRP).  \n\n#### **RECOMMENDATION:**  \n- **Immediate:**  \n  - **Analgesia:** Escalate to **codeine 30mg QDS PRN** + **PPI cover**.  \n  - **Iron infusion (Monofer)** if Hb <100 post-MDT discussion.  \n- **Investigations:**  \n  - **Expedite MRI pelvis with interpretation by a specialist in gynaecological imaging** (assess **ureteric/bowel involvement**).  \n  - **Repeat CA-125 post-treatment** (monitor for malignant transformation risk).  \n- **Long-term:**  \n  - **MDT referral (Gynae, Fertility, Pain Team)**.  \n  - **Laparoscopic excision (not ablation) + adhesiolysis by a specialist endometriosis surgeon** (if MRI confirms DIE).  \n  - **Discuss hormonal suppression options post-op (e.g., Mirena/IUS or GnRH analogues) based on patient's symptoms and fertility plans**.  \n  - **Consider adding discussion of non-pharmacological pain management options (e.g., physiotherapy, TENS, psychological support)**.  \n  - **Urgent fertility counselling with reproductive specialist (consider IVF given 18 months subfertility with known endometriosis)**.  \n- **Follow-up:**  \n  - **Gynae clinic in 2/52** (with MRI results).  \n  - **GP for Hb monitoring**.  \n\n**Plan documented & discussed with patient. Consent obtained for MRI.**  \n\n---  \n*For educational purposes only – fictional case.*\n\nApply these changes:\nACCEPT: Replace \"Discuss hormonal suppression options post-op (e.g., Mirena/IUS or GnRH analogues) based on patient's symptoms and fertility plans\" with \"Discuss postoperative hormone suppression options (Mirena/IUS or GnRH analogues with add-back therapy) given patient's pain symptoms and fertility plans, emphasizing this should not be prescribed solely to enhance fertility (per ESHRE guidelines)\" (Reason: According to ESHRE Guideline 40: 'Postoperative hormone suppression should not be prescribed solely to enhance future pregnancy rates in women seeking pregnancy.' However, Guideline 41 states: 'Hormone therapy may be offered to women who cannot or decide not to conceive immediately after surgery as it does not negatively impact fertility and improves the immediate outcome of surgery for pain.' This modification clarifies the appropriate use of postoperative hormones in this symptomatic patient while adhering to guideline recommendations.)\nACCEPT: Replace \"Consider adding discussion of non-pharmacological pain management options (e.g., physiotherapy, TENS, psychological support)\" with \"Offer referral to multidisciplinary pain management including physiotherapy (pelvic floor therapy), psychological support, and consideration of TENS unit for adjunct pain control\" (Reason: The ESHRE guideline states: 'Psychological interventions, such as psychotherapy and mindfulness-based programmes, have shown promise in reducing pain and improving quality of life.' For this patient with chronic refractory pain, a more structured multidisciplinary approach aligns with guideline recommendations for comprehensive management. Pelvic floor physiotherapy is particularly relevant given her dyspareunia and nodularity findings.)\nACCEPT: Replace \"Missing: explicit documentation of EFI (Endometriosis Fertility Index) calculation\" with \"Calculate and document Endometriosis Fertility Index (EFI) to guide fertility counseling and surgical planning\" (Reason: ESHRE Guideline states: 'The Endometriosis Fertility Index (EFI) is a validated tool that can be used to counsel patients on their reproductive options post-surgery.' For this patient with stage III endometriosis and 18 months of subfertility, EFI calculation is critical for shared decision-making about fertility options. The guideline emphasizes EFI can 'guide decision-making between surgery, assisted reproductive technology (ART), or other fertility management options.')\nACCEPT: Replace \"Laparoscopic excision (not ablation) + adhesiolysis by a specialist endometriosis surgeon\" with \"Refer to specialist endometriosis center for laparoscopic excision (not ablation) + adhesiolysis, with discussion of bowel/ureteric involvement risks given suspected DIE\" (Reason: ESHRE Guideline recommends: 'Referral to a center of expertise is advised for women with deep endometriosis.' For this patient with suspected DIE (nodularity on exam, elevated CA-125), specialist referral is crucial. The guideline notes: 'Surgical excision of deep endometriosis lesions prior to ART should be guided mainly by pain symptoms and patient preference as its effectiveness on reproductive outcome is uncertain.' This modification emphasizes the need for specialized care.)\nACCEPT: Replace \"Repeat CA-125 post-treatment (monitor for malignant transformation risk)\" with \"Repeat CA-125 post-treatment for monitoring response (not for malignancy screening per ESHRE guidelines)\" (Reason: ESHRE Guideline states: 'Monitoring for ovarian malignancy could be performed but has shown no benefit in early detection or mortality reduction.' For this patient, CA-125 should be framed as a treatment response marker rather than malignancy screening, as the guideline notes 'the absolute increase in cancer risk is low' and does not recommend routine cancer screening beyond existing guidelines.)\nACCEPT: Replace \"Missing: explicit discussion of IVF versus surgery first approach for fertility\" with \"Document detailed counseling on IVF versus surgery-first approach for fertility, noting that surgery for endometrioma may impact ovarian reserve\" (Reason: ESHRE Guideline 56 states: 'Avoid routinely performing surgery for ovarian endometrioma prior to ART to improve live birth rates as evidence shows no benefit and surgery may impact ovarian reserve.' For this patient with endometrioma and subfertility, shared decision-making about fertility options must include this key consideration. Guideline 57 adds surgery may be considered 'to improve endometriosis-associated pain or accessibility of follicles.')\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1752094785426_dyxdjo05x",
+  "original_transcript_length": 3336,
+  "changes_applied": 6,
+  "decisions_summary": {
+    "accepted": 6,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: ### **Medical Clerking – SBAR Format**  
+
+#### **SITUATION:**  
+**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female.  
+**Presenting complaint:** Chronic pelvic pain (CPP) worsening over 6 months, dyspareunia, and secondary dysmenorrhoea. Pain now **8/10** on VAS, refractory to **paracetamol/NSAIDs**.  
+**Key clinical issue:** Suspected **severe endometriosis** with possible **deep infiltrating disease (DIE)**.  
+
+#### **BACKGROUND:**  
+- **PMHx:**  
+  - Diagnosed **endometriosis** aged 26 (laparoscopically confirmed, **ASRM Stage III**).  
+  - Previous **laparoscopic cystectomy** for **endometrioma (L ovary, 2019)**.  
+  - **Chronic iron-deficiency anaemia** (on **ferrous sulfate**).  
+- **ObGyn Hx:**  
+  - **Menarche** 12yo, cycles **28/5**, heavy (**PBAC 180**), clots.  
+  - **Subfertility** – TTC ×18 months, no conception.  
+  - **Contraception:** COCP (Microgynon) until 2021, now condoms.  
+- **Drugs:**  
+  - **Mefenamic acid 500mg TDS PRN**, **Omeprazole 20mg OD**, **Ferrous sulfate 200mg OD**.  
+- **Allergies:** NKDA.  
+- **SHx:** Non-smoker, occasional alcohol. Works as teacher.  
+
+#### **ASSESSMENT:**  
+- **Examination:**  
+  - **Abdomen:** Soft, non-distended. **Tenderness** in **LIF** and **suprapubic** region. No guarding/rigidity.  
+  - **PV:** **Cervical motion tenderness**, **fixed retroverted uterus**, **nodularity** in **Pouch of Douglas**.  
+- **Vitals (0800h):**  
+  - **BP** 112/74, **HR** 82, **Temp** 36.8°C, **RR** 14, **SpO₂** 98% RA.  
+- **Investigations:**  
+  - **Recent USS (2/52 ago):** **L ovarian endometrioma (4cm)**, no hydronephrosis.  
+  - **Bloods (today):**  
+    - **FBC:** Hb **98 g/L** (↓), MCV **76 fL** (↓), WCC **6.2**, Plts **320**.  
+    - **CRP** **<5**, **LFTs/U&Es** NAD.  
+    - **CA-125** **85 IU/mL** (↑).  
+  - **Awaiting:** MRI pelvis (requested for **DIE assessment**).  
+
+**Differentials:**  
+1. **Severe endometriosis (DIE)** – likely given history, exam, and imaging.  
+2. **Adenomyosis** – fixed uterus, dysmenorrhoea.  
+3. **Chronic PID** – less likely (no fever, normal CRP).  
+
+#### **RECOMMENDATION:**  
+- **Immediate:**  
+  - **Analgesia:** Escalate to **codeine 30mg QDS PRN** + **PPI cover**.  
+  - **Iron infusion (Monofer)** if Hb <100 post-MDT discussion.  
+- **Investigations:**  
+  - **Expedite MRI pelvis with interpretation by a specialist in gynaecological imaging** (assess **ureteric/bowel involvement**).  
+  - **Repeat CA-125 post-treatment for monitoring response (not for malignancy screening per ESHRE guidelines)**.  
+- **Long-term:**  
+  - **MDT referral (Gynae, Fertility, Pain Team)**.  
+  - **Refer to specialist endometriosis center for laparoscopic excision (not ablation) + adhesiolysis, with discussion of bowel/ureteric involvement risks given suspected DIE**.  
+  - **Discuss postoperative hormone suppression options (Mirena/IUS or GnRH analogues with add-back therapy) given patient's pain symptoms and fertility plans, emphasizing this should not be prescribed solely to enhance fertility (per ESHRE guidelines)**.  
+  - **Offer referral to multidisciplinary pain management including physiotherapy (pelvic floor therapy), psychological support, and consideration of TENS unit for adjunct pain control**.  
+  - **Urgent fertility counselling with reproductive specialist (consider IVF given 18 months subfertility with known endometriosis)**.  
+  - **Document detailed counseling on IVF versus surgery-first approach for fertility, noting that surgery for endometrioma may impact ovarian reserve**.  
+  - **Calculate and document Endometriosis Fertility Index (EFI) to guide fertility counseling and surgical planning**.  
+- **Follow-up:**  
+  - **Gynae clinic in 2/52** (with MRI results).  
+  - **GP for Hb monitoring**.  
+
+**Plan documented & discussed with patient. Consent obtained for MRI.**  
+
+---  
+*For educational purposes only – fictional case.*
+
+--- Token Usage Report ---
+Prompt tokens: 2091
+Completion tokens: 1105
+Total tokens: 3196
+Estimated cost: $0.001598
