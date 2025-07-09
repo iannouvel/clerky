@@ -7,7 +7,8 @@ const models = [
     { provider: 'OpenAI', model: 'gpt-3.5-turbo' },
     { provider: 'DeepSeek', model: 'deepseek-chat' },
     { provider: 'Anthropic', model: 'claude-3-sonnet-20240229' },
-    { provider: 'Mistral', model: 'mistral-large-latest' }
+    { provider: 'Mistral', model: 'mistral-large-latest' },
+    { provider: 'Gemini', model: 'gemini-1.5-pro' }
 ];
 
 async function testModel(provider, model) {
