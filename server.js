@@ -7740,3 +7740,55 @@ app.delete('/deleteChatHistory', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// Chat summary generation endpoint
+app.post('/generateChatSummary', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { userInput } = req.body;
+        
+        if (!userInput) {
+            return res.status(400).json({ success: false, error: 'User input is required' });
+        }
+        
+        // Create a simple prompt for generating a 4-8 word summary
+        const systemPrompt = `You are a medical assistant. Generate a concise 4-8 word summary of the clinical scenario described. Focus on the main clinical issue or patient presentation. Use medical terminology where appropriate.`;
+        
+        const userPrompt = `Please provide a 4-8 word summary of this clinical scenario: ${userInput}`;
+        
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+        
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        if (!aiResponse || !aiResponse.content) {
+            throw new Error('Failed to generate summary from AI');
+        }
+        
+        // Clean up the response to ensure it's 4-8 words
+        let summary = aiResponse.content.trim();
+        
+        // Remove any quotes or extra formatting
+        summary = summary.replace(/^["']|["']$/g, '');
+        
+        // Ensure it's not too long (max 60 characters for 4-8 words)
+        if (summary.length > 60) {
+            summary = summary.substring(0, 60).replace(/\s+\w*$/, '');
+        }
+        
+        console.log(`[CHAT_SUMMARY] Generated summary for user ${userId}: "${summary}"`);
+        
+        res.json({ 
+            success: true, 
+            summary: summary,
+            ai_provider: aiResponse.ai_provider,
+            ai_model: aiResponse.ai_model
+        });
+        
+    } catch (error) {
+        console.error('[CHAT_SUMMARY] Error generating chat summary:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
