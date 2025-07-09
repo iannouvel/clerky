@@ -10,6 +10,47 @@ window.auth = auth;
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
+// Add disclaimer check function
+async function checkDisclaimerAcceptance() {
+    const user = auth.currentUser;
+    if (!user) {
+        console.log('[DEBUG] No user authenticated, skipping disclaimer check');
+        return true; // Allow access if no user (will be handled by auth flow)
+    }
+
+    try {
+        console.log('[DEBUG] Checking disclaimer acceptance for user:', user.uid);
+        const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+        const disclaimerDoc = await getDoc(disclaimerRef);
+        
+        if (!disclaimerDoc.exists()) {
+            console.log('[DEBUG] No disclaimer acceptance found, redirecting to disclaimer page');
+            window.location.href = 'disclaimer.html';
+            return false;
+        }
+
+        // Check if disclaimer was accepted today
+        const acceptanceData = disclaimerDoc.data();
+        const acceptanceTime = acceptanceData.acceptanceTime.toDate();
+        const today = new Date();
+        const isToday = acceptanceTime.toDateString() === today.toDateString();
+        
+        if (!isToday) {
+            console.log('[DEBUG] Disclaimer not accepted today, redirecting to disclaimer page');
+            window.location.href = 'disclaimer.html';
+            return false;
+        }
+
+        console.log('[DEBUG] Disclaimer accepted today, allowing access');
+        return true;
+    } catch (error) {
+        console.error('[ERROR] Error checking disclaimer acceptance:', error);
+        // On error, redirect to disclaimer page to be safe
+        window.location.href = 'disclaimer.html';
+        return false;
+    }
+}
+
 // PII Review Interface Function
 async function showPIIReviewInterface(originalText, piiAnalysis) {
     return new Promise((resolve) => {
@@ -3443,6 +3484,14 @@ async function initializeApp() {
 
             if (user) {
             console.log('[DEBUG] User authenticated:', user.displayName || user.email);
+            
+            // Check disclaimer acceptance before showing main content
+            const disclaimerAccepted = await checkDisclaimerAcceptance();
+            if (!disclaimerAccepted) {
+                console.log('[DEBUG] Disclaimer not accepted, staying on current page');
+                return;
+            }
+            
             loading.classList.add('hidden');
             landingPage.classList.add('hidden');
             mainContent.classList.remove('hidden');
