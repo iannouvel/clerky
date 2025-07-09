@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disclaimer - clerky</title>
+    <title>Legal Disclaimer - clerky</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -68,6 +68,19 @@
             margin-top: 10px;
             display: none;
         }
+
+        .daily-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #856404;
+        }
+
+        .daily-notice strong {
+            color: #d63031;
+        }
     </style>
 </head>
 <body>
@@ -80,9 +93,14 @@
     </div>
     <div class="disclaimer-container">
         <div class="disclaimer-header">
-            <h1>Important Disclaimer</h1>
+            <h1>Legal Disclaimer & Daily Consent</h1>
             <p>Please read carefully before proceeding</p>
         </div>
+        
+        <div class="daily-notice">
+            <strong>⚠️ Daily Requirement:</strong> You must accept this disclaimer each day you use clerky to ensure continued awareness of the legal protections and limitations.
+        </div>
+        
         <div class="disclaimer-content">
             <p>This website is an <strong>experimental prototype</strong> and is not intended for clinical use.</p>
             <p>By clicking 'Accept', you acknowledge and agree that:</p>
@@ -91,8 +109,11 @@
                 <li>The information provided should not be used for clinical decision-making</li>
                 <li>You will not rely on this system for patient care</li>
                 <li>All clinical decisions must be based on approved clinical guidelines and professional judgment</li>
+                <li>You understand this is a prototype and may contain errors or inaccuracies</li>
+                <li>You accept full responsibility for any clinical decisions made</li>
             </ul>
-            <p>Your acceptance of this disclaimer will be logged with your user information and timestamp.</p>
+            <p><strong>Legal Protection:</strong> This disclaimer provides legal protection for both users and developers by clearly establishing the experimental nature of this tool.</p>
+            <p>Your acceptance of this disclaimer will be logged with your user information and timestamp. You must accept this disclaimer daily to continue using clerky.</p>
         </div>
         <div class="disclaimer-actions">
             <button id="acceptButton">I Accept - Not For Clinical Use</button>
@@ -120,18 +141,6 @@
                 return;
             }
 
-            // Check if user has already accepted disclaimer
-            const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
-            console.log('Checking if disclaimer already accepted for:', user.uid);
-            const disclaimerDoc = await getDoc(disclaimerRef);
-            
-            if (disclaimerDoc.exists()) {
-                console.log('Disclaimer already accepted, redirecting to main page');
-                // If already accepted, redirect to main page
-                window.location.href = 'index.html';
-                return;
-            }
-
             console.log('Setting up accept button click handler');
             // Add click handler for accept button
             acceptButton.addEventListener('click', async () => {
@@ -141,13 +150,14 @@
                     const disclaimerText = document.querySelector('.disclaimer-content').textContent;
 
                     console.log('Saving disclaimer acceptance to Firestore');
-                    // Save acceptance to Firestore
-                    await setDoc(disclaimerRef, {
+                    // Save acceptance to Firestore (this will overwrite any previous acceptance)
+                    await setDoc(doc(db, 'disclaimerAcceptance', user.uid), {
                         userId: user.uid,
                         userName: user.displayName,
                         userEmail: user.email,
                         acceptanceTime: timestamp,
-                        disclaimerContent: disclaimerText
+                        disclaimerContent: disclaimerText,
+                        dailyAcceptance: true
                     });
 
                     console.log('Disclaimer acceptance saved successfully');
