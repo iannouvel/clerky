@@ -4803,7 +4803,8 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
     }
 
     // Load prompts configuration
-    const prompts = createDefaultPrompts();
+    // Use the global prompts loaded from prompts.json instead of defaults
+    const loadedPrompts = global.prompts || prompts || require('./prompts.json');
     const enhancedData = { ...currentData };
     const enhancedFields = [];
     const errors = [];
@@ -4832,7 +4833,7 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
           continue;
         }
 
-        const promptConfig = prompts[promptKey];
+        const promptConfig = loadedPrompts[promptKey];
         if (!promptConfig) {
           console.log(`[DEBUG] Prompt configuration not found for: ${promptKey}, skipping...`);
           continue;
