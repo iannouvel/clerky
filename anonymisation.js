@@ -107,57 +107,31 @@ class ClinicalDataAnonymiser {
      */
     getEnhancedPIIPatterns() {
         return {
-            // Very conservative fallback patterns - rely primarily on Libretto library
+            // DISABLED: Regex patterns cause too many false positives with medical terms
+            // Rely solely on Libretto library for PII detection
             
-            // Only the most obvious PII patterns
+            // Only keep the most critical patterns for emergency fallback
+            // (These will only be used if Libretto library completely fails)
             
-            // Names with titles (only common titles)
-            namesWithTitles: /(Mr\.|Mrs\.|Ms\.|Dr\.|Professor|Prof\.)\s+[A-Z][a-z]+/g,
-            
-            // Full names (only obvious name patterns)
-            fullNames: /\b[A-Z][a-z]+\s+[A-Z][a-z]+\b/g,
-            
-            // Email addresses
+            // Email addresses (very specific pattern)
             emails: /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g,
             
-            // Phone numbers (UK and international)
+            // Phone numbers (UK and international) - very specific
             ukPhones: /\b(\+44|0)\s*\d{2,4}\s*\d{3,4}\s*\d{3,4}\b/g,
-            internationalPhones: /\b\+\d{1,3}\s*\d{1,4}\s*\d{1,4}\s*\d{1,4}\b/g,
             
-            // NHS numbers (UK format)
+            // NHS numbers (UK format) - very specific
             nhsNumbers: /\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/g,
             
-            // Dates (various formats)
-            dates: /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/g,
-            isoDates: /\b\d{4}-\d{2}-\d{2}\b/g,
-            
-            // Addresses
-            addresses: /\b\d+\s+[A-Za-z\s]+(?:Street|Road|Avenue|Lane|Close|Drive|Way|Place|Court)\b/gi,
-            postcodes: /\b[A-Z]{1,2}\d{1,2}\s*\d[A-Z]{2}\b/gi,
-            
-            // Medical identifiers
-            medicalRecordNumbers: /MRN[:\s]*(\d{6,})/gi,
-            hospitalNumbers: /Hosp[:\s]*(\d{6,})/gi,
-            patientIds: /Patient[:\s]*ID[:\s]*(\w+)/gi,
-            caseNumbers: /Case[:\s]*(\d+)/gi,
-            
-            // Hospital/Clinic names
-            hospitalNames: /(University Hospital|Royal Hospital|General Hospital|Medical Centre|Clinic|NHS Trust|Foundation Trust)/gi,
-            
-            // Medical staff titles
-            medicalTitles: /(Consultant|Registrar|Fellow|Specialist|Nurse|Midwife)\s+[A-Z][a-z]+/g,
-            
-            // Ward/Department names
-            wardNames: /(Ward|Department|Unit)\s+[A-Z0-9]+/gi,
-            
-            // Medical device serial numbers
-            deviceSerials: /(Device|Equipment|Machine)\s+ID[:\s]*(\w+)/gi,
-            
-            // Social security numbers (US format)
+            // Social security numbers (US format) - very specific
             ssn: /\b\d{3}-\d{2}-\d{4}\b/g,
             
-            // Credit card numbers (basic pattern)
+            // Credit card numbers (basic pattern) - very specific
             creditCards: /\b\d{4}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/g
+            
+            // REMOVED: All name-based patterns that cause false positives
+            // REMOVED: Date patterns (medical records often contain dates that aren't PII)
+            // REMOVED: Address patterns (too broad, catch medical terms)
+            // REMOVED: All medical-related patterns (handled by Libretto)
         };
     }
 
@@ -325,7 +299,7 @@ class ClinicalDataAnonymiser {
             if (!preserveDates) {
                 // Remove specific dates but keep relative time references
                 const datePatterns = [
-                    /\b\d{1,2}\/\d{1,2}\/\d{4}\b/g,  // DD/MM/YYYY
+                    /\b\d{1,2}[\/\-\.]\d{1,2}[\/\-\.]\d{2,4}\b/g,  // DD/MM/YYYY
                     /\b\d{4}-\d{2}-\d{2}\b/g,         // YYYY-MM-DD
                     /\b\d{1,2}\.\d{1,2}\.\d{4}\b/g   // DD.MM.YYYY
                 ];
@@ -565,42 +539,18 @@ class ClinicalDataAnonymiser {
             'Gynaecology', 'Miscarriage', 'Delivery', 'Birth', 'Labour', 'Contraction'
         ];
         
-        // Apply enhanced PII patterns with medical context awareness
+        // Apply only critical PII patterns (avoid medical false positives)
+        const criticalPatterns = ['emails', 'ukPhones', 'nhsNumbers', 'ssn', 'creditCards'];
+        
         for (const [patternName, pattern] of Object.entries(this.enhancedPatterns)) {
-            if (Array.isArray(pattern)) {
-                pattern.forEach(p => {
-                    const matches = anonymisedText.match(p);
-                    if (matches) {
-                        // Check if matches contain medical terms that should be preserved
-                        const filteredMatches = matches.filter(match => {
-                            return !medicalTerms.some(term => 
-                                match.toLowerCase().includes(term.toLowerCase())
-                            );
-                        });
-                        
-                        if (filteredMatches.length > 0) {
-                            anonymisedText = anonymisedText.replace(p, `[${patternName.toUpperCase()}]`);
-                        }
-                    }
-                });
-            } else {
-                const matches = anonymisedText.match(pattern);
-                if (matches) {
-                    // For single names, be more careful about medical context
-                    if (patternName === 'singleNames') {
-                        const filteredMatches = matches.filter(match => {
-                            return !medicalTerms.some(term => 
-                                match.toLowerCase() === term.toLowerCase()
-                            );
-                        });
-                        
-                        if (filteredMatches.length > 0) {
-                            anonymisedText = anonymisedText.replace(pattern, `[${patternName.toUpperCase()}]`);
-                        }
-                    } else {
-                        anonymisedText = anonymisedText.replace(pattern, `[${patternName.toUpperCase()}]`);
-                    }
-                }
+            // Only use critical patterns that are unlikely to cause false positives
+            if (!criticalPatterns.includes(patternName)) {
+                continue;
+            }
+            
+            const matches = anonymisedText.match(pattern);
+            if (matches) {
+                anonymisedText = anonymisedText.replace(pattern, `[${patternName.toUpperCase()}]`);
             }
         }
         
@@ -692,11 +642,19 @@ class ClinicalDataAnonymiser {
                 }
             }
 
-            // Fallback to conservative patterns only if library fails
-            console.log('[ANONYMISER] Using conservative fallback patterns');
+            // Only use fallback patterns if Libretto library completely failed to load
+            console.log('[ANONYMISER] Libretto library not available, using minimal fallback patterns');
             const piiPatterns = this.enhancedPatterns;
 
+            // Only check for very specific, non-medical PII patterns
+            const criticalPatterns = ['emails', 'ukPhones', 'nhsNumbers', 'ssn', 'creditCards'];
+            
             for (const [type, pattern] of Object.entries(piiPatterns)) {
+                // Only use the critical patterns that are unlikely to cause false positives
+                if (!criticalPatterns.includes(type)) {
+                    continue;
+                }
+                
                 const matches = text.match(pattern);
                 if (matches && matches.length > 0) {
                     analysis.containsPII = true;
