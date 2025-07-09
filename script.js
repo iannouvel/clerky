@@ -4433,17 +4433,32 @@ async function generateChatSummary(userInput) {
         return 'Empty chat';
     }
     
+    // Check if user is authenticated
+    if (!window.auth || !window.auth.currentUser) {
+        console.warn('[CHAT_SUMMARY] User not authenticated, using fallback');
+        return userInput.substring(0, 40).replace(/\n/g, ' ') + (userInput.length > 40 ? '...' : '');
+    }
+    
     try {
+        const idToken = await window.auth.currentUser.getIdToken();
+        
+        // Create AbortController for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+        
         const response = await fetch(`${window.SERVER_URL}/generateChatSummary`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${await window.auth.currentUser.getIdToken()}`
+                'Authorization': `Bearer ${idToken}`
             },
             body: JSON.stringify({
                 userInput: userInput.trim()
-            })
+            }),
+            signal: controller.signal
         });
+
+        clearTimeout(timeoutId);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -4725,7 +4740,18 @@ async function saveCurrentChatState() {
     }
 
     const state = getChatState();
-    const previewText = await generateChatSummary(state.userInputContent);
+    
+    // Generate summary with error handling
+    let previewText = 'New chat...';
+    try {
+        if (state.userInputContent && state.userInputContent.trim().length > 0) {
+            previewText = await generateChatSummary(state.userInputContent);
+        }
+    } catch (error) {
+        console.error('[CHAT] Error generating chat summary:', error);
+        // Fallback to simple preview
+        previewText = state.userInputContent.substring(0, 40).replace(/\n/g, ' ') + (state.userInputContent.length > 40 ? '...' : '') || 'New chat...';
+    }
 
     chatHistory[chatIndex].state = state;
     chatHistory[chatIndex].preview = previewText;
@@ -4850,14 +4876,27 @@ function renderChatHistory() {
         return;
     }
 
+    console.log('[DEBUG] renderChatHistory called with:', {
+        chatHistoryLength: chatHistory.length,
+        currentChatId: currentChatId,
+        historyListExists: !!historyList
+    });
+
     historyList.innerHTML = '';
     
     if (chatHistory.length === 0) {
         historyList.innerHTML = '<div class="no-chats">No chat history yet</div>';
+        console.log('[DEBUG] No chat history to render');
         return;
     }
     
     chatHistory.forEach((chat, index) => {
+        console.log(`[DEBUG] Rendering chat ${index}:`, {
+            id: chat.id,
+            preview: chat.preview,
+            isActive: chat.id === currentChatId
+        });
+        
         const item = document.createElement('div');
         item.className = `history-item ${chat.id === currentChatId ? 'active' : ''}`;
         item.setAttribute('data-chat-id', chat.id);
@@ -4870,6 +4909,8 @@ function renderChatHistory() {
         `;
         historyList.appendChild(item);
     });
+    
+    console.log(`[DEBUG] renderChatHistory completed, historyList.children.length: ${historyList.children.length}`);
 }
 
 async function initializeChatHistory() {
