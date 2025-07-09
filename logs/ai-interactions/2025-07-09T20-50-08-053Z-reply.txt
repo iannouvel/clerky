@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 23/34",
+  "transcriptLength": 2242,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD), presents to gynaecology clinic with a 6-month history of worsening vulval pruritus and discomfort. Reports dyspareunia and visible white, atrophic patches on vulva. No urinary symptoms.  \n\n#### **BACKGROUND:**  \n- **PMHx:** Hypothyroidism, well-controlled. No DM, no autoimmune conditions.  \n- **ObGyn Hx:** G2P2, menopause at 51, no HRT. No previous vulval patholog...",
+  "chunkGuidelines": [
+    "mp056-obstetric-high-dependency-care-pdf: MP056 Obstetric High Dependency Care",
+    "mp057-communication-and-handover-of-care-betweeen-professionals-pdf: MP057 Communication and Handover of Care betweeen Professionals",
+    "mp064-hyponatraemia-in-labour-pdf: MP064 Hyponatraemia in Labour",
+    "mp065-neonatal-bcg-immunisation-programme-pdf: MP065 Neonatal BCG Immunisation Programme",
+    "mp066-neonatal-resuscitation-term-and-pre-term-pdf: MP066 Neonatal Resuscitation (Term and Pre-term)",
+    "mp069-care-of-the-newborn-pdf: MP069 Care of the Newborn",
+    "mp070-examination-of-the-newborn-pdf: MP070 Examination of the Newborn",
+    "mp071-provisions-and-schedules-of-postnatal-care-pdf: MP071 Provisions and Schedules of Postnatal Care"
+  ],
+  "chunkIndex": 23,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\", \"title\": \"MP057 Communication and Handover of Care between Professionals\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp056-obstetric-high-dependency-care-pdf\", \"title\": \"MP056 Obstetric High Dependency Care\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp064-hyponatraemia-in-labour-pdf\", \"title\": \"MP064 Hyponatraemia in Labour\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp065-neonatal-bcg-immunisation-programme-pdf\", \"title\": \"MP065 Neonatal BCG Immunisation Programme\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp066-neonatal-resuscitation-term-and-pre-term-pdf\", \"title\": \"MP066 Neonatal Resuscitation (Term and Pre-term)\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp069-care-of-the-newborn-pdf\", \"title\": \"MP069 Care of the Newborn\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp070-examination-of-the-newborn-pdf\", \"title\": \"MP070 Examination of the Newborn\", \"relevance\": \"0.0\"},\n    {\"id\": \"mp071-provisions-and-schedules-of-postnatal-care-pdf\", \"title\": \"MP071 Provisions and Schedules of Postnatal Care\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1177
+}
