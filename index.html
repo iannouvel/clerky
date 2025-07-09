@@ -95,6 +95,35 @@
             cursor: wait;
         }
         
+        .model-selector {
+            display: flex;
+            align-items: center;
+        }
+        
+        .model-select {
+            background: var(--card-background);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 200px;
+        }
+        
+        .model-select:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0, 184, 148, 0.1);
+        }
+        
+        .model-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+        }
+        
         /* Critical three-column layout fixes */
         #threeColumnView {
             display: grid !important;
@@ -186,7 +215,14 @@
                 <a href="index.html" class="logo-link">
                     <div class="logo">clerky</div>
                 </a>
-                <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
+                <div class="model-selector">
+                    <select id="modelSelect" class="model-select">
+                        <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
+                        <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
+                        <option value="Anthropic">Claude (claude-3-sonnet)</option>
+                        <option value="Mistral">Mistral (mistral-large)</option>
+                    </select>
+                </div>
             </div>
             <div class="top-bar-center">
                 <!-- Buttons have been moved to the settings menu -->

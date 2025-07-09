@@ -8,7 +8,7 @@ from datetime import datetime
 
 class OpenAIClient:
     def __init__(self):
-        self.api_key, self.deepseek_api_key = self._load_credentials()
+        self.api_key, self.deepseek_api_key, self.anthropic_api_key, self.mistral_api_key = self._load_credentials()
         self.encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
         self.server_url = os.getenv('SERVER_URL', 'https://clerky-uzni.onrender.com')
         self.workflow_token = os.getenv('WORKFLOW_TOKEN')
@@ -26,11 +26,13 @@ class OpenAIClient:
     def _load_credentials(self) -> tuple:
         api_key = os.getenv('OPENAI_API_KEY')
         deepseek_api_key = os.getenv('DEEPSEEK_API_KEY')
+        anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
+        mistral_api_key = os.getenv('MISTRAL_API_KEY')
         
-        if not api_key and not deepseek_api_key:
-            raise ValueError("No API keys found in environment variables. Need either OPENAI_API_KEY or DEEPSEEK_API_KEY")
+        if not api_key and not deepseek_api_key and not anthropic_api_key and not mistral_api_key:
+            raise ValueError("No API keys found in environment variables. Need at least one of: OPENAI_API_KEY, DEEPSEEK_API_KEY, ANTHROPIC_API_KEY, or MISTRAL_API_KEY")
         
-        return api_key, deepseek_api_key
+        return api_key, deepseek_api_key, anthropic_api_key, mistral_api_key
 
     def report_usage(self, usage: Dict, model: str, prompt: str = None, response: str = None, provider: str = None):
         """Report the token usage to the server"""
@@ -45,6 +47,10 @@ class OpenAIClient:
                     provider = "OpenAI"
                 elif "deepseek" in model:
                     provider = "DeepSeek"
+                elif "claude" in model:
+                    provider = "Anthropic"
+                elif "mistral" in model:
+                    provider = "Mistral"
                 else:
                     provider = self.preferred_provider
             
@@ -106,22 +112,46 @@ class OpenAIClient:
         if model is None:
             if provider == "OpenAI":
                 model = "gpt-3.5-turbo"
-            else:  # DeepSeek
+            elif provider == "DeepSeek":
                 model = "deepseek-chat"
+            elif provider == "Anthropic":
+                model = "claude-3-sonnet-20240229"
+            elif provider == "Mistral":
+                model = "mistral-large-latest"
+            else:
+                model = "gpt-3.5-turbo"  # fallback
         
         # Select API key based on provider
-        api_key = self.api_key if provider == "OpenAI" else self.deepseek_api_key
+        if provider == "OpenAI":
+            api_key = self.api_key
+        elif provider == "DeepSeek":
+            api_key = self.deepseek_api_key
+        elif provider == "Anthropic":
+            api_key = self.anthropic_api_key
+        elif provider == "Mistral":
+            api_key = self.mistral_api_key
+        else:
+            api_key = self.api_key  # fallback to OpenAI
         
         # Fallback if the chosen provider's API key isn't available
         if not api_key:
-            alt_provider = "DeepSeek" if provider == "OpenAI" else "OpenAI"
-            alt_key = self.deepseek_api_key if provider == "OpenAI" else self.api_key
+            # Try to find an available provider
+            available_providers = []
+            if self.api_key:
+                available_providers.append(("OpenAI", self.api_key, "gpt-3.5-turbo"))
+            if self.deepseek_api_key:
+                available_providers.append(("DeepSeek", self.deepseek_api_key, "deepseek-chat"))
+            if self.anthropic_api_key:
+                available_providers.append(("Anthropic", self.anthropic_api_key, "claude-3-sonnet-20240229"))
+            if self.mistral_api_key:
+                available_providers.append(("Mistral", self.mistral_api_key, "mistral-large-latest"))
             
-            if alt_key:
+            if available_providers:
+                alt_provider, alt_key, alt_model = available_providers[0]
                 logging.warning(f"{provider} API key not found, falling back to {alt_provider}")
                 provider = alt_provider
                 api_key = alt_key
-                model = "deepseek-chat" if provider == "DeepSeek" else "gpt-3.5-turbo"
+                model = alt_model
             else:
                 logging.error("No API keys available for any provider")
                 return None
@@ -141,16 +171,32 @@ class OpenAIClient:
 
         try:
             # Set the API endpoint based on provider
-            api_endpoint = 'https://api.openai.com/v1/chat/completions' if provider == "OpenAI" else 'https://api.deepseek.com/v1/chat/completions'
+            if provider == "OpenAI":
+                api_endpoint = 'https://api.openai.com/v1/chat/completions'
+            elif provider == "DeepSeek":
+                api_endpoint = 'https://api.deepseek.com/v1/chat/completions'
+            elif provider == "Anthropic":
+                api_endpoint = 'https://api.anthropic.com/v1/messages'
+            elif provider == "Mistral":
+                api_endpoint = 'https://api.mistral.ai/v1/chat/completions'
+            else:
+                api_endpoint = 'https://api.openai.com/v1/chat/completions'  # fallback
             
             logging.info(f"Sending request to {provider} API using model {model}")
             
+            # Set headers based on provider
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {api_key}'
+            }
+            
+            # Add provider-specific headers
+            if provider == "Anthropic":
+                headers['anthropic-version'] = '2023-06-01'
+            
             response = requests.post(
                 api_endpoint,
-                headers={
-                    'Content-Type': 'application/json',
-                    'Authorization': f'Bearer {api_key}'
-                },
+                headers=headers,
                 json=body
             )
 
@@ -160,11 +206,24 @@ class OpenAIClient:
                 return None
                 
             response_json = response.json()
-            content = response_json['choices'][0]['message']['content']
+            
+            # Extract content based on provider response format
+            if provider == "Anthropic":
+                content = response_json['content'][0]['text']
+            else:
+                content = response_json['choices'][0]['message']['content']
             
             # Extract token usage and report it
             if 'usage' in response_json:
                 usage = response_json['usage']
+                # Handle different usage formats
+                if provider == "Anthropic":
+                    # Anthropic uses input_tokens and output_tokens
+                    usage = {
+                        'prompt_tokens': usage.get('input_tokens', 0),
+                        'completion_tokens': usage.get('output_tokens', 0),
+                        'total_tokens': usage.get('input_tokens', 0) + usage.get('output_tokens', 0)
+                    }
                 prompt_text = " | ".join([msg['content'][:50] + "..." for msg in messages])
                 self.report_usage(usage, model, prompt_text, content, provider)
                 
@@ -183,8 +242,14 @@ class OpenAIClient:
         if model is None:
             if provider == "OpenAI":
                 model = "gpt-3.5-turbo"
-            else:  # DeepSeek
+            elif provider == "DeepSeek":
                 model = "deepseek-chat"
+            elif provider == "Anthropic":
+                model = "claude-3-sonnet-20240229"
+            elif provider == "Mistral":
+                model = "mistral-large-latest"
+            else:
+                model = "gpt-3.5-turbo"  # fallback
         
         messages = [{"role": "user", "content": prompt}]
         return self.chat_completion(messages, max_tokens, model, provider) 

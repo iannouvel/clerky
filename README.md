@@ -40,7 +40,9 @@ pip install -r requirements.txt
 ```
 OPENAI_API_KEY=your_openai_api_key_here
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
-PREFERRED_AI_PROVIDER=OpenAI  # or "DeepSeek"
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+MISTRAL_API_KEY=your_mistral_api_key_here
+PREFERRED_AI_PROVIDER=OpenAI  # or "DeepSeek", "Anthropic", "Mistral"
 
 # Firebase Configuration (if using Firebase)
 FIREBASE_API_KEY=your_firebase_api_key
@@ -71,6 +73,8 @@ Each provider may use different models:
 
 - **OpenAI:** Uses `gpt-3.5-turbo` by default, with `gpt-4-turbo` for algorithm generation
 - **DeepSeek:** Uses `deepseek-chat` for all operations
+- **Anthropic (Claude):** Uses `claude-3-sonnet-20240229` for all operations
+- **Mistral:** Uses `mistral-large-latest` for all operations
 
 ## Usage
 

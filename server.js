@@ -857,6 +857,23 @@ function formatMessagesForProvider(messages, provider) {
                 role: msg.role,
                 content: msg.content
             }));
+        case 'Anthropic':
+            // Claude uses a different message format
+            return messages.map(msg => ({
+                role: msg.role === 'system' ? 'user' : msg.role, // Claude doesn't support system role directly
+                content: msg.role === 'system' ? `System: ${msg.content}` : msg.content
+            }));
+        case 'Mistral':
+            return messages.map(msg => ({
+                role: msg.role,
+                content: msg.content
+            }));
+        case 'Gemini':
+            // Gemini expects [{role, parts: [{text}]}]
+            return messages.map(msg => ({
+                role: msg.role === 'system' ? 'user' : msg.role,
+                parts: [{ text: msg.content }]
+            }));
         default:
             throw new Error(`Unsupported AI provider: ${provider}`);
     }
@@ -866,7 +883,18 @@ function formatMessagesForProvider(messages, provider) {
 async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
   try {
     // Determine the provider based on the model, but don't override the model
-    let preferredProvider = model.includes('deepseek') ? 'DeepSeek' : 'OpenAI';
+    let preferredProvider;
+    if (model.includes('deepseek')) {
+      preferredProvider = 'DeepSeek';
+    } else if (model.includes('claude') || model.includes('anthropic')) {
+      preferredProvider = 'Anthropic';
+    } else if (model.includes('mistral')) {
+      preferredProvider = 'Mistral';
+    } else if (model.includes('gemini')) {
+      preferredProvider = 'Gemini';
+    } else {
+      preferredProvider = 'OpenAI';
+    }
     
     console.log('[DEBUG] sendToAI initial configuration:', {
       promptType: typeof prompt,
@@ -900,6 +928,15 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
             console.log('[DEBUG] Updating model to match DeepSeek provider');
             model = 'deepseek-chat';
+          } else if (preferredProvider === 'Anthropic' && !model.includes('claude')) {
+            console.log('[DEBUG] Updating model to match Anthropic provider');
+            model = 'claude-3-sonnet-20240229';
+          } else if (preferredProvider === 'Mistral' && !model.includes('mistral')) {
+            console.log('[DEBUG] Updating model to match Mistral provider');
+            model = 'mistral-large-latest';
+          } else if (preferredProvider === 'Gemini' && !model.includes('gemini')) {
+            console.log('[DEBUG] Updating model to match Gemini provider');
+            model = 'gemini-1.5-pro';
           }
         }
       } catch (error) {
@@ -914,12 +951,18 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Check if we have the API key for the preferred provider
     const hasOpenAIKey = !!process.env.OPENAI_API_KEY;
     const hasDeepSeekKey = !!process.env.DEEPSEEK_API_KEY;
+    const hasAnthropicKey = !!process.env.ANTHROPIC_API_KEY;
+    const hasMistralKey = !!process.env.MISTRAL_API_KEY;
+    const hasGeminiKey = !!process.env.GOOGLE_AI_API_KEY;
     
     console.log('[DEBUG] API key availability:', {
       preferredProvider,
       requestedModel: model,
       hasOpenAIKey,
-      hasDeepSeekKey
+      hasDeepSeekKey,
+      hasAnthropicKey,
+      hasMistralKey,
+      hasGeminiKey
     });
     
     // If we don't have the key for the preferred provider, fallback to one we do have
@@ -931,6 +974,24 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         if (model.includes('gpt')) {
           model = 'deepseek-chat';
         }
+      } else if (hasAnthropicKey) {
+        console.log('[DEBUG] Falling back to Anthropic due to missing OpenAI key');
+        preferredProvider = 'Anthropic';
+        if (model.includes('gpt')) {
+          model = 'claude-3-sonnet-20240229';
+        }
+      } else if (hasMistralKey) {
+        console.log('[DEBUG] Falling back to Mistral due to missing OpenAI key');
+        preferredProvider = 'Mistral';
+        if (model.includes('gpt')) {
+          model = 'mistral-large-latest';
+        }
+      } else if (hasGeminiKey) {
+        console.log('[DEBUG] Falling back to Gemini due to missing OpenAI key');
+        preferredProvider = 'Gemini';
+        if (model.includes('gpt')) {
+          model = 'gemini-1.5-pro';
+        }
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -941,6 +1002,108 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         // Only update model if it's a DeepSeek model
         if (model.includes('deepseek')) {
           model = 'gpt-3.5-turbo';
+        }
+      } else if (hasAnthropicKey) {
+        console.log('[DEBUG] Falling back to Anthropic due to missing DeepSeek key');
+        preferredProvider = 'Anthropic';
+        if (model.includes('deepseek')) {
+          model = 'claude-3-sonnet-20240229';
+        }
+      } else if (hasMistralKey) {
+        console.log('[DEBUG] Falling back to Mistral due to missing DeepSeek key');
+        preferredProvider = 'Mistral';
+        if (model.includes('deepseek')) {
+          model = 'mistral-large-latest';
+        }
+      } else if (hasGeminiKey) {
+        console.log('[DEBUG] Falling back to Gemini due to missing DeepSeek key');
+        preferredProvider = 'Gemini';
+        if (model.includes('deepseek')) {
+          model = 'gemini-1.5-pro';
+        }
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    } else if (preferredProvider === 'Anthropic' && !hasAnthropicKey) {
+      if (hasOpenAIKey) {
+        console.log('[DEBUG] Falling back to OpenAI due to missing Anthropic key');
+        preferredProvider = 'OpenAI';
+        if (model.includes('claude')) {
+          model = 'gpt-3.5-turbo';
+        }
+      } else if (hasDeepSeekKey) {
+        console.log('[DEBUG] Falling back to DeepSeek due to missing Anthropic key');
+        preferredProvider = 'DeepSeek';
+        if (model.includes('claude')) {
+          model = 'deepseek-chat';
+        }
+      } else if (hasMistralKey) {
+        console.log('[DEBUG] Falling back to Mistral due to missing Anthropic key');
+        preferredProvider = 'Mistral';
+        if (model.includes('claude')) {
+          model = 'mistral-large-latest';
+        }
+      } else if (hasGeminiKey) {
+        console.log('[DEBUG] Falling back to Gemini due to missing Anthropic key');
+        preferredProvider = 'Gemini';
+        if (model.includes('claude')) {
+          model = 'gemini-1.5-pro';
+        }
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    } else if (preferredProvider === 'Mistral' && !hasMistralKey) {
+      if (hasOpenAIKey) {
+        console.log('[DEBUG] Falling back to OpenAI due to missing Mistral key');
+        preferredProvider = 'OpenAI';
+        if (model.includes('mistral')) {
+          model = 'gpt-3.5-turbo';
+        }
+      } else if (hasDeepSeekKey) {
+        console.log('[DEBUG] Falling back to DeepSeek due to missing Mistral key');
+        preferredProvider = 'DeepSeek';
+        if (model.includes('mistral')) {
+          model = 'deepseek-chat';
+        }
+      } else if (hasAnthropicKey) {
+        console.log('[DEBUG] Falling back to Anthropic due to missing Mistral key');
+        preferredProvider = 'Anthropic';
+        if (model.includes('mistral')) {
+          model = 'claude-3-sonnet-20240229';
+        }
+      } else if (hasGeminiKey) {
+        console.log('[DEBUG] Falling back to Gemini due to missing Mistral key');
+        preferredProvider = 'Gemini';
+        if (model.includes('mistral')) {
+          model = 'gemini-1.5-pro';
+        }
+      } else {
+        throw new Error('No AI provider API keys configured');
+      }
+    } else if (preferredProvider === 'Gemini' && !hasGeminiKey) {
+      if (hasOpenAIKey) {
+        console.log('[DEBUG] Falling back to OpenAI due to missing Gemini key');
+        preferredProvider = 'OpenAI';
+        if (model.includes('gemini')) {
+          model = 'gpt-3.5-turbo';
+        }
+      } else if (hasDeepSeekKey) {
+        console.log('[DEBUG] Falling back to DeepSeek due to missing Gemini key');
+        preferredProvider = 'DeepSeek';
+        if (model.includes('gemini')) {
+          model = 'deepseek-chat';
+        }
+      } else if (hasAnthropicKey) {
+        console.log('[DEBUG] Falling back to Anthropic due to missing Gemini key');
+        preferredProvider = 'Anthropic';
+        if (model.includes('gemini')) {
+          model = 'claude-3-sonnet-20240229';
+        }
+      } else if (hasMistralKey) {
+        console.log('[DEBUG] Falling back to Mistral due to missing Gemini key');
+        preferredProvider = 'Mistral';
+        if (model.includes('gemini')) {
+          model = 'mistral-large-latest';
         }
       } else {
         throw new Error('No AI provider API keys configured');
@@ -1002,7 +1165,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         
         tokenUsage.estimated_cost_usd = totalCost;
       }
-    } else {
+    } else if (preferredProvider === 'DeepSeek') {
       const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
         messages: formattedMessages,
@@ -1035,6 +1198,109 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         console.log(`DeepSeek API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
         console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
         
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    } else if (preferredProvider === 'Anthropic') {
+      const response = await axios.post('https://api.anthropic.com/v1/messages', {
+        model: model,
+        messages: formattedMessages,
+        max_tokens: 4000,
+        temperature: 0.7
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.ANTHROPIC_API_KEY}`,
+          'Content-Type': 'application/json',
+          'anthropic-version': '2023-06-01'
+        }
+      });
+      
+      responseData = response.data;
+      content = responseData.content[0].text;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.input_tokens,
+          completion_tokens: responseData.usage.output_tokens,
+          total_tokens: responseData.usage.input_tokens + responseData.usage.output_tokens
+        };
+        
+        // Calculate approximate cost - Claude 3 Sonnet pricing
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.003;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.015;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`Anthropic API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    } else if (preferredProvider === 'Mistral') {
+      const response = await axios.post('https://api.mistral.ai/v1/chat/completions', {
+        model: model,
+        messages: formattedMessages,
+        temperature: 0.7,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - Mistral Large pricing
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0007;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0028;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`Mistral API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    } else if (preferredProvider === 'Gemini') {
+      // Gemini API expects POST to /v1beta/models/gemini-1.5-pro:generateContent
+      const response = await axios.post(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent',
+        {
+          contents: formattedMessages,
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 4000
+          }
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.GOOGLE_AI_API_KEY}`
+          }
+        }
+      );
+      responseData = response.data;
+      // Gemini returns candidates[0].content.parts[0].text
+      content = responseData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      // Gemini usage: responseData.usageMetadata
+      if (responseData.usageMetadata) {
+        tokenUsage = {
+          prompt_tokens: responseData.usageMetadata.promptTokenCount,
+          completion_tokens: responseData.usageMetadata.candidatesTokenCount,
+          total_tokens: responseData.usageMetadata.totalTokenCount
+        };
+        // Gemini pricing (placeholder): $0.0025/1K input, $0.0075/1K output
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0025;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0075;
+        const totalCost = inputCost + outputCost;
         tokenUsage.estimated_cost_usd = totalCost;
       }
     }
@@ -1159,12 +1425,34 @@ async function routeToAI(prompt, userId = null) {
     }
     
     // Determine the appropriate model based on the provider
-    const model = provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+    let model;
+    switch (provider) {
+      case 'OpenAI':
+        model = 'gpt-3.5-turbo';
+        break;
+      case 'DeepSeek':
+        model = 'deepseek-chat';
+        break;
+      case 'Anthropic':
+        model = 'claude-3-sonnet-20240229';
+        break;
+      case 'Mistral':
+        model = 'mistral-large-latest';
+        break;
+      case 'Gemini':
+        model = 'gemini-1.5-pro';
+        break;
+      default:
+        model = 'deepseek-chat';
+    }
     console.log('[DEBUG] Selected AI configuration:', {
       provider,
       model,
       hasOpenAIKey: !!process.env.OPENAI_API_KEY,
-      hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY
+      hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY,
+      hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
+      hasMistralKey: !!process.env.MISTRAL_API_KEY,
+      hasGeminiKey: !!process.env.GOOGLE_AI_API_KEY
     });
     
     // Handle both string prompts and message objects
@@ -3550,10 +3838,10 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
       
       console.log('Requested provider:', provider);
       
-      if (provider !== 'OpenAI' && provider !== 'DeepSeek') {
+      if (provider !== 'OpenAI' && provider !== 'DeepSeek' && provider !== 'Anthropic' && provider !== 'Mistral' && provider !== 'Gemini') {
         return res.status(400).json({ 
           success: false, 
-          message: 'Invalid provider. Must be either "OpenAI" or "DeepSeek"'
+          message: 'Invalid provider. Must be either "OpenAI", "DeepSeek", "Anthropic", "Mistral", or "Gemini"'
         });
       }
       
@@ -3569,6 +3857,27 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
         return res.status(500).json({ 
           success: false, 
           message: 'DeepSeek API key is not configured' 
+        });
+      }
+      
+      if (provider === 'Anthropic' && !process.env.ANTHROPIC_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          message: 'Anthropic API key is not configured' 
+        });
+      }
+      
+      if (provider === 'Mistral' && !process.env.MISTRAL_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          message: 'Mistral API key is not configured' 
+        });
+      }
+      
+      if (provider === 'Gemini' && !process.env.GOOGLE_AI_API_KEY) {
+        return res.status(500).json({ 
+          success: false, 
+          message: 'Gemini API key is not configured' 
         });
       }
       
@@ -4895,6 +5204,21 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
           calls: 0,
           tokensUsed: 0,
           estimatedCost: 0
+        },
+        Anthropic: {
+          calls: 0,
+          tokensUsed: 0,
+          estimatedCost: 0
+        },
+        Mistral: {
+          calls: 0,
+          tokensUsed: 0,
+          estimatedCost: 0
+        },
+        Gemini: {
+          calls: 0,
+          tokensUsed: 0,
+          estimatedCost: 0
         }
       },
       byEndpoint: {},
@@ -5003,6 +5327,9 @@ app.get('/api-usage-stats', authenticateUser, async (req, res) => {
     stats.estimatedTotalCost = parseFloat(stats.estimatedTotalCost.toFixed(6));
     stats.byProvider.OpenAI.estimatedCost = parseFloat(stats.byProvider.OpenAI.estimatedCost.toFixed(6));
     stats.byProvider.DeepSeek.estimatedCost = parseFloat(stats.byProvider.DeepSeek.estimatedCost.toFixed(6));
+    stats.byProvider.Anthropic.estimatedCost = parseFloat(stats.byProvider.Anthropic.estimatedCost.toFixed(6));
+    stats.byProvider.Mistral.estimatedCost = parseFloat(stats.byProvider.Mistral.estimatedCost.toFixed(6));
+    stats.byProvider.Gemini.estimatedCost = parseFloat(stats.byProvider.Gemini.estimatedCost.toFixed(6));
     
     Object.keys(stats.byEndpoint).forEach(endpoint => {
       stats.byEndpoint[endpoint].estimatedCost = parseFloat(stats.byEndpoint[endpoint].estimatedCost.toFixed(6));
@@ -5084,6 +5411,18 @@ app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
       } else if (model.includes('deepseek')) {
         // DeepSeek pricing
         estimatedCost = (token_usage.total_tokens / 1000) * 0.0005;
+      } else if (model.includes('claude')) {
+        // Claude pricing
+        estimatedCost = (token_usage.prompt_tokens / 1000) * 0.003 + 
+                         (token_usage.completion_tokens / 1000) * 0.015;
+      } else if (model.includes('mistral')) {
+        // Mistral pricing
+        estimatedCost = (token_usage.prompt_tokens / 1000) * 0.0007 + 
+                         (token_usage.completion_tokens / 1000) * 0.0028;
+      } else if (model.includes('gemini')) {
+        // Gemini pricing (placeholder)
+        estimatedCost = (token_usage.prompt_tokens / 1000) * 0.0025 + 
+                         (token_usage.completion_tokens / 1000) * 0.0075;
       } else {
         // Default pricing (OpenAI-like)
         estimatedCost = (token_usage.total_tokens / 1000) * 0.002;
@@ -5096,7 +5435,10 @@ app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
     // Determine AI provider based on model name
     const ai_provider = provider || 
                         (model.includes('gpt') ? 'OpenAI' : 
-                         model.includes('deepseek') ? 'DeepSeek' : 'Unknown');
+                         model.includes('deepseek') ? 'DeepSeek' :
+                         model.includes('claude') ? 'Anthropic' :
+                         model.includes('mistral') ? 'Mistral' :
+                         model.includes('gemini') ? 'Gemini' : 'Unknown');
     
     // Format data for logging
     const logData = {
