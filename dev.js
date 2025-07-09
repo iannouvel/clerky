@@ -314,6 +314,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
                     <option value="Anthropic">Claude (claude-3-sonnet)</option>
                     <option value="Mistral">Mistral (mistral-large)</option>
+                    <option value="Gemini">Gemini (gemini-1.5-pro)</option>
                 `;
                 modelSelect.value = currentModel;
             }
