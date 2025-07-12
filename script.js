@@ -742,8 +742,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                                checked="checked">
                         <span class="checkmark"></span>
                         <div class="guideline-info">
-                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
-                            <div class="guideline-meta">
+                            <div class="guideline-content">
+                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -772,8 +772,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                                data-category="potentiallyRelevant">
                         <span class="checkmark"></span>
                         <div class="guideline-info">
-                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
-                            <div class="guideline-meta">
+                            <div class="guideline-content">
+                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -802,8 +802,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                                data-category="lessRelevant">
                         <span class="checkmark"></span>
                         <div class="guideline-info">
-                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
-                            <div class="guideline-meta">
+                            <div class="guideline-content">
+                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -832,8 +832,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                                data-category="notRelevant">
                         <span class="checkmark"></span>
                         <div class="guideline-info">
-                            <div class="guideline-title">${standardizedTitle}${orgDisplay}</div>
-                            <div class="guideline-meta">
+                            <div class="guideline-content">
+                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -973,26 +973,23 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         .guideline-title {
             font-weight: 500;
             color: #2c3e50;
-            margin-bottom: 4px;
             line-height: 1.3;
+            flex: 1;
+            min-width: 0;
         }
         
-        .guideline-meta {
+        .guideline-content {
             display: flex;
-            gap: 15px;
             align-items: center;
-            font-size: 0.85em;
-            color: #6c757d;
+            gap: 12px;
+            flex-wrap: wrap;
         }
         
         .relevance {
             color: #28a745;
             font-weight: 500;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 80px;
-            display: inline-block;
+            font-size: 0.9em;
         }
         
         .guideline-selection-interface .pdf-download-link {
