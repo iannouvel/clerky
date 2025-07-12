@@ -4,7 +4,7 @@
 **Application Type:** Standard Patent Application  
 **Classification:** Medical Device Software (Class IIa)  
 **Field of Invention:** Computer-Implemented Medical Systems, Artificial Intelligence in Healthcare, Clinical Decision Support  
-**Priority Date:** October 17, 2023  
+**Priority Date:** July 12, 2025  
 **Applicant:** CLERKYAI LTD  
 **Address:** 4 Harrington Road, Brighton, BN1 6RE, United Kingdom  
 
@@ -613,6 +613,6 @@ The technical innovations described herein are both novel and non-obvious, repre
 ---
 
 **Document Prepared By**: CLERKYAI LTD (Pro Se Application)  
-**Date**: January 2025  
+**Date**: July 12, 2025  
 **Reference**: Clerky Patent Application v2.0 (Updated)  
 **Classification**: Computer-Implemented Medical Systems, AI Healthcare Applications, Healthcare Privacy Protection 
