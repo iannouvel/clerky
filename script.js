@@ -54,6 +54,20 @@ async function checkDisclaimerAcceptance() {
 // PII Review Interface Function
 async function showPIIReviewInterface(originalText, piiAnalysis) {
     return new Promise((resolve) => {
+        // Get consolidated PII matches
+        const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
+        
+        // If there are no matches to review, return success immediately
+        if (consolidatedMatches.length === 0) {
+            console.log('[PII REVIEW] No PII matches to review, skipping interface');
+            resolve({ 
+                approved: true, 
+                anonymisedText: originalText, 
+                replacementsCount: 0 
+            });
+            return;
+        }
+        
         // Create modal overlay
         const modal = document.createElement('div');
         modal.style.cssText = `
@@ -81,9 +95,6 @@ async function showPIIReviewInterface(originalText, piiAnalysis) {
             overflow-y: auto;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         `;
-
-        // Get consolidated PII matches
-        const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
         
         // Create header
         const header = document.createElement('div');
