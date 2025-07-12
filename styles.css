@@ -1238,7 +1238,7 @@ div.third-column,
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 10;
-    border: 1px solid #007bff;
+    border: 1px solid #66D4C0;
     border-radius: 8px;
     margin: -1px; /* Adjust margin to prevent layout shift */
 }
@@ -1266,8 +1266,8 @@ div.third-column,
 
 .expandable-input:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.1);
+    border-color: #66D4C0;
+    box-shadow: 0 0 0 2px rgba(102, 212, 192, 0.1);
 }
 
 .input-buttons {
@@ -1322,8 +1322,8 @@ div.third-column,
 /* Focus indicator improvements */
 .expandable-input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    border-color: #66D4C0;
+    box-shadow: 0 0 0 3px rgba(102, 212, 192, 0.1);
 }
 
 /* Maintain subtle green tint on hover/focus */
@@ -1354,7 +1354,7 @@ div.third-column,
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 10;
-    border: 1px solid #007bff;
+    border: 1px solid #66D4C0;
     border-radius: 8px;
     background: #ffffff;
 }
