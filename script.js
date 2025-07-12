@@ -5546,8 +5546,8 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
                                 <label for="guideline-${index}"></label>
                             </div>
                             <div class="guideline-info">
-                                <div class="guideline-title">${displayTitle}</div>
-                                <div class="guideline-meta">
+                                <div class="guideline-content">
+                                    <span class="guideline-title">${displayTitle}</span>
                                     <span class="organization">${organization}</span>
                                     <span class="relevance-score">Relevance: ${relevanceScore}</span>
                                 </div>
@@ -5677,26 +5677,33 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             flex: 1;
         }
         
+        .guideline-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
         .guideline-title {
             font-weight: 500;
             color: #2c3e50;
-            margin-bottom: 4px;
             line-height: 1.3;
-        }
-        
-        .guideline-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 0.85em;
-            color: #6c757d;
+            flex: 1;
+            min-width: 0;
         }
         
         .organization {
             font-weight: 500;
+            color: #6c757d;
+            font-size: 0.9em;
+            white-space: nowrap;
         }
         
         .relevance-score {
             color: #28a745;
+            font-size: 0.9em;
+            font-weight: 500;
+            white-space: nowrap;
         }
         
         .guideline-actions {
