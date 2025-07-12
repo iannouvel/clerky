@@ -8135,3 +8135,167 @@ app.post('/generateChatSummary', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// Ask Guidelines Question endpoint - answers questions using relevant guidelines
+app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] askGuidelinesQuestion endpoint called');
+        const { question, relevantGuidelines } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!question) {
+            console.log('[DEBUG] askGuidelinesQuestion: Missing question');
+            return res.status(400).json({ success: false, error: 'Question is required' });
+        }
+        
+        if (!relevantGuidelines || !Array.isArray(relevantGuidelines) || relevantGuidelines.length === 0) {
+            console.log('[DEBUG] askGuidelinesQuestion: Missing or invalid relevant guidelines');
+            return res.status(400).json({ success: false, error: 'Relevant guidelines array is required' });
+        }
+
+        console.log('[DEBUG] askGuidelinesQuestion request data:', {
+            userId,
+            questionLength: question.length,
+            guidelinesCount: relevantGuidelines.length,
+            guidelines: relevantGuidelines.map(g => ({ id: g.id, title: g.title }))
+        });
+
+        // Fetch full guideline content for each relevant guideline
+        const guidelinesWithContent = [];
+        for (const guideline of relevantGuidelines) {
+            try {
+                console.log(`[DEBUG] askGuidelinesQuestion: Fetching content for guideline: ${guideline.id}`);
+                const fullGuideline = await getGuideline(guideline.id);
+                if (fullGuideline) {
+                    guidelinesWithContent.push({
+                        ...guideline,
+                        content: fullGuideline.content || fullGuideline.condensed || '',
+                        summary: fullGuideline.summary || ''
+                    });
+                } else {
+                    console.warn(`[DEBUG] askGuidelinesQuestion: Could not fetch guideline content for: ${guideline.id}`);
+                    // Still include the guideline with available data
+                    guidelinesWithContent.push(guideline);
+                }
+            } catch (guidelineError) {
+                console.warn(`[DEBUG] askGuidelinesQuestion: Error fetching guideline ${guideline.id}:`, guidelineError.message);
+                // Still include the guideline with available data
+                guidelinesWithContent.push(guideline);
+            }
+        }
+
+        console.log('[DEBUG] askGuidelinesQuestion: Retrieved guidelines with content:', {
+            count: guidelinesWithContent.length,
+            withContent: guidelinesWithContent.filter(g => g.content).length
+        });
+
+        // Create system prompt for answering questions based on guidelines
+        const systemPrompt = `You are a medical AI assistant that answers clinical questions based on relevant medical guidelines. Your role is to:
+
+1. Analyze the user's question carefully
+2. Review the provided relevant guidelines thoroughly
+3. Provide a comprehensive, evidence-based answer that directly addresses the question
+4. Reference specific guidelines and their recommendations when applicable
+5. Use clear, professional medical language
+6. If the guidelines don't fully address the question, acknowledge this and provide the best available guidance
+7. Structure your response in a clear, organized manner
+
+Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations.`;
+
+        // Create user prompt with question and guidelines
+        const guidelinesText = guidelinesWithContent.map(guideline => {
+            let guidelineText = `**${guideline.title || guideline.id}**`;
+            if (guideline.organisation) {
+                guidelineText += ` (${guideline.organisation})`;
+            }
+            if (guideline.summary) {
+                guidelineText += `\nSummary: ${guideline.summary}`;
+            }
+            if (guideline.content) {
+                guidelineText += `\nContent: ${guideline.content}`;
+            }
+            return guidelineText;
+        }).join('\n\n');
+
+        const userPrompt = `**Question:** ${question}
+
+**Relevant Guidelines:**
+${guidelinesText}
+
+Please provide a comprehensive answer to the question based on the relevant guidelines above. Structure your response clearly and reference specific guidelines when applicable.`;
+
+        console.log('[DEBUG] askGuidelinesQuestion: Sending to AI', {
+            systemPromptLength: systemPrompt.length,
+            userPromptLength: userPrompt.length,
+            guidelinesCount: guidelinesWithContent.length
+        });
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] askGuidelinesQuestion: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] askGuidelinesQuestion: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    prompt: userPrompt,
+                    system_prompt: systemPrompt,
+                    question_length: question.length,
+                    guidelines_count: guidelinesWithContent.length,
+                    guidelines: guidelinesWithContent.map(g => ({ id: g.id, title: g.title }))
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage
+                },
+                'askGuidelinesQuestion'
+            );
+            console.log('[DEBUG] askGuidelinesQuestion: AI interaction logged successfully');
+        } catch (logError) {
+            console.error('[DEBUG] askGuidelinesQuestion: Error logging AI interaction:', logError.message);
+        }
+
+        console.log('[DEBUG] askGuidelinesQuestion: Returning response', {
+            success: true,
+            answerLength: aiResponse.content.length
+        });
+
+        res.json({
+            success: true,
+            answer: aiResponse.content,
+            guidelinesUsed: guidelinesWithContent.map(g => ({ id: g.id, title: g.title })),
+            ai_provider: aiResponse.ai_provider,
+            ai_model: aiResponse.ai_model
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] askGuidelinesQuestion: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack,
+            userId: req.user?.uid,
+            question: req.body?.question,
+            guidelinesCount: req.body?.relevantGuidelines?.length
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
