@@ -7931,21 +7931,14 @@ async function showQuestionGuidelineSelectionInterface(categories, question) {
                             
                             return `
                                 <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
-                                    <div class="selection-checkbox">
-                                        <input type="checkbox" id="question-guideline-${index}" checked="checked" 
-                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
-                                        <label for="question-guideline-${index}"></label>
-                                    </div>
-                                    <div class="guideline-info">
-                                        <div class="guideline-title">${displayTitle}</div>
-                                        <div class="guideline-meta">
-                                            <span class="organization">${organization}</span>
-                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
-                                        </div>
-                                    </div>
-                                    <div class="guideline-actions">
+                                    <input type="checkbox" id="question-guideline-${index}" checked="checked" 
+                                           data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                    <label for="question-guideline-${index}" class="guideline-label">
+                                        <span class="guideline-title">${displayTitle}</span>
+                                        <span class="organization">${organization}</span>
+                                        <span class="relevance-score">Relevance: ${relevanceScore}</span>
                                         ${pdfLink}
-                                    </div>
+                                    </label>
                                 </div>
                             `;
                         }).join('')}
@@ -7964,21 +7957,14 @@ async function showQuestionGuidelineSelectionInterface(categories, question) {
                             
                             return `
                                 <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
-                                    <div class="selection-checkbox">
-                                        <input type="checkbox" id="question-guideline-${checkboxIndex}" 
-                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
-                                        <label for="question-guideline-${checkboxIndex}"></label>
-                                    </div>
-                                    <div class="guideline-info">
-                                        <div class="guideline-title">${displayTitle}</div>
-                                        <div class="guideline-meta">
-                                            <span class="organization">${organization}</span>
-                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
-                                        </div>
-                                    </div>
-                                    <div class="guideline-actions">
+                                    <input type="checkbox" id="question-guideline-${checkboxIndex}" 
+                                           data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                    <label for="question-guideline-${checkboxIndex}" class="guideline-label">
+                                        <span class="guideline-title">${displayTitle}</span>
+                                        <span class="organization">${organization}</span>
+                                        <span class="relevance-score">Relevance: ${relevanceScore}</span>
                                         ${pdfLink}
-                                    </div>
+                                    </label>
                                 </div>
                             `;
                         }).join('')}
@@ -7997,21 +7983,14 @@ async function showQuestionGuidelineSelectionInterface(categories, question) {
                             
                             return `
                                 <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
-                                    <div class="selection-checkbox">
-                                        <input type="checkbox" id="question-guideline-${checkboxIndex}" 
-                                               data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
-                                        <label for="question-guideline-${checkboxIndex}"></label>
-                                    </div>
-                                    <div class="guideline-info">
-                                        <div class="guideline-title">${displayTitle}</div>
-                                        <div class="guideline-meta">
-                                            <span class="organization">${organization}</span>
-                                            <span class="relevance-score">Relevance: ${relevanceScore}</span>
-                                        </div>
-                                    </div>
-                                    <div class="guideline-actions">
+                                    <input type="checkbox" id="question-guideline-${checkboxIndex}" 
+                                           data-guideline-id="${guideline.id}" class="question-guideline-checkbox">
+                                    <label for="question-guideline-${checkboxIndex}" class="guideline-label">
+                                        <span class="guideline-title">${displayTitle}</span>
+                                        <span class="organization">${organization}</span>
+                                        <span class="relevance-score">Relevance: ${relevanceScore}</span>
                                         ${pdfLink}
-                                    </div>
+                                    </label>
                                 </div>
                             `;
                         }).join('')}
@@ -8073,6 +8052,64 @@ async function showQuestionGuidelineSelectionInterface(categories, question) {
             font-size: 1em;
             padding: 8px 0;
             border-bottom: 1px solid #dee2e6;
+        }
+        
+        .question-guideline-selection-container .guideline-selection-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .question-guideline-selection-container .guideline-selection-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .question-guideline-selection-container .question-guideline-checkbox {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+        
+        .question-guideline-selection-container .guideline-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            flex: 1;
+            margin: 0;
+            gap: 12px;
+        }
+        
+        .question-guideline-selection-container .guideline-title {
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .question-guideline-selection-container .organization {
+            color: #6c757d;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+        
+        .question-guideline-selection-container .relevance-score {
+            color: #28a745;
+            font-size: 0.9em;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .question-guideline-selection-container .pdf-download-link {
+            color: #007bff;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+        
+        .question-guideline-selection-container .pdf-download-link:hover {
+            color: #0056b3;
         }
         </style>
     `;
