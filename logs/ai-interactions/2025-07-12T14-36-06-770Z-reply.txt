@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "guidelineId": "cg14004-miscarriage-guideline-pdf",
+  "fieldsProcessed": [
+    "humanFriendlyName",
+    "organisation",
+    "yearProduced",
+    "summary"
+  ],
+  "enhancedFields": 4,
+  "contentLength": 2106
+}
+
+A: {
+  "success": true,
+  "enhancedFields": [
+    {
+      "field": "humanFriendlyName",
+      "oldValue": null,
+      "newValue": "Early Pregnancy Loss and Miscarriage Management",
+      "action": "added"
+    },
+    {
+      "field": "organisation",
+      "oldValue": null,
+      "newValue": "The guideline text provided does not explicitly mention the publishing organization. Therefore, I cannot determine the organization name from the given information. If you can provide additional context, such as a title page, footer, or reference section, I may be able to identify the publisher. For now, the output is: - [Unknown] (Note: If this is a real-world task, please verify the source document for publisher information, which is often found in headers, footers, or introductory sections.)",
+      "action": "added"
+    },
+    {
+      "field": "yearProduced",
+      "oldValue": null,
+      "newValue": "The guideline text provided does not include the publication year or last updated date. Without this information, I cannot determine the correct 4-digit year. Please provide the full guideline document or the section containing publication details to extract the correct year",
+      "action": "added"
+    },
+    {
+      "field": "summary",
+      "oldValue": null,
+      "newValue": "This guideline provides evidence-based recommendations for the diagnosis and management of miscarriage and early pregnancy complications (up to 18 weeks). Key recommendations include ultrasound confirmation of pregnancy status, classification of miscarriage type, and options for expectant, medical (misoprostol/mifepristone), or surgical management when needed. It is intended for use by obstetricians, emergency physicians, and primary care providers in early pregnancy assessment units and clinical settings. (Note: This summary captures all key elements while maintaining strict adherence to the 2-3 sentence limit, prioritizing the most clinically relevant information from each section.)",
+      "action": "added"
+    }
+  ]
+}
