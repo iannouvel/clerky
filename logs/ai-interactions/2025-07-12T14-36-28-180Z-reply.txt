@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "What are the criteria for serial fetal growth scans?\n",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 22,
+  "potentiallyRelevantCount": 28,
+  "lessRelevantCount": 73,
+  "notRelevantCount": 143
+}
