@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 2464,
+    "transcriptPreview": "Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using British medical terminology and abbreviations:  \n\n---  \n\n### **SBAR CLERKING – CERVICAL INTRAEPITHELIAL NEOPLASIA (CIN)**  \n\n#### **SITUATION:**  \n- **Patient:** 32F, G2P1, non-smoker  \n- **Presenting complaint:** Referred to Gynaecology Oncology Clinic following abnormal cervical screening (HPV+ with high-grade dyskaryosis).  \n- **Key issue:** Colposcopy-confirmed **C...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.2\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-07-12T14-55-15",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 2464,\n  \"transcriptPreview\": \"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using British medical terminology and abbreviations:  \\n\\n---  \\n\\n### **SBAR CLERKING – CERVICAL INTRAEPITHELIAL NEOPLASIA (CIN)**  \\n\\n#### **SITUATION:**  \\n- **Patient:** 32F, G2P1, non-smoker  \\n- **Presenting complaint:** Referred to Gynaecology Oncology Clinic following abnormal cervical screening (HPV+ with high-grade dyskaryosis).  \\n- **Key issue:** Colposcopy-confirmed **C...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\",\\n      \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\",\\n      \\\"relevance\\\": \\\"0.2\\\"\\n    }\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\",\\n      \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\",\\n      \\\"relevance\\\": \\\"0.0\\\"\\n    }\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 497\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
