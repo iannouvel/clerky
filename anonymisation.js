@@ -450,7 +450,18 @@ class ClinicalDataAnonymiser {
             'Omissions', 'Growth', 'Management', 'Serum', 'Fasting', 'Full', 'Weekly',
             'Increase', 'Aim', 'Consider', 'Counseling', 'Provided', 'Discussed',
             'Reassured', 'Ongoing', 'Advised', 'Dictated', 'This', 'Pruritus',
-            'Unremarkable', 'She', 'Dopplers', 'Start', 'Weekly'
+            'Unremarkable', 'She', 'Dopplers', 'Start', 'Weekly',
+            // Language names - these should NOT be considered PII
+            'English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Dutch',
+            'Russian', 'Chinese', 'Japanese', 'Korean', 'Arabic', 'Hindi', 'Bengali',
+            'Urdu', 'Turkish', 'Polish', 'Romanian', 'Greek', 'Czech', 'Hungarian',
+            'Swedish', 'Norwegian', 'Danish', 'Finnish', 'Estonian', 'Latvian',
+            'Lithuanian', 'Slovenian', 'Slovak', 'Croatian', 'Serbian', 'Bulgarian',
+            'Albanian', 'Macedonian', 'Bosnian', 'Montenegrin', 'Ukrainian', 'Belarusian',
+            'Mandarin', 'Cantonese', 'Tamil', 'Telugu', 'Marathi', 'Gujarati', 'Punjabi',
+            'Swahili', 'Afrikaans', 'Zulu', 'Xhosa', 'Yoruba', 'Hausa', 'Igbo',
+            'Amharic', 'Somali', 'Oromo', 'Tigrinya', 'Akan', 'Ewe', 'Ga',
+            'British', 'American', 'Australian', 'Canadian', 'Irish', 'Scottish', 'Welsh'
         ];
         
         // Look for specific name patterns that the library would detect
@@ -536,7 +547,18 @@ class ClinicalDataAnonymiser {
             'Blood', 'Pressure', 'Heart', 'Rate', 'Temperature', 'Weight', 'Height',
             'BMI', 'Lab', 'Results', 'Test', 'Scan', 'Ultrasound', 'X-ray',
             'Gestational', 'Diabetes', 'Pregnancy', 'Fetal', 'Maternal', 'Obstetric',
-            'Gynaecology', 'Miscarriage', 'Delivery', 'Birth', 'Labour', 'Contraction'
+            'Gynaecology', 'Miscarriage', 'Delivery', 'Birth', 'Labour', 'Contraction',
+            // Language names - these should NOT be considered PII
+            'English', 'French', 'Spanish', 'German', 'Italian', 'Portuguese', 'Dutch',
+            'Russian', 'Chinese', 'Japanese', 'Korean', 'Arabic', 'Hindi', 'Bengali',
+            'Urdu', 'Turkish', 'Polish', 'Romanian', 'Greek', 'Czech', 'Hungarian',
+            'Swedish', 'Norwegian', 'Danish', 'Finnish', 'Estonian', 'Latvian',
+            'Lithuanian', 'Slovenian', 'Slovak', 'Croatian', 'Serbian', 'Bulgarian',
+            'Albanian', 'Macedonian', 'Bosnian', 'Montenegrin', 'Ukrainian', 'Belarusian',
+            'Mandarin', 'Cantonese', 'Tamil', 'Telugu', 'Marathi', 'Gujarati', 'Punjabi',
+            'Swahili', 'Afrikaans', 'Zulu', 'Xhosa', 'Yoruba', 'Hausa', 'Igbo',
+            'Amharic', 'Somali', 'Oromo', 'Tigrinya', 'Akan', 'Ewe', 'Ga',
+            'British', 'American', 'Australian', 'Canadian', 'Irish', 'Scottish', 'Welsh'
         ];
         
         // Apply only critical PII patterns (avoid medical false positives)

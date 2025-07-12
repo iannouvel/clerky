@@ -10,6 +10,12 @@
 
 ---
 
+## ABSTRACT
+
+The present invention relates to an AI-powered clinical decision support platform that provides privacy-preserving analysis of clinical documentation against evidence-based medical guidelines. The system implements a novel anonymisation engine that removes personally identifiable information at source while preserving clinical context, combined with an AI model-agnostic architecture that intelligently routes requests across multiple AI providers (OpenAI, DeepSeek, Anthropic, Mistral, Gemini) with automatic failover capabilities. The platform simultaneously analyses clinical cases against hundreds of medical guidelines using privacy-protected data, presenting categorised recommendations that healthcare professionals can accept, reject, or modify. The system maintains comprehensive audit trails and adapts to user preferences whilst ensuring regulatory compliance through GDPR-aligned data protection. This technical approach addresses key limitations in existing clinical decision support systems including privacy vulnerabilities, AI vendor dependency, and fragmented guideline analysis, providing a comprehensive solution for evidence-based clinical decision-making with enhanced privacy protection.
+
+---
+
 ## 1. TECHNICAL FIELD
 
 This invention relates to computer-implemented medical systems, specifically an artificial intelligence-powered clinical decision support platform that provides real-time analysis of clinical documentation against evidence-based medical guidelines while ensuring patient privacy through advanced anonymisation techniques and maintaining optimal performance through AI model-agnostic architecture.
@@ -364,81 +370,29 @@ async function syncGuidelinesWithMetadata() {
 
 ### Independent Claims
 
-**Claim 1:** A computer-implemented system for providing privacy-preserving clinical decision support comprising:
-- A privacy-preserving anonymisation engine configured to identify and remove personally identifiable information from clinical documentation before transmission to external services while preserving clinical relevance;
-- An AI model-agnostic processing system configured to intelligently route requests across multiple AI service providers including OpenAI, DeepSeek, Anthropic, Mistral, and Gemini with automatic failover capabilities;
-- A clinical text analysis engine configured to process anonymised clinical documentation using the selected AI service provider;
-- A guideline database containing a plurality of medical guidelines in structured, searchable format;
-- A multi-guideline analysis engine configured to simultaneously analyze anonymised clinical input against multiple relevant guidelines using parallel processing;
-- An artificial intelligence recommendation system configured to generate prioritized clinical recommendations based on guideline analysis;
-- An interactive user interface configured to present recommendations and capture user decisions through accept/reject/modify functionality;
-- A decision tracking system configured to store user decisions and apply them to modify clinical documentation.
+**Claim 1:** A computer-implemented system for providing privacy-preserving clinical decision support comprising a privacy-preserving anonymisation engine configured to identify and remove personally identifiable information from clinical documentation before transmission to external services while preserving clinical relevance, an AI model-agnostic processing system configured to intelligently route requests across multiple AI service providers including OpenAI, DeepSeek, Anthropic, Mistral, and Gemini with automatic failover capabilities, a clinical text analysis engine configured to process anonymised clinical documentation using the selected AI service provider, a guideline database containing a plurality of medical guidelines in structured searchable format, a multi-guideline analysis engine configured to simultaneously analyse anonymised clinical input against multiple relevant guidelines using parallel processing, an artificial intelligence recommendation system configured to generate prioritised clinical recommendations based on guideline analysis, an interactive user interface configured to present recommendations and capture user decisions through accept/reject/modify functionality, and a decision tracking system configured to store user decisions and apply them to modify clinical documentation.
 
-**Claim 2:** The system of claim 1, wherein the privacy-preserving anonymisation engine further comprises:
-- A medical context-aware PII detection system using @libretto/redact-pii-light library combined with custom medical patterns;
-- An interactive user review interface for confirming anonymisation decisions;
-- A clinical information preservation system configured to maintain medical relevance while removing personal identifiers;
-- An audit trail system for tracking all privacy-related decisions and actions.
+**Claim 2:** The system of claim 1, wherein the privacy-preserving anonymisation engine further comprises a medical context-aware PII detection system using @libretto/redact-pii-light library combined with custom medical patterns, an interactive user review interface for confirming anonymisation decisions, a clinical information preservation system configured to maintain medical relevance while removing personal identifiers, and an audit trail system for tracking all privacy-related decisions and actions.
 
-**Claim 3:** The system of claim 1, wherein the AI model-agnostic processing system comprises:
-- A provider selection algorithm configured to choose optimal AI services based on user preferences, cost, performance, and availability;
-- An automatic failover mechanism configured to seamlessly switch between AI providers upon service interruption;
-- A real-time provider health monitoring system configured to track availability and performance metrics across multiple AI services;
-- Support for multiple AI providers including OpenAI GPT models, DeepSeek, Anthropic Claude, Mistral, and Google Gemini.
+**Claim 3:** The system of claim 1, wherein the AI model-agnostic processing system comprises a provider selection algorithm configured to choose optimal AI services based on user preferences, cost, performance, and availability, an automatic failover mechanism configured to seamlessly switch between AI providers upon service interruption, a real-time provider health monitoring system configured to track availability and performance metrics across multiple AI services, and support for multiple AI providers including OpenAI GPT models, DeepSeek, Anthropic Claude, Mistral, and Google Gemini.
 
-**Claim 4:** The system of claim 1, wherein the multi-guideline analysis engine further comprises:
-- A relevance scoring algorithm configured to rank guidelines based on anonymised clinical context using AI-powered analysis;
-- A privacy-protected text similarity matching system configured to identify relevant guidelines using anonymised clinical data;
-- A parallel processing engine configured to analyze multiple guidelines simultaneously while maintaining data privacy.
+**Claim 4:** The system of claim 1, wherein the multi-guideline analysis engine further comprises a relevance scoring algorithm configured to rank guidelines based on anonymised clinical context using AI-powered analysis, a privacy-protected text similarity matching system configured to identify relevant guidelines using anonymised clinical data, and a parallel processing engine configured to analyse multiple guidelines simultaneously while maintaining data privacy.
 
 ### Dependent Claims
 
-**Claim 5:** The system of claim 1, wherein the clinical text analysis engine is configured to:
-- Process anonymised clinical documentation using AI-powered analysis to identify significant clinical issues while maintaining patient privacy;
-- Generate AI-powered suggestions for documentation enhancement based on privacy-protected guideline analysis;
-- Provide interactive interfaces for reviewing and applying documentation improvements without exposing patient identifiers.
+**Claim 5:** The system of claim 1, wherein the clinical text analysis engine is configured to process anonymised clinical documentation using AI-powered analysis to identify significant clinical issues while maintaining patient privacy, generate AI-powered suggestions for documentation enhancement based on privacy-protected guideline analysis, and provide interactive interfaces for reviewing and applying documentation improvements without exposing patient identifiers.
 
-**Claim 6:** The system of claim 1, wherein the decision tracking system is configured to:
-- Track user acceptance, rejection, and modification of AI recommendations in real-time while maintaining privacy audit trails;
-- Store individual user decisions with anonymisation metadata for current clinical session processing;
-- Apply user decisions to modify clinical transcript based on accepted and modified suggestions while preserving privacy protections.
+**Claim 6:** The system of claim 1, wherein the decision tracking system is configured to track user acceptance, rejection, and modification of AI recommendations in real-time while maintaining privacy audit trails, store individual user decisions with anonymisation metadata for current clinical session processing, and apply user decisions to modify clinical transcript based on accepted and modified suggestions while preserving privacy protections.
 
-**Claim 7:** The system of claim 1, further comprising a privacy-preserving AI-enhanced documentation system configured to:
-- Generate documentation improvement suggestions based on AI analysis of anonymised clinical data against guideline requirements;
-- Provide interactive recommendation interfaces with accept/reject/modify functionality while maintaining patient privacy;
-- Deliver real-time AI-powered feedback on clinical documentation enhancement opportunities using privacy-protected data.
+**Claim 7:** The system of claim 1, further comprising a privacy-preserving AI-enhanced documentation system configured to generate documentation improvement suggestions based on AI analysis of anonymised clinical data against guideline requirements, provide interactive recommendation interfaces with accept/reject/modify functionality while maintaining patient privacy, and deliver real-time AI-powered feedback on clinical documentation enhancement opportunities using privacy-protected data.
 
-**Claim 8:** A computer-implemented method for providing privacy-preserving clinical decision support comprising the steps of:
-- Receiving clinical documentation in natural language format;
-- Anonymising the clinical documentation using advanced PII detection and medical context-aware algorithms before external transmission;
-- Selecting an optimal AI service provider from multiple available providers based on user preferences, performance metrics, and availability;
-- Processing the anonymised clinical documentation using the selected AI service provider with automatic failover capabilities;
-- Identifying relevant medical guidelines from a database using AI-based categorisation of anonymised clinical content;
-- Analyzing the anonymised clinical documentation against multiple identified guidelines simultaneously using parallel processing;
-- Generating prioritized recommendations using artificial intelligence analysis from the selected AI service provider;
-- Presenting interactive recommendations to a user interface with accept/reject/modify functionality;
-- Capturing user decisions regarding presented recommendations with privacy audit trail maintenance;
-- Applying user decisions to modify clinical documentation based on accepted and modified suggestions while preserving anonymisation protections.
+**Claim 8:** A computer-implemented method for providing privacy-preserving clinical decision support comprising the steps of receiving clinical documentation in natural language format, anonymising the clinical documentation using advanced PII detection and medical context-aware algorithms before external transmission, selecting an optimal AI service provider from multiple available providers based on user preferences, performance metrics, and availability, processing the anonymised clinical documentation using the selected AI service provider with automatic failover capabilities, identifying relevant medical guidelines from a database using AI-based categorisation of anonymised clinical content, analysing the anonymised clinical documentation against multiple identified guidelines simultaneously using parallel processing, generating prioritised recommendations using artificial intelligence analysis from the selected AI service provider, presenting interactive recommendations to a user interface with accept/reject/modify functionality, capturing user decisions regarding presented recommendations with privacy audit trail maintenance, and applying user decisions to modify clinical documentation based on accepted and modified suggestions while preserving anonymisation protections.
 
-**Claim 9:** The method of claim 8, wherein anonymising the clinical documentation comprises:
-- Detecting personally identifiable information using @libretto/redact-pii-light library combined with custom medical patterns;
-- Presenting detected PII to healthcare professionals through interactive review interface;
-- Preserving clinical terminology and medical context while removing personal identifiers;
-- Generating comprehensive audit trails of all anonymisation decisions and actions.
+**Claim 9:** The method of claim 8, wherein anonymising the clinical documentation comprises detecting personally identifiable information using @libretto/redact-pii-light library combined with custom medical patterns, presenting detected PII to healthcare professionals through interactive review interface, preserving clinical terminology and medical context while removing personal identifiers, and generating comprehensive audit trails of all anonymisation decisions and actions.
 
-**Claim 10:** The method of claim 8, wherein selecting an optimal AI service provider comprises:
-- Evaluating user preferences for AI provider selection from available options;
-- Monitoring real-time availability and performance metrics for multiple AI service providers;
-- Implementing automatic failover mechanisms when primary AI service becomes unavailable;
-- Optimizing cost and performance across multiple AI service providers including OpenAI, DeepSeek, Anthropic, Mistral, and Gemini.
+**Claim 10:** The method of claim 8, wherein selecting an optimal AI service provider comprises evaluating user preferences for AI provider selection from available options, monitoring real-time availability and performance metrics for multiple AI service providers, implementing automatic failover mechanisms when primary AI service becomes unavailable, and optimising cost and performance across multiple AI service providers including OpenAI, DeepSeek, Anthropic, Mistral, and Gemini.
 
-**Claim 11:** A non-transitory computer-readable storage medium containing instructions that, when executed by a processor, cause the processor to perform operations comprising:
-- Anonymising clinical text input using advanced PII detection and medical context-aware algorithms before external transmission;
-- Selecting optimal AI service providers from multiple available options with automatic failover capabilities;
-- Analyzing anonymised clinical content against a database of medical guidelines using AI-based categorisation;
-- Generating clinical recommendations using artificial intelligence analysis with privacy-protected data;
-- Providing an interactive interface for user feedback on recommendations with accept/reject/modify functionality while maintaining privacy audit trails;
-- Tracking user decisions and applying them to modify clinical documentation based on user selections while preserving anonymisation protections.
+**Claim 11:** A non-transitory computer-readable storage medium containing instructions that, when executed by a processor, cause the processor to perform operations comprising anonymising clinical text input using advanced PII detection and medical context-aware algorithms before external transmission, selecting optimal AI service providers from multiple available options with automatic failover capabilities, analysing anonymised clinical content against a database of medical guidelines using AI-based categorisation, generating clinical recommendations using artificial intelligence analysis with privacy-protected data, providing an interactive interface for user feedback on recommendations with accept/reject/modify functionality while maintaining privacy audit trails, and tracking user decisions and applying them to modify clinical documentation based on user selections while preserving anonymisation protections.
 
 ---
 
@@ -584,49 +538,13 @@ The inventive step is evident in:
 
 ---
 
-## 9. FIGURES AND DIAGRAMS
+## 9. SYSTEM ARCHITECTURE OVERVIEW
 
-### Figure 1: Enhanced System Architecture Overview
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Server API    │    │   AI Services   │
-│   (Privacy-     │◄──►│   (Multi-       │◄──►│   (OpenAI/      │
-│    Aware)       │    │    Provider)    │    │    DeepSeek/    │
-│                 │    │                 │    │    Anthropic/   │
-│                 │    │                 │    │    Mistral/     │
-│                 │    │                 │    │    Gemini)      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │                       │                       │
-         ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Anonymisation │    │   GitHub        │    │   Privacy       │
-│   Engine        │    │   (Guidelines)  │    │   Audit Logs   │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+The invention comprises a distributed multi-layer architecture that ensures privacy protection whilst maintaining high availability through AI provider redundancy. The system architecture includes three primary components: a privacy-aware frontend application layer, a multi-provider server API layer, and an intelligent AI services routing layer.
 
-### Figure 2: Privacy-Preserving Clinical Analysis Workflow
-```
-Clinical Input → PII Detection → User Review → Anonymisation → AI Provider Selection
-                                                                      │
-                                                                      ▼
-Audit Trail ← User Interface ← Recommendation Processing ← AI Analysis ← Multi-Guideline Analysis
-```
+The frontend application layer implements privacy-preserving user interfaces with built-in anonymisation confirmation dialogs and real-time decision tracking capabilities. The server API layer provides AI model-agnostic integration with intelligent routing between multiple AI service providers including OpenAI, DeepSeek, Anthropic, Mistral, and Gemini. The AI services routing layer implements automatic failover mechanisms and performance optimisation across all connected providers.
 
-### Figure 3: AI Model-Agnostic Architecture with Failover
-```
-Clinical Query → Provider Selection → User Preference Check → Availability Check
-                        │                                           │
-                        ▼                                           ▼
-                 ┌─► OpenAI API ────────────────────────────────────┐
-                 ├─► DeepSeek API ──────────────────────────────────┤
-                 ├─► Anthropic API ─────────────────────────────────┤
-                 ├─► Mistral API ───────────────────────────────────┤
-                 └─► Gemini API ────────────────────────────────────┘
-                        │                                           │
-                        ▼                                           ▼
-Response Processing ← Response Validation ← AI Response ← Automatic Failover
-```
+Supporting components include an anonymisation engine that processes clinical data before external transmission, a GitHub-integrated guideline management system for automated updates, and comprehensive privacy audit logging systems that maintain regulatory compliance records. The architecture ensures that patient data remains protected throughout the entire processing pipeline whilst providing reliable clinical decision support through multi-provider AI redundancy.
 
 ---
 
@@ -684,59 +602,7 @@ Response Processing ← Response Validation ← AI Response ← Automatic Failov
 
 ---
 
-## 11. PATENT PROSECUTION STRATEGY
-
-### 11.1 Claim Strategy
-
-**Broad Coverage**: Independent claims covering privacy-preserving AI architecture and multi-provider systems
-**Defensive Patents**: Dependent claims addressing specific technical implementations of anonymisation and AI routing
-**Method Claims**: Process claims covering the novel privacy-preserving clinical analysis workflow
-**System Claims**: Apparatus claims covering the distributed privacy-aware architecture
-
-### 11.2 Prior Art Differentiation
-
-**Key Differentiators**:
-- Privacy-preserving anonymisation at source with medical context awareness
-- AI model-agnostic architecture with intelligent routing across five major providers
-- Simultaneous multi-guideline analysis with privacy protection
-- Interactive learning and adaptation mechanisms with privacy audit trails
-
-### 11.3 International Filing Strategy
-
-**Priority Markets**:
-- United Kingdom (primary filing) - strong healthcare privacy regulations
-- European Union (EPO filing) - GDPR compliance requirements
-- United States (PCT application) - large healthcare AI market
-- Canada, Australia (healthcare technology markets with privacy regulations)
-
----
-
-## 12. COMMERCIAL APPLICATIONS
-
-### 12.1 Licensing Opportunities
-
-**Healthcare Organizations**: Direct licensing for privacy-compliant internal use
-**Electronic Health Record Vendors**: Integration licensing for privacy-preserving AI capabilities
-**AI Service Providers**: White-label licensing for healthcare-specific privacy protection
-**Healthcare IT Companies**: Multi-provider AI architecture licensing for vendor independence
-
-### 12.2 Market Potential
-
-**Healthcare Privacy Market**: Growing demand for GDPR-compliant AI solutions
-**AI Healthcare Market**: $45 billion market with increasing vendor independence requirements
-**Clinical Decision Support Market**: $1.8 billion market with 15% annual growth, driven by privacy regulations
-**Healthcare AI Integration**: Rising demand for multi-provider AI solutions to avoid vendor lock-in
-
-### 12.3 Competitive Advantages
-
-**Privacy Leadership**: First-to-market with comprehensive medical context-aware anonymisation
-**Vendor Independence**: Only solution offering complete AI model-agnostic architecture
-**Regulatory Compliance**: Built-in GDPR and healthcare data protection compliance
-**Cost Optimization**: Intelligent provider selection reducing AI service costs by up to 70%
-
----
-
-## 13. CONCLUSION
+## 11. CONCLUSION
 
 This patent application presents a comprehensive and novel approach to clinical decision support through innovative privacy-preserving AI-powered technology. The invention addresses critical healthcare challenges including patient privacy protection, AI vendor independence, and clinical workflow optimization while providing significant technical advances over existing solutions.
 
