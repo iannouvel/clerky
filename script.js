@@ -8186,82 +8186,55 @@ async function processQuestionAgainstGuidelines() {
         let searchProgress = `\n## 🔍 Searching Guidelines for Your Answer\n\n`;
         searchProgress += `**Question:** ${question}\n\n`;
         searchProgress += `**Selected Guidelines:** ${selectedGuidelineIds.length}\n\n`;
-        searchProgress += `**Status:** Processing guidelines one by one...\n\n`;
+        searchProgress += `**Status:** Processing guidelines...\n\n`;
         appendToSummary1(searchProgress, false);
 
-        const results = [];
-        
-        // Process each guideline individually
-        for (let i = 0; i < selectedGuidelineIds.length; i++) {
-            const guidelineId = selectedGuidelineIds[i];
-            const stepNumber = i + 1;
-            const totalSteps = selectedGuidelineIds.length;
-            
-            try {
-                // Update progress
-                const progressMessage = `### 📋 Processing Guideline ${stepNumber}/${totalSteps}: ${guidelineId}\n\n`;
-                appendToSummary1(progressMessage, false);
+        // Get the relevant guidelines data from the global state
+        const relevantGuidelines = window.relevantGuidelines || [];
+        const selectedGuidelines = relevantGuidelines.filter(g => selectedGuidelineIds.includes(g.id));
 
-                // Call the server endpoint to analyze the question against this guideline
-                const response = await fetch(`${window.SERVER_URL}/analyzeNoteAgainstGuideline`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${idToken}`
-                    },
-                    body: JSON.stringify({
-                        transcript: question,
-                        guideline: guidelineId
-                    })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`Server error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                if (!data.success) {
-                    throw new Error(data.error || 'Analysis failed');
-                }
-
-                // Store the result
-                results.push({
-                    guidelineId: guidelineId,
-                    success: true,
-                    analysis: data.analysis
-                });
-
-                // Display the result immediately
-                const resultMessage = `**Result:** ✅ Analysis complete\n\n${data.analysis}\n\n---\n\n`;
-                appendToSummary1(resultMessage, false);
-
-            } catch (error) {
-                console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
-                
-                // Store the error result
-                results.push({
-                    guidelineId: guidelineId,
-                    success: false,
-                    error: error.message
-                });
-
-                // Display the error
-                const errorMessage = `**Result:** ❌ Error - ${error.message}\n\n---\n\n`;
-                appendToSummary1(errorMessage, false);
-            }
+        if (selectedGuidelines.length === 0) {
+            throw new Error('Selected guidelines not found in relevant guidelines data');
         }
 
-        // Display final summary
-        const successCount = results.filter(r => r.success).length;
-        const errorCount = results.filter(r => !r.success).length;
+        console.log('[DEBUG] processQuestionAgainstGuidelines: Calling new endpoint with:', {
+            questionLength: question.length,
+            selectedGuidelinesCount: selectedGuidelines.length,
+            guidelines: selectedGuidelines.map(g => ({ id: g.id, title: g.title }))
+        });
+
+        // Call the new askGuidelinesQuestion endpoint
+        const response = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                question: question,
+                relevantGuidelines: selectedGuidelines
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json();
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to get answer from guidelines');
+        }
+
+        // Display the comprehensive answer
+        const answerMessage = `## 💡 Answer Based on Guidelines\n\n` +
+                             `**Question:** ${question}\n\n` +
+                             `**Guidelines Used:** ${data.guidelinesUsed?.length || 0}\n\n` +
+                             `**Answer:**\n\n${data.answer}\n\n` +
+                             `---\n\n` +
+                             `*Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})*\n\n`;
         
-        const summaryMessage = `## 📊 Search Complete\n\n` +
-                              `**Total Guidelines Searched:** ${selectedGuidelineIds.length}\n` +
-                              `**Successful Analyses:** ${successCount}\n` +
-                              `**Errors:** ${errorCount}\n\n` +
-                              `💡 **Tip:** Review the individual results above to find the most relevant answers to your question.\n\n`;
-        
-        appendToSummary1(summaryMessage, false);
+        appendToSummary1(answerMessage, false);
 
     } catch (error) {
         console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);
