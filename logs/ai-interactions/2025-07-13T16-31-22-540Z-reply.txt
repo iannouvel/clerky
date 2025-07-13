@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "What are the rules regarding endometrial thickness and postmenopausal bleeding with regarding to endometrial sampling?",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 6,
+  "potentiallyRelevantCount": 7,
+  "lessRelevantCount": 23,
+  "notRelevantCount": 230
+}
