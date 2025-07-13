@@ -1,0 +1,26 @@
+{
+  "prompt": {
+    "prompt": "Chunk 8/34",
+    "transcriptLength": 118,
+    "transcriptPreview": "What are the rules regarding endometrial thickness and postmenopausal bleeding with regarding to endometrial sampling?...",
+    "chunkGuidelines": [
+      "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+      "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+      "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+      "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+      "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+      "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+      "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+      "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+    ],
+    "chunkIndex": 8,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14004-miscarriage-guideline-pdf\\\", \\\"title\\\": \\\"Miscarriage Guideline\\\", \\\"relevance\\\": \\\"0.3\\\"},\\n    {\\\"id\\\": \\\"cg14020-female-genital-mutilation-fgm-pdf\\\", \\\"title\\\": \\\"Female Genital Mutilation (FGM)\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg13019-triage-of-maternity-patients-guideline-pdf\\\", \\\"title\\\": \\\"Triage of Maternity Patients Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg13026-epilepsy-management-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Epilepsy Management in Pregnancy\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14005-water-birth-guideline-pdf\\\", \\\"title\\\": \\\"Water Birth Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guideline-pdf\\\", \\\"title\\\": \\\"PCEA (Epidural) in Labour Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14021-birth-centre-guideline-pdf\\\", \\\"title\\\": \\\"Birth Centre Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg15006-baby-abduction-guidance-pdf\\\", \\\"title\\\": \\\"Baby Abduction Guidance\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 1042\n}",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "timestamp": "2025-07-13T16-31-12",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 8/34\",\n  \"transcriptLength\": 118,\n  \"transcriptPreview\": \"What are the rules regarding endometrial thickness and postmenopausal bleeding with regarding to endometrial sampling?...\",\n  \"chunkGuidelines\": [\n    \"cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline\",\n    \"cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy\",\n    \"cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline\",\n    \"cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline\",\n    \"cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline\",\n    \"cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)\",\n    \"cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline\",\n    \"cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance\"\n  ],\n  \"chunkIndex\": 8,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14004-miscarriage-guideline-pdf\\\", \\\"title\\\": \\\"Miscarriage Guideline\\\", \\\"relevance\\\": \\\"0.3\\\"},\\n    {\\\"id\\\": \\\"cg14020-female-genital-mutilation-fgm-pdf\\\", \\\"title\\\": \\\"Female Genital Mutilation (FGM)\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg13019-triage-of-maternity-patients-guideline-pdf\\\", \\\"title\\\": \\\"Triage of Maternity Patients Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg13026-epilepsy-management-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Epilepsy Management in Pregnancy\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14005-water-birth-guideline-pdf\\\", \\\"title\\\": \\\"Water Birth Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guideline-pdf\\\", \\\"title\\\": \\\"PCEA (Epidural) in Labour Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg14021-birth-centre-guideline-pdf\\\", \\\"title\\\": \\\"Birth Centre Guideline\\\", \\\"relevance\\\": \\\"0.0\\\"},\\n    {\\\"id\\\": \\\"cg15006-baby-abduction-guidance-pdf\\\", \\\"title\\\": \\\"Baby Abduction Guidance\\\", \\\"relevance\\\": \\\"0.0\\\"}\\n  ]\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 1042\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
