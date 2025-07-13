@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 14/34",
+  "transcriptLength": 3358,
+  "transcriptPreview": "### **Medical Clerking – SBAR Format**  \n\n#### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. AB  \n- **Age:** 32 years  \n- **Gestation:** G2P1 (previous SVD at 39 weeks, no complications)  \n- **Presenting Complaint:** Chronic pelvic pain (6/10 on VAS), intermittent dyspareunia, and subfertility × 18 months.  \n- **Key Clinical Issue:** Suspected **hydrosalpinx** (left adnexa) on recent **TV-USS** (transvaginal ultrasound).  \n\n#### **BACKGROUND:**  \n- **PMHx:**  \n  - **PID** (pelvic ...",
+  "chunkGuidelines": [
+    "gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf: GP016 Operational Guideline for Admission to Gynaecology & Maternity Ward",
+    "gp018-management-of-miscarriage-under-local-anaesthetic-mva-pdf: GP018 Management of Miscarriage under local Anaesthetic MVA",
+    "gp019-management-of-recurrent-miscarriages-pdf: GP019 Management of Recurrent Miscarriages",
+    "gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf: GP020 Urogynaecology Specialist  Nurse-Led Clinic (1)",
+    "gp021-the-management-of-foreign-body-in-female-genital-tract-rsch-prh-pdf: GP021 The Management of Foreign Body in Female Genital Tract (RSCH PRH)",
+    "gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf: Preventing Entry-Related Gynaecological Laparoscopic Injuries",
+    "gtg-2010-malaria-in-pregnancy-prevention-pdf: Prevention of Malaria in Pregnancy",
+    "gtg-2010-malaria-in-pregnancy-treatment-pdf: Diagnosis and Treatment of Malaria in Pregnancy"
+  ],
+  "chunkIndex": 14,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\", \"title\": \"Preventing Entry-Related Gynaecological Laparoscopic Injuries\", \"relevance\": \"0.95\"},\n    {\"id\": \"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\", \"title\": \"GP016 Operational Guideline for Admission to Gynaecology & Maternity Ward\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf\", \"title\": \"GP020 Urogynaecology Specialist Nurse-Led Clinic (1)\", \"relevance\": \"0.30\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"gp018-management-of-miscarriage-under-local-anaesthetic-mva-pdf\", \"title\": \"GP018 Management of Miscarriage under local Anaesthetic MVA\", \"relevance\": \"0.10\"},\n    {\"id\": \"gp019-management-of-recurrent-miscarriages-pdf\", \"title\": \"GP019 Management of Recurrent Miscarriages\", \"relevance\": \"0.10\"},\n    {\"id\": \"gp021-the-management-of-foreign-body-in-female-genital-tract-rsch-prh-pdf\", \"title\": \"GP021 The Management of Foreign Body in Female Genital Tract (RSCH PRH)\", \"relevance\": \"0.10\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-prevention-pdf\", \"title\": \"Prevention of Malaria in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"gtg-2010-malaria-in-pregnancy-treatment-pdf\", \"title\": \"Diagnosis and Treatment of Malaria in Pregnancy\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1413
+}
