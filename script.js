@@ -5041,21 +5041,35 @@ async function initializeMainApp() {
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
         
-        // Hide loading screen after main app initialization is complete
+        // Show main content and hide loading screen after initialization is complete
         const loading = document.getElementById('loading');
+        const mainContent = document.getElementById('mainContent');
+        
         if (loading) {
             loading.style.display = 'none';
             console.log('[DEBUG] Loading screen hidden - app ready for use');
+        }
+        
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+            console.log('[DEBUG] Main content shown - app ready for use');
         }
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
         
-        // Hide loading screen even if there's an error
+        // Hide loading screen and show main content even if there's an error
         const loading = document.getElementById('loading');
+        const mainContent = document.getElementById('mainContent');
+        
         if (loading) {
             loading.style.display = 'none';
             console.log('[DEBUG] Loading screen hidden due to initialization error');
+        }
+        
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+            console.log('[DEBUG] Main content shown despite initialization error');
         }
     } finally {
         window.mainAppInitializing = false;
@@ -5081,10 +5095,10 @@ window.auth.onAuthStateChanged(async (user) => {
     });
 
     if (user) {
-        console.log('[DEBUG] User authenticated, showing main content');
-        // Don't hide loading screen yet - wait for main app initialization
+        console.log('[DEBUG] User authenticated, starting initialization');
+        // Keep main content hidden until initialization is complete
         landingPage.classList.add('hidden');
-        mainContent.classList.remove('hidden');
+        mainContent.classList.add('hidden'); // Keep hidden during initialization
         
         // Update user info
         const userLabel = document.getElementById('userLabel');
@@ -5101,12 +5115,19 @@ window.auth.onAuthStateChanged(async (user) => {
             await initializeMainApp();
         }, 100);
         
-        // Fallback timeout to hide loading screen after 30 seconds
+        // Fallback timeout to hide loading screen and show main content after 30 seconds
         setTimeout(() => {
             const loading = document.getElementById('loading');
+            const mainContent = document.getElementById('mainContent');
+            
             if (loading && loading.style.display !== 'none') {
                 loading.style.display = 'none';
                 console.log('[DEBUG] Loading screen hidden due to timeout');
+            }
+            
+            if (mainContent && mainContent.classList.contains('hidden')) {
+                mainContent.classList.remove('hidden');
+                console.log('[DEBUG] Main content shown due to timeout');
             }
         }, 30000);
         
