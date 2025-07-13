@@ -1,0 +1,15 @@
+{
+  "prompt": {
+    "transcript": "What are the rules regarding endometrial thickness and postmenopausal bleeding with regarding to endometrial sampling?",
+    "guidelinesCount": 266,
+    "chunksProcessed": 34,
+    "chunksFailed": 0
+  },
+  "response": "{\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 6,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 23,\n  \"notRelevantCount\": 230\n}",
+  "endpoint": "findRelevantGuidelines",
+  "timestamp": "2025-07-13T16-31-22",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"transcript\": \"What are the rules regarding endometrial thickness and postmenopausal bleeding with regarding to endometrial sampling?\",\n  \"guidelinesCount\": 266,\n  \"chunksProcessed\": 34,\n  \"chunksFailed\": 0\n}\n\nA: {\n  \"success\": true,\n  \"categoriesFound\": 266,\n  \"mostRelevantCount\": 6,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 23,\n  \"notRelevantCount\": 230\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
