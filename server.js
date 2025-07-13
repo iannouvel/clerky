@@ -119,21 +119,24 @@ app.set('trust proxy', true);
 
 // Apply helmet first
 app.use(helmet());
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", 'https://www.gstatic.com'],
-    styleSrc: ["'self'", 'https://fonts.googleapis.com'],
-    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-    connectSrc: ["'self'", 'https://api.openai.com', 'https://clerky-uzni.onrender.com'],
-    imgSrc: ["'self'", 'data:', 'https:'],
-    frameSrc: ["'none'"]
-  }
-}));
+
+// Temporarily disable CSP for testing
+app.use((req, res, next) => {
+  res.removeHeader('Content-Security-Policy');
+  next();
+});
+
+// Serve static files
+app.use(express.static(__dirname));
 
 // Increase payload limits
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+
+// Serve the main application
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // --- 1. Centralized CORS Configuration with Logging ---
 const corsOptions = {
@@ -142,6 +145,7 @@ const corsOptions = {
     const allowedOrigins = [
       'https://iannouvel.github.io',
       'http://localhost:3000',
+      'http://localhost:3001',
       'http://localhost:5500',
       'https://clerkyai.health'
     ];
