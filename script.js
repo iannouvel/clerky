@@ -3484,46 +3484,7 @@ async function initializeApp() {
         console.log('[DEBUG] Marked library initialized successfully');
 
         console.log('[DEBUG] Setting up Firebase auth state listener...');
-    window.auth.onAuthStateChanged(async (user) => {
-        console.log('[DEBUG] Auth state changed:', user);
-        const loading = document.getElementById('loading');
-        const landingPage = document.getElementById('landingPage');
-        const mainContent = document.getElementById('mainContent');
-
-            if (user) {
-            console.log('[DEBUG] User authenticated:', user.displayName || user.email);
-            
-            // Check disclaimer acceptance before showing main content
-            const disclaimerAccepted = await checkDisclaimerAcceptance();
-            if (!disclaimerAccepted) {
-                console.log('[DEBUG] Disclaimer not accepted, staying on current page');
-                return;
-            }
-            
-            loading.classList.add('hidden');
-            landingPage.classList.add('hidden');
-            mainContent.classList.remove('hidden');
-            
-            // Update user info
-            const userLabel = document.getElementById('userLabel');
-            const userName = document.getElementById('userName');
-            if (userLabel && userName) {
-                userName.textContent = user.displayName || user.email || 'User';
-                userName.classList.remove('hidden');
-            }
-            
-            // Initialize app features
-            await initializeMainApp();
-                        } else {
-            console.log('[DEBUG] User not authenticated, showing landing page');
-            loading.classList.add('hidden');
-            mainContent.classList.add('hidden');
-            landingPage.classList.remove('hidden');
-            
-            // Set up Google Sign-in button listener
-            setupGoogleSignIn();
-                    }
-    });
+        // Auth state change handler is now in the new initializeMainApp function
 }
 
 function setupGoogleSignIn() {
@@ -3575,7 +3536,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeApp().catch(error => {
         console.error('Failed to initialize application:', error);
         isInitialized = true;
-        showMainContent();
+        // Don't show main content here - let auth state change handler handle it
+        // showMainContent();
     });
 
     // Add click handler for generate clinical note button
