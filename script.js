@@ -5040,9 +5040,23 @@ async function initializeMainApp() {
         
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
+        
+        // Hide loading screen after main app initialization is complete
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.style.display = 'none';
+            console.log('[DEBUG] Loading screen hidden - app ready for use');
+        }
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
+        
+        // Hide loading screen even if there's an error
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.style.display = 'none';
+            console.log('[DEBUG] Loading screen hidden due to initialization error');
+        }
     } finally {
         window.mainAppInitializing = false;
     }
@@ -5068,7 +5082,7 @@ window.auth.onAuthStateChanged(async (user) => {
 
     if (user) {
         console.log('[DEBUG] User authenticated, showing main content');
-        loading.classList.add('hidden');
+        // Don't hide loading screen yet - wait for main app initialization
         landingPage.classList.add('hidden');
         mainContent.classList.remove('hidden');
         
@@ -5087,9 +5101,18 @@ window.auth.onAuthStateChanged(async (user) => {
             await initializeMainApp();
         }, 100);
         
+        // Fallback timeout to hide loading screen after 30 seconds
+        setTimeout(() => {
+            const loading = document.getElementById('loading');
+            if (loading && loading.style.display !== 'none') {
+                loading.style.display = 'none';
+                console.log('[DEBUG] Loading screen hidden due to timeout');
+            }
+        }, 30000);
+        
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        loading.classList.add('hidden');
+        loading.style.display = 'none';
         mainContent.classList.add('hidden');
         landingPage.classList.remove('hidden');
         
