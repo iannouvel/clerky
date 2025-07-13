@@ -8145,12 +8145,19 @@ function selectAllQuestionGuidelines(select) {
     checkboxes.forEach(checkbox => {
         checkbox.checked = select;
     });
+    
+    console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all question guidelines');
 }
 
 function cancelQuestionSelection() {
     const message = 'Question search cancelled.\n\n';
     appendToSummary1(message, false);
 }
+
+// Make Q&A functions globally accessible
+window.selectAllQuestionGuidelines = selectAllQuestionGuidelines;
+window.processQuestionAgainstGuidelines = processQuestionAgainstGuidelines;
+window.cancelQuestionSelection = cancelQuestionSelection;
 
 // Process question against selected guidelines
 async function processQuestionAgainstGuidelines() {
