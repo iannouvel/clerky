@@ -797,13 +797,13 @@ div.third-column,
 /* Hover state: summary1 expands to 80% of transcript column */
 .transcript-pane:hover,
 #summary1:hover {
-    flex: 4; /* Expand to take more space (80% equivalent) */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-    border: 1px solid #66D4C0;
-    border-radius: 8px;
-    background: #ffffff;
+    height: 80vh !important; /* Expand to 80% of viewport height */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    z-index: 10 !important;
+    border: 1px solid #66D4C0 !important;
+    border-radius: 8px !important;
+    background: #ffffff !important;
 }
 
 /* PDF download link styling */
