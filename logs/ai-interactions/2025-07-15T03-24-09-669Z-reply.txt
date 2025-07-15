@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 26/34",
+  "transcriptLength": 3075,
+  "transcriptPreview": "Here’s a fictional but clinically authentic SBAR clerking for an advanced maternal age pregnancy, using British medical terminology and abbreviations:  \n\n---  \n\n### **SBAR CLERKING – ADVANCED MATERNAL AGE PREGNANCY**  \n\n#### **SITUATION:**  \n- **Patient:** 42yo G2P1 (previous SVD, no complications)  \n- **Gestation:** 32+4 weeks  \n- **Presenting concern:** Reduced fetal movements (RFM) x 24hrs, no contractions/PROM.  \n- **Key issue:** AMA (advanced maternal age) pregnancy, now with RFM – requires...",
+  "chunkGuidelines": [
+    "pp14002-newborn-blood-spot-screening-pdf: PP14002 Newborn Blood Spot Screening",
+    "pph-prompt-card-ed-rsch-prh-pdf: PPH prompt card ED RSCH PRH",
+    "proforma-shoulder-dystocia-uhsx-pdf: Proforma Shoulder Dystocia UHSx",
+    "rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf: Management of Thyroid Disorders in Pregnancy",
+    "rcog-birth-after-previous-caesarean-section-2015-pdf: Birth After Previous Caesarean Birth.",
+    "reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline",
+    "releasing-placentas-to-parents-form-pdf: Releasing placentas to parents form",
+    "risk-assessment-obstetric-vte-non-maternity-wards-pdf: Risk Assessment Obstetric VTE  non-maternity wards"
+  ],
+  "chunkIndex": 26,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"reduced-fetal-movements-guideline-pdf\", \"title\": \"Reduced Fetal Movements guideline\", \"relevance\": \"0.95\"},\n    {\"id\": \"rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf\", \"title\": \"Management of Thyroid Disorders in Pregnancy\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"risk-assessment-obstetric-vte-non-maternity-wards-pdf\", \"title\": \"Risk Assessment Obstetric VTE non-maternity wards\", \"relevance\": \"0.70\"},\n    {\"id\": \"rcog-birth-after-previous-caesarean-section-2015-pdf\", \"title\": \"Birth After Previous Caesarean Birth.\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"pph-prompt-card-ed-rsch-prh-pdf\", \"title\": \"PPH prompt card ED RSCH PRH\", \"relevance\": \"0.40\"},\n    {\"id\": \"proforma-shoulder-dystocia-uhsx-pdf\", \"title\": \"Proforma Shoulder Dystocia UHSx\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"pp14002-newborn-blood-spot-screening-pdf\", \"title\": \"PP14002 Newborn Blood Spot Screening\", \"relevance\": \"0.10\"},\n    {\"id\": \"releasing-placentas-to-parents-form-pdf\", \"title\": \"Releasing placentas to parents form\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1160
+}

@@ -1,0 +1,20 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 34/34",
+  "transcriptLength": 3075,
+  "transcriptPreview": "Here’s a fictional but clinically authentic SBAR clerking for an advanced maternal age pregnancy, using British medical terminology and abbreviations:  \n\n---  \n\n### **SBAR CLERKING – ADVANCED MATERNAL AGE PREGNANCY**  \n\n#### **SITUATION:**  \n- **Patient:** 42yo G2P1 (previous SVD, no complications)  \n- **Gestation:** 32+4 weeks  \n- **Presenting concern:** Reduced fetal movements (RFM) x 24hrs, no contractions/PROM.  \n- **Key issue:** AMA (advanced maternal age) pregnancy, now with RFM – requires...",
+  "chunkGuidelines": [
+    "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+    "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+  ],
+  "chunkIndex": 34,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\", \"title\": \"Diagnosis of early pregnancy loss with transvaginal ultrasound\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\", \"title\": \"Approach to the Patient with Pregnancy of Unknown Location\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 449
+}
