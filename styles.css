@@ -1025,16 +1025,24 @@ div.third-column,
     z-index: 1;
 }
 
+/* Test hover with a very obvious change */
+#summary1:hover {
+    background-color: yellow !important;
+    border: 5px solid blue !important;
+    font-size: 24px !important;
+}
+
 /* Hover state: summary1 expands to 80% of transcript column */
 .transcript-pane:hover,
 #summary1:hover {
-    flex: 4; /* Expand to take more space (80% equivalent) */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-    border: 1px solid #66D4C0;
-    border-radius: 8px;
-    background: #ffffff;
+    flex: 4 !important; /* Expand to take more space (80% equivalent) */
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    z-index: 10 !important;
+    border: 3px solid red !important; /* Debug border to see if hover is working */
+    border-radius: 8px !important;
+    background: #ffffff !important;
+    min-height: 400px !important; /* Force height change */
 }
 
 /* PDF download link styling */
