@@ -165,7 +165,7 @@ let guidanceDataLoaded = false;
 // Clinical data storage
 let clinicalIssues = {
     obstetrics: [],
-    gynecology: []
+                gynaecology: []
 };
 let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
@@ -2325,7 +2325,7 @@ async function showClinicalIssuesDropdown() {
         const clinicalIssues = await response.json();
         console.log('[DEBUG] Loaded clinical issues:', {
             obstetrics: clinicalIssues.obstetrics?.length,
-            gynecology: clinicalIssues.gynecology?.length
+            gynaecology: clinicalIssues.gynaecology?.length
         });
         
         // Create dropdown HTML
@@ -2348,11 +2348,11 @@ async function showClinicalIssuesDropdown() {
         
         dropdownHtml += `
                         </optgroup>
-                        <optgroup label="Gynecology">
+                        <optgroup label="Gynaecology">
         `;
         
-        // Add gynecology options
-        clinicalIssues.gynecology.forEach((issue, index) => {
+        // Add gynaecology options
+        clinicalIssues.gynaecology.forEach((issue, index) => {
             dropdownHtml += `<option value="${issue}">${issue}</option>`;
         });
         

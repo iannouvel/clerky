@@ -1043,7 +1043,7 @@ let guidanceDataLoaded = false;
 // Clinical data storage
 let clinicalIssues = {
     obstetrics: [],
-    gynecology: []
+                gynaecology: []
 };
 let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
@@ -4077,7 +4077,6 @@ async function showClinicalIssuesDropdown() {
                     <h4>Clinical Issues</h4>
                     <select id="clinical-issues-dropdown" class="clinical-dropdown">
                         <option value="">Select a clinical issue...</option>
-                        <optgroup label="Obstetrics">
         `;
         
         // Add options from Firebase data
@@ -4085,7 +4084,6 @@ async function showClinicalIssuesDropdown() {
             const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
             
             dropdownHtml += `
-                        </optgroup>
                         <optgroup label="${categoryLabel}">
             `;
             
@@ -4093,10 +4091,13 @@ async function showClinicalIssuesDropdown() {
                 const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
                 dropdownHtml += `<option value="${conditionName}" data-condition-id="${conditionData.id}">${conditionName}${hasTranscript}</option>`;
             });
+            
+            dropdownHtml += `
+                        </optgroup>
+            `;
         });
         
         dropdownHtml += `
-                        </optgroup>
                     </select>
                 </div>
                 

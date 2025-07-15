@@ -7962,7 +7962,7 @@ async function migrateGuidelineUrls() {
     try {
         console.log('Starting migration to add downloadUrl fields...');
         
-        const collections = ['guidelines_obstetrics', 'guidelines_gynecology'];
+        const collections = ['guidelines_obstetrics', 'guidelines_gynaecology'];
         let totalUpdated = 0;
         
         for (const collectionName of collections) {
