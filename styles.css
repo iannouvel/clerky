@@ -1296,47 +1296,8 @@ div.third-column,
     background-color: #00a884;
 }
 
-/* Additional rules for smooth expansion behavior */
-/* Prevent expansion conflicts when both areas try to expand simultaneously */
-.user-input-section:hover .transcript-pane,
-.user-input-section:focus-within .transcript-pane {
-    flex: 0.8; /* Shrink transcript pane when user input is expanded */
-}
-
-.transcript-pane:hover ~ .user-input-section,
-.transcript-pane:focus-within ~ .user-input-section {
-    min-height: 150px; /* Keep user input smaller when transcript is expanded */
-}
-
-/* Ensure the column maintains proper scrolling when expanded */
-#transcriptColumn:has(.transcript-pane:hover, .user-input-section:hover, 
-                     .transcript-pane:focus-within, .user-input-section:focus-within) {
-    overflow-y: auto;
-}
-
-/* Smooth transitions for the entire column */
-#transcriptColumn {
-    transition: all 0.2s ease;
-}
-
-/* Focus indicator improvements */
-.expandable-input:focus {
-    outline: none;
-    border-color: #66D4C0;
-    box-shadow: 0 0 0 3px rgba(102, 212, 192, 0.1);
-}
-
-/* Maintain subtle green tint on hover/focus */
-.user-input-section:hover .input-buttons,
-.user-input-section:focus-within .input-buttons {
-    background: rgba(234, 255, 234, 0.95); /* light-green with slight opacity */
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    margin: 10px -5px 0 -5px;
-    padding: 10px 5px;
-}
-
-/* Ensure the transcript pane takes up remaining space */
+/* Simplified hover behavior for transcript pane */
+/* Default state: summary1 occupies 50% of transcript column */
 .transcript-pane {
     flex: 1;
     overflow-y: auto;
@@ -1345,12 +1306,12 @@ div.third-column,
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    height: 50%; /* Default to 50% of transcript column */
 }
 
-/* Expandable behavior for transcript pane */
-.transcript-pane:hover,
-.transcript-pane:focus-within {
-    flex: 2.5; /* Expand to take more space */
+/* Hover state: summary1 expands to 80% of transcript column */
+.transcript-pane:hover {
+    height: 80%; /* Expand to 80% of transcript column */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 10;
@@ -1359,11 +1320,19 @@ div.third-column,
     background: #ffffff;
 }
 
-/* Make sure the column uses flex layout */
+/* Ensure the transcript column uses flex layout */
 #transcriptColumn {
     display: flex;
     flex-direction: column;
     height: 100%;
+    transition: all 0.2s ease;
+}
+
+/* Focus indicator improvements */
+.expandable-input:focus {
+    outline: none;
+    border-color: #66D4C0;
+    box-shadow: 0 0 0 3px rgba(102, 212, 192, 0.1);
 }
 
 /* Button loading state */
