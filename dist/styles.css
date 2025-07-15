@@ -795,7 +795,8 @@ div.third-column,
 }
 
 /* Hover state: summary1 expands to 80% of transcript column */
-.transcript-pane:hover {
+.transcript-pane:hover,
+#summary1:hover {
     flex: 4; /* Expand to take more space (80% equivalent) */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
