@@ -1049,12 +1049,12 @@ div.third-column,
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
-    height: 50%; /* Default to 50% of transcript column */
+    flex: 1; /* Default to 50% of transcript column */
 }
 
 /* Hover state: summary1 expands to 80% of transcript column */
 .transcript-pane:hover {
-    height: 80%; /* Expand to 80% of transcript column */
+    flex: 4; /* Expand to take more space (80% equivalent) */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 10;
