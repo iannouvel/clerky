@@ -797,13 +797,15 @@ div.third-column,
 /* Hover state: summary1 expands to 80% of transcript column */
 .transcript-pane:hover,
 #summary1:hover {
-    height: 80vh !important; /* Expand to 80% of viewport height */
+    min-height: 600px !important; /* Force a large minimum height */
+    max-height: 80vh !important; /* But don't exceed viewport */
     transform: translateY(-2px) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     z-index: 10 !important;
     border: 1px solid #66D4C0 !important;
     border-radius: 8px !important;
     background: #ffffff !important;
+    overflow-y: auto !important; /* Ensure scrolling works */
 }
 
 /* PDF download link styling */
