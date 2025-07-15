@@ -1231,18 +1231,6 @@ div.third-column,
     z-index: 1;
 }
 
-/* Expandable behavior for user input section */
-.user-input-section:hover,
-.user-input-section:focus-within {
-    min-height: 60vh; /* Expand to 60% of viewport height */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-    border: 1px solid #66D4C0;
-    border-radius: 8px;
-    margin: -1px; /* Adjust margin to prevent layout shift */
-}
-
 .expandable-input {
     width: 100%;
     min-height: 150px; /* Increased by 50% from 100px */
@@ -1256,12 +1244,6 @@ div.third-column,
     margin-bottom: 10px;
     box-sizing: border-box;
     transition: all 0.3s ease;
-}
-
-/* Enhanced expandable behavior for textarea itself */
-.expandable-input:hover,
-.expandable-input:focus {
-    min-height: 300px; /* Expand textarea height on hover/focus */
 }
 
 .expandable-input:focus {
