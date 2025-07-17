@@ -238,18 +238,9 @@ body {
     flex: 1 1 0;
 }
 
-/* History column starts hidden off-screen */
+/* History column hidden */
 #historyColumn {
-    width: 260px;
-    min-width: 200px;
-    max-width: 320px;
-    flex-shrink: 0;
-    height: 100vh;
-    overflow-y: auto;
-    border-right: 1px solid #eee;
-    background: #f8f9fa;
-    display: flex;
-    flex-direction: column;
+    display: none !important;
 }
 
 /* Show a small tab on the right edge when collapsed */
@@ -2226,6 +2217,7 @@ html, body {
     min-height: 0;
 }
 
+/* Hover effects disabled
 .main-column:hover {
     flex: 2 1 0;
     z-index: 2;
@@ -2236,6 +2228,7 @@ html, body {
     flex: 0.8 1 0;
     opacity: 0.85;
 }
+*/
 
 .column-header {
     padding: 12px 18px;
