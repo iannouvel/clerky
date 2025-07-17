@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 2/34",
+  "transcriptLength": 3083,
+  "transcriptPreview": "Here’s a medical clerking in SBAR format for the given clinical scenario, using appropriate medical terminology and British abbreviations:  \n\n---  \n\n### **SITUATION:**  \n**Patient:** 45F, para 2 (G2P2), presents with a 3-month history of **post-coital bleeding (PCB)**, intermenstrual bleeding (IMB), and recent onset left-sided pelvic pain. No significant weight loss or constitutional symptoms. Last menstrual period (LMP) 2 weeks ago. Smoker (10/day).  \n\n**Key clinical issue:** ?Cervical malignan...",
+  "chunkGuidelines": [
+    "bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf: External Cephalic Version (ECV)",
+    "bjog-2017-management-of-breech-presentation-pdf: Management of Breech Presentation",
+    "bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf: Management of Inherited Bleeding Disorders in Pregnancy",
+    "bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf: Prevention of Early-onset Neonatal Group B Streptococcal Disease",
+    "bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf: Care of Women with Obesity in Pregnancy",
+    "bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf: Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management",
+    "bjog-2020-management-of-gestational-trophoblastic-disease-pdf: Management of Gestational Trophoblastic Disease",
+    "bjog-2020-murphy-assisted-vaginal-birth-pdf: Assisted Vaginal Birth"
+  ],
+  "chunkIndex": 2,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2020-management-of-gestational-trophoblastic-disease-pdf\", \"title\": \"Management of Gestational Trophoblastic Disease\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2017-management-of-inherited-bleeding-disorders-in-pregnancy-pdf\", \"title\": \"Management of Inherited Bleeding Disorders in Pregnancy\", \"relevance\": \"0.4\"},\n    {\"id\": \"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\", \"title\": \"Care of Women with Obesity in Pregnancy\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation-pdf\", \"title\": \"External Cephalic Version (ECV)\", \"relevance\": \"0.0\"},\n    {\"id\": \"bjog-2017-management-of-breech-presentation-pdf\", \"title\": \"Management of Breech Presentation\", \"relevance\": \"0.0\"},\n    {\"id\": \"bjog-2017-prevention-of-earlyonset-neonatal-group-b-streptococcal-disease-pdf\", \"title\": \"Prevention of Early-onset Neonatal Group B Streptococcal Disease\", \"relevance\": \"0.0\"},\n    {\"id\": \"bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of-pdf\", \"title\": \"Preterm Prelabor Rupture of Membranes (PPROM) - Diagnosis and Management\", \"relevance\": \"0.0\"},\n    {\"id\": \"bjog-2020-murphy-assisted-vaginal-birth-pdf\", \"title\": \"Assisted Vaginal Birth\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1440
+}
