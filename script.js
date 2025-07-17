@@ -3190,8 +3190,8 @@ async function applyAllDecisions() {
             throw new Error(result.error || 'Failed to apply decisions');
         }
 
-        // Display the results using appendToOutputField
-        const resultsHtml = `
+        // Display the process results in Summary field
+        const summaryHtml = `
             <div class="apply-results">
                 <h3>🎉 Decisions Applied Successfully!</h3>
                 <div class="changes-summary">
@@ -3203,10 +3203,6 @@ async function applyAllDecisions() {
                         <li><strong>Total processed:</strong> ${result.changesSummary.total} suggestions</li>
                     </ul>
                 </div>
-                <div class="updated-transcript">
-                    <h4>Updated Transcript:</h4>
-                    <div class="transcript-content">${result.updatedTranscript.replace(/\n/g, '<br>')}</div>
-                </div>
                 <div class="transcript-actions">
                     <button onclick="copyUpdatedTranscript()" class="action-btn">📋 Copy Updated Transcript</button>
                     <button onclick="replaceOriginalTranscript()" class="action-btn">🔄 Replace Original Transcript</button>
@@ -3214,7 +3210,11 @@ async function applyAllDecisions() {
             </div>
         `;
 
-        appendToOutputField(resultsHtml, false);
+        appendToSummary1(summaryHtml, false);
+        
+        // Display ONLY the updated transcript text in Output field
+        const transcriptOutput = `${result.updatedTranscript}`;
+        appendToOutputField(transcriptOutput, true);
 
         // Store the updated transcript globally for actions
         window.lastUpdatedTranscript = result.updatedTranscript;
@@ -4247,7 +4247,7 @@ async function processWorkflow() {
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToOutputField(workflowStart, true);
+        appendToSummary1(workflowStart, true);
 
         console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
         
