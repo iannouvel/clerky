@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 17/34",
+  "transcriptLength": 2398,
+  "transcriptPreview": "**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28...",
+  "chunkGuidelines": [
+    "lone-worker-checklist-pdf: Lone worker checklist",
+    "management-of-acute-pelvic-inflammatory-disease-pdf: Management of Acute Pelvic Inflammatory Disease",
+    "md086-maternity-service-staffing-pdf: MD086 Maternity Service Staffing",
+    "md089-labour-ward-staffing-pdf: MD089 Labour Ward Staffing",
+    "md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf: MD090 Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow",
+    "mp001-provision-and-schedules-of-antenatal-care-pdf: MP001 Provision and Schedules of Antenatal Care",
+    "mp002-fetal-anomaly-screening-programme-sr-sept-pdf: MP002 Fetal Anomaly Screening Programme SR Sept",
+    "mp003-antenatal-screening-sickle-cell-and-thalassaemia-pdf: MP003 Antenatal Screening - Sickle Cell and Thalassaemia"
+  ],
+  "chunkIndex": 17,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp001-provision-and-schedules-of-antenatal-care-pdf\", \"title\": \"Provision and Schedules of Antenatal Care\", \"relevance\": \"0.9\"},\n    {\"id\": \"mp002-fetal-anomaly-screening-programme-sr-sept-pdf\", \"title\": \"Fetal Anomaly Screening Programme\", \"relevance\": \"0.8\"},\n    {\"id\": \"mp003-antenatal-screening-sickle-cell-and-thalassaemia-pdf\", \"title\": \"Antenatal Screening - Sickle Cell and Thalassaemia\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\", \"title\": \"Disengaging a Deeply Impacted head at LSCS and use of Fetal Pillow\", \"relevance\": \"0.6\"},\n    {\"id\": \"management-of-acute-pelvic-inflammatory-disease-pdf\", \"title\": \"Management of Acute Pelvic Inflammatory Disease\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"md086-maternity-service-staffing-pdf\", \"title\": \"Maternity Service Staffing\", \"relevance\": \"0.3\"},\n    {\"id\": \"md089-labour-ward-staffing-pdf\", \"title\": \"Labour Ward Staffing\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"lone-worker-checklist-pdf\", \"title\": \"Lone worker checklist\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1190
+}
