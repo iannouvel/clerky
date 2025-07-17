@@ -3260,7 +3260,7 @@ async function applyAllDecisions() {
                 
                 // Show transition message
                 const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-                appendToOutputField(transitionMessage, false);
+                appendToSummary1(transitionMessage, false);
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
@@ -3368,7 +3368,7 @@ async function applyAllDecisions() {
                 <p>Please try again or contact support if the problem persists.</p>
             </div>
         `;
-        appendToOutputField(errorHtml, false);
+        appendToSummary1(errorHtml, false);
 
     } finally {
         // Reset UI state
