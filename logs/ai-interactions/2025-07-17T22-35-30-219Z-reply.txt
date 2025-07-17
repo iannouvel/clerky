@@ -1,0 +1,75 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28-day cycles.  \n  - No intermenstrual/postcoital bleeding.  \n  - Previous LSCS x2 (elective). No miscarriages.  \n- **Medical Hx:** Hypothyroidism (on levothyroxine 75mcg OD). No known bleeding disorders.  \n- **Drugs:** Levothyroxine, NSAIDs PRN for dysmenorrhoea. No anticoagulants.  \n- **Allergies:** NKDA  \n- **Family Hx:** No Hx of gynae malignancies or bleeding disorders.  \n\n**ASSESSMENT:**  \n- **Observations:**  \n  - BP 112/68, HR 88, SpO2 98% RA, Temp 36.7°C.  \n  - CRT <2s, no pallor on conjunctival inspection.  \n- **Examination:**  \n  - Abdomen: Soft, non-tender, no masses.  \n  - PV: Not performed (awaiting USS). No active bleeding on inspection.  \n- **Investigations:**  \n  - **GP FBC (today):** Hb 82 (↓), MCV 78 (↓), Ferritin 12 (↓) – microcytic anaemia.  \n  - **Pending:** TVUSS (to exclude fibroids/adenomyosis), TFTs (ensure euthyroid), coagulation screen (if indicated).  \n- **Differentials:**  \n  1. Fibroids (leiomyoma) – most likely.  \n  2. Adenomyosis.  \n  3. Thyroid dysfunction (unlikely if compliant).  \n  4. Coagulopathy (e.g., von Willebrand’s) – less likely but consider if no structural cause.  \n\n**RECOMMENDATION:**  \n1. **Immediate:**  \n   - Oral iron (ferrous sulfate 200mg OD in the morning on empty stomach with vitamin C) for anaemia, with option to reduce to alternate day dosing if side effects occur.  \n   - Tranexamic acid 1g TDS during menses.  \n   - Consider Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia.  \n   - Provide dietary advice about iron-rich foods and reducing tea/coffee intake.  \n2. **Investigations:**  \n   - Urgent TVUSS (booked for tomorrow).  \n   - Repeat FBC in 2-3 weeks to monitor Hb response to oral iron therapy.  \n   - TFTs, coagulation screen if USS inconclusive.  \n3. **Follow-up:**  \n   - Gynae clinic in 2/52 with USS results.  \n   - Advise ED re attendance if syncope/severe bleeding.  \n   - Consider endometrial biopsy if persistent symptoms despite treatment or USS shows endometrial abnormality.  \n\n**Impression:** Secondary anaemia due to menorrhagia – likely structural cause. Exclude malignancy in line with NICE guidelines.  \n\n---  \n*Note: Fictional case for educational purposes.*\n\nApply these changes:\nACCEPT: Replace \"Consider Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia.\" with \"Recommend Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia and fibroid-related bleeding, unless patient desires fertility preservation.\" (Reason: The guideline states: 'Patients with heavy menstrual bleeding who do not desire future fertility can consider hysteroscopic myomectomy or medical therapy as initial treatment options.' Mirena IUS is specifically mentioned as effective for fibroid-related bleeding. This patient is G3P2 with no stated fertility desires, making Mirena IUS strongly indicated. The stronger recommendation is justified by the established efficacy in this clinical scenario.)\nACCEPT: Replace \"Consider endometrial biopsy if persistent symptoms despite treatment or USS shows endometrial abnormality.\" with \"Perform endometrial biopsy if: 1) age >40 with abnormal bleeding (this patient is 38), 2) USS shows endometrial abnormality ≥4mm, or 3) failed medical management after 3 months.\" (Reason: The guideline emphasizes structured evaluation for malignancy risk: 'Exclude malignancy in line with NICE guidelines.' While the patient is slightly under 40, the severity of symptoms (Hb 82) warrants clear biopsy criteria. The modified suggestion provides specific, actionable thresholds based on current bleeding severity and anticipated treatment response timeline.)\nACCEPT: Replace \"Gap: no discussion of GnRH agonist/antagonist options\" with \"Add consideration of GnRH antagonists (e.g., relugolix) if Mirena contraindicated or poorly tolerated, particularly if fibroids confirmed on USS.\" (Reason: The guideline specifically mentions: 'Relugolix combination therapy was approved for fibroid-related heavy menstrual bleeding' and 'Second-tier medical treatments for fibroid-associated HMB include GnRH agonists and antagonists.' Given this patient's severe anemia and failed NSAID therapy, these should be discussed as potential second-line options if first-line fails.)\nACCEPT: Replace \"Tranexamic acid 1g TDS during menses.\" with \"Tranexamic acid 1g TDS during menses (max 4 days per cycle) as adjunct to hormonal therapy.\" (Reason: The guideline notes: 'Second-tier treatments include...tranexamic acid' but emphasizes combination with hormonal therapy for optimal effect. The modified suggestion clarifies duration limits and positioning as adjunctive therapy, which aligns better with the patient's severe anemia and likely fibroid-related bleeding.)\nACCEPT: Replace \"Missing: surgical options discussion for confirmed fibroids\" with \"Add surgical options to follow-up plan if fibroids confirmed: 1) hysteroscopic myomectomy for submucosal fibroids, 2) laparoscopic myomectomy if ≤4 fibroids <8cm, or 3) open myomectomy for larger/multiple fibroids.\" (Reason: The guideline specifies: 'For patients desiring fertility, hysteroscopic myomectomy is recommended for submucosal fibroids, while myomectomy via laparoscopy or open abdominal incision is suggested for other types of fibroids.' While fertility desires aren't stated, surgical options should be pre-emptively discussed given the severity of symptoms and potential need for definitive treatment.)\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1752791668949_jcdur2n9p",
+  "original_transcript_length": 2729,
+  "changes_applied": 5,
+  "decisions_summary": {
+    "accepted": 5,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: **Medical Clerking – SBAR Format**  
+
+**SITUATION:**  
+- **Patient:** 38-year-old female (G3P2)  
+- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  
+- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  
+
+**BACKGROUND:**  
+- **Obstetric/Gynae Hx:**  
+  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28-day cycles.  
+  - No intermenstrual/postcoital bleeding.  
+  - Previous LSCS x2 (elective). No miscarriages.  
+- **Medical Hx:** Hypothyroidism (on levothyroxine 75mcg OD). No known bleeding disorders.  
+- **Drugs:** Levothyroxine, NSAIDs PRN for dysmenorrhoea. No anticoagulants.  
+- **Allergies:** NKDA  
+- **Family Hx:** No Hx of gynae malignancies or bleeding disorders.  
+
+**ASSESSMENT:**  
+- **Observations:**  
+  - BP 112/68, HR 88, SpO2 98% RA, Temp 36.7°C.  
+  - CRT <2s, no pallor on conjunctival inspection.  
+- **Examination:**  
+  - Abdomen: Soft, non-tender, no masses.  
+  - PV: Not performed (awaiting USS). No active bleeding on inspection.  
+- **Investigations:**  
+  - **GP FBC (today):** Hb 82 (↓), MCV 78 (↓), Ferritin 12 (↓) – microcytic anaemia.  
+  - **Pending:** TVUSS (to exclude fibroids/adenomyosis), TFTs (ensure euthyroid), coagulation screen (if indicated).  
+- **Differentials:**  
+  1. Fibroids (leiomyoma) – most likely.  
+  2. Adenomyosis.  
+  3. Thyroid dysfunction (unlikely if compliant).  
+  4. Coagulopathy (e.g., von Willebrand’s) – less likely but consider if no structural cause.  
+
+**RECOMMENDATION:**  
+1. **Immediate:**  
+   - Oral iron (ferrous sulfate 200mg OD in the morning on empty stomach with vitamin C) for anaemia, with option to reduce to alternate day dosing if side effects occur.  
+   - Tranexamic acid 1g TDS during menses (max 4 days per cycle) as adjunct to hormonal therapy.  
+   - Recommend Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia and fibroid-related bleeding, unless patient desires fertility preservation.  
+   - Provide dietary advice about iron-rich foods and reducing tea/coffee intake.  
+   - Add consideration of GnRH antagonists (e.g., relugolix) if Mirena contraindicated or poorly tolerated, particularly if fibroids confirmed on USS.  
+2. **Investigations:**  
+   - Urgent TVUSS (booked for tomorrow).  
+   - Repeat FBC in 2-3 weeks to monitor Hb response to oral iron therapy.  
+   - TFTs, coagulation screen if USS inconclusive.  
+3. **Follow-up:**  
+   - Gynae clinic in 2/52 with USS results.  
+   - Advise ED re attendance if syncope/severe bleeding.  
+   - Perform endometrial biopsy if: 1) age >40 with abnormal bleeding (this patient is 38), 2) USS shows endometrial abnormality ≥4mm, or 3) failed medical management after 3 months.  
+   - Add surgical options to follow-up plan if fibroids confirmed: 1) hysteroscopic myomectomy for submucosal fibroids, 2) laparoscopic myomectomy if ≤4 fibroids <8cm, or 3) open myomectomy for larger/multiple fibroids.  
+
+**Impression:** Secondary anaemia due to menorrhagia – likely structural cause. Exclude malignancy in line with NICE guidelines.  
+
+---  
+*Note: Fictional case for educational purposes.*
+
+--- Token Usage Report ---
+Prompt tokens: 1659
+Completion tokens: 921
+Total tokens: 2580
+Estimated cost: $0.001290
