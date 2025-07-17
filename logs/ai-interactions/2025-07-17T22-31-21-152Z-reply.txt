@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/34",
+  "transcriptLength": 2398,
+  "transcriptPreview": "**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28...",
+  "chunkGuidelines": [
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"Postnatal Care\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"Newborn Feeding\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"Multiple Pregnancy and Birth\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"Neonatal Abstinence Scoring\", \"relevance\": \"0.2\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"Neonatal Resuscitation\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"Assisted Vaginal Birth Guideline\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1042
+}
