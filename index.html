@@ -126,23 +126,18 @@
         
         /* Critical three-column layout fixes */
         #threeColumnView {
-            display: grid !important;
-            grid-template-columns: 10fr 90fr !important;
-            grid-template-areas: "history transcript" !important;
+            display: flex !important;
             width: 100% !important;
             gap: 16px !important;
         }
         
         #historyColumn {
-            grid-area: history !important;
-            width: 100% !important;
-            min-width: 0 !important;
+            display: none !important;
         }
         
-        #transcriptColumn {
-            grid-area: transcript !important;
+        #mainContentArea {
+            flex: 1 !important;
             width: 100% !important;
-            min-width: 0 !important;
         }
         
         #issuesColumn {
@@ -152,11 +147,7 @@
         /* Responsive override for mobile */
         @media (max-width: 768px) {
             #threeColumnView {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto auto !important;
-                grid-template-areas: 
-                    "transcript"
-                    "history" !important;
+                flex-direction: column !important;
             }
         }
         
