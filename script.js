@@ -5924,7 +5924,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] Processing guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title}`);
 
     const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
-    appendToOutputField(analyzeMessage, true);
+    appendToSummary1(analyzeMessage, true);
 
     // Directly generate dynamic advice for this guideline without server analysis
     // Store the latest analysis for potential dynamic advice
