@@ -2416,7 +2416,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         
         // Update UI to show guidelines being processed
         const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...\n\n`;
-        appendToOutputField(processingStatus, true);
+        appendToSummary1(processingStatus, false);
         
         // Process guidelines in parallel for better performance
         const guidelinePromises = guidelinesToProcess.map(async (relevantGuideline, index) => {
@@ -3396,8 +3396,8 @@ async function applyAllDecisions() {
                 // Process next guideline after a brief delay
                 setTimeout(async () => {
                     try {
-                        const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                        appendToOutputField(processingStepMessage, false);
+                                const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
+        appendToSummary1(processingStepMessage, false);
                         
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
@@ -4375,14 +4375,14 @@ async function processWorkflow() {
         
         // Step 1: Find Relevant Guidelines
         const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
-        appendToOutputField(step1Status, true);
+        appendToSummary1(step1Status, false);
         
         try {
             await findRelevantGuidelines(true); // Suppress header since we show our own step header
             console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
             
             const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
-            appendToOutputField(step1Complete, true);
+            appendToSummary1(step1Complete, false);
             
         } catch (error) {
             console.error('[DEBUG] processWorkflow: Step 1 failed:', error.message);
@@ -4411,7 +4411,7 @@ async function processWorkflow() {
                            `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
                            `incorporated before moving to the next guideline.\n\n`;
         
-        appendToOutputField(step2Status, true);
+        appendToSummary1(step2Status, false);
         
         // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
         console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
@@ -5948,7 +5948,7 @@ async function processSelectedGuidelines() {
             </style>
         `;
         
-        appendToOutputField(sequentialProcessingMessage, true);
+        appendToSummary1(sequentialProcessingMessage, false);
 
         // Function to update status display
         function updateSequentialStatus() {
@@ -5988,7 +5988,7 @@ async function processSelectedGuidelines() {
             const processingStepMessage = `
                 <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
             `;
-            appendToOutputField(processingStepMessage, true);
+            appendToSummary1(processingStepMessage, false);
 
             try {
                 // Process only the first guideline - the rest will be handled in applyAllDecisions
@@ -6131,8 +6131,8 @@ window.skipCurrentGuideline = function() {
         
         setTimeout(async () => {
             try {
-                const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                appendToOutputField(processingStepMessage, true);
+                        const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
+        appendToSummary1(processingStepMessage, false);
                 await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
             } catch (error) {
                 console.error('[DEBUG] Error processing next guideline after skip:', error);
@@ -6147,7 +6147,7 @@ window.skipCurrentGuideline = function() {
                 <p>Processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).</p>
             </div>
         `;
-        appendToOutputField(finalMessage, true);
+        appendToSummary1(finalMessage, false);
     }
 };
 
