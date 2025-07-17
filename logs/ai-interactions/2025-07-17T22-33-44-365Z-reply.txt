@@ -1,0 +1,73 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Original Transcript:\n**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28-day cycles.  \n  - No intermenstrual/postcoital bleeding.  \n  - Previous LSCS x2 (elective). No miscarriages.  \n- **Medical Hx:** Hypothyroidism (on levothyroxine 75mcg OD). No known bleeding disorders.  \n- **Drugs:** Levothyroxine, NSAIDs PRN for dysmenorrhoea. No anticoagulants.  \n- **Allergies:** NKDA  \n- **Family Hx:** No Hx of gynae malignancies or bleeding disorders.  \n\n**ASSESSMENT:**  \n- **Observations:**  \n  - BP 112/68, HR 88, SpO2 98% RA, Temp 36.7°C.  \n  - CRT <2s, no pallor on conjunctival inspection.  \n- **Examination:**  \n  - Abdomen: Soft, non-tender, no masses.  \n  - PV: Not performed (awaiting USS). No active bleeding on inspection.  \n- **Investigations:**  \n  - **GP FBC (today):** Hb 82 (↓), MCV 78 (↓), Ferritin 12 (↓) – microcytic anaemia.  \n  - **Pending:** TVUSS (to exclude fibroids/adenomyosis), TFTs (ensure euthyroid), coagulation screen (if indicated).  \n- **Differentials:**  \n  1. Fibroids (leiomyoma) – most likely.  \n  2. Adenomyosis.  \n  3. Thyroid dysfunction (unlikely if compliant).  \n  4. Coagulopathy (e.g., von Willebrand’s) – less likely but consider if no structural cause.  \n\n**RECOMMENDATION:**  \n1. **Immediate:**  \n   - Oral iron (ferrous sulfate 200mg BD) for anaemia.  \n   - Tranexamic acid 1g TDS during menses.  \n   - Consider hormonal therapy (e.g., POP or Mirena IUS) if no contraindications post-USS.  \n2. **Investigations:**  \n   - Urgent TVUSS (booked for tomorrow).  \n   - Repeat FBC in 2/52 to monitor Hb.  \n   - TFTs, coagulation screen if USS inconclusive.  \n3. **Follow-up:**  \n   - Gynae clinic in 2/52 with USS results.  \n   - Advise ED re attendance if syncope/severe bleeding.  \n   - Consider endometrial biopsy if >40y or USS abnormal.  \n\n**Impression:** Secondary anaemia due to menorrhagia – likely structural cause. Exclude malignancy in line with NICE guidelines.  \n\n---  \n*Note: Fictional case for educational purposes.*\n\nApply these changes:\nACCEPT: Replace \"Oral iron (ferrous sulfate 200mg BD) for anaemia.\" with \"Oral iron (ferrous sulfate 200mg OD in the morning on empty stomach with vitamin C) for anaemia, with option to reduce to alternate day dosing if side effects occur\" (Reason: According to the guideline: 'Recommended dose of oral Iron: 200mg Ferrous sulphate / 210mg Ferrous Fumarate orally once per day in the morning on empty stomach with vitamin C. Note: This can be reduced to an alternate day dosage if patient is having difficulty with side effects.' This modification is appropriate as the current prescription of BD dosing may increase side effects without improving absorption, and the guideline specifically recommends morning dosing with vitamin C for optimal absorption.)\nACCEPT: Replace \"Repeat FBC in 2/52 to monitor Hb.\" with \"Repeat FBC in 2-3 weeks to monitor Hb response to oral iron therapy\" (Reason: The guideline states: 'FBC should be re-checked 2-3 weeks after commencing oral iron. If iron deficiency is the cause of anaemia a patient's Hb should rise after treatment with compliance with daily oral iron for 2-3 weeks.' This change aligns with the evidence-based monitoring timeline for assessing response to iron therapy in this case of confirmed iron deficiency anemia.)\nACCEPT: Replace \"Missing: dietary advice documentation\" with \"Provide dietary advice about iron-rich foods and reducing tea/coffee intake\" (Reason: The guideline recommends: 'All women and people should receive dietary advice... Iron Rich Foods include: Meat, Nuts, Beans, Dried fruit, Wholegrain foods, Fortified breakfast cereals, Soybean flour, Most dark green leafy vegetables. Reducing tea and coffee intake can also help to improve iron levels.' This addition is clinically important as dietary modifications can support iron therapy in this patient with microcytic anemia and low ferritin.)\nACCEPT: Replace \"Consider hormonal therapy (e.g., POP or Mirena IUS) if no contraindications post-USS.\" with \"Consider Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia\" (Reason: While not explicitly stated in this anemia guideline, NICE guidelines for heavy menstrual bleeding recommend the Mirena IUS as first-line treatment. This modification is appropriate given the patient's presentation with menorrhagia causing significant anemia, where the Mirena IUS has the strongest evidence base for reducing menstrual blood loss.)\nACCEPT: Replace \"Consider endometrial biopsy if >40y or USS abnormal.\" with \"Consider endometrial biopsy if persistent symptoms despite treatment or USS shows endometrial abnormality\" (Reason: While the current suggestion follows age-based screening, the patient's significant symptoms (flooding/clots) and degree of anemia may warrant earlier endometrial assessment if symptoms persist or imaging is suspicious, regardless of age. This modification provides more clinically relevant triggers for biopsy in this symptomatic patient.)\n\nReturn the updated transcript with these changes applied.",
+  "system_prompt": "You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.\n\nYou will receive:\n1. An original transcript\n2. A list of suggestions with user decisions (accept, reject, or modify)\n3. For modifications, the user's custom text\n\nYour task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:\n- ACCEPTED suggestions: Apply the suggested text exactly as provided\n- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion\n- REJECTED suggestions: Leave the original text unchanged\n\nReturn the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.\n\nImportant guidelines:\n- Only apply changes that the user has accepted or modified\n- Preserve the medical accuracy and professional tone\n- Maintain logical flow and readability\n- Do not add any explanatory text or comments\n- Return only the updated transcript",
+  "session_id": "advice_1752791565925_22q1xqfg9",
+  "original_transcript_length": 2398,
+  "changes_applied": 5,
+  "decisions_summary": {
+    "accepted": 5,
+    "modified": 0,
+    "rejected": 0
+  }
+}
+
+A: **Medical Clerking – SBAR Format**  
+
+**SITUATION:**  
+- **Patient:** 38-year-old female (G3P2)  
+- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  
+- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  
+
+**BACKGROUND:**  
+- **Obstetric/Gynae Hx:**  
+  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28-day cycles.  
+  - No intermenstrual/postcoital bleeding.  
+  - Previous LSCS x2 (elective). No miscarriages.  
+- **Medical Hx:** Hypothyroidism (on levothyroxine 75mcg OD). No known bleeding disorders.  
+- **Drugs:** Levothyroxine, NSAIDs PRN for dysmenorrhoea. No anticoagulants.  
+- **Allergies:** NKDA  
+- **Family Hx:** No Hx of gynae malignancies or bleeding disorders.  
+
+**ASSESSMENT:**  
+- **Observations:**  
+  - BP 112/68, HR 88, SpO2 98% RA, Temp 36.7°C.  
+  - CRT <2s, no pallor on conjunctival inspection.  
+- **Examination:**  
+  - Abdomen: Soft, non-tender, no masses.  
+  - PV: Not performed (awaiting USS). No active bleeding on inspection.  
+- **Investigations:**  
+  - **GP FBC (today):** Hb 82 (↓), MCV 78 (↓), Ferritin 12 (↓) – microcytic anaemia.  
+  - **Pending:** TVUSS (to exclude fibroids/adenomyosis), TFTs (ensure euthyroid), coagulation screen (if indicated).  
+- **Differentials:**  
+  1. Fibroids (leiomyoma) – most likely.  
+  2. Adenomyosis.  
+  3. Thyroid dysfunction (unlikely if compliant).  
+  4. Coagulopathy (e.g., von Willebrand’s) – less likely but consider if no structural cause.  
+
+**RECOMMENDATION:**  
+1. **Immediate:**  
+   - Oral iron (ferrous sulfate 200mg OD in the morning on empty stomach with vitamin C) for anaemia, with option to reduce to alternate day dosing if side effects occur.  
+   - Tranexamic acid 1g TDS during menses.  
+   - Consider Mirena IUS as first-line hormonal therapy if no contraindications post-USS, given its proven efficacy for menorrhagia.  
+   - Provide dietary advice about iron-rich foods and reducing tea/coffee intake.  
+2. **Investigations:**  
+   - Urgent TVUSS (booked for tomorrow).  
+   - Repeat FBC in 2-3 weeks to monitor Hb response to oral iron therapy.  
+   - TFTs, coagulation screen if USS inconclusive.  
+3. **Follow-up:**  
+   - Gynae clinic in 2/52 with USS results.  
+   - Advise ED re attendance if syncope/severe bleeding.  
+   - Consider endometrial biopsy if persistent symptoms despite treatment or USS shows endometrial abnormality.  
+
+**Impression:** Secondary anaemia due to menorrhagia – likely structural cause. Exclude malignancy in line with NICE guidelines.  
+
+---  
+*Note: Fictional case for educational purposes.*
+
+--- Token Usage Report ---
+Prompt tokens: 1541
+Completion tokens: 770
+Total tokens: 2311
+Estimated cost: $0.001156
