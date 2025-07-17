@@ -1639,7 +1639,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
         // Initialize the guideline search summary (unless called from process workflow)
         if (!suppressHeader) {
             let searchProgress = '## Finding Relevant Guidelines\n\n';
-            appendToSummary1(searchProgress);
+            appendToOutputField(searchProgress, false);
         }
 
         // ANONYMISATION STEP: Check and anonymise clinical data before sending to server
@@ -1841,22 +1841,14 @@ async function generateClinicalNote() {
     button.disabled = true;
 
     try {
-        // Get the transcript content from either summary1 or userInput
-        let transcript = document.getElementById('summary1')?.textContent;
+        // Get the transcript content from userInput field
         const userInput = document.getElementById('userInput')?.value;
+        let transcript = userInput;
         
-        console.log('[DEBUG] Checking transcript sources:', {
-            summary1Length: transcript?.length,
+        console.log('[DEBUG] Getting transcript from userInput:', {
             userInputLength: userInput?.length,
-            summary1Preview: transcript?.substring(0, 100) + '...',
             userInputPreview: userInput?.substring(0, 100) + '...'
         });
-
-        // Use userInput if summary1 is empty
-        if ((!transcript || transcript.trim() === '') && userInput && userInput.trim() !== '') {
-            console.log('[DEBUG] Using content from userInput field');
-            transcript = userInput;
-        }
 
         if (!transcript || transcript.trim() === '') {
             console.error('[DEBUG] No transcript content found in either source');
