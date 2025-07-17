@@ -4247,7 +4247,7 @@ async function processWorkflow() {
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToOutputField(workflowStart, true);
+        appendToSummary1(workflowStart, true);
 
         console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
         
