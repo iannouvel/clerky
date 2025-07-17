@@ -1,0 +1,121 @@
+Patent Factsheets: 
+Claims
+The basis of a UK patent application is a legal document called a specification. Its contents determine whether 
+a patent can be granted. You would be well advised to seek professional assistance when preparing your patent 
+application. A patent specification includes:
+• a full description of your invention, plus any drawings referred to within your description
+• one or more claims.
+This factsheet tells you about the claims. An example is shown overleaf. Other factsheets in this series explain how to 
+prepare a description, drawings, and an abstract (which is another essential part of an application).
+Content
+A claim is a precise statement of the invention that you 
+want to protect. 
+Your first claim must define the invention by setting out 
+its distinctive technical features. These are the features 
+which distinguish your invention from what is already 
+known within the same or similar field.
+Your first claim should only include the essential features 
+of your invention and you should consider how restrictive 
+in meaning the terms you need to be. For example, if the 
+invention which you have described uses a hook on which 
+to hang coats, consider whether it needs to be a hook, or 
+if another type of support would fulfil the same function. If 
+so, you should consider whether you should call it simply 
+“a support for clothes” rather than a “coat hook”.
+Subsidiary features may be set out in “dependent 
+claims”: these refer to one or more previous claims (as 
+shown in the example claims 2-6 overleaf).
+Note that if you include more than 25 claims there will be 
+an additional fee of £20 per claim, later in the process.
+A claim should not contain any statements relating to 
+commercial or other advantages or other non-technical 
+aspects; e.g. claims of the type “I claim that my invention 
+is novel” or “I claim £250 for my clothes stand” or “I 
+claim to be the inventor of this clothes stand” or “I claim 
+that my clothes stand will make it easier to get access to 
+the clothes” will not be accepted.
+Do not use a full stop in the middle of any claim as this 
+would make it unclear.
+Do not put anything in your claims which you have not 
+already referred to in your description. The claims must 
+be fully supported by the description .The Intellectual Property Office will conduct a search on 
+your application based upon the invention defined in your 
+claims. If your claims aren’t well written or thought out, 
+the results of our search may not be as helpful as they 
+could be. Your application cannot be ‘searched’ if it 
+has no claims .
+Drafting commercially successful claims is not easy.  If 
+you are in any doubt about the effectiveness of your 
+claims, consult a patent attorney. 
+At the substantive examination stage the claims will be 
+assessed to determine whether the invention is new 
+and inventive. If necessary, you will then be given the 
+opportunity to amend your claims.
+Style and presentation
+Type (or print) the claim(s) on one side only of separate 
+sheets of white A4 paper.
+Begin your claims on a separate sheet of paper, 
+preferably headed “CLAIMS”.  If you decide to write 
+more than one claim, number them in order beginning 
+with claim 1.
+Number the pages of claims in order, to follow on from 
+the pages of the description (for example, if your last 
+descriptive page is numbered 2, your first claim page will 
+be numbered 3).
+Leave margins of 2.0cm. 
+Join the pages together with a paper clip or bulldog clip 
+at the top centre of the pages. Please do not join the 
+pages by stapling.
+The claims should be in English or Welsh. (The Office will 
+provide a translation of any material filed in Welsh).
+IMPORTANT: You will need to file your claims at the 
+Intellectual Property Office within 12 months of your 
+filing date (where no claim to priority is made).
+Intellectual Property Office is an operating name of the Patent Office (REV JAN 20)
+Claims: Typical example
+Use A4 paper
+Preferred heading for your claims
+Broadest claim - include only the 
+essential features.  
+The claims must relate to technical 
+features of your invention.
+Dependent claims relating to 
+subsidiary features (these claims 
+are optional)Page numbered to follow on  
+after the description page(s)
+3
+Claims
+1. A bicycle stabilising unit comprising
+attachment means for attaching the unit to a 
+bicycle, a ground-engaging wheel which can freely 
+rotate about an axis, and cushioning means such 
+that the axis of the wheel can be displaced relative 
+to the attachment means.
+2. A bicycle stabilising unit according to 
+claim 1, in which the cushioning means is provided 
+by a damped suspension strut.
+3.  A bicycle stabilising unit according to 
+claim 1, in which the cushioning means is provided 
+by a housing which supports the ground-engaging 
+wheel, the housing including at least one slot 
+which allows linear displacement of the wheel, 
+perpendicular to its axis, the housing also having 
+at least one spring which controls the displacement 
+of the wheel.
+4. A bicycle stabilising unit according to 
+claim 1, in which the cushioning means is provided 
+by a torsion bar or torsion spring.
+5 A  bicycle stabilising unit according to any
+of the preceding claims,in which the cushioning 
+means is adjustable so that the degree of
+cushioning can be varied.
+6. A bicycle stabilising unit according to 
+claim 2, in which the damped suspension strut is 
+detachable so that the ground-engaging wheel is  
+stored in a non-ground-engaging position.
+Enquiries : You can contact the Intellectual Property Office on: 0300 300 2000 (local call rate). Alternatively visit our 
+website at www.gov.uk/ipo
+We are keen to help all our customers as much as possible, but regret that we cannot assist with the commercial 
+exploitation of your invention. This factsheet is not intended to be a comprehensive guide and necessarily omits details 
+which may be relevant in particular circumstances.
+WS0057      © Crown Copyright

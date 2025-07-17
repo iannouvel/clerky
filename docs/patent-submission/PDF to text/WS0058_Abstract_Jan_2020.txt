@@ -1,0 +1,61 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+ 
+ Patent Factsheets: 
+Abstract 
+The basis of a UK patent application is a legal document called a specifcation. Its contents determine whether 
+a patent can be granted. You would be well advised to seek professional assistance when preparing your patent application. A patent specifcation includes: 
+• a full description of your invention, plus any drawings referred to  within your description 
+• one or more claims. This factsheet tells you about the abstract. An example is shown overleaf. Other factsheets in this series explain how 
+to prepare a description, drawings, and claims. 
+Content 
+An abstract is a brief summary of your invention, and 
+should include all of the most important technical features of your invention. It is useful to both the Intellectual Property Offce and to the public searching in the particular technical feld of the application. 
+The abstract should indicate the technical feld to which the 
+invention belongs and be drafted in a manner which allows a clear understanding of the technical problem to be solved and the solution to that problem, namely your invention. 
+The abstract should have a title, which may be the same 
+as the title of your description. The title should be brief, specifc and refect the nature of the invention. Do not include expressions such as “improvements in or relating to” or “and the like”. 
+The Abstract is not part of the specifcation. You should ensure that all the technical features 
+mentioned in the abstract are also in the description. The information contained within the abstract cannot be relied upon as a disclosure of the invention. This means that you cannot transfer any features from the abstract to the description at a later date and you cannot claim a priority date for any matter contained solely in the abstract. 
+Start your abstract with the most important essential 
+technical features of your invention. You may then wish to refer to some of the non-essential features you have mentioned in the description. If your specifcation includes drawings, you should suggest in writing, below the abstract, which fgure you think goes best with the abstract to illustrate your invention. Do not provide a separate drawing specially for the abstract. 
+If a feature from the fgure you suggest is mentioned in 
+your abstract, the reference number for that feature should be given in the abstract as well. 
+Style and presentation Head your abstract page ‘ABSTRACT’. You should type or print the abstract on one side only of 
+a separate sheet of white A4 paper using no more than 150 words. 
+Leave margins of at least 2.0cm. The Intellectual Property Offce may edit your abstract. The abstract should be in English or Welsh. (The Offce 
+will provide a translation of any material fled in Welsh). 
+IMPORTANT: You must fle your abstract within 12 
+months of your fling date (where no claim to priority is made). If a claim to priority is made, you must fle your abstract by the latter of 12 months from your priority date, or two months from your fling date. 
+Intellectual Property Offce is an operating name of the Patent Offce (REV JAN 20) 
+  
+ 
+ 
+         Abstract: Typical example 
+Use A4 paper 
+Head the page 
+‘ABSTRACT’ 
+Title 
+A summary of your invention 
+(maximum of 150 words) 
+Suggest a fgure from your 
+drawing sheets Page numbered to follow on 
+after the claim page(s) 
+4 
+Abstract 
+Bicycle stabilising unit 
+A bicycle stabilising unit 1 includes 
+attachment means 3,4 for attaching the unit to a bicycle, a ground engaging wheel 6 which can freely rotate about an axis, and cushioning means 7,8 such that the axis of the wheel can be displaced relative to the attachment means. 
+Figure 1 to accompany abstract 
+Enquiries: You can contact the Intellectual Property Offce on: 0300 300 2000 (local call rate). Alternatively visit our 
+website at www.gov.uk/ipo 
+We are keen to help all our customers as much as possible, but regret that we cannot assist with the commercial 
+exploitation of your invention. This factsheet is not intended to be a comprehensive guide and necessarily omits details which may be relevant in particular circumstances. 
+WS0058 © Crown Copyright 

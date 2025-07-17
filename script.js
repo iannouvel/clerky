@@ -503,9 +503,9 @@ function displayRelevantGuidelines(categories) {
         //     hasDownloadUrl: !!guideline.downloadUrl,
         //     hasOriginalFilename: !!guideline.originalFilename,
         //     hasFilename: !!guideline.filename,
-        //     downloadUrlValue: guideline.downloadUrl,
-        //     originalFilenameValue: guideline.originalFilename,
-        //     filenameValue: guideline.filename,
+        //     downloadUrl: guideline.downloadUrl,
+        //     originalFilename: guideline.originalFilename,
+        //     filename: guideline.filename,
         //     id: guideline.id,
         //     title: guideline.title
         // });
@@ -1970,9 +1970,13 @@ async function generateClinicalNote() {
             throw new Error('Invalid response format from server');
         }
 
-        // Append the generated note to summary1
-        console.log('[DEBUG] Appending note to summary1');
-        appendToSummary1(marked.parse(data.note), false);
+        // Append the generated note to output field
+        console.log('[DEBUG] Appending note to output field');
+        const outputField = document.getElementById('outputField');
+        if (outputField) {
+            outputField.innerHTML = window.marked ? window.marked.parse(data.note) : data.note;
+            outputField.scrollTop = outputField.scrollHeight;
+        }
         console.log('[DEBUG] Note appended successfully');
 
     } catch (error) {
@@ -2134,6 +2138,55 @@ function appendToSummary1(content, clearExisting = false) {
     }
 }
 
+// Function to append content to the output field
+function appendToOutputField(content, clearExisting = true) {
+    console.log('[DEBUG] appendToOutputField called with:', {
+        contentLength: content?.length,
+        clearExisting,
+        contentPreview: content?.substring(0, 100) + '...'
+    });
+
+    const outputField = document.getElementById('outputField');
+    if (!outputField) {
+        console.error('[DEBUG] outputField element not found');
+        return;
+    }
+
+    try {
+        if (clearExisting) {
+            outputField.innerHTML = '';
+        }
+
+        // Check if content is already HTML
+        const isHtml = /<[a-z][\s\S]*>/i.test(content);
+        let processedContent;
+        if (isHtml) {
+            processedContent = content;
+        } else if (window.marked) {
+            try {
+                processedContent = window.marked.parse(content);
+            } catch (parseError) {
+                console.error('[DEBUG] Error parsing with marked:', parseError);
+                processedContent = content;
+            }
+        } else {
+            processedContent = content;
+        }
+
+        // Create a wrapper div for the new content
+        const newContentWrapper = document.createElement('div');
+        newContentWrapper.className = 'new-content-entry';
+        newContentWrapper.innerHTML = processedContent;
+
+        outputField.appendChild(newContentWrapper);
+        outputField.scrollTop = outputField.scrollHeight;
+        console.log('[DEBUG] Content appended to output field successfully');
+    } catch (error) {
+        console.error('[DEBUG] Error in appendToOutputField:', error);
+        outputField.innerHTML += content;
+    }
+}
+
 // Update checkAgainstGuidelines to use stored relevant guidelines
 async function checkAgainstGuidelines(suppressHeader = false) {
     const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
@@ -2198,7 +2251,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         let formattedAnalysis = '';
         if (!suppressHeader) {
             formattedAnalysis = '## Analysis Against Guidelines\n\n';
-            appendToSummary1(formattedAnalysis);
+            appendToOutputField(formattedAnalysis, true);
         }
         
         let successCount = 0;
@@ -2359,7 +2412,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 </style>
             `;
             
-            appendToSummary1(selectionMessage, false);
+            appendToOutputField(selectionMessage, true);
             
             // Use top 5 guidelines
             guidelinesToProcess = mostRelevantGuidelines.slice(0, MAX_AUTO_PROCESS);
@@ -2367,7 +2420,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         
         // Update UI to show guidelines being processed
         const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...\n\n`;
-        appendToSummary1(processingStatus, false);
+        appendToOutputField(processingStatus, true);
         
         // Process guidelines in parallel for better performance
         const guidelinePromises = guidelinesToProcess.map(async (relevantGuideline, index) => {
@@ -2473,12 +2526,12 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 const analysisSection = `### ${result.guideline}\n\n${result.analysis}\n\n`;
                 formattedAnalysis += analysisSection;
                 successCount++;
-                appendToSummary1(analysisSection, false);
+                appendToOutputField(analysisSection, true);
             } else {
                                  const errorSection = `### ${result.guideline}\n\n⚠️ Error: ${result.error}\n\n`;
                  formattedAnalysis += errorSection;
                  errorCount++;
-                 appendToSummary1(errorSection, false); // Append, don't clear
+                 appendToOutputField(errorSection, true); // Append, don't clear
              }
          });
 
@@ -2497,7 +2550,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         const finalSummary = summarySection + failureSection + additionalInfo;
         
         formattedAnalysis += finalSummary;
-        appendToSummary1(finalSummary, false); // Append, don't clear
+        appendToOutputField(finalSummary, true); // Append, don't clear
 
         // Store the latest analysis result and guideline data for dynamic advice
         if (successCount > 0) {
@@ -2686,7 +2739,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             firstOriginalId: currentSuggestions[0]?.originalId
         });
 
-        // Display interactive suggestions using appendToSummary1 (use prefixed suggestions)
+        // Display interactive suggestions using appendToOutputField (use prefixed suggestions)
         await displayInteractiveSuggestions(prefixedSuggestions, result.guidelineTitle);
 
         return result;
@@ -2699,7 +2752,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             analysisLength: analysis?.length
         });
         
-        // Display error message using appendToSummary1
+        // Display error message using appendToOutputField
         const errorHtml = `
             <div class="dynamic-advice-error">
                 <h3>❌ Error generating interactive suggestions</h3>
@@ -2707,13 +2760,13 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
                 <p>The original analysis is still available above.</p>
             </div>
         `;
-        appendToSummary1(errorHtml, false);
+        appendToOutputField(errorHtml, true);
         
         throw error;
     }
 }
 
-// Display interactive suggestions in summary1
+// Display interactive suggestions in outputField
 async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
     console.log('[DEBUG] displayInteractiveSuggestions called', {
         suggestionsCount: suggestions?.length,
@@ -2729,7 +2782,7 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
                 <p><em>Guideline: ${guidelineTitle || 'Unknown'}</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        appendToOutputField(noSuggestionsHtml, true);
         return;
     }
 
@@ -2837,12 +2890,12 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
         </div>
     `;
 
-    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to summary1', {
+    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to outputField', {
         buttonId,
         summaryId,
         currentSession: currentAdviceSession
     });
-    appendToSummary1(suggestionsHtml, false);
+    appendToOutputField(suggestionsHtml, true);
     
     // Add a data attribute to mark this as the current session's suggestions
     setTimeout(() => {
@@ -3263,7 +3316,7 @@ async function applyAllDecisions() {
             throw new Error(result.error || 'Failed to apply decisions');
         }
 
-        // Display the results using appendToSummary1
+        // Display the results using appendToOutputField
         const resultsHtml = `
             <div class="apply-results">
                 <h3>🎉 Decisions Applied Successfully!</h3>
@@ -3287,7 +3340,7 @@ async function applyAllDecisions() {
             </div>
         `;
 
-        appendToSummary1(resultsHtml, false);
+        appendToOutputField(resultsHtml, false);
 
         // Store the updated transcript globally for actions
         window.lastUpdatedTranscript = result.updatedTranscript;
@@ -3333,7 +3386,7 @@ async function applyAllDecisions() {
                 
                 // Show transition message
                 const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-                appendToSummary1(transitionMessage, false);
+                appendToOutputField(transitionMessage, false);
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
@@ -3348,7 +3401,7 @@ async function applyAllDecisions() {
                 setTimeout(async () => {
                     try {
                         const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                        appendToSummary1(processingStepMessage, false);
+                        appendToOutputField(processingStepMessage, false);
                         
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
@@ -3384,7 +3437,7 @@ async function applyAllDecisions() {
                             }
                             </style>
                         `;
-                        appendToSummary1(errorMessage, false);
+                        appendToOutputField(errorMessage, false);
                     }
                 }, 1000);
                 
@@ -3423,7 +3476,7 @@ async function applyAllDecisions() {
                     </style>
                 `;
                 
-                appendToSummary1(finalMessage, false);
+                appendToOutputField(finalMessage, false);
                 console.log('[DEBUG] Sequential processing completed successfully');
             }
         }
@@ -3441,7 +3494,7 @@ async function applyAllDecisions() {
                 <p>Please try again or contact support if the problem persists.</p>
             </div>
         `;
-        appendToSummary1(errorHtml, false);
+        appendToOutputField(errorHtml, false);
 
     } finally {
         // Reset UI state
@@ -4320,20 +4373,20 @@ async function processWorkflow() {
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToSummary1(workflowStart);
+        appendToOutputField(workflowStart, true);
 
         console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
         
         // Step 1: Find Relevant Guidelines
         const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
-        appendToSummary1(step1Status, false);
+        appendToOutputField(step1Status, true);
         
         try {
             await findRelevantGuidelines(true); // Suppress header since we show our own step header
             console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
             
             const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
-            appendToSummary1(step1Complete, false);
+            appendToOutputField(step1Complete, true);
             
         } catch (error) {
             console.error('[DEBUG] processWorkflow: Step 1 failed:', error.message);
@@ -4362,7 +4415,7 @@ async function processWorkflow() {
                            `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
                            `incorporated before moving to the next guideline.\n\n`;
         
-        appendToSummary1(step2Status, false);
+        appendToOutputField(step2Status, true);
         
         // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
         console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
@@ -4375,10 +4428,10 @@ async function processWorkflow() {
             stack: error.stack
         });
         
-        // Display error in summary1
+        // Display error in outputField
         const errorMessage = `\n❌ **Workflow Error:** ${error.message}\n\n` +
                             `The workflow was interrupted. You can try running individual steps manually or contact support if the problem persists.\n\n`;
-        appendToSummary1(errorMessage, false);
+        appendToOutputField(errorMessage, true);
         
         alert(`Workflow failed: ${error.message}`);
         
@@ -4631,10 +4684,10 @@ function debouncedSaveState() {
 
 function getChatState() {
     const userInput = document.getElementById('userInput');
-    const summary1 = document.getElementById('summary1');
+    const outputField = document.getElementById('outputField');
     return {
         userInputContent: userInput ? userInput.value : '',
-        summary1Content: summary1 ? summary1.innerHTML : '',
+        outputFieldContent: outputField ? outputField.innerHTML : '',
         relevantGuidelines: window.relevantGuidelines,
         latestAnalysis: window.latestAnalysis,
         currentAdviceSession: window.currentAdviceSession,
@@ -4646,7 +4699,7 @@ function getChatState() {
 
 function loadChatState(state) {
     document.getElementById('userInput').value = state.userInputContent || '';
-    document.getElementById('summary1').innerHTML = state.summary1Content || '';
+    document.getElementById('outputField').innerHTML = state.outputFieldContent || '';
     window.relevantGuidelines = state.relevantGuidelines || null;
     window.latestAnalysis = state.latestAnalysis || null;
     window.currentAdviceSession = state.currentAdviceSession || null;
@@ -4769,7 +4822,7 @@ async function startNewChat() {
         preview: 'New chat...',
         state: {
             userInputContent: '',
-            summary1Content: ''
+            outputFieldContent: ''
         }
     };
     
@@ -4974,7 +5027,7 @@ async function initializeMainApp() {
             historyColumn: !!document.getElementById('historyColumn'),
             transcriptColumn: !!document.getElementById('transcriptColumn'),
             userInput: !!document.getElementById('userInput'),
-            summary1: !!document.getElementById('summary1')
+            outputField: !!document.getElementById('outputField')
         });
         
         // Initialize chat history
@@ -5799,7 +5852,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
     `;
 
     // Display the selection interface
-    appendToSummary1(selectionHtml, false);
+    appendToOutputField(selectionHtml, false);
     
     console.log('[DEBUG] Guideline selection interface displayed');
 }
@@ -5899,7 +5952,7 @@ async function processSelectedGuidelines() {
             </style>
         `;
         
-        appendToSummary1(sequentialProcessingMessage, false);
+        appendToOutputField(sequentialProcessingMessage, true);
 
         // Function to update status display
         function updateSequentialStatus() {
@@ -5939,7 +5992,7 @@ async function processSelectedGuidelines() {
             const processingStepMessage = `
                 <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
             `;
-            appendToSummary1(processingStepMessage, false);
+            appendToOutputField(processingStepMessage, true);
 
             try {
                 // Process only the first guideline - the rest will be handled in applyAllDecisions
@@ -5948,7 +6001,7 @@ async function processSelectedGuidelines() {
             } catch (error) {
                 console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
                 const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\n`;
-                appendToSummary1(errorMessage, false);
+                appendToOutputField(errorMessage, true);
             }
 
             // Don't show completion message yet - will be shown when all guidelines are done
@@ -5956,7 +6009,7 @@ async function processSelectedGuidelines() {
     } catch (error) {
         console.error('[DEBUG] Error in processSelectedGuidelines:', error);
         const errorMessage = `\n❌ **Sequential Processing Error:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
+        appendToOutputField(errorMessage, true);
         alert('Error processing selected guidelines: ' + error.message);
         
     } finally {
@@ -5997,7 +6050,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] Processing guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title}`);
 
     const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
-    appendToSummary1(analyzeMessage, false);
+    appendToOutputField(analyzeMessage, true);
 
     // Directly generate dynamic advice for this guideline without server analysis
     // Store the latest analysis for potential dynamic advice
@@ -6010,7 +6063,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 
     // Automatically generate dynamic advice for this guideline
     const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${guidelineData.humanFriendlyTitle || guidelineData.title}\n\n`;
-    appendToSummary1(dynamicAdviceTitle, false);
+    appendToOutputField(dynamicAdviceTitle, true);
 
     try {
         // For sequential processing, use existing analysis if available, otherwise create a basic one
@@ -6030,7 +6083,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     } catch (dynamicError) {
         console.error(`[DEBUG] Error generating dynamic advice for ${guidelineId}:`, dynamicError);
         const dynamicErrorMessage = `⚠️ **Note:** Dynamic advice generation failed for this guideline: ${dynamicError.message}\n\n`;
-        appendToSummary1(dynamicErrorMessage, false);
+        appendToOutputField(dynamicErrorMessage, true);
     }
 
     console.log(`[DEBUG] Successfully processed guideline: ${guidelineId}`);
@@ -6051,14 +6104,14 @@ window.retryCurrentGuideline = async function() {
     console.log('[DEBUG] Retrying current guideline:', guidelineId);
     
     const retryMessage = `**🔄 Retrying Guideline ${stepNumber}...**\n\n`;
-    appendToSummary1(retryMessage, false);
+    appendToOutputField(retryMessage, true);
     
     try {
         await processSingleGuideline(guidelineId, stepNumber, queue.length);
     } catch (error) {
         console.error('[DEBUG] Retry failed:', error);
         const failMessage = `❌ **Retry failed:** ${error.message}\n\nYou can try again or skip this guideline.\n\n`;
-        appendToSummary1(failMessage, false);
+        appendToOutputField(failMessage, true);
     }
 };
 
@@ -6072,7 +6125,7 @@ window.skipCurrentGuideline = function() {
     console.log('[DEBUG] Skipping current guideline');
     
     const skipMessage = `**⏭️ Skipped Guideline ${stepNumber}**\n\n`;
-    appendToSummary1(skipMessage, false);
+    appendToOutputField(skipMessage, true);
     
     // Move to next guideline or complete sequence
     if (currentIndex < queue.length - 1) {
@@ -6083,7 +6136,7 @@ window.skipCurrentGuideline = function() {
         setTimeout(async () => {
             try {
                 const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                appendToSummary1(processingStepMessage, false);
+                appendToOutputField(processingStepMessage, true);
                 await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
             } catch (error) {
                 console.error('[DEBUG] Error processing next guideline after skip:', error);
@@ -6098,7 +6151,7 @@ window.skipCurrentGuideline = function() {
                 <p>Processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).</p>
             </div>
         `;
-        appendToSummary1(finalMessage, false);
+        appendToOutputField(finalMessage, true);
     }
 };
 
@@ -6200,7 +6253,7 @@ async function generateMultiGuidelineAdvice() {
             </style>
         `;
         
-        appendToSummary1(progressHtml, false);
+        appendToOutputField(progressHtml, true);
         
         // Call the multi-guideline dynamic advice function
         await multiGuidelineDynamicAdvice(selectedGuidelines);
@@ -6216,7 +6269,7 @@ async function generateMultiGuidelineAdvice() {
             </div>
         `;
         
-        appendToSummary1(errorHtml, false);
+        appendToOutputField(errorHtml, true);
         alert(`Error generating multi-guideline advice: ${error.message}`);
         
     } finally {
@@ -6384,7 +6437,7 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 <p>Please try again or contact support if the problem persists.</p>
             </div>
         `;
-        appendToSummary1(errorHtml, false);
+        appendToOutputField(errorHtml, true);
         
         throw error;
     }
@@ -6718,7 +6771,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
     
     try {
         // Display the combined suggestions
-        appendToSummary1(combinedHtml, false);
+        appendToOutputField(combinedHtml, false);
         
         // Update global suggestions for existing functionality
         currentSuggestions = allSuggestions;
@@ -6736,7 +6789,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             </div>
         `;
         
-        appendToSummary1(errorHtml, false);
+        appendToOutputField(errorHtml, false);
         throw error;
     }
 }
@@ -6913,7 +6966,7 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
                 <p><em>Analyzed: ${guidelinesSummary?.length || 0} guidelines</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        appendToOutputField(noSuggestionsHtml, false);
         return;
     }
 
@@ -7056,8 +7109,8 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
         </div>
     `;
 
-    console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to summary1');
-    appendToSummary1(suggestionsHtml, false);
+    console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to outputField');
+    appendToOutputField(suggestionsHtml, false);
 
     // Update the decisions summary
     updateDecisionsSummary();
@@ -7787,7 +7840,7 @@ async function askGuidelinesQuestion() {
         // Initialize the question search summary
         let searchProgress = '## Asking Guidelines A Question\n\n';
         searchProgress += `**Your Question:** ${question}\n\n`;
-        appendToSummary1(searchProgress);
+        appendToOutputField(searchProgress);
 
         // Get user ID token
         const user = auth.currentUser;
@@ -7799,7 +7852,7 @@ async function askGuidelinesQuestion() {
 
         // Update progress
         const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false);
+        appendToOutputField(loadingMessage, false);
 
         // Get guidelines and summaries from Firestore (reuse existing logic)
         const guidelines = await loadGuidelinesFromFirestore();
@@ -7819,7 +7872,7 @@ async function askGuidelinesQuestion() {
 
         // Update progress with guideline count
         const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false);
+        appendToOutputField(analyzeMessage, false);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines for question:', {
             questionLength: question.length,
@@ -7850,7 +7903,7 @@ async function askGuidelinesQuestion() {
 
         // Update progress with completion
         const completionMessage = 'Analysis complete! Please select guidelines to search for your answer...\n\n';
-        appendToSummary1(completionMessage, false);
+        appendToOutputField(completionMessage, false);
 
         // Show custom selection interface for Q&A
         await showQuestionGuidelineSelectionInterface(data.categories, question);
@@ -7861,9 +7914,9 @@ async function askGuidelinesQuestion() {
             stack: error.stack
         });
         
-        // Display error in summary1
+        // Display error in output field
         const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
+        appendToOutputField(errorMessage, false);
         
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
@@ -8137,7 +8190,7 @@ async function showQuestionGuidelineSelectionInterface(categories, question) {
     `;
 
     // Display the selection interface
-    appendToSummary1(selectionHtml, false);
+    appendToOutputField(selectionHtml, false);
 }
 
 // Helper functions for Q&A guideline selection
@@ -8152,7 +8205,7 @@ function selectAllQuestionGuidelines(select) {
 
 function cancelQuestionSelection() {
     const message = 'Question search cancelled.\n\n';
-    appendToSummary1(message, false);
+    appendToOutputField(message, false);
 }
 
 // Make Q&A functions globally accessible
@@ -8201,7 +8254,7 @@ async function processQuestionAgainstGuidelines() {
         searchProgress += `**Question:** ${question}\n\n`;
         searchProgress += `**Selected Guidelines:** ${selectedGuidelineIds.length}\n\n`;
         searchProgress += `**Status:** Processing guidelines...\n\n`;
-        appendToSummary1(searchProgress, false);
+        appendToOutputField(searchProgress, false);
 
         // Get the relevant guidelines data from the global state
         const relevantGuidelines = window.relevantGuidelines || [];
@@ -8248,13 +8301,13 @@ async function processQuestionAgainstGuidelines() {
                              `---\n\n` +
                              `*Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})*\n\n`;
         
-        appendToSummary1(answerMessage, false);
+        appendToOutputField(answerMessage, false);
 
     } catch (error) {
         console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);
         
         const errorMessage = `\n❌ **Error searching guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
+        appendToOutputField(errorMessage, false);
         
         alert('Error searching guidelines: ' + error.message);
     } finally {

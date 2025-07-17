@@ -1,0 +1,152 @@
+Patent Factsheets:  
+Description
+The basis of a UK patent application is a legal document called a specification. Its contents determine whether 
+a patent can be granted. You would be well advised to seek professional assistance when preparing your patent 
+application. A patent specification includes:
+• a full description of your invention, plus any drawings referred to within your description
+• one or more claims.
+This factsheet tells you about the description. An example is shown overleaf. Other factsheets in this series explain 
+how to prepare claims, drawings,  and an abstract  (which is another essential part of an application).
+ Content
+The description must explain your invention fully at the 
+time of filing because information cannot be added later. 
+A patent will not  be granted if your description does 
+not contain sufficient information to enable others to 
+construct or perform your invention.
+Your description should begin with a short title  which 
+indicates the general subject of your invention. The title 
+should not include the inventor’s name, a trade mark or 
+other fictitious name, or the word “patent” or “etc”. Also it 
+should not give away the essential details of your invention.
+A typical description begins by setting out the 
+background  of the invention and often then explains a 
+particular problem  that your invention solves , and what 
+it does. 
+It may then summarise the essential features of your 
+invention, and some important but not essential features.
+This is then followed by an introduction to the drawings  (if 
+any), indicating in a few words what each drawing illustrates. 
+The rest of the description describes (with more detailed 
+reference to any drawings), one or more particular 
+examples  of how the invention may be performed.  
+Page 2 of the example overleaf contains a detailed  
+outline of the invention. Do not feel that you have 
+to limit this part of the description. Most detailed 
+descriptions will need to extend to severa l pages. Note 
+that descriptions in excess of 35 pages will incur an 
+additional fee of £10 per page, later in the process.Important features are indicated in the drawings using 
+reference numbers . These numbers are then used in the 
+description to refer to those features.
+The same reference number should always be used to 
+refer to the same feature.
+Do not include text that is not directly concerned with  
+your invention.
+Style and presentation
+The description must be in English or Welsh. The Office 
+will provide a translation of any material filed in Welsh. 
+Type (or print) the pages of your description on one side 
+only of separate sheets of white A4 paper.  
+Leave margins  of at least 2.0cm. 
+Number  the pages of text in order, e.g. 1, 2, 3, 4, at the 
+top of each page (but below the margin) in the middle of 
+the page.
+Submitting by paper 
+Join the pages together with a paper clip or bulldog clip 
+at the top centre of the pages. Please do not join the 
+pages by stapling.
+Intellectual Property Office is an operating name of the Patent Office (REV JUL 22)
+Description: Typical Example
+Page numbering
+Title providing an 
+indication of the 
+invention
+Introduction and 
+background to the 
+invention
+Summary of 
+the invention, 
+also known as 
+a ‘statement of 
+invention’
+Optional features1
+Bicycle Stabiliser
+This invention relates to a device for stabilising a child’s 
+bicycle.
+When children are learning how to ride a bicycle, an additional 
+pair of stabilising wheels are often fitted either side of the 
+bicycle’s rear wheel to prevent toppling of the bicycle.
+However, the use of conventional stabilisers can lead to a 
+number of difficulties.  If a rigid stabilising unit is fitted 
+to a bicycle, the rider can become reliant on the unit and 
+will not learn how to balance the bicycle using their own body 
+weight.  Furthermore, on uneven ground there is a risk that the 
+bicycle will become immobilised if the rear bicycle wheel loses 
+contact with the ground, or that the stabilising unit will cause 
+jolting of the bicycle.  To overcome these problems, the present 
+invention proposes a bicycle stabilising unit with attachment 
+means for attaching the unit to a bicycle, a ground-engaging 
+wheel which can freely rotate about an axis, and cushioning 
+means such that the axis of the wheel can be displaced relative 
+to the attachment means.
+The cushioning means is preferably provided by a damped suspension 
+strut, although the cushioning means may also be provided by 
+other means, such as a torsion bar or spring.
+The cushioning means may be adjustable so that the degree of 
+cushioning can be modified to suit the terrain and the rider’s 
+ability.
+The stabilising unit may be retractable so that the ground-
+engaging wheel may be stored in a non-ground-engaging position.
+The invention will now be described solely by way of example and 
+with reference to the accompanying drawings in which:
+Figure 1  shows a pair of stabilising units, one fitted either side 
+of the rear  wheel of a bicycle,
+Figure 2  shows a stabilising unit with an alternative 
+cushioning mechanism,
+Figure 3  shows a stabilising unit with another cushioning 
+arrangement.Introduction to the 
+detailed description
+List of figures
+Detailed description 
+of an example of 
+your invention
+Reference numerals 
+are used to indicate 
+any illustrated 
+features 2
+In figure 1, a stabilising unit 1 includes a vertical number 2 
+which is attached to the side of a bicycle by mounting bolts 3, 
+4.  The lower end of the vertical number is freely hinged to a 
+substantially horizontal number 5 which carries a ground-engaging 
+wheel 6.  The wheel may be solid or may have an inflatable tyre.  
+A strut 7 with a sprung shock-absorbing unit 8 is connected 
+between the vertical and horizontal members, and this allows 
+vertical displacement of the ground-engaging wheel in order to 
+cushion impacts from an uneven road surface.
+If two stabilising units are fitted, one either side of the 
+bicycle’s rear wheel, then the rider will feel supported but 
+will also develop confidence in leaning the bicycle over when 
+negotiating a bend.  The degree of cushioning can be varied by 
+adjusting the compression of the shock-absorbing unit, using  
+conventional adjusting means such as a screw-threaded end-stop.
+The shock-absorbing strut 7 may be permanently attached to the 
+vertical and horizontal numbers 2, 5 for instance using welded 
+connections.  Alternatively, the shock-absorbing strut may be 
+easily detachable from one or both numbers, for instance by using 
+a quick-release mechanism, allowing the ground-engaging wheel and 
+the horizontal number to be folded away if the rider is confident 
+enough to travel without the assistance of the stabilising unit.
+Figure 2 shows an alternative embodiment in which the vertical 
+and horizontal numbers 2 and 5 are rigidly attached to each 
+other, for instance by using a rigid strut 9.  The cushioning 
+means is provided by mounting the ground-engaging wheel 6 in 
+a sprung housing 10 on the outer end of horizontal number 5.  
+The ground-engaging wheel is therefore vertically displaceable 
+relative to the rest of the stabilising unit.
+Figure 3 shows a further alternative embodiment in which the 
+vertical and horizontal numbers 2 and 5 are connected via a hinge 
+which includes a torsion spring 11.  The torsion spring allows 
+the horizontal number to rotate through a limited angle range.
+Enquiries : You can contact the Intellectual Property Office on: 0300 300 2000 (local call rate).  Alternatively visit our website at www.gov.uk/ipo
+We are keen to help all our customers as much as possible, but regret that we cannot assist with the commercial exploitation of your invention. This factsheet is not intended to 
+be a comprehensive guide and necessarily omits details which may be relevant in particular circumstances.
+WS0055             © Crown Copyright

@@ -1,0 +1,107 @@
+ 
+ 
+ 
+  
+        
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ Patent Factsheets: 
+Publication 
+This factsheet includes basic information about the frst publication of your patent application, the so called “A” 
+publication. It explains the form in which your application is published, what additional information is published at this stage, and its signifcance on future rights. This factsheet does not carry any information about second or “B” publication, which takes place after a patent is granted. 
+What does “A” publication mean? 
+Your specifcation is made available to the general public 
+and to specialist libraries and other Patent Offces around the world. The specifcation is published on our website and is made freely available to view and download. The application is laid open to public inspection and the fact of publication is advertised in the Intellectual Property Offce online Patents Journal. It is therefore at this stage that all details of your invention are seen by competitors. The act of publication gives notice that you are seeking a patent and warns the public of the monopoly sought (via the claims). A patent cannot be granted unless the application has been published, and the only way to prevent publication is to withdraw your application before the date when preparations for publication are complete (the PPC date). An indication of this date will be provided in the cover letter of your search report. A few days before this date, we write to you to give the exact date when preparations for publication will be complete and provide you with a publication number and date of publication. By then it may be too late to prevent publication of your application. 
+Your name and address will appear on the front page of 
+the published application. Upon publication these details will also appear in our records and in our online Patents Journal, both of which are available to the public on our website and can be permanently searched using most standard search engines. If you do not want your home address published, please give us a different address where you can be contacted, such as a business address or a PO Box address. 
+What is published? 
+The published “A” document includes: 
+(i.) the description of your invention (as originally fled), (ii.) any drawings fled with your application (as amended 
+if necessary), 
+(iii.) the frst set of claims fled (and the last set of any 
+amended claims received before publication), (iv.) the front page with the abstract (which may have 
+been amended by the examiner), an illustrative 
+drawing, bibliographic details and a list of documents cited on the search report, 
+(v.) a copy of the search report. 
+In addition, at “A” publication, all the correspondence 
+on fle between you and the Intellectual Property Offce becomes available to the public. It is not included in the “A” document, but may be inspected by any member of the public requesting to see it. 
+What are the reference codes on the front page of the 
+“A” document? 
+These are standard codes used by all countries that are 
+members of the World Intellectual Property Organisation (WIPO). Overleaf there is a typical front page with an explanation of the codes used. 
+When is my application published? 
+Unless you have requested accelerated publication, “A” 
+publication will not generally take place until about 18 months from the earliest date of your application – either the fling date or the priority date (if claiming priority from an earlier application). In the example given overleaf the application was fled 24.09.2009 but has an earlier priority date of 24.09.2008; the publication date is 14.04.2010, approximately 18 months from the priority date. 
+Have I any patent rights? 
+At this “A” publication stage you have no patent 
+protection. A patent is only granted when an application meets the requirements of the Patents Act and Rules and this can only be established by substantive examination (see below). If a patent is eventually granted, you may be able to take action against infringements which have occurred after your “A” publication date, but not for the period between fling and “A” publication. 
+What do I do next? 
+You may decide that you do not wish to proceed with 
+your application, for example, if the documents cited in the search report indicated that your invention was not new. However, if you decide to continue you have 6 months from the date of “A” publication in which to request substantive examination of your application, unless you have done so already, by fling Patents Form 10, with fee. 
+Intellectual Property Offce is an operating name of the Patent Offce (REV JAN 20) 
+(12) UKPatentApplication (19) GB (11) 2464184 (13) A
+  (43)DateofAPublication 14.04.2010
+(21) ApplicationNo: 0916803.0
+(22) DateofFiling: 24.09.2009
+(30) PriorityData:
+  (31)12236583 (32)24.09.2008 (33)US
+(71) Applicant(s):
+HussmannCorporation(IncorporatedinUSA-Delaware)12999StCharlesRockRoad, Bridgeton, Missouri63044-2843, UnitedStatesofAmerica
+(72) Inventor(s):
+MingZhangSeshaCMadireddi
+(74) Agentand/orAddressforService:
+Marks&ClerkLLPSussexHouse, 83-85MosleyStreet, MANCHESTER, M23LG, UnitedKingdom(51) INTCL: F25B  21/00  (2006.01)  
+(56) DocumentsCited: EP 2108904 A1 WO 2009/024412 A1
+JP 2008051412 A US 4727722 A
+US 4441325 A
+(58) FieldofSearch:
+INTCLF25B
+Other:ON-LINE:WPI;EPODOC;TXTE
+(54)TitleoftheInvention:  Magneticrefrigerationdevice
+AbstractTitle:  MagneticRefrigerationDevicewithMagnetocaloricMaterialCoupledtoaShaftandRotating
+BetweenRadialMagnets.
+(57)Amagneticrefrigerationdevice(10fig1)fortransferringheathasashaft14rotatableaboutanaxis,andincludesaninnermagnet12disposedatoneoftheaxisandaradialdistancefromtheaxisandanoutermagnet16disposedaradialdistancefromtheaxisoutsideoftheinnermagnet.Togethertheinnerandoutermagnetsdefiningamagneticgapwithinwhichamagnetocaloricmaterial(20fig3)rotates.Themagnetocaloricmaterialiscoupledtotheshaftsuchthattheyrotatetogether,andduringrotationoftheshaftaportionofthemagnetocaloricmaterialalternatesbetweenamagnetizedpositionwithinthemagneticgapandademagnetizedpositionoutsideofthemagneticgap.Aheattransferfluidcanbecirculatedthroughthemagnetocaloricmaterial,andthecooledfluidmaybeusedtoeffectrefrigerationviaaheatexchanger.Themagnetocaloricmaterialmaybearrangedinanannularcontainer17havingaxiallyextendingfluidchannels34andtheannularcontainermaybedirectlyfixedtotheshaft.Theinnerandoutermagnetsmaybearrangedtobestationarywithrespecttotherotatingshaftanditsassociatedmagnetocaloricmaterial.
+____GB 2464184 A
+ 
+     
+ 
+  
+ 
+   
+   
+ 
+   
+ 
+   
+   
+ 
+     
+ 
+ EXPLANATION OF REFERENCE CODES 
+(11) Patent number given to published document
+(12) Description of document
+(13) Code letter applied to type of publication (See overleaf)
+(19) Standard two letter code to defne country 
+(21) The reference number given to the application (year related) 
+by the Intellectual Property Offce at fling 
+(22) The date that the application was fled with theIntellectual Property Offce 
+(30) Information about the earliest date that the application carries(See over) e.g. (31) is priority application number, (32) is date of that application and (33) priority country
+(43) The date on which the application is frst published by theIntellectual Property Offce 
+(51) The International Patent Classifcation Code applied by the Intellectual Property Offce to this application (and edition of this used) 
+(54) Title of the Invention & Abstract Title
+(56) List of prior art documents listed in the search report 
+(57) Abstract of the invention
+(58) Document collections searched by the UK examiner (See Search Report Factsheet)
+(71) Persons or corporate body applying for the patent
+Note: Not all the above codes will appear on every A published document
+Enquiries: You can contact the Intellectual Property Offce on: 0300 300 2000 (local call rate). Alternatively visit our website at www.gov.uk/ipo 
+We are keen to help all our customers as much as possible, but regret that we 
+cannot assist with the commercial exploitation of your invention. This factsheetis not intended to be a comprehensive guide and necessarily omits details which may be relevant in particular circumstances. 
+WS0061 

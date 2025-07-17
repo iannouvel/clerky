@@ -127,7 +127,7 @@
         /* Critical three-column layout fixes */
         #threeColumnView {
             display: grid !important;
-            grid-template-columns: 20fr 80fr !important;
+            grid-template-columns: 10fr 90fr !important;
             grid-template-areas: "history transcript" !important;
             width: 100% !important;
             gap: 16px !important;
@@ -298,32 +298,18 @@
                         <!-- Chat history items will be dynamically inserted here -->
                     </div>
                 </div>
-                <div id="transcriptColumn" class="column">
-                    <div class="input-buttons">
-                        <button id="findGuidelinesBtn" class="nav-btn primary" style="display: none;">Find Relevant Guidelines</button>
-                        <button id="checkGuidelinesBtn" class="nav-btn primary" style="display: none;">Check against guidelines</button>
-                        <button id="processBtn" class="nav-btn primary">
-                            <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                            <span>Dynamic Advice</span>
-                        </button>
-                        <button id="generateClinicalNoteBtn" class="nav-btn secondary">
-                            <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                            <span id="generateText">Generate Note</span>
-                        </button>
-                        <button id="askGuidelinesQuestionBtn" class="nav-btn secondary">
-                            <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                            <span>Ask Guidelines A Question</span>
-                        </button>
-                        <button id="makeDynamicAdviceBtn" class="nav-btn primary" style="display: none;">
-                            <span id="dynamicAdviceSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                            <span>Make Advice Dynamic</span>
-                        </button>
-                    </div>
-                    <div class="user-input-section">
+                <div id="mainThreeColumn" class="main-three-column">
+                    <div class="main-column user-input-col">
+                        <div class="column-header">User Input</div>
                         <textarea id="userInput" class="expandable-input" placeholder="Record a transcript, enter a clinical note or ask a question here..." rows="3"></textarea>
                     </div>
-                    <div id="summary1" class="transcript-pane active">
-                        <!-- Content will be inserted here -->
+                    <div class="main-column summary-col">
+                        <div class="column-header">Summary</div>
+                        <div id="summary1" class="transcript-pane active"><!-- Content will be inserted here --></div>
+                    </div>
+                    <div class="main-column output-col">
+                        <div class="column-header">Output</div>
+                        <div id="outputField" class="output-pane"><!-- Output will be shown here --></div>
                     </div>
                 </div>
             </div>

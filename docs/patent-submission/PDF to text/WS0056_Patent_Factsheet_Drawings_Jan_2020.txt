@@ -1,0 +1,85 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  Patent Factsheets: 
+Drawings 
+The basis of a UK patent application is a legal document called a specifcation. Its contents determine whether 
+a patent can be granted. You would be well advised to seek professional assistance when preparing your patent application. A patent specifcation includes: 
+• a full description of your invention, plus any drawings referred to 
+• one or more claims 
+This factsheet tells you about the drawings. An example is shown overleaf. Other factsheets in this series explain how 
+to prepare a description, claims, and an abstract (which is another essential part of an application). 
+Content 
+An application should preferably include a set of good-
+quality drawings which illustrate one or more embodiments of your invention. The drawings may, for example, illustrate different views of your product, or provide a fow chart of the steps taken to perform your method. 
+The drawings offer valuable support for the invention 
+that is described and claimed in your application. It is therefore important that you illustrate all examples of your invention. 
+You should consider illustrating the invention from a 
+number of different angles and, if appropriate, use  cross-sectional views. You should also include fgures of any important features that would be hidden in use. 
+Style and presentation Your drawings must consist of black, well defned lines 
+so that good quality photocopies may be made of them (see overleaf for an example). Photographs may be included providing they are black and white, clear and capable of direct reproduction. 
+You may have more than one drawing sheet. Each 
+drawing sheet may contain several fgures. If you have more than one fgure on a page, label each fgure clearly as ‘Figure 1’, ‘Figure 2’ and so on. 
+Number the drawing sheets in order at the top middle 
+(but not in the top margin), preferably also indicating the total number of sheets of drawings. If you have one sheet, number it as ‘1/1’; if you have, for example, three sheets of drawings, then number them as ‘1/3’, ‘2/3’, ‘3/3’. Specifc features are indicated in the drawings using reference numbers and/or letters, joined to the corresponding feature by means of a clear, continuous line. These references are then used in the description to refer to those features. 
+The same reference number or letter must refer to the 
+same feature in all fgures that show it. 
+Capital letters used in any drawings must be at least 
+0.3cm high. 
+Prepare your drawings on one side only of separate 
+sheets of white A4 paper. Leave margins of at least 2.0cm at the top and left-hand side, and 1.5cm on the right-hand side and 1.0cm at the bottom. 
+Any essential words (e.g. ‘plan’, ‘elevation’) must be in 
+English or Welsh. (The Offce will provide a translation of any material fled in Welsh). 
+Do not use coloured or lined paper or coloured inks 
+or pencil. 
+Do not draw a frame to indicate the margins. Do not put anything in the margins or use 
+‘engineering’ borders. 
+Do not write descriptive text in the drawings. Do not use excessive shading which obscures other 
+elements of the drawing. 
+Do not fold your drawings. Do not submit ‘engineering’-type drawings showing 
+materials and/or dimensions; these are not normally suitable for use with patent specifcations. 
+Intellectual Property Offce is an operating name of the Patent Offce (REV JAN 20) 
+ 
+  
+ 
+ 
+         Drawings: Typical example 
+Use A4 paper 
+Note sheet numbering 
+All capital letters must be at 
+least 0.3cm high 
+Note fgure numbering 
+Note that the same 
+reference numbers are used for the same features in all three fgures 
+Note that the margins are 
+free of drawings and text 2 
+8 
+7 
+5 
+6 1 
+Figure 1 
+9 
+2 
+5 
+Figure 2 Figure 3 10 
+6 2 
+11 5 6 1/1 
+3 
+4 
+Enquiries : You can contact the Intellectual Property Offce on: 0300 300 2000 (local call rate). Alternatively visit our 
+website at  www.gov.uk/ipo 
+We are keen to help all our customers as much as possible, but regret that we cannot assist with the commercial exploitation of your invention. This factsheet is not intended to be a comprehensive guide and necessarily omits details which may be relevant in particular circumstances. 
+WS0056 © Crown Copyright 2016 

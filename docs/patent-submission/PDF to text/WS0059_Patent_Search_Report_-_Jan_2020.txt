@@ -1,0 +1,119 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   Patent Factsheets: 
+Search Report 
+After you have made a UK patent application and fled Patents Form 9A you will receive a search report. An 
+example of what a search report looks like is attached overleaf. This fact sheet has been produced to help you understand the report. 
+What is the search report? 
+A patent examiner performs a search of your invention to 
+determine whether it is new and inventive. The search is usually based on the invention as set out in your claims, but may be based on the disclosure of the invention as a whole if the claims are not clear or do not adequately represent the invention disclosed. The results of the search are communicated to you as a Search Report. Any documents listed in the right hand column of the report will be considered at the substantive examination stage if you request examination of your application by fling Patents Form 10, with fee. 
+What documents are searched by the examiner? The search examiner considers documents published 
+anywhere in the world. Any form of published disclosure can be cited against your application, for example, patent specifcations, internet articles and technical journals. Where possible English language documents will be provided, however, in some circumstances it may only be possible to provide foreign language documents. 
+How is the search carried out? All published patent specifcations are classifed 
+according to the subject matter of the invention. To carry out a search, the examiner extracts the key technical features of your claimed invention and then searches through classifed material relating to your invention looking for evidence that the technical features of your invention might be known or obvious. The examiner will typically perform the search by referring to online computer databases. The databases contain records of published patent specifcations from around the world and can be searched using classifcation terms and/or keywords. The examiner may also carry out a search of the Internet, product catalogues and technical journals. What do the document categories X, Y & A mean? 
+The relevance of each document listed in the Search 
+Report is indicated in the “Category” column. A document identifed as category ‘X’ will, in general, have the main technical features of your invention (as set out in those claims identifed in the middle column). 
+Sometimes an invention can be considered non-inventive 
+by combining the technical information provided by a number of documents. Such documents are identifed in the left hand column as category ‘Y’. 
+A document identifed as category ‘A’ indicates what 
+has been done previously in the technical area of your invention. An ‘A’ category document does not disclose your claimed invention. 
+Have all of the claims been searched? Normally all of the claims are searched. However, if the 
+claims defne two or more inventions, the search will be limited to the frst claimed invention. The search may also be restricted if the claims are not clear or because your claims are anticipated by a large number of documents. An explanation of why any claims have not been searched will be given in the covering letter to the Search Report. 
+What do I do next? Study the documents supplied with the Search Report 
+carefully. You must then decide, in the light of these documents, whether you wish to proceed with your application. If what you have invented is suffciently different from what has been shown in these documents, you may decide to request substantive examination of your application (if you have not done so already). If it is not, then you may decide to go no further with the application. However, unless you make a clear request to withdraw the application before the preparations for publication are complete, your application will be published with a copy of the Search Report. This is called “A publication” and takes place approximately 18 months from your fling date, or your priority date if you have one (see the Publication factsheet). 
+Intellectual Property Offce is an operating name of the Patent Offce (REV JAN 20) 
+ 
+    
+   
+       
+  
+   
+   
+ 
+ 
+    
+ 
+     
+  
+           
+ 
+         Search Report – Typical Example 
+___ 
+Application No: GB0469927.8 Examiner: Anne Others 
+Claims searched: 1-13 Date of search: 5 January 2005 
+Patents Act 1977: Search Report under Section 17
+Documents considered to be relevant: 
+Category Relevant
+to claims Identity of document and passage or figure of particular relevance
+X, Y X: 1-5,
+10;
+Y: 7, 8, 9 GB 2145929 A
+(PLASTI FORM) See whole document, especially figs 1 & 2. 
+X 1-3 FR 2813174 A1
+(BUCHINGER) See especially WPI Abstract Accession No. 2002-
+230213 [29], and figs. 1-4.
+X 1 JP 2000014519
+(HORIE) See especially WPI Abstract Accession No. 2000-154460[14], and Patent Abstract of Japan (PAJ), and figs. 1-3.
+Y 7 US 2499538
+(STANTON) See especially figs. 1-3. 
+Y 8 EP 0095353 A1
+(BATTS) See especially figs. 1-19. 
+Y 9 A. Plank, 1976, "Garment hanger constructions”. Available from URL: 
+http://www.hangerworld.co.uk/construction
+. See paragraph 5 and figure
+1a [Accessed 4 January 2005].
+Categories:
+X Document indicating lack of novelty or inventive
+step A Document indicating technological background and/or state 
+of the art. 
+Y Document indicating lack of inventive step if
+combined with one or more other documents of
+same category. P Document published on or after the declared priority date but 
+before the filing date of this invention. 
+& Member of the same patent fami ly E Patent document published on or after, but with priority date
+earlier than, the filing date of this application. 
+Field of Search: 
+Search of GB, EP, WO & US patent documents classified in the following areas of the UKCX : 
+A4L; A6M
+Worldwide search of patent documents classified in the following areas of the IPC07 
+A41D; A47B; A63G
+The following online and other databases have been used in the preparation of this search report 
+EPODOC, WPI; Internet 64
+7589
+6 4 
+7 5 8 9 
+31
+2
+10
+The UK Intellectual Property Ofﬁ ce Incorporoating the Patent Ofﬁ  ce 3 2 
+10 
+Intellectual Property Offce is an operating name of the Patent Offce 
+WS0059 © Crown Copyright KEY REFERENCES 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 The number(s) of your claim(s) that have been searched 
+The section of the Patents Act which relates to search Field of search – this provides an indication of the classifed
+collections searched. 
+Publication number of patent cited. This includes a Country code of 
+patent cited – for example US is United States.
+Applicant/inventor of cited documentPart of cited document of particular relevance to claims indicatedNon-patent citation, e.g. internet citationRelevance of citation to indicated claimsNumber(s) of claims which are not new or not inventive
+in light of the information contained in the cited document(s)
+Explanation of what each category means
+Enquiries: You can contact the Intellectual Property Offce on: 0300 300 2000
+(local call rate). Alternatively visit our website at www.gov.uk/ipo 
+We are keen to help all our customers as much as possible, but regret that we
+cannot assist with the commercial exploitation of your invention. This factsheetis not intended to be a comprehensive guide and necessarily omits details which may be relevant in particular circumstances. 
