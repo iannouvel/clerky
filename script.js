@@ -1623,7 +1623,7 @@ function showError(message) {
 
 async function findRelevantGuidelines(suppressHeader = false) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
-    const originalText = findGuidelinesBtn.textContent;
+    const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
     
     try {
         const transcript = document.getElementById('userInput')?.value;
@@ -1633,8 +1633,10 @@ async function findRelevantGuidelines(suppressHeader = false) {
         }
 
         // Set loading state
-        findGuidelinesBtn.classList.add('loading');
-        findGuidelinesBtn.disabled = true;
+        if (findGuidelinesBtn) {
+            findGuidelinesBtn.classList.add('loading');
+            findGuidelinesBtn.disabled = true;
+        }
 
         // Initialize the guideline search summary (unless called from process workflow)
         if (!suppressHeader) {
@@ -1826,9 +1828,11 @@ async function findRelevantGuidelines(suppressHeader = false) {
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Reset button state
-        findGuidelinesBtn.classList.remove('loading');
-        findGuidelinesBtn.textContent = originalText;
-        findGuidelinesBtn.disabled = false;
+        if (findGuidelinesBtn) {
+            findGuidelinesBtn.classList.remove('loading');
+            findGuidelinesBtn.textContent = originalText;
+            findGuidelinesBtn.disabled = false;
+        }
     }
 }
 
