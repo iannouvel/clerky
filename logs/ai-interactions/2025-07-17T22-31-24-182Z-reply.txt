@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 33/34",
+  "transcriptLength": 2398,
+  "transcriptPreview": "**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28...",
+  "chunkGuidelines": [
+    "uhsx-perineal-trauma-repair-guideline-pdf: UHSx Perineal Trauma & Repair Guideline",
+    "uhsx-protocol-for-nrt-pdf: UHSx Protocol for NRT",
+    "uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol",
+    "uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity",
+    "uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol",
+    "uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf: Intrapartum and Postpartum Glucose Management",
+    "uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf: Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management",
+    "uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf: Management of Uterine Fibroids"
+  ],
+  "chunkIndex": 33,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate-pdf\", \"title\": \"Management of Uterine Fibroids\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management-pdf\", \"title\": \"Intrapartum and Postpartum Glucose Management\", \"relevance\": \"0.3\"},\n    {\"id\": \"uptodate-2025-prelabor-rupture-of-membranes-at-term-pdf\", \"title\": \"Prelabor Rupture of Membranes at Term: Induction of Labor vs. Expectant Management\", \"relevance\": \"0.2\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsx-protocol-for-nrt-pdf\", \"title\": \"UHSx Protocol for NRT\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-role-of-the-rn-within-maternity-pdf\", \"title\": \"UHSx Role of the RN within Maternity\", \"relevance\": \"0.1\"},\n    {\"id\": \"uhsx-surrogacy-protocol-pdf\", \"title\": \"UHSx Surrogacy protocol\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsx-perineal-trauma-repair-guideline-pdf\", \"title\": \"UHSx Perineal Trauma & Repair Guideline\", \"relevance\": \"0.0\"},\n    {\"id\": \"uhsx-retained-placenta-protocol-pdf\", \"title\": \"UHSx Retained Placenta protocol\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1212
+}
