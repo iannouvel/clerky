@@ -243,6 +243,14 @@ body {
     display: none !important;
 }
 
+/* Main content area expands to full width when history is hidden */
+#mainContentArea {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Show a small tab on the right edge when collapsed */
 #historyColumn::before {
     display: none;
