@@ -5937,7 +5937,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 
     // Automatically generate dynamic advice for this guideline
     const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${guidelineData.humanFriendlyTitle || guidelineData.title}\n\n`;
-    appendToOutputField(dynamicAdviceTitle, true);
+    appendToSummary1(dynamicAdviceTitle, false);
 
     try {
         // For sequential processing, use existing analysis if available, otherwise create a basic one
