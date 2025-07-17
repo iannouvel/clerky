@@ -1626,7 +1626,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
     const originalText = findGuidelinesBtn.textContent;
     
     try {
-        const transcript = document.getElementById('userInput').value;
+        const transcript = document.getElementById('userInput')?.value;
         if (!transcript) {
             alert('Please enter some text first');
             return;
@@ -2195,7 +2195,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
     try {
         console.log('[DEBUG] Starting checkAgainstGuidelines...');
         
-        const transcript = document.getElementById('userInput').value;
+        const transcript = document.getElementById('userInput')?.value;
         if (!transcript) {
             console.log('[DEBUG] No transcript found in userInput');
             alert('Please enter some text first');
