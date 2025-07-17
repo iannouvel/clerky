@@ -2207,10 +2207,19 @@ html, body {
     width: 100%;
 }
 
-/* Make main action button text 50% larger */
-.main-action-buttons .nav-btn {
-    font-size: 1.5em;
-    padding: 12px 24px;
+/* Style buttons in top bar center */
+.top-bar-center .nav-btn {
+    font-size: 1.125em;
+    padding: 8px 16px;
+    margin: 0 8px;
+}
+
+/* Style the record button in column header */
+.column-header .record-btn {
+    float: right;
+    font-size: 0.9em;
+    padding: 4px 8px;
+    margin-left: 10px;
 }
 
 .main-three-column {
