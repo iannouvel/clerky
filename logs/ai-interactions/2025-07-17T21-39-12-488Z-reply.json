@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "prompt": "Chunk 34/34",
+    "transcriptLength": 3083,
+    "transcriptPreview": "Here’s a medical clerking in SBAR format for the given clinical scenario, using appropriate medical terminology and British abbreviations:  \n\n---  \n\n### **SITUATION:**  \n**Patient:** 45F, para 2 (G2P2), presents with a 3-month history of **post-coital bleeding (PCB)**, intermenstrual bleeding (IMB), and recent onset left-sided pelvic pain. No significant weight loss or constitutional symptoms. Last menstrual period (LMP) 2 weeks ago. Smoker (10/day).  \n\n**Key clinical issue:** ?Cervical malignan...",
+    "chunkGuidelines": [
+      "uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location",
+      "uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound"
+    ],
+    "chunkIndex": 34,
+    "totalChunks": 34
+  },
+  "response": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.2\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "timestamp": "2025-07-17T21-39-12",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"prompt\": \"Chunk 34/34\",\n  \"transcriptLength\": 3083,\n  \"transcriptPreview\": \"Here’s a medical clerking in SBAR format for the given clinical scenario, using appropriate medical terminology and British abbreviations:  \\n\\n---  \\n\\n### **SITUATION:**  \\n**Patient:** 45F, para 2 (G2P2), presents with a 3-month history of **post-coital bleeding (PCB)**, intermenstrual bleeding (IMB), and recent onset left-sided pelvic pain. No significant weight loss or constitutional symptoms. Last menstrual period (LMP) 2 weeks ago. Smoker (10/day).  \\n\\n**Key clinical issue:** ?Cervical malignan...\",\n  \"chunkGuidelines\": [\n    \"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf: Approach to the Patient with Pregnancy of Unknown Location\",\n    \"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf: Diagnosis of early pregnancy loss with transvaginal ultrasound\"\n  ],\n  \"chunkIndex\": 34,\n  \"totalChunks\": 34\n}\n\nA: {\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-pregnancy-loss-ultrasound-diagnosis-pdf\\\", \\\"title\\\": \\\"Diagnosis of early pregnancy loss with transvaginal ultrasound\\\", \\\"relevance\\\": \\\"0.2\\\"},\\n    {\\\"id\\\": \\\"uptodate-approach-to-the-patient-with-pregnancy-of-unknown-location-pdf\\\", \\\"title\\\": \\\"Approach to the Patient with Pregnancy of Unknown Location\\\", \\\"relevance\\\": \\\"0.1\\\"}\\n  ],\\n  \\\"notRelevant\\\": []\\n}\\n```\",\n  \"responseType\": \"string\",\n  \"responseLength\": 447\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
