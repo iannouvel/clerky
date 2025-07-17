@@ -1,0 +1,17 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "transcript": "**Medical Clerking – SBAR Format**  \n\n**SITUATION:**  \n- **Patient:** 38-year-old female (G3P2)  \n- **Presenting Complaint:** Heavy menstrual bleeding (menorrhagia) for 6 months, worsening over last 2 cycles with flooding/clots. Now presents with fatigue and dizziness.  \n- **Key Issue:** Symptomatic anaemia (Hb 82 g/L on GP FBC) secondary to menorrhagia. No acute haemodynamic instability.  \n\n**BACKGROUND:**  \n- **Obstetric/Gynae Hx:**  \n  - LMP: 7 days ago (prolonged 10-day bleeding). Regular 28-day cycles.  \n  - No intermenstrual/postcoital bleeding.  \n  - Previous LSCS x2 (elective). No miscarriages.  \n- **Medical Hx:** Hypothyroidism (on levothyroxine 75mcg OD). No known bleeding disorders.  \n- **Drugs:** Levothyroxine, NSAIDs PRN for dysmenorrhoea. No anticoagulants.  \n- **Allergies:** NKDA  \n- **Family Hx:** No Hx of gynae malignancies or bleeding disorders.  \n\n**ASSESSMENT:**  \n- **Observations:**  \n  - BP 112/68, HR 88, SpO2 98% RA, Temp 36.7°C.  \n  - CRT <2s, no pallor on conjunctival inspection.  \n- **Examination:**  \n  - Abdomen: Soft, non-tender, no masses.  \n  - PV: Not performed (awaiting USS). No active bleeding on inspection.  \n- **Investigations:**  \n  - **GP FBC (today):** Hb 82 (↓), MCV 78 (↓), Ferritin 12 (↓) – microcytic anaemia.  \n  - **Pending:** TVUSS (to exclude fibroids/adenomyosis), TFTs (ensure euthyroid), coagulation screen (if indicated).  \n- **Differentials:**  \n  1. Fibroids (leiomyoma) – most likely.  \n  2. Adenomyosis.  \n  3. Thyroid dysfunction (unlikely if compliant).  \n  4. Coagulopathy (e.g., von Willebrand’s) – less likely but consider if no structural cause.  \n\n**RECOMMENDATION:**  \n1. **Immediate:**  \n   - Oral iron (ferrous sulfate 200mg BD) for anaemia.  \n   - Tranexamic acid 1g TDS during menses.  \n   - Consider hormonal therapy (e.g., POP or Mirena IUS) if no contraindications post-USS.  \n2. **Investigations:**  \n   - Urgent TVUSS (booked for tomorrow).  \n   - Repeat FBC in 2/52 to monitor Hb.  \n   - TFTs, coagulation screen if USS inconclusive.  \n3. **Follow-up:**  \n   - Gynae clinic in 2/52 with USS results.  \n   - Advise ED re attendance if syncope/severe bleeding.  \n   - Consider endometrial biopsy if >40y or USS abnormal.  \n\n**Impression:** Secondary anaemia due to menorrhagia – likely structural cause. Exclude malignancy in line with NICE guidelines.  \n\n---  \n*Note: Fictional case for educational purposes.*",
+  "guidelinesCount": 266,
+  "chunksProcessed": 34,
+  "chunksFailed": 0
+}
+
+A: {
+  "success": true,
+  "categoriesFound": 266,
+  "mostRelevantCount": 28,
+  "potentiallyRelevantCount": 28,
+  "lessRelevantCount": 57,
+  "notRelevantCount": 153
+}
