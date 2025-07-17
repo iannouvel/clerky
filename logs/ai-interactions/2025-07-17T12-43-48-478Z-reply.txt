@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 30/34",
+  "transcriptLength": 3778,
+  "transcriptPreview": "**Professional Medical Clerking – SBAR Format**  \n\n---  \n\n### **SITUATION:**  \n**Patient Demographics:**  \n- **Name:** Ms. X (DOB: 15/05/1985, 39yo)  \n- **Gestation:** N/A (G4P2, previous SVD x2, LSCS x1)  \n- **Presenting Complaint:** Abnormal uterine bleeding (AUB) – heavy menstrual bleeding (HMB) with intermenstrual bleeding (IMB) for 3/12, worsening over last 2/52.  \n- **Key Clinical Issue:** Persistent AUB with associated fatigue (likely secondary to iron deficiency anemia). No hemodynamic i...",
+  "chunkGuidelines": [
+    "uhsussex-mp050-caesarean-section-pdf: Caesarean Section Protocol",
+    "uhsussex-mp053-obstetric-haemorrhage-pdf: Obstetric Haemorrhage Protocol: MP053",
+    "uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol",
+    "uhsussex-mp056-obstetric-high-dependency-care-pdf: Obstetric High Dependency Care",
+    "uhsussex-mp059-baby-abduction-policy-pdf: Baby Abduction Policy",
+    "uhsussex-mp064-hyponatraemia-in-labour-pdf: Hyponatraemia in Labour",
+    "uhsussex-mp076-maternal-death-pdf: UHSussex - MP076 - Maternal death.pdf",
+    "uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf: Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum"
+  ],
+  "chunkIndex": 30,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"uhsussex-mp053-obstetric-haemorrhage-pdf\", \"title\": \"Obstetric Haemorrhage Protocol: MP053\", \"relevance\": \"0.85\"},\n    {\"id\": \"uhsussex-mp056-obstetric-high-dependency-care-pdf\", \"title\": \"Obstetric High Dependency Care\", \"relevance\": \"0.75\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"uhsussex-mp050-caesarean-section-pdf\", \"title\": \"Caesarean Section Protocol\", \"relevance\": \"0.65\"},\n    {\"id\": \"uhsussex-mp055-perinatal-collapse-in-pregnancy-puerperium-pdf\", \"title\": \"Perinatal Collapse in Pregnancy & Puerperium Maternity Protocol\", \"relevance\": \"0.60\"},\n    {\"id\": \"uhsussex-mp064-hyponatraemia-in-labour-pdf\", \"title\": \"Hyponatraemia in Labour\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"uhsussex-mp076-maternal-death-pdf\", \"title\": \"UHSussex - MP076 - Maternal death.pdf\", \"relevance\": \"0.30\"},\n    {\"id\": \"uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025-pdf\", \"title\": \"Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"uhsussex-mp059-baby-abduction-policy-pdf\", \"title\": \"Baby Abduction Policy\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1200
+}
