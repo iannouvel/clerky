@@ -246,9 +246,22 @@ body {
 /* Main content area expands to full width when history is hidden */
 #mainContentArea {
     flex: 1;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
     display: flex;
     flex-direction: column;
+}
+
+/* Ensure three columns take full width */
+.main-three-column {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Force three column layout to span full width */
+#threeColumnView {
+    width: 100% !important;
+    max-width: none !important;
 }
 
 /* Show a small tab on the right edge when collapsed */
