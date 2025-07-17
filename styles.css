@@ -1038,8 +1038,8 @@ div.third-column,
     z-index: 1;
 }
 
-/* Hover state: summary1 expands to 80% of transcript column */
-.transcript-pane:hover,
+/* Removed hover effects to prevent flickering */
+/* .transcript-pane:hover,
 #summary1:hover {
     position: relative !important;
     height: 80vh !important;
@@ -1052,7 +1052,7 @@ div.third-column,
     border-radius: 8px !important;
     background: #ffffff !important;
     overflow-y: auto !important;
-}
+} */
 
 /* PDF download link styling */
 .transcript-pane .pdf-download-link {
@@ -2279,7 +2279,7 @@ html, body {
 .user-input-col .expandable-input {
     flex: 1;
     width: 100%;
-    min-height: 200px;
+    height: calc(100vh - 160px); /* Full height minus top bar, header, and margins */
     border: none;
     padding: 18px;
     font-size: 1em;
@@ -2303,7 +2303,7 @@ html, body {
     font-size: 1em;
     background: white;
     border: none;
-    min-height: 200px;
+    height: calc(100vh - 120px); /* Full height minus top bar and margins */
     overflow-y: auto;
     box-sizing: border-box;
 }
