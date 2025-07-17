@@ -2207,6 +2207,12 @@ html, body {
     width: 100%;
 }
 
+/* Make main action button text 50% larger */
+.main-action-buttons .nav-btn {
+    font-size: 1.5em;
+    padding: 12px 24px;
+}
+
 .main-three-column {
     margin-top: 0;
     width: 100%;
