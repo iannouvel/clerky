@@ -1499,6 +1499,115 @@ function showError(message) {
     console.error('Error:', message);
 }
 
+// Guidelines caching functions to optimize payload size
+const GUIDELINES_CACHE_KEY = 'clerky_guidelines_cache';
+const CACHE_VERSION_KEY = 'clerky_cache_version';
+const CACHE_VERSION = '1.0.0';
+
+function getCachedGuidelines() {
+    try {
+        const cacheVersion = localStorage.getItem(CACHE_VERSION_KEY);
+        if (cacheVersion !== CACHE_VERSION) {
+            // Clear cache if version doesn't match
+            localStorage.removeItem(GUIDELINES_CACHE_KEY);
+            localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
+            return [];
+        }
+        
+        const cached = localStorage.getItem(GUIDELINES_CACHE_KEY);
+        return cached ? JSON.parse(cached) : [];
+    } catch (error) {
+        console.warn('[CACHE] Error reading cached guidelines:', error);
+        return [];
+    }
+}
+
+function setCachedGuidelines(guidelines) {
+    try {
+        localStorage.setItem(GUIDELINES_CACHE_KEY, JSON.stringify(guidelines));
+        localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
+        console.log('[CACHE] Guidelines cached successfully:', guidelines.length);
+    } catch (error) {
+        console.warn('[CACHE] Error caching guidelines:', error);
+        // If localStorage is full, try to clear and retry
+        if (error.name === 'QuotaExceededError') {
+            try {
+                localStorage.removeItem(GUIDELINES_CACHE_KEY);
+                localStorage.setItem(GUIDELINES_CACHE_KEY, JSON.stringify(guidelines));
+                console.log('[CACHE] Guidelines cached after clearing space');
+            } catch (retryError) {
+                console.error('[CACHE] Failed to cache even after clearing:', retryError);
+            }
+        }
+    }
+}
+
+function getOptimizedGuidelinesPayload(currentGuidelines, cachedGuidelines) {
+    const payload = {
+        newGuidelines: [],
+        updatedGuidelines: [],
+        hasFullCache: cachedGuidelines.length > 0,
+        totalCount: currentGuidelines.length
+    };
+    
+    // Create maps for faster lookup
+    const cachedMap = new Map();
+    cachedGuidelines.forEach(g => {
+        cachedMap.set(g.id, g);
+    });
+    
+    // Compare current guidelines with cached ones
+    currentGuidelines.forEach(guideline => {
+        const cached = cachedMap.get(guideline.id);
+        
+        if (!cached) {
+            // New guideline
+            payload.newGuidelines.push(guideline);
+        } else {
+            // Check if guideline has been updated (simple hash comparison)
+            const currentHash = generateGuidelineHash(guideline);
+            const cachedHash = generateGuidelineHash(cached);
+            
+            if (currentHash !== cachedHash) {
+                // Updated guideline
+                payload.updatedGuidelines.push(guideline);
+            }
+        }
+    });
+    
+    // Update cache with current guidelines
+    setCachedGuidelines(currentGuidelines);
+    
+    return payload;
+}
+
+function generateGuidelineHash(guideline) {
+    // Simple hash based on key properties
+    const hashString = `${guideline.id}-${guideline.title}-${guideline.summary || ''}-${guideline.condensed || ''}`;
+    return hashString.length + (guideline.keywords ? guideline.keywords.join('') : '');
+}
+
+// Cache management functions for debugging
+function clearGuidelinesCache() {
+    localStorage.removeItem(GUIDELINES_CACHE_KEY);
+    localStorage.removeItem(CACHE_VERSION_KEY);
+    console.log('[CACHE] Guidelines cache cleared');
+}
+
+function getCacheInfo() {
+    const cached = getCachedGuidelines();
+    const cacheSize = localStorage.getItem(GUIDELINES_CACHE_KEY)?.length || 0;
+    return {
+        count: cached.length,
+        size: `${Math.round(cacheSize / 1024)}KB`,
+        version: localStorage.getItem(CACHE_VERSION_KEY) || 'none'
+    };
+}
+
+// Expose cache functions globally for debugging
+window.clearGuidelinesCache = clearGuidelinesCache;
+window.getCacheInfo = getCacheInfo;
+
 async function findRelevantGuidelines(suppressHeader = false) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
@@ -1634,6 +1743,18 @@ async function findRelevantGuidelines(suppressHeader = false) {
             anonymisationApplied: anonymisationInfo !== null
         });
 
+        // Implement guidelines caching to reduce payload size
+        const cachedGuidelines = getCachedGuidelines();
+        const guidelinesPayload = getOptimizedGuidelinesPayload(guidelinesList, cachedGuidelines);
+        
+        console.log('[DEBUG] Guidelines payload optimization:', {
+            totalGuidelines: guidelinesList.length,
+            cachedGuidelines: cachedGuidelines.length,
+            newGuidelines: guidelinesPayload.newGuidelines.length,
+            updatedGuidelines: guidelinesPayload.updatedGuidelines.length,
+            payloadReduction: `${Math.round((1 - (guidelinesPayload.newGuidelines.length + guidelinesPayload.updatedGuidelines.length) / guidelinesList.length) * 100)}%`
+        });
+
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
@@ -1642,7 +1763,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
             },
             body: JSON.stringify({
                 transcript: anonymisedTranscript, // Use anonymised transcript
-                guidelines: guidelinesList,
+                guidelinesPayload: guidelinesPayload, // Optimized guidelines payload
                 anonymisationInfo: anonymisationInfo // Include anonymisation metadata
             })
         });
