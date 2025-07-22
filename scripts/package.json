@@ -1,0 +1,25 @@
+{
+  "name": "autonomous-testing-agent",
+  "version": "1.0.0",
+  "description": "Autonomous AI agent for testing clinical guidelines system accuracy",
+  "main": "autonomous_agent.js",
+  "scripts": {
+    "test": "node autonomous_agent.js",
+    "demo": "node autonomous_agent.js --server-url http://localhost:3000"
+  },
+  "dependencies": {
+    "firebase": "^10.14.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "autonomous",
+    "testing", 
+    "ai",
+    "clinical",
+    "guidelines",
+    "healthcare"
+  ],
+  "author": "AI Assistant",
+  "license": "MIT"
+} 

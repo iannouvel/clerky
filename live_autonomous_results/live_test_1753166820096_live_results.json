@@ -1,0 +1,54 @@
+{
+  "sessionId": "live_test_1753166820096",
+  "timestamp": "2025-07-22T06:47:04.171Z",
+  "server_url": "https://clerky-uzni.onrender.com",
+  "connectivity": [
+    {
+      "name": "Server Health",
+      "endpoint": "/health",
+      "status": 200,
+      "ok": true,
+      "response_time": 1753166820503
+    },
+    {
+      "name": "Root Endpoint",
+      "endpoint": "/",
+      "status": 200,
+      "ok": true,
+      "response_time": 1753166820852
+    },
+    {
+      "name": "AI Routing",
+      "endpoint": "/routeToAI",
+      "status": 404,
+      "ok": false,
+      "response_time": 1753166821212
+    }
+  ],
+  "test_results": [
+    {
+      "scenario": "Basic System Response Test",
+      "success": false,
+      "api_status": 401,
+      "error": "HTTP 401"
+    },
+    {
+      "scenario": "Compliance Detection Test",
+      "success": false,
+      "api_status": 401,
+      "error": "HTTP 401"
+    }
+  ],
+  "analysis": {
+    "total_tests": 2,
+    "successful_tests": 0,
+    "success_rate": 0,
+    "tests_with_recommendations": 0,
+    "performance_rating": "needs_improvement",
+    "key_findings": [
+      "0/2 tests completed successfully",
+      "0 tests generated recommendations",
+      "Live system is experiencing issues"
+    ]
+  }
+}

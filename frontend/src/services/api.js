@@ -46,8 +46,9 @@ export const api = {
         }
       });
       
+      // OPTIMISATION: Updated to use JSON files instead of .txt files
       const files = response.data
-        .filter(file => file.type === 'file' && file.name.endsWith('.txt'))
+        .filter(file => file.type === 'file' && file.name.endsWith('.json'))
         .sort((a, b) => b.name.localeCompare(a.name))
         .slice(0, 100); // Limit to 100 most recent files
       

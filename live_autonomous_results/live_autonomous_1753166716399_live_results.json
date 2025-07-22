@@ -1,0 +1,48 @@
+{
+  "sessionId": "live_autonomous_1753166716399",
+  "timestamp": "2025-07-22T06:45:25.621Z",
+  "system_info": {
+    "server_url": "http://localhost:3000",
+    "firestore_connected": true,
+    "guidelines_source": "live_firestore"
+  },
+  "objectives": [
+    "Test if the live system detects omitted critical safety steps",
+    "Verify the system flags non-compliant clinical advice in real scenarios",
+    "Evaluate real-time performance across different clinical conditions",
+    "Identify specific areas where live recommendations could be improved"
+  ],
+  "planning": {
+    "error": "AI reasoning unavailable in live mode"
+  },
+  "execution": {
+    "total_scenarios": 1,
+    "passed_tests": 0,
+    "failed_tests": 1,
+    "results": [
+      {
+        "scenario": "Basic Live System Test",
+        "status": "completed",
+        "modification": {
+          "error": "AI reasoning unavailable in live mode"
+        },
+        "live_system_response": {
+          "status": "network_error",
+          "error": "request to http://localhost:3000/dynamicAdvice failed, reason: ",
+          "timestamp": "2025-07-22T06:45:23.595Z"
+        },
+        "evaluation": {
+          "error": "AI reasoning unavailable in live mode"
+        },
+        "api_endpoints_tested": [
+          "/dynamicAdvice"
+        ],
+        "timestamp": "2025-07-22T06:45:23.605Z"
+      }
+    ],
+    "execution_timestamp": "2025-07-22T06:45:25.613Z"
+  },
+  "analysis": {
+    "error": "AI reasoning unavailable in live mode"
+  }
+}

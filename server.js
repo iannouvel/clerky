@@ -2242,21 +2242,40 @@ async function saveToGitHub(content, type) {
         githubTokenLength: githubToken ? githubToken.length : 0
     });
     
+    // OPTIMISATION: Use minimal content instead of full interaction data
+    const minimalContent = {
+        ...summary,
+        // Only include full data for critical failures or important interactions
+        full_data: type.includes('error') || content.critical ? content : null
+    };
+    
     const jsonBody = {
-        message: `Add ${type} log: ${timestamp}`,
-        content: Buffer.from(JSON.stringify(content, null, 2)).toString('base64'),
+        message: `Add ${type} summary: ${timestamp}`,
+        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
         branch: githubBranch
     };
 
-    const textContent = content.textContent || 
-        (type === 'submission' ? 
-            `AI: ${content.ai_provider} (${content.ai_model})\n\n${content.prompt?.prompt || JSON.stringify(content, null, 2)}` :
-            type === 'reply' && content.response ?
-            (typeof content.response === 'string' ? content.response.split('\\n').join('\n') :
-            typeof content.response === 'object' && content.response.response ?
-            content.response.response.split('\\n').join('\n') : 
-            JSON.stringify(content.response, null, 2)) :
-            JSON.stringify(content, null, 2));
+    // OPTIMISATION: Create minimal log content instead of full text
+    const summary = {
+        type: type,
+        timestamp: timestamp,
+        ai_provider: content.ai_provider || 'unknown',
+        ai_model: content.ai_model || 'unknown',
+        endpoint: content.endpoint || 'unknown',
+        token_usage: content.token_usage || null,
+        prompt_length: content.prompt ? (typeof content.prompt === 'string' ? content.prompt.length : JSON.stringify(content.prompt).length) : 0,
+        response_length: content.response ? (typeof content.response === 'string' ? content.response.length : JSON.stringify(content.response).length) : 0,
+        // Store only first 200 chars of prompt/response for debugging
+        prompt_preview: content.prompt ? (typeof content.prompt === 'string' ? content.prompt.substring(0, 200) : JSON.stringify(content.prompt).substring(0, 200)) + '...' : null,
+        response_preview: content.response ? (typeof content.response === 'string' ? content.response.substring(0, 200) : JSON.stringify(content.response).substring(0, 200)) + '...' : null
+    };
+    
+    console.log('Creating optimised log summary:', {
+        type: summary.type,
+        promptLength: summary.prompt_length,
+        responseLength: summary.response_length,
+        tokenUsage: summary.token_usage
+    });
 
     // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
@@ -2275,30 +2294,8 @@ async function saveToGitHub(content, type) {
                 break;
             }
             
-            if (textContent) {
-                const textFilename = `${timestamp}-${type}.txt`;
-                const textPath = `logs/ai-interactions/${textFilename}`;
-                const textBody = {
-                    message: `Add ${type} text: ${timestamp}`,
-                    content: Buffer.from(textContent).toString('base64'),
-                    branch: githubBranch
-                };
-                
-                console.log(`Attempting to save text file to GitHub: ${textPath}`);
-                const textResponse = await axios.put(
-                    `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${textPath}`,
-                    textBody,
-                    {
-                        headers: {
-                            'Accept': 'application/vnd.github.v3+json',
-                            'Authorization': `token ${githubToken}`
-                        },
-                        timeout: 30000, // 30 second timeout
-                        maxRetries: 0 // Disable axios retries, we handle our own
-                    }
-                );
-                console.log(`Text file saved successfully: ${textPath}`);
-            }
+            // OPTIMISATION: Skip .txt files, only save JSON to reduce GitHub storage by 50%
+            console.log('Skipping .txt file creation to reduce GitHub storage load');
 
             const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
             console.log(`Attempting to save JSON file to GitHub: ${jsonPath}`);
@@ -2362,15 +2359,10 @@ async function saveToGitHub(content, type) {
                             console.log(`Created local logs directory: ${localLogsDir}`);
                         }
                         
-                        // Write text file
-                        const localTextPath = `${localLogsDir}/${timestamp}-${type}.txt`;
-                        fs.writeFileSync(localTextPath, textContent);
-                        console.log(`Saved text log locally to ${localTextPath}`);
-                        
-                        // Write JSON file
+                        // OPTIMISATION: Write only optimised JSON file locally
                         const localJsonPath = `${localLogsDir}/${timestamp}-${type}.json`;
-                        fs.writeFileSync(localJsonPath, JSON.stringify(content, null, 2));
-                        console.log(`Saved JSON log locally to ${localJsonPath}`);
+                        fs.writeFileSync(localJsonPath, JSON.stringify(minimalContent, null, 2));
+                        console.log(`Saved optimised log locally to ${localJsonPath}`);
                         
                         success = true; // Consider this a success since we saved it locally
                         break;
@@ -2394,6 +2386,21 @@ async function saveToGitHub(content, type) {
 // Fix the AI info extraction in logAIInteraction
 async function logAIInteraction(prompt, response, endpoint) {
   try {
+    // OPTIMISATION: Only log important interactions to reduce GitHub load
+    const importantEndpoints = [
+      'submit', 'reply', 'findRelevantGuidelines', 'checkAgainstGuidelines', 
+      'generateClinicalNote', 'error', 'failure'
+    ];
+    
+    const shouldLog = importantEndpoints.some(important => endpoint.includes(important)) || 
+                      (response && response.error) || 
+                      (response && response.critical);
+    
+    if (!shouldLog) {
+      console.log(`Skipping log for non-critical endpoint: ${endpoint}`);
+      return true;
+    }
+    
     // Log the raw inputs for debugging
     console.log('logAIInteraction called with:', JSON.stringify({
       promptType: typeof prompt,
@@ -2550,10 +2557,11 @@ async function logAIInteraction(prompt, response, endpoint) {
         response: cleanedResponse,
         endpoint: endpoint,
         timestamp: timestamp,
-        textContent: textContent,
         ai_provider: ai_provider,
         ai_model: ai_model,
-        token_usage: token_usage  // Include token usage in the JSON log
+        token_usage: token_usage,
+        // Mark as critical if it's an error or failure
+        critical: endpoint.includes('error') || endpoint.includes('failure') || (response && response.error)
       }, endpoint.includes('submit') ? 'submission' : 'reply');
       
       console.log(`Successfully logged AI interaction for endpoint: ${endpoint}`);
@@ -4232,20 +4240,20 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
         const totalGroups = fileGroups.size;
         console.log(`Found ${totalGroups} file groups (timestamp pairs)`);
         
-        // If we have 100 or fewer groups, no archiving needed
-        if (totalGroups <= 100) {
+        // OPTIMISATION: Increase threshold to 500 groups to reduce archiving frequency
+        if (totalGroups <= 500) {
             return res.json({
                 success: true,
-                message: `No archiving needed. Found ${totalGroups} file groups (≤100)`,
+                message: `No archiving needed. Found ${totalGroups} file groups (≤500)`,
                 totalGroups: totalGroups,
                 archived: 0
             });
         }
         
-        // Sort groups by timestamp (newest first) and determine what to archive
+        // OPTIMISATION: Keep more recent files, archive in smaller batches
         const sortedTimestamps = Array.from(fileGroups.keys()).sort().reverse();
-        const timestampsToKeep = sortedTimestamps.slice(0, 100);
-        const timestampsToArchive = sortedTimestamps.slice(100);
+        const timestampsToKeep = sortedTimestamps.slice(0, 400); // Keep 400 most recent
+        const timestampsToArchive = sortedTimestamps.slice(400, 500); // Archive only 100 at a time
         
         console.log(`Will keep ${timestampsToKeep.length} most recent groups, archive ${timestampsToArchive.length} older groups`);
         

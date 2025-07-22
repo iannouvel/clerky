@@ -231,6 +231,60 @@ document.addEventListener('DOMContentLoaded', async function() {
             costDisplay.appendChild(noteCard);
         }
 
+        // OPTIMISATION: Helper function to format optimized log data into readable content
+        function formatOptimizedLog(logData) {
+            if (!logData) return 'No log data available';
+            
+            let content = '';
+            
+            // Header with basic info
+            content += `AI: ${logData.ai_provider || 'Unknown'} (${logData.ai_model || 'unknown'})\n\n`;
+            
+            // Interaction summary
+            if (logData.type) {
+                content += `Type: ${logData.type}\n`;
+            }
+            if (logData.endpoint) {
+                content += `Endpoint: ${logData.endpoint}\n`;
+            }
+            
+            // Token usage if available
+            if (logData.token_usage) {
+                content += `\nToken Usage:\n`;
+                if (logData.token_usage.prompt_tokens) {
+                    content += `  Prompt: ${logData.token_usage.prompt_tokens} tokens\n`;
+                }
+                if (logData.token_usage.completion_tokens) {
+                    content += `  Response: ${logData.token_usage.completion_tokens} tokens\n`;
+                }
+                if (logData.token_usage.total_tokens) {
+                    content += `  Total: ${logData.token_usage.total_tokens} tokens\n`;
+                }
+            }
+            
+            // Content summary
+            content += `\nContent Summary:\n`;
+            content += `  Prompt Length: ${logData.prompt_length || 0} chars\n`;
+            content += `  Response Length: ${logData.response_length || 0} chars\n`;
+            
+            // Previews
+            if (logData.prompt_preview) {
+                content += `\nPrompt Preview:\n${logData.prompt_preview}\n`;
+            }
+            
+            if (logData.response_preview) {
+                content += `\nResponse Preview:\n${logData.response_preview}\n`;
+            }
+            
+            // Full data for critical interactions
+            if (logData.full_data) {
+                content += `\n--- FULL DATA (Critical Interaction) ---\n`;
+                content += JSON.stringify(logData.full_data, null, 2);
+            }
+            
+            return content;
+        }
+
         // Attach event to the refresh cost button
         const refreshCostBtn = document.getElementById('refreshCostBtn');
         if (refreshCostBtn) {
@@ -442,9 +496,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     throw new Error('Invalid response from GitHub API');
                 }
                 
-                // Filter for text log files and sort by name (reverse chronological)
+                // OPTIMISATION: Filter for JSON log files (no more .txt files)
                 const logFiles = files
-                    .filter(file => file.type === 'file' && file.name.endsWith('.txt'))
+                    .filter(file => file.type === 'file' && file.name.endsWith('.json'))
                     .sort((a, b) => b.name.localeCompare(a.name))
                     .slice(0, MAX_FILES_TO_LIST);  // Limit to MAX_FILES_TO_LIST most recent files
                 
@@ -486,9 +540,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                             continue;
                         }
                         
-                        const content = await contentResponse.text();
+                        // OPTIMISATION: Parse JSON content for optimized logs
+                        const jsonContent = await contentResponse.json();
                         
-                        // Extract timestamp from filename (format: YYYY-MM-DDThh-mm-ss-reply.txt)
+                        // Create readable content from optimized log format
+                        const readableContent = formatOptimizedLog(jsonContent);
+                        
+                        // Extract timestamp from filename (format: YYYY-MM-DDThh-mm-ss-reply.json)
                         let date = new Date();
                         const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
                         if (timestampMatch) {
@@ -504,7 +562,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                             name: file.name,
                             path: file.path,
                             date: date,
-                            content: content,
+                            content: readableContent,
+                            rawData: jsonContent,
                             size: file.size,
                             html_url: file.html_url
                         });
