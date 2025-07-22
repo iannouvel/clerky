@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clerky Autonomous Testing Agent</title>
+    <link rel="stylesheet" href="agent.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+    <script type="module" src="firebase-init.js"></script>
+</head>
+<body>
+    <div class="agent-container">
+        <!-- Header -->
+        <header class="agent-header">
+            <div class="header-content">
+                <h1>🤖 Clerky Autonomous Testing Agent</h1>
+                <p>Intelligent monitoring and testing of clinical guidelines system</p>
+                <div class="status-badge" id="agentStatus">Ready</div>
+            </div>
+        </header>
+
+        <!-- Authentication Section -->
+        <section class="auth-section" id="authSection">
+            <div class="auth-card">
+                <h2>🔐 Authentication Required</h2>
+                <p>Please sign in to access the autonomous testing agent</p>
+                <button id="signInBtn" class="btn btn-primary">Sign In with Google</button>
+            </div>
+        </section>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard" id="dashboard" style="display: none;">
+            
+            <!-- Control Panel -->
+            <section class="control-panel">
+                <div class="panel-header">
+                    <h2>🎮 Control Panel</h2>
+                    <div class="user-info" id="userInfo"></div>
+                </div>
+                
+                <div class="controls-grid">
+                    <!-- Cost Controls -->
+                    <div class="control-group">
+                        <h3>💰 Budget Controls</h3>
+                        <div class="input-group">
+                            <label for="maxCost">Maximum Cost (USD)</label>
+                            <input type="number" id="maxCost" value="5.00" step="0.01" min="0.01" max="100.00">
+                        </div>
+                        <div class="input-group">
+                            <label for="maxTests">Maximum Tests</label>
+                            <input type="number" id="maxTests" value="20" min="1" max="200">
+                        </div>
+                        <div class="budget-display">
+                            <span class="budget-used">Used: $<span id="costUsed">0.00</span></span>
+                            <span class="budget-remaining">Remaining: $<span id="costRemaining">5.00</span></span>
+                        </div>
+                    </div>
+
+                    <!-- Test Controls -->
+                    <div class="control-group">
+                        <h3>🧪 Test Configuration</h3>
+                        <div class="input-group">
+                            <label for="testInterval">Test Interval (seconds)</label>
+                            <input type="number" id="testInterval" value="3" min="1" max="60">
+                        </div>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="enableAuth" checked>
+                                Enable Authentication Testing
+                            </label>
+                            <label>
+                                <input type="checkbox" id="enableCompliance" checked>
+                                Include Compliance Testing
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Agent Actions -->
+                    <div class="control-group">
+                        <h3>🚀 Agent Actions</h3>
+                        <div class="action-buttons">
+                            <button id="startAgent" class="btn btn-success">Start Testing</button>
+                            <button id="stopAgent" class="btn btn-danger" disabled>Stop Testing</button>
+                            <button id="resetAgent" class="btn btn-secondary">Reset Data</button>
+                        </div>
+                        <div class="progress-info">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <span id="progressText">Ready to start</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-time Metrics -->
+            <section class="metrics-section">
+                <h2>📊 Real-time Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalTests">0</div>
+                        <div class="metric-label">Total Tests</div>
+                        <div class="metric-change" id="testsChange">+0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="averageAccuracy">0%</div>
+                        <div class="metric-label">Average Accuracy</div>
+                        <div class="metric-change" id="accuracyChange">+0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalCost">$0.00</div>
+                        <div class="metric-label">Total Cost</div>
+                        <div class="metric-change" id="costChange">+$0.00</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="averageResponse">0ms</div>
+                        <div class="metric-label">Avg Response</div>
+                        <div class="metric-change" id="responseChange">+0ms</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="successRate">0%</div>
+                        <div class="metric-label">Success Rate</div>
+                        <div class="metric-change" id="successChange">+0%</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="costEfficiency">0</div>
+                        <div class="metric-label">Cost Efficiency</div>
+                        <div class="metric-change" id="efficiencyChange">+0</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="charts-grid">
+                    <div class="chart-container">
+                        <h3>📈 Accuracy Trends</h3>
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>💰 Cost Accumulation</h3>
+                        <canvas id="costChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>⚡ Response Times</h3>
+                        <canvas id="responseChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>🎯 Test Success Rate</h3>
+                        <canvas id="successChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Activity Feed -->
+            <section class="activity-section">
+                <h2>📋 Live Activity Feed</h2>
+                <div class="activity-controls">
+                    <button id="clearActivity" class="btn btn-small">Clear Feed</button>
+                    <label>
+                        <input type="checkbox" id="autoScroll" checked>
+                        Auto-scroll
+                    </label>
+                </div>
+                <div class="activity-feed" id="activityFeed">
+                    <div class="activity-item info">
+                        <span class="timestamp">Ready</span>
+                        <span class="message">Autonomous testing agent initialized and ready</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Provider Analysis -->
+            <section class="provider-section">
+                <h2>🔄 AI Provider Analysis</h2>
+                <div class="provider-grid" id="providerGrid">
+                    <!-- Providers will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Recent Test Results -->
+            <section class="results-section">
+                <h2>🧪 Recent Test Results</h2>
+                <div class="results-table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Test Type</th>
+                                <th>Condition</th>
+                                <th>Status</th>
+                                <th>Accuracy</th>
+                                <th>Cost</th>
+                                <th>Response Time</th>
+                                <th>Provider</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                            <!-- Results will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Export Section -->
+            <section class="export-section">
+                <h2>📊 Data Export</h2>
+                <div class="export-controls">
+                    <button id="exportCsv" class="btn btn-secondary">Export CSV</button>
+                    <button id="exportJson" class="btn btn-secondary">Export JSON</button>
+                    <button id="exportReport" class="btn btn-primary">Generate Report</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Alerts Container -->
+        <div class="alerts-container" id="alertsContainer"></div>
+    </div>
+
+    <!-- Include the autonomous agent JavaScript -->
+    <script type="module" src="agent.js"></script>
+</body>
+</html> 

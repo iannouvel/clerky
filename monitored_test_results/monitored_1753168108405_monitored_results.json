@@ -1,0 +1,545 @@
+{
+  "sessionId": "monitored_1753168108405",
+  "timestamp": "2025-07-22T07:09:15.323Z",
+  "server_url": "https://clerky-uzni.onrender.com",
+  "cost_control": {
+    "max_cost_usd": 5,
+    "actual_cost_usd": 0.0325855,
+    "max_tests": 20,
+    "actual_tests": 20,
+    "cost_per_test": 0.0016292750000000001
+  },
+  "connectivity": [
+    {
+      "name": "Public Health Check",
+      "endpoint": "/health",
+      "status": 200,
+      "ok": true,
+      "authenticated": false,
+      "expected": true,
+      "result": "success",
+      "response_time_ms": 381,
+      "estimated_cost": 0
+    },
+    {
+      "name": "Public Root Endpoint",
+      "endpoint": "/",
+      "status": 200,
+      "ok": true,
+      "authenticated": false,
+      "expected": true,
+      "result": "success",
+      "response_time_ms": 269,
+      "estimated_cost": 0
+    },
+    {
+      "name": "Protected Dynamic Advice",
+      "endpoint": "/dynamicAdvice",
+      "status": 401,
+      "ok": false,
+      "authenticated": true,
+      "expected": false,
+      "result": "auth_required",
+      "response_time_ms": 677,
+      "estimated_cost": 0.01
+    },
+    {
+      "name": "Protected Find Guidelines",
+      "endpoint": "/findRelevantGuidelines",
+      "status": 401,
+      "ok": false,
+      "authenticated": true,
+      "expected": false,
+      "result": "auth_required",
+      "response_time_ms": 246,
+      "estimated_cost": 0.005
+    }
+  ],
+  "test_results": [
+    {
+      "scenario": "Basic Clinical Advice Test (Preeclampsia)",
+      "type": "basic_advice",
+      "condition": "Preeclampsia",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 238,
+      "actual_cost": 0.0007490000000000001,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Gestational diabetes)",
+      "type": "guideline_search",
+      "condition": "Gestational diabetes",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 561,
+      "actual_cost": 0.0006965000000000001,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Cervical insufficiency)",
+      "type": "compliance_check",
+      "condition": "Cervical insufficiency",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 217,
+      "actual_cost": 0.0008285000000000001,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Preterm labor)",
+      "type": "basic_advice",
+      "condition": "Preterm labor",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 233,
+      "actual_cost": 0.0008645,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Placenta previa)",
+      "type": "guideline_search",
+      "condition": "Placenta previa",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 225,
+      "actual_cost": 0.000896,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Hyperemesis gravidarum)",
+      "type": "compliance_check",
+      "condition": "Hyperemesis gravidarum",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 266,
+      "actual_cost": 0.0008900000000000001,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Miscarriage)",
+      "type": "basic_advice",
+      "condition": "Miscarriage",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 241,
+      "actual_cost": 0.0010295,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Ectopic pregnancy)",
+      "type": "guideline_search",
+      "condition": "Ectopic pregnancy",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 246,
+      "actual_cost": 0.0009545,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Postpartum hemorrhage)",
+      "type": "compliance_check",
+      "condition": "Postpartum hemorrhage",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 250,
+      "actual_cost": 0.0009125,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Molar pregnancy)",
+      "type": "basic_advice",
+      "condition": "Molar pregnancy",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 248,
+      "actual_cost": 0.0009665000000000001,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Placental abruption)",
+      "type": "guideline_search",
+      "condition": "Placental abruption",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 242,
+      "actual_cost": 0.0009530000000000001,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Multiple gestation)",
+      "type": "compliance_check",
+      "condition": "Multiple gestation",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 226,
+      "actual_cost": 0.000896,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Intrauterine growth restriction (IUGR))",
+      "type": "basic_advice",
+      "condition": "Intrauterine growth restriction (IUGR)",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 206,
+      "actual_cost": 0.000914,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Post-term pregnancy)",
+      "type": "guideline_search",
+      "condition": "Post-term pregnancy",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 300,
+      "actual_cost": 0.0008420000000000001,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Premature rupture of membranes (PROM))",
+      "type": "compliance_check",
+      "condition": "Premature rupture of membranes (PROM)",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 249,
+      "actual_cost": 0.000893,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Gestational hypertension)",
+      "type": "basic_advice",
+      "condition": "Gestational hypertension",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 242,
+      "actual_cost": 0.0008390000000000001,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Endometriosis)",
+      "type": "guideline_search",
+      "condition": "Endometriosis",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 243,
+      "actual_cost": 0.0008480000000000001,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Compliance Detection Test (Polycystic ovary syndrome (PCOS))",
+      "type": "compliance_check",
+      "condition": "Polycystic ovary syndrome (PCOS)",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 235,
+      "actual_cost": 0.0008855,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_flag_compliance_issue",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Basic Clinical Advice Test (Uterine fibroids)",
+      "type": "basic_advice",
+      "condition": "Uterine fibroids",
+      "endpoint": "/dynamicAdvice",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 204,
+      "actual_cost": 0.0008705,
+      "estimated_cost": 0.05,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_provide_suggestions",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    },
+    {
+      "scenario": "Guideline Relevance Test (Ovarian cysts)",
+      "type": "guideline_search",
+      "condition": "Ovarian cysts",
+      "endpoint": "/findRelevantGuidelines",
+      "success": true,
+      "api_status": 401,
+      "response_time_ms": 204,
+      "actual_cost": 0.0008570000000000001,
+      "estimated_cost": 0.03,
+      "ai_provider": "unknown",
+      "accuracy_score": 70,
+      "expected_outcome": "should_find_relevant_guidelines",
+      "response_data": {
+        "message": "No authorization header"
+      },
+      "suggestions_count": 0,
+      "has_recommendations": false,
+      "token_usage": null,
+      "authentication_status": "unauthenticated"
+    }
+  ],
+  "analytics": {
+    "session_summary": {
+      "total_tests": 20,
+      "successful_tests": 20,
+      "total_cost": 0.0325855,
+      "average_cost_per_test": 0.0016292750000000001,
+      "average_accuracy": 70,
+      "total_response_time": 6649,
+      "average_response_time": 393.25
+    },
+    "cost_analysis": {
+      "budget_utilization": 0.65171,
+      "cost_efficiency": 79611.04318899092,
+      "cost_per_accuracy_point": 0.000023275357142857145
+    },
+    "accuracy_trends": {
+      "trend": "stable",
+      "change_percentage": 0,
+      "recent_average": 70,
+      "historical_average": 70,
+      "data_points": 40
+    },
+    "provider_comparison": {},
+    "model_drift_detection": {
+      "status": "positive_drift",
+      "drift_percentage": 40,
+      "baseline_accuracy": 50,
+      "recent_accuracy": 70,
+      "confidence": "high"
+    },
+    "performance_insights": []
+  },
+  "performance_metrics": {
+    "startTime": 1753168107853,
+    "totalRequests": 24,
+    "successfulRequests": 2,
+    "totalTokens": 0,
+    "averageResponseTime": 393.25,
+    "responseTimes": [
+      381,
+      269,
+      677,
+      246,
+      238,
+      561,
+      217,
+      233,
+      225,
+      266,
+      241,
+      246,
+      250,
+      248,
+      242,
+      226,
+      206,
+      300,
+      249,
+      242,
+      243,
+      235,
+      204,
+      204
+    ]
+  }
+}

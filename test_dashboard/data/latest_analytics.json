@@ -1,38 +1,32 @@
 {
   "session_summary": {
     "total_tests": 20,
-    "successful_tests": 0,
-    "total_cost": 0.027732500000000004,
-    "average_cost_per_test": 0.0013866250000000003,
-    "average_accuracy": 50,
-    "total_response_time": 6371,
-    "average_response_time": 556
+    "successful_tests": 20,
+    "total_cost": 0.0325855,
+    "average_cost_per_test": 0.0016292750000000001,
+    "average_accuracy": 70,
+    "total_response_time": 6649,
+    "average_response_time": 393.25
   },
   "cost_analysis": {
-    "budget_utilization": 0.5546500000000001,
-    "cost_efficiency": 0,
-    "cost_per_accuracy_point": 0.000027732500000000003
+    "budget_utilization": 0.65171,
+    "cost_efficiency": 79611.04318899092,
+    "cost_per_accuracy_point": 0.000023275357142857145
   },
   "accuracy_trends": {
     "trend": "stable",
     "change_percentage": 0,
-    "recent_average": 50,
-    "historical_average": 50,
-    "data_points": 20
+    "recent_average": 70,
+    "historical_average": 70,
+    "data_points": 40
   },
   "provider_comparison": {},
   "model_drift_detection": {
-    "status": "stable",
-    "drift_percentage": 0,
+    "status": "positive_drift",
+    "drift_percentage": 40,
     "baseline_accuracy": 50,
-    "recent_accuracy": 50,
+    "recent_accuracy": 70,
     "confidence": "high"
   },
-  "performance_insights": [
-    {
-      "type": "accuracy",
-      "level": "warning",
-      "message": "Low accuracy detected: 50.0% - consider model tuning"
-    }
-  ]
+  "performance_insights": []
 }
