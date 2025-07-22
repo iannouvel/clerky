@@ -4033,6 +4033,10 @@ async function showClinicalIssuesDropdown() {
                         <span id="generate-spinner" class="spinner" style="display: none;"></span>
                         <span id="generate-text">Load Clerking</span>
                     </button>
+                    <button id="random-issue-btn" class="nav-btn secondary">
+                        <span id="random-spinner" class="spinner" style="display: none;"></span>
+                        <span id="random-text">Random Issue</span>
+                    </button>
                     <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                 </div>
                 
@@ -4046,6 +4050,7 @@ async function showClinicalIssuesDropdown() {
         // Add event listeners for the single dropdown
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
+        const randomBtn = document.getElementById('random-issue-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
         
         function updateGenerateButton() {
@@ -4067,6 +4072,33 @@ async function showClinicalIssuesDropdown() {
                 
                 if (selectedIssue) {
                     await generateFakeClinicalInteraction(selectedIssue);
+                }
+            });
+        }
+        
+        if (randomBtn) {
+            randomBtn.addEventListener('click', async () => {
+                // Get all available options from the dropdown (excluding the default option)
+                const options = Array.from(clinicalDropdown.options).filter(option => 
+                    option.value && option.value.trim() !== ''
+                );
+                
+                if (options.length > 0) {
+                    // Pick a random option
+                    const randomOption = options[Math.floor(Math.random() * options.length)];
+                    const randomIssue = randomOption.value;
+                    
+                    // Set the dropdown to the random selection
+                    clinicalDropdown.value = randomIssue;
+                    
+                    // Update the generate button state
+                    updateGenerateButton();
+                    
+                    // Automatically generate the interaction
+                    await generateFakeClinicalInteraction(randomIssue);
+                } else {
+                    console.error('No clinical issues available for random selection');
+                    appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', true);
                 }
             });
         }
