@@ -124,6 +124,35 @@
                 return;
             }
 
+            // Check if user has already accepted disclaimer today
+            const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
+            console.log('Checking if disclaimer already accepted for:', user.uid);
+            try {
+                const disclaimerDoc = await getDoc(disclaimerRef);
+                
+                if (disclaimerDoc.exists()) {
+                    // Check if disclaimer was accepted today
+                    const acceptanceData = disclaimerDoc.data();
+                    const acceptanceTime = acceptanceData.acceptanceTime.toDate();
+                    const today = new Date();
+                    const isToday = acceptanceTime.toDateString() === today.toDateString();
+                    
+                    if (isToday) {
+                        console.log('Disclaimer already accepted today, redirecting to main page');
+                        // If already accepted today, redirect to main page
+                        window.location.href = 'index.html';
+                        return;
+                    } else {
+                        console.log('Disclaimer was accepted previously but not today, showing disclaimer form');
+                    }
+                } else {
+                    console.log('No previous disclaimer acceptance found, showing disclaimer form');
+                }
+            } catch (error) {
+                console.error('Error checking disclaimer acceptance:', error);
+                // On error, show disclaimer form to be safe
+            }
+
             console.log('Setting up accept button click handler');
             // Add click handler for accept button
             acceptButton.addEventListener('click', async () => {

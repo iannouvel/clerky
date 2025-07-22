@@ -4985,7 +4985,16 @@ window.auth.onAuthStateChanged(async (user) => {
     });
 
     if (user) {
-        console.log('[DEBUG] User authenticated, starting initialization');
+        console.log('[DEBUG] User authenticated, checking disclaimer acceptance');
+        
+        // Check disclaimer acceptance first
+        const disclaimerAccepted = await checkDisclaimerAcceptance();
+        if (!disclaimerAccepted) {
+            console.log('[DEBUG] Disclaimer not accepted, user will be redirected');
+            return; // The checkDisclaimerAcceptance function will handle the redirect
+        }
+        
+        console.log('[DEBUG] Disclaimer accepted, starting initialization');
         // Keep main content hidden until initialization is complete
         landingPage.classList.add('hidden');
         mainContent.classList.add('hidden'); // Keep hidden during initialization
