@@ -4284,162 +4284,87 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
             }
         }
         
-        // Use Git Tree API for fast batch archiving
-        console.log('Using Git Tree API for fast batch archiving...');
+        // OPTIMISATION: Use simple file deletion instead of complex tree archiving
+        console.log('Using simple file deletion to avoid 502 errors...');
         
-        // Get the current branch commit to get the tree SHA
-        const branchResponse = await axios.get(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/branches/${githubBranch}`,
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            }
-        );
-        
-        const currentCommitSha = branchResponse.data.commit.sha;
-        const baseTreeSha = branchResponse.data.commit.commit.tree.sha;
-        
-        console.log(`Current commit: ${currentCommitSha}, base tree: ${baseTreeSha}`);
-        
-        // Get the current tree
-        const treeResponse = await axios.get(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/trees/${baseTreeSha}?recursive=1`,
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            }
-        );
-        
-        const currentTree = treeResponse.data.tree;
-        console.log(`Retrieved tree with ${currentTree.length} total files`);
-        
-        // Collect files to archive and files to keep
-        const filesToArchive = [];
-        const filesToKeep = [];
+        // Collect files to delete (old ones)
+        const filesToDelete = [];
         
         for (const timestamp of timestampsToArchive) {
-            filesToArchive.push(...fileGroups.get(timestamp));
+            filesToDelete.push(...fileGroups.get(timestamp));
         }
         
-        for (const timestamp of timestampsToKeep) {
-            filesToKeep.push(...fileGroups.get(timestamp));
-        }
+        console.log(`Will delete ${filesToDelete.length} old files to prevent GitHub API overload`);
         
-        console.log(`Will archive ${filesToArchive.length} files, keep ${filesToKeep.length} files`);
+        // Delete files one by one (much more reliable than tree operations)
+        const deleteResults = {
+            deleted: 0,
+            failed: 0,
+            errors: []
+        };
         
-        // Build new tree array
-        const newTree = [];
-        
-        // Add all existing files except those in logs/ai-interactions/ that we're archiving
-        const archiveFileNames = new Set(filesToArchive.map(f => f.name));
-        
-        for (const item of currentTree) {
-            if (item.path.startsWith('logs/ai-interactions/')) {
-                // Only keep files that are not being archived
-                const fileName = item.path.split('/').pop();
-                if (!archiveFileNames.has(fileName)) {
-                    newTree.push({
-                        path: item.path,
-                        mode: item.mode,
-                        type: item.type,
-                        sha: item.sha
-                    });
+        // Process in smaller batches to avoid rate limiting
+        const BATCH_SIZE = 10;
+        for (let i = 0; i < filesToDelete.length; i += BATCH_SIZE) {
+            const batch = filesToDelete.slice(i, i + BATCH_SIZE);
+            
+            console.log(`Deleting batch ${Math.floor(i/BATCH_SIZE) + 1}/${Math.ceil(filesToDelete.length/BATCH_SIZE)} (${batch.length} files)`);
+            
+            const deletePromises = batch.map(async (file) => {
+                try {
+                    await axios.delete(
+                        `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${file.path}`,
+                        {
+                            headers: {
+                                'Accept': 'application/vnd.github.v3+json',
+                                'Authorization': `token ${githubToken}`
+                            },
+                            data: {
+                                message: `Delete old log file ${file.name}`,
+                                sha: file.sha,
+                                branch: githubBranch
+                            }
+                        }
+                    );
+                    deleteResults.deleted++;
+                    console.log(`Deleted: ${file.name}`);
+                } catch (error) {
+                    deleteResults.failed++;
+                    const errorInfo = {
+                        file: file.name,
+                        status: error.response?.status,
+                        message: error.response?.data?.message || error.message
+                    };
+                    deleteResults.errors.push(errorInfo);
+                    console.error(`Failed to delete ${file.name}:`, errorInfo);
                 }
-            } else {
-                // Keep all non-log files as-is
-                newTree.push({
-                    path: item.path,
-                    mode: item.mode,
-                    type: item.type,
-                    sha: item.sha
-                });
-            }
-        }
-        
-        // Add archived files to new tree
-        for (const file of filesToArchive) {
-            newTree.push({
-                path: `logs/ai-interactions-archived/${file.name}`,
-                mode: '100644',
-                type: 'blob',
-                sha: file.sha  // Reuse the existing blob SHA
             });
+            
+            // Wait for batch to complete
+            await Promise.all(deletePromises);
+            
+            // Small delay between batches to be gentle on GitHub API
+            if (i + BATCH_SIZE < filesToDelete.length) {
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
         }
-        
-        console.log(`Creating new tree with ${newTree.length} total files`);
-        
-        // Create the new tree
-        const newTreeResponse = await axios.post(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/trees`,
-            {
-                tree: newTree
-            },
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            }
-        );
-        
-        const newTreeSha = newTreeResponse.data.sha;
-        console.log(`Created new tree: ${newTreeSha}`);
-        
-        // Create a new commit
-        const commitMessage = `Archive ${filesToArchive.length} old log files (${timestampsToArchive.length} groups)`;
-        const commitResponse = await axios.post(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/commits`,
-            {
-                message: commitMessage,
-                tree: newTreeSha,
-                parents: [currentCommitSha]
-            },
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            }
-        );
-        
-        const newCommitSha = commitResponse.data.sha;
-        console.log(`Created new commit: ${newCommitSha}`);
-        
-        // Update the branch reference
-        await axios.patch(
-            `https://api.github.com/repos/${githubOwner}/${githubRepo}/git/refs/heads/${githubBranch}`,
-            {
-                sha: newCommitSha
-            },
-            {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            }
-        );
-        
-        console.log(`Updated branch ${githubBranch} to new commit`);
         
         const archiveResults = {
-            moved: filesToArchive.length,
-            failed: 0,
-            errors: [],
-            method: 'git-tree-api',
-            commitSha: newCommitSha
+            moved: 0, // We're deleting, not moving
+            deleted: deleteResults.deleted,
+            failed: deleteResults.failed,
+            errors: deleteResults.errors,
+            method: 'simple-deletion'
         };
         
         res.json({
             success: true,
-            message: `Archived ${archiveResults.moved} files (${timestampsToArchive.length} groups), ${archiveResults.failed} failed`,
+            message: `Deleted ${archiveResults.deleted} old files (${timestampsToArchive.length} groups), ${archiveResults.failed} failed`,
             totalGroups: totalGroups,
-            archivedGroups: timestampsToArchive.length,
-            archivedFiles: archiveResults.moved,
+            deletedGroups: timestampsToArchive.length,
+            deletedFiles: archiveResults.deleted,
             failedFiles: archiveResults.failed,
+            method: archiveResults.method,
             details: archiveResults
         });
         

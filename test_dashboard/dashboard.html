@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clerky Autonomous Testing Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .dashboard { max-width: 1200px; margin: 0 auto; }
+        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .metric-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .metric-value { font-size: 2em; font-weight: bold; color: #2c3e50; }
+        .metric-label { color: #7f8c8d; text-transform: uppercase; font-size: 0.8em; }
+        .chart-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .insights { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .insight { padding: 10px; margin: 5px 0; border-radius: 4px; }
+        .insight.success { background: #d5edda; border-left: 4px solid #28a745; }
+        .insight.warning { background: #fff3cd; border-left: 4px solid #ffc107; }
+        .insight.error { background: #f8d7da; border-left: 4px solid #dc3545; }
+        .provider-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .provider-card { padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>🤖 Clerky Autonomous Testing Dashboard</h1>
+            <p>Real-time monitoring and analytics for autonomous clinical guidelines testing</p>
+            <p><strong>Session:</strong> 2025-07-22T07:02:47.352Z | <strong>Server:</strong> https://clerky-uzni.onrender.com</p>
+        </div>
+        
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">20</div>
+                <div class="metric-label">Total Tests</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">50.0%</div>
+                <div class="metric-label">Average Accuracy</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">$0.0277</div>
+                <div class="metric-label">Total Cost</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">556ms</div>
+                <div class="metric-label">Avg Response Time</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">0.6%</div>
+                <div class="metric-label">Budget Used</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">0.00</div>
+                <div class="metric-label">Cost Efficiency</div>
+            </div>
+        </div>
+        
+        <div class="chart-container">
+            <h3>📈 Accuracy Trends</h3>
+            <canvas id="accuracyChart" width="400" height="200"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h3>💰 Cost Trends</h3>
+            <canvas id="costChart" width="400" height="200"></canvas>
+        </div>
+        
+        <div class="chart-container">
+            <h3>🔄 Provider Comparison</h3>
+            <div class="provider-comparison">
+                
+            </div>
+        </div>
+        
+        <div class="insights">
+            <h3>💡 Performance Insights</h3>
+            
+                <div class="insight warning">
+                    <strong>ACCURACY:</strong> Low accuracy detected: 50.0% - consider model tuning
+                </div>
+            
+            
+            <h4>🔍 Model Drift Detection</h4>
+            <div class="insight success">
+                <strong>Status:</strong> STABLE<br>
+                <strong>Drift:</strong> 0.00%<br>
+                <strong>Confidence:</strong> HIGH
+            </div>
+            
+            <h4>📊 Accuracy Trends</h4>
+            <div class="insight info">
+                <strong>Trend:</strong> STABLE<br>
+                <strong>Change:</strong> 0.00%<br>
+                <strong>Data Points:</strong> 20
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Accuracy trend chart
+        const accuracyData = [{"x":1753167722652,"y":50},{"x":1753167725000,"y":50},{"x":1753167727252,"y":50},{"x":1753167729494,"y":50},{"x":1753167731758,"y":50},{"x":1753167734011,"y":50},{"x":1753167736264,"y":50},{"x":1753167738516,"y":50},{"x":1753167740770,"y":50},{"x":1753167743021,"y":50},{"x":1753167745244,"y":50},{"x":1753167747470,"y":50},{"x":1753167749700,"y":50},{"x":1753167751919,"y":50},{"x":1753167754132,"y":50},{"x":1753167756352,"y":50},{"x":1753167758577,"y":50},{"x":1753167760794,"y":50},{"x":1753167763031,"y":50},{"x":1753167765345,"y":50}];
+        new Chart(document.getElementById('accuracyChart'), {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Accuracy %',
+                    data: accuracyData,
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { type: 'time' },
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+        
+        // Cost trend chart
+        const costData = [{"x":1753167722652,"y":0.0007490000000000001},{"x":1753167725000,"y":0.0007175000000000001},{"x":1753167727252,"y":0.0008285000000000001},{"x":1753167729494,"y":0.0008645},{"x":1753167731758,"y":0.0009170000000000001},{"x":1753167734011,"y":0.0008900000000000001},{"x":1753167736264,"y":0.0010295},{"x":1753167738516,"y":0.0009755000000000001},{"x":1753167740770,"y":0.0009125},{"x":1753167743022,"y":0.0009665000000000001},{"x":1753167745244,"y":0.000974},{"x":1753167747470,"y":0.000896},{"x":1753167749700,"y":0.000914},{"x":1753167751919,"y":0.0008630000000000002},{"x":1753167754132,"y":0.000893},{"x":1753167756352,"y":0.0008390000000000001},{"x":1753167758577,"y":0.000869},{"x":1753167760794,"y":0.0008855},{"x":1753167763031,"y":0.0008705},{"x":1753167765345,"y":0.000878}];
+        new Chart(document.getElementById('costChart'), {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Cost $',
+                    data: costData,
+                    borderColor: '#e74c3c',
+                    backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { type: 'time' },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

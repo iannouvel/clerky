@@ -1,0 +1,38 @@
+{
+  "session_summary": {
+    "total_tests": 20,
+    "successful_tests": 0,
+    "total_cost": 0.027732500000000004,
+    "average_cost_per_test": 0.0013866250000000003,
+    "average_accuracy": 50,
+    "total_response_time": 6371,
+    "average_response_time": 556
+  },
+  "cost_analysis": {
+    "budget_utilization": 0.5546500000000001,
+    "cost_efficiency": 0,
+    "cost_per_accuracy_point": 0.000027732500000000003
+  },
+  "accuracy_trends": {
+    "trend": "stable",
+    "change_percentage": 0,
+    "recent_average": 50,
+    "historical_average": 50,
+    "data_points": 20
+  },
+  "provider_comparison": {},
+  "model_drift_detection": {
+    "status": "stable",
+    "drift_percentage": 0,
+    "baseline_accuracy": 50,
+    "recent_accuracy": 50,
+    "confidence": "high"
+  },
+  "performance_insights": [
+    {
+      "type": "accuracy",
+      "level": "warning",
+      "message": "Low accuracy detected: 50.0% - consider model tuning"
+    }
+  ]
+}

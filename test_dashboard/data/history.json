@@ -1,0 +1,248 @@
+{
+  "accuracy_history": [
+    {
+      "timestamp": 1753167722652,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167725000,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167727252,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167729494,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167731758,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167734011,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167736264,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167738516,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167740770,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167743021,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167745244,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167747470,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167749700,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167751919,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167754132,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167756352,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167758577,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167760794,
+      "accuracy": 50,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167763031,
+      "accuracy": 50,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167765345,
+      "accuracy": 50,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    }
+  ],
+  "cost_history": [
+    {
+      "timestamp": 1753167722652,
+      "cost": 0.0007490000000000001,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167725000,
+      "cost": 0.0007175000000000001,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167727252,
+      "cost": 0.0008285000000000001,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167729494,
+      "cost": 0.0008645,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167731758,
+      "cost": 0.0009170000000000001,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167734011,
+      "cost": 0.0008900000000000001,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167736264,
+      "cost": 0.0010295,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167738516,
+      "cost": 0.0009755000000000001,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167740770,
+      "cost": 0.0009125,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167743022,
+      "cost": 0.0009665000000000001,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167745244,
+      "cost": 0.000974,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167747470,
+      "cost": 0.000896,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167749700,
+      "cost": 0.000914,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167751919,
+      "cost": 0.0008630000000000002,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167754132,
+      "cost": 0.000893,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167756352,
+      "cost": 0.0008390000000000001,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167758577,
+      "cost": 0.000869,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167760794,
+      "cost": 0.0008855,
+      "test_type": "compliance_check",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167763031,
+      "cost": 0.0008705,
+      "test_type": "basic_advice",
+      "provider": "unknown"
+    },
+    {
+      "timestamp": 1753167765345,
+      "cost": 0.000878,
+      "test_type": "guideline_search",
+      "provider": "unknown"
+    }
+  ],
+  "last_updated": "2025-07-22T07:02:47.377Z",
+  "total_sessions": 1
+}
