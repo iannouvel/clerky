@@ -6,7 +6,13 @@
     <title>Clerky Autonomous Testing Agent</title>
     <link rel="stylesheet" href="agent.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Global configuration
+        window.SERVER_URL = 'https://clerky-uzni.onrender.com';
+        console.log('🌐 Agent Server URL:', window.SERVER_URL);
+    </script>
     <script type="module" src="firebase-init.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="agent-container">

@@ -125,25 +125,44 @@ class WebAutonomousAgent {
                 this.onUserSignedOut();
             }
         });
-        
-        // Load guidelines for testing
-        this.loadGuidelines();
     }
     
     async loadGuidelines() {
         try {
-            const response = await fetch(`${this.serverUrl}/getGuidelinesList`);
-            if (response.ok) {
-                const guidelines = await response.json();
-                window.globalGuidelines = guidelines;
-                console.log('📚 Loaded guidelines for testing:', guidelines.length);
+            console.log('📚 Loading guidelines for autonomous testing...');
+            
+            // Use the existing loadGuidelinesFromFirestore function from script.js
+            if (typeof loadGuidelinesFromFirestore === 'function') {
+                const guidelines = await loadGuidelinesFromFirestore();
+                window.globalGuidelines = guidelines || [];
+                console.log('✅ Loaded guidelines for testing:', window.globalGuidelines.length);
+                
+                // Also set window.guidelines for compatibility
+                window.guidelines = window.globalGuidelines;
             } else {
-                console.warn('Failed to load guidelines, using empty array');
-                window.globalGuidelines = [];
+                // Fallback to direct API call if script.js function isn't available
+                console.log('📋 Falling back to direct API call...');
+                const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+                    headers: {
+                        'Authorization': `Bearer ${this.authToken}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const guidelines = await response.json();
+                    window.globalGuidelines = guidelines;
+                    window.guidelines = guidelines;
+                    console.log('✅ Loaded guidelines via API:', guidelines.length);
+                } else {
+                    throw new Error(`API returned ${response.status}: ${response.statusText}`);
+                }
             }
         } catch (error) {
-            console.warn('Error loading guidelines:', error);
+            console.warn('⚠️ Error loading guidelines:', error);
             window.globalGuidelines = [];
+            window.guidelines = [];
+            this.showAlert('warning', 'Failed to load guidelines. Some testing features may be limited.');
         }
     }
     
@@ -160,6 +179,7 @@ class WebAutonomousAgent {
         
         // Initialize charts and load data
         this.initializeCharts();
+        await this.loadGuidelines();
         this.loadTranscriptData();
         
         this.showAlert('success', `Welcome, ${user.displayName}! Ready to start autonomous testing.`);
@@ -460,7 +480,7 @@ class WebAutonomousAgent {
             
             const payload = this.createTestPayload(scenario.endpoint, modifiedTranscript, scenario.condition);
             
-            const response = await fetch(`${this.serverUrl}${scenario.endpoint}`, {
+            const response = await fetch(`${window.SERVER_URL}${scenario.endpoint}`, {
                 method: 'POST',
                 headers,
                 body: JSON.stringify(payload)
@@ -951,7 +971,7 @@ class WebAutonomousAgent {
             session: {
                 timestamp: new Date().toISOString(),
                 user: this.currentUser?.displayName || 'Unknown',
-                server: this.serverUrl
+                server: window.SERVER_URL
             },
             metrics: this.metrics,
             results: this.testResults,
@@ -991,7 +1011,7 @@ class WebAutonomousAgent {
     <div class="header">
         <h1>🤖 Autonomous Testing Report</h1>
         <p>Generated on ${new Date().toLocaleString()}</p>
-        <p>User: ${this.currentUser?.displayName || 'Unknown'} | Server: ${this.serverUrl}</p>
+        <p>User: ${this.currentUser?.displayName || 'Unknown'} | Server: ${window.SERVER_URL}</p>
     </div>
     
     <div class="metrics">
