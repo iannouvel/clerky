@@ -4166,13 +4166,28 @@ async function generateFakeClinicalInteraction(selectedIssue) {
             }
             
             const result = await ClinicalConditionsService.generateTranscript(condition.id, false);
+            
+            console.log('[DEBUG] ClinicalConditionsService.generateTranscript returned:', {
+                resultExists: !!result,
+                resultKeys: result ? Object.keys(result) : 'no result',
+                success: result?.success,
+                hasTranscript: !!result?.transcript,
+                transcriptLength: result?.transcript?.length,
+                cached: result?.cached,
+                generated: result?.generated,
+                transcriptPreview: result?.transcript ? result.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
+                fullResult: result
+            });
+            
             transcript = result.transcript;
             isGenerated = !result.cached;
             
-            console.log('[DEBUG] Generated transcript result:', {
-                success: !!result.transcript,
-                cached: result.cached,
-                transcriptLength: result.transcript?.length
+            console.log('[DEBUG] Generated transcript result - processed:', {
+                transcriptAssigned: !!transcript,
+                transcriptLength: transcript?.length,
+                isGenerated: isGenerated,
+                transcriptType: typeof transcript,
+                transcriptPreview: transcript ? transcript.substring(0, 100) + '...' : 'NO TRANSCRIPT'
             });
         }
         
@@ -7657,14 +7672,34 @@ const ClinicalConditionsService = {
                 body: JSON.stringify({ forceRegenerate })
             });
             
+            console.log('[CLINICAL-SERVICE] Server response status:', response.status, response.statusText);
+            
             if (!response.ok) {
-                throw new Error(`Failed to generate transcript: ${response.status}`);
+                const errorText = await response.text();
+                console.error('[CLINICAL-SERVICE] Server error response:', errorText);
+                throw new Error(`Failed to generate transcript: ${response.status} - ${errorText}`);
             }
             
             const data = await response.json();
             
+            console.log('[CLINICAL-SERVICE] Server response data:', {
+                success: data.success,
+                hasTranscript: !!data.transcript,
+                transcriptLength: data.transcript?.length,
+                cached: data.cached,
+                generated: data.generated,
+                condition: data.condition,
+                transcriptPreview: data.transcript ? data.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
+                fullDataKeys: Object.keys(data)
+            });
+            
             if (!data.success) {
                 throw new Error(data.error || 'Failed to generate transcript');
+            }
+            
+            if (!data.transcript) {
+                console.error('[CLINICAL-SERVICE] No transcript in server response:', data);
+                throw new Error('No transcript received from server');
             }
             
             // Update cache if transcript was generated/retrieved
