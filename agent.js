@@ -144,17 +144,40 @@ class WebAutonomousAgent {
                 const responseText = await response.text();
                 console.log('📄 Raw response (first 200 chars):', responseText.substring(0, 200));
                 
-                try {
-                    const guidelines = JSON.parse(responseText);
-                    window.globalGuidelines = guidelines;
-                    window.guidelines = guidelines;
-                    console.log('✅ Loaded guidelines via API:', guidelines.length);
-                    this.addActivity('success', `Loaded ${guidelines.length} guidelines for testing`);
-                } catch (jsonError) {
-                    console.error('❌ JSON Parse Error:', jsonError);
-                    console.error('📄 Full response text:', responseText);
-                    throw new Error(`Invalid JSON response: ${jsonError.message}`);
+                // Split the text response into lines and convert to guideline objects
+                const guidelineFiles = responseText.split('\n')
+                    .filter(line => line.trim()) // Remove empty lines
+                    .map(filename => {
+                        // Remove .pdf extension if present
+                        const title = filename.replace(/\.pdf$/, '');
+                        
+                        // Extract organization if present (e.g., "BJOG", "CG", etc.)
+                        let organisation = 'Unknown';
+                        const orgMatch = title.match(/^(BJOG|CG|BMS|BASHH|BHIVA|ESHRE|FIGO|GP)\b/);
+                        if (orgMatch) {
+                            organisation = orgMatch[1];
+                        }
+                        
+                        return {
+                            title: title,
+                            organisation: organisation,
+                            downloadUrl: filename,
+                            summary: `Guideline: ${title}`,
+                            source: 'API'
+                        };
+                    });
+                
+                window.globalGuidelines = guidelineFiles;
+                window.guidelines = guidelineFiles;
+                
+                console.log('✅ Processed guidelines:', guidelineFiles.length);
+                this.addActivity('success', `Loaded ${guidelineFiles.length} guidelines for testing`);
+                
+                // Sample log of first guideline
+                if (guidelineFiles.length > 0) {
+                    console.log('📋 Sample guideline:', guidelineFiles[0]);
                 }
+                
             } else {
                 const errorText = await response.text();
                 console.error('❌ API Error Response:', errorText);
@@ -162,9 +185,6 @@ class WebAutonomousAgent {
             }
         } catch (error) {
             console.warn('⚠️ Error loading guidelines:', error);
-            window.globalGuidelines = [];
-            window.guidelines = [];
-            this.addActivity('warning', 'Failed to load guidelines. Using fallback data for testing.');
             
             // Provide some basic fallback guidelines for testing
             const fallbackGuidelines = [
@@ -172,20 +192,23 @@ class WebAutonomousAgent {
                     title: "Test Guideline - Diabetes Management",
                     organisation: "Test Org",
                     downloadUrl: "test-diabetes.pdf",
-                    summary: "Test guideline for diabetes management testing"
+                    summary: "Test guideline for diabetes management testing",
+                    source: 'Fallback'
                 },
                 {
                     title: "Test Guideline - Hypertension",
                     organisation: "Test Org", 
                     downloadUrl: "test-hypertension.pdf",
-                    summary: "Test guideline for hypertension testing"
+                    summary: "Test guideline for hypertension testing",
+                    source: 'Fallback'
                 }
             ];
             
             window.globalGuidelines = fallbackGuidelines;
             window.guidelines = fallbackGuidelines;
             
-            this.showAlert('warning', 'Failed to load guidelines from server. Using fallback test data.');
+            this.addActivity('warning', 'Using fallback test guidelines');
+            this.showAlert('warning', 'Using test guidelines - some features may be limited');
         }
     }
     
