@@ -13,6 +13,14 @@ const path = require('path');
 const crypto = require('crypto');
 const PDFParser = require('pdf-parse');
 
+// Initialize Express app
+const app = express();
+
+// Apply middleware
+app.use(cors());
+app.use(express.json());
+app.use(helmet());
+
 // Configure logging
 const winston = require('winston');
 const { format } = winston;
@@ -217,14 +225,10 @@ console.error = (...args) => {
     originalConsoleError.apply(console, args); // Also log to the original console
 };
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Enable trust proxy
 app.set('trust proxy', true);
-
-// Apply helmet first
-app.use(helmet());
 
 // Temporarily disable CSP for testing
 app.use((req, res, next) => {

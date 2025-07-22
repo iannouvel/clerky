@@ -1,0 +1,50 @@
+{
+    "testing": {
+        "accuracy_thresholds": {
+            "excellent": 95,
+            "good": 85,
+            "acceptable": 75,
+            "needs_review": 60
+        },
+        "cost_guidelines": {
+            "per_test_target": 0.02,
+            "daily_budget": 5.00,
+            "warning_threshold": 0.05
+        },
+        "response_times": {
+            "fast": 500,
+            "normal": 1000,
+            "slow": 2000
+        }
+    },
+    "guidelines": {
+        "categories": ["BJOG", "CG", "BMS", "BASHH", "BHIVA", "ESHRE", "FIGO", "GP"],
+        "update_frequency": "monthly",
+        "validation_process": "Each guideline undergoes automated compliance checking and manual clinical review"
+    },
+    "agent_capabilities": {
+        "test_types": [
+            {
+                "name": "Clinical Advice Test",
+                "description": "Validates recommendation generation against guidelines",
+                "typical_accuracy": 92
+            },
+            {
+                "name": "Guideline Relevance Test",
+                "description": "Checks accuracy of guideline matching",
+                "typical_accuracy": 88
+            },
+            {
+                "name": "Compliance Detection Test",
+                "description": "Identifies guideline compliance issues",
+                "typical_accuracy": 95
+            }
+        ],
+        "monitoring": [
+            "Real-time accuracy tracking",
+            "Cost optimization",
+            "Response time analysis",
+            "Provider performance comparison"
+        ]
+    }
+} 
