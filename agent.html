@@ -178,6 +178,36 @@
                 </div>
             </section>
 
+            <!-- Chat Interface -->
+            <section class="chat-section">
+                <h2>💬 Chat with Agent</h2>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message agent-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <div class="message-text">Hello! I'm your autonomous testing agent. You can ask me about test results, request specific tests, or configure settings. How can I help you today?</div>
+                                <div class="message-time">Now</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input-container">
+                        <div class="chat-input-wrapper">
+                            <input type="text" id="chatInput" placeholder="Ask me about tests, results, or system status..." maxlength="500">
+                            <button id="sendChatBtn" class="btn btn-primary btn-small">
+                                <span>Send</span>
+                            </button>
+                        </div>
+                        <div class="chat-suggestions">
+                            <button class="suggestion-btn" data-suggestion="How are the tests performing?">How are tests performing?</button>
+                            <button class="suggestion-btn" data-suggestion="Run a test for diabetes management">Test diabetes management</button>
+                            <button class="suggestion-btn" data-suggestion="What's the current accuracy rate?">Current accuracy rate?</button>
+                            <button class="suggestion-btn" data-suggestion="Show me cost breakdown">Cost breakdown</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Recent Test Results -->
             <section class="results-section">
                 <h2>🧪 Recent Test Results</h2>

@@ -106,7 +106,12 @@ class WebAutonomousAgent {
             exportReport: document.getElementById('exportReport'),
             
             // Alerts container
-            alertsContainer: document.getElementById('alertsContainer')
+            alertsContainer: document.getElementById('alertsContainer'),
+            
+            // Chat interface
+            chatMessages: document.getElementById('chatMessages'),
+            chatInput: document.getElementById('chatInput'),
+            sendChatBtn: document.getElementById('sendChatBtn')
         };
     }
     
@@ -202,6 +207,23 @@ class WebAutonomousAgent {
         this.elements.exportCsv.addEventListener('click', () => this.exportCsv());
         this.elements.exportJson.addEventListener('click', () => this.exportJson());
         this.elements.exportReport.addEventListener('click', () => this.generateReport());
+        
+        // Chat event listeners
+        this.elements.sendChatBtn.addEventListener('click', () => this.sendChatMessage());
+        this.elements.chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                this.sendChatMessage();
+            }
+        });
+        
+        // Chat suggestion buttons
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('suggestion-btn')) {
+                const suggestion = e.target.getAttribute('data-suggestion');
+                this.elements.chatInput.value = suggestion;
+                this.sendChatMessage();
+            }
+        });
     }
     
     async signIn() {
@@ -1065,6 +1087,202 @@ class WebAutonomousAgent {
         alert.querySelector('.alert-close').addEventListener('click', () => {
             alert.parentNode.removeChild(alert);
         });
+    }
+    
+    // Chat functionality
+    async sendChatMessage() {
+        const message = this.elements.chatInput.value.trim();
+        if (!message) return;
+        
+        // Clear input
+        this.elements.chatInput.value = '';
+        
+        // Add user message to chat
+        this.addChatMessage(message, 'user');
+        
+        // Show typing indicator
+        this.showTypingIndicator();
+        
+        try {
+            // Process the message and get response
+            const response = await this.processChatMessage(message);
+            
+            // Remove typing indicator
+            this.hideTypingIndicator();
+            
+            // Add agent response
+            this.addChatMessage(response, 'agent');
+        } catch (error) {
+            this.hideTypingIndicator();
+            this.addChatMessage('Sorry, I encountered an error processing your request. Please try again.', 'agent');
+            console.error('Chat error:', error);
+        }
+        
+        // Scroll to bottom
+        this.scrollChatToBottom();
+    }
+    
+    addChatMessage(text, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        const avatar = sender === 'agent' ? '🤖' : '👤';
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        
+        messageDiv.innerHTML = `
+            <div class="message-avatar">${avatar}</div>
+            <div class="message-content">
+                <div class="message-text">${text}</div>
+                <div class="message-time">${time}</div>
+            </div>
+        `;
+        
+        this.elements.chatMessages.appendChild(messageDiv);
+    }
+    
+    showTypingIndicator() {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message agent-message typing-indicator-message';
+        typingDiv.innerHTML = `
+            <div class="message-avatar">🤖</div>
+            <div class="typing-indicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+        `;
+        
+        this.elements.chatMessages.appendChild(typingDiv);
+        this.scrollChatToBottom();
+    }
+    
+    hideTypingIndicator() {
+        const typingIndicator = this.elements.chatMessages.querySelector('.typing-indicator-message');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    }
+    
+    scrollChatToBottom() {
+        this.elements.chatMessages.scrollTop = this.elements.chatMessages.scrollHeight;
+    }
+    
+    async processChatMessage(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Handle specific commands and questions
+        if (lowerMessage.includes('test') && (lowerMessage.includes('run') || lowerMessage.includes('start'))) {
+            return this.handleTestRequest(message);
+        } else if (lowerMessage.includes('accuracy') || lowerMessage.includes('performance')) {
+            return this.handleAccuracyQuery();
+        } else if (lowerMessage.includes('cost') || lowerMessage.includes('budget') || lowerMessage.includes('spend')) {
+            return this.handleCostQuery();
+        } else if (lowerMessage.includes('status') || lowerMessage.includes('how are') || lowerMessage.includes('performing')) {
+            return this.handleStatusQuery();
+        } else if (lowerMessage.includes('help') || lowerMessage.includes('what can')) {
+            return this.handleHelpQuery();
+        } else if (lowerMessage.includes('results') || lowerMessage.includes('history')) {
+            return this.handleResultsQuery();
+        } else if (lowerMessage.includes('stop') || lowerMessage.includes('pause')) {
+            return this.handleStopRequest();
+        } else if (lowerMessage.includes('reset') || lowerMessage.includes('clear')) {
+            return this.handleResetRequest();
+        } else {
+            // Use AI to respond to general queries
+            return await this.getAIResponse(message);
+        }
+    }
+    
+    handleTestRequest(message) {
+        if (this.isRunning) {
+            return "Tests are already running! You can monitor progress in the activity feed above. Use 'stop testing' to halt current tests.";
+        } else {
+            // Extract specific condition if mentioned
+            const conditions = ['diabetes', 'hypertension', 'asthma', 'pregnancy', 'cardiac', 'respiratory'];
+            const mentionedCondition = conditions.find(condition => message.toLowerCase().includes(condition));
+            
+            if (mentionedCondition) {
+                return `I'll start testing with a focus on ${mentionedCondition} management. Click the 'Start Testing' button above or I can begin autonomous testing now.`;
+            } else {
+                return "I'll start the autonomous testing process. You can adjust the budget and test parameters in the control panel above, then click 'Start Testing'.";
+            }
+        }
+    }
+    
+    handleAccuracyQuery() {
+        const avgAccuracy = this.data.results.length > 0 ? 
+            (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / this.data.results.length * 100).toFixed(1) : 0;
+        const totalTests = this.data.results.length;
+        
+        return `Current system accuracy: ${avgAccuracy}% based on ${totalTests} tests. The autonomous agent tests various clinical scenarios and measures how well the system identifies compliance issues and provides appropriate recommendations.`;
+    }
+    
+    handleCostQuery() {
+        const costUsed = this.data.metrics.costUsed.toFixed(3);
+        const budget = parseFloat(this.elements.maxCost.value);
+        const remaining = (budget - this.data.metrics.costUsed).toFixed(3);
+        
+        return `Budget status: $${costUsed} used of $${budget.toFixed(2)} budget. Remaining: $${remaining}. Average cost per test: $${(this.data.metrics.costUsed / Math.max(this.data.results.length, 1)).toFixed(4)}.`;
+    }
+    
+    handleStatusQuery() {
+        const status = this.isRunning ? 'Running' : 'Stopped';
+        const tests = this.data.results.length;
+        const accuracy = tests > 0 ? (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / tests * 100).toFixed(1) : 0;
+        
+        return `Agent status: ${status}. Completed ${tests} tests with ${accuracy}% average accuracy. ${this.isRunning ? 'Currently testing clinical compliance scenarios.' : 'Ready to start testing when you are.'}`;
+    }
+    
+    handleHelpQuery() {
+        return `I can help you with:\n\n🧪 **Testing**: "Run a test for diabetes" or "Start testing"\n📊 **Analytics**: "What's the current accuracy rate?" or "Show cost breakdown"\n📈 **Status**: "How are tests performing?" or "Current status"\n⚙️ **Control**: "Stop testing" or "Reset data"\n\nI monitor your clinical guidelines system by testing various scenarios and measuring accuracy. Just ask me anything about the testing process!`;
+    }
+    
+    handleResultsQuery() {
+        const recentResults = this.data.results.slice(-3);
+        if (recentResults.length === 0) {
+            return "No test results yet. Start testing to see how your clinical guidelines system performs!";
+        }
+        
+        const summary = recentResults.map(r => 
+            `• ${r.endpoint} test: ${(r.accuracy_score * 100).toFixed(1)}% accuracy, $${r.actual_cost.toFixed(4)} cost`
+        ).join('\n');
+        
+        return `Recent test results:\n${summary}\n\nSee the full results table below for detailed analysis.`;
+    }
+    
+    handleStopRequest() {
+        if (this.isRunning) {
+            this.stopTesting();
+            return "Testing stopped. You can review the results above or restart testing anytime.";
+        } else {
+            return "Testing is not currently running. Use 'start testing' to begin autonomous tests.";
+        }
+    }
+    
+    handleResetRequest() {
+        return "I can help you reset the data. Click the 'Reset Data' button in the control panel to clear all test results and start fresh. This will reset costs, accuracy metrics, and test history.";
+    }
+    
+    async getAIResponse(message) {
+        try {
+            // Use the existing AI infrastructure to generate contextual responses
+            const context = {
+                testResults: this.data.results.length,
+                accuracy: this.data.results.length > 0 ? 
+                    (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / this.data.results.length * 100).toFixed(1) : 0,
+                costUsed: this.data.metrics.costUsed.toFixed(3),
+                isRunning: this.isRunning
+            };
+            
+            // For now, provide a helpful fallback response
+            return `I understand you're asking about "${message}". Based on current testing data: ${context.testResults} tests completed with ${context.accuracy}% accuracy. I'm designed to help with test analysis, system monitoring, and performance insights. Could you be more specific about what you'd like to know?`;
+            
+        } catch (error) {
+            console.error('AI response error:', error);
+            return "I'm here to help with testing and analysis questions. Try asking about test results, accuracy rates, cost breakdowns, or system status.";
+        }
     }
 }
 
