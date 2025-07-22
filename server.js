@@ -22,11 +22,14 @@ const stringSimilarity = require('string-similarity');
 // Configure punycode to be used instead of built-in module
 process.env.NODE_OPTIONS = '--no-deprecation';
 
-// Create logs directory if it doesn't exist
+// Create required directories if they don't exist
 const logsDir = path.join(__dirname, 'logs');
-if (!fs.existsSync(logsDir)) {
-    fs.mkdirSync(logsDir, { recursive: true });
-}
+const knowledgeDir = path.join(__dirname, 'knowledge');
+[logsDir, knowledgeDir].forEach(dir => {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+    }
+});
 
 // Configure Winston logger
 const logger = winston.createLogger({
@@ -69,16 +72,67 @@ console.error = (...args) => logger.error(args.join(' '));
 console.warn = (...args) => logger.warn(args.join(' '));
 console.debug = (...args) => logger.debug(args.join(' '));
 
-// Load prompts configuration
-let prompts;
+// Load prompts and agent knowledge configuration
+let prompts, agentKnowledge;
 try {
     prompts = require('./prompts.json');
+    agentKnowledge = require('./agent_knowledge.json');
 } catch (error) {
-    console.error('Error loading prompts.json, creating default:', error);
+    console.error('Error loading configuration files:', error);
     prompts = {
         guidelines: {
             prompt: "Please identify ONLY the guidelines that DIRECTLY address the management of this specific clinical issue. \nThe guidelines must contain specific recommendations or protocols for managing this exact condition.\n\nRules:\n- Select ONLY guidelines the most relevant 1 or 2 guidelines that have this issue as their primary focus\n- Return ONLY the exact filenames of relevant guidelines\n- List each filename on a new line\n- Do not add any additional text or explanations\n\nIssue: {{text}}\n\nAvailable guidelines:\n{{guidelines}}",
             system_prompt: "You are a medical AI assistant helping to identify relevant clinical guidelines for specific medical issues."
+        }
+    };
+    agentKnowledge = {
+        testing: {
+            accuracy_thresholds: {
+                excellent: 95,
+                good: 85,
+                acceptable: 75,
+                needs_review: 60
+            },
+            cost_guidelines: {
+                per_test_target: 0.02,
+                daily_budget: 5.00,
+                warning_threshold: 0.05
+            },
+            response_times: {
+                fast: 500,
+                normal: 1000,
+                slow: 2000
+            }
+        },
+        guidelines: {
+            categories: ["BJOG", "CG", "BMS", "BASHH", "BHIVA", "ESHRE", "FIGO", "GP"],
+            update_frequency: "monthly",
+            validation_process: "Each guideline undergoes automated compliance checking and manual clinical review"
+        },
+        agent_capabilities: {
+            test_types: [
+                {
+                    name: "Clinical Advice Test",
+                    description: "Validates recommendation generation against guidelines",
+                    typical_accuracy: 92
+                },
+                {
+                    name: "Guideline Relevance Test",
+                    description: "Checks accuracy of guideline matching",
+                    typical_accuracy: 88
+                },
+                {
+                    name: "Compliance Detection Test",
+                    description: "Identifies guideline compliance issues",
+                    typical_accuracy: 95
+                }
+            ],
+            monitoring: [
+                "Real-time accuracy tracking",
+                "Cost optimization",
+                "Response time analysis",
+                "Provider performance comparison"
+            ]
         }
     };
 }
@@ -97,6 +151,58 @@ console.log = (...args) => {
     serverLogStream.write(`[${timestamp}] [LOG] ${message}\n`);
     originalConsoleLog.apply(console, args); // Also log to the original console
 };
+
+// Function to load agent knowledge from Firestore
+async function loadAgentKnowledge() {
+    try {
+        const knowledgeRef = admin.firestore().collection('agent_knowledge');
+        const snapshot = await knowledgeRef.get();
+        
+        const knowledge = {};
+        snapshot.forEach(doc => {
+            knowledge[doc.id] = doc.data();
+        });
+        
+        // Merge with static knowledge
+        return {
+            ...agentKnowledge,
+            dynamic: knowledge
+        };
+    } catch (error) {
+        console.error('Error loading agent knowledge from Firestore:', error);
+        return agentKnowledge;
+    }
+}
+
+// Endpoint to get agent knowledge
+app.get('/getAgentKnowledge', authenticateUser, async (req, res) => {
+    try {
+        const knowledge = await loadAgentKnowledge();
+        
+        // Add user-specific customizations if available
+        const userCustomizations = await admin.firestore()
+            .collection('users')
+            .doc(req.user.uid)
+            .collection('agent_preferences')
+            .doc('knowledge')
+            .get();
+            
+        if (userCustomizations.exists) {
+            knowledge.user_specific = userCustomizations.data();
+        }
+        
+        res.json({
+            success: true,
+            knowledge
+        });
+    } catch (error) {
+        console.error('Error serving agent knowledge:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to load agent knowledge'
+        });
+    }
+});
 
 // Override console.error
 console.error = (...args) => {

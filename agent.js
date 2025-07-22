@@ -1402,23 +1402,122 @@ class WebAutonomousAgent {
         return "I can help you reset the data. Click the 'Reset Data' button in the control panel to clear all test results and start fresh. This will reset costs, accuracy metrics, and test history.";
     }
     
+    async loadKnowledgeBase() {
+        try {
+            const idToken = await this.currentUser.getIdToken();
+            const response = await fetch(`${window.SERVER_URL}/getAgentKnowledge`, {
+                headers: {
+                    'Authorization': `Bearer ${idToken}`
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to load knowledge base: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            this.knowledgeBase = data.knowledge || {};
+            console.log('📚 Loaded agent knowledge base:', Object.keys(this.knowledgeBase).length, 'entries');
+        } catch (error) {
+            console.warn('⚠️ Failed to load knowledge base:', error);
+            this.knowledgeBase = {};
+        }
+    }
+    
     async getAIResponse(message) {
         try {
-            // Use the existing AI infrastructure to generate contextual responses
+            // Get auth token
+            const idToken = await this.currentUser.getIdToken();
+            
+            // Ensure knowledge base is loaded
+            if (!this.knowledgeBase) {
+                await this.loadKnowledgeBase();
+            }
+            
+            // Build rich context for AI
             const context = {
-                testResults: this.data.results.length,
-                accuracy: this.data.results.length > 0 ? 
-                    (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / this.data.results.length * 100).toFixed(1) : 0,
-                costUsed: this.data.metrics.costUsed.toFixed(3),
-                isRunning: this.isRunning
+                testResults: this.data?.results || [],
+                metrics: {
+                    totalTests: this.data?.metrics?.totalTests || 0,
+                    accuracy: this.data?.results?.length > 0 ? 
+                        (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / this.data.results.length * 100).toFixed(1) : 0,
+                    costUsed: this.data?.metrics?.costUsed?.toFixed(3) || '0.000',
+                    averageResponseTime: this.data?.metrics?.averageResponseTime || 0
+                },
+                systemState: {
+                    isRunning: this.isRunning,
+                    maxTests: this.maxTests,
+                    maxCost: this.maxCostUSD,
+                    guidelines: window.globalGuidelines?.length || 0
+                },
+                recentActivity: this.elements.activityFeed?.innerText?.split('\n').slice(0, 5) || [],
+                knowledgeBase: this.knowledgeBase
             };
             
-            // For now, provide a helpful fallback response
-            return `I understand you're asking about "${message}". Based on current testing data: ${context.testResults} tests completed with ${context.accuracy}% accuracy. I'm designed to help with test analysis, system monitoring, and performance insights. Could you be more specific about what you'd like to know?`;
+            // First try to get relevant guidelines for the question
+            const guidelinesResponse = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({
+                    transcript: message,
+                    guidelines: window.globalGuidelines || []
+                })
+            });
+            
+            let relevantGuidelines = [];
+            if (guidelinesResponse.ok) {
+                const data = await guidelinesResponse.json();
+                if (data.success && data.categories?.mostRelevant) {
+                    relevantGuidelines = data.categories.mostRelevant;
+                }
+            }
+            
+            // Then get AI response with full context
+            const response = await fetch(`${window.SERVER_URL}/generateChatSummary`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({
+                    userInput: message,
+                    context: {
+                        ...context,
+                        relevantGuidelines
+                    },
+                    role: 'autonomous_testing_agent'
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`AI response failed: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            if (!result.success) {
+                throw new Error(result.error || 'Failed to generate AI response');
+            }
+            
+            return result.summary || result.response;
             
         } catch (error) {
             console.error('AI response error:', error);
-            return "I'm here to help with testing and analysis questions. Try asking about test results, accuracy rates, cost breakdowns, or system status.";
+            
+            // Provide helpful fallback based on message type
+            if (message.toLowerCase().includes('test') || message.toLowerCase().includes('run')) {
+                return this.handleTestRequest(message);
+            } else if (message.toLowerCase().includes('accuracy')) {
+                return this.handleAccuracyQuery();
+            } else if (message.toLowerCase().includes('cost')) {
+                return this.handleCostQuery();
+            } else if (message.toLowerCase().includes('status')) {
+                return this.handleStatusQuery();
+            }
+            
+            return "I apologize, but I'm having trouble connecting to the AI service. I can still help with basic queries about test results, accuracy rates, costs, and system status. What would you like to know?";
         }
     }
 }
