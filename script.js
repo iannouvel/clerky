@@ -4294,7 +4294,7 @@ async function processWorkflow() {
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToSummary1(workflowStart, true);
+        appendToSummary1(workflowStart, false);
 
         console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
         
@@ -5980,7 +5980,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] Processing guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title}`);
 
     const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
-    appendToSummary1(analyzeMessage, true);
+    appendToSummary1(analyzeMessage, false);
 
     // Directly generate dynamic advice for this guideline without server analysis
     // Store the latest analysis for potential dynamic advice
