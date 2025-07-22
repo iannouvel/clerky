@@ -409,9 +409,23 @@ class WebAutonomousAgent {
             throw new Error('No test transcripts available');
         }
         
+        // Initialize/reset test data
+        this.data = {
+            results: [],
+            metrics: {
+                totalTests: 0,
+                successfulTests: 0,
+                costUsed: 0,
+                averageAccuracy: 0,
+                averageResponseTime: 0
+            },
+            providerStats: {}
+        };
+        
         this.addActivity('info', `Starting tests with budget $${this.maxCostUSD.toFixed(2)} and ${this.maxTests} max tests`);
         
         let testIndex = 0;
+        let activeTests = new Set(); // Track active test scenarios
         
         const runSingleTest = async () => {
             if (!this.isRunning) return;
@@ -422,31 +436,56 @@ class WebAutonomousAgent {
                 return;
             }
             
+            // Don't start new test if we've reached the limit
+            if (testIndex >= this.maxTests) {
+                this.stopTesting();
+                return;
+            }
+            
             const condition = transcriptKeys[testIndex % transcriptKeys.length];
             const scenario = this.generateTestScenario(condition, testIndex);
             
-            this.addActivity('info', `Running test ${this.testCount + 1}: ${scenario.name}`);
+            // Track this test
+            activeTests.add(scenario.id || testIndex);
+            
+            this.addActivity('info', `Running test ${testIndex + 1}: ${scenario.name}`);
             
             try {
                 const result = await this.runSingleTest(scenario);
-                this.processTestResult(result);
                 
-                testIndex++;
-                
-                // Update progress
-                const progress = (this.testCount / this.maxTests) * 100;
-                this.updateProgress(progress);
+                // Only process result if we're still running and haven't hit limits
+                if (this.isRunning && testIndex < this.maxTests) {
+                    this.processTestResult(result);
+                    testIndex++;
+                    
+                    // Update progress (cap at 100%)
+                    const progress = Math.min((testIndex / this.maxTests) * 100, 100);
+                    this.updateProgress(progress);
+                }
                 
             } catch (error) {
                 console.error('Test failed:', error);
                 this.addActivity('error', `Test failed: ${error.message}`);
+            } finally {
+                // Always remove from active tests
+                activeTests.delete(scenario.id || testIndex);
             }
         };
         
-        // Start the testing loop
-        await runSingleTest(); // Run first test immediately
-        
-        this.testingInterval = setInterval(runSingleTest, this.testInterval);
+        try {
+            // Start the testing loop
+            await runSingleTest(); // Run first test immediately
+            
+            if (this.isRunning) {
+                this.testingInterval = setInterval(runSingleTest, this.testInterval);
+            }
+        } finally {
+            // Clean up any remaining active tests
+            if (activeTests.size > 0) {
+                this.addActivity('warning', `Cleaning up ${activeTests.size} incomplete tests...`);
+                activeTests.clear();
+            }
+        }
     }
     
     checkLimits() {
@@ -1287,11 +1326,34 @@ class WebAutonomousAgent {
     }
     
     handleAccuracyQuery() {
+        if (!this.data?.results) {
+            return "No test results available yet. Start testing to see accuracy metrics.";
+        }
+        
         const avgAccuracy = this.data.results.length > 0 ? 
             (this.data.results.reduce((sum, r) => sum + r.accuracy_score, 0) / this.data.results.length * 100).toFixed(1) : 0;
         const totalTests = this.data.results.length;
         
-        return `Current system accuracy: ${avgAccuracy}% based on ${totalTests} tests. The autonomous agent tests various clinical scenarios and measures how well the system identifies compliance issues and provides appropriate recommendations.`;
+        let response = `Current system accuracy: ${avgAccuracy}% based on ${totalTests} tests.`;
+        
+        // Add breakdown by test type if available
+        const testTypes = {};
+        this.data.results.forEach(r => {
+            const type = r.scenario?.type || 'unknown';
+            if (!testTypes[type]) {
+                testTypes[type] = { count: 0, totalAccuracy: 0 };
+            }
+            testTypes[type].count++;
+            testTypes[type].totalAccuracy += r.accuracy_score;
+        });
+        
+        // Add type-specific accuracies
+        Object.entries(testTypes).forEach(([type, stats]) => {
+            const typeAccuracy = (stats.totalAccuracy / stats.count * 100).toFixed(1);
+            response += `\n• ${type.replace('_', ' ')}: ${typeAccuracy}% (${stats.count} tests)`;
+        });
+        
+        return response;
     }
     
     handleCostQuery() {
