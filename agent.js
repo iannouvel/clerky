@@ -120,6 +120,26 @@ class WebAutonomousAgent {
                 this.onUserSignedOut();
             }
         });
+        
+        // Load guidelines for testing
+        this.loadGuidelines();
+    }
+    
+    async loadGuidelines() {
+        try {
+            const response = await fetch(`${this.serverUrl}/getGuidelinesList`);
+            if (response.ok) {
+                const guidelines = await response.json();
+                window.globalGuidelines = guidelines;
+                console.log('📚 Loaded guidelines for testing:', guidelines.length);
+            } else {
+                console.warn('Failed to load guidelines, using empty array');
+                window.globalGuidelines = [];
+            }
+        } catch (error) {
+            console.warn('Error loading guidelines:', error);
+            window.globalGuidelines = [];
+        }
     }
     
     async onUserSignedIn(user) {
@@ -497,7 +517,11 @@ class WebAutonomousAgent {
                 };
             
             case '/findRelevantGuidelines':
-                return basePayload;
+                return {
+                    ...basePayload,
+                    guidelines: window.globalGuidelines || [],
+                    anonymisationInfo: null
+                };
             
             default:
                 return basePayload;
