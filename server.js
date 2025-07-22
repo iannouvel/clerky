@@ -128,10 +128,10 @@ const logger = winston.createLogger({
 });
 
 // Override console methods to use Winston
-console.log = (...args) => logger.info(args.join(' '));
-console.error = (...args) => logger.error(args.join(' '));
-console.warn = (...args) => logger.warn(args.join(' '));
-console.debug = (...args) => logger.debug(args.join(' '));
+console.log = (...args) => logger.info(...args);
+console.error = (...args) => logger.error(...args);
+console.warn = (...args) => logger.warn(...args);
+console.debug = (...args) => logger.debug(...args);
 
 // Load prompts and agent knowledge configuration
 let prompts, agentKnowledge;
@@ -267,14 +267,21 @@ app.get('/getAgentKnowledge', authenticateUser, async (req, res) => {
 
 // Override console.error
 console.error = (...args) => {
+    // Enhanced error logging that preserves error objects
+    const timestamp = new Date().toISOString();
+    
+    // Create a detailed message for file logging
     const message = args.map(arg => {
         if (arg instanceof Error) {
             return `Error: ${arg.message}\nStack: ${arg.stack}`;
         }
-        return typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg;
+        return typeof arg === 'object' ? JSON.stringify(arg, Object.getOwnPropertyNames(arg), 2) : arg;
     }).join(' ');
-    const timestamp = new Date().toISOString();
+    
     serverLogStream.write(`[${timestamp}] [ERROR] ${message}\n`);
+    
+    // Pass original arguments to preserve error objects in Winston
+    logger.error(...args);
     originalConsoleError.apply(console, args); // Also log to the original console
 };
 
@@ -853,10 +860,16 @@ try {
   console.error('[ERROR] Firebase: Error initializing Firebase Admin SDK:', {
     message: error.message,
     stack: error.stack,
-    hasProjectId: !!process.env.FIREBASE_PROJECT_ID,
-    hasClientEmail: !!process.env.FIREBASE_CLIENT_EMAIL,
-    hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY,
-    privateKeyLength: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.length : 0
+    code: error.code,
+    errorObject: JSON.stringify(error, Object.getOwnPropertyNames(error)),
+    context: {
+      hasProjectId: !!process.env.FIREBASE_PROJECT_ID,
+      hasClientEmail: !!process.env.FIREBASE_CLIENT_EMAIL,
+      hasPrivateKey: !!process.env.FIREBASE_PRIVATE_KEY_BASE64 || !!process.env.FIREBASE_PRIVATE_KEY,
+      privateKeySource: process.env.FIREBASE_PRIVATE_KEY_BASE64 ? 'base64' : (process.env.FIREBASE_PRIVATE_KEY ? 'raw' : 'none'),
+      initializationStage: 'Firebase Admin SDK initialization',
+      timestamp: new Date().toISOString()
+    }
   });
   console.log('[DEBUG] Firebase: Continuing without Firebase Firestore due to initialization error');
   console.log('[DEBUG] Firebase: The application will work with limited functionality (no guideline persistence)');
