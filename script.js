@@ -7926,6 +7926,15 @@ function extractRelevanceScore(relevanceText) {
 }
 
 // Make Q&A functions globally accessible
+// Define the selectAllQuestionGuidelines function
+function selectAllQuestionGuidelines() {
+    const guidelines = document.querySelectorAll('.question-guideline');
+    guidelines.forEach(guideline => {
+        guideline.checked = true;
+        guideline.dispatchEvent(new Event('change'));
+    });
+}
+
 window.selectAllQuestionGuidelines = selectAllQuestionGuidelines;
 window.processQuestionAgainstGuidelines = processQuestionAgainstGuidelines;
 window.cancelQuestionSelection = cancelQuestionSelection;
