@@ -13,6 +13,15 @@ const path = require('path');
 const crypto = require('crypto');
 const PDFParser = require('pdf-parse');
 
+// Initialize Firebase Admin
+try {
+    admin.initializeApp({
+        credential: admin.credential.applicationDefault()
+    });
+} catch (error) {
+    console.error('Error initializing Firebase Admin:', error);
+}
+
 // Initialize Express app
 const app = express();
 
@@ -20,6 +29,23 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
+
+// Authentication middleware
+const authenticateUser = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+        return res.status(401).json({ message: 'No authorization header' });
+    }
+    try {
+        // Verify Firebase token
+        const token = authHeader.split('Bearer ')[1];
+        const decodedToken = await admin.auth().verifyIdToken(token);
+        req.user = decodedToken;
+        next();
+    } catch (error) {
+        res.status(401).json({ message: 'Invalid token' });
+    }
+};
 
 // Configure logging
 const winston = require('winston');
@@ -671,13 +697,6 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
         return false;
     }
 }
-
-// Initialize Firebase Admin
-console.log('[DEBUG] Firebase: Starting Firebase Admin SDK initialization...');
-console.log('[DEBUG] Firebase: Project ID:', process.env.FIREBASE_PROJECT_ID ? 'SET' : 'NOT SET');
-console.log('[DEBUG] Firebase: Client Email:', process.env.FIREBASE_CLIENT_EMAIL ? 'SET' : 'NOT SET');
-console.log('[DEBUG] Firebase: Private Key exists:', !!process.env.FIREBASE_PRIVATE_KEY);
-console.log('[DEBUG] Firebase: Private Key Base64 exists:', !!process.env.FIREBASE_PRIVATE_KEY_BASE64);
 
 // Set default AI provider to DeepSeek if not already set
 if (!process.env.PREFERRED_AI_PROVIDER) {
@@ -1601,22 +1620,6 @@ async function routeToAI(prompt, userId = null) {
   }
 }
 
-const authenticateUser = async (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) {
-    return res.status(401).json({ message: 'No authorization header' });
-  }
-  try {
-    // Verify Firebase token
-    const token = authHeader.split('Bearer ')[1];
-    const decodedToken = await admin.auth().verifyIdToken(token);
-    req.user = decodedToken;
-    next();
-  } catch (error) {
-    res.status(401).json({ message: 'Invalid token' });
-  }
-};
-
 // New endpoint to handle action button functionality for the client
 app.post('/handleAction', authenticateUser, async (req, res) => {
     const { prompt, selectedGuideline } = req.body;
@@ -1750,7 +1753,7 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
 });
 
 // New endpoint to handle action button functionality
-app.post('/newActionEndpoint', async (req, res) => {
+app.post('/newActionEndpoint', authenticateUser, async (req, res) => {
     const { prompt } = req.body;
 
     if (!prompt) {
@@ -2835,7 +2838,7 @@ app.post('/handleIssues', authenticateUser, async (req, res) => {
 });
 
 // Update the SendToAI endpoint to use system prompt
-app.post('/SendToAI', async (req, res) => {
+app.post('/SendToAI', authenticateUser, async (req, res) => {
     const { prompt, selectedGuideline, comments } = req.body;
     const filePath = `algos/${selectedGuideline}`;
 
@@ -3069,27 +3072,42 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 
                 // Find the best match for the AI-returned title in our original list
                 const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
-                
-                // Find the full guideline object from the original chunk using the best-matched title
-                const originalGuideline = originalChunk.find(g => g.title === bestMatch.target);
 
-                if (originalGuideline) {
-                    return {
-                        ...originalGuideline, // Preserve all original fields including downloadUrl
-                        relevance: item.relevance || '0.5' // Override with AI-determined relevance
-                    };
-                } else {
-                    // This should rarely happen with a good match
-                    return {
-                        id: 'unknown-no-match',
-                        title: item.title, // Keep the AI title for debugging
-                        relevance: item.relevance || '0.0'
-                    };
+                // Use a threshold to ensure the match is good enough
+                if (bestMatch.rating > 0.7) { 
+                    guideline = originalChunk.find(g => g.title === bestMatch.target);
+                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                }
+                
+                // Extract relevance score
+                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
+                if (relevanceMatch) {
+                    relevance = relevanceMatch[1];
+                }
+                
+                // Add to category if we found a match
+                if (guideline) {
+                    categories[currentCategory].push({
+                        ...guideline, // Preserve all original fields including downloadUrl
+                        relevance: relevance // Override with extracted relevance
+                    });
+                    
+                    parsedCount++;
+                    console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${currentCategory} (${relevance})`);
+                } else if (trimmed.length > 10 && !trimmed.toLowerCase().includes('relevant')) {
+                    // Log failed matches for debugging
+                    console.log(`[DEBUG] Could not match line to any guideline: "${trimmed.substring(0, 50)}..."`);
                 }
             });
         });
         
-        return { success: true, categories: cleanedCategories };
+        console.log('[DEBUG] Text parsing completed:', {
+            totalParsed: parsedCount,
+            totalOriginal: originalChunk.length,
+            categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
+        });
+        
+        return { success: true, categories };
     } catch (jsonError) {
         console.log('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
