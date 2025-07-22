@@ -131,38 +131,61 @@ class WebAutonomousAgent {
         try {
             console.log('📚 Loading guidelines for autonomous testing...');
             
-            // Use the existing loadGuidelinesFromFirestore function from script.js
-            if (typeof loadGuidelinesFromFirestore === 'function') {
-                const guidelines = await loadGuidelinesFromFirestore();
-                window.globalGuidelines = guidelines || [];
-                console.log('✅ Loaded guidelines for testing:', window.globalGuidelines.length);
+            const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+                headers: {
+                    'Authorization': `Bearer ${this.authToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            console.log('📡 Guidelines API Response Status:', response.status);
+            
+            if (response.ok) {
+                const responseText = await response.text();
+                console.log('📄 Raw response (first 200 chars):', responseText.substring(0, 200));
                 
-                // Also set window.guidelines for compatibility
-                window.guidelines = window.globalGuidelines;
-            } else {
-                // Fallback to direct API call if script.js function isn't available
-                console.log('📋 Falling back to direct API call...');
-                const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
-                    headers: {
-                        'Authorization': `Bearer ${this.authToken}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    const guidelines = await response.json();
+                try {
+                    const guidelines = JSON.parse(responseText);
                     window.globalGuidelines = guidelines;
                     window.guidelines = guidelines;
                     console.log('✅ Loaded guidelines via API:', guidelines.length);
-                } else {
-                    throw new Error(`API returned ${response.status}: ${response.statusText}`);
+                    this.addActivity('success', `Loaded ${guidelines.length} guidelines for testing`);
+                } catch (jsonError) {
+                    console.error('❌ JSON Parse Error:', jsonError);
+                    console.error('📄 Full response text:', responseText);
+                    throw new Error(`Invalid JSON response: ${jsonError.message}`);
                 }
+            } else {
+                const errorText = await response.text();
+                console.error('❌ API Error Response:', errorText);
+                throw new Error(`API returned ${response.status}: ${response.statusText}`);
             }
         } catch (error) {
             console.warn('⚠️ Error loading guidelines:', error);
             window.globalGuidelines = [];
             window.guidelines = [];
-            this.showAlert('warning', 'Failed to load guidelines. Some testing features may be limited.');
+            this.addActivity('warning', 'Failed to load guidelines. Using fallback data for testing.');
+            
+            // Provide some basic fallback guidelines for testing
+            const fallbackGuidelines = [
+                {
+                    title: "Test Guideline - Diabetes Management",
+                    organisation: "Test Org",
+                    downloadUrl: "test-diabetes.pdf",
+                    summary: "Test guideline for diabetes management testing"
+                },
+                {
+                    title: "Test Guideline - Hypertension",
+                    organisation: "Test Org", 
+                    downloadUrl: "test-hypertension.pdf",
+                    summary: "Test guideline for hypertension testing"
+                }
+            ];
+            
+            window.globalGuidelines = fallbackGuidelines;
+            window.guidelines = fallbackGuidelines;
+            
+            this.showAlert('warning', 'Failed to load guidelines from server. Using fallback test data.');
         }
     }
     
@@ -489,11 +512,20 @@ class WebAutonomousAgent {
             const responseTime = Date.now() - startTime;
             const responseText = await response.text();
             
+            console.log(`📡 ${scenario.endpoint} Response Status:`, response.status);
+            console.log(`📄 ${scenario.endpoint} Response (first 200 chars):`, responseText.substring(0, 200));
+            
             let data;
             try {
                 data = JSON.parse(responseText);
             } catch (e) {
-                data = { raw_response: responseText };
+                console.error(`❌ JSON Parse Error for ${scenario.endpoint}:`, e);
+                console.error(`📄 Full response text:`, responseText);
+                data = { 
+                    raw_response: responseText,
+                    parse_error: e.message,
+                    status: response.status
+                };
             }
             
             // Calculate costs and accuracy
