@@ -15,11 +15,38 @@ const PDFParser = require('pdf-parse');
 
 // Initialize Firebase Admin
 try {
-    admin.initializeApp({
-        credential: admin.credential.applicationDefault()
-    });
+    // First try to use service account from file
+    if (fs.existsSync('./gcloud_key.json')) {
+        const serviceAccount = require('./gcloud_key.json');
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount)
+        });
+        console.log('Firebase Admin initialized with service account file');
+    }
+    // Then try environment variables
+    else if (process.env.FIREBASE_PRIVATE_KEY_BASE64 && process.env.FIREBASE_CLIENT_EMAIL) {
+        // Decode the base64-encoded private key
+        const privateKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
+        
+        admin.initializeApp({
+            credential: admin.credential.cert({
+                projectId: process.env.FIREBASE_PROJECT_ID,
+                clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+                privateKey: privateKey
+            })
+        });
+        console.log('Firebase Admin initialized with environment variables (base64 private key)');
+    }
+    // Finally try application default credentials
+    else {
+        admin.initializeApp({
+            credential: admin.credential.applicationDefault()
+        });
+        console.log('Firebase Admin initialized with application default credentials');
+    }
 } catch (error) {
     console.error('Error initializing Firebase Admin:', error);
+    process.exit(1); // Exit if we can't initialize Firebase - it's critical for auth
 }
 
 // Initialize Express app
