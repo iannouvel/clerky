@@ -3467,7 +3467,7 @@ async function applyAllDecisions() {
                     </style>
                 `;
                 
-                appendToOutputField(finalMessage, false);
+                appendToSummary1(finalMessage, false);
                 console.log('[DEBUG] Sequential processing completed successfully');
             }
         }
