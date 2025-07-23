@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-35-02-361Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1338,
+  "response_length": 1383,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old G...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg16016-management-of-pregnanci...",
+  "full_data": null
+}
