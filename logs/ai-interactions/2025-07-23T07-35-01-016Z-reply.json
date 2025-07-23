@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-35-01-016Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1387,
+  "response_length": 1436,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsussex-fetal-heart-monitoring-guideline-pdf\\\", \\\"title\\\": \\\"Fetal Heart Monito...",
+  "full_data": null
+}
