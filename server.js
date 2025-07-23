@@ -21,7 +21,6 @@ const app = express();
 
 // Apply middleware
 app.use(cors());
-app.use(express.json());
 app.use(helmet());
 
 // Authentication middleware
@@ -2362,6 +2361,19 @@ async function saveToGitHub(content, type) {
         githubTokenLength: githubToken ? githubToken.length : 0
     });
     
+    // OPTIMISATION: Use minimal content instead of full interaction data
+    const minimalContent = {
+        ...summary,
+        // Only include full data for critical failures or important interactions
+        full_data: type.includes('error') || content.critical ? content : null
+    };
+    
+    const jsonBody = {
+        message: `Add ${type} summary: ${timestamp}`,
+        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
+        branch: githubBranch
+    };
+
     // OPTIMISATION: Create minimal log content instead of full text
     const summary = {
         type: type,
@@ -2383,19 +2395,6 @@ async function saveToGitHub(content, type) {
         responseLength: summary.response_length,
         tokenUsage: summary.token_usage
     });
-
-    // OPTIMISATION: Use minimal content instead of full interaction data
-    const minimalContent = {
-        ...summary,
-        // Only include full data for critical failures or important interactions
-        full_data: type.includes('error') || content.critical ? content : null
-    };
-    
-    const jsonBody = {
-        message: `Add ${type} summary: ${timestamp}`,
-        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
-        branch: githubBranch
-    };
 
     // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
@@ -3067,57 +3066,54 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         const parsed = JSON.parse(cleanContent);
         console.log('[DEBUG] JSON parsing successful');
         
-        // Process parsed JSON and match guidelines
+        // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
         const cleanedCategories = {};
         const originalTitles = originalChunk.map(g => g.title);
-        let parsedCount = 0;
 
         Object.keys(parsed).forEach(category => {
-            cleanedCategories[category] = [];
-            
-            if (parsed[category] && Array.isArray(parsed[category])) {
-                parsed[category].forEach(item => {
-                    if (!item.title && !item.id) {
-                        return; // Skip invalid items
-                    }
+            cleanedCategories[category] = (parsed[category] || []).map(item => {
+                if (!item.title) {
+                    return { id: 'unknown-no-title', title: 'Unknown Title', relevance: item.relevance || '0.0' };
+                }
+                
+                // Find the best match for the AI-returned title in our original list
+                const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
+
+                // Use a threshold to ensure the match is good enough
+                if (bestMatch.rating > 0.7) { 
+                    guideline = originalChunk.find(g => g.title === bestMatch.target);
+                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                }
+                
+                // Extract relevance score
+                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
+                if (relevanceMatch) {
+                    relevance = relevanceMatch[1];
+                }
+                
+                // Add to category if we found a match
+                if (guideline) {
+                    categories[currentCategory].push({
+                        ...guideline, // Preserve all original fields including downloadUrl
+                        relevance: relevance // Override with extracted relevance
+                    });
                     
-                    let guideline = null;
-                    
-                    // First try to match by ID if provided
-                    if (item.id) {
-                        guideline = originalChunk.find(g => g.id === item.id);
-                    }
-                    
-                    // If no ID match, try fuzzy title matching
-                    if (!guideline && item.title) {
-                        const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
-                        if (bestMatch.rating > 0.7) {
-                            guideline = originalChunk.find(g => g.title === bestMatch.target);
-                            console.log(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
-                        }
-                    }
-                    
-                    if (guideline) {
-                        cleanedCategories[category].push({
-                            ...guideline,
-                            relevance: item.relevance || '0.0'
-                        });
-                        parsedCount++;
-                        console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${category} (${item.relevance || '0.0'})`);
-                    } else {
-                        console.log(`[DEBUG] Could not match guideline: ${JSON.stringify(item).substring(0, 50)}...`);
-                    }
-                });
-            }
+                    parsedCount++;
+                    console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${currentCategory} (${relevance})`);
+                } else if (trimmed.length > 10 && !trimmed.toLowerCase().includes('relevant')) {
+                    // Log failed matches for debugging
+                    console.log(`[DEBUG] Could not match line to any guideline: "${trimmed.substring(0, 50)}..."`);
+                }
+            });
         });
         
-        console.log('[DEBUG] JSON parsing completed:', {
+        console.log('[DEBUG] Text parsing completed:', {
             totalParsed: parsedCount,
             totalOriginal: originalChunk.length,
-            categoryCounts: Object.keys(cleanedCategories).map(cat => `${cat}: ${cleanedCategories[cat].length}`).join(', ')
+            categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
         });
         
-        return { success: true, categories: cleanedCategories };
+        return { success: true, categories };
     } catch (jsonError) {
         console.log('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
@@ -3208,28 +3204,39 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
-    const { transcript, guidelinesCount, loadGuidelinesOnServer, anonymisationInfo } = req.body;
+    const { transcript, guidelinesPayload, anonymisationInfo } = req.body;
     const userId = req.user.uid;
     
-    // Always load guidelines server-side to minimize payload
-    console.log('[OPTIMIZE] Loading guidelines server-side for maximum efficiency');
-    console.log('[OPTIMIZE] Expected guidelines count:', guidelinesCount || 'unknown');
-    
-    const guidelines = await getAllGuidelines();
-    
-    if (!guidelines || guidelines.length === 0) {
-      console.error('[ERROR] No guidelines loaded from server');
-      return res.status(500).json({
-        success: false,
-        message: 'No guidelines available for processing'
+    // Handle optimized guidelines payload
+    let guidelines = [];
+    if (guidelinesPayload) {
+      // If we have an optimized payload, reconstruct the full guidelines array
+      console.log('[CACHE] Processing optimized guidelines payload:', {
+        newGuidelines: guidelinesPayload.newGuidelines?.length || 0,
+        updatedGuidelines: guidelinesPayload.updatedGuidelines?.length || 0,
+        hasFullCache: guidelinesPayload.hasFullCache,
+        totalCount: guidelinesPayload.totalCount
       });
+      
+      if (guidelinesPayload.hasFullCache) {
+        // Client has cache, only new/updated guidelines sent
+        guidelines = [...(guidelinesPayload.newGuidelines || []), ...(guidelinesPayload.updatedGuidelines || [])];
+        
+        // If we only have partial data, we need to get full guidelines from Firestore
+        if (guidelines.length < guidelinesPayload.totalCount) {
+          console.log('[CACHE] Partial payload received, loading full guidelines from Firestore...');
+                     const fullGuidelines = await getAllGuidelines();
+          guidelines = fullGuidelines;
+        }
+      } else {
+        // No cache, all guidelines should be in newGuidelines
+        guidelines = guidelinesPayload.newGuidelines || [];
+      }
+    } else {
+      // Fallback: load guidelines from Firestore if no payload
+      console.log('[CACHE] No guidelines payload, loading from Firestore...');
+             guidelines = await getAllGuidelines();
     }
-    
-    console.log('[OPTIMIZE] Loaded guidelines successfully:', {
-      count: guidelines.length,
-      expectedCount: guidelinesCount,
-      match: guidelines.length === guidelinesCount
-    });
     
     // Log anonymisation information if provided
     if (anonymisationInfo) {
