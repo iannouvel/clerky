@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-24-09-430Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1379,
+  "response_length": 1423,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/34\",\"transcriptLength\":2701,\"transcriptPreview\":\"**OBSTETRIC CLERKING – SBAR FORMAT**  \\n\\n**SITUATION:**  \\n- **Patient:** 32yo G2P1, 34+2 weeks gestation, BMI 28  \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-gl...",
+  "full_data": null
+}

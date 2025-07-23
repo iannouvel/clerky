@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-24-08-746Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 1446,
+  "response_length": 1433,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/34\",\"transcriptLength\":2701,\"transcriptPreview\":\"**OBSTETRIC CLERKING – SBAR FORMAT**  \\n\\n**SITUATION:**  \\n- **Patient:** 32yo G2P1, 34+2 weeks gestation, BMI 28  \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"0.9\\\"},\\n ...",
+  "full_data": null
+}

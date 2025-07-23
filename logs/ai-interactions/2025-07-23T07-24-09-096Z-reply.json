@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-24-09-096Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1389,
+  "response_length": 1439,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/34\",\"transcriptLength\":2701,\"transcriptPreview\":\"**OBSTETRIC CLERKING – SBAR FORMAT**  \\n\\n**SITUATION:**  \\n- **Patient:** 32yo G2P1, 34+2 weeks gestation, BMI 28  \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsussex-fetal-heart-monitoring-guideline-pdf\\\", \\\"title\\\": \\\"Fetal Heart Monitoring in the Antenatal Period\\\", ...",
+  "full_data": null
+}

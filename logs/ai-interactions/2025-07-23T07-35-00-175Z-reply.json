@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-35-00-175Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 1230,
+  "response_length": 1282,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp045-pyrexia-in-labour-sepsis-pdf\\\", \\\"title\\\": \\\"MP045 Pyrexia in Labour & Sepsis\\\", \\\"relevance\\\": \\\"0.9\\\"}\\n...",
+  "full_data": null
+}
