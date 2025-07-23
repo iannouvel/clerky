@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-35-00-588Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 1291,
+  "response_length": 1343,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"pid-proforma-june-2011v2-pdf\\\", \\\"title\\\": \\\"PID Proforma - June 2011v2\\\", \\\"relevance\\\": \\\"0.8\\\"},\\n    {\\\"id\\\"...",
+  "full_data": null
+}
