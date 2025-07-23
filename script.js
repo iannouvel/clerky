@@ -1743,16 +1743,11 @@ async function findRelevantGuidelines(suppressHeader = false) {
             anonymisationApplied: anonymisationInfo !== null
         });
 
-        // Implement guidelines caching to reduce payload size
-        const cachedGuidelines = getCachedGuidelines();
-        const guidelinesPayload = getOptimizedGuidelinesPayload(guidelinesList, cachedGuidelines);
-        
-        console.log('[DEBUG] Guidelines payload optimization:', {
+        // AGGRESSIVE OPTIMIZATION: Only send metadata, let server load full guidelines
+        console.log('[DEBUG] Using server-side guidelines loading for maximum payload reduction');
+        console.log('[DEBUG] Guidelines available:', {
             totalGuidelines: guidelinesList.length,
-            cachedGuidelines: cachedGuidelines.length,
-            newGuidelines: guidelinesPayload.newGuidelines.length,
-            updatedGuidelines: guidelinesPayload.updatedGuidelines.length,
-            payloadReduction: `${Math.round((1 - (guidelinesPayload.newGuidelines.length + guidelinesPayload.updatedGuidelines.length) / guidelinesList.length) * 100)}%`
+            payloadSize: 'minimal - metadata only'
         });
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
@@ -1763,7 +1758,8 @@ async function findRelevantGuidelines(suppressHeader = false) {
             },
             body: JSON.stringify({
                 transcript: anonymisedTranscript, // Use anonymised transcript
-                guidelinesPayload: guidelinesPayload, // Optimized guidelines payload
+                guidelinesCount: guidelinesList.length, // Just send count for verification
+                loadGuidelinesOnServer: true, // Flag to load guidelines server-side
                 anonymisationInfo: anonymisationInfo // Include anonymisation metadata
             })
         });

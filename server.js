@@ -3205,39 +3205,28 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
-    const { transcript, guidelinesPayload, anonymisationInfo } = req.body;
+    const { transcript, guidelinesCount, loadGuidelinesOnServer, anonymisationInfo } = req.body;
     const userId = req.user.uid;
     
-    // Handle optimized guidelines payload
-    let guidelines = [];
-    if (guidelinesPayload) {
-      // If we have an optimized payload, reconstruct the full guidelines array
-      console.log('[CACHE] Processing optimized guidelines payload:', {
-        newGuidelines: guidelinesPayload.newGuidelines?.length || 0,
-        updatedGuidelines: guidelinesPayload.updatedGuidelines?.length || 0,
-        hasFullCache: guidelinesPayload.hasFullCache,
-        totalCount: guidelinesPayload.totalCount
+    // Always load guidelines server-side to minimize payload
+    console.log('[OPTIMIZE] Loading guidelines server-side for maximum efficiency');
+    console.log('[OPTIMIZE] Expected guidelines count:', guidelinesCount || 'unknown');
+    
+    const guidelines = await getAllGuidelines();
+    
+    if (!guidelines || guidelines.length === 0) {
+      console.error('[ERROR] No guidelines loaded from server');
+      return res.status(500).json({
+        success: false,
+        message: 'No guidelines available for processing'
       });
-      
-      if (guidelinesPayload.hasFullCache) {
-        // Client has cache, only new/updated guidelines sent
-        guidelines = [...(guidelinesPayload.newGuidelines || []), ...(guidelinesPayload.updatedGuidelines || [])];
-        
-        // If we only have partial data, we need to get full guidelines from Firestore
-        if (guidelines.length < guidelinesPayload.totalCount) {
-          console.log('[CACHE] Partial payload received, loading full guidelines from Firestore...');
-                     const fullGuidelines = await getAllGuidelines();
-          guidelines = fullGuidelines;
-        }
-      } else {
-        // No cache, all guidelines should be in newGuidelines
-        guidelines = guidelinesPayload.newGuidelines || [];
-      }
-    } else {
-      // Fallback: load guidelines from Firestore if no payload
-      console.log('[CACHE] No guidelines payload, loading from Firestore...');
-             guidelines = await getAllGuidelines();
     }
+    
+    console.log('[OPTIMIZE] Loaded guidelines successfully:', {
+      count: guidelines.length,
+      expectedCount: guidelinesCount,
+      match: guidelines.length === guidelinesCount
+    });
     
     // Log anonymisation information if provided
     if (anonymisationInfo) {
