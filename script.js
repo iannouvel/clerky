@@ -7977,13 +7977,18 @@ async function askGuidelinesQuestion() {
 
         // Automatically select the top 3 most relevant guidelines
         const allGuidelines = [];
-        data.categories.forEach(category => {
-            category.guidelines.forEach(guideline => {
-                allGuidelines.push({
-                    ...guideline,
-                    relevanceScore: extractRelevanceScore(guideline.relevance)
+        
+        // Properly handle categories as an object (not array)
+        const categoryKeys = ['mostRelevant', 'potentiallyRelevant', 'lessRelevant'];
+        categoryKeys.forEach(categoryKey => {
+            if (data.categories[categoryKey] && Array.isArray(data.categories[categoryKey])) {
+                data.categories[categoryKey].forEach(guideline => {
+                    allGuidelines.push({
+                        ...guideline,
+                        relevanceScore: extractRelevanceScore(guideline.relevance)
+                    });
                 });
-            });
+            }
         });
 
         // Sort by relevance score and take top 3
