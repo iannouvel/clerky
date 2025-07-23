@@ -7996,6 +7996,30 @@ async function askGuidelinesQuestion() {
             .sort((a, b) => b.relevanceScore - a.relevanceScore)
             .slice(0, 3);
 
+        console.log('[DEBUG] askGuidelinesQuestion: Selected guidelines:', {
+            totalFound: allGuidelines.length,
+            selectedCount: selectedGuidelines.length,
+            selected: selectedGuidelines.map(g => ({ id: g.id, title: g.title, relevanceScore: g.relevanceScore }))
+        });
+
+        // Check if we have any guidelines to process
+        if (selectedGuidelines.length === 0) {
+            const noGuidelinesMessage = `## ℹ️ No Relevant Guidelines Found\n\n` +
+                                       `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
+                                       `**"${question}"**\n\n` +
+                                       `This could happen if:\n` +
+                                       `- Your question is very specific and doesn't match available guidelines\n` +
+                                       `- The question is outside the scope of the current guideline database\n` +
+                                       `- There was an issue with the analysis process\n\n` +
+                                       `**Suggestions:**\n` +
+                                       `- Try rephrasing your question more generally\n` +
+                                       `- Include more clinical context or keywords\n` +
+                                       `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
+            
+            appendToSummary1(noGuidelinesMessage, false);
+            return; // Exit early, don't try to process empty guidelines
+        }
+
         // Process the selected guidelines
         const response2 = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
             method: 'POST',
