@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-10-36-779Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 1451,
+  "response_length": 1495,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/34\",\"transcriptLength\":2621,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with vulvar cancer, using British medical terminology and a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gp005-emergency-gynaecology-admissions-gau-ready-pdf\\\", \\\"title\\\": \\\"Emergency G...",
+  "full_data": null
+}
