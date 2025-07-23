@@ -3081,39 +3081,31 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 
                 // Use a threshold to ensure the match is good enough
                 if (bestMatch.rating > 0.7) { 
-                    guideline = originalChunk.find(g => g.title === bestMatch.target);
-                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                    const guideline = originalChunk.find(g => g.title === bestMatch.target);
+                    if (guideline) {
+                        console.log(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                        
+                        // Return the matched guideline with preserved fields and relevance
+                        return {
+                            ...guideline, // Preserve all original fields including downloadUrl
+                            relevance: item.relevance || '0.5' // Use item's relevance or default
+                        };
+                    }
                 }
                 
-                // Extract relevance score
-                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
-                if (relevanceMatch) {
-                    relevance = relevanceMatch[1];
-                }
-                
-                // Add to category if we found a match
-                if (guideline) {
-                    categories[currentCategory].push({
-                        ...guideline, // Preserve all original fields including downloadUrl
-                        relevance: relevance // Override with extracted relevance
-                    });
-                    
-                    parsedCount++;
-                    console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${currentCategory} (${relevance})`);
-                } else if (trimmed.length > 10 && !trimmed.toLowerCase().includes('relevant')) {
-                    // Log failed matches for debugging
-                    console.log(`[DEBUG] Could not match line to any guideline: "${trimmed.substring(0, 50)}..."`);
-                }
+                // If no match found, return the item with a warning
+                console.log(`[DEBUG] Could not match AI guideline to original: "${item.title}"`);
+                return {
+                    id: item.id || 'unknown-id',
+                    title: item.title,
+                    relevance: item.relevance || '0.0'
+                };
             });
         });
         
-        console.log('[DEBUG] Text parsing completed:', {
-            totalParsed: parsedCount,
-            totalOriginal: originalChunk.length,
-            categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
-        });
+        console.log('[DEBUG] JSON parsing completed successfully');
         
-        return { success: true, categories };
+        return { success: true, categories: cleanedCategories };
     } catch (jsonError) {
         console.log('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
