@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-24-10-104Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1576,
+  "response_length": 1622,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/34\",\"transcriptLength\":2701,\"transcriptPreview\":\"**OBSTETRIC CLERKING – SBAR FORMAT**  \\n\\n**SITUATION:**  \\n- **Patient:** 32yo G2P1, 34+2 weeks gestation, BMI 28  \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\...",
+  "full_data": null
+}
