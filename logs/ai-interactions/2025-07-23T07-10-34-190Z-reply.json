@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-10-34-190Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1244,
+  "response_length": 1247,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/34\",\"transcriptLength\":2621,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with vulvar cancer, using British medical terminology and a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp018-diabetes-in-pregnancy-sr-pdf\\\", \\\"title\\\": \\\"Diabetes in Pregnancy SR\\\", \\...",
+  "full_data": null
+}
