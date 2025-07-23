@@ -7946,6 +7946,7 @@ async function askGuidelinesQuestion() {
             guidelinesCount: guidelinesList.length
         });
 
+        // Use same optimised pattern as main findRelevantGuidelines function
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
@@ -7954,7 +7955,9 @@ async function askGuidelinesQuestion() {
             },
             body: JSON.stringify({
                 transcript: question,
-                guidelines: guidelinesList
+                guidelinesCount: guidelinesList.length, // Just send count for verification
+                loadGuidelinesOnServer: true, // Flag to load guidelines server-side
+                anonymisationInfo: null // No anonymisation needed for questions
             })
         });
 
