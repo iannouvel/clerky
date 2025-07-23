@@ -2362,19 +2362,6 @@ async function saveToGitHub(content, type) {
         githubTokenLength: githubToken ? githubToken.length : 0
     });
     
-    // OPTIMISATION: Use minimal content instead of full interaction data
-    const minimalContent = {
-        ...summary,
-        // Only include full data for critical failures or important interactions
-        full_data: type.includes('error') || content.critical ? content : null
-    };
-    
-    const jsonBody = {
-        message: `Add ${type} summary: ${timestamp}`,
-        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
-        branch: githubBranch
-    };
-
     // OPTIMISATION: Create minimal log content instead of full text
     const summary = {
         type: type,
@@ -2396,6 +2383,19 @@ async function saveToGitHub(content, type) {
         responseLength: summary.response_length,
         tokenUsage: summary.token_usage
     });
+
+    // OPTIMISATION: Use minimal content instead of full interaction data
+    const minimalContent = {
+        ...summary,
+        // Only include full data for critical failures or important interactions
+        full_data: type.includes('error') || content.critical ? content : null
+    };
+    
+    const jsonBody = {
+        message: `Add ${type} summary: ${timestamp}`,
+        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
+        branch: githubBranch
+    };
 
     // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
@@ -3067,54 +3067,57 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         const parsed = JSON.parse(cleanContent);
         console.log('[DEBUG] JSON parsing successful');
         
-        // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
+        // Process parsed JSON and match guidelines
         const cleanedCategories = {};
         const originalTitles = originalChunk.map(g => g.title);
+        let parsedCount = 0;
 
         Object.keys(parsed).forEach(category => {
-            cleanedCategories[category] = (parsed[category] || []).map(item => {
-                if (!item.title) {
-                    return { id: 'unknown-no-title', title: 'Unknown Title', relevance: item.relevance || '0.0' };
-                }
-                
-                // Find the best match for the AI-returned title in our original list
-                const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
-
-                // Use a threshold to ensure the match is good enough
-                if (bestMatch.rating > 0.7) { 
-                    guideline = originalChunk.find(g => g.title === bestMatch.target);
-                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
-                }
-                
-                // Extract relevance score
-                const relevanceMatch = trimmed.match(/(\d*\.?\d+)/);
-                if (relevanceMatch) {
-                    relevance = relevanceMatch[1];
-                }
-                
-                // Add to category if we found a match
-                if (guideline) {
-                    categories[currentCategory].push({
-                        ...guideline, // Preserve all original fields including downloadUrl
-                        relevance: relevance // Override with extracted relevance
-                    });
+            cleanedCategories[category] = [];
+            
+            if (parsed[category] && Array.isArray(parsed[category])) {
+                parsed[category].forEach(item => {
+                    if (!item.title && !item.id) {
+                        return; // Skip invalid items
+                    }
                     
-                    parsedCount++;
-                    console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${currentCategory} (${relevance})`);
-                } else if (trimmed.length > 10 && !trimmed.toLowerCase().includes('relevant')) {
-                    // Log failed matches for debugging
-                    console.log(`[DEBUG] Could not match line to any guideline: "${trimmed.substring(0, 50)}..."`);
-                }
-            });
+                    let guideline = null;
+                    
+                    // First try to match by ID if provided
+                    if (item.id) {
+                        guideline = originalChunk.find(g => g.id === item.id);
+                    }
+                    
+                    // If no ID match, try fuzzy title matching
+                    if (!guideline && item.title) {
+                        const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
+                        if (bestMatch.rating > 0.7) {
+                            guideline = originalChunk.find(g => g.title === bestMatch.target);
+                            console.log(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                        }
+                    }
+                    
+                    if (guideline) {
+                        cleanedCategories[category].push({
+                            ...guideline,
+                            relevance: item.relevance || '0.0'
+                        });
+                        parsedCount++;
+                        console.log(`[DEBUG] Parsed guideline: ${guideline.id} -> ${category} (${item.relevance || '0.0'})`);
+                    } else {
+                        console.log(`[DEBUG] Could not match guideline: ${JSON.stringify(item).substring(0, 50)}...`);
+                    }
+                });
+            }
         });
         
-        console.log('[DEBUG] Text parsing completed:', {
+        console.log('[DEBUG] JSON parsing completed:', {
             totalParsed: parsedCount,
             totalOriginal: originalChunk.length,
-            categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
+            categoryCounts: Object.keys(cleanedCategories).map(cat => `${cat}: ${cleanedCategories[cat].length}`).join(', ')
         });
         
-        return { success: true, categories };
+        return { success: true, categories: cleanedCategories };
     } catch (jsonError) {
         console.log('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
