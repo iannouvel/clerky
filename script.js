@@ -8046,7 +8046,7 @@ async function askGuidelinesQuestion() {
         // Display the answer
         const selectedGuidelinesList = data2.guidelinesUsed.map(g => `- ${g.title}`).join('\n');
         const finalOutput = `## Guidelines Used\n${selectedGuidelinesList}\n\n## Answer\n${data2.answer}`;
-        appendToSummary1(finalOutput);
+        appendToOutputField(finalOutput, true); // Display in output field, clear existing content
 
     } catch (error) {
         console.error('[DEBUG] Error in askGuidelinesQuestion:', {
