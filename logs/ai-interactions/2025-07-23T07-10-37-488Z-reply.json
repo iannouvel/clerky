@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-10-37-488Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 1305,
+  "response_length": 1356,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/34\",\"transcriptLength\":2621,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with vulvar cancer, using British medical terminology and a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uhs-anaemia-in-pregancy-uhs-cg-0008-2023-3-pdf\\\", \\\"title\\\": \\\"Anaemia during Pr...",
+  "full_data": null
+}
