@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-10-35-495Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1232,
+  "response_length": 1283,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/34\",\"transcriptLength\":2621,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with vulvar cancer, using British medical terminology and a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-fgm-pdf\\\", \\\"title\\\": \\\"Female Genital Mutilation and its Management\\\",...",
+  "full_data": null
+}
