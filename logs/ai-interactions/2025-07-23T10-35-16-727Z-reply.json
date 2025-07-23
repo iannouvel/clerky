@@ -1,0 +1,18 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T10-35-16-727Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "generateClinicalNote",
+  "token_usage": {
+    "prompt_tokens": 1297,
+    "completion_tokens": 509,
+    "total_tokens": 1806,
+    "estimated_cost_usd": 0.0009029999999999999
+  },
+  "prompt_length": 5861,
+  "response_length": 1820,
+  "prompt_preview": "{\"prompt\":\"Please write a concise clinical note using medical terminology, based solely on the clinical transcript provided below. Do not invent or assume any details that are not explicitly mentioned...",
+  "response_preview": "### Summary:  \n- 38-year-old G3P2 female (2 SVD, 1 TOP), BMI 28.  \n- Presenting with 6-month history of worsening secondary dysmenorrhea, menorrhagia (>6 pads/day), and chronic pelvic pain (VAS 8/10)....",
+  "full_data": null
+}
