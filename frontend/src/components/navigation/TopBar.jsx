@@ -22,7 +22,7 @@ export function TopBar() {
     <div className={styles.topBar}>
       <div className={styles.topBarLeft}>
         <a href="/" className={styles.logoLink}>
-          <div className={styles.logo}>clerky</div>
+          <div className={styles.logo}>clerkyAI</div>
         </a>
         <div className={styles.serverStatus}>
           {serverStatus === 'live' ? 'Server: Live' : 'Server: Down'}

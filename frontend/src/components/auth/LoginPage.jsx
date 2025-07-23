@@ -16,7 +16,7 @@ export function LoginPage() {
 
   return (
     <div className={styles.landingPage}>
-      <h1>clerky</h1>
+      <h1>clerkyAI</h1>
       <button
         className={styles.googleSignInBtn}
         onClick={handleGoogleSignIn}
