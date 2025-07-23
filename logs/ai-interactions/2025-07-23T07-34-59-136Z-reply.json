@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-34-59-136Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1232,
+  "response_length": 1228,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old G...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1147-maternal-sepsis-pdf\\\", \\\"title\\\": \\\"Maternal Sepsis\\\", \\\"relevance\\\": \\\"0.9\\\"},\\n    {\\\"id\\\": \\\"cg1196-ca...",
+  "full_data": null
+}
