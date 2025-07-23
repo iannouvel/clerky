@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-07-23T07-34-58-233Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1246,
+  "response_length": 1247,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/34\",\"transcriptLength\":3428,\"transcriptPreview\":\"**OBSTETRIC/GYNECOLOGICAL MEDICAL CLERKING – SBAR FORMAT**  \\n\\n---  \\n\\n**SITUATION:**  \\n- **Patient Demographics:** 28-year-old ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp025-day-assessment-unit-dau-pdf\\\", \\\"title\\\": \\\"Day Assessment Unit (DAU)\\\", \\...",
+  "full_data": null
+}
