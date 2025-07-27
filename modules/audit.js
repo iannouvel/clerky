@@ -153,7 +153,7 @@ export class AuditPage {
             const organisation = guideline.organisation || 'Unknown';
             
             option.textContent = `${displayName} (${organisation})`;
-            option.addEventListener('click', () => this.selectGuideline(guideline));
+            option.addEventListener('click', async () => await this.selectGuideline(guideline));
             dropdown.appendChild(option);
         });
         
@@ -161,7 +161,7 @@ export class AuditPage {
     }
 
     // Select a guideline
-    selectGuideline(guideline) {
+    async selectGuideline(guideline) {
         this.selectedGuideline = guideline;
         
         // Use human_friendly_name if available, otherwise fall back to title
@@ -169,14 +169,14 @@ export class AuditPage {
         document.getElementById('guidelineInput').value = displayName;
         document.getElementById('guidelineDropdown').style.display = 'none';
         
-        // Update guideline information
-        this.updateGuidelineInfo(guideline);
+        // Update guideline information (now async)
+        await this.updateGuidelineInfo(guideline);
         
         console.log('Selected guideline for audit:', guideline);
     }
 
     // Update guideline information display
-    updateGuidelineInfo(guideline) {
+    async updateGuidelineInfo(guideline) {
         const infoDiv = document.getElementById('guidelineInfo');
         const noSelectionDiv = document.getElementById('noGuidelineSelected');
         
@@ -184,19 +184,84 @@ export class AuditPage {
             infoDiv.style.display = 'block';
             noSelectionDiv.style.display = 'none';
             
-            // Calculate metadata completeness
-            const metadataFields = ['title', 'organisation', 'year', 'summary', 'significant_terms'];
-            const completedFields = metadataFields.filter(field => guideline[field] && guideline[field].trim() !== '');
-            const completenessPercent = Math.round((completedFields.length / metadataFields.length) * 100);
+            try {
+                // Fetch full metadata from Firestore
+                console.log('Fetching full metadata for guideline:', guideline.id);
+                const fullGuideline = await this.fetchFullGuidelineMetadata(guideline.id);
+                
+                // Calculate metadata completeness with full data
+                const metadataFields = ['title', 'organisation', 'year', 'summary', 'significant_terms', 'human_friendly_name', 'lastUpdated'];
+                const completedFields = metadataFields.filter(field => {
+                    const value = fullGuideline[field];
+                    return value && (typeof value === 'string' ? value.trim() !== '' : true);
+                });
+                const completenessPercent = Math.round((completedFields.length / metadataFields.length) * 100);
+                
+                document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
+                
+                // Count auditable elements from full metadata
+                const auditableCount = fullGuideline.significant_terms ? 
+                    fullGuideline.significant_terms.split(',').length : 0;
+                document.getElementById('auditableElements').textContent = auditableCount;
+                
+                // Last updated from full metadata
+                document.getElementById('lastUpdated').textContent = fullGuideline.lastUpdated || 'Unknown';
+                
+                // Store full metadata for expandable view
+                this.selectedGuidelineFullData = fullGuideline;
+                
+                console.log('Updated guideline info with full metadata:', {
+                    completeness: completenessPercent,
+                    auditableElements: auditableCount,
+                    lastUpdated: fullGuideline.lastUpdated
+                });
+                
+            } catch (error) {
+                console.error('Failed to fetch full metadata:', error);
+                // Fallback to basic calculation
+                const metadataFields = ['title', 'organisation', 'year', 'summary', 'significant_terms'];
+                const completedFields = metadataFields.filter(field => guideline[field] && guideline[field].trim() !== '');
+                const completenessPercent = Math.round((completedFields.length / metadataFields.length) * 100);
+                
+                document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
+                document.getElementById('auditableElements').textContent = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
+                document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
+            }
+        }
+    }
+
+    // Fetch full guideline metadata from Firestore
+    async fetchFullGuidelineMetadata(guidelineId) {
+        try {
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('User not authenticated');
+            }
+            const idToken = await user.getIdToken();
+
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const response = await fetch(`${serverUrl}/getGuidelineById?id=${guidelineId}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            if (!result.success || !result.guideline) {
+                throw new Error('Invalid response format from server');
+            }
+
+            console.log('Fetched full guideline metadata:', result.guideline);
+            return result.guideline;
             
-            document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
-            
-            // Count auditable elements (placeholder - would need actual implementation)
-            const auditableCount = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
-            document.getElementById('auditableElements').textContent = auditableCount;
-            
-            // Last updated (placeholder)
-            document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
+        } catch (error) {
+            console.error('Failed to fetch full guideline metadata:', error);
+            throw error;
         }
     }
 
