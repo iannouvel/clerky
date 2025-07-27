@@ -271,8 +271,6 @@ export class AuditPage {
                         document.getElementById('auditableElements').textContent = 'Error';
                         document.getElementById('auditableElements').style.color = '#e74c3c';
                     }
-                } else {
-                    document.getElementById('auditableElements').textContent = auditableCount;
                 }
                 
                 // Last updated from full metadata
