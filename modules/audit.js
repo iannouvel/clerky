@@ -183,6 +183,17 @@ export class AuditPage {
         // Update guideline information (now async)
         await this.updateGuidelineInfo(guideline);
         
+        // Show auditable elements selection if elements are available
+        const auditableElementsSelection = document.getElementById('auditableElementsSelection');
+        if (auditableElementsSelection) {
+            if (this.selectedGuidelineFullData && this.selectedGuidelineFullData.auditableElements && 
+                this.selectedGuidelineFullData.auditableElements.length > 0) {
+                auditableElementsSelection.style.display = 'block';
+            } else {
+                auditableElementsSelection.style.display = 'none';
+            }
+        }
+        
         console.log('Selected guideline for audit:', guideline);
     }
 
@@ -272,6 +283,12 @@ export class AuditPage {
                                 if (updatedGuideline.auditableElements) {
                                     this.selectedGuidelineFullData.auditableElements = updatedGuideline.auditableElements;
                                 }
+                                
+                                // Show auditable elements selection
+                                const auditableElementsSelection = document.getElementById('auditableElementsSelection');
+                                if (auditableElementsSelection && auditableCount > 0) {
+                                    auditableElementsSelection.style.display = 'block';
+                                }
                             } else {
                                 auditableCount = 0;
                                 console.log('No auditable elements extracted');
@@ -341,6 +358,12 @@ export class AuditPage {
                 auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
                 
                 document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
+                
+                // Show auditable elements selection if elements are available
+                const auditableElementsSelection = document.getElementById('auditableElementsSelection');
+                if (auditableElementsSelection && auditableCount > 0) {
+                    auditableElementsSelection.style.display = 'block';
+                }
             }
         }
     }
@@ -371,6 +394,16 @@ export class AuditPage {
             return;
         }
 
+        // Check if auditable elements are available
+        if (!this.selectedGuidelineFullData || !this.selectedGuidelineFullData.auditableElements || 
+            this.selectedGuidelineFullData.auditableElements.length === 0) {
+            this.showAuditError('No auditable elements found for this guideline. Please ensure auditable elements have been extracted first.');
+            return;
+        }
+
+        // Get audit scope from radio buttons
+        const auditScope = document.querySelector('input[name="auditScope"]:checked')?.value || 'most_significant';
+        
         const btn = document.getElementById('runNewAuditBtn');
         const spinner = document.getElementById('runAuditSpinner');
         
@@ -378,11 +411,13 @@ export class AuditPage {
             btn.disabled = true;
             spinner.style.display = 'inline-block';
             
-            console.log('Running new audit for guideline:', this.selectedGuideline.id);
+            console.log('Running new audit for guideline:', this.selectedGuideline.id, 'with scope:', auditScope);
             
-            // Call server endpoint to run audit
+            // Step 1: Generate the correct audit transcript
+            console.log('Step 1: Generating correct audit transcript...');
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
-            const response = await fetch(`${serverUrl}/runAudit`, {
+            
+            const transcriptResponse = await fetch(`${serverUrl}/generateAuditTranscript`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -390,19 +425,55 @@ export class AuditPage {
                 },
                 body: JSON.stringify({
                     guidelineId: this.selectedGuideline.id,
-                    guidelineTitle: this.selectedGuideline.title,
-                    aiProvider: this.currentAIProvider // Pass selected AI provider
+                    auditableElements: this.selectedGuidelineFullData.auditableElements,
+                    auditScope: auditScope,
+                    aiProvider: this.currentAIProvider
                 })
             });
             
-            const result = await response.json();
+            const transcriptResult = await transcriptResponse.json();
             
-            if (result.success) {
-                this.displayAuditResults(result.audit);
-                this.showAuditSuccess('Audit completed successfully');
-            } else {
-                throw new Error(result.message || 'Audit failed');
+            if (!transcriptResult.success) {
+                throw new Error(transcriptResult.error || 'Failed to generate audit transcript');
             }
+            
+            console.log('Correct transcript generated:', transcriptResult.auditId);
+            
+            // Step 2: Generate incorrect scripts
+            console.log('Step 2: Generating incorrect audit scripts...');
+            const incorrectResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${await this.getAuthToken()}`
+                },
+                body: JSON.stringify({
+                    auditId: transcriptResult.auditId,
+                    correctTranscript: transcriptResult.transcript,
+                    auditableElements: transcriptResult.auditableElements,
+                    aiProvider: this.currentAIProvider
+                })
+            });
+            
+            const incorrectResult = await incorrectResponse.json();
+            
+            if (!incorrectResult.success) {
+                throw new Error(incorrectResult.error || 'Failed to generate incorrect scripts');
+            }
+            
+            console.log('Incorrect scripts generated:', incorrectResult.incorrectScripts.length);
+            
+            // Step 3: Display audit results
+            this.displayAuditResults({
+                auditId: transcriptResult.auditId,
+                correctTranscript: transcriptResult.transcript,
+                auditableElements: transcriptResult.auditableElements,
+                incorrectScripts: incorrectResult.incorrectScripts,
+                auditScope: auditScope,
+                generated: transcriptResult.generated
+            });
+            
+            this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
             
         } catch (error) {
             console.error('Audit failed:', error);
@@ -451,31 +522,84 @@ export class AuditPage {
     }
 
     // Display audit results
-    displayAuditResults(audits) {
+    displayAuditResults(auditData) {
         const resultsDiv = document.getElementById('auditResults');
         resultsDiv.className = 'audit-results';
         
-        if (!audits || audits.length === 0) {
+        if (!auditData) {
             resultsDiv.innerHTML = '<div style="text-align: center; color: #6c757d; font-style: italic;">No audit results found</div>';
             return;
         }
         
-        let html = '<h3>Audit Results</h3>';
+        let html = `
+            <h3>Audit Results</h3>
+            <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+                <strong>Audit ID:</strong> ${auditData.auditId}<br>
+                <strong>Generated:</strong> ${new Date(auditData.generated).toLocaleString()}<br>
+                <strong>Audit Scope:</strong> ${auditData.auditScope.replace('_', ' ')}<br>
+                <strong>Elements Covered:</strong> ${auditData.auditableElements.length}<br>
+                <strong>Incorrect Scripts:</strong> ${auditData.incorrectScripts ? auditData.incorrectScripts.length : 0}
+            </div>
+        `;
         
-        audits.forEach((audit, index) => {
+        // Display correct transcript
+        html += `
+            <div style="border: 1px solid #28a745; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #f8fff9;">
+                <h4 style="color: #28a745; margin: 0 0 10px 0;">✅ Correct Transcript</h4>
+                <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
+                            background: white; padding: 15px; border-radius: 4px; border: 1px solid #e9ecef; 
+                            white-space: pre-wrap; word-wrap: break-word; max-height: 400px; overflow-y: auto;">
+                    ${auditData.correctTranscript}
+                </div>
+            </div>
+        `;
+        
+        // Display auditable elements
+        html += `
+            <div style="border: 1px solid #007bff; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #f8f9ff;">
+                <h4 style="color: #007bff; margin: 0 0 10px 0;">📋 Auditable Elements Covered</h4>
+        `;
+        
+        auditData.auditableElements.forEach((element, index) => {
             html += `
-                <div style="border: 1px solid #ddd; border-radius: 4px; padding: 15px; margin-bottom: 15px;">
-                    <h4>Audit #${index + 1} - ${new Date(audit.timestamp).toLocaleString()}</h4>
-                    <div style="margin-top: 10px;">
-                        <strong>Status:</strong> ${audit.status}<br>
-                        <strong>Compliance Score:</strong> ${audit.complianceScore || 'N/A'}%<br>
-                        <strong>Issues Found:</strong> ${audit.issuesFound || 0}<br>
-                        <strong>Recommendations:</strong> ${audit.recommendations || 0}
-                    </div>
-                    ${audit.details ? `<div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 4px;"><strong>Details:</strong><br>${audit.details}</div>` : ''}
+                <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 10px; margin: 5px 0;">
+                    <strong>Element ${index + 1}:</strong> ${element.name}<br>
+                    <strong>Type:</strong> ${element.type}<br>
+                    <strong>Significance:</strong> ${element.significance}<br>
+                    <strong>Input Variables:</strong> ${element.inputVariables ? element.inputVariables.join(', ') : 'None'}<br>
+                    <strong>Derived Advice:</strong> ${element.derivedAdvice}
                 </div>
             `;
         });
+        
+        html += '</div>';
+        
+        // Display incorrect scripts if available
+        if (auditData.incorrectScripts && auditData.incorrectScripts.length > 0) {
+            html += `
+                <div style="border: 1px solid #dc3545; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #fff8f8;">
+                    <h4 style="color: #dc3545; margin: 0 0 10px 0;">❌ Incorrect Scripts Generated</h4>
+            `;
+            
+            auditData.incorrectScripts.forEach((script, index) => {
+                html += `
+                    <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 15px; margin: 10px 0;">
+                        <h5 style="color: #dc3545; margin: 0 0 10px 0;">Incorrect Script ${index + 1} - ${script.elementName}</h5>
+                        <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
+                                    background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #e9ecef; 
+                                    white-space: pre-wrap; word-wrap: break-word; max-height: 300px; overflow-y: auto;">
+                            ${script.incorrectTranscript}
+                        </div>
+                        <div style="margin-top: 10px; font-size: 12px; color: #6c757d;">
+                            <strong>Error Type:</strong> ${script.errorType}<br>
+                            <strong>Generated:</strong> ${new Date(script.generatedAt).toLocaleString()}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
         
         resultsDiv.innerHTML = html;
     }

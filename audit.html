@@ -355,6 +355,29 @@
             <div class="audit-section">
                 <h3>Audit Controls</h3>
                 <div class="audit-controls">
+                    <!-- Auditable Elements Selection -->
+                    <div id="auditableElementsSelection" style="display: none; margin-bottom: 15px;">
+                        <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #495057;">Select Elements to Audit:</h4>
+                        <div style="margin-bottom: 10px;">
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">
+                                <input type="radio" name="auditScope" value="most_significant" checked>
+                                Most significant element only
+                            </label>
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">
+                                <input type="radio" name="auditScope" value="high_significance">
+                                All high significance elements
+                            </label>
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">
+                                <input type="radio" name="auditScope" value="high_medium">
+                                All high and medium significance elements
+                            </label>
+                            <label style="display: block; margin-bottom: 5px; font-size: 13px;">
+                                <input type="radio" name="auditScope" value="all_elements">
+                                All auditable elements
+                            </label>
+                        </div>
+                    </div>
+                    
                     <button id="runNewAuditBtn" class="audit-btn">
                         <span id="runAuditSpinner" class="spinner" style="display: none;"></span>
                         Run New Audit

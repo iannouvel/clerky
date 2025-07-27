@@ -6820,6 +6820,262 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
   }
 });
 
+// Endpoint to generate audit transcript for a guideline
+app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
+  try {
+    console.log('[AUDIT-TRANSCRIPT] Generating audit transcript...');
+    
+    const { 
+      guidelineId, 
+      auditableElements, 
+      auditScope = 'most_significant',
+      aiProvider = 'DeepSeek' 
+    } = req.body;
+    
+    if (!guidelineId || !auditableElements || !Array.isArray(auditableElements)) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required parameters: guidelineId and auditableElements array'
+      });
+    }
+    
+    // Filter auditable elements based on scope
+    let selectedElements = [];
+    switch (auditScope) {
+      case 'most_significant':
+        selectedElements = auditableElements.filter(el => el.significance === 'high').slice(0, 1);
+        break;
+      case 'high_significance':
+        selectedElements = auditableElements.filter(el => el.significance === 'high');
+        break;
+      case 'high_medium':
+        selectedElements = auditableElements.filter(el => 
+          el.significance === 'high' || el.significance === 'medium'
+        );
+        break;
+      case 'all_elements':
+        selectedElements = auditableElements;
+        break;
+      default:
+        selectedElements = auditableElements.filter(el => el.significance === 'high').slice(0, 1);
+    }
+    
+    if (selectedElements.length === 0) {
+      return res.status(400).json({
+        success: false,
+        error: 'No auditable elements found for the selected scope'
+      });
+    }
+    
+    // Create a comprehensive prompt for generating the audit transcript
+    const auditPrompt = `You are a clinical AI assistant tasked with generating a comprehensive fake clinical transcript for audit purposes.
+
+GUIDELINE CONTEXT:
+Guideline ID: ${guidelineId}
+Number of auditable elements to cover: ${selectedElements.length}
+
+AUDITABLE ELEMENTS TO COVER:
+${selectedElements.map((element, index) => `
+Element ${index + 1}:
+- Name: ${element.name}
+- Type: ${element.type}
+- Significance: ${element.significance}
+- Input Variables: ${element.inputVariables ? element.inputVariables.join(', ') : 'None'}
+- Derived Advice: ${element.derivedAdvice}
+- Element Details: ${element.element}
+`).join('\n')}
+
+REQUIREMENTS:
+1. Create a realistic clinical scenario that covers ALL the auditable elements above
+2. Include ALL the input variables mentioned in the elements
+3. Ensure the scenario would trigger the derived advice from each element
+4. Use proper medical terminology and British abbreviations
+5. Follow SBAR format (Situation, Background, Assessment, Recommendation)
+6. Make it clinically authentic with realistic patient demographics
+7. Include relevant clinical observations and measurements
+8. This is for audit testing purposes - entirely fictional
+
+FORMAT:
+SITUATION: [Demographics, presentation, key clinical issue]
+BACKGROUND: [Relevant history, previous episodes, risk factors, medications]
+ASSESSMENT: [Clinical findings, vital signs, test results, differential diagnosis]
+RECOMMENDATION: [Management plan, monitoring, follow-up, further investigations]
+
+Generate a comprehensive clinical transcript that would test all the auditable elements listed above.`;
+
+    console.log('[AUDIT-TRANSCRIPT] Calling AI with audit prompt...');
+    
+    const aiResponse = await routeToAI({
+      messages: [
+        {
+          role: 'system',
+          content: 'You are a clinical AI assistant generating comprehensive audit transcripts for guideline compliance testing.'
+        },
+        {
+          role: 'user',
+          content: auditPrompt
+        }
+      ]
+    }, req.user.uid, aiProvider);
+    
+    if (!aiResponse || !aiResponse.content) {
+      throw new Error('Failed to generate audit transcript from AI');
+    }
+    
+    const transcript = aiResponse.content;
+    
+    // Store the transcript in Firestore for audit purposes
+    const auditRef = db.collection('auditTranscripts').doc();
+    const auditData = {
+      guidelineId: guidelineId,
+      transcript: transcript,
+      auditableElements: selectedElements,
+      auditScope: auditScope,
+      aiProvider: aiProvider,
+      generatedBy: req.user.uid,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'correct_script' // This is the correct script
+    };
+    
+    await auditRef.set(auditData);
+    
+    console.log('[AUDIT-TRANSCRIPT] Successfully generated and stored audit transcript:', {
+      auditId: auditRef.id,
+      guidelineId: guidelineId,
+      elementsCovered: selectedElements.length,
+      transcriptLength: transcript.length
+    });
+    
+    res.json({
+      success: true,
+      auditId: auditRef.id,
+      transcript: transcript,
+      auditableElements: selectedElements,
+      auditScope: auditScope,
+      generated: new Date().toISOString()
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-TRANSCRIPT] Error generating audit transcript:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate audit transcript',
+      details: error.message
+    });
+  }
+});
+
+// Endpoint to generate incorrect audit scripts
+app.post('/generateIncorrectAuditScripts', authenticateUser, async (req, res) => {
+  try {
+    console.log('[AUDIT-INCORRECT] Generating incorrect audit scripts...');
+    
+    const { 
+      auditId, 
+      correctTranscript, 
+      auditableElements,
+      aiProvider = 'DeepSeek' 
+    } = req.body;
+    
+    if (!auditId || !correctTranscript || !auditableElements || !Array.isArray(auditableElements)) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required parameters: auditId, correctTranscript, and auditableElements array'
+      });
+    }
+    
+    const incorrectScripts = [];
+    
+    // Generate one incorrect script for each auditable element
+    for (let i = 0; i < auditableElements.length; i++) {
+      const element = auditableElements[i];
+      
+      // Create prompt for generating incorrect script
+      const incorrectPrompt = `You are a clinical AI assistant generating an INCORRECT clinical transcript for audit testing purposes.
+
+AUDITABLE ELEMENT TO MAKE INCORRECT:
+- Name: ${element.name}
+- Type: ${element.type}
+- Significance: ${element.significance}
+- Input Variables: ${element.inputVariables ? element.inputVariables.join(', ') : 'None'}
+- Derived Advice: ${element.derivedAdvice}
+- Element Details: ${element.element}
+
+CORRECT TRANSCRIPT (for reference):
+${correctTranscript}
+
+REQUIREMENTS:
+1. Create a transcript that is VERY SIMILAR to the correct one but with ONE KEY ERROR
+2. The error should be related to the auditable element above
+3. Either:
+   - Omit a key variable that should trigger the advice
+   - Provide incorrect advice that contradicts the guideline
+   - Include contradictory information
+4. Make the error subtle but detectable by an AI system
+5. Keep the rest of the transcript realistic and medically sound
+6. Use proper medical terminology and British abbreviations
+7. Follow SBAR format
+
+Generate an incorrect transcript that would fail audit testing for the specific auditable element mentioned above.`;
+
+      console.log(`[AUDIT-INCORRECT] Generating incorrect script for element ${i + 1}/${auditableElements.length}...`);
+      
+      const aiResponse = await routeToAI({
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a clinical AI assistant generating incorrect audit transcripts for guideline compliance testing.'
+          },
+          {
+            role: 'user',
+            content: incorrectPrompt
+          }
+        ]
+      }, req.user.uid, aiProvider);
+      
+      if (aiResponse && aiResponse.content) {
+        const incorrectScript = {
+          elementIndex: i,
+          elementName: element.name,
+          elementType: element.type,
+          incorrectTranscript: aiResponse.content,
+          errorType: 'omission_or_incorrect_advice', // This could be made more specific
+          generatedAt: new Date().toISOString()
+        };
+        
+        incorrectScripts.push(incorrectScript);
+      }
+    }
+    
+    // Store the incorrect scripts in Firestore
+    const auditRef = db.collection('auditTranscripts').doc(auditId);
+    await auditRef.update({
+      incorrectScripts: incorrectScripts,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    console.log('[AUDIT-INCORRECT] Successfully generated incorrect scripts:', {
+      auditId: auditId,
+      incorrectScriptsCount: incorrectScripts.length
+    });
+    
+    res.json({
+      success: true,
+      auditId: auditId,
+      incorrectScripts: incorrectScripts,
+      generated: new Date().toISOString()
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-INCORRECT] Error generating incorrect audit scripts:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate incorrect audit scripts',
+      details: error.message
+    });
+  }
+});
+
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
