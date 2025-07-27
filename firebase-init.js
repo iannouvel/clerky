@@ -5,7 +5,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstati
 
 // Firebase configuration for client-side
 const firebaseConfig = {
-    apiKey: "AIzaSyCU4dfGi4vHg_ek-l2V0uksFCv1jL4KV_g",
+    apiKey: "AIzaSyCoYEk0XgWTGqnw-_f45d0Sl5Hse48NzUU",
     authDomain: "clerky-b3be8.firebaseapp.com",
     projectId: "clerky-b3be8",
     storageBucket: "clerky-b3be8.appspot.com",
