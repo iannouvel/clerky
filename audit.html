@@ -280,6 +280,32 @@
             white-space: pre-wrap;
             word-wrap: break-word;
         }
+
+        /* Auditable elements styling */
+        .auditable-elements-clickable {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline;
+            transition: all 0.2s ease;
+        }
+
+        .auditable-elements-clickable:hover {
+            color: #0056b3;
+            text-decoration: none;
+            background: rgba(0, 123, 255, 0.1);
+            border-radius: 4px;
+            padding: 2px 4px;
+        }
+
+        .auditable-elements-loading {
+            color: #ffc107;
+            cursor: default;
+        }
+
+        .auditable-elements-error {
+            color: #e74c3c;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>

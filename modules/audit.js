@@ -100,66 +100,49 @@ export class AuditPage {
         const guidelineInput = document.getElementById('guidelineInput');
         const guidelineDropdown = document.getElementById('guidelineDropdown');
         
-        if (guidelineInput && guidelineDropdown) {
+        if (guidelineInput) {
             guidelineInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
-                console.log(`🔍 Searching for: "${query}"`);
-                
-                if (query.length < 2) {
-                    guidelineDropdown.style.display = 'none';
-                    return;
-                }
-                
-                const filtered = this.allGuidelines.filter(guideline => {
-                    const title = guideline.title ? guideline.title.toLowerCase() : '';
-                    const humanFriendlyName = guideline.human_friendly_name ? guideline.human_friendly_name.toLowerCase() : '';
-                    const organisation = guideline.organisation ? guideline.organisation.toLowerCase() : '';
-                    
-                    const matches = title.includes(query) || 
-                                   humanFriendlyName.includes(query) || 
-                                   organisation.includes(query);
-                    
-                    if (matches) {
-                        console.log(`✅ Match found: "${guideline.human_friendly_name || guideline.title}" (${guideline.organisation})`);
-                    }
-                    
-                    return matches;
-                }).slice(0, 10);
-                
-                console.log(`📋 Found ${filtered.length} matching guidelines`);
-                this.displayGuidelineOptions(filtered, guidelineDropdown);
+                this.searchGuidelines(query, guidelineDropdown);
             });
-
+            
             guidelineInput.addEventListener('focus', () => {
-                if (guidelineInput.value.length >= 2) {
-                    guidelineDropdown.style.display = 'block';
+                if (guidelineInput.value.trim() === '') {
+                    this.searchGuidelines('', guidelineDropdown);
                 }
             });
-
-            // Close dropdown when clicking outside
+            
+            // Hide dropdown when clicking outside
             document.addEventListener('click', (e) => {
-                if (!e.target.closest('.guideline-selector')) {
+                if (!guidelineInput.contains(e.target) && !guidelineDropdown.contains(e.target)) {
                     guidelineDropdown.style.display = 'none';
                 }
             });
         }
-
-        // Run new audit button
+        
+        // Audit buttons
         const runNewAuditBtn = document.getElementById('runNewAuditBtn');
+        const retrieveAuditsBtn = document.getElementById('retrieveAuditsBtn');
+        
         if (runNewAuditBtn) {
             runNewAuditBtn.addEventListener('click', () => this.runNewAudit());
         }
-
-        // Retrieve audits button
-        const retrieveAuditsBtn = document.getElementById('retrieveAuditsBtn');
+        
         if (retrieveAuditsBtn) {
             retrieveAuditsBtn.addEventListener('click', () => this.retrievePreviousAudits());
         }
         
-        // Metadata toggle button
+        // Metadata toggle
         const toggleMetadataBtn = document.getElementById('toggleMetadataBtn');
         if (toggleMetadataBtn) {
             toggleMetadataBtn.addEventListener('click', () => this.toggleMetadataView());
+        }
+        
+        // Auditable elements click handler
+        const auditableElementsSpan = document.getElementById('auditableElements');
+        if (auditableElementsSpan) {
+            auditableElementsSpan.addEventListener('click', () => this.displayAuditableElements());
+            auditableElementsSpan.title = 'Click to view auditable elements';
         }
     }
 
@@ -246,11 +229,16 @@ export class AuditPage {
                 
                 if (auditableElements.length > 0) {
                     auditableCount = auditableElements.length;
-                    document.getElementById('auditableElements').textContent = auditableCount;
+                    const auditableElementsSpan = document.getElementById('auditableElements');
+                    auditableElementsSpan.textContent = auditableCount;
+                    auditableElementsSpan.className = 'auditable-elements-clickable';
+                    auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
                 } else {
                     // Show loading indicator and extract auditable elements
-                    document.getElementById('auditableElements').textContent = 'Loading...';
-                    document.getElementById('auditableElements').style.color = '#ffc107';
+                    const auditableElementsSpan = document.getElementById('auditableElements');
+                    auditableElementsSpan.textContent = 'Loading...';
+                    auditableElementsSpan.className = 'auditable-elements-loading';
+                    auditableElementsSpan.title = 'Extracting auditable elements...';
                     
                     try {
                         console.log('No auditable elements found, extracting via AI...');
@@ -274,23 +262,40 @@ export class AuditPage {
                             if (updatedGuideline && updatedGuideline.count > 0) {
                                 auditableCount = updatedGuideline.count;
                                 console.log(`Successfully extracted ${auditableCount} auditable elements`);
+                                
+                                // Update display with clickable styling
+                                auditableElementsSpan.textContent = auditableCount;
+                                auditableElementsSpan.className = 'auditable-elements-clickable';
+                                auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                                
+                                // Update the stored data with the new auditable elements
+                                if (updatedGuideline.auditableElements) {
+                                    this.selectedGuidelineFullData.auditableElements = updatedGuideline.auditableElements;
+                                }
                             } else {
                                 auditableCount = 0;
                                 console.log('No auditable elements extracted');
+                                
+                                // Update display for no elements
+                                auditableElementsSpan.textContent = auditableCount;
+                                auditableElementsSpan.className = 'auditable-elements-clickable';
+                                auditableElementsSpan.title = 'Click to view auditable elements (none found)';
                             }
                         } else {
                             auditableCount = 0;
                             console.error('Failed to extract auditable elements:', result.error);
+                            
+                            // Update display for error
+                            auditableElementsSpan.textContent = 'Error';
+                            auditableElementsSpan.className = 'auditable-elements-error';
+                            auditableElementsSpan.title = 'Click to view auditable elements (extraction failed)';
                         }
-                        
-                        // Update display
-                        document.getElementById('auditableElements').textContent = auditableCount;
-                        document.getElementById('auditableElements').style.color = '#2c3e50';
                         
                     } catch (error) {
                         console.error('Error extracting auditable elements:', error);
-                        document.getElementById('auditableElements').textContent = 'Error';
-                        document.getElementById('auditableElements').style.color = '#e74c3c';
+                        auditableElementsSpan.textContent = 'Error';
+                        auditableElementsSpan.className = 'auditable-elements-error';
+                        auditableElementsSpan.title = 'Click to view auditable elements (extraction failed)';
                     }
                 }
                 
@@ -327,7 +332,14 @@ export class AuditPage {
                 const completenessPercent = Math.round((completedFields.length / metadataFields.length) * 100);
                 
                 document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
-                document.getElementById('auditableElements').textContent = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
+                
+                // Handle auditable elements in fallback case
+                const auditableElementsSpan = document.getElementById('auditableElements');
+                const auditableCount = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
+                auditableElementsSpan.textContent = auditableCount;
+                auditableElementsSpan.className = 'auditable-elements-clickable';
+                auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                
                 document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
             }
         }
@@ -534,5 +546,80 @@ export class AuditPage {
             console.error('Error getting auth token:', error);
             return null;
         }
+    }
+
+    // Search guidelines for autocomplete
+    searchGuidelines(query, dropdown) {
+        console.log(`🔍 Searching for: "${query}"`);
+        
+        if (query.length < 2) {
+            dropdown.style.display = 'none';
+            return;
+        }
+        
+        const filtered = this.allGuidelines.filter(guideline => {
+            const title = guideline.title ? guideline.title.toLowerCase() : '';
+            const humanFriendlyName = guideline.human_friendly_name ? guideline.human_friendly_name.toLowerCase() : '';
+            const organisation = guideline.organisation ? guideline.organisation.toLowerCase() : '';
+            
+            const matches = title.includes(query) || 
+                           humanFriendlyName.includes(query) || 
+                           organisation.includes(query);
+            
+            if (matches) {
+                console.log(`✅ Match found: "${guideline.human_friendly_name || guideline.title}" (${guideline.organisation})`);
+            }
+            
+            return matches;
+        }).slice(0, 10);
+        
+        console.log(`📋 Found ${filtered.length} matching guidelines`);
+        this.displayGuidelineOptions(filtered, dropdown);
+    }
+
+    // Display auditable elements in the right column
+    displayAuditableElements() {
+        if (!this.selectedGuidelineFullData) {
+            this.showAuditError('No guideline selected');
+            return;
+        }
+        
+        const auditableElements = this.selectedGuidelineFullData.auditableElements || [];
+        const resultsDiv = document.getElementById('auditResults');
+        
+        if (auditableElements.length === 0) {
+            resultsDiv.innerHTML = `
+                <div class="audit-error">
+                    <h3>No Auditable Elements Found</h3>
+                    <p>This guideline does not have any auditable elements extracted yet. 
+                    You can run an audit to extract auditable elements from the guideline content.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        let elementsHtml = `
+            <div class="audit-success">
+                <h3>📋 Auditable Elements for "${this.selectedGuidelineFullData.title || 'Unknown Guideline'}"</h3>
+                <p><strong>Total Elements:</strong> ${auditableElements.length}</p>
+                <p>These are the clinically relevant advice elements that can be audited for accuracy:</p>
+            </div>
+        `;
+        
+        auditableElements.forEach((element, index) => {
+            elementsHtml += `
+                <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin: 10px 0;">
+                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Element ${index + 1}</h4>
+                    <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
+                                background: white; padding: 10px; border-radius: 4px; border: 1px solid #e9ecef; 
+                                white-space: pre-wrap; word-wrap: break-word;">
+                        ${element}
+                    </div>
+                </div>
+            `;
+        });
+        
+        resultsDiv.innerHTML = elementsHtml;
+        resultsDiv.classList.remove('empty');
     }
 } 
