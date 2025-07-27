@@ -297,7 +297,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-    <script src="firebase-init.js"></script>
+    <script src="firebase-init.js" type="module"></script>
     <script src="script.js" type="module"></script>
     <script>
         // Audit page specific functionality
@@ -313,45 +313,47 @@
             loadingDiv.innerHTML = 'Loading audit interface...';
             
             try {
-                // Wait for script.js to be fully loaded
-                console.log('Waiting for script.js to load...');
-                await new Promise(resolve => {
-                    if (typeof initializeApp !== 'undefined') {
-                        console.log('initializeApp function found immediately');
-                        resolve();
-                    } else {
-                        // Wait for script.js to load
-                        const checkInterval = setInterval(() => {
-                            if (typeof initializeApp !== 'undefined') {
-                                clearInterval(checkInterval);
-                                console.log('initializeApp function loaded');
-                                resolve();
-                            }
-                        }, 100);
-                        
-                        // Timeout after 10 seconds
-                        setTimeout(() => {
+                // Wait for script.js to be fully loaded and initialized
+                console.log('Waiting for script.js to load and initialize...');
+                loadingDiv.innerHTML = 'Initializing application...';
+                
+                // Wait for the script.js initialization to complete
+                await new Promise((resolve) => {
+                    const checkInterval = setInterval(() => {
+                        // Check if script.js has initialized Firebase and auth
+                        if (typeof window.auth !== 'undefined' && typeof initializeApp === 'function') {
                             clearInterval(checkInterval);
-                            console.error('Timeout waiting for initializeApp function');
-                            throw new Error('Timeout waiting for script.js to load');
-                        }, 10000);
-                    }
+                            console.log('✅ script.js loaded and Firebase initialized');
+                            resolve();
+                        }
+                    }, 100);
+                    
+                    // Timeout after 15 seconds
+                    setTimeout(() => {
+                        clearInterval(checkInterval);
+                        console.error('Timeout waiting for script.js initialization');
+                        throw new Error('Timeout waiting for application initialization');
+                    }, 15000);
                 });
                 
-                // Initialize Firebase and authentication
-                console.log('Initializing Firebase and authentication...');
+                // Use the existing initializeApp function from script.js
+                console.log('📞 Calling initializeApp from script.js...');
                 loadingDiv.innerHTML = 'Initializing Firebase...';
+                await initializeApp();
+                console.log('✅ Firebase initialization complete');
                 
-                if (typeof initializeApp === 'function') {
-                    await initializeApp();
-                    console.log('Firebase initialization complete');
-                } else {
-                    console.error('initializeApp function not available');
-                    throw new Error('Failed to initialize application');
+                // Check if user is authenticated (using script.js auth)
+                const user = window.auth.currentUser;
+                if (!user) {
+                    console.log('No user authenticated, redirecting to main page');
+                    window.location.href = 'index.html';
+                    return;
                 }
                 
-                // Load guidelines for autocomplete
-                console.log('Loading guidelines from Firestore...');
+                console.log('User authenticated:', user.email);
+                
+                // Load guidelines for autocomplete using script.js function
+                console.log('Loading guidelines from database...');
                 loadingDiv.innerHTML = 'Loading guidelines from database...';
                 await loadGuidelinesForAudit();
                 
@@ -379,12 +381,12 @@
             try {
                 console.log('Loading guidelines for audit...');
                 
-                // Check if the function is available
+                // Use the existing optimized function from script.js
                 if (typeof loadGuidelinesFromFirestore !== 'function') {
-                    throw new Error('loadGuidelinesFromFirestore function not available');
+                    throw new Error('loadGuidelinesFromFirestore function not available from script.js');
                 }
                 
-                console.log('Calling loadGuidelinesFromFirestore...');
+                console.log('📞 Calling loadGuidelinesFromFirestore from script.js...');
                 const guidelines = await loadGuidelinesFromFirestore();
                 allGuidelines = guidelines;
                 console.log(`✅ Successfully loaded ${guidelines.length} guidelines for audit`);
