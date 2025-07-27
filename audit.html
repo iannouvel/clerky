@@ -307,8 +307,29 @@
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('Audit page loaded, initializing...');
             
+            // Wait for script.js to be fully loaded
+            await new Promise(resolve => {
+                if (typeof initializeApp !== 'undefined') {
+                    resolve();
+                } else {
+                    // Wait for script.js to load
+                    const checkInterval = setInterval(() => {
+                        if (typeof initializeApp !== 'undefined') {
+                            clearInterval(checkInterval);
+                            resolve();
+                        }
+                    }, 100);
+                }
+            });
+            
             // Initialize Firebase and authentication
-            await initializeApp();
+            if (typeof initializeApp === 'function') {
+                await initializeApp();
+            } else {
+                console.error('initializeApp function not available');
+                showAuditError('Failed to initialize application');
+                return;
+            }
             
             // Load guidelines for autocomplete
             await loadGuidelinesForAudit();
@@ -323,9 +344,20 @@
         async function loadGuidelinesForAudit() {
             try {
                 console.log('Loading guidelines for audit...');
+                
+                // Check if the function is available
+                if (typeof loadGuidelinesFromFirestore !== 'function') {
+                    throw new Error('loadGuidelinesFromFirestore function not available');
+                }
+                
                 const guidelines = await loadGuidelinesFromFirestore();
                 allGuidelines = guidelines;
                 console.log(`Loaded ${guidelines.length} guidelines for audit`);
+                
+                // Log a few guidelines to debug the structure
+                if (guidelines.length > 0) {
+                    console.log('Sample guideline structure:', guidelines[0]);
+                }
             } catch (error) {
                 console.error('Failed to load guidelines for audit:', error);
                 showAuditError('Failed to load guidelines: ' + error.message);
@@ -344,10 +376,15 @@
                     return;
                 }
                 
-                const filtered = allGuidelines.filter(guideline => 
-                    guideline.title.toLowerCase().includes(query) ||
-                    (guideline.organisation && guideline.organisation.toLowerCase().includes(query))
-                ).slice(0, 10);
+                const filtered = allGuidelines.filter(guideline => {
+                    const title = guideline.title ? guideline.title.toLowerCase() : '';
+                    const humanFriendlyName = guideline.human_friendly_name ? guideline.human_friendly_name.toLowerCase() : '';
+                    const organisation = guideline.organisation ? guideline.organisation.toLowerCase() : '';
+                    
+                    return title.includes(query) || 
+                           humanFriendlyName.includes(query) || 
+                           organisation.includes(query);
+                }).slice(0, 10);
                 
                 displayGuidelineOptions(filtered);
             });
@@ -386,7 +423,12 @@
             guidelines.forEach(guideline => {
                 const option = document.createElement('div');
                 option.className = 'guideline-option';
-                option.textContent = `${guideline.title} (${guideline.organisation || 'Unknown'})`;
+                
+                // Use human_friendly_name if available, otherwise fall back to title
+                const displayName = guideline.human_friendly_name || guideline.title;
+                const organisation = guideline.organisation || 'Unknown';
+                
+                option.textContent = `${displayName} (${organisation})`;
                 option.addEventListener('click', () => selectGuideline(guideline));
                 dropdown.appendChild(option);
             });
@@ -396,7 +438,10 @@
 
         function selectGuideline(guideline) {
             selectedGuideline = guideline;
-            document.getElementById('guidelineInput').value = guideline.title;
+            
+            // Use human_friendly_name if available, otherwise fall back to title
+            const displayName = guideline.human_friendly_name || guideline.title;
+            document.getElementById('guidelineInput').value = displayName;
             document.getElementById('guidelineDropdown').style.display = 'none';
             
             // Update guideline information
@@ -443,7 +488,8 @@
                 console.log('Running new audit for guideline:', selectedGuideline.id);
                 
                 // Call server endpoint to run audit
-                const response = await fetch(`${window.SERVER_URL}/runAudit`, {
+                const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+                const response = await fetch(`${serverUrl}/runAudit`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -488,7 +534,8 @@
                 console.log('Retrieving previous audits for guideline:', selectedGuideline.id);
                 
                 // Call server endpoint to retrieve audits
-                const response = await fetch(`${window.SERVER_URL}/getAudits?guidelineId=${selectedGuideline.id}`);
+                const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+                const response = await fetch(`${serverUrl}/getAudits?guidelineId=${selectedGuideline.id}`);
                 const result = await response.json();
                 
                 if (result.success) {
