@@ -1087,9 +1087,11 @@ function formatMessagesForProvider(messages, provider) {
 
 // Function to send prompts to AI services
 async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
+  // Initialize preferredProvider at the very beginning to ensure it's always defined
+  let preferredProvider = 'DeepSeek'; // Default fallback
+  
   try {
     // Determine the provider based on the model, but don't override the model
-    let preferredProvider = 'DeepSeek'; // Default fallback
     if (model.includes('deepseek')) {
       preferredProvider = 'DeepSeek';
     } else if (model.includes('claude') || model.includes('anthropic')) {
