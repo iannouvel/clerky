@@ -5,7 +5,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstati
 
 // Firebase configuration - using environment variables for security
 const firebaseConfig = {
-    apiKey: "AIzaSyCoYEk0XgWTGqnw-_f45d0Sl5Hse48NzUU",
+    apiKey: "AIzaSyAF5y6k9THaRKxLZemqcYDj4y_EgCcDbX8",
     authDomain: "clerky-b3be8.firebaseapp.com",
     projectId: "clerky-b3be8",
     storageBucket: "clerky-b3be8.appspot.com",
