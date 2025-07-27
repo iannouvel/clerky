@@ -609,11 +609,17 @@ export class AuditPage {
         auditableElements.forEach((element, index) => {
             elementsHtml += `
                 <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin: 10px 0;">
-                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Element ${index + 1}</h4>
+                    <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Element ${index + 1}: ${element.name || 'Unnamed Element'}</h4>
+                    <div style="margin-bottom: 10px;">
+                        <strong>Type:</strong> ${element.type || 'Unknown'}<br>
+                        <strong>Significance:</strong> ${element.significance || 'Unknown'}<br>
+                        <strong>Input Variables:</strong> ${element.inputVariables ? element.inputVariables.join(', ') : 'None'}<br>
+                        <strong>Derived Advice:</strong> ${element.derivedAdvice || 'Not specified'}
+                    </div>
                     <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
                                 background: white; padding: 10px; border-radius: 4px; border: 1px solid #e9ecef; 
                                 white-space: pre-wrap; word-wrap: break-word;">
-                        ${element}
+                        ${element.element || 'No element content available'}
                     </div>
                 </div>
             `;
