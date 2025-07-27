@@ -6344,7 +6344,7 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
           content: prompt 
         }
       ]
-    }, req.user?.uid, aiProvider);
+    }, null, aiProvider);
 
     if (result && result.content) {
       try {
