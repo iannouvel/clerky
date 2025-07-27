@@ -209,6 +209,21 @@
             border: 1px solid #c3e6cb;
             margin-bottom: 15px;
         }
+        /* Loading screen styles */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: #2c3e50;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -301,9 +316,17 @@
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('Audit page loaded, initializing...');
             
-            // Show loading state
+            // Show loading state and keep it visible
             const loadingDiv = document.getElementById('loading');
+            const auditContainer = document.querySelector('.audit-container');
+            
+            // Hide the main content until initialization is complete
+            if (auditContainer) {
+                auditContainer.style.display = 'none';
+            }
+            
             loadingDiv.innerHTML = 'Loading audit interface...';
+            loadingDiv.style.display = 'flex';
             
             try {
                 // Create and initialize audit page
@@ -313,8 +336,11 @@
                 console.log('Audit page initialization complete');
                 loadingDiv.innerHTML = 'Ready!';
                 
-                // Hide loading screen after a brief delay
+                // Show the main content and hide loading screen
                 setTimeout(() => {
+                    if (auditContainer) {
+                        auditContainer.style.display = 'flex';
+                    }
                     loadingDiv.style.display = 'none';
                 }, 500);
                 
@@ -325,6 +351,10 @@
                 const resultsDiv = document.getElementById('auditResults');
                 if (resultsDiv) {
                     resultsDiv.innerHTML = `<div class="audit-error">Failed to initialize audit page: ${error.message}</div>`;
+                }
+                // Show the container even on error so user can see the error
+                if (auditContainer) {
+                    auditContainer.style.display = 'flex';
                 }
             }
         });

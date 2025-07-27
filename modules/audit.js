@@ -233,31 +233,15 @@ export class AuditPage {
     // Fetch full guideline metadata from Firestore
     async fetchFullGuidelineMetadata(guidelineId) {
         try {
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('User not authenticated');
+            // Since we already have all guidelines loaded, find the specific one
+            const fullGuideline = this.allGuidelines.find(g => g.id === guidelineId);
+            
+            if (!fullGuideline) {
+                throw new Error(`Guideline with ID ${guidelineId} not found in loaded data`);
             }
-            const idToken = await user.getIdToken();
-
-            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
-            const response = await fetch(`${serverUrl}/getGuidelineById?id=${guidelineId}`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${idToken}`
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const result = await response.json();
-            if (!result.success || !result.guideline) {
-                throw new Error('Invalid response format from server');
-            }
-
-            console.log('Fetched full guideline metadata:', result.guideline);
-            return result.guideline;
+            
+            console.log('Found full guideline metadata:', fullGuideline);
+            return fullGuideline;
             
         } catch (error) {
             console.error('Failed to fetch full guideline metadata:', error);
