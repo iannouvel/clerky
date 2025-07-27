@@ -1,17 +1,18 @@
-// Core Firebase initialization module
+// Core Firebase initialization module - TEMPLATE
+// Copy this file to firebase-core.js and add your actual API key
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
-// Firebase configuration - using environment variables for security
+// Firebase configuration - REPLACE WITH YOUR ACTUAL CONFIG
 const firebaseConfig = {
-    apiKey: "AIzaSyCoYEk0XgWTGqnw-_f45d0Sl5Hse48NzUU",
-    authDomain: "clerky-b3be8.firebaseapp.com",
-    projectId: "clerky-b3be8",
-    storageBucket: "clerky-b3be8.appspot.com",
-    messagingSenderId: "193460924609",
-    appId: "1:193460924609:web:6e2c696c87292d4a222440",
-    measurementId: "G-V07DP1ELDR"
+    apiKey: "YOUR_API_KEY_HERE",
+    authDomain: "your-project.firebaseapp.com",
+    projectId: "your-project-id",
+    storageBucket: "your-project.appspot.com",
+    messagingSenderId: "your-sender-id",
+    appId: "your-app-id",
+    measurementId: "your-measurement-id"
 };
 
 // Initialize Firebase

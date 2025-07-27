@@ -11,6 +11,16 @@ firebase-debug.*.log*
 .firebase/
 
 # Firebase config
+firebase-init.js
+modules/firebase-core.js
+dist/firebase-init.js
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
 
 # Uncomment this if you'd like others to create their own Firebase project.
 # For a team working on the same Firebase project(s), it is recommended to leave
