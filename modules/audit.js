@@ -133,6 +133,12 @@ export class AuditPage {
         if (retrieveAuditsBtn) {
             retrieveAuditsBtn.addEventListener('click', () => this.retrievePreviousAudits());
         }
+        
+        // Metadata toggle button
+        const toggleMetadataBtn = document.getElementById('toggleMetadataBtn');
+        if (toggleMetadataBtn) {
+            toggleMetadataBtn.addEventListener('click', () => this.toggleMetadataView());
+        }
     }
 
     // Display guideline options in dropdown
@@ -209,6 +215,9 @@ export class AuditPage {
                 
                 // Store full metadata for expandable view
                 this.selectedGuidelineFullData = fullGuideline;
+                
+                // Populate metadata content for expandable view
+                this.populateMetadataContent(fullGuideline);
                 
                 console.log('Updated guideline info with full metadata:', {
                     completeness: completenessPercent,
@@ -383,5 +392,37 @@ export class AuditPage {
                 successDiv.remove();
             }
         }, 3000);
+    }
+    
+    // Populate metadata content for expandable view
+    populateMetadataContent(guideline) {
+        const metadataContent = document.getElementById('metadataContent');
+        if (metadataContent) {
+            // Format the metadata as JSON for easy reading
+            const formattedMetadata = JSON.stringify(guideline, null, 2);
+            metadataContent.textContent = formattedMetadata;
+        }
+    }
+    
+    // Toggle metadata view
+    toggleMetadataView() {
+        const toggleBtn = document.getElementById('toggleMetadataBtn');
+        const metadataDetails = document.getElementById('metadataDetails');
+        
+        if (toggleBtn && metadataDetails) {
+            const isExpanded = metadataDetails.style.display !== 'none';
+            
+            if (isExpanded) {
+                // Collapse
+                metadataDetails.style.display = 'none';
+                toggleBtn.classList.remove('expanded');
+                toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> View Full Metadata';
+            } else {
+                // Expand
+                metadataDetails.style.display = 'block';
+                toggleBtn.classList.add('expanded');
+                toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> Hide Full Metadata';
+            }
+        }
     }
 } 
