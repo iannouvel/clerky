@@ -195,23 +195,54 @@ export class AuditPage {
                 console.log('Fetching full metadata for guideline:', guideline.id);
                 const fullGuideline = await this.fetchFullGuidelineMetadata(guideline.id);
                 
-                // Calculate metadata completeness with full data
-                const metadataFields = ['title', 'organisation', 'year', 'summary', 'significant_terms', 'human_friendly_name', 'lastUpdated'];
-                const completedFields = metadataFields.filter(field => {
+                // Calculate metadata completeness dynamically based on all fields
+                const allFields = Object.keys(fullGuideline);
+                const completedFields = allFields.filter(field => {
                     const value = fullGuideline[field];
-                    return value && (typeof value === 'string' ? value.trim() !== '' : true);
+                    if (!value) return false;
+                    if (typeof value === 'string') return value.trim() !== '';
+                    if (typeof value === 'boolean') return value === true;
+                    if (typeof value === 'object') return Object.keys(value).length > 0;
+                    if (Array.isArray(value)) return value.length > 0;
+                    return true;
                 });
-                const completenessPercent = Math.round((completedFields.length / metadataFields.length) * 100);
+                const completenessPercent = Math.round((completedFields.length / allFields.length) * 100);
+                
+                console.log('Metadata completeness calculation:', {
+                    totalFields: allFields.length,
+                    completedFields: completedFields.length,
+                    completeness: completenessPercent + '%',
+                    allFields: allFields,
+                    completedFieldsList: completedFields
+                });
                 
                 document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
                 
                 // Count auditable elements from full metadata
-                const auditableCount = fullGuideline.significant_terms ? 
-                    fullGuideline.significant_terms.split(',').length : 0;
+                let auditableCount = 0;
+                if (fullGuideline.significant_terms && Array.isArray(fullGuideline.significant_terms)) {
+                    auditableCount = fullGuideline.significant_terms.length;
+                } else if (fullGuideline.significant_terms && typeof fullGuideline.significant_terms === 'string') {
+                    auditableCount = fullGuideline.significant_terms.split(',').length;
+                } else if (fullGuideline.condensed) {
+                    // Estimate auditable elements from condensed content sections
+                    const sections = fullGuideline.condensed.match(/#### \*\*[^*]+\*\*/g);
+                    auditableCount = sections ? sections.length : 0;
+                }
                 document.getElementById('auditableElements').textContent = auditableCount;
                 
                 // Last updated from full metadata
-                document.getElementById('lastUpdated').textContent = fullGuideline.lastUpdated || 'Unknown';
+                let lastUpdatedText = 'Unknown';
+                if (fullGuideline.lastUpdated) {
+                    if (typeof fullGuideline.lastUpdated === 'object' && fullGuideline.lastUpdated._seconds) {
+                        // Convert Firestore timestamp to readable date
+                        const date = new Date(fullGuideline.lastUpdated._seconds * 1000);
+                        lastUpdatedText = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+                    } else if (typeof fullGuideline.lastUpdated === 'string') {
+                        lastUpdatedText = fullGuideline.lastUpdated;
+                    }
+                }
+                document.getElementById('lastUpdated').textContent = lastUpdatedText;
                 
                 // Store full metadata for expandable view
                 this.selectedGuidelineFullData = fullGuideline;
