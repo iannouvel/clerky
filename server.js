@@ -6348,8 +6348,22 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
 
     if (result && result.content) {
       try {
-        // Try to parse the response as JSON
-        const parsed = JSON.parse(result.content.trim());
+        // Clean the response - remove markdown code blocks if present
+        let cleanedContent = result.content.trim();
+        
+        // Remove ```json and ``` markers if present
+        if (cleanedContent.startsWith('```json')) {
+          cleanedContent = cleanedContent.replace(/^```json\s*/, '');
+        }
+        if (cleanedContent.startsWith('```')) {
+          cleanedContent = cleanedContent.replace(/^```\s*/, '');
+        }
+        if (cleanedContent.endsWith('```')) {
+          cleanedContent = cleanedContent.replace(/\s*```$/, '');
+        }
+        
+        // Try to parse the cleaned response as JSON
+        const parsed = JSON.parse(cleanedContent);
         if (Array.isArray(parsed)) {
           return parsed;
         } else if (parsed.auditableElements && Array.isArray(parsed.auditableElements)) {
