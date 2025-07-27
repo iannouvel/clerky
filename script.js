@@ -3577,6 +3577,13 @@ function setupGoogleSignIn() {
 // Start initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, starting initialization...');
+    
+    // Skip full initialization on audit page - only load functions
+    if (window.AUDIT_PAGE) {
+        console.log('Audit page detected, skipping DOM-dependent initialization');
+        return;
+    }
+    
     initializeApp().catch(error => {
         console.error('Failed to initialize application:', error);
         isInitialized = true;
