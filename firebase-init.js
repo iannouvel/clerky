@@ -1,7 +1,7 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration for client-side
 const firebaseConfig = {
@@ -18,6 +18,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+// Set authentication persistence to remember users across browser sessions
+setPersistence(auth, browserLocalPersistence)
+    .then(() => {
+        console.log('[DEBUG] Firebase auth persistence set to LOCAL - users will be remembered');
+    })
+    .catch((error) => {
+        console.error('[ERROR] Failed to set auth persistence:', error);
+    });
 
 // Make auth available globally with backward compatibility
 window.auth = auth;
