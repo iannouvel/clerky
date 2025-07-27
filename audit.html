@@ -297,7 +297,8 @@
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-    <script src="script.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="script.js" type="module"></script>
     <script>
         // Audit page specific functionality
         let selectedGuideline = null;
@@ -307,38 +308,71 @@
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('Audit page loaded, initializing...');
             
-            // Wait for script.js to be fully loaded
-            await new Promise(resolve => {
-                if (typeof initializeApp !== 'undefined') {
-                    resolve();
-                } else {
-                    // Wait for script.js to load
-                    const checkInterval = setInterval(() => {
-                        if (typeof initializeApp !== 'undefined') {
+            // Show loading state
+            const loadingDiv = document.getElementById('loading');
+            loadingDiv.innerHTML = 'Loading audit interface...';
+            
+            try {
+                // Wait for script.js to be fully loaded
+                console.log('Waiting for script.js to load...');
+                await new Promise(resolve => {
+                    if (typeof initializeApp !== 'undefined') {
+                        console.log('initializeApp function found immediately');
+                        resolve();
+                    } else {
+                        // Wait for script.js to load
+                        const checkInterval = setInterval(() => {
+                            if (typeof initializeApp !== 'undefined') {
+                                clearInterval(checkInterval);
+                                console.log('initializeApp function loaded');
+                                resolve();
+                            }
+                        }, 100);
+                        
+                        // Timeout after 10 seconds
+                        setTimeout(() => {
                             clearInterval(checkInterval);
-                            resolve();
-                        }
-                    }, 100);
+                            console.error('Timeout waiting for initializeApp function');
+                            throw new Error('Timeout waiting for script.js to load');
+                        }, 10000);
+                    }
+                });
+                
+                // Initialize Firebase and authentication
+                console.log('Initializing Firebase and authentication...');
+                loadingDiv.innerHTML = 'Initializing Firebase...';
+                
+                if (typeof initializeApp === 'function') {
+                    await initializeApp();
+                    console.log('Firebase initialization complete');
+                } else {
+                    console.error('initializeApp function not available');
+                    throw new Error('Failed to initialize application');
                 }
-            });
-            
-            // Initialize Firebase and authentication
-            if (typeof initializeApp === 'function') {
-                await initializeApp();
-            } else {
-                console.error('initializeApp function not available');
-                showAuditError('Failed to initialize application');
-                return;
+                
+                // Load guidelines for autocomplete
+                console.log('Loading guidelines from Firestore...');
+                loadingDiv.innerHTML = 'Loading guidelines from database...';
+                await loadGuidelinesForAudit();
+                
+                // Set up event listeners
+                console.log('Setting up event listeners...');
+                loadingDiv.innerHTML = 'Setting up interface...';
+                setupAuditEventListeners();
+                
+                console.log('Audit page initialization complete');
+                loadingDiv.innerHTML = 'Ready!';
+                
+                // Hide loading screen after a brief delay
+                setTimeout(() => {
+                    loadingDiv.style.display = 'none';
+                }, 500);
+                
+            } catch (error) {
+                console.error('Failed to initialize audit page:', error);
+                loadingDiv.innerHTML = `Error: ${error.message}`;
+                showAuditError('Failed to initialize audit page: ' + error.message);
             }
-            
-            // Load guidelines for autocomplete
-            await loadGuidelinesForAudit();
-            
-            // Set up event listeners
-            setupAuditEventListeners();
-            
-            // Hide loading screen
-            document.getElementById('loading').style.display = 'none';
         });
 
         async function loadGuidelinesForAudit() {
@@ -350,17 +384,36 @@
                     throw new Error('loadGuidelinesFromFirestore function not available');
                 }
                 
+                console.log('Calling loadGuidelinesFromFirestore...');
                 const guidelines = await loadGuidelinesFromFirestore();
                 allGuidelines = guidelines;
-                console.log(`Loaded ${guidelines.length} guidelines for audit`);
+                console.log(`✅ Successfully loaded ${guidelines.length} guidelines for audit`);
                 
-                // Log a few guidelines to debug the structure
+                // Log sample guidelines to debug the structure
                 if (guidelines.length > 0) {
-                    console.log('Sample guideline structure:', guidelines[0]);
+                    console.log('📋 Sample guideline structure:', guidelines[0]);
+                    
+                    // Log human-friendly names for debugging
+                    const humanFriendlyNames = guidelines
+                        .filter(g => g.human_friendly_name)
+                        .slice(0, 5)
+                        .map(g => g.human_friendly_name);
+                    
+                    console.log('🔍 Sample human-friendly names:', humanFriendlyNames);
+                    
+                    // Count guidelines with human_friendly_name
+                    const withHumanFriendly = guidelines.filter(g => g.human_friendly_name).length;
+                    console.log(`📊 Guidelines with human_friendly_name: ${withHumanFriendly}/${guidelines.length}`);
                 }
+                
+                // Update loading message
+                const loadingDiv = document.getElementById('loading');
+                loadingDiv.innerHTML = `Loaded ${guidelines.length} guidelines successfully!`;
+                
             } catch (error) {
-                console.error('Failed to load guidelines for audit:', error);
+                console.error('❌ Failed to load guidelines for audit:', error);
                 showAuditError('Failed to load guidelines: ' + error.message);
+                throw error; // Re-throw to stop initialization
             }
         }
 
@@ -371,6 +424,8 @@
             
             guidelineInput.addEventListener('input', (e) => {
                 const query = e.target.value.toLowerCase();
+                console.log(`🔍 Searching for: "${query}"`);
+                
                 if (query.length < 2) {
                     guidelineDropdown.style.display = 'none';
                     return;
@@ -381,11 +436,18 @@
                     const humanFriendlyName = guideline.human_friendly_name ? guideline.human_friendly_name.toLowerCase() : '';
                     const organisation = guideline.organisation ? guideline.organisation.toLowerCase() : '';
                     
-                    return title.includes(query) || 
-                           humanFriendlyName.includes(query) || 
-                           organisation.includes(query);
+                    const matches = title.includes(query) || 
+                                   humanFriendlyName.includes(query) || 
+                                   organisation.includes(query);
+                    
+                    if (matches) {
+                        console.log(`✅ Match found: "${guideline.human_friendly_name || guideline.title}" (${guideline.organisation})`);
+                    }
+                    
+                    return matches;
                 }).slice(0, 10);
                 
+                console.log(`📋 Found ${filtered.length} matching guidelines`);
                 displayGuidelineOptions(filtered);
             });
 
