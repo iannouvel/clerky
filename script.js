@@ -5115,15 +5115,22 @@ async function initializeMainApp() {
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
         
-        if (loading) {
-            loading.style.display = 'none';
-            console.log('[DEBUG] Loading screen hidden - app ready for use');
-        }
+        // Ensure loading screen is visible for at least 1.5 seconds for better UX
+        const minLoadingTime = 1500;
+        const timeSinceStart = Date.now() - window.appStartTime;
+        const remainingTime = Math.max(0, minLoadingTime - timeSinceStart);
         
-        if (mainContent) {
-            mainContent.classList.remove('hidden');
-            console.log('[DEBUG] Main content shown - app ready for use');
-        }
+        setTimeout(() => {
+            if (loading) {
+                loading.classList.add('hidden');
+                console.log('[DEBUG] Loading screen hidden - app ready for use');
+            }
+            
+            if (mainContent) {
+                mainContent.classList.remove('hidden');
+                console.log('[DEBUG] Main content shown - app ready for use');
+            }
+        }, remainingTime);
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
@@ -5132,15 +5139,22 @@ async function initializeMainApp() {
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
         
-        if (loading) {
-            loading.style.display = 'none';
-            console.log('[DEBUG] Loading screen hidden due to initialization error');
-        }
+        // Ensure loading screen is visible for at least 1.5 seconds for better UX
+        const minLoadingTime = 1500;
+        const timeSinceStart = Date.now() - window.appStartTime;
+        const remainingTime = Math.max(0, minLoadingTime - timeSinceStart);
         
-        if (mainContent) {
-            mainContent.classList.remove('hidden');
-            console.log('[DEBUG] Main content shown despite initialization error');
-        }
+        setTimeout(() => {
+            if (loading) {
+                loading.classList.add('hidden');
+                console.log('[DEBUG] Loading screen hidden due to initialization error');
+            }
+            
+            if (mainContent) {
+                mainContent.classList.remove('hidden');
+                console.log('[DEBUG] Main content shown despite initialization error');
+            }
+        }, remainingTime);
     } finally {
         window.mainAppInitializing = false;
     }
@@ -5148,6 +5162,11 @@ async function initializeMainApp() {
 
 // Add debugging to the auth state change handler
 window.auth.onAuthStateChanged(async (user) => {
+    // Track app start time for loading screen minimum display duration
+    if (!window.appStartTime) {
+        window.appStartTime = Date.now();
+    }
+    
     console.log('[DEBUG] Auth state changed:', {
         hasUser: !!user,
         userEmail: user?.email,
@@ -5188,19 +5207,19 @@ window.auth.onAuthStateChanged(async (user) => {
             console.log('[DEBUG] Updated user info display');
         }
         
-        // Small delay to ensure DOM is fully rendered
+        // Small delay to ensure DOM is fully rendered and loading screen is visible
         setTimeout(async () => {
             console.log('[DEBUG] Delayed initialization starting...');
             await initializeMainApp();
-        }, 100);
+        }, 500);
         
         // Fallback timeout to hide loading screen and show main content after 30 seconds
         setTimeout(() => {
             const loading = document.getElementById('loading');
             const mainContent = document.getElementById('mainContent');
             
-            if (loading && loading.style.display !== 'none') {
-                loading.style.display = 'none';
+            if (loading && !loading.classList.contains('hidden')) {
+                loading.classList.add('hidden');
                 console.log('[DEBUG] Loading screen hidden due to timeout');
             }
             
@@ -5212,7 +5231,7 @@ window.auth.onAuthStateChanged(async (user) => {
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        loading.style.display = 'none';
+        loading.classList.add('hidden');
         mainContent.classList.add('hidden');
         landingPage.classList.remove('hidden');
         
