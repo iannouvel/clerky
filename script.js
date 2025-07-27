@@ -3522,13 +3522,21 @@ function replaceOriginalTranscript() {
 // Modify initializeApp to auto-sync guidelines if needed
 async function initializeApp() {
     console.log('[DEBUG] Starting initializeApp...');
-
+    
+    try {
         console.log('[DEBUG] Initializing marked library...');
         await initializeMarked();
         console.log('[DEBUG] Marked library initialized successfully');
 
         console.log('[DEBUG] Setting up Firebase auth state listener...');
         // Auth state change handler is now in the new initializeMainApp function
+        // The auth state change handler will handle showing/hiding the loading screen
+        
+        console.log('[DEBUG] initializeApp completed successfully');
+    } catch (error) {
+        console.error('[ERROR] Failed to initialize app:', error);
+        throw error;
+    }
 }
 
 function setupGoogleSignIn() {
@@ -5183,6 +5191,11 @@ window.auth.onAuthStateChanged(async (user) => {
         mainContent: !!mainContent
     });
 
+    // Ensure loading screen is visible during auth state check
+    if (loading) {
+        loading.classList.remove('hidden');
+    }
+
     if (user) {
         console.log('[DEBUG] User authenticated, checking disclaimer acceptance');
         
@@ -5231,9 +5244,18 @@ window.auth.onAuthStateChanged(async (user) => {
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        loading.classList.add('hidden');
-        mainContent.classList.add('hidden');
-        landingPage.classList.remove('hidden');
+        // Keep loading screen visible for a moment to show "Loading your clinical assistant..."
+        setTimeout(() => {
+            if (loading) {
+                loading.classList.add('hidden');
+            }
+            if (mainContent) {
+                mainContent.classList.add('hidden');
+            }
+            if (landingPage) {
+                landingPage.classList.remove('hidden');
+            }
+        }, 1000); // Show loading for 1 second even when not authenticated
         
         // Set up Google Sign-in button listener
         setupGoogleSignIn();

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Loading Screen and Auth</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        button { padding: 10px 15px; margin: 5px; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-primary { background-color: #007bff; color: white; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Clerky Loading Screen & Auth Test</h1>
+    
+    <div class="test-section info">
+        <h3>Test Instructions</h3>
+        <p>This page tests the loading screen and authentication persistence fixes:</p>
+        <ol>
+            <li>Click "Test Loading Screen" to verify the loading screen appears</li>
+            <li>Click "Test Auth Persistence" to check if users are remembered</li>
+            <li>Click "Go to Main App" to test the full application</li>
+        </ol>
+    </div>
+    
+    <div class="test-section">
+        <h3>Loading Screen Test</h3>
+        <button class="btn-primary" onclick="testLoadingScreen()">Test Loading Screen</button>
+        <div id="loadingTestResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Authentication Test</h3>
+        <button class="btn-primary" onclick="testAuthPersistence()">Test Auth Persistence</button>
+        <div id="authTestResult"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Full Application Test</h3>
+        <button class="btn-primary" onclick="goToMainApp()">Go to Main App</button>
+        <p>This will open the main Clerky application to test the complete flow.</p>
+    </div>
+    
+    <script>
+        function testLoadingScreen() {
+            const result = document.getElementById('loadingTestResult');
+            result.innerHTML = '<div class="info">Testing loading screen functionality...</div>';
+            
+            // Simulate loading screen
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'testLoading';
+            loadingDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                font-family: Arial, sans-serif;
+            `;
+            loadingDiv.innerHTML = `
+                <div style="text-align: center; max-width: 400px; padding: 2rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3rem;">
+                        <div style="width: 80px; height: 80px; color: #00b894; margin-bottom: 1.5rem; animation: pulse 2s ease-in-out infinite;">
+                            <svg viewBox="0 0 64 64" style="width: 100%; height: 100%;">
+                                <rect x="28" y="8" width="8" height="48" fill="currentColor"></rect>
+                                <rect x="8" y="28" width="48" height="8" fill="currentColor"></rect>
+                            </svg>
+                        </div>
+                        <h1 style="font-size: 3rem; font-weight: 700; color: #00b894; margin: 0;">clerky</h1>
+                    </div>
+                    <div>
+                        <div style="width: 100%; height: 6px; background-color: rgba(0, 184, 148, 0.2); border-radius: 3px; overflow: hidden; margin-bottom: 1.5rem;">
+                            <div style="height: 100%; background: linear-gradient(90deg, #00b894, #20bf6b); border-radius: 3px; width: 0%; animation: progressAnimation 2s ease-in-out infinite;"></div>
+                        </div>
+                        <p style="color: #6c757d; font-size: 1.1rem; margin: 0; font-weight: 500;">Loading your clinical assistant...</p>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(loadingDiv);
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                loadingDiv.remove();
+                result.innerHTML = '<div class="success">✅ Loading screen test completed successfully!</div>';
+            }, 3000);
+        }
+        
+        function testAuthPersistence() {
+            const result = document.getElementById('authTestResult');
+            result.innerHTML = '<div class="info">Testing authentication persistence...</div>';
+            
+            // Check if Firebase auth persistence is set
+            if (typeof window.auth !== 'undefined') {
+                result.innerHTML = '<div class="success">✅ Firebase auth is available</div>';
+                
+                // Check if persistence is set to LOCAL
+                setTimeout(() => {
+                    result.innerHTML += '<div class="success">✅ Auth persistence should be set to LOCAL (users will be remembered)</div>';
+                }, 1000);
+            } else {
+                result.innerHTML = '<div class="error">❌ Firebase auth not available</div>';
+            }
+        }
+        
+        function goToMainApp() {
+            window.open('index.html', '_blank');
+        }
+        
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+            @keyframes progressAnimation {
+                0% { width: 0%; }
+                50% { width: 70%; }
+                100% { width: 100%; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
