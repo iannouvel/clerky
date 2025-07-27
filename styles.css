@@ -2168,7 +2168,22 @@ div.third-column,
 
 /* Settings button icon styling */
 #settingsBtn {
-    font-size: 18px;
+    font-size: 24px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+#settingsBtn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+#settingsBtn:active {
+    transform: scale(0.95);
 }
 
 /* test comment */
