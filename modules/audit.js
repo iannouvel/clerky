@@ -8,6 +8,7 @@ export class AuditPage {
     constructor() {
         this.allGuidelines = [];
         this.selectedGuideline = null;
+        this.currentAIProvider = 'DeepSeek'; // Default to cheapest provider
     }
 
     // Initialize audit page
@@ -29,6 +30,9 @@ export class AuditPage {
         
         // Setup event listeners
         this.setupEventListeners();
+        
+        // Setup AI provider selector
+        this.setupAIProviderSelector();
         
         console.log('Audit page initialization complete');
     }
@@ -70,6 +74,23 @@ export class AuditPage {
         } catch (error) {
             console.error('❌ Failed to load guidelines for audit:', error);
             throw error;
+        }
+    }
+
+    // Setup AI provider selector
+    setupAIProviderSelector() {
+        const modelSelect = document.getElementById('auditModelSelect');
+        if (modelSelect) {
+            // Set default value
+            modelSelect.value = this.currentAIProvider;
+            
+            // Add change event listener
+            modelSelect.addEventListener('change', (e) => {
+                this.currentAIProvider = e.target.value;
+                console.log(`[DEBUG] AI Provider changed to: ${this.currentAIProvider}`);
+            });
+            
+            console.log(`[DEBUG] AI Provider selector initialized with: ${this.currentAIProvider}`);
         }
     }
 
@@ -353,10 +374,12 @@ export class AuditPage {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${await this.getAuthToken()}`
                 },
                 body: JSON.stringify({
                     guidelineId: this.selectedGuideline.id,
-                    guidelineTitle: this.selectedGuideline.title
+                    guidelineTitle: this.selectedGuideline.title,
+                    aiProvider: this.currentAIProvider // Pass selected AI provider
                 })
             });
             

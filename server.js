@@ -49,7 +49,7 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'Gemini',
-    model: 'gemini-1.5-pro',
+    model: 'gemini-1.5-pro-latest',
     costPer1kTokens: 0.0025, // $0.0025 per 1k tokens
     priority: 5,
     description: 'Google\'s offering, good for specific use cases'
@@ -1366,11 +1366,16 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         tokenUsage.estimated_cost_usd = totalCost;
       }
     } else if (preferredProvider === 'Gemini') {
-      // Gemini API expects POST to /v1beta/models/gemini-1.5-pro:generateContent
+      // Gemini requires a different message format
+      const geminiMessages = formattedMessages.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'model',
+        parts: [{ text: msg.content }]
+      }));
+      
       const response = await axios.post(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent',
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
         {
-          contents: formattedMessages,
+          contents: geminiMessages,
           generationConfig: {
             temperature: 0.7,
             maxOutputTokens: 4000
@@ -1378,14 +1383,18 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         },
         {
           headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.GOOGLE_AI_API_KEY}`
+            'Content-Type': 'application/json'
+          },
+          params: {
+            key: process.env.GOOGLE_AI_API_KEY
           }
         }
       );
+      
       responseData = response.data;
       // Gemini returns candidates[0].content.parts[0].text
       content = responseData.candidates?.[0]?.content?.parts?.[0]?.text || '';
+      
       // Gemini usage: responseData.usageMetadata
       if (responseData.usageMetadata) {
         tokenUsage = {
@@ -1393,10 +1402,15 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           completion_tokens: responseData.usageMetadata.candidatesTokenCount,
           total_tokens: responseData.usageMetadata.totalTokenCount
         };
-        // Gemini pricing (placeholder): $0.0025/1K input, $0.0075/1K output
+        
+        // Calculate approximate cost - Gemini pricing
         const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0025;
         const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0075;
         const totalCost = inputCost + outputCost;
+        
+        console.log(`Gemini API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
         tokenUsage.estimated_cost_usd = totalCost;
       }
     }
@@ -1496,8 +1510,14 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               }
             });
           } else if (nextProvider.name === 'Gemini') {
+            // Gemini requires a different message format
+            const geminiMessages = formattedMessages.map(msg => ({
+              role: msg.role === 'user' ? 'user' : 'model',
+              parts: [{ text: msg.content }]
+            }));
+            
             response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${nextProvider.model}:generateContent`, {
-              contents: formattedMessages,
+              contents: geminiMessages,
               generationConfig: {
                 temperature: 0.7,
                 maxOutputTokens: 4000
@@ -1565,7 +1585,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 }
 
 // Update the route function to use the new sendToAI
-async function routeToAI(prompt, userId = null) {
+async function routeToAI(prompt, userId = null, preferredProvider = null) {
   try {
     // Set default AI provider to the cheapest available option
     const defaultProvider = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
@@ -1577,34 +1597,42 @@ async function routeToAI(prompt, userId = null) {
       userId: userId || 'none'
     });
     
-    // Update local environment variable as a default (cheapest provider)
-    if (!process.env.PREFERRED_AI_PROVIDER) {
-      process.env.PREFERRED_AI_PROVIDER = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
-    }
+    // Use preferred provider if specified, otherwise use cheapest provider as default
+    let provider = preferredProvider || defaultProvider; // Use preferred or default to DeepSeek (cheapest)
     
-    // Get the user's preferred AI provider from cache or storage
-    let provider = defaultProvider;
-    if (userId) {
+    if (!preferredProvider && userId) {
       try {
-        provider = await getUserAIPreference(userId);
-        console.log('[DEBUG] User AI preference retrieved:', {
-          userId,
-          provider,
-          defaultProvider
-        });
+        const userPreference = await getUserAIPreference(userId);
+        if (userPreference) {
+          provider = userPreference;
+          console.log('[DEBUG] User AI preference retrieved:', {
+            userId,
+            provider,
+            defaultProvider
+          });
+        } else {
+          console.log('[DEBUG] No user preference found, using cheapest provider:', {
+            userId,
+            provider: defaultProvider
+          });
+        }
       } catch (error) {
         console.error('[DEBUG] Error getting user AI preference:', {
           error: error.message,
           userId,
           usingDefault: true
         });
-        provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+        // Keep using defaultProvider (DeepSeek)
       }
-    } else {
-      console.log('[DEBUG] No user ID provided, using default AI provider:', {
-        provider: process.env.PREFERRED_AI_PROVIDER || defaultProvider
+    } else if (preferredProvider) {
+      console.log('[DEBUG] Using specified AI provider:', {
+        preferredProvider,
+        provider
       });
-      provider = process.env.PREFERRED_AI_PROVIDER || defaultProvider;
+    } else {
+      console.log('[DEBUG] No user ID provided, using cheapest provider:', {
+        provider: defaultProvider
+      });
     }
     
     // Determine the appropriate model based on the provider
@@ -6262,7 +6290,7 @@ function extractKeywords(text) {
 }
 
 // Function to extract auditable elements from guideline content using AI
-async function extractAuditableElements(content) {
+async function extractAuditableElements(content, aiProvider = 'DeepSeek') {
   if (!content || typeof content !== 'string') {
     return [];
   }
@@ -6316,7 +6344,7 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
           content: prompt 
         }
       ]
-    });
+    }, req.user?.uid, aiProvider);
 
     if (result && result.content) {
       try {
@@ -6633,7 +6661,9 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
       });
     }
 
-    const { guidelineId } = req.body;
+    // Get AI provider from request (default to DeepSeek if not specified)
+    const { guidelineId, aiProvider = 'DeepSeek' } = req.body;
+    console.log(`[DEBUG] Using AI provider: ${aiProvider} for guideline: ${guidelineId}`);
     
     // If specific guidelineId is provided, update only that one
     if (guidelineId) {
@@ -6672,7 +6702,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           });
         }
         
-        const auditableElements = await extractAuditableElements(content);
+        const auditableElements = await extractAuditableElements(content, aiProvider);
         
         // Update the guideline
         await guidelineRef.update({
@@ -6732,7 +6762,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           continue;
         }
         
-        const auditableElements = await extractAuditableElements(content);
+        const auditableElements = await extractAuditableElements(content, aiProvider);
         
         // Update the guideline
         await db.collection('guidelines').doc(guidelineId).update({
