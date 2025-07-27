@@ -3629,12 +3629,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handler for agent button
-    const agentBtn = document.getElementById('agentBtn');
-    if (agentBtn) {
-        agentBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Agent button clicked, opening agent page in new tab...');
-            window.open('agent.html', '_blank');
+    // Add click handler for audit button
+    const auditBtn = document.getElementById('auditBtn');
+    if (auditBtn) {
+        auditBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Audit button clicked, opening audit page in new tab...');
+            window.open('audit.html', '_blank');
         });
     }
 
