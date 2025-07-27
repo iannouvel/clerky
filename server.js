@@ -13,6 +13,73 @@ const path = require('path');
 const crypto = require('crypto');
 const PDFParser = require('pdf-parse');
 
+// ============================================================================
+// AI PROVIDER COST-EFFECTIVE ITERATION SYSTEM
+// ============================================================================
+// Provider preference array ordered by cost (cheapest first, most expensive last)
+// This ensures we try the most cost-effective providers before falling back to expensive ones
+const AI_PROVIDER_PREFERENCE = [
+  {
+    name: 'DeepSeek',
+    model: 'deepseek-chat',
+    costPer1kTokens: 0.0005, // $0.0005 per 1k tokens (cheapest)
+    priority: 1,
+    description: 'Most cost-effective option'
+  },
+  {
+    name: 'Mistral',
+    model: 'mistral-large-latest',
+    costPer1kTokens: 0.001, // $0.001 per 1k tokens
+    priority: 2,
+    description: 'Good balance of cost and quality'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-3-sonnet-20240229',
+    costPer1kTokens: 0.003, // $0.003 per 1k tokens
+    priority: 3,
+    description: 'High quality, moderate cost'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-3.5-turbo',
+    costPer1kTokens: 0.0015, // $0.0015 per 1k tokens
+    priority: 4,
+    description: 'Reliable but can hit quota limits'
+  },
+  {
+    name: 'Gemini',
+    model: 'gemini-1.5-pro',
+    costPer1kTokens: 0.0025, // $0.0025 per 1k tokens
+    priority: 5,
+    description: 'Google\'s offering, good for specific use cases'
+  }
+];
+
+// Helper function to get next available provider in cost order
+function getNextAvailableProvider(currentProvider, availableKeys) {
+  const currentIndex = AI_PROVIDER_PREFERENCE.findIndex(p => p.name === currentProvider);
+  if (currentIndex === -1) return AI_PROVIDER_PREFERENCE[0]; // Default to cheapest
+  
+  // Start from the next provider after current
+  for (let i = currentIndex + 1; i < AI_PROVIDER_PREFERENCE.length; i++) {
+    const provider = AI_PROVIDER_PREFERENCE[i];
+    if (availableKeys[`has${provider.name}Key`]) {
+      return provider;
+    }
+  }
+  
+  // If no next provider available, try from the beginning
+  for (let i = 0; i < currentIndex; i++) {
+    const provider = AI_PROVIDER_PREFERENCE[i];
+    if (availableKeys[`has${provider.name}Key`]) {
+      return provider;
+    }
+  }
+  
+  return null; // No available providers
+}
+
 // Note: Firebase Admin will be initialized later with proper error handling
 // This early initialization is removed to prevent duplicate app errors
 
@@ -1022,7 +1089,7 @@ function formatMessagesForProvider(messages, provider) {
 async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
   try {
     // Determine the provider based on the model, but don't override the model
-    let preferredProvider;
+    let preferredProvider = 'DeepSeek'; // Default fallback
     if (model.includes('deepseek')) {
       preferredProvider = 'DeepSeek';
     } else if (model.includes('claude') || model.includes('anthropic')) {
@@ -1031,8 +1098,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       preferredProvider = 'Mistral';
     } else if (model.includes('gemini')) {
       preferredProvider = 'Gemini';
-    } else {
+    } else if (model.includes('gpt')) {
       preferredProvider = 'OpenAI';
+    } else {
+      preferredProvider = 'DeepSeek'; // Default to DeepSeek if unknown model
     }
     
     console.log('[DEBUG] sendToAI initial configuration:', {
@@ -1104,146 +1173,32 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       hasGeminiKey
     });
     
-    // If we don't have the key for the preferred provider, fallback to one we do have
-    if (preferredProvider === 'OpenAI' && !hasOpenAIKey) {
-      if (hasDeepSeekKey) {
-        console.log('[DEBUG] Falling back to DeepSeek due to missing OpenAI key');
-        preferredProvider = 'DeepSeek';
-        // Only update model if it's an OpenAI model
-        if (model.includes('gpt')) {
-          model = 'deepseek-chat';
-        }
-      } else if (hasAnthropicKey) {
-        console.log('[DEBUG] Falling back to Anthropic due to missing OpenAI key');
-        preferredProvider = 'Anthropic';
-        if (model.includes('gpt')) {
-          model = 'claude-3-sonnet-20240229';
-        }
-      } else if (hasMistralKey) {
-        console.log('[DEBUG] Falling back to Mistral due to missing OpenAI key');
-        preferredProvider = 'Mistral';
-        if (model.includes('gpt')) {
-          model = 'mistral-large-latest';
-        }
-      } else if (hasGeminiKey) {
-        console.log('[DEBUG] Falling back to Gemini due to missing OpenAI key');
-        preferredProvider = 'Gemini';
-        if (model.includes('gpt')) {
-          model = 'gemini-1.5-pro';
-        }
-      } else {
-        throw new Error('No AI provider API keys configured');
-      }
-    } else if (preferredProvider === 'DeepSeek' && !hasDeepSeekKey) {
-      if (hasOpenAIKey) {
-        console.log('[DEBUG] Falling back to OpenAI due to missing DeepSeek key');
-        preferredProvider = 'OpenAI';
-        // Only update model if it's a DeepSeek model
-        if (model.includes('deepseek')) {
-          model = 'gpt-3.5-turbo';
-        }
-      } else if (hasAnthropicKey) {
-        console.log('[DEBUG] Falling back to Anthropic due to missing DeepSeek key');
-        preferredProvider = 'Anthropic';
-        if (model.includes('deepseek')) {
-          model = 'claude-3-sonnet-20240229';
-        }
-      } else if (hasMistralKey) {
-        console.log('[DEBUG] Falling back to Mistral due to missing DeepSeek key');
-        preferredProvider = 'Mistral';
-        if (model.includes('deepseek')) {
-          model = 'mistral-large-latest';
-        }
-      } else if (hasGeminiKey) {
-        console.log('[DEBUG] Falling back to Gemini due to missing DeepSeek key');
-        preferredProvider = 'Gemini';
-        if (model.includes('deepseek')) {
-          model = 'gemini-1.5-pro';
-        }
-      } else {
-        throw new Error('No AI provider API keys configured');
-      }
-    } else if (preferredProvider === 'Anthropic' && !hasAnthropicKey) {
-      if (hasOpenAIKey) {
-        console.log('[DEBUG] Falling back to OpenAI due to missing Anthropic key');
-        preferredProvider = 'OpenAI';
-        if (model.includes('claude')) {
-          model = 'gpt-3.5-turbo';
-        }
-      } else if (hasDeepSeekKey) {
-        console.log('[DEBUG] Falling back to DeepSeek due to missing Anthropic key');
-        preferredProvider = 'DeepSeek';
-        if (model.includes('claude')) {
-          model = 'deepseek-chat';
-        }
-      } else if (hasMistralKey) {
-        console.log('[DEBUG] Falling back to Mistral due to missing Anthropic key');
-        preferredProvider = 'Mistral';
-        if (model.includes('claude')) {
-          model = 'mistral-large-latest';
-        }
-      } else if (hasGeminiKey) {
-        console.log('[DEBUG] Falling back to Gemini due to missing Anthropic key');
-        preferredProvider = 'Gemini';
-        if (model.includes('claude')) {
-          model = 'gemini-1.5-pro';
-        }
-      } else {
-        throw new Error('No AI provider API keys configured');
-      }
-    } else if (preferredProvider === 'Mistral' && !hasMistralKey) {
-      if (hasOpenAIKey) {
-        console.log('[DEBUG] Falling back to OpenAI due to missing Mistral key');
-        preferredProvider = 'OpenAI';
-        if (model.includes('mistral')) {
-          model = 'gpt-3.5-turbo';
-        }
-      } else if (hasDeepSeekKey) {
-        console.log('[DEBUG] Falling back to DeepSeek due to missing Mistral key');
-        preferredProvider = 'DeepSeek';
-        if (model.includes('mistral')) {
-          model = 'deepseek-chat';
-        }
-      } else if (hasAnthropicKey) {
-        console.log('[DEBUG] Falling back to Anthropic due to missing Mistral key');
-        preferredProvider = 'Anthropic';
-        if (model.includes('mistral')) {
-          model = 'claude-3-sonnet-20240229';
-        }
-      } else if (hasGeminiKey) {
-        console.log('[DEBUG] Falling back to Gemini due to missing Mistral key');
-        preferredProvider = 'Gemini';
-        if (model.includes('mistral')) {
-          model = 'gemini-1.5-pro';
-        }
-      } else {
-        throw new Error('No AI provider API keys configured');
-      }
-    } else if (preferredProvider === 'Gemini' && !hasGeminiKey) {
-      if (hasOpenAIKey) {
-        console.log('[DEBUG] Falling back to OpenAI due to missing Gemini key');
-        preferredProvider = 'OpenAI';
-        if (model.includes('gemini')) {
-          model = 'gpt-3.5-turbo';
-        }
-      } else if (hasDeepSeekKey) {
-        console.log('[DEBUG] Falling back to DeepSeek due to missing Gemini key');
-        preferredProvider = 'DeepSeek';
-        if (model.includes('gemini')) {
-          model = 'deepseek-chat';
-        }
-      } else if (hasAnthropicKey) {
-        console.log('[DEBUG] Falling back to Anthropic due to missing Gemini key');
-        preferredProvider = 'Anthropic';
-        if (model.includes('gemini')) {
-          model = 'claude-3-sonnet-20240229';
-        }
-      } else if (hasMistralKey) {
-        console.log('[DEBUG] Falling back to Mistral due to missing Gemini key');
-        preferredProvider = 'Mistral';
-        if (model.includes('gemini')) {
-          model = 'mistral-large-latest';
-        }
+    // ============================================================================
+    // COST-EFFECTIVE PROVIDER FALLBACK SYSTEM
+    // ============================================================================
+    // Check if we have the API key for the preferred provider, if not, iterate through
+    // available providers in cost order (cheapest first)
+    const availableKeys = {
+      hasOpenAIKey,
+      hasDeepSeekKey,
+      hasAnthropicKey,
+      hasMistralKey,
+      hasGeminiKey
+    };
+    
+    // Check if current preferred provider has API key
+    const hasCurrentProviderKey = availableKeys[`has${preferredProvider}Key`];
+    
+    if (!hasCurrentProviderKey) {
+      console.log(`[DEBUG] No API key for ${preferredProvider}, searching for next available provider in cost order...`);
+      
+      // Get next available provider in cost order
+      const nextProvider = getNextAvailableProvider(preferredProvider, availableKeys);
+      
+      if (nextProvider) {
+        console.log(`[DEBUG] Falling back to ${nextProvider.name} (${nextProvider.description}) - Cost: $${nextProvider.costPer1kTokens}/1k tokens`);
+        preferredProvider = nextProvider.name;
+        model = nextProvider.model;
       } else {
         throw new Error('No AI provider API keys configured');
       }
@@ -1454,65 +1409,152 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
   } catch (error) {
     console.error('Error in sendToAI:', error.response?.data || error.message);
     
-    // Check if it's an OpenAI quota exceeded error and try fallback to DeepSeek
-    if (preferredProvider === 'OpenAI' && error.response?.data?.error?.message?.includes('exceeded your current quota')) {
-      console.log('[DEBUG] OpenAI quota exceeded, attempting fallback to DeepSeek...');
+    // Ensure preferredProvider is defined for error handling
+    if (!preferredProvider) {
+      preferredProvider = 'DeepSeek'; // Default fallback
+    }
+    
+    // ============================================================================
+    // COST-EFFECTIVE QUOTA EXCEEDED FALLBACK SYSTEM
+    // ============================================================================
+    // Check if it's a quota exceeded error and try next available provider in cost order
+    const quotaExceededError = error.response?.data?.error?.message?.includes('exceeded your current quota') ||
+                               error.response?.data?.error?.message?.includes('quota') ||
+                               error.response?.data?.error?.message?.includes('rate limit');
+    
+    if (quotaExceededError) {
+      console.log(`[DEBUG] ${preferredProvider} quota exceeded, attempting cost-effective fallback...`);
       
-      try {
-        // Check if we have DeepSeek key
-        if (process.env.DEEPSEEK_API_KEY) {
-          console.log('[DEBUG] Falling back to DeepSeek due to OpenAI quota exceeded');
+      // Get available keys for fallback
+      const availableKeys = {
+        hasOpenAIKey: !!process.env.OPENAI_API_KEY,
+        hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY,
+        hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
+        hasMistralKey: !!process.env.MISTRAL_API_KEY,
+        hasGeminiKey: !!process.env.GOOGLE_AI_API_KEY
+      };
+      
+      // Get next available provider in cost order
+      const nextProvider = getNextAvailableProvider(preferredProvider, availableKeys);
+      
+      if (nextProvider) {
+        console.log(`[DEBUG] Falling back to ${nextProvider.name} (${nextProvider.description}) - Cost: $${nextProvider.costPer1kTokens}/1k tokens`);
+        
+        try {
+          // Retry with next provider
+          const formattedMessages = formatMessagesForProvider(messages, nextProvider.name);
           
-          // Retry with DeepSeek
-          const fallbackModel = 'deepseek-chat';
-          const formattedMessages = formatMessagesForProvider(messages, 'DeepSeek');
-          
-          const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
-            model: fallbackModel,
-            messages: formattedMessages,
-            temperature: 0.7,
-            max_tokens: 4000
-          }, {
-            headers: {
-              'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
-              'Content-Type': 'application/json'
-            }
-          });
-          
-          const responseData = response.data;
-          const content = responseData.choices[0].message.content;
-          
-          // Extract token usage for DeepSeek
-          let tokenUsage = {};
-          if (responseData.usage) {
-            tokenUsage = {
-              prompt_tokens: responseData.usage.prompt_tokens,
-              completion_tokens: responseData.usage.completion_tokens,
-              total_tokens: responseData.usage.total_tokens
-            };
-            
-            const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0005;
-            const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
-            const totalCost = inputCost + outputCost;
-            
-            console.log(`DeepSeek Fallback API Call Cost: $${totalCost.toFixed(6)}`);
-            tokenUsage.estimated_cost_usd = totalCost;
+          let response;
+          if (nextProvider.name === 'DeepSeek') {
+            response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
+              model: nextProvider.model,
+              messages: formattedMessages,
+              temperature: 0.7,
+              max_tokens: 4000
+            }, {
+              headers: {
+                'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
+                'Content-Type': 'application/json'
+              }
+            });
+          } else if (nextProvider.name === 'OpenAI') {
+            response = await axios.post('https://api.openai.com/v1/chat/completions', {
+              model: nextProvider.model,
+              messages: formattedMessages,
+              temperature: 0.7,
+              max_tokens: 4000
+            }, {
+              headers: {
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                'Content-Type': 'application/json'
+              }
+            });
+          } else if (nextProvider.name === 'Anthropic') {
+            response = await axios.post('https://api.anthropic.com/v1/messages', {
+              model: nextProvider.model,
+              messages: formattedMessages,
+              max_tokens: 4000
+            }, {
+              headers: {
+                'x-api-key': process.env.ANTHROPIC_API_KEY,
+                'Content-Type': 'application/json',
+                'anthropic-version': '2023-06-01'
+              }
+            });
+          } else if (nextProvider.name === 'Mistral') {
+            response = await axios.post('https://api.mistral.ai/v1/chat/completions', {
+              model: nextProvider.model,
+              messages: formattedMessages,
+              temperature: 0.7,
+              max_tokens: 4000
+            }, {
+              headers: {
+                'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
+                'Content-Type': 'application/json'
+              }
+            });
+          } else if (nextProvider.name === 'Gemini') {
+            response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${nextProvider.model}:generateContent`, {
+              contents: formattedMessages,
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 4000
+              }
+            }, {
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              params: {
+                key: process.env.GOOGLE_AI_API_KEY
+              }
+            });
           }
           
-          console.log('[DEBUG] Successfully fell back to DeepSeek');
-          return {
-            content: content,
-            ai_provider: 'DeepSeek',
-            ai_model: fallbackModel,
-            token_usage: tokenUsage,
-            fallback_used: true,
-            original_error: 'OpenAI quota exceeded'
-          };
-        } else {
-          console.error('[DEBUG] No DeepSeek API key available for fallback');
+          if (response) {
+            const responseData = response.data;
+            let content;
+            
+            // Extract content based on provider
+            if (nextProvider.name === 'Anthropic') {
+              content = responseData.content[0].text;
+            } else if (nextProvider.name === 'Gemini') {
+              content = responseData.candidates[0].content.parts[0].text;
+            } else {
+              content = responseData.choices[0].message.content;
+            }
+            
+            // Extract token usage
+            let tokenUsage = {};
+            if (responseData.usage) {
+              tokenUsage = {
+                prompt_tokens: responseData.usage.prompt_tokens,
+                completion_tokens: responseData.usage.completion_tokens,
+                total_tokens: responseData.usage.total_tokens
+              };
+              
+              const inputCost = (tokenUsage.prompt_tokens / 1000) * nextProvider.costPer1kTokens;
+              const outputCost = (tokenUsage.completion_tokens / 1000) * nextProvider.costPer1kTokens;
+              const totalCost = inputCost + outputCost;
+              
+              console.log(`${nextProvider.name} Fallback API Call Cost: $${totalCost.toFixed(6)}`);
+              tokenUsage.estimated_cost_usd = totalCost;
+            }
+            
+            console.log(`[DEBUG] Successfully fell back to ${nextProvider.name}`);
+            return {
+              content: content,
+              ai_provider: nextProvider.name,
+              ai_model: nextProvider.model,
+              token_usage: tokenUsage,
+              fallback_used: true,
+              original_error: `${preferredProvider} quota exceeded`
+            };
+          }
+        } catch (fallbackError) {
+          console.error(`[DEBUG] ${nextProvider.name} fallback also failed:`, fallbackError.message);
         }
-      } catch (fallbackError) {
-        console.error('[DEBUG] DeepSeek fallback also failed:', fallbackError.message);
+      } else {
+        console.error('[DEBUG] No available providers for fallback');
       }
     }
     
@@ -1523,8 +1565,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 // Update the route function to use the new sendToAI
 async function routeToAI(prompt, userId = null) {
   try {
-    // Set default AI provider to DeepSeek
-    const defaultProvider = 'DeepSeek';
+    // Set default AI provider to the cheapest available option
+    const defaultProvider = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
     
     console.log('[DEBUG] routeToAI called with:', {
       promptType: typeof prompt,
@@ -1533,9 +1575,9 @@ async function routeToAI(prompt, userId = null) {
       userId: userId || 'none'
     });
     
-    // Update local environment variable as a default
+    // Update local environment variable as a default (cheapest provider)
     if (!process.env.PREFERRED_AI_PROVIDER) {
-      process.env.PREFERRED_AI_PROVIDER = defaultProvider;
+      process.env.PREFERRED_AI_PROVIDER = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
     }
     
     // Get the user's preferred AI provider from cache or storage
