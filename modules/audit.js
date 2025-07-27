@@ -1,6 +1,7 @@
 // Audit module - contains only audit-specific functionality
 import { auth } from './firebase-core.js';
 import { loadGuidelinesFromFirestore } from './guidelines.js';
+import { getCurrentUser } from './auth.js';
 
 // Audit page specific functionality
 export class AuditPage {
@@ -220,16 +221,59 @@ export class AuditPage {
                 
                 // Count auditable elements from full metadata
                 let auditableCount = 0;
-                if (fullGuideline.significant_terms && Array.isArray(fullGuideline.significant_terms)) {
-                    auditableCount = fullGuideline.significant_terms.length;
-                } else if (fullGuideline.significant_terms && typeof fullGuideline.significant_terms === 'string') {
-                    auditableCount = fullGuideline.significant_terms.split(',').length;
-                } else if (fullGuideline.condensed) {
-                    // Estimate auditable elements from condensed content sections
-                    const sections = fullGuideline.condensed.match(/#### \*\*[^*]+\*\*/g);
-                    auditableCount = sections ? sections.length : 0;
+                let auditableElements = fullGuideline.auditableElements || [];
+                
+                if (auditableElements.length > 0) {
+                    auditableCount = auditableElements.length;
+                    document.getElementById('auditableElements').textContent = auditableCount;
+                } else {
+                    // Show loading indicator and extract auditable elements
+                    document.getElementById('auditableElements').textContent = 'Loading...';
+                    document.getElementById('auditableElements').style.color = '#ffc107';
+                    
+                    try {
+                        console.log('No auditable elements found, extracting via AI...');
+                        const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+                        const response = await fetch(`${serverUrl}/updateGuidelinesWithAuditableElements`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${await this.getAuthToken()}`
+                            },
+                            body: JSON.stringify({
+                                guidelineId: fullGuideline.id
+                            })
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            // Find the updated guideline data
+                            const updatedGuideline = result.results.find(r => r.guidelineId === fullGuideline.id);
+                            if (updatedGuideline && updatedGuideline.count > 0) {
+                                auditableCount = updatedGuideline.count;
+                                console.log(`Successfully extracted ${auditableCount} auditable elements`);
+                            } else {
+                                auditableCount = 0;
+                                console.log('No auditable elements extracted');
+                            }
+                        } else {
+                            auditableCount = 0;
+                            console.error('Failed to extract auditable elements:', result.error);
+                        }
+                        
+                        // Update display
+                        document.getElementById('auditableElements').textContent = auditableCount;
+                        document.getElementById('auditableElements').style.color = '#2c3e50';
+                        
+                    } catch (error) {
+                        console.error('Error extracting auditable elements:', error);
+                        document.getElementById('auditableElements').textContent = 'Error';
+                        document.getElementById('auditableElements').style.color = '#e74c3c';
+                    }
+                } else {
+                    document.getElementById('auditableElements').textContent = auditableCount;
                 }
-                document.getElementById('auditableElements').textContent = auditableCount;
                 
                 // Last updated from full metadata
                 let lastUpdatedText = 'Unknown';
@@ -454,6 +498,20 @@ export class AuditPage {
                 toggleBtn.classList.add('expanded');
                 toggleBtn.innerHTML = '<span class="toggle-icon">▼</span> Hide Full Metadata';
             }
+        }
+    }
+    
+    // Get authentication token for API calls
+    async getAuthToken() {
+        try {
+            const user = getCurrentUser();
+            if (user) {
+                return await user.getIdToken();
+            }
+            return null;
+        } catch (error) {
+            console.error('Error getting auth token:', error);
+            return null;
         }
     }
 } 
