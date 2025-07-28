@@ -620,8 +620,15 @@ export class AuditPage {
             
             // Add event listener for automated testing
             const testBtn = document.getElementById('runAutomatedTestsBtn');
+            console.log('[DEBUG] Looking for runAutomatedTestsBtn:', testBtn);
             if (testBtn) {
-                testBtn.addEventListener('click', () => this.runAutomatedTests(auditData));
+                console.log('[DEBUG] Adding click event listener to runAutomatedTestsBtn');
+                testBtn.addEventListener('click', () => {
+                    console.log('[DEBUG] runAutomatedTestsBtn clicked!');
+                    this.runAutomatedTests(auditData);
+                });
+            } else {
+                console.error('[DEBUG] runAutomatedTestsBtn not found in DOM');
             }
         }
     }
@@ -635,9 +642,13 @@ export class AuditPage {
 
     // Run automated tests using /auditElementCheck endpoint
     async runAutomatedTests(auditData) {
+        console.log('[DEBUG] runAutomatedTests method called with auditData:', auditData);
+        
         const testBtn = document.getElementById('runAutomatedTestsBtn');
         const spinner = document.getElementById('automatedTestSpinner');
         const resultsDiv = document.getElementById('automatedTestResults');
+        
+        console.log('[DEBUG] Found elements:', { testBtn: !!testBtn, spinner: !!spinner, resultsDiv: !!resultsDiv });
         
         try {
             testBtn.disabled = true;
