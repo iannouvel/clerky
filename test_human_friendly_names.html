@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Human Friendly Names</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .guideline { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .has-name { background-color: #d4edda; }
+        .no-name { background-color: #f8d7da; }
+        .stats { background-color: #e2e3e5; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Test Human Friendly Names</h1>
+    <div id="stats" class="stats">Loading...</div>
+    <div id="guidelines"></div>
+
+    <script type="module">
+        import { auth } from './modules/firebase-core.js';
+        import { loadGuidelinesFromFirestore } from './modules/guidelines.js';
+
+        async function testHumanFriendlyNames() {
+            try {
+                // Wait for auth
+                const user = await new Promise((resolve) => {
+                    const unsubscribe = auth.onAuthStateChanged((user) => {
+                        unsubscribe();
+                        resolve(user);
+                    });
+                });
+
+                if (!user) {
+                    document.getElementById('stats').innerHTML = '❌ No user authenticated';
+                    return;
+                }
+
+                console.log('User authenticated:', user.email);
+
+                // Load guidelines
+                const guidelines = await loadGuidelinesFromFirestore();
+                console.log('Loaded guidelines:', guidelines.length);
+
+                // Count guidelines with human_friendly_name
+                const withHumanFriendly = guidelines.filter(g => g.human_friendly_name).length;
+                const withoutHumanFriendly = guidelines.length - withHumanFriendly;
+
+                // Display stats
+                document.getElementById('stats').innerHTML = `
+                    <strong>Guideline Statistics:</strong><br>
+                    Total guidelines: ${guidelines.length}<br>
+                    With human_friendly_name: ${withHumanFriendly}<br>
+                    Without human_friendly_name: ${withoutHumanFriendly}<br>
+                    Percentage with names: ${Math.round((withHumanFriendly / guidelines.length) * 100)}%
+                `;
+
+                // Display sample guidelines
+                const guidelinesDiv = document.getElementById('guidelines');
+                const sampleGuidelines = guidelines.slice(0, 10);
+
+                let html = '<h2>Sample Guidelines:</h2>';
+                sampleGuidelines.forEach(guideline => {
+                    const hasName = !!guideline.human_friendly_name;
+                    const className = hasName ? 'guideline has-name' : 'guideline no-name';
+                    
+                    html += `
+                        <div class="${className}">
+                            <strong>ID:</strong> ${guideline.id}<br>
+                            <strong>Title:</strong> ${guideline.title || 'N/A'}<br>
+                            <strong>Human Friendly Name:</strong> ${guideline.human_friendly_name || '❌ MISSING'}<br>
+                            <strong>Organisation:</strong> ${guideline.organisation || 'N/A'}<br>
+                            <strong>Year:</strong> ${guideline.yearProduced || 'N/A'}
+                        </div>
+                    `;
+                });
+
+                guidelinesDiv.innerHTML = html;
+
+            } catch (error) {
+                console.error('Test failed:', error);
+                document.getElementById('stats').innerHTML = `❌ Error: ${error.message}`;
+            }
+        }
+
+        // Run test when page loads
+        testHumanFriendlyNames();
+    </script>
+</body>
+</html> 

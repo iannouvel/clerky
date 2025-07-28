@@ -7867,9 +7867,17 @@ async function getAllGuidelines() {
         // Process main guidelines
         guidelines.forEach(doc => {
             const data = doc.data();
+            
+            // Generate human_friendly_name if missing
+            let humanFriendlyName = data.human_friendly_name || data.humanFriendlyName;
+            if (!humanFriendlyName && data.title) {
+                humanFriendlyName = cleanHumanFriendlyName(data.title);
+            }
+            
             guidelineMap.set(doc.id, {
                 ...data,
-                id: doc.id
+                id: doc.id,
+                human_friendly_name: humanFriendlyName
             });
         });
 
