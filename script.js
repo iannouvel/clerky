@@ -35,6 +35,12 @@ async function checkDisclaimerAcceptance() {
         const today = new Date();
         const isToday = acceptanceTime.toDateString() === today.toDateString();
         
+        console.log('[DEBUG] Disclaimer acceptance check:', {
+            acceptanceTime: acceptanceTime.toDateString(),
+            today: today.toDateString(),
+            isToday: isToday
+        });
+        
         if (!isToday) {
             console.log('[DEBUG] Disclaimer not accepted today, redirecting to disclaimer page');
             window.location.href = 'disclaimer.html';
@@ -5199,6 +5205,9 @@ window.auth.onAuthStateChanged(async (user) => {
     if (user) {
         console.log('[DEBUG] User authenticated, checking disclaimer acceptance');
         
+        // Add a small delay to ensure Firebase has fully restored the session
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         // Check disclaimer acceptance first
         const disclaimerAccepted = await checkDisclaimerAcceptance();
         if (!disclaimerAccepted) {
@@ -5244,8 +5253,47 @@ window.auth.onAuthStateChanged(async (user) => {
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        // Keep loading screen visible for a moment to show "Loading your clinical assistant..."
+        // Add a delay to allow Firebase to potentially restore the session
         setTimeout(() => {
+            // Check again if user is now authenticated after the delay
+            const currentUser = window.auth.currentUser;
+            if (currentUser) {
+                console.log('[DEBUG] User authenticated after delay, restarting auth flow');
+                // Trigger the auth state change again
+                window.auth.onAuthStateChanged(async (user) => {
+                    if (user) {
+                        console.log('[DEBUG] User authenticated after delay');
+                        // Re-run the authenticated user flow
+                        const disclaimerAccepted = await checkDisclaimerAcceptance();
+                        if (!disclaimerAccepted) {
+                            return;
+                        }
+                        
+                        const landingPage = document.getElementById('landingPage');
+                        const mainContent = document.getElementById('mainContent');
+                        landingPage.classList.add('hidden');
+                        mainContent.classList.add('hidden');
+                        
+                        const userLabel = document.getElementById('userLabel');
+                        const userName = document.getElementById('userName');
+                        if (userLabel && userName) {
+                            userName.textContent = user.displayName || user.email || 'User';
+                            userName.classList.remove('hidden');
+                        }
+                        
+                        setTimeout(async () => {
+                            await initializeMainApp();
+                        }, 500);
+                    }
+                });
+                return;
+            }
+            
+            // If still no user, show landing page
+            const loading = document.getElementById('loading');
+            const mainContent = document.getElementById('mainContent');
+            const landingPage = document.getElementById('landingPage');
+            
             if (loading) {
                 loading.classList.add('hidden');
             }
@@ -5255,10 +5303,10 @@ window.auth.onAuthStateChanged(async (user) => {
             if (landingPage) {
                 landingPage.classList.remove('hidden');
             }
-        }, 1000); // Show loading for 1 second even when not authenticated
-        
-        // Set up Google Sign-in button listener
-        setupGoogleSignIn();
+            
+            // Set up Google Sign-in button listener
+            setupGoogleSignIn();
+        }, 2000); // Wait 2 seconds for Firebase to restore session
     }
 });
 
@@ -8143,7 +8191,7 @@ function selectAllQuestionGuidelines() {
 
 window.selectAllQuestionGuidelines = selectAllQuestionGuidelines;
 window.processQuestionAgainstGuidelines = processQuestionAgainstGuidelines;
-window.cancelQuestionSelection = cancelQuestionSelection;
+window.cancelGuidelineSelection = cancelGuidelineSelection;
 
 // Process question against selected guidelines
 async function processQuestionAgainstGuidelines() {
