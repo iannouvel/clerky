@@ -786,17 +786,17 @@ export class AuditPage {
         `;
         
         // Group tests by type
-        const correctTests = testResults.filter(t => t.testType === 'correct_transcript');
-        const incorrectTests = testResults.filter(t => t.testType === 'incorrect_transcript');
+        const correctTranscriptTests = testResults.filter(t => t.testType === 'correct_transcript');
+        const incorrectTranscriptTests = testResults.filter(t => t.testType === 'incorrect_transcript');
         
         // Display correct transcript tests
-        if (correctTests.length > 0) {
+        if (correctTranscriptTests.length > 0) {
             html += `
                 <div style="border: 1px solid #28a745; border-radius: 4px; padding: 15px; margin-bottom: 15px; background: #f8fff9;">
                     <h5 style="color: #28a745; margin: 0 0 10px 0;">✅ Correct Transcript Tests</h5>
             `;
             
-            correctTests.forEach(test => {
+            correctTranscriptTests.forEach(test => {
                 const status = test.passed ? '✅ PASSED' : '❌ FAILED';
                 const statusColor = test.passed ? '#28a745' : '#dc3545';
                 
@@ -814,13 +814,13 @@ export class AuditPage {
         }
         
         // Display incorrect transcript tests
-        if (incorrectTests.length > 0) {
+        if (incorrectTranscriptTests.length > 0) {
             html += `
                 <div style="border: 1px solid #dc3545; border-radius: 4px; padding: 15px; margin-bottom: 15px; background: #fff8f8;">
                     <h5 style="color: #dc3545; margin: 0 0 10px 0;">❌ Incorrect Transcript Tests</h5>
             `;
             
-            incorrectTests.forEach(test => {
+            incorrectTranscriptTests.forEach(test => {
                 const status = test.passed ? '✅ PASSED' : '❌ FAILED';
                 const statusColor = test.passed ? '#28a745' : '#dc3545';
                 
