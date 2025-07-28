@@ -7029,17 +7029,34 @@ Generate a comprehensive clinical transcript that would test all the auditable e
     
     const transcript = aiResponse.content;
     
-    // Store the transcript in Firestore for audit purposes
+    // Store the transcript in Firestore for audit purposes with enhanced labeling
     const auditRef = db.collection('auditTranscripts').doc();
+    
+    // Create detailed audit data with significance labeling
     const auditData = {
       guidelineId: guidelineId,
       transcript: transcript,
-      auditableElements: selectedElements,
+      auditableElements: selectedElements.map(element => ({
+        ...element,
+        significance: element.significance || 'medium', // Ensure significance is set
+        testType: 'correct_script'
+      })),
       auditScope: auditScope,
       aiProvider: aiProvider,
       generatedBy: req.user.uid,
       generatedAt: admin.firestore.FieldValue.serverTimestamp(),
-      status: 'correct_script' // This is the correct script
+      status: 'correct_script',
+      significanceBreakdown: {
+        high: selectedElements.filter(el => el.significance === 'high').length,
+        medium: selectedElements.filter(el => el.significance === 'medium').length,
+        low: selectedElements.filter(el => el.significance === 'low').length
+      },
+      totalElements: selectedElements.length,
+      metadata: {
+        guidelineTitle: selectedElements[0]?.guidelineTitle || guidelineId,
+        auditPurpose: 'compliance_testing',
+        version: '1.0'
+      }
     };
     
     await auditRef.set(auditData);
@@ -7143,8 +7160,13 @@ Generate an incorrect transcript that would fail audit testing for the specific 
           elementIndex: i,
           elementName: element.name,
           elementType: element.type,
+          significance: element.significance || 'medium',
           incorrectTranscript: aiResponse.content,
-          errorType: 'omission_or_incorrect_advice', // This could be made more specific
+          errorType: 'omission_or_incorrect_advice',
+          testType: 'incorrect_script',
+          auditableElement: element.element,
+          derivedAdvice: element.derivedAdvice,
+          inputVariables: element.inputVariables || [],
           generatedAt: new Date().toISOString()
         };
         
@@ -7152,11 +7174,22 @@ Generate an incorrect transcript that would fail audit testing for the specific 
       }
     }
     
-    // Store the incorrect scripts in Firestore
+    // Store the incorrect scripts in Firestore with enhanced metadata
     const auditRef = db.collection('auditTranscripts').doc(auditId);
+    
+    // Calculate significance breakdown for incorrect scripts
+    const incorrectSignificanceBreakdown = {
+      high: incorrectScripts.filter(script => script.significance === 'high').length,
+      medium: incorrectScripts.filter(script => script.significance === 'medium').length,
+      low: incorrectScripts.filter(script => script.significance === 'low').length
+    };
+    
     await auditRef.update({
       incorrectScripts: incorrectScripts,
-      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+      incorrectSignificanceBreakdown: incorrectSignificanceBreakdown,
+      totalIncorrectScripts: incorrectScripts.length,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      auditComplete: true
     });
     
     console.log('[AUDIT-INCORRECT] Successfully generated incorrect scripts:', {

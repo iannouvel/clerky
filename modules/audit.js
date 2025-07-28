@@ -602,6 +602,28 @@ export class AuditPage {
         }
         
         resultsDiv.innerHTML = html;
+        
+        // Add automated testing button if we have incorrect scripts
+        if (auditData.incorrectScripts && auditData.incorrectScripts.length > 0) {
+            html += `
+                <div style="border: 1px solid #ffc107; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #fffbf0;">
+                    <h4 style="color: #856404; margin: 0 0 10px 0;">🧪 Automated Testing</h4>
+                    <p style="margin: 0 0 15px 0;">Test the generated transcripts against the auditable elements using AI validation.</p>
+                    <button id="runAutomatedTestsBtn" class="audit-btn" style="background: #ffc107; color: #212529;">
+                        <span id="automatedTestSpinner" class="spinner" style="display: none;"></span>
+                        Run Automated Tests
+                    </button>
+                    <div id="automatedTestResults" style="margin-top: 15px; display: none;"></div>
+                </div>
+            `;
+            resultsDiv.innerHTML = html;
+            
+            // Add event listener for automated testing
+            const testBtn = document.getElementById('runAutomatedTestsBtn');
+            if (testBtn) {
+                testBtn.addEventListener('click', () => this.runAutomatedTests(auditData));
+            }
+        }
     }
 
     // Show audit error
@@ -609,6 +631,213 @@ export class AuditPage {
         const resultsDiv = document.getElementById('auditResults');
         resultsDiv.className = 'audit-results';
         resultsDiv.innerHTML = `<div class="audit-error">${message}</div>`;
+    }
+
+    // Run automated tests using /auditElementCheck endpoint
+    async runAutomatedTests(auditData) {
+        const testBtn = document.getElementById('runAutomatedTestsBtn');
+        const spinner = document.getElementById('automatedTestSpinner');
+        const resultsDiv = document.getElementById('automatedTestResults');
+        
+        try {
+            testBtn.disabled = true;
+            spinner.style.display = 'inline-block';
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = '<div style="text-align: center; color: #6c757d;">Running automated tests...</div>';
+            
+            console.log('🧪 Starting automated tests for audit:', auditData.auditId);
+            
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const authToken = await this.getAuthToken();
+            
+            const testResults = [];
+            let correctTests = 0;
+            let incorrectTests = 0;
+            
+            // Test 1: Correct transcript should pass all elements
+            console.log('Testing correct transcript...');
+            for (const element of auditData.auditableElements) {
+                try {
+                    const response = await fetch(`${serverUrl}/auditElementCheck`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${authToken}`
+                        },
+                        body: JSON.stringify({
+                            guidelineId: auditData.guidelineId || this.selectedGuideline.id,
+                            auditableElement: element.element,
+                            transcript: auditData.correctTranscript
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        const testResult = {
+                            testType: 'correct_transcript',
+                            elementName: element.name,
+                            elementSignificance: element.significance,
+                            isCorrect: result.result.isCorrect,
+                            expected: true,
+                            passed: result.result.isCorrect === true,
+                            issues: result.result.issues || [],
+                            suggestedFixes: result.result.suggestedFixes || []
+                        };
+                        
+                        testResults.push(testResult);
+                        if (testResult.passed) correctTests++;
+                        else incorrectTests++;
+                        
+                        console.log(`✅ Correct transcript test for ${element.name}: ${testResult.passed ? 'PASSED' : 'FAILED'}`);
+                    }
+                } catch (error) {
+                    console.error(`❌ Error testing correct transcript for ${element.name}:`, error);
+                    testResults.push({
+                        testType: 'correct_transcript',
+                        elementName: element.name,
+                        elementSignificance: element.significance,
+                        error: error.message,
+                        passed: false
+                    });
+                    incorrectTests++;
+                }
+            }
+            
+            // Test 2: Incorrect scripts should fail their respective elements
+            console.log('Testing incorrect scripts...');
+            for (const script of auditData.incorrectScripts) {
+                try {
+                    const response = await fetch(`${serverUrl}/auditElementCheck`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${authToken}`
+                        },
+                        body: JSON.stringify({
+                            guidelineId: auditData.guidelineId || this.selectedGuideline.id,
+                            auditableElement: script.auditableElement,
+                            transcript: script.incorrectTranscript
+                        })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        const testResult = {
+                            testType: 'incorrect_transcript',
+                            elementName: script.elementName,
+                            elementSignificance: script.significance,
+                            isCorrect: result.result.isCorrect,
+                            expected: false,
+                            passed: result.result.isCorrect === false,
+                            issues: result.result.issues || [],
+                            suggestedFixes: result.result.suggestedFixes || []
+                        };
+                        
+                        testResults.push(testResult);
+                        if (testResult.passed) correctTests++;
+                        else incorrectTests++;
+                        
+                        console.log(`✅ Incorrect script test for ${script.elementName}: ${testResult.passed ? 'PASSED' : 'FAILED'}`);
+                    }
+                } catch (error) {
+                    console.error(`❌ Error testing incorrect script for ${script.elementName}:`, error);
+                    testResults.push({
+                        testType: 'incorrect_transcript',
+                        elementName: script.elementName,
+                        elementSignificance: script.significance,
+                        error: error.message,
+                        passed: false
+                    });
+                    incorrectTests++;
+                }
+            }
+            
+            // Display results
+            this.displayAutomatedTestResults(testResults, correctTests, incorrectTests);
+            
+        } catch (error) {
+            console.error('❌ Automated testing failed:', error);
+            resultsDiv.innerHTML = `<div class="audit-error">Automated testing failed: ${error.message}</div>`;
+        } finally {
+            testBtn.disabled = false;
+            spinner.style.display = 'none';
+        }
+    }
+    
+    // Display automated test results
+    displayAutomatedTestResults(testResults, correctTests, incorrectTests) {
+        const resultsDiv = document.getElementById('automatedTestResults');
+        
+        const totalTests = testResults.length;
+        const passRate = totalTests > 0 ? ((correctTests / totalTests) * 100).toFixed(1) : 0;
+        
+        let html = `
+            <div style="background: ${passRate >= 80 ? '#d4edda' : passRate >= 60 ? '#fff3cd' : '#f8d7da'}; 
+                        color: ${passRate >= 80 ? '#155724' : passRate >= 60 ? '#856404' : '#721c24'}; 
+                        padding: 15px; border-radius: 4px; margin-bottom: 15px;">
+                <h5 style="margin: 0 0 10px 0;">📊 Test Results Summary</h5>
+                <strong>Total Tests:</strong> ${totalTests}<br>
+                <strong>Passed:</strong> ${correctTests}<br>
+                <strong>Failed:</strong> ${incorrectTests}<br>
+                <strong>Pass Rate:</strong> ${passRate}%
+            </div>
+        `;
+        
+        // Group tests by type
+        const correctTests = testResults.filter(t => t.testType === 'correct_transcript');
+        const incorrectTests = testResults.filter(t => t.testType === 'incorrect_transcript');
+        
+        // Display correct transcript tests
+        if (correctTests.length > 0) {
+            html += `
+                <div style="border: 1px solid #28a745; border-radius: 4px; padding: 15px; margin-bottom: 15px; background: #f8fff9;">
+                    <h5 style="color: #28a745; margin: 0 0 10px 0;">✅ Correct Transcript Tests</h5>
+            `;
+            
+            correctTests.forEach(test => {
+                const status = test.passed ? '✅ PASSED' : '❌ FAILED';
+                const statusColor = test.passed ? '#28a745' : '#dc3545';
+                
+                html += `
+                    <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 10px; margin: 5px 0;">
+                        <strong>${test.elementName}</strong> (${test.elementSignificance}) - <span style="color: ${statusColor};">${status}</span><br>
+                        ${test.issues.length > 0 ? `<strong>Issues:</strong> ${test.issues.join(', ')}<br>` : ''}
+                        ${test.suggestedFixes.length > 0 ? `<strong>Suggested Fixes:</strong> ${test.suggestedFixes.join(', ')}<br>` : ''}
+                        ${test.error ? `<strong>Error:</strong> ${test.error}` : ''}
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
+        
+        // Display incorrect transcript tests
+        if (incorrectTests.length > 0) {
+            html += `
+                <div style="border: 1px solid #dc3545; border-radius: 4px; padding: 15px; margin-bottom: 15px; background: #fff8f8;">
+                    <h5 style="color: #dc3545; margin: 0 0 10px 0;">❌ Incorrect Transcript Tests</h5>
+            `;
+            
+            incorrectTests.forEach(test => {
+                const status = test.passed ? '✅ PASSED' : '❌ FAILED';
+                const statusColor = test.passed ? '#28a745' : '#dc3545';
+                
+                html += `
+                    <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 10px; margin: 5px 0;">
+                        <strong>${test.elementName}</strong> (${test.elementSignificance}) - <span style="color: ${statusColor};">${status}</span><br>
+                        ${test.issues.length > 0 ? `<strong>Issues:</strong> ${test.issues.join(', ')}<br>` : ''}
+                        ${test.suggestedFixes.length > 0 ? `<strong>Suggested Fixes:</strong> ${test.suggestedFixes.join(', ')}<br>` : ''}
+                        ${test.error ? `<strong>Error:</strong> ${test.error}` : ''}
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
+        
+        resultsDiv.innerHTML = html;
     }
 
     // Show audit success
