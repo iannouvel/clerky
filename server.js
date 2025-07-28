@@ -5252,6 +5252,111 @@ app.post('/batchEnhanceMetadata', authenticateUser, async (req, res) => {
   }
 });
 
+// -----------------------------------------------------------------------------
+//  NEW ENDPOINT: Audit Element Check
+// -----------------------------------------------------------------------------
+app.post('/auditElementCheck', authenticateUser, async (req, res) => {
+    const { guidelineId, auditableElement, transcript } = req.body || {};
+
+    // Input validation
+    if (!guidelineId || !auditableElement || !transcript) {
+        return res.status(400).json({
+            success: false,
+            error: 'guidelineId, auditableElement and transcript are required'
+        });
+    }
+
+    const userId = req.user.uid;
+
+    try {
+        // Fetch guideline text
+        const guideline = await getGuideline(guidelineId);
+        if (!guideline) {
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+        const guidelineText = guideline.condensed || guideline.content || '';
+
+        // Construct prompts
+        const systemPrompt = `You are a compliance-checking medical AI.\n\nReturn ONLY valid JSON matching this interface:\n\ninterface AuditElementResult {\n  element: string\n  isCorrect: boolean\n  issues: string[]\n  suggestedFixes: string[]\n}`;
+        const userPrompt = `GUIDELINE TEXT:\n${guidelineText}\n\nAUDITABLE ELEMENT:\n${auditableElement}\n\nTRANSCRIPT:\n${transcript}\n\nReply with JSON ONLY.`;
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        // Send to AI
+        const aiResponse = await routeToAI({ messages }, userId);
+        if (!aiResponse || !aiResponse.content) {
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Helper: safely extract JSON
+        const extractJson = (text) => {
+            const attempt = (str) => { try { return JSON.parse(str); } catch { return null; } };
+            let json = attempt(text);
+            if (json) return json;
+            const md = text.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/i);
+            if (md) {
+                json = attempt(md[1]);
+                if (json) return json;
+            }
+            const obj = text.match(/(\{[\s\S]*\})/);
+            if (obj) {
+                json = attempt(obj[1]);
+                if (json) return json;
+            }
+            return null;
+        };
+
+        const resultObj = extractJson(aiResponse.content);
+        if (!resultObj) {
+            console.error('[auditElementCheck] JSON parse failure:', aiResponse.content.slice(0, 500));
+            return res.status(500).json({ success: false, error: 'Unable to parse AI JSON response' });
+        }
+
+        // Persist to Firestore (non-blocking)
+        try {
+            await admin.firestore().collection('auditElementChecks').add({
+                userId,
+                guidelineId,
+                auditableElement,
+                transcript,
+                result: resultObj,
+                ai_provider: aiResponse.ai_provider,
+                ai_model: aiResponse.ai_model,
+                token_usage: aiResponse.token_usage,
+                createdAt: admin.firestore.FieldValue.serverTimestamp()
+            });
+        } catch (dbErr) {
+            console.error('[auditElementCheck] Firestore write error:', dbErr.message);
+        }
+
+        // Log interaction (non-blocking)
+        try {
+            await logAIInteraction(
+                { system_prompt: systemPrompt, user_prompt: userPrompt },
+                { success: true, response: aiResponse.content, ai_provider: aiResponse.ai_provider, ai_model: aiResponse.ai_model, token_usage: aiResponse.token_usage },
+                'auditElementCheck'
+            );
+        } catch (logErr) {
+            console.error('[auditElementCheck] logAIInteraction error:', logErr.message);
+        }
+
+        // Return response
+        return res.json({
+            success: true,
+            result: resultObj,
+            ai_provider: aiResponse.ai_provider,
+            ai_model: aiResponse.ai_model,
+            tokensUsed: aiResponse.token_usage
+        });
+    } catch (error) {
+        console.error('[auditElementCheck] Error:', error);
+        return res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
