@@ -1,0 +1,163 @@
+{
+  "days": [
+    {
+      "date": "2025-08-01",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-02",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-03",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-04",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-05",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-06",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-07",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-08",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-09",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-10",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-11",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    },
+    {
+      "date": "2025-08-12",
+      "provider": "DeepSeek",
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "models": {
+        "deepseek-chat": {
+          "tokens": 0,
+          "cost_usd": 0
+        }
+      },
+      "note": "DeepSeek usage data is not available through API. This is a placeholder."
+    }
+  ],
+  "total_tokens": 0,
+  "total_cost_usd": 0,
+  "provider": "DeepSeek"
+}
