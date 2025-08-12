@@ -393,7 +393,7 @@ body {
 .tiptap-editor:empty:before {
     content: attr(placeholder);
     color: #adb5bd;
-    pointer-pointer-events: none;
+    pointer-events: none;
     display: block;
 }
 
@@ -2235,6 +2235,7 @@ html, body {
     font-size: 0.9em;
     padding: 4px 8px;
     margin-left: 10px;
+    color: #000;
 }
 
 .main-three-column {

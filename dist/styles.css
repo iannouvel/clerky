@@ -126,6 +126,11 @@ body {
     flex-shrink: 0; /* Prevent header from shrinking */
 }
 
+/* Ensure record button text is black for visibility in column header */
+.column-header .record-btn {
+    color: #000;
+}
+
 /* Editor container should take remaining space */
 .tiptap-editor, .editor-container {
     flex: 1;
