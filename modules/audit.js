@@ -215,7 +215,18 @@ export class AuditPage {
         
         try {
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
-            const response = await fetch(`${serverUrl}/getAudits?guidelineId=${guidelineId}`);
+            const authToken = await this.getAuthToken();
+            const url = `${serverUrl}/getAudits?guidelineId=${encodeURIComponent(guidelineId)}`;
+            const response = await fetch(url, {
+                headers: authToken ? { 'Authorization': `Bearer ${authToken}` } : {}
+            });
+
+            if (!response.ok) {
+                // Treat non-200 responses (e.g., 404) as "no audits"
+                retrieveBtn.style.display = 'none';
+                return;
+            }
+
             const result = await response.json();
             
             if (result.success && Array.isArray(result.audits) && result.audits.length > 0) {
@@ -242,6 +253,8 @@ export class AuditPage {
                 // Fetch full metadata from Firestore
                 console.log('Fetching full metadata for guideline:', guideline.id);
                 const fullGuideline = await this.fetchFullGuidelineMetadata(guideline.id);
+                // Prepare selected guideline data early so later updates persist
+                this.selectedGuidelineFullData = { ...fullGuideline };
                 
                 // Calculate metadata completeness dynamically based on all fields
                 const allFields = Object.keys(fullGuideline);
@@ -313,6 +326,8 @@ export class AuditPage {
                                 
                                 // Update the stored data with the new auditable elements
                                 if (updatedGuideline.auditableElements) {
+                                    // persist on both the working copy and original reference
+                                    fullGuideline.auditableElements = updatedGuideline.auditableElements;
                                     this.selectedGuidelineFullData.auditableElements = updatedGuideline.auditableElements;
                                 }
                                 
@@ -360,9 +375,6 @@ export class AuditPage {
                     }
                 }
                 document.getElementById('lastUpdated').textContent = lastUpdatedText;
-                
-                // Store full metadata for expandable view
-                this.selectedGuidelineFullData = fullGuideline;
                 
                 // Populate metadata content for expandable view
                 this.populateMetadataContent(fullGuideline);
@@ -984,7 +996,10 @@ export class AuditPage {
             return;
         }
         
-        const auditableElements = this.selectedGuidelineFullData.auditableElements || [];
+        // Ensure we use the latest elements from the stored full data
+        const auditableElements = (this.selectedGuidelineFullData && this.selectedGuidelineFullData.auditableElements)
+            ? this.selectedGuidelineFullData.auditableElements
+            : [];
         const resultsDiv = document.getElementById('auditResults');
         
         if (auditableElements.length === 0) {
