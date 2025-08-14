@@ -902,9 +902,11 @@ export class AuditPage {
     // Show audit success
     showAuditSuccess(message) {
         const resultsDiv = document.getElementById('auditResults');
-        const existingContent = resultsDiv.innerHTML;
-        resultsDiv.innerHTML = `<div class="audit-success">${message}</div>` + existingContent;
-        
+        if (!resultsDiv) return;
+
+        // Prepend success message without replacing existing DOM (preserves event listeners)
+        resultsDiv.insertAdjacentHTML('afterbegin', `<div class="audit-success">${message}</div>`);
+
         // Remove success message after 3 seconds
         setTimeout(() => {
             const successDiv = resultsDiv.querySelector('.audit-success');
