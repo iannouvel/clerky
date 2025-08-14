@@ -180,8 +180,19 @@ export class AuditPage {
         document.getElementById('guidelineInput').value = displayName;
         document.getElementById('guidelineDropdown').style.display = 'none';
         
+        // Show sections that are hidden until a guideline is selected
+        const controlsSection = document.getElementById('auditControlsSection');
+        if (controlsSection) controlsSection.style.display = 'block';
+        const infoSection = document.getElementById('guidelineInformationSection');
+        if (infoSection) infoSection.style.display = 'block';
+        const noSelectionDiv = document.getElementById('noGuidelineSelected');
+        if (noSelectionDiv) noSelectionDiv.style.display = 'none';
+
         // Update guideline information (now async)
         await this.updateGuidelineInfo(guideline);
+
+        // Check if there are previous audits for this guideline to decide button visibility
+        await this.updateRetrieveButtonVisibility(guideline.id);
         
         // Show auditable elements selection if elements are available
         const auditableElementsSelection = document.getElementById('auditableElementsSelection');
@@ -195,6 +206,27 @@ export class AuditPage {
         }
         
         console.log('Selected guideline for audit:', guideline);
+    }
+
+    // Show or hide the Retrieve Previous Audits button based on availability
+    async updateRetrieveButtonVisibility(guidelineId) {
+        const retrieveBtn = document.getElementById('retrieveAuditsBtn');
+        if (!retrieveBtn) return;
+        
+        try {
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const response = await fetch(`${serverUrl}/getAudits?guidelineId=${guidelineId}`);
+            const result = await response.json();
+            
+            if (result.success && Array.isArray(result.audits) && result.audits.length > 0) {
+                retrieveBtn.style.display = 'inline-block';
+            } else {
+                retrieveBtn.style.display = 'none';
+            }
+        } catch (error) {
+            console.warn('Could not determine previous audits; hiding Retrieve button by default.', error);
+            retrieveBtn.style.display = 'none';
+        }
     }
 
     // Update guideline information display
@@ -474,6 +506,10 @@ export class AuditPage {
             });
             
             this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
+            
+            // Ensure the Retrieve Previous Audits button is visible after a successful audit
+            const retrieveBtn = document.getElementById('retrieveAuditsBtn');
+            if (retrieveBtn) retrieveBtn.style.display = 'inline-block';
             
         } catch (error) {
             console.error('Audit failed:', error);
