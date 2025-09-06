@@ -99,6 +99,8 @@
             gap: 20px;
         }
 
+        .top-bar-right { display: flex; align-items: center; gap: 8px; }
+
         .logo {
             color: white;
             font-size: 20px;
@@ -109,6 +111,57 @@
             text-decoration: none;
         }
         
+        /* Tools panel */
+        .tools-toggle {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+
+        .tools-toggle:hover { background: rgba(255,255,255,0.3); }
+
+        .tools-panel-backdrop {
+            position: fixed;
+            top: 48px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.25);
+            display: none;
+            z-index: 1090;
+        }
+
+        .tools-panel {
+            position: fixed;
+            top: 48px;
+            right: 0;
+            height: calc(100vh - 48px);
+            width: 420px;
+            max-width: 92vw;
+            background: #ffffff;
+            box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+            transform: translateX(100%);
+            transition: transform 0.25s ease-in-out;
+            z-index: 1100;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .tools-panel.open { transform: translateX(0); }
+
+        .tools-section { margin-bottom: 18px; }
+        .tools-section h4 { margin: 0 0 8px 0; color: var(--primary-color); }
+        .tools-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; }
+        .dev-btn { padding: 8px 10px; border-radius: 6px; border: 1px solid #e5e7eb; background: #f8fafc; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 13px; }
+        .dev-btn:hover { background: #eef2f7; }
+        .danger-zone { border-top: 1px dashed #f1b0b7; padding-top: 10px; }
+
         /* Cost display styles */
         .cost-navigation {
             padding: 10px;
@@ -243,20 +296,36 @@
             <button class="nav-btn" data-content="logsContent">Logs</button>
             <button class="nav-btn" data-content="costContent">Cost</button>
         </div>
-        <div class="right-content">
-            <div class="tool-group">
-                <h3>API Tests</h3>
+        <div class="top-bar-right">
+            <button class="tools-toggle" id="toolsToggleBtn">Tools ▸</button>
+        </div>
+    </div>
+    <div class="tools-panel-backdrop" id="toolsBackdrop"></div>
+    <aside class="tools-panel" id="toolsPanel" aria-hidden="true">
+        <div class="tools-section">
+            <h4>API Tests</h4>
+            <div class="tools-grid">
                 <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
                 <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
                 <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
-                <button id="repairContentBtn" class="dev-btn" style="background-color: #28a745; color: white;">🔧 Repair Content Issues</button>
-                <button id="uploadPDFsToStorageBtn" class="dev-btn" style="background-color: #ff6b35; color: white;">🗂️ Migrate PDFs from GitHub to Firebase Storage</button>
-                <button id="migrateDatabaseBtn" class="dev-btn" style="background-color: #17a2b8; color: white;">🔄 Migrate to Single Collection</button>
-                <button id="deleteAllSummariesBtn" class="dev-btn" style="background-color: #d9534f; color: white;">Delete All Summaries</button>
-                <button id="deleteAllGuidelineDataBtn" class="dev-btn" style="background-color: #d9534f; color: white;">Delete All Guideline Data</button>
             </div>
         </div>
-    </div>
+        <div class="tools-section">
+            <h4>Maintenance</h4>
+            <div class="tools-grid">
+                <button id="repairContentBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔧 Repair Content Issues</button>
+                <button id="uploadPDFsToStorageBtn" class="dev-btn" style="background-color:#ff6b35;color:#fff;border-color:#ff6b35;">🗂️ Migrate PDFs to Firebase Storage</button>
+                <button id="migrateDatabaseBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🔄 Migrate to Single Collection</button>
+            </div>
+        </div>
+        <div class="tools-section danger-zone">
+            <h4>Danger Zone</h4>
+            <div class="tools-grid">
+                <button id="deleteAllSummariesBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Summaries</button>
+                <button id="deleteAllGuidelineDataBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Guideline Data</button>
+            </div>
+        </div>
+    </aside>
     <div class="content-wrapper">
         <div class="tab-content" id="algosContent">
             <iframe src="algos.html" frameborder="0" class="content-frame"></iframe>
