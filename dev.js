@@ -237,6 +237,33 @@ document.addEventListener('DOMContentLoaded', async function() {
             refreshCostBtn.addEventListener('click', fetchApiCosts);
         }
         
+        // Tools panel toggle
+        const toolsToggleBtn = document.getElementById('toolsToggleBtn');
+        const toolsPanel = document.getElementById('toolsPanel');
+        const toolsBackdrop = document.getElementById('toolsBackdrop');
+
+        function openTools(open) {
+            const shouldOpen = open ?? !toolsPanel.classList.contains('open');
+            toolsPanel.classList.toggle('open', shouldOpen);
+            toolsBackdrop.style.display = shouldOpen ? 'block' : 'none';
+            toolsPanel.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+            if (shouldOpen) {
+                toolsToggleBtn.textContent = 'Tools ▾';
+            } else {
+                toolsToggleBtn.textContent = 'Tools ▸';
+            }
+        }
+
+        if (toolsToggleBtn && toolsPanel && toolsBackdrop) {
+            toolsToggleBtn.addEventListener('click', () => openTools());
+            toolsBackdrop.addEventListener('click', () => openTools(false));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && toolsPanel.classList.contains('open')) {
+                    openTools(false);
+                }
+            });
+        }
+
         // Function to update the AI model
         async function updateAIModel() {
             const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
