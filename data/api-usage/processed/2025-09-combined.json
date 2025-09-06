@@ -1,11 +1,11 @@
 {
   "year": 2025,
-  "month": "08",
+  "month": "09",
   "providers": {
     "DeepSeek": {
       "total_tokens": 0,
       "total_cost_usd": 0,
-      "days": 31
+      "days": 6
     }
   },
   "total_tokens": 0,
