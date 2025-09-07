@@ -639,6 +639,26 @@ document.addEventListener('DOMContentLoaded', async function() {
             return user.getIdToken();
         }
 
+        // Load user preferences (included/excluded canonicalIds and excluded URLs)
+        let userPrefs = { includedCanonicalIds: [], excludedCanonicalIds: [], excludedSourceUrls: [] };
+        async function loadUserPrefs() {
+            try {
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/userGuidelinePrefs`, {
+                    method: 'GET',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    userPrefs = {
+                        includedCanonicalIds: data.includedCanonicalIds || [],
+                        excludedCanonicalIds: data.excludedCanonicalIds || [],
+                        excludedSourceUrls: data.excludedSourceUrls || []
+                    };
+                }
+            } catch (_) {}
+        }
+
         function renderDiscoveryResults(items) {
             const container = document.getElementById('discoveryResults');
             container.innerHTML = '';
@@ -646,7 +666,14 @@ document.addEventListener('DOMContentLoaded', async function() {
                 container.innerHTML = '<div style="color:#666">No suggestions found.</div>';
                 return;
             }
-            items.forEach(item => {
+            // Filter client-side using user preferences (URLs)
+            const excludedUrlSet = new Set((userPrefs.excludedSourceUrls || []).map(u => u.toLowerCase()));
+            const filtered = items.filter(i => i.url && !excludedUrlSet.has(i.url.toLowerCase()));
+            if (filtered.length === 0) {
+                container.innerHTML = '<div style="color:#666">All suggestions are excluded.</div>';
+                return;
+            }
+            filtered.forEach(item => {
                 const row = document.createElement('div');
                 row.style.padding = '8px';
                 row.style.marginBottom = '8px';
@@ -673,6 +700,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 includeBtn.textContent = 'Include';
                 includeBtn.onclick = async () => {
                     await includeGuidance(item);
+                    await loadUserPrefs();
                 };
 
                 const excludeBtn = document.createElement('button');
@@ -681,6 +709,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 excludeBtn.textContent = 'Exclude';
                 excludeBtn.onclick = async () => {
                     await excludeGuidance(item);
+                    await loadUserPrefs();
                 };
 
                 actions.appendChild(openBtn);
@@ -692,14 +721,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         async function fetchExclusions() {
-            const token = await getAuthTokenOrPrompt();
-            const res = await fetch(`${SERVER_URL}/guidance-exclusions`, {
-                method: 'GET',
-                headers: { 'Authorization': `Bearer ${token}` }
-            });
-            const data = await res.json();
-            if (!data.success) throw new Error(data.error || 'Failed to load exclusions');
-            return data.items || [];
+            // Prefer new prefs endpoint; show excluded URLs list
+            await loadUserPrefs();
+            const items = (userPrefs.excludedSourceUrls || []).map(u => ({ url: u, reason: 'excluded' }));
+            return items;
         }
 
         function renderExclusions(items) {
@@ -715,7 +740,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 row.style.borderBottom = '1px solid #eee';
                 row.innerHTML = `
                     <div style="font-size:12px;color:#006;word-break:break-all">${e.url}</div>
-                    <div style="font-size:11px;color:#777">${e.reason || 'excluded'} • ${e.addedBy || ''} • ${e.addedAt || ''}</div>
+                    <div style="font-size:11px;color:#777">${e.reason || 'excluded'}</div>
                 `;
                 panel.appendChild(row);
             });
@@ -726,13 +751,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             status.textContent = 'Excluding...';
             try {
                 const token = await getAuthTokenOrPrompt();
-                const res = await fetch(`${SERVER_URL}/guidance-exclusions`, {
+                const res = await fetch(`${SERVER_URL}/userGuidelinePrefs/update`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ url: item.url, reason: 'user_excluded', title: item.title })
+                    body: JSON.stringify({ url: item.url, status: 'excluded', reason: 'user_excluded' })
                 });
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'Failed to exclude');
@@ -752,7 +777,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (!response.ok) throw new Error(`Download failed (${response.status})`);
                 const blob = await response.blob();
 
-                // 2) Build filename from title/org/year; fallback to last path segment
+                // 2) Build filename
                 const urlObj = new URL(item.url);
                 const lastSegment = urlObj.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
                 const ext = lastSegment.toLowerCase().endsWith('.pdf') ? '' : '.pdf';
@@ -774,7 +799,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const uploadData = await uploadRes.json();
                 if (!uploadRes.ok || !uploadData.success) throw new Error(uploadData.message || 'Upload failed');
 
-                // 4) Add to list_of_guidelines.txt via /addToGuidelinesList
+                // 4) Add to list_of_guidelines.txt for now (compat) and mark included in prefs
                 const addRes = await fetch(`${SERVER_URL}/addToGuidelinesList`, {
                     method: 'POST',
                     headers: {
@@ -785,6 +810,30 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 const addData = await addRes.json();
                 if (!addRes.ok || !addData.success) throw new Error(addData.error || 'Failed to update list');
+
+                // 5) Mark included by URL for now
+                const prefRes = await fetch(`${SERVER_URL}/userGuidelinePrefs/update`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ url: item.url, status: 'included' })
+                });
+                const prefData = await prefRes.json();
+                if (!prefData.success) throw new Error(prefData.error || 'Failed to save preference');
+
+                // 6) Try to reconcile to canonicalId (non-blocking)
+                try {
+                    await fetch(`${SERVER_URL}/reconcileUserInclude`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ url: item.url, filename })
+                    });
+                } catch (_) {}
 
                 status.textContent = 'Included and saved.';
             } catch (err) {
@@ -797,6 +846,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const status = document.getElementById('discoveryStatus');
             status.textContent = 'Scanning...';
             try {
+                await loadUserPrefs();
                 const token = await getAuthTokenOrPrompt();
                 const res = await fetch(`${SERVER_URL}/discoverGuidelines`, {
                     method: 'POST',
