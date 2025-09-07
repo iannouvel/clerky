@@ -6852,6 +6852,170 @@ app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     }
 });
 
+// ---- Per-user guideline preferences (Firestore) ----
+function sanitizeIdForDoc(str) {
+    return (str || '')
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+        .slice(0, 150) || 'item';
+}
+
+// GET: return user's included/excluded canonicalIds and excluded URLs
+app.get('/userGuidelinePrefs', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        if (!db) {
+            return res.json({ success: true, includedCanonicalIds: [], excludedCanonicalIds: [], excludedSourceUrls: [] });
+        }
+        const colRef = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
+        const snapshot = await colRef.get();
+        const includedCanonicalIds = [];
+        const excludedCanonicalIds = [];
+        const excludedSourceUrls = [];
+        snapshot.forEach(doc => {
+            const d = doc.data() || {};
+            if (d.type === 'included' && d.canonicalId) includedCanonicalIds.push(d.canonicalId);
+            if (d.type === 'excluded' && d.canonicalId) excludedCanonicalIds.push(d.canonicalId);
+            if (d.type === 'excluded' && d.normalisedUrl) excludedSourceUrls.push(d.normalisedUrl);
+        });
+        res.json({ success: true, includedCanonicalIds, excludedCanonicalIds, excludedSourceUrls });
+    } catch (error) {
+        console.error('[PREFS] GET error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// POST: update a single preference entry
+// Body: { canonicalId, status: 'included'|'excluded'|'unset', reason? } OR { url, status: 'excluded'|'unset', reason? }
+app.post('/userGuidelinePrefs/update', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        if (!db) {
+            return res.status(503).json({ success: false, error: 'Firestore unavailable' });
+        }
+        const { canonicalId, url, status, reason } = req.body || {};
+        if (!status || !['included', 'excluded', 'unset'].includes(status)) {
+            return res.status(400).json({ success: false, error: 'Invalid status' });
+        }
+        if (!canonicalId && !url) {
+            return res.status(400).json({ success: false, error: 'Provide canonicalId or url' });
+        }
+
+        const baseCol = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
+        let keyType, keyValue, docId;
+        if (canonicalId) {
+            keyType = 'cid';
+            keyValue = canonicalId;
+        } else {
+            keyType = 'url';
+            keyValue = normalizeUrl(url);
+        }
+        docId = `${status === 'included' ? 'inc' : 'exc'}-${keyType}-${sanitizeIdForDoc(keyValue)}`;
+        const docRef = baseCol.doc(docId);
+
+        if (status === 'unset') {
+            await docRef.delete();
+            return res.json({ success: true, action: 'deleted' });
+        }
+
+        const payload = {
+            type: status,
+            addedAt: admin.firestore.FieldValue.serverTimestamp(),
+            addedBy: req.user.email || userId
+        };
+        if (canonicalId) {
+            payload.canonicalId = canonicalId;
+        } else {
+            payload.url = url;
+            payload.normalisedUrl = keyValue;
+        }
+        if (reason) payload.reason = reason;
+
+        await docRef.set(payload, { merge: true });
+        res.json({ success: true, action: 'upserted' });
+    } catch (error) {
+        console.error('[PREFS] UPDATE error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// POST: reconcile an 'included' preference by URL/filename to canonicalId once available
+// Body: { url?, filename? }
+app.post('/reconcileUserInclude', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        if (!db) {
+            return res.status(503).json({ success: false, error: 'Firestore unavailable' });
+        }
+        let { url, filename } = req.body || {};
+        if (!url && !filename) {
+            return res.status(400).json({ success: false, error: 'Provide url or filename' });
+        }
+
+        const guidelinesCol = db.collection('guidelines');
+        let doc = null;
+
+        // Try by filename -> doc id
+        if (filename) {
+            try {
+                const docId = generateCleanDocId(filename);
+                const snap = await guidelinesCol.doc(docId).get();
+                if (snap.exists) {
+                    doc = { id: snap.id, data: snap.data() };
+                }
+            } catch (_) {}
+        }
+
+        // Try by downloadUrl
+        if (!doc && url) {
+            try {
+                const norm = normalizeUrl(url);
+                const qs = await guidelinesCol.where('downloadUrl', '==', url).get();
+                if (!qs.empty) {
+                    const d = qs.docs[0];
+                    doc = { id: d.id, data: d.data() };
+                } else {
+                    const qs2 = await guidelinesCol.where('downloadUrl', '==', norm).get();
+                    if (!qs2.empty) {
+                        const d = qs2.docs[0];
+                        doc = { id: d.id, data: d.data() };
+                    }
+                }
+            } catch (_) {}
+        }
+
+        if (!doc) {
+            return res.json({ success: true, reconciled: false, message: 'Guideline not yet found in Firestore' });
+        }
+
+        const canonicalId = (doc.data && doc.data.canonicalId) ? String(doc.data.canonicalId) : doc.id;
+
+        // Upsert included by canonicalId
+        const baseCol = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
+        const cidDocId = `inc-cid-${sanitizeIdForDoc(canonicalId)}`;
+        await baseCol.doc(cidDocId).set({
+            type: 'included',
+            canonicalId: canonicalId,
+            addedAt: admin.firestore.FieldValue.serverTimestamp(),
+            addedBy: req.user.email || userId
+        }, { merge: true });
+
+        // Best-effort: remove URL-based include if present
+        if (url) {
+            const norm = normalizeUrl(url);
+            const urlDocId = `inc-url-${sanitizeIdForDoc(norm)}`;
+            await baseCol.doc(urlDocId).delete().catch(() => {});
+        }
+
+        res.json({ success: true, reconciled: true, canonicalId });
+    } catch (error) {
+        console.error('[PREFS] RECONCILE error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Endpoint: get guidance exclusions (JSONL)
 app.get('/guidance-exclusions', authenticateUser, async (req, res) => {
     try {
@@ -6904,10 +7068,35 @@ app.post('/addToGuidelinesList', authenticateUser, async (req, res) => {
 app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
     try {
         const userId = req.user.uid;
-        // Load current guidelines list and exclusions
-        const guidelinesString = await getGuidelinesList();
-        const exclusions = await readExclusionsFile();
-        const excludedUrls = exclusions.map(e => e.normalizedUrl || normalizeUrl(e.url));
+        // Load existing guidelines from Firestore (not GitHub text file)
+        let allGuidelines = [];
+        try {
+            allGuidelines = await getAllGuidelines();
+        } catch (_) {
+            allGuidelines = [];
+        }
+        const existingUrls = new Set();
+        const existingCanonicalIds = new Set();
+        for (const g of allGuidelines) {
+            if (g.downloadUrl) existingUrls.add(normalizeUrl(g.downloadUrl));
+            if (g.canonicalId) existingCanonicalIds.add(String(g.canonicalId).toLowerCase());
+        }
+
+        // Load user preferences from Firestore
+        let excludedSourceUrls = [];
+        let excludedCanonicalIds = [];
+        if (db) {
+            try {
+                const colRef = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
+                const snapshot = await colRef.get();
+                snapshot.forEach(doc => {
+                    const d = doc.data() || {};
+                    if (d.type === 'excluded' && d.normalisedUrl) excludedSourceUrls.push(d.normalisedUrl);
+                    if (d.type === 'excluded' && d.canonicalId) excludedCanonicalIds.push(String(d.canonicalId).toLowerCase());
+                });
+            } catch (_) {}
+        }
+        const excludedUrlSet = new Set(excludedSourceUrls.map(u => normalizeUrl(u)));
 
         const systemPrompt = `You are assisting an Obstetrics & Gynaecology clinician. Identify official guidance documents that would be useful for day-to-day clinical work in the UK. Consider:
 - NICE guidance
@@ -6922,7 +7111,17 @@ Rules:
 - Output strictly valid JSON (array of objects). No commentary.
 `;
 
-        const userPrompt = `Existing guidelines (filenames):\n${guidelinesString}\n\nExcluded source URLs (normalised):\n${excludedUrls.join('\n')}\n\nTask: Propose additional, currently available guidance items (NICE/RCOG/SIPs/Consent Advice/Good Practice Papers) that would be useful to a working O&G doctor but are not yet included or excluded. For each item, return an object with keys: title (string), organisation ("NICE"|"RCOG"), type (e.g., "Green-top Guideline"|"SIP"|"Consent Advice"|"Good Practice Paper"|"Guideline"), year (number or null), url (direct downloadable URL), notes (optional string). Return a single JSON array only.`;
+        // Provide a compact summary of existing guidelines (titles and org if present) to reduce tokens
+        const existingSummary = allGuidelines.slice(0, 400).map(g => {
+            const parts = [];
+            if (g.organisation) parts.push(g.organisation);
+            if (g.series && g.number) parts.push(`${g.series} ${g.number}`);
+            if (g.year) parts.push(String(g.year));
+            const head = parts.length ? `[${parts.join(' ')}]` : '';
+            return `${head} ${g.title || g.id || ''}`.trim();
+        }).join('\n');
+
+        const userPrompt = `Existing guidelines:\n${existingSummary}\n\nExcluded source URLs (normalised):\n${Array.from(excludedUrlSet).join('\n')}\n\nTask: Propose additional, currently available guidance items (NICE/RCOG/SIPs/Consent Advice/Good Practice Papers) that would be useful to a working O&G doctor but are not yet included or excluded. For each item, return an object with keys: title (string), organisation ("NICE"|"RCOG"), type (e.g., "Green-top Guideline"|"SIP"|"Consent Advice"|"Good Practice Paper"|"Guideline"), year (number or null), url (direct downloadable URL), notes (optional string). Return a single JSON array only.`;
 
         const messages = [
             { role: 'system', content: systemPrompt },
@@ -6951,8 +7150,8 @@ Rules:
             return res.status(500).json({ success: false, error: 'Failed to parse AI JSON' });
         }
 
-        // Filter out suggestions with excluded URLs, and dedupe by normalized URL
-        const seen = new Set(excludedUrls);
+        // Filter out suggestions with excluded URLs or already existing URLs, and dedupe
+        const seen = new Set([...excludedUrlSet, ...existingUrls]);
         const filtered = [];
         for (const item of suggestions) {
             if (!item || !item.url || !item.title) continue;
