@@ -695,7 +695,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 openBtn.onclick = async () => {
                     try {
                         const token = await getAuthTokenOrPrompt();
-                        const previewUrl = `${SERVER_URL}/proxyGuidelineView?url=${encodeURIComponent(item.url)}`;
+                        const previewUrl = `${SERVER_URL}/proxyGuidelineView?url=${encodeURIComponent(item.url)}&id_token=${encodeURIComponent(token)}`;
                         const frame = document.getElementById('guidelinePreview');
                         if (frame) frame.src = previewUrl;
                     } catch (e) {

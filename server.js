@@ -7150,17 +7150,31 @@ app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
 });
 
 // Endpoint: Proxy fetch for viewing (PDF/files) inside iframe, limited to allowlist hosts
-app.get('/proxyGuidelineView', authenticateUser, async (req, res) => {
+app.get('/proxyGuidelineView', async (req, res) => {
     try {
-        const { url } = req.query;
+        const { url, id_token } = req.query;
         if (!url) return res.status(400).send('url required');
+        if (!id_token) return res.status(401).send('auth required');
+
+        // Verify Firebase ID token (so iframe doesn't need headers)
+        try {
+            await admin.auth().verifyIdToken(String(id_token));
+        } catch (e) {
+            return res.status(401).send('invalid token');
+        }
+
         let parsed;
-        try { parsed = new URL(url); } catch { return res.status(400).send('invalid url'); }
+        try { parsed = new URL(String(url)); } catch { return res.status(400).send('invalid url'); }
         const allowedHosts = new Set(['www.rcog.org.uk', 'rcog.org.uk', 'www.nice.org.uk', 'nice.org.uk']);
         if (!allowedHosts.has(parsed.hostname)) return res.status(400).send('domain not allowed');
 
-        const upstream = await axios.get(url, { responseType: 'arraybuffer' });
+        const upstream = await axios.get(String(url), { responseType: 'arraybuffer' });
         const contentType = upstream.headers['content-type'] || 'application/pdf';
+
+        // Remove frameguard for this response and allow our client to embed
+        res.removeHeader('X-Frame-Options');
+        res.setHeader('Content-Security-Policy', "frame-ancestors 'self' https://clerkyai.health");
+        res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
         res.setHeader('Content-Type', contentType);
         res.setHeader('Cache-Control', 'public, max-age=3600');
         res.setHeader('Content-Disposition', 'inline');
