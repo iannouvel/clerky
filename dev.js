@@ -4,8 +4,8 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
-// Initialize Analytics
-const analytics = getAnalytics(app);
+// Initialize Analytics (disabled in this environment to avoid 403 warnings)
+let analytics; // getAnalytics(app) disabled
 
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
@@ -692,7 +692,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const openBtn = document.createElement('button');
                 openBtn.className = 'dev-btn';
                 openBtn.textContent = 'Open';
-                openBtn.onclick = () => window.open(item.url, '_blank');
+                openBtn.onclick = async () => {
+                    try {
+                        const token = await getAuthTokenOrPrompt();
+                        const previewUrl = `${SERVER_URL}/proxyGuidelineView?url=${encodeURIComponent(item.url)}`;
+                        const frame = document.getElementById('guidelinePreview');
+                        if (frame) frame.src = previewUrl;
+                    } catch (e) {
+                        window.open(item.url, '_blank');
+                    }
+                };
 
                 const includeBtn = document.createElement('button');
                 includeBtn.className = 'dev-btn';
@@ -772,12 +781,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const status = document.getElementById('discoveryStatus');
             status.textContent = 'Including...';
             try {
-                // 1) Download file in browser
-                const response = await fetch(item.url);
-                if (!response.ok) throw new Error(`Download failed (${response.status})`);
-                const blob = await response.blob();
-
-                // 2) Build filename
+                // 1) Build filename
                 const urlObj = new URL(item.url);
                 const lastSegment = urlObj.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
                 const ext = lastSegment.toLowerCase().endsWith('.pdf') ? '' : '.pdf';
@@ -786,44 +790,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                              (item.title || lastSegment.replace(/\.pdf$/i, ''));
                 const safe = base.replace(/[\\/:*?"<>|]+/g, ' ').trim();
                 const filename = `${safe}${ext || ''}`.replace(/\s+/g, ' ').trim() || lastSegment;
-
-                // 3) Upload via existing endpoint /uploadGuideline
+                // 2) Server-side import to avoid CORS
                 const token = await getAuthTokenOrPrompt();
-                const form = new FormData();
-                form.append('file', new File([blob], filename, { type: blob.type || 'application/pdf' }));
-                const uploadRes = await fetch(`${SERVER_URL}/uploadGuideline`, {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${token}` },
-                    body: form
-                });
-                const uploadData = await uploadRes.json();
-                if (!uploadRes.ok || !uploadData.success) throw new Error(uploadData.message || 'Upload failed');
-
-                // 4) Add to list_of_guidelines.txt for now (compat) and mark included in prefs
-                const addRes = await fetch(`${SERVER_URL}/addToGuidelinesList`, {
+                const importRes = await fetch(`${SERVER_URL}/importGuidelineFromUrl`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ filename })
+                    body: JSON.stringify({ url: item.url, filename, markIncluded: true })
                 });
-                const addData = await addRes.json();
-                if (!addRes.ok || !addData.success) throw new Error(addData.error || 'Failed to update list');
+                const importData = await importRes.json();
+                if (!importRes.ok || !importData.success) throw new Error(importData.error || 'Import failed');
 
-                // 5) Mark included by URL for now
-                const prefRes = await fetch(`${SERVER_URL}/userGuidelinePrefs/update`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({ url: item.url, status: 'included' })
-                });
-                const prefData = await prefRes.json();
-                if (!prefData.success) throw new Error(prefData.error || 'Failed to save preference');
-
-                // 6) Try to reconcile to canonicalId (non-blocking)
+                // 3) Reconcile to canonicalId (non-blocking)
                 try {
                     await fetch(`${SERVER_URL}/reconcileUserInclude`, {
                         method: 'POST',
