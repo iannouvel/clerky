@@ -7064,6 +7064,115 @@ app.post('/addToGuidelinesList', authenticateUser, async (req, res) => {
     }
 });
 
+// Endpoint: Import guideline from a remote URL (server-side fetch to avoid CORS)
+app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { url, filename, markIncluded } = req.body || {};
+        if (!url) {
+            return res.status(400).json({ success: false, error: 'url is required' });
+        }
+
+        // Allowlist of official domains
+        const allowedHosts = new Set(['www.rcog.org.uk', 'rcog.org.uk', 'www.nice.org.uk', 'nice.org.uk']);
+        let parsed;
+        try {
+            parsed = new URL(url);
+        } catch (_) {
+            return res.status(400).json({ success: false, error: 'Invalid URL' });
+        }
+        if (!allowedHosts.has(parsed.hostname)) {
+            return res.status(400).json({ success: false, error: 'Domain not allowed' });
+        }
+
+        // Fetch file
+        const response = await axios.get(url, { responseType: 'arraybuffer' });
+        const buffer = Buffer.from(response.data);
+        const contentType = response.headers['content-type'] || 'application/octet-stream';
+
+        // Decide filename
+        const pathName = parsed.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
+        const isPdf = /pdf/i.test(contentType) || /\.pdf$/i.test(pathName);
+        const baseName = (filename && filename.trim()) || decodeURIComponent(pathName);
+        const finalName = isPdf ? (baseName.endsWith('.pdf') ? baseName : `${baseName}.pdf`) : baseName;
+
+        // Ensure guidance folder exists
+        const folderExists = await checkFolderExists(githubFolder);
+        if (!folderExists) {
+            return res.status(400).json({ success: false, error: 'Target folder does not exist in the repository' });
+        }
+
+        // Upload to GitHub
+        const filePath = `${githubFolder}/${encodeURIComponent(finalName)}`;
+        let fileSha = await getFileSha(filePath);
+
+        const putUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
+        const body = {
+            message: `Import guideline from URL: ${finalName}`,
+            content: buffer.toString('base64'),
+            branch: githubBranch,
+            ...(fileSha ? { sha: fileSha } : {})
+        };
+
+        const putResp = await axios.put(putUrl, body, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json',
+                'Authorization': `token ${githubToken}`
+            }
+        });
+
+        // Optionally update guidelines list
+        try {
+            await updateGuidelinesMasterList(finalName);
+        } catch (_) {}
+
+        // Optionally mark user preference included by URL
+        if (markIncluded && db) {
+            try {
+                const baseCol = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
+                const norm = normalizeUrl(url);
+                const urlDocId = `inc-url-${sanitizeIdForDoc(norm)}`;
+                await baseCol.doc(urlDocId).set({
+                    type: 'included',
+                    url,
+                    normalisedUrl: norm,
+                    addedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    addedBy: req.user.email || userId
+                }, { merge: true });
+            } catch (_) {}
+        }
+
+        res.json({ success: true, filename: finalName, downloadUrl: `https://github.com/${githubOwner}/${githubRepo}/raw/${githubBranch}/${githubFolder}/${encodeURIComponent(finalName)}` });
+    } catch (error) {
+        console.error('[IMPORT] Failed to import guideline:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint: Proxy fetch for viewing (PDF/files) inside iframe, limited to allowlist hosts
+app.get('/proxyGuidelineView', authenticateUser, async (req, res) => {
+    try {
+        const { url } = req.query;
+        if (!url) return res.status(400).send('url required');
+        let parsed;
+        try { parsed = new URL(url); } catch { return res.status(400).send('invalid url'); }
+        const allowedHosts = new Set(['www.rcog.org.uk', 'rcog.org.uk', 'www.nice.org.uk', 'nice.org.uk']);
+        if (!allowedHosts.has(parsed.hostname)) return res.status(400).send('domain not allowed');
+
+        const upstream = await axios.get(url, { responseType: 'arraybuffer' });
+        const contentType = upstream.headers['content-type'] || 'application/pdf';
+        res.setHeader('Content-Type', contentType);
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+        res.setHeader('Content-Disposition', 'inline');
+        res.setHeader('X-Content-Type-Options', 'nosniff');
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.send(Buffer.from(upstream.data));
+    } catch (error) {
+        console.error('[PROXY] Failed:', error.message);
+        res.status(500).send('proxy error');
+    }
+});
+
 // Endpoint: discover guidelines using AI
 app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
     try {

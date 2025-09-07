@@ -296,12 +296,10 @@
             <button class="nav-btn" data-content="logsContent">Logs</button>
             <button class="nav-btn" data-content="costContent">Cost</button>
         </div>
-        <div class="top-bar-right">
-            <button class="tools-toggle" id="toolsToggleBtn">Tools ▸</button>
-        </div>
+        <div class="top-bar-right"></div>
     </div>
-    <div class="tools-panel-backdrop" id="toolsBackdrop"></div>
-    <aside class="tools-panel" id="toolsPanel" aria-hidden="true">
+
+    <div style="position:fixed;top:48px;bottom:0;left:0;width:360px;background:#fff;border-right:1px solid #e5e7eb;z-index:1000;overflow:auto;padding:12px">
         <div class="tools-section">
             <h4>API Tests</h4>
             <div class="tools-grid">
@@ -335,30 +333,35 @@
                 <button id="deleteAllGuidelineDataBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Guideline Data</button>
             </div>
         </div>
-    </aside>
-    <div class="content-wrapper">
-        <div class="tab-content" id="algosContent">
-            <iframe src="algos.html" frameborder="0" class="content-frame"></iframe>
-        </div>
-        <div class="tab-content" id="logsContent">
-            <div class="log-navigation">
-                <button id="mostRecentBtn">Most Recent</button>
-                <button id="refreshBtn">Refresh</button>
-                <button id="earlierBtn">Earlier</button>
-                <button id="laterBtn">Later</button>
-                <button id="deleteAllLogsBtn" style="margin-left: 20px; background-color: #d9534f; color: white;">Delete All Logs</button>
+    </div>
+
+    <div class="content-wrapper" style="margin-left:360px">
+        <div style="height:48px"></div>
+        <div style="display:flex;gap:12px;height:calc(100% - 48px);padding:12px">
+            <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+                <div class="tab-content" id="algosContent" style="flex:1">
+                    <iframe src="algos.html" frameborder="0" class="content-frame"></iframe>
+                </div>
+                <div class="tab-content" id="logsContent" style="flex:1">
+                    <div class="log-navigation">
+                        <button id="mostRecentBtn">Most Recent</button>
+                        <button id="refreshBtn">Refresh</button>
+                        <button id="earlierBtn">Earlier</button>
+                        <button id="laterBtn">Later</button>
+                        <button id="deleteAllLogsBtn" style="margin-left: 20px; background-color: #d9534f; color: white;">Delete All Logs</button>
+                    </div>
+                    <div id="logDisplay" class="log-display"></div>
+                </div>
+                <div class="tab-content" id="costContent" style="flex:1">
+                    <div class="cost-navigation">
+                        <button id="refreshCostBtn">Refresh</button>
+                        <span id="costStatusMessage"></span>
+                    </div>
+                    <div id="costDisplay" class="cost-display"></div>
+                </div>
             </div>
-            <div id="logDisplay" class="log-display">
-                <!-- Log content will be loaded here -->
-            </div>
-        </div>
-        <div class="tab-content" id="costContent">
-            <div class="cost-navigation">
-                <button id="refreshCostBtn">Refresh</button>
-                <span id="costStatusMessage"></span>
-            </div>
-            <div id="costDisplay" class="cost-display">
-                <!-- Cost data will be loaded here -->
+            <div style="width:52%;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff">
+                <iframe id="guidelinePreview" class="content-frame" src="about:blank"></iframe>
             </div>
         </div>
     </div>
