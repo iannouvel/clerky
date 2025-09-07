@@ -629,6 +629,215 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
+        // ---- Guideline Discovery Client Logic ----
+        async function getAuthTokenOrPrompt() {
+            const user = auth.currentUser;
+            if (!user) {
+                showLoginPrompt();
+                throw new Error('Not authenticated');
+            }
+            return user.getIdToken();
+        }
+
+        function renderDiscoveryResults(items) {
+            const container = document.getElementById('discoveryResults');
+            container.innerHTML = '';
+            if (!items || items.length === 0) {
+                container.innerHTML = '<div style="color:#666">No suggestions found.</div>';
+                return;
+            }
+            items.forEach(item => {
+                const row = document.createElement('div');
+                row.style.padding = '8px';
+                row.style.marginBottom = '8px';
+                row.style.background = '#fff';
+                row.style.border = '1px solid #e5e7eb';
+                row.style.borderRadius = '6px';
+                const meta = [item.organisation, item.type, item.year].filter(Boolean).join(' • ');
+                row.innerHTML = `
+                    <div style="font-weight:600">${item.title || 'Untitled'}</div>
+                    <div style="font-size:12px;color:#555;margin:4px 0">${meta}</div>
+                    <div style="font-size:12px;color:#006;word-break:break-all">${item.url}</div>
+                `;
+                const actions = document.createElement('div');
+                actions.style.marginTop = '6px';
+
+                const openBtn = document.createElement('button');
+                openBtn.className = 'dev-btn';
+                openBtn.textContent = 'Open';
+                openBtn.onclick = () => window.open(item.url, '_blank');
+
+                const includeBtn = document.createElement('button');
+                includeBtn.className = 'dev-btn';
+                includeBtn.style.marginLeft = '6px';
+                includeBtn.textContent = 'Include';
+                includeBtn.onclick = async () => {
+                    await includeGuidance(item);
+                };
+
+                const excludeBtn = document.createElement('button');
+                excludeBtn.className = 'dev-btn';
+                excludeBtn.style.marginLeft = '6px';
+                excludeBtn.textContent = 'Exclude';
+                excludeBtn.onclick = async () => {
+                    await excludeGuidance(item);
+                };
+
+                actions.appendChild(openBtn);
+                actions.appendChild(includeBtn);
+                actions.appendChild(excludeBtn);
+                row.appendChild(actions);
+                container.appendChild(row);
+            });
+        }
+
+        async function fetchExclusions() {
+            const token = await getAuthTokenOrPrompt();
+            const res = await fetch(`${SERVER_URL}/guidance-exclusions`, {
+                method: 'GET',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const data = await res.json();
+            if (!data.success) throw new Error(data.error || 'Failed to load exclusions');
+            return data.items || [];
+        }
+
+        function renderExclusions(items) {
+            const panel = document.getElementById('exclusionsPanel');
+            panel.innerHTML = '';
+            if (!items || items.length === 0) {
+                panel.innerHTML = '<div style="color:#666">No exclusions recorded.</div>';
+                return;
+            }
+            items.forEach(e => {
+                const row = document.createElement('div');
+                row.style.padding = '6px';
+                row.style.borderBottom = '1px solid #eee';
+                row.innerHTML = `
+                    <div style="font-size:12px;color:#006;word-break:break-all">${e.url}</div>
+                    <div style="font-size:11px;color:#777">${e.reason || 'excluded'} • ${e.addedBy || ''} • ${e.addedAt || ''}</div>
+                `;
+                panel.appendChild(row);
+            });
+        }
+
+        async function excludeGuidance(item) {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Excluding...';
+            try {
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/guidance-exclusions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ url: item.url, reason: 'user_excluded', title: item.title })
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Failed to exclude');
+                status.textContent = 'Excluded.';
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Exclude failed: ${err.message}`;
+            }
+        }
+
+        async function includeGuidance(item) {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Including...';
+            try {
+                // 1) Download file in browser
+                const response = await fetch(item.url);
+                if (!response.ok) throw new Error(`Download failed (${response.status})`);
+                const blob = await response.blob();
+
+                // 2) Build filename from title/org/year; fallback to last path segment
+                const urlObj = new URL(item.url);
+                const lastSegment = urlObj.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
+                const ext = lastSegment.toLowerCase().endsWith('.pdf') ? '' : '.pdf';
+                const base = (item.organisation ? `${item.organisation} - ` : '') +
+                             (item.year ? `${item.year} - ` : '') +
+                             (item.title || lastSegment.replace(/\.pdf$/i, ''));
+                const safe = base.replace(/[\\/:*?"<>|]+/g, ' ').trim();
+                const filename = `${safe}${ext || ''}`.replace(/\s+/g, ' ').trim() || lastSegment;
+
+                // 3) Upload via existing endpoint /uploadGuideline
+                const token = await getAuthTokenOrPrompt();
+                const form = new FormData();
+                form.append('file', new File([blob], filename, { type: blob.type || 'application/pdf' }));
+                const uploadRes = await fetch(`${SERVER_URL}/uploadGuideline`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}` },
+                    body: form
+                });
+                const uploadData = await uploadRes.json();
+                if (!uploadRes.ok || !uploadData.success) throw new Error(uploadData.message || 'Upload failed');
+
+                // 4) Add to list_of_guidelines.txt via /addToGuidelinesList
+                const addRes = await fetch(`${SERVER_URL}/addToGuidelinesList`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ filename })
+                });
+                const addData = await addRes.json();
+                if (!addRes.ok || !addData.success) throw new Error(addData.error || 'Failed to update list');
+
+                status.textContent = 'Included and saved.';
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Include failed: ${err.message}`;
+            }
+        }
+
+        async function runDiscovery() {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Scanning...';
+            try {
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/discoverGuidelines`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({})
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Discovery failed');
+                renderDiscoveryResults(data.suggestions || []);
+                status.textContent = `Found ${data.suggestions?.length || 0} suggestions.`;
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Discovery failed: ${err.message}`;
+            }
+        }
+
+        const scanBtn = document.getElementById('scanGuidanceBtn');
+        if (scanBtn) scanBtn.addEventListener('click', runDiscovery);
+
+        const viewExclusionsBtn = document.getElementById('viewExclusionsBtn');
+        if (viewExclusionsBtn) viewExclusionsBtn.addEventListener('click', async () => {
+            const panel = document.getElementById('exclusionsPanel');
+            const visible = panel.style.display !== 'none';
+            if (visible) {
+                panel.style.display = 'none';
+                return;
+            }
+            try {
+                const items = await fetchExclusions();
+                renderExclusions(items);
+                panel.style.display = 'block';
+            } catch (err) {
+                panel.innerHTML = `<div style="color:#a00">${err.message}</div>`;
+                panel.style.display = 'block';
+            }
+        });
+
+
         // Function to load more logs when needed
         async function loadMoreLogs(startIndex, count) {
             const logDisplay = document.getElementById('logDisplay');
