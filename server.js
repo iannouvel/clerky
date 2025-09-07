@@ -3722,6 +3722,90 @@ async function updateGuidelinesMasterList(newFileName) {
     }
 }
 
+// Helper: normalise URL for deduplication
+function normalizeUrl(inputUrl) {
+    try {
+        const url = new URL(inputUrl.trim());
+        url.hash = '';
+        // Lowercase host
+        url.hostname = url.hostname.toLowerCase();
+        // Remove common tracking params
+        const paramsToRemove = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid'];
+        paramsToRemove.forEach(p => url.searchParams.delete(p));
+        // Remove trailing slash for path (except root)
+        if (url.pathname.endsWith('/') && url.pathname !== '/') {
+            url.pathname = url.pathname.replace(/\/+$/, '');
+        }
+        return url.toString();
+    } catch (e) {
+        return inputUrl.trim();
+    }
+}
+
+// Helper: read JSONL exclusions file from repo
+async function readExclusionsFile() {
+    const filePath = 'guidance/excluded_list.jsonl';
+    try {
+        const content = await getFileContents(filePath); // returns string or throws
+        if (!content) return [];
+        const lines = content.split('\n').map(l => l.trim()).filter(Boolean);
+        const entries = [];
+        for (const line of lines) {
+            try {
+                const obj = JSON.parse(line);
+                if (obj && obj.url) {
+                    entries.push(obj);
+                }
+            } catch (_) {
+                // ignore malformed lines
+            }
+        }
+        return entries;
+    } catch (err) {
+        // If file doesn't exist yet, return empty list
+        return [];
+    }
+}
+
+// Helper: append one exclusion entry to JSONL file (dedupe on normalizedUrl)
+async function appendExclusionEntry(entry) {
+    const filePath = 'guidance/excluded_list.jsonl';
+    const existing = await readExclusionsFile();
+    const normalizedUrl = normalizeUrl(entry.url);
+    const already = existing.some(e => normalizeUrl(e.url) === normalizedUrl);
+    if (already) {
+        return { skipped: true };
+    }
+    const newLine = JSON.stringify({
+        url: entry.url,
+        normalizedUrl: normalizedUrl,
+        reason: entry.reason || 'excluded',
+        title: entry.title || null,
+        addedBy: entry.addedBy || 'system',
+        addedAt: new Date().toISOString()
+    });
+
+    // Build new content (append with newline)
+    const existingContent = existing.length > 0 ? existing.map(e => JSON.stringify(e)).join('\n') + '\n' : '';
+    const updatedContent = existingContent + newLine + '\n';
+
+    // Get SHA then PUT updated content
+    const fileSha = await getFileSha(filePath);
+    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
+    await axios.put(url, {
+        message: 'Update excluded_list.jsonl',
+        content: Buffer.from(updatedContent).toString('base64'),
+        branch: githubBranch,
+        ...(fileSha ? { sha: fileSha } : {})
+    }, {
+        headers: {
+            'Accept': 'application/vnd.github.v3+json',
+            'Authorization': `token ${githubToken}`
+        }
+    });
+    return { skipped: false };
+}
+
 // Update the function that gets file contents
 async function getFileContents(fileName) { // fileName is expected to be the full path from repo root e.g., guidance/condensed/file.pdf
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${fileName}`;
@@ -6765,6 +6849,139 @@ app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
             success: false, 
             error: error.message 
         });
+    }
+});
+
+// Endpoint: get guidance exclusions (JSONL)
+app.get('/guidance-exclusions', authenticateUser, async (req, res) => {
+    try {
+        const entries = await readExclusionsFile();
+        res.json({ success: true, items: entries });
+    } catch (error) {
+        console.error('[ERROR] Failed to read exclusions:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint: append to guidance exclusions (JSONL)
+app.post('/guidance-exclusions', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user?.uid;
+        const userEmail = req.user?.email;
+        const { url, reason, title } = req.body || {};
+        if (!url) {
+            return res.status(400).json({ success: false, error: 'url is required' });
+        }
+        const result = await appendExclusionEntry({
+            url,
+            reason: reason || 'excluded',
+            title: title || null,
+            addedBy: userEmail || userId || 'system'
+        });
+        res.json({ success: true, skipped: !!result.skipped });
+    } catch (error) {
+        console.error('[ERROR] Failed to append exclusion:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint: add filename to guidance/list_of_guidelines.txt
+app.post('/addToGuidelinesList', authenticateUser, async (req, res) => {
+    try {
+        const { filename } = req.body || {};
+        if (!filename) {
+            return res.status(400).json({ success: false, error: 'filename is required' });
+        }
+        await updateGuidelinesMasterList(filename);
+        res.json({ success: true });
+    } catch (error) {
+        console.error('[ERROR] Failed to update guidelines list:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint: discover guidelines using AI
+app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        // Load current guidelines list and exclusions
+        const guidelinesString = await getGuidelinesList();
+        const exclusions = await readExclusionsFile();
+        const excludedUrls = exclusions.map(e => e.normalizedUrl || normalizeUrl(e.url));
+
+        const systemPrompt = `You are assisting an Obstetrics & Gynaecology clinician. Identify official guidance documents that would be useful for day-to-day clinical work in the UK. Consider:
+- NICE guidance
+- RCOG Green-top Guidelines
+- RCOG Scientific Impact Papers (SIPs)
+- RCOG Consent Advice
+- RCOG Good Practice Papers
+
+Rules:
+- Return only items that have an official, publicly accessible download URL (preferably PDF) from authoritative domains (e.g., rcog.org.uk, nice.org.uk).
+- Avoid duplicates, and avoid items already provided in the existing list.
+- Output strictly valid JSON (array of objects). No commentary.
+`;
+
+        const userPrompt = `Existing guidelines (filenames):\n${guidelinesString}\n\nExcluded source URLs (normalised):\n${excludedUrls.join('\n')}\n\nTask: Propose additional, currently available guidance items (NICE/RCOG/SIPs/Consent Advice/Good Practice Papers) that would be useful to a working O&G doctor but are not yet included or excluded. For each item, return an object with keys: title (string), organisation ("NICE"|"RCOG"), type (e.g., "Green-top Guideline"|"SIP"|"Consent Advice"|"Good Practice Paper"|"Guideline"), year (number or null), url (direct downloadable URL), notes (optional string). Return a single JSON array only.`;
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResult = await routeToAI({ messages }, userId);
+        if (!aiResult || !aiResult.content) {
+            return res.status(500).json({ success: false, error: 'AI did not return content' });
+        }
+
+        // Attempt to extract JSON array from response
+        let text = aiResult.content.trim();
+        // Remove code fences if present
+        text = text.replace(/^```json\s*|```$/g, '').trim();
+        let suggestions;
+        try {
+            // Find first [ ... ]
+            const start = text.indexOf('[');
+            const end = text.lastIndexOf(']');
+            const jsonStr = (start !== -1 && end !== -1) ? text.substring(start, end + 1) : text;
+            suggestions = JSON.parse(jsonStr);
+            if (!Array.isArray(suggestions)) throw new Error('Not an array');
+        } catch (parseErr) {
+            console.error('[DISCOVER] Failed to parse AI JSON:', parseErr.message);
+            return res.status(500).json({ success: false, error: 'Failed to parse AI JSON' });
+        }
+
+        // Filter out suggestions with excluded URLs, and dedupe by normalized URL
+        const seen = new Set(excludedUrls);
+        const filtered = [];
+        for (const item of suggestions) {
+            if (!item || !item.url || !item.title) continue;
+            const norm = normalizeUrl(item.url);
+            if (seen.has(norm)) continue;
+            seen.add(norm);
+            filtered.push({
+                title: item.title,
+                organisation: item.organisation || null,
+                type: item.type || null,
+                year: item.year || null,
+                url: item.url,
+                notes: item.notes || null
+            });
+        }
+
+        // Log interaction (best-effort)
+        try {
+            await logAIInteraction(
+                { prompt: userPrompt, system_prompt: systemPrompt },
+                { success: true, response: filtered.slice(0, 5) },
+                'discoverGuidelines'
+            );
+        } catch (_) {}
+
+        res.json({ success: true, suggestions: filtered });
+    } catch (error) {
+        console.error('[ERROR] discoverGuidelines failed:', error.message);
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 
