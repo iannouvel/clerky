@@ -607,6 +607,7 @@ body {
     font-size: 3rem;
     font-weight: 600;
     margin: 1em 0;
+    color: var(--accent-color);
 }
 
 #googleSignInBtn {
