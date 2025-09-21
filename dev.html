@@ -295,51 +295,80 @@
             <button class="nav-btn" data-content="algosContent">Algos</button>
             <button class="nav-btn" data-content="logsContent">Logs</button>
             <button class="nav-btn" data-content="costContent">Cost</button>
+            <button class="nav-btn" data-content="apiContent">API</button>
+            <button class="nav-btn" data-content="maintenanceContent">Maintenance</button>
+            <button class="nav-btn" data-content="discoveryContent">Discovery</button>
+            <button class="nav-btn" data-content="dangerContent">Danger</button>
         </div>
         <div class="top-bar-right"></div>
     </div>
 
-    <div style="position:fixed;top:48px;bottom:0;left:0;width:360px;background:#fff;border-right:1px solid #e5e7eb;z-index:1000;overflow:auto;padding:12px">
-        <div class="tools-section">
-            <h4>API Tests</h4>
-            <div class="tools-grid">
-                <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
-                <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
-                <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
+    <div class="content-wrapper">
+        <div class="tab-content" id="apiContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>API Tests</h4>
+                <div class="tools-grid">
+                    <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
+                    <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
+                    <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
+                </div>
             </div>
         </div>
-        <div class="tools-section">
-            <h4>Maintenance</h4>
-            <div class="tools-grid">
-                <button id="repairContentBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔧 Repair Content Issues</button>
-                <button id="uploadPDFsToStorageBtn" class="dev-btn" style="background-color:#ff6b35;color:#fff;border-color:#ff6b35;">🗂️ Migrate PDFs to Firebase Storage</button>
-                <button id="migrateDatabaseBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🔄 Migrate to Single Collection</button>
+        <div class="tab-content" id="maintenanceContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Maintenance</h4>
+                <div class="tools-grid">
+                    <button id="repairContentBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔧 Repair Content Issues</button>
+                    <button id="uploadPDFsToStorageBtn" class="dev-btn" style="background-color:#ff6b35;color:#fff;border-color:#ff6b35;">🗂️ Migrate PDFs to Firebase Storage</button>
+                    <button id="migrateDatabaseBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🔄 Migrate to Single Collection</button>
+                </div>
             </div>
         </div>
-        <div class="tools-section">
-            <h4>Guideline Discovery</h4>
-            <div class="tools-grid" style="grid-template-columns: 1fr;">
-                <button id="scanGuidanceBtn" class="dev-btn">🔎 Scan for new guidance (NICE/RCOG)</button>
-                <div id="discoveryStatus" style="font-size:12px;color:#666"></div>
-                <div id="discoveryResults" style="max-height:300px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:8px;background:#fafafa"></div>
-                <button id="viewExclusionsBtn" class="dev-btn">📄 View Exclusions</button>
-                <div id="exclusionsPanel" style="display:none;max-height:200px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:8px;background:#fff"></div>
+        <div class="tab-content" id="discoveryContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Guideline Discovery</h4>
+                <div class="tools-grid" style="grid-template-columns: 1fr;">
+                    <button id="scanGuidanceBtn" class="dev-btn">🔎 Scan for new guidance (NICE/RCOG)</button>
+                    <div id="discoveryStatus" style="font-size:12px;color:#666"></div>
+                    <div id="discoveryResults" style="max-height:300px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:8px;background:#fafafa"></div>
+                    <button id="viewExclusionsBtn" class="dev-btn">📄 View Exclusions</button>
+                    <div id="exclusionsPanel" style="display:none;max-height:200px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:8px;background:#fff"></div>
+                </div>
             </div>
-        </div>
-        <div class="tools-section danger-zone">
-            <h4>Danger Zone</h4>
-            <div class="tools-grid">
-                <button id="deleteAllSummariesBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Summaries</button>
-                <button id="deleteAllGuidelineDataBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Guideline Data</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-wrapper" style="margin-left:360px">
-        <div style="height:48px"></div>
-        <div style="height:calc(100% - 48px);padding:12px">
-            <div style="height:100%;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff">
+            <div style="height:calc(100vh - 250px);border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff;margin-top:12px">
                 <iframe id="guidelinePreview" class="content-frame" src="about:blank"></iframe>
+            </div>
+        </div>
+        <div class="tab-content" id="dangerContent" style="display:none;padding:12px">
+            <div class="tools-section danger-zone">
+                <h4>Danger Zone</h4>
+                <div class="tools-grid">
+                    <button id="deleteAllSummariesBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Summaries</button>
+                    <button id="deleteAllGuidelineDataBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Guideline Data</button>
+                    <button id="deleteAllLogsBtn" class="dev-btn" style="background-color:#d9534f;color:#fff;border-color:#d9534f;">Delete All Logs</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="logsContent" style="display:none;padding:12px">
+            <div class="cost-navigation">
+                <button id="mostRecentBtn">Most Recent</button>
+                <button id="refreshBtn">Refresh</button>
+                <button id="earlierBtn">Earlier</button>
+                <button id="laterBtn">Later</button>
+            </div>
+            <div id="logDisplay" class="cost-display"></div>
+        </div>
+        <div class="tab-content" id="costContent" style="display:none;padding:12px">
+            <div class="cost-navigation">
+                <button id="refreshCostBtn">Refresh Costs</button>
+                <span id="costStatusMessage"></span>
+            </div>
+            <div id="costDisplay" class="cost-display"></div>
+        </div>
+        <div class="tab-content" id="algosContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Algorithms</h4>
+                <p style="color:#666">Use Discovery to open guidelines in the preview panel and generate or validate algorithms.</p>
             </div>
         </div>
     </div>
