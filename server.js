@@ -770,7 +770,6 @@ if (!process.env.PREFERRED_AI_PROVIDER) {
   process.env.PREFERRED_AI_PROVIDER = 'DeepSeek';
   console.log('Setting default AI provider to DeepSeek');
 }
-
 // Declare db in the outer scope
 let db = null;
 
@@ -1084,7 +1083,6 @@ function formatMessagesForProvider(messages, provider) {
             throw new Error(`Unsupported AI provider: ${provider}`);
     }
 }
-
 // Function to send prompts to AI services
 async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
@@ -1878,7 +1876,6 @@ app.post('/newActionEndpoint', authenticateUser, async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
-
 // ============================================
 // FIREBASE-BASED CLINICAL CONDITIONS MANAGEMENT
 // ============================================
@@ -2573,7 +2570,6 @@ async function saveToGitHub(content, type) {
     
     return success;
 }
-
 // Fix the AI info extraction in logAIInteraction
 async function logAIInteraction(prompt, response, endpoint) {
   try {
@@ -3264,7 +3260,6 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         return { success: true, categories };
     }
 }
-
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
@@ -3452,7 +3447,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     }
     
     res.status(500).json({ 
-        success: false,
+        success: false, 
         error: `AI request failed: ${error.message}` 
     });
   }
@@ -3970,7 +3965,6 @@ app.post('/commitChanges', authenticateUser, [
         });
     }
 });
-
 // New endpoint to handle the cross-check API call
 app.post('/crossCheck', authenticateUser, async (req, res) => {
     const { clinicalNote, guidelines } = req.body;
@@ -4692,7 +4686,6 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
         });
     }
 });
-
 // Add endpoint to clean existing human-friendly names in the database
 app.post('/admin/clean-guideline-titles', authenticateUser, async (req, res) => {
     try {
@@ -5488,7 +5481,6 @@ app.listen(PORT, () => {
         }
     });
 });
-
 // console.log('All filenames in the guidance folder:', allGuidelines.map(g => g.name));
 
 app.get('/health', (req, res) => {
@@ -6281,7 +6273,6 @@ function generateCleanDocId(filename) {
   
   return slug;
 }
-
 async function getGuideline(id) {
   const guideline = await db.collection('guidelines').doc(id).get();
 
@@ -7063,7 +7054,6 @@ app.post('/addToGuidelinesList', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
-
 // Endpoint: Import guideline from a remote URL (server-side fetch to avoid CORS)
 app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
     try {
@@ -7106,6 +7096,7 @@ app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
         const filePath = `${githubFolder}/${encodeURIComponent(finalName)}`;
         let fileSha = await getFileSha(filePath);
 
+        // Correct GitHub Contents API URL
         const putUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
         const body = {
             message: `Import guideline from URL: ${finalName}`,
@@ -7849,7 +7840,6 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
 // Add endpoint to delete all guideline data from Firestore
 app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
     try {
@@ -8560,7 +8550,6 @@ Other important guidelines:
 
         const userPrompt = `Original Transcript:
 ${transcript}
-
 Guideline Analysis:
 ${analysis}
 
@@ -8783,7 +8772,7 @@ CRITICAL CLINICAL REASONING REQUIREMENTS:
 - Carefully assess whether each potential recommendation is APPROPRIATE and INDICATED for this specific case
 - Apply the fundamental principle: "Will this investigation or intervention change management or improve patient care in this specific scenario?"
 - Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
-- Distinguish between situations where additional testing is needed vs. where diagnosis is already established
+- Distinguish between situations where additional testing is needed vs. where the diagnosis is already established
 - Only recommend interventions that would genuinely improve patient care in THIS specific scenario
 
 MULTI-GUIDELINE PROCESSING PRINCIPLES:
@@ -9355,7 +9344,6 @@ async function migrateGuidelineUrls() {
         return { success: false, error: error.message };
     }
 }
-
 // Add endpoint to trigger migration
 app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
     try {
