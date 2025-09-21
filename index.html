@@ -614,6 +614,25 @@
     </div>
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
+    
+    <!-- Auto-return to requested page after sign-in -->
+    <script type="module">
+        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+        const auth = window.auth;
+        if (auth) {
+            onAuthStateChanged(auth, (user) => {
+                try {
+                    const returnTo = localStorage.getItem('returnToPage');
+                    if (user && returnTo) {
+                        localStorage.removeItem('returnToPage');
+                        window.location.href = returnTo;
+                    }
+                } catch (e) {
+                    // ignore
+                }
+            });
+        }
+    </script>
 
     <!-- Define server URL -->
     <script>

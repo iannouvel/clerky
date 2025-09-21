@@ -348,21 +348,38 @@ document.addEventListener('DOMContentLoaded', async function() {
         function showLoginPrompt() {
             console.log('Showing login prompt');
             
-            // Create login button
+            // Avoid adding multiple login buttons
+            if (document.getElementById('devLoginBtn')) {
+                // Also update discovery status if present
+                const status = document.getElementById('discoveryStatus');
+                if (status) status.textContent = 'Please sign in to scan for new guidance.';
+                return;
+            }
+            
+            // Create login button that signs in directly
             const loginButton = document.createElement('button');
-            loginButton.textContent = 'Log In';
+            loginButton.id = 'devLoginBtn';
+            loginButton.textContent = 'Sign in with Google';
             loginButton.className = 'nav-btn';
             loginButton.style.marginLeft = '10px';
-            loginButton.onclick = () => {
-                // Store current page to return to after login
-                localStorage.setItem('returnToPage', 'dev.html');
-                window.location.href = 'index.html';
-            };
+            loginButton.addEventListener('click', async () => {
+                try {
+                    const provider = new GoogleAuthProvider();
+                    await signInWithPopup(auth, provider);
+                } catch (err) {
+                    console.error('Sign-in failed:', err);
+                    alert('Sign-in failed: ' + (err && err.message ? err.message : err));
+                }
+            });
             
-            // Add login button to the top-bar-center
-            document.querySelector('.top-bar-center').appendChild(loginButton);
+            const topBarCenter = document.querySelector('.top-bar-center');
+            if (topBarCenter) topBarCenter.appendChild(loginButton);
+            
+            // Surface inline hint in Discovery tab
+            const status = document.getElementById('discoveryStatus');
+            if (status) status.textContent = 'Please sign in to scan for new guidance.';
         }
-
+        
         // Add click event listener for model toggle
         modelToggle.addEventListener('click', updateAIModel);
 
@@ -373,16 +390,23 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // User is signed in
                 console.log('User is signed in:', user.email);
                 modelToggle.disabled = false;
-                // Remove login prompt if it exists
-                const loginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
-                if (loginButton) {
-                    loginButton.remove();
-                }
+                // Enable discovery scan
+                const scanBtnEl = document.getElementById('scanGuidanceBtn');
+                if (scanBtnEl) scanBtnEl.disabled = false;
+                // Remove any inline login prompt
+                const inlineLoginBtn = document.getElementById('devLoginBtn');
+                if (inlineLoginBtn) inlineLoginBtn.remove();
+                // Remove old login prompt if it exists
+                const legacyLoginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
+                if (legacyLoginButton) legacyLoginButton.remove();
+                // Clear discovery status hint
+                const status = document.getElementById('discoveryStatus');
+                if (status && status.textContent.includes('Please sign in')) status.textContent = '';
             } else {
-                // User is signed out
+                // User is signed out - redirect to login page
                 console.log('User is signed out');
-                modelToggle.disabled = true;
-                showLoginPrompt();
+                try { localStorage.setItem('returnToPage', 'dev.html'); } catch (_) {}
+                window.location.href = 'index.html';
             }
         });
 
