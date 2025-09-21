@@ -4188,7 +4188,7 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
       if (provider !== 'OpenAI' && provider !== 'DeepSeek' && provider !== 'Anthropic' && provider !== 'Mistral' && provider !== 'Gemini') {
         return res.status(400).json({ 
           success: false, 
-          message: 'Invalid provider. Must be either "OpenAI", "DeepSeek", "Anthropic", "Mistral", or "Gemini"
+          message: 'Invalid provider. Must be either "OpenAI", "DeepSeek", "Anthropic", "Mistral", or "Gemini"'
         });
       }
       
@@ -7824,7 +7824,6 @@ REQUIREMENTS:
 5. Keep the rest of the transcript realistic and medically sound
 6. Use proper medical terminology and British abbreviations
 7. Follow SBAR format
-
 Generate an incorrect transcript that would fail audit testing for the specific auditable element mentioned above.`;
 
       console.log(`[AUDIT-INCORRECT] Generating incorrect script for element ${i + 1}/${auditableElements.length}...`);
@@ -8598,7 +8597,6 @@ async function getAllGuidelines() {
         return [];
     }
 }
-
 // Dynamic Advice API endpoint - converts analysis into interactive suggestions
 app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
     try {
@@ -8648,7 +8646,7 @@ CRITICAL CLINICAL REASONING REQUIREMENTS:
 - Carefully assess whether each potential recommendation is APPROPRIATE and INDICATED for this specific case
 - Apply the fundamental principle: "Will this investigation or intervention change management or improve patient care in this specific scenario?"
 - Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
-- Distinguish between situations where additional testing is needed vs. where diagnosis is already established
+- Distinguish between situations where additional testing is needed vs. where the diagnosis is already established
 - Only recommend interventions that would genuinely improve patient care in THIS specific scenario
 
 GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
@@ -9341,7 +9339,6 @@ Important guidelines:
 
         const userPrompt = `Original Transcript:
 ${transcript}
-
 Apply these changes:
 ${changeInstructions}
 
