@@ -611,23 +611,53 @@ async function fetchAndExtractPDFText(pdfFileName) {
         const pdfPath = `guidance/${encodeURIComponent(pdfFileName)}`;
         console.log(`[FETCH_PDF] Fetching PDF from GitHub: ${pdfPath}`);
         
-        const response = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}`
+        // Fetch file (follow PDF link if the URL is a page)
+        const commonHeaders = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+            'Accept': 'text/html,application/pdf,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        };
+        let buffer, contentType, sourceUrl = url;
+        try {
+            const response = await axios.get(sourceUrl, { responseType: 'arraybuffer', headers: commonHeaders, validateStatus: s => s >= 200 && s < 300 });
+            buffer = Buffer.from(response.data);
+            contentType = response.headers['content-type'] || 'application/octet-stream';
+            if (/text\/html/i.test(contentType)) {
+                // Parse HTML for a PDF link
+                const html = Buffer.from(response.data).toString('utf8');
+                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
+                if (pdfMatch) {
+                    const pdfHref = pdfMatch[1] || pdfMatch[2];
+                    const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
+                    const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
+                    buffer = Buffer.from(pdfResp.data);
+                    contentType = pdfResp.headers['content-type'] || 'application/pdf';
+                    sourceUrl = resolvedUrl;
+                } else {
+                    throw new Error('No PDF link found on page');
+                }
             }
-        });
-        
-        if (!response.data.content) {
-            throw new Error('No content in PDF file response');
+        } catch (err) {
+            // Fallback: fetch as text and extract first .pdf link
+            try {
+                const htmlResp = await axios.get(sourceUrl, { responseType: 'text', headers: commonHeaders });
+                const html = typeof htmlResp.data === 'string' ? htmlResp.data : Buffer.from(htmlResp.data).toString('utf8');
+                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
+                if (!pdfMatch) throw err;
+                const pdfHref = pdfMatch[1] || pdfMatch[2];
+                const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
+                const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
+                buffer = Buffer.from(pdfResp.data);
+                contentType = pdfResp.headers['content-type'] || 'application/pdf';
+                sourceUrl = resolvedUrl;
+            } catch (_) {
+                throw err;
+            }
         }
         
-        // Decode base64 content to buffer
-        const pdfBuffer = Buffer.from(response.data.content, 'base64');
-        console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub, size: ${pdfBuffer.length} bytes`);
+        console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub, size: ${buffer.length} bytes`);
         
         // Extract text from PDF
-        const extractedText = await extractTextFromPDF(pdfBuffer);
+        const extractedText = await extractTextFromPDF(buffer);
         return extractedText;
         
     } catch (error) {
@@ -764,7 +794,6 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
         return false;
     }
 }
-
 // Set default AI provider to DeepSeek if not already set
 if (!process.env.PREFERRED_AI_PROVIDER) {
   process.env.PREFERRED_AI_PROVIDER = 'DeepSeek';
@@ -772,7 +801,6 @@ if (!process.env.PREFERRED_AI_PROVIDER) {
 }
 // Declare db in the outer scope
 let db = null;
-
 // Firebase Admin SDK initialization
 try {
   // Use REST API transports for Firestore to avoid gRPC issues
@@ -1879,7 +1907,6 @@ app.post('/newActionEndpoint', authenticateUser, async (req, res) => {
 // ============================================
 // FIREBASE-BASED CLINICAL CONDITIONS MANAGEMENT
 // ============================================
-
 // Endpoint to get all clinical conditions with transcripts
 app.get('/clinicalConditions', authenticateUser, async (req, res) => {
     try {
@@ -4161,7 +4188,7 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
       if (provider !== 'OpenAI' && provider !== 'DeepSeek' && provider !== 'Anthropic' && provider !== 'Mistral' && provider !== 'Gemini') {
         return res.status(400).json({ 
           success: false, 
-          message: 'Invalid provider. Must be either "OpenAI", "DeepSeek", "Anthropic", "Mistral", or "Gemini"'
+          message: 'Invalid provider. Must be either "OpenAI", "DeepSeek", "Anthropic", "Mistral", or "Gemini"
         });
       }
       
@@ -7075,13 +7102,52 @@ app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'Domain not allowed' });
         }
 
-        // Fetch file
-        const response = await axios.get(url, { responseType: 'arraybuffer' });
-        const buffer = Buffer.from(response.data);
-        const contentType = response.headers['content-type'] || 'application/octet-stream';
+        // Fetch file (follow PDF link if the URL is a page)
+        const commonHeaders = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+            'Accept': 'text/html,application/pdf,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        };
+        let buffer, contentType, sourceUrl = url;
+        try {
+            const response = await axios.get(sourceUrl, { responseType: 'arraybuffer', headers: commonHeaders, validateStatus: s => s >= 200 && s < 300 });
+            buffer = Buffer.from(response.data);
+            contentType = response.headers['content-type'] || 'application/octet-stream';
+            if (/text\/html/i.test(contentType)) {
+                // Parse HTML for a PDF link
+                const html = Buffer.from(response.data).toString('utf8');
+                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
+                if (pdfMatch) {
+                    const pdfHref = pdfMatch[1] || pdfMatch[2];
+                    const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
+                    const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
+                    buffer = Buffer.from(pdfResp.data);
+                    contentType = pdfResp.headers['content-type'] || 'application/pdf';
+                    sourceUrl = resolvedUrl;
+                } else {
+                    throw new Error('No PDF link found on page');
+                }
+            }
+        } catch (err) {
+            // Fallback: fetch as text and extract first .pdf link
+            try {
+                const htmlResp = await axios.get(sourceUrl, { responseType: 'text', headers: commonHeaders });
+                const html = typeof htmlResp.data === 'string' ? htmlResp.data : Buffer.from(htmlResp.data).toString('utf8');
+                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
+                if (!pdfMatch) throw err;
+                const pdfHref = pdfMatch[1] || pdfMatch[2];
+                const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
+                const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
+                buffer = Buffer.from(pdfResp.data);
+                contentType = pdfResp.headers['content-type'] || 'application/pdf';
+                sourceUrl = resolvedUrl;
+            } catch (_) {
+                throw err;
+            }
+        }
 
-        // Decide filename
-        const pathName = parsed.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
+        // Decide filename from resolved sourceUrl
+        const resolved = new URL(sourceUrl);
+        const pathName = resolved.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
         const isPdf = /pdf/i.test(contentType) || /\.pdf$/i.test(pathName);
         const baseName = (filename && filename.trim()) || decodeURIComponent(pathName);
         const finalName = isPdf ? (baseName.endsWith('.pdf') ? baseName : `${baseName}.pdf`) : baseName;
@@ -7135,7 +7201,10 @@ app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
 
         res.json({ success: true, filename: finalName, downloadUrl: `https://github.com/${githubOwner}/${githubRepo}/raw/${githubBranch}/${githubFolder}/${encodeURIComponent(finalName)}` });
     } catch (error) {
-        console.error('[IMPORT] Failed to import guideline:', error.message);
+        console.error('[IMPORT] Failed to import guideline:', {
+            message: error.message,
+            stack: error.stack
+        });
         res.status(500).json({ success: false, error: error.message });
     }
 });
@@ -7282,16 +7351,104 @@ Rules:
             });
         }
 
+        // Validate and resolve URLs to direct PDFs where possible
+        async function resolvePdfUrl(originalUrl) {
+            try {
+                const allowedHosts = new Set(['www.rcog.org.uk', 'rcog.org.uk', 'www.nice.org.uk', 'nice.org.uk']);
+                const parsed = new URL(originalUrl);
+                if (!allowedHosts.has(parsed.hostname)) return null;
+                const commonHeaders = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
+                    'Accept': 'text/html,application/pdf,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                };
+                // Try HEAD first to check content-type
+                try {
+                    const head = await axios.head(originalUrl, { headers: commonHeaders });
+                    const ct = (head.headers['content-type'] || '').toLowerCase();
+                    if (ct.includes('application/pdf') || /\.pdf(\?|$)/i.test(parsed.pathname)) {
+                        return originalUrl;
+                    }
+                } catch (_) {}
+                // GET and check
+                const resp = await axios.get(originalUrl, { responseType: 'arraybuffer', headers: commonHeaders });
+                const ct2 = (resp.headers['content-type'] || '').toLowerCase();
+                if (ct2.includes('application/pdf')) return originalUrl;
+                if (ct2.includes('text/html')) {
+                    const html = Buffer.from(resp.data).toString('utf8');
+                    const m = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
+                    if (m) {
+                        const href = m[1] || m[2];
+                        const resolved = new URL(href, originalUrl).toString();
+                        return resolved;
+                    }
+                }
+                return null;
+            } catch (_) {
+                return null;
+            }
+        }
+
+        const withResolved = [];
+        const unresolved = [];
+
+        for (const item of filtered) {
+            const resolvedUrl = await resolvePdfUrl(item.url);
+            if (resolvedUrl) {
+                withResolved.push({ ...item, url: resolvedUrl });
+            } else {
+                unresolved.push(item);
+            }
+        }
+
+        // Attempt AI refinement for unresolved items
+        async function refinePdfUrlWithAI(item) {
+            try {
+                const refineSystem = 'You are finding official UK clinical guidance direct PDF links.';
+                const refineUser = `The proposed URL is not a direct PDF or is invalid. Provide a single direct downloadable PDF URL for this item, compliant with domain allowlist.\n\nTitle: ${item.title}\nOrganisation: ${item.organisation || ''}\nOriginal URL: ${item.url}\n\nRequirements:\n- Must be a direct, publicly accessible .pdf URL (Content-Type application/pdf)\n- Allowed domains only: rcog.org.uk, nice.org.uk\n- Return strictly JSON: {"url":"..."} with no commentary`;
+                const messages2 = [
+                    { role: 'system', content: refineSystem },
+                    { role: 'user', content: refineUser }
+                ];
+                const aiRef = await routeToAI({ messages: messages2 }, userId);
+                if (!aiRef || !aiRef.content) return null;
+                let text2 = aiRef.content.trim().replace(/^```json\s*|```$/g, '').trim();
+                let candidateUrl = null;
+                try {
+                    const parsed2 = JSON.parse(text2);
+                    if (Array.isArray(parsed2) && parsed2.length > 0 && parsed2[0].url) {
+                        candidateUrl = parsed2[0].url;
+                    } else if (parsed2 && parsed2.url) {
+                        candidateUrl = parsed2.url;
+                    }
+                } catch (_) {
+                    const m = text2.match(/https?:[^\s'\"]+\.pdf/ig);
+                    if (m && m.length) candidateUrl = m[0];
+                }
+                if (!candidateUrl) return null;
+                const resolved = await resolvePdfUrl(candidateUrl);
+                return resolved;
+            } catch (_) { return null; }
+        }
+
+        for (const item of unresolved) {
+            // Up to two refinement attempts
+            let refined = await refinePdfUrlWithAI(item);
+            if (!refined) refined = await refinePdfUrlWithAI(item);
+            if (refined) {
+                withResolved.push({ ...item, url: refined, notes: item.notes || 'resolved_via_refine' });
+            }
+        }
+
         // Log interaction (best-effort)
         try {
             await logAIInteraction(
                 { prompt: userPrompt, system_prompt: systemPrompt },
-                { success: true, response: filtered.slice(0, 5) },
+                { success: true, response: withResolved.slice(0, 5) },
                 'discoverGuidelines'
             );
         } catch (_) {}
 
-        res.json({ success: true, suggestions: filtered });
+        res.json({ success: true, suggestions: withResolved });
     } catch (error) {
         console.error('[ERROR] discoverGuidelines failed:', error.message);
         res.status(500).json({ success: false, error: error.message });
@@ -7743,7 +7900,6 @@ Generate an incorrect transcript that would fail audit testing for the specific 
     });
   }
 });
-
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
@@ -7806,7 +7962,6 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         });
     }
 });
-
 // Add endpoint to delete all summaries from Firestore
 app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
     try {
@@ -8531,7 +8686,6 @@ Important guidelines for originalText field:
 - For ADDITIONS (missing elements): Use descriptive text like "Missing: cervical length screening documentation" or "Gap: no discussion of antenatal corticosteroids"
 - DO NOT use phrases like "no additional cervical length screening ordered" unless those exact words appear in the transcript
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
-
 Important guidelines for context field:
 - Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
 - Include specific quoted text from the guideline using quotation marks (e.g., "According to the guideline: 'All women should receive screening for...'")
@@ -8552,11 +8706,8 @@ Other important guidelines:
 ${transcript}
 Guideline Analysis:
 ${analysis}
-
 Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
-
 ${guidelineContent ? `\nFull Guideline Content:\n${guidelineContent}` : ''}
-
 Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline to help the user understand the reasoning behind the recommendation.`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
@@ -9302,7 +9453,6 @@ Return the updated transcript with these changes applied.`;
         res.status(500).json({ success: false, error: error.message });
     }
 });
-
 // Migration function to add downloadUrl field to existing guidelines
 async function migrateGuidelineUrls() {
     try {
@@ -9354,7 +9504,6 @@ app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
-
 // Chat history endpoints
 app.post('/saveChatHistory', authenticateUser, async (req, res) => {
     try {
