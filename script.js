@@ -4693,6 +4693,8 @@ async function saveChatToFirestore(chat) {
     }
 }
 
+// COMMENTED OUT - Chat history functionality no longer used
+/*
 async function loadChatHistoryFromFirestore() {
     const user = window.auth.currentUser;
     if (!user) {
@@ -4726,6 +4728,7 @@ async function loadChatHistoryFromFirestore() {
         return [];
     }
 }
+*/
 
 async function deleteChatFromFirestore(chatId) {
     const user = window.auth.currentUser;
@@ -5021,6 +5024,8 @@ async function deleteChat(chatId, event) {
 }
 
 
+// COMMENTED OUT - Chat history functionality no longer used
+/*
 function renderChatHistory() {
     const historyList = document.getElementById('historyList');
     
@@ -5065,7 +5070,10 @@ function renderChatHistory() {
     
     console.log(`[DEBUG] renderChatHistory completed, historyList.children.length: ${historyList.children.length}`);
 }
+*/
 
+// COMMENTED OUT - Chat history functionality no longer used
+/*
 async function initializeChatHistory() {
     // Prevent multiple simultaneous chat history initializations
     if (window.chatHistoryInitializing || window.chatHistoryInitialized) {
@@ -5137,6 +5145,7 @@ async function initializeChatHistory() {
     console.log('[DEBUG] Chat history initialization completed');
     window.chatHistoryInitializing = false;
 }
+*/
 
 // Add debugging to the main app initialization
 async function initializeMainApp() {
@@ -5159,9 +5168,9 @@ async function initializeMainApp() {
             outputField: !!document.getElementById('outputField')
         });
         
-        // Initialize chat history
-        console.log('[DEBUG] Calling initializeChatHistory...');
-        await initializeChatHistory();
+        // Initialize chat history - COMMENTED OUT (functionality no longer used)
+        // console.log('[DEBUG] Calling initializeChatHistory...');
+        // await initializeChatHistory();
         
         // Load clinical conditions from Firebase (with fallback to JSON)
         console.log('[DEBUG] Loading clinical conditions...');
