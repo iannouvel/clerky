@@ -4867,6 +4867,122 @@ function cleanHumanFriendlyName(rawName) {
   return cleaned;
 }
 
+// Endpoint to get guidelines that need content processing
+app.post('/getGuidelinesNeedingContent', authenticateUser, async (req, res) => {
+    try {
+        console.log(`[DEBUG] Getting guidelines needing content for user: ${req.user.uid}`);
+        
+        // Get all guidelines from Firestore
+        const guidelinesSnapshot = await db.collection('guidelines').get();
+        const allGuidelines = [];
+        
+        guidelinesSnapshot.forEach(doc => {
+            const data = doc.data();
+            allGuidelines.push({
+                id: doc.id,
+                ...data
+            });
+        });
+        
+        console.log(`[DEBUG] Found ${allGuidelines.length} total guidelines in Firestore`);
+        
+        // Filter guidelines that need content processing
+        const guidelinesNeedingContent = allGuidelines.filter(guideline => {
+            const hasContent = guideline.content && guideline.content !== null && guideline.content.trim().length > 0;
+            const hasCondensed = guideline.condensed && guideline.condensed !== null && guideline.condensed.trim().length > 0;
+            
+            // Return true if either content or condensed is missing
+            return !hasContent || !hasCondensed;
+        });
+        
+        console.log(`[DEBUG] Found ${guidelinesNeedingContent.length} guidelines needing content processing`);
+        
+        // Return only the necessary fields for processing
+        const processableGuidelines = guidelinesNeedingContent.map(guideline => ({
+            id: guideline.id,
+            title: guideline.title || guideline.humanFriendlyName || 'Unknown',
+            filename: guideline.filename,
+            originalFilename: guideline.originalFilename,
+            hasContent: !!(guideline.content && guideline.content.trim().length > 0),
+            hasCondensed: !!(guideline.condensed && guideline.condensed.trim().length > 0)
+        }));
+        
+        res.json({
+            success: true,
+            guidelines: processableGuidelines,
+            total: processableGuidelines.length
+        });
+        
+    } catch (error) {
+        console.error('[ERROR] Failed to get guidelines needing content:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+// Endpoint to process content for a single guideline
+app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.body;
+        const userId = req.user.uid;
+        
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'Missing guidelineId parameter'
+            });
+        }
+        
+        console.log(`[DEBUG] Processing content for guideline: ${guidelineId}`);
+        
+        // Get guideline data from Firestore
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guidelineData = guidelineDoc.data();
+        
+        // Use the existing checkAndGenerateContent function
+        const result = await checkAndGenerateContent(guidelineData, guidelineId);
+        
+        if (result.updated && Object.keys(result.updates).length > 0) {
+            // Update the document in Firestore
+            await db.collection('guidelines').doc(guidelineId).update(result.updates);
+            
+            console.log(`[DEBUG] Successfully updated content for guideline: ${guidelineId}`);
+            
+            res.json({
+                success: true,
+                updated: true,
+                message: `Content processed and updated for ${guidelineData.title || guidelineId}`,
+                updatedFields: Object.keys(result.updates)
+            });
+        } else {
+            console.log(`[DEBUG] No content updates needed for guideline: ${guidelineId}`);
+            
+            res.json({
+                success: true,
+                updated: false,
+                message: `No content processing needed for ${guidelineData.title || guidelineId}`
+            });
+        }
+        
+    } catch (error) {
+        console.error(`[ERROR] Failed to process content for guideline:`, error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
 // New endpoint to enhance guideline metadata using AI
 app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
   try {
