@@ -1373,22 +1373,15 @@ async function loadGuidelinesFromFirestore() {
             console.log(`[DEBUG] Guidelines count is up to date: GitHub=${githubCount}, Firestore=${firestoreCount}`);
         }
 
-        // Check content status and trigger immediate repair for any missing content
+        // Check content status - reduced logging for cleaner startup
         const contentStatus = checkContentStatus(guidelines);
-        console.log('[CONTENT_STATUS] Content analysis:', contentStatus.stats);
         
-        // Log content status but don't trigger automatic repair
+        // Only log if there are significant content issues
         if (contentStatus.stats.nullContent > 0 || contentStatus.stats.nullCondensed > 0) {
             console.log('[CONTENT_STATUS] Missing content detected:', {
                 nullContent: contentStatus.stats.nullContent,
                 nullCondensed: contentStatus.stats.nullCondensed,
                 missingBoth: contentStatus.stats.missingBoth
-            });
-            console.log('[CONTENT_STATUS] Content repair will be triggered when guidelines are added/updated');
-        } else {
-            console.log('[CONTENT_STATUS] All guidelines have complete content:', {
-                fullyPopulated: contentStatus.stats.fullyPopulated,
-                percentComplete: Math.round((contentStatus.stats.fullyPopulated / contentStatus.stats.total) * 100)
             });
         }
 
@@ -1438,17 +1431,30 @@ function setupGuidelinesListener() {
     
     // Track the previous count to detect changes
     let previousGuidelineCount = 0;
+    let isInitialLoad = true;
     
     try {
         // Listen for changes to the guidelines collection using v9 syntax
         window.guidelinesListener = onSnapshot(collection(db, 'guidelines'), async (snapshot) => {
             const currentCount = snapshot.size;
-            console.log(`[FIRESTORE_LISTENER] Guidelines collection changed - Count: ${currentCount} (previous: ${previousGuidelineCount})`);
             
             // Get changed documents
             const changes = snapshot.docChanges();
             const addedDocs = changes.filter(change => change.type === 'added');
             const modifiedDocs = changes.filter(change => change.type === 'modified');
+            
+            // Check if this is the initial load
+            if (isInitialLoad) {
+                console.log(`[FIRESTORE_LISTENER] Initial load detected - ${currentCount} guidelines in collection`);
+                previousGuidelineCount = currentCount;
+                isInitialLoad = false;
+                return; // Skip processing on initial load
+            }
+            
+            // Only log and process if there are actual changes
+            if (addedDocs.length > 0 || modifiedDocs.length > 0) {
+                console.log(`[FIRESTORE_LISTENER] Guidelines collection changed - Count: ${currentCount} (previous: ${previousGuidelineCount})`);
+            }
             
             // Check if count has changed (new guidelines added or removed)
             const countChanged = currentCount !== previousGuidelineCount;
@@ -1472,7 +1478,7 @@ function setupGuidelinesListener() {
             }
             
             // When guideline count changes, trigger comprehensive metadata completion
-            if (countChanged && previousGuidelineCount > 0) { // Skip initial load
+            if (countChanged && previousGuidelineCount > 0) {
                 console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Triggering metadata completion...`);
                 
                 // Trigger comprehensive metadata completion for all guidelines
