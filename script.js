@@ -1398,31 +1398,14 @@ async function loadGuidelinesFromFirestore() {
         const contentStatus = checkContentStatus(guidelines);
         console.log('[CONTENT_STATUS] Content analysis:', contentStatus.stats);
         
-        // If ANY guidelines have missing content, trigger repair immediately
+        // Log content status but don't trigger automatic repair
         if (contentStatus.stats.nullContent > 0 || contentStatus.stats.nullCondensed > 0) {
-            console.warn('[CONTENT_STATUS] Missing content detected:', {
+            console.log('[CONTENT_STATUS] Missing content detected:', {
                 nullContent: contentStatus.stats.nullContent,
                 nullCondensed: contentStatus.stats.nullCondensed,
                 missingBoth: contentStatus.stats.missingBoth
             });
-            
-            // Show content repair starting
-            showMetadataProgress(`🔧 Found ${contentStatus.stats.nullContent + contentStatus.stats.nullCondensed} guidelines with missing content - starting automatic repair...`, false);
-            
-            // IMMEDIATELY trigger content repair for any missing content (with debouncing)
-            if (!window.contentRepairInProgress) {
-                console.log('[CONTENT_STATUS] Starting automatic content repair...');
-                setTimeout(async () => {
-                    try {
-                        await diagnoseAndRepairContent();
-                        console.log('[CONTENT_STATUS] Automatic content repair completed successfully');
-                    } catch (error) {
-                        console.error('[CONTENT_STATUS] Automatic content repair failed:', error);
-                    }
-                }, 1000); // Start immediately
-            } else {
-                console.log('[CONTENT_STATUS] Content repair already in progress, skipping...');
-            }
+            console.log('[CONTENT_STATUS] Content repair will be triggered when guidelines are added/updated');
         } else {
             console.log('[CONTENT_STATUS] All guidelines have complete content:', {
                 fullyPopulated: contentStatus.stats.fullyPopulated,
@@ -1430,36 +1413,15 @@ async function loadGuidelinesFromFirestore() {
             });
         }
         
-                 // NEW: Automatically enhance metadata for guidelines with low completeness
+                 // Log metadata status but don't trigger automatic enhancement
          if (incompleteCount > 0) {
-             console.log('[METADATA] Starting background metadata enhancement...');
-             
-             // Log progress instead of showing notification (to prevent any popup issues)
-             console.log(`[METADATA] Starting enhancement for ${incompleteCount} guidelines...`);
-             
-             // Run enhancement in background without blocking the UI
-             autoEnhanceIncompleteMetadata(guidelines, {
-                 maxConcurrent: 1, // Very conservative to avoid quota issues
-                 minCompleteness: 60, // Only enhance if less than 60% complete
-                 onProgress: (progress) => {
-                     console.log(`[METADATA] Progress: ${progress.current}/${progress.total} - ${progress.guideline}`);
-                     // Temporarily disable progress notifications to prevent any popup issues
-                     // showMetadataProgress(`Enhancing ${progress.current}/${progress.total}: ${progress.guideline.substring(0, 30)}...`);
-                 }
-             }).then(result => {
-                 if (result.success && result.enhanced > 0) {
-                     console.log(`[METADATA] Background enhancement completed: ${result.message}`);
-                     showMetadataProgress(`✓ Enhanced ${result.enhanced} guidelines`, true);
-                     
-                     // Enhancement completed - no need to reload as data is already updated in Firestore
-                     // Note: Avoiding recursive reload to prevent infinite enhancement loops
-                 } else {
-                     showMetadataProgress('All guidelines already have complete metadata', true);
-                 }
-             }).catch(enhancementError => {
-                 console.error('[METADATA] Background enhancement failed:', enhancementError);
-                 showMetadataProgress('⚠ Metadata enhancement failed', true);
+             console.log('[METADATA] Found guidelines with incomplete metadata:', {
+                 incompleteCount,
+                 averageCompleteness: Math.round(avgCompleteness)
              });
+             console.log('[METADATA] Metadata enhancement will be triggered when guidelines are added/updated');
+         } else {
+             console.log('[METADATA] All guidelines have sufficient metadata completeness');
          }
 
         // Store in global variables using document ID as key
@@ -1487,12 +1449,126 @@ async function loadGuidelinesFromFirestore() {
 
         console.log('[DEBUG] Guidelines loaded and stored in global variables');
         window.guidelinesLoaded = true;
+        
+        // Set up Firestore listener for new/updated guidelines (only on first load)
+        if (!window.guidelinesListener) {
+            setupGuidelinesListener();
+        }
+        
         return guidelines;
     } catch (error) {
         console.error('[DEBUG] Error loading guidelines from Firestore:', error);
         throw error;
     } finally {
         window.guidelinesLoading = false;
+    }
+}
+
+// Function to set up Firestore listener for guideline changes
+function setupGuidelinesListener() {
+    console.log('[FIRESTORE_LISTENER] Setting up guidelines change listener...');
+    
+    try {
+        // Listen for changes to the guidelines collection
+        window.guidelinesListener = db.collection('guidelines').onSnapshot(async (snapshot) => {
+            console.log('[FIRESTORE_LISTENER] Guidelines collection changed');
+            
+            // Get changed documents
+            const changes = snapshot.docChanges();
+            const addedDocs = changes.filter(change => change.type === 'added');
+            const modifiedDocs = changes.filter(change => change.type === 'modified');
+            
+            if (addedDocs.length > 0) {
+                console.log(`[FIRESTORE_LISTENER] ${addedDocs.length} new guidelines detected`);
+                
+                // Process new guidelines for content and metadata
+                for (const change of addedDocs) {
+                    const guidelineData = change.doc.data();
+                    const guidelineId = change.doc.id;
+                    
+                    console.log(`[FIRESTORE_LISTENER] Processing new guideline: ${guidelineData.title || guidelineId}`);
+                    
+                    // Trigger content processing if needed
+                    if (!guidelineData.content || !guidelineData.condensed) {
+                        console.log(`[FIRESTORE_LISTENER] Triggering content processing for: ${guidelineId}`);
+                        await processGuidelineContent(guidelineId);
+                    }
+                    
+                    // Trigger metadata enhancement if needed
+                    const metadataStatus = checkMetadataCompleteness(guidelineData);
+                    if (metadataStatus.completeness < 70) {
+                        console.log(`[FIRESTORE_LISTENER] Triggering metadata enhancement for: ${guidelineId}`);
+                        await enhanceGuidelineMetadata(guidelineId);
+                    }
+                }
+                
+                // Refresh guidelines data after processing
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
+                }, 2000);
+            }
+            
+            if (modifiedDocs.length > 0) {
+                console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
+                
+                // Update global variables with modified data
+                modifiedDocs.forEach(change => {
+                    const guidelineData = change.doc.data();
+                    const guidelineId = change.doc.id;
+                    
+                    if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
+                        window.globalGuidelines[guidelineId] = {
+                            ...window.globalGuidelines[guidelineId],
+                            ...guidelineData
+                        };
+                        console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
+                    }
+                });
+            }
+        }, (error) => {
+            console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
+        });
+        
+        console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
+        
+    } catch (error) {
+        console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
+    }
+}
+
+// Function to process content for a single guideline (triggered by listener)
+async function processGuidelineContent(guidelineId) {
+    try {
+        console.log(`[CONTENT_PROCESSOR] Processing content for: ${guidelineId}`);
+        
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[CONTENT_PROCESSOR] User not authenticated');
+            return;
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        const response = await fetch(`${window.SERVER_URL}/processGuidelineContent`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({ guidelineId })
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            console.log(`[CONTENT_PROCESSOR] Content processing result:`, result);
+            return result;
+        } else {
+            const errorText = await response.text();
+            console.error(`[CONTENT_PROCESSOR] Failed to process content:`, errorText);
+        }
+    } catch (error) {
+        console.error(`[CONTENT_PROCESSOR] Error processing content:`, error);
     }
 }
 
@@ -7377,10 +7453,9 @@ async function diagnoseAndRepairContent() {
             hideMetadataProgress();
         }, 5000);
         
-        // Reload guidelines to see the updates
+        // Note: Guidelines will be automatically updated via Firestore listeners
         if (successful > 0) {
-            console.log('[REPAIR] 🔄 Reloading guidelines to reflect changes...');
-            await loadGuidelinesFromFirestore();
+            console.log('[REPAIR] ✅ Guidelines updated in Firestore, changes will reflect automatically');
         }
         
     } catch (error) {
