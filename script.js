@@ -2,7 +2,7 @@
 import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Make auth available globally - ADD THIS LINE
 window.auth = auth;
@@ -1469,8 +1469,8 @@ function setupGuidelinesListener() {
     console.log('[FIRESTORE_LISTENER] Setting up guidelines change listener...');
     
     try {
-        // Listen for changes to the guidelines collection
-        window.guidelinesListener = db.collection('guidelines').onSnapshot(async (snapshot) => {
+        // Listen for changes to the guidelines collection using v9 syntax
+        window.guidelinesListener = onSnapshot(collection(db, 'guidelines'), async (snapshot) => {
             console.log('[FIRESTORE_LISTENER] Guidelines collection changed');
             
             // Get changed documents
