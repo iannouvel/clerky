@@ -611,50 +611,29 @@ async function fetchAndExtractPDFText(pdfFileName) {
         const pdfPath = `guidance/${encodeURIComponent(pdfFileName)}`;
         console.log(`[FETCH_PDF] Fetching PDF from GitHub: ${pdfPath}`);
         
-        // Fetch file (follow PDF link if the URL is a page)
-        const commonHeaders = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36',
-            'Accept': 'text/html,application/pdf,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-        };
-        let buffer, contentType, sourceUrl = url;
+        // Construct the GitHub raw content URL
+        const githubUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`;
+        
+        // Fetch PDF file from GitHub API
         try {
-            const response = await axios.get(sourceUrl, { responseType: 'arraybuffer', headers: commonHeaders, validateStatus: s => s >= 200 && s < 300 });
-            buffer = Buffer.from(response.data);
-            contentType = response.headers['content-type'] || 'application/octet-stream';
-            if (/text\/html/i.test(contentType)) {
-                // Parse HTML for a PDF link
-                const html = Buffer.from(response.data).toString('utf8');
-                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
-                if (pdfMatch) {
-                    const pdfHref = pdfMatch[1] || pdfMatch[2];
-                    const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
-                    const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
-                    buffer = Buffer.from(pdfResp.data);
-                    contentType = pdfResp.headers['content-type'] || 'application/pdf';
-                    sourceUrl = resolvedUrl;
-                } else {
-                    throw new Error('No PDF link found on page');
+            const response = await axios.get(githubUrl, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
                 }
+            });
+            
+            if (response.data.content) {
+                // GitHub API returns base64-encoded content for binary files
+                buffer = Buffer.from(response.data.content, 'base64');
+                console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub API, size: ${buffer.length} bytes`);
+            } else {
+                throw new Error('No content found in GitHub API response');
             }
         } catch (err) {
-            // Fallback: fetch as text and extract first .pdf link
-            try {
-                const htmlResp = await axios.get(sourceUrl, { responseType: 'text', headers: commonHeaders });
-                const html = typeof htmlResp.data === 'string' ? htmlResp.data : Buffer.from(htmlResp.data).toString('utf8');
-                const pdfMatch = html.match(/href\s*=\s*"([^"]+\.pdf)"|href\s*=\s*'([^']+\.pdf)'/i);
-                if (!pdfMatch) throw err;
-                const pdfHref = pdfMatch[1] || pdfMatch[2];
-                const resolvedUrl = new URL(pdfHref, sourceUrl).toString();
-                const pdfResp = await axios.get(resolvedUrl, { responseType: 'arraybuffer', headers: commonHeaders });
-                buffer = Buffer.from(pdfResp.data);
-                contentType = pdfResp.headers['content-type'] || 'application/pdf';
-                sourceUrl = resolvedUrl;
-            } catch (_) {
-                throw err;
-            }
+            console.error(`[FETCH_PDF] Failed to fetch from GitHub API: ${err.message}`);
+            throw err;
         }
-        
-        console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub, size: ${buffer.length} bytes`);
         
         // Extract text from PDF
         const extractedText = await extractTextFromPDF(buffer);
