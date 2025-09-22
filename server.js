@@ -4983,6 +4983,450 @@ app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
     }
 });
 
+// Generic endpoint to ensure metadata completion for specified fields
+app.post('/ensureMetadataCompletion', authenticateUser, async (req, res) => {
+    try {
+        const { singleGuideline, targetFields } = req.body;
+        
+        // Define the default priority order for metadata fields
+        const defaultFieldOrder = [
+            'humanFriendlyName',
+            'organisation', 
+            'yearProduced',
+            'title',
+            'summary',
+            'keywords'
+        ];
+        
+        // Use specified fields or default priority order
+        const fieldsToProcess = targetFields || defaultFieldOrder;
+        
+        if (singleGuideline) {
+            // Process single guideline
+            console.log(`[METADATA_COMPLETION] Processing single guideline: ${singleGuideline} for fields: ${fieldsToProcess.join(', ')}`);
+            
+            const doc = await db.collection('guidelines').doc(singleGuideline).get();
+            if (!doc.exists) {
+                return res.status(404).json({
+                    success: false,
+                    error: `Guideline ${singleGuideline} not found`
+                });
+            }
+            
+            const result = await processGuidelineMetadataFields(doc, fieldsToProcess, req.user.uid);
+            return res.json({
+                success: true,
+                message: `Processed single guideline: ${singleGuideline}`,
+                ...result
+            });
+        }
+        
+        console.log(`[METADATA_COMPLETION] Starting completion check for fields: ${fieldsToProcess.join(', ')}...`);
+        
+        // Get all guidelines
+        const snapshot = await db.collection('guidelines').get();
+        const results = {
+            total: snapshot.size,
+            processed: 0,
+            fieldResults: [],
+            errors: []
+        };
+        
+        // Process each field sequentially
+        for (const fieldName of fieldsToProcess) {
+            console.log(`[METADATA_COMPLETION] Processing field: ${fieldName}`);
+            
+            const fieldResult = await processMetadataFieldForAllGuidelines(snapshot, fieldName, req.user.uid);
+            results.fieldResults.push(fieldResult);
+            results.processed += fieldResult.updated;
+            
+            console.log(`[METADATA_COMPLETION] ${fieldName}: ${fieldResult.completionRate}% complete (${fieldResult.completed}/${fieldResult.total})`);
+        }
+        
+        // Calculate overall completion rate
+        const totalFields = fieldsToProcess.length * snapshot.size;
+        const completedFields = results.fieldResults.reduce((sum, field) => sum + field.completed, 0);
+        const overallCompletionRate = totalFields > 0 ? Math.round((completedFields / totalFields) * 100) : 0;
+        
+        results.overallCompletionRate = overallCompletionRate;
+        results.fieldsCompleted = completedFields;
+        
+        console.log(`[METADATA_COMPLETION] Overall completion results:`, {
+            total: results.total,
+            processed: results.processed,
+            fieldsCompleted: results.fieldsCompleted,
+            overallCompletionRate: `${overallCompletionRate}%`
+        });
+        
+        res.json({
+            success: true,
+            message: `Metadata completion process finished. ${overallCompletionRate}% overall completion rate.`,
+            ...results
+        });
+        
+    } catch (error) {
+        console.error('[METADATA_COMPLETION] Error in completion process:', error);
+        res.status(500).json({
+            success: false,
+            error: `Failed to ensure metadata completion: ${error.message}`
+        });
+    }
+});
+
+// Generic function to process a single metadata field for all guidelines
+async function processMetadataFieldForAllGuidelines(snapshot, fieldName, userId) {
+    const fieldResult = {
+        field: fieldName,
+        total: snapshot.size,
+        completed: 0,
+        updated: 0,
+        errors: []
+    };
+    
+    console.log(`[METADATA_FIELD] Processing ${fieldName} for ${snapshot.size} guidelines...`);
+    
+    for (const doc of snapshot.docs) {
+        try {
+            const result = await processMetadataFieldForGuideline(doc, fieldName, userId);
+            
+            if (result.status === 'already_complete' || result.status === 'updated') {
+                fieldResult.completed++;
+            }
+            
+            if (result.status === 'updated') {
+                fieldResult.updated++;
+            }
+            
+            if (result.status === 'error') {
+                fieldResult.errors.push({
+                    guidelineId: doc.id,
+                    error: result.error
+                });
+            }
+        } catch (error) {
+            fieldResult.errors.push({
+                guidelineId: doc.id,
+                error: error.message
+            });
+        }
+    }
+    
+    fieldResult.completionRate = Math.round((fieldResult.completed / fieldResult.total) * 100);
+    
+    return fieldResult;
+}
+
+// Generic function to process multiple metadata fields for a single guideline
+async function processGuidelineMetadataFields(doc, fieldsToProcess, userId) {
+    const guidelineId = doc.id;
+    const results = {
+        guidelineId,
+        fieldResults: [],
+        totalUpdated: 0
+    };
+    
+    for (const fieldName of fieldsToProcess) {
+        try {
+            const fieldResult = await processMetadataFieldForGuideline(doc, fieldName, userId);
+            results.fieldResults.push({
+                field: fieldName,
+                ...fieldResult
+            });
+            
+            if (fieldResult.status === 'updated') {
+                results.totalUpdated++;
+            }
+        } catch (error) {
+            results.fieldResults.push({
+                field: fieldName,
+                status: 'error',
+                error: error.message
+            });
+        }
+    }
+    
+    return results;
+}
+
+// Generic function to process a single metadata field for a single guideline
+async function processMetadataFieldForGuideline(doc, fieldName, userId) {
+    const guidelineId = doc.id;
+    const currentData = doc.data();
+    
+    try {
+        // Check if field is already complete
+        const hasValidField = isFieldComplete(currentData[fieldName]);
+        
+        if (hasValidField) {
+            return {
+                status: 'already_complete',
+                value: currentData[fieldName]
+            };
+        }
+        
+        console.log(`[METADATA_FIELD] Processing ${fieldName} for: ${guidelineId}`);
+        
+        // Get field value using strategy pattern
+        let newValue = await generateFieldValue(fieldName, currentData, userId);
+        
+        // Update the guideline with the new field value
+        if (newValue && newValue.length > 0) {
+            await doc.ref.update({ [fieldName]: newValue });
+            console.log(`[METADATA_FIELD] ✓ Updated ${guidelineId}.${fieldName}: "${newValue}"`);
+            
+            return {
+                status: 'updated',
+                oldValue: currentData[fieldName] || null,
+                newValue: newValue
+            };
+        } else {
+            console.log(`[METADATA_FIELD] ✗ Failed to generate valid ${fieldName} for ${guidelineId}`);
+            return {
+                status: 'error',
+                error: `Could not generate valid ${fieldName}`
+            };
+        }
+        
+    } catch (error) {
+        console.error(`[METADATA_FIELD] Error processing ${fieldName} for ${guidelineId}:`, error);
+        return {
+            status: 'error',
+            error: error.message
+        };
+    }
+}
+
+// Helper function to check if a field value is complete
+function isFieldComplete(value) {
+    if (!value) return false;
+    if (typeof value !== 'string') return true; // Non-string values are considered complete
+    
+    const invalidValues = ['N/A', 'Not available', 'Unknown', '', 'null', 'undefined'];
+    const lowerValue = value.toLowerCase().trim();
+    
+    return !invalidValues.includes(lowerValue) && value.length > 2;
+}
+
+// Helper function to generate field value using different strategies
+async function generateFieldValue(fieldName, currentData, userId) {
+    switch (fieldName) {
+        case 'humanFriendlyName':
+            return await generateHumanFriendlyName(currentData, userId);
+            
+        case 'organisation':
+            return await generateOrganisation(currentData, userId);
+            
+        case 'yearProduced':
+            return await generateYearProduced(currentData, userId);
+            
+        case 'title':
+            return await generateTitle(currentData, userId);
+            
+        case 'summary':
+            return await generateSummary(currentData, userId);
+            
+        case 'keywords':
+            return await generateKeywords(currentData, userId);
+            
+        default:
+            console.log(`[METADATA_FIELD] Unknown field type: ${fieldName}`);
+            return null;
+    }
+}
+
+// Field-specific generation functions
+async function generateHumanFriendlyName(currentData, userId) {
+    // Strategy 1: Use title if available and clean it
+    if (currentData.title && currentData.title.length > 2) {
+        return cleanHumanFriendlyName(currentData.title);
+    }
+    
+    // Strategy 2: Use filename if title is not good enough
+    if (currentData.filename) {
+        return cleanHumanFriendlyName(currentData.filename.replace(/\.pdf$/i, ''));
+    } else if (currentData.originalFilename) {
+        return cleanHumanFriendlyName(currentData.originalFilename.replace(/\.pdf$/i, ''));
+    }
+    
+    // Strategy 3: Fallback to document ID
+    const docId = currentData.id || 'Unknown';
+    let friendlyName = docId.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '');
+    return friendlyName.split(' ').map(word => 
+        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    ).join(' ');
+}
+
+async function generateOrganisation(currentData, userId) {
+    // Try to extract from existing data first
+    if (currentData.title) {
+        const title = currentData.title.toLowerCase();
+        if (title.includes('nice')) return 'NICE';
+        if (title.includes('rcog') || title.includes('gtg')) return 'RCOG';
+        if (title.includes('bjog')) return 'BJOG';
+        if (title.includes('bashh')) return 'BASHH';
+    }
+    
+    // Try AI extraction from content
+    return await extractUsingAI('extractOrganisation', currentData, userId);
+}
+
+async function generateYearProduced(currentData, userId) {
+    // Try to extract year from title or filename
+    const textToSearch = [currentData.title, currentData.filename, currentData.originalFilename]
+        .filter(Boolean)
+        .join(' ');
+    
+    const yearMatch = textToSearch.match(/\b(19|20)\d{2}\b/);
+    if (yearMatch) {
+        return yearMatch[0];
+    }
+    
+    // Try AI extraction
+    return await extractUsingAI('extractYear', currentData, userId);
+}
+
+async function generateTitle(currentData, userId) {
+    // If we have a filename, clean it up
+    if (currentData.filename) {
+        return cleanHumanFriendlyName(currentData.filename.replace(/\.pdf$/i, ''));
+    }
+    
+    // Try AI extraction
+    return await extractUsingAI('extractTitle', currentData, userId);
+}
+
+async function generateSummary(currentData, userId) {
+    // Summary requires content, so always use AI
+    return await extractUsingAI('extractSummary', currentData, userId);
+}
+
+async function generateKeywords(currentData, userId) {
+    // Keywords require content analysis
+    return await extractUsingAI('extractKeywords', currentData, userId);
+}
+
+// Generic AI extraction helper
+async function extractUsingAI(promptKey, currentData, userId) {
+    try {
+        // Get content for AI analysis
+        let contentForAnalysis = currentData.condensed || currentData.content;
+        
+        // If no content in Firestore, try to get it from PDF
+        if (!contentForAnalysis) {
+            const pdfFileName = currentData.filename || currentData.originalFilename || (currentData.title + '.pdf');
+            if (pdfFileName) {
+                try {
+                    contentForAnalysis = await fetchAndExtractPDFText(pdfFileName);
+                } catch (pdfError) {
+                    console.log(`[AI_EXTRACTION] PDF extraction failed: ${pdfError.message}`);
+                    return null;
+                }
+            }
+        }
+        
+        if (!contentForAnalysis) {
+            console.log(`[AI_EXTRACTION] No content available for ${promptKey}`);
+            return null;
+        }
+        
+        const promptConfig = global.prompts?.[promptKey] || require('./prompts.json')[promptKey];
+        if (!promptConfig) {
+            console.log(`[AI_EXTRACTION] No prompt config found for ${promptKey}`);
+            return null;
+        }
+        
+        const prompt = promptConfig.prompt.replace('{{text}}', contentForAnalysis.substring(0, 8000));
+        
+        const messages = [
+            { role: 'system', content: promptConfig.system_prompt },
+            { role: 'user', content: prompt }
+        ];
+        
+        const aiResult = await routeToAI({ messages }, userId);
+        
+        if (aiResult && aiResult.content) {
+            const extractedValue = aiResult.content.trim();
+            console.log(`[AI_EXTRACTION] ${promptKey} extracted: "${extractedValue}"`);
+            return extractedValue;
+        }
+        
+        return null;
+    } catch (error) {
+        console.log(`[AI_EXTRACTION] ${promptKey} failed: ${error.message}`);
+        return null;
+    }
+}
+
+// Helper function to process a single guideline's humanFriendlyName
+async function processSingleGuidelineHumanFriendlyName(doc, userId) {
+    const guidelineId = doc.id;
+    const currentData = doc.data();
+    
+    try {
+        // Check if humanFriendlyName is already complete
+        const hasValidHumanFriendlyName = currentData.humanFriendlyName && 
+            currentData.humanFriendlyName !== 'N/A' && 
+            currentData.humanFriendlyName !== 'Not available' &&
+            currentData.humanFriendlyName !== 'Unknown' &&
+            currentData.humanFriendlyName.length > 2;
+        
+        if (hasValidHumanFriendlyName) {
+            return {
+                status: 'already_complete',
+                humanFriendlyName: currentData.humanFriendlyName
+            };
+        }
+        
+        // Process using the same logic as the batch function
+        let humanFriendlyName = null;
+        
+        // Strategy 1: Use title if available and clean it
+        if (currentData.title && currentData.title.length > 2) {
+            humanFriendlyName = cleanHumanFriendlyName(currentData.title);
+        }
+        
+        // Strategy 2: Use filename if title is not good enough
+        if (!humanFriendlyName || humanFriendlyName.length < 3) {
+            if (currentData.filename) {
+                humanFriendlyName = cleanHumanFriendlyName(currentData.filename.replace(/\.pdf$/i, ''));
+            } else if (currentData.originalFilename) {
+                humanFriendlyName = cleanHumanFriendlyName(currentData.originalFilename.replace(/\.pdf$/i, ''));
+            }
+        }
+        
+        // Strategy 3: Fallback to document ID if nothing else works
+        if (!humanFriendlyName || humanFriendlyName.length < 3) {
+            humanFriendlyName = guidelineId.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '');
+            humanFriendlyName = humanFriendlyName.split(' ').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            ).join(' ');
+        }
+        
+        // Update the guideline with the humanFriendlyName
+        if (humanFriendlyName && humanFriendlyName.length > 2) {
+            await doc.ref.update({ humanFriendlyName });
+            
+            return {
+                status: 'updated',
+                oldValue: currentData.humanFriendlyName || null,
+                newValue: humanFriendlyName,
+                source: currentData.title ? 'title' : 'filename/fallback'
+            };
+        } else {
+            return {
+                status: 'error',
+                error: 'Could not generate valid humanFriendlyName'
+            };
+        }
+        
+    } catch (error) {
+        return {
+            status: 'error',
+            error: error.message
+        };
+    }
+}
+
 // New endpoint to enhance guideline metadata using AI
 app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
   try {
