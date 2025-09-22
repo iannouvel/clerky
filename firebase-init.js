@@ -36,9 +36,8 @@ setPersistence(auth, browserLocalPersistence)
         console.error('[ERROR] Failed to set auth persistence:', error);
     });
 
-// Make auth and db available globally with backward compatibility
+// Make auth available globally with backward compatibility
 window.auth = auth;
-window.db = db;
 window.firebase = { 
     auth: () => auth,
     authInstance: auth

@@ -1452,7 +1452,7 @@ async function loadGuidelinesFromFirestore() {
         
         // Set up Firestore listener for new/updated guidelines (only on first load)
         if (!window.guidelinesListener) {
-            await setupGuidelinesListener();
+            setupGuidelinesListener();
         }
         
         return guidelines;
@@ -1465,15 +1465,12 @@ async function loadGuidelinesFromFirestore() {
 }
 
 // Function to set up Firestore listener for guideline changes
-async function setupGuidelinesListener() {
+function setupGuidelinesListener() {
     console.log('[FIRESTORE_LISTENER] Setting up guidelines change listener...');
     
     try {
-        // Import Firestore functions for v9 SDK
-        const { collection, onSnapshot } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
-        
-        // Listen for changes to the guidelines collection using v9 syntax
-        window.guidelinesListener = onSnapshot(collection(window.db, 'guidelines'), async (snapshot) => {
+        // Listen for changes to the guidelines collection
+        window.guidelinesListener = db.collection('guidelines').onSnapshot(async (snapshot) => {
             console.log('[FIRESTORE_LISTENER] Guidelines collection changed');
             
             // Get changed documents
@@ -1575,80 +1572,8 @@ async function processGuidelineContent(guidelineId) {
     }
 }
 
-// Helper functions for the Firestore listener
-async function processGuidelineContent(guidelineId) {
-    try {
-        console.log(`[CONTENT_PROCESSOR] Processing content for: ${guidelineId}`);
-        
-        const response = await fetch('https://clerky-uzni.onrender.com/processGuidelineContent', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${await window.auth.currentUser.getIdToken()}`
-            },
-            body: JSON.stringify({ guidelineId })
-        });
-        
-        const result = await response.json();
-        console.log(`[CONTENT_PROCESSOR] Content processing result:`, result);
-        return result;
-    } catch (error) {
-        console.error(`[CONTENT_PROCESSOR] Error processing content for ${guidelineId}:`, error);
-        return null;
-    }
-}
-
-async function enhanceGuidelineMetadata(guidelineId) {
-    try {
-        console.log(`[METADATA_ENHANCER] Enhancing metadata for: ${guidelineId}`);
-        
-        const response = await fetch('https://clerky-uzni.onrender.com/enhanceGuidelineMetadata', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${await window.auth.currentUser.getIdToken()}`
-            },
-            body: JSON.stringify({ guidelineId })
-        });
-        
-        const result = await response.json();
-        console.log(`[METADATA_ENHANCER] Metadata enhancement result:`, result);
-        return result;
-    } catch (error) {
-        console.error(`[METADATA_ENHANCER] Error enhancing metadata for ${guidelineId}:`, error);
-        return null;
-    }
-}
-
-function checkMetadataCompleteness(guideline) {
-    const requiredFields = ['humanFriendlyName', 'organisation', 'yearProduced', 'summary', 'keywords'];
-    const incompleteFields = [];
-    const missingFields = [];
-    
-    for (const field of requiredFields) {
-        if (!guideline[field]) {
-            missingFields.push(field);
-        } else if (typeof guideline[field] === 'string' && guideline[field].length < 10) {
-            incompleteFields.push(field);
-        }
-    }
-    
-    const totalFields = requiredFields.length;
-    const completeFields = totalFields - missingFields.length - incompleteFields.length;
-    const completeness = (completeFields / totalFields) * 100;
-    
-    return {
-        completeness,
-        missingFields,
-        incompleteFields,
-        isComplete: completeness >= 80
-    };
-}
-
-// Make functions available globally
+// Make loadGuidelinesFromFirestore available globally
 window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
-window.processGuidelineContent = processGuidelineContent;
-window.enhanceGuidelineMetadata = enhanceGuidelineMetadata;
 
 // Function to show error messages
 function showError(message) {
