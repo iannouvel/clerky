@@ -344,7 +344,8 @@ app.get('/', (req, res) => {
 // --- 1. Centralized CORS Configuration with Logging ---
 const corsOptions = {
   origin: (origin, callback) => {
-    console.log(`[CORS Origin Check] Request origin: ${origin}`);
+    // Commented out - too verbose for production logs
+    // console.log(`[CORS Origin Check] Request origin: ${origin}`);
     const allowedOrigins = [
       'https://iannouvel.github.io',
       'http://localhost:3000',
@@ -353,7 +354,7 @@ const corsOptions = {
       'https://clerkyai.health'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
-      console.log(`[CORS Origin Check] Origin allowed: ${origin || '(no origin - server-to-server or direct)'}`);
+      // console.log(`[CORS Origin Check] Origin allowed: ${origin || '(no origin - server-to-server or direct)'}`);
       callback(null, true);
     } else {
       console.error(`[CORS Origin Check] Origin blocked: ${origin}`);
@@ -627,12 +628,12 @@ async function fetchAndExtractPDFText(pdfFileName) {
                 // GitHub API returns base64-encoded content for binary files
                 buffer = Buffer.from(response.data.content, 'base64');
                 console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub API, size: ${buffer.length} bytes`);
-            } else {
+                } else {
                 throw new Error('No content found in GitHub API response');
             }
         } catch (err) {
             console.error(`[FETCH_PDF] Failed to fetch from GitHub API: ${err.message}`);
-            throw err;
+                throw err;
         }
         
         // Extract text from PDF
@@ -4935,7 +4936,7 @@ app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
             });
         }
         
-        console.log(`[DEBUG] Processing content for guideline: ${guidelineId}`);
+        // console.log(`[DEBUG] Processing content for guideline: ${guidelineId}`);
         
         // Get guideline data from Firestore
         const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
@@ -4965,7 +4966,7 @@ app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
                 updatedFields: Object.keys(result.updates)
             });
         } else {
-            console.log(`[DEBUG] No content updates needed for guideline: ${guidelineId}`);
+            // console.log(`[DEBUG] No content updates needed for guideline: ${guidelineId}`);
             
             res.json({
                 success: true,
@@ -6860,7 +6861,7 @@ async function getGuideline(id) {
 
 async function getAllGuidelines() {
   try {
-    console.log('[DEBUG] getAllGuidelines function called');
+    // console.log('[DEBUG] getAllGuidelines function called');
     
     // Check if database is available
     if (!db) {
@@ -6889,12 +6890,12 @@ async function getAllGuidelines() {
       timeout
     ]);
 
-    console.log('[DEBUG] Collection sizes:', {
-      guidelines: guidelines.size,
-      summaries: summaries.size,
-      keywords: keywords.size,
-      condensed: condensed.size
-    });
+    // console.log('[DEBUG] Collection sizes:', {
+    //   guidelines: guidelines.size,
+    //   summaries: summaries.size,
+    //   keywords: keywords.size,
+    //   condensed: condensed.size
+    // });
 
     const guidelineMap = new Map();
     
@@ -7397,7 +7398,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 // Endpoint to get guidelines list from GitHub
 app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] getGuidelinesList endpoint called');
+        // console.log('[DEBUG] getGuidelinesList endpoint called');
         const guidelinesString = await getGuidelinesList();
         res.send(guidelinesString);
     } catch (error) {
@@ -8441,7 +8442,7 @@ Generate an incorrect transcript that would fail audit testing for the specific 
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] getAllGuidelines endpoint called');
+        // console.log('[DEBUG] getAllGuidelines endpoint called');
         
         // Check if Firestore is initialized
         if (!db) {
@@ -8454,9 +8455,9 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
             });
         }
 
-        console.log('[DEBUG] Calling getAllGuidelines function');
+        // console.log('[DEBUG] Calling getAllGuidelines function');
         const guidelines = await getAllGuidelines();
-        console.log('[DEBUG] getAllGuidelines returned:', guidelines.length, 'guidelines');
+        // console.log('[DEBUG] getAllGuidelines returned:', guidelines.length, 'guidelines');
         
         // Check if we got empty results due to authentication issues
         if (guidelines.length === 0) {
@@ -8872,7 +8873,7 @@ app.post('/migrateGuidelineIds', authenticateUser, async (req, res) => {
 // Modify getAllGuidelines to check for IDs during load
 async function getAllGuidelines() {
   try {
-    console.log('[DEBUG] getAllGuidelines function called');
+    // console.log('[DEBUG] getAllGuidelines function called');
     
     // Check if database is available
     if (!db) {
@@ -9050,7 +9051,7 @@ app.put('/guideline/:id', authenticateUser, async (req, res) => {
 // Update getAllGuidelines to use document IDs
 async function getAllGuidelines() {
     try {
-        console.log('[DEBUG] getAllGuidelines function called');
+        // console.log('[DEBUG] getAllGuidelines function called');
         
         if (!db) {
             console.log('[DEBUG] Firestore database not available, returning empty guidelines');
@@ -9077,12 +9078,12 @@ async function getAllGuidelines() {
             timeout
         ]);
 
-        console.log('[DEBUG] Collection sizes:', {
-            guidelines: guidelines.size,
-            summaries: summaries.size,
-            keywords: keywords.size,
-            condensed: condensed.size
-        });
+        // console.log('[DEBUG] Collection sizes:', {
+        //     guidelines: guidelines.size,
+        //     summaries: summaries.size,
+        //     keywords: keywords.size,
+        //     condensed: condensed.size
+        // });
 
         const guidelineMap = new Map();
         
