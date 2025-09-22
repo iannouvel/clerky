@@ -1373,28 +1373,7 @@ async function loadGuidelinesFromFirestore() {
             console.log(`[DEBUG] Guidelines count is up to date: GitHub=${githubCount}, Firestore=${firestoreCount}`);
         }
 
-        // NEW: Check metadata completeness for all guidelines
-        console.log('[METADATA] Checking metadata completeness...');
-        let incompleteCount = 0;
-        let totalCompletenessScore = 0;
-        
-        guidelines.forEach(guideline => {
-            const completeness = checkMetadataCompleteness(guideline);
-            totalCompletenessScore += completeness.completenessScore;
-            
-            if (!completeness.isComplete) {
-                incompleteCount++;
-                console.log(`[METADATA] Incomplete metadata for "${guideline.title || guideline.id}": ${completeness.completenessScore.toFixed(1)}% complete`, {
-                    missing: completeness.missingFields,
-                    incomplete: completeness.incompleteFields
-                });
-            }
-        });
-        
-        const averageCompleteness = guidelines.length > 0 ? totalCompletenessScore / guidelines.length : 0;
-        console.log(`[METADATA] Metadata completeness summary: ${incompleteCount}/${guidelines.length} guidelines need enhancement (average: ${averageCompleteness.toFixed(1)}%)`);
-        
-        // NEW: Check content status and trigger immediate repair for any missing content
+        // Check content status and trigger immediate repair for any missing content
         const contentStatus = checkContentStatus(guidelines);
         console.log('[CONTENT_STATUS] Content analysis:', contentStatus.stats);
         
@@ -1412,17 +1391,6 @@ async function loadGuidelinesFromFirestore() {
                 percentComplete: Math.round((contentStatus.stats.fullyPopulated / contentStatus.stats.total) * 100)
             });
         }
-        
-                 // Log metadata status but don't trigger automatic enhancement
-         if (incompleteCount > 0) {
-             console.log('[METADATA] Found guidelines with incomplete metadata:', {
-                 incompleteCount,
-                 averageCompleteness: Math.round(averageCompleteness)
-             });
-             console.log('[METADATA] Metadata enhancement will be triggered when guidelines are added/updated');
-         } else {
-             console.log('[METADATA] All guidelines have sufficient metadata completeness');
-         }
 
         // Store in global variables using document ID as key
         window.guidelinesList = guidelines.map(g => ({
@@ -1468,20 +1436,27 @@ async function loadGuidelinesFromFirestore() {
 function setupGuidelinesListener() {
     console.log('[FIRESTORE_LISTENER] Setting up guidelines change listener...');
     
+    // Track the previous count to detect changes
+    let previousGuidelineCount = 0;
+    
     try {
         // Listen for changes to the guidelines collection using v9 syntax
         window.guidelinesListener = onSnapshot(collection(db, 'guidelines'), async (snapshot) => {
-            console.log('[FIRESTORE_LISTENER] Guidelines collection changed');
+            const currentCount = snapshot.size;
+            console.log(`[FIRESTORE_LISTENER] Guidelines collection changed - Count: ${currentCount} (previous: ${previousGuidelineCount})`);
             
             // Get changed documents
             const changes = snapshot.docChanges();
             const addedDocs = changes.filter(change => change.type === 'added');
             const modifiedDocs = changes.filter(change => change.type === 'modified');
             
+            // Check if count has changed (new guidelines added or removed)
+            const countChanged = currentCount !== previousGuidelineCount;
+            
             if (addedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] ${addedDocs.length} new guidelines detected`);
                 
-                // Process new guidelines for content and metadata
+                // Process new guidelines for content
                 for (const change of addedDocs) {
                     const guidelineData = change.doc.data();
                     const guidelineId = change.doc.id;
@@ -1493,21 +1468,31 @@ function setupGuidelinesListener() {
                         console.log(`[FIRESTORE_LISTENER] Triggering content processing for: ${guidelineId}`);
                         await processGuidelineContent(guidelineId);
                     }
-                    
-                    // Trigger metadata enhancement if needed
-                    const metadataStatus = checkMetadataCompleteness(guidelineData);
-                    if (metadataStatus.completeness < 70) {
-                        console.log(`[FIRESTORE_LISTENER] Triggering metadata enhancement for: ${guidelineId}`);
-                        await enhanceGuidelineMetadata(guidelineId);
-                    }
                 }
+            }
+            
+            // When guideline count changes, trigger comprehensive metadata completion
+            if (countChanged && previousGuidelineCount > 0) { // Skip initial load
+                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Triggering metadata completion...`);
+                
+                // Trigger comprehensive metadata completion for all guidelines
+                await triggerMetadataCompletionForAll();
                 
                 // Refresh guidelines data after processing
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
                     loadGuidelinesFromFirestore();
+                }, 3000);
+            } else if (addedDocs.length > 0) {
+                // If only processing new guidelines without count change detection
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
                 }, 2000);
             }
+            
+            // Update the previous count for next comparison
+            previousGuidelineCount = currentCount;
             
             if (modifiedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
@@ -5719,6 +5704,62 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
     }
 }
 
+// Generic function to trigger metadata completion for specified fields
+async function triggerMetadataCompletionForAll(targetFields = null) {
+    try {
+        // Define default priority order - humanFriendlyName first for 100% completion goal
+        const defaultFieldOrder = [
+            'humanFriendlyName',
+            'organisation', 
+            'yearProduced',
+            'title',
+            'summary',
+            'keywords'
+        ];
+        
+        const fieldsToProcess = targetFields || defaultFieldOrder;
+        console.log(`[METADATA_COMPLETION] Starting completion for fields: ${fieldsToProcess.join(', ')}`);
+        
+        const response = await fetch('https://clerky-uzni.onrender.com/ensureMetadataCompletion', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${await window.auth.currentUser.getIdToken()}`
+            },
+            body: JSON.stringify({ targetFields: fieldsToProcess })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            console.log(`[METADATA_COMPLETION] ✅ Metadata completion finished:`, {
+                total: result.total,
+                processed: result.processed,
+                fieldsCompleted: result.fieldsCompleted,
+                overallCompletionRate: result.overallCompletionRate
+            });
+            
+            // Log field-specific completion rates
+            if (result.fieldResults) {
+                result.fieldResults.forEach(fieldResult => {
+                    console.log(`[METADATA_COMPLETION] ${fieldResult.field}: ${fieldResult.completionRate}% complete (${fieldResult.completed}/${fieldResult.total})`);
+                    
+                    if (fieldResult.completionRate === 100) {
+                        console.log(`[METADATA_COMPLETION] 🎉 100% ${fieldResult.field} completion achieved!`);
+                    }
+                });
+            }
+        } else {
+            console.error('[METADATA_COMPLETION] ❌ Metadata completion failed:', result.error);
+        }
+        
+        return result;
+    } catch (error) {
+        console.error('[METADATA_COMPLETION] ❌ Error triggering metadata completion:', error);
+        return { success: false, error: error.message };
+    }
+}
+
 // Make functions globally available
 window.enhanceGuidelineMetadata = enhanceGuidelineMetadata;
 window.batchEnhanceMetadata = batchEnhanceMetadata;
@@ -5726,6 +5767,13 @@ window.checkMetadataCompleteness = checkMetadataCompleteness;
 window.autoEnhanceIncompleteMetadata = autoEnhanceIncompleteMetadata;
 window.showMetadataProgress = showMetadataProgress;
 window.hideMetadataProgress = hideMetadataProgress;
+window.triggerMetadataCompletionForAll = triggerMetadataCompletionForAll;
+
+// Testing helper - trigger completion for specific fields only
+window.testMetadataCompletion = async function(fields = ['humanFriendlyName']) {
+    console.log(`[TEST] Triggering metadata completion for: ${fields.join(', ')}`);
+    return await triggerMetadataCompletionForAll(fields);
+};
 
 // Function to show metadata enhancement progress to user
 function showMetadataProgress(message, isComplete = false) {
