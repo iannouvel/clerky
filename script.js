@@ -1415,9 +1415,6 @@ async function loadGuidelinesFromFirestore() {
         
                  // Log metadata status but don't trigger automatic enhancement
          if (incompleteCount > 0) {
-             const averageCompleteness = incompleteCount > 0 ? 
-                 (completenessScores.reduce((a, b) => a + b, 0) / completenessScores.length) : 100;
-             
              console.log('[METADATA] Found guidelines with incomplete metadata:', {
                  incompleteCount,
                  averageCompleteness: Math.round(averageCompleteness)
