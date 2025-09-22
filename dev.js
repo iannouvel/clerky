@@ -704,6 +704,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 row.style.background = '#fff';
                 row.style.border = '1px solid #e5e7eb';
                 row.style.borderRadius = '6px';
+                row.style.transition = 'opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
+                row.style.overflow = 'hidden';
+                row.dataset.discoveryUrl = (item.url || '').toLowerCase();
                 const meta = [item.organisation, item.type, item.year].filter(Boolean).join(' • ');
                 row.innerHTML = `
                     <div style="font-weight:600">${item.title || 'Untitled'}</div>
@@ -732,8 +735,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                 includeBtn.style.marginLeft = '6px';
                 includeBtn.textContent = 'Include';
                 includeBtn.onclick = async () => {
-                    await includeGuidance(item);
-                    await loadUserPrefs();
+                    includeBtn.disabled = true;
+                    excludeBtn.disabled = true;
+                    try {
+                        await includeGuidance(item);
+                        removeDiscoveryItemByUrl(item.url, 'Included and saved.');
+                    } finally {
+                        // buttons will be irrelevant after removal; re-enable just in case
+                        includeBtn.disabled = false;
+                        excludeBtn.disabled = false;
+                    }
                 };
 
                 const excludeBtn = document.createElement('button');
@@ -741,8 +752,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                 excludeBtn.style.marginLeft = '6px';
                 excludeBtn.textContent = 'Exclude';
                 excludeBtn.onclick = async () => {
-                    await excludeGuidance(item);
-                    await loadUserPrefs();
+                    includeBtn.disabled = true;
+                    excludeBtn.disabled = true;
+                    try {
+                        await excludeGuidance(item);
+                        removeDiscoveryItemByUrl(item.url, 'Excluded.');
+                    } finally {
+                        includeBtn.disabled = false;
+                        excludeBtn.disabled = false;
+                    }
                 };
 
                 actions.appendChild(openBtn);
@@ -751,6 +769,42 @@ document.addEventListener('DOMContentLoaded', async function() {
                 row.appendChild(actions);
                 container.appendChild(row);
             });
+        }
+
+        function removeDiscoveryItemByUrl(url, statusMessage) {
+            const container = document.getElementById('discoveryResults');
+            const status = document.getElementById('discoveryStatus');
+            if (status && statusMessage) {
+                status.style.color = '#155724';
+                status.style.background = '#d4edda';
+                status.style.border = '1px solid #c3e6cb';
+                status.style.padding = '6px 8px';
+                status.style.borderRadius = '4px';
+                status.textContent = statusMessage;
+                setTimeout(() => {
+                    status.textContent = '';
+                    status.removeAttribute('style');
+                }, 2500);
+            }
+            if (!container) return;
+            const target = container.querySelector(`[data-discovery-url="${(url || '').toLowerCase()}"]`);
+            if (!target) return;
+            // Smooth collapse and fade
+            target.style.maxHeight = `${target.scrollHeight}px`;
+            requestAnimationFrame(() => {
+                target.style.opacity = '0';
+                target.style.maxHeight = '0';
+                target.style.margin = '0';
+                target.style.paddingTop = '0';
+                target.style.paddingBottom = '0';
+            });
+            setTimeout(() => {
+                if (target && target.parentNode) target.parentNode.removeChild(target);
+                // If list becomes empty, show placeholder
+                if (!container.children.length) {
+                    container.innerHTML = '<div style="color:#666">No suggestions found.</div>';
+                }
+            }, 450);
         }
 
         async function fetchExclusions() {
@@ -798,6 +852,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             } catch (err) {
                 console.error(err);
                 status.textContent = `Exclude failed: ${err.message}`;
+                throw err;
             }
         }
 
@@ -812,7 +867,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const base = (item.organisation ? `${item.organisation} - ` : '') +
                              (item.year ? `${item.year} - ` : '') +
                              (item.title || lastSegment.replace(/\.pdf$/i, ''));
-                const safe = base.replace(/[\\/:*?"<>|]+/g, ' ').trim();
+                const safe = base.replace(/[\\\/:*?"<>|]+/g, ' ').trim();
                 const filename = `${safe}${ext || ''}`.replace(/\s+/g, ' ').trim() || lastSegment;
                 // 2) Server-side import to avoid CORS
                 const token = await getAuthTokenOrPrompt();
@@ -826,23 +881,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 const importData = await importRes.json();
                 if (!importRes.ok || !importData.success) throw new Error(importData.error || 'Import failed');
-
-                // 3) Reconcile to canonicalId (non-blocking)
-                try {
-                    await fetch(`${SERVER_URL}/reconcileUserInclude`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({ url: item.url, filename })
-                    });
-                } catch (_) {}
-
                 status.textContent = 'Included and saved.';
             } catch (err) {
                 console.error(err);
                 status.textContent = `Include failed: ${err.message}`;
+                throw err;
             }
         }
 
