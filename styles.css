@@ -580,9 +580,9 @@ body {
 
 #signOutBtn {
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    background: white;
+    border: 2px solid #00b894;
+    color: #00b894;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s;
@@ -590,7 +590,9 @@ body {
 }
 
 #signOutBtn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: #f8f9fa;
+    color: #00a884;
+    border-color: #00a884;
 }
 
 /* Landing page */
@@ -1302,13 +1304,15 @@ div.third-column,
 }
 
 .nav-btn.primary {
-    background-color: #00b894;
-    color: white;
-    border: none;
+    background-color: white;
+    color: #00b894;
+    border: 2px solid #00b894;
 }
 
 .nav-btn.primary:hover {
-    background-color: #00a884;
+    background-color: #f8f9fa;
+    color: #00a884;
+    border-color: #00a884;
 }
 
 
@@ -1834,13 +1838,15 @@ div.third-column,
 
 /* Secondary button styling */
 .nav-btn.secondary {
-    background-color: #00b894;
-    color: white;
-    border: none;
+    background-color: white;
+    color: #00b894;
+    border: 2px solid #00b894;
 }
 
 .nav-btn.secondary:hover:not(:disabled) {
-    background-color: #00a884;
+    background-color: #f8f9fa;
+    color: #00a884;
+    border-color: #00a884;
 }
 
 .nav-btn.secondary:disabled {
