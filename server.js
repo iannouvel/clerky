@@ -10334,3 +10334,304 @@ Please provide a comprehensive answer to the question based on the relevant guid
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// New endpoint to score compliance of clinical notes against guidelines
+app.post('/scoreCompliance', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] scoreCompliance endpoint called');
+        const { originalTranscript, recommendedChanges, guidelineId, guidelineTitle } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!originalTranscript) {
+            console.log('[DEBUG] scoreCompliance: Missing original transcript');
+            return res.status(400).json({ success: false, error: 'Original transcript is required' });
+        }
+        
+        if (!recommendedChanges) {
+            console.log('[DEBUG] scoreCompliance: Missing recommended changes');
+            return res.status(400).json({ success: false, error: 'Recommended changes are required' });
+        }
+
+        console.log('[DEBUG] scoreCompliance request data:', {
+            userId,
+            transcriptLength: originalTranscript.length,
+            changesLength: recommendedChanges.length,
+            guidelineId,
+            guidelineTitle
+        });
+
+        // Fetch the guideline content for context
+        let guidelineContent = '';
+        if (guidelineId) {
+            try {
+                console.log('[DEBUG] scoreCompliance: Fetching guideline content for ID:', guidelineId);
+                const guideline = await getGuideline(guidelineId);
+                guidelineContent = guideline.content || guideline.condensed || '';
+                console.log('[DEBUG] scoreCompliance: Retrieved guideline content length:', guidelineContent.length);
+            } catch (guidelineError) {
+                console.warn('[DEBUG] scoreCompliance: Could not fetch guideline content:', guidelineError.message);
+            }
+        }
+
+        // Create AI prompt for compliance scoring
+        const systemPrompt = `You are a medical AI assistant specialising in clinical documentation compliance assessment.
+
+Your task is to analyse a clinical note against specific medical guidelines and provide a comprehensive compliance score.
+
+SCORING FRAMEWORK:
+Evaluate the clinical note across three key dimensions (0-100 scale each):
+
+1. **COMPLETENESS SCORE** (40% weight):
+   - How much of the required guideline content is documented
+   - Presence of mandatory elements, assessments, and documentation
+   - Coverage of all relevant clinical areas specified in the guideline
+
+2. **ACCURACY SCORE** (35% weight):
+   - How well the documented content aligns with guideline recommendations
+   - Correctness of clinical decisions and interventions
+   - Appropriate use of medical terminology and protocols
+
+3. **CLINICAL APPROPRIATENESS SCORE** (25% weight):
+   - Whether clinical decisions match guideline criteria for the specific case
+   - Appropriateness of investigations and interventions for the clinical scenario
+   - Evidence of clinical reasoning aligned with guideline principles
+
+OVERALL COMPLIANCE CALCULATION:
+Overall Score = (Completeness × 0.4) + (Accuracy × 0.35) + (Clinical Appropriateness × 0.25)
+
+COMPLIANCE CATEGORIES:
+- Excellent (90-100): Fully compliant with guideline requirements
+- Good (75-89): Mostly compliant with minor gaps or areas for improvement
+- Needs Improvement (60-74): Some compliance issues requiring attention
+- Poor (0-59): Significant compliance gaps requiring substantial improvement
+
+RESPONSE FORMAT:
+Return ONLY a valid JSON object with this exact structure:
+{
+  "overallScore": number (0-100),
+  "category": "Excellent|Good|Needs Improvement|Poor",
+  "dimensionScores": {
+    "completeness": number (0-100),
+    "accuracy": number (0-100),
+    "clinicalAppropriateness": number (0-100)
+  },
+  "strengths": [
+    "Specific strength 1",
+    "Specific strength 2"
+  ],
+  "improvementAreas": [
+    "Specific area needing improvement 1",
+    "Specific area needing improvement 2"
+  ],
+  "keyFindings": {
+    "missingElements": ["element1", "element2"],
+    "wellDocumented": ["element1", "element2"],
+    "needsRevision": ["element1", "element2"]
+  },
+  "complianceInsights": "Brief summary of overall compliance status and key recommendations"
+}
+
+CRITICAL REQUIREMENTS:
+- Base your assessment on the specific guideline provided
+- Consider the clinical context and appropriateness for the specific case
+- Be objective and evidence-based in your scoring
+- Provide actionable insights in the improvement areas
+- Return ONLY the JSON object - no markdown blocks or additional text`;
+
+        const userPrompt = `Original Clinical Note:
+${originalTranscript}
+
+Recommended Changes from Dynamic Advice:
+${recommendedChanges}
+
+Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
+${guidelineContent ? `\nFull Guideline Content:\n${guidelineContent}` : ''}
+
+Please assess the compliance of the original clinical note against this guideline and provide a comprehensive scoring analysis as specified.`;
+
+        console.log('[DEBUG] scoreCompliance: Sending to AI', {
+            systemPromptLength: systemPrompt.length,
+            userPromptLength: userPrompt.length
+        });
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] scoreCompliance: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length,
+            aiProvider: aiResponse?.ai_provider
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] scoreCompliance: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Parse AI response
+        let scoringResult = {};
+        try {
+            // First, try to parse the response directly as JSON
+            scoringResult = JSON.parse(aiResponse.content);
+            console.log('[DEBUG] scoreCompliance: Parsed scoring result directly:', {
+                overallScore: scoringResult.overallScore,
+                category: scoringResult.category
+            });
+        } catch (parseError) {
+            console.log('[DEBUG] scoreCompliance: Direct JSON parse failed, trying to extract from markdown:', {
+                error: parseError.message,
+                rawContentPreview: aiResponse.content.substring(0, 200)
+            });
+            
+            // Try to extract JSON from markdown code blocks
+            try {
+                let jsonContent = aiResponse.content;
+                
+                // Remove markdown code blocks if present
+                const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
+                if (jsonMatch) {
+                    jsonContent = jsonMatch[1];
+                    console.log('[DEBUG] scoreCompliance: Extracted JSON from markdown code blocks');
+                } else {
+                    // Look for JSON object without code blocks
+                    const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
+                    if (objectMatch) {
+                        jsonContent = objectMatch[1];
+                        console.log('[DEBUG] scoreCompliance: Extracted JSON object from text');
+                    }
+                }
+                
+                // Clean up any extra text before/after JSON
+                jsonContent = jsonContent.trim();
+                
+                console.log('[DEBUG] scoreCompliance: Attempting to parse extracted JSON:', {
+                    extractedLength: jsonContent.length,
+                    extractedPreview: jsonContent.substring(0, 200)
+                });
+                
+                scoringResult = JSON.parse(jsonContent);
+                
+                console.log('[DEBUG] scoreCompliance: Successfully parsed extracted JSON:', {
+                    overallScore: scoringResult.overallScore,
+                    category: scoringResult.category
+                });
+                
+            } catch (extractError) {
+                console.error('[DEBUG] scoreCompliance: Failed to extract and parse JSON from markdown:', {
+                    error: extractError.message,
+                    rawContent: aiResponse.content.substring(0, 500)
+                });
+                
+                // Final fallback: create a basic scoring result
+                scoringResult = {
+                    overallScore: 0,
+                    category: 'Poor',
+                    dimensionScores: {
+                        completeness: 0,
+                        accuracy: 0,
+                        clinicalAppropriateness: 0
+                    },
+                    strengths: [],
+                    improvementAreas: ['Unable to parse AI response properly. Please try again.'],
+                    keyFindings: {
+                        missingElements: [],
+                        wellDocumented: [],
+                        needsRevision: []
+                    },
+                    complianceInsights: 'There was an issue processing the compliance assessment. Please try again.'
+                };
+                console.log('[DEBUG] scoreCompliance: Using fallback scoring result');
+                
+                // Log the full raw content for debugging
+                console.error('[DEBUG] scoreCompliance: Full raw AI response for debugging:', aiResponse.content);
+            }
+        }
+
+        // Add session metadata
+        const sessionId = `compliance_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        
+        // Store scoring result in database for tracking
+        try {
+            const scoringRef = db.collection('complianceScoring').doc(sessionId);
+            await scoringRef.set({
+                userId,
+                sessionId,
+                originalTranscript,
+                recommendedChanges,
+                guidelineId,
+                guidelineTitle,
+                scoringResult,
+                createdAt: admin.firestore.FieldValue.serverTimestamp()
+            });
+            console.log('[DEBUG] scoreCompliance: Stored scoring result in database with sessionId:', sessionId);
+        } catch (dbError) {
+            console.error('[DEBUG] scoreCompliance: Database storage error:', dbError.message);
+            // Continue without failing the request
+        }
+
+        // Log the AI interaction
+        try {
+            await logAIInteraction(
+                {
+                    prompt: userPrompt,
+                    system_prompt: systemPrompt,
+                    transcript_length: originalTranscript.length,
+                    changes_length: recommendedChanges.length,
+                    guideline_id: guidelineId,
+                    guideline_title: guidelineTitle
+                },
+                {
+                    success: true,
+                    response: aiResponse.content,
+                    overall_score: scoringResult.overallScore,
+                    category: scoringResult.category,
+                    ai_provider: aiResponse.ai_provider,
+                    ai_model: aiResponse.ai_model,
+                    token_usage: aiResponse.token_usage,
+                    session_id: sessionId
+                },
+                'scoreCompliance'
+            );
+            console.log('[DEBUG] scoreCompliance: AI interaction logged successfully');
+        } catch (logError) {
+            console.error('[DEBUG] scoreCompliance: Error logging AI interaction:', logError.message);
+        }
+
+        console.log('[DEBUG] scoreCompliance: Returning response', {
+            sessionId,
+            overallScore: scoringResult.overallScore,
+            category: scoringResult.category,
+            success: true
+        });
+
+        res.json({
+            success: true,
+            sessionId,
+            scoring: scoringResult,
+            guidelineId,
+            guidelineTitle,
+            ai_provider: aiResponse.ai_provider,
+            ai_model: aiResponse.ai_model
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] scoreCompliance: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack,
+            userId: req.user?.uid,
+            requestBody: {
+                transcriptLength: req.body?.originalTranscript?.length,
+                changesLength: req.body?.recommendedChanges?.length,
+                guidelineId: req.body?.guidelineId
+            }
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});

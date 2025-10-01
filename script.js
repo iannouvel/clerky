@@ -3506,6 +3506,9 @@ async function applyAllDecisions() {
         console.log('[DEBUG] applyAllDecisions: Results displayed successfully');
         debouncedSaveState();
 
+        // Trigger compliance scoring after successful application of changes
+        await triggerComplianceScoring(result.originalTranscript, result.updatedTranscript, result.changesSummary);
+
         // Check if we're in sequential processing mode and need to continue to next guideline
         if (window.sequentialProcessingActive) {
             const queue = window.sequentialProcessingQueue || [];
@@ -8571,4 +8574,521 @@ async function processQuestionAgainstGuidelines() {
         btnSpinner.style.display = 'none';
         btnText.textContent = originalText;
     }
+}
+
+// Compliance Scoring Functions
+
+// Trigger compliance scoring after dynamic advice is applied
+async function triggerComplianceScoring(originalTranscript, updatedTranscript, changesSummary) {
+    try {
+        console.log('[DEBUG] triggerComplianceScoring called', {
+            originalLength: originalTranscript?.length,
+            updatedLength: updatedTranscript?.length,
+            changesSummary
+        });
+
+        // Only score if we have the necessary data and there were actual changes
+        if (!originalTranscript || !changesSummary || changesSummary.total === 0) {
+            console.log('[DEBUG] triggerComplianceScoring: Skipping - no changes to score');
+            return;
+        }
+
+        // Get the current guideline information
+        const currentGuideline = getCurrentGuidelineInfo();
+        if (!currentGuideline.id) {
+            console.log('[DEBUG] triggerComplianceScoring: Skipping - no current guideline identified');
+            return;
+        }
+
+        // Show scoring initiation message
+        const scoringInitMessage = `
+            <div class="compliance-scoring-init">
+                <h3>📊 Generating Compliance Score...</h3>
+                <p>Analysing how well the original clinical note complied with guideline requirements.</p>
+                <div class="scoring-spinner">⏳ Processing...</div>
+            </div>
+        `;
+        appendToSummary1(scoringInitMessage, false);
+
+        // Generate the recommended changes summary for scoring
+        const recommendedChanges = generateRecommendedChangesSummary();
+
+        // Call the compliance scoring endpoint
+        await performComplianceScoring(
+            originalTranscript,
+            recommendedChanges,
+            currentGuideline.id,
+            currentGuideline.title
+        );
+
+    } catch (error) {
+        console.error('[DEBUG] triggerComplianceScoring: Error:', error);
+        
+        const errorMessage = `
+            <div class="compliance-scoring-error">
+                <h3>❌ Compliance Scoring Error</h3>
+                <p>Unable to generate compliance score: ${error.message}</p>
+            </div>
+        `;
+        appendToSummary1(errorMessage, false);
+    }
+}
+
+// Get current guideline information from the session
+function getCurrentGuidelineInfo() {
+    // Try to get guideline info from various sources
+    let guidelineId = null;
+    let guidelineTitle = null;
+
+    // Check if we have a current advice session with guideline info
+    if (window.latestAnalysis && window.latestAnalysis.guidelineId) {
+        guidelineId = window.latestAnalysis.guidelineId;
+        guidelineTitle = window.latestAnalysis.guidelineTitle;
+    }
+
+    // Fallback: check current suggestions for guideline info
+    if (!guidelineId && currentSuggestions && currentSuggestions.length > 0) {
+        const firstSuggestion = currentSuggestions[0];
+        if (firstSuggestion.guidelineReference) {
+            guidelineTitle = firstSuggestion.guidelineReference;
+        }
+    }
+
+    // Fallback: check relevant guidelines for the most recent one
+    if (!guidelineId && window.relevantGuidelines && window.relevantGuidelines.length > 0) {
+        const mostRelevant = window.relevantGuidelines.find(g => g.category === 'mostRelevant') || 
+                            window.relevantGuidelines[0];
+        guidelineId = mostRelevant.id;
+        guidelineTitle = mostRelevant.title;
+    }
+
+    return {
+        id: guidelineId,
+        title: guidelineTitle || 'Unknown Guideline'
+    };
+}
+
+// Generate a summary of recommended changes for scoring
+function generateRecommendedChangesSummary() {
+    if (!currentSuggestions || currentSuggestions.length === 0) {
+        return 'No specific recommendations were generated.';
+    }
+
+    let summary = 'Recommended Changes Summary:\n\n';
+    
+    currentSuggestions.forEach((suggestion, index) => {
+        const decision = userDecisions[suggestion.id];
+        const status = decision ? decision.action : 'not decided';
+        
+        summary += `${index + 1}. ${suggestion.category.toUpperCase()}: ${suggestion.context}\n`;
+        summary += `   Original: "${suggestion.originalText}"\n`;
+        summary += `   Suggested: "${suggestion.suggestedText}"\n`;
+        summary += `   Priority: ${suggestion.priority}\n`;
+        summary += `   User Decision: ${status}\n\n`;
+    });
+
+    return summary;
+}
+
+// Perform the actual compliance scoring API call
+async function performComplianceScoring(originalTranscript, recommendedChanges, guidelineId, guidelineTitle) {
+    try {
+        console.log('[DEBUG] performComplianceScoring called', {
+            transcriptLength: originalTranscript.length,
+            changesLength: recommendedChanges.length,
+            guidelineId,
+            guidelineTitle
+        });
+
+        // Get user authentication
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+
+        // Call the scoring endpoint
+        const response = await fetch(`${window.SERVER_URL}/scoreCompliance`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                originalTranscript,
+                recommendedChanges,
+                guidelineId,
+                guidelineTitle
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`API error (${response.status}): ${errorText}`);
+        }
+
+        const result = await response.json();
+        
+        if (!result.success) {
+            throw new Error(result.error || 'Compliance scoring failed');
+        }
+
+        console.log('[DEBUG] performComplianceScoring: Success', {
+            overallScore: result.scoring.overallScore,
+            category: result.scoring.category
+        });
+
+        // Display the compliance scoring results
+        await displayComplianceScoring(result.scoring, result.guidelineTitle);
+
+    } catch (error) {
+        console.error('[DEBUG] performComplianceScoring: Error:', error);
+        throw error;
+    }
+}
+
+// Display compliance scoring results in the UI
+async function displayComplianceScoring(scoring, guidelineTitle) {
+    console.log('[DEBUG] displayComplianceScoring called', {
+        overallScore: scoring.overallScore,
+        category: scoring.category
+    });
+
+    // Determine score colour based on category
+    const getScoreColour = (category) => {
+        switch (category) {
+            case 'Excellent': return '#28a745';
+            case 'Good': return '#17a2b8';
+            case 'Needs Improvement': return '#ffc107';
+            case 'Poor': return '#dc3545';
+            default: return '#6c757d';
+        }
+    };
+
+    const scoreColour = getScoreColour(scoring.category);
+
+    // Create the compliance scoring display HTML
+    const scoringHtml = `
+        <div class="compliance-scoring-results">
+            <div class="scoring-header">
+                <h3>📊 Compliance Assessment Results</h3>
+                <p><em>Assessment against: ${guidelineTitle}</em></p>
+            </div>
+            
+            <div class="overall-score">
+                <div class="score-circle" style="border-color: ${scoreColour};">
+                    <div class="score-number" style="color: ${scoreColour};">${scoring.overallScore}</div>
+                    <div class="score-label">Overall Score</div>
+                </div>
+                <div class="score-category" style="color: ${scoreColour};">
+                    <strong>${scoring.category}</strong>
+                </div>
+            </div>
+
+            <div class="dimension-scores">
+                <h4>📈 Detailed Breakdown</h4>
+                <div class="dimensions-grid">
+                    <div class="dimension-item">
+                        <div class="dimension-name">Completeness</div>
+                        <div class="dimension-score">${scoring.dimensionScores.completeness}/100</div>
+                        <div class="dimension-weight">(40% weight)</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dimension-name">Accuracy</div>
+                        <div class="dimension-score">${scoring.dimensionScores.accuracy}/100</div>
+                        <div class="dimension-weight">(35% weight)</div>
+                    </div>
+                    <div class="dimension-item">
+                        <div class="dimension-name">Clinical Appropriateness</div>
+                        <div class="dimension-score">${scoring.dimensionScores.clinicalAppropriateness}/100</div>
+                        <div class="dimension-weight">(25% weight)</div>
+                    </div>
+                </div>
+            </div>
+
+            ${scoring.strengths && scoring.strengths.length > 0 ? `
+                <div class="scoring-section strengths">
+                    <h4>✅ Strengths Identified</h4>
+                    <ul>
+                        ${scoring.strengths.map(strength => `<li>${strength}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+
+            ${scoring.improvementAreas && scoring.improvementAreas.length > 0 ? `
+                <div class="scoring-section improvements">
+                    <h4>🎯 Areas for Improvement</h4>
+                    <ul>
+                        ${scoring.improvementAreas.map(area => `<li>${area}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+
+            <div class="key-findings">
+                <h4>🔍 Key Findings</h4>
+                ${scoring.keyFindings.wellDocumented && scoring.keyFindings.wellDocumented.length > 0 ? `
+                    <div class="findings-group">
+                        <strong>Well Documented:</strong>
+                        <ul class="findings-list good">
+                            ${scoring.keyFindings.wellDocumented.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+                
+                ${scoring.keyFindings.missingElements && scoring.keyFindings.missingElements.length > 0 ? `
+                    <div class="findings-group">
+                        <strong>Missing Elements:</strong>
+                        <ul class="findings-list missing">
+                            ${scoring.keyFindings.missingElements.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+                
+                ${scoring.keyFindings.needsRevision && scoring.keyFindings.needsRevision.length > 0 ? `
+                    <div class="findings-group">
+                        <strong>Needs Revision:</strong>
+                        <ul class="findings-list revision">
+                            ${scoring.keyFindings.needsRevision.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+            </div>
+
+            <div class="compliance-insights">
+                <h4>💡 Compliance Insights</h4>
+                <p>${scoring.complianceInsights}</p>
+            </div>
+        </div>
+
+        <style>
+        .compliance-scoring-results {
+            background: #f8f9fa;
+            border: 2px solid #17a2b8;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .scoring-header h3 {
+            margin: 0 0 10px 0;
+            color: #17a2b8;
+            font-size: 1.4em;
+        }
+
+        .scoring-header p {
+            margin: 0 0 20px 0;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .overall-score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border: 6px solid;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .score-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .score-category {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .dimension-scores {
+            margin: 25px 0;
+        }
+
+        .dimension-scores h4 {
+            margin: 0 0 15px 0;
+            color: #495057;
+        }
+
+        .dimensions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .dimension-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .dimension-name {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .dimension-score {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #17a2b8;
+            margin-bottom: 5px;
+        }
+
+        .dimension-weight {
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        .scoring-section {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .strengths {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+
+        .improvements {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+
+        .scoring-section h4 {
+            margin: 0 0 10px 0;
+            color: #495057;
+        }
+
+        .scoring-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .scoring-section li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .key-findings {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .key-findings h4 {
+            margin: 0 0 15px 0;
+            color: #495057;
+        }
+
+        .findings-group {
+            margin-bottom: 15px;
+        }
+
+        .findings-group strong {
+            color: #495057;
+        }
+
+        .findings-list {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .findings-list.good li {
+            color: #28a745;
+        }
+
+        .findings-list.missing li {
+            color: #dc3545;
+        }
+
+        .findings-list.revision li {
+            color: #ffc107;
+        }
+
+        .compliance-insights {
+            margin: 20px 0 0 0;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 6px;
+            border-left: 4px solid #17a2b8;
+        }
+
+        .compliance-insights h4 {
+            margin: 0 0 10px 0;
+            color: #1976d2;
+        }
+
+        .compliance-insights p {
+            margin: 0;
+            line-height: 1.5;
+            color: #495057;
+        }
+
+        .compliance-scoring-init, .compliance-scoring-error {
+            background: #f8f9fa;
+            border: 2px solid #17a2b8;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .compliance-scoring-error {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+
+        .scoring-spinner {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .overall-score {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .dimensions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+    `;
+
+    // Remove the loading message and add the results
+    const loadingElements = document.querySelectorAll('.compliance-scoring-init');
+    loadingElements.forEach(el => el.remove());
+
+    appendToSummary1(scoringHtml, false);
+    
+    console.log('[DEBUG] displayComplianceScoring: Results displayed successfully');
 }
