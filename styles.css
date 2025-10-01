@@ -252,8 +252,8 @@ body {
     flex-direction: column;
 }
 
-/* Ensure three columns take full width */
-.main-three-column {
+/* Ensure two columns take full width */
+.main-two-column {
     width: 100% !important;
     max-width: 100% !important;
 }
@@ -2208,8 +2208,8 @@ html, body {
     flex-direction: column;
 }
 
-/* Main three-column layout for user input, summary, and output */
-.main-three-column {
+/* Main two-column layout for user input and summary */
+.main-two-column {
     display: flex;
     width: 100%;
     height: 100%;
@@ -2245,7 +2245,7 @@ html, body {
     color: #000;
 }
 
-.main-three-column {
+.main-two-column {
     margin-top: 0;
     width: 100%;
     flex: 1 1 0;
@@ -2283,7 +2283,7 @@ html, body {
     box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 
-.main-three-column:hover .main-column:not(:hover) {
+.main-two-column:hover .main-column:not(:hover) {
     flex: 0.8 1 0;
     opacity: 0.85;
 }
@@ -2339,7 +2339,7 @@ html, body {
 }
 
 @media (max-width: 900px) {
-    .main-three-column {
+    .main-two-column {
         flex-direction: column;
         height: auto;
     }

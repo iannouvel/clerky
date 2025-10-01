@@ -1914,12 +1914,12 @@ async function generateClinicalNote() {
 
     try {
         // Get the transcript content from userInput field
-        const userInput = document.getElementById('userInput')?.value;
-        let transcript = userInput;
+        const userInputValue = document.getElementById('userInput')?.value;
+        let transcript = userInputValue;
         
         console.log('[DEBUG] Getting transcript from userInput:', {
-            userInputLength: userInput?.length,
-            userInputPreview: userInput?.substring(0, 100) + '...'
+            userInputLength: userInputValue?.length,
+            userInputPreview: userInputValue?.substring(0, 100) + '...'
         });
 
         if (!transcript || transcript.trim() === '') {
@@ -2034,14 +2034,13 @@ async function generateClinicalNote() {
             throw new Error('Invalid response format from server');
         }
 
-        // Append the generated note to output field
-        console.log('[DEBUG] Appending note to output field');
-        const outputField = document.getElementById('outputField');
-        if (outputField) {
-            outputField.innerHTML = window.marked ? window.marked.parse(data.note) : data.note;
-            outputField.scrollTop = outputField.scrollHeight;
+        // Replace the user input with the generated note
+        console.log('[DEBUG] Replacing user input with generated note');
+        const userInputElement = document.getElementById('userInput');
+        if (userInputElement) {
+            userInputElement.value = data.note;
         }
-        console.log('[DEBUG] Note appended successfully');
+        console.log('[DEBUG] Note replaced in user input successfully');
 
     } catch (error) {
         console.error('[DEBUG] Error in generateClinicalNote:', {
@@ -2202,52 +2201,40 @@ function appendToSummary1(content, clearExisting = false) {
     }
 }
 
-// Function to append content to the output field
+// Function to replace content in the user input field
 function appendToOutputField(content, clearExisting = true) {
-    console.log('[DEBUG] appendToOutputField called with:', {
+    console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
         contentLength: content?.length,
         clearExisting,
         contentPreview: content?.substring(0, 100) + '...'
     });
 
-    const outputField = document.getElementById('outputField');
-    if (!outputField) {
-        console.error('[DEBUG] outputField element not found');
+    const userInput = document.getElementById('userInput');
+    if (!userInput) {
+        console.error('[DEBUG] userInput element not found');
         return;
     }
 
     try {
+        // Strip HTML tags for plain text display in textarea
+        let processedContent = content;
+        if (/<[a-z][\s\S]*>/i.test(content)) {
+            // Remove HTML tags and convert to plain text
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            processedContent = tempDiv.textContent || tempDiv.innerText || '';
+        }
+
         if (clearExisting) {
-            outputField.innerHTML = '';
-        }
-
-        // Check if content is already HTML
-        const isHtml = /<[a-z][\s\S]*>/i.test(content);
-        let processedContent;
-        if (isHtml) {
-            processedContent = content;
-        } else if (window.marked) {
-            try {
-                processedContent = window.marked.parse(content);
-            } catch (parseError) {
-                console.error('[DEBUG] Error parsing with marked:', parseError);
-                processedContent = content;
-            }
+            userInput.value = processedContent;
         } else {
-            processedContent = content;
+            userInput.value += '\n\n' + processedContent;
         }
 
-        // Create a wrapper div for the new content
-        const newContentWrapper = document.createElement('div');
-        newContentWrapper.className = 'new-content-entry';
-        newContentWrapper.innerHTML = processedContent;
-
-        outputField.appendChild(newContentWrapper);
-        outputField.scrollTop = outputField.scrollHeight;
-        console.log('[DEBUG] Content appended to output field successfully');
+        console.log('[DEBUG] Content replaced in user input successfully');
     } catch (error) {
         console.error('[DEBUG] Error in appendToOutputField:', error);
-        outputField.innerHTML += content;
+        userInput.value = content;
     }
 }
 
@@ -3402,7 +3389,7 @@ async function applyAllDecisions() {
 
         appendToSummary1(summaryHtml, false);
         
-        // Display ONLY the updated transcript text in Output field
+        // Replace the user input with the updated transcript text
         const transcriptOutput = `${result.updatedTranscript}`;
         appendToOutputField(transcriptOutput, true);
 
@@ -4822,10 +4809,8 @@ function debouncedSaveState() {
 
 function getChatState() {
     const userInput = document.getElementById('userInput');
-    const outputField = document.getElementById('outputField');
     return {
         userInputContent: userInput ? userInput.value : '',
-        outputFieldContent: outputField ? outputField.innerHTML : '',
         relevantGuidelines: window.relevantGuidelines,
         latestAnalysis: window.latestAnalysis,
         currentAdviceSession: window.currentAdviceSession,
@@ -4837,7 +4822,6 @@ function getChatState() {
 
 function loadChatState(state) {
     document.getElementById('userInput').value = state.userInputContent || '';
-    document.getElementById('outputField').innerHTML = state.outputFieldContent || '';
     window.relevantGuidelines = state.relevantGuidelines || null;
     window.latestAnalysis = state.latestAnalysis || null;
     window.currentAdviceSession = state.currentAdviceSession || null;
@@ -4959,8 +4943,7 @@ async function startNewChat() {
         id: newChatId,
         preview: 'New chat...',
         state: {
-            userInputContent: '',
-            outputFieldContent: ''
+            userInputContent: ''
         }
     };
     
@@ -5171,7 +5154,7 @@ async function initializeMainApp() {
             historyColumn: !!document.getElementById('historyColumn'),
             transcriptColumn: !!document.getElementById('transcriptColumn'),
             userInput: !!document.getElementById('userInput'),
-            outputField: !!document.getElementById('outputField')
+            summary1: !!document.getElementById('summary1')
         });
         
         // Initialize chat history - COMMENTED OUT (functionality no longer used)
