@@ -29,12 +29,18 @@ Clerky is a full-stack web application built with modern web technologies, imple
 ### Technology Stack
 
 #### Frontend
-- **Framework**: Vanilla JavaScript (ES6+)
-- **UI Framework**: Custom CSS with responsive design
-- **Authentication**: Firebase Authentication
-- **State Management**: Global JavaScript objects
-- **Build Tools**: Native ES modules
-- **Deployment**: GitHub Pages
+- **Dual Architecture**: 
+  - **Static App**: Vanilla JavaScript (ES6+) with custom CSS and responsive design
+  - **React SPA**: React 19 with Vite 6 build system
+- **State Management**: 
+  - **Static**: Global JavaScript objects and Firebase real-time listeners
+  - **React**: Zustand for client state + React Query 5 for server state
+- **Authentication**: Firebase Authentication v11.4.0 with JWT tokens
+- **HTTP Client**: Axios for API communication
+- **Build Tools**: 
+  - **Static**: Native ES modules with webpack for PII library bundling
+  - **React**: Vite 6 with ESLint 9 and modern tooling
+- **Deployment**: Firebase Hosting with SPA rewrites
 
 #### Backend
 - **Runtime**: Node.js
@@ -50,10 +56,12 @@ Clerky is a full-stack web application built with modern web technologies, imple
 - **Data Format**: JSON documents
 
 #### AI Integration
-- **Primary Model**: OpenAI GPT-3.5-turbo
-- **Secondary Model**: DeepSeek Chat
-- **Fallback Strategy**: Automatic provider switching
-- **Usage Tracking**: Custom analytics with cost monitoring
+- **Multi-Provider System**: 5 AI providers with cost-optimized routing
+- **Primary Provider**: DeepSeek Chat (most cost-effective at $0.0005/1k tokens)
+- **Provider Hierarchy**: DeepSeek → Mistral → Anthropic → OpenAI → Gemini
+- **Intelligent Fallback**: Automatic provider switching on quota/error conditions
+- **Usage Tracking**: Comprehensive analytics with real-time cost monitoring across all providers
+- **User Preferences**: Per-user AI provider selection with Firestore persistence
 
 #### External Services
 - **Version Control**: GitHub API for guideline management
@@ -145,6 +153,42 @@ POST /deleteAllLogs           // Delete all log files
 POST /deleteAllSummaries      // Delete all summaries from Firestore
 POST /deleteAllGuidelineData  // Delete all guideline data
 POST /uploadPDFsToStorage     // Upload PDFs to Firebase Storage
+POST /admin/archive-logs-if-needed    // Archive logs when they exceed size limits
+POST /admin/clean-guideline-titles    // Clean and standardize guideline titles
+```
+
+##### Clinical Conditions & Transcript Management
+```javascript
+GET  /clinicalConditions              // Get all clinical conditions
+POST /generateTranscript/:conditionId // Generate transcript for specific condition
+POST /generateAllTranscripts          // Generate transcripts for all conditions
+POST /initializeClinicalConditions    // Initialize clinical conditions database
+```
+
+##### Content Enhancement & Processing
+```javascript
+POST /enhanceGuidelineMetadata        // Enhance metadata for specific guideline
+POST /batchEnhanceMetadata           // Batch enhance metadata for multiple guidelines
+POST /processGuidelineContent        // Process and extract guideline content
+POST /getGuidelinesNeedingContent    // Get guidelines missing content
+POST /ensureMetadataCompletion       // Ensure all guidelines have complete metadata
+```
+
+##### User Preferences & Customization
+```javascript
+GET  /userGuidelinePrefs             // Get user guideline preferences
+POST /userGuidelinePrefs/update      // Update user guideline preferences
+POST /reconcileUserInclude           // Reconcile user include preferences
+GET  /guidance-exclusions            // Get guidance exclusions
+POST /guidance-exclusions            // Update guidance exclusions
+```
+
+##### Audit & Compliance System
+```javascript
+POST /auditElementCheck              // Check specific audit elements
+POST /generateAuditTranscript        // Generate audit transcript
+POST /generateIncorrectAuditScripts  // Generate incorrect audit scripts for testing
+POST /updateGuidelinesWithAuditableElements // Update guidelines with auditable elements
 ```
 
 #### AI Integration Layer
@@ -260,19 +304,43 @@ async function diagnoseAndRepairContent() {
 
 #### Multi-Provider Support
 ```javascript
-const AI_PROVIDERS = {
-    OpenAI: {
-        model: 'gpt-3.5-turbo',
-        costPer1KTokensInput: 0.0015,
-        costPer1KTokensOutput: 0.002,
-        endpoint: 'https://api.openai.com/v1/chat/completions'
-    },
-    DeepSeek: {
-        model: 'deepseek-chat',
-        costPer1KTokens: 0.0005,
-        endpoint: 'https://api.deepseek.com/v1/chat/completions'
-    }
-};
+const AI_PROVIDER_PREFERENCE = [
+  {
+    name: 'DeepSeek',
+    model: 'deepseek-chat',
+    costPer1kTokens: 0.0005, // $0.0005 per 1k tokens (cheapest)
+    priority: 1,
+    description: 'Most cost-effective option'
+  },
+  {
+    name: 'Mistral',
+    model: 'mistral-large-latest',
+    costPer1kTokens: 0.001, // $0.001 per 1k tokens
+    priority: 2,
+    description: 'Good balance of cost and quality'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-3-sonnet-20240229',
+    costPer1kTokens: 0.003, // $0.003 per 1k tokens
+    priority: 3,
+    description: 'High quality, moderate cost'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-3.5-turbo',
+    costPer1kTokens: 0.0015, // $0.0015 per 1k tokens
+    priority: 4,
+    description: 'Reliable but can hit quota limits'
+  },
+  {
+    name: 'Gemini',
+    model: 'gemini-1.5-pro-latest',
+    costPer1kTokens: 0.0025, // $0.0025 per 1k tokens
+    priority: 5,
+    description: 'Google\'s offering, good for specific use cases'
+  }
+];
 ```
 
 #### Request Flow
@@ -560,9 +628,14 @@ Session Initialization → Feature Access
 
 ### Data Protection
 - **Encryption**: All data in transit (HTTPS) and at rest (Firebase encryption)
-- **Authentication**: Firebase Authentication with JWT tokens
+- **Authentication**: Firebase Authentication with JWT tokens and daily disclaimer acceptance
 - **Authorization**: Role-based access control for administrative functions
-- **Data Anonymization**: No PHI storage, only clinical scenarios for analysis
+- **PII Anonymization**: Advanced PII detection and anonymization using @libretto/redact-pii-light
+  - Real-time PII detection with risk level assessment
+  - Interactive user review interface for PII matches
+  - Configurable anonymization with user approval workflow
+  - Support for medical terminology and clinical context
+- **Data Minimization**: No PHI storage, only anonymized clinical scenarios for analysis
 
 ### API Security
 - **Rate Limiting**: Implemented to prevent abuse
@@ -587,10 +660,15 @@ Session Initialization → Feature Access
 - **Domain**: Custom domain support
 
 ### Backend Deployment
-- **Platform**: Render.com
-- **Scaling**: Automatic horizontal scaling
-- **Health Checks**: Built-in health monitoring
-- **Logging**: Centralized log aggregation
+- **Platform**: Render.com with automatic deployments
+- **Scaling**: Automatic horizontal scaling with health monitoring
+- **Health Checks**: Built-in health monitoring via `/health` endpoint
+- **Logging**: Comprehensive logging system with:
+  - Structured JSON logs with correlation IDs
+  - Automatic log archiving when size limits exceeded
+  - Real-time error tracking and debugging
+  - AI usage and cost monitoring across all providers
+- **Environment**: Production environment with secure environment variable management
 
 ### Database & Storage
 - **Primary**: Firebase Firestore (auto-scaling)

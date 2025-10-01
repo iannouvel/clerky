@@ -1,14 +1,33 @@
 # Clerky - Clinical Guideline Assistant
 
-Clerky is a web application that helps healthcare professionals access and apply clinical guidelines efficiently. It processes clinical guideline PDFs, extracts essential information, and generates interactive algorithms to aid in clinical decision-making.
+Clerky is an AI-powered clinical decision support platform that helps healthcare professionals access and apply clinical guidelines efficiently. It processes clinical guideline PDFs, extracts essential information, generates interactive algorithms, and provides real-time clinical decision support with comprehensive audit capabilities and multi-provider AI integration.
 
 ## Features
 
-- Extracts and condenses text from clinical guideline PDFs
-- Identifies significant clinical terms and keywords
-- Generates concise summaries of guidelines
-- Creates interactive HTML algorithms for clinical decision-making
-- Supports both OpenAI and DeepSeek AI providers
+### Core Clinical Decision Support
+- **Real-time Guideline Analysis**: Analyzes clinical transcripts against comprehensive medical guidelines
+- **Multi-Guideline Processing**: Simultaneous analysis against multiple relevant guidelines
+- **Interactive Recommendations**: AI-generated suggestions with accept/reject/modify options
+- **Clinical Note Generation**: Automated generation of comprehensive clinical documentation
+- **Audit & Compliance**: Comprehensive audit system with automated compliance checking
+
+### Advanced AI Integration
+- **Multi-Provider Support**: 5 AI providers (DeepSeek, Mistral, Anthropic, OpenAI, Gemini)
+- **Cost-Optimized Routing**: Intelligent provider selection based on cost and availability
+- **Automatic Fallback**: Seamless switching between providers on quota/error conditions
+- **Usage Analytics**: Real-time cost monitoring and usage tracking across all providers
+
+### Data Processing & Management
+- **PDF Processing**: Extracts and condenses text from clinical guideline PDFs
+- **Metadata Enhancement**: Automated extraction and enhancement of guideline metadata
+- **Content Repair**: Intelligent content repair and validation systems
+- **GitHub Integration**: Version control and automated content synchronization
+
+### Security & Privacy
+- **PII Anonymization**: Advanced PII detection and anonymization with user review
+- **Firebase Authentication**: Secure authentication with JWT tokens and daily disclaimers
+- **Comprehensive Logging**: Structured logging with automatic archiving and monitoring
+- **HIPAA Considerations**: Privacy-first design with no PHI storage
 
 ## Setup
 
@@ -38,43 +57,60 @@ pip install -r requirements.txt
 
 4. Create a `.env` file with your API keys:
 ```
-OPENAI_API_KEY=your_openai_api_key_here
+# AI Provider API Keys (at least one required)
 DEEPSEEK_API_KEY=your_deepseek_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
 MISTRAL_API_KEY=your_mistral_api_key_here
-PREFERRED_AI_PROVIDER=OpenAI  # or "DeepSeek", "Anthropic", "Mistral"
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+GOOGLE_AI_API_KEY=your_gemini_api_key_here
 
-# Firebase Configuration (if using Firebase)
+# GitHub Integration (required for guideline management)
+GITHUB_TOKEN=your_github_token_here
+
+# Firebase Configuration (required)
 FIREBASE_API_KEY=your_firebase_api_key
 FIREBASE_AUTH_DOMAIN=your_app.firebaseapp.com
 FIREBASE_PROJECT_ID=your_project_id
 FIREBASE_STORAGE_BUCKET=your_storage_bucket
 FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 FIREBASE_APP_ID=your_app_id
+
+# Firebase Admin SDK (server-side, required)
+FIREBASE_ADMIN_TYPE=service_account
+FIREBASE_ADMIN_PROJECT_ID=your_project_id
+FIREBASE_ADMIN_PRIVATE_KEY_ID=your_private_key_id
+FIREBASE_ADMIN_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
+FIREBASE_ADMIN_CLIENT_EMAIL=your_service_account_email
+FIREBASE_ADMIN_CLIENT_ID=your_client_id
+FIREBASE_ADMIN_AUTH_URI=https://accounts.google.com/o/oauth2/auth
+FIREBASE_ADMIN_TOKEN_URI=https://oauth2.googleapis.com/token
 ```
 
-### Using Multiple AI Providers
+### AI Provider System
 
-Clerky now supports both OpenAI and DeepSeek as AI providers for processing clinical guidelines and generating algorithms.
+Clerky features an intelligent multi-provider AI system with cost-optimized routing and automatic fallback capabilities.
 
-#### Switching Providers
+#### Supported Providers
 
-You can switch between providers in two ways:
+1. **DeepSeek** (Primary) - `deepseek-chat` - $0.0005/1k tokens - Most cost-effective
+2. **Mistral** - `mistral-large-latest` - $0.001/1k tokens - Good balance of cost and quality
+3. **Anthropic** - `claude-3-sonnet-20240229` - $0.003/1k tokens - High quality, moderate cost
+4. **OpenAI** - `gpt-3.5-turbo` - $0.0015/1k tokens - Reliable but can hit quota limits
+5. **Google Gemini** - `gemini-1.5-pro-latest` - $0.0025/1k tokens - Good for specific use cases
 
-1. Set the `PREFERRED_AI_PROVIDER` environment variable in your `.env` file to either `OpenAI` or `DeepSeek`.
+#### Intelligent Routing
 
-2. Use the web interface to switch providers (if available in your deployment).
-
-If one provider's API key is missing or invalid, Clerky will automatically fall back to the other provider if its API key is available.
+- **Cost-Optimized**: Automatically selects the most cost-effective available provider
+- **Automatic Fallback**: Seamlessly switches providers on quota/error conditions
+- **User Preferences**: Per-user AI provider selection with Firestore persistence
+- **Real-time Monitoring**: Comprehensive usage tracking and cost monitoring
 
 #### Configuration
 
-Each provider may use different models:
-
-- **OpenAI:** Uses `gpt-3.5-turbo` by default, with `gpt-4-turbo` for algorithm generation
-- **DeepSeek:** Uses `deepseek-chat` for all operations
-- **Anthropic (Claude):** Uses `claude-3-sonnet-20240229` for all operations
-- **Mistral:** Uses `mistral-large-latest` for all operations
+The system automatically tries providers in cost order. You can:
+- Set individual API keys for any combination of providers
+- Users can select their preferred provider through the web interface
+- System falls back to next available provider if the preferred one fails
 
 ## Usage
 
@@ -88,38 +124,70 @@ npm start
 
 The server will be available at http://localhost:3000.
 
-### Processing Guidelines
+### Frontend Development
 
-1. Place clinical guideline PDFs in the `guidance` folder
-2. Process the PDFs to extract and condense text:
+#### Static App (Production)
+The main application is served directly from the root directory via Firebase Hosting.
+
+#### React App (Development)
+For frontend development using the modern React interface:
+
 ```bash
-python scripts/1_process_pdf.py
+cd frontend
+npm install
+npm run dev
 ```
 
-3. Extract significant terms:
+The React development server will be available at http://localhost:5173.
+
+### Core Workflows
+
+#### 1. Clinical Decision Support
+- Input clinical transcripts through the web interface
+- System automatically finds relevant guidelines
+- Receive AI-generated recommendations with interactive options
+- Apply, reject, or modify suggestions as needed
+- Generate comprehensive clinical notes
+
+#### 2. Guideline Management
+- Upload new guideline PDFs through the web interface
+- System automatically extracts and processes content
+- Metadata enhancement and content repair happens automatically
+- Guidelines are synced with GitHub for version control
+
+#### 3. Audit & Compliance
+- Run compliance audits against clinical documentation
+- Generate audit reports with detailed findings
+- Track compliance metrics over time
+- Export audit results for quality assurance
+
+## Monitoring & Analytics
+
+### API Usage Tracking
+
+Monitor AI provider usage and costs:
+
 ```bash
-python scripts/2_extract_terms.py
-```
+# View real-time usage statistics
+curl http://localhost:3000/api-usage-stats
 
-4. Generate summaries:
-```bash
-python scripts/3_generate_summary.py
-```
-
-5. Generate interactive algorithms:
-```bash
-python scripts/generate_algo.py
-```
-
-## API Usage Tracking
-
-Track API usage with:
-
-```bash
+# Track usage with automated scripts
 node scripts/track-api-usage.js
 ```
 
-This will generate reports in the `data/api-usage` directory for both OpenAI and DeepSeek (if configured).
+Usage reports are automatically generated in the `data/api-usage` directory with detailed breakdowns by:
+- Provider (DeepSeek, Mistral, Anthropic, OpenAI, Gemini)
+- Endpoint usage patterns
+- Cost analysis and optimization recommendations
+- Token usage trends
+
+### System Health
+
+Monitor system health and performance:
+- Health endpoint: `GET /health`
+- Automatic log archiving when size limits are exceeded
+- Real-time error tracking and debugging
+- Comprehensive audit trails for compliance
 
 ## License
 

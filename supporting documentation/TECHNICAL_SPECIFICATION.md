@@ -50,10 +50,12 @@ Clerky is a full-stack web application built with modern web technologies, imple
 - **Data Format**: JSON documents
 
 #### AI Integration
-- **Primary Model**: OpenAI GPT-3.5-turbo
-- **Secondary Model**: DeepSeek Chat
-- **Fallback Strategy**: Automatic provider switching
-- **Usage Tracking**: Custom analytics with cost monitoring
+- **Multi-Provider System**: 5 AI providers with cost-optimized routing
+- **Primary Provider**: DeepSeek Chat (most cost-effective at $0.0005/1k tokens)
+- **Provider Hierarchy**: DeepSeek → Mistral → Anthropic → OpenAI → Gemini
+- **Intelligent Fallback**: Automatic provider switching on quota/error conditions
+- **Usage Tracking**: Comprehensive analytics with real-time cost monitoring across all providers
+- **User Preferences**: Per-user AI provider selection with Firestore persistence
 
 #### External Services
 - **Version Control**: GitHub API for guideline management
@@ -145,6 +147,42 @@ POST /deleteAllLogs           // Delete all log files
 POST /deleteAllSummaries      // Delete all summaries from Firestore
 POST /deleteAllGuidelineData  // Delete all guideline data
 POST /uploadPDFsToStorage     // Upload PDFs to Firebase Storage
+POST /admin/archive-logs-if-needed    // Archive logs when they exceed size limits
+POST /admin/clean-guideline-titles    // Clean and standardize guideline titles
+```
+
+##### Clinical Conditions & Transcript Management
+```javascript
+GET  /clinicalConditions              // Get all clinical conditions
+POST /generateTranscript/:conditionId // Generate transcript for specific condition
+POST /generateAllTranscripts          // Generate transcripts for all conditions
+POST /initializeClinicalConditions    // Initialize clinical conditions database
+```
+
+##### Content Enhancement & Processing
+```javascript
+POST /enhanceGuidelineMetadata        // Enhance metadata for specific guideline
+POST /batchEnhanceMetadata           // Batch enhance metadata for multiple guidelines
+POST /processGuidelineContent        // Process and extract guideline content
+POST /getGuidelinesNeedingContent    // Get guidelines missing content
+POST /ensureMetadataCompletion       // Ensure all guidelines have complete metadata
+```
+
+##### User Preferences & Customization
+```javascript
+GET  /userGuidelinePrefs             // Get user guideline preferences
+POST /userGuidelinePrefs/update      // Update user guideline preferences
+POST /reconcileUserInclude           // Reconcile user include preferences
+GET  /guidance-exclusions            // Get guidance exclusions
+POST /guidance-exclusions            // Update guidance exclusions
+```
+
+##### Audit & Compliance System
+```javascript
+POST /auditElementCheck              // Check specific audit elements
+POST /generateAuditTranscript        // Generate audit transcript
+POST /generateIncorrectAuditScripts  // Generate incorrect audit scripts for testing
+POST /updateGuidelinesWithAuditableElements // Update guidelines with auditable elements
 ```
 
 #### AI Integration Layer
@@ -260,19 +298,43 @@ async function diagnoseAndRepairContent() {
 
 #### Multi-Provider Support
 ```javascript
-const AI_PROVIDERS = {
-    OpenAI: {
-        model: 'gpt-3.5-turbo',
-        costPer1KTokensInput: 0.0015,
-        costPer1KTokensOutput: 0.002,
-        endpoint: 'https://api.openai.com/v1/chat/completions'
-    },
-    DeepSeek: {
-        model: 'deepseek-chat',
-        costPer1KTokens: 0.0005,
-        endpoint: 'https://api.deepseek.com/v1/chat/completions'
-    }
-};
+const AI_PROVIDER_PREFERENCE = [
+  {
+    name: 'DeepSeek',
+    model: 'deepseek-chat',
+    costPer1kTokens: 0.0005, // $0.0005 per 1k tokens (cheapest)
+    priority: 1,
+    description: 'Most cost-effective option'
+  },
+  {
+    name: 'Mistral',
+    model: 'mistral-large-latest',
+    costPer1kTokens: 0.001, // $0.001 per 1k tokens
+    priority: 2,
+    description: 'Good balance of cost and quality'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-3-sonnet-20240229',
+    costPer1kTokens: 0.003, // $0.003 per 1k tokens
+    priority: 3,
+    description: 'High quality, moderate cost'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-3.5-turbo',
+    costPer1kTokens: 0.0015, // $0.0015 per 1k tokens
+    priority: 4,
+    description: 'Reliable but can hit quota limits'
+  },
+  {
+    name: 'Gemini',
+    model: 'gemini-1.5-pro-latest',
+    costPer1kTokens: 0.0025, // $0.0025 per 1k tokens
+    priority: 5,
+    description: 'Google\'s offering, good for specific use cases'
+  }
+];
 ```
 
 #### Request Flow
@@ -560,9 +622,14 @@ Session Initialization → Feature Access
 
 ### Data Protection
 - **Encryption**: All data in transit (HTTPS) and at rest (Firebase encryption)
-- **Authentication**: Firebase Authentication with JWT tokens
+- **Authentication**: Firebase Authentication with JWT tokens and daily disclaimer acceptance
 - **Authorization**: Role-based access control for administrative functions
-- **Data Anonymization**: No PHI storage, only clinical scenarios for analysis
+- **PII Anonymization**: Advanced PII detection and anonymization using @libretto/redact-pii-light
+  - Real-time PII detection with risk level assessment
+  - Interactive user review interface for PII matches
+  - Configurable anonymization with user approval workflow
+  - Support for medical terminology and clinical context
+- **Data Minimization**: No PHI storage, only anonymized clinical scenarios for analysis
 
 ### API Security
 - **Rate Limiting**: Implemented to prevent abuse
@@ -702,10 +769,38 @@ const costData = {
 The Clerky platform represents a sophisticated integration of modern web technologies, AI services, and healthcare data processing. The technical architecture prioritizes scalability, security, and user experience while maintaining the flexibility to evolve with changing requirements and emerging technologies.
 
 Key technical strengths include:
-- **Modular Architecture**: Easy to extend and maintain
-- **Multi-provider AI**: Reliability through redundancy
-- **Real-time Processing**: Responsive user experience
-- **Comprehensive Monitoring**: Data-driven optimization
-- **Security-first Design**: Healthcare-grade protection
+- **Modular Architecture**: Easy to extend and maintain with dual frontend approach
+- **Multi-provider AI**: 5-provider system with intelligent cost optimization and reliability
+- **Real-time Processing**: Responsive user experience with comprehensive caching
+- **Comprehensive Monitoring**: Data-driven optimization with usage analytics and cost tracking
+- **Security-first Design**: Healthcare-grade protection with advanced PII anonymization
+- **Audit & Compliance**: Comprehensive audit system with automated compliance checking
+- **Scalable Infrastructure**: Firebase + Render.com with automatic scaling and health monitoring
+
+## Recent Enhancements (January 2025)
+
+### Advanced AI System
+- Implemented 5-provider AI system with cost-optimized routing
+- Added intelligent fallback mechanisms for provider reliability
+- Comprehensive usage tracking and cost analytics across all providers
+- Per-user AI provider preferences with Firestore persistence
+
+### Security & Privacy
+- Advanced PII anonymization with interactive user review interface
+- Daily disclaimer acceptance requirement for enhanced compliance
+- Comprehensive audit trails for all user actions and system operations
+- Enhanced input validation and sanitization across all endpoints
+
+### Content Management
+- Automated guideline metadata enhancement and content repair systems
+- GitHub integration for version control and content synchronization
+- Clinical conditions management with automated transcript generation
+- Comprehensive content processing pipelines with error handling
+
+### User Experience
+- Dual frontend architecture (static + React SPA) for different use cases
+- Modern React interface with Zustand state management and React Query
+- Responsive design optimization for multi-device access
+- Enhanced session management with Firestore persistence
 
 The platform is well-positioned for future enhancements and enterprise-scale deployment while maintaining its core mission of improving clinical decision-making through intelligent technology integration. 

@@ -1,18 +1,19 @@
 ### Project Summary: Clerky (AI Clinical Assistant)
 
 ## High-level overview
-- **Purpose**: Assist clinicians by extracting, summarising, and operationalising clinical guidelines (PDFs → structured advice, algorithms, and audits). Provides dynamic advice and clinical note generation from transcripts; supports auditing guideline adherence.
+- **Purpose**: Assist clinicians by extracting, summarising, and operationalising clinical guidelines (PDFs → structured advice, algorithms, and audits). Provides dynamic advice and clinical note generation from transcripts; supports auditing guideline adherence and real-time clinical decision support.
 - **Architecture**: 
-  - Static web app (vanilla JS/HTML/CSS) served directly or via Firebase Hosting.
-  - Optional React + Vite frontend (`frontend/`) targeting the same backend.
-  - Node/Express backend (`server.js`) with Firebase Admin (Auth, Firestore, Storage) and cost-aware multi‑provider AI routing.
+  - Dual frontend approach: Static web app (vanilla JS/HTML/CSS) and modern React SPA, both served via Firebase Hosting.
+  - Node/Express backend (`server.js`) with Firebase Admin (Auth, Firestore, Storage) and intelligent cost-aware multi‑provider AI routing system.
+  - Comprehensive audit system with automated compliance checking and reporting.
 - **Key technologies**
-  - Frontend (vanilla): HTML, CSS, ES modules, Firebase JS SDK.
-  - Frontend (React): React 19, Vite 6, React Query 5, Zustand, Axios, Firebase.
-  - Backend: Node 18+, Express, Firebase Admin, axios, pdf-parse, helmet, express-rate-limit, multer.
-  - AI providers: OpenAI, DeepSeek, Anthropic (Claude), Mistral, Gemini (cost-ordered fallbacks).
-  - Anonymisation: `@libretto/redact-pii-light` bundled to `dist/libretto-bundle.js` (webpack).
-- **Deployment**: Firebase Hosting rewrite to `index.html`; server hosted at `https://clerky-uzni.onrender.com` (configurable via `window.SERVER_URL`).
+  - Frontend (vanilla): HTML5, CSS3, ES6+ modules, Firebase JS SDK v10.14.1, custom PII anonymization.
+  - Frontend (React): React 19, Vite 6, React Query 5, Zustand state management, Axios HTTP client, Firebase v11.4.0.
+  - Backend: Node.js 18+, Express 4.18+, Firebase Admin SDK v11.11.1, comprehensive middleware stack (helmet, CORS, rate limiting, validation).
+  - AI providers: DeepSeek (primary/cheapest), Mistral, Anthropic Claude, OpenAI GPT, Google Gemini - with intelligent cost-ordered fallback system.
+  - Security: PII anonymization via `@libretto/redact-pii-light`, comprehensive input validation, Firebase Authentication with JWT tokens.
+  - Data processing: PDF parsing, guideline metadata extraction, automated content enhancement, GitHub integration for version control.
+- **Deployment**: Firebase Hosting with SPA rewrites; backend hosted at `https://clerky-uzni.onrender.com` with auto-scaling and health monitoring.
 
 ## Folder & file structure (key areas)
 ```text
@@ -71,8 +72,10 @@ clerky/
   - Generated/compiled artefacts in `dist/`, inputs in `guidance/`, algorithms in `algos/`.
   - Scripts and automated agents in `scripts/`.
 - **AI provider strategy**
-  - Providers tried in ascending cost order with fallbacks. Preference list in `server.js` (`AI_PROVIDER_PREFERENCE`).
-  - Backend endpoints accept `aiProvider` when needed; otherwise choose based on availability/cost.
+  - Cost-optimized provider selection: DeepSeek ($0.0005/1k tokens) → Mistral ($0.001/1k) → Anthropic ($0.003/1k) → OpenAI ($0.0015/1k) → Gemini ($0.0025/1k).
+  - Intelligent fallback system with automatic provider switching on quota/error conditions.
+  - User preference support with per-user AI provider selection stored in Firestore.
+  - Comprehensive usage tracking and cost monitoring across all providers.
 - **Security & resilience**
   - Firebase ID token verification middleware for protected routes.
   - CORS allow‑list with detailed logging.
@@ -97,28 +100,40 @@ clerky/
   - Entry: `frontend/src/main.jsx` → `App.jsx` with views: `MainView`, `GuidelinesView`, `PromptsView`, `WorkflowsView`.
   - API client: `frontend/src/services/api.js` (health, guidelines/prompts via GitHub raw, `handleIssues` via server).
 - **Backend (selected routes)**
-  - Health: `GET /health`
-  - Auth-protected:
+  - Health & Monitoring: `GET /health`, `GET /api-usage-stats`
+  - Auth-protected Core Features:
     - Knowledge: `GET /getAgentKnowledge`
-    - Guidelines: `GET /getAllGuidelines`
+    - Guidelines: `GET /getAllGuidelines`, `POST /syncGuidelines`, `POST /getGuidelineContent`
     - Upload: `POST /uploadGuideline` (multer; Firebase token required)
-    - Issues: `POST /handleIssues` (clinical issues extraction)
-    - Advice/actions: `POST /handleAction`, `POST /SendToAI`, `POST /generateFakeClinicalInteraction`
+    - Clinical Analysis: `POST /handleIssues`, `POST /findRelevantGuidelines`, `POST /checkAgainstGuidelines`
+    - AI Services: `POST /handleAction`, `POST /SendToAI`, `POST /generateClinicalNote`, `POST /getRecommendations`
+    - Clinical Conditions: `GET /clinicalConditions`, `POST /generateTranscript/:conditionId`, `POST /generateAllTranscripts`
     - Audits: 
-      - `POST /generateAuditTranscript`
-      - `POST /generateIncorrectAuditScripts`
-      - `POST /auditElementCheck`
-      - `GET /getAudits?guidelineId=...`
+      - `POST /generateAuditTranscript`, `POST /generateIncorrectAuditScripts`
+      - `POST /auditElementCheck`, `GET /getAudits?guidelineId=...`
       - `POST /updateGuidelinesWithAuditableElements`
-  - GitHub integration (server side): read/update content in `guidance/` and related assets.
-  - Static hosting: serves root `index.html` and assets; JSON body limit increased for large payloads.
+    - Content Management: `POST /enhanceGuidelineMetadata`, `POST /batchEnhanceMetadata`, `POST /processGuidelineContent`
+    - User Preferences: `GET /userGuidelinePrefs`, `POST /userGuidelinePrefs/update`
+    - Administrative: `POST /delete-all-logs`, `POST /admin/archive-logs-if-needed`, `POST /admin/clean-guideline-titles`
+  - GitHub integration: Automated content sync, version control for guidelines and generated algorithms.
+  - Multi-provider AI routing: Cost-optimized provider selection with automatic fallback (DeepSeek → Mistral → Anthropic → OpenAI → Gemini).
 - **Build/deploy**
   - `npm run build` (root) runs `build.js` copying assets to `dist/`.
   - Webpack bundles PII library: `npm run bundle-libretto` → `dist/libretto-bundle.js`.
   - Firebase Hosting (`firebase.json`) serves repo root with SPA rewrites.
 
 ## How to use this summary
-- Paste this entire “Project Summary” into future chats to give immediate context.
+- Paste this entire "Project Summary" into future chats to give immediate context.
 - When asking for changes, reference specific files/dirs (e.g., `modules/guidelines.js`, `server.js`) and the relevant section above.
 - For UI changes, specify target (static app `index.html`/`script.js` vs React app under `frontend/`).
 - For backend/API work, cite endpoint(s) and expected contracts from the Key entry points section.
+- Current system supports 49+ API endpoints with comprehensive clinical decision support, audit capabilities, and multi-provider AI integration.
+
+## Recent Updates (January 2025)
+- Enhanced AI provider system with 5 providers and cost-optimized routing
+- Comprehensive audit system with automated compliance checking
+- Advanced PII anonymization with user review interface
+- Clinical conditions management with automated transcript generation
+- Enhanced guideline metadata processing and content repair systems
+- Improved React frontend with modern state management (Zustand + React Query)
+- Comprehensive logging and monitoring with usage analytics
