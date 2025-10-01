@@ -3269,6 +3269,29 @@ function updateDecisionsSummary() {
     summaryElement.textContent = summaryText;
 }
 
+// Helper function to check authentication status
+async function checkAuthenticationStatus() {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            return { isValid: false, error: 'User not authenticated' };
+        }
+        
+        // Try to get a token to verify auth is working
+        await user.getIdToken(false); // Don't force refresh for this check
+        return { isValid: true };
+        
+    } catch (error) {
+        console.warn('[DEBUG] Authentication check failed:', error.message);
+        return { 
+            isValid: false, 
+            error: error.message,
+            needsRefresh: error.code === 'auth/network-request-failed' || 
+                         error.message.includes('securetoken.googleapis.com')
+        };
+    }
+}
+
 // Apply all user decisions
 async function applyAllDecisions() {
     console.log('[DEBUG] applyAllDecisions called', {
@@ -3286,6 +3309,25 @@ async function applyAllDecisions() {
         console.error('[DEBUG] applyAllDecisions: No decisions to apply');
         alert('Please make some decisions on the suggestions first.');
         return;
+    }
+    
+    // Check authentication status before proceeding
+    console.log('[DEBUG] applyAllDecisions: Checking authentication status...');
+    const authStatus = await checkAuthenticationStatus();
+    if (!authStatus.isValid) {
+        console.error('[DEBUG] applyAllDecisions: Authentication check failed:', authStatus.error);
+        
+        if (authStatus.needsRefresh) {
+            const shouldRefresh = confirm(
+                'Your authentication session appears to have expired or there\'s a connectivity issue. ' +
+                'Would you like to refresh the page to re-authenticate? ' +
+                '(Click Cancel to try anyway)'
+            );
+            if (shouldRefresh) {
+                window.location.reload();
+                return;
+            }
+        }
     }
 
     const applyButton = document.getElementById(`applyAllDecisionsBtn-${currentAdviceSession}`);
@@ -3318,28 +3360,93 @@ async function applyAllDecisions() {
             actions: Object.values(decisionsData).map(d => d.action)
         });
 
-        // Get user ID token
+        // Get user ID token with retry logic
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
         
-        const idToken = await user.getIdToken();
-        console.log('[DEBUG] applyAllDecisions: Got ID token');
+        let idToken;
+        let tokenAttempts = 0;
+        const maxTokenAttempts = 3;
+        
+        while (tokenAttempts < maxTokenAttempts) {
+            try {
+                console.log(`[DEBUG] applyAllDecisions: Getting ID token (attempt ${tokenAttempts + 1}/${maxTokenAttempts})`);
+                
+                // Try to get fresh token, with force refresh on retry attempts
+                idToken = await user.getIdToken(tokenAttempts > 0);
+                console.log('[DEBUG] applyAllDecisions: Got ID token successfully');
+                break;
+                
+            } catch (tokenError) {
+                tokenAttempts++;
+                console.error(`[DEBUG] applyAllDecisions: Token attempt ${tokenAttempts} failed:`, {
+                    error: tokenError.message,
+                    code: tokenError.code,
+                    willRetry: tokenAttempts < maxTokenAttempts
+                });
+                
+                if (tokenAttempts >= maxTokenAttempts) {
+                    // If all token attempts failed, provide a more user-friendly error
+                    if (tokenError.code === 'auth/network-request-failed' || 
+                        tokenError.message.includes('securetoken.googleapis.com') ||
+                        tokenError.message.includes('are-blocked')) {
+                        throw new Error('Authentication service temporarily unavailable. Please check your internet connection and try again in a few moments.');
+                    } else {
+                        throw new Error(`Authentication failed: ${tokenError.message}. Please sign out and sign back in.`);
+                    }
+                }
+                
+                // Wait before retry (exponential backoff)
+                const delay = Math.min(1000 * Math.pow(2, tokenAttempts - 1), 5000);
+                console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before retry...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
 
-        // Call the applyDynamicAdvice API
+        // Call the applyDynamicAdvice API with retry logic
         console.log('[DEBUG] applyAllDecisions: Calling API endpoint');
-        const response = await fetch(`${window.SERVER_URL}/applyDynamicAdvice`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                sessionId: currentAdviceSession,
-                decisions: decisionsData
-            })
-        });
+        let response;
+        let apiAttempts = 0;
+        const maxApiAttempts = 2;
+        
+        while (apiAttempts < maxApiAttempts) {
+            try {
+                console.log(`[DEBUG] applyAllDecisions: API call attempt ${apiAttempts + 1}/${maxApiAttempts}`);
+                
+                response = await fetch(`${window.SERVER_URL}/applyDynamicAdvice`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        sessionId: currentAdviceSession,
+                        decisions: decisionsData
+                    })
+                });
+                
+                // If we get a response, break out of retry loop
+                break;
+                
+            } catch (fetchError) {
+                apiAttempts++;
+                console.error(`[DEBUG] applyAllDecisions: API attempt ${apiAttempts} failed:`, {
+                    error: fetchError.message,
+                    willRetry: apiAttempts < maxApiAttempts
+                });
+                
+                if (apiAttempts >= maxApiAttempts) {
+                    throw new Error(`Network error: ${fetchError.message}. Please check your internet connection and try again.`);
+                }
+                
+                // Wait before retry
+                const delay = 2000;
+                console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before API retry...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
 
         console.log('[DEBUG] applyAllDecisions: API response received', {
             status: response.status,
@@ -3538,11 +3645,58 @@ async function applyAllDecisions() {
             stack: error.stack
         });
 
+        // Provide specific guidance based on error type
+        let errorGuidance = 'Please try again or contact support if the problem persists.';
+        let showRefreshButton = false;
+        
+        if (error.message.includes('Authentication service temporarily unavailable') ||
+            error.message.includes('securetoken.googleapis.com') ||
+            error.message.includes('are-blocked')) {
+            errorGuidance = `
+                <p>This appears to be a temporary authentication service issue. You can try:</p>
+                <ul>
+                    <li>Wait a few minutes and try again</li>
+                    <li>Check your internet connection</li>
+                    <li>Refresh the page and sign in again</li>
+                    <li>Try using a different network if available</li>
+                </ul>
+            `;
+            showRefreshButton = true;
+        } else if (error.message.includes('Authentication failed')) {
+            errorGuidance = `
+                <p>Your authentication session may have expired. Please:</p>
+                <ul>
+                    <li>Sign out and sign back in</li>
+                    <li>Refresh the page</li>
+                    <li>Clear your browser cache if the issue persists</li>
+                </ul>
+            `;
+            showRefreshButton = true;
+        } else if (error.message.includes('Network error')) {
+            errorGuidance = `
+                <p>There was a network connectivity issue. Please:</p>
+                <ul>
+                    <li>Check your internet connection</li>
+                    <li>Try again in a few moments</li>
+                    <li>Contact support if the issue persists</li>
+                </ul>
+            `;
+        }
+
+        const refreshButtonHtml = showRefreshButton ? `
+            <div style="margin-top: 15px;">
+                <button onclick="window.location.reload()" class="action-btn" style="background: #007bff; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">
+                    🔄 Refresh Page
+                </button>
+            </div>
+        ` : '';
+
         const errorHtml = `
             <div class="apply-error">
                 <h3>❌ Error applying decisions</h3>
                 <p><strong>Error:</strong> ${error.message}</p>
-                <p>Please try again or contact support if the problem persists.</p>
+                ${errorGuidance}
+                ${refreshButtonHtml}
             </div>
         `;
         appendToSummary1(errorHtml, false);
