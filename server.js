@@ -3527,19 +3527,78 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
         const hashStrings = hashes.map(h => h.hash);
         const duplicates = [];
         
+        // Get current GitHub guidelines list for validation
+        let githubGuidelines = [];
+        try {
+            githubGuidelines = await getGuidelinesList();
+            console.log(`[DUPLICATE_CHECK] Retrieved ${githubGuidelines.length} guidelines from GitHub for validation`);
+        } catch (githubError) {
+            console.warn(`[DUPLICATE_CHECK] Could not retrieve GitHub guidelines list: ${githubError.message}`);
+            // Continue without GitHub validation if it fails
+        }
+
         // Check each hash against the Firestore database
+        const staleRecordsToCleanup = [];
         for (const hash of hashStrings) {
             try {
                 const query = db.collection('guidelines').where('fileHash', '==', hash);
                 const snapshot = await query.get();
                 
                 if (!snapshot.empty) {
-                    duplicates.push(hash);
-                    console.log(`[DUPLICATE_CHECK] Found duplicate for hash: ${hash.substring(0, 16)}...`);
+                    // Found matching hash in Firestore, now validate if file still exists in GitHub
+                    let isValidDuplicate = false;
+                    
+                    for (const doc of snapshot.docs) {
+                        const data = doc.data();
+                        const filename = data.filename || data.originalFilename || data.title;
+                        
+                        if (filename && githubGuidelines.length > 0) {
+                            if (githubGuidelines.includes(filename)) {
+                                // File exists in GitHub, this is a valid duplicate
+                                isValidDuplicate = true;
+                                console.log(`[DUPLICATE_CHECK] Valid duplicate found for hash: ${hash.substring(0, 16)}... (file: ${filename})`);
+                                break;
+                            } else {
+                                // File doesn't exist in GitHub, mark for cleanup
+                                staleRecordsToCleanup.push({
+                                    id: doc.id,
+                                    filename: filename,
+                                    hash: hash
+                                });
+                                console.log(`[DUPLICATE_CHECK] Stale record found for hash: ${hash.substring(0, 16)}... (missing file: ${filename})`);
+                            }
+                        } else {
+                            // No GitHub validation available or no filename, treat as duplicate for safety
+                            isValidDuplicate = true;
+                            console.log(`[DUPLICATE_CHECK] Duplicate found (no GitHub validation): ${hash.substring(0, 16)}...`);
+                            break;
+                        }
+                    }
+                    
+                    if (isValidDuplicate) {
+                        duplicates.push(hash);
+                    }
                 }
             } catch (queryError) {
                 console.error(`[DUPLICATE_CHECK] Error querying hash ${hash.substring(0, 16)}...:`, queryError);
                 // Continue with other hashes even if one fails
+            }
+        }
+
+        // Clean up stale records if any were found
+        if (staleRecordsToCleanup.length > 0) {
+            console.log(`[DUPLICATE_CHECK] Cleaning up ${staleRecordsToCleanup.length} stale records`);
+            try {
+                const batch = db.batch();
+                staleRecordsToCleanup.forEach(record => {
+                    const docRef = db.collection('guidelines').doc(record.id);
+                    batch.delete(docRef);
+                });
+                await batch.commit();
+                console.log(`[DUPLICATE_CHECK] Successfully cleaned up ${staleRecordsToCleanup.length} stale records`);
+            } catch (cleanupError) {
+                console.error('[DUPLICATE_CHECK] Error cleaning up stale records:', cleanupError);
+                // Don't fail the duplicate check if cleanup fails
             }
         }
 
@@ -7387,8 +7446,78 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
       }
     }
 
+    // After processing all guidelines, cleanup stale records
+    console.log('[SYNC_META] Starting cleanup of stale Firestore records...');
+    let cleanupResults = { deletedCount: 0, deletedFiles: [] };
+    
+    try {
+        // Get all guidelines from Firestore
+        const firestoreSnapshot = await db.collection('guidelines').get();
+        const firestoreGuidelines = [];
+        firestoreSnapshot.forEach(doc => {
+            const data = doc.data();
+            firestoreGuidelines.push({
+                id: doc.id,
+                filename: data.filename || data.originalFilename || data.title,
+                data: data
+            });
+        });
+        console.log(`[SYNC_META] Found ${firestoreGuidelines.length} guidelines in Firestore`);
+
+        // Find Firestore records that don't exist in GitHub
+        const toDelete = [];
+        for (const firestoreGuideline of firestoreGuidelines) {
+            const filename = firestoreGuideline.filename;
+            if (filename && !guidelines.includes(filename)) {
+                toDelete.push(firestoreGuideline);
+                console.log(`[SYNC_META] Marking for deletion: ${filename} (ID: ${firestoreGuideline.id})`);
+            }
+        }
+
+        if (toDelete.length > 0) {
+            console.log(`[SYNC_META] Cleaning up ${toDelete.length} stale records`);
+            
+            // Delete stale records in batches
+            const batchSize = 500;
+            let deletedCount = 0;
+            
+            for (let i = 0; i < toDelete.length; i += batchSize) {
+                const batch = db.batch();
+                const batchItems = toDelete.slice(i, i + batchSize);
+                
+                batchItems.forEach(item => {
+                    const docRef = db.collection('guidelines').doc(item.id);
+                    batch.delete(docRef);
+                });
+                
+                await batch.commit();
+                deletedCount += batchItems.length;
+                console.log(`[SYNC_META] Deleted batch of ${batchItems.length} records (total: ${deletedCount})`);
+            }
+            
+            cleanupResults = {
+                deletedCount: deletedCount,
+                deletedFiles: toDelete.map(item => ({
+                    id: item.id,
+                    filename: item.filename
+                }))
+            };
+            
+            console.log(`[SYNC_META] Cleanup completed: ${deletedCount} stale records removed`);
+        } else {
+            console.log('[SYNC_META] No stale records found to cleanup');
+        }
+    } catch (cleanupError) {
+        console.error('[SYNC_META] Error during cleanup phase:', cleanupError);
+        // Don't fail the sync if cleanup fails
+    }
+
     console.log('[SYNC_META] Finished processing all guidelines.', results);
-    res.json({ success: true, results });
+    res.json({ 
+        success: true, 
+        results,
+        cleanup: cleanupResults
+    });
   } catch (error) {
     console.error('[SYNC_META] Critical error in /syncGuidelinesWithMetadata endpoint:', error);
     res.status(500).json({ error: error.message, details: 'Outer catch block in /syncGuidelinesWithMetadata' });
@@ -8583,6 +8712,90 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
     } catch (error) {
         console.error('[ERROR] Error deleting guideline data:', error);
         res.status(500).json({ error: error.message });
+    }
+});
+
+// Endpoint to cleanup deleted guidelines from Firestore
+app.post('/cleanupDeletedGuidelines', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized' });
+        }
+
+        console.log('[CLEANUP] Admin user authorized for cleanup:', req.user.email);
+
+        // Get all guidelines from GitHub
+        const githubGuidelines = await getGuidelinesList();
+        console.log(`[CLEANUP] Found ${githubGuidelines.length} guidelines in GitHub`);
+
+        // Get all guidelines from Firestore
+        const firestoreSnapshot = await db.collection('guidelines').get();
+        const firestoreGuidelines = [];
+        firestoreSnapshot.forEach(doc => {
+            const data = doc.data();
+            firestoreGuidelines.push({
+                id: doc.id,
+                filename: data.filename || data.originalFilename || data.title,
+                data: data
+            });
+        });
+        console.log(`[CLEANUP] Found ${firestoreGuidelines.length} guidelines in Firestore`);
+
+        // Find Firestore records that don't exist in GitHub
+        const toDelete = [];
+        for (const firestoreGuideline of firestoreGuidelines) {
+            const filename = firestoreGuideline.filename;
+            if (filename && !githubGuidelines.includes(filename)) {
+                toDelete.push(firestoreGuideline);
+                console.log(`[CLEANUP] Marking for deletion: ${filename} (ID: ${firestoreGuideline.id})`);
+            }
+        }
+
+        console.log(`[CLEANUP] Found ${toDelete.length} stale records to delete`);
+
+        // Delete stale records in batches
+        let deletedCount = 0;
+        const batchSize = 500; // Firestore batch limit
+        
+        for (let i = 0; i < toDelete.length; i += batchSize) {
+            const batch = db.batch();
+            const batchItems = toDelete.slice(i, i + batchSize);
+            
+            batchItems.forEach(item => {
+                const docRef = db.collection('guidelines').doc(item.id);
+                batch.delete(docRef);
+            });
+            
+            await batch.commit();
+            deletedCount += batchItems.length;
+            console.log(`[CLEANUP] Deleted batch of ${batchItems.length} records (total: ${deletedCount})`);
+        }
+
+        const results = {
+            githubCount: githubGuidelines.length,
+            firestoreCount: firestoreGuidelines.length,
+            deletedCount: deletedCount,
+            deletedFiles: toDelete.map(item => ({
+                id: item.id,
+                filename: item.filename
+            }))
+        };
+
+        console.log('[CLEANUP] Cleanup completed successfully');
+        res.json({ 
+            success: true, 
+            message: `Cleanup completed: ${deletedCount} stale records removed`,
+            results: results
+        });
+
+    } catch (error) {
+        console.error('[CLEANUP] Error during cleanup:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Internal server error during cleanup' 
+        });
     }
 });
 

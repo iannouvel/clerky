@@ -27,7 +27,7 @@ jobs:
     - name: Display current PDFs for debugging
       run: cat all_pdfs.txt
 
-    - name: Compare PDF list and update guidelines file
+    - name: Sync PDF list with guidelines file
       run: |
         # Create list_of_guidelines.txt if it does not exist
         if [ ! -f "guidance/list_of_guidelines.txt" ]; then
@@ -35,13 +35,24 @@ jobs:
         fi
         
         # Display current content of list_of_guidelines.txt
+        echo "Current guidelines list:"
         cat guidance/list_of_guidelines.txt || echo "No existing guidelines."
+        
+        echo "Current PDFs in guidance folder:"
+        cat all_pdfs.txt
 
-        # Find new PDFs by comparing with existing list
+        # Compare current PDFs with existing list
         new_pdfs=$(comm -23 <(sort all_pdfs.txt) <(sort guidance/list_of_guidelines.txt))
+        deleted_pdfs=$(comm -13 <(sort all_pdfs.txt) <(sort guidance/list_of_guidelines.txt))
 
-        # If new PDFs are found, append them to list_of_guidelines.txt
-        echo "$new_pdfs" >> guidance/list_of_guidelines.txt
+        echo "New PDFs to add: $new_pdfs"
+        echo "Deleted PDFs to remove: $deleted_pdfs"
+
+        # Replace the entire list with current PDFs (this handles both additions and deletions)
+        cp all_pdfs.txt guidance/list_of_guidelines.txt
+        
+        # Sort the list for consistency
+        sort guidance/list_of_guidelines.txt -o guidance/list_of_guidelines.txt
 
     - name: Display updated guidelines list for debugging
       run: cat guidance/list_of_guidelines.txt
@@ -52,5 +63,5 @@ jobs:
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
         git add guidance/list_of_guidelines.txt all_pdfs.txt
-        git commit -m "Update list of guidelines with new PDFs"
+        git commit -m "Sync guidelines list with current PDFs (add/remove as needed)"
         git push
