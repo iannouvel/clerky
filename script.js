@@ -10,6 +10,10 @@ window.auth = auth;
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
+// Global variables for programmatic change tracking
+window.isProgrammaticChange = false;
+window.hasColoredChanges = false;
+
 // Add disclaimer check function
 async function checkDisclaimerAcceptance() {
     const user = auth.currentUser;
@@ -164,12 +168,11 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
         });
 
         // Update the Clinical Note textarea with the anonymised text
-        const userInput = document.getElementById('userInput');
-        if (userInput && replacementsCount > 0) {
+        if (replacementsCount > 0) {
             // Push current state to history before making changes
-            pushToHistory(userInput.value);
-            // Update the textarea
-            userInput.value = anonymisedText;
+            pushToHistory(getUserInputContent());
+            // Update the textarea with programmatic highlighting
+            setUserInputContent(anonymisedText, true);
         }
 
         // Show confirmation in Summary
@@ -203,6 +206,52 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
         // Clean up
         window.currentPIIReview = null;
     };
+}
+
+// Helper functions for programmatic text changes with color highlighting
+function setProgrammaticText(editor, content) {
+    window.isProgrammaticChange = true;
+    // Set content with amber color (#D97706)
+    editor.commands.setContent(`<span style="color: #D97706">${content}</span>`);
+    window.hasColoredChanges = true;
+    updateClearFormattingButton();
+}
+
+function hasColoredText(editor) {
+    // Check if editor contains any colored spans
+    const html = editor.getHTML();
+    return html.includes('color: #D97706') || html.includes('color:#D97706');
+}
+
+function updateClearFormattingButton() {
+    const btn = document.getElementById('clearFormattingBtn');
+    if (btn) {
+        btn.style.display = window.hasColoredChanges ? 'inline-block' : 'none';
+    }
+}
+
+// Helper function to get user input content (works with both textarea and TipTap)
+function getUserInputContent() {
+    const editor = editors?.userInput;
+    return editor ? editor.getText() : document.getElementById('userInput')?.value || '';
+}
+
+// Helper function to set user input content (works with both textarea and TipTap)
+function setUserInputContent(content, isProgrammatic = false) {
+    const editor = editors?.userInput;
+    if (editor) {
+        if (isProgrammatic) {
+            setProgrammaticText(editor, content);
+        } else {
+            editor.commands.setContent(content);
+        }
+    } else {
+        // Fallback to textarea
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = content;
+        }
+    }
 }
 
 // Function to display relevant guidelines in the summary
@@ -1709,6 +1758,8 @@ function pushToHistory(text) {
         window.clinicalNoteHistoryIndex--;
     }
     
+    // Update clear formatting button visibility
+    updateClearFormattingButton();
     updateUndoRedoButtons();
 }
 
@@ -1716,10 +1767,8 @@ function pushToHistory(text) {
 function undo() {
     if (window.clinicalNoteHistoryIndex > 0) {
         window.clinicalNoteHistoryIndex--;
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        }
+        const content = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        setUserInputContent(content, false);
         updateUndoRedoButtons();
     }
 }
@@ -1728,10 +1777,8 @@ function undo() {
 function redo() {
     if (window.clinicalNoteHistoryIndex < window.clinicalNoteHistory.length - 1) {
         window.clinicalNoteHistoryIndex++;
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        }
+        const content = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        setUserInputContent(content, false);
         updateUndoRedoButtons();
     }
 }
@@ -1751,31 +1798,51 @@ function updateUndoRedoButtons() {
 
 // Initialize history with current textarea content when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    const userInput = document.getElementById('userInput');
-    if (userInput) {
-        pushToHistory(userInput.value);
+    // Wait for TipTap editors to be initialized
+    setTimeout(() => {
+        const initialContent = getUserInputContent();
+        if (initialContent) {
+            pushToHistory(initialContent);
+        }
         
         // Listen for text changes to add to history (debounced)
         let timeout;
-        userInput.addEventListener('input', function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                if (userInput.value !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
-                    pushToHistory(userInput.value);
-                }
-            }, 1000); // 1 second delay
-        });
-    }
+        const editor = editors?.userInput;
+        if (editor) {
+            editor.on('update', () => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    const currentContent = getUserInputContent();
+                    if (currentContent !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
+                        pushToHistory(currentContent);
+                    }
+                }, 1000); // 1 second delay
+            });
+        }
+    }, 100); // Small delay to ensure TipTap is initialized
     
     // Wire up undo/redo buttons
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
+    const clearFormattingBtn = document.getElementById('clearFormattingBtn');
     
     if (undoBtn) {
         undoBtn.addEventListener('click', undo);
     }
     if (redoBtn) {
         redoBtn.addEventListener('click', redo);
+    }
+    if (clearFormattingBtn) {
+        clearFormattingBtn.addEventListener('click', () => {
+            const editor = editors?.userInput;
+            if (editor) {
+                // Strip all color styling
+                const plainText = editor.getText();
+                editor.commands.setContent(plainText);
+                window.hasColoredChanges = false;
+                updateClearFormattingButton();
+            }
+        });
     }
 });
 
@@ -1784,7 +1851,7 @@ async function findRelevantGuidelines(suppressHeader = false) {
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
     
     try {
-        const transcript = document.getElementById('userInput')?.value;
+        const transcript = getUserInputContent();
         if (!transcript) {
             alert('Please enter some text first');
             return;
@@ -2010,7 +2077,7 @@ async function generateClinicalNote() {
 
     try {
         // Get the transcript content from userInput field
-        const userInputValue = document.getElementById('userInput')?.value;
+        const userInputValue = getUserInputContent();
         let transcript = userInputValue;
         
         console.log('[DEBUG] Getting transcript from userInput:', {
@@ -2130,10 +2197,7 @@ async function generateClinicalNote() {
 
         // Replace the user input with the generated note
         console.log('[DEBUG] Replacing user input with generated note');
-        const userInputElement = document.getElementById('userInput');
-        if (userInputElement) {
-            userInputElement.value = data.note;
-        }
+        setUserInputContent(data.note, true);
         console.log('[DEBUG] Note replaced in user input successfully');
 
     } catch (error) {
@@ -2320,15 +2384,16 @@ function appendToOutputField(content, clearExisting = true) {
         }
 
         if (clearExisting) {
-            userInput.value = processedContent;
+            setUserInputContent(processedContent, true);
         } else {
-            userInput.value += '\n\n' + processedContent;
+            const currentContent = getUserInputContent();
+            setUserInputContent(currentContent + '\n\n' + processedContent, true);
         }
 
         console.log('[DEBUG] Content replaced in user input successfully');
     } catch (error) {
         console.error('[DEBUG] Error in appendToOutputField:', error);
-        userInput.value = content;
+        setUserInputContent(content, true);
     }
 }
 
@@ -2340,7 +2405,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
     try {
         console.log('[DEBUG] Starting checkAgainstGuidelines...');
         
-        const transcript = document.getElementById('userInput')?.value;
+        const transcript = getUserInputContent();
         if (!transcript) {
             console.log('[DEBUG] No transcript found in userInput');
             alert('Please enter some text first');
@@ -3645,11 +3710,8 @@ async function applyAllDecisions() {
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
-                    const userInput = document.getElementById('userInput');
-                    if (userInput) {
-                        userInput.value = result.updatedTranscript;
-                        console.log('[DEBUG] Sequential processing: Updated transcript automatically');
-                    }
+                    setUserInputContent(result.updatedTranscript, true);
+                    console.log('[DEBUG] Sequential processing: Updated transcript automatically');
                 }
                 
                 // Process next guideline after a brief delay
@@ -3821,12 +3883,9 @@ function copyUpdatedTranscript() {
 // Helper function to replace original transcript in userInput
 function replaceOriginalTranscript() {
     if (window.lastUpdatedTranscript) {
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = window.lastUpdatedTranscript;
-            alert('Original transcript has been replaced with the updated version!');
-            debouncedSaveState();
-        }
+        setUserInputContent(window.lastUpdatedTranscript, true);
+        alert('Original transcript has been replaced with the updated version!');
+        debouncedSaveState();
     }
 }
 
@@ -4088,10 +4147,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (saveNoteBtn) {
         saveNoteBtn.addEventListener('click', () => {
             console.log('[DEBUG] Save note button clicked...');
-            const userInput = document.getElementById('userInput');
-            if (userInput && userInput.value.trim()) {
-                document.getElementById('summary1').textContent = userInput.value;
-                userInput.value = '';
+            const userInputContent = getUserInputContent();
+            if (userInputContent.trim()) {
+                document.getElementById('summary1').textContent = userInputContent;
+                setUserInputContent('', false);
             }
         });
     }
@@ -4101,10 +4160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (clearNoteBtn) {
         clearNoteBtn.addEventListener('click', () => {
             console.log('[DEBUG] Clear button clicked...');
-            const userInput = document.getElementById('userInput');
-            if (userInput) {
-                userInput.value = '';
-            }
+            setUserInputContent('', false);
         });
     }
 
@@ -4298,9 +4354,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Listen for changes on the main text input to auto-save
-    const userInput = document.getElementById('userInput');
-    if (userInput) {
-        userInput.addEventListener('input', debouncedSaveState);
+    const editor = editors?.userInput;
+    if (editor) {
+        editor.on('update', debouncedSaveState);
     }
 
     // --- Speech Recognition Setup ---
@@ -4319,7 +4375,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         recognition.onstart = () => {
             isRecording = true;
-            finalTranscript = userInputEl.value;
+            finalTranscript = getUserInputContent();
             recordBtn.classList.add('recording');
             recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Stop`;
             console.log('Speech recognition started.');
@@ -4361,7 +4417,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 finalTranscript += currentFinalTranscript;
             }
 
-            userInputEl.value = finalTranscript + interimTranscript;
+            setUserInputContent(finalTranscript + interimTranscript, false);
         };
 
         recordBtn.addEventListener('click', () => {
@@ -4663,17 +4719,14 @@ async function generateFakeClinicalInteraction(selectedIssue) {
             currentValue: userInput?.value?.length || 0
         });
         
-        if (userInput && transcript) {
-            userInput.value = transcript;
+        if (transcript) {
+            setUserInputContent(transcript, true);
             console.log('[DEBUG] Transcript added to user input textarea:', {
                 transcriptLength: transcript.length,
-                newValueLength: userInput.value.length,
-                assignmentSuccessful: userInput.value === transcript,
                 preview: transcript.substring(0, 100) + '...'
             });
         } else {
             console.error('[DEBUG] Failed to add transcript to userInput:', {
-                hasUserInput: !!userInput,
                 hasTranscript: !!transcript,
                 transcriptType: typeof transcript
             });
@@ -5059,9 +5112,8 @@ function debouncedSaveState() {
 }
 
 function getChatState() {
-    const userInput = document.getElementById('userInput');
     return {
-        userInputContent: userInput ? userInput.value : '',
+        userInputContent: getUserInputContent(),
         relevantGuidelines: window.relevantGuidelines,
         latestAnalysis: window.latestAnalysis,
         currentAdviceSession: window.currentAdviceSession,
@@ -5072,7 +5124,7 @@ function getChatState() {
 }
 
 function loadChatState(state) {
-    document.getElementById('userInput').value = state.userInputContent || '';
+    setUserInputContent(state.userInputContent || '', false);
     window.relevantGuidelines = state.relevantGuidelines || null;
     window.latestAnalysis = state.latestAnalysis || null;
     window.currentAdviceSession = state.currentAdviceSession || null;

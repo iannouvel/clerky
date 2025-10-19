@@ -2402,3 +2402,48 @@ html, body {
         flex: 1 1 0;
     }
 }
+
+/* TipTap Editor Styling */
+.tiptap-editor {
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    background-color: #fff;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+.tiptap-editor:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+}
+
+.tiptap-editor .ProseMirror {
+    outline: none;
+    min-height: 80px;
+}
+
+.tiptap-editor .ProseMirror p {
+    margin: 0 0 8px 0;
+}
+
+.tiptap-editor .ProseMirror p:last-child {
+    margin-bottom: 0;
+}
+
+/* Clear formatting button styling */
+#clearFormattingBtn {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #6c757d;
+}
+
+#clearFormattingBtn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
