@@ -10,11 +10,13 @@ window.auth = auth;
 // Load and display version number from package.json
 async function loadVersionNumber() {
     try {
-        const response = await fetch('./package.json');
+        // Add cache-busting parameter to always get fresh version
+        const response = await fetch('./package.json?v=' + Date.now());
         const packageData = await response.json();
         const versionElement = document.getElementById('appVersion');
         if (versionElement && packageData.version) {
             versionElement.textContent = packageData.version;
+            console.log('[VERSION] App version:', packageData.version);
         }
     } catch (error) {
         console.error('Failed to load version number:', error);
