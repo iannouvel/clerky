@@ -63,6 +63,11 @@ async function showPIIReviewInterface(originalText, piiAnalysis) {
         // Get consolidated PII matches
         const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
         
+        // Add replacement property to each match
+        consolidatedMatches.forEach(match => {
+            match.replacement = match.replacement || 'redacted';
+        });
+        
         // If there are no matches to review, return success immediately
         if (consolidatedMatches.length === 0) {
             console.log('[PII REVIEW] No PII matches to review, skipping interface');
@@ -88,10 +93,6 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
             <p style="margin: 0 0 15px 0;">
                 Personal information was detected in your transcript. Please review each item:
             </p>
-            <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 4px; margin-bottom: 15px;">
-                <strong>Risk Level:</strong> ${piiAnalysis.riskLevel.toUpperCase()}<br>
-                <strong>PII Types:</strong> ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}
-            </div>
             <div class="pii-matches-container">
     `;
 
@@ -99,7 +100,6 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
     consolidatedMatches.forEach((match, index) => {
         reviewHtml += `
             <div class="pii-match-item" style="border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 4px;">
-                <div style="font-weight: bold; color: #d32f2f;">${match.type.toUpperCase()}</div>
                 <div style="margin: 5px 0;">
                     <strong>Found:</strong> "${match.text}"
                 </div>
