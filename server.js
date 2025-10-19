@@ -8799,6 +8799,188 @@ app.post('/cleanupDeletedGuidelines', authenticateUser, async (req, res) => {
     }
 });
 
+// Endpoint to delete a single guideline
+app.post('/deleteGuideline', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ 
+                success: false, 
+                error: 'Unauthorized. Admin access required.' 
+            });
+        }
+
+        const { filename } = req.body;
+        
+        if (!filename) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Filename is required' 
+            });
+        }
+
+        console.log(`[DELETE_GUIDELINE] Admin user ${req.user.email} requesting deletion of: ${filename}`);
+
+        const deletionResults = {
+            pdfDeleted: false,
+            condensedDeleted: false,
+            summaryDeleted: false,
+            firestoreDeleted: false,
+            listUpdated: false,
+            errors: []
+        };
+
+        // 1. Delete PDF from guidance folder
+        try {
+            const pdfPath = `guidance/${encodeURIComponent(filename)}`;
+            const pdfSha = await getFileSha(pdfPath);
+            
+            if (pdfSha) {
+                await axios.delete(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `token ${githubToken}`
+                    },
+                    data: {
+                        message: `Delete guideline: ${filename}`,
+                        sha: pdfSha,
+                        branch: githubBranch
+                    }
+                });
+                deletionResults.pdfDeleted = true;
+                console.log(`[DELETE_GUIDELINE] Successfully deleted PDF: ${filename}`);
+            } else {
+                console.log(`[DELETE_GUIDELINE] PDF not found in GitHub: ${filename}`);
+                deletionResults.errors.push('PDF file not found in repository');
+            }
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error deleting PDF:`, error.message);
+            deletionResults.errors.push(`Failed to delete PDF: ${error.message}`);
+        }
+
+        // 2. Delete condensed text file
+        try {
+            const baseName = filename.replace(/\.pdf$/i, '');
+            const condensedPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+            const condensedSha = await getFileSha(condensedPath);
+            
+            if (condensedSha) {
+                await axios.delete(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${condensedPath}`, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `token ${githubToken}`
+                    },
+                    data: {
+                        message: `Delete condensed text for: ${filename}`,
+                        sha: condensedSha,
+                        branch: githubBranch
+                    }
+                });
+                deletionResults.condensedDeleted = true;
+                console.log(`[DELETE_GUIDELINE] Successfully deleted condensed file`);
+            } else {
+                console.log(`[DELETE_GUIDELINE] Condensed file not found`);
+            }
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error deleting condensed file:`, error.message);
+            deletionResults.errors.push(`Failed to delete condensed file: ${error.message}`);
+        }
+
+        // 3. Delete summary text file
+        try {
+            const baseName = filename.replace(/\.pdf$/i, '');
+            const summaryPath = `guidance/summary/${encodeURIComponent(baseName + '.txt')}`;
+            const summarySha = await getFileSha(summaryPath);
+            
+            if (summarySha) {
+                await axios.delete(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${summaryPath}`, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `token ${githubToken}`
+                    },
+                    data: {
+                        message: `Delete summary for: ${filename}`,
+                        sha: summarySha,
+                        branch: githubBranch
+                    }
+                });
+                deletionResults.summaryDeleted = true;
+                console.log(`[DELETE_GUIDELINE] Successfully deleted summary file`);
+            } else {
+                console.log(`[DELETE_GUIDELINE] Summary file not found`);
+            }
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error deleting summary file:`, error.message);
+            deletionResults.errors.push(`Failed to delete summary file: ${error.message}`);
+        }
+
+        // 4. Delete from Firestore
+        try {
+            const cleanId = generateCleanDocId(filename);
+            await db.collection('guidelines').doc(cleanId).delete();
+            deletionResults.firestoreDeleted = true;
+            console.log(`[DELETE_GUIDELINE] Successfully deleted from Firestore: ${cleanId}`);
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error deleting from Firestore:`, error.message);
+            deletionResults.errors.push(`Failed to delete from Firestore: ${error.message}`);
+        }
+
+        // 5. Update list_of_guidelines.txt
+        try {
+            const listPath = 'guidance/list_of_guidelines.txt';
+            const listResponse = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${listPath}`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            });
+
+            // Decode current content
+            const currentContent = Buffer.from(listResponse.data.content, 'base64').toString();
+            const guidelines = currentContent.split('\n').filter(line => line.trim() && line.trim() !== filename);
+            
+            // Update the file
+            const updatedContent = guidelines.join('\n') + '\n';
+            await axios.put(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${listPath}`, {
+                message: `Remove ${filename} from guidelines list`,
+                content: Buffer.from(updatedContent).toString('base64'),
+                sha: listResponse.data.sha,
+                branch: githubBranch
+            }, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Authorization': `token ${githubToken}`
+                }
+            });
+            deletionResults.listUpdated = true;
+            console.log(`[DELETE_GUIDELINE] Successfully updated guidelines list`);
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error updating guidelines list:`, error.message);
+            deletionResults.errors.push(`Failed to update guidelines list: ${error.message}`);
+        }
+
+        // Determine overall success
+        const success = deletionResults.pdfDeleted || deletionResults.firestoreDeleted;
+        
+        console.log(`[DELETE_GUIDELINE] Deletion completed for ${filename}:`, deletionResults);
+        
+        res.json({
+            success: success,
+            message: success ? `Successfully deleted guideline: ${filename}` : `Failed to delete guideline: ${filename}`,
+            results: deletionResults
+        });
+
+    } catch (error) {
+        console.error('[DELETE_GUIDELINE] Critical error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Internal server error during guideline deletion',
+            details: error.message
+        });
+    }
+});
+
 // Endpoint to analyze note against a specific guideline
 app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
     try {
