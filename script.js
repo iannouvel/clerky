@@ -11,8 +11,8 @@ window.auth = auth;
 let relevantGuidelines = null;
 
 // Global variables for programmatic change tracking
-window.isProgrammaticChange = false;
-window.hasColoredChanges = false;
+window.programmaticChanges = [];
+window.hasProgrammaticChanges = false;
 
 // Add disclaimer check function
 async function checkDisclaimerAcceptance() {
@@ -171,8 +171,8 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
         if (replacementsCount > 0) {
             // Push current state to history before making changes
             pushToHistory(getUserInputContent());
-            // Update the textarea with programmatic highlighting
-            setUserInputContent(anonymisedText, true);
+            // Update the textarea with programmatic change tracking
+            setUserInputContent(anonymisedText, true, 'PII Anonymization');
         }
 
         // Show confirmation in Summary
@@ -208,49 +208,65 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
     };
 }
 
-// Helper functions for programmatic text changes with color highlighting
-function setProgrammaticText(editor, content) {
-    window.isProgrammaticChange = true;
-    // Set content with amber color (#D97706)
-    editor.commands.setContent(`<span style="color: #D97706">${content}</span>`);
-    window.hasColoredChanges = true;
-    updateClearFormattingButton();
+// Helper functions for programmatic change tracking
+function addProgrammaticChange(type, content, timestamp = new Date()) {
+    const change = {
+        id: Date.now(),
+        type: type,
+        content: content,
+        timestamp: timestamp,
+        preview: content.substring(0, 100) + (content.length > 100 ? '...' : '')
+    };
+    
+    window.programmaticChanges.push(change);
+    window.hasProgrammaticChanges = true;
+    updateShowChangesButton();
+    updateChangesView();
 }
 
-function hasColoredText(editor) {
-    // Check if editor contains any colored spans
-    const html = editor.getHTML();
-    return html.includes('color: #D97706') || html.includes('color:#D97706');
-}
-
-function updateClearFormattingButton() {
-    const btn = document.getElementById('clearFormattingBtn');
+function updateShowChangesButton() {
+    const btn = document.getElementById('showChangesBtn');
     if (btn) {
-        btn.style.display = window.hasColoredChanges ? 'inline-block' : 'none';
+        btn.style.display = window.hasProgrammaticChanges ? 'inline-block' : 'none';
     }
 }
 
-// Helper function to get user input content (works with both textarea and TipTap)
-function getUserInputContent() {
-    const editor = editors?.userInput;
-    return editor ? editor.getText() : document.getElementById('userInput')?.value || '';
+function updateChangesView() {
+    const changesContent = document.getElementById('changesContent');
+    if (!changesContent) return;
+    
+    if (window.programmaticChanges.length === 0) {
+        changesContent.innerHTML = '<p style="color: #6c757d; font-style: italic;">No programmatic changes yet.</p>';
+        return;
+    }
+    
+    let html = '';
+    window.programmaticChanges.forEach(change => {
+        html += `
+            <div class="programmatic-change">
+                <div class="change-label">${change.type}</div>
+                <div class="change-content">${change.content}</div>
+            </div>
+        `;
+    });
+    
+    changesContent.innerHTML = html;
 }
 
-// Helper function to set user input content (works with both textarea and TipTap)
-function setUserInputContent(content, isProgrammatic = false) {
-    const editor = editors?.userInput;
-    if (editor) {
+// Helper function to get user input content
+function getUserInputContent() {
+    const userInput = document.getElementById('userInput');
+    return userInput ? userInput.value : '';
+}
+
+// Helper function to set user input content
+function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update') {
+    const userInput = document.getElementById('userInput');
+    if (userInput) {
         if (isProgrammatic) {
-            setProgrammaticText(editor, content);
-        } else {
-            editor.commands.setContent(content);
+            addProgrammaticChange(changeType, content);
         }
-    } else {
-        // Fallback to textarea
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = content;
-        }
+        userInput.value = content;
     }
 }
 
@@ -1758,8 +1774,8 @@ function pushToHistory(text) {
         window.clinicalNoteHistoryIndex--;
     }
     
-    // Update clear formatting button visibility
-    updateClearFormattingButton();
+    // Update show changes button visibility
+    updateShowChangesButton();
     updateUndoRedoButtons();
 }
 
@@ -1767,8 +1783,10 @@ function pushToHistory(text) {
 function undo() {
     if (window.clinicalNoteHistoryIndex > 0) {
         window.clinicalNoteHistoryIndex--;
-        const content = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        setUserInputContent(content, false);
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        }
         updateUndoRedoButtons();
     }
 }
@@ -1777,8 +1795,10 @@ function undo() {
 function redo() {
     if (window.clinicalNoteHistoryIndex < window.clinicalNoteHistory.length - 1) {
         window.clinicalNoteHistoryIndex++;
-        const content = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        setUserInputContent(content, false);
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        }
         updateUndoRedoButtons();
     }
 }
@@ -1798,33 +1818,27 @@ function updateUndoRedoButtons() {
 
 // Initialize history with current textarea content when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait for TipTap editors to be initialized
-    setTimeout(() => {
-        const initialContent = getUserInputContent();
-        if (initialContent) {
-            pushToHistory(initialContent);
-        }
+    const userInput = document.getElementById('userInput');
+    if (userInput) {
+        pushToHistory(userInput.value);
         
         // Listen for text changes to add to history (debounced)
         let timeout;
-        const editor = editors?.userInput;
-        if (editor) {
-            editor.on('update', () => {
-                clearTimeout(timeout);
-                timeout = setTimeout(() => {
-                    const currentContent = getUserInputContent();
-                    if (currentContent !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
-                        pushToHistory(currentContent);
-                    }
-                }, 1000); // 1 second delay
-            });
-        }
-    }, 100); // Small delay to ensure TipTap is initialized
+        userInput.addEventListener('input', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                if (userInput.value !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
+                    pushToHistory(userInput.value);
+                }
+            }, 1000); // 1 second delay
+        });
+    }
     
     // Wire up undo/redo buttons
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
-    const clearFormattingBtn = document.getElementById('clearFormattingBtn');
+    const showChangesBtn = document.getElementById('showChangesBtn');
+    const hideChangesBtn = document.getElementById('hideChangesBtn');
     
     if (undoBtn) {
         undoBtn.addEventListener('click', undo);
@@ -1832,15 +1846,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (redoBtn) {
         redoBtn.addEventListener('click', redo);
     }
-    if (clearFormattingBtn) {
-        clearFormattingBtn.addEventListener('click', () => {
-            const editor = editors?.userInput;
-            if (editor) {
-                // Strip all color styling
-                const plainText = editor.getText();
-                editor.commands.setContent(plainText);
-                window.hasColoredChanges = false;
-                updateClearFormattingButton();
+    if (showChangesBtn) {
+        showChangesBtn.addEventListener('click', () => {
+            const changesView = document.getElementById('changesView');
+            if (changesView) {
+                changesView.style.display = 'block';
+                updateChangesView();
+            }
+        });
+    }
+    if (hideChangesBtn) {
+        hideChangesBtn.addEventListener('click', () => {
+            const changesView = document.getElementById('changesView');
+            if (changesView) {
+                changesView.style.display = 'none';
             }
         });
     }
@@ -2197,7 +2216,7 @@ async function generateClinicalNote() {
 
         // Replace the user input with the generated note
         console.log('[DEBUG] Replacing user input with generated note');
-        setUserInputContent(data.note, true);
+        setUserInputContent(data.note, true, 'AI Generated Clinical Note');
         console.log('[DEBUG] Note replaced in user input successfully');
 
     } catch (error) {
@@ -2384,16 +2403,16 @@ function appendToOutputField(content, clearExisting = true) {
         }
 
         if (clearExisting) {
-            setUserInputContent(processedContent, true);
+            setUserInputContent(processedContent, true, 'Content Replacement');
         } else {
             const currentContent = getUserInputContent();
-            setUserInputContent(currentContent + '\n\n' + processedContent, true);
+            setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition');
         }
 
         console.log('[DEBUG] Content replaced in user input successfully');
     } catch (error) {
         console.error('[DEBUG] Error in appendToOutputField:', error);
-        setUserInputContent(content, true);
+        setUserInputContent(content, true, 'Error Recovery');
     }
 }
 
@@ -3710,7 +3729,7 @@ async function applyAllDecisions() {
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
-                    setUserInputContent(result.updatedTranscript, true);
+                    setUserInputContent(result.updatedTranscript, true, 'Dynamic Advice Update');
                     console.log('[DEBUG] Sequential processing: Updated transcript automatically');
                 }
                 
@@ -3883,7 +3902,7 @@ function copyUpdatedTranscript() {
 // Helper function to replace original transcript in userInput
 function replaceOriginalTranscript() {
     if (window.lastUpdatedTranscript) {
-        setUserInputContent(window.lastUpdatedTranscript, true);
+        setUserInputContent(window.lastUpdatedTranscript, true, 'Transcript Replacement');
         alert('Original transcript has been replaced with the updated version!');
         debouncedSaveState();
     }
@@ -4354,9 +4373,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Listen for changes on the main text input to auto-save
-    const editor = editors?.userInput;
-    if (editor) {
-        editor.on('update', debouncedSaveState);
+    const userInput = document.getElementById('userInput');
+    if (userInput) {
+        userInput.addEventListener('input', debouncedSaveState);
     }
 
     // --- Speech Recognition Setup ---
@@ -4720,7 +4739,7 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         });
         
         if (transcript) {
-            setUserInputContent(transcript, true);
+            setUserInputContent(transcript, true, 'Fake Clinical Interaction');
             console.log('[DEBUG] Transcript added to user input textarea:', {
                 transcriptLength: transcript.length,
                 preview: transcript.substring(0, 100) + '...'
