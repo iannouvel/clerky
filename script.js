@@ -4945,7 +4945,7 @@ async function processWorkflow() {
     
     try {
         // Check if we have transcript content
-        const transcript = document.getElementById('userInput').value;
+        const transcript = getUserInputContent();
         if (!transcript) {
             alert('Please enter some text first');
             return;
@@ -6758,7 +6758,7 @@ async function processSelectedGuidelines() {
 async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] processSingleGuideline called for: ${guidelineId}`);
     
-    const transcript = document.getElementById('userInput').value;
+    const transcript = getUserInputContent();
     if (!transcript) {
         throw new Error('No transcript found');
     }
@@ -8580,7 +8580,7 @@ async function askGuidelinesQuestion() {
     const originalText = askQuestionBtn.textContent;
     
     try {
-        const question = document.getElementById('userInput').value;
+        const question = getUserInputContent();
         if (!question) {
             alert('Please enter a question first');
             return;
