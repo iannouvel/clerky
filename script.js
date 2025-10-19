@@ -7,6 +7,27 @@ import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic
 // Make auth available globally - ADD THIS LINE
 window.auth = auth;
 
+// Load and display version number from package.json
+async function loadVersionNumber() {
+    try {
+        const response = await fetch('./package.json');
+        const packageData = await response.json();
+        const versionElement = document.getElementById('appVersion');
+        if (versionElement && packageData.version) {
+            versionElement.textContent = packageData.version;
+        }
+    } catch (error) {
+        console.error('Failed to load version number:', error);
+    }
+}
+
+// Call loadVersionNumber when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadVersionNumber);
+} else {
+    loadVersionNumber();
+}
+
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
@@ -172,7 +193,9 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
             // Push current state to history before making changes
             pushToHistory(getUserInputContent());
             // Update the textarea with programmatic change tracking
+            console.log('[DEBUG] PII Anonymization: Adding programmatic change');
             setUserInputContent(anonymisedText, true, 'PII Anonymization');
+            console.log('[DEBUG] PII Anonymization: Programmatic changes count:', window.programmaticChanges.length);
         }
 
         // Show confirmation in Summary
@@ -210,6 +233,8 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
 
 // Helper functions for programmatic change tracking
 function addProgrammaticChange(type, content, timestamp = new Date()) {
+    console.log('[DEBUG] addProgrammaticChange called:', { type, contentLength: content.length });
+    
     const change = {
         id: Date.now(),
         type: type,
@@ -220,14 +245,18 @@ function addProgrammaticChange(type, content, timestamp = new Date()) {
     
     window.programmaticChanges.push(change);
     window.hasProgrammaticChanges = true;
+    console.log('[DEBUG] Programmatic changes updated:', { count: window.programmaticChanges.length, hasChanges: window.hasProgrammaticChanges });
+    
     updateShowChangesButton();
     updateChangesView();
 }
 
 function updateShowChangesButton() {
     const btn = document.getElementById('showChangesBtn');
+    console.log('[DEBUG] updateShowChangesButton:', { btnFound: !!btn, hasChanges: window.hasProgrammaticChanges });
     if (btn) {
         btn.style.display = window.hasProgrammaticChanges ? 'inline-block' : 'none';
+        console.log('[DEBUG] Show changes button display set to:', btn.style.display);
     }
 }
 
