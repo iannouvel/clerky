@@ -2354,7 +2354,10 @@ html, body {
     width: 100%;
     height: calc(100vh - 160px); /* Full height minus top bar, header, and margins */
     border: none;
-    padding: 18px;
+    padding: 0; /* Remove padding for TipTap editor */
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 1;
     font-size: 1em;
     background: transparent;
     resize: vertical;
@@ -2418,6 +2421,15 @@ html, body {
     position: relative;
     z-index: 10;
     pointer-events: auto !important;
+}
+
+/* Ensure TipTap editor in user-input-col is fully interactive */
+.user-input-col .tiptap-editor {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    pointer-events: auto !important;
+    cursor: text !important;
 }
 
 .tiptap-editor .ProseMirror {
