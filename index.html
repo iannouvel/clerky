@@ -723,6 +723,17 @@
                             console.log('[TIPTAP] Key pressed:', e.key);
                         });
                         
+                        // Force contenteditable to be true
+                        const checkEditable = setInterval(() => {
+                            if (proseMirror.getAttribute('contenteditable') !== 'true') {
+                                proseMirror.setAttribute('contenteditable', 'true');
+                                console.log('[TIPTAP] Re-applied contenteditable=true');
+                            }
+                        }, 1000);
+                        
+                        // Clear interval after 10 seconds
+                        setTimeout(() => clearInterval(checkEditable), 10000);
+                        
                         console.log('[TIPTAP] Editor made editable and focusable');
                     }
                 });
