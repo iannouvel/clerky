@@ -163,6 +163,15 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
             }
         });
 
+        // Update the Clinical Note textarea with the anonymised text
+        const userInput = document.getElementById('userInput');
+        if (userInput && replacementsCount > 0) {
+            // Push current state to history before making changes
+            pushToHistory(userInput.value);
+            // Update the textarea
+            userInput.value = anonymisedText;
+        }
+
         // Show confirmation in Summary
         appendToSummary1(`\n✅ **Privacy Review Complete**: ${replacementsCount} items anonymised\n\n`, false);
 
@@ -1681,6 +1690,95 @@ function getCacheInfo() {
 window.clearGuidelinesCache = clearGuidelinesCache;
 window.getCacheInfo = getCacheInfo;
 
+// Clinical Note Undo/Redo History System
+window.clinicalNoteHistory = [];
+window.clinicalNoteHistoryIndex = -1;
+
+// Function to push current state to history
+function pushToHistory(text) {
+    // Remove any future history if we're not at the end
+    window.clinicalNoteHistory = window.clinicalNoteHistory.slice(0, window.clinicalNoteHistoryIndex + 1);
+    
+    // Add new state
+    window.clinicalNoteHistory.push(text);
+    window.clinicalNoteHistoryIndex = window.clinicalNoteHistory.length - 1;
+    
+    // Limit history to 50 entries to prevent memory issues
+    if (window.clinicalNoteHistory.length > 50) {
+        window.clinicalNoteHistory.shift();
+        window.clinicalNoteHistoryIndex--;
+    }
+    
+    updateUndoRedoButtons();
+}
+
+// Function to undo
+function undo() {
+    if (window.clinicalNoteHistoryIndex > 0) {
+        window.clinicalNoteHistoryIndex--;
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        }
+        updateUndoRedoButtons();
+    }
+}
+
+// Function to redo
+function redo() {
+    if (window.clinicalNoteHistoryIndex < window.clinicalNoteHistory.length - 1) {
+        window.clinicalNoteHistoryIndex++;
+        const userInput = document.getElementById('userInput');
+        if (userInput) {
+            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
+        }
+        updateUndoRedoButtons();
+    }
+}
+
+// Function to update button states
+function updateUndoRedoButtons() {
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+    
+    if (undoBtn) {
+        undoBtn.disabled = window.clinicalNoteHistoryIndex <= 0;
+    }
+    if (redoBtn) {
+        redoBtn.disabled = window.clinicalNoteHistoryIndex >= window.clinicalNoteHistory.length - 1;
+    }
+}
+
+// Initialize history with current textarea content when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const userInput = document.getElementById('userInput');
+    if (userInput) {
+        pushToHistory(userInput.value);
+        
+        // Listen for text changes to add to history (debounced)
+        let timeout;
+        userInput.addEventListener('input', function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                if (userInput.value !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
+                    pushToHistory(userInput.value);
+                }
+            }, 1000); // 1 second delay
+        });
+    }
+    
+    // Wire up undo/redo buttons
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+    
+    if (undoBtn) {
+        undoBtn.addEventListener('click', undo);
+    }
+    if (redoBtn) {
+        redoBtn.addEventListener('click', redo);
+    }
+});
+
 async function findRelevantGuidelines(suppressHeader = false) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
@@ -1737,11 +1835,9 @@ async function findRelevantGuidelines(suppressHeader = false) {
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
                         // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied (User Reviewed)**\n` +
-                            `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
-                            `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
-                            `- Replacements Made: ${reviewResult.replacementsCount}\n` +
-                            `- Clinical Information: Preserved\n\n`;
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
+                            `- Clinical information preserved\n\n`;
                         appendToSummary1(anonymisationNotice, false);
                     } else {
                         // User cancelled the review, use original transcript
@@ -1960,11 +2056,9 @@ async function generateClinicalNote() {
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
                         // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied (User Reviewed)**\n` +
-                            `- Risk Level: ${piiAnalysis.riskLevel.toUpperCase()}\n` +
-                            `- PII Types Found: ${piiAnalysis.piiTypes.map(t => t.type).join(', ')}\n` +
-                            `- Replacements Made: ${reviewResult.replacementsCount}\n` +
-                            `- Clinical Information: Preserved\n\n`;
+                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
+                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
+                            `- Clinical information preserved\n\n`;
                         appendToSummary1(anonymisationNotice, false);
                     } else {
                         // User cancelled the review, use original transcript

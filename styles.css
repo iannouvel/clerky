@@ -2236,6 +2236,37 @@ html, body {
     margin: 0 8px;
 }
 
+/* Header buttons container */
+.header-buttons {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* Icon button styling */
+.nav-btn.icon-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.nav-btn.icon-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.nav-btn.icon-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
 /* Style the record button in column header */
 .column-header .record-btn {
     float: right;

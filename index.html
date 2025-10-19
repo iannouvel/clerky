@@ -309,9 +309,13 @@
                         <div class="main-column user-input-col">
                             <div class="column-header">
                                 Clinical Note
-                                <button id="recordBtn" class="nav-btn record-btn">
-                                    <span id="recordSymbol" class="record-symbol"></span>Record
-                                </button>
+                                <div class="header-buttons">
+                                    <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
+                                    <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
+                                    <button id="recordBtn" class="nav-btn record-btn">
+                                        <span id="recordSymbol" class="record-symbol"></span>Record
+                                    </button>
+                                </div>
                             </div>
                             <textarea id="userInput" class="expandable-input" placeholder="Record a transcript, enter a clinical note or ask a question here..." rows="3"></textarea>
                         </div>
