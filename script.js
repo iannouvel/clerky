@@ -1874,12 +1874,6 @@ function initializeTipTapIntegration() {
     }
     
     console.log('[TIPTAP] Initializing integration');
-    console.log('[TIPTAP] Editor state:', {
-        isEditable: editor.isEditable,
-        isFocused: editor.isFocused,
-        isEmpty: editor.isEmpty,
-        commands: !!editor.commands
-    });
     
     // Initialize history with empty content
     pushToHistory('');
@@ -1922,51 +1916,6 @@ function initializeTipTapIntegration() {
     
     console.log('[TIPTAP] Integration complete');
     
-    // Add a test function to manually focus the editor
-    window.focusEditor = function() {
-        if (editor && editor.commands) {
-            editor.commands.focus();
-            console.log('[TIPTAP] Editor focused manually');
-        }
-    };
-    
-    // Add a test function to check editor state
-    window.checkEditorState = function() {
-        const proseMirror = document.querySelector('#userInput .ProseMirror');
-        console.log('[TIPTAP] Editor check:', {
-            editorExists: !!editor,
-            proseMirrorExists: !!proseMirror,
-            isContentEditable: proseMirror?.getAttribute('contenteditable'),
-            isFocused: document.activeElement === proseMirror,
-            editorIsEditable: editor?.isEditable,
-            editorIsFocused: editor?.isFocused
-        });
-    };
-    
-    // Add a function to force make the editor editable
-    window.forceEditorEditable = function() {
-        const proseMirror = document.querySelector('#userInput .ProseMirror');
-        if (proseMirror) {
-            proseMirror.setAttribute('contenteditable', 'true');
-            proseMirror.setAttribute('tabindex', '0');
-            proseMirror.style.pointerEvents = 'auto';
-            proseMirror.style.cursor = 'text';
-            proseMirror.style.userSelect = 'text';
-            proseMirror.focus();
-            console.log('[TIPTAP] Editor forced to be editable');
-        }
-    };
-    
-    // Add a function to test typing in the editor
-    window.testEditor = function() {
-        const editor = window.editors?.userInput;
-        if (editor && editor.commands) {
-            editor.commands.setContent('<p>Test content - can you see this?</p>');
-            editor.commands.focus();
-            console.log('[TIPTAP] Test content added');
-        }
-    };
-    
     // Add a function to clear the editor
     window.clearEditor = function() {
         const editor = window.editors?.userInput;
@@ -1974,6 +1923,46 @@ function initializeTipTapIntegration() {
             editor.commands.clearContent();
             editor.commands.focus();
             console.log('[TIPTAP] Editor cleared');
+        }
+    };
+    
+    // Nuclear option - force editor to be editable by any means necessary
+    window.nuclearFixEditor = function() {
+        console.log('[NUCLEAR] Applying nuclear fix...');
+        const editor = window.editors?.userInput;
+        const pm = document.querySelector('#userInput .ProseMirror');
+        
+        if (pm) {
+            // Remove all existing styles that might block
+            pm.style.cssText = '';
+            
+            // Apply new styles
+            pm.setAttribute('contenteditable', 'true');
+            pm.setAttribute('tabindex', '0');
+            pm.style.padding = '12px';
+            pm.style.minHeight = '150px';
+            pm.style.cursor = 'text';
+            pm.style.userSelect = 'text';
+            pm.style.webkitUserSelect = 'text';
+            pm.style.pointerEvents = 'auto';
+            pm.style.position = 'relative';
+            pm.style.zIndex = '1000';
+            pm.style.background = 'white';
+            
+            // Focus it
+            pm.focus();
+            
+            // Try to place cursor at the end
+            const range = document.createRange();
+            const sel = window.getSelection();
+            if (pm.childNodes.length > 0) {
+                range.setStart(pm.childNodes[0], 0);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
+            
+            console.log('[NUCLEAR] Nuclear fix applied - try typing now');
         }
     };
 }
@@ -1992,12 +1981,21 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('[TIPTAP] Final editability check and fix');
             const proseMirror = document.querySelector('#userInput .ProseMirror');
             if (proseMirror) {
+                // Visibility guards
+                const el = document.getElementById('userInput');
+                if (el) {
+                    el.style.display = 'block';
+                    el.style.visibility = 'visible';
+                }
+                proseMirror.style.display = 'block';
+                proseMirror.style.visibility = 'visible';
+                // Interactivity
                 proseMirror.setAttribute('contenteditable', 'true');
                 proseMirror.setAttribute('tabindex', '0');
                 proseMirror.style.pointerEvents = 'auto';
                 proseMirror.style.cursor = 'text';
                 proseMirror.style.userSelect = 'text';
-                console.log('[TIPTAP] Final editability fix applied');
+                console.log('[TIPTAP] Final visibility & editability fix applied');
             }
         }
     }, 2000);

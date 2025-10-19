@@ -501,7 +501,7 @@ body {
 
 /* Top bar styles */
 .top-bar {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -1215,7 +1215,7 @@ div.third-column,
 /* Remove TipTap-specific styles */
 .tiptap-editor,
 .tiptap-editor-area {
-    display: none;
+    display: block;
 }
 
 /* Remove all tab-related styles */
@@ -2407,6 +2407,8 @@ html, body {
 }
 
 /* TipTap Editor Styling */
+#userInput { display: block !important; visibility: visible !important; }
+#userInput .ProseMirror { display: block !important; visibility: visible !important; }
 .tiptap-editor {
     min-height: 150px;
     padding: 0;
