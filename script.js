@@ -1938,9 +1938,19 @@ function initializeTipTapIntegration() {
     window.testEditor = function() {
         const editor = window.editors?.userInput;
         if (editor && editor.commands) {
-            editor.commands.setContent('Test content - can you see this?');
+            editor.commands.setContent('<p>Test content - can you see this?</p>');
             editor.commands.focus();
             console.log('[TIPTAP] Test content added');
+        }
+    };
+    
+    // Add a function to clear the editor
+    window.clearEditor = function() {
+        const editor = window.editors?.userInput;
+        if (editor && editor.commands) {
+            editor.commands.clearContent();
+            editor.commands.focus();
+            console.log('[TIPTAP] Editor cleared');
         }
     };
 }
