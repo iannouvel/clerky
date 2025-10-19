@@ -1933,6 +1933,16 @@ function initializeTipTapIntegration() {
             console.log('[TIPTAP] Editor forced to be editable');
         }
     };
+    
+    // Add a function to test typing in the editor
+    window.testEditor = function() {
+        const editor = window.editors?.userInput;
+        if (editor && editor.commands) {
+            editor.commands.setContent('Test content - can you see this?');
+            editor.commands.focus();
+            console.log('[TIPTAP] Test content added');
+        }
+    };
 }
 
 // Listen for TipTap ready event
@@ -1941,6 +1951,23 @@ window.addEventListener('tiptapReady', initializeTipTapIntegration);
 // Also try to initialize if TipTap is already loaded
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(initializeTipTapIntegration, 500);
+    
+    // Additional fix - ensure editor is editable after everything loads
+    setTimeout(() => {
+        const editor = window.editors?.userInput;
+        if (editor) {
+            console.log('[TIPTAP] Final editability check and fix');
+            const proseMirror = document.querySelector('#userInput .ProseMirror');
+            if (proseMirror) {
+                proseMirror.setAttribute('contenteditable', 'true');
+                proseMirror.setAttribute('tabindex', '0');
+                proseMirror.style.pointerEvents = 'auto';
+                proseMirror.style.cursor = 'text';
+                proseMirror.style.userSelect = 'text';
+                console.log('[TIPTAP] Final editability fix applied');
+            }
+        }
+    }, 2000);
 });
 
 async function findRelevantGuidelines(suppressHeader = false) {
