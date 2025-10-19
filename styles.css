@@ -2422,6 +2422,11 @@ html, body {
     outline: none;
     min-height: 150px;
     height: 100%;
+    cursor: text;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
 }
 
 .tiptap-editor .ProseMirror p {

@@ -693,8 +693,43 @@
                     autofocus: false,
                 });
                 
+                // Force editor to be editable and focusable
+                editor.on('create', () => {
+                    console.log('[TIPTAP] Editor created, ensuring editability');
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.setAttribute('contenteditable', 'true');
+                        proseMirror.setAttribute('tabindex', '0');
+                        proseMirror.style.outline = 'none';
+                        proseMirror.style.minHeight = '150px';
+                        proseMirror.style.cursor = 'text';
+                        
+                        // Make sure it's focusable
+                        proseMirror.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            proseMirror.focus();
+                            console.log('[TIPTAP] Editor focused on click');
+                        });
+                        
+                        proseMirror.addEventListener('mousedown', (e) => {
+                            e.preventDefault();
+                            proseMirror.focus();
+                        });
+                        
+                        console.log('[TIPTAP] Editor made editable and focusable');
+                    }
+                });
+                
                 window.editors.userInput = editor;
                 console.log('[TIPTAP] userInput editor initialized successfully');
+                
+                // Force the editor to be ready for input
+                setTimeout(() => {
+                    if (editor && editor.commands) {
+                        editor.commands.focus();
+                        console.log('[TIPTAP] Editor focused programmatically');
+                    }
+                }, 300);
                 
                 // Dispatch event to notify other scripts
                 window.dispatchEvent(new CustomEvent('tiptapReady'));
