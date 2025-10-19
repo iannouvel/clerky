@@ -2267,6 +2267,25 @@ html, body {
     transform: none;
 }
 
+/* Icon buttons in column header need dark text to be visible */
+.column-header .icon-btn {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.column-header .icon-btn:hover:not(:disabled) {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+    transform: scale(1.05);
+}
+
+.column-header .icon-btn:disabled {
+    opacity: 0.4;
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
 /* Style the record button in column header */
 .column-header .record-btn {
     float: right;
