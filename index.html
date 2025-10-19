@@ -703,6 +703,8 @@
                         proseMirror.style.outline = 'none';
                         proseMirror.style.minHeight = '150px';
                         proseMirror.style.cursor = 'text';
+                        proseMirror.style.userSelect = 'text';
+                        proseMirror.style.webkitUserSelect = 'text';
                         
                         // Make sure it's focusable
                         proseMirror.addEventListener('click', (e) => {
@@ -716,9 +718,26 @@
                             proseMirror.focus();
                         });
                         
+                        // Add keyboard event to ensure it's working
+                        proseMirror.addEventListener('keydown', (e) => {
+                            console.log('[TIPTAP] Key pressed:', e.key);
+                        });
+                        
                         console.log('[TIPTAP] Editor made editable and focusable');
                     }
                 });
+                
+                // Additional fix - ensure the editor is editable after a delay
+                setTimeout(() => {
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.setAttribute('contenteditable', 'true');
+                        proseMirror.setAttribute('tabindex', '0');
+                        proseMirror.style.pointerEvents = 'auto';
+                        proseMirror.style.cursor = 'text';
+                        console.log('[TIPTAP] Additional editability fix applied');
+                    }
+                }, 500);
                 
                 window.editors.userInput = editor;
                 console.log('[TIPTAP] userInput editor initialized successfully');
