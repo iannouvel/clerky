@@ -320,22 +320,13 @@
                                 <div class="header-buttons">
                                     <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
                                     <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
-                                    <button id="showChangesBtn" class="nav-btn icon-btn" title="Show Changes" style="display: none;">👁</button>
+                                    <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
                                     <button id="recordBtn" class="nav-btn record-btn">
                                         <span id="recordSymbol" class="record-symbol"></span>Record
                                     </button>
                                 </div>
                             </div>
-                            <div id="clinicalNoteContainer">
-                                <textarea id="userInput" class="expandable-input" placeholder="Record a transcript, enter a clinical note or ask a question here..." rows="3"></textarea>
-                                <div id="changesView" class="changes-view" style="display: none;">
-                                    <div class="changes-header">
-                                        <h4>Programmatic Changes</h4>
-                                        <button id="hideChangesBtn" class="nav-btn icon-btn" title="Hide Changes">✕</button>
-                                    </div>
-                                    <div id="changesContent" class="changes-content"></div>
-                                </div>
-                            </div>
+                            <div id="userInput" class="expandable-input tiptap-editor"></div>
                         </div>
                         <div class="main-column summary-col">
                             <div class="column-header">Summary</div>
@@ -662,6 +653,64 @@
         window.SERVER_URL = 'https://clerky-uzni.onrender.com';
     </script>
 
+    <!-- TipTap Editor - Load from CDN -->
+    <script type="module">
+        // Import TipTap from CDN and initialize
+        import { Editor } from 'https://cdn.jsdelivr.net/npm/@tiptap/core@2.1.13/+esm';
+        import StarterKit from 'https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.1.13/+esm';
+        import Placeholder from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.1.13/+esm';
+        import TextStyle from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-text-style@2.1.13/+esm';
+        import { Color } from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-color@2.1.13/+esm';
+        
+        // Create global editors object
+        window.editors = window.editors || {};
+        
+        // Initialize userInput editor when DOM is ready
+        function initUserInputEditor() {
+            const element = document.getElementById('userInput');
+            if (!element) {
+                console.warn('userInput element not found');
+                return;
+            }
+            
+            try {
+                const editor = new Editor({
+                    element: element,
+                    extensions: [
+                        StarterKit.configure({
+                            history: {
+                                depth: 100,
+                            },
+                        }),
+                        TextStyle,
+                        Color,
+                        Placeholder.configure({
+                            placeholder: 'Record a transcript, enter a clinical note or ask a question here...'
+                        })
+                    ],
+                    content: '',
+                    editable: true,
+                    autofocus: false,
+                });
+                
+                window.editors.userInput = editor;
+                console.log('[TIPTAP] userInput editor initialized successfully');
+                
+                // Dispatch event to notify other scripts
+                window.dispatchEvent(new CustomEvent('tiptapReady'));
+            } catch (error) {
+                console.error('[TIPTAP] Failed to initialize editor:', error);
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initUserInputEditor);
+        } else {
+            initUserInputEditor();
+        }
+    </script>
+    
     <!-- Anonymisation module -->
     <script type="module" src="anonymisation.js"></script>
     

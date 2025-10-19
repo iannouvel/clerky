@@ -2405,27 +2405,23 @@ html, body {
 
 /* TipTap Editor Styling */
 .tiptap-editor {
-    min-height: 100px;
-    padding: 12px;
+    min-height: 150px;
+    padding: 0;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.5;
     background-color: #fff;
-    resize: vertical;
     overflow-y: auto;
-}
-
-.tiptap-editor:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+    flex: 1;
 }
 
 .tiptap-editor .ProseMirror {
+    padding: 12px;
     outline: none;
-    min-height: 80px;
+    min-height: 150px;
+    height: 100%;
 }
 
 .tiptap-editor .ProseMirror p {
@@ -2434,6 +2430,24 @@ html, body {
 
 .tiptap-editor .ProseMirror p:last-child {
     margin-bottom: 0;
+}
+
+.tiptap-editor .ProseMirror:focus {
+    outline: none;
+}
+
+.tiptap-editor.ProseMirror-focused {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+}
+
+/* Placeholder styling */
+.tiptap-editor .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
 }
 
 /* Changes view styling */
@@ -2488,14 +2502,15 @@ html, body {
     white-space: pre-wrap;
 }
 
-/* Show changes button styling */
-#showChangesBtn {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    color: #6c757d;
+/* Clear formatting button styling */
+#clearFormattingBtn {
+    background-color: #fff3cd;
+    border: 1px solid #D97706;
+    color: #D97706;
+    font-weight: 600;
 }
 
-#showChangesBtn:hover {
-    background-color: #e9ecef;
-    color: #495057;
+#clearFormattingBtn:hover {
+    background-color: #D97706;
+    color: white;
 }

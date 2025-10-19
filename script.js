@@ -32,8 +32,9 @@ if (document.readyState === 'loading') {
 let relevantGuidelines = null;
 
 // Global variables for programmatic change tracking
-window.programmaticChanges = [];
-window.hasProgrammaticChanges = false;
+window.programmaticChangeHistory = [];
+window.hasColoredChanges = false;
+window.currentChangeIndex = -1;
 
 // Add disclaimer check function
 async function checkDisclaimerAcceptance() {
@@ -231,71 +232,57 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
     };
 }
 
-// Helper functions for programmatic change tracking
-function addProgrammaticChange(type, content, timestamp = new Date()) {
-    console.log('[DEBUG] addProgrammaticChange called:', { type, contentLength: content.length });
-    
-    const change = {
-        id: Date.now(),
-        type: type,
-        content: content,
-        timestamp: timestamp,
-        preview: content.substring(0, 100) + (content.length > 100 ? '...' : '')
-    };
-    
-    window.programmaticChanges.push(change);
-    window.hasProgrammaticChanges = true;
-    console.log('[DEBUG] Programmatic changes updated:', { count: window.programmaticChanges.length, hasChanges: window.hasProgrammaticChanges });
-    
-    updateShowChangesButton();
-    updateChangesView();
-}
-
-function updateShowChangesButton() {
-    const btn = document.getElementById('showChangesBtn');
-    console.log('[DEBUG] updateShowChangesButton:', { btnFound: !!btn, hasChanges: window.hasProgrammaticChanges });
-    if (btn) {
-        btn.style.display = window.hasProgrammaticChanges ? 'inline-block' : 'none';
-        console.log('[DEBUG] Show changes button display set to:', btn.style.display);
+// Helper functions for TipTap programmatic change tracking
+function getUserInputContent() {
+    const editor = window.editors?.userInput;
+    if (editor && editor.getText) {
+        return editor.getText();
     }
+    return '';
 }
 
-function updateChangesView() {
-    const changesContent = document.getElementById('changesContent');
-    if (!changesContent) return;
+function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update') {
+    const editor = window.editors?.userInput;
     
-    if (window.programmaticChanges.length === 0) {
-        changesContent.innerHTML = '<p style="color: #6c757d; font-style: italic;">No programmatic changes yet.</p>';
+    if (!editor || !editor.commands) {
+        console.error('[PROGRAMMATIC] TipTap editor not ready');
         return;
     }
     
-    let html = '';
-    window.programmaticChanges.forEach(change => {
-        html += `
-            <div class="programmatic-change">
-                <div class="change-label">${change.type}</div>
-                <div class="change-content">${change.content}</div>
-            </div>
-        `;
-    });
-    
-    changesContent.innerHTML = html;
+    // Log every programmatic change to console
+    if (isProgrammatic) {
+        console.log('═══════════════════════════════════════════════');
+        console.log('[PROGRAMMATIC CHANGE]');
+        console.log('Type:', changeType);
+        console.log('Length:', content.length, 'characters');
+        console.log('Preview:', content.substring(0, 150) + (content.length > 150 ? '...' : ''));
+        console.log('═══════════════════════════════════════════════');
+        
+        // Store change in history
+        window.programmaticChangeHistory.push({
+            type: changeType,
+            content: content,
+            timestamp: new Date(),
+            editorState: editor.getJSON()
+        });
+        window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
+        
+        // Set content with amber color
+        editor.commands.setContent(`<p><span style="color: #D97706">${content.replace(/\n/g, '</span></p><p><span style="color: #D97706">').replace(/<p><span[^>]*><\/span><\/p>/g, '<p><br></p>')}</span></p>`);
+        
+        window.hasColoredChanges = true;
+        updateClearFormattingButton();
+    } else {
+        // Regular content update without coloring
+        editor.commands.setContent(content);
+    }
 }
 
-// Helper function to get user input content
-function getUserInputContent() {
-    const userInput = document.getElementById('userInput');
-    return userInput ? userInput.value : '';
-}
-
-// Helper function to set user input content
-function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update') {
-    const userInput = document.getElementById('userInput');
-    if (userInput) {
-        if (isProgrammatic) {
-            addProgrammaticChange(changeType, content);
-        }
-        userInput.value = content;
+function updateClearFormattingButton() {
+    const btn = document.getElementById('clearFormattingBtn');
+    if (btn) {
+        btn.style.display = window.hasColoredChanges ? 'inline-block' : 'none';
+        console.log('[DEBUG] Clear formatting button visibility:', btn.style.display);
     }
 }
 
@@ -1803,31 +1790,41 @@ function pushToHistory(text) {
         window.clinicalNoteHistoryIndex--;
     }
     
-    // Update show changes button visibility
-    updateShowChangesButton();
     updateUndoRedoButtons();
 }
 
-// Function to undo
+// Function to undo - steps through programmatic changes
 function undo() {
-    if (window.clinicalNoteHistoryIndex > 0) {
-        window.clinicalNoteHistoryIndex--;
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        }
+    const editor = window.editors?.userInput;
+    if (!editor) return;
+    
+    if (window.currentChangeIndex > 0) {
+        window.currentChangeIndex--;
+        const change = window.programmaticChangeHistory[window.currentChangeIndex];
+        console.log('[UNDO] Reverting to change:', change.type);
+        editor.commands.setContent(change.editorState);
+        updateUndoRedoButtons();
+    } else {
+        // Use TipTap's built-in undo
+        editor.commands.undo();
         updateUndoRedoButtons();
     }
 }
 
-// Function to redo
+// Function to redo - steps through programmatic changes
 function redo() {
-    if (window.clinicalNoteHistoryIndex < window.clinicalNoteHistory.length - 1) {
-        window.clinicalNoteHistoryIndex++;
-        const userInput = document.getElementById('userInput');
-        if (userInput) {
-            userInput.value = window.clinicalNoteHistory[window.clinicalNoteHistoryIndex];
-        }
+    const editor = window.editors?.userInput;
+    if (!editor) return;
+    
+    if (window.currentChangeIndex < window.programmaticChangeHistory.length - 1) {
+        window.currentChangeIndex++;
+        const change = window.programmaticChangeHistory[window.currentChangeIndex];
+        console.log('[REDO] Advancing to change:', change.type);
+        editor.commands.setContent(change.editorState);
+        updateUndoRedoButtons();
+    } else {
+        // Use TipTap's built-in redo
+        editor.commands.redo();
         updateUndoRedoButtons();
     }
 }
@@ -1845,29 +1842,36 @@ function updateUndoRedoButtons() {
     }
 }
 
-// Initialize history with current textarea content when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    const userInput = document.getElementById('userInput');
-    if (userInput) {
-        pushToHistory(userInput.value);
-        
-        // Listen for text changes to add to history (debounced)
-        let timeout;
-        userInput.addEventListener('input', function() {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => {
-                if (userInput.value !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
-                    pushToHistory(userInput.value);
-                }
-            }, 1000); // 1 second delay
-        });
+// Initialize TipTap editor integration when ready
+function initializeTipTapIntegration() {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[TIPTAP] Editor not ready, waiting for tiptapReady event');
+        return;
     }
+    
+    console.log('[TIPTAP] Initializing integration');
+    
+    // Initialize history with empty content
+    pushToHistory('');
+    
+    // Listen for content updates
+    editor.on('update', () => {
+        const content = editor.getText();
+        if (content !== window.clinicalNoteHistory[window.clinicalNoteHistoryIndex]) {
+            pushToHistory(content);
+        }
+    });
+    
+    // Update undo/redo button states based on TipTap history
+    editor.on('transaction', () => {
+        updateUndoRedoButtons();
+    });
     
     // Wire up undo/redo buttons
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
-    const showChangesBtn = document.getElementById('showChangesBtn');
-    const hideChangesBtn = document.getElementById('hideChangesBtn');
+    const clearFormattingBtn = document.getElementById('clearFormattingBtn');
     
     if (undoBtn) {
         undoBtn.addEventListener('click', undo);
@@ -1875,23 +1879,27 @@ document.addEventListener('DOMContentLoaded', function() {
     if (redoBtn) {
         redoBtn.addEventListener('click', redo);
     }
-    if (showChangesBtn) {
-        showChangesBtn.addEventListener('click', () => {
-            const changesView = document.getElementById('changesView');
-            if (changesView) {
-                changesView.style.display = 'block';
-                updateChangesView();
-            }
+    if (clearFormattingBtn) {
+        clearFormattingBtn.addEventListener('click', () => {
+            console.log('[CLEAR] Removing all color formatting');
+            const plainText = editor.getText();
+            editor.commands.setContent(plainText);
+            window.hasColoredChanges = false;
+            window.programmaticChangeHistory = [];
+            window.currentChangeIndex = -1;
+            updateClearFormattingButton();
         });
     }
-    if (hideChangesBtn) {
-        hideChangesBtn.addEventListener('click', () => {
-            const changesView = document.getElementById('changesView');
-            if (changesView) {
-                changesView.style.display = 'none';
-            }
-        });
-    }
+    
+    console.log('[TIPTAP] Integration complete');
+}
+
+// Listen for TipTap ready event
+window.addEventListener('tiptapReady', initializeTipTapIntegration);
+
+// Also try to initialize if TipTap is already loaded
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeTipTapIntegration, 500);
 });
 
 async function findRelevantGuidelines(suppressHeader = false) {
@@ -4402,10 +4410,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Listen for changes on the main text input to auto-save
-    const userInput = document.getElementById('userInput');
-    if (userInput) {
-        userInput.addEventListener('input', debouncedSaveState);
-    }
+    // Wait for TipTap editor to be ready
+    window.addEventListener('tiptapReady', () => {
+        const editor = window.editors?.userInput;
+        if (editor) {
+            editor.on('update', debouncedSaveState);
+        }
+    });
 
     // --- Speech Recognition Setup ---
     const recordBtn = document.getElementById('recordBtn');
