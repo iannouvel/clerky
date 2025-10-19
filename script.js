@@ -1919,6 +1919,20 @@ function initializeTipTapIntegration() {
             editorIsFocused: editor?.isFocused
         });
     };
+    
+    // Add a function to force make the editor editable
+    window.forceEditorEditable = function() {
+        const proseMirror = document.querySelector('#userInput .ProseMirror');
+        if (proseMirror) {
+            proseMirror.setAttribute('contenteditable', 'true');
+            proseMirror.setAttribute('tabindex', '0');
+            proseMirror.style.pointerEvents = 'auto';
+            proseMirror.style.cursor = 'text';
+            proseMirror.style.userSelect = 'text';
+            proseMirror.focus();
+            console.log('[TIPTAP] Editor forced to be editable');
+        }
+    };
 }
 
 // Listen for TipTap ready event

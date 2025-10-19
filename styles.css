@@ -2427,6 +2427,18 @@ html, body {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.tiptap-editor .ProseMirror:focus {
+    outline: none;
+    border: none;
+}
+
+.tiptap-editor .ProseMirror * {
+    pointer-events: auto;
 }
 
 .tiptap-editor .ProseMirror p {
