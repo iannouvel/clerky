@@ -95,6 +95,13 @@
             cursor: wait;
         }
         
+        .version-number {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+        
         .model-selector {
             display: flex;
             align-items: center;
@@ -206,6 +213,7 @@
                 <a href="index.html" class="logo-link">
                     <div class="logo">clerky</div>
                 </a>
+                <span class="version-number">v<span id="appVersion">4.1.0</span></span>
                 <div class="model-selector">
                     <select id="modelSelect" class="model-select">
                         <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
