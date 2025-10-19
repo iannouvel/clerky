@@ -13,13 +13,31 @@ async function loadVersionNumber() {
         // Add cache-busting parameter to always get fresh version
         const response = await fetch('./package.json?v=' + Date.now());
         const packageData = await response.json();
-        const versionElement = document.getElementById('appVersion');
-        if (versionElement && packageData.version) {
-            versionElement.textContent = packageData.version;
-            console.log('[VERSION] App version:', packageData.version);
+        
+        // Try multiple times to update the version element
+        const updateVersion = () => {
+            const versionElement = document.getElementById('appVersion');
+            if (versionElement && packageData.version) {
+                versionElement.textContent = packageData.version;
+                console.log('[VERSION] App version updated to:', packageData.version);
+                return true;
+            }
+            console.log('[VERSION] Element not found yet, will retry...');
+            return false;
+        };
+        
+        // Try immediately
+        if (!updateVersion()) {
+            // Try again after 500ms
+            setTimeout(() => {
+                if (!updateVersion()) {
+                    // Try one more time after 1000ms
+                    setTimeout(updateVersion, 1000);
+                }
+            }, 500);
         }
     } catch (error) {
-        console.error('Failed to load version number:', error);
+        console.error('[VERSION] Failed to load version number:', error);
     }
 }
 
@@ -29,6 +47,9 @@ if (document.readyState === 'loading') {
 } else {
     loadVersionNumber();
 }
+
+// Also call it after a delay to ensure it updates
+setTimeout(loadVersionNumber, 2000);
 
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
