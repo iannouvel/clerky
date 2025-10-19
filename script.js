@@ -1851,6 +1851,12 @@ function initializeTipTapIntegration() {
     }
     
     console.log('[TIPTAP] Initializing integration');
+    console.log('[TIPTAP] Editor state:', {
+        isEditable: editor.isEditable,
+        isFocused: editor.isFocused,
+        isEmpty: editor.isEmpty,
+        commands: !!editor.commands
+    });
     
     // Initialize history with empty content
     pushToHistory('');
@@ -1892,6 +1898,27 @@ function initializeTipTapIntegration() {
     }
     
     console.log('[TIPTAP] Integration complete');
+    
+    // Add a test function to manually focus the editor
+    window.focusEditor = function() {
+        if (editor && editor.commands) {
+            editor.commands.focus();
+            console.log('[TIPTAP] Editor focused manually');
+        }
+    };
+    
+    // Add a test function to check editor state
+    window.checkEditorState = function() {
+        const proseMirror = document.querySelector('#userInput .ProseMirror');
+        console.log('[TIPTAP] Editor check:', {
+            editorExists: !!editor,
+            proseMirrorExists: !!proseMirror,
+            isContentEditable: proseMirror?.getAttribute('contenteditable'),
+            isFocused: document.activeElement === proseMirror,
+            editorIsEditable: editor?.isEditable,
+            editorIsFocused: editor?.isFocused
+        });
+    };
 }
 
 // Listen for TipTap ready event
