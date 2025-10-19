@@ -739,6 +739,20 @@
                     }
                 }, 500);
                 
+                // Add click handler to the entire editor element
+                element.addEventListener('click', (e) => {
+                    console.log('[TIPTAP] Editor clicked, attempting to focus');
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.focus();
+                        console.log('[TIPTAP] ProseMirror focused on click');
+                    }
+                    if (editor && editor.commands) {
+                        editor.commands.focus();
+                        console.log('[TIPTAP] Editor focused via commands');
+                    }
+                });
+                
                 window.editors.userInput = editor;
                 console.log('[TIPTAP] userInput editor initialized successfully');
                 
