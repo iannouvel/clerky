@@ -2436,14 +2436,66 @@ html, body {
     margin-bottom: 0;
 }
 
-/* Clear formatting button styling */
-#clearFormattingBtn {
+/* Changes view styling */
+.changes-view {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.changes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #e9ecef;
+    border-bottom: 1px solid #ddd;
+}
+
+.changes-header h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #495057;
+}
+
+.changes-content {
+    padding: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.programmatic-change {
+    background-color: #fff3cd;
+    border-left: 4px solid #D97706;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.programmatic-change .change-label {
+    font-weight: bold;
+    color: #D97706;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.programmatic-change .change-content {
+    color: #2D3436;
+    white-space: pre-wrap;
+}
+
+/* Show changes button styling */
+#showChangesBtn {
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     color: #6c757d;
 }
 
-#clearFormattingBtn:hover {
+#showChangesBtn:hover {
     background-color: #e9ecef;
     color: #495057;
 }
