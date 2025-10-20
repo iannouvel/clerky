@@ -133,137 +133,271 @@ async function showPIIReviewInterface(originalText, piiAnalysis) {
     });
 }
 
-// New function to handle PII review in Summary column
+// ===== One-at-a-Time PII Review Workflow =====
+
+// Global state for PII review
+window.currentPIIReview = null;
+
+// New function to handle PII review in Summary column - ONE AT A TIME
 function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve) {
-    // Create the PII review interface content
-    let reviewHtml = `
-        <div class="pii-review-container">
-            <h3 style="color: #d32f2f; margin: 0 0 15px 0;">🔒 Privacy Review Required</h3>
-            <p style="margin: 0 0 15px 0;">
-                Personal information was detected in your transcript. Please review each item:
+    console.log('[PII REVIEW] Starting one-at-a-time review with', consolidatedMatches.length, 'matches');
+    
+    // Store the review data globally
+    window.currentPIIReview = {
+        originalText,
+        consolidatedMatches,
+        resolve,
+        currentIndex: 0,
+        decisions: [] // Track decisions for all matches
+    };
+
+    // Show the first match
+    showCurrentPIIMatch();
+}
+
+// Display the current PII match being reviewed
+function showCurrentPIIMatch() {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const { consolidatedMatches, currentIndex, decisions } = review;
+    const totalMatches = consolidatedMatches.length;
+
+    // Check if we're done
+    if (currentIndex >= totalMatches) {
+        completePIIReview();
+        return;
+    }
+
+    const currentMatch = consolidatedMatches[currentIndex];
+    const progressText = `${currentIndex + 1} of ${totalMatches}`;
+
+    console.log('[PII REVIEW] Showing match', progressText, ':', currentMatch.text);
+
+    // Highlight the text in blue and scroll to it
+    const highlighted = highlightTextInEditor(currentMatch.text);
+    if (highlighted) {
+        scrollTextIntoView(currentMatch.text);
+    } else {
+        console.warn('[PII REVIEW] Could not highlight text:', currentMatch.text);
+    }
+
+    // Get default action from match
+    const defaultReplacement = currentMatch.replacement || '[REDACTED]';
+
+    // Create the review HTML for this one match
+    const reviewHtml = `
+        <div class="pii-review-container" id="pii-review-current">
+            <h3 style="color: #d32f2f; margin: 0 0 15px 0;">🔒 Privacy Review (${progressText})</h3>
+            <p style="margin: 0 0 10px 0; font-size: 14px; color: #666;">
+                Personal information detected. Please choose an action:
             </p>
-            <div class="pii-matches-container">
-    `;
-
-    // Add each PII match
-    consolidatedMatches.forEach((match, index) => {
-        reviewHtml += `
-            <div class="pii-match-item" style="border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 4px;">
-                <div style="margin: 5px 0;">
-                    <strong>Found:</strong> "${match.text}"
+            
+            <div class="pii-current-match" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
+                <div style="margin: 0 0 10px 0;">
+                    <strong style="color: #d32f2f;">Found:</strong> 
+                    <span style="background: #fff; padding: 4px 8px; border-radius: 3px; font-family: monospace;">"${escapeHtml(currentMatch.text)}"</span>
                 </div>
-                <div style="margin: 10px 0;">
-                    <label style="margin-right: 15px;">
-                        <input type="radio" name="pii-action-${index}" value="replace" checked>
-                        Replace with "${match.replacement}"
+                <div style="margin: 15px 0;">
+                    <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                        <input type="radio" name="pii-current-action" value="replace" checked style="margin-right: 8px;">
+                        Replace with <strong style="color: #28a745;">"${escapeHtml(defaultReplacement)}"</strong>
                     </label>
-                    <label>
-                        <input type="radio" name="pii-action-${index}" value="keep">
-                        Keep original
+                    <label style="display: block; cursor: pointer;">
+                        <input type="radio" name="pii-current-action" value="keep" style="margin-right: 8px;">
+                        Keep original text
                     </label>
                 </div>
             </div>
-        `;
-    });
-
-    reviewHtml += `
+            
+            <div class="pii-navigation" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                ${currentIndex > 0 ? `
+                    <button onclick="navigatePIIReview(-1)" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                        ⬅ Previous
+                    </button>
+                ` : ''}
+                <button onclick="handlePIIDecision('replace')" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">
+                    ✅ Replace
+                </button>
+                <button onclick="handlePIIDecision('keep')" style="background: #17a2b8; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                    📝 Keep
+                </button>
+                <button onclick="handlePIIDecision('skip')" style="background: #ffc107; color: #000; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                    ⏭ Skip
+                </button>
+                <button onclick="cancelPIIReview()" style="background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                    ❌ Cancel All
+                </button>
             </div>
-            <div class="pii-action-buttons" style="margin-top: 20px; text-align: center;">
-                <button onclick="approvePIIReview()" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; margin-right: 10px; cursor: pointer;">
-                    ✅ Apply Anonymisation
-                </button>
-                <button onclick="cancelPIIReview()" style="background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
-                    ❌ Cancel (Keep Original)
-                </button>
+            
+            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">
+                ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
             </div>
         </div>
     `;
 
-    // Store the review data globally for the buttons to access
-    window.currentPIIReview = {
-        originalText,
-        consolidatedMatches,
-        resolve
-    };
-
-    // Display in Summary column
-    appendToSummary1(reviewHtml, true);
-
-    // Add the button handlers
-    window.approvePIIReview = function() {
-        const review = window.currentPIIReview;
-        if (!review) return;
-
-        // Collect user decisions
-        const decisions = [];
-        review.consolidatedMatches.forEach((match, index) => {
-            const action = document.querySelector(`input[name="pii-action-${index}"]:checked`)?.value || 'replace';
-            decisions.push({ match, action });
-        });
-
-        // Apply the anonymisation based on decisions
-        let anonymisedText = review.originalText;
-        let replacementsCount = 0;
-
-        decisions.forEach(({ match, action }) => {
-            if (action === 'replace') {
-                anonymisedText = anonymisedText.replace(new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), match.replacement);
-                replacementsCount++;
-            }
-        });
-
-        // Update the Clinical Note textarea with the anonymised text
-        if (replacementsCount > 0) {
-            // Push current state to history before making changes
-            pushToHistory(getUserInputContent());
-            
-            // Build replacements array for colored highlighting
-            const replacements = [];
-            decisions.forEach(({ match, action }) => {
-                if (action === 'replace') {
-                    replacements.push({
-                        findText: match.text,
-                        replacementText: match.replacement
-                    });
-                }
-            });
-            
-            // Update the textarea with programmatic change tracking and specific colored replacements
-            setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
-        }
-
-        // Show confirmation in Summary
-        appendToSummary1(`\n✅ **Privacy Review Complete**: ${replacementsCount} items anonymised\n\n`, false);
-
-        // Resolve with the result
-        review.resolve({
-            approved: true,
-            anonymisedText,
-            replacementsCount
-        });
-
-        // Clean up
-        window.currentPIIReview = null;
-    };
-
-    window.cancelPIIReview = function() {
-        const review = window.currentPIIReview;
-        if (!review) return;
-
-        // Show cancellation in Summary
-        appendToSummary1(`\n⚠️ **Privacy Review Cancelled**: Original text will be used\n\n`, false);
-
-        // Resolve with cancellation
-        review.resolve({
-            approved: false,
-            anonymisedText: review.originalText,
-            replacementsCount: 0
-        });
-
-        // Clean up
-        window.currentPIIReview = null;
-    };
+    // Replace the review container in summary
+    const existingReview = document.getElementById('pii-review-current');
+    if (existingReview && existingReview.parentElement) {
+        existingReview.outerHTML = reviewHtml;
+    } else {
+        appendToSummary1(reviewHtml, true);
+    }
 }
+
+// Handle user decision on current PII match
+window.handlePIIDecision = function(action) {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const currentMatch = review.consolidatedMatches[review.currentIndex];
+    
+    // If action is from button click, use it; otherwise get from radio
+    let finalAction = action;
+    if (action === 'replace' || action === 'keep') {
+        // Use the action parameter
+    } else {
+        // Get from radio selection
+        const selectedRadio = document.querySelector('input[name="pii-current-action"]:checked');
+        finalAction = selectedRadio ? selectedRadio.value : 'keep';
+    }
+
+    console.log('[PII REVIEW] Decision:', finalAction, 'for match:', currentMatch.text);
+
+    // Record the decision
+    review.decisions.push({
+        match: currentMatch,
+        action: finalAction
+    });
+
+    // Clear the blue highlighting
+    clearHighlightInEditor();
+
+    // Move to next match
+    review.currentIndex++;
+    
+    // Show next match or complete
+    showCurrentPIIMatch();
+};
+
+// Navigate between PII matches
+window.navigatePIIReview = function(direction) {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    // Clear current highlighting
+    clearHighlightInEditor();
+
+    // If going back, remove the last decision
+    if (direction < 0 && review.currentIndex > 0) {
+        review.currentIndex--;
+        // Remove the last decision if it exists
+        if (review.decisions.length > review.currentIndex) {
+            review.decisions.pop();
+        }
+    }
+
+    // Show the match at current index
+    showCurrentPIIMatch();
+};
+
+// Complete the PII review and apply all decisions
+function completePIIReview() {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    console.log('[PII REVIEW] Completing review with', review.decisions.length, 'decisions');
+
+    // Clear any remaining highlighting
+    clearHighlightInEditor();
+
+    // Apply all decisions
+    let anonymisedText = review.originalText;
+    let replacementsCount = 0;
+    const replacements = [];
+
+    review.decisions.forEach(({ match, action }) => {
+        if (action === 'replace') {
+            const replacement = match.replacement || '[REDACTED]';
+            anonymisedText = anonymisedText.replace(
+                new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                replacement
+            );
+            replacements.push({
+                findText: match.text,
+                replacementText: replacement
+            });
+            replacementsCount++;
+        }
+    });
+
+    // Update the Clinical Note with anonymised text
+    if (replacementsCount > 0) {
+        pushToHistory(getUserInputContent());
+        setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
+    }
+
+    // Show completion message
+    const completionHtml = `
+        <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
+            <strong>✅ Privacy Review Complete</strong><br>
+            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original
+        </div>
+    `;
+    
+    const reviewContainer = document.getElementById('pii-review-current');
+    if (reviewContainer) {
+        reviewContainer.outerHTML = completionHtml;
+    } else {
+        appendToSummary1(completionHtml, false);
+    }
+
+    // Resolve the promise
+    review.resolve({
+        approved: true,
+        anonymisedText,
+        replacementsCount
+    });
+
+    // Clean up
+    window.currentPIIReview = null;
+}
+
+// Cancel the entire PII review
+window.cancelPIIReview = function() {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    console.log('[PII REVIEW] Review cancelled by user');
+
+    // Clear highlighting
+    clearHighlightInEditor();
+
+    // Show cancellation message
+    const cancelHtml = `
+        <div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;">
+            <strong>⚠️ Privacy Review Cancelled</strong><br>
+            Original text will be used without anonymisation
+        </div>
+    `;
+    
+    const reviewContainer = document.getElementById('pii-review-current');
+    if (reviewContainer) {
+        reviewContainer.outerHTML = cancelHtml;
+    } else {
+        appendToSummary1(cancelHtml, false);
+    }
+
+    // Resolve with cancellation
+    review.resolve({
+        approved: false,
+        anonymisedText: review.originalText,
+        replacementsCount: 0
+    });
+
+    // Clean up
+    window.currentPIIReview = null;
+};
 
 // Helper to escape HTML entities
 function escapeHtml(text) {
@@ -289,6 +423,161 @@ function applyColoredReplacements(anonymisedText, replacements) {
     html = html.replace(/\n/g, '<br>');
     
     return `<p>${html}</p>`;
+}
+
+// ===== Text Highlighting Utilities for Review Workflows =====
+
+/**
+ * Highlight specific text in the TipTap editor with a given color
+ * @param {string} text - The text to highlight
+ * @param {string} color - The color to use (default: blue #3B82F6)
+ * @returns {boolean} - True if text was found and highlighted, false otherwise
+ */
+function highlightTextInEditor(text, color = '#3B82F6') {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[HIGHLIGHT] Editor not available');
+        return false;
+    }
+
+    try {
+        // Clear any existing highlights first
+        clearHighlightInEditor();
+
+        // Get the current content
+        const content = editor.getText();
+        
+        // Find the text position
+        const startPos = content.toLowerCase().indexOf(text.toLowerCase());
+        if (startPos === -1) {
+            console.warn('[HIGHLIGHT] Text not found in editor:', text);
+            return false;
+        }
+
+        const endPos = startPos + text.length;
+
+        // Select the text range
+        editor.commands.setTextSelection({ from: startPos + 1, to: endPos + 1 });
+        
+        // Apply the color
+        editor.commands.setColor(color);
+        
+        // Deselect to show the highlighting
+        editor.commands.setTextSelection(endPos + 1);
+
+        console.log('[HIGHLIGHT] Text highlighted successfully:', text.substring(0, 50));
+        return true;
+    } catch (error) {
+        console.error('[HIGHLIGHT] Error highlighting text:', error);
+        return false;
+    }
+}
+
+/**
+ * Clear all blue highlighting from the editor
+ */
+function clearHighlightInEditor() {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        return;
+    }
+
+    try {
+        // Get the current JSON content to preserve structure
+        const json = editor.getJSON();
+        
+        // Recursively remove blue color marks
+        const removeBlueHighlight = (node) => {
+            if (node.marks) {
+                node.marks = node.marks.filter(mark => {
+                    if (mark.type === 'textStyle' && mark.attrs?.color === '#3B82F6') {
+                        return false; // Remove blue highlights
+                    }
+                    return true;
+                });
+            }
+            if (node.content) {
+                node.content.forEach(removeBlueHighlight);
+            }
+        };
+
+        if (json.content) {
+            json.content.forEach(removeBlueHighlight);
+        }
+
+        // Update the editor content
+        editor.commands.setContent(json);
+        
+        console.log('[HIGHLIGHT] Cleared blue highlighting');
+    } catch (error) {
+        console.error('[HIGHLIGHT] Error clearing highlights:', error);
+    }
+}
+
+/**
+ * Scroll the specified text into view in the editor
+ * @param {string} text - The text to scroll to
+ * @returns {boolean} - True if scrolled successfully
+ */
+function scrollTextIntoView(text) {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[SCROLL] Editor not available');
+        return false;
+    }
+
+    try {
+        const editorElement = document.getElementById('userInput');
+        if (!editorElement) {
+            return false;
+        }
+
+        const proseMirror = editorElement.querySelector('.ProseMirror');
+        if (!proseMirror) {
+            return false;
+        }
+
+        // Get all text nodes in the editor
+        const walker = document.createTreeWalker(
+            proseMirror,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let node;
+        let foundNode = null;
+        
+        // Find the text node containing our text
+        while (node = walker.nextNode()) {
+            if (node.textContent.toLowerCase().includes(text.toLowerCase())) {
+                foundNode = node;
+                break;
+            }
+        }
+
+        if (foundNode) {
+            // Get the parent element to scroll to
+            const parentElement = foundNode.parentElement;
+            if (parentElement) {
+                // Scroll with some padding
+                parentElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center',
+                    inline: 'nearest'
+                });
+                
+                console.log('[SCROLL] Scrolled text into view:', text.substring(0, 50));
+                return true;
+            }
+        }
+
+        console.warn('[SCROLL] Text not found for scrolling:', text);
+        return false;
+    } catch (error) {
+        console.error('[SCROLL] Error scrolling text:', error);
+        return false;
+    }
 }
 
 // Helper functions for TipTap programmatic change tracking
@@ -3177,7 +3466,12 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
     }
 }
 
-// Display interactive suggestions in outputField
+// ===== One-at-a-Time Dynamic Advice Workflow =====
+
+// Global state for dynamic advice review  
+window.currentSuggestionReview = null;
+
+// Display interactive suggestions in outputField ONE AT A TIME
 async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
     console.log('[DEBUG] displayInteractiveSuggestions called', {
         suggestionsCount: suggestions?.length,
@@ -3197,8 +3491,20 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
         return;
     }
 
-    console.log('[DEBUG] displayInteractiveSuggestions: Creating suggestions HTML');
+    // Store the review data globally
+    window.currentSuggestionReview = {
+        suggestions,
+        guidelineTitle,
+        currentIndex: 0,
+        decisions: []
+    };
 
+    // Show the first suggestion
+    showCurrentSuggestion();
+}
+
+// TEMP PLACEHOLDER - old code follows but won't be called
+function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
     // Create the interactive suggestions HTML
     let suggestionsHtml = `
         <div class="dynamic-advice-container">
@@ -3317,6 +3623,140 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after displaying suggestions
 }
+
+// Display the current suggestion being reviewed
+function showCurrentSuggestion() {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+
+    const { suggestions, guidelineTitle, currentIndex, decisions } = review;
+    const totalSuggestions = suggestions.length;
+
+    if (currentIndex >= totalSuggestions) {
+        completeSuggestionReview();
+        return;
+    }
+
+    const suggestion = suggestions[currentIndex];
+    const progressText = `${currentIndex + 1} of ${totalSuggestions}`;
+    const categoryIcon = getCategoryIcon(suggestion.category);
+
+    console.log('[ADVICE] Showing suggestion', progressText);
+
+    if (suggestion.originalText) {
+        highlightTextInEditor(suggestion.originalText);
+        scrollTextIntoView(suggestion.originalText);
+    }
+
+    const suggestionHtml = `
+        <div class="dynamic-advice-container" id="suggestion-review-current">
+            <h3 style="color: #2563eb; margin: 0 0 15px 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
+            <p style="margin: 0 0 10px 0; font-size: 13px; color: #666;"><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
+            <div class="suggestion-current" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
+                <div style="margin: 0 0 15px 0;"><strong style="color: #2563eb;">${categoryIcon} ${suggestion.category || 'Suggestion'}:</strong></div>
+                ${suggestion.originalText ? `<div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #dc2626;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong><br><span style="font-family: monospace; background: #fef3c7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
+                <div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #16a34a;">Suggested:</strong><br><span style="font-family: monospace; background: #dcfce7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
+                <div style="margin: 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
+            </div>
+            <div class="modify-section" id="modify-section-current" style="display: none; background: #fef3c7; border: 2px solid #eab308; padding: 15px; margin: 10px 0; border-radius: 6px;">
+                <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold;">Your modified text:</label>
+                <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
+                <div style="margin-top: 10px;">
+                    <button onclick="confirmCurrentModification()" style="background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">✅ Confirm</button>
+                    <button onclick="hideModifySection()" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px;">❌ Cancel</button>
+                </div>
+            </div>
+            <div class="suggestion-navigation" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                ${currentIndex > 0 ? `<button onclick="navigateSuggestion(-1)" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">⬅ Previous</button>` : ''}
+                <button onclick="handleCurrentSuggestionAction('accept')" style="background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">✅ Accept</button>
+                <button onclick="handleCurrentSuggestionAction('reject')" style="background: #dc2626; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">❌ Reject</button>
+                <button onclick="showModifySection()" style="background: #f59e0b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">✏️ Modify</button>
+                <button onclick="handleCurrentSuggestionAction('skip')" style="background: #64748b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">⏭ Skip</button>
+                <button onclick="cancelSuggestionReview()" style="background: #991b1b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">❌ Cancel All</button>
+            </div>
+            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalSuggestions - currentIndex - 1} remaining</div>
+        </div>
+    `;
+
+    const existingReview = document.getElementById('suggestion-review-current');
+    if (existingReview && existingReview.parentElement) {
+        existingReview.outerHTML = suggestionHtml;
+    } else {
+        appendToSummary1(suggestionHtml, true);
+    }
+}
+
+window.showModifySection = function() { document.getElementById('modify-section-current').style.display = 'block'; };
+window.hideModifySection = function() { document.getElementById('modify-section-current').style.display = 'none'; };
+
+window.handleCurrentSuggestionAction = function(action) {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+    const suggestion = review.suggestions[review.currentIndex];
+    review.decisions.push({ suggestion, action });
+    if (action === 'accept' && suggestion.originalText && suggestion.suggestedText) {
+        const currentContent = getUserInputContent();
+        const newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
+        setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+    }
+    clearHighlightInEditor();
+    review.currentIndex++;
+    showCurrentSuggestion();
+};
+
+window.confirmCurrentModification = function() {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+    const modifyTextarea = document.getElementById('modify-textarea-current');
+    if (!modifyTextarea) return;
+    const modifiedText = modifyTextarea.value.trim();
+    if (!modifiedText) { alert('Please enter some text.'); return; }
+    const suggestion = review.suggestions[review.currentIndex];
+    review.decisions.push({ suggestion, action: 'modify', modifiedText });
+    if (suggestion.originalText) {
+        const currentContent = getUserInputContent();
+        const newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
+        setUserInputContent(newContent, true, 'Dynamic Advice - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+    }
+    clearHighlightInEditor();
+    review.currentIndex++;
+    showCurrentSuggestion();
+};
+
+window.navigateSuggestion = function(direction) {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+    clearHighlightInEditor();
+    if (direction < 0 && review.currentIndex > 0) {
+        review.currentIndex--;
+        if (review.decisions.length > review.currentIndex) review.decisions.pop();
+    }
+    showCurrentSuggestion();
+};
+
+function completeSuggestionReview() {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+    clearHighlightInEditor();
+    const accepted = review.decisions.filter(d => d.action === 'accept').length;
+    const rejected = review.decisions.filter(d => d.action === 'reject').length;
+    const modified = review.decisions.filter(d => d.action === 'modify').length;
+    const skipped = review.suggestions.length - review.decisions.length;
+    const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
+    const reviewContainer = document.getElementById('suggestion-review-current');
+    if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
+    window.currentSuggestionReview = null;
+}
+
+window.cancelSuggestionReview = function() {
+    const review = window.currentSuggestionReview;
+    if (!review) return;
+    clearHighlightInEditor();
+    const cancelHtml = `<div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>⚠️ Suggestions Review Cancelled</strong><br>No changes were applied</div>`;
+    const reviewContainer = document.getElementById('suggestion-review-current');
+    if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
+    window.currentSuggestionReview = null;
+};
 
 // Get category icon for suggestion type
 function getCategoryIcon(category) {
@@ -7756,6 +8196,12 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
 
 // Display combined interactive suggestions from multiple guidelines
 async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSummary) {
+    // Use the same one-at-a-time approach as displayInteractiveSuggestions
+    const guidelineTitle = `${guidelinesSummary?.length || 0} Guidelines Combined`;
+    return displayInteractiveSuggestions(suggestions, guidelineTitle);
+}
+
+async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, guidelinesSummary) {
     console.log('[DEBUG] displayCombinedInteractiveSuggestions called', {
         suggestionsCount: suggestions?.length,
         guidelinesSummary: guidelinesSummary?.length
