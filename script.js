@@ -3618,20 +3618,16 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
     }
 }
 
-// Update decisions summary and enable/disable apply button
+// Update decisions summary (now just shows progress since changes apply immediately)
 function updateDecisionsSummary() {
-    // Update decisions summary and enable/disable apply button for current session
-    
     if (!currentAdviceSession) {
-        console.error('[DEBUG] updateDecisionsSummary: No current advice session');
         return;
     }
 
     const summaryElement = document.getElementById(`decisionsSummary-${currentAdviceSession}`);
-    const applyButton = document.getElementById(`applyAllDecisionsBtn-${currentAdviceSession}`);
     
-    if (!summaryElement || !applyButton) {
-        console.error('[DEBUG] updateDecisionsSummary: Required elements not found for session:', currentAdviceSession);
+    if (!summaryElement) {
+        // Element not found - this is OK since we removed the Apply All button
         return;
     }
 
@@ -3643,19 +3639,13 @@ function updateDecisionsSummary() {
     const rejectedCount = decisions.filter(d => d.action === 'reject').length;
     const modifiedCount = decisions.filter(d => d.action === 'modify').length;
 
-    // Calculate decision counts
-
+    // Show progress summary
     let summaryText = '';
     if (totalDecisions === 0) {
-        summaryText = `Make your decisions above, then click "Apply All Decisions" to update the transcript.`;
-        applyButton.disabled = true;
-    } else if (totalDecisions < totalSuggestions) {
+        summaryText = `Changes apply immediately when you Accept, Reject, or Modify each suggestion.`;
+    } else {
         summaryText = `Progress: ${totalDecisions}/${totalSuggestions} decisions made. `;
         summaryText += `Accepted: ${acceptedCount}, Rejected: ${rejectedCount}, Modified: ${modifiedCount}`;
-        applyButton.disabled = true;
-    } else {
-        summaryText = `All decisions made! Accepted: ${acceptedCount}, Rejected: ${rejectedCount}, Modified: ${modifiedCount}`;
-        applyButton.disabled = false;
     }
 
     summaryElement.textContent = summaryText;
