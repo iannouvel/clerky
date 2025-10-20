@@ -18,6 +18,7 @@ BJOG - 2019 - Thomson - Care of Women Presenting with Suspected Preterm Prelabou
 GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf
 BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf
 NICE - 2025 - Intrapartum Care.pdf
+BJOG - 2024 - Lissauer - Maternal Sepsis.pdf
 NICE Guidance - 2023 - Ectopic.pdf
 BHIVA - 2020 - HIV Guideline.pdf
 BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
@@ -32,7 +33,10 @@ BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf
 GTG 2011 - Suspected Ovarian Masses in Premenopausal Women.pdf
 Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
 NICE Interventional Guidance - 2007 - Laparoscopic Hysterectomy.pdf
+NICE - 2024 - Suspected Sepsis.pdf
 NICE - 2021 - Heavy menstrual bleeding assessment and management.pdf
+GTG 2015 - Reducing the risk of VTE in pregnancy.pdf
+GTG 2015 - Management of VTE in pregnancy.pdf
 NICE - 2017 - Endometriosis Diagnosis and Management.pdf
 GTG 2015 - Post-hysterectomy Vaginal Vault Prolapse.pdf
 Joint RCOG and BSGE Guideline- Laparoscopy in Pregnancy.pdf
