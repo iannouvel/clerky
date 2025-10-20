@@ -2,6 +2,7 @@ BJOG - 2024 - Morris - Small For Gestational Age and Fetal Growth Restriction.pd
 BJOG - 2016 -  Management of Monochorionic Twin Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 GTG 2011 - APH.pdf
+NICE 2024 - Ovarian Cancer Identifying and Managing Familial and Genetic Risk.pdf
 BJOG - 2016 -  Management of Bladder Pain Syndrome.pdf
 BSH - 2021 - OtengâNtim - Sickle Cell Disease In Pregnancy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
@@ -27,6 +28,7 @@ NICE Guidance - 2023 - Ectopic.pdf
 BHIVA - 2020 - HIV Guideline.pdf
 BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
 GTG 2011 - Pregnancy and Breast Cancer.pdf
+BGCS 2024 - Ovarian, Tubal and Primary Peritoneal Cancer.pdf
 BJOG - 2016 -  Management of Premenstrual Syndrome.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
 BJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.pdf
@@ -34,6 +36,7 @@ GTG 2015 - OASI.pdf
 BASHH - 2019 - PID Guideline.pdf
 GTG 2015 - Blood transfusion in Obstetrics.pdf
 NICE - 2017 - Endometriosis diagnosis and management.pdf
+BJOG - 2023 - Regan - Recurrent Miscarriage.pdf
 BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf
 GTG 2011 - Suspected Ovarian Masses in Premenopausal Women.pdf
 Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
