@@ -23,6 +23,8 @@ BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 BJOG - 2024 - Lissauer - Maternal Sepsis.pdf
 BJOG - 2024 - Morris - Small For Gestational Age and Fetal Growth Restriction.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
+BSH - 2021 - OtengâNtim - Sickle Cell Disease In Pregnancy.pdf
+BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
@@ -56,6 +58,7 @@ NICE - 2021 - Heavy menstrual bleeding assessment and management.pdf
 NICE - 2024 - Suspected Sepsis.pdf
 NICE - 2025 - Intrapartum Care.pdf
 NICE 2022 - Fetal monitoring in labour.pdf
+NICE 2024 - Twin and triplet pregnancy.pdf
 NICE 2025 - Caesarean Birth.pdf
 NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf
 NICE Guidance - 2022 - Preterm Labour and Birth.pdf
