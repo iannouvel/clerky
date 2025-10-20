@@ -273,14 +273,15 @@ function escapeHtml(text) {
 }
 
 // Helper to apply colored replacements only to specific tokens
-function applyColoredReplacements(originalText, replacements) {
-    let html = escapeHtml(originalText);
+function applyColoredReplacements(anonymisedText, replacements) {
+    // The anonymisedText already has replacements applied, so we need to color the replacement text
+    let html = escapeHtml(anonymisedText);
     
-    // Apply each replacement with amber color
+    // Color each replacement text (not the original text)
     replacements.forEach(({ findText, replacementText }) => {
-        const escapedFind = findText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(escapedFind, 'gi');
-        const coloredReplacement = `<span style="color: #D97706">${escapeHtml(replacementText)}</span>`;
+        const escapedReplacement = escapeHtml(replacementText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedReplacement, 'gi');
+        const coloredReplacement = `<span style="color: #D97706; font-weight: bold;">${escapeHtml(replacementText)}</span>`;
         html = html.replace(regex, coloredReplacement);
     });
     
