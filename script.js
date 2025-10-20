@@ -216,10 +216,20 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
         if (replacementsCount > 0) {
             // Push current state to history before making changes
             pushToHistory(getUserInputContent());
-            // Update the textarea with programmatic change tracking
-            console.log('[DEBUG] PII Anonymization: Adding programmatic change');
-            setUserInputContent(anonymisedText, true, 'PII Anonymization');
-            console.log('[DEBUG] PII Anonymization: Programmatic changes count:', window.programmaticChanges.length);
+            
+            // Build replacements array for colored highlighting
+            const replacements = [];
+            decisions.forEach(({ match, action }) => {
+                if (action === 'replace') {
+                    replacements.push({
+                        findText: match.text,
+                        replacementText: match.replacement
+                    });
+                }
+            });
+            
+            // Update the textarea with programmatic change tracking and specific colored replacements
+            setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
         }
 
         // Show confirmation in Summary
@@ -255,6 +265,31 @@ function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, 
     };
 }
 
+// Helper to escape HTML entities
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Helper to apply colored replacements only to specific tokens
+function applyColoredReplacements(originalText, replacements) {
+    let html = escapeHtml(originalText);
+    
+    // Apply each replacement with amber color
+    replacements.forEach(({ findText, replacementText }) => {
+        const escapedFind = findText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedFind, 'gi');
+        const coloredReplacement = `<span style="color: #D97706">${escapeHtml(replacementText)}</span>`;
+        html = html.replace(regex, coloredReplacement);
+    });
+    
+    // Convert newlines to <br> for HTML display
+    html = html.replace(/\n/g, '<br>');
+    
+    return `<p>${html}</p>`;
+}
+
 // Helper functions for TipTap programmatic change tracking
 function getUserInputContent() {
     const editor = window.editors?.userInput;
@@ -264,7 +299,7 @@ function getUserInputContent() {
     return '';
 }
 
-function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update') {
+function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null) {
     const editor = window.editors?.userInput;
     
     if (!editor || !editor.commands) {
@@ -272,32 +307,42 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         return;
     }
     
+    // Safe content handling for logging
+    const safeContent = typeof content === 'string' ? content : (content?.toString() ?? '');
+    
     // Log every programmatic change to console
     if (isProgrammatic) {
         console.log('═══════════════════════════════════════════════');
         console.log('[PROGRAMMATIC CHANGE]');
         console.log('Type:', changeType);
-        console.log('Length:', content.length, 'characters');
-        console.log('Preview:', content.substring(0, 150) + (content.length > 150 ? '...' : ''));
+        console.log('Length:', safeContent.length, 'characters');
+        console.log('Preview:', safeContent.substring(0, 150) + (safeContent.length > 150 ? '...' : ''));
         console.log('═══════════════════════════════════════════════');
         
         // Store change in history
         window.programmaticChangeHistory.push({
             type: changeType,
-            content: content,
+            content: safeContent,
             timestamp: new Date(),
             editorState: editor.getJSON()
         });
         window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
         
         // Set content with amber color
-        editor.commands.setContent(`<p><span style="color: #D97706">${content.replace(/\n/g, '</span></p><p><span style="color: #D97706">').replace(/<p><span[^>]*><\/span><\/p>/g, '<p><br></p>')}</span></p>`);
+        if (replacements && replacements.length > 0) {
+            // Only color the specific replacements
+            const html = applyColoredReplacements(safeContent, replacements);
+            editor.commands.setContent(html);
+        } else {
+            // Color the entire content (for wholesale replacements like AI generation)
+            editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
+        }
         
         window.hasColoredChanges = true;
         updateClearFormattingButton();
     } else {
         // Regular content update without coloring
-        editor.commands.setContent(content);
+        editor.commands.setContent(safeContent);
     }
 }
 
