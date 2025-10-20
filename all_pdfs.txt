@@ -3,6 +3,7 @@ BJOG - 2016 -  Management of Monochorionic Twin Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 GTG 2011 - APH.pdf
 BJOG - 2016 -  Management of Bladder Pain Syndrome.pdf
+BSH - 2021 - OtengâNtim - Sickle Cell Disease In Pregnancy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 GTG 2010 - Malaria in Pregnancy - Prevention.pdf
 BJOG - 2018 - Jauniaux - Placenta Praevia and Placenta Accreta.pdf
@@ -10,13 +11,16 @@ ESHRE PIL - Endometriosis.pdf
 GTG 2016 - Ovarian Hyperstimulation Syndrome.pdf
 GTG 2015 - Birth After Previous CS.pdf
 BJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.pdf
+BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
 BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.pdf
 NICE - 2021 - Heavy Menstrual Bleeding Assessment and Management.pdf
 hypertension-in-pregnancy-diagnosis-and-management-pdf-66141717671365.pdf
+NICE 2024 - Twin and triplet pregnancy.pdf
 BJOG - 2022 - Shennan - Cervical Cerclage.pdf
 BJOG - 2019 - Thomson - Care of Women Presenting with Suspected Preterm Prelabour Rupture of Membranes from 24 0 Weeks of.pdf
 GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf
 BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf
+NICE 2025 - Caesarean Birth.pdf
 NICE - 2025 - Intrapartum Care.pdf
 BJOG - 2024 - Lissauer - Maternal Sepsis.pdf
 NICE Guidance - 2023 - Ectopic.pdf
@@ -26,6 +30,7 @@ GTG 2011 - Pregnancy and Breast Cancer.pdf
 BJOG - 2016 -  Management of Premenstrual Syndrome.pdf
 GTG 2010 - Malaria in Pregnancy - Treatment.pdf
 BJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.pdf
+GTG 2015 - OASI.pdf
 BASHH - 2019 - PID Guideline.pdf
 GTG 2015 - Blood transfusion in Obstetrics.pdf
 NICE - 2017 - Endometriosis diagnosis and management.pdf
@@ -41,6 +46,7 @@ NICE - 2017 - Endometriosis Diagnosis and Management.pdf
 GTG 2015 - Post-hysterectomy Vaginal Vault Prolapse.pdf
 Joint RCOG and BSGE Guideline- Laparoscopy in Pregnancy.pdf
 BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
+NICE 2022 - Fetal monitoring in labour.pdf
 GTG 2014 - Endometrial Hyperplasia.pdf
 GTG 2015 - Chickenpox in Pregnancy.pdf
 BJOG - 2022 - Girling - Intrahepatic cholestasis of pregnancy.pdf
