@@ -1,4 +1,5 @@
 BASHH - 2019 - PID Guideline.pdf
+BGCS 2024 - Ovarian, Tubal and Primary Peritoneal Cancer.pdf
 BHIVA - 2020 - HIV Guideline.pdf
 BJOG - 2016 -  Management of Bladder Pain Syndrome.pdf
 BJOG - 2016 -  Management of Monochorionic Twin Pregnancy.pdf
@@ -19,6 +20,7 @@ BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
 BJOG - 2022 - Girling - Intrahepatic cholestasis of pregnancy.pdf
 BJOG - 2022 - Shennan - Cervical Cerclage.pdf
 BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
+BJOG - 2023 - Regan - Recurrent Miscarriage.pdf
 BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
 BJOG - 2024 - Lissauer - Maternal Sepsis.pdf
 BJOG - 2024 - Morris - Small For Gestational Age and Fetal Growth Restriction.pdf
@@ -58,6 +60,7 @@ NICE - 2021 - Heavy menstrual bleeding assessment and management.pdf
 NICE - 2024 - Suspected Sepsis.pdf
 NICE - 2025 - Intrapartum Care.pdf
 NICE 2022 - Fetal monitoring in labour.pdf
+NICE 2024 - Ovarian Cancer Identifying and Managing Familial and Genetic Risk.pdf
 NICE 2024 - Twin and triplet pregnancy.pdf
 NICE 2025 - Caesarean Birth.pdf
 NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf
