@@ -39,6 +39,7 @@ GTG 2015 - Blood transfusion in Obstetrics.pdf
 GTG 2015 - Chickenpox in Pregnancy.pdf
 GTG 2015 - FGM.pdf
 GTG 2015 - Management of VTE in pregnancy.pdf
+GTG 2015 - OASI.pdf
 GTG 2015 - Post-hysterectomy Vaginal Vault Prolapse.pdf
 GTG 2015 - Reducing the risk of VTE in pregnancy.pdf
 GTG 2016 - Epilepsy in Pregnancy.pdf
@@ -54,6 +55,8 @@ NICE - 2021 - Heavy Menstrual Bleeding Assessment and Management.pdf
 NICE - 2021 - Heavy menstrual bleeding assessment and management.pdf
 NICE - 2024 - Suspected Sepsis.pdf
 NICE - 2025 - Intrapartum Care.pdf
+NICE 2022 - Fetal monitoring in labour.pdf
+NICE 2025 - Caesarean Birth.pdf
 NICE Guidance - 2010 - Hysterectomy for Endometrial Cancer.pdf
 NICE Guidance - 2022 - Preterm Labour and Birth.pdf
 NICE Guidance - 2023 - Ectopic.pdf
