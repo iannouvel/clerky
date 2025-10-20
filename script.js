@@ -3290,12 +3290,8 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
     suggestionsHtml += `
             </div>
             <div class="advice-footer">
-                <button id="${buttonId}" class="apply-all-btn" onclick="applyAllDecisions()" disabled>
-                    <span class="apply-spinner" style="display: none;">⏳</span>
-                    <span class="apply-text">Apply All Decisions</span>
-                </button>
                 <div class="decisions-summary" id="${summaryId}">
-                    Make your decisions above, then click "Apply All Decisions" to update the transcript.
+                    Changes apply immediately when you Accept, Reject, or Modify each suggestion.
                 </div>
             </div>
         </div>
@@ -3418,7 +3414,7 @@ function handleSuggestionAction(suggestionId, action) {
         return;
     }
 
-    // For accept/reject, record the decision immediately
+    // For accept/reject, record the decision and apply immediately
     userDecisions[suggestionId] = {
         action: action,
         suggestion: suggestion,
@@ -3430,6 +3426,24 @@ function handleSuggestionAction(suggestionId, action) {
         action,
         totalDecisions: Object.keys(userDecisions).length
     });
+
+    // Apply the change immediately if accepted
+    if (action === 'accept' && suggestion.originalText && suggestion.suggestedText) {
+        const currentContent = getUserInputContent();
+        const newContent = currentContent.replace(
+            new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
+            suggestion.suggestedText
+        );
+        
+        // Apply with colored replacement
+        const replacements = [{
+            findText: suggestion.originalText,
+            replacementText: suggestion.suggestedText
+        }];
+        
+        setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', replacements);
+        console.log('[DEBUG] handleSuggestionAction: Applied accepted suggestion immediately');
+    }
 
     // Update UI to show decision
     updateSuggestionStatus(suggestionId, action);
@@ -3473,6 +3487,24 @@ function confirmModification(suggestionId) {
         modifiedTextLength: modifiedText.length,
         totalDecisions: Object.keys(userDecisions).length
     });
+
+    // Apply the modification immediately
+    if (suggestion.originalText) {
+        const currentContent = getUserInputContent();
+        const newContent = currentContent.replace(
+            new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
+            modifiedText
+        );
+        
+        // Apply with colored replacement
+        const replacements = [{
+            findText: suggestion.originalText,
+            replacementText: modifiedText
+        }];
+        
+        setUserInputContent(newContent, true, 'Dynamic Advice - Modified', replacements);
+        console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
+    }
 
     // Hide modify section and update UI
     const modifySection = document.getElementById(`modify-${suggestionId}`);
