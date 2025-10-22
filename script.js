@@ -651,116 +651,6 @@ function displayRelevantGuidelines(categories) {
         return;
     }
 
-    // Helper function to abbreviate organization names
-    function abbreviateOrganization(orgName) {
-        if (!orgName) return '';
-        
-        const mapping = {
-            // Major International Organizations
-            'World Health Organization': 'WHO',
-            'World Health Organisation': 'WHO',
-            'WHO': 'WHO',
-            
-            // UK Organizations
-            'Royal College of Obstetricians and Gynaecologists': 'RCOG',
-            'Royal College of Obstetricians & Gynaecologists': 'RCOG',
-            'RCOG': 'RCOG',
-            'National Institute for Health and Care Excellence': 'NICE',
-            'National Institute for Health and Clinical Excellence': 'NICE',
-            'NICE': 'NICE',
-            'British Medical Association': 'BMA',
-            'BMA': 'BMA',
-            'Royal College of Physicians': 'RCP',
-            'RCP': 'RCP',
-            'Royal College of Surgeons': 'RCS',
-            'RCS': 'RCS',
-            'Royal College of General Practitioners': 'RCGP',
-            'RCGP': 'RCGP',
-            'Royal College of Midwives': 'RCM',
-            'RCM': 'RCM',
-            'Royal College of Nursing': 'RCN',
-            'RCN': 'RCN',
-            
-            // US Organizations
-            'American College of Obstetricians and Gynecologists': 'ACOG',
-            'American College of Obstetricians & Gynecologists': 'ACOG',
-            'ACOG': 'ACOG',
-            'American Medical Association': 'AMA',
-            'AMA': 'AMA',
-            'Centers for Disease Control and Prevention': 'CDC',
-            'CDC': 'CDC',
-            'Food and Drug Administration': 'FDA',
-            'FDA': 'FDA',
-            'American Academy of Pediatrics': 'AAP',
-            'AAP': 'AAP',
-            
-            // European Organizations
-            'European Society of Human Reproduction and Embryology': 'ESHRE',
-            'ESHRE': 'ESHRE',
-            'European Medicines Agency': 'EMA',
-            'EMA': 'EMA',
-            'European Society of Cardiology': 'ESC',
-            'ESC': 'ESC',
-            'International Federation of Gynecology and Obstetrics': 'FIGO',
-            'International Federation of Gynaecology and Obstetrics': 'FIGO',
-            'FIGO': 'FIGO',
-            
-            // Hospital Trusts and Local Organizations
-            'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
-            'University Hospitals Sussex': 'University Hospitals Sussex',
-            'Sussex University Hospitals': 'University Hospitals Sussex',
-            'University Hospital Sussex': 'University Hospitals Sussex',
-            'Brighton and Sussex University Hospitals': 'Brighton & Sussex UH',
-            'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
-            'NHS Foundation Trust': 'NHS Trust',
-            'Foundation Trust': 'NHS Trust',
-            
-            // Common Abbreviations and Variations
-            'Department of Health': 'DOH',
-            'Department of Health and Social Care': 'DHSC',
-            'Public Health England': 'PHE',
-            'Health and Safety Executive': 'HSE',
-            'Medicines and Healthcare products Regulatory Agency': 'MHRA',
-            'MHRA': 'MHRA',
-            
-            // Internal/Local Guidelines (make them more user-friendly)
-            'Maternity Services': 'Maternity',
-            'Obstetrics and Gynaecology': 'Obs & Gynae',
-            'Obstetrics & Gynaecology': 'Obs & Gynae',
-            'Emergency Department': 'Emergency Dept',
-            'Accident and Emergency': 'A&E',
-            'Intensive Care Unit': 'ICU',
-            'Neonatal Intensive Care Unit': 'NICU',
-            'Special Care Baby Unit': 'SCBU'
-        };
-        
-        // Direct mapping first
-        if (mapping[orgName]) {
-            return mapping[orgName];
-        }
-        
-        // Partial matching for complex names
-        for (const [key, value] of Object.entries(mapping)) {
-            if (orgName.toLowerCase().includes(key.toLowerCase()) || 
-                key.toLowerCase().includes(orgName.toLowerCase())) {
-                return value;
-            }
-        }
-        
-        // Special handling for internal codes and hospital names
-        // Remove common suffixes that don't add value
-        let cleaned = orgName
-            .replace(/NHS Foundation Trust$/i, 'NHS Trust')
-            .replace(/Foundation Trust$/i, 'NHS Trust')
-            .replace(/University Hospitals?/i, 'UH')
-            .replace(/Hospital Trust$/i, 'Hospital')
-            .replace(/^(MP|CG|SP|MD|GP)\d+\s*-?\s*/i, '') // Remove internal codes like MP053, CG12004
-            .trim();
-        
-        // If no match found, return the cleaned name (but truncated if too long)
-        return cleaned.length > 25 ? cleaned.substring(0, 22) + '...' : cleaned;
-    }
-
     // Helper function to extract numeric relevance score from descriptive format
     function extractRelevanceScore(relevanceText) {
         if (typeof relevanceText === 'number') {
@@ -881,9 +771,11 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -893,9 +785,11 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -905,9 +799,11 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -917,9 +813,11 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
-            htmlContent += `<li>${standardizedTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
+            htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
     }
@@ -1061,7 +959,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         categories.mostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1075,7 +975,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -1092,7 +992,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1105,7 +1007,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -1122,7 +1024,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1135,7 +1039,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -1152,7 +1056,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const standardizedTitle = standardizeGuidelineTitle(g.title, g.organisation);
+            // Use humanFriendlyName from database, fallback to title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1165,7 +1071,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${standardizedTitle}${orgDisplay}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLink}
                             </div>
@@ -1847,11 +1753,14 @@ async function loadGuidelinesFromFirestore() {
             acc[g.id] = {
                 id: g.id,
                 title: g.title,
+                humanFriendlyName: g.humanFriendlyName || g.human_friendly_name || g.title,
                 content: g.content,
                 summary: g.summary,
                 keywords: g.keywords,
                 condensed: g.condensed,
-                organisation: g.organisation
+                organisation: g.organisation,
+                downloadUrl: g.downloadUrl,
+                originalFilename: g.originalFilename
             };
             return acc;
         }, {});
@@ -6339,81 +6248,6 @@ window.auth.onAuthStateChanged(async (user) => {
 });
 
 // Helper function to standardize guideline titles for better display
-function standardizeGuidelineTitle(title, organisation) {
-    if (!title) return 'Unknown Guideline';
-    
-    let standardized = title.trim();
-    
-    // Remove internal reference codes at the beginning
-    standardized = standardized.replace(/^(MP|CG|SP|MD|GP|GAU)\d+\s*[-:]?\s*/i, '');
-    
-    // Remove common prefixes that don't add value
-    standardized = standardized.replace(/^(Guideline|Protocol|Policy|Standard|Procedure)\s*[-:]?\s*/i, '');
-    
-    // Clean up version information in parentheses
-    standardized = standardized.replace(/\s*\(v?\d+(\.\d+)?\)\s*$/i, '');
-    standardized = standardized.replace(/\s*\(version\s*\d+(\.\d+)?\)\s*$/i, '');
-    
-    // Remove file extensions
-    standardized = standardized.replace(/\.(pdf|doc|docx|txt)$/i, '');
-    
-    // Clean up redundant organization mentions in the title
-    if (organisation) {
-        const orgPatterns = [
-            organisation,
-            abbreviateOrganization(organisation),
-            'NHS Trust',
-            'Foundation Trust'
-        ];
-        
-        orgPatterns.forEach(pattern => {
-            if (pattern) {
-                // Remove org name from end of title if it's already there
-                const regex = new RegExp(`\\s*[-–—]?\\s*${pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`, 'i');
-                standardized = standardized.replace(regex, '');
-            }
-        });
-    }
-    
-    // Common title improvements
-    const titleMappings = {
-        'APH': 'Antepartum Haemorrhage',
-        'PPH': 'Postpartum Haemorrhage',
-        'BSOTS': 'Blood Saving in Obstetric Theatres',
-        'BAC': 'Birth After Caesarean',
-        'LSCS': 'Lower Segment Caesarean Section',
-        'CTG': 'Cardiotocography',
-        'FHR': 'Fetal Heart Rate',
-        'PCOS': 'Polycystic Ovary Syndrome',
-        'IVF': 'In Vitro Fertilisation',
-        'ICSI': 'Intracytoplasmic Sperm Injection'
-    };
-    
-    // Apply title mappings for common abbreviations
-    Object.entries(titleMappings).forEach(([abbrev, full]) => {
-        const regex = new RegExp(`\\b${abbrev}\\b`, 'gi');
-        standardized = standardized.replace(regex, full);
-    });
-    
-    // Capitalize appropriately
-    standardized = standardized
-        .split(' ')
-        .map(word => {
-            // Don't capitalize small connecting words unless they're at the start
-            const smallWords = ['and', 'or', 'the', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by'];
-            if (smallWords.includes(word.toLowerCase()) && standardized.indexOf(word) > 0) {
-                return word.toLowerCase();
-            }
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-        })
-        .join(' ');
-    
-    // Ensure first character is capitalized
-    standardized = standardized.charAt(0).toUpperCase() + standardized.slice(1);
-    
-    return standardized.trim();
-}
-
 function abbreviateOrganization(orgName) {
     if (!orgName) return '';
     
@@ -6834,7 +6668,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             <div class="guidelines-selection-list">
                 ${mostRelevantGuidelines.map((guideline, index) => {
                     const guidelineData = window.globalGuidelines[guideline.id];
-                    const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || guideline.title || guideline.id;
+                    const displayTitle = guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
                     const organization = guidelineData?.organisation || 'Unknown';
                     const relevanceScore = guideline.relevance || 'N/A';
                     
