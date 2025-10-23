@@ -1,0 +1,1098 @@
+{
+  "generated_at": "2025-10-23T15:08:35.979Z",
+  "total_missing": 54,
+  "by_source": {
+    "RCOG": 44,
+    "NICE": 10
+  },
+  "by_priority": {
+    "high": [
+      {
+        "source": "RCOG",
+        "title": "Care of late intrauterine fetal death and stillbirth (No. 55)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-of-late-intrauterine-fetal-death-and-stillbirth-green-top-guideline-no-55/",
+        "guideline_number": "55",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "RCOG",
+        "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+        "guideline_number": "76",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "RCOG",
+        "title": "Care of late intrauterine fetal death and stillbirth (No. 55)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-of-late-intrauterine-fetal-death-and-stillbirth-green-top-guideline-no-55/",
+        "guideline_number": "55",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "RCOG",
+        "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+        "guideline_number": "76",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "RCOG",
+        "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+        "guideline_number": "76",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "NICE",
+        "title": "Postnatal care",
+        "url": "https://www.nice.org.uk/guidance/ng194",
+        "code": "NG194",
+        "year": null,
+        "type": "NICE Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "NICE",
+        "title": "Antenatal and postnatal mental health: clinical management and service guidance",
+        "url": "https://www.nice.org.uk/guidance/cg192",
+        "code": "CG192",
+        "year": null,
+        "type": "Clinical Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "NICE",
+        "title": "Neonatal infection (early onset): antibiotics for prevention and treatment",
+        "url": "https://www.nice.org.uk/guidance/cg149",
+        "code": "CG149",
+        "year": null,
+        "type": "Clinical Guideline",
+        "status": "missing",
+        "priority": "high"
+      },
+      {
+        "source": "NICE",
+        "title": "Antenatal and postnatal mental health",
+        "url": "https://www.nice.org.uk/guidance/qs115",
+        "code": "QS115",
+        "year": null,
+        "type": "Quality Standard",
+        "status": "missing",
+        "priority": "high"
+      }
+    ],
+    "medium": [
+      {
+        "source": "RCOG",
+        "title": "Green-top Guidelines",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/",
+        "guideline_number": null,
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Antepartum Haemorrhage (No. 63)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/antepartum-haemorrhage-green-top-guideline-no-63/",
+        "guideline_number": "63",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Female Genital Mutilation and its Management (No. 53)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/female-genital-mutilation-and-its-management-green-top-guideline-no-53/",
+        "guideline_number": "53",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis and Management (No. 27)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/placenta-praevia-placenta-praevia-accreta-and-vasa-praevia-diagnosis-and-management-green-top-guideline-no-27/",
+        "guideline_number": "27",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Reducing the Risk of Thrombosis and Embolism during Pregnancy and the Puerperium (No. 37a)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/reducing-the-risk-of-thrombosis-and-embolism-during-pregnancy-and-the-puerperium-green-top-guideline-no-37a/",
+        "guideline_number": "37a",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Severe Pre-eclampsia/Eclampsia, Management (No. 10a)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/severe-pre-eclampsiaeclampsia-management-green-top-guideline-no-10a/",
+        "guideline_number": "10a",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Small-for-Gestational-Age Fetus and a Growth Restricted Fetus, Investigation and Care (No. 31)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/small-for-gestational-age-fetus-and-a-growth-restricted-fetus-investigation-and-care-green-top-guideline-no-31/",
+        "guideline_number": "31",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "The Use of Anti-D Immunoglobulin for Rhesus D Prophylaxis (No. 22)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-use-of-anti-d-immunoglobulin-for-rhesus-d-prophylaxis-green-top-guideline-no-22/",
+        "guideline_number": "22",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Thrombosis and Embolism during Pregnancy and the Puerperium: Acute Management (No. 37b)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/thrombosis-and-embolism-during-pregnancy-and-the-puerperium-acute-management-green-top-guideline-no-37b/",
+        "guideline_number": "37b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Vasa Praevia: Diagnosis and Management (No. 27b)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/vasa-praevia-diagnosis-and-management-green-top-guideline-27b/",
+        "guideline_number": "27b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Care after non-invasive pre-natal testing",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-after-non-invasive-pre-natal-testing-green-top-guideline-1/",
+        "guideline_number": null,
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Genital Herpes in Pregnancy, Management (No. 30)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/genital-herpes-in-pregnancy-management-green-top-guideline-no-30/",
+        "guideline_number": "30",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "HIV in Pregnancy, Management (No. 39) [Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/hiv-in-pregnancy-management-green-top-guideline-no-39/",
+        "guideline_number": "39",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "The Diagnosis and Treatment of Malaria in Pregnancy (No. 54b)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-diagnosis-and-treatment-of-malaria-in-pregnancy-green-top-guideline-no-54b/",
+        "guideline_number": "54b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis and Management (No. 27)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/placenta-praevia-placenta-praevia-accreta-and-vasa-praevia-diagnosis-and-management-green-top-guideline-no-27/",
+        "guideline_number": "27",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Preterm Labour, Tocolytic Drugs (No. 1b)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/preterm-labour-tocolytic-drugs-green-top-guideline-no-1b/",
+        "guideline_number": "1b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Shoulder Dystocia (No. 42)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/shoulder-dystocia-green-top-guideline-no-42/",
+        "guideline_number": "42",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Third- and Fourth-degree Perineal Tears, Management (No. 29)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/third-and-fourth-degree-perineal-tears-management-green-top-guideline-no-29/",
+        "guideline_number": "29",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Umbilical Cord Prolapse (No. 50)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/umbilical-cord-prolapse-green-top-guideline-no-50/",
+        "guideline_number": "50",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Severe Pre-eclampsia/Eclampsia, Management (No. 10a)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/severe-pre-eclampsiaeclampsia-management-green-top-guideline-no-10a/",
+        "guideline_number": "10a",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Management of Beta Thalassaemia in Pregnancy (No. 66)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-beta-thalassaemia-in-pregnancy-green-top-guideline-no-66/",
+        "guideline_number": "66",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Sickle Cell Disease in Pregnancy, Management of (No. 61)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/sickle-cell-disease-in-pregnancy-management-of-green-top-guideline-no-61/",
+        "guideline_number": "61",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Preterm Labour, Tocolytic Drugs (No. 1b)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/preterm-labour-tocolytic-drugs-green-top-guideline-no-1b/",
+        "guideline_number": "1b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Reducing the Risk of Thrombosis and Embolism during Pregnancy and the Puerperium (No. 37a)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/reducing-the-risk-of-thrombosis-and-embolism-during-pregnancy-and-the-puerperium-green-top-guideline-no-37a/",
+        "guideline_number": "37a",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Thrombosis and Embolism during Pregnancy and the Puerperium: Acute Management (No. 37b)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/thrombosis-and-embolism-during-pregnancy-and-the-puerperium-acute-management-green-top-guideline-no-37b/",
+        "guideline_number": "37b",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Venous Thromboembolism and Hormonal Contraception (No. 40)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/venous-thromboembolism-and-hormonal-contraception-green-top-guideline-no-40/",
+        "guideline_number": "40",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Early Pregnancy Loss, Management (No. 25)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/early-pregnancy-loss-management-green-top-guideline-no-25/",
+        "guideline_number": "25",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Premenstrual Syndrome, Management (No. 48)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/premenstrual-syndrome-management-green-top-guideline-no-48/",
+        "guideline_number": "48",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "The Initial Management of Chronic Pelvic Pain (No. 41)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-initial-management-of-chronic-pelvic-pain-green-top-guideline-no-41/",
+        "guideline_number": "41",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Ovarian Cysts in Postmenopausal Women (No. 34)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-cysts-in-postmenopausal-women-green-top-guideline-no-34/",
+        "guideline_number": "34",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Venous Thromboembolism and Hormone Replacement Therapy (No. 19)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/venous-thromboembolism-and-hormone-replacement-therapy-green-top-guideline-no-19/",
+        "guideline_number": "19",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Long-term Consequences of Polycystic Ovary Syndrome (No. 33) [Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/long-term-consequences-of-polycystic-ovary-syndrome-green-top-guideline-no-33/",
+        "guideline_number": "33",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Ovarian Cysts in Postmenopausal Women (No. 34)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-cysts-in-postmenopausal-women-green-top-guideline-no-34/",
+        "guideline_number": "34",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Ovarian Masses in Premenopausal Women, Management of Suspected (No. 62)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-masses-in-premenopausal-women-management-of-suspected-green-top-guideline-no-62/",
+        "guideline_number": "62",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Pelvic Inflammatory Disease (No. 32)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/pelvic-inflammatory-disease-green-top-guideline-no-32/",
+        "guideline_number": "32",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "The Initial Management of Chronic Pelvic Pain (No. 41)",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-initial-management-of-chronic-pelvic-pain-green-top-guideline-no-41/",
+        "guideline_number": "41",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Urodynamic Stress Incontinence, Surgical Treatment (No. 35)[Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/urodynamic-stress-incontinence-surgical-treatment-green-top-guideline-no-35/",
+        "guideline_number": "35",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "Vulval Skin Disorders, Management (No. 58) [Archived]",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/vulval-skin-disorders-management-green-top-guideline-no-58/",
+        "guideline_number": "58",
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "RCOG",
+        "title": "RCOG Green-top guidelines in development: quarterly update",
+        "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/rcog-green-top-guidelines-in-development-quarterly-update/",
+        "guideline_number": null,
+        "year": null,
+        "type": "Green-top Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "NICE",
+        "title": "Safe midwifery staffing for maternity settings",
+        "url": "https://www.nice.org.uk/guidance/ng4",
+        "code": "NG4",
+        "year": null,
+        "type": "NICE Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "NICE",
+        "title": "Ectopic pregnancy and miscarriage: diagnosis and initial management",
+        "url": "https://www.nice.org.uk/guidance/ng126",
+        "code": "NG126",
+        "year": null,
+        "type": "NICE Guideline",
+        "status": "missing",
+        "priority": "medium"
+      },
+      {
+        "source": "NICE",
+        "title": "Supporting adult carers",
+        "url": "https://www.nice.org.uk/guidance/qs200",
+        "code": "QS200",
+        "year": null,
+        "type": "Quality Standard",
+        "status": "missing",
+        "priority": "medium"
+      }
+    ],
+    "low": [
+      {
+        "source": "NICE",
+        "title": "Maternal and child nutrition",
+        "url": "https://www.nice.org.uk/guidance/ph11",
+        "code": "PH11",
+        "year": null,
+        "type": "Public Health Guideline",
+        "status": "missing",
+        "priority": "low"
+      },
+      {
+        "source": "NICE",
+        "title": "Smoking: stopping in pregnancy and after childbirth",
+        "url": "https://www.nice.org.uk/guidance/ph26",
+        "code": "PH26",
+        "year": null,
+        "type": "Public Health Guideline",
+        "status": "missing",
+        "priority": "low"
+      },
+      {
+        "source": "NICE",
+        "title": "Weight management before, during and after pregnancy",
+        "url": "https://www.nice.org.uk/guidance/ph27",
+        "code": "PH27",
+        "year": null,
+        "type": "Public Health Guideline",
+        "status": "missing",
+        "priority": "low"
+      }
+    ]
+  },
+  "guidelines": [
+    {
+      "source": "RCOG",
+      "title": "Green-top Guidelines",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/",
+      "guideline_number": null,
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Antepartum Haemorrhage (No. 63)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/antepartum-haemorrhage-green-top-guideline-no-63/",
+      "guideline_number": "63",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Care of late intrauterine fetal death and stillbirth (No. 55)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-of-late-intrauterine-fetal-death-and-stillbirth-green-top-guideline-no-55/",
+      "guideline_number": "55",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "RCOG",
+      "title": "Female Genital Mutilation and its Management (No. 53)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/female-genital-mutilation-and-its-management-green-top-guideline-no-53/",
+      "guideline_number": "53",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+      "guideline_number": "76",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "RCOG",
+      "title": "Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis and Management (No. 27)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/placenta-praevia-placenta-praevia-accreta-and-vasa-praevia-diagnosis-and-management-green-top-guideline-no-27/",
+      "guideline_number": "27",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Reducing the Risk of Thrombosis and Embolism during Pregnancy and the Puerperium (No. 37a)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/reducing-the-risk-of-thrombosis-and-embolism-during-pregnancy-and-the-puerperium-green-top-guideline-no-37a/",
+      "guideline_number": "37a",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Severe Pre-eclampsia/Eclampsia, Management (No. 10a)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/severe-pre-eclampsiaeclampsia-management-green-top-guideline-no-10a/",
+      "guideline_number": "10a",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Small-for-Gestational-Age Fetus and a Growth Restricted Fetus, Investigation and Care (No. 31)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/small-for-gestational-age-fetus-and-a-growth-restricted-fetus-investigation-and-care-green-top-guideline-no-31/",
+      "guideline_number": "31",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "The Use of Anti-D Immunoglobulin for Rhesus D Prophylaxis (No. 22)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-use-of-anti-d-immunoglobulin-for-rhesus-d-prophylaxis-green-top-guideline-no-22/",
+      "guideline_number": "22",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Thrombosis and Embolism during Pregnancy and the Puerperium: Acute Management (No. 37b)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/thrombosis-and-embolism-during-pregnancy-and-the-puerperium-acute-management-green-top-guideline-no-37b/",
+      "guideline_number": "37b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Vasa Praevia: Diagnosis and Management (No. 27b)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/vasa-praevia-diagnosis-and-management-green-top-guideline-27b/",
+      "guideline_number": "27b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Care after non-invasive pre-natal testing",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-after-non-invasive-pre-natal-testing-green-top-guideline-1/",
+      "guideline_number": null,
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Genital Herpes in Pregnancy, Management (No. 30)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/genital-herpes-in-pregnancy-management-green-top-guideline-no-30/",
+      "guideline_number": "30",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "HIV in Pregnancy, Management (No. 39) [Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/hiv-in-pregnancy-management-green-top-guideline-no-39/",
+      "guideline_number": "39",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "The Diagnosis and Treatment of Malaria in Pregnancy (No. 54b)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-diagnosis-and-treatment-of-malaria-in-pregnancy-green-top-guideline-no-54b/",
+      "guideline_number": "54b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Care of late intrauterine fetal death and stillbirth (No. 55)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/care-of-late-intrauterine-fetal-death-and-stillbirth-green-top-guideline-no-55/",
+      "guideline_number": "55",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "RCOG",
+      "title": "Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis and Management (No. 27)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/placenta-praevia-placenta-praevia-accreta-and-vasa-praevia-diagnosis-and-management-green-top-guideline-no-27/",
+      "guideline_number": "27",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Preterm Labour, Tocolytic Drugs (No. 1b)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/preterm-labour-tocolytic-drugs-green-top-guideline-no-1b/",
+      "guideline_number": "1b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Shoulder Dystocia (No. 42)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/shoulder-dystocia-green-top-guideline-no-42/",
+      "guideline_number": "42",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Third- and Fourth-degree Perineal Tears, Management (No. 29)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/third-and-fourth-degree-perineal-tears-management-green-top-guideline-no-29/",
+      "guideline_number": "29",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Umbilical Cord Prolapse (No. 50)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/umbilical-cord-prolapse-green-top-guideline-no-50/",
+      "guideline_number": "50",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+      "guideline_number": "76",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "RCOG",
+      "title": "Severe Pre-eclampsia/Eclampsia, Management (No. 10a)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/severe-pre-eclampsiaeclampsia-management-green-top-guideline-no-10a/",
+      "guideline_number": "10a",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Management of Beta Thalassaemia in Pregnancy (No. 66)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-beta-thalassaemia-in-pregnancy-green-top-guideline-no-66/",
+      "guideline_number": "66",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Management of Thyroid Disorders in Pregnancy (No. 76)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/management-of-thyroid-disorders-in-pregnancy-no-76/",
+      "guideline_number": "76",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "RCOG",
+      "title": "Sickle Cell Disease in Pregnancy, Management of (No. 61)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/sickle-cell-disease-in-pregnancy-management-of-green-top-guideline-no-61/",
+      "guideline_number": "61",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Preterm Labour, Tocolytic Drugs (No. 1b)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/preterm-labour-tocolytic-drugs-green-top-guideline-no-1b/",
+      "guideline_number": "1b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Reducing the Risk of Thrombosis and Embolism during Pregnancy and the Puerperium (No. 37a)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/reducing-the-risk-of-thrombosis-and-embolism-during-pregnancy-and-the-puerperium-green-top-guideline-no-37a/",
+      "guideline_number": "37a",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Thrombosis and Embolism during Pregnancy and the Puerperium: Acute Management (No. 37b)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/thrombosis-and-embolism-during-pregnancy-and-the-puerperium-acute-management-green-top-guideline-no-37b/",
+      "guideline_number": "37b",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Venous Thromboembolism and Hormonal Contraception (No. 40)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/venous-thromboembolism-and-hormonal-contraception-green-top-guideline-no-40/",
+      "guideline_number": "40",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Early Pregnancy Loss, Management (No. 25)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/early-pregnancy-loss-management-green-top-guideline-no-25/",
+      "guideline_number": "25",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Premenstrual Syndrome, Management (No. 48)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/premenstrual-syndrome-management-green-top-guideline-no-48/",
+      "guideline_number": "48",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "The Initial Management of Chronic Pelvic Pain (No. 41)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-initial-management-of-chronic-pelvic-pain-green-top-guideline-no-41/",
+      "guideline_number": "41",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Ovarian Cysts in Postmenopausal Women (No. 34)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-cysts-in-postmenopausal-women-green-top-guideline-no-34/",
+      "guideline_number": "34",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Venous Thromboembolism and Hormone Replacement Therapy (No. 19)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/venous-thromboembolism-and-hormone-replacement-therapy-green-top-guideline-no-19/",
+      "guideline_number": "19",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Long-term Consequences of Polycystic Ovary Syndrome (No. 33) [Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/long-term-consequences-of-polycystic-ovary-syndrome-green-top-guideline-no-33/",
+      "guideline_number": "33",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Ovarian Cysts in Postmenopausal Women (No. 34)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-cysts-in-postmenopausal-women-green-top-guideline-no-34/",
+      "guideline_number": "34",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Ovarian Masses in Premenopausal Women, Management of Suspected (No. 62)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-masses-in-premenopausal-women-management-of-suspected-green-top-guideline-no-62/",
+      "guideline_number": "62",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Pelvic Inflammatory Disease (No. 32)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/pelvic-inflammatory-disease-green-top-guideline-no-32/",
+      "guideline_number": "32",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "The Initial Management of Chronic Pelvic Pain (No. 41)",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/the-initial-management-of-chronic-pelvic-pain-green-top-guideline-no-41/",
+      "guideline_number": "41",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Urodynamic Stress Incontinence, Surgical Treatment (No. 35)[Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/urodynamic-stress-incontinence-surgical-treatment-green-top-guideline-no-35/",
+      "guideline_number": "35",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "Vulval Skin Disorders, Management (No. 58) [Archived]",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/vulval-skin-disorders-management-green-top-guideline-no-58/",
+      "guideline_number": "58",
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "RCOG",
+      "title": "RCOG Green-top guidelines in development: quarterly update",
+      "url": "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/rcog-green-top-guidelines-in-development-quarterly-update/",
+      "guideline_number": null,
+      "year": null,
+      "type": "Green-top Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "NICE",
+      "title": "Postnatal care",
+      "url": "https://www.nice.org.uk/guidance/ng194",
+      "code": "NG194",
+      "year": null,
+      "type": "NICE Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "NICE",
+      "title": "Antenatal and postnatal mental health: clinical management and service guidance",
+      "url": "https://www.nice.org.uk/guidance/cg192",
+      "code": "CG192",
+      "year": null,
+      "type": "Clinical Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "NICE",
+      "title": "Safe midwifery staffing for maternity settings",
+      "url": "https://www.nice.org.uk/guidance/ng4",
+      "code": "NG4",
+      "year": null,
+      "type": "NICE Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "NICE",
+      "title": "Ectopic pregnancy and miscarriage: diagnosis and initial management",
+      "url": "https://www.nice.org.uk/guidance/ng126",
+      "code": "NG126",
+      "year": null,
+      "type": "NICE Guideline",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "NICE",
+      "title": "Neonatal infection (early onset): antibiotics for prevention and treatment",
+      "url": "https://www.nice.org.uk/guidance/cg149",
+      "code": "CG149",
+      "year": null,
+      "type": "Clinical Guideline",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "NICE",
+      "title": "Antenatal and postnatal mental health",
+      "url": "https://www.nice.org.uk/guidance/qs115",
+      "code": "QS115",
+      "year": null,
+      "type": "Quality Standard",
+      "status": "missing",
+      "priority": "high"
+    },
+    {
+      "source": "NICE",
+      "title": "Supporting adult carers",
+      "url": "https://www.nice.org.uk/guidance/qs200",
+      "code": "QS200",
+      "year": null,
+      "type": "Quality Standard",
+      "status": "missing",
+      "priority": "medium"
+    },
+    {
+      "source": "NICE",
+      "title": "Maternal and child nutrition",
+      "url": "https://www.nice.org.uk/guidance/ph11",
+      "code": "PH11",
+      "year": null,
+      "type": "Public Health Guideline",
+      "status": "missing",
+      "priority": "low"
+    },
+    {
+      "source": "NICE",
+      "title": "Smoking: stopping in pregnancy and after childbirth",
+      "url": "https://www.nice.org.uk/guidance/ph26",
+      "code": "PH26",
+      "year": null,
+      "type": "Public Health Guideline",
+      "status": "missing",
+      "priority": "low"
+    },
+    {
+      "source": "NICE",
+      "title": "Weight management before, during and after pregnancy",
+      "url": "https://www.nice.org.uk/guidance/ph27",
+      "code": "PH27",
+      "year": null,
+      "type": "Public Health Guideline",
+      "status": "missing",
+      "priority": "low"
+    }
+  ]
+}
