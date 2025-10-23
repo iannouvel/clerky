@@ -2438,7 +2438,7 @@ html, body {
     padding: 12px;
     outline: none;
     min-height: 150px;
-    height: 100%;
+    height: auto;
     white-space: pre-wrap;
     cursor: text !important;
     user-select: text !important;
