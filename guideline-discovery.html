@@ -300,14 +300,28 @@
                 <span id="discoveryBtnText">🔍 Run Discovery</span>
                 <span id="discoveryBtnSpinner" class="loading-spinner hidden"></span>
             </button>
+            <button id="verifyBtn" class="btn btn-primary" onclick="runHashVerification()" style="background: #10b981;">
+                <span id="verifyBtnText">✓ Verify with Hash Check</span>
+                <span id="verifyBtnSpinner" class="loading-spinner hidden"></span>
+            </button>
             <button id="loadReportBtn" class="btn btn-secondary" onclick="loadReport()">
-                📋 Load Existing Report
+                📋 Load Report
             </button>
             <button id="processSelectedBtn" class="btn btn-success hidden" onclick="processSelected()">
-                ✅ Add Selected Guidelines
+                ✅ Add Selected
             </button>
             <div style="margin-left: auto;">
                 <span id="selectedCount" class="meta-badge meta-priority-medium">0 selected</span>
+            </div>
+        </div>
+        
+        <div id="hashVerificationStatus" class="alert alert-info hidden" style="margin-bottom: 20px;">
+            <div id="hashStatusText"></div>
+            <div id="hashProgress" style="margin-top: 10px;">
+                <div style="background: #e0e7ff; border-radius: 4px; height: 20px; overflow: hidden;">
+                    <div id="hashProgressBar" style="background: #667eea; height: 100%; width: 0%; transition: width 0.3s;"></div>
+                </div>
+                <small id="hashProgressText" style="margin-top: 5px; display: block;"></small>
             </div>
         </div>
 
@@ -401,7 +415,7 @@
                 const result = await response.json();
                 currentReport = result.report;
                 
-                showAlert(`Discovery complete! Found ${result.report.total_missing} missing guidelines.`, 'success');
+                showAlert(`Discovery complete! Found ${result.report.total_missing} potential missing guidelines. Click "Verify with Hash Check" to eliminate duplicates.`, 'success');
                 displayReport(result.report);
                 
             } catch (error) {
@@ -409,6 +423,132 @@
                 showAlert(`Error: ${error.message}`, 'error');
             } finally {
                 showLoading(false);
+            }
+        };
+
+        window.runHashVerification = async function() {
+            if (!currentReport || !currentReport.guidelines) {
+                showAlert('Please run discovery first', 'error');
+                return;
+            }
+
+            try {
+                const verifyBtn = document.getElementById('verifyBtn');
+                const verifyText = document.getElementById('verifyBtnText');
+                const verifySpinner = document.getElementById('verifyBtnSpinner');
+                const statusDiv = document.getElementById('hashVerificationStatus');
+                const statusText = document.getElementById('hashStatusText');
+                const progressBar = document.getElementById('hashProgressBar');
+                const progressText = document.getElementById('hashProgressText');
+
+                verifyBtn.disabled = true;
+                verifyText.classList.add('hidden');
+                verifySpinner.classList.remove('hidden');
+                statusDiv.classList.remove('hidden');
+
+                const user = auth.currentUser;
+                const idToken = await user.getIdToken();
+
+                // Get high-priority guidelines only
+                const highPriority = currentReport.by_priority.high || [];
+                const toVerify = highPriority.slice(0, 10); // Limit to 10 for performance
+
+                statusText.textContent = `Verifying ${toVerify.length} high-priority guidelines...`;
+                
+                const verifiedNew = [];
+                const duplicates = [];
+                const errors = [];
+
+                for (let i = 0; i < toVerify.length; i++) {
+                    const guideline = toVerify[i];
+                    const progress = ((i + 1) / toVerify.length) * 100;
+                    
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = `Checking ${i + 1} of ${toVerify.length}: ${guideline.title.substring(0, 50)}...`;
+
+                    try {
+                        const response = await fetch(`${serverUrl}/verifyGuidelineHash`, {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${idToken}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                url: guideline.url,
+                                source: guideline.source,
+                                code: guideline.code
+                            })
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            guideline.hash = result.hash;
+                            guideline.size = result.size;
+                            
+                            if (result.isDuplicate) {
+                                guideline.existingFile = result.existing;
+                                duplicates.push(guideline);
+                                console.log(`❌ Duplicate: ${guideline.title} (matches: ${result.existing.filename})`);
+                            } else {
+                                verifiedNew.push(guideline);
+                                console.log(`✅ New: ${guideline.title}`);
+                            }
+                        } else {
+                            errors.push(guideline);
+                        }
+                    } catch (error) {
+                        console.error(`Error verifying ${guideline.title}:`, error);
+                        errors.push(guideline);
+                    }
+
+                    // Small delay to avoid overwhelming the server
+                    if (i < toVerify.length - 1) {
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+                }
+
+                // Update report with verified results
+                const verifiedReport = {
+                    ...currentReport,
+                    verified: true,
+                    total_missing: verifiedNew.length,
+                    by_priority: {
+                        high: verifiedNew,
+                        medium: currentReport.by_priority.medium || [],
+                        low: currentReport.by_priority.low || []
+                    },
+                    guidelines: verifiedNew,
+                    duplicates_found: duplicates.length,
+                    verification_errors: errors.length
+                };
+
+                currentReport = verifiedReport;
+
+                statusText.textContent = `✅ Verification complete! Found ${verifiedNew.length} truly new guidelines (${duplicates.length} were duplicates)`;
+                
+                showAlert(`Hash verification complete! ${verifiedNew.length} truly new, ${duplicates.length} duplicates eliminated.`, 'success');
+                displayReport(verifiedReport);
+
+                if (duplicates.length > 0) {
+                    console.log('\n📋 Duplicates eliminated:');
+                    duplicates.forEach(d => {
+                        console.log(`  - ${d.title}`);
+                        console.log(`    Already have: ${d.existingFile?.filename}`);
+                    });
+                }
+
+            } catch (error) {
+                console.error('Hash verification error:', error);
+                showAlert(`Verification error: ${error.message}`, 'error');
+            } finally {
+                const verifyBtn = document.getElementById('verifyBtn');
+                const verifyText = document.getElementById('verifyBtnText');
+                const verifySpinner = document.getElementById('verifyBtnSpinner');
+                
+                verifyBtn.disabled = false;
+                verifyText.classList.remove('hidden');
+                verifySpinner.classList.add('hidden');
             }
         };
 

@@ -8588,6 +8588,8 @@ app.post('/discoverMissingGuidelines', authenticateUser, async (req, res) => {
             return res.status(403).json({ error: 'Unauthorized - Admin access required' });
         }
 
+        const { useHashCheck, priorityFilter, maxToCheck } = req.body;
+
         console.log('[DISCOVERY] Starting guideline discovery...');
         
         // Run the discovery service
@@ -8607,6 +8609,78 @@ app.post('/discoverMissingGuidelines', authenticateUser, async (req, res) => {
         res.status(500).json({
             error: 'Discovery failed',
             details: error.message
+        });
+    }
+});
+
+// Run hash-based verification for a single guideline
+app.post('/verifyGuidelineHash', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        const { url, source, code } = req.body;
+        
+        if (!url) {
+            return res.status(400).json({ error: 'URL required' });
+        }
+
+        console.log(`[HASH_VERIFY] Checking guideline at: ${url}`);
+        
+        // Download PDF
+        let pdfUrl = url;
+        if (source === 'NICE' && code) {
+            pdfUrl = `https://www.nice.org.uk/guidance/${code.toLowerCase()}/resources/${code.toLowerCase()}-pdf`;
+        }
+
+        const axios = require('axios');
+        const crypto = require('crypto');
+        
+        const downloadResponse = await axios.get(pdfUrl, {
+            responseType: 'arraybuffer',
+            timeout: 30000,
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            },
+            maxContentLength: 50 * 1024 * 1024
+        });
+
+        const buffer = Buffer.from(downloadResponse.data);
+        const hash = crypto.createHash('sha256').update(buffer).digest('hex');
+        
+        console.log(`[HASH_VERIFY] Calculated hash: ${hash.substring(0, 16)}...`);
+        
+        // Check against database
+        const query = db.collection('guidelines').where('fileHash', '==', hash);
+        const snapshot = await query.get();
+        
+        const isDuplicate = !snapshot.empty;
+        
+        if (isDuplicate) {
+            const existingDoc = snapshot.docs[0].data();
+            console.log(`[HASH_VERIFY] Duplicate found: ${existingDoc.title || existingDoc.filename}`);
+        } else {
+            console.log(`[HASH_VERIFY] New guideline confirmed`);
+        }
+        
+        res.json({
+            success: true,
+            hash,
+            size: buffer.length,
+            isDuplicate,
+            existing: isDuplicate ? {
+                title: snapshot.docs[0].data().title,
+                filename: snapshot.docs[0].data().filename
+            } : null
+        });
+        
+    } catch (error) {
+        console.error('[HASH_VERIFY] Error:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
         });
     }
 });
