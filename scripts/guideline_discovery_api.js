@@ -3,47 +3,26 @@
  * Backend endpoints for automated guideline discovery and approval
  */
 
-const { spawn } = require('child_process');
 const fs = require('fs').promises;
 const path = require('path');
 const axios = require('axios');
+const { GuidelineDiscoveryService } = require('./guideline_discovery_service');
 
 /**
- * Run the Python discovery service
+ * Run the Node.js discovery service
  */
 async function runDiscoveryService() {
-    return new Promise((resolve, reject) => {
-        const pythonPath = process.env.PYTHON_PATH || 'python';
-        const scriptPath = path.join(__dirname, 'guideline_discovery_service.py');
+    try {
+        console.log('[DISCOVERY] Running Node.js discovery service...');
         
-        console.log('[DISCOVERY] Running Python discovery service...');
+        const service = new GuidelineDiscoveryService();
+        const report = await service.runDiscovery();
         
-        const python = spawn(pythonPath, [scriptPath]);
-        let stdout = '';
-        let stderr = '';
-        
-        python.stdout.on('data', (data) => {
-            stdout += data.toString();
-            console.log('[DISCOVERY]', data.toString().trim());
-        });
-        
-        python.stderr.on('data', (data) => {
-            stderr += data.toString();
-            console.error('[DISCOVERY ERROR]', data.toString().trim());
-        });
-        
-        python.on('close', (code) => {
-            if (code === 0) {
-                resolve({ success: true, output: stdout });
-            } else {
-                reject(new Error(`Discovery service exited with code ${code}: ${stderr}`));
-            }
-        });
-        
-        python.on('error', (error) => {
-            reject(new Error(`Failed to start discovery service: ${error.message}`));
-        });
-    });
+        return { success: true, report };
+    } catch (error) {
+        console.error('[DISCOVERY] Error:', error);
+        throw error;
+    }
 }
 
 /**
