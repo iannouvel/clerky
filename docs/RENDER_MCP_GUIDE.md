@@ -277,3 +277,4 @@ Show me logs containing "Discovery complete"
 
 Just ask questions about your logs naturally, and I'll query Render for you.
 
+

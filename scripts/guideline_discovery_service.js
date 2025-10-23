@@ -391,6 +391,39 @@ class GuidelineDiscoveryService {
         return report;
     }
 
+    /**
+     * Deduplicate guidelines by title and guideline number
+     */
+    deduplicateGuidelines(guidelines) {
+        const seen = new Map();
+        const deduplicated = [];
+
+        for (const guideline of guidelines) {
+            // Create a unique key based on normalized title and guideline number
+            const normalizedTitle = this.normalizeTitle(guideline.title);
+            const guidelineNumber = this.extractGuidelineNumber(guideline.title);
+            
+            let key;
+            if (guidelineNumber) {
+                // Use guideline number as primary key for RCOG
+                key = `${guideline.source}-${guidelineNumber}`;
+            } else {
+                // Use normalized title for NICE
+                key = `${guideline.source}-${normalizedTitle}`;
+            }
+
+            if (!seen.has(key)) {
+                seen.set(key, guideline);
+                deduplicated.push(guideline);
+            } else {
+                console.log(`[DEDUP] Skipping duplicate: ${guideline.title}`);
+            }
+        }
+
+        console.log(`Deduplicated ${guidelines.length} → ${deduplicated.length} guidelines`);
+        return deduplicated;
+    }
+
     async runDiscovery(outputFile = 'data/missing_guidelines_report.json') {
         console.log('Starting guideline discovery process...');
 
@@ -399,8 +432,11 @@ class GuidelineDiscoveryService {
             const rcogGuidelines = await this.scrapeRCOGGuidelines();
             const niceGuidelines = await this.scrapeNICEMaternityGuidelines();
 
-            const allDiscovered = [...rcogGuidelines, ...niceGuidelines];
+            let allDiscovered = [...rcogGuidelines, ...niceGuidelines];
             console.log(`Total discovered: ${allDiscovered.length}`);
+
+            // Deduplicate discovered guidelines
+            allDiscovered = this.deduplicateGuidelines(allDiscovered);
 
             // Compare with database
             const missing = await this.compareWithDatabase(allDiscovered);

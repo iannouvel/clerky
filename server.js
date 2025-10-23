@@ -8633,10 +8633,16 @@ app.post('/verifyGuidelineHash', authenticateUser, async (req, res) => {
         let pdfUrl = url;
         if (source === 'NICE' && code) {
             pdfUrl = `https://www.nice.org.uk/guidance/${code.toLowerCase()}/resources/${code.toLowerCase()}-pdf`;
+        } else if (source === 'RCOG') {
+            // RCOG guidelines often require member login - can't download directly
+            console.log(`[HASH_VERIFY] RCOG guideline - manual download required`);
+            return res.json({
+                success: true,
+                requiresManualDownload: true,
+                message: 'RCOG guidelines often require member login',
+                url: url
+            });
         }
-
-        const axios = require('axios');
-        const crypto = require('crypto');
         
         const downloadResponse = await axios.get(pdfUrl, {
             responseType: 'arraybuffer',
@@ -8644,7 +8650,8 @@ app.post('/verifyGuidelineHash', authenticateUser, async (req, res) => {
             headers: {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             },
-            maxContentLength: 50 * 1024 * 1024
+            maxContentLength: 50 * 1024 * 1024,
+            validateStatus: (status) => status >= 200 && status < 300
         });
 
         const buffer = Buffer.from(downloadResponse.data);

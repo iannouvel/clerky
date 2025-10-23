@@ -449,14 +449,28 @@
                 const user = auth.currentUser;
                 const idToken = await user.getIdToken();
 
-                // Get high-priority guidelines only
+                // Get high-priority guidelines only and deduplicate
                 const highPriority = currentReport.by_priority.high || [];
-                const toVerify = highPriority.slice(0, 10); // Limit to 10 for performance
+                
+                // Deduplicate by normalized title
+                const uniqueGuidelines = [];
+                const seenTitles = new Set();
+                
+                for (const g of highPriority) {
+                    const normalizedTitle = g.title.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+                    if (!seenTitles.has(normalizedTitle)) {
+                        seenTitles.add(normalizedTitle);
+                        uniqueGuidelines.push(g);
+                    }
+                }
+                
+                const toVerify = uniqueGuidelines.slice(0, 10); // Limit to 10 for performance
 
-                statusText.textContent = `Verifying ${toVerify.length} high-priority guidelines...`;
+                statusText.textContent = `Verifying ${toVerify.length} unique high-priority guidelines...`;
                 
                 const verifiedNew = [];
                 const duplicates = [];
+                const manualDownloads = [];
                 const errors = [];
 
                 for (let i = 0; i < toVerify.length; i++) {
@@ -483,14 +497,18 @@
                         const result = await response.json();
 
                         if (result.success) {
-                            guideline.hash = result.hash;
-                            guideline.size = result.size;
-                            
-                            if (result.isDuplicate) {
+                            if (result.requiresManualDownload) {
+                                // RCOG guideline - can't auto-download
+                                guideline.requiresManualDownload = true;
+                                verifiedNew.push(guideline); // Add to new list but mark as manual
+                                console.log(`⚠️ Manual download: ${guideline.title}`);
+                            } else if (result.isDuplicate) {
                                 guideline.existingFile = result.existing;
                                 duplicates.push(guideline);
                                 console.log(`❌ Duplicate: ${guideline.title} (matches: ${result.existing.filename})`);
                             } else {
+                                guideline.hash = result.hash;
+                                guideline.size = result.size;
                                 verifiedNew.push(guideline);
                                 console.log(`✅ New: ${guideline.title}`);
                             }
@@ -508,6 +526,10 @@
                     }
                 }
 
+                // Separate auto-downloadable from manual
+                const autoDownloadable = verifiedNew.filter(g => !g.requiresManualDownload);
+                const manualRequired = verifiedNew.filter(g => g.requiresManualDownload);
+
                 // Update report with verified results
                 const verifiedReport = {
                     ...currentReport,
@@ -520,21 +542,36 @@
                     },
                     guidelines: verifiedNew,
                     duplicates_found: duplicates.length,
+                    manual_downloads: manualRequired.length,
                     verification_errors: errors.length
                 };
 
                 currentReport = verifiedReport;
 
-                statusText.textContent = `✅ Verification complete! Found ${verifiedNew.length} truly new guidelines (${duplicates.length} were duplicates)`;
+                let statusMsg = `✅ Verification complete! `;
+                statusMsg += `${autoDownloadable.length} auto-downloadable, `;
+                statusMsg += `${manualRequired.length} need manual download, `;
+                statusMsg += `${duplicates.length} duplicates eliminated`;
                 
-                showAlert(`Hash verification complete! ${verifiedNew.length} truly new, ${duplicates.length} duplicates eliminated.`, 'success');
+                statusText.textContent = statusMsg;
+                
+                showAlert(`Hash verification complete! ${verifiedNew.length} verified new (${duplicates.length} duplicates eliminated)`, 'success');
                 displayReport(verifiedReport);
 
+                // Log results
                 if (duplicates.length > 0) {
-                    console.log('\n📋 Duplicates eliminated:');
+                    console.log('\n❌ Duplicates eliminated:');
                     duplicates.forEach(d => {
                         console.log(`  - ${d.title}`);
                         console.log(`    Already have: ${d.existingFile?.filename}`);
+                    });
+                }
+
+                if (manualRequired.length > 0) {
+                    console.log('\n⚠️ Manual download required:');
+                    manualRequired.forEach(m => {
+                        console.log(`  - ${m.title}`);
+                        console.log(`    URL: ${m.url}`);
                     });
                 }
 
@@ -584,10 +621,27 @@
 
         function displayReport(report) {
             // Update stats
-            document.getElementById('statTotal').textContent = report.total_missing;
-            document.getElementById('statHigh').textContent = report.by_priority.high.length;
-            document.getElementById('statMedium').textContent = report.by_priority.medium.length;
-            document.getElementById('statLow').textContent = report.by_priority.low.length;
+            const totalNew = report.verified ? report.total_missing : report.total_missing;
+            const highCount = report.by_priority.high.length;
+            const mediumCount = report.by_priority.medium.length;
+            const lowCount = report.by_priority.low.length;
+            
+            document.getElementById('statTotal').textContent = totalNew;
+            document.getElementById('statHigh').textContent = highCount;
+            document.getElementById('statMedium').textContent = mediumCount;
+            document.getElementById('statLow').textContent = lowCount;
+            
+            // Add verification info if available
+            if (report.verified) {
+                const duplicatesInfo = report.duplicates_found > 0 
+                    ? `<br><small style="color: #ef4444;">${report.duplicates_found} duplicates eliminated</small>`
+                    : '';
+                const manualInfo = report.manual_downloads > 0
+                    ? `<br><small style="color: #f59e0b;">${report.manual_downloads} need manual download</small>`
+                    : '';
+                
+                document.getElementById('statTotal').innerHTML = `${totalNew}${duplicatesInfo}${manualInfo}`;
+            }
             
             // Update counts in tabs
             document.getElementById('count-all').textContent = report.total_missing;
@@ -619,25 +673,38 @@
                 return;
             }
             
-            list.innerHTML = filteredGuidelines.map((guideline, index) => `
-                <div class="guideline-item">
+            list.innerHTML = filteredGuidelines.map((guideline, index) => {
+                const isManual = guideline.requiresManualDownload;
+                const isDuplicate = guideline.existingFile;
+                
+                return `
+                <div class="guideline-item" style="${isDuplicate ? 'opacity: 0.6; background: #f9fafb;' : ''}">
                     <input type="checkbox" 
                            class="guideline-checkbox" 
                            id="guideline_${index}"
                            data-index="${index}"
+                           ${isDuplicate ? 'disabled' : ''}
                            onchange="updateSelection(this)">
                     <div class="guideline-content">
-                        <h3 class="guideline-title">${guideline.title}</h3>
+                        <h3 class="guideline-title">
+                            ${guideline.title}
+                            ${isDuplicate ? ' <span style="color: #ef4444; font-size: 0.9em;">(Duplicate)</span>' : ''}
+                            ${isManual ? ' <span style="color: #f59e0b; font-size: 0.9em;">(Manual Download)</span>' : ''}
+                        </h3>
                         <div class="guideline-meta">
                             <span class="meta-badge meta-source">${guideline.source}</span>
                             ${guideline.year ? `<span class="meta-badge meta-year">${guideline.year}</span>` : ''}
                             ${guideline.code ? `<span class="meta-badge meta-year">${guideline.code}</span>` : ''}
                             <span class="meta-badge meta-priority-${guideline.priority}">${guideline.priority.toUpperCase()} Priority</span>
+                            ${isManual ? '<span class="meta-badge" style="background: #fef3c7; color: #92400e;">⚠️ Manual</span>' : ''}
+                            ${isDuplicate ? '<span class="meta-badge" style="background: #fee2e2; color: #991b1b;">❌ Duplicate</span>' : ''}
                         </div>
+                        ${isDuplicate ? `<p style="font-size: 0.9em; color: #6b7280; margin: 8px 0;">Already have: ${guideline.existingFile.filename}</p>` : ''}
                         <a href="${guideline.url}" target="_blank" class="guideline-url">View guideline →</a>
                     </div>
                 </div>
-            `).join('');
+            `;
+            }).join('');
         }
 
         window.filterByPriority = function(priority) {

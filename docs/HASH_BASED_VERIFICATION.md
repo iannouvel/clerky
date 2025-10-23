@@ -262,3 +262,4 @@ const allGuidelines = currentReport.guidelines || [];
 **Speed:** ~3 seconds per guideline  
 **Reliability:** Eliminates all false positives
 
+
