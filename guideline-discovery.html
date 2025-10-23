@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guideline Discovery - Clerky</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .discovery-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .discovery-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .discovery-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+
+        .discovery-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .action-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 0;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            margin: 5px 0 0 0;
+            font-size: 0.9em;
+        }
+
+        .priority-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .priority-tab {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6b7280;
+            transition: all 0.2s;
+        }
+
+        .priority-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .priority-tab:hover {
+            color: #667eea;
+        }
+
+        .guidelines-list {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .guideline-item {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: background 0.2s;
+        }
+
+        .guideline-item:hover {
+            background: #f9fafb;
+        }
+
+        .guideline-checkbox {
+            width: 20px;
+            height: 20px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .guideline-content {
+            flex: 1;
+        }
+
+        .guideline-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #111827;
+            margin: 0 0 8px 0;
+        }
+
+        .guideline-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+
+        .meta-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .meta-source {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .meta-year {
+            background: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        .meta-priority-high {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .meta-priority-medium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .meta-priority-low {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .guideline-url {
+            font-size: 0.9em;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .guideline-url:hover {
+            text-decoration: underline;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .select-all-bar {
+            background: #f3f4f6;
+            padding: 12px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .select-all-bar label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .empty-state {
+            padding: 60px 20px;
+            text-align: center;
+            color: #6b7280;
+        }
+
+        .empty-state svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="discovery-container">
+        <div class="discovery-header">
+            <h1>📚 Guideline Discovery</h1>
+            <p>Automatically find and add missing RCOG and NICE guidelines to your database</p>
+        </div>
+
+        <div class="action-bar">
+            <button id="runDiscoveryBtn" class="btn btn-primary" onclick="runDiscovery()">
+                <span id="discoveryBtnText">🔍 Run Discovery</span>
+                <span id="discoveryBtnSpinner" class="loading-spinner hidden"></span>
+            </button>
+            <button id="loadReportBtn" class="btn btn-secondary" onclick="loadReport()">
+                📋 Load Existing Report
+            </button>
+            <button id="processSelectedBtn" class="btn btn-success hidden" onclick="processSelected()">
+                ✅ Add Selected Guidelines
+            </button>
+            <div style="margin-left: auto;">
+                <span id="selectedCount" class="meta-badge meta-priority-medium">0 selected</span>
+            </div>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div id="statsGrid" class="stats-grid hidden">
+            <div class="stat-card">
+                <p class="stat-number" id="statTotal">0</p>
+                <p class="stat-label">Total Missing</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="statHigh">0</p>
+                <p class="stat-label">High Priority</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="statMedium">0</p>
+                <p class="stat-label">Medium Priority</p>
+            </div>
+            <div class="stat-card">
+                <p class="stat-number" id="statLow">0</p>
+                <p class="stat-label">Low Priority</p>
+            </div>
+        </div>
+
+        <div id="guidelinesSection" class="hidden">
+            <div class="priority-tabs">
+                <button class="priority-tab active" data-priority="all" onclick="filterByPriority('all')">
+                    All (<span id="count-all">0</span>)
+                </button>
+                <button class="priority-tab" data-priority="high" onclick="filterByPriority('high')">
+                    High Priority (<span id="count-high">0</span>)
+                </button>
+                <button class="priority-tab" data-priority="medium" onclick="filterByPriority('medium')">
+                    Medium Priority (<span id="count-medium">0</span>)
+                </button>
+                <button class="priority-tab" data-priority="low" onclick="filterByPriority('low')">
+                    Low Priority (<span id="count-low">0</span>)
+                </button>
+            </div>
+
+            <div class="guidelines-list">
+                <div class="select-all-bar">
+                    <input type="checkbox" id="selectAll" onchange="toggleSelectAll(this)">
+                    <label for="selectAll">Select All</label>
+                </div>
+                <div id="guidelinesList"></div>
+            </div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h3>No Discovery Run Yet</h3>
+            <p>Click "Run Discovery" to find missing guidelines from RCOG and NICE websites</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { auth } from './firebase-init.js';
+        
+        let currentReport = null;
+        let currentPriority = 'all';
+        let selectedGuidelines = new Set();
+        const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+
+        window.runDiscovery = async function() {
+            try {
+                showLoading(true);
+                showAlert('Running discovery... This may take a few moments.', 'info');
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Not authenticated');
+                }
+                
+                const idToken = await user.getIdToken();
+                
+                const response = await fetch(`${serverUrl}/discoverMissingGuidelines`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                currentReport = result.report;
+                
+                showAlert(`Discovery complete! Found ${result.report.total_missing} missing guidelines.`, 'success');
+                displayReport(result.report);
+                
+            } catch (error) {
+                console.error('Discovery error:', error);
+                showAlert(`Error: ${error.message}`, 'error');
+            } finally {
+                showLoading(false);
+            }
+        };
+
+        window.loadReport = async function() {
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Not authenticated');
+                }
+                
+                const idToken = await user.getIdToken();
+                
+                const response = await fetch(`${serverUrl}/getMissingGuidelines`, {
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('No existing report found');
+                }
+                
+                const result = await response.json();
+                currentReport = result.report;
+                
+                showAlert('Report loaded successfully', 'success');
+                displayReport(result.report);
+                
+            } catch (error) {
+                showAlert('No existing report found. Run discovery first.', 'error');
+            }
+        };
+
+        function displayReport(report) {
+            // Update stats
+            document.getElementById('statTotal').textContent = report.total_missing;
+            document.getElementById('statHigh').textContent = report.by_priority.high.length;
+            document.getElementById('statMedium').textContent = report.by_priority.medium.length;
+            document.getElementById('statLow').textContent = report.by_priority.low.length;
+            
+            // Update counts in tabs
+            document.getElementById('count-all').textContent = report.total_missing;
+            document.getElementById('count-high').textContent = report.by_priority.high.length;
+            document.getElementById('count-medium').textContent = report.by_priority.medium.length;
+            document.getElementById('count-low').textContent = report.by_priority.low.length;
+            
+            // Show sections
+            document.getElementById('statsGrid').classList.remove('hidden');
+            document.getElementById('guidelinesSection').classList.remove('hidden');
+            document.getElementById('emptyState').classList.add('hidden');
+            document.getElementById('processSelectedBtn').classList.remove('hidden');
+            
+            // Render guidelines list
+            renderGuidelines(report.guidelines);
+        }
+
+        function renderGuidelines(guidelines) {
+            const list = document.getElementById('guidelinesList');
+            let filteredGuidelines = guidelines;
+            
+            // Filter by priority if needed
+            if (currentPriority !== 'all') {
+                filteredGuidelines = guidelines.filter(g => g.priority === currentPriority);
+            }
+            
+            if (filteredGuidelines.length === 0) {
+                list.innerHTML = '<div class="empty-state"><p>No guidelines in this category</p></div>';
+                return;
+            }
+            
+            list.innerHTML = filteredGuidelines.map((guideline, index) => `
+                <div class="guideline-item">
+                    <input type="checkbox" 
+                           class="guideline-checkbox" 
+                           id="guideline_${index}"
+                           data-index="${index}"
+                           onchange="updateSelection(this)">
+                    <div class="guideline-content">
+                        <h3 class="guideline-title">${guideline.title}</h3>
+                        <div class="guideline-meta">
+                            <span class="meta-badge meta-source">${guideline.source}</span>
+                            ${guideline.year ? `<span class="meta-badge meta-year">${guideline.year}</span>` : ''}
+                            ${guideline.code ? `<span class="meta-badge meta-year">${guideline.code}</span>` : ''}
+                            <span class="meta-badge meta-priority-${guideline.priority}">${guideline.priority.toUpperCase()} Priority</span>
+                        </div>
+                        <a href="${guideline.url}" target="_blank" class="guideline-url">View guideline →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        window.filterByPriority = function(priority) {
+            currentPriority = priority;
+            
+            // Update tab states
+            document.querySelectorAll('.priority-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`[data-priority="${priority}"]`).classList.add('active');
+            
+            // Re-render list
+            if (currentReport) {
+                renderGuidelines(currentReport.guidelines);
+            }
+        };
+
+        window.updateSelection = function(checkbox) {
+            const id = checkbox.id;
+            if (checkbox.checked) {
+                selectedGuidelines.add(id);
+            } else {
+                selectedGuidelines.delete(id);
+            }
+            updateSelectedCount();
+        };
+
+        window.toggleSelectAll = function(checkbox) {
+            const checkboxes = document.querySelectorAll('.guideline-checkbox');
+            checkboxes.forEach(cb => {
+                cb.checked = checkbox.checked;
+                updateSelection(cb);
+            });
+        };
+
+        function updateSelectedCount() {
+            const count = selectedGuidelines.size;
+            document.getElementById('selectedCount').textContent = `${count} selected`;
+        }
+
+        window.processSelected = async function() {
+            if (selectedGuidelines.size === 0) {
+                showAlert('Please select at least one guideline to add', 'error');
+                return;
+            }
+            
+            if (!confirm(`Add ${selectedGuidelines.size} selected guideline(s) to the database?`)) {
+                return;
+            }
+            
+            try {
+                showLoading(true);
+                showAlert('Processing selected guidelines...', 'info');
+                
+                const user = auth.currentUser;
+                const idToken = await user.getIdToken();
+                
+                const response = await fetch(`${serverUrl}/processApprovedGuidelines`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        guidelineIds: Array.from(selectedGuidelines)
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    const successful = result.results.filter(r => r.success).length;
+                    const manual = result.results.filter(r => !r.success).length;
+                    
+                    let message = `✅ Successfully processed ${successful} guideline(s).`;
+                    if (manual > 0) {
+                        message += ` ${manual} require manual download.`;
+                    }
+                    
+                    showAlert(message, 'success');
+                    
+                    // Clear selections
+                    selectedGuidelines.clear();
+                    updateSelectedCount();
+                    
+                    // Show manual download links if needed
+                    const manualItems = result.results.filter(r => !r.success);
+                    if (manualItems.length > 0) {
+                        console.log('Manual download required for:', manualItems);
+                    }
+                } else {
+                    throw new Error('Processing failed');
+                }
+                
+            } catch (error) {
+                showAlert(`Error: ${error.message}`, 'error');
+            } finally {
+                showLoading(false);
+            }
+        };
+
+        function showLoading(show) {
+            const btn = document.getElementById('runDiscoveryBtn');
+            const text = document.getElementById('discoveryBtnText');
+            const spinner = document.getElementById('discoveryBtnSpinner');
+            
+            btn.disabled = show;
+            text.classList.toggle('hidden', show);
+            spinner.classList.toggle('hidden', !show);
+        }
+
+        function showAlert(message, type) {
+            const container = document.getElementById('alertContainer');
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.textContent = message;
+            container.innerHTML = '';
+            container.appendChild(alert);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+
+        // Initialize
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
+

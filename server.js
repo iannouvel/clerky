@@ -8568,6 +8568,145 @@ Generate an incorrect transcript that would fail audit testing for the specific 
     });
   }
 });
+// ============================================================================
+// GUIDELINE DISCOVERY API ENDPOINTS
+// ============================================================================
+const {
+    runDiscoveryService,
+    loadDiscoveryReport,
+    saveApprovalDecisions,
+    loadApprovalDecisions,
+    processApprovedGuidelines
+} = require('./scripts/guideline_discovery_api');
+
+// Run guideline discovery (admin only)
+app.post('/discoverMissingGuidelines', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        console.log('[DISCOVERY] Starting guideline discovery...');
+        
+        // Run the discovery service
+        const result = await runDiscoveryService();
+        
+        // Load the generated report
+        const report = await loadDiscoveryReport();
+        
+        res.json({
+            success: true,
+            message: 'Discovery completed successfully',
+            report: report
+        });
+        
+    } catch (error) {
+        console.error('[DISCOVERY] Error:', error);
+        res.status(500).json({
+            error: 'Discovery failed',
+            details: error.message
+        });
+    }
+});
+
+// Get missing guidelines report (admin only)
+app.get('/getMissingGuidelines', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        const report = await loadDiscoveryReport();
+        const approvals = await loadApprovalDecisions();
+        
+        res.json({
+            success: true,
+            report: report,
+            approvals: approvals
+        });
+        
+    } catch (error) {
+        console.error('[DISCOVERY] Error loading report:', error);
+        res.status(500).json({
+            error: 'Failed to load missing guidelines report',
+            details: error.message
+        });
+    }
+});
+
+// Save approval decisions (admin only)
+app.post('/saveGuidelineApprovals', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        const { approvals } = req.body;
+        
+        if (!approvals) {
+            return res.status(400).json({ error: 'Approvals object required' });
+        }
+
+        const saved = await saveApprovalDecisions(approvals);
+        
+        res.json({
+            success: true,
+            message: 'Approvals saved successfully',
+            approvals: saved
+        });
+        
+    } catch (error) {
+        console.error('[DISCOVERY] Error saving approvals:', error);
+        res.status(500).json({
+            error: 'Failed to save approvals',
+            details: error.message
+        });
+    }
+});
+
+// Process approved guidelines (download and add to database)
+app.post('/processApprovedGuidelines', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        const { guidelineIds } = req.body;
+        
+        if (!guidelineIds || !Array.isArray(guidelineIds)) {
+            return res.status(400).json({ error: 'guidelineIds array required' });
+        }
+
+        const report = await loadDiscoveryReport();
+        const results = await processApprovedGuidelines(guidelineIds, report);
+        
+        res.json({
+            success: true,
+            message: 'Processing completed',
+            results: results
+        });
+        
+    } catch (error) {
+        console.error('[DISCOVERY] Error processing guidelines:', error);
+        res.status(500).json({
+            error: 'Failed to process guidelines',
+            details: error.message
+        });
+    }
+});
+
+// ============================================================================
+// END GUIDELINE DISCOVERY API
+// ============================================================================
+
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
