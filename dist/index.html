@@ -36,6 +36,12 @@
             flex-wrap: wrap;
         }
         
+        /* Make the clerky logo on landing page twice as big */
+        .landing-page h1 {
+            transform: scale(2);
+            margin: 1em 0;
+        }
+        
         .nav-btn {
             margin: 0 5px;
         }
@@ -89,48 +95,110 @@
             cursor: wait;
         }
         
+        .version-number {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+        
+        .model-selector {
+            display: flex;
+            align-items: center;
+        }
+        
+        .model-select {
+            background: var(--card-background);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 200px;
+        }
+        
+        .model-select:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 2px 4px rgba(0, 184, 148, 0.1);
+        }
+        
+        .model-select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+        }
+        
         /* Critical three-column layout fixes */
         #threeColumnView {
-            display: grid !important;
-            grid-template-columns: 10fr 70fr 20fr !important;
-            grid-template-areas: "history transcript issues" !important;
+            display: flex !important;
             width: 100% !important;
             gap: 16px !important;
         }
         
         #historyColumn {
-            grid-area: history !important;
-            width: 100% !important;
-            min-width: 0 !important;
+            display: none !important;
         }
         
-        #transcriptColumn {
-            grid-area: transcript !important;
+        #mainContentArea {
+            flex: 1 !important;
             width: 100% !important;
-            min-width: 0 !important;
         }
         
         #issuesColumn {
-            grid-area: issues !important;
-            width: 100% !important;
-            min-width: 0 !important;
+            display: none !important;
         }
         
         /* Responsive override for mobile */
         @media (max-width: 768px) {
             #threeColumnView {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: auto auto auto !important;
-                grid-template-areas: 
-                    "transcript"
-                    "history"
-                    "issues" !important;
+                flex-direction: column !important;
             }
+        }
+        
+        /* Green border for user input and summary sections matching button color */
+        .user-input-section,
+        #summary1 {
+            border: 2px solid #00b894;
+            border-radius: 8px;
+            padding: 6px;
+            margin: 4px 0;
+            background-color: rgba(0, 184, 148, 0.05);
+        }
+        
+        /* Make textarea fill the entire user input section */
+        .user-input-section textarea {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            resize: vertical;
+            min-height: 80px;
         }
     </style>
 </head>
 <body>
-    <div id="loading" class="loading">Loading...</div>
+    <div id="loading" class="loading-screen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <svg class="loading-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Medical cross icon -->
+                    <rect x="28" y="8" width="8" height="48" fill="currentColor"></rect>
+                    <rect x="8" y="28" width="48" height="8" fill="currentColor"></rect>
+                </svg>
+                <h1 class="loading-title">clerky</h1>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="loading-text">Loading your clinical assistant...</p>
+            </div>
+        </div>
+    </div>
     
     <!-- Landing Page -->
     <div id="landingPage" class="landing-page hidden">
@@ -145,29 +213,62 @@
                 <a href="index.html" class="logo-link">
                     <div class="logo">clerky</div>
                 </a>
-                <button id="modelToggle" class="model-toggle">AI: DeepSeek (deepseek-chat)</button>
+                <span class="version-number">v<span id="appVersion">4.4.0</span></span>
+                <div class="model-selector">
+                    <select id="modelSelect" class="model-select">
+                        <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
+                        <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
+                        <option value="Anthropic">Claude (claude-3-sonnet)</option>
+                        <option value="Mistral">Mistral (mistral-large)</option>
+                        <option value="Gemini">Gemini (gemini-1.5-pro)</option>
+                    </select>
+                </div>
             </div>
             <div class="top-bar-center">
-                <button id="testBtn" class="nav-btn">
+                <button id="processBtn" class="nav-btn primary">
+                    <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span>Dynamic Advice</span>
+                </button>
+                <button id="generateClinicalNoteBtn" class="nav-btn secondary">
+                    <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span id="generateText">Generate Note</span>
+                </button>
+                <button id="askGuidelinesQuestionBtn" class="nav-btn secondary">
+                    <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                    <span>Ask Guidelines A Question</span>
+                </button>
+                <button id="testBtn" class="nav-btn secondary">
                     <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span id="testText">Test</span>
                 </button>
-                <button id="promptsBtn" class="nav-btn">Prompts</button>
-                <button id="guidelinesBtn" class="nav-btn">Guidelines</button>
-                <button id="recordBtn" class="nav-btn">
-                    <span id="recordSymbol" class="record-symbol"></span>Record
-                </button>
-                <button id="actionBtn" class="nav-btn">
-                    <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="actionText">Process</span>
-                </button>
-                <button id="xCheckBtn" class="nav-btn">
-                    <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="xCheckText">Verify</span>
-                </button>
-                <button id="devBtn" class="nav-btn">Dev</button>
             </div>
             <div class="right-content">
+                <div id="settingsContainer" class="settings-container">
+                    <button id="settingsBtn" class="nav-btn settings-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"/>
+                            <path d="M19.4 15C19.2669 15.3016 19.2272 15.6362 19.286 15.9606C19.3448 16.285 19.4995 16.5843 19.73 16.82L19.79 16.88C19.976 17.0657 20.1235 17.2863 20.2241 17.5291C20.3248 17.7719 20.3766 18.0322 20.3766 18.295C20.3766 18.5578 20.3248 18.8181 20.2241 19.0609C20.1235 19.3037 19.976 19.5243 19.79 19.71C19.6043 19.896 19.3837 20.0435 19.1409 20.1441C18.8981 20.2448 18.6378 20.2966 18.375 20.2966C18.1122 20.2966 17.8519 20.2448 17.6091 20.1441C17.3663 20.0435 17.1457 19.896 16.96 19.71L16.9 19.65C16.6643 19.4195 16.365 19.2648 16.0406 19.206C15.7162 19.1472 15.3816 19.1869 15.08 19.32C14.7842 19.4468 14.532 19.6572 14.3543 19.9255C14.1766 20.1938 14.0813 20.5082 14.08 20.83V21C14.08 21.5304 13.8693 22.0391 13.4942 22.4142C13.1191 22.7893 12.6104 23 12.08 23C11.5496 23 11.0409 22.7893 10.6658 22.4142C10.2907 22.0391 10.08 21.5304 10.08 21V20.91C10.0723 20.579 9.96512 20.258 9.77251 19.9887C9.5799 19.7194 9.31074 19.5143 9 19.4C8.69838 19.2669 8.36381 19.2272 8.03941 19.286C7.71502 19.3448 7.41568 19.4995 7.18 19.73L7.12 19.79C6.93425 19.976 6.71368 20.1235 6.47088 20.2241C6.22808 20.3248 5.96783 20.3766 5.705 20.3766C5.44217 20.3766 5.18192 20.3248 4.93912 20.2241C4.69632 20.1235 4.47575 19.976 4.29 19.79C4.10405 19.6043 3.95653 19.3837 3.85588 19.1409C3.75523 18.8981 3.70343 18.6378 3.70343 18.375C3.70343 18.1122 3.75523 17.8519 3.85588 17.6091C3.75653 17.3663 4.10405 17.1457 4.29 16.96L4.35 16.9C4.58054 16.6643 4.73519 16.365 4.794 16.0406C4.85282 15.7162 4.81312 15.3816 4.68 15.08C4.55324 14.7842 4.34276 14.532 4.07447 14.3543C3.80618 14.1766 3.49179 14.0813 3.17 14.08H3C2.46957 14.08 1.96086 13.8693 1.58579 13.4942C1.21071 13.1191 1 12.6104 1 12.08C1 11.5496 1.21071 11.0409 1.58579 10.6658C1.96086 10.2907 2.46957 10.08 3 10.08H3.09C3.42099 10.0723 3.742 9.96512 4.0113 9.77251C4.28059 9.5799 4.48572 9.31074 4.6 9C4.73312 8.69838 4.77282 8.36381 4.714 8.03941C4.65519 7.71502 4.50054 7.41568 4.27 7.18L4.21 7.12C4.02405 6.93425 3.87653 6.71368 3.77588 6.47088C3.67523 6.22808 3.62343 5.96783 3.62343 5.705C3.62343 5.44217 3.67523 5.18192 3.77588 4.93912C3.87653 4.69632 4.02405 4.47575 4.21 4.29C4.39575 4.10405 4.61632 3.95653 4.85912 3.85588C5.10192 3.75523 5.36217 3.70343 5.625 3.70343C5.88783 3.70343 6.14808 3.75523 6.39088 3.85588C6.63368 3.95653 6.85425 4.10405 7.04 4.29L7.1 4.35C7.33568 4.58054 7.63502 4.73519 7.95941 4.794C8.28381 4.85282 8.61838 4.81312 8.92 4.68H9C9.29577 4.55324 9.54802 4.34276 9.72569 4.07447C9.90337 3.80618 9.99872 3.49179 10 3.17V3C10 2.46957 10.2107 1.96086 10.5858 1.58579C10.9609 1.21071 11.4696 1 12 1C12.5304 1 13.0391 1.21071 13.4142 1.58579C13.7893 1.96086 14 2.46957 14 3V3.09C14.0013 3.41179 14.0966 3.72618 14.2743 3.99447C14.452 4.26276 14.7042 4.47324 15 4.6C15.3016 4.73312 15.6362 4.77282 15.9606 4.714C16.285 4.65519 16.5843 4.50054 16.82 4.27L16.88 4.21C17.0657 4.02405 17.2863 3.87653 17.5291 3.77588C17.7719 3.67523 18.0322 3.62343 18.295 3.62343C18.5578 3.62343 18.8181 3.67523 19.0609 3.77588C19.3037 3.87653 19.5243 4.02405 19.71 4.21C19.896 4.39575 20.0435 4.61632 20.1441 4.85912C20.2448 5.10192 20.2966 5.36217 20.2966 5.625C20.2966 5.88783 20.2448 6.14808 20.1441 6.39088C20.0435 6.63368 19.896 6.85425 19.71 7.04L19.65 7.1C19.4195 7.33568 19.2648 7.63502 19.206 7.95941C19.1472 8.28381 19.1869 8.61838 19.32 8.92V9C19.4468 9.29577 19.6572 9.54802 19.9255 9.72569C20.1938 9.90337 20.5082 9.99872 20.83 10H21C21.5304 10 22.0391 10.2107 22.4142 10.5858C22.7893 10.9609 23 11.4696 23 12C23 12.5304 22.7893 13.0391 22.4142 13.4142C22.0391 13.7893 21.5304 14 21 14H20.91C20.5882 14.0013 20.2738 14.0966 20.0055 14.2743C19.7372 14.452 19.5268 14.7042 19.4 15Z"/>
+                        </svg>
+                    </button>
+                    <div id="settingsMenu" class="settings-menu hidden">
+                        <button id="directFakeTranscriptBtn" class="menu-item">
+                            <span id="directFakeTranscriptSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="directFakeTranscriptText">Generate Transcript</span>
+                        </button>
+                        <button id="promptsBtn" class="menu-item">Prompts</button>
+                        <button id="guidelinesBtn" class="menu-item">Guidelines</button>
+                        <button id="actionBtn" class="menu-item">
+                            <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="actionText">Process</span>
+                        </button>
+                        <button id="xCheckBtn" class="menu-item">
+                            <span id="xCheckSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="xCheckText">Verify</span>
+                        </button>
+                        <button id="auditBtn" class="menu-item">Audit</button>
+                        <button id="devBtn" class="menu-item">Dev</button>
+                    </div>
+                </div>
                 <div class="far-right">
                     <div class="user-info">
                         <span id="userLabel">User:</span>
@@ -202,35 +303,36 @@
             <!-- Three Column View - clean version -->
             <div id="threeColumnView">
                 <div id="historyColumn" class="column">
-                    <div id="history" class="history-content" placeholder="This is where historic transcripts will be shown..."></div>
-                </div>
-                <div id="transcriptColumn" class="column">
-                    <div id="summary1" class="transcript-pane active">
-                        <!-- Content will be inserted here -->
+                    <div class="column-header">
+                        <span>Chat History</span>
+                        <button id="newChatBtn" class="add-issue-btn" title="New Chat">+</button>
                     </div>
-                    <div class="user-input-section">
-                        <textarea id="userInput" class="expandable-input" placeholder="Enter your notes here..." rows="3"></textarea>
-                        <div class="input-buttons">
-                            <button id="findGuidelinesBtn" class="nav-btn primary" style="display: none;">Find Relevant Guidelines</button>
-                            <button id="checkGuidelinesBtn" class="nav-btn primary" style="display: none;">Check against guidelines</button>
-                            <button id="processBtn" class="nav-btn primary process-btn">
-                                <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span>Process</span>
-                            </button>
-                            <button id="generateClinicalNoteBtn" class="nav-btn secondary">
-                                <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span id="generateText">Note</span>
-                            </button>
-                            <button id="makeDynamicAdviceBtn" class="nav-btn secondary" style="display: none;">
-                                <span id="dynamicAdviceSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span>Make Advice Dynamic</span>
-                            </button>
+                    <div id="historyList" class="history-list">
+                        <!-- Chat history items will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div id="mainContentArea">
+
+                    <div id="mainTwoColumn" class="main-two-column">
+                        <div class="main-column user-input-col">
+                            <div class="column-header">
+                                Clinical Note
+                                <div class="header-buttons">
+                                    <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
+                                    <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
+                                    <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
+                                    <button id="recordBtn" class="nav-btn record-btn">
+                                        <span id="recordSymbol" class="record-symbol"></span>Record
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="userInput" class="expandable-input tiptap-editor"></div>
+                        </div>
+                        <div class="main-column summary-col">
+                            <div class="column-header">Summary</div>
+                            <div id="summary1" class="transcript-pane active"><!-- Content will be inserted here --></div>
                         </div>
                     </div>
-                </div>
-                <div id="issuesColumn" class="column">
-                    <div class="column-header">Issues <button id="addIssueBtn" class="add-issue-btn">+</button></div>
-                    <div id="suggestedGuidelines" class="accordion-container"></div>
                 </div>
             </div>
             
@@ -526,12 +628,182 @@
     </div>
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
+    
+    <!-- Auto-return to requested page after sign-in -->
+    <script type="module">
+        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+        const auth = window.auth;
+        if (auth) {
+            onAuthStateChanged(auth, (user) => {
+                try {
+                    const returnTo = localStorage.getItem('returnToPage');
+                    if (user && returnTo) {
+                        localStorage.removeItem('returnToPage');
+                        window.location.href = returnTo;
+                    }
+                } catch (e) {
+                    // ignore
+                }
+            });
+        }
+    </script>
 
     <!-- Define server URL -->
     <script>
         window.SERVER_URL = 'https://clerky-uzni.onrender.com';
     </script>
 
+    <!-- TipTap Editor - Load from CDN -->
+    <script type="module">
+        // Import TipTap from CDN and initialize
+        import { Editor } from 'https://cdn.jsdelivr.net/npm/@tiptap/core@2.1.13/+esm';
+        import StarterKit from 'https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.1.13/+esm';
+        import Placeholder from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.1.13/+esm';
+        import TextStyle from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-text-style@2.1.13/+esm';
+        import { Color } from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-color@2.1.13/+esm';
+        
+        // Create global editors object
+        window.editors = window.editors || {};
+        
+        // Initialize userInput editor when DOM is ready
+        function initUserInputEditor() {
+            const element = document.getElementById('userInput');
+            if (!element) {
+                console.warn('userInput element not found');
+                return;
+            }
+            
+            try {
+                const editor = new Editor({
+                    element: element,
+                    extensions: [
+                        StarterKit.configure({
+                            history: {
+                                depth: 100,
+                            },
+                        }),
+                        TextStyle,
+                        Color,
+                        Placeholder.configure({
+                            placeholder: 'Record a transcript, enter a clinical note or ask a question here...'
+                        })
+                    ],
+                    content: '',
+                    editable: true,
+                    autofocus: false,
+                });
+                
+                // Force editor to be editable and focusable
+                editor.on('create', () => {
+                    console.log('[TIPTAP] Editor created, ensuring editability');
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.setAttribute('contenteditable', 'true');
+                        proseMirror.setAttribute('tabindex', '0');
+                        proseMirror.style.outline = 'none';
+                        proseMirror.style.minHeight = '150px';
+                        proseMirror.style.cursor = 'text';
+                        proseMirror.style.userSelect = 'text';
+                        proseMirror.style.webkitUserSelect = 'text';
+                        
+                        // Make sure it's focusable
+                        proseMirror.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            proseMirror.focus();
+                            console.log('[TIPTAP] Editor focused on click');
+                        });
+                        
+                        proseMirror.addEventListener('mousedown', (e) => {
+                            e.preventDefault();
+                            proseMirror.focus();
+                        });
+                        
+                        // Add keyboard event to ensure it's working
+                        proseMirror.addEventListener('keydown', (e) => {
+                            console.log('[TIPTAP] Key pressed:', e.key);
+                            // Don't prevent default - let the key through
+                        }, { capture: false, passive: false });
+                        
+                        // Remove any event listeners that might block input
+                        proseMirror.addEventListener('mousedown', (e) => {
+                            e.stopPropagation();
+                        }, { capture: true });
+                        
+                        proseMirror.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            proseMirror.focus();
+                        }, { capture: true });
+                        
+                        // Force contenteditable to be true
+                        const checkEditable = setInterval(() => {
+                            if (proseMirror.getAttribute('contenteditable') !== 'true') {
+                                proseMirror.setAttribute('contenteditable', 'true');
+                                console.log('[TIPTAP] Re-applied contenteditable=true');
+                            }
+                        }, 1000);
+                        
+                        // Clear interval after 10 seconds
+                        setTimeout(() => clearInterval(checkEditable), 10000);
+                        
+                        console.log('[TIPTAP] Editor made editable and focusable');
+                    }
+                });
+                
+                // Additional fix - ensure the editor is editable after a delay
+                setTimeout(() => {
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.setAttribute('contenteditable', 'true');
+                        proseMirror.setAttribute('tabindex', '0');
+                        proseMirror.style.pointerEvents = 'auto';
+                        proseMirror.style.cursor = 'text';
+                        console.log('[TIPTAP] Additional editability fix applied');
+                    }
+                }, 500);
+                
+                // Add click handler to the entire editor element
+                element.addEventListener('click', (e) => {
+                    console.log('[TIPTAP] Editor clicked, attempting to focus');
+                    const proseMirror = element.querySelector('.ProseMirror');
+                    if (proseMirror) {
+                        proseMirror.focus();
+                        console.log('[TIPTAP] ProseMirror focused on click');
+                    }
+                    if (editor && editor.commands) {
+                        editor.commands.focus();
+                        console.log('[TIPTAP] Editor focused via commands');
+                    }
+                });
+                
+                window.editors.userInput = editor;
+                console.log('[TIPTAP] userInput editor initialized successfully');
+                
+                // Force the editor to be ready for input
+                setTimeout(() => {
+                    if (editor && editor.commands) {
+                        editor.commands.focus();
+                        console.log('[TIPTAP] Editor focused programmatically');
+                    }
+                }, 300);
+                
+                // Dispatch event to notify other scripts
+                window.dispatchEvent(new CustomEvent('tiptapReady'));
+            } catch (error) {
+                console.error('[TIPTAP] Failed to initialize editor:', error);
+            }
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initUserInputEditor);
+        } else {
+            initUserInputEditor();
+        }
+    </script>
+    
+    <!-- Anonymisation module -->
+    <script type="module" src="anonymisation.js"></script>
+    
     <!-- Main application script -->
     <script type="module" src="script.js"></script>
 
@@ -565,15 +837,15 @@
                     // Force layout recalculation in case something broke it
                     threeColumnView.style.display = 'grid';
                     const columnWidth = window.innerWidth > 768 
-                        ? ['10fr', '70fr', '20fr']
+                        ? ['20fr', '80fr']
                         : ['1fr'];
                     
                     if (window.innerWidth > 768) {
                         threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
-                        threeColumnView.style.gridTemplateAreas = '"history transcript issues"';
+                        threeColumnView.style.gridTemplateAreas = '"history transcript"';
                     } else {
                         threeColumnView.style.gridTemplateColumns = columnWidth[0];
-                        threeColumnView.style.gridTemplateAreas = '"transcript" "history" "issues"';
+                        threeColumnView.style.gridTemplateAreas = '"transcript" "history"';
                     }
                 }
             };

@@ -4,8 +4,8 @@ import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
-// Initialize Analytics
-const analytics = getAnalytics(app);
+// Initialize Analytics (disabled in this environment to avoid 403 warnings)
+let analytics; // getAnalytics(app) disabled
 
 // Global variables
 const SERVER_URL = 'https://clerky-uzni.onrender.com';
@@ -231,66 +231,39 @@ document.addEventListener('DOMContentLoaded', async function() {
             costDisplay.appendChild(noteCard);
         }
 
-        // OPTIMISATION: Helper function to format optimized log data into readable content
-        function formatOptimizedLog(logData) {
-            if (!logData) return 'No log data available';
-            
-            let content = '';
-            
-            // Header with basic info
-            content += `AI: ${logData.ai_provider || 'Unknown'} (${logData.ai_model || 'unknown'})\n\n`;
-            
-            // Interaction summary
-            if (logData.type) {
-                content += `Type: ${logData.type}\n`;
-            }
-            if (logData.endpoint) {
-                content += `Endpoint: ${logData.endpoint}\n`;
-            }
-            
-            // Token usage if available
-            if (logData.token_usage) {
-                content += `\nToken Usage:\n`;
-                if (logData.token_usage.prompt_tokens) {
-                    content += `  Prompt: ${logData.token_usage.prompt_tokens} tokens\n`;
-                }
-                if (logData.token_usage.completion_tokens) {
-                    content += `  Response: ${logData.token_usage.completion_tokens} tokens\n`;
-                }
-                if (logData.token_usage.total_tokens) {
-                    content += `  Total: ${logData.token_usage.total_tokens} tokens\n`;
-                }
-            }
-            
-            // Content summary
-            content += `\nContent Summary:\n`;
-            content += `  Prompt Length: ${logData.prompt_length || 0} chars\n`;
-            content += `  Response Length: ${logData.response_length || 0} chars\n`;
-            
-            // Previews
-            if (logData.prompt_preview) {
-                content += `\nPrompt Preview:\n${logData.prompt_preview}\n`;
-            }
-            
-            if (logData.response_preview) {
-                content += `\nResponse Preview:\n${logData.response_preview}\n`;
-            }
-            
-            // Full data for critical interactions
-            if (logData.full_data) {
-                content += `\n--- FULL DATA (Critical Interaction) ---\n`;
-                content += JSON.stringify(logData.full_data, null, 2);
-            }
-            
-            return content;
-        }
-
         // Attach event to the refresh cost button
         const refreshCostBtn = document.getElementById('refreshCostBtn');
         if (refreshCostBtn) {
             refreshCostBtn.addEventListener('click', fetchApiCosts);
         }
         
+        // Tools panel toggle
+        const toolsToggleBtn = document.getElementById('toolsToggleBtn');
+        const toolsPanel = document.getElementById('toolsPanel');
+        const toolsBackdrop = document.getElementById('toolsBackdrop');
+
+        function openTools(open) {
+            const shouldOpen = open ?? !toolsPanel.classList.contains('open');
+            toolsPanel.classList.toggle('open', shouldOpen);
+            toolsBackdrop.style.display = shouldOpen ? 'block' : 'none';
+            toolsPanel.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+            if (shouldOpen) {
+                toolsToggleBtn.textContent = 'Tools ▾';
+            } else {
+                toolsToggleBtn.textContent = 'Tools ▸';
+            }
+        }
+
+        if (toolsToggleBtn && toolsPanel && toolsBackdrop) {
+            toolsToggleBtn.addEventListener('click', () => openTools());
+            toolsBackdrop.addEventListener('click', () => openTools(false));
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && toolsPanel.classList.contains('open')) {
+                    openTools(false);
+                }
+            });
+        }
+
         // Function to update the AI model
         async function updateAIModel() {
             const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
@@ -375,21 +348,38 @@ document.addEventListener('DOMContentLoaded', async function() {
         function showLoginPrompt() {
             console.log('Showing login prompt');
             
-            // Create login button
+            // Avoid adding multiple login buttons
+            if (document.getElementById('devLoginBtn')) {
+                // Also update discovery status if present
+                const status = document.getElementById('discoveryStatus');
+                if (status) status.textContent = 'Please sign in to scan for new guidance.';
+                return;
+            }
+            
+            // Create login button that signs in directly
             const loginButton = document.createElement('button');
-            loginButton.textContent = 'Log In';
+            loginButton.id = 'devLoginBtn';
+            loginButton.textContent = 'Sign in with Google';
             loginButton.className = 'nav-btn';
             loginButton.style.marginLeft = '10px';
-            loginButton.onclick = () => {
-                // Store current page to return to after login
-                localStorage.setItem('returnToPage', 'dev.html');
-                window.location.href = 'index.html';
-            };
+            loginButton.addEventListener('click', async () => {
+                try {
+                    const provider = new GoogleAuthProvider();
+                    await signInWithPopup(auth, provider);
+                } catch (err) {
+                    console.error('Sign-in failed:', err);
+                    alert('Sign-in failed: ' + (err && err.message ? err.message : err));
+                }
+            });
             
-            // Add login button to the top-bar-center
-            document.querySelector('.top-bar-center').appendChild(loginButton);
+            const topBarCenter = document.querySelector('.top-bar-center');
+            if (topBarCenter) topBarCenter.appendChild(loginButton);
+            
+            // Surface inline hint in Discovery tab
+            const status = document.getElementById('discoveryStatus');
+            if (status) status.textContent = 'Please sign in to scan for new guidance.';
         }
-
+        
         // Add click event listener for model toggle
         modelToggle.addEventListener('click', updateAIModel);
 
@@ -400,16 +390,23 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // User is signed in
                 console.log('User is signed in:', user.email);
                 modelToggle.disabled = false;
-                // Remove login prompt if it exists
-                const loginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
-                if (loginButton) {
-                    loginButton.remove();
-                }
+                // Enable discovery scan
+                const scanBtnEl = document.getElementById('scanGuidanceBtn');
+                if (scanBtnEl) scanBtnEl.disabled = false;
+                // Remove any inline login prompt
+                const inlineLoginBtn = document.getElementById('devLoginBtn');
+                if (inlineLoginBtn) inlineLoginBtn.remove();
+                // Remove old login prompt if it exists
+                const legacyLoginButton = document.querySelector('.nav-btn[onclick*="index.html"]');
+                if (legacyLoginButton) legacyLoginButton.remove();
+                // Clear discovery status hint
+                const status = document.getElementById('discoveryStatus');
+                if (status && status.textContent.includes('Please sign in')) status.textContent = '';
             } else {
-                // User is signed out
+                // User is signed out - redirect to login page
                 console.log('User is signed out');
-                modelToggle.disabled = true;
-                showLoginPrompt();
+                try { localStorage.setItem('returnToPage', 'dev.html'); } catch (_) {}
+                window.location.href = 'index.html';
             }
         });
 
@@ -460,6 +457,60 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // Fail silently - don't block log fetching if archiving fails
                 console.warn('🔍 DEBUG: Log archiving error (continuing anyway):', error.message);
             }
+        }
+
+        // OPTIMISATION: Helper function to format optimized log data into readable content
+        function formatOptimizedLog(logData) {
+            if (!logData) return 'No log data available';
+            
+            let content = '';
+            
+            // Header with basic info
+            content += `AI: ${logData.ai_provider || 'Unknown'} (${logData.ai_model || 'unknown'})\n\n`;
+            
+            // Interaction summary
+            if (logData.type) {
+                content += `Type: ${logData.type}\n`;
+            }
+            if (logData.endpoint) {
+                content += `Endpoint: ${logData.endpoint}\n`;
+            }
+            
+            // Token usage if available
+            if (logData.token_usage) {
+                content += `\nToken Usage:\n`;
+                if (logData.token_usage.prompt_tokens) {
+                    content += `  Prompt: ${logData.token_usage.prompt_tokens} tokens\n`;
+                }
+                if (logData.token_usage.completion_tokens) {
+                    content += `  Response: ${logData.token_usage.completion_tokens} tokens\n`;
+                }
+                if (logData.token_usage.total_tokens) {
+                    content += `  Total: ${logData.token_usage.total_tokens} tokens\n`;
+                }
+            }
+            
+            // Content summary
+            content += `\nContent Summary:\n`;
+            content += `  Prompt Length: ${logData.prompt_length || 0} chars\n`;
+            content += `  Response Length: ${logData.response_length || 0} chars\n`;
+            
+            // Previews
+            if (logData.prompt_preview) {
+                content += `\nPrompt Preview:\n${logData.prompt_preview}\n`;
+            }
+            
+            if (logData.response_preview) {
+                content += `\nResponse Preview:\n${logData.response_preview}\n`;
+            }
+            
+            // Full data for critical interactions
+            if (logData.full_data) {
+                content += `\n--- FULL DATA (Critical Interaction) ---\n`;
+                content += JSON.stringify(logData.full_data, null, 2);
+            }
+            
+            return content;
         }
 
         // Function to fetch logs from GitHub repository
@@ -601,6 +652,288 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             }
         }
+
+        // ---- Guideline Discovery Client Logic ----
+        async function getAuthTokenOrPrompt() {
+            const user = auth.currentUser;
+            if (!user) {
+                showLoginPrompt();
+                throw new Error('Not authenticated');
+            }
+            return user.getIdToken();
+        }
+
+        // Load user preferences (included/excluded canonicalIds and excluded URLs)
+        let userPrefs = { includedCanonicalIds: [], excludedCanonicalIds: [], excludedSourceUrls: [] };
+        async function loadUserPrefs() {
+            try {
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/userGuidelinePrefs`, {
+                    method: 'GET',
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    userPrefs = {
+                        includedCanonicalIds: data.includedCanonicalIds || [],
+                        excludedCanonicalIds: data.excludedCanonicalIds || [],
+                        excludedSourceUrls: data.excludedSourceUrls || []
+                    };
+                }
+            } catch (_) {}
+        }
+
+        function renderDiscoveryResults(items) {
+            const container = document.getElementById('discoveryResults');
+            container.innerHTML = '';
+            if (!items || items.length === 0) {
+                container.innerHTML = '<div style="color:#666">No suggestions found.</div>';
+                return;
+            }
+            // Filter client-side using user preferences (URLs)
+            const excludedUrlSet = new Set((userPrefs.excludedSourceUrls || []).map(u => u.toLowerCase()));
+            const filtered = items.filter(i => i.url && !excludedUrlSet.has(i.url.toLowerCase()));
+            if (filtered.length === 0) {
+                container.innerHTML = '<div style="color:#666">All suggestions are excluded.</div>';
+                return;
+            }
+            filtered.forEach(item => {
+                const row = document.createElement('div');
+                row.style.padding = '8px';
+                row.style.marginBottom = '8px';
+                row.style.background = '#fff';
+                row.style.border = '1px solid #e5e7eb';
+                row.style.borderRadius = '6px';
+                row.style.transition = 'opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
+                row.style.overflow = 'hidden';
+                row.dataset.discoveryUrl = (item.url || '').toLowerCase();
+                const meta = [item.organisation, item.type, item.year].filter(Boolean).join(' • ');
+                row.innerHTML = `
+                    <div style="font-weight:600">${item.title || 'Untitled'}</div>
+                    <div style="font-size:12px;color:#555;margin:4px 0">${meta}</div>
+                    <div style="font-size:12px;color:#006;word-break:break-all">${item.url}</div>
+                `;
+                const actions = document.createElement('div');
+                actions.style.marginTop = '6px';
+
+                const openBtn = document.createElement('button');
+                openBtn.className = 'dev-btn';
+                openBtn.textContent = 'Open';
+                openBtn.onclick = async () => {
+                    try {
+                        const token = await getAuthTokenOrPrompt();
+                        const previewUrl = `${SERVER_URL}/proxyGuidelineView?url=${encodeURIComponent(item.url)}&id_token=${encodeURIComponent(token)}`;
+                        const frame = document.getElementById('guidelinePreview');
+                        if (frame) frame.src = previewUrl;
+                    } catch (e) {
+                        window.open(item.url, '_blank');
+                    }
+                };
+
+                const includeBtn = document.createElement('button');
+                includeBtn.className = 'dev-btn';
+                includeBtn.style.marginLeft = '6px';
+                includeBtn.textContent = 'Include';
+                includeBtn.onclick = async () => {
+                    includeBtn.disabled = true;
+                    excludeBtn.disabled = true;
+                    try {
+                        await includeGuidance(item);
+                        removeDiscoveryItemByUrl(item.url, 'Included and saved.');
+                    } finally {
+                        // buttons will be irrelevant after removal; re-enable just in case
+                        includeBtn.disabled = false;
+                        excludeBtn.disabled = false;
+                    }
+                };
+
+                const excludeBtn = document.createElement('button');
+                excludeBtn.className = 'dev-btn';
+                excludeBtn.style.marginLeft = '6px';
+                excludeBtn.textContent = 'Exclude';
+                excludeBtn.onclick = async () => {
+                    includeBtn.disabled = true;
+                    excludeBtn.disabled = true;
+                    try {
+                        await excludeGuidance(item);
+                        removeDiscoveryItemByUrl(item.url, 'Excluded.');
+                    } finally {
+                        includeBtn.disabled = false;
+                        excludeBtn.disabled = false;
+                    }
+                };
+
+                actions.appendChild(openBtn);
+                actions.appendChild(includeBtn);
+                actions.appendChild(excludeBtn);
+                row.appendChild(actions);
+                container.appendChild(row);
+            });
+        }
+
+        function removeDiscoveryItemByUrl(url, statusMessage) {
+            const container = document.getElementById('discoveryResults');
+            const status = document.getElementById('discoveryStatus');
+            if (status && statusMessage) {
+                status.style.color = '#155724';
+                status.style.background = '#d4edda';
+                status.style.border = '1px solid #c3e6cb';
+                status.style.padding = '6px 8px';
+                status.style.borderRadius = '4px';
+                status.textContent = statusMessage;
+                setTimeout(() => {
+                    status.textContent = '';
+                    status.removeAttribute('style');
+                }, 2500);
+            }
+            if (!container) return;
+            const target = container.querySelector(`[data-discovery-url="${(url || '').toLowerCase()}"]`);
+            if (!target) return;
+            // Smooth collapse and fade
+            target.style.maxHeight = `${target.scrollHeight}px`;
+            requestAnimationFrame(() => {
+                target.style.opacity = '0';
+                target.style.maxHeight = '0';
+                target.style.margin = '0';
+                target.style.paddingTop = '0';
+                target.style.paddingBottom = '0';
+            });
+            setTimeout(() => {
+                if (target && target.parentNode) target.parentNode.removeChild(target);
+                // If list becomes empty, show placeholder
+                if (!container.children.length) {
+                    container.innerHTML = '<div style="color:#666">No suggestions found.</div>';
+                }
+            }, 450);
+        }
+
+        async function fetchExclusions() {
+            // Prefer new prefs endpoint; show excluded URLs list
+            await loadUserPrefs();
+            const items = (userPrefs.excludedSourceUrls || []).map(u => ({ url: u, reason: 'excluded' }));
+            return items;
+        }
+
+        function renderExclusions(items) {
+            const panel = document.getElementById('exclusionsPanel');
+            panel.innerHTML = '';
+            if (!items || items.length === 0) {
+                panel.innerHTML = '<div style="color:#666">No exclusions recorded.</div>';
+                return;
+            }
+            items.forEach(e => {
+                const row = document.createElement('div');
+                row.style.padding = '6px';
+                row.style.borderBottom = '1px solid #eee';
+                row.innerHTML = `
+                    <div style="font-size:12px;color:#006;word-break:break-all">${e.url}</div>
+                    <div style="font-size:11px;color:#777">${e.reason || 'excluded'}</div>
+                `;
+                panel.appendChild(row);
+            });
+        }
+
+        async function excludeGuidance(item) {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Excluding...';
+            try {
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/userGuidelinePrefs/update`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ url: item.url, status: 'excluded', reason: 'user_excluded' })
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Failed to exclude');
+                status.textContent = 'Excluded.';
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Exclude failed: ${err.message}`;
+                throw err;
+            }
+        }
+
+        async function includeGuidance(item) {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Including...';
+            try {
+                // 1) Build filename
+                const urlObj = new URL(item.url);
+                const lastSegment = urlObj.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
+                const ext = lastSegment.toLowerCase().endsWith('.pdf') ? '' : '.pdf';
+                const base = (item.organisation ? `${item.organisation} - ` : '') +
+                             (item.year ? `${item.year} - ` : '') +
+                             (item.title || lastSegment.replace(/\.pdf$/i, ''));
+                const safe = base.replace(/[\\\/:*?"<>|]+/g, ' ').trim();
+                const filename = `${safe}${ext || ''}`.replace(/\s+/g, ' ').trim() || lastSegment;
+                // 2) Server-side import to avoid CORS
+                const token = await getAuthTokenOrPrompt();
+                const importRes = await fetch(`${SERVER_URL}/importGuidelineFromUrl`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ url: item.url, filename, markIncluded: true })
+                });
+                const importData = await importRes.json();
+                if (!importRes.ok || !importData.success) throw new Error(importData.error || 'Import failed');
+                status.textContent = 'Included and saved.';
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Include failed: ${err.message}`;
+                throw err;
+            }
+        }
+
+        async function runDiscovery() {
+            const status = document.getElementById('discoveryStatus');
+            status.textContent = 'Scanning...';
+            try {
+                await loadUserPrefs();
+                const token = await getAuthTokenOrPrompt();
+                const res = await fetch(`${SERVER_URL}/discoverGuidelines`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({})
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error || 'Discovery failed');
+                renderDiscoveryResults(data.suggestions || []);
+                status.textContent = `Found ${data.suggestions?.length || 0} suggestions.`;
+            } catch (err) {
+                console.error(err);
+                status.textContent = `Discovery failed: ${err.message}`;
+            }
+        }
+
+        const scanBtn = document.getElementById('scanGuidanceBtn');
+        if (scanBtn) scanBtn.addEventListener('click', runDiscovery);
+
+        const viewExclusionsBtn = document.getElementById('viewExclusionsBtn');
+        if (viewExclusionsBtn) viewExclusionsBtn.addEventListener('click', async () => {
+            const panel = document.getElementById('exclusionsPanel');
+            const visible = panel.style.display !== 'none';
+            if (visible) {
+                panel.style.display = 'none';
+                return;
+            }
+            try {
+                const items = await fetchExclusions();
+                renderExclusions(items);
+                panel.style.display = 'block';
+            } catch (err) {
+                panel.innerHTML = `<div style="color:#a00">${err.message}</div>`;
+                panel.style.display = 'block';
+            }
+        });
+
 
         // Function to load more logs when needed
         async function loadMoreLogs(startIndex, count) {
@@ -960,6 +1293,233 @@ document.addEventListener('DOMContentLoaded', async function() {
                 } catch (error) {
                     console.error('Error deleting guideline data:', error);
                     alert(`Error deleting guideline data: ${error.message}`);
+                }
+            });
+        }
+
+        // Handle PDF upload to Firebase Storage button
+        const uploadPDFsToStorageBtn = document.getElementById('uploadPDFsToStorageBtn');
+        if (uploadPDFsToStorageBtn) {
+            uploadPDFsToStorageBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to upload all PDFs from GitHub to Firebase Storage? This will download all PDF files from the GitHub repository and upload them to Firebase Storage for faster access. This may take several minutes.')) {
+                    return;
+                }
+                
+                try {
+                    // Update button state
+                    const originalText = uploadPDFsToStorageBtn.textContent;
+                    uploadPDFsToStorageBtn.textContent = '⏳ Uploading PDFs...';
+                    uploadPDFsToStorageBtn.disabled = true;
+                    
+                    console.log('🗂️ [PDF_STORAGE] Starting PDF upload to Firebase Storage...');
+                    
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to upload PDFs');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    console.log('Starting PDF upload to Firebase Storage...');
+                    
+                    // Call the new uploadPDFsToStorage endpoint
+                    const response = await fetch(`${SERVER_URL}/uploadPDFsToStorage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('✅ [PDF_STORAGE] PDF upload to Firebase Storage completed successfully!', result);
+                        
+                        let message = `🎉 PDF Upload to Firebase Storage Complete!\n\n`;
+                        message += `📊 Results:\n`;
+                        message += `• Total PDF files found: ${result.results.totalFiles}\n`;
+                        message += `• Successfully uploaded: ${result.results.uploaded}\n`;
+                        message += `• Already existed: ${result.results.results.filter(r => r.status === 'already_exists').length}\n`;
+                        message += `• Errors: ${result.results.errors}\n\n`;
+                        
+                        if (result.results.results && result.results.results.length > 0) {
+                            message += `📁 Upload Details (first 10):\n`;
+                            result.results.results.slice(0, 10).forEach(item => {
+                                if (item.status === 'uploaded') {
+                                    message += `• ✅ ${item.name} (${Math.round(item.size / 1024)} KB)\n`;
+                                } else if (item.status === 'already_exists') {
+                                    message += `• 📂 ${item.name} (already exists)\n`;
+                                } else if (item.status === 'error') {
+                                    message += `• ❌ ${item.name} (${item.error})\n`;
+                                }
+                            });
+                            if (result.results.results.length > 10) {
+                                message += `• ... and ${result.results.results.length - 10} more\n`;
+                            }
+                        }
+                        
+                        // Show success message and detailed logs
+                        alert(message);
+                        console.log('📊 [PDF_STORAGE] Detailed results:', result.results);
+                    } else {
+                        throw new Error(result.error || 'PDF upload to Firebase Storage failed');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error uploading PDFs to Firebase Storage:', error);
+                    alert(`❌ PDF upload to Firebase Storage failed: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    uploadPDFsToStorageBtn.textContent = originalText;
+                    uploadPDFsToStorageBtn.disabled = false;
+                }
+            });
+        }
+
+        // Handle content repair button
+        const repairContentBtn = document.getElementById('repairContentBtn');
+        if (repairContentBtn) {
+            repairContentBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to repair content issues? This will check all guidelines for missing content/condensed text and attempt to generate them from PDFs. This may take several minutes.')) {
+                    return;
+                }
+                
+                try {
+                    // Update button state
+                    const originalText = repairContentBtn.textContent;
+                    repairContentBtn.textContent = '🔄 Repairing...';
+                    repairContentBtn.disabled = true;
+                    
+                    console.log('🔧 [CONTENT_REPAIR] Starting comprehensive content repair process...');
+                    
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to repair content');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    console.log('Starting content repair process...');
+                    
+                    // Call the existing migrateNullMetadata endpoint
+                    const response = await fetch(`${SERVER_URL}/migrateNullMetadata`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('✅ [CONTENT_REPAIR] Content repair completed successfully!', result);
+                        
+                        let message = `🎉 Content Repair Complete!\n\n`;
+                        message += `📊 Results:\n`;
+                        message += `• Total guidelines processed: ${result.results.total}\n`;
+                        message += `• Guidelines updated: ${result.results.updated}\n`;
+                        message += `• Migration errors: ${result.results.errors}\n\n`;
+                        
+                        if (result.results.details && result.results.details.length > 0) {
+                            message += `🔧 Updated Guidelines (first 10):\n`;
+                            result.results.details.slice(0, 10).forEach(detail => {
+                                if (detail.updates) {
+                                    const updatedFields = Object.keys(detail.updates).join(', ');
+                                    message += `• ${detail.id}: ${updatedFields}\n`;
+                                }
+                            });
+                            if (result.results.details.length > 10) {
+                                message += `• ... and ${result.results.details.length - 10} more\n`;
+                            }
+                        }
+                        
+                        // Show success message and detailed logs
+                        alert(message);
+                        console.log('📊 [CONTENT_REPAIR] Detailed results:', result.results);
+                    } else {
+                        throw new Error(result.error || 'Content repair failed');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error repairing content:', error);
+                    alert(`❌ Content repair failed: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    repairContentBtn.textContent = originalText;
+                    repairContentBtn.disabled = false;
+                }
+            });
+        }
+
+
+
+        // Handle database migration button
+        const migrateDatabaseBtn = document.getElementById('migrateDatabaseBtn');
+        if (migrateDatabaseBtn) {
+            migrateDatabaseBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to migrate the database to single collection structure? This will consolidate data from summaries, keywords, and condensed collections into the main guidelines collection. This action cannot be easily undone.')) {
+                    return;
+                }
+                
+                try {
+                    migrateDatabaseBtn.textContent = '🔄 Migrating...';
+                    migrateDatabaseBtn.disabled = true;
+                    
+                    console.log('🔄 [DB_MIGRATION] Starting database migration...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/migrateToSingleCollection`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [DB_MIGRATION] Migration completed:', result);
+                    
+                    // Show detailed results
+                    const message = `Database migration completed successfully!\n\n` +
+                        `Migrated: ${result.migrated} guidelines\n` +
+                        `Collections processed:\n` +
+                        `- Guidelines: ${result.collections.guidelines}\n` +
+                        `- Summaries: ${result.collections.summaries}\n` +
+                        `- Keywords: ${result.collections.keywords}\n` +
+                        `- Condensed: ${result.collections.condensed}\n\n` +
+                        `All data is now consolidated in the single guidelines collection.`;
+                    
+                    alert(message);
+                    
+                } catch (error) {
+                    console.error('Error migrating database:', error);
+                    alert('Database migration failed: ' + error.message);
+                } finally {
+                    migrateDatabaseBtn.textContent = '🔄 Migrate to Single Collection';
+                    migrateDatabaseBtn.disabled = false;
                 }
             });
         }

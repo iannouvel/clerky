@@ -1,7 +1,7 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration for client-side
 const firebaseConfig = {
@@ -19,12 +19,33 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+// Set authentication persistence to remember users across browser sessions
+setPersistence(auth, browserLocalPersistence)
+    .then(() => {
+        console.log('[DEBUG] Firebase auth persistence set to LOCAL - users will be remembered');
+        
+        // Check if there's already a user signed in
+        const currentUser = auth.currentUser;
+        if (currentUser) {
+            console.log('[DEBUG] User already signed in on page load:', currentUser.email);
+        } else {
+            console.log('[DEBUG] No user signed in on page load');
+        }
+    })
+    .catch((error) => {
+        console.error('[ERROR] Failed to set auth persistence:', error);
+    });
+
 // Make auth available globally with backward compatibility
-// This ensures both firebase.auth() and firebase.auth work
+window.auth = auth;
 window.firebase = { 
-    auth: () => auth,  // Function that returns the auth instance
-    authInstance: auth // Direct access to auth instance
+    auth: () => auth,
+    authInstance: auth
 };
+
+// Expose GoogleAuthProvider and signInWithPopup
+window.firebase.auth.GoogleAuthProvider = GoogleAuthProvider;
+window.firebase.auth.signInWithPopup = (provider) => signInWithPopup(auth, provider);
 
 // Export initialized instances
 export { app, db, auth };
@@ -83,21 +104,22 @@ if (uploadForm) {
         e.preventDefault();
         
         const fileInput = document.getElementById('guidelineFile');
-        const file = fileInput.files[0];
+        const files = Array.from(fileInput.files);
         const uploadSpinner = document.getElementById('uploadSpinner');
         const uploadText = document.getElementById('uploadText');
         
-        if (!file) {
-            alert('Please select a file to upload');
+        if (files.length === 0) {
+            alert('Please select at least one file to upload');
             return;
         }
 
-        // Show spinner and hide text
+        // Show spinner and update text
         uploadSpinner.style.display = 'inline-block';
-        uploadText.style.display = 'none';
+        uploadText.textContent = `Uploading ${files.length} file${files.length > 1 ? 's' : ''}...`;
 
         try {
-            console.log('Attempting to upload file:', file.name);
+            console.log(`Attempting to upload ${files.length} files:`, files.map(f => f.name));
+            
             // Get the current user's Firebase ID token
             const user = auth.currentUser;
             if (!user) {
@@ -107,26 +129,113 @@ if (uploadForm) {
             const token = await user.getIdToken();
             console.log('Retrieved ID token');
 
-            // Create FormData object
-            const formData = new FormData();
-            formData.append('file', file);
+            // Filter out duplicate files if status is available
+            const filesToUpload = files.filter(file => {
+                if (file.status && file.status === 'duplicate') {
+                    console.log(`Skipping duplicate file: ${file.name}`);
+                    return false;
+                }
+                return true;
+            });
 
-            // Attempt upload with retries
-            const result = await attemptUpload(formData, token);
-            alert('Guideline uploaded successfully!');
+            const duplicateCount = files.length - filesToUpload.length;
+            
+            if (filesToUpload.length === 0) {
+                alert('All selected files are duplicates. No files will be uploaded.');
+                return;
+            }
+
+            if (duplicateCount > 0) {
+                uploadText.textContent = `Uploading ${filesToUpload.length} files (${duplicateCount} duplicates skipped)...`;
+            }
+
+            let successCount = 0;
+            let failedFiles = [];
+            let skippedFiles = [];
+
+            // Upload files one by one
+            for (let i = 0; i < filesToUpload.length; i++) {
+                const file = filesToUpload[i];
+                uploadText.textContent = `Uploading ${i + 1}/${filesToUpload.length}: ${file.name}`;
+                
+                try {
+                    // Create FormData object for this file
+                    const formData = new FormData();
+                    formData.append('file', file);
+
+                    // Attempt upload with retries
+                    await attemptUpload(formData, token);
+                    successCount++;
+                    console.log(`Successfully uploaded: ${file.name}`);
+                } catch (error) {
+                    console.error(`Failed to upload ${file.name}:`, error);
+                    failedFiles.push({ name: file.name, error: error.message });
+                }
+            }
+
+            // Add skipped duplicates to the summary
+            files.forEach(file => {
+                if (file.status === 'duplicate') {
+                    skippedFiles.push({ name: file.name, reason: 'Duplicate content detected' });
+                }
+            });
+
+            // Show results
+            let message = '';
+            
+            if (successCount === filesToUpload.length && filesToUpload.length === files.length) {
+                message = `All ${files.length} files uploaded successfully!`;
+            } else {
+                message = `Upload Summary:\n`;
+                message += `• Successfully uploaded: ${successCount} files\n`;
+                
+                if (failedFiles.length > 0) {
+                    message += `• Failed uploads: ${failedFiles.length} files\n`;
+                }
+                
+                if (skippedFiles.length > 0) {
+                    message += `• Skipped duplicates: ${skippedFiles.length} files\n`;
+                }
+                
+                message += `\n`;
+                
+                if (failedFiles.length > 0) {
+                    message += 'Failed files:\n';
+                    failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
+                    message += '\n';
+                }
+                
+                if (skippedFiles.length > 0) {
+                    message += 'Skipped duplicates:\n';
+                    skippedFiles.forEach(f => message += `• ${f.name}: ${f.reason}\n`);
+                }
+            }
+            
+            alert(message);
             
             // Dispatch a custom event to notify that guidelines should be reloaded
-            window.dispatchEvent(new CustomEvent('reloadGuidelines'));
+            if (successCount > 0) {
+                window.dispatchEvent(new CustomEvent('reloadGuidelines'));
+            }
             
-            // Clear the file input
+            // Clear the file input and file list
             fileInput.value = '';
+            if (window.selectedFiles) {
+                window.selectedFiles = [];
+            }
+            const fileList = document.getElementById('fileList');
+            if (fileList) {
+                fileList.style.display = 'none';
+                fileList.innerHTML = '';
+            }
+            
         } catch (error) {
-            console.error('Error uploading guideline:', error);
-            alert(`Failed to upload guideline: ${error.message}`);
+            console.error('Error during upload process:', error);
+            alert(`Upload process failed: ${error.message}`);
         } finally {
-            // Hide spinner and show text
+            // Hide spinner and restore text
             uploadSpinner.style.display = 'none';
-            uploadText.style.display = 'inline-block';
+            uploadText.textContent = 'Upload to GitHub';
         }
     });
 } 

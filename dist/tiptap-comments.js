@@ -1,10 +1,15 @@
-// Import TipTap modules
-import { Editor } from '@tiptap/core';
-import StarterKit from '@tiptap/starter-kit';
-import Placeholder from '@tiptap/extension-placeholder';
+// Import TipTap modules from CDN
+import { Editor } from 'https://esm.sh/@tiptap/core@2.1.13';
+import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.1.13';
+import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13';
+import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
+import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
 
 // Store editor instances
 const editors = {};
+
+// Make editors globally accessible
+window.editors = editors;
 
 // Initialize TipTap editors when document is ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +23,9 @@ function initTipTapEditors() {
   
   // Initialize the clinical note editor
   editors.clinicalNote = initEditor('clinicalNoteOutput', 'Clinical note will appear here...');
+  
+  // Initialize the user input editor (Clinical Note field)
+  editors.userInput = initEditor('userInput', 'Record a transcript, enter a clinical note or ask a question here...');
 }
 
 function initEditor(elementId, placeholder) {
@@ -35,6 +43,8 @@ function initEditor(elementId, placeholder) {
       element,
       extensions: [
         StarterKit,
+        TextStyle,
+        Color,
         Placeholder.configure({
           placeholder
         })
