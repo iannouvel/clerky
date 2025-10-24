@@ -10,34 +10,15 @@ window.auth = auth;
 // Load and display version number from package.json
 async function loadVersionNumber() {
     try {
-        // Add cache-busting parameter to always get fresh version
         const response = await fetch('./package.json?v=' + Date.now());
         const packageData = await response.json();
-        
-        // Try multiple times to update the version element
-        const updateVersion = () => {
-            const versionElement = document.getElementById('appVersion');
-            if (versionElement && packageData.version) {
-                versionElement.textContent = packageData.version;
-                console.log('[VERSION] App version updated to:', packageData.version);
-                return true;
-            }
-            console.log('[VERSION] Element not found yet, will retry...');
-            return false;
-        };
-        
-        // Try immediately
-        if (!updateVersion()) {
-            // Try again after 500ms
-            setTimeout(() => {
-                if (!updateVersion()) {
-                    // Try one more time after 1000ms
-                    setTimeout(updateVersion, 1000);
-                }
-            }, 500);
+        const versionElement = document.getElementById('appVersion');
+        if (versionElement && packageData.version) {
+            versionElement.textContent = packageData.version;
+            console.log('[VERSION] App version updated to:', packageData.version);
         }
     } catch (error) {
-        console.error('[VERSION] Failed to load version number:', error);
+        // Fail silently - version number is not critical for app functionality
     }
 }
 
@@ -47,9 +28,6 @@ if (document.readyState === 'loading') {
 } else {
     loadVersionNumber();
 }
-
-// Also call it after a delay to ensure it updates
-setTimeout(loadVersionNumber, 2000);
 
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
@@ -618,18 +596,26 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         });
         window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
         
-        // Set content with amber color
-        if (replacements && replacements.length > 0) {
-            // Only color the specific replacements
-            const html = applyColoredReplacements(safeContent, replacements);
-            editor.commands.setContent(html);
-        } else {
-            // Color the entire content (for wholesale replacements like AI generation)
-            editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
-        }
+        // Only apply amber color for PII and Dynamic Advice changes
+        const shouldColor = changeType.includes('PII') || changeType.includes('Dynamic Advice');
         
-        window.hasColoredChanges = true;
-        updateClearFormattingButton();
+        if (shouldColor) {
+            // Set content with amber color
+            if (replacements && replacements.length > 0) {
+                // Only color the specific replacements
+                const html = applyColoredReplacements(safeContent, replacements);
+                editor.commands.setContent(html);
+            } else {
+                // Color the entire content (for wholesale replacements like AI generation)
+                editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
+            }
+            
+            window.hasColoredChanges = true;
+            updateClearFormattingButton();
+        } else {
+            // Set content without coloring for other programmatic changes
+            editor.commands.setContent(safeContent);
+        }
     } else {
         // Regular content update without coloring
         editor.commands.setContent(safeContent);
@@ -1678,54 +1664,7 @@ async function loadGuidelinesFromFirestore() {
         const firestoreCount = guidelines.length;
         console.log('[DEBUG] Loaded guidelines from Firestore:', firestoreCount);
 
-        // Check if we need to sync more guidelines from GitHub
-        const githubCount = await getGitHubGuidelinesCount();
-        if (githubCount !== null && githubCount > firestoreCount) {
-            console.log(`[DEBUG] GitHub has ${githubCount} guidelines but Firestore only has ${firestoreCount}. Triggering sync...`);
-            
-            try {
-                const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${idToken}`
-                    },
-                    body: JSON.stringify({})
-                });
-
-                if (syncResponse.ok) {
-                    const syncResult = await syncResponse.json();
-                    console.log('[DEBUG] Sync completed successfully:', syncResult);
-                    
-                    // Reload guidelines after sync
-                    const updatedResponse = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${idToken}`
-                        }
-                    });
-                    
-                    if (updatedResponse.ok) {
-                        const updatedResult = await updatedResponse.json();
-                        if (updatedResult.success && updatedResult.guidelines) {
-                            const updatedGuidelines = updatedResult.guidelines;
-                            console.log('[DEBUG] Reloaded guidelines after sync:', updatedGuidelines.length);
-                            
-                            // Use the updated guidelines
-                            guidelines.length = 0; // Clear the array
-                            guidelines.push(...updatedGuidelines); // Add updated guidelines
-                        }
-                    }
-                } else {
-                    const syncError = await syncResponse.text();
-                    console.warn('[DEBUG] Sync failed:', syncError);
-                }
-            } catch (syncError) {
-                console.warn('[DEBUG] Sync error:', syncError);
-            }
-        } else if (githubCount !== null) {
-            console.log(`[DEBUG] Guidelines count is up to date: GitHub=${githubCount}, Firestore=${firestoreCount}`);
-        }
+        // Guideline sync moved to background - see syncGuidelinesInBackground()
 
         // Check content status - reduced logging for cleaner startup
         const contentStatus = checkContentStatus(guidelines);
@@ -1768,10 +1707,7 @@ async function loadGuidelinesFromFirestore() {
         console.log('[DEBUG] Guidelines loaded and stored in global variables');
         window.guidelinesLoaded = true;
         
-        // Set up Firestore listener for new/updated guidelines (only on first load)
-        if (!window.guidelinesListener) {
-            setupGuidelinesListener();
-        }
+        // Firestore listener setup moved to background - see setupGuidelinesListenerInBackground()
         
         return guidelines;
     } catch (error) {
@@ -1920,8 +1856,58 @@ async function processGuidelineContent(guidelineId) {
     }
 }
 
-// Make loadGuidelinesFromFirestore available globally
+// Background sync function - runs after page is interactive
+async function syncGuidelinesInBackground() {
+    try {
+        const user = auth.currentUser;
+        if (!user) return;
+        
+        const idToken = await user.getIdToken();
+        const currentCount = window.guidelinesList ? window.guidelinesList.length : 0;
+        
+        // Check if we need to sync more guidelines from GitHub
+        const githubCount = await getGitHubGuidelinesCount();
+        if (githubCount !== null && githubCount > currentCount) {
+            console.log(`[BACKGROUND_SYNC] GitHub has ${githubCount} guidelines but Firestore only has ${currentCount}. Syncing...`);
+            
+            const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({})
+            });
+
+            if (syncResponse.ok) {
+                const syncResult = await syncResponse.json();
+                console.log('[BACKGROUND_SYNC] Sync completed successfully:', syncResult);
+                
+                // Reload guidelines after sync
+                window.guidelinesLoading = false; // Reset flag
+                await loadGuidelinesFromFirestore();
+            } else {
+                console.warn('[BACKGROUND_SYNC] Sync failed:', await syncResponse.text());
+            }
+        } else if (githubCount !== null) {
+            console.log(`[BACKGROUND_SYNC] Guidelines up to date: GitHub=${githubCount}, Firestore=${currentCount}`);
+        }
+    } catch (error) {
+        console.warn('[BACKGROUND_SYNC] Error during background sync:', error);
+    }
+}
+
+// Setup Firestore listener in background
+function setupGuidelinesListenerInBackground() {
+    if (!window.guidelinesListener) {
+        setupGuidelinesListener();
+    }
+}
+
+// Make functions available globally
 window.loadGuidelinesFromFirestore = loadGuidelinesFromFirestore;
+window.syncGuidelinesInBackground = syncGuidelinesInBackground;
+window.setupGuidelinesListenerInBackground = setupGuidelinesListenerInBackground;
 
 // Function to show error messages
 function showError(message) {
@@ -6062,50 +6048,43 @@ async function initializeMainApp() {
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
         
-        // Show main content and hide loading screen after initialization is complete
+        // Show main content and hide loading screen immediately
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
         
-        // Ensure loading screen is visible for at least 1.5 seconds for better UX
-        const minLoadingTime = 1500;
-        const timeSinceStart = Date.now() - window.appStartTime;
-        const remainingTime = Math.max(0, minLoadingTime - timeSinceStart);
+        if (loading) {
+            loading.classList.add('hidden');
+            console.log('[DEBUG] Loading screen hidden - app ready for use');
+        }
         
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+            console.log('[DEBUG] Main content shown - app ready for use');
+        }
+        
+        // Start background tasks after page is interactive
         setTimeout(() => {
-            if (loading) {
-                loading.classList.add('hidden');
-                console.log('[DEBUG] Loading screen hidden - app ready for use');
-            }
-            
-            if (mainContent) {
-                mainContent.classList.remove('hidden');
-                console.log('[DEBUG] Main content shown - app ready for use');
-            }
-        }, remainingTime);
+            console.log('[DEBUG] Starting background tasks...');
+            window.syncGuidelinesInBackground();
+            window.setupGuidelinesListenerInBackground();
+        }, 1000);
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
         
-        // Hide loading screen and show main content even if there's an error
+        // Hide loading screen and show main content immediately even if there's an error
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
         
-        // Ensure loading screen is visible for at least 1.5 seconds for better UX
-        const minLoadingTime = 1500;
-        const timeSinceStart = Date.now() - window.appStartTime;
-        const remainingTime = Math.max(0, minLoadingTime - timeSinceStart);
+        if (loading) {
+            loading.classList.add('hidden');
+            console.log('[DEBUG] Loading screen hidden due to initialization error');
+        }
         
-        setTimeout(() => {
-            if (loading) {
-                loading.classList.add('hidden');
-                console.log('[DEBUG] Loading screen hidden due to initialization error');
-            }
-            
-            if (mainContent) {
-                mainContent.classList.remove('hidden');
-                console.log('[DEBUG] Main content shown despite initialization error');
-            }
-        }, remainingTime);
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+            console.log('[DEBUG] Main content shown despite initialization error');
+        }
     } finally {
         window.mainAppInitializing = false;
     }
@@ -6142,9 +6121,6 @@ window.auth.onAuthStateChanged(async (user) => {
     if (user) {
         console.log('[DEBUG] User authenticated, checking disclaimer acceptance');
         
-        // Add a small delay to ensure Firebase has fully restored the session
-        await new Promise(resolve => setTimeout(resolve, 100));
-        
         // Check disclaimer acceptance first
         const disclaimerAccepted = await checkDisclaimerAcceptance();
         if (!disclaimerAccepted) {
@@ -6166,13 +6142,10 @@ window.auth.onAuthStateChanged(async (user) => {
             console.log('[DEBUG] Updated user info display');
         }
         
-        // Small delay to ensure DOM is fully rendered and loading screen is visible
-        setTimeout(async () => {
-            console.log('[DEBUG] Delayed initialization starting...');
-            await initializeMainApp();
-        }, 500);
+        // Initialize app immediately
+        await initializeMainApp();
         
-        // Fallback timeout to hide loading screen and show main content after 30 seconds
+        // Fallback timeout to hide loading screen and show main content after 10 seconds
         setTimeout(() => {
             const loading = document.getElementById('loading');
             const mainContent = document.getElementById('mainContent');
@@ -6186,64 +6159,24 @@ window.auth.onAuthStateChanged(async (user) => {
                 mainContent.classList.remove('hidden');
                 console.log('[DEBUG] Main content shown due to timeout');
             }
-        }, 30000);
+        }, 10000);
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        // Add a delay to allow Firebase to potentially restore the session
-        setTimeout(() => {
-            // Check again if user is now authenticated after the delay
-            const currentUser = window.auth.currentUser;
-            if (currentUser) {
-                console.log('[DEBUG] User authenticated after delay, restarting auth flow');
-                // Trigger the auth state change again
-                window.auth.onAuthStateChanged(async (user) => {
-                    if (user) {
-                        console.log('[DEBUG] User authenticated after delay');
-                        // Re-run the authenticated user flow
-                        const disclaimerAccepted = await checkDisclaimerAcceptance();
-                        if (!disclaimerAccepted) {
-                            return;
-                        }
-                        
-                        const landingPage = document.getElementById('landingPage');
-                        const mainContent = document.getElementById('mainContent');
-                        landingPage.classList.add('hidden');
-                        mainContent.classList.add('hidden');
-                        
-                        const userLabel = document.getElementById('userLabel');
-                        const userName = document.getElementById('userName');
-                        if (userLabel && userName) {
-                            userName.textContent = user.displayName || user.email || 'User';
-                            userName.classList.remove('hidden');
-                        }
-                        
-                        setTimeout(async () => {
-                            await initializeMainApp();
-                        }, 500);
-                    }
-                });
-                return;
-            }
-            
-            // If still no user, show landing page
-            const loading = document.getElementById('loading');
-            const mainContent = document.getElementById('mainContent');
-            const landingPage = document.getElementById('landingPage');
-            
-            if (loading) {
-                loading.classList.add('hidden');
-            }
-            if (mainContent) {
-                mainContent.classList.add('hidden');
-            }
-            if (landingPage) {
-                landingPage.classList.remove('hidden');
-            }
-            
-            // Set up Google Sign-in button listener
-            setupGoogleSignIn();
-        }, 2000); // Wait 2 seconds for Firebase to restore session
+        
+        // Show landing page immediately
+        if (loading) {
+            loading.classList.add('hidden');
+        }
+        if (mainContent) {
+            mainContent.classList.add('hidden');
+        }
+        if (landingPage) {
+            landingPage.classList.remove('hidden');
+        }
+        
+        // Set up Google Sign-in button listener
+        setupGoogleSignIn();
     }
 });
 

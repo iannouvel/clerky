@@ -596,18 +596,26 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         });
         window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
         
-        // Set content with amber color
-        if (replacements && replacements.length > 0) {
-            // Only color the specific replacements
-            const html = applyColoredReplacements(safeContent, replacements);
-            editor.commands.setContent(html);
-        } else {
-            // Color the entire content (for wholesale replacements like AI generation)
-            editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
-        }
+        // Only apply amber color for PII and Dynamic Advice changes
+        const shouldColor = changeType.includes('PII') || changeType.includes('Dynamic Advice');
         
-        window.hasColoredChanges = true;
-        updateClearFormattingButton();
+        if (shouldColor) {
+            // Set content with amber color
+            if (replacements && replacements.length > 0) {
+                // Only color the specific replacements
+                const html = applyColoredReplacements(safeContent, replacements);
+                editor.commands.setContent(html);
+            } else {
+                // Color the entire content (for wholesale replacements like AI generation)
+                editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
+            }
+            
+            window.hasColoredChanges = true;
+            updateClearFormattingButton();
+        } else {
+            // Set content without coloring for other programmatic changes
+            editor.commands.setContent(safeContent);
+        }
     } else {
         // Regular content update without coloring
         editor.commands.setContent(safeContent);
