@@ -9778,19 +9778,6 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
             guidelineTitle
         });
 
-        // First, fetch the guideline content to include in the prompt
-        let guidelineContent = '';
-        if (guidelineId) {
-            try {
-                console.log('[DEBUG] dynamicAdvice: Fetching guideline content for ID:', guidelineId);
-                const guideline = await getGuideline(guidelineId);
-                guidelineContent = guideline.content || guideline.condensed || '';
-                console.log('[DEBUG] dynamicAdvice: Retrieved guideline content length:', guidelineContent.length);
-            } catch (guidelineError) {
-                console.warn('[DEBUG] dynamicAdvice: Could not fetch guideline content:', guidelineError.message);
-            }
-        }
-
         // Create AI prompt to convert analysis into structured suggestions
         const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
 
@@ -9860,7 +9847,6 @@ ${transcript}
 Guideline Analysis:
 ${analysis}
 Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
-${guidelineContent ? `\nFull Guideline Content:\n${guidelineContent}` : ''}
 Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline to help the user understand the reasoning behind the recommendation.`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
