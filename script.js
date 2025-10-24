@@ -3589,11 +3589,25 @@ window.handleCurrentSuggestionAction = function(action) {
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
     review.decisions.push({ suggestion, action });
-    if (action === 'accept' && suggestion.originalText && suggestion.suggestedText) {
+    
+    if (action === 'accept' && suggestion.suggestedText) {
         const currentContent = getUserInputContent();
-        const newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
-        setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+        let newContent;
+        
+        // Handle additions (missing documentation) vs modifications (replacing existing text)
+        if (suggestion.category === 'addition' || !suggestion.originalText) {
+            // Addition: append the suggested text to the end of the document
+            // Add spacing if needed
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            newContent = currentContent + spacing + suggestion.suggestedText;
+            setUserInputContent(newContent, true, 'Dynamic Advice - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+        } else if (suggestion.originalText) {
+            // Modification/Deletion: replace existing text
+            newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
+            setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+        }
     }
+    
     clearHighlightInEditor();
     review.currentIndex++;
     showCurrentSuggestion();
@@ -3608,11 +3622,22 @@ window.confirmCurrentModification = function() {
     if (!modifiedText) { alert('Please enter some text.'); return; }
     const suggestion = review.suggestions[review.currentIndex];
     review.decisions.push({ suggestion, action: 'modify', modifiedText });
-    if (suggestion.originalText) {
-        const currentContent = getUserInputContent();
-        const newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
+    
+    const currentContent = getUserInputContent();
+    let newContent;
+    
+    // Handle additions (missing documentation) vs modifications (replacing existing text)
+    if (suggestion.category === 'addition' || !suggestion.originalText) {
+        // Addition: append the modified text to the end of the document
+        const spacing = currentContent.trim() ? '\n\n' : '';
+        newContent = currentContent + spacing + modifiedText;
+        setUserInputContent(newContent, true, 'Dynamic Advice - Modified Addition', [{findText: '', replacementText: modifiedText}]);
+    } else if (suggestion.originalText) {
+        // Modification: replace existing text with user's modified version
+        newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
         setUserInputContent(newContent, true, 'Dynamic Advice - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
     }
+    
     clearHighlightInEditor();
     review.currentIndex++;
     showCurrentSuggestion();
@@ -3836,18 +3861,31 @@ function handleSuggestionAction(suggestionId, action) {
     });
 
     // Apply the change immediately if accepted
-    if (action === 'accept' && suggestion.originalText && suggestion.suggestedText) {
+    if (action === 'accept' && suggestion.suggestedText) {
         const currentContent = getUserInputContent();
-        const newContent = currentContent.replace(
-            new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-            suggestion.suggestedText
-        );
+        let newContent;
+        let replacements;
         
-        // Apply with colored replacement
-        const replacements = [{
-            findText: suggestion.originalText,
-            replacementText: suggestion.suggestedText
-        }];
+        // Handle additions (missing documentation) vs modifications (replacing existing text)
+        if (suggestion.category === 'addition' || !suggestion.originalText) {
+            // Addition: append the suggested text to the end of the document
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            newContent = currentContent + spacing + suggestion.suggestedText;
+            replacements = [{
+                findText: '',
+                replacementText: suggestion.suggestedText
+            }];
+        } else {
+            // Modification/Deletion: replace existing text
+            newContent = currentContent.replace(
+                new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
+                suggestion.suggestedText
+            );
+            replacements = [{
+                findText: suggestion.originalText,
+                replacementText: suggestion.suggestedText
+            }];
+        }
         
         setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', replacements);
         console.log('[DEBUG] handleSuggestionAction: Applied accepted suggestion immediately');
@@ -3897,22 +3935,33 @@ function confirmModification(suggestionId) {
     });
 
     // Apply the modification immediately
-    if (suggestion.originalText) {
-        const currentContent = getUserInputContent();
-        const newContent = currentContent.replace(
+    const currentContent = getUserInputContent();
+    let newContent;
+    let replacements;
+    
+    // Handle additions (missing documentation) vs modifications (replacing existing text)
+    if (suggestion.category === 'addition' || !suggestion.originalText) {
+        // Addition: append the modified text to the end of the document
+        const spacing = currentContent.trim() ? '\n\n' : '';
+        newContent = currentContent + spacing + modifiedText;
+        replacements = [{
+            findText: '',
+            replacementText: modifiedText
+        }];
+    } else {
+        // Modification: replace existing text with user's modified version
+        newContent = currentContent.replace(
             new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
             modifiedText
         );
-        
-        // Apply with colored replacement
-        const replacements = [{
+        replacements = [{
             findText: suggestion.originalText,
             replacementText: modifiedText
         }];
-        
-        setUserInputContent(newContent, true, 'Dynamic Advice - Modified', replacements);
-        console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
     }
+    
+    setUserInputContent(newContent, true, 'Dynamic Advice - Modified', replacements);
+    console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
 
     // Hide modify section and update UI
     const modifySection = document.getElementById(`modify-${suggestionId}`);
