@@ -3641,6 +3641,79 @@ function completeSuggestionReview() {
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
     window.currentSuggestionReview = null;
+    
+    // Check if we're in sequential processing mode and need to move to next guideline
+    if (window.sequentialProcessingActive) {
+        console.log('[DEBUG] completeSuggestionReview: Sequential processing active, checking for next guideline');
+        const queue = window.sequentialProcessingQueue || [];
+        const currentIndex = window.sequentialProcessingIndex || 0;
+        
+        console.log('[DEBUG] completeSuggestionReview: Queue status:', {
+            queueLength: queue.length,
+            currentIndex: currentIndex,
+            hasMore: currentIndex < queue.length - 1
+        });
+        
+        if (currentIndex < queue.length - 1) {
+            // Move to next guideline
+            window.sequentialProcessingIndex = currentIndex + 1;
+            const nextGuidelineId = queue[currentIndex + 1];
+            const nextStepNumber = currentIndex + 2;
+            
+            console.log(`[DEBUG] completeSuggestionReview: Moving to guideline ${nextStepNumber}/${queue.length}`);
+            
+            // Update status display if it exists
+            const statusDiv = document.getElementById('processing-status');
+            if (statusDiv) {
+                statusDiv.innerHTML = queue.map((id, index) => {
+                    const guideline = window.relevantGuidelines.find(g => g.id === id);
+                    const title = guideline ? (guideline.title || id) : id;
+                    const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+                    
+                    let className = 'processing-step pending';
+                    let emoji = '⏳';
+                    
+                    if (index < window.sequentialProcessingIndex) {
+                        className = 'processing-step completed';
+                        emoji = '✅';
+                    } else if (index === window.sequentialProcessingIndex) {
+                        className = 'processing-step current';
+                        emoji = '🔄';
+                    }
+                    
+                    return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
+                }).join('');
+            }
+            
+            // Show transition message
+            const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
+            appendToSummary1(transitionMessage, false);
+            
+            // Process next guideline after a short delay
+            setTimeout(async () => {
+                try {
+                    const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
+                    appendToSummary1(processingStepMessage, false);
+                    await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
+                } catch (error) {
+                    console.error('[DEBUG] Error processing next guideline after completion:', error);
+                    const errorMessage = `❌ **Error processing guideline ${nextStepNumber}:** ${error.message}\n\n`;
+                    appendToSummary1(errorMessage, false);
+                }
+            }, 1000);
+        } else {
+            // All guidelines processed
+            console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
+            window.sequentialProcessingActive = false;
+            const finalMessage = `
+                <div class="sequential-processing-complete">
+                    <h3>🎉 All Guidelines Processed!</h3>
+                    <p>Successfully processed all ${queue.length} selected guidelines.</p>
+                </div>
+            `;
+            appendToSummary1(finalMessage, false);
+        }
+    }
 }
 
 window.cancelSuggestionReview = function() {
