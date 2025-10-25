@@ -3521,8 +3521,38 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    // Create link with onclick to store auth token before opening
+    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event)" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
 }
+
+// Function to prepare auth token for viewer
+window.prepareViewerAuth = async function(event) {
+    try {
+        console.log('[DEBUG] Preparing auth token for viewer...');
+        const user = firebase.auth().currentUser;
+        if (!user) {
+            console.error('[DEBUG] No user authenticated');
+            alert('Please sign in to view guidelines');
+            event.preventDefault();
+            return;
+        }
+        
+        // Get fresh ID token
+        const idToken = await user.getIdToken();
+        
+        // Store token in sessionStorage for viewer to use
+        sessionStorage.setItem('viewerAuthToken', idToken);
+        sessionStorage.setItem('viewerAuthTokenTime', Date.now().toString());
+        
+        console.log('[DEBUG] Auth token stored in sessionStorage for viewer');
+        
+        // Let the link open normally
+    } catch (error) {
+        console.error('[DEBUG] Error preparing auth token:', error);
+        alert('Failed to prepare authentication. Please try again.');
+        event.preventDefault();
+    }
+};
 
 // Display interactive suggestions in outputField ONE AT A TIME
 async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidelineId, guidelineFilename) {
