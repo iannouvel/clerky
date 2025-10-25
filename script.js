@@ -3510,8 +3510,46 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
     return currentContent + spacing + newText;
 }
 
+// Helper function to extract quoted text from context
+function extractQuotedText(context) {
+    if (!context) return null;
+    
+    // Find all text within quotation marks (both single and double quotes)
+    const quotePatterns = [
+        /'([^']{10,})'/g,  // Single quotes with at least 10 chars
+        /"([^"]{10,})"/g,  // Double quotes with at least 10 chars
+        /'([^']{10,})'/g,  // Curly single quotes
+        /"([^"]{10,})"/g   // Curly double quotes
+    ];
+    
+    let allQuotes = [];
+    
+    for (const pattern of quotePatterns) {
+        let match;
+        while ((match = pattern.exec(context)) !== null) {
+            allQuotes.push(match[1]);
+        }
+    }
+    
+    if (allQuotes.length === 0) {
+        return null;
+    }
+    
+    // Return the longest quote (most likely to be the actual guideline quote)
+    allQuotes.sort((a, b) => b.length - a.length);
+    const longestQuote = allQuotes[0];
+    
+    console.log('[DEBUG] Extracted quote from context:', {
+        totalQuotes: allQuotes.length,
+        longestQuoteLength: longestQuote.length,
+        quotePrevie: longestQuote.substring(0, 50) + '...'
+    });
+    
+    return longestQuote;
+}
+
 // Helper function to create guideline viewer link
-function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename) {
+function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context) {
     if (!guidelineId && !guidelineFilename) {
         return '<em>Guideline reference not available</em>';
     }
@@ -3521,12 +3559,13 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    // Create link with onclick to store auth token before opening
-    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event)" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    // Create link with onclick to store auth token and search text before opening
+    // Pass context as a data attribute so prepareViewerAuth can access it
+    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this)" data-context="${escapeHtml(context || '')}" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
 }
 
 // Function to prepare auth token for viewer
-window.prepareViewerAuth = async function(event) {
+window.prepareViewerAuth = async function(event, linkElement) {
     try {
         console.log('[DEBUG] Preparing auth token for viewer...');
         const user = firebase.auth().currentUser;
@@ -3540,9 +3579,24 @@ window.prepareViewerAuth = async function(event) {
         // Get fresh ID token
         const idToken = await user.getIdToken();
         
-        // Store token in localStorage for viewer to use (sessionStorage doesn't work across tabs!)
+        // Extract quoted text from context if available
+        let searchText = null;
+        if (linkElement && linkElement.dataset && linkElement.dataset.context) {
+            const context = linkElement.dataset.context;
+            searchText = extractQuotedText(context);
+        }
+        
+        // Store token and search text in localStorage for viewer to use
         localStorage.setItem('viewerAuthToken', idToken);
         localStorage.setItem('viewerAuthTokenTime', Date.now().toString());
+        
+        if (searchText) {
+            localStorage.setItem('viewerSearchText', searchText);
+            console.log('[DEBUG] Stored search text for viewer:', searchText.substring(0, 50) + '...');
+        } else {
+            localStorage.removeItem('viewerSearchText');
+            console.log('[DEBUG] No quoted text found in context');
+        }
         
         console.log('[DEBUG] Auth token stored in localStorage for viewer');
         
@@ -3747,8 +3801,8 @@ async function showCurrentSuggestion() {
         });
     }
 
-    // Create guideline link
-    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename);
+    // Create guideline link with context for quote extraction
+    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context);
 
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
@@ -7922,7 +7976,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                         
                         <div class="guideline-link-section" style="margin-top: 10px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;">
                             <label style="font-weight: bold;">Guideline:</label>
-                            ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename)}
+                            ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename, suggestion.context)}
                         </div>
                     </div>
                     

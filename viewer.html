@@ -158,12 +158,52 @@
             display: flex;
             justify-content: center;
             padding: 20px;
+            position: relative;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            display: inline-block;
         }
 
         #pdf-canvas {
             max-width: 100%;
             height: auto;
             display: block;
+        }
+
+        .text-highlight-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .text-highlight {
+            position: absolute;
+            background: rgba(255, 255, 0, 0.3);
+            border: 1px solid rgba(255, 200, 0, 0.6);
+            mix-blend-mode: multiply;
+        }
+
+        .search-status {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            padding: 10px 15px;
+            margin: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .search-status.success {
+            background: #f0fdf4;
+            border-left-color: #16a34a;
+        }
+
+        .search-status.warning {
+            background: #fef3c7;
+            border-left-color: #eab308;
         }
 
         .loading {
@@ -254,8 +294,13 @@
 
     <div id="error-container" style="display: none;"></div>
 
+    <div id="search-status-container" style="display: none;"></div>
+
     <div class="pdf-container" id="pdf-container" style="display: none;">
-        <canvas id="pdf-canvas"></canvas>
+        <div class="canvas-wrapper" id="canvas-wrapper">
+            <canvas id="pdf-canvas"></canvas>
+            <div class="text-highlight-layer" id="highlight-layer"></div>
+        </div>
     </div>
 
     <script src="viewer.js"></script>
