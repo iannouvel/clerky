@@ -1,31 +1,9 @@
 // PDF.js configuration
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-// Firebase configuration - MUST match the main app configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyAF5y6k9THaRKxLZemqcYDj4y_EgCcDbX8",
-    authDomain: "clerky-b3be8.firebaseapp.com",
-    projectId: "clerky-b3be8",
-    storageBucket: "clerky-b3be8.appspot.com",
-    messagingSenderId: "193460924609",
-    appId: "1:193460924609:web:6e2c696c87292d4a222440",
-    measurementId: "G-V07DP1ELDR"
-};
-
-// Initialize Firebase - check if already initialized to avoid conflicts
-let app;
-if (!firebase.apps.length) {
-    console.log('[VIEWER] Initializing Firebase...');
-    app = firebase.initializeApp(firebaseConfig);
-    console.log('[VIEWER] Firebase initialized successfully');
-} else {
-    console.log('[VIEWER] Firebase already initialized, reusing existing app');
-    app = firebase.app();
-}
-
-// Don't call setPersistence here - it's already set by the main app
-// and calling it again might interfere with the main app's auth state
-console.log('[VIEWER] Using existing auth persistence from main app');
+// NOTE: We do NOT initialize Firebase in the viewer to avoid auth state conflicts
+// The auth token is passed via sessionStorage from the main app
+console.log('[VIEWER] Viewer initialized - will use token from sessionStorage');
 
 // Server URL
 const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -42,7 +20,7 @@ let canvas = null;
 let ctx = null;
 
 // Initialize
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', function() {
     canvas = document.getElementById('pdf-canvas');
     ctx = canvas.getContext('2d');
     
@@ -60,11 +38,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         return;
     }
     
-    // Wait a bit for Firebase to initialize and restore auth state
-    console.log('[VIEWER] Waiting for Firebase initialization...');
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Load the PDF
+    // Load the PDF immediately - no Firebase initialization needed
     loadPDF(guidelineId);
 });
 
@@ -73,46 +47,23 @@ async function loadPDF(guidelineId) {
     try {
         console.log('[VIEWER] Loading PDF for guideline:', guidelineId);
         
-        // Update loading message
-        document.getElementById('loading-container').innerHTML = '<div class="loading-spinner"></div><p>Authenticating...</p>';
+        // Get auth token from sessionStorage (set by main app)
+        const idToken = sessionStorage.getItem('viewerAuthToken');
+        const tokenTime = sessionStorage.getItem('viewerAuthTokenTime');
         
-        // Wait for Firebase auth to be ready
-        const user = await new Promise((resolve, reject) => {
-            // First check if already signed in
-            const currentUser = firebase.auth().currentUser;
-            if (currentUser) {
-                console.log('[VIEWER] User already authenticated');
-                resolve(currentUser);
-                return;
+        if (!idToken) {
+            throw new Error('No authentication token found. Please click the link from the main application to view this guideline.');
+        }
+        
+        // Check if token is recent (within 5 minutes)
+        if (tokenTime) {
+            const tokenAge = Date.now() - parseInt(tokenTime, 10);
+            if (tokenAge > 5 * 60 * 1000) {
+                console.warn('[VIEWER] Auth token is older than 5 minutes, might be expired');
             }
-            
-            // Otherwise wait for auth state to change
-            console.log('[VIEWER] Waiting for authentication...');
-            let timeoutId;
-            const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-                clearTimeout(timeoutId);
-                unsubscribe();
-                if (user) {
-                    console.log('[VIEWER] User authenticated:', user.email);
-                    resolve(user);
-                } else {
-                    console.log('[VIEWER] No user authenticated');
-                    reject(new Error('Not authenticated. Please sign in to view guidelines.'));
-                }
-            });
-            
-            // Longer timeout - 30 seconds to allow for auth state restoration
-            timeoutId = setTimeout(() => {
-                unsubscribe();
-                console.error('[VIEWER] Authentication timeout after 30 seconds');
-                reject(new Error('Authentication timeout. Please sign in to the main application first, then try opening the guideline viewer again.'));
-            }, 30000);
-        });
+        }
         
-        // Update loading message
-        document.getElementById('loading-container').innerHTML = '<div class="loading-spinner"></div><p>Loading PDF...</p>';
-        
-        const idToken = await user.getIdToken();
+        console.log('[VIEWER] Using auth token from sessionStorage');
         
         // Fetch PDF from server
         const response = await fetch(`${SERVER_URL}/getGuidelinePDF?guidelineId=${encodeURIComponent(guidelineId)}`, {
