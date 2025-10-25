@@ -17,19 +17,15 @@ let app;
 if (!firebase.apps.length) {
     console.log('[VIEWER] Initializing Firebase...');
     app = firebase.initializeApp(firebaseConfig);
+    console.log('[VIEWER] Firebase initialized successfully');
 } else {
     console.log('[VIEWER] Firebase already initialized, reusing existing app');
     app = firebase.app();
 }
 
-// Set auth persistence to LOCAL so sessions persist across tabs
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => {
-        console.log('[VIEWER] Auth persistence set to LOCAL');
-    })
-    .catch((error) => {
-        console.error('[VIEWER] Failed to set auth persistence:', error);
-    });
+// Don't call setPersistence here - it's already set by the main app
+// and calling it again might interfere with the main app's auth state
+console.log('[VIEWER] Using existing auth persistence from main app');
 
 // Server URL
 const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
