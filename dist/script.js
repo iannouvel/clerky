@@ -3335,7 +3335,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         });
 
         // Display interactive suggestions using appendToOutputField (use prefixed suggestions)
-        await displayInteractiveSuggestions(prefixedSuggestions, result.guidelineTitle);
+        await displayInteractiveSuggestions(prefixedSuggestions, result.guidelineTitle, result.guidelineId, result.guidelineFilename);
 
         return result;
 
@@ -3366,11 +3366,105 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
 // Global state for dynamic advice review  
 window.currentSuggestionReview = null;
 
+// Helper function to determine optimal insertion point for new text
+async function determineInsertionPoint(suggestion, clinicalNote) {
+    try {
+        console.log('[DEBUG] determineInsertionPoint: Calling server API');
+        
+        const idToken = await firebase.auth().currentUser.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/determineInsertionPoint`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                suggestion,
+                clinicalNote
+            })
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[DEBUG] determineInsertionPoint: API error:', errorText);
+            throw new Error(`Failed to determine insertion point: ${response.status}`);
+        }
+
+        const result = await response.json();
+        console.log('[DEBUG] determineInsertionPoint: Received result:', result);
+        
+        return result.insertionPoint;
+    } catch (error) {
+        console.error('[DEBUG] determineInsertionPoint: Error:', error);
+        // Fallback to appending at end
+        return {
+            section: 'end',
+            insertionMethod: 'append',
+            reasoning: 'Fallback due to error'
+        };
+    }
+}
+
+// Helper function to insert text at the determined point
+function insertTextAtPoint(currentContent, newText, insertionPoint) {
+    console.log('[DEBUG] insertTextAtPoint:', {
+        contentLength: currentContent.length,
+        newTextLength: newText.length,
+        insertionPoint
+    });
+
+    const { section, insertionMethod, anchorText } = insertionPoint;
+
+    // If method is append, just add to end with spacing
+    if (insertionMethod === 'append') {
+        const spacing = currentContent.trim() ? '\n\n' : '';
+        return currentContent + spacing + newText;
+    }
+
+    // For insertAfter or insertBefore, find the anchor text
+    if (anchorText && (insertionMethod === 'insertAfter' || insertionMethod === 'insertBefore')) {
+        const anchorIndex = currentContent.indexOf(anchorText);
+        
+        if (anchorIndex !== -1) {
+            if (insertionMethod === 'insertAfter') {
+                const insertPosition = anchorIndex + anchorText.length;
+                return currentContent.slice(0, insertPosition) + '\n\n' + newText + '\n\n' + currentContent.slice(insertPosition);
+            } else { // insertBefore
+                return currentContent.slice(0, anchorIndex) + newText + '\n\n' + currentContent.slice(anchorIndex);
+            }
+        } else {
+            console.warn('[DEBUG] insertTextAtPoint: Anchor text not found, appending to end');
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            return currentContent + spacing + newText;
+        }
+    }
+
+    // Fallback: append to end
+    const spacing = currentContent.trim() ? '\n\n' : '';
+    return currentContent + spacing + newText;
+}
+
+// Helper function to create guideline viewer link
+function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename) {
+    if (!guidelineId && !guidelineFilename) {
+        return '<em>Guideline reference not available</em>';
+    }
+
+    // Construct viewer URL
+    let viewerUrl = `viewer.html?guidelineId=${encodeURIComponent(guidelineId || '')}`;
+    
+    const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
+    
+    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+}
+
 // Display interactive suggestions in outputField ONE AT A TIME
-async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
+async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidelineId, guidelineFilename) {
     console.log('[DEBUG] displayInteractiveSuggestions called', {
         suggestionsCount: suggestions?.length,
-        guidelineTitle
+        guidelineTitle,
+        guidelineId,
+        guidelineFilename
     });
 
     if (!suggestions || suggestions.length === 0) {
@@ -3390,6 +3484,8 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle) {
     window.currentSuggestionReview = {
         suggestions,
         guidelineTitle,
+        guidelineId,
+        guidelineFilename,
         currentIndex: 0,
         decisions: []
     };
@@ -3524,7 +3620,7 @@ function showCurrentSuggestion() {
     const review = window.currentSuggestionReview;
     if (!review) return;
 
-    const { suggestions, guidelineTitle, currentIndex, decisions } = review;
+    const { suggestions, guidelineTitle, guidelineId, guidelineFilename, currentIndex, decisions } = review;
     const totalSuggestions = suggestions.length;
 
     if (currentIndex >= totalSuggestions) {
@@ -3543,6 +3639,9 @@ function showCurrentSuggestion() {
         scrollTextIntoView(suggestion.originalText);
     }
 
+    // Create guideline link
+    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename);
+
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
             <h3 style="color: #2563eb; margin: 0 0 15px 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
@@ -3551,7 +3650,8 @@ function showCurrentSuggestion() {
                 <div style="margin: 0 0 15px 0;"><strong style="color: #2563eb;">${categoryIcon} ${suggestion.category || 'Suggestion'}:</strong></div>
                 ${suggestion.originalText ? `<div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #dc2626;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong><br><span style="font-family: monospace; background: #fef3c7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
                 <div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #16a34a;">Suggested:</strong><br><span style="font-family: monospace; background: #dcfce7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
-                <div style="margin: 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
+                <div style="margin: 0 0 15px 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
+                <div style="margin: 0; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;"><strong>Link:</strong> ${guidelineLink}</div>
             </div>
             <div class="modify-section" id="modify-section-current" style="display: none; background: #fef3c7; border: 2px solid #eab308; padding: 15px; margin: 10px 0; border-radius: 6px;">
                 <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold;">Your modified text:</label>
@@ -3584,7 +3684,7 @@ function showCurrentSuggestion() {
 window.showModifySection = function() { document.getElementById('modify-section-current').style.display = 'block'; };
 window.hideModifySection = function() { document.getElementById('modify-section-current').style.display = 'none'; };
 
-window.handleCurrentSuggestionAction = function(action) {
+window.handleCurrentSuggestionAction = async function(action) {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
@@ -3596,10 +3696,15 @@ window.handleCurrentSuggestionAction = function(action) {
         
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: append the suggested text to the end of the document
-            // Add spacing if needed
-            const spacing = currentContent.trim() ? '\n\n' : '';
-            newContent = currentContent + spacing + suggestion.suggestedText;
+            // Addition: use smart insertion to determine best location
+            console.log('[DEBUG] handleCurrentSuggestionAction: Using smart insertion for addition');
+            
+            // Get insertion point from AI
+            const insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+            console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point determined:', insertionPoint);
+            
+            // Insert at determined point
+            newContent = insertTextAtPoint(currentContent, suggestion.suggestedText, insertionPoint);
             setUserInputContent(newContent, true, 'Dynamic Advice - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
         } else if (suggestion.originalText) {
             // Modification/Deletion: replace existing text
@@ -7608,6 +7713,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                 id: `multi_${suggestionCounter++}`,
                 sourceGuideline: result.guideline?.title || 'Unknown Guideline',
                 sourceGuidelineId: result.guideline?.id || 'unknown',
+                sourceGuidelineFilename: result.result?.guidelineFilename || null,
                 originalId: suggestion.id
             });
         });
@@ -7698,6 +7804,11 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                         <div class="suggestion-context">
                             <label>Why this change is suggested:</label>
                             <p>${suggestion.context}</p>
+                        </div>
+                        
+                        <div class="guideline-link-section" style="margin-top: 10px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;">
+                            <label style="font-weight: bold;">Guideline:</label>
+                            ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename)}
                         </div>
                     </div>
                     

@@ -10004,12 +10004,27 @@ Please extract actionable suggestions from this analysis and format them as spec
             success: true
         });
 
+        // Look up guideline filename for PDF viewing
+        let guidelineFilename = null;
+        if (guidelineId) {
+            try {
+                const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+                if (guidelineDoc.exists) {
+                    const guidelineData = guidelineDoc.data();
+                    guidelineFilename = guidelineData.filename || guidelineData.originalFilename;
+                }
+            } catch (filenameError) {
+                console.error('[DEBUG] dynamicAdvice: Error fetching guideline filename:', filenameError.message);
+            }
+        }
+
         res.json({
             success: true,
             sessionId,
             suggestions,
             guidelineId,
-            guidelineTitle
+            guidelineTitle,
+            guidelineFilename
         });
 
     } catch (error) {
@@ -10022,6 +10037,184 @@ Please extract actionable suggestions from this analysis and format them as spec
                 analysisLength: req.body?.analysis?.length,
                 guidelineId: req.body?.guidelineId
             }
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Determine Insertion Point API endpoint - finds optimal location in clinical note for new text
+app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] determineInsertionPoint endpoint called');
+        const { suggestion, clinicalNote } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!suggestion || !suggestion.suggestedText) {
+            console.log('[DEBUG] determineInsertionPoint: Missing suggestion text');
+            return res.status(400).json({ success: false, error: 'Suggestion text is required' });
+        }
+        
+        if (!clinicalNote) {
+            console.log('[DEBUG] determineInsertionPoint: Missing clinical note');
+            return res.status(400).json({ success: false, error: 'Clinical note is required' });
+        }
+
+        console.log('[DEBUG] determineInsertionPoint request data:', {
+            userId,
+            suggestionTextLength: suggestion.suggestedText.length,
+            clinicalNoteLength: clinicalNote.length
+        });
+
+        // Create AI prompt to analyse note structure and determine insertion point
+        const systemPrompt = `You are a medical AI assistant that analyses clinical note structure to determine optimal insertion points for new information.
+
+Your task is to:
+1. Analyse the structure of the clinical note and identify its sections (e.g., Situation, Issues, Background, Assessment, Discussion, Plan)
+2. Determine which section the new text belongs to based on its content
+3. Specify the exact insertion point within that section
+
+Common clinical note structures to recognise:
+- SOAP (Subjective, Objective, Assessment, Plan)
+- SBAR (Situation, Background, Assessment, Recommendation)
+- Custom sections like: Situation, Issues, Background, Assessment, Discussion, Plan
+
+Guidelines for categorising content:
+- Patient demographics, presentation details → Situation/Subjective section
+- Medical history, context → Background section
+- Clinical findings, risk assessments, observations → Assessment section
+- Treatment discussions, considerations → Discussion section
+- Management steps, follow-up plans → Plan section
+
+Return ONLY a valid JSON object with this structure:
+{
+  "section": "name of the section where text should be inserted",
+  "insertionMethod": "append|insertAfter|insertBefore",
+  "anchorText": "text to insert after/before (if using insertAfter/insertBefore)",
+  "reasoning": "brief explanation of why this location is appropriate"
+}
+
+If the section doesn't exist in the note, use "append" method with the section name.
+
+CRITICAL FORMATTING REQUIREMENTS:
+- Return ONLY the JSON object - no markdown code blocks, no explanatory text
+- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
+- Start your response directly with { and end with }
+- Ensure all JSON is properly formatted and valid`;
+
+        const userPrompt = `Clinical Note:
+${clinicalNote}
+
+New Text to Insert:
+${suggestion.suggestedText}
+
+Context: ${suggestion.context || 'No additional context'}
+
+Please analyse the clinical note structure and determine the optimal insertion point for this new text.`;
+
+        console.log('[DEBUG] determineInsertionPoint: Sending to AI');
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] determineInsertionPoint: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] determineInsertionPoint: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Parse AI response
+        let insertionPoint;
+        try {
+            insertionPoint = JSON.parse(aiResponse.content);
+            console.log('[DEBUG] determineInsertionPoint: Parsed insertion point:', insertionPoint);
+        } catch (parseError) {
+            console.error('[DEBUG] determineInsertionPoint: Failed to parse AI response:', parseError);
+            console.error('[DEBUG] determineInsertionPoint: Raw AI response:', aiResponse.content);
+            return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
+        }
+
+        // Validate response structure
+        if (!insertionPoint.section || !insertionPoint.insertionMethod) {
+            console.error('[DEBUG] determineInsertionPoint: Invalid insertion point structure:', insertionPoint);
+            return res.status(500).json({ success: false, error: 'Invalid insertion point structure' });
+        }
+
+        res.json({
+            success: true,
+            insertionPoint
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] determineInsertionPoint: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Get Guideline PDF endpoint - serves PDF files for viewing
+app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.query;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+
+        console.log('[DEBUG] getGuidelinePDF: Looking up guideline:', guidelineId);
+
+        // Look up guideline metadata to get filename
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            console.log('[DEBUG] getGuidelinePDF: Guideline not found:', guidelineId);
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+
+        const guidelineData = guidelineDoc.data();
+        const filename = guidelineData.filename || guidelineData.originalFilename;
+        
+        if (!filename) {
+            console.log('[DEBUG] getGuidelinePDF: No filename found for guideline:', guidelineId);
+            return res.status(404).json({ success: false, error: 'PDF filename not found' });
+        }
+
+        console.log('[DEBUG] getGuidelinePDF: Serving PDF:', filename);
+
+        // Construct file path
+        const filePath = path.join(__dirname, 'guidance', filename);
+        
+        // Check if file exists
+        const fs = require('fs');
+        if (!fs.existsSync(filePath)) {
+            console.log('[DEBUG] getGuidelinePDF: File not found at path:', filePath);
+            return res.status(404).json({ success: false, error: 'PDF file not found on server' });
+        }
+
+        // Set appropriate headers for PDF
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'inline');
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+        
+        // Send file
+        res.sendFile(filePath);
+
+    } catch (error) {
+        console.error('[DEBUG] getGuidelinePDF: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack
         });
         res.status(500).json({ success: false, error: error.message });
     }
