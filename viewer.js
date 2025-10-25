@@ -12,8 +12,15 @@ const firebaseConfig = {
     measurementId: "G-V07DP1ELDR"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Initialize Firebase - check if already initialized to avoid conflicts
+let app;
+if (!firebase.apps.length) {
+    console.log('[VIEWER] Initializing Firebase...');
+    app = firebase.initializeApp(firebaseConfig);
+} else {
+    console.log('[VIEWER] Firebase already initialized, reusing existing app');
+    app = firebase.app();
+}
 
 // Set auth persistence to LOCAL so sessions persist across tabs
 firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
