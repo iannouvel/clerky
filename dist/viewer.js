@@ -47,9 +47,9 @@ async function loadPDF(guidelineId) {
     try {
         console.log('[VIEWER] Loading PDF for guideline:', guidelineId);
         
-        // Get auth token from sessionStorage (set by main app)
-        const idToken = sessionStorage.getItem('viewerAuthToken');
-        const tokenTime = sessionStorage.getItem('viewerAuthTokenTime');
+        // Get auth token from localStorage (set by main app before opening viewer)
+        const idToken = localStorage.getItem('viewerAuthToken');
+        const tokenTime = localStorage.getItem('viewerAuthTokenTime');
         
         if (!idToken) {
             throw new Error('No authentication token found. Please click the link from the main application to view this guideline.');
@@ -63,7 +63,15 @@ async function loadPDF(guidelineId) {
             }
         }
         
-        console.log('[VIEWER] Using auth token from sessionStorage');
+        console.log('[VIEWER] Using auth token from localStorage');
+        
+        // Clean up token from localStorage for security (one-time use)
+        // Do this after a short delay to allow token to be used
+        setTimeout(() => {
+            localStorage.removeItem('viewerAuthToken');
+            localStorage.removeItem('viewerAuthTokenTime');
+            console.log('[VIEWER] Cleaned up auth token from localStorage');
+        }, 1000);
         
         // Fetch PDF from server
         const response = await fetch(`${SERVER_URL}/getGuidelinePDF?guidelineId=${encodeURIComponent(guidelineId)}`, {
