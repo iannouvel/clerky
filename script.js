@@ -3540,11 +3540,11 @@ window.prepareViewerAuth = async function(event) {
         // Get fresh ID token
         const idToken = await user.getIdToken();
         
-        // Store token in sessionStorage for viewer to use
-        sessionStorage.setItem('viewerAuthToken', idToken);
-        sessionStorage.setItem('viewerAuthTokenTime', Date.now().toString());
+        // Store token in localStorage for viewer to use (sessionStorage doesn't work across tabs!)
+        localStorage.setItem('viewerAuthToken', idToken);
+        localStorage.setItem('viewerAuthTokenTime', Date.now().toString());
         
-        console.log('[DEBUG] Auth token stored in sessionStorage for viewer');
+        console.log('[DEBUG] Auth token stored in localStorage for viewer');
         
         // Let the link open normally
     } catch (error) {
