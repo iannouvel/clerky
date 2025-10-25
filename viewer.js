@@ -18,6 +18,9 @@ let pageNumPending = null;
 let scale = 1.5;
 let canvas = null;
 let ctx = null;
+let searchText = null;
+let highlightedPage = null;
+let textMatches = [];
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
@@ -116,6 +119,18 @@ async function loadPDF(guidelineId) {
         document.getElementById('loading-container').style.display = 'none';
         document.getElementById('pdf-container').style.display = 'flex';
         
+        // Check if there's search text to find and highlight
+        searchText = localStorage.getItem('viewerSearchText');
+        if (searchText) {
+            console.log('[VIEWER] Search text found:', searchText.substring(0, 50) + '...');
+            showSearchStatus('Searching for quoted text in PDF...', 'info');
+            
+            // Search for text in background after rendering first page
+            setTimeout(() => {
+                searchPDFForText(searchText);
+            }, 500);
+        }
+        
         // Render the first (or specified) page
         renderPage(currentPage);
         
@@ -163,6 +178,15 @@ function renderPage(pageNumber) {
             }
             
             updateNavigationButtons();
+            
+            // Reapply highlights if this is the highlighted page
+            if (highlightedPage === pageNumber && searchText && textMatches.length > 0) {
+                setTimeout(() => {
+                    page.getTextContent().then(textContent => {
+                        highlightTextOnPage(searchText, textContent);
+                    });
+                }, 100);
+            }
         }).catch(function(error) {
             console.error('[VIEWER] Error rendering page:', error);
             pageRendering = false;
@@ -248,3 +272,162 @@ document.addEventListener('keydown', function(e) {
         nextPage();
     }
 });
+
+// Search PDF for text and navigate to it
+async function searchPDFForText(searchTerm) {
+    try {
+        console.log('[VIEWER] Searching PDF for:', searchTerm);
+        
+        const normalizedSearch = searchTerm.toLowerCase().trim();
+        
+        // Search through all pages
+        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+            const page = await pdfDoc.getPage(pageNum);
+            const textContent = await page.getTextContent();
+            
+            // Combine all text items into a single string
+            const pageText = textContent.items.map(item => item.str).join(' ');
+            const normalizedPageText = pageText.toLowerCase();
+            
+            // Check if this page contains the search text
+            if (normalizedPageText.includes(normalizedSearch)) {
+                console.log('[VIEWER] Found text on page:', pageNum);
+                
+                // Navigate to this page
+                currentPage = pageNum;
+                renderPage(pageNum);
+                
+                // Store text items for highlighting
+                textMatches = textContent.items;
+                highlightedPage = pageNum;
+                
+                // Wait for page to render, then highlight
+                setTimeout(() => {
+                    highlightTextOnPage(searchTerm, textContent);
+                    showSearchStatus(`✓ Found quoted text on page ${pageNum}`, 'success');
+                }, 500);
+                
+                // Clean up search text from localStorage
+                localStorage.removeItem('viewerSearchText');
+                
+                return;
+            }
+        }
+        
+        // Text not found
+        console.log('[VIEWER] Text not found in PDF');
+        showSearchStatus('⚠ Quoted text not found in this guideline PDF', 'warning');
+        localStorage.removeItem('viewerSearchText');
+        
+    } catch (error) {
+        console.error('[VIEWER] Error searching PDF:', error);
+        showSearchStatus('Error searching PDF', 'warning');
+    }
+}
+
+// Highlight text on the current page
+function highlightTextOnPage(searchTerm, textContent) {
+    try {
+        console.log('[VIEWER] Highlighting text on page');
+        
+        const highlightLayer = document.getElementById('highlight-layer');
+        if (!highlightLayer) return;
+        
+        // Clear existing highlights
+        highlightLayer.innerHTML = '';
+        
+        const normalizedSearch = searchTerm.toLowerCase().trim();
+        const searchWords = normalizedSearch.split(/\s+/);
+        
+        // Build continuous text with position tracking
+        let fullText = '';
+        let itemPositions = [];
+        
+        textContent.items.forEach((item, index) => {
+            const startPos = fullText.length;
+            fullText += item.str + ' ';
+            itemPositions.push({
+                index,
+                startPos,
+                endPos: fullText.length - 1,
+                item
+            });
+        });
+        
+        const normalizedFullText = fullText.toLowerCase();
+        const searchIndex = normalizedFullText.indexOf(normalizedSearch);
+        
+        if (searchIndex === -1) {
+            console.log('[VIEWER] Text not found on this specific page during highlighting');
+            return;
+        }
+        
+        // Find which text items contain the search text
+        const searchEndIndex = searchIndex + normalizedSearch.length;
+        const relevantItems = itemPositions.filter(pos => {
+            return (pos.startPos <= searchEndIndex && pos.endPos >= searchIndex);
+        });
+        
+        if (relevantItems.length === 0) return;
+        
+        // Get page and calculate viewport
+        pdfDoc.getPage(currentPage).then(page => {
+            const viewport = page.getViewport({ scale: scale });
+            
+            // Create highlight boxes for each relevant text item
+            relevantItems.forEach(pos => {
+                const item = pos.item;
+                
+                // Get transform matrix for this text item
+                const transform = item.transform;
+                const x = transform[4];
+                const y = transform[5];
+                const width = item.width;
+                const height = item.height || 12; // Fallback height
+                
+                // Convert PDF coordinates to canvas coordinates
+                const canvasX = x;
+                const canvasY = viewport.height - y - height;
+                
+                // Create highlight div
+                const highlight = document.createElement('div');
+                highlight.className = 'text-highlight';
+                highlight.style.left = canvasX + 'px';
+                highlight.style.top = canvasY + 'px';
+                highlight.style.width = width + 'px';
+                highlight.style.height = height + 'px';
+                
+                highlightLayer.appendChild(highlight);
+            });
+            
+            // Update highlight layer dimensions to match canvas
+            highlightLayer.style.width = canvas.width + 'px';
+            highlightLayer.style.height = canvas.height + 'px';
+            
+            console.log('[VIEWER] Added', relevantItems.length, 'highlight boxes');
+        });
+        
+    } catch (error) {
+        console.error('[VIEWER] Error highlighting text:', error);
+    }
+}
+
+// Show search status message
+function showSearchStatus(message, type = 'info') {
+    const container = document.getElementById('search-status-container');
+    if (!container) return;
+    
+    const className = type === 'success' ? 'search-status success' :
+                     type === 'warning' ? 'search-status warning' :
+                     'search-status';
+    
+    container.innerHTML = `<div class="${className}">${message}</div>`;
+    container.style.display = 'block';
+    
+    // Auto-hide info messages after 5 seconds
+    if (type === 'info') {
+        setTimeout(() => {
+            container.style.display = 'none';
+        }, 5000);
+    }
+}
