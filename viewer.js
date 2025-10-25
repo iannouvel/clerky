@@ -27,7 +27,7 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
 // Server URL
 const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://clerky-b3be8.onrender.com';
+    : 'https://clerky-uzni.onrender.com';
 
 // Global variables
 let pdfDoc = null;
