@@ -1,18 +1,28 @@
 // PDF.js configuration
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-// Firebase configuration
+// Firebase configuration - MUST match the main app configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDEUYN5CyRa-m0Fx1Gr18lFV4jgkYbpQu8",
+    apiKey: "AIzaSyAF5y6k9THaRKxLZemqcYDj4y_EgCcDbX8",
     authDomain: "clerky-b3be8.firebaseapp.com",
     projectId: "clerky-b3be8",
-    storageBucket: "clerky-b3be8.firebasestorage.app",
-    messagingSenderId: "452690849034",
-    appId: "1:452690849034:web:adea04a6c30d01f6a84fd0"
+    storageBucket: "clerky-b3be8.appspot.com",
+    messagingSenderId: "193460924609",
+    appId: "1:193460924609:web:6e2c696c87292d4a222440",
+    measurementId: "G-V07DP1ELDR"
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Set auth persistence to LOCAL so sessions persist across tabs
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+        console.log('[VIEWER] Auth persistence set to LOCAL');
+    })
+    .catch((error) => {
+        console.error('[VIEWER] Failed to set auth persistence:', error);
+    });
 
 // Server URL
 const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -29,7 +39,7 @@ let canvas = null;
 let ctx = null;
 
 // Initialize
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     canvas = document.getElementById('pdf-canvas');
     ctx = canvas.getContext('2d');
     
@@ -46,6 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
         showError('No guideline ID provided', 'Please provide a guideline ID in the URL parameters.');
         return;
     }
+    
+    // Wait a bit for Firebase to initialize and restore auth state
+    console.log('[VIEWER] Waiting for Firebase initialization...');
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Load the PDF
     loadPDF(guidelineId);
@@ -84,11 +98,12 @@ async function loadPDF(guidelineId) {
                 }
             });
             
-            // Longer timeout - 15 seconds
+            // Longer timeout - 30 seconds to allow for auth state restoration
             timeoutId = setTimeout(() => {
                 unsubscribe();
-                reject(new Error('Authentication timeout. Please refresh and try again.'));
-            }, 15000);
+                console.error('[VIEWER] Authentication timeout after 30 seconds');
+                reject(new Error('Authentication timeout. Please sign in to the main application first, then try opening the guideline viewer again.'));
+            }, 30000);
         });
         
         // Update loading message

@@ -3682,7 +3682,7 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
 }
 
 // Display the current suggestion being reviewed
-function showCurrentSuggestion() {
+async function showCurrentSuggestion() {
     const review = window.currentSuggestionReview;
     if (!review) return;
 
@@ -3703,6 +3703,18 @@ function showCurrentSuggestion() {
     if (suggestion.originalText) {
         highlightTextInEditor(suggestion.originalText);
         scrollTextIntoView(suggestion.originalText);
+    }
+
+    // Pre-fetch insertion point in background for additions (to speed up acceptance)
+    if ((suggestion.category === 'addition' || !suggestion.originalText) && !suggestion.cachedInsertionPoint) {
+        console.log('[DEBUG] showCurrentSuggestion: Pre-fetching insertion point in background');
+        const currentContent = getUserInputContent();
+        determineInsertionPoint(suggestion, currentContent).then(insertionPoint => {
+            suggestion.cachedInsertionPoint = insertionPoint;
+            console.log('[DEBUG] showCurrentSuggestion: Cached insertion point:', insertionPoint);
+        }).catch(error => {
+            console.error('[DEBUG] showCurrentSuggestion: Error pre-fetching insertion point:', error);
+        });
     }
 
     // Create guideline link
@@ -3765,9 +3777,15 @@ window.handleCurrentSuggestionAction = async function(action) {
             // Addition: use smart insertion to determine best location
             console.log('[DEBUG] handleCurrentSuggestionAction: Using smart insertion for addition');
             
-            // Get insertion point from AI
-            const insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-            console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point determined:', insertionPoint);
+            // Use cached insertion point if available, otherwise fetch it now
+            let insertionPoint = suggestion.cachedInsertionPoint;
+            if (!insertionPoint) {
+                console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
+                insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+            } else {
+                console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+            }
+            console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
             
             // Insert at determined point
             newContent = insertTextAtPoint(currentContent, suggestion.suggestedText, insertionPoint);
