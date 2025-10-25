@@ -10164,6 +10164,16 @@ Please analyse the clinical note structure and determine the optimal insertion p
     }
 });
 
+// OPTIONS handler for getGuidelinePDF (CORS preflight)
+app.options('/getGuidelinePDF', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Max-Age', '86400');
+    res.status(204).send();
+});
+
 // Get Guideline PDF endpoint - serves PDF files for viewing
 app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
     try {
@@ -10203,10 +10213,13 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
             return res.status(404).json({ success: false, error: 'PDF file not found on server' });
         }
 
-        // Set appropriate headers for PDF
+        // Set appropriate headers for PDF and CORS
         res.setHeader('Content-Type', 'application/pdf');
         res.setHeader('Content-Disposition', 'inline');
         res.setHeader('Cache-Control', 'public, max-age=3600');
+        res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
         
         // Send file
         res.sendFile(filePath);
