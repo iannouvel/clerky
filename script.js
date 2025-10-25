@@ -3415,13 +3415,78 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
 
     const { section, insertionMethod, anchorText } = insertionPoint;
 
-    // If method is append, just add to end with spacing
-    if (insertionMethod === 'append') {
-        const spacing = currentContent.trim() ? '\n\n' : '';
-        return currentContent + spacing + newText;
+    // If method is append to a section, find the section and append within it
+    if (insertionMethod === 'append' && section) {
+        // Find the section in the document
+        // Try different section header formats: "Section:", "Section", "Section -", etc.
+        const sectionPatterns = [
+            new RegExp(`^${section}:`, 'im'),           // "Discussion:"
+            new RegExp(`^${section}\\s*$`, 'im'),       // "Discussion"
+            new RegExp(`^${section}\\s*-`, 'im'),       // "Discussion -"
+            new RegExp(`${section}:`, 'i')              // "Discussion:" anywhere in line
+        ];
+        
+        let sectionStartIndex = -1;
+        let matchedPattern = null;
+        
+        for (const pattern of sectionPatterns) {
+            const match = currentContent.match(pattern);
+            if (match) {
+                sectionStartIndex = match.index;
+                matchedPattern = match[0];
+                break;
+            }
+        }
+        
+        if (sectionStartIndex !== -1) {
+            console.log('[DEBUG] insertTextAtPoint: Found section', section, 'at index', sectionStartIndex);
+            
+            // Find where this section ends (start of next section or end of document)
+            // Look for the next section header after this one
+            const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
+            
+            // Common section names to look for
+            const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
+            let nextSectionIndex = -1;
+            
+            for (const nextSection of commonSections) {
+                if (nextSection === section) continue; // Skip current section
+                
+                const nextPatterns = [
+                    new RegExp(`\n${nextSection}:`, 'i'),
+                    new RegExp(`\n${nextSection}\\s*$`, 'm'),
+                    new RegExp(`\n${nextSection}\\s*-`, 'i')
+                ];
+                
+                for (const pattern of nextPatterns) {
+                    const match = afterSection.match(pattern);
+                    if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
+                        nextSectionIndex = match.index;
+                    }
+                }
+            }
+            
+            // Calculate insertion position
+            let insertPosition;
+            if (nextSectionIndex !== -1) {
+                // Insert before the next section
+                insertPosition = sectionStartIndex + matchedPattern.length + nextSectionIndex;
+                console.log('[DEBUG] insertTextAtPoint: Inserting before next section at position', insertPosition);
+                return currentContent.slice(0, insertPosition) + '\n\n' + newText + currentContent.slice(insertPosition);
+            } else {
+                // No next section found, append to end of document (this section is last)
+                console.log('[DEBUG] insertTextAtPoint: Section is last, appending to end');
+                const spacing = currentContent.trim() ? '\n\n' : '';
+                return currentContent + spacing + newText;
+            }
+        } else {
+            console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            return currentContent + spacing + newText;
+        }
     }
 
-    // For insertAfter or insertBefore, find the anchor text
+    // For insertAfter or insertBefore with anchor text
     if (anchorText && (insertionMethod === 'insertAfter' || insertionMethod === 'insertBefore')) {
         const anchorIndex = currentContent.indexOf(anchorText);
         
@@ -3440,6 +3505,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
     }
 
     // Fallback: append to end
+    console.warn('[DEBUG] insertTextAtPoint: Using fallback - appending to end');
     const spacing = currentContent.trim() ? '\n\n' : '';
     return currentContent + spacing + newText;
 }
