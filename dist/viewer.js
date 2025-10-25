@@ -56,28 +56,45 @@ async function loadPDF(guidelineId) {
     try {
         console.log('[VIEWER] Loading PDF for guideline:', guidelineId);
         
-        // Get auth token
-        const currentUser = firebase.auth().currentUser;
-        if (!currentUser) {
-            // Try to wait for auth
-            await new Promise((resolve, reject) => {
-                const unsubscribe = firebase.auth().onAuthStateChanged(user => {
-                    unsubscribe();
-                    if (user) {
-                        resolve(user);
-                    } else {
-                        reject(new Error('Not authenticated'));
-                    }
-                });
-                // Timeout after 5 seconds
-                setTimeout(() => {
-                    unsubscribe();
-                    reject(new Error('Authentication timeout'));
-                }, 5000);
-            });
-        }
+        // Update loading message
+        document.getElementById('loading-container').innerHTML = '<div class="loading-spinner"></div><p>Authenticating...</p>';
         
-        const idToken = await firebase.auth().currentUser.getIdToken();
+        // Wait for Firebase auth to be ready
+        const user = await new Promise((resolve, reject) => {
+            // First check if already signed in
+            const currentUser = firebase.auth().currentUser;
+            if (currentUser) {
+                console.log('[VIEWER] User already authenticated');
+                resolve(currentUser);
+                return;
+            }
+            
+            // Otherwise wait for auth state to change
+            console.log('[VIEWER] Waiting for authentication...');
+            let timeoutId;
+            const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+                clearTimeout(timeoutId);
+                unsubscribe();
+                if (user) {
+                    console.log('[VIEWER] User authenticated:', user.email);
+                    resolve(user);
+                } else {
+                    console.log('[VIEWER] No user authenticated');
+                    reject(new Error('Not authenticated. Please sign in to view guidelines.'));
+                }
+            });
+            
+            // Longer timeout - 15 seconds
+            timeoutId = setTimeout(() => {
+                unsubscribe();
+                reject(new Error('Authentication timeout. Please refresh and try again.'));
+            }, 15000);
+        });
+        
+        // Update loading message
+        document.getElementById('loading-container').innerHTML = '<div class="loading-spinner"></div><p>Loading PDF...</p>';
+        
+        const idToken = await user.getIdToken();
         
         // Fetch PDF from server
         const response = await fetch(`${SERVER_URL}/getGuidelinePDF?guidelineId=${encodeURIComponent(guidelineId)}`, {
@@ -106,8 +123,17 @@ async function loadPDF(guidelineId) {
         // Update page count
         document.getElementById('page-count').textContent = pdfDoc.numPages;
         
-        // Update title
-        document.getElementById('guideline-title').textContent = `Guideline (ID: ${guidelineId})`;
+        // Update title - show just the guideline ID in a cleaner format
+        const titleElement = document.getElementById('guideline-title');
+        if (titleElement) {
+            // Clean up the guideline ID for display
+            const displayTitle = guidelineId
+                .replace(/-pdf$/, '')
+                .split('-')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+            titleElement.textContent = `📄 ${displayTitle}`;
+        }
         
         // Hide loading, show PDF
         document.getElementById('loading-container').style.display = 'none';
@@ -245,4 +271,3 @@ document.addEventListener('keydown', function(e) {
         nextPage();
     }
 });
-

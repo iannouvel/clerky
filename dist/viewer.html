@@ -8,6 +8,11 @@
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <style>
+        :root {
+            --accent-color: #2563eb;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -20,22 +25,67 @@
             color: #333;
         }
 
-        .header {
-            background: #2563eb;
+        .top-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent-color), #00CEC9);
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        .logo {
             color: white;
-            padding: 15px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            font-size: 20px;
             font-weight: 600;
+            font-size: 1.5rem;
+            margin-right: 8px;
         }
 
-        .header .subtitle {
-            font-size: 13px;
+        .guideline-title {
+            color: white;
+            font-size: 14px;
             opacity: 0.9;
-            margin-top: 4px;
+            margin-left: 16px;
+        }
+
+        .top-bar-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-btn {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
 
         .controls {
@@ -166,9 +216,19 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>📄 Guideline Viewer</h1>
-        <div class="subtitle" id="guideline-title">Loading guideline...</div>
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html" class="logo-link">
+                <div class="logo">clerky</div>
+            </a>
+            <span class="guideline-title" id="guideline-title">Loading guideline...</span>
+        </div>
+        <div class="top-bar-center">
+            <a href="javascript:history.back()" class="back-btn">← Back</a>
+        </div>
+        <div class="top-bar-right">
+            <!-- Future: add more controls here if needed -->
+        </div>
     </div>
 
     <div class="controls">
@@ -202,4 +262,3 @@
     <script src="viewer.js"></script>
 </body>
 </html>
-
