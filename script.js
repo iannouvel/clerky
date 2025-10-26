@@ -5529,6 +5529,10 @@ async function showClinicalIssuesDropdown() {
                         <span id="random-spinner" class="spinner" style="display: none;"></span>
                         <span id="random-text">Random Issue</span>
                     </button>
+                    <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
+                        <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
+                        <span id="regenerate-text">Regenerate Clerking</span>
+                    </button>
                     <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                 </div>
                 
@@ -5543,6 +5547,7 @@ async function showClinicalIssuesDropdown() {
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
         const randomBtn = document.getElementById('random-issue-btn');
+        const regenerateBtn = document.getElementById('regenerate-clerking-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
         
         function updateGenerateButton() {
@@ -5551,6 +5556,9 @@ async function showClinicalIssuesDropdown() {
             
             if (generateBtn) {
                 generateBtn.disabled = !hasSelection;
+            }
+            if (regenerateBtn) {
+                regenerateBtn.disabled = !hasSelection;
             }
         }
         
@@ -5595,6 +5603,17 @@ async function showClinicalIssuesDropdown() {
             });
         }
         
+        if (regenerateBtn) {
+            regenerateBtn.addEventListener('click', async () => {
+                const selectedIssue = clinicalDropdown?.value || '';
+                
+                if (selectedIssue) {
+                    // Force regeneration of the transcript
+                    await generateFakeClinicalInteraction(selectedIssue, true);
+                }
+            });
+        }
+        
         if (cancelBtn) {
             cancelBtn.addEventListener('click', () => {
                 appendToSummary1('Clinical interaction generation cancelled.\n\n', true);
@@ -5608,22 +5627,34 @@ async function showClinicalIssuesDropdown() {
 }
 
 // Generate fake clinical interaction based on selected issue
-async function generateFakeClinicalInteraction(selectedIssue) {
-    console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue);
+async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = false) {
+    console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue, 'forceRegenerate:', forceRegenerate);
     
     const generateBtn = document.getElementById('generate-interaction-btn');
+    const regenerateBtn = document.getElementById('regenerate-clerking-btn');
     const generateSpinner = document.getElementById('generate-spinner');
+    const regenerateSpinner = document.getElementById('regenerate-spinner');
     const generateText = document.getElementById('generate-text');
+    const regenerateText = document.getElementById('regenerate-text');
     const statusDiv = document.getElementById('generation-status');
     
     try {
         // Update UI to show loading state
         if (generateBtn) generateBtn.disabled = true;
-        if (generateSpinner) generateSpinner.style.display = 'inline';
-        if (generateText) generateText.textContent = 'Loading...';
+        if (regenerateBtn) regenerateBtn.disabled = true;
+        
+        if (forceRegenerate) {
+            if (regenerateSpinner) regenerateSpinner.style.display = 'inline';
+            if (regenerateText) regenerateText.textContent = 'Regenerating...';
+        } else {
+            if (generateSpinner) generateSpinner.style.display = 'inline';
+            if (generateText) generateText.textContent = 'Loading...';
+        }
+        
         if (statusDiv) {
             statusDiv.style.display = 'block';
-            statusDiv.innerHTML = `<p>📋 Loading clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            const action = forceRegenerate ? 'Regenerating' : 'Loading';
+            statusDiv.innerHTML = `<p>📋 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
         // Find the condition in our cached data
@@ -5643,8 +5674,8 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         let transcript = null;
         let isGenerated = false;
         
-        // Check if we have a cached transcript
-        if (condition.hasTranscript && condition.transcript) {
+        // Check if we have a cached transcript and not forcing regeneration
+        if (condition.hasTranscript && condition.transcript && !forceRegenerate) {
             transcript = condition.transcript;
             console.log('[DEBUG] Using cached transcript:', {
                 transcriptLength: transcript.length,
@@ -5652,12 +5683,13 @@ async function generateFakeClinicalInteraction(selectedIssue) {
             });
         } else {
             // Generate new transcript using Firebase service
-            console.log('[DEBUG] Generating new transcript...');
+            const action = forceRegenerate ? 'Regenerating' : 'Generating new';
+            console.log(`[DEBUG] ${action} transcript...`);
             if (statusDiv) {
-                statusDiv.innerHTML = `<p>🔄 Generating new clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+                statusDiv.innerHTML = `<p>🔄 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
             }
             
-            const result = await ClinicalConditionsService.generateTranscript(condition.id, false);
+            const result = await ClinicalConditionsService.generateTranscript(condition.id, forceRegenerate);
             
             console.log('[DEBUG] ClinicalConditionsService.generateTranscript returned:', {
                 resultExists: !!result,
@@ -5717,11 +5749,12 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         }
         
         // Show success message in summary1 (append, don't clear)
-        const performanceText = isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache';
-        const successMessage = `## ✅ Clinical Interaction Loaded\n\n` +
+        const performanceText = forceRegenerate ? '🔄 Regenerated with updated formatting' : (isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache');
+        const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
+        const successMessage = `## ✅ Clinical Interaction ${actionText}\n\n` +
                               `**Clinical Issue:** ${selectedIssue}\n\n` +
                               `**Category:** ${condition.category}\n\n` +
-                              `**Status:** Successfully loaded clinical interaction scenario\n\n` +
+                              `**Status:** Successfully ${actionText.toLowerCase()} clinical interaction scenario\n\n` +
                               `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n\n` +
                               `**Performance:** ${performanceText}\n\n` +
                               `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
@@ -5752,10 +5785,13 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         appendToSummary1(errorMessage, false); // Don't clear existing content
         
     } finally {
-        // Reset button state
+        // Reset button states
         if (generateBtn) generateBtn.disabled = false;
+        if (regenerateBtn) regenerateBtn.disabled = false;
         if (generateSpinner) generateSpinner.style.display = 'none';
+        if (regenerateSpinner) regenerateSpinner.style.display = 'none';
         if (generateText) generateText.textContent = 'Load Clerking';
+        if (regenerateText) regenerateText.textContent = 'Regenerate Clerking';
         
         console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
     }
