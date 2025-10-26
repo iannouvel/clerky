@@ -1402,6 +1402,79 @@ function showMainContent() {
     }
 }
 
+// Helper to sync guidelines in batches to avoid timeout
+async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) {
+    console.log(`[BATCH_SYNC] Starting batch sync with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+    
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+    
+    try {
+        while (remaining > 0 && batchCount < maxBatches) {
+            batchCount++;
+            console.log(`[BATCH_SYNC] Starting batch ${batchCount}...`);
+            
+            const response = await fetch(`${window.SERVER_URL}/syncGuidelinesBatch`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+            
+            if (!response.ok) {
+                console.error(`[BATCH_SYNC] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+            
+            const result = await response.json();
+            console.log(`[BATCH_SYNC] Batch ${batchCount} result:`, result);
+            
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+            
+            console.log(`[BATCH_SYNC] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+            
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[BATCH_SYNC] All guidelines synced!');
+                break;
+            }
+            
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[BATCH_SYNC] Waiting 2 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+        
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+        
+    } catch (error) {
+        console.error('[BATCH_SYNC] Error during batch sync:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
 // Update loadGuidelinesFromFirestore to load from Firestore
 async function getGitHubGuidelinesCount() {
     try {
@@ -1898,17 +1971,10 @@ async function syncGuidelinesInBackground() {
         if (githubCount !== null && githubCount > currentCount) {
             console.log(`[BACKGROUND_SYNC] GitHub has ${githubCount} guidelines but Firestore only has ${currentCount}. Syncing...`);
             
-            const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${idToken}`
-                },
-                body: JSON.stringify({})
-            });
-
-            if (syncResponse.ok) {
-                const syncResult = await syncResponse.json();
+            // Use batch sync to avoid timeouts
+            const syncResult = await syncGuidelinesInBatches(idToken, 3); // Process 3 at a time
+            
+            if (syncResult.success) {
                 console.log('[BACKGROUND_SYNC] Sync completed successfully:', syncResult);
                 
                 // Reload guidelines after sync
