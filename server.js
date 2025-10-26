@@ -7524,6 +7524,181 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
   }
 });
 
+// Batch sync endpoint - processes guidelines in small batches to avoid timeout
+app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    const batchSize = parseInt(req.body.batchSize) || 5; // Process 5 guidelines at a time by default
+    const skipExisting = req.body.skipExisting !== false; // Skip existing guidelines by default
+
+    console.log(`[BATCH_SYNC] Starting batch sync with batch size: ${batchSize}`);
+
+    // Get all guidelines from GitHub
+    const guidelinesString = await getGuidelinesList();
+    const allGuidelines = guidelinesString.split('\n').filter(line => line.trim());
+
+    if (!allGuidelines || allGuidelines.length === 0) {
+      return res.json({ 
+        success: true, 
+        message: 'No guidelines found in GitHub', 
+        processed: 0,
+        remaining: 0,
+        total: 0
+      });
+    }
+
+    // Get existing guidelines from Firestore
+    const existingGuidelinesSnapshot = await db.collection('guidelines').get();
+    const existingIds = new Set();
+    existingGuidelinesSnapshot.forEach(doc => {
+      existingIds.add(doc.id);
+    });
+
+    // Filter to only unsynced guidelines
+    const unsyncedGuidelines = [];
+    for (const rawName of allGuidelines) {
+      const cleanId = generateCleanDocId(rawName);
+      if (!existingIds.has(cleanId)) {
+        unsyncedGuidelines.push(rawName);
+      }
+    }
+
+    console.log(`[BATCH_SYNC] Total guidelines: ${allGuidelines.length}, Already synced: ${existingIds.size}, Unsynced: ${unsyncedGuidelines.length}`);
+
+    if (unsyncedGuidelines.length === 0) {
+      return res.json({
+        success: true,
+        message: 'All guidelines already synced',
+        processed: 0,
+        remaining: 0,
+        total: allGuidelines.length,
+        alreadySynced: existingIds.size
+      });
+    }
+
+    // Process only the first batch
+    const batch = unsyncedGuidelines.slice(0, batchSize);
+    const results = [];
+
+    console.log(`[BATCH_SYNC] Processing ${batch.length} guidelines...`);
+
+    for (const rawGuidelineName of batch) {
+      const guideline = encodeURIComponent(rawGuidelineName.trim());
+      console.log(`[BATCH_SYNC] Processing: ${rawGuidelineName}`);
+      
+      try {
+        const cleanId = generateCleanDocId(rawGuidelineName);
+        
+        // Get content and summary paths
+        let contentPath, summaryPath;
+        if (rawGuidelineName.toLowerCase().endsWith('.pdf')) {
+          const baseName = rawGuidelineName.replace(/\.pdf$/i, '');
+          contentPath = `guidance/condensed/${encodeURIComponent(baseName + '.txt')}`;
+          summaryPath = `guidance/summary/${encodeURIComponent(baseName + '.txt')}`;
+        } else {
+          contentPath = `guidance/condensed/${encodeURIComponent(rawGuidelineName)}`;
+          summaryPath = `guidance/summary/${encodeURIComponent(rawGuidelineName)}`;
+        }
+
+        console.log(`[BATCH_SYNC] Fetching content from: ${contentPath}`);
+        console.log(`[BATCH_SYNC] Fetching summary from: ${summaryPath}`);
+
+        // Fetch content and summary
+        const [contentResponse, summaryResponse] = await Promise.all([
+          fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${contentPath}`, {
+            headers: { 
+              'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3.raw'
+            }
+          }),
+          fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${summaryPath}`, {
+            headers: { 
+              'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+              'Accept': 'application/vnd.github.v3.raw'
+            }
+          })
+        ]);
+
+        if (!contentResponse.ok || !summaryResponse.ok) {
+          throw new Error(`Failed to fetch files: content=${contentResponse.status}, summary=${summaryResponse.status}`);
+        }
+
+        const content = await contentResponse.text();
+        const summary = await summaryResponse.text();
+
+        console.log(`[BATCH_SYNC] Extracting metadata for ${guideline}...`);
+
+        // Extract metadata using AI (this is the slow part)
+        const metadata = await extractMetadataFromContent(content, rawGuidelineName);
+
+        console.log(`[BATCH_SYNC] Successfully extracted metadata for ${rawGuidelineName}`);
+
+        // Store in Firestore
+        console.log(`[BATCH_SYNC] Storing ${rawGuidelineName} with ID: ${cleanId}`);
+        
+        const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
+        
+        await db.collection('guidelines').doc(cleanId).set({
+          name: rawGuidelineName,
+          content: content,
+          summary: summary || '',
+          downloadUrl: downloadUrl,
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+          updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+          ...metadata
+        });
+
+        results.push({ 
+          guideline: rawGuidelineName, 
+          success: true, 
+          id: cleanId,
+          message: 'Successfully synced'
+        });
+        
+        console.log(`[BATCH_SYNC] ✓ Successfully synced: ${rawGuidelineName}`);
+
+      } catch (error) {
+        console.error(`[BATCH_SYNC] Error processing ${rawGuidelineName}:`, error.message);
+        results.push({ 
+          guideline: rawGuidelineName, 
+          success: false, 
+          error: error.message 
+        });
+      }
+    }
+
+    const successCount = results.filter(r => r.success).length;
+    const failureCount = results.filter(r => !r.success).length;
+
+    console.log(`[BATCH_SYNC] Batch complete: ${successCount} succeeded, ${failureCount} failed`);
+
+    res.json({
+      success: true,
+      message: `Processed ${batch.length} guidelines`,
+      processed: batch.length,
+      succeeded: successCount,
+      failed: failureCount,
+      remaining: unsyncedGuidelines.length - batch.length,
+      total: allGuidelines.length,
+      alreadySynced: existingIds.size,
+      results: results
+    });
+
+  } catch (error) {
+    console.error('[BATCH_SYNC] Critical error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: error.message,
+      details: 'Error in batch sync endpoint'
+    });
+  }
+});
+
 // Endpoint to get guidelines list from GitHub
 app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     try {
