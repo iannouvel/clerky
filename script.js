@@ -614,21 +614,37 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             updateClearFormattingButton();
         } else {
             // Set content without coloring for other programmatic changes
-            // Convert newlines to HTML paragraphs for proper display in TipTap
-            // Filter out empty lines to avoid excessive spacing
-            const htmlContent = safeContent.split('\n')
-                .filter(line => line.trim().length > 0)
-                .map(line => `<p>${escapeHtml(line)}</p>`)
+            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
+            // First, normalize multiple consecutive blank lines into single blank lines
+            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+            
+            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    // Within each paragraph, convert single newlines to <br>
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
+                    return `<p>${lines}</p>`;
+                })
                 .join('');
             editor.commands.setContent(htmlContent);
         }
     } else {
         // Regular content update without coloring
-        // Convert newlines to HTML paragraphs for proper display in TipTap
-        // Filter out empty lines to avoid excessive spacing
-        const htmlContent = safeContent.split('\n')
-            .filter(line => line.trim().length > 0)
-            .map(line => `<p>${escapeHtml(line)}</p>`)
+        // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
+        // First, normalize multiple consecutive blank lines into single blank lines
+        const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+        
+        // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+        const paragraphs = normalizedContent.split('\n\n');
+        const htmlContent = paragraphs
+            .filter(para => para.trim().length > 0)
+            .map(para => {
+                // Within each paragraph, convert single newlines to <br>
+                const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
+                return `<p>${lines}</p>`;
+            })
             .join('');
         editor.commands.setContent(htmlContent);
     }
