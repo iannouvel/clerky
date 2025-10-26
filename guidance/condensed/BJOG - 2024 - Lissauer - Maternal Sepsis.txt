@@ -1,0 +1,2208 @@
+BJOG: An International Journal of Obstetrics & Gynaecology, 2025; 132:e61–e85
+https://doi.org/10.1111/1471-0528.18009e61
+BJOG: An International Journal of Obstetrics & Gynaecology
+RCOG GREEN- TOP GUIDELINE
+Identification and Management of Maternal Sepsis During 
+and Following Pregnancy
+Green- top Guideline No. 64
+David Lissauer | Marina Morgan | Anita Banerjee | Felicity Plaat | Dharmintra Pasupathy | the Royal College of Obstetrics and 
+Gynaecology
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10–18 Union Street, London SE1 1SZ. | (Email: clinicaleffectiveness@rcog.org.uk )
+Funding: All those involved in the development of the Green- top Guidelines, including the Guidelines Committee, Guidelines Committee co- chairs, 
+guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receive no direct funding for their work in producing the guideline. The 
+exception to this are the RCOG staff involved who are salaried employees of the College and Guidelines Committee members who receive reimbursement for 
+expenses for at- tending Guidelines Committee meetings. Please see more information on travel expense rules on the RCOG website.
+This is the second edition of this guideline, which was first published in 2012 as two separate guidelines: Green- top Guideline (GTG) No. 64a Bacterial Sepsis in Pregnancy ; and GTG No. 64b 
+Bacterial Sepsis Following Pregnancy . KEY RECOMMENDATIONS
+• Consider sepsis as a possible diagnosis in all women during pregnancy, and in the intrapartum and postpartum period, with a 
+suspected infection and whose clinical condition rapidly deteriorates. [Good Practice Point (GPP)]
+• If sepsis is suspected in the community, urgent escalation and referral to hospital is indicated. [GPP]
+• Monitoring of a woman with suspected sepsis should be performed using an early warning system modified for obstetrics, 
+managed through a multidisciplinary approach with early escalation and senior input. [GPP]
+• Serum lactate should be measured urgently in women with features indicating a high risk of sepsis. Serum lactate of 4 mmol/l or 
+more should prompt immediate escalation of care, including consideration of discussion with critical care team. [Grade D]
+• Any relevant imaging studies should be performed promptly to confirm the source of infection. [Grade D]
+• Use of a sepsis bundle may improve compliance with urgent management in women at high risk of sepsis. [Grade D]
+• Administration of intravenous broad- spectrum antibiotics is recommended within one hour in women at high risk of sepsis, 
+with or without septic shock. [Grade C]
+• In a critically ill pregnant woman, birth of the baby can be expedited if it would be beneficial to the woman or the baby or to 
+both. A decision on the timing and mode of birth should be made by a senior obstetrician following discussion with the woman 
+and/or family if her condition permits. [GPP]
+• During the intrapartum period, continuous electronic fetal monitoring is recommended. Caution is required if considering fetal 
+blood sampling. [GPP]
+• An individual risk assessment should be made by a senior anaesthetist with regards to type of anaesthesia, as well as the need 
+for invasive monitoring. [GPP]
+• Babies of women treated for sepsis during labour, or in the 24 hour period before or after birth, require assessment for risk 
+factors and clinical indicators of neonatal infection. [Grade D]
+© 2024 Royal College of Obstetricians and Gynaecologists.
+e62 BJOG: An International Journal of Obstetrics & Gynaecology, 20251 | Purpose and Scope
+The need for such a guideline was originally identified by the 
+2007 Confidential Enquiry into Maternal Deaths [ 1]. The scope 
+of this guideline covers the recognition and management of 
+sepsis in the antenatal, intrapartum and postpartum periods, 
+including post- abortion sepsis. The scope includes bacterial in -
+fections arising in the genital tract or elsewhere and influenza 
+and their management in secondary care. Sepsis arising due to 
+primary viral (other than influenza and HSV) or parasitic infec -
+tion is outside the scope of this guideline. There is separate spe -
+cific guidance available on Coronavirus (COVID- 19) infection 
+in pregnancy [ 2].
+This guideline is for healthcare professionals who care for 
+women, non- binary and trans people suspected of, or diagnosed 
+with, sepsis in primary or secondary healthcare. This guideline 
+excludes mild to moderate illness in primary care.
+Within this document we use the terms woman and women's 
+health. However, it is important to acknowledge that it is not 
+only women for whom it is necessary to access women's health 
+and reproductive services in order to maintain their gynaeco -
+logical health and reproductive wellbeing. Gynaecological and 
+obstetric services and delivery of care must therefore be appro -
+priate, inclusive and sensitive to the needs of those individuals 
+whose gender identity does not align with the sex they were as -
+signed at birth.
+2 | Introduction and Background
+Sepsis during and following pregnancy remains an import -
+ant cause of maternal death globally, accounting for 11% of 
+all maternal deaths [ 3]. Between 2019–21, 241 of 2 066 997 
+women giving birth in the UK died. Of these, 78 women died 
+of sepsis, either direct or indirect. Despite a statistically non- 
+significant increase in the overall maternal death rate due to sepsis in the UK between 2016–18 and 2019–21, most of 
+this was accounted for by SARS- COV- 2 viral infections in 
+unvaccinated women.
+In the UK and Ireland, during or up to six weeks after the end 
+of pregnancy and defined “ in the broadest sense as death from a 
+primary infective cause ” the overall mortality rate for sepsis was 
+2.50 per 100 000 maternities (95% CI 1.89–3.25 per 100 000) [ 1, 4].
+Between 2019–21, 10% of all maternal deaths were due to sepsis 
+and 14% of deaths were due to COVID- 19 infection [ 4]. Overall, 
+47 of the 78 deaths (60%) were attributable to viral infections, 
+43 due to COVID-19, one varicella zoster virus, one viral myo -
+carditis of unknown cause and two following influenza A [ 4]. 
+Deaths attributable to influenza A were significantly lower than 
+in the years 2010–12 when 13 women died, reflecting the impor -
+tance of vaccination. Only one of the 43 women who died from 
+SARS- CoV- 2 had been vaccinated, and had only had one dose of 
+COVID- 19 vaccine [ 4].
+The number of bacterial sepsis related deaths was significantly 
+higher than in the previous MBRRACE report (2015–2017), [ 5] 
+where a breakdown of responsible agents was given as 27 deaths 
+overall, 16 classified as ‘direct’ maternal deaths from sepsis and 
+ten due to genital tract sepsis [ 5]. Excluding SARS- COV- 2 deaths, 
+the dramatic decline from an overall figure of 2.04 deaths due to 
+sepsis per 100 000 maternities (data from the 2009–12 MBRRACE 
+report) [ 6] likely reflects the combination of increasing influenza 
+vaccine uptake, mandatory education of healthcare staff to rec -
+ognise sepsis and implementation of various sepsis- related guide -
+lines, including the previous edition of this RCOG Green- top 
+Guideline. The National Maternity and Perinatal Audit (NMPA) 
+report examining maternity admissions to intensive care in 
+2015/2016 highlighted the importance of infection as the second 
+most common cause for admission, after haemorrhage. The most 
+common infections were pneumonia (44%), urinary tract (20.4%) 
+and genital tract infections (18.5%) [ 7].
+Suboptimal care continues to be identified in many cases where 
+women die from sepsis [ 1, 3, 4 ]. To reduce maternal death from 
+sepsis requires high levels of vigilance and to “ Think Sepsis ” at 
+an early stage with any unwell, pregnant or recently pregnant 
+woman. Key actions are the importance of early diagnosis, the 
+rapid initiation of broad spectrum antibiotics and the need for 
+review by senior doctors and midwives and early involvement 
+of relevant experts such as infection specialists and critical care, 
+where appropriate. To avoid preventable deaths the importance 
+of maternal vaccination for influenza and COVID- 19 must be 
+continually promoted [ 2, 4, 5 ].
+Not included in the 2023 MBRRACE report are two women 
+who died of disseminated Herpes Simplex virus (HSV) infection TABLE 1 | Definitions for acronyms.
+CPE Carbapenemase producing enterobacterales
+GAS Group A beta- haemolytic Streptococcus
+MBRRACE Mothers and Babies: Reducing Risk through 
+Audits and Confidential Enquiries
+MSSA Methicillin Sensitive Staphylococcus Aureus
+MRSA Methicillin Resistant Staphylococcus Aureus
+S A R S - C o V - 2 Severe acute respiratory syndrome- 
+related coronavirus
+VRE Vancomycin resistant Enterococcus• If either the woman or the baby is infected with invasive Group A beta-haemolytic streptococcus (iGAS) disease in the postpar -
+tum period, both should be treated with antibiotics and full infection control precautions adopted, including barrier nursing as 
+per local guidelines. [GPP]
+• Herpes simplex sepsis is a rare but potentially fatal disease if contracted in the peripartum period and more needs to be done to 
+raise awareness of it as a potential diagnosis to exclude in sepsis pathways and for early consideration of the use of aciclovir. [GPP]
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e63following birth by caesarean section, a very rare cause of sepsis. 
+These cases prompted calls for HSV and other viral infections to 
+be considered when evaluating the cause of postpartum infec -
+tion, [ 8] as specified by the Coroner's prevention of future death 
+report on the cases [ 9].
+3 | Identification and Assessment of Evidence
+This RCOG guideline was developed in accordance with stan -
+dard methodology for producing RCOG Green- top Guidelines 
+[10]. The Cochrane Library and electronic databases (DARE, 
+EMBASE, Trip, MEDLINE and PubMed) were searched using 
+the relevant Medical Subject Headings (MeSH) terms, including 
+all subheadings and synonyms, and this was combined with a 
+keyword search. Search terms included ‘sepsis and pregnancy’, 
+‘bacterial infection and pregnancy’, ‘antenatal bacterial infec -
+tion’, ‘bacterial sepsis’, ‘intrapartum septic shock’, ‘intrapartum 
+infection’ and ‘maternal pyrexia’ and the search was limited to 
+humans and English language. The search was restricted to arti -
+cles published between September 2011 to October 2023.
+Where possible, recommendations are based on available ev -
+idence. In the absence of published evidence, these have been 
+annotated as ‘good practice points’. Further information about 
+the assessment of evidence and the grading of recommendations 
+may be found in Appendix 1 .
+4 | Understanding Maternal Sepsis
+4.1 | What is Maternal Sepsis?
+In 2017 the World Health Organisation defined maternal sepsis 
+as “a life- threatening condition defined as organ dysfunction re -
+sulting from infection during pregnancy, childbirth, post- abortion, 
+or postpartum period.” [11] This definition is aligned with the 
+current international consensus definition of adult sepsis and 
+supersedes the prior use of the term sepsis to describe infection 
+that has caused a systemic inflammatory response (SIRS) [ 11].
+Aligning the definition of maternal sepsis with the definition 
+used in the wider adult population is important for consistency 
+in care across patient groups and to enable direct comparisons. 
+This also reduces the challenge caused by the physiological 
+changes arising from the pregnancy itself, which make it dif -
+ficult to apply the SIRS criteria during pregnancy. The inter -
+national consensus statement defines organ dysfunction as an 
+increase in the sequential organ failure assessment (SOFA) 
+score of more than two points. This makes the formal diagno -
+sis of sepsis a retrospective one, as the calculation of the SOFA 
+score requires laboratory investigations to be completed (See 
+Appendix 2).
+Septic shock is now described as a clinical construct of sepsis with 
+persisting hypotension requiring vasopressors to maintain an 
+adequate blood pressure (MAP 65 mm Hg or more), alongside a 
+persistent serum lactate (either venous or arterial) level more than 
+2 mmol/L despite adequate volume resuscitation. Using these cri -
+teria, hospital mortality is in excess of 40%. There are no widely 
+agreed pregnancy specific adaptations to this definition [ 12].4.2 | Which Women are at Risk of Sepsis?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+All women are at risk of 
+sepsis during pregnancy and 
+the postpartum period .4 GPP Sepsis is a recognised 
+complication of 
+labour and birth.
+During pregnancy and the 
+postpartum period clinicians 
+should be aware of and 
+be able to recognise the 
+risk factors for developing 
+maternal sepsis .4 GPP Sepsis is an 
+important cause of 
+maternal morbidity 
+and mortality.
+Women at risk of sepsis in 
+pregnancy should be made 
+aware of this and provided 
+information including access 
+to care to reduce risk .4 GPP Sepsis is an 
+important cause of 
+maternal morbidity 
+and mortality.
+Multiple risk factors for maternal sepsis are described in the 
+literature and in maternal morbidity and mortality reports 
+(Table  1). Pregnant women are at 20 times increased risk of in -
+vasive Group A beta- haemolytic Streptococcus (iGAS) infection 
+compared with non- pregnant women, [ 13] and are at an 80- fold 
+increased risk up to 28 days postpartum [ 14].
+4.3 | What are the Common Organisms Causing 
+Sepsis?
+Maternal sepsis is caused by a wide range of organisms (Table  2). 
+The emergence of Escherichia coli (E. coli) and beta- haemolytic 
+streptococci of Lancefield group A (GAS) as important causes 
+of sepsis and death in pregnant women has been highlighted 
+by several authors [ 13, 14, 17–20 ]. In one series, 13 of 45 (29%) 
+women with iGAS infections were admitted to intensive care, 
+and two died [ 20].
+Morbidity due to iGAS remains significant, however, it has 
+fallen to less than one third of that reported in the early Centre 
+for Maternal and Child Enquiries (CMACE) report that initially 
+recommended specific education on sepsis for maternity staff 
+[22]. During 2019–2021, six women (accounting for 7.6% of the 
+sepsis attributable deaths) died of GAS [ 4].
+Pregnancy associated GBS sepsis remains an important cause 
+of maternal sepsis [ 21, 23, 24, 25 ] and, although morbidity with 
+GBS is more common than that of iGAS, there were no GBS re -
+lated maternal deaths during 2019–21 [ 4]. [Evidence level 3]
+Co- infections with mixtures of Gram- positive and Gram- 
+negative organisms remain common, especially in chorioamni -
+onitis. Coliform infection is particularly associated with urinary 
+sepsis, preterm premature rupture of membranes (PPROM) and 
+cerclage [ 15, 26, 27 ]. Anaerobes, usually Peptostreptococcus spp 
+and Bacteroides spp in mixed infections, account for some 8.3% 
+of the organisms causing maternal sepsis, especially assoiciated 
+with chorioamnonitis [ 21]. [Evidence level 3]
+Methicillin- resistant Staphylococcus aureus (MRSA) infection in 
+pregnancy was reported in 1.9% of North American women [ 28]. 
+Since routine antenatal MRSA screening is no longer conducted 
+in the UK, the current prevalence in pregnancy is unknown, 
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e64 BJOG: An International Journal of Obstetrics & Gynaecology, 2025but is probably below 1%, in line with other European contries 
+[29]. In 2010, 0.5% of pregnant women screened in Birmingham 
+were MRSA positive [ 30]. Panton Valentine Leukocidin (PVL)- 
+producing MRSA was responsible for maternity outbreaks in 
+Ireland in 2021 [ 31] and London in 2021–22 [ 32]. Vertical trans -
+mission of MRSA at birth due to vaginal colonisation occurs in 
+13% of neonates born to carrier mothers [ 33]. PVL- producing 
+staphylococci are particularly associated with mastitis and 
+breast abscesses [ 32, 34, 35 ]. PVL- related maternal deaths 
+have been reported rarely, and more likely to occur with unex -
+pected MRSA producing PVL [ 1]. The true prevalence of PVL- 
+producing staphylococci in pregnancy in the UK is unknown 
+since few laboratories test for PVL production. [Evidence level 3]
+Gram negative producing extended- spectrum beta- lactamases 
+(ESBL) [ 36] are increasingly carried by UK residents and foreign 
+travellers. Carbapenemase producing Enterobacteraceae (CPE) 
+are increasing worldwide and pregnant women who are gut 
+[36–38 ] or vaginal [ 39] carriers may pass these organisms to the 
+baby [ 40]. Since ESBLs render most cephalosporins ineffective 
+and CPEs render carbapenems ineffective, their presence means 
+empirical choices for mildly penicillin- allergic patients (simple 
+rash) are ineffective. [Evidence level 3]
+4.4 | What are the Likely Causes of Sepsis Outside 
+the Genital Tract and how Might They be Identified?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+A thorough history is 
+recommended as soon as 
+possible after presentation 
+and an appropriate 
+physical examination 
+should be offered .4 GPP This is considered 
+best practice.
+Consider and investigate 
+other non- infective causes 
+that can masquerade as 
+sepsis .4 GPP Other obstetric and 
+non- obstetric conditions 
+share features with the 
+presentation of sepsis 
+and must be considered.
+With increased awareness and earlier, more effective therapy, 
+the reported incidence of pregnancy associated GAS has fallen 
+[4]. GAS was the cause of five maternal deaths (11%) during the 
+2019–21 period [ 4]. Pregnancy- associated GBS sepsis remains 
+more common than GAS [ 23–25 ], but the rate of neonatal GBS 
+sepsis continues to fall, [ 41] and no women died of GBS sepsis in 
+the UK during 2019–2022 [ 4].The first point of contact with a woman may not be face to face, 
+and careful assessment should be encouraged via telephone tri -
+age and community assessment. However, “repeated presenta -
+tion to the general practitioner or community midwife or repeated 
+self- referral to the obstetric triage or day assessment unit should be 
+considered a ‘red flag’ ” [4] and warrants a thorough clinical assess -
+ment to investigate for signs of sepsis (see Table  5 and Appendix 3 ). 
+Therefore, women with infection should be offered early in- person 
+assessment [ 4] and those with red- flag features seen urgently in 
+a setting where appropriate treatment can be rapidly initiated. 
+Other diseases can masquerade as sepsis, such as pre- eclampsia 
+or other rare diseases (e.g. thrombotic thombocytopenic purpura, 
+haemophagocytic lymphohistiocytosis). [Evidence level 4]
+Table  3 lists the common sites of sepsis and how these may be 
+identified; Table  4 lists conditions that may masquerade as sepsis.
+5 | Recognising Maternal Sepsis
+5.1 | What Should Prompt Recognition of Sepsis?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider sepsis as a 
+possible diagnosis in all 
+women during pregnancy, 
+and in the postpartum 
+period, with a suspected 
+infection and whose 
+clinical condition rapidly 
+deteriorates .4 GPP The diagnosis 
+of sepsis can 
+be challenging 
+during and after 
+pregnancy and 
+should be considered 
+in the unwell 
+pregnant womanTABLE 1 | Risk factors for developing maternal sepsis during pregnancy/postpartum [ 15–19 ].
+Maternal Obstetric
+• Obesity
+• Diabetes in pregnancy
+• Iron deficiency anaemia
+• Maternal age > 35 years
+• Impaired immunity/Immunosuppressant medication
+• Women of ethnic minority
+• Renal/Cardiac/Liver disease
+• History of pelvic infection
+• Contact with iGAS [ 13, 14, 17, 18 ]
+• Intravenous drug use [ 19]• Prolonged rupture of membranes
+• Caesarean birth
+• Vaginal trauma
+• Retained pregnancy tissue
+• Amniocentesis and other invasive procedures
+• Multiple gestation
+• Cervical cerclage
+Note: iGAS, invasive Group A beta- haemolytic Streptococcus.
+TABLE 2 | Organisms causing septicaemia in 276 cases of pregnancy 
+- related sepsis in Ireland [ 21].
+Organism% of positive 
+blood cultures
+Escherichia coli 37.3%
+Group B beta- haemolytic streptococcus (GBS) 20.6%
+Anaerobes 8.3%
+Staphylococcus aureus 7.6%
+Group A beta- haemolytic streptococcus (GAS) 4.3% (10/12 women 
+were post- partum )
+Coliforms other than Escherichia coli 4.2%
+Haemophilus influenzae 1.4%
+Listeria monocytogenes 0.7%
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e65Healthcare professionals should assess all women with suspected 
+infection for maternal sepsis with a risk stratification tool; an 
+example of a sepsis risk stratification tool is given in Appendix 
+3. The possibility of COVID- 19 must also be considered, and 
+an assessment for possible COVID- 19 conducted in line with 
+current recommendations [2 ]. Health care providers should be 
+aware of the red flag symptoms and signs of maternal sepsis and 
+of the rapid, potentially lethal course of sepsis and septic shock (Table  5). Disease progression may be much more rapid than in 
+the non- pregnant state. Signs of infection, including pyrexia, may 
+not always be present and are not necessarily related to the sever -
+ity of sepsis. Genital tract sepsis may present with constant severe 
+abdominal pain and tenderness not relieved by usual analgesia. 
+Severe infection may be associated with preterm labour. Toxic 
+shock syndrome (TSS), caused by staphylococcal or streptococcal 
+exotoxins, can produce generalised symptoms including nausea, TABLE 3 | Potential sites of sepsis outside the genital tract and clinical features of their presentation.
+Site Diseases Clinical features
+Head Meningitis
+MeningoencephalitisPhotophobia, neck stiffness
+Altered conscious level, 
+delirium, focal neurology
+seizures
+Ear Nose Throat Otitis Media
+Sinusitis
+Pharyngitis/LaryngitisEar ache, muffled hearing
+Purulent nasal discharge, 
+facial pain, headache
+Sore throat, cervical lymphadenopathy
+Hoarse voice
+Chest Pneumonia (viral & bacterial) Cough with sputum is more likely bacterial
+Hypoxia, pleuritic pain
+Cardiac Infective endocarditis Regurgitant murmur, embolic lesions
+Splinter haemorrhages and Janeway lesions
+Hepatobiliary Cholecystitis/Cholangitis
+ 
+PancreatitisRight upper quadrant pain, Murphy 
+sign positive for cholecystitis
+Upper abdomen pain, radiating to back
+Abdomen Gastroenteritis
+Appendicitis
+ 
+Bowel perforation (more common 
+in inflammatory bowel disease)Diarrhoea and vomiting
+McBurney's sign for appendicitis, atypical 
+presentations common in pregnancy
+Acute abdomen
+Breast Mastitis may lead to breast abscesses, 
+[32, 34 ] necrotising fasciitis [ 42], 
+toxic shock syndromes [ 43, 44 ]Inflamed breast, pain, features of sepsis and
+‘bruising’ suggests deeper infection 
+such as necrotizing fasciitis [ 42, 45 ]
+Urinary Tract Urinary Tract Infection
+Pyelonephritis
+Covert Genital HerpesDysuria
+Loin pain, back pain
+Haematuria
+Acute urinary retention
+Regional anaesthetic blockade 
+related infectionMeningitis
+Spinal abscessHeadache, photophobia
+Back pain
+Focal neurology
+Permanent spinal cord or cauda 
+equina damage may result if neural 
+compression is not relieved urgently
+Wound infection Peripheral cannula thrombophlebitis
+Caesarean birth or episiotomy woundsSkin and soft- tissue infections are 
+particularly associated with early 
+toxic shock syndromes [ 41, 44 ]
+(rash and conjunctival redness)
+Necrotising fasciitis Early necrotising fasciitis
+(deep in tissues)Cardinal feature is of agonising pain, 
+typically necessitating increasing amounts 
+of analgesia culminating in opioids, 
+there may be no skin changes early on
+Later, ascending infection to the skin, 
+producing blisters and frank necrosis [ 42, 45 ]
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e66 BJOG: An International Journal of Obstetrics & Gynaecology, 2025vomiting and diarrhoea [41, 44]. Severe pain, out of proportion to 
+clinical signs, suggests necrotising fasciitis (NF) [42, 45]. Blisters 
+developing on a background of inflammation or a watery vaginal 
+discharge suggests haemolytic streptococcal infection. A ‘sun-
+burn’ rash and conjunctival suffusion suggests early TSS (i.e. due 
+to S. aureus), whereas the rash is only present in 50% of strepto -
+coccal toxic shock [46]. Mastitis can occur in the antenatal period 
+as well as postnatally. [Evidence level 4]
+Occasionally viral infections can present with sepsis, e.g. influ -
+enza, [ 49] SARS- COV- 2 and disseminated HSV [ 50, 51 ]. HSV is 
+a rare and potentially fatal disease if contracted in the peripar -
+tum period. While it can present with encephalitis, or rarely 
+febrile hepatitis, in many cases there are no obvious clinical 
+signs of disseminated herpetic infection which can differenti -
+ate it from a bacterial cause of sepsis [ 50]. Pregnancy is a risk 
+factor for HSV hepatitis, which is responsible for 2%–4% of all 
+acute hepatitides [ 50]. The sicker the woman is with dissemi -
+nated HSV infection (in the absence of rash), the more likely 
+the incorrect diagnosis of Hemolysis, Elevated Liver enzymes TABLE 4 | Non- infective causes that can masquerade as sepsis.
+DiseaseShared clinical 
+features with sepsis
+Blood transfusion reaction Pyrexia, rash
+Autoimmune disease Pyrexia
+Acute fatty liver of pregnancy Pyrexia
+Disseminated malignancy Pyrexia
+Thrombotic thombocytopenic 
+purpuraPyrexia, acute renal failure, 
+altered consciousness, 
+thrombocytopenia
+Haemophagocytic 
+lymphohistiocytosisPyrexia, pancytopenia, 
+lymphadenopathy, rash
+Occult bleeding Hypothermia, raised 
+lactate, shock
+Epidural related maternal fever Pyrexia
+Misoprostol side- effect Pyrexia
+TABLE 5 | Clinical symptoms, signs and risk factors suggestive of sepsis during pregnancy/postpartum [ 47].
+Red Flags or features in patients with suspected sepsis that indicate high risk of sepsis (recommend immediate management either with initiation 
+of a sepsis bundle for inpatients or referral by blue light transfer from the community)
+Objective evidence of altered mental state GCS < 15 or ‘not alert’ in AVPU classification
+Respiratory rate ≥ 25 breaths/min
+Oxygen saturation < 94% on room air*
+Heart rate > 13 0 bpm
+Blood pressure Systolic < 90 mmHg
+Urine output Not passed urine in > 12 hours or if catheterised < 0.5 ml/kg urine per hour
+Amber flags or features in patients with suspected sepsis that indicate moderate risk of sepsis (this warrants senior clinical review within 1 hour 
+for inpatients or as soon as possible in the community)
+Behavioural/mental status change
+Acute deterioration in functional ability
+Respiratory rate 21–24 breaths/minute
+Heart rate 100–130 beats/minute or 
+new dysrhythmia
+Systolic BP 91–100 mmHg
+Urine output Not passed urine in last 12 hours or if 
+catheterised 0.5–1 ml/kg urine per hour
+Has had invasive procedure in last 6 weeks (e.g. caesarean birth, 
+assisted vaginal birth, surgical management of miscarriage, cerclage, CVS, amniocentesis, miscarriage, termination)
+Impaired immune system (illness or medication, including oral steroids)
+Temperature < 36°C or > 38oC*
+Current diabetes or gestational diabetes
+Close contact with GAS (e.g. scarlet fever, tonsillitis, iGAS) Prolonged close contact with the case 
+in a household type setting during the 
+seven days before the onset of illness [ 17]
+Prolonged rupture of membranes 18–24 hours
+Prolonged vaginal bleeding and abdominal pain post birth [ 4]
+Offensive vaginal discharge
+AVPU: Alert, vocal, pain, unresponsive; CVS, chorionic villus samlping; GAS, Group A beta-haemolytic streptococcus; iGAS, invasive Group A beta-haemolytic 
+streptococcus. *These features were not included in the NICE Guideline (NG51) sepsis risk stratification approach, but are present in many maternity specific 
+screening and decision tools, and have therefore been included here for completeness [ 48].
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e67and Low Platelets (HELLP) syndrome or acute fatty liver of 
+pregnancy [ 51]. [Evidence level 4]
+Disseminated HSV infection, presenting with sepsis, encephalitis 
+or hepatitis, is rare but often fatal if contracted in the peripartum 
+period. As there are often no clinical signs of disseminated her -
+petic infection which can differentiate it from bacterial causes 
+of infection, HSV should be considered as a causative agent in 
+women where there is a failure of first- line antibacterial medica -
+tion. Early intravenous aciclovir therapy is vital, and should ide -
+ally be started at the same time as the first change in antibacterial 
+regime. The diagnosis should be considered if a pregnant woman 
+presents with acute febrile hepatitis, as evidenced by markedly 
+(greater than 10 times) raised ALT with normal bilirubin, enceph -
+alitis or disseminated, often vesicular skin lesions, or a combina -
+tion of these [ 50, 51 ]. [Evidence level 4]
+Women of Black, Asian and minority ethnic background are at 
+higher risk of developing sepsis. This highlights the clear need 
+to develop culturally relevant maternity services, to meet the 
+growing needs of pregnant women from Black, Asian and mi -
+nority ethnic backgrounds in the UK, and reduce the persistent 
+health inequalities to improve maternal and infant outcomes 
+[52, 53 ]. Healthcare providers must be aware of this increased 
+risk in ethnic minority groups and recognise that important 
+signs of sepsis, such as skin rashes, may present differently [ 48]. 
+[Evidence level 2–]
+Non- response of symptoms to treatment for other causes of se -
+rious illness, e.g. treatment of haemorrhage, or deterioration 
+should prompt a re- consideration of sepsis as a concurrent or 
+alternative diagnosis.
+5.2 | What are the Appropriate Triggers 
+or Features of Sepsis that should Prompt hospital 
+Admission from the Community?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+If sepsis is 
+suspected in 
+the community, 
+urgent escalation 
+and referral 
+to hospital is 
+indicated .4 GPP Sepsis is a medical 
+emergency requiring 
+hospital based care.
+Signs and symptoms of possible sepsis should prompt urgent 
+referral for hospital assessment; if a woman appears seriously 
+unwell, referral for hospital assessment should happen by 
+emergency ambulance services. Screening and decision tools 
+suitable for community use are available and may assist with 
+appropriate management [ 12]. The 2023 MBBRACE report rec -
+ommended “post delivery, streptococcal infection, particularly 
+GAS, is most likely to present within 12 hours post- birth. Infection 
+should be suspected and actively ruled out for women who have 
+recently given birth and experience significant abdominal pain 
+or persistent vaginal bleeding . […] After pains typically reduce 
+in the hours following childbirth and do not develop after dis -
+charge. Pain after a vaginal birth that does not settle with simple analgesia should prompt a face to face review and a clinical ex -
+amination including both abdominal and vaginal examination if 
+indicated ” [4] If there is any concern or repeated presentations 
+to the GP or emergency care, all women must be referred im -
+mediately back to the obstetric maternity unit or Accident and 
+Emergency (A&E). [Evidence level 4]
+5.3 | What is the Optimum way to Monitor Women 
+with Suspected Sepsis?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Monitoring 
+of a woman 
+with suspected 
+sepsis should be 
+performed using 
+an early warning 
+system modified 
+for obstetrics, 
+managed through 
+a multidisciplinary 
+approach with 
+early escalation 
+and senior input .4 GPP This reflects best 
+practice and NICE 
+guidelines on improving 
+the recognition and 
+response to deterioration 
+in unwell adults [ 47].
+Women who become unwell during pregnancy and birth often 
+deteriorate abruptly following a period of physiological com -
+pensation [ 54]. This narrows the window for early detection of 
+developing illness. Early escalation to a senior clinician is rec -
+ommended for pregnant women. Observations of all vital signs, 
+including temperature, pulse rate, blood pressure, oxygen sat -
+urations and respiratory rate, should be recorded on an early 
+warning system [ 55]. This should be modified for obstetrics 
+to account for the physiological changes of pregnancy. There 
+should be clear instructions for escalation using a structured 
+Situation- Background- Assessment- Recommendation (SBAR) 
+communication tool [ 54]. [Evidence level 4]
+5.4 | What are the Common Investigations when 
+Sepsis is Suspected?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Blood cultures are a key 
+investigation and two sets 
+should be obtained prior to 
+antibiotic administration; 
+however, antibiotic 
+treatment should be 
+started without waiting 
+for microbiology results. 
+Consider HSV polymerase 
+chain reaction (PCR) when 
+indicated .4 D The key 
+investigations for 
+suspected sepsis in 
+women during and 
+after pregnancy 
+are described 
+in NG51 [ 47].
+Serum lactate should be 
+measured urgently in women 
+with features making them 
+at high risk of sepsis. Serum 
+lactate of 4 mmol/l or more 
+should prompt immediate 
+escalation of care, including 
+consideration of discussion 
+with the critical care team .2— D Recommended 
+by NG51 [ 47].
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e68 BJOG: An International Journal of Obstetrics & Gynaecology, 2025RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Any relevant imaging 
+studies should be performed 
+promptly to confirm the 
+source of infection. These 
+may include a pelvic 
+ultrasound scan or computer 
+tomography scan if pelvic 
+abscess is suspected, or a 
+chest x- ray for possible chest 
+pathology .4 D Recommended 
+by NG51 [ 47].
+Other microbiological 
+samples taken should 
+be guided by the clinical 
+suspicion of focus of 
+infection as appropriate .4 GPP This would be 
+regarded as 
+best practice.
+Routine blood tests should 
+include full blood count, 
+coagulation screen, urea, 
+electrolytes, creatinine, 
+liver function tests (LFT), 
+C- reactive protein (CRP), 
+venous blood gas (or other 
+near patient testing) for 
+glucose and lactate .4 GPP Recommended 
+by NG51 [ 47].
+Appropriate virological 
+testing, including SARS- 
+Cov- 2 testing should be 
+undertaken if indicated .4 GPP Follow 
+recommendations 
+of current 
+COVID- 19 
+guidance [ 2].
+Any woman who is unwell 
+with symptoms of tonsillitis/
+pharyngitis should have 
+a throat swab sent for 
+bacterial culture .4 GPP This would be 
+regarded as best 
+practice to identify 
+GAS infection.
+If the MRSA status of the 
+woman is unknown, a 
+premoistened nose swab 
+should be sent for rapid 
+MRSA screening where such 
+testing is available .4 GPP Identification of 
+MRSA is important 
+to guide therapy 
+and infection 
+control measures.
+Serum lactate should be measured urgently in women with fea -
+tures indicating a high risk of sepsis to guide care; however, it 
+is recognised that lactate may also be elevated by the physio -
+logical process of labour and due to other complications com -
+mon in pregnancy, such as bleeding. A lactate of 2 mmol/l or 
+more should initiate immediate senior review, intravenous fluid 
+administration and repeat lactate measurement thereafter to 
+gauge response to treatment. Serum lactate of 4 mmol/l or more 
+is indicative of tissue hypoperfusion or cellular metabolic dys -
+function. This should prompt immediate escalation of care, in -
+cluding consideration of discussion with critical care regarding 
+ongoing care and intravenous fluid bolus administration [ 56]. 
+[Evidence level 3]
+Routine blood tests should include a venous blood gas analysis 
+for lactate and glucose and a full blood count, urea, electrolytes, 
+creatinine, clotting screen, LFT and CRP [ 56]. The CRP serum 
+level rises with bacterial sepsis, thrombus and post- surgery, and 
+rarely with viral infections (such as SARS- COV- 2, influenza and 
+adenovirus pneumonia). While procalcitonin (PCT) levels can 
+help differentiate bacterial from viral infection in non- pregnant 
+women, [ 57] hormonal resistance to lipopolysaccharide (LPS) 
+activation by the main PCT producers, [ 58] and a wide range 
+of PCT levels in the setting of PPROM, with a doubling of the normal labour mean values [ 59] must be considered when re -
+sults are interpreted.
+If LFTs show an anicteric pattern (i.e. markedly raised ALT with 
+normal bilirubin) consider a diagnosis of herpetic hepatitis and 
+treat appropriately, while waiting for results to exclude other 
+causes of hepatitis.
+In women at high risk of sepsis these investigations and the ini -
+tiation of care should commence immediately. Thrombocytosis 
+(high platelet count) with a rising CRP and a swinging pyrexia 
+often indicates a collection of pus or an infected haematoma. 
+[Evidence level 4]
+5.4.1 | Bacteriology Samples
+A though history can help identify the cause of sepsis (Table 7 ).
+Two sets of blood cultures (each set including an aerobic and an -
+erobic bottle) should be taken sequentially, within in minutes of 
+each other. Increasing the volume of blood sampled maximises 
+the aspiration of circulating bacteria and thus the yield of patho -
+gens. Blood cultures should be obtained prior to antibiotic ad -
+ministration and empirical treatment started without waiting for 
+any microbiology results. Consider if a blood sample is indicated 
+for HSV PCR. Other microbiology sampling should be guided 
+by clinical suspicion of the focus of infection. Where testing is 
+available, a nasal in viral transport media may be sent for rapid 
+MRSA molecular diagnostic screening. The alternative is a pre- 
+moistened nasal swab cultured overnight on selective media. If 
+a woman has a normal CRP or symptoms are more suggestive 
+of a viral respiratory infection (e.g. SARS- CoV2, influenza) then 
+a viral nasal swab should be taken for PCR. Swabs taken from 
+throat, vagina, caesarean or other wounds should be sent for bac -
+terial culture as appropriate. [Evidence level 4]
+Symptoms of tonsillitis/pharyngitis should prompt a throat 
+swab for bacterial culture. Diarrhoea warrants routine stool 
+culture (e.g. Salmonella, Campylobacter ) as well as testing for 
+Clostridium difficile toxin, [ 60] the latter especially if diarrhoea 
+follows antimicrobial therapy. An infection specialist should be 
+consulted because of the wide range of highly contagious in -
+fections necessitating high- level infection control precautions 
+to protect staff and other patients. The laboratory should be TABLE 6 | Surviving Sepsis Campaign Hour- 1 Bundle of Care 
+Elements [ 74].
+1 Measure lactate level *
+2 Obtain blood cultures before administering 
+antibiotics (but do not delay giving antibiotics)
+3 Administer broad- spectrum antibiotics
+4 Begin rapid administration of 30ml/kg crystalloid 
+for hypotension or lactate level ≥ 4 mmol/L
+5 Apply vasopressors if hypotensive during or 
+after fluid resuscitation to maintain mean 
+arterial pressure (MAP) ≥ 65 mm Hg
+*Remeasure lactate (within 1 hour) if initial lactate is elevated (> 2 mmol/l).
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e69TABLE 7 | Points to note in history regarding infection that may suggest cause of sepsis.
+History Classic symptoms/features Microbiological considerations
+Febrile illnesses Chills, rigors, myalgia Staphylococcal/streptococcal bacteraemia 
+especially if wounds, rash
+Gram negative infections - if urinary 
+symptoms or recent urinary catherisation
+Consider influenza (in flu season beware dual 
+infection with secondary bacterial pneumonia)
+Consider HSV septicaemia even if no 
+other features of herpes present
+E n t e r o v i r a l / S A R S - C o - V - 2 / a d e n o v i r a l i n f e c t i o n
+If recent foreign travel, consult infection specialist 
+urgently (malaria, haemorrhagic fever viruses 
+[75–78 ] and other high risk viral infections etc.)
+Contact with GAS Impetigo, tonsillitis, cellulitis
+Flu- like symptoms, diarrhoea, vomiting
+Rapid deterioration, 
+systemically very unwell
+Disproportionate pain anywhere in the 
+body with few outward signs warrants 
+consideration of necrotizing fasciitis
+Late onset after pains [ 4]
+Severe abdominal pain also occurs if 
+uterine myonecrosis or GAS peritonitisGAS
+Recurrent skin infections
+History of or contact with 
+recurrent boils or abscessesAbscess or severe mastitis
+Scars from previous 
+incision and drainagePVL producing S.aureus [ 29, 32 ]
+Severe respiratory infection, 
+hemoptysisHaemoptysis
+Cavitation and massive effusionsTuberculosis [ 4]
+Necrotising pneumonia- PVL producing 
+S. aureus [ 68, 69 ] or GAS [ 66, 67 ]
+Dysuria, flank pain, pyrexia 
+suggesting urinary tract 
+infectionFlank pain, dysuria, fevers Check recent antimicrobial treatment and priors 
+sensitivities in case ESBL or CPE history
+Acute Urinary Retention Dysuria, urinary retention, vulval 
+or sacral pain/parasthesiaeHSV
+Intravenous drug misuse Septic emboli- vasculitic lesions, 
+stigmata of endocarditisGAS, PVL- producing S. aureus , MRSA
+Endocarditis (may present as pneumonia 
+if tricuspid valve endocarditis)
+S. aureus and GAS infections, 
+Immunosuppression of chronic disease
+Blood borne viruses (HIV, HBV, HCV)
+Gastroenteritis Diarrhoea and vomiting
+Traditionally crampy abdominal 
+pains are more associated with 
+Campylobacter spp . than Salmonella 
+spp. in infectious gastrosenteritisGastroenteritis – foodborne pathogens, e.g. 
+Salmonella spp., Campylobacter spp
+Early toxic shock (staphylococcal and 
+streptococcal exotoxins acting as enterotoxins)
+C. difficile [ 60] (especially if recent antibiotics)
+Viral e.g. Norovirus
+Zoonotic infections Consumption unpasteurised milk 
+products, undercooked or cured meats
+Exposure to animals with diarrhoea
+Contact with birthing animals, 
+washing clothes of animal handlers, 
+feeding lambs or bird contactSalmonella spp , Campylobacter, Listeria
+Campylobacter, C. difficile , 
+salmonella, Cryptosporidium
+As above plus Q fever and Chlamydophila
+(Can be rapidly fatal in pregnancy)
+(Continues)
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e70 BJOG: An International Journal of Obstetrics & Gynaecology, 2025informed if there is a clinical indication for investigations for un -
+usual pathogens e.g consumption of soft cheese or cured meats 
+(Listeria monocytogenes) , a history of foreign travel (parasites, 
+malaria, typhoid, cholera, viral haemorrhagic fever, brucella) 
+or hospitalisation (multi- drug resistant organism screening). 
+Microbiology results should be reviewed when available to allow 
+optimisation of the antibiotic regimen and more targeted ther -
+apy [ 61]. [Evidence level 3]
+If the woman has been on broad- spectrum antimicrobials before 
+developing signs of sepsis it is likely the pathogen is multi- drug 
+resistant, and an infection specialist should be consulted for ad -
+vice on further antimicrobial options.
+Prompt imaging may identify the source of the infection, al -
+lowing early definitive treatment, and should not be deferred 
+on the grounds of pregnancy alone. This could include a chest 
+X- ray and, in women following pregnancy, a pelvic ultrasound 
+scan, computed tomography scan or magnetic resonance im -
+aging (MRI) scan if pelvic abscess is suspected. In women at 
+moderate risk of sepsis it is suggested clinical examination 
+and results review should be carried out within 1 hour [ 56]. 
+[Evidence level 4]
+5.4.2 | Samples for Viral Infection Diagnosis
+Women suspected of having influenza should be tested im -
+mediately using a viral nasal/throat swab for influenza PCR, 
+barrier nursed and treated with antivirals while awaiting PCR results [ 62]. Women suspected of SARS- CoV- 2 should be assesses 
+according to the RCOG guidance Coronavirus (COVID- 19) infec -
+tion in pregnancy [ 2]. [Evidence level 4]
+During 2009–12, an upsurge in influenza combined with a 
+low vaccination rate, diagnostic delay and lack of treatment ac -
+counted for 43% of all infection- related deaths in pregnancy (36 
+women); [ 5] in stark contrast to only one death during the three 
+years of the subsequent report when vaccination increased, [ 63] 
+and two in the 2023 MBRRACE report [ 4].
+Influenza related morbidity and mortality is associated with a 
+body mass index (BMI) of over 30 kg/m2. Early birth may be in -
+dicated during the third trimester of pregnancy. Pulmonary hae -
+morrhage due to primary influenza has been reported [ 64, 65 ].
+Secondary bacterial infection with pneumococci, beta- 
+haemolytic streptococci and S. aureus occur typically after in -
+fluenza and other viral respiratory infections. GAS exotoxins 
+[66, 67 ] and S. aureus associated PVL [ 68, 69 ] produce a second -
+ary necrotising haemorrhagic pneumonia with severe respira -
+tory compromise and a high mortality rate [ 43]. [Evidence level 3]
+Initiating extra- corporeal membrane oxygenation (ECMO) 
+should be considered in fulminant cases of primary influenza 
+pneumonia or SARS- CoV- 2 [4]. The need for updated guidance 
+on referral for ECMO therapy was highlighted in the recent 
+MBRRACE report [ 4]. For more information on SARS- CoV- 2 
+see the RCOG guidance Coronavirus (COVID- 19) Infection in 
+Pregnancy [2].History Classic symptoms/features Microbiological considerations
+History of infection with 
+multi- resistant organismsESBL of CPE producing 
+Gram negatives, Methicillin- 
+Resistant Staphylococcus 
+Aureus (MRSA), Vancomycin 
+Resistant Enterococci (VRE)Infection control precautions (e.g. side room)
+Limits empirical antimicrobial choice
+discuss urgently with infection specialist
+Haemorrhagic rash, purpura Meningococcal, pneumococcal 
+or GAS sepsis most likely
+If recent foreign travel (or 
+contacts recently returned from 
+abroad) must consider possibility 
+of viral haemorrhagic fever 
+(Lassa Ebola etc.) [ 75–78 ]Discuss urgently with infection specialist
+Stringent infection control precautions
+Allergies Obtain careful allergy history
+(Nausea/vomiting = 
+intolerance not allergy )Ensure genuine allergy history (severe rash or 
+anaphylaxis) otherwise could unnecessarily 
+preclude beta- lactams with a weak history of 
+‘possible’ allergy (e.g. vomiting with co- amoxiclav)
+Mild rash with penicillins 1%–3% chance of cross reaction with 
+cephalosporins, carbapenems
+Anaphylaxis with penicillins Avoid all cephalosporins and carbapenems
+Discuss with infection specialist but 
+erythromycin, clindamycin or vancomycin 
+may be appropriate alternatives
+Abbreviations: CPE, Carbapenemase- producing Enterobacteriaceae; ESBL, Extended spectrum Beta- Lactamase; GAS, Group A beta haemolytic streptococci; 
+HBV, hepatitis B virus; HCV, hepatitis C Virus; HIV, human immunodeficiency virus; MRSA, methicillin- Resistant Staphylococcus Aureus ; PVL, Panton Valentine 
+Leukocidin; VRE, Vancomycin Resistant Enterococci.TABLE 7 | (Continued)
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e71In suspected HSV cutaneous infection, or vulval/sacral pain/
+parasthesia with no visible lesion, send a viral swab for PCR ei -
+ther from the lesion, or as a vaginal sample. If disseminated HSV 
+and hepatitis is suspected, send an EDTA (Ethylenediamine 
+tetra acetic acid) blood sample for HSV viral PCR. Discuss man -
+agement with an infection specialist.
+5.5 | What are the Appropriate Triggers 
+for the Involvement of Other Specialities and who 
+Should be Involved?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Senior clinicians 
+(obstetricians and obstetric 
+anaesthetist) and a senior 
+midwife should be directly 
+involved in the decision to 
+escalate care within one 
+hour of any deterioration .4 GPP As per NICE 
+guideline 
+(NG51) [ 47].
+Expert multidisciplinary 
+advice should be sought 
+urgently at a senior level 
+when sepsis is suspected 
+and not responding to 
+initial management .2— GPP Failiure to rapidly 
+obtain senior multi- 
+disciplinary support 
+was highlighted 
+as an area for 
+improvement by 
+MBRRACE- UK [ 6].
+There should be an urgent 
+referral to the critical care 
+team in severe or rapidly 
+deteriorating cases of 
+sepsis where the facilities/
+skills to care for a woman 
+are not available on the 
+maternity unit .3 GPP Rapid deterioration 
+despite reuscitation 
+measures suggests 
+likely need for 
+intensive care 
+support.
+Early consultation with an infection specialist (medical micro -
+biologist or infectious disease clinican) is recommended to opti -
+mise microbiological diagnostic investigations and appropriate 
+usage of animicrobials. The decision to transfer a woman to the 
+adult intensive care unit should be made by senior clinicians 
+(obstetricians/anaesthetists) (Table  8). As soon as the need for 
+an enhanced level of care/critical care is recognised that level 
+of care should be provided, regardless of the setting. [Evidence 
+level 4]
+6 | Managing Maternal Sepsis
+6.1 | How should Maternal Sepsis be Managed?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Administration of 
+intravenous broad- spectrum 
+antibiotics is recommended 
+within one hour in women 
+at high risk of sepsis, with or 
+without septic shock .2— C As per NICE 
+guideline 
+(NG51) [ 47].
+Use of a sepsis bundle may 
+improve compliance with 
+urgent management in 
+women at high risk of sepsis .2— D As per NICE 
+guideline 
+(NG51) [ 47].RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Early fluid resuscitation 
+of crystalloid should be 
+administered with an 
+immediate 500ml fluid bolus 
+in women with hypotension 
+or elevated lactate above 
+4mmol/L. This may need 
+repeating. When indicated, 
+urine output should be 
+measured with precision 
+using an hourly urometer .4 D
+Choice of empirical antibiotic 
+therapy should be guided 
+by local epidemiology 
+reflecting the incidence of 
+resistant organisms within 
+that geographical area. 
+Information about antibiotic 
+therapies and limitations of 
+antimicrobial spectrum are 
+given in Table 9 .4 D As per NICE 
+guideline 
+(NG51) [ 47].
+For life threatening sepsis, 
+where the sensitivity of 
+the organism is unknown, 
+a combination of either 
+piperacillin/tazobactam 
+or meropenem (for Gram 
+negative cover) plus 
+clindamycin (for Gram 
+positive and anaerobic 
+organisms) provides very 
+broad cover, but local 
+guidelines should be 
+consulted and discussed if 
+history of multi- resistant 
+organism. With any history 
+of MRSA in a woman with 
+sepsis, the addition of 
+vancomycin is advisable .4 GPP Local guidance 
+should be used to 
+inform treatment 
+choices, but this 
+regimen has 
+been included as 
+an appropriate 
+choice for use 
+when broad 
+cover in required 
+in circumstances 
+when the 
+organism is 
+unknown.
+Empirical antimicrobials 
+should be reviewed with 
+culture results and targeted 
+oral agents used as soon as 
+clinically appropriate .4 D Best practice in 
+antimicrobial 
+stewardship 
+should be 
+followed [ 61].
+If a change in antibiotic 
+regimen is considered 
+because of deterioration 
+despite first- line treatment, 
+consider the addition of IV 
+aciclovir 500mg 8 hourly 
+as part of the second- line 
+regimen .4 D As per Coroner's 
+report [ 9].
+Regular senior clinical review 
+is recommended .4 D As per NICE 
+guideline 
+(NG51) [ 47].
+Women who are pyrexial (temperature of 38°C or higher) in 
+labour should be offered a broad spectrum antibiotic regi -
+men, which should cover GBS, in line with local microbiology 
+sensitivities [ 70–72 ].
+As part of a sepsis bundle, such as the Surviving Sepsis Campaign 
+Hour- 1 bundle (Table  6), or the Sepsis- 6 bundle (Appendix 
+4), administration of intravenous broad- spectrum antibiotics 
+within 1 hour is recommended in women at high risk of sepsis 
+[12, 47 ]. In a UK population- based case- control analysis of non- 
+influenza sepsis- related maternal deaths from 2009–2012, half 
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e72 BJOG: An International Journal of Obstetrics & Gynaecology, 2025of those who died had no serum lactate measurement. Sixty- 
+seven percent of those who died received antibiotics the same 
+day of diagnosis (c.f 85% controls). Overall, only 33% of those 
+who died received antimicrobials within 1 hour of diagnosis, 
+and 58% within three hours [ 73]. [Evidence level 2–]
+Early fluid resuscitation of crystalloid should be administered, 
+starting with a fluid bolus of 500ml in women with hypotension 
+or elevated lactate of more than 4mmol/L [ 82]. Further fluid bo -
+luses may be required based on the response, but ensure inten -
+sive care input if more than two litres volume has been required 
+without improvement in hypotension [ 47]. When indicated, 
+urine output should be measured with a urinary catheter and 
+urometer, recording urine output hourly. Care must be taken in 
+women who also have pre- eclampsia or eclampsia as they are 
+at higher risk of pulmonary oedema; with individualised care 
+guided by close anaesthetic or critical care involvement [ 83]. 
+[Evidence level 4]
+During and after pregnancy it should be noted that current sys -
+temic infection is an important risk factor for venous throm -
+boembolism and should prompt reassessment for the correct 
+thromboprophylaxis according to current guidelines [ 80].
+Maternal pyrexia is an important potential marker of infection, 
+but may not always be present in maternal sepsis and is not 
+necessarily related to the severity of illness. Indeed, it is im -
+portant to recognise that sepsis can present with hypothermia. 
+Pyrexia in labour can be managed with supportive measures 
+such as increased fluid intake, paracetamol, tepid sponging 
+and lowering the environmental temperature. Non- sepsis 
+causes of maternal hyperthermia such as epidural anaesthe -
+sia and misoprostol are diagnoses of exclusion. Women with a 
+fever during labour should be screened for sepsis as already de -
+scribed, and the underlying source of infection identified and 
+managed [ 84]. Women with pyrexia and suspected infection in 
+labour should be offered an antibiotic regimen which covers 
+GBS, [ 70, 71 ] and they should be offered continuous fetal mon -
+itoring [ 85]. [Evidence level 3]If genital tract sepsis is suspected, GAS and E.Coli are likely 
+pathogens [ 4]. Prompt treatment with a combination of high- dose 
+broad- spectrum intravenous antibiotics, active against Gram- 
+negative bacteria and capable of preventing exotoxin production 
+from Gram- positive bacteria, may be lifesaving. The empirical 
+choice of antimicrobials should be tailored to local epidemi -
+ology and resistance. Local formularies should be consulted, 
+narrowing the agent spectrum to that of the causative organ -
+ism(s) once identified. Early oral switch and a documented du -
+ration should be included in the individual's medical notes [ 61]. 
+Source control should be a priority, e.g. surgery to drain pus, 
+expedited birth where necessary. Women suspected of having 
+infected retained products of conception should be given antibi -
+otics and surgery to remove the infected products of conception 
+should be performed promptly [ 4]. [Evidence level 4]
+Increasing resistance of GBS to clindamycin (31% resistance in 
+2022) has necessitated recommendations for substituting ceph -
+alosporins or vancomycin for beta- lactam allergic women need -
+ing prophylaxis in labour [ 44, 71, 72 ]. Do not use clindamycin 
+for prophylaxis or treatment of GBS infection unless it is known 
+to be sensitive. [Evidence level 4]
+6.1.1 | Group A Beta- haemolytic Streptococcus
+Only 0.03% to 0.06% of pregnant women have perineal coloni -
+sation with GAS, and are usually asymptomatic [ 86]. Vaginal 
+discharge is often watery (leucocytes are destroyed by GAS leu -
+cocidins), and not offensive, so may therefore not be thought to 
+be significant. However, ascending vaginally, GAS can cause 
+endometritis, myonecrosis, peritonitis and streptococcal toxic 
+shock syndrome (STSS) [ 87]. [Evidence level 4]
+6.1.2 | Necrotising Fasciitis
+Post birth wound infection can lead to serious abdominal or remote 
+necrotising fasciitis (NF) [ 1, 44, 87–92] and STSS [41, 43 ]. NF refers 
+to infection causing necrosis of the superficial and/or deep fascia 
+and subcutaneous tissue [ 42, 45 ] and has been reported to occur in 
+1.8 per thousand caesarean births [ 91]. Rare cases of NF following 
+vaginal birth have been reported [ 4, 42, 43 ]. The most rapid and se -
+vere forms of NF are usually due to GAS. Haematogenous or direct 
+seeding of tissues followed by spread along fascial planes produces 
+few visible external signs in the early stages. Later, tissue oedema 
+and thrombosis of the arterial supply to the nerves contributes to 
+the cardinal feature of NF, namely very severe pain out of propor -
+tion to what can be seen. Typically, increasingly stronger analgesia 
+culminating in opioids is an indication of possible NF and regular 
+pain scores should be performed. In late infection, the necrotis -
+ing process ascends to the surface causing bruising, blisters and 
+finally, obvious necrosis [ 42, 45 ].
+Bruising in the context of sepsis should raise suspicions of a 
+deeper necrotising process [ 4, 42, 45 ]. Following a fatal case 
+of delayed diagnosis of NF following birth by caesarean sec -
+tion, the authors of the MBRRACE report concluded “ un-
+likely a wound will become bruised a week after surgery without 
+an underlying cause… …Women often have pictures of their 
+wounds ….or they can describe the course of the change if asked… TABLE 8 | Indications for transfer to Intensive Care Unit.
+System Indication
+Cardiovascular • Hypotension (< 90 mmHg 
+systolic) or raised serum lactate 
+(> 4 mmol/l) persisting despite fluid 
+resuscitation, suggesting the need 
+for vasopressor and/or inotrope 
+support
+Respiratory • Pulmonary oedema
+• Need for mechanical ventilation
+• Need for airway protection
+Renal • Renal replacement therapy
+Neurological • Decreased conscious level
+Miscellaneous • Multi- organ failure
+• Uncorrected acidosis
+• Hypothermia
+Note: Adapted from Plaat and Wray (2008) [ 79].
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e73Healthcare professionals should also document the appearances 
+of a wound when assessing it to allow other staff to compare any 
+reported changes.” [ 4]
+Women with NF need urgent involvement of a plastic surgeon, 
+an intensivist and an infection specialist. Barrier nursing includ -
+ing masks should be instituted because of the risk of spread of 
+GAS to other patients and healthcare workers [ 93]. For suspected 
+NF, a combination of intravenous piperacillin- tazobactam or meropenem plus clindamycin covers most bacteria, including 
+GAS, the clindamycin aimed at switching off exotoxin produc -
+tion. Since clindamycin is not renally excreted, there is no need 
+to reduce the dosage in renal failure. If MRSA is likely, vanco -
+mycin should be added. [Evidence level 4]
+Streptococcal TSS presents similarly to staphylococcal TSS ex -
+cept that less than 50% of streptococcal TSS patients have the 
+classical ‘sunburn rash’ found in 100% of patients with TSS.TABLE 9 | Antimicrobial choices and limitations of antimicrobial spectrum (see also Appendix 5 ).
+Spectrum Points
+C o - a m o x i c l a v No activity against MRSA or Pseudomonas
+Active against most streptococci, staphylococci 
+(MSSA) anaerobes and many Gram negativesConcern about an increase in the risk 
+of necrotising enterocolitis in babies 
+exposed to co- amoxiclav in utero
+Metronidazole Only covers anaerobes Unnecessary if using clindamycin 
+and piperacillin- tazobactam as 
+each covers anaerobes well
+Used with e.g. cefotaxime as intrapartum 
+prophylaxis for suspected chorioamnionitis 
+if non- severe pencillin allergy [ 80]
+Clindamycin Currently in the UK covers most GAS 
+(> 89%) [ 41]; GBS (67%) [ 71] so should no 
+longer be used for GBS prophlaxis [ 70]
+Covers most staphylococci, including 
+many MRSA, and anaerobes
+Switches off exotoxin production
+Not renally excreted or nephrotoxicAssociated with increased risk of 
+Clostridium difficile superinfection
+Piperacillin–
+tazobactamSpectrum same as co- amoxiclav, but also 
+many Gram positive and Gram- negative 
+organisms, including pseudomonas
+No activity against MRSA
+Renal sparing (in contrast to aminoglycosides) 
+Poor activity against ESBL producing coliformsAvoid in beta- lactam allergy
+Very poor CSF penetration
+Cephalosporins e.g. 
+CeftriaxoneNo activity against ESBL producing 
+coliforms, pseudomonas or MRSA
+Cover beta- haemolytic streptococci including 
+GAS and GBS (but not enterococci)Should not be used if severe 
+beta- lactam allergy
+Increased risk of C. diffiicle
+Carbapenems Very broad empirical cover, most Gram- negatives 
+(including most ESBL- producers, anaerobes)
+Covers most Gram positives – except MRSA
+CPE are resistantNot for severe beta- lactam allergy [ 76]
+With moderate beta- lactam allergy 
+< 1% cross reaction [ 81]
+Excellent penetration including CSF
+Gentamicin Mainly Gram negative cover 
+(incuding most pseudomonas)
+No streptococcal, or anerobic coverInactivated in pus/anaerobic conditions
+Nephrotoxic and ototoxic, so usually limited 
+where possible to a stat dose for sepsis. (For 
+endocarditis a lower dose is given twice daily, 
+and then serum levels must be monitored)
+Vancomycin Covers MRSA. Recommended option in severe 
+penicillin allergy for GBS prophylaxis
+No cover for Gram negatives
+Not absorbed orally, so always given intravenously 
+unless treating C.difficile infectionSerum levels need to be monitored due to 
+the potential for renal and ototoxicity.
+Too rapid infusion can cause “ red man 
+syndrome” due to histamine release
+Note: Antimicrobials in the table are considered safe in breast- feeding. Note quinolones, tetracyclines and linezolid are not included because they are not considered 
+safe in breastfeeding and there are few indications for using these agents in pregnancy/puerperium. (See Appendix 5 for antibiotic spectra.)
+Abbreviations: CPE, carbapenemase producing enterobacterales; CSF, cerebral spinal fluid; ESBL, Extended spectrum Beta- Lactamase; GAS, Group A beta haemolytic 
+streptococci; MRSA, Methicillin- resistant Staphylococcus aureus.
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e74 BJOG: An International Journal of Obstetrics & Gynaecology, 20256.1.3 | Antimicrobial Management of Sepsis
+Information on antimicrobials and spectrum of activity which may 
+aid in guiding choice is given in Table  9. Empirical local hospital 
+guidelines should be consulted as they will reflect local epidemiol-
+ogy, as the incidence of resistant organisms varies with geograph-
+ical areas. The antimicrobials to include in the hospital formulary 
+and maternity unit guidelines for sepsis in the puerperium should 
+be agreed by clinicians and an infection specialist. [Evidence level 4]
+For empirical therapy of life- threatening sepsis, a combination 
+of either piperacillin/tazobactam or meropenem (for Gram nega -
+tive cover) plus clindamycin (for Gram positive and anaerobic or -
+ganisms) provides very broad cover, but lacks guaranteed MRSA 
+cover. Therefore, if there is any suspicion of MRSA, addition of 
+vancomycin is advisable. Local guidelines should always be con -
+sulted. If there is a history of severe beta- lactam allergy, an in -
+fection specialist should be consulted. An unwell woman with 
+a history of multi-drug resistant organism carriage or infection 
+(e.g. ESBL/CPE/Vancomycin Resistant Enterococci (VRE), or 
+suspected PVL or iGAS warrants discussion with an infection 
+specialist. Appropriate national guidelines are available on the 
+UK Health Security Agency (UKHSA) website. [Evidence level 4]
+6.1.4 | Intravenous Immunoglobulins
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+IVIG should be 
+considered as part of 
+treatment for Gram 
+positive necrotising 
+infections and 
+toxic shock when 
+other measures are 
+failing. Use should 
+be limited to the 
+sickest women, 
+and administered 
+in a critical care 
+setting, with a 
+blood warming 
+device. The main 
+contraindication 
+to IVIG use 
+is congenital 
+immunoglobulin 
+A deficiency in the 
+mother .3 D Intravenous 
+immunoglobulin (IVIG) 
+has a role in neutralising 
+circulating exotoxins 
+and superantigens in 
+severe unresponsive 
+Gram- positive 
+necrotising infections 
+and toxic shock.
+Intravenous immunoglobulin G (IVIG) is not effective or indi -
+cated for Gram negative infections or sepsis in general. However, 
+in severe Gram- positive necrotising infections and toxic shock, 
+IVIG has been shown to neutralise circulating exotoxins and su -
+perantigens [ 81, 94, 95 ]. The combination of IVIG and clindamy -
+cin has been reported as synergistic and beneficial [ 95–97 ] and is 
+recommended in the Australian and New Zealand guidelines for 
+suspected GAS sepsis in pregnancy [ 95]. IVIG has been recom -
+mended for consideration when other measures are failing [ 98]. 
+The main contraindication to IVIG use is congenital immuno -
+globulin A deficiency [ 98]. [Evidence level 3]
+Small case series involving Gram- positive exotoxin- related sep -
+sis have reported dramatic improvement with IVIG [ 95, 96, 99 ], 
+but data from large trials are lacking. Furthermore, since dosages and timings of administration of IVIG during the septic event 
+differ widely between centres, meaningful interpretation of the 
+published data is difficult. [Evidence level 3]
+IVIG administration should be reserved for critically ill women 
+with Gram- positive infections and administered in a critical care 
+setting with a blood warming device. Local hospital protocols for 
+replacement therapy in haematology patients may be used. Varying 
+doses of IVIG of up to 2g/kg have been reported in exotoxin- related 
+sepsis in pregnancy with no adverse effects [ 93, 95, 96, 99 ].
+6.2 | How should the Fetus be Monitored 
+and Timing and Mode of Birth be Decided?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+In a critically ill 
+pregnant woman, 
+birth of the baby can 
+be expedited if it would 
+be beneficial to the 
+woman or the baby or 
+to both. A decision on 
+the timing and mode of 
+birth should be made 
+by a senior obstetrician 
+following discussion 
+with the woman and/
+or her family if her 
+condition permits .4 GPP Decisions around 
+birth must be 
+individualised and 
+should be led by a 
+senior obstetrician 
+in consultation 
+with the woman.
+If preterm birth is 
+anticipated, magnesium 
+sulfate should be 
+considered if indicated 
+and consideration 
+should be given to 
+the use of antenatal 
+corticosteroids for 
+fetal lung maturity in 
+women with sepsis .4 GPP This follows the 
+recommendation 
+in NICE guideline 
+NG25 [ 100].
+During the 
+intrapartum period, 
+continuous electronic 
+fetal monitoring 
+is recommended. 
+Caution is required if 
+considering fetal blood 
+sampling .4 GPP These 
+recommendations 
+are aligned with 
+NG121 [ 101] and 
+NG229 [ 85].
+An individual risk 
+assessment should 
+be made by a senior 
+anaesthetist with 
+regards to type of 
+anaesthesia, as well as 
+the need for invasive 
+monitoring4 GPP This 
+recommendation 
+is derived from 
+NG121 [ 101].
+The effects of maternal sepsis on fetal wellbeing include the di -
+rect effect of infection in the fetus, the effect of maternal illness/
+shock and the effect of maternal treatment. The risk of neonatal 
+encephalopathy and cerebral palsy is increased in the presence 
+of intrauterine infection [ 100]. [Evidence level 2+]
+If preterm birth is anticipated, the use of antenatal cortico -
+steroids for fetal lung maturity in the woman with sepsis can 
+be considered [ 100–102 ]. The use of magnesium sulfate is not 
+contraindicated in sepsis, but additional monitoring is advised 
+as hypotension may be exacerbated. It should be used for fetal 
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e75neuroprotection if preterm birth is planned within 24 hours, or 
+the woman is in preterm labour. It should be offered to women 
+between 24+0 and 29+6 weeks of pregnancy and considered up to 
+33+6 weeks of pregnancy [ 101]. [Evidence level 1+]
+During the intrapartum period, continuous electronic fetal 
+monitoring is recommended in the presence of maternal pyrexia 
+(defined as a temperature above 38.0°C once, or 37.5°C on two 
+occasions 1 hour apart) [ 84, 100 ]. This should also apply to sepsis 
+without pyrexia. Objective evidence of intrauterine infection is 
+associated with abnormal fetal heart monitoring. However, elec -
+tronic fetal monitoring is not a sensitive predictor of early onset 
+neonatal sepsis [ 103, 104 ]. Also consider that CTG changes may 
+serve as an early warning sign for derangements in maternal 
+physiology and organ dysfunction [ 105]. Caution is required if 
+considering fetal blood sampling, as in women with sepsis the 
+results can be falsely reassuring [ 100]. [Evidence level 4]
+Attempting birth in the setting of maternal instability increases 
+maternal and fetal mortality rates, unless the source of infection 
+is intrauterine [ 106]. The decision on mode of birth should be in -
+dividualised by the consultant obstetrician, in consultation with 
+the woman, with consideration to severity of maternal illness, 
+the woman's preference, duration of labour, gestational age, 
+fetal wellbeing and viability and response to treatment [ 100]. 
+[Evidence level 4]
+6.3 | What are the Neonatal Issues that must be 
+Considered?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Babies of women 
+treated for 
+sepsis during 
+labour, or in the 
+24 hour period 
+before or after 
+birth, require 
+assessment for 
+risk factors 
+and clinical 
+indicators 
+of neonatal 
+infection .4 D This recommendation is 
+derived from NICE NG195 
+on neonatal infection [ 72].
+If either the 
+woman or the 
+baby is infected 
+with iGAS 
+disease in the 
+postpartum 
+period, both 
+should be treated 
+with antibiotics .4 GPP This follows advice 
+on management of 
+GAS contacts [ 17].
+It is recommended that babies of women who receive parenteral 
+antibiotic treatment for confirmed or suspected invasive bacte -
+rial infection at any time during labour, or in the 24- hour peri -
+ods before and after the birth, have a careful assessment of risk 
+factors and clinical indicators of possible early- onset neonatal 
+infection to guide investigations and management including an -
+tibiotic treatment [ 72]. [Evidence level 4]
+Intrapartum antibiotic prophylaxis against GBS should be of -
+fered to women with a maternal pyrexia or signs of sepsis during labour [ 70]. Babies in whom there are any risk factors or clinical 
+indicators of possible early- onset neonatal infection should be 
+cared for as per NICE Guideline [NG195] Neonatal infection: an -
+tibiotics for prevention and treatment [ 72].
+Specific investigations, management of neonatal infections 
+and advice to parents should be conducted according to NICE 
+Guideline [NG195] [ 72].
+GAS and PVL- producing S. aureus infections have been transmitted 
+to babies during birth and breastfeeding, causing severe infection. 
+GAS poses the highest risk of sepsis in the baby, with numerous 
+cases where both the woman and baby have been affected [14, 18]. 
+Therefore, antimicrobial prophylaxis should be routinely given to 
+babies of women with GAS infection [17, 18]. [Evidence level 4]
+6.4 | What Postnatal Care and/or Infection 
+Control Issues should be Considered?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+All pregnant women 
+and women who have 
+recently given birth 
+should be informed of 
+the signs and symptoms 
+of genital tract infection .4 GPP Good clinical 
+practice.
+Any GAS identified 
+during pregnancy 
+should be treated 
+aggressively and full 
+infection control 
+precautions adopted, 
+including barrier 
+nursing as per local 
+guidelines .4 GPP This is guidance 
+from UKHSA [ 17].
+Close household contacts 
+of women with GAS 
+infection should be 
+warned to seek medical 
+attention should 
+symptoms develop, and 
+may warrant antibiotc 
+prophylaxis .2— A This is guidance 
+from UKHSA [ 17].
+Healthcare workers who 
+have been exposed to 
+respiratory secretions 
+of women with GAS 
+infection should be 
+considered for antibiotic 
+prophylaxis .3 GPP This is guidance 
+for control of GAS 
+in healthcare 
+and maternity 
+settings [ 18].
+GAS and MRSA are easily transmitted by the hands of health -
+care workers and by close contact in households. Local infection 
+control guidelines should be followed for hospital–specific isola -
+tion and contact precautions. iGAS infections are notifiable and 
+the infection control team and the UKHSA should be informed 
+[17, 18, 63 ]. CPE and VRE carriers should be isolated in accor -
+dance with local protocols. [Evidence level 4]
+Women suspected of, or diagnosed with, GAS sepsis should 
+be barrier nursed with protective clothing, including masks, 
+in a single room with en- suite facilities to minimise the risk of 
+spread to other women and staff. Local advice from infection 
+control should be sought [ 18]. [Evidence level 4]
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e76 BJOG: An International Journal of Obstetrics & Gynaecology, 2025All pregnant women and those who recently gave birth need to 
+be informed of the signs and symptoms of genital tract infec -
+tion and how to prevent its transmission. Advice to all women 
+should include verbal and written information about GAS pre -
+vention, signs and symptoms and the need to seek advice early 
+if concerned, as well as the importance of good personal hygiene 
+being essential. This includes avoiding contamination of the 
+perineum by washing hands before and after using the lavatory 
+or changing sanitary towels. Such emphasis on hygiene is espe -
+cially necessary when a woman or her family or close contacts 
+have symptoms of GAS infection such as sore throat, impetigo or 
+scarlet fever [ 17, 18 ]. [Evidence level 4]
+Any GAS identified during pregnancy should be treated aggres -
+sively. Several cases of women with known GAS infection which 
+was not treated have resulted in maternal death.
+7 | Improving Outcomes from Maternal Sepsis
+7.1 | Can Sepsis be Prevented or Detected Earlier?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+All pregnant women 
+and women who have 
+recently given birth 
+should be informed of 
+the signs and symptoms 
+of sepsis .4 GPP Good clinical 
+practice.
+Healthcare 
+professionals should 
+have a low threshold 
+for suspecting sepsis .4 GPP Good clinical 
+practice.
+Any signs of infection or antibiotics administered during a wom -
+an's hospital stay should be reported directly to her community 
+carers (GP, midwives and health visitors) on discharge, so that 
+appropriate surveillance can be arranged. [Evidence level 4]
+7.2 | What Education and Training should be 
+Provided to Health care Providers to Improve 
+Maternal Sepsis Care?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Regular 
+multidisciplinary 
+teaching should be 
+provided to all health 
+professionals involved 
+in caring for women 
+with sepsis .4 GPP This is an 
+important element 
+of continuous 
+professional 
+development and 
+improvement of 
+quality of care.
+All clinical staff must undertake regular training for the iden -
+tification and initial and ongoing management of sepsis. Inter- 
+professional training is preferred [ 4]. Examples include in- situ 
+and high- fidelity simulation for multidisciplinary team teaching 
+to have a high index of suspicion, early recognition and train -
+ing to gain leadership and follower skills in a safe environment 
+[48, 55 ]. [Evidence level 4]8 | Recommendations for Future Research
+• Developing and validating pregnancy specific diagnostic 
+criteria and practical screening tools for maternal sepsis.
+• Further research is required to quantify the importance of 
+risk factors in predicting the occurrence of sepsis.
+• Biomarkers to predict and risk stratify sepsis and related ad -
+verse outcomes require further investigation.
+• Biomarkers to monitor response to treatment and enable 
+early cessation of antibiotics.
+• Studies to understand how best to implement improved 
+quality of care in maternal sepsis in clinical practice.
+9 | Auditable Topics
+• Proportion of women with suspected sepsis who receive ap -
+propriate antibiotic treatment within 1 hour of diagnosis. 
+(100%)
+• Proportion of women with suspected sepsis who have blood 
+cultures obtained prior to initiation of antibiotic treatment. 
+(100%)
+• Proportion of women with suspected sepsis who have a ve -
+nous lactate sample obtained within 1 hour of diagnosis. 
+(100%)
+• Whether a history of previous multi- drug resistant organ -
+isms was checked and influenced the choice of empirical 
+antimicrobials on presentation of maternal sepsis. (100%)
+• Proportion of women with GAS identified who are appro -
+priately treated and in whom appropriate contact tracing 
+of household contacts and exposed healthcare workers was 
+carried out. (100%)
+• Proportion of women with sepsis occurring in the 24 hours 
+before or after birth, in whom appropriate neonatal treat -
+ment was initiated. (100%)
+10 | Useful Links and Support Groups
+The UK Sepsis Trust: support and eduction for the public, pa -
+tients and their families affected by sepsis and for health care 
+professionals https:// sepsi strust. org
+Group B Strep Support: offer information and support to fami -
+lies affected by Group B Strep (and their health professionals), 
+during pregnancy and after birth w w w . g b s s . o r g . u k
+The Lee Spark NF Foundation: support and education for those 
+patients and their families with NF or severe streptococcal in -
+fections h t t p s : / / n f s u k . o r g . u k / 
+The World Health Organisation “STOP SEPSIS” campaign. 
+Resources for health care providers and links to WHO materials 
+on the prevention and management of maternal sepsis. https:// 
+srhr. org/ sepsis/ 
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e77Conflicts of Interest
+D.L. has received Salary support through NIHR Global Health 
+Professorship personal award; grants from the Medical Research 
+Council for the LACTATE study, exploring the diagnostic accuracy of 
+lactate measurement for diagnosis of maternal sepsis in low resource 
+settings and the APT- Sepsis study, a clinical trial to examine clin -
+ical and cost effectiveness of APT- Sepsis intervention in Malawi and 
+Uganda. A.B. has declared no conflicts of interest. M.M. has declared no 
+conflicts of interest. D.P. is the Deputy Chair Committee of Infections in 
+Pregnancy, International Federation of Gynaecology and Obstetrics and 
+Chair Elect (2025) Committee of Infections in Pregnancy, International 
+Federation of Gynaecology and Obstetrics. F.P. has received payment for 
+regular reports as expert witness in obstetric anaesthesia for Solicitors, 
+coroners and is a council member of the Royal College of Anaesthetists.
+References
+1. The Confidential Enquiry Into Maternal and Child Health (CEMACH), 
+“Saving Mothers‘ Lives: Reviewing Maternal Deaths to Make Motherhood 
+Safer 2003–2005,” in The Seventh Report of the Confidential Enquiries Into 
+Maternal Deaths in the UK (London, UK: CEMACH, 2007).
+2. Royal College of Obstetricians and Gynaecologists, Coronavirus 
+(COVID- 19) Infection and Pregnancy (London, UK: RCOG, 2022), 
+h t t p s : / / w w w . r c o g . o r g . u k / m e d i a / f t z i l s f j / 2 0 2 2 - 1 2 - 1 5 - c o r o n a v i r u s - c o v i d 
+- 1 9 - i n f e c t i o n - i n - p r e g n a n c y - v 1 6 . p d f.
+3. L. Say, D. Chou, A. Gemmill, et al., “Global Causes of Maternal Death: 
+A WHO Systematic Analysis,” Lancet Global Health 2 (2014): e323–e333.
+4. MBRRACE- UK, “Saving Lives Improving Mothers‘ Care—
+Lessons Learned to Inform Maternity Care From the UK and Ireland 
+Confidential Enquiries Into Maternal Deaths and Morbidity 2019–21” 
+(2023), h t t p s : / / w w w . n p e u . o x . a c . u k / a s s e t s / d o w n l o a d s / m b r r a c e - u k / 
+r e p o r t s / m a t e r n a l - r e p o r t - 2 0 2 3 / M B R R A C E - U K _ M a t e r n a l _ C o m p i 
+l e d _ R e p o r t _ 2 0 2 3 . p d f.
+5. M. Knight, K. Bunch, D. Tuffnell, et  al., Saving Lives, Improving 
+Mothers‘ Care—Lessons Learned to Inform Future Maternity Care From 
+the UK and Ireland Confidential Enquiries Into Maternal Deaths and 
+Morbidity 2015–17 (Oxford, UK: National Perinatal Epidemiology Unit, 
+University of Oxford, 2019), h t t p s : / / w w w . n p e u . o x . a c . u k / a s s e t s / d o w n l 
+o a d s / m b r r a c e - u k / r e p o r t s / M B R R A C E - U K % 2 0 M a t e r n a l % 2 0 R e p o r t % 
+2 0 2 0 1 9 % 2 0 - % 2 0 W E B % 2 0 V E R S I O N . p d f.
+6. M. Knight, S. Kenyon, P. Brocklehurst, et al., Saving Lives, Improving 
+Mothers‘ Care—Lessons Learned to Inform Future Maternity Care From 
+the UK and Ireland Confidential Enquiries Into Maternal Deaths and 
+Morbidity 2009–12 (Oxford, UK: National Perinatal Epidemiology Unit, 
+University of Oxford, 2014).
+7. J. Jardine, H. Aughey, NMPA Project Team, et  al., Maternity 
+Admissions to Intensive Care in England, Wales and Scotland in 2015/16: 
+A Report From the National Maternity and Perinatal Audit (London, 
+UK: RCOG, 2019), h t t p s : / / w w w . h q i p . o r g . u k / w p - c o n t e n t / u p l o a d s / 2 0 1 9 / 
+0 1 / N M P A - I n t e n s i v e - C a r e - s p r i n t - r e p o r t - F I N A L . p d f.
+8. G. Iacobucci, “Sepsis Guidance May Change as Result of Deaths of Two 
+Women From Herpes Infection After Giving Birth,” BMJ 375 (2021): 2881.
+9. Courts and Judiciary Tribunal, “Kimberley Sampson and Samantha 
+Mulcahy: Prevention of Future Deaths Report” (Central and South East 
+Kent: Courts and Judiary Tribunal 2023), h t t p s : / / w w w . j u d i c i a r y . u k / 
+p r e v e n t i o n - o f - f u t u r e - d e a t h - r e p o r t s / k i m b e r l e y - s a m p s o n - a n d - s a m a n 
+t h a - m u l c a h y - p r e v e n t i o n - o f - f u t u r e - d e a t h s - r e p o r t / .
+10. Royal College of Obstetricians and Gynaecologists, Developing a 
+Green- Top Guideline: Guidance for Developers (London,UK: RCOG, 2022).
+11. World Health Organization, Statement on Maternal Sepsis (Geneva, 
+Switzerland: WHO, 2017), h t t p s : / / w w w . w h o . i n t / p u b l i c a t i o n s / i / i t e m / 
+W H O - R H R - 1 7 . 0 2.12. M. Singer, C. S. Deutschman, C. W. Seymour, et  al., “The Third 
+International Consensus Definitions for Sepsis and Septic Shock 
+(Sepsis- 3),” JAMA 315 (2016): 801.
+13. M. Deutscher, M. Lewis, E. R. Zell, et al., “Incidence and Severity of 
+Invasive Streptococcus pneumoniae , Group A Streptococcus, and Group 
+B Streptococcus Infections Among Pregnant and Postpartum Women,” 
+Clinical Infectious Diseases 53 (2011): 114–123.
+14. A. Leonard, A. Wright, M. Saavedra- Campos, et al., “Severe Group 
+A Streptococcal Infections in Mothers and Their New- Borns in London 
+and the South East, 2010–2016: Assessment of Risk and Audit of Public 
+Health Management,” BJOG 126 (2019): 44–53.
+15. C. D. Acosta, M. Knight, H. C. Lee, et  al., “The Continuum of 
+Maternal Sepsis Severity: Incidence and Risk Factors in a Population- 
+Based Cohort Study,” PLoS One 8 (2013): e67175.
+16. C. D. Acosta, J. J. Kurinczuk, D. N. Lucas, D. J. Tuffnell, S. Sellers, 
+and M. Knight, “United Kingdom Obstetric Surveillance System Severe 
+Maternal Sepsis in the UK, 2011–2012: A National Case–Control Study,” 
+PLoS Medicine 11 (2014): e1001672.
+17. UK Health Security Agency, “UK Guidelines for the Management 
+of Contacts of Invasive Group A Streptococcus (iGAS) Infection in 
+Community Settings,” h t t p s : / / a s s e t s . p u b l i s h i n g . s e r v i c e . g o v . u k / m e d i a / 
+6 4 0 7 1 e c 5 d 3 b f 7 f 2 5 f a 4 1 7 a 9 1 / M a n a g e m e n t - o f - c o n t a c t s - o f - i n v a s i v e - g r o u p 
+- a - s t r e p t o c o c c u s . p d f.
+18. J. A. Steer, T. Lamagni, B. Healy, et al., “Guidelines for Prevention 
+and Control of Group A Streptococcal Infection in Acute Healthcare 
+and Maternity Settings in the UK,” Journal of Infection 64 (2012): 1–8.
+19. S. M. Hamilton, D. L. Stevens, and A. E. Bryant, “Pregnancy- 
+Related Group A Streptococcal Infections: Temporal Relationships 
+Between Bacterial Acquisition, Infection Onset, Clinical Findings, and 
+Outcome,” Clinical Infectious Diseases 57 (2013): 870–876.
+20. E. Sherwood, S. Vergnano, I. Kakuchi, et  al., “Invasive Group A 
+Streptococcal Disease in Pregnant Women and Young Children: A 
+Systematic Review and Meta- Analysis,” Lancet Infectious Diseases 22 
+(2022): 1076–1088.
+21. S. J. Knowles, N. P. O‘Sullivan, A. M. Meenan, R. Hanniffy, and M. 
+Robson, “Maternal Sepsis Incidence, Aetiology and Outcome for Mother 
+and Fetus: A Prospective Study,” BJOG 122 (2015): 663–671.
+22. G. Lewis, R. Cantwell, T. Clutton- Brock, et al., “Saving Mothers‘ 
+Lives: Reviewing Maternal Deaths to Make Motherhood Safer: 
+2006–2008. The Eighth Report of the Confidential Enquiries Into 
+Maternal Deaths in the United Kingdom,” BJOG 1 1 8 , n o . S u p p l 1 
+(2011): 1–203.
+23. C. O‘Connor, M. Meehan, R. Cunney, M. Eogan, and R. J. Drew, 
+“Unexpected Increase in Invasive Maternal Group B Streptococcus 
+Bacteraemia in a Maternity Hospital in Dublin, Ireland (May to 
+September 2017) Associated With Subtle Signs of Sepsis and Unreliable 
+Sepsis Biomarkers,” Journal of Infection 76 (2018): 426–428.
+24. A. Kalin, C. Acosta, J. J. Kurinczuk, et al., “Severe Sepsis in Women 
+With Group B Streptococcus in Pregnancy: An Exploratory UK National 
+Case–Control Study,” BMJ Open 5 (2015): e007976.
+25. C. P. O‘Sullivan, T. Lamagni, D. Patel, et al., “Group B Streptococcal 
+Disease in UK and Irish Infants Younger Than 90 Days, 2014–15: A 
+Prospective Surveillance Study,” Lancet Infectious Diseases 19 (2019): 
+83–90.
+26. T. Ghi, F. Bellussi, A. Curti, et  al., “Occurrence of Septic Shock 
+in a Patient Submitted to Emergency Cerclage following a Negative 
+Amniocentesis: Report of a Case,” Fetal Diagnosis and Therapy 33 
+(2013): 265–267.
+27. G. Shannon, R. Sekar, and R. M. N. Kimble, “Septic Shock follow -
+ing Cervical Cerclage for Advanced Cervical Dilatation,” Australian 
+and New Zealand Journal of Obstetrics and Gynaecology 51 (2011): 
+469–470.
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e78 BJOG: An International Journal of Obstetrics & Gynaecology, 202528. A. K. Lal, N. Sprawka, H. Darji, et al., “MRSA Screening: Incidence 
+and Maternal Postpartum Outcomes in an Obstetric Population at a 
+Tertiary Care Center,” Archives of Gynecology and Obstetrics 307 (2023): 
+1203–1208.
+29. E. Bauters, S. Jonckheere, I. Dehaene, P. Vandecandelaere, M. 
+A. Argudin, and G. Page, “Prevalence and Clinical Relevance of 
+Colonization with Methicillin- Resistant Staphylococcus aureus in the 
+Obstetric Population,” Journal of Maternal- Fetal & Neonatal Medicine 
+35 (2022): 8186–8191.
+30. J. W. Gray and J. Suviste, “Three Years‘ Experience of Screening for 
+Meticillin- Resistant Staphylococcus aureus in Obstetrics,” Journal of 
+Hospital Infection 83 (2013): 61–63.
+31. B. A. McManus, B. K. Aloba, M. R. Earls, et al., “Multiple Distinct 
+Outbreaks of Panton–Valentine Leucocidin- Positive Community- 
+Associated Methicillin- Resistant Staphylococcus aureus in Ireland 
+Investigated by Whole- Genome Sequencing,” Journal of Hospital 
+Infection 108 (2021): 72–80.
+32. H. Barnsley, S. McFall, R. White, S. Suleman, B. Pichon, and M. 
+Patel, “Emergence and Control of an Outbreak of PVL- Positive MRSA 
+in a UK- Based Maternity Setting,” Journal of Hospital Infection 149 
+(2024): 184–188.
+33. J. Ogura, Y. Inayama, N. Sasamoto, et al., “Vertical Transmission of 
+Methicillin- Resistant Staphylococcus aureus at Delivery and Its Clinical 
+Impact: An Observational, Prospective Cohort Study,” Acta Obstetricia 
+et Gynecologica Scandinavica 100 (2021): 1986–1994.
+34. A. Pérez, L. Orta, E. Padilla, and X. Mesquida, “CA- MRSA Puerperal 
+Mastitis and Breast Abscess: A Potential Problem Emerging in Europe 
+With Many Unanswered Questions,” Journal of Maternal- Fetal & 
+Neonatal Medicine 9 (2013): 949–951.
+35. G. Gopal Rao, R. Batura, R. Nicholl, et  al., “Outbreak Report of 
+Investigation and Control of an Outbreak of Panton- Valentine Leukocidin- 
+Positive Methicillin- Sensitive Staphylococcus aureus (PVL- MSSA) Infection 
+in Neonates and Mothers,” BMC Infectious Diseases 19 (2019): 1–7.
+36. C. S. Eppes and S. L. Clark, “Extended- Spectrum β- Lactamase 
+Infections During Pregnancy: A Growing Threat,” American Journal of 
+Obstetrics and Gynecology 213, no. 5 (2015): 650–652.
+37. S. A. Rawstron, J. M. Jackman, E. Serebro, et  al., “Perirectal 
+Screening for Carbapenem- Resistant Enterobacteriaceae Obtained 
+From 100 Consecutive Healthy Pregnant Women in Labor at a Brooklyn 
+Hospital: Results and Risk Factors,” Infection Control and Hospital 
+Epidemiology 39 (2018): 369–370.
+38. P. Bonfant, R. Bellù, L. Principe, et  al., “Mother- to- Child 
+Transmission of KPC Carbapenemase- Producing Klebsiella pneumo -
+niae at Birth,” Pediatric Infectious Disease Journal 36 (2017): 228–229.
+39. P. Foessleitner, J. Gasser, H. Kiss, et  al., “Vaginal Colonization of 
+Extended- Spectrum Beta- Lactamase- Producing Bacteria During 
+Pregnancy: An Observational Study,” European Journal of Obstetrics, 
+Gynecology, and Reproductive Biology 246 (2020): 86–89.
+40. F. Oldendorff, A. Linnér, M. Finder, et  al., “Case Report: Fatal 
+Outcome for a Preterm Newborn With Meningitis Caused by Extended- 
+Spectrum β- Lactamase- Producing Escherichia coli Sequence Type 
+1193,” Frontiers in Pediatrics 10 (2022): 866762.
+41. UK Health Security Agency, “Laboratory Surveillance of Pyogenic 
+and Non- Pyogenic Streptococcal Bacteraemia in England: 2022 Update 
+Health Protection Report,” Vol. 17, no. 14, h t t p s : / / a s s e t s . p u b l i s h i n g . 
+s e r v i c e . g o v . u k / m e d i a / 6 5 5 d d 0 f 7 5 4 4 a e a 0 0 1 9 f b 3 2 3 3 / h p r 1 4 2 3 - a n n u a l - 
+s t r e p - 2 0 2 2 - u p d a t e . p d f.
+42. R. L. Tillett, P. J. Saxby, C. A. Stone, and M. S. Morgan, “Group A 
+Streptococcal Necrotising Fasciitis Masquerading as Mastitis,” Lancet 
+368, no. 9530 (2006): 174.
+43. N. F. C. Crum, F. M. Chun, T. G. Gaylord, and B. R. Hale, “Group A 
+Streptococcal Toxic Shock Syndrome Developing in the Third Trimester of Pregnancy,” Infectious Diseases in Obstetrics and Gynecology 10, no. 
+4 (2002): 2002.
+44. M. Simmonds, “Necrotising Fasciitis and Group A Streptococcus 
+Toxic Shock- Like Syndrome in Pregnancy: Treatment With 
+Plasmapheresis and Immunoglobulin,” International Journal of 
+Obstetric Anesthesia 8 (1999): 125–130.
+45. M. S. Morgan, “Diagnosis and Management of Necrotising 
+Fasciitis: A Multi- Parametric Approach,” Journal of Infection 75 
+(2010): 249–257.
+46. T. Suzuki, T. Matsuo, Y. Kijima, et  al., “Acute Heart Failure 
+Associated With Toxic Shock Syndrome due to Methicillin- Susceptible 
+Staphylococcus aureus During the Postpartum Period: Case Report 
+and Systematic Literature Review,” BMC Cardiovascular Disorders 22 
+(2022): 452.
+47. National Institute for Health and Care Excellence, “Sepsis: 
+Recognition, Diagnosis and Early Management,” in NICE Guideline 
+[NG51] (London, UK: NICE, 2016), h t t p s : / / w w w . n i c e . o r g . u k / g u i d a 
+n c e / n g 5 1 .
+48. M. Mukwende, P. Tamonv, and M. Turner, “A Handbook of Clinical 
+Signs on Black and Brown Skin,” h t t p s : / / w w w . b l a c k a n d b r o w n s k i n . c o . 
+u k / m i n d t h e g a p .
+49. O. Oseghale, R. Vlahos, J. J. O‘Leary, et al., “Influenza Virus Infection 
+During Pregnancy as a Trigger of Acute and Chronic Complications,” 
+Viruses 14 (2022): 2729.
+50. R. X. Calix, K. B. Loeliger, M. S. Burn, and K. H. Campbell, “Acute 
+Herpes Simplex Virus Hepatitis in Pregnancy,” Obstetrics & Gynecology 
+135, no. 2 (2020): 396–400.
+51. L. Bougioukas, R. B. C. Psoinos, D. C. Jones, E. A. Morris, and A. 
+J. Hale, “Disseminated Herpes simplex Virus 2 as a Complication of 
+Pregnancy Pane ID,” Cases 24 (2021): e01107.
+52. R. Garcia, N. Ali, C. Papadopoulos, and G. Randhawa, “Specific 
+Antenatal Interventions for Black, Asian and Minority Ethnic (BAME) 
+Pregnant Women at High Risk of Poor Birth Outcomes in the United 
+Kingdom: A Scoping Review,” BMC Pregnancy and Childbirth 15 (2015): 
+1–13.
+53. M. Knight, K. Bunch, D. Tuffnell, et  al., Saving Lives, Improving 
+Mothers‘ Care–Lessons Learned to Inform Maternity Care From the 
+UK and Ireland Confidential Enquiries Into Maternal Deaths and 
+Morbidity 2016–18 , ed. MBRRACE- UK (Oxford, UK: National Perinatal 
+Epidemiology Unit, University of Oxford, 2020), h t t p s : / / w w w . n p e u . o x . 
+a c . u k / a s s e t s / d o w n l o a d s / m b r r a c e - u k / r e p o r t s / m a t e r n a l - r e p o r t - 2 0 2 0 / 
+M B R R A C E - U K _ M a t e r n a l _ R e p o r t _ D e c _ 2 0 2 0 _ v 1 0 _ O N L I N E _ V E R S I 
+O N _ 1 4 0 4 . p d f.
+54. J. Cheshire, D. Lissauer, W. Parry- Smith, et al., “Modified Obstetric 
+Early Warning Systems (MObs) Research Group,” Resuscitation Plus 30, 
+no. 5 (2020): 100060, h t t p s : / / d o i . o r g / 1 0 . 1 0 1 6 / j . r e s p l u . 2 0 2 0 . 1 0 0 0 6 0 .
+55. Enhanced Maternal Care Units: Guidance on Development and 
+Implementation, “Intensive Care Society,” 2023), h t t p s : / / i c s . a c . u k / 
+r e s o u r c e / e n h a n c e d - m a t e r / d e f a u l t / f i l e s / d o c u m e n t s / 2 0 2 0 - 0 6 / E M C - 
+G u i d e l i n e s 2 0 1 8 . p d f.
+56. National Institute for Health and Care Excellence, “Acutely Ill 
+Adults in Hospital: Recognising and Responding to Deterioration,” in 
+Clinical Guideline [GC50] (London, UK: NICE, 2007), https:// www. 
+n i c e . o r g . u k / g u i d a n c e / c g 5 0 .
+57. J. Davies, “Procalcitonin,” Journal of Clinical Pathology 68 (2015): 
+675–679.
+58. A. Mangogna, C. Agostinis, G. Ricci, F. Romano, and R. Bull, 
+“Overview of Procalcitonin in Pregnancy and in Pre- Eclampsia,” 
+Clinical and Experimental Immunology 198 (2019): 37–46.
+59. M. Prabhu, G. Wilkie, M. MacEachern, et al., “Procalcitonin Levels 
+in Pregnancy: A Systematic Review and Meta- Analysis of Observational 
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e79Studies,” International Journal of Gynecology & Obstetrics 2 (2023): 
+484–494.
+60. M. Meda, N. Virgincar, V. Gentry, et  al., “Clostridium Difficile 
+Infection in Pregnant and Postpartum Women in 2 Hospitals and a Review 
+of Literature,” American Journal of Infection Control 47 (2019): 7–14.
+61. Public Health England, Start Smart—Then Focus: Antimicrobial 
+Stewardship Toolkit for English Hospitals (London, UK: PHE, 2015), 
+h t t p s : / / w w w . g o v . u k / g o v e r n m e n t / p u b l i c a t i o n s / a n t i m i c r o b i a l - s t e w a 
+r d s h i p - s t a r t - s m a r t - t h e n - f o c u s / s t a r t - s m a r t - t h e n - f o c u s - a n t i m i c r o b i a l - 
+s t e w a r d s h i p - t o o l k i t - f o r - i n p a t i e n t - c a r e - s e t t i n g s .
+62. UK Health Security Agency (UKHSA), “Guidance on Use of 
+Antiviral Agents for the Treatment and Prophylaxis of Seasonal 
+Influenza,” h t t p s : / / w w w . g o v . u k / g o v e r n m e n t / p u b l i c a t i o n s / i n f l u e n z a - 
+t r e a t m e n t - a n d - p r o p h y l a x i s - u s i n g - a n t i - v i r a l - a g e n t s .
+63. M. Knight, M. Nair, MBRRACE- UK, et al., Saving Lives, Improving 
+Mothers‘ Care—Surveillance of Maternal Deaths in the UK 2012- 14 and 
+Lessons Learned to Inform Maternity Care From the UK and Ireland 
+Confidential Enquiries Into Maternal Deaths and Morbidity 2009–14 
+(Oxford, UK: National Perinatal Epidemiology Unit, University of 
+Oxford, 2016).
+64. P. Radsel, V. Gorjup, A. Jazbec, et al., “Pregnancy Complicated by 
+Influenza A and ARDS Requiring Consecutive VV- ECMO Treatment 
+With Successful Vaginal Delivery,” Journal of Artificial Organs 21 
+(2018): 471–474.
+65. J. L. Rein, A. M. Etra, J. J. Patel, et  al., “Death of Woman With 
+Peripartum Influenza B Virus Infection and Necrotizing Pneumonia,” 
+Emerging Infectious Diseases 20, no. 7 (2014): 1258–1259.
+66. T. Yamada, M. K. Yamamura, K. Katabami, et al., “Invasive Group 
+A Streptococcal Infection in Pregnancy,” Journal of Infection 60 (2010): 
+417–424.
+67. E. Tamayo, M. Montes, D. Vicente, and E. Pérez- Trallero, 
+“Streptococcus Pyogenes Pneumonia in Adults: Clinical Presentation 
+and Molecular Characterization of Isolates 2006–2015,” PLoS One 11, 
+no. 3 (2016): 1–13.
+68. Y. Gillet, B. Issartel, P. Vanhems, et  al., “Association Between 
+Staphylococcus aureus Strains Carrying Gene for Panton- Valentine 
+Leucocidin and Highly Lethal Necrotising Pneumonia in Young 
+Immunocompetent Patients,” Lancet 359 (2002): 753–759.
+69. I. Tsangaris, E. Paramythiotou, G. Tsaknis, et  al., “Ovarian 
+Hyperstimulation Syndrome Complicated by Severe Community- 
+Acquired Pneumonia due to Methicillin- Resistant Staphylococcus au -
+reus Positive for Panton- Valentine Leukocidin,” Journal of Obstetrics 
+and Gynaecology Research 38, no. 2 (2012): 476–478.
+70. R. G. Hughes, P. Brocklehurst, P. J. Steer, P. Heath, B. M. Stenson, 
+and Royal College of Obstetricians and Gynaecologists, “Prevention 
+of Early- Onset Neonatal Group B Streptococcal Disease. Green- Top 
+Guideline No. 36,” BJOG 124 (2017): e280–e305.
+71. UKHSA, “English Surveillance Programme for Antimicrobial 
+Utilisation and Resistance (ESPAUR) 2022 to 2023,” https:// assets. 
+p u b l i s h i n g . s e r v i c e . g o v . u k / m e d i a / 6 5 5 5 0 2 6 e 5 4 4 a e a 0 0 0 d f b 2 e 1 9 / E S P A U 
+R - r e p o r t - 2 0 2 2 - t o - 2 0 2 3 . p d f.
+72. National Institute of Health and Care Excellence, “Neonatal 
+Infection: Antibiotics for Prevention and Treatment” (2021), https:// 
+w w w . n i c e . o r g . u k / g u i d a n c e / n g 1 9 5 .
+73. O. Mohamed- Ahmed, M. Nair, C. Acosta, J. J. Kurinczuk, and 
+M. Knight, “Progression From Severe Sepsis in Pregnancy to Death: 
+A UK Population- Based Case–Control Analysis,” BJOG 122 (2015): 
+1506–1515.
+74. M. Levy, L. Evans, and A. Rhodes, “The Surviving Sepsis Campaign 
+Bundle: 2018 Update,” Critical Care Medicine 46 (2018): 997–1000.
+75. BBC News, “Lassa Fever Fatality Was New- Born Baby,” https:// 
+w w w . b b c . c o . u k / n e w s / u k - e n g l a n d - b e d s - b u c k s - h e r t s - 6 0 3 8 9 8 8 2 .76. N. D. Kayema, C. Benson, C. Y. L. Ayeb, et  al., “Lassa Fever in 
+Pregnancy: A Systematic Review and Meta- Analysis,” Transactions of 
+the Royal Society of Tropical Medicine and Hygiene 114 (2020): 385–396.
+77. S. Giachéa, G. Modi, B. Borchi, et al., “Should Obstetricians Working 
+in Non- Endemic Countries Care About Emerging Tropical Diseases?,” 
+European Journal of Obstetrics, Gynecology, and Reproductive Biology 
+257 (2021): 25–34.
+78. A. R. Howard- Jones, D. Pham, R. Sparks, et al., “Arthropod- Borne 
+Flaviviruses in Pregnancy,” Microorganisms 11 (2023): 433.
+79. F. Plaat and S. Wray, “Role of the Anaesthetist in Obstetric Critical 
+Care,” Best Practice & Research. Clinical Obstetrics & Gynaecology 22 
+(2008): 917–935.
+80. Royal College of Obstetricians and Gynaecologists, “Thrombosis 
+and Embolism During Pregnancy and the Puerperium, Reducing the 
+Risk,” in Green- Top Guideline No. 37a (London, UK: RCOG, 2015).
+81. H. Bergsten, M. B. Madsen, F. Bergey, et al., “Correlation Between 
+Immunoglobulin Dose Administered and Plasma Neutralization of 
+Streptococcal Superantigens in Patients With Necrotizing Soft Tissue 
+Infections,” Clinical Infectious Diseases 71 (2020): 772–1775.
+82. National Institute for Health and Care Excellence, “Intravenous 
+Fluid Therapy in Adults in Hospital,” in Clinical Guideline [CG174] 
+(London, UK: NICE, 2013), h t t p s : / / w w w . n i c e . o r g . u k / g u i d a n c e / c g 1 7 4 .
+83. National Institute of Health and Care Excellence, “Hypertension 
+in Pregnancy: Diagnosis and Management,” in NICE Guideline 
+[NG133] (London, UK: NICE, 2019), h t t p s : / / w w w . n i c e . o r g . u k / g u i d a 
+nce/ ng133 .
+84. A. Blennerhassett, C. Dunlop, D. Lissauer, and WHO Intrapartum 
+Care Algorithms Working Group, “Clinical Management of Deviations 
+in Maternal Temperature During Labour and Childbirth: An Evidence- 
+Based Intrapartum Care Algorithm,” BJOG 131, no. Suppl 2 (2022): 58–66.
+85. National Institute of Health and Care Excellence, “Fetal Monitoring 
+in Labour NICE Guideline 229” (2022), h t t p s : / / w w w . n i c e . o r g . u k / g u i d a 
+n c e / n g 2 2 9 / r e s o u r c e s / f e t a l - m o n i t o r i n g - i n - l a b o u r - p d f - 6 6 1 4 3 8 4 4 0 6 5 2 2 1 .
+86. P. B. Mead and W. C. Winn, “Vaginal- Rectal Colonization With 
+Group A Streptococci in Late Pregnancy,” Infectious Diseases in 
+Obstetrics and Gynecology 8 (2000): 217–219.
+87. K. Harris, L. K. Proctor, S. Shinar, E. Philippopoulos, M. H. Yudin, 
+and K. E. Murphy, “Outcomes and Management of Pregnancy and 
+Puerperal Group A Streptococcal Infections: A Systematic Review,” 
+Acta Obstetricia et Gynecologica Scandinavica 1 0 2 , n o . 2 ( 2 0 2 3 ) : 
+138–157.
+88. A. G. Castro, J. C. Rodriguez- Borregan, T. Obeso, A. Castellanos, 
+A. Perez- Ceballos, and J. R. Sesmero, “Necrotizing Fasciitis After 
+Caesarean Section,” Archives of Gynecology and Obstetrics 277 (2008): 
+579–581.
+89. D. E. Castagnola, M. K. Hoffman, J. Carlson, and C. Flynn, 
+“Necrotizing Cervical and Uterine Infection in the Postpartum Period 
+Caused by Group A Streptococcus,” Obstetrics and Gynecology 1112 
+(2008): 533–535.
+90. M. Aziz Daghmouri, F. Z. Affes, A. Jebri, et al., “Acute Fatal Group A 
+Streptococcal Primary Peritonitis Following Vaginal Delivery,” IDCases 
+19 (2020): e00727.
+91. R. Durai, P. C. H. Ng, and A. Uzkalnis, “Necrotising Fasciitis 
+Following a Caesarean Section,” Journal of Obstetrics and Gynaecology 
+32 (2012): 96–98.
+92. A. R. Goepfert, D. A. Guinn, W. A. Andrews, and J. C. Hauth, 
+“Necrotizing Fasciitis After Cesarean Delivery,” Obstetrics and 
+Gynecology 89 (1997): 409–412.
+93. J. X. Zhang, C. T. McSweeney, and K. L. Bush, “Nosocomial 
+Transmission of Necrotising Fasciitis Organisms From Prepartum 
+Patient to Healthcare Worker,” BML Case Reports 14 (2021): 1–4.
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e80 BJOG: An International Journal of Obstetrics & Gynaecology, 202594. J. R. Carapetis, P. Jacoby, K. Carville, S. J. Ang, N. Curtis, 
+and R. Andrews, “Effectiveness of Clindamycin and Intravenous 
+Immunoglobulin, and Risk of Disease in Contacts, in Invasive Group 
+A Streptococcal Infections,” Clinical Infectious Diseases 59 (2014): 
+358–365.
+95. A. Linnér, J. Darenberg, J. Sjölin, B. Henriques- Normark, and 
+A. Norrby- Teglund, “Clinical Efficacy of Polyspecific Intravenous 
+Immunoglobulin Therapy in Patients With Streptococcal Toxic Shock 
+Syndrome: A Comparative Observational Study,” Clinical Infectious 
+Diseases 59 (2014): 851–857.
+96. T. Parks, C. Wilson, N. Curtis, A. Norrby- Teglund, and S. Sriskandan, 
+“Polyspecific Intravenous Immunoglobulin in Clindamycin- Treated 
+Patients with Streptococcal Toxic Shock Syndrome: A Systematic 
+Review and Meta- Analysis,” Clinical Infectious Diseases 67 (2018): 
+1434–1436.
+97. L. Bowyer, H. L. Robinson, H. Barrett, et al., “SOMANZ Guidelines 
+for the Investigation and Management Sepsis in Pregnancy,” 
+Australian & New Zealand Journal of Obstetrics & Gynaecology 57 
+(2017): 540–551.
+98. NHS England Immunoglobulin Expert Working Group, 
+Commissioning Criteria Policy for the Use of Therapeutic Immunoglobulin 
+(Ig) England (London, England: NHS, 2021), h t t p s : / / w w w . e n g l a n d . n h s . 
+u k / w p - c o n t e n t / u p l o a d s / 2 0 2 1 / 1 2 / c p a g - p o l i c y - f o r - t h e r a p e u t i c - i m m u n 
+o g l o b u l i n - 2 0 2 1 - u p d a t e . p d f.
+99. S. Al- Rawi, L. J. Woodward, J. Knight, and L. Shackleton, “Puerperal 
+Streptococcal Toxic Shock Syndrome Treated With Recombinant 
+Human Activated Protein C and Intravenous Immunoglobulin,” 
+International Journal of Obstetric Anesthesia 18 (2009): 169–172.
+100. National Institute for Health and Care Excellence, “Preterm Labour 
+and Birth,” in NICE Guideline [NG25] (London, UK: NICE, 2015).
+101. National Institute for Health and Care Excellence, “Intrapartum 
+Care for Women With Existing Medical Conditions or Obstetric 
+Complications and Their Babies,” in NICE Guideline [NG121] 
+(London, UK: NICE, 2019), h t t p s : / / w w w . n i c e . o r g . u k / g u i d a n c e / 
+n g 1 2 1 / r e s o u r c e s / i n t r a p a r t u m - c a r e - f o r - w o m e n - w i t h - e x i s t i n g - m e d i c 
+a l - c o n d i t i o n s - o r - o b s t e t r i c - c o m p l i c a t i o n s - a n d - t h e i r - b a b i e s - p d f - 6 6 1 4 1 
+65384 5957 .
+102. National Collaborating Centre for Women‘s and Children‘s Health, 
+Intrapartum Care: Care of Healthy Women and Their Babies During 
+Childbirth (London, UK: RCOG Press, 2007), h t t p s : / / w w w . n i c e . o r g . u k / 
+g u i d a n c e / c g 5 5.
+103. American College of Obstetricians and Gynaecologists Committee 
+on Obstetric Practice, “ACOG Practice Bulletin No. 100: Critical Care in 
+Pregnancy,” Obstetrics and Gynecology 113 (2009): 443–450.
+104. C. S. Buhimschi, S. Abdel- Razeq, M. Cackovic, et al., “Fetal Heart 
+Rate Monitoring Patterns in Women With Amniotic Fluid Proteomic 
+Profiles Indicative of Inflammation,” American Journal of Perinatology 
+25 (2008): 359–372.
+105. B. H. Yoon, R. Romero, J. S. Park, et al., “Fetal Exposure to an Intra- 
+Amniotic Inflammation and the Development of Cerebral Palsy at the 
+Age of Three Years,” American Journal of Obstetrics and Gynecology 182 
+(2000): 675–681.
+106. A. J. Aina- Mumuney, J. E. Althaus, J. L. Henderson, M. C. 
+Blakemore, E. A. Johnson, and E. M. Graham, “Intrapartum 
+Electronic Fetal Monitoring and the Identification of Systemic Fetal 
+Inflammation,” Journal of Reproductive Medicine 52 (2007): 762–768.The guideline will be considered for update 3 years after publi-
+cation, with an intermediate assessment of the need to update 
+2 years after publication.This guideline was produced on behalf of the Royal College 
+of Obstetricians and Gynaecologists by: Professor D 
+Lissauer MRCOG, Liverpool; Dr M Morgan, Exeter; Dr 
+A Banerjee, London; Dr F Plaat, London and Professor 
+D Pasupathy FRCOG, Sydney .
+and peer reviewed by: Dr C Frise FRCP, London; Mrs HK 
+Allmond, Lincoln; Dr T Watts FRCPCH, London; Dr UDP 
+Ratnasiri FRCOG, Colombo Sri Lanka; The UK National 
+Screening Committee; British Fertility Society; Dr G Kumar 
+FRCOG, Wrexham; Dr R Sharma FRCOG, Delhi; Dr A Diyaf 
+MRCOG, PhD, Bridgend; Dr EK Hiadzi FROCG, Accra, 
+Ghana; Dr A Gorry MRCOG, London; Professor R K Morris 
+FRCOG, Birmingham; Professor SR Chowdhury FRCOG, 
+Bangladesh; Dr MYS El- Zibdeh FRCOG, Amman, Jordan; 
+Miss A D'Angelo RM, London; Dr J Allison MRCOG, 
+Kirkcaldy; British Society of Abortion Care Providers.
+Committee lead reviewers were: Mr A El- Ghobashy MRCOG, 
+Wolverhampton,1 Ms M Annappa, FRCOG, Stoke- On- Trent, 
+Dr R Bahl MRCOG, Bristol2 and Mr K Jayaprakasan.3
+1until February 2020; 2from September 2020; 3from June 
+2022
+The Chairs of the Guidelines Committee were: Dr MA 
+Ledingham MRCOG1, Glasgow and Dr B Magowan FRCOG, 
+Melrose1, Mr A McKelvey MRCOG, Norwich2 and Dr N 
+Potdar FRCOG, Leicester2
+1until December 2021, 2until May 2021, 3from January 2022.
+All RCOG guidance developers are asked to declare any con -
+flicts of interest. A statement summarising any conflicts of in -
+terest for this guideline is available from : h t t p s : / / w w w . r c o g . 
+o r g . u k / e n / g u i d e l i n e s - r e s e a r c h - s e r v i c e s / g u i d e l i n e s / g t g 6 4 / .
+The final version is the responsibility of the Guidelines 
+Committee of the RCOG.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists pro -
+duces guidelines as an educational aid to good clinical prac -
+tice. They present recognised methods and techniques of 
+clinical practice, based on published evidence, for consider -
+ation by obstetricians and gynaecologists and other relevant 
+health professionals. The ultimate judgement regarding 
+a particular clinical procedure or treatment plan must be 
+made by the doctor or other attendant in the light of clinical 
+data presented by the patient and the diagnostic and treat -
+ment options available.
+This means that RCOG Guidelines are unlike protocols or 
+guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of man -
+agement. Departure from the local prescriptive protocols or 
+guidelines should be fully documented in the patient's case 
+notes at the time the relevant decision is taken.
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e81Appendix 1
+Explanation of Grades and Evidence Levels
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a very low risk 
+of bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a low risk of 
+bias
+1— Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of bias
+2++ High- quality systematic reviews of case–control or cohort studies or high- quality
+case–control or cohort studies with a very low risk of confounding, bias or chance and a
+high probability that the relationship is causal
+2+ Well- conducted case–control or cohort studies with a low risk of confounding, bias or chance
+and a moderate probability that the relationship is causal
+2— Case–control or cohort studies with a high risk of confounding, bias or chance and a
+significant risk that the relationship is not causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of Recommendation
+AAt least one meta- analysis, systematic reviews or RCT rated as 1++, and directly applicable to the target population; or 
+a systematic review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the 
+target population and demonstrating overall consistency of results
+BA body of evidence including studies rated as 2++ directly applicable to the target population, and demonstrating overall 
+consistency of results; or
+Extrapolated evidence from studies rated as 1++ or 1+
+CA body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating overall 
+consistency of results; or
+Extrapolated evidence from studies rated as 2++
+DEvidence level 3 or 4; or
+Extrapolated evidence from studies rated as 2+
+Good Practice Points
+GPP Recommended best practice based on the clinical experience of the guideline development group. *
+* on the occasion when the guideline development group find there is an important practical point that they wish to emphasise but for which there is not, nor is there 
+likely to be any research evidence. This will typically be where some aspect of treatment is regarded as such sound clinical practice that nobody is likely to question it. 
+These are marked in the guideline, and are indicated by ✓ . It must be emphasised that these are NOT an alternative to evidence- based recommendations, and should 
+only be used where there is no alternative means of highlighting the issue.
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e82 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Appendix 2
+The Sequential Organ Failure Assessment (SOFA) Score [ 6]
+1 2 3 4
+Respiration
+PaO2/FiO2 
+(mmHg)
+SaO2/FiO2<400
+221–301<300
+142–220<220
+67–141<100
+<67
+Coagulation
+Platelets x 103/
+mm3<150 <100 <50 <20
+Liver
+Bilirubin (mg/
+dl)1.2–1.9 2.0–5.9 6.0–11.9 >12.0
+Cardiovascular
+HypotensionaMAP <70mmHg Dopamine ≤5 or 
+dobutamine (any)Dopamine >5 or 
+norepinephrine ≤0.1Dopamine >15 or 
+norepinephrine >0.1
+Neurological
+Glasgow Coma 
+Scale13–14 10–12 6–9 <6
+Renal
+Creatinine, mg/
+dL
+(mircomol/l)
+Urine output, 
+ml/24 hour1.2–1.9(106–170)— 2.0–3.4(171–299)— 3.5–4.9
+(300–440)
+<500>5.0
+(>440)
+<200
+MAP, mean arterial pressure; PaO2, arterial partial pressure of oxygen; FiO2, fractional inspired oxygen; SaO2, peripheral arterial oxygen saturation. aVasoactive 
+medication administered for at least 1 hour (dopamine and norepinephrine μmg/kg/min).
+According to the Sepsis- 3 criteria, a total score of 2 points or more is associated with life- threatening organ dysfunction and sepsis.
+There have been efforts to modify the SOFA score to account for physiological changes during pregnancy, but these have not been well validated [ 62].
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e83Appendix 3
+Example of Maternal Sepsis Risk Stratification Tool
+CS, Caesarean section; CVS, Chorionic villus sample; ERPC, Evacuation of retained products of conception; IVDU, Intravenous drug 
+user. Current versions of this tool and additional tools designed for other situations such as community use can be obtained from 
+https:// sepsi strust. org
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e84 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Appendix 4
+Example of Maternal Sepsis Bundle Action Tool
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e85Appendix 5
+ 14710528, 2025, 4, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18009 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

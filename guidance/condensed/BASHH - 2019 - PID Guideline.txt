@@ -1,0 +1,852 @@
+United Kingdom National Guideline for the Management of Pelvic 
+Inflammatory Disease (2019 Interim Update) 
+
+Guideline development group: Jonathan Ross (lead author), Michelle Cole, Ceri Evans, Deirdre 
+Lyons, Gillian Dean, Darren Cousins , PPI representative 
+ 
+What is new in the 2019 interim update ? 
+ 
+• the European Medicines Agency has released new guidance highlighting the potential for 
+disabling and permanent side effects following the use of fluo roquinolone antibiotics. The 
+guidance recommends t hat fluoroqu inolones should not be used for mild to moderate 
+bacterial infections when alternative antibiotic therapy is available. The PID guideline has 
+therefore been updated to move fluoroquinolones from first to second -line use, except for 
+women with M genitalium associated PID. 
+• the UK national treatment guideline for gonorrhoea has been updated to recommend the use 
+of an increased dose of 1g ceftriaxone. The PID guideline has been updated to also 
+recommend this increased dose. 
+• advice on the use of antibiotics in very early pregnancy (before a pregnancy test becomes 
+positive) has been updated following advice from the UK Teratology Information Service . The 
+benefits of therapy would outweigh the risks in this situation. 
+
+ PID guideline V4 page 2 Introd uction and methodology 
+Objectives 
+This guideline offers recommendations on the diagnostic tests, treatment regimens and health 
+promotion principles needed for the effective management of pelvic inflammatory disease (PID) 
+covering the management of the ini tial presentation, as well as how to reduce transmission , 
+complications and future repeat infection. 
+It is aimed primarily at women aged 16 years or older (see specific guidelines for those under 16) 
+presenting to health care professionals working in departments offering specialist care in STI 
+management within the United Kingdom. However, the principles of the recommendations should be 
+adopted across all providers – non-specialist providers may need to develop local care pathways 
+where appropriate. 
+Included in the guideline is a patient information leaflet . 
+ 
+Search strategy 
+The following reference sources were used to provide a comprehensive basis for the guideline: 
+1. Medline Search 
+Medline was searched using the search terms: (oophoritis or salpingitis or endometritis or pelvic 
+inflammatory disease or PID or adnexitis or parametritis or adnexal disease) NOT primary 
+immunodeficiency; the search was limited to humans and English language papers. The search was 
+from 1st January 2010 to 1st August 2017 and identified 12 947 titles. Article titles and abstracts were 
+reviewed and if relevant the full text article obtained. Priority was given to randomised controlled trial 
+and systematic review evidence. 
+2. 2015 CDC STD Treatment Guidelines (www.cdc.gov/std/ tg2015/default.htm ) 
+3. Cochrane Collaboration Databases (www.cochrane.org) 
+ 
+A number of limitations were recognised in the evidence base: 
+• a gold standard for the accurate diagnosis of PID is not available ther efore a pragmatic 
+approach to diagnosis and treatment is applied in many clinical trials 
+• the evidence base for PID treatment mostly comes from studies from several years ago 
+which may not reflect recent changes in antimicrobial sensitivity patterns or new er diagnostic PID guideline V4 page 3 tests, particularly for gonorrhoea. The management recommendations have therefore been 
+adapted to reflect this. 
+• there are relatively less data available on the long term effectiveness of therapy compared to 
+short term resolution of symptoms 
+ 
+Methods 
+Article titles and abstracts were reviewed and if relevant the full text article obtained. Priority was 
+given to randomised controlled trial and systematic review evidence, and recommendations made and 
+graded on the basis of best available evidenc e. The evidence was compiled by an external 
+information specialist and reviewed by the authors before being incorporated into the guideline using 
+the BASHH framework for guideline development . Successive d rafts of the guideline were informed 
+by feedback from the guideline authors . The final draft guideline was used for piloting and external 
+review as outlined below . 
+ 
+An Equality Impact Assessment was undertaken to assess the relevance of the guideline 
+recommendations in relation to age, disability, gender, gender reassignment , pregnancy, race, 
+religion/belief and sexual orientation (Appendix 1) . 
+ 
+A lay representative reviewed the guideline and contributed to the development of a patient 
+information leaflet, with the support of co -author CE. This resulted in a number of changes to improve 
+the clarity of both documents . The guideline was also reviewed by the BASHH Public Panel. 
+ 
+Piloting and feedback 
+Health professional and patient views were further sought by piloting a draft of the guideline with a 
+sample of target users. This was coordinated by the BASHH Clinical Effectiveness Group ( CEG ) 
+using health care professionals independent from the writing committee who adopt the guideline into 
+their clinical practice in a vir tual fashion for a period of time and then provide an evaluation using a 
+standard feedback form. 
+
+Aetiology PID guideline V4 page 4 • pelvic inflammatory disease ( PID) is usually the result of infection ascending from the endocervix 
+causing endometritis, salpingitis, parametritis, oophoritis, tubo -ovarian abcess and/or pelvic 
+peritonitis. 
+• Neisseria gonorrhoeae and Chlamydia trachomatis have been identified as causative agents1-3. 
+C. trachomatis is the commonest identi fied cause account ing for 14-35% of cases4,5, whilst 
+Gardnerella vaginalis , anaerobes (including Prevotella , Atopobium and Leptotrichia ) and other 
+organisms commonly found in the vagina may also be implicated. Mycoplasma genitalium has 
+been associated with upper genital tract infection in women and is a very likely cause of PID6-8. 
+Pathogen negative PID is common9. 
+• N. gonorrhoeae and C. trachomatis are detected less commonly in older women with PID 
+• the insertion of an intrauterine device (IUD) increases the risk of developing PID but only for 4 -6 
+weeks after insertion . This risk is probably highest in women with pre -existing gonor rhoea or C. 
+trachomatis . 
+ 
+Clinical Features 
+Symptoms 
+The following features are suggestive of a diagnosis of PID2,3,10,11 
+• lower abdominal pain which is typically bilateral (but can be unilateral) 
+• abnormal vaginal or cervical discharge which is often purulent 
+• deep dyspareunia 
+• abnormal vaginal bleeding , including post coital bleeding , inter -menstrual bleeding and 
+menorrhagia 
+• secondary dysmenorrhoea 
+ 
+Signs 
+• lower abdominal tenderness which is usually bilateral 
+• adnexal tenderness on bimanual vaginal examination – a tender mass is sometimes present 
+• cervical motion tenderness on bimanual vaginal examination 
+• fever (>38°C) in moderate to severe disease PID guideline V4 page 5 
+A diagnosis of PID should be considered , and usually empirical antibiotic treatment offered , in any 
+sexually active woman who has recent onset, lower abdominal pain associated with local tenderness 
+on bimanual vaginal examin ation, in whom pregnancy has been excluded and no other cause for the 
+pain has been identified . The risk of PID is highest in women aged under 255 not using ba rrier 
+contraception and with a history of a new sexual partner. The diagnosis of PID based only on positive 
+examination findings, in the absence of lower abdominal pain, should only be made with caution12. 
+ 
+Complications 
+• women with immunosuppression secondary to HIV may have more severe symptoms associated 
+with PID but respond well to standard antibiotic therapy13. No change in treatment 
+recommendations compared to HIV uninfected patients is required14-16. (Grade 1B) 
+• the Fitz -Hugh Curtis syndrome comprises right upper quadrant pain associated with perihepatitis 
+which occurs in some women with PID , especially by C. trachomatis . Although laparoscopic 
+division of hepatic adhesions has been performed, there is insufficient clinical tria l evidence to 
+make specific recommendations for additional treatment beyond th at for uncomplicated PID. 
+• a tubo-ovarian abscess should be suspected in pa tients who are systemically unwell and/or have 
+severe pelvic pain. The palpation of an adnexal mass, or lack of response to therapy, should 
+prompt pelvic imaging with ultrasound, computed tomography (CT) or magnetic resonance 
+imaging (MRI) . Tubo -ovarian abscess is an indication for hospital admission for par enteral 
+antimicrobial therapy, with appropriate anaerobic cover, and to monitor for signs of rupture or 
+sepsis. 
+• the randomised controlled trial evidence for whether an intrauterine contraceptive device should be 
+left in situ or removed in women presenting with PID is limited17-19. In women with mild to moderate 
+PID the IUD may be left in situ but a review should be performed after 48 -72 hours and the IUD 
+removed if significant clinical improvement has not occurred. The decision to remove the IUD 
+needs to be balanced against the risk of pregn ancy in those who have had otherwise unprotected 
+intercourse in the preceding 7 days. Emergency hormonal contraception following removal of an 
+IUD may be appropriate for some women in this situation. 
+ PID guideline V4 page 6 Diagnosis 
+o PID may be symptomatic or asymptomatic. Even when present, clinical symptoms and signs lack 
+sensitivity and specificity (the positive predictive value of a clinical diagnosis is 65 -90% compared 
+to laparoscopic diagnosis3,10,11) 
+o Testing for gonorrhoea , C. trachomatis and M. genitalium in the lower genital tract is 
+recommended since a positive result supports the diagnosis of PID and may alter subsequent 
+therapy (Grade 1B). The absence of infection at this site does not exclude PID however3,10,11. 
+o Local availability of M. genitalium testing currently varies but implementation of testing is 
+strongly recommended to guide the choice of appropriate therapy 
+o An elevated ESR or C reactive protein , or high blood white cell count, also supports the diagnosis 
+but is non-specific20 and usually only abnormal in moderate or severe PID . 
+o The absence of endocervical or vaginal pus cells on Gram -stained examination of a vaginal 
+smear has a good negative predictive value (95%) for a diagnosis of PID but their presence is 
+non-specific (poor positive predictive value – 17%)21. 
+o Ultrasound scanning is of limited value for uncomplicated PID but is helpful if an abscess or 
+hydrosalpix is suspected22. Doppler ultrasound can detect increased blood flow associated with 
+pelvic infection and may be useful , but it cannot differentiate between PID and other causes of 
+increased vascularity such as endometriosis23,24. 
+o MRI or CT s canning of the pelvis may be helpful in differentiating PID from alternative 
+diagnoses25-27 but are not indicated routinely . MRI, when available, is preferable since it provides 
+high resolution images and avoid s ionising radiation in women of reproductive age . 
+ 
+The differential diagnosis of lower abdominal pain in a young woman includes: 
+• ectopic pregnancy – pregnancy should be excluded in all women suspected of having PID 
+• acute app endicitis – nausea and vomiting occurs in most patients with appendicitis but only 50% of 
+those with PID. Cervical movement pain will occur in about a quarter of women with 
+appendicitis28,29. 
+• endometriosis – the relationship between symptoms and the menstrual cycle may be helpful in 
+establishing a diagnosis 
+• complications of an ovarian cyst e.g. torsion or rupture – symptoms are often of sudden onset PID guideline V4 page 7 • urinary tract infection – often associated with dysuria and/or urinary frequency 
+• irritable bowel syndrome – disturbance in bowel habit and persistence of symptoms over a 
+prolonged time period are common . Acute bowel infection or diverticular disease can also cause 
+lower abdominal pain usually in association with other gastrointestinal symptoms. 
+• functional pain (pain of unknown aetiology) – may be associated with longstanding symptoms 
+ 
+Management 
+It is likely that delaying treatment increases the risk of long term sequelae such as ectopic pregnancy, 
+infertility and pelvic pain30,31. Because of this, and the lack of definitive diagnostic criteria, a low 
+threshold for empiric treatment of PID is recommended (Grade 1B). Broad spectrum antibiotic therapy 
+is required to cover the wide range of aerobic and anaerobic bacteria commonly isolated from the 
+upper genital tract in women with PID2,3. 
+ 
+Some of t he best evidence for the effe ctiveness of antibiotic treatment in preventing the long term 
+complications of PID comes from the PEACH study where women were treated with cefoxitin followed 
+by doxycycline – pregnancy rates after 3 years were similar or higher than those in the general 
+population32,33. More recent mathematical modelling also supports a low rate of infertility and ectopic 
+pregnancy following effective treatment of PID34. 
+ 
+The choice of which of the recommended treatment regimen s to use may be influenced by: 
+• robust evidence on local antimicrobial sensitivity patterns 
+• robust evidence on the local epidemiology of specific infections in this setting 
+• cost 
+• patient preference and compliance 
+• severity of disease 
+• patient age – sexually transmitted pathogens are less likely to be the cause of PID in older women5 
+• local antibi otic stewardship guidelines 
+ 
+General Advice PID guideline V4 page 8 Rest is advised for those with severe disease. (Grade 1D) 
+Appropriate analgesia should be provided. (Grade 1D) 
+Intravenous therapy is recommended for patients with more severe clinical disease (Grade 1D) e.g. 
+pyrexia > 38oC, clinical signs of tubo -ovarian ab scess, signs of pelvic peritonitis . 
+To avoid reinfection , patients should be advised to avoid oral or genital intercourse until they, and 
+their partner(s), have completed their treatment (Grade 1D). 
+A detailed explanation of their condition with particular emphasis on the long term implications for the 
+health of themselves and their partner(s) should be provided , reinforced with clear and accurate 
+written information (Grade 1D). A patient information leaflet is included in Appendix 2 of this guideline. 
+ 
+When giving information to patients, the clinician should consider the following: 
+• an explanation of what treatment is being given and its possible adverse effects 
+• that following treatment fertility is usually maintained but there remains a risk of future 
+infertility, chronic pelvic pain or ectopic pregnancy 
+• clinically more severe disease is associated with a greater risk of sequelae 
+• repeat episodes of PID are associated with an exponential increase in the risk of infertility 
+• the earlier treatment is given the lower the risk of future fertility problems 
+• future use of barrier contraception will significantly red uce the risk of PID 
+• the need to screen sexual contacts for infection to prevent re -infect ion 
+ PID guideline V4 page 9 Outpatient therapy is as effective as inpatient treatment for patients with clinically mild to moderate 
+PID32. Admission for parenteral therapy, observation, further investigation and/or possible surgical 
+intervention should be considered in the following situations (Grade 1D): 
+• a surgical emergency cannot be excluded 
+• lack of response to oral therapy 
+• clinically se vere disease 
+• presence of a tubo -ovarian ab scess 
+• intolerance to oral therapy 
+• pregnancy 
+ 
+Further Investigation 
+All sexually active women who are potentially fertile should be offered a pregnancy test to exclude 
+ectopic pregnancy (Grade 1D). 
+ 
+Treatment 
+The following antibiotic regimens are evidence based. 
+ 
+Recommended Regimens 
+All the recommended regimens are of similar efficacy. 
+ 
+Outpatient Regimens 
+ First Line Therapy 
+i.m. ceftriaxone* 1g single dose followed by oral doxycycline 100mg twice daily plus 
+metronidazole 400mg twice daily for 14 days 
+Grade 1A35-37 
+ 
+*Clinical trial data support the use of cefoxitin for the treatment of PID but this agent is not easily 
+available in the UK so ceftriaxone, which has a similar spectrum of activity, is recommended. 
+ 
+ Second Line Therapy 
+oral ofloxacin 400mg twice daily plus oral metronidazole 400mg twice daily for 14 days PID guideline V4 page 10 Grade 1A37-41 
+
+oral moxifloxacin 400mg once daily for 14 days 
+Grade 1A42-44 
+ 
+Metronidazole is included in some regimens to improve coverage for anaerobic bacteria. Anaerobes 
+are of relatively greater importance in patients with severe PID and metronidazole may be 
+discontinued in those patients with mild or moderate PID who are unabl e to tolerate it. 
+ 
+Ofloxacin and moxifloxacin should be avoided in patients who are at high risk of gonococcal PID (e.g. 
+when the patient’s partner has gonorrhoea, in clinically severe disease, following sexual contact 
+abroad) because of high levels of quinolone resistance 45. N. gonorrhoeae is, however, an uncommon 
+cause of PID in the UK (< 3%) and in those not at high risk of gonorrhoea q uinolones can be used as 
+second line empirical treatment , with therapy being adjusted subsequently if testing reveals quinolone 
+resistant N. gonorrhoeae . 
+ 
+Levofloxacin is the L isomer of ofloxacin46 and has the advantage of once daily dosing (500mg OD for 
+14 days). It may be used as a more convenient alternative to ofloxacin42. 
+ 
+Three large RCTs support the efficacy of moxifloxacin for PID. There is a potential risk of serious liver 
+reactions occurring with this agent but they are uncommon (12 cases reported in the UK from 2003 -16 
+with no deaths) and moxifloxacin is generally well tolerated47 (Grade 1D). Of the three recommended 
+PID treatment regimens, moxifloxacin provides the h ighest microbiological activity against M. 
+genitalium8. 
+ 
+Ofloxacin, levofloxacin and moxifloxacin are effective for the treatment of C. trachomatis. Quinolones 
+(ofloxacin, levofloxacin and moxifloxacin) can cause disabling and potentially permanent side -effects 
+involving tendons. muscles, joints and the nervous system48, and are therefore only recommended as 
+second line therapy except for the treatment of M genitalium associated PID where no alternative 
+therapy is available. Quinolones are also not licensed for use in patients aged under 18. PID guideline V4 page 11 
+Replacing intramuscular ceftriaxone with an oral cephalosporin (e.g. cefixime) is not recommended 
+because there is no clinical trial evidence to support its use, and tissue levels are likely to be lower 
+which might impact on efficacy. Reports of decreasing susceptibility of N. gonorrhoeae to 
+cephalosporins also supports the use of parenteral based regimens when gonococcal PID is 
+suspected (to maximise tissue levels and overcome decreased susceptibility ). 
+ 
+Azithromycin is recommended in some guidelines as additional treatment for uncomplicated 
+gonorrhoea. It is not recommended for gonococcal PID for the following reasons: 
+• azithromycin is used to ‘protect’ cephalosporin therapy to try slow down the development of 
+N. gonorrhoeae resistance but the number of cases of gonococcal PID in the UK is very small 
+(2-3% of all PID) . Therefore its use is unlikely to affect the public health control of antibiotic 
+resistance. 
+• use of the ‘non-azithromycin containing ’ regimen s listed above is clinically effective 
+• adherence rates for existing two week PID treatment regimens are poor49 and the addition of 
+azithromycin has the potential to cause early discontinuation of medication due to 
+gastrointestinal side effects. 
+ 
+Ceftriaxone provides microbiological cover for N. gonorrhoeae but also other aerobic and anaerobic 
+bacteria associated with PID. The use of doxycycline plus metronidazole, in the absence of 
+ceftriaxone, is not recommended because the evidence base is limit ed, previous trials have reported 
+significant rates of treatment failure50,51 and the addition of ceftriaxone improve s treatment outcome52. 
+ 
+Alternative Regimens 
+intramuscular ceftriaxone 1g immediately, followed by azithromycin 1 g/week for 2 weeks 
+Grade 2B53,54 
+Clinical trial evidence for th is regimen is limited but it may be used when the treatments above are not 
+appropriate e.g. allergy, intolerance . Single doses of azithromycin have the potential to induce 
+macrolide resistance in M. genitalium and, if possible, use should be restricted to wo men who are 
+known to be M. genitalium negative. PID guideline V4 page 12 
+ 
+Inpatient Regimens 
+i.v. ceftriaxone 2g daily plus i.v. doxycycline 100mg twice daily (oral doxycycline may be used 
+if tolerated) followed by oral doxycycline 100mg twice daily plus oral metronidazole 400mg 
+twice daily for a total of 14 days 
+Grade 1A36,37 
+
+i.v. clindamycin 900mg 3 times daily plus i.v. gentamicin (2mg/kg loading dose ) 
+followed by 1.5mg/kg 3 times daily [a single daily dose of 7mg/kg may be substituted]) 
+followed by either oral clindamycin 450mg 4 times daily or oral doxycycline 100mg twice daily 
+plus oral metronidazole 400mg twice daily to complete 14 days 
+Grade 1A36 
+Gentamicin levels should be monitored if this regimen is used. 
+ 
+Intravenous therapy should be continued until 24 hours after clinical improvement and then switched 
+to oral (Grade 2D) . Intravenous doxycycline is not currentl y licensed in the UK but is available from 
+IDIS world medicines ( tel. 01932 824100). 
+ 
+Alternative Regimens 
+Clinical trial evidence for the following regimens is more limited but they may be used when the 
+treatments above are not appropriate e.g. allergy, intolerance: 
+ 
+i.v. ofloxacin 400mg BD plus i.v. metronidazole 500mg TID for 14 days 
+Grade 1B37-39 
+ 
+i.v. ciprofloxacin 200mg BD plus i.v. (or oral) doxycycline 100mg BD plus i.v. metronidazole 
+500mg TID for 14 days 
+Grade 1B38,55 
+ PID guideline V4 page 13 Allergy 
+There is no clear evidence of the superiority of any one of the recommended regimens over the 
+others. Therefore patients known to be allergic to one of the suggested regimens should be treated 
+with an alternative. 
+ 
+Pregnancy and Breastfeeding 
+• PID i n pregnancy is uncommon but associated with an increase in both maternal and fetal 
+morbidity, therefore parenteral therapy is advised although none of the suggested evidence 
+based regimens are of proven safety in this situation. 
+• there are insufficient data from clinical trials to recommend a specific regimen and empirical 
+therapy with a gents effective against gonorrhoea, C. trachomatis and anaerobic infections 
+should be considered taking into account local antibiotic sensitivity patterns (e.g. i.v. 
+ceftriaxone , i.v. erythromycin and i.v. metronidazole switching to oral therapy following clinical 
+response and completing 2 weeks of treatment ) (Grade 2D). 
+• use of the recommended antibiotic regimens (listed above for non-pregnant women) in very early 
+pregnancy (prior to a pregnancy test becoming positive) is justified by the benefits of treatment of 
+PID at any stage of pregnancy being likely to outweigh any possible risks (personal 
+communication, UK National Teratology Information Service – 15th October 2018 ). 
+ 
+Surgical Management 
+• laparoscopy may help early resolution of severe disease by divi ding adhesions and drain ing 
+pelvic abscesses56 but ultrasound guided aspiration of p elvic fluid collections is less invasive 
+and may be equally effective57,58 
+• laparotomy may be required to assess and treat clinically severe pelvic infection 
+• it is possible to perform adhesiolysis in cases of perihepatitis but there is no evidence on 
+whether this is superior to only using antibiotic therapy PID guideline V4 page 14 
+Follow Up 
+Review at 72 hours is recommended11 for those with moderate or severe symptoms or signs (Grade 
+2D). Failure to improve suggests the need for further investigation, parenteral therapy and/or surgical 
+intervention. 
+ 
+Further review , either in clinic or by phone, 2-4 weeks after therapy is recommended (Grade 1D) to 
+ensure: 
+• adequate clinical response to treatment 
+• compliance with oral antibiotics 
+• screening and treatment of sexual contacts 
+• awareness of the significance of PID and its sequelae 
+• repeat pregnancy test, if clinically indicated 
+ 
+If initial testing for gonorrhoea was positive, r epeat testing should be routinely performed after 2 to 4 
+weeks . If initial testing for C. trachomatis was positive, r epeat testing after 3 to 5 weeks is appropriate 
+for women who have persisting symptoms or where compliance with antibiotics and/or tracing of 
+sexual contacts indicate the possibility of persisting or rec urrent infection. 
+ 
+The following are recommended if the initial test for M. genitalium is positive: 
+• treatment with moxifloxacin. This agent currently has good microbiological activity against M. 
+genitalium (Grade 1D) 
+• repeat testing for M. genitalium following treatment to ensure microbiological clearance. 
+Treatment failure following the use of any of the recommended regimens has been reported 
+but is least likely following treatment with moxifloxacin . The optimal time for testing after 
+starting treatment is not known but 4 weeks is recommended based on expert opinion59,60 
+(Grade 1D). 
+ PID guideline V4 page 15 Partner Notification and Treatment of Sexual Partners 
+• current male partners of women with PID should be contacted and offered health advice and 
+screening for gonorrhoea and C. trachomatis (Grade 1D). Other recent sexual partners may 
+also be offered screening - tracing of contacts within a 6 month period since onset of 
+symptoms is recommended but this time period may be influenced by the sexual history 
+(Grade 2D). 
+• gonorrhoea or C. trachomatis diagnosed in the male partner should be treated appropriately 
+and concurrently with the index patient according to the relevant BASHH guideline at 
+www.bashh.org (Grade 1D). 
+• in women with confirmed M. genitalium infection, their male partner(s) should be offered 
+testing for M. genitalium and, if positive, treated appro priately and concurrently with the index 
+case ( for appropriate treatment regimens see the BASHH Non-specific Urethritis Guideline – 
+www.bashh.org) 
+• because many cases of PID are not associated with gonorrhoea , C. trachomatis or M. 
+genitalium , broad spectrum e mpirical therapy should also be offered to male partners e.g. 
+doxycycline 100mg twice daily for 1 week (Grade 2D). 
+• partners should be advised to avoid oral or vaginal intercourse until they and the index patient 
+have completed the ir treatment cou rse (Grade 1D). 
+ 
+Auditable Outcome Measures 
+Appropriate short term audit outcomes include: 
+• proportion of women receiving treatment with a recommended regimen – target 95% 
+• proportion of women with suspected PID tested for M. genitalium - target 90% 
+• proportion of women who are reviewed (face to face, by telephone or online) within 4 weeks of 
+initiating treatment for PID – target 60% 
+ 
+Recommendations for future research 
+• assess ment of the utility of metronidazole as an adjunctive therapy for patients with mild to 
+moderate PID PID guideline V4 page 16 • development of sensitive and specific diagnostic tests 
+• assessment of efficacy of a single dose versus multiple doses of ceftriaxone within treatment 
+regimens for the management of PID 
+ 
+Qualifying statement 
+The recommendations in this guideline may not be appropriate for use in all clinical situations. 
+Decisions to follow these recommendations must be based on the professional judgement of the 
+clinician and conside ration of individual patient circumstances and available resources. 
+ 
+All possible care has been undertaken to ensure the publication of the correct dosage of medication 
+and route of administration. However, it remains the responsibility of the prescribing physician to 
+ensure the accuracy and appropriateness of the medication they prescribe. 
+ 
+Editorial independence 
+This guideline was commissioned, edited and endorsed by the BASHH CEG . The group receives 
+funding from BASHH for external researcher support which was used in the production of this 
+guideline. 
+ 
+Declarations of interest 
+All members of the guideline writing committee completed the BASHH conflict of interest declaration 
+detailed below at the time the guideline’s final draft was submitted to the CEG. JR has received 
+consultancy fees from BD Diagnostics and GSK pharma , and sponsorship to attend a medical 
+conference from Janssen pharma. 
+ 
+Author affiliation 
+• Jonathan Ross, Professor of Sexual Health and HIV, University Hospital Birmingham NHS 
+Foundation Trust PID guideline V4 page 17 • Michelle Cole, Head of Antimicrobial Resistance in STIs Section, Antimicrobial Resistance 
+and Healthcare -Associated Infections Reference Unit, National Infection Service, Public 
+Health England 
+• Ceri Evans , Senior Health Advis er, 10 Hammersmith Broadway, Chelsea and Westminster 
+Hospital NHS Foundation Trust, London 
+• Deirdre Lyons , Consultant Obstetrician and Gynaecologist, Imperial College Healthcare NHS 
+Trust 
+• Gillian Dean, Consultant in Sexual Health, Brighto n & Sussex University Hospitals NHS Trust 
+• Darren Cousins , Consultant in Sexual Health, Northamptonshire Healthcare NHS Foundation 
+Trust 
+• Patient Representative – member of BASHH Public Panel 
+ 
+Membership of the CEG 
+Dr Keith Radcliffe (Chair) 
+Dr Mark FitzGerald 
+Dr Deepa Grover 
+Dr Steve Higgins 
+Dr Margaret Kingston 
+Dr Michael Rayment 
+Dr Darren Cousins 
+Dr Ann Sullivan 
+Dr Helen Fifer 
+ 
+Timescale for next revision 
+An author group will be invited by the BASHH CEG to review and revise the guideline in 2022 using 
+the BASHH framework for guideline development . 
+ PID guideline V4 page 18 Acknowledgements 
+The group wishes to thank our public panel member for their hard work throughout the development 
+of the guideline. In addition, the group wishes to thank the external researcher Dr. Jacoby Patterson 
+for her help in the production of this guideline. 
+ 
+ PID guideline V4 page 19 Appendix 1: Equality Impact Assessment 
+ 
+Topic suggestion: impact assessment 
+Guidance title: BASHH Guidelines for the Management of Pelvic Inflammatory Disease 2016. 
+Completed by Dr Darren Cousins 
+ 
+How relevant is the 
+topic to equality? Inequalities in 
+health impact of the 
+condition or public 
+health issue 
+ Potential of 
+guidance to add 
+value Priority for NHS or 
+other government 
+department Topic relevance: 
+conclusions and 
+outcome 
+ - Prevalence and 
+impact of 
+condition or public 
+health problem 
+- Prevalence of risk 
+factors - Inequalities in 
+access, uptake or 
+impact 
+- Timeliness 
+- Equality issues 
+identified by 
+proposers of this 
+topic 
+- Equality issues 
+identified by 
+patient or lay 
+organisations - Department of 
+Health 
+- DCLG, DCSF. 
+DoT, Home 
+Office, etc. 
+- Other agency or 
+ALB 
+- Agencies in 
+devolved nations 
+ - High/medium/low/
+none 
+- Not 
+known/inconclusiv
+e 
+- Reasons for rating 
+- Recommendation 
+Gender 
+- Women 
+- Men This disease does 
+not present in men 
+ Clear guidance on 
+treatment of male 
+contact of patients 
+with this condition 
+ 
+ Society of Sexual 
+Health Advisers 
+(SSHA) 
+ Low 
+Race 
+- Asian or Asian 
+British 
+- Black or Black 
+British 
+- People of mixed 
+race 
+- Irish 
+- White British 
+- Chinese 
+- Other minority 
+groups not listed The highest rates of 
+STI diagnoses at 
+sexual health clinics 
+are found among 
+people of black 
+ethnicity in deprived 
+areas. This is most 
+likely seen as a 
+consequence of a 
+complex interplay of 
+cultural, economic 
+and behavioural 
+factors. 
+ Accurate diagnosis 
+and better tolerated 
+treatments should 
+improve the burden 
+of disease in the 
+community 
+ Dept of Health 
+ Medium 
+
+Disability 
+- Sensory 
+- Learning disability 
+- Mental health 
+- Cognitive 
+- Mobility 
+- Other impairment There are no data 
+to suggest any link 
+between this 
+condition and 
+disability status, 
+although people 
+with mental health 
+problems are at 
+disproportionate 
+risk of STIs in 
+general 
+ None identified 
+although use of 
+clinical tests in 
+guideline may 
+improve diagnostic 
+accuracy in non 
+verbalising patients 
+ Dept of H ealth Low 
+ PID guideline V4 page 20 Age 
+- Older people 
+- Children and 
+young people 
+- Young adults Young woman are 
+disproportionately 
+at greater risk of 
+this condition in 
+common with other 
+sexually transmitted 
+infections 
+ Accurate diagnosis 
+and better tolerated 
+treatments should 
+improve the burden 
+of disease in the 
+community . Dept of Health 
+ Medium 
+ 
+Sexual orientation 
+and gender identity 
+- Lesbians 
+- Gay men 
+- Bisexual people 
+- Transgender 
+people This disease does 
+not present in men. 
+There are little data 
+on the prevalence 
+of this condition in 
+gay or bisexual 
+women None identified Dept of Health 
+ 
+Commissioners of 
+local sexual health 
+services 
+ Low 
+Religion / belief 
+ There are no data 
+to suggest any link 
+between religion or 
+belief and this 
+condition 
+ None identified None identified 
+ Low 
+Socioeconomic 
+status There are no 
+specific data to 
+suggest any link 
+between this 
+condition and 
+socioeconomic 
+status, although 
+people of low 
+socioeconomic 
+status are 
+disproportionately 
+higher risk of STIs 
+in general 
+ Accurate diagnosis 
+and better tolerated 
+treatments should 
+improve the burden 
+of disease in the 
+community Commissioners of 
+local sexual health 
+services 
+ 
+National public 
+health agencies 
+that consider data 
+collection in sexual 
+health (e.g. Public 
+Health England) Medium 
+
+Other categories 
+- Gypsy travellers 
+- Refugees and 
+asylum seekers 
+- Migrant workers 
+- Looked after 
+children 
+- Homeless people There are no data 
+to suggest any link 
+between this 
+condition and these 
+categories although 
+some people in 
+these categories 
+may not be 
+identi fied by sexual 
+health services 
+ None identified 
+ Commissioners of 
+local sexual health 
+services 
+ 
+National public 
+health agencies 
+that consider data 
+collection in sexual 
+health (e.g. Public 
+Health England) Low 
+ 
+ PID guideline V4 page 21 
+Appendix 2: Patient information leaflet on PID 
+ 
+See attached document 
+
+ PID guideline V4 page 22 References 
+ 
+• 1. Goller J, Fairley C, Guy R, Bradshaw C, Chen M, Hocking J. Aetiology of infections 
+associated with 1228 cases of pelvic inflammatory disease in an urban Australian sexual health clinic 
+setting. Sexually Transmitted Diseases 2014; 41: S59. 
+• 2. Recommendation s arising from the 31st Study Group: The Prevention of Pelvic Infection. In: 
+Templeton A, ed. The Prevention of Pelvic Infection. London: RCOG Press; 1996: 267 -70. 
+• 3. Bevan CD, Johal BJ, Mumtaz G, Ridgway GL, Siddle NC. Clinical, laparoscopic and 
+microbiol ogical findings in acute salpingitis: report on a United Kingdom cohort. British Journal of 
+Obstetrics & Gynaecology 1995; 102(5): 407 -14. 
+• 4. Goller JL, De Livera AM, Fairley CK, et al. Population attributable fraction of pelvic 
+inflammatory disease associ ated with chlamydia and gonorrhoea: a cross -sectional analysis of 
+Australian sexual health clinic data. Sexually Transmitted Infections 2016; 18: 18. 
+• 5. Price MJ, Ades AE, Welton NJ, Simms I, Macleod J, Horner PJ. Proportion of Pelvic 
+Inflammatory Disease Cases Caused by Chlamydia trachomatis: Consistent Picture From Different 
+Methods. J Infect Dis 2016; 214(4): 617 -24. 
+• 6. Manhart LE. Mycoplasma genitalium: An emergent sexually transmitted disease? Infect Dis 
+Clin North Am 2013; 27(4): 779 -92. 
+• 7. Lis R, Row hani-Rahbar A, Manhart LE. Mycoplasma genitalium Infection and Female 
+Reproductive Tract Disease: A Meta -analysis. Clinical Infectious Diseases 2015; 61(3): 418 -26. 
+• 8. Dean G, Whetham J, Soni S, Pitt R, Alexander S. Pelvic Inflammatory Disease (PID), 
+Mycoplasma genitalium and macrolide resistance in England. Sexually Transmitted Infections 2016; 
+92(Suppl 1): A12 -A. 
+• 9. Goller JL, De Livera AM, Fairley CK, et al. Character istics of pelvic inflammatory disease 
+where no sexually transmitted infection is identified: a cross -sectional analysis of routinely collected 
+sexual health clinic data. Sexually Transmitted Infections 2017; 93(1): 68 -70. 
+• 10. Morcos R, Frost N, Hnat M, Pet runak A, Caldito G. Laparoscopic versus clinical diagnosis of 
+acute pelvic inflammatory disease. Journal of Reproductive Medicine 1993; 38(1): 53 -6. 
+• 11. Centers for Disease Control and Prevention. Sexually Transmitted Diseases Treatment 
+Guidelines 2015. 20 15 2015. http://www.cdc.gov/std/tg2015/default.htm (accessed 15.11.17 2016). 
+• 12. Morris GC, Stewart CMW, Schoeman SA, Wilson JD. A cross -sectional study showing 
+differences in the clinical diagnosis of pelvic inflammatory disease according to the experience of 
+clinicians: Implications for training and audit. Sexually Transmitted Infections 2014; 90(6): 445 -51. 
+• 13. Kamenga MC, De Cock KM, St.Louis ME, et al. The impact of human immunodeficiency virus 
+infection on pelvic inflammatory disease: a case -control study in Abidjan, Ivory Coast. American 
+Journal of Obstetrics & Gynecology 1995; 172(3): 919 -25. 
+• 14. Cohen CR, Sinei S, Reilly M, et al. Effect of human immunodeficiency virus type 1 infection 
+upon a cute salpingitis: a laparoscopic study. Journal of Infectious Diseases 1998; 178(5): 1352 -8. PID guideline V4 page 23 • 15. Bukusi EA, Cohen CR, Stevens CE, et al. Effects of human immunodeficiency virus 1 
+infection on microbial origins of pelvic inflammatory disease and on efficacy of ambulatory oral 
+therapy. American Journal of Obstetrics & Gynecology 1999; 181(6): 1374 -81. 
+• 16. Irwin KL, Moorman AC, O'Sullivan MJ, et al. Influence of human immunodeficiency virus 
+infection on pelvic inflammatory disease. Obstetrics & Gynecology 2000 ; 95(4): 525 -34. 
+• 17. Altunyurt S, Demir N, Posaci C. A randomized controlled trial of coil removal prior to treatment 
+of pelvic inflammatory disease. European Journal of Obstetrics Gynecology and Reproductive Biology 
+2003; 107: 81-4. 
+• 18. Soderberg G, Lindg ren S. Influence of an intrauterine device on the course of an acute 
+salpingitis. Contraception 1981; 24(2): 137 -43. 
+• 19. Tepper NK, Steenland MW, Gaffield ME, Marchbanks PA, Curtis KM. Retention of intrauterine 
+devices in women who acquire pelvic inflammat ory disease: a systematic review. Contraception 2013; 
+87(5): 655 -60. 
+• 20. Miettinen AK, Heinonen PK, Laippala P, Paavonen J. Test performance of erythrocyte 
+sedimentation rate and C - reactive protein in assessing the severity of acute pelvic inflammatory 
+disease. American Journal of Obstetrics & Gynecology 1993; 169(5): 1143 -9. 
+• 21. Yudin MH, Hillier SL, Wiesenfeld HC, Krohn MA, Amortegui AA, Sweet RL. Vaginal 
+polymorphonuclear leukocytes and bacterial vaginosis as markers for histologic endometritis among 
+women without symptoms of pelvic inflammatory disease. American Journal of Obstetrics and 
+Gynecology 2003; 188(2) : 318 -23. 
+• 22. Romosan G, Valentin L. The sensitivity and specificity of transvaginal ultrasound with regard 
+to acute pelvic inflammatory disease: A review of the literature. Archives of Gynecology and 
+Obstetrics 2014; 289(4): 705 -14. 
+• 23. Romosan G, Bjartling C, Skoog L, Valentin L. Ultrasound for diagnosing acute salpingitis: a 
+prospective observational diagnostic study. Human Reproduction 2013; 28(6): 1569 -79. 
+• 24. Molander P, Sjoberg J, Paavonen J, Cacciatore B. Transv aginal power Doppler findings in 
+laparoscopically proven acute pelvic inflammatory disease. Ultrasound in Obstetrics & Gynecology 
+2001; 17(3): 233 -8. 
+• 25. Lee MH, Moon MH, Sung CK, Woo H, Oh S. CT findings of acute pelvic inflammatory 
+disease. Abdominal Ima ging 2014; 39(6): 1350 -5. 
+• 26. Fahmy HS, Swamy N, Elshahat HM. Revisiting the role of MRI in gynecological emergencies 
+- An institutional experience. Egyptian Journal of Radiology and Nuclear Medicine 2015; 46(3): 769 -
+79. 
+• 27. Wongwaisayawan S, Kaewlai R, Da ttwyler M, Abujudeh HH, Singh AK. Magnetic Resonance 
+of Pelvic and Gastrointestinal Emergencies. Magn Reson Imaging Clin N Am 2016; 24(2): 419 -31. 
+• 28. Bongard F, Landers DV, Lewis F. Differential diagnosis of appendicitis and pelvic 
+inflammatory disease. A prospective analysis. American Journal of Surgery 1985; 150(1): 90 -6. 
+• 29. Lewis FR, Holcroft JW, Boey J, Dunphy JE. Appendicitis: a critical review of diagnosis and 
+treatment in 1000 cases. Archives of Surgery 1975; 110: 677 -84. PID guideline V4 page 24 • 30. Hillis SD, Joesoef R, Marchbanks PA, et al. Delayed care of pelvic inflammatory disease as a 
+risk factor for impaired fertility. American Journal of Obstetrics & Gynecology 1993; 168(5): 1503 -9. 
+• 31. Taylor BD, Ness RB, Darville T, Haggerty CL. Microbial correlates of delayed care for pelvic 
+inflammatory disease. Sex Transm Dis 2011; 38(5): 434 -8. 
+• 32. Ness RB, Soper DE, Holley RL, et al. Effectiveness of inpatient and outpatient treatment 
+strategies for women with pelvic inflammatory disease: results from the Pelvic Inflammatory Disease 
+Evaluation and Clinical Health (PEACH) Randomized Trial. American J ournal of Obstetrics & 
+Gynecology 2002; 186(5): 929 -37. 
+• 33. Haggerty CL, Ness RB, Amortegui A, et al. Endometritis does not predict reproductive 
+morbidity after pelvic inflammatory disease. American Journal of Obstetrics & Gynecology 2003; 
+188(1): 141 -8. 
+• 34. Price MJ, Ades AE, Soldan K, et al. The natural history of Chlamydia trachomatis infection in 
+women: a multi -parameter evidence synthesis. Health Technol Assess 2016; 20(22): 1 -250. 
+• 35. Arredondo JL, Diaz V, Gaitan H, et al. Oral clindamycin and ciprofl oxacin versus 
+intramuscular ceftriaxone and oral doxycycline in the treatment of mild -to- moderate pelvic 
+inflammatory disease in outpatients. Clinical Infectious Diseases 1997; 24(2): 170 -8. 
+• 36. Hemsell DL, Little BB, Faro S, et al. Comparison of three re gimens recommended by the 
+Centers for Disease Control and Prevention for the treatment of women hospitalized with acute pelvic 
+inflammatory disease. Clinical Infectious Diseases 1994; 19(4): 720 -7. 
+• 37. Martens MG, Gordon S, Yarborough DR, Faro S, Binder D, Berkeley A. Multicenter 
+randomized trial of ofloxacin versus cefoxitin and doxycycline in outpatient treatment of pelvic 
+inflammatory disease. Ambulatory PID Research Group. Southern Medical Journal 1993; 86: 604 -10. 
+• 38. Walker CK, Kahn JG, Washington AE, Peterson HB, Sweet RL. Pelvic inflammatory disease: 
+metaanalysis of antimicrobial regimen efficacy. Journal of Infectious Diseases 1993; 168: 969 -78. 
+• 39. Wendel GD, Jr., Cox SM, Bawdon RE, Theriot SK, Heard MC, Nobles BJ. A randomized trial 
+of ofloxacin v ersus cefoxitin and doxycycline in the outpatient treatment of acute salpingitis. Am J 
+Obstet Gynecol 1991; 164: 1390 -6. 
+• 40. Soper DE, Brockwell NJ, Dalton HP. Microbial etiology of urban emergency department acute 
+salpingitis: treatment with ofloxacin. American Journal of Obstetrics & Gynecology 1992; 167: 653 -60. 
+• 41. Peipert JF, Sweet RL, Walker CK, Kahn J, Rielly -Gauvin K. Evaluation of ofloxacin in the 
+treatment of laparoscopically documented acute pelvic inflammatory disease (salpingitis). Infectious 
+Diseases in Obstetrics & Gynecology 1999; 7(3): 138 -44. 
+• 42. Judlin P, Liao Q, Liu Z, Reimnitz P, Hampel B, Arvis P. Efficacy and safety of moxifloxacin in 
+uncomplicated pelvic inflammatory disease: the MONALISA study. BJOG 2010; 117(12): 1475 -84. 
+• 43. Heyste k MJ, Ross JDC, Group PS. A randomised double -blind comparison of moxifloxacin 
+and doxycycline/metronidazole/ciprofloxacin in the treatment of acute, uncomplicated pelvic 
+inflammatory disease. International Journal of STD & AIDS 2009; 20: 690 -5. PID guideline V4 page 25 • 44. Ross J D, Cronje HS, Paszkowski T, et al. Moxifloxacin versus ofloxacin plus metronidazole in 
+uncomplicated pelvic inflammatory disease: results of a multicentre, double blind, randomised trial. 
+Sex Transm Infect 2006; 82(6): 446 -51. 
+• 45. Public Health England. Su rveillance of antimicrobial resistance in Neisseria gonorrhoeae - 
+GRASP 2014 Report. London, 2015. 
+• 46. Isaacson DM, Fernadez JA, Frosco M, et al. Levofloxacin: A review of its antibacterial activity. 
+Recent Res Devel in Antimicrob Agents & Chemotherapy 1996; 1: 391 -439. 
+• 47. Raz-Pasteur A, Shasha D, Paul M. Fluoroquinolones or macrolides alone versus combined 
+with beta -lactams for adults with community -acquired pneumonia: Systematic review and meta -
+analysis. International Journal of Antimicrobial Agents 2015 ; 46(3): 242 -8. 
+• 48. European Medicines Agency. Disabling and potentially permanent side effects lead to 
+suspension or restrictions of quinolone and fluoroquinolone antibiotics. 2018. 
+https://www.ema.europa.eu/documents/referral/quinolone -fluoroquinolone -article -31-referral -disabling -
+potentially -permanent -side-effects -lead_en.pdf . 
+• 49. Dunbar -Jacob J, Sereika SM, Fole y SM, Bass DC, Ness RB. Adherence to oral therapies in 
+pelvic inflammatory disease. Journal of Women's Health 2004; 13(3): 285 -91. 
+• 50. Witte EH, Peters AA, Smit IB, et al. A comparison of pefloxacin/metronidazole and 
+doxycycline/metronidazole in the treatm ent of laparoscopically confirmed acute pelvic inflammatory 
+disease. European Journal of Obstetrics, Gynecology, & Reproductive Biology 1993; 50(2): 153 -8. 
+• 51. Heinonen PK, Teisala K, Punnonen R, et al. Treating pelvic inflammatory disease with 
+doxycycline and metronidazole or penicillin and metronidazole. Genitourinary Medicine 1986; 62(4): 
+235-9. 
+• 52. Piyadigamage A, Wilson J. Improvement in the clinical cure ra te of outpatient management of 
+pelvic inflammatory disease following a change in therapy. Sex Transm Infect 2005; 81(3): 233 -5. 
+• 53. Savaris RF, Teixeira LM, Torres TG, Edelweiss MI, Moncada J, Schachter J. Comparing 
+ceftriaxone plus azithromycin or doxycyc line for pelvic inflammatory disease: a randomized controlled 
+trial. Obstetrics & Gynecology 2007; 110(1): 53 -60. 
+• 54. Bevan CD, Ridgway GL, Rothermel CD. Efficacy and safety of azithromycin as monotherapy 
+or combined with metronidazole compared with two st andard multidrug regimens for the treatment of 
+acute pelvic inflammatory disease. Journal of International Medical Research 2003; 31(1): 45 -54. 
+• 55. Heinonen PK, Teisala K, Miettinen A, Aine R, Punnonen R, Gronroos P. A comparison of 
+ciprofloxacin with doxy cycline plus metronidazole in the treatment of acute pelvic inflammatory 
+disease. Scandinavian Journal of Infectious Diseases - Supplementum 1989; 60: 66-73. 
+• 56. Reich H, McGlynn F. Laparoscopic treatment of tuboovarian and pelvic abscess. Journal of 
+Repro ductive Medicine 1987; 32(10): 747 -52. 
+• 57. Aboulghar MA, Mansour RT, Serour GI. Ultrasonographically guided transvaginal aspiration 
+of tuboovarian abscesses and pyosalpinges: an optional treatment for acute pelvic inflammatory 
+disease. American Journal of Obstetrics & Gynecology 1995; 172(5): 1501 -3. PID guideline V4 page 26 • 58. Corsi PJ, Johnson SC, Gonik B, Hendrix SL, McNeeley SG, Jr., Diamond MP. Transvaginal 
+ultrasound -guided aspiration of pelvic abscesses. Infectious Disease in Obstetrics and Gynecology 
+1999; 7(5): 216 -21. 
+• 59. Jensen Jo S, Cusini M, Gomberg M. 2016 European guideline on Mycoplasma genitalium 
+infections. 2016. 
+http://www.iusti.org/regions/europe/pdf/2016/2016Europe anMycoplasmaGuidelines.pdf . 
+• 60. Falk L, Enger M, Jensen JS. Time to eradication of Mycoplasma genitalium after antibiotic 
+treatment in men and women. Journal of Antimicrobial Chemotherapy 2015; 70(11): 3134 -40.

@@ -1,0 +1,3227 @@
+BJOG . 2023;130:e9–e39. | e9
+ wileyonlinelibrary.com/journal/bjoRCOG GREEN- TOP GUIDELINES
+Recurrent Miscarriage
+Green- top Guideline No. 17
+Lesley Regan | Rajendra Rai | Sotirios Saravelos | Tin- Chiu Li | on behalf of the Royal 
+College of Obstetricians and GynaecologistsPublished Online 19 June 2023
+DOI: 10.1111/1471-0528.17515 
+Correspondence
+Royal College of Obstetricians and 
+Gynaecologists, 10– 18 Union Street, London 
+SE1 1SZ, UK.
+Email: clinicaleffectiveness@rcog.org.ukKey recommendations
+• In this guideline, recurrent miscarriage has been defined as three or more first 
+trimester miscarriages. However, clinicians are encouraged to use their clinical 
+discretion to recommend extensive evaluation after two first trimester miscar -
+riages, if there is a suspicion that the miscarriages are of pathological and not of 
+sporadic nature.
+• Women with recurrent miscarriage should be offered testing for acquired 
+thrombophilia, particularly for lupus anticoagulant and anticardiolipin anti -
+bodies, prior to pregnancy. [Grade C]
+• Women with second trimester miscarriage may be offered testing for Factor V 
+Leiden, prothrombin gene mutation and protein S deficiency, ideally within a 
+research context. [Grade C]
+• Inherited thrombophilias have a weak association with recurrent miscarriage. 
+Routine testing for protein C, antithrombin deficiency and methylenetetrahy -
+drofolate reductase mutation is not recommended. [Grade C]
+• Cytogenetic analysis should be offered on pregnancy tissue of the third and 
+subsequent miscarriage(s) and in any second trimester miscarriage. [Grade D]
+• Parental peripheral blood karyotyping should be offered for couples in whom 
+testing of pregnancy tissue reports an unbalanced structural chromosomal ab -
+normality [Grade D] or there is unsuccessful or no pregnancy tissue available 
+for testing. [GPP]
+• Women with recurrent miscarriage should be offered assessment for congenital 
+uterine anomalies, ideally with 3D ultrasound. [Grade B]
+• Women with recurrent miscarriage should be offered thyroid function tests 
+and assessment for thyroid peroxidase (TPO) antibodies. [Grade C]
+• Women with recurrent miscarriage should not be routinely offered immuno -
+logical screening (such as HLA, cytokine and natural killer cell tests), infection 
+screening or sperm DNA testing outside a research context. [Grade C]
+• Women with recurrent miscarriage should be advised to maintain a BMI be -
+tween 19 and 25 kg/m2, smoking cessation, limit alcohol consumption and 
+limit caffeine to less than 200 mg/day. [Grade D]
+• For women diagnosed with antiphospholipid syndrome, aspirin and heparin 
+should be offered from a positive test until at least 34 weeks of gestation, fol -
+lowing discussion of potential benefits versus risks. [Grade B] Aspirin and/or 
+heparin should not be given to women with unexplained recurrent miscarriage. 
+[Grade B]
+© 2023 Royal College of Obstetricians and GynaecologistsThis is the fourth edition of this guideline, 
+which was published in 1998 and 2003 under 
+the title The Investigation and Treatment of 
+Couples with Recurrent Miscarriage . The third 
+edition was published in 2011 under the title 
+The Investigation and Treatment of Couples 
+with Recurrent First- trimester and Second- 
+trimester Miscarriage . 
+e10 | 
+GREEN- TOP GUIDELINE NO. 17
+1 | PURPOSE AND SCOPE
+The purpose of this guideline is to provide guidance on the 
+investigation and care of women and people with recurrent 
+miscarriage.
+Within this document we use the terms woman and 
+women's health. However, it is important to acknowledge 
+that it is not only women for whom it is necessary to access 
+women's health and reproductive services in order to main -
+tain their gynaecological health and reproductive wellbeing. 
+Gynaecological and obstetric services and delivery of care 
+must therefore be appropriate, inclusive and sensitive to the 
+needs of those individuals whose gender identity does not 
+align with the sex they were assigned at birth. The term cou -
+ple is used to describe two individuals trying to conceive, 
+recognising that in some instances these individuals may 
+not be in a relationship. While every effort is made to ensure 
+the RCOG uses inclusive language there are instances where 
+we have been unable to adhere to this, for example where 
+original research is being referenced the language within the 
+publication is used for accuracy.
+2 | INTRODUCTION AND 
+BACKGROUND EPIDEMIOLOGY
+Miscarriage is defined as the spontaneous loss of pregnancy 
+before the fetus reaches viability. The term therefore in -
+cludes all pregnancy losses from the time of conception until 
+24 weeks of gestation. It should be noted that advances in 
+neonatal care have resulted in more babies surviving birth 
+before 24 weeks of gestation.
+There are two types of miscarriage: sporadic and recur -
+rent. Sporadic miscarriage (occurring most commonly in the 
+first trimester) is often the result of random fetal chromo -
+somal anomalies.1,2 Its incidence increases with age and may 
+affect between 10% and 50% of women aged 20 to 45 years 
+respectively.3 By contrast, recurrent miscarriage has tradi -
+tionally been defined as three or more miscarriages affecting approximately only 1% of women.4,5 A similar incidence of 
+approximately 1% is also the case for women experiencing a 
+second trimester miscarriage, where random fetal chromo -
+somal anomalies are significantly lower.6
+Several features suggest that recurrent miscarriage is a 
+distinct clinical entity rather than just three incidental spo -
+radic miscarriages occurring by chance: i) a woman's risk of 
+miscarriage is directly related to the outcomes of previous 
+pregnancies, ii) the average observed incidence of recur -
+rent miscarriage is higher than what would be expected by 
+chance alone, and iii) unlike sporadic miscarriage, recurrent 
+miscarriage tends to occur even if the fetus has no chromo -
+somal anomalies.5
+Overall, the greatest determinant of the incidence of re -
+current miscarriage is age,7 while the number of previous 
+miscarriages affects the chance of a live birth across all age 
+groups.8
+The incidence of recurrent miscarriage would more than 
+double if two miscarriages were used for the definition, as 
+the pooled risk has been shown to be 1.9% (1.8– 2.1%) for two 
+miscarriages and 0.7% (0.5– 0.8%) for three miscarriages.9
+It is worth noting that at the time of writing these guide -
+lines a Lancet Series of three articles dedicated to miscarriage 
+was published, which challenged the traditional approach 
+and distinction of care between sporadic and recurrent mis -
+carriage. It criticised any pervasive attitude of acceptance to -
+wards sporadic miscarriage and called for worldwide reform 
+that would improve the support and care of women and their 
+partners after one miscarriage (not just after three).9– 12
+In the Series, the authors proposed a graded model of 
+care, where after one miscarriage women would have their 
+health needs evaluated and would be provided with infor -
+mation and guidance to support future pregnancies. If a 
+second miscarriage were to occur, they would be offered an 
+appointment at a miscarriage clinic for initial investigations, 
+extra support and early reassurance scans for subsequent 
+pregnancies. Finally, after three miscarriages they would 
+be offered a full series of evidence- based investigations and 
+care, as described in guidelines such as these.9– 12• There are currently insufficient data to support the routine use of PGT- A for 
+couples with unexplained recurrent miscarriage, while the treatment may carry 
+a significant cost and potential risk. [Grade C]
+• Resection of a uterine septum should be considered for women with recurrent 
+first or second trimester miscarriage, ideally within an appropriate audit or 
+research context. [Grade C]
+• Thyroxine supplementation is not routinely recommended for euthyroid 
+women with TPO who have a history of miscarriage. [Grade A]
+• Progestogen supplementation should be considered in women with recurrent 
+miscarriage who present with bleeding in early pregnancy (for example 400 mg 
+micronised vaginal progesterone twice daily at the time of bleeding until 16 
+weeks of gestation). [Grade B]
+• Women with unexplained recurrent miscarriage should be offered supportive 
+care, ideally in the setting of a dedicated recurrent miscarriage clinic. [Grade C]
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e11 
+RECURRENT MISCARRIAGE
+Although the care of women and couples after sporadic 
+miscarriages is outside of the remit of this guideline, the 
+model should be encouraged as it appears to bridge the gap 
+between sporadic and recurrent miscarriage care, encourag -
+ing a systematic graded approach rather than a fragmented 
+one. It also addresses the balance between the need for 
+evidence- based and supportive care, while targeting health -
+care resources effectively.
+3 | DEFINITIONS AND 
+TERMINOLOGY
+The terminology and definitions used in reference to recur -
+rent miscarriage vary considerably. The American Society for 
+Reproductive Medicine (ASRM) have used the term recur -
+rent pregnancy loss13 and have recommended clinical evalu -
+ation after two first trimester clinical pregnancy losses (i.e. 
+those documented by ultrasonography or histopathological 
+examination). However, they have recommended a threshold 
+of three or more losses for epidemiological studies.14
+The European Society for Human Reproduction and 
+Embryology (ESHRE) have described, in their 2017 guide -
+line, a discrepancy in opinions among their guideline group 
+members and concluded with a definition of two or more 
+pregnancy losses.15
+In this guideline, recurrent miscarriage has been defined 
+as three or more first trimester miscarriages, in keeping with 
+the previous RCOG guidelines. However, clinicians are en -
+couraged to use their clinical discretion to recommend ex -
+tensive evaluation after two first trimester miscarriages, if 
+there is a suspicion that the miscarriages are of pathological 
+and not of sporadic nature (for example if a woman has had 
+a pregnancy loss with a normal non- invasive prenatal test or 
+karyotype). Owing to the fact that the incidence of certain 
+diagnoses does not appear to differ between women with 
+consecutive versus non- consecutive losses, the definition 
+in the present guideline has not been restricted to women suffering with consecutive miscarriages only.16,17 In addi -
+tion, it is not restricted to miscarriages suffered with the 
+same partner, as certain maternal pathologies would be un -
+affected by the partner.
+4 | IDENTIFICATION AND 
+ASSESSMENT OF EVIDENCE
+The Cochrane Library and electronic databases (DARE, 
+EMBASE, Trip, MEDLINE and PubMed) were searched 
+looking for the following terms in the title or abstract 
+‘spontaneous abortion’, ‘miscarriage’, ‘pregnancy loss’, 
+‘consecutive miscarriage’, ‘risk factors’, ‘prenatal care’, and 
+‘pregnancy care’. The search was restricted to articles pub -
+lished until November 2021, while additional key references 
+were added during the review process. The full search strat -
+egy is available to view online as supporting information 
+(Appendix S1 and S2).
+This guideline was developed using the methodology 
+described in the RCOG handbook Developing a Green- top 
+Guideline: Guidance for developers .
+5 | RISK FACTORS FOR 
+RECURRENT MISCARRIAGE
+A list of risk factors where the chance of miscarriage has 
+been quantified by studies is shown in Appendix 2. These 
+are further described below.
+5.1 | Epidemiological factors
+Advancing maternal age is associated with a decline in both 
+the number and quality of the remaining oocytes, resulting 
+in higher rates of aneuploidy in the fertilised embryos. A large 
+prospective register linkage study estimated the age- related 
+TABLE 1 Risk table epidemiological factors.
+Risk factors Association Evidence level Strength
+Advancing maternal age Increased risk of miscarriage 2++ B
+Advancing paternal age Increased risk of miscarriage, although not as markedly 
+as with maternal age2++ B
+Number of previous miscarriages Increased risk of subsequent miscarriage 2++ B
+Previous live birth No association with subsequent miscarriage risk 2+ C
+Black ethnic background Increased risk of miscarriage 2+ D
+Consanguineous relationship No increased risk of recurrent miscarriage 2– D
+Smoking Increased risk of miscarriage 2+ D
+Excess alcohol consumption Increased risk of miscarriage 2+ D
+Excess caffeine consumption Increased risk of miscarriage 2++ B
+Women with BMI < 19 or BMI > 25 kg/m2Increased risk of recurrent miscarriage 2++ B
+Environmental chemical exposure and dietary 
+intakeThere are limited studies examining this association and 
+the effects of these need to be further investigated2– D
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e12 | 
+GREEN- TOP GUIDELINE NO. 17
+risk of miscarriage to be: 12– 19 years, 13%; 20– 24 years, 11%; 
+25– 29 years, 12%; 30– 34 years, 15%; 35– 39 years, 25%; 40– 44 
+years, 51%; and 45 or more years, 93%.3 [Evidence level 2++]
+A meta- analysis has also reported increased miscarriage 
+rates for men aged over 40 years, although far less pro -
+nounced when compared with the effect of increased mater -
+nal age.18 [Evidence level 2++]
+A systematic review has reported the miscarriage rates to 
+be 11.3%, 17.0%, 28.0%, 39.6%, 47.2% and 63.9% for women 
+with no, one, two or three, four, five and six previous miscar -
+riages respectively.19 [Evidence level 2++]
+In two studies, primary versus secondary (those with a pre-
+vious live birth) recurrent miscarriage did not result in a signifi-
+cantly different future prognosis.20,21 [Evidence level 2+]
+A large observational study found that compared with 
+white Europeans, the odds of a sporadic miscarriage were 
+increased in Black African and Black Caribbean women.22 
+[Evidence level 2+]
+Observational studies have not demonstrated an associa -
+tion between consanguinity and recurrent miscarriage.23,24 
+[Evidence level 2– ]
+Smoking has been shown to increase the risk of sporadic 
+miscarriage.25 [Evidence level 2+]
+An observational database study found an increased risk 
+of spontaneous miscarriage in the first trimester for women 
+consuming five or more alcoholic drinks/week (approxi -
+mately 10 units/week).26 [Evidence level 2+]
+Similarly, there is some evidence for an association be -
+tween increased caffeine intake and sporadic miscarriage.27 
+[Evidence level 2++]
+Observational studies have reported that obesity increases 
+the risk of sporadic miscarriage.28– 30 In the meta- analysis 
+of Ng et al. (2021) women with a BMI below 19 and above 
+25 kg/m2 were at higher odds of recurrent miscarriage.31 
+[Evidence level 1+]
+The association between environmental risk factors (such 
+as air pollution and household chemicals) and pregnancy 
+loss is based mainly on women with sporadic rather than re -
+current miscarriage.32 The results are limited by difficulties 
+in controlling for confounding factors, reporting of data on 
+exposure and the measurement of toxin dose. Nevertheless, 
+awareness of a potential adverse association should be raised 
+and future well conducted studies should be encouraged. 
+[Evidence level 2– ]
+A number of small studies have assessed dietary variables 
+such as selenium,33,34 vitamin D35 and vitamin B1236 specifi -
+cally in the population with recurrent miscarriage, although 
+no definitive or clinically altering conclusions can be drawn. 
+[Evidence level 2– ]
+5.2 | Thrombophilia
+5.2.1 | Acquired
+Antiphospholipid syndrome (APS) is defined as the asso -
+ciation between antiphospholipid (aPL) antibodies (lupus anticoagulant, anticardiolipin [aCL] antibodies and anti- 
+beta- 2- glycoprotein- I antibodies) and adverse pregnancy 
+outcome or vascular thrombosis.37,38
+Adverse pregnancy outcomes include:
+• three or more consecutive miscarriages before 10 weeks of 
+gestation;
+• one or more morphologically normal fetal losses after the 
+tenth week of gestation;
+• one or more preterm births before 34+0 weeks of gestation 
+because of placental disease.
+In a meta- analysis including a total of 25 studies exam -
+ining the association between the various aPL and recurrent 
+miscarriage39: [Evidence level 2++] 
+• Lupus anticoagulant was found to have the strongest as -
+sociation with recurrent miscarriage (OR 7.79; 95% CI 
+2.30– 26.45).
+• IgG and IgM aCL antibodies were found to have the sec -
+ond strongest association with recurrent miscarriage, 
+with odds ratios of 3.57 (95% CI 2.26– 5.65) and 5.61 (95% 
+CI 1.26– 25.03) respectively.
+• Anti- beta- 2- glycoprotein- I antibodies showed a trend to -
+wards a positive association, but this did not reach statis -
+tical significance (OR 2.12, 95% CI 0.69– 6.53) prompting 
+the authors to recommend further studies to clarify the 
+role of anti- beta- 2- glycoprotein- I antibodies in recurrent 
+miscarriage.
+There are limited data on using clinical assays of 
+other aPL (such as phosphatidic acid, phosphatidyl cho -
+line, phosphatidyl ethanolamine, phosphatidyl glycerol, 
+phosphatidyl inositol and phosphatidyl serine) and pre -
+liminary studies do not suggest an additional value or 
+sensitivity in diagnosis associated with their use.40 In 
+addition, the lack of laboratory standardisation of these 
+clinical assays may lead to confusion and overdiagnosis 
+of APS. [Evidence level 3]
+5.2.2 | Inherited
+Inherited thrombophilias, including Factor V Leiden muta -
+tion, protein C and S deficiencies, antithrombin deficiency 
+and prothrombin gene mutation, are established causes of TABLE 2 Risk table acquired thrombophilia.
+Risk factor AssociationEvidence 
+level Strength
+Antiphospholipid 
+antibodiesIncreased risk of 
+recurrent miscarriage, 
+particularly for 
+lupus anticoagulant 
+and anticardiolipin 
+antibodies2++ B
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e13 
+RECURRENT MISCARRIAGE
+systemic thrombosis. However, inherited thrombophilias 
+have also been implicated as a possible cause in recurrent 
+miscarriage and late pregnancy complications with the pre -
+sumed mechanism being thrombosis of the uteroplacental 
+circulation.
+Meta- analyses of pooled data suggest that the magni -
+tude of the association between inherited thrombophilias 
+and fetal loss varies according to the type of thrombo -
+philia, timing of fetal loss, maternal ethnicity and mater -
+nal age. It is generally recognised that there is a stronger 
+and more consistent association between second trimester 
+miscarriages and inherited thrombophilias.41,42 [Evidence 
+level 2++]
+To date, the following associations have been shown 
+through systematic reviews and meta- analyses: [Evidence 
+level 2++] 
+• Factor V Leiden appears to be associated with first and 
+particularly second trimester recurrent miscarriages.41,43
+• Prothrombin gene mutation is associated with recurrent 
+miscarriage.41– 43
+• Protein S deficiency has not demonstrated a consis -
+tent association with recurrent first trimester mis -
+carriage, but has shown an association with second 
+trimester.41,44,45
+• Protein C deficiency has not shown a consistent associa -
+tion with recurrent miscarriage.41,44
+• Methylenetatrahydrofolate reductase (MTHFR) muta -
+tion (heterozygous and homozygous) has been found to 
+have a significant association with recurrent miscarriage 
+in one meta- analysis from China.46 However other meta- 
+analyses did not find an association and advise against 
+testing for this mutation.41,47
+• Antithrombin deficiency is the rarer yet most thrombo -
+genic mutation; however, the European prospective cohort 
+study on thrombophilia (EPCOT) found only a possible 
+association with sporadic miscarriage44 while a subse -
+quent meta- analysis did not.41
+5.3 | Genetic factors
+5.3.1 | Parental chromosomal rearrangements
+The incidence of parental chromosomal rearrangements 
+appears to be associated with recurrent miscarriage, with 
+one large database study estimating that a translocation is present in 2.2% of parents after one miscarriage, 4.8% 
+after two miscarriages, and 5.7% after three miscarriages.48 
+Studies, however, have reported a low risk of parents with 
+balanced translocations having a pregnancy with an unbal -
+anced karyotype surviving into the second trimester (0.8%) 
+or a disabled child born with an unbalanced chromosome 
+abnormality (0.02%).49,50 [Evidence level 2+]
+In a study by Franssen et al.,49 although overall the 
+chances of parents with a balanced structural chromosome 
+abnormality having a healthy child was found to be 83%, 
+which was similar to the control couples (84%), the former 
+had a higher chance of a subsequent miscarriage compared 
+with the latter group (49% versus 30%; P < 0.01), something 
+which has also been supported by other more recent stud -
+ies.51 The association between the type of parental chromo -
+somal rearrangement and risk of subsequent miscarriage 
+also appear dependent on the type of rearrangement, as 
+miscarriage rates for parents with reciprocal translocations, 
+inversions, Robertsonian translocations, and other types of 
+chromosomal anomalies have been shown to be 54%, 49%, 
+34% and 27% respectively.49 [Evidence level 2+]
+5.3.2 | Fetal chromosomal anomalies
+Chromosome anomalies of the pregnancy are the com-
+monest cause of both sporadic miscarriage and recurrent 
+miscarriage. A review reported that approximately 50% 
+of sporadic miscarriages are a result of fetal chromosome 
+anomalies (pooled prevalence 49.7%; 95% CI 34.9– 64.6%). 
+Among those with anomalies, in descending order of fre -
+quency were: trisomy (51.9%); polyploidy (18.8%); mono -
+somy (15.2%); structural anomalies (6.5%); and others 
+(7.6%).52 [Evidence level 2– ]TABLE 3 Risk table inherited thrombophilia.
+Risk factor AssociationEvidence 
+level Strength
+Inherited 
+thrombophiliasThere is a weak 
+association with 
+recurrent miscarriage.2++ CTABLE 4 Risk table genetic factors.
+Risk factor AssociationEvidence 
+level Strength
+Parental 
+chromosome 
+rearrangementsIncreased risk 
+of recurrent 
+miscarriage2+ C
+TABLE 5 Risk table genetic factors.
+Risk factor AssociationEvidence 
+level Strength
+Chromosome 
+anomaly of the 
+pregnancyIs the commonest 
+cause of sporadic and 
+recurrent miscarriage2++ B
+Miscarriage 
+of euploid 
+pregnancyIs associated with 
+an increased risk 
+of subsequent 
+miscarriage2+ C
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e14 | 
+GREEN- TOP GUIDELINE NO. 17
+The incidence of aneuploidy in recurrent miscarriage was 
+found to be approximately 40% (40.4%; 95% CI 25.2– 55.7%), 
+suggesting that non- genetic factors may play a more import -
+ant role in recurrent miscarriage.53 A study has shown that 
+miscarriages following assisted reproductive treatment have 
+rates of cytogenetic anomalies similar to sporadic miscar -
+riages (56.8% versus 53.6%; OR 1.11, 95% CI 0.71– 1.73).52 
+[Evidence level 2++]
+It is worth noting that with newer molecular techniques 
+a further 5– 7% submicroscopic variants may also be de -
+tected.52,54 This may be reflected by the fact that newer 
+studies using microarray techniques have been reporting 
+even higher number of cytogenetic anomalies in women 
+with sporadic miscarriages of up to 59.4% (1106/2389).55 
+[Evidence level 2++]
+When examining missed miscarriages with a normal 
+karyotype, embryoscopic studies have also shown a further 
+18% of fetuses to have morphological defects,56 although it 
+cannot be ascertained whether this is a result of maternal 
+factors or fetal genetic anomalies not evident on traditional 
+karyotyping. [Evidence level 2+]
+Studies have shown that the higher the number of eu -
+ploid miscarriages, the higher the chance of a subsequent 
+miscarriage,57 presumably owing to the higher chance of 
+a persistent maternal pathology rather than a sporadic 
+aneuploidy. Equally, a finding of an aneuploid embryo 
+has been found to confer an improved prognosis in the 
+subsequent pregnancy.58,59 This is assuming that the 
+women are age adjusted, as an older woman with an an -
+euploid loss may still have a worse prognosis compared 
+with a younger woman with a euploid loss. It may also 
+not be the case with parental chromosome anomalies, as 
+the embryonic aneuploidy in these cases is secondary to 
+parental pathology and not sporadic in nature. [Evidence 
+level 2+]
+5.4 | Anatomical factors
+5.4.1 | Congenital uterine anomalies
+Incidence
+The incidence of congenital uterine anomalies (CUAs) ap -
+pears to be higher than previously thought, owing to im -
+proved diagnostic imaging modalities.60 A systematic review and meta- analysis has estimated the prevalence to be 5.5% 
+(95% CI 3.5– 8.5%) in unselected women, 8.0% (95% CI 
+5.3– 12%) in infertile women, 13.3% (95% CI 8.9– 20.0%) in 
+women with recurrent miscarriage and 24.5% (95% CI 18.3– 
+32.8) in women with infertility and miscarriage. The com -
+monest anomalies across all populations appear to be the 
+canalisation defects (i.e. the septate variety) followed by the 
+unification defects (i.e. the bicornuate and unicornuate vari -
+ety).61 [Evidence level 2++]
+First trimester miscarriage
+In terms of reproductive outcomes, a meta- analysis has 
+shown that the risk of sporadic first trimester miscarriage 
+was not significantly increased in women with arcuate (RR 
+1.22, 95% CI 0.87– 1.72; six studies), didelphys (RR 1.13, 95% 
+CI 0.45– 2.86; four studies) and unicornuate uteri (RR 1.38, 
+95% CI 0.83– 2.28; five studies) versus normal controls.62 
+[Evidence level 2++]
+However, women with septate (RR 2.65, 95% CI 1.39– 
+5.06; six studies) and bicornuate uteri (RR 2.32, 95% CI 
+1.05– 5.13; four studies) had a significantly increased risk 
+of sporadic first trimester miscarriage versus normal con -
+trols.62 [Evidence level 2++]
+Second trimester miscarriage
+The risk of sporadic second trimester miscarriage was not 
+significantly increased in women with didelphys (RR 1.71, 
+95% CI 0.63– 4.59; four studies) and unicornuate uteri (RR 
+2.27, 95% CI 0.64– 7.96; four studies) versus normal con -
+trols.62 [Evidence level 2++]
+However, women with arcuate (RR 1.98, 95% CI 1.06– 
+3.69; five studies), septate (RR 2.95, 95% CI 1.51– 5.77; five 
+studies) and bicornuate uteri (RR 2.90, 95% CI 1.56– 5.41; 
+four studies) had a significantly increased risk of sporadic 
+second trimester miscarriage versus controls.62 [Evidence 
+level 2++]
+When assessing a population with recurrent miscarriage, 
+there were not enough studies in the literature to perform 
+a meta- analysis in terms of subtypes of anomalies or first 
+versus second trimester miscarriages; however, the overall 
+rate of subsequent miscarriage (first or second trimester) 
+remained significantly increased 1.13 (1.06– 1.22) compared 
+with women with unexplained recurrent miscarriage.62 
+[Evidence level 2++]
+It is worth noting that since this meta- analysis, a large pro-
+spective study by Prior et al. (2018), using gold standard 3D 
+ultrasound solely to diagnose the arcuate uterus (in contrast 
+to the varying diagnostic modalities included in the studies 
+of the meta- analysis), reported similar clinical pregnancy and 
+live birth rates between arcuate and normal uteri.63 Moreover, 
+all the latest classifications on uterine anomalies (ESHRE/
+European Society for Gynaecological Endoscopy [ESGE], 
+Congenital Uterine Malformation by Experts [CUME] and 
+ASRM) consider the arcuate uterus to be a normal variant 
+with no clinical implications, something which should be re -
+assuring to both clinicians and patients.64– 66TABLE 6 Risk table anatomical factors.
+Risk factor AssociationEvidence 
+level Strength
+Congenital 
+uterine 
+anomaliesIncreased risk 
+of miscarriage 
+with septate and 
+bicornuate uteri2++ B
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e15 
+RECURRENT MISCARRIAGE
+5.4.2 | Acquired uterine anomalies
+There are limited prospective case– control data evaluating 
+the association between acquired uterine anomalies and 
+sporadic or recurrent miscarriage.
+Myomas
+In a large meta- analysis of a general obstetric population, 
+including 1394 women with myomas and 20 435 without, 
+no increase in risk of miscarriage was found (11.5% versus 
+8.0%; RR 1.16, 95% CI 0.80– 1.52).67 However, the distinction 
+between submucosal, intramural and subserosal myomas, 
+which are known to affect fertility in varying degrees, was 
+limited.68 The authors concluded that failure of prior studies 
+to adjust for confounders may have led to the common clini -
+cal belief that leiomyomas are a risk factor for miscarriage. 
+[Evidence level 2++]
+An analysis from prospectively collected data in a re -
+current miscarriage population found a similar incidence 
+of myomas to that reported in the general population (8.2% 
+versus 10.4%).69,70 However, in the recurrent miscarriage 
+study, women with submucosal and intramural/subserosal 
+myomas were found to have a higher proportion of second 
+trimester miscarriages compared with women with unex -
+plained recurrent miscarriage (21.7% and 17.6% versus 8.0% 
+respectively; P < 0.01). Women with submucosal myomas 
+undergoing resection had a significant reduction in second 
+trimester miscarriage rates (21.7% to 0%; P < 0.01), although 
+there was a lack of a case– control group to compare what the 
+outcome would have been if women with submucosal myo -
+mas had not undergone resection. In the same study, women 
+with intramural/subserosal myomas did not undergo sur -
+gery and experienced similar live birth rate compared with 
+the unexplained recurrent miscarriage group in the subse -
+quent pregnancy.70 [Evidence level 3]
+Endometrial polyps
+There are no data to our knowledge specifically examining 
+the effect of polyps on sporadic or recurrent miscarriage. 
+Therefore, it seems reasonable to recommend management 
+similar to that of the general population.71
+Intrauterine adhesions
+There is a plausible link between intrauterine adhesions and 
+miscarriage, although this currently remains unsubstan -
+tiated. These include: i) constriction of the uterine cavity 
+caused by adhesions, ii) lack of a sufficient amount of normal endometrial tissue to support implantation and develop -
+ment of the placenta, and iii) defective vascularisation of the 
+residual endometrial tissue consequent upon fibrosis of en -
+dometrium.72 [Evidence level 3]
+A systematic review and meta- analysis has demonstrated 
+that the incidence of intrauterine adhesions increases with 
+the number of previous miscarriages experienced (OR 1.99, 
+95% CI 1.32– 3.00; seven studies) and the number of previous 
+dilatation and curettage procedures (OR 2.05, 95% CI 1.35– 
+3.12; seven studies).73 [Evidence level 2++]
+This has major implications for women with recurrent 
+miscarriage who are at risk of undergoing surgical manage -
+ment of miscarriage. In the meta- analysis by Hooker et al.63 
+similar pregnancy outcomes were reported subsequent to 
+conservative, medical and surgical treatment of miscarriage, 
+although the number of studies evaluating the long- term 
+reproductive outcome was limited and different time scales 
+were used. Owing to a large variation in primary outcomes, 
+methodology and populations, they were unable to perform 
+meta- analyses on reproductive outcome after miscarriage. 
+[Evidence level 3]
+Small cohort studies have, however, suggested that women 
+with intrauterine adhesions and endometrial thickness less 
+than 5 mm have higher sporadic miscarriage rates versus 
+women with endometrial thickness of more than 5 mm (50% 
+versus 8.3%; P < 0.001).74 [Evidence level 3]
+5.4.3 | Cervical integrity
+Causes of second trimester miscarriage appear to overlap 
+with the causes of first trimester miscarriage on one end 
+of the spectrum and causes of preterm birth on the other 
+end of the spectrum. Cervical insufficiency, along with in -
+fection and congenital uterine anomalies appear to be main 
+contributors of second trimester miscarriage.75 Although in -
+vestigations have been reported to reveal a diagnosis in only 
+approximately 50% of cases in dedicated clinics,76 future 
+developments, such as in the field of the maternal microbi -
+ome may shed more light in these so far unexplained cases.77 
+[Evidence level 2– ]
+The true incidence of cervical insufficiency remains un -
+known, since the diagnosis is clinical. There is currently no 
+satisfactory objective test that can identify women with cer -
+vical insufficiency in the non- pregnant state. The diagnosis 
+is usually based on a history of second trimester miscarriage, 
+where commonly there has been painless cervical dilatation, 
+with often intact membranes until the expulsion of the sac 
+and a live fetus.76 By extrapolation from data on extreme TABLE 7 Risk table anatomical factors.
+Risk factor AssociationEvidence 
+level Strength
+Acquired 
+uterine 
+anomaliesRemains uncertain 
+due to limitation 
+of studies and 
+methodological 
+quality3 DTABLE 8 Risk table cervical integrity.
+Risk factor AssociationEvidence 
+level Strength
+Cervical 
+insufficiencyIncreased risk of 
+second trimester 
+miscarriage2– C
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e16 | 
+GREEN- TOP GUIDELINE NO. 17
+preterm birth, a previous cervical cone biopsy78 or an ultra -
+sonographically short cervix79 appear to significantly pre -
+dispose to second trimester miscarriage. [Evidence level 2– ]
+5.5 | Endocrine
+Systemic maternal endocrine disorders such as diabetes mel -
+litus and thyroid disease have been associated with miscar -
+riage. Women with diabetes who have high haemoglobin 
+A1c levels in the first trimester are at risk of miscarriage 
+and fetal malformation.80 However, well- controlled diabetes 
+mellitus is not a risk factor for recurrent miscarriage, nor 
+is treated thyroid dysfunction.81,82 The incidence of diabetes 
+mellitus and thyroid dysfunction in women who suffer re -
+current miscarriage appears similar to that reported in the 
+general population.83,84 [Evidence level 2+]
+However, the incidence of subclinical hypothyroidism 
+(SCH) (on this occasion defined as TSH more than 2.5 
+mIU/l) has been reported to be raised in a small observa -
+tional study of women with recurrent miscarriage,85 while 
+data from a meta- analysis on sporadic miscarriages also sug -
+gests an association.86 [Evidence level 2– ]
+The case appears to be the same for subclinical thyroid 
+dysfunction associated with thyroid autoimmunity. Two 
+systematic reviews and meta- analyses reported that the pres -
+ence of thyroid antibodies was associated with an increased 
+risk of recurrent miscarriage.87,88 [Evidence level 2++]
+Polycystic ovary syndrome (PCOS) has been linked to 
+an increased risk of miscarriage but the exact mechanism 
+remains unclear.89 Polycystic ovarian morphology, elevated 
+serum luteinising hormone levels or elevated serum testos -
+terone levels do not appear to predict an increased risk of fu -
+ture pregnancy loss among ovulatory women with a history of recurrent miscarriage who conceive spontaneously.90 The 
+increased risk of miscarriage in women with PCOS has nev -
+ertheless been attributed to insulin resistance, hyperinsuli -
+naemia and hyperandrogenaemia. The prevalence of insulin 
+resistance91 and abnormal glucose tolerance test92 appears 
+to be increased in women with recurrent miscarriage com -
+pared with controls. An elevated free androgen index ap -
+pears to be a prognostic factor for a subsequent miscarriage 
+in women with recurrent miscarriage.89 [Evidence level 2+]
+Prolactin imbalances have been implicated in recur -
+rent miscarriage. One study reported an increased level 
+of prolactin in women with recurrent miscarriage versus 
+controls,83 while another study reported marginally lower 
+prolactin levels in women with recurrent miscarriage who 
+experienced a live birth versus those who miscarried.93 A 
+small randomised controlled trial (RCT) of 48 women with 
+recurrent miscarriage and hyperprolactinaemia were ran -
+domised into bromocriptine versus no bromocriptine, show -
+ing significant differences in live birth (85.7% versus 52.4% 
+respectively, P < 0.05).94 Overall it appears that maintaining 
+a normal level of prolactin may be beneficial in this context. 
+[Evidence level 2– ]
+The diagnosis of a luteal phase defect varies significantly in 
+the literature, making it difficult to assess. One study found a 
+higher incidence of a luteal phase defect (midluteal progester -
+one less than 30 nmol/l) in women with recurrent miscarriage 
+versus fertile controls (27% versus 11%),84 whereas another 
+study found no correlation between the presence of a luteal 
+phase defect (midluteal progesterone less than 10 ng/ml) and 
+the chance of subsequent miscarriage in 197 women with 
+recurrent miscarriage.95 Given the limited and inconsistent 
+data from histological and serological examinations during 
+the midluteal phase, molecular studies of the endometrium 
+may prove to be more insightful. [Evidence level 2– ]
+5.6 | Immune factors
+5.6.1 | Peripheral
+HLA
+A systematic review and meta- analysis including 41 stud -
+ies (of which selection bias was present in 40 studies and 
+information bias in all studies) showed an increased risk of 
+recurrent miscarriage in mothers carrying a HLA- DRB1*4 
+(OR 1.41, 95% CI 1.05– 1.90), HLA- DRB1*15 (OR 1.57, 95% 
+CI 1.15– 2.14), or a HLA- E*01:01 allele (OR 1.47, 95% CI 0.20– 
+1.81), and a decreased risk with HLA- DRB1*13 (OR 0.63, TABLE 9 Risk table endocrine.
+Risk factors AssociationEvidence 
+level Strength
+Well controlled 
+diabetes and thyroid 
+diseaseNo increased 
+risk of recurrent 
+miscarriage2+ C
+SCH Increased risk 
+of recurrent 
+miscarriage2– C
+Thyroid 
+autoantibodiesIncreased risk 
+of recurrent 
+miscarriage2++ B
+Polycystic ovary 
+syndromeIncreased risk 
+of recurrent 
+miscarriage2– D
+Prolactin 
+imbalancesIncreased risk 
+of recurrent 
+miscarriage2– D
+Luteal phase defect Insufficient/
+inconclusive 
+evidence2– DTABLE 10 Risk table immune factors.
+Risk factor AssociationEvidence 
+level Strength
+Peripheral 
+immune factorsInsufficient/
+inconclusive 
+evidence2++ C
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e17 
+RECURRENT MISCARRIAGE
+95% CI 0.45– 0.89) or HLA- DRB1*14 (OR 0.54, 95% CI 0.31– 
+0.94). However, although associations between specific HLA 
+alleles and HLA sharing with recurrent miscarriage were 
+identified, the authors suggested that no consistent conclu -
+sions can be drawn since the observed ORs were relatively 
+small and there was a high risk of selection and information 
+bias present in the studies available.96 [Evidence level 2++]
+Cytokines
+An imbalance in Th1/Th2 cytokines has been implicated 
+in adverse pregnancy outcomes including recurrent mis -
+carriage.97 However, research into the role of cytokines in 
+recurrent miscarriage is hampered by a number of factors 
+including fluctuating levels, discordance between blood and 
+endometrial levels and laboratory variability in measure -
+ment.98 [Evidence level 2+]
+A meta- analysis in 2008 concluded that the available data 
+are not consistent with more than modest associations be -
+tween cytokine polymorphisms and recurrent miscarriage. 
+More recent meta- analyses have shown an association be -
+tween some cytokine gene promoter polymorphisms and re -
+current miscarriage but not for others.99 Further research is 
+required to assess the contribution that disordered cytokines 
+make to recurrent miscarriage before routine cytokine tests 
+can be introduced to clinical practice. [Evidence level 2+]
+Peripheral natural killer (NK) cells
+A meta- analysis of studies found that women with recurrent 
+miscarriage versus controls had higher peripheral NK cell 
+percentages (standardised mean difference [SMD] 1.36; 95% 
+CI 0.04– 2.69; P = 0.04) and higher peripheral NK cell num-
+bers (SMD 0.81; 95% CI 0.47– 1.16; P < 0.00001).100 [Evidence 
+level 2+]
+However, the significance of increased peripheral NK 
+cells remains debatable,101 as they do not appear to reflect 
+the levels in the endometrium,102 show an intracycle, hor -
+monal and ethnic variability,103 and appear not to predict 
+subsequent miscarriage in a population of women with re -
+current miscarriage.104 [Evidence level 2+]
+5.6.2 | Uterine
+Several studies reported that uterine NK cell density in 
+the endometrium around the time of implantation was 
+increased.105– 107 A meta- analysis in 2014 showed no signifi -
+cant difference between women with recurrent miscarriage 
+and controls (SMD 0.40; 95% CI 1.24– 2.04; P = 0.63)100; how -
+ever, an inherent difficulty in performing systematic analysis 
+was the lack of standardised laboratory protocol and agreed reference range. A multicentre working party later met 
+and agreed on the standardisation of laboratory methods 
+to measure and report uterine NK cell density,108 based on 
+which Chen et al. established a control reference range from 
+fertile women and found that women with recurrent miscar -
+riage did have significant increase of uterine NK cell density 
+in precisely timed endometrial specimens.109 Nevertheless, 
+the prognostic value of uterine NK cell measurement re -
+mains unconfirmed.106 [Evidence level 2– ]
+5.7 | Infective factors
+A whole range of organisms have been implicated in first 
+and second trimester miscarriage, including ureaplasma/
+mycoplasma, organisms causing bacterial vaginosis and 
+chlamydia trachomatis.110 For an infective agent to be impli -
+cated in the aetiology of recurrent miscarriage, it must be ca -
+pable of persisting in the genital tract and avoiding detection 
+or must cause insufficient symptoms to disturb the woman. 
+Toxoplasmosis, rubella, cytomegalovirus, herpes simplex 
+(TORCH) and listeria infections do not fulfil these criteria 
+and therefore routine TORCH screening should not be un -
+dertaken.111 [Evidence level 2+]
+The presence of bacterial vaginosis in the first trimester 
+of pregnancy has been reported as a risk factor for miscar -
+riage and preterm birth.112 A meta- analysis showed a statis -
+tically significant increase in second trimester miscarriages 
+(OR 6.32, 95% CI 3.65– 10.94).113 However, the evidence for 
+an association with first trimester miscarriage is inconsis -
+tent.114,115 There are also a lack of data regarding the recur -
+rent miscarriage population. [Evidence level 2+]
+Chronic endometritis has also been implicated in recur -
+rent miscarriage, although the diagnostic criteria remain 
+controversial.116 Using morphometric analysis to mea -
+sure plasma cell count, a study found that the incidence of 
+chronic endometritis in women with recurrent miscarriage 
+was 10.8%, twice higher than that of fertile women (5.0%).117 
+Future molecular studies on the microbiome of the uterine 
+cavity will hopefully shed more light into the role of infec -
+tions in recurrent miscarriage.118 [Evidence level 2+]
+5.8 | Male factors
+Some studies have found some sperm parameters (such as vi -
+ability, normal morphology, total progressive motility, hypo- 
+osmotic swelling, acrosomal status, and nuclear chromatin TABLE 11 Risk table immune factors.
+Risk factor Association Evidence level Strength
+Uterine NK 
+cellsInsufficient/
+inconclusive 
+evidence2– CTABLE 12 Risk table infective factors.
+Risk factor Association Evidence level Strength
+Genital tract 
+infectionsInsufficient/
+inconclusive 
+evidence2+ C
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e18 | 
+GREEN- TOP GUIDELINE NO. 17
+decondensation) to be lower in men experiencing recurrent 
+miscarriage versus controls.119– 121 However, this has not been 
+reproduced in other studies.122,123 [Evidence level 2+]
+The rates of anti- sperm antibodies have not been consis -
+tently shown to be increased in women and men with re -
+current miscarriage, with some studies showing a higher 
+incidence,124 while others have not.125 [Evidence level 2+]
+The data are more consistent with regard to the association 
+between abnormal sperm DNA parameters such as sperm 
+DNA fragmentation, nuclear chromatin decondensation, 
+and sperm aneuploidy and miscarriage. A meta- analysis in 
+couples undergoing assisted reproduction treatment showed 
+a significant increase in miscarriage where high sperm DNA 
+damage was identified compared with those with low DNA 
+damage (RR 2.16; 95% CI 1.54– 3.03, P < 0.00001).126 This was 
+confirmed in a meta- analysis 2 years later.127 This associa -
+tion has also been shown for the recurrent miscarriage pop -
+ulation.128– 131 [Evidence level 2++]
+To date, however, limited studies are available evaluating 
+interventions that may affect sperm DNA fragmentation 
+such as lifestyle modification (smoking cessation, weight 
+loss/exercise, reduction in pollutant exposure), treatment of 
+infections, control of diabetes, treatment of varicocele, anti -
+oxidant therapy, sperm selection and others.132
+6 | WHAT ARE THE RECOMMENDED 
+INVESTIGATIONS FOR RECURRENT 
+FIRST TRIMESTER AND ONE OR MORE 
+SECOND TRIMESTER MISCARRIAGES?
+6.1 | Thrombophilias
+6.1.1 | Acquired
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage should 
+be offered testing 
+for acquired 
+thrombophilia, 
+particularly for 
+lupus anticoagulant 
+and anticardiolipin 
+antibodies, prior to 
+pregnancy.2++ C Given the 
+association 
+with recurrent 
+miscarriage and 
+the evidence of 
+potential benefit 
+from treatment.
+To diagnose APS it is recommended that the woman 
+should have two positive tests at least 12 weeks apart (and at least 6 weeks post miscarriage) for either lupus antico -
+agulant or aCL antibodies of IgG and/or IgM class present 
+in medium or high titre (i.e. more than 40 GPL or MPL, or 
+more than 99th percentile). For anti- beta- 2- glycoprotein- I 
+antibody, for which the evidence is less conclusive, IgG and/
+or IgM class in high titre (i.e. more than 99th percentile) can 
+be used, within the appropriate audit or research context.38 
+[Evidence level 2++]
+In detection of lupus anticoagulant, the dilute Russell's 
+viper venom time (dRVVT) test together with a plate -
+let neutralisation procedure is more sensitive and spe -
+cific than either the activated partial thromboplastin 
+time (aPTT) or the kaolin clotting time (KCT) tests.133 
+[Evidence level 2++]
+Anticardiolipin antibodies are detected using a stan -
+dardised enzyme- linked immunosorbent assay (ELISA). The 
+detection of aPL is subject to considerable inter- laboratory 
+variation.134 This is because of temporal fluctuation of aPL 
+titres in individuals, transient positivity secondary to infec -
+tions, suboptimal sample collection and preparation, and 
+lack of standardisation of laboratory tests for their detection. 
+[Evidence level 2++]
+6.1.2 | Inherited
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+second trimester 
+miscarriage 
+may be offered 
+testing for 
+Factor V Leiden, 
+prothrombin 
+gene mutation 
+and protein S 
+deficiency, ideally 
+within a research 
+context. They 
+should be made 
+aware that there is 
+currently limited 
+evidence that 
+treatment changes 
+reproductive 
+outcomes.2++ C Although there 
+is an association, 
+there is limited 
+evidence that 
+treatment 
+improves 
+reproductive 
+outcomes. 
+However, some 
+women with 
+additional risk 
+factors may 
+benefit from 
+treatment.
+Testing may be offered with second trimester miscarriage 
+for Factor V Leiden, prothrombin gene mutation and protein 
+S deficiency135 and, in the case of the latter, at least 6 weeks 
+postpartum and in the absence of hormonal medication.136 
+[Evidence level 2++]
+Systematic review and meta- analyses have not found 
+a persistent association between recurrent and/or second 
+trimester miscarriage and protein C deficiency, antithrom -
+bin deficiency and methylenetetrahydrofolate reductase 
+(MTHFR) mutation and therefore do not recommend test -
+ing.41,47,136 [Evidence level 2++]TABLE 13 Risk table male factors.
+Risk factor AssociationEvidence 
+level Strength
+Increased 
+sperm DNA 
+fragmentationIncreased risk 
+of recurrent 
+miscarriage2++ C
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e19 
+RECURRENT MISCARRIAGE
+Prior to testing for thrombophilia, women and people 
+should be counselled regarding the implications for them -
+selves and family members of a positive or negative result. 
+The results should be interpreted by clinicians with specific 
+expertise in the area.
+6.2 | Genetic
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Cytogenetic analysis 
+should be offered 
+on pregnancy 
+tissue of the third 
+and subsequent 
+miscarriage(s) and in 
+any second trimester 
+miscarriage.2– D This confers 
+significant 
+diagnostic, 
+psychological and 
+auditing/research 
+advantages.
+In recurrent 
+miscarriage, 
+parental peripheral 
+blood karyotyping 
+should be performed 
+for couples in whom 
+testing of pregnancy 
+tissue reports 
+an unbalanced 
+structural 
+chromosomal 
+abnormality. 
+The finding of 
+a subsequent 
+abnormal parental 
+karyotype should 
+prompt referral to a 
+clinical geneticist.3 D Retrospective 
+studies have 
+shown that 
+blanket testing 
+for parental 
+karyotyping 
+reveals an 
+abnormality in 
+less than 2%, 
+while genetic 
+analysis of 
+pregnancy tissue 
+may point towards 
+the diagnosis.
+When cytogenetic 
+analysis is indicated 
+but testing of the 
+pregnancy tissue is 
+unsuccessful or there 
+is no pregnancy 
+tissue available for 
+testing, parental 
+karyotyping should 
+be offered.4 GPP With a view 
+to achieve a 
+diagnosis even 
+in the absence of 
+pregnancy tissue 
+analysis.
+Other than the prognostic advantages, when used in 
+combination with routine investigations into recurrent mis -
+carriage, cytogenetic analysis of the pregnancy tissue have 
+shown to provide a diagnosis in over 90% of couples.137 This 
+increase in diagnoses could potentially lead to a number of 
+advantages, such as:
+• Identifying those with balanced chromosome rearrange -
+ments, who may benefit from genetic counselling and po -
+tential targeted therapies. [Evidence level 2– ]
+• Providing an answer. Not having a diagnosis has been 
+associated with feelings of uncertainty, frustration and isolation in other fields of medicine.138 Such adverse emo -
+tions may also be present in those who experience recur -
+rent miscarriage. [Evidence level 2– ]
+• Reducing the chance of women and people pursuing non- 
+evidenced based therapies (in cases where no diagnosis 
+has been reached). [Evidence level 4]
+• Allowing better stratification, selection and control of 
+confounding variables for prospective research trials. 
+[Evidence level 4]
+• Providing further insight into the causes of miscarriage 
+through assessing pregnancy tissue with advanced molec -
+ular studies. [Evidence level 4]
+Techniques for analysis of pregnancy tissue
+Several different techniques may apply to assess for genetic 
+anomalies of the pregnancy, namely: conventional karyotyp -
+ing via tissue culture, fluorescence in situ hybridisation (FISH), 
+array comparative genomic hybridisation (array CGH), single 
+nucleotide polymorphism (SNP) array and next generation se -
+quencing (NGS). These are described in Appendix 3. [Evidence 
+level 4]
+A retrospective audit of four UK centres over periods of 
+5– 30 years, reported that balanced translocations were found 
+in 1.9% (406 out of 20 432) of parents with recurrent mis-
+carriage, but only four unbalanced translocations were found 
+after referral for prenatal diagnosis because of balanced pa-
+rental translocation ascertained for recurrent miscarriage.50 
+[Evidence level 3]
+Although screening women (and their male partners if 
+applicable) for parental chromosome rearrangements does 
+not appear to be cost- effective,50 peripheral blood karyo -
+typing of both parents should be offered in cases where 
+the pregnancy tissue report an unbalanced structural 
+chromosomal abnormality. In the case where an abnor -
+mal parental karyotype is identified, genetic counselling 
+offers the couple a prognosis for the risk of future preg -
+nancies with an unbalanced chromosome complement 
+and the opportunity for familial chromosome studies. 
+[Evidence level 4]
+Parental karyotyping may be offered when testing of the 
+pregnancy tissue is unsuccessful or when there is no preg -
+nancy tissue available for testing.
+6.3 | Anatomical
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage 
+should be offered 
+assessment for 
+congenital uterine 
+anomalies, ideally 
+with 3D ultrasound.2++ B Based on 
+evidence from 
+meta- analyses 
+and potential 
+benefit from 
+diagnosis and 
+treatment
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e20 | 
+GREEN- TOP GUIDELINE NO. 17
+An RCOG Scientific Impact Paper has been published 
+on Reproductive implications and management of congenital 
+uterine anomalies .139 The key findings and recommenda -
+tions are summarised below.
+Diagnosis
+A systematic review and international consensus has re-
+ported that the most accurate methodologies for diagnos-
+ing congenital uterine anomalies in descending order of 
+overall accuracy are: 3D ultrasound (97.6%, 95% CI 94.3– 
+100), saline- infusion ultrasound (96.5%, 95% CI 93.4– 
+99.5), hysterosalpingography (86.9%, 95% CI 79.8– 94.0) 
+and 2D ultrasound (86.6%, 95% CI 81.3– 91.8).140 There 
+were no studies reporting on the use of magnetic resonance 
+imaging (MRI) as a screening tool, however comparative 
+studies have shown MRI to be at least similar in accuracy 
+compared with 3D ultrasound when expert examiners are 
+used (i.e. a radiologist with an interest/expertise in gynae-
+cological imaging).141 [Evidence level 2++]
+Based on these findings, acceptability and relative low cost, 
+3D ultrasound is recommended as the first line for the diag-
+nosis of congenital anomalies, reserving MRI and endoscopic 
+evaluation for complex anomalies when a diagnosis cannot be 
+reached with 3D ultrasound.140 [Evidence level 2++]
+Classifications
+Several classifications have been published in order to 
+diagnose and categorise these anomalies, including the 
+American Fertility Society (now ASRM) classification 
+(1988),142 the Vagina Cervix Uterus Adnexa and Associated 
+Malformation (VCUAM) classification,143 the embryolog -
+ical classification of Acien and Acien (2011),144 the ESHRE 
+and the ESGE classification (2013),64 and most recently the 
+ASRM classification (2021).66 [Evidence level 2++]
+Controversy regarding the septate uterus
+The different classifications have been a point of contention 
+in the literature, particularly with regards to the diagnosis of 
+the septate uterus, the anomaly most amenable to surgical 
+treatment. As a result, different criteria have been made for 
+the diagnosis of the septate uterus, including a percentage 
+of fundal cavity indentation of more than 50%,145 a depth 
+of fundal cavity indentation of more than 15 mm with an 
+indentation angle of less than 90° (ASRM definition of 
+2016),146 a depth of fundal cavity indentation of more than 
+10 mm (CUME classification),65 and most recently a depth 
+of fundal cavity indentation of more than 10 mm with a 
+septum angle of less than 90o (ASRM 2021 classification).66 
+[Evidence level 2+]
+When comparing different criteria for the diagnosis of 
+the septate uterus it is clear that the incidence changes ac-
+cording to criteria used,147 with the highest incidences in de -
+scending order being from the ESHRE– ESGE to the CUME 
+and ASRM classifications.65 Although there are concerns of 
+potential over- diagnosis and treatment of septate uteri by 
+using the ESHRE– ESGE classification, there are still a lack of prospective data to determine the use of which classification 
+would lead to the most favourable reproductive outcomes (i.e. 
+increase in live birth rate). Therefore, which criteria should be 
+used for the diagnosis of a septate uterus remains a matter of 
+ongoing debate. [Evidence level 2++]
+There is less of a debate regarding the diagnosis of other 
+anomalies, which are more pronounced and for which there is 
+a less variability between different classifications.
+Although there is a lack of studies demonstrating a clear link 
+between acquired uterine anomalies and recurrent miscarriage, 
+these can be opportunistically diagnosed during the assessment 
+for congenital uterine anomalies and treated accordingly on an 
+individual basis (e.g. if there is associated symptomatology). 
+The inclusion of saline infusion with the 3D ultrasound assess-
+ment may be particularly useful for the diagnosis of intrauterine 
+adhesions if these are suspected based on the clinical history 
+(e.g. prior surgical management of miscarriage with subsequent 
+oligomenorrhoea).148 [Evidence level 4]
+6.4 | Endocrine
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage should 
+be offered thyroid 
+function tests and 
+assessment for 
+thyroid peroxidase 
+(TPO) antibodies.1– C Treatment of 
+abnormal thyroid 
+function may 
+confer a benefit.
+Meta- analyses have reported a significant association be -
+tween TPO antibodies, thyroid dysfunction and recurrent 
+miscarriage.87,88 [Evidence level 1– ]
+Although the presence of TPO antibodies in euthyroid 
+women may not warrant treatment, knowing the antibody sta-
+tus allows for the stratification of women and people who will 
+require thyroid function monitoring during pregnancy.149 It is 
+interesting to note that for women with previous miscarriages, 
+the American Thyroid Association has given different recom -
+mendations for treatment according to the TSH levels and 
+presence or not of autoimmunity,150,151 while RCOG Scientific 
+Impact Paper No. 70 on Subclinical hypothyroidism and anti-
+thyroid autoantibodies in women with subfertility or recurrent 
+pregnancy loss has not.149 The RCOG Scientific Impact Paper 
+has also noted that performing routine preconception TPO 
+antibody testing (alongside thyroid function tests) for women 
+with recurrent miscarriage versus regular thyroid function 
+tests starting in early pregnancy, are both acceptable strategies 
+until clinical and cost- effectiveness analyses are available.149 
+[Evidence level 2++]
+Other endocrine assessments are not routinely indicated 
+unless there is a clinical suspicion of pathology e.g. diabetes 
+and hyperprolactinaemia.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e21 
+RECURRENT MISCARRIAGE
+6.5 | Immune
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage 
+should not be 
+routinely offered 
+immunological 
+screening (such 
+as HLA, cytokine 
+and NK cell 
+tests), outside of a 
+research context.2– C There is a lack 
+of consistent 
+association 
+between various 
+immunological 
+tests and recurrent 
+miscarriage.
+6.6 | Infective
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage 
+should not 
+be routinely 
+offered infection 
+screening outside 
+of the research 
+context.2– C There is a lack 
+of consistent 
+association 
+between infection 
+testing, associated 
+treatment, 
+and recurrent 
+miscarriage.
+The PREMEVA multicentre double- blind RCT of 84 530 
+pregnant women screened for bacterial vaginosis. Systematic 
+screening and subsequent treatment for bacterial vaginosis 
+in women with low- risk pregnancies showed no evidence 
+of risk reduction of late miscarriage or spontaneous very 
+preterm birth.152 [Evidence level 2– ]
+Prospective observational studies have suggested a higher 
+subsequent miscarriage rate in women with recurrent mis -
+carriage and untreated chronic endometritis versus no 
+endometritis or treated endometritis,153,154 however well- 
+designed prospective RCTs are lacking. [Evidence level 2– ]
+6.7 | Male factors
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Couples with 
+recurrent 
+miscarriage should 
+not be routinely 
+offered sperm DNA 
+testing outside of the 
+research context.4 D Although there 
+appears to be an 
+association between 
+sperm DNA 
+fragmentation and 
+miscarriage, there 
+are yet to be any 
+prospective trials 
+demonstrating 
+improved outcomes 
+with intervention.Although there appears to be an association between 
+sperm DNA fragmentation and miscarriage, there is a lack 
+of prospective trials examining relevant interventions in 
+couples with recurrent miscarriage. However, taking a de -
+tailed history from the male partner to elicit risk factors for 
+poor sperm quality and screening for DNA fragmentation 
+within the appropriate research context may help elucidate 
+whether and how this information may be useful for pa-
+tient counselling and for guiding clinical management.155,156 
+[Evidence level 4]
+7 | WHAT ARE THE TREATMENT 
+OPTIONS FOR RECURRENT 
+FIRST AND SECOND TRIMESTER 
+MISCARRIAGES?
+7.1 | Lifestyle modifications
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+recurrent 
+miscarriage 
+should be advised 
+to maintain a 
+BMI between 
+ 19 kg/m2 and 
+25 kg/m2, smoking 
+cessation, 
+limit alcohol 
+consumption and 
+limit caffeine 
+to less than 
+200 mg/day.2– D Observational 
+studies show that 
+change in lifestyle 
+is associated 
+with improved 
+outcomes.
+A meta- analysis of prospectively collected data in a recur-
+rent miscarriage has shown an association between BMI and 
+subsequent miscarriage.31,157 Studies on sporadic miscarriage 
+have shown associations with smoking,25,158 alcohol26,159 
+and caffeine.27,160,161 These findings can be extrapolated on 
+to populations of women and people with recurrent miscar-
+riage. [Evidence level 2– ]
+There are no studies assessing the dietary intake of cer -
+tain foods, antioxidants, vitamins, supplements and others 
+in the recurrent miscarriage population. Overall in view 
+of the limited data focusing specifically on couples with 
+recurrent miscarriage, it seems reasonable to advise a diet 
+similar to that recommended for any couple attempting to 
+conceive.162 [Evidence level 2– ]
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e22 | 
+GREEN- TOP GUIDELINE NO. 17
+7.2 | Thrombophilias
+7.2.1 | Acquired
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Aspirin and heparin 
+(unfractionated 
+heparin [UFH] or 
+LMWH) should be 
+offered to women 
+with APS (e.g. 75 mg 
+aspirin orally and 
+40 mg subcutaneously 
+enoxaparin from a 
+positive pregnancy test 
+until at least 34 weeks 
+of gestation). Clinicians 
+and women should be 
+aware that treatment 
+with heparin, 
+particularly UFH, is 
+not without some risk.1+ B Meta- 
+analyses have 
+demonstrated 
+that treatment 
+of APS with 
+aspirin and 
+heparin confers 
+a significant 
+benefit.
+Aspirin and/or 
+heparin should not be 
+given to women with 
+unexplained recurrent 
+miscarriage1+ B Meta- analyses 
+have shown it 
+does not improve 
+outcomes and 
+may be associated 
+with adverse 
+effects.
+A high quality meta- analysis of RCTs assessed pregnancy 
+outcomes for women with recurrent miscarriage and APS who 
+were treated with aspirin, steroids, intravenous globulin and hep -
+arin. It showed that the only treatment or treatment combination 
+that lead to a significant increase in the live birth rate was aspirin 
+with unfractionated heparin (UFH) infusion.163 This treatment 
+combination significantly reduced the miscarriage rate by 54% 
+(aspirin plus UFH versus aspirin alone RR 0.46, 95% CI 0.29– 
+0.71). Two further meta- analyses showed similar reduction in 
+recurrent miscarriage for the aspirin and UFH group (OR 0.26, 
+95% CI 0.14– 0.48).164 The meta- analysis did not show a signifi -
+cant reduction in miscarriage rates in aspirin plus low molecular 
+weight heparin (LMWH) group, but commented that further in -
+vestigation is required. A 2015 Bayesian network meta- analysis 
+also confirmed the above findings.165 [Evidence level 1+]
+Two prospective studies and one RCT, however, reported no 
+difference in efficacy and safety between UFH or LMWH when 
+combined with aspirin in the treatment of women with recurrent 
+miscarriage associated with aPL.166,167 In addition, a 2020 meta- 
+analysis reported improvements in live birth with both UFH and 
+LMWH in combination with aspirin.168 [Evidence level 1+]
+There are no adverse fetal outcomes reported in the meta- 
+analysis of RCTs of low dose aspirin for the prevention of 
+pre- eclampsia in pregnancy.169 Heparin does not cross the 
+placenta and hence there is no potential to cause fetal haem -
+orrhage or teratogenicity.170 UFH can, however, be associated 
+with maternal complications including bleeding, hypersen -
+sitivity reactions, and heparin- induced thrombocytopenia 
+and when used long term, osteopenia and vertebral fractures. 
+Two prospective studies have shown, however, that the loss in bone mineral density at the lumbar spine associated with 
+low- dose long- term heparin therapy is similar to that which 
+occurs normally during pregnancy.171,172 [Evidence level 1+]
+LMWH is as safe as UFH with potential advantages 
+during pregnancy, since they cause less heparin- induced 
+thrombocytopenia, can be administered once daily, and are 
+associated with a lower risk of heparin- induced osteoporo -
+sis.173 [Evidence level 1+]
+Pregnancies associated with APS treated with aspirin and 
+heparin remain at high risk of complications during all three 
+trimesters.174,175 [Evidence level 1+]
+It should be noted that a meta- analysis has shown that 
+aspirin and/or LMWH does not increase the live birth rate 
+in women with unexplained recurrent miscarriage, may be 
+associated with adverse effects and should therefore not be 
+used.176 [Evidence level 1+]
+7.2.2 | Inherited thrombophilias
+Recommendation Evidence 
+quality`Strength Rationale for the 
+recommendation
+There is a lack of 
+evidence to support 
+routine treatment for 
+women with Factor 
+V Leiden, protein 
+S deficiency and 
+prothrombin gene 
+mutation to reduce the 
+incidence of recurrent 
+miscarriage or second 
+trimester loss.2– C Subgroup meta- 
+analysis of RCTs 
+do not show a 
+consistent benefit 
+of treatment 
+in women 
+with inherited 
+thrombophilia, 
+however the 
+subgroups were 
+underpowered for 
+firm conclusions.
+A decision to treat 
+women with recurrent 
+miscarriage or second 
+trimester loss can be 
+individualised and should 
+involve a discussion 
+with the woman, taking 
+into consideration 
+additional risk factors, 
+such as maternal risk of 
+thrombosis (as described 
+in RCOG Green- top 
+Guideline No. 37a) or 
+evidence of previous 
+placental thrombosis.3 D Treatment can be 
+considered given 
+the association 
+of thrombophilia 
+with thrombotic 
+events.
+Thromboprophylaxis should be considered for women 
+with inherited thrombophilias based on their risk of throm -
+bosis.177 Further prospective data are required to determine 
+whether, or not, this would alter the risk of miscarriage and 
+for which types, including heterozygous versus homozygous 
+states. [Evidence level 4]
+Meta- analyses of women with recurrent miscar -
+riage combining women with and without thrombophilia 
+have not shown any improvement in reproductive out -
+comes when using aspirin and/or heparin versus pla -
+cebo.176 Unfortunately, although the investigators planned 
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e23 
+RECURRENT MISCARRIAGE
+to compare the thrombophilia versus no thrombophilia 
+groups, they concluded that because of the lack of data, such 
+an analysis was not possible. This means that the group of 
+women with thrombophilias would have been underpow -
+ered in these analyses. [Evidence level 2– ]
+One prospective randomised trial demonstrated the effi -
+cacy of LMWH for the treatment of women with a history of 
+a single late miscarriage after 10 weeks of gestation who have 
+the Factor V Leiden or prothrombin gene mutation or have 
+protein S deficiency. The live birth rate in women treated 
+with enoxaparin was 86% compared with 29% in women tak -
+ing low dose aspirin alone (OR 15.5, 95% CI 7– 34).178 In a later 
+RCT, subgroup analysis of women with recurrent miscar -
+riage with and without thrombophilia did not demonstrate 
+a significant difference in live birth rate when comparing 
+enoxaparin alone, enoxaparin/aspirin combined, and aspirin 
+alone.179 [Evidence level 2– ]
+Owing to the lack of data, thromboprophylaxis could be 
+considered for women with Factor V Leiden, protein S de -
+ficiency and prothrombin G20210GA mutation, when there 
+are risk factors for thrombosis (as per Green- top Guideline 
+No. 37a Reducing the Risk of Venous Thromboembolism 
+during Pregnancy and the Puerperium ) and/or a history of 
+second trimester miscarriage, particularly with evidence of 
+placental thrombotic lesions.180,181 Data of diagnosis and in -
+tervention should be collected for auditing or research pur -
+poses. [Evidence level 3]
+7.3 | Genetic factors
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Options for couples 
+with chromosomal 
+rearrangements 
+include attempting 
+a further natural 
+conception, PGT- SR 
+or gamete donation.2– C Live birth rates are 
+similar following 
+natural conception 
+and PGD, and 
+therefore PGD 
+should not be 
+routinely offered 
+in this situation.
+There are currently 
+insufficient data 
+to support the 
+routine use of 
+PGT- A for couples 
+with unexplained 
+recurrent miscarriage, 
+while the treatment 
+may carry a 
+significant cost and 
+potential risk.2– C Observational 
+studies have not 
+demonstrated 
+improved 
+outcomes to date, 
+both in terms of 
+live birth rate and 
+time to pregnancy 
+interval. RCTs are 
+urgently required.
+Reproductive options in couples with chromosomal re-
+arrangements includes proceeding to a further natural preg-
+nancy, undergoing assisted reproductive treatment with preimplantation genetic testing for structural rearrange-
+ments (PGT- SR), formerly known as pre- implantation ge-
+netic diagnosis (PGD), or gamete donation.
+Assisted reproduction (IVF/ICSI) combined with 
+PGT- SR is gaining increased interest, with the aims of 
+selecting embryos not affected by parental chromosomal 
+rearrangement and proceeding with embryo transfer. A 
+case– control trial involving 89 couples who underwent ge -
+netic counselling (of which 52 elected to attempt natural 
+conception and 37 chose to undergo IVF/ICSI and PGD) 
+demonstrated similar cumulative live birth rates (67.6% 
+and 65.4%, respectively) between the two groups. The time 
+to pregnancy was similar in both groups, however they re -
+ported a reduction in miscarriage rates with PGD and of 
+course a significant financial burden of US$7956 per pa -
+tient.182 [Evidence level 2– ]
+A systematic review of non- RCTs reported similar live 
+birth rates, time to conception rates and even miscarriage 
+rates between natural conception and PGT- SR groups.183 
+[Evidence level 2– ]
+Preimplantation genetic testing for aneuploidy (PGT- 
+A), formerly known as preimplantation genetic screening 
+(PGS), in conjunction with IVF/ICSI has also been ad-
+vocated as a treatment option for women with recurrent 
+unexplained miscarriage. Similar to the case of PGT- SR 
+for parental chromosomal rearrangements, the rationale 
+is that the identification and transfer of what are thought 
+to be genetically normal embryos will lead to an increased 
+likelihood of live birth.
+A systematic review of non- RCTs found the live birth 
+rates to be similar between expectant management groups 
+and PGT- A groups, with a trend for lower miscarriage rates 
+in the latter. However, it is worth noting that all studies per -
+formed embryo biopsy on day 3 of development.184 [Evidence 
+level 2– ]
+An intention to treat retrospective analysis involving 
+112 couples choosing PGT- A and 188 couples choosing 
+expectant management found the pregnancy rate, miscar -
+riage rate and live birth rate to be similar between the two 
+groups. The median time to pregnancy was 6.5 months in 
+the PGT- A group and 3.0 months in the expectant man -
+agement group. Although the study is limited by its retro -
+spective non- randomised nature, the embryo biopsies were 
+performed on day 5 of development, which better reflects 
+routine practice today.185 [Evidence level 2– ]
+Overall, at present, couples should be informed of the 
+risk and significant cost of undergoing PGT- SR and PGT- 
+A, as well as the lack of evidence regarding any improve -
+ment in reproductive outcomes; for the latest updates 
+couples can visit the HFEA website ( www.hfea.gov.uk ).
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e24 | 
+GREEN- TOP GUIDELINE NO. 17
+7.4 | Anatomical factors
+7.4.1 | Congenital uterine anomalies
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Resection of a 
+uterine septum 
+should be 
+considered for 
+women with 
+recurrent first or 
+second trimester 
+miscarriage, 
+ideally within 
+an appropriate 
+audit or research 
+context.2+ C While there is 
+a lack of RCTs 
+dedicated to women 
+with recurrent 
+miscarriage, 
+meta- analyses 
+of observational 
+studies have 
+indicated that this 
+treatment confers a 
+significant benefit.
+There are no published RCTs assessing the effectiveness 
+and possible complications of hysteroscopic septum resec -
+tion dedicated to women and people with recurrent miscar -
+riage. There is, however, one RCT examining the effect of 
+septum resection in women with a history of subfertility, 
+pregnancy loss or preterm birth. It is worth noting that the 
+initial ethical approval only included women with recurrent 
+pregnancy loss (defined in the study as two or more mis -
+carriages) but during the course of the trial, the eligibility 
+criteria were extended to include women with a history of 
+subfertility, one pregnancy loss or preterm birth. The trial 
+found that hysteroscopic septum resection did not im -
+prove the reproductive outcomes of women with a septate 
+uterus.186
+Although this is the first RCT of its kind in the world, 
+which deserves significant praise, a number of limitations 
+have been highlighted. These include the broad inclusion 
+criteria and the low number of subjects recruited (n = 80), 
+despite the long duration of the trial (almost 8 years) and 
+multiple participating sites (10 centres).187 This may reflect 
+the difficulty in recruiting patients to such a trial, as the only 
+other RCT attempting to address this topic was stopped pre -
+maturely because of poor recruitment after recruiting only 
+six patients (ISRCTN2896).188
+When looking at systematic reviews and meta- analyses of 
+observational studies, the latest publication in 2023, includ -
+ing 27 studies and 1506 patients, showed that hysteroscopic 
+septum resection was associated with an increased live birth 
+rate (RR 1.77, 95% Cl 1.26– 2.49), reduced miscarriage rate 
+(RR 0.36, 95% Cl 0.20– 0.66) and reduced preterm birth rate 
+(RR 0.15, 95% Cl 0.04– 0.53).189 [Evidence level 2+]
+It is clear that further prospective RCTs are required to 
+clarify the role of hysteroscopic resection in women with re -
+current miscarriage. This is complicated not only by the po -
+tentially difficulty of recruiting patients, but also by the fact 
+that the degree of fundal indentation that actually consti -
+tutes a septum remains to be determined. Therefore, for the 
+time being, centres performing uterine septum resections are encouraged to do so within an appropriate audit or research 
+context.
+7.4.2 | Acquired uterine anomalies
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+There is a lack of 
+evidence to guide 
+the management 
+of acquired uterine 
+anomalies associated 
+with recurrent 
+miscarriage; 
+counselling and the 
+choice of expectant 
+versus surgical 
+options ought to be 
+individualised.3 D There is a 
+lack of studies 
+examining relevant 
+interventions.
+There is limited evidence regarding both the association 
+and treatment of acquired uterine anomalies in women and 
+people with recurrent miscarriage. Data from one retrospec -
+tive analysis in a recurrent miscarriage population with no 
+control group suggests a potential benefit from the resection 
+of submucosal myomas.70 [Evidence level 3]
+However, extrapolated data from the Cochrane review 
+of women undergoing hysteroscopic myomectomy prior to 
+assisted reproduction did not find a significant reduction 
+in miscarriage rates compared with expectant management 
+(OR 1.54, 95% CI 0.47– 5.00; P = 0.47, 94 women; very low- 
+quality evidence).190 [Evidence level 3]
+It is therefore clear that more prospective studies are ur -
+gently required.
+7.4.3 | Cervical integrity
+The treatment of suspected cervical insufficiency is covered 
+in the NICE guideline [NG25] Preterm labour and birth .191
+7.5 | Endocrine factors
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Thyroxine 
+supplementation is not 
+routinely recommended 
+for euthyroid women 
+with TPO who have a 
+history of miscarriage.1– A The ‘TABLET’ study, in 
+which euthyroid women 
+with TPO and a history 
+of miscarriage were 
+randomised to thyroxine 
+or placebo, found no 
+difference in live birth 
+outcome. There were 
+insufficient data to 
+perform a subgroup 
+analysis for women with 
+recurrent miscarriage 
+but the ongoing ‘T4- 
+Life’ study (RCT) will 
+examine this group.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e25 
+RECURRENT MISCARRIAGE
+Thyroxine 
+supplementation may 
+be considered for 
+women with moderate 
+SCH (TSH more than 
+4 mIU/l) but is not 
+routinely recommended 
+for women with mild 
+SCH (TSH more than 
+2.5 mIU/l) irrespective 
+of TPO status.2+ B Based on the review 
+of cohort studies and 
+conclusion reached by 
+the RCOG Scientific 
+Impact Paper.
+Regular TSH 
+measurement from 7– 9 
+weeks of gestation is 
+recommended in cases 
+with TPO and/or SCH.4 D Based on the review 
+of cohort studies and 
+conclusion reached by 
+the RCOG Scientific 
+Impact Paper No. 70.
+Progestogen 
+supplementation 
+should be considered in 
+women with recurrent 
+miscarriage who present 
+with bleeding in early 
+pregnancy (for example 
+400 mg micronised 
+vaginal progesterone 
+twice daily at the time of 
+bleeding until 16 weeks 
+of gestation).1– B The PRISM trial 
+reported no significant 
+differences in live 
+births in women 
+presenting with 
+bleeding in early 
+pregnancy and 
+receiving progesterone 
+supplementation; 
+however, in the 
+subgroup analysis 
+of women with 
+recurrent miscarriage, 
+a significant 
+improvement in 
+live birth rate was 
+observed.
+Routine 
+supplementation should 
+be used with caution in 
+asymptomatic women 
+with unexplained 
+recurrent miscarriage.1– B Meta- analyses 
+have reported a 
+possible benefit 
+from progestogen 
+supplementation. 
+However, there is a 
+lack of consistently 
+demonstrable benefit 
+when used routinely 
+in women with 
+unexplained recurrent 
+miscarriage, and there 
+remains uncertainty 
+about the optimal 
+specific drug, route, 
+timing and dose. The 
+PROMISE trial, the 
+largest multicentre 
+RCT to date, which was 
+adequately powered 
+and with a very low risk 
+of bias, showed that 
+routine progesterone 
+supplementation 
+did not improve the 
+outcome.
+The TABLET study, which was a double- blind, 
+placebo- controlled trial comparing live birth rates among 
+euthyroid women with TPO antibodies and a history of 
+miscarriage, treated with levothyroxine versus placebo, 
+found no difference between the two groups, including 
+subgroup analysis of women with recurrent miscarriage. 
+However, there were insufficient data to perform a sub -
+group analysis of women with recurrent miscarriage, 
+TPO antibodies and SCH.192 However, the T4- LIFE study will hopefully shed some light on this exact question.193 
+[Evidence level 1– ]
+In the context of SCH, for women at high risk (including 
+women with previous miscarriages), the American Thyroid 
+Association give a strong recommendation for thyroxine 
+use with a TSH more than 4 mIU/l and autoimmunity, a 
+weak recommendation for thyroxine with a TSH more than 
+2.5 mIU/l and autoimmunity and a weak recommendation 
+for thyroxine in cases of TSH more than 4 mIU/l without 
+autoimmunity.150,151 This is consistent with findings of a 
+meta- analysis.76 [Evidence level 2++]
+However, in terms of studies in the recurrent miscar -
+riage population, the cohort study of Bernardi et al. (2013) 
+in women with two or more miscarriages, found no statis -
+tically significant difference in the subsequent live birth 
+rate when comparing women with SCH versus euthyroid 
+women, or treated and untreated women with SCH.85 
+Another observational trial has shown miscarriage rates 
+to be similar in hypothyroid women receiving thyroxine 
+and euthyroid women with TPO antibodies receiving thy -
+roxine.194 [Evidence level 2– ]
+On assessing the data available to date, RCOG 
+Scientific Impact Paper No. 70 Subclinical hypothyroid-
+ism and antithyroid autoantibodies in women with subfer -
+tility or recurrent pregnancy loss concluded that there is 
+low quality evidence for treatment of women with mod -
+erate SCH (TSH more than 4.0 mIU/l), but insufficient 
+evidence to support treatment in mild SCH (TSH more 
+than 2.5 mIU/l). They also recommended TSH measure -
+ment at 7– 9 weeks of gestation and subsequent regular 
+thyroid functions tests until 34 weeks of gestation. In 
+cases of TPO euthyroid antibody status, they advise TSH 
+measurement at 7– 9 weeks of gestation and in each sub -
+sequent trimester because of the risk of progression to 
+hypothyroidism.149
+It should be mentioned that occult endocrinological 
+anomalies (clinical hypothyroidism, thyrotoxicosis, diabe -
+tes, hyperprolactinaemia) should be treated in women with 
+recurrent miscarriage as they would be treated preconcep -
+tionally for any woman or person. [Evidence level 4]
+A systematic review and meta- analysis of ten RCTs of 
+women with unexplained recurrent miscarriage receiving 
+progesterone versus placebo or no treatment showed a lower 
+risk of miscarriage (RR 0.72, 95% CI 0.53– 0.97) and higher 
+live birth rate (RR 1.07, 95% CI 1.02– 1.15) respectively. No 
+statistically significant differences were found in the other 
+secondary outcomes, including preterm birth (RR 1.09, 95% 
+CI 0.71– 1.66), neonatal mortality (RR 1.80, 95% CI 0.44– 
+7.34), and fetal genital anomalies (RR 1.68, 95% CI 0.22– 
+12.62).195 [Evidence level 1+]
+A meta- analysis of the Cochrane collaboration in 2018 re -
+ported a reduction in the number of miscarriages for women 
+given progestogen supplementation compared with placebo/
+controls (RR 0.69, 95% CI 0.51– 0.92, 11 trials, 2359 women, 
+moderate- quality evidence), with subgroup analysis showing 
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e26 | 
+GREEN- TOP GUIDELINE NO. 17
+a significantly more pronounced effect in women with three 
+or more versus two or more prior miscarriages.196 However, 
+this analysis was updated the following year after the 2017 
+RCT by Ismail et al. became the subject of an investigation by 
+the Journal of Maternal- Fetal & Neonatal Medicine and was 
+eventually retracted because of concerns raised regarding 
+the accuracy and reliability of the study data.197 The updated 
+meta- analysis concluded that there may still be a reduction 
+in the number of miscarriages for women given progestogen 
+supplementation compared with placebo/controls (RR 0.73, 
+95% CI 0.54– 1.00, ten trials, 1684 women, moderate- quality 
+evidence), while it is worth noting that on this occasion the 
+95% CI approached 1.00. A subgroup analysis on this occa -
+sion did not show significant differences between women 
+with three or more versus two or more prior miscarriages.198 
+[Evidence level 1+]
+Caution should be exercised when interpreting the re -
+sults of these meta- analyses due to differences in the RCTs 
+included in the analyses.199,200 For example, in the trial by 
+Kumar et al. women were recruited at a mean gestational 
+age of approximately 6.5 weeks and randomised after the 
+confirmation of a live pregnancy with fetal heart activity to 
+receive either oral dydrogesterone or placebo. Consequently, 
+in their healthy control group a miscarriage rate of only 3.5% 
+was observed, reflecting a potential selection bias.200 In the 
+PROMISE trial, 400 mg micronised vaginal progesterone 
+twice daily was commenced as soon as there was a positive 
+pregnancy test until 12 weeks of gestation.201 Significant dif -
+ferences were observed in the former trial but not in the lat -
+ter trial. [Evidence level 1+]
+An RCT focusing on women with threatened miscar -
+riage, the PRISM trial, compared the use of 400 mg mi -
+cronised vaginal progesterone twice daily versus placebo 
+at the time of bleeding until 16 weeks of gestation. The 
+authors reported no significant differences in live births 
+at more than 34 weeks (relative rate, 1.03, 95% CI 1.00– 
+1.07; P = 0.08). However, on subgroup analysis of women 
+with recurrent miscarriage, a significant improvement in 
+live birth rate was observed (71.5% versus 57.4%; relative 
+rate, 1.28, 95% CI 1.08– 1.51; P = 0.007).202 [Evidence level 
+1– ]
+A review and critical evaluation of the PROMISE and 
+PRISM trials concluded that women with a history of mis -
+carriage who present with bleeding in early pregnancy may 
+benefit from the use of progesterone.19 [Evidence level 1– ]
+However, it is not yet clear which formulations, routes 
+and timings of administration of progesterone may con -
+fer the most positive outcomes, and whether these fac -
+tors may have an effect on the outcome of asymptomatic 
+women and people with unexplained recurrent miscar -
+riage. Future trials should aim to address these questions 
+and control for aneuploid pregnancy losses were possible, 
+as these miscarriages cannot be avoided with progesterone 
+supplementation.7.6 | Immune factors
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Immunotherapy 
+(e.g. paternal cell 
+immunisation, 
+third- party 
+donor leucocytes, 
+trophoblast 
+membranes and 
+intravenous 
+immunoglobulin 
+[IVIg]) is not 
+recommended for 
+women with recurrent 
+miscarriage.1++ B Meta- analyses 
+have shown 
+no significant 
+benefit of 
+treatment.
+A Cochrane systematic review and meta- analysis has 
+shown that the use of various forms of immunotherapy, in -
+cluding paternal cell immunisation, third- party donor leu -
+cocytes, trophoblast membranes and IVIg, in women with 
+unexplained recurrent miscarriage provides no significant 
+beneficial effect over placebo in preventing further miscar -
+riage.203 Moreover, immunotherapy is expensive and has 
+potentially serious adverse effects including transfusion 
+reaction, anaphylactic shock and hepatitis. The use of im -
+munotherapy should no longer be offered to women with 
+unexplained recurrent miscarriage. [Evidence level 1++]
+There are no published data on the use of anti- tumour 
+necrosis factor (TNF) agents to improve pregnancy outcome in 
+women with recurrent miscarriage. Further, anti- TNF agents 
+could potentially cause serious morbidity including lym -
+phoma, granulomatous disease such as tuberculosis, demyelin -
+ating disease, congestive heart failure and syndromes similar to 
+systemic lupus erythematosus.204
+Immune treatments should not be offered routinely to 
+women with recurrent miscarriage outside formal research 
+studies.
+7.7 | Male factors
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+There is no 
+evidence to 
+recommend 
+treatments for 
+male factors.3 D There is a 
+lack of studies 
+examining relevant 
+interventions.
+To date, there is a paucity of studies available evaluat -
+ing interventions that may improve the outcome of couples 
+with recurrent miscarriage, in particular through reduc -
+ing sperm DNA fragmentation, which has been implicated 
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e27 
+RECURRENT MISCARRIAGE
+in miscarriage. Such interventions could include lifestyle 
+modifications (i.e. smoking cessation, weight loss/exercise, 
+reduction in pollutant exposure), treatment of infections, 
+control of diabetes, treatment of varicocele, antioxidant 
+therapy, sperm selection and others.132 [Evidence level 3]
+7.8 | Unexplained recurrent miscarriage
+7.8.1 | Endometrial scratch
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Endometrial 
+scratch is not 
+recommended 
+in women 
+with recurrent 
+miscarriage.2++ C There are no studies 
+available for women 
+with recurrent 
+miscarriage but no 
+benefit in miscarriage 
+reduction has been 
+shown within the 
+infertility context.
+Endometrial scratch or injury has been researched exten -
+sively in the context of IVF/ICSI with a suggestion that it may 
+improve the clinical pregnancy rates, although to date RCTs 
+and meta- analyses in this patient group have failed to show a 
+reduction in miscarriage rates.205,206 [Evidence level 2++]
+A Cochrane review assessing women undergoing endome -
+trial scratch/injury prior to intrauterine insemination or sexual 
+intercourse found no evidence of a difference in miscarriage 
+rate per clinical pregnancy (RR 0.73, 95% CI 0.38– 1.39; six 
+RCTs, 174 participants; I2 statistic = 0%;).207 [Evidence level 2++]
+There is no evidence regarding women with recurrent 
+miscarriage and therefore by extrapolation of the data above 
+endometrial scratch should not be recommended for women 
+and people with unexplained recurrent miscarriage.
+7.8.2 | Psychological support
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Women with 
+unexplained 
+recurrent 
+miscarriage should 
+be offered supportive 
+care, ideally in 
+the setting of a 
+dedicated recurrent 
+miscarriage clinic.2+ C Several 
+observational 
+studies have 
+suggested a 
+beneficial effect 
+in pregnancy 
+outcomes.
+A significant proportion of cases of recurrent miscarriage 
+remain unexplained, despite detailed investigation. These 
+women and their partners can be reassured that the prognosis 
+for a successful future pregnancy with supportive care alone is 
+in the region of 75%.20,21 However, the prognosis worsens with increasing maternal age and the number of previous miscar -
+riages. The value of psychological support in improving preg -
+nancy outcome has not been tested in the form of an RCT. 
+However, data from several non- randomised studies have sug -
+gested that attendance at a dedicated early pregnancy clinic has a 
+beneficial effect,20,21,208,209 although it has been recognised that 
+a significant proportion of women with unexplained recurrent 
+miscarriage may be healthy women with repeated sporadic mis -
+carriages and no persisting pathology.2,7 [Evidence level 2+]
+Further research is required to develop appropriate 
+screening and management approaches for women and 
+couples with mental health illness, as an association of mis -
+carriage with anxiety, depression, post- traumatic stress dis -
+order, and suicide has been shown.11
+8 | MANAGEMENT OF 
+SUBSEQUENT MISCARRIAGES
+Recommendation Evidence 
+qualityStrength Rationale for the 
+recommendation
+Provisions should 
+be made for women 
+and people to 
+receive appropriate 
+supportive care 
+in terms of 
+communication 
+with healthcare 
+professionals, 
+ultrasound 
+examinations and 
+access to services in 
+case of subsequent 
+miscarriage(s).3 D It will enable 
+appropriate 
+psychological 
+support, prompt 
+diagnosis and 
+may facilitate the 
+investigation of 
+the miscarriage, 
+which may help 
+with counselling 
+and future 
+management.
+A proportion of women will experience further miscar -
+riage(s) following referral. Provisions should be made to 
+allow them to contact or access services,210 particularly if 
+there have been plans in place regarding the management of 
+possible future miscarriage, such as collection of pregnancy 
+tissue for cytogenetic analyses. This can be organised for 
+spontaneously miscarried pregnancies or those undergoing 
+manual vacuum aspiration or surgical management of mis -
+carriage. [Evidence level 4]
+A questionnaire study in women with recurrent miscar -
+riage reported that women preferred the following support -
+ive care options for their next pregnancy:
+• A plan with one doctor who shows understanding, takes 
+them seriously, has knowledge of their obstetric history, 
+listens to them, gives information about recurrent miscar -
+riage, shows empathy, informs on progress and enquires 
+about emotional needs.
+• An ultrasound examination during symptoms, directly 
+after a positive pregnancy test and every 2 weeks.
+• If a miscarriage occurred, most women would prefer to 
+talk to a medical or psychological professional afterwards.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e28 | 
+GREEN- TOP GUIDELINE NO. 17
+• The majority of women expressed a low preference for ad -
+mission to a hospital ward at the same gestational age as 
+previous miscarriages and a low preference for bereave -
+ment therapy.
+Ethnicity, parity and pregnancy at the time of the survey 
+were associated with different preferences, but female age, 
+education level and time passed since the last miscarriage 
+were not.211
+9 | RECOMMENDATIONS FOR 
+FUTURE RESEARCH
+• Establishing the causes for increased incidence of miscar -
+riage in women of a Black ethnic background and devel -
+opment of appropriate management strategies.
+• Value of genetic testing of the pregnancy tissue after two 
+versus three miscarriages.
+• Prognostic value of genital tract microbiome and associ -
+ated antibiotic therapy on clinical outcomes.
+• Association and treatment of anti- beta- 2- glycoprotein- 1 
+antibodies in recurrent miscarriage.
+• Impact of inherited thrombophilia and its treatment on 
+clinical outcomes.
+• Impact of resection versus expectant management of uter -
+ine septum on clinical outcomes.
+• Impact of acquired uterine anomalies and their treatment 
+on clinical outcome.
+• Impact of TPO antibodies and treatment with levothyrox -
+ine on clinical outcomes.
+• Impact of different formulations, routes and timings of 
+administration of progesterone on clinical outcomes.
+• Comparison of different techniques for collecting preg -
+nancy tissue.
+• Comparison of different techniques for analysing preg -
+nancy tissue.
+• Prognostic value of sperm DNA fragmentation and im -
+pact of treatment interventions on clinical outcome.
+• Impact of PGT- SR in couples with chromosomal rear -
+rangements on clinical outcome.
+• Impact of PGT- A in couples with chromosomal rear -
+rangements on clinical outcome.
+• Development of screening and management approaches 
+for women with mental health illness after recurrent 
+miscarriage.
+10 | AUDITABLE TOPICS
+• Percentage of women and people completing the recom-
+mended investigations (100%).
+• Percentage of women and people with successful cytoge -
+netic analysis of pregnancy tissue when attempted (more 
+than 90%).• Percentage of women and people with pregnancy outcome 
+recorded (100%).
+11 | USEFUL LINKS AND 
+SUPPORT GROUPS
+• Miscarriage Association: 
+ https://www.misca rriag easso ciati on.org.uk/
+• Tommy's: https://www.tommys.org/
+CONFLICT OF INTEREST
+LR reports royalties from a book publication. SS has declared 
+no conflicts of interest. RR has declared no conflicts of in -
+terest. TCL has declared no conflicts of interest. Full disclo -
+sures of interest for the developers, Guidelines Committee 
+and peer reviewers are available to view online as supporting 
+information.
+FUNDING INFORMATION
+All those involved in the development of the Green- 
+top Guidelines, including the Guidelines Committee, 
+Guidelines Committee co- chairs, guideline developers, 
+peer reviewers and other reviewers, are unpaid volunteers 
+and receive no direct funding for their work in producing 
+the guideline. The exception to this are the RCOG staff 
+involved who are salaried employees of the College and 
+Guidelines Committee members who receive reimburse -
+ment for expenses for attending Guidelines Committee 
+meetings. Please see more information on travel expense 
+rules on the RCOG website.
+REFERENCES
+ 1. Greenwold N, Jauniaux E. Collection of villous tissue under ultra -
+sound guidance to improve the cytogenetic study of early pregnancy 
+failure. Hum Reprod. 2002;17(2):452– 6.
+ 2. Saravelos SH, Li TC. Unexplained recurrent miscarriage: how can 
+we explain it? Hum Reprod. 2012;27(7):1882– 6.
+ 3. Nybo Andersen AM, Wohlfahrt J, Christens P, Olsen J, Melbye M. 
+Maternal age and fetal loss: population based register linkage study. 
+BMJ. 2000;320(7251):1708– 12.
+ 4. Stirrat GM. Recurrent miscarriage. Lancet. 1990;336(8716):673– 5.
+ 5. Rai R, Regan L. Recurrent miscarriage. Lancet. 2006;368(9535): 
+601– 11.
+ 6. Wyatt PR, Owolabi T, Meier C, Huang T. Age- specific risk of fetal 
+loss observed in a second trimester serum screening population. 
+Am J Obstet Gynecol. 2005;192(1):240– 6.
+ 7. Saravelos SH, Regan L. Unexplained recurrent pregnancy loss. 
+Obstet Gynecol Clin North Am. 2014;41(1):157– 66.
+ 8. Kolte AM, Westergaard D, Lidegaard O, Brunak S, Nielsen HS. 
+Chance of live birth: a nationwide, registry- based cohort study. 
+Hum Reprod. 2021;36(4):1065– 73.
+ 9. Quenby S, Gallos ID, Dhillon- Smith RK, Podesek M, Stephenson 
+MD, Fisher J, et al. Miscarriage matters: the epidemiological, phys -
+ical, psychological, and economic costs of early pregnancy loss. 
+Lancet. 2021;397(10285):1658– 67.
+ 10. Coomarasamy A, Dhillon- Smith RK, Papadopoulou A, Al- Memar 
+M, Brewin J, Abrahams VM, et al. Recurrent miscarriage: evidence 
+to accelerate action. Lancet. 2021;397(10285):1675– 82.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e29 
+RECURRENT MISCARRIAGE
+ 11. Coomarasamy A, Gallos ID, Papadopoulou A, Dhillon- Smith RK, 
+Al- Memar M, Brewin J, et al. Sporadic miscarriage: evidence to pro -
+vide effective care. Lancet. 2021;397(10285):1668– 74.
+ 12. Lancet Editorial. Miscarriage: worldwide reform of care is needed. 
+Lancet. 2021;397(10285):1597:1597.
+ 13. Definitions of infertility and recurrent pregnancy loss. a committee 
+opinion. Fertil Steril. 2020;113(3):533– 5.
+ 14. ASRM. Evaluation and treatment of recurrent pregnancy loss: a 
+committee opinion. Fertil Steril. 2012;98(5):1103– 11.
+ 15. Bender Atik R, Christiansen OB, Elson J, Kolte AM, Lewis S, 
+Middeldorp S; ESHRE Guideline Group on RPL. Hum Reprod 
+Open. 2018;2018(2):hoy004.
+ 16. van den Boogaard E, Cohn DM, Korevaar JC, Dawood F, Vissenberg R, 
+Middeldorp S, et al. Number and sequence of preceding miscarriages 
+and maternal age for the prediction of antiphospholipid syndrome in 
+women with recurrent miscarriage. Fertil Steril. 2013;99(1):188– 92.
+ 17. van den Boogaard E, Kaandorp SP, Franssen MT, Mol BW, Leschot 
+NJ, Wouters CH, et al. Consecutive or non- consecutive recurrent 
+miscarriage: is there any difference in carrier status? Hum Reprod. 
+2010;25(6):1411– 4.
+ 18. du Fossé NA, van der Hoorn MP, van Lith JMM, le Cessie S, Lashley 
+EELO. Advanced paternal age is associated with an increased risk 
+of spontaneous miscarriage: a systematic review and meta- analysis. 
+Hum Reprod Update. 2020;26(5):650– 69.
+ 19. Coomarasamy A, Devall AJ, Brosens JJ, Quenby S, Stephenson MD, 
+Sierra S, et al. Micronized vaginal progesterone to prevent miscar -
+riage: a critical evaluation of randomized evidence. Am J Obstet 
+Gynecol. 2020;223(2):167– 76.
+ 20. Brigham SA, Conlon C, Farquharson RG. A longitudinal study of 
+pregnancy outcome following idiopathic recurrent miscarriage. 
+Hum Reprod. 1999;14(11):2868– 71.
+ 21. Clifford K, Rai R, Regan L. Future pregnancy outcome in un -
+explained recurrent first trimester miscarriage. Hum Reprod. 
+1997;12(2):387– 9.
+ 22. Oliver- Williams CT, Steer PJ. Racial variation in the number of spon-
+taneous abortions before a first successful pregnancy, and effects on 
+subsequent pregnancies. Int J Gynaecol Obstet. 2015;129(3):207– 12.
+ 23. Gowri V, Udayakumar AM, Bsiso W, Al Farsi Y, Rao K. Recurrent 
+early pregnancy loss and consanguinity in Omani couples. Acta 
+Obstet Gynecol Scand. 2011;90(10):1167– 9.
+ 24. Saad FA, Jauniaux E. Recurrent early pregnancy loss and consan -
+guinity. Reprod Biomed Online. 2002;5(2):167– 70.
+ 25. Nielsen A, Hannibal CG, Lindekilde BE, Tolstrup J, Frederiksen K, 
+Munk C, et al. Maternal smoking predicts the risk of spontaneous 
+abortion. Acta Obstet Gynecol Scand. 2006;85(9):1057– 65.
+ 26. Kesmodel U, Wisborg K, Olsen SF, Henriksen TB, Secher NJ. 
+Moderate alcohol intake in pregnancy and the risk of spontaneous 
+abortion. Alcohol Alcohol. 2002;37(1):87– 92.
+ 27. Chen LW, Wu Y, Neelakantan N, Chong MF, Pan A, van Dam RM. 
+Maternal caffeine intake during pregnancy and risk of pregnancy 
+loss: a categorical and dose- response meta- analysis of prospective 
+studies. Public Health Nutr. 2016;19(7):1233– 44.
+ 28. Lashen H, Fear K, Sturdee DW. Obesity is associated with increased 
+risk of first trimester and recurrent miscarriage: matched case- 
+control study. Hum Reprod. 2004;19(7):1644– 6.
+ 29. Metwally M, Ledger WL, Li TC. Does high body mass index increase 
+the risk of miscarriage after spontaneous and assisted conception? 
+A meta- analysis of the evidence. Fertil Steril. 2008;90(3):714– 26.
+ 30. Metwally M, Saravelos SH, Ledger WL, Li TC. Body mass index 
+and risk of miscarriage in women with recurrent miscarriage. Fertil 
+Steril. 2010;94(1):290– 5.
+ 31. Ng KYB, Cherian G, Kermack AJ, Bailey S, Macklon N, Sunkara SK, 
+et al. Systematic review and meta- analysis of female lifestyle factors 
+and risk of recurrent pregnancy loss. Sci Rep. 2021;11(1):7081.
+ 32. Gaskins AJ, Hart JE, Chavarro JE, Missmer SA, Rich- Edwards 
+JW, Laden F, et al. Air pollution exposure and risk of sponta -
+neous abortion in the Nurses' Health Study II. Hum Reprod. 
+2019;34(9):1809– 17. 33. Al- Kunani AS, Knight R, Haswell SJ, Thompson JW, Lindow SW. 
+The selenium status of women with a history of recurrent miscar -
+riage. BJOG. 2001;108(10):1094– 7.
+ 34. Thomas VV, Knight R, Haswell SJ, Lindow SW, van der Spuy ZM. 
+Maternal hair selenium levels as a possible long- term nutritional 
+indicator of recurrent pregnancy loss. BMC Womens Health. 
+2013;13:40.
+ 35. Ota K, Dambaeva S, Han AR, Beaman K, Gilman- Sachs A, Kwak- 
+Kim J. Vitamin D deficiency may be a risk factor for recurrent preg -
+nancy losses by increasing cellular immunity and autoimmunity. 
+Hum Reprod. 2014;29(2):208– 19.
+ 36. Creus M, Deulofeu R, Penarrubia J, Carmona F, Balasch J. Plasma 
+homocysteine and vitamin B12 serum levels, red blood cell folate 
+concentrations, C677T methylenetetrahydrofolate reductase gene 
+mutation and risk of recurrent miscarriage: a case- control study in 
+Spain. Clin Chem Lab Med. 2013;51(3):693– 9.
+ 37. Wilson WA, Gharavi AE, Koike T, Lockshin MD, Branch DW, Piette 
+JC, et al. International consensus statement on preliminary classifi -
+cation criteria for definite antiphospholipid syndrome: report of an 
+international workshop. Arthritis Rheum. 1999;42(7):1309– 11.
+ 38. Miyakis S, Lockshin MD, Atsumi T, Branch DW, Brey RL, Cervera 
+R, et al. International consensus statement on an update of the clas -
+sification criteria for definite antiphospholipid syndrome (APS). J 
+Thromb Haemost. 2006;4(2):295– 306.
+ 39. Opatrny L, David M, Kahn SR, Shrier I, Rey E. Association be -
+tween antiphospholipid antibodies and recurrent fetal loss in 
+women without autoimmune disease: a metaanalysis. J Rheumatol. 
+2006;33(11):2214– 21.
+ 40. Tebo AE, Jaskowski TD, Hill HR, Branch DW. Clinical relevance 
+of multiple antibody specificity testing in anti- phospholipid 
+syndrome and recurrent pregnancy loss. Clin Exp Immunol. 
+2008;154(3):332– 8.
+ 41. Rey E, Kahn SR, David M, Shrier I. Thrombophilic disorders and 
+fetal loss: a meta- analysis. Lancet. 2003;361(9361):901– 8.
+ 42. Gao H, Tao FB. Prothrombin G20210A mutation is associated with 
+recurrent pregnancy loss: a systematic review and meta- analysis up -
+date. Thromb Res. 2015;135(2):339– 46.
+ 43. Bradley LA, Palomaki GE, Bienstock J, Varga E, Scott JA. Can 
+Factor V Leiden and prothrombin G20210A testing in women 
+with recurrent pregnancy loss result in improved pregnancy out -
+comes?: Results from a targeted evidence- based review. Genet Med. 
+2012;14(1):39– 50.
+ 44. Preston FE, Rosendaal FR, Walker ID, Briet E, Berntorp E, Conard 
+J, et al. Increased fetal loss in women with heritable thrombophilia. 
+Lancet. 1996;348(9032):913– 6.
+ 45. Alfirevic Z, Roberts D, Martlew V. How strong is the association 
+between maternal thrombophilia and adverse pregnancy out -
+come? A systematic review. Eur J Obstet Gynecol Reprod Biol. 
+2002;101(1):6– 14.
+ 46. Chen H, Yang X, Lu M. Methylenetetrahydrofolate reductase gene 
+polymorphisms and recurrent pregnancy loss in China: a systematic 
+review and meta- analysis. Arch Gynecol Obstet. 2016;293(2):283– 90.
+ 47. Hickey SE, Curry CJ, Toriello HV. ACMG Practice Guideline: 
+lack of evidence for MTHFR polymorphism testing. Genet Med. 
+2013;15(2):153– 6.
+ 48. De Braekeleer M, Dao TN. Cytogenetic studies in couples experi -
+encing repeated pregnancy losses. Hum Reprod. 1990;5(5):519– 28.
+ 49. Franssen MT, Korevaar JC, van der Veen F, Leschot NJ, Bossuyt 
+PM, Goddijn M. Reproductive outcome after chromosome analysis 
+in couples with two or more miscarriages: index [corrected]- control 
+study. BMJ. 2006;332(7544):759– 63.
+ 50. Barber JC, Cockwell AE, Grant E, Williams S, Dunn R, Ogilvie CM. 
+Is karyotyping couples experiencing recurrent miscarriage worth 
+the cost? BJOG. 2010;117(7):885– 8.
+ 51. Flynn H, Yan J, Saravelos SH, Li TC. Comparison of reproductive 
+outcome, including the pattern of loss, between couples with chro -
+mosomal abnormalities and those with unexplained repeated mis -
+carriages. J Obstet Gynaecol Res. 2014;40(1):109– 16.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e30 | 
+GREEN- TOP GUIDELINE NO. 17
+ 52. Zhu X, Li J, Zhu Y, Wang W, Wu X, Yang Y, et al. Application of 
+chromosomal microarray analysis in products of miscarriage. Mol 
+Cytogenet. 2018;11:44.
+ 53. Zhang T, Sun Y, Chen Z, Li T. Traditional and molecular chromo -
+somal abnormality analysis of products of conception in sponta -
+neous and recurrent miscarriage. BJOG. 2018;125(4):414– 20.
+ 54. van den Berg MM, van Maarle MC, van Wely M, Goddijn M. 
+Genetics of early miscarriage. Biochim Biophys Acta. 2012; 
+1822(12):1951– 9.
+ 55. Levy B, Sigurjonsson S, Pettersen B, Maisenbacher MK, Hall MP, 
+Demko Z, et al. Genomic imbalance in products of conception: 
+single- nucleotide polymorphism chromosomal microarray analy -
+sis. Obstet Gynecol. 2014;124(2 Pt 1):202– 9.
+ 56. Philipp T, Philipp K, Reiner A, Beer F, Kalousek DK. Embryoscopic 
+and cytogenetic analysis of 233 missed abortions: factors involved 
+in the pathogenesis of developmental defects of early failed preg -
+nancies. Hum Reprod. 2003;18(8):1724– 32.
+ 57. Ogasawara M, Aoki K, Okada S, Suzumori K. Embryonic karyotype 
+of abortuses in relation to the number of previous miscarriages. 
+Fertil Steril. 2000;73(2):300– 4.
+ 58. Carp H, Toder V, Aviram A, Daniely M, Mashiach S, Barkai G. 
+Karyotype of the abortus in recurrent miscarriage. Fertil Steril. 
+2001;75(4):678– 82.
+ 59. Suzumori N, Sugiura- Ogasawara M. Genetic Factors as a Cause of 
+Miscarriage. Curr Med Chem. 2010;17(29):3431– 7.
+ 60. Saravelos SH, Cocksedge KA, Li TC. Prevalence and diagnosis of 
+congenital uterine anomalies in women with reproductive failure: a 
+critical appraisal. Hum Reprod Update. 2008;14(5):415– 29.
+ 61. Chan YY, Jayaprakasan K, Zamora J, Thornton JG, Raine- Fenning 
+N, Coomarasamy A. The prevalence of congenital uterine anom -
+alies in unselected and high- risk populations: a systematic review. 
+Hum Reprod Update. 2011;17(6):761– 71.
+ 62. Venetis CA, Papadopoulos SP, Campo R, Gordts S, Tarlatzis BC, 
+Grimbizis GF. Clinical implications of congenital uterine anoma -
+lies: a meta- analysis of comparative studies. Reprod Biomed Online. 
+2014;29(6):665– 83.
+ 63. Prior M, Richardson A, Asif S, Polanski L, Parris- Larkin M, 
+Chandler J, et al. Outcome of assisted reproduction in women with 
+congenital uterine anomalies: a prospective observational study. 
+Ultrasound Obstet Gynecol. 2018;51(1):110– 7.
+ 64. Grimbizis GF, Gordts S, Di Spiezio SA, Brucker S, De Angelis C, 
+Gergolet M, et al. The ESHRE/ESGE consensus on the classifica -
+tion of female genital tract congenital anomalies. Hum Reprod. 
+2013;28(8):2032– 44.
+ 65. Ludwin A, Martins WP, Nastri CO, Ludwin I, Coelho Neto MA, 
+Leitao VM, et al. Congenital Uterine Malformation by Experts 
+(CUME): better criteria for distinguishing between nor -
+mal/arcuate and septate uterus? Ultrasound Obstet Gynecol. 
+2018;51(1):101– 9.
+ 66. Pfeifer SM, Attaran M, Goldstein J, Lindheim SR, Petrozza JC, 
+Rackow BW, et al. ASRM mullerian anomalies classification 2021. 
+Fertil Steril. 2021;116(5):1238– 52.
+ 67. Sundermann AC, Velez Edwards DR, Bray MJ, Jones SH, Latham 
+SM, Hartmann KE. Leiomyomas in Pregnancy and Spontaneous 
+Abortion: A Systematic Review and Meta- analysis. Obstet Gynecol. 
+2017;130(5):1065– 72.
+ 68. Pritts EA, Parker WH, Olive DL. Fibroids and infertility: an updated 
+systematic review of the evidence. Fertil Steril. 2009;91(4):1215– 23.
+ 69. Hartmann KE, Velez Edwards DR, Savitz DA, Jonsson- Funk 
+ML, Wu P, Sundermann AC, et al. Prospective Cohort Study 
+of Uterine Fibroids and Miscarriage Risk. Am J Epidemiol. 
+2017;186(10):1140– 8.
+ 70. Saravelos SH, Yan J, Rehmani H, Li TC. The prevalence and impact of 
+fibroids and their treatment on the outcome of pregnancy in women 
+with recurrent miscarriage. Hum Reprod. 2011;26(12):3274– 9.
+ 71. de Azevedo JM, de Azevedo LM, Freitas F, Wender MC. Endometrial 
+polyps: when to resect? Arch Gynecol Obstet. 2016;293(3):639– 43. 72. Yu D, Wong YM, Cheong Y, Xia E, Li TC. Asherman syndrome- 
+- one century later. Fertil Steril. 2008;89(4):759– 79, Asherman 
+syndrome— one century later.
+ 73. Hooker AB, Lemmers M, Thurkow AL, Heymans MW, Opmeer 
+BC, Brolmann HA, et al. Systematic review and meta- analysis 
+of intrauterine adhesions after miscarriage: prevalence, risk fac-
+tors and long- term reproductive outcome. Hum Reprod Update. 
+2014;20(2):262– 78.
+ 74. Baradwan S, Shafi D, Baradwan A, Bashir MS, Al- Jaroudi D. The 
+effect of endometrial thickness on pregnancy outcome in patients 
+with Asherman's syndrome post- hysteroscopic adhesiolysis. Int J 
+Womens Health. 2018;10:77– 82.
+ 75. Sneider K, Christiansen OB, Sundtoft IB, Langhoff- Roos J. 
+Recurrence of second trimester miscarriage and extreme preterm 
+delivery at 16- 27 weeks of gestation with a focus on cervical insuf -
+ficiency and prophylactic cerclage. Acta Obstet Gynecol Scand. 
+2016;95(12):1383– 90.
+ 76. McNamee KM, Dawood F, Farquharson RG. Mid- trimester preg -
+nancy loss. Obstet Gynecol Clin North Am. 2014;41(1):87– 102.
+ 77. Vinturache AE, Gyamfi- Bannerman C, Hwang J, Mysorekar IU, 
+Jacobsson B. Maternal microbiome - A pathway to preterm birth. 
+Semin Fetal Neonatal Med. 2016;21(2):94– 9.
+ 78. Kyrgiou M, Athanasiou A, Paraskevaidi M, Mitra A, Kalliala I, 
+Martin- Hirsch P, et al. Adverse obstetric outcomes after local treat -
+ment for cervical preinvasive and early invasive disease according to 
+cone depth: systematic review and meta- analysis. BMJ. 2016;354:i3633.
+ 79. Gilner J, Biggio J. Management of Short Cervix during Pregnancy: 
+A Review. Am J Perinatol. 2016;33(3):245– 52.
+ 80. Hanson U, Persson B, Thunell S. Relationship between haemoglo -
+bin A1C in early type 1 (insulin- dependent) diabetic pregnancy and 
+the occurrence of spontaneous abortion and fetal malformation in 
+Sweden. Diabetologia. 1990;33(2):100– 4.
+ 81. Mills JL, Simpson JL, Driscoll SG, Jovanovic- Peterson L, Van Allen 
+M, Aarons JH, et al. Incidence of spontaneous abortion among nor -
+mal women and insulin- dependent diabetic women whose preg -
+nancies were identified within 21 days of conception. N Engl J Med. 
+1988;319(25):1617– 23.
+ 82. Abalovich M, Gutierrez S, Alcaraz G, Maccallini G, Garcia A, 
+Levalle O. Overt and subclinical hypothyroidism complicating 
+pregnancy. Thyroid. 2002;12(1):63– 8.
+ 83. Bussen S, Sutterlin M, Steck T. Endocrine abnormalities during the 
+follicular phase in women with recurrent spontaneous abortion. 
+Hum Reprod. 1999;14(1):18– 20.
+ 84. Li TC, Spuijbroek MD, Tuckerman E, Anstie B, Loxley M, Laird S. 
+Endocrinological and endometrial factors in recurrent miscarriage. 
+BJOG. 2000;107(12):1471– 9.
+ 85. Bernardi LA, Cohen RN, Stephenson MD. Impact of subclinical hy -
+pothyroidism in women with recurrent early pregnancy loss. Fertil 
+Steril. 2013;100(5):1326– 31.
+ 86. Zhang Y, Wang H, Pan X, Teng W, Shan Z. Patients with subclinical 
+hypothyroidism before 20 weeks of pregnancy have a higher risk 
+of miscarriage: A systematic review and meta- analysis. PloS one. 
+2017;12(4):e0175708.
+ 87. van den Boogaard E, Vissenberg R, Land JA, van Wely M, van der Post 
+JA, Goddijn M, et al. Significance of (sub)clinical thyroid dysfunction 
+and thyroid autoimmunity before conception and in early pregnancy: 
+a systematic review. Hum Reprod Update. 2011;17(5):605– 19.
+ 88. Thangaratinam S, Tan A, Knox E, Kilby MD, Franklyn J, 
+Coomarasamy A. Association between thyroid autoantibodies and 
+miscarriage and preterm birth: meta- analysis of evidence. BMJ. 
+2011;342:d2616.
+ 89. Cocksedge KA, Li TC, Saravelos SH, Metwally M. A reappraisal 
+of the role of polycystic ovary syndrome in recurrent miscarriage. 
+Reprod Biomed Online. 2008;17(1):151– 60.
+ 90. Rai R, Backos M, Rushworth F, Regan L. Polycystic ovaries and re -
+current miscarriage- - a reappraisal. Hum Reprod. 2000;15(3):612– 5, 
+Polycystic ovaries and recurrent miscarriage— a reappraisal.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e31 
+RECURRENT MISCARRIAGE
+ 91. Craig LB, Ke RW, Kutteh WH. Increased prevalence of insulin re -
+sistance in women with a history of recurrent pregnancy loss. Fertil 
+Steril. 2002;78(3):487– 90.
+ 92. Zolghadri J, Tavana Z, Kazerooni T, Soveid M, Taghieh M. 
+Relationship between abnormal glucose tolerance test and history 
+of previous recurrent miscarriages, and beneficial effect of met -
+formin in these patients: a prospective clinical study. Fertil Steril. 
+2008;90(3):727– 30.
+ 93. Li W, Ma N, Laird SM, Ledger WL, Li TC. The relationship be -
+tween serum prolactin concentration and pregnancy outcome in 
+women with unexplained recurrent miscarriage. Journal of obstet -
+rics and gynaecology : the journal of the Institute of Obstetrics and 
+Gynaecology. 2013;33(3):285– 8.
+ 94. Hirahara F, Andoh N, Sawai K, Hirabuki T, Uemura T, Minaguchi H. 
+Hyperprolactinemic recurrent miscarriage and results of random-
+ized bromocriptine treatment trials. Fertil Steril. 1998;70(2):246– 52.
+ 95. Ogasawara M, Kajiura S, Katano K, Aoyama T, Aoki K. Are serum 
+progesterone levels predictive of recurrent miscarriage in future 
+pregnancies? Fertil Steril. 1997;68(5):806– 9.
+ 96. Meuleman T, Lashley LE, Dekkers OM, van Lith JM, Claas FH, 
+Bloemenkamp KW. HLA associations and HLA sharing in recur -
+rent miscarriage: A systematic review and meta- analysis. Hum 
+Immunol. 2015;76(5):362– 73.
+ 97. Wegmann TG, Lin H, Guilbert L, Mosmann TR. Bidirectional cy -
+tokine interactions in the maternal- fetal relationship: is successful 
+pregnancy a TH2 phenomenon? Immunol Today. 1993;14(7):353– 6.
+ 98. Wang NF, Kolte AM, Larsen EC, Nielsen HS, Christiansen 
+OB. Immunologic Abnormalities, Treatments, and Recurrent 
+Pregnancy Loss: What Is Real and What Is Not? Clin Obstet 
+Gynecol. 2016;59(3):509– 23.
+ 99. Su D, Zhang Y, Wang Q, Wang J, Jiao B, Wang G, et al. Association of 
+interleukin- 10 gene promoter polymorphisms with recurrent mis -
+carriage: a meta- analysis. Am J Reprod Immunol. 2016;76(2):172– 80.
+ 100. Seshadri S, Sunkara SK. Natural killer cells in female infertility and 
+recurrent miscarriage: a systematic review and meta- analysis. Hum 
+Reprod Update. 2014;20(3):429– 38.
+ 101. Vomstein K, Feil K, Strobel L, Aulitzky A, Hofer- Tollinger S, Kuon 
+RJ, et al. Immunological Risk Factors in Recurrent Pregnancy Loss: 
+Guidelines Versus Current State of the Art. J Clin Med. 2021;10(4):869.
+ 102. Laird SM, Mariee N, Wei L, Li TC. Measurements of CD56+ 
+cells in peripheral blood and endometrium by flow cytome -
+try and immunohistochemical staining in situ. Hum Reprod. 
+2011;26(6):1331– 7.
+ 103. Wang Q, Li TC, Wu YP, Cocksedge KA, Fu YS, Kong QY, et al. 
+Reappraisal of peripheral NK cells in women with recurrent mis -
+carriage. Reprod Biomed Online. 2008;17(6):814– 9.
+ 104. Katano K, Suzuki S, Ozaki Y, Suzumori N, Kitaori T, Sugiura- 
+Ogasawara M. Peripheral natural killer cell activity as a predic-
+tor of recurrent pregnancy loss: a large cohort study. Fertil Steril. 
+2013;100(6):1629– 34.
+ 105. Clifford K, Flanagan AM, Regan L. Endometrial CD56+ natural 
+killer cells in women with recurrent miscarriage: a histomorpho -
+metric study. Hum Reprod. 1999;14(11):2727– 30.
+ 106. Tuckerman E, Laird SM, Prakash A, Li TC. Prognostic value 
+of the measurement of uterine natural killer cells in the endo -
+metrium of women with recurrent miscarriage. Hum Reprod. 
+2007;22(8):2208– 13.
+ 107. Quenby S, Bates M, Doig T, Brewster J, Lewis- Jones DI, Johnson PM, 
+et al. Pre- implantation endometrial leukocytes in women with re -
+current miscarriage. Hum Reprod. 1999;14(9):2386– 91.
+ 108. Lash GE, Bulmer JN, Li TC, Innes BA, Mariee N, Patel G, et al. 
+Standardisation of uterine natural killer (uNK) cell measurements 
+in the endometrium of women with recurrent reproductive failure. 
+J Reprod Immunol. 2016;116:50– 9.
+ 109. Chen X, Mariee N, Jiang L, Liu Y, Wang CC, Li TC, et al. 
+Measurement of uterine natural killer cell percentage in the periim -
+plantation endometrium from fertile women and women with re -
+current reproductive failure: establishment of a reference range. Am 
+J Obstet Gynecol. 2017;217(6):680:e1– 6. 110. Check JH. A practical approach to the prevention of miscarriage. 
+Part 4- - role of infection. Clin Exp Obstet Gynecol. 2010;37(4):252– 5.
+ 111. Regan L, Jivraj S, editors. Infection and pregnancy loss. London: 
+RCOG Press; 2001.
+ 112. Hay PE, Lamont RF, Taylor- Robinson D, Morgan DJ, Ison C, 
+Pearson J. Abnormal bacterial colonisation of the genital tract 
+and subsequent preterm delivery and late miscarriage. BMJ. 
+1994;308(6924):295– 8.
+ 113. Leitich H, Kiss H. Asymptomatic bacterial vaginosis and interme -
+diate flora as risk factors for adverse pregnancy outcome. Best Pract 
+Res Clin Obstet Gynaecol. 2007;21(3):375– 90.
+ 114. Ralph SG, Rutherford AJ, Wilson JD. Influence of bacterial vagi -
+nosis on conception and miscarriage in the first trimester: cohort 
+study. BMJ. 1999;319(7204):220– 3.
+ 115. van Oostrum N, De Sutter P, Meys J, Verstraelen H. Risks associated 
+with bacterial vaginosis in infertility patients: a systematic review 
+and meta- analysis. Hum Reprod. 2013;28(7):1809– 15.
+ 116. Bouet PE, El Hachem H, Monceau E, Gariepy G, Kadoch IJ, Sylvestre 
+C. Chronic endometritis in women with recurrent pregnancy loss 
+and recurrent implantation failure: prevalence and role of office 
+hysteroscopy and immunohistochemistry in diagnosis. Fertil Steril. 
+2016;105(1):106– 10.
+ 117. Liu Y, Chen X, Huang J, Wang CC, Yu MY, Laird S, et al. Comparison 
+of the prevalence of chronic endometritis as determined by means 
+of different diagnostic methods in women with and without repro -
+ductive failure. Fertil Steril. 2018;109(5):832– 9.
+ 118. Moreno I, Cicinelli E, Garcia- Grau I, Gonzalez- Monfort M, Bau D, 
+Vilella F, et al. The diagnosis of chronic endometritis in infertile 
+asymptomatic women: a comparative study of histology, microbial 
+cultures, hysteroscopy, and molecular microbiology. Am J Obstet 
+Gynecol. 2018;218(6):602:e1– e16.
+ 119. Ruixue W, Hongli Z, Zhihong Z, Rulin D, Dongfeng G, Ruizhi L. 
+The impact of semen quality, occupational exposure to environ -
+mental factors and lifestyle on recurrent pregnancy loss. J Assist 
+Reprod Genet. 2013;30(11):1513– 8.
+ 120. Saxena P, Misro MM, Chaki SP, Chopra K, Roy S, Nandan D. Is ab -
+normal sperm function an indicator among couples with recurrent 
+pregnancy loss? Fertil Steril. 2008;90(5):1854– 8.
+ 121. Imam SN, Shamsi MB, Kumar K, Deka D, Dada R. Idiopathic recur -
+rent pregnancy loss: role of paternal factors; a pilot study. J Reprod 
+Infertil. 2011;12(4):267– 76.
+ 122. Bhattacharya SM. Association of various sperm parameters with 
+unexplained repeated early pregnancy loss- - which is most import -
+ant? Int Urol Nephrol. 2008;40(2):391– 5.
+ 123. Hill JA, Abbott AF, Politch JA. Sperm morphology and recurrent 
+abortion. Fertil Steril. 1994;61(4):776– 8.
+ 124. Motak- Pochrzest H, Malinowski A. The occurrence of immuno -
+logical disturbances in patients with recurrent miscarriage (RM) of 
+unknown etiology. Neuro Endocrinol Lett. 2013;34(7):701– 7.
+ 125. Al- Hussein K, Al- Mukhalafi Z, Bertilsson PA, Jaroudi K, Shoukri 
+M, Hollander J. Value of flow cytometric assay for the detection of 
+antisperm antibodies in women with a history of recurrent abor -
+tion. Am J Reprod Immunol. 2002;47(1):31– 7.
+ 126. Robinson L, Gallos ID, Conner SJ, Rajkhowa M, Miller D, Lewis S, et al. 
+The effect of sperm DNA fragmentation on miscarriage rates: a sys -
+tematic review and meta- analysis. Hum Reprod. 2012;27(10):2908– 17.
+ 127. Zhao J, Zhang Q, Wang Y, Li Y. Whether sperm deoxyribonucleic 
+acid fragmentation has an effect on pregnancy and miscarriage after 
+in vitro fertilization/intracytoplasmic sperm injection: a systematic 
+review and meta- analysis. Fertil Steril. 2014;102(4):998– 1005 e8.
+ 128. Zidi- Jrah I, Hajlaoui A, Mougou- Zerelli S, Kammoun M, Meniaoui 
+I, Sallem A, et al. Relationship between sperm aneuploidy, sperm 
+DNA integrity, chromatin packaging, traditional semen parame -
+ters, and recurrent pregnancy loss. Fertil Steril. 2016;105(1):58– 64.
+ 129. Ramasamy R, Scovell JM, Kovac JR, Cook PJ, Lamb DJ, Lipshultz 
+LI. Fluorescence in situ hybridization detects increased sperm 
+aneuploidy in men with recurrent pregnancy loss. Fertil Steril. 
+2015;103(4):906– 9 e1.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e32 | 
+GREEN- TOP GUIDELINE NO. 17
+ 130. Bareh GM, Jacoby E, Binkley P , Chang TC, Schenken RS, Robinson RD. 
+Sperm deoxyribonucleic acid fragmentation assessment in normozo -
+ospermic male partners of couples with unexplained recurrent pregnancy 
+loss: a prospective study. Fertil Steril. 2016;105(2):329– 36 e1.
+ 131. Carlini T, Paoli D, Pelloni M, Faja F, Dal Lago A, Lombardo F, et al. 
+Sperm DNA fragmentation in Italian couples with recurrent preg -
+nancy loss. Reprod Biomed Online. 2017;34(1):58– 65.
+ 132. Agarwal A, Cho CL, Esteves SC. Should we evaluate and treat sperm 
+DNA fragmentation? Curr Opin Obstet Gynecol. 2016;28(3):164– 71.
+ 133. Rai RS, Regan L, Clifford K, Pickering W, Dave M, Mackie I, 
+et al. Antiphospholipid antibodies and beta 2- glycoprotein- I in 
+500 women with recurrent miscarriage: results of a comprehensive 
+screening approach. Hum Reprod. 1995;10(8):2001– 5.
+ 134. Robert JM, Macara LM, Chalmers EA, Smith GC. Inter- assay varia -
+tion in antiphospholipid antibody testing. BJOG. 2002;109(3):348– 9.
+ 135. Liu X, Chen Y, Ye C, Xing D, Wu R, Li F, et al. Hereditary thrombo -
+philia and recurrent pregnancy loss: a systematic review and meta- 
+analysis. Hum Reprod. 2021;36(5):1213– 29.
+ 136. Pritchard AM, Hendrix PW, Paidas MJ. Hereditary Thrombophilia 
+and Recurrent Pregnancy Loss. Clin Obstet Gynecol. 2016;59(3): 
+487– 97.
+ 137. Popescu F, Jaslow CR, Kutteh WH. Recurrent pregnancy loss eval-
+uation combined with 24- chromosome microarray of miscarriage 
+tissue provides a probable or definite cause of pregnancy loss in over 
+90% of patients. Hum Reprod. 2018;33(4):579– 87.
+ 138. Pond E, Dimond R. Reproductive decision making: interviews 
+with mothers of children with undiagnosed developmental delay. J 
+Community Genet. 2018;9(3):315– 25.
+ 139. Akhtar MA, Saravelos SH, Li TC. Jayaprakasan K; Royal College of 
+Obstetricians and Gyanecologists. Reproductive Implications and 
+Management of Congenital Uterine Anomalies: Scientific Impact 
+Paper No. 62 November 2019. BJOG. 2020;127(5):e1– e13.
+ 140. Grimbizis GF, Di Spiezio SA, Saravelos SH, Gordts S, Exacoustos 
+C, Van Schoubroeck D, et al. The Thessaloniki ESHRE/ESGE con-
+sensus on diagnosis of female genital anomalies. Hum Reprod. 
+2016;31(1):2– 7.
+ 141. Graupera B, Pascual MA, Hereter L, Browne JL, Ubeda B, Rodriguez 
+I, et al. Accuracy of three- dimensional ultrasound compared with 
+magnetic resonance imaging in diagnosis of Mullerian duct anom -
+alies using ESHRE- ESGE consensus on the classification of con-
+genital anomalies of the female genital tract. Ultrasound Obstet 
+Gynecol. 2015;46(5):616– 22.
+ 142. AFS. The American Fertility Society classifications of adnexal ad-
+hesions, distal tubal occlusion, tubal occlusion secondary to tubal 
+ligation, tubal pregnancies, mullerian anomalies and intrauterine 
+adhesions. Fertil Steril. 1988;49(6):944– 55.
+ 143. Oppelt P, Renner SP, Brucker S, Strissel PL, Strick R, Oppelt PG, 
+et al. The VCUAM (Vagina Cervix Uterus Adnex- associated 
+Malformation) classification: a new classification for genital mal-
+formations. Fertil Steril. 2005;84(5):1493– 7.
+ 144. Acien P, Acien MI. The history of female genital tract malformation 
+classifications and proposal of an updated system. Hum Reprod 
+Update. 2011;17(5):693– 705.
+ 145. Grimbizis GF, Gordts S, Di Spiezio SA, Brucker S, De Angelis C, 
+Gergolet M, et al. The ESHRE- ESGE consensus on the classifica -
+tion of female genital tract congenital anomalies. Gynecol Surg. 
+2013;10(3):199– 212.
+ 146. ASRM. Uterine septum: a guideline. Fertil Steril. 2016;106(3): 
+530– 40.
+ 147. Ouyang Y, Yi Y, Gong F, Lin G, Li X. ESHRE- ESGE versus ASRM 
+classification in the diagnosis of septate uterus: a retrospective 
+study. Arch Gynecol Obstet. 2018;298(4):845– 50.
+ 148. Amin TN, Saridogan E, Jurkovic D. Ultrasound and intrauterine 
+adhesions: a novel structured approach to diagnosis and manage -
+ment. Ultrasound Obstet Gynecol. 2015;46(2):131– 9.
+ 149. Dhillon- Smith RK, Boelaert K, Jeve YB, Maheshwari A. 
+Coomarasamy A; Royal College of Obstetricians and Gynaecologists. 
+Subclinical Hypothyroidism and Antithyroid Autoantibodies in Women with Subfertility or Recurrent Pregnancy Loss: Scientific 
+Impact Paper No. 70 June 2022. BJOG. 2022 Nov;129(12):e75– 88.
+ 150. Alexander EK, Pearce EN, Brent GA, Brown RS, Chen H, Dosiou C, 
+et al. 2017 Guidelines of the American Thyroid Association for the 
+Diagnosis and Management of Thyroid Disease During Pregnancy 
+and the Postpartum. Thyroid. 2017;27(3):315– 89.
+ 151. Maraka S, Singh Ospina NM, Mastorakos G, O'Keeffe DT. 
+Subclinical Hypothyroidism in Women Planning Conception and 
+During Pregnancy: Who Should Be Treated and How? J Endocr Soc. 
+2018;2(6):533– 46.
+ 152. Subtil D, Brabant G, Tilloy E, Devos P, Canis F, Fruchart A, et al. 
+Early clindamycin for bacterial vaginosis in pregnancy (PREMEVA): 
+a multicentre, double- blind, randomised controlled trial. Lancet. 
+2018;392(10160):2171– 9.
+ 153. McQueen DB, Perfetto CO, Hazard FK, Lathi RB. Pregnancy out -
+comes in women with chronic endometritis and recurrent preg -
+nancy loss. Fertil Steril. 2015;104(4):927– 31.
+ 154. Cicinelli E, Matteo M, Tinelli R, Pinto V, Marinaccio M, Indraccolo 
+U, et al. Chronic endometritis due to common bacteria is prev -
+alent in women with recurrent miscarriage as confirmed by im -
+proved pregnancy outcome after antibiotic treatment. Reprod Sci. 
+2014;21(5):640– 7.
+ 155. Esteves SC, Zini A, Coward RM, Evenson DP, Gosalvez J, Lewis 
+SEM, et al. Sperm DNA fragmentation testing: Summary ev -
+idence and clinical practice recommendations. Andrologia. 
+2021;53(2):e13874.
+ 156. Haddock L, Gordon S, Lewis SEM, Larsen P, Shehata A, Shehata H. 
+Sperm DNA fragmentation is a novel biomarker for early pregnancy 
+loss. Reprod Biomed Online. 2021;42(1):175– 84.
+ 157. Metwally M, Saravelos SH, Ledger WL, Li TC. Body mass index 
+and risk of miscarriage in women with recurrent miscarriage. Fertil 
+Steril. 2010;94(1):290– 5.
+ 158. Mishra GD, Dobson AJ, Schofield MJ. Cigarette smoking, men-
+strual symptoms and miscarriage among young women. Aust N Z J 
+Public Health. 2000;24(4):413– 20.
+ 159. Harlap S, Shiono PH. Alcohol, smoking, and incidence of spon-
+taneous abortions in the first and second trimester. Lancet. 
+1980;2(8187):173– 6.
+ 160. Weng X, Odouli R, Li DK. Maternal caffeine consumption during 
+pregnancy and the risk of miscarriage: a prospective cohort study. 
+Am J Obstet Gynecol. 2008;198(3):279:e1– 8.
+ 161. Tolstrup JS, Kjaer SK, Munk C, Madsen LB, Ottesen B, Bergholt 
+T, et al. Does caffeine and alcohol intake before pregnancy pre -
+dict the occurrence of spontaneous abortion? Hum Reprod. 
+2003;18(12):2704– 10.
+ 162. Saravelos SH, Regan L. The importance of preconception coun-
+seling and early pregnancy monitoring. Semin Reprod Med. 
+2011;29(6):557– 68.
+ 163. Empson M, Lassere M, Craig J, Scott J. Prevention of recurrent mis -
+carriage for women with antiphospholipid antibody or lupus antico -
+agulant. Cochrane Database Syst Rev. 2005(2):CD002859, 2012.
+ 164. Ziakas PD, Pavlou M, Voulgarelis M. Heparin treatment in anti -
+phospholipid syndrome with recurrent pregnancy loss: a systematic 
+review and meta- analysis. Obstet Gynecol. 2010;115(6):1256– 62.
+ 165. Zhang T, Y e X, Zhu T, Xiao X, Liu Y , Wei X, et al. Antithrombotic 
+Treatment for Recurrent Miscarriage: Bayesian Network Meta- 
+Analysis and Systematic Review. Medicine (Baltimore). 2015; 
+94(45): e1732.
+ 166. Noble LS, Kutteh WH, Lashey N, Franklin RD, Herrada J. 
+Antiphospholipid antibodies associated with recurrent pregnancy 
+loss: prospective, multicenter, controlled pilot study comparing 
+treatment with low- molecular- weight heparin versus unfraction-
+ated heparin. Fertil Steril. 2005;83(3):684– 90.
+ 167. Stephenson MD, Ballem PJ, Tsang P, Purkiss S, Ensworth S, 
+Houlihan E, et al. Treatment of antiphospholipid antibody syn-
+drome (APS) in pregnancy: a randomized pilot trial comparing 
+low molecular weight heparin to unfractionated heparin. J Obstet 
+Gynaecol Can. 2004;26(8):729– 34.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e33 
+RECURRENT MISCARRIAGE
+ 168. Liu X, Qiu Y, Yu ED, Xiang S, Meng R, Niu KF, et al. Comparison 
+of therapeutic interventions for recurrent pregnancy loss in 
+association with antiphospholipid syndrome: A systematic 
+review and network meta- analysis. Am J Reprod Immunol. 
+2020;83(4):e13219.
+ 169. Duley L, Henderson- Smart DJ, Meher S, King JF. Antiplatelet agents 
+for preventing pre- eclampsia and its complications. Cochrane 
+Database Syst Rev. 2007;2:CD004659.
+ 170. Ginsberg JS, Hirsh J, Turner DC, Levine MN, Burrows R. Risks 
+to the fetus of anticoagulant therapy during pregnancy. Thromb 
+Haemost. 1989;61(2):197– 203.
+ 171. Backos M, Rai R, Thomas E, Murphy M, Dore C, Regan L. Bone 
+density changes in pregnant women treated with heparin: a pro -
+spective, longitudinal study. Hum Reprod. 1999;14(11):2876– 80.
+ 172. Carlin AJ, Farquharson RG, Quenby SM, Topping J, Fraser WD. 
+Prospective observational study of bone mineral density during 
+pregnancy: low molecular weight heparin versus control. Hum 
+Reprod. 2004;19(5):1211– 4.
+ 173. Greer IA, Nelson- Piercy C. Low- molecular- weight heparins for 
+thromboprophylaxis and treatment of venous thromboembolism 
+in pregnancy: a systematic review of safety and efficacy. Blood. 
+2005;106(2):401– 7.
+ 174. Backos M, Rai R, Baxter N, Chilcott IT, Cohen H, Regan L. 
+Pregnancy complications in women with recurrent miscarriage 
+associated with antiphospholipid antibodies treated with low dose 
+aspirin and heparin. Br J Obstet Gynaecol. 1999;106(2):102– 7.
+ 175. Branch DW, Silver RM, Blackwell JL, Reading JC, Scott JR. 
+Outcome of treated pregnancies in women with antiphospholipid 
+syndrome: an update of the Utah experience. Obstet Gynecol. 
+1992;80(4):614– 20.
+ 176. de Jong PG, Kaandorp S, Di Nisio M, Goddijn M, Middeldorp S. 
+Aspirin and/or heparin for women with unexplained recurrent 
+miscarriage with or without inherited thrombophilia. Cochrane 
+Database Syst Rev. 2014;7:CD004734.
+ 177. Royal College of Obstetricians and Gynaecologists. Reducing the 
+Risk of Venous Thromboembolism during Pregnancy and the 
+Puerperium. Green- top Guideline No. 37a. London; RCOG: 2015.
+ 178. Gris JC, Mercier E, Quere I, Lavigne- Lissalde G, Cochery- Nouvellon 
+E, Hoffet M, et al. Low- molecular- weight heparin versus low- dose 
+aspirin in women with one fetal loss and a constitutional thrombo -
+philic disorder. Blood. 2004;103(10):3695– 9.
+ 179. Visser J, Ulander VM, Helmerhorst FM, Lampinen K, Morin- 
+Papunen L, Bloemenkamp KW, et al. Thromboprophylaxis for 
+recurrent miscarriage in women with or without thrombophilia. 
+HABENOX: a randomised multicentre trial. Thromb Haemost. 
+2011;105(2):295– 301.
+ 180. Rai RS, Regan L, Chitolie A, Donald JG, Cohen H. Placental 
+thrombosis and second trimester miscarriage in associa -
+tion with activated protein C resistance. Br J Obstet Gynaecol. 
+1996;103(8):842– 4.
+ 181. Dizon- Townson DS, Meline L, Nelson LM, Varner M, Ward 
+K. Fetal carriers of the factor V Leiden mutation are prone to 
+miscarriage and placental infarction. Am J Obstet Gynecol. 
+1997;177(2):402– 5.
+ 182. Ikuma S, Sato T, Sugiura- Ogasawara M, Nagayoshi M, Tanaka 
+A, Takeda S. Preimplantation Genetic Diagnosis and Natural 
+Conception: A Comparison of Live Birth Rates in Patients with 
+Recurrent Pregnancy Loss Associated with Translocation. PloS one. 
+2015;10(6):e0129958.
+ 183. Iews M, Tan J, Taskin O, Alfaraj S, AbdelHafez FF, Abdellah AH, 
+et al. Does preimplantation genetic diagnosis improve reproductive 
+outcome in couples with recurrent pregnancy loss owing to struc-
+tural chromosomal rearrangement? A systematic review Reprod 
+Biomed Online. 2018;36(6):677– 85.
+ 184. Musters AM, Repping S, Korevaar JC, Mastenbroek S, Limpens J, 
+van der Veen F, et al. Pregnancy outcome after preimplantation ge -
+netic screening or natural conception in couples with unexplained recurrent miscarriage: a systematic review of the best available evi -
+dence. Fertil Steril. 2011;95(6):2153– 7 e3.
+ 185. Murugappan G, Shahine LK, Perfetto CO, Hickok LR, Lathi RB. 
+Intent to treat analysis of in vitro fertilization and preimplantation 
+genetic screening versus expectant management in patients with re -
+current pregnancy loss. Hum Reprod. 2016;31(8):1668– 74.
+ 186. Rikken JFW, Kowalik CR, Emanuel MH, Bongers MY, Spinder T, 
+Jansen FW, et al. Septum resection versus expectant management 
+in women with a septate uterus: an international multicentre open- 
+label randomized controlled trial. Hum Reprod. 2021;36(5):1260– 7.
+ 187. Adewole AA, Kalu E, Okohue JE, Alabi CO, Ola B. Septum resection 
+versus expectant management: paucity of good quality data. Hum 
+Reprod. 2021;36(9):2626– 7.
+ 188. Rikken JFW, van der Veen F, van Wely M, Goddijn M. Reply: 
+Septum resection versus expectant management: paucity of good 
+quality data. Hum Reprod. 2021;36(9):2627– 8.
+ 189. Jiang Y, Wang L, Wang B, Shen H, Wu J, He J, et al. Reproductive 
+outcomes of natural pregnancy after hysteroscopic septum resec-
+tion in patients with a septate uterus: a systematic review and meta- 
+analysis. Am J Obstet Gynecol MFM. 2023;5(1):100762.
+ 190. Bosteels J, van Wessel S, Weyers S, Broekmans FJ, D'Hooghe TM, 
+Bongers MY, et al. Hysteroscopy for treating subfertility associ -
+ated with suspected major uterine cavity abnormalities. Cochrane 
+Database Syst Rev. 2018;12:CD009461.
+ 191. National Institute for Health and Care Excellence. Preterm labour 
+and birth. NICE Guideline [NG25]. 2015; Updated 2022.
+ 192. Dhillon- Smith RK, Middleton LJ, Sunner KK, Cheed V, Baker K, Farrell- 
+Carver S, et al. Levothyroxine in Women with Thyroid Peroxidase 
+Antibodies before Conception. N Engl J Med. 2019;380(14):1316– 25.
+ 193. Vissenberg R, van Dijk MM, Fliers E, van der Post JAM, van Wely 
+M, Bloemenkamp KWM, et al. Effect of levothyroxine on live birth 
+rate in euthyroid women with recurrent miscarriage and TPO anti -
+bodies (T4- LIFE study). Contemp Clin Trials. 2015;44:134– 8.
+ 194. Lata K, Dutta P, Sridhar S, Rohilla M, Srinivasan A, Prashad GR, et al. 
+Thyroid autoimmunity and obstetric outcomes in women with recurrent 
+miscarriage: a case- control study. Endocr Connect. 2013;2(2):118– 24.
+ 195. Saccone G, Schoen C, Franasiak JM, Scott RT Jr, Berghella V. 
+Supplementation with progestogens in the first trimester of preg -
+nancy to prevent miscarriage in women with unexplained recurrent 
+miscarriage: a systematic review and meta- analysis of randomized, 
+controlled trials. Fertil Steril. 2017;107(2):430– 8 e3.
+ 196. Haas DM, Hathaway TJ, Ramsey PS. Progestogen for preventing 
+miscarriage in women with recurrent miscarriage of unclear etiol-
+ogy. Cochrane Database Syst Rev. 2018;10:CD003511.
+ 197. Statement of Retraction: Peri- conceptional progesterone treatment 
+in women with unexplained recurrent miscarriage: a randomized 
+double- blind placebo- controlled trial. J Matern Fetal Neonatal 
+Med. 2020;33(6):1073:1073.
+ 198. Haas DM, Hathaway TJ, Ramsey PS. Progestogen for preventing 
+miscarriage in women with recurrent miscarriage of unclear etiol-
+ogy. Cochrane Database Syst Rev. 2019;11:CD003511.
+ 199. Coomarasamy A, Williams H, Truchanowicz E, Seed PT, Small R, 
+Quenby S, et al. A Randomized Trial of Progesterone in Women 
+with Recurrent Miscarriages. N Engl J Med. 2015;373(22):2141– 8.
+ 200. Kumar A, Begum N, Prasad S, Aggarwal S, Sharma S. Oral dydro -
+gesterone treatment during early pregnancy to prevent recurrent 
+pregnancy loss and its role in modulation of cytokine production: a 
+double- blind, randomized, parallel, placebo- controlled trial. Fertil 
+Steril. 2014;102(5):1357– 63 e3.
+ 201. Coomarasamy A, Williams H, Truchanowicz E, Seed PT, Small R, 
+Quenby S, et al. PROMISE: first- trimester progesterone therapy in 
+women with a history of unexplained recurrent miscarriages - a ran-
+domised, double- blind, placebo- controlled, international multicentre 
+trial and economic evaluation. Health Technol Assess. 2016;20(41):1– 92.
+ 202. Coomarasamy A, Devall AJ, Cheed V, Harb H, Middleton LJ, Gallos 
+ID, et al. A Randomized Trial of Progesterone in Women with 
+Bleeding in Early Pregnancy. N Engl J Med. 2019;380(19):1815– 24.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e34 | 
+GREEN- TOP GUIDELINE NO. 17
+ 203. Wong LF, Porter TF, Scott JR. Immunotherapy for recurrent mis -
+carriage. Cochrane Database Syst Rev. 2014;2014(10):CD000112.
+ 204. MedicinesComplete. British National Formulary (BNF) [ https://
+www.medic inesc omple te.com/ mc/bnf/current/]. Accessed 06 Apr 
+2023.
+ 205. Nastri CO, Lensen SF, Gibreel A, Raine- Fenning N, Ferriani RA, 
+Bhattacharya S, Martins W Endometrial injury in women undergo -
+ing assisted reproductive techniques. Cochrane Database Syst Rev. 
+2015;3:CD009517.
+ 206. Lensen S, Osavlyuk D, Armstrong S, Stadelmann C, Hennes A, 
+Napier E, et al. A Randomized Trial of Endometrial Scratching be -
+fore In Vitro Fertilization. N Engl J Med. 2019;380(4):325– 34.
+ 207. Lensen SF, Manders M, Nastri CO, Gibreel A, Martins WP, Templer 
+GE, Farquhar C. Endometrial injury for pregnancy following sexual 
+intercourse or intrauterine insemination. Cochrane Database Syst 
+Rev. 2016;6:CD011424.
+ 208. Liddell HS, Pattison NS, Zanderigo A. Recurrent miscarriage- - 
+outcome after supportive care in early pregnancy. Aust N Z J Obstet 
+Gynaecol. 1991;31(4):320– 2, Recurrent Miscarriage - Outcome 
+After Supportive Care in Early Pregnancy.
+ 209. Stray- Pedersen B, Stray- Pedersen S. Etiologic factors and subse -
+quent reproductive performance in 195 couples with a prior history 
+of habitual abortion. Am J Obstet Gynecol. 1984;148(2):140– 6.
+ 210. Koert E, Malling GMH, Sylvest R, Krog MC, Kolte AM, Schmidt L, 
+et al. Recurrent pregnancy loss: couples' perspectives on their need for 
+treatment, support and follow up. Hum Reprod. 2019;34(2):291– 6.
+ 211. Musters AM, Koot YE, van den Boogaard NM, Kaaijk E, Macklon 
+NS, van der Veen F, et al. Supportive care for women with recur -
+rent miscarriage: a survey to quantify women's preferences. Hum 
+Reprod. 2013;28(2):398– 405.
+ 212. Lathi RB, Gustin SL, Keller J, Maisenbacher MK, Sigurjonsson S, 
+Tao R, et al. Reliability of 46, XX results on miscarriage specimens: 
+a review of 1,222 first- trimester miscarriage specimens. Fertil Steril. 
+2014;101(1):178– 82. 213. Shearer BM, Thorland EC, Carlson AW, Jalal SM, Ketterling RP. 
+Reflex fluorescent in situ hybridization testing for unsuccessful 
+product of conception cultures: a retrospective analysis of 5555 
+samples attempted by conventional cytogenetics and fluorescent in 
+situ hybridization. Genet Med. 2011;13(6):545– 52.
+ 214. Lescoat D, Jouan H, Loeuillet- Olivo L, Le Calve M. Fluorescent in 
+situ hybridization (FISH) on paraffin- embedded placental tissues 
+as an adjunct for understanding the etiology of early spontaneous 
+abortion. Prenat Diagn. 2005;25(4):314– 7.
+ 215. Nikitina TV, Lebedev IN. [Cytogenetics of recurrent pregnancy 
+loss]. Genetika. 2014;50(5):501– 14.
+ 216. Bejjani BA, Shaffer LG. Application of array- based compara -
+tive genomic hybridization to clinical diagnostics. J Mol Diagn. 
+2006;8(5):528– 33.
+ 217. Bug S, Solfrank B, Schmitz F, Pricelius J, Stecher M, Craig A, et al. 
+Diagnostic utility of novel combined arrays for genome- wide si -
+multaneous detection of aneuploidy and uniparental isodisomy in 
+losses of pregnancy. Mol Cytogenet. 2014;7:43.
+SUPPORTING INFORMATION
+Additional supporting information can be found online in 
+the Supporting Information section at the end of this article.
+How to cite this article: Regan L, Rai R, Saravelos S, 
+Li T-C, on behalf of the Royal College of Obstetricians 
+and Gynaecologists. Recurrent Miscarriage: Green- 
+top Guideline No. 17. BJOG. 2023;130(12):e9–e39. 
+https://doi.org/10.1111/1471-0528.17515
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e35 
+RECURRENT MISCARRIAGE
+APPENDIX 1
+Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements 
+which assist clinicians and patients in making decisions about 
+appropriate treatment for specific conditions’. Each guideline 
+is systematically developed using a standardised method -
+ology. Exact details of this process can be found in Clinical 
+Governance Advice No.1 Development of RCOG Green- top 
+Guidelines (available on the RCOG website at http://www.rcog.org.uk/green - top- devel opment ). These recommendations are 
+not intended to dictate an exclusive course of management 
+or treatment. They must be evaluated with reference to indi -
+vidual patient needs, resources and limitations unique to the 
+institution and variations in local populations. It is hoped that 
+this process of local ownership will help to incorporate these 
+guidelines into routine practice. Attention is drawn to areas of 
+clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the 
+scheme below and the recommendations formulated in a 
+similar fashion with a standardised grading scheme.
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a very low risk of bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a low risk of bias
+1– Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of bias
+2++ High- quality systematic reviews of case– control or cohort studies or high- quality case– control or cohort studies with a very low 
+risk of confounding, bias or chance and a high probability that the relationship is causal
+2+ Well- conducted case– control or cohort studies with a low risk of confounding, bias or chance and a moderate probability that the 
+relationship is causal
+2– Case– control or cohort studies with a high risk of confounding, bias or chance and a significant risk that the relationship is not 
+causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of Recommendation
+A At least one meta- analysis, systematic reviews or RCT rated as 1++, and directly applicable to the target population; or a systematic 
+review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target population and 
+demonstrating overall consistency of results
+B A body of evidence including studies rated as 2++ directly applicable to the target population, and demonstrating overall 
+consistency of results; or Extrapolated evidence from studies rated as 1++ or 1+
+C A body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating overall 
+consistency of results; or Extrapolated evidence from studies rated as 2++
+D Evidence level 3 or 4; or Extrapolated evidence from studies rated as 2+
+Good Practice Points 
+✓ Recommended best practice based on the clinical experience of the guideline development group
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e36 | 
+GREEN- TOP GUIDELINE NO. 17
+APPENDIX 2
+Association between various factors and the risk of miscarriage
+Factor Description Estimate measure Point estimate + CI (where 
+available)Evidence level
+Epidemiological
+Maternal agea12– 19 years3,aOR 1.22 (1.19– 1.25) 2++
+20– 24 years3,aOR 1 2++
+25– 29 years3,aOR 1.08 (1.06– 1.09) 2++
+30– 34 years3,aOR 1.40 (1.38– 1.43) 2++
+35– 40 years3,aOR 2.52 (2.46– 2.57) 2++
+≥ 40– 44 years3,aOR 7.08 (6.80– 7.37) 2++
+≥ 45 years3,aOR 30.38 (25.66– 35.97) 2++
+Paternal agea25– 29 years18,aOR 1 2++
+30– 34 years18,aOR 1.04 (0.90– 1.21) 2++
+35– 39 years18,aOR 1.15 (0.92– 1.43) 2++
+40– 44 years18,aOR 1.23 (1.06– 1.43) 2++
+≥ 45 years18,aOR 1.43 (1.13– 1.81) 2++
+Number of previous 
+miscarriagesNone3,aOR 1 2++
+119,aOR 1.61 (1.57– 1.64) 2++
+2 or 319,bOR 3.05 (2.95– 3.16) 2++
+419,bOR 5.15 (4.72– 5.62) 2++
+519,bOR 7.02 (6.11– 8.08) 2++
+619,bOR 13.84 (11.00– 17.41) 2++
+Race White European22,aaOR 1 2+
+Black African22,aaOR 1.20 (1.12– 1.29) 2+
+Black Caribbean22,aaOR 1.31 (1.21– 1.41) 2+
+Lifestyle Smoking25,aOR 1.20 (1.04– 1.39) 2+
+Caffeine low intake (50– 149 
+mg/day)27,aRR 1.02 (0.85– 1.24) 2++
+Caffeine moderate intake 
+(150– 349 mg/day)27,aRR 1.16 (0.94– 1.41) 2++
+Caffeine high intake 
+(350– 699 mg/day)27,aRR 1.40 (1.16– 1.68) 2++
+BMI < 19 kg/m231,bOR 1.2 (1.12– 1.28) 2++
+BMI > 25 kg/m231,bOR 1.21 (1.06– 1.38) 2++
+Alcohol26,aaHR 3.7 (2.0– 6.8) 2+
+Thrombophilia
+Acquired Lupus anticoagulantbOR 7.79 (2.30– 26.4) 2++
+IgM cardiolipinbOR 5.61 (1.26– 25.03) 2++
+IgG cardiolipinbOR 3.57 (2.26– 5.65) 2++
+Anti- beta- 2- glycoprotein- IbOR *2.12 (0.69 – 6.53) 2++
+Inherited Factor V LeidenbOR 1st trimester: 2.01 
+(1.13– 3.58)
+2nd trimester: 7.83 
+(2.83– 21.67)2++
+Prothrombin gene mutationbOR 1.81 (1.26– 2.60) 2++
+Protein S deficiencybOR *14.72 (0.99 – 218.1) 2++
+Genetic
+Parental chromosome 
+rearrangements49,bOR 2.22 (1.60– 3.08) 2+
+Previous euploid miscarriage57,bOR 2.62 (1.29– 5.32) 2+
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e37 
+RECURRENT MISCARRIAGE
+Anomalies
+Congenital All anomalies62,bRR 1.13 (1.06– 1.22) 2++
+Arcuate62,aRR *1st trimester: 1.22 
+(0.87– 1.72)
+2nd trimester: 1.98 
+(1.06– 3.69)2++
+Septate62,aRR 1st trimester: 2.65 
+(1.39– 5.06)
+2nd trimester: 2.95 
+(1.51– 5.77)2++
+Bicornuate62,aRR 1st trimester: 2.32 
+(1.05– 5.13)
+2nd trimester: 2.90 
+(1.56– 5.41)2++
+Didelphis62,aRR *1st trimester: 1.13 
+(0.45– 2.86)
+*2nd trimester: 1.71 
+(0.63– 4.59)2++
+Unicornate62,aRR *1st trimester: 1.38 
+(0.83– 2.28)
+*2nd trimester: 2.27 
+(0.64– 7.96)2++
+Acquired Fibroids67,aRR *1.16 (0.80– 1.52) 3
+Endocrine Thyroid autoantibodies88,bOR 1.86 (1.18– 2.94) 2++
+Male Sperm DNA fragmentation127,aRR 2.28 (1.55– 3.35) 2++
+aData from general population
+bData from recurrent miscarriage population
+*Not reaching statistical significance
+Reference groups have an OR of 1
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e38 | 
+GREEN- TOP GUIDELINE NO. 17
+APPENDIX 3
+Techniques for genetic analysis of pregnancy tissue
+CONVENTIONAL KARYOTYPING
+Conventional karyotyping is limited by culture failure, with 
+pooled rates of approximately 20% (756/3859) and maternal 
+cell contamination rates of approximately 22% (269/1222) 
+according to one study.53,212
+Recommendations to avoid these issues have included: i) 
+to obtain and dispatch to the cytogenetic lab the pregnancy 
+tissue as soon possible following the diagnosis of a miscar -
+riage (to avoid culture failure); ii) to gently wash the tissue 
+with normal saline (to reduce maternal blood contamina -
+tion); and iii) to store the remaining part of the specimen 
+at – 80°C if traditional karyotyping is performed (to allow 
+for the option of fluorescence in situ hybridisation [FISH] 
+or molecular genetic testing in the case of culture failure).53
+FLUORESCENCE IN SITU HYBRIDISATION (FISH)
+FISH uses fluorescent probes that bind to specific parts of a 
+chromosome and is therefore limited to the specific probes 
+utilised (e.g. 13, 16, 18, 21, 22, X, and Y).213 Using this tech -
+nique, up to 97% of culture failures have been shown to yield 
+results,214 with chromosomal anomalies eventually detected 
+in up to 53% of them.215
+ARRAY COMPARATIVE GENOMIC 
+HYBRIDIZATION (CGH)
+Array CGH is a form of chromosomal microarray analysis 
+based on the use of differentially labelled test and reference genomic DNA samples that are simultaneously hybridised 
+to DNA targets arrayed on a glass slide or other solid plat -
+form.216 It avoids the limitations of conventional karyotyping 
+and FISH, such as culture failure and limited chromosome 
+examination, and essentially scans the entire genome pro -
+viding additional information such as DNA copy number 
+variants. In the standard clinical setting most recent studies 
+report virtually no failure rate in diagnosis.217
+SINGLE NUCLEOTIDE POLYMORPHISM (SNP)
+SNP array is a form of chromosomal microarray analysis 
+similar to array CGH. It can additionally detect the parental 
+source of chromosomes and anomalies and can therefore be 
+used to rule out maternal cell contamination.212
+NEXT GENERATION SEQUENCING (NGS)
+NGS achieves single nucleotide resolution through a high- 
+throughput platform. Its advantage is that it can scrutinise 
+the entire genome through a tiny quantity of tissue. Its dis -
+advantage is that it is currently expensive and requires data 
+processing steps and bioinformatics because of its large data 
+output.53
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e39 
+RECURRENT MISCARRIAGE
+This guideline was produced on behalf of the Royal 
+College of Obstetricians and Gynaecologists by: 
+Dame L Regan FRCOG, London; Mr R Rai MRCOG, 
+London; Mr S Saravelos MRCOG, London; and 
+Professor TC Li FRCOG, Hong Kong SAR China.
+The following organisations and individuals submitted 
+comments at peer review:
+A Aggarwal FRCOG, Leeds; A Ali MRCOG MRCPI, 
+Epsom; D D'Costa MRCOG, Prescot; MJ Ekanayake 
+FRCOG, Chelmsford; Fair Treatment for the Women of 
+Wales; M Fawzy FRCOG, Barnsley; R Ganapathy MD 
+FRCOG, Epsom; S Gordon FRCS(Urol), Sutton; A Gorry 
+MRCOG, London; H Jan MRCOG, Epsom; RU Khan 
+FRCOG, London; A Mighell MRCOG, Bradford; RF 
+Neilson FRCP, FRCPath, Forth Valley Royal Hospital, 
+Larbert; S Quenby FRCOG, Warwick; Royal College 
+of Nursing; JA Ross FRCOG, London; HAH Shehata 
+FRCOG FRCPI, Epsom; RK Viswanatha FRCOG, 
+Croydon; W Vlaanderen, Nijmegen, The Netherlands; 
+and R Wilding RN, CRADLE Charity.
+Committee lead reviewers were: Miss NP Potdar FRCOG, 
+Leicester1; Dr R Davies MRCOG, Stoke2; and Dr M 
+Annappa FRCOG, Lincolnshire2.
+1from June 2020; 2until May 2021.
+The chairs of the Guidelines Committee were: Mr A 
+McKelvey MRCOG, Norwich1; Miss NP Potdar FRCOG, 
+Leicester1; Dr MA Ledingham MRCOG, Glasgow2; and 
+Dr B Magowan FRCOG, Melrose2.
+1co- chairs from June 2021; 2until May 2021.
+The final version is the responsibility of the Guidelines 
+Committee of the RCOG.The guideline will be considered for update 3 years after 
+publication, with an intermediate assessment of the need to 
+update 2 years after publication.DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists 
+produces guidelines as an educational aid to good clini -
+cal practice. They present recognised methods and tech -
+niques of clinical practice, based on published evidence, 
+for consideration by obstetricians and gynaecologists and 
+other relevant health professionals. The ultimate judge -
+ment regarding a particular clinical procedure or treat -
+ment plan must be made by the doctor or other attendant 
+in the light of clinical data presented by the patient and 
+the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or 
+guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of man-
+agement. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient's 
+case notes at the time the relevant decision is taken.
+ 14710528, 2023, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17515 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

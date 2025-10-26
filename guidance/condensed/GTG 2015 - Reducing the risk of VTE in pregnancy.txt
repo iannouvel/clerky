@@ -1,0 +1,2261 @@
+Reducing the Risk of 
+Venous Thromboembolism during 
+Pregnancy and the Puerperium
+Green-top Guideline No. 37a 
+April 2015RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists2 of 40Reducing the Risk of Venous Thromboembolism during 
+Pregnancy and the Puerperium
+This is the third edition of this guideline, first published in 2004 under the title ‘Thromboprophylaxis 
+during Pregnancy, Labour and after Vaginal Delivery’ and revised in 2009 under the title ‘Reducing the 
+Risk of Thrombosis and Embolism during Pregnancy and the Puerperium’.
+Executive summary of recommendations 
+Prepregnancy and antenatal risk assessment 
+What are the risk factors for venous thromboembolism (VTE) in pregnancy and the puerperium and 
+what is the magnitude of risk for these factors?
+All women should undergo a documented assessment of risk factors for VTE in early pregnancy 
+or prepregnancy. 
+Risk assessment should be repeated if the woman is admitted to hospital for any reason or develops 
+other intercurrent problems. 
+Risk assessment should be repeated again intrapartum or immediately postpartum. 
+Any woman with four or more current risk factors shown in Appendix I and Table 1 (other than 
+previous VTE or thrombophilia) should be considered for prophylactic low-molecular-weight 
+heparin (LMWH) throughout the antenatal period and will usually require prophylactic LMWH for 6 
+weeks postnatally but a postnatal risk reassessment should be made. 
+Any woman with three current risk factors shown in Appendix I and Table 1 (other than previous 
+VTE or thrombophilia) should be considered for prophylactic LMWH from 28 weeks and will 
+usually require prophylactic LMWH for 6 weeks postnatally but a postnatal risk reassessment 
+should be made. 
+Any woman with two current risk factors shown in Appendix I and Table 1 (other than previous VTE 
+or thrombophilia) should be considered for prophylactic LMWH for at least 10 days postpartum. 
+Women admitted to hospital when pregnant (including to the gynaecology ward with hyperemesis 
+gravidarum or ovarian hyperstimulation syndrome) should usually be offered thromboprophylaxis 
+with LMWH unless there is a specific contraindication such as risk of labour or active bleeding.
+The risk of VTE should be discussed with women at risk and the reasons for individual 
+recommendations explained. 
+Previous VTE
+How should women with previous VTE be managed in pregnancy? (see Appendix IV)
+Single previous VTE
+Women with previous VTE should be offered prepregnancy counselling and a prospective 
+management plan for thromboprophylaxis in pregnancy made. Those who become pregnant before 
+receiving such counselling should be referred at the earliest opportunity in pregnancy to a clinician 
+with expertise in thrombosis in pregnancy. C
+C
+C
+D
+D
+D
+D
+P
+PRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists3 of 40Women with previous VTE (except those with a single previous VTE related to major surgery 
+and no other risk factors) should be offered thromboprophylaxis with LMWH throughout the 
+antenatal period.
+Women with previous VTE should have a careful history documented. Where objective documentation 
+is not available, the previous diagnosis of VTE can be assumed in cases where the woman gives a 
+good history and received prolonged (greater than 6 weeks) therapeutic anticoagulation. 
+Thrombophilia-associated VTE
+Heritable thrombophilia 
+Women with previous VTE associated with antithrombin deficiency (who will often be on long-term 
+oral anticoagulation) should be offered thromboprophylaxis with higher dose LMWH (either 50%, 
+75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks postpartum or until 
+returned to oral anticoagulant therapy after delivery.
+Management should be undertaken in collaboration with a haematologist with expertise in 
+thrombosis in pregnancy and consideration given to antenatal anti-Xa monitoring and the potential 
+for antithrombin replacement at initiation of labour or prior to caesarean section.
+If anti-Xa levels are measured, a test that does not use exogenous antithrombin should be used 
+and 4-hour peak levels of 0.5–1.0 iu/ml aimed for.
+Other heritable thrombophilic defects are lower risk and can be managed with standard doses of 
+thromboprophylaxis.
+Acquired thrombophilia – see also section 4.4 
+Women with VTE associated with the antiphospholipid syndrome (APS) (who will often be on long-
+term oral anticoagulation) should be offered thromboprophylaxis with higher dose LMWH (either 
+50%, 75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks postpartum or until 
+returned to oral anticoagulant therapy after delivery.
+Pregnant women with APS and prior VTE or arterial thromboses should be managed in collaboration 
+with a haematologist and/or rheumatologist with expertise in this area.
+Previous recurrent VTE
+What extra advice is needed for women with previous recurrent VTE?
+Advice regarding doses of LMWH in pregnancy should be sought from a clinician with expertise in 
+haemostasis and pregnancy.
+Some women with previous recurrent VTE require higher doses of LMWH.
+Women on long-term warfarin or other oral anticoagulants should be counselled about the risks of 
+these agents to the fetus (see section 8.6) and advised to stop their oral anticoagulant therapy and 
+change to LMWH as soon as pregnancy is confirmed, ideally within 2 weeks of the missed period 
+and before the sixth week of pregnancy.
+Women not on warfarin or other oral anticoagulants should be advised to start LMWH as soon as 
+they have a positive pregnancy test.C
+C
+P
+P
+P
+P
+P
+P
+P
+PDDRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists4 of 40Stratification of women with previous VTE
+How should women with previous VTE be stratified to determine management in pregnancy?
+Women with VTE associated with either antithrombin deficiency or APS or with recurrent VTE (who 
+will often be on long-term oral anticoagulation) should be offered thromboprophylaxis with higher 
+dose LMWH (either 50%, 75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks 
+postpartum or until returned to oral anticoagulant therapy after delivery. These women require 
+specialist management by experts in haemostasis and pregnancy.
+Women in whom the original VTE was unprovoked/idiopathic or related to estrogen (estrogen-
+containing contraception/pregnancy) or related to a transient risk factor other than major surgery 
+or who have other risk factors should be offered thromboprophylaxis with LMWH throughout the 
+antenatal period.
+In women in whom the original VTE was provoked by major surgery from which they have recovered 
+and who have no other risk factors, thromboprophylaxis with LMWH can be withheld antenatally 
+until 28 weeks provided no additional risk factors are present (in which case they should be offered 
+LMWH). They require close surveillance for the development of other risk factors.
+Testing for thrombophilia in women with prior VTE
+Which women with prior VTE require thrombophilia testing?
+Prior to testing for thrombophilia, women should be counselled regarding the implications for 
+themselves and family members of a positive or negative result. The results should be interpreted 
+by clinicians with specific expertise in the area.
+Women with a family history of VTE and either antithrombin deficiency or where the specific 
+thrombophilia has not been detected should be tested for antithrombin deficiency.
+Women with an unprovoked VTE should be tested for the presence of antiphospholipid antibodies.
+Asymptomatic heritable thrombophilia 
+How should women with asymptomatic thrombophilia be treated? (see Appendix IV)
+Women should be stratified according to level of risk associated with their thrombophilia and the 
+presence or absence of a family history or other risk factors.
+Women with asymptomatic antithrombin, protein C or S deficiency or those with more than one 
+thrombophilic defect (including homozygous factor V Leiden, homozygous prothrombin gene 
+mutation and compound heterozygotes) should be referred to a local expert and antenatal 
+prophylaxis considered. They should be recommended for six weeks’ postnatal prophylaxis even 
+in the absence of additional risk factors.
+Heterozygosity for factor V Leiden or prothrombin gene mutation or antiphospholipid antibodies are 
+considered as risk factors for thrombosis in asymptomatic women (see Appendix I). In the presence 
+of three other risk factors such women may be considered for antenatal thromboprophylaxis, if 
+there are two other risk factors thromboprophylaxis should be considered from 28 weeks and if 
+there is one other risk factor postnatal thromboprophylaxis for 10 days should be considered.
+Women with no personal history or risk factors for VTE but who have a family history of an 
+unprovoked or estrogen-provoked VTE in a first-degree relative when aged under 50 years should 
+be considered for thrombophilia testing. This will be more informative if the relative has a known 
+thrombophilia.D
+D
+D
+P
+P
+P
+D
+D
+D
+DRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists5 of 40Antiphospholipid antibodies 
+How should women with antiphospholipid antibodies be treated? 
+Persistent antiphospholipid antibodies (lupus anticoagulant and/or anticardiolipin and/or 
+β2-glycoprotein 1 antibodies) in women without previous VTE should be considered as a risk factor 
+for thrombosis (see Appendix I) such that if she has other risk factors she may be considered for 
+antenatal or postnatal thromboprophylaxis as above.
+Timing of initiation of thromboprophylaxis 
+When should thromboprophylaxis be started?
+Antenatal thromboprophylaxis for those with previous VTE should begin as early in pregnancy 
+as practical.
+Women without previous VTE and without particular first trimester risk factors or admission to 
+hospital, but with four other risk factors, should be considered for antenatal prophylaxis throughout 
+pregnancy.
+Women without previous VTE and without particular first trimester risk factors or admission to 
+hospital, but with three other risk factors, can start antenatal prophylaxis at 28 weeks of gestation.
+First trimester risk factors
+What are the first trimester risk factors for VTE and how should they be managed? 
+Women admitted with hyperemesis should be considered for thromboprophylaxis with LMWH and 
+can discontinue thromboprophylaxis when the hyperemesis resolves. 
+Women with ovarian hyperstimulation syndrome should be considered for thromboprophylaxis 
+with LMWH in the first trimester. 
+Women with an IVF pregnancy and three other risk factors should be considered for 
+thromboprophylaxis with LMWH starting in the first trimester. 
+Thromboprophylaxis during labour and delivery, including the use of regional analgesia 
+When should thromboprophylaxis be interrupted for delivery?
+Women receiving antenatal LMWH should be advised that if they have any vaginal bleeding or once 
+labour begins they should not inject any further LMWH. They should be reassessed on admission 
+to hospital and further doses should be prescribed by medical staff.
+Regional techniques should be avoided if possible until at least 12 hours after the previous 
+prophylactic dose of LMWH.
+LMWH should not be given for 4 hours after use of spinal anaesthesia or after the epidural catheter 
+has been removed and the catheter should not be removed within 12 hours of the most recent injection.
+When a woman presents while on a therapeutic regimen of LMWH, regional techniques should be 
+avoided if possible for at least 24 hours after the last dose of LMWH.
+Women receiving antenatal LMWH having an elective caesarean section should receive a 
+thromboprophylactic dose of LMWH on the day prior to delivery and, on the day of delivery, any 
+morning dose should be omitted and the operation performed that morning.C
+CB
+C
+C
+C
+C
+P
+P
+P
+P
+PRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists6 of 40The first thromboprophylactic dose of LMWH should be given as soon as possible after delivery 
+provided there is no postpartum haemorrhage and regional analgesia has not been used.
+Women at high risk of haemorrhage with risk factors including major antepartum haemorrhage, 
+coagulopathy, progressive wound haematoma, suspected intra-abdominal bleeding and 
+postpartum haemorrhage may be managed with anti-embolism stockings (AES), foot impulse 
+devices or intermittent pneumatic compression devices. Unfractionated heparin (UFT) may also 
+be considered.
+If a woman develops a haemorrhagic problem while on LMWH the treatment should be stopped and 
+expert haematological advice sought.
+Thromboprophylaxis should be started or reinstituted as soon as the immediate risk of haemorrhage 
+is reduced.
+Thromboprophylaxis after delivery 
+Assessment of risk
+What are the risk factors for VTE after delivery?
+All women with class 3 obesity (BMI greater than or equal to 40 kg/m2) should be considered for 
+prophylactic LMWH in doses appropriate for their weight for 10 days after delivery.
+Women with two or more persisting risk factors listed in Table 1 should be considered for LMWH in 
+prophylactic doses appropriate for their weight for 10 days after delivery.
+Previous VTE
+Which women with previous VTE need postpartum thromboprophylaxis?
+All women with a previous history of confirmed VTE should be offered thromboprophylaxis with 
+LMWH or warfarin for at least 6 weeks postpartum regardless of the mode of delivery.
+Asymptomatic thrombophilia
+Which women with thrombophilia without previous VTE need postpartum thromboprophylaxis? 
+Women with thrombophilia without previous VTE should be stratified according to both the level of 
+risk associated with their thrombophilia and the presence or absence of a family history or other 
+risk factors.
+Women with a family history of VTE and an identified thrombophilia should be considered for 
+6 weeks’ postnatal thromboprophylaxis.
+Caesarean section
+What is the magnitude of risk of VTE after caesarean section?
+All women who have had caesarean sections should be considered for thromboprophylaxis with 
+LMWH for 10 days after delivery apart from those having an elective caesarean section who should 
+be considered for thromboprophylaxis with LMWH for 10 days after delivery if they have any 
+additional risk factors (see Appendix I and Table 1).P
+P
+P
+P
+D
+B
+B
+C
+D
+CRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists7 of 40For how long should thromboprophylaxis be continued after delivery?
+Risk assessment should be performed in each woman at least once following delivery and before 
+discharge and arrangements made for LMWH prescription and administration (usually by the 
+woman herself) in the community where necessary.
+Thromboprophylaxis should be continued for 6 weeks in high-risk women and for 10 days in 
+intermediate-risk women (see Appendix I and Appendix IV).
+In women who have additional persistent (lasting more than 10 days postpartum) risk factors, 
+such as prolonged admission, wound infection or surgery in the puerperium, thromboprophylaxis 
+should be extended for up to 6 weeks or until the additional risk factor/s is/are no longer present.
+Which agents should be used for thromboprophylaxis?
+Low-molecular-weight heparin (LMWH)
+LMWHs are the agents of choice for antenatal and postnatal thromboprophylaxis.
+Doses of LMWH are based on weight. For thromboprophylaxis the booking or most recent weight 
+can be used to guide dosing.
+It is only necessary to monitor the platelet count if the woman has had prior exposure to 
+unfractionated heparin (UFH).
+Monitoring of anti-Xa levels is not required when LMWH is used for thromboprophylaxis.
+Doses of LMWH should be reduced in women with renal impairment.
+LMWH is safe in breastfeeding.
+Unfractionated heparin
+In women at very high risk of thrombosis (see Appendix IV), UFH may be used peripartum in 
+preference to LMWH where there is an increased risk of haemorrhage or where regional anaesthetic 
+techniques may be required.
+If UFH is used after caesarean section (or other surgery), the platelet count should be monitored 
+every 2–3 days from days 4–14 or until heparin is stopped.
+Danaparoid
+Potential use of danaparoid should be in conjunction with a consultant haematologist with 
+expertise in haemostasis and pregnancy.
+Fondaparinux 
+Fondaparinux should be reserved for women intolerant of heparin compounds. 
+Fondaparinux use in pregnancy should be in conjunction with a consultant haematologist with 
+expertise in haemostasis and pregnancy.
+Low-dose aspirin 
+Aspirin is not recommended for thromboprophylaxis in obstetric patients.P
+C
+D
+A
+ACDBB
+D
+D
+P
+D
+P
+DRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists8 of 40Warfarin 
+Warfarin use in pregnancy is restricted to the few situations where heparin is considered unsuitable, 
+e.g. some women with mechanical heart valves.
+Women receiving long-term anticoagulation with warfarin can be converted from LMWH to warfarin 
+postpartum when the risk of haemorrhage is reduced, usually 5–7 days after delivery.
+Warfarin is safe in breastfeeding.
+Dextran
+Dextran should be avoided antenatally and intrapartum because of the risk of anaphylactoid 
+reaction.
+Oral thrombin and Xa inhibitors
+Non-vitamin K antagonist oral anticoagulants (NOACs) should be avoided in pregnant women.
+Use of NOACs is not currently recommended in women who are breastfeeding.
+Anti-embolism stockings 
+The use of properly applied anti-embolism stockings (AES) of appropriate size and providing 
+graduated compression with a calf pressure of 14–15 mmHg is recommended in pregnancy and the 
+puerperium for women who are hospitalised and have a contraindication to LMWH. These include 
+women who are hospitalised post-caesarean section (combined with LMWH) and considered to be 
+at particularly high risk of VTE (e.g. previous VTE, more than four risk factors antenatally or more 
+than two risk factors postnatally) and women travelling long distance for more than 4 hours.
+Contraindications to LMWH
+Which women should not be given thromboprophylaxis with LMWH?
+LMWH should be avoided, discontinued or postponed in women at risk of bleeding after careful 
+consideration of the balance of risks of bleeding and thrombosis.
+Women with previous or current allergic reactions to LMWH should be offered an alternative 
+preparation or alternative form of prophylaxis.
+Further advice on the management of a woman with both VTE risk factors and bleeding risk factors 
+or LMWH allergy may be sought from a haematologist with expertise in the management of 
+thrombosis and bleeding disorders in pregnancy.
+Risk scoring methodologies
+A formal VTE risk assessment with numerical scoring for all pregnant and postpartum women is 
+recommended (see Appendix IV).B
+P
+P
+D
+P
+P
+D
+D
+D
+P
+DRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists9 of 401. Purpose and scope 
+The aim of this guideline is to provide advice, based on clinical evidence where available, regarding the 
+prevention of venous thromboembolism (VTE) during pregnancy, birth and following delivery. For the 
+diagnosis and management of acute VTE in pregnancy, please refer to Green-top Guideline No. 37b.1 For 
+anticoagulation for mechanical heart valves in pregnancy, the reader is directed to the chapter covering 
+this within the proceedings of the RCOG study group on heart disease.2 A summary of the guideline for 
+antenatal and postnatal thromboprophylaxis is given in Appendix I.
+2. Introduction and background epidemiology
+Pulmonary embolism (PE) remains a leading direct cause of maternal death in the UK. There was a 
+significant fall in the maternal mortality rate from PE (from 1.56 [95% CI 1.43–2.63] per 100 000 
+maternities in 2003–2005 [33 deaths] to 0.70 [95% CI 0.49–1.25] per 100 000 maternities in 2006–2008 
+[16 deaths]3,4) due largely to reductions in deaths from antenatal VTE (which fell from 11 to 3) and 
+deaths from VTE after vaginal delivery (which fell from 8 to 2) and attributed to the first version of this 
+guideline published in 2004.4
+The National Institute for Health and Care Excellence (NICE) estimates that low-molecular-weight 
+heparin (LMWH) reduces VTE risk in medical and surgical patients by 60% and 70% respectively.5 
+Therefore it is reasonable to assume that it may substantially reduce the risk of VTE in obstetric patients. 
+A Scandinavian study6 found a relative risk reduction of VTE of 88% in obstetric patients with one 
+previous VTE given LMWH.
+Seventy-nine percent and 89% of the women who died from PE in the UK between 2003 and 2005 and 
+between 2006 and 2008 respectively had identifiable risk factors3,4 and a similar proportion (70%) from 
+the UK Obstetric Surveillance System (UKOSS) cohort (n = 143) of fatal (3.5%) and nonfatal antenatal PE 
+also had identifiable risk factors.7 
+The UK incidence of antenatal PE calculated in the UKOSS study is 1.3 per 10 000 maternities.7 Although 
+the relative risk of VTE in pregnancy is increased four- to six-fold8,9 and this is increased further 
+postpartum,9–11 the absolute risk is low with an overall incidence of VTE in pregnancy and the puerperium 
+of 1–2 per 1000.8,12–17 Absolute incidence of VTE in pregnancy and the puerperium is 107 per 100 000 
+person-years (95% CI 93–122 per 100 000 person-years) in the UK,9 107 per 100 000 pregnancy-years 
+during pregnancy and 175 per 100 000 puerperal-years during the puerperium in Denmark,17 and 175 
+per 100 000 pregnancies (deep vein thrombosis [DVT] 121 per 100 000, PE 54 per 100 000) in Canada.16
+Many fatal antenatal VTE events occur in the first trimester and therefore prophylaxis for women 
+with previous VTE should begin early in pregnancy.18–20 The risk for VTE increases with gestational 
+age, reaching a maximum just after delivery.8–10,16,17 Caesarean section is a significant risk factor12,21–24 
+but women having vaginal deliveries are also at risk.3 The relative risk postpartum is five-fold higher 
+compared to antepartum8 and a systematic review of risk of postpartum VTE found that the risk varied 
+from 21- to 84-fold from the baseline nonpregnant, nonpostpartum state in studies that included an 
+internal reference group.11 The absolute risk peaked in the first 3 weeks postpartum (421 per 100 000 
+person-years; 22-fold increase in risk).9 
+As the absolute risk of VTE in pregnancy is low, some form of risk stratification is required to determine 
+which women warrant pharmacological thromboprophylaxis.25 The threshold for recommending 
+postpartum thromboprophylaxis is lower than that for recommending antenatal thromboprophylaxis 
+because the risk per day is higher and the duration of risk is shorter.26 RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists10 of 403. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-
+top Guidelines. The Cochrane Library (including the Cochrane Database of Systematic Reviews, the 
+Cochrane Central Register of Controlled Trials and the Database of Abstracts of Reviews of Effects 
+[DARE]), EMBASE, the ACP Journal Club and MEDLINE, including in-process and other non-indexed 
+citations, were searched from 2009 to 2013 to identify all relevant randomised controlled trials, systematic 
+reviews and meta-analyses published since the previous edition of the guideline. The databases were 
+searched using the relevant Medical Subject Headings (MeSH) terms, including all subheadings. The 
+principal search terms used were: ‘venous thromboembolism’, ‘thrombosis’, ‘pregnancy’, ‘postpartum’, 
+‘puerperium’, ‘antenatal’, ‘prenatal’. The search was limited to humans and the English language. The 
+National Library for Health and the National Guideline Clearinghouse were also searched for relevant 
+guidelines and reviews. A top-up search was performed in October 2014.
+Current guidelines for the prevention of VTE in pregnancy and the puerperium were reviewed.26–28 A 
+Cochrane systematic review29 of randomised trials comparing one method of thromboprophylaxis with 
+placebo or no treatment and randomised trials comparing two (or more) methods of thromboprophylaxis 
+concluded that there is insufficient evidence on which to base recommendations for thromboprophylaxis 
+during pregnancy and the early postnatal period. The current guidelines are therefore drawn up 
+recognising the limited evidence in this area. 
+4. Prepregnancy and antenatal risk assessment 
+4.1 What are the risk factors for VTE in pregnancy and the puerperium and what is the 
+magnitude of risk for these factors?
+All women should undergo a documented assessment of risk factors for VTE in early pregnancy or 
+prepregnancy.
+Risk assessment should be repeated if the woman is admitted to hospital for any reason or develops 
+other intercurrent problems.
+Risk assessment should be repeated again intrapartum or immediately postpartum.
+Any woman with four or more current risk factors shown in Appendix I and Table 1 (other than 
+previous VTE or thrombophilia) should be considered for prophylactic LMWH throughout the 
+antenatal period and will usually require prophylactic LMWH for 6 weeks postnatally but a 
+postnatal risk reassessment should be made.
+Any woman with three current risk factors shown in Appendix I and Table 1 (other than previous 
+VTE or thrombophilia) should be considered for prophylactic LMWH from 28 weeks and will 
+usually require prophylactic LMWH for 6 weeks postnatally but a postnatal risk reassessment 
+should be made.
+Any woman with two current risk factors shown in Appendix I and Table 1 (other than previous VTE 
+or thrombophilia) should be considered for prophylactic LMWH for at least 10 days postpartum.
+Women admitted to hospital when pregnant (including to the gynaecology ward with hyperemesis 
+gravidarum or ovarian hyperstimulation syndrome) should usually be offered thromboprophylaxis 
+with LMWH unless there is a specific contraindication such as risk of labour or active bleeding.
+The risk of VTE should be discussed with women at risk and the reasons for individual 
+recommendations explained.C
+C
+C
+D
+D
+D
+D
+PRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists11 of 40The risk factors are listed in Table 1, Appendix II and Appendix III. For most risk factors the level of 
+evidence is 2+ but it varies from 2– to 2++ depending on the risk factor. Some women can be identified 
+to be at increased risk because of the presence of one or more well-documented risk factors.12,14–16,22–25,30–35
+Appendix II summarises the odds ratios (ORs) for VTE associated with each risk factor derived from 
+various studies. Women with multiple risk factors for VTE, even those who are not known to have a 
+thrombophilia or a previous VTE, may be at greatly increased risk of VTE in pregnancy, especially in 
+the third trimester and postpartum.9 Indeed, age greater than 35 years, obesity and caesarean section 
+contribute most substantially to the rates of VTE because of their high and increasing prevalence.36
+4.1.1 Previous VTE or thrombophilia 
+Two well-recognised significant risk factors for VTE in pregnancy, identifiable before 
+pregnancy, are thrombophilia and previous VTE.15,16 Heritable thrombophilia is found in 20–
+50% of pregnancy-related VTE.37,38 A large retrospective study calculated an odds ratio of 24.8 
+(95% CI 17.1–36) for previous VTE.32 Previous VTE and thrombophilia are discussed in more 
+detail in sections 4.2 and 4.3 below.
+4.1.2 Obesity 
+Sixty percent of women who died from PE in the UK between 2003 and 2008 were obese 
+(body mass index [BMI] 30 or higher)3,4 compared with the 20% prevalence of obesity in 
+women aged 16–44 in the Health Survey for England 2010.39,40 Obesity is a risk factor for VTE in 
+pregnancy7,12,31–33 and the risk is higher with increasing obesity.41 It is associated with a higher 
+risk of PE (adjusted OR [aOR] 14.9, 95% CI 3.0–74.8) than of DVT (aOR 4.4, 95% CI 1.6–11.9).33 
+Being overweight (BMI 25–29.9), too, is a weak risk factor for pregnancy-related VTE and is 
+extremely common, with a prevalence within the childbearing population of almost 50%.39 
+4.1.3 Age 
+Data for age are conflicting. Data from case–control studies (see Appendix II) have suggested a 
+modest increased relative risk of less than two-fold for women aged over 35 years.14,16,31 In a UK 
+study using a large population-based cohort,9 outside pregnancy, women in the oldest age band 
+(35–44 years) had a 50% higher rate of VTE than women aged 25–34 years. The rate of VTE did 
+not increase with age in the antepartum period; however, in the postpartum period women 
+aged 35 and over had a 70% increase in risk compared to 25–34 year olds (corresponding to 
+an excess absolute risk of 1.6 per 1000 person-years). A Korean study similarly found that 
+increased age was not associated with VTE in pregnancy.24 However, for simplicity we have 
+retained age greater than 35 years as a risk factor antenatally and postpartum.
+4.1.4 Immobility and long-distance travel
+For immobility and long-distance travel, data for pregnancy-related risk are limited and extrapolation 
+from studies in nonpregnant patients is necessary.34
+The NICE guideline on antenatal care42 and the RCOG Scientific Impact Paper on air travel in 
+pregnancy43,44 state that long-haul air travel increases the risk of VTE; this guideline considers 
+all long-distance (more than four hours) travel (not exclusively by air) to be a risk factor for 
+VTE in pregnancy.
+Some studies have demonstrated interaction between the effects of the risk factors listed 
+in Table 1 and Appendix II. For example, in a Norwegian case–control study,12 BMI greater 
+than 25 and antepartum immobilisation (defined as strict bed rest 1 week or more prior to Evidence 
+level 2+
+Evidence 
+level 2+
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2+RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists12 of 40delivery) had a multiplicative effect on the risk for antepartum (aOR 62.3, 95% CI 11.5–337.7) 
+and postpartum VTE (aOR 40.1, 95% CI 8.0–201.5).
+4.1.5 Admission to hospital
+Admission to hospital during pregnancy is associated with an 18-fold increased risk of first 
+VTE (adjusted incidence ratio 17.5, 95% CI 7.69–40.0) compared with time outside hospital and 
+the risk remains increased after discharge, being six-fold higher in the 28 days after discharge. 
+The risk is higher in the third trimester and in women over 35 years old. The risk of VTE 
+during hospitalisation and after discharge are four-fold higher for admissions lasting less than 
+3 days but 12-fold higher if 3 days or longer.45
+4.1.6 Other risk factors
+Examples of comorbidities which have been shown to be associated with an increase in 
+the risk of VTE in pregnancy include active inflammatory bowel disease (IBD),22,46 urinary 
+tract infection,22 systemic lupus erythematosus (SLE), heart disease,16 pregnancy-induced 
+hypertension/pre-eclampsia15,24 and non-obstetric antenatal surgery.47
+Recent data using a primary care database containing 376 154 pregnancies between 1995 and 
+2009 found that, in pregnancy, varicose veins, IBD, urinary tract infection and pre-existing 
+diabetes were associated with an increased risk for VTE (absolute risks [ARs] ≥ 139/100 000 
+person-years; incidence rate ratios [IRRs] ≥ 1.8).22 Analysing data from 1 475 301 Scottish 
+maternity discharges, Kane et al.15 found that risk factors for VTE included three or more 
+previous pregnancies, obstetric haemorrhage, and pre-eclampsia.
+An individual assessment of thrombotic risk should be undertaken before pregnancy, or in early 
+pregnancy, and at each hospital admission. Appendix III provides a suggested checklist for 
+documentation of this risk assessment. Early assessment is important in view of the increased 
+thrombotic risks associated with complications in the first trimester. For example, in one study 
+the odds ratio for VTE in women with hyperemesis gravidarum was 2.5 (95% CI 2–3.2)32 (see 
+later for first trimester risk factors). This has implications for general practitioners, physicians 
+and gynaecologists since many fatal antenatal VTE events occur in the first trimester3,18–20 and 
+‘booking’ often does not occur until the end of the first trimester, after the stage at which 
+thromboprophylaxis should have ideally begun.
+Available evidence does not allow an accurate risk estimation of VTE to be determined from 
+combinations of the different risk factors listed in Table 1 and Appendix II. Neither is this list 
+exhaustive. There may be some conditions that increase the risk of VTE that are not listed. In 
+general, active autoimmune and inflammatory conditions should be considered as risk factors. 
+Multiple risk factors increase the risk of VTE.12 The risk of antenatal VTE is highest in the third 
+trimester9,17,48 (see below under section 5).
+Therefore, as a pragmatic approach to women with risk factors (except previous VTE; see below and 
+Appendix I and Appendix III), it is suggested that thromboprophylaxis with LMWH be considered 
+antenatally if there are four or more risk factors, from 28 weeks if there are three risk factors and 
+postnatally if there are only two risk factors.Evidence 
+level 2+
+Evidence 
+level 2+
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2+RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists13 of 40Table 1. Risk factors for venous thromboembolism in pregnancy and the puerperium
+ 
+See also Appendix I and Appendix II
+Pre-existing Previous VTE
+Thrombophilia Heritable
+Antithrombin deficiency
+Protein C deficiency
+Protein S deficiency
+Factor V Leiden
+Prothrombin gene mutation
+Acquired
+Antiphospholipid antibodies
+Persistent lupus anticoagulant and/or persistent 
+moderate/high titre anticardiolipin antibodies 
+and/or β2-glycoprotein 1 antibodies
+Medical comorbidities e.g. cancer; heart failure; active SLE, inflammatory 
+polyarthropathy or IBD; nephrotic syndrome; type I diabetes mellitus with 
+nephropathy; sickle cell disease;49 current intravenous drug user
+Age > 35 years
+Obesity (BMI ≥ 30 kg/m2) either prepregnancy or in early pregnancy
+Parity ≥ 3 (a woman becomes para 3 after her third delivery)
+Smoking
+Gross varicose veins (symptomatic or above knee or with associated phlebitis, 
+oedema/skin changes)
+Paraplegia
+Obstetric risk factors Multiple pregnancy 
+Current pre-eclampsia
+Caesarean section 
+Prolonged labour ( > 24 hours)
+Mid-cavity or rotational operative delivery
+Stillbirth
+Preterm birth
+Postpartum haemorrhage ( > 1 litre/requiring transfusion) 
+New onset/transient
+These risk factors are potentially 
+reversible and may develop at later 
+stages in gestation than the initial 
+risk assessment or may resolve and 
+therefore what is important is an 
+ongoing individual risk assessmentAny surgical procedure in pregnancy or puerperium except immediate repair of the 
+perineum, e.g. appendicectomy, postpartum sterilisation
+Bone fracture
+Hyperemesis, dehydration
+Ovarian hyperstimulation 
+syndrome (first trimester only)Assisted reproductive technology (ART), in vitro 
+fertilisation (IVF) 
+Admission or immobility 
+(≥ 3 days’ bed rest)e.g. pelvic girdle pain restricting mobility
+Current systemic infection 
+(requiring intravenous antibiotics or 
+admission to hospital)e.g. pneumonia, pyelonephritis, postpartum 
+wound infection
+Long-distance travel ( > 4 hours)
+4.2 Previous VTE
+How should women with previous VTE be managed in pregnancy? (see Appendix IV)
+4.2.1 Single previous VTE
+Women with previous VTE should be offered prepregnancy counselling and a prospective 
+management plan for thromboprophylaxis in pregnancy made. Those who become pregnant before 
+receiving such counselling should be referred at the earliest opportunity in pregnancy to a clinician 
+with expertise in thrombosis in pregnancy.
+Women with previous VTE (except those with a single previous VTE related to major surgery 
+and no other risk factors) should be offered thromboprophylaxis with LMWH throughout the 
+antenatal period.P
+CRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists14 of 40Women with previous VTE should have a careful history documented. Where objective documentation 
+is not available, the previous diagnosis of VTE can be assumed in cases where the woman gives a 
+good history and received prolonged (greater than 6 weeks) therapeutic anticoagulation.
+Women with previous VTE have an increased risk of recurrence in pregnancy and 
+postpartum15,16,32 with reported recurrence rates of 2–11%.27,50–53 A retrospective comparison of 
+the recurrence rate of VTE during pregnancy and the nonpregnant period revealed recurrence 
+rates of 10.9% during and 3.7% outside pregnancy, giving a relative risk during pregnancy of 
+3.5 (95% CI 1.6–7.8).50 The risk of recurrence appears to be constant over the whole period 
+of pregnancy.52,53
+There are no randomised trials on which to base measures to prevent antenatal VTE in women 
+with prior VTE and decisions are therefore based on estimates from observational studies. 
+Evidence from prospective51 and retrospective53 studies suggests that the risk of antenatal 
+recurrence is very low if the prior VTE was provoked by a transient major risk factor that is no 
+longer present. Outside pregnancy, the recurrence risk is lower in those with VTE complicating 
+major surgery than in those provoked by other transient nonsurgical risk factors.54
+All women with prior VTE should receive postpartum prophylaxis15,16,32 as this is the period 
+of greatest risk.
+4.2.2 Thrombophilia-associated VTE
+Heritable thrombophilia 
+Women with previous VTE associated with antithrombin deficiency (who will often be on long-term 
+oral anticoagulation) should be offered thromboprophylaxis with higher dose LMWH (either 50%, 
+75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks postpartum or until 
+returned to oral anticoagulant therapy after delivery.
+Management should be undertaken in collaboration with a haematologist with expertise in 
+thrombosis in pregnancy and consideration given to antenatal anti-Xa monitoring and the potential 
+for antithrombin replacement at initiation of labour or prior to caesarean section.
+If anti-Xa levels are measured, a test that does not use exogenous antithrombin should be used 
+and 4-hour peak levels of 0.5–1.0 iu/ml aimed for.
+Other heritable thrombophilic defects are lower risk and can be managed with standard doses of 
+thromboprophylaxis.
+The evidence on which to base guidance on the prevention of recurrent VTE during 
+pregnancy in women with thrombophilia remains limited. However, since most women 
+with previous VTE will be offered thromboprophylaxis anyway, the presence of a heritable 
+thrombophilia generally makes little difference to management and, outside pregnancy, 
+heritable thrombophilias are at best weak predictors of recurrent VTE.55
+Risks of recurrent VTE appear higher for those with a family history and deficiencies of 
+the naturally occurring anticoagulants, particularly type 1 antithrombin deficiency (both 
+activity and antigen reduced), than for those with heterozygous V Leiden or the prothrombin 
+variant.56–60 Patients with prior VTE and type 1 antithrombin deficiency typically have a family 
+history of VTE and are often on long-term oral anticoagulant therapy. Heparins may not be 
+as effective in antithrombin deficiency as their mode of action is antithrombin-dependent. 
+Although evidence is limited,61 they are likely to require intermediate or therapeutic dose C
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2+
+D
+P
+P
+P
+Evidence 
+level 4
+Evidence 
+level 3RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists15 of 40LMWH throughout pregnancy and this should be continued for a minimum of 6 weeks 
+postpartum or until converted back to long-term oral anticoagulation. Different subtypes of 
+antithrombin deficiency are associated with different levels of VTE risk and therefore advice 
+should be sought from a local expert in this area. Antithrombin replacement around the time 
+of delivery has been suggested61,62 and might be considered in individual cases. 
+Acquired thrombophilia – see also section 4.4 
+Women with VTE associated with the antiphospholipid syndrome (APS) (who will often be on long-
+term oral anticoagulation) should be offered thromboprophylaxis with higher dose LMWH (either 
+50%, 75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks postpartum or until 
+returned to oral anticoagulant therapy after delivery. 
+Pregnant women with APS and prior VTE or arterial thromboses should be managed in collaboration 
+with a haematologist and/or rheumatologist with expertise in this area. 
+Women with antiphospholipid syndrome (APS) and previous VTE are at high risk of recurrent 
+VTE in pregnancy. A Canadian study found that APS was associated with an adjusted odds 
+ratio for PE of 12.9 (95% CI 4.4–38.0), and for DVT 5.1 (95% CI 1.8–14.3).16 Many women with 
+unprovoked or recurrent VTE diagnosed with APS will be on long-term oral anticoagulant 
+therapy. There are no randomised controlled trial data to support recommendations for 
+particular doses of LMWH in pregnancy. Case series support high prophylactic doses,63,64 but 
+some authors recommend either intermediate (75%) or therapeutic full anticoagulant doses of 
+LMWH26,65 and this may be appropriate for APS with recurrent previous VTE or arterial events.
+4.2.3 Previous recurrent VTE
+What extra advice is needed for women with previous recurrent VTE?
+Advice regarding doses of LMWH in pregnancy should be sought from a clinician with expertise in 
+haemostasis and pregnancy. 
+Some women with previous recurrent VTE require higher doses of LMWH. 
+Women on long-term warfarin or other oral anticoagulants should be counselled about the risks of 
+these agents to the fetus (see section 8.6) and advised to stop their oral anticoagulant therapy and 
+change to LMWH as soon as pregnancy is confirmed, ideally within 2 weeks of the missed period 
+and before the sixth week of pregnancy. 
+Women not on warfarin or other oral anticoagulants should be advised to start LMWH as soon as 
+they have a positive pregnancy test. 
+Individuals with recurrent VTE are at increased risk of further recurrence66,67 and many will 
+be on long-term oral anticoagulant therapy. Although data are lacking, it would be expected 
+that they would have a high risk of recurrence in pregnancy.
+4.2.4 Stratification of women with previous VTE 
+How should women with previous VTE be stratified to determine management in pregnancy?
+Women with VTE associated with either antithrombin deficiency or APS or with recurrent VTE (who 
+will often be on long-term oral anticoagulation) should be offered thromboprophylaxis with higher 
+dose LMWH (either 50%, 75% or full treatment dose) (see Appendix IV) antenatally and for 6 weeks 
+postpartum or until returned to oral anticoagulant therapy after delivery. These women require 
+specialist management by experts in haemostasis and pregnancy. Evidence 
+level 3
+Evidence 
+level 3PD
+P
+P
+P
+P
+Evidence 
+level 4 
+DRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists16 of 40Women in whom the original VTE was unprovoked/idiopathic or related to estrogen (estrogen-
+containing contraception/pregnancy) or related to a transient risk factor other than major surgery 
+or who have other risk factors should be offered thromboprophylaxis with LMWH throughout the 
+antenatal period. 
+In women in whom the original VTE was provoked by major surgery from which they have recovered 
+and who have no other risk factors, thromboprophylaxis with LMWH can be withheld antenatally 
+until 28 weeks provided no additional risk factors are present (in which case they should be offered 
+LMWH). They require close surveillance for the development of other risk factors.
+Administration of antenatal LMWH depending on categorisation of women with prior VTE 
+into higher and lower risk groups depending on the presence or absence of a temporary risk 
+factor and/or thrombophilia was associated with a low risk of recurrence in a prospective 
+German study.25 
+These data and recent international guidelines5,26,68 support stratification of women with 
+previous VTE into different risk categories requiring different levels of thromboprophylaxis 
+(see Appendix I and Appendix IV). 
+4.2.5 T esting for thrombophilia in women with prior VTE
+Which women with prior VTE require thrombophilia testing?
+Prior to testing for thrombophilia, women should be counselled regarding the implications for 
+themselves and family members of a positive or negative result. The results should be interpreted 
+by clinicians with specific expertise in the area. 
+Women with a family history of VTE and either antithrombin deficiency or where the specific 
+thrombophilia has not been detected should be tested for antithrombin deficiency. 
+Women with an unprovoked VTE should be tested for the presence of antiphospholipid antibodies. 
+It is important to be aware of the effects of pregnancy on the results of thrombophilia tests. 
+These are described in another guideline.1 Thrombophilia testing should not be requested 
+inappropriately and only if the finding of a thrombophilia would alter the proposed management. 
+All women with prior VTE (see above) should be considered for thromboprophylaxis and 
+hence testing for heritable thrombophilia is not routinely required.
+Recent reviews of risk assessment for recurrent venous thrombosis recommend against testing 
+routinely for thrombophilia.69,70 However, if thrombophilia testing is performed following 
+an episode of VTE (e.g. following an unprovoked VTE episode and with a family history), 
+it is preferable that this is done before pregnancy, both because pregnancy itself affects the 
+estimation of protein S in particular and because it allows decisions on thromboprophylaxis 
+to be considered in advance of pregnancy.
+Women with previous VTE should not be screened for thrombophilia in pregnancy unless 
+the result will influence recommendations regarding thromboprophylaxis. Detection 
+of antithrombin deficiency or APS will alter the dose of thromboprophylaxis offered in 
+pregnancy and therefore screening for the former is indicated in women with previous 
+VTE and a family history of VTE and either antithrombin deficiency or where the 
+specific thrombophilia has not been detected and for APS in those with an unprovoked 
+VTE. APS is not diagnosed unless lupus anticoagulant and/or anticardiolipin and/or 
+β2-glycoprotein 1 antibodies are positive on two occasions 12 weeks apart.71 D
+D
+Evidence 
+level 2+
+P
+P
+P
+Evidence 
+level 4RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists17 of 404.3 Asymptomatic heritable thrombophilia 
+How should women with asymptomatic thrombophilia be treated? (see Appendix IV)
+Women should be stratified according to level of risk associated with their thrombophilia and the 
+presence or absence of a family history or other risk factors. 
+Women with asymptomatic antithrombin, protein C or S deficiency or those with more than one 
+thrombophilic defect (including homozygous factor V Leiden, homozygous prothrombin gene 
+mutation and compound heterozygotes) should be referred to a local expert and antenatal 
+prophylaxis considered. They should be recommended for six weeks’ postnatal prophylaxis even 
+in the absence of additional risk factors. 
+Heterozygosity for factor V Leiden or prothrombin gene mutation or antiphospholipid antibodies are 
+considered as risk factors for thrombosis in asymptomatic women (see Appendix I). In the presence 
+of three other risk factors such women may be considered for antenatal thromboprophylaxis, if 
+there are two other risk factors thromboprophylaxis should be considered from 28 weeks and if 
+there is one other risk factor postnatal thromboprophylaxis for 10 days should be considered. 
+Women with no personal history or risk factors for VTE but who have a family history of an 
+unprovoked or estrogen-provoked VTE in a first-degree relative when aged under 50 years 
+should be considered for thrombophilia testing. This will be more informative if the relative has a 
+known thrombophilia. 
+The role of testing for heritable thrombophilias in women with a family history but no personal 
+history of VTE remains controversial, as does the management in pregnancy and following 
+childbirth of any thrombophilic tendency that is thereby identified.26,68,72
+Family history itself in the absence of an identifiable thrombophilic tendency is associated 
+with an increased risk of VTE.73–75 It may be reasonable to consider case finding in high-risk 
+thrombophilic families and in asymptomatic pregnant women with a family history of VTE 
+in a first-degree relative aged under 50 years where the episode has been unprovoked or 
+provoked by pregnancy, combined oral contraceptive exposure or the presence of a minor 
+risk factor.55,68 Testing is more informative if the thrombophilic tendency in the proband is 
+known. In contrast, thrombophilia testing is not required in pregnant women with other 
+clinical risk factors indicating a need for thromboprophylaxis.
+Recent prospective and retrospective family studies support the view that deficiencies of 
+the naturally occurring anticoagulants (antithrombin, protein C and protein S) are of greater 
+clinical significance than heterozygous carriage of factor V Leiden or the prothrombin gene 
+mutation.59,76 Recent studies have been consistent with a higher risk of pregnancy-related 
+VTE in women who are antithrombin deficient or who are homozygous for factor V Leiden, 
+the prothrombin gene mutation or are compound heterozygotes for factor V Leiden and the 
+prothrombin gene mutation.61,62,77,78
+Women should be stratified according to both the level of risk associated with their 
+thrombophilia (see Table 2) and the presence or absence of a family history or other risk 
+factors.79 The decision to offer antenatal thromboprophylaxis should be based on an estimate of 
+the absolute risk of VTE during the pregnancy (and of the bleeding risk of prophylaxis) and this 
+depends on the individual thrombophilic tendency, the details of the family history (number of 
+affected relatives, age at which thrombosis developed, whether it was pregnancy- or estrogen-
+associated and the presence or absence of additional risk factors in the affected relatives),80 the 
+presence of additional clinical risk factors and the wishes of the individual woman.D
+D
+D
+D
+Evidence 
+level 4 
+Evidence 
+level 3RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists18 of 40When LMWH is used for thromboprophylaxis in pregnancy in women with asymptomatic 
+thrombophilias, standard doses can be used, with the exception of antithrombin deficiency 
+where intermediate doses may be required.61
+Antenatal thromboprophylaxis is not routinely required in women with a low-risk thrombophilic 
+tendency (heterozygosity of factor V Leiden or the prothrombin gene mutation) unless there 
+are additional clinical risk factors including a strong family history particularly of pregnancy-
+related VTE. 
+Homozygosity for a thermolabile variant of the gene for methylenetetrahydrofolate reductase 
+(MTHFR) is sometimes included in thrombophilia testing but there is no evidence of an 
+association with a clinically relevant increase in the risk of VTE in pregnancy and it should 
+be ignored.81
+Table 2. Estimated absolute risk of pregnancy-associated VTE with different thrombophilic defects in women 
+with one or more symptomatic first-degree relative
+Thrombophilic defect Pregnancy
+(%/pregnancy,
+95% CI)Antenatal
+(%/pregnancy,
+95% CI)Postpartum 
+(%/pregnancy,
+95% CI)
+Antithrombin, protein C or protein S deficiency824.1 (1.7–8.3) 1.2 (0.3–4.2) 3.0 (1.3–6.7)
+Antithrombin deficiency type 1 (range)83–87* 15–50 0–40 11–28
+V Leiden heterozygous82 2.1 (0.7–4.9) 0.4 (0.1–2.4) 1.7 (0.7–4.3)
+Prothrombin gene mutation heterozygous822.3 (0.8–5.3) 0.5 (0.1–2.6) 1.9 (0.7–4.7)
+V Leiden homozygous or compound heterozygosity 
+V Leiden and prothrombin gene mutation (range)88,891.8–15.8 0–5 1–10
+*These data are from a population-based study, not a family-based study
+4.4 Antiphospholipid antibodies 
+How should women with antiphospholipid antibodies be treated? 
+Persistent antiphospholipid antibodies (lupus anticoagulant and/or anticardiolipin and/or 
+β2-glycoprotein 1 antibodies) in women without previous VTE should be considered as a risk factor 
+for thrombosis (see Appendix I) such that if she has other risk factors she may be considered for 
+antenatal or postnatal thromboprophylaxis as above. 
+Diagnostic criteria for APS, an acquired thrombophilic tendency, have been agreed.71 Management 
+recommendations in this guideline are limited to the prevention of VTE and not that of other adverse 
+pregnancy outcomes. 
+The risk of VTE in women with obstetric APS characterised by recurrent miscarriage or fetal 
+loss without prior VTE is unclear, but data from randomised trials suggest that the risk is 
+low. Antenatal heparin therapy administered to improve pregnancy outcome in these trials 
+was typically stopped between 35 weeks and delivery and no maternal VTE events were 
+reported.90,91 In a series of 33 women with primary APS, there were no thromboses in women 
+with APS but without previous VTE given 3–5 days’ thromboprophylaxis postpartum only.63
+Antiphospholipid antibodies are sometimes detected because of a coagulation disturbance or 
+connective tissue disorder in the absence of a history of thrombosis or obstetric problems. 
+The risks of VTE in women with a persistent lupus anticoagulant and/or anticardiolipin and/
+or β2-glycoprotein 1 antibodies without prior thrombosis or recurrent miscarriage or fetal loss Evidence 
+level 4 
+Evidence 
+level 3C
+Evidence 
+level 2+RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists19 of 40(i.e. without APS)92,93 are small but it is reasonable to consider this as a risk factor in the same 
+way as V Leiden or the prothrombin variant and consider LMWH thromboprophylaxis if other 
+risk factors are present. 
+5. Timing of initiation of thromboprophylaxis 
+5.1 When should thromboprophylaxis be started?
+Antenatal thromboprophylaxis for those with previous VTE should begin as early in pregnancy 
+as practical.
+Women without previous VTE and without particular first trimester risk factors or admission 
+to hospital, but with four other risk factors, should be considered for antenatal prophylaxis 
+throughout pregnancy.
+Women without previous VTE and without particular first trimester risk factors or admission to 
+hospital, but with three other risk factors, can start antenatal prophylaxis at 28 weeks of gestation. 
+Meta-analysis has shown that most VTE occurs antenatally with an equal distribution throughout 
+gestation,94 but two-thirds of antenatal fatal pulmonary VTE in 2003–2005 occurred in the 
+first trimester.3 Several studies have found that 40–50% of antenatal VTE occurred before 15 
+weeks of gestation.18–20 These data emphasise the need for risk assessment prepregnancy and 
+institution of prophylaxis if appropriate in early pregnancy. 
+However, recent studies have demonstrated that the risk of antenatal VTE is highest in the 
+third trimester. A Norwegian study48 found that, of all VTEs associated with pregnancy and 
+postpartum, 10% occurred in each of the first and second trimesters and 28% in the third 
+trimester; a UK study found that the rate of VTE during the third trimester was six times 
+higher than outside pregnancy (IRR 6.1, 95% CI 4.7–7.9). In contrast, both the first (IRR 1.6) 
+and second (IRR 2.1) trimesters conferred little increase in risk.9 In a Danish cohort study,17 the 
+absolute risk of VTE per 10 000 pregnancy-years increased from 4.1 (95% CI 3.2–5.2) during 
+the first trimester to 59.0 (95% CI 46.1–76.4) by week 40.
+5.2 First trimester risk factors
+What are the first trimester risk factors for VTE and how should they be managed? 
+Women admitted with hyperemesis should be considered for thromboprophylaxis with LMWH and 
+can discontinue thromboprophylaxis when the hyperemesis resolves.
+Women with ovarian hyperstimulation syndrome should be considered for thromboprophylaxis 
+with LMWH in the first trimester. 
+Women with an IVF pregnancy and three other risk factors should be considered for 
+thromboprophylaxis with LMWH starting in the first trimester. 
+Certain additional risk factors may complicate the first trimester (Table 1 and Appendix II), 
+such as hyperemesis,16,32 ovarian hyperstimulation syndrome and IVF.12,24,95,96 In a Norwegian 
+case–control study12 assisted reproduction and multiple pregnancies had additive effects. 
+Evidence from a Swedish study suggests that not only does IVF double the risk of VTE 
+compared to natural conception, but the risk in the first trimester was four-fold higher 
+and the risk of PE during the first trimester was seven times higher.97 Women with ovarian 
+hyperstimulation syndrome are particularly prone to VTE in the upper body.95,96 At present 
+it is unclear whether women undergoing surgical management of miscarriage and surgical 
+termination of pregnancy are at increased risk of VTE.Evidence 
+level 2+
+B
+C
+C
+Evidence 
+level 1+
+Evidence 
+level 2++
+C
+C
+C
+Evidence 
+level 2+RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists20 of 406. Thromboprophylaxis during labour and delivery, including the use of regional analgesia 
+When should thromboprophylaxis be interrupted for delivery?
+Women receiving antenatal LMWH should be advised that if they have any vaginal bleeding or once 
+labour begins they should not inject any further LMWH. They should be reassessed on admission 
+to hospital and further doses should be prescribed by medical staff.
+Regional techniques should be avoided if possible until at least 12 hours after the previous 
+prophylactic dose of LMWH.
+LMWH should not be given for 4 hours after use of spinal anaesthesia or after the epidural catheter 
+has been removed and the catheter should not be removed within 12 hours of the most recent 
+injection.
+When a woman presents while on a therapeutic regimen of LMWH, regional techniques should be 
+avoided if possible for at least 24 hours after the last dose of LMWH.
+Women receiving antenatal LMWH having an elective caesarean section should receive a 
+thromboprophylactic dose of LMWH on the day prior to delivery and, on the day of delivery, any 
+morning dose should be omitted and the operation performed that morning.
+The first thromboprophylactic dose of LMWH should be given as soon as possible after delivery 
+provided there is no postpartum haemorrhage and regional analgesia has not been used.
+Women at high risk of haemorrhage with risk factors including major antepartum haemorrhage, 
+coagulopathy, progressive wound haematoma, suspected intra-abdominal bleeding and postpartum 
+haemorrhage may be managed with anti-embolism stockings (AES), foot impulse devices or 
+intermittent pneumatic compression devices. Unfractionated heparin (UFT) may also be considered.
+If a woman develops a haemorrhagic problem while on LMWH the treatment should be stopped and 
+expert haematological advice sought.
+Thromboprophylaxis should be started or reinstituted as soon as the immediate risk of haemorrhage 
+is reduced.
+The pregnancy-associated prothrombotic changes in the coagulation system are maximal 
+immediately following delivery. However, in order to allow for use of regional analgesia or 
+anaesthesia and minimise the risk of epidural haematoma,98 women are advised to discontinue 
+LMWH at the onset of labour or prior to planned delivery. Regional analgesia can be sited 
+only after discussion with a senior anaesthetist, in keeping with local obstetric anaesthetic 
+protocols.1 It is important to discuss the implications of treatment with LMWH for regional 
+analgesia with the woman prior to labour or caesarean section. This could be undertaken in 
+an antenatal anaesthetic clinic.
+If LMWH is routinely prescribed at 6 p.m., this allows for an elective caesarean section the next morning, 
+removal of the epidural catheter before 2 p.m. and a first postnatal dose of LMWH at 6 p.m. the same day.
+In some women, particularly those on high-dose prophylactic or treatment doses of LMWH, 
+there may be an indication for induction of labour to help plan thromboprophylaxis around 
+delivery and facilitate a 24-hour window between the last dose of LMWH and regional 
+analgesia.99 If LMWH precludes regional techniques (in, for example, the woman who presents 
+in spontaneous labour within 12 hours of taking a LMWH dose), alternative analgesia such as 
+opiate-based intravenous patient-controlled analgesia can be offered.P
+P
+P
+P
+P
+P
+P
+P
+P
+Evidence 
+level 4
+Evidence 
+level 4RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists21 of 407. Thromboprophylaxis after delivery 
+7.1 Assessment of risk
+What are the risk factors for VTE after delivery?
+All women with class 3 obesity (BMI greater than or equal to 40 kg/m2) should be considered for 
+prophylactic LMWH in doses appropriate for their weight for 10 days after delivery.
+Women with two or more persisting risk factors listed in Table 1 should be considered for LMWH in 
+prophylactic doses appropriate for their weight for 10 days after delivery.
+Risk factors for VTE after delivery are summarised in Table 1, Appendix I and Appendix II. 
+Nearly all women7,8 dying from VTE following vaginal delivery in the 2003–2005 Confidential 
+Enquiry were overweight or obese or over the age of 40 years.
+Additional risk factors relevant for postpartum thromboprophylaxis after delivery include 
+prolonged labour, immobility, infection, haemorrhage and blood transfusion (see Appendix 
+I, Table 1, Appendix II and Appendix III). Recent evidence supporting these obstetric 
+complications as risk factors for VTE comes from several large population-based studies.15,16,22 
+A Canadian population-based cohort study of around 7000 women with pregnancy-related 
+hospitalisations for VTE from 1991–1992 to 2005–200616 identified major puerperal infection 
+(aOR for PE 4.1, 95% CI 3.0–5.6; aOR for DVT 6.1, 95% CI 5.0–7.5) and blood transfusion (aOR 
+for PE = 4.5, 95% CI 3.3–6.2; aOR for DVT 3.6, 95% CI 2.8–4.7) as risk factors for VTE. The 
+study by Sultan et al.22 found that the strongest risk factor was stillbirth (AR 2444/100 000 
+person-years; IRR 6.2) and the risk was also significantly increased with preterm birth (AR 
+854/100 000 person-years, 95% CI 649–1124; IRR 2.69, 95% CI 1.99–3.65). These have therefore 
+been added as risk factors in this edition of the guideline. 
+7.2 Previous VTE
+Which women with previous VTE need postpartum thromboprophylaxis?
+All women with a previous history of confirmed VTE should be offered thromboprophylaxis with 
+LMWH or warfarin for at least 6 weeks postpartum regardless of the mode of delivery.
+Since the risk of VTE is higher postpartum8,9,17,52,53,94 than antenatally, all women with previous 
+VTE need to continue their LMWH prophylaxis for 6 weeks postpartum. Those with recurrent 
+VTE on long-term oral anticoagulant therapy need to continue their LMWH until switched 
+back to warfarin or another oral agent.
+7.3 Asymptomatic thrombophilia
+Which women with thrombophilia without previous VTE need postpartum 
+thromboprophylaxis? 
+Women with thrombophilia without previous VTE should be stratified according to both the level of 
+risk associated with their thrombophilia and the presence or absence of a family history or other 
+risk factors. 
+Women with a family history of VTE and an identified thrombophilia should be considered for 
+6 weeks’ postnatal thromboprophylaxis.
+See section 4.3 above.Evidence 
+level 2++D
+B
+Evidence 
+level 3
+Evidence 
+level 2++
+DCBRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists22 of 407.4 Caesarean section
+What is the magnitude of risk of VTE after caesarean section?
+All women who have had caesarean sections should be considered for thromboprophylaxis with 
+LMWH for 10 days after delivery apart from those having an elective caesarean section who should 
+be considered for thromboprophylaxis with LMWH for 10 days after delivery if they have any 
+additional risk factors (see Appendix I and Table 1).
+Most women who suffer a VTE after caesarean section have other risk factors including twin 
+pregnancy, obesity, severe pre-eclampsia, reoperation, immobilisation and placenta praevia.100 
+Caesarean section is a risk factor for death from PE.3,4,101,102 Women delivered by elective 
+caesarean section have at least double the postpartum risk of VTE compared with vaginal 
+birth.21 The risk of postpartum VTE after an emergency caesarean section is twice that after 
+an elective caesarean section and four times that after a vaginal delivery.12,103 Studies exploring 
+the risk of VTE comparing all caesarean sections with vaginal delivery have found relative 
+risks of 2–6.7.16,22,24,104
+7.5 For how long should thromboprophylaxis be continued after delivery?
+Risk assessment should be performed in each woman at least once following delivery and before 
+discharge and arrangements made for LMWH prescription and administration (usually by the 
+woman herself) in the community where necessary.
+Thromboprophylaxis should be continued for 6 weeks in high-risk women and for 10 days in 
+intermediate-risk women (see Appendix I and Appendix IV).
+In women who have additional persistent (lasting more than 10 days postpartum) risk factors, 
+such as prolonged admission, wound infection or surgery in the puerperium, thromboprophylaxis 
+should be extended for up to 6 weeks or until the additional risk factor/s is/are no longer present.
+The prothrombotic changes of pregnancy do not revert completely to normal until several weeks 
+after delivery. The time of greatest risk for VTE is the early puerperium and, although most VTE 
+occurs antenatally, the risk per day is greatest in the weeks immediately after delivery.8,9,17,52,53,94,105 
+For women at high risk of postpartum VTE, the recommended duration of thromboprophylaxis 
+is 6 weeks. Although laboratory evidence from thromboelastography (TEG) suggests correction 
+of hypercoagulability by 4 weeks,106 clinical data from observational studies in Sweden,107 the 
+USA,8,105 Norway48 and the Netherlands10 suggest that the increased risk of VTE persists for 6 
+weeks postpartum, albeit less during weeks 5 and 6. The triennial UK confidential enquiries 
+into maternal mortality between 1994 and 2005 suggest that the increased risk of fatal PE is 
+still present in weeks 5 and 6 (a total of 15 deaths compared to 21 in weeks 3 and 4) and all six 
+women who died from PE after caesarean section (2006–2008) died between 2 and 6 weeks 
+after delivery, whereas fatal events after that are very rare.3,4,101,102,108 
+There is little evidence to support recommendations regarding duration of postpartum 
+thromboprophylaxis in women at intermediate risk of VTE. TEG data from 71 women post 
+normal delivery showed that all parameters remained abnormal at 1 week postpartum and the 
+authors suggested that 3–5 days’ thromboprophylaxis may be insufficient.106 The numbers of 
+VTEs after caesarean sections were similar in weeks 1, 2 and 3 in one study.12 This suggests 
+that caesarean section continues to be a significant risk factor for fatal PE and therefore it is 
+important to extend the duration of prophylaxis in the presence of additional persistent (lasting 
+more than 10 days postpartum) risk factors, such as prolonged admission or wound infection, 
+for up to 6 weeks or until the additional risk factor/s is/are no longer present (see Appendix I).Evidence 
+level 2+C
+P
+C
+D
+Evidence 
+level 2+RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists23 of 408. Which agents should be used for thromboprophylaxis?
+8.1 Low-molecular-weight heparin (LMWH)
+LMWHs are the agents of choice for antenatal and postnatal thromboprophylaxis.
+Doses of LMWH are based on weight. For thromboprophylaxis the booking or most recent weight 
+can be used to guide dosing.
+It is only necessary to monitor the platelet count if the woman has had prior exposure to 
+unfractionated heparin (UFH).
+Monitoring of anti-Xa levels is not required when LMWH is used for thromboprophylaxis.
+Doses of LMWH should be reduced in women with renal impairment.
+LMWH is safe in breastfeeding.
+LMWHs are as effective as and safer than unfractionated heparin (UFH) when used to prevent 
+VTE in pregnancy.21,109–112 The risk of heparin-induced thrombocytopenia (HIT) is substantially 
+lower with LMWH.109,110,113 Guidelines recommend against monitoring platelet count where 
+LMWH is used and where there is no previous exposure to UFH.1,114 In a systematic review 
+of 2777 pregnancies there were no cases of HIT.109 Prolonged UFH use during pregnancy 
+may result in osteoporosis and fractures,115 but this risk is very low with LMWH.109,116–119 A 
+systematic review of LMWH109 showed the incidence of osteoporotic fractures was 0.04% 
+(95% CI 0.01–0.2) and that of allergic skin reactions was 1.8% (95% CI 1.34–2.37). More recent 
+studies provide further evidence for the safety and efficacy of dalteparin,120 enoxaparin120 
+and tinzaparin121 for prophylaxis in pregnancy. In the study of tinzaparin,121 three women 
+developed bone fractures, but all had prior risk factors for osteoporosis (such as low BMI, 
+previous osteoporosis, smoking, long-term steroid and/or other UFH/LMWH use).
+Evidence for an increased risk of bleeding is more controversial. A systematic review found 
+significant bleeding, usually related primarily to obstetric causes, occurred in 1.98% (95% CI 
+1.5–2.57).109 This related to both treatment and prophylactic doses of LMWH and therefore the 
+risk of bleeding is likely to be less than 2% with prophylactic doses.109 There is an increased 
+risk of wound haematoma following caesarean section with LMWH of around 2%.6,109,122 
+Some have found an increased risk of postpartum haemorrhage6 but this is not supported by 
+other studies.123 A Cochrane review29 of UFH or LMWH for thromboprophylaxis in women 
+undergoing caesarean section found more bleeding or bruising episodes compared to women 
+not receiving heparin (risk ratio 5.15).
+Table 3 gives suggested prophylactic and therapeutic subcutaneous doses of LMWH in pregnancy and 
+postpartum. There are no data to guide appropriate doses of LMWH for obese pregnant or puerperal 
+women. The doses in Table 3 are only suggestions and doses for obese women are not evidence-based. 
+In the UKOSS study,7 some overweight and obese women suffered a PE while receiving doses of LMWH 
+prophylaxis appropriate for women of weights 50–90 kg.
+Anti-Xa levels provide only a rough guide of the concentration of heparin present and provide 
+little or no evidence on the efficacy in relation to prevention of thrombosis.124
+Lower doses of LMWH should be employed if the creatinine clearance is less than 30 ml/
+minute (enoxaparin and dalteparin) or less than 20 ml/minute with tinzaparin.124 A creatinine 
+clearance of 30 ml/minute equates to a serum creatinine of about 200 μmol/l for a 30-year-old 
+woman weighing 70 kg.A
+B
+B
+D
+C
+A
+Evidence 
+level 1++
+Evidence 
+level 2+Evidence 
+level 3RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists24 of 40Table 3. Suggested thromboprophylactic doses for antenatal and postnatal LMWH
+Weight Enoxaparin Dalteparin Tinzaparin 
+(75 u/kg/day)
+< 50 kg 20 mg daily 2500 units daily 3500 units daily
+50–90 kg 40 mg daily 5000 units daily 4500 units daily
+91–130 kg 60 mg daily* 7500 units daily 7000 units daily*
+131–170 kg 80 mg daily* 10 000 units daily 9000 units daily* 
+> 170 kg 0.6 mg/kg/day* 75 u/kg/day 75 u/kg/day*
+High prophylactic dose for women weighing 50–90 kg 40 mg 12 hourly 5000 units 12 hourly 4500 units 12 hourly
+*may be given in 2 divided doses
+LMWH is safe and easy to use postpartum and has the advantage of not requiring monitoring. 
+For those women receiving LMWH antenatally (and therefore for 6 weeks postpartum) or for 
+those requiring 10 days’ postpartum thromboprophylaxis, it is the agent of choice. Experience 
+of LMWH in the puerperium reports no problems during breastfeeding.109
+8.2 Unfractionated heparin
+In women at very high risk of thrombosis (see Appendix IV), UFH may be used peripartum in 
+preference to LMWH where there is an increased risk of haemorrhage or where regional anaesthetic 
+techniques may be required. 
+If UFH is used after caesarean section (or other surgery), the platelet count should be monitored 
+every 2–3 days from days 4–14 or until heparin is stopped.
+The benefits of UFH are that it has a shorter half-life than LMWH and there is more complete 
+reversal of its activity by protamine sulfate.125 So, for example, if no LMWH has been given 
+for 24 hours but the woman has not yet delivered and there is concern about delaying further 
+doses of anticoagulants, a prophylactic dose of 5000 iu subcutaneously of UFH could be used 
+and repeated every 12 hours until LMWH can be resumed after delivery. The required interval 
+between a prophylactic dose of UFH and regional analgesia or anaesthesia is less (4 hours) 
+than with LMWH (12 hours)99 and there is less concern regarding neuraxial haematomas with 
+UFH.98 Any exposure to UFH is associated with an increased risk of HIT.126
+8.3 Danaparoid
+Potential use of danaparoid should be in conjunction with a consultant haematologist with 
+expertise in haemostasis and pregnancy.
+Danaparoid is a heparinoid that is mostly used in patients intolerant of heparin, either because 
+of HIT or a skin allergy to heparins. Experience in the use of this agent in a total of 91 pregnancies 
+has been reviewed.127,128 There were six maternal bleeding events, two of which were fatal due 
+to placental problems (praevia and abruption). Additionally there were seven early miscarriages 
+and one neonatal death following emergency caesarean section at 28 weeks for fetal growth 
+restriction. There were no adverse fetal outcomes attributed to danaparoid. Danaparoid seems 
+reasonable to use in pregnancy when there is a requirement for anticoagulant prophylaxis 
+or treatment and heparins cannot be used. The half-life of danaparoid is long (24 hours) and 
+regional anaesthesia should be avoided in women receiving it for thromboprophylaxis.99 
+Although direct evidence is limited, it seems likely that breastfeeding would be safe while on 
+danaparoid since little if any appears in breast milk129 and oral absorption is unlikely.Evidence 
+level 3Evidence 
+level 1+
+Evidence 
+level 4D
+D
+PRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists25 of 408.4 Fondaparinux 
+Fondaparinux should be reserved for women intolerant of heparin compounds.
+Fondaparinux use in pregnancy should be in conjunction with a consultant haematologist with 
+expertise in haemostasis and pregnancy.
+Fondaparinux is a synthetic pentasaccharide that acts through inhibition of factor Xa 
+via antithrombin. It is licensed in the UK for the prevention and treatment of VTE outside 
+pregnancy and has a broadly similar efficacy to LMWH. There is limited experience of its 
+use in pregnancy but it has been used in the setting of heparin intolerance with no reported 
+hypersensitivity reactions or adverse effects on the fetus.130–137 No placental passage of 
+fondaparinux was found in a human cotyledon model138 but anti-factor Xa activity about 10% 
+of that in maternal plasma was found in the umbilical cord plasma in newborns of four of 
+five mothers being treated with fondaparinux.139 No adverse effects were observed in the 
+newborns. It does not seem necessary to alter the dose in pregnancy.131 It is unknown whether 
+fondaparinux is excreted in breast milk but oral absorption seems unlikely. The half-life of 
+fondaparinux is long (18 hours) and 36–42 hours should pass following the previous dose 
+before it becomes acceptable to consider regional anaesthesia.99 Thus, although experience is 
+limited, it seems likely that fondaparinux would be a reasonable alternative when there is a 
+need for anticoagulant prophylaxis or treatment in pregnancy and heparins cannot be used.
+8.5 Low-dose aspirin 
+Aspirin is not recommended for thromboprophylaxis in obstetric patients. 
+There are no controlled trials on the use of aspirin for thromboprophylaxis in pregnancy. 
+Conclusions about its efficacy have been extrapolated from trials in the nonpregnant population. 
+In the NICE guideline reviewing VTE prevention in hospitalised patients,5 300 mg or more of 
+aspirin daily reduced the risk of postoperative DVT in patients undergoing a variety of surgical 
+procedures. However, the benefit was modest in comparison to heparin and aspirin was not 
+recommended for postoperative thromboprophylaxis. The Women’s Health Study140 found low-
+dose aspirin no better than placebo for long-term primary prevention of VTE in older women. 
+In contrast, two recent trials outside pregnancy suggested that after completion of treatment 
+with warfarin, low-dose aspirin conferred a modest reduction compared to placebo in the risk 
+of recurrent VTE in patients with a first unprovoked event.141,142 Overall, any benefit of aspirin 
+in VTE prevention appears uncertain and significantly less than that of LMWH.
+8.6 Warfarin 
+Warfarin use in pregnancy is restricted to the few situations where heparin is considered unsuitable, 
+e.g. some women with mechanical heart valves.
+Women receiving long-term anticoagulation with warfarin can be converted from LMWH to warfarin 
+postpartum when the risk of haemorrhage is reduced, usually 5–7 days after delivery.
+Warfarin is safe in breastfeeding.
+Warfarin crosses the placenta leading to an increased risk of congenital abnormalities including 
+a characteristic warfarin embryopathy (hypoplasia of nasal bridge, congenital heart defects, 
+ventriculomegaly, agenesis of the corpus callosum, stippled epiphyses) in approximately 5% 
+of fetuses exposed between 6 and 12 weeks of gestation.143–150 There is evidence that this 
+incidence is dose-dependent with a higher incidence in women taking greater than 5 mg/
+day.147–149 Other reported complications associated with warfarin therapy during pregnancy D
+P
+Evidence 
+level 4
+Evidence 
+level 3D
+PB
+P
+Evidence 
+level 2++RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists26 of 40include an increase in the risk of spontaneous miscarriage,146–148,151,152 stillbirth,145,147,148,151 
+neurological problems in the baby153,154 and fetal and maternal haemorrhage.148,149
+Warfarin can be safely used following delivery and in breastfeeding mothers, although it requires close 
+monitoring and visits to an anticoagulant clinic and carries an increased risk of postpartum haemorrhage 
+and perineal haematoma compared with LMWH. It is not appropriate for those women requiring only 
+10 days’ postpartum prophylaxis. However, it is appropriate for those on maintenance warfarin outside 
+pregnancy. Conversion from LMWH back to warfarin should be delayed for at least 5–7 days after delivery 
+to minimise the risk of haemorrhage during the period of overlap of LMWH and warfarin treatment.
+8.7 Dextran
+Dextran should be avoided antenatally and intrapartum because of the risk of anaphylactoid reaction.
+Although dextran may reduce the risk of postoperative DVT outside pregnancy, the evidence 
+is weak, it is less effective than LMWH and it appears to increase the risk of bleeding.155 
+Anaphylaxis to dextran has been associated with uterine hypertonus, fetal distress, fetal 
+neurological abnormalities and death.156,157
+8.8 Oral thrombin and Xa inhibitors
+Non-vitamin K antagonist oral anticoagulants (NOACs) should be avoided in pregnant women.
+Use of NOACs is not currently recommended in women who are breastfeeding.
+Non-vitamin K antagonist oral anticoagulants (NOACs, previously known as new/novel oral anticoagulants) 
+such as dabigatran, rivaroxaban and apixaban work through direct inhibition of thrombin or factor Xa. 
+They are not licensed for use in pregnancy where there is no experience in their use.
+9. Anti-embolism stockings 
+The use of properly applied anti-embolism stockings (AES) of appropriate size and providing 
+graduated compression with a calf pressure of 14–15 mmHg is recommended in pregnancy and the 
+puerperium for women who are hospitalised and have a contraindication to LMWH. These include 
+women who are hospitalised post-caesarean section (combined with LMWH) and considered to be 
+at particularly high risk of VTE (e.g. previous VTE, more than four risk factors antenatally or more 
+than two risk factors postnatally) and women travelling long distance for more than 4 hours. 
+There are no trials to support the use of AES in pregnancy and the puerperium and 
+recommendations are largely derived from extrapolation from studies using AES in the 
+hospitalised nonpregnant population158,159 Small studies have shown that AES significantly 
+improve venous emptying in pregnant women160 and increase the blood flow while decreasing 
+the lumen diameter of the superficial femoral161 and common femoral162 veins in late pregnancy 
+and early postpartum patients.
+Evidence from nonpregnant patients and other guidelines support the use of AES for patients 
+at high risk of bleeding (unable to receive pharmacological thromboprophylaxis), or where 
+there is a contraindication to anticoagulant thromboprophylaxis,26,163 or as an adjunct to 
+anticoagulant thromboprophylaxis in surgical patients.
+There are few data regarding the most efficacious length of AES to use in pregnancy and 
+advice in the nonpregnant population is contradictory.26,164–167 More DVTs in pregnant women 
+are iliofemoral compared to the nonpregnant population where calf vein DVTs are more Evidence 
+level 2++
+PD
+PEvidence 
+level 3
+Evidence 
+level 3D
+Evidence 
+level 4RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists27 of 40common. Studies of AES in pregnancy have only concerned full-length stockings.162 However, 
+in the obstetric population, there is the added problem of full-length stockings becoming 
+bloodstained. Therefore, on balance, properly applied full-length AES are advocated for 
+pregnant women but knee-length AES should be considered if (as is often the case) full-length 
+AES are ill-fitting or compliance is poor.
+The role of graduated compression stockings providing greater than 23 mmHg support at the ankle 
+for the prevention and/or treatment of the post-thrombotic syndrome rather than VTE prevention is 
+discussed in Green-top Guideline No. 37b.
+10. Contraindications to LMWH
+Which women should not be given thromboprophylaxis with LMWH?
+LMWH should be avoided, discontinued or postponed in women at risk of bleeding after careful 
+consideration of the balance of risks of bleeding and thrombosis.
+Women with previous or current allergic reactions to LMWH should be offered an alternative 
+preparation or alternative form of prophylaxis.
+Further advice on the management of a woman with both VTE risk factors and bleeding risk factors 
+or LMWH allergy may be sought from a haematologist with expertise in the management of 
+thrombosis and bleeding disorders in pregnancy. 
+Risk factors for bleeding are summarised in Appendix III. LMWHs can increase bleeding if it 
+occurs and therefore should be delayed in women with active bleeding, coagulopathy or low 
+platelets (fewer than 75 x 109/l). LMWH is contraindicated in women with HIT. Women who 
+develop allergic reactions to one LMWH will often be allergic to other LMWHs.5,26,109,115
+11. Risk scoring methodologies
+A formal VTE risk assessment with numerical scoring for all pregnant and postpartum women is 
+recommended (see Appendix IV).
+Compared with not using a formal assessment system, Shoenbeck et al. found there was a 
+significant increase in the rate of risk assessment, earlier treatment and greater consistency in 
+clinical decision making with the use of a numerical scoring system. This approach maintains 
+a highly individualised assessment of VTE risk while achieving consistency in management.168
+12. Recommendations for future research 
+l Doses of LMWH required in obese pregnant and puerperal women.
+l At present it is unclear whether women undergoing surgical management of miscarriage and 
+surgical termination of pregnancy are at increased risk of VTE.
+l How do risk factors for VTE interact in the antenatal and postpartum periods?
+l How do we reduce/avoid the prevalence of risk factors for VTE?
+l Should thromboprophylaxis vary with different heritable thrombophilias?
+13. Auditable topics
+l Correct risk assessment at booking, on admission to antenatal ward, after delivery and at 
+discharge (100%).
+l Correct dose of LMWH (based on weight) prescribed antenatally and postpartum (100%).Evidence 
+level 4
+D
+D
+P
+Evidence 
+level 4
+Evidence 
+level 3DRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists28 of 40l LMWH prescribed and taken for 10 days postpartum in all women with class 3 obesity 
+(BMI greater than or equal to 40) (100%).
+l LMWH prescribed and given for 6 weeks postpartum in all women with previous VTE (100%). 
+14. Useful links and support groups
+l Royal College of Obstetricians and Gynaecologists. Information for you: Reducing the risk of 
+venous thrombosis in pregnancy and after birth . London: RCOG; 2011 [https://www.rcog.org.
+uk/globalassets/documents/patients/patient-information-leaflets/pregnancy/pi-reducing-the-risk-of-
+venous-thrombosis-in-pregnancy-and-after-birth.pdf]. Accessed 2014 Dec 18.
+References
+1. Royal College of Obstetricians and Gynaecologists. The 
+Acute Management of Thrombosis and Embolism During 
+Pregnancy and the Puerperium . Green-top Guideline No. 
+37b. London: RCOG; 2007. 
+2. Warnes CA. Prosthetic heart valves. In: Steer PJ, Gatzoulis MA, 
+Baker P, editors. Heart Disease in Pregnancy . London: RCOG 
+Press; 2006. p.157–68.
+3. Lewis G, editor. The Con fidential Enquiry into Maternal and 
+Child Health (CEMACH). Saving Mothers’ Lives: Reviewing 
+maternal deaths to make motherhood safer - 2003-2005. 
+The Seventh Report on Con fidential Enquiries into Maternal 
+Deaths in the United Kingdom . London: CEMACH; 2007.
+4. Centre for Maternal and Child Enquiries (CMACE). Saving 
+Mothers’ Lives: Reviewing maternal deaths to make 
+motherhood safer: 2006–08. The Eighth Report of the 
+Confidential Enquiries into Maternal Deaths in the United 
+Kingdom. BJOG 2011;118 Suppl 1:1–203.
+5. National Institute for Health and Clinical Excellence. Venous 
+thromboembolism: reducing the risk. Reducing the risk 
+of venous thromboembolism (deep vein thrombosis and 
+pulmonary embolism) in patients admitted to hospital . 
+NICE clinical guideline 92. London: NICE; 2010.
+6. Lindqvist PG, Bremme K, Hellgren M; Swedish Society of 
+Obstetrics and Gynecology (SFOG) Working Group on 
+Hemostatic Disorders (Hem-ARG). Efficacy of obstetric 
+thromboprophylaxis and long-term risk of recurrence of 
+venous thromboembolism. Acta Obstet Gynecol Scand 
+2011;90:648–53.
+7. Knight M; UKOSS. Antenatal pulmonary embolism: risk 
+factors, management and outcomes. BJOG 2008;115:453–61.
+8. Heit JA, Kobbervig CE, James AH, Petterson TM, Bailey 
+KR, Melton LJ 3rd. Trends in the incidence of venous 
+thromboembolism during pregnancy or postpartum: a 30-year 
+population-based study. Ann Intern Med 2005;143:697–706. 
+9. Sultan AA, West J, Tata LJ, Fleming KM, Nelson-Piercy C, 
+Grainge MJ. Risk of first venous thromboembolism in and 
+around pregnancy: a population-based cohort study. Br J 
+Haematol 2012;156:366–73.
+10. Pomp ER, Lenselink AM, Rosendaal FR, Doggen CJ. Pregnancy, 
+the postpartum period and prothrombotic defects: risk of 
+venous thrombosis in the MEGA study. J Thromb Haemost 
+2008;6:632–7. 
+11. Jackson E, Curtis KM, Gaffield ME. Risk of venous 
+thromboembolism during the postpartum period: a systematic 
+review. Obstet Gynecol 2011;117:691–703. 
+12. Jacobsen AF, Skjeldestad FE, Sandset PM. Ante- and postnatal 
+risk factors of venous thrombosis: a hospital-based case–
+control study. J Thromb Haemost 2008;6:905–12.
+13. James AH. Prevention and management of venous thrombo-
+embolism in pregnancy. Am J Med 2007;120:S26–34. 
+14. Lindqvist P, Dahlbäck B, Mar Ŝál K. Thrombotic risk during 
+pregnancy: a population study. Obstet Gynecol 1999;94:595–9.15. Kane EV, Calderwood C, Dobbie R, Morris C, Roman E, 
+Greer IA. A population-based study of venous thrombosis 
+in pregnancy in Scotland 1980–2005. Eur J Obstet Gynecol 
+Reprod Biol 2013;169:223–9.
+16. Liu S, Rouleau J, Joseph KS, Sauve R, Liston RM, Young D, et 
+al.; Maternal Health Study Group of the Canadian Perinatal 
+Surveillance System. Epidemiology of pregnancy-associated 
+venous thromboembolism: a population-based study in 
+Canada. J Obstet Gynaecol Can 2009;31:611–20.
+17. Virkus RA, Løkkegaard EC, Bergholt T, Mogensen U, Langhoff-
+Roos J, Lidegaard Ø. Venous thromboembolism in pregnant 
+and puerperal women in Denmark 1995–2005. A national 
+cohort study. Thromb Haemost 2011;106:304–9. 
+18. Gherman RB, Goodwin TM, Leung B, Byrne JD, Hethumumi 
+R, Montoro M. Incidence, clinical characteristics, and timing 
+of objectively diagnosed venous thromboembolism during 
+pregnancy. Obstet Gynecol 1999;94:730–4.
+19. James AH, Tapson VF, Goldhaber SZ. Thrombosis during 
+pregnancy and the postpartum period. Am J Obstet Gynecol 
+2005;193:216–9.
+20. Blanco-Molina A, Trujillo-Santos J, Criado J, Lopez L, 
+Lecumberri R, Gutierrez R, et al. Venous thromboembolism 
+during pregnancy or postpartum: findings from the RIETE 
+Registry. Thromb Haemost 2007;97:186–90.
+21. Liu S, Liston RM, Joseph KS, Heaman M, Sauve R, Kramer 
+MS; Maternal Health Study Group of the Canadian Perinatal 
+Surveillance System. Maternal mortality and severe morbidity 
+associated with low-risk planned cesarean delivery versus 
+planned vaginal delivery at term. CMAJ 2007;176:455–60.
+22. Sultan AA, Tata LJ, West J, Fiaschi L, Fleming KM, Nelson-
+Piercy C, et al. Risk factors for first venous thromboembolism 
+around pregnancy: a population-based cohort study from the 
+United Kingdom. Blood 2013;121:3953–61.
+23. Virkus RA, Jørgensen M, Broholm R, Bergholt T. Successful 
+treatment of massive deep vein thrombosis using catheter-
+directed thrombolysis and inferior vena cava filter in a puerperal 
+woman. Acta Obstet Gynecol Scand 2012;91:269–70.
+24. Won HS, Kim DY, Yang MS, Lee SJ, Shin HH, Park JB. Pregnancy-
+induced hypertension, but not gestational diabetes mellitus, 
+is a risk factor for venous thromboembolism in pregnancy. 
+Korean Circ J 2011;41:23–7.
+25. Bauersachs RM, Dudenhausen J, Faridi A, Fischer T, Fung S, 
+Geisen U, et al.; EThIG Investigators. Risk stratification and 
+heparin prophylaxis to prevent venous thromboembolism in 
+pregnant women. Thromb Haemost 2007;98:1237–45.
+26. Bates SM, Greer IA, Middeldorp S, Veenstra DL, Prabulos AM, 
+Vandvik PO; American College of Chest Physicians. VTE, 
+thrombophilia, antithrombotic therapy, and pregnancy: 
+Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: 
+American College of Chest Physicians Evidence-Based Clinical 
+Practice Guidelines. Chest 2012;141 2 Suppl:e691S–736S. RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists29 of 4027. Duhl AJ, Paidas MJ, Ural SH, Branch W, Casele H, Cox-
+Gill J, et al.; Pregnancy and Thrombosis Working Group. 
+Antithrombotic therapy and pregnancy: consensus report 
+and recommendations for prevention and treatment of venous 
+thromboembolism and adverse pregnancy outcomes. Am J 
+Obstet Gynecol 2007;197:457.e1–21.
+28. Samama CM, Albaladejo P, Benhamou D, Bertin-Maghit M, 
+Bruder N, Doublet JD, et al.; Committee for Good Practice 
+Standards of the French Society for Anaesthesiology and 
+Intensive Care (SFAR). Venous thromboembolism prevention 
+in surgery and obstetrics: clinical practice guidelines. Eur J 
+Anaesthesiol 2006;23:95–116.
+29. Tooher R, Gates S, Dowswell T, Davis LJ. Prophylaxis for venous 
+thromboembolic disease in pregnancy and the early postnatal 
+period. Cochrane Database Syst Rev 2010;(5):CD001689.
+30. Krafft A. The problem of risk assessment and prophylaxis of 
+venous thromboembolism in pregnancy. Thromb Haemost 
+2007;98:1155–6.
+31. Simpson EL, Lawrenson RA, Nightingale AL, Farmer RD. 
+Venous thromboembolism in pregnancy and the puerperium: 
+incidence and additional risk factors from a London perinatal 
+database. BJOG 2001;108:56–60.
+32. James AH, Jamison MG, Brancazio LR, Myers ER. Venous 
+thromboembolism during pregnancy and the postpartum 
+period: incidence, risk factors, and mortality. Am J Obstet 
+Gynecol 2006;194:1311–5. 
+33. Larsen TB, Sørensen HT, Gislum M, Johnsen SP. Maternal 
+smoking, obesity, and risk of venous thromboembolism 
+during pregnancy and the puerperium: a population-based 
+nested case-control study. Thromb Res 2007;120:505–9.
+34. Anderson FA Jr, Spencer FA. Risk factors for venous 
+thromboembolism. Circulation 2003;107 Suppl 1:I9–16.
+35. Danilenko-Dixon DR, Heit JA, Silverstein MD, Yawn BP, 
+Petterson TM, Lohse CM, et al. Risk factors for deep vein 
+thrombosis and pulmonary embolism during pregnancy or 
+post partum: a population-based, case-control study. Am J 
+Obstet Gynecol 2001;184:104–10.
+36. Marik PE, Plante LA. Venous thromboembolic disease and 
+pregnancy. N Engl J Med 2008;359:2025–33.
+37. McColl MD, Walker ID, Greer IA. The role of inherited 
+thrombophilia in venous thromboembolism associated with 
+pregnancy. Br J Obstet Gynaecol 1999;106:756–66.
+38. Gerhardt A, Scharf RE, Zotz RB. Effect of hemostatic risk factors 
+on the individual probability of thrombosis during pregnancy 
+and the puerperium. Thromb Haemost 2003;90:77–85.
+39. The Health Survey for England [http://webarchive.
+nationalarchives.gov.uk/20131205100653/http://www.
+archive2.official-documents.co.uk/document/deps/doh/
+survey03/summ02.htm]. Accessed 2014 Dec 18.
+40. Public Health England. Maternal Obesity. Trends in the UK 
+[http://www.noo.org.uk/NOO_about_obesity/maternal_
+obesity/uk_trends]. Accessed 2014 Dec 18.
+41. Robinson HE, O’Connell CM, Joseph KS, McLeod NL. Maternal 
+outcomes in pregnancies complicated by obesity. Obstet 
+Gynecol 2005;106:1357–64.
+42. National Collaborating Centre for Women’s and Children’s 
+Health. Antenatal care: routine care for the healthy pregnant 
+woman . London: RCOG Press; 2008.
+43. Royal College of Obstetricians and Gynaecologists. Air Travel 
+and Pregnancy . Scientific Impact Paper No. 1. London: RCOG; 
+2013.
+44. Hezelgrave NL, Whitty CJ, Shennan AH, Chappell LC. Advising 
+on travel during pregnancy. BMJ 2011;342:d2506.
+45. Abdul Sultan A, West J, Tata LJ, Fleming KM, Nelson-Piercy 
+C, Grainge MJ. Risk of first venous thromboembolism in 
+pregnant women in hospital: population based cohort study 
+from England. BMJ 2013;347:f6099. 
+46. Bröms G, Linder M, Granath F, Elmberg M, Stephansson O, 
+Kieler H. 29. In flammatory bowel disease in pregnancy and 
+thrombophilic disorders – impact of type of disease and 
+treatment. Pharmacoepidemiol Drug Saf 2012;21 Suppl 3:15. 47. Erekson EA, Brousseau EC, Dick-Biascoechea MA, Ciarleglio 
+MM, Lockwood CJ, Pettker CM. Maternal postoperative 
+complications after nonobstetric antenatal surgery. J Matern 
+Fetal Neonatal Med 2012;25:2639–44.
+48. Jacobsen AF, Skjeldestad FE, Sandset PM. Incidence and risk 
+patterns of venous thromboembolism in pregnancy and 
+puerperium—a register-based case-control study. Am J Obstet 
+Gynecol 2008;198:233.e1–7.
+49. Villers MS, Jamison MG, De Castro LM, James AH. Morbidity 
+associated with sickle cell disease in pregnancy. Am J Obstet 
+Gynecol 2008;199:125.e1–5.
+50. Pabinger I, Grafenhofer H, Kyrle PA, Quehenberger P, 
+Mannhalter C, Lechner K, et al. Temporary increase in the risk 
+for recurrence during pregnancy in women with a history of 
+venous thromboembolism. Blood 2002;100:1060–2.
+51. Brill-Edwards P, Ginsberg JS, Gent M, Hirsh J, Burrows R, 
+Kearon C, et al.; Recurrence of Clot in This Pregnancy Study 
+Group. Safety of withholding heparin in pregnant women 
+with a history of venous thromboembolism. N Engl J Med 
+2000;343:1439–44.
+52. Pabinger I, Grafenhofer H, Kaider A, Kyrle PA, Quehenberger 
+P, Mannhalter C, et al. Risk of pregnancy-associated recurrent 
+venous thromboembolism in women with a history of venous 
+thrombosis. J Thromb Haemost 2005;3:949–54.
+53. De Stefano V, Martinelli I, Rossi E, Battaglioli T, Za T, 
+Mannuccio Mannucci P, et al. The risk of recurrent venous 
+thromboembolism in pregnancy and puerperium without 
+antithrombotic prophylaxis. Br J Haematol 2006;135:386–91.
+54. Iorio A, Kearon C, Filippucci E, Marcucci M, Macura A, Pengo 
+V, et al. Risk of recurrence after a first episode of symptomatic 
+venous thromboembolism provoked by a transient risk factor: 
+a systematic review. Arch Intern Med 2010;170:1710–6. 
+55. Baglin T, Gray E, Greaves M, Hunt BJ, Keeling D, Machin 
+S, et al.; British Committee for Standards in Haematology. 
+Clinical guidelines for testing for heritable thrombophilia. Br J 
+Haematol 2010;149:209–20.
+56. Vossen CY, Walker ID, Svensson P, Souto JC, Scharrer I, Preston 
+FE, et al. Recurrence rate after a first venous thrombosis in 
+patients with familial thrombophilia. Arterioscler Thromb 
+Vasc Biol 2005;25:1992–7.
+57. De Stefano V, Simioni P, Rossi E, Tormene D, Za T, Pagnan 
+A, et al. The risk of recurrent venous thromboembolism in 
+patients with inherited deficiency of natural anticoagulants 
+antithrombin, protein C and protein S. Haematologica 
+2006;91:695–8.
+58. Brouwer JL, Lijfering WM, ten Kate MK, Kluin-Nelemans 
+HC, Veeger NJ, van der Meer J. High long-term absolute risk 
+of recurrent venous thromboembolism in patients with 
+hereditary deficiencies of protein S, protein C or antithrombin. 
+Thromb Haemost 2009;101:93–9. 
+59. Lijfering WM, Brouwer JL, Veeger NJ, Bank I, Coppens M, 
+Middeldorp S, et al. Selective testing for thrombophilia 
+in patients with first venous thrombosis: results from a 
+retrospective family cohort study on absolute thrombotic risk 
+for currently known thrombophilic defects in 2479 relatives. 
+Blood 2009;113:5314–22.
+60. Segal JB, Brotman DJ, Necochea AJ, Emadi A, Samal L, Wilson 
+LM, et al. Predictive value of factor V Leiden and prothrombin 
+G20210A in adults with venous thromboembolism and in 
+family members of those with a mutation: a systematic review. 
+JAMA 2009;301:2472–85. 
+61. Bramham K, Retter A, Robinson SE, Mitchell M, Moore GW, 
+Hunt BJ. How I treat heterozygous hereditary antithrombin 
+deficiency in pregnancy. Thromb Haemost 2013;110:550–9. 
+62. Rogenhofer N, Bohlmann MK, Beuter-Winkler P, Würfel W, 
+Rank A, Thaler CJ, et al. Prevention, management and extent 
+of adverse pregnancy outcomes in women with hereditary 
+antithrombin deficiency. Ann Hematol 2014;93:385–92. 
+63. Stone S, Hunt BJ, Khamashta MA, Bewley SJ, Nelson-Piercy C. 
+Primary antiphospholipid syndrome in pregnancy: an analysis 
+of outcome in a cohort of 33 women treated with a rigorous 
+protocol. J Thromb Haemost 2005;3:243–5. RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists30 of 4064. Hunt BJ, Gattens M, Khamashta M, Nelson-Piercy C, Almeida 
+A. Thromboprophylaxis with unmonitored intermediate-
+dose low molecular weight heparin in pregnancies with a 
+previous arterial or venous thrombotic event. Blood Coagul 
+Fibrinolysis 2003;14:735–9.
+65. Robertson B, Greaves M. Antiphospholipid syndrome: an 
+evolving story. Blood Rev 2006;20:201–12.
+66. Schulman S. Care of patients receiving long-term anticoagulant 
+therapy. N Engl J Med 2003;349:675–83.
+67. Ridker PM, Goldhaber SZ, Danielson E, Rosenberg Y, Eby CS, 
+Deitcher SR, et al.; PREVENT Investigators. Long-term, low-
+intensity warfarin therapy for the prevention of recurrent 
+venous thromboembolism. N Engl J Med 2003;348:1425–34. 
+68. Scottish Intercollegiate Guidelines Network. Prevention 
+and management of venous thromboembolism . SIGN 
+publication no. 122. Edinburgh: SIGN; 2010. 
+69. Kyrle PA, Rosendaal FR, Eichinger S. Risk assessment for 
+recurrent venous thrombosis. Lancet 2010;376:2032–9.
+70. Baglin T, Bauer K, Douketis J, Buller H, Srivastava A, Johnson 
+G; SSC of the ISTH. Duration of anticoagulant therapy after a 
+first episode of an unprovoked pulmonary embolus or deep 
+vein thrombosis: guidance from the SSC of the ISTH. J Thromb 
+Haemost 2012;10:698–702.
+71. Miyakis S, Lockshin MD, Atsumi T, Branch DW, Brey RL, Cervera 
+R, et al. International consensus statement on an update of the 
+classification criteria for definite antiphospholipid syndrome 
+(APS). J Thromb Haemost 2006;4:295–306.
+72. McLintock C, Brighton T, Chunilal S, Dekker G, McDonnell 
+N, McRae S, et al.; Councils of the Society of Obstetric 
+Medicine of Australia and New Zealand; Australasian 
+Society of Thrombosis and Haemostasis. Recommendations 
+for the prevention of pregnancy-associated venous 
+thromboembolism. Aust N Z J Obstet Gynaecol 2012;52:3–13. 
+73. Bezemer ID, van der Meer FJ, Eikenboom JC, Rosendaal FR, 
+Doggen CJ. The value of family history as a risk indicator for 
+venous thrombosis. Arch Intern Med 2009;169:610–5.
+74. Zöller B, Li X, Sundquist J, Sundquist K. Parental history and 
+venous thromboembolism: a nationwide study of age-specific 
+and sex-specific familial risks in Sweden. J Thromb Haemost 
+2011;9:64–70.
+75. Sørensen HT, Riis AH, Diaz LJ, Andersen EW, Baron JA, 
+Andersen PK. Familial risk of venous thromboembolism: a 
+nationwide cohort study. J Thromb Haemost 2011;9:320–4. 
+76. Mahmoodi BK, Brouwer JL, ten Kate MK, Lijfering WM, 
+Veeger NJ, Mulder AB, et al. A prospective cohort study on 
+the absolute risks of venous thromboembolism and predictive 
+value of screening asymptomatic relatives of patients with 
+hereditary deficiencies of protein S, protein C or antithrombin. 
+J Thromb Haemost 2010;8:1193–200. 
+77. Jacobsen AF, Dahm A, Bergrem A, Jacobsen EM, Sandset 
+PM. Risk of venous thrombosis in pregnancy among carriers 
+of the factor V Leiden and the prothrombin gene G20210A 
+polymorphisms. J Thromb Haemost 2010;8:2443–9.
+78. van Vlijmen EF, Veeger NJ, Middeldorp S, Hamulyák K, Prins 
+MH, Büller HR, et al. Thrombotic risk during oral contraceptive 
+use and pregnancy in women with factor V Leiden or 
+prothrombin mutation: a rational approach to contraception. 
+Blood 2011;118:2055–61. 
+79. Chunilal SD, Bates SM. Venous thromboembolism in 
+pregnancy: diagnosis, management and prevention. Thromb 
+Haemost 2009;101:428–38.
+80. American College of Obstetricians and Gynecologists 
+Women’s Health Care Physicians. ACOG Practice Bulletin No. 
+138: Inherited thrombophilias in pregnancy. Obstet Gynecol 
+2013;122:706–17.
+81. Wu O, Robertson L, Langhorne P, Twaddle S, Lowe GD, Clark 
+P, et al. Oral contraceptives, hormone replacement therapy, 
+thrombophilias and risk of venous thromboembolism: a 
+systematic review. The Thrombosis: Risk and Economic 
+Assessment of Thrombophilia Screening (TREATS) Study. 
+Thromb Haemost 2005;94:17–25.82. Middeldorp S, van Hylckama Vlieg A. Does thrombophilia 
+testing help in the clinical management of patients? Br J 
+Haematol 2008;143:321–35.
+83. Pabinger I, Schneider B; Gesellschaft fur Thrombose- 
+und Hamostaseforschung (GTH) Study Group on Natural 
+Inhibitors. Thrombotic risk in hereditary antithrombin III, 
+protein C, or protein S deficiency. A cooperative, retrospective 
+study. Arterioscler Thromb Vasc Biol 1996;16:742–8.
+84. Bucciarelli P, Rosendaal FR, Tripodi A, Mannucci PM, De 
+Stefano V, Palareti G, et al.; GIRTE (Italian Research Group on 
+Inherited Thrombophilia). Risk of venous thromboembolism 
+and clinical manifestations in carriers of antithrombin, protein 
+C, protein S deficiency, or activated protein C resistance: a 
+multicenter collaborative family study. Arterioscler Thromb 
+Vasc Biol 1999;19:1026–33.
+85. van Boven HH, Vandenbroucke JP, Briët E, Rosendaal FR. 
+Gene-gene and gene-environment interactions determine 
+risk of thrombosis in families with inherited antithrombin 
+deficiency. Blood 1999;94:2590–4.
+86. Conard J, Horellou MH, van Dreden P, Lecompte T, Samama 
+M. Thrombosis and pregnancy in congenital deficiencies in 
+AT III, protein C or protein S: study of 78 women. Thromb 
+Haemost 1990;63:319–20.
+87. McColl MD, Ramsay JE, Tait RC, Walker ID, McCall F, Conkie 
+JA, et al. Risk factors for pregnancy associated venous 
+thromboembolism. Thromb Haemost 1997;78:1183–8.
+88. Martinelli I, Battaglioli T, De Stefano V, Tormene D, Valdrè L, 
+Grandone E, et al.; the GIT (Gruppo Italiano Trombofilia). The 
+risk of first venous thromboembolism during pregnancy and 
+puerperium in double heterozygotes for factor V Leiden and 
+prothrombin G20210A. J Thromb Haemost 2008;6:494–8.
+89. Martinelli I, Legnani C, Bucciarelli P, Grandone E, De Stefano V, 
+Mannucci PM. Risk of pregnancy-related venous thrombosis in 
+carriers of severe inherited thrombophilia. Thromb Haemost 
+2001;86:800–3.
+90. Rai R, Cohen H, Dave M, Regan L. Randomised controlled trial 
+of aspirin and aspirin plus heparin in pregnant women with 
+recurrent miscarriage associated with phospholipid antibodies 
+(or antiphospholipid antibodies). BMJ 1997;314:253–7.
+91. Laskin CA, Spitzer KA, Clark CA, Crowther MR, Ginsberg JS, 
+Hawker GA, et al. Low molecular weight heparin and aspirin 
+for recurrent pregnancy loss: results from the randomized, 
+controlled HepASA Trial. J Rheumatol 2009;36:279–87.
+92. Stone S, Langford K, Nelson-Piercy C, Khamashta MA, Bewley 
+S, Hunt BJ. Antiphospholipid antibodies do not a syndrome 
+make. Lupus 2002;11:130–3.
+93. Soh MC, Pasupathy D, Gray G, Nelson-Piercy C. Persistent 
+antiphospholipid antibodies do not contribute to adverse 
+pregnancy outcomes. Rheumatology (Oxford) 2013;52:1642–7.
+94. Ray JG, Chan WS. Deep vein thrombosis during pregnancy 
+and the puerperium: a meta-analysis of the period of risk and 
+the leg of presentation. Obstet Gynecol Surv 1999;54:265–71.
+95. Arya R, Shehata HA, Patel RK, Sahu S, Rajasingam D, 
+Harrington KF, et al. Internal jugular vein thrombosis after 
+assisted conception therapy. Br J Haematol 2001;115:153–5.
+96. Nelson SM. Prophylaxis of VTE in women – during assisted 
+reproductive techniques. Thromb Res 2009;123 Suppl 3:S8–15.
+97. Henriksson P, Westerlund E, Wallén H, Brandt L, Hovatta 
+O, Ekbom A. Incidence of pulmonary and venous thrombo-
+embolism in pregnancies after in vitro fertilisation: cross 
+sectional study. BMJ 2013;346:e8632. 
+98. Horlocker TT, Wedel DJ, Benzon H, Brown DL, Enneking FK, 
+Heit JA, et al. Regional anesthesia in the anticoagulated patient: 
+defining the risks (the second ASRA Consensus Conference on 
+Neuraxial Anesthesia and Anticoagulation). Reg Anesth Pain 
+Med 2003;28:172–97.
+99. Harrop-Griffiths W, Cook T, Gill H, Hill D, Ingram M, Makris M, 
+et al.; Association of Anaesthetists of Great Britain & Ireland; 
+Obstetric Anaesthetists’ Association; Regional Anaesthesia 
+UK. Regional anaesthesia and patients with abnormalities of 
+coagulation. Anaesthesia 2013;68:966–72.RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists31 of 40100. Jacobsen AF, Drolsum A, Klow NE, Dahl GF, Qvigstad E, 
+Sandset PM. Deep vein thrombosis after elective cesarean 
+section. Thromb Res 2004;113:283–8.
+101. Lewis G, editor. Why Mothers Die 1997–1999. The Fifth 
+Report of the Confidential Enquiries into Maternal Deaths 
+in the United Kingdom 1997–99 . London: RCOG Press; 2001.
+102. Confidential Enquiry into Maternal and Child Health. Why 
+Mothers Die 2000–2002. The Sixth Report of the Confidential 
+Enquiries into Maternal Deaths in the United Kingdom . 
+London: RCOG Press; 2004.
+103. Macklon NS, Greer IA. Venous thromboembolic disease in 
+obstetrics and gynaecology: the Scottish experience. Scott 
+Med J 1996;41:83–6.
+104. Ros HS, Lichtenstein P, Bellocco R, Petersson G, Cnattingius 
+S. Pulmonary embolism and stroke in relation to pregnancy: 
+how can high-risk women be identified? Am J Obstet Gynecol 
+2002;186:198–203. 
+105. Kamel H, Navi BB, Sriram N, Hovsepian DA, Devereux 
+RB, Elkind MS. Risk of a thrombotic event after the 6-week 
+postpartum period. N Engl J Med 2014;370:1307–15. 
+106. Maybury HJ, Waugh JJ, Gornall A, Pavord S. There is a return to 
+non-pregnant coagulation parameters after four not six weeks 
+postpartum following spontaneous vaginal delivery. Obstet 
+Med 2008;1:92–4.
+107. Salonen Ros H, Lichtenstein P, Bellocco R, Petersson G, 
+Cnattingius S. Increased risks of circulatory diseases in late 
+pregnancy and puerperium. Epidemiology 2001;12:456–60.
+108. Department of Health. Why Mothers Die. Confidential 
+Enquiries into Maternal Deaths in the United Kingdom 
+1994–96 . London: The Stationery Office; 1998.
+109. Greer IA, Nelson-Piercy C. Low-molecular-weight heparins 
+for thromboprophylaxis and treatment of venous thrombo-
+embolism in pregnancy: a systematic review of safety and 
+efficacy. Blood 2005;106:401–7.
+110. Sanson BJ, Lensing AW, Prins MH, Ginsberg JS, Barkagan ZS, 
+Lavenne-Pardonge E, et al. Safety of low-molecular-weight 
+heparin in pregnancy: a systematic review. Thromb Haemost 
+1999;81:668–72.
+111. Ensom MH, Stephenson MD. Low-molecular-weight heparins 
+in pregnancy. Pharmacotherapy 1999;19:1013–25.
+112. Lepercq J, Conard J, Borel-Derlon A, Darmon JY, Boudignat 
+O, Francoual C, et al. Venous thromboembolism during 
+pregnancy: a retrospective study of enoxaparin safety in 624 
+pregnancies. BJOG 2001;108:1134–40.
+113. Warkentin TE, Levine MN, Hirsh J, Horsewood P, Roberts RS, 
+Gent M, et al. Heparin-induced thrombocytopenia in patients 
+treated with low-molecular-weight heparin or unfractionated 
+heparin. N Engl J Med 1995;332:1330–5.
+114. Warkentin TE, Greinacher A, Koster A, Lincoff AM; American 
+College of Chest Physicians. Treatment and prevention of 
+heparin-induced thrombocytopenia: American College of 
+Chest Physicians Evidence-Based Clinical Practice Guidelines 
+(8th Edition). Chest 2008;133 6 Suppl:340S–380S. 
+115. Nelson-Piercy C. Hazards of heparin: allergy, heparin-
+induced thrombocytopenia and osteoporosis. In: Greer IA, 
+editor. Baillière’s Clinical Obstetrics and Gynaecology: 
+Thromboembolic Disease in Obstetrics and Gynaecology . 
+London: Baillière Tindall; 1997. p. 489–509. 
+116. Schulman S, Hellgren-Wångdahl M. Pregnancy, heparin and 
+osteoporosis. Thromb Haemost 2002;87:180–1.
+117. Pettilä V, Leinonen P, Markkola A, Hiilesmaa V, Kaaja R. 
+Postpartum bone mineral density in women treated for 
+thromboprophylaxis with unfractionated heparin or LMW 
+heparin. Thromb Haemost 2002;87:182–6.
+118. Carlin AJ, Farquharson RG, Quenby SM, Topping J, Fraser 
+WD. Prospective observational study of bone mineral density 
+during pregnancy: low molecular weight heparin versus 
+control. Hum Reprod 2004;19:1211–4.
+119. Monreal M. Long-term treatment of venous thromboembolism 
+with low-molecular-weight heparin. Curr Opin Pulm Med 
+2000;6:326–9.120. Galambosi PJ, Kaaja RJ, Stefanovic V, Ulander VM. Safety of low-
+molecular-weight heparin during pregnancy: a retrospective 
+controlled cohort study. Eur J Obstet Gynecol Reprod Biol 
+2012;163:154–9.
+121. Nelson-Piercy C, Powrie R, Borg JY, Rodger M, Talbot DJ, 
+Stinson J, et al. Tinzaparin use in pregnancy: an international, 
+retrospective study of the safety and efficacy profile. Eur J 
+Obstet Gynecol Reprod Biol 2011;159:293–9. 
+122. Ferres MA, Olivarez SA, Trinh V, Davidson C, Sangi-Haghpeykar 
+H, Aagaard-Tillery KM. Rate of wound complications with 
+enoxaparin use among women at high risk for postpartum 
+thrombosis. Obstet Gynecol 2011;117:119–24. 
+123. Andersen AS, Berthelsen JG, Bergholt T. Venous thrombo-
+embolism in pregnancy: prophylaxis and treatment with 
+low molecular weight heparin. Acta Obstet Gynecol Scand 
+2010;89:15–21.
+124. Baglin T, Barrowcliffe TW, Cohen A, Greaves M; British 
+Committee for Standards in Haematology. Guidelines on the 
+use and monitoring of heparin. Br J Haematol 2006;133:19–34.
+125. Clark NP, Delate T, Witt DM, Parker S, McDuffie R. A descriptive 
+evaluation of unfractionated heparin use during pregnancy. J 
+Thromb Thrombolysis 2009;27:267–73.
+126. Watson H, Davidson S, Keeling D; Haemostasis and 
+Thrombosis Task Force of the British Committee for Standards 
+in Haematology. Guidelines on the diagnosis and management 
+of heparin-induced thrombocytopenia: second edition. Br J 
+Haematol 2012;159:528–40.
+127. Lindhoff-Last E, Kreutzenbeck HJ, Magnani HN. Treatment 
+of 51 pregnancies with danaparoid because of heparin 
+intolerance. Thromb Haemost 2005;93:63–9.
+128. Magnani HN. An analysis of clinical outcomes of 91 pregnancies 
+in 83 women treated with danaparoid (Orgaran®). Thromb 
+Res 2010;125:297–302.
+129. Lindhoff-Last E, Bauersachs R. Heparin-induced 
+thrombocytopenia-alternative anticoagulation in pregnancy 
+and lactation. Semin Thromb Hemost 2002;28:439–46.
+130. Mazzolai L, Hohlfeld P, Spertini F, Hayoz D, Schapira M, Duchosal 
+MA. Fondaparinux is a safe alternative in case of heparin 
+intolerance during pregnancy. Blood 2006;108:1569–70.
+131. Gerhardt A, Zotz RB, Stockschlaeder M, Scharf RE. 
+Fondaparinux is an effective alternative anticoagulant in 
+pregnant women with high risk of venous thromboembolism 
+and intolerance to low-molecular-weight heparins and 
+heparinoids. Thromb Haemost 2007;97:496–7.
+132. Harenberg J. Treatment of a woman with lupus and 
+thromboembolism and cutaneous intolerance to heparins using 
+fondaparinux during pregnancy. Thromb Res 2007;119:385–8. 
+133. Wijesiriwardana A, Lees DA, Lush C. Fondaparinux as 
+anticoagulant in a pregnant woman with heparin allergy. 
+Blood Coagul Fibrinolysis 2006;17:147–9. 
+134. Schapkaitz E, Jacobson BF. Delayed hypersensitivity to low-
+molecular-weight heparin (LMWH) in pregnancy. S Afr Med J 
+2007;97:1255–7. 
+135. Knol HM, Schultinge L, Erwich JJ, Meijer K. Fondaparinux 
+as an alternative anticoagulant therapy during pregnancy. J 
+Thromb Haemost 2010;8:1876–9. 
+136. Aiono-Le Tagaloa L, Carvalho B. Epidural labor analgesia 
+in a patient receiving fondaparinux. Int J Obstet Anesth 
+2009;18:94–5.
+137. Bomke B, Hoffmann T, Dücker C, Scharf RE. P01-09 Successful 
+prevention or treatment of venous thromboembolism (VTE) 
+with fondaparinux in pregnant women with allergic skin 
+reactions to low-molecular-weight heparins (LMWHs) and 
+danaparoid. Hamostaseologie 2010;30 Suppl:A35. 
+138. Lagrange F, Vergnes C, Brun JL, Paolucci F, Nadal T, Leng 
+JJ, et al. Absence of placental transfer of pentasaccharide 
+(Fondaparinux, Arixtra®) in the dually perfused human 
+cotyledon in vitro. Thromb Haemost 2002,87:831–5.
+139. Dempfle CE. Minor transplacental passage of fondaparinux in 
+vivo. N Engl J Med 2004;350:1914–5.RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists32 of 40140. Glynn RJ, Ridker PM, Goldhaber SZ, Buring JE. Effect of low-
+dose aspirin on the occurrence of venous thromboembolism: 
+a randomized trial. Ann Intern Med 2007;147:525–33.
+141. Becattini C, Agnelli G, Schenone A, Eichinger S, Bucherini 
+E, Silingardi M, et al.; WARFASA Investigators. Aspirin for 
+preventing the recurrence of venous thromboembolism. N 
+Engl J Med 2012;366:1959–67. 
+142. Brighton TA, Eikelboom JW, Mann K, Mister R, Gallus A, 
+Ockelford P, et al.; ASPIRE Investigators. Low-dose aspirin for 
+preventing recurrent venous thromboembolism. N Engl J Med 
+2012;367:1979–87. 
+143. Holzgreve W, Carey JC, Hall BD. Warfarin-induced fetal 
+abnormalities. Lancet 1976;ii:914–5. 
+144. Born D, Martinez EE, Almeida PA, Santos DV, Carvalho AC, 
+Moron AF, et al. Pregnancy in patients with prosthetic heart 
+valves: the effects of anticoagulation on mother, fetus, and 
+neonate. Am Heart J 1992;124:413–7.
+145. Sareli P, England MJ, Berk MR, Marcus RH, Epstein M, Driscoll 
+J, et al. Maternal and fetal sequelae of anticoagulation during 
+pregnancy in patients with mechanical heart valve prostheses. 
+Am J Cardiol 1989;63:1462–5.
+146. Schaefer C, Hannemann D, Meister R, Eléfant E, Paulus W, Vial 
+T, et al. Vitamin K antagonists and pregnancy outcome – a multi-
+centre prospective study. Thromb Haemost 2006;95:949–57. 
+147. Vitale N, De Feo M, De Santo LS, Pollice A, Tedesco N, 
+Cotrufo M. Dose-dependent fetal complications of warfarin 
+in pregnant women with mechanical heart valves. J Am Coll 
+Cardiol 1999;33:1637–41.
+148. Cotrufo M, De Feo M, De Santo LS, Romano G, Della Corte 
+A, Renzulli A, et al. Risk of warfarin during pregnancy with 
+mechanical valve prostheses. Obstet Gynecol 2002;99:35–40. 
+149. Sbarouni E, Oakley CM. Outcome of pregnancy in women 
+with valve prostheses. Br Heart J 1994;71:196–201. 
+150. Chan WS, Anand S, Ginsberg JS. Anticoagulation of pregnant 
+women with mechanical heart valves: a systematic review of 
+the literature. Arch Intern Med 2000;160:191–6.
+151. Nassar AH, Hobeika EM, Abd Essamad HM, Taher A, Khalil 
+AM, Usta IM. Pregnancy outcome in women with prosthetic 
+heart valves. Am J Obstet Gynecol 2004;191:1009–13. 
+152. Khamooshi AJ, Kashfi F, Hoseini S, Tabatabaei MB, Javadpour 
+H, Noohi F. Anticoagulation for prosthetic heart valves in 
+pregnancy. Is there an answer? Asian Cardiovasc Thorac Ann 
+2007;15:493–6.
+153. Wesseling J, Van Driel D, Heymans HS, Rosendaal FR, Geven-
+Boere LM, Smrkovsky M, et al. Coumarins during pregnancy: 
+long-term effects on growth and development of school-age 
+children. Thromb Haemost 2001;85:609–13.
+154. Chong MK, Harvey D, de Swiet M. Follow-up study of children 
+whose mothers were treated with warfarin during pregnancy. 
+Br J Obstet Gynaecol 1984;91:1070–3.155. Roderick P, Ferris G, Wilson K, Halls H, Jackson D, Collins R, 
+et al. Towards evidence-based guidelines for the prevention of 
+venous thromboembolism: systematic reviews of mechanical 
+methods, oral anticoagulation, dextran and regional 
+anaesthesia as thromboprophylaxis. Health Technol Assess 
+2005;9(49).
+156. Barbier P, Jonville AP, Autret E, Coureau C. Fetal risks with 
+dextrans during delivery. Drug Saf 1992;7:71–3.
+157. Berg EM, Fasting S, Sellevold OF. Serious complications with 
+dextran-70 despite hapten prophylaxis. Is it best avoided prior 
+to delivery? Anaesthesia 1991;46:1033–5. 
+158. Walker ID, Greaves M, Preston FE; Haemostasis and 
+Thrombosis Task Force, British Committee for Standards in 
+Haematology. Investigation and management of heritable 
+thrombophilia. Br J Haematol 2001;114:512–28.
+159. Amaragiri SV, Lees T. Elastic compression stockings for 
+prevention of deep vein thrombosis. Cochrane Database Syst 
+Rev 2000;(1):CD001484.
+160. Nilsson L, Austrell C, Norgren L. Venous function during late 
+pregnancy, the effect of elastic compression hosiery. Vasa 
+1992;21:203–5.
+161. Büchtemann AS, Steins A, Volkert B, Hahn M, Klyscz T, 
+Jünger M. The effect of compression therapy on venous 
+haemodynamics in pregnant women. Br J Obstet Gynaecol 
+1999;106:563–9.
+162. Jamieson R, Calderwood CJ, Greer IA. The effect of graduated 
+compression stockings on blood velocity in the deep venous 
+system of the lower limb in the postnatal period. BJOG 
+2007;114:1292–4. 
+163. Geerts WH, Bergqvist D, Pineo GF, Heit JA, Samama CM, 
+Lassen MR, et al.; American College of Chest Physicians. 
+Prevention of venous thromboembolism: American College of 
+Chest Physicians Evidence-Based Clinical Practice Guidelines 
+(8th Edition). Chest 2008;133 6 Suppl:381S–453S.
+164. Byrne B. Deep vein thrombosis prophylaxis: the effectiveness 
+and implications of using below-knee or thigh-length graduated 
+compression stockings. Heart Lung 2001;30:277–84.
+165. Agu O, Hamilton G, Baker D. Graduated compression stockings 
+in the prevention of venous thromboembolism. Br J Surg 
+1999;86:992–1004.
+166. Phillips SM, Gallagher M, Buchan H. Use graduated 
+compression stockings postoperatively to prevent deep vein 
+thrombosis. BMJ 2008;336;943–4.
+167. Brady D, Raingruber B, Peterson J, Varnau W, Denman J, 
+Resuello R, et al. The use of knee-length versus thigh-length 
+compression stockings and sequential compression devices. 
+Crit Care Nurs Q 2007;30:255–62.
+168. Schoenbeck D, Nicolle A, Newbegin K, Hanley J, Loughney AD. 
+The use of a scoring system to guide thromboprophylaxis in a 
+high-risk pregnant population. Thrombosis 2011;2011:652796.RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists33 of 40Antenatal assessment and 
+management (to be assessed at 
+booking and repeated if admitted)
+Any previous VTE except a single event related 
+to major surgery
+Hospital admission
+Single previous VTE related to major surgery
+High-risk thrombophilia + no VTE
+Medical comorbidities e.g. cancer, heart failure, 
+active SLE, IBD or inflammatory polyarthro-
+pathy, nephrotic syndrome, type I DM with 
+nephropathy, sickle cell disease, current IVDU
+Any surgical procedure e.g. appendicectomy
+OHSS (first trimester only)
+Obesity (BMI > 30 kg/m2)
+Age > 35
+Parity ≥ 3
+Smoker
+Gross varicose veins
+Current pre-eclampsia
+Immobility, e.g. paraplegia, PGP
+Family history of unprovoked or 
+estrogen-provoked VTE in first-degree relative
+Low-risk thrombophilia
+Multiple pregnancy
+IVF/ART
+Transient risk factors: 
+Dehydration/hyperemesis; current systemic 
+infection; long-distance travel
+HIGH RISK
+Requires antenatal prophylaxis 
+with LMWH
+Refer to trust-nominated thrombosis 
+in pregnancy expert/team 
+INTERMEDIATE RISK
+Consider antenatal prophylaxis 
+with LMWH
+Four or more risk factors: 
+prophylaxis from first trimester
+Three risk factors: 
+prophylaxis from 28 weeks
+Zero to two risk factors: 
+prophylaxis if admitted to hospital
+LOWER RISK
+Mobilisation and 
+avoidance of dehydration
+APL = antiphospholipid antibodies (lupus anticoagulant, anticardiolipin antibodies, β2-glycoprotein 1 antibodies); 
+ART = assisted reproductive technology; BMI based on booking weight; DM = diabetes mellitus; FHx = family 
+history; gross varicose veins = symptomatic, above knee or associated with phlebitis/oedema/skin changes; 
+high-risk thrombophilia = antithrombin deficiency, protein C or S deficiency, compound or homozygous for low-risk 
+thrombophilias; IBD = inflammatory bowel disease; immobility = ≥ 3 days; IVDU = intravenous drug user; IVF = in 
+vitro fertilisation; LMWH = low-molecular-weight heparin; long-distance travel = > 4 hours; low-risk thrombophilia = 
+heterozygous for factor V Leiden or prothrombin G20210A mutations; OHSS = ovarian hyperstimulation syndrome; 
+PGP = pelvic girdle pain with reduced mobility; PPH = postpartum haemorrhage; thrombophilia = inherited or 
+acquired; VTE = venous thromboembolism.Postnatal assessment and 
+management (to be assessed 
+on delivery suite) 
+Any previous VTE
+Anyone requiring antenatal LMWH
+High-risk thrombophilia
+Low-risk thrombophilia + FHx
+Caesarean section in labour
+BMI ≥ 40 kg/m2
+Readmission or prolonged admission in the 
+puerperium
+Any surgical procedure in the puerperium except 
+immediate repair of the perineum
+Medical comorbidities e.g. cancer, heart failure, 
+active SLE, IBD or inflammatory polyarthropathy; 
+nephrotic syndrome, type I DM with 
+nephropathy, sickle cell disease, current IVDU
+Age > 35 years
+Obesity (BMI ≥ 30 kg/m2)
+Parity ≥ 3
+Smoker
+Elective caesarean section
+Family history of VTE
+Low-risk thrombophilia
+Gross varicose veins
+Current systemic infection
+Immobility, e.g. paraplegia, PGP, long- 
+distance travel
+Current pre-eclampsia
+Multiple pregnancy
+Preterm delivery in this pregnancy ( < 37+0 weeks)
+Stillbirth in this pregnancy
+Mid-cavity rotational or operative delivery
+Prolonged labour ( > 24 hours)
+PPH > 1 litre or blood transfusionHIGH RISK
+At least 6 weeks’ 
+postnatal prophylactic LMWH
+INTERMEDIATE RISK
+At least 10 days’ 
+postnatal prophylactic LMWH
+ 
+NB If persisting or > 3 risk factors 
+consider extending 
+thromboprophylaxis with LMWH
+LOWER RISK
+Early mobilisation and 
+avoidance of dehydration
+Two or 
+more risk 
+factors
+Fewer than 
+two risk 
+factors
+Antenatal and postnatal prophylactic dose of LMWH
+Weight < 50 kg = 20 mg enoxaparin/2500 units dalteparin/3500 units tinzaparin daily 
+Weight 50–90 kg = 40 mg enoxaparin/5000 units dalteparin/4500 units tinzaparin daily
+Weight 91–130 kg = 60 mg enoxaparin/7500 units dalteparin/7000 units tinzaparin daily
+Weight 131–170 kg = 80 mg enoxaparin/10 000 units dalteparin/9000 units tinzaparin daily
+Weight > 170 kg = 0.6 mg/kg/day enoxaparin/ 75 u/kg/day dalteparin/ 75 u/kg/day tinzaparin Appendix I: Obstetric thromboprophylaxis risk assessment and managementRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists34 of 40Appendix II: Adjusted odds ratios for risk factors for VTE
+Risk factor aOR 95% CI Comment
+Previous VTE15,3224.8 17.1–36
+Age > 3514,16,311.3141.0–1.7 n = 603
+1.4311.0–2.0 pn = 256
+1.2161.1–1.4 DVT
+Obesity 2.6571.09–6.45 n = 143 an PE
+BMI >/≥ 307,16,31–335.3332.1–13.5 n = 129
+4.4323.4–5.7
+1.7311.1–2.6 pn = 256
+1.8161.2–2.6 DVT
+2.7161.6–4.4 PE
+BMI >/≥ 2512,311.8121.3–2.4 an n = 268
+2.4121.7–3.3 pn n = 291
+1.7311.2–2.4 pn = 256
+Weight 90–120 kg411.93 1.10–3.39 an
+Weight > 120 kg 4.32 1.26–14.84
+Weight gain in pregnancy > 21 kg12 
+(compared to 7–21 kg)1.6 1.1–2.6 pn n = 291
+Parity 174.03 1.6–9.84 n = 143 an PE
+2141.5 1.1–1.9 n = 603
+≥3142.4 1.8–3.1 n = 603
+Smoking 2.1121.3–3.4 an n = 268
+10–30/day12,14,353.4122.0–5.5 pn n = 291
+1.4141.1–1.9 n = 603
+2.5351.3–4.7 n = 90
+Current smoker332.7331.5–4.9 n = 129
+Sickle cell32,496.7324.4–10.1
+2.5491.5–4.1 DVT
+1.7490.9–3.1 PE
+Heart disease16,31,327.1326.2–8.3
+5.4312.6–11.3 pn n = 256
+3.2162.2–4.6 DVT
+43.41635.0–53.9 PE
+Systemic lupus erythematosus16,328.7325.8–13
+2.3161.1–4.8 DVT
+3.9161.9–7.8 PE
+Anaemia16,322.6322.2–2.9
+1.6161.4–1.9 DVT
+1.7161.3–2.2 PE
+Varicose veins352.4 1.04–5.4
+Immobility127.7 3.2–19 an
+10.8 4.0–28.8 pn
+Pre-eclampsia12,142.9142.1–3.9
+3.1121.8–5.3 pn
+Pre-eclampsia plus FGR125.8122.1–16
+Hyperemesis16,322.5322–3.2
+4.4162.4–8.4 DVTRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists35 of 40Assisted reproductive technology12,24,974.3122.0–9.4 an
+4.2241.5–11
+1.8971.4–2.2
+Twins12,142.6121.1–6.2 an
+1.8141.1–3.0 n = 603
+Multiple pregnancy16,314.2311.8–9.7 an n = 109
+1.7161.3–2.2 DVT
+Preterm delivery < 37 weeks22,312.4311.6–3.5 pn n = 256
+2.69221.99–3.65
+Stillbirth (IRR)226.24 2.77–14.1
+Antepartum haemorrhage322.3 1.8–2.8
+Emergency caesarean section142.7 1.8–4.1
+Any caesarean section14,16,24,31,323.6143.0–4.3
+2.1321.8–2.4
+2.0311.5–2.7 pn n = 256
+1.8161.6–2.0 DVT
+2.9162.4–3.5 PE
+3.4241.3–9.0
+PPH > 1 litre124.1 2.3–7.3
+PPH unspecified161.2161.0–1.4 DVT
+1.3161.0–1.7 PE
+PPH + surgery1212 3.9–36.9
+Obstetric haemorrhage359 1.1–71
+Postpartum infection16,324.1322.9–5.7
+6.1165.0–7.5 DVT
+4.1163.0–5.6 PE
+Postpartum infection + caesarean section126.2 2.4–16.2
+Transfusion16,327.6326.2–9.4
+3.6162.8–4.7 DVT
+4.5163.3–6.2 PE 
+Abbreviations: an antenatal; aOR adjusted odds ratio; CI confidence interval; DVT deep venous thrombosis; 
+FGR fetal growth restriction; IRR incidence rate ratio; n number of cases in case–control study; PE pulmonary embolism; pn postnatal; 
+PPH postpartum haemorrhage; VTE venous thromboembolism.RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists36 of 40Appendix III: Risk assessment for venous thromboembolism (VTE)
+• If total score ≥ 4 risk factors antenatally , consider thromboprophylaxis from the first trimester.
+• If total score 3 risk factors antenatally , consider thromboprophylaxis from 28 weeks.
+• If total score ≥ 2 risk factors postnatally , consider thromboprophylaxis for at least 10 days.
+• If admitted to hospital antenatally consider thrombopr ophylaxis.
+• If readmitted to hospital within the puerperium consider thromboprophylaxis.
+For patients with an identified bleeding risk, the balance of risks of bleeding and thrombosis should be discussed 
+in consultation with a haematologist with expertise in thrombosis and bleeding in pregnancy.
+Risk factors for VTE
+Pre-existing risk factors Tick Score
+Previous VTE (except a single event related to major surgery) 4
+Previous VTE provoked by major surgery 3
+Known high-risk thrombophilia 3
+Medical comorbidities e.g. cancer, heart failure; active systemic lupus erythematosus, inflammatory polyarthropathy or inflammatory bowel disease; nephrotic syndrome; type I diabetes mellitus with nephropathy; sickle cell disease; current intravenous drug user3
+Family history of unprovoked or estrogen-related VTE in first-degree relative 1
+Known low-risk thrombophilia (no VTE) 1
+a
+Age (> 35 years) 1
+Obesity 1 or 2b
+Parity ≥ 3 1
+Smoker 1
+Gross varicose veins 1
+Obstetric risk factors
+Pre-eclampsia in current pregnancy 1
+ART/IVF (antenatal only) 1
+Multiple pregnancy 1
+Caesarean section in labour 2
+Elective caesarean section 1
+Mid-cavity or rotational operative delivery 1
+Prolonged labour (> 24 hours) 1
+PPH (> 1 litre or transfusion) 1
+Preterm birth < 37+0 weeks in current pregnancy 1
+Stillbirth in current pregnancy 1
+Transient risk factors
+Any surgical procedure in pregnancy or puerperium except immediate repair of the perineum, e.g. appendicectomy, postpartum sterilisation3
+Hyperemesis 3
+OHSS 4
+Current systemic infection (requiring intravenous antibiotics or admission to 
+hospital)1, dehydration
+1
+TOTAL
+Abbreviations: ART assisted reproductive technology; IVF in vitro fertilisation; OHSS ovarian hyperstimulation syndrome; VTE venous 
+thromboembolism. 
+a If the known low-risk thrombophilia is in a woman with a family history of VTE in a first-degree relative postpartum thromboprophylaxis should be continued for 6 weeks.
+b BMI ≥ 30 = 1; BMI ≥ 40 = 2ImmobilityRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists37 of 40Contraindications/cautions to LMWH use
+Known bleeding disorder (e.g. haemophilia, von Willebrand’s disease or acquired coagulopathy)
+Active antenatal or postpartum bleeding
+Women considered at increased risk of major haemorrhage (e.g. placenta praevia)
+Thrombocytopenia (platelet count < 75 × 109/l)
+Acute stroke in previous 4 weeks (haemorrhagic or ischaemic)
+Severe renal disease (glomerular filtration rate [GFR] < 30 ml/minute/1.73m2)
+Severe liver disease (prothrombin time above normal range or known varices)
+Uncontrolled hypertension (blood pressure > 200 mmHg systolic or > 120 mmHg diastolic)
+Clinical and laboratory thresholds are taken from the Department of Health’s guidelines based on evidence from the nonpregnant 
+population.5RCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists38 of 40Appendix IV: Summary of guideline for thromboprophylaxis in women with previous VTE and/or 
+thrombophilia (also see Appendix I)
+Very high risk Previous VTE on long-term oral 
+anticoagulant therapy 
+Antithrombin deficiency 
+Antiphospholipid syndrome with 
+previous VTERecommend antenatal high-dose LMWH 
+and at least 6 weeks’ postnatal LMWH or until 
+switched back to oral anticoagulant therapy 
+These women require specialist 
+management by experts in haemostasis 
+and pregnancy
+High risk Any previous VTE (except a single VTE 
+related to major surgery)Recommend antenatal and 6 weeks’ 
+postnatal prophylactic LMWH
+Intermediate risk Asymptomatic high-risk thrombophilia 
+homozygous factor V 
+Leiden/compound heterozygote 
+Protein C or S deficiency
+Single previous VTE associated with 
+major surgery without thrombophilia, 
+family history or other risk factorsRefer to local expert 
+Consider antenatal LMWH 
+Recommend postnatal prophylactic LMWH 
+for 6 weeks
+Consider antenatal LMWH (but not routinely 
+recommended) 
+Recommend LMWH from 28 weeks of 
+gestation and 6 weeks’ postnatal 
+prophylactic LMWH
+Low risk Asymptomatic low-risk thrombophilia 
+(prothrombin gene mutation or 
+factor V Leiden)Consider as a risk factor and score 
+appropriately (see Appendix III) 
+Recommend 10 days’ if other risk factor 
+postpartum (or 6 weeks’ if significant 
+family history) postnatal prophylactic LMWHRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists39 of 40Appendix V: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No. 1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic reviews 
+or randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+ 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+PRCOG Green-top Guideline No. 37a © Royal College of Obstetricians and Gynaecologists40 of 40This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Professor C Nelson-Piercy FRCP FRCOG, London; Dr P MacCallum MD FRCP FRCPath, Queen Mary University of 
+London, London; Dr L Mackillop MA FRCP Edin, John Radcliffe Hospital, Oxford University Hospitals NHS Trust, 
+Oxford
+and peer reviewed by: 
+Dr M Bowers; British Committee for Standards in Haematology; Mr MAG Coleman FRCOG, Southampton; 
+Mrs AHD Diyaf MRCOG, Barnstaple; King’s Thrombosis Centre; Lifeblood: The Thrombosis Charity; 
+RCOG Women’s Network; Dr N Singh MRCOG, Bolton. 
+Committee lead reviewers were: Dr M Gupta MRCOG, London; Mr AT Leather FRCOG, Ipswich; and Dr P Owen 
+FRCOG, Glasgow. 
+The developers acknowledge Dr Pensee Wu MRCOG, Stoke-on-Trent and Mr Christoph Lees FRCOG, London 
+Conflicts of interest: 
+Professor Nelson-Piercy is a trustee for APEC, Action on Pre-eclampsia, and a patron of the Lauren Page Trust, 
+supporting the work of obstetric physicians. She is co-Editor-in-Chief of Obstetric Medicine: The Medicine of 
+Pregnancy , a quarterly journal published by SAGE. Professor Nelson-Piercy receives an editorial stipend for this work.
+Dr MacCallum and Dr Mackillop have received travel and accommodation costs to attend international meetings from 
+LEO Pharma who manufacture a low-molecular-weight heparin used in obstetrics and gynaecology practice.
+The final version is the responsibility of the Guidelines Committee of the RCOG. 
+The review process will commence in 2018, unless otherwise indicated.
+DISCLAIMER
+ The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice. 
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration by 
+obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular 
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented 
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.

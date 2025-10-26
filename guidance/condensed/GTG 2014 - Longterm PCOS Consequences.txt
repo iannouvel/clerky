@@ -1,0 +1,633 @@
+Long-term Consequences of 
+Polycystic Ovary Syndrome
+Green-top Guideline No. 33
+November 2014RCOG Green-top Guideline No. 33 2 of 15 © Royal College of Obstetricians and GynaecologistsLong-term Consequences of Polycystic Ovary Syndrome
+This is the third edition of this guideline, which was previously published under the same title in 2003 and 2007.
+Executive summary of recommendations
+Diagnosis
+How is polycystic ovary syndrome (PCOS) diagnosed?
+PCOS should be diagnosed according to the Rotterdam consensus criteria.
+Counselling
+How should women with PCOS be counselled concerning the long-term implications of their condition and
+by whom?
+Women diagnosed with PCOS should be informed of the possible long-term risks to health that are
+associated with their condition by their healthcare professional.
+Long-term consequences
+Metabolic consequences of PCOS
+What is the risk of developing gestational diabetes in women with PCOS?
+Clinicians may consider offering screening for gestational diabetes to women who have been diagnosedas having PCOS before pregnancy. This should be performed at 24–28 weeks of gestation, with referralto a specialist obstetric diabetic service if abnormalities are detected.
+How should women with PCOS be screened for type II diabetes?
+Women presenting with PCOS who are overweight (body mass index [BMI] ≥ 25 kg/m2) and women with
+PCOS who are not overweight (BMI <25 kg/m2), but who have additional risk factors such as advanced
+age ( >40 years), personal history of gestational diabetes or family history of type II diabetes, should
+have a 2-hour post 75 g oral glucose tolerance test performed.
+In women with impaired fasting glucose (fasting plasma glucose level from 6.1 mmol/l to 6.9 mmol/l)
+or impaired glucose tolerance (plasma glucose of 7.8 mmol/l or more but less than 11.1 mmol/l after a2-hour oral glucose tolerance test), an oral glucose tolerance test should be performed annually.
+What is the risk of developing sleep apnoea in women with PCOS?
+Women diagnosed with PCOS should be asked (or their partners asked) about snoring and daytimefatigue/somnolence, informed of the possible risk of sleep apnoea and offered investigation andtreatment when necessary.
+What is the risk of developing cardiovascular disease (CVD) in women with PCOS?
+Clinicians need to be aware that conventional cardiovascular risk calculators have not been validated inwomen with PCOS.
+All women with PCOS should be assessed for CVD risk by assessing individual CVD risk factors (obesity,
+lack of physical activity, cigarette smoking, family history of type II diabetes, dyslipidaemia,hypertension, impaired glucose tolerance, type II diabetes) at the time of initial diagnosis.
+In clinical practice, hypertension should be treated; however, lipid-lowering treatment is not
+recommended routinely and should only be prescribed by a specialist.PD
+DCP
+BB
+PB© Royal College of Obstetricians and Gynaecologists 3o f 1 5 RCOG Green-top Guideline No. 33What is the risk of having reduced health-related quality of life in women with PCOS?
+Psychological issues should be considered in all women with PCOS. Depression and/or anxiety should
+be routinely screened for and, if present, assessed. If a woman with PCOS is positive on screening,further assessment and appropriate counselling and intervention should be offered by a qualifiedprofessional.
+Cancer and PCOS
+What are the risks of cancer in women with PCOS and how should these women be screened?
+Oligo- or amenorrhoea in women with PCOS may predispose to endometrial hyperplasia and latercarcinoma. It is good practice to recommend treatment with gestogens to induce a withdrawal bleed atleast every 3 to 4 months.
+Transvaginal ultrasound should be considered in the absence of withdrawal bleeds or abnormal uterine
+bleeding. In PCOS, an endometrial thickness of less than 7 mm is unlikely to be hyperplasia.
+A thickened endometrium or an endometrial polyp should prompt consideration of endometrial biopsy
+and/or hysteroscopy.
+There does not appear to be an association with breast or ovarian cancer and no additional surveillance
+is required.
+Strategies for reduction of risk
+Exercise and weight control
+How should women with PCOS be advised on lifestyle issues?
+It is recommended that lifestyle changes, including diet, exercise and weight loss, are initiated as thefirst line of treatment for women with PCOS for improvement of long-term outcomes and should precedeand/or accompany pharmacological treatment.
+Is drug therapy appropriate for long-term management of women with PCOS?
+Insulin-sensitising agents have not been licensed in the UK for use in patients without diabetes.Although a body of evidence has accumulated demonstrating the safety of these drugs, there iscurrently no evidence that the use of insulin-sensitising agents confers any long-term benefit.
+Use of weight reduction drugs may be helpful in reducing hyperandrogenaemia.
+Ovarian electrocautery
+What is the prognosis following electrocautery?
+Ovarian electrocautery should be considered for selected anovulatory patients, especially those with a
+normal BMI, as an alternative to ovulation induction.
+Bariatric surgery
+What is the prognosis following bariatric surgery?
+Bariatric surgery may be an option for morbidly obese women with PCOS (BMI of 40 kg/m2or more or 35
+kg/m2or more with a high-risk obesity-related condition) if standard weight loss strategies have failed.CPA
+CC
+CP
+BB
+C1. Purpose and scope
+This guideline aims to provide information, based on clinical evidence, to assist clinicians who manage
+women with polycystic ovary syndrome (PCOS) in advising these women about the long-term healthconsequences of the syndrome. The advice should be targeted to the individual and the presentingcomplaints. The delivery of the advice in this document to the patient will need to be done sensitively withinthe framework of the patient presentation that will differ for each individual. This guideline does not coverinfertility associated with PCOS, which has been extensively reviewed elsewhere.
+1,2
+2. Introduction and background epidemiology
+PCOS is a common disorder, often complicated by chronic anovulatory infertility and hyperandrogenism withthe clinical manifestations of oligomenorrhoea, hirsutism and acne.
+3,4Many women with this condition are
+obese and have a higher prevalence of impaired glucose tolerance, type II diabetes and sleep apnoea than isobserved in the general population.
+3They exhibit an adverse cardiovascular risk profile, characteristic of the
+cardiometabolic syndrome as suggested by a higher reported incidence of hypertension, dyslipidaemia,visceral obesity, insulin resistance and hyperinsulinaemia.
+5,6PCOS is frequently diagnosed by gynaecologists
+and it is therefore important that there is a good understanding of the long-term implications of the diagnosisin order to offer a holistic approach to the disorder. 
+PCOS is one of the most common endocrine disorders in women of reproductive age.
+7–9Because of
+differences in the diagnostic criteria employed, prevalence estimates vary widely, ranging from 2.2% to as highas 26%.
+9–14The prevalence of PCOS when diagnosed by the Rotterdam criteria was over twice that found
+when the National Institutes of Health (NIH) criteria were used to diagnose PCOS.14
+The prevalence of PCOS may be different according to ethnic background. For example, compared toCaucasians, a higher prevalence is noted among women of south Asian origin, where it presents at a youngerage and has more severe symptoms.
+15,16
+3. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-topGuidelines. The Cochrane Library (including the Cochrane Database of Systematic Reviews and the Databaseof Abstracts of Reviews of Effects [DARE]), EMBASE, TRIP , MEDLINE and PubMed were searched for relevantrandomised controlled trials (RCTs), systematic reviews and meta-analyses. The search was restricted toarticles published between 2006 and August 2012. The databases were searched using the relevant MedicalSubject Headings (MeSH) terms including all subheadings and this was combined with a keyword search. TheMeSH heading search included ‘polycystic ovary syndrome’, ‘metabolic’, ‘diabetes’, ‘cardiovascular’ and‘cancer’. The search was limited to humans and the English language. The computer search wascomplemented by hand searching from original references and reviews. Where possible, recommendationsare based on and explicitly linked to the evidence that supports them. Areas lacking evidence are highlightedand annotated as ‘Good Practice Points’. 
+4. Diagnosis
+4.1 How is PCOS diagnosed?
+PCOS should be diagnosed according to the Rotterdam consensus criteria.
+The 1990 NIH preliminary consensus definition has now been replaced by a more recent definitionby the Rotterdam European Society of Human Reproduction and Embryology (ESHRE)/AmericanSociety for Reproductive Medicine (ASRM)-Sponsored PCOS Consensus Workshop Group.
+17
+The Rotterdam criteria17have suggested a broader definition for PCOS, with two out of three of the following
+criteria being diagnostic of the condition: 
+1. polycystic ovaries (either 12 or more follicles or increased ovarian volume [> 10 cm3])
+RCOG Green-top Guideline No. 33 4 of 15 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4D5 of 15 RCOG Green-top Guideline No. 33 © Royal College of Obstetricians and Gynaecologists2. oligo-ovulation or anovulation
+3. clinical and/or biochemical signs of hyperandrogenism.
+It should be noted that the diagnosis of PCOS can only be made when other aetiologies for irregular cycles,
+such as thyroid dysfunction, acromegaly or hyperprolactinaemia, have been excluded if there is clinicalsuspicion. Women with non-Caucasian ethnicity might need different criteria to diagnose PCOS.
+18
+Clinical features of hyperandrogenism include hirsutism characterised by excess facial and bodyhair and midline hair growth. Although free and total testosterone is used in the diagnosis of PCOS,the recommended baseline biochemical test for hyperandrogenism is free androgen index (totaltestosterone divided by sex hormone binding globulin [SHBG] x 100).
+19If there are signs of
+virilisation (e.g. deep voice, reduced breast size, increased muscle bulk, clitoral hypertrophy),rapidly progressing hirsutism (less than 1 year between hirsutism being noticed and seekingmedical advice) or high total testosterone levels (greater than 5 nmol/l or more than twice theupper limit of normal reference range), androgen-secreting tumours and late-onset/nonclassicalcongenital adrenal hyperplasia (CAH) should be excluded. 17-hydroxyprogesterone should bemeasured in the follicular phase and will be raised in CAH. However, it is possible to have CAHwithout the testosterone being greater than 5 nmol/l, particularly if the woman is heterozygous forthis condition. Hence measurement of 17-hydroxyprogesterone should be considered if there is ahigh index of suspicion, for example, specific groups such as Ashkenazi Jews or those with a familyhistory of CAH, since the management of CAH is different than that of PCOS. If 17-hydroxyprogesterone is borderline, it will have to be confirmed by an ACTH stimulation test todiagnose CAH. If there is a clinical suspicion of Cushing’s syndrome or acromegaly, this should beinvestigated as per local practice.
+20Reference ranges for different methods and different
+laboratories vary widely; clinical decisions should be guided by the reference ranges of the locallaboratory and the androgens should preferably be measured using tandem mass spectrometry.
+17,21,22
+5. Counselling
+5.1 How should women with PCOS be counselled concerning the long-term implications of their condition
+and by whom?
+Women diagnosed with PCOS should be informed of the possible long-term risks to health that are
+associated with their condition by their healthcare professional.
+Women should be made aware of the long-term implications (as discussed in other sections) of
+their condition, including their cardiovascular risk, by their healthcare professional, in a way that istailored to their individual circumstances. Women should be made aware of the positive effect oflifestyle modification, including weight loss, for improving their symptoms, especially those whoare overweight or obese.
+23
+Women should be counselled that there is no strong evidence that PCOS by itself can cause weightgain or that having PCOS makes weight loss difficult or impossible. Many patients find great benefitfrom support groups (
+e.g. http://www.verity-pcos.org.uk ) and details of these, and sources of
+information, should be provided.24
+6. Long-term consequences
+6.1 Metabolic consequences of PCOS
+6.1.1 What is the risk of developing gestational diabetes in women with PCOS?
+Clinicians may consider offering screening for gestational diabetes to women who have been diagnosed
+as having PCOS before pregnancy. This should be performed at 24–28 weeks of gestation, with referralto a specialist obstetric diabetic service if abnormalities are detected.Evidence
+level 2+
+Evidence
+level 1+
+Evidence
+level 4P
+PThe prevalence of gestational diabetes mellitus is twice as high among women with PCOS
+compared to control women.25Clinicians may consider offering a 2-hour post 75 g oral glucose
+tolerance test to all pregnant women with PCOS, similar as for screening in women with any otherrisk factors for gestational diabetes. The diagnosis and treatment of gestational diabetes is discussedin RCOG Scientific Impact Paper No. 23 in detail.
+26
+6.1.2 How should women with PCOS be screened for type II diabetes?
+Women presenting with PCOS who are overweight (body mass index [BMI] ≥ 25 kg/m2) and women with
+PCOS who are not overweight (BMI <25 kg/m2), but who have additional risk factors such as advanced
+age ( >40 years), personal history of gestational diabetes or family history of type II diabetes, should
+have a 2-hour post 75 g oral glucose tolerance test performed.
+In women with impaired fasting glucose (fasting plasma glucose level from 6.1 mmol/l to 6.9 mmol/l)
+or impaired glucose tolerance (plasma glucose of 7.8 mmol/l or more but less than 11.1 mmol/l after a2-hour oral glucose tolerance test), an oral glucose tolerance test should be performed annually.
+Insulin resistance is present in around 65–80% of women with PCOS, independent of obesity,27and
+is further exacerbated by excess weight.28Insulin resistance has been shown to worsen
+reproductive and metabolic features, type II diabetes and cardiovascular disease (CVD) risk inPCOS.
+29The highest incidence of metabolic abnormalities is seen in women with marked
+hyperandrogenism and anovulation.6
+There is an increased risk of impaired glucose tolerance and type II diabetes in PCOS independentof obesity.
+30Earlier onset hyperglycaemia and rapid progression to type II diabetes is also reported
+in PCOS.31PCOS is classified as a nonmodifiable risk factor for type II diabetes.32Furthermore, type
+II diabetes is a major CVD risk factor and lifestyle therapy has been shown to prevent or delayprogression to type II diabetes. Hence early screening and identification in this high-risk group ofwomen with PCOS is important. Women of non-Caucasian ethnicity (particularly south Asianwomen) should have an oral glucose tolerance test regardless of their BMI, in view of theirpropensity towards higher insulin resistance.
+33
+Fasting blood glucose level alone has been shown to be inaccurate and results in underdiagnosis oftype II diabetes in PCOS.
+34Use of an HbA1c of 6.5% or greater has been proposed for diagnosis of
+diabetes. However, caution should be exercised as patients with type II diabetes may be missed34
+and the utilisation of HbA1c for the diagnosis of diabetes in PCOS warrants better definition. Hencean oral glucose tolerance test is considered to be appropriate for screening women with PCOS fordiabetes. However, it would be reasonable to carry out HbA1c measurements where women areunwilling to have oral glucose tolerance tests or where the resources are not readily available. 
+6.2 What is the risk of developing sleep apnoea in women with PCOS?
+Women diagnosed with PCOS should be asked (or their partners asked) about snoring and daytime
+fatigue/somnolence, informed of the possible risk of sleep apnoea and offered investigation andtreatment when necessary.
+The prevalence of obstructive sleep apnoea is increased in obese women with PCOS. Androgen
+levels and insulin resistance are positively associated with obstructive sleep apnoea in PCOS.35–38
+Obstructive sleep apnoea contributes to insulin resistance in PCOS and continuous positive airwaypressure (CPAP) therapy improves insulin sensitivity in affected women.
+39
+6.3 What is the risk of developing cardiovascular disease (CVD) in women with PCOS?
+Clinicians need to be aware that conventional cardiovascular risk calculators have not been validated in
+women with PCOS.
+6o f 1 5 RCOG Green-top Guideline No. 33 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2+
+Evidence
+level 2+BEvidence
+level 4
+Evidence
+level 2++
+Evidence
+level 2++
+PB
+BRCOG Green-top Guideline No. 33 7o f 1 5 © Royal College of Obstetricians and GynaecologistsAll women with PCOS should be assessed for CVD risk by assessing individual CVD risk factors (obesity,
+lack of physical activity, cigarette smoking, family history of type II diabetes, dyslipidaemia,hypertension, impaired glucose tolerance, type II diabetes) at the time of initial diagnosis.
+In clinical practice, hypertension should be treated; however, lipid-lowering treatment is not
+recommended routinely and should only be prescribed by a specialist.
+CVD remains one of the leading causes of death in women. In women with PCOS, novel CVD risk
+factors40–42and early onset cardiovascular dysfunction (endothelial dysfunction, arterial stiffness,
+plaques and coronary artery calcification)5,43have been noted and are related to insulin resistance and
+obesity. High androgens and low SHBG have also been linked to increased CVD risk in both pre- andpostmenopausal women.
+44A subset of the Women’s Ischemia Syndrome Evaluation (WISE) study
+confirmed increased cardiovascular events and deaths in postmenopausal women with PCOS.42
+While it seems prudent to assess the cardiovascular risk factors of a woman with PCOS, includingmeasurement of blood pressure, cholesterol, triglycerides and high-density lipoprotein cholesterol,it should be acknowledged that the conventional cardiovascular risk calculators have not beenvalidated in this group of women. Differences between PCOS and control women exist in severalCVD risk factors that are more profound in obese women with PCOS.
+45
+Since lifetime risk for CVD is higher in women with PCOS40–42and mostly preventable, all women
+with PCOS should be assessed for CVD risk by assessing individual CVD risk factors (obesity, lackof physical activity, cigarette smoking, family history of type II diabetes, dyslipidaemia,hypertension, impaired glucose tolerance, type II diabetes) at baseline and treated accordingly. At the time of initial diagnosis, women with PCOS should be assessed for obesity with BMI andwaist circumference.
+Blood pressure should be checked at the time of initial diagnosis and during oral contraceptive
+therapy. In clinical practice, hypertension should be treated according to the Joint British Societies’guidelines
+46which suggest that persistent blood pressures greater than or equal to 140 mmHg
+systolic and/or 90 mmHg diastolic, not responding to lifestyle measures, need to be considered fordrug therapy (patients with diabetes or other high-risk factors with blood pressure greater than 130mmHg systolic and/or 80 mmHg diastolic may require drug therapy). Women with hypertensionwho need to start oral contraceptive therapy should be counselled regarding its risks and benefitsand should be monitored and treated as per the Joint British Societies’ guidelines.
+46
+There is emerging evidence that statins improve hyperandrogenaemia and the metabolic profile inwomen with PCOS.
+47,48However, lipid-lowering treatment is not recommended for treating
+hyperandrogenaemia and should only be prescribed by a specialist.
+6.4 What is the risk of having reduced health-related quality of life in women with PCOS?
+Psychological issues should be considered in all women with PCOS. Depression and/or anxiety should be
+routinely screened for and, if present, assessed. If a woman with PCOS is positive on screening, furtherassessment and appropriate counselling and intervention should be offered by a qualified professional.
+Women with PCOS are at an increased risk of psychological and behavioural disorders as well as
+reduced quality of life (QoL).49–51It has been shown that PCOS has a significant detrimental effect
+on QoL compared with controls and weight issues were most likely to affect QoL in women withPCOS.
+41Women with PCOS are at a higher risk of developing psychological difficulties (such as
+depression and/or anxiety), eating disorders and sexual and relationship dysfunction.51
+Psychological issues, especially depression, should be screened for according to National Institutefor Health and Care Excellence guidelines:
+52,53C
+Evidence
+level 1+Evidence
+level 4Evidence
+level 2++
+Evidence
+level 1–D
+Evidence
+levels 1+
+and 4
+AConsider asking people who may have depression two questions specifically:
+●During the last month, have you often been bothered by feeling down, depressed or hopeless?
+●During the last month, have you often been bothered by having little interest or pleasure in doing things? 
+If a person answers 'yes' to either of the depression identification questions, but the practitioner is not
+competent to perform a mental health assessment, they should refer the person to an appropriateprofessional. If this professional is not the person's general practitioner (GP), inform the GP of the referral.
+7. Cancer and PCOS
+7.1 What are the risks of cancer in women with PCOS and how should these women be screened?
+Oligo- or amenorrhoea in women with PCOS may predispose to endometrial hyperplasia and later
+carcinoma. It is good practice to recommend treatment with gestogens to induce a withdrawal bleed atleast every 3 to 4 months.
+Transvaginal ultrasound should be considered in the absence of withdrawal bleeds or abnormal uterine
+bleeding. In PCOS, an endometrial thickness of less than 7 mm is unlikely to be hyperplasia.
+A thickened endometrium or an endometrial polyp should prompt consideration of endometrial biopsy
+and/or hysteroscopy.
+There does not appear to be an association with breast or ovarian cancer and no additional surveillance
+is required.
+It has been known for many years that oligo- and amenorrhoea in the presence of premenopausal
+levels of estrogen can lead to endometrial hyperplasia and carcinoma.54There are moderate quality
+data to support the finding that women with PCOS have a 2.89-fold (95% CI 1.52–5.48) increasedrisk for endometrial cancer.
+55In women with PCOS, intervals between menstruation of more than
+3 months (corresponding to fewer than four periods each year) may be associated withendometrial hyperplasia.
+56Regular induction of a withdrawal bleed with cyclical gestogens –
+gestogens for at least 12 days,57,58oral contraceptive pills or endometrial protection gained by
+exposure to gestogens by devices such as the Mirena® (Bayer plc, Newbury, Berks, UK) intrauterinesystem – would be advisable in oligomenorrhoeic women with PCOS
+59as part of good clinical
+practice, but the most effective regimen is unclear due to a lack of randomised clinical trials.60
+A prospective study of 56 consecutive amenorrhoeic women with PCOS who underwenttransvaginal ultrasound to assess the endometrial thickness concluded that the endometrialthickness was positively correlated with endometrial hyperplasia; there were no cases ofendometrial hyperplasia when the endometrial thickness was less than 7 mm.
+56McCormick et al.
+found that, compared with 7 mm, a higher cut-off of 9 mm in patients with PCOS had comparablesensitivity (100%), negative predictive value (100%) and positive predictive value (50%), butsuperior specificity (56%); for every 1 mm increase in endometrial thickness, the odds ratio ofhyperplasia increased by 1.48 (95% CI 1.04–2.10).
+61
+Women with PCOS do not have a significant increase in their risk of developing breast cancercompared to those without PCOS (RR 0.88, 95% CI 0.44–1.77).
+62A small number of studies have
+addressed the possibility of an association between PCOS and epithelial ovarian cancer risk; theresults are conflicting, but generally reassuring.
+63–65As there does not appear to be an association
+with breast or ovarian cancer, no additional surveillance is required beyond routine screening.
+8. Strategies for reduction of risk
+8.1 Exercise and weight control
+8o f 1 5 RCOG Green-top Guideline No. 33 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2+C
+CP
+P
+Evidence
+level 4RCOG Green-top Guideline No. 33 9 of 15 © Royal College of Obstetricians and Gynaecologists8.1.1 How should women with PCOS be advised on lifestyle issues?
+It is recommended that lifestyle changes, including diet, exercise and weight loss, are initiated as the
+first line of treatment for women with PCOS for improvement of long-term outcomes and should precedeand/or accompany pharmacological treatment.
+Lifestyle management including diet, exercise and weight loss is recommended as the first line of
+treatment for women with PCOS;23these changes should precede and/or accompany
+pharmacological treatment. In women with PCOS and excess weight, a reduction of as little as 5%of total body weight has been shown to reduce insulin resistance and testosterone levels as well asimproving body composition and cardiovascular risk markers.
+45
+In the general population, motivational interviewing and established behaviour techniques appearmore effective than traditional advice giving for changes in weight, diet and/or exercise. Suggestingways to access support to help with weight loss and exercise, establishing self-monitoring(including pedometer use), time management techniques, relapse prevention techniques, individualtailoring, engaging social support and setting goals have all been shown to be useful. Individual,group and mixed interventions have been shown to be effective.
+23,66,67Also, a wide range of
+providers (with appropriate training), including doctors, nurses, dietitians, nutritionists and exercisespecialists, can deliver effective interventions for changing diet and/or exercise.
+66–69Use of
+behaviour change techniques and greater intensity, contact time and duration generate significantlymore weight loss.
+69
+Lifestyle management targeting weight loss (in women with a BMI of 25 kg/m2or more
+[overweight/obese]) and prevention of weight gain (in women with a BMI of 18.5–24.9 kg/m2
+[lean]) should include both reduced dietary energy (caloric) intake and exercise. This should be thefirst-line therapy for all women with PCOS for managing long-term consequences.
+70Prevention of
+weight gain should be targeted in all women with PCOS through monitored caloric intake and inthe setting of healthy food choices, irrespective of diet composition. Behaviour change techniquesshould target prevention of weight gain in all women with PCOS.
+71Women who have failed to lose
+weight with lifestyle strategies and who have a BMI of 40 kg/m2or more or who have a BMI of 35
+kg/m2or more together with a high-risk obesity-related condition (such as hypertension or type II
+diabetes) should be considered for bariatric surgery.72
+8.2 Is drug therapy appropriate for long-term management of women with PCOS?
+Insulin-sensitising agents have not been licensed in the UK for use in patients without diabetes.
+Although a body of evidence has accumulated demonstrating the safety of these drugs, there iscurrently no evidence that the use of insulin-sensitising agents confers any long-term benefit.
+Use of weight reduction drugs may be helpful in reducing hyperandrogenaemia.
+The demonstration of the potential long-term health consequences of PCOS has been accompanied
+by the use of insulin-sensitising agents such as metformin and the thiazolidinediones to reduceinsulin resistance and thereby reduce the risk of developing diabetes and other metabolic sequelae.However, there is no strong evidence regarding the long-term benefits for the use of sensitisingagents in women with PCOS.
+73–75Metformin76–79has been shown to have beneficial short-term
+effects on insulin resistance and other cardiovascular risk markers in women with PCOS withouttype II diabetes.
+80,81There is evidence that metformin may modestly reduce androgen levels by
+around 11% in women with PCOS compared to placebo82and modest reductions in body weight
+have been reported by some, but not all, studies.83Women with a BMI of more than 37 kg/m2may
+not respond well to the standard dose of metformin therapy.84It must be emphasised that both
+metformin and the thiazolidinediones are unlicensed for use in PCOS and women should becounselled before initiating therapy so that they can make an informed choice.Evidence
+level 2++Evidence
+level 2+Evidence
+level 2++B
+B
+CRCOG Green-top Guideline No. 33 10 of 15 © Royal College of Obstetricians and GynaecologistsThere is no current robust evidence to support the use of these drugs for the prevention of CVD
+in PCOS and further research in this area is required. Inference from the diabetes prevention trialthat examined a cohort of patients who had similar metabolic profiles to women with PCOSsuggested that lifestyle intervention was superior to metformin in improving cardiometabolic riskfactors and progression to type II diabetes.
+85
+Metformin can be considered in women with PCOS who are already undergoing lifestyle treatmentand do not have improvement in impaired glucose tolerance and in those women with impairedglucose tolerance.
+68,77–79The use of metformin in induction of ovulation in women with PCOS will
+not be discussed here as it is beyond the remit of this guideline.
+Incretin hormone-based therapies such as exenatide have been shown to reduce weight and
+improve insulin resistance in women with PCOS.86However, the clinical experience with these
+agents in PCOS is limited and significant side effects may occur; therefore, routine use of incretin-based therapies in PCOS is not recommended.
+Orlistat induces a small weight reduction and improves biochemical hyperandrogenaemia but
+without changing glucose–insulin homeostasis or lipid patterns.
+87
+8.3 Ovarian electrocautery
+8.3.1 What is the prognosis following electrocautery?
+Ovarian electrocautery should be considered for selected anovulatory patients, especially those with a
+normal BMI, as an alternative to ovulation induction.
+Anovulation associated with PCOS has long been known to be amenable to surgical treatment. A
+long-term cohort study has shown persistence of ovulation as well as normalisation of serumandrogens and SHBG up to 20 years after laparoscopic ovarian electrocautery in over 60% ofsubjects, particularly if they have a normal BMI.
+88
+However, no prospective studies have been powered to look at cardiovascular risk profiles andovarian electrocautery should be reserved for selected anovulatory patients with a normal BMI orwhere a laparoscopy is required for other indications. It is also important to highlight that ovariansurgery may adversely affect the reproductive capacity of the ovaries in the future.
+89
+8.4 Bariatric surgery
+8.4.1 What is the prognosis following bariatric surgery?
+Bariatric surgery may be an option for morbidly obese women with PCOS (BMI of 40 kg/m2or more or 
+35 kg/m2or more with a high-risk obesity-related condition) if standard weight loss strategies have failed.
+Bariatric surgery may be indicated in selected women with PCOS and morbid obesity.90Bariatric
+surgery may induce a significant weight loss (up to 60% of excess weight) and improve diabetes,hypertension and dyslipidaemia, reducing mortality from CVD and cancer when compared withlifestyle modification.
+91,92Long-term weight loss of 14–25% may result.92,93In women with PCOS,
+bariatric surgery has been shown to be effective.90,94In 12 morbidly obese women with PCOS, an
+average postoperative weight loss of 41 kg in the first year improved hyperandrogenism, insulinresistance, dyslipidaemia and hypertension and reversed the PCOS diagnosis.
+90
+Bariatric surgery may be an option for morbidly obese women with PCOS in whom long-term diet-based strategies have failed. However, surgically induced weight loss must be balanced against therisks of surgery. These risks include a 0.1–1.1% mortality rate, bowel obstruction, infection,oesophagitis and nutritional abnormalities
+91and hence bariatric surgery should be performed only
+after standard weight loss strategies have failed in women with PCOS with a BMI of 40 kg/m2or
+more or a BMI of 35 kg/m2or more together with a high-risk obesity-related condition.72C
+Evidence
+level 2+Evidence
+level 2++
+Evidence
+level 2+
+Evidence
+level 2++Evidence
+level 4
+Evidence
+level 2+
+Evidence
+level 2–
+C11 of 15 RCOG Green-top Guideline No. 33 © Royal College of Obstetricians and Gynaecologists9. Recommendations for future research
+In view of the paucity of evidence in this area, the following research topics are recommended:
+●large population-based studies on long-term consequences for non-Caucasian women
+●prospective long-term study on the development of type II diabetes and cardiovascular outcomes
+●elucidation of the long-term consequences for non-insulin resistant non-obese women with PCOS
+●better evidence that non-pharmaceutical interventions for young women with PCOS alter long-term
+consequences
+●better evidence that bariatric procedures for women with PCOS alter long-term consequences
+●new, safe and effective pharmacological interventions to reduce cardiovascular outcomes, with long-
+term follow-up.
+10. Auditable topics
+Based on the above recommendations, the auditable standards are considered below: 
+1. 100% of women with PCOS should have an accurate diagnosis of PCOS as defined by at least two out of
+three Rotterdam criteria.
+2. 100% of overweight (BMI greater than or equal to 25) women with PCOS and lean PCOS subjects with
+other risk factors such as advanced age (over 40 years old), personal history of gestational diabetes orfamily history of type II diabetes should have a 2-hour post 75 g oral glucose tolerance test performed.
+3. 100% of women with PCOS should be assessed for CVD risk by assessing individual CVD risk factors
+(obesity, lack of physical activity, cigarette smoking, family history of type II diabetes, dyslipidaemia,hypertension, impaired glucose tolerance, type II diabetes) at baseline.
+4. 100% of women with PCOS should be assessed for obesity with measurement of the BMI and waist
+circumference at every visit. 
+5. 100% of women with PCOS have their blood pressure checked routinely at every visit. 6. 100% of overweight women with PCOS should be provided with dietary and lifestyle advice.7. Psychological issues should be considered and addressed in 100% of women with PCOS. 
+References
+1. Bhagavath B, Carson SA. Ovulation induction in women with
+polycystic ovary syndrome: an update. Am J Obstet Gynecol
+2012;206:195–8.
+2. Johnson NP , Stewart AW , Falkiner J, Farquhar CM, Milsom S,
+Singh VP , et al.; REACT-NZ (REproduction And CollaborativeTrials in New Zealand), a multi-centre fertility trials group.PCOSMIC: a multi-centre randomized trial in women withPolyCystic Ovary Syndrome evaluating Metformin for Infertilitywith Clomiphene. Hum Reprod 2010;25:1675–83.
+3. Norman RJ, Dewailly D, Legro RS, Hickey TE. Polycystic ovary
+syndrome. Lancet 2007;370:685–97.
+4. Ehrmann DA. Polycystic ovary syndrome. N Engl J Med
+2005;352:1223–36.
+5. Sathyapalan T, Atkin SL. Recent advances in cardiovascular
+aspects of polycystic ovary syndrome. Eur J Endocrinol
+2012;166:575–83.
+6. Moran L, Teede H. Metabolic features of the reproductive
+phenotypes of polycystic ovary syndrome. Hum Reprod
+Update 2009;15:477–88.
+7. Kauffman RP , Baker TE, Baker VM, DiMarino P , Castracane VD.
+Endocrine and metabolic differences among phenotypicexpressions of polycystic ovary syndrome according to the2003 Rotterdam consensus criteria. Am J Obstet Gynecol
+2008;198:670.e1–10.
+8. Chang RJ. A practical approach to the diagnosis of polycystic
+ovary syndrome. Am J Obstet Gynecol 2004;191:713–7.
+9. Azziz R, Woods KS, Reyna R, Key TJ, Knochenhauer ES, Yildiz
+BO. The prevalence and features of the polycystic ovarysyndrome in an unselected population. J Clin Endocrinol
+Metab 2004;89:2745–9.
+10. Knochenhauer ES, Key TJ, Kahsar-Miller M, Waggoner W , Boots
+LR, Azziz R. Prevalence of the polycystic ovary syndrome inunselected black and white women of the southeastern UnitedStates: a prospective study. J Clin Endocrinol Metab
+1998;83:3078–82.11. Diamanti-Kandarakis E, Kouli CR, Bergiele AT, Filandra FA,
+Tsianateli TC, Spina GG, et al. A survey of the polycystic ovarysyndrome in the Greek island of Lesbos: hormonal andmetabolic proﬁle. J Clin Endocrinol Metab 1999;84:4006–11.
+12. Michelmore KF , Balen AH, Dunger DB, Vessey MP . Polycystic
+ovaries and associated clinical and biochemical features inyoung women. Clin Endocrinol (Oxf) 1999;51:779–86.
+13. Asunción M, Calvo RM, San Millán JL, Sancho J, Avila S, Escobar-
+Morreale HF . A prospective study of the prevalence of thepolycystic ovary syndrome in unselected Caucasian womenfrom Spain. J Clin Endocrinol Metab 2000;85:2434–8.
+14. March WA, Moore VM, Willson KJ, Phillips DI, Norman RJ,
+Davies MJ. The prevalence of polycystic ovary syndrome in acommunity sample assessed under contrasting diagnosticcriteria. Hum Reprod 2010;25:544–51.
+15. Wijeyaratne CN, Balen AH, Barth JH, Belchetz PE. Clinical
+manifestations and insulin resistance (IR) in polycystic ovarysyndrome (PCOS) among South Asians and Caucasians: is therea difference? Clin Endocrinol (Oxf) 2002;57:343–50.
+16. Glintborg D, Mumm H, Hougaard D, Ravn P , Andersen M. Ethnic
+differences in Rotterdam criteria and metabolic risk factors ina multiethnic group of women with PCOS studied inDenmark. Clin Endocrinol (Oxf) 2010;73:732–8.
+17. Rotterdam ESHRE/ASRM-Sponsored PCOS Consensus Workshop
+Group. Revised 2003 consensus on diagnostic criteria and long-term health risks related to polycystic ovary syndrome. Fertil
+Steril 2004;81:19–25.
+18. Goodarzi MO, Azziz R. Diagnosis, epidemiology, and genetics of
+the polycystic ovary syndrome. Best Pract Res Clin Endocrinol
+Metab 2006;20:193–205.
+19. Cho LW , Kilpatrick ES, Jayagopal V , Diver MJ, Atkin SL. Biological
+variation of total testosterone, free androgen index andbioavailable testosterone in polycystic ovarian syndrome:implications for identifying hyperandrogenaemia. Clin
+Endocrinol (Oxf) 2008;68:390–4.RCOG Green-top Guideline No. 33 12 of 15 © Royal College of Obstetricians and Gynaecologists20. Kaltsas GA, Isidori AM, Besser GM, Grossman AB. Secondary
+forms of polycystic ovary syndrome. Trends Endocrinol Metab
+2004;15:204–10.
+21. Rosner W , Auchus RJ, Azziz R, Sluss PM, Raff H. Position
+statement: Utility, limitations, and pitfalls in measuringtestosterone: an Endocrine Society position statement. J Clin
+Endocrinol Metab 2007;92:405–13. 
+22. Janse F , Eijkemans MJ, Goverde AJ, Lentjes EG, Hoek A, Lambalk
+CB, et al. Assessment of androgen concentration in women: liquidchromatography–tandem mass spectrometry and extraction RIAshow comparable results. Eur J Endocrinol 2011;165:925–33.
+23. Moran LJ, Hutchison SK, Norman RJ, Teede HJ. Lifestyle changes
+in women with polycystic ovary syndrome. Cochrane
+Database Syst Rev 2011;(7):CD007506.
+24. Royal College of Obstetricians and Gynaecologists. Polycystic
+ovary syndrome: what it means for your long-term health .
+London: RCOG; 2009.
+25. Roos N, Kieler H, Sahlin L, Ekman-Ordeberg G, Falconer H,
+Stephansson O. Risk of adverse pregnancy outcomes inwomen with polycystic ovary syndrome: population basedcohort study. BMJ 2011;343:d6309.
+26. Royal College of Obstetricians and Gynaecologists. Diagnosis
+and Treatment of Gestational Diabetes . Scientific Impact
+Paper No. 23. London: RCOG; 2011.
+27. DeUgarte CM, Bartolucci AA, Azziz R. Prevalence of insulin
+resistance in the polycystic ovary syndrome using thehomeostasis model assessment. Fertil Steril 2005;83:1454–60.
+28. Diamanti-Kandarakis E, Dunaif A. Insulin resistance and the
+polycystic ovary syndrome revisited: an update on mechanismsand implications. Endocr Rev 2012;33:981–1030.
+29. Meyer C, McGrath BP , Teede HJ. Overweight women with
+polycystic ovary syndrome have evidence of subclinicalcardiovascular disease. J Clin Endocrinol Metab 2005;90:5711–6.
+30. Moran LJ, Misso ML, Wild RA, Norman RJ. Impaired glucose
+tolerance, type 2 diabetes and metabolic syndrome inpolycystic ovary syndrome: a systematic review and meta-analysis. Hum Reprod Update 2010;16:347–63.
+31. Norman RJ, Masters L, Milner CR, Wang JX, Davies MJ. Relative
+risk of conversion from normoglycaemia to impaired glucosetolerance or non-insulin dependent diabetes mellitus inpolycystic ovarian syndrome. Hum Reprod 2001;16:1995–8.
+32. Alberti KG, Zimmet P , Shaw J. International Diabetes
+Federation: a consensus on Type 2 diabetes prevention. Diabet
+Med 2007;24:451–63.
+33. Wijeyaratne CN, Seneviratne Rde A, Dahanayake S, Kumarapeli
+V , Palipane E, Kuruppu N, et al. Phenotype and metabolicprofile of South Asian women with polycystic ovary syndrome(PCOS): results of a large database from a specialist EndocrineClinic. Hum Reprod 2011;26:202–13.
+34. Velling Magnussen L, Mumm H, Andersen M, Glintborg D.
+Hemoglobin A1c as a tool for the diagnosis of type 2 diabetesin 208 premenopausal women with polycystic ovarysyndrome. Fertil Steril 2011;96:1275–80.
+35. Fogel RB, Malhotra A, Pillar G, Pittman SD, Dunaif A, White DP .
+Increased prevalence of obstructive sleep apnea syndrome inobese women with polycystic ovary syndrome. J Clin
+Endocrinol Metab 2001;86:1175–80.
+36. Dunaif A. Polycystic ovary syndrome in 2011: Genes, aging and
+sleep apnea in polycystic ovary syndrome. Nat Rev Endocrinol
+2012;8:72–4.
+37. Gopal M, Duntley S, Uhles M, Attarian H. The role of obesity in
+the increased prevalence of obstructive sleep apnea syndromein patients with polycystic ovarian syndrome. Sleep Med
+2002;3:401–4.
+38. Vgontzas AN, Legro RS, Bixler EO, Grayev A, Kales A, Chrousos
+GP . Polycystic ovary syndrome is associated with obstructivesleep apnea and daytime sleepiness: role of insulin resistance. J
+Clin Endocrinol Metab 2001;86:517–20.
+39. Tasali E, Chapotot F , Leproult R, Whitmore H, Ehrmann DA.
+Treatment of obstructive sleep apnea improves cardiometabolicfunction in young obese women with polycystic ovarysyndrome. J Clin Endocrinol Metab 2011;96:365–74.40. Solomon CG. The epidemiology of polycystic ovary syndrome.
+Prevalence and associated disease risks. Endocrinol Metab
+Clin North Am 1999;28:247–63.
+41. Gorgels WJ, v d Graaf Y , Blankenstein MA, Collette HJ, 
+Erkelens DW , Banga JD. Urinary sex hormone excretions inpremenopausal women and coronary heart disease risk: anested case-referent study in the DOM-cohort. J Clin
+Epidemiol 1997;50:275–81.
+42. Shaw LJ, Bairey Merz CN, Azziz R, Stanczyk FZ, Sopko G,
+Braunstein GD, et al. Postmenopausal women with a history ofirregular menses and elevated androgen measurements at highrisk for worsening cardiovascular event-free survival: resultsfrom the National Institutes of Health—National Heart, Lung,and Blood Institute sponsored Women’s Ischemia SyndromeEvaluation. J Clin Endocrinol Metab 2008;93:1276–84.
+43. Sorensen MB, Franks S, Robertson C, Pennell DJ, Collins P . Severe
+endothelial dysfunction in young women with polycystic ovarysyndrome is only partially explained by known cardiovascularrisk factors. Clin Endocrinol (Oxf) 2006;65:655–9.
+44. Sutton-Tyrrell K, Wildman RP , Matthews KA, Chae C, Lasley BL,
+Brockwell S, et al.; SWAN Investigators. Sex hormone-bindingglobulin and the free androgen index are related tocardiovascular risk factors in multiethnic premenopausal andperimenopausal women enrolled in the Study of WomenAcross the Nation (SWAN). Circulation 2005;111:1242–9.
+45. Moran LJ, Noakes M, Clifton PM, Wittert GA, Belobrajdic DP ,
+Norman RJ. C-reactive protein before and after weight loss inoverweight women with and without polycystic ovarysyndrome. J Clin Endocrinol Metab 2007;92:2944–51.
+46. British Cardiac Society, British Hypertension Society, Diabetes
+UK, HEART UK, Primary Care Cardiovascular Society, TheStroke Association. JBS 2: Joint British Societies’ guidelines onprevention of cardiovascular disease in clinical practice. Heart
+2005;91 Suppl 5:v1–52.
+47. Sathyapalan T, Kilpatrick ES, Coady AM, Atkin SL. The effect of
+atorvastatin in patients with polycystic ovary syndrome: arandomized double-blind placebo-controlled study. J Clin
+Endocrinol Metab 2009;94:103–8.
+48. Sathyapalan T, Atkin SL. Evidence for statin therapy in polycystic
+ovary syndrome. Ther Adv Endocrinol Metab 2010;1:15–22.
+49. Jones GL, Hall JM, Balen AH, Ledger WL. Health-related quality of
+life measurement in women with polycystic ovary syndrome: asystematic review. Hum Reprod Update 2008;14:15–25.
+50. Dokras A, Clifton S, Futterweit W , Wild R. Increased risk for
+abnormal depression scores in women with polycystic ovarysyndrome: a systematic review and meta-analysis. Obstet
+Gynecol 2011;117:145–52.
+51. Himelein MJ, Thatcher SS. Polycystic ovary syndrome and
+mental health: A review. Obstet Gynecol Surv 2006;61:723–32.
+52. National Institute for Health and Clinical Excellence. Depression
+in adults: The treatment and management of depression inadults . NICE clinical guideline 90. Manchester: NICE; 2009.
+53. Whooley MA, Avins AL, Miranda J, Browner WS. Case-finding
+instruments for depression. Two questions are as good as many.J Gen Intern Med 1997;12:439–45.
+54. Chamlian DL, Taylor HB. Endometrial hyperplasia in young
+women. Obstet Gynecol 1970;36:659–66.
+55. Haoula Z, Salman M, Atiomo W . Evaluating the association
+between endometrial cancer and polycystic ovary syndrome.Hum Reprod 2012;27:1327–31.
+56. Cheung AP . Ultrasound and menstrual history in predicting
+endometrial hyperplasia in polycystic ovary syndrome. Obstet
+Gynecol 2001;98:325–31.
+57. Sturdee DW , Wade-Evans T, Paterson ME, Thom M, Studd JW .
+Relations between bleeding pattern, endometrial histology, andoestrogen treatment in menopausal women. Br Med J
+1978;1:1575–7.
+58. Judd HL, Mebane-Sims I, Legault C, Wasilauskas C, Johnson S,
+Merino M, et al. Effects of hormone replacement therapy onendometrial histology in postmenopausal women. ThePostmenopausal Estrogen/Progestin Interventions (PEPI) Trial.JAMA 1996;275:370–5.13 of 15 RCOG Green-top Guideline No. 33 © Royal College of Obstetricians and Gynaecologists59. Gambrell RD Jr. Prevention of endometrial cancer with
+progestogens. Maturitas 1986;8:159–68.
+60. Hickey M, Higham JM, Fraser I. Progestogens with or without
+oestrogen for irregular uterine bleeding associated withanovulation. Cochrane Database Syst Rev 2012;(9):CD001895.
+61. McCormick BA, Wilburn RD, Thomas MA, Williams DB, Maxwell
+R, Aubuchon M. Endometrial thickness predicts endometrialhyperplasia in patients with polycystic ovary syndrome. Fertil
+Steril 2011;95:2625–7.
+62. Chittenden BG, Fullerton G, Maheshwari A, Bhattacharya S.
+Polycystic ovary syndrome and the risk of gynaecologicalcancer: a systematic review. Reprod Biomed Online
+2009;19:398–405.
+63. Schildkraut JM, Schwingl PJ, Bastos E, Evanoff A, Hughes C.
+Epithelial ovarian cancer risk among women with polycysticovary syndrome. Obstet Gynecol 1996;88:554–9.
+64. Olsen CM, Green AC, Nagle CM, Jordan SJ, Whiteman DC, Bain
+CJ, et al.; Australian Cancer Study Group (Ovarian Cancer) andthe Australian Ovarian Cancer Study Group. Epithelial ovariancancer: testing the ‘androgens hypothesis’. Endocr Relat
+Cancer 2008;15:1061–8.
+65. Bodmer M, Becker C, Meier C, Jick SS, Meier CR. Use of
+metformin and the risk of ovarian cancer: a case–controlanalysis. Gynecol Oncol 2011;123:200–4.
+66. Avenell A, Broom J, Brown TJ, Poobalan A, Aucott L, Stearns SC,
+et al. Systematic review of the long-term effects and economicconsequences of treatments for obesity and implications forhealth improvement. Health Technol Assess 2004;8(21).
+67. Ogilvie D, Foster CE, Rothnie H, Cavill N, Hamilton V ,
+Fitzsimons CF , et al.; Scottish Physical Activity ResearchCollaboration. Interventions to promote walking: systematicreview. BMJ 2007;334:1204.
+68. Gillies CL, Abrams KR, Lambert PC, Cooper NJ, Sutton AJ, Hsu RT,
+et al. Pharmacological and lifestyle interventions to prevent ordelay type 2 diabetes in people with impaired glucose tolerance:systematic review and meta-analysis. BMJ2007;334:299.
+69. Shaw KA, O’Rourke P , Del Mar C, Kenardy J. Psychological
+interventions for overweight or obesity. Cochrane Database
+Syst Rev 2005;(2):CD003818.
+70. Pasquali R, Casimirri F , Vicennati V . Weight control and its
+beneficial effect on fertility in women with obesity andpolycystic ovary syndrome. Hum Reprod 1997;12 Suppl 1:82–7.
+71. Teede H, Deeks A, Moran L. Polycystic ovary syndrome: a
+complex condition with psychological, reproductive andmetabolic manifestations that impacts on health across thelifespan. BMC Med 2010;8:41.
+72. National Institute for Health and Clinical Excellence. Obesity:
+Guidance on the prevention, identification, assessment andmanagement of overweight and obesity in adults andchildren . NICE clinical guideline 43. Manchester; NICE: 2006.
+73. Franks S. When should an insulin sensitizing agent be used in
+the treatment of polycystic ovary syndrome? Clin Endocrinol
+(Oxf) 2011;74:148–51.
+74. Dunaif A. Drug insight: insulin-sensitizing drugs in the
+treatment of polycystic ovary syndrome—a reappraisal. Nat
+Clin Pract Endocrinol Metab 2008;4:272–83.
+75. Li XJ, Yu YX, Liu CQ, Zhang W , Zhang HJ, Yan B, et al. Metformin
+vsthiazolidinediones for treatment of clinical, hormonal and
+metabolic characteristics of polycystic ovary syndrome: ameta-analysis. Clin Endocrinol (Oxf) 2011;74:332–9.
+76. Pasquali R, Gambineri A, Biscotti D, Vicennati V , Gagliardi L,
+Colitta D, et al. Effect of long-term treatment with metforminadded to hypocaloric diet on body composition, fatdistribution, and androgen and insulin levels in abdominallyobese women with and without the polycystic ovarysyndrome. J Clin Endocrinol Metab 2000;85:2767–74.
+77. Morin-Papunen LC, Vauhkonen I, Koivunen RM, Ruokonen A,
+Martikainen HK, Tapanainen JS. Endocrine and metaboliceffects of metformin versus ethinyl estradiol-cyproterone
+acetate in obese women with polycystic ovary syndrome: arandomized study. J Clin Endocrinol Metab 2000;85:3161–8.78. Moghetti P , Castello R, Negri C, Tosi F , Perrone F , Caputo M, et
+al. Metformin effects on clinical features, endocrine andmetabolic profiles, and insulin sensitivity in polycystic ovarysyndrome: a randomized, double-blind, placebo-controlled 6-month trial, followed by open, long-term clinical evaluation. J
+Clin Endocrinol Metab 2000;85:139–46.
+79. Velazquez EM, Mendoza S, Hamer T, Sosa F , Glueck CJ.
+Metformin therapy in polycystic ovary syndrome reduceshyperinsulinemia, insulin resistance, hyperandrogenemia, andsystolic blood pressure, while facilitating normal menses andpregnancy. Metabolism 1994;43:647–54.
+80. Gangale MF , Miele L, Lanzone A, Sagnella F , Martinez D, Tropea A,
+et al. Long-term metformin treatment is able to reduce theprevalence of metabolic syndrome and its hepatic involvementin young hyperinsulinaemic overweight patients with polycysticovarian syndrome. Clin Endocrinol (Oxf) 2011;75:520–7.
+81. Oppelt PG, Mueller A, Jentsch K, Kronawitter D, Reissmann C,
+Dittrich R. The effect of metformin treatment for 2 years
+without caloric restriction on endocrine and metabolicparameters in women with polycystic ovary syndrome. Exp
+Clin Endocrinol Diabetes 2010;118:633–7.
+82. Fleming R, Harborne L, MacLaughlin DT, Ling D, Norman J,
+Sattar N, et al. Metformin reduces serum müllerian-inhibitingsubstance levels in women with polycystic ovary syndromeafter protracted treatment. Fertil Steril 2005;83:130–6.
+83. Trolle B, Flyvbjerg A, Kesmodel U, Lauszus FF . Efficacy of
+metformin in obese and non-obese women with polycysticovary syndrome: a randomized, double-blinded, placebo-controlled cross-over trial. Hum Reprod 2007;22:2967–73.
+84. Harborne LR, Sattar N, Norman JE, Fleming R. Metformin and
+weight loss in obese women with polycystic ovary syndrome:comparison of doses. J Clin Endocrinol Metab 2005;90:4593–8.
+85. Ratner R, Goldberg R, Haffner S, Marcovina S, Orchard T, Fowler
+S, et al.; Diabetes Prevention Program Research Group. Impactof intensive lifestyle and metformin therapy on cardiovasculardisease risk factors in the diabetes prevention program.Diabetes Care 2005;28:888–94.
+86. Elkind-Hirsch K, Marrioneaux O, Bhushan M, Vernor D,
+Bhushan R. Comparison of single and combined treatmentwith exenatide and metformin on menstrual cyclicity inoverweight women with polycystic ovary syndrome. J Clin
+Endocrinol Metab 2008;93:2670–8.
+87. Jayagopal V , Kilpatrick ES, Holding S, Jennings PE, Atkin SL. Orlistat
+is as beneficial as metformin in the treatment of polycysticovarian syndrome. J Clin Endocrinol Metab 2005;90:729–33.
+88. Gjønnaess H. Ovarian electrocautery in the treatment of women
+with polycystic ovary syndrome (PCOS). Factors affecting theresults. Acta Obstet Gynecol Scand 1994;73:407–12.
+89. Melica F , Chiodi S, Cristoforoni PM, Ravera GB. Reductive surgery
+and ovarian function in the human--can reductive ovarian surgeryin reproductive age negatively influence fertility and age at onsetof menopause? Int J Fertil Menopausal Stud 1995;40:79–85.
+90. Escobar-Morreale HF , Botella-Carretero JI, Álvarez-Blasco F , Sancho
+J, San Millán JL. The polycystic ovary syndrome associated withmorbid obesity may resolve after weight loss induced bybariatric surgery. J Clin Endocrinol Metab 2005;90:6364–9.
+91. Buchwald H, Avidor Y , Braunwald E, Jensen MD, Pories W ,
+Fahrbach K, et al. Bariatric surgery: a systematic review andmeta-analysis. JAMA 2004;292:1724–37.
+92. Sjöström L, Narbro K, Sjöström CD, Karason K, Larsson B,
+Wedel H, et al.; Swedish Obese Subjects Study. Effects ofbariatric surgery on mortality in Swedish obese subjects. N
+Engl J Med 2007;357:741–52.
+93. Sjöström L, Lindroos AK, Peltonen M, Torgerson J, Bouchard C,
+Carlsson B, et al.; Swedish Obese Subjects Study ScientificGroup. Lifestyle, diabetes, and cardiovascular risk factors 10years after bariatric surgery. N Engl J Med 2004;351:2683–93.
+94. Eid GM, Cottam DR, Velcu LM, Mattar SG, Korytkowski MT,
+Gosman G, et al. Effective treatment of polycystic ovariansyndrome with Roux-en-Y gastric bypass. Surg Obes Relat Dis
+2005;1:77–80.Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematicallydeveloped using a standardised methodology. Exact details of this process can be found in ClinicalGovernance Advice No.1 Development of RCOG Green-top Guidelines (available on the RCOG website
+at
+http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate
+an exclusive course of management or treatment. They must be evaluated with reference to individualpatient needs, resources and limitations unique to the institution and variations in local populations. It ishoped that this process of local ownership will help to incorporate these guidelines into routinepractice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.
+Grades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ anddirectly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consistingprincipally of studies rated as 1+ directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation and demonstrating overallconsistency of results; or Extrapolated evidence from studies rated as1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; or Extrapolated evidence from studies rated as2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on theclinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with avery low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderateprobability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBA
+© Royal College of Obstetricians and Gynaecologists 14 of 15 RCOG Green-top Guideline No. 33© Royal College of Obstetricians and Gynaecologists RCOG Green-top Guideline No. 33 15 of 15DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The review process will commence in 2017, unless otherwise indicated.This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Professor WL Ledger FRCOG, Sydney, Australia; Professor SL Atkin BSc MB PhD FRCP , The Michael White Diabetes
+Centre, University of Hull, Hull; and Dr T Sathyapalan MBBS MD FRCP , Hull York Medical School, University of York, York
+and peer reviewed by: Dr S Balakrishnan FRCOG, Trivandrum, Kerala, India; Professor AH Balen FRCOG, Leeds; Dr Y Chung, Research Fellow inSocial and Community Medicine, University of Bristol, Bristol; Dr A Eapen MBBS DRCOG, Clinical Lead, Midland Fertility,Aldridge; Dr C Ekechi MRCOG, London; Mr R Faraj MRCOG, Rotherham; Professor N Finer, University College London; Mr SA Fountain FRCOG, Salisbury; Mr DI Fraser FRCOG, Norwich; Dr WJ Jeffcoate, Nottingham; Dr J McManus FRCOG,Belfast; Dr Y Mehmooda FRCOG, Islamabad, Pakistan; RCOG Women’s Network; Dr P Sarkar FRCOG, Slough; Dr DM Siassakos MRCOG, Bristol; Society for Endocrinology.
+Committee lead reviewers were: Ms J Elson FRCOG, Leicester; Mrs G Kumar FRCOG, Wrexham: and Dr AJ Thomson MRCOG, Paisley.Conflicts of interest: Professor WL Ledger has received payment for serving on the International Advisory Board for MSD and
+Besins and has received research support from MSD, Ferring and SPD.
+The final version is the responsibility of the Guidelines Committee of the RCOG.

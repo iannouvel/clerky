@@ -1,0 +1,618 @@
+Management of Beta Thalassaemia 
+in Pregnancy
+Green-top Guideline No. 66
+March 2014RCOG Green-top Guideline No. 66 2o f 1 7 © Royal College of Obstetricians and GynaecologistsManagement of Beta Thalassaemia in Pregnancy
+This is the first edition of this guideline.
+1. Purpose and scope
+The purpose of this guideline is to produce evidence-based guidance on the management of women with
+beta (β) thalassaemia major and intermedia in pregnancy. In this guideline, thalassaemia major women are
+those who require more than seven transfusion episodes per year and thalassaemia intermedia women arethose needing seven or fewer transfusion episodes per year or those who are not transfused. Women who arethalassaemia carriers do not require transfusion. It will include preconceptual, antenatal, intrapartum andpostnatal management and contraception in both primary and secondary care settings. It will not coverscreening as the British Committee for Standards in Haematology has published guidelines for screening anddiagnosis of thalassaemias.
+1
+2. Introduction and background epidemiology
+Haemoglobinopathies are one of the most common inherited disorders. More than 70 000 babies are born
+with thalassaemia worldwide each year2and there are 100 million individuals who are asymptomatic
+thalassaemia carriers. The basic defect in the thalassaemia syndromes is reduced globin chain synthesis withthe resultant red cells having inadequate haemoglobin content. The pathophysiology of thalassaemiasyndromes is characterised by extravascular haemolysis due to the release into the peripheral circulation ofdamaged red blood cells and erythroid precursors because of a high degree of ineffective erythropoiesis.
+3
+Thalassaemia major (homozygous βthalassaemia) results from the inheritance of a defective βglobin gene
+from each parent. This results in a severe transfusion-dependent anaemia. The heterozygous state, β
+thalassaemia trait (thalassaemia minor) causes mild to moderate microcytic anaemia with no significantdetrimental effect on overall health.
+Thalassaemia intermedia is defined as a group of patients with 
+βthalassaemia whose disease severity varies.
+At the severe end of the clinical spectrum of thalassaemia intermedia, patients are usually diagnosed betweenthe ages of two and six years and, although they survive without regular blood transfusions, growth anddevelopment are impaired. At the other end of the spectrum, there are patients who are completelyasymptomatic until adulthood, when they present with mild anaemia and splenomegaly often found bychance during haematological examinations or family studies. The diagnosis is dependent on the patientmaintaining a satisfactory haemoglobin (Hb) level at the time of diagnosis without the need for regular bloodtransfusions. Patients with severe forms of 
+βthalassaemia intermedia and those patients with thalassaemia
+major who had poor access to blood were previously offered splenectomy to help reduce transfusionrequirements. Splenectomy is no longer the mainstay of treatment for these conditions but a considerablenumber of both thalassaemia major and intermedia patients have undergone splenectomy.
+2,4
+The cornerstones of modern treatment in βthalassaemia are blood transfusion and iron chelation therapy.5
+Multiple transfusions cause iron overload resulting in hepatic, cardiac and endocrine dysfunction. The anteriorpituitary is very sensitive to iron overload and evidence of dysfunction is common.
+6Puberty is often delayed
+and incomplete, resulting in low bone mass.7Most of these women are subfertile due to hypogonadotrophic
+hypogonadism and therefore require ovulation induction therapy with gonadotrophins to achieve apregnancy.
+8–10Cardiac failure is the primary cause of death in over 50% of cases.11Improved transfusion
+techniques and effective chelation protocols have improved the quality of life and survival of individuals withthalassaemia.
+12,13The mortality from cardiac iron overload has reduced significantly since the development of
+magnetic resonance imaging (MRI) methods for monitoring cardiac (cardiac T2*) and hepatic iron overload(liver T2*) and FerriScan® liver iron assessment (FerriScan®, Resonance Health, Australia). These methods arenow available in most large centres looking after patients with haemoglobinopathies. © Royal College of Obstetricians and Gynaecologists 3o f 1 7 RCOG Green-top Guideline No. 66There are approximately 1000 individuals affected by thalassaemia major or intermedia syndromes in the UK.
+The absolute number of affected individuals is unclear and is currently being assessed nationally as part of theNational Haemoglobinopathy Registry. Previously, the community affected was principally from Cyprus and theMediterranean. However, currently the Asian communities of India, Pakistan and Bangladesh account for 79% ofthalassaemia births with only 7% occurring in the Cypriot population who have taken advantage of theavailability of prenatal diagnosis.
+14High incidence areas include Greater London, Birmingham and Manchester.
+The NHS Sickle Cell and Thalassaemia Screening Programme in England during 2009/10 identifiedapproximately 16 000 women as carriers of a haemoglobinopathy and partner testing was offered. 59% ofscreen positive women had partner testing and 1006 couples were identified as being at high risk of having achild with a clinically significant haemoglobinopathy (sickle cell disease or thalassaemia). 396 couples acceptedthe offer of prenatal diagnosis, which revealed 23 pregnancies affected by thalassaemia and 46 fetuses that werecarriers of thalassaemia. The majority of pregnancies affected by thalassaemia major were terminated.
+15
+3. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-topGuidelines. Databases searched included the Cochrane Database of Systematic Reviews, DARE, EMBASE, TRIP ,Medline and PubMed. Search terms included: ‘beta thalassaemia’, ‘Cooley's anaemia’, ‘Mediterranean anaemia’,‘hypogonadotrophic hypogonadism’, ‘ovulation induction’, ‘assisted reproduction’, ‘iron burden’, ‘serumferritin’, ‘penicillin prophylaxis’, ‘iron chelation’, ‘fetal growth and measurement’ and ‘ultrasonography’. Thesearch was limited to humans and the English language and from 1980 to July 2013. Exclusions were alphathalassaemia or beta thalassaemia minor. There are no systematic reviews in this area and only small numbersof randomised controlled trials looking at particular interventions. The National Guideline Clearinghouse wasalso searched for relevant guidelines and reviews. Where possible, recommendations are based on availableevidence. Areas lacking evidence are highlighted and annotated as ‘Good Practice Points’.
+4. Preconception care
+4.1 What are the additional risks to the woman and baby?
+Thalassaemia is associated with an increased risk to both mother and baby. In particular, there are the issuessurrounding cardiomyopathy in the mother due to iron overload and the increased risk of fetal growthrestriction (FGR). In addition, with around 9 months of little or no chelation, women with thalassaemia majormay develop new endocrinopathies: in particular, diabetes mellitus, hypothyroidism and hypoparathyroidismdue to the increasing iron burden.
+7,16
+4.2 What is the optimum preconceptual care for women with thalassaemia?
+At each visit with the thalassaemia team, there should be a discussion and documentation of intentions
+regarding pregnancy. This should include screening for end-organ damage and optimisation ofcomplications prior to embarking on any pregnancy.
+Each Specialist Haemoglobinopathy Centre should have a guideline for the management of pregnant
+women with thalassaemia.
+Women should be advised to use contraception despite the reduced fertility associated with
+thalassaemia.
+Fertility may be reduced in transfusion-dependent individuals where chelation has been suboptimal
+and iron overload has occurred resulting in damage to the anterior pituitary.8,10,17They may require
+ovulation induction using injectable gonadotrophins to conceive.D
+P
+P
+Evidence
+level 2+There is no contraindication to the use of hormonal methods of contraception such as the
+combined oral contraceptive pill, the progestogen-only pill, the Nexplanon® implant (Merck Sharp& Dohme Limited, Hoddesdon, Herts, UK) and the Mirena® intrauterine system (Bayer plc,Newbury, Berks, UK) in women with thalassaemia.
+18
+Women with thalassaemia are best cared for in a multidisciplinary team setting, including an obstetrician withexpertise in managing high-risk pregnancies and a haematologist. This team should provide prepregnancycounselling so that the woman is fully informed about how thalassaemia affects pregnancy and vice versa. Thepreconception evaluation involves a review of transfusion requirements, compliance with chelation therapyand assessment of the body iron burden. The assessment should include optimisation of management andscreening for end-organ damage. 
+At both local and specialist centres, the woman’s aspirations regarding pregnancy and contraception should be
+explored in consultation and discussion with the haemoglobinopathy team so that the decision making isshared. This should be done well in advance of the proposed pregnancy because a prolonged period of ironchelation therapy may be required to control iron overload prior to both induction of ovulation and pregnancy.
+4.3 Are there any interventions which are beneficial at the preconceptual stage?
+Aggressive chelation in the preconception stage can reduce and optimise body iron burden and reduce
+end-organ damage. 
+There is evidence from clinical trials that optimising body iron reduces end-organ damage and can
+reverse cardiac iron loading. Longitudinal studies show that patients who have been optimallychelated are less likely to suffer from endocrinopathies or cardiac problems.
+19–23
+Due to lack of safety data, all chelation therapy should be regarded as potentially teratogenic in thefirst trimester. Desferrioxamine is the only chelation agent with a body of evidence for use in thesecond and third trimester.
+24–26The optimisation of iron burden is therefore critical as the ongoing
+iron accumulation from transfusion in the absence of chelation may expose the pregnant woman toa high risk of new complications related to iron overload, particularly diabetes and cardiomyopathy. 
+4.3.1 Pancreas
+Diabetes is common in women with thalassaemia. Women with diabetes should be referred to a
+diabetologist. Good glycaemic control is essential prepregnancy.
+Women with established diabetes mellitus should ideally have serum fructosamine concentrations 
+<300 nmol/l for at least 3 months prior to conception. This is equivalent to an HbA1c of 43 mmol/mol. 
+Diabetes mellitus is common in adults with thalassaemia. Diabetes is multifactorial, due to insulin
+resistance, iron-induced islet cell insufficiency, genetic factors and autoimmunity.27Similar to
+women with diabetes without thalassaemia, an HbA1c of less than 43 mmol/mol is associated witha reduced risk of congenital abnormalities.
+28HbA1c is not a reliable marker of glycaemic control as
+this is diluted by transfused blood and results in underestimation, so serum fructosamine ispreferred for monitoring.
+29
+4.3.2 Thyroid
+Thyroid function should be determined. The woman should be euthyroid prepregnancy.
+Hypothyroidism is frequently found in patients with thalassaemia. Untreated hypothyroidism canresult in maternal morbidity, as well as perinatal morbidity and mortality. Patients should be
+RCOG Green-top Guideline No. 66 4 of 17 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4
+B
+Evidence
+level 1+
+Evidence
+level 1-
+DP
+Evidence
+level 3
+B
+Evidence
+level 2++5 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and Gynaecologistsassessed for thyroid function as part of the preconceptual planning and, if known to be
+hypothyroid, treatment initiated to ensure that they are clinically euthyroid.30
+4.3.3 Heart
+All women should be assessed by a cardiologist with expertise in thalassaemia and/or iron overload
+prior to embarking on a pregnancy.
+An echocardiogram and an electrocardiogram (ECG) should be performed as well as T2* cardiac MRI.
+It is important to determine how well the cardiac status of the woman will support a pregnancy as well as
+the severity of any iron-related cardiomyopathy. Cardiac arrhythmias are more likely in older patients whohave previously had severe myocardial iron overload and are now clear of cardiac iron.
+The aim is for no cardiac iron, but this can take years to achieve so care should be individualised to
+the woman. Otherwise, aim for cardiac T2* > 20 ms wherever possible as this reflects minimal ironin the heart. However, pregnancies with successful maternal and fetal outcomes have occurred withlower cardiac T2* values. A T2* < 10 ms is associated with an increased risk of cardiac failure.
+31A
+reduced ejection fraction is a relative contraindication to pregnancy and the management should bethe subject of multidisciplinary discussions involving a cardiologist with experience of cardiacpathology in pregnancy, a maternal medicine specialist, a haematologist and an obstetric anaesthetist. 
+4.3.4 Liver
+Women should be assessed for liver iron concentration using a FerriScan® or liver T2*. Ideally the liver
+iron should be <7 mg/g (dry weight) (dw).
+Liver and gall bladder (and spleen if present) ultrasound should be used to detect cholelithiasis and
+evidence of liver cirrhosis due to iron overload or transfusion-related viral hepatitis.
+A target liver iron of less than 7 mg/g (dw) is recommended because iron chelation is discontinued during
+pregnancy and therefore transfusional iron burden and the risk of iron overload-related complicationsincreases. Anecdotally, ovulation induction is more likely to be successful when iron burden is well controlled. 
+If liver iron exceeds the target range, a period of intensive preconception chelation is required to optimise
+liver iron burden.
+If liver iron exceeds 15 mg/g (dw) prior to conception, the risk of myocardial iron loading increases
+so iron chelation with low-dose desferrioxamine should be commenced between 20 and 28 weeksunder guidance from the haemoglobinopathy team.
+32
+Cholelithiasis is common in women with thalassaemia due to the underlying haemolytic anaemia and theymay develop cholecystitis in pregnancy. Liver cirrhosis and active hepatitis C (HCV) may run a more complexclinical course during pregnancy. Women who are HCV RNA-positive should be reviewed by theirhepatologist preconceptually. Women who have any evidence of cirrhosis, either due to previous hepatitis oras a consequence of severe hepatic iron loading, should be reviewed by a hepatologist. 
+4.3.5 Bone density scan
+All women should be offered a bone density scan to document pre-existing osteoporosis. 
+Serum vitamin D concentrations should be optimised with supplements if necessary. P
+PP
+PEvidence
+level 4
+Evidence
+level 3Evidence
+level 2++
+P
+POsteoporosis is a common finding in adults with thalassaemia.33The pathology is complex, but
+thought to be due to a variety of factors including underlying thalassaemic bone disease, chelationof calcium by chelation drugs, hypogonadism and vitamin D deficiency.
+34
+Most women with thalassaemia syndromes are vitamin D deficient and often osteoporotic as well.All women should have vitamin D levels optimised before pregnancy and thereafter maintained inthe normal range.
+34
+4.3.6 Red cell antibodies
+ABO and full blood group genotype and antibody titres should be measured. 
+Alloimmunity occurs in 16.5% of individuals with thalassaemia.35Red cell antibodies may indicate
+a risk of haemolytic disease of the fetus and newborn.36If antibodies are present there may be
+challenges in obtaining suitable blood for transfusion.37 
+4.4 What medications should be reviewed preconceptually?
+Iron chelators should be reviewed and deferasirox and deferiprone ideally discontinued 3 months
+before conception.
+Women with thalassaemia are often on a range of drugs, some of which may be teratogenic, e.g.
+deferiprone. Animal studies with deferasirox did not show teratogenicity.38However, there is only
+limited safety data on its use in pregnancy. Deferasirox and deferiprone should ideally bediscontinued 3 months before conception and women converted to desferrioxamine iron chelation.
+Desferrioxamine has a short half-life and is safe for infusion during ovulation induction therapy.
+Desferrioxamine should be avoided in the first trimester owing to lack of safety data. It has beenused safely after 20 weeks of gestation at low doses.
+26
+All bisphosphonates are contraindicated in pregnancy and should ideally be discontinued 3 months prior toconception in accordance with the product safety information sheet. 
+4.5 What is the importance of genetic screening and what procedure(s) are involved for women with
+thalassaemia? 
+If the partner is a carrier of a haemoglobinopathy that may adversely interact with the woman’s
+genotype then genetic counselling should be offered.
+In vitro fertilisation/intracytoplasmic sperm injection (IVF/ICSI) with a pre-implantation genetic
+diagnosis (PGD) should be considered in the presence of haemoglobinopathies in both partners so thata homozygous or compound heterozygous pregnancy can be avoided.
+Egg and sperm donors considering IVF should be screened for haemoglobinopathies.
+Preconception counselling for women with thalassaemia includes partner screening and genetic
+counselling (Table 1) as well as the methods and risks of prenatal diagnosis and termination ofpregnancy.
+39In high-risk couples PGD is an option. If the partner is unavailable, an offer of prenatal
+testing is appropriate. Due to the risk of a haemoglobinopathy, potential egg and sperm donors arescreened for haemoglobinopathies. 
+6 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and GynaecologistsDPEvidence
+level 4
+Evidence
+level 4
+Evidence
+level 4
+Evidence
+level 3
+D
+Evidence
+level 4PDRCOG Green-top Guideline No. 66 7o f 1 7 © Royal College of Obstetricians and GynaecologistsTable 1: Conditions requiring counselling where the mother is affected by thalassaemia
+Carrier or sufferer condition in partner Affected offspring
+Beta thalassaemia Risk of serious haemoglobinopathy applies to all
+HbSHbEDelta beta thalassaemiaHb LeporeHbO Arab
+Hb Constant Spring
+HbC Risk of a mild to moderate disorder
+Other variant haemoglobin
+4.6 What is the importance of immunisation and antibiotic prophylaxis in women who are at risk of
+transfusion-related viral infections or have had a previous splenectomy?
+Hepatitis B vaccination is recommended in HBsAg negative women who are transfused or may be
+transfused.
+Hepatitis C status should be determined.All women who have undergone a splenectomy should take penicillin prophylaxis or equivalent.All women who have undergone a splenectomy should be vaccinated for pneumococcus and
+Haemophilus influenzae type b if this has not been done before.
+Women who are transfused regularly or intermittently are at risk of transfusion-transmitted
+infections. It is therefore important to ascertain infectivity and manage the common transfusion-related viral infections appropriately.
+40
+The majority of women with thalassaemia major will have been immunised against hepatitis B but somewomen with thalassaemia intermedia may not.
+Hepatitis C is a common and often asymptomatic virus, so all women who are transfused require hepatitis C
+antibody testing. If a woman has a positive hepatitis C test, RNA titres should be determined with referral toa hepatologist.
+Women who have undergone splenectomy are at risk of infection from encapsulated bacteria such
+as 
+Neisseria meningitidis , Streptococcus pneumoniae and Haemophilus influenzae type b. UK
+guidance is that daily penicillin prophylaxis is given to all high-risk splenectomised patients.41
+Women who are allergic to penicillin should be recommended erythromycin.
+In addition, women should be given Haemophilus influenzae type b and the conjugated
+meningococcal C vaccine as a single dose if they have not received it as part of primaryvaccination. The pneumococcal vaccine (such as Pneumovax®II, Sanofi Pasteur MSD Limited,Maidenhead, UK) should be given every 5 years.
+41
+4.7 What vitamin supplements should be recommended?
+Folic acid (5 mg) is recommended preconceptually to all women to prevent neural tube defects.
+Women with thalassaemia have a much higher demand for folic acid so high-dose supplementationis needed. Folic acid 5 mg daily should be commenced 3 months prior to conception.
+42,43P
+P
+Evidence
+level 4C
+C
+Evidence
+level 2+
+AEvidence
+level 4
+Evidence
+level 1++5. Antenatal care
+5.1 How is specialist input delivered for women with thalassaemia?
+Women with thalassaemia should be reviewed monthly until 28 weeks of gestation and fortnightly
+thereafter. The multidisciplinary team should provide routine as well as specialist antenatal care.
+Women with both thalassaemia and diabetes should have monthly assessment of serum fructosamine
+concentrations and review in the specialist diabetic pregnancy clinic.
+All women with thalassaemia major should undergo specialist cardiac assessment at 28 weeks of
+gestation and thereafter as appropriate.
+Thyroid function should be monitored during pregnancy in hypothyroid patients.
+The multidisciplinary team should include an obstetrician, a midwife with experience of high-risk antenatal
+care and a haematologist with an interest in thalassaemia. A diabetologist and cardiologist may also provideadditional specialist input. 
+The pattern of care should be individualised depending on the degree of end-organ damage and women with
+diabetes or cardiac dysfunction may be reviewed more frequently. 
+Cardiac assessment is important to determine cardiac function and possible further iron chelation as well as
+planning for labour.
+Thyroid function should be determined periodically throughout pregnancy and if hypothyroid the dose of
+thyroxine altered.
+5.2 What is the recommended schedule of ultrasound scanning during pregnancy?
+Women should be offered an early scan at 7–9 weeks of gestation.
+In addition to the routine first trimester scan (11–14 weeks of gestation) and a detailed anomaly scan at
+18–20+6weeks of gestation, women should be offered serial fetal biometry scans every 4 weeks from 24
+weeks of gestation.
+Women with both thalassaemia and diabetes have a higher risk of early pregnancy loss. Fertility treatment
+with ovulation induction is often required to achieve pregnancy so an early scan is indicated to determineviability as well as the presence of a multiple pregnancy.
+Severe maternal anaemia predisposes to FGR in women with thalassaemia.
+44–46Chronic anaemia
+affects placental transfer of nutrients and can therefore adversely affect fetal growth.
+5.3 How should the transfusion regimen be managed during pregnancy in women with thalassaemia major?
+All women with thalassaemia major should be receiving blood transfusions on a regular basis aiming
+for a pretransfusion haemoglobin of 100 g/l.
+Women with thalassaemia major will already be established on transfusion regimens which generally remain
+stable during pregnancy. In cases where lower pretransfusion thresholds have been used preconceptually, theaim is to achieve a pretransfusion haemoglobin of 100 g/l. 
+5.4 How should the transfusion regimen be managed during pregnancy in women with thalassaemia
+intermedia?
+8 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and GynaecologistsPP
+P
+P
+P
+P
+Evidence
+level 3
+PRCOG Green-top Guideline No. 66 9o f 1 7 © Royal College of Obstetricians and GynaecologistsIf there is worsening maternal anaemia or evidence of FGR, regular transfusions should be considered.
+If a woman with thalassaemia intermedia starts transfusion, haemoglobin targets are managed as for
+thalassaemia major.
+Women with thalassaemia intermedia who are asymptomatic with normal fetal growth and low
+haemoglobin should have a formal plan outlined in the notes with regard to blood transfusion in latepregnancy.
+The decision to initiate a transfusion regimen is a clinical one based on the woman’s symptoms and fetal
+growth. If there is worsening maternal anaemia or evidence of FGR, regular transfusions should be startedaiming for maintenance of pretransfusion haemoglobin concentration above 100 g/l. Initially a 2–3 unittransfusion should be administered with additional top-up transfusion if necessary the following week untilthe haemoglobin reaches 120 g/l. 
+The haemoglobin should be monitored after 2 to 3 weeks and a 2-unit transfusion administered if the
+haemoglobin has fallen below 100 g/l. Each woman’s haemoglobin falls at different rates after transfusion soclose surveillance of pretransfusion haemoglobin concentrations is required. 
+Generally, in nontransfused patients, if the haemoglobin is above 80 g/l at 36 weeks of gestation, transfusion
+can be avoided prior to delivery. Postnatal transfusion can be provided as necessary. 
+If the haemoglobin is less than 80 g/l then aim for a top-up transfusion of 2 units at 37–38 weeks of gestation. 
+5.5 What antenatal thromboprophylaxis is recommended? 
+Women with thalassaemia who have undergone splenectomy or have a platelet count greater than 
+600 x 109/l should commence or continue taking low-dose aspirin (75 mg/day).
+Women with thalassaemia who have undergone splenectomy and have a platelet count above 
+600 x 109/l should be offered low-molecular-weight heparin thromboprophylaxis as well as low-dose
+aspirin (75 mg/day).
+Women with thalassaemia who are not already using prophylactic low-molecular-weight heparin
+should be advised to use it during antenatal hospital admissions.
+Women with thalassaemia major or intermedia have a prothrombotic tendency due to the presence of
+abnormal red cell fragments, especially if they have undergone splenectomy. These red cell fragmentscombined with a high platelet count significantly increase the risk of venous thromboembolism. Thisrisk is highest in splenectomised women with thalassaemia intermedia who are not receivingtransfusions since a good transfusion regimen suppresses endogenous erythropoiesis.
+47,48
+5.6 What is the optimum antenatal management of iron chelation therapy?
+Iron chelation therapy is complex and should be tailored to the needs of the individual woman.
+The chelation should be managed by a haematologist with experience in iron chelation therapy particularlyduring pregnancy. 
+5.6.1 Management of women with myocardial iron
+Women with myocardial iron loading should undergo regular cardiology review with careful monitoring
+of ejection fraction during the pregnancy as signs of cardiac decompensation are the primary indicationsfor intervention with chelation therapy.P
+P
+CP
+Evidence
+level 4P
+P
+P
+PRCOG Green-top Guideline No. 66 10 of 17 © Royal College of Obstetricians and GynaecologistsThose women at highest risk of cardiac decompensation should commence low-dose subcutaneous
+desferrioxamine (20 mg/kg/day) on a minimum of 4–5 days a week under joint haematology andcardiology guidance from 20–24 weeks of gestation.
+Cardiac MRI is safe in pregnancy and should be undertaken in women who have not received
+preconceptual assessment or where there is concern about cardiac function. As the cardiac T2*value falls below 20 ms there is an increasing risk of cardiac decompensation. Those women athighest risk are those where the value is below 10 ms.
+31
+Women with myocardial iron loading and T2* > 20 ms do not require desferrioxamine chelation duringpregnancy unless there is severe hepatic iron overload. 
+Women with thalassaemia major and myocardial iron loading with T2* of < 10 ms are at high risk of cardiac
+decompensation which may present as increasing breathlessness, paroxysmal nocturnal dyspnoea,orthopnoea, syncope, palpitations or peripheral oedema. Presentation in the first trimester is associated withadverse clinical outcome.
+If a woman describes symptoms of palpitations then a cardiac assessment is appropriate. A falling
+ejection fraction or increasing ventricular volumes on echocardiography will suggest increasingrisk of developing heart failure. If the woman complains of palpitations then a detailed history, ECGand 24 hour ECG monitor assessment are needed to confirm a pathological cause. In eithercircumstance desferrioxamine infusions may be indicated if there are concerns.
+22,49,50
+5.6.2 Management of women with liver iron
+Women with severe hepatic iron loading should be carefully reviewed and consideration given to low-
+dose desferrioxamine iron chelation from 20 weeks.
+High concentrations of liver iron (liver iron > 15 mg/g dw as measured by MRI) are associated with an
+increased risk of myocardial iron and in all women with thalassaemia major the therapeutic aim is toachieve a liver iron concentration below 15 mg/g dw to reduce the risk of myocardial iron overload.
+32
+6. Intrapartum care
+6.1 What is the best intrapartum management for women with thalassaemia major or intermedia?
+Timing of delivery should be in line with national guidance.
+Senior midwifery, obstetric, anaesthetic and haematology staff should be informed as soon as the
+woman is admitted to the delivery suite.
+In the presence of red cell antibodies, blood should be cross-matched for delivery since this may delay
+the availability of blood. Otherwise a group and save will suffice.
+In women with thalassaemia major intravenous desferrioxamine 2 g over 24 hours should be administered
+for the duration of labour.
+Continuous intrapartum electronic fetal monitoring should be instituted.Thalassaemia in itself is not an indication for caesarean section.Active management of the third stage of labour is recommended to minimise blood loss.Evidence
+level 2–Evidence
+level 2+C
+APEvidence
+level 2+
+P
+P
+P
+P
+P
+P11 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and GynaecologistsThere is no specific evidence regarding the timing or mode of delivery for women with thalassaemia.
+The timing of delivery should be based on national guidelines dependent on any issues identified inthe pregnancy (e.g. diabetes or FGR) but if otherwise uncomplicated the delivery can be plannedaccording to local guidelines.
+51
+If there are medical complications such as cardiomyopathy, a detailed management plan formulated duringthe pregnancy should be in the woman’s notes. 
+Depending on the timing of the last blood transfusion, the woman may well have a low haemoglobin. If the
+haemoglobin is less than 100 g/l, cross-match 2 units on admission to the labour ward. 
+Women who are transfusion-dependent and not on a chelating agent will have high serum concentrations of a toxiciron species known as non-transferrin bound iron. These may cause free radical damage and cardiac dysrhythmiawhen the woman is subjected to the stress of labour.
+52Peripartum chelation therapy is therefore recommended. 
+Continuous electronic fetal monitoring is recommended as women with thalassaemia are considered to be atan increased risk of operative delivery due to possible fetal hypoxia.
+53
+Women with thalassaemia may have a low haemoglobin at the time of delivery and there israndomised controlled trial evidence that the active management of labour reduces blood loss.
+37,54
+6.2 Postpartum care
+6.2.1 What should be the optimum care post delivery?
+Women with thalassaemia should be considered at high risk for venous thromboembolism.
+Breastfeeding is safe and should be encouraged.
+There is a high risk of venous thromboembolism due to the presence of abnormal red cells in the
+circulation. Women should receive low-molecular-weight heparin prophylaxis while in hospital.47,55,56
+In addition, low-molecular-weight heparin should be administered for 7 days post dischargefollowing vaginal delivery or for 6 weeks following caesarean section.
+56
+Women with thalassaemia major who plan to breastfeed should restart desferrioxamine as soon as the initial24-hour infusion of intravenous desferrioxamine finishes after delivery. Desferrioxamine is secreted in breastmilk but is not orally absorbed and therefore not harmful to the newborn. There is minimal safety data onother iron chelators.
+If a woman decides not to breastfeed, intravenous or subcutaneous desferrioxamine infusions are continued
+until discharge from hospital or until resumption of her previous iron chelation regimen under haematologysupervision, whichever is sooner.
+7. Auditable topics
+Pregnancies in women with thalassaemias are relatively few in number. Audit should be approximately every3 years and should address the following:
+●preconceptual compliance with targets for liver iron, cardiac iron and fructosamine
+●thalassaemia intermedia pregnancy outcomes, especially indications for transfusion, management of maternal
+anaemia in nontransfused patients and FGR 
+●compliance with prophylaxis against venous thromboembolic disease in women who have undergone
+splenectomy. Evidence
+level 4
+Evidence
+level 4Evidence
+level 1++
+D
+PReferences
+1. Ryan K, Bain BJ, Worthington D, James J, Plews D, Mason A, et
+al.; British Committee for Standards in Haemotology. Significanthaemoglobinopathies: guidelines for screening and diagnosis.Br J Haematol 2010;149:35–49. 
+2. Weatherall DJ. The definition and epidemiology of non-transfusion-
+dependent thalassemia. Blood Rev 2012;26 Suppl 1:S3–6.
+3. Shinar E, Rachmilewitz EA. Oxidative denaturation of red blood
+cells in thalassemia. Semin Hematol 1990;27:70–82.
+4. Weatherall DJ. Pathophysiology of thalassaemia. Baillieres Clin
+Haematol 1998;11:127–46.
+5. Weatherall DJ. Thalassemia in the next millennium. Keynote
+address. Ann N Y Acad Sci. 1998;850:1–9.
+6. Skordis N, Christou S, Koliou M, Pavlides N, Angastiniotis M.
+Fertility in female patients with thalassemia. J Pediatr
+Endocrinol Metab 1998;11 Suppl 3:935–43. 
+7. Toumba M, Skordis N. Osteoporosis syndrome in thalassaemia
+major: an overview. J Osteoporos 2010;2010:537673.
+8. De Sanctis V , Vullo C, Katz M, Wonke B, Hoffbrand AV , Bagni B.
+Hypothalamic-pituitary-gonadal axis in thalassemic patientswith secondary amenorrhea. Obstet Gynecol 1988;72:643–7. 
+9. Protonotariou AA, Tolis GJ. Reproductive health in female patients
+with 
+β-thalassemia major. Ann N Y Acad Sci 2000;900:119–24. 
+10. Chatterjee R, Katz M, Cox TF , Porter JB. Prospective study of the
+hypothalamic-pituitary axis in thalassaemic patients whodeveloped secondary amenorrhoea. Clin Endocrinol (Oxf)
+1993;39:287–96.
+11. Modell B, Khan M, Darlison M. Survival in 
+β-thalassaemia major
+in the UK: data from the UK Thalassaemia Register. Lancet
+2000;355:2051–2. 
+12. Modell B, Khan M, Darlison M, Westwood MA, Ingram D,
+Pennell DJ. Improved survival of thalassaemia major in the UKand relation to T2* cardiovascular magnetic resonance. J
+Cardiovasc Magn Reson 2008;10:42.
+13. Thomas AS, Garbowski M, Ang AL, Shah FT, Walker JM, Moon JC, et
+al. A decade follow-up of a thalassemia major (TM) cohortmonitored by cardiac magnetic resonance imaging (CMR):significant reduction in patients with cardiac iron and in totalmortality. 52nd ASH Annual Meeting and Exposition, December4–7, 2010, Orlando, Florida, USA. Abstract 1011.[https://ash.confex.com/ash/2010/webprogram/Paper29471.html].
+14. UK Thalassaemia Society. Beta Thalassaemia - Major
+[http://www.ukts.org/about-thalassaemia/thalassaemia-types/beta.html].
+15. NHS Sickle Cell and Thalassaemia Screening Programme. Data
+Report 2009/10. Performance Analysis and Quality
+Improvement . London: NHS Sickle Cell and Thalassaemia
+Screening Programme; 2012.
+16. Origa R, Piga A, Quarta G, Forni GL, Longo F , Melpignano A, et
+al. Pregnancy and 
+β-thalassemia: an Italian multicenter
+experience. Haematologica 2010;95:376–81. 
+17. Tolis GJ, Vlachopapadopoulou E, Karydis I. Reproductive health in
+patients with β-thalassemia. Curr Opin Pediatr 1996;8:406–10.
+18. Faculty of Reproductive & Sexual Healthcare. UK Medical
+Eligibility Criteria for Contraceptive Use . London: FRSH; 2009. 
+19. Alpendurada F , Smith GC, Carpenter JP , Nair SV , Tanner MA,
+Banya W , et al. Effects of combined deferiprone withdeferoxamine on right ventricular function in thalassaemiamajor. J Cardiovasc Magn Reson 2012;14:8.
+20. Pennell D, Porter JB, Cappellini MD, Li CK, Aydinok Y , Lee CL, et
+al. Efficacy and safety of deferasirox (Exjade®) in reducing
+cardiac iron in patients with 
+β-thalassemia major: results from
+the cardiac substudy of the EPIC trial [abstract]. Blood
+2008;112 (ASH Annual Meeting Abstracts): Abstract 3873[http://abstracts.hematologylibrary.org/cgi/content/abstract/11
+2/11/3873].
+21. Barry M, Flynn DM, Letsky EA, Risdon RA. Long-term chelation
+therapy in thalassaemia major: effect on liver iron concentration,liver histology, and clinical progress. Br Med J 1974;2:16–20.22. Davis BA, Porter JB. Long-term outcome of continuous 24-hour
+deferoxamine infusion via indwelling intravenous catheters in
+high-risk 
+β-thalassemia. Blood 2000;95:1229–36.
+23. Borgna-Pignatti C, Rugolotto S, De Stefano P , Zhao H, Cappellini
+MD, Del Vecchio GC, et al. Survival and complications inpatients with thalassemia major treated with transfusion anddeferoxamine. Haematologica 2004;89:1187–93. 
+24. Schnebli HP . Final Report: Preclinical Evaluation of CGP 37
+391 (L1) . Schnebli HP , editor. ERS 62/93; 1993. p. 2–30.
+25. Khoury S, Odeh M, Oettinger M. Deferoxamine treatment for
+acute iron intoxication in pregnancy. Acta Obstet Gynecol
+Scand 1995;74:756–7.
+26. Singer ST, Vichinsky EP . Deferoxamine treatment during
+pregnancy: is it harmful? Am J Hematol 1999;60:24–6.
+27. de Assis RA, Ribeiro AA, Kay FU, Rosemberg LA, Nomura CH,
+Loggetto SR, et al. Pancreatic iron stores assessed by magneticresonance imaging (MRI) in beta thalassemic patients. Eur J
+Radiol 2012;81:1465–70.
+28. National Institute for Health and Clinical Excellence. Diabetes
+in pregnancy: Management of diabetes and its complications
+from pre-conception to the postnatal period . NICE clinical
+guideline 63. Manchester: NICE; 2008.
+29. Spencer DH, Grossman BJ, Scott MG. Red cell transfusion
+decreases hemoglobin A
+1cin patients with diabetes [letter].
+Clin Chem 2011;57:344–6. 
+30. Abalovich M, Amino N, Barbour LA, Cobin RH, De Groot LJ, Glinoer
+D, et al. Management of thyroid dysfunction during pregnancy andpostpartum: an Endocrine Society Clinical Practice Guideline. J
+Clin Endocrinol Metab 2007:92 Suppl: S1–47.
+31. Kirk P , Roughton M, Porter JB, Walker JM, Tanner MA, Patel J, et
+al. Cardiac T2* magnetic resonance for prediction of cardiaccomplications in thalassemia major. Circulation
+2009;120:1961–8. 
+32. Olivieri NF , Brittenham GM. Iron-chelating therapy and the
+treatment of thalassemia. Blood 1997;89:739–61.
+33. Jensen CE, Tuck SM, Agnew JE, Koneru S, Morris RW , Yardumian
+A, et al. High incidence of osteoporosis in thalassaemia major. J
+Pediatr Endocrinol Metab 1998;11 Suppl 3:975–7. 
+34. Walsh JM, McGowan CA, Kilbane M, McKenna MJ, McAuliffe FM.
+The relationship between maternal and fetal vitamin D, insulinresistance, and fetal growth. Reprod Sci 2013;20:536–41.
+35. Thompson AA, Cunningham MJ, Singer ST, Neufeld EJ, Vichinsky
+E, Yamashita R, et al.; for the Thalassemia Clinical ResearchNetwork Investigators. Red cell alloimmunization in a diversepopulation of transfused patients with thalassaemia. Br J
+Haematol 2011;153:121–8.
+36. Royal College of Obstetricians and Gynaecologists. The
+Management of Women with Red Cell Antibodies during
+Pregnancy . Green-top Guideline No. 65. London: RCOG; 2014.
+37. Royal College of Obstetricians and Gynaecologists. Blood
+Transfusions in Obstetrics . Green-top Guideline No. 47.
+London: RCOG; 2007.
+38. Nick H, Wong A, Acklin P , Faller B, Jin Y , Lattmann R, et al.
+ICL670A: preclinical profile. In: Hershko C, editor. Iron
+Chelation Therapy . New York: Kluwer Academic/Plenum
+Publishers; 2002. p.185–203. ( Adv Exp Med Biol ; 509). 
+39. Fiorentino F , Biricik A, Nuccitelli A, De Palma R, Kahraman S,
+Iacobelli M, et al. Strategies and clinical outcome of 250 cyclesof Preimplantation Genetic Diagnosis for single gene disorders.Hum Reprod 2006;21:670–84. 
+40. Department of Health. Immunisation against infectious
+disease [the green book]. Third ed. London: The Stationery
+Office; 2006 [updated 2013].
+41. Davies JM, Lewis MP , Wimperis J, Rafi I, Ladhani S, Bolton-Maggs
+PH. Review of guidelines for the prevention and treatment ofinfection in patients with an absent or dysfunctional spleen:prepared on behalf of the British Committee for Standards inHaematology by a working party of the Haemato-OncologyTask Force. Br J Haematol 2011;155:308–17. 
+RCOG Green-top Guideline No. 66 12 of 17 © Royal College of Obstetricians and Gynaecologists42. Guideline Development Group. Management of diabetes from
+preconception to the postnatal period: summary of NICEguidance. BMJ2008;336:714–7. 
+43. MRC Vitamin Study Research Group. Prevention of neural tube
+defects: results of the Medical Research Council Vitamin Study.Lancet 1991;ii:131–7.
+44. Nassar AH, Naja M, Cesaretti C, Eprassi B, Cappellini MD, Taher
+A. Pregnancy outcome in patients with 
+β-thalassemia
+intermedia at two tertiary care centers, in Beirut and Milan
+[letter]. Haematologica 2008;93:1586–7. 
+45. Luewan S, Srisupundit K, Tongsong T. Outcomes of pregnancies
+complicated by beta-thalassemia/hemoglobin E disease. Int J
+Gynaecol Obstet 2009;104:203–5.
+46. Bajoria R, Chatterjee R. Current perspectives of fertility and
+pregnancy in thalassemia. Hemoglobin 2009;33 Suppl 1:S131–5.
+47. Eldor A, Rachmilewitz EA. The hypercoagulable state in
+thalassemia. Blood 2002;99:36–43.
+48. Cappellini MD, Poggiali E, Taher AT, Musallam KM.
+Hypercoagulability in β-thalassemia: a status quo. Expert Rev
+Hematol 2012;5:505–11.
+49. Anderson LJ, Westwood MA, Holden S, Davis B, Prescott E,
+Wonke B, et al. Myocardial iron clearance during reversal ofsiderotic cardiomyopathy with intravenous desferrioxamine: aprospective study using T2* cardiovascular magneticresonance. Br J Haematol 2004;127:348–55.50. Davis BA, O'Sullivan C, Jarritt PH, Porter JB. Value of sequential
+monitoring of left ventricular ejection fraction in themanagement of thalassemia major. Blood 2004;104:263–9.
+51. National Institute for Health and Clinical Excellence. Induction
+of labour . NICE clinical guideline 70. Manchester: NICE; 2008.
+52. Lekawanvijit S, Chattipakorn N. Iron overload thalassaemic
+cardiomyopathy: iron status assessment and mechanisms ofmechanical and electrical disturbance due to iron toxicity. Can
+J Cardiol 2009;25:213–8.
+53. National Institute for Health and Clinical Excellence. Intrapartum
+care: Care of healthy women and their babies during childbirth .
+NICE clinical guideline 55. Manchester: NICE; 2007.
+54. Begley CM, Gyte GM, Devane D, McGuire W , Weeks A. Active
+versus expectant management for women in the third stage oflabour. Cochrane Database Syst Rev 2011;(11):CD007412.
+55. Taher A, Isma'eel H, Mehio G, Bignamini D, Kattamis A,
+Rachmilewitz EA, et al. Prevalence of thromboembolic eventsamong 8,860 patients with thalassaemia major and intermediain the Mediterranean area and Iran. Thromb Haemost
+2006;96:488–91.
+56. Royal College of Obstetricians and Gynaecologists. Reducing the
+Risk of Thrombosis and Embolism during Pregnancy and the
+Puerperium . Green-top Guideline No. 37a. London: RCOG; 2009.
+13 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and GynaecologistsAppendix I: Booking appointment
+Offer information, advice and support in relation to optimising general health. 
+Discuss information, education and advice about how thalassaemia will affect pregnancy.
+Primary care or hospital appointment – offer partner testing if not already done, review partner results if available and discu ss prenatal
+diagnosis (chorionic villus sampling, amniocentesis or cell-free fetal DNA) if appropriate.
+Take a clinical history to establish the extent of thalassaemia complications. Women with diabetes to be referred to joint diab etes pregnancy
+clinic with haematology input.
+Review medications e.g. chelators such as deferiprone or deferasirox. 
+Women should be taking 5 mg folic acid. 
+Women who have had a splenectomy should receive antibiotic prophylaxis. 
+Discuss vaccinations with those women who have had a splenectomy.
+Offer MRI heart and liver (T2* and FerriScan®) if these have not been performed in the previous year for thalassaemia major pat ients only.
+Determine presence of any red cell antibodies.
+Document blood pressure.
+Send midstream specimen of urine for culture.
+Confirm viability with ultrasound.
+RCOG Green-top Guideline No. 66 14 of 17 © Royal College of Obstetricians and GynaecologistsAppendix II: Schedule of antenatal appointments
+11–14 weeks
+Midwife with high-risk obstetric experience. Review partner results and discuss prenatal diagnosis if appropriate. Confirm that all actions from
+first visit are complete. Continue folic acid 5 mg.
+16 weeks
+Midwife and multidisciplinary review (haematologist, obstetrician and diabetologist if diabetic). 
+20 weeks
+Midwife and multidisciplinary review.
+20–24 weeks
+Women assessed with risks of cardiac decompensation should start on low-dose subcutaneous desferrioxamine (20 mg/kg/day) on a
+minimum of 4 to 5 days a week under guidance of a haematologist with experience in iron chelation. 
+Women with T2* >10 but <20 ms should be assessed for risks and consideration given to starting desferrioxamine infusions if there are
+concerns.
+Women with T2* >20 ms (optimal preconception result) should not be given any desferrioxamine chelation during pregnancy unless there is
+severe hepatic iron overload. 
+24 weeks
+Midwife and multidisciplinary review.
+Ultrasound for fetal biometry. 
+28 weeks
+Midwife and multidisciplinary review. Ultrasound for fetal biometry.Specialist cardiology review and formulation of delivery plan based on cardiac function.
+30 weeks
+Midwife for routine assessment.
+32 weeks
+Midwife and multidisciplinary review.Ultrasound for biometry.
+34 weeks
+Midwife for routine assessment. 
+36 weeks
+Midwife and multidisciplinary review. A care plan regarding the delivery should be formulated by the team and documented in the notes.
+Ultrasound for fetal biometry.
+Offer information and advice about: 
+Timing, mode and management of the birth
+Analgesia and anaesthesia; arrange anaesthetic assessment if cardiac dysfunction
+Care of baby after birth.
+38 weeks
+Midwife and obstetrician for routine assessment. Offer induction of labour if the woman has diabetes.
+39 weeks
+Midwife for routine assessment.
+40 weeks
+Obstetrician for routine assessment.
+41 weeks
+Obstetrician for routine assessment.For a nondiabetic woman with normal fetal growth and no complications, offer induction of labour in accordance with the NICE gu ideline for
+induction of labour.
+15 of 17 RCOG Green-top Guideline No. 66 © Royal College of Obstetricians and GynaecologistsAPPENDIX II I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematicallydeveloped using a standardised methodology. Exact details of this process can be found in ClinicalGovernance Advice No.1 Development of RCOG Green-top Guidelines (available on the RCOG website
+at 
+http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate
+an exclusive course of management or treatment. They must be evaluated with reference to individualpatient needs, resources and limitations unique to the institution and variations in local populations. It ishoped that this process of local ownership will help to incorporate these guidelines into routinepractice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.
+Grades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ anddirectly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consistingprincipally of studies rated as 1+ directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation, and demonstrating overallconsistency of results; or Extrapolated evidence from studies rated as1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; or Extrapolated evidence from studies rated as2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on theclinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with avery low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderateprobability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBA
+© Royal College of Obstetricians and Gynaecologists 16 of 17 RCOG Green-top Guideline No. 66DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth services. 
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The review process will commence in 2017, unless otherwise indicated.This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Miss AAA Kyei-Mensah FRCOG, London; Mr B Davis FRCP FRCPath MD, London; Dr M Gupta MRCOG, London; 
+Mr G Lieberman MRCOG, London; Ms H Morgan FRCOG, London; and Dr FT Shah FRCP FRCPath MD, London
+and peer-reviewed by: Dr C Bagot, Consultant Haematologist, Glasgow; Mrs A Diyaf MRCOG, Barnstaple; Mr DI Fraser FRCOG, Norwich; Professor R Hussain FRCOG, Karachi, Pakistan, on behalf of the Pakistan Representative Committee; Dr S Pavord, Leicester Royal Infirmary, Leicester; RCOG Women’s Network; Royal College of General Practitioners; Royal College of Midwives; Ms SM Tuck FRCOG, London; UK National Screening Committee; and UK Thalassaemia Society.
+Committee lead reviewers were: Dr P Owen FRCOG, Glasgow and Mr M Griffiths FRCOG, Luton.Conflicts of interest: None declared.The final version is the responsibility of the Guidelines Committee of the RCOG.
+© Royal College of Obstetricians and Gynaecologists RCOG Green-top Guideline No. 66 17 of 17

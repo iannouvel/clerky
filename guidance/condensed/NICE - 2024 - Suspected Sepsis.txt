@@ -1,0 +1,2430 @@
+Suspe cted sepsis: 
+recogni tion, diagnosis and 
+early manag emen t 
+NICE guideline 
+Published: 13 July 2016 
+Last updat ed: 19 Mar ch 202 4 
+www .nice.or g.uk/guidance/ng51 
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+95Contents 
+Overview ...................................................................................................................................... 6 
+Who is it f or? .......................................................................................................................................... 6 
+Could t his be sepsis? .................................................................................................................. 7 
+1.1 When t o suspect sepsis ................................................................................................................... 7 
+1.2 People who ar e most vulnerable t o sepsis ................................................................................... 9 
+Face t o face assessment ............................................................................................................ 12 
+1.3 Initial assessment and e xamination ............................................................................................... 12 
+1.4 Int erpreting findings ........................................................................................................................ 14 
+Under 16s: e valuating risk and managing suspect ed sepsis .................................................. 16 
+1.5 Evaluating risk le vel ......................................................................................................................... 16 
+1.6 Managing suspect ed sepsis out side acut e hospital settings ..................................................... 23 
+1.7 Managing suspect ed sepsis in acut e hospital settings ............................................................... 25 
+Pregnant or r ecent ly pregnant people: e valuating risk and managing suspect ed sepsis ....33 
+1.8 Evaluating risk le vel ......................................................................................................................... 33 
+1.9 Managing suspect ed sepsis out side acut e hospital settings ..................................................... 34 
+1.10 Managing suspect ed sepsis in acut e hospital settings .............................................................. 36 
+Over 16s (not pr egnant or r ecent ly pregnant): e valuating risk and managing suspect ed 
+sepsis ............................................................................................................................................ 42 
+1.11 Ev aluating risk le vel ........................................................................................................................ 42 
+1.12 Managing suspect ed sepsis out side acut e hospital settings .................................................... 45 
+1.13 Managing suspect ed sepsis in acut e hospital settings ............................................................. 50 
+Antibiotic t herap y, intra venous fluid and o xygen ..................................................................... 61 
+1.14 Choice of antibiotic t herap y for people wit h suspect ed sepsis ................................................ 61 
+1.15 Intra venous fluids f or people wit h suspect ed sepsis ................................................................. 63 
+1.16 Using o xygen f or people wit h suspect ed sepsis ........................................................................ 65 
+Finding and contr olling t he sour ce of inf ection ........................................................................ 66 
+1.17 Ev eryone ......................................................................................................................................... 66 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+951.18 Childr en aged 3 mont hs or less .................................................................................................... 67 
+Information and suppor t for all people wit h suspect ed sepsis ............................................... 68 
+1.19 Communicating and sharing inf ormation ..................................................................................... 68 
+1.20 P eople who ha ve sepsis and t heir f amilies and car ers .............................................................. 69 
+1.21 Inf ormation at dischar ge for people assessed f or suspect ed sepsis, but not diagnosed 
+with sepsis ............................................................................................................................................. 69 
+1.22 Inf ormation at dischar ge for people at incr eased risk of sepsis ............................................... 70 
+1.23 Inf ormation at dischar ge for people who ha ve had sepsis ....................................................... 70 
+Training and education ............................................................................................................... 72 
+1.24 Healt hcare staff in volved in assessing clinical condition .......................................................... 72 
+1.25 Healt hcare professionals in volved in triage or early management .......................................... 72 
+Terms used in t his guideline ....................................................................................................... 74 
+Critical car e specialist or t eam ............................................................................................................. 74 
+Not r esponding t o intra venous fluid r esuscitation ............................................................................. 74 
+Recent ly pregnant ................................................................................................................................. 74 
+Sepsis ..................................................................................................................................................... 75 
+Suspect ed sepsis .................................................................................................................................. 75 
+Senior clinical decision mak er .............................................................................................................. 75 
+Recommendations f or resear ch ................................................................................................. 76 
+1 Epidemiological study on pr esentation and management of sepsis in England .......................... 76 
+2 Association betw een NEWS2 bands (0 , 1 to 4, 5 to 6, 7 or abo ve) and risk of se vere illness or 
+deat h ...................................................................................................................................................... 76 
+3 Deriv ation of clinical decision rules in suspect ed sepsis ............................................................... 77 
+Rationale and impact ................................................................................................................... 78 
+People wit h neutr openia or immunosuppr ession ............................................................................... 78 
+Initial assessment and e xamination ..................................................................................................... 78 
+Evaluating risk le vel in people wit h suspect ed sepsis in acut e hospital settings, acut e mental 
+healt h settings and ambulances .......................................................................................................... 79 
+Outside acut e hospital settings ........................................................................................................... 81 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+95Managing suspect ed sepsis in acut e hospital settings ..................................................................... 84 
+Finding and contr olling t he sour ce of inf ection .................................................................................. 89 
+Cont ext ......................................................................................................................................... 91 
+Finding mor e information and committ ee details ..................................................................... 93 
+Updat e information ..................................................................................................................... 94 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+95This guideline is t he basis of QS161 and QS192. 
+This guideline should be r ead in conjunction wit h NG143 . 
+Overview 
+This guideline co vers t he recognition, diagnosis and early management of suspect ed 
+sepsis. It includes r ecommendations on r ecognition and early assessment, initial 
+treatment, escalating car e, finding and contr olling t he sour ce of inf ection, early monit oring, 
+information and suppor t, and training and education. 
+Who is i t for? 
+• People wit h suspect ed sepsis, t heir f amilies and car ers 
+• Healt hcare professionals w orking in primar y, secondar y and t ertiary car e Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+95Could this be sepsis? 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 W hen to suspe ct sepsis 
+1.1.1 Think 'could t his be sepsis?' if a person pr esent s wit h sympt oms or signs t hat 
+indicat e possible inf ection. [2016] 
+1.1.2 Take into account t hat people wit h sepsis ma y have non-specific, non-localised 
+presentations, f or example f eeling v ery unw ell, and ma y not ha ve a high 
+temperatur e. [2016] 
+1.1.3 Pay par ticular att ention t o concerns e xpressed b y the person and t heir f amily or 
+carers, f or example changes fr om usual beha viour . [2016] 
+1.1.4 Assess people who might ha ve sepsis wit h extra car e if t here is difficulty in taking 
+their hist ory, for example people wit h English as a second language or people 
+with communication difficulties (such as learning disabilities or autism). [2016 , 
+amended 202 4] 
+1.1.5 Assess people wit h any suspect ed inf ection t o identify: 
+• possible sour ce of inf ection (see t he recommendations on finding and 
+contr olling t he sour ce of inf ection ) 
+• factors t hat incr ease risk of sepsis (see people who ar e most vulnerable t o Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+95sepsis ) 
+• any indications of clinical concern, such as new-onset abnormalities of 
+beha viour , circulation or r espiration. [2016] 
+1.1.6 During a r emot e assessment, when deciding whet her t o off er a f ace-t o-face-
+assessment and, if so, on t he ur gency of it, identify: 
+• factors t hat incr ease risk of sepsis (see people who ar e most vulnerable t o 
+sepsis ) and 
+• indications of clinical concern such as new-onset abnormalities of beha viour , 
+circulation or r espiration. [2016] 
+1.1.7 Use a structur ed set of obser vations t o assess people in a f ace-t o-face setting t o 
+stratify risk if sepsis is suspect ed. (See t he recommendations on f ace-t o-face 
+assessment and t he recommendations on e valuating risk in people wit h 
+suspect ed sepsis f or the relevant population gr oup). [2016] 
+1.1.8 Use t he national early warning scor e (NEWS2 ) to assess people wit h suspect ed 
+sepsis who ar e aged 16 or o ver, are not and ha ve not recent ly been pr egnant , and 
+are in an acut e hospital setting, acut e mental healt h setting or ambulance. [202 4] 
+1.1.9 Consider using an early warning scor e to assess people wit h suspect ed sepsis 
+who ar e: 
+• under 16 , in an y setting 
+• pregnant or ha ve recent ly been pr egnant, in an y setting 
+• 16 or o ver, in a community or cust odial setting. [2016 , amended 202 4] 
+1.1.10 Suspect neutr openic sepsis in people who become unw ell and: 
+• Are having or ha ve had syst emic anticancer tr eatment wit hin the last 30 days 
+• Are receiving or ha ve receiv ed immunosuppr essant tr eatment f or reasons 
+unrelated to cancer . Use clinical judgement (based on t he person's specific 
+condition, medical hist ory, or bot h, and on t he tr eatment t hey receiv ed) t o 
+determine whet her an y past tr eatment ma y still be lik ely to cause Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+95neutr openia. [2016 , amended 202 4] 
+1.1.11 Refer patient s wit h suspect ed neutr openic sepsis immediat ely for assessment in 
+secondar y or t ertiary car e. [This r ecommendation is fr om NICE's guideline on 
+neutr openic sepsis in people wit h cancer .] [2012] 
+1.1.12 Treat people wit h neutr openic sepsis, r egar dless of cause, in line wit h NICE's 
+guideline on neutr openic sepsis in people wit h cancer . [2016 , amended 202 4] 
+For a shor t explanation of wh y the committ ee amended t he neutr openic sepsis 
+recommendations and ho w this might aff ect practice, see t he rationale and impact 
+section on people wit h neutr openia or immunosuppr ession . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+1.2 P eople who ar e most vulner able to sepsis 
+1.2.1 Take into account t hat people in t he following gr oups ar e at higher risk of 
+developing sepsis: 
+• the very young (under 1 year) and older people ( over 75 years), or people 
+who ar e very frail 
+• people who ha ve impair ed immune syst ems because of illness or drugs, 
+including: 
+－ people ha ving tr eatment f or cancer wit h chemot herap y 
+－ people who ha ve impair ed immune function (f or example, people wit h 
+diabet es, people who ha ve had a splenect omy, or people wit h sickle cell 
+disease) 
+－ people taking long-t erm st eroids 
+－ people taking immunosuppr essant drugs t o treat non-malignant Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+95disor ders such as rheumat oid ar thritis 
+• people who ha ve had sur gery, or ot her in vasive procedur es, in t he past 
+6 weeks 
+• people wit h any breach of skin int egrity (f or example, cut s, burns, blist ers or 
+skin inf ections) 
+• people who misuse drugs intra venously 
+• people wit h indw elling lines or cat heters. 
+See also recommendation 1 .1.10 on when t o suspect neutr openic sepsis . 
+[2016] 
+1.2.2 Take into account t hat people who ar e pregnant, ha ve giv en bir th or had a 
+termination of pr egnancy or miscarriage in t he past 6 weeks ar e in a high risk 
+group f or sepsis. In par ticular , people who: 
+• have impair ed immune syst ems because of illness or drugs (see 
+recommendation 1 .2.1) 
+• have diabet es, gestational diabet es or ot her comorbidities 
+• needed in vasive procedur es (for example, caesar ean section, f orceps 
+deliv ery, removal of r etained pr oduct s of conception) 
+• had pr olonged ruptur e of membranes 
+• have or ha ve been in close contact wit h people wit h group A str eptococcal 
+infection, f or example, scarlet f ever 
+• have continued v aginal bleeding or an off ensiv e vaginal dischar ge. [2016] 
+1.2.3 Take into account t he following risk f actors f or early-onset neonatal inf ection: 
+• Red flag risk f actor: 
+－ Suspect ed or confirmed inf ection in anot her bab y in t he case of a 
+multiple pr egnancy . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10 of
+95• Other risk f actors: 
+－ Invasive group B str eptococcal inf ection in a pr evious bab y or mat ernal 
+group B str eptococcal colonisation, bact eriuria or inf ection in t he curr ent 
+pregnancy . 
+－ Pre-term bir th following spontaneous labour bef ore 37 weeks' gestation. 
+－ Confirmed ruptur e of membranes f or mor e than 18 hours bef ore a pr e-
+term bir th. 
+－ Confirmed pr elabour ruptur e of membranes at t erm f or mor e than 
+24 hours bef ore the onset of labour . 
+－ Intrapar tum f ever higher t han 38° C if t here is suspect ed or confirmed 
+bacterial inf ection. 
+－ Clinical diagnosis of chorioamnionitis. 
+[This r ecommendation is fr om NICE's guideline on neonatal inf ection .] 
+[2021] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+95Face to f ace assessmen t 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.3 Initial assessmen t and e xamina tion 
+1.3.1 Assess t emperatur e, hear t rate, respirat ory rat e, blood pr essur e, level of 
+consciousness and o xygen saturation in people aged 12 or o ver wit h suspect ed 
+sepsis. [2016] 
+1.3.2 Assess t emperatur e, hear t rate, respirat ory rat e, level of consciousness, o xygen 
+saturation and capillar y refill time in childr en under 12 wit h suspect ed sepsis. 
+[2016] 
+1.3.3 Measur e blood pr essur e of childr en under 5 if hear t rate or capillar y refill time is 
+abnormal and equipment is a vailable, including a corr ectly-siz ed blood pr essur e 
+cuff. In community settings, only do t his if taking a measur ement does not cause 
+a dela y in assessment or tr eatment. [2016] 
+1.3.4 Measur e blood pr essur e of childr en aged 5 t o 11 who might ha ve sepsis if 
+equipment is a vailable, including a corr ectly-siz ed cuff . In community settings, 
+only do t his if taking a measur ement does not cause a dela y in assessment or 
+treatment. [2016] 
+1.3.5 In community settings, measur e oxygen saturation if equipment is a vailable and 
+taking a measur ement does not cause a dela y in assessment or tr eatment. [2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12 of
+951.3.6 Examine people wit h suspect ed sepsis f or: 
+• mott led or ashen appearance 
+• cyanosis of t he skin, lips or t ongue 
+• non-blanching pet echial or purpuric rash 
+• any breach of skin int egrity (f or example, cut s, burns or skin inf ections) 
+• other rash indicating pot ential inf ection. 
+For signs and sympt oms of meningococcal disease, see t he NICE guideline 
+on bact erial meningitis and meningococcal disease . [2016 , amended 202 4] 
+1.3.7 Ask t he person or t heir f amily or car ers ho w oft en the person urinat ed in t he past 
+18 hours. [2016] 
+1.3.8 Ask t he person wit h suspect ed sepsis and t heir f amily or car ers about an y recent 
+fever or rigors. [2016] 
+1.3.9 Ask t he person if t hey have recent ly present ed (f or example t o their GP or t o 
+hospital) wit h sympt oms or signs t hat could indicat e sepsis. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on initial 
+assessment and e xamination . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+1.3.10 As par t of t he initial assessment, carr y out a t horough clinical e xamination t o look 
+for sour ces of inf ection, including sour ces t hat might need drainage or ot her 
+interventions. F ollow the recommendations on finding and contr olling t he sour ce 
+of inf ection . [2016 , amended 202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13 of
+951.4 Interpr eting finding s 
+Temperature in suspe cted sepsis 
+1.4.1 Do not r ely on f ever or h ypot hermia alone t o rule sepsis eit her in or out. [2016] 
+1.4.2 Take into account t hat some gr oups of people wit h sepsis ma y not de velop a 
+raised t emperatur e. These include: 
+• people who ar e older or v ery frail 
+• people ha ving tr eatment f or cancer 
+• people se verely ill wit h sepsis 
+• young inf ants or childr en 
+• people wit h a spinal cor d injur y [2016 , amended 202 4] 
+1.4.3 Take into account t hat a rise in t emperatur e can be a ph ysiological r esponse, f or 
+example aft er sur gery or trauma. [2016] 
+Heart rate in suspe cted sepsis 
+1.4.4 Interpret the hear t rate of a person wit h suspect ed sepsis in cont ext, taking int o 
+account t hat: 
+• baseline hear t rate ma y be lo wer in y oung people and adult s who ar e fit 
+• baseline hear t rate in pr egnancy is 10 t o 15 beat s per minut e mor e than 
+normal 
+• older people wit h an inf ection ma y not de velop an incr eased hear t rate 
+• older people ma y develop a new arrh ythmia in r esponse t o infection rat her 
+than an incr eased hear t rate 
+• hear t rate response ma y be aff ected by medicines such as beta-block ers. 
+[2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14 of
+95Blood pr essur e in suspe cted sepsis 
+1.4.5 Interpret blood pr essur e in t he cont ext of a person's pr evious blood pr essur e, if 
+known. Be awar e that t he pr esence of normal blood pr essur e does not e xclude 
+sepsis in childr en and y oung people. [2016] 
+Confusion, men tal sta te and c ogni tive sta te in suspe cted sepsis 
+1.4.6 Interpret a person's mental stat e in t he cont ext of t heir normal function and tr eat 
+changes as being significant. [2016] 
+1.4.7 Be awar e that changes in cognitiv e function ma y be subt le and assessment 
+should include hist ory from t he patient and t heir f amily or car ers. [2016] 
+1.4.8 Take into account t hat changes in cognitiv e function ma y present as changes in 
+beha viour or irritability in bot h childr en and adult s wit h a learning disability or 
+dementia. [2016 , amended 202 4] 
+1.4.9 Take into account t hat changes in cognitiv e function in older people ma y present 
+as acut e changes in functional abilities. [2016] 
+Oxygen sa turation in suspe cted sepsis 
+1.4.10 Take into account t hat if peripheral o xygen saturation is difficult t o measur e in a 
+person wit h suspect ed sepsis, t his ma y indicat e poor peripheral cir culation 
+because of shock. [2016] 
+Be awar e that some pulse o ximet ers can under estimat e or o verestimat e oxygen 
+saturation le vels, especially if t he saturation le vel is bor derline. Ov erestimation has 
+been r epor ted in people wit h dark skin. See also t he NHS England Patient Saf ety 
+Alert on t he risk of harm fr om inappr opriat e placement of pulse o ximet er pr obes . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15 of
+95Under 16s: e valuating risk and manag ing 
+suspe cted sepsis 
+1.5 E valuating risk le vel 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.5.1 In people under 16 , grade risk of se vere illness or deat h from sepsis using t he 
+person's: 
+• history 
+• physical e xamination r esult s and 
+• criteria based on age (see table 1: crit eria f or stratification of risk fr om sepsis 
+in under 5s , table 2: crit eria f or stratification of risk fr om sepsis in childr en 
+aged 5 t o 11 and table 3: crit eria f or stratification of risk fr om sepsis in 
+childr en and y oung people aged 12 t o 15). [2016] 
+1.5.2 Recognise t hat people under 16 wit h suspect ed sepsis ar e at high risk of se vere 
+illness or deat h from sepsis if t hey meet an y of t he high risk crit eria: 
+• For childr en under 5 , see high risk crit eria in table 1 . 
+• For childr en aged 5 t o 11, see high risk crit eria in table 2 . 
+• For childr en and y oung people aged 12 t o 15, see high risk crit eria in table 3 . 
+[2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16 of
+951.5.3 Recognise t hat people under 16 wit h suspect ed sepsis ar e at moderat e to high 
+risk of se vere illness or deat h from sepsis if t hey meet an y of t he moderat e to 
+high risk crit eria: 
+• For childr en under 5 , see moderat e to high risk crit eria in table 1 . 
+• For childr en aged 5 t o 11, see moderat e to high risk crit eria in table 2 . 
+• For childr en and y oung people aged 12 t o 15, see moderat e to high risk 
+criteria in table 3 . [2016] 
+1.5.4 If childr en under 16 wit h suspect ed sepsis do not meet an y high or moderat e to 
+high risk crit eria, see t hem as being at lo w risk of se vere illness or deat h from 
+sepsis. [2016] 
+Criteria f or str atification o f risk fr om sepsis in under 5s 
+Table 1: Crit eria f or str atification of risk of se vere illness or deat h from sepsis in 
+childr en under 5 
+Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Beha viour Any No response t o social cues 
+Appears ill t o a healt hcare 
+professional 
+Does not wak e, or if r oused does 
+not sta y awak e 
+Weak high-pit ched or continuous 
+cry Not r esponding normally 
+to social cues 
+No smile 
+Wakes only wit h 
+prolonged stimulation 
+Decr eased activity 
+Parent or car er concern 
+that child is beha ving 
+differently from usual Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17 of
+95Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Respirat ory Any Grunting 
+Apnoea 
+Oxygen saturation of less t han 90% 
+in air or incr eased o xygen 
+requir ement o ver baseline 
+See recommendation 1 .4.10 for 
+safety warnings about t he use of 
+pulse o ximet ers Oxygen saturation of 
+less t han 92% in air or 
+increased o xygen 
+requir ement o ver 
+baseline 
+Nasal flaring 
+See recommendation 
+1.4.10 for saf ety 
+warnings about t he use 
+of pulse o ximet ers 
+Respirat ory Under 
+1 year Raised r espirat ory rat e: 60 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+50 to 59 breaths per 
+minut e 
+Respirat ory 1 to 
+2 years Raised r espirat ory rat e: 50 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+40 to 49 breaths per 
+minut e 
+Respirat ory 3 to 
+4 years Raised r espirat ory rat e: 40 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+35 to 39 breaths per 
+minut e 
+Circulation 
+and 
+hydration Any Brady cardia: hear t rate less t han 
+60 beat s per minut e Capillar y refill time of 
+3 seconds or mor e 
+Reduced urine output 
+For cat heterised 
+patient s, passed less 
+than 1 ml/kg of urine per 
+hour 
+Circulation 
+and 
+hydration Under 
+1 year Rapid hear t rate: 160 beat s per 
+minut e or mor e Rapid hear t rate: 150 t o 
+159 beat s per minut e 
+Circulation 
+and 
+hydration 1 to 
+2 years Rapid hear t rate: 150 beat s per 
+minut e or mor e Rapid hear t rate: 140 t o 
+149 beat s per minut e Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18 of
+95Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Circulation 
+and 
+hydration 3 to 
+4 years Rapid hear t rate: 140 beat s per 
+minut e or mor e Rapid hear t rate: 130 t o 
+139 beat s per minut e 
+Skin Any Mott led or ashen appearance 
+Cyanosis of skin, lips or t ongue 
+Non-blanching pet echial or purpuric 
+rash 
+For signs and sympt oms of 
+meningococcal disease, see t he 
+NICE guideline on bact erial 
+meningitis and meningococcal 
+disease . Pallor of skin, lips or 
+tongue 
+Temperatur e Any Less t han 36ºC - 
+Temperatur e Under 
+3 mont hs 38°C or mor e - 
+Temperatur e 3 to 
+6 mont hs - 39°C or mor e 
+Other Any - Leg pain 
+Cold hands or f eet 
+Criteria f or str atification o f risk fr om sepsis in childr en ag ed 5 to 
+11 
+Table 2: Crit eria f or str atification of risk of se vere illness or deat h from sepsis in 
+childr en aged 5 t o 11 y ears 
+Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Beha viour Any Objectiv e evidence of alt ered 
+beha viour or mental stat e 
+Appears ill t o a healt hcare 
+professional 
+Does not wak e or if r oused does not 
+stay awak e Not beha ving normally 
+Decr eased activity 
+Parent or car er concern 
+that t he child is beha ving 
+differently from usual Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19 of
+95Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Respirat ory Any Oxygen saturation of less t han 90% 
+in air or incr eased o xygen 
+requir ement o ver baseline 
+See recommendation 1 .4.10 for 
+safety warnings about t he use of 
+pulse o ximet ers Oxygen saturation of less 
+than 92% in air or 
+increased o xygen 
+requir ement o ver 
+baseline 
+See recommendation 
+1.4.10 for saf ety warnings 
+about t he use of pulse 
+oximet ers 
+Respirat ory Aged 
+5 years Raised r espirat ory rat e: 29 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+24 to 28 breaths per 
+minut e 
+Respirat ory Aged 6 
+to 
+7 years Raised r espirat ory rat e: 27 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+24 to 26 breaths per 
+minut e 
+Respirat ory Aged 8 
+to 
+11 years Raised r espirat ory rat e: 25 breaths 
+per minut e or mor e Raised r espirat ory rat e: 
+22 to 24 breaths per 
+minut e 
+Circulation 
+and 
+hydration Any Hear t rate less t han 60 beat s per 
+minut e Capillar y refill time of 
+3 seconds or mor e 
+Reduced urine output 
+For cat heterised 
+patient s, passed less 
+than 1 ml/kg of urine per 
+hour 
+Circulation 
+and 
+hydration Aged 
+5 years Raised hear t rate: 130 beat s per 
+minut e or mor e Raised hear t rate: 120 t o 
+129 beat s per minut e 
+Circulation 
+and 
+hydration Aged 6 
+to 
+7 years Raised hear t rate: 120 beat s per 
+minut e or mor e Raised hear t rate: 110 t o 
+119 beat s per minut e Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20 of
+95Categor y Age High risk crit eria Moder ate to high risk crit eria 
+Circulation 
+and 
+hydration Aged 8 
+to 
+11 years Raised hear t rate: 115 beat s per 
+minut e or mor e Raised hear t rate: 105 t o 
+114 beat s per minut e 
+Temperatur e Any - Tympanic t emperatur e 
+less t han 36° C 
+Skin Any Mott led or ashen appearance 
+Cyanosis of skin, lips or t ongue 
+Non-blanching pet echial or purpuric 
+rash 
+For signs and sympt oms of 
+meningococcal disease, see t he 
+NICE guideline on bact erial 
+meningitis and meningococcal 
+disease . - 
+Other Any - Leg pain 
+Cold hands or f eet Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21 of
+95Criteria f or str atification o f risk fr om sepsis in childr en ag ed 12 to 
+15, pr egnan t people, and pe ople ag ed 16 or o ver in non -acu te 
+settings 
+Table 3: Crit eria f or str atification of risk of se vere illness or deat h from sepsis in 
+childr en (in an y settings) aged 12 t o 15 , and in people aged 16 or abo ve if t hey are in 
+community or cust odial settings or if t hey are in an acut e setting and ar e or ha ve 
+recent ly been pr egnant 
+Categor y High risk crit eria Moder ate to high risk crit eria 
+History Objectiv e evidence of new alt ered 
+mental stat e History from patient, friend or 
+relativ e of new onset of alt ered 
+beha viour or mental stat e 
+History of acut e det erioration of 
+functional ability 
+Impair ed immune syst em 
+(illness or drugs including oral 
+steroids) 
+Trauma, sur gery or in vasive 
+procedur es in t he last 6 weeks 
+Respirat ory Raised r espirat ory rat e: 25 breaths per 
+minut e or mor e 
+New need f or oxygen (40% FiO2 or 
+more) to maintain saturation mor e than 
+92% ( or mor e than 88% in chr onic 
+hypercapnic r espirat ory failure) 
+See recommendation 1 .4.10 for saf ety 
+warnings about t he use of pulse 
+oximet ers Raised r espirat ory rat e: 21 t o 
+24 breaths per minut e 
+Blood 
+pressur e Systolic blood pr essur e 90 mmHg or 
+less or syst olic blood pr essur e mor e 
+than 40mmHg belo w normal Systolic blood pr essur e 91 t o 
+100 mmHg Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22 of
+95Categor y High risk crit eria Moder ate to high risk crit eria 
+Circulation 
+and 
+hydration Raised hear t rate: mor e than 130 beat s 
+per minut e 
+Not passed urine in pr evious 18 hours. 
+For cat heterised patient s, passed less 
+than 0 .5 ml/kg of urine per hour Raised hear t rate: 91 t o 
+130 beat s per minut e (100 t o 
+130 beat s per minut e in 
+pregnancy) or new-onset 
+arrhythmia 
+Not passed urine in t he past 12 
+to 18 hours 
+For cat heterised patient s, 
+passed 0 .5 ml/kg to 1 ml/kg of 
+urine per hour 
+Temperatur e - Tympanic t emperatur e less t han 
+36°C 
+Skin Mott led or ashen appearance 
+Cyanosis of skin, lips or t ongue 
+Non-blanching pet echial or purpuric 
+rash 
+For signs and sympt oms of 
+meningococcal disease, see t he NICE 
+guideline on bact erial meningitis and 
+meningococcal disease . Signs of pot ential inf ection, 
+including r edness, sw elling or 
+dischar ge at sur gical sit e or 
+breakdown of w ound 
+1.6 Manag ing suspe cted sepsis ou tside acu te 
+hospi tal se ttings 
+When to tr ansf er imme diately to an acu te hospi tal se tting 
+1.6.1 Refer people under 16 wit h suspect ed sepsis f or emer gency medical car e if: 
+• they meet an y high risk crit eria (see tables 1 , 2 and 3: crit eria f or stratification 
+of risk fr om sepsis in childr en and y oung people under 16 ) or 
+• their immunity is impair ed by drugs or illness and t hey meet an y moderat e to 
+high risk crit eria. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23 of
+95Use t he most appr opriat e means of transpor t (usually 999 ambulance). 
+Emer gency car e requir es facilities f or resuscitation t o be a vailable and, 
+depending on local ser vices, ma y be emer gency depar tment, medical 
+admissions unit and paediatric ambulat ory unit or paediatric medical 
+admissions unit. [2016] 
+1.6.2 Pre-aler t secondar y car e (through GP or ambulance ser vice) when an y high risk 
+criteria ar e met in a person under 16 wit h suspect ed sepsis out side of an acut e 
+hospital, and transf er them immediat ely. [2016] 
+Manag ing the c ondi tion w hile a waiting tr ansf er 
+1.6.3 In remot e and rural locations wher e transf er time t o emer gency depar tment is 
+routinely mor e than 1 hour, ensur e GPs ha ve mechanisms in place t o giv e 
+antibiotics t o people under 16 wit h high risk crit eria in pr e-hospital settings. F or 
+high risk crit eria, see tables 1 t o 3 on crit eria f or stratification of risk fr om sepsis . 
+[2016 , amended 202 4] 
+1.6.4 In remot e and rural locations wher e combined transf er and hando ver times t o 
+emer gency depar tment ar e greater than 1 hour: 
+• ambulance ser vices should consider whet her t hey need t o put mechanisms 
+in place t o be able t o giv e antibiotics t o people wit h high risk crit eria if 
+antibiotics ha ve not been giv en bef ore by a GP (see recommendation 1 .5.2 on 
+evaluating risk le vel) 
+• paramedics who ar e thinking about giving antibiotics should f ollow local 
+guidelines or seek advice fr om mor e senior colleagues, if needed. [2016 , 
+amended 202 4] 
+See also t he recommendations on choice of antibiotic t herap y for people wit h 
+suspect ed sepsis . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4 of
+95If imme diate tr ansf er is not r equired 
+1.6.5 Assess people under 16 who ar e out side acut e hospital settings wit h suspect ed 
+sepsis and an y moderat e to high risk crit eria t o: 
+• make a definitiv e diagnosis of t heir condition 
+• decide whet her t heir condition can be tr eated saf ely out side hospital. 
+If a definitiv e diagnosis is not r eached or t he person's condition cannot be 
+treated saf ely out side an acut e hospital setting, r efer them ur gent ly for 
+emer gency car e. [2016] 
+1.6.6 If a person under 16 wit h suspect ed sepsis does not meet an y high risk or 
+moderat e to high risk crit eria, pr ovide t hem wit h information about: 
+• sympt oms t o monit or and 
+• how to access medical car e if t hey are concerned. 
+Also see information at dischar ge for people assessed f or suspect ed sepsis, 
+but not diagnosed wit h sepsis . [2016] 
+1.7 Manag ing suspe cted sepsis in acu te hospi tal 
+settings 
+Initial in vestig ations to find the sour ce of infection 
+1.7.1 For people in hospital who ha ve suspect ed inf ections: 
+• start looking f or the sour ce of inf ection (see t he section on finding and 
+contr olling t he sour ce of inf ection ) 
+• take micr obiological and blood samples bef ore giving an antimicr obial. 
+See t he UK standar ds for micr obiology in vestigations . [2016 , amended 202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25 of
+951 or mor e hig h risk cri teria 
+Assessment, blood t ests and antibiotics 
+1.7.2 For people under 16 who ha ve suspect ed sepsis and meet 1 or mor e high risk 
+criteria: 
+• arrange f or the senior clinical decision mak er to urgent ly assess t he person's 
+condition and t hink about alt ernativ e diagnoses t o sepsis 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• give a br oad-spectrum antimicr obial at t he maximum r ecommended dose, 
+without dela y (wit hin 1 hour of identifying t hat t hey meet an y high risk 
+criteria), if antibiotics ha ve not alr eady been giv en for this episode of sepsis 
+• discuss wit h a consultant. 
+Also see t he recommendations on finding and contr olling t he sour ce of 
+infection and choice of antibiotic t herap y. [2016 , amended 202 4] 
+1.7.3 Ensur e urgent assessment mechanisms ar e in place t o deliv er antibiotics when 
+any high risk crit eria ar e met in a person under 16 in secondar y car e (wit hin 1 hour 
+of meeting a high risk crit erion in an acut e hospital setting). [2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26 of
+951.7.4 Give par enteral antibiotics t o childr en under 3 mont hs as f ollows: 
+• childr en younger t han 1 mont h wit h fever 
+• all childr en aged 1 t o 3 mont hs wit h fever who appear unw ell 
+• childr en aged 1 t o 3 mont hs wit h whit e blood cell count less t han 5×109
+/litre 
+or gr eater than 15×109
+/litre. 
+[This r ecommendation is fr om NICE's guideline on f ever in under 5s .] [200 7, 
+amended 2013] 
+Intravenous fluids 
+1.7.5 For childr en under 12 wit h suspect ed sepsis, an y high risk crit eria and lactat e 
+over 4 mmol/litr e: 
+• give intra venous fluid bolus wit hout dela y (wit hin 1 hour of identifying t hat 
+they meet an y high risk crit eria), in line wit h recommendations on intra venous 
+fluids f or people wit h suspect ed sepsis and 
+• refer to a critical car e specialist or t eam for them t o review t he management 
+of the person's condition, including t heir need f or central v enous access and 
+initiation of inotr opes or v asopr essors. 
+Referral ma y be a f ormal r eferral pr ocess or discussion wit h a specialist in 
+intensiv e car e or int ensiv e car e outr each t eam. [2016] 
+1.7.6 For childr en and y oung people aged 12 t o 15 wit h suspect ed sepsis, an y high risk 
+criteria and either lactat e over 4 mmol/litr e or systolic blood pr essur e less t han 
+90 mmHg: 
+• give intra venous fluid bolus wit hout dela y (wit hin 1 hour of identifying t hat 
+they meet an y high risk crit eria), in line wit h recommendations on intra venous 
+fluids f or people wit h suspect ed sepsis and 
+• refer to a critical car e specialist or t eam for them t o review t he management 
+of the person's condition, including t heir need f or central v enous access and 
+initiation of inotr opes or v asopr essors. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27 of
+95Referral ma y be a f ormal r eferral pr ocess or discussion wit h a specialist in 
+intensiv e car e or int ensiv e car e outr each t eam. [2016] 
+1.7.7 For childr en and y oung people under 16 wit h suspect ed sepsis, an y high risk 
+criteria and lactat e betw een 2 and 4 mmol/litr e, giv e intra venous fluid bolus 
+without dela y (wit hin 1 hour of identifying t hat t hey meet an y high risk crit eria), in 
+line wit h recommendations on intra venous fluids f or people wit h suspect ed 
+sepsis . [2016] 
+1.7.8 For people under 16 wit h suspect ed sepsis, an y high risk crit eria and lactat e 
+below 2 mmol/litr e, consider giving an intra venous fluid bolus in line wit h 
+recommendations on intra venous fluids f or people wit h suspect ed sepsis . [2016 , 
+amended 202 4] 
+Monit oring and escalation 
+1.7.9 Monit or people under 16 wit h suspect ed sepsis who meet an y high risk crit eria 
+continuously , or a minimum of once e very 30 minut es depending on setting. 
+Physiological track and trigger syst ems should be used t o monit or all people. 
+[2016] 
+1.7.10 Monit or the mental stat e of people under 16 wit h suspect ed sepsis. Consider 
+using t he Glasgo w Coma Scale (GCS) or A VPU ('aler t, voice, pain, unr esponsiv e') 
+scale. [2016] 
+1.7.11 Alert a consultant t o att end in person if a person under 16 wit h suspect ed sepsis 
+and an y high risk crit eria does not r espond within 1 hour of an y intervention. 
+[2016 , amended 202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28 of
+952 or mor e moder ate to hig h risk cri teria 
+Childr en under 12 
+1.7.12 For childr en under 12 wit h suspect ed sepsis and 2 or mor e moderat e to high risk 
+criteria: 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• arrange f or a clinician t o review t he child's condition and v enous lactat e 
+result s wit hin 1 hour of meeting 2 or mor e moderat e to high risk crit eria. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016 , amended 202 4] 
+1.7.13 For childr en under 12 wit h suspect ed sepsis who meet 2 or mor e moderat e to 
+high risk crit eria and ha ve lactat e over 2 mmol/litr e, treat t heir condition as if it 
+met one or mor e high risk crit eria. [2016] 
+1.7.14 For childr en under 12 wit h suspect ed sepsis who meet 2 or mor e moderat e to 
+high risk crit eria, ha ve lactat e of 2 mmol/litr e or lo wer, and in whom a definitiv e 
+condition cannot be identified: 
+• repeat structur ed assessment at least hourly Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29 of
+95• ensur e a senior clinical decision mak er reviews t he child's condition and t heir 
+need f or antibiotics wit hin 3 hours of meeting 2 or mor e moderat e to high risk 
+criteria. [2016] 
+Childr en and y oung people aged 12 t o 15 
+1.7.15 For childr en and y oung people aged 12 t o 15 wit h suspect ed sepsis and either 2 
+or mor e moderat e to high risk crit eria or systolic blood pr essur e 91 t o 100 mmHg: 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• arrange f or a clinician t o review t he person's condition and v enous lactat e 
+result s wit hin 1 hour of meeting 2 or mor e moderat e to high risk crit eria. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016 , amended 202 4] 
+1.7.16 For childr en and y oung people aged 12 t o 15 wit h suspect ed sepsis who meet 2 
+or mor e moderat e to high risk crit eria and ha ve either lactat e over 2 mmol/litr e or 
+evidence of acut e kidne y injur y, treat t heir condition as if it met 1 or mor e high 
+risk crit eria. [2016] 
+For definition of acut e kidne y injur y, see NICE's guideline on acut e kidne y injur y. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30 of
+95[2016] 
+1.7.17 For childr en and y oung people aged 12 t o 15 wit h suspect ed sepsis who meet 2 
+or mor e moderat e to high risk crit eria, ha ve lactat e of 2 mmol/litr e or lo wer, have 
+no evidence of acut e kidne y injur y, and in whom a definitiv e condition cannot be 
+identified: 
+• repeat structur ed assessment at least hourly 
+• ensur e a senior clinical decision mak er reviews t he person's condition and 
+need f or antibiotics wit hin 3 hours of meeting 2 or mor e moderat e to high risk 
+criteria. [2016] 
+1 moder ate to hig h risk cri terion 
+1.7.18 For people under 16 wit h suspect ed sepsis who meet only 1 moderat e to high risk 
+criterion: 
+• arrange f or clinician r eview wit hin 1 hour of meeting a moderat e to high risk 
+criterion and 
+• perform blood t ests if indicat ed. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016 , amended 202 4] 
+1.7.19 For childr en under 12 wit h suspect ed sepsis who meet only 1 moderat e to high 
+risk crit erion and in whom a definitiv e condition cannot be identified: 
+• repeat structur ed assessment at least hourly 
+• ensur e a senior clinical decision mak er reviews t he child's condition and need 
+for antibiotics wit hin 3 hours of meeting a moderat e to high risk crit erion. 
+[2016] 
+1.7.20 For childr en and y oung people aged 12 t o 15 wit h suspect ed sepsis who meet 
+only 1 moderat e to high risk crit erion, ha ve lactat e of less t han 2 mmol/litr e and 
+no evidence of acut e kidne y injur y, and in whom a definitiv e condition cannot be Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31 of
+95identified: 
+• repeat structur ed assessment at least hourly 
+• ensur e a senior clinical decision mak er reviews t he person's condition and 
+need f or antibiotics wit hin 3 hours of meeting moderat e to high risk crit erion. 
+For a definition of acut e kidne y injur y, see NICE's guideline on acut e kidne y 
+injury. [2016] 
+No hig h risk or moder ate to hig h risk cri teria 
+1.7.21 For people under 16 who ha ve suspect ed sepsis and meet no high risk or 
+moderat e to high risk crit eria: 
+• arrange f or clinician r eview 
+• use clinical judgement t o manage t heir condition. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016] 
+Dischar ge 
+1.7.22 Before dischar ging people who ha ve been assessed f or suspect ed sepsis, 
+provide inf ormation on: 
+• the management of t heir definitiv e condition (if identified) and 
+• warning signs f or sepsis (see information at dischar ge for people assessed 
+for suspect ed sepsis ). [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32 of
+95Pregnan t or r ecently pregnan t people: 
+evaluating risk and manag ing suspe cted 
+sepsis 
+1.8 E valuating risk le vel 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.8.1 In people aged 16 or o ver who ar e or ha ve recent ly been pr egnant , grade risk of 
+severe illness or deat h from sepsis using: 
+• the person's hist ory 
+• physical e xamination r esult s and 
+• table 3: crit eria f or stratification of risk fr om sepsis in people who ar e or ha ve 
+recent ly been pr egnant ). [2016] 
+1.8.2 Recognise t hat people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve 
+recent ly been pr egnant ar e at: 
+• high risk of se vere illness or deat h from sepsis if t hey meet an y of t he high 
+risk crit eria in table 3: crit eria f or stratification of risk fr om sepsis in people 
+who ar e or ha ve recent ly been pr egnant 
+• moderat e to high risk of se vere illness or deat h from sepsis if t hey meet an y 
+of the moderat e to high risk crit eria in table 3: crit eria f or stratification of risk Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33 of
+95from sepsis in people who ar e or ha ve recent ly been pr egnant . [2016] 
+1.8.3 If people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant do not meet an y high risk or moderat e to high risk crit eria, see t hem as 
+being at lo w risk of se vere illness or deat h from sepsis. [2016] 
+1.9 M anag ing suspe cted sepsis ou tside acu te 
+hospi tal se ttings 
+When to tr ansf er imme diately to an acu te hospi tal se tting 
+1.9.1 If they meet an y high risk crit eria, r efer people aged 16 or o ver wit h suspect ed 
+sepsis who ar e or w ere recent ly pregnant and ar e out side acut e hospital settings 
+for emer gency medical car e (see table 3: crit eria f or stratification of risk fr om 
+sepsis in people who ar e or ha ve recent ly been pr egnant ). 
+Use t he most appr opriat e means of transpor t (usually 999 ambulance). 
+Emer gency car e requir es facilities f or resuscitation t o be a vailable and, depending 
+on local ser vices, ma y be an emer gency depar tment or medical admissions unit 
+and, f or childr en and y oung people, a paediatric ambulat ory unit or paediatric 
+medical admissions unit. [2016] 
+1.9.2 Pre-aler t secondar y car e (through GP or ambulance ser vice) when an y high risk 
+criteria ar e met in a person aged 16 or o ver wit h suspect ed sepsis who is or has 
+recent ly been pr egnant and is out side of an acut e hospital, and transf er the 
+person immediat ely. [2016] 
+Manag ing the c ondi tion w hile a waiting tr ansf er 
+1.9.3 In remot e and rural locations wher e transf er time t o emer gency depar tment is 
+routinely mor e than 1 hour, ensur e GPs ha ve mechanisms in place t o giv e 
+antibiotics t o people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34 of
+95recent ly been pr egnant and meet high risk crit eria in pr e-hospital settings. F or 
+high risk crit eria, see table 3: in childr en aged 12 t o 15, pregnant people, and 
+people aged 16 or o ver in non-acut e settings . [2016 , amended 202 4] 
+1.9.4 In remot e and rural locations wher e combined transf er and hando ver times t o 
+emer gency depar tment ar e greater than 1 hour: 
+• ambulance ser vices should consider whet her t hey need t o put mechanisms 
+in place t o be able t o giv e antibiotics t o people wit h high risk crit eria if 
+antibiotics ha ve not been giv en bef ore by a GP (see recommendation 1 .8.2 on 
+evaluating risk of se vere illness or deat h from sepsis ) 
+• paramedics who ar e thinking about giving antibiotics should f ollow local 
+guidelines or seek advice fr om mor e senior colleagues, if needed. [2016 , 
+amended 202 4] 
+See also t he recommendations on choice of antibiotic t herap y for people wit h 
+suspect ed sepsis . 
+If imme diate tr ansf er is not r equired 
+1.9.5 Assess people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly 
+been pr egnant , are out side acut e hospital settings, and meet an y moderat e to 
+high risk crit eria t o: 
+• make a definitiv e diagnosis of t heir condition 
+• decide whet her t heir condition can be tr eated saf ely out side hospital. 
+If a definitiv e diagnosis is not r eached or t he person's condition cannot be 
+treated saf ely out side an acut e hospital setting, r efer them ur gent ly for 
+emer gency car e. [2016] 
+1.9.6 If a person aged 16 or o ver wit h suspect ed sepsis who is or has r ecent ly been 
+pregnant does not meet an y high risk or moderat e to high risk crit eria, pr ovide 
+the person wit h information about: 
+• sympt oms t o monit or and Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35 of
+95• how to access medical car e if t hey are concerned. 
+Also see information at dischar ge for people assessed f or suspect ed sepsis, 
+but not diagnosed wit h sepsis . [2016] 
+1.10 M anag ing suspe cted sepsis in acu te hospi tal 
+settings 
+Initial in vestig ations to find the sour ce of infection 
+1.10.1 For people in hospital who ha ve suspect ed inf ections: 
+• start looking f or the sour ce of inf ection (see t he section on finding and 
+contr olling t he sour ce of inf ection ) 
+• take micr obiological and blood samples bef ore giving an antimicr obial. 
+See t he UK standar ds for micr obiology in vestigations . [2016 , amended 202 4] 
+1 or mor e hig h risk cri teria 
+Assessment, blood t ests and antibiotics 
+1.10.2 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant and meet 1 or mor e high risk crit eria: 
+• arrange f or the senior clinical decision mak er to immediat ely assess t he 
+person's condition and t hink about alt ernativ e diagnoses t o sepsis 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36 of
+95－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• give a br oad-spectrum antimicr obial at t he maximum r ecommended dose 
+without dela y (wit hin 1 hour of identifying t hat t hey meet an y high risk 
+criteria), if antibiotics ha ve not alr eady been giv en for this episode of sepsis 
+• discuss wit h a consultant. 
+Also see t he recommendations on finding and contr olling t he sour ce of 
+infection and choice of antibiotic t herap y. [2016 , amended 202 4] 
+1.10.3 Ensur e urgent assessment mechanisms ar e in place t o deliv er antibiotics when 
+any high risk crit eria ar e met in secondar y car e by a person aged 16 or o ver who 
+is or has r ecent ly been pr egnant (wit hin 1 hour of meeting a high risk crit erion in 
+an acut e hospital setting). [2016] 
+Intravenous fluids 
+1.10.4 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet an y high risk crit eria and ha ve either lactat e over 4 mmol/litr e or 
+systolic blood pr essur e less t han 90 mmHg: 
+• give intra venous fluid bolus wit hout dela y (wit hin 1 hour of identifying t hat 
+they meet an y high risk crit eria), in line wit h recommendations on intra venous 
+fluids f or people wit h suspect ed sepsis and 
+• refer to a critical car e specialist or t eam for them t o review t he management 
+of the person's condition, including t heir need f or central v enous access and 
+initiation of inotr opes or v asopr essors. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37 of
+95Referral ma y be a f ormal r eferral pr ocess or discussion wit h a specialist in 
+intensiv e car e or int ensiv e car e outr each t eam. [2016] 
+1.10.5 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet an y high risk crit eria and ha ve lactat e betw een 2 and 4 mmol/litr e, 
+give intra venous fluid bolus wit hout dela y (wit hin 1 hour of identifying t hat t hey 
+meet an y high risk crit eria), in line wit h recommendations on intra venous fluids f or 
+people wit h suspect ed sepsis . [2016] 
+1.10.6 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet an y high risk crit eria and ha ve lactat e of belo w 2 mmol/litr e, 
+consider giving an intra venous fluid bolus (in line wit h recommendations on 
+intravenous fluids f or people wit h suspect ed sepsis ). [2016 , amended 202 4] 
+Monit oring and escalation 
+1.10.7 Monit or people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly 
+been pr egnant and meet an y high risk crit eria continuously , or a minimum of once 
+every 30 minut es depending on setting. Ph ysiological track and trigger syst ems 
+should be used t o monit or all adult patient s. [2016] 
+1.10.8 Monit or the mental stat e of people aged 16 or o ver wit h suspect ed sepsis who 
+are or ha ve recent ly been pr egnant. Consider using a scale such as t he Glasgo w 
+Coma Scale (GCS) or A VPU ('aler t, voice, pain, unr esponsiv e') scale. [2016] 
+1.10.9 Alert a consultant t o att end in person if a person aged 16 or o ver wit h suspect ed 
+sepsis who is or has r ecent ly been pr egnant and meet s any high risk crit eria does 
+not r espond within 1 hour of an y intervention. [2016 , amended 202 4] 
+2 or mor e moder ate to hig h risk cri teria 
+1.10.10 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant and either meet 2 or mor e moderat e to high risk crit eria or have syst olic 
+blood pr essur e 91 t o 100 mmHg: Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38 of
+95• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• arrange f or a clinician t o review t he person's condition and v enous lactat e 
+result s wit hin 1 hour of meeting 2 or mor e moderat e to high risk crit eria. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016 , amended 202 4] 
+1.10.11 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet 2 or mor e moderat e to high risk crit eria and ha ve either lactat e 
+over 2 mmol/litr e or evidence of acut e kidne y injur y, treat t heir condition as if it 
+met 1 or mor e high risk crit eria. 
+For definition of acut e kidne y injur y, see NICE's guideline on acut e kidne y injur y. 
+[2016] 
+1.10.12 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet 2 or mor e moderat e to high risk crit eria, ha ve lactat e of 2 mmol/
+litre or lo wer, have no e vidence of acut e kidne y injur y, and in whom a definitiv e 
+condition cannot be identified: 
+• repeat structur ed assessment at least hourly 
+• ensur e a senior clinical decision mak er reviews t he person's condition and 
+need f or antibiotics wit hin 3 hours of meeting 2 or mor e moderat e to high risk Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39 of
+95criteria. [2016] 
+1 moder ate to hig h risk cri terion 
+1.10.13 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant and meet only 1 moderat e to high risk crit erion: 
+• arrange f or clinician r eview wit hin 1 hour of meeting a moderat e to high risk 
+criterion 
+• perform blood t ests if indicat ed. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has 
+antibiotic pr escribing r esponsibilities. [2016] 
+1.10.14 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant, meet only 1 moderat e to high risk crit erion, ha ve lactat e of less t han 
+2 mmol/litr e, ha ve no e vidence of acut e kidne y injur y, and in whom a definitiv e 
+condition cannot be identified: 
+• repeat structur ed assessment at least hourly 
+• ensur e a senior clinical decision mak er reviews t he person's condition and 
+need f or antibiotics wit hin 3 hours of meeting moderat e to high risk crit erion. 
+[2016] 
+No hig h risk or moder ate to hig h risk cri teria 
+1.10.15 For people aged 16 or o ver wit h suspect ed sepsis who ar e or ha ve recent ly been 
+pregnant and meet no high risk or moderat e to high risk crit eria: 
+• arrange f or clinician r eview 
+• use clinical judgement t o manage t heir condition. 
+A 'clinician' should be a medically qualified practitioner or equiv alent who has Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40 of
+95antibiotic pr escribing r esponsibilities. [2016] 
+Dischar ge 
+1.10.16 Before dischar ging people who ha ve been assessed f or suspect ed sepsis, 
+provide inf ormation on: 
+• the management of t heir definitiv e condition (if identified) and 
+• warning signs f or sepsis (see information at dischar ge for people assessed 
+for suspect ed sepsis ). [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1 of
+95Over 16s ( not pr egnan t or r ecently 
+pregnan t): evaluating risk and manag ing 
+suspe cted sepsis 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.11 E valuating risk le vel 
+In comm unity and custodial se ttings 
+1.11.1 For people aged 16 or o ver in t he community and in cust odial settings, grade risk 
+of se vere illness or deat h from sepsis using t he person's: 
+• history 
+• physical e xamination r esult s and 
+• criteria based on age (f or people aged 16 or o ver who ar e not and ha ve not 
+recent ly been pr egnant , see table 3: crit eria f or stratification of risk fr om 
+sepsis in people aged 16 or o ver who ar e in t he community or in a cust odial 
+setting . [2016 , amended 202 4] 
+1.11.2 Recognise t hat people aged 16 or o ver wit h suspect ed sepsis in t he community 
+and in cust odial settings ar e at: 
+• high risk of se vere illness or deat h from sepsis if t hey meet an y of t he high Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 42 of
+95risk crit eria in table 3: crit eria f or stratification of risk fr om sepsis in people 
+aged 16 or o ver who ar e in t he community or in a cust odial setting 
+• moderat e to high risk of se vere illness or deat h from sepsis if t hey meet an y 
+of the moderat e to high risk crit eria in table 3: crit eria f or stratification of risk 
+from sepsis in people aged 16 or o ver who ar e in t he community or in a 
+custodial setting . [2016 , amended 202 4] 
+1.11.3 If people aged 16 or o ver wit h suspect ed sepsis in t he community and in 
+custodial settings do not meet an y high or moderat e to high risk crit eria, see 
+them as being at lo w risk of se vere illness or deat h from sepsis. [2016 , amended 
+202 4] 
+In acu te hospi tal se ttings, acu te men tal he alth se ttings and 
+ambulanc es 
+1.11.4 In people aged 16 or o ver, grade risk of se vere illness or deat h from sepsis using 
+the person's: 
+• history 
+• physical e xamination r esult s (especially sympt oms and signs of inf ection – in 
+line wit h the recommendations on when t o suspect sepsis ) and 
+• NEWS2 scor e. 
+Interpret the NEWS2 scor es wit hin the cont ext of t he persons' underlying 
+physiology and comorbidities. [202 4] 
+1.11.5 When e valuating t he risk of se vere illness or deat h from sepsis in people aged 16 
+or over wit h suspect ed or confirmed inf ection, use clinical judgement t o interpret 
+the NEWS2 scor e and r ecognise t hat: 
+• a scor e of 7 or mor e suggest s high risk of se vere illness or deat h from sepsis 
+• a scor e of 5 or 6 suggest s a moderat e risk of se vere illness or deat h from 
+sepsis Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 43 of
+95• a scor e of 1 t o 4 suggest s a lo w risk of se vere illness or deat h from sepsis 
+• a scor e of 0 suggest s a v ery low risk of se vere illness or deat h from sepsis 
+• if a single paramet er contribut es 3 point s to their NEWS2 scor e, request a 
+high-priority r eview b y a clinician wit h cor e compet encies in t he car e of 
+acutely ill patient s (FY2 or abo ve), for a definit e decision on t he person's le vel 
+of risk of se vere illness or deat h from sepsis. [202 4] 
+1.11.6 Consider e valuating t he person's risk of se vere illness or deat h from sepsis as 
+being higher t han suggest ed by their NEWS2 scor e alone if an y of t he following is 
+present: 
+• mott led or ashen appearance 
+• non-blanching pet echial or purpuric rash 
+• cyanosis of skin, lips or t ongue. [202 4] 
+1.11.7 Consider e valuating t he person's risk of se vere illness or deat h from sepsis as 
+being higher t han suggest ed by their NEWS2 scor e alone if t here is cause f or 
+concern because of det erioration or lack of impr ovement of t he person's 
+condition since: 
+• any previous NEWS2 scor e was calculat ed 
+• any interventions ha ve tak en place. 
+This should include taking int o account an y NEWS2 scor e calculat ed or 
+intervention carried out bef ore initial assessment in t he emer gency 
+depar tment. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on e valuating risk 
+level in people wit h suspect ed sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+stratifying risk of se vere illness or deat h from sepsis . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 44 of
+95When to r ecalcula te a NE WS2 sc ore 
+1.11.8 Recalculat e the NEWS2 scor e and r e-evaluat e risk of sepsis periodically , in line 
+with the AoMRC stat ement on t he initial antimicr obial tr eatment of sepsis (2022) : 
+• every 30 minut es, for those at high risk of se vere illness or deat h from sepsis 
+• every hour , for those at moderat e risk of se vere illness or deat h from sepsis 
+• every 4 t o 6 hours, f or those at lo w risk of se vere illness or deat h from sepsis 
+• when standar d obser vations ar e carried out, in line wit h local pr otocol, f or 
+those at v ery low risk of se vere illness or deat h from sepsis. [202 4] 
+1.11.9 If there is det erioration or an une xpect ed change in t he person's condition, 
+recalculat e the NEWS2 scor e and r e-evaluat e their risk of sepsis. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on e valuating risk 
+level in people wit h suspect ed sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+stratifying risk of se vere illness or deat h from sepsis . 
+1.12 M anag ing suspe cted sepsis ou tside acu te 
+hospi tal se ttings 
+When to tr ansf er imme diately to an acu te hospi tal se tting 
+In community and cust odial settings 
+1.12.1 If they meet an y high risk crit eria, r efer people aged 16 or o ver wit h suspect ed 
+sepsis in t he community and in cust odial settings f or emer gency medical car e 
+(see table 3: crit eria f or stratification of risk fr om sepsis in people aged 16 or o ver 
+who ar e in t he community or in a cust odial setting ). Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 45 of
+95Use t he most appr opriat e means of transpor t (usually 999 ambulance). 
+Emer gency car e requir es facilities f or resuscitation t o be a vailable and, depending 
+on local ser vices, ma y be an emer gency depar tment or medical admissions unit. 
+[2016 , amended 202 4] 
+1.12.2 Pre-aler t secondar y car e (through GP or ambulance ser vice) when an y high risk 
+criteria ar e met in a person aged 16 or o ver wit h suspect ed sepsis in t he 
+community or in a cust odial setting and transf er them immediat ely. [2016 , 
+amended 202 4] 
+In acut e mental healt h settings 
+1.12.3 For people at high risk of se vere illness or deat h from sepsis who ar e in an acut e 
+mental healt h setting, f ollow local emer gency pr otocols on tr eatment and 
+ambulance transf er. [202 4] 
+For a shor t explanation of wh y the committ ee made t his recommendation and ho w it 
+might aff ect practice, see t he rationale and impact section on when t o transf er 
+immediat ely: people in mental healt h settings . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+Transf er by ambulance f or people wit h consecutiv e NEW S2 scor es of 5 or 
+above 
+1.12.4 Ambulance cr ews should consider a time-critical transf er and pr e-aler ting t he 
+hospital f or people aged 16 or o ver wit h suspect ed or confirmed inf ection who 
+either have consecutiv e NEWS2 scor es of 5 or abo ve or show cause f or 
+significant clinical concern. [202 4] 
+1.12.5 When deciding whet her a time-critical transf er and pr e-aler ting t he hospital is 
+needed f or someone aged 16 or o ver wit h consecutiv e NEWS2 scor es of 5 or Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 46 of
+95above and suspect ed or confirmed inf ection, tak e into account: 
+• local guidelines and pr otocols in r elation t o clinician scope of practice 
+• agreement s on transf er to hospital 
+• advance car e planning 
+• end of lif e car e planning. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on transf er by 
+ambulance f or people wit h consecutiv e NEWS2 scor es of 5 or abo ve. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+Manag ing the c ondi tion w hile a waiting tr ansf er 
+1.12.6 In ambulances and acut e hospital settings, on taking o ver car e for someone 
+whose risk of se vere illness or deat h from sepsis has originally been e valuat ed in 
+the community or in a cust odial setting, e valuat e their risk of se vere illness or 
+deat h from sepsis using NEWS2 . [202 4] 
+1.12.7 In remot e and rural locations wher e transf er time t o emer gency depar tment is 
+routinely mor e than 1 hour, ensur e GPs ha ve mechanisms in place t o giv e 
+antibiotics t o people wit h high risk crit eria in pr e-hospital settings. F or high risk 
+criteria, see table 3: crit eria f or stratification of risk fr om sepsis in people aged 16 
+or over who ar e in t he community or in a cust odial setting . [2016 , amended 
+202 4] 
+1.12.8 In remot e and rural locations wher e combined transf er and hando ver times t o 
+emer gency depar tment ar e greater than 1 hour: 
+• ambulance ser vices should consider whet her t hey need t o put mechanisms 
+in place t o be able t o giv e antibiotics t o people at high risk of se vere illness or Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 47 of
+95deat h from sepsis if antibiotics ha ve not been giv en bef ore by a GP (see 
+recommendation 1 .11.4 on e valuating risk of se vere illness or deat h from 
+sepsis ). 
+• paramedics who ar e thinking about giving antibiotics should f ollow local 
+guidelines. [2016 , amended 202 4] 
+See also t he recommendations on choice of antibiotic t herap y. 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: when t o count time fr om (time z ero). 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+If imme diate tr ansf er is not r equired 
+In community or cust odial settings 
+1.12.9 In the community and in cust odial settings, assess people aged 16 or o ver wit h 
+suspect ed sepsis who meet an y moderat e to high risk crit eria (as per table 3: 
+criteria f or stratification of risk fr om sepsis in people aged 16 or o ver who ar e in 
+the community or in a cust odial setting ) to: 
+• make a definitiv e diagnosis of t heir condition 
+• decide whet her t heir condition can be tr eated saf ely out side hospital. 
+If a definitiv e diagnosis is not r eached or t he person's condition cannot be 
+treated saf ely out side an acut e hospital setting, r efer them ur gent ly for 
+emer gency car e. [2016 , amended 202 4] 
+1.12.10 In the community and in cust odial settings, pr ovide inf ormation about t he 
+following t o people aged 16 or o ver wit h suspect ed sepsis who do not meet an y Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 48 of
+95high risk or moderat e to high risk crit eria: 
+• sympt oms t o monit or and 
+• how to access medical car e if t hey are concerned. 
+Also see information at dischar ge for people assessed f or suspect ed sepsis, 
+but not diagnosed wit h sepsis . [2016 , amended 202 4] 
+In acut e mental healt h settings 
+1.12.11 In acut e mental healt h settings, assess people aged 16 or o ver who ar e at 
+moderat e risk of se vere illness and deat h from sepsis (see recommendation 1 .11.4 
+on evaluating risk of se vere illness or deat h from sepsis ) to: 
+• make a definitiv e diagnosis of t heir condition 
+• decide whet her t heir condition can be tr eated saf ely out side hospital. 
+1.12.12 If a definitiv e diagnosis is not r eached or t he person's condition cannot be tr eated 
+safely out side an acut e hospital setting, f ollow local emer gency pr otocols on 
+treatment and ambulance transf er. [2016 , amended 202 4] 
+1.12.13 In acut e mental healt h settings, pr ovide inf ormation about t he following t o people 
+aged 16 or o ver who ar e at lo w or v ery low risk of sepsis: 
+• sympt oms t o monit or and 
+• how to access medical car e if t hey are concerned. 
+Also see information at dischar ge for people assessed f or suspect ed sepsis, 
+but not diagnosed wit h sepsis . [2016 , amended 202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 49 of
+95For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis out side acut e hospital settings: if immediat e transf er is not r equir ed. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+1.13 M anag ing suspe cted sepsis in acu te hospi tal 
+settings 
+Initial in vestig ations to find the sour ce of infection 
+1.13.1 For people in hospital who ha ve suspect ed inf ections: 
+• start looking f or the sour ce of inf ection (see t he section on finding and 
+contr olling t he sour ce of inf ection ) 
+• take micr obiological and blood samples bef ore giving an antimicr obial. 
+See t he UK standar ds for micr obiology in vestigations . [2016 , amended 202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 50 of
+95High risk o f severe illness or de ath fr om sepsis 
+In Januar y 202 4, we updat ed the recommendations in t his section t o incorporat e use 
+of NEWS2. 
+We did not r eview t he evidence on ot her aspect s of management. Evidence f or tests 
+and int erventions r ecommended in t his section was last r eview ed in 2016 . We are 
+currently reviewing t he evidence and will consider making new r ecommendations or 
+updating e xisting r ecommendations on: 
+• rapid antigen t esting 
+• indicat ors of or gan h ypoper fusion 
+• intravenous fluid t herap y 
+• vasopr essors. 
+This updat e is e xpect ed to publish in 2025 . See t he updat e page for mor e 
+information. 
+A person is at high risk of se vere illness or deat h from sepsis if t hey have suspect ed or 
+confirmed inf ection and a NEWS2 scor e of 7 or abo ve. 
+A person is also at high risk of se vere illness or deat h from sepsis if t hey have suspect ed 
+or confirmed inf ection, a NEWS2 scor e belo w 7, and: 
+• a single paramet er contribut es 3 point s to their NEWS2 scor e and a medical r eview 
+has confirmed t hat t hey are at high risk (see recommendation 1 .11.4 on e valuating risk 
+of se vere illness or deat h from sepsis ) or 
+• there are any other clinical r easons f or concern (see recommendations 1 .11.6 and 1 .11.7 
+on taking causes f or clinical concern int o account when e valuating risk of se vere 
+illness or deat h from sepsis ). 
+1.13.2 For people aged 16 or o ver who ar e at high risk of se vere illness or deat h from 
+sepsis: Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 51 of
+95• arrange f or a clinician wit h cor e compet encies in t he car e of acut ely ill 
+patient s (FY2 le vel or abo ve) to urgent ly assess t he person's condition and 
+think about alt ernativ e diagnoses t o sepsis 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• give antibiotics in line wit h recommendation 1 .13.3 and t he recommendations 
+on choice of antibiotic t herap y 
+• refer to the senior clinical decision mak er as soon as possible 
+• use clinical judgement t o decide whet her t o discuss wit h a consultant. 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: high and moderat e risk of se vere illness 
+or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 52 of
+95Antibiotics 
+1.13.3 Give people aged 16 or o ver who ar e at high risk of se vere illness or deat h from 
+sepsis br oad-spectrum intra venous antibiotic tr eatment, wit hin 1 hour of 
+calculating t he person's NEWS2 scor e on initial assessment in t he emer gency 
+depar tment or on war d det erioration. Only giv e antibiotics if t hey have not been 
+given bef ore for this episode of sepsis (see recommendations 1 .12.7 and 1 .12.8 on 
+managing t he condition while awaiting transf er). 
+Also see t he recommendations on finding and contr olling t he sour ce of inf ection 
+and choice of antibiotic t herap y. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis: type and timing of antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+Intravenous fluids 
+1.13.4 For people aged 16 or o ver wit h a high risk of se vere illness or deat h from sepsis 
+and either lactat e over 2 mmol/litr e or systolic blood pr essur e less t han 
+90 mmHg, giv e intra venous fluid bolus wit hout dela y (wit hin 1 hour of identifying 
+that t hey are at high risk) in line wit h recommendations on intra venous fluids f or 
+people wit h suspect ed sepsis . [202 4] 
+1.13.5 For people aged 16 or o ver wit h a high risk of se vere illness or deat h from sepsis 
+and lactat e of 2 mmol/litr e or lo wer, consider giving an intra venous fluid bolus (in 
+line wit h recommendations on intra venous fluids f or people wit h suspect ed 
+sepsis ). [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 53 of
+95Monit oring and escalation 
+1.13.6 Recalculat e the NEWS2 scor e periodically , in line wit h the recommendations on 
+when t o recalculat e a NEWS2 scor e. [202 4] 
+1.13.7 If a person aged 16 years or o ver who is at high risk of se vere illness or deat h 
+from sepsis does not r espond within 1 hour of an y intervention: 
+• ensur e the senior clinical decision mak er attends in person and 
+• refer to or discuss wit h a critical car e specialist or t eam and 
+• inform t he responsible consultant. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: high and moderat e risk of se vere illness 
+or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+Moder ate risk o f severe illness or de ath fr om sepsis 
+A person is at moderat e risk of se vere illness or deat h from sepsis if t hey have suspect ed 
+or confirmed inf ection and a NEWS2 scor e of 5 or 6 . 
+A person is also at moderat e risk of se vere illness or deat h from sepsis if t hey have 
+suspect ed or confirmed inf ection, a NEWS2 scor e belo w 5, and: 
+• a single paramet er contribut es 3 point s to their NEWS2 scor e, and a medical r eview 
+has confirmed t hat t hey are at moderat e risk (see recommendation 1 .11.4 on e valuating 
+risk of se vere illness or deat h from sepsis ) or 
+• there are any other clinical r easons f or concern (see recommendations 1 .11.6 and 1 .11.7 
+on taking causes f or clinical concern int o account when e valuating risk of se vere 
+illness or deat h from sepsis ). Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 54 of
+951.13.8 For people aged 16 or o ver wit h moderat e risk of se vere illness or deat h from 
+sepsis: 
+• carry out a v enous blood t est, including f or: 
+－ blood gas, including glucose and lactat e measur ement 
+－ blood cultur e 
+－ full blood count 
+－ C-reactiv e protein 
+－ urea and electr olytes 
+－ creatinine 
+－ liver function t ests 
+－ a clotting scr een 
+• arrange f or a clinician wit h cor e compet encies in t he car e of acut ely ill 
+patient s (FY2 le vel or abo ve) to review t he person's condition and v enous 
+lactat e result s wit hin 1 hour of t he person being assessed as at moderat e 
+risk. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: high and moderat e risk of se vere illness 
+or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+1.13.9 For people at moderat e risk of se vere illness or deat h from sepsis, a clinician wit h 
+core compet encies in t he car e of acut ely ill patient s (FY2 le vel or abo ve) should 
+consider: 
+• deferring administration of a br oad-spectrum antibiotic tr eatment f or up t o Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 55 of
+953 hours aft er calculating t he person's first NEWS2 scor e on initial assessment 
+in the emer gency depar tment or on war d det erioration and 
+• using t his time t o gat her inf ormation f or a mor e specific diagnosis (see 
+recommendations on finding and contr olling t he sour ce of inf ection and 
+choice of antibiotic t herap y) 
+• discussing wit h a senior clinical decision mak er. 
+Once a decision is made t o giv e antibiotics, do not dela y administration an y 
+further. [202 4] 
+1.13.10 For someone wit h a NEWS2 scor e of 5 or 6 and a single paramet er contributing 
+3 point s to their t otal NEWS2 scor e, use clinical judgement t o det ermine t he lik ely 
+cause of t he 3 point s in one paramet er. If the lik ely cause is: 
+• the curr ent inf ection, manage as high risk and giv e broad-spectrum antibiotic 
+treatment in line wit h recommendation 1 .13.3 
+• somet hing else (such as a pr e-existing condition), manage as moderat e risk 
+and f ollow recommendation 1 .13.9. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis: type and timing of antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+1.13.11 For people aged 16 or o ver at moderat e risk of se vere illness or deat h from 
+sepsis: 
+• recalculat e the NEWS2 scor e periodically , in line wit h the recommendations 
+on when t o recalculat e a NEWS2 scor e 
+• if there is det erioration or no impr ovement, escalat e car e to a clinician wit h 
+core compet encies in t he car e of acut ely ill patient s (FY2 le vel or abo ve). Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 56 of
+95[202 4] 
+1.13.12 For people aged 16 or o ver wit h a moderat e risk of se vere illness or deat h from 
+sepsis and either lactat e over 2 mmol/litr e or evidence of acut e kidne y injur y, 
+treat t heir condition as if t hey were at high risk of se vere illness or deat h from 
+sepsis. 
+For definition of acut e kidne y injur y, see NICE's guideline on acut e kidne y injur y. 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: high and moderat e risk of se vere illness 
+or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+Low risk o f severe illness or de ath fr om sepsis 
+A person is at lo w risk of se vere illness or deat h from sepsis if t hey have suspect ed or 
+confirmed inf ection and a NEWS2 scor e of 1 t o 4 (see recommendation 1 .11.4 on e valuating 
+risk of se vere illness or deat h from sepsis ) or a NEWS2 scor e of 0 and cause f or clinical 
+concern (see recommendations 1 .11.6 and 1 .11.7 on taking causes f or clinical concern int o 
+account when e valuating risk of se vere illness or deat h from sepsis ). 
+1.13.13 For people aged 16 or o ver at lo w risk of se vere illness or deat h from sepsis: 
+• arrange f or regist ered healt h practitioner r eview wit hin 1 hour of t he person 
+being assessed as at lo w risk 
+• perform blood t ests if indicat ed. [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 57 of
+95For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on lo w or v ery low 
+risk of se vere illness or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+1.13.14 For people at lo w risk of se vere illness or deat h from sepsis, r equest assessment 
+by a clinician wit h cor e compet encies in t he car e of acut ely ill patient s (FY2 le vel 
+or abo ve) for them t o consider: 
+• deferring administration of a br oad-spectrum antibiotic tr eatment f or up t o 
+6 hours aft er calculating t he person's first NEWS2 scor e on initial assessment 
+in the emer gency depar tment or on war d det erioration and 
+• using t his time t o gat her inf ormation f or a mor e specific diagnosis (see 
+recommendations on finding and contr olling t he sour ce of inf ection and 
+choice of antibiotic t herap y). 
+Once a decision is made t o giv e antibiotics, do not dela y administration an y 
+further. [202 4] 
+1.13.15 For someone wit h a NEWS2 scor e of 3 or 4 and a single paramet er contributing 
+3 point s to their t otal NEWS2 scor e, use clinical judgement t o det ermine t he lik ely 
+cause of t he 3 point s in one paramet er. If the lik ely cause is: 
+• the curr ent inf ection, manage as moderat e or high risk and: 
+－ for moderat e risk, giv e broad-spectrum antibiotic tr eatment in line wit h 
+recommendation 1 .13.9 
+－ for high risk, giv e broad-spectrum antibiotic tr eatment in line wit h 
+recommendation 1 .13.3 
+• somet hing else (such as a pr e-existing condition), manage as lo w risk and 
+follow recommendation 1 .13.14. [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 58 of
+95For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis: type and timing of antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . 
+1.13.16 For people aged 16 or o ver at lo w risk of se vere illness or deat h from sepsis: 
+• recalculat e the NEWS2 scor e periodically , in line wit h the recommendations 
+on when t o recalculat e a NEWS2 scor e 
+• if there is det erioration or no impr ovement, escalat e car e to a clinician wit h 
+core compet encies in t he car e of acut ely ill patient s (FY2 le vel or abo ve). 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on lo w or v ery 
+low risk of se vere illness or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+Very low risk o f severe illness or de ath fr om sepsis 
+A person is at v ery low risk of se vere illness or deat h from sepsis if t hey have suspect ed or 
+confirmed inf ection and a NEWS2 scor e of 0 (see recommendation 1 .11.4 on e valuating risk 
+of se vere illness or deat h from sepsis ). 
+1.13.17 For people who ar e at v ery low risk of se vere illness or deat h from sepsis: 
+• arrange f or review b y a regist ered healt h practitioner 
+• use clinical judgement t o manage t heir condition and escalat e if appr opriat e Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 59 of
+95• recalculat e the NEWS2 scor e periodically , in line wit h the recommendations 
+on when t o recalculat e a NEWS2 scor e. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on lo w or v ery low 
+risk of se vere illness or deat h from sepsis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+Dischar ge 
+1.13.18 Before dischar ging people who ha ve been assessed f or suspect ed sepsis, 
+provide inf ormation on: 
+• the management of t heir definitiv e condition (if identified) and 
+• warning signs f or sepsis (see information at dischar ge for people assessed 
+for suspect ed sepsis ). [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis in acut e hospital settings: dischar ge. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 60 of
+95Antibiotic ther apy, intravenous fluid and 
+oxygen 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.14 Choic e of antibiotic ther apy for pe ople wi th 
+suspe cted sepsis 
+Everyone 
+1.14.1 When t he sour ce of inf ection is confirmed or micr obiological r esult s are available: 
+• review t he choice of antibiotic(s) and 
+• change t he antibiotic(s) accor ding t o result s, using a narr ower-spectrum 
+antibiotic, if appr opriat e. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on managing 
+suspect ed sepsis: type and timing of antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+managing and tr eating suspect ed sepsis in acut e hospital settings; antibiotic 
+treatment in people wit h suspect ed sepsis . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 61 of
+951.14.2 For all people wit h suspect ed sepsis and a clear sour ce of inf ection, use e xisting 
+local antimicr obial guidance. [2016] 
+1.14.3 For guidance on antibiotics f or meningococcal disease, see t he NICE guideline on 
+bacterial meningitis and meningococcal disease. 
+• outside of hospital, see t he section on transf er to hospital and antibiotics 
+before arriv al at hospital 
+• in hospital, see t he section on antibiotics f or meningococcal disease in 
+hospital . 
+1.14.4 Follow the recommendations in NICE's guideline on antimicr obial st ewar dship: 
+systems and pr ocesses f or eff ectiv e antimicr obial medicine use when pr escribing 
+and using antibiotics t o treat people wit h suspect ed or confirmed sepsis. [2016] 
+Newborn babies under 28 da ys 
+1.14.5 Treat newborn babies under 28 days pr esenting in hospital wit h suspect ed sepsis 
+in their first 72 hours wit h intra venous benzylpenicillin and gentamicin. [2016] 
+1.14.6 Treat newborn babies under 28 days who ar e mor e than 40 weeks corr ected 
+gestational age who pr esent wit h community acquir ed sepsis wit h ceftriax one 
+50 mg/k g unless alr eady r eceiving an intra venous calcium infusion at t he time. If 
+40 weeks corr ected gestational age or belo w or r eceiving an intra venous calcium 
+infusion use cef otaxime 50 mg/k g every 6 to 12 hours, depending on t he age of 
+the bab y. [2016] 
+Under 3 mon ths o ld 
+1.14.7 For childr en younger t han 3 mont hs, giv e an additional antibiotic activ e against 
+listeria (f or example, ampicillin or amo xicillin). [2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 62 of
+95Under 18s e xcluding ne wborn babies 
+1.14.8 For people under 18 years ( excluding newborn babies under 28 days) wit h 
+suspect ed community acquir ed sepsis of an y cause giv e ceftriax one 80 mg/k g 
+once a da y wit h a maximum dose of 4 g daily at an y age. F or newborn babies 
+under 28 days, see r ecommendation 1 .14.6. [2016 , amended 202 4] 
+1.14.9 For people under 18 years ( excluding newborn babies under 28 days) wit h 
+suspect ed sepsis who ar e already in hospital, or who ar e kno wn to have 
+previously been inf ected wit h or colonised wit h ceftriax one-r esistant bact eria, 
+consult local guidelines f or choice of antibiotic. F or newborn babies under 
+28 days, see r ecommendation 1 .14.5. [2016 , amended 202 4] 
+People ag ed 18 or o ver 
+1.14.10 For people aged 18 years and o ver who need an empirical intra venous 
+antimicr obial f or suspect ed sepsis but who ha ve no confirmed diagnosis, use an 
+intravenous antimicr obial fr om t he agr eed local f ormular y and in line wit h local 
+(wher e available) or national guidelines. [2016] 
+1.15 I ntravenous fluids f or pe ople wi th suspe cted 
+sepsis 
+Type o f fluid 
+1.15.1 If newborn babies under 28 days need intra venous fluid r esuscitation, use 
+glucose-fr ee cr ystalloids t hat contain sodium in t he range 130 t o 154 mmol/litr e, 
+with a bolus of 10 t o 20 ml/kg over less t han 10 minut es. [This r ecommendation is 
+from NICE's guideline on intra venous fluid t herap y in childr en and y oung people in 
+hospital .] [2017] 
+1.15.2 If people up t o 16 years need intra venous fluid r esuscitation, use glucose-fr ee 
+crystalloids t hat contain sodium in t he range 130 t o 154 mmol/litr e, wit h a bolus 
+of 10 ml/kg over less t han 10 minut es. T ake into account pr e-existing conditions Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 63 of
+95(for example, car diac disease or kidne y disease), because smaller fluid v olumes 
+may be needed. [This r ecommendation is fr om NICE's guideline on intra venous 
+fluid t herap y in childr en and y oung people in hospital .] [2017] 
+1.15.3 If people o ver 16 years need intra venous fluid r esuscitation, use cr ystalloids t hat 
+contain sodium in t he range 130 t o 154 mmol/litr e wit h a bolus of 500 ml over less 
+than 15 minut es. [This r ecommendation is fr om NICE's guideline on intra venous 
+fluid t herap y in adult s in hospital .] [2017] 
+1.15.4 Consider human albumin solution 4 t o 5% f or fluid r esuscitation only in patient s 
+with sepsis and shock. [2016] 
+1.15.5 Do not use star ch-based solutions or h ydroxyethyl star ches f or fluid r esuscitation 
+for people wit h sepsis. [2016] 
+Mode o f deli very 
+1.15.6 Use a pump, or syringe if no pump is a vailable, t o deliv er intra venous fluids f or 
+resuscitation t o childr en under 12 wit h suspect ed sepsis who need fluids in bolus 
+form. [2016] 
+1.15.7 If using a pump or flo w contr oller t o deliv er intra venous fluids f or resuscitation t o 
+people o ver 12 years wit h suspect ed sepsis who need fluids in bolus f orm ensur e 
+device is capable of deliv ering fluid at r equir ed rat e for example at least 2000 ml/
+hour in adult s. [2016] 
+When to deli ver a se cond bo lus 
+1.15.8 Reassess t he patient aft er completion of t he intra venous fluid bolus, and if no 
+improvement giv e a second bolus. If t here is no impr ovement aft er a second 
+bolus: 
+• for people under 16 and people who ar e or ha ve recent ly been pr egnant, aler t 
+a consultant t o att end in person (in line wit h recommendation 1 .7.11 and 
+recommendation 1 .10.9) Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 64 of
+95• for people o ver 16 who ar e not pr egnant or ha ve not r ecent ly been pr egnant, 
+ensur e the senior clinical decision mak er att ends in person (in line wit h 
+recommendation 1 .13.7). [2016 , amended 202 4] 
+1.16 U sing o xygen for pe ople wi th suspe cted sepsis 
+1.16.1 Give oxygen t o achie ve a tar get saturation of 94−98% f or people aged 18 years 
+and o ver or 88−92% f or those at risk of h ypercapnic r espirat ory failure. [2016] 
+1.16.2 Oxygen should be giv en to people under 18 years wit h suspect ed sepsis who 
+have signs of shock or o xygen saturation (SpO2) of less t han 92% when 
+breathing air . Treatment wit h oxygen should also be consider ed for childr en wit h 
+an SpO2 of gr eater than 92%, as clinically indicat ed. See r ecommendation 1 .4.10 
+for saf ety warnings about t he use of pulse o ximet ers. [2016] 
+Be awar e that some pulse o ximet ers can under estimat e or o verestimat e oxygen 
+saturation le vels, especially if t he saturation le vel is bor derline. Ov erestimation has 
+been r epor ted in people wit h dark skin. See also t he NHS England Patient Saf ety 
+Alert on t he risk of harm fr om inappr opriat e placement of pulse o ximet er pr obes . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 65 of
+95Finding and c ontrolling the sour ce of 
+infection 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.17 E veryone 
+1.17.1 Tailor in vestigations of t he sour ces of inf ection t o the person's clinical hist ory and 
+to findings fr om e xamination. [2016] 
+1.17.2 Consider urine analysis and chest X -ray to identify t he sour ce of inf ection in all 
+people wit h suspect ed sepsis. [2016] 
+1.17.3 Consider imaging of t he abdomen and pelvis if no lik ely sour ce of inf ection is 
+identified aft er clinical e xamination and initial t ests. [2016] 
+1.17.4 Involve the relevant sur gical t eam early on if sur gical or radiological int ervention is 
+suitable f or the sour ce of inf ection. The sur gical t eam or int erventional radiologist 
+should: 
+• seek senior advice about t he timing of int ervention 
+• carry the int ervention out as soon as possible, in line wit h the advice 
+receiv ed. [202 4] 
+For guidance on contraindications t o lumbar punctur e, see t he section on lumbar punctur e 
+in the NICE guideline on bact erial meningitis and meningococcal disease . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 66 of
+95For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on finding and 
+contr olling t he sour ce of inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+early management of suspect ed sepsis ( except antibiotic t herap y) in t he NEWS2 
+population, in acut e hospital settings . 
+1.18 Childr en ag ed 3 mon ths or less 
+1.18.1 Perform lumbar punctur e in t he following childr en wit h suspect ed sepsis (unless 
+contraindicat ed, see t he section on lumbar punctur e in t he NICE guideline on 
+bacterial meningitis and meningococcal disease ): 
+• childr en younger t han 1 mont h 
+• all childr en aged 1 t o 3 mont hs who appear unw ell 
+• childr en aged 1 t o 3 mont hs wit h a whit e blood cell count less t han 5×109
+/litre 
+or gr eater than 15×109
+/litre. [2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 67 of
+95Informa tion and suppor t for all pe ople 
+with suspe cted sepsis 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.19 Comm unic ating and sharing inf orma tion 
+1.19.1 In discussions wit h people wit h suspect ed sepsis or t heir f amily or car ers, and 
+when sharing inf ormation wit h them: 
+• follow the recommendations in NICE's guidelines on patient e xperience in 
+adult NHS ser vices and babies, childr en and y oung people's e xperience of 
+healt hcare 
+• ensur e that t he inf ormation giv en suppor ts shar ed decision making, and 
+follow the recommendations in NICE's guideline on shar ed decision making 
+• tailor t he timing, cont ent and deliv ery of inf ormation t o the person's needs 
+and pr eferences, pa ying par ticular att ention t o people wit h additional needs 
+such as autism or learning disabilities, or people whose first language is not 
+English. [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 68 of
+951.20 P eople who ha ve sepsis and their f amilies and 
+carers 
+1.20.1 Ensur e a car e team member is nominat ed to giv e information t o families and 
+carers, par ticularly in emer gency situations such as in t he emer gency 
+depar tment. This should include: 
+• an explanation t hat t he person has sepsis, and what t his means 
+• an explanation of an y investigations and t he management plan 
+• regular and timely updat es on tr eatment, car e and pr ogress. [2016] 
+1.20.2 Ensur e information is giv en wit hout using medical jar gon. Check r egularly t hat 
+people understand t he inf ormation and e xplanations t hey are giv en. [2016] 
+1.20.3 Give people wit h sepsis and t heir f amily members and car ers oppor tunities t o ask 
+questions about diagnosis, tr eatment options, pr ognosis and complications. Be 
+willing t o repeat an y information as needed. [2016] 
+1.20.4 Give people wit h sepsis and t heir f amilies and car ers inf ormation about national 
+charities and suppor t groups t hat pr ovide inf ormation about sepsis and t he 
+causes of sepsis. [2016] 
+1.21 I nforma tion a t dischar ge for pe ople assesse d 
+for suspe cted sepsis, bu t not diagnose d wi th sepsis 
+1.21.1 Give people who ha ve been assessed f or sepsis but ha ve been dischar ged 
+without a diagnosis of sepsis (and t heir f amily or car ers, if appr opriat e) verbal and 
+writt en inf ormation about: 
+• what sepsis is, and wh y it was suspect ed 
+• what t ests and in vestigations ha ve been done 
+• instructions about which sympt oms t o monit or Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 69 of
+95• when t o get medical att ention if t heir illness continues 
+• how to get medical att ention if t hey need t o seek help ur gent ly. [2016] 
+1.21.2 Confirm t hat people understand t he inf ormation t hey have been giv en, and what 
+actions t hey should tak e to get help if t hey need it. [2016] 
+1.22 I nforma tion a t dischar ge for pe ople at 
+increased risk o f sepsis 
+1.22.1 Ensur e people who ar e at incr eased risk of sepsis (f or example aft er sur gery) ar e 
+told bef ore dischar ge about sympt oms t hat should pr ompt t hem t o get medical 
+attention and ho w to get it. [2016] 
+See NICE's guideline on neutr openic sepsis for inf ormation f or people wit h 
+neutr openic sepsis. 
+1.23 Informa tion a t dischar ge for pe ople who ha ve 
+had sepsis 
+1.23.1 Ensur e people and t heir f amilies and car ers ha ve been inf ormed t hat t hey have 
+had sepsis. [2016] 
+1.23.2 Ensur e dischar ge notifications t o GPs include t he diagnosis of sepsis. [2016] 
+1.23.3 Give people who ha ve had sepsis (and t heir f amilies and car ers, when 
+appr opriat e) oppor tunities t o discuss t heir concerns. These ma y include: 
+• why they developed sepsis 
+• whet her t hey are likely to develop sepsis again 
+• if mor e investigations ar e necessar y 
+• details of an y community car e needed, f or example, r elated to peripherally Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 0 of
+95inser ted central v enous cat heters (PICC) lines or ot her intra venous cat heters 
+• what t hey should e xpect during r ecovery 
+• arrangement s for follow-up, including specific critical car e follow up if 
+relevant 
+• possible shor t-term and long-t erm pr oblems. [2016] 
+1.23.4 Give people who ha ve had sepsis and t heir f amilies and car ers inf ormation about 
+national charities and suppor t groups t hat pr ovide inf ormation about sepsis and 
+causes of sepsis. [2016] 
+1.23.5 Advise car ers t hey have a legal right t o have a car er's assessment of t heir needs, 
+and giv e them inf ormation on ho w they can get t his. 
+See NICE's guideline on r ehabilitation aft er critical illness in adult s for 
+recommendations on r ehabilitation and f ollow up aft er critical illness. 
+See NICE's guideline on bact erial meningitis and meningococcal disease for 
+follow-up of people who ha ve had meningococcal disease. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 71 of
+95Training and e ducation 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.24 Healthcare staf f involved in assessing clinic al 
+condi tion 
+1.24.1 Ensur e all healt hcare staff and student s involved in assessing people's clinical 
+condition ar e giv en regular , appr opriat e training in identifying people who might 
+have sepsis. This includes primar y, community car e and hospital staff including 
+those w orking in car e homes. [2016] 
+1.25 H ealthcare professionals in volved in triag e or 
+early manag emen t 
+1.25.1 Ensur e all healt hcare professionals in volved in triage or early management ar e 
+given regular appr opriat e training in identifying, assessing and managing 
+suspect ed sepsis. This should include: 
+• risk stratification strat egies 
+• local pr otocols f or early tr eatment s, including antibiotics and intra venous 
+fluids 
+• criteria and pat hways for escalation, in line wit h their healt h car e setting. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 72 of
+95[2016] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 3 of
+95Terms use d in this guideline 
+Critical care spe cialist or te am 
+An int ensivist or int ensiv e car e outr each t eam, or a specialist in int ensiv e car e or paediatric 
+intensiv e car e. 
+Not responding to in travenous fluid r esusci tation 
+Signs t hat t he person is not r esponding t o resuscitation include lack of impr ovement or 
+worsening: 
+• tachycardia 
+• level of consciousness 
+• blood pr essur e 
+• respirat ory rat e 
+• blood lactat e 
+• urine output 
+• peripheral per fusion 
+• blood gases. 
+Recently pregnan t 
+Someone is consider ed to have recent ly been pr egnant: 
+• in the 24 hours f ollowing a t ermination of pr egnancy or miscarriage 
+• for 4 weeks aft er giving bir th. 
+Clinical judgement is needed aft er miscarriage (par ticularly in t he second trimest er) or 
+termination (par ticularly in t he second or t hird trimest er), because it is not clear ho w Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 4 of
+95quickly people r eturn t o pre-pregnancy le vels in t hese situations. 
+Sepsis 
+Sepsis is a lif e-threatening or gan dysfunction due t o a dysr egulat ed host r esponse t o 
+infection. 
+Suspe cted sepsis 
+Suspect ed sepsis is used t o indicat e people who might ha ve sepsis and r equir e face-t o-
+face assessment and consideration of ur gent int ervention. 
+Senior clinic al de cision mak er 
+A 'senior clinical decision mak er' for people under 18 is a paediatric or emer gency car e 
+qualified doct or of grade ST 4 or abo ve or equiv alent. 
+A 'senior clinical decision mak er' for people aged 18 years or o ver is a clinician of grade 
+ST3 or abo ve or equiv alent. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 5 of
+95Recommenda tions f or research 
+1 Epidemio logical stud y on pr esen tation and 
+manag emen t of sepsis in E ngland 
+What is t he incidence, pr esentation and management of sepsis in t he Unit ed K ingdom? 
+[2016] 
+Why this is im portant 
+The lack of r obust UK based epidemiological studies on t he incidence and out comes fr om 
+sepsis ha ve been clear t hroughout t he guideline de velopment pr ocess. A lar ge 
+epidemiological study t o collect inf ormation about wher e sepsis is being tr eated, patient 
+interventions and patient out comes w ould pr ovide population based statistics on 
+epidemiology of sepsis which ar e necessar y to suppor t evaluation of int erventions, 
+planning of ser vices and ser vice r edesign. The mor tality and morbidity and ser vice 
+comple xity associat ed wit h severe infection and sepsis, and t he need t o use br oad-
+spectrum antimicr obials t o treat sepsis, justifies t he cost r equir ed to set up such a study . 
+2 Associa tion be tween NE WS2 bands ( 0, 1 to 4, 5 to 
+6, 7 or abo ve) and risk o f severe illness or de ath 
+In adult s and y oung people (16 and o ver) wit h suspect ed sepsis in acut e hospital settings, 
+ambulance trust s and acut e mental healt h facilities, what is t he association betw een 
+NEWS2 bands (0 , 1 to 4, 5 to 6, 7 or abo ve) and risk of se vere illness or deat h? In adult s 
+and y oung people (16 and o ver) wit h suspect ed sepsis in acut e hospital settings, 
+ambulance trust s and acut e mental healt h facilities, what is t he association betw een t he 
+NEWS2 scor e of 3 in a single paramet er and risk of se vere illness or deat h? [202 4] 
+Why this is im portant 
+The NEWS2 has been intr oduced in 2017 and is widely used acr oss t he NHS pr e-hospital 
+and acut e car e settings. Ho wever, evidence on t he NEWS2 was not f ound. It is impor tant 
+to investigat e, over a 5- t o 10-y ear period, t he success, saf ety and possible implications Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 6 of
+95on people wit h suspect ed sepsis and clinical staff of using t he NEWS2 t o stratify t he risk 
+of se vere illness or deat h from sepsis. 
+Lack of data t o stratify risk of se vere illness or deat h from sepsis and estimat e possible 
+risk of det erioration in people wit h a single paramet er contributing 3 point s to their NEWS2 
+score is also of gr eat concern. Data r elating t o this is scar ce and it s interpretation 
+contradict ory. 
+3 Deri vation o f clinic al de cision rules in suspe cted 
+sepsis 
+Is it possible t o deriv e and v alidat e a set of clinical decision rules or a pr edictiv e tool to rule 
+out sepsis which can be applied t o patient s presenting t o hospital wit h suspect ed sepsis? 
+[2016] 
+Why this is im portant 
+In primar y car e and emer gency depar tment s people wit h suspect ed sepsis ar e oft en seen 
+by relativ ely ine xperienced doct ors. Man y of t hese people will be in lo w and medium risk 
+groups but e vidence is lacking as t o who can be sent home saf ely and who needs 
+intravenous or oral antibiotics. The consequences of getting t he decision making wr ong 
+can be catastr ophic and t herefore man y patient s are pot entially o ver-investigat ed and 
+admitt ed inappr opriat ely. Curr ent guidance is dependent on use of individual v ariables 
+informed b y low quality e vidence. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 7 of
+95Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he updat ed recommendations 
+and ho w they might aff ect practice. 
+People wi th neu tropenia or imm unosuppr ession 
+Recommendations 1 .1.10 and 1 .1.12 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee car efully t hought about car e for people wit h neutr openia or 
+immunosuppr ession, such as t hose on anticancer tr eatment and immunosuppr essant 
+therapies, because sepsis shar es man y of t he same signs and sympt oms as neutr openic 
+sepsis. The committ ee agr eed t hat people wit h suspect ed neutr openic sepsis ar e at v ery 
+high risk and should be tr eated in line wit h NICE's guideline on neutr openic sepsis in 
+people wit h cancer . 
+Return t o recommendations 
+Initial assessmen t and e xamina tion 
+Recommendation 1 .3.9 
+Why the c ommi ttee made the r ecommenda tion 
+The committ ee agr eed t hat t he initial assessment is an impor tant oppor tunity t o identify 
+people who ar e most at risk of sepsis. The y not ed that sepsis is har d to recognise 
+(particularly in t he initial stages), because t he signs and sympt oms ar e not specific. So 
+when people who ar e unw ell pr esent multiple times t o a GP or hospital wit h non-specific 
+signs and sympt oms, t hey ma y not initially be identified as at risk of sepsis. Ho wever, the 
+committ ee agr eed t hat t his gr oup is mor e likely to have sepsis, and t hey highlight ed the 
+need t o ask people if t hey have present ed bef ore. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 8 of
+95How the r ecommenda tion mig ht affect practice 
+Asking people about multiple pr esentations can be done as par t of t he existing initial 
+assessment, so should not r equir e additional r esour ces t o implement. This inf ormation 
+could allo w sepsis t o be diagnosed and tr eatment star ted earlier . This could r educe cost s, 
+because f ewer critical car e interventions w ould be needed at a lat er point. 
+Return t o recommendation 
+Evaluating risk le vel in pe ople wi th suspe cted 
+sepsis in acu te hospi tal se ttings, acu te men tal 
+health se ttings and ambulanc es 
+Recommendation 1 .1.8 and recommendations 1 .11.4 to 1.11.9 
+Why the c ommi ttee made the r ecommenda tions 
+Using t he NEW S2 t o evaluat e risk fr om sepsis 
+Evidence sho wed an incr eased risk of ICU admission and mor tality in people wit h 
+suspect ed sepsis aged 16 and o ver associat ed wit h a NEWS2 scor e of 5 or mor e. This 
+suppor ts the findings of t he 2022 AoMRC stat ement on t he initial antimicr obial tr eatment 
+of sepsis . It is also in line wit h the clinical e xperience of t he committ ee. 
+The committ ee agr eed, based on t heir kno wledge and e xperience, t hat: 
+• the 4 NEWS2 scor e bands out lined in t he 2022 AoMRC stat ement should be used t o 
+determine t he le vel of risk fr om sepsis f or someone in an y of t he settings wher e 
+NEWS2 has been endorsed b y NHS England (acut e hospital settings, acut e mental 
+healt h settings and ambulances) [202 4] 
+• a person's risk le vel should be r e-evaluat ed each time new obser vations ar e made, in 
+line wit h obser vation fr equencies in t he AoMRC r epor t [202 4] 
+• a person's risk le vel should be r e-evaluat ed when t here is det erioration or an 
+unexpect ed change. [202 4] Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 9 of
+95Interpr eting NEW S2 scor es 
+The committ ee discussed t he impor tance of clinical judgement when int erpreting t he 
+NEWS2 scor es. The y agr eed t hat t he NEWS2 should be used as a t ool to suppor t clinical 
+decision making, not t o replace clinical judgement. A NEWS2 scor e should t hus be 
+interpreted wit hin the cont ext of t he patient's hist ory and ph ysical e xamination r esult s. 
+The committ ee also ackno wledged t hat NEWS2 can be less accurat e in people wit h 
+certain conditions, such as people wit h spinal injur y or hear t or lung disease, because of 
+their alt ered baseline ph ysiology . 
+The committ ee also highlight ed that mott led or ashen appearance, non-blanching rash or 
+cyanosis of skin, lips or t ongue can be signs of meningococcal disease. [202 4] 
+NEW S2 scor e of 0 
+The committ ee discussed t he car e for someone wit h a NEWS2 scor e of 0 . The y were 
+concerned t hat a scor e of 0 ma y be int erpreted as indicating t hat t here was no risk and no 
+action was needed. The y emphasised t hat people wit h a possible or confirmed inf ection 
+and a NEWS2 scor e of 0 ar e still at risk of sepsis and should r eceiv e routine NEWS2 scor e 
+monit oring in line wit h local practice. 
+They also agr eed t hat acut e illness is a dynamic stat e and tr eatment priorities must be 
+adjust ed over time. The y agr eed t o highlight t hat det erioration or lack of impr ovement in 
+the person's condition might indicat e the need t o tak e mor e urgent actions t han suggest ed 
+by their NEWS2 scor e alone, depending on an y previous NEWS2 scor e or action alr eady 
+taken. [202 4] 
+Single par amet er contributing 3 point s to a NEW S2 scor e 
+In the NEWS2 framew ork as defined b y the Royal College of Ph ysicians f or the assessment 
+of acut e illness se verity (t hat is, not specific t o sepsis), specific att ention is giv en to a 
+NEWS2 scor e of 3 in a single paramet er, which is classified as lo w-medium risk. The 
+AoMRC r epor t on t he initial antimicr obial tr eatment of sepsis uses t he NEWS2 t o evaluat e 
+risk of se vere illness or deat h from sepsis. It does not suppor t syst ematic use of a single 
+paramet er contributing 3 point s to a NEWS2 scor e to escalat e car e but does stat e that 
+'abnormal single paramet ers should be used t o aler t clinicians t o the need f or mor e 
+detailed obser vation and in vestigation' . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 80 of
+95The committ ee consider ed this issue at lengt h. Despit e the lack of e vidence, and based on 
+their clinical e xper tise, t hey agr eed t hat: 
+• a single paramet er contributing 3 point s to a NEWS2 scor e is an impor tant r ed flag 
+suggesting an incr eased risk of or gan dysfunction and fur ther det erioration and 
+• in the pr esence of such a paramet er, clinical judgement is k ey to car efully consider t he 
+likely cause of it s extreme v alue and whet her t he person's condition needs t o be 
+managed as per a higher risk le vel than t hat suggest ed by their NEWS2 scor e alone. 
+[202 4] 
+How the r ecommenda tions mig ht affect practice 
+The NEWS2 is alr eady in use in most NHS acut e car e settings, emer gency depar tment s, 
+ambulance ser vices and mental healt h facilities in England. The committ ee agr eed t hat 
+recommending it s use t o evaluat e risk of se vere illness or deat h from sepsis in t hese 
+settings w ould fur ther impr ove consist ency in t he det ection of and r esponse t o acut e 
+illness due t o sepsis (f or people f or whom t he NEWS2 can be used), at no fur ther cost. 
+[202 4] 
+Return t o recommendation 1 .1.8 
+Return t o recommendations 1 .11.4 to 1.11.9 
+Outside acu te hospi tal se ttings 
+Recommendation 1 .12.3, recommendations 1 .12.4 and 1 .12.5, recommendations 1 .12.6 and 
+1.12.8 and recommendation 1 .12.11 
+Why the c ommi ttee made the r ecommenda tions 
+When t o transf er immediat ely: people in mental healt h settings 
+Ther e was no e vidence identified f or acut e mental healt h settings, so t he committ ee 
+recommended f ollowing local emer gency pr otocols. [202 4] 
+Transf er by ambulance f or people wit h consecutiv e NEW S2 scor es of 5 or Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 81 of
+95above 
+The committ ee consider ed: 
+• settings and situations wher e a clinician wit h cor e compet encies in t he car e of acut ely 
+ill patient s ma y not be pr esent, such as ambulances and mental healt h facilities 
+• impor tant issues f aced in rural ar eas, wher e transpor t to the near est appr opriat e acut e 
+setting might tak e longer t han in urban ar eas 
+• existing local and personal arrangement s. 
+Because e vidence sho ws a higher risk of acut e det erioration in people wit h suspect ed 
+sepsis and a persist ent NEWS2 scor e of 5 or mor e, which w ould r equir e timely 
+management and tr eatment, t hey agr eed t hat time-critical transf er and pr e-aler ting t he 
+hospital should be consider ed for these people. [202 4] 
+Managing t he condition while awaiting tr ansf er 
+In remot e and rural locations, t here can be a long dela y betw een a person initially being 
+assessed as at high risk of se vere illness or deat h from sepsis, and t he assessment in t he 
+emer gency depar tment. T o addr ess t his issue, t he committ ee made r ecommendations on 
+giving antibiotics out side of hospital. [2016 , amended 202 4] [202 4] 
+In ambulance cr ews, only some paramedics ar e able t o prescribe antibiotics. Ther e is also 
+variation in ho w ser vices ar e organised acr oss t he countr y. Because of t his, t he committ ee 
+did not t hink t hey could mak e detailed r ecommendations f or all ambulance ser vices, so 
+they recommended f ollowing local guidelines. [202 4] 
+The committ ee discussed t he impor tance of antimicr obial st ewar dship and t he pot ential 
+for the recommendations t o incr ease t he use of br oad-spectrum antibiotics. The 
+committ ee did not t hink t his w ould be an issue because: 
+• the recommendations only co ver people at high risk of se vere illness or deat h from 
+sepsis, which narr ows the gr oup t hat could pot entially r eceiv e broad-spectrum 
+antibiotics 
+• this gr oup will be narr owed fur ther because br oad-spectrum antibiotics will only be 
+given to people if combined transf er and hando ver times t o emer gency depar tment s 
+are greater than 1 hour. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 82 of
+95If immediat e transf er is not r equir ed: people in mental healt h settings 
+No e vidence was identified f or acut e mental healt h settings, so t he committ ee made 
+recommendations based on t heir e xper tise and e xperience. 
+The committ ee agr eed t hat, in acut e mental healt h settings, immediat e transf er will not 
+alwa ys be needed f or people wit h a moderat e, low or v ery low risk of se vere illness and 
+deat h from sepsis. [202 4] 
+In people at moderat e risk of se vere illness or deat h from sepsis, t he committ ee agr eed 
+that transf er to hospital ma y be needed, depending on t he definitiv e diagnosis of t he 
+person's condition and whet her it could be tr eated saf ely out side of hospital. The 
+committ ee was awar e that not all mental healt h settings w ould ha ve the exper tise t o 
+assess t his, or t o manage suspect ed sepsis or an y other suspect ed or confirmed ph ysical 
+healt h conditions. Because of t he variation in ser vices, and t he lack of e vidence, t he 
+committ ee recommended f ollowing local emer gency pr otocols on tr eatment and 
+ambulance transf er. [202 4]. 
+People at lo w or v ery low risk of se vere illness and deat h do not need immediat e transf er, 
+but t heir le vel of risk can still change rapidly . The committ ee recommended pr oviding 
+information t o these people about which sympt oms t o monit or and ho w to access medical 
+care if t here are any causes f or concern. [202 4]. 
+How the r ecommenda tions mig ht affect practice 
+The committ ee car efully consider ed the threshold at which t o prompt immediat e transf er, 
+to avoid an e xcessiv ely high v olume of r eferrals, t hat w ould put undue pr essur e on 
+emer gency depar tment s and acut e hospital war ds, while also a voiding geographical 
+inequalities associat ed wit h transf er time. The committ ee striv ed to create a bett er 
+balance while a voiding a negativ e impact on curr ent practice. [202 4] 
+If not alr eady in place, rural ambulance ser vices ma y need t o produce local guidance or 
+put mechanisms in place t o ensur e antibiotics can be pr escribed f or people at high risk of 
+severe illness or deat h from sepsis. This ma y involve: 
+• setting up pr ocesses f or pur chasing and st oring br oad-spectrum antibiotics 
+• collecting inf ormation fr om GPs, acut e mental healt h settings or t he emer gency 
+operat or during a hando ver Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 83 of
+95• assessing e xisting r esour ces wit hin ambulance cr ews and ho w they are used acr oss 
+the ser vice. 
+The r ecommendations ma y represent a big change in practice f or some ser vices, but once 
+the relevant mechanisms ar e in place t he resour ce impact on ser vices w ould be minimal. 
+Return t o recommendations 
+Manag ing suspe cted sepsis in acu te hospi tal 
+settings 
+Type and timing o f antibiotics 
+Recommendations 1 .13.3, 1.13.9, 1.13.10, 1.13.14, 1.13.15 and recommendation 1 .14.1 
+Why the committ ee made t he recommendations 
+Timing of antibiotics 
+Given the lack of dir ect e vidence, t he committ ee decided, b y consensus, t o recommend 
+adopting t he initial antimicr obial tr eatment of sepsis out lined in t he 2022 AoMRC 
+statement . That is, antibiotics should be off ered to people wit h low, moderat e and high risk 
+of se vere illness or deat h from sepsis, wit hin a timeframe t hat depends on risk le vel. The y 
+should also be off ered to people at v ery low risk, on a need f or basis, in line wit h local 
+practice. 
+The committ ee highlight ed that: 
+• the purpose of def erring antibiotic deliv ery is not t o dela y treatment, but t o have extra 
+time t o gat her inf ormation f or a mor e specific diagnosis, allo wing f or mor e tar geted 
+treatment 
+• the 1-, 3- and 6-hour time limit s are a maximum (rat her t han an aim) f or each risk le vel 
+• clinical judgement is k ey when considering someone's specific car e needs. 
+This e xplains wh y they also r ecommended t hat once a decision is made t o giv e 
+antimicr obials, administration should not be dela yed an y fur ther. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 84 of
+95The committ ee agr eed t hat basing t he risk e valuation and antibiotic deliv ery time on t he 
+NEWS2 w ould ensur e due consideration is giv en to bot h patient saf ety and antimicr obial 
+stewar dship. [202 4] 
+Single par amet er contributing 3 point s to a NEW S2 scor e 
+The committ ee agr eed t hat a single paramet er contributing 3 point s to a person's NEWS2 
+score ma y be suggestiv e of or gan dysfunction. The dysfunction ma y be caused eit her: 
+• by somet hing ot her t han t he curr ent inf ection or 
+• by the body's dysr egulat ed response t o the inf ection leading t o organ f ailure (that is, 
+by sepsis). 
+Based on t heir clinical e xper tise, t he committ ee concluded t hat, if t he lik ely cause of t he 
+3 point s in 1 paramet er is t he curr ent inf ection, t he person's risk of se vere illness or deat h 
+from sepsis is higher t han t hat indicat ed by their NEWS2 scor e alone and t he timeframe 
+for antibiotic tr eatment should be adjust ed accor dingly . [202 4, amended 202 4] 
+When t o count time fr om (time z ero) 
+To guide t he appr opriat e timing f or deliv ering antibiotics, t he committ ee discussed what 
+constitut es time z ero. Aft er car eful consideration, t hey agr eed t o define it as 'a first 
+NEWS2 scor e calculat ed on initial assessment in t he emer gency depar tment or on war d 
+deterioration' and accompanied b y suspect ed or confirmed inf ection. This is in line wit h 
+the AoMRC r epor t. 
+However, the committ ee raised concerns about possible inequalities and dela ys in clinical 
+assessment and subsequent r eviews t hat ma y be due t o: 
+• geographical v ariability in transf er time and 
+• the high influx of patient s and alr eady strained NHS syst em. [202 4] 
+They recognised t hat a long time might elapse betw een t he moment a patient is first 
+deemed t o be at high risk and t hat of initial assessment in an emer gency depar tment, so 
+they also agr eed t o mak e recommendations t o addr ess t his issue. T o this end, t hey wrote 
+a new r ecommendation and amended, b y consensus, an e xisting r ecommendation fr om 
+the 2016 guideline t o tak e account of situations wher e not only transf er time but also Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 85 of
+95possible dela ys betw een arriv al and initial assessment in t he emer gency depar tment tak e 
+more than 1 hour. For mor e information, see t he explanation of t he recommendations on 
+managing t he condition while awaiting transf er. 
+Type of antibiotics 
+As par t of giving due consideration t o bot h patient saf ety and antimicr obial st ewar dship, 
+the committ ee agr eed t hat: 
+• for people wit h suspect ed sepsis f or whom t he sour ce of inf ection is unkno wn, br oad-
+spectrum antibiotic tr eatment should be giv en wit hin the recommended timeframe f or 
+the person's risk cat egor y 
+• once t he sour ce of inf ection is confirmed, sour ce specific antibiotics should be used 
+instead. [202 4] 
+How the recommendations might aff ect pr actice 
+For ambulance ser vices, mental healt h settings, and acut e hospitals t hat ar e already using 
+the NEWS2, t he recommendations will not ha ve a major impact on practice. Basing risk 
+stratification and timing of antibiotics on NEWS2 scor e will balance patient saf ety, 
+antimicr obial st ewar dship and r esour ce capacity constraint s. [202 4] 
+Return t o recommendations 1 .13.3, 1.13.9, 1.13.10, 1.13.14, 1.13.15 
+Return t o recommendation 1 .14.1 
+High and moder ate risk o f severe illness or de ath fr om sepsis 
+Recommendations 1 .13.2, 1.13.7, 1.13.8 and 1 .13.11 
+Why the committ ee made t he recommendations 
+The committ ee not ed the impor tance of clear escalation pat hways for car e of people at 
+high and moderat e risk of se vere illness or deat h from sepsis. 
+The committ ee recommended t hat clinicians wit h cor e compet encies in t he car e of acut ely 
+ill patient s (FY2 or abo ve) conduct t he initial assessment, because t hey have the Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 86 of
+95compet encies needed f or this and should be able t o assess people mor e urgent ly. 
+People at high risk ar e severely ill and ma y benefit fr om additional e xper tise in t he 
+management of t heir condition. R eferral t o the senior clinical decision mak er is 
+recommended because t hese senior doct ors w ould be able t o provide a mor e accurat e 
+diagnosis. Consultant s can bring fur ther e xper tise, but t hey ma y have limit ed availability , 
+so the committ ee recommended t hat clinical judgement should be used when deciding if a 
+discussion wit h a consultant is needed. [202 4]. 
+For people at high risk, t he committ ee br oadened t he 2016 r ecommendation on escalation 
+to cover lack of r esponse wit hin 1 hour of an y intervention (t he original r ecommendation 
+only co vered response t o fluids and antibiotics). G iven the le vel of risk f or this gr oup, t he 
+committ ee also f elt it was appr opriat e to involve the senior clinical decision mak er, the 
+responsible consultant and t he critical car e specialist or t eam. 
+For people at moderat e risk whose NEWS2 scor e remains t he same or goes up f ollowing 
+reassessment, t here is a higher risk of poor out comes and pr ompt int ervention ma y be 
+needed. Because of t his, t he committ ee recommended t hat car e for this gr oup should be 
+escalat ed to a clinician wit h cor e compet encies in t he car e of acut ely ill patient s. 
+How the recommendations might aff ect pr actice 
+The r ecommendation on initial assessment will ensur e people ar e assessed quickly b y a 
+clinician wit h cor e compet encies in t he car e of acut ely ill patient s and ar e able t o star t 
+treatment wit hout ha ving t o wait f or a mor e senior doct or. This will allo w treatment t o star t 
+sooner and r educe pr essur e on mor e senior doct ors. 
+The updat ed recommendation on escalation will r educe t he number of r eferrals t o critical 
+care, as t his is no w only r ecommended f or people who ar e not r esponding t o interventions. 
+The in volvement of t he senior clinical decision mak er and r esponsible consultant is alr eady 
+current practice f or people who ar e not r esponding t o interventions, so t his will not ha ve a 
+resour ce impact. 
+For people at moderat e risk whose condition has not impr oved or det eriorat ed, escalation 
+to a clinician wit h cor e compet encies in t he car e of acut ely ill patient s is alr eady curr ent 
+practice and so will not ha ve a resour ce impact. 
+Return t o recommendations Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 87 of
+95Dischar ge 
+Recommendation 1 .13.18 
+Why the committ ee made t he recommendation 
+By consensus, t he committ ee removed recommendations on dischar ge for people at 
+moderat e and lo w risk of se vere illness or deat h from sepsis. The committ ee did not t hink 
+that t he initial management period was t he right time t o consider dischar ge for people at 
+these risk le vels. The section of t he 2016 r ecommendations on pr oviding inf ormation and 
+safety netting was r etained, as t his is applicable t o everyone wit h suspect ed sepsis when 
+they are eventually r eady f or dischar ge. 
+How the recommendation might aff ect pr actice 
+This change t o the recommendations is not e xpect ed to have a significant impact on 
+practice, because saf ety netting inf ormation should alr eady be pr ovided t o people who 
+have had suspect ed sepsis. 
+Return t o recommendation 
+Low or v ery low risk o f severe illness or de ath fr om sepsis 
+Recommendations 1 .13.13 and 1 .13.16, and recommendation 1 .13.17 
+Why the committ ee made t he recommendations 
+The committ ee agr eed, based on t heir e xperience, t hat, all r egist ered healt h practitioners 
+would be capable of conducting t he initial assessment f or people at lo w or v ery low risk of 
+suspect ed sepsis. 
+Antibiotics ar e mor e likely to be needed f or people whose NEWS2 scor e remains t he same 
+or goes up f ollowing r eassessment. Because of t his, t he committ ee recommended t hat 
+care for this gr oup should be escalat ed to a clinician wit h cor e compet encies in t he car e of 
+acutely ill patient s. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 88 of
+95How the recommendations might aff ect pr actice 
+The r ecommendations ma y free up senior clinician capacity . 
+Return t o recommendations 
+Finding and c ontrolling the sour ce of infection 
+Recommendation 1 .3.10 (amended) , recommendation 1 .13.1 and recommendation 1 .17.4 
+Why the c ommi ttee made the r ecommenda tions 
+The 2016 r ecommendation on in volving sur gical t eams only co vered intra-abdominal and 
+pelvic inf ections. Inf ections at ot her sit es can be tr eated sur gically or radiologically , and 
+the committ ee expanded t he recommendation b y consensus t o addr ess t his. 
+The committ ee discussed t he timing of int erventions and agr eed t hat t his w ould v ary 
+depending on: 
+• the patient 
+• wher e the sour ce of inf ection was 
+• if the int ervention w ould be sur gical or radiological 
+• if an int erventional radiologist was a vailable. 
+Because of t his, t he committ ee could not r ecommend a specific timeframe f or 
+interventions. Ho wever, they agr eed t hat int erventions should be carried out as soon as 
+possible. 
+How the r ecommenda tions mig ht affect practice 
+Prompt sour ce contr ol could mean f ewer critical car e interventions ar e needed at a lat er 
+point, which w ould r educe cost s. 
+Return t o recommendation 1 .3.10 
+Return t o recommendation 1 .13.1 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 89 of
+95Return t o recommendation 1 .17.4 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 90 of
+95Context 
+Sepsis is a clinical syndr ome caused b y the body's immune and coagulation syst ems being 
+switched on b y an inf ection. Sepsis wit h shock is a lif e-threatening condition t hat is 
+charact erised b y low blood pr essur e despit e adequat e fluid r eplacement, and or gan 
+dysfunction or f ailure. Sepsis is an impor tant cause of deat h in people of all ages. Bot h a 
+UK Parliamentar y and Healt h Ser vice Ombudsman enquir y (2013) and a UK National 
+Confidential Enquir y into Patient Out come and Deat h (NCEPOD , 2015) highlight ed sepsis 
+as being a leading cause of a voidable deat h that kills mor e people t han br east, bo wel and 
+prostat e cancer combined. 
+Sepsis is difficult t o diagnose wit h cer tainty . Although people wit h sepsis ma y have a 
+history of inf ection, f ever is not pr esent in all cases. The signs and sympt oms of sepsis can 
+be very non-specific and can be missed if clinicians do not t hink 'could t his be sepsis?' . In 
+the same wa y that healt hcare professionals consider 'could t his pain be car diac in origin?' 
+when pr esent ed wit h someone of an y age wit h chest pain t his guideline aims t o mak e 
+'could t his be sepsis?' t he first consideration f or an yone pr esenting wit h a possible 
+infection. 
+Detailed guidelines e xist f or the management of sepsis in adult and paediatric int ensiv e 
+care unit s, and b y intensiv e car e clinicians called t o other settings. T o reduce a voidable 
+deat hs, people wit h sepsis need t o be r ecognised early and tr eatment initiat ed. This 
+guideline aims t o ensur e healt hcare syst ems in all clinical settings consider sepsis as an 
+immediat e life-threatening condition t hat should be r ecognised and tr eated as an 
+emer gency . The guideline out lines t he immediat e actions needed f or those wit h suspicion 
+of sepsis and who ar e at highest risk of morbidity and mor tality fr om sepsis. It pr ovides a 
+framew ork f or risk assessment, tr eatment and f ollow-up or 'saf ety netting' of people not 
+needing immediat e resuscitation. The int ention of t his guideline is t o ensur e that all people 
+with sepsis due t o any cause ar e recognised and initial tr eatment initiat ed bef ore definitiv e 
+treatment on ot her specific pat hways is institut ed. 
+Previous t erminology included t erms SIRS (syst ematic inflammat ory response syndr ome), 
+severe sepsis and septic shock but mor e recent t erminology suggest s using t erms sepsis 
+and septic shock only . Sepsis is defined as a lif e-threatening or gan dysfunction due t o a 
+dysregulat ed host r esponse t o infection and septic shock as persisting h ypot ension 
+requiring v asopr essors t o maintain a mean ar terial pr essur e (MAP) of 65 mmHg or mor e 
+and ha ving a serum lactat e level of gr eater than 2 mmol/l despit e adequat e volume Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 91 of
+95resuscitation. Neit her of t hese definitions ar e useful in early identification of people at risk 
+and t he guideline r ecommends actions accor ding t o clinical paramet ers t hat stratify risk of 
+severe illness or deat h from sepsis. 
+Ther e is significant o verlap betw een t his guideline and ot her NICE guidance, in par ticular 
+the car e of acutely ill patient s in hospital , the assessment and initial management of fever 
+in under 5s , bacterial meningitis and meningococcal disease , neutr openic sepsis , 
+antibiotics f or pr evention and tr eatment of neonatal inf ection , and pneumonia in adult s. Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 92 of
+95Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic pages on sepsis and antimicr obial st ewar dship . 
+To find out about all t he updat es to the sepsis guideline, see t he NICE sepsis hub page . 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 93 of
+95Update inf orma tion 
+March 202 4: We have replaced a r ecommendation on contraindications t o lumbar 
+punctur e wit h a link t o the section on lumbar punctur e in t he updat ed NICE guideline on 
+bacterial meningitis and meningococcal disease . This r ecommendation is mark ed [202 4]. 
+Januar y 202 4: We have review ed the evidence and made new r ecommendations on risk 
+evaluation and management of suspect ed sepsis f or people aged 16 or o ver who ar e not 
+and ha ve not r ecent ly been pr egnant, in mental healt h, ambulance and acut e hospital 
+settings. This co vers t he population and settings in which t he national early warning scor e 
+(NEWS2) applies. These r ecommendations ar e mark ed [202 4]. 
+We have also made some changes wit hout an e vidence r eview . These ar e mark ed [2016 , 
+amended 202 4]. 
+• Recommendations ha ve been updat ed on when t o use an early warning scor e to 
+assess people wit h suspect ed sepsis. 
+• Some r ecommendations ha ve been updat ed and one r ecommendation was added t o 
+ensur e bett er communication and inclusivity (f or example, f or people wit h learning 
+disabilities and autism). 
+• Recommendations on when t o suspect neutr openic sepsis w ere updat ed and t he 
+reference t o NICE's guideline on neutr openic sepsis was br oadened t o cover 
+immunosuppr ession unr elated to cancer . 
+• The r ecommendations on when GPs and ambulance ser vices should consider ha ving 
+mechanisms in place t o giv e antibiotics t o people at high risk of se vere illness or deat h 
+from sepsis w ere updat ed to ensur e due consideration is giv en to bot h patient saf ety 
+and antimicr obial st ewar dship. 
+• The r ecommendations on identifying t he sour ce of inf ection and in volving sur gical 
+teams w ere broadened t o cover risk of sepsis in all par ts of t he body and a wider 
+range of int erventions. 
+• For saf ety r easons, people wit h spinal cor d injur y were added t o the list of people 
+whose t emperatur e ma y not rise when t hey have sepsis. 
+• Recommendations f or people under 16 and pr egnant or r ecent ly pregnant w ere Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 94 of
+95amended t o align t hem wit h changes made f or people aged 16 or o ver for consist ency . 
+We have also made some pr esentational changes wit hout changing t he meaning of t he 
+recommendations. These r ecommendations ar e mark ed [2016] . 
+• The population co vered by the guideline has been divided int o diff erent subgr oups, as 
+part of t he changes t o incorporat e the NEWS2. W e have done t his wit hout changing 
+the meaning of t he recommendations f or people under 16 or pr egnant people. 
+• Duplication betw een t he tables and r ecommendations was r emoved. 
+• The r ecommendations ha ve been aligned wit h other guidelines t hat ha ve been 
+updat ed. 
+• Changes ha ve been made t o the w ording t o bring t he language and style up t o dat e. 
+October 2022: We added t ext to indicat e that pulse o ximetr y ma y be less r eliable in 
+people wit h dark skin. W e also added a link t o the NHS patient saf ety aler t on t he risk of 
+harm fr om inappr opriat e placement of pulse o ximet er pr obes. 
+In recommendation 1 .15.2 we updat ed the volume of fluid bolus used f or intra venous fluid 
+resuscitation fr om 20 ml/k g to 10 ml/k g in childr en and y oung people up t o 16 y ears. See 
+the surveillance r epor t for mor e information . 
+Sept ember 2017 : Table 1 was corr ected to giv e oxygen saturation as less t han 92% in air . 
+Table 2 was amended t o include tympanic t emperatur e as a moderat e risk f actor. Table 1 
+was amended t o add pallor of skin, lips or t ongue as an int ermediat e to high risk f actor. 
+Minor changes since publication 
+Sept ember 2025 : We have amended table 3 t o refer to chr onic h ypercapnic r espirat ory 
+failure rat her t han chr onic obstructiv e pulmonar y disease. This is t o corr ect an err or. 
+Januar y 2025: We updat ed recommendation 1 .14.3 on antibiotics f or meningococcal 
+disease t o align wit h NICE's guideline on bact erial meningitis and meningococcal disease . 
+July 202 4: We amended t he w ording of r ecommendation 1 .1.4 for bett er inclusivity (f or 
+example, f or people wit h learning disabilities and autism). 
+ISBN: 9 78-1-47 31-5714-9 Suspect ed sepsis: r ecognition, diagnosis and early management (NG51)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 95 of
+95

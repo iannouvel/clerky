@@ -1,0 +1,27 @@
+- fetal
+- anaemia
+- pregnancy
+- maternal
+- neonatal
+- monitoring
+- delivery
+- antenatal
+- assessment
+- ultrasound
+- term
+- pregnant
+- perinatal
+- haemorrhage
+- screening
+- postnatal
+- intrapartum
+- prenatal
+- glucose
+- labour
+- preterm
+- gestational
+- hypoglycaemia
+- caesarean
+- complications
+- risk factors
+- infection

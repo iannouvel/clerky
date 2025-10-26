@@ -1,0 +1,2145 @@
+Neonatal inf ection: 
+antibiotics f or pr evention 
+and tr eatmen t 
+NICE guideline 
+Published: 20 April 2021 
+Last updat ed: 19 Mar ch 202 4 
+www .nice.or g.uk/guidance/ng195 
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+81Contents 
+Overview ...................................................................................................................................... 5 
+Who is it f or? ........................................................................................................................................... 5 
+Recommendations ....................................................................................................................... 6 
+1.1 Information and suppor t ................................................................................................................... 6 
+1.2 Pr eventing early-onset neonatal inf ection bef ore bir th ................................................................ 11 
+1.3 Risk f actors f or and clinical indicat ors of possible early-onset neonatal inf ection ................... 14 
+Kaiser P ermanent e neonatal sepsis calculat or ................................................................................... 18 
+Management f or babies at incr eased risk of inf ection ....................................................................... 19 
+1.4 Investigations bef ore star ting antibiotics in babies who ma y have early-onset inf ection ........ 20 
+1.5 Antibiotics f or suspect ed early-onset inf ection ............................................................................ 24 
+1.6 Duration of antibiotic tr eatment f or early-onset neonatal inf ection ............................................ 25 
+1.7 Antibiotic-impr egnat ed intra vascular cat heters for reducing t he risk of lat e-onset neonatal 
+infection .................................................................................................................................................. 27 
+1.8 Risk f actors f or and clinical indicat ors of possible lat e-onset neonatal inf ection ...................... 28 
+1.9 Investigations bef ore star ting antibiotics in babies who ma y have late-onset inf ection .......... 30 
+1.10 Antibiotics f or lat e-onset neonatal inf ection ................................................................................ 33 
+1.11 Duration of antibiotic tr eatment f or lat e-onset neonatal inf ection ............................................. 34 
+1.12 Antifungals t o prevent fungal inf ection during antibiotic tr eatment f or lat e-onset neonatal 
+infection .................................................................................................................................................. 36 
+1.13 Avoiding r outine use of antibiotics in babies ................................................................................ 37 
+1.14 Early- and lat e-onset meningitis (babies in neonatal unit s) ....................................................... 37 
+1.15 Therapeutic drug monit oring f or babies r eceiving gentamicin ................................................... 44 
+1.16 Car e setting ..................................................................................................................................... 45 
+1.17 Planning f or car e aft er dischar ge .................................................................................................. 45 
+Terms used in t his guideline .................................................................................................................. 46 
+Recommendations f or resear ch ................................................................................................. 48 
+Key recommendations f or resear ch ..................................................................................................... 48 
+Other r ecommendations f or resear ch .................................................................................................. 49 Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+81Rationale and impact ................................................................................................................... 53 
+Information and suppor t ........................................................................................................................ 53 
+Information and suppor t after diagnosis ............................................................................................. 54 
+Intrapar tum antibiotics .......................................................................................................................... 55 
+Women wit h prolonged pr elabour ruptur e of membranes who ha ve group B str eptococcal 
+colonisation, bact eriuria or inf ection .................................................................................................... 57 
+Risk f actors f or and clinical indicat ors of possible early-onset neonatal inf ection ......................... 58 
+Lumbar punctur e .................................................................................................................................... 61 
+Cerebrospinal fluid in vestigations in babies wit h suspect ed bact erial meningitis .......................... 62 
+Antibiotic-impr egnat ed intra vascular cat heters for reducing t he risk of lat e-onset neonatal 
+infection .................................................................................................................................................. 63 
+Risk f actors f or and clinical indicat ors of possible lat e-onset neonatal inf ection ........................... 64 
+Investigations f or lat e-onset neonatal inf ection ................................................................................. 66 
+Antibiotics f or lat e-onset neonatal inf ection ....................................................................................... 68 
+Antifungals t o prevent fungal inf ection during antibiotic tr eatment f or lat e-onset neonatal 
+infection .................................................................................................................................................. 70 
+Early- and lat e-onset meningitis (babies in neonatal unit s) .............................................................. 71 
+Fluid r estriction f or confirmed bact erial meningitis ............................................................................ 71 
+Assessing f or immunodeficiency and r ecurr ence risk in babies wit h bact erial meningitis ............. 72 
+Identifying and managing complications ............................................................................................. 73 
+Planning f or car e aft er dischar ge ......................................................................................................... 74 
+Care aft er hospital dischar ge ................................................................................................................ 75 
+Recurr ent bact erial meningitis .............................................................................................................. 76 
+Cont ext ......................................................................................................................................... 78 
+Finding mor e information and committ ee details ..................................................................... 79 
+Updat e information ..................................................................................................................... 80 Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+81This guideline par tially r eplaces CG149 . 
+This guideline is t he basis of QS7 5 and QS37 . 
+This guideline should be r ead in conjunction wit h NG2 40. 
+Overview 
+This guideline co vers pr eventing bact erial inf ection in healt hy babies of up t o and including 
+28 da ys corr ected gestational age, tr eating pr egnant w omen whose unborn bab y is at risk 
+of inf ection, and caring f or babies of up t o and including 28 da ys corr ected gestational age 
+with a suspect ed or confirmed bact erial inf ection. It aims t o reduce dela ys in r ecognising 
+and tr eating inf ection and pr event unnecessar y use of antibiotics. The guideline does not 
+cover viral inf ections. 
+The guideline uses t he terms 'w oman' or 'mot her' t hroughout. These should be tak en to 
+include people who do not identify as w omen but ar e pregnant or ha ve giv en bir th. 
+Similarly , wher e the term 'par ents' is used, t his should be tak en to include an yone who has 
+main r esponsibility f or caring f or a bab y. We recognise t here are man y diff erent f amily 
+arrangement s. 
+Who is i t for? 
+• Healt hcare professionals in primar y and secondar y car e 
+• Commissioners and pr oviders of neonatal and mat ernity ser vices 
+• Parents and car ers of babies who ar e at risk of or who ha ve a neonatal inf ection Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+81Recommenda tions 
+Parents and car ers ha ve the right t o be in volved in planning and making decisions 
+about t heir bab y's healt h and car e, and t o be giv en inf ormation and suppor t to enable 
+them t o do t his, as set out in t he NHS Constitution and summarised in NICE's 
+information on making decisions about y our car e. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations and has inf ormation about pr escribing 
+medicines (including off -label use), pr ofessional guidelines, standar ds and laws 
+(including on consent and mental capacity), and saf eguar ding. 
+Please not e that t he Royal College of Obst etricians and Gynaecologist s has pr oduced 
+guidance on CO VID-19 and pr egnancy f or all midwif ery and obst etric ser vices . The 
+Royal College of Paediatrics and Child Healt h has published guidance on CO VID-19 
+for neonatal ser vices . 
+Throughout t his guideline, unless ot herwise specified, t he term neonatal inf ection co vers 
+both early-onset and lat e-onset inf ections. 
+1.1 Informa tion and suppor t 
+1.1.1 For guidance on communication (including diff erent f ormat s and languages), 
+providing inf ormation, and shar ed decision making, see t he NICE guidelines on 
+patient e xperience in adult NHS ser vices , babies, childr en and y oung people's 
+experience of healt hcare and shared decision making . [2021] 
+Parents and c arers of babies a t incr eased risk o f neonatal 
+infection 
+1.1.2 If clinical concerns about possible neonatal inf ection arise at an y point: 
+• talk t o the bab y's par ents and car ers, e xplaining t he reason f or concern, and Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+81explain what neonatal inf ection is 
+• discuss t he options f or management t hat ma y be best f or their bab y (for 
+example, obser vation, in vestigations or antibiotic tr eatment) 
+• do not dela y treatment, but when possible giv e the bab y's par ents and car ers 
+time t o think about t he inf ormation t hey have been giv en and ask an y 
+questions t hey ma y have bef ore making tr eatment decisions. [2021] 
+1.1.3 If giving antibiotics because of clinical concerns about possible early- or lat e-
+onset neonatal inf ection , discuss wit h par ents and car ers: 
+• the reason f or the tr eatment 
+• the risks and benefit s in r elation t o their bab y's cir cumstances 
+• the obser vations and in vestigations t hat might be needed t o guide tr eatment 
+(for example, t o help decide when t o stop tr eatment) 
+• the pr eferred antibiotic r egimen (including ho w it will be deliv ered) and lik ely 
+duration of tr eatment 
+• the impact, if an y, on wher e the w oman or her bab y will be car ed for. [2021] 
+1.1.4 To maintain communication wit h a w oman in labour whose bab y is at incr eased 
+risk of early-onset neonatal inf ection: 
+• involve the w oman in an y hando ver of car e, eit her when additional e xper tise 
+is brought in because of t he risk of inf ection or during planned changes in 
+staff 
+• include an updat e in t he hando ver about t he pr esence of an y infection. 
+For mor e guidance, see t he section on communication in t he NICE guideline 
+on intrapar tum car e. [2012] 
+1.1.5 For babies who ar e consider ed to be at incr eased risk of early-onset inf ection, 
+inform t heir par ents and GP about t his v erbally and in writing: 
+• when t he bab y is dischar ged fr om t he hospital or midwif ery-led unit or Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+81• in the immediat e postnatal period, if t he bab y was born at home. [2012] 
+1.1.6 Reassur e par ents and car ers t hat babies who ha ve or ar e at incr eased risk of 
+neonatal inf ection can usually continue t o breastf eed, and t hat e very eff ort will 
+be made t o help wit h this. If a bab y is t emporarily unable t o breastf eed, suppor t 
+the mot her t o express br east milk if she wishes t o do so. [2012] 
+1.1.7 When a w oman is identified as ha ving gr oup B str eptococcal colonisation, 
+bacteriuria or inf ection during her curr ent pr egnancy: 
+• advise t he w oman t hat if she becomes pr egnant again: 
+－ that her new bab y will be at incr eased risk of early-onset gr oup B 
+streptococcal inf ection 
+－ she should inf orm her mat ernity car e team t hat she has had a positiv e 
+group B str eptococcal inf ection t est in a pr evious pr egnancy 
+－ her mat ernity car e team will off er her antibiotics in labour 
+• inform t he w oman's GP in writing t hat t here is a risk of gr oup B str eptococcal 
+infection in babies in futur e pregnancies. [2012, amended 2021] 
+Parents and c arers of babies tr eated for ne onatal inf ection 
+1.1.8 Reassur e par ents and car ers t hat t hey will be able t o continue caring f or and 
+holding t heir bab y accor ding t o their wishes, unless t he bab y is t oo ill t o allo w 
+this. If t he se verity of t he bab y's illness means t hey need t o change t he wa y they 
+care for the bab y, discuss t his wit h them. [2012] 
+1.1.9 Offer par ents and car ers contact details of or ganisations t hat pr ovide par ent 
+suppor t, befriending, counselling, inf ormation and adv ocacy . [2012] 
+1.1.10 If a bab y has been tr eated for suspect ed or confirmed neonatal inf ection: 
+• advise t he par ents and car ers about pot ential long-t erm eff ects of t he bab y's 
+illness and lik ely patt erns of r ecovery, and r eassur e them if no pr oblems ar e 
+anticipat ed Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+81• take account of par ents' and car ers' concerns when pr oviding inf ormation 
+and planning f ollow-up. [2021] 
+1.1.11 When a bab y who has had a gr oup B str eptococcal inf ection is dischar ged fr om 
+hospital: 
+• advise t he w oman t hat if she becomes pr egnant again: 
+－ that her new bab y will be at incr eased risk of early-onset gr oup B 
+streptococcal inf ection 
+－ she should inf orm her mat ernity car e team t hat she has had a pr evious 
+baby wit h a gr oup B str eptococcal inf ection 
+－ her mat ernity car e team will off er her antibiotics in labour 
+• inform t he w oman's GP in writing t hat t here is a risk of: 
+－ group B str eptococcal inf ection r ecurr ence in t he bab y and 
+－ group B str eptococcal inf ection in babies in futur e pregnancies. [2012] 
+Parents and c arers of babies being tr eated for bac terial 
+mening itis 
+1.1.12 Early in t he management of confirmed bact erial meningitis, discuss t he following 
+with par ents and car ers: 
+• what might happen during t he course of t he disease 
+• the uncer tainty about t he initial pr ognosis, and when t hey can e xpect t o 
+know mor e 
+• the risk of passing on t he inf ection 
+• whet her close contact s need t o tak e any preventativ e measur es (for 
+example, f or meningococcal meningitis or Haemophilus influenzae type b ). 
+[202 4] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+811.1.13 Repeat inf ormation o ver time and check t he par ents and car ers understand, as 
+they ma y be distr essed and unable t o ask questions when t heir bab y is first 
+diagnosed. [202 4] 
+1.1.14 Provide emotional and past oral suppor t for family members and car ers during 
+hospitalisation. [202 4] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on inf ormation and 
+suppor t after diagnosis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview J: 
+information f or confirmed bact erial meningitis and evidence r eview K: suppor t for 
+confirmed bact erial meningitis . 
+Parents and c arers of all babies 
+1.1.15 Before any bab y is transf erred home fr om t he hospital or midwif ery-led unit ( or in 
+the immediat e postnatal period in t he case of babies born at home), advise 
+parents and car ers t o seek ur gent medical help (f or example, fr om NHS 111 , their 
+GP, or an accident and emer gency depar tment) if t hey are concerned t hat t heir 
+baby: 
+• is sho wing abnormal beha viour (f or example, inconsolable cr ying or 
+listlessness) or 
+• is unusually flopp y or 
+• has an abnormal t emperatur e une xplained b y environmental f actors (lo wer 
+than 36° C or higher t han 38° C) or 
+• has abnormal br eathing (rapid br eathing, difficulty in br eathing or grunting) 
+or 
+• has a change in skin colour (f or example, wher e the bab y becomes v ery pale, 
+blue/gr ey or dark y ellow) or 
+• has de veloped new difficulties wit h feeding. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10
+of 81Give the advice bot h in person, and as writt en inf ormation and advice f or 
+them t o tak e awa y. [2021] 
+Post-dischar ge planning f or babies w ho ha ve not be en g iven 
+antibiotics 
+1.1.16 When t here has been a clinical concern about neonatal inf ection in a bab y, mak e 
+a post -dischar ge management plan, taking int o account f actors such as: 
+• the le vel of t he initial clinical concern 
+• the pr esence of risk f actors 
+• parents' and car ers' concerns. [2012] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on inf ormation 
+and suppor t. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+information and suppor t. 
+1.2 Pr eventing e arly-onse t neonatal inf ection bef ore 
+birth 
+Intrapar tum an tibiotics 
+1.2.1 Offer antibiotics during labour t o women who: 
+• are in pr e-term labour or 
+• have group B str eptococcal colonisation, bact eriuria or inf ection during t he 
+current pr egnancy or Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+81• have had gr oup B str eptococcal colonisation, bact eriuria or inf ection in a 
+previous pr egnancy , and ha ve not had a negativ e test for gr oup B 
+streptococcus b y enrichment cultur e or polymerase chain r eaction (PCR) on a 
+rectovaginal swab samples collect ed betw een 35 and 37 weeks' gestation or 
+3 to 5 weeks bef ore the anticipat ed deliv ery dat e in t he curr ent pr egnancy or 
+• have had a pr evious bab y wit h an in vasive group B str eptococcal inf ection or 
+• have a clinical diagnosis of chorioamnionitis. [2021] 
+1.2.2 Use table 1 t o decide which antibiotic t o use when giving intrapar tum antibiotics 
+for neonatal inf ection. 
+Table 1 Intr apar tum antibiotics 
+Aller gies Women wit hout chorioamnionitis Women wit h chorioamnionitis 
+No 
+penicillin 
+allergy Use Benzylpenicillin. Use Benzylpenicillin plus gentamicin plus 
+metr onidaz ole. 
+Penicillin 
+allergy 
+that is 
+not 
+severe Use Cephalosporin wit h activity 
+against gr oup B str eptococcus 
+(for example, cef otaxime). 
+Use wit h caution. 
+In April 2021 t his was an off -label 
+use of cephalosporins. See 
+NICE's inf ormation on pr escribing 
+medicines . Use Cephalosporin wit h activity against 
+group B str eptococcus (f or example, 
+cefotaxime) plus metr onidaz ole. 
+Use wit h caution. 
+In April 2021 t his was an off -label use of 
+cephalosporins. See NICE's inf ormation on 
+prescribing medicines . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12
+of 81Aller gies Women wit hout chorioamnionitis Women wit h chorioamnionitis 
+Severe 
+penicillin 
+allergy Consider: 
+Vancom ycin or 
+An alt ernativ e antibiotic t hat 
+would be e xpect ed to be activ e 
+against gr oup B str eptococcus 
+based on eit her sensitivity t esting 
+performed on t he w oman's 
+isolat e or on local antibiotic 
+susceptibility sur veillance data. 
+In April 2021 t his was an off -label 
+use of v ancom ycin. See NICE's 
+information on pr escribing 
+medicines . Consider: 
+Vancom ycin plus gentamicin plus 
+metr onidaz ole or 
+An alt ernativ e antibiotic t o vancom ycin 
+that w ould be e xpect ed to be activ e 
+against gr oup B str eptococcus based on 
+either sensitivity t esting per formed on t he 
+woman's isolat e or on local antibiotic 
+susceptibility sur veillance data plus 
+gentamicin plus metr onidaz ole. 
+In April 2021 t his was an off -label use of 
+vancom ycin. See NICE's inf ormation on 
+prescribing medicines . 
+1.2.3 If using intra venous gentamicin during labour , use once-daily dosing. [2021] 
+1.2.4 Give the first dose of antibiotics as soon as possible aft er labour star ts (or as 
+soon as inf ection is suspect ed, in t he case of chorioamnionitis), and continue until 
+the bir th of t he bab y. [2021] 
+1.2.5 Be awar e that t herapeutic drug monit oring ma y be needed when using 
+gentamicin or v ancom ycin during labour . [2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on intrapar tum 
+antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+intrapar tum antibiotics . 
+Women wi th pr olong ed prelabour ruptur e of membr anes w ho 
+have group B str eptoc occal colonisa tion, bac teriuria or inf ection 
+1.2.6 Offer an immediat e bir th (by induction of labour or caesar ean bir th) to women Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13
+of 81who ar e betw een 34 and 37 weeks' gestation who: 
+• have prolonged pr elabour ruptur e of membranes and 
+• have group B str eptococcal colonisation, bact eriuria or inf ection at an y time 
+in their curr ent pr egnancy . [2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on w omen wit h 
+prolonged pr elabour ruptur e of membranes . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+timing of deliv ery. 
+1.3 Risk f actors for and clinic al indic ators of 
+possi ble early-onse t neonatal inf ection 
+Before bir th 
+1.3.1 For women in labour , identify and assess an y risk f actors f or early-onset neonatal 
+infection (see box 1). Thr oughout labour , monit or for an y new risk f actors. [2021] 
+1.3.2 For guidance on managing pr elabour ruptur e of membranes at t erm, see t he NICE 
+guideline on intrapar tum car e. [2021] 
+Assessing and manag ing the risk o f early-onse t neonatal inf ection 
+after bir th 
+1.3.3 If there are any risk f actors f or early-onset neonatal inf ection (see box 1), or if 
+there are clinical indicat ors of possible early-onset neonatal inf ection (see box 2): 
+• perform an immediat e clinical assessment 
+• review t he mat ernal and neonatal hist ory Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14
+of 81• carry out a ph ysical e xamination of t he bab y, including an assessment of vital 
+signs. [2021] 
+1.3.4 If group B str eptococcus is first identified in t he mot her wit hin 72 hours aft er the 
+baby's bir th: 
+• ask t hose dir ectly involved in t he bab y's car e (for example, a par ent, car er, or 
+healt hcare professional) whet her t hey have any concerns in r elation t o the 
+clinical indicat ors list ed in box 2 and 
+• identify an y other risk f actors pr esent and 
+• look f or clinical indicat ors of inf ection. 
+Use t his assessment t o decide on clinical management (see r ecommendation 
+1.3.5). [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15
+of 81Box 1 Risk f actors f or early-onset neonatal inf ection, including 'r ed flags' 
+Red flag risk f actor: 
+• Suspect ed or confirmed inf ection in anot her bab y in t he case of a multiple 
+pregnancy . 
+Other risk f actors: 
+• Invasive group B str eptococcal inf ection in a pr evious bab y or mat ernal gr oup B 
+streptococcal colonisation, bact eriuria or inf ection in t he curr ent pr egnancy . 
+• Pre-term bir th following spontaneous labour bef ore 37 weeks' gestation. 
+• Confirmed ruptur e of membranes f or mor e than 18 hours bef ore a pr e-term bir th. 
+• Confirmed pr elabour ruptur e of membranes at t erm f or mor e than 2 4 hours 
+before the onset of labour . 
+• Intrapar tum f ever higher t han 38° C if t here is suspect ed or confirmed bact erial 
+infection. 
+• Clinical diagnosis of chorioamnionitis. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16
+of 81Box 2 Clinical indicat ors of possible early-onset neonatal inf ection 
+(obser vations and e vents in t he bab y), including 'r ed flags' 
+Red flag clinical indicat ors: 
+• Apnoea (t emporar y stopping of br eathing) 
+• Seizur es 
+• Need f or car diopulmonar y resuscitation 
+• Need f or mechanical v entilation 
+• Signs of shock 
+Other clinical indicat ors: 
+• Altered beha viour or r esponsiv eness 
+• Altered muscle t one (f or example, floppiness) 
+• Feeding difficulties (f or example, f eed r efusal) 
+• Feed int olerance, including v omiting, e xcessiv e gastric aspirat es and abdominal 
+distension 
+• Abnormal hear t rate (brady cardia or tach ycardia) 
+• Signs of r espirat ory distr ess (including grunting, r ecession, tach ypnoea) 
+• Hypo xia (f or example, central cy anosis or r educed o xygen saturation le vel) 
+• Persist ent pulmonar y hyper tension of newborns 
+• Jaundice wit hin 2 4 hours of bir th 
+• Signs of neonatal encephalopat hy 
+• Temperatur e abnormality (lo wer than 36° C or higher t han 38° C) une xplained b y 
+environmental f actors 
+• Unexplained e xcessiv e bleeding, t hrombocyt openia, or abnormal coagulation Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17
+of 81• Altered glucose homeostasis (h ypogly caemia or h yperglycaemia) 
+• Metabolic acidosis (base deficit of 10 mmol/litr e or gr eater) 
+1.3.5 Use t he following framew ork, based on t he risk f actors in bo x 1 and t he clinical 
+indicat ors in bo x 2, to mak e antibiotic management decisions as dir ected: 
+• In babies wit h any red flag, or wit h 2 or mor e 'non-r ed-flag' risk f actors or 
+clinical indicat ors: 
+－ follow recommendations 1 .4.1 to 1.4.18 on in vestigations bef ore star ting 
+antibiotics and 
+－ start antibiotic tr eatment accor ding t o recommendations 1 .5.1 to 1.6.6 and 
+－ do not wait f or the test result s bef ore star ting antibiotics 
+• in babies wit hout r ed flags and only 1 risk f actor or 1 clinical indicat or, use 
+clinical judgement t o decide: 
+－ whet her it is saf e to wit hhold antibiotics and 
+－ whet her t he bab y's vital signs and clinical condition need t o be 
+monit ored. If monit oring is needed, continue f or at least 12 hours using a 
+newborn early warning syst em 
+• for babies wit hout risk f actors or clinical indicat ors of possible inf ection, 
+continue r outine postnatal car e as co vered in t he NICE guideline on postnatal 
+care. [2021] 
+Kaiser P ermanen te ne onatal sepsis c alcula tor 
+1.3.6 The Kaiser P ermanent e neonatal sepsis calculat or can be used as an alt ernativ e 
+to the framew ork out lined in r ecommendation 1 .3.5 for babies born aft er 
+34+0 weeks of pr egnancy who ar e being car ed for in a neonatal unit, transitional 
+care or postnatal war d. It should only be used if it is par t of a pr ospectiv e audit, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18
+of 81which should r ecord: 
+• total number of babies assessed using t he calculat or 
+• number of babies corr ectly identified b y the calculat or who de velop a 
+cultur e-confirmed neonatal inf ection 
+• number of babies incorr ectly identified b y the calculat or who do not de velop 
+a cultur e-confirmed neonatal inf ection 
+• number of babies missed b y the calculat or who de velop a cultur e-confirmed 
+neonatal inf ection. [2021] 
+1.3.7 If using t he Kaiser P ermanent e neonatal sepsis calculat or (see r ecommendation 
+1.3.6) to assess t he risk of early-onset neonatal inf ection, use t he classification 
+given by the calculat or to direct management decisions. [2021] 
+Manag emen t for babies a t incr eased risk o f 
+infection 
+1.3.8 In babies being monit ored for possible early-onset neonatal inf ection: 
+• Consider star ting antibiotic tr eatment (see recommendations 1 .4.1 to 1.4.18 on 
+investigations bef ore star ting antibiotics , and recommendations 1 .5.1 to 1.5.9 
+on which antibiotics t o use ). 
+• If no fur ther concerns arise during obser vation r eassur e the family and, if t he 
+baby is t o be dischar ged, giv e information and advice t o the par ents and 
+carers (see recommendations 1 .1.15 and 1 .1.16). [2021] 
+1.3.9 If a bab y needs antibiotic tr eatment, giv e this as soon as possible and alwa ys 
+within 1 hour of t he decision t o treat. [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19
+of 81For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on risk f actors f or 
+and clinical indicat ors of possible early-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+maternal and neonatal risk f actors. 
+1.4 Investig ations bef ore star ting an tibiotics in 
+babies w ho ma y have early-onse t infection 
+1.4.1 When star ting antibiotic tr eatment in babies who ma y have early-onset neonatal 
+infection (see recommendations on r ecognising risk f actors and clinical 
+indicat ors), per form a blood cultur e bef ore giving t he first dose. [2012] 
+1.4.2 Measur e baseline C-r eactiv e protein concentration when star ting antibiotic 
+treatment in babies who ma y have early-onset neonatal inf ection. [2012] 
+1.4.3 Do not r outinely per form urine micr oscop y or cultur e as par t of t he in vestigations 
+for early-onset neonatal inf ection. [2012] 
+1.4.4 Do not per form skin swab micr oscop y or cultur e as par t of t he in vestigations f or 
+early-onset neonatal inf ection if t here are no clinical signs of a localised inf ection. 
+[2012] 
+Lumbar punc ture 
+1.4.5 If it is saf e to do so, per form a lumbar punctur e to obtain a cer ebrospinal fluid 
+sample when: 
+• there is a str ong clinical suspicion of early-onset neonatal inf ection or 
+• there are clinical sympt oms or signs suggesting meningitis. [2012] 
+1.4.6 Treat and stabilise an y of t he following bef ore per forming a lumbar punctur e: Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20
+of 81• unpr otected air way 
+• respirat ory compr omise 
+• shock 
+• uncontr olled seizur es 
+• bleeding risk. [202 4] 
+1.4.7 Do not per form lumbar punctur e if t here is: 
+• extensiv e or rapidly spr eading purpura 
+• infection at t he lumbar punctur e site 
+• risk f actors f or an e volving space-occup ying lesion 
+• any of t hese sympt oms or signs, which might indicat e raised intracranial 
+pressur e: 
+－ new f ocal neur ological f eatur es (including seizur es or posturing) 
+－ abnormal pupillar y reactions 
+－ a progressiv e and sustained or rapid f all in le vel of consciousness. 
+[202 4] 
+1.4.8 Measur e blood glucose in babies immediat ely bef ore lumbar punctur e, so t hat t he 
+cerebrospinal fluid t o blood glucose ratio can be calculat ed. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on lumbar 
+punctur e. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview L: 
+investigating and diagnosing suspect ed bact erial meningitis wit h cer ebrospinal fluid 
+paramet ers. 
+Cerebrospinal fluid in vestigations in babies wit h suspect ed bact erial Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21
+of 81meningitis 
+1.4.9 Perform t he following cer ebrospinal fluid in vestigations in babies wit h suspect ed 
+bacterial meningitis: 
+• red and whit e cell count and cell type (including diff erential whit e cell count) 
+• total pr otein 
+• glucose concentration (t o calculat e cer ebrospinal fluid t o blood glucose ratio ) 
+• microscop y for bact eria (using gram stain) 
+• microbiological cultur e and sensitivities 
+• PCR f or relevant pat hogens. [202 4] 
+1.4.10 Store the remaining cer ebrospinal fluid in case mor e tests are needed. [202 4] 
+1.4.11 Ensur e that cer ebrospinal fluid, cell count s, total pr otein and glucose 
+concentrations ar e available wit hin 4 hours of lumbar punctur e. [202 4] 
+1.4.12 When int erpreting t he result s of cer ebrospinal fluid in vestigations, tak e into 
+account: 
+• red cells in t he sample, which ma y suggest blood contamination or a diff erent 
+diagnosis 
+• whet her earlier antibiotics ma y have reduced t he diagnostic r eliability of 
+these in vestigations. [202 4] 
+1.4.13 Interpret cer ebrospinal fluid r esult s using standar d age-appr opriat e threshold 
+values (taking int o account f actors such as gestational age, chr onological age, 
+birth weight, and earlier antibiotic use or suspect ed immunodeficiency). [202 4] 
+1.4.14 Interpret cer ebrospinal fluid r esult s in babies alongside t he clinical pr esentation 
+and mat ernal hist ory. [202 4] 
+1.4.15 If cer ebrospinal fluid r esult s are abnormal, consider alt ernativ e viral, 
+mycobact erial, fungal or non-inf ectious causes as w ell as bact erial meningitis. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22
+of 81[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on cer ebrospinal 
+fluid in vestigations in babies wit h suspect ed bact erial meningitis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview L: 
+investigating and diagnosing suspect ed bact erial meningitis wit h cer ebrospinal fluid 
+paramet ers. 
+Advice for si te-spe cific inf ections 
+1.4.16 Be awar e that, alt hough minor conjunctivitis wit h encrust ed eyelids is common 
+and oft en benign, a purulent dischar ge ma y indicat e a serious inf ection (f or 
+example, wit h chlam ydia or gonococcus). [2012] 
+1.4.17 In babies wit h a purulent e ye dischar ge tak e swab samples ur gent ly for 
+microbiological in vestigation, using met hods t hat can det ect chlam ydia and 
+gonococcus. Star t syst emic antibiotic tr eatment f or possible gonococcal inf ection 
+while waiting f or the swab micr obiology r esult s. [2012] 
+1.4.18 In babies wit h clinical signs of umbilical inf ection, such as a purulent dischar ge or 
+signs of periumbilical cellulitis (f or example, r edness, incr eased skin warmt h or 
+swelling): 
+• perform a blood cultur e and 
+• take a swab sample f or micr oscop y and cultur e and 
+• start antibiotic tr eatment wit h intra venous fluclo xacillin and gentamicin (see 
+recommendations 1 .5.3 and 1 .5.4). 
+If the micr obiology r esult s sho w that t he inf ection is not caused b y a Gram-
+negativ e bact erium, st op the gentamicin. [2012] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23
+of 811.5 A ntibiotics f or suspe cted early-onse t infection 
+1.5.1 Use intra venous benzylpenicillin wit h gentamicin as t he first -choice antibiotic 
+regimen f or empirical tr eatment of suspect ed early-onset inf ection, unless 
+microbiological sur veillance data sho w local bact erial r esistance patt erns t hat 
+indicat e the need f or a diff erent antibiotic. [2012] 
+1.5.2 Give benzylpenicillin in a dosage of 25 mg/k g every 12 hours. Consider 
+shor tening t he dose int erval to every 8 hours, based on clinical judgement (f or 
+example, if t he bab y appears v ery ill). [2012] 
+1.5.3 Give gentamicin in a star ting dose of 5 mg/k g (see r ecommendation 1 .5.4). [2012] 
+1.5.4 When pr escribing gentamicin, be awar e that: 
+• the summar y of pr oduct charact eristics r ecommends a dosage of 4 to 7 mg/
+kg/da y administ ered in a single dose 
+• the evidence r eview ed for the guideline suppor ts a star ting dosage of 5 mg/
+kg every 36 hours administ ered in a single dose. 
+In 2021 , a dosage of 5 mg/k g every 36 hours is an off -label use of 
+gentamicin. See NICE's inf ormation on pr escribing medicines . [2012] 
+1.5.5 If a second dose of gentamicin is giv en (see recommendation 1 .6.3) this should 
+usually be 36 hours aft er the first dose. Use a shor ter int erval if clinical 
+judgement suggest s this is needed, f or example, if: 
+• the bab y appears v ery ill 
+• the blood cultur e sho ws a Gram-negativ e infection. [2012] 
+1.5.6 Take account of blood gentamicin concentrations when deciding on subsequent 
+gentamicin dosing r egimen (see recommendations 1 .15.1 to 1.15.8). [2012] 
+1.5.7 Record the times of: 
+• gentamicin administration Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4
+of 81• sampling f or therapeutic monit oring . [2012] 
+1.5.8 Regularly r eassess t he clinical condition and r esult s of in vestigations in babies 
+receiving antibiotics. Consider whet her t o change t he antibiotic r egimen, taking 
+account of: 
+• the bab y's clinical condition (f or example, if t here is no impr ovement) 
+• the result s of micr obiological in vestigations 
+• exper t micr obiological advice, including local sur veillance data. [2012] 
+1.5.9 If there is micr obiological e vidence of Gram-negativ e bact erial sepsis, add 
+anot her antibiotic t o the benzylpenicillin and gentamicin r egimen t hat is activ e 
+against Gram-negativ e bact eria (f or example, cef otaxime). If Gram-negativ e 
+infection is confirmed, st op benzylpenicillin. [2012] 
+1.6 Dur ation o f antibiotic tr eatmen t for early-onse t 
+neonatal inf ection 
+Investig ations during an tibiotic tr eatmen t for early-onse t 
+neonatal inf ection 
+1.6.1 In babies giv en antibiotics because of risk f actors f or inf ection or clinical 
+indicat ors of possible early-onset inf ection, measur e the C-r eactiv e protein 
+concentration 18 to 24 hours aft er pr esentation. [2012] 
+1.6.2 Consider per forming a lumbar punctur e to obtain a cer ebrospinal fluid sample in a 
+baby who did not ha ve a lumbar punctur e at pr esentation who is r eceiving 
+antibiotics, if it is t hought saf e to do so and if: 
+• the bab y has a positiv e blood cultur e (other t han coagulase negativ e 
+staph ylococcus) or 
+• the bab y does not r espond satisf actorily t o antibiotic tr eatment, or Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25
+of 81• there is a str ong clinical suspicion of inf ection or 
+• there are clinical sympt oms or signs suggesting meningitis. [2012, amended 
+2021] 
+Decisions 36 hour s after star ting an tibiotic tr eatmen t 
+1.6.3 In babies giv en antibiotics because of risk f actors f or early-onset inf ection or 
+clinical indicat ors of possible inf ection, consider st opping t he antibiotics at 
+36 hours if: 
+• the blood cultur e is negativ e and 
+• the initial clinical suspicion of inf ection was not str ong and 
+• the bab y's clinical condition is r eassuring, wit h no clinical indicat ors of 
+possible inf ection and 
+• the le vels and tr ends of C-r eactiv e protein concentration ar e reassuring. 
+[2012] 
+1.6.4 Consider establishing hospital syst ems t o provide blood cultur e result s 36 hours 
+after star ting antibiotics, t o allo w timely st opping of tr eatment and dischar ge 
+from hospital. [2012] 
+1.6.5 Healt hcare professionals wit h specific e xperience in neonatal inf ection should be 
+available e very day to giv e clinical micr obiology or paediatric inf ectious disease 
+advice. [2012] 
+Treatmen t dur ation f or early-onse t neonatal inf ection wi thou t 
+mening itis 
+1.6.6 Give antibiotic tr eatment f or 7 da ys for babies wit h a positiv e blood cultur e, and 
+for babies wit h a negativ e blood cultur e if sepsis has been str ongly suspect ed. 
+Consider continuing antibiotic tr eatment f or mor e than 7 days if: Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26
+of 81• the bab y has not y et fully r ecovered or 
+• this is advisable because of t he pat hogen identified on blood cultur e (seek 
+exper t micr obiological advice if necessar y). [2012] 
+1.6.7 If continuing antibiotics f or longer t han 36 hours despit e negativ e blood cultur es, 
+review t he bab y at least once e very 24 hours. Consider at each r eview whet her it 
+is appr opriat e to stop antibiotic tr eatment, taking account of: 
+• the le vel of initial clinical suspicion of inf ection and 
+• the bab y's clinical pr ogress and curr ent condition and 
+• the le vels and tr ends of C-r eactiv e protein concentration. [2012] 
+1.7 Antibiotic-im pregna ted intravascular c atheters 
+for reducing the risk o f late-onse t neonatal 
+infection 
+1.7.1 Do not use rif ampicin-miconaz ole-impr egnat ed cat heters for newborn babies. 
+[2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on antibiotic-
+impregnat ed intra vascular cat heters for reducing t he risk of lat e-onset neonatal 
+infection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview F: 
+intravascular cat heters. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27
+of 811.8 Risk f actors for and clinic al indic ators of 
+possi ble late-onse t neonatal inf ection 
+1.8.1 When assessing or r eviewing a bab y: 
+• Check f or, the possible clinical indicat ors of lat e-onset neonatal inf ection 
+shown in table 2. 
+• take into account t hat pr ematurity , mechanical v entilation, hist ory of sur gery 
+and pr esence of a central cat heter ar e associat ed wit h greater risk of late-
+onset neonatal inf ection . 
+• Think about inf ection in t he ot her babies when one bab y from a multiple bir th 
+has inf ection. [2021] 
+1.8.2 Seek early advice fr om a paediatrician when lat e-onset inf ection is suspect ed in 
+non-inpatient settings. [2021] 
+1.8.3 Refer to the NICE guidelines on f ever in under 5s and suspect ed sepsis when 
+assessing babies f or lat e-onset neonatal inf ection who ha ve been admitt ed to the 
+hospital fr om home. [2021] 
+Be awar e that some pulse o ximet ers can under estimat e or o verestimat e oxygen 
+saturation le vels, especially if t he saturation le vel is bor derline. Ov erestimation 
+has been r epor ted in people wit h dark skin. See also t he NHS England Patient 
+Safety Aler t on t he risk of harm fr om inappr opriat e placement of pulse o ximet er 
+probes . 
+Table 2 Clinical indicat ors of possible lat e-onset neonatal inf ection ( obser vations and 
+events in t he bab y) 
+Categor y Indicat ors 
+Beha viour Parent or car e-giv er concern f or change in beha viour 
+Appears ill t o a healt hcare professional 
+Does not wak e, or if r oused does not sta y awak e 
+Weak high-pit ched or continuous cr y Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28
+of 81Categor y Indicat ors 
+Respirat ory Raised r espirat ory rat e: 60 breaths per minut e or mor e 
+Grunting 
+Apnoea 
+Oxygen saturation of less t han 90% in air or incr eased o xygen 
+requir ement o ver baseline 
+Circulation and 
+hydration Persist ent tach ycardia: hear t rate 160 beat s per minut e or mor e 
+Persist ent brady cardia: hear t rate less t han 100 beat s per minut e 
+Skin Mott led or ashen appearance 
+Cyanosis of skin, lips or t ongue 
+Non-blanching rash of skin 
+Other Temperatur e 38° C or mor e une xplained b y environmental f actors 
+Temperatur e less t han 36° C une xplained b y environmental f actors 
+Alterations in f eeding patt ern 
+Abdominal dist ension 
+Seizur es 
+Bulging f ontanelle 
+This table has been adapt ed fr om t he high-risk crit eria in table 1 of t he NICE guideline on 
+suspect ed sepsis . 
+Timing of antibiotics f or lat e-onset neonatal inf ection 
+1.8.4 If a bab y needs antibiotic tr eatment, giv e this as soon as possible and alwa ys 
+within 1 hour of t he decision t o treat. [2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on risk f actors f or 
+and clinical indicat ors of possible lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview E: 
+risk f actors f or lat e-onset neonatal inf ection . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29
+of 811.9 Investig ations bef ore star ting an tibiotics in 
+babies w ho ma y have late-onse t infection 
+1.9.1 When star ting antibiotic tr eatment in babies who ma y have late-onset neonatal 
+infection (see recognising risk f actors and clinical indicat ors), per form a blood 
+cultur e bef ore giving t he first dose. [2021] 
+1.9.2 Measur e baseline C-r eactiv e protein concentration when star ting antibiotic 
+treatment in babies who ma y have late-onset neonatal inf ection. Use t his 
+toget her wit h later readings t o assess t he lik elihood of inf ection and r esponse t o 
+treatment. [2021] 
+1.9.3 Do not r outinely per form urine micr oscop y or cultur e as par t of t he in vestigations 
+for lat e-onset neonatal inf ection f or babies in neonatal unit s. [2021] 
+1.9.4 Perform urine micr oscop y and cultur e for babies out side of neonatal unit s in line 
+with the NICE guideline on urinar y tract inf ection in under 16s. 
+1.9.5 Do not per form skin swab micr oscop y or cultur e as par t of t he in vestigations f or 
+late-onset neonatal inf ection if t here are no clinical signs of a localised inf ection. 
+[2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on in vestigations 
+for lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+investigations bef ore star ting tr eatment . 
+Lumbar punc ture 
+1.9.6 If it is saf e to do so, per form a lumbar punctur e to obtain a cer ebrospinal fluid 
+sample when: 
+• there is a str ong clinical suspicion of neonatal inf ection or Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30
+of 81• there are clinical sympt oms or signs suggesting meningitis. [2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on in vestigations f or 
+late-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+investigations bef ore star ting tr eatment . 
+1.9.7 Treat and stabilise an y of t he following bef ore per forming a lumbar punctur e: 
+• unpr otected air way 
+• respirat ory compr omise 
+• shock 
+• uncontr olled seizur es 
+• bleeding risk. [202 4] 
+1.9.8 Do not per form lumbar punctur e if t here is: 
+• extensiv e or rapidly spr eading purpura 
+• infection at t he lumbar punctur e site 
+• risk f actors f or an e volving space-occup ying lesion 
+• any of t hese sympt oms or signs, which might indicat e raised intracranial 
+pressur e: 
+－ new f ocal neur ological f eatur es (including seizur es or posturing) 
+－ abnormal pupillar y reactions 
+－ a progressiv e and sustained or rapid f all in le vel of consciousness. 
+[202 4] 
+1.9.9 Measur e blood glucose in babies immediat ely bef ore lumbar punctur e, so t hat t he Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31
+of 81cerebrospinal fluid t o blood glucose ratio can be calculat ed. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on lumbar 
+punctur e. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview L: 
+investigating and diagnosing suspect ed bact erial meningitis wit h cer ebrospinal fluid 
+paramet ers. 
+Cerebrospinal fluid in vestigations in babies wit h suspect ed bact erial 
+meningitis 
+1.9.10 Perform t he following cer ebrospinal fluid in vestigations in babies wit h suspect ed 
+bacterial meningitis: 
+• red and whit e cell count and cell type (including diff erential whit e cell count) 
+• total pr otein 
+• glucose concentration (t o calculat e cer ebrospinal fluid t o blood glucose ratio ) 
+• microscop y for bact eria (using gram stain) 
+• microbiological cultur e and sensitivities 
+• PCR f or relevant pat hogens. [202 4] 
+1.9.11 Store the remaining cer ebrospinal fluid in case mor e tests are needed. [202 4] 
+1.9.12 Ensur e that cer ebrospinal fluid, cell count s, total pr otein and glucose 
+concentrations ar e available wit hin 4 hours of lumbar punctur e. [202 4] 
+1.9.13 When int erpreting t he result s of cer ebrospinal fluid in vestigations, tak e into 
+account: 
+• red cells in t he sample, which ma y suggest blood contamination or a diff erent 
+diagnosis Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32
+of 81• whet her earlier antibiotics ma y have reduced t he diagnostic r eliability of 
+these in vestigations. [202 4] 
+1.9.14 Interpret cer ebrospinal fluid r esult s using standar d age-appr opriat e threshold 
+values (taking int o account f actors such as gestational age, chr onologic age, 
+birth weight, and earlier antibiotic use or suspect ed immunodeficiency). [202 4] 
+1.9.15 Interpret cer ebrospinal fluid r esult s in babies alongside t he clinical pr esentation 
+and mat ernal hist ory. [202 4] 
+1.9.16 If cer ebrospinal fluid r esult s are abnormal, consider alt ernativ e viral, 
+mycobact erial, fungal or non-inf ectious causes as w ell as bact erial meningitis. 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on cer ebrospinal 
+fluid in vestigations in babies wit h suspect ed bact erial meningitis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview L: 
+investigating and diagnosing suspect ed bact erial meningitis wit h cer ebrospinal fluid 
+paramet ers. 
+1.10 A ntibiotics f or la te-onse t neonatal inf ection 
+Choic e of antibiotics 
+1.10.1 For babies wit h suspect ed late-onset neonatal inf ection who ar e already in a 
+neonatal unit: 
+• give a combination of narr ow-spectrum antibiotics (such as intra venous 
+fluclo xacillin plus gentamicin) as first -line tr eatment 
+• use local antibiotic susceptibility and r esistance data ( or national data if local 
+data ar e inadequat e) when deciding which antibiotics t o use Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33
+of 81• give antibiotics t hat ar e eff ectiv e against bot h Gram-negativ e and Gram-
+positiv e bact eria 
+• if necr otising ent erocolitis is suspect ed, also include an antibiotic t hat is 
+activ e against anaer obic bact eria (such as metr onidaz ole). [2021] 
+1.10.2 For babies wit h suspect ed lat e-onset neonatal inf ection or meningitis who ha ve 
+been admitt ed fr om home, tr eat accor ding t o recommendations 1 .14.6 and 1 .14.7 
+in the NICE guideline on suspect ed sepsis . [2021] 
+1.10.3 When using gentamicin, see recommendations 1 .15.1 to 1.15.8 on t herapeutic drug 
+monit oring f or gentamicin . [2021] 
+1.11 Dur ation o f antibiotic tr eatmen t for la te-onse t 
+neonatal inf ection 
+Investig ations during an tibiotic tr eatmen t for la te-onse t neonatal 
+infection 
+1.11.1 In babies giv en antibiotics because of risk f actors f or inf ection or clinical 
+indicat ors of possible late-onset neonatal inf ection , measur e the C-r eactiv e 
+protein concentration 18 t o 24 hours aft er star ting antibiotics. [2021] 
+1.11.2 Consider per forming a lumbar punctur e to obtain a cer ebrospinal fluid sample in a 
+baby who did not ha ve a lumbar punctur e at pr esentation who is r eceiving 
+antibiotics, if it is t hought saf e to do so and if: 
+• the bab y has a positiv e blood cultur e (other t han coagulase negativ e 
+staph ylococcus) or 
+• the bab y does not r espond satisf actorily t o antibiotic tr eatment, or 
+• there is a str ong clinical suspicion of inf ection or 
+• there are clinical sympt oms or signs suggesting meningitis. [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34
+of 81Decisions 48 hour s after star ting an tibiotic tr eatmen t 
+1.11.3 For babies giv en antibiotics because of suspect ed lat e-onset inf ection, consider 
+stopping t he antibiotics at 48 hours if: 
+• the blood cultur e is negativ e and 
+• the initial clinical suspicion of inf ection was not str ong and 
+• the bab y's clinical condition is r eassuring, wit h no clinical indicat ors of 
+possible inf ection and 
+• the le vels and tr ends of C-r eactiv e protein concentration ar e reassuring. 
+[2021] 
+1.11.4 Healt hcare professionals wit h specific e xperience in neonatal inf ection should be 
+available e very day to giv e clinical micr obiology or paediatric inf ectious disease 
+advice. [2021] 
+Treatmen t dur ation f or la te-onse t neonatal inf ection wi thou t 
+mening itis 
+1.11.5 Give antibiotic tr eatment f or 7 days for babies wit h a positiv e blood cultur e. 
+Consider continuing antibiotic tr eatment f or mor e than 7 days if: 
+• the bab y has not y et fully r ecovered or 
+• longer tr eatment is needed because of t he pat hogen identified on blood 
+cultur e (for example, Gram-negativ e bact eria or Staph ylococcus aur eus; seek 
+exper t micr obiological advice if necessar y) or 
+• longer tr eatment is needed because of t he sit e of t he inf ection (such as intra-
+abdominal co-pat hology , necr otising ent erocolitis, ost eomyelitis or inf ection 
+of a central v enous cat heter). [2021] 
+1.11.6 Use a shor ter treatment duration t han 7 days when t he bab y mak es a pr ompt 
+recovery, and eit her no pat hogen is identified or t he pat hogen identified is a 
+common commensal (f or example, coagulase negativ e staph ylococcus). [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35
+of 811.11.7 If continuing antibiotics f or longer t han 48 hours f or suspect ed lat e-onset 
+neonatal inf ection despit e negativ e blood cultur e, review t he bab y at least once 
+every 24 hours. A t each r eview , decide whet her t o stop antibiotics, taking 
+account of: 
+• the le vel of initial clinical suspicion of inf ection and 
+• the bab y's clinical pr ogress and curr ent condition and 
+• the le vels and tr ends of C-r eactiv e protein. [2021] 
+1.11.8 For guidance on tr eatment duration f or suspect ed or confirmed meningitis, r efer 
+to the section on meningitis (babies in neonatal unit s). [2021] 
+For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on antibiotics f or 
+late-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview H: 
+antibiotics . 
+1.12 A ntifung als to pr event fung al inf ection during 
+antibiotic tr eatmen t for la te-onse t neonatal 
+infection 
+1.12.1 Give prophylactic oral n ystatin t o babies tr eated wit h antibiotics f or suspect ed 
+late-onset neonatal bact erial inf ection if t hey: 
+• have a bir thweight of up t o 1,500 g or 
+• were born at less t han 30 weeks' gestation. [2021] 
+If oral administration of n ystatin is not possible, giv e intra venous fluconaz ole. 
+In April 2021 , this was an off -label use of fluconaz ole. See NICE's inf ormation 
+on pr escribing medicines and use clinical judgement t o det ermine t he 
+dosage. [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36
+of 81For a shor t explanation of wh y the committ ee made t he 2021 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on antifungals t o 
+prevent fungal inf ection during antibiotic tr eatment f or lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview I: 
+antifungals . 
+1.13 A voiding r outine use o f antibiotics in babies 
+1.13.1 Do not r outinely giv e antibiotic tr eatment t o babies wit hout risk f actors f or 
+infection or clinical indicat ors or laborat ory evidence of possible inf ection. [2012] 
+1.14 Ear ly- and la te-onse t mening itis (babies in 
+neonatal uni ts) 
+1.14.1 If a bab y is in a neonatal unit and meningitis is suspect ed but t he causativ e 
+pathogen is unkno wn (f or example, because t he cer ebrospinal fluid Gram stain is 
+uninf ormativ e), tr eat wit h intra venous amo xicillin and cef otaxime. [2012, 
+amended 2021] 
+1.14.2 If a bab y is in a neonatal unit and meningitis is sho wn (b y either cer ebrospinal 
+fluid Gram stain or cultur e) to be caused b y Gram-negativ e infection, st op 
+amoxicillin and tr eat wit h cef otaxime alone. [2012, amended 2021] 
+1.14.3 If a bab y is in a neonatal unit and meningitis is sho wn (b y cer ebrospinal fluid 
+Gram stain) t o be caused b y a Gram-positiv e bact erium: 
+• continue tr eatment wit h intra venous amo xicillin and cef otaxime while waiting 
+for the cer ebrospinal fluid cultur e result and 
+• seek e xper t micr obiological advice. [2012, amended 2021] 
+1.14.4 If the cer ebrospinal fluid cultur e is positiv e for gr oup B str eptococcus, consider 
+changing t he antibiotic tr eatment t o: Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37
+of 81• benzylpenicillin 50 mg/k g every 12 hours, normally f or at least 14 days and 
+• gentamicin, wit h: 
+－ a star ting dosage of 5 mg/k g every 36 hours (see recommendation 1 .5.3) 
+－ subsequent doses and int ervals adjust ed if necessar y based on clinical 
+judgement (see recommendation 1 .5.5) and blood gentamicin 
+concentrations (see recommendations 1 .15.1 to 1.15.3) 
+－ treatment lasting f or 5 days. [2012, amended 2021] 
+1.14.5 If the blood cultur e or cer ebrospinal fluid cultur e is positiv e for list eria, consider 
+stopping cef otaxime and tr eating wit h amo xicillin and gentamicin. [2012, 
+amended 2021] 
+1.14.6 If the cer ebrospinal fluid cultur e identifies a Gram-positiv e bact erium ot her t han 
+group B str eptococcus or list eria, seek e xper t micr obiological advice on 
+management. [2012, amended 2021] 
+For a shor t explanation of wh y the committ ee amended t he 2012 r ecommendations 
+and ho w they might aff ect practice, see t he rationale and impact section on early- 
+and lat e-onset meningitis . 
+Fluid r estric tion 
+1.14.7 Do not r outinely r estrict fluid intak e to belo w routine maint enance needs in babies 
+with bact erial meningitis. [202 4] 
+1.14.8 Give maint enance fluids orally or b y ent eral tube, if t olerat ed. [202 4] 
+For mor e guidance on fluid t herap y, see t he NICE guideline on intra venous fluid t herap y in 
+childr en and y oung people . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38
+of 81For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on fluid 
+restriction f or confirmed bact erial meningitis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview M: 
+fluid r estriction in bact erial meningitis . 
+Assessing f or imm unodeficienc y and r ecurr ence risk in babies 
+with bac terial mening itis 
+1.14.9 Refer babies wit h pneumococcal meningitis t o a paediatric immunology and 
+infectious disease specialist t o assess f or primar y immunodeficiency . [202 4] 
+1.14.10 For babies wit h bact erial meningitis, e xamine t heir back and scalp f or signs of a 
+sinus tract. [202 4] 
+1.14.11 For babies wit h bact erial meningitis, tak e a hist ory of: 
+• head trauma, sur gery or cer ebrospinal fluid leak 
+• immunisations 
+• medicines, including drugs t hat suppr ess t he immune syst em (such as 
+complement inhibit ors). [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on assessing f or 
+immunodeficiency and r ecurr ence risk in babies wit h bact erial meningitis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview N: 
+factors associat ed wit h recurr ent bact erial meningitis . 
+Dischar ge after an tibiotic tr eatmen t 
+1.14.12 After antibiotic tr eatment, consider pr ompt dischar ge of t he bab y from hospital, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39
+of 81with suppor t for the par ents and car ers and a point of contact f or advice. [2012] 
+Preparing f or hospi tal dischar ge 
+See also t he recommendations on planning f or car e aft er dischar ge for all babies who ha ve 
+had an inf ection. 
+Identifying and managing complications 
+1.14.13 Identify f ollow-up needs f or babies who ha ve had bact erial meningitis, taking int o 
+account pot ential cognitiv e, neur ological, de velopmental, hearing, psy chosocial, 
+education, and r enal complications. [202 4] 
+Cognitiv e, neur ological and de velopmental complications 
+1.14.14 Refer babies f or community neur odevelopmental f ollow-up. [202 4] 
+1.14.15 For babies who ar e taking anti-epileptic drugs, r efer for a medicines r eview 3 
+mont hs aft er hospital dischar ge, wit h a clinician wit h an int erest in epilepsy , an 
+epilepsy specialist nurse, or a neur ologist. [202 4] 
+Audiological assessment 
+1.14.16 Offer an audiological assessment wit hin 4 w eeks of t he bab y being w ell enough 
+for testing (and pr eferably bef ore dischar ge). [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on identifying 
+and managing complications . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview O: 
+long-t erm complications and f ollow-up f or bact erial meningitis . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40
+of 81Psychosocial suppor t 
+1.14.17 Consider r eferral t o psy chosocial suppor t for family members and car ers of 
+babies who ha ve had bact erial meningitis. [202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendation and 
+how it might aff ect practice, see t he rationale and impact section on planning f or car e 
+after hospital dischar ge. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview Q: 
+suppor t for confirmed bact erial meningitis . 
+Care after hospi tal dischar ge 
+First r eview 
+1.14.18 For babies who ha ve had bact erial meningitis, arrange f or a r eview wit h a 
+neonat ologist or paediatrician at 4 to 6 weeks aft er dischar ge fr om hospital. As 
+part of t his review , cover: 
+• the result s of t heir audiological assessment, and whet her cochlear implant s 
+are needed 
+• damage t o bones and joint s 
+• skin complications (including scarring fr om necr osis) 
+• psychosocial pr oblems (if r elevant, see t he NICE guideline on post -traumatic 
+stress disor der) 
+• neurological and de velopmental pr oblems, in liaison wit h community child 
+development ser vices. [202 4] 
+1.14.19 Arrange a r eview wit h a neonat ologist or paediatrician f or 1 year aft er dischar ge. 
+At this review , assess f or possible lat e-onset neur odevelopmental, sensor y and 
+psychosocial complications. [202 4] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1
+of 811.14.20 Healt hcare professionals (such as school nurses, healt h visit ors and GPs) wit h 
+responsibility f or monit oring t he healt h and w ellbeing of babies should be aler t 
+for lat e-onset complications of bact erial meningitis. [202 4] 
+1.14.21 Be awar e that lat e-onset complications ma y not be appar ent until transition 
+point s (such as star ting nurser y or school). [202 4] 
+1.14.22 Community child de velopment ser vices should f ollow up and assess t he risk of 
+long-t erm neur odevelopmental complications f or at least 2 y ears aft er dischar ge. 
+[202 4] 
+1.14.23 If a neur odevelopmental deficit is identified, r efer to the appr opriat e ser vices (f or 
+example, neur odisability ser vices) and agr ee wit h them who will be r esponsible 
+for follow-up, t o ensur e that nobody misses out on car e. [202 4] 
+1.14.24 Advise par ents and car ers t o get advice fr om t heir GP if t heir child de velops 
+possible neur odevelopmental complications mor e than 2 y ears aft er dischar ge. 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on car e aft er 
+hospital dischar ge. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview O: 
+long-t erm complications and f ollow-up f or bact erial meningitis and evidence r eview Q: 
+suppor t for confirmed bact erial meningitis . 
+Recurr ent bac terial mening itis 
+Risk f actors 
+1.14.25 Risk f actors f or recurr ent bact erial meningitis ar e: 
+• primar y or secondar y immunodeficiency , including: 
+－ HIV Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 42
+of 81－ congenital complement deficiency or acquir ed inhibition 
+－ reduced or absent spleen function 
+－ hypogammaglobulinaemia 
+• communication betw een t he cer ebrospinal fluid and e xternal sur face, f or 
+example, caused b y: 
+－ prior trauma or sur gery 
+－ a congenital anomaly . [202 4] 
+Management 
+1.14.26 For babies who ha ve had a r ecurr ent episode of bact erial meningitis: 
+• review wit h a paediatric immunology and inf ectious disease specialist and 
+• agree which t ests, investigations, v accines and ot her int erventions ar e 
+needed t o prevent r e-occurr ence. [202 4] 
+1.14.27 Examine t he bab y's back and scalp f or signs of a sinus tract. [202 4] 
+1.14.28 Get specialist radiological advice on in vestigations f or a cer ebrospinal fluid leak. 
+[202 4] 
+1.14.29 Take an immunisation and medicine hist ory, including f or drugs t hat suppr ess t he 
+immune syst em (such as complement inhibit ors). [202 4] 
+1.14.30 In babies wit h recurr ent meningitis wit h unconfirmed bact erial cause, consider 
+other causes and get advice fr om an inf ection specialist. [202 4] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 43
+of 81For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on r ecurr ent 
+bacterial meningitis . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview N: 
+factors associat ed wit h recurr ent bact erial meningitis . 
+1.15 Ther apeu tic drug moni toring f or babies 
+receiving g entamicin 
+Trough concentrations 
+1.15.1 If giving a second dose of gentamicin, measur e the trough blood gentamicin 
+concentration immediat ely bef ore giving t he second dose. T ake the tr ough 
+concentrations int o account bef ore giving t he third dose of gentamicin. [2012] 
+1.15.2 Repeat t he measur ement of tr ough concentrations immediat ely bef ore every 
+subsequent t hird dose of gentamicin, or mor e frequent ly if necessar y (for 
+example, if t here has been concern about pr evious tr ough concentrations or r enal 
+function). [2012] 
+1.15.3 Hospital ser vices should mak e blood gentamicin concentrations a vailable t o 
+healt hcare professionals in time t o inform t he ne xt dosage decision. [2012] 
+1.15.4 Adjust t he gentamicin dose int erval, aiming t o achie ve trough concentrations of 
+less t han 2 mg/litr e. If t he course of gentamicin last s for mor e than 3 doses, aim 
+for a tr ough concentration of less t han 1 mg/litr e. [2012] 
+1.15.5 Do not wit hhold a dose of gentamicin because of dela ys in getting a tr ough 
+concentration measur ement, unless t here is e vidence of impair ed renal function 
+(for example, an ele vated serum ur ea or cr eatinine concentration, or anuria). 
+[2012] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 44
+of 81Peak concentrations 
+1.15.6 Consider measuring peak blood gentamicin concentrations in select ed babies, 
+such as in t hose wit h: 
+• oedema 
+• macr osomia (bir thweight mor e than 4 .5 kg) 
+• an unsatisf actory response t o treatment 
+• proven Gram-negativ e infection. [2012] 
+1.15.7 When measuring peak blood gentamicin concentrations, tak e the measur ement 
+1 hour aft er star ting gentamicin. [2012] 
+1.15.8 If a bab y has a Gram-negativ e or staph ylococcal inf ection, consider incr easing 
+the dose of gentamicin if t he peak concentration is less t han 8 mg/litr e. [2012] 
+1.16 Car e setting 
+1.16.1 Using clinical judgement, consider completing a course of intra venous antibiotics 
+outside of hospital (f or example, at home or t hrough visit s to a midwif ery-led unit) 
+in babies who ar e well and f or whom t here are no ongoing concerns if t here is 
+adequat e local suppor t. [2012] 
+1.16.2 When deciding on t he appr opriat e car e setting f or a bab y, take into account t he 
+baby's clinical needs and t he compet encies needed t o ensur e saf e and eff ectiv e 
+care (for example, t he inser tion and car e of intra venous cannulas). [2012] 
+1.17 P lanning f or care after dischar ge 
+1.17.1 For babies who ha ve had an inf ection, t ell their GP (and healt h visit or if r elevant), 
+and e xplain an y follow-up plans. [202 4] 
+1.17.2 Tell the par ents and car ers who t heir main point of contact will be aft er dischar ge. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 45
+of 81[202 4] 
+1.17.3 Document t he follow-up plan f or managing complications in t he dischar ge 
+summar y. [202 4] 
+1.17.4 The hospital t eam should coor dinat e wit h the following pr ofessionals f or car e 
+after dischar ge: 
+• tertiary and primar y car e and ot her specialist s 
+• allied pr ofessionals and community t eams t hat will be in volved in f ollow-up 
+(for example, audiology and speech and language t herap y depar tment s). 
+[202 4] 
+For a shor t explanation of wh y the committ ee made t he 202 4 recommendations and 
+how they might aff ect practice, see t he rationale and impact section on planning f or 
+care aft er hospital dischar ge. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview O: 
+long-t erm complications and f ollow-up f or bact erial meningitis , evidence r eview P: 
+information f or confirmed bact erial meningitis and evidence r eview Q: suppor t for 
+confirmed bact erial meningitis . 
+Terms use d in this guideline 
+This section defines t erms t hat ha ve been used in a par ticular wa y for this guideline. F or 
+other definitions see t he NICE glossar y and t he Think Local, Act P ersonal Car e and 
+Suppor t Jargon Bust er. 
+Early-onse t neonatal inf ection 
+Neonatal inf ection less t han 72 hours aft er bir th. 
+Late-onse t neonatal inf ection 
+Neonatal inf ection 72 hours or mor e aft er bir th. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 46
+of 81Peak blood g entamicin c oncentration 
+The le vel of gentamicin in t he bab y's bloodstr eam shor tly aft er administration. The blood 
+sample is usually tak en about 1 hour aft er giving t he drug. High peak concentrations of 
+gentamicin ar e necessar y to kill bact eria. 
+Severe penicillin aller gy 
+A hist ory of aller gy to penicillin wit h eff ects that ar e clearly lik ely to be aller gic in natur e 
+such as anaph ylaxis, r espirat ory distr ess, angioedema or ur ticaria. 
+Ther apeu tic moni toring 
+A process of measuring t he concentration of a drug in t he bloodstr eam, t o avoid e xcessiv e 
+levels that might be associat ed wit h adv erse eff ects or t o ensur e adequat e levels for 
+therapeutic eff ect. 
+Trough blood g entamicin c oncentration 
+The le vel of gentamicin in t he bab y's bloodstr eam shor tly bef ore a fur ther dose is giv en. 
+High tr ough gentamicin concentrations ma y be associat ed wit h an incr eased risk of 
+adverse eff ects. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 47
+of 81Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+Key recommenda tions f or research 
+1 Risk f actors for and clinic al indic ators of early-onse t infection 
+What is t he accuracy of clinical pr ediction models f or early-onset neonatal inf ection in t he 
+UK and what is t heir eff ectiv eness in guiding management in t he bab y? [2021] 
+What is t he risk of early-onset neonatal inf ection wit h mat ernal obesity and ho w does t his 
+change wit h incr easing body mass inde x? [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations f or 
+resear ch, see t he rationale on risk f actors f or and clinical indicat ors of possible early-
+onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+maternal and neonatal risk f actors. 
+2 Investig ations f or babies w ho ma y have early-onse t infection 
+What is t he clinical and cost eff ectiv eness of laborat ory investigations used individually or 
+in combination t o exclude early-onset neonatal inf ection in babies r eceiving antibiotics f or 
+suspect ed inf ection? [2012] 
+3 Antibiotics f or suspe cted early-onse t neonatal inf ection 
+What is t he optimal duration of tr eatment ( course lengt h) in babies who r eceiv e antibiotics 
+for confirmed early-onset neonatal inf ection? [2012] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 48
+of 814 Risk f actors for and clinic al indic ators of late-onse t infection 
+What is t he accuracy of new or e xisting clinical pr ediction models f or lat e-onset neonatal 
+infection in t he UK and what is t heir eff ectiv eness in guiding management: 
+• for babies alr eady on a neonatal unit? 
+• for babies admitt ed fr om home? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale on risk f actors f or and clinical indicat ors of possible lat e-onset 
+infection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview E: 
+risk f actors f or lat e onset neonatal inf ection . 
+5 Antibiotics f or suspe cted late-onse t neonatal inf ection 
+What is t he optimal antibiotic tr eatment r egimen f or suspect ed lat e-onset neonatal 
+infection? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale on antibiotics f or lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview H: 
+antibiotics . 
+Other r ecommenda tions f or research 
+6 Impact of neonatal inf ection on the bab y's famil y 
+What is t he impact of neonatal inf ection on t he healt h-related quality of lif e of t he bab y's 
+family? [2021] Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 49
+of 81For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale on w omen wit h prolonged pr elabour ruptur e of membranes . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+timing of deliv ery. 
+7 Informa tion and suppor t 
+How does each st ep in t he car e pat hway for pr evention and tr eatment of early-onset 
+neonatal inf ection impact on babies and t heir f amilies? [2012] 
+What is t he clinical and cost eff ectiv eness of inf ormation and suppor t offered to par ents 
+and car ers of babies who ha ve receiv ed antibiotics f or suspect ed or pr oven early-onset 
+neonatal inf ection? [2012] 
+8 Intrapar tum an tibiotics 
+What is t he clinical and cost eff ectiv eness of intrapar tum antibiotics f or women wit h 
+meconium-stained amniotic fluid? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale on intrapar tum antibiotics . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+intrapar tum antibiotics . 
+9 Antibiotics f or suspe cted early-onse t infection 
+What is t he incidence in England and W ales of r esistance t o commonly used antibiotics 
+among bact eria t hat cause early-onset neonatal inf ection? [2012] 
+What is t he optimal antibiotic dosage r egimen f or the tr eatment of early-onset neonatal 
+infection? [2012] 
+What is t he incidence and se verity of adv erse eff ects wit h antibiotics used t o prevent or Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 50
+of 81treat early-onset neonatal inf ection? [2012] 
+What ar e the cor e exposur es and out comes t hat should be used t o evaluat e clinical 
+effectiv eness of antibiotics t o prevent or tr eat early- onset neonatal inf ection? [2012] 
+10 Intravascular c atheters for reducing the risk o f late-onse t 
+neonatal inf ection 
+What is t he eff ectiv eness of antimicr obial-impr egnat ed cat heters ot her t han t hose 
+impregnat ed wit h rifampicin and miconaz ole for pr eventing lat e-onset cat heter-related 
+bloodstr eam inf ections in newborn babies? [2021] 
+What is t he eff ectiv eness of cat heters impr egnat ed wit h silv er zeolite for pr eventing lat e-
+onset cat heter-related bloodstr eam inf ections in newborn babies? [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations f or 
+resear ch, see t he rationale on antibiotic-impr egnat ed intra vascular cat heters for 
+reducing t he risk of lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview F: 
+intravascular cat heters. 
+11 Antifung als to pr event fung al inf ection during an tibiotic 
+treatmen t for la te-onse t neonatal inf ection 
+What is t he optimum r egimen (including tr eatment duration and dose) f or using antifungals 
+to prevent secondar y fungal inf ection associat ed wit h antibiotic tr eatment f or lat e-onset 
+neonatal inf ection? [2021] 
+For a shor t explanation of wh y the committ ee made t his recommendation f or 
+resear ch, see t he rationale on antifungals t o prevent fungal inf ection during antibiotic 
+treatment f or lat e-onset neonatal inf ection . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview I: 
+antifungals . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 51
+of 8112 Ear ly and la te-onse t mening itis 
+What is t he optimal antibiotic tr eatment r egimen f or early-onset neonatal meningitis? 
+[2012] 
+13 Car e setting 
+What is t he clinical and cost eff ectiv eness of diff erent models of car e for the pr evention 
+and tr eatment of early-onset neonatal inf ection? [2012] 
+14 Long-term ou tcomes o f bac terial mening itis 
+What ar e the long-t erm out comes aft er bact erial meningitis in inf ancy? [202 4] 
+For a shor t explanation of wh y the committ ee made t his recommendation f or resear ch 
+and ho w it might aff ect practice, see t he rationale section on identifying and 
+managing complications . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview O: 
+long-t erm complications and f ollow-up f or bact erial meningitis . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 52
+of 81Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. The y link t o details of t he evidence and a full description of t he 
+committ ee's discussion. 
+Informa tion and suppor t 
+Recommendations 1 .1.1 to 1.1.11, and 1 .1.15 to 1.1.16 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee decided t hat some of t he inf ormation and suppor t recommendations in t he 
+2012 v ersion of t he NICE guideline on neonatal inf ection f or the families of babies wit h 
+early-onset inf ection w ere also applicable t o the families of babies who ma y develop lat e-
+onset inf ection. 
+The 2012 v ersion of t he guideline on early-onset inf ection r ecommended t hat par ents and 
+carers of babies wit h risk f actors f or early-onset inf ection should be giv en verbal and 
+writt en inf ormation on t he signs and sympt oms of inf ection. This is par ticularly impor tant 
+when t he bab y already has risk f actors t hat indicat e they ma y develop inf ection. Ho wever, 
+the committ ee not ed that an y bab y can de velop an inf ection, e ven if t hey are not identified 
+as high risk at t he time of dischar ge. The committ ee therefore thought it was impor tant 
+that all par ents and car ers should be giv en inf ormation about t he signs and sympt oms of 
+neonatal inf ection bef ore their bab y is dischar ged fr om hospital. 
+The committ ee also want ed to ensur e that t he signs of inf ection list ed in t he 
+recommendations w ere writt en in simple language t hat f amilies could understand, rat her 
+than using clinical t erminology . Ther efore, examples of t he most common br eathing 
+problems e xperienced b y babies wit h neonatal inf ection w ere added t o the 
+recommendation on signs and sympt oms. 
+The committ ee thought it was impor tant t hat inf ormation was giv en in accessible f ormat s, 
+including diff erent languages wher e appr opriat e to ensur e that inf ormation was equally 
+accessible to all. The y not ed these principles ar e out lined in t he NICE guideline on patient 
+experience in adult NHS ser vices and so cr oss-r eferred to this guideline. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 53
+of 81How the r ecommenda tions mig ht affect practice 
+These r ecommendations ha ve been adapt ed fr om t he existing guidelines f or early-onset 
+neonatal inf ection, r eflecting standar d practice. As such, t hey are not e xpect ed to have a 
+substantial impact on practice. Expanding t he recommendation on signs and sympt oms so 
+that advice is giv en to all par ents and car ers will mean t hat mor e families will be awar e of 
+the signs of inf ection and will kno w to seek medical help if t heir bab y develops an y of 
+them. 
+Return t o recommendations 
+Informa tion and suppor t after diagnosis 
+Recommendations 1 .1.12 to 1.1.14 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee made r ecommendations based on e vidence on t he views of par ents and 
+carers, and based on t heir kno wledge and e xperience. 
+The committ ee emphasised t he need t o discuss t he issues co vered in t he 
+recommendations wit h par ents and car ers of babies wit h bact erial meningitis, t o giv e them 
+the chance t o ask questions, and t o repeat inf ormation o ver time. This is because people 
+may be distr essed and unable t o ask questions or understand inf ormation when t heir bab y 
+is first admitt ed to hospital. 
+Emotional and past oral suppor t is recommended f or par ents and car ers because of t he 
+severe impact meningitis can ha ve on a bab y. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations lar gely r eflect curr ent practice and t hey should not ha ve a 
+significant r esour ce impact. 
+Return t o recommendations Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 54
+of 81Intrapar tum an tibiotics 
+Recommendations 1 .2.1 to 1.2.5 
+Why the c ommi ttee made the r ecommenda tions 
+No new e vidence was identified since 2012, when t he pr evious v ersion of t he guideline 
+was published. The committ ee extended t he 2012 r ecommendation on antibiotics f or 
+group B str eptococcus t o cover women who had colonisation in a pr evious pr egnancy . This 
+was because gr oup B str eptococcus colonisation in a pr evious pr egnancy gr eatly 
+increases t he chance of being colonised in futur e pregnancies. The committ ee w ere 
+concerned about a w oman not r eceiving tr eatment because of a f alse negativ e test result, 
+and so t hey decided t o specify t hat a negativ e test should be fr om enrichment cultur e or 
+polymerase chain r eaction (PCR) on r ectovaginal swab samples. Alt hough some t ests ma y 
+have higher f alse positiv e rat es, all w omen wit h positiv e tests should be tr eated as if t hey 
+have GBS so t hat no babies who ar e at higher risk of inf ection ar e missed. 
+For women in pr e-term labour and w omen wit h a clinical diagnosis of chorioamnionitis, 
+there was no e vidence identified on t he eff ects on intrapar tum antibiotics on t he number 
+of neonatal inf ections. Ho wever, antibiotics did r educe t he number of mat ernal inf ections 
+in women in pr e-term labour . The committ ee also agr eed t hat pr e-term labour and 
+chorioamnionitis ar e impor tant risk f actors f or neonatal inf ection, so intrapar tum antibiotics 
+are very likely to reduce t he risk t o the bab y. Chorioamnionitis is a serious inf ection t hat 
+needs t o be tr eated wit h antibiotics t o prevent harm t o the mot her. The committ ee thought 
+that it was impor tant t o mak e recommendations f or antibiotic tr eatment t hat w ould 
+simultaneously tr eat inf ection in t he mot her and pr event early-onset gr oup B str eptococcal 
+infection in t he bab y to mak e the best use of antibiotics. 
+The committ ee retained t he recommendations on using benzylpenicillin as first -choice 
+antibiotic fr om t he 2012 guideline. Based on t heir kno wledge and e xperience, gentamicin 
+and metr onidaz ole ar e also no w recommended f or women wit h chorioamnionitis, because 
+chorioamnionitis can be caused b y Gram positiv e or negativ e aer obic and anaer obic 
+bacteria, so clinicians need t o use br oad-spectrum antibiotics t hat ar e eff ectiv e against 
+both. Once-daily dosing f or gentamicin was r ecommended based on t he kno wledge and 
+experience of t he committ ee because 8 hourly dosing has additional monit oring 
+requir ement s and w ould need additional nursing time f or administration. 
+The committ ee also pr ovided guidance on alt ernativ es for women wit h a penicillin aller gy, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 55
+of 81based on t heir kno wledge and e xperience. The committ ee amended t he 2012 
+recommendation on antibiotic alt ernativ es for women who ar e aller gic to penicillin. The y 
+changed t he recommended antibiotic fr om clindam ycin because t here is e vidence of 
+resistance t o group B str eptococcus emer ging wit h clindam ycin, meaning t hat t his 
+antibiotic should no longer be used r outinely . Based on t heir kno wledge and e xperience, 
+the committ ee recommended a cephalosporin wit h activity against gr oup B str eptococcus 
+as an alt ernativ e for women wit h a penicillin aller gy that was not se vere, and v ancom ycin 
+or an alt ernativ e antibiotic wit h activity against gr oup B str eptococcus in t he case of 
+severe penicillin aller gy. The committ ee w ere awar e of t he possibility of aller gic reaction t o 
+cephalosporins in w omen wit h a hist ory of penicillin aller gy. For women wit h a hist ory of 
+penicillin aller gy that was not se vere they thought t hat t his risk was small and was 
+outw eighed b y the benefit s of using cephalosporins t o treat chorioamnionitis and pr event 
+neonatal inf ection. The y not ed that cephalosporins should be used wit h caution in t hese 
+women. Cephalosporins w ere not r ecommended in t he case of se vere penicillin aller gy 
+because of an incr eased chance of a se vere aller gic reaction t o cephalosporins. Se vere 
+penicillin aller gy refers t o a hist ory of aller gy to penicillin wit h eff ects that ar e clearly lik ely 
+to be aller gic in natur e such as anaph ylaxis, r espirat ory distr ess, angioedema or ur ticaria. 
+How the r ecommenda tions mig ht affect practice 
+Many of t he recommendations r emain t he same as in t he 2012 guideline. The 
+recommendations on intrapar tum antibiotics ha ve been e xtended t o cover women in pr e-
+term labour wit hout pr elabour ruptur e of membranes, w omen wit h chorioamnionitis and 
+women wit h group B str eptococcus colonisation in a pr evious pr egnancy . However, these 
+changes r eflect curr ent practice, as man y of t hese w omen alr eady r eceiv e intrapar tum 
+antibiotics. 
+The committ ee expect ed that t he recommendation on intrapar tum antibiotics f or 
+chorioamnionitis w ould ha ve the gr eatest impact on clinical practice. Ther e is curr ently 
+variation in which antibiotics ar e giv en to women wit h chorioamnionitis, wit h some unit s 
+prescribing br oad-spectrum antibiotics t o treat inf ection in t he mot her and benzylpenicillin 
+to prevent inf ection in t he bab y. Recommending a combination of narr ow-spectrum 
+antibiotics f or women wit hout an aller gy to penicillin is lik ely to reduce t he use of br oad-
+spectrum antibiotics, which will impr ove antibiotic st ewar dship. 
+Return t o recommendations Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 56
+of 81Women wi th pr olong ed prelabour ruptur e of 
+membr anes w ho ha ve group B str eptoc occal 
+colonisa tion, bac teriuria or inf ection 
+Recommendation 1 .2.6 
+Why the c ommi ttee made the r ecommenda tion 
+The e vidence suggest ed that immediat e deliv ery can r esult in a r educed risk of a bab y 
+developing neonatal inf ection when a mot her is betw een 34 and 37 weeks' gestation and 
+has pr olonged pr elabour ruptur e of membranes and a positiv e test result f or gr oup B 
+streptococcus. The e vidence did not indicat e any significant harms t o the bab y from 
+choosing immediat e deliv ery over expectant management. Ther efore, the committ ee 
+decided t hat, giv en the pot ential serious consequences of a bab y developing neonatal 
+infection, a r ecommendation in f avour of immediat e deliv ery was impor tant. This was 
+further suppor ted by the economic e vidence, which sho wed not only a clinical benefit t o 
+immediat e deliv ery but also lo wer associat ed cost s in comparison t o expectant 
+management, which has incr eased ant enatal cost s and higher rat es of inf ections. 
+The committ ee made a recommendation f or resear ch on e xamining t he healt h-related 
+quality of lif e impact on par ents or car ers when a bab y has neonatal inf ection . This 
+information was not a vailable and w ould ha ve impr oved ho w well the economic model truly 
+reflect ed the cost s and healt h consequences of neonatal inf ection. 
+How the r ecommenda tion mig ht affect practice 
+This r ecommendation could incr ease t he number of w omen who ar e off ered immediat e 
+deliv ery when t hey have bot h prolonged pr elabour ruptur e of membranes and a positiv e 
+test for gr oup B str eptococcus. This in turn could r educe t he number of babies who need 
+to be tr eated for neonatal inf ection and also r educe t he number of mot hers who need t o 
+be monit ored throughout t he expectant management period. The e xact impact of t hese 
+recommendations will v ary betw een t hose hospitals wher e group B str eptococcus 
+screening and t esting is mor e routinely per formed and t hose wher e it is not. 
+Recommendations on gr oup B str eptococcus scr eening w ere out side of t he scope of t his 
+guideline. An economic model suggest ed that incr easing t he number of w omen off ered 
+immediat e deliv ery would r educe cost s overall. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 57
+of 81Return t o recommendation 
+Risk f actors for and clinic al indic ators of possi ble 
+early-onse t neonatal inf ection 
+Recommendations 1 .3.1 to 1.3.9 
+Why the c ommi ttee made the r ecommenda tions 
+Before bir th 
+No e vidence was f ound t hat r elated specifically t o this topic, and t he committ ee agr eed 
+that t he recommendations fr om t he pr evious v ersion of t his guideline still r eflect ed curr ent 
+best practice so did not need t o be changed. These r ecommendations apply t o all w omen 
+with risk f actors, including t hose who decline antibiotics, or t hose who eit her do not 
+receiv e antibiotics or r eceiv e their first dose of antibiotics shor tly bef ore bir th because of 
+precipitat e bir th. As such, an y women wit h risk f actors should be monit ored throughout 
+labour , and t hese f actors should be tak en int o account when assessing t he risk of inf ection 
+in the bab y. 
+Assessing and managing t he risk of early-onset neonatal inf ection aft er bir th 
+The committ ee based t heir r ecommendations on e vidence on t he accuracy of clinical 
+decision models f or early-onset neonatal inf ection, as w ell as e vidence on individual 
+neonatal and mat ernal risk f actors. 
+Ther e was uncer tainty about ho w well the Kaiser P ermanent e neonatal sepsis calculat or 
+identified true cases of early-onset inf ection, because t he studies included v ery few cases 
+of inf ection t hat w ere confirmed b y blood cultur e. This was a pr oblem f or the framew ork 
+outlined in t he 2012 v ersion of t he guideline as w ell, but t he committ ee belie ved that t he 
+framew ork is mor e conser vative and w ould lead t o mor e antibiotics being pr escribed t han 
+the Kaiser P ermanent e calculat or (bot h appr opriat ely and inappr opriat ely). Evidence on 
+the Kaiser P ermanent e neonatal sepsis calculat or suggest s that it is good at corr ectly 
+identifying babies wit hout neonatal inf ection, so r educing t he amount of antibiotics t hat 
+are prescribed unnecessarily . However, given the very serious consequences of missing an 
+infection, t he committ ee pr eferred the conser vative appr oach fr om t he framew ork in t he 
+2012 guideline, wit h some amendment s as out lined. Ho wever, as t he evidence does not Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 58
+of 81clearly sho w one option t o be bett er and some UK centr es curr ently use t he Kaiser 
+Permanent e calculat or, they also r ecommended t his as an alt ernativ e, but only in t he 
+context of a r esear ch or audit pr oject. By using t he Kaiser P ermanent e calculat or as par t of 
+an audit, centr es will be able t o collect detailed data on t he use of t he tool wit hin NHS 
+practice, including t he number of babies who corr ectly receiv ed tr eatment, t hose who 
+receiv ed antibiotics unnecessarily , and an y who w ere not r ecommended antibiotics but did 
+have infection. This inf ormation will pr ovide a mor e detailed understanding of t he 
+effectiv eness and saf ety of t he Kaiser P ermanent e calculat or which can be used t o inform 
+decisions on it s use in futur e updat es of t his guideline. 
+The committ ee decided t o specify t hat t he Kaiser P ermanent e calculat or should only be 
+used f or babies who ar e being car ed for in a neonatal unit (neonatal int ensiv e car e unit s, 
+local neonatal unit s and special car e unit s), transitional car e or a postnatal war d. The 
+committ ee highlight ed ho w it w ould be mor e difficult t o collect t he inf ormation needed f or 
+the audit in ot her settings. The y did not t hink t he calculat or should be r ecommended f or 
+use in t he emer gency depar tment, as babies who ar e brought in fr om home ar e likely to 
+already be sho wing signs of being unw ell and t herefore need mor e immediat e treatment 
+than babies who ar e being assessed f or risk of inf ection in a neonatal unit. In t hese cases, 
+waiting t o consult t he calculat or could inst ead dela y treatment. The committ ee also 
+thought t hat t he calculat or was not appr opriat e for use in a midwif e-led unit or 
+freestanding midwif ery unit as t here is curr ently no e vidence t hat has used t he calculat or 
+in these settings. 
+As there was only limit ed new e vidence, t he framew ork f or assessing and managing risk, 
+involving r ed flag indicat ors and ot her indicat ors of inf ection, has been r etained fr om t he 
+2012 guideline. The committ ee select ed the red flag indicat ors as t hose t hat, based on 
+their clinical e xperience, ar e the most high-risk f actors t hat need immediat e treatment. 
+Non-r ed flag indicat ors ar e those t hat can ha ve causes ot her t han neonatal inf ection and 
+therefore do not alwa ys signal t he need f or immediat e treatment. Man y of t he clinical 
+indicat ors mat ched t hose in t he 2012 guideline, wit h the following changes. 
+Parenteral antibiotics ar e no longer a risk f actor. Since t he 2012 guideline, awar eness of 
+the risks of mat ernal sepsis has incr eased and t here has been a f ocus on early tr eatment 
+with antibiotics. This has led t o mor e babies being pr escribed antibiotics e ven when a 
+maternal inf ection is not str ongly suspect ed. This rise in antibiotic use can r esult in babies 
+being unnecessarily e xposed t o the side eff ects associat ed wit h antibiotics, such as 
+nephr otoxicity , as w ell as incr easing a bab y's lengt h of sta y in hospital. Incr eased antibiotic 
+use is also associat ed wit h an incr ease in t he de velopment of antibiotic r esistance. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 59
+of 81Chorioamnionitis and intrapar tum f ever ar e now separat e risk f actors because intrapar tum 
+fever has ot her pot ential causes. This change means t hat w omen wit h chorioamnionitis 
+and intrapar tum f ever will ha ve 2 risk f actors, so t heir babies will r eceiv e antibiotics. 
+Invasive group B str eptococcal inf ection in a pr evious bab y and mat ernal gr oup B 
+streptococcal colonisation, bact eriuria or inf ection in t he curr ent pr egnancy ha ve been 
+combined int o a single risk f actor, because ha ving a pr evious bab y wit h invasive group B 
+streptococcal inf ection incr eases t he risk of futur e colonisation and inf ection, but does not 
+confer additional risk if inf ection, bact eriuria or inf ection in t he curr ent pr egnancy is 
+already kno wn about. 
+Mechanical v entilation, which was pr eviously a r ed flag risk f actor pr e-term babies, and a 
+non-r ed flag risk f actor for term babies has been mer ged int o one r ecommendation. The 
+committ ee agr eed t hat mechanical v entilation is a risk f actor for inf ection r egar dless of 
+prematurity , and so t hey decided t o mer ge these int o one r ed flag risk f actor which did not 
+refer to whet her a bab y was born pr e-term or at t erm. 
+Confirmed pr elabour ruptur e of membranes was r emoved fr om t he table because t he 
+committ ee decided t hat it is no w co vered by other risk f actors in t he table (pr e-term bir th 
+and confirmed ruptur e of membranes in a pr e-term or t erm bir th). Babies born t o mot hers 
+with prelabour ruptur e of membranes will t herefore still r eceiv e treatment when using t he 
+updat ed version of t he framew ork. 
+To addr ess t he limit ed evidence, t he committ ee recommended fur ther r esear ch on t he 
+accuracy of t he Kaiser P ermanent e neonatal sepsis calculat or and ot her clinical pr ediction 
+models. 
+Management of babies at incr eased risk of inf ection 
+No e vidence was f ound t hat r elated specifically t o this topic, and t he committ ee agr eed 
+that t he recommendations fr om t he pr evious v ersion of t his guideline still r eflect ed curr ent 
+best practice so did not need t o be changed. 
+How the r ecommenda tions mig ht affect practice 
+Many neonatal unit s use t he framew ork fr om t he 2012 v ersion of t he NICE guideline. 
+Removal of par enteral antibiotics as a risk f actor is e xpect ed to reduce t he number of 
+babies giv en antibiotics unnecessarily . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 60
+of 81Some centr es use t he Kaiser P ermanent e neonatal sepsis calculat or as an alt ernativ e, and 
+the recommendations ma y incr ease t he number of centr es who use t his calculat or in t he 
+context of a r esear ch or audit pr oject. Curr ent e vidence suggest s that t his ma y reduce t he 
+number of babies who ar e unnecessarily giv en antibiotics, but t here was substantial 
+uncer tainty about ho w well the calculat or identified true cases of inf ection. If an incr ease 
+in use of t he Kaiser calculat or result ed in mor e cases of inf ection being missed, t his could 
+increase cost s associat ed wit h treating neonatal inf ections, as w ell as t he very serious 
+impact on t he bab y and t heir f amilies. 
+Reducing t he number of babies being giv en antibiotics ma y reduce cost s for the NHS, bot h 
+by reducing pr escriptions and b y reducing t he amount of time babies and t heir mot hers 
+spend in hospital. 
+Return t o recommendations 
+Lumbar punc ture 
+Recommendations 1 .4.6 to 1.4.8 and recommendations 1 .9.6 to 1.9.9 
+Why the c ommi ttee made the r ecommenda tions 
+Lumbar punctur e is t he only t est t hat can dir ectly confirm a diagnosis of bact erial 
+meningitis. 
+Antibiotics can aff ect t he result s of cer ebrospinal fluid t ests, so lumbar punctur e needs t o 
+be per formed bef ore antibiotics when possible. The committ ee did not r ecommend a 
+specific timeframe f or per forming lumbar punctur e because t hey were concerned t hat it 
+would be int erpreted as a har d cut off. The k ey timeframe is t he 1-hour timeframe f or giving 
+antibiotics, but clinical judgement is needed f or decisions on ho w to fit lumbar punctur e 
+around t his. F or example, f or some people it ma y be saf e to dela y the antibiotics b y slight ly 
+longer t han 1 hour , if this w ould allo w a lumbar punctur e to be per formed first. 
+The committ ee used t heir e xperience t o highlight situations t hat need tr eating or 
+stabilising bef ore a lumbar punctur e, because t hese ar e pot entially lif e-threatening and 
+present a gr eater risk t han dela yed meningitis in vestigations. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 61
+of 81How the r ecommenda tions mig ht affect practice 
+Lumbar punctur es can oft en be per formed mor e quickly on acut e medical war ds than in 
+emer gency depar tment s. Because of t his, hospitals ma y need t o be able t o urgent ly 
+transf er people wit h suspect ed bact erial meningitis out of emer gency depar tment s 
+(following stabilisation). Hospitals ma y also need t o str eamline t heir pr ocesses so t hat 
+acute medical war ds can per form lumbar punctur es wit hin the 1-hour timeframe f or giving 
+antibiotics. 
+Return t o recommendations 1 .4.6 to 1.4.8 
+Return t o recommendations 1 .9.6 to 1.9.9 
+Cerebrospinal fluid in vestig ations in babies wi th 
+suspe cted bac terial mening itis 
+Recommendations 1 .4.9 to 1.4.15 and recommendations 1 .9.10 to 1.9.16 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence on v arious cer ebrospinal fluid in vestigations f or diagnosing bact erial 
+meningitis: 
+• studies look ed at multiple t hresholds f or whit e cell count, finding t hat it was at least 
+moderat ely sensitiv e and specific at most t hresholds, and v ery specific and sensitiv e 
+at some t hresholds 
+• overall, t he evidence sho wed that pr otein concentration was at least moderat ely 
+sensitiv e and specific 
+• gram staining and cultur e was v ery specific f or identifying all causes of bact erial 
+meningitis 
+• there was a lar ge, consist ent body of e vidence sho wing t hat PCR was at least 
+moderat ely sensitiv e and v ery specific f or identifying par ticular causes of bact erial 
+meningitis. 
+The committ ee highlight ed that cer ebrospinal fluid cell count s, total pr otein and glucose 
+concentrations ar e impor tant f or clinical decision making and t o guide antibiotic tr eatment, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 62
+of 81and agr eed t hat t hese r esult s should be a vailable wit hin 4 hours. 
+It is impor tant t o look at t he whole clinical pictur e and tak e a full clinical hist ory, including 
+maternal hist ory for babies aged 28 da ys or under . This is because t here are factors t hat 
+may reduce t he reliability of cer ebrospinal fluid in vestigations. Based on t heir kno wledge 
+and e xperience t he committ ee highlight ed the most impor tant of t hese f actors. 
+Age-appr opriat e threshold v alues f or cer ebrospinal fluid should be used. V alues f or some 
+paramet ers (such as pr otein and cell count s) are higher in newborn babies t han in older 
+babies and childr en. 
+The committ ee highlight ed the need t o consider alt ernativ e diagnoses because t here 
+could be serious consequences if a pot entially tr eatable alt ernativ e cause is missed. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations lar gely suppor t curr ent practice, and t hey should not ha ve a 
+significant r esour ce impact. 
+PCR was not included as par t of cer ebrospinal fluid in vestigations in t he 2010 meningitis 
+guideline, but it has since become standar d practice in most hospitals. 
+Return t o recommendations 1 .4.9 to 1.4.15 
+Return t o recommendations 1 .9.10 to 1.9.16 
+Antibiotic-im pregna ted intravascular c atheters for 
+reducing the risk o f late-onse t neonatal inf ection 
+Recommendation 1 .7.1 
+Why the c ommi ttee made the r ecommenda tion 
+Ther e were only 2 studies looking at antimicr obial-impr egnat ed cat heters in newborn 
+babies: 
+• One study look ed at rif ampicin-miconaz ole-impr egnat ed cat heters. These pr ovided no Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 63
+of 81benefit o ver standar d cat heters. In addition, t hey are mor e expensiv e than standar d 
+catheters. 
+• The ot her study look ed at silv er-zeolite-impr egnat ed cat heters. The y sho wed some 
+benefit compar ed wit h standar d cat heters, but t he study was small and t he committ ee 
+had concerns about it s quality . It was also conduct ed in Italy , and t here are diff erences 
+in clinical practice and inf ection rat es betw een Italy and t he UK. 
+The committ ee agr eed t hey could not r ecommend antimicr obial-impr egnat ed cat heters 
+based on t he available e vidence. The r ecommendation against t he use of rif ampicin-
+miconaz ole-impr egnat ed cat heters was made on t he basis of t he evidence t hat t hey 
+provide no additional benefit o ver a standar d cat heter, and not because of an y saf ety 
+concerns o ver their use. Ther e is a wider range of antimicr obials t hat can be used t o 
+impregnat e cat heters t han ha ve curr ently been in vestigat ed in newborn babies and 
+uncer tainty o ver which type of impr egnat ed cat heter is t he most eff ectiv e and whet her 
+monot herap y or t he use of mor e than one antimicr obial w ould pr ovide t he most benefit s. 
+To addr ess t he shor tage of e vidence t hey made recommendations f or fur ther r esear ch. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation will r educe t he use of rif ampicin-miconaz ole-impr egnat ed cat heters. 
+However, antimicr obial-impr egnat ed cat heters ar e not commonly used f or newborn 
+babies, so t his should ha ve a limit ed impact. 
+Return t o recommendation 
+Risk f actors for and clinic al indic ators of possi ble 
+late-onse t neonatal inf ection 
+Recommendations 1 .8.1 and 1 .8.4 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee did not f eel that t here was sufficient, high-quality e vidence f or an y 
+individual model t o mak e a recommendation on clinical pr ediction models f or lat e-onset 
+neonatal inf ection. Inst ead, t hey recommended a r eview of t he individual risk f actors t hat 
+may predict a bab y's risk of ha ving or de veloping lat e-onset neonatal inf ection. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 64
+of 81Although t here was e vidence on a number of t ools aimed at pr edicting lat e-onset neonatal 
+infection, t he committ ee did not t hink t hat t here was sufficient, high quality , evidence 
+including e xternal v alidation t o recommend an y of t hem f or use in practice. Most of t he 
+evidence was not fr om recent studies, t he models w ere not r eadily a vailable as w eb-based 
+tools or in ot her f ormat s that could be easily used b y clinicians and it was t hought t hat 
+implementing t hem w ould ha ve needed considerable changes in clinical practice. 
+Given the limit ed evidence curr ently available f or pr ognostic models f or lat e-onset 
+infection, t he committ ee decided t hat t hey should mak e a recommendation f or resear ch. 
+The r ecommendation is designed t o encourage t he de velopment of new models t o identify 
+babies at risk of lat e-onset neonatal inf ection as w ell as pr omoting t he validation of t hese 
+models and e valuation of t heir eff ects on practice. This should help t o impr ove the 
+understanding of t he factors associat ed wit h late-onset neonatal inf ection so t hat 
+committ ees can mak e recommendations on t his ar ea in futur e guideline updat es. 
+With limit ed evidence on pr ognostic models, t he committ ee agr eed t hat it was inst ead 
+impor tant f or clinicians t o be awar e of t he clinical indicat ors and risk f actors f or lat e-onset 
+neonatal inf ection. Ther e was v ery limit ed evidence on mat ernal risk f actors f or lat e-onset 
+infection and so t he recommendations w ere based on t he risk f actors and signs and 
+sympt oms in t he bab y. The committ ee decided t hat t he list of high-risk crit eria fr om t he 
+risk stratification t ool in t he NICE guideline on suspect ed sepsis (table 1) co vered the most 
+impor tant indicat ors t hat clinicians in bot h community and specialist settings should be 
+awar e of. The y included t he recommendation t o seek early advice fr om a paediatrician t o 
+highlight t he impor tance of early tr eatment if an y of t he main clinical indicat ors ar e 
+present. Early specialist advice was t hought t o be par ticularly impor tant when caring f or 
+babies in t he community as t hey need t o be tak en to hospital and admitt ed bef ore 
+treatment can begin, while babies who ar e on a neonatal unit can be monit ored and 
+treated mor e quickly . It was agr eed t hat in addition t o clinical indicat ors, it was also 
+impor tant t o highlight pot ential risk f actors f or inf ection. This will help t o ensur e that 
+babies who ar e at gr eater risk f or inf ection ar e closely monit ored for the pr esence of an y 
+of the clinical indicat ors. The committ ee also r ecommended t hat clinicians should t hink 
+about inf ection in t he ot her babies when one bab y from a multiple bir th has inf ection. 
+Evidence was not f ound on t his, but t he committ ee thought t hat it was in line wit h curr ent 
+best practice because of t he risk t hat all t he babies fr om t he pr egnancy will ha ve the same 
+risk of inf ection. 
+Ther e was v ery limit ed evidence on t he signs and sympt oms of inf ection. The committ ee 
+was awar e of e xisting r ecommendations on clinical indicat ors of inf ection in t he NICE Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 65
+of 81guideline on suspect ed sepsis and so it consider ed this inf ormation when deciding on 
+recommendations. It was agr eed t hat t he high-risk indicat ors list ed in t he sepsis guideline 
+were an accurat e reflection of t he committ ee's e xperience wit h babies who de velop lat e-
+onset inf ection. Par ental or car er concern o ver changes in beha viour was added t o the list 
+of high-risk crit eria as t his was highlight ed as an impor tant indicat or of pot ential inf ection 
+for babies in t he community . Other pot ential clinical indicat ors w ere discussed, but t he 
+committ ee w ere concerned about t he risk of o ver-treatment if t oo man y clinical indicat ors 
+were list ed in t he recommendation, especially if some of t hose indicat ors could ha ve 
+causes ot her t han neonatal inf ection. The committ ee decided t hat t he signs included in 
+the recommendation w ere those t hat w ere most lik ely to indicat e infection and t herefore 
+the most impor tant t o consider when assessing whet her a bab y ma y need tr eatment. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations ar e consist ent wit h curr ent practice and t herefore a lar ge resour ce 
+impact is not anticipat ed. The table of clinical indicat ors ma y incr ease awar eness of when 
+a bab y is at gr eater risk of lat e-onset neonatal inf ection. This ma y incr ease t he number of 
+babies who r eceiv e early tr eatment in hospital and r educe t he negativ e eff ects and cost s 
+associat ed wit h infection. 
+Clinicians w orking on a neonatal or paediatric war d are already lik ely to be awar e of t he 
+risk f actors t hat w ere identified in t he evidence r eview . As such, t he recommendations ar e 
+helpful t o reinforce the kno wledge of t hese clinicians about t he risk f actors but ma y not 
+have a substantial eff ect on curr ent practice in a hospital setting. 
+Return t o recommendations 
+Investig ations f or la te-onse t neonatal inf ection 
+Recommendations 1 .9.1 to 1.9.6 
+Why the c ommi ttee made the r ecommenda tions 
+Blood cultur e is t he curr ent 'gold standar d' for identifying neonatal inf ection. Ho wever, 
+babies wit h late-onset inf ection can still sometimes ha ve a negativ e blood cultur e. It can 
+also tak e hours or da ys to get t he result s of blood cultur es. These inaccuracies and dela ys 
+mean t hat man y babies r eceiv e treatment bef ore blood cultur e result s are returned, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 66
+of 81because dela ying tr eatment could lead t o complications or deat h. Ha ving anot her 
+diagnostic t est as an alt ernativ e or an addition t o blood cultur e result s could t herefore 
+reduce unnecessar y antibiotic tr eatment. The committ ee review ed the evidence f or lat e-
+onset inf ection. Of t he ot her diagnostic t ests, only C-r eactiv e protein has enough e vidence 
+to recommend it. It is not accurat e enough t o be used as an alt ernativ e to blood cultur e, 
+but when used in combination it can impr ove the accuracy of t he diagnosis. The 
+committ ee discussed ho w a single C-r eactiv e protein measur ement is not sufficient t o 
+diagnose inf ection, as t his can v ary betw een babies. The y therefore decided t o 
+recommend t hat a C-r eactiv e protein sample is tak en when star ting antibiotics. This will 
+provide clinicians wit h a baseline against which t o compar e futur e C-r eactiv e protein 
+result s, to indicat e whet her a bab y is lik ely to have infection, whet her t hey are responding 
+to treatment and when t o consider st opping antibiotics. Blood cultur e is still consider ed 
+the gold standar d test for diagnosing neonatal inf ection but using it in combination wit h C-
+reactiv e protein measur ement s will allo w babies who do not need antibiotics t o stop taking 
+them sooner . 
+As the evidence f or lat e-onset inf ection lined up wit h the evidence fr om t he 2012 guideline 
+for early-onset inf ection, t he committ ee amended t he 2012 r ecommendations t o cover all 
+neonatal inf ection. 
+Ther e was limit ed evidence on lumbar punctur e specifically f or lat e-onset inf ection. 
+However, lumbar punctur e is t he 'gold standar d' test for identifying meningitis, and it was 
+recommended in t he 2012 guideline f or babies wit h early-onset inf ection. The committ ee 
+extended t his recommendation t o cover bot h early- and lat e-onset neonatal inf ection, as 
+they felt that t he benefit s of identifying meningitis outw eighed t he risks of t he pr ocedur e. 
+No e vidence was identified t hat suppor ted using urine cultur e or skin swabs in t he 
+neonatal unit. These t ests were also not r ecommended in t he 2012 guideline f or babies 
+with early-onset inf ection and so t he committ ee decided t o recommend against t heir use 
+for babies in neonatal unit s. Ho wever, they also discussed ho w urine cultur e can be an 
+impor tant t est for babies in a paediatric war d if a urinar y tract inf ection is suspect ed, so 
+included a r ecommendation which suppor ted its use in babies who ar e being car ed for 
+outside of neonatal unit s. This is consist ent wit h the recommendations fr om t he NICE 
+guideline on urinar y tract inf ection in under 16s. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations ar e not e xpect ed to have a major impact on practice as t hey reflect Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 67
+of 81the pr ocedur es curr ently followed in most hospitals. 
+Return t o recommendations 
+Antibiotics f or la te-onse t neonatal inf ection 
+Recommendations 1 .10.1 to 1.11.7 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e is v ariation acr oss t he countr y in antibiotic r esistance patt erns and in which 
+organisms ar e most lik ely to cause lat e-onset neonatal inf ection. Because of t his, local 
+data needs t o be used when choosing antibiotics. 
+Babies in a neonatal unit ar e likely to have been e xposed t o diff erent bact eria t han babies 
+at home, so t he committ ee made separat e recommendations f or the 2 groups. 
+For babies in a neonatal unit, t he committ ee did not belie ve there was enough e vidence t o 
+recommend specific antibiotics, and so made a recommendation f or resear ch int o the best 
+antibiotic r egimen t o treat lat e-onset inf ection . However, the evidence a vailable did sho w 
+that combinations of narr ower-spectrum antibiotics ar e as eff ectiv e as br oader -spectrum 
+antibiotics. The committ ee w ere awar e that using br oad-spectrum antibiotics in babies is 
+associat ed wit h altered gut flora, incr eased risk of in vasive fungal inf ection and t he 
+development of antibiotic r esistance, and so a combination of narr ow spectrum antibiotics 
+was r ecommended as first -line tr eatment. 
+For babies who ha ve been admitt ed fr om home, t here was also limit ed evidence on which 
+antibiotics t o use. The NICE guideline on suspect ed sepsis recommends tr eating 
+community-acquir ed sepsis wit h ceftriax one or cef otaxime depending on gestational age. 
+The committ ee agr eed t hat t hese antibiotics w ould be appr opriat e for lat e-onset neonatal 
+infection in babies who ha ve been admitt ed fr om home, and none of t he evidence f or this 
+group contradict ed it. 
+Ther e was no e vidence on duration of antibiotic tr eatment f or lat e-onset inf ection. 
+However, the 2012 guideline made r ecommendations on t his for early-onset inf ection, and 
+the committ ee adapt ed these so t hat t hey were applicable t o late-onset inf ection. The 
+duration of initial tr eatment is r ecommended t o be 48 hours rat her t han 36 hours as 
+recommended f or early-onset inf ection. This is t hought t o reflect t he diff erent bact eria Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 68
+of 81that cause lat e-onset inf ection, which gr ow mor e slo wly and ha ve a lo wer load in t he 
+bloodstr eam. This means t hat it can tak e longer f or a blood cultur e to become positiv e for 
+late-onset t han early-onset inf ection and so tr eatment needs t o continue f or longer until a 
+negativ e blood cultur e result can be confirmed. T o help wit h treatment decisions, t he 2012 
+version of t he guideline r ecommended t hat healt hcare professionals wit h experience in 
+neonatal inf ection should be a vailable t o provide micr obiological or paediatric inf ection 
+disease advice. The committ ee decided t hat t his recommendation is also impor tant when 
+making decisions about antibiotic tr eatment f or lat e-onset inf ection. 
+No e vidence on tr eatment duration was identified, and so t he committ ee made 
+recommendations based on t heir kno wledge and e xperience. The committ ee 
+recommended a tr eatment of 7 da ys for babies wit h a positiv e blood cultur e, consist ent 
+with the recommendation on early-onset neonatal inf ection fr om t he 2012 v ersion of t he 
+guideline. The committ ee recommended t hat a shor ter treatment duration should be used 
+when no pat hogen is identified (t he blood cultur e is negativ e) or t he pat hogen is a 
+common commensal. In t hese situations, t he committ ee not ed that inf ection was lik ely to 
+be less se vere and could be saf ely tr eated wit h a shor ter treatment duration, which w ould 
+have the adv antage of r educing e xposur e to antibiotics, which is consist ent wit h the 
+principles of good antibiotic st ewar dship. The committ ee also specified situations when a 
+longer tr eatment duration should be used, such as when t here is intra-abdominal co-
+pathology , necr otising ent erocolitis, ost eomyelitis or inf ection of a central v enous cat heter. 
+Ther e was no e vidence f or the specific situations wher e longer tr eatment w ould be 
+requir ed, but t he committ ee based t heir decisions on t heir kno wledge and e xperience. 
+How the r ecommenda tions mig ht affect practice 
+These r ecommendations will help t o reduce t he use of br oad-spectrum antibiotics as first -
+line tr eatment f or babies in neonatal unit s, which ma y help r educe antibiotic r esistance. 
+However, use of narr ow-spectrum antibiotics is alr eady standar d practice in man y unit s, 
+and t he cost s of antibiotics ar e low, so t here is e xpect ed to be v ery little impact on 
+resour ce use, especially as most of t he aff ected babies ar e already r eceiving int ensiv e 
+care and monit oring. 
+The r ecommendation f or babies admitt ed fr om home ma y not ha ve a substantial impact on 
+practice, as it r efers t o an e xisting r ecommendation in t he NICE guideline on suspect ed 
+sepsis. 
+The r ecommendations on duration of tr eatment ar e consist ent wit h curr ent practice. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 69
+of 81Return t o recommendations 
+Antifung als to pr event fung al inf ection during 
+antibiotic tr eatmen t for la te-onse t neonatal 
+infection 
+Recommendation 1 .12.1 
+Why the c ommi ttee made the r ecommenda tions 
+Evidence fr om randomised contr olled trials sho wed that bot h nystatin and fluconaz ole can 
+reduce t he risk of a bab y developing an in vasive fungal inf ection in comparison t o placebo 
+or no tr eatment. Evidence mar ginally f avoured the use of n ystatin o ver fluconaz ole for 
+reducing t he risk of fungal inf ection and based on t he kno wledge and e xperience of t he 
+committ ee, n ystatin is bett er tolerat ed and t here is a lo wer risk of fungi de veloping 
+resistance t o this antifungal t han fluconaz ole. Economic e vidence sho wed that n ystatin 
+was also lik ely to be t he most cost -effectiv e option, and so t he committ ee recommended 
+oral n ystatin f or antifungal pr ophylaxis when a bab y is being giv en antibiotics f or lat e-
+onset neonatal inf ection. The r ecommendation f or antifungal pr ophylaxis was limit ed to 
+babies belo w 1,500 g or 30 weeks' gestational age because t he evidence was fr om babies 
+in these population gr oups. 
+Although oral n ystatin was t he committ ee's first choice f or antifungal pr ophylaxis, oral 
+administration of antifungals ma y not be possible f or all babies, par ticularly t hose who ar e 
+very prematur e. The committ ee therefore specified t hat t he use of intra venous fluconaz ole 
+is appr opriat e when oral administration is not possible. 
+The committ ee made a recommendation f or resear ch for studies in vestigating t he optimum 
+regimen f or giving antifungal pr ophylaxis when tr eating a bab y wit h antibiotics f or lat e-
+onset inf ection , because e vidence was not a vailable t o suppor t specific r ecommendations 
+on the duration and dose of antifungal tr eatment t hat should be used. 
+How the r ecommenda tions mig ht affect practice 
+This r ecommendation ma y incr ease t he number of babies who ar e giv en nystatin as 
+antifungal pr ophylaxis when t hey are prescribed antibiotics f or lat e-onset inf ection. This 
+should decr ease t he number of babies who need t o be tr eated for fungal inf ection which, Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 0
+of 81although rar e, can ha ve serious consequences. Economic modelling sho wed that giving 
+antifungal pr ophylaxis is lik ely to be cost sa ving because of a r eduction in cost s associat ed 
+with treating in vasive fungal inf ections and t heir consequences. 
+Return t o recommendation 
+Early- and la te-onse t mening itis (babies in 
+neonatal uni ts) 
+Recommendations 1 .14.1 to 1.14.6 
+Why the c ommi ttee amende d the r ecommenda tions 
+These r ecommendations w ere carried f orward from t he 2012 v ersion of NICE's guideline 
+on early-onset neonatal inf ection, but w ere expanded t o cover bot h early- and lat e-onset 
+neonatal meningitis f or babies in neonatal unit s based on t he kno wledge and e xperience of 
+the committ ee. Evidence r elating t o these r ecommendations was not r eview ed for lat e-
+onset meningitis, but t he committ ee agr eed t hat t he recommendations t hat w ere made in 
+2012 f or early-onset inf ection w ould also apply t o late-onset meningitis f or babies tr eated 
+in neonatal unit s. 
+Return t o recommendations 
+Fluid r estric tion f or confirme d bac terial mening itis 
+Recommendations 1 .14.7 and 1 .14.8 
+Why the c ommi ttee made the r ecommenda tions 
+Fluid r estriction f or bact erial meningitis 
+For babies o ver 28 da ys, childr en and y oung people, t here was a small amount of e vidence 
+comparing fluid r estriction wit h routine maint enance fluids. This e vidence sho wed that 
+fluid r estriction r educes pulmonar y and f acial oedema. Ho wever, it also incr eases rat es of 
+neurological impairment and epilepsy . Ther e was no e vidence in newborn babies aged 28 
+days or under , or in adult s. Ho wever, the committ ee extended t he recommendations t o Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 71
+of 81cover these gr oups because t hey agr eed t he risks w ere likely to be t he same, based on 
+their kno wledge and e xperience. 
+The committ ee w ere par ticularly concerned about t he incr eased rat e of neur ological 
+impairment, as t his could be t he most impor tant clinical out come. Based on t he evidence 
+and t heir kno wledge and e xperience, t he committ ee agr eed not t o recommend r outine 
+fluid r estriction f or bact erial meningitis. The y specified 'r outine' because t hey did not want 
+to stop healt hcare professionals fr om restricting fluids in babies wit h fluid o verload. 
+Ther e are pot ential complications t o providing fluids intra venously , and in t he committ ee's 
+experience babies wit h bact erial meningitis can oft en tolerat e oral or ent eral fluids. 
+Because of t his the committ ee recommended pr oviding fluids orally or b y ent eral tube 
+when possible. 
+How the r ecommenda tions mig ht affect practice 
+Fluid r estriction is not par t of r outine practice, alt hough it ma y be used f or people wit h 
+fluid o verload. 
+Return t o recommendations 
+Assessing f or imm unodeficienc y and r ecurr ence 
+risk in babies wi th bac terial mening itis 
+Recommendations 1 .14.9 to 1.14.11 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee had concerns about t he reliability of t he evidence, because t he sample 
+sizes w ere not lar ge enough t o det ect rar e events and because people wit h kno wn 
+immunodeficiency will oft en receiv e interventions t o prevent r ecurr ent inf ections. Because 
+of this, t he committ ee used t heir kno wledge and e xper tise t o mak e recommendations. 
+The committ ee agr eed t hat primar y immunodeficiency is pr esent in 8 t o 26% of childr en 
+with invasive pneumococcal disease. 
+The committ ee agr eed t hat r eferral t o specialist s was needed f or babies wit h Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 72
+of 81pneumococcal meningitis, because t his disease ma y indicat e a lack of immune r esponse t o 
+pneumococcal v accination and ma y be associat ed wit h primar y immune deficiencies. 
+Some anat omical f actors incr ease t he risk of bact erial meningitis. The committ ee agr eed 
+that babies should be check ed for these f actors (including signs of a sinus tract), t o 
+assess whet her t hey ma y need int ervention t o prevent futur e episodes. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations ar e in line wit h curr ent practice. 
+Return t o recommendations 
+Identifying and manag ing c omplications 
+Recommendations 1 .14.13 to 1.14.16 
+Why the c ommi ttee made the r ecommenda tions 
+Evidence sho wed that meningitis can r esult in a range of long-t erm complications, such as: 
+• learning disability , which can lead t o speech and language pr oblems in babies, as w ell 
+as poor educational attainment or t he need f or special educational assistance 
+• long-t erm beha vioural pr oblems and pr oblems wit h adjustment 
+• psychological distr ess 
+• hearing pr oblems, including acut e deafness. 
+Most of t he evidence concerned long-t erm complications f or babies o ver 28 da ys, 
+childr en, y oung people and y oung adult s. Ho wever, the committ ee agr eed t hat it was 
+reasonable t o extrapolat e much of t his e vidence t o newborn babies, because meningitis 
+can ha ve similar impact s on people r egar dless of age. 
+Based on t his e vidence, t he committ ee agr eed t hat people wit h bact erial meningitis should 
+not be dischar ged fr om hospital until f ollow-up needs ha ve been identified and planned 
+for, and until cer tain assessment s have been planned or complet ed. The committ ee did 
+recognise t hat cer tain t ests, like an audiological assessment, might not be possible until Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 3
+of 81after dischar ge (alt hough t esting bef ore dischar ge w ould be pr eferable). 
+The e vidence f or epilepsy as a long-t erm complication was mix ed. F or example, t here was 
+evidence of an incr ease in childr en who ha ve had meningitis being admitt ed as inpatient s 
+because of epilepsy , but no e vidence of incr eased use of outpatient epilepsy ser vices in 
+the same population. The committ ee w ere also concerned about unnecessar y long-t erm 
+use of anti-epileptic drugs. The y recommended a 3-mont h review t o check whet her t he 
+seizur es w ere a shor t-term eff ect of t he illness. 
+The e vidence on long-t erm complications aft er bact erial meningitis in newborn babies was 
+limited to a single, small study . The committ ee agr eed t hat quantifying t he long-t erm 
+complications of bact erial meningitis is impor tant, t o allo w follow-up t o be arranged f or 
+those at risk and t o help wit h prioritising tr eatment and pr evention strat egies. T o addr ess 
+this, t he committ ee made a recommendation f or resear ch to investigat e long-t erm 
+outcomes aft er bact erial meningitis in inf ancy . 
+How the r ecommenda tions mig ht affect practice 
+It is r outine practice t o identify possible f ollow-up needs bef ore dischar ge and t o mak e 
+referrals when needed. 
+Return t o recommendations 
+Planning f or care after dischar ge 
+Recommendation 1 .14.17 and recommendations 1 .17.1 to 1.17.4 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence on t he views and e xperiences of f amilies and car ers of people who 
+have had meningitis. The committ ee built on t his wit h their o wn e xper tise. The y 
+recommended coor dination wit h other pr ofessionals and ser vices because t his will ensur e 
+that f ollow-up car e and suppor t meet s the person's needs, and will pot entially r educe t he 
+impact of long-t erm complications. 
+Referral f or psy chosocial suppor t is recommended because of t he pot ential psy chological 
+impact of meningitis on f amily members and car ers. It ma y need t o be arranged aft er Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 4
+of 81dischar ge because t he impact ma y not be appar ent immediat ely. 
+How the r ecommenda tions mig ht affect practice 
+It is r outine practice t o mak e referrals and plan f or car e aft er dischar ge, and t o inform GPs 
+and ot her k ey professionals of an y follow up needs. 
+Return t o recommendation 1 .14.17 
+Return t o recommendations 1 .17.1 to 1.17.4 
+Care after hospi tal dischar ge 
+Recommendations 1 .14.18 to 1.14.24 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed ar eas t o cover in t he post -dischar ge review based on t he evidence 
+of the long-t erm complications associat ed wit h meningitis. 
+The r eview should happen at 4 t o 6 weeks aft er dischar ge so t hat shor t-term eff ects of 
+the illness can be ruled out and long-t erm issues can be identified early enough t o mak e 
+prompt r eferrals. The r esult s of hearing t ests ma y not be a vailable at t his point (f or 
+example, if illness int erferes wit h the timing of t he test), but t he overall r eview should not 
+be dela yed if t his is t he case. 
+The e vidence sho wed par ticular long-t erm complications f or babies, childr en and y oung 
+people. The committ ee used t heir o wn kno wledge and e xperience t o mak e 
+recommendations on fur ther t ests and r eviews f or babies. These t ests and r eviews ar e 
+impor tant f or identifying lat e-onset complications and de velopmental issues as childr en 
+and y oung people gr ow up. 
+The t ests and r eviews r ecommended will in volve staff w orking in multiple ser vices, acr oss 
+healt h and education. The committ ee made a r ecommendation on coor dinating f ollow-up, 
+to avoid situations wher e professionals assume ot her ser vices ar e responsible and people 
+do not r eceiv e proper car e as a r esult. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 5
+of 81The e vidence suggest ed that meningitis can incr ease t he risk of poor educational 
+outcomes, t hat t he impact of long-t erm complications ma y not alwa ys be appar ent, and 
+that childr en and y ounger people who ar e seen t o be underachie ving could be achie ving 
+more if t hey had mor e specific suppor t. This guideline does not co ver education settings, 
+so the committ ee advised par ents and car ers t o discuss educational complications wit h 
+their child or y oung person's school. 
+How the r ecommenda tions mig ht affect practice 
+It is r outine practice t o review people who ha ve had meningitis f or long-t erm complications 
+after hospital dischar ge. 
+Return t o recommendations 
+Recurr ent bac terial mening itis 
+Recommendations 1 .14.25 t o 1.14.30 
+Why the c ommi ttee made the r ecommenda tions 
+Risk f actors 
+Evidence sho wed that some anat omical f actors incr eased t he risk of r ecurr ent bact erial 
+meningitis (such as a cer ebrospinal fluid leak). F or most immunological f actors, t here was 
+no evidence t hat met t he review crit eria. 
+The committ ee had concerns about t he reliability of t he anat omical and immunological 
+evidence, because t he studies only look ed at a v ery small number of people f or some risk 
+factors and f or recurr ent bact erial meningitis in general. Because of t his, t he committ ee 
+made r ecommendations about t he risk f actors t hey belie ved to be most impor tant, based 
+on their kno wledge and e xperience. 
+Management 
+Ther e was no e vidence, so t he committ ee made r ecommendations based on t heir 
+knowledge and e xperience. The y recommended a specialist r eview t o decide which 
+investigations, tr eatment s and immunisations w ere needed t o help pr event fur ther Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 6
+of 81recurr ence. 
+The committ ee made r ecommendations on immunisation, medicine hist ory, and sinus tract 
+examination, in line wit h the recommendations on assessing f or immunodeficiency and 
+recurr ence risk (see t he explanation of t he recommendations on assessing f or 
+immunodeficiency and r ecurr ence risk ). 
+The committ ee also highlight ed the possibility of ot her rar e causes of r ecurr ent meningitis. 
+How the r ecommenda tions mig ht affect practice 
+Risk f actors 
+The r ecommendations ar e largely in line wit h curr ent practice. Healt hcare professionals 
+may have to change some of t he risk f actors t hey look f or, but t here should be no r esour ce 
+impact f or ser vices. 
+Management 
+Specialist r eview and pr ophylactic antibiotics ar e par t of r outine curr ent practice f or babies 
+with recurr ent bact erial meningitis. 
+Return t o recommendations Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 7
+of 81Context 
+Neonatal bact erial inf ection is a significant cause of mor tality and morbidity in newborn 
+babies. Par ent or ganisations and t he scientific lit eratur e repor t that t here can be 
+unnecessar y dela ys in r ecognising and tr eating sick babies. In addition, concern about t he 
+possibility of neonatal inf ection is common. This concern is an impor tant influence on t he 
+care giv en to pregnant w omen and newborn babies. Ther e is wide v ariation in ho w the risk 
+of neonatal inf ection is managed in healt hy babies. The appr oach tak en by the NHS needs 
+to: 
+• prevent neonatal inf ection when possible 
+• prioritise t he tr eatment of sick babies 
+• minimise t he impact of management pat hways on healt hy women and babies 
+• use antibiotics wisely t o avoid t he de velopment of r esistance t o antibiotics. 
+These driv ers ha ve not alwa ys been addr essed consist ently in t he NHS, and t his guideline 
+was commissioned t o ensur e they would be addr essed in futur e. 
+Five key principles underpin t he recommendations in t his guideline: 
+• Unless it is danger ous, f amilies should be off ered choice. The guideline includes 
+recommendations t o suppor t families in making choices t hrough pr ovision of 
+information and, when appr opriat e, reassurance. 
+• Intrapar tum antibiotic pr ophylaxis should be administ ered in a timely manner t o all 
+eligible w omen who choose it. 
+• Babies wit h suspect ed neonatal inf ection should r eceiv e treatment as quickly as 
+possible. 
+• Antibiotic e xposur e should be minimised in babies who do not ha ve a neonatal 
+infection. 
+• An int egrat ed syst em of clinical car e is needed t o allo w full implementation of t he 
+guideline r ecommendations. Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 8
+of 81Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on inf ections . 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 9
+of 81Update inf orma tion 
+March 202 4: The updat ed NICE guideline on bact erial meningitis and meningococcal 
+disease made new r ecommendations f or newborn babies in t he following ar eas: 
+• information and suppor t 
+• lumbar punctur e 
+• cerebrospinal fluid in vestigations 
+• fluid r estriction 
+• assessing f or immunodeficiency and r ecurr ence risk 
+• preparing f or hospital dischar ge, including identifying and managing complications 
+• care aft er dischar ge 
+• recurr ent bact erial meningitis. 
+We have mo ved these r ecommendations fr om t he meningitis guideline int o this neonatal 
+infection guideline, so t hat all t he recommendations f or newborn babies ar e in one place. 
+These r ecommendations ar e mark ed [202 4]. 
+April 2021: We have review ed the evidence and made new r ecommendations on t he risk 
+factors f or inf ection and clinical indicat ors of possible inf ection and on intrapar tum 
+antibiotics of neonatal inf ection. These r ecommendations ar e mark ed [2021] . 
+We have also made some changes wit hout an e vidence r eview: 
+• what t o do if a w oman has been identified as ha ving a gr oup B str eptococcal inf ection 
+in relation t o futur e pregnancies 
+• when t o per form a lumbar punctur e for babies who ar e receiving antibiotics who did 
+not ha ve a lumbar punctur e on pr esentation 
+• early- and lat e-onset meningitis. 
+These r ecommendations ar e mark ed [2012, amended 2021] . Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 80
+of 81Recommendations mark ed [2012] last had an e vidence r eview in 2012. In some cases, 
+minor changes ha ve been made t o the w ording t o bring t he language and style up t o dat e, 
+without changing t he meaning. 
+Minor changes since publication 
+December 202 4: Amended r ecommendation 1 .10.2 to clarify t hat babies wit h suspect ed 
+late-onset neonatal inf ection or meningitis who ha ve been admitt ed fr om home need an 
+additional antibiotic activ e against list eria as per r ecommendation 1 .14.7 in t he NICE 
+guideline on suspect ed sepsis. 
+Januar y 202 4: Various links w ere updat ed throughout t o point t o the newly updat ed NICE 
+guideline on suspect ed sepsis . 
+October 2023: We updat ed links t o the NICE guideline on intrapar tum car e, which has 
+been updat ed. 
+October 2022: We added t ext to indicat e that pulse o ximetr y ma y be less r eliable in 
+people wit h dark skin. W e also added a link t o the NHS patient saf ety aler ton the risk of 
+harm fr om inappr opriat e placement of pulse o ximet er pr obes. See r ecommendation 1 .8.3. 
+October 2021: We added a link t o NICE's guidelines on babies, childr en and y oung 
+people's e xperience of healt hcare and on shar ed decision making in r ecommendation 1 .1.1. 
+ISBN: 9 78-1-47 31-5820- 7 Neonatal inf ection: antibiotics f or pr evention and tr eatment (NG195)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 81
+of 81

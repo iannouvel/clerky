@@ -1,0 +1,452 @@
+Vasa Praevia: Diagnosis and Management
+Green-top Guideline No. 27b
+September 2018
+Please cite this paper as: Jauniaux ERM, Alﬁrevic Z, Bhide AG, Burton GJ, Collins SL, Silver R on behalf of the Royal
+College of Obstetricians and Gynaecologists. Vasa praevia: diagnosis and management. Green-top Guideline No. 27b.
+BJOG 2018
+DOI: 10.1111/1471-0528.15307 RCOG Green-top Guidelines
+Vasa Praevia: Diagnosis and Management
+ERM Jauniaux, Z Alﬁrevic, AG Bhide, GJ Burton, SL Collins, R Silver, on behalf of the Royal College
+of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 27 Sussex Place, Regent’s Park, London NW1 4RG.
+Email: clinicaleffectiveness@rcog.org.uk
+This is the fourth edition of this guideline. The ﬁrst, published in 2001, was entitled Placenta Praevia: Diagnosis and Management ;
+the second, published in 2005, was entitled Placenta Praevia and Placenta Praevi a Accreta: Diagnosis and Management ;a n dt h e
+third, published in 2011, was entitled Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis and Management .
+The management and diagnosis of placenta praevia and placenta accreta is addressed in Green-top Guideline No. 27a.
+Executive summary
+Management of women with undiagnosed vasa praevia at delivery
+Emergency caesarean delivery and neonatal resuscitation, including the use of blood transfusion
+if required, are essential in the management of ruptured vasa praevia diagnosed during labour.B
+Placental pathological examination should be performed to con ﬁrm the diagnosis of vasa
+praevia, in particular when stillbirth has occurred or where there has been acute fetalcompromise during delivery. [ New 2018 ]P
+Can vasa praevia be diagnosed antenatally?
+The performance of ultrasound in diagnosing vasa praevia at the time of the routine fetal
+anomaly scan has a high diagnostic accuracy with a low false-positive rate. [ New 2018 ]B
+A combination of both transabdominal and transvaginal colour Doppler imaging (CDI)
+ultrasonography provides the best diagnostic accuracy for vasa praevia.D
+Should we screen for vasa praevia?
+There is insuf ﬁcient evidence to support universal screening for vasa praevia at the time of the
+routine midpregnancy fetal anomaly scan in the general population.D
+Although targeted midpregnancy ultrasound screening of pregnancies at higher risk of vasapraevia may reduce perinatal loss, the balance of bene ﬁt versus harm remains undetermined
+and further research in this area is required. [ New 2018 ]P
+RCOG Green-top Guideline No. 126 e50 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How should women with vasa praevia be managed?
+Because of the speed at which fetal exsanguination can occur and the high perinatal mortality
+rate associated with ruptured vasa praevia, delivery should not be delayed while trying to con ﬁrm
+the diagnosis, particularly if there is evidence that fetal wellbeing is compromised. [ New 2018 ]P
+In the presence of con ﬁrmed vasa praevia in the third trimester, elective caesarean section
+should ideally be carried out prior to the onset of labour.P
+A decision for prophylactic hospitalisation from 30 –32 weeks of gestation in women with
+conﬁrmed vasa praevia should be individualised and based on a combination of factors,
+including multiple pregnancy, antenatal bleeding and threatened premature labour. [ New 2018 ]P
+In cases of vasa praevia that develop premature rupture of membranes and/or labour at viable
+gestational ages, a caesarean section should be performed without delay.D
+To avoid unnecessary anxiety, admissions, prematurity and caesarean section, it is essential toconﬁrm persistence of vasa praevia by ultrasound in the third trimester.P
+At what gestation should elective delivery occur?
+The ultimate management goal of con ﬁrmed vasa praevia should be to deliver before rupture
+of membranes while minimising the impact of iatrogenic prematurity. Based on available data,planned caesarean delivery for a prenatal diagnosis of vasa praevia at 34 –36 weeks of
+gestation is reasonable in asymptomatic women. [ New 2018 ]D
+Administration of corticosteroids for fetal lung maturity should be recommended from
+32 weeks of gestation due to the increased risk of preterm delivery.P
+1. Purpose and scope
+The purpose of this guideline is to describe the diagnostic modalities and review the evidence-based approach to the
+clinical management of pregnancies complicated by vasa praevia.
+2. Introduction and background epidemiology
+Vasa praevia occurs when the fetal vessels run through the free placental membranes. Unprotected by placental
+tissue or Wharton’s jelly of the umbilical cord, a vasa praevia is likely to rupture in active labour, or whenamniotomy is performed to induce or augment labour, in particular when located near or over the cervix, under thefetal presenting part.
+1,2Vasa praevia is classiﬁed as type I when the vessel is connected to a velamentous umbilical
+cord, and type II when it connects the placenta with a succenturiate or accessory lobe.
+Vasa praevia may be diagnosed during early labour by vaginal examination, detecting the pulsating fetal vessels inside
+the internal os, or by the presence of dark-red vaginal bleeding and acute fetal compromise after spontaneous or
+RCOG Green-top Guideline No. 126 e51 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+artiﬁcial rupture of the placental membranes. The fetal mortality rate in this situation is at least 60% despite urgent
+caesarean delivery. However, improved survival rates of over 95% have been reported where the diagnosis has been
+made antenatally by ultrasound followed by planned caesarean section.3
+Vasa praevia is uncommon in the general population with a prevalence ranging between 1 in 1200 and 1 in 5000pregnancies, although the condition may have been under-reported.
+1–6
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing Royal College of Obstetricians
+and Gynaecologists (RCOG) Green-top Guidelines. The Cochrane Library (including the Cochrane Database of
+Systematic Reviews and the Database of Abstracts of Reviews of Effects [DARE]), EMBASE, Trip, MEDLINE and
+PubMed (electronic databases) were searched for relevant randomised controlled trials (RCT), systematic reviewsand meta-analyses. The search was restricted to articles published between May 2009 and July 2016 (the search forthe previous guideline was up to May 2009). A top-up literature search was performed in March 2018. Thedatabases were searched using the relevant Medical Subject Headings (MeSH) terms, including all subheadings, andthis was combined with a keyword search. Search words included, ‘vasa praevia’, ‘velamentous cord insertion’ and‘umbilical cord anomalies’. The search was restricted to humans and the English language. The National Library forHealth and the National Guideline Clearinghouse were also searched for relevant guidelines and reviews.
+Where possible, recommendations are based on available evidence. In the absence of published evidence, these have
+been annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix I.
+4. Management of women with undiagnosed vasa praevia at delivery
+Emergency caesarean delivery and neonatal resuscitation, including the use of blood transfusion
+if required, are essential in the management of ruptured vasa praevia diagnosed during labour.B
+Placental pathological examination should be performed to con ﬁrm the diagnosis of vasa
+praevia, in particular when stillbirth has occurred or where there has been acute fetal
+compromise during delivery. [ New 2018 ]P
+The classic presentation of unexpected vasa praevia in labour is the presence of painless vaginal bleeding
+(also known as Benckiser’s haemorrhage). This occurs mainly when the cervix is effaced and dilated, andthe membranes rupture spontaneously or are ruptured artiﬁcially.
+2,3As the total fetal blood volume at
+term is approximately 80 –100 ml/kg, the loss of what may appear as a relatively small amount of blood
+can have major implications for the fetus and is rapidly fatal.3,7–10Evidence
+level 4
+A systematic review and meta-analysis of the association among placental implantation abnormalities
+(including placenta praevia, placenta accreta, vasa praevia, velamentous cord insertion) and pretermdelivery in singleton gestations has found a perinatal death rate random effect pooled risk ratio of 4.52(95% CI 2.77 –7.39) for vasa praevia.
+5Evidence
+level 2 ++
+RCOG Green-top Guideline No. 126 e52 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5. Can vasa praevia be diagnosed antenatally?
+The performance of ultrasound in diagnosing vasa praevia at the time of the routine fetal
+anomaly scan has a high diagnostic accuracy with a low false-positive rate. [ New 2018 ]B
+A combination of both transabdominal and transvaginal colour Doppler imaging (CDI)
+ultrasonography provides the best diagnostic accuracy for vasa praevia.D
+The previous version of this guideline concluded that in the absence of vaginal bleeding during the
+antenatal period, there is no method to diagnose vasa praevia clinically. Vaginal bleeding in pregnancycould be considered as a possible alert symptom for vasa praevia,
+11but this is likely to a have a very low
+positive predictive value given the high prevalence of bleeding during pregnancy and low prevalence of
+vasa praevia.12Various tests can differentiate between maternal and fetal blood but are often not timely in
+a potentially life-threatening clinical situation.Evidence
+level 4
+The largest study to date on perinatal outcome is based on a cohort of 155 women with vasa praevia that
+reported a 97% survival rate in cases of prenatal diagnosis compared with only 44% when the diagnosiswas made during delivery.
+13
+A prospective population-based cohort study using the Australasian Maternity Outcomes SurveillanceSystem (AMOSS) found that there were no perinatal deaths in the 58 cases diagnosed prenatally out ofthe 63 cases with conﬁrmed vasa praevia at birth.
+14Evidence
+level 2 +
+Transvaginal CDI has improved the accuracy of greyscale imaging3,15in diagnosing vasa praevia by
+demonstrating ﬂow and fetal vascular waveforms on pulsed Doppler through at least one aberrantvessel.
+3,5Vasa praevia has been deﬁned as a vessel running in the free placental membranes within 2 cm
+of the cervix.16,17The ultrasound deﬁnition of ‘within 2 cm from the internal cervical os’ was modelled
+after the existing deﬁnitions for low-lying placentas18and will vary with gestational age; in particular during
+the third trimester when the lower segment of the uterus forms. There is limited information regardingthe actual safe distance that a vasa praevia needs to be from the internal os to be conﬁdent that there isno risk for vessel rupture during labour and delivery. Overall, prenatal diagnosis is most effective aroundmidpregnancy (18 –24 weeks of gestation) but needs to be conﬁrmed during the third trimester
+(30–32 weeks of gestation).
+3,15Evidence
+level 4
+A systematic review, including two prospective and six retrospective cohort studies of which six had
+poor methodology, found prenatal detection rates ranging between 53% (10/19) and 100% for a totalof 442 633 women, including 138 cases of vasa praevia.
+15Four out of the eight studies used
+transvaginal scanning (TVS) for primary assessment, while the remaining four studies usedtransabdominal ultrasound and only used TVS when vasa praevia was suspected on the transabdominal
+scan. The results of two prospective studies including a total of 33 795 women reported that TVS
+CDI performed during the second trimester detects all cases (n =11) of vasa praevia (sensitivity,
+100%) with a speciﬁcity of 99.0 –99.8%.Evidence
+level 2 ++
+A national UK study using the UK obstetric surveillance system of births between December 2014
+and December 2015 found that only 25 out of 45 (56%) cases of vasa praevia were diagnosedantenatally.
+6Evidence
+level 2 +
+RCOG Green-top Guideline No. 126 e53 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The Society of Obstetricians and Gynecologists of Canada (SOGC) guideline based on the published
+literature up to 2009 also indicates that using combined abdominal and transvaginal CDI results in a high
+diagnostic accuracy with an extremely low false-positive rate.7However, the SOGC guideline19update
+also highlighted that many cases are not diagnosed.Evidence
+level 4
+6. Should we screen for vasa praevia?
+There is insuf ﬁcient evidence to support universal screening for vasa praevia at the time of the
+midpregnancy routine fetal anomaly scan in the general population.D
+Although targeted midpregnancy ultrasound assessment of pregnancies at higher risk of vasapraevia has been investigated, the balance of bene ﬁt versus harm remains undetermined and
+further research in this area is required. [ New 2018 ]P
+The 2017 UK National Screening Committee (UK NSC) external review of the 2013 screening policy
+concluded that there appears to be little beneﬁt in attempting to identify cases of vasa praevia in thesecond trimester and that this strategy could be associated with a high false-positive rate.
+12RCTs to
+investigate whether ultrasound screening for vasa praevia decreases perinatal mortality would be ethicallyunacceptable in view of the poor neonatal prognosis. The analysis of the literature included in the 2017UK NSC external review of the 2013 screening policy indicates that up to 80% of vasa praevia cases haveone or more identiﬁable prenatal risk factors.
+12There are no UK data on the epidemiology of
+velamentous cord insertion and no studies on screening for vasa praevia have reported outcomes(beneﬁts and harms) from identifying velamentous cord insertion in the absence of vasa praevia. Overall,the UK NSC recommendation on screening for vasa praevia is that screening for velamentous cordinsertion as a means of identifying vasa praevia should not be implemented. In addition, due to the limitednumbers of prospective studies, it is not possible to evaluate the beneﬁts and harms of universal screeningover and above a more limited, or targeted, approach to identify vasa praevia in currently identiﬁed riskgroups, such as women with a low-lying placenta at the midpregnancy routine fetal anatomy ultrasoundexamination.Evidence
+level 4
+A 2016 systematic review of the incidence and risk factors of vasa praevia including 13 studies
+(two prospective cohort studies, 10 retrospective cohort studies and one case –control study) and
+reporting on 569 410 women found that 83% of the 325 cases reviewed had one or more risk factor,including placenta praevia, bilobed placenta, succenturiate placental lobes, conception by assistedreproductive technology and velamentous cord insertion.
+20Evidence
+level 2 ++
+The 2017 prospective population-based cohort study using the AMOSS found that 55 of the 58 women
+diagnosed prenatally had at least one risk factor for vasa praevia, with velamentous cord insertion (62%)and low-lying placenta (60%) the most prevalent.
+14These data have also been conﬁrmed by recent
+retrospective cohort studies.17,21,22Evidence
+level 2 +
+RCOG Green-top Guideline No. 126 e54 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Vasa praevia diagnosed in the second trimester resolves in around 20% of cases before delivery.16,23A
+follow-up ultrasound examination at 32 weeks of gestation is suggested, particularly in women with a low-
+lying placenta as, even if it has resolved, it is still associated with a high risk of vasa praevia.8The
+American Institute of Ultrasound in Medicine has recommended that the placental cord insertion site bedocumented when technically possible.
+24Identiﬁcation of the placental cord insertion at the routine fetal
+anomaly scan is easy and accurate,3,8does not add signiﬁcantly to scan time and requires little additional
+scanning skills for a trained operator.
+A questionnaire survey of obstetricians and gynaecologists in England and Wales with a 55% response rate
+found that most (80%) respondents felt that a selective screening policy for vasa praevia was not feasible,one-third could not name one risk factor associated with vasa praevia and over one-half had noexperience in diagnosing nor managing the condition.
+25This survey highlights the need to increase
+awareness of vasa praevia in healthcare professionals, and also the need to ensure skill validation andquality control across the board.
+A decision-analytic model to estimate the lifetime incremental costs and beneﬁts of screening for vasa
+praevia in all twin pregnancies was found to be cost effective in a study of approximately 132 000pregnancies.
+26Using these data and based on an 80% detection rate, the 2014 UK NSC external review
+found that the targeted screening of all twins and singleton pregnancies with at least one high-risk factorcould reduce the perinatal loss rate by as many as 150 cases per year.
+12Evidence
+level 4
+7. How should women with vasa praevia be managed?
+Because of the speed at which fetal exsanguination can occur and the high perinatal mortality
+rate associated with ruptured vasa praevia, delivery should not be delayed while trying toconﬁrm the diagnosis, particularly if there is evidence that fetal wellbeing is compromised.
+[New 2018 ]P
+In the presence of con ﬁrmed vasa praevia in the third trimester, elective caesarean section
+should ideally be carried out prior to the onset of labour.P
+A decision for prophylactic hospitalisation from 30 –32 weeks of gestation in women with
+conﬁrmed vasa praevia should be individualised and based on a combination of factors,
+including multiple pregnancy, antenatal bleeding and threatened premature labour. [ New 2018 ]P
+In cases of vasa praevia that develop premature rupture of membranes and/or labour at viable
+gestational ages, a caesarean section should be performed without delay.D
+To avoid unnecessary anxiety, admissions, prematurity and caesarean section, it is essential toconﬁrm persistence of vasa praevia by ultrasound in the third trimester.P
+RCOG Green-top Guideline No. 126 e55 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Delivery by caesarean section of women with conﬁrmed vasa praevia is intuitive and logical, and not based on
+RCTs.12
+The objective of the management of vasa praevia diagnosed during the second trimester of pregnancy is
+to prolong pregnancy safely while avoiding potential complications related to rupture of membranesbefore or during labour. Two other national societies have existing clinical guidelines on the managementof vasa praevia diagnosed during pregnancy,
+7,8,19but the corresponding recommendations are also based
+on observational data, decision analyses and expert opinion.
+Antenatal hospitalisation in a unit with appropriate neonatal facilities has been proposed from
+30–32 weeks of gestation, but the evidence is weak and of low quality.8The purpose of hospitalisation is
+to allow for closer surveillance for signs of labour and a timelier performance of caesarean delivery beforelabour and/or before membrane rupture. The 2017 prospective population-based cohort study using theAMOSS found no difference in perinatal outcome when vasa praevia was diagnosed prenatally betweenwomen who were hospitalised compared to those with no antenatal hospitalisation.
+14Overall, outpatient
+care has been associated with excellent outcomes,3and thus, the beneﬁt of hospitalisation in
+asymptomatic women remains unproven.
+Data on the use of TVS cervical length measurements in the management of vasa praevia are limited and
+the role of cervical cerclage is unknown.12Some authors have suggested that outpatient management is
+possible if there is no evidence of cervical shortening on TVS and there are no symptoms of bleeding orpreterm uterine activity.
+27Data from the follow-up of women with placenta praevia indicate that the
+probability of bleeding is higher if the cervix is shorter in length than expected for gestational age.28–32Evidence
+level 4
+A 2018 retrospective case –control study of 29 singleton pregnancies with a prenatal diagnosis of vasa
+praevia in the second trimester found that the rate of cervical length shortening was signiﬁcantly slowerfor women with elective compared with emergency caesarean delivery.
+33For each additional
+millimetre-per-week decrease in cervical length, the odds of emergency caesarean delivery increased by6.50 (95% CI 1.02 –41.20). Similarly, data from a 2017 systematic review on the management of vasa
+praevia in twins have indicated that TVS cervical length measurements from 26 –28 weeks of gestation
+may be useful to evaluate the individual risk of preterm birth.
+34Evidence
+level 2 +
+Based on these observations, as well as a lower probability of labour, asymptomatic women with stable
+cervical length measurements should be the best candidates for outpatient management.Evidence
+level 4
+8. At what gestation should elective delivery occur?
+The ultimate management goal of con ﬁrmed vasa praevia should be to deliver before rupture
+of membranes while minimising the impact of iatrogenic prematurity. Based on available data,planned caesarean delivery for a prenatal diagnosis of vasa praevia at 34 –36 weeks of
+gestation is reasonable in asymptomatic women. [ New 2018 ]D
+RCOG Green-top Guideline No. 126 e56 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Administration of corticosteroids for fetal lung maturity should be recommended from
+32 weeks of gestation due to the increased risk of preterm delivery.P
+Optimal timing of caesarean delivery remains unknown. There is no consensus about the timing of
+delivery in cases of conﬁrmed vasa praevia and the currently low prevalence of prenatal diagnosis of thiscondition in the general population precludes any prospective trials to evaluate the ideal timing.
+3,12
+Overall, vasa praevia is associated with an increased risk of preterm birth. The associated complications ofprematurity are in many cases the result of iatrogenic preterm birth in an effort to prevent stillbirth.Gestational age at delivery is the only other variable associated with perinatal outcomes in themanagement of vasa praevia. As for other obstetric situations associated with a higher risk for latepreterm delivery, the administration of corticosteroids is recommended.
+7,8,19Evidence
+level 4
+In the largest cohort study published so far, fetuses that were diagnosed prenatally had a 97% survival rate
+for a mean gestational age at delivery of 34.9 ( /C62.5) weeks of gestation.13Evidence
+level 2 +
+Data from a decision analysis study comparing 11 strategies for delivery timing in a woman with vasa
+praevia found that delivery between 34 and 36 weeks of gestation balances the risk of premature ruptureof membranes, and subsequent fetal haemorrhage and death versus the risks of prematurity.
+35The
+authors found no beneﬁt to expectant management beyond 37 weeks of gestation and that at any givengestational age, incorporating amniocentesis for veriﬁcation of fetal lung maturity does not improveoutcomes.Evidence
+level 4
+9. Clinical governance
+9.1 Debrieﬁng
+Postnatal follow-up should include debrieﬁng with an explanation of what happened, why it happened and any
+implications for future pregnancy.
+9.2 Training
+Raising awareness about the clinical risk factors of vasa praevia should be pursued locally, including organising policiesor guidelines for ﬂagging up women at risk and arranging for them to see a specialist consultant when suspected.
+There should be appropriate training for ultrasound staff in the antenatal diagnosis of vasa praevia.
+9.3 Clinical incident reporting
+There should be written protocols for the identiﬁcation of and planning further care of women diagnosed with vasa
+praevia.
+RCOG Green-top Guideline No. 126 e57 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10. Recommendations for future research
+/C15National and regional epidemiological data are needed to deﬁne a relevant high-risk population and the cost-
+effectiveness of screening for vasa praevia on service provision.
+/C15Prospective screening studies are needed to evaluate the outcome of velamentous cord insertion in the absence
+of vasa praevia.
+/C15Prospective multicentre studies on the use of cervical length ultrasound examination are required to evaluatethe role of this measurement in the management of vasa praevia.
+/C15Prospective quality data are needed to compare hospitalisation at 30 –32 weeks of gestation with outpatient
+follow-up in the management of vasa praevia.
+/C15RCTs of optimal timing of delivery for vasa praevia are needed.
+11. Auditable topics
+/C15Appropriate delivery plan in place if an antenatal diagnosis of vasa praevia is made (100%).
+12. Useful links and support groups
+/C15Vasa praevia raising awareness [www.vasapraevia.co.uk/the-experts/].
+/C15The International Vasa Previa Foundation [www.vasaprevia.org].
+/C15Royal College of Obstetricians and Gynaecologists. Low-lying placenta after 20 weeks (placenta praevia). Information
+for you. London: RCOG; 2018 [https://www.rcog.org.uk/en/patients/patient-leaflets/a-low-lying-placenta-after-20-
+weeks-placenta-praevia/].
+/C15UK National Screening Committee. The UK NSC recommendation on Vasa praevia screening in pregnancy.London: UK NSC; 2017 Screening for vasa praevia [legacyscreening.phe.org.uk/vasapraevia].
+References
+1. Fox H, Sebire NJ, editors. Pathology of the Placenta . 3rd ed.
+Philadelphia, PA: Saunders-Elsevier; 2007.
+2. Benirschke K, Burton GJ, Baergen RN, editors. Pathology of the
+Human Placenta . 6th ed. Berlin: Springer-Verlag; 2012.
+3. Silver RM. Abnormal placentation: placenta previa, vasa previa and
+placenta accreta. Obstet Gynecol 2015;126:654 –68.
+4. Vintzileos AM, Ananth CV, Smulian JC. Using ultrasound in the
+clinical management of placental implantation abnormalities. Am J
+Obstet Gynecol 2015;213:S70 –7.
+5. Vahanian SA, Lavery JA, Ananth CV, Vintzileos A. Placental
+implantation abnormalities and risk of preterm delivery: a systematic
+review and metaanalysis. Am J Obstet Gynecol 2015;213:S78 –90.
+6. Attilakos G, David A, Brocklehurst P, Knight M. Vasa praevia: a
+national UK study using the UK Obstetric Surveillance System
+(UKOSS). Abstracts of the British Maternal & Fetal MedicineSociety (BMFMS) 19th Annual Conference 2017. 30–31 March2017, Amsterdam, The Netherlands. Abstract O.LD.7. BJOG
+2017;124 Suppl 2:4 –16.
+7. Gagnon R, Morin L, Bly S, Butt K, Cargil YM, Denis N, et al.;
+Diagnostic Imaging Committee; Maternal Fetal MedicineCommittee. SOGC clinical practice guideline: guidelines for the
+management of vasa previa. Int J Gynaecol Obstet 2010;108:85 –9.8. Society of Maternal-Fetal (SMFM) Publications Committee, Sinkey RG,
+Odibo AO, Dashe JS. #37: Diagnosis and management of vasa
+previa. Am J Obstet Gynecol 2015;213:615 –9.
+9. Jauniaux E, Savvidou MD. Vasa praevia: more than 100 years in
+preventing unnecessary fetal deaths. BJOG 2016;123:1287.
+10. Oyelese YO, Turner M, Lees C, Campbell S. Vasa previa:
+an avoidable obstetric tragedy. Obstet Gynecol Surv 1999;54:138 –
+45.
+11. National Institute of Health and Care Excellence. Antenatal Care
+for Uncomplicated Pregnancies. Clinical Guideline 62. Manchester:
+NICE; 2017.
+12. UK National Screening Committee. Screening for Vasa Praevia in
+the Second Trimester of Pregnancy. External Review Against
+Programme Appraisal Criteria for the UK National Screening
+Committee (UK NSC) . London: UK NSC; 2017.
+13. Oyelese Y, Catanzarite V, Prefumo F, Lashley S, Schachter M,
+Tovbin Y, et al. Vasa previa: the impact of prenatal diagnosis on
+outcomes. Obstet Gynecol 2004;103:937 –42.
+14. Sullivan EA, Javid N, Duncombe G, Li Z, Saﬁ N, Cincotta R, et al.
+Vasa previa diagnosis, clinical practice, and outcomes in Australia.Obstet Gynecol 2017;130:591 –8.
+RCOG Green-top Guideline No. 126 e58 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+15. Ruiter L, Kok N, Limpens J, Derks JB, de Graaf IM, Mol BW,
+et al. Systematic review of accuracy of ultrasound in the
+diagnosis of vasa previa. Ultrasound Obstet Gynecol 2015;45:
+516–22.
+1 6 . R e b a r b e rA ,D o l i nC ,F o xN S ,K l a u s e rC K ,S a l t z m a nD H ,R o m a nA S .
+Natural history of vasa previa across gestation using a screening
+protocol. J Ultrasound Med 2014;33:141 –7.
+17. Catanzarite V, Cousins L, Daneshmand S, Schwendemann W, Casele
+H, Adamczak J, et al. Prenatally diagnosed vasa previa: a single-
+institution series of 96 cases. Obstet Gynecol 2016;128:1153 –61.
+18. Bronsteen R, Whitten A, Balasubramanian M, Lee W, Lorenz R,
+Redman M. Vasa previa: clinical presentations, outcomes, and
+implications for management. Obstet Gynecol 2013;122:352.
+19. Gagnon R. No. 231-Guidelines for the management of vasa previa.
+J Obstet Gynaecol Can 2017;39:e415 –21.
+20. Ruiter L, Kok N, Limpens J, Derks JB, de Graaf IM, Mol B, et al.
+Incidence of and risk indicators for vasa praevia: a systematic
+review. BJOG 2016;123:1278 –87.
+21. Swank ML, Garite TJ, Maurel K, Das A, Perlow JH, Combs CA,
+et al.; Obstetrix Collaborative Research Network. Vasa previa:
+diagnosis and management. Am J Obstet Gynecol 2016;215:223.e1 –6
+22. Nohuz E, Boulay E, Gallot D, Lemery D, Vendittelli F. Can we
+perform a prenatal diagnosis of vasa previa to improve its
+obstetrical and neonatal outcomes? J Gynecol Obstet Hum Reprod
+2017;46:373 –7.
+23. Lee W, Lee VL, Kirk JS, Sloan CT, Smith RS, Comstock CH. Vasa
+previa: prenatal diagnosis, natural evolution, and clinical outcome.
+Obstet Gynecol 2000;95:572 –6.
+24. American Institute of Ultrasound in Medicine. AIUM practice
+guideline for the performance of obstetric ultrasound
+examinations. J Ultrasound Med 2013;32:1083 –101.
+25. Ioannou C, Wayne C. Diagnosis and management of vasa previa: a
+questionnaire survey. Ultrasound Obstet Gynecol 2010;35:205 –9.26. Cipriano LE, Barth WH Jr, Zaric GS. The cost-effectiveness of
+targeted or universal screening for vasa praevia at 18-20 weeks of
+gestation in Ontario. BJOG 2010;117:1108 –18.
+27. Oleyese Y, Spong C, Fernandez MA, McLaren RA. Second
+trimester low-lying placenta and in-vitro fertilization? Exclude vasa
+previa. J Matern Fetal Med 2000;9:370 –2.
+28. Conde-Agudelo A, Romero R. Predictive accuracy of changes in
+transvaginal sonographic cervical length over time for preterm
+birth: a systematic review and metaanalysis. Am J Obstet Gynecol
+2015;213:789 –801.
+29. Ghi T, Contro E, Martina T, Piva M, Morandi R, Orsini LF, et al.
+Cervical length and risk of antepartum bleeding in women with
+complete placenta previa. Ultrasound Obstet Gynecol 2009;33:209 –12.
+30. Zaitoun MM, El Behery MM, Abd El Hameed AA, Soliman BS.
+Does cervical length and the lower placental edge thicknessmeasurement correlates with clinical outcome in cases of
+complete placenta previa? Arch Gynecol Obstet 2011;284:867 –73.
+31. Mimura T, Hasegawa J, Nakamura M, Matsuoka R, Ichizuka K,
+Sekizawa A, et al. Correlation between the cervical length and the
+amount of bleeding during cesarean section in placenta previa.
+J Obstet Gynaecol Res 2011;37:830 –5.
+32. Sekiguchi A, Nakai A, Okuda N, Inde Y, Takeshita T. Consecutive
+cervical length measurements as a predictor of preterm cesarean
+section in complete placenta previa. J Clin Ultrasound 2015;43:17 –22.
+33. Maymon R, Melcer Y, Tovbin J, Pekar-Zlotin M, Smorgick N,
+Jauniaux E. The rate of cervical length shortening in themanagement of vasa previa. J Ultrasound Med 2018;37:717 –23.
+34. Jauniaux E, Melcer Y, Maymon R. Prenatal diagnosis and
+management of vasa previa in twin pregnancies: a case series andsystematic review. Am J Obstet Gynecol 2017;216:568 –75.
+35. Robinson BK, Grobman WA. Effectiveness of timing strategies for
+delivery of individuals with placenta previa and accreta. Obstet
+Gynecol 2010;116:835 –42.
+RCOG Green-top Guideline No. 126 e59 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.The evidence used in this guideline was graded using the scheme below and the recommendations formulated in asimilar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of recommendation
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomised
+controlled trials with a very low risk of biasAAt least one meta-analysis, systematic review or
+RCT rated as 1 ++, and directly applicable to the
+target population; orA systematic review of RCTs or a body ofevidence consisting principally of studies rated as1+, directly applicable to the target population
+and demonstrating overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials or
+randomised controlled trials with a low riskof bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomised
+controlled trials with a high risk of bias
+BA body of evidence including studies rated as 2 ++
+directly applicable to the target population, and
+demonstrating overall consistency of results; orExtrapolated evidence from studies rated as 1 ++
+or 1+2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk ofconfounding, bias or chance and a highprobability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias orchance and a moderate probability that therelationship is causalCA body of evidence including studiesrated as 2 +directly applicable to the target
+population, and demonstrating overallconsistency of results; or
+Extrapolated evidence from studies rated
+as 2++
+2– Case –control or cohort studies with a high risk
+of confounding, bias or chance and a signiﬁcantrisk that the relationship is not causal
+3 Non-analytical studies, e.g. case reports, case
+seriesDEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice points
+PRecommended best practice based on the
+clinical experience of the guideline developmentgroup
+RCOG Green-top Guideline No. 126 e60 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Professor ERM Jauniaux FRCOG, London (Lead Developer); Professor Z Alﬁrevic FRCOG, Liverpool, UK;
+Mr AG Bhide FRCOG, London, UK; Professor GJ Burton, University of Cambridge, UK;Professor SL Collins MRCOG, Oxford, UK; Professor R Silver, University of Utah, Salt Lake City, Utah, USA
+and peer reviewed by: Professor ML Brizot, University of S ~ao Paulo, S ~ao Paulo, Brazil; Professor J Dashe, University of
+Texas Southwestern Medical Center, Dallas, TX, USA; Dr D Fraser FRCOG, Norwich; Dr J Hasegawa, St. Marianna
+University School of Medicine, Kawasaki, Kanagawa, Japan; Dr YY Hu, Sichuan University, Chengdu, Sichuan, China;
+Dr F Malik MRCOG, Southend; Professor P Martinelli, Universit /C18a di Napoli Federico II, Naples, Italy;
+RCOG Women’s Network; Dr R Salim, Emek Medical Center, Afula, Israel; Dr JT Thomas FRANZCOG, CMFM,
+Mater Mothers’ Hospital, Brisbane, Australia; Mr N Thomson, Society and College of Radiographers, London;
+Dr M Tikkanen, Women
+0s Clinic, Helsinki University Hospital Finland, Helsinki, Finland; UK National Screening Committee;
+Vasa Praevia Ireland Support and Awareness Group; and Vasa Praevia Raising Awareness for the UK and the International
+Vasa Previa Foundation; Dr SG Vitale, University of Catania, Catania, Italy.
+[Correction added on 14 March 2019, after ﬁrst online publication: SG Vitale has been added to peer reviewers.]
+Committee lead reviewers were: Dr A McKelvey MRCOG, Norfolk; and Mr RJ Fernando FRCOG, LondonThe chairs of the Guidelines Committee were: Dr MA Ledingham MRCOG, Glasgow
+1; Dr B Magowan FRCOG, Melrose1;
+and Dr AJ Thomson MRCOG, Paisley2.
+1co-chairs from June 20182until May 2018.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-
+services/guidelines/gtg27b/.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate
+assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 126 e61 of e61 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15307 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [23/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

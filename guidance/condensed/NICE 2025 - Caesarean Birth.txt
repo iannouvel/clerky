@@ -1,0 +1,1593 @@
+Caesar ean bir th 
+NICE guideline 
+Published: 31 Mar ch 2021 
+Last updat ed: 10 June 2025 
+www .nice.or g.uk/guidance/ng192 
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+61Contents 
+Overview ...................................................................................................................................... 5 
+Who is it f or? .......................................................................................................................................... 5 
+Recommendations ....................................................................................................................... 6 
+1.1 Planning mode of bir th .................................................................................................................... 6 
+1.2 Planned caesar ean bir th ................................................................................................................. 8 
+1.3 Fact ors aff ecting t he lik elihood of emer gency caesar ean bir th during intrapar tum car e ........ 15 
+1.4 Pr ocedural aspect s of caesar ean bir th ......................................................................................... 17 
+1.5 Car e of t he bab y born b y caesar ean bir th .................................................................................... 25 
+1.6 Car e of t he w oman aft er caesar ean bir th ..................................................................................... 26 
+1.7 Recovery aft er caesar ean bir th ...................................................................................................... 33 
+1.8 Pregnancy and childbir th aft er caesar ean bir th ........................................................................... 36 
+Terms used in t his guideline ................................................................................................................. 37 
+Recommendations f or resear ch ................................................................................................. 38 
+1 Shor t-term and long-t erm benefit s and risks of planned caesar ean bir th compar ed to 
+planned v aginal bir th ............................................................................................................................ 38 
+2 Decision-t o-bir th interval (categor y 1 urgency) ............................................................................. 39 
+3 Decision-t o-bir th interval (categor y 2 urgency) ............................................................................. 40 
+4 Mat ernal r equest f or caesar ean bir th .............................................................................................. 41 
+Rationale and impact ................................................................................................................... 43 
+Benefit s and risks of caesar ean and v aginal bir th ............................................................................. 43 
+Placenta accr eta spectrum .................................................................................................................. 44 
+Maternal choice f or caesar ean bir th ................................................................................................... 46 
+Prevention and management of h ypot hermia and shiv ering ............................................................ 48 
+Methods t o reduce inf ectious morbidity and w ound car e aft er caesar ean bir th ........................... 49 
+Surgical opening t echnique .................................................................................................................. 50 
+Closur e of t he ut erus ............................................................................................................................ 52 
+Monit oring aft er caesar ean bir th ......................................................................................................... 52 Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+61Pain management aft er caesar ean bir th ............................................................................................. 54 
+Cont ext ......................................................................................................................................... 58 
+Finding mor e information and committ ee details ..................................................................... 59 
+Updat e information ..................................................................................................................... 60 Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+61This guideline par tially r eplaces CG132. 
+This guideline is t he basis of QS32. 
+Overview 
+This guideline co vers when t o off er and discuss caesar ean bir th, pr ocedural aspect s of t he 
+operation, and car e aft er caesar ean bir th. It aims t o impr ove the consist ency and quality of 
+care for women and pr egnant people who ar e thinking about ha ving a caesar ean bir th or 
+have had a caesar ean bir th in t he past and ar e now pregnant again. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners 
+• Pregnant w omen and pr egnant people, t heir f amilies and car ers Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+61Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+This guideline uses specific, inclusiv e language t o describe t he population gr oups it 
+covers (f or example, w omen and pr egnant people, or trans and non-binar y people) 
+except when: 
+• the evidence f or the recommendation has not been r eview ed, and it is not cer tain 
+from e xper t opinion whet her it can co ver mor e groups, or 
+• the evidence has been r eview ed, but t he inf ormation a vailable f or some gr oups at 
+the time of de velopment was t oo limit ed to mak e specific r ecommendations, or 
+• only a v ery limit ed number of r ecommendations ha ve been updat ed in dir ect 
+response t o new e vidence or t o reflect a change in practice. 
+Healt hcare professionals should use t heir clinical judgement when implementing 
+gender -specific r ecommendations, taking int o account t he individual's 
+circumstances, needs and pr eferences, and ensuring all people ar e treated wit h 
+dignity and r espect t hroughout t heir car e. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 Planning mode o f bir th 
+Provision o f informa tion 
+1.1.1 Offer all pr egnant w omen inf ormation and suppor t to enable t hem t o mak e Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+61informed decisions about childbir th. Mak e sur e that: 
+• the inf ormation is e vidence based 
+• any information pr ovided is accessible, ideally wit h a choice of f ormat s to suit 
+different w omen's needs 
+• the language used in an y information (writt en or oral) is r espectful and 
+suitable f or the w oman, taking int o account an y personal, cultural or r eligious 
+factors t hat could f orm par t of t he w oman's choices 
+• the w omen's pr eferences and concerns ar e central t o the decision-making 
+process. [2004 , amended 2021] 
+1.1.2 Discuss mode of bir th wit h all pr egnant w omen early in t heir pr egnancy . Cover 
+information such as: 
+• around 25% t o 30% of w omen ha ve a caesar ean bir th 
+• factors t hat mean w omen ma y need a caesar ean bir th (for example, 
+increased mat ernal age and body mass inde x [BMI]) 
+• common indications f or emer gency caesar ean bir th include slo w progression 
+of labour or concern about f etal condition 
+• planned place of bir th ma y affect t he mode of bir th (see planning place of 
+birth in t he NICE guideline on intrapar tum car e) 
+• what t he caesar ean bir th procedur e involves 
+• how a caesar ean bir th ma y impact on t he postnatal period (f or example, need 
+for pain r elief) 
+• implications f or futur e pregnancies and bir th aft er caesar ean bir th or v aginal 
+birth (for example, aft er a caesar ean bir th the chances of caesar ean bir th in a 
+futur e pregnancy ma y be incr eased). [2011 , amended 2021] 
+Benefi ts and risks o f caesar ean and v aginal bir th 
+1.1.3 Discuss t he benefit s and risks of bot h caesar ean and v aginal bir th wit h women, Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+61taking int o account t heir cir cumstances, concerns, priorities and plans f or futur e 
+pregnancies. [2021] 
+1.1.4 Using t he inf ormation in appendix A, explain t o women t hat: 
+• there are benefit s and risks associat ed wit h bot h vaginal and caesar ean 
+birth, some of which ar e very small absolut e risks and some ar e greater 
+absolut e risks, and t hey will need t o decide which risks ar e mor e (or less) 
+acceptable t o them 
+• there are other risks not included in t hese tables t hat might be r elevant t o 
+their individual cir cumstances (f or example, placental adher ence pr oblems 
+from multiple caesar ean bir ths, fetal lacerations in caesar ean bir th, term bir th 
+injuries wit h vaginal bir th or caesar ean bir th) 
+• these tables giv e summar y estimat es only and ar e intended t o help 
+discussions, but pr ecise numerical risk estimat es cannot be giv en for 
+individual w omen. [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on benefit s and risks 
+of caesar ean and v aginal bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+the benefit s and risks of planned caesar ean bir th. 
+1.2 P lanne d caesar ean bir th 
+Breech pr esen tation 
+1.2.1 Discuss wit h women t he benefit s and risks of planned v aginal bir th versus 
+planned caesar ean bir th for br eech pr esentation, and t he option of e xternal 
+cephalic v ersion. [2004 , amended 2021] 
+1.2.2 Offer women who ha ve an uncomplicat ed singlet on br eech pr egnancy aft er 
+36+0 weeks, e xternal cephalic v ersion, unless: Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+61• the w oman is in established labour 
+• there is f etal compr omise 
+• the w oman has ruptur ed membranes or v aginal bleeding 
+• the w oman has an y other medical conditions (f or example, se vere 
+hyper tension) t hat w ould mak e external cephalic v ersion inadvisable. [2004 , 
+amended 2021] 
+1.2.3 Before carr ying out a caesar ean bir th for an uncomplicat ed singlet on br eech 
+pregnancy , carr y out an ultrasound scan t o check t hat t he bab y is in t he br eech 
+position. Do t his as lat e as possible bef ore the caesar ean bir th procedur e. [2021] 
+Multiple pr egnanc y 
+1.2.4 For recommendations on mode of bir th in multiple pr egnancy , see mode of bir th 
+in the NICE guideline on twin and triplet pr egnancy . [2021] 
+Preterm bir th 
+1.2.5 For recommendations on mode of bir th in pr eterm labour and bir th, see mode of 
+birth in t he NICE guideline on pr eterm labour and bir th. [2021] 
+Placenta pr aevia 
+1.2.6 Offer caesar ean bir th to women wit h a placenta t hat par tly or complet ely co vers 
+the int ernal cer vical os (minor or major placenta prae via). [2004 , amended 2011] 
+Placenta ac creta spe ctrum 
+1.2.7 If the routine 20-w eek ultrasound scan sho ws placenta prae via or lo w-lying 
+placenta in a w oman or pr egnant person wit h a pr evious caesar ean scar ( or a Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+61uterine scar fr om ot her sur gery), refer for a gr eyscale ultrasound scan wit h colour 
+doppler t o assess f or placenta accr eta. This scan should be done ar ound 
+28 weeks, but no lat er than 29 weeks, b y a senior clinician wit h exper tise in t he 
+diagnosis of placenta accr eta. [202 4] 
+(See t he section on r outine ant enatal clinical car e in t he NICE guideline on 
+antenatal car e for mor e information on r outine scans.) 
+1.2.8 If placenta accr eta is suspect ed following t he gr eyscale ultrasound scan wit h 
+colour doppler (see r ecommendation 1 .2.7), refer the w oman or pr egnant person 
+to a specialist placenta accr eta spectrum centr e for car e and ongoing 
+management. [202 4] 
+Care for w omen wi th placenta ac creta spe ctrum in spe cialist 
+centres 
+1.2.9 Consider an MRI scan t o complement ultrasound findings when planning ongoing 
+surgical management of placenta accr eta spectrum. Discuss t he following wit h 
+the w oman or pr egnant person: 
+• what t o expect during an MRI pr ocedur e 
+• that MRI can help clarify t he degr ee of in vasion, par ticularly wit h a post erior 
+placenta 
+• that curr ent e xperience suggest s that MRI is saf e, but t hat t here is a lack of 
+evidence about an y long-t erm risks t o the bab y. [202 4] 
+1.2.10 Discuss bir th options (f or example, timing of bir th, operativ e interventions 
+including possibility of h ysterectomy, need f or blood transfusion) wit h a w oman 
+or pr egnant person suspect ed to have placenta accr eta spectrum. This 
+discussion should be carried out b y a senior obst etrician. [2011 , amended 202 4] 
+1.2.11 When planning a caesar ean bir th for women or pr egnant people suspect ed to 
+have placenta accr eta spectrum, t he multidisciplinar y team should: 
+• agree which ot her healt hcare professionals need t o be consult ed or pr esent Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10
+of 61(for example, specialist s in gynaecological sur gery, interventional radiology , 
+color ectal sur gery, urology or v ascular sur gery, depending on t he natur e of 
+the placenta accr eta spectrum) and 
+• the responsibilities of each t eam member . [2011 , amended 202 4] 
+1.2.12 When per forming a planned caesar ean bir th for a w oman or pr egnant person 
+suspect ed to have placenta accr eta spectrum, ensur e that: 
+• a consultant obst etrician, a consultant gynaecologist and a consultant 
+anaest hetist ar e present in t he operating t heatr e 
+• a paediatric or neonatal r egistrar or consultant is pr esent t o provide 
+immediat e car e for the bab y as soon as it is born 
+• a haemat ology r egistrar or consultant is a vailable t o contact f or advice 
+• a critical car e bed is a vailable f or the w oman or pr egnant person, and a 
+critical car e neonatal cot is a vailable f or the bab y (alt hough emer gency 
+surgery should not be dela yed while waiting f or a bed) 
+• sufficient cr oss-mat ched blood and blood pr oduct s are readily a vailable (if 
+blood transfusions ar e acceptable t o the w oman or pr egnant person). See 
+the NICE guideline on blood transfusion . [2011 , amended 202 4] 
+1.2.13 Specialist placenta accr eta spectrum centr es and t he local mat ernity unit s they 
+suppor t should de velop pr otocols co vering ho w placenta accr eta spectrum 
+should be diagnosed, assessed and managed acr oss t heir netw ork. The pr otocol 
+should include t he car e and management of placenta accr eta spectrum identified 
+late in pr egnancy or in labour , including ho w specialist unit s can suppor t 
+emer gency car e in local mat ernity unit s. [202 4] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on placenta accr eta 
+spectrum . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview H: 
+placenta accr eta spectrum (P AS). Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+61Predicting c aesar ean bir th for cephalopel vic dispr opor tion in 
+labour 
+1.2.14 Do not use pelvimetr y for decision making about mode of bir th. [2004 , amended 
+2021] 
+1.2.15 Do not use t he following f or decision making about mode of bir th, as t hey do not 
+accurat ely pr edict cephalopelvic dispr opor tion: 
+• maternal shoe siz e 
+• maternal height 
+• estimations of f etal siz e (ultrasound or clinical e xamination). [2004 , amended 
+2021] 
+Mother -to-child tr ansmission o f ma ternal inf ections 
+HIV 
+1.2.16 Provide w omen wit h HIV inf ormation about t he benefit s and risks f or them and 
+their bab y of t he HIV tr eatment options and mode of bir th as early as possible in 
+their pr egnancy , so t hat t hey can mak e an inf ormed decision. Obtain specialist 
+advice about HIV in pr egnancy fr om a se xual healt h specialist if necessar y. [2011 , 
+amended 2021] 
+Hepatitis B virus 
+1.2.17 Do not off er pr egnant w omen wit h hepatitis B a planned caesar ean bir th for this 
+reason alone, as mot her-to-bab y transmission of hepatitis B can be r educed if 
+the bab y receiv es immunoglobulin and v accination. [2004 , amended 2021] 
+Hepatitis C virus 
+1.2.18 Do not off er women who ar e infected wit h hepatitis C a planned caesar ean bir th Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12
+of 61for this reason alone. [2004 , amended 2021] 
+1.2.19 Offer pr egnant w omen who ar e co-inf ected wit h hepatitis C virus and HIV a 
+planned caesar ean bir th to reduce mot her-to-bab y transmission of hepatitis C 
+virus and HIV . [2004 , amended 2021] 
+Herpes simple x virus 
+1.2.20 Offer women wit h primar y genital herpes simple x virus (HSV) inf ection occurring 
+in the third trimest er of pr egnancy a planned caesar ean bir th to decr ease t he risk 
+of neonatal HSV inf ection. [2004] 
+1.2.21 Do not r outinely off er pr egnant w omen wit h recurr ent HSV inf ection a planned 
+caesar ean bir th out side of t he cont ext of r esear ch. [2004 , amended 2021] 
+Body mass inde x 
+1.2.22 Do not use a BMI of o ver 50 kg/m2 
+alone as an indication f or planned caesar ean 
+birth. [2011] 
+Shared de cision making 
+1.2.23 Ask f or consent f or caesar ean bir th only aft er pr oviding pr egnant w omen wit h 
+evidence-based inf ormation. Ensur e the w oman's dignity , priv acy, views and 
+cultur e are respect ed, while taking t he w oman's clinical situation int o account. 
+[2004 , amended 2021] 
+1.2.24 Advise w omen t hat t hey are entit led to decline t he off er of tr eatment such as 
+caesar ean bir th, even when it w ould benefit t heir or t heir bab y's healt h. [2004 , 
+amended 2021] 
+1.2.25 When a w oman decides on or declines a caesar ean bir th, document t he factors 
+that t hat ar e impor tant t o the w oman when making her decision. [2004 , 
+amended 2021] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13
+of 61Maternal choic e for caesar ean bir th 
+1.2.26 When a w oman or pr egnant person wit h no medical indication f or a caesar ean 
+birth request s a caesar ean bir th: 
+• offer to discuss and e xplor e the reasons f or the request 
+• ensur e they have balanced and accurat e information 
+• offer to discuss alt ernativ e bir th options (f or example, place of bir th, 
+continuity of midwif ery car e wher e available, pain r elief options), which ma y 
+help addr ess concerns t hey have about t he bir th 
+• offer discussions wit h a consultant midwif e or senior midwif e, ideally in a 
+birth options clinic or at a bir th options appointment 
+• offer discussions wit h a consultant or senior obst etrician and ot her members 
+of the team (f or example, an anaest hetist) if necessar y or r equest ed by the 
+woman or pr egnant person 
+• record the discussions and decisions. [2011 , amended 2023] 
+1.2.27 If a w oman or pr egnant person r equest s a caesar ean bir th, discuss t he overall 
+benefit s and risks of caesar ean bir th compar ed wit h vaginal bir th (see t he section 
+on planning mode of bir th) and r ecord that t his discussion has tak en place. 
+[2011] 
+1.2.28 If a w oman or pr egnant person r equest s a caesar ean bir th because t hey have 
+tokophobia or ot her se vere anxiety about childbir th (for example, f ollowing abuse 
+or a pr evious traumatic e vent), off er referral t o a healt hcare professional wit h 
+exper tise in pr oviding perinatal mental healt h suppor t to help wit h their anxiety . 
+See t he NICE guideline on ant enatal and postnatal mental healt h for mor e 
+detailed advice on pr oviding mental healt h ser vices during pr egnancy . [2011 , 
+amended 2021] 
+1.2.29 Ensur e healt hcare professionals pr oviding perinatal mental healt h suppor t for 
+women or pr egnant people wit h tokophobia or ot her se vere anxiety about 
+childbir th are able t o access t he planned place of bir th wit h the w oman or 
+pregnant person during t he ant enatal period, as par t of t he suppor t offered to Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14
+of 61help t hem o vercome f ears and concerns about t he labour and bir th. [2011 , 
+amended 2023] 
+1.2.30 If, after an inf ormed discussion about t he options f or bir th (including t he off er of 
+perinatal mental healt h suppor t if appr opriat e; see r ecommendation 1 .2.27), t he 
+woman or pr egnant person r equest s a caesar ean bir th, suppor t their choice. 
+[2011 , amended 2023] 
+1.2.31 If a w oman or pr egnant person r equest s a caesar ean bir th this should be off ered 
+within their obst etric unit. [2011 , amended 2023] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on mat ernal choice f or 
+caesar ean bir th. 
+1.3 F actors affecting the lik elihood o f emer gency 
+caesar ean bir th during in trapar tum c are 
+Factors reducing the lik elihood o f caesar ean bir th 
+1.3.1 Inform w omen t hat continuous suppor t during labour fr om w omen, wit h or 
+without prior training, r educes t he lik elihood of caesar ean bir th. [2004] 
+1.3.2 Use a par togram wit h a 4-hour action line t o monit or pr ogress of w omen in 
+spontaneous labour wit h an uncomplicat ed singlet on pr egnancy at t erm t o 
+reduce t he lik elihood of caesar ean bir th. [2004] 
+1.3.3 Involve a consultant obst etrician in decision-making f or caesar ean bir th. [2004 , 
+amended 2021] 
+No influenc e on the lik elihood o f caesar ean bir th 
+1.3.4 Inform w omen t hat t he following int erventions during intrapar tum car e have not Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15
+of 61been sho wn to influence t he lik elihood of caesar ean bir th, alt hough t hey can 
+affect ot her out comes: 
+• walking in labour 
+• non-supine position during t he second stage of labour 
+• immersion in wat er during labour 
+• epidural analgesia during labour 
+• the use of raspberr y lea ves. [2004 , amended 2021] 
+1.3.5 Inform w omen t hat t he eff ects on t he lik elihood of caesar ean bir th of 
+complementar y therapies used during labour (such as acupunctur e, 
+aromat herap y, hypnosis, herbal pr oduct s, nutritional supplement s, homeopat hic 
+medicines, and Chinese medicines) ar e uncer tain. [2004 , amended 2021] 
+Slow pr ogression in labour and c aesar ean bir th 
+1.3.6 Do not off er the following as t hey do not influence t he lik elihood of caesar ean 
+birth for slo w progression in labour , although t hey can aff ect ot her out comes: 
+• activ e management of labour ( comprising a strict definition of established 
+labour , early r outine amniot omy, routine 2-hourly v aginal e xamination, 
+oxytocin if labour becomes slo w) 
+• early amniot omy. [2004 , amended 2021] 
+Eating during labour 
+1.3.7 Inform w omen t hat eating a lo w-residue diet during labour (t oast, crack ers, lo w-
+fat cheese) r esult s in lar ger gastric v olumes, but t he eff ect on t he risk of 
+aspiration if anaest hesia is needed is uncer tain. [2004] 
+1.3.8 Inform w omen t hat ha ving isot onic drinks during labour pr events ketosis wit hout 
+a concomitant incr ease in gastric v olume. [2004] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16
+of 611.4 Pr ocedural aspe cts of caesar ean bir th 
+Timing o f planne d caesar ean bir th 
+1.4.1 Do not r outinely carr y out planned caesar ean bir th bef ore 39 weeks, as t his can 
+increase t he risk of r espirat ory morbidity in babies. [2004] 
+Classific ation o f urgency for caesar ean bir th 
+1.4.2 Use t he following standar dised scheme t o document t he ur gency of caesar ean 
+birth and aid clear communication betw een healt hcare professionals: 
+• Categor y 1. Immediat e threat t o the lif e of t he w oman or f etus (f or example, 
+suspect ed ut erine ruptur e, major placental abruption, cor d prolapse, f etal 
+hypoxia or persist ent f etal brady cardia). 
+• Categor y 2. Mat ernal or f etal compr omise which is not immediat ely lif e-
+threatening. 
+• Categor y 3. No mat ernal or f etal compr omise but needs early bir th. 
+• Categor y 4. Birth timed t o suit w oman or healt hcare provider . [2004 , 
+amended 2021] 
+Decision -to-bir th in terval for un planne d and emer gency 
+caesar ean bir th 
+Categor y 1 caesar ean bir th is when t here is immediat e threat t o the lif e of t he w oman or 
+fetus, and cat egor y 2 caesar ean bir th is when t here is mat ernal or f etal compr omise which 
+is not immediat ely lif e-threatening. 
+1.4.3 Perform cat egor y 1 caesar ean bir th as soon as possible, and in most situations 
+within 30 minut es of making t he decision. [2011 , amended 2021] 
+1.4.4 Perform cat egor y 2 caesar ean bir th as soon as possible, and in most situations Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17
+of 61within 7 5 minut es of making t he decision. [2011 , amended 2021] 
+1.4.5 Take into account t he condition of t he w oman and t he unborn bab y when making 
+decisions about rapid bir th. Be awar e that rapid bir th can be harmful in cer tain 
+circumstances. [2011] 
+Preoper ative testing and pr epar ation f or caesar ean bir th 
+1.4.6 Before caesar ean bir th, carr y out a full blood count t o identify anaemia, antibody 
+screening, and blood gr ouping wit h saving of serum. [2004 , amended 2021] 
+1.4.7 Do not r outinely carr y out t he following t ests bef ore caesar ean bir th: 
+• cross-mat ching of blood 
+• a clotting scr een 
+• preoperativ e ultrasound f or localisation of t he placenta. [2004 , amended 
+2021] 
+1.4.8 Carry out caesar ean bir th for pr egnant w omen wit h ant epar tum haemorrhage, 
+abruption or placenta prae via at a mat ernity unit wit h on-sit e blood transfusion 
+services, as t hey are at incr eased risk of blood loss of mor e than 1 ,000 ml. [2004 , 
+amended 2021] 
+1.4.9 Give women ha ving caesar ean bir th wit h regional anaest hesia an indw elling 
+urinar y cat heter to prevent o ver-dist ension of t he bladder . [2004 , amended 
+2021] 
+Anaesthesia f or caesar ean bir th 
+1.4.10 Provide pr egnant w omen ha ving a caesar ean bir th wit h information on t he 
+different types of post -caesar ean bir th analgesia, so t hat t hey can mak e an 
+informed choice (see recommendation 1.6.11). [2004] 
+1.4.11 Offer women who ar e having a caesar ean bir th regional anaest hesia in pr eference Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18
+of 61to general anaest hesia, including w omen who ha ve a diagnosis of placenta 
+prae via. [2004 , amended 2021] 
+1.4.12 Carry out induction of anaest hesia, including r egional anaest hesia, f or caesar ean 
+birth in t heatr e. [2004 , amended 2021] 
+1.4.13 Apply a left lat eral tilt of up t o 15 degr ees or appr opriat e uterine displacement 
+once t he w oman is in a supine position on t he operating table t o reduce mat ernal 
+hypot ension. [2004 , amended 2021] 
+1.4.14 Offer women who ar e having a caesar ean bir th under spinal anaest hesia a 
+prophylactic intra venous infusion of phen ylephrine, star ted immediat ely aft er the 
+spinal injection. Adjust t he rat e of infusion t o keep mat ernal blood pr essur e at 
+90% or mor e of baseline v alue and a void decr eases t o less t han 80% of baseline. 
+[2004 , amended 2021] 
+1.4.15 When using phen ylephrine infusion, giv e intra venous ephedrine boluses t o 
+manage h ypot ension during caesar ean bir th, for example, if t he hear t rate is lo w 
+and blood pr essur e is less t han 90% of baseline. [2004 , amended 2021] 
+1.4.16 Use intra venous cr ystalloid co-loading in addition t o vasopr essors t o reduce t he 
+risk of h ypot ension occurring during caesar ean bir th. [2004 , amended 2021] 
+1.4.17 Ensur e each mat ernity unit has a set of pr ocedur es for failed intubation during 
+obstetric anaest hesia. [2004] 
+1.4.18 Offer women antacids and drugs (such as H 2-recept or antagonist s or pr oton 
+pump inhibit ors) t o reduce gastric v olumes and acidity bef ore caesar ean bir th. 
+In Mar ch 2021 , this was an off -label use of pr oton pump inhibit ors. See NICE's 
+information on pr escribing medicines . [2004 , amended 2021] 
+1.4.19 Offer women ha ving a caesar ean bir th anti-emetics ( either pharmacological or 
+acupr essur e) to reduce nausea and v omiting during caesar ean bir th. [2004] 
+1.4.20 Include pr e-oxygenation, cricoid pr essur e and rapid sequence induction in 
+general anaest hesia f or caesar ean bir th to reduce t he risk of aspiration. [2004 , Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19
+of 61amended 2011] 
+Prevention and manag emen t of hypothermia and shi vering 
+1.4.21 Warm IV fluids (500 ml or mor e) and blood pr oduct s used during caesar ean bir th 
+to 37 degr ees Celsius using a fluid warming de vice. [2021] 
+1.4.22 Warm all irrigation fluids used during caesar ean bir th to 38 t o 40 degr ees Celsius 
+in a t hermostatically contr olled cabinet. [2021] 
+1.4.23 Consider f orced air warming f or women who shiv er, feel cold, or ha ve a 
+temperatur e of less t han 36 degr ees Celsius during caesar ean bir th. [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on pr evention and 
+management of h ypot hermia and shiv ering . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+prevention and management of h ypot hermia and shiv ering . 
+Surgical te chniques and me dication f or caesar ean bir th 
+Met hods t o reduce inf ectious morbidity 
+1.4.24 Use alcohol-based chlorhe xidine skin pr eparation bef ore caesar ean bir th to 
+reduce t he risk of w ound inf ections. See t he NICE guideline on sur gical sit e 
+infections . [2021] 
+1.4.25 Use aqueous po vidone-iodine v aginal pr eparation bef ore caesar ean bir th in 
+women wit h ruptur ed membranes t o reduce t he risk of endometritis. If aqueous 
+povidone-iodine v aginal pr eparation is not a vailable or is contraindicat ed, 
+aqueous chlorhe xidine v aginal pr eparation can be used. [2021] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20
+of 61For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on met hods t o reduce 
+infectious morbidity and w ound car e aft er caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+methods t o reduce inf ectious morbidity at caesar ean bir th. 
+Met hods t o prevent HIV tr ansmission in t heatr e 
+1.4.26 Wear double glo ves when per forming or assisting a caesar ean bir th for women 
+who ha ve tested positiv e for HIV , to reduce t he risk of HIV inf ection of staff . 
+[2004] 
+1.4.27 Follow general r ecommendations f or saf e sur gical practice during caesar ean bir th 
+to reduce t he risk of HIV inf ection of staff . [2004] 
+Abdominal wall incision 
+1.4.28 Perform caesar ean bir th using a lo w, transv erse, straight skin incision wit h 
+subsequent tissue la yers opened blunt ly and, if necessar y, extended using sharp 
+dissection. This ma y need t o be modified wit h a higher incision f or women and 
+pregnant people wit h class 3 obesity (BMI 40 kg/m2
+ or mor e). A v ertical midline 
+incision ma y be r equir ed for some clinical indications. [2004 , amended 2023] 
+For a shor t explanation of wh y the committ ee made t he recommendation and ho w it 
+might aff ect practice, see t he rationale and impact section on sur gical opening 
+technique . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+surgical opening t echnique . Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21
+of 61Instrument s for skin incision 
+1.4.29 Do not use separat e sur gical kniv es to incise t he skin and t he deeper tissues in 
+caesar ean bir th, as it does not decr ease w ound inf ection. [2004] 
+Extension of t he ut erine incision 
+1.4.30 When t here is a w ell-formed lo wer ut erine segment, use blunt rat her t han sharp 
+extension of t he ut erine incision t o reduce blood loss, incidences of postpar tum 
+haemorrhage and t he need f or transfusion during caesar ean bir th. [2004] 
+Fetal lacer ation 
+1.4.31 Inform w omen who ar e having a caesar ean bir th that t he risk of f etal lacerations 
+is about 2%. [2004] 
+Use of f orceps 
+1.4.32 Only use f orceps in caesar ean bir th if t here is difficulty deliv ering t he bab y's 
+head. The eff ect on neonatal morbidity of t he routine use of f orceps at caesar ean 
+birth remains uncer tain. [2004] 
+Use of ut erotonics 
+1.4.33 Follow recommendation 1 .10.13 in t he section on t he third stage of labour in 
+NICE's guideline on intrapar tum car e. [2004 , amended 2025] 
+Met hod of placental r emo val 
+1.4.34 Remove the placenta in caesar ean bir th using contr olled cor d traction and not 
+manual r emoval to reduce t he risk of endometritis. [2004] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22
+of 61Exteriorisation of t he ut erus 
+1.4.35 Perform intraperit oneal r epair of t he ut erus f or caesar ean bir th. Routine 
+exteriorisation of t he ut erus is not r ecommended because it is associat ed wit h 
+more pain and does not impr ove operativ e out comes such as haemorrhage and 
+infection. [2004 , amended 2021] 
+Closur e of t he ut erus 
+1.4.36 Use single la yer or double la yer ut erine closur e in caesar ean bir th, depending on 
+the clinical cir cumstances. Not e that single la yer closur e does not incr ease t he 
+risk of post operativ e bleeding or ut erine ruptur e in a subsequent pr egnancy . 
+[2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation and ho w it 
+might aff ect practice, see t he rationale and impact section on closur e of t he ut erus. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+techniques t o close t he ut erus at caesar ean bir th. 
+Closur e of t he perit oneum 
+1.4.37 Do not sutur e the visceral or t he parietal perit oneum in caesar ean bir th to reduce 
+operating time and t he need f or post operativ e analgesia, and impr ove mat ernal 
+satisf action. [2004] 
+Closur e of t he abdominal wall 
+1.4.38 If a midline abdominal incision is used in caesar ean bir th, use mass closur e wit h 
+slowly absorbable continuous sutur es as t his result s in f ewer incisional hernias 
+and less dehiscence t han la yered closur e. [2004] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23
+of 61Closur e of subcutaneous tissue 
+1.4.39 Do not r outinely close t he subcutaneous tissue space in caesar ean bir th unless 
+the w oman has mor e than 2 cm subcutaneous f at, as it does not r educe t he 
+incidence of w ound inf ection. [2004] 
+Use of super ficial w ound dr ains 
+1.4.40 Do not r outinely use super ficial w ound drains in caesar ean bir th as t hey do not 
+decr ease t he incidence of w ound inf ection or w ound haemat oma. See 
+recommendation 1.7.2 on the use of negativ e pressur e wound t herap y. [2004 , 
+amended 2021] 
+Closur e of t he skin 
+1.4.41 Consider using sutur es rat her t han staples t o close t he skin aft er caesar ean bir th 
+to reduce t he risk of super ficial w ound dehiscence. See closur e met hods in t he 
+NICE guideline on sur gical sit e infections . [2019] 
+Umbilical ar tery pH measur ement 
+1.4.42 Perform pair ed umbilical ar tery and v ein measur ement s of cor d blood gases aft er 
+caesar ean bir th for suspect ed fetal compr omise, t o allo w for assessment of f etal 
+wellbeing and guide ongoing car e of t he bab y. [2004 , amended 2021] 
+Timing of antibiotic administr ation 
+1.4.43 Offer women pr ophylactic antibiotics bef ore skin incision f or caesar ean bir th, 
+choosing antibiotics t hat ar e eff ectiv e against endometritis, urinar y tract and 
+wound inf ections. [2011 , amended 2021] 
+1.4.44 Inform w omen t hat: 
+• endometritis, urinar y tract and w ound inf ections occur in about 8% of w omen Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4
+of 61who ha ve had a caesar ean bir th 
+• using pr ophylactic antibiotics bef ore skin incision r educes t he risk of mat ernal 
+infection mor e than pr ophylactic antibiotics giv en aft er skin incision, and t hat 
+there is no kno wn eff ect on t he bab y. [2011 , amended 2021] 
+1.4.45 Do not use co-amo xicla v when giving pr ophylactic antibiotics bef ore skin incision 
+for caesar ean bir th. [2011] 
+Thrombopr ophylaxis f or caesar ean bir th 
+1.4.46 Offer thrombopr ophylaxis t o women ha ving a caesar ean bir th. Take into account 
+the risk of t hromboembolic disease when choosing t he met hod of pr ophylaxis 
+(for example, graduat ed st ockings, h ydration, early mobilisation, lo w molecular 
+weight heparin). [2011] 
+Women's pr eferences during caesar ean bir th 
+1.4.47 Accommodat e a w oman's pr eferences f or her caesar ean bir th whene ver possible, 
+such as, music pla ying in t heatr e, lowering t he scr een t o see t he bab y born, or 
+silence so t hat t he mot her's v oice is t he first t he bab y hears. [2004] 
+1.5 Car e of the bab y born b y caesar ean bir th 
+Presenc e of pae diatrician a t caesar ean bir th 
+1.5.1 Ensur e an appr opriat ely trained practitioner skilled in t he resuscitation of 
+newborn babies is pr esent f or caesar ean bir th per formed under general 
+anaest hesia, or if t here is e vidence of f etal compr omise. [2004] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25
+of 61Thermal c are for babies born b y caesar ean bir th 
+1.5.2 As babies born b y caesar ean bir th are mor e likely to have a lo wer temperatur e, 
+ensur e thermal car e is in accor dance wit h good practice f or thermal car e of 
+newborn babies. [2004] 
+Maternal c ontact (skin -to-skin ) 
+1.5.3 Offer and f acilitat e early skin-t o-skin contact betw een t he w oman and her bab y. 
+[2004 , amended 2021] 
+Breastfeeding 
+1.5.4 Offer women who ha ve had a caesar ean bir th and who wish t o breastf eed 
+suppor t to help t hem t o star t breastf eeding as soon as possible aft er the bir th of 
+their bab y. [2004 , amended 2021] 
+1.6 Car e of the w oman af ter c aesar ean bir th 
+High-dependenc y uni t/intensi ve ther apy uni t admission 
+1.6.1 Be awar e that, alt hough it is rar e for women t o need int ensiv e car e aft er 
+childbir th, this ma y occur aft er caesar ean bir th. [2004 , amended 2021] 
+Monitoring af ter c aesar ean bir th 
+After gener al anaest hesia 
+1.6.2 After caesar ean bir th under a general anaest hetic, a healt hcare professional wit h 
+airway skills should carr y out continuous, one-t o-one obser vation of t he w oman 
+until she: Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26
+of 61• has r egained air way contr ol and 
+• is haemodynamically stable and 
+• is able t o communicat e. [2021] 
+1.6.3 When a w oman has r egained air way contr ol, is haemodynamically stable, and is 
+able t o communicat e aft er caesar ean bir th under a general anaest hetic: 
+• continue obser vations ( oxygen saturations, r espirat ory rat e, hear t rate, blood 
+pressur e, temperatur e, pain and sedation) e very half hour f or 2 hours 
+• after 2 hours, if t hese obser vations ar e stable, carr y out r outine obser vations 
+in accor dance wit h local pr otocols 
+• if these obser vations ar e not stable, or t he w oman has ot her risk f actors or 
+complications (f or example, se vere hyper tension, or signs of inf ection or 
+sepsis), carr y out a medical r eview and incr ease t he duration and fr equency 
+of obser vations. 
+Also see r ecommendation 1.6.6 on use of pulse o ximet ers for people wit h 
+dark skin. [2021 , amended 2023] 
+After spinal or epidur al anaest hesia 
+1.6.4 After caesar ean bir th under a spinal or epidural anaest hetic, a healt hcare 
+professional should carr y out continuous one-t o-one obser vation of t he w oman 
+or person who has giv en bir th until t hey are haemodynamically stable (f or 
+example, when pulse and blood pr essur e have returned t o baseline v alues). 
+[2021] 
+1.6.5 For women or people who ha ve had intrat hecal or epidural diamorphine f or 
+caesar ean bir th, and who ha ve kno wn risk f actors f or respirat ory depr ession: 
+• carry out hourly monit oring of o xygen saturations, r espirat ory rat e and 
+sedation f or at least 12 hours aft er bir th and t hen 
+• continue wit h routine postnatal obser vations in accor dance wit h local Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27
+of 61protocols. [2021 , amended 2023] 
+1.6.6 Take into account t hat some pulse o ximet ers can under estimat e or o verestimat e 
+oxygen saturation le vels, especially if t he saturation le vel is bor derline. 
+Overestimation has been r epor ted in people wit h dark skin so h ypoxaemia ma y 
+not be det ected. Close att ention t o respirat ory rat e and sedation ma y therefore 
+be needed t o det ect r espirat ory depr ession. 
+Follow the NHS guidance on t he use of pulse o ximet ers and t he NHS England 
+Patient Saf ety Aler t on t he risk of harm fr om inappr opriat e placement of pulse 
+oximet er pr obes . [2023] 
+1.6.7 For women or people who ha ve had intrat hecal or epidural diamorphine f or 
+caesar ean bir th, and do not ha ve any kno wn risk f actors f or respirat ory 
+depr ession, carr y out r outine postnatal obser vations in accor dance wit h local 
+protocols. [2021 , amended 2023] 
+1.6.8 Take into account t hat, compar ed wit h neuraxial diamorphine, neuraxial morphine 
+may be associat ed wit h an incr eased risk of r espirat ory depr ession o ver a longer 
+period, so additional monit oring ma y be needed (see r ecommendations 1.6.9 and 
+1.6.10). [2023] 
+1.6.9 For women or people who ha ve had intrat hecal morphine or epidural morphine f or 
+caesar ean bir th, and who ha ve kno wn risk f actors f or respirat ory depr ession: 
+• carry out hourly monit oring of o xygen saturations, r espirat ory rat e and 
+sedation f or at least 12 hours aft er bir th, and t hen 
+• continue wit h routine postnatal obser vations in accor dance wit h local 
+protocols, unless clinical assessment suggest s concerns, including t he 
+potential f or pr olonged eff ects of morphine (see r ecommendation 1.6.8), 
+which mean t hat ongoing monit oring of r espirat ory status is needed. [2023] 
+1.6.10 For women or people who ha ve had intrat hecal morphine or epidural morphine f or 
+caesar ean bir th and who do not ha ve any kno wn risk f actors f or respirat ory 
+depr ession, carr y out r outine postnatal obser vations in accor dance wit h local 
+protocols, unless clinical assessment suggest s concerns, including t he pot ential 
+for pr olonged eff ects of morphine (see r ecommendation 1.6.8), which mean t hat Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28
+of 61additional monit oring of r espirat ory status is needed. [2023] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on monit oring aft er 
+caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview E: 
+monit oring aft er intrat hecal or epidural opioids f or caesar ean bir th. 
+Pain manag emen t after c aesar ean bir th 
+1.6.11 Offer intrat hecal diamorphine (up t o 300 micrograms) t o reduce t he need f or 
+supplemental analgesia aft er a caesar ean bir th. Use epidural diamorphine (up t o 
+3 mg) as an alt ernativ e if intrat hecal diamorphine has not been giv en. 
+In Sept ember 2023 , this was an off -label use of diamorphine (bot h intrat hecal 
+and epidural). See NICE's inf ormation on pr escribing medicines . [2004 , amended 
+2023] 
+1.6.12 If diamorphine is una vailable, off er intrat hecal pr eservative-free morphine (up t o 
+100 micrograms) plus intrat hecal f entan yl (up t o 15 micrograms). Use epidural 
+preservative-free morphine (up t o 3 mg) as an alt ernativ e if intrat hecal morphine 
+has not been used. 
+Take into account t hat neuraxial morphine incr eases t he risk of nausea, v omiting 
+and it ching compar ed wit h diamorphine, and t hat t hese side eff ects ma y need 
+treatment. 
+In Sept ember 2023 , this was an off -label use of f entan yl (intrat hecal). See NICE's 
+information on pr escribing medicines . [2023] 
+1.6.13 When using neuraxial morphine in place of diamorphine, ensur e that: 
+• only pr eservative-free morphine is used 
+• that pr eservative-containing and pr eservative-free morphine ar e stored Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29
+of 61separat ely 
+• that in settings wher e bot h types of morphine injection ar e kept, 
+preservative-containing morphine is clearly identified as 'not f or neuraxial 
+administration' . [2023] 
+1.6.14 Discuss options wit h women f or pain r elief aft er caesar ean bir th and e xplain t hat: 
+• pain aft er caesar ean bir th can be contr olled using oral or injectable 
+medicines 
+• their choice of pain r elief medicines aft er caesar ean bir th will depend on: 
+－ the se verity of pain 
+－ whet her t hey had spinal or epidural anaest hesia, or general anaest hesia 
+• if they wish t o breastf eed, t hey will usually be able t o do t his and car e for 
+their bab y while taking pain r elief medicines. [2021] 
+1.6.15 Offer oral immediat e-release morphine sulf ate to women who ha ve receiv ed 
+spinal or epidural anaest hesia f or caesar ean bir th. If t he w oman cannot tak e oral 
+medication (f or example, because of nausea or v omiting), off er intra venous, 
+intramuscular or subcutaneous morphine. [2021] 
+1.6.16 Consider intra venous patient -contr olled analgesia (PCA) using morphine f or 
+women and people who ha ve giv en bir th who ha ve had a general anaest hetic f or 
+caesar ean bir th. If intra venous PCA is not acceptable t o the w oman or person 
+who has giv en bir th, or t he pain is less se vere, consider oral immediat e-release 
+morphine sulf ate. [2021] 
+1.6.17 Ensur e women and people who ha ve had PCA wit h opioids aft er caesar ean bir th 
+have routine hourly monit oring of o xygen saturations, r espirat ory rat e, sedation 
+and pain scor es throughout tr eatment, and f or at least 2 hours aft er 
+discontinuation of tr eatment. [2004 , amended 2023] 
+1.6.18 Use paracetamol and, unless contraindicat ed, a non-st eroidal anti-inflammat ory 
+drug (f or example, ibupr ofen) in combination aft er caesar ean bir th, to reduce t he 
+need f or opioids and t o allo w them t o be st epped do wn and st opped as early as Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30
+of 61possible. [2004 , amended 2021] 
+1.6.19 If paracetamol does not pr ovide sufficient pain r elief aft er caesar ean bir th, or 
+non-st eroidal anti-inflammat ory drugs cannot be tak en, consider adding 
+immediat e-release dih ydrocodeine t o paracetamol, or changing t o co-dy dramol 
+(combination pr eparation of paracetamol and dih ydrocodeine) as an alt ernativ e to 
+paracetamol. [2021] 
+1.6.20 Do not off er codeine or co-codamol ( combination pr eparation of paracetamol and 
+codeine) t o women who ar e curr ently breastf eeding, because t his can lead t o 
+serious neonatal sedation and r espirat ory depr ession. F ollow the MHRA saf ety 
+advice on codeine f or analgesia: r estrict ed use in childr en because of r epor ts of 
+morphine t oxicity . [2021] 
+1.6.21 When using paracetamol, immediat e-release dih ydrocodeine, co-dy dramol or a 
+non-st eroidal anti-inflammat ory drug aft er caesar ean bir th, pr escribe t hem t o be 
+taken regularly and not just when needed f or pain r elief. [2021] 
+1.6.22 For women wit h severe pain aft er caesar ean bir th, when ot her pain r elief is not 
+sufficient: 
+• perform a full assessment t o exclude ot her causes f or the pain (f or example, 
+sepsis, haemorrhage, urinar y retention) 
+• discuss wit h the w oman t hat str onger pain r elief medicines ar e available 
+• make sur e the w oman is awar e that, if tak en while br eastf eeding, t hese 
+medicines could incr ease t he risk of neonatal sedation and r espirat ory 
+depr ession. 
+If the w oman chooses t o tak e stronger medicines, consider a shor t course of 
+immediat e-release tramadol or immediat e-release o xycodone at t he lo west 
+effectiv e dose. [2021] 
+1.6.23 In breastf eeding w omen, use immediat e-release opioid analgesics (f or example, 
+morphine, dih ydrocodeine, tramadol or o xycodone) at t he lo west eff ectiv e dose 
+and f or the shor test duration, and not f or mor e than 3 days wit hout close 
+super vision. [2021] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31
+of 611.6.24 If, after a caesar ean bir th, a w oman is dischar ged home on opioids, advise t he 
+woman t o contact t heir healt hcare provider if t hey are concerned about t heir 
+baby (for example, dr owsiness, br eathing difficulties, constipation or difficulty 
+feeding). [2021] 
+1.6.25 Consider laxativ es for women taking opioids, f or the pr evention of constipation. 
+[2021] 
+1.6.26 Consider anti-emetics f or women taking opioids, if needed f or nausea and 
+vomiting. [2021] 
+1.6.27 Advise w omen t hat some o ver-the-count er medicines contain codeine, and 
+should not be tak en while br eastf eeding because t his can lead t o serious 
+neonatal sedation and r espirat ory depr ession. [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on pain management 
+after caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview F: 
+opioids f or pain r elief aft er caesar ean bir th. 
+Early eating and drinking af ter c aesar ean bir th 
+1.6.28 If women ar e recovering w ell aft er caesar ean bir th and do not ha ve 
+complications, t hey can eat and drink as normal. [2004] 
+Urinar y catheter r emo val after c aesar ean bir th 
+1.6.29 Offer removal of t he urinar y bladder cat heter once a w oman is mobile aft er a 
+regional anaest hetic f or caesar ean bir th, but no sooner t han 12 hours aft er the 
+last 't op-up' dose. [2004 , amended 2021] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32
+of 61Respir atory physiother apy after c aesar ean bir th 
+1.6.30 Do not off er routine r espirat ory physiot herap y to women aft er a caesar ean bir th 
+under general anaest hesia as it does not impr ove respirat ory out comes (f or 
+example, coughing, phlegm, body t emperatur e, chest palpation or auscultat ory 
+changes). [2004] 
+Leng th of hospi tal sta y and r eadmission to hospi tal 
+1.6.31 Inform w omen t hat lengt h of hospital sta y is lik ely to be longer aft er caesar ean 
+birth than aft er a v aginal bir th. [2004 , amended 2021] 
+1.6.32 Offer women who ar e recovering w ell, ar e apyrexial and do not ha ve 
+complications aft er caesar ean bir th, dischar ge fr om hospital aft er 24 hours and 
+follow up at home, as t his is not associat ed wit h mor e readmissions f or babies or 
+mothers. [2004 , amended 2021] 
+1.7 Recovery after c aesar ean bir th 
+1.7.1 In addition t o general postnatal car e, pr ovide w omen who ha ve had a caesar ean 
+birth wit h: 
+• specific car e related to recovery aft er caesar ean bir th 
+• care related to management of ot her complications during pr egnancy or 
+childbir th. [2004] 
+Wound c are 
+1.7.2 Consider negativ e pressur e wound t herap y aft er caesar ean bir th for women wit h 
+a BMI of 35 kg/m2
+ or mor e to reduce t he risk of w ound inf ections. [2021] 
+1.7.3 When using standar d (not negativ e pressur e) wound dr essings aft er caesar ean 
+birth tak e into account t hat: Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33
+of 61• no type of w ound dr essing has been sho wn to be bett er than anot her at 
+reducing t he risk of w ound inf ections 
+• there is no diff erence in t he risk of w ound inf ection when dr essings ar e 
+removed 6 hours post operativ ely, compar ed wit h 24 hours post operativ ely. 
+[2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on met hods t o reduce 
+infectious morbidity and w ound car e aft er caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+methods t o reduce inf ectious morbidity at caesar ean bir th. 
+1.7.4 Ensur e caesar ean bir th wound car e includes: 
+• removing standar d dressings 6 to 24 hours aft er the caesar ean bir th 
+• specific monit oring f or fever 
+• assessing t he w ound f or signs of inf ection (such as incr easing pain, r edness 
+or dischar ge), separation or dehiscence 
+• encouraging t he w oman t o wear loose, comf ortable clot hes and cott on 
+under wear 
+• gent ly cleaning and dr ying t he w ound daily 
+• if needed, planning t he removal of sutur es or clips. 
+Follow the recommendations in t he NICE guideline on sur gical sit e infections . 
+[2004 , amended 2021] 
+Manag emen t of sym ptoms 
+1.7.5 When caring f or women who ha ve had a caesar ean bir th who ha ve urinar y 
+sympt oms, consider possible diagnoses of: Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34
+of 61• urinar y tract inf ection 
+• stress incontinence ( occurs in about 4% of w omen aft er caesar ean bir th) 
+• urinar y tract injur y (occurs in about 1 per 1 ,000 caesar ean bir ths) 
+• urinar y retention. [2004 , amended 2021] 
+1.7.6 When caring f or women who ha ve had a caesar ean bir th who ha ve hea vy and/or 
+irregular v aginal bleeding, consider whet her t his is mor e likely to be because of 
+endometritis t han r etained pr oduct s of conception, and manage accor dingly . 
+[2004 , amended 2021] 
+1.7.7 Pay par ticular att ention t o women who ha ve respirat ory sympt oms (such as 
+cough or shor tness of br eath) or leg sympt oms (such as painful sw ollen calf), as 
+women who ha ve had a caesar ean bir th ma y be at incr eased risk of 
+thromboembolic disease (bot h deep v ein thrombosis and pulmonar y embolism). 
+[2004 , amended 2021] 
+Resuming ac tivities and dischar ge home 
+1.7.8 Inform w omen who ha ve had a caesar ean bir th that t hey can r esume activities 
+such as driving a v ehicle, carr ying hea vy items, f ormal e xercise and se xual 
+intercourse when t hey feel they have fully r ecovered fr om t he caesar ean bir th 
+(including an y physical r estrictions or pain). [2004 , amended 2021] 
+1.7.9 When caring f or women who ha ve had a caesar ean bir th, discuss t hat aft er a 
+caesar ean bir th they are not at incr eased risk of depr ession, post -traumatic 
+stress sympt oms, pain on se xual int ercourse, f aecal incontinence or difficulties 
+with breastf eeding. [2004 , amended 2021] 
+1.7.10 While w omen ar e in hospital aft er ha ving an emer gency or unplanned caesar ean 
+birth, giv e them t he oppor tunity t o discuss wit h healt hcare professionals t he 
+reasons f or the caesar ean bir th, and pr ovide bot h verbal and print ed inf ormation 
+about bir th options f or an y futur e pregnancies. If t he w oman pr efers, pr ovide t his 
+at a lat er dat e. [2011 , amended 2021] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35
+of 611.7.11 Inform t he w oman's GP if f ollow-up in vestigations ar e needed aft er dischar ge 
+from hospital (f or example, a r epeat full blood count if t here has been a lar ge 
+amount of blood loss), and include details of t he plan or course of action if t he 
+result s are abnormal. [2021] 
+1.8 Pr egnanc y and childbir th af ter c aesar ean bir th 
+1.8.1 When advising about t he mode of bir th aft er a pr evious caesar ean bir th, 
+consider: 
+• maternal pr eferences and priorities 
+• the risks and benefit s of r epeat planned caesar ean bir th 
+• the risks and benefit s of planned v aginal bir th aft er caesar ean bir th, including 
+the risk of unplanned caesar ean bir th. [2011] 
+1.8.2 Inform w omen who ha ve had up to and including 4 caesar ean bir ths that t he risk 
+of fever, bladder injuries and sur gical injuries does not v ary wit h planned mode of 
+birth, but t hat t he risk of ut erine ruptur e is higher f or planned v aginal bir th. [2011] 
+1.8.3 Offer women planning a v aginal bir th who ha ve had a pr evious caesar ean bir th: 
+• electr onic f etal monit oring during labour 
+• care during labour in a unit wher e there is immediat e access t o caesar ean 
+birth and on-sit e blood transfusion ser vices. [2011] 
+1.8.4 During induction of labour , women who ha ve had a pr evious caesar ean bir th 
+should be monit ored closely , with access t o electr onic f etal monit oring and wit h 
+immediat e access t o caesar ean bir th, as t hey are at incr eased risk of ut erine 
+ruptur e. For fur ther inf ormation, see t he NICE guideline on inducing labour . [2011] 
+1.8.5 Pregnant w omen wit h bot h previous caesar ean bir th and a pr evious v aginal bir th 
+should be inf ormed t hat t hey have an incr eased lik elihood of ha ving a v aginal 
+birth than w omen who ha ve had a pr evious caesar ean bir th but no pr evious 
+vaginal bir th. [2004] Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36
+of 61Terms use d in this guideline 
+Specialist p lacenta ac creta spe ctrum c entre 
+A specialised mat ernity ser vice f or women and pr egnant people diagnosed wit h placenta 
+accreta spectrum (also kno wn in t he NHS England ser vice specification as abnormally 
+invasive placenta, or AIP) t hat enables diagnosis and car e, including t he bir th, to be 
+deliv ered in a centr e wit h the appr opriat e multidisciplinar y team, access t o adult int ensiv e 
+care, level 3 neonatal car e and access t o blood pr oduct s. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37
+of 61Recommenda tions f or research 
+The guideline committ ee has made t he following k ey recommendations f or resear ch. 
+As par t of t he 2021 updat e, the guideline committ ee removed the resear ch 
+recommendation on 'What ar e the medium- t o long-t erm risks and benefit s to women and 
+their babies of planned caesar ean bir th compar ed wit h planned v aginal bir th?' and 
+replaced it wit h a resear ch recommendation on t he shor t-term and long-t erm risks and 
+benefit s of planned caesar ean bir th compar ed wit h planned v aginal bir th. 
+1 Short-term and long-term benefi ts and risks o f 
+planne d caesar ean bir th compared to p lanne d 
+vaginal bir th 
+What ar e the benefit s and risks (shor t term and long t erm) of planned caesar ean bir th 
+compar ed wit h planned v aginal bir th at t erm f or women and babies/inf ants/childr en? 
+[2021] 
+Why this is im portant 
+Information pr ovided t o women wit h low-risk pr egnancies in r elation t o the shor t- and 
+long-t erm benefit s and risks of planned caesar ean bir th compar ed wit h planned v aginal 
+birth should r eflect t he relevant risks during t he ant enatal period when a w oman is 
+planning mode of bir th. Studies used t o inform t hese discussions wit h women should be 
+from 'int ention t o treat' type analyses. Ho wever, this type of e vidence is sparse f or 
+outcomes r elevant t o the early neonatal period and minimal f or long-t erm out comes and 
+further r esear ch is needed. 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale on benefit s and risks of caesar ean and v aginal bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+the benefit s and risks of planned caesar ean bir th. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38
+of 612 De cision -to-bir th in terval (category 1 urgency) 
+What f actors influence t he decision-t o-bir th interval when t here is a cat egor y 1 level of 
+urgency f or caesar ean bir th? [2011] 
+Why this is im portant 
+'Crash' caesar ean bir th is a psy chologically traumatic e vent f or women and t heir par tners, 
+and is also str essful f or clinical staff . Staff and r esour ces might ha ve to be obtained fr om 
+other ar eas of clinical car e. This should be done as efficient ly and eff ectiv ely as possible, 
+minimising anxiety and ensuring t he saf ety of t he mot her and her bab y. 
+For cat egor y 1 caesar ean bir th there is a r ecognised ur gency t o deliv er as quickly as is 
+reasonably possible. Most r esear ch in t his ar ea is quantitativ e and looks at t he impact of 
+the decision-t o-bir th interval on v arious aspect s of f etal and mat ernal out comes rat her 
+than t he int erpla y of f actors t hat can aff ect t his time period it self. Much of t his e vidence is 
+retrospectiv e. Alt hough some w ork has been done in t he UK t o examine wher e the 
+systematic dela ys ar e and ho w to avoid t hem, mor e work is needed t o det ermine ho w to 
+optimise t he decision-t o-bir th interval. This w ork should use qualitativ e as w ell as 
+quantitativ e resear ch met hods t o assess which f actors influence t he decision-t o-bir th 
+interval for a cat egor y 1 caesar ean bir th. Ev aluation of t hese f actors could be used t o 
+inform futur e NICE guidance, f or example, specific guidance f or management of cat egor y 1 
+caesar ean bir th. Such inf ormation could also be used b y hospitals f or mat ernity ser vices 
+planning, and at a t eam le vel would assist wit h audit and ongoing e valuation and training 
+of the multidisciplinar y team. 
+A lar ge amount of NHS and ot her stat e funding is used t o provide continuing car e for 
+babies who ar e disabled as a r esult of bir th asph yxia and in pr oviding lif elong suppor t for 
+the child and t heir f amily . In addition, lar ge sums of public mone y are spent on litigation 
+and compensation in some of t hese cases t hrough t he Clinical Negligence Scheme f or 
+Trusts (CNST). If r esear ch helped t o reduce t he incidence of bir th asph yxia t his w ould 
+reduce t he cost s of continuing car e to the stat e and t he bur den t o the child, t heir f amily 
+and t he wider community . 
+More realistic and mor e relevant e xpectations f or the decision-t o-deliv ery interval based 
+on evidence w ould inf orm debat e in t he legal syst em and could help t o reduce t he cost t o 
+the stat e of r elated litigation. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39
+of 613 De cision -to-bir th in terval (category 2 urgency) 
+A prospectiv e study t o det ermine whet her t he decision-t o-bir th interval has an impact on 
+maternal and neonatal out comes when t here is a cat egor y 2 level of ur gency f or caesar ean 
+birth. [2011] 
+Why this is im portant 
+This r esear ch is impor tant t o inform t he ongoing debat e about t he management of 
+categor y 2 caesar ean bir th. The 'continuum of risk' in t his setting has been r ecognised. 
+However, most of t he w ork in t his ar ea, looking at mat ernal and f etal out comes, generally 
+considers unplanned caesar ean bir th as a whole gr oup wit hout making an y distinction 
+betw een degr ees of ur gency . Furthermor e, much of t his w ork is r etrospectiv e. Most 
+women who under go intrapar tum caesar ean bir th fall int o the cat egor y 2 level of ur gency 
+and t herefore specific inf ormation f or this gr oup could aff ect and benefit man y women and 
+contribut e to the deliv ery of equity of car e. 
+Delay in bir th wit h a compr omised f etus could r esult in major and long-t erm harm including 
+cerebral palsy and ot her major long-t erm disability . The immediat e and long-t erm eff ect on 
+a family of t he bir th of a bab y requiring lif elong specialised car e and suppor t is enormous. 
+If such harm could be a voided b y appr opriat e hast e this w ould be an impor tant 
+improvement in out come. Ho wever, if such hast e is of no benefit, t hen an y related risk of 
+adverse mat ernal out come needs t o be minimised. 
+A lar ge amount of NHS and ot her stat e funding is used t o provide continuing car e for 
+babies who ar e disabled as a r esult of dela y in bir th and in pr oviding lif elong suppor t for 
+the child and t heir f amily . In addition, lar ge sums of public mone y are spent on litigation 
+and compensation in some of t hese cases t hrough t he CNST . If resear ch helped t o reduce 
+the incidence of dela y in bir th this w ould r educe t he cost s of continuing car e to the stat e 
+and t he bur den t o the child, t heir f amily and t he wider community . 
+More realistic and mor e relevant e xpectations f or the decision-t o-bir th interval based on 
+evidence w ould inf orm debat e wit hin the legal syst em and could help t o reduce t he cost t o 
+the stat e of r elated litigation. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40
+of 614 Maternal r equest f or caesar ean bir th 
+What suppor t or psy chological int erventions w ould be appr opriat e for women who ha ve a 
+fear of v aginal childbir th and r equest a caesar ean bir th? [2011] 
+Why this is im portant 
+Fear of v aginal childbir th can st em fr om: 
+• fear of damage t o the mat ernal pelvic floor 
+• damage t o the bab y during childbir th 
+• self-doubt on t he ability t o physically ha ve a v aginal bir th 
+• previous childbir th experience 
+• unresolv ed issues r elated to the genital ar ea. 
+Currently there is a wide v ariation in practice and limit ed resour ces lead t o limit ed 
+availability of eff ectiv e interventions. Int erventions t hat might be appr opriat e include: 
+• antenatal clinics dedicat ed to providing car e for women wit h no obst etric indications 
+who r equest a caesar ean bir th 
+• referral t o a psy chologist or a mental healt h professional 
+• referral t o an obst etric anaest hetist 
+• intensiv e midwif ery suppor t. 
+Continuity of healt hcare professional suppor t from t he ant enatal t o the intrapar tum 
+periods and 'one-t o-one' midwif ery car e during labour ar e also oft en lacking and could 
+make a diff erence t o women who ar e anxious or afraid. 
+All of t hese int erventions ha ve diff erent r esour ce implications and t here is no clear 
+evidence t o suggest t hat an y are of benefit. The pr oposed r esear ch w ould compar e in a 
+randomised contr olled trial 2 or mor e of t hese int erventions in w omen r equesting a 
+caesar ean bir th. In t he absence of an y evidence, t here is a case f or comparing t hese 
+interventions wit h routine ant enatal car e (that is, no special int ervention). Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1
+of 61This r esear ch is r elevant because it w ould help t o guide t he optimal use of t hese limit ed 
+resour ces and futur e guideline r ecommendations. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 42
+of 61Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. The y link t o details of t he evidence and a full description of t he 
+committ ee's discussion. 
+Benefi ts and risks o f caesar ean and v aginal bir th 
+Recommendations 1 .1.3 and 1 .1.4 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was some e vidence f or a select ed number of out comes on t he shor t- and long-t erm 
+effects of caesar ean bir th compar ed wit h vaginal bir th, alt hough t here were some 
+limitations wit h the quality of t he evidence, and not all e vidence was fr om a comparison of 
+planned mode of bir th. The committ ee used t his e vidence, along wit h their clinical 
+exper tise, t o updat e the advice comparing t he relativ e benefit s and risks of t hese 2 modes 
+of bir th. 
+For some out comes t here was conflicting or limit ed evidence, and t here were also a 
+number of out comes f or which no e vidence was identified f or inclusion, so t he committ ee 
+highlight ed these uncer tainties. 
+As the evidence was limit ed for this review t he committ ee made a r esear ch 
+recommendation. 
+Ther e were also 3 outcomes included in t he 2011 guideline which had not been included in 
+this curr ent r eview (v aginal t ears, lengt h of sta y and pain) but t he committ ee agr eed t hat 
+the advice was still appr opriat e and should be carried f orward into the updat ed guideline. 
+How the r ecommenda tions mig ht affect practice 
+The committ ee consider ed that t heir r ecommendations w ould r einforce best practice. It is 
+already curr ent practice t o discuss t he risks and benefit s of alt ernativ e modes of bir th 
+during t he ant enatal period and t his review has simply led t o an updat e of t he inf ormation 
+that should be discussed wit h women. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 43
+of 61Return t o recommendations 
+Placenta ac creta spe ctrum 
+Recommendations 1 .2.7 to 1.2.13 
+Why the c ommi ttee made the r ecommenda tions 
+The r outine 20-w eek ultrasound scan off ered to women and pr egnant people is used t o 
+determine placental location, so t he committ ee agr eed t hat identification of a placenta 
+prae via or lo w-lying placenta at t his scan in t hose wit h a pr evious caesar ean scar , or a 
+scar fr om pr evious ut erine sur gery, should be t he trigger f or fur ther in vestigations t o 
+check f or the pr esence of placenta accr eta. Ther e was e vidence fr om a number of studies 
+that gr eyscale ultrasound wit h colour doppler had moderat e sensitivity and high specificity 
+for det ecting placenta accr eta. Ho wever, the committ ee w ere awar e that t he sensitivity 
+and specificity of ultrasound scans is v ery operat or-dependent, and t hat if a case of 
+placenta accr eta is missed, t here is a risk of se vere morbidity or mor tality at bir th. The y 
+therefore recommended t hat t he scan should be done b y a senior clinician wit h the 
+necessar y exper tise and e xperience t o det ect placenta accr eta. 
+The committ ee discussed t he timing of t his scan and not ed that in most of t he included 
+studies, it was carried out betw een 28 and 37 weeks. The committ ee agr eed t hat an 
+earlier scan w ould allo w mor e time f or planning t he bir th, par ticularly if an early bir th was 
+thought t o be needed, but t hat scanning t oo early w ould not be an adv antage as t he 
+placenta ma y mo ve. The y therefore recommended t hat t he scan be done ar ound 
+28 weeks, but not lat er than 29 weeks. 
+The committ ee discussed t hat, since 2020 , NHS England has commissioned a specialised 
+maternity ser vice for women and pr egnant people diagnosed wit h placenta accr eta 
+spectrum (which t hey refer to as abnormally in vasive placenta, or AIP). This ser vice 
+enables diagnosis and car e, including t he bir th, to be giv en in a centr e wit h an appr opriat e 
+multidisciplinar y team, access t o adult int ensiv e car e, level 3 neonatal car e and access t o 
+blood pr oduct s. The committ ee therefore recommended t hat, if placenta accr eta is 
+suspect ed at t he scan carried out ar ound 28 weeks, w omen and pr egnant people should 
+be referred to a specialist placenta accr eta centr e. 
+The committ ee discussed e vidence sho wing t hat t he sensitivity and specificity of MRI 
+(without contrast or wit h contrast unspecified) f or assessing placenta accr eta spectrum Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 44
+of 61was no bett er than t hat f or ultrasound wit h colour doppler , and t herefore agr eed t hat it 
+was not necessar y to off er an MRI scan t o confirm t he pr esumed diagnosis of placenta 
+accreta. Ho wever, the committ ee also agr eed t hat MRI was a useful imaging t echnique 
+when planning sur gical management of placenta accr eta t o identify if , for example, 
+placenta per creta had impact ed on ot her or gans, and so updat ed the recommendation on 
+this. 
+Although t he committ ee w ere awar e that w omen and pr egnant people wit h placenta 
+accreta ar e now referred to specialist placenta accr eta spectrum centr es, they discussed 
+that some people ma y present v ery late in pr egnancy or in labour and need t o be car ed for 
+at their local mat ernity unit, and so t he recommendations on car e in t his setting w ere 
+retained. The committ ee agr eed t hat t he discussion on bir th options should be carried out 
+by a senior obst etrician, and t hey also updat ed the advice on who ma y need t o be 
+consult ed or pr esent f or the caesar ean bir th, including t heir r oles. The committ ee also 
+advised t hat a critical car e bed should be a vailable f or the w oman or pr egnant person and 
+for the bab y in case t hey are needed, but t hat emer gency sur gery should not be dela yed if 
+a bed was not immediat ely a vailable. 
+The committ ee amended t he existing r ecommendation on use of blood pr oduct s to clarify 
+that t his should only be if t he use of such pr oduct s is acceptable t o the w oman or 
+pregnant person, and included a link t o the NICE guideline on blood transfusion as t his 
+provides some useful advice on alt ernativ es to blood transfusions and also cell salv age 
+and trane xamic acid. 
+The committ ee agr eed t hat as placenta accr eta was no longer managed b y local hospitals, 
+a local pr otocol was no longer appr opriat e, but t hat specialist placenta accr eta spectrum 
+centr es should de velop pr otocols wit h their local mat ernity unit s about ho w placenta 
+accreta should be managed wit hin the netw ork, such as met hods f or referral and ongoing 
+management. The committ ee also agr eed t hat t he pr otocol should include details of ho w 
+local mat ernity unit s should pr ovide car e if placenta accr eta was identified v ery late, which 
+may include, f or example, emer gency transf er to a specialist r egional centr e or suppor t 
+from t he specialist centr e being pr ovided t o the local mat ernity unit. 
+How the r ecommenda tions mig ht affect practice 
+The 20-w eek ultrasound scan is r outinely off ered to all w omen and pr egnant people 
+already , so t his will not be a change in practice. The use of a 28-w eek ultrasound scan 
+with colour doppler t o assess f or the pr esence of placenta accr eta is also not a change in Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 45
+of 61practice, and alt hough t he timing is no w earlier t han pr eviously r ecommended, t his will not 
+lead t o additional scans. Advising t hat t he scan is done b y a senior clinician wit h exper tise 
+in placenta accr eta is a change t o the pr evious advice, but in practice, t he scan is alr eady 
+done b y a consultant in most cases so it is not t hought t his will r esult in a major change in 
+practice. Using a mor e experienced operat or for when looking f or placenta accr eta is lik ely 
+to lead t o the best sensitivity and specificity fr om t he scan. This in turn is lik ely to corr ectly 
+identify mor e cases, r educing t he risk of serious morbidity or mor tality f or the mot her and 
+baby, and optimising r esour ce use b y preventing complications at bir th that ma y otherwise 
+need e xpensiv e critical car e. This should also r educe t he number of f alse positiv es 
+referred to specialist centr es wher e the pr esumed diagnosis of placenta accr eta is lat er 
+found t o be incorr ect. 
+The r ecommendation t o consider MRI only when planning sur gery ma y reduce t he use of 
+MRI f or the diagnosis of placenta accr eta, in turn r educing cost s. The discussion about 
+birth options being carried out b y a senior obst etrician is not a change in practice and so 
+will not ha ve a resour ce impact. 
+Specialist r egional placenta accr eta spectrum centr es ar e already established, so 
+recommending appr opriat e referral t o them will not ha ve a resour ce impact. Ensuring t hat 
+all mat ernity centr es (bot h local unit s and specialist centr es for placenta accr eta 
+spectrum) understand t heir r esponsibilities will enable saf e car e to be pr ovided. 
+Return t o recommendations 
+Maternal choic e for caesar ean bir th 
+Recommendations 1 .2.26 t o 1.2.31 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee discussed t he fact t hat some w omen or pr egnant people ma y request a 
+caesar ean bir th because t hey have concerns about aspect s of t he bir th and belie ve that a 
+caesar ean bir th would be t he best wa y to alle viate these concerns. Ho wever, there ma y be 
+cases wher e the concerns can be addr essed in ot her wa ys, such as choosing an 
+alternativ e place of bir th, opting f or a bir th which will pr ovide gr eater continuity of 
+midwif ery car e, or b y planning adequat e pain r elief. The committ ee therefore expanded 
+the advice t o include t hese aspect s in t he discussion. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 46
+of 61The committ ee w ere awar e that t his discussion w ould be best held in a clinic wher e there 
+was time t o explor e the diff erent options and pr eferences, and so suggest ed this should 
+be in a bir th options clinic. The committ ee w ere awar e that consultant midwiv es w ere 
+often in volved in such discussions and so included t hem in t he list of healt hcare 
+professionals who should be in volved. 
+The committ ee revised t he w ording of t he recommendation on perinatal mental healt h 
+suppor t to clarify t hat t he access t o the planned place of bir th was needed during t he 
+antenatal period, and not t hat all ant enatal suppor t had t o be pr ovided at t he planned 
+place of bir th. 
+The committ ee revised t he w ording of t he recommendation on off ering caesar ean bir th to 
+be mor e person-centr ed, and t o ensur e the w oman or pr egnant person's choice t o have a 
+caesar ean bir th was suppor ted. 
+The committ ee agr eed t hat w omen and pr egnant people should not ha ve to mo ve to a 
+different obst etric unit f or a caesar ean bir th, and so r ecommended t hat caesar ean bir th 
+should be off ered wit hin their obst etric unit. The committ ee discussed t he pot ential rar e 
+situations wher e there was a clinical r eason behind a r eluctance t o per form a mat ernal 
+request caesar ean bir th, but agr eed t hat in t his situation a full multidisciplinar y team 
+discussion w ould be needed during t he pr egnancy t o agr ee a plan f or the w oman or 
+pregnant person. 
+How the r ecommenda tions mig ht affect practice 
+This change t o add mor e factors int o the discussions ar ound r equest s for caesar ean bir th 
+may mean mor e women and pr egnant people can be suppor ted to have their pr eferred 
+mode of bir th. The change ma y also incr ease t he number of w omen or pr egnant people 
+being seen b y a consultant midwif e or senior midwif e for a longer 'bir th options' 
+appointment, but is unlik ely to have a resour ce impact as t hese con versations w ould 
+previously ha ve been held acr oss multiple midwif e appointment s. 
+This change t o recommend t hat caesar ean bir th should be off ered wit hin the w oman or 
+pregnant person's obst etric unit will r educe t he number of people who ha ve to mo ve to a 
+different obst etric unit in or der t o have a caesar ean bir th. This will benefit t he following 
+groups in par ticular: 
+• women or pr egnant people wit h disabilities who find it difficult t o tra vel or f eel anxious Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 47
+of 61about change 
+• women or pr egnant people fr om lo wer socioeconomic gr oups wher e the incr eased 
+travel cost s are a concern 
+• younger w omen or pr egnant people who ma y not f eel confident enough t o transf er to 
+anot her unit 
+• women or pr egnant people fr om cer tain racial gr oups who ma y experience bias 
+surrounding decisions r elating t o mode of bir th and who ma y have less f avourable 
+maternity out comes 
+• women or pr egnant people who do not speak English as a first language, or t hose fr om 
+groups such as migrant s or r efugees who ma y not be f amiliar wit h navigating t he 
+healt hcare syst em and who t herefore ma y have mor e difficulty changing t heir pr ovider 
+or tra velling t o anot her unit. 
+Return t o recommendations 
+Prevention and manag emen t of hypothermia and 
+shivering 
+Recommendations 1 .4.21 to 1.4.23 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence f or the eff ectiv eness of activ e warming measur es (for example, f orced 
+air warming, under body pads, warmed IV fluids) t o prevent shiv ering and h ypot hermia in 
+women ha ving a caesar ean bir th, and t here was some e vidence f or impr oved thermal 
+comf ort and mat ernal t emperatur e. The committ ee recommended t he use of warmed IV 
+fluids and irrigation fluids f or all w omen ha ving caesar ean bir th, but because of t he lo w 
+incidence of h ypot hermia and shiv ering during caesar ean bir th, the ph ysiological 
+differences betw een w omen ha ving caesar ean bir th and t he general sur gical population, 
+the lack of beneficial eff ect on w ound inf ections, and t he fact t hat warming met hods ar e 
+likely to be as eff ectiv e at managing h ypot hermia and shiv ering as t hey are at pr eventing 
+it, the committ ee recommended t hat ot her warming measur es should only be used in 
+women who w ere shiv ering, said t hey felt cold or w ere hypot hermic, and not in all w omen 
+for pr evention. The committ ee recommended f orced air warming as t he met hod of choice 
+as this was alr eady widely a vailable, easier t o use and could be easily mo ved wit h the Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 48
+of 61woman. 
+Ther e was e vidence t hat pet hidine was also eff ectiv e at r educing shiv ering, but t he 
+committ ee did not r ecommend t his because of t he possible adv erse eff ects on 
+breastf eeding. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendation t o use f orced air warming will standar dise practice acr oss t he NHS. 
+Ther e could be r esour ce implications f or unit s to pur chase t he disposable 'blank ets' used, 
+but t his could be off set b y earlier dischar ge of w omen fr om recovery to the postnatal 
+ward. 
+The use of warmed intra venous fluids, blood and irrigation fluids is alr eady standar d 
+practice, so t his recommendation will not change t his. 
+Return t o recommendations 
+Methods to r educe inf ectious mor bidity and w ound 
+care after c aesar ean bir th 
+Recommendations 1.4.24 and 1 .4.25 and recommendations 1.7.2 and 1 .7.3 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence t hat alcohol-based chlorhe xidine solution skin pr eparations r educe 
+the risk of sur gical sit e infections, compar ed wit h alcohol-based iodine solutions. 
+Ther e was also e vidence t hat aqueous iodine v aginal pr eparations r educe t he risk of 
+endometritis in w omen wit h ruptur ed membranes. Alt hough t here was some e vidence on 
+chlorhe xidine v aginal pr eparations, o verall t he evidence indicat ed that t hat iodine v aginal 
+preparations might be mor e eff ectiv e. 
+Ther e was some e vidence t hat negativ e pressur e wound t herap y (NPWT) r educes t he risk 
+of wound or sur gical sit e infections f or women wit h a body mass inde x (BMI) of 30 kg/m2 
+or mor e but economic e vidence indicat ed that t his w ould not be cost eff ectiv e in t hose 
+with a BMI of less t han 35 kg/m2
+ and only bor derline cost eff ectiv e in t he gr oup wit h a BMI Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 49
+of 61of 35 kg/m2
+ or mor e. 
+The e vidence sho wed no diff erence in w ound inf ection or r eadmissions int o hospital when 
+the dr essing was r emoved eit her 6 hours or 2 4 hours aft er sur gery. 
+Ther e was v ery limit ed evidence on t he use of 2 diff erent types of dr essing, but t he 
+committ ee agr eed it was not enough t o recommend a specific type. 
+Ther e was no e vidence on t he use of incise drapes, diat herm y or body hair r emoval, so t he 
+committ ee did not mak e recommendations about t hese, but not ed that t he NICE guideline 
+on sur gical sit e infections (which co vers general sur gery rat her t han caesar ean bir th) has 
+recommendations on some of t hese int erventions. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations on skin pr eparation ar e broadly in line wit h curr ent best clinical 
+practice. The committ ee agr eed t hat t he recommendation t o use aqueous iodine v aginal 
+preparation will be a change in clinical practice, because t he use of v aginal pr eparation is 
+not r outine acr oss England. 
+The committ ee identified t hat considering t he use of NPWT f or women wit h a BMI of 
+35 kg/m2
+ will be a change of practice f or man y unit s (some unit s do not use it at all, or only 
+at higher BMI t hresholds), and could ha ve resour ce implications, par ticularly in ar eas 
+wher e a higher pr opor tion of pr egnant w omen will meet t he crit eria. 
+Return t o the recommendations 
+Surgical opening te chnique 
+Recommendation 1.4.28 
+Why the c ommi ttee made the r ecommenda tion 
+The committ ee agr eed t hat v ertical midline incisions w ere no longer r outinely used f or 
+caesar ean bir th, and so t he recommendation advising t hat a transv erse incision should be 
+used inst ead was wit hdrawn. The committ ee not ed that in some rar e clinical situations (f or 
+example, pr evious abdominal sur gery) a v ertical midline incision ma y still be necessar y, Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 50
+of 61and so added t his to their r ecommendation on t he type of incision t o be used. 
+Ther e was e vidence t hat a lo w transv erse straight skin incision wit h blunt dissection of 
+subsequent tissue la yers (such as described in t he Joel–Cohen or modified Joel–Cohen 
+techniques) led t o a reduction in post -operativ e febrile morbidity and use of post -
+operativ e analgesia, r educed decr eases in haemoglobin and r educed t otal operating time 
+compar ed to the use of a v ery low transv erse cur ved skin incision and sharp dissection (as 
+described in t he Pf annenstiel t echnique). The committ ee agr eed t hat in some w omen and 
+pregnant people, such as t hose who ha ve had pr evious caesar ean bir ths, the pr esence of 
+scar tissue ma y mean t hat blunt dissection was not alwa ys possible and so in some cases, 
+(which w ould be decided b y the sur geon at t he time of operation), sharp dissection w ould 
+be necessar y for extension. 
+Ther e was e vidence t hat in w omen and pr egnant people wit h class 3 obesity (BMI of 
+40 kg/m2
+ or mor e) there was an incr eased risk of w ound complications wit h the 
+Pfannenstiel t echnique (which uses a v ery low incision) compar ed to a higher transv erse 
+abdominal incision. The committ ee discussed t he fact t hat in v ery obese w omen and 
+pregnant people t he pr esence of a panniculus led t o the w ound being co vered which 
+increased t he risk of inf ection. Based on t his e vidence, and t heir kno wledge of t he 
+complications caused b y a panniculus, t he committ ee therefore recommended t hat in 
+these situations a higher incision ma y be needed. 
+The committ ee agr eed not t o use t he names of t he sur gical t echniques in t he 
+recommendations as t he number of t echniques, including t he modified t echniques, and 
+the slight v ariations betw een t hem ma y lead t o confusion. The y therefore agr eed t hat it 
+was pr eferable t o describe t he details of t he incision and subsequent opening. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendations on met hod of skin incision and opening of subsequent la yers will 
+standar dise car e acr oss t he NHS while still allo wing r oom f or sur geon modification on a 
+case-b y-case basis, f or example, in w omen and pr egnant people who ar e obese or ha ve 
+had pr evious caesar ean bir ths. Use of a t echnique which r educes operating time, blood 
+loss, pain and inf ections ma y lead t o savings in r esour ce use t o treat t hese complications. 
+Return t o recommendation Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 51
+of 61Closur e of the u terus 
+Recommendation 1.4.36 
+Why the c ommi ttee made the r ecommenda tion 
+Ther e was e vidence sho wing t hat t here was no diff erence in an y out comes when 
+comparing single and double la yer closur e of t he ut erus. Ther e was some e vidence of t he 
+reduced need f or blood transfusions wit h single la yer compar ed wit h double la yer closur e, 
+as par t of a comparison of diff erent caesar ean bir th techniques, but t his could ha ve been 
+confounded b y other diff erences in t he techniques. 
+How the r ecommenda tion mig ht affect practice 
+Current practice is t o use a double la yer ut erine closur e technique, e xcept in occasional 
+circumstances when t here is a specific r eason f or using single la yer closur e. This 
+recommendation will allo w sur geons t o choose single or double la yer closur e, depending 
+on the individual clinical cir cumstances at t he time of t he sur gery. 
+Return t o recommendation 
+Monitoring af ter c aesar ean bir th 
+Recommendations 1.6.2 to 1.6.10 and 1 .6.17 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was no e vidence f ound on t he best monit oring schedule f or women, but t he 
+committ ee used t heir kno wledge and e xper tise of curr ent best practice t o develop 
+recommendations on t he monit oring schedule. 
+The f actors which ma y incr ease t he risk of r espirat ory depr ession list ed in t he Society f or 
+Obst etric Anest hesia and P erinat ology consensus stat ement include class 3 obesity (BMI 
+40 kg/m2
+ or mor e), car diovascular disease, magnesium administration, and obstructiv e 
+sleep apnoea. The committ ee discussed whet her listing t hese f actors w ould be useful but 
+agreed, based on f eedback fr om stak eholders, t hat lea ving t he risk f actors unspecified 
+would encourage healt hcare professionals t o consider all pot ential risk f actors f or Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 52
+of 61respirat ory depr ession when deciding on appr opriat e levels of monit oring. 
+The committ ee agr eed t hat continuous pulse o ximetr y monit oring ma y interfere wit h the 
+ability of a w oman or person who has giv en bir th to mobilise and car e for their bab y. The y 
+agreed t hat it was t herefore mor e appr opriat e to use hourly monit oring of o xygen 
+saturations in combination wit h hourly monit oring of sedation and r espirat ory rat e to 
+detect r espirat ory depr ession. 
+The committ ee agr eed t hat hear t rate, blood pr essur e, temperatur e and pain monit oring 
+would be carried out as in usual postnatal pr otocols, but w ere not necessar y every hour t o 
+detect r espirat ory depr ession. 
+The committ ee agr eed t o add inf ormation t o the recommendation about o verestimation of 
+oxygen saturation le vels using pulse o ximetr y in people wit h dark skin t o advise healt hcare 
+professionals of t he pot ential implications and what action could be tak en to overcome 
+this limitation. 
+The committ ee agr eed t hat as a r esult of t he diff erent pharmacokinetic pr oper ties of 
+neuraxial morphine compar ed wit h neuraxial diamorphine, it ma y lead t o an incr eased risk 
+of respirat ory depr ession and o ver a longer period of time, and t hat t his fact should be 
+highlight ed. Because of t he long-lasting eff ects of neuraxial morphine and t he possible 
+increased risk of r espirat ory depr ession, t he committ ee discussed whet her t o adopt t he 
+monit oring r ecommendations de veloped b y the Society f or Obst etric Anest hesia and 
+Perinat ology but agr eed t hat healt hcare staff should be advised t hat monit oring could be 
+the same as t hat r ecommended f or diamorphine, unless t here were concerns about t he 
+woman or person's r espirat ory status, in which case mor e intensiv e respirat ory monit oring 
+would need t o continue. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations should standar dise t he fr equency and duration of monit oring of 
+most w omen who ha ve receiv ed intrat hecal or epidural opioids at t he time of caesar ean 
+birth, but will mean w omen need t o be assessed f or risk f actors or ot her concerns about 
+respirat ory status t o det ermine if t hey need a mor e intensiv e monit oring schedule. The 
+recommendations ma y incr ease t he number of people assessed as being at risk of 
+respirat ory depr ession, as t he det ermination of risk has no w been left t o clinical judgement 
+instead of including a list of suggest ed risk f actors in t he recommendation. An incr ease in 
+the number of people monit ored is lik ely to incr ease cost s. Ho wever, these cost s will be Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 53
+of 61offset t o some e xtent as t he revised r ecommendations will r educe t he use of continuous 
+pulse o ximetr y and t he number of obser vations being carried out e very hour f or the 
+purpose of det ecting r espirat ory depr ession. The fr equency of monit oring f or respirat ory 
+depr ession has not changed. 
+Additional wa ys of monit oring f or respirat ory depr ession ma y be used mor e for people wit h 
+dark skin. No r esour ce impact is anticipat ed fr om t his change. 
+The r ecommendations will incr ease awar eness of t he diff erences in risk and duration of 
+respirat ory depr ession betw een neuraxial morphine and diamorphine, and w omen and 
+people wit h risk f actors f or respirat ory depr ession who ha ve giv en bir th ma y need 
+increased monit oring aft er neuraxial morphine, compar ed wit h those who ha ve receiv ed 
+neuraxial diamorphine, if t here are concerns about r espirat ory depr ession aft er 12 hours of 
+hourly monit oring. As diamorphine shor tages ar e unpr edictable, it is difficult t o quantify 
+the resour ce impact. An y incr eased monit oring r equir ed for people r eceiving morphine ma y 
+increase t he staff r esour ces needed, alt hough t his could be mitigat ed as t he checks could 
+be under taken by a mat ernity suppor t worker or healt hcare assistant (typically Agenda f or 
+Change Band 3). Alt hough t he use of morphine is not e xpect ed to lead t o longer hospital 
+stays, an y mor e intensiv e monit oring t hat is necessar y aft er 12 hours ma y requir e the 
+woman or person who has giv en bir th to sta y in a setting wher e this monit oring can be 
+carried out. 
+Return t o recommendations 
+Pain manag emen t after c aesar ean bir th 
+Recommendations 1.6.11 to 1.6.16 and 1 .6.18 to 1.6.27 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee de veloped separat e recommendations f or women r eceiving r egional or 
+general anaest hesia, based on t heir kno wledge of t he lik ely diff erences in analgesia 
+requir ement s. For all w omen, t he committ ee agr eed t hat an y post operativ e analgesia 
+should be suitable f or use while br eastf eeding, but t hat w omen should be made awar e of 
+any pot ential adv erse eff ects on t heir bab y. 
+The committ ee agr eed t o retain t he pr evious NICE r ecommendation t o off er diamorphine 
+(deliv ered intrat hecally or b y epidural) f or women who ha ve regional anaest hesia. G iving Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 54
+of 61spinal or epidural diamorphine in t his wa y reduces t he need f or additional opioids and 
+other r escue medications during sur gery, and it r emains eff ectiv e for up t o 12 hours (when 
+pain is lik ely to be most se vere). The committ ee agr eed t hat it was not necessar y to 
+specify a range of doses f or diamorphine. The committ ee w ere awar e of e vidence t hat 
+suggest ed a ceiling eff ect in neuraxial opioid doses, abo ve which t here is no mor e 
+analgesic eff ect but t here is an incr eased risk of side eff ects. In most cases, a maximum 
+intrat hecal dose of 300 micrograms and a maximum epidural dose of 3 mg ar e consider ed 
+to be adequat e. These ar e the doses suggest ed by the Obst etric Anaest hetist s' 
+Association and ar e the doses used in curr ent clinical practice. In individual cases, and 
+based on clinical judgement, anaest hetist s ma y choose t o use alt ernativ e doses of 
+intrat hecal or epidural diamorphine. 
+As there ma y be int ermitt ent shor tages of diamorphine, t he committ ee agr eed t hat 
+preservative-free morphine could be used as an alt ernativ e and t hat advising t his 
+alternativ e will pr ovide clear guidance f or healt hcare professionals t o follow in t his 
+situation. This will r educe t he lik elihood of incorr ect pr eparations or dosages of morphine 
+being substitut ed for diamorphine. The committ ee agr eed t hat f entan yl has a rapid onset 
+of action and will help ensur e rapid onset of pain r elief until t he intrat hecal morphine tak es 
+full eff ect. The dose of intrat hecal morphine plus f entan yl and of epidural morphine ar e 
+based on t hose r ecommended b y the Obst etric Anaest hetist s' Association. In individual 
+circumstances, and based on clinical judgement, anaest hetist s ma y choose t o use 
+alternativ e doses of t hese drugs. 
+The committ ee w ere awar e that neuraxial morphine was mor e likely to lead t o side eff ects 
+than neuraxial diamorphine, and so advised t hat t hese side eff ects ma y need tr eatment t o 
+reduce t he se verity of sympt oms. Based on stak eholder f eedback, t he committ ee made an 
+additional r ecommendation t o advise on t he saf e storage and use of pr eservative-free 
+morphine, par ticularly in settings wher e bot h preservative-free and pr eservative-
+containing morphine ar e available. 
+The committ ee agr eed t hat w omen r eceiving r egional anaest hesia should be off ered oral 
+morphine sulf ate, as t he evidence sho wed it t o be eff ectiv e. 
+The e vidence on pain r elief f or women aft er general anaest hesia was sparse, but t he 
+committ ee agr eed t hat intra venous patient -contr olled analgesia (PCA) using morphine 
+should be off ered as t hese w omen will lik ely ha ve a higher le vel of pain. Monit oring 
+requir ement s for women and people ha ving PCA morphine no w includes pulse o ximet er 
+oxygen saturation as t his is one of t he respirat ory monit oring modalities used in Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 55
+of 61conjunction wit h respirat ory rat e and sedation assessment. If PCA morphine is not 
+acceptable t o the w oman, t hen oral morphine should be consider ed as a less in vasive 
+alternativ e. 
+From t heir kno wledge and e xperience, t he committ ee agr eed t hat paracetamol and a non-
+steroidal anti-inflammat ory drug (NSAID) such as ibupr ofen should be off ered in 
+combination t o all w omen t o limit t he amount of opioids needed, and t o allo w opioids t o be 
+stopped. Based on t he evidence on t he benefit s of fix ed int erval pain management timing, 
+the committ ee recommended t hat t hese ar e prescribed t o be tak en regularly t o maintain 
+good pain contr ol, in pr eference t o on-r equest administration, which had lo wer rat es of 
+satisf action r epor ted by women. 
+Some w omen will ha ve contraindications t o NSAIDs (f or example, inflammat ory bowel 
+disease, gastric ulcer or pr e-eclampsia) and will not get sufficient pain r elief fr om 
+paracetamol alone. Based on t heir e xperience, t he committ ee suggest ed an alt ernativ e of 
+dihydrocodeine in addition t o paracetamol, or co-dy dramol, as t hese ar e also suitable f or 
+use while br eastf eeding. 
+Ther e was e vidence f or the eff ectiv eness of o xycodone, and some e vidence f or tramadol, 
+but t he committ ee w ere awar e bot h of t hese drugs can cause neonatal sedation and 
+respirat ory depr ession if used when br eastf eeding. Ho wever, in w omen wit h severe pain, 
+the committ ee agr eed t hat a shor t course of tramadol or o xycodone could be consider ed 
+as long as t he w oman was inf ormed of t he risks and chose t o use t hem. The lengt h of t he 
+course was not defined as t here was no e vidence f or a specific period or dosage. 
+The committ ee w ere awar e that t here were general r ecommendations in t he BNF on t he 
+use of opioids in br eastf eeding w omen and so included t hese as par t of t he 
+recommendations. The committ ee w ere also awar e of an MHRA warning on t he risk of 
+serious neonatal r espirat ory depr ession and sedation wit h codeine in some w omen. 
+Because of t his, t hey recommended t hat codeine, or medications t hat include codeine 
+(such as co-codamol), should not be used, and t hat w omen should be advised not t o use 
+codeine-containing medicines while br eastf eeding. 
+Based on t heir kno wledge and e xperience, t he committ ee recommended t hat anti-emetics 
+could be pr escribed if needed f or nausea and v omiting, and t hat laxativ es should be 
+consider ed for the pr evention of constipation. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 56
+of 61How the r ecommenda tions mig ht affect practice 
+The dosing of intrat hecal and epidural diamorphine will be simpler f or staff and no 
+resour ce impact is anticipat ed fr om t his change. These r ecommendations will lead t o 
+increased use of pr eservative-free morphine if t here is a shor tage of diamorphine. 
+Preservative-free morphine is mor e expensiv e than diamorphine so t here ma y be an 
+increased cost t o the NHS, but as t he fr equency and duration of diamorphine shor tages is 
+not kno wn, it is difficult t o predict t he resour ce impact. 
+The tr eatment of t he possible side eff ects from morphine ar e not e xpect ed to have a 
+resour ce impact as t hese will not aff ect all w omen, some w omen will alr eady r eceiv e anti-
+emetics aft er a caesar ean bir th, and t he medicines ar e generics. 
+The separat e storage and labelling of diff erent morphine pr eparations ma y requir e 
+additional staff time, but as t he fr equency and duration of diamorphine shor tages is not 
+known, it is difficult t o predict t he resour ce impact. 
+The committ ee agr eed t hat t he recommendations on post operativ e pain management 
+would r einforce curr ent practice. Ho wever, there ma y be a r eduction in t he use of 
+intravenous PCA opioids f or pain management aft er caesar ean bir th, and an incr ease in 
+the use of oral morphine. The committ ee agr eed t hat t he recommendations r elating t o 
+dihydrocodeine and codeine-containing medicines w ould pr ovide gr eater clarity and 
+increase saf ety. 
+Return t o recommendations Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 57
+of 61Context 
+This guideline has been de veloped t o help ensur e consist ent quality car e for women who 
+have had a caesar ean bir th (caesar ean section) in t he past and ar e now pregnant again, 
+who ha ve a clinical indication f or a caesar ean bir th, or ar e considering a caesar ean bir th 
+when planning t heir bir th, and t here is no medical indication. 
+It provides some e vidence-based inf ormation f or healt hcare professionals and w omen 
+about t he risks and benefit s of caesar ean bir th compar ed wit h vaginal bir th, and t his has 
+now been updat ed to include t he shor t- and long-t erm risks and benefit s for bot h women 
+and babies/childr en. It also pr ovides guidance on specific indications f or caesar ean bir th, 
+effectiv e management strat egies t o avoid unplanned caesar ean bir th and t he 
+organisational and en vironmental f actors t hat aff ect caesar ean bir th rat es. 
+For women who under go a caesar ean bir th, guidance is pr ovided on t he anaest hetic and 
+surgical aspect s of car e, including int erventions t o reduce morbidity fr om caesar ean bir th. 
+The r ecommendations on monit oring aft er caesar ean bir th, pain r elief aft er caesar ean 
+birth and on ut erine closur e have been updat ed. 
+This updat e also contains new r ecommendations on t echniques t o reduce inf ectious 
+morbidity and t echniques t o prevent and manage h ypot hermia and shiv ering. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 58
+of 61Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on pr egnancy . 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 59
+of 61Update inf orma tion 
+June 2025 : We delet ed recommendation 1 .4.33 on o xytocin and r eplaced it wit h a link t o a 
+recommendation on carbet ocin in NICE's guideline on intrapar tum car e. 
+Januar y 202 4: We have review ed the evidence and updat ed the recommendations on 
+placenta accr eta spectrum. The new and updat ed recommendations ar e mark ed [202 4] or 
+[2011 , amended 202 4]. 
+Sept ember 2023: We have updat ed the recommendations on t he use of neuraxial opioids 
+for post operativ e pain r elief, and monit oring f or women and pr egnant people who ha ve had 
+neuraxial opioids. The e vidence has not been r eview ed. These updat ed or new 
+recommendations ar e mark ed [2004 , amended 2023] , [2021 , amended 2023] and 
+[2023] . In some cases, minor changes ha ve been made t o the w ording t o bring t he 
+language and style up t o dat e wit hout changing t he meaning. 
+August 2023: We have review ed the evidence and updat ed the recommendations on 
+surgical opening t echnique. The updat ed recommendation is mark ed [2004 , amended 
+2023] . 
+June 2023: We have review ed and updat ed the recommendations on mat ernal choice f or 
+caesar ean bir th by exper t opinion and consensus. The e vidence has not been r eview ed. 
+These r ecommendations ar e mark ed [2011 , amended 2023]. 
+March 2021: We have review ed the evidence and made new r ecommendations on t he 
+benefit s and risks of caesar ean bir th compar ed wit h vaginal bir th, met hods t o reduce 
+infectious morbidity , met hods f or ut erine closur e, met hods t o prevent and tr eat 
+hypot hermia and shiv ering, monit oring aft er caesar ean bir th and pain r elief. These 
+recommendations ar e mark ed [2021] . 
+We have also made some changes wit hout an e vidence r eview: 
+• We have updat ed some w ording t o bring t he language and style up t o dat e, wit hout 
+changing t he meaning. 
+• We have updat ed some r ecommendations t o bring t hem in line wit h curr ent 
+terminology and practice. Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 60
+of 61• We have combined, clarified or r eworded some r ecommendations t o mak e them 
+clear er and t o impr ove ease of r eading. 
+These r ecommendations ar e mark ed [2011 , amended 2021] and [2004 , amended 2021] . 
+Recommendations mark ed [2011] and [2004] last had an e vidence r eview in 2011 and 
+2004 , respectiv ely. In some cases, minor changes ha ve been made t o the w ording t o bring 
+the language and style up t o dat e, wit hout changing t he meaning. 
+Minor changes since publication 
+July 2025 : We amended t he section on pain management aft er caesar ean bir th to specify 
+immediat e-release opioids, as appr opriat e, in line wit h Medicines and Healt hcare product s 
+Regulat ory Agency (MHRA) saf ety advice that stat es pr olonged-r elease opioids ar e not 
+recommended f or acut e post -operativ e pain r elief. 
+May 202 4: We amended r ecommendations on met hods t o reduce inf ectious morbidity t o 
+clarify which skin pr eparations should be used. 
+October 2023: We updat ed the link t o the NICE guideline on intrapar tum car e, which has 
+been updat ed. 
+October 2022: We added a r ecommendation t o indicat e that pulse o ximetr y ma y be less 
+reliable in people wit h dark skin. W e also added a link t o the NHS patient saf ety aler t on 
+the risk of harm fr om inappr opriat e placement of pulse o ximet er pr obes. See 
+recommendation 1.6.6. 
+June 2022: We amended t he name of t he pain out come measur e in t he explanation f or 
+why the committ ee made r ecommendations 1 .1.3 and 1 .1.4. We also updat ed the term 
+'morbidly adher ent placenta' t o 'placenta accr eta spectrum' t hroughout t he guideline. 
+July 2021: Recommendation 1 .4.28 is being updat ed. W e removed reference t o the 
+Joel–Cohen transv erse incision t o clarify what should be done in t he meantime. See t he 
+exceptional sur veillance r eview on sur gical opening t echnique for mor e information. 
+ISBN: 9 78-1-47 31-7064- 3 Caesar ean bir th (NG192)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 61
+of 61

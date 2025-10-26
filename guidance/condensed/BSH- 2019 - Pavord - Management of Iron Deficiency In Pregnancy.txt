@@ -1,0 +1,953 @@
+UK guidelines on the management of iron deﬁciency in
+pregnancy
+Sue Pavord,1Jan Daru,2Nita Prasannan,3Susan Robinson,4Simon Stanworth5and Joanna Girling6on behalf of the
+BSH Committee
+1Department of Haematology, Oxford University Hospitals, Oxford,2Women’s Health Research Unit, Centre for Primary Care and
+Public Health WHO Collaborating Centre, Blizard Institute,3Department of Obstetrics and Gynaecology, Guys and St Thomas’ NHS
+Foundation Trust,4Haematology Department, Guys and St Thomas’ NHS Foundation Trust, London,5NHSBT/Department of Hae-
+matology, John Radcliffe Hospital, Oxford and6Department of Obstetrics and Gynaecology, West Middlesex University Hospital and
+Chelsea & Westminster Hospital, London, UK
+Keywords: pregnancy, iron, anaemia, iron depletion.
+Iron deﬁciency remains a signiﬁcant problem for pregnant
+women in the UK. The objective of these guidelines is to
+provide healthcare professionals with recommendations for
+the prevention, diagnosis and treatment of iron deﬁciency in
+pregnancy and in the postpartum period. The guidelines
+update and replace the previous ones (Pavord et al , 2012).
+The prevalence of anaemia in pregnancy remains high. In
+order to minimise adverse outcomes, including use of blood
+transfusion, further research is required to deﬁne optimal
+management, as many current recommendations are not
+supported by high quality evidence.
+Methods
+This guideline was compiled according to the British Society
+for Haematology (BSH) process at b-s-h.org.uk. GRADE cri-
+teria were used to quote levels of recommendation and
+grades of evidence (https://www.gradeworkinggroup.org).
+Searches were performed using the online search engine
+Medline (OVID), Embase (OVID) and CENTRAL (The
+Cochrane Library). Search terms were: (“pregnancy” OR
+“postpartum”) AND; “anaemia” AND “transfusion”; “anae-
+mia” AND “iron”; “ferritin”; “intravenous iron”; “prevention
+of iron deﬁciency”; “hepcidin; “transfusion AND red cells”;
+“iron deﬁciency”; “iron deﬁcient”; “iron depletion”; “positive
+predictive value”; “positive predictive value” AND (“true
+positive” OR “true negative”); “negative predictive value”;
+“negative predictive value” AND (“false positive” OR “false
+negative”); “pregnancy outcome for mother and baby”;
+“pregnancy outcome” AND; “birth weight”; AND“gestational age”; AND “admission to intensive care unit”;
+AND “preterm delivery”.
+Filters were applied to include only publications written in
+English, studies carried out in humans, clinical trials, clinical
+studies, comparative studies and systematic reviews published
+between 1 February 2012 and 31 January 2018, inclusive.
+Searches of individual journals were not implemented
+because it was felt that publications not captured during
+the database search process would have had limited availabil-
+ity and would have had little impact on the scientiﬁc
+community.
+Opinions were also sought from practice development
+midwives and obstetric anaesthetists.
+Deﬁnition and prevalence of iron deﬁciency
+anaemia in pregnancy
+Deﬁnition
+Anaemia is deﬁned as a low haemoglobin concentration
+(Hb); the lower limit of current reference ranges is two stan-
+dard deviations below the mean in a healthy population
+[World Health Organization (WHO), 2011]. In pregnancy,
+there is a physiological expansion of plasma volume begin-
+ning in the ﬁrst trimester and plateauing by the third
+(Costantine, 2014), which exceeds the increased production
+of red blood cells and haemoglobin. The resulting haemodi-
+lution contributes to the fall in Hb during pregnancy. Several
+factors may restrict or curtail this expansion, including pre-
+eclampsia and some medical comorbidities (Fisher &
+Nemeth, 1567S). Anaemia in pregnancy can be caused by
+numerous other factors, including vitamin B12 and folate
+deﬁciency, the presence of a variant haemoglobin or thalas-
+saemia, inﬂammatory disorders, haemolysis and blood loss,
+and, most commonly, by deﬁciency of iron. This guideline
+addresses iron deﬁciency, which is by far the most common
+cause of anaemia in pregnancy.Correspondence: BSH Guidelines Administrator, British Society for
+Haematology, 100 White Lion Street, London N1 9PF, UK.
+E-mail: bshguidelines@b-s-h.org.uk
+guideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830First published online 2 October 2019
+doi: 10.1111/bjh.16221
+Iron deﬁciency is a progressive process, in which iron
+stores fall, from being replete to deplete and ﬁnally absent,consequently resulting in iron deﬁciency anaemia. Progres-sive iron deﬁciency can be measured by a variety ofbiomarkers. In iron depletion, the body’s stored iron is
+reduced and individuals are at greater risk of anaemia in sit-
+uations of increased demand. Iron utilisation is increasedduring pregnancy, as iron is required for fetal growth anddevelopment (Scholl, 2005), as well as for increased mater-nal erythropoiesis (Bothwell, 2000; Fisher & Nemeth,1567S).
+The current Hb thresholds deﬁning anaemia in preg-
+nancy are based on historical normal values derived from
+non-pregnant populations, which are not clearly linked to
+clinical outcomes and there is ongoing debate as to theapplicability of these values (Pasricha et al , 2018). The
+WHO is reviewing the evidence relating to the Hb belowwhich anaemia should be deﬁned (WHO, 2011; Pasrichaet al, 2018). Until then, the guideline group agreed that the
+existing thresholds, being Hb <110 g/l in the ﬁrst trimester,
+<105 g/l after 12 weeks and <100 g/l immediately postpar-
+tum (Pavord et al, 2012) were most practical, but that fur-
+ther work is needed to validate them.
+Recommendation
+Anaemia should be deﬁned as haemoglobin concentration(Hb) <110 g/l in ﬁrst trimester and <105 g/l in second and
+third trimesters and <100 g/l postpartum (2D).
+Prevalence
+Iron deﬁciency is the most common nutritional deﬁciency
+globally and is the leading cause of anaemia (Stevens et al,
+2013; McLean et al, 2009; WHO, 2017). In pregnancy, iron
+deﬁciency is usually due to an imbalance of demand andsupply, which worsens as pregnancy advances. The preva-
+lence of maternal anaemia approaches 50% in low- and mid-
+dle-income countries, largely due to a combination ofnutritional deﬁciency, infectious diseases and the presence ofa variant haemoglobin or a thalassaemic disorder (Balarajanet al, 2011). In the UK, the prevalence of anaemia was found
+to be 24% in a multicentre national study (Barroso et al ,
+2011) and a two-centre English study found 46% of womenhad anaemia at the booking or 28-week checks (Nair et al,
+2017).
+Clinical effects of iron deﬁciency anaemia in
+pregnancy
+Iron is an essential requirement for erythropoiesis and iron-
+dependent enzymes are present in all cells, including pla-cental and fetal tissue. Iron deﬁciency anaemia has been
+linked to poor health outcomes in the mother, fetus and
+infant.Maternal morbidity and mortality
+Iron deﬁciency with or without anaemia, is associated withmaternal fatigue (Lee & Zaffke, 1999; Pratt & Khan, 2016)and, potentially, poorer quality of life and increased risk ofpostpartum depression (Corwin et al , 2003). A recent sys-
+tematic review of non-anaemic iron deﬁciency found thatfatigue improves with iron replacement (Pratt & Khan,2016), although there was only one randomised control trial
+and one other relevant study. Altered thyroid metabolism
+can also occur in iron deﬁciency anaemia (lower thyroid -stimulating hormone and T3 hormone) and contribute tofatigue (Beard et al, 1989, 1990).
+Maternal anaemia may also increase the risk of postpar-
+tum haemorrhage (PPH). A large prospective observationalstudy at 2 maternity services in the UK found that 60% ofwomen with Hb <85 g/l sustained PPH, with a quarter pro-
+gressing to severe PPH (Briley et al, 2014). One explanation
+is impaired uterine contractility due to reduced availabilityof oxygen.
+An increased risk of puerperal sepsis has been suggested
+by systematic reviews (Pe ~na-Rosas et al, 2012); however, the
+number of studies that report on this outcome is small andfurther studies are needed to validate this ﬁnding.
+Data from the WHO, derived mainly from low-income
+countries, show that the risk of maternal mortality increases
+with the severity of anaemia, although the multiple causes ofanaemia make it difﬁcult to determine the direct effects ofanaemia per se (Brabin et al, 2001) and at what Hb threshold
+mortality is increased. A recent study adjusting for con-founding factors, such as PPH, massive transfusion andadmission to intensive care units, found that an Hb <70 g/l
+antenatally or postpartum was associated with a two-fold
+increase in mortality, in low- and middle-income countries
+(Daru et al, 2018).
+Pregnancy outcome
+Maternal anaemia has been a ssociated with a signiﬁ-
+cantly higher risk of perinatal and neonatal mortality,low birth weight and pre-term birth, in a systematic
+review and meta-analysis of studies from low- and mid-
+dle-income countries (Rahman et al , 2016). Recent stud-
+ies in a multi-ethnic population in England (Nair et al ,
+2017) and in northern India (Nair et al , 2016) support
+this, ﬁnding an association between severe antenatalanaemia and stillbirth and perinatal death, and withsmall for gestational age infa nts, low birth weight infants
+and maternal PPH. However, a meta-analysis of ran-
+domised controlled trials on the effect of iron supple-
+mentation showed only a modest effect on birth weightof 41 –69 g, with a small reduction in low birth weight
+and uncertainty on the size of the effect on pretermb i r t h ,d u r a t i o no fg e s t a t i o no rs m a l lf o rg e s t a t i o n a la g einfants (Haider et al , 2013).Guideline
+820
+ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The fetus and infant
+Most fetal iron is acquired in the third trimester, in prepara-
+tion for the high growth rate in the ﬁrst 4 –6 months after
+birth (Balesaria et al, 2012). Regulation of fetal iron levels is
+a complex process and, in maternal iron deﬁciency anaemia,there is an increase in placental iron receptors and ironabsorption across the placenta to maximise fetal iron supply(Gambling et al, 2011).
+Despite this, studies have found that maternal iron deﬁ-
+ciency at delivery is associated with lower serum ferritin incord blood of neonates (Shao et al , 2012; Mireku et al ,
+2016), suggesting that the prioritisation of fetal iron supplymust be compromised at some point. Shao et al (2012)
+found that cord iron levels were reduced when mothers hadserum ferritin levels below 13 µg/l.
+The late fetal and early postnatal period are recognised as a
+critical period where there is rapid brain development, high
+neural plasticity and high nutritional requirement (Gluckman& Hanson, 2004; Georgieff et al, 2015). Animal studies show
+maternal iron deﬁciency late in pregnancy is associated withneurodevelopmental impairment. Observational studies inpregnant women have found that iron deﬁciency anaemia latein pregnancy is associated with premature birth and low Apgarscore ( <5 at 1 min) (Lone et al, 2004), and impaired motor,
+cognition and language development in the neonate. However,
+a systematic review found that the majority of studies areobservational and there is no consistent evidence that maternalanaemia affects infant cognition (Veena et al, 2016).
+Recommendations
+Healthcare professionals should be aware that iron deﬁ-
+ciency anaemia in pregnancy is common and associated
+with increased risk of maternal morbidity and mortality(1B).
+Healthcare professionals should be aware that iron deﬁ-
+ciency anaemia in pregnancy is associated with increasedrisk of perinatal morbidity and mortality, and has impor-tant potential implications for the future neuro-develop-ment of the infant (2B).
+Diagnosis
+Clinical symptoms and signs
+The clinical symptoms of iron deﬁciency anaemia in preg-
+nancy are non-speciﬁc and cannot be relied on for diagnosticpurposes. Fatigue is the most common symptom but women
+may also present with pallor, weakness, headache, palpita-
+tions, dizziness, dyspnoea, irritability and restless legs. Pica, acraving for non-food items such as ice (pagophagia) and soil(geophagia), may develop (Lumish et al, 2014).
+In early iron depletion, women may experience symptoms
+of fatigue, irritability, poor concentration and hair loss(Holm et al, 2018; Lee & Zaffke, 1999). Information given to
+women about these symptoms may facilitate earlier presenta-tion of iron depletion, before anaemia develops.
+Laboratory testing
+Whilst there is no evidence to determine the required fre-quency for checking Hb in pregnancy, current good practiceguidelines advise testing at the booking appointment and at28 weeks [Pavord et al, 2012; Royal College of Obstetricians
+& Gynaecologists, 2015; White et al, 2016; National Institute
+for Health and Care Excellence (NICE) 2016]. New near-pa-tient test assays may allow more frequent testing in the
+future.
+Red cell indices. A low Hb, mean cell volume (MCV), mean
+cell haemoglobin (MCH) and mean cell haemoglobin con-centration (MCHC) are suggestive of iron deﬁciency, butneed to be interpreted with caution in view of the physiolog-ical increase of MCV in pregnancy, of around 6 ﬂ (Chanarinet al, 1977). Microcytic, hypochromic indices may also occur
+in haemoglobinopathies.
+One study in Sri Lanka found the MCHC to have the best
+sensitivity for detection of iron deﬁciency, compared withHb and the other red cell indices (Rabindrakumar, et al ,
+2018). This has not been supported by UK studies (Voraet al , 2019) but potential biomarkers need to be further
+investigated to ﬁnd a practical, cost effective measure for theearly detection of iron depletion.
+Serum ferritin. A low serum ferritin is diagnostic of iron
+deﬁciency in pregnancy. However, a normal ferritin leveldoes not exclude iron deﬁciency, as pregnancy is associatedwith a physiological rise in acute phase proteins (Kaestelet al, 2015) and changes in iron utilisation and metabolism
+(Costantine, 2014), both of which inﬂuence serum ferritinlevels. A recent systematic review showed there is marked
+variation in the threshold of serum ferritin used to diagnose
+iron deﬁciency, both in research studies and in national andinternational guidelines (Daru et al , 2017).The two bench-
+mark studies that compared serum ferritin with iron storesin the bone marrow, and that have guided currently usedthresholds, have signiﬁcant limitations (Hallberg et al, 1993;
+van den Broek et al , 1998). Research on pregnancy-speciﬁc
+cut-offs of serum ferritin are lacking (Roy & Pavord, 2018)
+and there is ongoing debate as to which serum ferritin level
+to use as threshold to diagnose iron deﬁciency (Garcia-Casalet al, 2014). In the UK, the majority of clinicians are familiar
+with using a serum ferritin level <30lg/l (Daru et al, 2017;
+Pavord et al, 2012). It may be appropriate to use a higher
+cut-off, but as of yet there are no data to support this inpregnancy and the guideline group encourage continued useof a serum ferritin level <30lg/l until good quality evidence
+suggesting another cut-off emerges.guideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd 821
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Other biomarkers of iron deﬁciency. Transferrin saturation
+has not been widely used in pregnancy, outside the contextof research but is useful in non-pregnancy settings andrequires further evaluation in pregnancy. It is howeverderived from serum iron and total iron binding capacity,
+which are inﬂuenced by diurnal variation, infection and
+inﬂammation (McSorley et al, 2019).
+Other biomarkers may be promising but have not yet been
+validated in pregnancy, such as soluble transferrin receptorlevels (sTfR) (Choi et al, 2000) and reticulocyte haemoglobin
+content (a key test for diagnosis of iron deﬁciency in chronickidney disease). Data are emerging on the use of serum hep-cidin (Nemeth & Ganz, 2006), however, reference ranges and
+the correlation of hepcidin levels with clinical outcomes are
+unknown (Koenig et al, 2014) and there is insufﬁcient evi-
+dence to support its use in pregnancy.
+Trial of oral iron
+Oral iron, if taken according to the recommendations indi-cated below (early morning, on an empty stomach), is effec-
+tive at correcting iron deﬁciency anaemia (Haider et al ,
+2013). In anaemic women, a trial of iron therapy for simulta-neous diagnostic and therapeutic purposes is helpful. A risein Hb should be demonstrable by 2 weeks and supports thediagnosis of iron deﬁciency (Pavord et al , 2012). Women
+who are haemoglobinopathy carriers should have serum fer-ritin testing prior to iron administration, to conﬁrm con-comitant iron deﬁciency and exclude iron overload. If
+haemoglobinopathy status is not yet known, a trial of iron
+can be started at the same time as haemoglobinopathy test-ing.
+An effective system for reviewing blood results is impera-
+tive. If there has been no improvement in Hb following2 weeks of optimal therapy and compliance, more deﬁnitivetesting and treatment is required.
+Non-anaemic women at risk of iron deﬁciency anaemia
+Many iron-depleted women are not yet anaemic when theyﬁrst present in pregnancy, as erythropoiesis is usually pre-served until the advanced stages of iron deﬁciency. An obser-vational study of 102 non-anaemic women in the ﬁrsttrimester showed that 14% were iron depleted, deﬁned byferritin levels <30lg/l, and 37% had a low transferrin satura-
+tion of <20% (Auerbach et al, 2019). Iron-deﬁcient women
+are at high risk of anaemia and need to be identiﬁed by care-ful history at the booking clinic (Table I). There is no goodevidence to inform the management of these women, how-ever it is the opinion of the guideline group that they shouldeither be started on prophylactic iron empirically or havetheir serum ferritin checked ﬁrst. Routine screening withserum ferritin has been proposed (Crispin et al, 2018), but
+given the associated costs, delays and limitations of the test,
+a careful history to identify these patients may be preferred.Further research is needed to inform the optimal manage-
+ment of non-anaemic women with iron deﬁciency.
+Recommendations
+Healthcare workers should be aware that iron deﬁciency isthe most common cause of anaemia in pregnancy and therisk of iron deﬁciency should be considered in all pregnantwomen (1B).
+Haemoglobin concentration should be routinely mea-
+sured at booking and at around 28 weeks’ gestation (1D).
+Systems must be in place for timely review of blood test
+results, including monitoring the response to therapy (1B).
+If anaemia without an obvious other cause is detected, a
+diagnostic trial of oral iron should be given without delay,with a repeat full blood count in 2 –3 weeks (1D).
+The optimal diagnostic strategy for anaemia in preg-
+nancy is unknown but unselected routine screening withserum ferritin outside the context of research is not cur-rently recommended (1D).
+Serum ferritin should be measured in women with a
+known haemoglobinopathy to identify concomitant iron
+deﬁciency and exclude iron loading states (1D).
+Non-anaemic women at risk of iron deﬁciency should
+be identiﬁed and either started on prophylactic ironempirically or have serum ferritin checked ﬁrst (1D).
+A serum ferritin level of <30µg/l in pregnancy is
+indicative of iron deﬁciency. Levels higher than this do notrule out iron deﬁciency or depletion (2C).
+Other biomarkers of iron status are not currently rec-
+ommended for screening as there is insufﬁcient validationin pregnancy (2B).
+Management of iron deﬁciency
+Dietary advice
+The average daily iron intake from food for women in Great
+Britain is 10 mg, of which 10 –15% is absorbed. The capacity
+for absorption is enhanced in pregnancy but physiologicaliron requirements increase from 1 –2 mg to 6 mg per day
+(Bothwell, 2000), with increasing demand as pregnancyadvances. The recommended daily intake (RDA) of iron forthe latter half of pregnancy is 27 mg, twice that of a non-pregnant woman (https://www.nhlbi.nih.gov/health-topics/
+iron-deficiency-anemia).
+The amount of iron absorption depends upon the amount
+of iron in the diet, its bioavailability and physiologicalrequirements. Haem iron from meat, ﬁsh and poultry isabsorbed 2- to 3-times more readily than non-haem iron.Meat also contains organic compounds that promote theabsorption of iron from other less bioavailable non-haemiron sources (Skikne & Baynes, 1994). However, approxi-
+mately 95% of dietary iron intake is from non-haem iron
+sources. Vitamin C (ascorbic acid) signiﬁcantly enhances ironGuideline
+822
+ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+absorption from non-haem foods (Lynch, 1997), the size of
+this effect increasing with the quantity of vitamin C in the
+meal. Germination and fermentation of cereals and legumesimprove the bioavailability of non-haem iron by reducingthe content of phytate, a food substance that inhibits ironabsorption. Tannins in tea and coffee inhibit iron absorptionwhen consumed with a meal or shortly after.
+Recommendations
+All pregnant women should receive dietary advice (2B).
+Once women become iron -deﬁcient in pregnancy it is
+not possible to ensure repletion through diet alone andoral supplementation is needed (2B).
+Education and counselling regarding diet may improve
+iron intake and enhance absorption but the degree ofchange achievable remains in question (2B).
+Oral iron preparations
+Oral iron is an effective, cheap and safe way to replaceiron. Ferrous salts are preferred to ferric salts due to the
+poorer absorption and bioavailability of the latter (Davidssonet al , 2000; Nagpal & Choudhury, 2004). Available ferrous
+salts include ferrous fumarate, ferrous sulphate and ferrous
+gluconate. It is the amount of elemental iron that is impor-
+tant and this varies by preparation, as detailed in Table II.Multivitamins and ‘off the shelf’ preparations usually haveinsufﬁcient iron to correct anaemia and, furthermore, oftencontain other minerals that interfere with iron absorption.Combined iron and folic acid preparations are available buttheir efﬁcacy compared to oral iron alone is unknown. Dailyfolic acid (400 µg) is required before 12 weeks’ gestation to
+reduce the incidence of neural tube defects.Until now, the recommended dose of elemental iron for
+treatment of iron deﬁciency has been 100 –200 mg daily
+(Joint Formulary Committee, 2017; Pavord et al , 2012).
+However, more recent studies suggest that lower doses orintermittent supplementation may be advantageous (Pena-
+Rosas et al, 2015). Moretti et al (2015) showed that fractional
+absorption of iron in iron-depleted young non-pregnantwomen is maximised by taking elemental iron doses of 40 –
+80 mg once per day or alternate days, avoiding twice dailydosing. Higher doses potentially increase side effects due tothe excess unabsorbed iron remaining in the gastrointestinaltract. Iron is known to cause gastric irritation, nausea anddisturbed bowel function, affecting compliance (Smith et al,
+2014). Shinar et al (2017) showed that 68 mg daily, started
+at 17 weeks’ gestation, did not result in a higher Hb by35 weeks than 34 mg daily. Data reported by Stoffel et al
+(2017) suggest that optimal absorption occurs from alternateday dosing, due to higher hepcidin levels with consecutiveday dosing. However, a balance between optimal absorption,ease of compliance and need for rapid response may lead toa daily regime being preferred. Hepcidin levels are lowest in
+the morning, suggesting that a morning dose is preferable
+(Schapp et al , 2013). Oral iron supplementation should be
+taken on an empty stomach, as absorption is reduced or pro-moted by the same factors that affect absorption of dietarynon-haem iron. It may be taken with water or a source ofvitamin C to enhance absorption.
+Recommendations
+Ferrous iron salts are the current preparation of choice fororal iron supplementation (1C).
+Until further research determines the optimal dose of
+elemental oral iron, 40 –80 mg every morning is suggested,
+checking Hb at 2 –3 weeks to ensure an adequate response
+(2C).
+Women should be counselled as to how to take oral
+iron supplements correctly. This should be on an empty
+stomach, with water or a source of vitamin C. Other medi-cations, multivitamins and antacids should not be taken atthe same time (1B).
+Treatment for anaemia should be started promptly by
+the healthcare professional caring for the woman. Escala-tion to specialist medical care is required if anaemia is sev-ere (Hb <70 g/l) and/or associated with signiﬁcant
+symptoms or advanced gestation ( >34 weeks) (2B), or if
+the Hb is failing to respond after 2 –3 weeks of oral iron
+correctly taken.
+In non -anaemic women at increased risk of iron deple-
+tion, 40 –80 mg elemental iron once a day should be
+offered empirically, or serum ferritin should be checkedand iron offered if the ferritin is <30lg/l (1B).
+Response to oral iron. The degree of increase in Hb that can
+be achieved with iron supplements will depend on the HbTable I. Indications for empirical iron supplementation and/or
+serum ferritin.
+Anaemic women where testing serum ferritin is necessary prior to
+iron supplementation:
+Known haemoglobinopathyPrior to parenteral iron replacement
+Non-anaemic women with high risk of iron depletion for
+empirical iron treatment with/without serum ferritin testing:
+Previous anaemiaMultiparity ≥P3
+Twin or higher order multiple pregnancy
+Interpregnancy interval <1 year
+Women who have poor dietary habits
+Those following a vegetarian/vegan diet
+Pregnant teenagers
+Recent history of clinically signiﬁcant bleeding
+Non-anaemic women where serum ferritin may be necessary:
+High risk of bleeding during pregnancy or at birth
+Women declining blood products, such as Jehovah’s WitnessesWomen for whom providing compatible blood is challengingguideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd 823
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+and iron status at the start of supplementation, ongoing
+losses, iron absorption and other factors contributing to
+anaemia, such as other micronutrient deﬁciencies, infectionsand renal impairment. However, compliance and intoleranceof oral iron preparations are the usual factors limiting efﬁ-cacy. Iron salts may cause gastric irritation (Pereira et al ,
+2014) and up to a third of patients may develop dose-limit-ing side effects (Breymann, 2002), including nausea and epi-gastric discomfort. This is minimised by correct
+administration, which optimises absorption. It may be neces-
+sary to titrate the dose down to a level where side effects areacceptable or try an alternative preparation. Enteric-coatedor sustained release preparations should be avoided, as themajority of the iron from such preparations is carried pastthe duodenum, limiting absorption (Tapiero et al , 2001).
+The relationship between dose and altered bowel habit (diar-rhoea and constipation) is less clear (Tapiero et al , 2001),
+and other strategies, such as use of laxatives are helpful.
+A repeat Hb at 2 –3 weeks is required to assess response to
+treatment. The timing of further checks will depend uponthe degree of anaemia and period of gestation. Once the Hbis in the normal range, treatment should be continued for afurther 3 months and until at least until 6 weeks postpartumto replenish iron stores.
+Recommendations
+For nausea and epigastric discomfort, alternate day dosingor preparations with lower iron content should be tried.Slow release and enteric -coated forms should be avoided
+(1A).
+Repeat Hb testing is required 2 –3 weeks after commenc-
+ing treatment for established anaemia, to assess compli-
+ance, correct administration and response to treatment
+(1B).
+Once the Hb is in the normal range, replacement should
+continue for 3 months and until at least 6 weeks postpar-tum to replenish iron stores (1D).
+If response to oral iron replacement is poor, compliance
+should be conﬁrmed and concomitant causes that may becontributing to the anaemia considered, such as folate deﬁ-
+ciency or malabsorption (1A).
+Intravenous iron therapy
+Systematic reviews and meta-analyses found that pregnant
+women receiving intravenous (IV) iron, compared with oraliron, achieved the target Hb more often, had an increased
+Hb after 4 weeks and had fewer side effects (Govindappagari
+& Burwick, 2018; Govindappagari & Burwick, 2019; Qassimet al, 2018).
+IV iron therapy is indicated when there is absolute non-
+compliance with, or intolerance of, oral iron therapy or pro-ven malabsorption or when a rapid Hb response is required.Contraindications include a history of anaphylaxis or seriousreactions to parenteral iron therapy, ﬁrst trimester of preg-
+nancy, active acute or chronic bacteraemia and decompen-
+sated liver disease.
+The intravenous iron preparations currently available in
+the UK and their properties are summarized in Table III.Iron sucrose has a higher availability for erythropoiesis thaniron dextran and experience suggests a good safety proﬁle inpregnancy (Bayoumeu et al, 2005). Its use is limited by the
+total dose that can be administered in one infusion, requiring
+multiple infusions. Iron carboxymaltose and iron isomal-
+toside overcome this problem, allowing single dose adminis-tration (Lyseng-Williamson & Keating, 2009; Gozzard, 2011;Qassim et al, 2018).
+Fast-acting intravenous iron preparations. Iron III carboxy-
+maltose (Ferrinject) is a ferric hydroxide carbohydrate com-plex and Iron III isomaltoside (Monofer) has strongly bound
+iron in spheroid iron-carbohydrate particles. Both allow con-
+trolled delivery of iron within the cells of the reticuloen-dothelial system (primarily bone marrow) and subsequentrelease of bioavailable iron to the iron binding proteins, fer-ritin and transferrin. The rapid uptake by the reticuloen-dothelial system minimises the risk of release of free iron.Randomised controlled trials have shown non-inferiority(Breymann et al , 2016; Van Wyk & Martens, 2007) and
+superiority (Seid et al, 2008; Khalafallah et al, 2018) to oral
+ferrous sulphate in the treatment of iron deﬁciency anaemiain pregnancy and postpartum, with rapid and sustainedincreases in Hb. It should be noted that many studies on theeffects of IV iron are powered on haematological outcomes,not clinical ones.
+Dosing. Traditionally the Ganzoni formula (Ganzoni, 1970)
+has been used for estimation of iron dose. However this is
+cumbersome, prone to error and can underestimate ironrequirements (Dignass et al , 2015); use of a simpliﬁed
+approach to dosing has been recommended (Dignass et al ,
+2015).Table II. Recommended daily dose and elemental iron content of oral iron preparations.
+Iron salt Preparation Elemental iron content
+Ferrous fumarate 210 mg 65 mg
+Ferrous gluconate 300 mg 35 mg
+Ferrous sulphate (dried) 200 mg 65 mg
+Ferrous feredetate 190 mg/5 ml elixir 27 /C15 mg/5 ml elixirGuideline
+824 ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Table III. Summary of intravenous iron preparations available in the UK.
+Cosmofer Iron (III) hydroxide
+dextran complexVenofer Iron (III) hydroxide
+sucrose complexFerinject Iron (III)
+carboxymaltose Monofer Iron (III) isomaltoside
+Dose of elemental iron 50 mg/ml 20 mg/ml 50 mg/ml 100 mg/ml
+Test dose required as per
+manufacturerYes, before every IV dose, once before
+IM treatmentFirst dose new patients only No No
+Routes of administration Slow IV injection
+IV infusion of total dose
+IM injection total doseSlow IV injection
+IV infusionSlow IV injection
+IV infusionSlow IV injection
+IV infusion
+Able to administer total dose Yes (up to 20mg/kg bw over 4 –6 h) No Yes [up to 20 mg/kg bw
+(maximum of 1000 mg/week)
+over 15 min]Yes (up to 20 mg/kg bw over 15 –
+30 min)
+Half-life 5 h 20 h 7 –12 h 5h
+Dosage 100 –200 mg per IV injection up to 3
+times a week Total dose infusion up
+to 20 mg/kg bw over 4 –6h )
+(100 mg IM into alternate buttocks)Total IV single dose no more
+than 200 mg, can be repeated
+up to 3 times in 1 weekTotal dose infusion up to
+20 mg/kg bw. Maximum
+weekly dose of 1000 mg, whichcan be administered over
+15 min.Total dose infusion up to 20 mg/kg
+bw. Doses up to 1000 mg can be
+administered over >15 min, doses
+>1000 mg should be administered
+over>30 min.
+Use in pregnancy No adequate data for use in pregnant
+women, contra-indicated in ﬁrst
+trimester thereafter risk beneﬁt based
+on clinical needNot in ﬁrst trimester Avoid in ﬁrst trimester Avoid in ﬁrst trimester
+Lactation Risk not known Unlikely to pass to maternal
+milk; no clinical trials<1% iron passed into milk;
+unlikely to be signiﬁcantLow transfer of iron into milk;
+unlikely to be signiﬁcant
+Adverse drug-related events 5% of patients may experience
+minimal adverse events (dose-related) Risk of severe anaphylaxis
+<1/10 000 Risk of anaphylactoid
+symptoms >1/1000 to <1/1000/C15–1/C15% of patients may
+experience adverse events Riskof anaphylactoid reaction >1/
+10 000 to <1/1000Risk of anaphylactoid reaction
+>1/10 000 to <1/1000Risk of anaphylaxis/anaphylactoid
+reactions >
+1/10 000 to <1/1000
+bw, body weight; IM, intramuscular; IV, intravenous.guideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd 825
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Adverse effects and cost effectiveness. Genuine hypersensitivity
+is rare and no difference between the risk for hypersensitivityreactions has been identiﬁed among IV iron products avail-able in the UK. In rare cases, fetal bradycardia has beenobserved in pregnant women with hypersensitivity reactions
+to parenteral iron (https://www.medicines.org.uk/emc/produc
+t/5676/smpc). The European Medicines Agency (EMA, 2013)concluded that the beneﬁt-risk balance of intravenous iron-containing medicinal products is favourable, as the beneﬁtscontinue to outweigh the risks in the treatment of iron deﬁ-ciency when the oral route is insufﬁcient or poorly tolerated.Facilities and staff trained in management of anaphylaxisshould be available.
+Hypophosphataemia can occur after administration of IV
+iron, particularly ferric carboxymaltose. Case reports in non-pregnant patients have shown associated clinical conse-quences (Zoller et al, 2017). The drop in phosphate may be
+greater in pregnant than non-pregnant women (Huang et al,
+2018) but the signiﬁcance of this is not known.
+Haemosiderin skin staining can result from extravasation,
+particularly if the cannula is incorrectly placed. Women
+should be advised of this and should be requested to report
+any pain at the infusion site (Thompson et al, 2014).
+IV iron is signiﬁcantly more costly than oral iron, with
+costs covering not only the drug but also the support foradministration.
+Breastfeeding after IV iron. A study of 65 patients who
+received therapeutic dose IV iron isomaltoside, showed a
+transient increase in iron in breast milk, 3 days after treat-
+ment, compared with oral iron. However, the mean ironconcentration remained within the normal range and the dif-ference disappeared one week after treatment (Holm et al ,
+2017a).
+Recommendations
+IV ron should be considered from the second trimesteronwards for women with conﬁrmed iron deﬁciency anae-mia who are intolerant of, or do not to respond to, oraliron (2B).
+IV iron should be considered in women who present
+after 34 weeks’ gestation with conﬁrmed iron deﬁciencyanaemia and an Hb of <100 g/l (1C).
+Management of delivery in women with iron
+deﬁciency anaemia
+Whilst best practice includes prevention of anaemia or early
+identiﬁcation and antenatal treatment, some women enterlabour with iron deﬁciency anaemia. As for all women, it isimportant that active measures to minimise blood loss atbirth are planned.
+There is no place for offering routine induction of labour
+based on isolated iron deﬁciency anaemia; efforts tomaximise pre-delivery Hb should be made and induction
+planned according to usual obstetric indications.
+Iron deﬁciency anaemia should not inﬂuence the planned
+mode of birth, and decisions should be made according toobstetric indications.
+The intended place of birth may be inﬂuenced by pre-
+labour Hb, as anaemic women may have both a higher likeli-hood of PPH and lower iron stores for coping with haemor-rhage [National Institute for Health and Care Excellence(NICE) 2014]. Other risk factors that might inﬂuence thelikelihood or impact of haemorrhage should also be takeninto consideration, including previous PPH, grandmultipar-ity, ﬁbroid uterus, multiple pregnancy, severity of anaemia
+and whether blood components will be accepted or not.
+Women with Hb <100 g/l approaching birth should have
+an individualised plan, including the potential role of intra-venous access, ‘group and save’ in labour, birth in an obste-trician-led unit and active management of third stage oflabour (Rogers et al , 1998), discussed and documented
+clearly in the birth plan or maternity notes.
+Recommendations
+Iron deﬁciency anaemia should not inﬂuence the modeand timing of delivery (2D).
+Women with iron deﬁciency anaemia with an Hb of
+<100 g/l should deliver in an obstetrician-led unit (1D).
+Women with iron deﬁciency anaemia should have active
+management of the third stage of labour (1D).
+Postpartum anaemia
+Postnatal anaemia is deﬁned as an Hb <100 g/l. The risk of
+postnatal anaemia is reduced by identiﬁcation and manage-ment of iron deﬁciency in the antenatal period. Women withuncorrected anaemia antenatally should have a Hb checkwithin 48 h of birth, as should those who have had blood
+loss>500 ml, or symptoms suggestive of postpartum anae-
+mia. Blood loss at delivery is associated with fatigue (G €uven
+et al, 2018) and clinical assessment is necessary to consider
+the best method of iron replacement. Where there is noactive bleeding, or clinical requirement to increase Hburgently, oral iron should be sufﬁcient, provided it is sup-ported with information about the correct administration.Severe symptoms of anaemia may require IV iron for faster
+beneﬁt (Holm et al , 2017b). A large retrospective study of
+women with a postpartum Hb <80 g/l, conﬁrmed the efﬁcacy
+of IV iron, with a mean increase in Hb of 19 g/l in 7 daysand 31 g/l in 14 days (Broche et al, 2005). This is supported
+by a small randomized controlled trial of IV iron versusblood transfusion for postpartum Hb between 56 and 81 g/l(Holm et al, 2017c).
+Use of IV iron undoubtedly allows some red cell transfu-
+sions to be avoided. However transfusion may be needed if
+there is continued bleeding or risk of further bleeding,Guideline
+826
+ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+imminent cardiac compromise or signiﬁcant symptoms
+requiring urgent correction. If, after careful consideration,elective transfusion is required, a single unit should be givenfollowed by clinical reassessment and repeat Hb. Womenshould be fully counselled about potential risks of transfusion
+and alternative treatments and offered information; consent
+should be obtained.
+Recommendations
+Prompt recognition of iron deﬁciency in the antenatal per-iod followed by iron therapy may reduce the risk of post-partum anaemia (1A).
+After delivery, women with blood loss >500 ml, those
+with uncorrected anaemia detected in the antenatal periodor those with symptoms suggestive of anaemia postnatallyshould have their Hb checked within 48 h of delivery (2A).
+Women with Hb <100 g/l within 48 h of delivery, who
+are haemodynamically stable, asymptomatic, or mildlysymptomatic, should be offered oral elemental iron 40 –
+80 mg daily for at least 3 months (2A).
+Use of IV iron postpartum should be considered in
+women who are previously intolerant of, or do notrespond to, oral iron and/or where the severity of symp-toms of anaemia requires prompt management (2B).
+Obstetric units should have guidelines for the criteria to
+be used for postnatal red cell transfusion in anaemicwomen who are not actively bleeding (2A).
+The decision to transfuse women in the postpartum per-
+iod should be based on careful evaluation, including
+whether or not there is risk of bleeding, cardiac compro-mise or symptoms requiring urgent attention, consideringoral or parenteral iron therapy as alternatives (1A).
+Women receiving red cell transfusion should be given
+full information regarding the indication for, and risks of,transfusion and alternative treatments. Consent should besought and documented in the clinical records (1A).
+Prevention of iron deﬁciency
+Prevention offers an alternative strategy to reduce the impactand prevalence of anaemia developing during pregnancy,although there are no clear data to inform the role of univer-sal iron supplementation. Although current guidelines arebased on prompt identiﬁcation and treatment of anaemia
+and recognition of women at risk, practice audits indicate
+limited effectiveness of this approach. For example, one studyof 14 001 pregnant women from two maternity hospitalsfound that 46% had an Hb <110 g/l at booking and/or at
+28 weeks’ gestation and 64% of those with anaemia in theﬁrst trimester were still anaemic at 28 weeks (Nair et al ,2017). Additional beneﬁts to prevention may relate to cost-
+effectiveness, including reducing the need for iron supple-mentation, transfusions, family and social care for pretermbirths and stillbirths and support for infant neurodevelop-ment. The US Preventive Services Task Force (2015) stated
+that the current evidence is insufﬁcient to assess the full bal-
+ance of beneﬁts and harms of routine iron supplementationduring pregnancy.
+Regular antenatal iron supplementation will reduce the
+risk of maternal anaemia, but there is less clarity on theimpact on maternal and infant clinical outcomes (Haideret al, 2013). In a Cochrane review on use of intermittent iron
+(21 trials involving many developing countries) the quality of
+evidence on maternal and infant outcomes was overall
+assessed as low or very low (Pena-Rosas et al, 2015). A struc-
+tured literature search against UK National Screening Com-mittee criteria also conﬁrmed uncertainty in the magnitudeof the adverse outcomes associated with maternal anaemiaand the need for research on the role of preventative strate-gies (Parker et al, 2012; Rukini et al, 2015).
+Recommendations
+There is insufﬁcient evidence to assess the beneﬁts and
+potential hazards of, routine iron supplementation for allwomen in pregnancy (2C).
+Acknowledgments
+Dr Justin Cook and Dr Gareth Hardy from Niche Scienceand Technology conducted the primary search.
+Christine Adamson, midwife, Chelsea and Westminster
+Hospital provided midwifery input
+Research recommendations
+1 Screening and identiﬁcation of at risk women who are
+not yet anaemic and determination of the optimal man-
+agement of such individuals
+2 Investigation of the sensitivity of biomarkers for detecting
+iron depletion in pregnant women in the UK
+3 Determination of the optimal oral iron dose for treatment
+of iron deﬁciency anaemia
+4 Investigation of the role of universal iron supplementation
+for primary prevention of iron deﬁciency anaemia during
+pregnancy
+Author contributions
+Dr Sue Pavord led and coordinated the guideline and all
+authors contributed.guideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd 827
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+References
+Auerbach, M., Abernathy, J., Juul, S., Short, V. &
+Derman, R. (2019) Prevalence of iron deﬁciency
+in ﬁrst trimester, non-anaemic pregnant women.
+Maternal, Fetal and Neonatal Medicine ,3,1–4.
+Balarajan, Y., Ramakrishnan, U., €Ozaltin, E., Shan-
+kar, A.H. & Subramanian, S.V. (2011) Anaemia
+in low-income and middle-income countries.
+The Lancet ,378,2 1 2 3 –2135.
+Balesaria, S., Hanif, R., Salama, M.F., Raja, K.,
+Bayele, H.K., McArdle, H. & Srai, S.K.S. (2012)
+Fetal iron levels are regulated by maternal and
+fetal Hfe genotype and dietary iron. Haematolog-
+ica,97, 661 –669.
+Barroso, F., Allard, S., Kahan, B.C., Barroso, F.,
+Allard, S., Kahan, B.C., Connolly, C., Smethurst,H., Choo, L., Khan, K. & Stanworth, S. (2011)Prevalence of maternal anaemia and its predic-
+tors: a multi-centre study. European Journal of
+Obstetrics & Gynecology and Reproductive Biol-ogy,159,9 9–105.
+Bayoumeu, F., Subiran-Buisset, C., Baka, N.E.,
+Legagneur, H., Monnier-Barbarino, P. & Laxe-
+naire, M.C. (2005) Iron therapy in iron deﬁ-ciency anemia in pregnancy: intravenous route
+versus oral route. European Journal of Obstetrics
+& Gynecology and Reproductive Biology ,123,
+S15–S19.
+Beard, J., Tobin, B. & Green, W. (1989) Evidence
+for thyroid hormone deﬁciency in iron-deﬁcient
+anemic rats. Journal of Nutrition ,119, 772 –778.
+Beard, J.L., Borel, M.J. & Derr, J. (1990) Impaired
+thermoregulation and thyroid function in iron-
+deﬁciency anemia. American Journal of Clinical
+Nutrition ,52, 813 –819.
+Bothwell, T.H. (2000) Iron requirements in preg-
+nancy and strategies to meet them. American
+Journal of Clinical Nutrition ,72, 257S –264S.
+Brabin, B.J., Hakimi, M. & Pelletier, D. (2001) An
+analysis of anemia and pregnancy-related
+maternal mortality. Journal of Nutrition ,131,
+604S –614S.
+Breymann, C. (2002) Iron deﬁciency and anaemia
+in pregnancy: modern aspects of diagnosis and
+therapy. Blood Cells, Molecules and Diseases ,29,
+506–516.
+Breymann, C., Milman, N., Mezzacasa, A., Ber-
+nard, R. & Dudenhausen, J.; FER-ASAP investi-
+gators. (2016) Ferric carboxymaltose vs. oral
+iron in the treatment of pregnant women withiron deﬁciency anemia: an international, open-
+label, randomized controlled trial (FER-ASAP).
+Journal of Perinatal Medicine ,45, 443 –453.
+Briley, A., Seed, P.T., Tydeman, G., Ballard, H.,
+Watersone, M., Sandall, J., Poston, L., Tribe,
+R.M. & Bewley, S. (2014) Reporting errors, inci-
+dence and risk factors for postpartum haemor-rhage and progression to severe PPH: aprospective observational study. British Journal
+of Obstetrics and Gynaecology ,121, 876 –888.
+Broche, D.E., Gay, C., Armand-Branger, S.,
+Grangeasse, L. & Terzibachian, J.J. (2005) Severe
+anaemia in the immediate post-partum period.
+Clinical practice and value of intravenous iron.European Journal of Obstetrics & Gynecology and
+Reproductive Biology ,123,S 2 1 –S27.
+Chanarin, I., McFadyen, I.R. & Kyle, R. (1977)
+The Physiological macrocytosis of pregnancy.
+British Journal of Obstetrics & Gynaecology: AnInternational Journal of Obstetrics & Gynaecology ,
+84, 504 –508.
+Choi, J., Im, M. & Pai, S. (2000) Serum transferrin
+receptor concentrations during normal preg-nancy. Clinical Chemistry ,46, 725 –727.
+Corwin, E.J., Murray-Kolb, L.E. & Beard, J.L.
+(2003) Low hemoglobin level is a risk factor forpostpartum depression. Journal of Nutrition ,
+133,4 1 3 9 –4142.
+Costantine, M.M. (2014) Physiologic and pharma-
+cokinetic changes in pregnancy. Frontiers in
+Pharmacology ,5, 65.
+Crispin, P., Stephens, B., McArthur, E. & Sethna,
+F. (2018) First trimester ferritin screening for
+pre-delivery anaemia as a patient blood manage-ment strategy. Transfusion and Apheresis Science ,
+58,5 0–57.
+Daru, J., Zamora, J., Fern /C19andez-F /C19elix, B.M., Vogel,
+J., Oladapo, O.T., Morisaki, N., Tuncalp, O.,Torloni, M.R., Mittal, S. & Jayaratne, K. (2018)
+Risk of maternal mortality in women with sev-
+ere anaemia during pregnancy and postpartum:a multilevel analysis. The Lancet Global Health ,
+6, e548 –e554.
+Daru, J., Allotey, J., Pe ~na-Rosas, J.P. & Khan, K.S.
+(2017) Serum ferritin thresholds for the diagno-sis of iron deﬁciency in pregnancy: a systematicreview. Transfusion Medicine ,27, 167 –174.
+Davidsson, L., Kastenmayer, P., Szajewska, H.,
+Hurrell, R.F. & Barclay, D. (2000) Iron bioavail-ability in infants from an infant cereal fortiﬁed
+with ferric pyrophosphate or ferrous fumarate.
+American Journal of Clinical Nutrition
+,71, 1597 –
+1602.
+Dignass, A., Gasche, C., Bettenworth, D., Bir-
+geg/C23ard, G., Danese, S., Gisbert, J., Gomollon, F.,
+Iqbal, T., Katsanos, K., Koutroubakis, I., Magro,F., Savoye, G., Stein, J. & Vavricka, S.; TheEuropean Crohn’s and Colitis Organisation
+[ECCO]. (2015) European consensus on the
+diagnosis and management of iron deﬁciencyand anaemia in inﬂammatory bowel diseases.
+Journal of Crohn’s and Colitis ,9,2 1 1 –222.
+EMA. (2013) Assessment Report For: Iron Con-
+taining Intravenous (IV) Medicinal Products.EMA/549569/2013. European Medicines Agency,
+London, UK.
+Fisher, A.L. & Nemeth, E. (1567S) Iron homeosta-
+sis during pregnancy. The American Journal of
+Clinical Nutrition ,106, 1567S –74S.
+Gambling, L., Lang, C. & McArdle, H.J. (2011)
+Fetal regulation of iron transport during preg-nancy. American Journal of Clinical Nutrition ,
+94, 1903S –1907S.
+Ganzoni, A.M. (1970) Intravenous iron-dextran:
+therapeutic and experimental possibilities.Schweizerische Medizinische Wochenschrift ,100,
+301–303.
+Garcia-Casal, M.N., Pe ~na-Rosas, J.P. & Pasricha,
+S.R. (2014) Rethinking ferritin cutoffs for irondeﬁciency and overload. The Lancet Haematol-
+ogy,1, e92 –e94.
+Georgieff, M.K., Brunette, K.E. & Tran, P.V.
+(2015) Early life nutrition and neural plasticity.
+Development and Psychopathology ,27, 411 –23.
+Gluckman, P.D. & Hanson, M.A. (2004) Living
+with the past: evolution, development and pat-
+terns of disease. Science ,305, 1733 –1736.
+Govindappagari, S. & Burwick, R.M. (2018) Treat-
+ment of iron deﬁciency anemia in pregnancy
+with intravenous versus oral iron: a meta-analy-
+sis of RCTs [10OP]. Obstetrics & Gynecology ,
+131,3 S–4S.
+Govindappagari, S. & Burwick, R.M. (2019) Treat-
+ment of iron deﬁciency anemia in pregnancy
+with intravenous versus oral iron: systematicreview and meta-analysis. American Journal of
+Perinatology ,36, 366 –376.
+Gozzard, D. (2011) When is high-dose intravenous
+iron repletion needed? Assessing new treatmentoptions. Drug Design, Development and Therapy ,
+5,5 1
+–60.
+G€uven, Z., Holm, C., Rosthoej, S. & Langhoff-
+Roos, J. (2018) Association between blood lossat delivery and fatigue in the puerperium: a
+prospective longitudinal study. The Journal of
+Maternal-Fetal & Neonatal Medicine ,27,1–6.
+Haider, B.A., Oloﬁn, I., Wang, M., Spiegelman, D.,
+Ezzati, M. & Fawzi, W.W. (2013) Anaemia, pre-
+natal iron use, and risk of adverse pregnancy
+outcomes: systematic review and meta-analysis.British Medical Journal ,346, f3443.
+Hallberg, L., Bengtsson, C., Lapidus, L., Lindstedt,
+G., Lundberg, P.-A. & Hult /C19en, L. (1993) Screen-
+ing for iron deﬁciency: an analysis based onbone-marrow examinations and serum ferritin
+determinations in a population sample of
+women. British Journal of Haematology ,85,
+787–798.
+Huang, L., Lee, D., Troster, S.M., Kent, A.B.,
+Roberts, M.A., Macdougall, I.C. & McMahon,
+L.P. (2018) A controlled study of the effects offerric carboxymaltose on bone and haematinicbiomarkers in chronic kidney disease and preg-
+nancy. Nephrology Dialysis Transplantation ,33,
+1628 –1635.
+Holm, C., Thomsen, L.L., Norgaard, A., Markova,
+V., Michaelsen, K.F. & Langhoff-Roos, J.
+(2017a) Iron concentration in breast milknormalised within one week of a single high-dose infusion of iron isomaltoside in ran-
+domised controlled trial. Acta Paediatrica ,106,
+256–260.
+Holm, C., Thomsen, L.L., Norgaard, A. & Langh-
+off-Roos, J. (2017b) Single-dose intravenous
+iron infusion or oral iron for treatment of fati-
+gue after postpartum haemorrhage: a random-ized controlled trial. Vox Sanguinis ,112, 219 –
+228.
+Holm, C., Thomsen, L.L., Norgaard, A. & Langh-
+off-Roos, J. (2017c) Single-dose intravenous ironinfusion versus red blood cell transfusion for the
+treatment of severe postpartum anaemia: a ran-
+domized controlled pilot study. Vox Sanguinis ,
+112,1 2 2 –131.Guideline
+828 ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Holm, C., Thomsen, L.L. & Langhoff-Roos, J.
+(2018) Intravenous iron isomaltoside treatmentof women suffering from severe fatigue after
+postpartum hemorrhage. The Journal of Mater-
+nal-Fetal & Neonatal Medicine ,19,1–8.
+Joint Formulary Committee. (2017) BNF 74:
+September 2017. Pharmaceutical Press, London.
+Kaestel, P., Aaby, P., Ritz, C. & Friis, H. (2015)
+Markers of iron status are associated with stageof pregnancy and acute-phase response, but not
+with parity among pregnant women in Guinea-
+Bissau. British Journal of Nutrition ,11, 1072 –
+1079.
+Khalafallah, A.A., Hyppa, A., Chuang, A., Hanna,
+F., Wilson, E., Kwok, C., Yan, C., Gray, Z.,
+Mathew, R., Falloon, P., Dennis, A., Pavlov, T.& Allen, J.C. (2018) A prospective randomisedcontrolled trial of a single intravenous infusion
+of ferric carboxymaltose vs single intravenous
+iron polymaltose or daily oral ferrous sulphatein the treatment of iron deﬁciency anaemia in
+pregnancy. Seminars in Hematology ,55, 223 –
+234.
+Koenig, M.D., Tussing-Humphreys, L., Day, J.,
+Cadwell, B. & Nemeth, E. (2014) Hepcidin and
+iron homeostasis during pregnancy. Nutrients ,6,
+3062 –3083.
+Lee, K.A. & Zaffke, M. (1999) Longitudinal
+changes in fatigue and energy during pregnancy
+and the postpartum period. Journal of Obstetric,
+Gynecologic & Neonatal Nursing ,28,1 8 3 –191.
+Lone, F.W., Qureshi, R.N. & Emanuel, F. (2004)
+Maternal anaemia and its impact on perinatal
+outcome. Tropical Medicine and International
+Health ,9, 486 –490.
+Lumish, R.A., Young, S.L., Lee, S., Cooper, E.,
+Pressman, E., Guillet, R. & O’Brien, K.O. (2014)
+Gestational iron deﬁciency is associated withpica behaviors in adolescents –3.The Journal of
+Nutrition ,144, 1533 –1539.
+Lynch, S.R. (1997) Interaction of iron with other
+nutrients. Nutritional Reviews ,55, 102 –110.
+Lyseng-Williamson, K.A. & Keating, G.M. (2009)
+Ferric carboxymaltose. Drugs ,69, 739 –756.
+McLean, E., Cogswell, M., Egli, I., Wojdyla, D. &
+de Benoist, B. (2009) Worldwide prevalence ofanaemia, WHO vitamin and mineral nutrition
+information system, 1993 –2005. Public Health
+Nutrition ,12
+, 444 –454.
+McSorley, S.T., Tham, A., Jones, I., Talwar, D. &
+McMillan, D.C. (2019) Regression correction
+equation to adjust serum iron and ferritin con-
+centrations based on C-reactive protein andalbumin in patients receiving primary and sec-ondary care. Journal of Nutrition ,149, 877 –883.
+Mireku, M.O., Davidson, L.L., Boivin, M.J.,
+Zoumenou, R., Massougbodji, A. & Cot, M.(2016) Prenatal iron deﬁciency, neonatal ferritin,
+and infant cognitive function. Pediatrics ,138,
+pii, e20161319.
+Moretti, D., Goede, J.S., Zeder, C., Jiskra, M.,
+Chatzinakou, V., Tjalsma, H., Melse-Boonstra,
+A., Brittenham, G., Swinkels, D.W. & Zimmer-
+mann, M.B. (2015) Oral iron supplementsincrease hepcidin and decrease iron absorptionfrom daily or twice-daily doses in iron-depleted
+young women. Blood ,126, 1981 –1989.
+Nagpal, J. & Choudhury, P. (2004) Iron formula-
+tions in pediatric practice. Indian Pediatrics ,41,
+807–815. PMID 15347868
+Nair, M., Churchill, D., Robinson, S., Nelson-
+Piercy, C., Stanworth, S.J. & Knight, M. (2017)
+Association between maternal haemoglobin and
+stillbirth: a cohort study among a multi-ethnicpopulation in England. British Journal of Hae-
+matology ,179, 829 –837.
+Nair, M., Choudhury, M.K., Choudhury, S.S.,
+Kakoty, S.D., Sarma, U.C., Webster, P. &Knight, M.; the IndOSS-Assam Steering Com-
+mittee. (2016) Association between maternal
+anaemia and pregnancy outcomes: a cohortstudy in Assam, India. British Medical Journal
+Global Health ,1, e000026.
+Nemeth, E. & Ganz, T. (2006) Regulation of iron
+metabolism by hepcidin. Annual Review of
+Nutrition ,26, 323 –342.
+NICE. (2014) Intrapartum care for healthy women
+and babies. Clinical Guideline [CG190].National Institute for Health and Care Excel-lence, London, UK. https://www.nice.org.uk/
+guidance/cg190
+NICE. (2016) Antenatal care for uncomplicated
+pregnancies. Clincial Cuideline [CG62]. NationalInstitute for Health and Care Excellence, Lon-
+don, UK. https://www.nice.org.uk/guidance/
+CG62
+Parker, J.A., Barroso, F., Stanworth, S.J., Spiby, H.,
+Hopewell, S., Doree, C.J., Renfrew, M.J. &
+Allard, S. (2012) Gaps in the evidence for pre-
+vention and treatment of maternal anaemia: areview of systematic reviews. BMC Pregnancy
+and Childbirth ,12, 56.
+Pasricha, S.R., Colman, K., Centeno-Tablante, E.,
+Garcia-Casal, M.N. & Pe ~na-Rosas, J.P. (2018)
+Revisiting WHO haemoglobin thresholds to
+deﬁne anaemia in clinical medicine and public
+health. The Lancet Haematology ,5, e60 –e62.
+Pavord, S., Myers, B., Robinson, S., Allard, S.,
+Strong, J. & Oppenheimer, C.; British Commit-
+tee for Standards in Haematology. (2012) UK
+guidelines on the management of iron deﬁciencyin pregnancy. British Journal of Haematology ,
+156,5 8 8 –600.
+Pe~na-Rosas, J.P., De-Regil, L.M., Dowswell, T. &
+Viteri, F.E. (2012) Daily oral iron supplementa-tion during pregnancy. Cochrane Database of
+Systematic Reviews , Issue 12, Art. No.
+CD004736. https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2141.2011.09012.x
+Pena-Rosas, J.P., De-Regil, L.M., Malave, H.G.,
+Flores-Urrutia, M.C. & Dowswell, T. (2015)
+Intermittent oral iron supplementation duringpregnancy. Cochrane Database of Systematic
+Reviews , Issue 10, Art. No. CD009997.
+Pereira, D.I., Couto Irving, S.S., Lomer, M.C. &
+Powell, J.J. (2014) A rapid, simple questionnaireto assess gastrointestinal symptoms after oral
+ferrous sulphate supplementation. BMC Gas-
+troenterology ,14, 103.Pratt, J.J. & Khan, K.S. (2016) Non-anaemic iron
+deﬁciency - a disease looking for recognition ofdiagnosis: a systematic review. European Journal
+of Haematology ,96, 618 –628.
+Qassim, A., Mol, B.W., Grivell, R.M. & Grzesko-
+wiak, L.E. (2018) Safety and efﬁcacy of intra-venous iron polymaltose, iron sucrose and ferric
+carboxymaltose in pregnancy: a systematic
+review. Australian and New Zealand Journal of
+Obstetrics and Gynaecology ,58,2 2–39.
+Rabindrakumar, M.S.K., Pujitha Wickramasinghe,
+V., Gooneratne, L., Arambepola, C., Senanayake,H. & Thoradeniya, T. (2018) The role of haema-tological indices in predicting early iron deﬁ-
+ciency among pregnant women in an urban area
+of Sri Lanka. BMC Hematology ,18, 37.
+Rahman, M., Abe, S.K., Rahman, M.S., Kanda, M.,
+Narita, S., Bilano, V., Ota, E., Gilmour, S. &
+Shibuya, K. (2016) Maternal anemia and risk of
+adverse birth and health outcomes in low- andmiddle-income countries: systematic review and
+meta-analysis. American Journal of Clinical
+Nutrition ,103, 495 –504.
+Rogers, J., Wood, J., McCandlish, R., Ayers, S.,
+Truesdale, A. & Elbourne, D. (1998) Active ver-
+sus expectant management of third stage of
+labour: the Hinchingbrooke randomised con-trolled trial. Lancet ,351, 693 –699.
+Roy, N.B.A. & Pavord, S. (2018) The management
+of anaemia and haematinic deﬁciencies in preg-
+nancy and post-partum. Transfusion Medicine ,
+28, 107 –116.
+Royal College of Obstetricians and Gynaecologists.
+(2015) Blood transfusion in Obstetrics. Green-
+top Guideline 47. https://www.rcog.org.uk/globalassets/documents/guidelines/gtg-47.pdf
+Rukini, R., Knight, M., Murphy, M.F., Roberts, D.
+& Stansworth, S.J. (2015) Screening for irondeﬁciency and iron deﬁciency anaemia in preg-nancy: a structured review and gap analysis
+against UK national screening criteria. BMC
+Pregnancy Childbirth ,15, 269.
+Schaap, C.C., Hendriks, J.C., Kortman, G.A., Kla-
+ver, S.M., Kroot, J.J., Laarakkers, C.M., Wieger-
+inck, E.T., Tjalsma, H., Janssen, M.C. &
+Swinkels, D.W. (2013) Diurnal rhythm ratherthan dietary iron mediates daily hepcidin varia-
+tions. Clinical Chemistry ,59, 527 –535.
+Scholl, T.O. (2005) Iron status during pregnancy:
+setting the stage for mother and infant. Ameri-
+can Journal of Clinical Nutrition ,81, S1218 –
+S1222.
+Seid, M.H., Derman, R.J., Baker, J.B., Banach, W.,
+Goldberg, C. & Rogers, R. (2008) Ferric car-boxymaltose injection in the treatment of post-
+partum iron deﬁciency anemia: a randomized
+controlled clinical trial. American Journal of
+Obstetrics and Gynecology ,199,4 3 5 .
+Shao, J., Lou, J., Rao, R., Georgieff, M.K., Kaciroti,
+N., Felt, B.T., Zhao, Z.Y. & Lozoff, B. (2012)Maternal serum ferritin concentration is posi-tively associated with newborn iron stores in
+women with low ferritin status in late preg-
+nancy. Journal of Nutrition ,142, 2004 –2009.guideline
+ª2019 British Society for Haematology and John Wiley & Sons Ltd 829
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Shinar, S., Skornick-Rapaport, A. & Maslovitz, S.
+(2017) Iron supplementation in singleton preg-nancy: is there a beneﬁt to doubling the dose of
+elemental iron in iron-deﬁcient pregnant
+women? A randomized controlled trial. Journal
+of Perinatology ,37, 782 –786.
+Skikne, B. & Baynes, R.D. (1994) Iron absorption.
+In: Iron Metabolism in Health and Disease (eds.
+by Brock, J.H., Halliday, J.W., Pippard, M.J. &Powell, L.W.), pp. 151 –187. Saunders, London.
+Smith, G.A., Fisher, S.A., Doree, C., Di Angelanto-
+nio, E. & Roberts, D.J. (2014) Oral or parenteraliron supplementation to reduce deferral, irondeﬁciency and/or anaemia in blood donors.
+Cochrane Database Systematic Reviews ,7,
+CD009532.
+Stevens, G.A., Finucane, M.M., de-Regil, L.M.,
+Paciorek, C.J., Flaxman, S.R., Branca, F., Pe ~na-
+Rosas, J.P., Bhutta, Z.A. & Ezzati, M.; Nutrition
+Impact Model Study Group (Anaemia). (2013)Global, regional, and national trends in haemo-
+globin concentration and prevalence of total and
+severe anaemia in children and pregnant andnon-pregnant women for 1995 –2011: a system-
+atic analysis of population-representative data.
+The Lancet Global Health ,1, e16 –e25.
+Stoffel, N.U., Cercamondi, C.I., Brittenham, G.,
+Zeder, C., Geurts-Moespot, A.J., Swinkels, D.W.,Moretti, D. & Zimmermann, M.B. (2017) Iron
+absorption from oral iron supplements given onconsecutive versus alternate days and as single
+morning doses versus twice-daily split dosing iniron-depleted women: two open-label, ran-
+domised controlled trials. The Lancet Haematol-
+ogy,4, e524 –e533.
+Tapiero, H., Gat /C19e, L. & Tew, K.D. (2001) Iron:
+deﬁciencies and requirements. Biomedicine and
+Pharmacotherapy ,55, 324 –332.
+Thompson, J., Pavord, S. & Lim, K. (2014) Severe
+hemosiderin pigmentation after intravenous iron
+infusion. Journal of Internal Medicine ,44, 706 –
+708.
+US Preventive Services Task Force. (2015). Final
+Recommendation Statement: Iron Deﬁciency
+Anemia in Pregnant Women: Screening and
+Supplementation. https://www.uspreventiveservicestaskforce.org/Page/Document/RecommendationStatementFinal/iron-deficiency-anemia-in-
+pregnant-women-screening-and-supplementa
+tion
+van den Broek, N.R., Letsky, E.A., White, S.A. &
+Shenkin, A. (1998) Iron status in pregnant
+women: which measurements are valid? British
+Journal of Haematology ,103, 817 –824.
+Van Wyk, D.B. & Martens, M.G. (2007) Intra-
+venous ferric carboxymaltose compared with
+oral iron in the treatment of postpartum anae-mia: a randomized controlled trial. Obstetrics &
+Gynecology ,110, 267 –278.Veena, S.R., Gale, C.R., Krishnaveni, G.V., Kehoe,
+S.H., Srinivasan, K. & Fall, C.H. (2016) Associa-
+tion between maternal nutritional status in preg-
+nancy and offspring cognitive function during
+childhood and adolescence; a systematic review[internet]. BMC Pregnancy Childbirth ,16, 220.
+Vora, S., Messina, G. & Pavord, S. (2019) Utility
+of erythrocyte indices in identifying iron
+depletion in pregnancy. Obstetric Medicine ,i n
+press.
+White, J., Qureshi, H., Massey, E., Needs, M.,
+Byrne, G., Daniels, G. & Allard, S.; on behalf ofthe British Committee for Standards in Haema-tology. (2016) Guideline for blood grouping and
+red cell antibody testing in pregnancy. Transfu-
+sion Med ,26, 246 –263.
+WHO. (2017) Nutritional Anaemias: Tools for
+Effective Prevention and Control. World Health
+Organization, Geneva. Page 7 Licence: CC BY-
+NC-SA 3.0 IGO.
+WHO. (2011) Haemoglobin Concentrations for
+the Diagnosis of Anaemia and Assessment of
+Severity. Vitamin and Mineral Nutrition Infor-mation System. World Health Organization,Geneva. (WHO/NMH/NHD/MNM/11.1) http://
+www.who.int/vmnis/indicators/haemoglobin.pdf
+Zoller, H., Schaefer, B. & Glodny, B. (2017) Iron-
+induced hypophosphatemia: an emerging com-plication. Current Opinion in Nephrology and
+Hypertension ,26, 266 –275.Guideline
+830 ª2019 British Society for Haematology and John Wiley & Sons Ltd
+British Journal of Haematology , 2020, 188, 819–830
+ 13652141, 2020, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.16221 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

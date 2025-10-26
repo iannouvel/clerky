@@ -1,0 +1,782 @@
+The Management of Women with Red
+Cell Antibodies during Pregnancy
+Green-top Guideline No. 65
+May 2014RCOG Green-top Guideline No. 65 2 of 26 © Royal College of Obstetricians and GynaecologistsThe Management of Women with Red Cell Antibodies
+during Pregnancy
+This is the first edition of this guideline.
+Executive summary of recommendations
+Prepregnancy counselling
+Women with red cell antibodies, particularly if there is a risk of fetal anaemia or if compatible donor red
+cells for transfusion may be difficult to obtain, should attend for prepregnancy counselling with aclinician with knowledge and expertise of this condition. 
+Red cell antibodies in pregnancy
+What red cell antibodies are clinically significant (maternal and fetal) during pregnancy? 
+All women should have their blood group and antibody status determined at booking and at 28 weeksof gestation (Appendix 2). 
+What are the implications for the fetus and neonate from red cell antibodies?
+Clinicians should be aware that severe fetal anaemia can result in hydrops which significantly worsensthe perinatal outcome. 
+When and how should paternal and fetal genotyping be performed?
+Non-invasive fetal genotyping using maternal blood is now possible for D, C, c, E, e and K antigens. Thisshould be performed in the first instance for the relevant antigen when maternal red cell antibodies are present. 
+For other antigens, invasive testing (chorionic villus sampling [CVS] or amniocentesis) may be considered
+if fetal anaemia is a concern or if invasive testing is performed for another reason (e.g. karyotyping). 
+Is karyotyping contraindicated in the presence of maternal red cell antibodies? 
+Invasive testing is not contraindicated if alloimmunisation has occurred. 
+Anti-D prophylaxis should be given to cover invasive testing if the mother is rhesus D (RhD) negative
+and is not sensitised. 
+If the fetus is at risk of anaemia, when should referral to a fetal medicine specialist take place?
+Referral to a fetal medicine specialist should occur when there are rising antibody levels/titres, alevel/titre above a specific threshold (see section 6.7) or ultrasound features suggestive of fetal anaemia. 
+Referral should take place if there is a history of unexplained severe neonatal jaundice, neonatal
+anaemia requiring transfusion or exchange transfusion, in order to exclude haemolytic disease of thefetus and newborn (HDFN) as the cause. P
+D
+D
+C
+P
+P
+D
+P
+P© Royal College of Obstetricians and Gynaecologists 3 of 26 RCOG Green-top Guideline No. 65For antibodies other than anti-D, anti-c and anti-K, the following should prompt referral to a fetal medicine
+specialist: a history of previous significant HDFN or intrauterine transfusion (IUT), or a titre of 32 or above,especially if the titre is rising as rising titres correlate with increasing risk and severity of anaemia. 
+What thresholds should be used for the various antibodies that could cause fetal anaemia to trigger referral
+for further investigation or monitoring? 
+An anti-D level of >4 iu/ml but <15 iu/ml correlates with a moderate risk of HDFN and an anti-D level
+of >15 iu/ml can cause severe HDFN. Referral for a fetal medicine opinion should therefore be made
+once anti-D levels are >4 iu/ml. 
+An anti-c level of >7.5 iu/ml but <20 iu/ml correlates with a moderate risk of HDFN, whereas an anti-
+c level of >20 iu/ml correlates with a high risk of HDFN. Referral for a fetal medicine opinion should
+therefore be made once anti-c levels are >7.5 iu/ml. 
+For anti-K antibodies, referral should take place once detected, as severe fetal anaemia can occur even
+with low titres. 
+The presence of anti-E potentiates the severity of fetal anaemia due to anti-c antibodies so that referral
+at lower levels/titres is indicated (unless the fetus has only one of these antigens). 
+Once detected how often should antibody levels be monitored during pregnancy? 
+Anti-D and anti-c levels should be measured every 4 weeks up to 28 weeks of gestation and then every2 weeks until delivery.
+Although anti-K titres do not correlate well with either the development or severity of fetal anaemia,
+titres should nevertheless be measured every 4 weeks up to 28 weeks of gestation, then every 2 weeksuntil delivery. 
+For all other antibodies, retesting at 28 weeks is advised with the exception of women who have a
+previous history of pregnancies affected with HDFN when early referral to a fetal medicine specialist isalso recommended. 
+For antibodies that could potentially cause problems with cross-matching or issues with the availability
+of appropriate blood, discussion with the blood transfusion service is required regarding the frequencyof antenatal testing. This may depend on the type of antibody as well as the likelihood of requiringblood at short notice. 
+How should pregnancies at risk of fetal anaemia be monitored? 
+The cause of the alloimmunisation, relevant past history and pregnancy outcomes should beascertained in order to generate an assessment of risk of HDFN. 
+If the fetus carries the corresponding antigen for a maternal antibody which is capable of causing fetal
+anaemia and if the antibody levels/titres rise beyond the levels detailed in section 6.7 then thepregnancy should be monitored weekly by ultrasound, specifically assessing the fetal middle cerebralartery peak systolic velocities (MCA PSV). D
+P
+PC
+DC
+D
+P
+P
+P
+BReferral to a fetal medicine specialist for consideration of invasive treatment should take place if 
+the MCA PSV rises above the 1.5 multiples of the median (MoM) threshold or if there are other signs offetal anaemia. 
+Fetal monitoring is required (as above) once anti-K is detected. 
+If fetal transfusion is required what type of donor blood should be used? 
+Red cell preparations for IUT should be group O (low titre haemolysin) or ABO identical with the fetus
+(if known) and negative for the antigen(s) corresponding to maternal red cell antibodies. 
+IUTs should be performed only in fetal medicine units that have the requisite invasive skills and
+appropriate perinatal haematology expertise. 
+What are the implications for the mother from red cell antibodies? 
+For antibodies other than anti-D, anti-c, anti-C, anti-E or anti-K, maternity staff should liaise with theirlocal transfusion laboratory to assess and plan for any possible transfusion requirements, as obtainingthe relevant blood may take longer. 
+How often should pregnant women with red cell antibodies who are at high risk of requiring a transfusion
+(placenta praevia, sickle cell disease etc.) be tested? 
+Pregnant women with red cell antibodies, who are assessed as being at high risk of requiring a blood
+transfusion, should have a cross-match sample taken at least every week. 
+If maternal transfusion is required, what type of donor blood or blood components should be used? 
+Red cell components of the same ABO group and RhD type, and that are K negative and cytomegalovirus(CMV) negative, should be selected. 
+Should RhD-negative women who have anti-D or non-anti-D antibodies receive routine antenatal or postnatal
+prophylaxis? 
+Anti-D immunoglobulin should be given to RhD-negative women with non-anti-D antibodies for routine
+antenatal prophylaxis, for potential antenatal sensitising events and postnatal prophylaxis. 
+If immune anti-D is detected, prophylaxis is no longer necessary. Discussion and liaison with the transfusion laboratory are essential in determining whether anti-D
+antibodies are immune or passive in women who have previously received anti-D prophylaxis. 
+Requirements for blood
+What are the logistics of obtaining blood or blood components for the woman, fetus or neonate? 
+Blood or blood components for the woman.
+Close collaboration between the maternity, neonatology and haematology staff is essential. 
+When blood is required for women with multiple antibodies or antibodies against high prevalence
+antigens, planning is required as rare blood donors may need to be called up to donate, or frozen bloodmay need to be obtained from the National Frozen Blood Bank in Liverpool. 
+RCOG Green-top Guideline No. 65 4 of 26 © Royal College of Obstetricians and GynaecologistsD
+PP
+P
+P
+P
+D
+B
+D
+D
+P
+P5 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsLocal blood transport time and time for cross-match should be taken into account when the decision for
+transfusion is made. 
+Blood for intrauterine transfusion (IUT)
+Clinicians should be aware that blood for IUT has the same requirements as blood for neonatalexchange (see 7.1.3), except that plasma is removed by the blood centre to increase the haematocrit to0.70–0.85 and it is always irradiated. 
+Blood for neonatal exchange
+Blood should be ABO compatible with the neonate and mother (to avoid ABO HDFN from the woman’santi-A or -B antibodies present), RhD negative (or RhD identical with neonate), K negative, negative forthe corresponding antigen to which the woman has an antibody and cross-match compatible with thewoman’s blood sample. 
+Blood should be less than 5 days old (to ensure low supernatant potassium levels), CMV negative and
+irradiated unless the risk to the baby of delaying exchange transfusion while obtaining irradiated bloodoutweighs this. It should be plasma reduced (rather than in saline-adenine-glucose-mannitol [SAGM]additive solution), with a haematocrit of 0.50–0.60. 
+Blood for neonatal small volume (‘top-up’) transfusion
+Blood should be ABO compatible with the neonate and mother (to avoid ABO HDFN from the woman’santi-A or -B antibodies present), RhD negative (or RhD identical with neonate), K negative and negativefor the corresponding antigen to which the woman has an antibody and cross-match compatible withthe woman’s blood sample. 
+Blood should be CMV negative but does not need to be irradiated unless the neonate has had a previous
+IUT and blood can be stored in SAGM (rather than plasma reduced) and be up to 35 days old (as a top-up transfusion is a much smaller volume than an exchange transfusion). 
+Clinicians considering transfusion in a neonate must check if the baby has had an IUT, as if so, blood
+must be irradiated to prevent transfusion-associated graft-versus-host disease. 
+What blood or blood components can be administered in the emergency situation to a woman known to have
+red cell antibodies? 
+The decision to use ABO-, RhD- and K-compatible blood that is not matched for other antibodies (or O
+negative, where the woman’s ABO and RhD groups are unknown) should be made on the balance of risks(severe haemorrhage versus a haemolytic transfusion reaction). 
+Transfusion should not be delayed in the event of life-threatening haemorrhage. Close liaison with the
+transfusion laboratory is essential. 
+Birth
+What is the optimum mode, place and timing of birth? 
+Timing of delivery for women with red cell antibodies that can cause fetal anaemia will depend on theantibody levels/titres, rate of rise as well as if any fetal therapy has been required. The mode, timingand place of delivery are otherwise dependent on standard obstetric grounds. P
+P
+P
+PD
+D
+D
+D
+D
+DIf a woman is at risk of requiring significant amounts of transfused blood either antenatally, intrapartum
+or postnatally, consideration should be given to transferring her care to a centre capable of processingcross-match samples and providing appropriate compatible blood rapidly. 
+As these are ‘high-risk’ pregnancies, continuous electronic fetal heart monitoring is advised during labour. 
+Cord blood investigations
+What cord blood investigations should be performed? 
+If a woman has clinically significant antibodies (Appendix 1) then cord samples should be taken for a
+direct antiglobulin test (DAT), haemoglobin and bilirubin levels. 
+Management
+How should the neonate be managed? 
+This depends on the risk of haemolysis or anaemia conferred by the relevant red cell antibody. Theneonate should have regular clinical assessment of its neurobehavioural state and be observed for thedevelopment of jaundice and/or anaemia. 
+Regular assessment of bilirubin and haemoglobin levels should be made and early discharge is 
+not advisable. 
+The mother should be encouraged to feed the baby regularly to guard against dehydration, since
+dehydration can increase the severity of jaundice. 
+Clinicians should be aware that if bilirubin levels rise rapidly or above the interventional threshold,
+phototherapy and/or exchange transfusion may be required. 
+Pregnancies complicated by red cell alloimmunisation with a minimal or no risk of fetal or neonatal
+anaemia require no specific treatment. 
+Future Risks
+What is the risk of recurrence in a future pregnancy? 
+A woman with a history of a pregnancy or infant affected by HDFN should be referred for earlyassessment to a fetal medicine specialist in all further pregnancies. 
+Long-term consequences of red cell antibodies to women and their offspring
+What are the long-term health consequences for the woman? 
+Women can be advised that there are no long-term adverse health consequences associated with thepresence of red cell antibodies. 
+What are the long-term health concerns for the children of women with red cell antibodies during pregnancy? 
+Clinicians should be aware that some infants may experience anaemia persisting for a few weeksfollowing birth. 
+Clinicians should be aware that some infants may develop late anaemia which is usually due to
+hyporegenerative anaemia. 
+6 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsP
+CP
+P
+P
+P
+C
+P
+P
+P
+C
+CRCOG Green-top Guideline No. 65 7o f 2 6 © Royal College of Obstetricians and Gynaecologists1. Purpose and scope
+The purpose of this guideline is to provide guidance on the management of pregnant women with red cell
+antibodies predating the pregnancy or those developing antibodies during pregnancy. The guideline alsoincludes the management of fetal anaemia caused by red cell antibodies, as well as the early management ofthe neonate at risk of anaemia and/or hyperbilirubinaemia. It does not address the management of thepregnant woman with anti-platelet antibodies or other autoimmune or alloimmune antibodies.
+2. Introduction and background epidemiology 
+The presence of maternal red cell antibodies during pregnancy is a relatively common finding and requiresclose collaboration between the blood transfusion laboratory, obstetric and neonatal care providers. Apopulation study from the Netherlands found that red cell antibodies were detected in 1.2% of pregnancies,while the prevalence of clinically significant antibodies was placed at 0.4% (Appendix 1).
+1
+The presence of red cell antibodies signifies alloimmunisation that has occurred as a result of previouspregnancy, transfusion or transplantation. Haemolytic disease of the fetus and newborn (HDFN) is a conditionin which transplacental passage of maternal immunoglobulin G (IgG) antibodies results in immunehaemolysis of fetal/neonatal red cells. Some antibodies (including anti-D, anti-K (-Kell) and anti-c) confersignificant fetal and neonatal risks such as anaemia requiring intrauterine or neonatal transfusion, jaundice orperinatal loss. There are many antibodies that are unlikely to significantly affect the fetus but can causeneonatal anaemia and hyperbilirubinaemia, while others may cause problems for the screening and provisionof appropriate blood or blood components to the mother or fetus/neonate when required (Appendix 1). 
+Anti-D is the most commonly encountered antibody during pregnancy. Before routine antenatal anti-D
+prophylaxis, late immunisation during a first pregnancy was responsible for 18–27% of cases. Immunisationduring a second or subsequent pregnancy probably accounts for a similar proportion of cases, although it isoften impossible to distinguish late sensitisation from failure of prophylaxis at the end of the precedingpregnancy.
+2Antibodies of the ABO blood group system can also cause mild to moderate anaemia and jaundice
+in the neonate and occasionally in the fetus. In particular, anti-A and anti-B antibodies of the IgG subclass in agroup O mother can cross the placenta and cause haemolysis of fetal erythrocytes. 
+3. Identification and assessment of evidence
+This RCOG guideline was developed in accordance with standard methodology for producing RCOG Green-top Guidelines. The Cochrane Library (including the Cochrane Database of Systematic Reviews), DARE,EMBASE, TRIP , MEDLINE and PubMed (electronic databases) were searched for relevant randomisedcontrolled trials, systematic reviews, meta-analyses and other studies. The search was restricted to articlespublished between 1960 and July 2013. The databases were searched using the relevant MeSH terms,including all subheadings, and this was combined with a keyword search. Search terms included: red cellantibody, red blood cell antigen, erythroblastosis fetalis, blood group incompatibility, haemolytic disease ofnewborn, anti-D, anti-c, anti-E, anti-K, Kidd, Duffy, Diego alloimmunisation. The search was limited to humansand the English language. NHS Evidence and the National Guideline Clearinghouse were also searched forrelevant guidelines and reviews. 
+4. Prepregnancy counselling
+4.1 Is prepregnancy counselling necessary for women known to have red cell antibodies prior to pregnancy?
+Women with red cell antibodies, particularly if there is a risk of fetal anaemia or if compatible donor red
+cells for transfusion may be difficult to obtain, should attend for prepregnancy counselling with aclinician with knowledge and expertise of this condition. PRoutine prepregnancy screening for red cell antibodies is not indicated. Most women would have had
+antibodies detected in a previous pregnancy, screening prior to blood transfusion/donation or fortuitously forsome other indication. Women with clinically significant red cell antibodies should be given informationregarding the possible implications (maternal and fetal) to the pregnancy. This will clearly depend on the typeof antibody present. Counselling should be by a clinician with knowledge and expertise of this condition andin most cases this will be a fetal medicine specialist. 
+A guideline issued by the British Committee for Standards in Haematology (BCSH)
+3on antibodies in
+pregnancy recommends that women with clinically significant antibodies should be issued with a card givingdetails of the antibody.
+5. Assisted reproductive techniques (ART)
+5.1 Do assisted reproductive techniques (ART) increase the risk of red cell antibodies developing?
+There is no evidence that ART increases the risk of red cell alloimmunisation. However, if donor eggs are usedfor a mother with an alloantibody and the donor red cell antigen status is not known, fetal genotyping maybe required. 
+6. Red cell antibodies in pregnancy
+6.1 What is the incidence of red cell antibodies in pregnancy? 
+In a population study conducted in the Netherlands, the prevalence of positive antibody screenswas 1:80, with a 1:300 prevalence of clinically significant alloantibodies other than anti-D.
+1
+Previous blood transfusion is an important cause for alloimmunisation with antibodies other thananti-D implicated in HDFN.
+4
+6.2 What red cell antibodies are clinically significant (maternal and fetal) during pregnancy? 
+All women should have their blood group and antibody status determined at booking and at 28 weeks
+of gestation (Appendix 2). 
+Relevant antibodies are presented in Appendix 1. Antibodies to many of the red cell antigens have
+the potential to be clinically significant and will have implications for the selection of blood fortransfusion in the mother to avoid the risk of haemolytic transfusion reactions (HTRs). For thisreason, the blood group and antibody status of the mother should be tested at booking and at 28weeks of gestation.
+5In addition to the risk of fetal anaemia, the presence of maternal red cell
+antibodies can hinder the timely provision of blood and blood components because of difficulty inobtaining antigen-negative blood and/or cross-matching issues.
+3
+The risk of fetal anaemia is greatest with anti-D, anti-c and anti-K antibodies. Other antibodies thatpotentially cause significant fetal anaemia include anti-E, -Fy
+a, -Jka, -C and -Ce.6–9There are numerous
+other antibodies that usually only cause mild haemolysis that is only rarely significant (Appendix 1). 
+6.3 What are the implications for the fetus and neonate from red cell antibodies?
+Clinicians should be aware that severe fetal anaemia can result in hydrops which significantly worsens
+the perinatal outcome. 
+Fetal anaemia, hyperbilirubinaemia and neonatal jaundice can result from red cell antibodies that
+cause haemolysis or impaired erythropoiesis in utero. Untreated, severe fetal anaemia can result inhydrops, preterm birth or perinatal death. The overall perinatal survival in pregnancies complicated
+8 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++
+D
+Evidence
+level 4
+Evidence
+level 3
+D
+Evidence
+level 3Evidence
+level 2+RCOG Green-top Guideline No. 65 9o f 2 6 © Royal College of Obstetricians and Gynaecologistsby red cell antibodies causing fetal anaemia following treatment was reported to be 84%, with
+nonhydropic fetuses having better survival (94%) than hydropic fetuses (74%).10
+Anti-K causes anaemia secondary to erythroid suppression and immune destruction of earlyerythroid progenitor cells, but hyperbilirubinaemia is not a prominent feature.
+11Severe fetal
+anaemia can occur even at relatively low antibody titres.12
+6.4 When and how should paternal and fetal genotyping be performed?
+Non-invasive fetal genotyping using maternal blood is now possible for D, C, c, E, e and K antigens. 
+This should be performed in the first instance for the relevant antigen when maternal red cell antibodiesare present. 
+For other antigens, invasive testing (chorionic villus sampling [CVS] or amniocentesis) may be considered
+if fetal anaemia is a concern or if invasive testing is performed for another reason (e.g. karyotyping). 
+Where clinically significant maternal red cell antibodies are detected, the paternal phenotype can be ascertained
+by serology. However with the rhesus D (RhD) antigen specifically, in an antigen-positive father, while a likelyphenotype can be deduced, genotyping is required to determine whether he is homozygous or heterozygousfor the 
+RHD gene. If the father is homozygous for the red cell antigen then all pregnancies are potentially at risk. 
+It is also reasonable to omit paternal testing and proceed directly to fetal genotyping to avoid issues
+of nonpaternity. It is now possible to determine the fetal genotype non-invasively from maternalblood.
+13Using polymerase chain reaction techniques, the fetal RHD status can be detected with
+great sensitivity using free fetal DNA (ffDNA) extracted from maternal plasma. The fetal C, c, E, e andK genotype can also be detected using this method (with an accuracy of fetal RhC/c and RhE/egenotype estimations from maternal blood between 96–98%, which compares well with thereported accuracy of fetal RhD of > 95%).
+14,15Genotyping can be undertaken from 16 weeks of
+gestation for all except K which can be undertaken from 20 weeks, due to the risk of a false-negative result if performed earlier in pregnancy. However, in some cases, results are inconclusiveas it is not possible to confirm that fetal DNA, as well as maternal DNA, is present in the sample. Inthese cases, consideration may need to be given to repeating the non-invasive test, performing anamniocentesis or managing the pregnancy as one that is at risk. It is also reasonable not to performfetal genotyping until the antibody reaches a level that would warrant fetal middle cerebral artery(MCA) Doppler monitoring. 
+Of note, in dizygotic twins, a maternal blood test for fetal genotyping will not differentiate between the twins:
+just that at least one has the corresponding gene. If fetal monitoring for anaemia is indicated, each twin wouldneed to be monitored separately. 
+ Non-invasive genotyping is not possible for some red cell antigens. In these cases invasive testing (CVS or
+amniocentesis) may be considered. However, the risks of the procedure (miscarriage, worsening ofalloimmunisation) need to be balanced against the benefit that knowledge of the fetal genotype brings to themanagement of the pregnancy. It would normally only be indicated if there was a history of a significantproblem with HDFN, or MCA Doppler ultrasound suggested developing fetal anaemia and intrauterinetransfusion (IUT) was being considered. 
+6.5 Is karyotyping contraindicated in the presence of maternal red cell antibodies? 
+Invasive testing is not contraindicated if alloimmunisation has occurred. 
+Anti-D prophylaxis should be given to cover invasive testing if the mother is RhD negative and is not
+sensitised. PPC
+Evidence
+level 2+
+DEvidence
+level 3
+Evidence
+level 2+RCOG Green-top Guideline No. 65 10 of 26 © Royal College of Obstetricians and GynaecologistsInvasive testing solely for the purposes of fetal genotyping is seldom required as this can be undertaken using
+maternal blood in the majority of cases. However, if karyotyping is necessary for a separate indication,concomitant genotyping can be performed. 
+In addition to the procedure-related risks, any invasive procedure will further increase the risk of
+alloimmunisation, through either the increasing of antibody levels or the development of furtherantibodies. If the mother is RhD negative and is not sensitised, anti-D prophylaxis should be givento cover invasive testing.
+16
+6.6 If the fetus is at risk of anaemia, when should referral to a fetal medicine specialist take place?
+Referral to a fetal medicine specialist should occur when there are rising antibody levels/titres, a
+level/titre above a specific threshold (see section 6.7) or ultrasound features suggestive of fetalanaemia. 
+Referral should take place if there is a history of unexplained severe neonatal jaundice, neonatal
+anaemia requiring transfusion or exchange transfusion, in order to exclude HDFN as the cause. 
+For antibodies other than anti-D, anti-c and anti-K, the following should prompt referral to a fetal
+medicine specialist: a history of previous significant HDFN or IUT, or a titre of 32 or above, especially ifthe titre is rising as rising titres correlate with increasing risk and severity of anaemia. 
+Referral to a fetal medicine specialist will depend on the type of antibody and its levels or titres.
+The risk of fetal anaemia is greatest with anti-D, anti-c and anti-K. In addition to these antibodies,other antibodies may rarely cause fetal anaemia (Appendix 1) and referral may be indicated.
+1,3Once
+alloimmunisation has occurred, the fetus may be at risk from anaemia and the risk appears tocorrelate with increasing antibody titres. 
+6.7 What thresholds should be used for the various antibodies that could cause fetal anaemia to trigger
+referral for further investigation or monitoring? 
+An anti-D level of >4 iu/ml but <15 iu/ml correlates with a moderate risk of HDFN and an anti-D level
+of > 15 iu/ml can cause severe HDFN. Referral for a fetal medicine opinion should therefore be made
+once anti-D levels are >4 iu/ml. 
+An anti-c level of >7.5 iu/ml but <20 iu/ml correlates with a moderate risk of HDFN, whereas an anti-
+c level of >20 iu/ml correlates with a high risk of HDFN. Referral for a fetal medicine opinion should
+therefore be made once anti-c levels are >7.5 iu/ml. 
+For anti-K antibodies, referral should take place once detected, as severe fetal anaemia can occur even
+with low titres. 
+The presence of anti-E potentiates the severity of fetal anaemia due to anti-c antibodies so that referral
+at lower levels/titres is indicated (unless the fetus has only one of these antigens). 
+An anti-D level < 4 iu/ml or an anti-c level of < 7.5 iu/ml correlates with a low risk of fetal anaemia
+and therefore referral to a fetal medicine specialist is not immediately indicated (Appendix 3).3,17,18
+Serial monitoring of antibody levels is necessary. Once referral to a fetal medicine specialist hasbeen made for assessment of pregnancy at moderate or high risk of HDFN, the value of subsequentquantitation of anti-D and anti-c levels is doubtful. Further testing is however required at 28 weeksfor the development of additional red cell antibodies. Caution is required however if there is ahistory of a severely affected previous pregnancy even if the antibody levels are low in the currentpregnancy. For such cases early referral to a fetal medicine specialist should be made so that anP
+PPPEvidence
+level 4
+Evidence
+level 4D
+CC
+Evidence
+level 2+11 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and Gynaecologistsexpert assessment of risk can be undertaken. For these women, ultrasound monitoring may be
+required even with low antibody levels. 
+Anti-K titres appear to correlate poorly with the severity of disease with fetal anaemia occurring at titres as
+low as 8.19
+The presence of anti-E potentiates the severity of fetal anaemia due to anti-c antibodies so, unless the fetushas only one of these antigens, referral at lower levels/titres is indicated.
+6.8 Once detected how often should antibody levels be monitored during pregnancy? 
+Anti-D and anti-c levels should be measured every 4 weeks up to 28 weeks of gestation and then every
+2 weeks until delivery. 
+Although anti-K titres do not correlate well with either the development or severity of fetal anaemia,
+titres should nevertheless be measured every 4 weeks up to 28 weeks of gestation, then every 2 weeksuntil delivery. 
+For all other antibodies, retesting at 28 weeks is advised with the exception of women who have a
+previous history of pregnancies affected with HDFN when early referral to a fetal medicine specialist isalso recommended. 
+For antibodies that could potentially cause problems with cross-matching or issues with the availability
+of appropriate blood, discussion with the blood transfusion service is required regarding the frequencyof antenatal testing. This may depend on the type of antibody as well as the likelihood of requiringblood at short notice. 
+Blood samples from women with immune anti-D, anti-c or anti-K should be tested at least monthly
+until 28 weeks of gestation and every 2 weeks thereafter until delivery to monitor the level ofantibody and to identify any additional antibodies that may have developed.
+3
+When red cell antibodies are detected in the ‘booking’ sample, further testing of maternal bloodshould be undertaken to determine the specificity and level of antibody or antibodies, and to assessthe likelihood of HDFN.
+3The levels of anti-D and anti-c antibodies are quantified using an automated
+analyser whereas the titre of other antibodies is determined by titration using doubling dilution. 
+6.9 How should pregnancies at risk of fetal anaemia be monitored? 
+The cause of the alloimmunisation, relevant past history and pregnancy outcomes should be
+ascertained in order to generate an assessment of risk of HDFN. 
+If the fetus carries the corresponding antigen for a maternal antibody which is capable of causing fetal
+anaemia and if the antibody levels/titres rise beyond the levels detailed in section 6.7 then thepregnancy should be monitored weekly by ultrasound, specifically assessing the fetal middle cerebralartery peak systolic velocities (MCA PSV). 
+Referral to a fetal medicine specialist for consideration of invasive treatment should take place if 
+the MCA PSV rises above the 1.5 multiples of the median (MoM) threshold or if there are other signs offetal anaemia. 
+Fetal monitoring is required (as above) once anti-K is detected. Evidence
+level 4Evidence
+level 2+
+D
+PP
+P
+P
+PD
+BThe cause of the alloimmunisation should be ascertained: for example, inadequate or omitted anti-
+D prophylaxis or a previous blood transfusion. Details of previously affected pregnancies,particularly IUTs and the gestation at which they were commenced, neonatal anaemia, gestation atdelivery and the need for exchange transfusions or phototherapy, should also be obtained. Thisinformation enables a risk assessment of the pregnancy to be made. Ultrasound monitoring shouldcommence once there is a moderate or severe risk of fetal anaemia.
+20
+If the fetus is antigen positive, it will be at risk of anaemia and the pregnancy needs to be serially monitored.Pregnancies at risk should be monitored on a weekly basis looking specifically at the MCA PSV . Other signsthat might suggest fetal anaemia include polyhydramnios, skin oedema and cardiomegaly. Although the risksof fetal anaemia are well known for anti-D, anti-c and anti-K antibodies and weekly monitoring is advisable,the risks for other less common antibodies is difficult to precisely quantify. A reasonable approach would beultrasound monitoring every 1–2 weeks using the MCA PSV . 
+Ultrasound monitoring should be performed by a professional with appropriate expertise to reliably perform
+MCA Doppler assessment (see International Society of Ultrasound in Obstetrics and Gynecology practiceguidelines for the use of Doppler ultrasonography in obstetrics
+21). If the MCA PSV rises beyond the
+interventional threshold then referral to a fetal medicine specialist with expertise in IUT should be made. 
+MCA PSV monitoring is predictive of moderate or severe fetal anaemia with 100% sensitivity and a
+false positive rate of 12%.20
+If monitoring of the MCA indicates anaemia (MCA PSV > 1.5 MoM), fetal blood sampling (FBS) and possiblyIUT are indicated. Monitoring with MCA PSV should be used with caution after 36 weeks as its sensitivity forthe detection of fetal anaemia decreases. If there are concerns beyond this gestation because of raised MCAPSV , further advice should be sought from a fetal medicine specialist experienced in managing fetal anaemia.Further management should also be discussed with a fetal medicine specialist if MCA PSV levels are normaldespite high or increasing antibody levels beyond 36 weeks of gestation. The risk of fetal loss following an FBSis 1–3%, but is higher if the fetus is hydropic.
+10
+The procedure is carried out under continuous ultrasound guidance with facilities for immediate analysis ofthe fetal blood haemoglobin and haematocrit. The risks and benefits of IUT should always be discussed withthe woman who should be made aware of the consequences of untreated severe fetal anaemia (i.e. hydrops,preterm birth, perinatal death, severe neonatal jaundice and kernicterus) as well as the risks of neonatalexchange transfusion.
+6.10 If fetal transfusion is required what type of donor blood should be used? 
+Red cell preparations for IUT should be group O (low titre haemolysin) or ABO identical with the fetus
+(if known) and negative for the antigen(s) corresponding to maternal red cell antibodies. 
+IUTs should be performed only in fetal medicine units that have the requisite invasive skills and
+appropriate perinatal haematology expertise. 
+Blood should be IAT (indirect antiglobulin test) cross-match compatible with maternal plasma and
+negative for the relevant antigen(s) determined by maternal antibody status.22K-negative blood is
+recommended to reduce additional maternal alloimmunisation risks. It should also be less than 5 daysold and in citrate phosphate dextrose (CPD) anticoagulant, cytomegalovirus (CMV) seronegative,irradiated and transfused within 24 hours of irradiation. Blood packs should have a haematocrit(packed cell volume, PCV) of 0.70–0.85.
+23Blood for IUT should never be transfused straight from 4ºC
+storage.22In exceptional cases, it will be necessary to give O RhD-positive, c-negative blood, for example
+in HDFN because of anti-c alloimmunisation, where giving RhD-negative blood would be harmful.22
+RCOG Green-top Guideline No. 65 12 of 26 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4Evidence
+level 2+
+PEvidence
+level 2+
+DAs the number of cases of fetal anaemia due to red cell alloimmunisation is decreasing, fewer fetal medicine
+specialists will have the necessary skills to perform IUTs. These cases should be referred to tertiary unitswhere the appropriate intrauterine invasive skills and perinatal haematology expertise are available. If FBS isbeing performed for suspected fetal anaemia, the appropriate blood pack for an IUT should be immediatelyavailable. This will require prior liaison with the transfusion laboratory. It is not good practice to perform adiagnostic FBS and then defer the IUT to a later time because suitable blood is not available. 
+While 24 hours’ notice may be requested for planned IUTs, in an emergency, blood for IUT can be provided
+in less time following discussion with the blood transfusion service; in a dire emergency, discussion should beundertaken with the relevant consultant haematologist regarding the best compromise of blood available. 
+6.11 What are the implications for the mother from red cell antibodies? 
+For antibodies other than anti-D, anti-c, anti-C, anti-E or anti-K, maternity staff should liaise with their
+local transfusion laboratory to assess and plan for any possible transfusion requirements, as obtainingthe relevant blood may take longer. 
+The implications relate to possible transfusion problems for the mother in terms of the availability and
+provision of compatible blood. 
+6.12 How often should pregnant women with red cell antibodies who are at high risk of requiring a
+transfusion (placenta praevia, sickle cell disease etc.) be tested? 
+Pregnant women with red cell antibodies, who are assessed as being at high risk of requiring a blood
+transfusion, should have a cross-match sample taken at least every week. 
+Current BCSH guidelines require a sample no more than 72 hours old for providing compatible blood in
+pregnancy,24but do allow a deviation to the 3-day rule for individual cases such as high-risk women with
+placenta praevia without red cell antibodies where weekly samples can be taken, as long as a risk assessmentis made and recorded in each individual case. In high-risk women with red cell antibodies where a sampleevery 72 hours is not feasible, a sample should be taken once a week and if transfusion is required a newsample should be taken immediately, to exclude new antibody development. However, in the event of life-threatening haemorrhage, urgent transfusion should not be delayed (see section 7.2) and close liaison withthe hospital transfusion laboratory is vital. 
+6.13 If maternal transfusion is required, what type of donor blood or blood components should be used? 
+Red cell components of the same ABO group and RhD type, and that are K negative and CMV negative,
+should be selected. 
+If group ABO-identical blood is not available for group A, B or AB patients, group O blood should
+be used. Pregnant women and women of childbearing age who are RhD negative should receiveRhD-negative blood. The transfused blood should also be K negative. Blood which has beenphenotyped and found negative for the antigen corresponding to the maternal antibody shouldbe provided. Antigen-negative red cells should also be selected when a clinically significantantibody has previously been identified, but cannot be detected in the most recent cross-matchsample. An IAT cross-match must be used if the woman’s plasma contains or has previouslycontained clinically significant red cell alloantibodies (see section 7.2).
+24For planned antenatal
+transfusions, CMV-negative blood should be transfused.25Screening for CMV should not delay
+transfusion in an emergency situation; all blood in the UK also undergoes leucodepletion whichsignificantly reduces risk of CMV transmission by blood.
+25
+13 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsP
+P
+Evidence
+level 4D6.14 Should RhD-negative women who have anti-D or non-anti-D antibodies receive routine antenatal or
+postnatal prophylaxis? 
+Anti-D immunoglobulin should be given to RhD-negative women with non-anti-D antibodies for routine
+antenatal prophylaxis, for potential antenatal sensitising events and postnatal prophylaxis. 
+If immune anti-D is detected, prophylaxis is no longer necessary. Discussion and liaison with the transfusion laboratory are essential in determining whether anti-D
+antibodies are immune or passive in women who have previously received anti-D prophylaxis. 
+Anti-D immunoglobulin prophylaxis is given to prevent RhD-negative women forming anti-D
+antibodies in the event of a potentially sensitising event during pregnancy and/or as part of routineantenatal anti-D prophylaxis (RAADP).
+16,26It is important to remember to administer anti-D
+prophylaxis to RhD-negative women who have other red cell antibodies, as this will still preventthe formation of immune anti-D. 
+Women who are already sensitised, i.e. have immune anti-D, should not be given anti-D prophylaxis.
+3
+In the non-RhD-sensitised woman, if fetal genotyping indicates that the fetus is RhD negative or if the father
+is confirmed to be RhD negative then anti-D prophylaxis is not required. 
+Women given anti-D immunoglobulin may have a positive antibody screen on subsequent testing
+and it may be difficult to determine if this anti-D is passive following administration of aprophylactic dose or immune as result of sensitisation. It is essential to liaise with the transfusionlaboratory to discuss appropriate interpretation.
+3
+7. Requirements for blood
+7.1 What are the logistics of obtaining blood or blood components for the woman, fetus or neonate? 
+7.1.1 Blood or blood components for the woman
+Close collaboration between the maternity, neonatology and haematology staff is essential. 
+When blood is required for women with multiple antibodies or antibodies against high prevalence
+antigens, planning is required as rare blood donors may need to be called up to donate, or frozen bloodmay need to be obtained from the National Frozen Blood Bank in Liverpool. 
+Local blood transport time and time for cross-match should be taken into account when the decision for
+transfusion is made. 
+An assessment and discussion of the likelihood of the need for blood, as well as all appropriate preventative
+measures to reduce the likelihood of transfusion should take place as early in pregnancy as feasible betweenthe maternity and haematology staff. This will optimise the use of rare blood, taking account of the needs ofthe patient together with the scarcity of the blood. Any haematinic deficiency should be corrected.Multidisciplinary planning of delivery should take place to reduce blood loss and intra-operative cell salvageshould be available where appropriate. 
+The appropriate management of transfusion in the mother and the baby requires essential communication
+not only between teams within a hospital but also between hospitals if cases are referred to tertiary centres. 
+Blood can usually be sourced from hospital stocks for women with anti-D, -c, -C, -E or -K as all units are labelled
+RCOG Green-top Guideline No. 65 14 of 26 © Royal College of Obstetricians and GynaecologistsD
+DB
+PEvidence
+level 2++
+P
+PEvidence
+level 4
+Evidence
+level 4with full Rh and K antigen status. For antibodies other than anti-D, -c, -C, -E and -K, blood will most likely need
+to be obtained from the regional blood transfusion centre, so additional transport time may be required. Forantibodies where compatible blood is rare, a national search for compatible blood may be required. Ifinsufficient blood is available, blood may need to be obtained from the National Frozen Blood Bank inLiverpool, or rare blood donors called up to donate. Obtaining frozen blood entails a delay of approximately4–6 hours for 2 units to be thawed, multiply washed and processed to remove glycerol, with a further 2 hoursfor each additional 2 units plus additional transportation time.
+The shelf life of frozen units, once thawed, is 72 hours and they cannot be refrozen. Calling up rare donors to
+donate requires advance notification where possible. There may be additional delays because of necessaryvirology testing and other processing which may take up to 1 working day. The timing of obtainingappropriate donor blood should take account of when the woman is most likely to need that blood.
+7.1.2 Blood for intrauterine transfusion (IUT)
+Clinicians should be aware that blood for IUT has the same requirements as blood for neonatal
+exchange (see 7.1.3), except that plasma is removed by the blood centre to increase the haematocrit to0.70–0.85 and it is always irradiated. 
+Blood for IUT is processed to order as it only has 24 hours’ shelf life after processing and normally
+requires a minimum of 1 working day’s notice, unless an emergency.22,23As with neonatal exchange
+blood, if maternal antibodies other than anti-D, -c, -C, -E or -K are present, advance warning shouldbe given where possible to ensure that suitable blood, negative for all relevant antigens, is available. 
+7.1.3 Blood for neonatal exchange
+Blood should be ABO compatible with the neonate and mother (to avoid ABO HDFN from the woman’s
+anti-A or -B antibodies present), RhD negative (or RhD identical with neonate), K negative, negative forthe corresponding antigen to which the woman has an antibody and cross-match compatible with thewoman’s blood sample. 
+Blood should be less than 5 days old (to ensure low supernatant potassium levels), CMV negative and
+irradiated unless the risk to the baby of delaying exchange transfusion while obtaining irradiated bloodoutweighs this. It should be plasma reduced (rather than in saline-adenine-glucose-mannitol [SAGM]additive solution), with a haematocrit of 0.50–0.60. 
+If maternal antibodies other than anti-D, -c, -C, -E or -K are present, units negative for those antigens
+may require a search of other centres. Ideally, in view of the 5-day shelf life, staff should discuss suchcases with the blood transfusion laboratory in advance of delivery to ensure that appropriate bloodis available. Once irradiated, exchange blood has a shelf life of 24 hours.
+22
+Blood should be CMV negative, to minimise the risk of CMV infection in the neonate and irradiatedto prevent transfusion-associated graft-versus-host disease, due to the large volume of bloodtransfused to a neonate. Plasma-reduced blood is preferable as blood suspended in SAGM containsglucose, which can result in rebound hypoglycaemia, and mannitol with potential diuretic andintracerebral pressure effects. The recommended haematocrit allows for sufficient correction ofanaemia after exchange, but without an unacceptably high haematocrit, with its associated risks tothe neonate.
+22
+Blood for exchange transfusion is normally obtained from a regional blood centre, which routinely stocksgroups O negative and O positive (c negative and K negative) exchange units on the shelf. Blood transporttime and time for cross-match should also be taken into account. 
+15 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsD
+D
+Evidence
+level 4Evidence
+level 4D7.1.4 Blood for neonatal small volume (‘top-up’) transfusion
+Blood should be ABO compatible with the neonate and mother (to avoid ABO HDFN from the woman’s
+anti-A or -B antibodies present), RhD negative (or RhD identical with neonate), K negative and negativefor the corresponding antigen to which the woman has an antibody and cross-match compatible withthe woman’s blood sample. 
+Blood should be CMV negative but does not need to be irradiated unless the neonate has had a previous
+IUT and blood can be stored in SAGM (rather than plasma reduced) and be up to 35 days old (as a top-up transfusion is a much smaller volume than an exchange transfusion). 
+Clinicians considering transfusion in a neonate must check if the baby has had an IUT, as if so, blood
+must be irradiated to prevent transfusion-associated graft-versus-host disease. 
+While blood for IUT should be irradiated because of the physiological immune incompetence of
+the fetus allowing transfusion-induced tolerance or immunosuppression, for top-up (small volume)neonatal transfusions, in the absence of any preceding IUT, irradiation is not required.
+22
+In view of the less restrictive shelf life of blood required, blood compatible for maternal antibodies other thananti-D, -c, -C, -E or -K may be more readily available in the regional blood centre than blood for exchange orIUT, but advance warning should be given to transfusion labs wherever possible. 
+7.2 What blood or blood components can be administered in the emergency situation to a woman known to
+have red cell antibodies? 
+The decision to use ABO-, RhD- and K-compatible blood that is not matched for other antibodies (or O
+negative, where the woman’s ABO and RhD groups are unknown) should be made on the balance of risks(severe haemorrhage versus a haemolytic transfusion reaction). 
+Transfusion should not be delayed in the event of life-threatening haemorrhage. Close liaison with the
+transfusion laboratory is essential. 
+Obstetric, haematology and transfusion laboratory staff should discuss when to give alternative blood, when
+sufficient compatible blood is not readily available, based on the balance of clinical risks (severe haemorrhageversus a haemolytic transfusion reaction with associated complications, including renal failure).
+If ABO-, RhD- and K-compatible blood that is not matched for other antibodies is used for
+resuscitation in the event of life-threatening haemorrhage, consider giving intravenousmethylprednisolone 1 g and monitor the woman closely.
+27If a severe transfusion reaction develops,
+full resuscitative measures, including the use of adrenaline, may be required.28The presence of
+maternal red cell antibodies has no implications for other blood components such as platelets, freshfrozen plasma, cryoprecipitate or fractionated products. 
+8. Birth
+8.1 What is the optimum mode, place and timing of birth?
+Timing of delivery for women with red cell antibodies that can cause fetal anaemia will depend on the
+antibody levels/titres, rate of rise as well as if any fetal therapy has been required. The mode, timingand place of delivery are otherwise dependent on standard obstetric grounds. 
+RCOG Green-top Guideline No. 65 16 of 26 © Royal College of Obstetricians and GynaecologistsP
+P
+PEvidence
+level 4Evidence
+level 4D
+D
+DIf a woman is at risk of requiring significant amounts of transfused blood either antenatally, intrapartum
+or postnatally, consideration should be given to transferring her care to a centre capable of processingcross-match samples and providing appropriate compatible blood rapidly. 
+As these are ‘high-risk’ pregnancies, continuous electronic fetal heart monitoring is advised during labour. 
+In general, for red cell antibodies that could cause fetal anaemia but which have been stable throughout
+pregnancy, delivery should take place between 37 and 38 weeks of gestation. If an IUT has not been requiredbut antibody levels are rising then consideration for earlier delivery may be necessary. If an IUT has beenrequired, delivery will need to be timed to ensure that the fetus is not significantly anaemic at birth. This willdepend on the gestation that the last IUT was performed as well as the estimated rate of drop of fetalhaemoglobin/haematocrit. Decisions about the timing of delivery are most appropriately made by the fetalmedicine team managing these pregnancies. Prior IUT is not in itself an indication for elective caesarean section.The neonatal team should be advised of the timing of delivery in the event that further neonatal care is required.
+As not all obstetric units will have the haematological expertise and resources to deal with cases of massive
+obstetric haemorrhage against the background of difficulties in obtaining blood safe for transfusion,consideration should be given to transferring these more complex cases to a centre where such facilities are available. 
+Although the National Institute for Health and Care Excellence (NICE) guideline on intrapartum care contains
+no specific recommendation for fetal monitoring in pregnancies complicated by red cell antibodies,
+29these
+pregnancies are generally considered to be ‘high risk’ and intrapartum continuous electronic fetal heartmonitoring is therefore advised.
+9. Cord blood investigations
+9.1 What cord blood investigations should be performed? 
+If a woman has clinically significant antibodies (Appendix 1) then cord samples should be taken for a
+direct antiglobulin test (DAT), haemoglobin and bilirubin levels. 
+Cord blood investigations (DAT, haemoglobin and bilirubin levels) should be undertaken in addition to ABO
+and RhD typing where the mother is known to have immune red cell antibodies. A positive DAT indicatesthat the infant’s red cells are coated with antibody but in itself cannot predict severity of haemolysis. Notablythe DAT may be negative in ABO HDFN. It is therefore essential to also determine haemoglobin and bilirubinlevels to ascertain the degree of anaemia and haemolysis at birth and this helps guide management as below. 
+10. Management
+10.1 How should the neonate be managed? 
+This depends on the risk of haemolysis or anaemia conferred by the relevant red cell antibody. The
+neonate should have regular clinical assessment of its neurobehavioural state and be observed for thedevelopment of jaundice and/or anaemia. 
+Regular assessment of bilirubin and haemoglobin levels should be made and early discharge is not
+advisable. 
+The mother should be encouraged to feed the baby regularly to guard against dehydration, since
+dehydration can increase the severity of jaundice. 
+17 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsPPP
+P
+CPClinicians should be aware that if bilirubin levels rise rapidly or above the interventional threshold,
+phototherapy and/or exchange transfusion may be required. 
+Pregnancies complicated by red cell alloimmunisation with a minimal or no risk of fetal or neonatal
+anaemia require no specific treatment. 
+Guidance from NICE30summarises the approach to the management of neonatal jaundice including
+bilirubin and haemoglobin monitoring, indications for phototherapy, intravenous immunoglobulinuse and exchange transfusion. Exchange transfusion may be used to manage severe anaemia at birthand to treat severe hyperbilirubinaemia. Such a transfusion is undertaken with the aims of removingboth the antibody-coated red cells and the excess bilirubin.
+22
+11. Future risks
+11.1 What is the risk of recurrence in a future pregnancy? 
+A woman with a history of a pregnancy or infant affected by HDFN should be referred for early
+assessment to a fetal medicine specialist in all further pregnancies. 
+The risk of recurrence of HDFN depends on the type of antibody, the paternal genotype as well as the severity
+and gestational onset of the fetal anaemia.
+12. Long-term consequences of red cell antibodies to women and their offspring
+12.1 What are the long-term health consequences for the woman? 
+Women can be advised that there are no long-term adverse health consequences associated with the
+presence of red cell antibodies. 
+There are no long-term health consequences for the woman, but an antibody card should be carried
+in case transfusion is required.31
+12.2 What are the long-term health concerns for the children of women with red cell antibodies during
+pregnancy? 
+Clinicians should be aware that some infants may experience anaemia persisting for a few weeks
+following birth. 
+Clinicians should be aware that some infants may develop late anaemia which is usually due to
+hyporegenerative anaemia. 
+Anaemia persisting for a few weeks after birth is usually the result of passively acquired maternal
+antibodies causing continued haemolysis.32
+Late anaemia may develop due to a transient suppression of neonatal erythropoiesis, itself due totransfusion. Babies who have required several IUTs are at particular risk.
+32
+Affected infants have suppression of erythropoiesis with low numbers of reticulocytes despite a low packedcell volume and normal erythropoietin values. ‘Top-up’ transfusions are required only if the infant issymptomatic. There is some evidence that the need and frequency of ‘top-up’ transfusions may be decreasedif recombinant erythropoietin is used.
+33–35
+RCOG Green-top Guideline No. 65 18 of 26 © Royal College of Obstetricians and GynaecologistsEvidence
+level
+2+/2++C
+P
+P
+C
+C
+Evidence
+level 2+P
+Evidence
+level 2–The risk of long-term neurodevelopmental delay is no different in the antenatally treated cohort compared
+with unaffected pregnancies, with normal outcome expected in more than 90% of cases.36With appropriate
+management, kernicterus is seen rarely. Sensorineural hearing loss is more common in infants affected byhaemolytic disease of the newborn because of the toxic effect of prolonged exposure of bilirubin on thedeveloping eighth cranial nerve.
+13. Recommendations for future research
+Studies37,38using maternally administered intravenous immunoglobulin have demonstrated some benefit in
+severe cases of RhD incompatibility but the precise mechanism of action is not established. This treatmentmodality is appropriate only in selected cases and it may prolong the time interval before the first intrauterinetreatment is required. Further studies are required.
+The use of intravenous immunoglobulin administered to the infant to reduce the severity of
+hyperbilirubinaemia and the number of exchange transfusions also needs further validation in larger studies. 
+14. Auditable topics
+●Pregnancy outcomes of women referred for antenatal fetal therapy for fetal anaemia.
+●Proportion of women referred to a fetal medicine specialist once their antibody level/titre has reached
+an interventional threshold.
+●Outcomes of women with rare/unusual antibodies requiring blood or blood components duringpregnancy or in the puerperium.
+●Outcomes of neonates requiring phototherapy or transfusion (exchange or top-up) because ofhaemolysis secondary to red cell alloimmunisation.
+●Confirmation of the accuracy of free fetal DNA tests as basic quality assurance for laboratoriesundertaking such tests.
+19 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsReferences
+1. Koelewijn JM, Vrijkotte TG, Van Der Schoot CE, Bonsel GJ, De
+Haas M. Effect of screening for red cell antibodies, other thananti-D, to detect hemolytic disease of the fetus and newborn: apopulation study in the Netherlands. Transfusion
+2008;48:941–52. 
+2. Robson SC, Lee D, Urbaniak S. Anti-D immunoglobulin in RhD
+prophylaxis. Br J Obstet Gynaecol 1998;105:129–34.
+3. British Committee for Standards in Haematology Blood
+Transfusion Task Force, Gooch A, Parker J, Wray J, Qureshi H.Guideline for blood grouping and antibody testing inpregnancy. Transfus Med 2007;17:252–62.
+4. Koelewijn JM, Vrijkotte TG, de Haas M, van der Schoot CE,
+Bonsel GJ. Risk factors for the presence of non-rhesus D redblood cell antibodies in pregnancy. BJOG 2009;116:655–64. 
+5. British Committee for Standards in Haematology, Blood
+Transfusion Task Force. Guidelines for blood grouping and redcell antibody testing during pregnancy. Transfus Med
+1996;6:71–4.
+6. Goodrick MJ, Hadley AG, Poole G. Haemolytic disease of the
+fetus and newborn due to anti-Fy(a) and the potential clinicalvalue of Duffy genotyping in pregnancies at risk. Transfus Med
+1997;7:301–4.
+7. Moise KJ Jr. Non-anti-D antibodies in red-cell alloimmunization.
+Eur J Obstet Gynecol Reprod Biol 2000;92:75–81.
+8. Moran P , Robson SC, Reid MM. Anti-E in pregnancy. BJOG
+2000;107:1436–8.
+9. Daniels G, Poole J, de Silva M, Callaghan T, MacLennan S, Smith
+N. The clinical significance of blood group antibodies. Transfus
+Med 2002;12:287–95.10. Schumacher B, Moise KJ Jr. Fetal transfusion for red blood cell
+alloimmunization in pregnancy. Obstet Gynecol
+1996;88:137–50.
+11. Daniels G. Hadley A, Green CA. Causes of fetal anemia in
+hemolytic disease due to anti-K [letter]. Transfusion
+2003;43:115–6.
+12. Ahaded A, Brossard Y , Debbia M, Lambin P . Quantitative
+determination of anti-K (KEL1) IgG and IgG subclasses in theserum of severely alloimmunized pregnant women by ELISA.Transfusion 2000;40:1239–45.
+13. Lo YM. Fetal DNA in maternal plasma: application to non-
+invasive blood group genotyping of the fetus. Transfus Clin
+Biol 2001;8:306–10.
+14. Geifman-Holtzman O, Grotegut CA, Gaughan JP , Holtzman EJ,
+Floro C, Hernandez E. Noninvasive fetal RhCE genotyping frommaternal blood. BJOG 2009;116:144–51.
+15. Scheffer PG, van der Schoot CE, Page-Christiaens GC, de Haas
+M. Noninvasive fetal blood group genotyping of rhesus D, c, Eand of K in alloimmunised pregnant women: evaluation of a 7-year clinical experience. BJOG 2011;118:1340–8.
+16. Royal College of Obstetricians and Gynaecologists. The Use of
+Anti-D Immunoglobulin for Rhesus D Prophylaxis. Green-top
+Guideline No. 22. London: RCOG; 2011.
+17. Nicolaides KH, Rodeck CH. Maternal serum anti-D antibody
+concentration and assessment of rhesus isoimmunisation. BMJ
+1992;304:1155–6.
+18. Kozlowski CL, Lee D, Shwe KH, Love EM. Quantification of anti-
+c in haemolytic disease of the newborn. Transfus Med
+1995;5:37–42.RCOG Green-top Guideline No. 65 20 of 26 © Royal College of Obstetricians and Gynaecologists19. Bowman JM, Pollock JM, Manning FA, Harman CR, Menticoglou
+S. Maternal Kell blood group alloimmunization. Obstet Gynecol
+1992;79:239–44.
+20. Mari G, Deter RL, Carpenter RL, Rahman F , Zimmerman R,
+Moise KJ Jr, et al.; Collaborative Group for Doppler Assessmentof the Blood Velocity in Anemic Fetuses. Noninvasive diagnosisby Doppler ultrasonography of fetal anemia due to maternalred-cell alloimmunization. N Engl J Med 2000;342:9–14.
+21. Bhide A, Acharya G, Bilardo CM, Brezinka C, Cafici D,
+Hernandez-Andrade E, et al. ISUOG practice guidelines: use ofDoppler ultrasonography in obstetrics. Ultrasound Obstet
+Gynecol 2013;41:233–9.
+22. British Committee for Standards in Haematology Transfusion
+Task Force. Transfusion guidelines for neonates and olderchildren. Br J Haematol 2004;124:433–53.
+23. Transfusion Task Force. Amendments and corrections to the
+'Transfusion Guidelines for neonates and older children'(BCSH, 2004a); and to the 'Guidelines for the use of freshfrozen plasma, cryoprecipitate and cryosupernatant' (BCSH,2004b). Br J Haematol 2007;136:514–6.
+24. British Committee for Standards in Haematology. Guidelines for
+pre-transfusion compatibility procedures in blood transfusionlaboratories. London: BCSH; 2012[www.bcshguidelines.com/documents/Compat_Guideline_for_submission_to_TTF_011012.pdf].
+25. Advisory Committee on the Safety of Blood, Tissues and Organs
+(SaBTO). Cytomegalovirus tested blood components: positionstatement. London: Department of Health; 2012[www.dh.gov.uk/en/Publicationsandstatistics/Publications/PublicationsPolicyAndGuidance/DH_132965].
+26. Pilgrim H, Lloyd-Jones M, Rees A. Routine antenatal anti-D
+prophylaxis for RhD-negative women: a systematic review andeconomic evaluation. Health Technol Assess 2009;13(10).
+27. Woodcock BE, Walker S, Adams K. Haemolytic transfusion
+reaction–successful attenuation with methylprednisolone andhigh dose immunoglobulin. Clin Lab Haematol 1993;15:59–61.
+28. Tinegate H, Birchall J, Gray A, Haggas R, Massey E, Norfolk D, et
+al.; BCSH Blood Transfusion Task Force. Guideline on theinvestigation and management of acute transfusion reactions.Prepared by the BCSH Blood Transfusion Task Force. Br J
+Haematol 2012;159:143–53.
+29. National Institute for Health and Clinical Excellence.
+Intrapartum care: Care of healthy women and their babies
+during childbirth. NICE clinical guideline 55. Manchester:
+NICE; 2007.
+30. National Institute for Health and Care Excellence. Neonatal
+jaundice. NICE clinical guideline 98. Manchester: NICE; 2010.
+31. Working Party of British Committee for Standards in
+Haematology Blood Transfusion Task Force. Guidelines forcompatibility procedures in blood transfusion laboratories.Transfus Med 2004;14:59–73.32. Millard DD, Gidding SS, Socol ML, MacGregor SN, Dooley SL,
+Ney JA, et al. Effects of intravascular, intrauterine transfusion onprenatal and postnatal hemolysis and erythropoiesis in severefetal isoimmunization. J Pediatr 1990;117:447–54.
+33. Zuppa AA, Alighieri G, Calabrese V , Visintini F , Cota F , Carducci
+C, et al. Recombinant human erythropoietin in the preventionof late anemia in intrauterine transfused neonates with Rh-isoimmunization. J Pediatr Hematol Oncol 2010;32:e95–e101.
+34. Erduran E, Bahadir A. The effectiveness of recombinant human
+erythropoietin (EPO) treatment in a neonate withhyporegenerative anemia following Rh isoimmunization inspite of normal serum Epo level [letter]. Pediatr Hematol
+Oncol 2011;28:721–2. 
+35. Zuppa AA, Alighieri G, Fracchiolla A, Catenazzi P , D'Antuono A,
+Riccardi R, et al. Comparison between two treatment protocolswith recombinant human erythropoietin (rHuEpo) in thetreatment of late anemia in neonates with Rh-isoimmunization.Pediatr Med Chir 2012;34:186–91.
+36. Hudon L, Moise KJ Jr, Hegemier SE, Hill RM, Moise AA, Smith
+EO, et al. Long-term neurodevelopmental outcome afterintrauterine transfusion for the treatment of fetal hemolyticdisease. Am J Obstet Gynecol 1998;179:858–63.
+37. Ruma MS, Moise KJ Jr, Kim E, Murtha AP , Prutsman WJ, Hassan
+SS, et al. Combined plasmapheresis and intravenous immuneglobulin for the treatment of severe maternal red cellalloimmunization. Am J Obstet Gynecol 2007;196:138.e1–6.
+38. Novak DJ, Tyler LN, Reddy RL, Barsoom MJ. Plasmapheresis and
+intravenous immune globulin for the treatment of Dalloimmunization in pregnancy. J Clin Apher 2008;23:183–5.
+39. Joy SD, Rossi KQ, Krugh D, O'Shaughnessy RW . Management of
+pregnancies complicated by anti-E alloimmunization. Obstet
+Gynecol 2005;105:24–8.
+40. Chao AS, Chao A, Ho SY , Chang YL, Lien R. Anti-E
+alloimmunization: a rare cause of severe fetal hemolytic diseaseresulting in pregnancy loss. Case Report Med
+2009;2009:471623.
+41. Wikman A, Edner A, Gryfelt G, Jonsson B, Henter JI. Fetal
+hemolytic anemia and intrauterine death caused by anti-Mimmunization. Transfusion 2007;47:911–7.
+42. Bowman JM, Harman FA, Manning CR, Pollock JM.
+Erythroblastosis fetalis produced by anti-k. Vox Sang
+1989;56:187–9. Appendix I: Red cell antibodies showing published clinical significance
+Antibody HDFN Haemolytic transfusion reaction
+D Severe in fetus and neonate Severe
+c Severe in fetus and neonate Severe
+K Severe in fetus and neonate Severe
+c+E Severe in fetus and neonate* Severe
+E Yes in neonate*39,40Yes
+C Yes in neonate* Yes
+e Yes in neonate Yes
+Ce Yes in neonate Yes
+FyaYes in neonate*6Yes
+FybYes in neonate Yes
+Fy3No Yes
+JkaYes in neonate* Yes
+JkbNo Yes
+S Yes in neonate Yes
+s Yes in neonate Yes
+U Yes in neonate* Yes
+M Yes (occasionally)*41Yes (if active at 37°C)
+N Mild (1 case) Yes
+H (Bombay) Yes in neonate* Yes
+G Yes in neonate Yes
+k Yes in neonate*42Yes
+KpaYes (in neonate occasionally) No
+CwYes (in neonate occasionally) No
+Vel No Yes
+Anti-D, -c and -K are the three main antibodies that have been reported to cause severe anaemia, jaundice or death in the fetus or neonate.
+Many other antibodies (*) can cause anaemia or jaundice predominantly in the neonatal period but there have also been occasiona l case
+reports of the fetus being severely affected.
+The antibodies listed in the table above are the most common, clinically significant antibodies. Other rarer
+antibodies can cause HDFN and haemolytic transfusion reactions occasionally. For further advice, discussionwith the transfusion laboratory and/or consultant haematologist would be beneficial. 
+21 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and GynaecologistsAppendix II: Timing and frequency of antibody screening in pregnancy
+RCOG Green-top Guideline No. 65 22 of 26 © Royal College of Obstetricians and GynaecologistsAt booking
+All pregnant womenABO + RhD* typingAntibody screen
+All other clinically significant antibodies(see 6.2)Consider paternal/fetalgenotyping for corresponding antigen(s)(see 6.4) Anti-D, -c or-K 
+antibodies**Test monthly until 28 weeksSee Appendix 3
+No antibodiesNo further action Clinically significant antibodies Cord blood for:DAT, Hb, bilirubinRepeat testing at 28 weeksClinically significant antibody screen 
+positive (see 6.2)
+Repeat antibody screen at 28 weeksNo clinically significantantibodies
+If RhD-negative mother with no immune anti-D antibodies then advise anti-D prophylaxis for any potentially sensitising events in pregnancy and give routine antenatal anti-D prophylaxis either RAADP single dose or two doses (see RCOG anti-D guidelines); after delivery check cord sample for RhD type and maternal sample for fetomaternal haemorrhage (e.g. Kleihauer) testing to check if further anti-D needed in addition to the standard dose which should be given in the first instance after delivery.
+Pregnancies with immune anti-D, -K or -c are at particular risk of severe fetal HDFN so further early assessment 
+and referral to fetal medicine specialist is indicated (see 6.7).*
+**
+Legend
+DAT – direct antiglobulin test; Hb – haemoglobin; RAADP – routine antenatal anti-D prophylaxisFrom 28 weeks:
+Test 2 weekly until deliverySee Appendix 323 of 26 RCOG Green-top Guideline No. 65 © Royal College of Obstetricians and Gynaecologists
+Refer to specialist unit
+Fetus US, MCA DopplerIUT if neededK Neg
+Cord blood Hb, Bili, DATDeliver at 37 weeksFETUS AT RISK OF HDFNK PosffDNATest father Non-invasive prenatal diagnosisAnti-D antibodies
+Quantitate Ab level4–15 iu/ml mod risk HDFN> 15 iu/ml severe risk HDFNAnti-K antibodies
+Titre AbAnti-c antibodies
+Quantitate Ab level7.5–20 iu/ml mod risk HDFN> 20 iu/ml severe risk HDFN
+Test father Non-invasive prenatal diagnosis Test father Non-invasive prenatal diagnosis
+K Pos
+HeterozygousK Pos
+HomozygousK Neg D Pos
+HeterozygousD Pos
+HomozygousD Neg c Pos
+Heterozygousc Pos
+Homozygousc Neg
+D Neg D PosffDNA
+c Neg c PosffDNA
+Legend
+Ab – antibodyBili – bilirubinDAT – direct antiglobulin testffDNA – free fetal DNAHb – haemoglobinHDFN – haemolytic disease of the fetus and newbornIUT – intrauterine transfusionMCA Doppler – middle cerebral artery DopplerMod – moderatePos/Neg – positive/negativeUS – ultrasoundOr Or OrAppendix III: Management algorithm for pregnancies complicated with anti-D, anti-K or anti-c alloimmunisation© Royal College of Obstetricians and Gynaecologists 24 of 26 RCOG Green-top Guideline No. 65Appendix IV: List of abbreviations
+ART assisted reproductive techniques
+BCSH British Committee for Standards in HaematologyCMV cytomegalovirusCPD citrate phosphate dextrose DAT direct antiglobulin testFBS fetal blood sampling ffDNA free fetal DNAHDFN haemolytic disease of the fetus and newbornHTR haemolytic transfusion reactionIAT indirect antiglobulin test IgG immunoglobulin G IUT intrauterine transfusion MCA PSV middle cerebral artery peak systolic velocitiesMoM multiples of the medianNICE National Institute for Health and Care ExcellencePCV packed cell volume RAADP routine antenatal anti-D prophylaxis RhD rhesus D SAGM saline-adenine-glucose-mannitolAppendix V: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematicallydeveloped using a standardised methodology. Exact details of this process can be found in ‘ClinicalGovernance Advice No.1 Development of RCOG Green-top Guidelines’ (available on the RCOG website
+at
+http://www.rcog.org.uk/files/rcog-corp/CGA1dConsensusMethods.pdf ). These recommendations are
+not intended to dictate an exclusive course of management or treatment. They must be evaluated withreference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate theseguidelines into routine practice. Attention is drawn to areas of clinical uncertainty where further researchmay be indicated. The evidence used in this guideline was graded using the scheme below and therecommendations formulated in a similar fashion with a standardised grading scheme.
+Grades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ anddirectly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consistingprincipally of studies rated as 1+ directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation, and demonstrating overallconsistency of results; or Extrapolated evidence from studies rated as1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; or Extrapolated evidence from studies rated as2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on theclinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with avery low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderateprobability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBA
+© Royal College of Obstetricians and Gynaecologists RCOG Green-top Guideline No. 65 25 of 26RCOG Green-top Guideline No. 65 26 of 26 © Royal College of Obstetricians and GynaecologistsDISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth services. 
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The review process will commence in 2017, unless otherwise indicated.This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and Gynaecologists by: 
+Professor SK Surendran FRCOG, Brisbane, Australia; Dr S Allard MD FRCP FRCPath, Barts and the London NHS Trust
+and NHS Blood and Transplant, London; and Dr F Regan FRCP FRCPath, Imperial College Healthcare NHS Trust andNHS Blood and Transplant, London
+and peer-reviewed by: Mr SA Abdel-Fattah FRCOG, Bristol; Dr ACG Breeze MRCOG, Kingston upon Thames; Dr JE Brennand FRCOG, Glasgow; The British Committee for Standards in Haematology (BCSH); British Maternal and Fetal Medicine Society (BMFMS); Dr HM Cameron FRCOG, Sunderland; Mrs AHD Diyaf MRCOG, Barnstaple; Dr NJ Engineer MRCOG, Coventry; Mr OS Eskandar FRCOG, Barnstaple; NHS Blood and Transplant (NHSBT); Northern Ireland Blood Transfusion Service; Dr AOS Olawo MRCOG, Rotherham; Mr TG Overton FRCOG, Bristol; Dr KP Rege, Peterborough City Hospital, Peterborough;RCOG Women’s Network; Scottish Clinical Transfusion Advisory Committee (SCTAC) Group; Dr N Singh MRCOG, Bolton; Mrs P Sinha FRCOG, St Leonards-on-Sea; UK National Screening Committee; Watch Tower Bible and Tract Society of Britain; Ms A Wijemanne MRCOG, London.
+Committee lead reviewers were: Dr P Owen FRCOG, Glasgow, Scotland; Ms J Elson FRCOG, Leicester; and 
+Dr M Gupta MRCOG, London.
+Conflicts of interest: None declared.The final version is the responsibility of the Guidelines Committee of the RCOG.

@@ -1,0 +1,27 @@
+- hypertension
+- pre-eclampsia
+- blood pressure
+- pregnancy
+- delivery
+- maternal
+- fetal
+- postpartum
+- labour
+- caesarean
+- antenatal
+- term
+- prenatal
+- neonatal
+- thrombosis
+- intrapartum
+- monitoring
+- ultrasound
+- morbidity
+- complications
+- postnatal
+- induction
+- perinatal
+- assessment
+- risk factors
+- preterm
+- thromboembolism

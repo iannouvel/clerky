@@ -1,0 +1,1851 @@
+Thromboembolic Disease in 
+Pregnancy and the Puerperium: 
+Acute Management
+Green-top Guideline No. 37b 
+April 2015RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists2 of 32Thromboembolic Disease in Pregnancy and the Puerperium: 
+Acute Management
+This is the third edition of this guideline. The first edition was published in April 2001 under the same 
+title (numbered Green-top Guideline No. 28) and the second edition was published in February 2007 
+and reviewed in 2010. Thromboprophylaxis during pregnancy and the puerperium is addressed in 
+Green-top Guideline No. 37a.
+Executive summary of recommendations 
+Diagnosis of acute venous thromboembolism (VTE) 
+How is acute VTE diagnosed in pregnancy?
+Any woman with symptoms and/or signs suggestive of VTE should have objective testing performed 
+expeditiously and treatment with low-molecular-weight heparin (LMWH) given (see section 6) 
+until the diagnosis is excluded by objective testing, unless treatment is strongly contraindicated. 
+Individual hospitals should have an agreed protocol for the objective diagnosis of suspected VTE 
+during pregnancy. This may recommend the involvement of obstetricians, radiologists, physicians 
+and haematologists. 
+What investigations are needed for the diagnosis of an acute DVT?
+Compression duplex ultrasound should be undertaken where there is clinical suspicion of DVT. 
+If ultrasound is negative and there is a low level of clinical suspicion, anticoagulant treatment can 
+be discontinued. If ultrasound is negative and a high level of clinical suspicion exists, anticoagulant 
+treatment should be discontinued but the ultrasound should be repeated on days 3 and 7. [ New 2015 ]
+What investigations are needed for the diagnosis of an acute pulmonary embolism (PE)?
+Women presenting with symptoms and signs of an acute PE should have an electrocardiogram 
+(ECG) and a chest X-ray (CXR) performed. [ New 2015 ]
+In women with suspected PE who also have symptoms and signs of DVT, compression duplex 
+ultrasound should be performed. If compression ultrasonography confirms the presence of DVT, 
+no further investigation is necessary and treatment for VTE should continue. [ New 2015 ]
+In women with suspected PE without symptoms and signs of DVT, a ventilation/perfusion (V/Q) lung 
+scan or a computerised tomography pulmonary angiogram (CTPA) should be performed. [ New 2015 ]
+When the chest X-ray is abnormal and there is a clinical suspicion of PE, CTPA should be performed 
+in preference to a V/Q scan. [ New 2015 ]
+Alternative or repeat testing should be carried out where V/Q scan or CTPA is normal but the clinical 
+suspicion of PE remains. Anticoagulant treatment should be continued until PE is definitively 
+excluded. 
+Women with suspected PE should be advised that, compared with CTPA, V/Q scanning may carry 
+a slightly increased risk of childhood cancer but is associated with a lower risk of maternal breast 
+cancer; in both situations, the absolute risk is very small. [ New 2015 ]C
+B
+C
+C
+C
+C
+DP
+C
+DRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists3 of 32Where feasible, women should be involved in the decision to undergo CTPA or V/Q scanning. 
+Ideally, informed consent should be obtained before these tests are undertaken. 
+Should D-dimer testing be performed prior to objective diagnosis?
+D-dimer testing should not be performed in the investigation of acute VTE in pregnancy. 
+What is the role of pretest probability assessment?
+Clinicians should be aware that, at present, there is no evidence to support the use of pretest 
+probability assessment in the management of acute VTE in pregnancy. [ New 2015 ]
+Baseline blood investigations
+What baseline blood investigations should be performed before initiating anticoagulant therapy?
+Before anticoagulant therapy is commenced, blood should be taken for a full blood count, 
+coagulation screen, urea and electrolytes, and liver function tests. 
+Performing a thrombophilia screen prior to therapy is not recommended. 
+Initial anticoagulant treatment of VTE in pregnancy
+What is the initial treatment of VTE in pregnancy?
+In clinically suspected DVT or PE, treatment with low-molecular-weight heparin (LMWH) should be 
+commenced immediately until the diagnosis is excluded by objective testing, unless treatment is 
+strongly contraindicated. 
+What is the therapeutic dose of LMWH in pregnancy?
+LMWH should be given in doses titrated against the woman’s booking or early pregnancy weight. 
+There is insufficient evidence to recommend whether the dose of LMWH should be given once daily 
+or in two divided doses. [ New 2015 ]
+There should be clear local guidelines for the dosage of LMWH to be used. 
+Should blood tests be performed to monitor heparin therapy in pregnancy?
+Routine measurement of peak anti-Xa activity for patients on LMWH for treatment of acute VTE 
+in pregnancy or postpartum is not recommended except in women at extremes of body weight 
+(less than 50 kg and 90 kg or more) or with other complicating factors (for example, with renal 
+impairment or recurrent VTE). 
+Routine platelet count monitoring should not be carried out. 
+Obstetric patients who are postoperative and receiving unfractionated heparin should have 
+platelet count monitoring performed every 2–3 days from days 4 to 14 or until heparin is stopped. 
+[New 2015 ]
+How should massive life-threatening PE in pregnancy and the puerperium be managed?
+ 
+Collapsed, shocked women who are pregnant or in the puerperium should be assessed by a team 
+of experienced clinicians including the on-call consultant obstetrician. CCP
+P
+PDD
+B
+B
+C
+D
+DRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists4 of 32Women should be managed on an individual basis regarding: intravenous unfractionated heparin, 
+thrombolytic therapy or thoracotomy and surgical embolectomy. 
+Management should involve a multidisciplinary team including senior physicians, obstetricians 
+and radiologists. 
+Intravenous unfractionated heparin is the preferred, initial treatment in massive PE with 
+cardiovascular compromise. 
+Maternity units should develop guidelines for the administration of intravenous unfractionated 
+heparin. 
+The on-call medical team should be contacted immediately. An urgent portable echocardiogram or 
+CTPA within 1 hour of presentation should be arranged. If massive PE is confirmed, or in extreme 
+circumstances prior to confirmation, immediate thrombolysis should be considered. 
+Additional therapies
+Should graduated elastic compression stockings be employed in the acute management of VTE in pregnancy?
+In the initial management of DVT, the leg should be elevated and a graduated elastic compression 
+stocking applied to reduce oedema. Mobilisation with graduated elastic compression stockings 
+should be encouraged. 
+What is the role of inferior vena cava filters in the management of VTE in pregnancy?
+Consideration should be given to the use of a temporary inferior vena cava filter in the peripartum 
+period for patients with iliac vein VTE to reduce the risk of PE or in patients with proven DVT and 
+who have recurrent PE despite adequate anticoagulation. 
+Maintenance treatment of VTE
+What is the maintenance treatment of DVT or PE?
+Treatment with therapeutic doses of subcutaneous LMWH should be employed during the remainder 
+of the pregnancy and for at least 6 weeks postnatally and until at least 3 months of treatment has 
+been given in total.
+Women should be taught to self-inject LMWH and arrangements made to allow safe disposal of 
+needles and syringes. Outpatient follow-up should include clinical assessment and advice with 
+monitoring of blood platelets and peak anti-Xa levels if appropriate (see sections 5 and 6.3). 
+Pregnant women who develop heparin-induced thrombocytopenia or have heparin allergy and 
+require continuing anticoagulant therapy should be managed with an alternative anticoagulant 
+under specialist advice. 
+Can vitamin K antagonists be used during pregnancy for the maintenance treatment of VTE?
+Because of their adverse effects on the fetus, vitamin K antagonists, such as warfarin, should not 
+be used for antenatal VTE treatment. 
+Is there a role for the new anticoagulants in the treatment of VTE in pregnancy?
+Consideration should be given to the use of newer anticoagulants (fondaparinux, argatroban or 
+r-hirudin) in pregnant women who are unable to tolerate heparin (LMWH or unfractionated heparin) 
+or danaparoid and who require continuing anticoagulant therapy. [ New 2015 ]DP
+P
+P
+DCBB
+B
+C
+CPRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists5 of 32Anticoagulant therapy during labour and delivery
+Should anticoagulant therapy be altered during labour and delivery?
+When VTE occurs at term, consideration should be given to the use of intravenous unfractionated 
+heparin which is more easily manipulated. [ New 2015 ]
+The woman on LMWH for maintenance therapy should be advised that once she is in established 
+labour or thinks that she is in labour, she should not inject any further heparin. 
+Where delivery is planned, either by elective caesarean section or induction of labour, LMWH 
+maintenance therapy should be discontinued 24 hours prior to planned delivery. 
+Regional anaesthetic or analgesic techniques should not be undertaken until at least 24 hours 
+after the last dose of therapeutic LMWH. 
+LMWH should not be given for 4 hours after the use of spinal anaesthesia or after the epidural 
+catheter has been removed, and the epidural catheter should not be removed within 12 hours of 
+the most recent injection. [ New 2015 ]
+Are specific surgical measures required for anticoagulated patients undergoing delivery by caesarean 
+section?
+In patients receiving therapeutic doses of LMWH, wound drains (abdominal and rectus sheath) 
+should be considered at caesarean section and the skin incision should be closed with interrupted 
+sutures to allow drainage of any haematoma. 
+What anticoagulant therapy should be employed in women at high risk of haemorrhage?
+Any woman who is considered to be at high risk of haemorrhage, and in whom continued heparin 
+treatment is considered essential, should be managed with intravenous unfractionated heparin 
+until the risk factors for haemorrhage have resolved. 
+Postnatal anticoagulation
+How should anticoagulation be managed postnatally?
+Therapeutic anticoagulant therapy should be continued for the duration of the pregnancy and for at 
+least 6 weeks postnatally and until at least 3 months of treatment has been given in total. Before 
+discontinuing treatment the continuing risk of thrombosis should be assessed. 
+Women should be offered a choice of LMWH or oral anticoagulant for postnatal therapy after 
+discussion about the need for regular blood tests for monitoring of warfarin, particularly during 
+the first 10 days of treatment. 
+Postpartum warfarin should be avoided until at least the fifth day and for longer in women at 
+increased risk of postpartum haemorrhage. [ New 2015 ]
+Women should be advised that neither heparin (unfractionated or LMWH) nor warfarin is 
+contraindicated in breastfeeding. 
+Prevention of post-thrombotic syndrome
+What measures can be employed to prevent the development of post-thrombotic syndrome?
+Women should be advised that prolonged use of LMWH (more than 12 weeks) is associated with a 
+significantly lower chance of developing post-thrombotic syndrome. [ New 2015 ]D
+D
+D
+D
+D
+BCP
+P
+P
+P
+DRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists6 of 32Following a DVT, graduated elastic compression stockings should be worn on the affected leg to 
+reduce pain and swelling. Clinicians should be aware that the role of compression stockings in the 
+prevention of post-thrombotic syndrome is unclear. [ New 2015 ]
+Postnatal clinic review
+Postnatal review for patients who develop VTE during pregnancy or the puerperium should, 
+whenever possible, be at an obstetric medicine clinic or a joint obstetric haematology clinic. 
+Thrombophilia testing should be performed once anticoagulant therapy has been discontinued 
+only if it is considered that the results would influence the woman’s future management. [ New 2015 ]
+1. Purpose and scope 
+The aim of this guideline is to provide information, based on clinical evidence where available, regarding 
+the immediate investigation and management of women in whom venous thromboembolism is suspected 
+during pregnancy or the puerperium. 
+2. Introduction and background epidemiology
+Venous thromboembolism (VTE) remains one of the main direct causes of maternal death in the UK1 
+and sequential reports on Confidential Enquiries into Maternal Deaths have highlighted failures in 
+obtaining objective diagnoses and employing adequate treatment.2 In recent years, there has been a 
+significant decline in maternal deaths from VTE in the UK (18 deaths between 2006 and 2008 compared 
+to 41 in 2003–2005), in part owing to better recognition of women at risk and more widespread use of 
+thromboprophylaxis.1 
+The subjective clinical assessment of deep venous thrombosis (DVT) and pulmonary embolism (PE) is 
+particularly unreliable in pregnancy and only a minority of women with clinically suspected VTE have 
+the diagnosis confirmed when objective testing is employed; the prevalence of ultimately diagnosed PE 
+in pregnant women with suspected PE is 2–6%.3–5 The risk of antenatal VTE is four- to five-fold higher 
+in pregnant women than in nonpregnant women of the same age,6,7 although the absolute risk remains 
+low at around 1 in 1000 pregnancies.8 Venous thromboembolism can occur at any stage of pregnancy 
+but the puerperium is the time of highest risk, with estimates of relative risk of approximately 20-fold.9 
+Acute VTE should be suspected during pregnancy in women with symptoms and signs consistent with 
+possible VTE, particularly if there are other risk factors for VTE (see Green-top Guideline No. 37a). The 
+majority of women with VTE in pregnancy have clinical symptoms.10 The symptoms and signs of DVT 
+include leg pain and swelling (usually unilateral) and lower abdominal pain (reflecting extension of 
+thrombus into the pelvic vessels and/or development of a collateral circulation) and the symptoms of PE 
+include dyspnoea, chest pain, haemoptysis and collapse. It is noteworthy that a low-grade pyrexia and 
+leucocytosis can occur with VTE.
+3. Identification and assessment of evidence
+A search of MEDLINE and PubMed (electronic databases) from 2006–2013 was performed to identify 
+all relevant randomised controlled trials, systematic reviews and meta-analyses. Conference abstracts 
+published during this period that have since been superseded by full papers have been cited as the 
+latter, even when these were published outside the search dates. The databases were searched using 
+the relevant Medical Subject Headings (MeSH) terms including all subheadings. The principal terms 
+used were: ‘venous thromboembolism’, ‘deep venous thrombosis’, ‘pulmonary thromboembolism’ and 
+‘pregnancy’.P
+DBRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists7 of 32Where possible in this document, recommendations are based on and linked to the evidence that 
+supports them. Many of the guidelines for the management of VTE in nonpregnant patients are based on 
+level 1 evidence;11,12 however, level 1 evidence for the management of VTE during pregnancy is lacking13 
+and, in general, guideline recommendations for management of VTE during pregnancy are extrapolated 
+from studies in nonpregnant patients.
+4. Diagnosis of acute VTE
+How is acute VTE diagnosed in pregnancy?
+Any woman with symptoms and/or signs suggestive of VTE should have objective testing performed 
+expeditiously and treatment with low-molecular-weight heparin (LMWH) given (see section 6) 
+until the diagnosis is excluded by objective testing, unless treatment is strongly contraindicated. 
+Individual hospitals should have an agreed protocol for the objective diagnosis of suspected VTE 
+during pregnancy. This may recommend the involvement of obstetricians, radiologists, physicians 
+and haematologists. 
+Women presenting with symptoms and/or signs suggestive of VTE should have objective 
+testing performed expeditiously. If DVT remains untreated, 15–24% of these patients will 
+develop PE. PE during pregnancy may be fatal in almost 15% of patients, and in 66% of these, 
+death will occur within 30 minutes of the embolic event.14,15 
+All hospitals should have a protocol for the diagnosis of suspected VTE in pregnancy which may require 
+multidisciplinary team involvement.
+4.1 What investigations are needed for the diagnosis of an acute DVT?
+Compression duplex ultrasound should be undertaken where there is clinical suspicion of DVT. 
+If ultrasound is negative and there is a low level of clinical suspicion, anticoagulant treatment can 
+be discontinued. If ultrasound is negative and a high level of clinical suspicion exists, anticoagulant 
+treatment should be discontinued but the ultrasound should be repeated on days 3 and 7. 
+Compression duplex ultrasound is the primary diagnostic test for DVT.16,17 If ultrasound 
+confirms the diagnosis of DVT, anticoagulant treatment should be continued. 
+If ultrasound is negative and a high level of clinical suspicion exists, anticoagulant treatment 
+should be discontinued but the ultrasound repeated on days 3 and 7.18 If repeat testing is 
+negative, no further treatment is required; if repeat testing confirms the presence of DVT, 
+anticoagulant treatment should be recommenced and continued. This strategy has been 
+evaluated in a prospective cohort study of 221 pregnant women who presented with suspected 
+DVT. The sensitivity of serial compression ultrasonography with Doppler imaging was 94.1% 
+(95% CI 69.2–99.7%), the negative predictive value was 99.5% (95% CI 96.9–100%) and the 
+negative likelihood ratio was 0.068 (95% CI 0.01–0.39).18 
+When iliac vein thrombosis is suspected (back and buttock pain and swelling of the entire 
+limb), Doppler ultrasound of the iliac vein, magnetic resonance venography or conventional 
+contrast venography may be considered,16 although in practice, because of the extensive 
+nature of these thrombi, ultrasound venography will often suffice.
+4.2 What investigations are needed for the diagnosis of an acute PE?
+Women presenting with symptoms and signs of an acute PE should have an electrocardiogram 
+(ECG) and a chest X-ray (CXR) performed. PC
+CB
+CEvidence 
+level 2+
+Evidence 
+level 2++
+Evidence 
+level 2+
+Evidence 
+level 3RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists8 of 32In women with suspected PE who also have symptoms and signs of DVT, compression duplex 
+ultrasound should be performed. If compression ultrasonography confirms the presence of DVT, 
+no further investigation is necessary and treatment for VTE should continue. 
+In women with suspected PE without symptoms and signs of DVT, a ventilation/perfusion (V/Q) 
+lung scan or a computerised tomography pulmonary angiogram (CTPA) should be performed. 
+When the chest X-ray is abnormal and there is a clinical suspicion of PE, CTPA should be performed 
+in preference to a V/Q scan. 
+Alternative or repeat testing should be carried out where V/Q scan or CTPA is normal but the clinical 
+suspicion of PE remains. Anticoagulant treatment should be continued until PE is definitively 
+excluded. 
+Women with suspected PE should be advised that, compared with CTPA, V/Q scanning may carry 
+a slightly increased risk of childhood cancer but is associated with a lower risk of maternal breast 
+cancer; in both situations, the absolute risk is very small. 
+Where feasible, women should be involved in the decision to undergo CTPA or V/Q scanning. 
+Ideally, informed consent should be obtained before these tests are undertaken. 
+In the diagnosis of PE in the nonpregnant individual, both the electrocardiogram (ECG) 
+and arterial blood gas (ABG) measurement are of limited diagnostic value.19,20 However, in 
+pregnancy and the puerperium, one study found that the ECG was abnormal in 41% of women 
+with acute PE; the most common abnormalities were T wave inversion (21%), S1Q3T3 pattern 
+(15%) and right bundle branch block (18% during pregnancy and 4.2% in the puerperium).21 
+Given the increasing incidence of ischaemic heart disease in pregnancy, the ECG may also 
+be helpful in identifying alternative diagnoses. In the same cohort of women, ABG analysis 
+showed that only 10% had arterial P O2 levels less than 60 mmHg and 2.9% had oxygen 
+saturation levels less than 90%.21 These findings indicate a diagnostic role for ECG in women 
+with suspected acute PE, and that ABG analysis is of limited diagnostic value.
+Chest X-ray (CXR) may identify other pulmonary disease such as pneumonia, pneumothorax 
+or lobar collapse.22 While the CXR is normal in over half of pregnant patients with objectively 
+proven PE,21 abnormal features caused by PE include atelectasis, effusion, focal opacities, 
+regional oligaemia or pulmonary oedema.23 The radiation dose to the fetus from a CXR 
+performed at any stage of pregnancy is negligible (less than 0.01 mSv).24,25 A CXR should be 
+performed before deciding upon further diagnostic tests; a normal CXR prior to V/Q scanning 
+improves the likelihood of a definitive V/Q result.26 If the CXR is abnormal with a clinical 
+suspicion of PE, CTPA should be performed. 
+Pregnant women with suspected PE who have symptoms and signs of DVT should have 
+bilateral compression duplex ultrasound leg studies performed. A diagnosis of DVT may 
+indirectly confirm a diagnosis of PE and since anticoagulant therapy is the same for both 
+conditions, further investigation may not be necessary. This would limit the radiation doses 
+given to the mother and her fetus.27 While several studies have investigated the use of lower 
+limb ultrasonography in the investigation of nonpregnant patients with suspected PE,28–31 the 
+role of ultrasound leg studies in pregnant women with suspected PE and without symptoms 
+and signs of DVT is unclear. In one case series, Chan et al. found no cases of DVT in 67 
+women presenting with suspected PE.4 Given the higher incidence of isolated iliac vein DVT 
+in pregnancy,32 it would be anticipated that there would be an increased likelihood of false-
+negative results with this strategy. Therefore, while a positive result is of value, a negative 
+investigation does not help to exclude a PE. D
+PDC
+C
+C
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2+RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists9 of 32The choice of technique for definitive diagnosis (V/Q scan or CTPA) will depend on local 
+availability, and individual hospitals should have an agreed protocol for the objective diagnosis 
+of suspected PE during pregnancy. A matched case–control study in the UK investigated the 
+management of 143 women with antenatal PE; ninety-one women (65%) had a V/Q scan, 42 
+(30%) had CTPA performed, 22 (16%) had echocardiography and 16 (11%) were diagnosed by 
+angiography.33 Forty women (28%) were diagnosed using a combination of techniques. With 
+regard to V/Q lung scanning, during pregnancy the ventilation component can often be omitted 
+thereby minimising the radiation dose for the fetus. Studies have compared V/Q or low-dose 
+perfusion (Q) scans with CTPA for the detection of PE in pregnancy and have found comparable 
+negative predictive values (99% and 100% for CTPA and Q scans respectively) and no significant 
+difference between the number of positive, nondiagnostic and normal scans.5,34,35 One study 
+reported a higher rate of nondiagnostic scans with CTPA (37.5%) compared with V/Q scanning 
+(4%) in pregnancy,36 although this may be related to the imaging protocol employed. 
+CTPA has potential advantages over V/Q imaging including: CTPA is more readily available,37,38 
+delivers a low radiation dose to the fetus (see section below) and can identify other pathology 
+including pneumonia (5–7%), pulmonary oedema (2–6%) and rarely aortic dissection.5,35 Despite 
+these potential advantages of CTPA, many authorities continue to recommend V/Q scanning as 
+first-line investigation in pregnancy because of its high negative predictive value in this situation 
+and its substantially lower radiation dose to pregnant breast tissue (see section below).39,40
+Clinicians arranging imaging scans for suspected PE in pregnancy should be aware of the 
+potential risks surrounding fetal and maternal radiation exposure.41 CTPA exposes the fetus to 
+similar or lower amounts of radiation as V/Q scanning, although studies have been confounded 
+by the type and model of scanners used, the imaging protocols employed and the methods used 
+to estimate radiation exposure.42 With both techniques, the doses employed are well below 
+accepted thresholds for teratogenicity, fetal death and fetal growth restriction, and the main 
+concern for the fetus is a very small increased risk of childhood cancer.43 The International 
+Commission on Radiological Protection has estimated an increased risk of fatal childhood 
+cancer to the age of 15 following in utero radiation exposure of 0.006% per mGy, which equates 
+to a risk of 1 in 17 000 per mGy.44 The fetal radiation exposure associated with CTPA and V/Q is 
+approximately 0.1 mGy and 0.5 mGy respectively, although quoted figures vary considerably.25,43,45
+While CTPA is associated with a low risk of radiation for the fetus, this must be offset by the 
+relatively high radiation dose (up to 20 mGy) to the mother’s breast tissue, which is associated 
+with an increased risk of breast cancer. The dose estimate for CTPA is 20 to 100 times greater 
+than for V/Q scanning. The radiation dose depends on breast size, the technique used and 
+the age of the woman – the risk of cancer being greater in younger women.46 Estimates of the 
+increased risk of breast cancer associated with CTPA in pregnancy vary considerably and are 
+based on modelling or extrapolated data. The delivery of 10 mGy of radiation to a woman’s breast 
+has been estimated to increase her lifetime risk of developing breast cancer by 13.6% above her 
+background risk47 and this figure has been cited widely. For a 25-year-old whose background 
+risk of developing breast cancer in the following 10 years is 0.1%, the extra risk from 10mGy of 
+radiation increases the risk by 13.6% of 0.1%, which is 0.0136% extra. Furthermore, Allen and 
+Demetriades48 have suggested that even this small risk is an overestimate. Nevertheless, breast 
+tissue is especially sensitive to radiation exposure during pregnancy because of hormonally 
+induced increased glandular activity.49 The breast doses associated with CTPA can be reduced 
+by 20–40% by the use of bismuth shields placed over the breasts.50 It would be prudent to 
+recommend that lung perfusion scans should be considered the investigation of first choice for 
+young women, especially if there is a family history of breast cancer or the patient has had a 
+previous chest CT scan.45Evidence 
+level 2+
+Evidence 
+level 4
+Evidence 
+level 3RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists11 of 322 cm [E for edema] and first trimester presentation [Ft] – the ‘LEFt rule’). Righini et al.,71 in a post 
+hoc analysis of 157 pregnant women with suspected DVT, applied the LEFt rule and found that a 
+negative score accurately identifies pregnant women in whom the proportion of confirmed DVT 
+is very low. O’Connor et al.70 examined the use of the modified Wells score (MWS) in pregnancy 
+as a risk stratification tool in the diagnosis of PE. They found that a MWS of 6 or higher was 100% 
+sensitive and 90% specific with a positive predictive value of 36% for PE on CTPA. No woman 
+with a MWS of less than 6 had a PE, giving a negative predictive value of 100%. In each of these 
+studies, the authors conclude that prospective trials are required to validate their findings. 
+5. Baseline blood investigations
+What baseline blood investigations should be performed before initiating anticoagulant therapy?
+Before anticoagulant therapy is commenced, blood should be taken for a full blood count, coagulation 
+screen, urea and electrolytes, and liver function tests. 
+Performing a thrombophilia screen prior to therapy is not recommended. 
+The use of anticoagulant therapy can be influenced by renal and hepatic function, and can 
+influence the platelet count, and blood should be taken to confirm that these are normal 
+before commencing treatment.11
+Almost half of all women who have an episode of VTE in pregnancy will have an underlying 
+heritable or acquired thrombophilia.72,73 In the nonpregnant individual, the presence of 
+thrombophilia does not alter the acute management of VTE with regards to the choice of 
+anticoagulant agent, intensity of treatment or duration of therapy,74 and therefore testing for 
+thrombophilia is not recommended.11 Furthermore, the physiological changes of pregnancy and 
+pathophysiology of acute thrombus can influence the results of a thrombophilia screen. Levels 
+of antithrombin and protein C may fall, particularly if the thrombus is extensive. In addition, 
+protein S levels fall in normal pregnancy and an acquired activated protein C resistance is found 
+in around 40% of pregnancies.75,76 It is recommended therefore that a thrombophilia screen 
+should not be performed in pregnant women on presentation with suspected VTE. 
+6. Initial anticoagulant treatment of VTE in pregnancy
+6.1 What is the initial treatment of VTE in pregnancy?
+In clinically suspected DVT or PE, treatment with low-molecular-weight heparin (LMWH) should be 
+commenced immediately until the diagnosis is excluded by objective testing, unless treatment is 
+strongly contraindicated. 
+Meta-analyses of randomised controlled trials indicate that LMWHs are more effective, are 
+associated with a lower risk of haemorrhagic complications and are associated with lower 
+mortality than unfractionated heparin in the initial treatment of DVT in nonpregnant 
+patients.77,78 A meta-analysis of randomised controlled trials has shown equivalent efficacy 
+of LMWH to unfractionated heparin in the initial treatment of PE.79 A Cochrane review of 
+22 studies had over 8000 patients of whom 75% had DVT and 25% PE without evidence of 
+DVT; compared with unfractionated heparin, LMWH treatment was associated with lower 
+rates of VTE recurrence or extension (3.6% versus 5.4%; OR 0.68, 95% CI 0.55–0.84), lower 
+mortality (4.5% versus 6.0%; OR 0.76, 95% CI 0.63–0.92) and less major bleeding during the 
+initial treatment period (1.2% versus 2.0%; OR 0.57, 95% CI 0.39–0.83).80 
+ 
+With regard to safety, there is substantial accumulating evidence with the use of LMWHs, 
+both in pregnant and nonpregnant patients, for the prevention and treatment of VTE.81 There Evidence 
+level 2+
+Evidence 
+level 1++Evidence 
+level 4
+Evidence 
+level 2++BD
+B
+Evidence 
+level 1++RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists12 of 32is evidence that LMWHs do not cross the placenta.82 While a Cochrane review concluded that 
+there is no evidence from randomised controlled trials on the effectiveness of anticoagulation 
+for DVT in pregnancy,13 systematic reviews and large series of cases have concluded that 
+LMWH is a safe and effective alternative to unfractionated heparin as an anticoagulant during 
+pregnancy.83–87 These have demonstrated a low risk of recurrent VTE when therapeutic doses 
+of LMWH were used to manage VTE in pregnancy; for example, Greer and Nelson-Piercy 
+identified a risk of recurrent VTE of 1.15% in women managed with LMWH.84 This compares 
+favourably with recurrence rates of 5–8% reported in trials carried out in nonpregnant 
+patients treated with LMWH or unfractionated heparin followed by coumarin therapy who 
+are followed up for 3–6 months.88,89 
+One of the advantages of LMWH over unfractionated heparin is the potential reduced risk of 
+bleeding. This is of particular relevance in obstetric practice where obstetric haemorrhage 
+remains the most common cause of severe obstetric morbidity.90 LMWHs are not associated 
+with an increased risk of severe postpartum haemorrhage (defined as a blood loss of 1000 ml 
+or more) in vaginal delivery.91 In one retrospective study85 the observed rate of massive 
+postpartum haemorrhage (more than 1500 ml) was 1.1%, which compares favourably with the 
+rate of massive haemorrhage (0.7%) from one prospective study without the use of LMWH.92 It 
+is known that the risk of heparin-induced thrombocytopenia (HIT) is substantially lower with 
+LMWH use compared with unfractionated heparin and in the 2777 pregnancies treated with 
+LMWH and reviewed by Greer and Nelson-Piercy, no cases of HIT associated with thrombosis 
+were reported.84 
+Data on LMWH also substantiate a lower risk of LMWH compared with unfractionated heparin 
+for heparin-induced osteoporosis; the overall risk of this complication on systematic review 
+was 0.04% (compared with 2% for unfractionated heparin).84,93 A randomised controlled trial 
+investigating bone mineral density in pregnant women receiving long-term dalteparin in 
+pregnancy found no significant difference in bone density between LMWH-treated patients 
+and controls.94 
+In clinically suspected VTE, LMWH should be postponed until objective testing has confirmed 
+the diagnosis in women at risk of bleeding after careful consideration of the balance of risks 
+of haemorrhage and clotting. The risk factors for bleeding are summarised in Green-top 
+Guideline No. 37a. Women who are known to be allergic to LMWH should be offered an 
+alternative anticoagulant preparation (see section 8.3).
+6.2 What is the therapeutic dose of LMWH in pregnancy?
+LMWH should be given in doses titrated against the woman’s booking or early pregnancy weight. 
+There is insufficient evidence to recommend whether the dose of LMWH should be given once daily 
+or in two divided doses.
+There should be clear local guidelines for the dosage of LMWH to be used.
+In nonpregnant patients, the recommended therapeutic doses of LMWH vary according to 
+the manufacturer (enoxaparin 1.5 mg/kg once daily; dalteparin 10 000–18 000 units once 
+daily depending on body weight; tinzaparin 175 units/kg once daily). During pregnancy, 
+changes in volume of distribution and renal glomerular filtration rate result in alterations 
+in the pharmacokinetics of LMWHs.95–99 Previous editions of this guideline (2001 and 2007) 
+recommended a twice-daily dosage regimen for enoxaparin and dalteparin in the treatment of 
+VTE in pregnancy (enoxaparin 1 mg/kg twice daily; dalteparin 100 units/kg twice daily). This 
+recommendation was based on anti-Xa activity and a paucity of reports on safety and efficacy 
+of once-daily dosing.100 Since then, a prospective multicentre observational study has found Evidence 
+level 2++
+Evidence 
+level 1+
+Evidence 
+level 4
+PC
+Evidence 
+level 3RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists13 of 32that 60% of practitioners use once-daily dosing of enoxaparin and dalteparin for treatment of 
+VTE in pregnancy.101
+A national case–control study on the management of antenatal PE using the UK Obstetric 
+Surveillance System found that 49% of women were managed with a once-daily dosage schedule.33 
+Further, a large, international retrospective study on the use of tinzaparin in pregnancy (with 
+254 pregnancies receiving treatment doses and 94.1% of these in a once-daily regimen) has 
+provided reassuring data on safety and efficacy of once-daily dosing.85
+Recommendations on the treatment of pregnancy-associated VTE from clinicians in New 
+Zealand and Australia concluded that there is insufficient evidence to favour one dose regimen 
+over the other, and that treatment of acute VTE in pregnancy can be with LMWH administered 
+either once daily or twice daily.40
+A recent pharmacokinetic study involving 123 pregnant women found that the half-life 
+of enoxaparin is prolonged with the progression of pregnancy; the authors conclude that 
+their study provides further support for the use of once-daily enoxaparin for treatment of VTE 
+in pregnancy.102 
+The doses of different LMWHs are given in Tables 1a–c below.
+Table 1a. Initial dose of enoxaparin is determined as follows:
+Booking or early pregnancy weight Initial dose of enoxaparin
+< 50 kg 40 mg twice daily or 60 mg once daily
+50–69 kg 60 mg twice daily or 90 mg once daily
+70–89 kg 80 mg twice daily or 120 mg once daily
+90–109 kg 100 mg twice daily or 150 mg once daily
+110–125 kg 120 mg twice daily or 180 mg once daily
+> 125 kg Discuss with haematologist
+Table 1b. Initial dose of dalteparin is determined as follows:
+Booking or early pregnancy weight Initial dose of dalteparin
+< 50 kg 5000 iu twice daily or 10 000 iu once daily
+50–69 kg 6000 iu twice daily or 12 000 iu once daily
+70–89 kg 8000 iu twice daily or 16 000 iu once daily
+90–109 kg 10 000 iu twice daily or 20 000 iu once daily
+110–125 kg 12 000 iu twice daily or 24 000 iu daily
+> 125 kg Discuss with haematologist
+Table 1c. Initial dose of tinzaparin is determined as follows:
+Initial dose of tinzaparin (based on booking or early pregnancy weight)
+175 units/kg once daily
+Lower doses of LMWH should be employed if the creatinine clearance is less than 30 ml/minute 
+(enoxaparin and dalteparin) or less than 20 ml/minute with tinzaparin.103,104 Evidence 
+level 3
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 4
+Evidence 
+level 2+RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists14 of 326.3 Should blood tests be performed to monitor heparin therapy in pregnancy?
+Routine measurement of peak anti-Xa activity for patients on LMWH for treatment of acute VTE 
+in pregnancy or postpartum is not recommended except in women at extremes of body weight 
+(less than 50 kg and 90 kg or more) or with other complicating factors (for example, with renal 
+impairment or recurrent VTE). 
+Routine platelet count monitoring should not be carried out. 
+Obstetric patients who are postoperative and receiving unfractionated heparin should have 
+platelet count monitoring performed every 2–3 days from days 4 to 14 or until heparin is stopped. 
+Initial experience with enoxaparin for the treatment of VTE in pregnancy indicated that 
+satisfactory anti-Xa levels (peak anti-Xa activity, 3 hours post-injection, of 0.5–1.2 u/ml) were 
+obtained using a weight-based regimen.105 A recent case series of 13 pregnant women treated 
+with therapeutic doses of tinzaparin found that 11 required dose adjustments to maintain the anti-
+Xa activity, assessed 4 hours post-injection, in the therapeutic range.99 However, a retrospective 
+case–control study from Denmark assessed 166 women managed with prophylactic and 
+therapeutic doses of LMWH in pregnancy without anti-Xa monitoring and reported excellent 
+clinical outcomes.106 Monitoring of anti-Xa is therefore not routinely required in patients with 
+VTE on therapeutic doses of LMWH, particularly as there are concerns over the accuracy of 
+anti-Xa monitoring.107,108 There may be a case for monitoring levels at extremes of body weight 
+(less than 50 kg and 90 kg or more) and in women with other complicating factors including 
+renal disease and recurrent VTE.109 
+Guideline documents recommend that routine platelet count monitoring is not required in 
+obstetric patients who receive heparin,110,111 as the risk of HIT is low; one case report of HIT 
+with thrombosis was identified in a pregnancy managed with enoxaparin.112 The platelet count 
+should be checked after 24 hours of initiating treatment if the patient has previously received 
+heparin (unfractionated or LMWH) in the last 100 days.111 The frequency of HIT is greater in 
+surgical than medical patients, and is more likely with unfractionated heparin. It is therefore 
+recommended that obstetric patients who are postoperative and receiving unfractionated 
+heparin should have platelet count monitoring performed every 2–3 days from days 4 to 14 or 
+until heparin is stopped.110 
+6.4 How should massive life-threatening PE in pregnancy and the puerperium be managed?
+Collapsed, shocked women who are pregnant or in the puerperium should be assessed by a team 
+of experienced clinicians including the on-call consultant obstetrician. 
+Women should be managed on an individual basis regarding: intravenous unfractionated heparin, 
+thrombolytic therapy or thoracotomy and surgical embolectomy. 
+Management should involve a multidisciplinary team including senior physicians, obstetricians 
+and radiologists. 
+Intravenous unfractionated heparin is the preferred, initial treatment in massive PE with 
+cardiovascular compromise. 
+Maternity units should develop guidelines for the administration of intravenous unfractionated 
+heparin. 
+The on-call medical team should be contacted immediately. An urgent portable echocardiogram or 
+CTPA within 1 hour of presentation should be arranged. If massive PE is confirmed, or in extreme 
+circumstances prior to confirmation, immediate thrombolysis should be considered. C
+Evidence 
+level 2+
+Evidence 
+level 4D
+P
+P
+PD
+B
+P
+PRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists15 of 32Massive PE may present with shock, refractory hypoxaemia and/or right ventricular dysfunction on 
+echocardiogram and is a medical emergency. Collapsed, shocked women who are pregnant or in the 
+puerperium should be assessed by a multidisciplinary resuscitation team of experienced clinicians including 
+the on-call consultant obstetrician, who should decide on an individual basis whether a woman receives 
+intravenous unfractionated heparin, thrombolytic therapy or thoracotomy and surgical embolectomy.
+Maternal resuscitation should commence following the principles of ABC and if cardiac arrest 
+occurs, cardiopulmonary resuscitation should be performed with the woman in a left lateral 
+tilt. A perimortem caesarean section should be performed by 5 minutes if resuscitation is 
+unsuccessful and the pregnancy is more than 20 weeks.113 
+Intravenous unfractionated heparin is the preferred, initial treatment in massive PE because 
+of its rapid effect, extensive experience of its use in this situation and since it can be adjusted 
+more readily if thrombolytic therapy is administered.11
+One regimen for the administration of intravenous unfractionated heparin is:114 
+l loading dose of 80 units/kg, followed by a continuous intravenous infusion of 18 units/kg/hour 
+l if a patient has received thrombolysis (see below), the loading dose of heparin should be omitted 
+and an infusion started at 18 units/kg/hour
+l it is mandatory to measure activated partial thromboplastin time (APTT) level 4–6 hours after the 
+loading dose, 6 hours after any dose change and then at least daily when in the therapeutic range. 
+The therapeutic target APTT ratio is usually 1.5–2.5 times the average laboratory control value. 
+(This will depend on the APTT reagent used in the laboratory and, when unfractionated heparin is 
+employed, the advice of a haematologist should be sought)
+l using this weight-adjusted regimen, the infusion rate should be adjusted according to the APTT as 
+described in Table 2.
+Table 2. Adjustments in the infusion rate of unfractionated heparin according to the APTT
+APTT ratio Dose change (units/kg/hour) Additional action Next APTT (hour)
+< 1.2 + 4 Re-bolus 80 units/kg 6
+1.2–1.5 + 2 Re-bolus 40 units/kg 6
+1.5–2.5 no change 24
+2.5–3.0 – 2 6
+> 3.0 – 3 Stop infusion 1 hour 6
+It is recognised that APTT monitoring of unfractionated heparin is technically problematic, 
+particularly in late pregnancy when an apparent heparin resistance occurs due to increased 
+fibrinogen and factor VIII which influence the APTT.115,116 This can lead to unnecessarily high 
+doses of heparin being used with subsequent haemorrhagic problems. Where such problems 
+are considered to exist, haematologists should be involved in the patient’s management. It may 
+be useful to determine the anti-Xa level as a measure of heparin dose. With unfractionated 
+heparin, a lower level of anti-Xa is considered therapeutic (target range 0.35–0.7 u/ml or 
+0.5–1.0 u/ml for patients with life-threatening PE).117 
+In massive life-threatening PE with haemodynamic compromise (or with limb- or life-threatening 
+ischaemic complications from extensive iliofemoral vein thrombosis), thrombolytic therapy should 
+be considered as anticoagulant therapy alone will not reduce the obstruction in the circulation. After 
+thrombolytic therapy has been given, an infusion of unfractionated heparin can be given, but the loading 
+dose (outlined above) should be omitted.Evidence 
+level 4
+Evidence 
+level 2+ Evidence 
+level 1+RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists16 of 32A meta-analysis of randomised controlled trials using thrombolytic agents for PE has established 
+that thrombolytic therapy is more effective than heparin therapy in reducing clot burden and 
+improving haemodynamics.118 These studies, however, have not shown any impact on long-
+term survival over and above that of conventional therapy with heparin or LMWH, and no 
+thrombolytic agent has been shown to be superior to any of the others.118 However, when Wan et 
+al. restricted their analysis to those trials with massive PE, they identified a significant reduction in 
+recurrent PE or death from 19.0% with heparin alone to 9.4% with thrombolysis (OR 0.45, 95% CI 
+0.22–0.90).118 Current recommendations suggest that thrombolytic therapy should be reserved 
+for patients with severe pulmonary thromboembolism with haemodynamic compromise.119 
+There are now a large number of published case reports and case series on the use of thrombolytic 
+therapy in pregnancy,120–123 including cases treated with: streptokinase,123–125 urokinase,126 
+recombinant tissue plasminogen activator (rtPA; alteplase)121,127,128 and tenecteplase.129 A major 
+concern regarding the use of thrombolytic therapy in pregnancy is fetal and maternal bleeding. 
+In one literature review, Ahearn et al.121 reported on 172 women treated with thrombolytic 
+therapy (167 of whom had DVT or PE); problems associated with treatment included five 
+nonfatal maternal bleeding complications (2.9%) and three fetal deaths (1.7%). No maternal 
+deaths associated with thrombolytic therapy have been reported. More recently, te Raa et al.123 
+reported on 13 cases of massive PE during pregnancy – four had haemorrhagic complications 
+and there were two fetal deaths. Most bleeding events occur around catheter and puncture 
+sites and, in pregnant women, there have been no reports of intracranial bleeding. 
+If the patient is not suitable for thrombolysis or is moribund, a discussion with the cardiothoracic 
+surgeons with a view to urgent thoracotomy should be had.112
+7. Additional therapies
+7.1 Should graduated elastic compression stockings be employed in the acute management of 
+VTE in pregnancy?
+In the initial management of DVT, the leg should be elevated and a graduated elastic compression 
+stocking applied to reduce oedema. Mobilisation with graduated elastic compression stockings 
+should be encouraged. 
+Patients with acute DVT have traditionally been recommended bed rest and immobilisation 
+for fear of dislodging an unstable thrombus and causing PE, and by the belief that rest relieves 
+pain and swelling. However, randomised controlled trials have shown that early ambulation, 
+with leg compression, does not increase the risk of PE, does not increase thrombus 
+propagation, and that pain and swelling improved faster compared to those patients who 
+had their mobility restricted.130–138 This approach may also prevent the development of post-
+thrombotic syndrome (see section 11). A randomised controlled trial comparing knee-length 
+with thigh-length hosiery concluded that thigh-length compression elastic stockings do not 
+offer better protection against post-thrombotic syndrome than below-knee hosiery and are 
+less well tolerated.139 National guidance in the UK recommends that patients with proximal 
+DVT should be offered below-knee compression stockings with an ankle pressure greater 
+than 23 mmHg and that hosiery does not need to be worn on the unaffected leg.12 Accurate 
+fitting and careful instruction in the correct application of the hosiery is essential to avoid 
+discomfort and assist rather than prevent venous return. A pilot audit of compliance with 
+graduated compression stockings in pregnancy showed poor levels of compliance related to 
+discomfort and side effects.140 BEvidence 
+level 1++
+Evidence 
+level 3
+Evidence 
+level 1+RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists17 of 327.2 What is the role of inferior vena cava filters in the management of VTE in pregnancy?
+Consideration should be given to the use of a temporary inferior vena cava filter in the peripartum 
+period for patients with iliac vein VTE to reduce the risk of PE or in patients with proven DVT and 
+who have recurrent PE despite adequate anticoagulation. 
+Placement of a temporary inferior vena cava (IVC) filter in obstetric practice is indicated when 
+recurrent thromboembolism occurs despite adequate anticoagulation, or when anticoagulation 
+is contraindicated (such as the peripartum period). Case reports and case series have reported 
+favourable outcomes with regard to safety and effectiveness on the use of IVC filters in 
+pregnancy.141–145 The long-term safety of IVC filters is uncertain and the main complications 
+associated with vena cava filters are migration, an increased risk of lower limb DVT and caval 
+thrombosis and, rarely, infection.12 
+8. Maintenance treatment of VTE
+8.1 What is the maintenance treatment of DVT or PE?
+Treatment with therapeutic doses of subcutaneous LMWH should be employed during the remainder 
+of the pregnancy and for at least 6 weeks postnatally and until at least 3 months of treatment has 
+been given in total. 
+Women should be taught to self-inject LMWH and arrangements made to allow safe disposal of 
+needles and syringes. Outpatient follow-up should include clinical assessment and advice with 
+monitoring of blood platelets and peak anti-Xa levels if appropriate (see sections 5 and 6.3). 
+Pregnant women who develop heparin-induced thrombocytopenia or have heparin allergy and 
+require continuing anticoagulant therapy should be managed with an alternative anticoagulant 
+under specialist advice. 
+Women with antenatal VTE can be managed with subcutaneous therapeutic doses of LMWH 
+for the remainder of the pregnancy77–79,81,83–87 (see section 6.2). If LMWH therapy requires 
+monitoring (e.g. extremes of body weight or renal impairment, see section 6.3), the aim is to 
+achieve a peak anti-Xa activity, 3 hours post-injection, of 0.5–1.2 u/ml. 
+The rationale for recommending therapeutic doses of LMWH (rather than reduced, prophylactic 
+doses) throughout the remainder of the pregnancy is based on the continuing risk of recurrent 
+VTE during this time arising from: pregnancy-related changes in the coagulation system, 
+reduced venous flow velocity, a higher incidence of isolated iliac vein DVT in pregnancy and in 
+at least 50% of patients a thrombophilia will be present. A high recurrence rate of VTE (9 of 35 
+patients) was reported in a prospective randomised controlled trial in nonpregnant patients, 
+when thromboprophylactic doses of unfractionated heparin (5000 iu every 12 hours) were 
+employed after initial management with intravenous unfractionated heparin.146 
+ 
+In their observational study on the management of antenatal VTE in Britain and Ireland, Voke 
+et al.101 found that doses of LMWH were reduced in 22% of women after initial treatment; the 
+reasons given included clinical improvement several weeks after diagnosis and transfer from 
+twice- to once-daily injections. 
+It is not yet established whether the dose of LMWH or unfractionated heparin can be reduced 
+to an intermediate dose after an initial period of therapeutic anticoagulation. In view of the 
+compelling safety data for LMWHs,83–87 we continue to recommend continuation of therapeutic 
+doses based on the patient’s weight throughout pregnancy. Reducing to an intermediate dose 
+may be useful in pregnant women at increased risk of bleeding or osteoporosis.D
+C
+Evidence 
+level 3Evidence 
+level 3
+B
+C
+Evidence 
+level 1+
+Evidence 
+level 3
+Evidence 
+level 2++RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists18 of 32Women should be taught to self-inject and can then be managed as outpatients until delivery; 
+arrangements should be made to allow safe disposal of needles and syringes. A clinical audit 
+and a prospective cohort study have shown good levels of compliance with LMWH self-
+injection therapy during the antenatal period.147,148 
+Prolonged unfractionated heparin use during pregnancy may result in osteoporosis and 
+fractures.93,149 As discussed previously (section 6.1), the risk of osteoporosis with LMWH is much 
+less than with unfractionated heparin, with one systematic review reporting a risk of 0.04%.84 
+Allergic skin reactions to heparin can occur and may require the heparin preparation to be 
+changed.150 A prospective observational study of 111 pregnant women receiving heparin 
+treatment (94 had LMWH and 17 had unfractionated heparin) found heparin-induced skin 
+reactions in 22 (19.8%).151 All lesions were caused by allergic delayed-type hypersensitivity 
+reactions and the median time of onset was 50.5 days (range 5–184 days). 
+In women who are unable to tolerate heparin, usually because of allergic skin reactions without 
+evidence of HIT, an alternative LMWH can be prescribed, although the cross-reactivity rate to 
+different heparin preparations is 33.3%.151 Where the problem persists or in women with HIT, 
+the use of danaparoid, a low-molecular-weight heparinoid, can be considered. A review of 91 
+pregnancies in 83 women concluded that danaparoid is an effective and safe antithrombotic 
+in pregnancy for women who are intolerant of heparin.152
+8.2 Can vitamin K antagonists be used during pregnancy for the maintenance treatment of VTE?
+Because of their adverse effects on the fetus, vitamin K antagonists, such as warfarin, should not 
+be used for antenatal VTE treatment. 
+Vitamin K antagonists cross the placenta readily and are associated with adverse pregnancy 
+outcomes including miscarriage, prematurity, low birthweight, neurodevelopmental problems 
+and fetal and neonatal bleeding. They are also associated with a characteristic embryopathy 
+following fetal exposure in the first trimester.153,154 
+8.3 Is there a role for the new anticoagulants in the treatment of VTE in pregnancy?
+Consideration should be given to the use of newer anticoagulants (fondaparinux, argatroban or 
+r-hirudin) in pregnant women who are unable to tolerate heparin (LMWH or unfractionated heparin) 
+or danaparoid and who require continuing anticoagulant therapy. 
+Case reports and case series have described the use of newer anticoagulants in pregnancy 
+following the development of HIT or skin allergy to heparins; these preparations are 
+administered parenterally and include fondaparinux (a selective factor-Xa inhibitor),112,155,156 
+argatroban (a direct thrombin inhibitor)157–160 and r-hirudin (a direct thrombin inhibitor).161–165 
+While these drugs are not licensed for use in pregnancy, preliminary data regarding their 
+safety and efficacy in pregnancy are reassuring; fondaparinux has been recommended by a 
+group of experts (the Pregnancy and Thrombosis Working Group) as an alternative to LMWH 
+when HIT occurs in pregnancy.166
+There are no reports on the use of the non-vitamin K antagonist oral anticoagulants (NOACs, 
+previously called new or novel oral anticoagulants, e.g. rivaroxaban, apixaban, betrixaban and 
+dabigatran) in pregnancy or the puerperium and as they are likely to cross the placenta and 
+have potential direct fetal effects, they should therefore be avoided in the antenatal period.154CEvidence 
+level 2+
+Evidence 
+level 2++
+Evidence 
+level 2–
+Evidence 
+level 3
+DEvidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 4RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists19 of 329. Anticoagulant therapy during labour and delivery
+9.1 Should anticoagulant therapy be altered during labour and delivery?
+When VTE occurs at term, consideration should be given to the use of intravenous unfractionated 
+heparin which is more easily manipulated. 
+The woman on LMWH for maintenance therapy should be advised that once she is in established 
+labour or thinks that she is in labour, she should not inject any further heparin. 
+Where delivery is planned, either by elective caesarean section or induction of labour, LMWH 
+maintenance therapy should be discontinued 24 hours prior to planned delivery. 
+Regional anaesthetic or analgesic techniques should not be undertaken until at least 24 hours 
+after the last dose of therapeutic LMWH. 
+LMWH should not be given for 4 hours after the use of spinal anaesthesia or after the epidural 
+catheter has been removed, and the epidural catheter should not be removed within 12 hours of 
+the most recent injection. 
+Where possible, anticoagulant therapy should be altered to avoid an unwanted anticoagulant effect 
+during delivery. Women should be advised not to inject any further heparin if they are in established 
+labour or think they are in labour.
+For elective delivery, LMWH should be stopped 24 hours before induction of labour or caesarean 
+section. Subcutaneous unfractionated heparin should be discontinued 12 hours before and 
+intravenous unfractionated heparin stopped 6 hours before induction of labour or regional 
+anaesthesia.167 Women who present in labour shortly after injecting LMWH can be reassured that 
+bleeding complications are very uncommon with LMWH (see section 6.1). If spontaneous labour 
+occurs in women receiving therapeutic doses of subcutaneous unfractionated heparin, careful 
+monitoring of the APTT is required (see above for use of APTT in pregnancy). If it is markedly 
+prolonged near delivery, protamine sulfate may be required to reduce the risk of bleeding. 
+When VTE occurs at term, the risk of recurrent thrombosis may be increased if anticoagulant 
+therapy is discontinued to allow a planned induction of labour or caesarean section; one study 
+suggested that the risk of recurrent VTE is higher within 2 weeks of the initial thrombosis.168 
+Consideration can be given to the use of intravenous unfractionated heparin which is more easily 
+manipulated and, because of its shorter half-life, minimises the duration without anticoagulant 
+therapy. However, as noted previously, there are issues in monitoring unfractionated heparin in 
+pregnancy using the APTT. One approach to the use of anticoagulant therapy in this situation 
+has been described by McLintock et al.40
+The incidence of spinal haematoma after regional anaesthesia (with or without antithrombotic 
+therapy) in the obstetric population is unknown. It is considered that obstetric patients have 
+a lower incidence of spinal haematoma than elderly patients.169,170 Epidural anaesthesia can be 
+sited in obstetric patients undergoing treatment for VTE only after discussion with a senior 
+anaesthetist, in keeping with local anaesthetic protocols. When a woman presents while on a 
+therapeutic regimen of LMWH, regional techniques should not be employed for at least 24 hours 
+after the last dose of LMWH. LMWH should not be given for at least 4 hours after the epidural 
+catheter has been removed and the catheter should not be removed within 12 hours of the most 
+recent injection.167
+For delivery by elective caesarean section, the treatment doses of LMWH should be omitted 
+for 24 hours prior to surgery. A thromboprophylactic dose of LMWH (enoxaparin 40 mg; DD
+Evidence 
+level 4D
+P
+DRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists20 of 32dalteparin 5000 iu; tinzaparin 75 iu/kg) should be given 4 hours postoperatively (at least 4 hours 
+after removal of the epidural catheter, if appropriate) and the treatment dose recommenced 
+8 to 12 hours later. 
+9.2 Are specific surgical measures required for anticoagulated patients undergoing delivery 
+by caesarean section?
+In patients receiving therapeutic doses of LMWH, wound drains (abdominal and rectus sheath) 
+should be considered at caesarean section and the skin incision should be closed with interrupted 
+sutures to allow drainage of any haematoma. 
+Measures should be taken to allow drainage of any haematoma, including the use of drains and 
+interrupted skin sutures. A case–control study has reported an increased incidence of wound 
+complications in women receiving peripartum anticoagulation.171 The incidence of wound 
+haematoma was 9.1% in women receiving anticoagulation and 1.3% in controls. 
+9.3 What anticoagulant therapy should be employed in women at high risk of haemorrhage?
+Any woman who is considered to be at high risk of haemorrhage, and in whom continued heparin 
+treatment is considered essential, should be managed with intravenous unfractionated heparin 
+until the risk factors for haemorrhage have resolved. 
+Unfractionated heparin has a shorter half-life than LMWH and its activity is more completely 
+reversed with protamine sulfate. It should therefore be used in situations when anticoagulation 
+is required but concerns exist regarding bleeding; these situations include: antepartum 
+haemorrhage, coagulopathy, progressive wound haematoma, suspected intra-abdominal 
+bleeding, and postpartum haemorrhage. One regimen for the administration of unfractionated 
+heparin is given in section 6.4. If a woman develops a haemorrhagic problem while on LMWH, 
+the treatment should be stopped and advice sought from a haematologist. Protamine sulfate 
+reverses the anti-IIa fraction of LMWH, but does not fully reverse the anti-Xa effect; case series 
+have shown that it is useful in the management of bleeding associated with LMWH in some, 
+but not all, patients.172
+10. Postnatal anticoagulation
+How should anticoagulation be managed postnatally?
+Therapeutic anticoagulant therapy should be continued for the duration of the pregnancy and for at 
+least 6 weeks postnatally and until at least 3 months of treatment has been given in total. Before 
+discontinuing treatment the continuing risk of thrombosis should be assessed. 
+Women should be offered a choice of LMWH or oral anticoagulant for postnatal therapy after 
+discussion about the need for regular blood tests for monitoring of warfarin, particularly during 
+the first 10 days of treatment. 
+Postpartum warfarin should be avoided until at least the fifth day and for longer in women at 
+increased risk of postpartum haemorrhage. 
+Women should be advised that neither heparin (unfractionated or LMWH) nor warfarin is 
+contraindicated in breastfeeding. 
+National guidelines in the UK recommend that in nonpregnant patients anticoagulant therapy 
+should be continued for at least 3 months for proximal DVT or PE and longer if the risk of 
+recurrent VTE is considered to be high.12 The presence of continuing prothrombotic factors 
+that are a feature of pregnancy (see section 8.1) and the safety of LMWH have led authorities P
+PPEvidence 
+level 3
+Evidence 
+level 4Evidence 
+level 4
+DEvidence 
+level 2+
+C
+DRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists21 of 32to propose that, in the management of VTE in pregnancy, anticoagulant therapy should be 
+continued for the duration of the pregnancy and until at least 6 weeks postpartum and to 
+allow a total duration of treatment of at least 3 months.81 Both heparin and warfarin are 
+satisfactory for use postpartum. NOACs (see section 8.3) could be considered in women who 
+are not breastfeeding, although no reports were identified of their use in the puerperium. 
+Before discontinuing treatment the continuing risk of thrombosis should be assessed. 
+Women should be offered a choice of LMWH or oral anticoagulant for postnatal therapy after discussion 
+about the need for regular blood tests for monitoring of warfarin. If the woman chooses to continue 
+with LMWH postnatally, then the doses and dosage schedule that were employed antenatally should 
+be continued. 
+A prospective cohort study has shown that women’s adherence to LMWH therapy decreases 
+postnatally (mean percentage adherence to LMWH antenatally was 97.92% and 93.37% 
+postnatally). The authors conclude that healthcare workers should reinforce the necessity of 
+adherence to LMWH treatment during the postpartum period.148 
+If the woman chooses to commence warfarin postpartum, this should be avoided until at least the 
+fifth postnatal day. Daily testing of the international normalised ratio (INR) is recommended during 
+the transfer from LMWH to warfarin to avoid over-anticoagulation. Warfarin administration should be 
+delayed in women considered to be at risk of postpartum haemorrhage. 
+A systematic review on dosage regimens for initiating warfarin found no evidence to suggest a 
+10 mg loading dose is superior to 5 mg, although no studies in that review involved obstetric 
+patients.173 
+A case–control study investigated the number of days and total warfarin dose required to 
+achieve therapeutic INR in a group of postpartum women compared to a group of matched 
+nonpregnant women.174 The postpartum women required larger doses of warfarin and took 
+significantly longer to reach therapeutic INR; the authors propose that the coagulation changes 
+that occur in pregnancy and persist into the puerperium antagonise warfarin and may justify 
+higher loading doses. 
+The regimen for commencing warfarin should be based on nomograms developed with 
+haematologists175 (for an example, see Appendix II). The INR should be checked on day two of 
+warfarin treatment and subsequent warfarin doses titrated to maintain the INR between 2.0 and 
+3.0; heparin treatment should be continued until the INR is greater than 2.0 for at least 24 hours.176
+Neither heparin (unfractionated or LMWH) nor warfarin is contraindicated in breastfeeding. 
+There is little published data on whether LMWHs are secreted in breast milk; in a case series of 
+15 women receiving LMWH after caesarean section, small amounts of heparin were detected 
+in the breast milk of 11 patients.177 Since neither unfractionated heparin nor LMWH is orally 
+active, no clinical effect would be anticipated in the infant.178 Warfarin does not pass into 
+breast milk to any measurable degree; it is 99% bound to serum proteins which results in 
+minimal transfer to breast milk.179,180
+11. Prevention of post-thrombotic syndrome
+What measures can be employed to prevent the development of post-thrombotic syndrome?
+Women should be advised that prolonged use of LMWH (more than 12 weeks) is associated with a 
+significantly lower chance of developing post-thrombotic syndrome. Evidence 
+level 4
+BEvidence 
+level 4
+Evidence 
+level 2+
+Evidence 
+level 2++
+Evidence 
+level 2+
+Evidence 
+level 3RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists22 of 32Following a DVT, graduated elastic compression stockings should be worn on the affected leg to 
+reduce pain and swelling. Clinicians should be aware that the role of compression stockings in the 
+prevention of post-thrombotic syndrome is unclear. 
+The post-thrombotic syndrome (PTS) is characterised by chronic persistent leg swelling, pain, 
+a feeling of heaviness, dependant cyanosis, telangiectasis, chronic pigmentation, eczema, 
+associated varicose veins and in the most severe cases, venous ulceration. A case–control 
+study from Norway found a prevalence of PTS of 42% following DVT in pregnancy; proximal 
+postnatal thrombosis, smoking and age greater than 33 years were independent predictors of 
+the development of PTS.181 Other recognised risk factors include: recurrent ipsilateral DVT and 
+obesity.182 A randomised controlled trial of long-term use of LMWH (tinzaparin for more than 
+12 weeks) versus tinzaparin for 5 days then warfarin for 12 weeks in patients with proximal 
+DVT reported a significantly lower rate of PTS in patients allocated to prolonged LMWH.183 A 
+subanalysis has shown that the benefits of prolonged LMWH are even greater for iliac vein 
+DVT (OR 0.53, 95% CI 0.33–0.83) than with non-iliac DVT (OR 0.79, 95% CI 0.67–0.93).184 
+While this study was conducted in nonpregnant subjects, the results may be relevant to the 
+pregnant population where iliac vein DVT is more common and prolonged use of LMWH is 
+standard treatment. 
+Graduated elastic compression stockings have been shown in meta-analyses of randomised 
+controlled trials to offer substantial protection against the development of PTS in the nonpregnant 
+(relative risk 0.54)185 and national guidelines recommend that compression hosiery (more than 
+23 mmHg) should be worn on the affected leg for at least 2 years.12 More recently, the benefits 
+of compression stockings in preventing PTS have been questioned. A high-quality randomised 
+controlled trial of over 800 patients with proximal DVT has reported the effectiveness of 30–40 
+mmHg (class II) compression stockings compared to a placebo stocking worn daily for 2 years 
+on the incidence of PTS; compression stockings did not prevent the occurrence of PTS after a 
+first proximal DVT and did not influence the severity of PTS or rate of recurrent VTE.186 
+12. Postnatal clinic review
+Postnatal review for patients who develop VTE during pregnancy or the puerperium should, 
+whenever possible, be at an obstetric medicine clinic or a joint obstetric haematology clinic. 
+Thrombophilia testing should be performed once anticoagulant therapy has been discontinued 
+only if it is considered that the results would influence the woman’s future management. 
+At the postnatal review, an assessment should be made of post-thrombotic venous damage and 
+advice should be given on the need for thromboprophylaxis in any future pregnancy and at 
+other times of increased risk (see Green-top Guideline No. 37a). Thrombophilia testing should 
+be performed once anticoagulant therapy has been discontinued and only if it is considered 
+that the results would influence the woman’s future management; testing will not alter the 
+duration and intensity of acute treatment but may alter prophylaxis in subsequent pregnancy 
+(Green-top Guideline No. 37a). Hormonal contraception should be discussed with reference 
+to guidance from the Faculty of Sexual and Reproductive Healthcare.187
+13. Recommendations for future research
+l The role of D-dimer testing and pretest probability scoring in the diagnosis of VTE in pregnancy 
+require further investigation.
+l The maternal and fetal radiation risks of tests used in the diagnosis of PE in pregnancy need to be 
+clarified.Evidence 
+level 1+B
+P
+DEvidence 
+level 1++
+Evidence 
+level 4RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists23 of 32l The role of newer diagnostic modalities (e.g. V/QSPECT) in the diagnosis of PE in pregnancy needs 
+further evaluation.
+l The optimum dosage regimen of LMWH for treatment of VTE in pregnancy (once daily versus two 
+divided doses) merits further investigation.
+l Doses of LMWH required in obese pregnant and puerperal women.
+l The value and role of anti-Xa monitoring, including measurement of trough anti-Xa activity, of 
+LMWH treatment in pregnancy needs further study.
+l Studies are required to establish the safety and efficacy of newer anticoagulant agents in pregnancy.
+l Studies are required to determine whether thrombophilia status alters the risk of recurrence of 
+VTE and whether thrombophilia status requires an alteration in the duration of treatment.
+l Strategies to prevent and treat post-thrombotic syndrome following DVT in pregnancy are required.
+14. Auditable topics
+l Documentation of risks of VTE investigations and management (100%).
+l Correct therapeutic management of suspected and proven VTE (100%).
+l Appropriate interval for administration of postpartum anticoagulant therapy (100%).
+l Documentation of postpartum management plan (100%).
+l Attendance for postnatal review and appropriate thrombophilia testing (100%).
+15. Useful links and support groups
+l Royal College of Obstetricians and Gynaecologists. Information for you: Treatment of venous 
+thrombosis in pregnancy and after birth . London: RCOG; 2011 [https://www.rcog.org.uk/en/
+patients/patient-leaflets/treatment-of-venous-thrombosis-in-pregnancy-and-after-birth/].
+l Lifeblood: The Thrombosis Charity. Thrombosis and pregnancy . Llanwrda: Lifeblood: The 
+Thrombosis Charity; 2013 [http://www.thrombosis-charity.org.uk/perch/resources/thrombosis-
+pregnancy-crystal-mark-feb-2013.pdf].
+References
+1. Centre for Maternal and Child Enquiries (CMACE). Saving 
+Mothers’ Lives: Reviewing maternal deaths to make 
+motherhood safer: 2006–2008. The Eighth Report of the 
+Confidential Enquiries into Maternal Deaths in the United 
+Kingdom. BJOG 2011;118 Suppl 1:57–64.
+2. Confidential Enquiry into Maternal and Child Health 
+(CEMACH). Why Mothers Die 2000–2002. The Sixth Report 
+of the Con fidential Enquiries into Maternal Deaths in the 
+United Kingdom . London: RCOG Press; 2004.
+3. Hull RD, Raskob GE, Carter CJ. Serial impedance 
+plethysmography in pregnant patients with clinically 
+suspected deep-vein thrombosis. Clinical validity of 
+negative findings. Ann Intern Med 1990;112:663–7. 
+4. Chan WS, Ray JG, Murray S, Coady GE, Coates G, Ginsberg 
+JS. Suspected pulmonary embolism in pregnancy: clinical 
+presentation, results of lung scanning, and subsequent 
+maternal and pediatric outcomes. Arch Intern Med 
+2002;162:1170–5.
+5. Shahir K, Goodman LR, Tali A, Thorsen KM, Hellman 
+RS. Pulmonary embolism in pregnancy: CT pulmonary 
+angiography versus perfusion scanning. AJR Am J 
+Roentgenol 2010;195:W214–20.
+6. Heit JA, Kobbervig CE, James AH, Petterson TM, Bailey 
+KR, Melton LJ 3rd. Trends in the incidence of venous 
+thromboembolism during pregnancy or postpartum: 
+a 30-year population-based study. Ann Intern Med 
+2005;143:697–706.7. Pomp ER, Lenselink AM, Rosendaal FR, Doggen CJ. 
+Pregnancy, the postpartum period and prothrombotic 
+defects: risk of venous thrombosis in the MEGA study. 
+J Thromb Haemost 2008;6:632–7.
+8. Jacobsen AF, Skjeldestad FE, Sandset PM. Incidence and 
+risk patterns of venous thromboembolism in pregnancy 
+and puerperium—a register-based case-control study. 
+Am J Obstet Gynecol 2008;198:233.e1–7.
+9. Greer IA. Thrombosis in pregnancy: updates in diagnosis 
+and management. Hematology Am Soc Hematol Educ 
+Program 2012;2012:203–7.
+10. Virkus RA, Løkkegaard EC, Lidegaard Ø, Langhoff-Roos J, 
+Bjerregaard L, Skovlund CW, et al. Venous thromboembolism 
+in pregnancy and the puerperal period: a study of 1210 
+events. Acta Obstet Gynecol Scand 2013;92:1135–42.
+11. Scottish Intercollegiate Guidelines Network (SIGN). 
+Prevention and management of venous thromboembol-
+ism. SIGN publication no. 122. Edinburgh: SIGN; 2010.
+12. National Institute for Health and Clinical Excellence. 
+Venous thromboembolic diseases: the management 
+of venous thromboembolic diseases and the role of 
+thrombophilia testing . NICE clinical guideline 144. 
+Manchester: NICE; 2012.
+13. Che Yaakob CA, Dzarr AA, Ismail AA, Zuky Nik Lah NA, 
+Ho JJ. Anticoagulant therapy for deep vein thrombosis 
+(DVT) in pregnancy. Cochrane Database Syst Rev 
+2010;(6):CD007801.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists24 of 3214. Rutherford SE, Phelan JP. Deep venous thrombosis and 
+pulmonary embolism in pregnancy. Obstet Gynecol Clin 
+North Am 1991;18:345–70.
+15. Gherman RB, Goodwin TM, Leung B, Byrne JD, Hethumumi 
+R, Montoro M. Incidence, clinical characteristics, and 
+timing of objectively diagnosed venous thromboembolism 
+during pregnancy. Obstet Gynecol 1999;94:730–4.
+16. Bates SM, Jaeschke R, Stevens SM, Goodacre S, Wells PS, 
+Stevenson MD, et al.; American College of Chest Physicians. 
+Diagnosis of DVT: Antithrombotic Therapy and Prevention 
+of Thrombosis, 9th ed: American College of Chest Physicians 
+Evidence-Based Clinical Practice Guidelines. Chest 2012;141 
+2 Suppl:e351S–418S.
+17. Le Gal G, Kercret G, Ben Yahmed K, Bressollette L, Robert-
+Ebadi H, Riberdy L, et al.; EDVIGE study group. Diagnostic 
+value of single complete compression ultrasonography in 
+pregnant and postpartum women with suspected deep 
+vein thrombosis: prospective study. BMJ 2012;344:e2635.
+18. Chan WS, Spencer FA, Lee AY, Chunilal S, Douketis JD, 
+Rodger M, et al. Safety of withholding anticoagulation in 
+pregnant women with suspected deep vein thrombosis 
+following negative serial compression ultrasound and iliac 
+vein imaging. CMAJ 2013;185:E194–200.
+19. Rodger M, Makropoulos D, Turek M, Quevillon J, Raymond F, 
+Rasuli P, et al. Diagnostic value of the electrocardiogram in 
+suspected pulmonary embolism. Am J Cardiol 2000;86:807–9.
+20. Rodger MA, Carrier M, Jones GN, Rasuli P, Raymond F, 
+Djunaedi H, et al. Diagnostic value of arterial blood gas 
+measurement in suspected pulmonary embolism. Am J 
+Respir Crit Care Med 2000;162:2105–8.
+21. Blanco-Molina A, Rota LL, Di Micco P, Brenner B, Trujillo-
+Santos J, Ruiz-Gamietea A, et al.; RIETE Investigators. Venous 
+thromboembolism during pregnancy, postpartum or during 
+contraceptive use. Thromb Haemost 2010;103:306–11.
+22. Ferrari E, Baudouy M, Cerboni P, Tibi T, Guigner A, Leonetti 
+J, et al.; French Multicentre Registry. Clinical epidemiology 
+of venous thromboembolic disease. Results of a French 
+Multicentre Registry. Eur Heart J 1997;18:685–91.
+23. Fidler JL, Patz EF Jr, Ravin CE. Cardiopulmonary complications 
+of pregnancy: radiographic findings. AJR Am J Roentgenol 
+1993;161:937–42.
+24. Damilakis J, Perisinakis K, Prassopoulos P, Dimovasili E, 
+Varveris H, Gourtsoyiannis N. Conceptus radiation dose 
+and risk from chest screen-film radiography. Eur Radiol 
+2003;13:406–12. 
+25. Nguyen CP, Goodman LH. Fetal risk in diagnostic radiology. 
+Semin Ultrasound CT MR 2012;33:4–10.
+26. Daftary A, Gregory M, Daftary A, Seibyl JP, Saluja S. Chest 
+radiograph as a triage tool in the imaging-based diagnosis of 
+pulmonary embolism. AJR Am J Roentgenol 2005;185:132–4.
+27. Scarsbrook AF, Evans AL, Owen AR, Gleeson FV. Diagnosis 
+of suspected venous thromboembolic disease in pregnancy. 
+Clin Radiol 2006;61:1–12.
+28. Turkstra F, Kuijer PM, van Beek EJ, Brandjes DP, ten Cate 
+JW, Büller HR. Diagnostic utility of ultrasonography of leg 
+veins in patients suspected of having pulmonary embolism. 
+Ann Intern Med 1997;126:775–81.
+29. Daniel KR, Jackson RE, Kline JA. Utility of lower extremity 
+venous ultrasound scanning in the diagnosis and exclusion 
+of pulmonary embolism in outpatients. Ann Emerg Med 
+2000;35:547–54.
+30. Mac Gillavry MR, Sanson BJ, Büller HR, Brandjes DP; 
+ANTELOPE-Study Group. Compression ultrasonography 
+of the leg veins in patients with clinically suspected 
+pulmonary embolism: is a more extensive assessment of 
+compressibility useful? Thromb Haemost 2000;84:973–6.
+31. Wells PS, Ginsberg JS, Anderson DR, Kearon C, Gent M, Weitz 
+J, et al. Utility of ultrasound imaging of the lower extremities 
+in the diagnostic approach in patients with suspected 
+pulmonary embolism. J Intern Med 2001;250:262–4.
+32. James AH, Tapson VF, Goldhaber SZ. Thrombosis during 
+pregnancy and the postpartum period. Am J Obstet Gynecol 
+2005;193:216–9.33. Knight M; UKOSS. Antenatal pulmonary embolism: risk 
+factors, management and outcomes. BJOG 2008;115:453–61.
+34. Cahill AG, Stout MJ, Macones GA, Bhalla S. Diagnosing 
+pulmonary embolism in pregnancy using computed-
+tomographic angiography or ventilation–perfusion. Obstet 
+Gynecol 2009;114:124–9.
+35. Revel MP, Cohen S, Sanchez O, Collignon MA, Thiam R, 
+Redheuil A, et al. Pulmonary embolism during pregnancy: 
+diagnosis with lung scintigraphy or CT angiography? 
+Radiology 2011;258:590–8.
+36. Ridge CA, McDermott S, Freyne BJ, Brennan DJ, Collins CD, 
+Skehan SJ. Pulmonary embolism in pregnancy: comparison 
+of pulmonary CT angiography and lung scintigraphy. AJR 
+Am J Roentgenol 2009;193:1223–7.
+37. Bhargavan M, Sunshine JH, Hervey SL, Jha S, Vializ J, Owen 
+JB. The actual role of CT and ventilation–perfusion scanning 
+in workup for suspected pulmonary embolism: evidence 
+from hospitals. AJR Am J Roentgenol 2009;193:1324–32. 
+38. Vinayakamoorthy V, Geary S, Ganatra R. A United Kingdom 
+based survey of clinical practice in the diagnosis of suspected 
+pulmonary embolism. Nucl Med Commun 2010;31:112–20.
+39. Leung AN, Bull TM, Jaeschke R, Lockwood CJ, Boiselle 
+PM, Hurwitz LM, et al.; ATS/STR Committee on Pulmonary 
+Embolism in Pregnancy. An official American Thoracic 
+Society/Society of Thoracic Radiology clinical practice 
+guideline: evaluation of suspected pulmonary embolism in 
+pregnancy. Am J Respir Crit Care Med 2011;184:1200–8.
+40. McLintock C, Brighton T, Chunilal S, Dekker G, McDonnell 
+N, McRae S, et al.; Councils of the Society of Obstetric 
+Medicine of Australia and New Zealand; Australasian 
+Society of Thrombosis and Haemostasis. Recommendations 
+for the diagnosis and treatment of deep venous thrombosis 
+and pulmonary embolism in pregnancy and the postpartum 
+period. Aust N Z J Obstet Gynaecol 2012;52:14–22.
+41. Groves AM, Yates SJ, Win T, Kayani I, Gallagher FA, Syed R, et 
+al. CT pulmonary angiography versus ventilation-perfusion 
+scintigraphy in pregnancy: implications from a UK survey 
+of doctors’ knowledge of radiation exposure. Radiology 
+2006;240:765–70.
+42. Bourjeily G, Paidas M, Khalil H, Rosene-Montella K, Rodger M. 
+Pulmonary embolism in pregnancy. Lancet 2010;375:500–12.
+43. Schembri GP, Miller AE, Smart R. Radiation dosimetry and 
+safety issues in the investigation of pulmonary embolism. 
+Semin Nucl Med 2010;40:442–54.
+44. International Commission on Radiological Protection. 
+Pregnancy and medical radiation. ICRP Publication 84. 
+Ann ICRP 2000;30(1).
+45. Cook JV, Kyriou J. Radiation from CT and perfusion 
+scanning in pregnancy. BMJ 2005;331:350.
+46. Hurwitz LM, Reiman RE, Yoshizumi TT, Goodman PC, 
+Toncheva G, Nguyen G, et al. Radiation dose from 
+contemporary cardiothoracic multidetector CT protocols 
+with an anthropomorphic female phantom: implications 
+for cancer induction. Radiology 2007;245:742–50.
+47. Remy-Jardin M, Remy J. Spiral CT angiography of the 
+pulmonary circulation. Radiology 1999;212:615–36.
+48. Allen C, Demetriades T. Radiation risk overestimated. 
+Radiology 2006;240:613–4.
+49. Ronckers CM, Erdmann CA, Land CE. Radiation and breast 
+cancer: a review of current evidence. Breast Cancer Res 
+2005;7:21–32.
+50. Hurwitz LM, Yoshizumi TT, Goodman PC, Nelson RC, 
+Toncheva G, Nguyen GB, et al. Radiation dose savings for 
+adult pulmonary embolus 64-MDCT using bismuth breast 
+shields, lower peak kilovoltage, and automatic tube current 
+modulation. AJR Am J Roentgenol 2009;192:244–53.
+51. Bourjeily G, Chalhoub M, Phornphutkul C, Alleyne TC, 
+Woodfield CA, Chen KK. Neonatal thyroid function: effect 
+of a single exposure to iodinated contrast medium in utero. 
+Radiology 2010;256:744–50.
+52. Cutts BA, Dasgupta D, Hunt BJ. New directions in the 
+diagnosis and treatment of pulmonary embolism in 
+pregnancy. Am J Obstet Gynecol 2013;208:102–8.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists25 of 3253. Wells PS, Anderson DR, Rodger M, Forgie M, Kearon C, Dreyer 
+J, et al. Evaluation of D-dimer in the diagnosis of suspected 
+deep-vein thrombosis. N Eng J Med 2003;349:1227–35.
+54. Francalanci I, Comeglio P, Alessandrello Liotta A, Cellai AP, 
+Fedi S, Parretti E, et al. D-dimer plasma levels during normal 
+pregnancy measured by specific ELISA. Int J Clin Lab Res 
+1997;27:65–7.
+55. Khalafallah AA, Morse M, Al-Barzan AM, Adams M, Dennis 
+A, Bates G, et al. D-Dimer levels at different stages of 
+pregnancy in Australian women: a single centre study 
+using two different immunoturbidimetric assays. Thromb 
+Res 2012;130:e171–7.
+56. Yamada T, Kawaguchi S, Araki N, Takeda M, Nishida R, 
+Yamada T, et al. Difference in the D-dimer rise between 
+women with singleton and multifetal pregnancies. Thromb 
+Res 2013;131:493–6.
+57. Morikawa M, Yamada T, Yamada T, Akaishi R, Koyama T, 
+Minakami H. Changes in D-dimer levels after cesarean 
+section in women with singleton and twin pregnancies. 
+Thromb Res 2011;128:e33–8.
+58. Francalanci I, Comeglio P, Liotta AA, Cellai AP, Fedi S, 
+Parretti E, et al. D-Dimer in intra-uterine growth retardation 
+and gestational hypertension. Thromb Res 1995;80:89–92.
+59. Elliott CG. Evaluation of suspected pulmonary embolism in 
+pregnancy. J Thorac Imaging 2012;27:3–4.
+60. Torbicki A, Perrier A, Konstantinides S, Agnelli G, Galiè N, 
+Pruszczyk P, et al.; ESC Committee for Practice Guidelines 
+(CPG). Guidelines on the diagnosis and management of acute 
+pulmonary embolism: the Task Force for the Diagnosis and 
+Management of Acute Pulmonary Embolism of the European 
+Society of Cardiology (ESC). Eur Heart J 2008;29:2276–315.
+61. Damodaram M, Kaladindi M, Luckit J, Yoong W. D-dimers as 
+a screening test for venous thromboembolism in pregnancy: 
+is it of any use? J Obstet Gynaecol 2009;29:101–3.
+62. Levy MS, Spencer F, Ginsberg JS, Anderson JA. Reading 
+between the (Guidelines). Management of submassive 
+pulmonary embolism in the first trimester of pregnancy. 
+Thromb Res 2008;121:705–7.
+63. To MS, Hunt BJ, Nelson-Piercy C. A negative D-dimer does 
+not exclude venous thromboembolism (VTE) in pregnancy. 
+J Obstet Gynaecol 2008;28:222–3.
+64. Ahmad A, Jamjute P, Ghosh T, Klazinga DA. D-dimer 
+negative deep vein thrombosis in puerperium. Eur Clin 
+Obstet Gynaecol 2008;3:131–4.
+65. Chan WS, Chunilal S, Lee A, Crowther M, Rodger M, 
+Ginsberg JS. A red blood cell agglutination d-dimer test to 
+exclude deep venous thrombosis in pregnancy. Ann Intern 
+Med 2007;147:165–70. 
+66. Chan WS, Lee A, Spencer FA, Chunilal S, Crowther M, Wu 
+W, et al. D-dimer testing in pregnant patients: towards 
+determining the next ‘level’ in the diagnosis of deep vein 
+thrombosis. J Thromb Haemost 2010;8:1004–11. 
+67. Kovac M, Mikovic Z, Rakicevic L, Srzentic S, Mandic V, 
+Djordjevic V, et al. The use of D-dimer with new cutoff can be 
+useful in diagnosis of venous thromboembolism in pregnancy. 
+Eur J Obstet Gynecol Reprod Biol 2010;148:27–30.
+68. Kawaguchi S, Yamada T, Takeda M, Nishida R, Yamada T, 
+Morikawa M, et al. Changes in d-dimer levels in pregnant 
+women according to gestational week. Pregnancy Hypertens 
+2013;3:172–7.
+69. Chan WS, Lee A, Spencer FA, Crowther M, Rodger M, Ramsay 
+T, et al. Predicting deep venous thrombosis in pregnancy: 
+out in “LEFt” field? Ann Intern Med 2009;151:85–92.
+70. O’Connor C, Moriarty J, Walsh J, Murray J, Coulter-Smith S, 
+Boyd W. The application of a clinical risk stratification score 
+may reduce unnecessary investigations for pulmonary 
+embolism in pregnancy. J Matern Fetal Neonatal Med 
+2011;24:1461–4.
+71. Righini M, Jobic C, Boehlen F, Broussaud J, Becker F, Jaffrelot 
+M, et al.; EDVIGE study group. Predicting deep venous 
+thrombosis in pregnancy: external validation of the LEFT 
+clinical prediction rule. Haematologica 2013;98:545–8.72. Robertson L, Wu O, Langhorne P, Twaddle S, Clark P, Lowe 
+GD, et al.; Thrombosis: Risk and Economic Assessment of 
+Thrombophilia Screening (TREATS) Study. Thrombophilia 
+in pregnancy: a systematic review. Br J Haematol 
+2006;132:171–96.
+73. Monreal M, del Campo R, Papadakis E. Thrombophilia and 
+venous thromboembolism: RIETE experience. Best Pract 
+Res Clin Haematol 2012;25:285–94.
+74. Ho WK, Hankey GJ, Quinlan DJ, Eikelboom JW. Risk of 
+recurrent venous thromboembolism in patients with 
+common thrombophilia: a systematic review. Arch Intern 
+Med 2006;166:729–36.
+75. Thomson AJ, Greer IA. Acute management of suspected 
+thromboembolic disease in pregnancy. In: Pavord S, Hunt 
+B, editors. The Obstetric Hematology Manual . Cambridge: 
+Cambridge University Press; 2010. p. 91–8.
+76. Said JM, Ignjatovic V, Monagle PT, Walker SP, Higgins JR, 
+Brennecke SP. Altered reference ranges for protein C and 
+protein S during early pregnancy: Implications for the 
+diagnosis of protein C and protein S deficiency during 
+pregnancy. Thromb Haemost 2010;103:984–8.
+77. Dolovich L, Ginsberg JS. Low molecular weight heparin 
+in the treatment of venous thromboembolism: an updated 
+meta-analysis. Vessels 1997;3:4–11.
+78. Gould MK, Dembitzer AD, Doyle RL, Hastie TJ, Garber 
+AM. Low-molecular-weight heparins compared with 
+unfractionated heparin for treatment of acute deep venous 
+thrombosis. A meta-analysis of randomized, controlled 
+trials. Ann Intern Med 1999;130:800–9.
+79. Quinlan DJ, McQuillan A, Eikelboom JW. Low-molecular-
+weight heparin compared with intravenous unfractionated 
+heparin for treatment of pulmonary embolism: a meta-
+analysis of randomized, controlled trials. Ann Intern Med 
+2004;140:175–83.
+80. van Dongen CJ, van den Belt AG, Prins MH, Lensing 
+AW. Fixed dose subcutaneous low molecular weight 
+heparins versus adjusted dose unfractionated heparin for 
+venous thromboembolism. Cochrane Database Syst Rev 
+2004;(4):CD001100.
+81. Bates SM, Greer IA, Middeldorp S, Veenstra DL, Prabulos AM, 
+Vandvik PO; American College of Chest Physicians. VTE, 
+thrombophilia, antithrombotic therapy, and pregnancy: 
+Antithrombotic Therapy and Prevention of Thrombosis, 
+9th ed: American College of Chest Physicians Evidence-
+Based Clinical Practice Guidelines. Chest 2012;141 2 
+Suppl:e691S–736S.
+82. Forestier F, Daffos F, Capella-Pavlovsky M. Low molecular 
+weight heparin (PK 10169) does not cross the placenta 
+during the second trimester of pregnancy: study by direct 
+fetal blood sampling under ultrasound. Thromb Res 
+1984;34:557–60.
+83. Sanson BJ, Lensing AW, Prins MH, Ginsberg JS, Barkagan 
+ZS, Lavenne-Pardonge E, et al. Safety of low-molecular-
+weight heparin in pregnancy: a systematic review. Thromb 
+Haemost 1999;81:668–72.
+84. Greer IA, Nelson-Piercy C. Low-molecular-weight 
+heparins for thromboprophylaxis and treatment of venous 
+thromboembolism in pregnancy: a systematic review of 
+safety and efficacy. Blood 2005;106:401–7.
+85. Nelson-Piercy C, Powrie R, Borg JY, Rodger M, Talbot 
+DJ, Stinson J, et al. Tinzaparin use in pregnancy: an 
+international, retrospective study of the safety and efficacy 
+profile. Eur J Obstet Gynecol Reprod Biol 2011;159:293–9.
+86. Galambosi PJ, Kaaja RJ, Stefanovic V, Ulander VM. Safety 
+of low-molecular-weight heparin during pregnancy: a 
+retrospective controlled cohort study. Eur J Obstet Gynecol 
+Reprod Biol 2012;163:154–9.
+87. Romualdi E, Dentali F, Rancan E, Squizzato A, Steidl L, 
+Middeldorp S, et al. Anticoagulant therapy for venous 
+thromboembolism during pregnancy: a systematic review 
+and a meta-analysis of the literature. J Thromb Haemost 
+2013;11:270–81.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists26 of 3288. Hirsh J, Warkentin TE, Shaughnessy SG, Anand SS, Halperin JL, 
+Raschke R, et al. Heparin and low-molecular-weight heparin: 
+mechanisms of action, pharmacokinetics, dosing, monitoring, 
+efficacy, and safety. Chest 2001;119 1 Suppl:64S–94S.
+89. Yusen RD, Gage BF. Outpatient treatment of acute venous 
+thromboembolic disease. Clin Chest Med 2003;24:49–61.
+90. Lennox C, Marr L; Reproductive Health Programme, 
+Healthcare Improvement Scotland. Scottish Confidential 
+Audit of Severe Maternal Morbidity. 9th Annual Report . 
+[Edinburgh/Glasgow]: Healthcare Improvement Scotland; 
+2013.
+91. Knol HM, Schultinge L, Veeger NJ, Kluin-Nelemans HC, 
+Erwich JJ, Meijer K. The risk of postpartum haemorrhage in 
+women using high dose of low-molecular-weight heparins 
+during pregnancy. Thromb Res 2012;130:334–8.
+92. Waterstone M, Bewley S, Wolfe C. Incidence and predictors 
+of severe obstetric morbidity: case-control study. BMJ 
+2001;322:1089–93.
+93. Dahlman TC. Osteoporotic fractures and the recurrence of 
+thromboembolism during pregnancy and the puerperium 
+in 184 women undergoing thromboprophylaxis with 
+heparin. Am J Obstet Gynecol 1993;168:1265–70.
+94. Rodger MA, Kahn SR, Cranney A, Hodsman A, Kovacs 
+MJ, Clement AM, et al.; TIPPS investigators. Long-term 
+dalteparin in pregnancy not associated with a decrease in 
+bone mineral density: substudy of a randomized controlled 
+trial. J Thromb Haemost 2007;5:1600–6.
+95. Blombäck M, Bremme K, Hellgren M, Lindberg H. A 
+pharmacokinetic study of dalteparin (Fragmin) during late 
+pregnancy. Blood Coagul Fibrinolysis 1998;9:343–50.
+96. Casele HL, Laifer SA, Woelkers DA, Venkataramanan R. 
+Changes in the pharmacokinetics of the low-molecular-
+weight heparin enoxaparin sodium during pregnancy. Am 
+J Obstet Gynecol 1999;181:1113–7.
+97. Sephton V, Farquharson RG, Topping J, Quenby SM, Cowan 
+C, Back DJ, et al. A longitudinal study of maternal dose 
+response to low molecular weight heparin in pregnancy. 
+Obstet Gynecol 2003;101:1307–11.
+98. Thomson AJ, Greer IA. Advances in Low Molecular Weight 
+Heparin Use in Pregnancy. In: Garg HG, Linhardt RJ, Hales 
+CA, editors. Chemistry and Biology of Heparin and 
+Heparan Sulfate . Oxford: Elsevier; 2005. p. 745–68.
+99. Gibson PS, Newell K, Sam DX, Mansoor A, Jiang X, Tang S, 
+et al. Weight-adjusted dosing of tinzaparin in pregnancy. 
+Thromb Res 2013;131:e71–5.
+100. Smith MP, Norris LA, Steer PJ, Savidge GF, Bonnar J. 
+Tinzaparin sodium for thrombosis treatment and prevention 
+during pregnancy. Am J Obstet Gynecol 2004;190:495–501.
+101. Voke J, Keidan J, Pavord S, Spencer NH, Hunt BJ; British 
+Society for Haematology Obstetric Haematology Group. 
+The management of antenatal venous thromboembolism in 
+the UK and Ireland: a prospective multicentre observational 
+survey. Br J Haematol 2007;139:545–58.
+102. Patel JP, Green B, Patel RK, Marsh MS, Davies JG, Arya R. 
+Population pharmacokinetics of enoxaparin during the 
+antenatal period. Circulation 2013;128:1462–9.
+103. Baglin T, Barrowcliffe TW, Cohen A, Greaves M; British 
+Committee for Standards in Haematology. Guidelines 
+on the use and monitoring of heparin. Br J Haematol 
+2006;133:19–34.
+104. National Patient Safety Agency. Reducing treatment dose 
+errors with low molecular weight heparins [http://www.
+nrls.npsa.nhs.uk/alerts/?entryid45=75208]. Accessed 2015 
+Jan 14.
+105. Rodie VA, Thomson AJ, Stewart FM, Quinn AJ, Walker ID, 
+Greer IA. Low molecular weight heparin for the treatment 
+of venous thromboembolism in pregnancy: a case series. 
+BJOG 2002;109:1020–4.
+106. Andersen AS, Berthelsen JG, Bergholt T. Venous 
+thromboembolism in pregnancy: prophylaxis and 
+treatment with low molecular weight heparin. Acta Obstet 
+Gynecol Scand 2010;89:15–21.107. Kitchen S, Iampietro R, Woolley AM, Preston FE. Anti Xa 
+monitoring during treatment with low molecular weight 
+heparin or danaparoid: inter-assay variability. Thromb 
+Haemost 1999;82:1289–93.
+108. Greer I, Hunt BJ. Low molecular weight heparin in pregnancy: 
+current issues. Br J Haematol 2005;128:593–601.
+109. Nutescu EA, Spinler SA, Wittkowsky A, Dager WE. Low-
+molecular-weight heparins in renal impairment and obesity: 
+available evidence and clinical practice recommendations 
+across medical and surgical settings. Ann Pharmacother 
+2009;43:1064–83.
+110. Watson H, Davidson S, Keeling D; Haemostasis and 
+Thrombosis Task Force of the British Committee for 
+Standards in Haematology. Guidelines on the diagnosis 
+and management of heparin-induced thrombocytopenia: 
+second edition. Br J Haematol 2012;159:528–40.
+111. Linkins LA, Dans AL, Moores LK, Bona R, Davidson 
+BL, Schulman S, et al.; American College of Chest 
+Physicians. Treatment and prevention of heparin-induced 
+thrombocytopenia: Antithrombotic Therapy and Prevention 
+of Thrombosis, 9th ed: American College of Chest Physicians 
+Evidence-Based Clinical Practice Guidelines. Chest 2012;141 
+2 Suppl:e495S–530S.
+112. Hajj-Chahine J, Jayle C, Tomasi J, Corbi P. Successful surgical 
+management of massive pulmonary embolism during the 
+second trimester in a parturient with heparin-induced 
+thrombocytopenia. Interact Cardiovasc Thorac Surg 
+2010;11:679–81.
+113. Royal College of Obstetricians and Gynaecologists. 
+Maternal Collapse in Pregnancy and the Puerperium . 
+Green-top Guideline No. 56. London: RCOG; 2011.
+114. Raschke RA, Gollihare B, Peirce JC. The effectiveness of 
+implementing the weight-based heparin nomogram as a 
+practice guideline. Arch Intern Med 1996;156:1645–9.
+115. Hyers TM, Hull RD, Weg JG. Antithrombotic therapy for venous 
+thromboembolic disease. Chest 1995:108 4 Suppl:335S–351S.
+116. Raschke RA, Guidry JR, Foley MR. Apparent heparin 
+resistance from elevated factor VIII during pregnancy. 
+Obstet Gynecol 2000;96:804–6.
+117. Hirsh J. Heparin. N Engl J Med 1991;324:1565–74.
+118. Wan S, Quinlan DJ, Agnelli G, Eikelboom JW. Thrombolysis 
+compared with heparin for the initial treatment of 
+pulmonary embolism: a meta-analysis of the randomized 
+controlled trials. Circulation 2004;110:744–9.
+119. Jaff MR, McMurtry MS, Archer SL, Cushman M, Goldenberg 
+N, Goldhaber SZ, et al.; American Heart Association 
+Council on Cardiopulmonary, Critical Care, Perioperative 
+and Resuscitation; American Heart Association Council 
+on Peripheral Vascular Disease; American Heart 
+Association Council on Arteriosclerosis, Thrombosis and 
+Vascular Biology. Management of massive and submassive 
+pulmonary embolism, iliofemoral deep vein thrombosis, 
+and chronic thromboembolic pulmonary hypertension: a 
+scientific statement from the American Heart Association. 
+Circulation 2011;123:1788–830.
+120. Turrentine MA, Braems G, Ramirez MM. Use of 
+thrombolytics for the treatment of thromboembolic disease 
+during pregnancy. Obstet Gynecol Surv 1995;50:534–41.
+121. Ahearn GS, Hadjiliadis D, Govert JA, Tapson VF. Massive 
+pulmonary embolism during pregnancy successfully 
+treated with recombinant tissue plasminogen activator: a 
+case report and review of treatment options. Arch Int Med 
+2002;162:1221–7.
+122. Leonhardt G, Gaul C, Nietsch HH, Buerke M, Schleussner 
+E. Thrombolytic therapy in pregnancy. J Thromb 
+Thrombolysis 2006;21:271–6.
+123. te Raa GD, Ribbert LS, Snijder RJ, Biesma DH. Treatment 
+options in massive pulmonary embolism during pregnancy; a 
+case-report and review of literature. Thromb Res 2009;124:1–5.
+124. McTaggart DR, Ingram TG. Massive pulmonary embolism 
+during pregnancy treated with streptokinase. Med J Aust 
+1977;1:18–20.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists27 of 32125. Hall RJ, Young C, Sutton GC, Cambell S. Treatment of acute 
+massive pulmonary embolism by streptokinase during 
+labour and delivery. Br Med J 1972;4:647–9.
+126. Kramer WB, Belfort M, Saade GR, Surani S, Moise KJ Jr. 
+Successful urokinase treatment of massive pulmonary 
+embolism in pregnancy. Obstet Gynecol 1995;86:660–2.
+127. Fasullo S, Scalzo S, Maringhini G, Cannizzaro S, Terrazzino 
+G, Paterna S, et al. Thrombolysis for massive pulmonary 
+embolism in pregnancy: a case report. Am J Emerg Med 
+2011;29:698.e1–4.
+128. Lonjaret L, Lairez O, Galinier M, Minville V. Thrombolysis 
+by recombinant tissue plasminogen activator during 
+pregnancy: a case of massive pulmonary embolism. Am J 
+Emerg Med 2011;29:694.e1–2.
+129. dos Santos LF, Andrade C, Rodrigues B, Moreira D, 
+Delgado A, Manso P, et al. Pregnancy and acute pulmonary 
+embolism: a case report. Rev Port Cardiol 2012;31:389–94. 
+130. Aschwanden M, Labs KH, Engel H, Schwob A, Jeanneret C, 
+Mueller-Brand J, et al. Acute deep vein thrombosis: early 
+mobilization does not increase the frequency of pulmonary 
+embolism. Thromb Haemost 2001;85:42–6. 
+131. Blättler W, Partsch H. Leg compression and ambulation is 
+better than bed rest for the treatment of acute deep venous 
+thrombosis. Int Angiol 2003;22:393–400. 
+132. Brandjes DP, Büller HR, Heijboer H, Huisman MV, de Rijk 
+M, Jagt H, et al. Randomised trial of effect of compression 
+stockings in patients with symptomatic proximal-vein 
+thrombosis. Lancet 1997;349:759–62. 
+133. Partsch H. Bed rest versus ambulation in the initial 
+treatment of patients with proximal deep vein thrombosis. 
+Curr Opin Pulm Med 2002;8:389–93. 
+134. Partsch H, Blättler W. Compression and walking versus bed 
+rest in the treatment of proximal deep venous thrombosis with 
+low molecular weight heparin. J Vasc Surg 2000;32:861–9. 
+135. Isma N, Johanssson E, Björk A, Björgell O, Robertson F, 
+Mattiasson I, et al. Does supervised exercise after deep 
+venous thrombosis improve recanalization of occluded vein 
+segments? A randomized study. J Thromb Thrombolysis 
+2007;23:25–30. 
+136. Jünger M, Diehm C, Störiko H, Hach-Wunderle V, Heidrich 
+H, Karasch T, et al. Mobilization versus immobilization in 
+the treatment of acute proximal deep venous thrombosis: 
+a prospective, randomized, open, multicentre trial. Curr 
+Med Res Opin 2006;22:593–602. 
+137. Romera A, Vila R, Perez-Piqueras A, Marti X, Cairols 
+MA. Early mobilization in patients with acute deep vein 
+thrombosis: does it increase the incidence of symptomatic 
+pulmonary embolism? Phlebology 2005;20:141. 
+138. Trujillo-Santos J, Perea-Milla E, Jiménez-Puente A, Sánchez-
+Cantalejo E, del Toro J, Grau E, et al.; RIETE Investigators. 
+Bed rest or ambulation in the initial treatment of patients 
+with acute deep vein thrombosis or pulmonary embolism: 
+findings from the RIETE registry. Chest 2005;127:1631–6.
+139. Prandoni P, Noventa F, Quintavalla R, Bova C, Cosmi 
+B, Siragusa S, et al.; Canano Investigators. Thigh-length 
+versus below-knee compression elastic stockings for 
+prevention of the postthrombotic syndrome in patients 
+with proximal-venous thrombosis: a randomized trial. 
+Blood 2012;119:1561–5.
+140. Pike GN, Hobson M, Hay E, Nash M, Hay C, Byrd L. A pilot 
+audit of thromboprophylaxis compliance with graduated 
+compression stockings in pregnancy. J Thromb Haemost 
+2011;9 Suppl 2:431.
+141. Kawamata K, Chiba Y, Tanaka R, Higashi M, Nishigami K. 
+Experience of temporary inferior vena cava filters inserted 
+in the perinatal period to prevent pulmonary embolism in 
+pregnant women with deep vein thrombosis. J Vasc Surg 
+2005;41:652–6.
+142. Sendon S, Deruelle P, Dalmas AF, Lions C, Legrand A. 
+Use of temporary inferior vena cava filter placement in 
+pregnant women near term. Eur J Obstet Gynecol Reprod 
+Biol 2008;140:143–4.143. Gupta S, Ettles DF, Robinson GJ, Lindow SW. Inferior vena 
+cava filter use in pregnancy: preliminary experience. BJOG 
+2008;115:785–8.
+144. Milford W, Chadha Y, Lust K. Use of a retrievable inferior 
+vena cava filter in term pregnancy: case report and review 
+of literature. Aust N Z J Obstet Gynaecol 2009;49:331–3.
+145. Liu Y, Sun Y, Zhang S, Jin X. Placement of a retrievable 
+inferior vena cava filter for deep venous thrombosis in term 
+pregnancy. J Vasc Surg 2012;55:1042–7.
+146. Hull R, Delmore T, Genton E, Hirsh J, Gent M, Sackett 
+D, et al. Warfarin sodium versus low-dose heparin in the 
+long-term treatment of venous thrombosis. N Eng J Med 
+1979;301;855–8.
+147. Pike GN, Hobson M, Hay E, Nash M, Hay C, Byrd L. A 
+pilot audit of thromboprophylaxis compliance with low 
+molecular weight heparin in pregnancy. J Thromb Haemost 
+2011;9 Suppl 2:431.
+148. Patel JP, Auyeung V, Patel RK, Marsh MS, Green B, Arya R, 
+et al. Women’s views on and adherence to low-molecular-
+weight heparin therapy during pregnancy and the 
+puerperium. J Thromb Haemost 2012;10:2526–34.
+149. Douketis JD, Ginsberg JS, Burrows RF, Duku EK, Webber 
+CE, Brill-Edwards P. The effects of long-term heparin 
+therapy during pregnancy on bone density. A prospective 
+matched cohort study. Thromb Haemost 1996;75:254–7.
+150. Grassegger A, Fritsch P, Reider N. Delayed-type 
+hypersensitivity and cross-reactivity to heparins and 
+danaparoid: a prospective study. Dermatol Surg 
+2001;27:47–52.
+151. Schindewolf M, Gobst C, Kroll H, Recke A, Louwen F, 
+Wolter M, et al. High incidence of heparin-induced allergic 
+delayed-type hypersensitivity reactions in pregnancy. J 
+Allergy Clin Immunol 2013;132:131–9.
+152. Magnani HN. An analysis of clinical outcomes of 91 
+pregnancies in 83 women treated with danaparoid 
+(Orgaran®). Thromb Res 2010;125:297–302.
+153. Schaefer C, Hannemann D, Meister R, Eléfant E, Paulus W, 
+Vial T, et al. Vitamin K antagonists and pregnancy outcome. 
+A multi-centre prospective study. Thromb Haemost 
+2006;95:949–57.
+154. Tang AW, Greer I. A systematic review on the use of new 
+anticoagulants in pregnancy. Obstet Med 2013;6:64–71.
+155. Ciurzy ński M, Jankowski K, Pietrzak B, Mazanowska N, 
+Rzewuska E, Kowalik R, et al. Use of fondaparinux in a 
+pregnant woman with pulmonary embolism and heparin-
+induced thrombocytopenia. Med Sci Monit 2011;17:CS56–9.
+156. Nagler M, Haslauer M, Wuillemin WA. Fondaparinux – data 
+on efficacy and safety in special situations. Thromb Res 
+2012;129:407–17.
+157. Ekbatani A, Asaro LR, Malinow AM. Anticoagulation 
+with argatroban in a parturient with heparin-induced 
+thrombocytopenia. Int J Obstet Anesth 2010 ;19:82–7.
+158. Young SK, Al-Mondhiry HA, Vaida SJ, Ambrose A, Botti JJ. 
+Successful use of argatroban during the third trimester 
+of pregnancy: case report and review of the literature. 
+Pharmacotherapy 2008;28:1531–6.
+159. Taniguchi S, Fukuda I, Minakawa M, Watanabe K, Daitoku 
+K, Suzuki Y. Emergency pulmonary embolectomy during 
+the second trimester of pregnancy: report of a case. Surg 
+Today 2008;38:59–61.
+160. Tanimura K, Ebina Y, Sonoyama A, Morita H, Miyata 
+S, Yamada H. Argatroban therapy for heparin-induced 
+thrombocytopenia during pregnancy in a woman with 
+hereditary antithrombin deficiency. J Obstet Gynaecol Res 
+2012;38:749–52.
+161. Huhle G, Geberth M, Hoffmann U, Heene DL, Harenberg 
+J. Management of heparin-associated thrombocytopenia in 
+pregnancy with subcutaneous r-hirudin. Gynecol Obstet 
+Invest 2000;49:67–9.
+162. Mehta R, Golichowski A. Treatment of heparin induced 
+thrombocytopenia and thrombosis during the first 
+trimester of pregnancy. J Thromb Haemost 2004;2:1665–6.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists28 of 32163. Harenberg J, Jörg I, Bayerl C, Fiehn C. Treatment of a woman 
+with lupus pernio, thrombosis and cutaneous intolerance 
+to heparins using lepirudin during pregnancy. Lupus 
+2005;14:411–2.
+164. Aijaz A, Nelson J, Naseer N. Management of heparin allergy 
+in pregnancy. Am J Hematol 2001;67:268–9.
+165. Hiwarkar P, Stasi R, Sutherland G, Shannon M. Deep vein 
+and intracardiac thrombosis during the post-partum period 
+in Behçet’s disease. Int J Hematol 2010;91:679–86.
+166. Duhl AJ, Paidas MJ, Ural SH, Branch W, Casele H, Cox-
+Gill J, et al.; Pregnancy and Thrombosis Working Group. 
+Antithrombotic therapy and pregnancy: consensus report 
+and recommendations for prevention and treatment 
+of venous thromboembolism and adverse pregnancy 
+outcomes. Am J Obstet Gynecol 2007;197:457.e1–21.
+167. Gogarten W, Vandermeulen E, Van Aken H, Kozek S, Llau JV, 
+Samama CM; European Society of Anaesthesiology. Regional 
+anaesthesia and antithrombotic agents: recommendations of 
+the European Society of Anaesthesiology. Eur J Anaesthesiol 
+2010;27:999–1015.
+168. Büller HR, Gent M, Gallus AS, Ginsberg J, Prins MH, 
+Baildon R; Columbus Investigators. Low-molecular-
+weight heparin in the treatment of patients with venous 
+thromboembolism. N Engl J Med 1997;337:657–62.
+169. Crawford JS. Some maternal complications of epidural 
+analgesia for labour. Anaesthesia 1985;40:1219–25.
+170. Moen V, Dahlgren N, Irestedt L. Severe neurological 
+complications after central neuraxial blockades in Sweden 
+1990–1999. Anesthesiology 2004;101:950–9.
+171. Limmer JS, Grotegut CA, Thames E, Dotters-Katz SK, 
+Brancazio LR, James AH. Postpartum wound and bleeding 
+complications in women who received peripartum 
+anticoagulation. Thromb Res 2013;132:e19–23.
+172. van Veen JJ, Maclean RM, Hampton KK, Laidlaw S, Kitchen 
+S, Toth P, et al. Protamine reversal of low molecular weight 
+heparin: clinically effective? Blood Coagul Fibrinolysis 
+2011;22:565–70.
+173. Heneghan C, Tyndel S, Bankhead C, Wan Y, Keeling D, Perera 
+R, et al. Optimal loading dose for the initiation of warfarin: a 
+systematic review. BMC Cardiovasc Disord 2010;10:18.
+174. Brooks C, Rutherford JM, Gould J, Ramsay MM, James DK. 
+Warfarin dosage in postpartum women: a case–control 
+study. BJOG 2002;109:187–90.
+175. Kovacs MJ, Anderson DA, Wells PS. Prospective assessment of 
+a nomogram for the initiation of oral anticoagulation therapy 
+for outpatient treatment of venous thromboembolism. 
+Pathophysiol Haemost Thromb 2002;32:131–3.176. Keeling D, Baglin T, Tait C, Watson H, Perry D, Baglin C, 
+et al.; British Committee for Standards in Haematology. 
+Guidelines on oral anticoagulation with warfarin – fourth 
+edition. Br J Haematol 2011;154:311–24.
+177. Richter C, Sitzmann J, Lang P, Weitzel H, Huch A, Huch R. 
+Excretion of low molecular weight heparin in human milk. 
+Br J Clin Pharmacol 2001;52:708–10.
+178. Bates SM. Pregnancy-associated venous thromboembolism: 
+prevention and treatment. Semin Hematol 2011;48:271–84.
+179. Clark SL, Porter TF, West FG. Coumarin derivatives and 
+breast-feeding. Obstet Gynecol 2000;95:938–40.
+180. Orme ML, Lewis PJ, de Swiet M, Serlin MJ, Sibeon R, Baty 
+JD, et al. May mothers given warfarin breast-feed their 
+infants? Br Med J 1977;i:1564–5.
+181. Wik HS, Jacobsen AF, Sandvik L, Sandset PM. Prevalence and 
+predictors for post-thrombotic syndrome 3 to 16 years after 
+pregnancy-related venous thrombosis: a population-based, 
+cross-sectional, case-control study. J Thromb Haemost 
+2012;10:840–7.
+182. Vazquez SR, Kahn SR. Advances in the diagnosis and 
+management of postthrombotic syndrome. Best Pract Res 
+Clin Haematol 2012;25:391–402.
+183. Hull RD, Pineo GF, Brant R, Liang J, Cook R, Solymoss S, 
+et al; LITE Trial Investigators. Home therapy of venous 
+thrombosis with long-term LMWH versus usual care: 
+patient satisfaction and post-thrombotic syndrome. Am J 
+Med 2009;122:762–9.e3.
+184. Hull RD, Liang J, Merali T. Effect of long-term LMWH on 
+post-thrombotic syndrome in patients with iliac/noniliac 
+venous thrombosis: a subanalysis from the Home-LITE 
+study. Clin Appl Thromb Hemost 2013;19:476–81.
+185. Musani MH, Matta F, Yaekoub AY, Liang J, Hull RD, Stein 
+PD. Venous compression for prevention of postthrombotic 
+syndrome: a meta-analysis. Am J Med 2010;123:735–40.
+186. Kahn SR, Shapiro S, Wells PS, Rodger MA, Kovacs MJ, Anderson 
+DR, et al.; SOX trial investigators. Compression stockings to 
+prevent post-thrombotic syndrome: a randomised placebo-
+controlled trial. Lancet 2014;383:880–8. 
+187. Faculty of Sexual and Reproductive Healthcare. UK Medical 
+Eligibility Criteria for Contraceptive Use . [London]: FSRH; 
+2009 (revised 2010).RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists29 of 32Appendix I: Algorithm for the investigation and initial management of suspected PE in pregnancy 
+and the puerperium
+Suspected PE:
+– clinical assessment
+– perform CXR and ECG
+– test FBC, U&E, LFTs
+– commence LMWH (unless treatment is contraindicated)
+Perform compression 
+duplex ultrasound
+Compression ultrasound 
+confirms DVT
+Continue therapeutic 
+doses of LMWHNO Is the CXR normal?
+PE confirmedSymptoms and signs of DVT
+YES
+YES
+YESPerform V/Q scan
+If the clinical suspicion of PE is low, discontinue 
+LMWH and consider alternative diagnoses
+If the clinical suspicion of PE is high, consider 
+alternative or repeat testing and continue LMWHNO
+NO
+NOPerform CTPA
+Continue therapeutic 
+doses of LMWHYES
+Abbreviations 
+CTPA computerised tomography pulmonary angiogram; CXR chest X-ray; DVT deep venous thrombosis; ECG electrocardiogram; 
+FBC full blood count; LFTs liver function tests; LMWH low-molecular-weight heparin; PE pulmonary embolism; 
+U&Es urea and electrolytes; V/Q scan ventilation/perfusion scan.RCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists30 of 32Appendix II: Suggested nomogram for commencing warfarin treatment in the puerperium
+Day of warfarin treatment International normalised ratio (INR) Warfarin dose (mg)
+First 7.0
+Second 7.0
+Third < 2.0 7.0
+2.0–2.1 5.0
+2.2–2.3 4.5
+2.4–2.5 4.0
+2.6–2.7 3.5
+2.8–2.9 3.0
+3.0–3.1 2.5
+3.2–3.3 2.0
+3.4 1.5
+3.5 1.0
+3.6–4.0 0.5
+> 4.0 0.0
+Fourth < 1.4 > 8.0
+1.4 8.0
+1.5 7.5
+1.6–1.7 7.0
+1.8 6.5
+1.9 6.0
+2.0–2.1 5.5
+2.2–2.3 5.0
+2.4–2.6 4.5
+2.7–3.0 4.0
+3.1–3.5 3.5
+3.6–4.0 3.0
+4.1–4.5 omit next day’s dose then give 2 mg
+> 4.5 omit two days’ doses then give 1 mgRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists31 of 32Appendix III: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No. 1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic reviews 
+or randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+ 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+PRCOG Green-top Guideline No. 37b © Royal College of Obstetricians and Gynaecologists32 of 32This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Dr AJ Thomson MRCOG, Paisley and Professor IA Greer FRCOG, Liverpool
+and peer reviewed by: 
+British Committee for Standards in Haematology; Mrs AHD Diyaf MRCOG, Barnstaple; King’s Thrombosis Centre; 
+RCOG Women’s Network. 
+Committee lead reviewers were: Dr M Gupta MRCOG, London; Mr AT Leather FRCOG, Ipswich; and 
+Dr P Owen FRCOG, Glasgow. 
+Conflicts of interest: 
+Dr Thomson was provided with a travel grant by LEO Pharma to attend an overseas conference in March 2014.
+Professor Greer: none declared.
+The final version is the responsibility of the Guidelines Committee of the RCOG. 
+The review process will commence in 2018, unless otherwise indicated.
+DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical 
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for 
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement 
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light 
+of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.

@@ -1,0 +1,2643 @@
+BJOG . 2024;131:e1–e30. wileyonlinelibrary.com/journal/bjo | e1
+© 2024 Royal College of Obstetricians and Gynaecologists.RCOG GREEN- TOP GUIDELINES
+The Management of Nausea and Vomiting in Pregnancy and 
+Hyperemesis Gravidarum (Green-top Guideline No. 69)
+Catherine Nelson- Piercy | Caitlin Dean | Manjeet Shehmar | Roger Gadsby | 
+Margaret O'Hara | Kenneth Hodson | Melanie Nana | on behalf of the Royal College of 
+Obstetricians and GynaecologistsPublished online: 4 February 2024
+DOI: 10.1111/1471-0528.17739 
+This guideline has been endorsed by the Royal College of Emergency Medicine (RCEM), the Association of Early Pregnancy Units (AEPU), and the General Practitioners 
+Championing Perinatal Care (GPCPC); and it has been supported by the Royal College of General Practitioners (RCGP). Correspondence
+Royal College of Obstetricians and 
+Gynaecologists, 10–18 Union Street, London 
+SE1 1SZ.
+Email: clinicaleffectiveness@rcog.org.uk
+This is the second edition of this guideline 
+which was previously published in 2016 
+under the same name. This guideline is for 
+healthcare professionals who care for women, 
+non- binary and trans people.Key recommendations
+• An objective and validated index of nausea and vomiting such as the Pregnancy- 
+Unique Quantification of Emesis (PUQE) and HyperEmesis Level Prediction 
+(HELP) tools can be used to classify the severity of NVP and HG. [Grade C]
+• Ketonuria is not an indicator of dehydration and should not be used to assess 
+severity. [Grade A]
+• There are safety and efficacy data for first line antiemetics such as anti (H1) 
+histamines, phenothiazines and doxylamine/pyridoxine (Xonvea®) and they 
+should be prescribed initially when required for NVP and HG (Appendix III). 
+[Grade A]
+• There is evidence that ondansetron is safe and effective. Its use as a second line 
+antiemetic should not be discouraged if first line antiemetics are ineffective. 
+Women can be reassured regarding a very small increase in the absolute risk of 
+orofacial clefting with ondansetron use in the first trimester , which should be 
+balanced with the risks of poorly managed HG. [Grade B]
+• Metoclopramide is safe and effective and can be used alone or in combination 
+with other antiemetics. [Grade B]
+• Because of the risk of extrapyramidal effects metoclopramide should be used 
+as second- line therapy. Intravenous doses should be administered by slow bolus 
+injection over at least 3 minutes to help minimise these. [Grade C]
+• Women should be asked about previous adverse reactions to antiemetic thera -
+pies. If adverse reactions occur, there should be prompt cessation of the medica -
+tions. [GPP]
+• Normal saline (0.9% NaCl) with additional potassium chloride in each bag, 
+with administration guided by daily monitoring of electrolytes, is the most ap -
+propriate intravenous hydration. [Grade C]
+• Combinations of different drugs should be used in women who do not re -
+spond to a single antiemetic. Suggested antiemetics for UK use are given in 
+Appendix III. [GPP]
+• Thiamine supplementation (either oral 100 mg tds or intravenous as part of 
+vitamin B complex (Pabrinex®)) should be given to all women admitted with 
+vomiting, or severely reduced dietary intake, especially before administration 
+of dextrose or parenteral nutrition. [Grade D]
+• All therapeutic measures should have been tried before considering termina -
+tion of pregnancy. [Grade C]
+e2 | 
+NELSON- PIERCY et al .
+1 | PURPOSE AND SCOPE
+There is variation in the care of women who have nausea and 
+vomiting of pregnancy (NVP) or hyperemesis gravidarum 
+(HG) with the potential for lack of understanding of its se -
+verity and options for treatment and support.
+The aim of this guideline is to provide updated evidence- 
+based or best clinical practice information regarding the di -
+agnosis and subsequent management of NVP and HG across 
+community, ambulatory day care and inpatient settings. A sum -
+mary for general practitioners is given in Appendix Vai and Vaii. 
+It gives advice for multidisciplinary professionals involved in the 
+care of women with these conditions, including how to counsel 
+and support women before, during and after their pregnancies.
+Within this document we use the terms woman and 
+women's health. However, it is important to acknowledge 
+that it is not only women for whom it is necessary to access 
+women's health and reproductive services in order to main -
+tain their gynaecological health and reproductive wellbeing. 
+Gynaecological and obstetric services and delivery of care 
+must therefore be appropriate, inclusive and sensitive to the 
+needs of those individuals whose gender identity does not 
+align with the sex they were assigned at birth.
+2 | INTRODUCTION AND 
+BACKGROUND EPIDEMIOLOGY
+NVP affects up to 90% of pregnant women1 and is one of 
+the most common indications for hospital admission among 
+pregnant women, with typical stays of between three and four 
+days. The annual cost to the National Health Service (NHS) 
+of NVP has been estimated to be up to £62 million due to hos -
+pital admissions, general practice (GP) visits and ambulance 
+call- outs.1–4 NVP is defined as the symptom of nausea and/or 
+vomiting during pregnancy when onset is prior to 16 weeks of 
+gestation and where there are no other causes. The term often 
+used in the lay media for NVP is “morning sickness” which is 
+not only inaccurate (as symptoms occur both before and after 
+noon), but is felt by sufferers to trivialise the condition.5
+HG is a severe form of NVP, which affects between 0.3 and 
+3.6% of pregnant women, interfering with quality of life and 
+the ability to eat and drink normally. Reported HG recurrence 
+rates vary, from 15.2% in a Norwegian hospital registry study to 
+89% if using self- reported diagnosis.6–9 In a population based 
+pregnancy cohort using general practice records prevalence of 
+clinically recorded NVP/HG was 9.1%: 2.1% had hospital ad -
+missions, 3.4% were treated with antiemetics in primary care 
+only, and 3.6% had only recorded diagnoses.10 Therefore it is 
+likely that use of a definition that puts more emphasis on sub -
+jective patient focussed criteria (see section 5 below) will lead 
+to an increase in reported incidence rates.
+The major mechanism of NVP and HG has recently 
+been elucidated to be related to hypersensitivity to the vomiting hormone growth differentiation factor- 15 
+(GDF15). GDF15 caused loss of appetite, taste aver -
+sion, nausea, vomiting and weight loss. Variation in the 
+GDF15 gene both in families and in unrelated individ -
+uals is associated with HG. Both hCG and GDF15 are 
+made when genes in the placenta are activated and cir -
+culating levels have a peak in the first half of pregnancy, 
+but no genetic variants in hCG have been identified (even 
+in very large studies) to be associated with HG. Higher 
+circulating levels of GDF15 and not hCG were found in 
+hospitalised HG patients, patients taking medication for 
+NVP, and patients with 2nd trimester vomiting.11 hCG is 
+therefore unlikely to be causative.11 Genetic variants as -
+sociated with expression of GDF15 in families with HG 
+have been identified as the greatest genetic risk factor for 
+HG12 and are associated with recurrence in subsequent 
+pregnancies.13
+3 | IDENTIFICATION AND 
+ASSESSMENT OF EVIDENCE
+The Cochrane Library and electronic databases (DARE, 
+EMBASE, Trip, MEDLINE and PubMed) were searched 
+using the relevant Medical Subject Headings (MeSH) terms, 
+including all subheadings and synonyms, and this was com -
+bined with a keyword search and was limited to humans 
+and English language; search terms included ‘hyperemesis’, 
+‘nausea and vomiting’ ‘pregnan*’, ‘morning sickness’ and 
+‘hyperemesis gravidarum’. The search was restricted to ar -
+ticles published between 2015 and July 2023. The full search 
+strategy is available to view online as supporting informa -
+tion (Appendix  S1 and S2 ).
+This guideline was developed using the standard meth -
+odology for Green- top Guidelines.14 Where possible, recom -
+mendations are based on available evidence. In the absence 
+of published evidence, these have been annotated as ‘good 
+practice points’. Further information about the assessment 
+of evidence and the grading of recommendations may be 
+found in Appendix  I.
+4 | HOW ARE NVP AND HG 
+DEFINED AND DIAGNOSED?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+NVP is diagnosed 
+when onset is prior 
+to 16 weeks of 
+gestation and other 
+causes of nausea 
+and vomiting have 
+been excluded.2– D Onset of NVP is in the first 
+trimester and if the 
+initial onset is after 
+16 weeks this should be 
+investigated for other 
+causes.
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e3
+GREEN-TOP GUIDELINE NO. 69
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+HG can be diagnosed 
+when symptoms 
+start in early 
+pregnancy, nausea 
+and/or vomiting are 
+severe enough to 
+cause an inability 
+to eat and drink 
+normally and 
+strongly limits 
+daily activities of 
+living. Signs of 
+dehydration are 
+contributory to 
+diagnosis.2– D Definition of HG has been 
+agreed by international 
+consensus in published 
+literature.
+An objective and 
+validated index 
+of nausea and 
+vomiting such as the 
+Pregnancy- Unique 
+Quantification of 
+Emesis (PUQE) and 
+HyperEmesis Level 
+Prediction (HELP) 
+tools can be used to 
+classify the severity 
+of NVP and HG.2+ C The PUQE score is a 
+validated score to 
+objectively assess 
+severity of NVP and 
+treatment response for 
+mild to moderate NVP. 
+The HELP score is 
+another validated score 
+to determine treatment 
+response in severe NVP 
+and HG in addition to 
+assessing severity.
+Clinicians should 
+be aware of the 
+features in history, 
+examination and 
+investigation that 
+allow NVP and HG 
+to be assessed and 
+for their severity to 
+be monitored.4 D Thorough history, 
+examination and 
+investigation ensure 
+accurate assessment of 
+severity and exclusion 
+of other causes.
+Ketonuria is not 
+an indicator of 
+dehydration in 
+pregnancy and 
+should not be used 
+to assess severity.1++ A Ketonuria is not associated 
+with HG or its severity.
+NVP typically starts between the fourth and seventh 
+weeks of gestation, peaks in approximately the ninth week 
+and resolves by the 20th week in 90% of women.15 [Evidence 
+level 2–]
+A multi- stakeholder international consensus process de -
+veloped a definition for HG to aid clinical diagnosis. The 
+Windsor definition17 describes HG as nausea and vomiting 
+of which one is severe, beginning in early pregnancy (before 
+16 weeks of gestation), inability to eat and drink normally, and 
+strongly limiting daily living activities. Signs of dehydration 
+are considered contributory to diagnosis. This definition rep -
+resents a shift from a historic reliance on objective measures 
+such as weight loss and electrolyte imbalance, and towards subjective patient focused criteria which may lead to im -
+proved recognition and diagnosis of HG.16 [Evidence level 2–]
+The Rhodes Index17,18 was originally validated to mea -
+sure nausea and vomiting in chemotherapy patients, in -
+cluding assessment of physical symptoms and the resulting 
+stress, but has subsequently been used for NVP. A shorter 
+disease- specific questionnaire (PUQE) was developed by the 
+Motherisk Program,19 an NVP helpline in Canada, which 
+highly correlated with the Rhodes Index and assessed symp -
+toms over the previous 12 hours.20 The PUQE was modi -
+fied to include symptom profile over the previous 24 hours 
+including a wellbeing score that correlated with hydration 
+status and, more recently, over the duration of the first 
+trimester.21,22 The PUQE score can be used to determine 
+whether the NVP is mild, moderate or severe (Appendix II ). 
+[Evidence level 2+] The PUQE score can also be used to as -
+sess the response to treatment for mild to moderate NVP but 
+is not valid for severe NVP and HG.
+The HELP score was developed and validated by the 
+Hyperemesis Education and Research Foundation in the 
+USA23 to quantify HG symptoms into a score that can be 
+trended over time to monitor progress and response to treat -
+ment. It is available as an online calculator ( https:// www. 
+hyper emesis. org/ tools/ help- score/ ) and in app form. The 
+HELP score ( https:// www. ncbi. nlm. nih. gov/ pmc/ artic les/ 
+PMC78 15331/ figure/ FI130 91997 - 1/? report= objec tonly ) can 
+be used to track progress with treatment in women with se -
+vere NVP and HG. [Evidence level 2+]
+NVP and HG are associated with hyponatraemia, hy -
+pokalaemia, low serum urea, raised haematocrit and ke -
+tonuria with a metabolic hypochloraemic alkalosis. If 
+severe, a metabolic acidosis may develop. In two- thirds of 
+women with HG, there may be abnormal thyroid function 
+tests (based on a structural similarity between thyroid- 
+stimulating hormone [TSH] and hCG with a biochemical 
+thyrotoxicosis, and raised free thyroxine levels with or 
+without a suppressed thyroid stimulating hormone level. 
+These patients rarely have thyroid antibodies and are eu -
+thyroid clinically. The biochemical thyrotoxicosis resolves 
+as the HG improves and treatment with antithyroid drugs 
+is unnecessary.24 A raised T4 and low TSH therefore do 
+not need treatment in straightforward NVP/HG where the 
+cause is clear and the patient is responding to treatment. 
+[Evidence level 2–]
+Liver function tests are abnormal in up to 40% of women 
+with HG,25 with the most likely abnormality being a rise in 
+transaminases. Levels of both bilirubin and amylase may be 
+mildly elevated. These abnormalities improve as the HG re -
+solves. [Evidence level 3]
+Ketonuria is not an indicator of dehydration and is not 
+associated with severity of NVP or HG.26,27 [Evidence level 
+1++]
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e4 | 
+NELSON- PIERCY et al .
+Clinical assessment as outlined in table  1 or with the 
+HELP or PUQE scores are better indicators of severity. 
+Assessment of urinary ketosis may mislead clinical judge -
+ment of hydration and nutrition status and should be 
+avoided in the assessment or monitoring of NVP and HG.Severe malnutrition can be assessed with anthropomet -
+ric measures such as mid- upper arm circumference (more 
+useful with serial measurements) and validated nutrition 
+screening tools such as the Malnutrition Universal Screening 
+Tool (MUST) which can be adapted for pregnancy.28–33TABLE 1 Features in the history, examination, and investigations to aid diagnosis and exclude other causes of severe nausea and vomiting in 
+pregnancy.
+History • Previous history of NVP/HG
+• Quantify severity using PUQE/HELP score: nausea, vomiting, ptyalism (hypersalivation), spitting, weight loss, 
+inability to tolerate food and fluids, effect on quality of life and ability to perform daily activities
+• Ask about self- reported nutritional status or rapid weight loss
+• Ask about co- morbidities which may be complicated by lack of oral intake of essential medications such as epilepsy, 
+diabetes, HIV, psychiatric conditions and hypoadrenalism.
+• Relevant surgical history such as gastric bypass, band or sleeve
+• History to exclude other causes:
+◦ abdominal pain
+◦ urinary symptoms
+◦ infection
+◦ drug history (prescription and/or recreational)
+◦ chronic Helicobacter pylori infection
+Examination • Temperature
+• Heart rate (tachycardia in dehydration)
+• Blood pressure (hypotension in dehydration)
+• Oxygen saturations
+• Respiratory rate (tachypnoea in dehydration)
+• Abdominal examination
+• Weight
+• Signs of dehydration such as sunken eyes, dry lips and mouth, oliguria or anuria, tachycardia and hypotension
+• Signs of malnutrition or rapid weight loss (≥5% pre pregnancy weight), and muscle wasting as measured by mid- arm 
+circumference1
+• Neurological signs such as confusion, nystagmus or ataxia which could indicate Wernicke's encephalopathy
+Investigation • Urinalysis: Nitrites may indicate infection. The presence or absence of ketonuria in pregnancy is not an indicator of 
+dehydration. Assessing urinary ketones does not have a use in the management of NVP or HG and may be misleading.
+• MSU (if dipstick indicates signs of UTI)
+• Urea and electrolytes: (to guide intravenous fluid and electrolyte replacement)
+• hypokalaemia/hyperkalaemia
+◦ hyponatraemia
+◦ chronic kidney disease
+◦ high creatinine / urea (acute kidney injury) due to dehydration
+• Full blood count:
+◦ infection
+◦ anaemia
+◦ raised haemoglobin and haematocrit
+• Blood glucose level:
+◦ diagnose diabetes
+◦ exclude diabetic ketoacidosis in patients with diabetes
+• Ultrasound scan:
+◦ assess if viable intrauterine pregnancy, multiple pregnancy or trophoblastic disease
+• In refractory cases or history of previous admissions, check:
+◦ TFTs: hypothyroid/hyperthyroid
+◦ LFTs: exclude other liver disease such as hepatitis or gallstones, monitor malnutrition
+◦ calcium and phosphate
+◦ amylase: exclude pancreatitis
+◦ VBG: exclude metabolic disturbances to monitor severity
+1Malnutrition Universal Screening Tool ( bapen. org. uk).
+VBG venous blood gas; LFTs liver function tests; MSU midstream urine; TFTs thyroid function tests.
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e5
+GREEN-TOP GUIDELINE NO. 69
+5 | HOW SHOULD WOMEN WITH 
+NVP AND HG BE CARED FOR?
+5.1 | What initial clinical assessment and 
+baseline investigations should be performed?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Women with mild NVP 
+should be cared for in 
+the community with 
+antiemetics.4 D Since most women with 
+NVP require only 
+oral or intramuscular 
+antiemetics, 
+management in the 
+community/primary 
+care is appropriate 
+to avoid unnecessary 
+hospital admissions 
+and disruption to the 
+woman's life.34
+Ambulatory day care 
+should be used when 
+community/primary care 
+measures have failed.2+ C If women are unable 
+to tolerate oral 
+antiemetics or 
+oral fluids then 
+ambulatory day 
+care management is 
+appropriate.
+Inpatient care should be 
+considered if there is at 
+least one of the following:
+• Continued nausea and 
+vomiting and inability 
+to keep down oral 
+antiemetics
+• Continued nausea and 
+vomiting associated with 
+clinical dehydration or 
+weight loss (greater than 
+5% of body weight), despite 
+oral antiemetics
+• Confirmed or suspected 
+comorbidity (such as 
+urinary tract infection and 
+inability to tolerate oral 
+antibiotics).
+• Comorbidities such as 
+epilepsy, diabetes, HIV, 
+hypoadrenalism or 
+psychiatric disease where 
+symptoms and inability 
+to tolerate oral intake and 
+medication could present 
+further complications.4 GPP Women who have 
+recurrent/on- going 
+NVP/HG despite 
+adequate ambulatory 
+day care treatment 
+should be cared for 
+as inpatients because 
+of the associated 
+complications, 
+in particular 
+electrolyte imbalance 
+and nutritional 
+deficiencies.
+Where inpatient care is 
+required an ultrasound 
+scan should be scheduled 
+to confirm viability 
+and gestational age, 
+and to assess for 
+multiple pregnancy or 
+trophoblastic disease. 
+Unless there are other 
+medical reasons for an 
+urgent scan, this can be 
+scheduled for the next 
+available appointment.4 GPP Trophoblastic disease and 
+multiple pregnancy 
+are associated with 
+an increased risk of 
+HG but do not affect 
+the initial care.Women who have nausea and vomiting but are not 
+dehydrated can be cared for in the community with an -
+tiemetics, reassurance, oral hydration and dietary ad -
+vice (eat little and often to prevent an empty stomach). 
+Women may benefit from rest and time off work. In areas 
+where ‘acute care at home’ or ‘hospital at home’ services 
+are operating to provide IV treatment in the community, 
+these services can be utilised for IV rehydration at home 
+for women who are unable to maintain hydration orally 
+but who do not have co- morbidities or complications. 
+Women may be reluctant to take, and non- specialist cli -
+nicians may be reluctant to prescribe, pharmacological 
+treatments owing to concerns about teratogenic risk.35,36 
+Women should be counselled that the benefits of anti -
+emetics outweigh the risks, and that the absolute risk is 
+low. Antiemetics are therefore appropriate and should be 
+offered (see section 6.2.2).37 [Evidence level 4]
+If women are unable to tolerate oral antiemetics or 
+oral fluids then ambulatory day care management, which 
+provides intravenous fluids, vitamins (especially B1- thi-
+amine)38,39 and parenteral antiemetics, is appropriate 
+and should be offered. Thiamine stores in a previously 
+healthy individual can deplete rapidly and cause symp -
+toms of tachycardia, weakness and decreased deep tendon 
+reflexes within one week without intake.39 Various rehy -
+dration regimens have been shown to be effective.40,41 A 
+randomised controlled trial (RCT) of 98 women showed 
+that ambulatory day care management involving intra -
+venous fluids and stepwise increments in antiemetic 
+therapy versus inpatient care was acceptable to women 
+and resulted in fewer days as an inpatient.42 In a study 
+of 428 women who had ambulatory day care subcuta -
+neous metoclopramide therapy (SMT), improvement in 
+symptoms occurred in 89.3%.41 Those women for whom 
+the SMT regimen failed (10.7%) had higher mean PUQE 
+scores at the start of ambulatory day care treatment than 
+those for whom it was successful (10.0 ± 3.0 versus 7.6 
+± 2.8 respectively, P < 0.001). Moreover, they were more 
+likely to have a PUQE score of 13 or higher, SMT was 
+started earlier in pregnancy (9.7 ± 2.9 weeks versus 11.4 
+± 3.2 weeks, P = 0.005) and they were more likely to need 
+intravenous hydration (91.3% versus 65.2%, P < 0.001). In 
+addition to the SMT regimen, women received adjuvant 
+therapies at home such as intravenous hydration, subcu -
+taneous ondansetron, histamine type- 2 receptor block -
+ers, and received total parenteral nutrition. Ambulatory 
+day care management has been successfully and safely 
+set up in units and is associated with high patient satis -
+faction.43 [Evidence level 2+]
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e6 | 
+NELSON- PIERCY et al .
+5.2 | How should women with NVP and HG 
+be cared for?
+5.2.1 | What pharmacological therapeutic 
+options are available and effective for women with 
+NVP and HG?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Combinations of different 
+drugs should be used 
+in women who do not 
+respond to a single 
+antiemetic. Suggested 
+antiemetics for UK use 
+are given in Appendix 
+III.4 GPP Various drug classes have 
+different mechanisms 
+of action and work 
+synergistically, 
+therefore, 
+combination 
+antiemetics should be 
+used in women who 
+do not respond to a 
+single agent. Some 
+women may require 
+combinations of two 
+or more medications 
+from first- and 
+second- line options 
+(see Appendix III )
+A delayed- release 
+combination of 
+doxylamine and 
+pyridoxine (vitamin 
+B6) is the only licensed 
+treatment of NVP in the 
+UK so can be used first- 
+line for mild- moderate 
+NVP requiring 
+treatment.2++ B A larger improvement 
+in PUQE score from 
+baseline to day 15 and 
+increased wellbeing 
+has been reported 
+as compared with 
+placebo.44
+For women with 
+persistent or severe 
+HG, the parenteral, 
+transdermal, or rectal 
+route may be necessary 
+and more effective than 
+an oral regimen.2− D
+Corticosteroids should be 
+reserved for cases where 
+standard therapies have 
+been ineffective and 
+used in combination 
+with antiemetics.1+ A Systematic review 
+suggests a beneficial 
+effect for steroids.45
+Clinicians should use antiemetics with which they are fa -
+miliar and should use drugs from different classes if the first 
+drug is not effective or only partially effective. Many women 
+will require a combination of two or more antiemetics.46
+A slow- release combination of doxylamine and pyridox -
+ine (vitamin B6) called Xonvea®™ is the only licensed treat -
+ment of NVP in the UK.44 A delayed- release formulation 
+containing 10 mg doxylamine succinate and 10 mg pyri -
+doxine hydrochloride has been available in Canada since 
+1979 and since 2013 in the USA. The combination of doxyl -
+amine and pyridoxine resulted in a larger improvement in 
+PUQE score from baseline to day 15 compared with placebo 
+(mean difference −0.90, 95% CI −1.55 to −0.25; P = 0.006) in 
+a randomised double- blind multicentre trial of 256 women. 
+There was also a significantly larger increase in wellbeing 
+score with active treatment (+1.0, P = 0.005). Although no high quality evidence exists to suggest that delayed release 
+formulations are more effective than other antiemetics in 
+treating NVP, evidence from other fields, such as chemo -
+therapy nausea and vomiting management supports their 
+use to create stable blood levels of the drug.44 [Evidence 
+level 2++]
+A study of 1037 admissions46 for HG demonstrated that 
+antihistamines were more commonly prescribed in combina -
+tion with other antiemetics at hospital discharge after a first 
+admission and that combinations of dopamine antagonists 
+and serotonin antagonists are common after second and sub -
+sequent admissions. Furthermore, persistent vomiting may 
+mean that oral doses of antiemetics are not absorbed and 
+therefore the sublingual, intravenous, rectal, transcutaneous, 
+subcutaneous or intramuscular routes may be necessary and 
+more effective (see Appendix III ). [Evidence level 2++]
+Three small randomised studies47–49 have shown on-
+dansetron to be superior to doxylamine and pyridoxine in 
+reducing nausea and vomiting,47 equally effective as meto -
+clopramide, but with fewer adverse effects,48 and more ef -
+fective than metoclopramide at reducing severe vomiting.49 
+[Evidence level 2++] Because there are large amounts of 
+safety data for doxylamine/pyridoxine and the antihista -
+mines in general have fewer adverse effects than ondan -
+setron (which may cause constipation) the antihistamines 
+remain first line over ondansetron which is second line (see 
+Appendix  III).
+A Cochrane systematic review including two RCTs 
+demonstrated that treatment with ondansetron was asso -
+ciated with improvement in symptoms of all severities.50 
+[Evidence level 2++]
+There are small studies of the use of Granisetron with 
+limited evidence as yet of its use.51,52 [Evidence level 3]
+There is no association between the degree of NVP at 
+12 weeks and vitamin B6 levels measured at 15 weeks.53 A 
+Cochrane review concluded that there is a lack of consistent 
+evidence that pyridoxine is an effective therapy for NVP.54 
+Furthermore, a placebo- controlled trial of its use in HG did 
+not demonstrate any improvement in nausea, vomiting or re -
+hospitalisation in 46 women given 20 mg orally three times 
+a day in addition to intravenous fluids, intravenous meto -
+clopramide three times a day and oral thiamine, compared 
+with the control group given placebo in addition to standard 
+therapy.55 A matched non- randomised study demonstrated 
+that the combination of doxylamine and pyridoxine was sig -
+nificantly more effective than pyridoxine alone.56 [Evidence 
+level 2++]
+Corticosteroids have resulted in dramatic and rapid im -
+provement in case series of women with refractory HG.57 
+The results of randomised studies are conflicting58 and the 
+largest study failed to show improvement in the primary 
+outcome of rehospitalisation (however, both groups also 
+received metoclopramide and promethazine).59,60 Case se -
+lection and route and dose of corticosteroid administration 
+may explain the different results, with beneficial results 
+being described in more severe cases. A systematic review 
+and meta- analysis identified five trials of 310 women and 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e7
+GREEN-TOP GUIDELINE NO. 69
+showed no effect on readmission rates, with one study 
+showing reduced vomiting and one showing improved well -
+being.45 [Evidence level 1+]
+Corticosteroids should not be used until conventional 
+treatment with intravenous fluid replacement and regular 
+antiemetics has been proven to be ineffective. The suggested 
+dose is IV hydrocortisone 100 mg twice daily, and once 
+clinical improvement occurs conversion to oral predniso -
+lone 40–50 mg daily, with the dose gradually tapered until 
+the lowest maintenance dose that controls the symptoms is 
+reached. In most cases prednisolone needs to be continued 
+until the gestational age at which HG would have resolved 
+and in some extreme cases, prednisolone is continued until 
+birth.34 Women receiving corticosteroids should be screened 
+for gestational diabetes.
+There are no trials of community use of ginger for severe 
+NVP and HG. A large cross- sectional survey of 512 women 
+with HG found that ginger foodstuffs or over the counter 
+tablets have little or no efficacy but caused unpleasant ad -
+verse effects and worsening of symptoms in over half (54%) 
+of participants. Recommendations by a healthcare profes -
+sional (HCP) to try ginger was found to cause a loss of trust 
+in the HCP and damaged clinician- patient relationships. 
+Because prior awareness and self- administration of ginger as 
+a home remedy prior to seeking medical help was extremely 
+high HCPs should not suggest it and doing so may delay ac -
+cess to effective treatment.61
+5.2.2 | What is the safety of the 
+pharmacological agents used to treat NVP and 
+HG? ( See Appendix III)
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+First line - There are safety 
+data for antiemetics such 
+as anti (H1) histamines, 
+phenothiazines and 
+pyridoxine- doxylamine 
+(Xonvea®) and they 
+should be prescribed 
+initially when required 
+for NVP and HG 
+(Appendix III).2++ A Cochrane review 
+reports no increased 
+risk of congenital 
+malformations 
+or other adverse 
+pregnancy 
+outcomes.62
+Second line - There 
+is evidence that 
+ondansetron is safe. 
+Its use should not be 
+discouraged if first 
+line antiemetics are 
+ineffective. Women can 
+be reassured regarding 
+a very small increase 
+in the absolute risk of 
+orofacial clefting with 
+ondansetron use in the 
+first trimester , which 
+should be balanced 
+with the risks of poorly 
+managed HG.2++ B Absolute risk of 
+orofacial clefting 
+increases from a 
+background risk of 
+11 cases per 10 000 
+births to 14 cases 
+per 10 000 births 
+with ondansetron 
+(infographic from 
+Irish Medicines in 
+Pregnancy Service 
+in Appendix IV ).RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Additional second line – 
+Metoclopramide is safe 
+and can be used alone 
+or in combination with 
+other antiemetics.2++ B Drug- induced 
+extrapyramidal 
+symptoms and 
+oculogyric crises can 
+occur with the use of 
+phenothiazines and 
+metoclopramide.
+Because of the risk of 
+extrapyramidal effects 
+metoclopramide should 
+be used as second- line 
+therapy. Intravenous 
+doses should be 
+administered by slow 
+bolus injection over at 
+least 3 minutes to help 
+minimise these.2+ C Dystonic reactions 
+have been shown 
+to be significantly 
+less common in 
+non- pregnant 
+patients receiving 
+a slow infusion as 
+opposed to a bolus 
+injection of 10 mg of 
+metoclopramide.
+Women should be asked 
+about previous 
+adverse reactions to 
+antiemetic therapies. 
+If adverse reactions 
+occur, there should be 
+prompt cessation of the 
+medications.4 GPP Women should not 
+be prescribed 
+medications that 
+have caused previous 
+adverse reactions.
+All the antiemetics discussed above can and should be 
+used with confidence in primary and secondary care to 
+manage women's symptoms.
+A Cochrane review63, other systematic reviews and 
+meta- analyses37,64–66 and birth registry data37 have re -
+ported on the safety and efficacy of many antiemetics for 
+use in NVP and HG, with no increased risk of teratogenesis 
+or other adverse pregnancy outcomes. These drugs include: 
+antihistamines (H1 receptor antagonists) such as pro -
+methazine, cyclizine, cinnarizine, pyridoxine- doxylamine 
+(Xonvea®)67 and dimenhydrinate; phenothiazines including 
+prochlorperazine, chlorpromazine and perphenazine; and 
+dopamine antagonists including metoclopramide68 and 
+domperidone. Because there are no clear data supporting 
+increased efficacy of one class of antiemetic over others the 
+suggested step wise approach (Appendix  III) is based pre -
+dominantly on safety data6. [Evidence level 2++]
+Use of ondansetron for NVP/HG is increasing69 as is the 
+body of literature to support no overall increased risk of 
+congenital malformations.70–73 However, conflicting find-
+ings from large epidemiological studies (some of which have 
+shown a small increased risk of either cardiac defects74 or 
+orofacial clefting70) have, controversially, led to warnings 
+from the European Medicines Authority to avoid ondan -
+setron in the first trimester. The Medicines and Healthcare 
+products Regulatory Agency (MHRA) did not issue a warn -
+ing. The UK Teratology Information Service (UKTIS) have 
+published a systematic review of the literature that concludes 
+‘currently available data do not provide evidence that ondan -
+setron use in the first trimester of pregnancy is associated 
+with an increase in the overall malformation rate.’73 They 
+summarised the data for congenital malformations ‘Twelve 
+studies, including one meta- analysis of data from seven 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e8 | 
+NELSON- PIERCY et al .
+studies, collectively including more than 97 000 unique first 
+trimester- exposed pregnancies have assessed the overall 
+malformation rate following maternal ondansetron use in 
+pregnancy.70,75–85 The majority of these studies,70,75,80–84 in-
+cluding the largest and most statistically robust (more than 
+88 000 first trimester exposures)70 and the meta- analysis,85 
+did not identify increased risks in comparison with disease- 
+matched and/or healthy or population unexposed controls.’ 
+[Evidence level 2++]
+Two large cohort studies form the majority of the data in 
+the meta- analysis.70,74,85 Although one study74 found a sig -
+nificant risk of cardiac defects (adjusted OR 1.43, 95% CI 
+1.28–1.61), the larger (1.8 million pregnancy cohort of which 
+almost 5% [88 467 women] were exposed to ondansetron 
+during the first trimester) study70 did not find a significant 
+association for cardiac defects after adjusting for pre- defined 
+confounding factors (adjusted relative risk [aRR] 0.99, 95% 
+CI 0.93–1.06). However, a small increased risk of orofacial 
+clefting was noted71 (aRR 1.24, 95% CI 1.03–1.48). It is im -
+portant to put this into context as the background risk of 
+orofacial clefting is low, and therefore the increase in abso -
+lute risk is small. If the increase in risk is real, then ondan -
+setron represents an additional three oral clefts per 10 000 
+births (14 cases per 10 000 births with ondansetron exposure 
+versus 11 cases per 10 000 births in the unexposed popula -
+tion, see Appendix  IV for visual risk summary). [Evidence 
+level 2++]
+A limitation of these two cohort studies is that they com -
+pare women with severe NVP and HG taking ondansetron 
+to women who do not have severe NVP and HG. This leaves 
+open the possibility that any effects are confounded by indi -
+cation, nor do they consider the competing risks to women 
+with severe NVP and HG of leaving their illness poorly con -
+trolled. A study comparing women with HG taking ondan -
+setron with women with HG taking other antiemetics found 
+no increased risk of major malformations in the ondanse -
+tron group.86 A study85 comparing women with HG tak -
+ing ondansetron vs those with HG not taking ondansetron 
+found a higher rate of terminations of pregnancy in those 
+not taking ondansetron and higher rate of live birth in those 
+taking ondansetron.
+Due to the risk of extrapyramidal effects with metoclo -
+pramide it should be used as second- line therapy. A review 
+of metoclopramide,87 conducted by the European Medicines 
+Agency's (EMA) Committee for Medicinal Products for 
+Human Use, has confirmed the risks of short- term extra -
+pyramidal disorders and tardive dyskinesia, particularly 
+in young people. The review recommends metoclopramide 
+should only be prescribed for short- term use (maximum dose 
+of 30 mg in 24 hours or 0.5 mg/kg body weight in 24 hours 
+[whichever is lowest] and maximum duration of 5 days) and 
+that intravenous doses should be administered by slow bolus 
+injection over at least 3 minutes to help minimise these risks. 
+Dystonic reactions have been shown to be significantly less 
+common in non- pregnant patients receiving a slow infusion 
+as opposed to a bolus injection of 10 mg of metoclopramide.88 Notwithstanding the EMA's recommendation the authors of 
+this guideline recommend that it can be prescribed for more 
+than five days in those women who gain symptomatic relief 
+from it. [Evidence level 2++]
+Data confirm that corticosteroid use in the first trimester 
+is not associated with an increase in risk of congenital mal -
+formations overall and specifically no increase in orofacial 
+clefting, cardiac defects or hypospadias following first tri -
+mester use of corticosteroids.89 Data on corticosteroids use 
+in the first trimester is limited to a maximum of approxi -
+mately 3500 exposures, and therefore is less well studied in 
+comparison to other anti- emetic medication. [Evidence level 
+2++]
+5.2.3 | What adverse effects can occur from 
+NVP and HG and how can they be prevented?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Urea and serum electrolyte 
+levels should be 
+checked daily in women 
+requiring intravenous 
+fluids.4 GPP NVP can be associated 
+with electrolyte 
+imbalances.
+Histamine type- 2 receptor 
+blockers or proton pump 
+inhibitors may be used 
+for women developing 
+gastro- oesophageal 
+reflux disease, 
+oesophagitis or gastritis.4 D Recurrent intractable 
+vomiting may lead to 
+gastro- oesophageal 
+reflux disease, 
+oesophagitis or 
+gastritis.
+Thiamine supplementation 
+(either oral 100 mg tds 
+or intravenous as part 
+of vitamin B complex 
+(Pabrinex®)) should 
+be given to all women 
+admitted with vomiting, 
+or severely reduced 
+dietary intake, especially 
+before administration of 
+dextrose or parenteral 
+nutrition.4 D NVP/HG can lead 
+to Wernicke 
+encephalopathy 
+due to vitamin 
+B1 (thiamine) 
+deficiency.
+Women admitted with 
+HG should be offered 
+thromboprophylaxis 
+with low- molecular- 
+weight heparin and 
+those being managed in 
+the community should 
+be assessed for VTE 
+risk (see GTG 37a). 
+Graduated compression 
+stockings should be used 
+when low- molecular- 
+weight heparin is 
+contra- indicated 
+(as per GTG 37a). 
+Thromboprophylaxis 
+can be discontinued 
+upon discharge 
+providing no other 
+indications exist 
+for continuation of 
+thromboprophylaxis.3 C Women with HG 
+have increased 
+risk of venous 
+thromboembolism 
+with odds ratio 2.5 
+(95% CI 2–3.2).90
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e9
+GREEN-TOP GUIDELINE NO. 69
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Women with previous or 
+current NVP or HG 
+should consider avoiding 
+iron- containing 
+preparations if these 
+exacerbate symptoms 
+or consider alternative 
+route of administering 
+iron.4 D Oral iron can cause 
+nausea and vomiting 
+and constipation.
+Women should be 
+questioned about their 
+bowel habits and offered 
+laxatives if constipated, 
+and particularly if 
+ondansetron is used.4 GPP Women with NVP or HG 
+commonly suffer 
+with constipation 
+because of reduced 
+food and fluid intake 
+and if treated with 
+ondansetron.91
+Women should be offered 
+treatment with proton 
+pump inhibitors for 
+Gastro- oesophageal 
+reflux.4 GPP The treatment of gastro- 
+oesophageal reflux, 
+along with anti- 
+emetic therapy, has 
+been associated with 
+reduced PUQE- 24 
+scores and improved 
+quality of life scores.92
+Inability to tolerate oral fluids and excessive vomiting due 
+to NVP and HG can affect other medical conditions requir -
+ing oral medication, such as epilepsy, psychiatric conditions, 
+hypoadrenalism and HIV. It is vital to prescribe antiemetics 
+for women with the above co- morbidities. Medication times 
+may need to be adjusted so women can take them when 
+symptoms are better controlled.
+HG increases risks in some conditions such as those with 
+diabetes mellitus, or a history of gastric band, gastric bypass 
+and gastric sleeve surgery. Specialist advice is required for 
+these women. A previous history of gastric reduction surgery 
+may cause malabsorption of oral medication and increase 
+the risk of nutrient and vitamin deficiency, particularly thi -
+amine and vitamin K.
+In women requiring intravenous fluids, daily monitoring 
+of fluid and serum electrolyte levels is important to recog -
+nise and treat hyponatraemia and hypokalaemia.34,93
+Oesophago- gastroduodenoscopy is safe in pregnancy 
+and indicated in cases of haematemesis or severe epigas -
+tric pain. A therapeutic trial with a proton pump inhibitor 
+is appropriate for treatment and prevention and is safe in 
+pregnancy.94,95
+Wernicke encephalopathy due to vitamin B1 (thia -
+mine) deficiency classically presents with blurred vision, 
+unsteadiness and confusion/memory problems/drows -
+iness and on examination there is usually nystagmus, 
+ophthalmoplegia, hyporeflexia or areflexia, gait and/or 
+finger–nose ataxia. In HG, the presentation tends to be 
+episodic and of slow onset. Wernicke encephalopathy is a 
+potentially fatal medical emergency. In the context of HG, 
+it is preventable and studies have stressed the association 
+between Wernicke encephalopathy and administration of 
+intravenous dextrose and parenteral nutrition.96 A sys -
+tematic review of 177 cases found that chronic cognitive 
+disorders occurred in 65.4%, pregnancy loss in 50%, and maternal death in 5% of cases.96 Therefore thiamine sup -
+plementation is recommended for all women admitted 
+with HG. [Evidence level 2++]
+A Canadian study97 using hospital discharge data found 
+an adjusted odds ratio for deep vein thrombosis of 4.4 (95% 
+CI 2.4–8.4) in women with HG. However, since women with 
+HG are only at markedly increased risk while persistently 
+vomiting, thromboprophylaxis can be discontinued at dis -
+charge or when the HG resolves.98
+In a Canadian prospective cohort study, two- thirds of 97 
+women who discontinued iron supplements reported im -
+provement in their severity of NVP.99
+6 | HOW SHOULD WOMEN WITH 
+NVP AND HG BE OFFERED ONGOING 
+ANTENATAL CARE?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Women should only be 
+discharged once
+• appropriate antiemetic 
+therapy has been tolerated
+• adequate oral nutrition 
+and hydration has been 
+tolerated
+• management of 
+concurrent conditions is 
+completed4 GPP Failure to ensure 
+this will 
+increase the 
+chance of 
+readmission.
+At the time of discharge, it is 
+essential that women are 
+advised to continue with 
+their antiemetics where 
+appropriate and that 
+they know how to access 
+further care.4 D Continued 
+treatment may 
+reduce the need 
+for hospital 
+readmission.
+Women with severe NVP or 
+HG who have continued 
+symptoms into the late 
+second or the third 
+trimester should be 
+offered serial scans to 
+monitor fetal growth.2+ B Women with low 
+pregnancy 
+weight gain are 
+at increased 
+risk of preterm 
+birth and low 
+birth weight.
+Almost one third of women will be readmitted within the 
+same pregnancy.100 Therefore, at the time of discharge it is es -
+sential that women are advised to continue with their antiemet -
+ics where appropriate and that they know how to access further 
+care if their symptoms and/or signs recur (e.g. persistent vom -
+iting, dehydration). Rehydration and a review of antiemetic 
+treatment should ideally be undertaken in an ambulatory day 
+care setting.101 Better communication and advice about the 
+safety of antiemetics may enable general practitioners to ade -
+quately support women with HG.101,102 [Evidence level 2–]
+Level of ketones should not be used to inform clinical 
+decision making about treatments or hydration status.27 
+[Evidence level 2+]
+An observational study has shown that women with HG 
+and low pregnancy weight gain (less than 7 kg during preg -
+nancy) are at an increased risk of preterm birth (aRR 3.0, 95% 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e10 | 
+NELSON- PIERCY et al .
+CI 1.9–4.3) and low birthweight (less than 2500g; aRR 2.8, 95% 
+CI 1.7–4.3).103 [Evidence level 2+]
+A population- based cohort study using secondary health -
+care records demonstrated that HG was significantly asso -
+ciated with low birthweight (OR 1.12, 99% CI 1.08–1.17), 
+small- for- gestational- age (OR 1.06, 99% CI 1.01–1.11) babies, 
+and babies more likely to undergo resuscitation or inten -
+sive care treatment, albeit with small absolute risk.104 The 
+Cambridge Baby Growth Study also found that vomiting 
+during the first and second trimesters of pregnancy was as -
+sociated with a higher risk of low birthweight (OR 3.5 95% CI 
+1.2–10.8 P = 0.03) even when vomiting was not perceived to 
+be severe enough to warrant treatment.105 [Evidence level 2+]
+6.1 | What are optimal rehydration regimens 
+for ambulatory and inpatient care?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Normal saline 
+(0.9% NaCl) 
+with additional 
+potassium chloride 
+in each bag, with 
+administration 
+guided by daily 
+monitoring of 
+electrolytes, is the 
+most appropriate 
+intravenous 
+hydration.3 C There is no evidence to 
+determine which 
+fluid regimen is 
+most appropriate 
+but given that most 
+women admitted to 
+hospital with HG 
+are hyponatraemic, 
+hypochloraemic 
+and hypokalaemic, 
+it seems appropriate 
+to use normal saline 
+(0.9% NaCl) and 
+potassium chloride.
+The use of dextrose 
+infusions for fluid 
+replacement in 
+NVP and HG is not 
+recommended.4 D Intravenous fluid 
+and electrolyte 
+replacement is 
+likely to be the 
+most important 
+intervention in 
+the treatment of 
+those requiring 
+ambulatory or 
+inpatient care for 
+NVP. General 
+guidance on fluid 
+management in 
+adults can be found 
+in NICE Clinical 
+Guideline 174.106 
+Dextrose- containing 
+solutions may 
+precipitate Wernicke 
+encephalopathy in 
+thiamine deficient 
+states.
+The most important intervention is likely to be appropriate 
+intravenous fluid and electrolyte replacement. General adult 
+fluid management guidance can be found in NICE Clinical 
+Guideline 174.106 IV fluids have been shown to reduce vomit -
+ing and are therefore valuable for both outpatient and inpatient 
+management of the symptoms of HG and severe NVP as well 
+as associated dehydration and electrolyte disorders. Women in the placebo arm of controlled trials for NVP demonstrated a 
+significant improvement in nausea with supportive treatment 
+including IV fluids without antiemetics107,108.
+Dextrose- containing solutions can precipitate Wernicke 
+encephalopathy in thiamine- deficient states (see section 7.1); 
+hence, they should be avoided, and high (e.g. 100 mg) doses 
+of parenteral thiamine should be given to prevent Wernicke 
+encephalopathy. Dextrose containing fluids are appropriate 
+for nausea and vomiting in the third trimester to prevent 
+and treat starvation ketosis.109 [Evidence level 3]
+6.2 | What is the effect of NVP and HG 
+on the quality of life of the woman and family?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+A woman's quality of life can 
+be adversely affected 
+by NVP and HG and 
+practitioners should 
+assess the severity of a 
+woman's symptoms in 
+relation to her quality of 
+life and social situation.2– C NVP has been reported to 
+reduce quality of life, 
+impairing a woman's 
+ability to function on 
+a day- to- day basis, 
+and negatively affects 
+relationships with her 
+partner and family.
+Practitioners should carry 
+out a full assessment of 
+both physical and mental 
+health status during the 
+pregnancy and refer for 
+psychological support if 
+necessary.2+ C Depressive symptoms and 
+poor mental health are 
+associated with severity 
+of NVP.
+Acknowledgement 
+by healthcare 
+professionals of the 
+effect of these physical 
+symptoms on patients’ 
+mental health is likely 
+to lead to an improved 
+patient experience.
+Pre- existing mental 
+health conditions 
+may be exacerbated 
+by HG particularly 
+where prescribed oral 
+medications are not 
+being taken or kept down 
+because of vomiting, 
+therefore consideration 
+to alternative routes of 
+administration, proactive 
+use of antiemetics and 
+appropriate referrals 
+should be considered.
+Information about patient 
+support groups should 
+be provided to all women 
+admitted with nausea and 
+vomiting in pregnancy.4
+4GPP
+GPP Many women and their 
+partners find support 
+groups (e.g. Pregnancy 
+Sickness Support) 
+online or in person 
+extremely helpful.
+6.2.1 | Effect of HG on daily functioning
+NVP has been reported to reduce quality of life, impairing a 
+woman's ability to function on a day- to- day basis, and nega -
+tively affects relationships with her partner and family.110–130 
+Women with HG are three to six times more likely than 
+women with NVP to have low quality of life.24 Constant nausea 
+is the symptom that most adversely affects quality of life.118,131 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e11
+GREEN-TOP GUIDELINE NO. 69
+Furthermore, causes of stress as a consequence of NVP include 
+lack of understanding and support, inability to eat healthily, 
+regret for the loss of a positive pregnancy experience, finan -
+cial pressures, absence from work, isolation, inability to care 
+for family, others’ belief that it is psychosomatic and percep -
+tion that doctors are reluctant to provide treatment.112,132,133 
+Perceived stress positively correlated with NVP and negatively 
+correlated with social support in a cross- sectional study of 243 
+women.134 It has been recommended that social support is 
+necessary as an adjunct to treatment and the circle of support 
+should be expanded to include family, friends and healthcare 
+professionals.135 A cohort study of 648 women found that hav -
+ing support from at least three other persons was protective in 
+women with NVP.112 [Evidence level 2–]
+Information about patient support groups (e.g. Pregnancy 
+Sickness Support) should be provided as many women 
+and their partners find this form of support helpful.136–138 
+[Evidence level 4]
+A follow- up appointment for antenatal care is important 
+in women with HG. Psychological and social support should 
+be organised depending upon the clinical and social circum -
+stances. [Evidence level 4]
+6.2.2 | Effect of HG on mental health
+The erroneous belief in the psychogenic aetiology of HG is 
+still prevalent among healthcare professionals137,139–143 and 
+such attitudes towards women contribute to a worse expe -
+rience for NVP and HG sufferers.137,140,143–145 Women often 
+struggle to obtain treatment for NVP and HG, are dissat -
+isfied with communication during their appointments and 
+found healthcare professionals dismissive and unsympa -
+thetic.143,146–149 A cohort study of 808 women demonstrated 
+that women who feel that their healthcare professional is 
+unsympathetic report more depression and anxiety.140 A 
+review paper recommends an integrated approach which 
+addresses both physical and psychological suffering in 
+HG.150 The theory of psychogenic aetiology proposed by 
+Fairweather has been severely criticised for poor methodol -
+ogy and bias.97,151–153 Studies have failed to find a convinc -
+ing association between a prior history of psychological poor 
+health and having HG.154–160 Similarly, these suggest that 
+poor mental health can be exacerbated by HG rather than 
+being caused by it.114,139,144,150,157,160–163 [Evidence level 2+]
+Depressive symptoms and poor mental health are asso -
+ciated with severity of NVP.164,165 Poor psychological health 
+of women with HG is considered as the demoralisation of 
+suffering from a prolonged, severe chronic illness and in this 
+regard it is similar to mental health problems suffered in 
+other chronic illnesses.140 [Evidence level 2+]
+Pre- existing mental health conditions may be exacer -
+bated by HG particularly where prescribed oral medications 
+are not being taken or kept down due to vomiting, therefore 
+consideration to alternative routes of administration, ag -
+gressive use of antiemetics and appropriate referrals should 
+be considered. [Evidence level 4]Clinical assessment should be considered for depression, 
+anxiety and postnatal depression with appropriate referral. 
+Depression and poor psychological health have been found 
+to be associated with NVP and HG in numerous stud -
+ies,112,113,130,144,154–157,161,164–169 including a systematic re -
+view and meta- analysis, but resulted from the disease and 
+were not the cause of HG or NVP.126 A UK wide survey 
+of 5071 participants found a quarter of those suffering HG 
+occasionally reported suicidal ideation and 6.6% regularly 
+considered suicide due to the severity of the condition, 
+4.9% had a termination of pregnancy (TOP) due to HG and 
+52.1% considered TOP due to HG. Both suicidal ideation 
+and TOP of a wanted pregnancy were associated with per -
+ceived poor care from their healthcare providers. Those 
+reporting extremely poor perception of both primary and 
+secondary care were less likely to have been offered med -
+ication compared with those reporting excellent care.170 
+[Evidence level 2++]
+A cohort study of 648 women found that symptoms of 
+major depression are associated with moderate and se -
+vere NVP but prior history of depression is not a determi -
+nant.112,162 [Evidence level 2–]
+Poor mental health can persist post- partum and HG is a 
+risk factor for postpartum PTSD.169,171,172 [Evidence level 2+]
+Pregnancy sickness specific counselling may be helpful 
+either during or after pregnancy.173 Measures that address 
+NVP, poor social support and depression are warranted 
+throughout pregnancy.112 A prospective cohort study of 
+367 women suggests that practitioners could improve their 
+management of NVP by addressing symptoms and life situ -
+ation.115 [Evidence level 3]
+7 | HOW SHOULD WOMEN WITH 
+NVP AND HG BE CARED FOR WHEN 
+STANDARD TREATMENT MEASURES 
+DO NOT CONTROL SYMPTOMS OF 
+NAUSEA AND VOMITING?
+7.1 | What is the role of the multidisciplinary 
+team?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+In women with 
+severe NVP 
+or HG, input 
+should be sought 
+from other allied 
+professionals.4 D There are many facets to severe 
+NVP and HG and a holistic 
+approach to assessment 
+and treatment should be 
+adopted.
+Involvement of the mental health team in the woman's 
+care may improve quality of life and the ability to cope with 
+the impact of a complicated pregnancy.110 Emotional support 
+and psychological or psychiatric care may be required126,174 
+with targeted interventions specifically designed to treat 
+mental health issues occurring as a result of HG.154,161,175,176 
+[Evidence level 2–]
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e12 | 
+NELSON- PIERCY et al .
+Dieticians should be consulted regarding the role of nu -
+tritional support. Oral nutritional supplements may supple -
+ment an inadequate food intake or provide a more balanced 
+nutritional intake where women are only able to tolerate a 
+limited range of foods. All care should be holistic and cul -
+turally sensitive particularly in those with multimorbidity, 
+social deprivation and other marginalised groups.
+7.2 | When should enteral and parenteral 
+nutrition be considered and what are the risks 
+to the woman and fetus?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+When all other medical 
+therapies have failed 
+to sufficiently manage 
+symptoms, enteral tube 
+feeding or parenteral 
+treatment should be 
+considered with a referral 
+to gastroenterology 
+and a multidisciplinary 
+approach in parallel 
+to ongoing medical 
+therapies.3 D Total parenteral 
+nutrition is 
+a high- risk 
+intervention; 
+however, it 
+may be useful 
+in refractory 
+cases to ensure 
+sufficient 
+nutritional 
+intake.
+Parenteral nutrition should only be considered as a multi -
+disciplinary approach when all other treatments have failed 
+to sufficiently control symptoms as it is inconvenient, expen -
+sive and can be associated with serious complications such 
+as thrombosis, metabolic disturbances and infection.177,178 A 
+single nonrandomised study has shown that total parenteral 
+nutrition (TPN) was associated with a decreased risk of peri -
+natal morbidity compared with those with HG who did not 
+receive TPN.179 [Evidence level 2+]
+There are no defined criteria for starting parenteral or en -
+teral tube feeding. Their effectiveness is not well established. 
+Anecdotally, they can be effective and are often employed as a 
+last resort when all other medical therapy has failed and the only 
+other practical option is TOP.180,181 Close monitoring of meta -
+bolic and electrolyte balance, related complications (including 
+refeeding syndrome)182 and nutritional requirements are needed 
+with a multidisciplinary approach. [Evidence level 2–]
+Enteral tube feeding options to consider include naso -
+gastric, nasoduodenal or nasojejunal tubes, or percutane -
+ous endoscopic gastrostomy or gastrojejunostomy feeding, 
+all of which should only be considered in consultation with 
+gastroenterology and with a multidisciplinary approach. 
+Parenteral feeding with a peripherally inserted central cath -
+eter (PICC line) is often better tolerated than enteral feeding; 
+however, it carries a higher risk of infection and vascular 
+complications.183 [Evidence level 2+]
+In some women, feeding by nasogastric or percutaneous 
+endoscopic gastrostomy tube increases the risk of nausea 
+and vomiting. It may be tolerated in the short term but not 
+in protracted HG.184 A recent randomised controlled trial 
+recruited 116 women hospitalised for HG between 5 and 
+20 weeks and allocated them to either enteral (nasogastric) tube feeding (n=59) or standard care (n=57). Outcomes did 
+not differ between the groups and adherence to protocol was 
+low due to adverse effects in the enteral tube feeding arm. 
+Many women could not tolerate tube feeding due to discom -
+fort suggesting it is poorly tolerated as an early routine treat -
+ment. [Evidence level 2+]
+In nasojejunal feeding, the tube is inserted endoscopically 
+or under radiological guidance to the jejunum and feeding can 
+be administered by a continuous infusion. One study showed 
+that although the majority of women improved greatly within 
+48 hours, ongoing vomiting and retching can dislodge gastric 
+and postpyloric feeding tubes.184 [Evidence level 3]
+Feeding via a percutaneous endoscopic gastrojejunostomy 
+(PEG- J), placed under general anaesthetic in the second tri -
+mester,185,186,187 has been shown to be an effective, safe and 
+well- tolerated treatment of HG. In the majority of women, the 
+tube is removed after birth. The risk of early dislodgement is 
+minimised compared with nasoenteric placement.187 Potential 
+complications of percutaneous endoscopic gastrojejunostomy 
+include tube dislodgement, obstruction or migration, cutane -
+ous or intra- abdominal abscesses, fistula formation, pneuma -
+tosis, occlusion and intestinal ischaemia. [Evidence level 2+]
+7.3 | When should termination of pregnancy 
+be discussed?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+All therapeutic 
+measures should 
+have been offered 
+before considering 
+termination of 
+pregnancy.2– C HG is associated with a higher 
+risk of termination of 
+pregnancy. As many as 10% 
+of women with HG undergo 
+termination of pregnancy 
+due to the severity of 
+symptoms, who would not 
+otherwise have chosen to.188
+Around 10% of women with HG will terminate a wanted 
+pregnancy, due to the condition.137,170 Pregnancy Sickness 
+Support in the UK found that many of these women have not 
+been offered the full range of treatments available and fewer 
+than 10% had been offered steroids.188 [Evidence level 2–]
+Treatment options of antiemetics, corticosteroids, enteral 
+tube and parenteral feeding, and correction of electrolyte or 
+metabolic disturbances should be considered before deciding 
+that the only option is TOP.189,190 Consider seeking psychi -
+atric opinion if there are concerns regarding mental health, 
+and the decision for TOP needs to be multidisciplinary, with 
+documentation of therapeutic failure if this is the reason for 
+the termination. Women should be offered counselling be -
+fore and after a decision of pregnancy termination is made. 
+[Evidence level 2–]
+In a survey of 808 women who had TOP secondary to 
+HG, 123 (15.2%) had at least one termination due to HG, and 
+49 (6.1%) had multiple terminations.190 Common reasons 
+given for the terminations were inability to care for the fam -
+ily and self (66.7%), fear that they and their baby could die 
+(51.2%), or that the baby would be abnormal (22%). In one 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e13
+GREEN-TOP GUIDELINE NO. 69
+study, women who underwent a pregnancy termination were 
+more likely to report a negative attitude from their caregiver. 
+Initiation of a prompt and responsive treatment plan may 
+reduce this.180 Rarely, HG or its treatment may lead to life- 
+threatening illness and TOP is seen as the only option.96,191 
+[Evidence level 4]
+8 | WHAT ARE THE LONG- TERM 
+EFFECTS OF NVP AND HG?
+8.1 | What are the long- term effects of NVP 
+and HG on women?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+There is no evidence of 
+significant impact 
+on long- term all- 
+cause mortality .2++ B In a large population cohort 
+study from Norway, 
+HG was not associated 
+with an increased risk 
+of long- term all- cause 
+mortality.192
+Women who experience 
+HG in pregnancy 
+are at increased risk 
+of PND, anxiety and 
+PTSD postpartum.2++ B Systematic review has shown 
+a significantly increased 
+risk of depression and 
+anxiety in women with 
+HG which extended into 
+the postnatal period.126 
+A subsequent two- point 
+case control study 
+demonstrated long- 
+lasting psychological 
+morbidity associated 
+with HG.169
+Women with previous 
+HG should be 
+advised that 
+there is a risk of 
+recurrence in future 
+pregnancies.2++ B The reported rates of 
+recurrence varied from 
+15% to 81%.
+Women who experience HG in pregnancy are at increased 
+risk of postnatal depression (PND), anxiety and post- 
+traumatic stress disorder (PTSD) postpartum.126 [Evidence 
+level 2++]
+Symptoms of NVP and HG should resolve rapidly after 
+the birth. Where symptoms do not resolve further investi -
+gation should occur with referrals to endocrinology and gas -
+troenterology as appropriate. Case reports have highlighted 
+hyperparathyroidism as a potential differential diagnosis for 
+HG which does not resolve postnatally.193 [Evidence level 4]
+A systematic review published in 2019 found five el -
+igible studies reporting on 40 350 women with HG which 
+investigated the chance of recurrence of HG in subsequent 
+pregnancies.7 The quality of the five studies was low and 
+meta- analysis was not possible due to clinical and statistical 
+heterogeneity. The reported rates of recurrence varied from 
+15% to 81%. The paper concluded that a prospective longi -
+tudinal cohort study using an agreed definition of HG and 
+outcomes meaningful to patients is required to establish the 
+true recurrence rate of HG.9 [Evidence level 2++]8.2 | What are the long- term effects of 
+NVP and HG on the infant and child?
+Mild- moderate NVP does not appear to have a negative long- 
+term effect on the developing fetus and may have a protective 
+effect for the pregnancy.194 [Evidence level 2+]
+In contrast a recent systematic review and meta- analysis 
+of nineteen studies with 619 cases showed an association 
+with a small increase in adverse health outcomes of chil -
+dren born to women who had suffered with HG.195 A re -
+cent meta- analysis suggested a small increase in the risk of 
+certain adverse health outcomes in infants born to women 
+who suffered with HG including anxiety disorder, testicu -
+lar cancer (aged up to 40 years), attention deficit hyperac -
+tivity disorder and autism, however there was considerable 
+heterogeneity between individual studies. [Evidence level 
+2–]
+8.3 | What advice should be given about 
+future pregnancies?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Early use of lifestyle/
+dietary modifications 
+and antiemetics that 
+were useful in the index 
+pregnancy is advisable to 
+reduce the risk of NVP 
+and HG in the current 
+pregnancy.2+ B There is a lower 
+recurrence risk 
+with pre- emptive 
+antiemetics before 
+symptoms begin.
+The self- reported recurrence risk of HG is extremely high 
+(89%).6–9
+A Canadian study comparing women with NVP (PUQE 
+score of 13 and above) who took pre- emptive antiemetics 
+before pregnancy or before the onset of symptoms with 
+those who did not, reported a lower recurrence rate of HG 
+in the group that took pre- emptive antiemetics.111 There 
+was also a significant improvement in the PUQE score of 
+NVP severity compared with the previous pregnancy in the 
+pre- emptive group. Women who have experienced severe 
+NVP in a previous pregnancy may benefit from initiating 
+dietary and lifestyle changes, such as arranging childcare 
+to facilitate rest and adjusting to a “little and often” diet, 
+and commencing antiemetics before or immediately at the 
+start of symptoms in a subsequent pregnancy.111 [Evidence 
+level 2++]
+A small randomised study in women with previous NVP 
+demonstrated that pre- emptive treatment with antiemetics 
+resulted in fewer women with moderate to severe NVP.196 
+[Evidence level 2++]
+Women who have experienced HG in two or more preg -
+nancies reported that earlier use of antiemetics was a factor 
+in reducing the number of hospital admissions they had in 
+the second pregnancy.149 [Evidence level 3]
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e14 | 
+NELSON- PIERCY et al .
+9 | RECOMMENDATIONS FOR 
+FUTURE RESEARCH
+A James Lind Alliance Priority Setting Partnership has re -
+ported 26 priorities for research.197 Recommendations based 
+on this guideline are:
+• To establish optimum dose and route of administration 
+for ondansetron to maximise efficacy with the least ad -
+verse effects
+• To evaluate the feasibility, cost efficiency and patient 
+satisfaction of community/home based rehydration 
+treatment
+• To establish the most effective combinations of therapies 
+to maximise efficacy with the least adverse effects
+• To develop and assess interventions to reduce the risk of 
+negative psychological outcomes
+• To evaluate the effect of pre- emptive intervention on 
+the severity and duration of symptoms in subsequent 
+pregnancies
+• To explore the effect of socioeconomic factors and ethnic -
+ity on access to appropriate care and management of HG
+All future research should use the Core Outcome Set for 
+Hyperemesis Gravidarum research.197
+10 | AUDITABLE TOPICS
+• Percentage of women with access to recommended first 
+and second line antiemetic HG treatment (100%)
+• Percentage of women prescribed appropriate rehydration 
+regimes and VTE risk assessment (100%)
+• Service evaluation – incidence of termination of wanted 
+pregnancy due to NVP/HG
+11 | USEFUL LINKS AND 
+SUPPORT GROUPS
+• Pregnancy Sickness Support [ https:// www. pregn ancys 
+ickne sssup port. org. uk/ ] Provides information and peer 
+support to people affected by NVP and HG across the UK
+• Hyperemesis Education and Research (HER) Foundation 
+[https:// www. hyper emesis. org/ ]
+• UK Teratology Information Service (UKTIS): www. uktis. 
+org
+• bumps (best use of medicines in pregnancy). Treating 
+nausea and vomiting in pregnancy [ http:// www. medic 
+inesi npreg nancy. org/ Medic ine- - pregn ancy/ NV/ ].
+• For professionals: UKTIS. Treatment of nausea and vom-
+iting in pregnancy [ https:// uktis. org/ monog raphs/ treat 
+ment- of- nause a- and- vomit ing- in- pregn ancy/ ].
+FUNDING INFORMATION
+All those involved in the development of the Green- top 
+Guidelines, including the Guidelines Committee, Guidelines Committee co- chairs, guideline developers, peer reviewers 
+and other reviewers, are unpaid volunteers and receive no 
+direct funding for their work in producing the guideline. 
+The exception to this are the RCOG staff involved who are 
+salaried employees of the College and Guidelines Committee 
+members who receive reimbursement for expenses for at -
+tending Guidelines Committee meetings. Please see more 
+information on travel expense rules on the RCOG website.
+CONFLICT OF INTEREST STATEMENT
+CNP reports payment from UCB (manufacturer of Cimzia®) 
+for advisory board participation, and speaker and chair -
+ing fees from Sanofi and UCB. MS reports speaker fees 
+from Alliance Healthcare. RG is Trustee and Treasurer at 
+Pregnancy Sickness Support, and reports a consultancy fee 
+from Exeltis. MN has been supported by an NIHR-funded 
+research training fellowship, and reports speaker fees from 
+Exceltis. CD, MOH and KH have declared no conflicts of 
+interests. Full disclosures of interest for the Guidelines 
+Committee and peer reviewers are available to view online 
+as supporting information.
+REFERENCES
+ 1. Gadsby R, Rawson V, Dziadulewicz E, Rousseau B, Collings H. 
+Nausea and vomiting of pregnancy and resource implications: 
+the NVP Impact Study. Br J Gen Pract. Mar 2019;69(680):e217-23. 
+https:// doi. org/ 10. 3399/ bjgp1 8X700745
+ 2. Lacasse A, Lagoutte A, Ferreira E, Bérard A. Metoclopramide and 
+diphenhydramine in the treatment of hyperemesis gravidarum: ef -
+fectiveness and predictors of rehospitalisation. Eur J Obstet Gynecol 
+Reprod Biol. Mar 2009;143(1):43-9. https:// doi. org/ 10. 1016/j. ejogrb. 
+2008. 11. 007
+ 3. Gazmararian JA, Petersen R, Jamieson DJ, et  al. Hospitalizations 
+during pregnancy among managed care enrollees. Obstet Gynecol. 
+Jul 2002;100(1):94-100. https:// doi. org/ 10. 1016/ s0029 - 7844(02) 
+02024 - 0
+ 4. Atanackovic G, Wolpin J, Koren G. Determinants of the need for 
+hospital care among women with nausea and vomiting of preg -
+nancy. Clin Invest Med. Apr 2001;24(2):90-3.
+ 5. Gadsby R, Ivanova D, Trevelyan E, Hutton JL, Johnson S. Nausea 
+and vomiting in pregnancy is not just 'morning sickness': data 
+from a prospective cohort study in the UK. Br J Gen Pract. 08 
+2020;70(697):e534-9. https:// doi. org/ 10. 3399/ bjgp2 0X710885
+ 6. Trogstad LI, Stoltenberg C, Magnus P, Skjaerven R, Irgens 
+LM. Recurrence risk in hyperemesis gravidarum. BJOG. Dec 
+2005;112(12):1641-5. https:// doi. org/ 10. 1111/j. 1471- 0528. 2005. 
+00765. x
+ 7. Dean CR, Bruin CM, O'Hara ME, et al. The chance of recurrence of 
+hyperemesis gravidarum: A systematic review. Eur J Obstet Gynecol 
+Reprod Biol X. Jan 2020;5:100105. https:// doi. org/ 10. 1016/j. eurox. 
+2019. 100105
+ 8. Einarson TR, Piwko C, Koren G. Quantifying the global rates of 
+nausea and vomiting of pregnancy: a meta analysis. J Popul Ther 
+Clin Pharmacol. 2013;20(2):e171–83.
+ 9. Nijsten K, Dean C, van der Minnen LM, et al. Recurrence, post -
+poning pregnancy, and termination rates after hyperemesis grav -
+idarum: Follow up of the MOTHER study. Acta Obstet Gynecol 
+Scand. Sep 2021;100(9):1636-43. https:// doi. org/ 10. 1111/ aogs. 
+14197 
+ 10. Fiaschi LN- PC, Deb S, King R, Tata LJ. Clinical management of 
+nausea and vomiting in pregnancy and hyperemesis gravidarum 
+across primary and secondary care: a population- based study. 
+BJOG: an international journal of obstetrics and gynaecology. 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e15
+GREEN-TOP GUIDELINE NO. 69
+2019;126(10):1201–11. [Comment in: BJOG. 2019 Sep;126(10):1212; 
+PMID: 31127655. https:// www. ncbi. nlm. nih. gov/ pubmed/ 31127655 , 
+https:// doi. org/ 10. 1111/ 1471- 0528. 15662 
+ 11. Fejzo M, Rocha N, Cimino I, et  al. Fetally- encoded GDF15 and 
+maternal GDF15 sensitivity are major determinants of nausea and 
+vomiting in human pregnancy. bioRxiv. 2023:2023.06.02.542661. 
+https:// doi. org/ 10. 1101/ 2023. 06. 02. 542661
+ 12. Marlena S, Fejzo KWM, First O, Quan C, Mullin PM. Whole- exome 
+sequencing uncovers new variants in GDF15 associated with hyper -
+emesis gravidarum. Review. BJOG. 2022. https:// doi. org/ 10. 1111/ 
+1471- 0528. 17129 
+ 13. Fejzo MS, Arzy D, Tian R, MacGibbon KW, Mullin PM. Evidence 
+GDF15 Plays a Role in Familial and Recurrent Hyperemesis 
+Gravidarum. Geburtshilfe Frauenheilkd. Sep 2018;78(9):866-70. 
+https:// doi. org/ 10. 1055/ a- 0661- 0287
+ 14. Gynaecologists RCoOa. Developing a Green- top Guideline: guid-
+ance for developers. London: RCOG; 2020.
+ 15. Gadsby R, Barnie- Adshead AM, Jagger C. A prospective study 
+of nausea and vomiting during pregnancy. Br J Gen Pract. Jun 
+1993;43(371):245-8.
+ 16. Jansen LAW, Koot MH, Van't Hooft J, et  al. The windsor defini -
+tion for hyperemesis gravidarum: A multistakeholder interna -
+tional consensus definition. Eur J Obstet Gynecol Reprod Biol. Nov 
+2021;266:15-22. https:// doi. org/ 10. 1016/j. ejogrb. 2021. 09. 004
+ 17. Rhodes VA, Watson PM, Johnson MH. Development of reliable 
+and valid measures of nausea and vomiting. Cancer Nurs. Feb 
+1984;7(1):33-41.
+ 18. Rhodes VA, McDaniel RW. The Index of Nausea, Vomiting, and 
+Retching: a new format of the lndex of Nausea and Vomiting. Oncol 
+Nurs Forum. Jun 1999;26(5):889-94.
+ 19. Koren G, Boskovic R, Hard M, Maltepe C, Navioz Y, Einarson A. 
+Motherisk- PUQE (pregnancy- unique quantification of emesis and 
+nausea) scoring system for nausea and vomiting of pregnancy. Am 
+J Obstet Gynecol. May 2002;186(5 Suppl Understanding):S228-31. 
+https:// doi. org/ 10. 1067/ mob. 2002. 123054
+ 20. Koren G, Piwko C, Ahn E, et al. Validation studies of the Pregnancy 
+Unique- Quantification of Emesis (PUQE) scores. J Obstet Gynaecol. 
+Apr 2005;25(3):241-4. https:// doi. org/ 10. 1080/ 01443 61050 0060651
+ 21. Lacasse A, Rey E, Ferreira E, Morin C, Bérard A. Validity of a 
+modified Pregnancy- Unique Quantification of Emesis and Nausea 
+(PUQE) scoring index to assess severity of nausea and vomiting of 
+pregnancy. Am J Obstet Gynecol. Jan 2008;198(1):71.e1-7. https:// 
+doi. org/ 10. 1016/j. ajog. 2007. 05. 051
+ 22. Ebrahimi N, Maltepe C, Bournissen FG, Koren G. Nausea and 
+vomiting of pregnancy: using the 24- hour Pregnancy- Unique 
+Quantification of Emesis (PUQE- 24) scale. J Obstet Gynaecol Can. 
+Sep 2009;31(9):803-7. https:// doi. org/ 10. 1016/ S1701 - 2163(16) 34298 - 0
+ 23. MacGibbon KW, Kim S, Mullin PM, Fejzo MS. HyperEmesis Level 
+Prediction (HELP Score) Identifies Patients with Indicators of 
+Severe Disease: a Validation Study. Geburtshilfe Frauenheilkd. Jan 
+2021;81(1):90-8. https:// doi. org/ 10. 1055/ a- 1309- 1997
+ 24. Goodwin TM, Montoro M, Mestman JH. Transient hyperthyroid-
+ism and hyperemesis gravidarum: clinical aspects. Am J Obstet 
+Gynecol. Sep 1992;167(3):648-52. https:// doi. org/ 10. 1016/ s0002 - 
+9378(11) 91565 - 8
+ 25. Rotman P, Hassin D, Mouallem M, Barkai G, Farfel Z. Wernicke's 
+encephalopathy in hyperemesis gravidarum: association with ab -
+normal liver function. Isr J Med Sci. Mar 1994;30(3):225-8.
+ 26. Koot MH, Grooten IJ, Post JAMV, et al. Ketonuria is not associated 
+with hyperemesis gravidarum disease severity. Eur J Obstet Gynecol 
+Reprod Biol. Nov 2020;254:315-20. https:// doi. org/ 10. 1016/j. ejogrb. 
+2020. 08. 014
+ 27. Niemeijer MN, Grooten IJ, Vos N, et al. Diagnostic markers for hy -
+peremesis gravidarum: a systematic review and metaanalysis. Am 
+J Obstet Gynecol. Aug 2014;211(2):150.e1-15. https:// doi. org/ 10. 
+1016/j. ajog. 2014. 02. 012
+ 28. Miele MJ, Souza RT, Calderon I, et al. Proposal of MUAC as a fast 
+tool to monitor pregnancy nutritional status: results from a cohort study in Brazil. BMJ Open. May 24 2021;11(5):e047463. https:// doi. 
+org/ 10. 1136/ bmjop en- 2020- 047463
+ 29. Mayimbo SHC, Kwaleyela C, Phoebe B, Chirwa E, Kaonga P, 
+Ngoma C. Assessing Malnutrition in Pregnant Women Using the 
+Dietary Diversity Score and the Mid- Upper Arm Circumference: 
+A Cross- Sectional Study. Zambia. Food and Nutrition Sciences. 
+2021;11:712–25.
+ 30. Mareschal J, Achamrah N, Norman K, Genton L. Clinical Value of 
+Muscle Mass Assessment in Clinical Conditions Associated with 
+Malnutrition. J Clin Med. Jul 17 2019;8(7) https:// doi. org/ 10. 3390/ 
+jcm80 71040 
+ 31. Bharadwaj S, Ginoya S, Tandon P, et  al. Malnutrition: laboratory 
+markers vs nutritional assessment. Gastroenterol Rep (Oxf). Nov 
+2016;4(4):272-80. https:// doi. org/ 10. 1093/ gastro/ gow013
+ 32. BAPEN. Malnutrition Universal Screening Tool. Worcestershire: 
+BAPEN; 2003.
+ 33. BAPEN. The 'MUST' Explanatory Booklet. Worcestershire: BAPEN; 
+2011.
+ 34. Jarvis S, Nelson- Piercy C. Management of nausea and vomiting in preg -
+nancy. BMJ. Jun 2011;342:d3606. https:// doi. org/ 10. 1136/ bmj. d3606 
+ 35. Figueroa Gray M, Hsu C, Kiel L, Dublin S. Getting through the 
+day: a pilot qualitative study of U.S. women's experiences making 
+decisions about anti- nausea medication during pregnancy. BMC 
+Pregnancy Childbirth. Dec 2018;18(1):475. https:// doi. org/ 10. 1186/ 
+s1288 4- 018- 2093- 6
+ 36. Widnes SF, Schjøtt J. Risk perception regarding drug use in preg -
+nancy. Am J Obstet Gynecol. 04 2017;216(4):375-8. https:// doi. org/ 
+10. 1016/j. ajog. 2016. 12. 007
+ 37. Gill SK, Einarson A. The safety of drugs for the treatment of 
+nausea and vomiting of pregnancy. Expert Opin Drug Saf. Nov 
+2007;6(6):685-94. https:// doi. org/ 10. 1517/ 14740 338.6. 6. 685
+ 38. Erick M. Hyperemesis gravidarum: a case of starvation and altered 
+sensorium gestosis (ASG). Med Hypotheses. May 2014;82(5):572-80. 
+https:// doi. org/ 10. 1016/j. mehy. 2014. 02. 014
+ 39. Pacei F, Tesone A, Laudi N, et  al. The Relevance of Thiamine 
+Evaluation in a Practical Setting. Nutrients. Sep 13 2020;12(9) 
+https:// doi. org/ 10. 3390/ nu120 92810 
+ 40. McParlin C, Carrick- Sen D, Steen IN, Robson SC. Hyperemesis in 
+Pregnancy Study: a pilot randomised controlled trial of midwife- led 
+outpatient care. Eur J Obstet Gynecol Reprod Biol. May 2016;200:6-
+10. https:// doi. org/ 10. 1016/j. ejogrb. 2016. 02. 016
+ 41. Lombardi DG, Istwan NB, Rhea DJ, O'Brien JM, Barton JR. 
+Measuring outpatient outcomes of emesis and nausea management 
+in pregnant women. Manag Care. Nov 2004;13(11):48-52.
+ 42. McCarthy FP, Murphy A, Khashan AS, et  al. Day care compared 
+with inpatient management of nausea and vomiting of pregnancy: a 
+randomized controlled trial. Obstet Gynecol. Oct 2014;124(4):743-
+8. https:// doi. org/ 10. 1097/ AOG. 00000 00000 000449
+ 43. TN K, S K, M S. Hyperemesis day centre audit [E- poster EP13.25]. 
+BJOG. 2013;120(Suppl 1).
+ 44. Doxylamine/pyridoxine for nausea and vomiting in pregnancy. 
+Drug Ther Bull. Mar 2019;57(3):38-41. https:// doi. org/ 10. 1136/ dtb. 
+2018. 000053
+ 45. Grooten IJ, Vinke ME, Roseboom TJ, Painter RC. A Systematic 
+Review and Meta- Analysis of the Utility of Corticosteroids in the 
+Treatment of Hyperemesis Gravidarum. Nutr Metab Insights. 
+2015;8(Suppl 1):23–32. https:// doi. org/ 10. 4137/ NMI. S29532
+ 46. Fiaschi L, Housley G, Nelson- Piercy C, et  al. Assessment of dis -
+charge treatment prescribed to women admitted to hospital for 
+hyperemesis gravidarum. Int J Clin Pract. Jan 2019;73(1):e13261. 
+https:// doi. org/ 10. 1111/ ijcp. 13261 
+ 47. Oliveira LG, Capp SM, You WB, Riffenburgh RH, Carstairs SD. 
+Ondansetron compared with doxylamine and pyridoxine for treat -
+ment of nausea in pregnancy: a randomized controlled trial. Obstet 
+Gynecol. Oct 2014;124(4):735-42. https:// doi. org/ 10. 1097/ AOG. 
+00000 00000 000479
+ 48. Abas MN, Tan PC, Azmi N, Omar SZ. Ondansetron compared 
+with metoclopramide for hyperemesis gravidarum: a randomized 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e16 | 
+NELSON- PIERCY et al .
+controlled trial. Obstet Gynecol. Jun 2014;123(6):1272-9. https:// doi. 
+org/ 10. 1097/ AOG. 00000 00000 000242
+ 49. Kashifard M, Basirat Z, Golsorkhtabar- Amiri M, Moghaddamnia 
+A. Ondansetrone or metoclopromide? Which is more effective 
+in severe nausea and vomiting of pregnancy? A randomized trial 
+double- blind study. Clin Exp Obstet Gynecol. 2013;40(1):127–30.
+ 50. Boelig RC, Barton SJ, Saccone G, Kelly AJ, Edwards SJ, Berghella 
+V. Interventions for treating hyperemesis gravidarum: a Cochrane 
+systematic review and meta- analysis. J Matern Fetal Neonatal Med. 
+Sep 2018;31(18):2492-505. https:// doi. org/ 10. 1080/ 14767 058. 2017. 
+1342805
+ 51. Le TN, Adler MT, Ouillette H, Berens P, Smith JA. Observational 
+Case Series Evaluation of the Granisetron Transdermal Patch 
+System (Sancuso) for the Management of Nausea/Vomiting of 
+Pregnancy. Am J Perinatol. 07 2017;34(9):851-5. https:// doi. org/ 10. 
+1055/ s- 0037- 1598652
+ 52. Aleyasin A, Saffarieh E, Torkamandi H, et al. Comparison of Efficacy 
+of Granisetron and Promethazine in Control of Hyperemesis 
+Gravidarum. J Obstet Gynaecol India. 12 2016;66(6):409-14. https:// 
+doi. org/ 10. 1007/ s1322 4- 015- 0709- 6
+ 53. Schuster K, Bailey LB, Dimperio D, Mahan CS. Morning sickness 
+and vitamin B6 status of pregnant women. Hum Nutr Clin Nutr. Jan 
+1985;39(1):75-9.
+ 54. Boelig RC, Barton SJ, Saccone G, Kelly AJ, Edwards SJ, Berghella 
+V. Interventions for treating hyperemesis gravidarum. Cochrane 
+Database Syst Rev. May 11 2016;(5):CD010607. https:// doi. org/ 10. 
+1002/ 14651 858. CD010 607. pub2
+ 55. Tan PC, Yow CM, Omar SZ. A placebo- controlled trial of oral 
+pyridoxine in hyperemesis gravidarum. Gynecol Obstet Invest. 
+2009;67(3):151–7. https:// doi. org/ 10. 1159/ 00018 1182
+ 56. Pope E, Maltepe C, Koren G. Comparing pyridoxine and doxyl-
+amine succinate- pyridoxine HCl for nausea and vomiting of preg -
+nancy: A matched, controlled cohort study. J Clin Pharmacol. Jul 
+2015;55(7):809-14. https:// doi. org/ 10. 1002/ jcph. 480
+ 57. Taylor R. Successful management of hyperemesis gravidarum using 
+steroid therapy. QJM. Feb 1996;89(2):103-7. https:// doi. org/ 10. 1093/ 
+qjmed/ 89.2. 103
+ 58. Nelson- Piercy C, Fayers P, de Swiet M. Randomised, double- blind, 
+placebo- controlled trial of corticosteroids for the treatment of hy -
+peremesis gravidarum. BJOG. Jan 2001;108(1):9-15. https:// doi. org/ 
+10. 1111/j. 1471- 0528. 2001. 00017. x
+ 59. Safari HR, Fassett MJ, Souter IC, Alsulyman OM, Goodwin TM. 
+The efficacy of methylprednisolone in the treatment of hypereme -
+sis gravidarum: a randomized, double- blind, controlled study. Am 
+J Obstet Gynecol. Oct 1998;179(4):921-4. https:// doi. org/ 10. 1016/ 
+s0002 - 9378(98) 70189 - 9
+ 60. Yost NP, McIntire DD, Wians FH, Ramin SM, Balko JA, Leveno KJ. 
+A randomized, placebo- controlled trial of corticosteroids for hy -
+peremesis due to pregnancy. Obstet Gynecol. Dec 2003;102(6):1250-
+4. https:// doi. org/ 10. 1016/j. obste tgyne col. 2003. 08. 013
+ 61. CR D, ME OH. Ginger is ineffective for hyperemesis gravidarum, 
+and causes harm: an internet based survey of sufferers. MIDRIS 
+Midwifery Digest. 2015;25(4):449–55.
+ 62. Pereira N, Hutchinson AP, Irani M, et al. 5- millimeter Trocar- site 
+Hernias After Laparoscopy Requiring Surgical Repair. J Minim 
+Invasive Gynecol. 2016 May-Jun 2016;23(4):505-11. https:// doi. org/ 
+10. 1016/j. jmig. 2016. 03. 001
+ 63. Matthews A, Dowswell T, Haas DM, Doyle M, O'Mathúna DP. 
+Interventions for nausea and vomiting in early pregnancy. Cochrane 
+Database Syst Rev. Sep 2010;(9):CD007575. https:// doi. org/ 10. 1002/ 
+14651 858. CD007 575. pub2
+ 64. Mazzotta P, Magee LA. A risk- benefit assessment of pharmacologi -
+cal and nonpharmacological treatments for nausea and vomiting of 
+pregnancy. Drugs. Apr 2000;59(4):781-800. https:// doi. org/ 10. 2165/ 
+00003 495- 20005 9040- 00005 
+ 65. Magee LA, Mazzotta P, Koren G. Evidence- based view of safety and 
+effectiveness of pharmacologic therapy for nausea and vomiting 
+of pregnancy (NVP). Am J Obstet Gynecol. May 2002;186(5 Suppl Understanding):S256-61. https:// doi. org/ 10. 1067/ mob. 2002. 
+122596
+ 66. McParlin C, O'Donnell A, Robson SC, et  al. Treatments for 
+Hyperemesis Gravidarum and Nausea and Vomiting in Pregnancy: 
+A Systematic Review. JAMA. 10 2016;316(13):1392-401. https:// doi. 
+org/ 10. 1001/ jama. 2016. 14337 
+ 67. Koren G, Clark S, Hankins GD, et al. Maternal safety of the delayed- 
+release doxylamine and pyridoxine combination for nausea and 
+vomiting of pregnancy; a randomized placebo controlled trial. BMC 
+Pregnancy Childbirth. Mar 2015;15:59. https:// doi. org/ 10. 1186/ 
+s1288 4- 015- 0488- 1
+ 68. Pasternak B, Svanström H, Mølgaard- Nielsen D, Melbye M, Hviid 
+A. Metoclopramide in pregnancy and risk of major congenital 
+malformations and fetal death. JAMA. Oct 2013;310(15):1601-11. 
+https:// doi. org/ 10. 1001/ jama. 2013. 278343
+ 69. Parker SE, Van Bennekom C, Anderka M, Mitchell AA, Study 
+NBDP. Ondansetron for Treatment of Nausea and Vomiting of 
+Pregnancy and the Risk of Specific Birth Defects. Obstet Gynecol. 
+08 2018;132(2):385-94. https:// doi. org/ 10. 1097/ AOG. 00000 00000 
+002679
+ 70. Huybrechts KF, Hernández- Díaz S, Straub L, et  al. Association 
+of Maternal First- Trimester Ondansetron Use With Cardiac 
+Malformations and Oral Clefts in Offspring. JAMA. 12 
+2018;320(23):2429-37. https:// doi. org/ 10. 1001/ jama. 2018. 18307 
+ 71. Lavecchia M, Chari R, Campbell S, Ross S. Ondansetron in 
+Pregnancy and the Risk of Congenital Malformations: A Systematic 
+Review. J Obstet Gynaecol Can. 07 2018;40(7):910-8. https:// doi. org/ 
+10. 1016/j. jogc. 2017. 10. 024
+ 72. Kaplan YC, Richardson JL, Keskin- Arslan E, Erol- Coskun H, 
+Kennedy D. Use of ondansetron during pregnancy and the risk of 
+major congenital malformations: A systematic review and meta- 
+analysis. Reprod Toxicol. 2019;06(86):1–13. https:// doi. org/ 10. 
+1016/j. repro tox. 2019. 03. 001
+ 73. Monograph U. Use of ondansetron in pregnancy. 2019.
+ 74. Zambelli- Weiner A, Via C, Yuen M, Weiner DJ, Kirby RS. First tri -
+mester ondansetron exposure and risk of structural birth defects. 
+Reprod Toxicol. 2019;01(83):14–20. https:// doi. org/ 10. 1016/j. repro 
+tox. 2018. 10. 010
+ 75. Einarson A, Maltepe C, Navioz Y, Kennedy D, Tan MP, Koren G. 
+The safety of ondansetron for nausea and vomiting of pregnancy: 
+a prospective comparative study. BJOG. Sep 2004;111(9):940-3. 
+https:// doi. org/ 10. 1111/j. 1471- 0528. 2004. 00236. x
+ 76. Bérard A, Sheehy O, Gorgui J, Zhao JP, Soares de Moura C, Bernatsky 
+S. New evidence for concern over the risk of birth defects from med-
+ications for nausea and vomitting of pregnancy. J Clin Epidemiol. 
+2019;12(116):39–48. https:// doi. org/ 10. 1016/j. jclin epi. 2019. 07. 014
+ 77. Huybrechts KF, Hernandez- Diaz S, Straub L, et  al. Intravenous 
+Ondansetron in Pregnancy and Risk of Congenital Malformations. 
+JAMA. 01 2020;323(4):372-4. https:// doi. org/ 10. 1001/ jama. 2019. 18587 
+ 78. Lemon LS, Bodnar LM, Garrard W, et al. Ondansetron use in the 
+first trimester of pregnancy and the risk of neonatal ventricular sep -
+tal defect. Int J Epidemiol. 04 2020;49(2):648-56. https:// doi. org/ 10. 
+1093/ ije/ dyz255
+ 79. J A, E J- S, N A, H P. Ondansetron Use in Early Pregnancy and the 
+Risk of Congenital Malformations – A Register Based Nationwide 
+Cohort Study [ABSTRACT]. Pharmacoepidemiology and Drug 
+Safety. 2003;12(Supple 1):13–4.
+ 80. Pasternak B, Svanström H, Hviid A. Ondansetron in pregnancy and 
+risk of adverse fetal outcomes. N Engl J Med. Feb 2013;368(9):814-
+23. https:// doi. org/ 10. 1056/ NEJMo a1211035
+ 81. Colvin L, Gill AW, Slack- Smith L, Stanley FJ, Bower C. Off- label use 
+of ondansetron in pregnancy in Western Australia. Biomed Res Int. 
+2013;2013:909860. https:// doi. org/ 10. 1155/ 2013/ 909860
+ 82. Danielsson B, Wikner BN, Källén B. Use of ondansetron during preg -
+nancy and congenital malformations in the infant. Reprod Toxicol. 
+Dec 2014;50:134-7. https:// doi. org/ 10. 1016/j. repro tox. 2014. 10. 017
+ 83. Özdemirci SA, F Bilge, M Özdemirci, F Yılmaz, S Esinler, D 
+Kahyaoğlu, I. The safety of ondansetron and chlorpromazine for 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e17
+GREEN-TOP GUIDELINE NO. 69
+hyperemesis gravidarum in first trimester pregnancy. Gynecology 
+Obstetrics & Reproductive Medicine. 2014;20:81-4.
+ 84. Fejzo MS, MacGibbon KW, Mullin PM. Ondansetron in pregnancy 
+and risk of adverse fetal outcomes in the United States. Reprod 
+Toxicol. 2016;07(62):87–91. https:// doi. org/ 10. 1016/j. repro tox. 2016. 
+04. 027
+ 85. Picot C, Berard A, Grenet G, Ripoche E, Cucherat M, Cottin J. 
+Risk of malformation after ondansetron in pregnancy: An up -
+dated systematic review and meta- analysis. Birth Defects Res. 08 
+2020;112(13):996-1013. https:// doi. org/ 10. 1002/ bdr2. 1705
+ 86. Dormuth CRWB, Fisher A, et  al. Comparison of Pregnancy 
+Outcomes of Patient Treated With Ondansetron vx Alternative 
+Antiemetic Medications in a Multinational, Population- Based 
+Cohort. JAMA Network Open. 2021;4(4):e215329. https:// doi. org/ 
+10. 1001/ jaman etwor kopen. 2021. 5329
+ 87. Agency EM. European Medicines Agency recommends changes to 
+the use of metoclopramide. EMA/13239/2014 Corr. 1st ed. London: 
+EMA; 2013.
+ 88. Regan LA, Hoffman RS, Nelson LS. Slower infusion of metoclo -
+pramide decreases the rate of akathisia. Am J Emerg Med. May 
+2009;27(4):475-80. https:// doi. org/ 10. 1016/j. ajem. 2008. 03. 044
+ 89. Monograph U. Use of Corticosteroids in Pregnancy. Version 1 
+ed2016.
+ 90. Sanghvi U, Thankappan KR, Sarma PS, Sali N. Assessing poten -
+tial risk factors for child malnutrition in rural Kerala, India. J Trop 
+Pediatr. 12 2001;47(6):350-5. https:// doi. org/ 10. 1093/ tropej/ 47.6. 350
+ 91. Fejzo MSPB, Korst LM, Munch S, MacGibbon KW, Romero R, 
+Goodwin TM. Symptoms and Pregnancy Outcomes Associated 
+with Extreme Weight Loss among Women with Hyperemesis 
+Gravidarum. Journal of Women's Health. 2009;18(12):1981–7. 
+https:// doi. org/ 10. 1089/ jwh. 2009. 1431
+ 92. Gill SK, Maltepe C, Mastali K, Koren G. The Effect of Acid- Reducing 
+Pharmacotherapy on the Severity of Nausea and Vomiting of 
+Pregnancy. Obstetrics and Gynecology International. 2009;2009.
+ 93. Bergin PS, Harvey P. Wernicke's encephalopathy and central pon-
+tine myelinolysis associated with hyperemesis gravidarum. 
+BMJ. Aug 1992;305(6852):517-8. https:// doi. org/ 10. 1136/ bmj. 
+305. 6852. 517
+ 94. Debby A, Golan A, Sadan O, Glezerman M, Shirin H. Clinical util-
+ity of esophagogastroduodenoscopy in the management of recur -
+rent and intractable vomiting in pregnancy. J Reprod Med. May 
+2008;53(5):347-51.
+ 95. Gill SK, O'Brien L, Einarson TR, Koren G. The safety of pro -
+ton pump inhibitors (PPIs) in pregnancy: a meta- analysis. Am J 
+Gastroenterol. Jun 2009;104(6):1541-5; quiz 1540, 1546. https:// doi. 
+org/ 10. 1038/ ajg. 2009. 122
+ 96. Oudman E, Wijnia JW, Oey M, van Dam M, Painter RC, Postma A. 
+Wernicke's encephalopathy in hyperemesis gravidarum: A system -
+atic review. Eur J Obstet Gynecol Reprod Biol. May 2019;236:84-93. 
+https:// doi. org/ 10. 1016/j. ejogrb. 2019. 03. 006
+ 97. Liu S, Rouleau J, Joseph KS, et  al. Epidemiology of pregnancy- 
+associated venous thromboembolism: a population- based study in 
+Canada. J Obstet Gynaecol Can. Jul 2009;31(7):611-20. https:// doi. 
+org/ 10. 1016/ S1701 - 2163(16) 34240 - 2
+ 98. Gynaecologists RCoOa. Reducing the Risk of Venous 
+Thromboembolism during Pregnancy and the Puerperium. Green- 
+top Guideline No. 37a. London: RCOG; 2015.
+ 99. Gill SK, Maltepe C, Koren G. The effectiveness of discontinuing 
+iron- containing prenatal multivitamins on reducing the sever -
+ity of nausea and vomiting of pregnancy. J Obstet Gynaecol. Jan 
+2009;29(1):13-6. https:// doi. org/ 10. 1080/ 01443 61080 2628528
+ 100. Fiaschi L, Nelson- Piercy C, Tata LJ. Hospital admission for hy -
+peremesis gravidarum: a nationwide study of occurrence, reoc-
+currence and risk factors among 8.2 million pregnancies. Hum 
+Reprod. Aug 2016;31(8):1675–84. https:// doi. org/ 10. 1093/ hum -
+rep/ dew128
+ 101. Power Z, Thomson AM, Waterman H. Understanding the stigma 
+of hyperemesis gravidarum: qualitative findings from an action research study. Birth. Sep 2010;37(3):237-44. https:// doi. org/ 10. 
+1111/j. 1523- 536X. 2010. 00411. x
+ 102. Pregnancy Sickness Support BPAS. I could not survive another day. 
+Improving treatment and tackling stigma: lessons from women's ex -
+perience of abortion for severe pregnancy sickness. [Par]: PSS; 2015.
+ 103. Dodds L, Fell DB, Joseph KS, Allen VM, Butler B. Outcomes of preg -
+nancies complicated by hyperemesis gravidarum. Obstet Gynecol. 
+Feb 2006;107(2 Pt 1):285-92. https:// doi. org/ 10. 1097/ 01. AOG. 00001 
+95060. 22832. cd
+ 104. Fiaschi L, Nelson- Piercy C, Gibson J, Szatkowski L, Tata LJ. Adverse 
+Maternal and Birth Outcomes in Women Admitted to Hospital 
+for Hyperemesis Gravidarum: a Population- Based Cohort Study. 
+Paediatr Perinat Epidemiol. Jan 2018;32(1):40-51. https:// doi. org/ 10. 
+1111/ ppe. 12416 
+ 105. Petry CJ, Ong KK, Beardsall K, Hughes IA, Acerini CL, Dunger 
+DB. Vomiting in pregnancy is associated with a higher risk of low 
+birth weight: a cohort study. BMC Pregnancy Childbirth. May 4 
+2018;18(1):133. https:// doi. org/ 10. 1186/ s1288 4- 018- 1786- 1
+ 106. Excellence NIoHaC. Intravenous fluid therapy in adults in hospital. 
+NICE clinical guideline 174. [Manchester]: NICE; 2013.
+ 107. Ditto A, Morgante G, la Marca A, De Leo V. Evaluation of treat -
+ment of hyperemesis gravidarum using parenteral fluid with or 
+without diazepam. A randomized study. Gynecol Obstet Invest. 
+1999;48(4):232–6. https:// doi. org/ 10. 1159/ 00001 0189
+ 108. Furyk JS, Meek RA, Egerton- Warburton D. Drugs for the treatment 
+of nausea and vomiting in adults in the emergency department set -
+ting. Cochrane Database Syst Rev. Sep 28 2015;2015(9):Cd010106. 
+https:// doi. org/ 10. 1002/ 14651 858. CD010 106. pub2
+ 109. Frise CJ, Mackillop L, Joash K, Williamson C. Starvation keto -
+acidosis in pregnancy. Eur J Obstet Gynecol Reprod Biol. Mar 
+2013;167(1):1-7. https:// doi. org/ 10. 1016/j. ejogrb. 2012. 10. 005
+ 110. Mazzotta P, Stewart DE, Koren G, Magee LA. Factors associated with 
+elective termination of pregnancy among Canadian and American 
+women with nausea and vomiting of pregnancy. J Psychosom Obstet 
+Gynaecol. Mar 2001;22(1):7-12. https:// doi. org/ 10. 3109/ 01674 82010 
+9049946
+ 111. Koren G, Maltepe C. Pre- emptive therapy for severe nausea and 
+vomiting of pregnancy and hyperemesis gravidarum. J Obstet 
+Gynaecol. Aug 2004;24(5):530-3. https:// doi. org/ 10. 1080/ 01443 
+61041 00017 22581 
+ 112. Kramer J, Bowen A, Stewart N, Muhajarine N. Nausea and vomit -
+ing of pregnancy: prevalence, severity and relation to psychosocial 
+health. MCN Am J Matern Child Nurs. 2013 Jan-Feb 2013;38(1):21-
+7. https:// doi. org/ 10. 1097/ NMC. 0b013 e3182 748489
+ 113. O'Brien B, Evans M, White- McDonald E. Isolation from "being 
+alive": coping with severe nausea and vomiting of pregnancy. Nurs 
+Res. 2002 Sep-Oct 2002;51(5):302-8. https:// doi. org/ 10. 1097/ 00006 
+199- 20020 9000- 00006 
+ 114. Ezberci İ, Güven ES, Ustüner I, Sahin FK, Hocaoğlu C. Disability 
+and psychiatric symptoms in hyperemesis gravidarum patients. 
+Arch Gynecol Obstet. Jan 2014;289(1):55-60. https:// doi. org/ 10. 
+1007/ s0040 4- 013- 2934- 5
+ 115. Lacasse A, Rey E, Ferreira E, Morin C, Bérard A. Nausea and 
+vomiting of pregnancy: what about quality of life? BJOG. Nov 
+2008;115(12):1484-93. https:// doi. org/ 10. 1111/j. 1471- 0528. 2008. 
+01891. x
+ 116. Attard CL, Kohli MA, Coleman S, et  al. The burden of illness of 
+severe nausea and vomiting of pregnancy in the United States. Am 
+J Obstet Gynecol. May 2002;186(5 Suppl Understanding):S220-7. 
+https:// doi. org/ 10. 1067/ mob. 2002. 122605
+ 117. Munch S. Women's experiences with a pregnancy complication: 
+causal explanations of hyperemesis gravidarum. Soc Work Health 
+Care. 2002;36(1):59–76. https:// doi. org/ 10. 1300/ J010v 36n01_ 05
+ 118. Magee LA, Chandra K, Mazzotta P, Stewart D, Koren G, Guyatt 
+GH. Development of a health- related quality of life instrument 
+for nausea and vomiting of pregnancy. Am J Obstet Gynecol. May 
+2002;186(5 Suppl Understanding):S232-8. https:// doi. org/ 10. 1067/ 
+mob. 2002. 122604
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e18 | 
+NELSON- PIERCY et al .
+ 119. Munch S, Korst LM, Hernandez GD, Romero R, Goodwin TM. 
+Health- related quality of life in women with nausea and vomiting of 
+pregnancy: the importance of psychosocial context. J Perinatol. Jan 
+2011;31(1):10-20. https:// doi. org/ 10. 1038/ jp. 2010. 54
+ 120. Smith C, Crowther C, Beilby J, Dandeaux J. The impact of nausea 
+and vomiting on women: a burden of early pregnancy. Aust N Z J 
+Obstet Gynaecol. Nov 2000;40(4):397-401. https:// doi. org/ 10. 1111/j. 
+1479- 828x. 2000. tb011 67. x
+ 121. O'Brien B, Naber S. Nausea and vomiting during pregnancy: effects 
+on the quality of women's lives. Birth. Sep 1992;19(3):138-43. https:// 
+doi. org/ 10. 1111/j. 1523- 536x. 1992. tb006 71. x
+ 122. Wood H, McKellar LV, Lightbody M. Nausea and vomiting in 
+pregnancy: blooming or bloomin' awful? A review of the litera -
+ture. Women Birth. Jun 2013;26(2):100-4. https:// doi. org/ 10. 1016/j. 
+wombi. 2012. 10. 001
+ 123. Clark S, Hughes B, McDonald SS. The Impact of Nausea and 
+Vomiting of Pregnancy on Quality of Life: Report of a National 
+Consumer Survey and Recommendations for Improving Care. 
+Obstetrical and Gynecological Survey. 2013;68(Suppl 1):S1–S10.
+ 124. Bai G, Korfage IJ, Groen EH, Jaddoe VW, Mautner E, Raat H. 
+Associations between Nausea, Vomiting, Fatigue and Health- 
+Related Quality of Life of Women in Early Pregnancy: The 
+Generation R Study. PLoS One. 2016;11(11):e0166133. https:// doi. 
+org/ 10. 1371/ journ al. pone. 0166133
+ 125. Heitmann K, Nordeng H, Havnen GC, Solheimsnes A, Holst L. 
+The burden of nausea and vomiting during pregnancy: severe im -
+pacts on quality of life, daily life functioning and willingness to be -
+come pregnant again - results from a cross- sectional study. BMC 
+Pregnancy Childbirth. 02 2017;17(1):75. https:// doi. org/ 10. 1186/ 
+s1288 4- 017- 1249- 0
+ 126. Mitchell- Jones N, Gallos I, Farren J, Tobias A, Bottomley C, 
+Bourne T. Psychological morbidity associated with hyperemesis 
+gravidarum: a systematic review and meta- analysis. BJOG. Jan 
+2017;124(1):20-30. https:// doi. org/ 10. 1111/ 1471- 0528. 14180 
+ 127. Kjeldgaard HK, Eberhard- Gran M, Benth J, Vikanes Å. Hyperemesis 
+gravidarum and the risk of emotional distress during and after 
+pregnancy. Arch Womens Ment Health. 12 2017;20(6):747-56. 
+https:// doi. org/ 10. 1007/ s0073 7- 017- 0770- 5
+ 128. Tan A, Lowe S, Henry A. Nausea and vomiting of pregnancy: 
+Effects on quality of life and day- to- day function. Aust N Z J Obstet 
+Gynaecol. Jun 2018;58(3):278-90. https:// doi. org/ 10. 1111/ ajo. 12714 
+ 129. Beyazit F, Sahin B. Effect of Nausea and Vomiting on Anxiety 
+and Depression Levels in Early Pregnancy. Eurasian J Med. 
+Jun 2018;50(2):111-5. https:// doi. org/ 10. 5152/ euras ianjm ed. 2018. 
+170320
+ 130. Dean C, Bannigan K, Marsden J. Reviewing the effect of hypereme -
+sis gravidarum on women's lives and mental health. British Journal 
+of Midwifery. 2018;26(2):109–19.
+ 131. Chandra K, Magee L, Einarson A, Koren G. Nausea and vomiting 
+in pregnancy: results of a survey that identified interventions used 
+by women to alleviate their symptoms. Journal of Psychosomatic 
+Obstetrics & Gynecology. 2003;24(2):71–5.
+ 132. Davis M. Nausea and vomiting of pregnancy: an evidence- based 
+review. J Perinat Neonatal Nurs. 2004 Oct-Dec 2004;18(4):312-28. 
+https:// doi. org/ 10. 1097/ 00005 237- 20041 0000- 00002 
+ 133. Dørheim SK, Bjorvatn B, Eberhard- Gran M. Sick leave during preg -
+nancy: a longitudinal study of rates and risk factors in a Norwegian 
+population. BJOG. Apr 2013;120(5):521-30. https:// doi. org/ 10. 1111/ 
+1471- 0528. 12035 
+ 134. Chou FH, Kuo SH, Wang RH. A longitudinal study of nausea and 
+vomiting, fatigue and perceived stress in, and social support for, 
+pregnant women through the three trimesters. Kaohsiung J Med 
+Sci. Jun 2008;24(6):306-14. https:// doi. org/ 10. 1016/ S1607 - 551X(08) 
+70157 - 8
+ 135. Soltani H, Taylor GM. Changing attitudes and perceptions to hy -
+peremesis gravidarum. RCM Midwives. Dec 2003;6(12):520-4.
+ 136. Support PS. Accessed 1 March 2016. https:// www. pregn ancys ickne 
+sssup port. org. uk 137. Foundation HEar. Hyperemesis Education and research Foundation. 
+Accessed 1 March 2016, 2016. https:// www. hyper emesis. org
+ 138. A S, C S. The impact of online information on health related 
+quality of life amongst women with nausea and vomiting in preg -
+nancy and hyperemesis gravidarum. MIDRIS Midwifery Digest. 
+2014;24:179–85.
+ 139. Tan PC, Zaidi SN, Azmi N, Omar SZ, Khong SY. Depression, anx -
+iety, stress and hyperemesis gravidarum: temporal and case con-
+trolled correlates. PLoS One. 2014;9(3):e92036. https:// doi. org/ 10. 
+1371/ journ al. pone. 0092036
+ 140. Poursharif B, Korst LM, Fejzo MS, MacGibbon KW, Romero R, 
+Goodwin TM. The psychosocial burden of hyperemesis grav -
+idarum. J Perinatol. Mar 2008;28(3):176-81. https:// doi. org/ 10. 1038/ 
+sj. jp. 7211906
+ 141. Nana MTF, Bevan G, Boulding H, Kavanagh K, Dean C, Williamson 
+C. Termination of wanted pregnancy and suicidal ideation in hyper -
+emesis gravidarum: A mixed methods study. Obstetric Medicine. 
+2021.
+ 142. Locock L, Alexander J, Rozmovits L. Women's responses to nau -
+sea and vomiting in pregnancy. Midwifery. Jun 2008;24(2):143-52. 
+https:// doi. org/ 10. 1016/j. midw. 2006. 12. 001
+ 143. Sykes C, Swallow B, Gadsby R, et al. Seeking medical help for Nausea 
+and Vomiting in Pregnancy and Hyperemesis Gravidarum in pri -
+mary careeeking medical help for nausea andvomiting in pregnancy 
+and hyperemesis. MIDRIS Midwifery Digest. 2013;23:321–6.
+ 144. McCarthy FP, Khashan AS, North RA, et al. A prospective cohort 
+study investigating associations between hyperemesis gravidarum 
+and cognitive, behavioural and emotional well- being in pregnancy. 
+PLoS One. 2011;6(11):e27678. https:// doi. org/ 10. 1371/ journ al. pone. 
+0027678
+ 145. Dean C. Does the historical stigma of hyperemesis gravidarum 
+impact healthcare professional's attitudes and treatment towards 
+women with the condition today? A review of recent literature. 
+MIDRIS Midwifery Digest. 2016;26:186–93.
+ 146. O'Hara M. Survey of HCP attitudes responses: form responses.
+ 147. O'Hara M. Women's experience of hyperemesis gravidarum: results 
+of self reported online surveys.
+ 148. Havnen GC, Truong MB, Do MH, Heitmann K, Holst L, Nordeng 
+H. Women's perspectives on the management and consequences 
+of hyperemesis gravidarum - a descriptive interview study. Scand 
+J Prim Health Care. Mar 2019;37(1):30-40. https:// doi. org/ 10. 1080/ 
+02813 432. 2019. 1569424
+ 149. O'Hara M. Experience of hyperemesis gravid arum in a subsequent 
+pregnancy. MIDRIS. 2017;27:309–18.
+ 150. Kim DR, Connolly KR, Cristancho P, Zappone M, Weinrieb RM. 
+Psychiatric consultation of patients with hyperemesis gravidarum. 
+Arch Womens Ment Health. Apr 2009;12(2):61-7. https:// doi. org/ 10. 
+1007/ s0073 7- 009- 0064- 7
+ 151. Fairweather DV. Nausea and vomiting in pregnancy. Am J Obstet 
+Gynecol. Sep 1968;102(1):135-75. https:// doi. org/ 10. 1016/ 0002- 
+9378(68) 90445 - 6
+ 152. Munch S. Chicken or the egg? The biological- psychological con -
+troversy surrounding hyperemesis gravidarum. Soc Sci Med. 
+Oct 2002;55(7):1267-78. https:// doi. org/ 10. 1016/ s0277 - 9536(01) 
+00239 - 8
+ 153. Swallow B. Nausea and vomiting in pregnancy: psychological and so -
+cial aspects [PhD dissertation]. Lincoln: University of Lincoln. 2009.
+ 154. McCormack D, Scott- Heyes G, McCusker CG. The impact of hyper -
+emesis gravidarum on maternal mental health and maternal- fetal 
+attachment. J Psychosom Obstet Gynaecol. Jun 2011;32(2):79-87. 
+https:// doi. org/ 10. 3109/ 01674 82X. 2011. 560691
+ 155. Chou FH, Lin LL, Cooney AT, Walker LO, Riggs MW. Psychosocial 
+factors related to nausea, vomiting, and fatigue in early pregnancy. 
+J Nurs Scholarsh. 2003;35(2):119–25. https:// doi. org/ 10. 1111/j. 1547- 
+5069. 2003. 00119. x
+ 156. Bozzo P, Einarson TR, Koren G, Einarson A. Nausea and vomiting of 
+pregnancy (NVP) and depression: cause or effect? Clin Invest Med. 
+Aug 2011;34(4):E245. https:// doi. org/ 10. 25011/ cim. v34i4. 15367 
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e19
+GREEN-TOP GUIDELINE NO. 69
+ 157. Fejzo MS, Macgibbon K. Hyperemesis gravidarum: it is time to put 
+an end to the misguided theory of a psychiatric etiology. Gen Hosp 
+Psychiatry. 2012 Nov-Dec 2012;34(6):699-700; author reply 700-1. 
+https:// doi. org/ 10. 1016/j. genho sppsy ch. 2012. 06. 019
+ 158. D'Orazio LM, Meyerowitz BE, Korst LM, Romero R, Goodwin 
+TM. Evidence against a link between hyperemesis gravidarum 
+and personality characteristics from an ethnically diverse sample 
+of pregnant women: a pilot study. J Womens Health (Larchmt). Jan 
+2011;20(1):137-44. https:// doi. org/ 10. 1089/ jwh. 2009. 1851
+ 159. Bozzo P, Koren G, Nava- Ocampo AA, Einarson A. The incidence of 
+nausea and vomiting of pregnancy (NVP): a comparison between 
+depressed women treated with antidepressants and non- depressed 
+women. Clin Invest Med. Dec 2006;29(6):347-50.
+ 160. Simpson SW, Goodwin TM, Robins SB, et al. Psychological factors 
+and hyperemesis gravidarum. J Womens Health Gend Based 
+Med. Jun 2001;10(5):471-7. https:// doi. org/ 10. 1089/ 15246 09013 
+00233948
+ 161. Magtira A, Schoenberg FP, MacGibbon K, Tabsh K, Fejzo MS. 
+Psychiatric factors do not affect recurrence risk of hyperemesis 
+gravidarum. J Obstet Gynaecol Res. Apr 2015;41(4):512-6. https:// 
+doi. org/ 10. 1111/ jog. 12592 
+ 162. Aksoy H, Aksoy Ü, Karadağ Ö, et  al. Depression levels in pa -
+tients with hyperemesis gravidarum: a prospective case- control 
+study. Springerplus. 2015;4:34. https:// doi. org/ 10. 1186/ s4006 
+4- 015- 0820- 2
+ 163. Kara N, Kalem M, Balci H, Kalem Z. Psychiatric Symptoms, 
+Perceived Social Support, Coping Styles, and Dyadic Adjustment in 
+Pregnant Women with Hyperemesis Gravidarum. Dusunen Adam. 
+2016;29(4):307–16.
+ 164. Yilmaz E, Yilmaz Z, Cakmak B, et al. Nausea and Vomiting in Early 
+Pregnancy of Adolescents: Relationship with Depressive Symptoms. 
+J Pediatr Adolesc Gynecol. Feb 2016;29(1):65-8. https:// doi. org/ 10. 
+1016/j. jpag. 2015. 06. 010
+ 165. Sahin S, Ozdemir K, Unsal A, Cevrioglu AS, Beydag KD. 
+Evaluation of frequency of nausea and vomiting as well as de -
+pression level in pregnant women. Clin Exp Obstet Gynecol. 
+2016 2016;43(5):691-7.
+ 166. Swallow BL, Lindow SW, Masson EA, Hay DM. Psychological health 
+in early pregnancy: relationship with nausea and vomiting. J Obstet 
+Gynaecol. Jan 2004;24(1):28-32. https:// doi. org/ 10. 1080/ 01443 61031 
+00016 20251 
+ 167. Tan PC, Vani S, Lim BK, Omar SZ. Anxiety and depression in 
+hyperemesis gravidarum: prevalence, risk factors and correla -
+tion with clinical severity. Eur J Obstet Gynecol Reprod Biol. Apr 
+2010;149(2):153-8. https:// doi. org/ 10. 1016/j. ejogrb. 2009. 12. 031
+ 168. Chou FH, Avant KC, Kuo SH, Fetzer SJ. Relationships between 
+nausea and vomiting, perceived stress, social support, pregnancy 
+planning, and psychosocial adaptation in a sample of mothers: 
+a questionnaire survey. Int J Nurs Stud. Aug 2008;45(8):1185-91. 
+https:// doi. org/ 10. 1016/j. ijnur stu. 2007. 08. 004
+ 169. Mitchell- Jones N, Lawson K, Bobdiwala S, et  al. Association be -
+tween hyperemesis gravidarum and psychological symptoms, 
+psychosocial outcomes and infant bonding: a two- point prospec-
+tive case- control multicentre survey study in an inner city setting. 
+BMJ Open. 10 2020;10(10):e039715. https:// doi. org/ 10. 1136/ bmjop 
+en- 2020- 039715
+ 170. Nana M, Tydeman F, Bevan G, et  al. Hyperemesis gravidarum is 
+associated with increased rates of termination of pregnancy and 
+suicidal ideation: results from a survey completed by >5000 par -
+ticipants. Am J Obstet Gynecol. Mar 2021; https:// doi. org/ 10. 1016/j. 
+ajog. 2021. 03. 006
+ 171. Seng JS, Oakley DJ, Sampselle CM, Killion C, Graham- Bermann S, 
+Liberzon I. Posttraumatic stress disorder and pregnancy complica -
+tions. Obstet Gynecol. Jan 2001;97(1):17-22. https:// doi. org/ 10. 1016/ 
+s0029 - 7844(00) 01097 - 8
+ 172. Kjeldgaard HK, Vikanes Å, Benth J, Junge C, Garthus- Niegel S, 
+Eberhard- Gran M. The association between the degree of nausea 
+in pregnancy and subsequent posttraumatic stress. Arch Womens Ment Health. 08 2019;22(4):493-501. https:// doi. org/ 10. 1007/ s0073 
+7- 018- 0909- z
+ 173. Nicholson M. Women's experiences of the therapeutic value of 
+writing about pregnancy sickness. Counselling & Psychotherapy 
+Research. 2017;18(1):26–34.
+ 174. Li L, Zhou X, Xiao S, Gu H, Zhang G. Helicobacter pylori Infection 
+Is Associated with an Increased Risk of Hyperemesis Gravidarum: 
+A Meta- Analysis. Gastroenterol Res Pract. 2015;2015:278905. 
+https:// doi. org/ 10. 1155/ 2015/ 278905
+ 175. Loveland Cook CA, Flick LH, Homan SM, Campbell C, McSweeney 
+M, Gallagher ME. Posttraumatic stress disorder in pregnancy: 
+prevalence, risk factors, and treatment. Obstet Gynecol. Apr 
+2004;103(4):710-7. https:// doi. org/ 10. 1097/ 01. AOG. 00001 19222. 
+40241. fb
+ 176. Christodoulou- Smith J, Gold JI, Romero R, et  al. Posttraumatic 
+stress symptoms following pregnancy complicated by hyperemesis 
+gravidarum. J Matern Fetal Neonatal Med. Nov 2011;24(11):1307-11. 
+https:// doi. org/ 10. 3109/ 14767 058. 2011. 582904
+ 177. Jueckstock JK, Kaestner R, Mylonas I. Managing hyperemesis grav -
+idarum: a multimodal challenge. BMC Med. Jul 2010;8:46. https:// 
+doi. org/ 10. 1186/ 1741- 7015- 8- 46
+ 178. Holmgren C, Aagaard- Tillery KM, Silver RM, Porter TF, Varner M. 
+Hyperemesis in pregnancy: an evaluation of treatment strategies 
+with maternal and neonatal outcomes. Am J Obstet Gynecol. Jan 
+2008;198(1):56.e1-4. https:// doi. org/ 10. 1016/j. ajog. 2007. 06. 004
+ 179. Peled Y, Melamed N, Hiersch L, Pardo J, Wiznitzer A, Yogev Y. The 
+impact of total parenteral nutrition support on pregnancy outcome 
+in women with hyperemesis gravidarum. J Matern Fetal Neonatal 
+Med. Jul 2014;27(11):1146-50. https:// doi. org/ 10. 3109/ 14767 058. 
+2013. 851187
+ 180. Tan PC, Omar SZ. Contemporary approaches to hyperemesis 
+during pregnancy. Curr Opin Obstet Gynecol. Apr 2011;23(2):87-
+93. https:// doi. org/ 10. 1097/ GCO. 0b013 e3283 42d208
+ 181. Stokke G, Gjelsvik BL, Flaatten KT, Birkeland E, Flaatten H, Trovik J. 
+Hyperemesis gravidarum, nutritional treatment by nasogastric tube 
+feeding: a 10- year retrospective cohort study. Acta Obstet Gynecol 
+Scand. Apr 2015;94(4):359-67. https:// doi. org/ 10. 1111/ aogs. 12578 
+ 182. Excellence NIfHCa. Nutrition support for adults: oral nutrition sup -
+port, enteral tube feeding and parenteral nutrition. NICE. Updated 
+04 August 2017. https:// www. nice. org. uk/ guida nce/ cg32/ ifp/ chapt 
+er/ About - this- infor mation
+ 183. Goodwin TM. Hyperemesis gravidarum. Obstet Gynecol Clin 
+North Am. Sep 2008;35(3):401–17, viii. https:// doi. org/ 10. 1016/j. ogc. 
+2008. 04. 002
+ 184. Vaisman N, Kaidar R, Levin I, Lessing JB. Nasojejunal feeding in 
+hyperemesis gravidarum—a preliminary study. Clin Nutr. Feb 
+2004;23(1):53-7. https:// doi. org/ 10. 1016/ s0261 - 5614(03) 00088 - 8
+ 185. Serrano PVA, Garcia- Luna PP, et al. Enteral nutrition by percuta -
+neous endoscopic gastrojejunostomy in severe hyperemesis grav -
+idarum: a report of two cases. Clinical Nutrition. 1998;17:135–9.
+ 186. Kruchko DSN, Broy C, Silas D. Percutaneous Endoscopic 
+Jejunostomy Tube Placement for Treatment of Severe Hyperemesis 
+Gravidarum in Pregnancy. Journal of investigative Medicine High 
+Impact Case Reports. 2020;(8):2324709620975954. https:// doi. org/ 
+10. 1177/ 23247 09620 975954
+ 187. Saha S, Loranger D, Pricolo V, Degli- Esposti S. Feeding jejunostomy 
+for the treatment of severe hyperemesis gravidarum: a case series. 
+JPEN Journal of Parenteral and Enteral Nutrition. 2009;33(5):529–
+34. https:// doi. org/ 10. 1177/ 01486 07109 333000
+ 188. Pregnancy Sickness Support BPAS. I could not survive another day. 
+Improving treatment and tackling stigma: lessons from women's 
+experience of abortion for severe pregnancy sickness. PSS. https:// 
+www. pregn ancys ickne sssup port. org. uk/ docum ents/ HGbpa sPSSr 
+eport_ docx. pdf
+ 189. Al- Ozairi E, Waugh JJ, Taylor R. Termination is not the treatment of 
+choice for severe hyperemesis gravidarum: Successful management 
+using prednisolone. Obstet Med. Mar 2009;2(1):34-7. https:// doi. 
+org/ 10. 1258/ om. 2008. 080046
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e20 | 
+NELSON- PIERCY et al .
+ 190. Poursharif B, Korst LM, Macgibbon KW, Fejzo MS, Romero R, 
+Goodwin TM. Elective pregnancy termination in a large cohort 
+of women with hyperemesis gravidarum. Contraception. Dec 
+2007;76(6):451-5. https:// doi. org/ 10. 1016/j. contr acept ion. 2007. 08. 
+009
+ 191. MacGibbon KFM, Mullin P. Mortality Secondary to Hyperemesis 
+Gravidarum: A Case Report. Women's Health & Gynecology. 2015;1.
+ 192. Fossum SV, A. V.; Naess, O.; Vos, L.; Grotmol, T.; Halvorsen, S. 
+Hyperemesis gravidarum and long- term mortality: a population- based 
+cohort study. BJOG: an international journal of obstetrics and gynaecol-
+ogy. 2017;124(7):1080-7. https:// doi. org/ 10. 1111/ 1471- 0528. 14454 
+ 193. Tsai W, Lee C, Cheng S, Zeng Y. Hyperparathyroidism presenting 
+as hyperemesis and acute pancreatitis in pregnancy: A case report. 
+Medicine (Baltimore). Apr 9 2021;100(14)e25451. https:// doi. org/ 10. 
+1097/ MD. 00000 00000 025451
+ 194. Koren G, Madjunkova S, Maltepe C. The protective effects of nausea 
+and vomiting of pregnancy against adverse fetal outcome—A sys -
+tematic review. Reproductive Toxicology. 2014;47:77–80.
+ 195. Nijsten K, Jansen LAW, Limpens J, et  al. Long- term health out -
+comes of children born to mothers with hyperemesis gravidarum: 
+a systematic review and meta- analysis. Am J Obstet Gynecol. Sep 
+2022;227(3):414-429 e17. https:// doi. org/ 10. 1016/j. ajog. 2022. 03. 052
+ 196. Maltepe C, Koren G. Preemptive treatment of nausea and vomit -
+ing of pregnancy: results of a randomized controlled trial. Obstet 
+Gynecol Int. 2013;2013:809787. https:// doi. org/ 10. 1155/ 2013/ 809787
+ 197. Dean CR, Bierma H, Clarke R, et al. A patient- clinician James Lind 
+Alliance partnership to identify research priorities for hyperemesis gravidarum. BMJ Open. 01 2021;11(1):e041254. https:// doi. org/ 10. 
+1136/ bmjop en- 2020- 041254
+ 198. Irish Medicines in Pregnancy Service: Position Statement on 
+Ondansetron Use in Pregnancy. 23 October 2019, 2019. https:// 
+rotun da. ie/ rotun da- pdfs/ IMPS% 20Ond anset ron% 20V3% 
+20231 019. pdf#: ~: text= The% 20Iri sh% 20Med icines% 20in% 20Pre 
+gnancy% 20Ser vice% 20% 28IMPS% 29% 20rec ommen d,in% 20nat 
+ional% 20cli nical% 20gui delin es% 2C% 20have% 20not% 20been% 
+20eff ective
+SUPPORTING INFORMATION
+Additional supporting information can be found online in 
+the Supporting Information section at the end of this article.
+How to cite this article: Nelson- Piercy C, Dean C, 
+Shehmar M, Gadsby R, O’Hara M, Hodson K, et al; on 
+behalf of the Royal College of Obstetricians and 
+Gynaecologists. The Management of Nausea and 
+Vomiting in Pregnancy and Hyperemesis Gravidarum 
+(Green-top Guideline No. 69). BJOG. 2024;131(7):e1–
+e30. https://doi.org/10.1111/1471-0528.17739
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e21
+GREEN-TOP GUIDELINE NO. 69
+APPENDIX I: Explanation of guidelines and evidence levels
+Clinical guidelines are ‘systematically developed state -
+ments which assist clinicians and patients in making deci -
+sions about appropriate treatment for specific conditions’. 
+Each guideline is systematically developed using a stan -
+dardised methodology. Exact details of this process can 
+be found in the RCOG handbook Developing a Green-top 
+Guideline: Guidance for developers . These recommendations 
+are not intended to dictate an exclusive course of manage -
+ment or treatment. They must be evaluated with reference to individual patient needs, resources and limitations unique 
+to the institution and variations in local populations. It is 
+hoped that this process of local ownership will help to in -
+corporate these guidelines into routine practice. Attention is 
+drawn to areas of clinical uncertainty where further research 
+may be indicated.
+The evidence used in this guideline was graded using the 
+scheme below and the recommendations formulated in a 
+similar fashion with a standardised grading scheme.
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a very low risk of 
+bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a low risk of bias
+1– Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of bias
+2++ High- quality systematic reviews of case–control or cohort studies or high- quality case–control or cohort studies with a very low risk of 
+confounding, bias or chance and a high probability that the relationship is causal
+2+ Well- conducted case–control or cohort studies with a low risk of confounding, bias or chance and a moderate probability that the 
+relationship is causal
+2– Case–control or cohort studies with a high risk of confounding, bias or chance and a significant risk that the relationship is not causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of Recommendation
+A At least one meta- analysis, systematic reviews or RCT rated as 1++, and directly applicable to the target population; or a systematic 
+review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target population and 
+demonstrating overall consistency of results
+B A body of evidence including studies rated as 2++ directly applicable to the target population, and demonstrating overall consistency of 
+results; or Extrapolated evidence from studies rated as 1++ or 1+
+C A body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating overall consistency of 
+results; or Extrapolated evidence from studies rated as 2++
+D Evidence level 3 or 4; or Extrapolated evidence from studies rated as 2+
+Good Practice Points
+GPP Recommended best practice based on the clinical experience of the guideline development group.
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e22 | 
+NELSON- PIERCY et al .
+A PPE N DI X I Ia : Pregnancy- Unique Quantification of Emesis (PUQE) index
+Total score is sum of replies to each of the three questions. PUQE- 24 Score: Mild 6; Moderate = 7–12; Severe = 13–15.
+Motherisk PUQE- 24 scoring system
+In the last 24 hours, for how long have you felt nauseated or 
+sick to your stomach? Not at all (1)1 hour or 
+less (2)2–3 hours 
+(3) 4–6 hours (4)More than 6 
+hours (5)
+In the last 24 hours have you vomited or thrown up? I did not throw 
+up (1)1–2 times 
+(2)3–4 times 
+(3)5–6 times (4) 7 or more times 
+(5)
+In the last 24 hours how many times have you had retching or 
+dry heaves without bringing anything up?No time (1) 1–2 times 
+(2)3–4 times 
+(3)5–6 times (4) 7 or more times 
+(5)
+PUQE- 24 Score: Mild 6; Moderate = 7–12; Severe = 13–15.
+How many hours have you slept out of 24 hours? Why?
+On a scale of 0 to 10, how would you rate your wellbeing?
+0 (worst possible) 10 (The best you felt before pregnancy)
+Can you tell me what causes you to feel that way?
+A PPE N DI X I I b: HELP (HyperEmesis Level Prediction Score)
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e23
+GREEN-TOP GUIDELINE NO. 69
+A PPE N DI X I I I: Recommended antiemetic therapies and dosages
+Recommended antiemetic therapies and dosages
+First line
+Doxylamine and Pyridoxine (vitamin B6) 20/20mg PO at night, increase to additional 10/10 mg in morning and 10/10mg at 
+lunchtime if required.
+Cyclizine 50 mg PO, IM or IV 8 hourly
+Prochlorperazine 5–10 mg 6–8 hourly PO (or 3 mg buccal); 12.5 mg 8 hourly IM/IV; 25 mg PR daily
+Promethazine 12.5–25 mg 4–8 hourly PO, IM or IV
+Chlorpromazine 10–25 mg 4–6 hourly PO, IM or IV
+Second line
+Metoclopramide 5–10 mg 8 hourly PO, IV/IM/SC
+Domperidone 10 mg 8 hourly PO; 30 mg 12 hourly PR
+Ondansetron 4 mg 8 hourly or 8 mg 12 hourly PO; 8 mg over 15 minutes 12 hourly IV; 16 mg daily PR
+(Women taking ondansetron may require laxatives if constipation develops)
+Third line
+Hydrocortisone 100 mg twice daily IV and once clinical improvement occurs, convert to prednisolone 40–50 mg daily PO, 
+with the dose gradually tapered (by 5- 10 mg per week) until the lowest maintenance dose that controls the symptoms is 
+reached
+(Corticosteroids should be reserved for cases where standard therapies have failed; when initiated they should be prescribed 
+in addition to previously started effective antiemetics. Women taking corticosteroids should have their blood pressure moni -
+tored and a screen for diabetes mellitus)
+IM intramuscular; IV intravenous; PO by mouth; PR by rectum.
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e24 | 
+NELSON- PIERCY et al .
+APPENDIX IV:198
+Visual risk summary
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e25
+GREEN-TOP GUIDELINE NO. 69
+A PPE N DI X V: Treatment algorithms for NVP and HG in primary care (Vai and ii), ambulatory care (Vb), emergency 
+department (Vc) and inpatient care (Vd)
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e26 | 
+NELSON- PIERCY et al .
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e27
+GREEN-TOP GUIDELINE NO. 69
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e28 | 
+NELSON- PIERCY et al .
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e29
+GREEN-TOP GUIDELINE NO. 69
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e30 | 
+NELSON- PIERCY et al .
+This guideline was produced on behalf of the Royal 
+College of Obstetricians and Gynaecologists by:
+Professor C Nelson- Piercy FRCP FRCOG, 
+London; Dr C Dean PhD, Patient Representative 
+(Pregnancy Sickness Support); Dr M Shehmar 
+FRCOG, Birmingham; Dr R Gadsby, Coventry; 
+Ms M O'Hara, Patient Representative (Pregnancy 
+Sickness Support); Dr K Hodson FRCGP, Newcastle 
+Upon Tyne; Dr M Nana, MRCP. NIHR clinical re -
+search fellow and obstetric medicine registrar, 
+King’s College London.
+Acknowledgement 
+Dr Gemma Holder MRCP (neonatalogy), Dr 
+Ziva Mrevlje (enteral nutrition) and Dr Amanda 
+Farrow (emergency medicine) for their invaluable 
+help.
+The following organisations have endorsed this 
+guideline:
+Royal College of Emergency Medicine (RCEM); 
+Association of Early Pregnancy Units (AEPU); and 
+General Practitioners Championing Perinatal Care 
+(GPCPC); and it has been supported by the Royal 
+College of General Practitioners (RCGP).
+The following organisations and individuals submit -
+ted comments at peer review:
+R Buabeng, HG Support for All; A Burnett, Black Baby 
+Loss Awareness Week; E M Crookes, RCOG Women's 
+Network; S Elbeshbeshy MRCOG, Diametta Egypt; M 
+Fejzo, Los Angeles USA; B Goulden MRCP, London; 
+S Ibuanokpe, London; G Kumar FRCOG, London; B 
+Laverick, MRCOG; S Lowe FRACP, Sydney Australia; 
+K Maslin British Dietetic Association Maternal and 
+Fertility Nutrition Group; D Montague- Coast Fair 
+Treatment for the Women of Wales (FTWW); M Mouyis 
+FRCP, Luton and Dunstable University Hospital; F 
+Nyazika, Liverpool; D Ofili- Yebovi MRCOG, London; 
+M Pilling MRCOG; P Prinja, Royal Wolverhampton 
+NHS Trust; J Ross FRCOG, London; L Salmon 
+Pregnancy Sickness Support; A Self MRCOG, West 
+Midlands; J Shakespeare FRCGP, General Practitioners 
+championing Perinatal Care (GPCPC); V Sudhakar, 
+Kettering General Hospital NHS Foundation Trust.
+Committee lead reviewers were: Dr M Annappa 
+FRCOG1, Lincolnshire; Dr L Knight MRCOG, 
+Exeter3; Dr P Timmons MRCOG, Norwich2; Dr M 
+Savvidou FRCOG, London4
+1 Until June 2021 2 From June 2021 3Until June 2023 4From June 2023The chairs of the Guidelines Committee were: Dr MA 
+Ledingham MRCOG, Glasgow3; Dr B Magowan 
+FRCOG, Melrose3; Mr A McKelvey FROCG, Norwich4 
+and Dr N Potdar FRCOG, Leicester4.
+3until June 2019, 4from June 2019
+The final version is the responsibility of the 
+Guidelines Committee of the RCOG.
+The review process will commence in 2027, unless otherwise 
+indicated.
+DISCLAIMER
+The Royal College of Obstetricians and 
+Gynaecologists produces guidelines as an educa -
+tional aid to good clinical practice. They present 
+recognised methods and techniques of clinical 
+practice, based on published evidence, for consider -
+ation by obstetricians and gynaecologists and other 
+relevant health professionals. The ultimate judge -
+ment regarding a particular clinical procedure or 
+treatment plan must be made by the doctor or other 
+attendant in the light of clinical data presented by 
+the patient and the diagnostic and treatment op -
+tions available.
+This means that RCOG Guidelines are unlike pro -
+tocols or guidelines issued by employers, as they are 
+not intended to be prescriptive directions defining 
+a single course of management. Departure from the 
+local prescriptive protocols or guidelines should 
+be fully documented in the patient's case notes at 
+the time the relevant decision is taken.© 2024 John 
+Wiley&Sons Ltd.
+ 14710528, 2024, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17739 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

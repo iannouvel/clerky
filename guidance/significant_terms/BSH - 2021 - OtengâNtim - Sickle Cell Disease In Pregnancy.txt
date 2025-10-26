@@ -1,0 +1,35 @@
+- hypertension
+- pre-eclampsia
+- blood pressure
+- pregnancy
+- pregnant
+- complications
+- delivery
+- antenatal
+- fetal
+- anaemia
+- labour
+- monitoring
+- screening
+- infection
+- maternal
+- vte
+- assessment
+- ultrasound
+- intrapartum
+- prenatal
+- risk factors
+- caesarean
+- postpartum
+- perinatal
+- mortality
+- thrombosis
+- thromboembolism
+- postnatal
+- term
+- gestational
+- neonatal
+- morbidity
+- eclampsia
+- preterm
+- haemorrhage

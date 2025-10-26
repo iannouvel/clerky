@@ -1,0 +1,1034 @@
+Fetal moni toring in labour 
+NICE guideline 
+Published: 14 December 2022 
+www .nice.or g.uk/guidance/ng229 
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+41Contents 
+Overview .................................................................................................................................... 4 
+Who is it f or? ......................................................................................................................................... 4 
+Recommendations ..................................................................................................................... 5 
+1.1 Information and suppor ted decision-making ............................................................................... 5 
+1.2 Assessment during labour and met hods f or fetal monit oring .................................................... 6 
+1.3 Indications f or continuous car diotocograph y monit oring in labour ........................................... 11 
+1.4 Use of car diotocograph y for monit oring during labour .............................................................. 15 
+1.5 Making car e decisions based on t he car diotocograph y trace ................................................... 26 
+1.6 Fetal scalp stimulation ................................................................................................................... 29 
+1.7 Fetal blood sampling ...................................................................................................................... 30 
+1.8 Record keeping f or car diotocograph y .......................................................................................... 30 
+Terms used in t his guideline ................................................................................................................ 31 
+Rationale and impact ................................................................................................................. 32 
+Information and suppor ted decision-making .................................................................................... 32 
+Assessment during labour and met hods f or fetal monit oring ......................................................... 32 
+Indications f or continuous car diotocograph y monit oring in labour ................................................. 33 
+Use of car diotocograph y for monit oring during labour .................................................................... 34 
+Making car e decisions based on t he car diotocograph y trace ........................................................ 35 
+Fetal blood sampling ............................................................................................................................ 36 
+Cont ext ....................................................................................................................................... 38 
+Finding mor e information and committ ee details ................................................................... 39 
+Updat e information ................................................................................................................... 40 Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+41This guideline is t he basis of QS105 . 
+This guideline should be r ead in conjunction wit h NG137 . 
+Overview 
+This guideline co vers met hods f or monit oring t he w ellbeing of t he bab y during labour . It 
+includes risk assessment t o det ermine t he appr opriat e level of f etal monit oring, using 
+clinical assessment in addition t o fetal monit oring, and int erpreting and acting on 
+monit oring findings. 
+In this guideline w e use t he term 'w oman' t hroughout. This should be tak en to include 
+people who do not identify as w omen but ar e pregnant. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners and pr oviders of mat ernity ser vices 
+• Pregnant w omen bef ore and during labour , and t heir f amilies and car ers Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+41Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 Informa tion and suppor ted de cision -making 
+For mor e guidance on pr oviding inf ormation, including pr oviding accessible inf ormation, 
+see t he NICE guidelines on patient e xperience in adult NHS ser vices and shared decision-
+making . 
+1.1.1 Discuss f etal monit oring options wit h a w oman as par t of her ant enatal car e and 
+document t he discussions and decisions in her personalised car e plan. [2022] 
+1.1.2 Throughout labour , provide w omen wit h information on t he fetal monit oring 
+method being advised and t he reasons f or this advice. [2022] 
+1.1.3 Suppor t the w oman's decision about f etal monit oring during labour . Include 
+birthing companion(s) in t hese discussions if appr opriat e, and if t hat is what t he 
+woman want s. Document t hese discussions and decisions in t he w oman's not es. 
+[2022] 
+1.1.4 Keep w omen and t heir bir thing companion(s) inf ormed about what is happening if 
+additional advice or r eview is being sought b y the car e team, f or example fr om a 
+senior midwif e or obst etrician. [2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+41For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on inf ormation and 
+suppor ted decision-making . 
+1.2 A ssessmen t during labour and me thods f or fetal 
+moni toring 
+Gener al princip les 
+1.2.1 Perform and document a syst ematic assessment of t he condition of t he w oman 
+and unborn bab y every hour , or mor e frequent ly if t here are concerns. See t he 
+NICE guideline on intrapar tum car e for mor e information on t he monit oring 
+recommendations f or diff erent stages of labour . [2017 , amended 2022] 
+1.2.2 Discuss t he result s of each hourly assessment wit h the w oman and base 
+recommendations about car e in labour on her pr eferences and: 
+• her r epor ts of t he fr equency , lengt h and str engt h of her contractions 
+• any antenatal and intrapar tum risk f actors for fetal compr omise 
+• the curr ent w ellbeing of t he w oman and unborn bab y 
+• how labour is pr ogressing. 
+Include bir thing companion(s) in t hese discussions if appr opriat e, and if t hat 
+is what t he w oman want s. [2017 , amended 2022] 
+1.2.3 Remember t hat: 
+• fetal hear t rate monit oring is a t ool to provide guidance on f etal condition, 
+and not a standalone diagnostic t ool 
+• the findings fr om monit oring need t o be look ed at t oget her wit h the 
+developing clinical pictur e for bot h woman and bab y. [2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+411.2.4 Ensur e one-t o-one suppor t is maintained b y having a midwif e remain wit h the 
+woman t hroughout labour . If the midwif e needs t o lea ve the room or t here needs 
+to be a change in staff , ensur e the w oman kno ws this is happening. [2017 , 
+amended 2022] 
+Initial assessmen t 
+1.2.5 Perform an initial assessment of ant enatal risk f actors f or fetal compr omise at t he 
+onset of labour t o det ermine whet her int ermitt ent auscultation or 
+cardiotocograph y (CT G) is off ered as t he initial met hod of f etal hear t rate 
+monit oring. T ake into account t he recommendations f or fetal monit oring f or 
+women who ar e consider ed to be at higher risk of complications during labour 
+because of e xisting medical conditions or obst etric complications (see t he NICE 
+guideline on intrapar tum car e for women wit h existing medical conditions or 
+obstetric complications and t heir babies ) or f or women wit h multiple pr egnancies 
+(see t he section on f etal monit oring during labour in twin pr egnancy in t he NICE 
+guideline on twin and triplet pr egnancy ). [2022] 
+1.2.6 Confirm wit h the w oman which met hod of f etal monit oring has alr eady been 
+advised as par t of t heir personalised car e plan. [2022] 
+1.2.7 Explain t o the w oman t hat risk assessment is a continual pr ocess, and t he 
+advised met hod of f etal hear t rate monit oring ma y change t hroughout t he course 
+of labour . [2022] 
+1.2.8 Explain t o women t hat if t here are no identified risk f actors f or fetal compr omise: 
+• there is a risk of incr eased int erventions wit h continuous CT G monit oring 
+compar ed wit h intermitt ent auscultation, which ma y outw eigh t he benefit s 
+and 
+• advice she is giv en by her midwif e or obst etrician on t he met hod of f etal 
+hear t rate monit oring will tak e into account t he whole clinical pictur e. [2017 , 
+amended 2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+41Intermi ttent auscul tation 
+1.2.9 Offer women wit h a lo w risk of complications, f etal hear t rate monit oring wit h 
+intermitt ent auscultation when in established first stage of labour . Do t his as 
+follows: 
+• use eit her a Pinar d stethoscope or doppler ultrasound 
+• carry out int ermitt ent auscultation immediat ely aft er a palpat ed contraction 
+for at least 1 minut e, repeat ed at least once e very 15 minut es, and r ecord it as 
+a single rat e on a par togram and in t he w oman's not es 
+• record accelerations and decelerations, if hear d 
+• palpat e (and r ecord on t he par togram) t he mat ernal pulse hourly , or mor e 
+often if t here are any concerns, t o ensur e diff erentiation betw een t he 
+maternal and f etal hear tbeat s 
+• if no f etal hear tbeat is det ected, off er ur gent r eal-time ultrasound 
+assessment t o check f etal viability . [2017 , amended 2022] 
+1.2.10 Once t he w oman has signs of , or is in confirmed second stage of labour: 
+• perform int ermitt ent auscultation immediat ely aft er a palpat ed contraction f or 
+at least 1 minut e, repeat ed at least once e very 5 minut es and r ecord it as a 
+single rat e on a par togram and in t he w oman's not es 
+• palpat e the w oman's pulse simultaneously t o diff erentiat e betw een t he 
+maternal and f etal hear t rates 
+• if there are concerns about diff erentiating betw een t he 2 hear t rates, seek 
+help and consider changing t he met hod of f etal hear t rate monit oring (see 
+recommendation 1 .4.6). [200 7, amended 2022] 
+1.2.11 If, on int ermitt ent auscultation, t here is an incr ease in t he fetal hear t rate (as 
+plott ed on t he par togram) of 20 beat s a minut e or mor e from t he star t of labour , 
+or a deceleration is hear d: 
+• carry out int ermitt ent auscultation mor e frequent ly (for example, aft er 3 
+consecutiv e contractions) Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+41• carry out a full r eview , taking int o account t he whole clinical pictur e including 
+antenatal and e xisting or new intrapar tum risk f actors, mat ernal obser vations, 
+contraction fr equency (including hyper tonus ) and t he pr ogress of labour . 
+[2017 , amended 2022] 
+1.2.12 If fetal hear t rate concerns ar e confirmed: 
+• summon help 
+• advise continuous CT G monit oring, and e xplain t o the w oman and her bir th 
+companion(s) wh y it is r ecommended, and t he implications f or her choices of 
+type and place of car e 
+• transf er the w oman fr om midwif ery-led t o obst etric-led car e, pr oviding t hat it 
+is saf e and appr opriat e to do so (f ollow the principles f or transf er of car e and 
+changing place of bir th in t he NICE guideline on intrapar tum car e). [2017 , 
+amended 2022] 
+1.2.13 Return t o intermitt ent auscultation if continuous CT G monit oring has been star ted 
+because of concerns arising fr om int ermitt ent auscultation but t he CT G trace is 
+normal aft er 20 minut es, unless t he w oman decides t o remain on continuous CT G 
+monit oring. [2017 , amended 2022] 
+1.2.14 Advise continuous CT G monit oring if: 
+• fetal hear t rate concerns arise wit h intermitt ent auscultation and ar e ongoing, 
+or 
+• intrapar tum mat ernal or f etal risk f actors de velop (see t he section on 
+indications f or continuous car diotocograph y monit oring in labour ). [2017 , 
+amended 2022] 
+Continuous c ardiotoc ography 
+1.2.15 Do not use t he advice in t his guideline t o cat egorise ant enatal CT G traces. 
+[2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+411.2.16 Use t he advice in t his guideline t o interpret and cat egorise intrapar tum CT G 
+traces, but when int erpreting ho w the bab y is coping wit h labour tak e into 
+account mat ernal, f etal and labour f actors as w ell as CT G changes. [2022] 
+1.2.17 Consider a lo wer threshold f or escalation when t here are any antenatal or 
+intrapar tum risk f actors that could lead t o fetal compr omise. [2022] 
+1.2.18 Encourage and help w omen t o be as mobile as possible, t o find positions t hat ar e 
+comf ortable f or them, and t o change position as oft en as t hey wish. [2017 , 
+amended 2022] 
+1.2.19 Offer continuous CT G monit oring as par t of f etal assessment if an y antenatal or 
+intrapar tum risk f actors for fetal compr omise ar e present. See t he section on 
+indications f or continuous car diotocograph y monit oring in labour . [2022] 
+1.2.20 Discuss wit h the w oman and her bir th companion(s) t he reasons f or off ering 
+continuous CT G monit oring, and e xplain t hat: 
+• a combination of ant enatal risk f actors, intrapar tum risk f actors and 
+continuous CT G monit oring ar e used t o evaluat e the bab y's condition in 
+labour 
+• continuous CT G monit oring is used t o monit or the bab y's hear t rate and t he 
+labour contractions 
+• it ma y restrict her mobility and t he option t o labour in wat er 
+• a normal CT G trace indicat es that t he bab y is coping w ell wit h labour 
+• changes t o the bab y's hear t rate patt ern during labour ar e common and do 
+not necessarily cause concern, ho wever they ma y represent de veloping f etal 
+compr omise so maintaining continuous CT G monit oring is advised if t hese 
+occur 
+• if the CT G trace changes or is not normal t here will be less cer tainty about 
+the condition of t he bab y and so maintaining continuous CT G monit oring is 
+advised, in conjunction wit h a full assessment including checks f or 
+developing intrapar tum risk f actors such as t he pr esence of meconium, 
+sepsis and slo w progress in labour Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10
+of 41• advice about her car e during labour and bir th will be based on an assessment 
+of se veral f actors, including her pr eferences, her condition and t he condition 
+of her bab y, as w ell as t he findings fr om t he CT G. [2017 , amended 2022] 
+Teleme try 
+1.2.21 Ensur e wir eless transducers ar e kept char ged and maintained so t hat t hey are 
+ready t o use. [2022] 
+1.2.22 Switch fr om wir eless t o wir ed transducers as soon as possible if t here is signal 
+loss which is not r esolv ed by reducing t he distance betw een t he base unit and 
+the w oman, in or der t o confirm whet her or not t here is a clinical pr oblem. [2022] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on assessment during 
+labour and met hods f or fetal monit oring . 
+1.3 Indic ations f or continuous c ardiotoc ography 
+moni toring in labour 
+Antena tal risk f actors 
+1.3.1 Offer continuous car diotocograph y (CT G) monit oring t o women in labour if it is in 
+their personalised car e plan. [2022] 
+1.3.2 Offer continuous CT G monit oring f or women in labour who ha ve any of t he 
+following ant enatal mat ernal risk f actors: 
+• previous caesar ean bir th or ot her full t hickness ut erine scar 
+• any hyper tensiv e disor der needing medication 
+• prolonged ruptur ed membranes (but w omen who ar e already in established 
+labour at 2 4 hours aft er their membranes ruptur ed do not need CT G unless Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+41there are other concerns) 
+• any vaginal blood loss ot her t han a sho w 
+• suspect ed chorioamnionitis or mat ernal sepsis 
+• pre-existing diabet es (type 1 or type 2) and gestational diabet es requiring 
+medication. [2014 , amended 2022] 
+1.3.3 Offer continuous CT G monit oring f or women in labour who ha ve any of t he 
+following ant enatal f etal risk f actors: 
+• non-cephalic pr esentation (including br eech, transv erse, oblique and cor d), 
+including while a decision is made about mode of bir th 
+• fetal gr owth restriction ( estimat ed fetal w eight belo w 3rd centile) 
+• small f or gestational age ( estimat ed fetal w eight belo w 10t h centile) wit h 
+other high-risk f eatur es such as abnormal doppler scan r esult s, reduced 
+liquor v olume or r educed gr owth velocity 
+• advanced gestational age (mor e than 42+0 weeks at t he onset of established 
+labour) 
+• anhydramnios or polyh ydramnios 
+• reduced f etal mo vement s in t he 24 hours bef ore the onset of r egular 
+contractions. [2014 , amended 2022] 
+1.3.4 Consider continuous CT G monit oring if , based on clinical assessment and 
+multidisciplinar y review , there are concerns about ot her ant enatal f actors not 
+listed abo ve that ma y lead t o fetal compr omise. [2022] 
+Ongoing risk assessmen t 
+1.3.5 Carry out a full assessment of t he w oman and her bab y every hour . At each 
+assessment include: 
+• maternal ant enatal risk f actors f or fetal compr omise Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12
+of 41• fetal ant enatal risk f actors f or fetal compr omise 
+• new or de veloping intrapar tum risk f actors 
+• progress in labour including charact eristics of contractions (fr equency , 
+strengt h and duration) 
+• fetal hear t rate monit oring, including changes t o the fetal hear t rate patt ern. 
+Discuss wit h the w oman an y changes identified since t he last r eview , and t he 
+implications of t hese changes. Include bir thing companion(s) in t hese 
+discussions if appr opriat e and if t hat is what t he w oman want s. [2017 , 
+amended 2022] 
+1.3.6 Obtain an in-person r eview of e very hourly assessment (see r ecommendation 
+1.3.5) by anot her clinician ("fr esh e yes") f or women on CT G, to be complet ed 
+before the ne xt assessment tak es place. [2022] 
+Intrapar tum risk f actors 
+1.3.7 Be awar e that intrapar tum risk f actors ma y incr ease t he risk of f etal compr omise, 
+and t hat intrapar tum risk f actors t hat de velop as labour pr ogresses ar e 
+particularly concerning. [2022] 
+1.3.8 Offer continuous CT G monit oring f or women who ha ve or de velop an y of t he 
+following new intrapar tum risk f actors: 
+• contractions t hat last longer t han 2 minut es, or 5 or mor e contractions in 
+10 minut es 
+• the pr esence meconium (see t he section on t he pr esence of meconium ) 
+• maternal p yrexia (a t emperatur e of 38° C or abo ve on a single r eading or 
+37.5°C or abo ve on 2 consecutiv e occasions 1 hour apar t). See t he section on 
+preventing early-onset neonatal inf ection bef ore bir th in t he NICE guideline 
+on neonatal inf ection: antibiotics f or pr evention and tr eatment 
+• suspect ed chorioamnionitis or sepsis (see t he section on pr eventing early-Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13
+of 41onset neonatal inf ection bef ore bir th in t he NICE guideline on neonatal 
+infection: antibiotics f or pr evention and tr eatment) 
+• pain r epor ted by the w oman t hat appears, based on her description or her 
+previous e xperience, t o diff er from t he pain normally associat ed wit h 
+contractions 
+• fresh v aginal bleeding t hat de velops in labour 
+• blood-stained liquor not associat ed wit h vaginal e xamination, t hat is lik ely to 
+be ut erine in origin (and ma y indicat e suspect ed ant epar tum haemorrhage) 
+• maternal pulse o ver 120 beat s a minut e on 2 occasions 30 minut es apar t 
+• severe hyper tension (a single r eading of eit her syst olic blood pr essur e of 
+160 mmHg or mor e or diast olic blood pr essur e of 110 mmHg or mor e, 
+measur ed betw een contractions) 
+• hyper tension ( either syst olic blood pr essur e of 140 mmHg or mor e or 
+diast olic blood pr essur e of 90 mmHg or mor e on 2 consecutiv e readings 
+taken 30 minut es apar t, measur ed betw een contractions) 
+• a reading of 2+ of pr otein on urinalysis and a single r eading of eit her raised 
+systolic blood pr essur e (140 mmHg or mor e) or raised diast olic blood 
+pressur e (90 mmHg or mor e) 
+• confirmed dela y in t he first or second stage of labour (see t he NICE guideline 
+on intrapar tum car e) 
+• inser tion of r egional analgesia (f or example, an epidural) 
+• use of o xytocin. [2017 , amended 2022] 
+1.3.9 Consider continuous CT G monit oring if , based on clinical assessment and 
+multidisciplinar y review , there are concerns about ot her intrapar tum f actors not 
+listed abo ve that ma y lead t o fetal compr omise. [2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14
+of 41Presenc e of me conium 
+1.3.10 When assessing risk at an y time during labour , be awar e that t he pr esence of 
+meconium: 
+• can indicat e possible f etal compr omise, and 
+• may lead t o complications, such as meconium aspiration syndr ome. [2022] 
+1.3.11 Consider t he charact er of t he meconium as par t of t he overall clinical 
+assessment, in conjunction wit h other antenatal or intrapar tum risk f actors, and 
+discuss t he option of CT G monit oring wit h the w oman. R ecognise t hat t he type of 
+monit oring met hod used is t he w oman's choice, and suppor t her decision. [2022] 
+1.3.12 Be awar e that meconium is mor e common post -term, but should still trigger a full 
+risk assessment and discussion wit h the w oman about t he option of CT G 
+monit oring. [2022] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on indications f or 
+continuous car diotocograph y monit oring in labour . 
+1.4 U se of cardiotoc ography for moni toring during 
+labour 
+1.4.1 Review t he pr evious f etal hear t rate monit oring r esult s, including an y previous 
+CTG traces, as par t of t he hourly risk assessment and in conjunction wit h other 
+antenatal or intrapar tum risk f actors (see t he section on indications f or 
+continuous car diotocograph y monit oring in labour ) and det ermine if t here are any 
+changes in baseline f etal hear t rate, variability or decelerations . [2017 , amended 
+2022] 
+1.4.2 If there are changes in t he fetal hear t rate patt ern o ver time which indicat e a 
+change in t he bab y's condition, r eview antenatal or intrapar tum risk f actors for 
+hypoxia. [2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15
+of 411.4.3 When r eviewing a CT G trace, assess and document: 
+• contractions 
+• baseline f etal hear t rate 
+• variability 
+• presence or absence of decelerations (and charact eristics of decelerations if 
+present) 
+• presence of accelerations . [2017 , amended 2022] 
+1.4.4 If there is a stable baseline f etal hear t rate betw een 110 and 160 beat s a minut e 
+and normal v ariability , continue usual car e as t he risk of f etal acidosis is lo w. 
+[2017] 
+1.4.5 Differentiat e betw een t he mat ernal and f etal hear tbeat s hourly , or mor e oft en if 
+there are any concerns. [2017] 
+1.4.6 If there are concerns about whet her t he mat ernal hear t rate is being hear d rat her 
+than t he fetal hear t rate, discuss wit h the w oman t he met hods a vailable t o 
+differentiat e and suppor t her decision on which met hod t o use. Options include: 
+• fetal hear t rate auscultation wit h a Pinar d stethoscope 
+• bedside ultrasound scanning 
+• continuous mat ernal hear t rate monit oring (using a pulse o ximet er or t he 
+facility on t he CT G equipment) 
+• fetal hear t rate det ection using a f etal scalp electr ode which is attached t o 
+the bab y's head (but be awar e this ma y det ect mat ernal hear t rate if t here is 
+no fetal hear tbeat, so should alwa ys be used in conjunction wit h mat ernal 
+hear t rate monit oring) 
+• simultaneous palpation of t he w oman's pulse while list ening t o the fetal hear t 
+rate. [2022] 
+1.4.7 Be awar e that it is par ticularly impor tant t o confirm t he fetal hear t rate in t he 
+second stage of labour , when it is easier t o mistak enly auscultat e mat ernal rat her Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16
+of 41than f etal hear t rate. [2022] 
+1.4.8 If concerns about diff erentiation betw een t he mat ernal and f etal hear t rate 
+remain, or if a f etal hear t cannot be hear d, obtain an ur gent r eview b y an 
+obstetrician or senior midwif e. [2022] 
+1.4.9 Ensur e that t he CT G trace is of high quality and, if not, tak e action t o impr ove the 
+trace (f or example, b y repositioning t he tocodynamomet er, the transducer or b y 
+using a f etal scalp electr ode). [2017 , amended 2022] 
+1.4.10 When r eviewing CT G traces: 
+• evaluat e changes on traces o ver time t o ascer tain changes in t he bab y's 
+condition 
+• document an y changes in t he CT G trace fr om t he pr evious r eview 
+• review t he changes alongside an y existing and new intrapar tum risk f actors 
+• think about t he possible r easons f or an y changes, and tak e these and t he 
+whole clinical pictur e into account when planning ongoing car e. [2022] 
+Features of cardiotoc ography 
+Categorise t he 4 f eatur es of t he car diotocograph y trace ( contractions, baseline f etal hear t 
+rate, variability , decelerations) as whit e, amber or r ed (indicating incr easing le vels of 
+concern) and use alongside consideration of t he pr esence of accelerations t o classify t he 
+overall CT G trace (see recommendation 1 .4.31). 
+Contr actions 
+1.4.11 Use a t ocodynamomet er to record contraction fr equency and lengt h on t he CT G 
+trace. [2022] 
+1.4.12 Use t he following t o work out t he cat egorisation f or contractions (see 
+recommendation 1 .4.31 to work out t he overall cat egorisation f or the CT G): 
+• white Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17
+of 41－ fewer than 5 contractions in 10 minut es 
+• amber 
+－ 5 or mor e contractions in 10 minut es, leading t o reduced r esting time 
+betw een contractions, or 
+－ hyper tonus . [2022] 
+1.4.13 If decelerations ar e present, e valuat e their timing r elated to contractions. [2017] 
+1.4.14 If 5 or mor e contractions per 10 minut es ar e present: 
+• perform a full risk assessment 
+• take action t o reduce contraction fr equency as described in t he section on 
+underlying causes and conser vative measur es 
+• explain t o the w oman what is happening, and ensur e that she has adequat e 
+pain r elief. [2022] 
+Baseline f etal hear t rate 
+Determine baseline f etal hear t rate by looking at t he mean f etal hear t rate, excluding 
+accelerations and decelerations, o ver a period of 10 minut es when t he fetal hear t rate is 
+stable. When deciding if t here is an y change in baseline f etal hear t rate, compar e it wit h 
+earlier CT G traces or r ecordings of f etal hear t rate. [2022] 
+1.4.15 Use t he following t o work out t he cat egorisation f or baseline f etal hear t rate (see 
+recommendation 1 .4.31 to work out t he overall cat egorisation f or the CT G): 
+• white 
+－ stable baseline of 110 t o 160 beat s a minut e 
+• amber 
+－ increase in baseline f etal hear t rate of 20 beat s a minut e or mor e from 
+the star t of labour or since t he last r eview an hour ago, or Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18
+of 41－ 100 t o 109 beat s a minut e (but see r ecommendation 1 .4.16), or 
+－ unable t o det ermine baseline 
+• red 
+－ below 100 beat s a minut e, or 
+－ above 160 beat s a minut e. [2017 , amended 2022] 
+1.4.16 When assessing baseline f etal hear t rate, diff erentiat e betw een f etal and 
+maternal hear tbeat s and tak e the following int o account: 
+• baseline f etal hear t rate will usually be betw een 110 and 160 beat s a minut e 
+• lower baseline f etal hear t rates ar e expect ed wit h post -term pr egnancies, 
+with higher baseline rat es in pr eterm pr egnancies 
+• a rise in baseline f etal hear t rate ma y represent eit her de veloping inf ection or 
+hypoxia (see t he section on pr eventing early-onset neonatal inf ection bef ore 
+birth in t he NICE guideline on neonatal inf ection: antibiotics f or pr evention 
+and tr eatment ) 
+• although a baseline f etal hear t rate betw een 100 and 109 beat s a minut e is an 
+amber f eatur e, continue usual car e if t his has been stable t hroughout labour 
+and t here is normal v ariability and no v ariable or lat e decelerations. [2017 , 
+amended 2022] 
+Variability 
+Determine v ariability b y looking at t he minor oscillations in t he fetal hear t rate, which 
+usually occur at 3 to 5 cycles a minut e. Measur e it b y estimating t he diff erence in beat s 
+per minut e betw een t he highest hear t rate and t he lo west hear t rate in a 1-minut e 
+segment of t he trace betw een contractions, e xcluding decelerations and accelerations. 
+[2022] 
+1.4.17 If there is an absence of v ariability , carr y out a r eview of t he whole clinical pictur e 
+with a lo w threshold f or expedit ed bir th, as t his is a v ery concerning f eatur e. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19
+of 41[2022] 
+1.4.18 Use t he following t o work out t he cat egorisation f or fetal hear t rate variability 
+(see recommendation 1 .4.31 to work out t he overall cat egorisation f or the CT G): 
+• white 
+－ 5 to 25 beat s a minut e 
+• amber 
+－ fewer than 5 beat s a minut e for betw een 30 and 50 minut es, or 
+－ more than 25 beat s a minut e for up t o 10 minut es 
+• red 
+－ fewer than 5 beat s a minut e for mor e than 50 minut es, or 
+－ more than 25 beat s a minut e for mor e than 10 minut es, or 
+－ sinusoidal. [2017 , amended 2022] 
+1.4.19 Take the following int o account when assessing f etal hear t rate variability: 
+• variability will usually be betw een 5 and 25 beat s a minut e 
+• intermitt ent periods of r educed v ariability ar e normal, especially during 
+periods of quiescence ('sleep') 
+• certain medicines, such as opioids, ma y lead t o a reduction in v ariability , but 
+all ot her intrapar tum risk f actors should be car efully r eview ed as a pot ential 
+cause (f or example, look f or ot her f eatur es on t he CT G such as a rise in t he 
+baseline f etal hear t suggestiv e of anot her r eason such as sepsis) 
+• increased v ariability r efers t o oscillations ar ound t he baseline f etal hear t rate 
+of mor e than 25 beat s a minut e, and shor ter episodes lasting a f ew minut es 
+may represent w orsening f etal condition. [2017 , amended 2022] 
+1.4.20 Obtain an ur gent r eview b y an obst etrician or senior midwif e and consider 
+expediting bir th if: Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20
+of 41• there is an isolat ed reduction in v ariability t o fewer than 5 beat s per minut e 
+for mor e than 30 minut es when combined wit h ant enatal or intrapar tum risk 
+factors, as t his is associat ed wit h an incr eased risk of adv erse neonatal 
+outcomes, or 
+• there is a r eduction in v ariability t o fewer than 5 beat s per minut e combined 
+with other CT G changes, par ticularly a rise in t he baseline f etal hear t rate, as 
+this is a str ong indicat or for fetal compr omise. [2022] 
+Deceler ations 
+Define decelerations as transient episodes when t he fetal hear t rate slo ws to belo w the 
+baseline le vel by mor e than 15 beat s a minut e, wit h each episode lasting 15 seconds or 
+more. An e xception t o this is t hat in a trace wit h reduced v ariability , decelerations ma y be 
+'shallo w'. [2022] 
+1.4.21 When assessing t he significance of decelerations in f etal hear t rate, consider: 
+• their timing ( early , variable or late) in relation t o the peaks and duration of t he 
+contractions 
+• the duration of t he individual decelerations 
+• whet her or not t he fetal hear t rate returns t o the baseline hear t rate 
+• how long t hey have been pr esent f or 
+• whet her t hey occur wit h over 50% of contractions ( defined as r epetitiv e) 
+• the pr esence or absence of shouldering 
+• the variability wit hin the deceleration. [2017 , amended 2022] 
+1.4.22 Regar d the following as concerning charact eristics of v ariable decelerations: 
+• lasting mor e than 60 seconds 
+• reduced v ariability wit hin the deceleration Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21
+of 41• failure or slo w return t o baseline f etal hear t rate 
+• loss of pr eviously pr esent shouldering. [2017 , amended 2022] 
+1.4.23 Describe decelerations as 'early' , 'variable' or 'lat e'. Do not use t he terms 'typical' 
+and 'atypical' , as t hey can cause confusion. [2017] 
+1.4.24 Use t he following t o work out t he cat egorisation f or decelerations in f etal hear t 
+rate (see recommendation 1 .4.31 to work out t he overall cat egorisation f or the 
+CTG): 
+• white 
+－ no decelerations, or 
+－ early decelerations, or 
+－ variable decelerations t hat ar e not e volving t o have concerning 
+charact eristics 
+• amber 
+－ repetitiv e variable decelerations wit h any concerning charact eristics f or 
+less t han 30 minut es, or 
+－ non-r epetitiv e variable decelerations wit h any concerning charact eristics 
+for mor e than 30 minut es, or 
+－ repetitiv e late decelerations f or less t han 30 minut es 
+• red 
+－ repetitiv e variable decelerations wit h any concerning charact eristics f or 
+more than 30 minut es, or 
+－ repetitiv e late decelerations f or mor e than 30 minut es, or 
+－ acute brady cardia, or a single pr olonged deceleration lasting 3 minut es 
+or mor e. [2017 , amended 2022] 
+1.4.25 Take into account t hat t he longer and lat er the individual decelerations, t he Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22
+of 41higher t he risk of f etal compr omise (par ticularly if t he decelerations ar e 
+accompanied b y a rise in t he baseline, a tach ycardia or r educed or incr eased 
+variability). [2017 , amended 2022] 
+1.4.26 Start conser vative measur es and carr y out an ur gent obst etric r eview if t here are 
+decelerations lasting longer t han 30 minut es in t he pr esence of eit her a rise in 
+the baseline hear t rate or r educed v ariability . Take into account ant enatal and 
+intrapar tum risk f actors, such as suspect ed sepsis, t he pr esence of meconium, 
+slow progress of labour or t he use of o xytocin, t o det ermine whet her t here is a 
+need f or expedit ed bir th. [2022] 
+1.4.27 If variable decelerations persist and ot her CT G changes ar e present, obtain an 
+urgent r eview b y an obst etrician and a senior midwif e, as t here is a risk of f etal 
+compr omise and acidosis. [2022] 
+1.4.28 If variable decelerations wit h no concerning charact eristics and no ot her CT G 
+changes, including no rise in t he baseline f etal hear t rate, are obser ved: 
+• be awar e that t hese ar e very common, can be a normal f eatur e in an 
+otherwise uncomplicat ed labour and bir th, and ar e usually a r esult of cor d 
+compr ession 
+• suppor t the w oman t o change position or mobilise. [2017 , amended 2022] 
+1.4.29 Take the following int o account when cat egorising early decelerations: 
+• they are uncommon, benign and usually associat ed wit h head compr ession 
+• they are not accompanied b y any other CT G changes, such as r educed 
+variability or a rise in t he baseline f etal hear t rate. [2017 , amended 2022] 
+Acceler ations 
+Define accelerations as transient incr eases in f etal hear t rate of 15 beat s a minut e or mor e, 
+lasting 15 seconds or mor e. [2022] 
+1.4.30 Take the following int o account when assessing accelerations in f etal hear t rate: Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23
+of 41• the pr esence of f etal hear t rate accelerations, e ven wit h reduced v ariability , 
+is generally a sign t hat t he bab y is healt hy 
+• the absence of accelerations on an ot herwise normal CT G trace does not 
+indicat e fetal acidosis. [2017] 
+Categorisation of car diot ocogr aphy traces (all stages of labour) 
+1.4.31 Include CT G cat egorisation as par t of t he full assessment of t he condition of t he 
+woman and bab y. Be awar e cat egorisation is a t ool which quickly communicat es 
+the curr ent stat e of t he CT G and should be used t oget her wit h ant enatal and 
+intrapar tum risk f actors, t o assess changes o ver time. [2022] 
+1.4.32 Categorise CT G traces as f ollows, based on whet her each of t he 4 featur es 
+(contractions, baseline, v ariability , decelerations) ha ve been scor ed as whit e, 
+amber or r ed: 
+• normal 
+－ no amber or r ed featur es (all 4 featur es ar e whit e) 
+• suspicious 
+－ any 1 featur e is amber 
+• pathological 
+－ any 1 featur e is r ed, or 
+－ 2 or mor e featur es ar e amber . [2017 , amended 2022] 
+1.4.33 Take into account an y change in t he cat egorisation of t he CT G alongside ot her 
+antenatal and intrapar tum risk f actors f or hypoxia. Discuss t he change and it s 
+implications wit h the w oman, and tak e into account her pr eferences when 
+deciding ho w to proceed. [2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4
+of 41Special consider ations f or car diot ocogr aphy traces in t he second stage of 
+labour 
+1.4.34 Take into account t hat int erpretation of CT G traces in t he second stage of labour 
+is mor e challenging t han in t he first stage of labour . Have a lo wer threshold f or 
+seeking a second opinion or assistance. [2022] 
+1.4.35 Ensur e the fetal hear t rate is diff erentiat ed fr om t he mat ernal hear t rate at least 
+once e very 5 minut es. Consider monit oring t he bab y wit h a fetal scalp electr ode if 
+there is concern about confusing t he hear t rates, but if t his cannot be achie ved 
+expedit e bir th (see recommendation 1 .4.6). [2022] 
+1.4.36 In the second stage of labour: 
+• if fetal hear t rate accelerations ar e recorded, be awar e that t hese ar e most 
+likely to be mat ernal pulse (see recommendation 1 .4.6 on st eps t o tak e to 
+check whet her t he mat ernal or f etal hear t rate is being det ected) 
+• if fetal hear t rate decelerations ar e recorded, look f or ot her signs of h ypoxia 
+(for example, a rise in t he baseline f etal hear t rate or a r eduction in 
+variability). [2022] 
+1.4.37 Take into account t hat onset of h ypoxia is bot h mor e common and mor e rapid in 
+the activ e second stage of labour . Take an incr ease in t he baseline f etal hear t 
+rate of 20 beat s a minut e or mor e from t he star t of labour or since t he last r eview 
+an hour ago as a r ed featur e in activ e second stage labour . [2022] 
+1.4.38 If CT G concerns arise in t he activ e second stage of labour: 
+• obtain an obst etric r eview 
+• consider discouraging pushing and st opping an y oxytocin infusion t o allo w 
+the bab y to recover, unless bir th is imminent 
+• agree and document a clear plan wit h time limit s for the ne xt review . [2022] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on use of 
+cardiotocograph y for monit oring during labour . Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25
+of 411.5 M aking c are decisions base d on the 
+cardiotoc ography trace 
+1.5.1 Assess f etal w ellbeing e very hour , taking int o account ant enatal and intrapar tum 
+risk f actors, in conjunction wit h interpretation of t he CT G trace. [2017] 
+1.5.2 Take the whole clinical pictur e into account when making decisions on ho w to 
+manage t he labour , including mat ernal obser vations, contraction fr equency and 
+labour pr ogress. [2017] 
+1.5.3 Discuss wit h the w oman and her bir th companion(s) what is happening, taking 
+into account her individual cir cumstances and pr eferences, and suppor t her 
+decisions. [2017] 
+1.5.4 If the CT G trace is cat egorised as normal: 
+• continue CT G (unless it was star ted because of concerns arising fr om 
+intermitt ent auscultation and t here are no ongoing ant enatal or intrapar tum 
+risk f actors) and usual car e 
+• continue t o per form a full risk assessment at least hourly and document t he 
+findings. [2017 , amended 2022] 
+1.5.5 If the CT G trace is cat egorised as suspicious and t here are no ot her concerning 
+risk f actors: 
+• perform a full risk assessment, including a full set of mat ernal obser vations, 
+taking int o account t he whole clinical pictur e, and document t he findings 
+• note that if accelerations ar e present t hen f etal acidosis is unlik ely 
+• if the CT G trace was pr eviously normal, consider possible underlying r easons 
+for the change 
+• under take conser vative measur es as indicat ed (see t he section on underlying 
+causes and conser vative measur es). [2017 , amended 2022] 
+1.5.6 If the CT G trace is cat egorised as suspicious and t here are additional intrapar tum 
+risk f actors such as slo w progress, sepsis or meconium: Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26
+of 41• perform a full risk assessment, including a full set of mat ernal obser vations, 
+taking int o account t he whole clinical pictur e, and document t he findings 
+• consider possible underlying causes, and under take conser vative measur es 
+as indicat ed (see t he section on underlying causes and conser vative 
+measur es) 
+• obtain an ur gent r eview b y an obst etrician or a senior midwif e 
+• consider: 
+－ fetal scalp stimulation (see t he section on f etal scalp stimulation ), or 
+－ expediting bir th. [2017 , amended 2022] 
+1.5.7 If the CT G trace is cat egorised as pat hological: 
+• obtain an ur gent r eview b y an obst etrician and a senior midwif e 
+• exclude acut e events (for example, cor d prolapse, suspect ed placental 
+abruption or suspect ed ut erine ruptur e) that need immediat e intervention 
+• perform a full risk assessment, including a full set of mat ernal obser vations, 
+taking int o account t he whole clinical pictur e, and document t he findings 
+• consider possible underlying causes and under take conser vative measur es 
+as indicat ed (see t he section on underlying causes and conser vative 
+measur es). [2017 , amended 2022] 
+1.5.8 If the CT G trace is still pat hological aft er implementing conser vative measur es: 
+• obtain a fur ther ur gent r eview b y an obst etrician and a senior midwif e 
+• evaluat e the whole clinical pictur e and consider e xpediting bir th 
+• if there are evolving intrapar tum risk f actors f or fetal compr omise, ha ve a 
+very low threshold f or expediting bir th. [2017 , amended 2022] 
+1.5.9 If there is an acut e brady cardia, or a single pr olonged deceleration f or 3 minut es 
+or mor e: Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27
+of 41• urgent ly seek obst etric r eview 
+• if there has been an acut e event (f or example, cor d prolapse, suspect ed 
+placental abruption or suspect ed ut erine ruptur e), expedit e the bir th 
+• consider possible underlying causes and under take conser vative measur es 
+as indicat ed (see t he section on underlying causes and conser vative 
+measur es) 
+• make preparations f or an ur gent bir th, including a r equest f or paediatric or 
+neonatal suppor t. 
+• expedit e the bir th if t he acut e brady cardia persist s for 9 minut es, or less if 
+there are significant ant enatal or intrapar tum risk f actors f or fetal 
+compr omise. 
+If the fetal hear t rate recovers at an y time up t o 9 minut es, reassess an y 
+decision t o expedit e the bir th, but tak e into account ot her ant enatal and 
+intrapar tum risk f actors and discuss t his wit h the w oman. [2017 , amended 
+2022] 
+1.5.10 If a decision is made t o expedit e bir th, ensur e the time at which ur gent r eview 
+was sought, and t he time t he decision was made, ar e document ed. [2022] 
+For a shor t explanation of wh y the committ ee made t he 2022 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on making car e 
+decisions based on t he car diotocograph y trace . 
+Under lying c auses and c onser vative me asur es 
+1.5.11 If there are any concerns about t he bab y's w ellbeing, be awar e of t he possible 
+underlying causes and star t 1 or mor e of t he following conser vative measur es 
+based on an assessment of t he most lik ely cause(s): 
+• maternal position (as t his can aff ect ut erine blood flo w and cor d 
+compr ession), encourage t he w oman t o mobilise, or adopt an alt ernativ e 
+position, and t o avoid being supine Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28
+of 41• hypot ension: 
+－ do not off er intra venous fluids t o treat f etal hear t rate abnormalities 
+unless t he w oman is h ypot ensiv e or has signs of sepsis 
+－ if the w oman is h ypot ensiv e secondar y to an epidural t op-up, star t 
+intravenous fluids, mo ve her t o a left lat eral position and call an 
+anaest hetist t o review 
+• excessiv e contraction fr equency: 
+－ reduce contraction fr equency b y reducing or st opping o xytocin if it is 
+being used 
+－ offer a t ocolytic drug (a suggest ed regimen is subcutaneous t erbutaline 
+0.25 mg). [2017 , amended 2022] 
+1.5.12 Do not off er mat ernal f acial o xygen t herap y as par t of conser vative measur es 
+because it ma y harm t he bab y. However, it can be used if it is giv en for mat ernal 
+issues such as h ypoxia, or as par t of pr eoxygenation bef ore a pot ential 
+anaest hetic. [2017 , amended 2022] 
+1.5.13 Do not off er amnioinfusion f or intraut erine f etal r esuscitation. [2014] 
+1.6 Fetal sc alp stim ulation 
+1.6.1 If the CT G trace is suspicious wit h ant enatal or intrapar tum risk f actors f or fetal 
+compr omise, t hen consider digital f etal scalp stimulation. If t his leads t o an 
+acceleration in f etal hear t rate and a sustained impr ovement in t he CT G trace, 
+continue t o monit or the fetal hear t rate and clinical pictur e. [2017 , amended 
+2022] 
+1.6.2 Be awar e that t he absence of an acceleration in r esponse t o fetal scalp 
+stimulation is a w orrying sign t hat f etal compr omise ma y be pr esent, and t hat 
+expedit ed bir th ma y be necessar y. [2017 , amended 2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29
+of 411.7 Fetal b lood sam pling 
+1.7.1 NICE is unable t o mak e a recommendation about f etal blood sampling because of 
+limited evidence. [2022] 
+For a shor t explanation of wh y the committ ee made t he recommendation and ho w it 
+might aff ect practice, see t he rationale and impact section on f etal blood sampling . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+fetal blood sampling . 
+1.8 R ecord keeping f or cardiotoc ography 
+1.8.1 To ensur e accurat e record keeping f or CT G: 
+• make sur e that dat e and time clocks on t he car diotocograph monit or ar e set 
+correctly 
+• ensur e the recording or paper speed is set at 1 cm a minut e and t hat 
+adequat e paper is a vailable 
+• label traces wit h the w oman's name, dat e of bir th, hospital number or NHS 
+number and pulse at t he star t of monit oring, and t he dat e of t he CT G. [2014 , 
+amended 2022] 
+1.8.2 Individual unit s should de velop a syst em for recording r elevant intrapar tum 
+events (for example, v aginal e xamination and siting of an epidural) in standar d 
+notes and/or on t he car diotocograph trace. [2014 , amended 2022] 
+1.8.3 Keep car diotocograph traces f or 25 years and, if possible, st ore them 
+electr onically . [200 7, amended 2014] 
+1.8.4 In cases wher e there is concern t hat t he bab y ma y have sustained a possible 
+brain injur y, phot ocop y car diotocograph traces (if t hey are not a vailable 
+electr onically) and st ore them indefinit ely in case of possible adv erse out comes. 
+[200 7, amended 2022] Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30
+of 411.8.5 Ensur e that tracer syst ems ar e available f or all car diotocograph traces if st ored 
+separat ely fr om t he w oman's r ecords. [200 7, amended 2014] 
+1.8.6 Develop tracer syst ems t o ensur e that car diotocograph traces r emoved for an y 
+purpose (such as risk management or f or teaching purposes) can alwa ys be 
+locat ed. [200 7, amended 2014] 
+Terms use d in this guideline 
+This section defines t erms t hat ha ve been used in a par ticular wa y for this guideline. F or 
+other definitions see t he NICE glossar y and t he Think Local, Act P ersonal Car e and 
+Suppor t Jargon Bust er. 
+Early decelerations 
+Repetitiv e and periodic slo wing of t he fetal hear t rate wit h onset early in t he contraction 
+and r eturn t o baseline at t he end of t he contraction. These ar e uncommon. 
+Hyper tonus 
+A contraction lasting 2 minut es or longer . 
+Late de celerations 
+Repetitiv e and periodic slo wing of t he fetal hear t rate wit h onset mid t o end of t he 
+contraction and t he lo west point mor e than 20 seconds aft er the peak of t he contraction, 
+and ending aft er the contraction. 
+Variab le de celerations 
+Intermitt ent and periodic slo wing of t he fetal hear t rate wit h a v ariable time in r elation t o 
+the contraction. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31
+of 41Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. 
+Informa tion and suppor ted de cision -making 
+Recommendations 1 .1.1 to 1.1.4 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed, based on t heir kno wledge and e xper tise, t hat discussions about 
+fetal monit oring should occur as par t of ant enatal car e and be document ed in t he 
+personalised car e plan. Alt hough healt hcare professionals curr ently alwa ys pr ovide advice 
+to women in labour on options f or fetal monit oring, t hey should also suppor t the decision 
+made b y the w oman about which met hod t o use. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations will r einforce curr ent practice. 
+Return t o recommendations 
+Assessmen t during labour and me thods f or fetal 
+moni toring 
+Recommendations 1 .2.3, 1.2.5 to 1.2.7, 1.2.15 to 1.2.17, 1.2.19, 1.2.21 and 1 .2.22 
+Why the c ommi ttee made the r ecommenda tions 
+Based on t heir kno wledge and e xper tise, t he committ ee emphasised t hat f etal hear t rate 
+monit oring is only a t ool that pr ovides inf ormation. It should be used as par t of assessing 
+the whole clinical pictur e including ant enatal and intrapar tum risk f actors, not as a 
+standalone diagnostic t ool, and t hat multiple risk f actors ma y lower the threshold f or 
+intervention. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32
+of 41The committ ee discussed t he initial assessment t hat should be carried out at t he star t of 
+labour and agr eed t hat a decision on t he met hod of monit oring should be based on 
+antenatal risk f actors. These risk f actors should ha ve been identified and discussed wit h 
+the w oman during ant enatal car e and should alr eady be r ecorded in her personalised car e 
+plan. Ho wever, the committ ee agr eed it was impor tant t o advise w omen t hat t he 
+recommended met hod of f etal monit oring ma y change during labour (based on a clinical 
+decision or because t he w oman changes her mind), but t hat f or women at lo w risk, t he use 
+of car diotocograph y (CT G) ma y lead t o mor e interventions wit hout e vidence of benefit. 
+The committ ee w ere awar e that t here was t he possibility of confusion betw een t he 
+interpretation of ant enatal and intrapar tum CT G and so made a r ecommendation t o clarify 
+this. 
+The committ ee w ere awar e of incidences wher e telemetr y was not a vailable because 
+transducers had not been plugged in t o char ge, or wher e CT G was not used eff ectiv ely 
+because of pr oblems wit h signal loss, so t hey made r ecommendations t o reduce such 
+events based on t heir kno wledge and e xperience. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations will r einforce curr ent best practice and help ensur e the full clinical 
+pictur e is look ed at. 
+Return t o recommendations 
+Indic ations f or continuous c ardiotoc ography 
+moni toring in labour 
+Recommendations 1 .3.1, 1.3.4, 1.3.6, 1.3.7 and 1 .3.9 to 1.3.12 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed t hat a decision t o use CT G monit oring ma y already ha ve been 
+discussed and r ecorded in a w oman's personalised car e plan, but t hat ant enatal risk 
+factors identified during pr egnancy or labour , or new intrapar tum risk f actors w ould mean 
+that CT G was advised t o assess if t here was de veloping f etal compr omise. The committ ee 
+were awar e that t he list s of ant enatal and intrapar tum risk f actors co vered all commonly Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33
+of 41recognised risk f actors but clinical judgement w ould be needed t o det ermine if t here were 
+other risk f actors not list ed which also might lead t o consideration of CT G. 
+The committ ee agr eed t hat t he pr esence of an y meconium, not just significant meconium, 
+should be tak en int o account when assessing t he whole clinical pictur e and considering 
+the use of CT G. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations will r einforce curr ent practice. 
+Return t o recommendations 
+Use of cardiotoc ography for moni toring during 
+labour 
+Recommendations 1 .4.2, 1.4.6 to 1.4.8, 1.4.10 to 1.4.12, 1.4.14, 1.4.17, 1.4.20, 1.4.26, 1.4.27, 
+1.4.31, 1.4.33 and 1 .4.34 to 1.4.38 
+Why the c ommi ttee made the r ecommenda tions 
+Recommendations 1 .4.2, 1.4.6 to 1.4.8 and 1 .4.10: The committ ee used t heir kno wledge and 
+exper tise and agr eed t hat an y changes in t he CT G, including t he fetal hear t rate patt ern, 
+over time indicat ed that t he bab y ma y be suff ering fr om h ypoxia. The y agr eed t his should 
+be in vestigat ed, alongside a r eview of t he clinical pictur e and ant enatal or intrapar tum risk 
+factors, so t hat causes could be sought and action could be tak en, if necessar y. 
+The committ ee agr eed, based on t heir kno wledge and e xper tise, t o provide advice about 
+the actions t o tak e when it is difficult t o distinguish betw een t he mat ernal and f etal hear t 
+rate, as incorr ect monit oring can lead t o significant harm t o the bab y. 
+Recommendations 1 .4.11 to 1.4.12 and 1 .4.14: The committ ee agr eed, based on t heir 
+knowledge and e xper tise, t hat as w ell as monit oring t he fetal hear t rate patt ern, it was 
+impor tant t o monit or and r ecord contractions t o det ermine if t hey were normal and, if not, 
+to tak e action. 
+Recommendations 1 .4.17 and 1 .4.20: The committ ee defined ho w variability should be Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34
+of 41measur ed. The committ ee w ere awar e, based on t heir kno wledge and e xper tise, t hat an 
+absence of v ariability was concerning and so made a r ecommendation t o addr ess t his. 
+Recommendation 1 .4.20: The committ ee w ere awar e, based on t heir kno wledge and 
+exper tise, t hat a r eduction in v ariability is not specific f or fetal h ypoxia. Ho wever, it does 
+indicat e an incr eased risk of adv erse neonatal out come and t herefore requir es obst etric 
+review when combined wit h ant enatal or intrapar tum risk f actors f or fetal compr omise. If a 
+reduction in v ariability is combined wit h other amber or r ed featur es on t he CT G, it will be 
+classified as pat hological, and t he committ ee ha ve emphasised t he need f or ur gent r eview 
+in these cir cumstances. 
+Recommendation 1 .4.26 and 1 .4.27: The committ ee want ed to emphasise, based on t heir 
+knowledge and e xper tise, t hat decelerations lasting longer t han 30 minut es combined wit h 
+other CT G abnormalities should trigger an ur gent obst etric r eview as t his combination is 
+particularly concerning f or fetal compr omise. 
+Recommendations 1 .4.31 and 1 .4.33: The committ ee w ere awar e, based on t heir 
+knowledge and e xper tise, t hat t oo much r eliance ma y be placed on t he cat egorisation of 
+CTG trace as a substitut e for reviewing and communicating about t he wider clinical 
+pictur e. The y stat ed that CT G cat egorisation was a t ool that should be used alongside 
+review of ot her ant enatal and intrapar tum risk f actors and t he wider clinical pictur e. 
+Recommendations 1 .4.34 to 1.4.38: The committ ee w ere awar e, based on t heir kno wledge 
+and e xper tise, t hat in t he second stage of labour it ma y be mor e difficult t o diff erentiat e 
+the mat ernal and f etal hear t rates, and t hat h ypoxia ma y develop mor e rapidly , and so 
+made new r ecommendations about t his. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations will r einforce curr ent practice. 
+Return t o recommendations 
+Making c are decisions base d on the 
+cardiotoc ography trace 
+Recommendation 1 .5.10 Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35
+of 41Why the c ommi ttee made the r ecommenda tion 
+The committ ee advised, based on t heir kno wledge and e xperience, t hat documentation of 
+reviews and decisions was impor tant. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation will r einforce curr ent practice. 
+Return t o recommendation 
+Fetal b lood sam pling 
+Recommendation 1 .7.1 
+Why the c ommi ttee made the r ecommenda tion 
+Ther e was r ecent but v ery limit ed evidence t hat f etal blood sampling does not impr ove 
+outcomes f or women and babies compar ed wit h CT G alone, or compar ed wit h CT G in 
+combination wit h fetal scalp stimulation. The comparison wit h CT G alone sho wed that f etal 
+blood sampling ma y incr ease t he pr opor tion of babies wit h an Apgar scor e less t han 7 at 
+5 minut es, possibly because of a dela y in e xpediting bir th to allo w the fetal blood sampling 
+to be carried out. This harm was not seen in t he comparison wit h CT G in combination wit h 
+fetal scalp stimulation, alt hough in t his comparison t he number of caesar ean bir ths was 
+increased. The committ ee agr eed t hat it was difficult t o define whet her t his out come was 
+harmful or a benefit as it ma y indicat e that a bir th had been e xpedit ed appr opriat ely. 
+The committ ee w ere awar e, based on t heir kno wledge and e xperience, t hat t he time tak en 
+to carr y out f etal blood sampling can dela y appr opriat e expedition of bir th, and t hat it can 
+be an unpleasant pr ocedur e for the w oman, especially in t he absence of an eff ectiv e 
+epidural. The committ ee therefore agr eed t hat t he risks of f etal blood sampling w ere not 
+balanced b y the benefit s and agr eed it was no longer appr opriat e to recommend f etal 
+blood sampling and t hey consider ed making a r ecommendation t o advise t hat it should not 
+be used. Ho wever, the committ ee w ere awar e of an ongoing r esear ch study comparing 
+fetal scalp stimulation wit h fetal blood sampling on mat ernal and f etal out comes (FIRSST 
+study) and did not wish t o mak e recommendations which ma y impact on t he completion of 
+this study . The committ ee therefore agr eed t o mak e a recommendation advising on t he 
+current lack of e vidence t o suppor t fetal blood sampling. The committ ee not ed that t he Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36
+of 41FIRSST study is due t o be complet ed at t he end of 202 4 and t hat on it s completion t he 
+advice on use of f etal blood sampling ma y need t o be r eview ed again. 
+As there was on ongoing study t he committ ee did not mak e a resear ch recommendation. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendations ma y reduce r esour ce use, bot h of staff time and equipment needed 
+to carr y out t he sampling pr ocess. 
+Return t o recommendation Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37
+of 41Context 
+This guideline co vers t he car e of healt hy women who go int o labour at t erm. Of t he 
+625,000 liv e bir ths in England and W ales in 2021 , appr oximat ely 90% w ere single babies 
+born at t erm (37+0 w eeks onwar ds), and so t he recommendations in t his guideline will 
+affect o ver half a million w omen e very year. 
+Wher ever bir th happens (at home, in a midwif ery-led unit or in an obst etric unit) 
+monit oring t he w ellbeing of t he w oman and bab y during labour is an impor tant par t of 
+intrapar tum car e. The r ecommendations in t his guideline co ver fetal assessment and 
+monit oring, including int ermitt ent auscultation and car diotocograph y. Risk assessment t o 
+determine t he most appr opriat e met hod of monit oring is co vered, as w ell as t he 
+interpretation of car diotocograph traces, and escalation when f etal h ypoxia is suspect ed. 
+This guideline r eplaces t he fetal monit oring section in t he NICE guideline on intrapar tum 
+care. Edit orial changes ha ve been made t o highlight t he need f or continual risk 
+assessment of t he w oman and t he bab y in labour and t o simplify t he int erpretation and 
+categorisation of t he car diotocograph y (CT G) trace. The new guidance highlight s that a 
+change in t he cat egorisation of t he CT G is an intrapar tum risk f actor but equally impor tant 
+are the de velopment of ot her intrapar tum risk f actors such as sepsis, slo w progress, t he 
+presence of meconium and ut erine tach ysyst ole, all of which ar e associat ed wit h a poor 
+outcome f or the bab y. Ther e is a r ecognition t hat contraction fr equency needs t o be 
+carefully monit ored and t he pr esence of 5 or mor e contractions in 10 minut es needs 
+action. The updat ed guidance also r eminds healt hcare professionals t hat intra venous 
+fluids should not be used as par t of t he management of an abnormal CT G unless t he 
+woman is h ypot ensiv e, and t hat t he guideline is only applicable t o the cat egorisation of 
+intrapar tum CT Gs. The e vidence on f etal blood sampling has been r eview ed for this 
+updat e and t he recommendations updat ed based on r ecent e vidence. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38
+of 41Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on intrapar tum car e. 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39
+of 41Update inf orma tion 
+December 2022: This is a new guideline t hat updat es and r eplaces t he section on 
+monit oring in labour in t he NICE guideline on intrapar tum car e for healt hy women and 
+babies (CG190; published in 2014 and updat ed in 2017). 
+We have review ed the evidence on f etal blood sampling during labour . All ot her changes 
+have been made as edit orial edit s to the recommendations pr eviously contained in CG190 . 
+These r ecommendations ha ve not had an e vidence r eview . 
+Recommendations ar e mark ed [2022] if the evidence has been r eview ed, or t hey are new 
+consensus r ecommendations based on t he committ ee's kno wledge or e xper tise. 
+Recommendations t hat ha ve been delet ed, or changed wit hout an e vidence r eview 
+We have delet ed some r ecommendations fr om t he section on monit oring in labour in t he 
+2014 NICE guideline on intrapar tum car e for healt hy women and babies. Table 1 in 
+appendix 1 sets out t hese r ecommendations and includes details of r eplacement 
+recommendations. If t here is no r eplacement r ecommendation, an e xplanation f or the 
+proposed deletion is giv en. 
+For recommendations ending [2014 , amended 2022] or [2017 , amended 2022] we have 
+made changes wit hout r eviewing t he evidence. R easons f or the changes ar e giv en in 
+table 2 in appendix 1. 
+For recommendations ending [2014] or [2017] we have not r eview ed the evidence. In 
+some cases minor changes ha ve been made, f or example, t o updat e links, or bring t he 
+language and style up t o dat e. 
+Minor changes since publication 
+August 2025 : We made a minor edit orial change t o recommendation 1 .4.24 to clarify t he 
+amber cat egorisations f or variable decelerations in f etal hear t rate. 
+October 2023: We updat ed links t o the NICE guideline on intrapar tum car e, which has 
+been updat ed. Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40
+of 41June 2023: We have amended r ecommendation 1 .4.37 for clarification and t o align it wit h 
+recommendation 1 .4.15. 
+May 2023: In recommendation 1 .3.3 we clarified when continuous car diotocograph y 
+monit oring should be used if t here are reduced f etal mo vement s bef ore contractions star t. 
+ISBN: 9 78-1-47 31-4849-9 Fetal monit oring in labour (NG229)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1
+of 41

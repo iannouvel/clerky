@@ -1,0 +1,883 @@
+Preterm labour and bir th 
+NICE guideline 
+Published: 20 No vember 2015 
+Last updat ed: 10 June 2022 
+www .nice.or g.uk/guidance/ng25 
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+37Contents 
+Overview ..................................................................................................................................... 5 
+Who is it f or? .......................................................................................................................................... 5 
+Recommendations ...................................................................................................................... 6 
+1.1 Information and suppor t .................................................................................................................. 6 
+Care of w omen at risk of pr eterm labour ............................................................................................ 7 
+1.2 Pr ophylactic v aginal pr ogest erone and pr ophylactic cer vical cer clage ..................................... 7 
+1.3 Diagnosing pr eterm pr elabour ruptur e of membranes (P -PROM) .............................................. 9 
+1.4 Ant enatal pr ophylactic antibiotics f or women wit h P-PROM ...................................................... 10 
+1.5 Identifying inf ection in w omen wit h P-PROM ............................................................................... 11 
+1.6 Emer gency cer vical cer clage ......................................................................................................... 11 
+Care of w omen wit h suspect ed or established pr eterm labour ....................................................... 12 
+1.7 Diagnosing pr eterm labour f or women wit h intact membranes .................................................. 12 
+1.8 Tocolysis ........................................................................................................................................... 14 
+1.9 Mat ernal cor ticost eroids ................................................................................................................. 15 
+1.10 Magnesium sulf ate for neur oprotection ....................................................................................... 17 
+1.11 Intrapar tum antibiotics ................................................................................................................... 18 
+1.12 Fetal monit oring .............................................................................................................................. 18 
+1.13 Mode of bir th .................................................................................................................................. 20 
+1.14 Timing of cor d clamping f or pr eterm babies (born v aginally or b y caesar ean bir th) .............. 21 
+Terms used in t his guideline ................................................................................................................. 21 
+Recommendations f or resear ch ................................................................................................ 24 
+Key recommendations f or resear ch .................................................................................................... 24 
+Other r ecommendations f or resear ch ................................................................................................. 26 
+Rationale and impact .................................................................................................................. 29 
+Prophylactic v aginal pr ogest erone ...................................................................................................... 29 
+Emer gency cer vical cer clage ............................................................................................................... 31 
+Repeat courses of mat ernal cor ticost eroids ...................................................................................... 31 Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+37Cont ext ........................................................................................................................................ 33 
+Finding mor e information and committ ee details .................................................................... 34 
+Updat e information .................................................................................................................... 35 Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+37This guideline is t he basis of QS135 . 
+Overview 
+This guideline co vers t he car e of w omen wit h a singlet on pr egnancy at incr eased risk of , or 
+with sympt oms and signs of , preterm labour (bef ore 37 weeks), and w omen wit h a 
+singlet on pr egnancy ha ving a planned pr eterm bir th. It aims t o reduce t he risks of pr eterm 
+birth for the bab y and describes tr eatment s to prevent or dela y early labour and bir th. 
+In this guideline, w e use t he terms 'w oman' or 'mot her' t hroughout. These should be tak en 
+to include people who do not identify as w omen but ar e pregnant or ha ve giv en bir th. 
+Who is i t for? 
+• Healt hcare professionals who car e for women at incr eased risk of or wit h sympt oms 
+and signs of pr eterm labour and w omen ha ving a planned pr eterm bir th 
+• Commissioners and pr oviders of mat ernity ser vices 
+• Women at incr eased risk of or wit h sympt oms and signs of pr eterm labour and w omen 
+having a planned pr eterm bir th, and t heir f amilies and car ers Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+37Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 Informa tion and suppor t 
+1.1.1 When giving inf ormation and suppor t to women at incr eased risk of pr eterm 
+labour , or wit h suspect ed, diagnosed or established pr eterm labour , or ha ving a 
+planned pr eterm bir th (and t heir f amily members or car ers as appr opriat e): 
+• ensur e this is giv en as early as possible, taking int o account t he lik elihood of 
+preterm bir th and t he status of labour 
+• follow the principles in NICE's guideline on patient e xperience in adult NHS 
+services 
+• bear in mind t hat t he w oman (and t heir f amily members or car ers) ma y be 
+particularly anxious 
+• give bot h oral and writt en inf ormation 
+• describe t he sympt oms and signs of pr eterm labour 
+• explain about t he car e that ma y be off ered. [2015] 
+1.1.2 For women who ar e having a planned pr eterm bir th or ar e off ered tr eatment f or 
+preterm labour in line wit h the sections on t ocolysis , maternal cor ticost eroids and 
+magnesium sulf ate for neur oprotection (and t heir f amily members or car ers as 
+appr opriat e), pr ovide inf ormation and suppor t that includes: Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+37• information about t he lik elihood of t he bab y sur viving and ot her out comes 
+(including long-t erm out comes) and risks f or the bab y, giving v alues as 
+natural fr equencies (f or example, 1 in 100) 
+• explanation of t he neonatal car e of pr eterm babies, including location of car e 
+• explanation of t he immediat e problems t hat can arise when a bab y is born 
+preterm 
+• explanation of t he possible long-t erm consequences of pr ematurity f or the 
+baby (ho w prematur e babies gr ow and de velop) 
+• ongoing oppor tunities t o talk about and stat e their wishes about r esuscitation 
+of the bab y 
+• an oppor tunity t o tour t he neonatal unit 
+• an oppor tunity t o speak t o a neonat ologist or paediatrician. [2015] 
+1.1.3 Be awar e that, accor ding t o the 2021 Mot hers and babies: r educing risk t hrough 
+audit s and confidential enquiries acr oss t he UK ( MBRRA CE-UK ) repor t on 
+perinatal mor tality , women fr om some minority et hnic back grounds or who liv e in 
+depriv ed ar eas ha ve an incr eased risk of stillbir th and ma y need closer monit oring 
+and additional suppor t. The r epor t sho wed that acr oss all bir ths (not just t hose 
+which ar e preterm): 
+• compar ed wit h whit e babies (32 out of 10 ,000), t he stillbir th rat e is: 
+－ more than twice as high in black babies (72 out of 10 ,000) 
+－ around 50% higher in Asian babies (51 out of 10 ,000) 
+• compar ed wit h the least depriv ed ar eas (23 out of 10 ,000), t he still bir th rat e 
+is twice as high in t he most depriv ed ar eas (47 out of 10 ,000). [2022] 
+Care of women a t risk o f preterm labour 
+1.2 Pr ophylactic v aginal pr ogester one and Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+37prophylactic c ervical cerclage 
+1.2.1 Offer a choice of pr ophylactic v aginal pr ogest erone or pr ophylactic cer vical 
+cerclage t o women who ha ve bot h: 
+• a hist ory of spontaneous pr eterm bir th (up t o 34+0 weeks of pr egnancy) or 
+loss (fr om 16+0 weeks of pr egnancy onwar ds), and 
+• result s from a transv aginal ultrasound scan carried out betw een 16+0 and 
+24+0 weeks of pr egnancy t hat sho w a cer vical lengt h of 25 mm or less. 
+Discuss t he risks and benefit s of bot h options wit h the w oman, and mak e a 
+shared decision on which tr eatment is most suitable. [2019 , amended 2022] 
+In April 202 4, the only licensed pr eparation of pr ogest erone f or this indication 
+was v aginal 200 mg capsules. 
+1.2.2 Consider pr ophylactic v aginal pr ogest erone f or women who ha ve either: 
+• a hist ory of spontaneous pr eterm bir th (up t o 34+0 weeks of pr egnancy) or 
+loss (fr om 16+0 weeks of pr egnancy onwar ds), or 
+• result s from a transv aginal ultrasound scan carried out betw een 16+0 and 
+24+0 weeks of pr egnancy t hat sho w a cer vical lengt h of 25 mm or less. 
+[2019 , amended 2022] 
+In April 202 4, the only licensed pr eparation of pr ogest erone f or this indication 
+was v aginal 200 mg capsules. 
+1.2.3 When using v aginal pr ogest erone, star t treatment betw een 
+16+0 and 24+0 weeks of pr egnancy and continue until at least 34 weeks. [2019] 
+1.2.4 Consider pr ophylactic cer vical cer clage f or women when r esult s of a transv aginal 
+ultrasound scan carried out betw een 16+0 and 24+0 weeks of pr egnancy sho w a 
+cervical lengt h of 25 mm or less, who ha ve had eit her: 
+• preterm pr elabour ruptur e of membranes (P-PROM) in a pr evious pr egnancy 
+or Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+37• a hist ory of cervical trauma . [2015 , amended 2019] 
+1.2.5 If prophylactic cer vical cer clage is used, ensur e a plan is made and document ed 
+for removal of t he sutur e. [2019 , amended 2022] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on pr ophylactic 
+vaginal pr ogest erone. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+clinical eff ectiv eness of pr ophylactic pr ogest erone in pr eventing pr eterm labour . 
+1.3 D iagnosing pr eterm pr elabour ruptur e of 
+membr anes (P -PROM) 
+1.3.1 In a w oman r epor ting sympt oms suggestiv e of P -PROM, off er a speculum 
+examination t o look f or pooling of amniotic fluid and: 
+• if pooling of amniotic fluid is obser ved, do not per form an y diagnostic t est 
+but off er car e consist ent wit h the w oman ha ving P -PROM (see t he sections 
+on ant enatal pr ophylactic antibiotics f or women wit h P-PROM , identifying 
+infection in w omen wit h P-PROM and maternal cor ticost eroids) 
+• if pooling of amniotic fluid is not obser ved, per form an insulin-lik e growth 
+factor binding pr otein-1 t est or placental alpha-micr oglobulin-1 t est of v aginal 
+fluid. [2015 , amended 2019] 
+1.3.2 If the result s of t he insulin-lik e growth factor binding pr otein-1 or placental alpha-
+microglobulin-1 t est ar e positiv e, do not use t he test result s alone t o decide what 
+care to off er the w oman, but also tak e into account her clinical condition, medical 
+and pr egnancy hist ory and gestational age, and eit her: 
+• offer car e consist ent wit h the w oman ha ving P -PROM (see t he sections on 
+antenatal pr ophylactic antibiotics f or women wit h P-PROM , identifying 
+infection in w omen wit h P-PROM and maternal cor ticost eroids or Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+37• re-evaluat e the w oman's diagnostic status at a lat er time point. [2015] 
+1.3.3 If the result s of t he insulin-lik e growth factor binding pr otein-1 or placental alpha-
+microglobulin-1 t est ar e negativ e and no amniotic fluid is obser ved: 
+• do not off er ant enatal pr ophylactic antibiotics 
+• explain t o the w oman t hat it is unlik ely she has P -PROM, but t hat she should 
+return f or reassessment if t here are any fur ther sympt oms suggestiv e of 
+P-PROM or pr eterm labour . [2015 , amended 2022] 
+1.3.4 Do not use nitrazine t o diagnose P -PROM. [2015] 
+1.3.5 Do not per form diagnostic t ests for P-PROM if labour becomes established in a 
+woman r epor ting sympt oms suggestiv e of P -PROM. [2015] 
+1.4 A ntena tal pr ophylactic an tibiotics f or w omen 
+with P-PROM 
+1.4.1 As pr ophylaxis f or intraut erine inf ection, off er women wit h P-PROM oral 
+erythromycin 250 mg 4 times a da y for a maximum of 10 days or until t he w oman 
+is in established labour (whiche ver is sooner). [2015 , amended 2022] 
+1.4.2 For women wit h P-PROM who cannot t olerat e erythromycin or in whom 
+erythromycin is contraindicat ed, consider an oral penicillin f or a maximum of 
+10 days or until t he w oman is in established labour (whiche ver is sooner). [2015 , 
+amended 2019] 
+1.4.3 Do not off er women wit h P-PROM co-amo xicla v as pr ophylaxis f or intraut erine 
+infection. [2015] 
+1.4.4 For guidance on t he use of intrapar tum antibiotics, see t he section on 
+intrapar tum antibiotics in NICE's guideline on neonatal inf ection , and when 
+applicable also see t he section on tr eatment f or women wit h prolonged pr elabour 
+ruptur e of membranes who ha ve group B str eptococcal colonisation, bact eriuria 
+or inf ection . [2015] Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10 of
+371.5 Identifying inf ection in w omen wi th P-PROM 
+1.5.1 Use a combination of clinical assessment and t ests (C-r eactiv e protein, whit e 
+blood cell count and measur ement of f etal hear t rate using car diotocograph y) to 
+diagnose intraut erine inf ection in w omen wit h P-PROM. [2015] 
+1.5.2 Do not use an y one of t he following in isolation t o confirm or e xclude intraut erine 
+infection in w omen wit h P-PROM: 
+• a single t est of C-r eactiv e protein 
+• white blood cell count 
+• measur ement of f etal hear t rate using car diotocograph y. [2015] 
+1.5.3 If the result s of t he clinical assessment or an y of t he tests are not consist ent wit h 
+each ot her, continue t o obser ve the w oman and consider r epeating t he tests. 
+[2015] 
+1.6 Emergency cervical cerclage 
+1.6.1 Do not off er emer gency cer vical cer clage to women wit h: 
+• signs of inf ection, or 
+• activ e vaginal bleeding, or 
+• uterine contractions. [2015 , amended 2022] 
+1.6.2 Consider emer gency cer vical cer clage f or women betw een 16+0 and 27+6 weeks 
+of pr egnancy wit h a dilat ed cer vix and e xposed, unruptur ed fetal membranes. 
+Also: 
+• take into account gestational age (being awar e that t he benefit s are likely to 
+be gr eater for earlier gestations) and t he extent of cer vical dilatation 
+• discuss wit h a consultant obst etrician and consultant paediatrician. [2015 , 
+amended 2022] Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+371.6.3 If emer gency cer vical cer clage is being consider ed, e xplain t o the w oman (and 
+their f amily members or car ers, as appr opriat e): 
+• about t he risks of t he pr ocedur e 
+• that it aims t o dela y the bir th, and so incr ease t he lik elihood of t he bab y 
+surviving and of r educing serious neonatal morbidity [2015 , amended 2022] 
+1.6.4 If emer gency cer vical cer clage is used, ensur e that a plan is made and 
+document ed for removal of t he sutur e. [2019 , amended 2022] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on emer gency 
+cervical cer clage . 
+Care of women wi th suspe cted or estab lishe d 
+preterm labour 
+1.7 Diagnosing pr eterm labour f or w omen wi th 
+intact membr anes 
+1.7.1 Explain t o women r epor ting sympt oms of pr eterm labour who ha ve intact 
+membranes (and t heir f amily members or car ers, as appr opriat e): 
+• about t he clinical assessment and diagnostic t ests that ar e available 
+• how the clinical assessment and diagnostic t ests are carried out 
+• what t he benefit s, risks and possible consequences of t he clinical 
+assessment and diagnostic t ests are, including t he consequences of f alse-
+positiv e and f alse-negativ e test result s and taking int o account gestational 
+age. [2015] 
+1.7.2 Offer a clinical assessment t o women r epor ting sympt oms of pr eterm labour who 
+have intact membranes. This should include: Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12 of
+37• clinical hist ory taking 
+• the obser vations described f or the initial assessment of labour in NICE's 
+guideline on intrapar tum car e 
+• a speculum e xamination (f ollowed by a digital v aginal e xamination if t he 
+extent of cer vical dilatation cannot be assessed; be awar e that if a swab f or 
+fetal fibr onectin t esting is anticipat ed [see r ecommendation 1.7.5] the swab 
+should be tak en bef ore any digital v aginal e xamination). [2015] 
+1.7.3 If the clinical assessment suggest s that t he w oman is in suspect ed pr eterm 
+labour and she is 29+6 weeks pr egnant or less, advise tr eatment f or pr eterm 
+labour as described in t he sections on t ocolysis and maternal cor ticost eroids. 
+[2015] 
+1.7.4 If the clinical assessment suggest s that t he w oman is in suspect ed pr eterm 
+labour and she is 30+0 weeks pr egnant or mor e, consider transv aginal ultrasound 
+measur ement of cer vical lengt h as a diagnostic t est t o det ermine lik elihood of 
+birth wit hin 48 hours. Act on t he result s as f ollows: 
+• if cer vical lengt h is mor e than 15 mm, e xplain t o the w oman t hat it is unlik ely 
+to be pr eterm labour and: 
+－ think about alt ernativ e diagnoses 
+－ discuss wit h her t he benefit s and risks of going home compar ed wit h 
+continued monit oring and tr eatment in hospital 
+－ advise her t hat if she does decide t o go home, she should r eturn if 
+sympt oms suggestiv e of pr eterm labour persist or r ecur 
+• if cer vical lengt h is 15 mm or less, view t he w oman as being in diagnosed 
+preterm labour and off er treatment as described in t he sections on t ocolysis 
+and maternal cor ticost eroids. [2015] 
+1.7.5 Consider f etal fibr onectin t esting as a diagnostic t est t o det ermine lik elihood of 
+birth wit hin 48 hours f or women who ar e 30+0 weeks pr egnant or mor e if 
+transv aginal ultrasound measur ement of cer vical lengt h is indicat ed, but is not 
+available or not acceptable. Act on t he result s as f ollows: Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13 of
+37• if fetal fibr onectin t esting is negativ e (concentration 50 ng/ml or less), e xplain 
+to the w oman t hat it is unlik ely she is in pr eterm labour and: 
+－ think about alt ernativ e diagnoses 
+－ discuss wit h her t he benefit s and risks of going home compar ed wit h 
+continued monit oring and tr eatment in hospital 
+－ advise her t hat if she decides t o go home, she should r eturn if sympt oms 
+suggestiv e of pr eterm labour persist or r ecur 
+• if fetal fibr onectin t esting is positiv e (concentration mor e than 50 ng/ml), 
+view t he w oman as being in diagnosed pr eterm labour and off er treatment as 
+described in t he sections on t ocolysis and maternal cor ticost eroids. [2015] 
+1.7.6 If a w oman in suspect ed pr eterm labour who is 30+0 weeks pr egnant or mor e 
+does not ha ve transv aginal ultrasound measur ement of cer vical lengt h or f etal 
+fibronectin t esting t o exclude pr eterm labour , offer treatment consist ent wit h her 
+being in diagnosed pr eterm labour (see t he sections on t ocolysis and maternal 
+corticost eroids). [2015] 
+1.7.7 Do not use transv aginal ultrasound measur ement of cer vical lengt h and f etal 
+fibronectin t esting in combination t o diagnose pr eterm labour . [2015] 
+1.7.8 Ultrasound scans should be per formed b y healt hcare professionals wit h training 
+in, and e xperience of , transv aginal ultrasound measur ement of cer vical lengt h. 
+[2015] 
+1.7.9 For guidance on t he use of ot her biomark er tests used f or the diagnosis of 
+preterm labour , see NICE's diagnostics guidance on biomark er tests to help 
+diagnose pr eterm labour in w omen wit h intact membranes . [2019] 
+1.8 T ocolysis 
+1.8.1 Take the following f actors int o account when making a decision about whet her t o 
+start tocolysis: Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14 of
+37• whet her t he w oman is in suspect ed or diagnosed pr eterm labour 
+• other clinical f eatur es (for example, bleeding or inf ection) t hat ma y suggest 
+that st opping labour is contraindicat ed 
+• gestational age at pr esentation 
+• likely benefit of mat ernal cor ticost eroids (see t he section on mat ernal 
+corticost eroids) 
+• availability of an appr opriat e level of neonatal car e (if t here is need f or 
+transf er to anot her unit). See also NHS England's guidance on sa ving babies' 
+lives car e bundle v ersion 2 (recommendation 5 .9). 
+• the pr eference of t he w oman. [2015 , amended 2022] 
+1.8.2 Consider nif edipine f or tocolysis f or women betw een 2 4+0 and 25+6 weeks of 
+pregnancy who ha ve intact membranes and ar e in suspect ed pr eterm labour . 
+In No vember 2015 , this was an off -label use of nif edipine. See NICE's inf ormation 
+on pr escribing medicines . [2015] 
+1.8.3 Offer nif edipine f or tocolysis t o women betw een 26+0 and 33+6 weeks of 
+pregnancy who ha ve intact membranes and ar e in suspect ed or diagnosed 
+preterm labour . 
+In No vember 2015 , this was an off -label use of nif edipine. See NICE's inf ormation 
+on pr escribing medicines . [2015] 
+1.8.4 If nifedipine is contraindicat ed, off er oxytocin r ecept or antagonist s for tocolysis. 
+[2015] 
+1.8.5 Do not off er betamimetics f or tocolysis. [2015] 
+1.9 M aternal c orticoster oids 
+In June 2022 t his was an off -label use of betamet hasone and de xamet hasone. See NICE's 
+information on pr escribing medicines . Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15 of
+371.9.1 For women betw een 22+0 and 23+6 weeks of pr egnancy who ar e in suspect ed 
+or established pr eterm labour , are having a planned pr eterm bir th or ha ve 
+P-PROM (see t he section on diagnosing P -PROM ), discuss wit h the w oman (and 
+her f amily members or car ers, as appr opriat e) and t he multidisciplinar y team t he 
+use of mat ernal cor ticost eroids in t he cont ext of her individual cir cumstances. 
+[2015 , amended 2022] 
+1.9.2 Offer mat ernal cor ticost eroids t o women betw een 2 4+0 and 33+6 weeks of 
+pregnancy who ar e in suspect ed, diagnosed or established pr eterm labour , are 
+having a planned pr eterm bir th or ha ve P-PROM. [2015 , amended 2019] 
+1.9.3 Consider mat ernal cor ticost eroids f or women betw een 34+0 and 35+6 weeks of 
+pregnancy who ar e in suspect ed, diagnosed or established pr eterm labour , are 
+having a planned pr eterm bir th or ha ve P-PROM. [2015] 
+1.9.4 Consider a single r epeat course of mat ernal cor ticost eroids f or women less t han 
+34+0 weeks of pr egnancy who: 
+• have already had a course of cor ticost eroids when t his was mor e than 7 days 
+ago, and 
+• are at v ery high risk of giving bir th in t he ne xt 48 hours. 
+Wher e the w oman is less t han 30+0 weeks pr egnant or if t here is suspect ed 
+growth restriction, tak e into account t he possible impact on f etal gr owth of a 
+repeat course of mat ernal cor ticost eroids. [2022] 
+1.9.5 Do not giv e mor e than 2 courses of mat ernal cor ticost eroids f or pr eterm bir th. 
+[2022] 
+1.9.6 When off ering or considering mat ernal cor ticost eroids, discuss t he benefit s and 
+risks wit h the w oman (and her f amily members or car ers, as appr opriat e). [2015 , 
+amended 2022] 
+1.9.7 For guidance on t he use of cor ticost eroids in people wit h diabet es, see NICE's 
+guideline on diabet es in pr egnancy . [2019] Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16 of
+37For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on r epeat courses of 
+maternal cor ticost eroids. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+effectiv eness of r epeat courses of mat ernal cor ticost eroids f or fetal lung maturation . 
+1.10 M agnesium sulf ate for neur oprotection 
+In August 2019 , the use of intra venous magnesium sulf ate in r ecommendations 1 .10.1 
+to 1.10.3 was off label. See NICE's inf ormation on pr escribing medicines . 
+This guideline does not r ecommend using magnesium sulf ate beyond 2 4 hours. But if 
+uncer tainty ar ound e xact timing of deliv ery result s in r epeat administration, f ollow the 
+MHRA saf ety advice on t he pr olonged or r epeat ed use of magnesium sulf ate in 
+pregnancy . 
+1.10.1 For women betw een 23+0 and 23+6 weeks of pr egnancy who ar e in established 
+preterm labour or ha ving a planned pr eterm bir th wit hin 2 4 hours, discuss wit h 
+the w oman (and her f amily members or car ers, as appr opriat e) the use of 
+intravenous magnesium sulf ate for neur oprotection of t he bab y, in the cont ext of 
+her individual cir cumstances. [2019] 
+1.10.2 Offer intra venous magnesium sulf ate for neur oprotection of t he bab y to women 
+betw een 2 4+0 and 29+6 weeks of pr egnancy who ar e: 
+• in established pr eterm labour , or 
+• having a planned pr eterm bir th wit hin 2 4 hours. [2015] 
+1.10.3 Consider intra venous magnesium sulf ate for neur oprotection of t he bab y for 
+women betw een 30+0 and 33+6 weeks of pr egnancy who ar e: 
+• in established pr eterm labour , or Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17 of
+37• having a planned pr eterm bir th wit hin 2 4 hours. [2015] 
+1.10.4 Give a 4 g intra venous bolus of magnesium sulf ate over 15 minut es, followed by 
+an intra venous infusion of 1 g per hour until t he bir th or f or 24 hours (whiche ver is 
+sooner). [2015] 
+1.10.5 For women on magnesium sulf ate, monit or for clinical signs of magnesium t oxicity 
+at least e very 4 hours b y recording pulse, blood pr essur e, respirat ory rat e and 
+deep t endon (f or example, pat ellar) r eflexes. [2015] 
+1.10.6 If a w oman has or de velops oliguria or ot her e vidence of r enal f ailure: 
+• monit or mor e frequent ly for magnesium t oxicity 
+• reduce or st op the dose of magnesium sulf ate. [2015 , amended 2022] 
+1.11 I ntrapar tum an tibiotics 
+1.11.1 For guidance on t he use of intrapar tum antibiotics in established pr eterm labour , 
+see NICE's guideline on neonatal inf ection . [2019] 
+1.12 F etal moni toring 
+Monitoring options: c ardiotoc ography and in termi ttent 
+auscul tation 
+1.12.1 Discuss wit h women in suspect ed, diagnosed or established pr eterm labour (and 
+their f amily members or car ers, as appr opriat e): 
+• the purpose of f etal monit oring and what it in volves 
+• the clinical decisions it inf orms at diff erent gestational ages 
+• if appr opriat e, the option not t o monit or the fetal hear t rate (for example, at 
+the threshold of viability). [2015] Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18 of
+371.12.2 Involve a senior obst etrician in discussions about whet her and ho w to monit or the 
+fetal hear t rate for women who ar e betw een 23+0 and 25+6 weeks pr egnant. 
+[2015] 
+1.12.3 Explain t he diff erent f etal monit oring options t o the w oman (and her f amily 
+members or car ers, as appr opriat e), being awar e that: 
+• there is limit ed evidence about t he usefulness of specific f eatur es to suggest 
+hypoxia or acidosis in pr eterm babies 
+• the available e vidence is br oadly consist ent wit h that f or babies born at t erm 
+(see t he NICE guideline on f etal monit oring in labour ) 
+• a normal car diotocograph y trace is r eassuring and indicat es that t he bab y is 
+coping w ell wit h labour , but an abnormal trace does not necessarily indicat e 
+that f etal h ypoxia or acidosis is pr esent. [2015] 
+1.12.4 Explain t hat t here is an absence of e vidence t hat using car diotocograph y 
+improves the out comes of pr eterm labour f or the par ent or t he bab y compar ed 
+with intermitt ent auscultation. Include f amily members or car ers in t he discussion, 
+as appr opriat e. [2015] 
+1.12.5 In established pr eterm labour wit h no ot her risk f actors (see t he NICE guideline 
+on fetal monit oring in labour ), off er a choice of f etal hear t rate monit oring using 
+either: 
+• cardiotocograph y using e xternal ultrasound or 
+• intermitt ent auscultation. [2015] 
+1.12.6 For guidance on using int ermitt ent auscultation f or fetal hear t rate monit oring, 
+see t he NICE guideline on f etal monit oring in labour . [2015] 
+Fetal sc alp ele ctrode 
+1.12.7 Do not use a f etal scalp electr ode f or fetal hear t rate monit oring if t he w oman is 
+less t han 34+0 weeks pr egnant unless all of t he following apply: Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19 of
+37• it is not possible t o monit or the fetal hear t rate using eit her e xternal 
+cardiotocograph y or int ermitt ent auscultation 
+• it has been discussed wit h a senior obst etrician 
+• the benefit s are likely to outw eigh t he pot ential risks 
+• the alt ernativ es (immediat e bir th, int ermitt ent ultrasound and no monit oring) 
+have been discussed wit h the w oman and ar e unacceptable t o her . [2015] 
+1.12.8 Discuss wit h the w oman (and her f amily members or car ers, as appr opriat e) the 
+possible use of a f etal scalp electr ode betw een 34+0 and 36+6 weeks of 
+pregnancy if it is not possible t o monit or the fetal hear t rate using eit her e xternal 
+cardiotocograph y or int ermitt ent auscultation. [2015] 
+Fetal b lood sam pling 
+1.12.9 Do not carr y out f etal blood sampling if t he w oman is less t han 34+0 weeks 
+pregnant. [2015] 
+1.12.10 Discuss wit h the w oman t he possible use of f etal blood sampling betw een 34+0 
+and 36+6 weeks of pr egnancy if t he benefit s are likely to outw eigh t he pot ential 
+risks. [2015] 
+1.12.11 When off ering f etal blood sampling, advise t he w oman t hat if a blood sample 
+cannot be obtained a caesar ean section is lik ely. Also see t he advice on f etal 
+blood sampling in t he NICE guidelines on intrapar tum car e for women wit h 
+existing medical conditions or obst etric complications and t heir babies and 
+intrapar tum car e. [2015 , amended 2020] 
+1.13 M ode o f bir th 
+1.13.1 Discuss t he general benefit s and risks of caesar ean bir th and v aginal bir th wit h 
+women in suspect ed, diagnosed or established pr eterm labour and in P -PROM 
+(and t heir f amily members or car ers, as appr opriat e). See t he section on planning Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20 of
+37mode of bir th in NICE's guideline caesar ean bir th. [2015] 
+1.13.2 Explain t o women in suspect ed, diagnosed or established pr eterm labour and 
+women wit h P-PROM about t he benefit s and risks of caesar ean bir th that ar e 
+specific t o gestational age. In par ticular , highlight t he difficulties associat ed wit h 
+performing a caesar ean bir th for a pr eterm bir th, especially t he incr eased 
+likelihood of a v ertical ut erine ( classical) incision and t he implications of t his for 
+futur e pregnancies. [2015 , amended 2022] 
+1.13.3 Explain t o women in suspect ed, diagnosed or established pr eterm labour t hat 
+there are no kno wn benefit s or harms f or the bab y from caesar ean bir th, but t he 
+evidence is v ery limit ed. [2015] 
+1.13.4 Consider caesar ean bir th for women pr esenting in suspect ed, diagnosed or 
+established pr eterm labour betw een 26+0 and 36+6 weeks of pr egnancy wit h 
+breech pr esentation. [2015] 
+1.14 T iming o f cord clam ping f or pr eterm babies 
+(born v aginall y or b y caesar ean bir th) 
+1.14.1 Wait at least 60 seconds bef ore clamping t he cor d of pr eterm babies unless t here 
+are specific mat ernal or f etal conditions t hat need earlier clamping. [2015 , 
+amended 2022] 
+1.14.2 Position t he bab y at or belo w the le vel of t he placenta bef ore clamping t he cor d. 
+[2015] 
+Terms use d in this guideline 
+This section defines t erms t hat ha ve been used in a par ticular wa y for this guideline. F or 
+other definitions see t he NICE glossar y and t he Think Local, Act P ersonal Car e and 
+Suppor t Jargon Bust er. Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21 of
+37Cervical trauma 
+Physical injur y to the cer vix including sur gery; for example, pr evious cone biopsy ( cold 
+knife or laser), lar ge loop e xcision of t he transf ormation z one (LLETZ; an y number) or 
+radical diat herm y. 
+Diagnose d preterm labour 
+A woman is in diagnosed pr eterm labour if she is in suspect ed pr eterm labour and has had 
+a positiv e diagnostic t est for pr eterm labour . 
+Emergency cervical cerclage (pr eviousl y kno wn as 'r escue ') 
+Cervical cer clage per formed as an emer gency pr ocedur e for pr ematur e cer vical dilatation, 
+often wit h exposed f etal membranes. 
+Estab lishe d preterm labour 
+A woman is in established pr eterm labour if she has pr ogressiv e cer vical dilatation fr om 
+4 cm wit h regular contractions (see t he definition of t he established first stage of labour in 
+NICE's guideline on intrapar tum car e). 
+MBRRACE-UK 
+Mothers and babies: r educing risk t hrough audit s and confidential enquiries acr oss t he UK 
+(MBRRA CE-UK) is a series of audit s carried out wit h the aim of identifying causes of 
+maternal and perinatal deat h and morbidity and making r ecommendations t o inform 
+maternity car e and so r educe t hese poor out comes. 
+Preterm pr elabour ruptur e of membr anes (P -PROM) 
+A woman is described as ha ving P -PROM if she has ruptur ed membranes bef ore 
+37+0 weeks of pr egnancy but is not in established labour . 
+Suspe cted preterm labour 
+A woman is in suspect ed pr eterm labour if she has r epor ted sympt oms of pr eterm labour Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22 of
+37and has had a clinical assessment (including a speculum or digital v aginal e xamination) 
+that confirms t he possibility of pr eterm labour , but rules out established labour . 
+Symptoms o f preterm labour 
+A woman has pr esent ed bef ore 37+0 weeks of pr egnancy r epor ting sympt oms t hat might 
+be indicativ e of pr eterm labour (such as abdominal pain), but no clinical assessment 
+(including speculum or digital v aginal e xamination) has tak en place. Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23 of
+37Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+As par t of t he 2019 updat e, the guideline committ ee made 3 additional r ecommendations 
+for resear ch on pr ophylactic pr ogest erone. As par t of t he 2022 updat e, the guideline 
+committ ee made an additional r ecommendation f or resear ch on r epeating mat ernal 
+corticost eroids. 
+Key recommenda tions f or research 
+1 Repeating ma ternal c orticoster oids 
+Is a single r epeat dose or a single r epeat course (2 doses) of mat ernal cor ticost eroids 
+more eff ectiv e than a single course f or pr eterm neonatal out comes and longer -term 
+outcomes f or babies and childr en, and what is t he optimal time int erval betw een 
+completing t he initial course (2 doses) and t he repeat dose or course? [2022] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on r epeat courses of mat ernal cor ticost eroids. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+effectiv eness of r epeat courses of mat ernal cor ticost eroids f or fetal lung maturation . 
+2 Prophylactic v aginal pr ogester one 
+Does pr ogest erone r educe t he risk of pr eterm bir th in w omen who ha ve risk f actors f or 
+preterm bir th, but do not ha ve a shor t cer vix (cervical lengt h of mor e than 25 mm)? [2019] 
+Why this is impor tant 
+Preterm bir th is a cause of significant morbidity f or women and babies, and impact s 
+negativ ely on w omen and t heir f amilies, as w ell as being cost ly to the NHS. Ther e is good 
+evidence f or the use of pr ogest erone t o reduce pr eterm bir th, ho wever studies include Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4 of
+37women wit h a combination of risk f actors f or pr eterm bir th, such as a hist ory of pr eterm 
+birth and a shor tened cer vix. 
+Ther e is no e vidence f or the eff ectiv eness of pr ogest erone in w omen who do not ha ve a 
+shor t cer vix, but who do ha ve other risk f actors f or pr eterm bir th. It is t herefore difficult t o 
+decide if pr ogest erone should be r ecommended f or women, and also whet her measuring 
+the cer vical lengt h to guide tr eatment is necessar y. 
+3 Prophylactic v aginal pr ogester one 
+Does pr ogest erone r educe t he risk of pr eterm bir th in w omen who ha ve a shor t cer vix 
+(cervical lengt h of 25 mm or less), but do not ha ve other risk f actors f or pr eterm bir th? 
+[2019] 
+Why this is impor tant 
+Preterm bir th is a cause of significant morbidity f or women and babies, and impact s 
+negativ ely on w omen and t heir f amilies, as w ell as being cost ly to the NHS. Ther e is good 
+evidence f or the use of pr ogest erone t o reduce pr eterm bir th, ho wever studies include 
+people wit h a combination of risk f actors f or pr eterm bir th, such as a hist ory of pr eterm 
+birth and a shor tened cer vix. 
+Ther e is a lack of e vidence f or the eff ectiv eness of pr ogest erone in w omen wit h a cer vical 
+lengt h of 25 mm or less, but wit hout ot her risk f actors f or pr eterm bir th. It is t herefore 
+difficult t o decide if pr ogest erone should be r ecommended f or women, and consequent ly 
+whet her measuring t he cer vix to guide tr eatment is necessar y for women wit h no ot her 
+risk f actors. 
+4 Prophylactic v aginal pr ogester one 
+At what gestation should tr eatment wit h prophylactic v aginal pr ogest erone f or the 
+prevention of pr eterm bir th be star ted and st opped? [2019] 
+Why this is impor tant 
+Preterm bir th is a cause of significant morbidity f or women and babies, and impact s 
+negativ ely on w omen and t heir f amilies, as w ell as being cost ly to the NHS. Ther e is good 
+evidence f or the use of pr ogest erone t o reduce pr eterm bir th, ho wever studies do not Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25 of
+37define t he optimal gestational age t hat t his tr eatment should be star ted and st opped, and 
+it is t herefore difficult t o recommend when it should star t and t he optimal duration of 
+treatment. 
+5 Prophylactic v aginal pr ogester one and pr ophylactic c ervical 
+cerclage 
+What is t he clinical eff ectiv eness of pr ophylactic cer vical cer clage alone compar ed wit h 
+prophylactic v aginal pr ogest erone alone and wit h bot h strat egies t oget her f or pr eventing 
+preterm bir th in w omen wit h a shor t cer vix and a hist ory of spontaneous pr eterm bir th? 
+[2015] 
+Why this is impor tant 
+Preterm bir th causes significant neonatal morbidity and mor tality , as w ell as long-t erm 
+disability . Ther efore strat egies f or pr eventing pr eterm bir th are impor tant. Ther e are 
+recognised risk f actors f or pr eterm bir th, and so int erventions can be off ered to women 
+with these risk f actors. Bot h prophylactic cer vical cer clage and pr ophylactic v aginal 
+progest erone ar e eff ectiv e in pr eventing pr eterm bir th in w omen wit h a shor t cer vix and a 
+history of pr eterm bir th, but t here is limit ed evidence on which is mor e eff ectiv e, and t he 
+relativ e risks and benefit s (including cost s) of each. Mor e randomised r esear ch is needed 
+to compar e the relativ e eff ectiv eness of pr ophylactic cer vical cer clage and pr ophylactic 
+vaginal pr ogest erone in impr oving bot h neonatal and mat ernal out comes. This will help 
+women and healt hcare professionals t o mak e an inf ormed decision about which is t he 
+most eff ectiv e prophylactic option. 
+Other r ecommenda tions f or research 
+6 Identifying inf ection in w omen wi th pr eterm pr elabour ruptur e 
+of membr anes (P -PROM) 
+What is t he diagnostic accuracy of serial C-r eactiv e protein testing t o identify 
+chorioamnionitis in w omen wit h P-PROM? [2015] 
+Why this is impor tant 
+Identifying inf ection in w omen wit h P-PROM is needed t o provide best practice car e. Early Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26 of
+37diagnosis of inf ection allo ws consideration of t herapeutic strat egies (including antibiotics 
+and/or early bir th). Eff ectiv e treatment of inf ection is par ticularly impor tant giv en that 
+sepsis is a common dir ect cause of mat ernal deat h. Ther e is curr ently limit ed evidence 
+that serial C-r eactiv e protein testing might be useful, but t he committ ee is awar e that t his 
+strat egy is in common practice. 
+Evidence fr om diagnostic studies is needed about t he accuracy of serial C-r eactiv e protein 
+testing f or identifying chorioamnionitis, which is one of t he most common and serious 
+infectiv e complications of P -PROM. 
+7 Emergency cervical cerclage 
+What is t he clinical eff ectiv eness of emer gency cer clage in impr oving out comes f or women 
+at risk of pr eterm bir th? [2015] 
+Why this is impor tant 
+Ther e is some e vidence fr om randomised studies t hat emer gency cer clage might be 
+effectiv e in impr oving neonatal out comes in w omen wit h a dilat ed cer vix and e xposed, 
+intact f etal membranes. Ho wever, there is uncer tainty about t he magnitude of t his eff ect. 
+The full consequences of t his strat egy and t he subgr oups of w omen at risk of pr eterm 
+labour who might par ticularly benefit ar e not kno wn. A randomised contr olled trial w ould 
+best addr ess t his question, but a national r egistr y of t he most critical out comes (neonatal 
+mortality and morbidity , mat ernal morbidity) could also be consider ed for women who did 
+not want t o par ticipat e in a randomised trial but who opt f or 'rescue' cer clage. 
+8 Magnesium sulf ate for neur oprotection 
+What is t he clinical eff ectiv eness of a bolus plus infusion of magnesium sulf ate compar ed 
+with a bolus alone f or pr eventing neur odevelopmental injur y in babies born pr eterm? 
+[2015] 
+Why this is impor tant 
+Ther e is e vidence fr om randomised studies t hat magnesium sulf ate has neur oprotectiv e 
+proper ties f or the bab y when giv en to women who will deliv er pr eterm up t o 34+0 weeks 
+of pr egnancy . However, there is uncer tainty about t he best met hod of administ ering 
+magnesium sulf ate for this purpose, wit h diff erent studies using diff erent strat egies. Ther e Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27 of
+37are significant adv antages f or the w oman and f or reducing healt hcare cost s if a bolus is as 
+effectiv e as a bolus plus infusion, because magnesium sulf ate has side eff ects for the 
+woman, and mor e monit oring is needed f or infusion, wit h additional associat ed healt hcare 
+costs. A randomised contr olled trial w ould best addr ess t his question b y assessing t he 
+effects of each met hod on neonatal and mat ernal out comes. Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28 of
+37Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. 
+Prophylactic v aginal pr ogester one 
+Recommendations 1 .2.1 to 1.2.5 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was good e vidence t hat v aginal pr ogest erone r educed t he risk of pr eterm bir th 
+before 34 weeks in w omen wit h a pr evious hist ory of pr eterm bir th, and in w omen wit h a 
+shor t cer vix (25 mm or less). The committ ee w ere awar e that t hese gr oups o verlapped, as 
+some w omen wit h a pr evious hist ory of pr eterm bir th will also ha ve a shor t cer vix. 
+Ther efore, they adopt ed the recommendation fr om t he pr evious guideline t o off er vaginal 
+progest erone t o women wit h a pr evious hist ory of pr eterm bir th and a shor t cer vix. The 
+committ ee concluded t hat, as in t he pr evious guideline, pr ogest erone should be off ered as 
+an equal option wit h cer vical cer clage (f or which no new e vidence r eview had been done), 
+as there is no e vidence t o det ermine which of t hese options is mor e eff ectiv e. 
+As the tr eatment options ar e very diff erent (r egular use of v aginal pr ogest erone 
+throughout pr egnancy , compar ed wit h a single operativ e procedur e), the committ ee 
+highlight ed that t he choice of tr eatment should be made aft er discussion of t he risks and 
+benefit s of t he 2 treatment s. 
+The committ ee w ere awar e that t here is uncer tainty about which risk f actors should be 
+used t o identify w omen at risk of pr eterm bir th (cervical lengt h measur ement s, previous 
+history of pr eterm bir th, pr evious cer vical sur gery). Ther e is also v ariation in practice 
+across t he countr y about which w omen ar e off ered cer vical lengt h scanning. Cer vical 
+scanning is curr ently off ered when t here is clinical concern about t he risk of pr eterm bir th, 
+rather t han as a r outine par t of ant enatal car e. Also, v aginal pr ogest erone ma y be eff ectiv e 
+at reducing pr eterm bir th for women wit h some risk f actors, but not ot hers. 
+Identifying specific gr oups of w omen who w ould benefit fr om tr eatment wit h progest erone 
+was difficult because of t he overlap in risk f actors f or an individual w oman: some w omen Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29 of
+37with a pr evious hist ory of pr eterm bir th also ha ve a cer vical lengt h of 25 mm or less, and 
+some w omen wit h a cer vical lengt h of 25 mm or less also ha ve a pr evious hist ory of 
+preterm bir th. Ther efore, it was har d to det ermine which of t hese 2 factors could identify 
+women at high risk of pr eterm bir th who w ould definit ely benefit fr om tr eatment wit h 
+vaginal pr ogest erone. Consequent ly, the committ ee agr eed t hat tr eatment wit h 
+progest erone should be consider ed for women wit h either of t hese risk f actors ( cervical 
+lengt h of 25 mm or less, or a pr evious hist ory of pr eterm bir th). Because of t he uncer tainty 
+over the benefit s of pr ogest erone in w omen who ha ve risk f actors f or a pr eterm bir th but 
+do not ha ve a cer vical lengt h of 25 mm or less, and w omen who ha ve a cer vical lengt h of 
+25 mm or less but do not ha ve a hist ory of pr eterm bir th, the committ ee made 
+recommendations f or resear ch on t his topic. 
+The timing of pr ogest erone administration v aried betw een t he studies. Ho wever, most 
+trials star ted tr eatment betw een 16+0 and 2 4+0 weeks. This was in k eeping wit h the 
+experience of t he committ ee members, t herefore they made a r ecommendation t o star t 
+treatment at an y suitable time during t hat range of gestational age. Ther e was no e vidence 
+on when pr ogest erone should be st opped, but t he committ ee's e xperience was t hat it 
+should be continued until at least 34 weeks. As t here was uncer tainty about t hese timings, 
+the committ ee also made a r ecommendation f or resear ch on t he optimal timing of 
+treatment . 
+The r ecommendation on ensuring a plan is in place f or removal of t he sutur e when 
+prophylactic cer vical cer clage is used was made in r esponse t o an NHS England saf ety 
+repor t, which highlight ed some instances when r emoval did not happen. 
+How the r ecommenda tions mig ht affect practice 
+Vaginal pr ogest erone is a r elativ ely ine xpensiv e and commonly used tr eatment f or women 
+at risk of pr eterm bir th, so t he recommendations ar e unlik ely to significant ly alt er practice. 
+As vaginal pr ogest erone should no w be consider ed for women wit h a hist ory of pr eterm 
+birth (wit h an unkno wn cer vical lengt h or a cer vical lengt h greater than 25 mm on scan), 
+this might incr ease t he use of pr ogest erone, but t he benefit s of r educed numbers of 
+preterm bir ths ar e likely to lead t o cost sa vings o verall. 
+The r ecommendation on planning f or removal of t he sutur e when pr ophylactic cer vical 
+cerclage is used is not e xpect ed to aff ect practice. 
+Return t o recommendations Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30 of
+37Emergency cervical cerclage 
+Recommendation 1 .6.4 
+Why the c ommi ttee made the r ecommenda tion 
+The r ecommendation on ensuring a plan is in place f or removal of t he sutur e when 
+emer gency cer vical cer clage is used was made in r esponse t o an NHS England saf ety 
+repor t, which highlight ed some instances when r emoval did not happen. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation is not e xpect ed to aff ect practice. 
+Return t o recommendation 
+Repeat courses o f ma ternal c orticoster oids 
+Recommendations 1 .9.4 to 1.9.6 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was some e vidence t hat r epeat doses of mat ernal cor ticost eroids r educe 
+birthweight, but t he absolut e reductions in bir thweight w ere small, wit h a mean diff erence 
+in bir thweight of 114 g betw een w omen r eceiving r epeat courses and w omen r eceiving a 
+single course. Subgr oup analyses sho wed reductions w ere seen when cor ticost eroids 
+were administ ered at lo wer gestational ages (belo w 30 weeks), when administ ered at 
+intervals of less t han 7 days, and when higher doses of mor e than 2 4 mg (t otal dose of 
+repeat course) w ere administ ered. Ther e was also a significant tr end f or reducing 
+birthweight as t he number of r epeat courses incr eased. Ther e was no e vidence of benefit 
+of mat ernal cor ticost eroids on chr onic lung disease, but t he committ ee w ere awar e of a 
+benefit seen wit h the need f or respirat ory suppor t in neonat es, alt hough t his out come had 
+not been prioritised f or inclusion in t he review . Ther e was good e vidence t hat r epeat 
+courses of mat ernal cor ticost eroids had no eff ect or beneficial eff ects on perinatal 
+mortality , neonatal admission, intra ventricular haemorrhage, gr owth at 2 years and 
+neurodevelopmental dela y. The committ ee agr eed t hat a single r epeat course ma y be 
+beneficial in cer tain cir cumstances, when t he pr evious course had been giv en mor e than Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31 of
+377 days pr eviously and pr eterm bir th was imminent, but t hat wit h multiple r epeat courses 
+the eff ects on bir thweight ma y outw eigh t he benefit s. Ho wever, the committ ee agr eed 
+that cor ticost eroids administ ered for ot her r easons during pr egnancy w ould not count 
+towards this total of 2 courses, and so clarified in t heir r ecommendation t hat only courses 
+administ ered for pr eterm labour should be count ed. 
+The committ ee w ere concerned wit h the lack of e vidence f or longer -term 
+neurodevelopmental and gr owth out comes be yond 2 years and lack of e vidence on t he 
+optimal dose and int erval for the repeat cor ticost eroids and so made a r ecommendation 
+for resear ch. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations pr ovide guidance on when a single r epeat course of mat ernal 
+corticost eroids ma y be used, and so ma y reduce v ariation in practice. This ma y incr ease 
+the number of w omen who r eceiv e a single r epeat course, and ma y reduce t he number of 
+multiple (mor e than 2) courses of mat ernal cor ticost eroids giv en. The cost impact is 
+therefore likely to be minimal considering t he lo w cost of a course of mat ernal 
+corticost eroids and t he relativ ely small population of w omen f or whom t his will be 
+consider ed. 
+Return t o recommendations Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32 of
+37Context 
+Preterm bir th is t he single biggest cause of neonatal mor tality and morbidity in t he UK. 
+Over 52, 000 babies (ar ound 7 .3% of liv e bir ths) in England and W ales in 2012 w ere born 
+preterm (t hat is, bef ore 37+0 weeks of pr egnancy). Ther e has been no decline in t he 
+preterm bir th rat e in t he UK o ver the last 10 years. 
+Babies born pr eterm ha ve high rat es of neonatal and inf ant mor tality , and t he risk of 
+mortality incr eases as gestational age at bir th decr eases. Babies who sur vive preterm 
+birth have incr eased rat es of disability . Recent UK studies comparing cohor ts born in 1995 
+and 2006 ha ve sho wn impr oved rat es of sur vival (fr om 40% t o 53%) f or extreme pr eterm 
+births (born betw een 22 and 26 weeks). Rat es of disability in sur vivors w ere largely 
+unchanged o ver this time period. 
+The major long-t erm consequence of pr ematurity is neur odevelopmental disability . 
+Although t he risk f or the individual child is gr eatest for those born at t he earliest 
+gestational ages, t he global bur den of neur odevelopmental disabilities depends on t he 
+number of babies born at each of t hese gestations, and so is gr eatest for babies born 
+betw een 32 and 36 weeks, less f or those born betw een 28 and 31 weeks, and least f or 
+those born at less t han 28 weeks gestation. 
+Around 7 5% of pr eterm bir ths occur aft er pr eterm labour , which ma y or ma y not be 
+preceded b y preterm pr elabour ruptur e of membranes. The r emaining w omen giving bir th 
+preterm ha ve an electiv e preterm bir th when t his is t hought t o be in t he fetal or mat ernal 
+interest (f or example, because of e xtreme gr owth retardation in t he bab y or mat ernal 
+conditions such as pr e-eclampsia). 
+This guideline r eviews t he evidence f or the best wa y to provide tr eatment f or women who 
+present wit h sympt oms and signs of pr eterm labour , and w omen who ar e scheduled t o 
+have an early planned bir th. It also r eviews ho w preterm bir th can be optimally diagnosed 
+when sympt oms ar e present, giv en that man y women t hought t o be in pr eterm labour on a 
+clinical assessment will not giv e bir th preterm. 
+The guideline does not co ver who should and should not ha ve medically indicat ed pr eterm 
+birth, or diagnostic or pr edictiv e tests in asympt omatic w omen. Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33 of
+37Finding mor e inf orma tion and c ommi ttee 
+details 
+To find out what NICE has said on t opics r elated to this guideline, see t he NICE t opic page 
+on intrapar tum car e. 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews and full guideline . You can also find inf ormation about how the guideline 
+was de veloped , including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting NICE guidelines int o practice, see resour ces t o help 
+you put NICE guidance int o practice . Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34 of
+37Update inf orma tion 
+June 2022: We have review ed the evidence and made new r ecommendations on t he use 
+of repeat courses of mat ernal cor ticost eroids. These r ecommendations ar e mark ed 
+[2022]. 
+Recommendations t hat ha ve been delet ed, or changed wit hout an e vidence r eview 
+Some r ecommendations ha ve been delet ed fr om t he 2015 guideline. Appendix 1 sets out 
+these r ecommendations and includes details of r eplacement r ecommendations. If t here is 
+no replacement r ecommendation, an e xplanation f or the deletion is giv en. 
+Some r ecommendations fr om t he 2015 guideline ha ve been amended wit h changes t hat 
+could aff ect t he int ent wit hout r eviewing t he evidence. These ar e labelled [2015 , amended 
+2022] . Appendix 2 sets out t hese r ecommendations and includes details of t he revised 
+recommendations and t he reasons f or the changes. 
+August 2019: We have review ed the evidence and made new r ecommendations on t he 
+effectiv eness of pr ophylactic v aginal pr ogest erone and pr ophylactic cer vical cer clage f or 
+preterm labour and bir th. These r ecommendations ar e mark ed [2019] . 
+We have also made some changes wit hout an e vidence r eview: 
+• updat ed recommendations t o sho w cer vical lengt h of 25 mm or less as indicativ e of a 
+high risk of pr eterm bir th for consist ency 
+• updat ed licensing inf ormation f or er ythromycin and magnesium sulf ate use during 
+pregnancy 
+• updat ed the time period when cor ticost eroids ar e off ered to women wit h suspect ed 
+preterm labour t o reflect curr ent practice 
+• updat ed advice on insulin-lik e growth factor binding pr otein 1 t est or placental alpha-
+microglobulin 1 t esting in pr eterm ruptur e of membranes t o remove the w ord 
+'consider' , making it clear er when t he tests should be used. 
+These r ecommendations ar e mark ed [2015 , amended 2019] . Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35 of
+37Minor changes since publication 
+April 202 4: We updat ed the licensing inf ormation about pr ogest erone f or 
+recommendations 1 .2.1 and 1 .2.2. Pr ogest erone was pr eviously an off -label tr eatment f or 
+this indication. 
+October 2023: We updat ed links t hroughout t o the NICE guideline on intrapar tum car e, 
+which has been updat ed. 
+December 2022: We updat ed the links in r ecommendations 1 .12.3, 1.12.5 and 1 .12.6 to refer 
+to the NICE guideline on f etal monit oring in labour . 
+April 2021: In recommendation 1 .4.4, we added a link t o the section on w omen wit h 
+prolonged pr elabour ruptur e of membranes who ha ve group B str eptococcal colonisation, 
+bacteriuria or inf ection, in NICE's updat ed guideline on neonatal inf ection. 
+Januar y 2021: A duplicat e link was r emoved fr om recommendation 1 .12.11. Footnot es w ere 
+incorporat ed int o the main t ext to impr ove accessibility . 
+August 2020: Links t o the NICE guidelines on intrapar tum car e for women wit h existing 
+medical conditions or obst etric complications and t heir babies and intrapar tum car e for 
+healt hy women and babies were added t o recommendation 1 .12.11. This r ecommendation is 
+mark ed [2015 , amended 2020] . 
+October 2019: The r eview dat e for recommendation 1 .3.1 was updat ed to sho w it had been 
+amended in 2019 wit hout an e vidence r eview . 
+ISBN: 9 78-1-47 31-1529- 3 Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36 of
+37Accreditation Preterm labour and bir th (NG25)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37 of
+37

@@ -1,0 +1,842 @@
+Reduced Fetal Movements 
+Green-top Guideline No. 57 
+February 2011 
+Reduced Fetal Movements 
+This is the first edition of this guideline.
+1. Purpose and scope 
+The purpose of this guideline is to provide advice to guide clinicians, based on the best evidence where 
+available, regarding the management of women presenting with reduced fetal movements (RFM) during 
+pregnancy. This guideline reviews the risk factors for RFM in pregnancy and factors influencing maternal
+perception. It provides recommendations as to how women presenting in both the community and 
+hospital settings should be managed. This guideline excludes the management of RFM in multiple 
+pregnancy. As is apparent from the low grading of the evidence for many of the recommendations, they 
+have been developed to provide a broad practical guide for midwives and obstetricians in clinical practice.
+However, it is recognised that in individual women alternative approaches may be reasonable 
+1.1 Population and setting 
+Pregnant women in community or hospital settings reporting RFM in singleton pregnancies. 
+1.2 Interventions to be studied 
+Comparison of modalities to detect and manage women perceiving RFMs.
+2. Background 
+Maternal perception of fetal movement is one of the first signs of fetal life and is regarded as a manifes -
+tation of fetal wellbeing.1,2 Movements are first perceived by the mother between 18 and 20 weeks of
+gestation and rapidly acquire a regular pattern. Fetal movements have been defined as any discrete kick,
+flutter, swish or roll.3A significant reduction or sudden alteration in fetal movement is a potentially 
+important clinical sign. It has been suggested that reduced or absent fetal movements may be a warning 
+sign of impending fetal death. Studies of fetal physiology using ultrasound have demonstrated an 
+association between RFM and poor perinatal outcome.4,5 The majority of women (55%) experiencing a 
+stillbirth perceived a reduction in fetal movements prior to diagnosis.6A number of studies of fetal deaths 
+in Norway and the UK identified that an inappropriate response by clinicians to maternal perception of
+RFM was a common contributory factor in stillbirth.7,8 
+3. Identification and assessment of evidence 
+This guideline was developed in accordance with standard methodology for producing RCOG Green-top 
+Guidelines. Medline, Pubmed, all EBM reviews (Cochrane CRCT, Cochrane Database of Systematic Reviews,
+Methodology register, ACP journal club, DARE, HTA, Maternity and Infant Care) , EMBASE and TRIP were 
+searched for relevant randomised controlled trials, systematic reviews and meta-analyses, cohort studies 
+and case studies. The search was restricted to articles published between 1980 and November 2008. Search 
+words included ‘fetal activity’, ‘fetal movement + detection’, ‘reduced fetal movement’, ‘fetal cardio -
+tocography’, ‘fetal heart auscultation’ and ‘umbilical artery Doppler’, including all relevant MeSH terms. The 
+search was limited to humans and the English language. The National Library for Health and the National
+Guidelines Clearing House were also searched for relevant guidelines. Where possible, recommendations 
+are based on available evidence ;areas where evidence is lacking are annotated as good practice points 
+(designated by a tick) .
+3.1 Limitations of data used in this guideline 
+Interpreting studies of women perceiving RFM is complicated by multiple definitions of normal and 
+abnormal fetal movements (discussed in detail in section 5 of this guideline) and a paucity of large-scale 
+RCOG Green-top Guideline No. 57 2of 16 © Royal College of Obstetricians and Gynaecologists (over 1000 participants) descriptive or intervention studies. There are no randomised controlled trials 
+addressing the management of RFM. The main outcome of interest –stillbirth – is relatively uncommon and 
+adequately powered studies of different management protocols would require large numbers of parti c -
+ipants. Consequently, many studies have limitations in terms of definition of RFM and outcomes,
+ascertain ment bias and selection bias. 
+4. What are considered normal fetal movements during pregnancy? 
+Most women are aware of fetal movements by 20 weeks of gestation. 
+Clinicians should be aware (and should advise women) that although fetal movements tend to plateau 
+at 32 weeks of gestation, there is no reduction in the frequency of fetal movements in the late third 
+trimester. 
+Perceived fetal movements are defined as the maternal sensation of any discrete kick, flutter, swish or roll.3
+Such fetal activity provides an indication of the integrity of the central nervous and musculoskeletal
+systems. The normal fetus is active and capable of physical movement,and goes through periods of both 
+rest and sleep. The majority of women perceive fetal movements and intuitively view their experience of
+fetal activity as normal. 
+From 18–20 weeks of gestation ,most pregnant women become aware of fetal activity ,although 
+some multiparous women may perceive fetal movements as early as 16 weeks of gestation and 
+some primiparous women may perceive movement much later than 20 weeks of gestation.1
+The number of spontaneous movements tends to increase until the 32nd week of pregnancy.9– 
+11 From this stage of gestation, the frequency of fetal movements plateaus until the onset of
+labour ;however ,the type of fetal movement may change as pregnancy advances in the third 
+trimester.9–13 By term, the average number ofgeneralised movements per hour is 31 (range 16– 
+45) ,with the longest period between movements ranging from 50 to 75 minutes. Changes in the 
+number and nature of fetal movements as the fetus matures are considered to be a reflection 
+of the normal neurological development of the fetus. From as early as 20 weeks of gestation, fetal
+movements show diurnal changes. The afternoon and evening periods are periods of peak 
+activity.14,15 Fetal movements are usually absent during fetal ‘sleep ’cycles ,which occur regularly 
+throughout the day and night and usually last for 20–40 minutes.5,16 These sleep cycles rarely 
+exceed 90 minutes in the normal, healthy fetus.16–18 
+Because of the paucity of robust epidemiological studies on fetal activity patterns and maternal perception 
+of fetal activity in normal pregnancies ,there is currently no universally agreed definition of RFM. 
+5. Are there factors which influence a woman’s perception of this activity? 
+Women should be advised of the need to be aware of fetal movements up to and including the onset of 
+labour and should report any decrease or cessation of fetal movements to their maternity unit. 
+Fetal activity is influenced by a wide variety of factors. There is some evidence that women perceive most
+fetal movements when lying down, fewer when sitting and fewest while standing.15 It is therefore not
+surprising that pregnant women who are busy and not concentrating on fetal activity often report a misper -
+ception of a reduction of fetal movements .12,17 Johnson demonstrated that when attention is paid to fetal
+activity in a quiet room and careful recordings are made, fetal movements that were not previously 
+perceived are often recognised clearly.19,20 
+Prior to 28 +0 weeks of gestation, an anteriorly positioned placenta may decrease a woman’s 
+perception of fetal movements.21 
+© Royal College of Obstetricians and Gynaecologists 3of 16 RCOG Green-top Guideline No. 57 C
+B
+Evidence 
+level 2 –
+P
+Evidence 
+level 2 –Sedating drugs which cross the placenta such as alcohol, benzodiazepines, methadone and other 
+opioids can have a transient effect on fetal movements.22,23 
+Several observational studies have demonstrated an increase in fetal movements following the elevation 
+of glucose concentration in maternal blood ,although other studies refute these findings.24,25 From 30 
+weeks of gestation onwards ,the level of carbon dioxide in maternal blood influences fetal respiratory 
+movements ,and some authors report that cigarette smoking is associated with a decrease in fetal
+activity.22,26,27 
+The administration of corticosteroids to enhance fetal lung maturation has been reported by 
+some authors to decrease fetal movements and fetal heart rate variability detected by 
+cardiotocography (CTG )over the 2 days following administration.28–30 The pathophysiology of
+corticosteroid changes in fetal movement and fetal heart rate variability is still unclear and has 
+not been definitely proven.28–31 Evidence level 2-
+Fetuses with major malformations are generally more likely to demonstrate reduced fetal activity.31 
+However, normal or excessive fetal activity has been reported in anencephalic fetuses.32,33 A lack of vigorous 
+motion may relate to abnormalities of the central nervous system, muscular dysfunction or skeletal
+abnormalities.34 
+Fetal presentation has no effect on perception of movement.35 
+Fetal position might influence maternal perception :80% of fetal spines lay anteriorly in women 
+who were unable to perceive fetal movements despite being able to visualise them when an 
+ultrasound scan was performed.36 
+6. How can fetal movements be assessed? 
+Fetal movements should be assessed by subjective maternal perception of fetal movements. 
+Fetal movements are most commonly assessed by maternal perception alone. Studies on the 
+correlation between maternal perception of fetal movements and fetal movements concurrently 
+detected on ultrasound scans show wide variation, with correlation ranging from 37 to 8 8% 
+and large body movements and those lasting more than 7 seconds most likely to be felt.37–43 The 
+greatest number of fetal movements are noted when the mother is lying down ,and the number 
+appears to be greatest in the evening.12 This may be an effect of concentrating on fetal
+movements. The difference in mean time to perceive 10 movements varied between 21 minutes 
+for focused counting to 162 minutes with unfocused perception of fetal movements.4,17 
+Objective assessments of fetal movements use Doppler or real-time ultrasound to detect fetal
+movement. These studies report slightly increased sensitivity for fetal movements recorded by 
+ultrasound ,with 31.4–57.2% of all movements recorded compared with 30.8% for maternally 
+perceived fetal movements.44,45 However, the duration of recording is restricted to 20–30 
+minutes with the mother in a semi-recumbent position. There are no studies which have 
+evaluated the use of longer periods of fetal movement counting by Doppler ultrasound or 
+whether this method can detect fetuses atrisk of stillbirth. Given the potential detection of
+false-positive signals from maternal abdominal wall movements such as coughing, this may not
+be a useful means to objectively measure fetal movements in all pregnant women.46 
+RCOG Green-top Guideline No. 57 4of 16 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 3 
+Evidence 
+level 2 –
+Evidence 
+level 2+ 
+Evidence 
+level 2 –
+C
+Evidence 
+level 2 –
+Evidence 
+level 2 –7. Should fetal movements be counted routinely in a formal manner? 
+There is insufficient evidence to recommend formal fetal movement counting using specified alarm limits. 
+Women should be advised to be aware of their baby’s individual pattern of movements. If they are 
+concerned about a reduction in or cessation of fetal movements after 28 +0 weeks of gestation, they should 
+contact their maternity unit. 
+Women who are concerned about RFM should not wait until the next day for assessment of fetal 
+wellbeing. 
+If women are unsure whether movements are reduced after 28 +0 weeks of gestation, they should be 
+advised to lie on their left side and focus on fetal movements for 2 hours. If they do not feel 10 or more 
+discrete movements in 2 hours, they should contact their midwife or maternity unit immediately. 
+Clinicians should be aware that instructing women to monitor fetal movements is potentially associated 
+with increased maternal anxiety. 
+Formal fetal movement counting relies on a woman counting fetal movements and ,if she perceives fewer 
+movements than a specified alarm limit,contacting her care provider. There are a number of problems 
+with this strategy. First, there is a wide range of ‘normal’ fetal movements, leading to wide variability among 
+mothers. Second, the most frequently used alarm limit was developed in high-risk patients who counted 
+fetal movements while hospital inpatients; therefore, these observations may not be applicable to a general
+population.47 Ideally, an alarm limit would be developed using the whole obstetric population and then 
+be proved to reduce stillbirth rates in a prospective study.48 
+There have been five studies evaluating maternal assessment of fetal movements. Grant et al.
+published a multicentre study randomising women (n=68 654) to counting fetal movements 
+using the count-to-ten chart or a non-counting group. These groups were contaminated as 
+women in the non-counting group were also instructed to count fetal movements if they were 
+deemed high risk.4There was no reduction in perinatal mortality in the group randomised to 
+counting fetal movements, although the number of women presenting initially with a live fetus 
+that was subsequently stillborn was greater in the counting cohort (11 versus six). The study’s 
+authors acknowledged that these intrauterine deaths may have been preventable, resulting from 
+false reassurance from CTG and clinical error. Importantly, the perinatal mortality rate for the 
+whole study population fell to 2.9 per 1000 compared with 4.0 per 1000 reported prior to the 
+study ,suggesting that participation in the trial may have been beneficial (the Hawthorne 
+effect).49 
+In a smaller randomised trial (n=2250), patients were randomised to focus on fetal movements 
+for 2 hours three times a week or given no information.3There were eight intrauterine deaths,
+all in the control group, leading to a significant decrease in perinatal mortality in women who 
+formally counted fetal movements. Over 75% of this study population were classified as high risk. 
+Moore and Piacquadio used a retrospective case –control design.17 In a period when women 
+counted fetal movements for 2 hours a day but were not given any alarm limits ,the perinatal
+mortality rate was 8.7 per 1000 (n=2519). The study was then extended to 5758 women who 
+were instructed to present for further investigation if they had not felt 10 movements after 2 
+hours of focused counting.50 During this period the perinatal mortality rate was 3.6 per 1000.
+This extension of the study was associated with increased hospital attendances, rates of
+induction of labour (7.9% versus 4.4%) and emergency caesarean birth for fetal distress (2.4% 
+versus 0.8%). 
+© Royal College of Obstetricians and Gynaecologists 5of 16 RCOG Green-top Guideline No. 57 B
+PC
+C
+B
+Evidence 
+level 2+ Evidence 
+level 2 –
+Evidence 
+level 2 –Westgate and Jamieson compared the rates of stillbirth before and after the introduction of the 
+count-to-ten charts in New Zealand.51 They describe a significant reduction in the stillbirth rate 
+from 10.8 to 8.2 per 1000 total births. Other service improvements introduced over this period 
+may also have had an impact on the perinatal mortality rate.
+In Norway ,a comparison was made between the incidence of stillbirth before and after women 
+were given written information about decreased fetal movements and a standard protocol for 
+the management of RFM was introduced.52 The incidence of stillbirth fell from 3.0 to 2.0 per 
+1000 during the intervention period. In women perceiving RFM, the rate dropped from 42 to 
+24 per 1000.
+While normal perception of fetal movements is associated with a positive effect on maternal–
+fetal attachment,52,53 the effect of monitoring fetal movements is equivocal. Two studies 
+(including one randomised controlled trial) reported no adverse effects.54,55 A small retrospective 
+cohort found that 23% of women reported anxiety and a further 16% felt that monitoring fetal
+movements was useless and a nuisance.56 Perception of RFM itself is associated with increased 
+maternal anxiety.57,58 Clinicians should be aware that the risk of stillbirth (in the absence of
+congenital anomaly) in the UK is less than one in 250 births. Any study of the utility of fetal
+movements as a screening test must take account of the potentially deleterious effects of
+maternal stress and anxiety. 
+8. What is the optimal management of women with RFM? 
+The initial goal of antenatal fetal surveillance in cases of RFM is to exclude fetal death. Subsequent to this ,
+the aim is to exclude fetal compromise and to identify pregnancies at risk of adverse pregnancy outcome 
+while avoiding unnecessary interventions. A large cross-sectional survey revealed wide variations in 
+knowledge and practice among both obstetricians and midwives with regard to management of women 
+presenting with RFM. Although most clinicians recognised the association with fetal growth restriction 
+(FGR), this did not translate into practice as professionals seldom undertook further assessment to identify 
+FGR.59 
+8.1 What should be included in the clinical history? 
+Upon presenting with RFM, a relevant history should be taken to assess a woman’s risk factors for 
+stillbirth and FGR. 
+All clinicians should be aware of the potential association of decreased fetal movements with key risk 
+factors such as FGR, small-for-gestational-age (SGA) fetus, placental insufficiency and congenital malfor -
+mations. 
+If after discussion with the clinician it is clear that the woman does not have RFM, there are no other risk 
+factors for stillbirth and there is the presence of a fetal heart rate on auscultation, she can be reassured. 
+However, if the woman still has concerns, she should be advised to attend her maternity unit. 
+Women noticing a sudden change in fetal activity or in whom other risk factors for stillbirth are identified 
+should report to their maternity unit for further investigation (see section 6.3). 
+A history of RFM should be taken, including the duration of RFM, whether there has been absence of fetal
+movements and whether this is the first occasion the woman has perceived RFM. The history must include 
+a comprehensive stillbirth risk evaluation, including a review of the presence of other factors associated 
+with an increased risk of stillbirth, such as multiple consultations for RFM, known FGR, hypertension,
+diabetes, extremes of maternal age, primiparity, smoking, placental insufficiency, congenital malformation,
+obesity, racial/ethnic factors, poor past obstetric history (e.g. FGR and stillbirth), genetic factors and issues 
+RCOG Green-top Guideline No. 57 6of 16 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 2+ Evidence 
+level 2 –
+Evidence 
+level 2+ 
+P
+C
+PBwith access to care. Clinicians should be aware that a woman’s risk status is fluid throughout pregnancy 
+and that women should be transferred from low-risk to high-risk care programmes if complications occur.60 
+If after discussion with the clinician it is clear that the woman does not have RFM ,in the absence of further 
+risk factors and the presence of a normal fetal heart rate on auscultation ,there should be no need to follow 
+up with further investigations.
+8.2 What should be covered in the clinical examination? 
+If a woman presents with RFM in the community setting with no facility to auscultate the fetal heart, she 
+should be referred immediately to her maternity unit for auscultation. 
+When a woman presents with RFM in the community or hospital setting, an attempt should be made to 
+auscultate the fetal heart using a handheld Doppler device to exclude fetal death. 
+Clinical assessment of a woman with RFM should include assessment of fetal size with the aim of 
+detecting SGA fetuses. 
+The key priority when a woman presents with RFM is to confirm fetal viability. In most cases,
+a handheld Doppler device will confirm the presence of the fetal heart beat. This should be 
+available in the majority of community settings in which a pregnant woman would be seen by 
+a midwife or general practitioner. The fetal heart beat needs to be differentiated from the 
+maternal heart beat. This is easily done in most cases by noting the difference between the fetal
+heart rate and the maternal pulse rate. If the presence of a fetal heart beat is not confirmed ,
+immediate referral for ultrasound scan assessment of fetal cardiac activity must be undertaken.
+If the encounter with the woman has been over the telephone and there is thus no additional
+reassurance of auscultation of the fetal heart, the woman should be advised to report for further 
+assessment. 
+Methods employed to detect SGA fetuses include abdominal palpation, measurement of symphysis–fundal
+height and ultrasound biometry. The RCOG guidelines on the investigation and management of the SGA 
+fetus recommend use of a customised fundal height chart.61 Consideration should be given to the judicious 
+use of ultrasound to assess fetal size in women in whom clinical assessment is likely to be less accurate,
+for example those with a raised body mass index. As pre -eclampsia is also associated with placental
+dysfunction ,it is prudent to measure blood pressure and test urine for proteinuria in women with RFM.
+8.3 What is the role of CTG? 
+After fetal viability has been confirmed and history confirms a decrease in fetal movements, 
+arrangements should be made for the woman to have a CTG to exclude fetal compromise if the pregnancy 
+is over 28 +0 weeks of gestation. 
+CTG monitoring of the fetal heart rate, initially for at least 20 minutes, provides an easily 
+accessible means of detecting fetal compromise. The presence of a normal fetal heart rate 
+pattern (i.e. showing accelerations of fetal heart rate coinciding with fetal movements) is 
+indicative of a healthy fetus with a properly functioning autonomic nervous system. Interpre -
+tation of the CTG fetal heart rate pattern is assisted by adopting the National Institute for Health 
+and Clinical Excellence classification of fetal heart rate patterns.62 The fetal heart rate accelerates 
+with 92 –97% of all gross body movements felt by the mother.63,64 Computer systems for interpre -
+tation of CTG provide objective data, reduce intra- and inter-observer variation and are more 
+accurate than clinical experts in predicting umbilical acidosis and depressed Apgar scores.
+However, further evaluation of this technology is required before clinical recommendations can 
+be made.65 
+© Royal College of Obstetricians and Gynaecologists 7of 16 RCOG Green-top Guideline No. 57 B
+B
+Evidence 
+level 2+ 
+B
+Evidence 
+level 3 PSeveral studies have concluded that if the term fetus does not experience a fetal heart rate 
+acceleration for more than 80 minutes, fetal compromise is likely to be present.66–68 However, a 
+systematic review in the Cochrane Database of Systematic Reviews did not confirm or refute 
+any benefits of routine CTG monitoring of ‘at risk ’pregnancies.69 The authors acknowledged 
+several limitations ,including limited numbers of women (four trials and 1588 women) and 
+serious methodological concerns, such as the fact that the trials were conducted in the early 
+1980s when CTG monitoring was just being introduced into routine clinical practice.
+In a Norwegian study of 3014 women who presented with RFM ,a CTG was performed in 97.5% 
+of cases ,with an abnormality such as FGR, fetal distress, oligohydramnios or malformations 
+detected in 3.2% of cases.58 In a different observational study of women presenting with RFM 
+who had an initial CTG and an ultrasound scan, 21% had an abnormality detected that required 
+action and 4.4% were admitted for immediate delivery.70 Another study showed that stillbirth 
+rates (corrected for lethal congenital anomalies) after a reactive or non-reactive CTG were 1.9 
+and 26 per 1000 births ,respectively.71 Lastly, a relatively small study reported that 56% of women 
+with a high-risk pregnancy who reported RFM had an abnormal CTG. This was associated with 
+an unfavourable perinatal outcome in nine out of ten cases.40 
+8.4 What is the role of ultrasound scanning? 
+Ultrasound scan assessment should be undertaken as part of the preliminary investigations of a woman 
+presenting with RFM after 28 +0 weeks of gestation if the perception of RFM persists despite a normal 
+CTG or if there are any additional risk factors for FGR/stillbirth. 
+If an ultrasound scan assessment is deemed necessary, it should be performed when the service is next 
+available – preferably within 24 hours. 
+Ultrasound scan assessment should include the assessment of abdominal circumference and/or 
+estimated fetal weight to detect the SGA fetus, and the assessment of amniotic fluid volume. 
+Ultrasound should include assessment of fetal morphology if this has not previously been performed 
+and the woman has no objection to this being carried out. 
+There are no randomised controlled trials of ultrasound scan versus no ultrasound scan in 
+women with RFM. Froen et al. conducted a prospective population-based cohort study of 46 132 
+births in eastern Norway and Bergen over a 17 -month period from 2006 to 2007.57 In the 
+prospective cohort of 3014 women presenting with RFM, ultrasound scanning was performed 
+in 94% of cases and detection of an abnormality such as FGR, reduced amniotic fluid volume 
+and abnormal fetal morphology or Doppler of the umbilical artery was reported in 11.6% of
+cases. Umbilical artery Doppler alone did not provide uniquely valuable information in any case. 
+In a recent quality improvement programme in Norway ,a prospective ‘before and after ’study 
+design was used to evaluate the combined impact of providing women with information on 
+RFM and clinicians with clinical practice guidelines.13,34,72 After an initial period of study (n= 19 
+407),an investigation protocol of CTG and ultrasound scan was introduced in the management
+of women with RFM (n= 46 143). The guideline recommended that both investigations be 
+performed within 2 hours if women reported no fetal movements, and within 12 hours if they 
+reported RFM. The ultrasound scan was conducted to assess amniotic fluid volume, fetal size and 
+fetal anatomy; the addition of Doppler studies to the investigation protocol did not show any 
+additional benefit. There was a significant reduction in all stillbirths from 3.0 to 2.0 per 1000,
+and from 4.2% to 2.4% of women presenting with RFM. The study reported no increase in the 
+number of preterm births, infants requiring transfer to neonatal care or infants with severe 
+neonatal depression or FGR. There was more than a doubling in the number of ultrasound scans 
+RCOG Green-top Guideline No. 57 8of 16 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 2 –
+Evidence 
+level 2+ 
+PB
+C
+A
+Evidence 
+level 2+ 
+Evidence 
+level 2 –(OR 2.64; 95% CI 2.02 –3.45), but this seemed to be compensated by a reduction in additional
+follow-up consultations and admissions for induction of labour. 
+In a study of 489 women with RFM, Ahn et al. demonstrated that women with RFM but no 
+additional pregnancy risk factors did not require further follow-up once the CTG and the 
+amniotic fluid volume were confirmed to be normal.73 However, the study found a 3.7 times 
+greater likelihood of diminished amniotic fluid volume on scan in their study population. 
+8.5 Is there any role for the biophysical profile (BPP)? 
+There may be a role for the selective use of BPP in the management or investigation of RFM. 
+The basis of the BPP is the observed association between hypoxia (low levels of oxygen) and 
+alterations of measures of central nervous system performance such as fetal heart rate patterns,
+fetal movement and fetal tone, which have been observed in both human and animal fetuses.74 
+A systematic review of the use of BPP in women with high-risk pregnancies, including women 
+with RFM, included five poor-quality studies with fewer than 3000 patients.75 The systematic 
+review concluded that the available evidence from randomised controlled trials does not
+support the use of BPP as a test of fetal wellbeing in high -risk pregnancies. It should be noted ,
+however ,that there is evidence from uncontrolled observational studies that BPP in high-risk 
+women has good negative predictive value; that is, fetal death is rare in women in the presence 
+of a normal BPP .76 
+9. What is the optimal surveillance method for women who have presented with RFM in 
+whom investigations are normal? 
+Women should be reassured that 70% of pregnancies with a single episode of RFM are uncomplicated. 
+There are no data to support formal fetal movement counting (kick charts) after women have perceived 
+RFM in those who have normal investigations. 
+Women who have normal investigations after one presentation with RFM should be advised to contact 
+their maternity unit if they have another episode of RFM. 
+The majority of women (approximately 70%) who perceive a reduction in fetal movements will
+have a normal outcome to their pregnancy.77–79 There are no studies of the follow-up of women 
+who have normal investigations. Some practitioners advocate commencing formal fetal
+movement counting in this situation.57 There is no evidence to support this strategy. Formal
+fetal movement counting in this situation is subject to the same difficulties as in the general
+obstetric population. 
+In a single retrospective cohort study ,perinatal outcome was worse in women who had 
+presented on more than one occasion with RFM.79 If a woman experiences a further episode 
+of definite RFM ,she should be referred for hospital assessment to exclude signs of compromise 
+through the use of CTG and ultrasound ,as outlined in section 8. 
+10. What is the optimal management of the woman who presents recurrently with reduced 
+RFM? 
+When a woman recurrently perceives RFM, her case should be reviewed to exclude predisposing causes. 
+When a woman recurrently perceives RFM, ultrasound scan assessment should be undertaken as part of 
+the investigations. 
+© Royal College of Obstetricians and Gynaecologists 9of 16 RCOG Green-top Guideline No. 57 Evidence 
+level 2 –
+Evidence 
+level 2 –
+B
+Evidence 
+level 1 –
+C
+C
+P
+Evidence 
+level 2 –/+ 
+Evidence 
+level 2 –
+C
+BCaregivers should be aware of the increased risk of poor perinatal outcome in women presenting with 
+recurrent RFM. 
+Women who present on two or more occasions with RFM are at increased risk of a poor 
+perinatal outcome (stillbirth, FGR or preterm birth) compared with those who attend on only 
+one occasion (OR 1.92; 95% CI 1.21–3.02).79 There are no studies to determine whether 
+intervention (e.g. delivery or further investigation) alters perinatal morbidity or mortality in 
+women presenting with recurrent RFM. Therefore ,the decision whether or not to induce labour 
+at term in a woman who presents recurrently with RFM when the growth, liquor volume and 
+CTG appear normal must be made after careful consultant-led counselling of the pros and cons 
+of induction on an individualised basis. 
+11. What is the optimal management of RFM before 24 +0 weeks of gestation? 
+If a woman presents with RFM prior to 24 +0 weeks of gestation, the presence of a fetal heartbeat should 
+be confirmed by auscultation with a Doppler handheld device. 
+If fetal movements have never been felt by 24 weeks of gestation, referral to a specialist fetal medicine 
+centre should be considered to look for evidence of fetal neuromuscular conditions. 
+There are no studies looking at the outcome of women who present with RFM before 24 +0 weeks of
+gestation. While placental insufficiency rarely presents before the first trimester, the fetal heartbeat should 
+be auscultated to exclude fetal demise. There is limited evidence from a number of case reports that women 
+who present having failed to feel fetal movements at all may have a fetus with an underlying neuromuscular 
+condition.80–84 A routine full antenatal check-up should be carried out,including listening to the fetal heart.
+12. What is the optimal management of RFM between 24 +0 and 28 +0 weeks of gestation? 
+If a woman presents with RFM between 24 +0 and 28 +0 weeks of gestation, the presence of a fetal heartbeat 
+should be confirmed by auscultation with a Doppler handheld device. 
+There are no studies looking at the outcome of women who present with RFM between 24 +0 and 28 +0 
+weeks of gestation. The fetal heartbeat should be confirmed to check fetal viability. History must include 
+a comprehensive stillbirth risk evaluation, including a review of the presence of other risk factors 
+associated with an increased risk of stillbirth. Clinicians should be aware that placental insufficiency may 
+present at this gestation. There is no evidence to recommend the routine use of CTG surveillance in this 
+group. If there is clinical suspicion of FGR, consideration should be given to the need for ultrasound 
+assessment. There is no evidence on which to recommend the routine use of ultrasound assessment in this 
+group. 
+13. What should we document in the maternal records? 
+It is important that full details of assessment and management are documented. It is also important to 
+record the advice given about follow-up and when/where to present if a further episode of RFM is 
+perceived. Accurate record keeping is needed in sufficient detail to ensure that the consultation and 
+outcome can be easily audited and continuity of care provided.
+14. Suggested audit topics 
+GExistence of a guideline on RFM.
+GPercentage of women over 28 +0 weeks of gestation in whom history confirms RFM having a CTG to 
+exclude fetal compromise.
+RCOG Green-top Guideline No. 57 10 of 16 © Royal College of Obstetricians and Gynaecologists P
+Evidence 
+level 2 –
+P
+P
+PGPercentage of women having ultrasound scan assessment as part of the preliminary investigation of
+women presenting with confirmed RFM if the perception of RFM persists despite a normal CTG or 
+if there are any additional risk factors for FGR/stillbirth.
+GPercentage of women presenting with recurrent RFM referred for a growth scan and liquor volume 
+assessment.
+References 
+© Royal College of Obstetricians and Gynaecologists 11 of 16 RCOG Green-top Guideline No. 57 1.Marsál K. Ultrasonic assessment of fetal activity. Clin Obstet 
+Gynaecol 1983;10:541–63.
+2.Rayburn WF. Fetal body movement monitoring. Obstet 
+Gynecol Clin North Am 1990;17:95–110.
+3.Neldam S. Fetal movements as an indicator of fetal 
+well-being. Dan Med Bull 1983;30:274–8.
+4.Grant A, Elbourne D, Valentin L, Alexander S. Routine formal
+fetal movement counting and risk of antepartum late death 
+in normally formed singletons. Lancet 1989;2:345–9.
+5.Harrington K, Thompson O, Jordan L, Page J, Carpenter RG,
+Campbell S. Obstetric outcome in women who present with 
+a reduction in fetal movements in the third trimester of
+pregnancy. J Perinat Med 1998;26:77–82.
+6.Efkarpidis S, Alexopoulos E, Kean L, Liu D, Fay T .Case-control
+study of factors associated with intrauterine fetal deaths.
+MedGenMed 2004;6:53.
+7.Fossen D, Silberg IE .Perinatal deaths in the county of Ostfold 
+1989 –97. Tidsskr Nor Laegeforen 1999;119:1272–5.Article 
+in Norwegian.
+8.Saastad E, Vangen S, Frøen JF. Suboptimal care in stillbirths –
+a retrospective audit study. Acta Obstet Gynecol Scand 
+2007;86:444–50.
+9.Natale R, Nasello-Paterson C, Turliuk R. Longitudinal
+measurements of fetal breathing, body movements, 
+heart rate, and heart rate accelerations and decelerations at
+24 to 32 weeks of gestation. Am J Obstet Gynecol 
+1985;151:256–63.
+10.Eller DP, Stramm SL, Newman RB. The effect of maternal
+intravenous glucose administration on fetal activity. 
+Am J Obstet Gynecol 1992;167:1071–4.
+11.D’Elia A, Pighetti M, Moccia G, Santangelo N. Spontaneous 
+motor activity in normal fetuses. Early Hum Dev 
+2001;65:139–47.
+12.Cito G, Luisi S, Mezzesimi A, Cavicchioli C, Calonaci G,
+Petraglia F. Maternal position during non-stress test and fetal
+heart rate patterns .Acta Obstet Gynecol Scand 
+2005;84:335–8.
+13.Tveit JV, Saastad E, Bordahl PE, Stray-Pedersen B, Frøen JF. The 
+epidemiology of decreased fetal movements. Proceedings of
+the Norwegian Perinatal Society Conference. Oslo, Norway ;
+2006.
+14.Patrick J, Fetherston W, Vick H, Voegelin R. Human fetal
+breathing movements and gross fetal body movements at
+weeks 34 to 35 of gestation. Am J Obstet Gynecol 
+1978;130:693–9.
+15.Minors DS, Waterhouse JM. The effect of maternal posture,
+meals and time of day on fetal movements. Br J Obstet 
+Gynaecol 1979;86:717–23.
+16.Patrick J, Campbell K, Carmichael L, Natale R, Richardson B.
+Patterns of gross fetal body movements over 24-hour 
+observation intervals during the last 10 weeks of pregnancy.
+Am J Obstet Gynecol 1982;142:363–71.
+17.Moore TR, Piacquadio K. A prospective evaluation of fetal
+movement screening to reduce the incidence of antepartum 
+fetal death. Am J Obstet Gynecol 1989;160:1075–80.18.Velazquez MD, Rayburn WF.Antenatal evaluation of the fetus 
+using fetal movement monitoring. Clin Obstet Gynecol 
+2002;45:993–1004.
+19.Johnson TR, Jordan ET, Paine LL .Doppler recordings of fetal
+movement: II. Comparison with maternal perception. 
+Obstet Gynecol 1990;76:42–3.
+20.Johnson TR. Maternal perception and Doppler detection of
+fetal movement. Clin Perinatol 1994;21:765–77.
+21.Neldam S, Jessen P. Fetal movements registered by the 
+pregnant woman correlated to retrospective estimations of
+fetal movements from cardiotocographic tracings. Am J 
+Obstet Gynecol 1980;136:1051–4.
+22.Richardson BS, O ’Grady JP, Olsen GD. Fetal breathing 
+movements and the response to carbon dioxide in patients 
+on methadone maintenance. Am J Obstet Gynecol 
+1984;150:400–5.
+23.Castillo RA, Devoe LD, Ruedrich DA, Gardner P. The effects of
+acute alcohol intoxication on biophysical activities: a case 
+report. Am J Obstet Gynecol 1989;160:692–3.
+24.Robertson SS, Dierker LJ. Fetal cyclic motor activity in 
+diabetic pregnancies: sensitivity to maternal blood glucose.
+Dev Psychobiol 2003;42:9–16.
+25.Zisser H, Jovanovic L, Thorsell A, Kupperman A, Taylor LJ,
+Ospina P , et al. The fidgety fetus hypothesis: fetal activity is 
+an additional variable in determining birth weight of
+offspring of women with diabetes. Diabetes Care 
+2006;29:63–7.
+26.Manning F, Wyn Pugh E, Boddy K. Effect of cigarette smoking 
+on fetal breathing movements in normal pregnancies. 
+Br Med J 1975;1:552–3.
+27.Ritchie K. The fetal response to changes in the composition 
+of maternal inspired air in human pregnancy. Semin 
+Perinatol 1980;4:295–9.
+28.Magee LA, Dawes GS, Moulden M, Redman CW. 
+A randomised controlled comparison of betamethasone with 
+dexamethasone: effects on the antenatal fetal heart rate. 
+Br J Obstet Gynaecol 1997;104:1233–8.
+29.Mulder EJ, Derks JB, Visser GH. Antenatal corticosteroid 
+therapy and fetal behaviour: a randomised study of the 
+effects of betamethasone and dexamethasone. Br J Obstet 
+Gynaecol 1997;104:1239–47.
+30.Jackson JR, Kleeman S, Doerzbacher M, Lambers DS. The 
+effect of glucocorticosteroid administration on fetal
+movements and biophysical profile scores in normal
+pregnancies.J Matern Fetal Neonatal Med 2003;13:50–3.
+31.Christensen FC, Rayburn WF. Fetal movement counts. Obstet 
+Gynecol Clin North Am 1999;26:607–21.
+32.Visser GH, Laurini RN, de Vries JI, Bekedam DJ, Prechtl HF.
+Abnormal motor behaviour in anencephalic fetuses. Early 
+Hum Dev 1985;12:173–82.
+33 .Baskett TF, Liston RM. Fetal movement monitoring: clinical
+application. Clin Perinatol 1989;16:613–25.
+34.Tveit JV, Saastad E, Stray-Pedersen B, Børdahl PE, Flenady V,
+Fretts R, et al. Reduction of late stillbirth with the 
+introduction of fetal movement information and guidelines –a clinical quality improvement. BMC Pregnancy Childbirth 
+2009;9:32.Erratum in: BMC Pregnancy Childbirth 
+2010;10:49.
+35.Kean LH, Suwanrath C, Gargari SS, Sahota DS, James DK.A
+comparison of fetal behaviour in breech and cephalic 
+presentations at term. Br J Obstet Gynaecol 
+1999;106:1209 –13.
+36.Fisher ML. Reduced fetal movements: a research-based 
+project. Br J Midwifery 1999;7:733–7.
+37.Gettinger A, Roberts AB, CampbellS. Comparison between 
+subjective and ultrasound assessments of fetal movement. 
+Br Med J 1978;2:88–90.
+38.Hertogs K, Roberts AB, Cooper D, Griffin DR, Campbell S .
+Maternal perception of fetal motor activity.Br Med J 
+1979;2:1183–5.
+39.Neldam S. Fetal movements as an indicator of fetal wellbeing.
+Lancet 1980;315:1222–4.
+40.Rayburn WF. Clinical significance of perceptible fetal motion.
+Am J Obstet Gynecol 1980;138:210–2.
+41.Sorokin Y, Pillay S, Dierker LJ, Hertz RH, Rosen MG.A
+comparison between maternal, tocodynamometric, and real-
+time ultrasonographic assessments of fetal movement. 
+Am J Obstet Gynecol 1981;140:456–60.
+42.Schmidt W, Cseh I, Hara K, Kubli F.Maternal perception 
+of fetal movements and real-time ultrasound findings. 
+J Perinat Med 1984;12:313–8.
+43.Valentin L, Marsál K, Lindström K . Recording of foetal
+movements: a comparison of three methods.J Med Eng 
+Technol 1986;10:239–47.
+44.Besinger RE, Johnson TR. Doppler recording of fetal
+movement: clinical correlation with real-time ultrasound.
+Obstet Gynecol 1989;74:277–80.
+45.Lowery CL, Russell WA Jr, Baggot PJ, Wilson JD, Walls RC,
+Bentz LS, et al. Time quantified detection of fetal movements 
+using a new fetal movement algorithm. Am J Perinatol 
+1997;14:7–12.
+46.Melendez TD, Rayburn WF, Smith CV.Characterization of fetal
+body movement recorded by the Hewlett-Packard M-1350-A 
+fetal monitor. Am J Obstet Gynecol 1992;167:700–2.
+47.Pearson JF, Weaver JB. Fetal activity and fetal wellbeing: an 
+evaluation. Br Med J 1976;1:1305–7.
+48.Heazell AE, Frøen JF. Methods of fetal movement counting 
+and the detection of fetal compromise. J Obstet Gynaecol 
+2008;28:147–54.
+49.Roethlisberger FJ, Dickson WJ. Management and the worker. 
+An account of a research program conducted by the 
+Western electric company, Hawthorne works, Chicago .
+Cambridge, MA: Harvard University Press ; 1939.
+50.Elbourne D, Grant A. Study results vary in count-to-10 
+method of fetal movement screening. Am J Obstet Gynecol 
+1990;163:264–5.
+51.Westgate J, Jamieson M.Stillbirths and fetal movements. 
+N Z Med J 1986;99:114–6.
+52.Lerum CW, LoBiondo-Wood G. The relationship of maternal
+age, quickening, and physical symptoms of pregnancy to the 
+development of maternal-fetal attachment. Birth 
+1989;16:13–7.
+53.Liston RM, Bloom K, Zimmer P.The psychological effects of
+counting fetal movements. Birth 1994;21:135–40.
+54.Mikhail MS, Freda MC, Merkatz RB, Polizzotto R, Mazloom E,
+Merkatz IR. The effect of fetal movement counting on 
+maternal attachment to fetus. Am J Obstet Gynecol 
+1991;165:988–91.
+55.Smith CV, Davis SA, Rayburn WF. Patients ’acceptance of
+monitoring fetal movement. A randomized comparison of
+charting techniques. J Reprod Med 1992;37:144–6.56.Draper J, Field S, Thomas H, Hare MJ.Womens’ views on 
+keeping fetal movement charts. Br J Obstet Gynaecol 
+1986;93:334–8.
+57.Frøen JF, Tveit JV, Saastad E, Børdahl PE, Stray-Pedersen B,
+Heazell AE, et al. Management of decreased fetal movements.
+Semin Perinatol 2008;32:307–11.
+58.Saastad E, Ahlborg T, Frøen JF.Low maternal awareness of
+fetal movement is associated with small for gestational age 
+infants. J Midwifery Womens Health 2008;53:345–52.
+59.Heazell AE, Green M, Wright C, Flenady V, Frøen JF.Midwives ’
+and obstetricians ’knowledge and management of women 
+presenting with decreased fetal movements. Acta Obstet 
+Gynecol Scand 2008;87:331–9.
+60.Confidential Enquiry into Stillbirths and Deaths in Infancy 
+(CESDI). 8th Annual Report. London: Maternal and Child 
+Health Research Consortium ; 2001.
+61.Royal College of Obstetricians and Gynaecologists. Green-
+top Guideline No. 31: The Investigation and Management 
+of the Small-for-gestational-age Fetus . London:RCOG;2002 
+[http://www.rcog.org.uk/files/rcog-corp/uploaded-
+files/GT31SmallGestationalAgeFetus.pdf].
+62.National Collaborating Centre for Women’s and Children’s 
+Health. Intrapartum care. Care of healthy women and 
+their babies during childbirth . London:RCOG Press;2007 
+[http://www.nice.org.uk/nicemedia/pdf/CG55FullGuideline.
+pdf].
+63.Rabinowitz R, Persitz E, Sadovsky E. The relation between 
+fetal heart rate accelerations and fetal movements. Obstet 
+Gynecol 1983;61:16–8.
+64.Patrick J, Carmichael L, Chess L, Staples C. Accelerations of
+the human fetal heart rate at 38 to 40 weeks ’gestational age.
+Am J Obstet Gynecol 1984;148:35–41.
+65.Grivell RM, Alfirevic Z, Gyte GM, Devane D.Antenatal
+cardiotocography for fetal assessment. Cochrane Database 
+Syst Rev 2010;(1):CD007863.
+66.Lee CY, Drukker B.The nonstress test for the antepartum 
+assessment of fetal reserve.Am J Obstet Gynecol 
+1979;134:460–70.
+67.Brown R,Patrick J. The non-stress test: how long is enough? 
+Am J Obstet Gynecol 1981;141:646–51.
+68.Leveno KJ, Williams ML, DePalma RT, Whalley PJ. Perinatal
+outcome in the absence of antepartum fetal heart rate 
+acceleration. Obstet Gynecol 1983;61:347–55.
+69.Pattison N, McCowan L. Cardiotocography for antepartum 
+fetal assessment. Cochrane Database Syst Rev 
+2000;(2):CD001068.
+70.Whitty JE, Garfinkel DA, Divon MY. Maternal perception of
+decreased fetal movement as an indication for antepartum 
+testing in a low-risk population. Am J Obstet Gynecol 
+1991;165:1084–8.
+71.Freeman RK, Anderson G, Dorchester W.A prospective multi-
+institutional study of antepartum fetal heart rate monitoring.
+I. Risk of perinatal mortality and morbidity according to 
+antepartum fetal heart rate test results.Am J Obstet Gynecol 
+1982;143:771–7.
+72.Saastad E, Tveit JV. Uniform information on fetal activity is 
+associated with reduction of stillbirth rates among 
+primiparous mothers: An intervention study from Norway.
+International Stillbirth Alliance Annual Conference; 2007.
+73.Ahn MO, Phelan JP, Smith CV, Jacobs N, Rutherford SE.
+Antepartum fetal surveillance in the patient with decreased 
+fetal movement. Am J Obstet Gynecol 1987;157:860–4.
+74.Manning FA, Lange IR, Morrison I, Harman CR. Fetal
+biophysical profile score and the nonstress test: a 
+comparative trial. Obstet Gynecol 1984;64:326–31.
+75.Lalor JG, Fawole B, Alfirevic Z, Devane D. Biophysical profile 
+RCOG Green-top Guideline No. 57 12 of 16 © Royal College of Obstetricians and Gynaecologists for fetal assessment in high risk pregnancies. Cochrane 
+Database Syst Rev 2008;(1):CD000038. 
+76.Dayal AK, Manning FA, Berck DJ, Mussalli GM, Avila C,
+Harman CR, et al. Fetal death after normal biophysical 
+profile score: An eighteen-year experience. Am J Obstet 
+Gynecol 1999;181:1231–6.
+77.Heazell AE, Sumathi GM, Bhatti NR. What investigation is 
+appropriate following maternal perception of reduced 
+fetal movements? J Obstet Gynaecol 2005;25:648–50.
+78.Sinha D, Sharma A, Nallaswamy V, Jayagopal N, Bhatti N.
+Obstetric outcome in women complaining of reduced 
+fetal movements.J Obstet Gynaecol 2007;27:41–3.
+79.O’Sullivan O, Stephen G, Martindale E, Heazell AE. Predicting 
+poor perinatal outcome in women who present with 
+decreased fetal movements. J Obstet Gynaecol 
+2009;29:705 –10.80.Rayburn WF, Barr M. Activity patterns in malformed fetuses.
+Am J Obstet Gynecol 1982;142:1045–8.
+81.Stoll C, Ehret-Mentre MC, Treisser A, Tranchant C. Prenatal
+diagnosis of congenital myasthenia with arthrogryposis 
+in a myasthenic mother. Prenat Diagn 1991;11:17–22.
+82.Hoffmann R, Lohner M, Böhm N, Leititis J, Helwig H.
+Restrictive dermopathy: a lethal congenital skin disorder. 
+Eur J Pediatr 1993;152:95–8.
+83.Hsu CD, Feng TI, Crawford TO, Johnson TR. Unusual fetal
+movement in congenital myotonic dystrophy. Fetal Diagn 
+Ther 1993;8:200–2.
+84.Chen H, Blackburn WR, Wertelecki W. Fetal akinesia 
+and multiple perinatal fractures. Am J Med Genet 
+1995;55:472–7.
+© Royal College of Obstetricians and Gynaecologists 13 of 16 RCOG Green-top Guideline No. 57 Appendix 1 
+RCOG Green-top Guideline No. 57 14 of 16 © Royal College of Obstetricians and Gynaecologists Attends with first presentation of reduced fetal movements (RFM) at >28 +0 weeks of gestation 
+Detailed clinical history including risk factors for stillbirth and fetal growth restriction (FGR) 
+History confirms RFM History does not confirm RFM 
+Auscultate with handheld Doppler to exclude 
+intrauterine fetal death (IUFD) Offer to auscultate fetal heart (FH) 
+Routine antenatal assessment 
+Give advice re: further episodes of RFM 
+If unsure whether fetal movements are reduced, focus on fetal
+movements for 2 hours 
+If they do not feel more than 10 movements in 2 hours, contact 
+healthcare provider FH not present on 
+auscultation FH present on 
+auscultation 
+Immediate 
+ultrasound to 
+exclude/diagnose 
+IUFD 
+IUFD Manage as per unit 
+protocolSuspicious or pathological fetal
+heart rate pattern 
+Abnormality detected on scan Normal scan Perception of RFM resolved and no risk 
+factors for FGR/stillbirth Continue with RFM or risk factors 
+for FGR/stillbirth Normal fetal heart rate pattern Cardiotocograph to exclude imminent fetal
+compromise 
+Ultrasound for amniotic fluid 
+volume/abdominal
+circumference/estimated fetal
+weight Reassure 
+Give advice re: further episodes of RFM 
+If unsure whether fetal movements are 
+reduced, focus on fetal movements for 
+2 hours 
+If they do not feel more than 10 
+movements in 2 hours, contact 
+maternity unit Appendix 2 
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making 
+decisions about appropriate treatment for specific conditions’. Each guideline is systematically developed 
+using a standardised methodology. Exact details of this process can be found in Clinical Governance Advice 
+No.1 : Development of RCOG Green-Top Guidelines (available on the RCOG website at http://www.rcog.
+org.uk/womens-health/clinical-guidance/development-rcog-green-top-guidelines-policies-and-processes ).
+These recommendations are not intended to dictate an exclusive course of management or treatment.
+They must be evaluated with reference to individual patient needs, resources and limitations unique to the 
+institution and variations in local populations. It is hoped that this process of local ownership will help to 
+incorporate these guidelines into routine practice .Attention is drawn to areas of clinical uncertainty where 
+further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+© Royal College of Obstetricians and Gynaecologists 15 of 16 RCOG Green-top Guideline No. 57 Grades of recommendations 
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++ and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+ directly 
+applicable to the target population and 
+demonstrating overall consistency of results 
+A body of evidence including studies rated as 
+2++ directly applicable to the target
+population, and demonstrating overall
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+ 
+A body of evidence including studies rated as 
+2+ directly applicable to the target population 
+and demonstrating overall consistency of
+results; or 
+Extrapolated evidence from studies rated as 
+2++ 
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+ 
+Good practice point 
+Recommended best practice based on the 
+clinical experience of the guideline 
+development group Classification of evidence levels 
+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+very low risk of bias 
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias 
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias 
+2++ High-quality systematic reviews of case– 
+control or cohort studies or high-quality 
+case–control or cohort studies with a 
+very low risk of confounding, bias or 
+chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,
+bias or chance and a moderate 
+probability that the relationship is causal
+2-Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3Non-analytical studies, e.g. case reports,
+case series 
+4Expert opinion PC
+DBARCOG Green-top Guideline No. 57 16 of 16 © Royal College of Obstetricians and Gynaecologists DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration by 
+obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular 
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented 
+by the patient and the diagnostic and treatment options available.
+This means that RCOG guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be 
+prescriptive directions defining a single course of management. Departure from the local prescriptive protocols or 
+guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The guideline review process will commence in 2014 unless evidence requires earlier review.This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and Gynaecol-
+ogists by: 
+Dr MK Whitworth MRCOG, Manchester, Professor M Fisher, Exeter and Dr A Heazell MRCOG, Manchester 
+and peer -reviewed by: the British Maternal and Fetal Medicine Society (BMFMS ); RCOG Consumers’ Forum; Professor Sir 
+S Arulkumaran FRCOG, London; Mrs A Diyaf MRCOG, Birmingham; Mr D Fraser FRCOG, Norfolk; Dr T Kay MRCOG, Exeter;
+Mr TG Overton FRCOG, Bristol; Dr S Yong MRCOG, Hong Kong .
+The Guidelines Committee lead reviewers were: Mr M Griffiths FRCOG, Luton and Dr P Owen MRCOG, Glasgow .
+The final version is the responsibility of the Guidelines Committee of the RCOG .

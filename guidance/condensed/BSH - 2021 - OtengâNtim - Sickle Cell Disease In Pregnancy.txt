@@ -1,0 +1,1126 @@
+Management of sickle cell disease in pregnancy. A British
+Society for Haematology Guideline
+Eugene Oteng-Ntim,1,2Sue Pavord,3Richard Howard,4Susan Robinson,1Laura Oakley,5,6Lucy Mackillop,3
+Shivan Pancham,7Jo Howard8,9on behalf of the British Society for Haematology Guidelines Committee
+1Department of Women’s Health, Guy’s and St Thomas’ NHS Foundation Trust,2Department of Women’s Health, King’s College
+London,3Department of Haematology, Oxford University Hospitals NHS Foundation Trust, Oxford,4Department of Obstetrics and
+Gynaecology, Barking, Havering and Redbridge University Hospitals, Romford,5London School of Hygiene and Tropical Medicine,
+London,6Centre for Fertility and Health, Norwegian Institute of Public Health, Oslo, Norway,7Department of Haematology,
+Sandwell and West, Birmingham Hospitals NHS Trust, London, United Kingdom of Great Britain and Northern Ireland,
+8Department of Haematology, Guy’s and St Thomas’ NHS Foundation Trust, and9Department of Haematology, King’s College London
+Keywords: sickle cell anaemia, sickle cell disease,
+pregnancy, antenatal, intrapartum, preconceptual.
+This guideline was compiled according to the British Society
+of Haematology (BSH) process at https://b-s-h.org.uk/guide
+lines/proposing-and-writing-a-new-bsh-guideline/. The Grad-
+ing of Recommendations Assessment, Development and
+Evaluation (GRADE) nomenclature was used to evaluate
+levels of evidence and to assess the strength of recommenda-
+tions. The GRADE criteria can be found at http://www.grade
+workinggroup.org
+Literature review details
+This BSH guideline was developed and updated from a pre-
+vious Royal College of Obstetricians and Gynaecologists
+(RCOG) Green-top guideline1in accordance with the stan-
+dard method of producing BSH guidelines. Medline, Embase,
+the Cochrane Database of Systematic Reviews, the Cochrane
+Control Register of Controlled Trials (CONTROL), the Data-
+base of Abstracts of Reviews and Effects (DARE), the ACP
+Journal Club and the Ovid database were searched for rele-
+vant randomised controlled trials, systematic reviews and
+meta-analyses between 2000 and August 2018. In all, 218
+papers were identiﬁed. Search terms included: ‘sickle cell’,
+‘hydroxycarbamide’, ‘antenatal’, ‘pregnancy’, ‘intrapartum’,
+‘penicillin prophylaxis’, ‘ACE inhibitor’, ‘transfusion’, ‘ultra-
+sound’, ‘Doppler’, ‘echocardiogram’, ‘anti-coagulation’, ‘pro-
+phylaxis’, ‘sickle cell and risk factors’, ‘preconceptual’ and
+‘sickle cell crisis’ and included all relevant Medical Subject
+Headings (MeSH) terms and subheadings. The search waslimited to humans and the English language. The National
+Library for Health and the National Guidelines Clearing
+House were also searched for relevant guidelines.
+Review of the manuscript
+Review of the manuscript was performed by the BSH Guide-
+lines Committee, General Haematology Task Force, the BSH
+Guidelines Committee and the members of the sounding
+board of BSH. It was also placed on the members’ section of
+the BSH website for comment. It has also been reviewed by
+the Royal College of Obstetricians and Gynaecologists, Sickle
+Cell Society and BSH Obstetric Haematology Special Interest
+Group; these organisations do not necessarily approve or
+endorse the contents.
+Introduction
+The purpose of this guideline is to describe the management
+of sickle cell disease (SCD) in pregnancy in the UK. It will
+cover preconception screening and antenatal, intrapartum
+and postnatal management of women with the condition. It
+will not cover the management of women with sickle cell
+trait. Updates from the previous guideline1include new
+information on pre-implantation genetic diagnosis (PGD),
+more comprehensive information on pre-conceptual screen-
+ing and medication review, updated information on throm-
+boprophylaxis, aspirin and vitamin D, changes to advice on
+antenatal care including frequency of ultrasonography (USS)
+scanning. It also includes reference to the most recent
+National Institute for Health and Clinical Excellence (NICE)
+and RCOG guidelines. SCD comprises a group of conditionsCorrespondence: Jo Howard, BSH Guidelines Administrator, British
+Society for Haematology, 100 White Lion Street, London N1 9PF, UK.
+E-mail: jo.howard@gstt.nhs.uk
+guideline
+First published online 19 August 2021
+doi: 10.1111/bjh.17671ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+This is an open access article under the terms of the Creative Commons Attribution-NonCommercial License, which permits use, distribution and
+reproduction in any medium, provided the original work is properly cited and is not used for commercial purposes.
+caused by the inheritance of the abnormal haemoglobin
+sickle gene (HbS). The most severe form of SCD is homozy-gous SCD (HbSS) but SCD can also be due to compoundheterozygous genotypes of HbS and another haemoglobinvariant (e.g., HbC, HbD
+Punjab, HbE or bthalassaemia, see
+Table I).
+Sickle cell disease is one of the most common inherited
+condition worldwide, with over 300 000 children born withthe condition each year globally, three-quarters of whom areborn in Africa.
+3The prevalence of SCD varies considerably
+across different ethnic communities, predominantly affectingpeople of African or African –Caribbean origin. Owing to
+population migration, SCD is now of increasing importance
+worldwide and there are increasing numbers of affected indi-
+viduals in Europe and the United States. Within Europe, theUK has the largest population with the condition. In the UKit is estimated that there are 15 000 affected individuals, andapproximately 300 infants born with the condition each year.
+The pathophysiology of SCD is the consequence of poly-
+merisation of the abnormal sickle haemoglobin in low oxy-gen conditions leading to the formation of rigid and fragile
+sickle-shaped red cells. These cells are prone to increased
+breakdown, which causes haemolytic anaemia and the sickle-shaped red cells do not ﬂow through blood vessels easily,causing blockage (vaso-occlusion) in small vessels, leading tomost of the clinical features, including acute painful crises.Other complications of SCD include acute chest syndrome,pulmonary hypertension (PH), stroke, renal dysfunction,retinal disease, leg ulcers, cholelithiasis and avascular necro-
+sis. SCD was previously associated with high childhood mor-
+tality, but now, in high-resource countries with neonatalscreening and lifelong treatment, life expectancy is at leastthe mid-50s. With the majority of individuals born withSCD in the UK living to reproductive age and beyond, man-agement of this condition in pregnancy is now more perti-nent.
+There are approximately 110 –200 pregnancies in women
+with SCD per year in the UK.
+4Pregnancy in women with
+SCD is associated with higher risk of mortality and morbid-ity.
+4,5Data from a national study in the UK showed an
+increased risk of both sickle-related complications (acute pain,acute chest syndrome) and pregnancy-related complications[hypertension, venous thromboembolism (VTE) and urinary
+tract infections].
+4A retrospective study has shown that preg-
+nancy-related VTE in women with SCD appears to be 1 /C15–5
+times greater than in the general population.6Women with
+SCD were more likely to require blood transfusion or admis-
+sion to the critical care unit. Women with SCD were more
+likely to deliver before 37 weeks of gestation and the babieswere more likely to have a reduced birth weight. Whilstmost of these complications were more common in womenwith HbSS than HbSC, both groups of women experiencedan increased risk of complications. A systematic review andmeta-analysis of studies in pregnancy in SCD conﬁrmedthese ﬁndings showing signiﬁcant increases in maternal mor-
+tality, pre-eclampsia, stillbirth, preterm delivery and infants
+that are small for gestational age.
+5Meta-regression demon-
+strated that increased relative risks were associated withgenotype (HbSS versus HbSC) and low gross national
+income.
+Although women with HbSC experience fewer adverse
+outcomes than women with HbSS, they are still susceptibleto increased painful crises during pregnancy, fetal growth
+restriction, antenatal hospital admission and postpartum
+infection
+4,7,8and these women should have the same level of
+vigilance and care as for those with HbSS. There are fewerdata on pregnancy outcomes in women with HbS/ bthalas-
+saemia, HbSD, HbSE or HbSO
+Arab, but anecdotal evidence
+indicates that these too should be similarly monitored andtreated.
+Preconception care
+Discussion of pregnancy and conception should be embed-ded into routine care for women with SCD and be part ofthe comprehensive annual review (at least) from youngadulthood onwards
+9and this should begin in paediatric clin-
+ics where appropriate. This should include discussion ofreproductive options, partner screening, optimisation of
+health prior to conception, preconception folic acid supple-
+mentation and review of teratogenic medications. Preconcep-tion clinics should be available and accessible.
+Genetic screening
+Women with SCD who have a partner who is a carrier of abglobin variant (e.g., HbS, HbC, bthalassaemia) will have a
+risk of up to 50% in each pregnancy of having a child with a
+sickling disorder. Women with SCD should be counselledabout their reproductive options (non-intervention, prenataldiagnosis or PGD) by an appropriately trained professionaland this should be clearly documented.
+Women are often not aware of the possibility of PGD and
+hence do not have the opportunity to consider or participatein this. A review conducted in a London tertiary referral cen-
+tre showed that 60 at-risk couples referred over a ﬁve-year
+period, over all having 74 cycles of PGD, had a live birth rateTable I. Signiﬁcant maternal haemoglobinopathies.2
+Signiﬁcant maternal haemoglobinopathies
+HbSS
+HbSC
+HbSDPunjab
+HbSE
+HbSOArab
+HbS/Lepore
+HbS/ b0thalassaemia
+HbS/ b+thalassaemiaGuideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995981
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+of 63% per couple.10This was much higher than the previ-
+ously reported 17% live birth rate.11This paper noted that
+there were signiﬁcant barriers to referral, and a separate sur-vey of parents of children with SCD found that only 41%had been aware of PGD prior to pregnancy.
+12Care givers
+should ensure that discussion of PGD and relevant referrals
+take place in a timely fashion.
+Recommendations
+/C15As part of the annual review, all women with SCDshould be encouraged to engage with partner testingprior to embarking on pregnancy (1C) .
+/C15High-risk couples should be counselled prior to preg-
+nancy about their reproductive options: non-interven-tion, prenatal diagnosis or pre-implantation geneticdiagnosis (1C) .
+Preconception comprehensive review of complications
+A comprehensive annual review is part of recommended rou-
+tine care; discussion of reproduction, pregnancy and contra-ceptive options and review of chronic complications shouldbe part of this annual review. The outcomes of the most
+recent annual review should be assessed in any woman who
+is actively planning pregnancy; investigations of particularimportance preconceptually include assessment of renal dys-function and cardiopulmonary disease. Renal complicationsoccur in up to 60% of those with SCD during their lifetimesand are characterised by glomerular hyper-ﬁltration andmicroalbuminuria from young adulthood with the develop-ment of proteinuria and chronic kidney disease in later
+years.
+13
+Prior to pregnancy, women should have blood pressure
+monitoring and screening with creatinine and urinary pro-tein (albumin:creatinine or protein:creatinine ratio). Womenwith abnormalities in renal function or proteinuria (protein:creatinine ratio >50 mg protein/mmol creatinine) should be
+investigated to exclude non-sickle causes. Anti-hypertensivetreatment should be considered in women with a persistently
+raised blood pressure of >130/80 mm Hg.
+14Choice of anti-
+hypertensive medication should follow the NICE guidance.15
+Pulmonary hypertension, ventricular diastolic dysfunction
+and early cardiac death are all increased in SCD and Dopplerechocardiography has been used as a non-invasive tool forinitial evaluation and screening for PH. A raised tricuspidregurgitant jet velocity (TRV) is associated with increasedmortality and increased risk of PH.
+16A small single-centre
+study has shown that 33% of pregnant women had a raised
+TRV, but this was not associated with poor outcomes.17
+Women planning pregnancy should have screening withechocardiography if this has not been performed in the pre-vious year and at any time if they have symptoms suggestiveof PH.Other signiﬁcant previous medical history should also be
+reviewed, for example, history of auto-immune disease asthis may need additional specialist clinical review.
+Other complications of SCD that merit screening and
+optimisation prior to embarking on pregnancy are sum-
+marised in Table II.
+Recommendations
+/C15Pregnancy and conception should be discussed with
+women of child-bearing age with SCD as part of theirannual review (1C) .
+/C15Women should be reviewed by a specialist prior to
+conception to ensure optimisation of health and
+screening for disease complications (1C) .
+/C15Preconception clinics should be available and accessi-
+ble (1C) .
+Preconception medication review
+A thorough review of medications should be performed prior
+to conception. Folic acid is recommended for patients withSCD in view of their haemolytic anaemia that puts them atincreased risk of folate deﬁciency.
+18Folic acid is also recom-
+mended in all pregnant women to prevent neural tube
+defects and should be commenced preconceptually.19There-
+fore, folic acid 5 mg daily should be prescribed when plan-ning pregnancy and during pregnancy both to reduce therisk of neural tube defect and to also compensate for theincreased demand during pregnancy.
+Vitamin D deﬁciency is common in patients with SCD
+and regular monitoring and supplementation for deﬁcient
+patients are recommended outside pregnancy. Vitamin D
+supplementation is recommended for all pregnant andbreastfeeding women in the UK.
+20Pregnant women with
+SCD should be prescribed vitamin D as per national recom-mendations for pregnancy
+20and it may be helpful to moni-
+tor vitamin D levels to ensure adequate supplementation.
+Patients with SCD are hyposplenic and are at risk of infec-
+tion, in particular from encapsulated bacteria such as Neisse-
+ria meningitides, Streptococcus pneumonia and Haemophilus
+inﬂuenzae . Penicillin prophylaxis is of beneﬁt in young chil-
+dren with SCD, but there is no randomised trial evidence inpregnant women. In view of their hyposplenism andincreased risk of pneumonia, pregnant women with SCDshould continue penicillin prophylaxis, or start this if theyare not already taking it. Vaccination status should also bereviewed and updated as per national recommendations and
+this should include annual inﬂuenza vaccination and pneu-
+mococcal vaccination if this has not been given within theprevious ﬁve years.
+9
+The optimal analgesics to use during pregnancy should be
+discussed with women as part of their pain managementplan. Paracetamol and codeine-containing analgesics can beGuideline
+982
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+offered during pregnancy as ﬁrst-line agents.21,22If these are
+not effective, non-steroidal anti-inﬂammatory drugs
+(NSAIDs) should only be used with caution before 12 weeksand avoided after 31 weeks of gestation owing to concernsregarding the risk of premature closure of the patent duc-tus.
+21Opioid intake should be assessed, with referral to a
+chronic pain team if needed.
+As part of standard care potentially teratogenic medica-
+tions should be reviewed and particular attention should be
+paid to those that are commonly used in SCD including
+angiotensin-converting enzyme inhibitors (ACEi) or angio-tensin II receptors blockers (ARBs) for renal dysfunction,hydroxycarbamide and iron chelators.
+The recent Renal Association Guidelines (2019) recom-
+mend that women with chronic kidney disease who are tak-ing ACEi have a plan for discontinuation/conversion guidedby the strength of indication for renin –angiotensin blockade
+and the likelihood of early pregnancy conﬁrmation and that
+ARBs are discontinued in advance of pregnancy.
+21,23In these
+women renal function and proteinuria should be carefullymonitored at least monthly throughout pregnancy.
+Many women will be taking hydroxycarbamide prior to
+pregnancy as this has been shown to decrease the incidenceof acute painful crisis and acute chest syndrome in individu-als with severe clinical manifestations of SCD and is the only
+currently licensed treatment for SCD in the UK.
+24Hydroxy-
+carbamide is teratogenic in animals and its use in pregnancyhas been discussed in a previous BSH guideline.
+25This
+advises stopping hydroxycarbamide preconceptually in femalepatients. If women are taking hydroxycarbamide due tofrequent and severe sickle pain episodes, treatment with reg-ular red cell erythrocytapheresis should be discussed as analternative.If women do become pregnant whilst taking hydroxycar-
+bamide, it should be stopped as soon as possible. There arereports in the literature of women receiving hydroxycarbamidein pregnancy both for SCD and for other indications and someof these have continued it throughout pregnancy without
+adverse effects on the baby.
+26–29Concerns have been raised that
+for women with severe phenotype disease and no other treat-ment options, the risks of stopping hydroxycarbamide (whichinclude increased risk of pain crises, acute chest syndrome andworsening anaemia) may outweigh the risks of continuinghydroxycarbamide. This is particularly true for women who arenot able to receive blood transfusion because of multiple red cellalloantibodies or previous severe delayed haemolytic transfusion
+reactions. For these women, we recommend a discussion
+between the haematologist, the obstetrician and the woman priorto pregnancy to provide her with information about the risksand beneﬁts of continuing hydroxycarbamide therapy through-out pregnancy to aid patient-led decision-making. Referral to thefetal medical unit for additional detailed ultrasound scanning forfetal abnormalities may be considered, although the reliability indetecting hydroxycarbamide-induced abnormalities is uncer-
+tain.
+30A clinical trial is currently collecting retrospective data on
+hydroxycarbamide exposure during pregnancy [HydroxyureaExposure Limiting Pregnancy and Follow-up Lactation (HELP-FUL): NCT04093986].
+Iron chelators are not recommended during pregnancy
+due to a lack of safety data so they should be regarded aspotentially teratogenic in the ﬁrst trimester and should bestopped when a woman is trying to conceive. Women with
+iron overload should be carefully assessed with liver and car-
+diac magnetic resonance imaging prior to conception tohighlight those at high risks of iron-related complications. Ifthere is evidence of iron overload, this should be treatedprior to conception. Cardiac iron overload is unusual inSCD, but if it occurs women should be encouraged to rigor-ously chelate prior to conception and third-trimester desfer-rioxamine can be considered.
+New medications including voxelotor, crizanlizumab and
+glutamine are not approved for use during pregnancy andshould be stopped prior to conception or when pregnancy isconﬁrmed if unplanned. Although these drugs are notapproved for use in the UK at the time of publication theymay be approved at some point and women may have beenprescribed these drugs from overseas.
+Recommendations
+/C15Folic acid (5 mg daily) should be given from beforeconception and throughout pregnancy (1A) .
+/C15Women should be given vitamin D as per national
+recommendations for all pregnant women (1C) .
+/C15Daily antibiotic prophylaxis is recommended (2B) .
+/C15Vaccinations should be kept updated as per national
+recommendations for SCD and should include ﬂu vac-
+cination (1B) .Table II. Preconception review of chronic sickle complications.
+Chronic complication Action to be taken
+Renal disease and
+hypertensionBlood pressure, creatinine and urinary
+protein monitoring
+Pulmonary
+hypertensionEchocardiography if not performed
+within 1 year or if symptomatic.Abnormalities should be discussed with
+a cardiologist
+Chronic lung disease Oxygen saturations on all women. Sleep
+studies and pulmonary function tests if
+indicated
+Avascular necrosis Review hip complications which may
+worsen during pregnancy
+Stroke If history of previous stroke consider role
+of transfusion during pregnancy if not
+already receiving this
+Chronic pain Women on long-term opioids should be
+referred to a chronic pain clinic for
+assessment and managed by pain specialistduring pregnancyGuideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995983
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15When attempting to conceive ARBs should be stopped
+and there should be a plan for stopping/convertingACEi (1C) .
+/C15Hydroxycarbamide should be discontinued when
+attempting to conceive unless the woman is consid-ered to be at high risk of serious complications relat-ing to SCD and blood transfusion is not feasible (2C) .
+/C15Iron chelators should be stopped when attempting to
+conceive (1B) .
+Antenatal care
+Antenatal haemoglobinopathy screening
+It is essential that any woman who has a potentially affected
+infant (i.e. whose partner is a carrier or is affected by a sig-
+niﬁcant haemoglobinopathy) is aware of this and receivesappropriate counselling. Partner status and subsequent coun-selling should be clearly documented. Further informationcan be obtained on the NHS Sickle Cell & ThalassaemiaScreening Programme website which includes informationabout the laboratories that can perform prenatal diagnostictesting.
+31The objective of the screening programme is to
+ensure that screening tests are offered by 8 –10 weeks of preg-
+nancy by primary care or maternity services, so that earlyprenatal diagnosis can be offered.
+Prenatal diagnosis (by chorionic villus sampling or amnio-
+centesis) should be offered as early as possible in pregnancyto ensure early access to termination of an affected preg-nancy if requested. Prenatal diagnosis can be performed from11 weeks of gestation and is associated with a low risk of
+miscarriage ( ~1%). Studies are ongoing using non-invasive
+prenatal diagnosis via detection of cell-free fetal DNA in thematernal circulation, but this approach is not yet availableoutside research studies.
+32Non-invasive testing would
+increase the uptake of prenatal testing, though this needs tobe balanced against concerns that non-invasive testingputs couples under increased pressure to have prenatalintervention.
+33
+Recommendations
+/C15If the woman has not been seen preconceptually, sheshould be offered partner testing (1B) .
+/C15If the partner is a carrier, counselling regarding the
+potential for an affected fetus should take place in theﬁrst trimester to enable prenatal diagnosis and if an
+affected fetus is identiﬁed the option of termination
+should be offered (1B) .
+Maternal health
+Many women become pregnant without preconception care.
+Therefore, all of the actions outlined in the section onpreconception care including vaccinations, review of medica-
+tions, assessment for organ damage, red cell alloantibodiesand iron status, should take place as early as possible duringpregnancy. Flu vaccine should be given but live attenuatedvaccines should be deferred until after delivery.
+Thereafter, the mainstay of antenatal care is monitoring
+for and prevention of general and SCD-speciﬁc complica-tions. Guidance on routine antenatal care for the healthypregnant woman is provided by NICE CG 62 /C1
+34Prevention
+of SCD-speciﬁc complications necessitates multidisciplinarycare involving obstetricians, midwives and Specialised Hae-moglobinopathy Teams. Good communication betweenhealth professionals is key to patient safety and hospital (or
+network) protocols for transfusion indications and early
+detection and management of SCD complications includinginfection, acute pain and management of labour should beavailable.
+The frequency of routine appointments will depend on
+medical progress and the presence of complications but areasonable guide is once per month, for clinical assessment,counselling, blood pressure measurement, blood tests and
+urinalysis to identify asymptomatic bacteriuria.
+5,35These are
+summarised in Table III.
+At each appointment, opportunities should be offered for
+giving information and education regarding crisis preventionmeasures such as rest, warmth and avoidance of dehydrationand infections. The woman’s housing and work circum-stances should be reviewed, and interventions that mayreduce the potential provocation of acute crises (e.g.,
+improved heating, allowance for increased hospital visits)
+should be encouraged. Compliance with prescribed medica-tions such as folic acid and prophylactic antibiotics shouldbe ensured. NSAIDs should be used with caution before12 weeks and avoided after 31 weeks of gestation owing toconcerns regarding premature closure of the patent ductus.Iron supplementation should be given to women with pro-ven iron deﬁciency (serum ferritin <30lg/l); it should not
+be given empirically as for anaemic women without
+haemoglobinopathy.
+36
+Hyperemesis gravidarum can lead to dehydration and
+sickle cell crisis and women with persistent vomiting shouldbe advised to seek medical advice early. They should be kepthydrated and consideration given to hospital admission andthromboprophylaxis. Multiple gestation in women with SCDsubstantially increases the risk of pre-eclampia, hypertension,
+acute pain episodes and acute anaemic events; therefore these
+pregnancies require close attention and increased monitor-ing.
+Pregnancy-induced hypertension
+Women with SCD have an increased risk of pregnancy-in-duced hypertension and pre-eclampsia.
+4,5,37Aspirin prophy-
+laxis is recommended at 75 –150 mg daily from 12 weeks of
+gestation for women at high risk of pre-eclampsia,15,38unlessGuideline
+984 ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Table III. Speciﬁc antenatal care for women with SCD32.
+Appointment Care for women with SCD during pregnancy
+First appointment (primary care or hospital appointment) Offer general health information, advice and support
+Offer partner testing if not already done
+Review partner results and discuss PND if appropriate
+Clinical history to assess SCD complicationsAssess retinal, renal and cardiac complications as necessary
+Review medications
+Ensure women are taking 5 mg folic acid and prophylactic
+antibiotics and discuss vaccinations
+Document baseline oxygen saturations and blood pressure
+Send MSU for culture
+Booking appointment: see multidisciplinary team plus
+midwife with experience in high-risk obstetrics if possibleInformation, education and advice about SCD and pregnancy
+Review partner results and discuss PND if appropriate
+Baseline full blood count, renal function test, urine
+protein/creatinineratio, liver function test, ferritin and group and screen
+Extended red cell phenotype if not previously performed
+Prescribe 75 –150 mg aspirin
+Start vitamin D prophylaxis if not already on this
+Risk assessment for VTE and consider thromboprophylaxis
+Review individual pain management plan
+10–14 weeks First-trimester ultrasound scan
+16 weeks: see midwife plus multidisciplinary review Routine as per NICE; repeat MSU
+Multidisciplinary review (consultant obstetrician and haematologist)
+20 weeks: see midwife plus multidisciplinary review Detailed ultrasound as per NICE antenatal guideline
+Repeat FBC and MSU
+24 weeks: see multidisciplinary team Ultrasound monitoring of fetal growth and amniotic ﬂuid volume
+Repeat FBC and MSU
+26 weeks: see midwife Routine check including blood pressure and urinalysis
+28 weeks: see multidisciplinary team Ultrasound monitoring of fetal growth and amniotic ﬂuid volume
+Repeat MSURepeat FBC and group and antibody screenReview VTE risk factors and consider thromboprophylaxis
+30 weeks: see midwife and offer antenatal classes Routine check including blood pressure and urinalysis
+32 weeks: see multidisciplinary team Routine check
+Ultrasound monitoring of fetal growth and amniotic ﬂuid volume
+Repeat MSU and FBC
+Offer anaesthetic assessment at 32 weeks or earlier if indicated
+34 weeks: see midwife Routine check including blood pressure and urinalysis
+36 weeks: see multidisciplinary team Routine check
+Repeat MSU and FBCUltrasound monitoring of fetal growth and amniotic ﬂuid volumeConsider whether to stop aspirin prior to delivery
+Offer information and advice about:
+/C15 Timing, mode and management of the birth
+/C15 Care of baby after birth
+/C15 Analgesia and anaesthesia
+38 weeks: see midwife and obstetrician Routine check
+Discuss timing and mode of delivery
+39 weeks: see midwife Routine check and review delivery plan40 weeks: see obstetrician Routine check and offer fetal monitoring if the woman declines
+delivery by 40 weeks of gestation
+FBC, full blood count; MSU, midstream urine; NICE, National Institute for Health and Clinical Excellence; PND, prenatal diagnosis; SCD, sickle
+cell disease; VTE, venous thromboembolism.Guideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995985
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+they have aspirin sensitivity. Although there is no speciﬁc
+evidence that aspirin decreases the risk of pre-eclampsia inwomen with SCD, in view of their increased risk we recom-mend that women with SCD and no contraindicationsshould be offered aspirin prophylaxis from 12 weeks.
+15
+Recent evidence suggests that aspirin may increase the risk ofpostpartum haemorrhage.
+39so should be stopped at
+36 weeks.
+Close monitoring for pre-eclampsia is part of antenatal
+care for all women and blood pressure and the presence ofproteinuria should be assessed at each visit. Women withpre-existing proteinuria or known renal impairment willrequire more frequent monitoring and should be discussed
+with a multidisciplinary high-risk pregnancy team.
+23Women
+with SCD often have a low blood pressure, so an upwardtrend in blood pressure, even if modest, should be monitoredcarefully. A target blood pressure of <130/80 mm Hg should
+be used, based on recent American Society of Hematology(ASH) recommendations for all patients with SCD.
+14This is
+lower than recommendations for women without SCD.15In
+women with neurological symptoms it is important to distin-
+guish pre-eclampsia/eclampsia from the neurological compli-
+cations of SCD.
+Recommendations
+/C15A full assessment, as for preconception care, shouldbe repeated as early as possible in the antenatal per-iod, including review of vaccinations and medications,
+organ damage and red cell alloantibodies (1B) .
+/C15Antenatal care should be provided by a multidisci-
+plinary team including an obstetrician and midwifewith experience of high-risk antenatal care and ahaematologist with links to a Specialised Hae-moglobinopathy Team (1C) .
+/C15Regular antenatal appointments for women with SCD
+should provide routine antenatal care as well as care
+speciﬁcally for women with SCD (1C) .
+/C15Women with persistent vomiting should be advised to
+seek medical advice early (1C) .
+/C15Women should be reminded to take daily folic acid
+(5 mg) and prophylactic antibiotics (if not contraindi-cated) and avoid drugs that are unsafe in pregnancy(1A).
+/C15Iron supplementation should be given if there is labo-
+ratory evidence of iron deﬁciency (1B) .
+/C15Women with SCD should be considered for low-dose
+aspirin 75 –150 mg once daily from 12 weeks of gesta-
+tion in an effort to reduce the risk of developing pre-eclampsia and should be monitored for blood pressurerises and proteinuria (1B) .
+/C15Aspirin prescription should be reviewed at 36 weeks
+of gestation to consider stopping prior to delivery
+(2C).Scheduled ultrasound scanning
+Standard ultrasound scanning should be performed as per
+the NICE guidelines.34A number of studies suggest an
+increased risk of fetal anomalies and babies that are small forgestational age in the offspring of women with SCD.
+37
+Third-trimester growth scans should be undertaken for earlydetection of fetal growth restriction to aid appropriate timingof delivery and to reduce perinatal mortality and morbidity
+in view of the four times increased risk of stillbirth.
+40If preg-
+nancy-associated plasma protein A (PAPP-A) levels are per-formed in the ﬁrst trimester and the value is <0/C15 multiple
+of the median then consider performing more frequent scansafter 20 weeks.
+41
+Recommendations
+/C15Women should be offered serial fetal biometry scans(growth scans) every four weeks from 24 weeks of ges-tation (1C) .
+Blood transfusion during pregnancy
+Transfusion has been used in pregnant women with SCD to
+correct severe anaemia and reduce sickle-related complica-tions. It may also reduce pregnancy complications by reduc-ing the extent of sickling in the maternal and placentalcirculation and therefore may improve blood ﬂow and oxy-gen supply to the fetus. These beneﬁts must be weighed up
+against the side effects of transfusion including the risk of
+alloimmunisation and risk of delayed haemolytic transfusionreactions. The type of blood selected for transfusion ofwomen with SCD should be cytomegalovirus (CMV)-nega-tive, HbS-negative and extended Rh- and Kell-matched inline with previous BSH recommendations.
+42
+A full transfusion history should be taken from the patient
+at the booking appointment or ﬁrst obstetric/haematology
+appointment and should include communication with the
+transfusion laboratory and national transfusion database toensure there are no historical alloantibodies. Patients withhistoric alloantibodies should be referred to the fetal red cellantibody clinic or screening programme for haemolytic dis-ease of the newborn for monitoring of antibody titres.
+A key question in the management of pregnant women
+with SCD regards the best approach to blood transfusion
+during pregnancy. One approach is to give blood only if
+required by the clinical situation, for example for acute anae-mia or other acute complications. The other approach is togive blood prophylactically throughout pregnancy; if thisapproach is used then further questions include whether sim-ple or exchange transfusion should be used, at what gestationtransfusion therapy should be started and is there a targetHb or HbS% that should be used. This has been discussed in
+a previous BSH guideline and a recent ASH guideline.
+43,44Guideline
+986 ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There is currently insufﬁcient evidence to recommend
+prophylactic transfusion over standard care (transfusion asrequired) and whilst there is some evidence that prophylactictransfusion will reduce vaso-occlusive pain during pregnancyit is not clear if the beneﬁts of transfusion will outweigh the
+risks of transfusion (e.g., alloimmunisation). The recent ASH
+guidelines
+44concluded that there was insufﬁcient evidence to
+recommend a strategy of prophylactic transfusion rather thanstandard care. A phase 2 clinical trial is currently investigat-ing the role of serial prophylactic exchange blood transfusionin pregnant women with SCD (TAPS-2).
+45
+In one randomised trial, including 72 women and pub-
+lished in the 1980s44women received standard care or pro-
+phylactic transfusion with simple or partial exchange
+transfusion to achieve Hb 100 –110 g/l and HbS% <35%. In
+the standard care arm, 44% of women required transfusion.There was a signiﬁcant reduction in vaso-occlusive crises inthe prophylactic transfusion arm [relative risk (RR) 0 /C128,
+95% conﬁdence interval (CI) 0 /C112–0/C167] but no clear differ-
+ences in other outcomes (maternal mortality, perinatal mor-tality or severe maternal morbidity) although this may be
+explained by the small numbers included in the trial. There
+was no harm identiﬁed from the transfusions. A Cochranereview
+47did not ﬁnd any additional randomised trials and
+concluded that there were no clear clinical beneﬁts of prophy-lactic transfusion over standard care. There have been numer-ous observational trials reporting on outcomes ofprophylactic transfusion in pregnancy and a meta-analysis hasreported on the previous randomised clinical trial and addi-
+tional 11 cohort studies involving 1 291 participants.
+48This
+meta-analysis demonstrated that prophylactic transfusion wasassociated with a reduction in maternal mortality, vaso-occlu-sive crises, pulmonary complications, pyelonephritis, perinatalmortality, neonatal death and preterm birth. There was nodifference in pulmonary infection, acute chest syndrome, uri-nary tract infections, pre-eclampsia, intrauterine fetal demise,infants that are small for gestational age or have a low birth
+weight. The event rates were low for most of the outcomes
+and they concluded that prophylactic transfusion may posi-tively impact on severe maternal and neonatal outcomes butthe evidence comes from a small number of studies.
+There has been a further paper looking at outcomes of
+women with HbSC and comparing 10 women receiving pro-phylactic exchange transfusion with 14 women receivingtransfusion on demand or no transfusion but numbers were
+small and selection methods were biased so it is not possible
+to reach conclusions about the role of prophylactic transfu-sion in women with HbSC.
+49
+The risks and beneﬁts of prophylactic transfusion during
+pregnancy should be discussed with the patient, haematolo-gist and obstetrician in early pregnancy and factors to beconsidered will include:
+1. Genotype (HbSS more likely to beneﬁt than HbSC).
+2. Phenotype (severe disease phenotype more likely to beneﬁt).3. Previous obstetric history (women with a history of previ-
+ous sickle complications in pregnancy may be more likelyto beneﬁt).
+4. Twin pregnancy may be more likely to beneﬁt (expert
+opinion due to adverse outcomes in twin pregnancies).
+5. Alloimmunisation (women with a history of multiple red
+cell alloantibodies or previous delayed haemolytic transfu-sion reaction are at increased risk of transfusion-relatedcomplications).
+Women who are already on long-term transfusion ther-
+apy should continue on this during pregnancy at the samefrequency. Women on hydroxycarbamide will be advisedto stop this prior to conception and prophylactic transfu-sion should be considered if they experience a worseningof their sickle symptoms once they stop hydroxycarbamideor if they have a very severe prehydroxycarbamide pheno-
+type.
+If the beneﬁts of prophylactic transfusion are not
+thought to outweigh the risks, then standard care is to givetransfusion on demand, when clinically indicated. There islittle evidence to indicate what target Hb or HbS% shouldbe used for optimal care and most evidence comes fromthe care of non-pregnant patients with SCD. The ran-domised trial of transfusion described above
+46used an Hb
+value of <60 g/l as an indication for simple transfusion and
+this level was used in previous RCOG guidance.1Many
+clinicians would aim for a higher Hb value during preg-nancy although this will depend on baseline Hb and symp-toms of anaemia. Women with severe sickle complications(e.g., acute chest syndrome, stroke or intractable pain)should be treated with transfusion as recommended in non-pregnant patients with SCD.
+43,50
+There is no evidence about the optimal Hb level or HbS%
+prior to caesarean delivery. A randomised trial looking atelective surgery in non-pregnant patients with HbSS showedthat pre-operative transfusion to Hb >90 g/l was associated
+with reduced postoperative sickle complications, particularlyacute chest syndrome.
+51Caesarean section was not included
+in this trial and the main complications were probably dueto general anaesthesia. Women with marked anaemia ( <70 g/
+l) may beneﬁt from pre-operative transfusion prior to cae-
+sarean section.
+Recommendations (adapted from Refs.42,43)
+/C15If transfusion is needed, pregnant women with SCDshould be given ABO-compatible, extended Rh- andKell-matched, CMV-negative units. If there are clini-
+cally signiﬁcant red cell antibodies (current or histori-
+cal) then the red cells selected should be negative forthe corresponding antigens (1C) .
+/C15The risks and beneﬁts of prophylactic transfusion dur-
+ing pregnancy should be discussed with the patientsas part of the haematology/obstetric consultation (2C) .Guideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995987
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Prophylactic transfusion is not routinely recom-
+mended for sickle pregnancy, but should be consid-ered for women with:
+aPrevious or current medical, obstetric or fetal prob-
+lems, related to SCD. (2C) .
+bWomen previously on hydroxycarbamide due to sev-
+ere disease (2C) .
+cMultiple pregnancy (2C) .
+/C15Women receiving long-term transfusions for stroke
+prevention or for the amelioration of severe sicklecomplications should continue with regular transfu-sions throughout pregnancy (1B) .
+/C15Transfusion may be required in women with worsen-
+ing anaemia (1B) .
+/C15Transfusion should be considered for those with acute
+SCD complications (e.g., acute chest syndrome, stroke)(1B).
+Management of acute pain episodes during pregnancy
+Pregnancy is associated with an increased incidence of acute
+painful crises,52–56in both HbSS and to a lesser extent HbSC
+disease.7In a prospective UK study, acute pain was the most
+common complication, affecting 57% of pregnant womenwith SCD. Severe or extremely severe crises (requiring hospi-tal attendance or admission) occurred in 17 /C16% of women
+with HbSS and 9 /C11% of women with HbSC ( P=0/C123). Post-
+natal painful crises were also signiﬁcantly higher in the HbSSwomen, occurring in 21 /C16% of HbSS and 2 /C13% of HbSC
+women ( P=0/C101).
+4
+There are a number of possible reasons for the increased
+incidence of crisis including increased physical and psycho-logical stress; dehydration, particularly in early pregnancywhen nausea and vomiting are common; worsening anaemia,
+which is common in pregnancy, related to increased iron
+requirements and red cell turnover; the pro-coagulant statein pregnancy predisposing to vaso-occlusive disease; and theincreased risk of infection, for example, urinary infection orinﬂuenza, which can precipitate a sickle crisis. Birth, whetherby vaginal delivery or caesarean section, is a profound physi-ological challenge and can increase the risks of dehydration,hypoxia, anaemia, overexertion and signiﬁcant metabolic
+derangement, which can all lead to a higher incidence of cri-
+sis. Pregnant women with SCD may present with non-sicklecauses of acute pain such as placental abruption or appen-dicitis. A careful history is essential to determine whether thepain is typical for vaso-occlusive pain and if not alternativeaetiologies should be explored.
+All pregnant women should have a prospective pain man-
+agement plan for use in the event of a potential crisis that
+should have been developed and discussed with the multidis-
+ciplinary team (MDT) and the woman and shared with allhealthcare providers involved with her care including hergeneral practitioner and her community midwife. This
+should be discussed at her ﬁrst multidisciplinary clinicappointment and reviewed at subsequent appointments.There should be a low threshold for referring a woman tosecondary care and all women with pain that does not settle
+with simple analgesia, who are febrile, have atypical pain or
+chest pain or symptoms of shortness of breath should bereferred to hospital.
+There are no randomised controlled trials examining the
+management of painful crisis in pregnant women with SCD, sotreatment of acute pain in pregnant women should follownational recommendations applicable to non-pregnant womenwith modiﬁcations to account for evidence of safety of speciﬁc
+analgesics for the fetus. Mild pain may be managed in the com-
+munity with rest, oral ﬂuids and paracetamol or weak opioids(such as co-dydramol, co-codamol or dihydrocodeine). NSAIDsshould be used with caution in the ﬁrst trimester and avoidedafter 31 weeks of gestation due to the risk of premature closureof the patent ductus.
+21,22,57If a woman needs strong opiate ther-
+apy, she will need to be admitted to the hospital. The NICEguidelines for the management of acute crisis advocate that
+analgesia be given within 30 min of arrival in hospital after a
+rapid initial assessment and the pain should be controlledwithin 60 min of starting analgesia.
+58There is no evidence to
+suggest pregnant women should be treated differently.
+For severe pain, morphine, diamorphine or oxycodone
+can be given by the oral, subcutaneous or intravenous route,depending on the woman’s preference and local expertise.Pethidine should be avoided because of the risk of toxicity
+and pethidine-associated seizures in patients with SCD.
+On presentation, a woman with sickle crisis should be
+assessed rapidly for medical complications and precipitatingfactors requiring intervention. A full set of observations,using a modiﬁed obstetric early warning chart, including sys-tolic and diastolic blood pressure, pulse, respiratory rate,temperature, oxygen saturation and pain score should berecorded and repeated every 1 –2h .
+58With analgesia admin-
+istration, assessments of pain score, sedation score and respi-
+ratory rate should be monitored initially at 20-min intervals.Women should ideally be cared for in an environment withexperienced nurses/midwives with training in looking afterpregnant women with SCD. Depending on local expertiseand the gestation of the woman and the severity of her con-dition, it may be appropriate to manage her on a medicalward, a haematology ward, an obstetric ward or in a level 2
+or 3 critical care setting. Senior obstetricians, haematologists,
+obstetric anaesthetists, obstetric physicians, specialist nursesand midwives should make up the MDT and care should becoordinated and planned by this group and discussed withthe woman and her family.
+Fluid status should be assessed and documented carefully.
+Dehydration should be avoided, and intravenous (IV) ﬂuidsmay be required to maintain adequate hydration. Fluid status
+and IV ﬂuid prescription should be reviewed at least 12-
+hourly, especially in a woman with SCD-related renal diseaseGuideline
+988
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+or with suspected pre-eclampsia as ﬂuid overload is a poten-
+tial risk.
+Oxygen saturations should be monitored and if oxygen
+saturation falls below the woman’s baseline or below 95%urgent medical review should be requested, due to the risk of
+acute chest syndrome and pulmonary embolism (PE), and
+facial oxygen should be prescribed. There should be earlyrecourse to intensive care if satisfactory oxygen saturationcannot be maintained with oxygen via face mask or nasalcannula. Women with back or chest pain should be offeredan incentive spirometer.
+The woman should be assessed for infection and urine
+culture and microscopy performed. A chest X-ray should
+be performed if the woman has abnormalities on chest
+examination or is hypoxic. Antibiotics as per the localpregnancy-speciﬁc guideline should be prescribed, if thewoman is febrile or there is a high clinical suspicion ofinfection. White blood cell counts are often raised in preg-nant women and in SCD and alone, do not necessarilyindicate infection.
+59
+Thromboprophylaxis should be prescribed for women
+with SCD who are admitted to hospital with painful crises,
+unless there is a contraindication.60Other adjuvants may be
+required to treat the adverse effects of opiates, such as anti-histamines to treat itching or laxatives to prevent opiate-in-duced constipation, and anti-emetics may be required. As thepainful crisis resolves, most women are able to reduce theiropiate requirement rapidly, but this should be guided by thewoman’s previous experience.
+In severely unwell woman, an accurate identiﬁcation of
+the gestation of the fetus is required. If before the thresholdfor viability (approximately 24 weeks and 500 g), additionalfetal monitoring is not needed. From 24 to 28 weeks, fetalwell-being should be monitored by ultrasound scanning.After 28 weeks daily continuous fetal monitoring should beperformed in addition to ultrasound scanning (if not per-formed in the last week).
+Recommendations
+/C15Pregnant women with SCD should have an agreedpain management plan for the treatment of acutepainful crisis (1D) .
+/C15If pregnant women are admitted with acute pain crises
+they should be looked after by the MDT (1D) .
+/C15The NICE guidelines58on the management of acute
+painful episodes should be followed (1B) .
+/C15NSAIDs should be used with caution in the ﬁrst tri-
+mester and avoided after 31 weeks of gestation (2C) .
+/C15Fluid and oxygen balance should be monitored regu-
+larly in women admitted with sickle pain crisis (1D) .
+/C15Women with SCD should be prescribed prophylactic
+low-molecular-weight heparin during any antenatal
+hospital admission (1B) .Management of acute chest syndrome
+Acute chest syndrome is an important complication of SCD
+affecting up to 10% of pregnant women with SCD.4It is
+characterised by fever and/or respiratory symptoms and anew pulmonary inﬁltrate on chest X-ray. Patients should bemonitored for this complication throughout their hospitalstay and all hospitals should have a guideline that includesthe treatment pathway.
+50Essential investigations for diagno-
+sis and prognosis include chest X-ray and full blood count.
+Arterial blood gas analysis should be considered in adultswith low oxygen saturations as severe hypoxia is a useful pre-dictor of severity and helps guide treatment. The main differ-ential diagnosis is PE which should be considered in patientswith a normal chest examination and chest X-ray. Aetiologyis multifactorial and includes infection so careful investiga-tion for infective causes should be undertaken including
+blood cultures, sputum for microscopy and culture and spu-
+tum and nasopharyngeal aspiration for viral testing.
+Basic management will include prompt pain relief, incen-
+tive spirometry and treatment of bacterial or viral infection.Blood transfusion should be considered early in the hypoxicpatient. A simple (top-up) transfusion may sufﬁce in early orless severe disease but exchange transfusion will be necessaryif there are features of clinical severity or a lack of response
+to simple transfusion.
+The critical care team should be involved in the care of
+any patients with severe clinical features or in a deterioratingpatient to consider non-invasive or invasive ventilation. Fol-lowing an episode of acute chest syndrome requiring transfu-sion, the patient should be offered regular prophylactic bloodtransfusion throughout the remainder of pregnancy.
+Recommendations (adapted from Ref.50)
+/C15Patients with SCD can present with acute chest syn-drome (ACS) or it may develop after the onset of sev-ere pain. Therefore vigilance should be maintainedthroughout hospital admission (1B) .
+/C15All hospitals should have a treatment pathway for
+ACS which should include a referral pathway to the
+high dependency unit or intensive care unit (1B) .
+/C15Antibiotics, with cover for atypical organisms, should
+be used even if blood cultures and sputum culturesare negative (1B) .
+/C15Simple (‘top-up’) transfusion should be considered
+early in the hypoxic patient but exchange transfusion isnecessary if there are severe clinical features or evidenceof progression despite initial simple transfusion (1B) .
+Management of other acute complications
+Acute stroke, both infarctive and haemorrhagic, is associated
+with SCD61and this diagnosis should be considered in anyGuideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995989
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+woman with SCD who presents with acute neurological
+impairment. Acute stroke is a medical emergency andrequires urgent brain imaging and referral to the strokephysician and haematologist. Rapid exchange blood transfu-sion can decrease long-term neurological damage. The role
+of thrombolysis should be discussed with a stroke physician
+and senior obstetrician. In women with neurological signs, itis important to distinguish cerebrovascular disease due toSCD from pre-eclampsia/eclampsia.
+Acute anaemia in women with SCD may be attributable
+to erythrovirus infection (parvovirus B19). Infection witherythrovirus in SCD causes a red cell maturation arrestand an aplastic crisis characterised by a reticulocytopenia.
+Therefore, a reticulocyte count should be requested in any
+woman presenting with an acute anaemia and, if low, mayindicate infection with erythrovirus. Treatment is withblood transfusion and the woman must be isolated. Witherythrovirus infection there is the added risk of verticaltransmission to the fetus, hence a review by a fetal medi-cine specialist is indicated to assess fetal anaemia.
+62,63
+Women with SCD can develop anaemia owing to bleeding
+or any other causes of anaemia incidental to the SCD.
+Rare causes of anaemia in SCD include malaria and, occa-sionally, splenic sequestration in women with a mildphenotype.
+Recommendations
+/C15Acute stroke should be considered in women present-
+ing with acute neurological impairment and requires
+urgent consideration of exchange transfusion (1B) .
+/C15Acute erythrovirus infection should be considered in
+women presenting with acute anaemia (1A) .
+Management of VTE and thromboprophylaxis
+Pregnancy is a well-established risk factor for VTE for
+women but this risk is magniﬁed in pregnant women with
+SCD.64–68In a recent meta- analysis the risk of VTE [odds
+ratio (OR) 33 /C12, 95% CI 9 /C17–113/C14,P<0/C1001] and deep vein
+thrombosis (OR 30 /C17, 95% CI 1 /C16–578/C12,P=0/C102) were
+increased when compared to a cohort without SCD.68The
+prevalence of VTE was 3 /C15-fold greater in women with com-
+plications such as vaso-occlusive crisis, acute chest syndromeand pneumonia when compared to those without these com-
+plications, but was less in those with more severe anaemia.
+6
+In this study 28 /C16% and 71 /C14% of VTE episodes were identi-
+ﬁed as having occurred in the antenatal and postpartumperiods respectively.
+SCD is listed as one of the risk factors for thrombosis in
+the 2015 RCOG Green-top guideline: Reducing the Risk ofVTE during Pregnancy and the Puerperium.
+60This guideline
+provides recommendations for risk assessments for thrombo-
+prophylaxis and suggests that:1. All women with SCD should have risk assessments per-
+formed in early pregnancy, if admitted to hospital, in theintrapartum and early postpartum period.
+2. Women with SCD should be considered for prophylactic
+low-weight heparin (LMWH) from 28 weeks of preg-
+nancy until six weeks postpartum and if women have
+additional risk factors, prophylaxis should start from thebeginning of pregnancy.
+3. Women admitted to hospital with a vaso-occlusive crisis
+or for other reasons should be offered LMWH through-out their admission unless there are contraindications.
+Due to the higher incidence of PE in women with co-exis-
+tent chest infections or acute chest syndrome
+6and the over-
+lap in presenting features a high index of suspicion for PE isrequired when assessing these patients. Women suspected ofVTE should be managed according to RCOG Green-top
+Guideline No. 37b: The Acute Management of Thrombosis
+and Embolism during Pregnancy and the Puerperium.
+69
+Recommendations: (adapted from RCOG Guideline
+37a60)
+/C15All women with SCD should have risk assessments
+performed in early pregnancy, if admitted to hospital,
+in the intrapartum and early postpartum period (1C) .
+/C15Women with SCD should be considered for prophy-
+lactic low-weight heparin (LMWH) from 28 weeks ofpregnancy until six weeks postpartum and if womenhave additional risk factors, prophylaxis should startfrom the beginning of pregnancy (2B) .
+/C15Women admitted to hospital with a vaso-occlusive cri-
+sis or for other reasons should be offered LMWH
+throughout their admission unless there are con-
+traindications (1B) .
+Intrapartum care
+Timing of birth
+There are no randomised controlled trials to dictate the
+appropriate timing of delivery. Recent systematic review andmeta-analysis
+5,70conﬁrm increased perinatal mortality, par-
+ticularly during the later stages of pregnancy, in part due tothe complications of SCD. The risks of abruption, unex-
+plained stillbirth, pre-eclampsia, peripartum cardiomyopathy
+and acute sickle cell crisis are increased and unpredictable. Aprospective birth plan should be made, in consultation withthe woman to include mode of delivery, place of labour,MDT, positions for labour, analgesia and additional moni-toring requirements that may be appropriate. Due to theincreased risk of placental insufﬁciency and pre-eclampsia,delivery between 38 and 40 weeks is often indicated to pre-
+vent late-pregnancy complications and associated adverse
+perinatal outcomes.Guideline
+990
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Recommendation
+/C15Pregnant women with SCD who have a normally
+growing baby should be delivered between 38 and40 weeks of gestation (2D) .
+Mode of birth
+Whilst older studies questioned vaginal delivery as the opti-
+mal mode of delivery for women with SCD, recent studiesreﬂecting UK practice of supporting vaginal delivery as therecommended mode of delivery, with the need for the cae-sarean section based on obstetric indications, report satisfac-
+tory outcomes.
+4,5Caesarean section increases the woman’s
+risk of infection and VTE so elective caesarean birth shouldnot be advised for women with SCD in the absence of otherrisk factors or obstetric indications. Women with SCD aremore at risk of caesarean section because of the increasedobstetric complications such as pre-eclampsia, intra-uterinegrowth restriction and the need for earlier delivery.
+5Previous
+avascular necrosis of the hip can lead to poor hip rotation
+and abduction; and in women with recurrent severe crises,
+avoiding a long labour may help to minimise the risk ofintrapartum SCD crisis.
+Recommendations
+/C15Women with SCD can be offered vaginal delivery andvaginal birth after previous caesarean (VBAC) if there
+are no other contraindications (2D) .
+/C15In women who have hip replacements (because of
+avascular necrosis) suitable positions for deliveryshould be discussed prior to delivery (1D) .
+Optimal intrapartum care
+Good analgesia (with a prospective management plan for
+anaesthetics made prior to labour), with avoidance of dehy-dration, regular monitoring of oxygen saturations and avoid-ance of a protracted labour, form the mainstay of the
+intrapartum management of a woman with SCD. General
+anaesthesia carries additional risks beyond the normal obstet-ric case and should be avoided where possible. Womenshould be offered review by an anaesthetist in the third tri-mester of pregnancy to discuss these issues. Pethidine shouldbe avoided because of the risk of seizures when administeredto a woman with SCD.
+There are no randomised controlled trials regarding the
+place of birth for women with SCD but women should be
+advised to give birth in hospitals that are able to manageboth the complications of SCD and high-risk pregnancies.Obstetricians need to be aware of the increased frequency ofsickle cell crisis and ACS in the intrapartum period and ofthe increased risk of painful crisis with long labour ( >12 h).This is often secondary to dehydration and in this situation,
+the woman should be well hydrated. If labour is progressing,the labour should be carefully supervised; caesarean sectionshould be considered if labour is not progressing well anddelivery is not imminent.
+During labour, if oral hydration is not tolerated or is
+inadequate, intravenous ﬂuids should be administered usinga ﬂuid balance chart to prevent ﬂuid overload. If venousaccess is difﬁcult to obtain the woman should be referredto the anaesthetist. The demand for oxygen is increasedduring the intrapartum period and the use of pulse oxime-try to detect hypoxia in the mother is appropriate duringlabour. Arterial blood gas analysis may be considered and
+oxygen therapy instituted if oxygen saturation is 94% or
+less.
+Routine antibiotic prophylaxis in labour is currently not
+supported by evidence, but hourly observations of vital signsshould be performed. A raised temperature (over 37 /C15/C176C)
+requires investigation. The clinician should have a lowthreshold to commence broad-spectrum antibiotics.
+There are no randomised controlled trials regarding inter-
+ventions during labour for women with SCD but close obser-
+vation during labour is essential. Continuous electronic fetalheart rate monitoring is recommended because of theincreased rate of stillbirth, placental abruption and compro-mised placental reserve.
+71Sickle cell crisis in labour should
+be treated as per the guidance for antepartum crisis above.
+Epidural analgesia is safe and effective and should be
+available for women in labour.
+Recommendations
+/C15Women with SCD should be advised to give birth inhospitals that are able to manage both the complica-tions of SCD and high-risk pregnancies (1D) .
+/C15The relevant MDT (senior midwife in charge, senior
+obstetrician, anaesthetist and haematologist) should
+be informed as soon as labour is conﬁrmed (1D) .
+/C15Blood should be cross-matched for delivery if there
+are atypical antibodies present (since this may delaythe availability of blood) (1D) .
+/C15Women should be kept warm and given adequate ﬂuid
+during labour, using a ﬂuid balance chart to avoidﬂuid overload (1D) .
+/C15Continuous intrapartum electronic fetal heart rate
+monitoring is recommended owing to the increased
+risk of fetal distress, which may necessitate operativedelivery (1D) .
+/C15Women with SCD should be offered anaesthetic
+assessment in the third trimester of pregnancy (2D) .
+/C15Opiates may be used for analgesia, except for pethi-
+dine (1D) .
+/C15Regional analgesia is recommended for caesarean sec-
+tion (1D) .Guideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995991
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Postpartum care
+Optimal postdelivery care
+It is important for clinicians to remain vigilant postnatally as
+the risk of sickle cell crisis remains increased with 21 –25% of
+women having a crisis post delivery and crisis being morecommon following general anaesthesia.
+5,72Hydration and
+oxygenation should be maintained and early mobilisationencouraged. Crises should be managed as for non-pregnantwomen. NSAIDs are routinely administered in the postpar-tum period and can be used during breastfeeding. Neonatesand young infants are at risk from the adverse effects of opi-
+oids. Codeine should not be given during breastfeeding.
+Dihydrocodeine and tramadol and other opioids can be usedbut should be at the lowest effective dose, for the shortestduration and under medical supervision. Infants should bemonitored for sedation, breathing difﬁculties, constipation,difﬁculty feeding and weight gain.
+Breastfeeding should be encouraged, as in women without
+SCD. If the baby is at high risk of SCD (i.e. the partner is a
+carrier, affected or unknown status) early testing for SCD
+should be offered. Samples should be sent to laboratorieswhere there is experience in the routine analysis of SCD innewborn samples.
+Routine care should be provided as per the NICE guide-
+line on postnatal care.
+73Antithrombotic stockings are recom-
+mended in the puerperium.60Thromboprophylaxis in the
+form of LMWH is recommended whilst the pregnant woman
+is in hospital and for six weeks post delivery.60
+Women should be given appropriate postpartum contra-
+ceptive advice, the timing depending on breastfeeding andthe choice of contraception to be used.
+Recommendations
+/C15Women should be advised that they have an increased
+risk of pain episodes in the postnatal period and pre-
+cipitants should be avoided (1D) .
+/C15Women should receive thromboprophylaxis with
+LMWH for six weeks after delivery (1C) .
+Contraception advice for women with SCD
+Given the health risks of an unintended pregnancy, coun-
+selling about contraception is an important component inthe care of women with SCD and appropriate advice shouldbe conveyed to the woman’s primary care workers. Used cor-
+rectly, all hormonal contraceptives have 99% efﬁcacy and the
+choice of contraception should be individualised, taking intoaccount the woman’s preference, lifestyle and ease of compli-ance.
+There is theoretical concern with combined hormonal
+contraceptives (CHCs) that the risk of thrombosis or sicklecrisis may be increased. A retrospective study of
+1 257 women with SCD, of which 178 (14 /C12%) were CHC
+users, showed a fourfold increased risk of ischaemic strokeassociated with CHC. However, when adjusted for confound-ing cardiovascular risk factors such as smoking, there was no
+signiﬁcant difference.
+74A systematic review found no effect
+of CHCs on the frequency of sickle crises or other adverseevents and no effect on haematological parameters associatedwith sickle crises.
+75However, whilst evidence remains lim-
+ited, the authors’ recommendations are that CHCs should beused selectively, with risk being mitigated by controllingother cardiovascular risk factors. The 2019 updated Facultyof Sexual & Reproductive Healthcare (FSRH) guide classiﬁes
+CHCs as category 2, where the advantages outweigh the the-
+oretical risks.
+76
+Progesterone-only preparations, such as the progesterone-
+only pill, injectable contraceptives and the levonorgestrelintrauterine system (LNG-IUS) have not been shown to havedetrimental effects
+77and indeed there is some evidence of
+clinical beneﬁt. An early study showed oral progesterone ledto an 80% reduction in painful episodes.
+78Intramuscular
+depo-medroxyprogesterone acetate (DMPA) has been found
+to reduce painful crises79and improve laboratory parame-
+ters80suggesting an inhibition of in vivo sickling. Etono-
+gestrel sub-dermal implant has been associated withimproved well-being in women with SCD,
+81with clinical
+improvement paralleled by elevation of F cells.82With the
+LNG-IUS bleeding may be unpredictable for the ﬁrst fewweeks but most women will see reduced bleeding thereafter.
+83
+The FSRH classiﬁes progesterone-only preparations as cate-gory 1, unrestricted use.
+76
+The copper intrauterine device is classiﬁed as category 2
+due to concern about the potential increased risk of bloodloss but it is still considered that the beneﬁts outweigh therisks. Barrier methods are safe in women with SCD but gen-erally less effective than other forms of contraception.
+Recommendations
+/C15Contraceptive advice should be given and conveyed tothe woman’s primary care team (1D) .
+/C15The choice of contraception should be individualised
+but methods that eliminate user failure, such as LNG-IUS and sssntramuscular DMPA are preferred (2B) .
+/C15There is some evidence for reduction in sickle pain
+associated with progesterone-only preparations (2C) .
+/C15CHCs are an option for women with SCD but cardio-
+vascular risk factors should be minimised to mitigatepotential risk (2D) .
+Conclusion
+The majority of women with SCD in the UK will reach repro-
+ductive age and discussion of reproduction options andGuideline
+992 ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+pregnancy should form part of their annual review. Pregnancy is
+a time of increased risk for women with SCD with increasedrates of maternal and fetal complications. Therefore each hospi-tal should have a protocol for the management of pregnantwomen with SCD. This should identify an MDT that has
+responsibility for the care of pregnant women with SCD, includ-
+ing an obstetrician with expertise in managing high-risk preg-nancies and a haematologist. Areas with a low prevalence ofSCD should be linked to a specialist centre or haemoglobinopa-thy co-ordinating centre for shared care arrangements andshared protocols and all staff involved in maternity care shouldreceive training in the care of pregnant women with SCD.
+The majority of the recommendations in this document
+are of low certainty, reﬂecting the limited knowledge base
+and lack of clinical trials in this area and many are based onexpert opinion. As such they are likely to be updated if fur-ther clinical evidence becomes available. There is a need forwell-designed clinical trials in this area to ascertain optimaltreatment options.
+Acknowledgements
+The authors wish to thank Gareth Hardy (Niche) for help inundertaking the initial literature review. The BSH GeneralHaematology Task Force members at the time of writing thisguideline were Mamta Garg, Sara Stuart Smith, Noemi Roy,Barbara De La Salle, Charlotte Bradbury, Emmy Dickens,Savio Fernandes, John Grainger and Ciaran Mooney. Theauthors would like to thank them, the BSH sounding board,
+and the BSH Guidelines Committee for their support in
+preparing this guideline. Thank you to Dr Kate Bramhamand Prof Claire Sharpe for their comments. We acknowledgethe comments of the BSH Obstetric Special Interest Group(Etienne Ciantar, Jane Graham, Amy Webster, ElizabethRhodes Amanda Clark, Charlotte Bradbury).
+Conﬂicts of interest
+The BSH paid the expenses incurred during the writing ofthis guidance. All authors have made a declaration of inter-ests to the BSH and Task Force Chairs which may be viewedon request. The following authors have undertaken advisoryboard, educational grant and speaker’s fees: JH for Novartis,Global Blood Therapeutics, Novo Nordisk, Imara, Forma,Resonance Health, Bluebird Bio. LM is supported by the
+NIHR Oxford Biomedical Research Centre and is also a part-
+time employee and shareholder of Sensyne Health plc. Thefollowing members of the writing group have no conﬂicts ofinterest to declare: EO-N, SP, RH, SR, LO, SP.
+Review process
+Members of the writing group will inform the writing group
+Chair if any new evidence becomes available that would alter
+the strength of the recommendations made in this documentor render it obsolete. The document will be reviewed regu-
+larly by the relevant Task Force and the literature search willbe re-run every three years to search systematically for anynew evidence that may have been missed. The document willbe archived and removed from the BSH current guidelines
+website if it becomes obsolete. If new recommendations are
+made an addendum will be published on the BSH guidelineswebsite (https://b-s-h.org.uk/media/16732/bsh-guidance-development-process-dec-5-18.pdf).
+Disclaimer
+While the advice and information in this guidance are
+believed to be true and accurate at the time of going to
+press, neither the authors, the BSH, nor the publishers acceptany legal responsibility for the content of this guidance.
+References
+1. Royal College of Obstetricians and Gynaecologists. Management of sickle
+cell disease in pregnancy. Green-top guideline no. 61. 2011. [cited 2021Jul 8]. Available from: https://www.rcog.org.uk/globalassets/documents/guidelines/gtg_61.pdf
+2. Public Health England. NHS sickle cell and thalassaemia screening pro-
+gramme. Handbook for antenatal laboratories. 2017. [cited 2021 Jul 8].Available from: https://assets.publishing.service.gov.uk/government/upload
+s/system/uploads/attachment_data/ ﬁle/656094/Antenatal_Laboratory_Ha
+ndbook.pdf
+3. Piel FB, Patil AP, Howes RE, Nyangiri OA, Gething PW, Dewi M, et al.
+Global epidemiology of sickle haemoglobin in neonates: a contemporary
+geostatistical model-based map and population estimates. Lancet .
+2013; 381:142–51.
+4. Oteng-Ntim E, Ayensah B, Knight M, Howard J. Pregnancy outcome in
+patients with sickle cell disease in the UK –a national cohort study com-
+paring sickle cell anaemia (HbSS) with HbSC disease. Br J Haematol .
+2015; 169:129–37.
+5. Oteng-Ntim E, Meeks D, Seed PT, Webster L, Howard J, Doyle P, et al.
+Adverse maternal and perinatal outcomes in pregnant women with sickle
+cell disease: systematic review and meta-analysis. Blood . 2015; 125:3316 –
+25.
+6. Seaman CD, Yabes J, Li J, Moore CG, Ragni MV. Venous thromboem-
+bolism in pregnant women with sickle cell disease: a retrospective database
+analysis. Thromb Res . 2014; 134:1249 –52.
+7. Serjeant GR, Hambleton I, Thame M. Fecundity and pregnancy outcome
+in a cohort with sickle cell-haemoglobin C disease followed from birth.
+BJOG . 2005; 112:308–14.
+8. Sun PM, Wilburn W, Raynor BD, Jamieson D. Sickle cell disease in preg-
+nancy: twenty years of experience at Grady Memorial Hospital, Atlanta,
+Georgia. Am J Obstet Gynecol . 2001; 184:1127 –30.
+9. Sickle Cell Society. Standards for the clinical care of adults with sickle cell
+disease in the UK. 2018. [cited 2021 Jul 8]. Available from: https://www.sicklecellsociety.org/sicklecellstandards/
+10. Vali S, Mukhtar S, Nandi A, Wilson K, Oakley L, El-Toukhy T, et al.
+Cumulative outcome of pre-implantation genetic diagnosis for sickle-celldisease: a 5-year review. Br J Haematol . 2020; 191:875–9.
+11. Oyewo A, Salubi-Udu J, Khalaf Y, Braude P, Renwick P, Lashwood A,
+et al. Preimplantation genetic diagnosis for the prevention of sickle cell
+disease: current trends and barriers to uptake in a London teaching hospi-tal.Hum Fertil (Camb) . 2009; 12:153–9.
+12. Darbari I, O’Brien JE, Hardy SJ, Speller-Brown B, Thaniel L, Martin B,
+et al. Views of parents of children with sickle cell disease on pre-implanta-
+tion genetic diagnosis. Blood Cancer . 2018; 65(8):e27102.Guideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995993
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13. Sharpe CC, Thein SL. How I treat renal complications in sickle cell dis-
+ease. Blood . 2014; 123:3720 –6.
+14. Liem R, Lanzkron S, Coates TD, DeCastro L, Desai AA, Ataga KI, et al.
+American society of hematology 2019 guidelines for sickle cell disease: car-
+diopulmonary and kidney disease. Blood Adv . 2019; 3:3867 –97.
+15. National Institute for Health and Clinical Excellence (NICE). Hyperten-
+sion in pregnancy: diagnosis and management. NICE guideline 133
+(NG133). 2019. [cited 2021 Jul 8]. Available from: https://www.nice.org.
+uk/guidance/ng133
+16. Gladwin MT, Sachdev V, Jison ML, Shizukuda Y, Plehn JF, Minter K,
+et al. Pulmonary hypertension as a risk factor for death in patients with
+sickle cell disease. N Engl J Med . 2004; 350:886–95.
+17. Soh MC, Sankaran S, Chung NY, Nelson-Piercy C, Howard J, Robinson
+SE, et al. Mildly raised tricuspid regurgitant velocity 2.5-3.0 m/s in preg-
+nant women with sickle cell disease is not associated with poor obstetric
+outcome –an observational cross-sectional study. Obstet Med . 2016; 9:160–
+3.
+18. Lindenbaum J, Klipstein FA. Folic acid deﬁciency in sickle cell anaemia. N
+Engl J Med . 1963; 269:875–82.
+19. MRC Vitamin Study Research Group. Prevention of neural tube defects:
+results of the Medical Research Council Vitamin Study. Lancet .
+1991; 338:131–7.
+20. NHS website. Vitamins, supplements and nutrition in pregnancy. [cited
+2021 Jul 8]. Available from: https://www.nhs.uk/pregnancy/keeping-well/vitamins-supplements-and-nutrition/
+21. Flint J, Panchal S, Hurrell A, van de Venne M, Gayed M, Schreiber K,
+et al. BSR and BHPR guideline on prescribing drugs in pregnancy andbreastfeeding –Part II: analgesics and other drugs used in rheumatology
+practice. Rheumatology . 2016; 55:1698 –702.
+22. Black E, Khor KE, Kennedy D, Chutatape CA, Sharma S, Vancaillie T,
+et al. Medication use and pain management in pregnancy: a critical review.World institute of pain. Pain Pract . 2019; 19:875–99.
+23. Renal Association. Clinical practice guideline. Pregnancy and renal disease.
+[cited 2021 Jul 8]. Available from: https://renal.org/sites/renal.org/ﬁles/
+FINAL-Pregnancy-Guideline-September-2019.pdf
+24. Charache S, Terrin ML, Moore RD, Dover GJ, Barton FB, Eckert SV, et al.
+Effect of hydroxyurea on the frequency of painful crisis in sickle cell ane-
+mia. Investigators of the Multicenter Study of Hydroxyurea in Sickle CellAnemia. N Engl J Med . 1995; 332:1317 –22.
+25. Qureshi A, Kaya B, Pancham S, Keenan R, Anderson J, Akanni M, et al.
+Guidelines for the use of hydroxycarbamide in children and adults with
+sickle cell disease. Br J Haematol . 2018; 181:460–75.
+26. Byrd DC, Pitts SR, Alexander CK. Hydroxyurea in two pregnant women
+with sickle cell anemia. Pharmacotherapy . 1999; 19:1459 –62.
+27. Diav-Citrin O, Hunnisett L, Sher GD, Koren G. Hydroxyurea use during
+pregnancy: a case report in sickle cell disease and review of the literature.Am J Hematol . 1999; 60:148–50.
+28. Ballas SK, McCarthy WF, Guo N, DeCastro L, Bellevue R, Barton BA,
+et al. Exposure to hydroxyurea and pregnancy outcomes in patients withsickle cell anaemia. J Natl Med Assoc . 2009; 101:1046 –51.
+29. Thauvin-Robinet C, Maingueneau C, Robert E, Elefant E, Guy H, Caillot
+D, et al. Exposure to hydroxyurea during pregnancy: a case series. Leukae-
+mia. 2001; 15:1309 –11.
+30. Gwer SO, Onynago KO. Prevalence and incidence of congenital anomalies
+amongst babies born to women with sickle cell disease and exposed to
+hydroxyurea during pregnancy: a systematic review protocol. JBI Database
+Syst Rev Implement Rep . 2018; 16:1135 –40.
+31. NHS sickle cell and thalassaemia screening programme. [cited 2021 Jul 8].
+Available from: https://www.gov.uk/guidance/sickle-cell-and-thalassaemia-
+screening-programme-overview
+32. Barrett AN, McDonnell TC, Chan KC, Chitty LS. Digital PCR analysis of
+maternal plasma for noninvasive detection of sickle cell anemia. Clin
+Chem . 2012; 58:1026 –32.
+33. Hill M, Oteng-Ntim E, Forya F, Petrou M, Morris S, Chitty LS. Prefer-
+ences for prenatal diagnosis of sickle-cell disorder: a discrete choiceexperiment comparing potential service users and health-care providers.
+Health Expect . 2017; 20:1289 –95.
+34. National Institute for Health and Clinical Excellence (NICE). Antenatal
+care for uncomplicated pregnancies. Clinical guideline 62 (CG62). 2019.
+[cited 2021 Jul 8]. Available from: https://www.nice.org.uk/guidance/cg62
+35. Villers MS, Jamison MG, De Castro LM, James AH. Morbidity associated
+with sickle cell disease in pregnancy. Am J Obstet Gynaecol . 2008; 102:947–51.
+36. Pavord S, Daru J, Prasannan N, Robinson S, Stanworth S, Girling J. UK
+guidelines on the management of iron deﬁciency in pregnancy. Br J Hae-
+matol . 2020; 188:819–30.
+37. Kuo K, Caughey A. Contemporary outcomes of sickle cell disease in preg-
+nancy. Am J Obstet Gynecol . 2016; 215:505.e1 –e5.
+38. Duley L, Henderson-Smart DJ, Meher S, King JF. Antiplatelet agents for
+preventing pre-eclampsia and its complications. Cochrane Database Syst
+Rev. 2007; 18:CD004659.
+39. Hastie R, Tong S, Wikstrom AK, Sandstrom A, Hesselman S, Bergman L.
+Aspirin use during pregnancy during pregnancy and the risk of bleedingcomplications: a Swedish population-based cohort study. Am J Obstet
+Gynecol . 2021; 224:95.e1 –e12.
+40. Royal College of Obstetricians and Gynaecologists. The investigation and
+management of the small-for-gestational-age fetus. Green-top guideline
+no. 31. 2014. [cited 2021 Jul 8]. Available from: www.rcog.org.uk/globala
+ssets/documents/guidelines/gtg_31.pdf
+41. Peeva G, Oakley L, von Rege I, Nicolaides K, Oteng-Ntim E. Does ﬁrst-tri-
+mester serum pregnancy-associated plasma protein A differ in pregnant
+women with sickle cell disease? Prenat Diagn . 2019; 39:921–4.
+42. Davis BA, Allard S, Quereshi A, Porter JB, Pancham S, Win N, et al.
+Guidelines on red cell transfusion in sickle cell disease. Part I: principlesand laboratory aspects. Br Soc Haematol . 2017; 176:179–91.
+43. Davis BA, Allard S, Quereshi A, Porter JB, Pancham S, Win N, et al.
+Guidelines on red cell transfusion in sickle cell disease. Part II: indicationsfor transfusion. Br Soc Haematol . 2017; 176:192–209.
+44. Chou S, Alsawas M, Fasano R, Field JJ, Hendrickson JE, Howard J, et al.
+American Society of Hematology 2020 guidelines for sickle cell disease:
+transfusion support. Blood Adv . 2020; 4:327–55.
+45. Oakley LL, Awogbade M, Brien S, Briley A, Chorozoglou M, Drasar E,
+et al. Serial prophylactic exchange blood transfusion in pregnant women
+with sickle cell disease (TAPS-2): study protocol for a randomised con-trolled feasibility trial. Trials . 2020; 21:347.
+46. Koshy M, Burd L, Wallace D, Moawad A, Baron J. Prophylactic red-cell
+transfusions in pregnant patients with sickle cell disease. A randomised
+cooperative study. N Engl J Med . 1988; 319:1447 –52.
+47. Okusanya BO, Oladapo OT. Prophylactic versus selective blood transfu-
+sion for sickle cell disease in pregnancy. Cochrane Database Syst Rev .
+2016; 12:CD010378.
+48. Malinowski AK, Shehata N, D’Souza R, Kuo KH, Ward R, Shah PS, et al.
+Prophylactic transfusion for pregnant women with sickle cell disease: a
+systematic review and meta-analysis. Blood . 2015; 126:2424 –35.
+49. Benites BD, Benevides TC, Valente IS, Marques JF Jr, Gilli SC, Saad ST.
+The effects of exchange transfusion for prevention of complications duringpregnancy of sickle hemoglobin C disease patients. Transfusion .
+2016; 56:119–24.
+50. Howard J, Hart N, Roberts-Harewood M, Cummins M, Awogbade M,
+Davis B. Guideline on the management of acute chest syndrome in sicklecell disease. Br J Haematol . 2015; 169:492–505.
+51. Howard J, Malfroy M, Llewelyn C, Choo L, Hodge R, Johnson T, et al.
+The Transfusion Alternatives Preoperatively in Sickle Cell Disease (TAPS)study: a randomized controlled multi-centre clinical trial. Lancet .
+2013; 381:930–
+8.
+52. Powars DR, Sandhu M, Niland-Weiss J, Johnson C, Bruce S, Manning PR.
+Pregnancy in sickle cell disease. Obstet Gynecol . 1986; 67:217–28.
+53. Howard RJ, Tuck SM, Pearson TC. Pregnancy in sickle cell disease in the
+UK: results of a multicentre survey of the effect of prophylactic blood
+transfusion on maternal and fetal outcome. Br J Obstet Gynaecol .
+1995; 102:947–51.Guideline
+994 ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+54. Smith JA, Espeland M, Bellevue R, Bonds D, Brown AK, Koshy M. Preg-
+nancy in sickle cell disease: experience of the Cooperative Study of SickleCell Disease. Obstet Gynecol . 1996; 87:199–204.
+55. Rajab KE, Issa AA, Mohammed AM, Ajami AA. Sickle cell disease and
+pregnancy in Bahrain. Int J Gynaecol Obstet . 2006; 93:171–5.
+56. Al Jama FE, Gasem T, Burshaid S, Rahman J, Al Suleiman SA, Rahman MS.
+Pregnancy outcome in patients with homozygous sickle cell disease in a uni-
+versity hospital, Eastern Saudi Arabia. Arch Gynecol Obstet . 2009; 280:793–7.
+57. Østensen ME, Skomsvoll JF. Anti-inﬂammatory pharmacotherapy during
+pregnancy. Expert Opin Pharmacother . 2004; 5:571–80.
+58. National Institute for Health and Clinical Excellence (NICE Guideline).
+Sickle cell disease: managing acute painful episodes in hospital. Clinicalguideline CG143. 2012. [cited 2021 Jul 8]. Available from: https://www.nice.org.uk/guidance/CG143
+59. Litos M, Sarris I, Bewley S, Seed P, Okpala I, Oteng-Ntim E. White blood
+cell count as a predictor of the severity of sickle cell disease during preg-nancy. Eur J Obstet Gynecol Reprod Biol . 2007; 133:169–72.
+60. Royal College of Obstetricians and Gynaecologists. Reducing the risk of
+venous thromboembolism during pregnancy and the puerperium. Green-
+top guideline no. 37a. 2015. [cited 2021 Jul 8]. Available from: www.rcog.org.uk/globalassets/documents/guidelines/gtg-37a.pdf
+61. Ohene-Frempong K, Weiner SJ, Sleeper LA, Miller ST, Embury S, Moohr
+JW, et al. Cerebrovascular accidents in sickle cell disease: rates and riskfactors. Blood . 1998; 91:288–94.
+62. Smith-Whitley K, Zhao H, Hodinka RL, Kwiatkowski J, Cecil Ren /C18ee, Cecil
+T, et al. Epidemiology of human parvovirus B19 in children with sickle
+cell disease. Blood . 2004; 103:422–7.
+63. National Institute for Health and Care Excellence. Parvovirus B19 infec-
+tion. Scenario: pregnant women. Clinical knowledge summary. 2017.
+[cited 2021 Jul 8]. Available from: https://cks.nice.org.uk/topics/parvo
+virus-b19-infection/management/pregnant-women/
+64. Porter B, Key NS, Jauk VC, Adam S, Biggio J, Tita A. Impact of sickle
+hemoglobinopathies on pregnancy-related venous thromboembolism. Am
+J Perinatol . 2014; 31:805–9.
+65. Costa VMF, Viana MB, Aguiar RALP. Pregnancy in patients with sickle
+cell disease: maternal and perinatal outcomes. J Matern Fetal Neonatal
+Med. 2014; 26:1–5.
+66. Naik RP, Streiff MB, Haywood C, Segal JB, Lanzkron S. Venous throm-
+boembolism incidence in the Cooperative Study of Sickle Cell Disease.Thromb Haemost . 2014; 12:2010 –6.
+67. Brunson A, Lei A, Rosenberg AS, White RH, Keegan T, Wun T. Increased
+incidence of VTE in sickle cell disease patients: risk factors, recurrence andimpact on mortality. Br J Haematol . 2017; 178:319
+–26.
+68. Noubiap JJ, Temgoua MN, Tankeu R, Tochie JN, Wonkam A, Bigna JJ.
+Sickle cell disease, sickle trait and the risk for venous thromboembolism: a
+systematic review and meta-analysis. Thromb J . 2018; 16:27. https://doi.org/
+10.1186/s12959-018-0179-z69. Royal College of Obstetricians and Gynaecologists. Thrombosis and embo-
+lism during pregnancy and the puerperium: acute management. Green-topguideline no. 37b. 2015. [cited 2021 Jul 8]. Available from: https://www.rc
+og.org.uk/en/guidelines-research-services/guidelines/gtg37b/
+70. Boafor TK, Olayemi E, Galadanci N, Hayfron-Benjamin C, Dei-Adomakoh
+Y, Segbeﬁa C, et al. Pregnancy outcomes in women with sickle-cell diseasein low and high income countries: a systematic review and meta-analysis.
+BJOG . 2016; 123:691–8.
+71. Parrish MR, Morrison JC. Sickle cell crisis and pregnancy. Semin. Perina-
+tol. 2013; 37:274–9.
+72. Camous J, N’da A, Etienne-Julan M, St /C19ephan F. Anesthetic management
+of pregnant women with sickle cell disease- effect on post-natal sicklingcomplications. Can J Anaesth . 2008; 55:276–83.
+73. National Institute for Health and Clinical Excellence (NICE). Postnatal
+care. NICE Guideline 194 (NG 194). 2021. [cited 2021 Jul 8]. Available
+from: https://www.nice.org.uk/guidance/ng194
+74. Qureshi A, Malik A, Adil M, Suri MF. Oral contraceptive use and incident
+stroke in women with sickle cell disease. Thromb Res . 2015; 136:315–8.
+75. Haddad LB, Curtis KM, Legardy-Williams JK, Cwiak C, Jamieson DJ.
+Contraception for individuals with sickle cell disease: a systematic reviewof the literature. Contraception . 2012; 85:527–37.
+76. Faculty of Sexual and Reproductive Healthcare of the Royal College of
+Obstetricians and Gynaecologists. UK medical eligibility criteria for con-traceptive use (UK MEC). [cited 2021 Jul 8]. Available from: https://www.fsrh.org/ukmec/
+77. Legardy JK, Curtis KM. Progestogen-only contraceptive use among women
+with sickle cell anemia: a systematic review. Contraception . 2006; 73:195–
+204.
+78. Isaacs WA, Efﬁong CE, Ayeni O. Steroid treatment in the prevention of
+painful episodes in sickle-cell disease. Lancet . 1972; 7750 :570–1.
+79. de Abood M, de Castillo Z, Guerrero F, Espino M, Austin KL. Effect of
+Depo-Provera or Microgynon on the painful crises of sickle cell anemiapatients. Contraception . 1997; 56:313.
+80. De Ceulaer K, Gruber C, Hayes R, Serjeant GR. Medroxyprogesterone
+acetate and homozygous sickle-cell disease. Lancet . 1982; 8292 :229–31.
+81. Barbosa IC, Ladipo OA, Nascimento MdLP, Athayde C, Hirsch C, Lopes
+R, et al. Carbohydrate metabolism in sickle cell patients using a subdermal
+implant containing nomegestrol acetate (Uniplant). Contraception .
+2001; 63:263–5.
+82. Nascimento MDLP, Ladipo OA, Coutinho EM. Nomegestrol acetate con-
+traceptive implant use by women with sickle cell disease. Clin Pharmacol
+Ther. 1998; 64:433–8.
+83. De Sanctis V, Soliman AT, Daar S, Canatan D, Di Maio S, Kattamis C.
+Current issues and options for hormonal contraception in adolescents and
+young adult women with sickle cell disease: an update for health care pro-
+fessionals. Mediterr J Hematol Infect Dis . 2020; 12:e2020032. https://doi.org/
+10.4084/mjhid.2020.032Guideline
+ª2021 The Authors. British Journal of Haematology published by British Society for Haematology
+and John Wiley & Sons Ltd. British Journal of Haematology , 2021, 194, 980–995995
+ 13652141, 2021, 6, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/bjh.17671 by NICE, National Institute for Health and Care Excellence, Wiley Online Library on [20/10/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
