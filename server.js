@@ -7634,23 +7634,66 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
         console.log(`[BATCH_SYNC] Extracting metadata for ${guideline}...`);
 
         // Extract metadata using AI (this is the slow part)
-        const metadata = await extractMetadataFromContent(content, rawGuidelineName);
+        const metadata = {};
+        const fieldsToExtract = {
+          'humanFriendlyName': 'extractHumanFriendlyName',
+          'yearProduced': 'extractYear',
+          'organisation': 'extractOrganisation',
+          'doi': 'extractDOI'
+        };
 
-        console.log(`[BATCH_SYNC] Successfully extracted metadata for ${rawGuidelineName}`);
+        for (const [field, promptKey] of Object.entries(fieldsToExtract)) {
+          try {
+            const promptConfig = prompts[promptKey];
+            if (!promptConfig) {
+              console.error(`[BATCH_SYNC] Prompt not found for field ${field} (${promptKey})`);
+              continue;
+            }
+            
+            const extractPrompt = promptConfig.prompt.replace('{{text}}', content);
+            
+            let messages;
+            if (promptConfig.system_prompt) {
+              messages = [
+                { role: 'system', content: promptConfig.system_prompt },
+                { role: 'user', content: extractPrompt }
+              ];
+            } else {
+              messages = [{ role: 'user', content: extractPrompt }];
+            }
+            
+            const result = await routeToAI({ messages });
+            
+            if (result && result.content) {
+              const extractedValue = result.content.trim();
+              if (extractedValue && extractedValue !== 'N/A' && extractedValue !== 'Not available') {
+                metadata[field] = extractedValue;
+                console.log(`[BATCH_SYNC] Extracted ${field} for ${guideline}: ${extractedValue}`);
+              }
+            }
+          } catch (error) {
+            console.error(`[BATCH_SYNC] Failed to extract ${field} for ${guideline}:`, error.message);
+          }
+        }
 
-        // Store in Firestore
+        console.log(`[BATCH_SYNC] Successfully extracted metadata for ${rawGuidelineName}:`, metadata);
+
+        // Store in Firestore using the storeGuideline function
         console.log(`[BATCH_SYNC] Storing ${rawGuidelineName} with ID: ${cleanId}`);
         
-        const downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline}`;
-        
-        await db.collection('guidelines').doc(cleanId).set({
-          name: rawGuidelineName,
+        await storeGuideline({
+          filename: rawGuidelineName,
+          title: metadata.humanFriendlyName || rawGuidelineName,
           content: content,
-          summary: summary || '',
-          downloadUrl: downloadUrl,
-          createdAt: admin.firestore.FieldValue.serverTimestamp(),
-          updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-          ...metadata
+          summary: summary,
+          keywords: extractKeywords(summary || content),
+          condensed: content,
+          humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName,
+          humanFriendlyTitle: rawGuidelineName,
+          yearProduced: metadata.yearProduced,
+          organisation: metadata.organisation,
+          doi: metadata.doi,
+          auditableElements: [] // Skip auditable elements for now to save time
         });
 
         results.push({ 
@@ -7664,10 +7707,13 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
 
       } catch (error) {
         console.error(`[BATCH_SYNC] Error processing ${rawGuidelineName}:`, error.message);
+        console.error(`[BATCH_SYNC] Error stack:`, error.stack);
+        console.error(`[BATCH_SYNC] Full error object:`, JSON.stringify(error, Object.getOwnPropertyNames(error)));
         results.push({ 
           guideline: rawGuidelineName, 
           success: false, 
-          error: error.message 
+          error: error.message || 'Unknown error',
+          errorDetails: error.toString()
         });
       }
     }
