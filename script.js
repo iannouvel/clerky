@@ -1873,10 +1873,11 @@ function setupGuidelinesListener() {
             
             // When guideline count changes, trigger comprehensive metadata completion
             if (countChanged && previousGuidelineCount > 0) {
-                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Triggering metadata completion...`);
+                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
                 
-                // Trigger comprehensive metadata completion for all guidelines
-                await triggerMetadataCompletionForAll();
+                // NOTE: Automatic metadata completion disabled to prevent server memory crashes
+                // The batch sync endpoint handles metadata extraction inline
+                // await triggerMetadataCompletionForAll();
                 
                 // Refresh guidelines data after processing
                 setTimeout(() => {
