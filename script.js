@@ -614,11 +614,15 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             updateClearFormattingButton();
         } else {
             // Set content without coloring for other programmatic changes
-            editor.commands.setContent(safeContent);
+            // Convert newlines to HTML paragraphs for proper display in TipTap
+            const htmlContent = safeContent.split('\n').map(line => `<p>${escapeHtml(line) || '<br>'}</p>`).join('');
+            editor.commands.setContent(htmlContent);
         }
     } else {
         // Regular content update without coloring
-        editor.commands.setContent(safeContent);
+        // Convert newlines to HTML paragraphs for proper display in TipTap
+        const htmlContent = safeContent.split('\n').map(line => `<p>${escapeHtml(line) || '<br>'}</p>`).join('');
+        editor.commands.setContent(htmlContent);
     }
 }
 
