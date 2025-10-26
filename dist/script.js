@@ -615,13 +615,21 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         } else {
             // Set content without coloring for other programmatic changes
             // Convert newlines to HTML paragraphs for proper display in TipTap
-            const htmlContent = safeContent.split('\n').map(line => `<p>${escapeHtml(line) || '<br>'}</p>`).join('');
+            // Filter out empty lines to avoid excessive spacing
+            const htmlContent = safeContent.split('\n')
+                .filter(line => line.trim().length > 0)
+                .map(line => `<p>${escapeHtml(line)}</p>`)
+                .join('');
             editor.commands.setContent(htmlContent);
         }
     } else {
         // Regular content update without coloring
         // Convert newlines to HTML paragraphs for proper display in TipTap
-        const htmlContent = safeContent.split('\n').map(line => `<p>${escapeHtml(line) || '<br>'}</p>`).join('');
+        // Filter out empty lines to avoid excessive spacing
+        const htmlContent = safeContent.split('\n')
+            .filter(line => line.trim().length > 0)
+            .map(line => `<p>${escapeHtml(line)}</p>`)
+            .join('');
         editor.commands.setContent(htmlContent);
     }
 }
