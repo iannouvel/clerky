@@ -10093,6 +10093,12 @@ Important guidelines for context field:
 - When including quoted text, copy it EXACTLY as it appears in the guideline - do not paraphrase, rephrase, or modify the wording
 - If you cannot find exact matching text in the Full Guideline Content for a recommendation, do not include quotes - describe the recommendation without quotes instead
 - Use quotation marks ONLY around text that is copied word-for-word from the guideline
+
+MANDATORY QUOTING RULES:
+- NEVER use phrases like "The guideline specifically states that..." or "According to the guideline..."
+- ALWAYS use the format: "The guideline states: '[EXACT QUOTE]'" or just "[EXACT QUOTE]"
+- The quoted text MUST be copied character-for-character from the Full Guideline Content
+- If you cannot find exact text to quote, do NOT use quotation marks at all
 - Reference specific guideline recommendations or requirements
 - Explain the clinical rationale behind the suggestion
 - EXPLICITLY state why this recommendation is indicated in this particular clinical scenario
@@ -10125,6 +10131,16 @@ CRITICAL QUOTING REQUIREMENTS:
 - Use quotation marks around exact text from the guideline
 - If you cannot find exact matching text in the guideline, do NOT use quotation marks
 - Example: "The guideline states: 'Women should be offered screening for...'" (where the quoted part is exact text from the guideline)
+
+FORBIDDEN PHRASES - DO NOT USE:
+- "The guideline specifically states that..."
+- "The guideline recommends that..."
+- "According to the guideline..."
+- "The guideline indicates..."
+
+REQUIRED FORMAT:
+- Context: "The guideline states: '[EXACT QUOTE FROM GUIDELINE]'"
+- Context: "[EXACT QUOTE FROM GUIDELINE]"
 
 IMPORTANT: The context field MUST contain actual quoted text from the guideline, not just descriptions.`;
 
