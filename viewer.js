@@ -386,7 +386,7 @@ function highlightTextOnPage(searchTerm, textContent) {
             const viewport = page.getViewport({ scale: scale });
             
             // Create highlight boxes for each relevant text item
-            relevantItems.forEach(pos => {
+            relevantItems.forEach((pos, index) => {
                 const item = pos.item;
                 
                 // Get transform matrix for this text item
@@ -397,8 +397,17 @@ function highlightTextOnPage(searchTerm, textContent) {
                 const height = item.height || 12; // Fallback height
                 
                 // Convert PDF coordinates to canvas coordinates
+                // PDF.js uses bottom-left origin, canvas uses top-left origin
                 const canvasX = x;
-                const canvasY = viewport.height - y - height;
+                const canvasY = viewport.height - y;
+                
+                console.log(`[VIEWER] Highlight ${index + 1}:`, {
+                    text: item.str.substring(0, 20) + '...',
+                    pdfCoords: { x, y },
+                    canvasCoords: { canvasX, canvasY },
+                    dimensions: { width, height },
+                    viewportHeight: viewport.height
+                });
                 
                 // Create highlight div
                 const highlight = document.createElement('div');
