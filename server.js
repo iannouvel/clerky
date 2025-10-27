@@ -10463,6 +10463,82 @@ app.options('/getGuidelinePDF', (req, res) => {
 });
 
 // Get Guideline PDF endpoint - serves PDF files for viewing
+// New endpoint for PDF.js viewer - serves PDF with proper headers
+app.get('/api/pdf/:guidelineId', async (req, res) => {
+    try {
+        const { guidelineId } = req.params;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+
+        // Get auth token from query parameter, header, or sessionStorage (passed via referer)
+        let idToken = req.query.token || req.headers.authorization?.replace('Bearer ', '');
+        
+        if (!idToken) {
+            console.log('[DEBUG] api/pdf: No token provided in query or header');
+            return res.status(401).json({ success: false, error: 'Authentication required' });
+        }
+
+        // Verify Firebase token
+        try {
+            const decodedToken = await admin.auth().verifyIdToken(idToken);
+            console.log('[DEBUG] api/pdf: User authenticated:', decodedToken.uid);
+        } catch (authError) {
+            console.error('[DEBUG] api/pdf: Authentication failed:', authError.message);
+            return res.status(401).json({ success: false, error: 'Invalid authentication token' });
+        }
+
+        console.log('[DEBUG] api/pdf: Looking up guideline:', guidelineId);
+
+        // Look up guideline metadata to get filename
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            console.log('[DEBUG] api/pdf: Guideline not found:', guidelineId);
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+
+        const guidelineData = guidelineDoc.data();
+        const filename = guidelineData.filename || guidelineData.originalFilename;
+        
+        if (!filename) {
+            console.log('[DEBUG] api/pdf: No filename found for guideline:', guidelineId);
+            return res.status(404).json({ success: false, error: 'PDF filename not found' });
+        }
+
+        console.log('[DEBUG] api/pdf: Serving PDF:', filename);
+
+        // Construct file path
+        const filePath = path.join(__dirname, 'guidance', filename);
+        
+        // Check if file exists
+        const fs = require('fs');
+        if (!fs.existsSync(filePath)) {
+            console.log('[DEBUG] api/pdf: File not found at path:', filePath);
+            return res.status(404).json({ success: false, error: 'PDF file not found on server' });
+        }
+
+        // Set appropriate headers for PDF.js viewer
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', 'inline'); // Display in browser, not download
+        res.setHeader('Cache-Control', 'public, max-age=3600');
+        res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+        res.setHeader('Access-Control-Allow-Credentials', 'true');
+        res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
+        
+        // Send file
+        res.sendFile(filePath);
+
+    } catch (error) {
+        console.error('[DEBUG] api/pdf: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
     try {
         const { guidelineId } = req.query;

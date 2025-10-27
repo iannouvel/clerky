@@ -3656,63 +3656,60 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         return '<em>Guideline reference not available</em>';
     }
 
-    // Construct viewer URL
-    let viewerUrl = `viewer.html?guidelineId=${encodeURIComponent(guidelineId || '')}`;
-    
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    // Create link with onclick to store auth token and search text before opening
-    // Pass context as a data attribute so prepareViewerAuth can access it
-    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this)" data-context="${escapeHtml(context || '')}" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    // Extract search text from context if available
+    let searchText = null;
+    if (context) {
+        const decodedContext = unescapeHtml(context);
+        searchText = extractQuotedText(decodedContext);
+        console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
+    }
+    
+    // Build PDF.js viewer URL with search hash parameters
+    // Format: /pdfjs/web/viewer.html?file=/api/pdf/[guidelineId]#search=[text]&phrase=true&highlightAll=true
+    let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(`/api/pdf/${guidelineId}`)}`;
+    
+    // Add search hash parameters if we have quoted text
+    if (searchText) {
+        const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
+        viewerUrl += searchHash;
+    }
+    
+    // Create link with onclick to store auth token for the PDF endpoint
+    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this)" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
 }
 
 // Function to prepare auth token for viewer
 window.prepareViewerAuth = async function(event, linkElement) {
     try {
-        console.log('[DEBUG] Preparing auth token for viewer...');
+        event.preventDefault(); // Prevent default navigation
+        
+        console.log('[DEBUG] Preparing auth token for PDF.js viewer...');
         const user = firebase.auth().currentUser;
         if (!user) {
             console.error('[DEBUG] No user authenticated');
             alert('Please sign in to view guidelines');
-            event.preventDefault();
             return;
         }
         
         // Get fresh ID token
         const idToken = await user.getIdToken();
         
-        // Extract quoted text from context if available
-        let searchText = null;
-        if (linkElement && linkElement.dataset && linkElement.dataset.context) {
-            const context = linkElement.dataset.context;
-            console.log('[DEBUG] Raw context from data attribute:', context.substring(0, 200));
-            
-            // Decode HTML entities before extracting quotes
-            const decodedContext = unescapeHtml(context);
-            console.log('[DEBUG] Decoded context:', decodedContext.substring(0, 200));
-            
-            searchText = extractQuotedText(decodedContext);
-        }
+        // Add token to the URL as a query parameter
+        const originalUrl = linkElement.href;
+        const urlWithToken = originalUrl.includes('?') 
+            ? `${originalUrl}&token=${encodeURIComponent(idToken)}`
+            : `${originalUrl}?token=${encodeURIComponent(idToken)}`;
         
-        // Store token and search text in localStorage for viewer to use
-        localStorage.setItem('viewerAuthToken', idToken);
-        localStorage.setItem('viewerAuthTokenTime', Date.now().toString());
+        console.log('[DEBUG] Opening PDF.js viewer with auth token in URL');
         
-        if (searchText) {
-            localStorage.setItem('viewerSearchText', searchText);
-            console.log('[DEBUG] Stored search text for viewer:', searchText.substring(0, 50) + '...');
-        } else {
-            localStorage.removeItem('viewerSearchText');
-            console.log('[DEBUG] No quoted text found in context');
-        }
+        // Open in new window
+        window.open(urlWithToken, '_blank', 'noopener,noreferrer');
         
-        console.log('[DEBUG] Auth token stored in localStorage for viewer');
-        
-        // Let the link open normally
     } catch (error) {
         console.error('[DEBUG] Error preparing auth token:', error);
         alert('Failed to prepare authentication. Please try again.');
-        event.preventDefault();
     }
 };
 
