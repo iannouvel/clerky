@@ -384,6 +384,13 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Helper to unescape HTML entities
+function unescapeHtml(text) {
+    const div = document.createElement('div');
+    div.innerHTML = text;
+    return div.textContent;
+}
+
 // Helper to apply colored replacements only to specific tokens
 function applyColoredReplacements(anonymisedText, replacements) {
     // The anonymisedText already has replacements applied, so we need to color the replacement text
@@ -3678,7 +3685,13 @@ window.prepareViewerAuth = async function(event, linkElement) {
         let searchText = null;
         if (linkElement && linkElement.dataset && linkElement.dataset.context) {
             const context = linkElement.dataset.context;
-            searchText = extractQuotedText(context);
+            console.log('[DEBUG] Raw context from data attribute:', context.substring(0, 200));
+            
+            // Decode HTML entities before extracting quotes
+            const decodedContext = unescapeHtml(context);
+            console.log('[DEBUG] Decoded context:', decodedContext.substring(0, 200));
+            
+            searchText = extractQuotedText(decodedContext);
         }
         
         // Store token and search text in localStorage for viewer to use
