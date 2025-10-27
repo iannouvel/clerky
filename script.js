@@ -3666,18 +3666,15 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
     }
     
-    // Build PDF.js viewer URL with search hash parameters
-    // Format: /pdfjs/web/viewer.html?file=/api/pdf/[guidelineId]#search=[text]&phrase=true&highlightAll=true
-    let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(`/api/pdf/${guidelineId}`)}`;
+    // Store search text and guideline ID for auth handler to use
+    const linkData = {
+        guidelineId: guidelineId,
+        searchText: searchText
+    };
     
-    // Add search hash parameters if we have quoted text
-    if (searchText) {
-        const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
-        viewerUrl += searchHash;
-    }
-    
-    // Create link with onclick to store auth token for the PDF endpoint
-    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this)" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    // Create link with onclick to build authenticated URL and open viewer
+    // We'll build the final URL in prepareViewerAuth to include the fresh token
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
 }
 
 // Function to prepare auth token for viewer
@@ -3696,16 +3693,37 @@ window.prepareViewerAuth = async function(event, linkElement) {
         // Get fresh ID token
         const idToken = await user.getIdToken();
         
-        // Add token to the URL as a query parameter
-        const originalUrl = linkElement.href;
-        const urlWithToken = originalUrl.includes('?') 
-            ? `${originalUrl}&token=${encodeURIComponent(idToken)}`
-            : `${originalUrl}?token=${encodeURIComponent(idToken)}`;
+        // Get link data from data attribute
+        const linkDataStr = linkElement.getAttribute('data-link-data');
+        if (!linkDataStr) {
+            console.error('[DEBUG] No link data found');
+            return;
+        }
         
-        console.log('[DEBUG] Opening PDF.js viewer with auth token in URL');
+        const linkData = JSON.parse(linkDataStr);
+        const { guidelineId, searchText } = linkData;
+        
+        console.log('[DEBUG] Building PDF.js viewer URL:', { guidelineId, hasSearchText: !!searchText });
+        
+        // Build the complete PDF URL with token
+        // Use window.location.origin to get the full base URL
+        const baseUrl = window.location.origin;
+        const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+        
+        // Build PDF.js viewer URL with the PDF file URL
+        let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+        
+        // Add search hash parameters if we have quoted text
+        if (searchText) {
+            const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
+            viewerUrl += searchHash;
+            console.log('[DEBUG] Added search parameters:', searchText.substring(0, 50) + '...');
+        }
+        
+        console.log('[DEBUG] Opening PDF.js viewer:', viewerUrl.substring(0, 100) + '...');
         
         // Open in new window
-        window.open(urlWithToken, '_blank', 'noopener,noreferrer');
+        window.open(viewerUrl, '_blank', 'noopener,noreferrer');
         
     } catch (error) {
         console.error('[DEBUG] Error preparing auth token:', error);
