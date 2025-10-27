@@ -9999,6 +9999,45 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
             guidelineTitle
         });
 
+        // Fetch guideline content for verbatim quote extraction
+        let guidelineContent = '';
+        let resolvedGuidelineTitle = guidelineTitle || 'Unknown';
+        let guidelineFilename = null;
+        
+        if (guidelineId) {
+            try {
+                console.log(`[DEBUG] dynamicAdvice: Fetching guideline content for ID: ${guidelineId}`);
+                
+                const [guidelineDoc, condensedDoc] = await Promise.all([
+                    db.collection('guidelines').doc(guidelineId).get(),
+                    db.collection('guidelineCondensed').doc(guidelineId).get()
+                ]);
+
+                if (guidelineDoc.exists) {
+                    const guidelineData = guidelineDoc.data();
+                    const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
+                    
+                    // Get content - prefer condensed version for better performance
+                    guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || '';
+                    
+                    // Get proper title
+                    resolvedGuidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.fileName || guidelineTitle || 'Unknown';
+                    
+                    // Get filename for PDF viewing
+                    guidelineFilename = guidelineData.filename || guidelineData.originalFilename;
+                    
+                    console.log(`[DEBUG] dynamicAdvice: Retrieved guideline content, length: ${guidelineContent.length}`);
+                } else {
+                    console.warn(`[DEBUG] dynamicAdvice: Guideline not found with ID: ${guidelineId}`);
+                }
+            } catch (fetchError) {
+                console.error(`[DEBUG] dynamicAdvice: Error fetching guideline:`, fetchError);
+                // Continue without guideline content - will use analysis only
+            }
+        } else {
+            console.log(`[DEBUG] dynamicAdvice: No guidelineId provided, proceeding without guideline content`);
+        }
+
         // Create AI prompt to convert analysis into structured suggestions
         const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
 
@@ -10049,7 +10088,11 @@ Important guidelines for originalText field:
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
 Important guidelines for context field:
 - Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
-- Include specific quoted text from the guideline using quotation marks (e.g., "According to the guideline: 'All women should receive screening for...'")
+- Include specific quoted text from the guideline using quotation marks
+- CRITICAL: You MUST extract quotes VERBATIM from the Full Guideline Content section provided below
+- When including quoted text, copy it EXACTLY as it appears in the guideline - do not paraphrase, rephrase, or modify the wording
+- If you cannot find exact matching text in the Full Guideline Content for a recommendation, do not include quotes - describe the recommendation without quotes instead
+- Use quotation marks ONLY around text that is copied word-for-word from the guideline
 - Reference specific guideline recommendations or requirements
 - Explain the clinical rationale behind the suggestion
 - EXPLICITLY state why this recommendation is indicated in this particular clinical scenario
@@ -10065,14 +10108,22 @@ Other important guidelines:
 
         const userPrompt = `Original Transcript:
 ${transcript}
+
+Full Guideline Content:
+${guidelineContent || 'Guideline content not available - use analysis only'}
+
 Guideline Analysis:
 ${analysis}
-Guideline: ${guidelineTitle || guidelineId || 'Unknown'}
-Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline to help the user understand the reasoning behind the recommendation.`;
+
+Guideline: ${resolvedGuidelineTitle}
+
+Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline. IMPORTANT: When quoting from the guideline, you MUST copy the text EXACTLY as it appears in the "Full Guideline Content" section above - do not paraphrase or rephrase. If you cannot find exact text to quote, describe the recommendation without using quotation marks.`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
-            userPromptLength: userPrompt.length
+            userPromptLength: userPrompt.length,
+            guidelineContentLength: guidelineContent.length,
+            hasGuidelineContent: guidelineContent.length > 0
         });
 
         // Send to AI
@@ -10180,7 +10231,8 @@ Please extract actionable suggestions from this analysis and format them as spec
                 transcript,
                 analysis,
                 guidelineId,
-                guidelineTitle,
+                guidelineTitle: resolvedGuidelineTitle,
+                guidelineContentLength: guidelineContent.length,
                 suggestions,
                 decisions: {}, // Will store user decisions
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -10201,7 +10253,8 @@ Please extract actionable suggestions from this analysis and format them as spec
                     transcript_length: transcript.length,
                     analysis_length: analysis.length,
                     guideline_id: guidelineId,
-                    guideline_title: guidelineTitle
+                    guideline_title: resolvedGuidelineTitle,
+                    guideline_content_length: guidelineContent.length
                 },
                 {
                     success: true,
@@ -10222,29 +10275,17 @@ Please extract actionable suggestions from this analysis and format them as spec
         console.log('[DEBUG] dynamicAdvice: Returning response', {
             sessionId,
             suggestionsCount: suggestions.length,
+            guidelineTitle: resolvedGuidelineTitle,
+            guidelineFilename,
             success: true
         });
-
-        // Look up guideline filename for PDF viewing
-        let guidelineFilename = null;
-        if (guidelineId) {
-            try {
-                const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
-                if (guidelineDoc.exists) {
-                    const guidelineData = guidelineDoc.data();
-                    guidelineFilename = guidelineData.filename || guidelineData.originalFilename;
-                }
-            } catch (filenameError) {
-                console.error('[DEBUG] dynamicAdvice: Error fetching guideline filename:', filenameError.message);
-            }
-        }
 
         res.json({
             success: true,
             sessionId,
             suggestions,
             guidelineId,
-            guidelineTitle,
+            guidelineTitle: resolvedGuidelineTitle,
             guidelineFilename
         });
 
