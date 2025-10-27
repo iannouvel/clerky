@@ -10117,13 +10117,23 @@ ${analysis}
 
 Guideline: ${resolvedGuidelineTitle}
 
-Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline. IMPORTANT: When quoting from the guideline, you MUST copy the text EXACTLY as it appears in the "Full Guideline Content" section above - do not paraphrase or rephrase. If you cannot find exact text to quote, describe the recommendation without using quotation marks.`;
+Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline. 
+
+CRITICAL QUOTING REQUIREMENTS:
+- You MUST include verbatim quotes from the "Full Guideline Content" section above
+- Copy text EXACTLY as it appears in the guideline - do not paraphrase, rephrase, or modify wording
+- Use quotation marks around exact text from the guideline
+- If you cannot find exact matching text in the guideline, do NOT use quotation marks
+- Example: "The guideline states: 'Women should be offered screening for...'" (where the quoted part is exact text from the guideline)
+
+IMPORTANT: The context field MUST contain actual quoted text from the guideline, not just descriptions.`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length,
             guidelineContentLength: guidelineContent.length,
-            hasGuidelineContent: guidelineContent.length > 0
+            hasGuidelineContent: guidelineContent.length > 0,
+            guidelineContentSample: guidelineContent.substring(0, 200) + '...'
         });
 
         // Send to AI
