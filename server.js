@@ -10463,12 +10463,30 @@ app.options('/getGuidelinePDF', (req, res) => {
 });
 
 // Get Guideline PDF endpoint - serves PDF files for viewing
+// OPTIONS handler for CORS preflight for /api/pdf endpoint
+app.options('/api/pdf/:guidelineId', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Max-Age', '86400');
+    res.status(204).send();
+});
+
 // New endpoint for PDF.js viewer - serves PDF with proper headers
 app.get('/api/pdf/:guidelineId', async (req, res) => {
     try {
+        console.log('[DEBUG] /api/pdf endpoint called for guideline:', req.params.guidelineId);
+        console.log('[DEBUG] /api/pdf request details:', {
+            hasQueryToken: !!req.query.token,
+            hasAuthHeader: !!req.headers.authorization,
+            origin: req.headers.origin
+        });
+        
         const { guidelineId } = req.params;
         
         if (!guidelineId) {
+            console.log('[DEBUG] /api/pdf: No guideline ID provided');
             return res.status(400).json({ success: false, error: 'Guideline ID is required' });
         }
 
