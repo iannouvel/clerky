@@ -10512,15 +10512,26 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
         
         if (!guidelineDoc.exists) {
-            console.log('[DEBUG] api/pdf: Guideline not found:', guidelineId);
+            console.log('[DEBUG] api/pdf: Guideline not found in Firestore:', guidelineId);
             return res.status(404).json({ success: false, error: 'Guideline not found' });
         }
 
         const guidelineData = guidelineDoc.data();
         const filename = guidelineData.filename || guidelineData.originalFilename;
         
+        console.log('[DEBUG] api/pdf: Guideline data retrieved:', {
+            guidelineId,
+            hasFilename: !!guidelineData.filename,
+            hasOriginalFilename: !!guidelineData.originalFilename,
+            filename: filename,
+            allDataKeys: Object.keys(guidelineData)
+        });
+        
         if (!filename) {
-            console.log('[DEBUG] api/pdf: No filename found for guideline:', guidelineId);
+            console.error('[DEBUG] api/pdf: No filename found for guideline:', {
+                guidelineId,
+                availableFields: Object.keys(guidelineData)
+            });
             return res.status(404).json({ success: false, error: 'PDF filename not found' });
         }
 
@@ -10532,7 +10543,13 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         // Check if file exists
         const fs = require('fs');
         if (!fs.existsSync(filePath)) {
-            console.log('[DEBUG] api/pdf: File not found at path:', filePath);
+            console.error('[DEBUG] api/pdf: File not found at path:', {
+                filePath,
+                filename,
+                guidanceDir: path.join(__dirname, 'guidance'),
+                dirExists: fs.existsSync(path.join(__dirname, 'guidance')),
+                filesInDir: fs.existsSync(path.join(__dirname, 'guidance')) ? fs.readdirSync(path.join(__dirname, 'guidance')).slice(0, 10) : 'directory not found'
+            });
             return res.status(404).json({ success: false, error: 'PDF file not found on server' });
         }
 
