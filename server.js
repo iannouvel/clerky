@@ -10026,7 +10026,12 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
                     // Get filename for PDF viewing
                     guidelineFilename = guidelineData.filename || guidelineData.originalFilename;
                     
-                    console.log(`[DEBUG] dynamicAdvice: Retrieved guideline content, length: ${guidelineContent.length}`);
+                    console.log(`[DEBUG] dynamicAdvice: Retrieved guideline content`, {
+                        guidelineId,
+                        contentLength: guidelineContent.length,
+                        contentSource: condensedData?.condensed ? 'condensed' : guidelineData.content ? 'full' : 'missing',
+                        contentSample: guidelineContent.length > 0 ? guidelineContent.substring(0, 500) : 'EMPTY CONTENT'
+                    });
                 } else {
                     console.warn(`[DEBUG] dynamicAdvice: Guideline not found with ID: ${guidelineId}`);
                 }
@@ -10043,21 +10048,20 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
 
 Your task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
 
-CRITICAL CLINICAL REASONING REQUIREMENTS:
-- You must first understand the specific clinical scenario and current diagnosis from the transcript
-- Carefully assess whether each potential recommendation is APPROPRIATE and INDICATED for this specific case
-- Apply the fundamental principle: "Will this investigation or intervention change management or improve patient care in this specific scenario?"
+CLINICAL REASONING GUIDELINES:
+- First understand the specific clinical scenario and current diagnosis from the transcript
+- Assess whether each potential recommendation is appropriate and indicated for this clinical scenario
+- When the transcript is brief or lacks detail, suggest guideline-recommended actions that are generally indicated for the presenting condition
+- Provide context explaining when/why the suggestion would be appropriate
+- Do not reject suggestions solely because transcript lacks sufficient detail to confirm every criterion
+- Apply the principle: "Would this investigation or intervention improve patient care in this type of scenario?"
 - Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
-- Distinguish between situations where additional testing is needed vs. where the diagnosis is already established
-- Only recommend interventions that would genuinely improve patient care in THIS specific scenario
 
 GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
-- Do NOT suggest diagnostic investigations when the diagnosis is already established through adequate clinical and/or imaging findings
-- Do NOT recommend interventions that conflict with the current evidence-based management plan
-- Do NOT suggest serial monitoring of biomarkers when the clinical picture and imaging provide sufficient diagnostic certainty
-- Consider whether additional investigations would actually change the management approach
-- Evaluate the timing: is this the appropriate point in the clinical course for this intervention?
-- Apply cost-benefit analysis: does the potential benefit justify the intervention in this specific case?
+- Generally avoid suggesting diagnostic investigations when the diagnosis is already clearly established
+- Avoid recommending interventions that directly conflict with the current evidence-based management plan
+- When transcript details are limited, err on the side of suggesting guideline-recommended actions with appropriate context
+- Evaluate whether the suggestion would be helpful for the general clinical scenario described
 
 For each suggestion you identify, return ONLY a valid JSON object with the following structure:
 {
@@ -10088,29 +10092,30 @@ Important guidelines for originalText field:
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
 Important guidelines for context field:
 - Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
-- Include specific quoted text from the guideline using quotation marks
-- CRITICAL: You MUST extract quotes VERBATIM from the Full Guideline Content section provided below
-- When including quoted text, copy it EXACTLY as it appears in the guideline - do not paraphrase, rephrase, or modify the wording
-- If you cannot find exact matching text in the Full Guideline Content for a recommendation, do not include quotes - describe the recommendation without quotes instead
-- Use quotation marks ONLY around text that is copied word-for-word from the guideline
-
-MANDATORY QUOTING RULES:
-- NEVER use phrases like "The guideline specifically states that..." or "According to the guideline..."
-- ALWAYS use the format: "The guideline states: '[EXACT QUOTE]'" or just "[EXACT QUOTE]"
-- The quoted text MUST be copied character-for-character from the Full Guideline Content
-- If you cannot find exact text to quote, do NOT use quotation marks at all
+- Include relevant information from the guideline, preferably with quoted text when exact quotes are available
+- When exact verbatim quotes are available in the Full Guideline Content, use them with quotation marks
+- If using condensed content or exact text cannot be found, clearly paraphrase key recommendations from the guideline
+- DO NOT force quotes if exact text cannot be found - instead, clearly describe the guideline recommendation
 - Reference specific guideline recommendations or requirements
 - Explain the clinical rationale behind the suggestion
-- EXPLICITLY state why this recommendation is indicated in this particular clinical scenario
+- State why this recommendation is indicated in this particular clinical scenario
 - Make the context informative and educational
+
+QUOTING GUIDELINES:
+- PREFER including exact quotes from the guideline when available: "The guideline states: '[EXACT QUOTE]'" or just "[EXACT QUOTE]"
+- When exact quotes are not available (e.g., condensed content), clearly paraphrase the guideline recommendation
+- Example with quote: "The guideline states: 'Women should be offered screening for...'"
+- Example without exact quote: "The guideline recommends that women with this condition should be offered screening (paraphrased from guideline recommendations on screening)"
+- Avoid phrases like "The guideline specifically states that..." unless you have an exact quote
+- Focus on clearly communicating the guideline recommendation, whether through quotes or accurate paraphrasing
 
 Other important guidelines:
 - Only suggest changes that are explicitly supported by the guideline analysis AND clinically appropriate for the specific scenario
 - Make suggestions specific and actionable
 - For modifications, ensure original text selections are precise and findable in the transcript
 - Prioritize suggestions based on clinical importance and appropriateness
-- If no clinically appropriate suggestions can be made, return {"suggestions": []}
-- When in doubt about appropriateness, err on the side of NOT making the suggestion`;
+- When transcript details are limited, suggest guideline-recommended actions that are generally appropriate for the presenting condition, with appropriate context
+- If no clinically appropriate suggestions can be made that are supported by the guideline, return {"suggestions": []}`;
 
         const userPrompt = `Original Transcript:
 ${transcript}
@@ -10123,26 +10128,20 @@ ${analysis}
 
 Guideline: ${resolvedGuidelineTitle}
 
-Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant quoted text from the guideline. 
+Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant information from the guideline. 
 
-CRITICAL QUOTING REQUIREMENTS:
-- You MUST include verbatim quotes from the "Full Guideline Content" section above
-- Copy text EXACTLY as it appears in the guideline - do not paraphrase, rephrase, or modify wording
-- Use quotation marks around exact text from the guideline
-- If you cannot find exact matching text in the guideline, do NOT use quotation marks
-- Example: "The guideline states: 'Women should be offered screening for...'" (where the quoted part is exact text from the guideline)
+QUOTING GUIDANCE:
+- PREFER including exact verbatim quotes from the "Full Guideline Content" section when available
+- When exact quotes are available, copy text EXACTLY as it appears in the guideline and use quotation marks
+- If using condensed content or exact text cannot be found, clearly paraphrase the guideline recommendations
+- Do not force quotes when exact text isn't available - instead, accurately describe the guideline recommendation
+- Example with quote: "The guideline states: 'Women should be offered screening for...'" (where quoted part is exact text)
+- Example without exact quote: "The guideline recommends screening for this condition (based on guideline recommendations)"
 
-FORBIDDEN PHRASES - DO NOT USE:
-- "The guideline specifically states that..."
-- "The guideline recommends that..."
-- "According to the guideline..."
-- "The guideline indicates..."
-
-REQUIRED FORMAT:
-- Context: "The guideline states: '[EXACT QUOTE FROM GUIDELINE]'"
-- Context: "[EXACT QUOTE FROM GUIDELINE]"
-
-IMPORTANT: The context field MUST contain actual quoted text from the guideline, not just descriptions.`;
+IMPORTANT: 
+- The context field should contain clear guideline recommendations, whether through exact quotes or accurate paraphrasing
+- Focus on making actionable suggestions that are supported by the guideline, even if the transcript is brief
+- When transcript details are limited, suggest guideline-recommended actions that are generally appropriate for the presenting condition`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
