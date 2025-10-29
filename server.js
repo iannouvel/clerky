@@ -10008,6 +10008,8 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
         let guidelineContent = '';
         let resolvedGuidelineTitle = guidelineTitle || 'Unknown';
         let guidelineFilename = null;
+        let feedbackSummary = null;
+        let feedbackLastSummarised = null;
         
         if (guidelineId) {
             try {
@@ -10031,11 +10033,27 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
                     // Get filename for PDF viewing
                     guidelineFilename = guidelineData.filename || guidelineData.originalFilename;
                     
+                    // Get feedback summary if available and recent (within 30 days)
+                    if (guidelineData.feedbackSummary && guidelineData.feedbackLastSummarised) {
+                        const summaryDate = guidelineData.feedbackLastSummarised.toDate ? 
+                            guidelineData.feedbackLastSummarised.toDate() : new Date(guidelineData.feedbackLastSummarised);
+                        const daysSinceSummary = (Date.now() - summaryDate.getTime()) / (1000 * 60 * 60 * 24);
+                        
+                        if (daysSinceSummary <= 30) {
+                            feedbackSummary = guidelineData.feedbackSummary;
+                            feedbackLastSummarised = summaryDate;
+                            console.log(`[DEBUG] dynamicAdvice: Using feedback summary (${Math.round(daysSinceSummary)} days old, ${guidelineData.feedbackSummarisedCount || 0} feedback entries)`);
+                        } else {
+                            console.log(`[DEBUG] dynamicAdvice: Feedback summary too old (${Math.round(daysSinceSummary)} days), not using`);
+                        }
+                    }
+                    
                     console.log(`[DEBUG] dynamicAdvice: Retrieved guideline content`, {
                         guidelineId,
                         contentLength: guidelineContent.length,
                         contentSource: condensedData?.condensed ? 'condensed' : guidelineData.content ? 'full' : 'missing',
-                        contentSample: guidelineContent.length > 0 ? guidelineContent.substring(0, 500) : 'EMPTY CONTENT'
+                        contentSample: guidelineContent.length > 0 ? guidelineContent.substring(0, 500) : 'EMPTY CONTENT',
+                        hasFeedbackSummary: !!feedbackSummary
                     });
                 } else {
                     console.warn(`[DEBUG] dynamicAdvice: Guideline not found with ID: ${guidelineId}`);
@@ -10067,6 +10085,9 @@ GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
 - Avoid recommending interventions that directly conflict with the current evidence-based management plan
 - When transcript details are limited, err on the side of suggesting guideline-recommended actions with appropriate context
 - Evaluate whether the suggestion would be helpful for the general clinical scenario described
+
+LEARNED CLINICAL PATTERNS:
+When available, you will be provided with aggregated feedback from experienced clinicians about this guideline's application. This feedback represents real-world clinical wisdom about when certain recommendations may not be appropriate. Consider these patterns alongside the guideline text when making suggestions.
 
 For each suggestion you identify, return ONLY a valid JSON object with the following structure:
 {
@@ -10132,6 +10153,14 @@ Guideline Analysis:
 ${analysis}
 
 Guideline: ${resolvedGuidelineTitle}
+${feedbackSummary ? `
+
+CLINICAL FEEDBACK FROM PREVIOUS USERS:
+The following patterns have been identified from clinician feedback on this guideline:
+
+${feedbackSummary}
+
+Please consider this feedback when determining if suggestions are appropriate for this specific case.` : ''}
 
 Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant information from the guideline. 
 
@@ -10661,6 +10690,37 @@ app.post('/multiGuidelineDynamicAdvice', authenticateUser, async (req, res) => {
             guidelines: guidelineAnalyses.map(g => ({ id: g.guidelineId, title: g.guidelineTitle }))
         });
 
+        // Fetch feedback summaries for all guidelines
+        const guidelineFeedbackMap = {};
+        for (const analysis of guidelineAnalyses) {
+            if (analysis.guidelineId) {
+                try {
+                    const guidelineDoc = await db.collection('guidelines').doc(analysis.guidelineId).get();
+                    if (guidelineDoc.exists) {
+                        const guidelineData = guidelineDoc.data();
+                        
+                        // Check if feedback summary is available and recent
+                        if (guidelineData.feedbackSummary && guidelineData.feedbackLastSummarised) {
+                            const summaryDate = guidelineData.feedbackLastSummarised.toDate ? 
+                                guidelineData.feedbackLastSummarised.toDate() : new Date(guidelineData.feedbackLastSummarised);
+                            const daysSinceSummary = (Date.now() - summaryDate.getTime()) / (1000 * 60 * 60 * 24);
+                            
+                            if (daysSinceSummary <= 30) {
+                                guidelineFeedbackMap[analysis.guidelineId] = {
+                                    title: analysis.guidelineTitle || analysis.guidelineId,
+                                    summary: guidelineData.feedbackSummary,
+                                    entriesCount: guidelineData.feedbackSummarisedCount || 0
+                                };
+                                console.log(`[DEBUG] multiGuidelineDynamicAdvice: Found feedback for ${analysis.guidelineId}`);
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error(`[DEBUG] multiGuidelineDynamicAdvice: Error fetching feedback for ${analysis.guidelineId}:`, error.message);
+                }
+            }
+        }
+
         // Create AI prompt to convert multiple guideline analyses into combined structured suggestions
         const systemPrompt = `You are a medical AI assistant that converts multiple clinical guideline analyses into structured, actionable suggestions. You will receive analyses from multiple guidelines and must create a comprehensive set of suggestions that prioritizes the most important recommendations while avoiding redundancy.
 
@@ -10688,6 +10748,9 @@ GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
 - Consider whether additional investigations would actually change the management approach
 - Evaluate the timing: is this the appropriate point in the clinical course for this intervention?
 - Apply cost-benefit analysis: does the potential benefit justify the intervention in this specific case?
+
+LEARNED CLINICAL PATTERNS:
+When available, you will be provided with aggregated feedback from experienced clinicians about these guidelines' application. This feedback represents real-world clinical wisdom about when certain recommendations may not be appropriate. Consider these patterns alongside the guideline text when making suggestions.
 
 For each suggestion you identify, return ONLY a valid JSON object with the following structure:
 {
@@ -10740,11 +10803,26 @@ Important guidelines for context field:
             combinedAnalysesText += analysis.analysis;
         });
 
+        // Prepare feedback summaries text if available
+        let feedbackSummariesText = '';
+        const feedbackGuidelineIds = Object.keys(guidelineFeedbackMap);
+        if (feedbackGuidelineIds.length > 0) {
+            feedbackSummariesText = '\n\nCLINICAL FEEDBACK FROM PREVIOUS USERS:\n';
+            feedbackSummariesText += 'The following patterns have been identified from clinician feedback on these guidelines:\n\n';
+            feedbackGuidelineIds.forEach(guidelineId => {
+                const feedback = guidelineFeedbackMap[guidelineId];
+                feedbackSummariesText += `--- ${feedback.title} (based on ${feedback.entriesCount} feedback entries) ---\n`;
+                feedbackSummariesText += `${feedback.summary}\n\n`;
+            });
+            feedbackSummariesText += 'Please consider this feedback when determining if suggestions are appropriate for this specific case.\n';
+        }
+
         const userPrompt = `Original Transcript:
 ${transcript}
 
 Combined Guideline Analyses:
 ${combinedAnalysesText}
+${feedbackSummariesText}
 
 Please extract and consolidate actionable suggestions from these multiple guideline analyses. Create combined suggestions when multiple guidelines recommend similar interventions, and prioritize suggestions based on clinical importance and consensus across guidelines. For each suggestion, include detailed context with relevant quoted text from the supporting guidelines.`;
 
@@ -11200,6 +11278,247 @@ Return the updated transcript with these changes applied.`;
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// ========================================
+// GUIDELINE FEEDBACK LEARNING SYSTEM
+// ========================================
+
+// Submit feedback for guideline suggestions
+app.post('/submitGuidelineFeedback', authenticateUser, async (req, res) => {
+    try {
+        console.log('[FEEDBACK] submitGuidelineFeedback endpoint called');
+        const { guidelineId, sessionId, feedbackEntries, transcript } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!guidelineId) {
+            console.log('[FEEDBACK] Missing guidelineId');
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+        
+        if (!feedbackEntries || !Array.isArray(feedbackEntries) || feedbackEntries.length === 0) {
+            console.log('[FEEDBACK] No feedback entries provided');
+            return res.status(200).json({ 
+                success: true, 
+                message: 'No feedback to submit',
+                feedbackCount: 0 
+            });
+        }
+        
+        console.log('[FEEDBACK] Processing feedback:', {
+            guidelineId,
+            sessionId,
+            userId,
+            feedbackCount: feedbackEntries.length
+        });
+        
+        // Validate guideline exists
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            console.log('[FEEDBACK] Guideline not found:', guidelineId);
+            return res.status(404).json({ 
+                success: false, 
+                error: `Guideline not found: ${guidelineId}` 
+            });
+        }
+        
+        // Prepare feedback entries with metadata
+        const timestampedEntries = feedbackEntries.map(entry => ({
+            userId,
+            timestamp: admin.firestore.FieldValue.serverTimestamp(),
+            sessionId: sessionId || 'unknown',
+            suggestionId: entry.suggestionId,
+            action: entry.action, // 'reject' or 'modify'
+            rejectionReason: entry.rejectionReason || '',
+            clinicalScenario: entry.clinicalScenario || (transcript ? transcript.substring(0, 500) : ''),
+            modifiedText: entry.modifiedText || null,
+            originalSuggestion: entry.originalSuggestion || '',
+            suggestedText: entry.suggestedText || ''
+        }));
+        
+        // Update guideline document with feedback
+        const currentData = guidelineDoc.data();
+        const existingFeedback = currentData.feedbackEntries || [];
+        const existingCount = currentData.feedbackCount || 0;
+        
+        await guidelineRef.update({
+            feedbackEntries: admin.firestore.FieldValue.arrayUnion(...timestampedEntries),
+            feedbackCount: existingCount + timestampedEntries.length,
+            lastFeedbackReceived: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        console.log('[FEEDBACK] Successfully stored feedback entries:', {
+            guidelineId,
+            newEntries: timestampedEntries.length,
+            totalFeedback: existingCount + timestampedEntries.length
+        });
+        
+        // Trigger async summarisation (don't wait for it to complete)
+        // Only trigger if we have accumulated enough feedback (e.g., every 5 entries)
+        const newTotalCount = existingCount + timestampedEntries.length;
+        const shouldSummarise = newTotalCount >= 5 && (newTotalCount % 5 === 0 || newTotalCount === 5);
+        
+        if (shouldSummarise) {
+            console.log('[FEEDBACK] Triggering async summarisation for:', guidelineId);
+            // Fire and forget - don't await
+            summariseGuidelineFeedback(guidelineId).catch(error => {
+                console.error('[FEEDBACK] Background summarisation error:', error.message);
+            });
+        }
+        
+        res.json({ 
+            success: true, 
+            message: 'Feedback submitted successfully',
+            feedbackCount: timestampedEntries.length,
+            totalFeedback: newTotalCount
+        });
+        
+    } catch (error) {
+        console.error('[FEEDBACK] Error submitting feedback:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Failed to submit feedback',
+            details: error.message 
+        });
+    }
+});
+
+// Summarise guideline feedback using AI (background async function)
+async function summariseGuidelineFeedback(guidelineId) {
+    try {
+        console.log('[FEEDBACK_SUMMARY] Starting summarisation for:', guidelineId);
+        
+        // Fetch guideline and all its feedback
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            throw new Error(`Guideline not found: ${guidelineId}`);
+        }
+        
+        const guidelineData = guidelineDoc.data();
+        const feedbackEntries = guidelineData.feedbackEntries || [];
+        
+        if (feedbackEntries.length === 0) {
+            console.log('[FEEDBACK_SUMMARY] No feedback entries to summarise');
+            return;
+        }
+        
+        console.log('[FEEDBACK_SUMMARY] Processing', feedbackEntries.length, 'feedback entries');
+        
+        // Filter to only feedback with actual reasons provided
+        const meaningfulFeedback = feedbackEntries.filter(entry => 
+            entry.rejectionReason && entry.rejectionReason.trim().length > 10
+        );
+        
+        if (meaningfulFeedback.length === 0) {
+            console.log('[FEEDBACK_SUMMARY] No meaningful feedback to summarise');
+            return;
+        }
+        
+        // Prepare feedback for AI analysis
+        const feedbackText = meaningfulFeedback.map((entry, index) => {
+            const timestamp = entry.timestamp?.toDate?.() || new Date();
+            return `
+Feedback ${index + 1} (${timestamp.toISOString().split('T')[0]}):
+Action: ${entry.action}
+Clinical Scenario: ${entry.clinicalScenario}
+Reason: ${entry.rejectionReason}
+Original Suggestion: ${entry.originalSuggestion || 'N/A'}
+${entry.modifiedText ? `Modified To: ${entry.modifiedText}` : ''}
+---`;
+        }).join('\n');
+        
+        // Create AI prompt for summarisation
+        const systemPrompt = `You are a medical AI assistant analysing clinician feedback on guideline application.
+
+Your task is to identify common patterns, concerns, and insights from clinician feedback about a specific clinical guideline's suggestions.
+
+Analyse the feedback and produce a concise summary (200-300 words) that:
+1. Identifies recurring themes or patterns in rejections/modifications
+2. Notes specific clinical scenarios where the guideline may not be appropriate
+3. Highlights timing, context, or applicability concerns
+4. Provides actionable insights for future suggestion generation
+
+Be specific and clinical in your analysis. Focus on patterns, not individual cases.`;
+
+        const userPrompt = `Guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title || guidelineId}
+
+Clinician Feedback:
+${feedbackText}
+
+Please analyse this feedback and provide a concise summary of common patterns and insights that should inform future application of this guideline.`;
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+        
+        // Call AI to generate summary
+        console.log('[FEEDBACK_SUMMARY] Calling AI for summarisation');
+        const aiResponse = await routeToAI({ messages }, 'system'); // Use system as userId for background tasks
+        
+        if (!aiResponse || !aiResponse.content) {
+            throw new Error('AI summarisation failed - no content returned');
+        }
+        
+        const feedbackSummary = aiResponse.content.trim();
+        
+        console.log('[FEEDBACK_SUMMARY] AI summary generated, length:', feedbackSummary.length);
+        
+        // Update guideline with summary
+        await guidelineRef.update({
+            feedbackSummary: feedbackSummary,
+            feedbackLastSummarised: admin.firestore.FieldValue.serverTimestamp(),
+            feedbackSummarisedCount: meaningfulFeedback.length
+        });
+        
+        console.log('[FEEDBACK_SUMMARY] Successfully updated guideline with feedback summary');
+        
+        return {
+            success: true,
+            guidelineId,
+            feedbackCount: meaningfulFeedback.length,
+            summaryLength: feedbackSummary.length
+        };
+        
+    } catch (error) {
+        console.error('[FEEDBACK_SUMMARY] Error:', error);
+        throw error;
+    }
+}
+
+// Manual endpoint to trigger feedback summarisation (for testing/admin use)
+app.post('/summariseGuidelineFeedback', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+        
+        console.log('[FEEDBACK_SUMMARY] Manual summarisation requested for:', guidelineId);
+        
+        const result = await summariseGuidelineFeedback(guidelineId);
+        
+        res.json({ 
+            success: true, 
+            message: 'Feedback summarised successfully',
+            result 
+        });
+        
+    } catch (error) {
+        console.error('[FEEDBACK_SUMMARY] Manual summarisation error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Failed to summarise feedback',
+            details: error.message 
+        });
+    }
+});
+
 // Migration function to add downloadUrl field to existing guidelines
 async function migrateGuidelineUrls() {
     try {

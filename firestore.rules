@@ -17,6 +17,8 @@ service cloud.firestore {
     }
 
     // Guidelines collection
+    // Note: Feedback submissions are handled server-side via /submitGuidelineFeedback endpoint
+    // which uses admin SDK and bypasses these rules
     match /guidelines/{id} {
       allow read: if isAuthenticated();
       allow write: if isAuthenticated() && isOwner(resource.data.userId);
