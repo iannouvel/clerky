@@ -14,9 +14,41 @@
         console.log('[Clerky Auth] Disabled eval for security');
     }
     
-    // Override the file validation check
+    // Override the file validation check and trigger search when PDF loads
     window.addEventListener('webviewerloaded', function() {
         console.log('[Clerky Auth] Webviewer loaded, configuring for cross-origin PDFs');
+        
+        // Check if there's a search term in the URL hash
+        const hash = window.location.hash;
+        const searchMatch = hash.match(/[#&]search=([^&]+)/);
+        
+        if (searchMatch && searchMatch[1]) {
+            const searchTerm = decodeURIComponent(searchMatch[1]);
+            console.log('[Clerky Auth] Search term detected in URL:', searchTerm.substring(0, 100) + '...');
+            
+            // Wait for PDF to be fully loaded, then trigger search
+            document.addEventListener('pagesloaded', function() {
+                console.log('[Clerky Auth] PDF pages loaded, triggering search...');
+                
+                // Use PDF.js's EventBus to trigger search
+                if (window.PDFViewerApplication && window.PDFViewerApplication.eventBus) {
+                    window.PDFViewerApplication.eventBus.dispatch('find', {
+                        source: window,
+                        type: '',
+                        query: searchTerm,
+                        phraseSearch: true,
+                        caseSensitive: false,
+                        entireWord: false,
+                        highlightAll: true,
+                        findPrevious: false,
+                        matchDiacritics: false
+                    });
+                    console.log('[Clerky Auth] Search triggered via EventBus');
+                } else {
+                    console.warn('[Clerky Auth] PDFViewerApplication not available for search trigger');
+                }
+            }, { once: true });
+        }
     });
     
     // Get URL parameters
