@@ -3423,11 +3423,17 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         const prefixedSuggestions = (result.suggestions || []).map(suggestion => ({
             ...suggestion,
             originalId: suggestion.id, // Keep original ID for server communication
-            id: `${result.sessionId}-${suggestion.id}` // Use prefixed ID for DOM elements
+            id: `${result.sessionId}-${suggestion.id}`, // Use prefixed ID for DOM elements
+            guidelineId: result.guidelineId, // Add guideline info for feedback tracking
+            guidelineTitle: result.guidelineTitle
         }));
         
         currentSuggestions = prefixedSuggestions;
         userDecisions = {};
+        
+        // Store guideline info globally for feedback submission
+        window.currentGuidelineId = result.guidelineId;
+        window.currentGuidelineTitle = result.guidelineTitle;
 
         console.log('[DEBUG] dynamicAdvice: Stored session data', {
             sessionId: currentAdviceSession,
@@ -4243,7 +4249,13 @@ function handleSuggestionAction(suggestionId, action) {
         return;
     }
 
-    // For accept/reject, record the decision and apply immediately
+    // For reject action, prompt for optional feedback
+    if (action === 'reject') {
+        promptForRejectionFeedback(suggestionId, suggestion);
+        return;
+    }
+
+    // For accept, record the decision and apply immediately
     userDecisions[suggestionId] = {
         action: action,
         suggestion: suggestion,
@@ -4291,6 +4303,270 @@ function handleSuggestionAction(suggestionId, action) {
     updateSuggestionStatus(suggestionId, action);
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after a decision is made
+}
+
+// Prompt for optional feedback when rejecting a suggestion
+function promptForRejectionFeedback(suggestionId, suggestion) {
+    console.log('[FEEDBACK] Prompting for rejection feedback:', suggestionId);
+    
+    // Create modal HTML
+    const modalHtml = `
+        <div id="feedback-modal-${suggestionId}" class="feedback-modal" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        ">
+            <div class="feedback-modal-content" style="
+                background: white;
+                border-radius: 8px;
+                padding: 30px;
+                max-width: 600px;
+                width: 90%;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            ">
+                <h3 style="margin-top: 0; color: #2563eb;">💡 Help Us Learn</h3>
+                <p style="margin-bottom: 20px; color: #666;">Why is this suggestion not appropriate? (optional)</p>
+                <p style="font-size: 14px; color: #888; margin-bottom: 15px;">
+                    <strong>Suggestion:</strong> ${suggestion.suggestedText?.substring(0, 150) || 'N/A'}${suggestion.suggestedText?.length > 150 ? '...' : ''}
+                </p>
+                <textarea 
+                    id="feedback-textarea-${suggestionId}" 
+                    placeholder="E.g., 'This was SVD, not AVD - cord gases not required for spontaneous delivery'"
+                    style="
+                        width: 100%;
+                        min-height: 100px;
+                        padding: 12px;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        font-family: inherit;
+                        font-size: 14px;
+                        resize: vertical;
+                    "
+                ></textarea>
+                <div style="display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end;">
+                    <button 
+                        onclick="submitRejectionFeedback('${suggestionId}', true)"
+                        style="
+                            background: #2563eb;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            font-weight: bold;
+                        "
+                    >Submit Feedback</button>
+                    <button 
+                        onclick="submitRejectionFeedback('${suggestionId}', false)"
+                        style="
+                            background: #6c757d;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        "
+                    >Skip</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to page
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    
+    // Focus on textarea
+    setTimeout(() => {
+        const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+        if (textarea) textarea.focus();
+    }, 100);
+}
+
+// Submit rejection feedback (or skip)
+window.submitRejectionFeedback = function(suggestionId, includeFeedback) {
+    console.log('[FEEDBACK] Submitting rejection feedback:', suggestionId, includeFeedback);
+    
+    // Get feedback text if provided
+    let feedbackReason = '';
+    if (includeFeedback) {
+        const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+        feedbackReason = textarea ? textarea.value.trim() : '';
+    }
+    
+    // Find the suggestion data
+    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
+    if (!suggestion) {
+        console.error('[FEEDBACK] Suggestion data not found:', suggestionId);
+        return;
+    }
+    
+    // Record the rejection decision with optional feedback
+    userDecisions[suggestionId] = {
+        action: 'reject',
+        suggestion: suggestion,
+        timestamp: new Date().toISOString(),
+        feedbackReason: feedbackReason
+    };
+    
+    console.log('[FEEDBACK] Recorded rejection with feedback', {
+        suggestionId,
+        hasFeedback: !!feedbackReason,
+        feedbackLength: feedbackReason.length
+    });
+    
+    // Remove modal
+    const modal = document.getElementById(`feedback-modal-${suggestionId}`);
+    if (modal) modal.remove();
+    
+    // Update UI to show decision
+    updateSuggestionStatus(suggestionId, 'reject');
+    updateDecisionsSummary();
+    debouncedSaveState();
+    
+    // Check if all suggestions for this guideline have been processed
+    checkAndSubmitGuidelineFeedback();
+};
+
+// Check if all suggestions from a guideline have been processed and submit feedback
+function checkAndSubmitGuidelineFeedback() {
+    if (!currentSuggestions || currentSuggestions.length === 0) {
+        return;
+    }
+    
+    // Group suggestions by guideline
+    const guidelineGroups = {};
+    currentSuggestions.forEach(suggestion => {
+        // Extract guideline info from suggestion or session
+        const guidelineId = suggestion.guidelineId || window.currentGuidelineId;
+        if (guidelineId) {
+            if (!guidelineGroups[guidelineId]) {
+                guidelineGroups[guidelineId] = {
+                    guidelineId: guidelineId,
+                    guidelineTitle: suggestion.guidelineTitle || window.currentGuidelineTitle || 'Unknown',
+                    suggestions: []
+                };
+            }
+            guidelineGroups[guidelineId].suggestions.push(suggestion);
+        }
+    });
+    
+    // Check each guideline group
+    Object.keys(guidelineGroups).forEach(guidelineId => {
+        const group = guidelineGroups[guidelineId];
+        const allProcessed = group.suggestions.every(s => userDecisions[s.id]);
+        
+        if (allProcessed) {
+            // Collect feedback entries for this guideline
+            const feedbackEntries = group.suggestions
+                .map(s => {
+                    const decision = userDecisions[s.id];
+                    if (!decision) return null;
+                    
+                    // Only include rejections and modifications with feedback
+                    if ((decision.action === 'reject' || decision.action === 'modify') && 
+                        (decision.feedbackReason || decision.modifiedText)) {
+                        return {
+                            suggestionId: s.originalId || s.id,
+                            action: decision.action,
+                            rejectionReason: decision.feedbackReason || '',
+                            modifiedText: decision.modifiedText || null,
+                            originalSuggestion: s.originalText || '',
+                            suggestedText: s.suggestedText || '',
+                            clinicalScenario: window.latestAnalysis?.transcript?.substring(0, 500) || ''
+                        };
+                    }
+                    return null;
+                })
+                .filter(entry => entry !== null);
+            
+            if (feedbackEntries.length > 0) {
+                console.log('[FEEDBACK] Submitting feedback batch for guideline:', guidelineId, feedbackEntries.length, 'entries');
+                submitGuidelineFeedbackBatch(guidelineId, group.guidelineTitle, feedbackEntries);
+            }
+        }
+    });
+}
+
+// Submit feedback batch to backend
+async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries) {
+    try {
+        console.log('[FEEDBACK] Submitting feedback batch:', {
+            guidelineId,
+            entriesCount: feedbackEntries.length
+        });
+        
+        // Get user token
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('[FEEDBACK] No authenticated user, skipping feedback submission');
+            return;
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        // Submit to backend (fire and forget - don't wait)
+        fetch(`${window.SERVER_URL}/submitGuidelineFeedback`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                guidelineId: guidelineId,
+                sessionId: currentAdviceSession || `manual_${Date.now()}`,
+                feedbackEntries: feedbackEntries,
+                transcript: window.latestAnalysis?.transcript || ''
+            })
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('[FEEDBACK] Feedback submission result:', result);
+            if (result.success && result.feedbackCount > 0) {
+                // Show subtle thank you notification
+                showFeedbackThankYou();
+            }
+        })
+        .catch(error => {
+            console.error('[FEEDBACK] Error submitting feedback:', error);
+            // Fail silently - don't disrupt user workflow
+        });
+        
+    } catch (error) {
+        console.error('[FEEDBACK] Error in submitGuidelineFeedbackBatch:', error);
+    }
+}
+
+// Show thank you notification for feedback
+function showFeedbackThankYou() {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #10b981;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 9999;
+        font-size: 14px;
+        animation: slideIn 0.3s ease-out;
+    `;
+    notification.innerHTML = '✅ Thank you for your feedback - helping improve future suggestions!';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.3s';
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
 }
 
 // Confirm modification with custom text
@@ -4368,6 +4644,9 @@ function confirmModification(suggestionId) {
     updateSuggestionStatus(suggestionId, 'modify', modifiedText);
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after modification
+    
+    // Check if all suggestions for this guideline have been processed
+    checkAndSubmitGuidelineFeedback();
 }
 
 // Cancel modification
