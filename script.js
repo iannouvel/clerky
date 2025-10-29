@@ -3723,10 +3723,15 @@ window.prepareViewerAuth = async function(event, linkElement) {
         if (searchText) {
             const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
             viewerUrl += searchHash;
-            console.log('[DEBUG] Added search parameters:', searchText.substring(0, 50) + '...');
+            console.log('[DEBUG] Added search parameters:', {
+                searchTextLength: searchText.length,
+                searchTextPreview: searchText.substring(0, 100) + '...',
+                fullSearchText: searchText,
+                encodedLength: encodeURIComponent(searchText).length
+            });
         }
         
-        console.log('[DEBUG] Opening PDF.js viewer:', viewerUrl.substring(0, 100) + '...');
+        console.log('[DEBUG] Opening PDF.js viewer with full URL:', viewerUrl);
         
         // Open in new window
         window.open(viewerUrl, '_blank', 'noopener,noreferrer');
