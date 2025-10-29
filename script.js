@@ -3706,8 +3706,8 @@ window.prepareViewerAuth = async function(event, linkElement) {
         console.log('[DEBUG] Building PDF.js viewer URL:', { guidelineId, hasSearchText: !!searchText });
         
         // Build the complete PDF URL with token
-        // Use window.location.origin to get the full base URL
-        const baseUrl = window.location.origin;
+        // Use SERVER_URL (Render backend) for API calls, not GitHub Pages origin
+        const baseUrl = window.SERVER_URL || window.location.origin;
         const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
         
         // Build PDF.js viewer URL with the PDF file URL
