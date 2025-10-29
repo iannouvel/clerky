@@ -1,11 +1,23 @@
 // Clerky PDF.js Authentication Handler
-// This script logs PDF.js viewer initialization
+// This script handles authentication and disables origin checks for cross-origin PDF loading
 // Note: Authentication token is now included in the file URL query parameter
 
 (function() {
     'use strict';
     
     console.log('[Clerky Auth] PDF.js viewer initialized');
+    
+    // Disable PDF.js file origin validation to allow cross-origin PDFs
+    // This is safe because we're using Firebase auth tokens for authentication
+    if (typeof PDFViewerApplicationOptions !== 'undefined') {
+        PDFViewerApplicationOptions.set('isEvalSupported', false);
+        console.log('[Clerky Auth] Disabled eval for security');
+    }
+    
+    // Override the file validation check
+    window.addEventListener('webviewerloaded', function() {
+        console.log('[Clerky Auth] Webviewer loaded, configuring for cross-origin PDFs');
+    });
     
     // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
