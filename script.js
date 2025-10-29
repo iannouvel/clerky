@@ -3645,7 +3645,10 @@ function extractQuotedText(context) {
     
     // Return the longest quote (most likely to be the actual guideline quote)
     allQuotes.sort((a, b) => b.length - a.length);
-    const longestQuote = allQuotes[0];
+    let longestQuote = allQuotes[0];
+    
+    // Clean the quote for PDF search - remove citation markers and formatting
+    longestQuote = cleanQuoteForSearch(longestQuote);
     
     console.log('[DEBUG] Extracted quote from context:', {
         totalQuotes: allQuotes.length,
@@ -3654,6 +3657,32 @@ function extractQuotedText(context) {
     });
     
     return longestQuote;
+}
+
+// Helper function to clean quotes for PDF search
+function cleanQuoteForSearch(quote) {
+    if (!quote) return quote;
+    
+    // Remove common citation patterns that might not be in the PDF
+    let cleaned = quote
+        // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], etc.
+        .replace(/\s*\[Evidence level [A-D0-9]+\]/gi, '')
+        .replace(/\s*\[Grade [A-D0-9]+\]/gi, '')
+        .replace(/\s*\[Level [A-D0-9]+\]/gi, '')
+        .replace(/\s*\[Quality: [^\]]+\]/gi, '')
+        // Remove reference numbers like [1], [2-5], etc.
+        .replace(/\s*\[[0-9,\-–—]+\]/g, '')
+        // Remove extra whitespace and normalize
+        .replace(/\s+/g, ' ')
+        .trim();
+    
+    console.log('[DEBUG] Cleaned quote for search:', {
+        original: quote.substring(0, 100),
+        cleaned: cleaned.substring(0, 100),
+        removedChars: quote.length - cleaned.length
+    });
+    
+    return cleaned;
 }
 
 // Helper function to create guideline viewer link
