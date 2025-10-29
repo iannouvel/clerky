@@ -329,8 +329,13 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve static files
-app.use(express.static(__dirname));
+// Serve static files (but not for /api routes)
+app.use((req, res, next) => {
+    if (req.path.startsWith('/api/')) {
+        return next(); // Skip static file serving for API routes
+    }
+    express.static(__dirname)(req, res, next);
+});
 
 // Increase payload limits to handle large guideline datasets
 app.use(express.json({ limit: '500mb' }));
