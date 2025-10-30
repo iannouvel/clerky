@@ -66,33 +66,73 @@ async function scrapeRCOGGuidelines() {
     };
     
     try {
-        // Scrape Green-top Guidelines
+        // Scrape Green-top Guidelines - look for direct PDF links
         const url = 'https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/';
         const response = await axios.get(url, { headers, timeout: 30000 });
         const $ = cheerio.load(response.data);
         
-        $('a[href*="green-top-guideline"]').each((index, element) => {
-            const $el = $(element);
-            const title = $el.text().trim();
-            let guidelineUrl = $el.attr('href');
+        // Look for PDF links within guideline containers
+        // RCOG typically structures as: card/item containing both title link and PDF download link
+        $('.o-card, .c-card, .guideline-item, [class*="guideline"]').each((index, container) => {
+            const $container = $(container);
             
-            if (guidelineUrl && !guidelineUrl.startsWith('http')) {
-                guidelineUrl = 'https://www.rcog.org.uk' + guidelineUrl;
+            // Find title (look for the main link, usually not a PDF)
+            const $titleLink = $container.find('a[href*="green-top-guideline"]:not([href$=".pdf"])').first();
+            const title = $titleLink.text().trim();
+            
+            // Find PDF link within the same container
+            const $pdfLink = $container.find('a[href*=".pdf"], a[href*="/media/"]').first();
+            let pdfUrl = $pdfLink.attr('href');
+            
+            if (pdfUrl && !pdfUrl.startsWith('http')) {
+                pdfUrl = 'https://www.rcog.org.uk' + pdfUrl;
             }
             
             const numberMatch = title.match(/No\.\s*(\d+[a-z]?)/i);
             const yearMatch = title.match(/\b(20\d{2})\b/);
             
-            if (title && guidelineUrl) {
+            // Only add if we have both title and a PDF URL
+            if (title && pdfUrl && pdfUrl.includes('.pdf')) {
                 guidelines.push({
                     title,
                     organisation: 'RCOG',
                     type: 'Green-top Guideline',
                     year: yearMatch ? parseInt(yearMatch[1]) : null,
-                    url: guidelineUrl
+                    url: pdfUrl,
+                    canonicalId: numberMatch ? `RCOG-GTG-${numberMatch[1]}` : null
                 });
             }
         });
+        
+        // Fallback: if no PDFs found using container method, try direct PDF link scraping
+        if (guidelines.length === 0) {
+            console.log('[SCRAPING] No PDFs found in containers, trying direct PDF links...');
+            $('a[href*=".pdf"][href*="gtg"], a[href*=".pdf"][href*="green-top"]').each((index, element) => {
+                const $el = $(element);
+                const linkText = $el.text().trim();
+                let pdfUrl = $el.attr('href');
+                
+                if (pdfUrl && !pdfUrl.startsWith('http')) {
+                    pdfUrl = 'https://www.rcog.org.uk' + pdfUrl;
+                }
+                
+                // Try to find title from nearby text or link text
+                const title = linkText || $el.closest('div, li, article').find('h2, h3, h4, .title').text().trim() || 'Unknown';
+                const numberMatch = title.match(/No\.\s*(\d+[a-z]?)/i) || pdfUrl.match(/gtg[_-]?(\d+[a-z]?)/i);
+                const yearMatch = title.match(/\b(20\d{2})\b/) || pdfUrl.match(/\b(20\d{2})\b/);
+                
+                if (pdfUrl && pdfUrl.includes('.pdf')) {
+                    guidelines.push({
+                        title,
+                        organisation: 'RCOG',
+                        type: 'Green-top Guideline',
+                        year: yearMatch ? parseInt(yearMatch[1]) : null,
+                        url: pdfUrl,
+                        canonicalId: numberMatch ? `RCOG-GTG-${numberMatch[1]}` : null
+                    });
+                }
+            });
+        }
         
         console.log(`[SCRAPING] Found ${guidelines.length} RCOG guidelines`);
     } catch (error) {
@@ -139,20 +179,89 @@ async function scrapeNICEGuidelines() {
                          $('h1').first().text().trim() || 
                          code;
             
-            const dateText = $('dd.published-date').text().trim();
-            const yearMatch = dateText.match(/\b(20\d{2})\b/);
+            const dateText = $('dd.published-date, .published-date, [class*="date"]').text().trim();
+            const yearMatch = dateText.match(/\b(20\d{2})\b/) || title.match(/\b(20\d{2})\b/);
             
             const type = code.startsWith('NG') ? 'NICE Guideline' :
                         code.startsWith('CG') ? 'Clinical Guideline' :
                         code.startsWith('QS') ? 'Quality Standard' :
                         code.startsWith('PH') ? 'Public Health Guideline' : 'NICE Guidance';
             
+            // Try to find direct PDF download link
+            let pdfUrl = null;
+            
+            // Method 1: Look for explicit download links
+            const downloadLinks = $('a[href*=".pdf"], a[href*="/resources/"], a:contains("Download"), a:contains("PDF")').toArray();
+            for (const link of downloadLinks) {
+                const $link = $(link);
+                const href = $link.attr('href');
+                const linkText = $link.text().toLowerCase();
+                
+                // Prefer links that mention "full guideline" or "PDF" and contain the code
+                if (href && (href.includes('.pdf') || href.includes('/resources/'))) {
+                    const isRelevant = linkText.includes('full') || 
+                                     linkText.includes('guideline') || 
+                                     linkText.includes('download') ||
+                                     linkText.includes('pdf') ||
+                                     href.toLowerCase().includes(code.toLowerCase());
+                    
+                    if (isRelevant) {
+                        pdfUrl = href.startsWith('http') ? href : `https://www.nice.org.uk${href}`;
+                        break;
+                    }
+                }
+            }
+            
+            // Method 2: Construct expected PDF URL based on NICE's URL pattern
+            if (!pdfUrl) {
+                // NICE often uses pattern: /guidance/{code}/resources/{code}-pdf-{number}
+                const resourcesUrl = `${url}/resources`;
+                try {
+                    const resourcesResponse = await axios.get(resourcesUrl, {
+                        headers,
+                        timeout: 10000,
+                        validateStatus: status => status === 200
+                    });
+                    const $resources = cheerio.load(resourcesResponse.data);
+                    const firstPdf = $resources('a[href*=".pdf"]').first().attr('href');
+                    if (firstPdf) {
+                        pdfUrl = firstPdf.startsWith('http') ? firstPdf : `https://www.nice.org.uk${firstPdf}`;
+                    }
+                } catch (e) {
+                    // Resources page not found, continue
+                }
+            }
+            
+            // Method 3: Try common NICE PDF URL patterns
+            if (!pdfUrl) {
+                const commonPatterns = [
+                    `https://www.nice.org.uk/guidance/${code.toLowerCase()}/resources/${code.toLowerCase()}-pdf`,
+                    `https://www.nice.org.uk/guidance/${code.toLowerCase()}/resources/${code.toLowerCase()}-pdf-${Math.floor(Math.random() * 10000000000000)}`, // NICE uses random numbers
+                ];
+                
+                for (const pattern of commonPatterns) {
+                    try {
+                        const testResponse = await axios.head(pattern, { headers, timeout: 5000 });
+                        if (testResponse.status === 200) {
+                            pdfUrl = pattern;
+                            break;
+                        }
+                    } catch (e) {
+                        // Pattern didn't work, try next
+                    }
+                }
+            }
+            
+            // Use PDF URL if found, otherwise fall back to page URL
+            const finalUrl = pdfUrl || url;
+            
             guidelines.push({
                 title,
                 organisation: 'NICE',
                 type,
                 year: yearMatch ? parseInt(yearMatch[1]) : null,
-                url
+                url: finalUrl,
+                canonicalId: `NICE-${code.toUpperCase()}`
             });
             
         } catch (error) {
@@ -8459,14 +8568,80 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
         const seen = new Set([...excludedUrlSet, ...existingUrls]);
         const filtered = [];
         
+        // Helper: check if title is similar enough to an existing guideline
+        function isSimilarTitle(newTitle, existingGuidelines) {
+            const normalize = (str) => str.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, ' ').trim();
+            const newNorm = normalize(newTitle);
+            
+            for (const existing of existingGuidelines) {
+                const existingNorm = normalize(existing.title || '');
+                
+                // Exact match after normalisation
+                if (newNorm === existingNorm) return true;
+                
+                // Extract guideline numbers for comparison
+                const newNum = newTitle.match(/No\.\s*(\d+[a-z]?)/i);
+                const existingNum = (existing.title || '').match(/No\.\s*(\d+[a-z]?)/i);
+                
+                // If both have numbers and they match, consider it a duplicate
+                if (newNum && existingNum && newNum[1].toLowerCase() === existingNum[1].toLowerCase()) {
+                    // Also check organisation matches
+                    if (!existing.organisation || !newTitle || 
+                        newTitle.toLowerCase().includes(existing.organisation.toLowerCase()) ||
+                        (existing.organisation === 'RCOG' && newTitle.toLowerCase().includes('green'))) {
+                        return true;
+                    }
+                }
+                
+                // Check if one title contains most of the other (for partial matches)
+                if (newNorm.length > 20 && existingNorm.length > 20) {
+                    const shorter = newNorm.length < existingNorm.length ? newNorm : existingNorm;
+                    const longer = newNorm.length < existingNorm.length ? existingNorm : newNorm;
+                    // If 80% of shorter string is in longer string, likely duplicate
+                    const words = shorter.split(' ').filter(w => w.length > 3);
+                    const matchCount = words.filter(w => longer.includes(w)).length;
+                    if (words.length > 0 && matchCount / words.length > 0.8) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        
         let invalidUrlCount = 0;
+        let duplicateCount = 0;
         for (const item of allDiscovered) {
             if (!item || !item.url || !item.title) continue;
             
             const norm = normalizeUrl(item.url);
             
-            // Skip if already exists or excluded
-            if (seen.has(norm)) continue;
+            // Skip if URL already exists or excluded
+            if (seen.has(norm)) {
+                duplicateCount++;
+                continue;
+            }
+            
+            // Check canonicalId if present
+            if (item.canonicalId) {
+                const itemCanonicalId = String(item.canonicalId).toLowerCase();
+                if (existingCanonicalIds.has(itemCanonicalId)) {
+                    console.log(`[DISCOVERY] Skipping duplicate by canonicalId: ${item.canonicalId} - ${item.title}`);
+                    duplicateCount++;
+                    continue;
+                }
+                if (excludedCanonicalIds.includes(itemCanonicalId)) {
+                    console.log(`[DISCOVERY] Skipping excluded by canonicalId: ${item.canonicalId} - ${item.title}`);
+                    duplicateCount++;
+                    continue;
+                }
+            }
+            
+            // Check for similar titles
+            if (isSimilarTitle(item.title, allGuidelines)) {
+                console.log(`[DISCOVERY] Skipping likely duplicate by title: ${item.title}`);
+                duplicateCount++;
+                continue;
+            }
             
             // CRITICAL: Validate URL matches expected domain for organization
             if (item.organisation && !validateGuidelineUrl(item.url, item.organisation)) {
@@ -8482,11 +8657,12 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
                 type: item.type || null,
                 year: item.year || null,
                 url: item.url,
-                notes: item.notes || null
+                notes: item.notes || null,
+                canonicalId: item.canonicalId || null
             });
         }
 
-        console.log(`[DISCOVERY] Final results: ${filtered.length} valid suggestions (${invalidUrlCount} invalid URLs filtered out)`);
+        console.log(`[DISCOVERY] Final results: ${filtered.length} valid suggestions (${duplicateCount} duplicates filtered, ${invalidUrlCount} invalid URLs filtered)`);
 
         // Validate and resolve URLs to direct PDFs where possible
         async function resolvePdfUrl(originalUrl) {
