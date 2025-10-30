@@ -856,7 +856,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 status.textContent = 'Excluded.';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Exclude failed: ${err.message}`;
+                // Check if authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token')
+                );
+                if (isAuthError) {
+                    status.textContent = '🔒 Please sign in to exclude guidelines';
+                    status.style.color = '#0066cc';
+                    showLoginPrompt();
+                } else {
+                    status.textContent = `Exclude failed: ${err.message}`;
+                }
                 throw err;
             }
         }
@@ -889,7 +902,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 status.textContent = 'Included and saved.';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Include failed: ${err.message}`;
+                // Check if authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token')
+                );
+                if (isAuthError) {
+                    status.textContent = '🔒 Please sign in to include guidelines';
+                    status.style.color = '#0066cc';
+                    showLoginPrompt();
+                } else {
+                    status.textContent = `Include failed: ${err.message}`;
+                }
                 throw err;
             }
         }
@@ -943,10 +969,30 @@ document.addEventListener('DOMContentLoaded', async function() {
                 status.style.fontWeight = 'normal';
             } catch (err) {
                 console.error(err);
-                status.textContent = `❌ Discovery failed: ${err.message}`;
-                status.style.color = '#d9534f';
-                status.style.fontWeight = 'normal';
-                resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#d9534f">Discovery failed. Please try again.</div>';
+                
+                // Check if this is an authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token') ||
+                    err.message.includes('securetoken')
+                );
+                
+                if (isAuthError) {
+                    // Show friendly login prompt instead of error
+                    status.textContent = '🔒 Please sign in to scan for new guidance';
+                    status.style.color = '#0066cc';
+                    status.style.fontWeight = 'normal';
+                    resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#666">You need to be signed in to use the guideline discovery feature. Please click the "Sign in with Google" button above.</div>';
+                    showLoginPrompt();
+                } else {
+                    // Show error for non-auth issues
+                    status.textContent = `❌ Discovery failed: ${err.message}`;
+                    status.style.color = '#d9534f';
+                    status.style.fontWeight = 'normal';
+                    resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#d9534f">Discovery failed. Please try again.</div>';
+                }
             }
         }
 
