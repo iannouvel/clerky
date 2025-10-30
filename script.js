@@ -3665,11 +3665,12 @@ function cleanQuoteForSearch(quote) {
     
     // Remove common citation patterns that might not be in the PDF
     let cleaned = quote
-        // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], etc.
-        .replace(/\s*\[Evidence level [A-D0-9]+\]/gi, '')
-        .replace(/\s*\[Grade [A-D0-9]+\]/gi, '')
-        .replace(/\s*\[Level [A-D0-9]+\]/gi, '')
+        // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], [Grade GPP], etc.
+        .replace(/\s*\[Evidence level [^\]]+\]/gi, '')
+        .replace(/\s*\[Grade [^\]]+\]/gi, '')
+        .replace(/\s*\[Level [^\]]+\]/gi, '')
         .replace(/\s*\[Quality: [^\]]+\]/gi, '')
+        .replace(/\s*\[Recommendation: [^\]]+\]/gi, '')
         // Remove reference numbers like [1], [2-5], etc.
         .replace(/\s*\[[0-9,\-–—]+\]/g, '')
         // Remove extra whitespace and normalize
