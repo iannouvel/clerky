@@ -8176,16 +8176,57 @@ app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
         }
         const excludedUrlSet = new Set(excludedSourceUrls.map(u => normalizeUrl(u)));
 
-        const systemPrompt = `You are assisting an Obstetrics & Gynaecology clinician. Identify official guidance documents that would be useful for day-to-day clinical work in the UK. Consider:
-- NICE guidance
-- RCOG Green-top Guidelines
-- RCOG Scientific Impact Papers (SIPs)
-- RCOG Consent Advice
-- RCOG Good Practice Papers
+        const systemPrompt = `You are assisting an Obstetrics & Gynaecology clinician. Identify official guidance documents that would be useful for day-to-day clinical work in the UK.
+
+Organizations to search:
+
+1. RCOG (Royal College of Obstetricians and Gynaecologists) - rcog.org.uk
+   - Green-top Guidelines
+   - Scientific Impact Papers (SIPs)
+   - Consent Advice documents
+   - Good Practice Papers
+
+2. NICE (National Institute for Health and Care Excellence) - nice.org.uk
+   - Guidelines relevant to O&G: antenatal care, pregnancy, labour, postnatal, fertility, menopause, gynaecological conditions
+   - Example codes: NG201, NG194, NG235, NG121, CG192, CG190, NG4, NG25, NG126, CG149, NG133, NG137, CG156, NG23
+
+3. FSRH (Faculty of Sexual & Reproductive Healthcare) - fsrh.org
+   - Clinical guidance on contraception, sexual health, reproductive healthcare
+
+4. BASHH (British Association for Sexual Health and HIV) - bashh.org
+   - Clinical guidelines on sexual health, STIs relevant to O&G practice
+
+5. BMS (British Menopause Society) - thebms.org.uk
+   - Guidance on menopause management and HRT
+
+6. BSH (British Society for Haematology) - b-s-h.org.uk
+   - Haematology guidance relevant to O&G (e.g., anaemia in pregnancy, thrombosis)
+
+7. BHIVA (British HIV Association) - bhiva.org
+   - HIV guidance relevant to pregnancy and women's health
+
+8. BAPM (British Association of Perinatal Medicine) - bapm.org
+   - Perinatal and neonatal guidance relevant to obstetrics
+
+9. UK NSC (UK National Screening Committee) - gov.uk/government/organisations/uk-national-screening-committee
+   - Screening programmes relevant to pregnancy and women's health
+
+10. NHS England - england.nhs.uk
+    - National maternity guidance, commissioning standards, women's health policy
+
+11. Subspecialty Societies:
+    - BSGE (British Society for Gynaecological Endoscopy) - bsge.org.uk
+    - BSUG (British Society of Urogynaecology) - bsug.org
+    - BGCS (British Gynaecological Cancer Society) - bgcs.org.uk
+    - BSCCP (British Society for Colposcopy and Cervical Pathology) - bsccp.org.uk
+    - BFS (British Fertility Society) - britishfertilitysociety.org.uk
+    - BMFMS (British Maternal & Fetal Medicine Society) - bmfms.org.uk
+    - BritSPAG (British Society for Paediatric and Adolescent Gynaecology) - britspag.org
 
 Rules:
-- Return only items that have an official, publicly accessible download URL (preferably PDF) from authoritative domains (e.g., rcog.org.uk, nice.org.uk).
+- Return only items that have an official, publicly accessible download URL (preferably PDF) from authoritative domains listed above.
 - Avoid duplicates, and avoid items already provided in the existing list.
+- For each guideline, determine the correct organization abbreviation from the list above.
 - Output strictly valid JSON (array of objects). No commentary.
 `;
 
@@ -8199,7 +8240,17 @@ Rules:
             return `${head} ${g.title || g.id || ''}`.trim();
         }).join('\n');
 
-        const userPrompt = `Existing guidelines:\n${existingSummary}\n\nExcluded source URLs (normalised):\n${Array.from(excludedUrlSet).join('\n')}\n\nTask: Propose additional, currently available guidance items (NICE/RCOG/SIPs/Consent Advice/Good Practice Papers) that would be useful to a working O&G doctor but are not yet included or excluded. For each item, return an object with keys: title (string), organisation ("NICE"|"RCOG"), type (e.g., "Green-top Guideline"|"SIP"|"Consent Advice"|"Good Practice Paper"|"Guideline"), year (number or null), url (direct downloadable URL), notes (optional string). Return a single JSON array only.`;
+        const userPrompt = `Existing guidelines:\n${existingSummary}\n\nExcluded source URLs (normalised):\n${Array.from(excludedUrlSet).join('\n')}\n\nTask: Propose additional, currently available guidance items from ALL organizations listed in the system prompt (RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, UK NSC, NHS England, and subspecialty societies) that would be useful to a working O&G doctor but are not yet included or excluded. 
+
+For each item, return an object with keys: 
+- title (string): Full title of the guidance
+- organisation (string): Use exact abbreviation from system prompt (e.g., "RCOG", "NICE", "FSRH", "BASHH", "BMS", "BSH", "BHIVA", "BAPM", "UK NSC", "NHS England", "BSGE", "BSUG", "BGCS", "BSCCP", "BFS", "BMFMS", "BritSPAG")
+- type (string): Type of document (e.g., "Green-top Guideline", "SIP", "Consent Advice", "Good Practice Paper", "Clinical Guideline", "Clinical Guidance", "Best Practice")
+- year (number or null): Publication or revision year
+- url (string): Direct downloadable URL (preferably PDF)
+- notes (optional string): Any relevant context
+
+Return a single JSON array only, with at least 5-10 suggestions from various organizations.`;
 
         const messages = [
             { role: 'system', content: systemPrompt },
