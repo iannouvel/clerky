@@ -707,10 +707,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                 row.style.transition = 'opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
                 row.style.overflow = 'hidden';
                 row.dataset.discoveryUrl = (item.url || '').toLowerCase();
-                const meta = [item.organisation, item.type, item.year].filter(Boolean).join(' • ');
+                
+                // Create organization badge with color
+                const orgBadge = item.organisation ? 
+                    `<span style="display:inline-block;background:#0066cc;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:600;margin-right:6px">${item.organisation}</span>` : '';
+                const metaInfo = [item.type, item.year].filter(Boolean).join(' • ');
+                
                 row.innerHTML = `
-                    <div style="font-weight:600">${item.title || 'Untitled'}</div>
-                    <div style="font-size:12px;color:#555;margin:4px 0">${meta}</div>
+                    <div style="font-weight:600;margin-bottom:4px">${item.title || 'Untitled'}</div>
+                    <div style="font-size:12px;color:#555;margin:4px 0">${orgBadge}${metaInfo}</div>
                     <div style="font-size:12px;color:#006;word-break:break-all">${item.url}</div>
                 `;
                 const actions = document.createElement('div');
@@ -891,7 +896,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         async function runDiscovery() {
             const status = document.getElementById('discoveryStatus');
-            status.textContent = 'Scanning...';
+            const resultsContainer = document.getElementById('discoveryResults');
+            
+            // Show progress indicator
+            status.textContent = '🔍 Scanning all organizations for new guidance...';
+            status.style.color = '#0066cc';
+            status.style.fontWeight = '600';
+            resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#666">Please wait while AI searches RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, UK NSC, NHS England, and subspecialty societies...</div>';
+            
             try {
                 await loadUserPrefs();
                 const token = await getAuthTokenOrPrompt();
@@ -905,11 +917,36 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'Discovery failed');
-                renderDiscoveryResults(data.suggestions || []);
-                status.textContent = `Found ${data.suggestions?.length || 0} suggestions.`;
+                
+                const suggestions = data.suggestions || [];
+                renderDiscoveryResults(suggestions);
+                
+                // Count by organization
+                const orgCounts = {};
+                suggestions.forEach(item => {
+                    const org = item.organisation || 'Unknown';
+                    orgCounts[org] = (orgCounts[org] || 0) + 1;
+                });
+                
+                // Build detailed status message
+                let statusMsg = `✅ Found ${suggestions.length} suggestion${suggestions.length !== 1 ? 's' : ''}`;
+                if (Object.keys(orgCounts).length > 0) {
+                    const orgSummary = Object.entries(orgCounts)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([org, count]) => `${org}: ${count}`)
+                        .join(', ');
+                    statusMsg += ` (${orgSummary})`;
+                }
+                
+                status.textContent = statusMsg;
+                status.style.color = '#155724';
+                status.style.fontWeight = 'normal';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Discovery failed: ${err.message}`;
+                status.textContent = `❌ Discovery failed: ${err.message}`;
+                status.style.color = '#d9534f';
+                status.style.fontWeight = 'normal';
+                resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#d9534f">Discovery failed. Please try again.</div>';
             }
         }
 
