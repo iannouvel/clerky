@@ -654,6 +654,44 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // ---- Guideline Discovery Client Logic ----
+        
+        // URL domain validation for client-side safety check
+        const ORGANIZATION_DOMAINS = {
+            'RCOG': ['rcog.org.uk'],
+            'NICE': ['nice.org.uk'],
+            'FSRH': ['fsrh.org'],
+            'BASHH': ['bashh.org', 'bashhguidelines.org'],
+            'BMS': ['thebms.org.uk'],
+            'BSH': ['b-s-h.org.uk'],
+            'BHIVA': ['bhiva.org'],
+            'BAPM': ['bapm.org'],
+            'UK NSC': ['gov.uk'],
+            'NHS England': ['england.nhs.uk'],
+            'BSGE': ['bsge.org.uk'],
+            'BSUG': ['bsug.org'],
+            'BGCS': ['bgcs.org.uk'],
+            'BSCCP': ['bsccp.org.uk'],
+            'BFS': ['britishfertilitysociety.org.uk'],
+            'BMFMS': ['bmfms.org.uk'],
+            'BritSPAG': ['britspag.org']
+        };
+        
+        function validateGuidelineUrl(url, organization) {
+            if (!url || !organization) return true; // Allow if no organization specified
+            const expectedDomains = ORGANIZATION_DOMAINS[organization];
+            if (!expectedDomains) return true; // Allow unknown organizations
+            
+            try {
+                const urlObj = new URL(url);
+                const hostname = urlObj.hostname.toLowerCase();
+                return expectedDomains.some(domain => 
+                    hostname === domain || hostname.endsWith('.' + domain)
+                );
+            } catch (e) {
+                return false; // Invalid URL format
+            }
+        }
+        
         async function getAuthTokenOrPrompt() {
             const user = auth.currentUser;
             if (!user) {
@@ -713,9 +751,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                     `<span style="display:inline-block;background:#0066cc;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:600;margin-right:6px">${item.organisation}</span>` : '';
                 const metaInfo = [item.type, item.year].filter(Boolean).join(' • ');
                 
+                // Validate URL matches expected domain
+                const isValidUrl = validateGuidelineUrl(item.url, item.organisation);
+                const urlWarning = !isValidUrl ? 
+                    `<div style="background:#fff3cd;border:1px solid #ffc107;padding:4px 6px;border-radius:3px;font-size:11px;margin:4px 0">⚠️ URL domain does not match expected domain for ${item.organisation}</div>` : '';
+                
                 row.innerHTML = `
                     <div style="font-weight:600;margin-bottom:4px">${item.title || 'Untitled'}</div>
                     <div style="font-size:12px;color:#555;margin:4px 0">${orgBadge}${metaInfo}</div>
+                    ${urlWarning}
                     <div style="font-size:12px;color:#006;word-break:break-all">${item.url}</div>
                 `;
                 const actions = document.createElement('div');

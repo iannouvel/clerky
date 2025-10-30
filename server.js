@@ -12,6 +12,160 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const PDFParser = require('pdf-parse');
+const cheerio = require('cheerio');
+
+// ============================================================================
+// GUIDELINE DISCOVERY HELPERS
+// ============================================================================
+
+// URL domain validation for each organization
+const ORGANIZATION_DOMAINS = {
+    'RCOG': ['rcog.org.uk'],
+    'NICE': ['nice.org.uk'],
+    'FSRH': ['fsrh.org'],
+    'BASHH': ['bashh.org', 'bashhguidelines.org'],
+    'BMS': ['thebms.org.uk'],
+    'BSH': ['b-s-h.org.uk'],
+    'BHIVA': ['bhiva.org'],
+    'BAPM': ['bapm.org'],
+    'UK NSC': ['gov.uk'],
+    'NHS England': ['england.nhs.uk'],
+    'BSGE': ['bsge.org.uk'],
+    'BSUG': ['bsug.org'],
+    'BGCS': ['bgcs.org.uk'],
+    'BSCCP': ['bsccp.org.uk'],
+    'BFS': ['britishfertilitysociety.org.uk'],
+    'BMFMS': ['bmfms.org.uk'],
+    'BritSPAG': ['britspag.org']
+};
+
+// Validate URL matches expected domain for organization
+function validateGuidelineUrl(url, organization) {
+    if (!url || !organization) return false;
+    
+    const expectedDomains = ORGANIZATION_DOMAINS[organization];
+    if (!expectedDomains) return false;
+    
+    try {
+        const urlObj = new URL(url);
+        const hostname = urlObj.hostname.toLowerCase();
+        
+        return expectedDomains.some(domain => 
+            hostname === domain || hostname.endsWith('.' + domain)
+        );
+    } catch (e) {
+        return false;
+    }
+}
+
+// Web scraping for RCOG guidelines
+async function scrapeRCOGGuidelines() {
+    const guidelines = [];
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    };
+    
+    try {
+        // Scrape Green-top Guidelines
+        const url = 'https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/';
+        const response = await axios.get(url, { headers, timeout: 30000 });
+        const $ = cheerio.load(response.data);
+        
+        $('a[href*="green-top-guideline"]').each((index, element) => {
+            const $el = $(element);
+            const title = $el.text().trim();
+            let guidelineUrl = $el.attr('href');
+            
+            if (guidelineUrl && !guidelineUrl.startsWith('http')) {
+                guidelineUrl = 'https://www.rcog.org.uk' + guidelineUrl;
+            }
+            
+            const numberMatch = title.match(/No\.\s*(\d+[a-z]?)/i);
+            const yearMatch = title.match(/\b(20\d{2})\b/);
+            
+            if (title && guidelineUrl) {
+                guidelines.push({
+                    title,
+                    organisation: 'RCOG',
+                    type: 'Green-top Guideline',
+                    year: yearMatch ? parseInt(yearMatch[1]) : null,
+                    url: guidelineUrl
+                });
+            }
+        });
+        
+        console.log(`[SCRAPING] Found ${guidelines.length} RCOG guidelines`);
+    } catch (error) {
+        console.error('[SCRAPING] Error scraping RCOG:', error.message);
+    }
+    
+    return guidelines;
+}
+
+// Web scraping for NICE guidelines
+async function scrapeNICEGuidelines() {
+    const guidelines = [];
+    const headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+    };
+    
+    // Expanded O&G-relevant NICE codes
+    const maternityCodes = [
+        // Pregnancy and antenatal
+        'NG201', 'NG194', 'NG235', 'NG121', 'CG190', 'NG3',
+        // Intrapartum and postnatal  
+        'CG192', 'NG133', 'CG37',
+        // Fertility and reproductive health
+        'CG156', 'NG23', 'NG137',
+        // Gynaecological conditions
+        'NG88', 'NG4', 'NG25', 'NG126', 'CG149',
+        // Quality standards
+        'QS22', 'QS109', 'QS115', 'QS200',
+        // Public health
+        'PH11', 'PH26', 'PH27'
+    ];
+    
+    for (const code of maternityCodes) {
+        try {
+            const url = `https://www.nice.org.uk/guidance/${code.toLowerCase()}`;
+            const response = await axios.get(url, {
+                headers,
+                timeout: 30000,
+                validateStatus: status => status === 200
+            });
+            
+            const $ = cheerio.load(response.data);
+            const title = $('h1.page-header__heading').text().trim() || 
+                         $('h1').first().text().trim() || 
+                         code;
+            
+            const dateText = $('dd.published-date').text().trim();
+            const yearMatch = dateText.match(/\b(20\d{2})\b/);
+            
+            const type = code.startsWith('NG') ? 'NICE Guideline' :
+                        code.startsWith('CG') ? 'Clinical Guideline' :
+                        code.startsWith('QS') ? 'Quality Standard' :
+                        code.startsWith('PH') ? 'Public Health Guideline' : 'NICE Guidance';
+            
+            guidelines.push({
+                title,
+                organisation: 'NICE',
+                type,
+                year: yearMatch ? parseInt(yearMatch[1]) : null,
+                url
+            });
+            
+        } catch (error) {
+            // Silently skip codes that don't exist
+            if (!error.response || error.response.status !== 404) {
+                console.warn(`[SCRAPING] Could not fetch NICE ${code}:`, error.message);
+            }
+        }
+    }
+    
+    console.log(`[SCRAPING] Found ${guidelines.length} NICE guidelines`);
+    return guidelines;
+}
 
 // ============================================================================
 // AI PROVIDER COST-EFFECTIVE ITERATION SYSTEM
@@ -8142,11 +8296,13 @@ app.get('/proxyGuidelineView', async (req, res) => {
     }
 });
 
-// Endpoint: discover guidelines using AI
+// Endpoint: discover guidelines using HYBRID approach (scraping + AI)
 app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
     try {
         const userId = req.user.uid;
-        // Load existing guidelines from Firestore (not GitHub text file)
+        console.log('[DISCOVERY] Starting hybrid guideline discovery...');
+        
+        // Load existing guidelines from Firestore
         let allGuidelines = [];
         try {
             allGuidelines = await getAllGuidelines();
@@ -8175,6 +8331,21 @@ app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
             } catch (_) {}
         }
         const excludedUrlSet = new Set(excludedSourceUrls.map(u => normalizeUrl(u)));
+
+        // STEP 1: Run web scraping for RCOG and NICE (guaranteed accurate)
+        console.log('[DISCOVERY] Step 1: Web scraping RCOG and NICE...');
+        let scrapedGuidelines = [];
+        try {
+            const [rcogResults, niceResults] = await Promise.all([
+                scrapeRCOGGuidelines(),
+                scrapeNICEGuidelines()
+            ]);
+            scrapedGuidelines = [...rcogResults, ...niceResults];
+            console.log(`[DISCOVERY] Scraped ${scrapedGuidelines.length} guidelines (RCOG: ${rcogResults.length}, NICE: ${niceResults.length})`);
+        } catch (scrapeError) {
+            console.error('[DISCOVERY] Scraping failed:', scrapeError.message);
+            // Continue with AI even if scraping fails
+        }
 
         const systemPrompt = `You are assisting an Obstetrics & Gynaecology clinician. Identify official guidance documents that would be useful for day-to-day clinical work in the UK.
 
@@ -8257,35 +8428,53 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
             { role: 'user', content: userPrompt }
         ];
 
-        const aiResult = await routeToAI({ messages }, userId);
-        if (!aiResult || !aiResult.content) {
-            return res.status(500).json({ success: false, error: 'AI did not return content' });
-        }
-
-        // Attempt to extract JSON array from response
-        let text = aiResult.content.trim();
-        // Remove code fences if present
-        text = text.replace(/^```json\s*|```$/g, '').trim();
-        let suggestions;
+        // STEP 2: Run AI for other organizations (FSRH, BASHH, etc.)
+        console.log('[DISCOVERY] Step 2: AI search for other organizations...');
+        let aiSuggestions = [];
         try {
-            // Find first [ ... ]
-            const start = text.indexOf('[');
-            const end = text.lastIndexOf(']');
-            const jsonStr = (start !== -1 && end !== -1) ? text.substring(start, end + 1) : text;
-            suggestions = JSON.parse(jsonStr);
-            if (!Array.isArray(suggestions)) throw new Error('Not an array');
-        } catch (parseErr) {
-            console.error('[DISCOVER] Failed to parse AI JSON:', parseErr.message);
-            return res.status(500).json({ success: false, error: 'Failed to parse AI JSON' });
+            const aiResult = await routeToAI({ messages }, userId);
+            if (aiResult && aiResult.content) {
+                let text = aiResult.content.trim();
+                text = text.replace(/^```json\s*|```$/g, '').trim();
+                
+                const start = text.indexOf('[');
+                const end = text.lastIndexOf(']');
+                const jsonStr = (start !== -1 && end !== -1) ? text.substring(start, end + 1) : text;
+                aiSuggestions = JSON.parse(jsonStr);
+                
+                if (!Array.isArray(aiSuggestions)) {
+                    console.error('[DISCOVERY] AI did not return array');
+                    aiSuggestions = [];
+                }
+                console.log(`[DISCOVERY] AI suggested ${aiSuggestions.length} guidelines`);
+            }
+        } catch (aiError) {
+            console.error('[DISCOVERY] AI search failed:', aiError.message);
+            // Continue with just scraped results
         }
 
-        // Filter out suggestions with excluded URLs or already existing URLs, and dedupe
+        // STEP 3: Combine and validate all results
+        console.log('[DISCOVERY] Step 3: Combining and validating results...');
+        const allDiscovered = [...scrapedGuidelines, ...aiSuggestions];
         const seen = new Set([...excludedUrlSet, ...existingUrls]);
         const filtered = [];
-        for (const item of suggestions) {
+        
+        let invalidUrlCount = 0;
+        for (const item of allDiscovered) {
             if (!item || !item.url || !item.title) continue;
+            
             const norm = normalizeUrl(item.url);
+            
+            // Skip if already exists or excluded
             if (seen.has(norm)) continue;
+            
+            // CRITICAL: Validate URL matches expected domain for organization
+            if (item.organisation && !validateGuidelineUrl(item.url, item.organisation)) {
+                invalidUrlCount++;
+                console.warn(`[DISCOVERY] Invalid URL for ${item.organisation}: ${item.url}`);
+                continue;
+            }
+            
             seen.add(norm);
             filtered.push({
                 title: item.title,
@@ -8296,6 +8485,8 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
                 notes: item.notes || null
             });
         }
+
+        console.log(`[DISCOVERY] Final results: ${filtered.length} valid suggestions (${invalidUrlCount} invalid URLs filtered out)`);
 
         // Validate and resolve URLs to direct PDFs where possible
         async function resolvePdfUrl(originalUrl) {
