@@ -884,6 +884,7 @@ async function fetchAndExtractPDFText(pdfFileName) {
         const githubUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`;
         
         // Fetch PDF file from GitHub API
+        let buffer;
         try {
             const response = await axios.get(githubUrl, {
                 headers: {
@@ -893,15 +894,26 @@ async function fetchAndExtractPDFText(pdfFileName) {
             });
             
             if (response.data.content) {
-                // GitHub API returns base64-encoded content for binary files
+                // Small files (<1MB) - GitHub API returns base64-encoded content
                 buffer = Buffer.from(response.data.content, 'base64');
                 console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub API, size: ${buffer.length} bytes`);
-                } else {
-                throw new Error('No content found in GitHub API response');
+            } else if (response.data.download_url) {
+                // Large files (>1MB) - GitHub API returns download_url instead
+                console.log(`[FETCH_PDF] File too large for API, downloading from: ${response.data.download_url}`);
+                const downloadResponse = await axios.get(response.data.download_url, {
+                    responseType: 'arraybuffer',
+                    headers: {
+                        'Authorization': `token ${githubToken}`
+                    }
+                });
+                buffer = Buffer.from(downloadResponse.data);
+                console.log(`[FETCH_PDF] Successfully downloaded large PDF, size: ${buffer.length} bytes`);
+            } else {
+                throw new Error('No content or download_url found in GitHub API response');
             }
         } catch (err) {
             console.error(`[FETCH_PDF] Failed to fetch from GitHub API: ${err.message}`);
-                throw err;
+            throw err;
         }
         
         // Extract text from PDF
