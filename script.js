@@ -1482,6 +1482,102 @@ async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) 
     }
 }
 
+// Helper to repair content for guidelines with missing content/condensed
+async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
+    console.log(`[CONTENT_REPAIR] Starting content repair with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+    
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+    
+    try {
+        while (remaining > 0 && batchCount < maxBatches) {
+            batchCount++;
+            console.log(`[CONTENT_REPAIR] Starting batch ${batchCount}...`);
+            
+            const response = await fetch(`${window.SERVER_URL}/repairGuidelineContent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+            
+            if (!response.ok) {
+                console.error(`[CONTENT_REPAIR] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+            
+            const result = await response.json();
+            console.log(`[CONTENT_REPAIR] Batch ${batchCount} result:`, result);
+            
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+            
+            console.log(`[CONTENT_REPAIR] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+            
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[CONTENT_REPAIR] All guidelines repaired!');
+                break;
+            }
+            
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[CONTENT_REPAIR] Waiting 3 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+        }
+        
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+        
+    } catch (error) {
+        console.error('[CONTENT_REPAIR] Error during content repair:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
+// Make repair function available globally for console use
+window.repairGuidelineContent = async function() {
+    const user = auth.currentUser;
+    if (!user) {
+        console.error('[CONTENT_REPAIR] User not authenticated');
+        return;
+    }
+    
+    const idToken = await user.getIdToken();
+    const result = await repairGuidelineContent(idToken, 3, 20); // 3 at a time, max 20 batches
+    
+    if (result.success) {
+        console.log('[CONTENT_REPAIR] ✅ Repair completed:', result);
+        // Reload guidelines after repair
+        window.guidelinesLoading = false;
+        await loadGuidelinesFromFirestore();
+    } else {
+        console.error('[CONTENT_REPAIR] ❌ Repair failed:', result);
+    }
+    
+    return result;
+};
+
 // Update loadGuidelinesFromFirestore to load from Firestore
 async function getGitHubGuidelinesCount() {
     try {

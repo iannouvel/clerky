@@ -7886,28 +7886,89 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
         console.log(`[BATCH_SYNC] Fetching content from: ${contentPath}`);
         console.log(`[BATCH_SYNC] Fetching summary from: ${summaryPath}`);
 
-        // Fetch content and summary
-        const [contentResponse, summaryResponse] = await Promise.all([
-          fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${contentPath}`, {
-            headers: { 
-              'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3.raw'
-            }
-          }),
-          fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${summaryPath}`, {
-            headers: { 
-              'Authorization': `token ${process.env.GITHUB_TOKEN}`,
-              'Accept': 'application/vnd.github.v3.raw'
-            }
-          })
-        ]);
+        let content = null;
+        let summary = null;
 
-        if (!contentResponse.ok || !summaryResponse.ok) {
-          throw new Error(`Failed to fetch files: content=${contentResponse.status}, summary=${summaryResponse.status}`);
+        // Try fetching pre-processed .txt files first
+        try {
+          const [contentResponse, summaryResponse] = await Promise.all([
+            fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${contentPath}`, {
+              headers: { 
+                'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+              }
+            }),
+            fetch(`https://raw.githubusercontent.com/iannouvel/clerky/main/${summaryPath}`, {
+              headers: { 
+                'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                'Accept': 'application/vnd.github.v3.raw'
+              }
+            })
+          ]);
+
+          if (contentResponse.ok && summaryResponse.ok) {
+            content = await contentResponse.text();
+            summary = await summaryResponse.text();
+            console.log(`[BATCH_SYNC] ✓ Successfully fetched pre-processed .txt files`);
+          } else {
+            throw new Error(`TXT files not found: content=${contentResponse.status}, summary=${summaryResponse.status}`);
+          }
+        } catch (txtError) {
+          // Fallback to PDF extraction if .txt files don't exist
+          console.log(`[BATCH_SYNC] .txt files not available, falling back to PDF extraction for ${rawGuidelineName}`);
+          
+          if (!rawGuidelineName.toLowerCase().endsWith('.pdf')) {
+            throw new Error(`Cannot extract content: file is not a PDF and .txt files are missing`);
+          }
+
+          // Extract content from PDF
+          console.log(`[BATCH_SYNC] Extracting text from PDF: ${rawGuidelineName}`);
+          const fullText = await fetchAndExtractPDFText(rawGuidelineName);
+          
+          if (!fullText || fullText.trim().length < 100) {
+            throw new Error(`Failed to extract meaningful text from PDF`);
+          }
+
+          console.log(`[BATCH_SYNC] Successfully extracted ${fullText.length} characters from PDF`);
+
+          // Generate condensed version
+          console.log(`[BATCH_SYNC] Generating condensed text...`);
+          const condensedText = await generateCondensedText(fullText, null);
+          
+          if (!condensedText) {
+            console.warn(`[BATCH_SYNC] Failed to generate condensed text, using full text`);
+            content = fullText;
+          } else {
+            content = condensedText;
+            console.log(`[BATCH_SYNC] ✓ Generated condensed text: ${condensedText.length} characters`);
+          }
+
+          // Generate summary using AI
+          console.log(`[BATCH_SYNC] Generating summary from extracted text...`);
+          try {
+            const summaryPrompt = `Please provide a concise summary of this clinical guideline in 2-3 paragraphs:\n\n${content.substring(0, 4000)}`;
+            const summaryMessages = [
+              { role: 'system', content: 'You are a medical expert creating concise summaries of clinical guidelines.' },
+              { role: 'user', content: summaryPrompt }
+            ];
+            
+            const summaryResult = await sendToAI(summaryMessages, 'deepseek-chat', null, null);
+            
+            if (summaryResult && summaryResult.content) {
+              summary = summaryResult.content.trim();
+              console.log(`[BATCH_SYNC] ✓ Generated summary: ${summary.length} characters`);
+            } else {
+              // Fallback to first 500 characters as summary
+              summary = content.substring(0, 500) + '...';
+              console.warn(`[BATCH_SYNC] Failed to generate AI summary, using truncated text`);
+            }
+          } catch (summaryError) {
+            console.error(`[BATCH_SYNC] Error generating summary:`, summaryError.message);
+            summary = content.substring(0, 500) + '...';
+          }
+
+          console.log(`[BATCH_SYNC] ✓ PDF extraction and content generation complete`);
         }
-
-        const content = await contentResponse.text();
-        const summary = await summaryResponse.text();
 
         console.log(`[BATCH_SYNC] Extracting metadata for ${guideline}...`);
 
@@ -8019,6 +8080,210 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
       success: false, 
       error: error.message,
       details: 'Error in batch sync endpoint'
+    });
+  }
+});
+
+// Repair content endpoint - fixes existing guidelines with null content/condensed
+app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    const batchSize = parseInt(req.body.batchSize) || 5; // Process 5 guidelines at a time
+    const forceRegenerate = req.body.forceRegenerate || false; // Force regeneration even if content exists
+
+    console.log(`[CONTENT_REPAIR] Starting content repair with batch size: ${batchSize}, force: ${forceRegenerate}`);
+
+    // Query Firestore for guidelines with missing content or condensed fields
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const guidelinesNeedingRepair = [];
+
+    guidelinesSnapshot.forEach(doc => {
+      const data = doc.data();
+      const hasContent = data.content && data.content.trim().length > 0;
+      const hasCondensed = data.condensed && data.condensed.trim().length > 0;
+      
+      if (forceRegenerate || !hasContent || !hasCondensed) {
+        guidelinesNeedingRepair.push({
+          id: doc.id,
+          data: data,
+          missingContent: !hasContent,
+          missingCondensed: !hasCondensed
+        });
+      }
+    });
+
+    console.log(`[CONTENT_REPAIR] Found ${guidelinesNeedingRepair.length} guidelines needing repair`);
+
+    if (guidelinesNeedingRepair.length === 0) {
+      return res.json({
+        success: true,
+        message: 'No guidelines need content repair',
+        processed: 0,
+        succeeded: 0,
+        failed: 0,
+        remaining: 0
+      });
+    }
+
+    // Process only the first batch
+    const batch = guidelinesNeedingRepair.slice(0, batchSize);
+    const results = [];
+
+    console.log(`[CONTENT_REPAIR] Processing ${batch.length} guidelines...`);
+
+    for (const guideline of batch) {
+      console.log(`[CONTENT_REPAIR] Processing: ${guideline.id}`);
+      
+      try {
+        const data = guideline.data;
+        let content = data.content;
+        let condensed = data.condensed;
+        let summary = data.summary;
+        let updated = false;
+        const updates = {};
+
+        // Determine the PDF filename
+        let pdfFileName = null;
+        if (data.filename && data.filename.toLowerCase().endsWith('.pdf')) {
+          pdfFileName = data.filename;
+        } else if (data.originalFilename && data.originalFilename.toLowerCase().endsWith('.pdf')) {
+          pdfFileName = data.originalFilename;
+        } else if (data.title && data.title.toLowerCase().endsWith('.pdf')) {
+          pdfFileName = data.title;
+        } else if (data.filename) {
+          pdfFileName = data.filename.replace(/\.[^.]+$/, '.pdf');
+        }
+
+        if (!pdfFileName) {
+          throw new Error('Cannot determine PDF filename for content extraction');
+        }
+
+        console.log(`[CONTENT_REPAIR] PDF filename: ${pdfFileName}`);
+
+        // Extract text from PDF if content is missing
+        if (!content || content.trim().length === 0 || forceRegenerate) {
+          console.log(`[CONTENT_REPAIR] Extracting text from PDF...`);
+          const fullText = await fetchAndExtractPDFText(pdfFileName);
+          
+          if (!fullText || fullText.trim().length < 100) {
+            throw new Error('Failed to extract meaningful text from PDF');
+          }
+
+          console.log(`[CONTENT_REPAIR] Successfully extracted ${fullText.length} characters`);
+
+          // Generate condensed version
+          console.log(`[CONTENT_REPAIR] Generating condensed text...`);
+          const condensedText = await generateCondensedText(fullText, null);
+          
+          if (condensedText) {
+            content = condensedText;
+            condensed = condensedText;
+            updates.content = condensedText;
+            updates.condensed = condensedText;
+            console.log(`[CONTENT_REPAIR] ✓ Generated condensed text: ${condensedText.length} characters`);
+          } else {
+            content = fullText;
+            condensed = fullText;
+            updates.content = fullText;
+            updates.condensed = fullText;
+            console.warn(`[CONTENT_REPAIR] Using full text as condensed version failed`);
+          }
+
+          updated = true;
+
+          // Generate summary if needed
+          if (!summary || summary.trim().length === 0) {
+            console.log(`[CONTENT_REPAIR] Generating summary...`);
+            try {
+              const summaryPrompt = `Please provide a concise summary of this clinical guideline in 2-3 paragraphs:\n\n${content.substring(0, 4000)}`;
+              const summaryMessages = [
+                { role: 'system', content: 'You are a medical expert creating concise summaries of clinical guidelines.' },
+                { role: 'user', content: summaryPrompt }
+              ];
+              
+              const summaryResult = await sendToAI(summaryMessages, 'deepseek-chat', null, null);
+              
+              if (summaryResult && summaryResult.content) {
+                summary = summaryResult.content.trim();
+                updates.summary = summary;
+                console.log(`[CONTENT_REPAIR] ✓ Generated summary: ${summary.length} characters`);
+              }
+            } catch (summaryError) {
+              console.error(`[CONTENT_REPAIR] Error generating summary:`, summaryError.message);
+            }
+          }
+
+          // Extract keywords if needed
+          if (!data.keywords || data.keywords.length === 0) {
+            updates.keywords = extractKeywords(summary || content);
+            console.log(`[CONTENT_REPAIR] ✓ Extracted keywords: ${updates.keywords.length} keywords`);
+          }
+        } else if (!condensed || condensed.trim().length === 0) {
+          // Content exists but condensed is missing
+          console.log(`[CONTENT_REPAIR] Condensed missing, using existing content`);
+          updates.condensed = content;
+          updated = true;
+        }
+
+        // Update Firestore if any changes were made
+        if (updated && Object.keys(updates).length > 0) {
+          updates.updatedAt = admin.firestore.FieldValue.serverTimestamp();
+          await db.collection('guidelines').doc(guideline.id).update(updates);
+          console.log(`[CONTENT_REPAIR] ✓ Updated guideline: ${guideline.id}`);
+          
+          results.push({
+            guideline: guideline.id,
+            success: true,
+            message: 'Successfully repaired content',
+            fieldsUpdated: Object.keys(updates)
+          });
+        } else {
+          results.push({
+            guideline: guideline.id,
+            success: true,
+            message: 'No updates needed'
+          });
+        }
+
+      } catch (error) {
+        console.error(`[CONTENT_REPAIR] Error processing ${guideline.id}:`, error.message);
+        console.error(`[CONTENT_REPAIR] Error stack:`, error.stack);
+        results.push({
+          guideline: guideline.id,
+          success: false,
+          error: error.message || 'Unknown error',
+          errorDetails: error.toString()
+        });
+      }
+    }
+
+    const successCount = results.filter(r => r.success).length;
+    const failureCount = results.filter(r => !r.success).length;
+
+    console.log(`[CONTENT_REPAIR] Batch complete: ${successCount} succeeded, ${failureCount} failed`);
+
+    res.json({
+      success: true,
+      message: `Processed ${batch.length} guidelines`,
+      processed: batch.length,
+      succeeded: successCount,
+      failed: failureCount,
+      remaining: guidelinesNeedingRepair.length - batch.length,
+      total: guidelinesNeedingRepair.length,
+      results: results
+    });
+
+  } catch (error) {
+    console.error('[CONTENT_REPAIR] Critical error:', error);
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      details: 'Error in content repair endpoint'
     });
   }
 });
