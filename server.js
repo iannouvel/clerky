@@ -1031,7 +1031,7 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
             updates.contentGenerated = true;
             updates.generationDate = new Date().toISOString();
             
-            await guidelineRef.update(updates);
+            await guidelineRef.set(updates, { merge: true });
             console.log(`[CONTENT_GEN] Updated guideline ${guidelineId} with generated content`);
         }
         
@@ -3827,13 +3827,23 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
                                 console.log(`[DUPLICATE_CHECK] Valid duplicate found for hash: ${hash.substring(0, 16)}... (file: ${filename})`);
                                 break;
                             } else {
-                                // File doesn't exist in GitHub, mark for cleanup
-                                staleRecordsToCleanup.push({
-                                    id: doc.id,
-                                    filename: filename,
-                                    hash: hash
-                                });
-                                console.log(`[DUPLICATE_CHECK] Stale record found for hash: ${hash.substring(0, 16)}... (missing file: ${filename})`);
+                                // File doesn't exist in GitHub, check if within grace period
+                                const uploadedAt = data.uploadedAt?.toDate?.() || data.uploadedAt;
+                                const now = new Date();
+                                const ageMs = uploadedAt ? now - new Date(uploadedAt) : Infinity;
+                                const GRACE_PERIOD_MS = 5 * 60 * 1000; // 5 minutes
+                                
+                                if (ageMs > GRACE_PERIOD_MS) {
+                                    // Only delete if outside grace period
+                                    staleRecordsToCleanup.push({
+                                        id: doc.id,
+                                        filename: filename,
+                                        hash: hash
+                                    });
+                                    console.log(`[DUPLICATE_CHECK] Stale record found for hash: ${hash.substring(0, 16)}... (missing file: ${filename})`);
+                                } else {
+                                    console.log(`[DUPLICATE_CHECK] Skipping recent upload (within grace period): ${filename}`);
+                                }
                             }
                         } else {
                             // No GitHub validation available or no filename, treat as duplicate for safety
@@ -5282,7 +5292,7 @@ app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
         
         if (result.updated && Object.keys(result.updates).length > 0) {
             // Update the document in Firestore
-            await db.collection('guidelines').doc(guidelineId).update(result.updates);
+            await db.collection('guidelines').doc(guidelineId).set(result.updates, { merge: true });
             
             console.log(`[DEBUG] Successfully updated content for guideline: ${guidelineId}`);
             
