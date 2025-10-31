@@ -1,6 +1,7 @@
 BASHH - 2019 - PID Guideline.pdf
 BGCS 2024 - Ovarian, Tubal and Primary Peritoneal Cancer.pdf
 BHIVA - 2020 - HIV Guideline.pdf
+BHIVA-guidelines-on-the-management-of-HIV-in-pregnancy-and-the-postpartum-period.pdf
 BJOG - 2016 -  Management of Bladder Pain Syndrome.pdf
 BJOG - 2016 -  Management of Monochorionic Twin Pregnancy.pdf
 BJOG - 2016 -  Management of Premenstrual Syndrome.pdf
@@ -33,6 +34,7 @@ BSH - 2021 - Sickle Cell Disease In Pregnancy.pdf
 BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
+Extreme_Preterm_Revision_DRAFT_Aug_2025.pdf
 GTG - 2014 - Beta Thalassaemia In Pregnancy.pdf
 GTG - 2014 - Umbilical Cord Prolapse.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
@@ -80,3 +82,13 @@ NICE Guidance - 2023 - Ectopic.pdf
 NICE Guidance - 2024 - Endometriosis.pdf
 NICE Guideline - 2021 - IOL.pdf
 NICE Interventional Guidance - 2007 - Laparoscopic Hysterectomy.pdf
+PRN00614-Saving-babies-lives-version-three-a-care-bundle-for-reducing-perinatal-mortality.pdf
+fsrh-ceu-clinical-guideline-progestogen-only-pills-aug22-amended-11july-2023-.pdf
+fsrh-clinical-guideline-intrauterine-contraception-mar-23-amended.pdf
+fsrh-guideline-combined-hormonal-contraception-october-2023.pdf
+fsrh-guideline-emergency-contraception03dec2020-amendedjuly2023-11jul.pdf
+fsrh-ukmec-full-book-2019.pdf
+gc_guideline_2025_final.pdf
+maternal-and-child-nutrition-nutrition-and-weight-management-in-pregnancy-and-nutrition-in-children-up-to-5-years-pdf-66143961638341.pdf
+menopause-identification-and-management-pdf-1837330217413.pdf
+postnatal-care-pdf-66142082148037 (1).pdf
