@@ -39,6 +39,7 @@ FSRH - 2019 - UKMEC.pdf
 FSRH - 2023 - COCP.pdf
 FSRH - 2023 - Emergency Cotraception.pdf
 FSRH - 2023 - Intrauterine Contraception.pdf
+FSRH - 2023 - POP.pdf
 GTG - 2014 - Beta Thalassaemia In Pregnancy.pdf
 GTG - 2014 - Umbilical Cord Prolapse.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
@@ -72,10 +73,13 @@ NICE - 2017 - Endometriosis diagnosis and management.pdf
 NICE - 2021 - Antenatal Care.pdf
 NICE - 2021 - Heavy Menstrual Bleeding Assessment and Management.pdf
 NICE - 2021 - Heavy menstrual bleeding assessment and management.pdf
+NICE - 2021 - Postnatal Care.pdf
 NICE - 2023 - Hypertension In Pregnancy.pdf
+NICE - 2024 - Menopause.pdf
 NICE - 2024 - Neonatal infection antibiotics for prevention and treatment.pdf
 NICE - 2024 - Suspected Sepsis.pdf
 NICE - 2025 - Intrapartum Care.pdf
+NICE - 2025 - Maternal and Child Nutrition.pdf
 NICE 2020 - Diabetes in Pregnancy.pdf
 NICE 2022 - Fetal monitoring in labour.pdf
 NICE 2024 - Ovarian Cancer Identifying and Managing Familial and Genetic Risk.pdf
