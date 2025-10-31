@@ -8428,6 +8428,7 @@ app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
         // Load user preferences from Firestore
         let excludedSourceUrls = [];
         let excludedCanonicalIds = [];
+        let includedSourceUrls = [];
         if (db) {
             try {
                 const colRef = db.collection('users').doc(userId).collection('guidelinePrefs').doc('items').collection('entries');
@@ -8436,10 +8437,12 @@ app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
                     const d = doc.data() || {};
                     if (d.type === 'excluded' && d.normalisedUrl) excludedSourceUrls.push(d.normalisedUrl);
                     if (d.type === 'excluded' && d.canonicalId) excludedCanonicalIds.push(String(d.canonicalId).toLowerCase());
+                    if (d.type === 'included' && d.normalisedUrl) includedSourceUrls.push(d.normalisedUrl);
                 });
             } catch (_) {}
         }
         const excludedUrlSet = new Set(excludedSourceUrls.map(u => normalizeUrl(u)));
+        const includedUrlSet = new Set(includedSourceUrls.map(u => normalizeUrl(u)));
 
         // STEP 1: Run web scraping for RCOG and NICE (guaranteed accurate)
         console.log('[DISCOVERY] Step 1: Web scraping RCOG and NICE...');
@@ -8565,7 +8568,7 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
         // STEP 3: Combine and validate all results
         console.log('[DISCOVERY] Step 3: Combining and validating results...');
         const allDiscovered = [...scrapedGuidelines, ...aiSuggestions];
-        const seen = new Set([...excludedUrlSet, ...existingUrls]);
+        const seen = new Set([...excludedUrlSet, ...existingUrls, ...includedUrlSet]);
         const filtered = [];
         
         // Helper: check if title is similar enough to an existing guideline
@@ -8615,7 +8618,7 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
             
             const norm = normalizeUrl(item.url);
             
-            // Skip if URL already exists or excluded
+            // Skip if URL already exists, excluded, or already included
             if (seen.has(norm)) {
                 duplicateCount++;
                 continue;
