@@ -9,10 +9,12 @@ BJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.pdf
 BJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.pdf
 BJOG - 2017 -  Management of Breech Presentation.pdf
 BJOG - 2017 -  Management of Inherited Bleeding Disorders in Pregnancy.pdf
+BJOG - 2017 - Prevention of Early Onset Neonatal Group B Streptococcal Disease.pdf
 BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.pdf
 BJOG - 2018 - Jauniaux - Placenta Praevia and Placenta Accreta.pdf
 BJOG - 2018 - Jauniaux - Vasa Praevia.pdf
 BJOG - 2019 - Chu - Maternal Collapse in Pregnancy and the Puerperium.pdf
+BJOG - 2019 - Thomson - PPROM from 24 Weeks.pdf
 BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf
 BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf
 BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
@@ -21,10 +23,13 @@ BJOG - 2022 - Shennan - Cervical Cerclage.pdf
 BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
 BJOG - 2023 - Regan - Recurrent Miscarriage.pdf
 BJOG - 2024 - Burden - Care of late intrauterine fetal death and stillbirth.pdf
+BJOG - 2024 - De Silva - Outpatient Hysteroscopy.pdf
 BJOG - 2024 - Lissauer - Maternal Sepsis.pdf
 BJOG - 2024 - Morris - Small For Gestational Age and Fetal Growth Restriction.pdf
+BJOG - 2024 - Nelson Piercy - Management of Nausea and Vomiting in Pregnancy and Hyperemesis Gravidarum.pdf
 BJOG - 2025 - Chan - Management of Thyroid Disorders in Pregnancy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
+BSH - 2021 - Sickle Cell Disease In Pregnancy.pdf
 BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
