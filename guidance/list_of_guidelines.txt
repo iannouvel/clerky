@@ -1,5 +1,6 @@
 BAPM - 2025 - Extreme Prematurity.pdf
 BASHH - 2019 - PID Guideline.pdf
+BASHH - 2025 - Gonorrhoeae.pdf
 BGCS 2024 - Ovarian, Tubal and Primary Peritoneal Cancer.pdf
 BHIVA - 2025 - HIV in Pregnancy.pdf
 BJOG - 2016 -  Management of Bladder Pain Syndrome.pdf
@@ -34,6 +35,10 @@ BSH - 2021 - Sickle Cell Disease In Pregnancy.pdf
 BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
 ESHRE Guideline - 2022 - Endometriosis.pdf
 ESHRE PIL - Endometriosis.pdf
+FSRH - 2019 - UKMEC.pdf
+FSRH - 2023 - COCP.pdf
+FSRH - 2023 - Emergency Cotraception.pdf
+FSRH - 2023 - Intrauterine Contraception.pdf
 GTG - 2014 - Beta Thalassaemia In Pregnancy.pdf
 GTG - 2014 - Umbilical Cord Prolapse.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
@@ -61,6 +66,7 @@ GTG 2016 - Postmenopausal Ovarian Cysts.pdf
 Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf
 Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
 Joint RCOG and BSGE Guideline- Laparoscopy in Pregnancy.pdf
+NHS - 2023 - Saving Babies Lives Care Bundle v3.pdf
 NICE - 2017 - Endometriosis Diagnosis and Management.pdf
 NICE - 2017 - Endometriosis diagnosis and management.pdf
 NICE - 2021 - Antenatal Care.pdf
