@@ -22,8 +22,8 @@
         const searchTerm = decodeURIComponent(searchMatch[1]);
         console.log('[Clerky Auth] Search term detected in URL:', searchTerm.substring(0, 100) + '...');
         
-        // Set up the pagesloaded listener immediately
-        document.addEventListener('pagesloaded', function() {
+        // Function to trigger the search
+        const triggerSearch = function() {
             console.log('[Clerky Auth] PDF pages loaded, triggering fuzzy search...');
             
             if (!window.PDFViewerApplication || !window.PDFViewerApplication.eventBus) {
@@ -202,7 +202,20 @@
             // Start with first variant
             console.log(`[PDF Search] Starting fuzzy search with ${searchVariants.length} strategies`);
             tryNextVariant();
-        }, { once: true });
+        };
+        
+        // Set up the pagesloaded listener
+        document.addEventListener('pagesloaded', triggerSearch, { once: true });
+        
+        // Also check if pages are already loaded (in case event already fired)
+        setTimeout(() => {
+            if (window.PDFViewerApplication && window.PDFViewerApplication.pdfDocument) {
+                console.log('[Clerky Auth] PDF already loaded, triggering search immediately');
+                // Remove the event listener since we're triggering manually
+                document.removeEventListener('pagesloaded', triggerSearch);
+                triggerSearch();
+            }
+        }, 500);
     }
     
     // Get URL parameters
