@@ -8156,10 +8156,8 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
         const guidelineData = {
           filename: rawGuidelineName,
           title: metadata.humanFriendlyName || rawGuidelineName,
-          content: preparedContent.content,
-          summary: preparedContent.summary,
+          // Don't include content/condensed/summary if they're in Storage (will be null)
           keywords: extractKeywords(summary || content),
-          condensed: preparedContent.condensed,
           humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName,
           humanFriendlyTitle: rawGuidelineName,
           yearProduced: metadata.yearProduced,
@@ -8168,18 +8166,27 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
           auditableElements: [] // Skip auditable elements for now to save time
         };
         
-        // Add storage URLs if content was stored in Storage
+        // Add content fields or Storage URLs depending on size
         if (preparedContent.contentStorageUrl) {
           guidelineData.contentStorageUrl = preparedContent.contentStorageUrl;
+          guidelineData.contentInStorage = true;
+          // Don't add content field - it's in Storage
+        } else {
+          guidelineData.content = preparedContent.content;
         }
+        
         if (preparedContent.condensedStorageUrl) {
           guidelineData.condensedStorageUrl = preparedContent.condensedStorageUrl;
+          // Don't add condensed field - it's in Storage
+        } else {
+          guidelineData.condensed = preparedContent.condensed;
         }
+        
         if (preparedContent.summaryStorageUrl) {
           guidelineData.summaryStorageUrl = preparedContent.summaryStorageUrl;
-        }
-        if (preparedContent.contentInStorage) {
-          guidelineData.contentInStorage = true;
+          // Don't add summary field - it's in Storage
+        } else {
+          guidelineData.summary = preparedContent.summary;
         }
         
         await storeGuideline(guidelineData);
@@ -8383,34 +8390,42 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
         if (updated && Object.keys(updates).length > 0) {
           // Prepare content for Firestore (handles large content by uploading to Storage)
           console.log(`[CONTENT_REPAIR] Preparing content for Firestore storage...`);
+          
+          // Get the final content values (either from updates or existing)
+          const finalContent = updates.content || content;
+          const finalCondensed = updates.condensed || condensed;
+          const finalSummary = updates.summary || summary;
+          
           const preparedContent = await prepareContentForFirestore(
-            updates.content || content,
-            updates.condensed || condensed,
-            updates.summary || summary,
+            finalContent,
+            finalCondensed,
+            finalSummary,
             guideline.id
           );
           
           // Update the updates object with prepared content
-          if (preparedContent.content !== undefined) {
+          // Use FieldValue.delete() to remove fields from Firestore when stored in Storage
+          if (preparedContent.contentStorageUrl) {
+            updates.content = admin.firestore.FieldValue.delete();  // Remove from Firestore
+            updates.contentStorageUrl = preparedContent.contentStorageUrl;
+          } else if (preparedContent.content !== undefined) {
             updates.content = preparedContent.content;
           }
-          if (preparedContent.condensed !== undefined) {
+          
+          if (preparedContent.condensedStorageUrl) {
+            updates.condensed = admin.firestore.FieldValue.delete();  // Remove from Firestore
+            updates.condensedStorageUrl = preparedContent.condensedStorageUrl;
+          } else if (preparedContent.condensed !== undefined) {
             updates.condensed = preparedContent.condensed;
           }
-          if (preparedContent.summary !== undefined) {
+          
+          if (preparedContent.summaryStorageUrl) {
+            updates.summary = admin.firestore.FieldValue.delete();  // Remove from Firestore
+            updates.summaryStorageUrl = preparedContent.summaryStorageUrl;
+          } else if (preparedContent.summary !== undefined) {
             updates.summary = preparedContent.summary;
           }
           
-          // Add storage URLs if content was stored in Storage
-          if (preparedContent.contentStorageUrl) {
-            updates.contentStorageUrl = preparedContent.contentStorageUrl;
-          }
-          if (preparedContent.condensedStorageUrl) {
-            updates.condensedStorageUrl = preparedContent.condensedStorageUrl;
-          }
-          if (preparedContent.summaryStorageUrl) {
-            updates.summaryStorageUrl = preparedContent.summaryStorageUrl;
-          }
           if (preparedContent.contentInStorage) {
             updates.contentInStorage = true;
           }
