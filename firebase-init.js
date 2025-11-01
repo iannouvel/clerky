@@ -1,6 +1,6 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration for client-side
@@ -36,11 +36,16 @@ setPersistence(auth, browserLocalPersistence)
         console.error('[ERROR] Failed to set auth persistence:', error);
     });
 
-// Make auth available globally with backward compatibility
+// Make auth and db available globally with backward compatibility
 window.auth = auth;
+window.db = db;  // Make Firestore available globally
+window.firestoreCollection = collection;  // Make collection function available
+window.firestoreGetDocs = getDocs;  // Make getDocs function available
 window.firebase = { 
     auth: () => auth,
-    authInstance: auth
+    authInstance: auth,
+    firestore: () => db,
+    firestoreInstance: db
 };
 
 // Expose GoogleAuthProvider and signInWithPopup
@@ -48,7 +53,7 @@ window.firebase.auth.GoogleAuthProvider = GoogleAuthProvider;
 window.firebase.auth.signInWithPopup = (provider) => signInWithPopup(auth, provider);
 
 // Export initialized instances
-export { app, db, auth };
+export { app, db, auth, collection, getDocs };
 
 // Constants for retry logic
 const MAX_RETRIES = 3;
