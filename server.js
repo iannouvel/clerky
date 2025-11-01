@@ -962,6 +962,118 @@ ${fullText}`;
     }
 }
 
+// ============================================================================
+// FIREBASE STORAGE HELPERS FOR LARGE CONTENT
+// ============================================================================
+
+/**
+ * Upload large text content to Firebase Storage
+ * @param {string} content - The text content to upload
+ * @param {string} guidelineId - The guideline ID for file naming
+ * @param {string} type - Content type ('content', 'condensed', 'summary')
+ * @returns {Promise<string>} - The public URL of the uploaded file
+ */
+async function uploadContentToStorage(content, guidelineId, type = 'content') {
+    try {
+        const bucket = admin.storage().bucket();
+        const fileName = `guideline-content/${guidelineId}/${type}.txt`;
+        const file = bucket.file(fileName);
+        
+        console.log(`[STORAGE] Uploading ${type} for ${guidelineId} to Storage (${content.length} bytes)`);
+        
+        // Upload the content
+        await file.save(content, {
+            contentType: 'text/plain',
+            metadata: {
+                cacheControl: 'public, max-age=31536000', // Cache for 1 year
+                metadata: {
+                    guidelineId: guidelineId,
+                    contentType: type,
+                    uploadedAt: new Date().toISOString()
+                }
+            }
+        });
+        
+        // Make the file publicly readable
+        await file.makePublic();
+        
+        // Get the public URL
+        const publicUrl = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+        console.log(`[STORAGE] Successfully uploaded ${type} to: ${publicUrl}`);
+        
+        return publicUrl;
+    } catch (error) {
+        console.error(`[STORAGE] Error uploading ${type} for ${guidelineId}:`, error.message);
+        throw error;
+    }
+}
+
+/**
+ * Check if content is too large for Firestore (>800KB to be safe, limit is 1MB)
+ * @param {string} content - The content to check
+ * @returns {boolean} - True if content is too large
+ */
+function isContentTooLarge(content) {
+    if (!content) return false;
+    const sizeInBytes = Buffer.byteLength(content, 'utf8');
+    const maxSize = 800 * 1024; // 800KB to leave room for other fields
+    return sizeInBytes > maxSize;
+}
+
+/**
+ * Prepare content for Firestore storage, using Storage for large content
+ * @param {string} content - The full content
+ * @param {string} condensed - The condensed content
+ * @param {string} summary - The summary
+ * @param {string} guidelineId - The guideline ID
+ * @returns {Promise<Object>} - Object with content fields ready for Firestore
+ */
+async function prepareContentForFirestore(content, condensed, summary, guidelineId) {
+    const result = {
+        content: content,
+        condensed: condensed,
+        summary: summary,
+        contentStorageUrl: null,
+        condensedStorageUrl: null,
+        summaryStorageUrl: null,
+        contentInStorage: false
+    };
+    
+    try {
+        // Check if content is too large
+        if (isContentTooLarge(content)) {
+            console.log(`[STORAGE] Content too large for Firestore, uploading to Storage...`);
+            result.contentStorageUrl = await uploadContentToStorage(content, guidelineId, 'content');
+            result.content = null; // Don't store in Firestore
+            result.contentInStorage = true;
+        }
+        
+        // Check condensed size
+        if (condensed && isContentTooLarge(condensed)) {
+            console.log(`[STORAGE] Condensed content too large, uploading to Storage...`);
+            result.condensedStorageUrl = await uploadContentToStorage(condensed, guidelineId, 'condensed');
+            result.condensed = null; // Don't store in Firestore
+        }
+        
+        // Summary is usually small, but check anyway
+        if (summary && isContentTooLarge(summary)) {
+            console.log(`[STORAGE] Summary too large, uploading to Storage...`);
+            result.summaryStorageUrl = await uploadContentToStorage(summary, guidelineId, 'summary');
+            result.summary = null; // Don't store in Firestore
+        }
+        
+        return result;
+    } catch (error) {
+        console.error(`[STORAGE] Error preparing content for Firestore:`, error.message);
+        // If storage upload fails, truncate content to fit in Firestore
+        if (isContentTooLarge(content)) {
+            console.warn(`[STORAGE] Storage upload failed, truncating content to fit Firestore`);
+            result.content = content.substring(0, 700 * 1024) + '\n\n[Content truncated due to size limits]';
+        }
+        return result;
+    }
+}
+
 // Function to check if a guideline needs content generation
 async function checkAndGenerateContent(guidelineData, guidelineId) {
     try {
@@ -8029,23 +8141,48 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
 
         console.log(`[BATCH_SYNC] Successfully extracted metadata for ${rawGuidelineName}:`, metadata);
 
+        // Prepare content for Firestore storage (handles large content)
+        console.log(`[BATCH_SYNC] Preparing content for Firestore storage...`);
+        const preparedContent = await prepareContentForFirestore(
+          content,
+          content, // condensed is same as content in this case
+          summary,
+          cleanId
+        );
+
         // Store in Firestore using the storeGuideline function
         console.log(`[BATCH_SYNC] Storing ${rawGuidelineName} with ID: ${cleanId}`);
         
-        await storeGuideline({
+        const guidelineData = {
           filename: rawGuidelineName,
           title: metadata.humanFriendlyName || rawGuidelineName,
-          content: content,
-          summary: summary,
+          content: preparedContent.content,
+          summary: preparedContent.summary,
           keywords: extractKeywords(summary || content),
-          condensed: content,
+          condensed: preparedContent.condensed,
           humanFriendlyName: metadata.humanFriendlyName || rawGuidelineName,
           humanFriendlyTitle: rawGuidelineName,
           yearProduced: metadata.yearProduced,
           organisation: metadata.organisation,
           doi: metadata.doi,
           auditableElements: [] // Skip auditable elements for now to save time
-        });
+        };
+        
+        // Add storage URLs if content was stored in Storage
+        if (preparedContent.contentStorageUrl) {
+          guidelineData.contentStorageUrl = preparedContent.contentStorageUrl;
+        }
+        if (preparedContent.condensedStorageUrl) {
+          guidelineData.condensedStorageUrl = preparedContent.condensedStorageUrl;
+        }
+        if (preparedContent.summaryStorageUrl) {
+          guidelineData.summaryStorageUrl = preparedContent.summaryStorageUrl;
+        }
+        if (preparedContent.contentInStorage) {
+          guidelineData.contentInStorage = true;
+        }
+        
+        await storeGuideline(guidelineData);
 
         results.push({ 
           guideline: rawGuidelineName, 
@@ -8244,6 +8381,40 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
 
         // Update Firestore if any changes were made
         if (updated && Object.keys(updates).length > 0) {
+          // Prepare content for Firestore (handles large content by uploading to Storage)
+          console.log(`[CONTENT_REPAIR] Preparing content for Firestore storage...`);
+          const preparedContent = await prepareContentForFirestore(
+            updates.content || content,
+            updates.condensed || condensed,
+            updates.summary || summary,
+            guideline.id
+          );
+          
+          // Update the updates object with prepared content
+          if (preparedContent.content !== undefined) {
+            updates.content = preparedContent.content;
+          }
+          if (preparedContent.condensed !== undefined) {
+            updates.condensed = preparedContent.condensed;
+          }
+          if (preparedContent.summary !== undefined) {
+            updates.summary = preparedContent.summary;
+          }
+          
+          // Add storage URLs if content was stored in Storage
+          if (preparedContent.contentStorageUrl) {
+            updates.contentStorageUrl = preparedContent.contentStorageUrl;
+          }
+          if (preparedContent.condensedStorageUrl) {
+            updates.condensedStorageUrl = preparedContent.condensedStorageUrl;
+          }
+          if (preparedContent.summaryStorageUrl) {
+            updates.summaryStorageUrl = preparedContent.summaryStorageUrl;
+          }
+          if (preparedContent.contentInStorage) {
+            updates.contentInStorage = true;
+          }
+          
           updates.updatedAt = admin.firestore.FieldValue.serverTimestamp();
           await db.collection('guidelines').doc(guideline.id).update(updates);
           console.log(`[CONTENT_REPAIR] ✓ Updated guideline: ${guideline.id}`);
@@ -8252,7 +8423,8 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
             guideline: guideline.id,
             success: true,
             message: 'Successfully repaired content',
-            fieldsUpdated: Object.keys(updates)
+            fieldsUpdated: Object.keys(updates),
+            usedStorage: preparedContent.contentInStorage
           });
         } else {
           results.push({

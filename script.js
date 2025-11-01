@@ -1818,6 +1818,55 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
     }
 }
 
+// Helper function to fetch content from Firebase Storage
+async function fetchContentFromStorage(storageUrl) {
+    try {
+        if (!storageUrl) return null;
+        
+        console.log('[STORAGE] Fetching content from:', storageUrl);
+        const response = await fetch(storageUrl);
+        
+        if (!response.ok) {
+            console.error('[STORAGE] Failed to fetch from Storage:', response.status);
+            return null;
+        }
+        
+        const content = await response.text();
+        console.log('[STORAGE] Successfully fetched content:', content.length, 'characters');
+        return content;
+    } catch (error) {
+        console.error('[STORAGE] Error fetching from Storage:', error);
+        return null;
+    }
+}
+
+// Helper function to get guideline content, fetching from Storage if needed
+async function getGuidelineContent(guideline) {
+    const result = {
+        content: guideline.content,
+        condensed: guideline.condensed,
+        summary: guideline.summary
+    };
+    
+    // Fetch from Storage if content is stored there
+    if (guideline.contentInStorage || guideline.contentStorageUrl) {
+        if (guideline.contentStorageUrl && !guideline.content) {
+            result.content = await fetchContentFromStorage(guideline.contentStorageUrl);
+        }
+        if (guideline.condensedStorageUrl && !guideline.condensed) {
+            result.condensed = await fetchContentFromStorage(guideline.condensedStorageUrl);
+        }
+        if (guideline.summaryStorageUrl && !guideline.summary) {
+            result.summary = await fetchContentFromStorage(guideline.summaryStorageUrl);
+        }
+    }
+    
+    return result;
+}
+
+// Expose helper to global scope for console access
+window.getGuidelineContent = getGuidelineContent;
+
 async function loadGuidelinesFromFirestore() {
     // Prevent multiple simultaneous guideline loads
     if (window.guidelinesLoading || window.guidelinesLoaded) {
