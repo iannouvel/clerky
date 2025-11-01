@@ -1651,6 +1651,63 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle initialize clinical conditions button
+        const initClinicalConditionsBtn = document.getElementById('initClinicalConditionsBtn');
+        if (initClinicalConditionsBtn) {
+            initClinicalConditionsBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to initialize the clinical conditions collection? This will populate Firestore with all clinical conditions from the JSON file. This is needed for transcript generation to work.')) {
+                    return;
+                }
+                
+                const originalText = initClinicalConditionsBtn.textContent;
+                
+                try {
+                    initClinicalConditionsBtn.textContent = '⏳ Initializing...';
+                    initClinicalConditionsBtn.disabled = true;
+                    
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = 'Initializing clinical conditions collection...';
+                    
+                    console.log('🏥 [CLINICAL_INIT] Starting clinical conditions initialization...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/initializeClinicalConditions`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [CLINICAL_INIT] Initialization completed:', result);
+                    
+                    const message = `Clinical conditions initialized successfully!\n\n` +
+                        `Total conditions: ${result.totalConditions}\n` +
+                        `Categories:\n` +
+                        result.summary.map(cat => `- ${cat.category}: ${cat.count} conditions`).join('\n');
+                    
+                    statusDiv.textContent = message;
+                    alert(message);
+                    
+                } catch (error) {
+                    console.error('Error initializing clinical conditions:', error);
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.textContent = 'Error: ' + error.message;
+                    alert('Clinical conditions initialization failed: ' + error.message);
+                } finally {
+                    initClinicalConditionsBtn.textContent = originalText;
+                    initClinicalConditionsBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
