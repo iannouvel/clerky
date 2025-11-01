@@ -1637,7 +1637,35 @@ window.findMissingGuidelines = async function() {
         console.log('[MISSING_GUIDELINES] 📋 Missing guidelines:', missing.length);
         console.table(missing);
         
-        return missing;
+        // Also log in a copyable format
+        if (missing.length > 0) {
+            console.log('\n[MISSING_GUIDELINES] ===== COPYABLE FORMAT =====');
+            missing.forEach((item, index) => {
+                console.log(`${index + 1}. Filename: ${item.filename}`);
+                console.log(`   Expected ID: ${item.expectedId}`);
+            });
+            console.log('[MISSING_GUIDELINES] ==============================\n');
+        } else {
+            console.log('[MISSING_GUIDELINES] ✅ No missing guidelines - GitHub and Firestore are in sync!');
+        }
+        
+        // Return in multiple formats for easy access
+        const result = {
+            count: missing.length,
+            missing: missing,
+            // String format for easy copying
+            summary: missing.length > 0 
+                ? missing.map((item, i) => `${i + 1}. ${item.filename} (ID: ${item.expectedId})`).join('\n')
+                : 'No missing guidelines',
+            // Array of just filenames
+            filenames: missing.map(item => item.filename),
+            // Array of just IDs
+            ids: missing.map(item => item.expectedId)
+        };
+        
+        console.log('[MISSING_GUIDELINES] Result object:', result);
+        
+        return result;
     } catch (error) {
         console.error('[MISSING_GUIDELINES] Error:', error);
         return null;
