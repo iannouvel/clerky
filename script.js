@@ -1730,6 +1730,139 @@ window.findMissingGuidelines = async function() {
     }
 };
 
+// Helper function to compare duplicate files and recommend which to keep
+window.compareDuplicates = async function(duplicateId) {
+    try {
+        console.log('[COMPARE_DUPLICATES] Analyzing duplicate files for ID:', duplicateId);
+        
+        const user = window.auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+        
+        // First, find the duplicates
+        const result = await findMissingGuidelines();
+        const duplicate = result.duplicates.find(d => d.id === duplicateId);
+        
+        if (!duplicate) {
+            console.error('[COMPARE_DUPLICATES] No duplicate found with ID:', duplicateId);
+            return null;
+        }
+        
+        console.log('[COMPARE_DUPLICATES] Found duplicate:', duplicate);
+        
+        // Get file info from GitHub for each duplicate
+        const fileInfoPromises = duplicate.filenames.map(async (filename) => {
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/iannouvel/clerky/contents/guidance/${encodeURIComponent(filename)}`,
+                    {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+                
+                if (!response.ok) {
+                    return { filename, error: 'Failed to fetch' };
+                }
+                
+                const data = await response.json();
+                return {
+                    filename: filename,
+                    size: data.size,
+                    sha: data.sha,
+                    downloadUrl: data.download_url
+                };
+            } catch (error) {
+                return { filename, error: error.message };
+            }
+        });
+        
+        const fileInfos = await Promise.all(fileInfoPromises);
+        
+        // Check which one is in Firestore
+        const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
+        const firestoreSnapshot = await window.firestoreGetDocs(guidelinesCol);
+        let firestoreMatch = null;
+        
+        firestoreSnapshot.forEach(doc => {
+            if (doc.id === duplicateId) {
+                firestoreMatch = {
+                    id: doc.id,
+                    filename: doc.data().filename,
+                    originalFilename: doc.data().originalFilename,
+                    title: doc.data().title,
+                    humanFriendlyName: doc.data().humanFriendlyName
+                };
+            }
+        });
+        
+        console.log('[COMPARE_DUPLICATES] Firestore document:', firestoreMatch);
+        console.log('[COMPARE_DUPLICATES] File information:');
+        console.table(fileInfos);
+        
+        // Make recommendation
+        let recommendation = {
+            duplicateId: duplicateId,
+            files: fileInfos,
+            firestoreDocument: firestoreMatch,
+            recommendation: null,
+            reasoning: []
+        };
+        
+        // Determine which file to keep
+        const validFiles = fileInfos.filter(f => !f.error);
+        
+        if (validFiles.length === 0) {
+            recommendation.recommendation = 'Cannot determine - no file info available';
+        } else if (validFiles.length === 1) {
+            recommendation.recommendation = `Keep: ${validFiles[0].filename}`;
+            recommendation.reasoning.push('Only one file has valid metadata');
+        } else {
+            // Compare file sizes - larger is usually better (more complete)
+            const largestFile = validFiles.reduce((max, f) => f.size > max.size ? f : max);
+            
+            // Check if one matches Firestore
+            let firestoreFile = null;
+            if (firestoreMatch) {
+                firestoreFile = validFiles.find(f => 
+                    f.filename === firestoreMatch.filename || 
+                    f.filename === firestoreMatch.originalFilename
+                );
+            }
+            
+            if (firestoreFile) {
+                recommendation.recommendation = `Keep: ${firestoreFile.filename}`;
+                recommendation.reasoning.push('This file is currently stored in Firestore');
+                recommendation.toDelete = validFiles.filter(f => f.filename !== firestoreFile.filename).map(f => f.filename);
+            } else {
+                recommendation.recommendation = `Keep: ${largestFile.filename}`;
+                recommendation.reasoning.push(`Largest file (${largestFile.size} bytes)`);
+                recommendation.toDelete = validFiles.filter(f => f.filename !== largestFile.filename).map(f => f.filename);
+            }
+        }
+        
+        console.log('\n[COMPARE_DUPLICATES] ===== RECOMMENDATION =====');
+        console.log('Duplicate ID:', duplicateId);
+        console.log('Files:', duplicate.filenames);
+        console.log('');
+        console.log('✅ KEEP:', recommendation.recommendation);
+        if (recommendation.toDelete) {
+            console.log('❌ DELETE:', recommendation.toDelete);
+        }
+        console.log('');
+        console.log('Reasoning:', recommendation.reasoning.join('; '));
+        console.log('[COMPARE_DUPLICATES] ==============================\n');
+        
+        return recommendation;
+    } catch (error) {
+        console.error('[COMPARE_DUPLICATES] Error:', error);
+        return null;
+    }
+};
+
 // Update loadGuidelinesFromFirestore to load from Firestore
 async function getGitHubGuidelinesCount() {
     try {
