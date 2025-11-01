@@ -1607,7 +1607,8 @@ window.findMissingGuidelines = async function() {
         
         // Get Firestore guidelines
         console.log('[MISSING_GUIDELINES] Fetching Firestore guidelines...');
-        const firestoreSnapshot = await db.collection('guidelines').get();
+        const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
+        const firestoreSnapshot = await window.firestoreGetDocs(guidelinesCol);
         const firestoreIds = new Set();
         firestoreSnapshot.forEach(doc => {
             firestoreIds.add(doc.id);
