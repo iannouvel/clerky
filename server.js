@@ -351,7 +351,31 @@ const app = express();
 
 // Apply middleware
 app.use(cors());
-app.use(helmet());
+
+// Configure helmet with proper Firebase exceptions
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            connectSrc: [
+                "'self'",
+                "https://*.googleapis.com",
+                "https://*.gstatic.com",
+                "https://identitytoolkit.googleapis.com",
+                "https://securetoken.googleapis.com",
+                "https://*.firebaseio.com",
+                "https://*.cloudfunctions.net"
+            ],
+            scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", "https://*.googleapis.com", "https://*.gstatic.com"],
+            styleSrc: ["'self'", "'unsafe-inline'"],
+            imgSrc: ["'self'", "data:", "https:", "blob:"],
+            fontSrc: ["'self'", "data:", "https:"],
+            frameSrc: ["'self'", "https://*.firebaseapp.com"]
+        }
+    },
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
 
 // Authentication middleware
 const authenticateUser = async (req, res, next) => {
