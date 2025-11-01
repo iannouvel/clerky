@@ -975,7 +975,7 @@ ${fullText}`;
  */
 async function uploadContentToStorage(content, guidelineId, type = 'content') {
     try {
-        const bucket = admin.storage().bucket();
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
         const fileName = `guideline-content/${guidelineId}/${type}.txt`;
         const file = bucket.file(fileName);
         
