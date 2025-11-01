@@ -1617,6 +1617,43 @@ window.findMissingGuidelines = async function() {
         console.log('[MISSING_GUIDELINES] GitHub count:', githubGuidelines.length);
         console.log('[MISSING_GUIDELINES] Firestore count:', firestoreIds.size);
         
+        // First, detect duplicates in GitHub (different filenames that generate the same ID)
+        const githubIdMap = new Map(); // Map of ID -> array of filenames
+        const duplicates = [];
+        
+        for (const githubName of githubGuidelines) {
+            // Match server.js generateCleanDocId() logic exactly:
+            const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
+            let slug = withoutExtension
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+            
+            const extension = githubName.match(/\.[^/.]+$/)?.[0];
+            if (extension && extension.toLowerCase() === '.pdf') {
+                slug = `${slug}-pdf`;
+            }
+            
+            if (!githubIdMap.has(slug)) {
+                githubIdMap.set(slug, []);
+            }
+            githubIdMap.get(slug).push(githubName);
+        }
+        
+        // Find duplicates
+        for (const [id, filenames] of githubIdMap.entries()) {
+            if (filenames.length > 1) {
+                duplicates.push({ id, filenames, count: filenames.length });
+            }
+        }
+        
+        if (duplicates.length > 0) {
+            console.log(`[MISSING_GUIDELINES] ⚠️ Found ${duplicates.length} duplicate IDs in GitHub:`);
+            console.table(duplicates);
+        }
+        
         // Find missing guidelines
         // Use the same ID generation logic as server.js generateCleanDocId()
         const missing = [];
@@ -1668,6 +1705,8 @@ window.findMissingGuidelines = async function() {
         const result = {
             count: missing.length,
             missing: missing,
+            duplicates: duplicates,
+            duplicateCount: duplicates.length,
             // String format for easy copying
             summary: missing.length > 0 
                 ? missing.map((item, i) => `${i + 1}. ${item.filename} (ID: ${item.expectedId})`).join('\n')
@@ -1675,7 +1714,11 @@ window.findMissingGuidelines = async function() {
             // Array of just filenames
             filenames: missing.map(item => item.filename),
             // Array of just IDs
-            ids: missing.map(item => item.expectedId)
+            ids: missing.map(item => item.expectedId),
+            // Explanation of the discrepancy
+            explanation: duplicates.length > 0 
+                ? `GitHub has ${githubGuidelines.length} files but ${githubIdMap.size} unique IDs. ${duplicates.length} duplicate ID(s) account for the difference.`
+                : 'GitHub and Firestore counts match.'
         };
         
         console.log('[MISSING_GUIDELINES] Result object:', result);
