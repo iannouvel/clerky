@@ -1040,32 +1040,52 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
     };
     
     try {
+        // Calculate sizes
+        const contentSize = content ? Buffer.byteLength(content, 'utf8') : 0;
+        const condensedSize = condensed ? Buffer.byteLength(condensed, 'utf8') : 0;
+        const summarySize = summary ? Buffer.byteLength(summary, 'utf8') : 0;
+        const totalSize = contentSize + condensedSize + summarySize;
+        
         // Debug logging
         console.log(`[STORAGE] prepareContentForFirestore called for ${guidelineId}`);
-        console.log(`[STORAGE] Content size: ${content ? Buffer.byteLength(content, 'utf8') : 0} bytes`);
-        console.log(`[STORAGE] Condensed size: ${condensed ? Buffer.byteLength(condensed, 'utf8') : 0} bytes`);
-        console.log(`[STORAGE] Summary size: ${summary ? Buffer.byteLength(summary, 'utf8') : 0} bytes`);
+        console.log(`[STORAGE] Content size: ${contentSize} bytes`);
+        console.log(`[STORAGE] Condensed size: ${condensedSize} bytes`);
+        console.log(`[STORAGE] Summary size: ${summarySize} bytes`);
+        console.log(`[STORAGE] TOTAL size: ${totalSize} bytes (limit: 900KB = ${900 * 1024} bytes)`);
         
-        // Check if content is too large
-        if (isContentTooLarge(content)) {
-            console.log(`[STORAGE] Content too large for Firestore (${Buffer.byteLength(content, 'utf8')} bytes), uploading to Storage...`);
-            result.contentStorageUrl = await uploadContentToStorage(content, guidelineId, 'content');
-            result.content = null; // Don't store in Firestore
-            result.contentInStorage = true;
-        }
+        // If total size exceeds 900KB (leaving 124KB for metadata), move largest fields to Storage
+        // Firestore limit is 1MB (1,048,576 bytes) total for the entire document
+        const SAFE_TOTAL_LIMIT = 900 * 1024; // 900KB to leave room for metadata
         
-        // Check condensed size
-        if (condensed && isContentTooLarge(condensed)) {
-            console.log(`[STORAGE] Condensed content too large (${Buffer.byteLength(condensed, 'utf8')} bytes), uploading to Storage...`);
-            result.condensedStorageUrl = await uploadContentToStorage(condensed, guidelineId, 'condensed');
-            result.condensed = null; // Don't store in Firestore
-        }
-        
-        // Summary is usually small, but check anyway
-        if (summary && isContentTooLarge(summary)) {
-            console.log(`[STORAGE] Summary too large, uploading to Storage...`);
-            result.summaryStorageUrl = await uploadContentToStorage(summary, guidelineId, 'summary');
-            result.summary = null; // Don't store in Firestore
+        if (totalSize > SAFE_TOTAL_LIMIT) {
+            console.log(`[STORAGE] Total document size (${totalSize} bytes) exceeds safe limit (${SAFE_TOTAL_LIMIT} bytes)`);
+            
+            // Move content to Storage if it exists and is significant
+            if (content && contentSize > 100 * 1024) { // >100KB
+                console.log(`[STORAGE] Moving content (${contentSize} bytes) to Storage...`);
+                result.contentStorageUrl = await uploadContentToStorage(content, guidelineId, 'content');
+                result.content = null;
+                result.contentInStorage = true;
+            }
+            
+            // Move condensed to Storage if it exists and is significant
+            if (condensed && condensedSize > 100 * 1024) { // >100KB
+                console.log(`[STORAGE] Moving condensed (${condensedSize} bytes) to Storage...`);
+                result.condensedStorageUrl = await uploadContentToStorage(condensed, guidelineId, 'condensed');
+                result.condensed = null;
+            }
+            
+            // Summary is usually small, but check if still over limit after moving content/condensed
+            const remainingSize = (result.content ? contentSize : 0) + 
+                                  (result.condensed ? condensedSize : 0) + 
+                                  summarySize;
+            if (remainingSize > SAFE_TOTAL_LIMIT && summary) {
+                console.log(`[STORAGE] Moving summary (${summarySize} bytes) to Storage...`);
+                result.summaryStorageUrl = await uploadContentToStorage(summary, guidelineId, 'summary');
+                result.summary = null;
+            }
+        } else {
+            console.log(`[STORAGE] Total size OK, storing all fields in Firestore`);
         }
         
         console.log(`[STORAGE] Preparation complete. Using Storage: ${result.contentInStorage}`);
