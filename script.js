@@ -1578,6 +1578,71 @@ window.repairGuidelineContent = async function() {
     return result;
 };
 
+// Helper function to find missing guidelines between GitHub and Firestore
+window.findMissingGuidelines = async function() {
+    try {
+        console.log('[MISSING_GUIDELINES] Comparing GitHub and Firestore...');
+        
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+
+        // Get GitHub guidelines list
+        console.log('[MISSING_GUIDELINES] Fetching GitHub guidelines...');
+        const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const guidelinesString = await response.text();
+        const githubGuidelines = guidelinesString.split('\n').filter(line => line.trim());
+        
+        // Get Firestore guidelines
+        console.log('[MISSING_GUIDELINES] Fetching Firestore guidelines...');
+        const firestoreSnapshot = await db.collection('guidelines').get();
+        const firestoreIds = new Set();
+        firestoreSnapshot.forEach(doc => {
+            firestoreIds.add(doc.id);
+        });
+        
+        console.log('[MISSING_GUIDELINES] GitHub count:', githubGuidelines.length);
+        console.log('[MISSING_GUIDELINES] Firestore count:', firestoreIds.size);
+        
+        // Find missing guidelines
+        const missing = [];
+        for (const githubName of githubGuidelines) {
+            const cleanId = githubName
+                .toLowerCase()
+                .replace(/\.pdf$/i, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+            
+            if (!firestoreIds.has(cleanId)) {
+                missing.push({
+                    filename: githubName,
+                    expectedId: cleanId
+                });
+            }
+        }
+        
+        console.log('[MISSING_GUIDELINES] 📋 Missing guidelines:', missing.length);
+        console.table(missing);
+        
+        return missing;
+    } catch (error) {
+        console.error('[MISSING_GUIDELINES] Error:', error);
+        return null;
+    }
+};
+
 // Update loadGuidelinesFromFirestore to load from Firestore
 async function getGitHubGuidelinesCount() {
     try {
