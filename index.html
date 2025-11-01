@@ -717,16 +717,22 @@
             }
         }
         
-        // Initialize when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initUserInputEditor);
-        } else {
+        // Defer initialization until after critical data loads
+        // Listen for custom event from main app initialization
+        window.addEventListener('criticalDataLoaded', () => {
+            console.log('[TIPTAP] Critical data loaded, initializing editor...');
             initUserInputEditor();
-        }
+        });
+        
+        // Store function globally so it can be called manually if needed
+        window.initTipTapEditor = initUserInputEditor;
     </script>
     
     <!-- Anonymisation module -->
     <script type="module" src="anonymisation.js"></script>
+    
+    <!-- Cache Manager - Load before main script -->
+    <script src="cache-manager.js"></script>
     
     <!-- Main application script -->
     <script type="module" src="script.js"></script>
