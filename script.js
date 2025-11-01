@@ -1618,13 +1618,28 @@ window.findMissingGuidelines = async function() {
         console.log('[MISSING_GUIDELINES] Firestore count:', firestoreIds.size);
         
         // Find missing guidelines
+        // Use the same ID generation logic as server.js generateCleanDocId()
         const missing = [];
         for (const githubName of githubGuidelines) {
-            const cleanId = githubName
+            // Match server.js generateCleanDocId() logic exactly:
+            // 1. Remove file extension
+            const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
+            
+            // 2. Convert to slug: lowercase, replace special chars with hyphens
+            let slug = withoutExtension
                 .toLowerCase()
-                .replace(/\.pdf$/i, '')
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/^-+|-+$/g, '');
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            // 3. Add file extension back if it was a PDF
+            const extension = githubName.match(/\.[^/.]+$/)?.[0];
+            if (extension && extension.toLowerCase() === '.pdf') {
+                slug = `${slug}-pdf`;
+            }
+            
+            const cleanId = slug;
             
             if (!firestoreIds.has(cleanId)) {
                 missing.push({
