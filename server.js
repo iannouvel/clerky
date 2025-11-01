@@ -1040,9 +1040,15 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
     };
     
     try {
+        // Debug logging
+        console.log(`[STORAGE] prepareContentForFirestore called for ${guidelineId}`);
+        console.log(`[STORAGE] Content size: ${content ? Buffer.byteLength(content, 'utf8') : 0} bytes`);
+        console.log(`[STORAGE] Condensed size: ${condensed ? Buffer.byteLength(condensed, 'utf8') : 0} bytes`);
+        console.log(`[STORAGE] Summary size: ${summary ? Buffer.byteLength(summary, 'utf8') : 0} bytes`);
+        
         // Check if content is too large
         if (isContentTooLarge(content)) {
-            console.log(`[STORAGE] Content too large for Firestore, uploading to Storage...`);
+            console.log(`[STORAGE] Content too large for Firestore (${Buffer.byteLength(content, 'utf8')} bytes), uploading to Storage...`);
             result.contentStorageUrl = await uploadContentToStorage(content, guidelineId, 'content');
             result.content = null; // Don't store in Firestore
             result.contentInStorage = true;
@@ -1050,7 +1056,7 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
         
         // Check condensed size
         if (condensed && isContentTooLarge(condensed)) {
-            console.log(`[STORAGE] Condensed content too large, uploading to Storage...`);
+            console.log(`[STORAGE] Condensed content too large (${Buffer.byteLength(condensed, 'utf8')} bytes), uploading to Storage...`);
             result.condensedStorageUrl = await uploadContentToStorage(condensed, guidelineId, 'condensed');
             result.condensed = null; // Don't store in Firestore
         }
@@ -1062,9 +1068,11 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
             result.summary = null; // Don't store in Firestore
         }
         
+        console.log(`[STORAGE] Preparation complete. Using Storage: ${result.contentInStorage}`);
         return result;
     } catch (error) {
         console.error(`[STORAGE] Error preparing content for Firestore:`, error.message);
+        console.error(`[STORAGE] Error stack:`, error.stack);
         // If storage upload fails, truncate content to fit in Firestore
         if (isContentTooLarge(content)) {
             console.warn(`[STORAGE] Storage upload failed, truncating content to fit Firestore`);
