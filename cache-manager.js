@@ -334,5 +334,3 @@ console.log('[CACHE] IndexedDB cache manager loaded. Available commands:');
 console.log('  - window.clearClerkyCache() - Clear all cached data');
 console.log('  - window.getCacheStatus() - Check what\'s in the cache');
 
-export default cacheManager;
-
