@@ -2172,14 +2172,51 @@ async function loadGuidelinesFromFirestore() {
     window.guidelinesLoading = true;
     
     try {
+        // Try to get from IndexedDB cache first
+        if (window.cacheManager) {
+            const cachedGuidelines = await window.cacheManager.getGuidelines();
+            if (cachedGuidelines && cachedGuidelines.length > 0) {
+                console.log('[DEBUG] ⚡ Loaded guidelines from IndexedDB cache:', cachedGuidelines.length);
+                
+                // Store in global variables
+                window.guidelinesList = cachedGuidelines.map(g => ({
+                    id: g.id,
+                    title: g.title
+                }));
+                window.guidelinesSummaries = cachedGuidelines.map(g => g.summary);
+                window.guidelinesKeywords = cachedGuidelines.map(g => g.keywords);
+                window.guidelinesCondensed = cachedGuidelines.map(g => g.condensed);
+
+                window.globalGuidelines = cachedGuidelines.reduce((acc, g) => {
+                    acc[g.id] = {
+                        id: g.id,
+                        title: g.title,
+                        humanFriendlyName: g.humanFriendlyName || g.human_friendly_name || g.title,
+                        content: g.content,
+                        summary: g.summary,
+                        keywords: g.keywords,
+                        condensed: g.condensed,
+                        organisation: g.organisation,
+                        downloadUrl: g.downloadUrl,
+                        originalFilename: g.originalFilename
+                    };
+                    return acc;
+                }, {});
+
+                window.guidelinesLoaded = true;
+                window.guidelinesLoading = false;
+                return cachedGuidelines;
+            }
+        }
+        
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
-        // Get user ID token using the imported auth object
+        // Get user ID token using the imported auth object with force refresh to prevent 403 errors
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
-        const idToken = await user.getIdToken();
+        const idToken = await user.getIdToken(true); // Force refresh token
 
         // Fetch guidelines from Firestore
         const response = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
@@ -2201,6 +2238,13 @@ async function loadGuidelinesFromFirestore() {
         const guidelines = result.guidelines;
         const firestoreCount = guidelines.length;
         console.log('[DEBUG] Loaded guidelines from Firestore:', firestoreCount);
+        
+        // Save to IndexedDB cache in background
+        if (window.cacheManager) {
+            window.cacheManager.saveGuidelines(guidelines).catch(err => {
+                console.warn('[DEBUG] Failed to cache guidelines:', err);
+            });
+        }
 
         // Guideline sync moved to background - see syncGuidelinesInBackground()
 
@@ -7323,28 +7367,45 @@ async function initializeMainApp() {
         // console.log('[DEBUG] Calling initializeChatHistory...');
         // await initializeChatHistory();
         
-        // Load clinical conditions from Firebase (with fallback to JSON)
-        console.log('[DEBUG] Loading clinical conditions...');
-        try {
-            await ClinicalConditionsService.loadConditions();
-            const summary = ClinicalConditionsService.getSummary();
-            console.log('[DEBUG] Clinical conditions loaded successfully:', summary);
-        } catch (error) {
-            console.error('[DEBUG] Failed to load clinical conditions:', error);
-        }
+        // Load clinical conditions and guidelines in parallel for faster startup
+        console.log('[DEBUG] ⚡ Loading clinical conditions and guidelines in parallel...');
+        const startTime = performance.now();
         
-        // Load guidelines from Firestore on app initialization
-        console.log('[DEBUG] Loading guidelines from Firestore...');
         try {
-            await window.loadGuidelinesFromFirestore();
-            console.log('[DEBUG] Guidelines loaded successfully during initialization');
+            const [conditionsResult, guidelinesResult] = await Promise.allSettled([
+                ClinicalConditionsService.loadConditions(),
+                window.loadGuidelinesFromFirestore()
+            ]);
+            
+            const endTime = performance.now();
+            console.log(`[DEBUG] ⚡ Parallel loading completed in ${(endTime - startTime).toFixed(0)}ms`);
+            
+            // Check conditions result
+            if (conditionsResult.status === 'fulfilled') {
+                const summary = ClinicalConditionsService.getSummary();
+                console.log('[DEBUG] Clinical conditions loaded successfully:', summary);
+            } else {
+                console.error('[DEBUG] Failed to load clinical conditions:', conditionsResult.reason);
+            }
+            
+            // Check guidelines result
+            if (guidelinesResult.status === 'fulfilled') {
+                console.log('[DEBUG] Guidelines loaded successfully during initialization');
+            } else {
+                console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', guidelinesResult.reason?.message);
+            }
         } catch (error) {
-            console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', error.message);
-            // Don't throw - allow app to continue functioning even if guidelines fail to load
+            console.error('[DEBUG] Unexpected error during parallel loading:', error);
+            // Don't throw - allow app to continue functioning
         }
         
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
+        
+        // Dispatch event to signal that critical data has loaded
+        // This triggers deferred initializations like TipTap editor
+        window.dispatchEvent(new CustomEvent('criticalDataLoaded'));
+        console.log('[DEBUG] ⚡ Critical data loaded event dispatched');
         
         // Show main content and hide loading screen immediately
         const loading = document.getElementById('loading');
@@ -9858,6 +9919,16 @@ const ClinicalConditionsService = {
     
     async _fetchConditionsFromServer() {
         try {
+            // Try to get from IndexedDB cache first
+            if (window.cacheManager) {
+                const cachedConditions = await window.cacheManager.getClinicalConditions();
+                if (cachedConditions) {
+                    console.log('[CLINICAL-SERVICE] ⚡ Loaded clinical conditions from IndexedDB cache');
+                    clinicalConditionsFirebaseCache = cachedConditions;
+                    return cachedConditions;
+                }
+            }
+            
             console.log('[CLINICAL-SERVICE] Loading clinical conditions from Firebase...');
             
             const user = auth.currentUser;
@@ -9865,7 +9936,7 @@ const ClinicalConditionsService = {
                 throw new Error('User not authenticated');
             }
             
-            const idToken = await user.getIdToken();
+            const idToken = await user.getIdToken(true); // Force refresh token
             
             const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
                 method: 'GET',
@@ -9904,6 +9975,14 @@ const ClinicalConditionsService = {
                     const retryData = await retryResponse.json();
                     if (retryData.success && retryData.summary?.totalConditions > 0) {
                         clinicalConditionsFirebaseCache = retryData.conditions;
+                        
+                        // Save to IndexedDB cache in background
+                        if (window.cacheManager) {
+                            window.cacheManager.saveClinicalConditions(retryData.conditions).catch(err => {
+                                console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
+                            });
+                        }
+                        
                         console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions after initialization:', {
                             totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
                             totalConditions: retryData.summary.totalConditions,
@@ -9919,6 +9998,13 @@ const ClinicalConditionsService = {
             }
             
             clinicalConditionsFirebaseCache = data.conditions;
+            
+            // Save to IndexedDB cache in background
+            if (window.cacheManager) {
+                window.cacheManager.saveClinicalConditions(data.conditions).catch(err => {
+                    console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
+                });
+            }
             
             console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
                 totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
