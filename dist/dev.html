@@ -321,14 +321,16 @@
                     <button id="repairContentBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔧 Repair Content Issues</button>
                     <button id="uploadPDFsToStorageBtn" class="dev-btn" style="background-color:#ff6b35;color:#fff;border-color:#ff6b35;">🗂️ Migrate PDFs to Firebase Storage</button>
                     <button id="migrateDatabaseBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🔄 Migrate to Single Collection</button>
+                    <button id="initClinicalConditionsBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;">🏥 Initialize Clinical Conditions</button>
                 </div>
+                <div id="maintenanceStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;"></div>
             </div>
         </div>
         <div class="tab-content" id="discoveryContent" style="display:none;padding:12px">
             <div class="tools-section">
                 <h4>Guideline Discovery</h4>
                 <div class="tools-grid" style="grid-template-columns: 1fr;">
-                    <button id="scanGuidanceBtn" class="dev-btn">🔎 Scan for new guidance (NICE/RCOG)</button>
+                    <button id="scanGuidanceBtn" class="dev-btn" title="Scans RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, UK NSC, NHS England, and subspecialty societies (BSGE, BSUG, BGCS, BSCCP, BFS, BMFMS, BritSPAG)">🔎 Scan for new guidance (All Organizations)</button>
                     <div id="discoveryStatus" style="font-size:12px;color:#666"></div>
                     <div id="discoveryResults" style="max-height:300px;overflow:auto;border:1px solid #e5e7eb;border-radius:6px;padding:8px;background:#fafafa"></div>
                     <button id="viewExclusionsBtn" class="dev-btn">📄 View Exclusions</button>

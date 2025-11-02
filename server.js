@@ -11077,6 +11077,7 @@ Important guidelines for context field:
 - Explain the clinical rationale behind the suggestion
 - State why this recommendation is indicated in this particular clinical scenario
 - Make the context informative and educational
+- DO NOT add meta-commentary like "this text appears in the guideline" or "this is from the guideline content"
 
 CRITICAL QUOTING GUIDELINES:
 - ONLY use quotation marks around text that is EXACTLY copied verbatim from the Full Guideline Content provided
@@ -11085,9 +11086,12 @@ CRITICAL QUOTING GUIDELINES:
 - Set hasVerbatimQuote to false when paraphrasing or when no exact match can be found
 - PREFER verbatim quotes when available as they enable PDF highlighting for users
 - When paraphrasing, use phrases like "The guideline recommends..." WITHOUT quotation marks
-- Example with verbatim quote (hasVerbatimQuote: true): "The guideline states: 'Women should be offered a first trimester ultrasound scan and screening for aneuploidy before the insertion of a cerclage'"
-- Example with paraphrase (hasVerbatimQuote: false): "The guideline recommends offering screening before cerclage insertion"
+- Example with verbatim quote (hasVerbatimQuote: true): 
+  context: "The patient requires major PPH management. The guideline states: 'Immediate venepuncture (20 ml) for: cross-match (4 units minimum)' for major PPH with ongoing bleeding."
+- Example with paraphrase (hasVerbatimQuote: false): 
+  context: "The guideline recommends cross-matching at least 4 units for major PPH with blood loss exceeding 1000ml and ongoing bleeding."
 - DO NOT fabricate or approximate quotes - if you cannot find exact text, set hasVerbatimQuote to false and paraphrase clearly
+- DO NOT add phrases like "this exact text appears in the guideline" or similar meta-commentary
 - If Full Guideline Content is unavailable or condensed, set hasVerbatimQuote to false and paraphrase accurately
 
 Other important guidelines:
@@ -11126,15 +11130,20 @@ CRITICAL QUOTING REQUIREMENTS:
 - Set hasVerbatimQuote to false when paraphrasing or when exact text cannot be found
 - Accuracy is essential - verbatim quotes enable PDF highlighting for the user
 - When in doubt, use hasVerbatimQuote: false and paraphrase clearly
+- DO NOT add meta-commentary about whether text appears in the guideline - just provide the quote or paraphrase
 
-Examples:
-- With verbatim quote (hasVerbatimQuote: true): "The guideline states: 'Women should be offered a first trimester ultrasound scan' - this exact text appears in the Full Guideline Content"
-- With paraphrase (hasVerbatimQuote: false): "The guideline recommends first trimester screening - paraphrased from guideline recommendations"
+CONTEXT FIELD EXAMPLES:
+Example 1 - With verbatim quote (hasVerbatimQuote: true):
+"For major PPH with ongoing bleeding, the guideline specifies: 'Immediate venepuncture (20 ml) for: cross-match (4 units minimum)' - therefore the current order for 2 units is insufficient."
+
+Example 2 - With paraphrase (hasVerbatimQuote: false):
+"The guideline recommends cross-matching a minimum of 4 units for major postpartum haemorrhage with blood loss exceeding 1000ml and ongoing bleeding. The current order for 2 units is below this recommendation."
 
 IMPORTANT: 
 - Make actionable suggestions that are supported by the guideline and clinically appropriate
 - When transcript details are limited, suggest guideline-recommended actions appropriate for the presenting condition
-- Prioritize accuracy over quantity - better to have fewer suggestions with accurate quotes than many with fabricated ones`;
+- Prioritise accuracy over quantity - better to have fewer suggestions with accurate quotes than many with fabricated ones
+- The context field should be informative and educational - avoid meta-commentary about the guideline itself`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,

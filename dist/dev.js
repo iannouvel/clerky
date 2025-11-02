@@ -654,6 +654,44 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // ---- Guideline Discovery Client Logic ----
+        
+        // URL domain validation for client-side safety check
+        const ORGANIZATION_DOMAINS = {
+            'RCOG': ['rcog.org.uk'],
+            'NICE': ['nice.org.uk'],
+            'FSRH': ['fsrh.org'],
+            'BASHH': ['bashh.org', 'bashhguidelines.org'],
+            'BMS': ['thebms.org.uk'],
+            'BSH': ['b-s-h.org.uk'],
+            'BHIVA': ['bhiva.org'],
+            'BAPM': ['bapm.org'],
+            'UK NSC': ['gov.uk'],
+            'NHS England': ['england.nhs.uk'],
+            'BSGE': ['bsge.org.uk'],
+            'BSUG': ['bsug.org'],
+            'BGCS': ['bgcs.org.uk'],
+            'BSCCP': ['bsccp.org.uk'],
+            'BFS': ['britishfertilitysociety.org.uk'],
+            'BMFMS': ['bmfms.org.uk'],
+            'BritSPAG': ['britspag.org']
+        };
+        
+        function validateGuidelineUrl(url, organization) {
+            if (!url || !organization) return true; // Allow if no organization specified
+            const expectedDomains = ORGANIZATION_DOMAINS[organization];
+            if (!expectedDomains) return true; // Allow unknown organizations
+            
+            try {
+                const urlObj = new URL(url);
+                const hostname = urlObj.hostname.toLowerCase();
+                return expectedDomains.some(domain => 
+                    hostname === domain || hostname.endsWith('.' + domain)
+                );
+            } catch (e) {
+                return false; // Invalid URL format
+            }
+        }
+        
         async function getAuthTokenOrPrompt() {
             const user = auth.currentUser;
             if (!user) {
@@ -707,10 +745,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 row.style.transition = 'opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
                 row.style.overflow = 'hidden';
                 row.dataset.discoveryUrl = (item.url || '').toLowerCase();
-                const meta = [item.organisation, item.type, item.year].filter(Boolean).join(' • ');
+                
+                // Create organization badge with color
+                const orgBadge = item.organisation ? 
+                    `<span style="display:inline-block;background:#0066cc;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:600;margin-right:6px">${item.organisation}</span>` : '';
+                const metaInfo = [item.type, item.year].filter(Boolean).join(' • ');
+                
+                // Validate URL matches expected domain
+                const isValidUrl = validateGuidelineUrl(item.url, item.organisation);
+                const urlWarning = !isValidUrl ? 
+                    `<div style="background:#fff3cd;border:1px solid #ffc107;padding:4px 6px;border-radius:3px;font-size:11px;margin:4px 0">⚠️ URL domain does not match expected domain for ${item.organisation}</div>` : '';
+                
                 row.innerHTML = `
-                    <div style="font-weight:600">${item.title || 'Untitled'}</div>
-                    <div style="font-size:12px;color:#555;margin:4px 0">${meta}</div>
+                    <div style="font-weight:600;margin-bottom:4px">${item.title || 'Untitled'}</div>
+                    <div style="font-size:12px;color:#555;margin:4px 0">${orgBadge}${metaInfo}</div>
+                    ${urlWarning}
                     <div style="font-size:12px;color:#006;word-break:break-all">${item.url}</div>
                 `;
                 const actions = document.createElement('div');
@@ -851,7 +900,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                 status.textContent = 'Excluded.';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Exclude failed: ${err.message}`;
+                // Check if authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token')
+                );
+                if (isAuthError) {
+                    status.textContent = '🔒 Please sign in to exclude guidelines';
+                    status.style.color = '#0066cc';
+                    showLoginPrompt();
+                } else {
+                    status.textContent = `Exclude failed: ${err.message}`;
+                }
                 throw err;
             }
         }
@@ -884,14 +946,34 @@ document.addEventListener('DOMContentLoaded', async function() {
                 status.textContent = 'Included and saved.';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Include failed: ${err.message}`;
+                // Check if authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token')
+                );
+                if (isAuthError) {
+                    status.textContent = '🔒 Please sign in to include guidelines';
+                    status.style.color = '#0066cc';
+                    showLoginPrompt();
+                } else {
+                    status.textContent = `Include failed: ${err.message}`;
+                }
                 throw err;
             }
         }
 
         async function runDiscovery() {
             const status = document.getElementById('discoveryStatus');
-            status.textContent = 'Scanning...';
+            const resultsContainer = document.getElementById('discoveryResults');
+            
+            // Show progress indicator
+            status.textContent = '🔍 Scanning all organizations for new guidance...';
+            status.style.color = '#0066cc';
+            status.style.fontWeight = '600';
+            resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#666">Please wait while AI searches RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, UK NSC, NHS England, and subspecialty societies...</div>';
+            
             try {
                 await loadUserPrefs();
                 const token = await getAuthTokenOrPrompt();
@@ -905,11 +987,56 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'Discovery failed');
-                renderDiscoveryResults(data.suggestions || []);
-                status.textContent = `Found ${data.suggestions?.length || 0} suggestions.`;
+                
+                const suggestions = data.suggestions || [];
+                renderDiscoveryResults(suggestions);
+                
+                // Count by organization
+                const orgCounts = {};
+                suggestions.forEach(item => {
+                    const org = item.organisation || 'Unknown';
+                    orgCounts[org] = (orgCounts[org] || 0) + 1;
+                });
+                
+                // Build detailed status message
+                let statusMsg = `✅ Found ${suggestions.length} suggestion${suggestions.length !== 1 ? 's' : ''}`;
+                if (Object.keys(orgCounts).length > 0) {
+                    const orgSummary = Object.entries(orgCounts)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([org, count]) => `${org}: ${count}`)
+                        .join(', ');
+                    statusMsg += ` (${orgSummary})`;
+                }
+                
+                status.textContent = statusMsg;
+                status.style.color = '#155724';
+                status.style.fontWeight = 'normal';
             } catch (err) {
                 console.error(err);
-                status.textContent = `Discovery failed: ${err.message}`;
+                
+                // Check if this is an authentication error
+                const isAuthError = err.message && (
+                    err.message.includes('Not authenticated') ||
+                    err.message.includes('auth/') ||
+                    err.message.includes('Firebase') ||
+                    err.message.includes('token') ||
+                    err.message.includes('securetoken')
+                );
+                
+                if (isAuthError) {
+                    // Show friendly login prompt instead of error
+                    status.textContent = '🔒 Please sign in to scan for new guidance';
+                    status.style.color = '#0066cc';
+                    status.style.fontWeight = 'normal';
+                    resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#666">You need to be signed in to use the guideline discovery feature. Please click the "Sign in with Google" button above.</div>';
+                    showLoginPrompt();
+                } else {
+                    // Show error for non-auth issues
+                    status.textContent = `❌ Discovery failed: ${err.message}`;
+                    status.style.color = '#d9534f';
+                    status.style.fontWeight = 'normal';
+                    resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#d9534f">Discovery failed. Please try again.</div>';
+                }
             }
         }
 
@@ -1520,6 +1647,63 @@ document.addEventListener('DOMContentLoaded', async function() {
                 } finally {
                     migrateDatabaseBtn.textContent = '🔄 Migrate to Single Collection';
                     migrateDatabaseBtn.disabled = false;
+                }
+            });
+        }
+
+        // Handle initialize clinical conditions button
+        const initClinicalConditionsBtn = document.getElementById('initClinicalConditionsBtn');
+        if (initClinicalConditionsBtn) {
+            initClinicalConditionsBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to initialize the clinical conditions collection? This will populate Firestore with all clinical conditions from the JSON file. This is needed for transcript generation to work.')) {
+                    return;
+                }
+                
+                const originalText = initClinicalConditionsBtn.textContent;
+                
+                try {
+                    initClinicalConditionsBtn.textContent = '⏳ Initializing...';
+                    initClinicalConditionsBtn.disabled = true;
+                    
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = 'Initializing clinical conditions collection...';
+                    
+                    console.log('🏥 [CLINICAL_INIT] Starting clinical conditions initialization...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/initializeClinicalConditions`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [CLINICAL_INIT] Initialization completed:', result);
+                    
+                    const message = `Clinical conditions initialized successfully!\n\n` +
+                        `Total conditions: ${result.totalConditions}\n` +
+                        `Categories:\n` +
+                        result.summary.map(cat => `- ${cat.category}: ${cat.count} conditions`).join('\n');
+                    
+                    statusDiv.textContent = message;
+                    alert(message);
+                    
+                } catch (error) {
+                    console.error('Error initializing clinical conditions:', error);
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.textContent = 'Error: ' + error.message;
+                    alert('Clinical conditions initialization failed: ' + error.message);
+                } finally {
+                    initClinicalConditionsBtn.textContent = originalText;
+                    initClinicalConditionsBtn.disabled = false;
                 }
             });
         }

@@ -384,6 +384,13 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Helper to unescape HTML entities
+function unescapeHtml(text) {
+    const div = document.createElement('div');
+    div.innerHTML = text;
+    return div.textContent;
+}
+
 // Helper to apply colored replacements only to specific tokens
 function applyColoredReplacements(anonymisedText, replacements) {
     // The anonymisedText already has replacements applied, so we need to color the replacement text
@@ -1402,6 +1409,460 @@ function showMainContent() {
     }
 }
 
+// Helper to sync guidelines in batches to avoid timeout
+async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) {
+    console.log(`[BATCH_SYNC] Starting batch sync with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+    
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+    
+    try {
+        while (remaining > 0 && batchCount < maxBatches) {
+            batchCount++;
+            console.log(`[BATCH_SYNC] Starting batch ${batchCount}...`);
+            
+            const response = await fetch(`${window.SERVER_URL}/syncGuidelinesBatch`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+            
+            if (!response.ok) {
+                console.error(`[BATCH_SYNC] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+            
+            const result = await response.json();
+            console.log(`[BATCH_SYNC] Batch ${batchCount} result:`, result);
+            
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+            
+            console.log(`[BATCH_SYNC] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+            
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[BATCH_SYNC] All guidelines synced!');
+                break;
+            }
+            
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[BATCH_SYNC] Waiting 2 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+        
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+        
+    } catch (error) {
+        console.error('[BATCH_SYNC] Error during batch sync:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
+// Helper to repair content for guidelines with missing content/condensed
+async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
+    console.log(`[CONTENT_REPAIR] Starting content repair with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+    
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+    
+    try {
+        while (remaining > 0 && batchCount < maxBatches) {
+            batchCount++;
+            console.log(`[CONTENT_REPAIR] Starting batch ${batchCount}...`);
+            
+            const response = await fetch(`${window.SERVER_URL}/repairGuidelineContent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+            
+            if (!response.ok) {
+                console.error(`[CONTENT_REPAIR] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+            
+            const result = await response.json();
+            console.log(`[CONTENT_REPAIR] Batch ${batchCount} result:`, result);
+            
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+            
+            console.log(`[CONTENT_REPAIR] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+            
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[CONTENT_REPAIR] All guidelines repaired!');
+                break;
+            }
+            
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[CONTENT_REPAIR] Waiting 3 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+        }
+        
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+        
+    } catch (error) {
+        console.error('[CONTENT_REPAIR] Error during content repair:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
+// Make repair function available globally for console use
+window.repairGuidelineContent = async function() {
+    const user = auth.currentUser;
+    if (!user) {
+        console.error('[CONTENT_REPAIR] User not authenticated');
+        return;
+    }
+    
+    const idToken = await user.getIdToken();
+    const result = await repairGuidelineContent(idToken, 3, 20); // 3 at a time, max 20 batches
+    
+    if (result.success) {
+        console.log('[CONTENT_REPAIR] ✅ Repair completed:', result);
+        // Reload guidelines after repair
+        window.guidelinesLoading = false;
+        await loadGuidelinesFromFirestore();
+    } else {
+        console.error('[CONTENT_REPAIR] ❌ Repair failed:', result);
+    }
+    
+    return result;
+};
+
+// Helper function to find missing guidelines between GitHub and Firestore
+window.findMissingGuidelines = async function() {
+    try {
+        console.log('[MISSING_GUIDELINES] Comparing GitHub and Firestore...');
+        
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+
+        // Get GitHub guidelines list
+        console.log('[MISSING_GUIDELINES] Fetching GitHub guidelines...');
+        const response = await fetch(`${window.SERVER_URL}/getGuidelinesList`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const guidelinesString = await response.text();
+        const githubGuidelines = guidelinesString.split('\n').filter(line => line.trim());
+        
+        // Get Firestore guidelines
+        console.log('[MISSING_GUIDELINES] Fetching Firestore guidelines...');
+        const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
+        const firestoreSnapshot = await window.firestoreGetDocs(guidelinesCol);
+        const firestoreIds = new Set();
+        firestoreSnapshot.forEach(doc => {
+            firestoreIds.add(doc.id);
+        });
+        
+        console.log('[MISSING_GUIDELINES] GitHub count:', githubGuidelines.length);
+        console.log('[MISSING_GUIDELINES] Firestore count:', firestoreIds.size);
+        
+        // First, detect duplicates in GitHub (different filenames that generate the same ID)
+        const githubIdMap = new Map(); // Map of ID -> array of filenames
+        const duplicates = [];
+        
+        for (const githubName of githubGuidelines) {
+            // Match server.js generateCleanDocId() logic exactly:
+            const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
+            let slug = withoutExtension
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '')
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+            
+            const extension = githubName.match(/\.[^/.]+$/)?.[0];
+            if (extension && extension.toLowerCase() === '.pdf') {
+                slug = `${slug}-pdf`;
+            }
+            
+            if (!githubIdMap.has(slug)) {
+                githubIdMap.set(slug, []);
+            }
+            githubIdMap.get(slug).push(githubName);
+        }
+        
+        // Find duplicates
+        for (const [id, filenames] of githubIdMap.entries()) {
+            if (filenames.length > 1) {
+                duplicates.push({ id, filenames, count: filenames.length });
+            }
+        }
+        
+        if (duplicates.length > 0) {
+            console.log(`[MISSING_GUIDELINES] ⚠️ Found ${duplicates.length} duplicate IDs in GitHub:`);
+            console.table(duplicates);
+        }
+        
+        // Find missing guidelines
+        // Use the same ID generation logic as server.js generateCleanDocId()
+        const missing = [];
+        for (const githubName of githubGuidelines) {
+            // Match server.js generateCleanDocId() logic exactly:
+            // 1. Remove file extension
+            const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
+            
+            // 2. Convert to slug: lowercase, replace special chars with hyphens
+            let slug = withoutExtension
+                .toLowerCase()
+                .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+                .replace(/\s+/g, '-') // Replace spaces with hyphens
+                .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+                .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
+            
+            // 3. Add file extension back if it was a PDF
+            const extension = githubName.match(/\.[^/.]+$/)?.[0];
+            if (extension && extension.toLowerCase() === '.pdf') {
+                slug = `${slug}-pdf`;
+            }
+            
+            const cleanId = slug;
+            
+            if (!firestoreIds.has(cleanId)) {
+                missing.push({
+                    filename: githubName,
+                    expectedId: cleanId
+                });
+            }
+        }
+        
+        console.log('[MISSING_GUIDELINES] 📋 Missing guidelines:', missing.length);
+        console.table(missing);
+        
+        // Also log in a copyable format
+        if (missing.length > 0) {
+            console.log('\n[MISSING_GUIDELINES] ===== COPYABLE FORMAT =====');
+            missing.forEach((item, index) => {
+                console.log(`${index + 1}. Filename: ${item.filename}`);
+                console.log(`   Expected ID: ${item.expectedId}`);
+            });
+            console.log('[MISSING_GUIDELINES] ==============================\n');
+        } else {
+            console.log('[MISSING_GUIDELINES] ✅ No missing guidelines - GitHub and Firestore are in sync!');
+        }
+        
+        // Return in multiple formats for easy access
+        const result = {
+            count: missing.length,
+            missing: missing,
+            duplicates: duplicates,
+            duplicateCount: duplicates.length,
+            // String format for easy copying
+            summary: missing.length > 0 
+                ? missing.map((item, i) => `${i + 1}. ${item.filename} (ID: ${item.expectedId})`).join('\n')
+                : 'No missing guidelines',
+            // Array of just filenames
+            filenames: missing.map(item => item.filename),
+            // Array of just IDs
+            ids: missing.map(item => item.expectedId),
+            // Explanation of the discrepancy
+            explanation: duplicates.length > 0 
+                ? `GitHub has ${githubGuidelines.length} files but ${githubIdMap.size} unique IDs. ${duplicates.length} duplicate ID(s) account for the difference.`
+                : 'GitHub and Firestore counts match.'
+        };
+        
+        console.log('[MISSING_GUIDELINES] Result object:', result);
+        
+        return result;
+    } catch (error) {
+        console.error('[MISSING_GUIDELINES] Error:', error);
+        return null;
+    }
+};
+
+// Helper function to compare duplicate files and recommend which to keep
+window.compareDuplicates = async function(duplicateId) {
+    try {
+        console.log('[COMPARE_DUPLICATES] Analyzing duplicate files for ID:', duplicateId);
+        
+        const user = window.auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+        
+        // First, find the duplicates
+        const result = await findMissingGuidelines();
+        const duplicate = result.duplicates.find(d => d.id === duplicateId);
+        
+        if (!duplicate) {
+            console.error('[COMPARE_DUPLICATES] No duplicate found with ID:', duplicateId);
+            return null;
+        }
+        
+        console.log('[COMPARE_DUPLICATES] Found duplicate:', duplicate);
+        
+        // Get file info from GitHub for each duplicate
+        const fileInfoPromises = duplicate.filenames.map(async (filename) => {
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/iannouvel/clerky/contents/guidance/${encodeURIComponent(filename)}`,
+                    {
+                        headers: {
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+                
+                if (!response.ok) {
+                    return { filename, error: 'Failed to fetch' };
+                }
+                
+                const data = await response.json();
+                return {
+                    filename: filename,
+                    size: data.size,
+                    sha: data.sha,
+                    downloadUrl: data.download_url
+                };
+            } catch (error) {
+                return { filename, error: error.message };
+            }
+        });
+        
+        const fileInfos = await Promise.all(fileInfoPromises);
+        
+        // Check which one is in Firestore
+        const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
+        const firestoreSnapshot = await window.firestoreGetDocs(guidelinesCol);
+        let firestoreMatch = null;
+        
+        firestoreSnapshot.forEach(doc => {
+            if (doc.id === duplicateId) {
+                firestoreMatch = {
+                    id: doc.id,
+                    filename: doc.data().filename,
+                    originalFilename: doc.data().originalFilename,
+                    title: doc.data().title,
+                    humanFriendlyName: doc.data().humanFriendlyName
+                };
+            }
+        });
+        
+        console.log('[COMPARE_DUPLICATES] Firestore document:', firestoreMatch);
+        console.log('[COMPARE_DUPLICATES] File information:');
+        console.table(fileInfos);
+        
+        // Make recommendation
+        let recommendation = {
+            duplicateId: duplicateId,
+            files: fileInfos,
+            firestoreDocument: firestoreMatch,
+            recommendation: null,
+            reasoning: []
+        };
+        
+        // Determine which file to keep
+        const validFiles = fileInfos.filter(f => !f.error);
+        
+        if (validFiles.length === 0) {
+            recommendation.recommendation = 'Cannot determine - no file info available';
+        } else if (validFiles.length === 1) {
+            recommendation.recommendation = `Keep: ${validFiles[0].filename}`;
+            recommendation.reasoning.push('Only one file has valid metadata');
+        } else {
+            // Compare file sizes - larger is usually better (more complete)
+            const largestFile = validFiles.reduce((max, f) => f.size > max.size ? f : max);
+            
+            // Check if one matches Firestore
+            let firestoreFile = null;
+            if (firestoreMatch) {
+                firestoreFile = validFiles.find(f => 
+                    f.filename === firestoreMatch.filename || 
+                    f.filename === firestoreMatch.originalFilename
+                );
+            }
+            
+            if (firestoreFile) {
+                recommendation.recommendation = `Keep: ${firestoreFile.filename}`;
+                recommendation.reasoning.push('This file is currently stored in Firestore');
+                recommendation.toDelete = validFiles.filter(f => f.filename !== firestoreFile.filename).map(f => f.filename);
+            } else {
+                recommendation.recommendation = `Keep: ${largestFile.filename}`;
+                recommendation.reasoning.push(`Largest file (${largestFile.size} bytes)`);
+                recommendation.toDelete = validFiles.filter(f => f.filename !== largestFile.filename).map(f => f.filename);
+            }
+        }
+        
+        console.log('\n[COMPARE_DUPLICATES] ===== RECOMMENDATION =====');
+        console.log('Duplicate ID:', duplicateId);
+        console.log('Files:', duplicate.filenames);
+        console.log('');
+        console.log('✅ KEEP:', recommendation.recommendation);
+        if (recommendation.toDelete) {
+            console.log('❌ DELETE:', recommendation.toDelete);
+        }
+        console.log('');
+        console.log('Reasoning:', recommendation.reasoning.join('; '));
+        console.log('[COMPARE_DUPLICATES] ==============================\n');
+        
+        return recommendation;
+    } catch (error) {
+        console.error('[COMPARE_DUPLICATES] Error:', error);
+        return null;
+    }
+};
+
 // Update loadGuidelinesFromFirestore to load from Firestore
 async function getGitHubGuidelinesCount() {
     try {
@@ -1642,6 +2103,55 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
     }
 }
 
+// Helper function to fetch content from Firebase Storage
+async function fetchContentFromStorage(storageUrl) {
+    try {
+        if (!storageUrl) return null;
+        
+        console.log('[STORAGE] Fetching content from:', storageUrl);
+        const response = await fetch(storageUrl);
+        
+        if (!response.ok) {
+            console.error('[STORAGE] Failed to fetch from Storage:', response.status);
+            return null;
+        }
+        
+        const content = await response.text();
+        console.log('[STORAGE] Successfully fetched content:', content.length, 'characters');
+        return content;
+    } catch (error) {
+        console.error('[STORAGE] Error fetching from Storage:', error);
+        return null;
+    }
+}
+
+// Helper function to get guideline content, fetching from Storage if needed
+async function getGuidelineContent(guideline) {
+    const result = {
+        content: guideline.content,
+        condensed: guideline.condensed,
+        summary: guideline.summary
+    };
+    
+    // Fetch from Storage if content is stored there
+    if (guideline.contentInStorage || guideline.contentStorageUrl) {
+        if (guideline.contentStorageUrl && !guideline.content) {
+            result.content = await fetchContentFromStorage(guideline.contentStorageUrl);
+        }
+        if (guideline.condensedStorageUrl && !guideline.condensed) {
+            result.condensed = await fetchContentFromStorage(guideline.condensedStorageUrl);
+        }
+        if (guideline.summaryStorageUrl && !guideline.summary) {
+            result.summary = await fetchContentFromStorage(guideline.summaryStorageUrl);
+        }
+    }
+    
+    return result;
+}
+
+// Expose helper to global scope for console access
+window.getGuidelineContent = getGuidelineContent;
+
 async function loadGuidelinesFromFirestore() {
     // Prevent multiple simultaneous guideline loads
     if (window.guidelinesLoading || window.guidelinesLoaded) {
@@ -1662,14 +2172,51 @@ async function loadGuidelinesFromFirestore() {
     window.guidelinesLoading = true;
     
     try {
+        // Try to get from IndexedDB cache first
+        if (window.cacheManager) {
+            const cachedGuidelines = await window.cacheManager.getGuidelines();
+            if (cachedGuidelines && cachedGuidelines.length > 0) {
+                console.log('[DEBUG] ⚡ Loaded guidelines from IndexedDB cache:', cachedGuidelines.length);
+                
+                // Store in global variables
+                window.guidelinesList = cachedGuidelines.map(g => ({
+                    id: g.id,
+                    title: g.title
+                }));
+                window.guidelinesSummaries = cachedGuidelines.map(g => g.summary);
+                window.guidelinesKeywords = cachedGuidelines.map(g => g.keywords);
+                window.guidelinesCondensed = cachedGuidelines.map(g => g.condensed);
+
+                window.globalGuidelines = cachedGuidelines.reduce((acc, g) => {
+                    acc[g.id] = {
+                        id: g.id,
+                        title: g.title,
+                        humanFriendlyName: g.humanFriendlyName || g.human_friendly_name || g.title,
+                        content: g.content,
+                        summary: g.summary,
+                        keywords: g.keywords,
+                        condensed: g.condensed,
+                        organisation: g.organisation,
+                        downloadUrl: g.downloadUrl,
+                        originalFilename: g.originalFilename
+                    };
+                    return acc;
+                }, {});
+
+                window.guidelinesLoaded = true;
+                window.guidelinesLoading = false;
+                return cachedGuidelines;
+            }
+        }
+        
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
-        // Get user ID token using the imported auth object
+        // Get user ID token using the imported auth object with force refresh to prevent 403 errors
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
-        const idToken = await user.getIdToken();
+        const idToken = await user.getIdToken(true); // Force refresh token
 
         // Fetch guidelines from Firestore
         const response = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
@@ -1691,6 +2238,13 @@ async function loadGuidelinesFromFirestore() {
         const guidelines = result.guidelines;
         const firestoreCount = guidelines.length;
         console.log('[DEBUG] Loaded guidelines from Firestore:', firestoreCount);
+        
+        // Save to IndexedDB cache in background
+        if (window.cacheManager) {
+            window.cacheManager.saveGuidelines(guidelines).catch(err => {
+                console.warn('[DEBUG] Failed to cache guidelines:', err);
+            });
+        }
 
         // Guideline sync moved to background - see syncGuidelinesInBackground()
 
@@ -1800,10 +2354,11 @@ function setupGuidelinesListener() {
             
             // When guideline count changes, trigger comprehensive metadata completion
             if (countChanged && previousGuidelineCount > 0) {
-                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Triggering metadata completion...`);
+                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
                 
-                // Trigger comprehensive metadata completion for all guidelines
-                await triggerMetadataCompletionForAll();
+                // NOTE: Automatic metadata completion disabled to prevent server memory crashes
+                // The batch sync endpoint handles metadata extraction inline
+                // await triggerMetadataCompletionForAll();
                 
                 // Refresh guidelines data after processing
                 setTimeout(() => {
@@ -1898,17 +2453,10 @@ async function syncGuidelinesInBackground() {
         if (githubCount !== null && githubCount > currentCount) {
             console.log(`[BACKGROUND_SYNC] GitHub has ${githubCount} guidelines but Firestore only has ${currentCount}. Syncing...`);
             
-            const syncResponse = await fetch(`${window.SERVER_URL}/syncGuidelinesWithMetadata`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${idToken}`
-                },
-                body: JSON.stringify({})
-            });
-
-            if (syncResponse.ok) {
-                const syncResult = await syncResponse.json();
+            // Use batch sync to avoid timeouts
+            const syncResult = await syncGuidelinesInBatches(idToken, 3); // Process 3 at a time
+            
+            if (syncResult.success) {
                 console.log('[BACKGROUND_SYNC] Sync completed successfully:', syncResult);
                 
                 // Reload guidelines after sync
@@ -3349,11 +3897,17 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         const prefixedSuggestions = (result.suggestions || []).map(suggestion => ({
             ...suggestion,
             originalId: suggestion.id, // Keep original ID for server communication
-            id: `${result.sessionId}-${suggestion.id}` // Use prefixed ID for DOM elements
+            id: `${result.sessionId}-${suggestion.id}`, // Use prefixed ID for DOM elements
+            guidelineId: result.guidelineId, // Add guideline info for feedback tracking
+            guidelineTitle: result.guidelineTitle
         }));
         
         currentSuggestions = prefixedSuggestions;
         userDecisions = {};
+        
+        // Store guideline info globally for feedback submission
+        window.currentGuidelineId = result.guidelineId;
+        window.currentGuidelineTitle = result.guidelineTitle;
 
         console.log('[DEBUG] dynamicAdvice: Stored session data', {
             sessionId: currentAdviceSession,
@@ -3565,7 +4119,10 @@ function extractQuotedText(context) {
     
     // Return the longest quote (most likely to be the actual guideline quote)
     allQuotes.sort((a, b) => b.length - a.length);
-    const longestQuote = allQuotes[0];
+    let longestQuote = allQuotes[0];
+    
+    // Clean the quote for PDF search - remove citation markers and formatting
+    longestQuote = cleanQuoteForSearch(longestQuote);
     
     console.log('[DEBUG] Extracted quote from context:', {
         totalQuotes: allQuotes.length,
@@ -3576,63 +4133,123 @@ function extractQuotedText(context) {
     return longestQuote;
 }
 
+// Helper function to clean quotes for PDF search
+function cleanQuoteForSearch(quote) {
+    if (!quote) return quote;
+    
+    // Remove common citation patterns that might not be in the PDF
+    let cleaned = quote
+        // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], [Grade GPP], etc.
+        .replace(/\s*\[Evidence level [^\]]+\]/gi, '')
+        .replace(/\s*\[Grade [^\]]+\]/gi, '')
+        .replace(/\s*\[Level [^\]]+\]/gi, '')
+        .replace(/\s*\[Quality: [^\]]+\]/gi, '')
+        .replace(/\s*\[Recommendation: [^\]]+\]/gi, '')
+        // Remove reference numbers like [1], [2-5], etc.
+        .replace(/\s*\[[0-9,\-–—]+\]/g, '')
+        // Remove extra whitespace and normalize
+        .replace(/\s+/g, ' ')
+        .trim();
+    
+    console.log('[DEBUG] Cleaned quote for search:', {
+        original: quote.substring(0, 100),
+        cleaned: cleaned.substring(0, 100),
+        removedChars: quote.length - cleaned.length
+    });
+    
+    return cleaned;
+}
+
 // Helper function to create guideline viewer link
-function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context) {
+function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context, hasVerbatimQuote) {
     if (!guidelineId && !guidelineFilename) {
         return '<em>Guideline reference not available</em>';
     }
 
-    // Construct viewer URL
-    let viewerUrl = `viewer.html?guidelineId=${encodeURIComponent(guidelineId || '')}`;
-    
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    // Create link with onclick to store auth token and search text before opening
-    // Pass context as a data attribute so prepareViewerAuth can access it
-    return `<a href="${viewerUrl}" target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this)" data-context="${escapeHtml(context || '')}" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    // Extract search text from context ONLY if hasVerbatimQuote is explicitly true
+    let searchText = null;
+    if (context && hasVerbatimQuote === true) {
+        const decodedContext = unescapeHtml(context);
+        searchText = extractQuotedText(decodedContext);
+        console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
+    } else if (hasVerbatimQuote === false) {
+        console.log('[DEBUG] hasVerbatimQuote is false - opening PDF to first page without search');
+    }
+    
+    // Store search text and guideline ID for auth handler to use
+    const linkData = {
+        guidelineId: guidelineId,
+        searchText: searchText
+    };
+    
+    // Add note if hasVerbatimQuote is false (paraphrased content)
+    const paraphraseNote = hasVerbatimQuote === false 
+        ? ' <span style="color: #f59e0b; font-size: 12px; font-weight: normal;">(Guideline recommendation paraphrased)</span>' 
+        : '';
+    
+    // Create link with onclick to build authenticated URL and open viewer
+    // We'll build the final URL in prepareViewerAuth to include the fresh token
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
 window.prepareViewerAuth = async function(event, linkElement) {
     try {
-        console.log('[DEBUG] Preparing auth token for viewer...');
+        event.preventDefault(); // Prevent default navigation
+        
+        console.log('[DEBUG] Preparing auth token for PDF.js viewer...');
         const user = firebase.auth().currentUser;
         if (!user) {
             console.error('[DEBUG] No user authenticated');
             alert('Please sign in to view guidelines');
-            event.preventDefault();
             return;
         }
         
         // Get fresh ID token
         const idToken = await user.getIdToken();
         
-        // Extract quoted text from context if available
-        let searchText = null;
-        if (linkElement && linkElement.dataset && linkElement.dataset.context) {
-            const context = linkElement.dataset.context;
-            searchText = extractQuotedText(context);
+        // Get link data from data attribute
+        const linkDataStr = linkElement.getAttribute('data-link-data');
+        if (!linkDataStr) {
+            console.error('[DEBUG] No link data found');
+            return;
         }
         
-        // Store token and search text in localStorage for viewer to use
-        localStorage.setItem('viewerAuthToken', idToken);
-        localStorage.setItem('viewerAuthTokenTime', Date.now().toString());
+        const linkData = JSON.parse(linkDataStr);
+        const { guidelineId, searchText } = linkData;
         
+        console.log('[DEBUG] Building PDF.js viewer URL:', { guidelineId, hasSearchText: !!searchText });
+        
+        // Build the complete PDF URL with token
+        // Use SERVER_URL (Render backend) for API calls, not GitHub Pages origin
+        const baseUrl = window.SERVER_URL || window.location.origin;
+        const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+        
+        // Build PDF.js viewer URL with the PDF file URL
+        let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+        
+        // Add search hash parameters if we have quoted text
         if (searchText) {
-            localStorage.setItem('viewerSearchText', searchText);
-            console.log('[DEBUG] Stored search text for viewer:', searchText.substring(0, 50) + '...');
-        } else {
-            localStorage.removeItem('viewerSearchText');
-            console.log('[DEBUG] No quoted text found in context');
+            const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
+            viewerUrl += searchHash;
+            console.log('[DEBUG] Added search parameters:', {
+                searchTextLength: searchText.length,
+                searchTextPreview: searchText.substring(0, 100) + '...',
+                fullSearchText: searchText,
+                encodedLength: encodeURIComponent(searchText).length
+            });
         }
         
-        console.log('[DEBUG] Auth token stored in localStorage for viewer');
+        console.log('[DEBUG] Opening PDF.js viewer with full URL:', viewerUrl);
         
-        // Let the link open normally
+        // Open in new window
+        window.open(viewerUrl, '_blank', 'noopener,noreferrer');
+        
     } catch (error) {
         console.error('[DEBUG] Error preparing auth token:', error);
         alert('Failed to prepare authentication. Please try again.');
-        event.preventDefault();
     }
 };
 
@@ -3830,7 +4447,7 @@ async function showCurrentSuggestion() {
     }
 
     // Create guideline link with context for quote extraction
-    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context);
+    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote);
 
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
@@ -4148,7 +4765,13 @@ function handleSuggestionAction(suggestionId, action) {
         return;
     }
 
-    // For accept/reject, record the decision and apply immediately
+    // For reject action, prompt for optional feedback
+    if (action === 'reject') {
+        promptForRejectionFeedback(suggestionId, suggestion);
+        return;
+    }
+
+    // For accept, record the decision and apply immediately
     userDecisions[suggestionId] = {
         action: action,
         suggestion: suggestion,
@@ -4196,6 +4819,270 @@ function handleSuggestionAction(suggestionId, action) {
     updateSuggestionStatus(suggestionId, action);
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after a decision is made
+}
+
+// Prompt for optional feedback when rejecting a suggestion
+function promptForRejectionFeedback(suggestionId, suggestion) {
+    console.log('[FEEDBACK] Prompting for rejection feedback:', suggestionId);
+    
+    // Create modal HTML
+    const modalHtml = `
+        <div id="feedback-modal-${suggestionId}" class="feedback-modal" style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        ">
+            <div class="feedback-modal-content" style="
+                background: white;
+                border-radius: 8px;
+                padding: 30px;
+                max-width: 600px;
+                width: 90%;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            ">
+                <h3 style="margin-top: 0; color: #2563eb;">💡 Help Us Learn</h3>
+                <p style="margin-bottom: 20px; color: #666;">Why is this suggestion not appropriate? (optional)</p>
+                <p style="font-size: 14px; color: #888; margin-bottom: 15px;">
+                    <strong>Suggestion:</strong> ${suggestion.suggestedText?.substring(0, 150) || 'N/A'}${suggestion.suggestedText?.length > 150 ? '...' : ''}
+                </p>
+                <textarea 
+                    id="feedback-textarea-${suggestionId}" 
+                    placeholder="E.g., 'This was SVD, not AVD - cord gases not required for spontaneous delivery'"
+                    style="
+                        width: 100%;
+                        min-height: 100px;
+                        padding: 12px;
+                        border: 1px solid #ddd;
+                        border-radius: 4px;
+                        font-family: inherit;
+                        font-size: 14px;
+                        resize: vertical;
+                    "
+                ></textarea>
+                <div style="display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end;">
+                    <button 
+                        onclick="submitRejectionFeedback('${suggestionId}', true)"
+                        style="
+                            background: #2563eb;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            font-weight: bold;
+                        "
+                    >Submit Feedback</button>
+                    <button 
+                        onclick="submitRejectionFeedback('${suggestionId}', false)"
+                        style="
+                            background: #6c757d;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        "
+                    >Skip</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add modal to page
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    
+    // Focus on textarea
+    setTimeout(() => {
+        const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+        if (textarea) textarea.focus();
+    }, 100);
+}
+
+// Submit rejection feedback (or skip)
+window.submitRejectionFeedback = function(suggestionId, includeFeedback) {
+    console.log('[FEEDBACK] Submitting rejection feedback:', suggestionId, includeFeedback);
+    
+    // Get feedback text if provided
+    let feedbackReason = '';
+    if (includeFeedback) {
+        const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+        feedbackReason = textarea ? textarea.value.trim() : '';
+    }
+    
+    // Find the suggestion data
+    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
+    if (!suggestion) {
+        console.error('[FEEDBACK] Suggestion data not found:', suggestionId);
+        return;
+    }
+    
+    // Record the rejection decision with optional feedback
+    userDecisions[suggestionId] = {
+        action: 'reject',
+        suggestion: suggestion,
+        timestamp: new Date().toISOString(),
+        feedbackReason: feedbackReason
+    };
+    
+    console.log('[FEEDBACK] Recorded rejection with feedback', {
+        suggestionId,
+        hasFeedback: !!feedbackReason,
+        feedbackLength: feedbackReason.length
+    });
+    
+    // Remove modal
+    const modal = document.getElementById(`feedback-modal-${suggestionId}`);
+    if (modal) modal.remove();
+    
+    // Update UI to show decision
+    updateSuggestionStatus(suggestionId, 'reject');
+    updateDecisionsSummary();
+    debouncedSaveState();
+    
+    // Check if all suggestions for this guideline have been processed
+    checkAndSubmitGuidelineFeedback();
+};
+
+// Check if all suggestions from a guideline have been processed and submit feedback
+function checkAndSubmitGuidelineFeedback() {
+    if (!currentSuggestions || currentSuggestions.length === 0) {
+        return;
+    }
+    
+    // Group suggestions by guideline
+    const guidelineGroups = {};
+    currentSuggestions.forEach(suggestion => {
+        // Extract guideline info from suggestion or session
+        const guidelineId = suggestion.guidelineId || window.currentGuidelineId;
+        if (guidelineId) {
+            if (!guidelineGroups[guidelineId]) {
+                guidelineGroups[guidelineId] = {
+                    guidelineId: guidelineId,
+                    guidelineTitle: suggestion.guidelineTitle || window.currentGuidelineTitle || 'Unknown',
+                    suggestions: []
+                };
+            }
+            guidelineGroups[guidelineId].suggestions.push(suggestion);
+        }
+    });
+    
+    // Check each guideline group
+    Object.keys(guidelineGroups).forEach(guidelineId => {
+        const group = guidelineGroups[guidelineId];
+        const allProcessed = group.suggestions.every(s => userDecisions[s.id]);
+        
+        if (allProcessed) {
+            // Collect feedback entries for this guideline
+            const feedbackEntries = group.suggestions
+                .map(s => {
+                    const decision = userDecisions[s.id];
+                    if (!decision) return null;
+                    
+                    // Only include rejections and modifications with feedback
+                    if ((decision.action === 'reject' || decision.action === 'modify') && 
+                        (decision.feedbackReason || decision.modifiedText)) {
+                        return {
+                            suggestionId: s.originalId || s.id,
+                            action: decision.action,
+                            rejectionReason: decision.feedbackReason || '',
+                            modifiedText: decision.modifiedText || null,
+                            originalSuggestion: s.originalText || '',
+                            suggestedText: s.suggestedText || '',
+                            clinicalScenario: window.latestAnalysis?.transcript?.substring(0, 500) || ''
+                        };
+                    }
+                    return null;
+                })
+                .filter(entry => entry !== null);
+            
+            if (feedbackEntries.length > 0) {
+                console.log('[FEEDBACK] Submitting feedback batch for guideline:', guidelineId, feedbackEntries.length, 'entries');
+                submitGuidelineFeedbackBatch(guidelineId, group.guidelineTitle, feedbackEntries);
+            }
+        }
+    });
+}
+
+// Submit feedback batch to backend
+async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries) {
+    try {
+        console.log('[FEEDBACK] Submitting feedback batch:', {
+            guidelineId,
+            entriesCount: feedbackEntries.length
+        });
+        
+        // Get user token
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('[FEEDBACK] No authenticated user, skipping feedback submission');
+            return;
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        // Submit to backend (fire and forget - don't wait)
+        fetch(`${window.SERVER_URL}/submitGuidelineFeedback`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                guidelineId: guidelineId,
+                sessionId: currentAdviceSession || `manual_${Date.now()}`,
+                feedbackEntries: feedbackEntries,
+                transcript: window.latestAnalysis?.transcript || ''
+            })
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('[FEEDBACK] Feedback submission result:', result);
+            if (result.success && result.feedbackCount > 0) {
+                // Show subtle thank you notification
+                showFeedbackThankYou();
+            }
+        })
+        .catch(error => {
+            console.error('[FEEDBACK] Error submitting feedback:', error);
+            // Fail silently - don't disrupt user workflow
+        });
+        
+    } catch (error) {
+        console.error('[FEEDBACK] Error in submitGuidelineFeedbackBatch:', error);
+    }
+}
+
+// Show thank you notification for feedback
+function showFeedbackThankYou() {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #10b981;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 9999;
+        font-size: 14px;
+        animation: slideIn 0.3s ease-out;
+    `;
+    notification.innerHTML = '✅ Thank you for your feedback - helping improve future suggestions!';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.3s';
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
 }
 
 // Confirm modification with custom text
@@ -4273,6 +5160,9 @@ function confirmModification(suggestionId) {
     updateSuggestionStatus(suggestionId, 'modify', modifiedText);
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after modification
+    
+    // Check if all suggestions for this guideline have been processed
+    checkAndSubmitGuidelineFeedback();
 }
 
 // Cancel modification
@@ -6484,28 +7374,45 @@ async function initializeMainApp() {
         // console.log('[DEBUG] Calling initializeChatHistory...');
         // await initializeChatHistory();
         
-        // Load clinical conditions from Firebase (with fallback to JSON)
-        console.log('[DEBUG] Loading clinical conditions...');
-        try {
-            await ClinicalConditionsService.loadConditions();
-            const summary = ClinicalConditionsService.getSummary();
-            console.log('[DEBUG] Clinical conditions loaded successfully:', summary);
-        } catch (error) {
-            console.error('[DEBUG] Failed to load clinical conditions:', error);
-        }
+        // Load clinical conditions and guidelines in parallel for faster startup
+        console.log('[DEBUG] ⚡ Loading clinical conditions and guidelines in parallel...');
+        const startTime = performance.now();
         
-        // Load guidelines from Firestore on app initialization
-        console.log('[DEBUG] Loading guidelines from Firestore...');
         try {
-            await window.loadGuidelinesFromFirestore();
-            console.log('[DEBUG] Guidelines loaded successfully during initialization');
+            const [conditionsResult, guidelinesResult] = await Promise.allSettled([
+                ClinicalConditionsService.loadConditions(),
+                window.loadGuidelinesFromFirestore()
+            ]);
+            
+            const endTime = performance.now();
+            console.log(`[DEBUG] ⚡ Parallel loading completed in ${(endTime - startTime).toFixed(0)}ms`);
+            
+            // Check conditions result
+            if (conditionsResult.status === 'fulfilled') {
+                const summary = ClinicalConditionsService.getSummary();
+                console.log('[DEBUG] Clinical conditions loaded successfully:', summary);
+            } else {
+                console.error('[DEBUG] Failed to load clinical conditions:', conditionsResult.reason);
+            }
+            
+            // Check guidelines result
+            if (guidelinesResult.status === 'fulfilled') {
+                console.log('[DEBUG] Guidelines loaded successfully during initialization');
+            } else {
+                console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', guidelinesResult.reason?.message);
+            }
         } catch (error) {
-            console.warn('[DEBUG] Error during initial loadGuidelinesFromFirestore call:', error.message);
-            // Don't throw - allow app to continue functioning even if guidelines fail to load
+            console.error('[DEBUG] Unexpected error during parallel loading:', error);
+            // Don't throw - allow app to continue functioning
         }
         
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
+        
+        // Dispatch event to signal that critical data has loaded
+        // This triggers deferred initializations like TipTap editor
+        window.dispatchEvent(new CustomEvent('criticalDataLoaded'));
+        console.log('[DEBUG] ⚡ Critical data loaded event dispatched');
         
         // Show main content and hide loading screen immediately
         const loading = document.getElementById('loading');
@@ -9019,6 +9926,16 @@ const ClinicalConditionsService = {
     
     async _fetchConditionsFromServer() {
         try {
+            // Try to get from IndexedDB cache first
+            if (window.cacheManager) {
+                const cachedConditions = await window.cacheManager.getClinicalConditions();
+                if (cachedConditions) {
+                    console.log('[CLINICAL-SERVICE] ⚡ Loaded clinical conditions from IndexedDB cache');
+                    clinicalConditionsFirebaseCache = cachedConditions;
+                    return cachedConditions;
+                }
+            }
+            
             console.log('[CLINICAL-SERVICE] Loading clinical conditions from Firebase...');
             
             const user = auth.currentUser;
@@ -9026,7 +9943,7 @@ const ClinicalConditionsService = {
                 throw new Error('User not authenticated');
             }
             
-            const idToken = await user.getIdToken();
+            const idToken = await user.getIdToken(true); // Force refresh token
             
             const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
                 method: 'GET',
@@ -9065,6 +9982,14 @@ const ClinicalConditionsService = {
                     const retryData = await retryResponse.json();
                     if (retryData.success && retryData.summary?.totalConditions > 0) {
                         clinicalConditionsFirebaseCache = retryData.conditions;
+                        
+                        // Save to IndexedDB cache in background
+                        if (window.cacheManager) {
+                            window.cacheManager.saveClinicalConditions(retryData.conditions).catch(err => {
+                                console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
+                            });
+                        }
+                        
                         console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions after initialization:', {
                             totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
                             totalConditions: retryData.summary.totalConditions,
@@ -9080,6 +10005,13 @@ const ClinicalConditionsService = {
             }
             
             clinicalConditionsFirebaseCache = data.conditions;
+            
+            // Save to IndexedDB cache in background
+            if (window.cacheManager) {
+                window.cacheManager.saveClinicalConditions(data.conditions).catch(err => {
+                    console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
+                });
+            }
             
             console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
                 totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
