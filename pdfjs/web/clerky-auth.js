@@ -132,19 +132,9 @@
                         if (pollAttempts < maxPollAttempts) {
                             setTimeout(checkSearchResults, 200);
                         } else {
-                            console.warn('[PDF Search] Find controller not available, waiting additional time...');
-                            // Try waiting longer for find controller to initialize
-                            setTimeout(() => {
-                                if (window.PDFViewerApplication?.pdfFindController) {
-                                    console.log('[PDF Search] Find controller now available, retrying search');
-                                    pollAttempts = 0; // Reset and try again
-                                    checkSearchResults();
-                                } else {
-                                    console.warn('[PDF Search] Find controller still not available after extended wait, trying next variant...');
-                                    currentVariantIndex++;
-                                    tryNextVariant();
-                                }
-                            }, 1000); // Wait additional 1 second
+                            console.warn('[PDF Search] Find controller lost or search timed out, trying next variant...');
+                            currentVariantIndex++;
+                            tryNextVariant();
                         }
                         return;
                     }
@@ -217,7 +207,8 @@
         // Set up the pagesloaded listener
         document.addEventListener('pagesloaded', function(e) {
             console.log('[Clerky Auth] pagesloaded event fired!', e);
-            triggerSearch();
+            // Wait for find controller before triggering search
+            waitForFindController(triggerSearch);
         }, { once: true });
         
         // Also poll to check if pages are loaded (in case event is missed)
@@ -228,16 +219,40 @@
             console.log(`[Clerky Auth] Polling attempt ${pollCount}/${maxPolls} - checking if PDF loaded...`);
             
             if (window.PDFViewerApplication && window.PDFViewerApplication.pdfDocument) {
-                console.log('[Clerky Auth] PDF detected as loaded via polling, triggering search');
+                console.log('[Clerky Auth] PDF detected as loaded via polling');
                 clearInterval(pollInterval);
                 // Remove the event listener since we're triggering manually
                 document.removeEventListener('pagesloaded', triggerSearch);
-                triggerSearch();
+                // Wait for find controller before triggering search
+                waitForFindController(triggerSearch);
             } else if (pollCount >= maxPolls) {
                 console.error('[Clerky Auth] Gave up waiting for PDF to load after polling');
                 clearInterval(pollInterval);
             }
         }, 500);
+        
+        // Wait specifically for find controller to be available
+        function waitForFindController(callback) {
+            let findControllerPollCount = 0;
+            const maxFindControllerPolls = 40; // Poll for up to 8 seconds
+            
+            console.log('[Clerky Auth] Waiting for find controller to initialize...');
+            
+            const findControllerInterval = setInterval(() => {
+                findControllerPollCount++;
+                
+                if (window.PDFViewerApplication?.pdfFindController) {
+                    console.log(`[Clerky Auth] Find controller available after ${findControllerPollCount} polls, triggering search`);
+                    clearInterval(findControllerInterval);
+                    callback();
+                } else if (findControllerPollCount >= maxFindControllerPolls) {
+                    console.error('[Clerky Auth] Find controller not available after 8 seconds, giving up');
+                    clearInterval(findControllerInterval);
+                } else if (findControllerPollCount % 5 === 0) {
+                    console.log(`[Clerky Auth] Still waiting for find controller... (${findControllerPollCount}/${maxFindControllerPolls})`);
+                }
+            }, 200);
+        }
     }
     
     // Get URL parameters
