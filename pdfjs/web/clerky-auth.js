@@ -152,37 +152,64 @@
                         return;
                     }
                     
+                    // Check multiple properties to detect successful search
                     const matchCount = findController.matchCount;
+                    const matchesCount = findController.matchesCount;
+                    const pageMatches = findController.pageMatches;
+                    const selected = findController.selected;
+                    
+                    // Debug logging on first few attempts
+                    if (pollAttempts < 3) {
+                        console.log(`[PDF Search Debug] Poll ${pollAttempts + 1}:`, {
+                            matchCount,
+                            matchesCount,
+                            hasPageMatches: !!pageMatches,
+                            pageMatchesType: typeof pageMatches,
+                            selected,
+                            state: findController.state,
+                            highlightAll: findController.highlightAll
+                        });
+                    }
+                    
+                    // Determine if search is complete and successful
+                    // Check various indicators that matches were found
+                    const hasMatches = matchCount > 0 || 
+                                      matchesCount?.total > 0 ||
+                                      (pageMatches && Object.keys(pageMatches).some(key => pageMatches[key]?.length > 0)) ||
+                                      (selected?.matchIdx !== undefined && selected?.matchIdx >= 0);
+                    
+                    // Check if search is complete (not still searching)
                     const stateStates = findController.stateStates || {};
                     const isSearching = findController.state === stateStates.FIND_SEARCHING;
+                    const isComplete = !isSearching && (matchCount !== null || matchesCount !== null || pageMatches !== null);
                     
-                    if ((!isSearching || matchCount !== undefined) && matchCount !== undefined) {
-                        // Search completed
-                        if (matchCount > 0) {
-                            // Success!
-                            if (!searchCompleted) {
-                                searchCompleted = true;
-                                const currentMatch = findController.selected && findController.selected.index !== -1
-                                    ? findController.selected.index + 1
-                                    : 0;
-                                
-                                if (currentVariantIndex === 0) {
-                                    console.log(`✅ [PDF Search] Found ${matchCount} exact match(es)`);
-                                } else {
-                                    console.log(`✅ [PDF Search] Found ${matchCount} match(es) using ${variant.description}`);
-                                    console.log(`   ℹ️  Exact phrase didn't match - this is a fuzzy match`);
-                                }
-                                if (currentMatch > 0) {
-                                    console.log(`   📍 Currently viewing match ${currentMatch} of ${matchCount}`);
-                                }
-                            }
+                    if (hasMatches && !searchCompleted) {
+                        // Success! Matches found
+                        searchCompleted = true;
+                        const totalMatches = matchCount || matchesCount?.total || 
+                                           (pageMatches ? Object.values(pageMatches).reduce((sum, arr) => sum + (arr?.length || 0), 0) : 0);
+                        const currentMatch = selected?.matchIdx !== undefined && selected?.matchIdx >= 0
+                            ? selected.matchIdx + 1
+                            : (selected?.index !== undefined && selected?.index >= 0 ? selected.index + 1 : 0);
+                        
+                        if (currentVariantIndex === 0) {
+                            console.log(`✅ [PDF Search] Found ${totalMatches || 'multiple'} exact match(es)`);
                         } else {
-                            // No matches, try next variant
-                            console.log(`   ⚠️  No matches with ${variant.description}`);
-                            currentVariantIndex++;
-                            setTimeout(() => tryNextVariant(), 100);
+                            console.log(`✅ [PDF Search] Found ${totalMatches || 'multiple'} match(es) using ${variant.description}`);
+                            console.log(`   ℹ️  Exact phrase didn't match - this is a fuzzy match`);
                         }
+                        if (currentMatch > 0) {
+                            console.log(`   📍 Currently viewing match ${currentMatch}${totalMatches ? ' of ' + totalMatches : ''}`);
+                        }
+                        return; // Stop polling, search successful
+                    } else if (isComplete && !hasMatches && !searchCompleted) {
+                        // Search completed but no matches found
+                        console.log(`   ⚠️  No matches with ${variant.description}`);
+                        currentVariantIndex++;
+                        setTimeout(() => tryNextVariant(), 100);
+                        return;
                     } else if (pollAttempts < maxPollAttempts) {
+                        // Still searching or waiting
                         pollAttempts++;
                         setTimeout(checkSearchResults, 200);
                     } else {
