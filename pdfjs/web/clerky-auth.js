@@ -40,7 +40,7 @@
             console.log('[Clerky Auth] PDFViewerApplication state:', {
                 hasPdfDocument: !!window.PDFViewerApplication.pdfDocument,
                 hasEventBus: !!window.PDFViewerApplication.eventBus,
-                hasPdfFindController: !!window.PDFViewerApplication.pdfFindController,
+                hasFindController: !!window.PDFViewerApplication.findController,
                 availableKeys: Object.keys(window.PDFViewerApplication).slice(0, 20)
             });
             
@@ -138,7 +138,7 @@
                 const maxPollAttempts = 20;
                 
                 const checkSearchResults = function() {
-                    const findController = window.PDFViewerApplication?.pdfFindController;
+                    const findController = window.PDFViewerApplication?.findController;
                     
                     if (!findController) {
                         pollAttempts++;
@@ -266,7 +266,7 @@
             const findControllerInterval = setInterval(() => {
                 findControllerPollCount++;
                 
-                if (window.PDFViewerApplication?.pdfFindController) {
+                if (window.PDFViewerApplication?.findController) {
                     console.log(`[Clerky Auth] Find controller available after ${findControllerPollCount} polls, triggering search`);
                     clearInterval(findControllerInterval);
                     callback();
