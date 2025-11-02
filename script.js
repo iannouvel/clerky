@@ -4168,12 +4168,14 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
 
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    // Extract search text from context if available AND hasVerbatimQuote is true
+    // Extract search text from context ONLY if hasVerbatimQuote is explicitly true
     let searchText = null;
-    if (context && hasVerbatimQuote !== false) {
+    if (context && hasVerbatimQuote === true) {
         const decodedContext = unescapeHtml(context);
         searchText = extractQuotedText(decodedContext);
         console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
+    } else if (hasVerbatimQuote === false) {
+        console.log('[DEBUG] hasVerbatimQuote is false - opening PDF to first page without search');
     }
     
     // Store search text and guideline ID for auth handler to use
