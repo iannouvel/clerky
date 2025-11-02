@@ -26,10 +26,23 @@
         const triggerSearch = function() {
             console.log('[Clerky Auth] PDF pages loaded, triggering fuzzy search...');
             
-            if (!window.PDFViewerApplication || !window.PDFViewerApplication.eventBus) {
+            if (!window.PDFViewerApplication) {
                 console.warn('[Clerky Auth] PDFViewerApplication not available for search trigger');
                 return;
             }
+            
+            if (!window.PDFViewerApplication.eventBus) {
+                console.warn('[Clerky Auth] PDFViewerApplication.eventBus not available for search trigger');
+                return;
+            }
+            
+            // Debug log
+            console.log('[Clerky Auth] PDFViewerApplication state:', {
+                hasPdfDocument: !!window.PDFViewerApplication.pdfDocument,
+                hasEventBus: !!window.PDFViewerApplication.eventBus,
+                hasPdfFindController: !!window.PDFViewerApplication.pdfFindController,
+                availableKeys: Object.keys(window.PDFViewerApplication).slice(0, 20)
+            });
             
             // Generate search variants for fuzzy matching (from exact to increasingly fuzzy)
             const generateSearchVariants = function(text) {
@@ -238,6 +251,11 @@
             
             console.log('[Clerky Auth] Waiting for find controller to initialize...');
             
+            // Debug: Check what's available on PDFViewerApplication
+            if (window.PDFViewerApplication) {
+                console.log('[Clerky Auth] PDFViewerApplication available, properties:', Object.keys(window.PDFViewerApplication));
+            }
+            
             const findControllerInterval = setInterval(() => {
                 findControllerPollCount++;
                 
@@ -246,8 +264,12 @@
                     clearInterval(findControllerInterval);
                     callback();
                 } else if (findControllerPollCount >= maxFindControllerPolls) {
-                    console.error('[Clerky Auth] Find controller not available after 8 seconds, giving up');
+                    console.error('[Clerky Auth] Find controller not available after 8 seconds');
+                    console.error('[Clerky Auth] Available on PDFViewerApplication:', window.PDFViewerApplication ? Object.keys(window.PDFViewerApplication) : 'PDFViewerApplication not found');
+                    console.error('[Clerky Auth] Attempting search anyway - it may fail');
                     clearInterval(findControllerInterval);
+                    // Try the search anyway - maybe the controller is there but named differently
+                    callback();
                 } else if (findControllerPollCount % 5 === 0) {
                     console.log(`[Clerky Auth] Still waiting for find controller... (${findControllerPollCount}/${maxFindControllerPolls})`);
                 }
