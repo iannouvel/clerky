@@ -4161,16 +4161,16 @@ function cleanQuoteForSearch(quote) {
 }
 
 // Helper function to create guideline viewer link
-function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context) {
+function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context, hasVerbatimQuote) {
     if (!guidelineId && !guidelineFilename) {
         return '<em>Guideline reference not available</em>';
     }
 
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
     
-    // Extract search text from context if available
+    // Extract search text from context if available AND hasVerbatimQuote is true
     let searchText = null;
-    if (context) {
+    if (context && hasVerbatimQuote !== false) {
         const decodedContext = unescapeHtml(context);
         searchText = extractQuotedText(decodedContext);
         console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
@@ -4182,9 +4182,14 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         searchText: searchText
     };
     
+    // Add note if hasVerbatimQuote is false (paraphrased content)
+    const paraphraseNote = hasVerbatimQuote === false 
+        ? ' <span style="color: #f59e0b; font-size: 12px; font-weight: normal;">(Guideline recommendation paraphrased)</span>' 
+        : '';
+    
     // Create link with onclick to build authenticated URL and open viewer
     // We'll build the final URL in prepareViewerAuth to include the fresh token
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>`;
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
@@ -4440,7 +4445,7 @@ async function showCurrentSuggestion() {
     }
 
     // Create guideline link with context for quote extraction
-    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context);
+    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote);
 
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
