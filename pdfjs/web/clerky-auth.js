@@ -254,8 +254,13 @@
             // Debug: Check what's available on PDFViewerApplication
             if (window.PDFViewerApplication) {
                 const pdfFindProps = Object.keys(window.PDFViewerApplication).filter(key => key.toLowerCase().includes('find'));
-                console.log('[Clerky Auth] PDFViewerApplication available, properties:', Object.keys(window.PDFViewerApplication));
+                console.log('[Clerky Auth] PDFViewerApplication available, total properties:', Object.keys(window.PDFViewerApplication).length);
                 console.log('[Clerky Auth] Properties with "find" in name:', pdfFindProps);
+                console.log('[Clerky Auth] Find property values:', pdfFindProps.map(key => ({ 
+                    key, 
+                    value: window.PDFViewerApplication[key],
+                    type: typeof window.PDFViewerApplication[key]
+                })));
             }
             
             const findControllerInterval = setInterval(() => {
