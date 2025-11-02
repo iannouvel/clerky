@@ -205,15 +205,27 @@
         };
         
         // Set up the pagesloaded listener
-        document.addEventListener('pagesloaded', triggerSearch, { once: true });
+        document.addEventListener('pagesloaded', function(e) {
+            console.log('[Clerky Auth] pagesloaded event fired!', e);
+            triggerSearch();
+        }, { once: true });
         
-        // Also check if pages are already loaded (in case event already fired)
-        setTimeout(() => {
+        // Also poll to check if pages are loaded (in case event is missed)
+        let pollCount = 0;
+        const maxPolls = 20; // Poll for up to 10 seconds
+        const pollInterval = setInterval(() => {
+            pollCount++;
+            console.log(`[Clerky Auth] Polling attempt ${pollCount}/${maxPolls} - checking if PDF loaded...`);
+            
             if (window.PDFViewerApplication && window.PDFViewerApplication.pdfDocument) {
-                console.log('[Clerky Auth] PDF already loaded, triggering search immediately');
+                console.log('[Clerky Auth] PDF detected as loaded via polling, triggering search');
+                clearInterval(pollInterval);
                 // Remove the event listener since we're triggering manually
                 document.removeEventListener('pagesloaded', triggerSearch);
                 triggerSearch();
+            } else if (pollCount >= maxPolls) {
+                console.error('[Clerky Auth] Gave up waiting for PDF to load after polling');
+                clearInterval(pollInterval);
             }
         }, 500);
     }
