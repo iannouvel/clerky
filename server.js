@@ -1536,7 +1536,7 @@ function formatMessagesForProvider(messages, provider) {
     }
 }
 // Function to send prompts to AI services
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null) {
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
   let preferredProvider = 'DeepSeek'; // Default fallback
   
@@ -1680,7 +1680,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {
         model: model,
         messages: formattedMessages,
-        temperature: 0.7,
+        temperature: temperature,
         max_tokens: 4000
       }, {
         headers: {
@@ -1715,7 +1715,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       const response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
         model: model,
         messages: formattedMessages,
-        temperature: 0.7,
+        temperature: temperature,
         max_tokens: 4000
       }, {
         headers: {
@@ -1751,7 +1751,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         max_tokens: 4000,
-        temperature: 0.7
+        temperature: temperature
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.ANTHROPIC_API_KEY}`,
@@ -1785,7 +1785,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       const response = await axios.post('https://api.mistral.ai/v1/chat/completions', {
         model: model,
         messages: formattedMessages,
-        temperature: 0.7,
+        temperature: temperature,
         max_tokens: 4000
       }, {
         headers: {
@@ -1827,7 +1827,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         {
           contents: geminiMessages,
           generationConfig: {
-            temperature: 0.7,
+            temperature: temperature,
             maxOutputTokens: 4000
           }
         },
@@ -1915,7 +1915,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             response = await axios.post('https://api.deepseek.com/v1/chat/completions', {
               model: nextProvider.model,
               messages: formattedMessages,
-              temperature: 0.7,
+              temperature: temperature,
               max_tokens: 4000
             }, {
               headers: {
@@ -1927,7 +1927,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             response = await axios.post('https://api.openai.com/v1/chat/completions', {
               model: nextProvider.model,
               messages: formattedMessages,
-              temperature: 0.7,
+              temperature: temperature,
               max_tokens: 4000
             }, {
               headers: {
@@ -1939,7 +1939,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             response = await axios.post('https://api.anthropic.com/v1/messages', {
               model: nextProvider.model,
               messages: formattedMessages,
-              max_tokens: 4000
+              max_tokens: 4000,
+              temperature: temperature
             }, {
               headers: {
                 'x-api-key': process.env.ANTHROPIC_API_KEY,
@@ -1951,7 +1952,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             response = await axios.post('https://api.mistral.ai/v1/chat/completions', {
               model: nextProvider.model,
               messages: formattedMessages,
-              temperature: 0.7,
+              temperature: temperature,
               max_tokens: 4000
             }, {
               headers: {
@@ -1969,7 +1970,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${nextProvider.model}:generateContent`, {
               contents: geminiMessages,
               generationConfig: {
-                temperature: 0.7,
+                temperature: temperature,
                 maxOutputTokens: 4000
               }
             }, {
@@ -2119,8 +2120,9 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
     // Handle both string prompts and message objects
     let result;
     if (typeof prompt === 'object' && prompt.messages) {
-      // If prompt is a message object, use it directly
-      result = await sendToAI(prompt.messages, model, null, userId);
+      // If prompt is a message object, use it directly with optional temperature
+      const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
+      result = await sendToAI(prompt.messages, model, null, userId, temperature);
     } else {
       // If prompt is a string, use it as a user message
       result = await sendToAI(prompt, model, null, userId);
@@ -11044,12 +11046,18 @@ For each suggestion you identify, return ONLY a valid JSON object with the follo
       "originalText": "text from transcript that needs changing OR description of missing element",
       "suggestedText": "proposed replacement text",
       "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guideline in quotation marks, and confirmation that this recommendation is appropriate for the specific clinical scenario",
+      "hasVerbatimQuote": true,
       "category": "addition|modification|deletion|formatting",
       "priority": "high|medium|low",
       "guidelineReference": "specific guideline section or rule"
     }
   ]
 }
+
+CRITICAL - hasVerbatimQuote field:
+- Set to true ONLY if the context field contains text EXACTLY copied from the Full Guideline Content in quotation marks
+- Set to false if paraphrasing guideline recommendations or if exact quotes are not available
+- This field enables PDF highlighting, so accuracy is essential
 
 CRITICAL FORMATTING REQUIREMENTS:
 - Return ONLY the JSON object - no markdown code blocks, no explanatory text
@@ -11065,22 +11073,22 @@ Important guidelines for originalText field:
 - For missing elements, be clear that you're identifying an absence, not quoting existing text
 Important guidelines for context field:
 - Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
-- Include relevant information from the guideline, preferably with quoted text when exact quotes are available
-- When exact verbatim quotes are available in the Full Guideline Content, use them with quotation marks
-- If using condensed content or exact text cannot be found, clearly paraphrase key recommendations from the guideline
-- DO NOT force quotes if exact text cannot be found - instead, clearly describe the guideline recommendation
 - Reference specific guideline recommendations or requirements
 - Explain the clinical rationale behind the suggestion
 - State why this recommendation is indicated in this particular clinical scenario
 - Make the context informative and educational
 
-QUOTING GUIDELINES:
-- PREFER including exact quotes from the guideline when available: "The guideline states: '[EXACT QUOTE]'" or just "[EXACT QUOTE]"
-- When exact quotes are not available (e.g., condensed content), clearly paraphrase the guideline recommendation
-- Example with quote: "The guideline states: 'Women should be offered screening for...'"
-- Example without exact quote: "The guideline recommends that women with this condition should be offered screening (paraphrased from guideline recommendations on screening)"
-- Avoid phrases like "The guideline specifically states that..." unless you have an exact quote
-- Focus on clearly communicating the guideline recommendation, whether through quotes or accurate paraphrasing
+CRITICAL QUOTING GUIDELINES:
+- ONLY use quotation marks around text that is EXACTLY copied verbatim from the Full Guideline Content provided
+- Before adding quotation marks, verify the exact text exists in the Full Guideline Content section
+- Set hasVerbatimQuote to true ONLY when you include exact quoted text in the context field
+- Set hasVerbatimQuote to false when paraphrasing or when no exact match can be found
+- PREFER verbatim quotes when available as they enable PDF highlighting for users
+- When paraphrasing, use phrases like "The guideline recommends..." WITHOUT quotation marks
+- Example with verbatim quote (hasVerbatimQuote: true): "The guideline states: 'Women should be offered a first trimester ultrasound scan and screening for aneuploidy before the insertion of a cerclage'"
+- Example with paraphrase (hasVerbatimQuote: false): "The guideline recommends offering screening before cerclage insertion"
+- DO NOT fabricate or approximate quotes - if you cannot find exact text, set hasVerbatimQuote to false and paraphrase clearly
+- If Full Guideline Content is unavailable or condensed, set hasVerbatimQuote to false and paraphrase accurately
 
 Other important guidelines:
 - Only suggest changes that are explicitly supported by the guideline analysis AND clinically appropriate for the specific scenario
@@ -11111,18 +11119,22 @@ Please consider this feedback when determining if suggestions are appropriate fo
 
 Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant information from the guideline. 
 
-QUOTING GUIDANCE:
-- PREFER including exact verbatim quotes from the "Full Guideline Content" section when available
-- When exact quotes are available, copy text EXACTLY as it appears in the guideline and use quotation marks
-- If using condensed content or exact text cannot be found, clearly paraphrase the guideline recommendations
-- Do not force quotes when exact text isn't available - instead, accurately describe the guideline recommendation
-- Example with quote: "The guideline states: 'Women should be offered screening for...'" (where quoted part is exact text)
-- Example without exact quote: "The guideline recommends screening for this condition (based on guideline recommendations)"
+CRITICAL QUOTING REQUIREMENTS:
+- Search the "Full Guideline Content" section for EXACT text matches before adding quotes
+- ONLY use quotation marks if you can copy the text VERBATIM from the Full Guideline Content
+- Set hasVerbatimQuote to true ONLY when using exact quoted text from the guideline
+- Set hasVerbatimQuote to false when paraphrasing or when exact text cannot be found
+- Accuracy is essential - verbatim quotes enable PDF highlighting for the user
+- When in doubt, use hasVerbatimQuote: false and paraphrase clearly
+
+Examples:
+- With verbatim quote (hasVerbatimQuote: true): "The guideline states: 'Women should be offered a first trimester ultrasound scan' - this exact text appears in the Full Guideline Content"
+- With paraphrase (hasVerbatimQuote: false): "The guideline recommends first trimester screening - paraphrased from guideline recommendations"
 
 IMPORTANT: 
-- The context field should contain clear guideline recommendations, whether through exact quotes or accurate paraphrasing
-- Focus on making actionable suggestions that are supported by the guideline, even if the transcript is brief
-- When transcript details are limited, suggest guideline-recommended actions that are generally appropriate for the presenting condition`;
+- Make actionable suggestions that are supported by the guideline and clinically appropriate
+- When transcript details are limited, suggest guideline-recommended actions appropriate for the presenting condition
+- Prioritize accuracy over quantity - better to have fewer suggestions with accurate quotes than many with fabricated ones`;
 
         console.log('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
@@ -11132,13 +11144,13 @@ IMPORTANT:
             guidelineContentSample: guidelineContent.substring(0, 200) + '...'
         });
 
-        // Send to AI
+        // Send to AI with lower temperature for more accurate quote extraction
         const messages = [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ];
 
-        const aiResponse = await routeToAI({ messages }, userId);
+        const aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
         
         console.log('[DEBUG] dynamicAdvice: AI response received', {
             success: !!aiResponse,

@@ -132,9 +132,19 @@
                         if (pollAttempts < maxPollAttempts) {
                             setTimeout(checkSearchResults, 200);
                         } else {
-                            console.warn('[PDF Search] Find controller not available, trying next variant...');
-                            currentVariantIndex++;
-                            tryNextVariant();
+                            console.warn('[PDF Search] Find controller not available, waiting additional time...');
+                            // Try waiting longer for find controller to initialize
+                            setTimeout(() => {
+                                if (window.PDFViewerApplication?.pdfFindController) {
+                                    console.log('[PDF Search] Find controller now available, retrying search');
+                                    pollAttempts = 0; // Reset and try again
+                                    checkSearchResults();
+                                } else {
+                                    console.warn('[PDF Search] Find controller still not available after extended wait, trying next variant...');
+                                    currentVariantIndex++;
+                                    tryNextVariant();
+                                }
+                            }, 1000); // Wait additional 1 second
                         }
                         return;
                     }
@@ -181,11 +191,11 @@
                 };
                 
                 // Trigger the search with current variant
+                // Using new PDF.js API: query must be array (single element for phrase, multiple for words)
                 window.PDFViewerApplication.eventBus.dispatch('find', {
                     source: window,
                     type: '',
-                    query: variant.query,
-                    phraseSearch: variant.phraseSearch,
+                    query: variant.phraseSearch ? [variant.query] : variant.query.split(/\s+/),
                     caseSensitive: false,
                     entireWord: false,
                     highlightAll: true,
