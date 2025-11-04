@@ -4209,6 +4209,82 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
     }
 });
 
+// Function to automatically detect guideline scope from filename and metadata
+function detectGuidelineScope(fileName) {
+    const fileNameLower = fileName.toLowerCase();
+    const fileNameOriginal = fileName;
+    
+    // List of national guideline organizations
+    const nationalOrgs = [
+        'nice', 'rcog', 'bjog', 'rcgp', 'bashh', 'bhiva', 'fsrh', 'bsge',
+        'bapm', 'bsh', 'bms', 'eshre', 'figo', 'bgcs', 'ukhsa',
+        'nhs england', 'sign', 'acog', 'uptodate'
+    ];
+    
+    // Check if filename contains any national organization
+    const isNational = nationalOrgs.some(org => fileNameLower.includes(org));
+    
+    if (isNational) {
+        // National guideline - determine nation
+        let nation = 'England & Wales'; // Default
+        
+        if (fileNameLower.includes('scotland') || fileNameLower.includes('sign')) {
+            nation = 'Scotland';
+        } else if (fileNameLower.includes('northern ireland')) {
+            nation = 'Northern Ireland';
+        }
+        
+        return {
+            scope: 'national',
+            nation: nation,
+            hospitalTrust: null
+        };
+    }
+    
+    // Check for trust-specific indicators
+    // Load trust names from hospital-trusts.json
+    try {
+        const hospitalTrustsPath = path.join(__dirname, 'hospital-trusts.json');
+        const hospitalTrustsData = JSON.parse(fs.readFileSync(hospitalTrustsPath, 'utf8'));
+        const trusts = hospitalTrustsData.regions['England & Wales'].trusts;
+        
+        // Check if filename contains a trust name
+        for (const trust of trusts) {
+            // Create searchable versions
+            const trustLower = trust.toLowerCase();
+            const trustAbbrev = trust.replace(/NHS.*$/, '').trim().toLowerCase();
+            
+            if (fileNameLower.includes(trustLower) || 
+                fileNameLower.includes(trustAbbrev)) {
+                return {
+                    scope: 'local',
+                    nation: null,
+                    hospitalTrust: trust
+                };
+            }
+        }
+        
+        // Check for common trust abbreviations in filename
+        if (fileNameLower.includes('uhs') || fileNameLower.includes('uhsussex')) {
+            return {
+                scope: 'local',
+                nation: null,
+                hospitalTrust: 'University Hospitals Sussex NHS Foundation Trust'
+            };
+        }
+        
+    } catch (error) {
+        console.error('[SCOPE_DETECT] Error loading hospital trusts:', error);
+    }
+    
+    // Default to national if no trust identified
+    return {
+        scope: 'national',
+        nation: 'England & Wales',
+        hospitalTrust: null
+    };
+}
+
 // Endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     // Check if a file was uploaded
@@ -4218,31 +4294,25 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
     }
 
     try {
-        // Extract guideline metadata from request body
-        const { scope, nation, hospitalTrust } = req.body;
         const userId = req.user.uid;
+        const file = req.file;
+        const fileName = file.originalname;
         
-        // Validate scope and required fields
+        // Automatically detect scope from filename
+        const detectedScope = detectGuidelineScope(fileName);
+        console.log(`[SCOPE_DETECT] File: ${fileName}`);
+        console.log(`[SCOPE_DETECT] Detected scope:`, detectedScope);
+        
+        // Allow manual override from request body if provided
+        const scope = req.body.scope || detectedScope.scope;
+        const nation = req.body.nation || detectedScope.nation;
+        const hospitalTrust = req.body.hospitalTrust || detectedScope.hospitalTrust;
+        
+        // Validate scope
         if (scope && scope !== 'national' && scope !== 'local') {
             return res.status(400).json({ 
                 success: false, 
                 message: 'Invalid scope. Must be either "national" or "local"' 
-            });
-        }
-        
-        // If scope is local, hospitalTrust is required
-        if (scope === 'local' && !hospitalTrust) {
-            return res.status(400).json({ 
-                success: false, 
-                message: 'Hospital trust is required for local guidelines' 
-            });
-        }
-        
-        // If scope is national, nation is required
-        if (scope === 'national' && !nation) {
-            return res.status(400).json({ 
-                success: false, 
-                message: 'Nation is required for national guidelines' 
             });
         }
         
