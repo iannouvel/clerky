@@ -95,6 +95,64 @@ Then manually commit the changes afterwards.
 - Standard build: `npm run build`
 - Bundle Libretto: `npm run bundle-libretto`
 
+## Deployment Monitoring Rules
+
+### 1. Checking Render Deployment Logs via MCP
+
+When deployment issues occur or the user asks to check deployment status:
+
+1. **List Services** first to get the service ID:
+   ```
+   mcp_render_list_services
+   ```
+   - Look for the service named "clerky" 
+   - Note its `id` (e.g., `srv-ct27s4a3esus73d590b0`)
+
+2. **Check Recent Deploys** to see deployment status:
+   ```
+   mcp_render_list_deploys with serviceId and limit: 5
+   ```
+   - Check the `status` field: `live`, `update_failed`, `build_failed`, etc.
+   - Note the deploy `id` if you need detailed logs
+
+3. **View Application Logs** to see runtime errors:
+   ```
+   mcp_render_list_logs with:
+   - resource: [serviceId]
+   - limit: 100
+   - type: ["app"]
+   - direction: "backward"
+   - startTime: (recent timestamp, e.g., last hour)
+   ```
+   - Look for `level: "critical"` or `level: "error"` messages
+   - Check for SyntaxError, ReferenceError, or other runtime errors
+   - Look for stack traces to identify exact line numbers
+
+4. **View Build Logs** if deployment failed during build:
+   ```
+   mcp_render_list_logs with:
+   - resource: [serviceId]
+   - limit: 100
+   - type: ["build"]
+   - direction: "backward"
+   ```
+
+### 2. Common Deployment Issues to Check For
+
+- **SyntaxError**: Variable redeclaration, missing brackets, etc.
+- **Module errors**: Missing dependencies, import issues
+- **Environment variables**: Missing required env vars
+- **Build failures**: npm install errors, compilation issues
+
+### 3. After Fixing Deployment Issues
+
+1. Fix the code issue identified in logs
+2. Run `npm run build` to update dist folder
+3. Increment version (patch for bug fixes)
+4. Commit with descriptive message mentioning the fix
+5. Push to trigger new deployment
+6. Monitor logs again to verify successful deployment
+
 ## Best Practices
 
 1. Always inform the user what files will be committed before committing

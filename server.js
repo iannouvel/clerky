@@ -4322,9 +4322,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
             return res.status(400).json({ message: 'Target folder does not exist in the repository' });
         }
 
-        // Extract the uploaded file and its details
-        const file = req.file;
-        const fileName = file.originalname;
+        // Extract file content (file and fileName already declared above)
         const fileContent = file.buffer;
 
         // Calculate file hash for duplicate detection
