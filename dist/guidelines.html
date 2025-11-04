@@ -623,6 +623,9 @@
                 if (!user) {
                     alert('Please sign in first');
                     // Redirect to sign-in page or show sign-in UI
+                } else {
+                    // User is authenticated, load guidelines
+                    loadGuidelines();
                 }
             });
 
@@ -1314,9 +1317,6 @@
                     searchInput.dispatchEvent(new Event('input'));
                 }
             });
-
-            // Load initial guidelines
-            loadGuidelines();
         });
     </script>
 </body>
