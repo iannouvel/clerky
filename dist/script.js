@@ -6190,6 +6190,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handler for Hospital Trust button
+    const hospitalTrustBtn = document.getElementById('hospitalTrustBtn');
+    if (hospitalTrustBtn) {
+        hospitalTrustBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Hospital Trust button clicked');
+            await showHospitalTrustModal();
+        });
+    }
+
     // Add click handler for "New Chat" button
     const newChatBtn = document.getElementById('newChatBtn');
     if (newChatBtn) {
@@ -6638,6 +6647,235 @@ window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
 window.switchChat = switchChat;
 window.deleteChat = deleteChat;
 window.startNewChat = startNewChat;
+
+// Hospital Trust Management Functions
+async function showHospitalTrustModal() {
+    console.log('[DEBUG] Showing hospital trust modal');
+    
+    const modal = document.getElementById('hospitalTrustModal');
+    const trustSelect = document.getElementById('trustSelect');
+    const currentTrustDisplay = document.getElementById('currentTrustDisplay');
+    const saveTrustBtn = document.getElementById('saveTrustBtn');
+    const clearTrustBtn = document.getElementById('clearTrustBtn');
+    const trustSearchInput = document.getElementById('trustSearchInput');
+    
+    if (!modal) {
+        console.error('[ERROR] Hospital trust modal not found');
+        return;
+    }
+    
+    // Show modal
+    modal.classList.remove('hidden');
+    
+    // Load current trust selection
+    try {
+        const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+            }
+        });
+        
+        const result = await response.json();
+        if (result.success && result.hospitalTrust) {
+            currentTrustDisplay.textContent = result.hospitalTrust;
+            if (trustSelect) {
+                trustSelect.value = result.hospitalTrust;
+            }
+        } else {
+            currentTrustDisplay.textContent = 'None selected';
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load current hospital trust:', error);
+        currentTrustDisplay.textContent = 'Error loading selection';
+    }
+    
+    // Load trusts list
+    await loadHospitalTrustsList();
+    
+    // Add event listeners
+    if (saveTrustBtn) {
+        saveTrustBtn.onclick = async () => {
+            await saveHospitalTrustSelection();
+        };
+    }
+    
+    if (clearTrustBtn) {
+        clearTrustBtn.onclick = async () => {
+            await clearHospitalTrustSelection();
+        };
+    }
+    
+    if (trustSearchInput) {
+        trustSearchInput.oninput = () => {
+            filterTrustsList(trustSearchInput.value);
+        };
+    }
+    
+    // Close modal when clicking outside
+    modal.onclick = (event) => {
+        if (event.target === modal) {
+            modal.classList.add('hidden');
+        }
+    };
+}
+
+async function loadHospitalTrustsList() {
+    console.log('[DEBUG] Loading hospital trusts list');
+    
+    const trustSelect = document.getElementById('trustSelect');
+    if (!trustSelect) {
+        console.error('[ERROR] Trust select element not found');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${window.SERVER_URL}/getHospitalTrustsList`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+            }
+        });
+        
+        const result = await response.json();
+        if (result.success && result.trusts) {
+            trustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
+            result.trusts.forEach(trust => {
+                const option = document.createElement('option');
+                option.value = trust;
+                option.textContent = trust;
+                trustSelect.appendChild(option);
+            });
+            
+            // Store full list for filtering
+            window.hospitalTrustsList = result.trusts;
+            
+            console.log('[DEBUG] Loaded', result.trusts.length, 'hospital trusts');
+        } else {
+            throw new Error('Failed to load trusts list');
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load hospital trusts list:', error);
+        trustSelect.innerHTML = '<option value="">Error loading trusts</option>';
+    }
+}
+
+function filterTrustsList(searchTerm) {
+    const trustSelect = document.getElementById('trustSelect');
+    const trusts = window.hospitalTrustsList || [];
+    
+    if (!trustSelect) return;
+    
+    const currentValue = trustSelect.value;
+    const lowerSearchTerm = searchTerm.toLowerCase();
+    
+    // Filter trusts based on search term
+    const filteredTrusts = trusts.filter(trust => 
+        trust.toLowerCase().includes(lowerSearchTerm)
+    );
+    
+    // Rebuild select options
+    trustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
+    filteredTrusts.forEach(trust => {
+        const option = document.createElement('option');
+        option.value = trust;
+        option.textContent = trust;
+        trustSelect.appendChild(option);
+    });
+    
+    // Restore selection if it's in filtered list
+    if (filteredTrusts.includes(currentValue)) {
+        trustSelect.value = currentValue;
+    }
+}
+
+async function saveHospitalTrustSelection() {
+    console.log('[DEBUG] Saving hospital trust selection');
+    
+    const trustSelect = document.getElementById('trustSelect');
+    const currentTrustDisplay = document.getElementById('currentTrustDisplay');
+    
+    if (!trustSelect || !trustSelect.value) {
+        alert('Please select a hospital trust');
+        return;
+    }
+    
+    const selectedTrust = trustSelect.value;
+    
+    try {
+        const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ hospitalTrust: selectedTrust })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            currentTrustDisplay.textContent = selectedTrust;
+            alert(`Hospital trust updated to: ${selectedTrust}\n\nGuidelines will now be filtered and prioritised for your trust.`);
+            
+            // Reload guidelines to reflect the new trust selection
+            if (window.loadGuidelinesFromFirestore) {
+                await window.loadGuidelinesFromFirestore();
+            }
+            
+            // Close modal
+            document.getElementById('hospitalTrustModal').classList.add('hidden');
+        } else {
+            throw new Error(result.error || 'Failed to update hospital trust');
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to save hospital trust:', error);
+        alert('Failed to save hospital trust selection. Please try again.');
+    }
+}
+
+async function clearHospitalTrustSelection() {
+    console.log('[DEBUG] Clearing hospital trust selection');
+    
+    const currentTrustDisplay = document.getElementById('currentTrustDisplay');
+    const trustSelect = document.getElementById('trustSelect');
+    
+    if (!confirm('Are you sure you want to clear your hospital trust selection?')) {
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ hospitalTrust: null })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            currentTrustDisplay.textContent = 'None selected';
+            if (trustSelect) {
+                trustSelect.value = '';
+            }
+            alert('Hospital trust selection cleared.\n\nYou will now see all national guidelines.');
+            
+            // Reload guidelines
+            if (window.loadGuidelinesFromFirestore) {
+                await window.loadGuidelinesFromFirestore();
+            }
+            
+            // Close modal
+            document.getElementById('hospitalTrustModal').classList.add('hidden');
+        } else {
+            throw new Error(result.error || 'Failed to clear hospital trust');
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to clear hospital trust:', error);
+        alert('Failed to clear hospital trust selection. Please try again.');
+    }
+}
 
 // Show clinical issues dropdown in summary1
 async function showClinicalIssuesDropdown() {

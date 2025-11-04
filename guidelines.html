@@ -74,10 +74,9 @@
         }
 
         .upload-form {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 12px;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .file-input-wrapper {
@@ -105,6 +104,63 @@
 
         .file-input::file-selector-button:hover {
             background: #0056b3;
+        }
+
+        .scope-selection-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .scope-label {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        
+        .scope-radio-group {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .radio-label input[type="radio"] {
+            cursor: pointer;
+        }
+        
+        .nation-selection-wrapper,
+        .trust-selection-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .field-label {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        
+        .form-select {
+            padding: 10px;
+            border: 2px solid var(--accent-color);
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
 
         .upload-btn {
@@ -233,11 +289,44 @@
             box-shadow: var(--shadow);
         }
 
-        .guideline-title {
+        .guideline-title-container {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .guideline-title {
             font-weight: 500;
             margin: 0;
             color: var(--text-color);
+        }
+
+        .guideline-badges {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .guideline-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .badge-local {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #90caf9;
+        }
+
+        .badge-national {
+            background-color: #f3e5f5;
+            color: #6a1b9a;
+            border: 1px solid #ce93d8;
         }
 
         .guideline-actions {
@@ -350,6 +439,40 @@
                         <input type="file" id="guidelineFile" class="file-input" accept=".pdf,.txt" multiple>
                         <div id="fileList" class="file-list" style="display: none;"></div>
                     </div>
+                    
+                    <!-- Guideline Scope Selection -->
+                    <div class="scope-selection-wrapper">
+                        <label class="scope-label">Guideline Scope:</label>
+                        <div class="scope-radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="scope" value="national" id="scopeNational" checked>
+                                <span>National</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="scope" value="local" id="scopeLocal">
+                                <span>Local Trust</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Nation Selection (shown for national guidelines) -->
+                    <div id="nationSelection" class="nation-selection-wrapper">
+                        <label for="nationSelect" class="field-label">Nation:</label>
+                        <select id="nationSelect" class="form-select">
+                            <option value="England & Wales">England & Wales</option>
+                            <option value="Scotland">Scotland</option>
+                            <option value="Northern Ireland">Northern Ireland</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Hospital Trust Selection (shown for local guidelines) -->
+                    <div id="trustSelection" class="trust-selection-wrapper" style="display: none;">
+                        <label for="hospitalTrustSelect" class="field-label">Hospital Trust:</label>
+                        <select id="hospitalTrustSelect" class="form-select">
+                            <option value="">-- Select a trust --</option>
+                        </select>
+                    </div>
+                    
                     <button type="submit" class="upload-btn">
                         <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                         <span id="uploadText">Upload to GitHub</span>
@@ -453,7 +576,7 @@
                 }
             }
 
-            // Display guidelines function
+            // Display guidelines function with badges
             function displayGuidelines(guidelines) {
                 const guidelinesList = document.getElementById('guidelinesList');
                 guidelinesList.innerHTML = '';
@@ -462,9 +585,43 @@
                     const row = document.createElement('div');
                     row.className = 'guideline-row';
                     
+                    const titleContainer = document.createElement('div');
+                    titleContainer.className = 'guideline-title-container';
+                    
                     const title = document.createElement('div');
                     title.className = 'guideline-title';
-                    title.textContent = guideline.replace(/\.(txt|pdf)$/i, '');
+                    
+                    // Get guideline name (handle both string and object format)
+                    const guidelineName = typeof guideline === 'string' ? 
+                        guideline.replace(/\.(txt|pdf)$/i, '') : 
+                        (guideline.title || guideline.name || '');
+                    
+                    title.textContent = guidelineName;
+                    
+                    // Add badges for scope and location if guideline is an object with metadata
+                    if (typeof guideline === 'object' && guideline.scope) {
+                        const badgeContainer = document.createElement('div');
+                        badgeContainer.className = 'guideline-badges';
+                        
+                        if (guideline.scope === 'local') {
+                            const localBadge = document.createElement('span');
+                            localBadge.className = 'guideline-badge badge-local';
+                            localBadge.textContent = `🏥 ${guideline.hospitalTrust || 'Local Trust'}`;
+                            localBadge.title = 'Local trust guideline';
+                            badgeContainer.appendChild(localBadge);
+                        } else if (guideline.scope === 'national') {
+                            const nationalBadge = document.createElement('span');
+                            nationalBadge.className = 'guideline-badge badge-national';
+                            nationalBadge.textContent = `🌍 ${guideline.nation || 'National'}`;
+                            nationalBadge.title = 'National guideline';
+                            badgeContainer.appendChild(nationalBadge);
+                        }
+                        
+                        titleContainer.appendChild(title);
+                        titleContainer.appendChild(badgeContainer);
+                    } else {
+                        titleContainer.appendChild(title);
+                    }
                     
                     const actions = document.createElement('div');
                     actions.className = 'guideline-actions';
@@ -473,7 +630,8 @@
                     viewBtn.className = 'action-btn';
                     viewBtn.textContent = 'View PDF';
                     viewBtn.onclick = () => {
-                        const pdfUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${guideline.replace(/\.txt$/i, '.pdf')}`;
+                        const filename = typeof guideline === 'string' ? guideline : (guideline.filename || guideline.originalFilename || '');
+                        const pdfUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${filename.replace(/\.txt$/i, '.pdf')}`;
                         window.open(pdfUrl, '_blank');
                     };
                     
@@ -482,13 +640,14 @@
                     deleteBtn.innerHTML = '🗑️';
                     deleteBtn.title = 'Delete guideline';
                     deleteBtn.onclick = async () => {
-                        await deleteGuideline(guideline, deleteBtn);
+                        const filename = typeof guideline === 'string' ? guideline : (guideline.filename || guideline.originalFilename || '');
+                        await deleteGuideline(filename, deleteBtn);
                     };
                     
                     actions.appendChild(viewBtn);
                     actions.appendChild(deleteBtn);
                     
-                    row.appendChild(title);
+                    row.appendChild(titleContainer);
                     row.appendChild(actions);
                     guidelinesList.appendChild(row);
                 });
@@ -812,6 +971,165 @@
                 // Automatically check for duplicates after adding files
                 if (validFiles.length > 0) {
                     setTimeout(() => checkAndUpdateDuplicates(), 100);
+                }
+            });
+
+            // Handle scope selection toggle
+            const scopeNational = document.getElementById('scopeNational');
+            const scopeLocal = document.getElementById('scopeLocal');
+            const nationSelection = document.getElementById('nationSelection');
+            const trustSelection = document.getElementById('trustSelection');
+            const hospitalTrustSelect = document.getElementById('hospitalTrustSelect');
+            
+            // Toggle nation/trust selection based on scope
+            function updateScopeFields() {
+                if (scopeNational.checked) {
+                    nationSelection.style.display = 'flex';
+                    trustSelection.style.display = 'none';
+                } else {
+                    nationSelection.style.display = 'none';
+                    trustSelection.style.display = 'flex';
+                }
+            }
+            
+            scopeNational.addEventListener('change', updateScopeFields);
+            scopeLocal.addEventListener('change', updateScopeFields);
+            
+            // Load hospital trusts list
+            async function loadHospitalTrustsList() {
+                try {
+                    const user = auth.currentUser;
+                    if (!user) return;
+                    
+                    const token = await user.getIdToken();
+                    const response = await fetch('https://clerky-uzni.onrender.com/getHospitalTrustsList', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    if (result.success && result.trusts) {
+                        hospitalTrustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
+                        result.trusts.forEach(trust => {
+                            const option = document.createElement('option');
+                            option.value = trust;
+                            option.textContent = trust;
+                            hospitalTrustSelect.appendChild(option);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error loading hospital trusts list:', error);
+                }
+            }
+            
+            // Load trusts when user is authenticated
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    loadHospitalTrustsList();
+                }
+            });
+            
+            // Handle form submission
+            const uploadForm = document.getElementById('uploadForm');
+            const uploadSpinner = document.getElementById('uploadSpinner');
+            const uploadText = document.getElementById('uploadText');
+            
+            uploadForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                if (selectedFiles.length === 0) {
+                    alert('Please select at least one file to upload.');
+                    return;
+                }
+                
+                // Filter out duplicate files
+                const filesToUpload = selectedFiles.filter(file => file.status !== 'duplicate');
+                
+                if (filesToUpload.length === 0) {
+                    alert('All selected files are duplicates. No files to upload.');
+                    return;
+                }
+                
+                // Get scope, nation, and trust values
+                const scope = scopeNational.checked ? 'national' : 'local';
+                const nation = scopeNational.checked ? document.getElementById('nationSelect').value : null;
+                const hospitalTrust = scopeLocal.checked ? hospitalTrustSelect.value : null;
+                
+                // Validate based on scope
+                if (scope === 'local' && !hospitalTrust) {
+                    alert('Please select a hospital trust for local guidelines.');
+                    return;
+                }
+                
+                // Show uploading state
+                uploadSpinner.style.display = 'inline-block';
+                uploadText.textContent = 'Uploading...';
+                
+                try {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+                    
+                    let successCount = 0;
+                    let failCount = 0;
+                    
+                    for (const file of filesToUpload) {
+                        try {
+                            const formData = new FormData();
+                            formData.append('file', file);
+                            formData.append('scope', scope);
+                            if (nation) formData.append('nation', nation);
+                            if (hospitalTrust) formData.append('hospitalTrust', hospitalTrust);
+                            
+                            const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
+                                method: 'POST',
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                },
+                                body: formData
+                            });
+                            
+                            const result = await response.json();
+                            
+                            if (response.ok && result.success) {
+                                successCount++;
+                            } else {
+                                failCount++;
+                                console.error(`Failed to upload ${file.name}:`, result.message);
+                            }
+                        } catch (error) {
+                            failCount++;
+                            console.error(`Error uploading ${file.name}:`, error);
+                        }
+                    }
+                    
+                    // Show results
+                    let message = `Upload complete!\n\n`;
+                    if (successCount > 0) message += `✓ ${successCount} file(s) uploaded successfully\n`;
+                    if (failCount > 0) message += `✗ ${failCount} file(s) failed to upload`;
+                    alert(message);
+                    
+                    // Reset form if all files were uploaded successfully
+                    if (failCount === 0) {
+                        selectedFiles = [];
+                        window.selectedFiles = selectedFiles;
+                        fileInput.value = '';
+                        updateFileList();
+                        
+                        // Reload guidelines
+                        loadGuidelines();
+                    }
+                    
+                } catch (error) {
+                    console.error('Error uploading files:', error);
+                    alert('Error uploading files: ' + error.message);
+                } finally {
+                    uploadSpinner.style.display = 'none';
+                    uploadText.textContent = 'Upload to GitHub';
                 }
             });
 

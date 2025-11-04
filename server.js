@@ -1504,6 +1504,140 @@ async function updateUserAIPreference(userId, provider) {
     }
 }
 
+// Hospital Trust preference cache
+const userHospitalTrustCache = new Map();
+
+// Get user's hospital trust preference
+async function getUserHospitalTrust(userId) {
+    // Check if we have a cached preference for this user
+    if (userHospitalTrustCache.has(userId)) {
+        const cachedData = userHospitalTrustCache.get(userId);
+        // Check if the cached data is still valid
+        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
+            console.log(`Using cached hospital trust for user ${userId}: ${cachedData.hospitalTrust}`);
+            return cachedData.hospitalTrust;
+        } else {
+            // Cached data is expired, remove it
+            userHospitalTrustCache.delete(userId);
+        }
+    }
+
+    console.log(`Attempting to get hospital trust preference for user: ${userId}`);
+    
+    try {
+        // Try Firestore first if available
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    console.log('User preference document exists in Firestore:', data);
+                    
+                    if (data && data.hospitalTrust) {
+                        // Cache the preference
+                        userHospitalTrustCache.set(userId, {
+                            hospitalTrust: data.hospitalTrust,
+                            timestamp: Date.now()
+                        });
+                        return data.hospitalTrust;
+                    }
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserHospitalTrust, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+        
+        try {
+            if (fs.existsSync(userPrefsFilePath)) {
+                const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+                console.log('User preference file exists:', userData);
+                if (userData && userData.hospitalTrust) {
+                    // Cache the preference
+                    userHospitalTrustCache.set(userId, {
+                        hospitalTrust: userData.hospitalTrust,
+                        timestamp: Date.now()
+                    });
+                    return userData.hospitalTrust;
+                }
+            }
+        } catch (error) {
+            console.error('Error reading user preference file:', error);
+        }
+        
+        // No hospital trust set
+        return null;
+    } catch (error) {
+        console.error('Critical error in getUserHospitalTrust:', error);
+        return null;
+    }
+}
+
+// Update user's hospital trust preference
+async function updateUserHospitalTrust(userId, hospitalTrust) {
+    console.log(`Updating hospital trust preference for user ${userId} to ${hospitalTrust}`);
+    
+    // Update cache immediately
+    userHospitalTrustCache.set(userId, {
+        hospitalTrust: hospitalTrust,
+        timestamp: Date.now()
+    });
+    
+    try {
+        // Try to update in Firestore if available
+        if (db) {
+            try {
+                // Get existing preferences to merge with them
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+                
+                await db.collection('userPreferences').doc(userId).set({
+                    ...existingData,
+                    hospitalTrust: hospitalTrust,
+                    region: 'England & Wales',
+                    updatedAt: new Date().toISOString()
+                });
+                console.log(`Successfully updated hospital trust preference in Firestore for user: ${userId}`);
+                return true;
+            } catch (firestoreError) {
+                console.error('Firestore error in updateUserHospitalTrust, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        try {
+            // Save to local JSON file
+            const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+            
+            let existingData = {};
+            if (fs.existsSync(userPrefsFilePath)) {
+                existingData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+            }
+            
+            fs.writeFileSync(userPrefsFilePath, JSON.stringify({
+                ...existingData,
+                hospitalTrust: hospitalTrust,
+                region: 'England & Wales',
+                updatedAt: new Date().toISOString()
+            }));
+            
+            console.log(`Successfully updated hospital trust preference in local file for user: ${userId}`);
+            return true;
+        } catch (fileError) {
+            console.error('Failed to update user preference file:', fileError);
+            return false;
+        }
+    } catch (error) {
+        console.error('Error in updateUserHospitalTrust:', error);
+        return false;
+    }
+}
+
 // Function to format messages based on provider
 function formatMessagesForProvider(messages, provider) {
     switch (provider) {
@@ -4084,6 +4218,34 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
     }
 
     try {
+        // Extract guideline metadata from request body
+        const { scope, nation, hospitalTrust } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate scope and required fields
+        if (scope && scope !== 'national' && scope !== 'local') {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Invalid scope. Must be either "national" or "local"' 
+            });
+        }
+        
+        // If scope is local, hospitalTrust is required
+        if (scope === 'local' && !hospitalTrust) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Hospital trust is required for local guidelines' 
+            });
+        }
+        
+        // If scope is national, nation is required
+        if (scope === 'national' && !nation) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Nation is required for national guidelines' 
+            });
+        }
+        
         // Check if the target folder exists in the GitHub repository
         const folderExists = await checkFolderExists(githubFolder);
         if (!folderExists) {
@@ -4146,6 +4308,10 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                         fileHash: fileHash,
                         downloadUrl: `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(fileName)}`,
                         uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+                        uploadedBy: userId,
+                        scope: scope || 'national', // Default to national for backwards compatibility
+                        nation: scope === 'national' ? (nation || 'England & Wales') : null,
+                        hospitalTrust: scope === 'local' ? hospitalTrust : null,
                         processed: false, // Mark as not fully processed yet
                         content: null, // Will be filled by sync process
                         summary: null,
@@ -4155,7 +4321,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                     };
                     
                     await db.collection('guidelines').doc(cleanId).set(basicGuidelineDoc);
-                    console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId}`);
+                    console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId} (scope: ${basicGuidelineDoc.scope})`);
                 } catch (firestoreError) {
                     console.error('[UPLOAD] Error storing basic record in Firestore:', firestoreError);
                     // Don't fail the upload if Firestore storage fails
@@ -9980,11 +10146,11 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         }
 
         // console.log('[DEBUG] Calling getAllGuidelines function');
-        const guidelines = await getAllGuidelines();
-        // console.log('[DEBUG] getAllGuidelines returned:', guidelines.length, 'guidelines');
+        const allGuidelines = await getAllGuidelines();
+        // console.log('[DEBUG] getAllGuidelines returned:', allGuidelines.length, 'guidelines');
         
         // Check if we got empty results due to authentication issues
-        if (guidelines.length === 0) {
+        if (allGuidelines.length === 0) {
             return res.json({ 
                 success: true, 
                 guidelines: [],
@@ -9993,7 +10159,44 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
             });
         }
         
-        res.json({ success: true, guidelines });
+        // Get user's hospital trust preference
+        const userId = req.user.uid;
+        const userHospitalTrust = await getUserHospitalTrust(userId);
+        
+        // Filter and prioritise guidelines based on user's trust
+        // Priority: Local trust guidelines first, then national (England & Wales)
+        const localGuidelines = [];
+        const nationalGuidelines = [];
+        const otherGuidelines = [];
+        
+        for (const guideline of allGuidelines) {
+            // Default scope is 'national' if not specified (for backwards compatibility)
+            const scope = guideline.scope || 'national';
+            
+            if (scope === 'local' && userHospitalTrust && guideline.hospitalTrust === userHospitalTrust) {
+                localGuidelines.push(guideline);
+            } else if (scope === 'national' || !guideline.scope) {
+                // Include all national guidelines (or guidelines without scope field for backwards compatibility)
+                nationalGuidelines.push(guideline);
+            } else {
+                // Other local guidelines not for this trust
+                otherGuidelines.push(guideline);
+            }
+        }
+        
+        // Combine in priority order: local first, then national, then others
+        const sortedGuidelines = [...localGuidelines, ...nationalGuidelines, ...otherGuidelines];
+        
+        res.json({ 
+            success: true, 
+            guidelines: sortedGuidelines,
+            userHospitalTrust: userHospitalTrust,
+            counts: {
+                local: localGuidelines.length,
+                national: nationalGuidelines.length,
+                other: otherGuidelines.length
+            }
+        });
     } catch (error) {
         console.error('[ERROR] Failed to get all guidelines:', {
             message: error.message,
@@ -10025,6 +10228,82 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         });
     }
 });
+
+// Endpoint to get user's hospital trust preference
+app.get('/getUserHospitalTrust', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const hospitalTrust = await getUserHospitalTrust(userId);
+        
+        res.json({ 
+            success: true, 
+            hospitalTrust: hospitalTrust 
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get user hospital trust:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to update user's hospital trust preference
+app.post('/updateUserHospitalTrust', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { hospitalTrust } = req.body;
+        
+        if (!hospitalTrust) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Hospital trust is required' 
+            });
+        }
+        
+        const success = await updateUserHospitalTrust(userId, hospitalTrust);
+        
+        if (success) {
+            res.json({ 
+                success: true, 
+                message: 'Hospital trust preference updated successfully' 
+            });
+        } else {
+            res.status(500).json({ 
+                success: false, 
+                error: 'Failed to update hospital trust preference' 
+            });
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to update user hospital trust:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to get list of available hospital trusts
+app.get('/getHospitalTrustsList', authenticateUser, async (req, res) => {
+    try {
+        // Read hospital trusts from JSON file
+        const hospitalTrustsPath = path.join(__dirname, 'hospital-trusts.json');
+        const hospitalTrustsData = JSON.parse(fs.readFileSync(hospitalTrustsPath, 'utf8'));
+        
+        res.json({ 
+            success: true, 
+            trusts: hospitalTrustsData.regions['England & Wales'].trusts,
+            allRegions: hospitalTrustsData.regions
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get hospital trusts list:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
 // Add endpoint to delete all summaries from Firestore
 app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
     try {

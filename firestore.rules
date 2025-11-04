@@ -21,7 +21,11 @@ service cloud.firestore {
     // which uses admin SDK and bypasses these rules
     match /guidelines/{id} {
       allow read: if isAuthenticated();
-      allow write: if isAuthenticated() && isOwner(resource.data.userId);
+      // Allow any authenticated user to create/update guidelines
+      // The uploadedBy field tracks who uploaded each guideline
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated();
+      allow delete: if isAuthenticated() && (isAdmin() || request.auth.uid == resource.data.uploadedBy);
     }
     
     // Summaries collection
@@ -80,6 +84,12 @@ service cloud.firestore {
       }
     }
 
+    // User preferences collection
+    match /userPreferences/{userId} {
+      allow read: if isAuthenticated() && isOwner(userId);
+      allow write: if isAuthenticated() && isOwner(userId);
+    }
+    
     // Existing rules
     match /disclaimerAcceptance/{userId} {
       allow read, write: if isAuthenticated() && isOwner(userId);
