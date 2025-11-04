@@ -1322,6 +1322,13 @@
                     const nation = document.getElementById('nationSelect').value;
                     const hospitalTrust = document.getElementById('trustSelect').value;
                     
+                    // Debug: Log what we're sending
+                    console.log('[UPLOAD] Sending values:', {
+                        selectedScope,
+                        nation,
+                        hospitalTrust
+                    });
+                    
                     for (const file of filesToUpload) {
                         try {
                             const formData = new FormData();
