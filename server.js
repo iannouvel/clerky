@@ -6130,7 +6130,14 @@ async function enhanceGuidelineMetadataCore(guidelineId, specificFields, userId)
       } else if (field === 'nation' || field === 'hospitalTrust') {
         // These are conditional on scope, check if they need to be set
         const scope = currentData.scope;
-        if (field === 'nation' && scope === 'national' && (!value || value === 'N/A' || value === 'Not available' || value === '')) {
+        
+        // If scope doesn't exist yet, we'll need to process these conditionally after scope is determined
+        if (!scope) {
+          // Add to missingFields so they're considered for processing after scope detection
+          if (!value || value === 'N/A' || value === 'Not available' || value === '') {
+            missingFields.push(field);
+          }
+        } else if (field === 'nation' && scope === 'national' && (!value || value === 'N/A' || value === 'Not available' || value === '')) {
           missingFields.push(field);
         } else if (field === 'hospitalTrust' && scope === 'local' && (!value || value === 'N/A' || value === 'Not available' || value === '')) {
           missingFields.push(field);
