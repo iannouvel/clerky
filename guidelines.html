@@ -529,52 +529,6 @@
                         <div id="fileList" class="file-list" style="display: none;"></div>
                     </div>
                     
-                    <!-- Auto-detected Scope Display with Override -->
-                    <div class="auto-scope-wrapper" id="autoScopeDisplay" style="display: none;">
-                        <label class="scope-label">Guideline Scope:</label>
-                        <div class="auto-scope-info">
-                            <span class="scope-badge" id="detectedScopeBadge"></span>
-                            <span class="scope-details" id="detectedScopeDetails"></span>
-                            <button type="button" class="override-scope-btn" id="overrideScopeBtn">Change</button>
-                        </div>
-                        <p class="scope-help-text">📝 Auto-detected from filename. Click 'Change' if incorrect.</p>
-                    </div>
-                    
-                    <!-- Manual Scope Selection (hidden by default, shown when overriding) -->
-                    <div class="manual-scope-wrapper" id="manualScopeSelection" style="display: none;">
-                        <label class="scope-label">Select Scope:</label>
-                        <div class="scope-radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="manualScope" value="national" id="manualScopeNational">
-                                <span>🌍 National</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="manualScope" value="local" id="manualScopeLocal">
-                                <span>🏥 Local Trust</span>
-                            </label>
-                        </div>
-                        
-                        <!-- Nation Selection (for national) -->
-                        <div id="manualNationSelection" class="nation-selection-wrapper" style="display: none; margin-top: 10px;">
-                            <label for="manualNationSelect" class="field-label">Nation:</label>
-                            <select id="manualNationSelect" class="form-select">
-                                <option value="England & Wales">England & Wales</option>
-                                <option value="Scotland">Scotland</option>
-                                <option value="Northern Ireland">Northern Ireland</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Hospital Trust Selection (for local) -->
-                        <div id="manualTrustSelection" class="trust-selection-wrapper" style="display: none; margin-top: 10px;">
-                            <label for="manualHospitalTrustSelect" class="field-label">Hospital Trust:</label>
-                            <select id="manualHospitalTrustSelect" class="form-select">
-                                <option value="">-- Select a trust --</option>
-                            </select>
-                        </div>
-                        
-                        <button type="button" class="confirm-scope-btn" id="confirmScopeBtn">Confirm Selection</button>
-                    </div>
-                    
                     <button type="submit" class="upload-btn">
                         <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                         <span id="uploadText">Upload to GitHub</span>
@@ -1034,191 +988,13 @@
                 selectedFiles.splice(index, 1);
                 window.selectedFiles = selectedFiles; // Update global reference
                 
-                // Reset manual override if no files left
-                if (selectedFiles.length === 0) {
-                    manualScopeOverride = null;
-                    document.getElementById('manualScopeSelection').style.display = 'none';
-                }
-                
                 updateFileList();
-                updateAutoScopeDisplay(selectedFiles);
                 
                 // Create new FileList for the input
                 const dt = new DataTransfer();
                 selectedFiles.forEach(file => dt.items.add(file));
                 fileInput.files = dt.files;
             };
-
-            // Function to auto-detect scope from filename
-            function detectScopeFromFilename(fileName) {
-                const fileNameLower = fileName.toLowerCase();
-                
-                // National organizations
-                const nationalOrgs = [
-                    'nice', 'rcog', 'bjog', 'rcgp', 'bashh', 'bhiva', 'fsrh', 'bsge',
-                    'bapm', 'bsh', 'bms', 'eshre', 'figo', 'bgcs', 'ukhsa',
-                    'nhs england', 'sign', 'acog', 'uptodate'
-                ];
-                
-                // Check for national organizations
-                const isNational = nationalOrgs.some(org => fileNameLower.includes(org));
-                
-                if (isNational) {
-                    let nation = 'England & Wales';
-                    if (fileNameLower.includes('scotland') || fileNameLower.includes('sign')) {
-                        nation = 'Scotland';
-                    } else if (fileNameLower.includes('northern ireland')) {
-                        nation = 'Northern Ireland';
-                    }
-                    return {
-                        scope: 'national',
-                        details: nation
-                    };
-                }
-                
-                // Check for trust abbreviations (common patterns)
-                if (fileNameLower.includes('uhs') || fileNameLower.includes('uhsussex')) {
-                    return {
-                        scope: 'local',
-                        details: 'University Hospitals Sussex NHS Trust'
-                    };
-                }
-                
-                // Check for other trust patterns
-                const trustPatterns = ['trust', 'hospital', 'health board'];
-                const hasTrustPattern = trustPatterns.some(pattern => fileNameLower.includes(pattern));
-                
-                if (hasTrustPattern) {
-                    return {
-                        scope: 'local',
-                        details: 'Trust-specific guideline detected'
-                    };
-                }
-                
-                // Default to national
-                return {
-                    scope: 'national',
-                    details: 'England & Wales'
-                };
-            }
-            
-            // Store manual override
-            let manualScopeOverride = null;
-            
-            // Function to update auto-detected scope display
-            function updateAutoScopeDisplay(files) {
-                const autoScopeDisplay = document.getElementById('autoScopeDisplay');
-                const detectedScopeBadge = document.getElementById('detectedScopeBadge');
-                const detectedScopeDetails = document.getElementById('detectedScopeDetails');
-                
-                if (!files || files.length === 0) {
-                    autoScopeDisplay.style.display = 'none';
-                    manualScopeOverride = null;
-                    return;
-                }
-                
-                // Use manual override if set, otherwise detect from filename
-                let scopeInfo;
-                if (manualScopeOverride) {
-                    scopeInfo = manualScopeOverride;
-                } else {
-                    // Detect scope from first file
-                    const firstFile = files[0];
-                    scopeInfo = detectScopeFromFilename(firstFile.name);
-                }
-                
-                // Show scope
-                autoScopeDisplay.style.display = 'flex';
-                detectedScopeBadge.textContent = scopeInfo.scope === 'national' ? '🌍 National' : '🏥 Local Trust';
-                detectedScopeBadge.className = `scope-badge ${scopeInfo.scope}`;
-                detectedScopeDetails.textContent = scopeInfo.details;
-            }
-            
-            // Handle scope override
-            const overrideScopeBtn = document.getElementById('overrideScopeBtn');
-            const manualScopeSelection = document.getElementById('manualScopeSelection');
-            const autoScopeDisplay = document.getElementById('autoScopeDisplay');
-            const manualScopeNational = document.getElementById('manualScopeNational');
-            const manualScopeLocal = document.getElementById('manualScopeLocal');
-            const manualNationSelection = document.getElementById('manualNationSelection');
-            const manualTrustSelection = document.getElementById('manualTrustSelection');
-            const confirmScopeBtn = document.getElementById('confirmScopeBtn');
-            const manualHospitalTrustSelect = document.getElementById('manualHospitalTrustSelect');
-            
-            overrideScopeBtn.addEventListener('click', () => {
-                autoScopeDisplay.style.display = 'none';
-                manualScopeSelection.style.display = 'flex';
-                loadManualHospitalTrustsList();
-            });
-            
-            // Toggle manual scope fields
-            manualScopeNational.addEventListener('change', () => {
-                if (manualScopeNational.checked) {
-                    manualNationSelection.style.display = 'flex';
-                    manualTrustSelection.style.display = 'none';
-                }
-            });
-            
-            manualScopeLocal.addEventListener('change', () => {
-                if (manualScopeLocal.checked) {
-                    manualNationSelection.style.display = 'none';
-                    manualTrustSelection.style.display = 'flex';
-                }
-            });
-            
-            // Load hospital trusts for manual selection
-            async function loadManualHospitalTrustsList() {
-                try {
-                    const user = auth.currentUser;
-                    if (!user) return;
-                    
-                    const token = await user.getIdToken();
-                    const response = await fetch('https://clerky-uzni.onrender.com/getHospitalTrustsList', {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${token}`
-                        }
-                    });
-                    
-                    const result = await response.json();
-                    if (result.success && result.trusts) {
-                        manualHospitalTrustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
-                        result.trusts.forEach(trust => {
-                            const option = document.createElement('option');
-                            option.value = trust;
-                            option.textContent = trust;
-                            manualHospitalTrustSelect.appendChild(option);
-                        });
-                    }
-                } catch (error) {
-                    console.error('Error loading hospital trusts list:', error);
-                }
-            }
-            
-            // Confirm manual scope selection
-            confirmScopeBtn.addEventListener('click', () => {
-                if (manualScopeNational.checked) {
-                    const nation = document.getElementById('manualNationSelect').value;
-                    manualScopeOverride = {
-                        scope: 'national',
-                        details: nation
-                    };
-                } else if (manualScopeLocal.checked) {
-                    const trust = manualHospitalTrustSelect.value;
-                    if (!trust) {
-                        alert('Please select a hospital trust');
-                        return;
-                    }
-                    manualScopeOverride = {
-                        scope: 'local',
-                        details: trust
-                    };
-                }
-                
-                // Hide manual selection and show updated auto-display
-                manualScopeSelection.style.display = 'none';
-                updateAutoScopeDisplay(selectedFiles);
-            });
 
             // Handle file input change
             fileInput.addEventListener('change', async function(e) {
@@ -1246,13 +1022,8 @@
                     }
                 });
 
-                // Reset manual override when new files are added
-                manualScopeOverride = null;
-                document.getElementById('manualScopeSelection').style.display = 'none';
-
                 window.selectedFiles = selectedFiles; // Update global reference
                 updateFileList();
-                updateAutoScopeDisplay(selectedFiles);
                 
                 // Automatically check for duplicates after adding files
                 if (validFiles.length > 0) {
@@ -1282,20 +1053,6 @@
                     return;
                 }
                 
-                // Use manual override if set, otherwise let backend auto-detect
-                let scopeToSend = null;
-                let nationToSend = null;
-                let hospitalTrustToSend = null;
-                
-                if (manualScopeOverride) {
-                    scopeToSend = manualScopeOverride.scope;
-                    if (manualScopeOverride.scope === 'national') {
-                        nationToSend = manualScopeOverride.details;
-                    } else {
-                        hospitalTrustToSend = manualScopeOverride.details;
-                    }
-                }
-                
                 // Show uploading state
                 uploadSpinner.style.display = 'inline-block';
                 uploadText.textContent = 'Uploading...';
@@ -1314,13 +1071,6 @@
                         try {
                             const formData = new FormData();
                             formData.append('file', file);
-                            
-                            // Add manual override if set, otherwise backend will auto-detect
-                            if (scopeToSend) {
-                                formData.append('scope', scopeToSend);
-                                if (nationToSend) formData.append('nation', nationToSend);
-                                if (hospitalTrustToSend) formData.append('hospitalTrust', hospitalTrustToSend);
-                            }
                             
                             const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
                                 method: 'POST',
@@ -1355,9 +1105,7 @@
                         selectedFiles = [];
                         window.selectedFiles = selectedFiles;
                         fileInput.value = '';
-                        manualScopeOverride = null;
                         updateFileList();
-                        updateAutoScopeDisplay([]);
                         
                         // Reload guidelines
                         loadGuidelines();
