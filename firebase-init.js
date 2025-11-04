@@ -103,144 +103,16 @@ async function attemptUpload(formData, token, retryCount = 0) {
     }
 }
 
-const uploadForm = document.getElementById('uploadForm');
-if (uploadForm) {
-    uploadForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const fileInput = document.getElementById('guidelineFile');
-        const files = Array.from(fileInput.files);
-        const uploadSpinner = document.getElementById('uploadSpinner');
-        const uploadText = document.getElementById('uploadText');
-        
-        if (files.length === 0) {
-            alert('Please select at least one file to upload');
-            return;
-        }
-
-        // Show spinner and update text
-        uploadSpinner.style.display = 'inline-block';
-        uploadText.textContent = `Uploading ${files.length} file${files.length > 1 ? 's' : ''}...`;
-
-        try {
-            console.log(`Attempting to upload ${files.length} files:`, files.map(f => f.name));
-            
-            // Get the current user's Firebase ID token
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('Please sign in first');
-            }
-            console.log('User is signed in:', user.email);
-            const token = await user.getIdToken();
-            console.log('Retrieved ID token');
-
-            // Filter out duplicate files if status is available
-            const filesToUpload = files.filter(file => {
-                if (file.status && file.status === 'duplicate') {
-                    console.log(`Skipping duplicate file: ${file.name}`);
-                    return false;
-                }
-                return true;
-            });
-
-            const duplicateCount = files.length - filesToUpload.length;
-            
-            if (filesToUpload.length === 0) {
-                alert('All selected files are duplicates. No files will be uploaded.');
-                return;
-            }
-
-            if (duplicateCount > 0) {
-                uploadText.textContent = `Uploading ${filesToUpload.length} files (${duplicateCount} duplicates skipped)...`;
-            }
-
-            let successCount = 0;
-            let failedFiles = [];
-            let skippedFiles = [];
-
-            // Upload files one by one
-            for (let i = 0; i < filesToUpload.length; i++) {
-                const file = filesToUpload[i];
-                uploadText.textContent = `Uploading ${i + 1}/${filesToUpload.length}: ${file.name}`;
-                
-                try {
-                    // Create FormData object for this file
-                    const formData = new FormData();
-                    formData.append('file', file);
-
-                    // Attempt upload with retries
-                    await attemptUpload(formData, token);
-                    successCount++;
-                    console.log(`Successfully uploaded: ${file.name}`);
-                } catch (error) {
-                    console.error(`Failed to upload ${file.name}:`, error);
-                    failedFiles.push({ name: file.name, error: error.message });
-                }
-            }
-
-            // Add skipped duplicates to the summary
-            files.forEach(file => {
-                if (file.status === 'duplicate') {
-                    skippedFiles.push({ name: file.name, reason: 'Duplicate content detected' });
-                }
-            });
-
-            // Show results
-            let message = '';
-            
-            if (successCount === filesToUpload.length && filesToUpload.length === files.length) {
-                message = `All ${files.length} files uploaded successfully!`;
-            } else {
-                message = `Upload Summary:\n`;
-                message += `• Successfully uploaded: ${successCount} files\n`;
-                
-                if (failedFiles.length > 0) {
-                    message += `• Failed uploads: ${failedFiles.length} files\n`;
-                }
-                
-                if (skippedFiles.length > 0) {
-                    message += `• Skipped duplicates: ${skippedFiles.length} files\n`;
-                }
-                
-                message += `\n`;
-                
-                if (failedFiles.length > 0) {
-                    message += 'Failed files:\n';
-                    failedFiles.forEach(f => message += `• ${f.name}: ${f.error}\n`);
-                    message += '\n';
-                }
-                
-                if (skippedFiles.length > 0) {
-                    message += 'Skipped duplicates:\n';
-                    skippedFiles.forEach(f => message += `• ${f.name}: ${f.reason}\n`);
-                }
-            }
-            
-            alert(message);
-            
-            // Dispatch a custom event to notify that guidelines should be reloaded
-            if (successCount > 0) {
-                window.dispatchEvent(new CustomEvent('reloadGuidelines'));
-            }
-            
-            // Clear the file input and file list
-            fileInput.value = '';
-            if (window.selectedFiles) {
-                window.selectedFiles = [];
-            }
-            const fileList = document.getElementById('fileList');
-            if (fileList) {
-                fileList.style.display = 'none';
-                fileList.innerHTML = '';
-            }
-            
-        } catch (error) {
-            console.error('Error during upload process:', error);
-            alert(`Upload process failed: ${error.message}`);
-        } finally {
-            // Hide spinner and restore text
-            uploadSpinner.style.display = 'none';
-            uploadText.textContent = 'Upload to GitHub';
-        }
-    });
-} 
+// NOTE: Upload form submission handler DISABLED here because guidelines.html
+// already has its own handler that properly includes scope, nation, and hospitalTrust.
+// Having two handlers was causing files to be uploaded twice, with the second upload
+// overwriting the first with default "national" scope values.
+//
+// If you need to re-enable this for other pages, make sure to:
+// 1. Check if guidelines.html is loaded to avoid duplicate handlers
+// 2. Include scope/nation/hospitalTrust fields in the FormData
+//
+// const uploadForm = document.getElementById('uploadForm');
+// if (uploadForm) {
+//     ... handler code commented out ...
+// } 
