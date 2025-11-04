@@ -4274,6 +4274,12 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                 // Store basic file record in Firestore for immediate duplicate detection
                 try {
                     const cleanId = generateCleanDocId(fileName);
+                    
+                    // Get scope information from request body
+                    const scope = req.body.scope || 'national';
+                    const nation = req.body.nation || null;
+                    const hospitalTrust = req.body.hospitalTrust || null;
+                    
                     const basicGuidelineDoc = {
                         id: cleanId,
                         title: fileName.replace(/\.[^/.]+$/, ''), // Remove extension for title
@@ -4288,8 +4294,13 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                         summary: null,
                         keywords: [],
                         condensed: null,
-                        auditableElements: [] // Will be filled by sync process
+                        auditableElements: [], // Will be filled by sync process
+                        scope: scope,
+                        nation: scope === 'national' ? nation : null,
+                        hospitalTrust: scope === 'local' ? hospitalTrust : null
                     };
+                    
+                    console.log(`[UPLOAD] Storing guideline with scope: ${scope}, nation: ${nation}, hospitalTrust: ${hospitalTrust}`);
                     
                     await db.collection('guidelines').doc(cleanId).set(basicGuidelineDoc);
                     console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId}`);

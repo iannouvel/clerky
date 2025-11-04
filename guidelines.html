@@ -562,6 +562,39 @@
                         <div id="fileList" class="file-list" style="display: none;"></div>
                     </div>
                     
+                    <!-- Scope Selection -->
+                    <div class="scope-selection-wrapper">
+                        <label class="scope-label">Guideline Origin:</label>
+                        <div class="scope-radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="uploadScope" value="national" checked>
+                                <span>National</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="uploadScope" value="local">
+                                <span>Local</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Nation Selection (shown for National) -->
+                    <div class="nation-selection-wrapper" id="nationSelectionWrapper">
+                        <label class="field-label">Nation:</label>
+                        <select id="nationSelect" class="form-select">
+                            <option value="England & Wales">England & Wales</option>
+                            <option value="Scotland">Scotland</option>
+                            <option value="Northern Ireland">Northern Ireland</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Trust Selection (shown for Local) -->
+                    <div class="trust-selection-wrapper" id="trustSelectionWrapper" style="display: none;">
+                        <label class="field-label">Hospital Trust:</label>
+                        <select id="trustSelect" class="form-select">
+                            <option value="">Select a trust...</option>
+                        </select>
+                    </div>
+                    
                     <button type="submit" class="upload-btn">
                         <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                         <span id="uploadText">Upload to GitHub</span>
@@ -632,8 +665,27 @@
                 } else {
                     // User is authenticated, load guidelines
                     loadGuidelines();
+                    loadHospitalTrustsList();
                 }
             });
+
+            // Load hospital trusts list for upload form
+            async function loadHospitalTrustsList() {
+                try {
+                    const response = await fetch('hospital-trusts.json');
+                    const trusts = await response.json();
+                    
+                    const trustSelect = document.getElementById('trustSelect');
+                    trusts.forEach(trust => {
+                        const option = document.createElement('option');
+                        option.value = trust;
+                        option.textContent = trust;
+                        trustSelect.appendChild(option);
+                    });
+                } catch (error) {
+                    console.error('Error loading hospital trusts:', error);
+                }
+            }
 
             // Load guidelines from API
             async function loadGuidelines() {
@@ -1170,6 +1222,25 @@
                 fileInput.files = dt.files;
             };
 
+            // Handle scope radio button changes
+            const uploadScopeRadios = document.querySelectorAll('input[name="uploadScope"]');
+            const nationSelectionWrapper = document.getElementById('nationSelectionWrapper');
+            const trustSelectionWrapper = document.getElementById('trustSelectionWrapper');
+            const trustSelect = document.getElementById('trustSelect');
+            
+            uploadScopeRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'national') {
+                        nationSelectionWrapper.style.display = 'flex';
+                        trustSelectionWrapper.style.display = 'none';
+                        trustSelect.value = ''; // Reset trust selection
+                    } else {
+                        nationSelectionWrapper.style.display = 'none';
+                        trustSelectionWrapper.style.display = 'flex';
+                    }
+                });
+            });
+
             // Handle file input change
             fileInput.addEventListener('change', async function(e) {
                 const newFiles = Array.from(e.target.files);
@@ -1241,10 +1312,28 @@
                     let successCount = 0;
                     let failCount = 0;
                     
+                    // Get scope selection
+                    const selectedScope = document.querySelector('input[name="uploadScope"]:checked').value;
+                    const nation = document.getElementById('nationSelect').value;
+                    const hospitalTrust = document.getElementById('trustSelect').value;
+                    
                     for (const file of filesToUpload) {
                         try {
                             const formData = new FormData();
                             formData.append('file', file);
+                            formData.append('scope', selectedScope);
+                            
+                            if (selectedScope === 'national') {
+                                formData.append('nation', nation);
+                            } else if (selectedScope === 'local') {
+                                if (!hospitalTrust) {
+                                    alert('Please select a hospital trust for local guidelines.');
+                                    uploadSpinner.style.display = 'none';
+                                    uploadText.textContent = 'Upload to GitHub';
+                                    return;
+                                }
+                                formData.append('hospitalTrust', hospitalTrust);
+                            }
                             
                             const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
                                 method: 'POST',
