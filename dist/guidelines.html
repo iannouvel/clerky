@@ -293,7 +293,7 @@
             flex: 1;
             font-size: 14px;
             color: var(--text-color);
-            truncate: ellipsis;
+            text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
             margin-right: 10px;
@@ -360,6 +360,39 @@
             border-radius: 6px;
             margin: 10px 0;
             border: 1px solid #ffeaa7;
+        }
+
+        .filter-section {
+            background: var(--card-background);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .scope-filter-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .trust-filter-group {
+            flex: 0 0 auto;
+            min-width: 250px;
         }
 
         .guidelines-list {
@@ -537,6 +570,32 @@
             </div>
         </div>
 
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-label">Filter by:</div>
+            <div class="filter-controls">
+                <div class="scope-filter-group">
+                    <label class="radio-label">
+                        <input type="radio" name="scopeFilter" value="all" checked>
+                        <span>All</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="scopeFilter" value="national">
+                        <span>National</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="scopeFilter" value="local">
+                        <span>Local</span>
+                    </label>
+                </div>
+                <div class="trust-filter-group" id="trustFilterGroup" style="display: none;">
+                    <select id="trustFilter" class="form-select">
+                        <option value="">All Trusts</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div id="guidelinesList" class="guidelines-list">
             <!-- Guidelines will be populated here -->
         </div>
@@ -552,6 +611,10 @@
 
         document.addEventListener('DOMContentLoaded', async function() {
             let allGuidelines = []; // Store all guidelines
+            let currentFilters = {
+                scope: 'all',
+                trust: ''
+            };
             const searchInput = document.getElementById('guidelineSearch');
             const autocompleteList = document.getElementById('autocompleteList');
 
@@ -563,16 +626,108 @@
                 }
             });
 
-            // Load guidelines
+            // Load guidelines from API
             async function loadGuidelines() {
                 try {
-                    const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/guidance/list_of_guidelines.txt');
-                    const data = await response.text();
-                    allGuidelines = data.split('\n').filter(line => line.trim() !== '');
-                    displayGuidelines(allGuidelines);
+                    const user = auth.currentUser;
+                    if (!user) {
+                        console.error('User not authenticated');
+                        return;
+                    }
+                    const token = await user.getIdToken();
+                    
+                    const response = await fetch('https://clerky-uzni.onrender.com/getAllGuidelines', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success && result.guidelines) {
+                        allGuidelines = result.guidelines;
+                        populateTrustDropdown();
+                        applyFilters();
+                    } else {
+                        console.error('Failed to load guidelines:', result.message);
+                        allGuidelines = [];
+                        displayGuidelines(allGuidelines);
+                    }
                 } catch (error) {
                     console.error('Error loading guidelines:', error);
+                    allGuidelines = [];
+                    displayGuidelines(allGuidelines);
                 }
+            }
+
+            // Populate trust dropdown with available trusts
+            function populateTrustDropdown() {
+                const trustFilter = document.getElementById('trustFilter');
+                const trusts = new Set();
+                
+                // Extract unique trusts from local guidelines
+                allGuidelines.forEach(guideline => {
+                    if (guideline.scope === 'local' && guideline.hospitalTrust) {
+                        trusts.add(guideline.hospitalTrust);
+                    }
+                });
+                
+                // Clear existing options except "All Trusts"
+                trustFilter.innerHTML = '<option value="">All Trusts</option>';
+                
+                // Add trust options alphabetically
+                Array.from(trusts).sort().forEach(trust => {
+                    const option = document.createElement('option');
+                    option.value = trust;
+                    option.textContent = trust;
+                    trustFilter.appendChild(option);
+                });
+            }
+
+            // Apply filters to display guidelines
+            function applyFilters() {
+                const filtered = allGuidelines.filter(guideline => {
+                    // Apply scope filter
+                    if (currentFilters.scope === 'national') {
+                        if (guideline.scope !== 'national') return false;
+                    } else if (currentFilters.scope === 'local') {
+                        if (guideline.scope !== 'local') return false;
+                        
+                        // Apply trust filter if selected
+                        if (currentFilters.trust && guideline.hospitalTrust !== currentFilters.trust) {
+                            return false;
+                        }
+                    }
+                    // 'all' shows everything
+                    
+                    return true;
+                });
+                
+                displayGuidelines(filtered);
+            }
+
+            // Apply filters to a specific set of guidelines (for search)
+            function applyFiltersToGuidelines(guidelines) {
+                const filtered = guidelines.filter(guideline => {
+                    // Apply scope filter
+                    if (currentFilters.scope === 'national') {
+                        if (guideline.scope !== 'national') return false;
+                    } else if (currentFilters.scope === 'local') {
+                        if (guideline.scope !== 'local') return false;
+                        
+                        // Apply trust filter if selected
+                        if (currentFilters.trust && guideline.hospitalTrust !== currentFilters.trust) {
+                            return false;
+                        }
+                    }
+                    // 'all' shows everything
+                    
+                    return true;
+                });
+                
+                displayGuidelines(filtered);
             }
 
             // Listen for the reloadGuidelines event
@@ -632,7 +787,7 @@
                 }
             }
 
-            // Display guidelines function with badges
+            // Display guidelines function with scope labels
             function displayGuidelines(guidelines) {
                 const guidelinesList = document.getElementById('guidelinesList');
                 guidelinesList.innerHTML = '';
@@ -648,36 +803,26 @@
                     title.className = 'guideline-title';
                     
                     // Get guideline name (handle both string and object format)
-                    const guidelineName = typeof guideline === 'string' ? 
+                    let guidelineName = typeof guideline === 'string' ? 
                         guideline.replace(/\.(txt|pdf)$/i, '') : 
-                        (guideline.title || guideline.name || '');
+                        (guideline.humanFriendlyName || guideline.title || guideline.name || '');
+                    
+                    // Append scope label to the title
+                    if (typeof guideline === 'object' && guideline.scope) {
+                        if (guideline.scope === 'local') {
+                            const trustName = guideline.hospitalTrust || 'Local Trust';
+                            guidelineName += ` - Local - ${trustName}`;
+                        } else if (guideline.scope === 'national') {
+                            if (guideline.nation) {
+                                guidelineName += ` - National (${guideline.nation})`;
+                            } else {
+                                guidelineName += ` - National`;
+                            }
+                        }
+                    }
                     
                     title.textContent = guidelineName;
-                    
-                    // Add badges for scope and location if guideline is an object with metadata
-                    if (typeof guideline === 'object' && guideline.scope) {
-                        const badgeContainer = document.createElement('div');
-                        badgeContainer.className = 'guideline-badges';
-                        
-                        if (guideline.scope === 'local') {
-                            const localBadge = document.createElement('span');
-                            localBadge.className = 'guideline-badge badge-local';
-                            localBadge.textContent = `🏥 ${guideline.hospitalTrust || 'Local Trust'}`;
-                            localBadge.title = 'Local trust guideline';
-                            badgeContainer.appendChild(localBadge);
-                        } else if (guideline.scope === 'national') {
-                            const nationalBadge = document.createElement('span');
-                            nationalBadge.className = 'guideline-badge badge-national';
-                            nationalBadge.textContent = `🌍 ${guideline.nation || 'National'}`;
-                            nationalBadge.title = 'National guideline';
-                            badgeContainer.appendChild(nationalBadge);
-                        }
-                        
-                        titleContainer.appendChild(title);
-                        titleContainer.appendChild(badgeContainer);
-                    } else {
-                        titleContainer.appendChild(title);
-                    }
+                    titleContainer.appendChild(title);
                     
                     const actions = document.createElement('div');
                     actions.className = 'guideline-actions';
@@ -717,29 +862,39 @@
                 autocompleteList.innerHTML = '';
                 
                 if (searchText.length === 0) {
-                    displayGuidelines(allGuidelines);
+                    applyFilters();
                     return;
                 }
 
-                // Filter guidelines for autocomplete
-                const matches = allGuidelines.filter(guideline => 
-                    guideline.toLowerCase().includes(searchText)
-                );
+                // Filter guidelines for autocomplete (search in title and metadata)
+                const matches = allGuidelines.filter(guideline => {
+                    if (typeof guideline === 'string') {
+                        return guideline.toLowerCase().includes(searchText);
+                    } else {
+                        const name = (guideline.humanFriendlyName || guideline.title || guideline.name || '').toLowerCase();
+                        const trust = (guideline.hospitalTrust || '').toLowerCase();
+                        const nation = (guideline.nation || '').toLowerCase();
+                        return name.includes(searchText) || trust.includes(searchText) || nation.includes(searchText);
+                    }
+                });
 
                 // Display autocomplete suggestions
-                matches.forEach(match => {
+                matches.slice(0, 10).forEach(match => {
                     const div = document.createElement('div');
-                    div.textContent = match.replace(/\.(txt|pdf)$/i, '');
+                    const matchName = typeof match === 'string' ? 
+                        match.replace(/\.(txt|pdf)$/i, '') : 
+                        (match.humanFriendlyName || match.title || match.name || '');
+                    div.textContent = matchName;
                     div.addEventListener('click', () => {
-                        searchInput.value = match.replace(/\.(txt|pdf)$/i, '');
+                        searchInput.value = matchName;
                         displayGuidelines([match]);
                         autocompleteList.innerHTML = '';
                     });
                     autocompleteList.appendChild(div);
                 });
 
-                // Update displayed guidelines
-                displayGuidelines(matches);
+                // Update displayed guidelines with filters applied
+                applyFiltersToGuidelines(matches);
             });
 
             // Close autocomplete list when clicking outside
@@ -1117,6 +1272,46 @@
                 } finally {
                     uploadSpinner.style.display = 'none';
                     uploadText.textContent = 'Upload to GitHub';
+                }
+            });
+
+            // Setup filter event listeners
+            const scopeRadios = document.querySelectorAll('input[name="scopeFilter"]');
+            const trustFilterGroup = document.getElementById('trustFilterGroup');
+            const trustFilter = document.getElementById('trustFilter');
+            
+            scopeRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    currentFilters.scope = this.value;
+                    
+                    // Show/hide trust dropdown based on selection
+                    if (this.value === 'local') {
+                        trustFilterGroup.style.display = 'block';
+                    } else {
+                        trustFilterGroup.style.display = 'none';
+                        currentFilters.trust = ''; // Reset trust filter
+                        trustFilter.value = '';
+                    }
+                    
+                    // Apply filters
+                    if (searchInput.value.trim() === '') {
+                        applyFilters();
+                    } else {
+                        // Re-apply search with new filters
+                        searchInput.dispatchEvent(new Event('input'));
+                    }
+                });
+            });
+            
+            trustFilter.addEventListener('change', function() {
+                currentFilters.trust = this.value;
+                
+                // Apply filters
+                if (searchInput.value.trim() === '') {
+                    applyFilters();
+                } else {
+                    // Re-apply search with new filters
+                    searchInput.dispatchEvent(new Event('input'));
                 }
             });
 
