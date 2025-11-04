@@ -4495,6 +4495,33 @@ window.handleCurrentSuggestionAction = async function(action) {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
+    
+    // Intercept reject action to show feedback modal
+    if (action === 'reject') {
+        const suggestionId = `current-review-${review.currentIndex}`;
+        showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
+            // Record decision with feedback
+            review.decisions.push({ 
+                suggestion, 
+                action: 'reject',
+                feedbackReason: feedbackReason 
+            });
+            
+            console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
+                index: review.currentIndex,
+                hasFeedback: !!feedbackReason,
+                feedbackLength: feedbackReason.length
+            });
+            
+            // Continue to next suggestion
+            clearHighlightInEditor();
+            review.currentIndex++;
+            showCurrentSuggestion();
+        });
+        return; // Don't continue with normal flow
+    }
+    
+    // For non-reject actions, continue normally
     review.decisions.push({ suggestion, action });
     
     if (action === 'accept' && suggestion.suggestedText) {
@@ -4580,6 +4607,10 @@ function completeSuggestionReview() {
     const rejected = review.decisions.filter(d => d.action === 'reject').length;
     const modified = review.decisions.filter(d => d.action === 'modify').length;
     const skipped = review.suggestions.length - review.decisions.length;
+    
+    // Submit feedback from one-at-a-time review
+    submitFeedbackFromReview(review);
+    
     const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
@@ -4821,11 +4852,21 @@ function handleSuggestionAction(suggestionId, action) {
     debouncedSaveState(); // Save state after a decision is made
 }
 
-// Prompt for optional feedback when rejecting a suggestion
-function promptForRejectionFeedback(suggestionId, suggestion) {
-    console.log('[FEEDBACK] Prompting for rejection feedback:', suggestionId);
+// ========================================
+// SHARED FEEDBACK MODAL WITH SPEECH-TO-TEXT
+// ========================================
+
+// Global speech recognition instance
+let currentSpeechRecognition = null;
+
+// Shared feedback modal function with speech-to-text capability
+function showFeedbackModal(suggestionId, suggestion, onSubmitCallback) {
+    console.log('[FEEDBACK] Showing feedback modal:', suggestionId);
     
-    // Create modal HTML
+    // Check speech recognition support
+    const hasSpeechRecognition = 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window;
+    
+    // Create modal HTML with speech-to-text button
     const modalHtml = `
         <div id="feedback-modal-${suggestionId}" class="feedback-modal" style="
             position: fixed;
@@ -4852,23 +4893,63 @@ function promptForRejectionFeedback(suggestionId, suggestion) {
                 <p style="font-size: 14px; color: #888; margin-bottom: 15px;">
                     <strong>Suggestion:</strong> ${suggestion.suggestedText?.substring(0, 150) || 'N/A'}${suggestion.suggestedText?.length > 150 ? '...' : ''}
                 </p>
-                <textarea 
-                    id="feedback-textarea-${suggestionId}" 
-                    placeholder="E.g., 'This was SVD, not AVD - cord gases not required for spontaneous delivery'"
-                    style="
-                        width: 100%;
-                        min-height: 100px;
-                        padding: 12px;
-                        border: 1px solid #ddd;
-                        border-radius: 4px;
-                        font-family: inherit;
-                        font-size: 14px;
-                        resize: vertical;
-                    "
-                ></textarea>
+                <div style="position: relative;">
+                    <textarea 
+                        id="feedback-textarea-${suggestionId}" 
+                        placeholder="E.g., 'This was SVD, not AVD - cord gases not required for spontaneous delivery'"
+                        style="
+                            width: 100%;
+                            min-height: 100px;
+                            padding: 12px;
+                            padding-right: ${hasSpeechRecognition ? '50px' : '12px'};
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-family: inherit;
+                            font-size: 14px;
+                            resize: vertical;
+                        "
+                    ></textarea>
+                    ${hasSpeechRecognition ? `
+                    <button 
+                        id="speech-btn-${suggestionId}"
+                        onclick="toggleSpeechRecognition('${suggestionId}')"
+                        style="
+                            position: absolute;
+                            right: 10px;
+                            top: 10px;
+                            background: #f3f4f6;
+                            border: 2px solid #d1d5db;
+                            border-radius: 50%;
+                            width: 36px;
+                            height: 36px;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            transition: all 0.2s;
+                        "
+                        title="Click to speak your feedback"
+                    >
+                        <span style="font-size: 18px;">🎤</span>
+                    </button>
+                    <div id="speech-status-${suggestionId}" style="
+                        display: none;
+                        margin-top: 8px;
+                        font-size: 12px;
+                        color: #dc2626;
+                        font-weight: bold;
+                    ">
+                        🔴 Listening... (click microphone to stop)
+                    </div>
+                    ` : `
+                    <div style="margin-top: 8px; font-size: 12px; color: #6b7280; font-style: italic;">
+                        💡 Tip: Speech-to-text is not supported in your browser
+                    </div>
+                    `}
+                </div>
                 <div style="display: flex; gap: 10px; margin-top: 20px; justify-content: flex-end;">
                     <button 
-                        onclick="submitRejectionFeedback('${suggestionId}', true)"
+                        onclick="submitFeedbackModal('${suggestionId}', true)"
                         style="
                             background: #2563eb;
                             color: white;
@@ -4880,7 +4961,7 @@ function promptForRejectionFeedback(suggestionId, suggestion) {
                         "
                     >Submit Feedback</button>
                     <button 
-                        onclick="submitRejectionFeedback('${suggestionId}', false)"
+                        onclick="submitFeedbackModal('${suggestionId}', false)"
                         style="
                             background: #6c757d;
                             color: white;
@@ -4898,11 +4979,208 @@ function promptForRejectionFeedback(suggestionId, suggestion) {
     // Add modal to page
     document.body.insertAdjacentHTML('beforeend', modalHtml);
     
+    // Store the callback for later use
+    window[`feedbackCallback_${suggestionId}`] = onSubmitCallback;
+    
     // Focus on textarea
     setTimeout(() => {
         const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
         if (textarea) textarea.focus();
     }, 100);
+}
+
+// Toggle speech recognition
+window.toggleSpeechRecognition = function(suggestionId) {
+    const speechBtn = document.getElementById(`speech-btn-${suggestionId}`);
+    const speechStatus = document.getElementById(`speech-status-${suggestionId}`);
+    const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+    
+    if (!speechBtn || !textarea) return;
+    
+    // If already recording, stop it
+    if (currentSpeechRecognition) {
+        currentSpeechRecognition.stop();
+        currentSpeechRecognition = null;
+        speechBtn.style.background = '#f3f4f6';
+        speechBtn.style.borderColor = '#d1d5db';
+        if (speechStatus) speechStatus.style.display = 'none';
+        return;
+    }
+    
+    // Check browser support
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+        alert('Speech recognition is not supported in your browser. Please use Chrome, Edge, or Safari.');
+        return;
+    }
+    
+    // Create new recognition instance
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = 'en-GB'; // British English
+    
+    let finalTranscript = textarea.value;
+    
+    recognition.onstart = () => {
+        console.log('[SPEECH] Recognition started');
+        speechBtn.style.background = '#fee2e2';
+        speechBtn.style.borderColor = '#dc2626';
+        if (speechStatus) speechStatus.style.display = 'block';
+    };
+    
+    recognition.onresult = (event) => {
+        let interimTranscript = '';
+        
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+                finalTranscript += (finalTranscript ? ' ' : '') + transcript;
+            } else {
+                interimTranscript += transcript;
+            }
+        }
+        
+        // Update textarea with final + interim results
+        textarea.value = finalTranscript + (interimTranscript ? ' ' + interimTranscript : '');
+    };
+    
+    recognition.onerror = (event) => {
+        console.error('[SPEECH] Recognition error:', event.error);
+        currentSpeechRecognition = null;
+        speechBtn.style.background = '#f3f4f6';
+        speechBtn.style.borderColor = '#d1d5db';
+        if (speechStatus) speechStatus.style.display = 'none';
+        
+        if (event.error === 'no-speech') {
+            // Silent error - just stop
+        } else if (event.error === 'not-allowed') {
+            alert('Microphone access was denied. Please enable microphone permissions for this site.');
+        } else {
+            alert('Speech recognition error: ' + event.error);
+        }
+    };
+    
+    recognition.onend = () => {
+        console.log('[SPEECH] Recognition ended');
+        currentSpeechRecognition = null;
+        speechBtn.style.background = '#f3f4f6';
+        speechBtn.style.borderColor = '#d1d5db';
+        if (speechStatus) speechStatus.style.display = 'none';
+        
+        // Keep the final transcript in the textarea
+        textarea.value = finalTranscript;
+    };
+    
+    // Start recognition
+    currentSpeechRecognition = recognition;
+    recognition.start();
+};
+
+// Submit feedback from modal (shared function)
+window.submitFeedbackModal = function(suggestionId, includeFeedback) {
+    console.log('[FEEDBACK] Submitting feedback from modal:', suggestionId, includeFeedback);
+    
+    // Stop any ongoing speech recognition
+    if (currentSpeechRecognition) {
+        currentSpeechRecognition.stop();
+        currentSpeechRecognition = null;
+    }
+    
+    // Get feedback text if provided
+    let feedbackReason = '';
+    if (includeFeedback) {
+        const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
+        feedbackReason = textarea ? textarea.value.trim() : '';
+    }
+    
+    // Remove modal
+    const modal = document.getElementById(`feedback-modal-${suggestionId}`);
+    if (modal) modal.remove();
+    
+    // Call the stored callback
+    const callback = window[`feedbackCallback_${suggestionId}`];
+    if (callback) {
+        callback(feedbackReason);
+        delete window[`feedbackCallback_${suggestionId}`];
+    }
+};
+
+// Submit feedback from one-at-a-time review workflow
+function submitFeedbackFromReview(review) {
+    if (!review || !review.decisions || review.decisions.length === 0) {
+        return;
+    }
+    
+    // Extract feedback entries from decisions
+    const feedbackEntries = review.decisions
+        .filter(d => (d.action === 'reject' || d.action === 'modify') && 
+                     (d.feedbackReason || d.modifiedText))
+        .map((d, index) => ({
+            suggestionId: `review-${index}`,
+            action: d.action,
+            rejectionReason: d.feedbackReason || '',
+            modifiedText: d.modifiedText || null,
+            originalSuggestion: d.suggestion.originalText || '',
+            suggestedText: d.suggestion.suggestedText || '',
+            clinicalScenario: window.latestAnalysis?.transcript?.substring(0, 500) || ''
+        }));
+    
+    if (feedbackEntries.length === 0) {
+        console.log('[FEEDBACK] No feedback to submit from review');
+        return;
+    }
+    
+    // Get guideline info from the review
+    const guidelineId = review.guidelineId || window.currentGuidelineId;
+    const guidelineTitle = review.guidelineTitle || window.currentGuidelineTitle || 'Unknown';
+    
+    if (!guidelineId) {
+        console.log('[FEEDBACK] No guideline ID available for feedback submission');
+        return;
+    }
+    
+    console.log('[FEEDBACK] Submitting feedback from one-at-a-time review:', {
+        guidelineId,
+        entriesCount: feedbackEntries.length
+    });
+    
+    // Submit to backend
+    submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries);
+}
+
+// Legacy function for backwards compatibility (batch workflow)
+function promptForRejectionFeedback(suggestionId, suggestion) {
+    showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
+        // Find the suggestion data
+        const suggestionData = currentSuggestions.find(s => s.id === suggestionId);
+        if (!suggestionData) {
+            console.error('[FEEDBACK] Suggestion data not found:', suggestionId);
+            return;
+        }
+        
+        // Record the rejection decision with optional feedback
+        userDecisions[suggestionId] = {
+            action: 'reject',
+            suggestion: suggestionData,
+            timestamp: new Date().toISOString(),
+            feedbackReason: feedbackReason
+        };
+        
+        console.log('[FEEDBACK] Recorded rejection with feedback', {
+            suggestionId,
+            hasFeedback: !!feedbackReason,
+            feedbackLength: feedbackReason.length
+        });
+        
+        // Update UI to show decision
+        updateSuggestionStatus(suggestionId, 'reject');
+        updateDecisionsSummary();
+        debouncedSaveState();
+        
+        // Check if all suggestions for this guideline have been processed
+        checkAndSubmitGuidelineFeedback();
+    });
 }
 
 // Submit rejection feedback (or skip)

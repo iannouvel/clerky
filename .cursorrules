@@ -1,0 +1,105 @@
+# Cursor Rules for Clerky
+
+## Commit Rules
+
+### 1. NEVER Skip Git Hooks
+- NEVER use `--no-verify` or `--no-gpg-sign` flags when committing
+- NEVER skip commit hooks unless explicitly requested by the user
+
+### 2. NEVER Commit Without User Permission
+- NEVER commit changes unless the user explicitly asks you to
+- It is CRITICAL to only commit when explicitly asked
+- The user will feel you are being too proactive if you commit without permission
+
+### 3. ALWAYS Increment Version Before Committing
+- ALWAYS increment the version in `package.json` before committing changes
+- Use the appropriate version increment based on the type of change (patch/minor/major)
+- The only exception is if the commit is ONLY updating documentation or non-code files that don't affect functionality
+- If unsure which version increment to use, ask the user
+
+### 4. Dist Folder Inclusion
+- The `dist/` folder MUST be included in commits
+- This folder contains built/compiled assets that are deployed
+- Before committing, ensure the `dist/` folder is up to date by running the build script:
+  ```bash
+  npm run build
+  ```
+- Verify that changes in source files are reflected in the `dist/` folder before committing
+- If the user asks to commit changes, ask if they want to rebuild the `dist/` folder first
+
+### 5. Force Push Protection
+- NEVER run `git push --force` to `main` or `master` branches
+- Warn the user if they request a force push to main/master branches
+
+### 6. Git Config Protection
+- NEVER update the git config unless explicitly requested
+
+## Version Incrementing Rules
+
+### 1. Version Location
+- Version is stored in `package.json` (currently at version 4.9.33)
+- The version follows semantic versioning: MAJOR.MINOR.PATCH
+
+### 2. Version Increment Commands
+Use npm's built-in version management commands:
+
+- **Patch version** (bug fixes, small changes): `4.9.33 → 4.9.34`
+  ```bash
+  npm version patch
+  ```
+
+- **Minor version** (new features, backwards compatible): `4.9.33 → 4.10.0`
+  ```bash
+  npm version minor
+  ```
+
+- **Major version** (breaking changes): `4.9.33 → 5.0.0`
+  ```bash
+  npm version major
+  ```
+
+### 3. When to Increment Which Version
+
+- **PATCH**: Bug fixes, documentation updates, minor improvements, security patches
+- **MINOR**: New features, new endpoints, significant improvements (backwards compatible)
+- **MAJOR**: Breaking changes, major refactors, API changes that break compatibility
+
+### 4. Version Increment Workflow
+
+When the user asks to increment the version:
+
+1. Ask which type of version increment is appropriate (patch/minor/major) if not specified
+2. Run the appropriate `npm version` command
+3. The command will automatically:
+   - Update `package.json`
+   - Create a git commit with the version change
+   - Create a git tag (unless `--no-git-tag-version` is used)
+4. Inform the user that the version display on `index.html` will automatically update on next page load
+
+### 5. Version Increment Without Git Tag
+
+If the user prefers not to create git tags:
+```bash
+npm version patch --no-git-tag-version
+```
+
+Then manually commit the changes afterwards.
+
+## Build Process Rules
+
+### 1. Before Committing
+- If source files have changed, run `npm run build` to update the `dist/` folder
+- Verify the build completes successfully before committing
+
+### 2. Build Commands
+- Standard build: `npm run build`
+- Bundle Libretto: `npm run bundle-libretto`
+
+## Best Practices
+
+1. Always inform the user what files will be committed before committing
+2. Use descriptive commit messages that follow conventional commits format when possible
+3. When version incrementing, include relevant changes in the commit message
+4. Remember: The user prefers British English spelling (analyse vs analyze, etc.)
+5. Ask one question at a time when clarification is needed
+
