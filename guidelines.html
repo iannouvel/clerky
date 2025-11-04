@@ -594,6 +594,12 @@
                     </select>
                 </div>
             </div>
+            <div id="adminControls" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e9ecef; display: none;">
+                <button id="enhanceMetadataBtn" class="action-btn" style="background: #28a745; color: white; border: none;">
+                    Enhance Metadata for All Guidelines
+                </button>
+                <div id="enhancementStatus" style="margin-top: 10px; font-size: 14px; color: #6c757d;"></div>
+            </div>
         </div>
 
         <div id="guidelinesList" class="guidelines-list">
@@ -692,11 +698,14 @@
             // Apply filters to display guidelines
             function applyFilters() {
                 const filtered = allGuidelines.filter(guideline => {
+                    // Default to 'national' if scope is undefined (backwards compatibility)
+                    const guidelineScope = guideline.scope || 'national';
+                    
                     // Apply scope filter
                     if (currentFilters.scope === 'national') {
-                        if (guideline.scope !== 'national') return false;
+                        if (guidelineScope !== 'national') return false;
                     } else if (currentFilters.scope === 'local') {
-                        if (guideline.scope !== 'local') return false;
+                        if (guidelineScope !== 'local') return false;
                         
                         // Apply trust filter if selected
                         if (currentFilters.trust && guideline.hospitalTrust !== currentFilters.trust) {
@@ -714,11 +723,14 @@
             // Apply filters to a specific set of guidelines (for search)
             function applyFiltersToGuidelines(guidelines) {
                 const filtered = guidelines.filter(guideline => {
+                    // Default to 'national' if scope is undefined (backwards compatibility)
+                    const guidelineScope = guideline.scope || 'national';
+                    
                     // Apply scope filter
                     if (currentFilters.scope === 'national') {
-                        if (guideline.scope !== 'national') return false;
+                        if (guidelineScope !== 'national') return false;
                     } else if (currentFilters.scope === 'local') {
-                        if (guideline.scope !== 'local') return false;
+                        if (guidelineScope !== 'local') return false;
                         
                         // Apply trust filter if selected
                         if (currentFilters.trust && guideline.hospitalTrust !== currentFilters.trust) {
@@ -810,12 +822,16 @@
                         guideline.replace(/\.(txt|pdf)$/i, '') : 
                         (guideline.humanFriendlyName || guideline.title || guideline.name || '');
                     
-                    // Append scope label to the title
-                    if (typeof guideline === 'object' && guideline.scope) {
-                        if (guideline.scope === 'local') {
+                    // Append scope label to the title - always show labels
+                    if (typeof guideline === 'object') {
+                        // Default to 'national' if scope is undefined (backwards compatibility)
+                        const guidelineScope = guideline.scope || 'national';
+                        
+                        if (guidelineScope === 'local') {
                             const trustName = guideline.hospitalTrust || 'Local Trust';
                             guidelineName += ` - Local - ${trustName}`;
-                        } else if (guideline.scope === 'national') {
+                        } else {
+                            // National (default)
                             if (guideline.nation) {
                                 guidelineName += ` - National (${guideline.nation})`;
                             } else {
@@ -1317,6 +1333,85 @@
                     searchInput.dispatchEvent(new Event('input'));
                 }
             });
+
+            // Check if user is admin and show admin controls
+            auth.onAuthStateChanged(async (user) => {
+                if (user && (user.email === 'inouvel@gmail.com')) {
+                    const adminControls = document.getElementById('adminControls');
+                    if (adminControls) {
+                        adminControls.style.display = 'block';
+                    }
+                }
+            });
+
+            // Handle batch metadata enhancement
+            const enhanceMetadataBtn = document.getElementById('enhanceMetadataBtn');
+            const enhancementStatus = document.getElementById('enhancementStatus');
+            
+            if (enhanceMetadataBtn) {
+                enhanceMetadataBtn.addEventListener('click', async function() {
+                    if (!confirm('This will enhance metadata (scope, nation, hospitalTrust) for all guidelines using AI. This may take several minutes. Continue?')) {
+                        return;
+                    }
+
+                    enhanceMetadataBtn.disabled = true;
+                    enhanceMetadataBtn.textContent = 'Enhancing...';
+                    enhancementStatus.textContent = 'Preparing enhancement...';
+
+                    try {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            throw new Error('Please sign in first');
+                        }
+                        const token = await user.getIdToken();
+
+                        // Get all guideline IDs
+                        const guidelineIds = allGuidelines.map(g => g.id || g.guidelineId).filter(id => id);
+                        
+                        if (guidelineIds.length === 0) {
+                            throw new Error('No guidelines found to enhance');
+                        }
+
+                        enhancementStatus.textContent = `Enhancing metadata for ${guidelineIds.length} guidelines...`;
+
+                        // Call batch enhancement endpoint
+                        const response = await fetch('https://clerky-uzni.onrender.com/batchEnhanceMetadata', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            body: JSON.stringify({
+                                guidelineIds: guidelineIds,
+                                fieldsToEnhance: ['scope', 'nation', 'hospitalTrust']
+                            })
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            enhancementStatus.innerHTML = `
+                                <strong style="color: #28a745;">✓ Enhancement Complete!</strong><br>
+                                ${result.message}<br>
+                                Enhanced ${result.results?.reduce((sum, r) => sum + (r.enhancedFields?.length || 0), 0) || 0} fields across ${result.results?.filter(r => r.success).length || 0} guidelines
+                            `;
+                            
+                            // Reload guidelines after a short delay
+                            setTimeout(() => {
+                                loadGuidelines();
+                            }, 2000);
+                        } else {
+                            throw new Error(result.error || 'Enhancement failed');
+                        }
+                    } catch (error) {
+                        console.error('Error enhancing metadata:', error);
+                        enhancementStatus.innerHTML = `<strong style="color: #dc3545;">✗ Error:</strong> ${error.message}`;
+                    } finally {
+                        enhanceMetadataBtn.disabled = false;
+                        enhanceMetadataBtn.textContent = 'Enhance Metadata for All Guidelines';
+                    }
+                });
+            }
         });
     </script>
 </body>
