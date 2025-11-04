@@ -673,15 +673,20 @@
             async function loadHospitalTrustsList() {
                 try {
                     const response = await fetch('hospital-trusts.json');
-                    const trusts = await response.json();
+                    const data = await response.json();
+                    
+                    // Extract trusts array from nested structure
+                    const trustsArray = data.regions?.['England & Wales']?.trusts || [];
                     
                     const trustSelect = document.getElementById('trustSelect');
-                    trusts.forEach(trust => {
+                    trustsArray.forEach(trust => {
                         const option = document.createElement('option');
                         option.value = trust;
                         option.textContent = trust;
                         trustSelect.appendChild(option);
                     });
+                    
+                    console.log(`[DEBUG] Loaded ${trustsArray.length} hospital trusts`);
                 } catch (error) {
                     console.error('Error loading hospital trusts:', error);
                 }
