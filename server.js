@@ -6080,33 +6080,19 @@ async function processSingleGuidelineHumanFriendlyName(doc, userId) {
     }
 }
 
-// New endpoint to enhance guideline metadata using AI
-app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
-  try {
-    const { guidelineId, specificFields } = req.body;
-    const userId = req.user.uid;
+// Core function to enhance guideline metadata (extracted for reuse)
+async function enhanceGuidelineMetadataCore(guidelineId, specificFields, userId) {
+  console.log(`[DEBUG] Enhancing metadata for guideline: ${guidelineId}`);
 
-    if (!guidelineId) {
-      return res.status(400).json({ 
-        success: false, 
-        error: 'Missing required field: guidelineId' 
-      });
-    }
+  // Get the guideline from Firestore
+  const guidelineRef = db.collection('guidelines').doc(guidelineId);
+  const guidelineDoc = await guidelineRef.get();
 
-    console.log(`[DEBUG] Enhancing metadata for guideline: ${guidelineId}`);
+  if (!guidelineDoc.exists) {
+    throw new Error('Guideline not found');
+  }
 
-    // Get the guideline from Firestore
-    const guidelineRef = db.collection('guidelines').doc(guidelineId);
-    const guidelineDoc = await guidelineRef.get();
-
-    if (!guidelineDoc.exists) {
-      return res.status(404).json({ 
-        success: false, 
-        error: 'Guideline not found' 
-      });
-    }
-
-    const currentData = guidelineDoc.data();
+  const currentData = guidelineDoc.data();
     console.log(`[DEBUG] Current guideline data:`, {
       title: currentData.title,
       organisation: currentData.organisation,
@@ -6586,14 +6572,31 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       console.error('Error logging metadata enhancement:', logError);
     }
 
-    // Return response
-    res.json({
+    // Return result
+    return {
       success: true,
       message: `Enhanced ${enhancedFields.length} field(s) for guideline ${guidelineId}`,
       enhancedFields,
       errors: errors.length > 0 ? errors : undefined,
       guidelineData: enhancedData
-    });
+    };
+}
+
+// New endpoint to enhance guideline metadata using AI
+app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineId, specificFields } = req.body;
+    const userId = req.user.uid;
+
+    if (!guidelineId) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Missing required field: guidelineId' 
+      });
+    }
+
+    const result = await enhanceGuidelineMetadataCore(guidelineId, specificFields, userId);
+    res.json(result);
 
   } catch (error) {
     console.error('[ERROR] Error in enhanceGuidelineMetadata:', error);
@@ -6637,35 +6640,15 @@ app.post('/batchEnhanceMetadata', authenticateUser, async (req, res) => {
       
       const batchPromises = batch.map(async (guidelineId) => {
         try {
-          // Make internal API call to enhance single guideline
-          const enhancementData = {
-            guidelineId,
-            specificFields: fieldsToEnhance
-          };
-
-          // Simulate the single enhancement call
-          const mockReq = {
-            body: enhancementData,
-            user: req.user
-          };
-          
-          let enhancementResult;
-          const mockRes = {
-            json: (data) => { enhancementResult = data; },
-            status: () => mockRes
-          };
-
-          // Call the enhancement logic directly
-          await new Promise((resolve) => {
-            app._router.handle(mockReq, mockRes, resolve);
-          });
+          // Call the core enhancement function directly
+          const result = await enhanceGuidelineMetadataCore(guidelineId, fieldsToEnhance, userId);
           
           return {
             guidelineId,
-            success: enhancementResult?.success || false,
-            enhancedFields: enhancementResult?.enhancedFields || [],
-            errors: enhancementResult?.errors || [],
-            message: enhancementResult?.message || 'Unknown result'
+            success: result.success,
+            enhancedFields: result.enhancedFields || [],
+            errors: result.errors || [],
+            message: result.message
           };
         } catch (error) {
           console.error(`[DEBUG] Error enhancing ${guidelineId}:`, error);
