@@ -4275,6 +4275,14 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                 try {
                     const cleanId = generateCleanDocId(fileName);
                     
+                    // Debug: Log entire request body to see what's being received
+                    console.log(`[UPLOAD] Request body keys:`, Object.keys(req.body));
+                    console.log(`[UPLOAD] Request body values:`, {
+                        scope: req.body.scope,
+                        nation: req.body.nation,
+                        hospitalTrust: req.body.hospitalTrust
+                    });
+                    
                     // Get scope information from request body
                     const scope = req.body.scope || 'national';
                     const nation = req.body.nation || null;
