@@ -4209,82 +4209,6 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
     }
 });
 
-// Function to automatically detect guideline scope from filename and metadata
-function detectGuidelineScope(fileName) {
-    const fileNameLower = fileName.toLowerCase();
-    const fileNameOriginal = fileName;
-    
-    // List of national guideline organizations
-    const nationalOrgs = [
-        'nice', 'rcog', 'bjog', 'rcgp', 'bashh', 'bhiva', 'fsrh', 'bsge',
-        'bapm', 'bsh', 'bms', 'eshre', 'figo', 'bgcs', 'ukhsa',
-        'nhs england', 'sign', 'acog', 'uptodate'
-    ];
-    
-    // Check if filename contains any national organization
-    const isNational = nationalOrgs.some(org => fileNameLower.includes(org));
-    
-    if (isNational) {
-        // National guideline - determine nation
-        let nation = 'England & Wales'; // Default
-        
-        if (fileNameLower.includes('scotland') || fileNameLower.includes('sign')) {
-            nation = 'Scotland';
-        } else if (fileNameLower.includes('northern ireland')) {
-            nation = 'Northern Ireland';
-        }
-        
-        return {
-            scope: 'national',
-            nation: nation,
-            hospitalTrust: null
-        };
-    }
-    
-    // Check for trust-specific indicators
-    // Load trust names from hospital-trusts.json
-    try {
-        const hospitalTrustsPath = path.join(__dirname, 'hospital-trusts.json');
-        const hospitalTrustsData = JSON.parse(fs.readFileSync(hospitalTrustsPath, 'utf8'));
-        const trusts = hospitalTrustsData.regions['England & Wales'].trusts;
-        
-        // Check if filename contains a trust name
-        for (const trust of trusts) {
-            // Create searchable versions
-            const trustLower = trust.toLowerCase();
-            const trustAbbrev = trust.replace(/NHS.*$/, '').trim().toLowerCase();
-            
-            if (fileNameLower.includes(trustLower) || 
-                fileNameLower.includes(trustAbbrev)) {
-                return {
-                    scope: 'local',
-                    nation: null,
-                    hospitalTrust: trust
-                };
-            }
-        }
-        
-        // Check for common trust abbreviations in filename
-        if (fileNameLower.includes('uhs') || fileNameLower.includes('uhsussex')) {
-            return {
-                scope: 'local',
-                nation: null,
-                hospitalTrust: 'University Hospitals Sussex NHS Foundation Trust'
-            };
-        }
-        
-    } catch (error) {
-        console.error('[SCOPE_DETECT] Error loading hospital trusts:', error);
-    }
-    
-    // Default to national if no trust identified
-    return {
-        scope: 'national',
-        nation: 'England & Wales',
-        hospitalTrust: null
-    };
-}
-
 // Endpoint to handle guideline uploads
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
     // Check if a file was uploaded
@@ -4297,24 +4221,6 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
         const userId = req.user.uid;
         const file = req.file;
         const fileName = file.originalname;
-        
-        // Automatically detect scope from filename
-        const detectedScope = detectGuidelineScope(fileName);
-        console.log(`[SCOPE_DETECT] File: ${fileName}`);
-        console.log(`[SCOPE_DETECT] Detected scope:`, detectedScope);
-        
-        // Allow manual override from request body if provided
-        const scope = req.body.scope || detectedScope.scope;
-        const nation = req.body.nation || detectedScope.nation;
-        const hospitalTrust = req.body.hospitalTrust || detectedScope.hospitalTrust;
-        
-        // Validate scope
-        if (scope && scope !== 'national' && scope !== 'local') {
-            return res.status(400).json({ 
-                success: false, 
-                message: 'Invalid scope. Must be either "national" or "local"' 
-            });
-        }
         
         // Check if the target folder exists in the GitHub repository
         const folderExists = await checkFolderExists(githubFolder);
@@ -4377,9 +4283,6 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                         downloadUrl: `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(fileName)}`,
                         uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
                         uploadedBy: userId,
-                        scope: scope || 'national', // Default to national for backwards compatibility
-                        nation: scope === 'national' ? (nation || 'England & Wales') : null,
-                        hospitalTrust: scope === 'local' ? hospitalTrust : null,
                         processed: false, // Mark as not fully processed yet
                         content: null, // Will be filled by sync process
                         summary: null,
@@ -4389,7 +4292,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                     };
                     
                     await db.collection('guidelines').doc(cleanId).set(basicGuidelineDoc);
-                    console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId} (scope: ${basicGuidelineDoc.scope})`);
+                    console.log(`[UPLOAD] Stored basic record in Firestore for duplicate detection: ${cleanId}`);
                 } catch (firestoreError) {
                     console.error('[UPLOAD] Error storing basic record in Firestore:', firestoreError);
                     // Don't fail the upload if Firestore storage fails
@@ -6219,7 +6122,10 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       'doi',
       'title',
       'summary',
-      'keywords'
+      'keywords',
+      'scope',
+      'nation',
+      'hospitalTrust'
     ];
 
     const missingFields = [];
@@ -6230,10 +6136,26 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
     
     fieldsToEnhance.forEach(field => {
       const value = currentData[field];
-      if (!value || value === 'N/A' || value === 'Not available' || value === '') {
-        missingFields.push(field);
-      } else if (typeof value === 'string' && value.length < 3) {
-        incompleteFields.push(field);
+      // Special handling for scope fields
+      if (field === 'scope') {
+        if (!value || (value !== 'national' && value !== 'local')) {
+          missingFields.push(field);
+        }
+      } else if (field === 'nation' || field === 'hospitalTrust') {
+        // These are conditional on scope, check if they need to be set
+        const scope = currentData.scope;
+        if (field === 'nation' && scope === 'national' && (!value || value === 'N/A' || value === 'Not available' || value === '')) {
+          missingFields.push(field);
+        } else if (field === 'hospitalTrust' && scope === 'local' && (!value || value === 'N/A' || value === 'Not available' || value === '')) {
+          missingFields.push(field);
+        }
+      } else {
+        // Standard field validation
+        if (!value || value === 'N/A' || value === 'Not available' || value === '') {
+          missingFields.push(field);
+        } else if (typeof value === 'string' && value.length < 3) {
+          incompleteFields.push(field);
+        }
       }
     });
 
@@ -6376,12 +6298,168 @@ app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
       'yearProduced': 'extractYear',
       'doi': 'extractDOI',
       'title': 'extractHumanFriendlyName', // Use same prompt as humanFriendlyName
-      'summary': 'extractSummary', // Will need to add this prompt
-      'keywords': 'extractKeywords' // Will need to add this prompt
+      'summary': 'extractSummary',
+      'keywords': 'extractKeywords',
+      'scope': 'extractPublisherType',
+      'nation': 'extractNation',
+      'hospitalTrust': 'extractHospitalTrust'
     };
 
-    // Process missing and incomplete fields
-    const fieldsToProcess = [...missingFields, ...incompleteFields];
+    // Process scope first, then conditionally process nation/hospitalTrust
+    // Scope, nation, and hospitalTrust need special handling
+    const scopeFields = ['scope', 'nation', 'hospitalTrust'];
+    
+    // First, determine scope if needed
+    let detectedScope = null;
+    if (missingFields.includes('scope') || incompleteFields.includes('scope')) {
+      try {
+        const promptKey = fieldPromptMapping['scope'];
+        const promptConfig = loadedPrompts[promptKey];
+        if (promptConfig) {
+          const prompt = promptConfig.prompt.replace('{{text}}', contentForAnalysis);
+          let messages;
+          if (promptConfig.system_prompt) {
+            messages = [
+              { role: 'system', content: promptConfig.system_prompt },
+              { role: 'user', content: prompt }
+            ];
+          } else {
+            messages = [{ role: 'user', content: prompt }];
+          }
+          
+          console.log(`[DEBUG] Calling AI for scope detection`);
+          const aiResult = await routeToAI({ messages }, userId);
+          
+          if (aiResult && aiResult.content) {
+            detectedScope = aiResult.content.trim().toLowerCase();
+            // Normalize to 'national' or 'local'
+            if (detectedScope.includes('local')) {
+              detectedScope = 'local';
+            } else if (detectedScope.includes('national')) {
+              detectedScope = 'national';
+            } else {
+              detectedScope = 'national'; // Default
+            }
+            
+            enhancedData.scope = detectedScope;
+            enhancedFields.push({
+              field: 'scope',
+              oldValue: currentData.scope || null,
+              newValue: detectedScope,
+              action: missingFields.includes('scope') ? 'added' : 'enhanced'
+            });
+            console.log(`[DEBUG] Successfully detected scope: "${detectedScope}"`);
+          }
+        }
+      } catch (error) {
+        console.error(`[DEBUG] Error processing scope:`, error);
+        errors.push(`Error processing scope: ${error.message}`);
+      }
+    } else {
+      // Use existing scope if available
+      detectedScope = currentData.scope;
+    }
+    
+    // Process nation if scope is national
+    if (detectedScope === 'national' && (missingFields.includes('nation') || incompleteFields.includes('nation'))) {
+      try {
+        const promptKey = fieldPromptMapping['nation'];
+        const promptConfig = loadedPrompts[promptKey];
+        if (promptConfig) {
+          const prompt = promptConfig.prompt.replace('{{text}}', contentForAnalysis);
+          let messages;
+          if (promptConfig.system_prompt) {
+            messages = [
+              { role: 'system', content: promptConfig.system_prompt },
+              { role: 'user', content: prompt }
+            ];
+          } else {
+            messages = [{ role: 'user', content: prompt }];
+          }
+          
+          console.log(`[DEBUG] Calling AI for nation detection`);
+          const aiResult = await routeToAI({ messages }, userId);
+          
+          if (aiResult && aiResult.content) {
+            let nation = aiResult.content.trim();
+            // Validate nation value
+            const validNations = ['England & Wales', 'Scotland', 'Northern Ireland'];
+            if (!validNations.includes(nation)) {
+              // Try to normalize
+              if (nation.toLowerCase().includes('scotland')) {
+                nation = 'Scotland';
+              } else if (nation.toLowerCase().includes('northern ireland')) {
+                nation = 'Northern Ireland';
+              } else {
+                nation = 'England & Wales'; // Default
+              }
+            }
+            
+            enhancedData.nation = nation;
+            enhancedFields.push({
+              field: 'nation',
+              oldValue: currentData.nation || null,
+              newValue: nation,
+              action: missingFields.includes('nation') ? 'added' : 'enhanced'
+            });
+            console.log(`[DEBUG] Successfully detected nation: "${nation}"`);
+          }
+        }
+      } catch (error) {
+        console.error(`[DEBUG] Error processing nation:`, error);
+        errors.push(`Error processing nation: ${error.message}`);
+      }
+    }
+    
+    // Process hospitalTrust if scope is local
+    if (detectedScope === 'local' && (missingFields.includes('hospitalTrust') || incompleteFields.includes('hospitalTrust'))) {
+      try {
+        const promptKey = fieldPromptMapping['hospitalTrust'];
+        const promptConfig = loadedPrompts[promptKey];
+        if (promptConfig) {
+          const prompt = promptConfig.prompt.replace('{{text}}', contentForAnalysis);
+          let messages;
+          if (promptConfig.system_prompt) {
+            messages = [
+              { role: 'system', content: promptConfig.system_prompt },
+              { role: 'user', content: prompt }
+            ];
+          } else {
+            messages = [{ role: 'user', content: prompt }];
+          }
+          
+          console.log(`[DEBUG] Calling AI for hospitalTrust detection`);
+          const aiResult = await routeToAI({ messages }, userId);
+          
+          if (aiResult && aiResult.content) {
+            let hospitalTrust = aiResult.content.trim();
+            
+            // Validate - don't use cleanHumanFriendlyName for trust names as they may contain special characters
+            if (hospitalTrust && 
+                hospitalTrust !== 'N/A' && 
+                hospitalTrust !== 'Not available' && 
+                hospitalTrust !== 'Unknown' &&
+                hospitalTrust.length > 2) {
+              
+              enhancedData.hospitalTrust = hospitalTrust;
+              enhancedFields.push({
+                field: 'hospitalTrust',
+                oldValue: currentData.hospitalTrust || null,
+                newValue: hospitalTrust,
+                action: missingFields.includes('hospitalTrust') ? 'added' : 'enhanced'
+              });
+              console.log(`[DEBUG] Successfully detected hospitalTrust: "${hospitalTrust}"`);
+            }
+          }
+        }
+      } catch (error) {
+        console.error(`[DEBUG] Error processing hospitalTrust:`, error);
+        errors.push(`Error processing hospitalTrust: ${error.message}`);
+      }
+    }
+    
+    // Process other fields (non-scope fields)
+    const fieldsToProcess = [...missingFields, ...incompleteFields].filter(f => !scopeFields.includes(f));
     
     for (const field of fieldsToProcess) {
       try {
@@ -8075,6 +8153,117 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           'doi': 'extractDOI'
         };
 
+        // Extract scope first
+        let detectedScope = null;
+        try {
+          const promptConfig = prompts['extractPublisherType'];
+          if (promptConfig) {
+            const extractPrompt = promptConfig.prompt.replace('{{text}}', guidelineContent);
+            let messages;
+            if (promptConfig.system_prompt) {
+              messages = [
+                { role: 'system', content: promptConfig.system_prompt },
+                { role: 'user', content: extractPrompt }
+              ];
+            } else {
+              messages = [{ role: 'user', content: extractPrompt }];
+            }
+            
+            const result = await routeToAI({ messages });
+            
+            if (result && result.content) {
+              detectedScope = result.content.trim().toLowerCase();
+              // Normalize to 'national' or 'local'
+              if (detectedScope.includes('local')) {
+                detectedScope = 'local';
+              } else if (detectedScope.includes('national')) {
+                detectedScope = 'national';
+              } else {
+                detectedScope = 'national'; // Default
+              }
+              metadata.scope = detectedScope;
+              console.log(`[SYNC_META] Extracted scope for ${guideline}:`, detectedScope);
+            }
+          }
+        } catch (error) {
+          console.error(`[SYNC_META] Failed to extract scope for ${guideline}:`, error);
+          detectedScope = 'national'; // Default
+          metadata.scope = detectedScope;
+        }
+
+        // Extract nation if scope is national
+        if (detectedScope === 'national') {
+          try {
+            const promptConfig = prompts['extractNation'];
+            if (promptConfig) {
+              const extractPrompt = promptConfig.prompt.replace('{{text}}', guidelineContent);
+              let messages;
+              if (promptConfig.system_prompt) {
+                messages = [
+                  { role: 'system', content: promptConfig.system_prompt },
+                  { role: 'user', content: extractPrompt }
+                ];
+              } else {
+                messages = [{ role: 'user', content: extractPrompt }];
+              }
+              
+              const result = await routeToAI({ messages });
+              
+              if (result && result.content) {
+                let nation = result.content.trim();
+                // Validate nation value
+                const validNations = ['England & Wales', 'Scotland', 'Northern Ireland'];
+                if (!validNations.includes(nation)) {
+                  // Try to normalize
+                  if (nation.toLowerCase().includes('scotland')) {
+                    nation = 'Scotland';
+                  } else if (nation.toLowerCase().includes('northern ireland')) {
+                    nation = 'Northern Ireland';
+                  } else {
+                    nation = 'England & Wales'; // Default
+                  }
+                }
+                metadata.nation = nation;
+                console.log(`[SYNC_META] Extracted nation for ${guideline}:`, nation);
+              }
+            }
+          } catch (error) {
+            console.error(`[SYNC_META] Failed to extract nation for ${guideline}:`, error);
+          }
+        }
+
+        // Extract hospitalTrust if scope is local
+        if (detectedScope === 'local') {
+          try {
+            const promptConfig = prompts['extractHospitalTrust'];
+            if (promptConfig) {
+              const extractPrompt = promptConfig.prompt.replace('{{text}}', guidelineContent);
+              let messages;
+              if (promptConfig.system_prompt) {
+                messages = [
+                  { role: 'system', content: promptConfig.system_prompt },
+                  { role: 'user', content: extractPrompt }
+                ];
+              } else {
+                messages = [{ role: 'user', content: extractPrompt }];
+              }
+              
+              const result = await routeToAI({ messages });
+              
+              if (result && result.content) {
+                const hospitalTrust = result.content.trim();
+                if (hospitalTrust && hospitalTrust !== 'N/A' && hospitalTrust !== 'Not available' && hospitalTrust !== 'Unknown') {
+                  metadata.hospitalTrust = hospitalTrust;
+                  console.log(`[SYNC_META] Extracted hospitalTrust for ${guideline}:`, hospitalTrust);
+                }
+              }
+            }
+          } catch (error) {
+            console.error(`[SYNC_META] Failed to extract hospitalTrust for ${guideline}:`, error);
+          }
+        }
+
+        // Extract other metadata fields
         for (const [field, promptKey] of Object.entries(fieldsToExtract)) {
           try {
             const promptConfig = prompts[promptKey];
@@ -8125,6 +8314,9 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           yearProduced: metadata.yearProduced,
           organisation: metadata.organisation,
           doi: metadata.doi,
+          scope: metadata.scope || 'national',
+          nation: metadata.nation || null,
+          hospitalTrust: metadata.hospitalTrust || null,
           auditableElements: await extractAuditableElements(guidelineContent)
         });
         console.log(`[SYNC_META] Successfully stored ${rawGuidelineName} (ID: ${cleanId}) in Firestore.`);
@@ -8386,6 +8578,118 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
 
         // Extract metadata using AI (this is the slow part)
         const metadata = {};
+        
+        // Extract scope first
+        let detectedScope = null;
+        try {
+          const promptConfig = prompts['extractPublisherType'];
+          if (promptConfig) {
+            const extractPrompt = promptConfig.prompt.replace('{{text}}', content);
+            let messages;
+            if (promptConfig.system_prompt) {
+              messages = [
+                { role: 'system', content: promptConfig.system_prompt },
+                { role: 'user', content: extractPrompt }
+              ];
+            } else {
+              messages = [{ role: 'user', content: extractPrompt }];
+            }
+            
+            const result = await routeToAI({ messages });
+            
+            if (result && result.content) {
+              detectedScope = result.content.trim().toLowerCase();
+              // Normalize to 'national' or 'local'
+              if (detectedScope.includes('local')) {
+                detectedScope = 'local';
+              } else if (detectedScope.includes('national')) {
+                detectedScope = 'national';
+              } else {
+                detectedScope = 'national'; // Default
+              }
+              metadata.scope = detectedScope;
+              console.log(`[BATCH_SYNC] Extracted scope for ${guideline}:`, detectedScope);
+            }
+          }
+        } catch (error) {
+          console.error(`[BATCH_SYNC] Failed to extract scope for ${guideline}:`, error.message);
+          detectedScope = 'national'; // Default
+          metadata.scope = detectedScope;
+        }
+
+        // Extract nation if scope is national
+        if (detectedScope === 'national') {
+          try {
+            const promptConfig = prompts['extractNation'];
+            if (promptConfig) {
+              const extractPrompt = promptConfig.prompt.replace('{{text}}', content);
+              let messages;
+              if (promptConfig.system_prompt) {
+                messages = [
+                  { role: 'system', content: promptConfig.system_prompt },
+                  { role: 'user', content: extractPrompt }
+                ];
+              } else {
+                messages = [{ role: 'user', content: extractPrompt }];
+              }
+              
+              const result = await routeToAI({ messages });
+              
+              if (result && result.content) {
+                let nation = result.content.trim();
+                // Validate nation value
+                const validNations = ['England & Wales', 'Scotland', 'Northern Ireland'];
+                if (!validNations.includes(nation)) {
+                  // Try to normalize
+                  if (nation.toLowerCase().includes('scotland')) {
+                    nation = 'Scotland';
+                  } else if (nation.toLowerCase().includes('northern ireland')) {
+                    nation = 'Northern Ireland';
+                  } else {
+                    nation = 'England & Wales'; // Default
+                  }
+                }
+                metadata.nation = nation;
+                console.log(`[BATCH_SYNC] Extracted nation for ${guideline}:`, nation);
+              }
+            }
+          } catch (error) {
+            console.error(`[BATCH_SYNC] Failed to extract nation for ${guideline}:`, error.message);
+          }
+        }
+
+        // Extract hospitalTrust if scope is local
+        if (detectedScope === 'local') {
+          try {
+            const promptConfig = prompts['extractHospitalTrust'];
+            if (promptConfig) {
+              const extractPrompt = promptConfig.prompt.replace('{{text}}', content);
+              let messages;
+              if (promptConfig.system_prompt) {
+                messages = [
+                  { role: 'system', content: promptConfig.system_prompt },
+                  { role: 'user', content: extractPrompt }
+                ];
+              } else {
+                messages = [{ role: 'user', content: extractPrompt }];
+              }
+              
+              const result = await routeToAI({ messages });
+              
+              if (result && result.content) {
+                const hospitalTrust = result.content.trim();
+                if (hospitalTrust && hospitalTrust !== 'N/A' && hospitalTrust !== 'Not available' && hospitalTrust !== 'Unknown') {
+                  metadata.hospitalTrust = hospitalTrust;
+                  console.log(`[BATCH_SYNC] Extracted hospitalTrust for ${guideline}:`, hospitalTrust);
+                }
+              }
+            }
+          } catch (error) {
+            console.error(`[BATCH_SYNC] Failed to extract hospitalTrust for ${guideline}:`, error.message);
+          }
+        }
+
+        // Extract other metadata fields
         const fieldsToExtract = {
           'humanFriendlyName': 'extractHumanFriendlyName',
           'yearProduced': 'extractYear',
@@ -8451,6 +8755,9 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
           yearProduced: metadata.yearProduced,
           organisation: metadata.organisation,
           doi: metadata.doi,
+          scope: metadata.scope || 'national',
+          nation: metadata.nation || null,
+          hospitalTrust: metadata.hospitalTrust || null,
           auditableElements: [] // Skip auditable elements for now to save time
         };
         

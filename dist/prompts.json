@@ -64,6 +64,18 @@
     "system_prompt": "You are a medical guideline keyword extractor. Your task is to identify the most relevant clinical keywords from a medical guideline.",
     "prompt": "Extract 5-10 relevant clinical keywords from this medical guideline. Focus on medical conditions, procedures, patient populations, and key clinical concepts. Return as a comma-separated list.\n\nExamples of good keywords:\n- pregnancy, hypertension, preeclampsia, blood pressure monitoring\n- caesarean section, surgical delivery, postoperative care\n- diabetes, insulin therapy, glucose monitoring, pregnancy\n\nGuideline text:\n{{text}}\n\nKeywords:"
   },
+  "extractPublisherType": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to determine whether a medical guideline was published by a national organization or a local hospital trust.",
+    "prompt": "Determine whether this medical guideline was published by a national organization or a local hospital trust. Return ONLY 'national' or 'local'.\n\nNational organizations include:\n- NICE, RCOG, ACOG, WHO, ESHRE, FIGO, SIGN (Scotland), RCGPs, professional colleges, national health bodies\n\nLocal organizations include:\n- Individual NHS Foundation Trusts, Hospital Trusts, Health Boards, specific hospital trusts\n\nGuideline text:\n{{text}}\n\nPublisher type (national or local):"
+  },
+  "extractNation": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to determine which nation a national guideline applies to.",
+    "prompt": "Determine which nation this national medical guideline applies to. Return ONLY one of: 'England & Wales', 'Scotland', or 'Northern Ireland'.\n\nConsider:\n- The publishing organization (SIGN = Scotland, NICE = England & Wales typically)\n- Explicit mentions in the guideline text\n- The context and references within the guideline\n\nIf the guideline is clearly for Scotland, return 'Scotland'.\nIf the guideline is clearly for Northern Ireland, return 'Northern Ireland'.\nOtherwise, default to 'England & Wales'.\n\nGuideline text:\n{{text}}\n\nNation:"
+  },
+  "extractHospitalTrust": {
+    "system_prompt": "You are a medical guideline metadata extractor. Your task is to identify the full name of the hospital trust that published a local guideline.",
+    "prompt": "Identify the full official name of the hospital trust that published this local medical guideline. Return ONLY the complete trust name.\n\nExamples of correct outputs:\n- University Hospitals Sussex NHS Foundation Trust\n- Guy's and St Thomas' NHS Foundation Trust\n- King's College Hospital NHS Foundation Trust\n- NHS Foundation Trust (if the full name cannot be determined from the text)\n\nLook for:\n- Trust names in headers, footers, or title pages\n- References to specific hospitals or trusts\n- Organizational names that indicate a specific hospital trust\n\nIf the trust name cannot be determined from the guideline text, return 'Not available'.\n\nGuideline text:\n{{text}}\n\nHospital Trust name:"
+  },
   "analyzeGuidelineCompliance": {
     "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given medical case follows the specified guideline. Provide a detailed analysis and specific recommendations if the case doesn't comply.",
     "prompt": "Medical Case:\n{{transcript}}\n\nGuideline:\n[ID] {{id}}\nTitle: {{title}}\nContent: {{content}}"
