@@ -257,6 +257,7 @@
                         </button>
                         <button id="promptsBtn" class="menu-item">Prompts</button>
                         <button id="guidelinesBtn" class="menu-item">Guidelines</button>
+                        <button id="hospitalTrustBtn" class="menu-item">Hospital Trust</button>
                         <button id="actionBtn" class="menu-item">
                             <span id="actionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
                             <span id="actionText">Process</span>
@@ -626,6 +627,40 @@
             </div>
         </div>
     </div>
+    
+    <!-- Hospital Trust Selection Modal -->
+    <div id="hospitalTrustModal" class="hospital-trust-modal hidden">
+        <div class="hospital-trust-modal-content">
+            <div class="hospital-trust-modal-header">
+                <h2>Select Your Hospital Trust</h2>
+                <button id="closeHospitalTrustModal" class="close-modal-btn">&times;</button>
+            </div>
+            <div class="hospital-trust-modal-body">
+                <p class="hospital-trust-info">Select your hospital trust to receive contextualised guidance relevant to your working environment.</p>
+                <div class="current-trust-display">
+                    <strong>Current selection:</strong> <span id="currentTrustDisplay">None selected</span>
+                </div>
+                <div class="trust-search-container">
+                    <input 
+                        type="text" 
+                        id="trustSearchInput" 
+                        placeholder="Search for hospital trust..." 
+                        class="trust-search-input"
+                    />
+                </div>
+                <div class="trust-list-container">
+                    <select id="trustSelect" class="trust-select" size="10">
+                        <option value="">Loading...</option>
+                    </select>
+                </div>
+                <div class="hospital-trust-modal-footer">
+                    <button id="saveTrustBtn" class="save-trust-btn">Save Selection</button>
+                    <button id="clearTrustBtn" class="clear-trust-btn">Clear Selection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
     
