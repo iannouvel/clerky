@@ -2919,7 +2919,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 ? `Searching ${guidelines.length} national guidelines...\n`
                 : scope === 'local'
                 ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
-                : `Searching ${guidelines.length} guidelines (national + ${hospitalTrust})...\n`;
+                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...\n`;
             appendToSummary1(scopeInfo, false);
         }
         
@@ -11088,7 +11088,7 @@ async function askGuidelinesQuestion() {
             ? `Searching ${guidelines.length} national guidelines...\n`
             : scopeSelection.scope === 'local'
             ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...\n`
-            : `Searching ${guidelines.length} guidelines (national + ${scopeSelection.hospitalTrust})...\n`;
+            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...\n`;
         appendToSummary1(scopeInfo, false);
         
         // Format guidelines for relevancy matching
