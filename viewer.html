@@ -61,6 +61,14 @@
             opacity: 0.9;
             margin-left: 16px;
         }
+        
+        .version-number {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 500;
+        }
 
         .top-bar-center {
             flex: 1;
@@ -253,6 +261,7 @@
             }
         }
     </style>
+    <script src="version-loader.js"></script>
 </head>
 <body>
     <div class="top-bar">
@@ -260,6 +269,7 @@
             <a href="index.html" class="logo-link">
                 <div class="logo">clerky</div>
             </a>
+            <span class="version-number">v<span id="appVersion">loading...</span></span>
             <span class="guideline-title" id="guideline-title">Loading guideline...</span>
         </div>
         <div class="top-bar-center">
