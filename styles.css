@@ -1870,6 +1870,32 @@ div.third-column,
     cursor: not-allowed;
 }
 
+/* Override for buttons on white backgrounds (e.g., in action-buttons containers) */
+.action-buttons .nav-btn.primary,
+.action-buttons .nav-btn.secondary {
+    background: white;
+    border: 2px solid #00b894;
+    color: #00b894;
+    text-shadow: none;
+}
+
+.action-buttons .nav-btn.primary:hover:not(:disabled),
+.action-buttons .nav-btn.secondary:hover:not(:disabled) {
+    background: #f8f9fa;
+    color: #00a884;
+    border-color: #00a884;
+    text-shadow: none;
+}
+
+.action-buttons .nav-btn.primary:disabled,
+.action-buttons .nav-btn.secondary:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    border-color: #dee2e6;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* Responsive adjustments for dynamic advice */
 @media (max-width: 768px) {
     .suggestion-actions {
