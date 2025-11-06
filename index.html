@@ -661,6 +661,45 @@
         </div>
     </div>
     
+    <!-- Guideline Scope Selection Modal -->
+    <div id="guidelineScopeModal" class="guideline-scope-modal hidden">
+        <div class="guideline-scope-modal-content">
+            <div class="guideline-scope-modal-header">
+                <h2>Select Guidelines to Apply</h2>
+                <button id="closeGuidelineScopeModal" class="close-modal-btn">&times;</button>
+            </div>
+            <div class="guideline-scope-modal-body">
+                <p class="guideline-scope-info">Choose which guidelines to apply for your clinical scenario.</p>
+                
+                <div class="scope-buttons-container">
+                    <button id="applyNationalBtn" class="scope-btn scope-btn-national">
+                        <span class="scope-btn-title">Apply National Guidelines</span>
+                        <span class="scope-btn-desc">NICE, RCOG, and other national bodies</span>
+                    </button>
+                    <button id="applyLocalBtn" class="scope-btn scope-btn-local">
+                        <span class="scope-btn-title">Apply Local Guidelines</span>
+                        <span class="scope-btn-desc">Trust-specific protocols</span>
+                    </button>
+                    <button id="applyBothBtn" class="scope-btn scope-btn-both">
+                        <span class="scope-btn-title">Apply Both</span>
+                        <span class="scope-btn-desc">National + Local guidelines</span>
+                    </button>
+                </div>
+                
+                <div class="scope-trust-display">
+                    <div class="scope-trust-info">
+                        <strong>Current Trust Selected:</strong> 
+                        <span id="scopeTrustDisplay">None selected</span>
+                    </div>
+                    <div class="scope-trust-actions">
+                        <button id="changeTrustBtn" class="change-trust-btn hidden">Change Trust</button>
+                        <button id="selectTrustBtn" class="select-trust-btn hidden">Select Trust</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
     

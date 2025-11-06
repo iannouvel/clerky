@@ -2389,6 +2389,8 @@ html, body {
     border-radius: 8px 8px 0 0;
     flex-shrink: 0;
     font-size: 1.1em;
+    min-height: 57px;
+    box-sizing: border-box;
 }
 
 .user-input-col .expandable-input {
