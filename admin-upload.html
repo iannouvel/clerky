@@ -336,17 +336,12 @@
                 const result = await response.json();
 
                 if (response.ok && result.success) {
-                    statusMessage.className = 'status-message success';
-                    statusMessage.textContent = `✅ Success! PDF uploaded and processed.\n\nGuideline ID: ${result.guidelineId}\nFilename: ${result.filename}\nContent: ${result.contentLength} characters\nCondensed: ${result.condensedLength} characters`;
+                    // Upload successful, now poll for processing status
+                    statusMessage.className = 'status-message info';
+                    statusMessage.textContent = `✅ PDF uploaded successfully!\n\nGuideline ID: ${result.guidelineId}\nFilename: ${result.filename}\n\nProcessing in background...\n⏳ Extracting content...\n⏳ Generating condensed version...\n⏳ Creating summary...\n⏳ Extracting terms...\n⏳ Extracting auditable elements...`;
 
-                    // Reset form after delay
-                    setTimeout(() => {
-                        this.reset();
-                        fileLabel.classList.remove('has-file');
-                        fileNameSpan.textContent = '';
-                        progressBar.style.display = 'none';
-                        progressFill.style.width = '0%';
-                    }, 3000);
+                    // Poll for status
+                    pollProcessingStatus(result.guidelineId, idToken, statusMessage, progressFill, uploadBtn);
                 } else {
                     throw new Error(result.error || 'Upload failed');
                 }
@@ -374,6 +369,92 @@
                 }, 2000);
             }
         });
+
+        // Poll for processing status
+        async function pollProcessingStatus(guidelineId, idToken, statusMessage, progressFill, uploadBtn) {
+            let attempts = 0;
+            const maxAttempts = 120; // 10 minutes max (5 second intervals)
+            
+            const checkStatus = async () => {
+                try {
+                    const response = await fetch(`${SERVER_URL}/getProcessingStatus?guidelineId=${guidelineId}`, {
+                        headers: {
+                            'Authorization': `Bearer ${idToken}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to check status');
+                    }
+                    
+                    const status = await response.json();
+                    
+                    if (status.success) {
+                        const ps = status.processingStatus || {};
+                        
+                        // Update status message with checkmarks
+                        let statusText = `✅ PDF uploaded successfully!\n\nGuideline ID: ${guidelineId}\n\nProcessing status:\n`;
+                        statusText += ps.contentExtracted ? '✅ Content extracted\n' : '⏳ Extracting content...\n';
+                        statusText += ps.condensedGenerated ? '✅ Condensed version generated\n' : '⏳ Generating condensed version...\n';
+                        statusText += ps.summaryGenerated ? '✅ Summary created\n' : '⏳ Creating summary...\n';
+                        statusText += ps.termsExtracted ? '✅ Terms extracted\n' : '⏳ Extracting terms...\n';
+                        statusText += ps.auditableExtracted ? '✅ Auditable elements extracted\n' : '⏳ Extracting auditable elements...\n';
+                        
+                        // Show errors if any
+                        if (status.processingErrors && Object.keys(status.processingErrors).length > 0) {
+                            statusText += '\n⚠️ Errors:\n';
+                            for (const [job, error] of Object.entries(status.processingErrors)) {
+                                statusText += `  ${job}: ${error}\n`;
+                            }
+                        }
+                        
+                        statusMessage.textContent = statusText;
+                        
+                        // Check if complete
+                        if (status.allComplete) {
+                            statusMessage.className = 'status-message success';
+                            statusMessage.textContent = statusText + '\n🎉 Processing complete!';
+                            uploadBtn.disabled = false;
+                            uploadBtn.textContent = 'Upload & Process PDF';
+                            progressFill.style.width = '100%';
+                            
+                            // Reset form after delay
+                            setTimeout(() => {
+                                document.getElementById('upload-form').reset();
+                                document.getElementById('file-label').classList.remove('has-file');
+                                document.getElementById('file-name').textContent = '';
+                                document.getElementById('progress-bar').style.display = 'none';
+                                progressFill.style.width = '0%';
+                                statusMessage.style.display = 'none';
+                            }, 5000);
+                            
+                            return; // Stop polling
+                        }
+                        
+                        // Continue polling
+                        attempts++;
+                        if (attempts < maxAttempts) {
+                            setTimeout(checkStatus, 5000); // Check every 5 seconds
+                        } else {
+                            statusMessage.className = 'status-message error';
+                            statusMessage.textContent = '⚠️ Processing timeout. The process may still be running in the background.';
+                            uploadBtn.disabled = false;
+                            uploadBtn.textContent = 'Upload & Process PDF';
+                        }
+                    }
+                    
+                } catch (error) {
+                    console.error('Status check error:', error);
+                    attempts++;
+                    if (attempts < maxAttempts) {
+                        setTimeout(checkStatus, 5000);
+                    }
+                }
+            };
+            
+            // Start polling
+            setTimeout(checkStatus, 5000); // First check after 5 seconds
+        }
     </script>
 </body>
 </html>
