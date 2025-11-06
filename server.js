@@ -3850,7 +3850,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   try {
-    const { transcript, guidelinesPayload, anonymisationInfo } = req.body;
+    const { transcript, guidelinesPayload, anonymisationInfo, scope, hospitalTrust } = req.body;
     const userId = req.user.uid;
     
     // Handle optimized guidelines payload
@@ -3882,6 +3882,44 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
       // Fallback: load guidelines from Firestore if no payload
       console.log('[CACHE] No guidelines payload, loading from Firestore...');
              guidelines = await getAllGuidelines();
+    }
+    
+    // Apply scope filtering if specified
+    if (scope) {
+      console.log('[SCOPE_FILTER] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
+      
+      if (scope === 'national') {
+        // Only national guidelines
+        guidelines = guidelines.filter(g => {
+          const guidelineScope = g.scope || 'national';
+          return guidelineScope === 'national';
+        });
+      } else if (scope === 'local') {
+        // Only local guidelines for the specified trust
+        if (hospitalTrust) {
+          guidelines = guidelines.filter(g => {
+            const guidelineScope = g.scope || 'national';
+            return guidelineScope === 'local' && g.hospitalTrust === hospitalTrust;
+          });
+        } else {
+          console.log('[SCOPE_FILTER] No hospital trust specified for local scope, returning no guidelines');
+          guidelines = [];
+        }
+      } else if (scope === 'both') {
+        // National guidelines + local guidelines for specified trust
+        guidelines = guidelines.filter(g => {
+          const guidelineScope = g.scope || 'national';
+          if (guidelineScope === 'national') {
+            return true;
+          }
+          if (guidelineScope === 'local' && hospitalTrust && g.hospitalTrust === hospitalTrust) {
+            return true;
+          }
+          return false;
+        });
+      }
+      
+      console.log('[SCOPE_FILTER] After filtering:', guidelines.length, 'guidelines');
     }
     
     // Log anonymisation information if provided

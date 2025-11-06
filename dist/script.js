@@ -2979,7 +2979,9 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 transcript: anonymisedTranscript, // Use anonymised transcript
                 guidelinesCount: guidelinesList.length, // Just send count for verification
                 loadGuidelinesOnServer: true, // Flag to load guidelines server-side
-                anonymisationInfo: anonymisationInfo // Include anonymisation metadata
+                anonymisationInfo: anonymisationInfo, // Include anonymisation metadata
+                scope: scope, // Include scope filtering
+                hospitalTrust: hospitalTrust // Include hospital trust for local filtering
             })
         });
 
@@ -4484,7 +4486,7 @@ async function showCurrentSuggestion() {
             </div>
             <div class="modify-section" id="modify-section-current" style="display: none; background: #fef3c7; border: 2px solid #eab308; padding: 15px; margin: 10px 0; border-radius: 6px;">
                 <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold;">Your modified text:</label>
-                <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
+                <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; box-sizing: border-box;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
                 <div style="margin-top: 10px;">
                     <button onclick="confirmCurrentModification()" style="background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">✅ Confirm</button>
                     <button onclick="hideModifySection()" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px;">❌ Cancel</button>
@@ -7442,9 +7444,9 @@ async function processWorkflow() {
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
         appendToSummary1(workflowStart, false);
 
-        // Step 0: Select Guideline Scope
-        console.log('[DEBUG] processWorkflow: Step 0 - Show guideline scope selection modal');
-        const scopeSelectionStatus = '## Step 0: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
+        // Step 1: Select Guideline Scope
+        console.log('[DEBUG] processWorkflow: Step 1 - Show guideline scope selection modal');
+        const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
         appendToSummary1(scopeSelectionStatus, false);
         
         let scopeSelection;
@@ -7468,22 +7470,22 @@ async function processWorkflow() {
             return; // Exit workflow if user cancels
         }
 
-        console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
+        console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         
-        // Step 1: Find Relevant Guidelines (with scope filtering)
-        const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
+        // Step 2: Find Relevant Guidelines (with scope filtering)
+        const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
         appendToSummary1(step1Status, false);
         
         try {
             await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust); // Pass scope parameters
-            console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
+            console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             
-            const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
+            const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
             appendToSummary1(step1Complete, false);
             
         } catch (error) {
-            console.error('[DEBUG] processWorkflow: Step 1 failed:', error.message);
-            throw new Error(`Step 1 (Find Guidelines) failed: ${error.message}`);
+            console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
+            throw new Error(`Step 2 (Find Guidelines) failed: ${error.message}`);
         }
 
         // Check if we have relevant guidelines before proceeding
@@ -7498,11 +7500,11 @@ async function processWorkflow() {
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
         }
 
-        console.log('[DEBUG] processWorkflow: Step 1 completed - now showing guideline selection interface');
+        console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
         
-        // Step 2: Show Guideline Selection Interface
-        const step2Status = `## Step 2: Select Guidelines to Process\n\n` +
-                           `✅ **Step 1 Complete:** Found ${window.relevantGuidelines.length} relevant guidelines\n\n` +
+        // Step 3: Show Guideline Selection Interface
+        const step2Status = `## Step 3: Select Guidelines to Process\n\n` +
+                           `✅ **Step 2 Complete:** Found ${window.relevantGuidelines.length} relevant guidelines\n\n` +
                            `**Next:** Use the interface above to select which guidelines to process. ` +
                            `Most relevant guidelines are pre-selected. Click "Process Selected Guidelines" when ready.\n\n` +
                            `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
@@ -11122,7 +11124,9 @@ async function askGuidelinesQuestion() {
                 transcript: question,
                 guidelinesCount: guidelinesList.length, // Just send count for verification
                 loadGuidelinesOnServer: true, // Flag to load guidelines server-side
-                anonymisationInfo: null // No anonymisation needed for questions
+                anonymisationInfo: null, // No anonymisation needed for questions
+                scope: scopeSelection.scope, // Include scope filtering
+                hospitalTrust: scopeSelection.hospitalTrust // Include hospital trust for local filtering
             })
         });
 
