@@ -6877,6 +6877,199 @@ async function clearHospitalTrustSelection() {
     }
 }
 
+// Guideline Scope Selection Modal Functions
+let guidelineScopeResolve = null; // Promise resolver for scope selection
+
+async function showGuidelineScopeModal() {
+    console.log('[DEBUG] Showing guideline scope modal');
+    
+    const modal = document.getElementById('guidelineScopeModal');
+    const scopeTrustDisplay = document.getElementById('scopeTrustDisplay');
+    const applyNationalBtn = document.getElementById('applyNationalBtn');
+    const applyLocalBtn = document.getElementById('applyLocalBtn');
+    const applyBothBtn = document.getElementById('applyBothBtn');
+    const changeTrustBtn = document.getElementById('changeTrustBtn');
+    const selectTrustBtn = document.getElementById('selectTrustBtn');
+    const closeBtn = document.getElementById('closeGuidelineScopeModal');
+    
+    if (!modal) {
+        console.error('[ERROR] Guideline scope modal not found');
+        return Promise.reject(new Error('Modal not found'));
+    }
+    
+    // Show modal
+    modal.classList.remove('hidden');
+    
+    // Load current trust selection
+    let userHospitalTrust = null;
+    try {
+        const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+            }
+        });
+        
+        const result = await response.json();
+        if (result.success && result.hospitalTrust) {
+            userHospitalTrust = result.hospitalTrust;
+            scopeTrustDisplay.textContent = userHospitalTrust;
+            
+            // Show "Change Trust" button, hide "Select Trust" button
+            changeTrustBtn.classList.remove('hidden');
+            selectTrustBtn.classList.add('hidden');
+            
+            // Enable all buttons
+            applyNationalBtn.disabled = false;
+            applyLocalBtn.disabled = false;
+            applyBothBtn.disabled = false;
+        } else {
+            scopeTrustDisplay.textContent = 'None selected';
+            
+            // Show "Select Trust" button, hide "Change Trust" button
+            changeTrustBtn.classList.add('hidden');
+            selectTrustBtn.classList.remove('hidden');
+            
+            // Enable national button, disable local and both buttons
+            applyNationalBtn.disabled = false;
+            applyLocalBtn.disabled = true;
+            applyBothBtn.disabled = true;
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load current hospital trust:', error);
+        scopeTrustDisplay.textContent = 'Error loading selection';
+        
+        // Show "Select Trust" button, hide "Change Trust" button
+        changeTrustBtn.classList.add('hidden');
+        selectTrustBtn.classList.remove('hidden');
+        
+        // Enable national button, disable local and both buttons
+        applyNationalBtn.disabled = false;
+        applyLocalBtn.disabled = true;
+        applyBothBtn.disabled = true;
+    }
+    
+    // Return a promise that resolves when user selects a scope
+    return new Promise((resolve, reject) => {
+        guidelineScopeResolve = resolve;
+        
+        // Set up button click handlers
+        const handleNationalClick = () => {
+            console.log('[DEBUG] User selected: National guidelines');
+            cleanup();
+            resolve({ scope: 'national', hospitalTrust: userHospitalTrust });
+        };
+        
+        const handleLocalClick = () => {
+            console.log('[DEBUG] User selected: Local guidelines');
+            cleanup();
+            resolve({ scope: 'local', hospitalTrust: userHospitalTrust });
+        };
+        
+        const handleBothClick = () => {
+            console.log('[DEBUG] User selected: Both guidelines');
+            cleanup();
+            resolve({ scope: 'both', hospitalTrust: userHospitalTrust });
+        };
+        
+        const handleChangeTrustClick = async () => {
+            console.log('[DEBUG] User clicked: Change Trust');
+            await showHospitalTrustModal();
+            // After trust selection, refresh the modal
+            cleanup();
+            const newSelection = await showGuidelineScopeModal();
+            resolve(newSelection);
+        };
+        
+        const handleSelectTrustClick = async () => {
+            console.log('[DEBUG] User clicked: Select Trust');
+            await showHospitalTrustModal();
+            // After trust selection, refresh the modal
+            cleanup();
+            const newSelection = await showGuidelineScopeModal();
+            resolve(newSelection);
+        };
+        
+        const handleCloseClick = () => {
+            console.log('[DEBUG] User closed modal');
+            cleanup();
+            reject(new Error('User cancelled scope selection'));
+        };
+        
+        const cleanup = () => {
+            modal.classList.add('hidden');
+            applyNationalBtn.removeEventListener('click', handleNationalClick);
+            applyLocalBtn.removeEventListener('click', handleLocalClick);
+            applyBothBtn.removeEventListener('click', handleBothClick);
+            changeTrustBtn.removeEventListener('click', handleChangeTrustClick);
+            selectTrustBtn.removeEventListener('click', handleSelectTrustClick);
+            closeBtn.removeEventListener('click', handleCloseClick);
+        };
+        
+        // Add event listeners
+        applyNationalBtn.addEventListener('click', handleNationalClick);
+        applyLocalBtn.addEventListener('click', handleLocalClick);
+        applyBothBtn.addEventListener('click', handleBothClick);
+        changeTrustBtn.addEventListener('click', handleChangeTrustClick);
+        selectTrustBtn.addEventListener('click', handleSelectTrustClick);
+        closeBtn.addEventListener('click', handleCloseClick);
+    });
+}
+
+// Filter guidelines by scope
+function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
+    console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, totalGuidelines: guidelines.length });
+    
+    if (!guidelines || guidelines.length === 0) {
+        console.log('[DEBUG] No guidelines to filter');
+        return [];
+    }
+    
+    let filtered = [];
+    
+    if (scope === 'national') {
+        // Only national guidelines
+        filtered = guidelines.filter(g => {
+            const guidelineScope = g.scope || 'national';
+            return guidelineScope === 'national';
+        });
+        console.log('[DEBUG] Filtered to national guidelines:', filtered.length);
+    } else if (scope === 'local') {
+        // Only local guidelines for the user's trust
+        if (!hospitalTrust) {
+            console.log('[DEBUG] No hospital trust selected, cannot filter local guidelines');
+            return [];
+        }
+        filtered = guidelines.filter(g => {
+            const guidelineScope = g.scope || 'national';
+            return guidelineScope === 'local' && g.hospitalTrust === hospitalTrust;
+        });
+        console.log('[DEBUG] Filtered to local guidelines for', hospitalTrust, ':', filtered.length);
+    } else if (scope === 'both') {
+        // National guidelines + local guidelines for user's trust
+        filtered = guidelines.filter(g => {
+            const guidelineScope = g.scope || 'national';
+            if (guidelineScope === 'national') {
+                return true;
+            }
+            if (guidelineScope === 'local' && hospitalTrust && g.hospitalTrust === hospitalTrust) {
+                return true;
+            }
+            return false;
+        });
+        console.log('[DEBUG] Filtered to both guidelines:', filtered.length);
+    } else {
+        // Default: return all
+        filtered = guidelines;
+        console.log('[DEBUG] No scope filtering applied, returning all guidelines');
+    }
+    
+    return filtered;
+}
+
+// Store selected scope globally
+window.selectedGuidelineScope = null;
+
 // Show clinical issues dropdown in summary1
 async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
@@ -7227,14 +7420,40 @@ async function processWorkflow() {
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
         appendToSummary1(workflowStart, false);
 
+        // Step 0: Select Guideline Scope
+        console.log('[DEBUG] processWorkflow: Step 0 - Show guideline scope selection modal');
+        const scopeSelectionStatus = '## Step 0: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
+        appendToSummary1(scopeSelectionStatus, false);
+        
+        let scopeSelection;
+        try {
+            scopeSelection = await showGuidelineScopeModal();
+            console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
+            
+            // Store the selection globally
+            window.selectedGuidelineScope = scopeSelection;
+            
+            const scopeMessage = scopeSelection.scope === 'national' 
+                ? '📘 **National Guidelines Selected**\n\n'
+                : scopeSelection.scope === 'local'
+                ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+                : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
+            
+            appendToSummary1(scopeMessage, false);
+        } catch (error) {
+            console.log('[DEBUG] processWorkflow: Scope selection cancelled:', error.message);
+            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+            return; // Exit workflow if user cancels
+        }
+
         console.log('[DEBUG] processWorkflow: Starting step 1 - Find Relevant Guidelines');
         
-        // Step 1: Find Relevant Guidelines
+        // Step 1: Find Relevant Guidelines (with scope filtering)
         const step1Status = '## Step 1: Finding Relevant Guidelines\n\n';
         appendToSummary1(step1Status, false);
         
         try {
-            await findRelevantGuidelines(true); // Suppress header since we show our own step header
+            await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust); // Pass scope parameters
             console.log('[DEBUG] processWorkflow: Step 1 completed successfully');
             
             const step1Complete = '✅ **Step 1 Complete:** Relevant guidelines identified\n\n';
