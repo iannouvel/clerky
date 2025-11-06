@@ -175,6 +175,66 @@ def migrate_guideline(pdf_path, db, bucket, dry_run=False):
     
     return result
 
+def reprocess_existing_guidelines(db, dry_run=False, fields=None):
+    """
+    Reprocess existing guidelines for missing content
+    """
+    import requests
+    
+    logging.info("Starting reprocessing of existing guidelines...")
+    
+    # Get all guidelines from Firestore
+    guidelines = db.collection('guidelines').stream()
+    
+    reprocess_count = 0
+    skip_count = 0
+    error_count = 0
+    
+    for doc in guidelines:
+        guideline_id = doc.id
+        data = doc.to_dict()
+        
+        # Check what's missing
+        missing_fields = []
+        
+        if fields is None or 'summary' in fields:
+            if not data.get('summary'):
+                missing_fields.append('summary')
+        
+        if fields is None or 'terms' in fields:
+            if not data.get('significantTerms'):
+                missing_fields.append('terms')
+        
+        if fields is None or 'auditable' in fields:
+            if not data.get('auditableElements'):
+                missing_fields.append('auditable')
+        
+        if not missing_fields:
+            skip_count += 1
+            continue
+        
+        logging.info(f"Guideline {guideline_id} missing: {', '.join(missing_fields)}")
+        
+        if dry_run:
+            logging.info(f"  [DRY RUN] Would reprocess: {guideline_id}")
+            reprocess_count += 1
+            continue
+        
+        # Trigger background processing via server endpoint
+        try:
+            # Note: This requires server to be running and accessible
+            # For now, just log that manual processing is needed
+            logging.info(f"  Needs manual processing via /processGuidelineBackground endpoint")
+            reprocess_count += 1
+        except Exception as e:
+            logging.error(f"  Error: {str(e)}")
+            error_count += 1
+    
+    logging.info(f"\nReprocessing summary:")
+    logging.info(f"  Need reprocessing: {reprocess_count}")
+    logging.info(f"  Already complete: {skip_count}")
+    logging.info(f"  Errors: {error_count}")
+
 def main():
     import argparse
     
@@ -182,6 +242,8 @@ def main():
     parser.add_argument('--dry-run', action='store_true', help='Run without making changes')
     parser.add_argument('--limit', type=int, default=None, help='Limit number of PDFs to migrate (for testing)')
     parser.add_argument('--pattern', type=str, default='*.pdf', help='File pattern to match (default: *.pdf)')
+    parser.add_argument('--reprocess', action='store_true', help='Reprocess existing guidelines for missing content')
+    parser.add_argument('--fields', type=str, help='Comma-separated list of fields to reprocess (summary,terms,auditable)')
     args = parser.parse_args()
     
     # Set up logging
@@ -197,11 +259,25 @@ def main():
     logging.info("="*80)
     logging.info("Starting migration to Firebase Storage and Firestore")
     logging.info(f"Dry run: {args.dry_run}")
+    logging.info(f"Reprocess mode: {args.reprocess}")
     logging.info(f"Limit: {args.limit or 'None'}")
     logging.info("="*80)
     
     # Initialize Firebase
     db, bucket = init_firebase()
+    
+    # Handle reprocess mode
+    if args.reprocess:
+        fields_list = None
+        if args.fields:
+            fields_list = [f.strip() for f in args.fields.split(',')]
+            logging.info(f"Reprocessing fields: {fields_list}")
+        
+        reprocess_existing_guidelines(db, dry_run=args.dry_run, fields=fields_list)
+        
+        logging.info("\nReprocessing complete!")
+        logging.info("Note: Use the /processGuidelineBackground endpoint to actually trigger processing")
+        return
     
     # Find all PDFs
     guidance_dir = Path('guidance')

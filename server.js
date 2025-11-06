@@ -962,6 +962,403 @@ ${fullText}`;
     }
 }
 
+// Function to generate summary from content using AI
+async function generateSummary(text, userId = null) {
+    try {
+        console.log(`[SUMMARY] Starting summary generation, input length: ${text.length}`);
+        
+        const prompt = `Please provide a concise summary of this clinical guideline in 2-3 paragraphs. Focus on the key recommendations, target population, and main clinical actions. Make it suitable for quick reference by healthcare professionals.
+
+Clinical guideline text:
+${text.substring(0, 8000)}`; // Limit input to avoid token limits
+
+        const messages = [
+            { 
+                role: 'system', 
+                content: 'You are a medical expert creating concise summaries of clinical guidelines for healthcare professionals.' 
+            },
+            { role: 'user', content: prompt }
+        ];
+        
+        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
+        
+        if (aiResult && aiResult.content) {
+            const summary = aiResult.content.trim();
+            console.log(`[SUMMARY] Successfully generated summary: ${summary.length} characters`);
+            return summary;
+        } else {
+            console.warn(`[SUMMARY] AI did not return summary`);
+            return null;
+        }
+        
+    } catch (error) {
+        console.error(`[SUMMARY] Error generating summary:`, error);
+        return null;
+    }
+}
+
+// Function to extract significant terms from content using AI
+async function extractSignificantTerms(text, userId = null) {
+    try {
+        console.log(`[TERMS] Starting term extraction, input length: ${text.length}`);
+        
+        const prompt = `Extract the most significant medical terms, conditions, procedures, and medications from this clinical guideline. Return them as a JSON array of objects with "term" and "category" fields. Categories should be: condition, procedure, medication, test, or general.
+
+Clinical guideline text:
+${text.substring(0, 6000)}`;
+
+        const messages = [
+            { 
+                role: 'system', 
+                content: 'You are a medical terminology expert. Extract key medical terms and categorize them. Return only valid JSON.' 
+            },
+            { role: 'user', content: prompt }
+        ];
+        
+        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
+        
+        if (aiResult && aiResult.content) {
+            // Try to parse JSON from response
+            try {
+                const jsonMatch = aiResult.content.match(/\[[\s\S]*\]/);
+                if (jsonMatch) {
+                    const terms = JSON.parse(jsonMatch[0]);
+                    console.log(`[TERMS] Successfully extracted ${terms.length} terms`);
+                    return terms;
+                }
+            } catch (parseError) {
+                console.warn(`[TERMS] Failed to parse JSON, returning raw text`);
+            }
+            return [];
+        } else {
+            console.warn(`[TERMS] AI did not return terms`);
+            return [];
+        }
+        
+    } catch (error) {
+        console.error(`[TERMS] Error extracting terms:`, error);
+        return [];
+    }
+}
+
+// Function to extract auditable elements from content using AI
+async function extractAuditableElements(text, userId = null) {
+    try {
+        console.log(`[AUDITABLE] Starting auditable element extraction, input length: ${text.length}`);
+        
+        const prompt = `Extract key clinical recommendations and auditable elements from this guideline. Focus on specific clinical actions, thresholds, timeframes, and measurable outcomes. Return as a JSON array of objects with "element", "description", and "measurable" (boolean) fields.
+
+Clinical guideline text:
+${text.substring(0, 6000)}`;
+
+        const messages = [
+            { 
+                role: 'system', 
+                content: 'You are a clinical audit expert. Extract measurable clinical recommendations and key decision points. Return only valid JSON.' 
+            },
+            { role: 'user', content: prompt }
+        ];
+        
+        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
+        
+        if (aiResult && aiResult.content) {
+            // Try to parse JSON from response
+            try {
+                const jsonMatch = aiResult.content.match(/\[[\s\S]*\]/);
+                if (jsonMatch) {
+                    const elements = JSON.parse(jsonMatch[0]);
+                    console.log(`[AUDITABLE] Successfully extracted ${elements.length} auditable elements`);
+                    return elements;
+                }
+            } catch (parseError) {
+                console.warn(`[AUDITABLE] Failed to parse JSON, returning empty array`);
+            }
+            return [];
+        } else {
+            console.warn(`[AUDITABLE] AI did not return auditable elements`);
+            return [];
+        }
+        
+    } catch (error) {
+        console.error(`[AUDITABLE] Error extracting auditable elements:`, error);
+        return [];
+    }
+}
+
+// ============================================================================
+// BACKGROUND JOB QUEUE SYSTEM
+// ============================================================================
+
+const jobQueue = [];
+const processingJobs = new Set();
+const MAX_CONCURRENT_JOBS = 3;
+let isProcessingQueue = false;
+
+// Add job to queue
+function queueJob(jobType, guidelineId, data = {}) {
+    const job = {
+        id: `${jobType}-${guidelineId}-${Date.now()}`,
+        type: jobType,
+        guidelineId: guidelineId,
+        data: data,
+        status: 'pending',
+        createdAt: new Date().toISOString(),
+        attempts: 0,
+        maxAttempts: 3,
+        error: null
+    };
+    
+    jobQueue.push(job);
+    console.log(`[JOB_QUEUE] Added job: ${job.id}, queue length: ${jobQueue.length}`);
+    
+    // Start processing if not already running
+    if (!isProcessingQueue) {
+        processJobQueue();
+    }
+    
+    return job.id;
+}
+
+// Process job queue
+async function processJobQueue() {
+    if (isProcessingQueue) return;
+    isProcessingQueue = true;
+    
+    console.log(`[JOB_QUEUE] Starting queue processor, ${jobQueue.length} jobs pending`);
+    
+    while (jobQueue.length > 0) {
+        // Wait if we're at max concurrent jobs
+        while (processingJobs.size >= MAX_CONCURRENT_JOBS) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+        
+        const job = jobQueue.shift();
+        if (!job) continue;
+        
+        processingJobs.add(job.id);
+        
+        // Process job asynchronously
+        processJob(job).then(() => {
+            processingJobs.delete(job.id);
+        }).catch((error) => {
+            console.error(`[JOB_QUEUE] Job ${job.id} failed:`, error);
+            processingJobs.delete(job.id);
+        });
+        
+        // Small delay between job starts
+        await new Promise(resolve => setTimeout(resolve, 500));
+    }
+    
+    // Wait for all jobs to complete
+    while (processingJobs.size > 0) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    isProcessingQueue = false;
+    console.log(`[JOB_QUEUE] Queue processor stopped, all jobs completed`);
+}
+
+// Process individual job
+async function processJob(job) {
+    console.log(`[JOB_QUEUE] Processing job: ${job.id}, type: ${job.type}`);
+    
+    try {
+        job.attempts++;
+        job.status = 'processing';
+        
+        const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+        const doc = await guidelineRef.get();
+        
+        if (!doc.exists) {
+            throw new Error(`Guideline not found: ${job.guidelineId}`);
+        }
+        
+        const guidelineData = doc.data();
+        let result;
+        
+        switch (job.type) {
+            case 'extract_content':
+                result = await jobExtractContent(job, guidelineData);
+                break;
+            case 'generate_condensed':
+                result = await jobGenerateCondensed(job, guidelineData);
+                break;
+            case 'generate_summary':
+                result = await jobGenerateSummary(job, guidelineData);
+                break;
+            case 'extract_terms':
+                result = await jobExtractTerms(job, guidelineData);
+                break;
+            case 'extract_auditable':
+                result = await jobExtractAuditable(job, guidelineData);
+                break;
+            default:
+                throw new Error(`Unknown job type: ${job.type}`);
+        }
+        
+        job.status = 'completed';
+        job.completedAt = new Date().toISOString();
+        console.log(`[JOB_QUEUE] Job completed: ${job.id}`);
+        
+        return result;
+        
+    } catch (error) {
+        console.error(`[JOB_QUEUE] Job ${job.id} error:`, error.message);
+        
+        job.error = error.message;
+        
+        // Retry if not at max attempts
+        if (job.attempts < job.maxAttempts) {
+            console.log(`[JOB_QUEUE] Retrying job ${job.id}, attempt ${job.attempts}/${job.maxAttempts}`);
+            job.status = 'pending';
+            jobQueue.push(job); // Re-queue
+        } else {
+            console.error(`[JOB_QUEUE] Job ${job.id} failed after ${job.attempts} attempts`);
+            job.status = 'failed';
+            
+            // Update Firestore with error
+            try {
+                const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+                await guidelineRef.update({
+                    [`processingErrors.${job.type}`]: error.message,
+                    lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+                });
+            } catch (updateError) {
+                console.error(`[JOB_QUEUE] Failed to update error in Firestore:`, updateError);
+            }
+        }
+        
+        throw error;
+    }
+}
+
+// Job handlers
+async function jobExtractContent(job, guidelineData) {
+    const filename = guidelineData.filename || guidelineData.originalFilename;
+    if (!filename) throw new Error('No filename found');
+    
+    const fullText = await fetchAndExtractPDFText(filename);
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        content: fullText,
+        'processingStatus.contentExtracted': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    return { contentLength: fullText.length };
+}
+
+async function jobGenerateCondensed(job, guidelineData) {
+    const content = guidelineData.content;
+    if (!content) throw new Error('No content to condense');
+    
+    const condensed = await generateCondensedText(content, 'system');
+    if (!condensed) throw new Error('Failed to generate condensed text');
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        condensed: condensed,
+        'processingStatus.condensedGenerated': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    // Also save to condensed collection
+    const condensedRef = db.collection('condensed').doc(job.guidelineId);
+    await condensedRef.set({
+        condensed: condensed,
+        createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        generatedDate: new Date().toISOString(),
+        sourceType: 'background_job'
+    });
+    
+    return { condensedLength: condensed.length };
+}
+
+async function jobGenerateSummary(job, guidelineData) {
+    const content = guidelineData.condensed || guidelineData.content;
+    if (!content) throw new Error('No content to summarize');
+    
+    const summary = await generateSummary(content, 'system');
+    if (!summary) throw new Error('Failed to generate summary');
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        summary: summary,
+        'processingStatus.summaryGenerated': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    return { summaryLength: summary.length };
+}
+
+async function jobExtractTerms(job, guidelineData) {
+    const content = guidelineData.content;
+    if (!content) throw new Error('No content to extract terms from');
+    
+    const terms = await extractSignificantTerms(content, 'system');
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        significantTerms: terms,
+        'processingStatus.termsExtracted': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    return { termsCount: terms.length };
+}
+
+async function jobExtractAuditable(job, guidelineData) {
+    const content = guidelineData.condensed || guidelineData.content;
+    if (!content) throw new Error('No content to extract auditable elements from');
+    
+    const elements = await extractAuditableElements(content, 'system');
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        auditableElements: elements,
+        'processingStatus.auditableExtracted': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    // Check if all processing is complete
+    await checkAndMarkProcessingComplete(job.guidelineId);
+    
+    return { elementsCount: elements.length };
+}
+
+// Check if all processing steps are complete and update flag
+async function checkAndMarkProcessingComplete(guidelineId) {
+    try {
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const doc = await guidelineRef.get();
+        
+        if (!doc.exists) return;
+        
+        const data = doc.data();
+        const status = data.processingStatus || {};
+        
+        const allComplete = 
+            status.contentExtracted &&
+            status.condensedGenerated &&
+            status.summaryGenerated &&
+            status.termsExtracted &&
+            status.auditableExtracted;
+        
+        if (allComplete && data.processing) {
+            console.log(`[PROCESSING_COMPLETE] All processing complete for: ${guidelineId}`);
+            await guidelineRef.update({
+                processing: false,
+                processed: true,
+                processingCompletedAt: admin.firestore.FieldValue.serverTimestamp(),
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+            });
+        }
+    } catch (error) {
+        console.error(`[CHECK_COMPLETE] Error checking completion status:`, error);
+    }
+}
+
 // ============================================================================
 // FIREBASE STORAGE HELPERS FOR LARGE CONTENT
 // ============================================================================
@@ -4439,22 +4836,6 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
         
         console.log(`[UPLOAD_PDF] PDF uploaded to Firebase Storage: pdfs/${fileName}`);
         
-        // Extract text from PDF
-        console.log('[UPLOAD_PDF] Extracting text from PDF...');
-        const fullText = await extractTextFromPDF(fileBuffer);
-        
-        if (!fullText || fullText.length < 100) {
-            throw new Error('Failed to extract meaningful text from PDF');
-        }
-        
-        console.log(`[UPLOAD_PDF] Extracted ${fullText.length} characters from PDF`);
-        
-        // Generate condensed text
-        console.log('[UPLOAD_PDF] Generating condensed text...');
-        const condensedText = await generateCondensedText(fullText, userId);
-        
-        console.log(`[UPLOAD_PDF] Generated condensed text: ${condensedText ? condensedText.length : 0} characters`);
-        
         // Get metadata from request body
         const title = req.body.title || fileName.replace('.pdf', '');
         const organisation = req.body.organisation || 'Unknown';
@@ -4463,15 +4844,7 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
         const nation = req.body.nation || null;
         const hospitalTrust = req.body.hospitalTrust || null;
         
-        // Prepare content for Firestore (handle large content)
-        const contentData = await prepareContentForFirestore(
-            fullText, 
-            condensedText, 
-            null, // summary will be generated later if needed
-            guidelineId
-        );
-        
-        // Create guideline document in Firestore
+        // Create guideline document in Firestore with processing status
         const guidelineDoc = {
             id: guidelineId,
             title: title,
@@ -4480,19 +4853,19 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
             fileHash: fileHash,
             organisation: organisation,
             yearProduced: yearProduced,
-            content: contentData.content,
-            condensed: contentData.condensed,
-            summary: contentData.summary,
-            contentStorageUrl: contentData.contentStorageUrl,
-            condensedStorageUrl: contentData.condensedStorageUrl,
-            summaryStorageUrl: contentData.summaryStorageUrl,
-            contentInStorage: contentData.contentInStorage,
             uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
             uploadedBy: userId,
             createdAt: admin.firestore.FieldValue.serverTimestamp(),
             lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-            processed: true,
-            contentExtracted: true,
+            processing: true,
+            processingStatus: {
+                contentExtracted: false,
+                condensedGenerated: false,
+                summaryGenerated: false,
+                termsExtracted: false,
+                auditableExtracted: false
+            },
+            processingErrors: {},
             scope: scope,
             nation: scope === 'national' ? nation : null,
             hospitalTrust: scope === 'local' ? hospitalTrust : null,
@@ -4505,24 +4878,21 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
         await db.collection('guidelines').doc(guidelineId).set(guidelineDoc);
         console.log(`[UPLOAD_PDF] Created Firestore document: ${guidelineId}`);
         
-        // Save condensed text to condensed collection as well
-        if (condensedText) {
-            await db.collection('condensed').doc(guidelineId).set({
-                condensed: condensedText,
-                createdAt: admin.firestore.FieldValue.serverTimestamp(),
-                generatedDate: new Date().toISOString(),
-                sourceType: 'uploaded_pdf'
-            });
-            console.log(`[UPLOAD_PDF] Saved condensed text to condensed collection`);
-        }
+        // Queue background processing jobs
+        console.log(`[UPLOAD_PDF] Queueing background processing jobs for: ${guidelineId}`);
+        queueJob('extract_content', guidelineId);
+        queueJob('generate_condensed', guidelineId);
+        queueJob('generate_summary', guidelineId);
+        queueJob('extract_terms', guidelineId);
+        queueJob('extract_auditable', guidelineId);
         
         res.json({
             success: true,
-            message: 'PDF uploaded and processed successfully',
+            message: 'PDF uploaded successfully. Processing in background...',
             guidelineId: guidelineId,
             filename: fileName,
-            contentLength: fullText.length,
-            condensedLength: condensedText ? condensedText.length : 0
+            processing: true,
+            statusUrl: `/getProcessingStatus?guidelineId=${guidelineId}`
         });
         
     } catch (error) {
@@ -4532,6 +4902,114 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
             success: false,
             error: error.message || 'Failed to upload and process PDF'
         });
+    }
+});
+
+// Endpoint to check processing status
+app.get('/getProcessingStatus', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.query;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'guidelineId is required' });
+        }
+        
+        const doc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!doc.exists) {
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+        
+        const data = doc.data();
+        
+        // Check if all processing is complete
+        const allComplete = data.processingStatus &&
+            data.processingStatus.contentExtracted &&
+            data.processingStatus.condensedGenerated &&
+            data.processingStatus.summaryGenerated &&
+            data.processingStatus.termsExtracted &&
+            data.processingStatus.auditableExtracted;
+        
+        res.json({
+            success: true,
+            guidelineId: guidelineId,
+            processing: data.processing || false,
+            processingStatus: data.processingStatus || {},
+            processingErrors: data.processingErrors || {},
+            allComplete: allComplete,
+            lastUpdated: data.lastUpdated
+        });
+        
+    } catch (error) {
+        console.error('[GET_STATUS] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint to manually trigger background processing
+app.post('/processGuidelineBackground', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId, force } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'guidelineId is required' });
+        }
+        
+        // Check if user is admin
+        const isAdmin = req.user.admin;
+        if (!isAdmin) {
+            return res.status(403).json({ success: false, error: 'Admin access required' });
+        }
+        
+        const doc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!doc.exists) {
+            return res.status(404).json({ success: false, error: 'Guideline not found' });
+        }
+        
+        const data = doc.data();
+        
+        console.log(`[PROCESS_BG] Manual processing triggered for: ${guidelineId}`);
+        
+        // Queue jobs for missing content
+        const jobs = [];
+        
+        if (force || !data.content || !data.processingStatus?.contentExtracted) {
+            jobs.push(queueJob('extract_content', guidelineId));
+        }
+        
+        if (force || !data.condensed || !data.processingStatus?.condensedGenerated) {
+            jobs.push(queueJob('generate_condensed', guidelineId));
+        }
+        
+        if (force || !data.summary || !data.processingStatus?.summaryGenerated) {
+            jobs.push(queueJob('generate_summary', guidelineId));
+        }
+        
+        if (force || !data.significantTerms || !data.processingStatus?.termsExtracted) {
+            jobs.push(queueJob('extract_terms', guidelineId));
+        }
+        
+        if (force || !data.auditableElements || !data.processingStatus?.auditableExtracted) {
+            jobs.push(queueJob('extract_auditable', guidelineId));
+        }
+        
+        // Update processing flag
+        await db.collection('guidelines').doc(guidelineId).update({
+            processing: true,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        res.json({
+            success: true,
+            message: `Queued ${jobs.length} processing jobs`,
+            guidelineId: guidelineId,
+            jobsQueued: jobs.length
+        });
+        
+    } catch (error) {
+        console.error('[PROCESS_BG] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 
