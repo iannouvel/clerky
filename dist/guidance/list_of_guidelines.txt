@@ -44,6 +44,7 @@ FSRH - 2023 - Emergency Cotraception.pdf
 FSRH - 2023 - Intrauterine Contraception.pdf
 FSRH - 2023 - POP.pdf
 FSRH - Contraception in women aged over 40.pdf
+Fetal monitoring guideline ANTENATAL.pdf
 GTG - 2014 - Beta Thalassaemia In Pregnancy.pdf
 GTG - 2014 - Umbilical Cord Prolapse.pdf
 GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
@@ -91,4 +92,7 @@ NICE Guidance - 2023 - Ectopic.pdf
 NICE Guidance - 2024 - Endometriosis.pdf
 NICE Guideline - 2021 - IOL.pdf
 NICE Interventional Guidance - 2007 - Laparoscopic Hysterectomy.pdf
+Reduced Fetal Movements guideline.pdf
+Suggested management when DR criteria not met.pdf
 Transfusion Medicine - 2025 - Regan - Guideline for the investigation and management of red cell antibodies in pregnancy.pdf
+UHS Anaemia in pregnancy guideline.pdf
