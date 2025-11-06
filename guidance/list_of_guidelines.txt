@@ -1,8 +1,4 @@
-2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1.pdf
-Actions following CTG categorisation.pdf
 Antenatal Screening for Gestational Diabetes flowchart.pdf
-Appendix 12 aSSKINg sticker.pdf
-Appendix 7 PCEA Labour Chart V2 July 2020 FINAL.pdf
 BAPM - 2025 - Extreme Prematurity.pdf
 BASHH - 2012 - Bacterial Vaginosis.pdf
 BASHH - 2019 - PID Guideline.pdf
@@ -41,23 +37,6 @@ BJOG - 2025 - Chan - Management of Thyroid Disorders in Pregnancy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 BSH - 2021 - Sickle Cell Disease In Pregnancy.pdf
 BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
-Bulkamid Proforma (Outpatient Cytoscopy).pdf
-CG1103 Antenatal Care & Patient Info.pdf
-CG1105 Maternal Antenatal Screening tests guideline.pdf
-CG1111 Screening for Downs Edwards and Pataus  Syndrome.pdf
-CG1114 Breech guideline.pdf
-CG1118 Neonatal hypothermia.pdf
-CG1122 Maternal Transfer & Onsite Handover of Care.pdf
-CG1127 Neonatal Abstinence Scoring.pdf
-CG1128 Neonatal Resuscitation.pdf
-CG1129 Newborn Feeding.pdf
-CG1130 Assisted Vaginal Birth Guideline.pdf
-CG1134 Postnatal Care.pdf
-CG1139 Obesity in Pregnancy.pdf
-CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria).pdf
-CG1147 Maternal Sepsis.pdf
-CG1151 Uterine Rupture.pdf
-Carbetocin to prevent PPH at CS UHS-CG-0009-2023.pdf
 Care in Labour guideline.pdf
 Consultant Midwife SOP.pdf
 Diabetes in pregnancy guideline.pdf
