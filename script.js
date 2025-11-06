@@ -2807,7 +2807,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
 });
 
-async function findRelevantGuidelines(suppressHeader = false) {
+async function findRelevantGuidelines(suppressHeader = false, scope = null, hospitalTrust = null) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
     
@@ -2899,7 +2899,29 @@ async function findRelevantGuidelines(suppressHeader = false) {
         appendToSummary1(loadingMessage, false);
 
         // Get guidelines and summaries from Firestore
-        const guidelines = await loadGuidelinesFromFirestore();
+        let guidelines = await loadGuidelinesFromFirestore();
+        
+        // Filter guidelines by scope if specified
+        if (scope) {
+            console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
+            guidelines = filterGuidelinesByScope(guidelines, scope, hospitalTrust);
+            console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
+            
+            if (guidelines.length === 0) {
+                const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
+                appendToSummary1(noGuidelinesMsg, false);
+                alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
+                return;
+            }
+            
+            // Add scope info to summary
+            const scopeInfo = scope === 'national' 
+                ? `Searching ${guidelines.length} national guidelines...\n`
+                : scope === 'local'
+                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
+                : `Searching ${guidelines.length} guidelines (national + ${hospitalTrust})...\n`;
+            appendToSummary1(scopeInfo, false);
+        }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
             sampleGuideline: guidelines[0],
@@ -11009,6 +11031,29 @@ async function askGuidelinesQuestion() {
         searchProgress += `**Your Question:** ${question}\n\n`;
         appendToSummary1(searchProgress);
 
+        // Show guideline scope selection modal
+        console.log('[DEBUG] askGuidelinesQuestion: Showing guideline scope selection modal');
+        let scopeSelection;
+        try {
+            scopeSelection = await showGuidelineScopeModal();
+            console.log('[DEBUG] askGuidelinesQuestion: User selected scope:', scopeSelection);
+            
+            // Store the selection globally
+            window.selectedGuidelineScope = scopeSelection;
+            
+            const scopeMessage = scopeSelection.scope === 'national' 
+                ? '📘 **National Guidelines Selected**\n\n'
+                : scopeSelection.scope === 'local'
+                ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+                : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
+            
+            appendToSummary1(scopeMessage, false);
+        } catch (error) {
+            console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
+            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+            return; // Exit if user cancels
+        }
+
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
@@ -11022,7 +11067,27 @@ async function askGuidelinesQuestion() {
         appendToSummary1(loadingMessage, false);
 
         // Get guidelines and summaries from Firestore (reuse existing logic)
-        const guidelines = await loadGuidelinesFromFirestore();
+        let guidelines = await loadGuidelinesFromFirestore();
+        
+        // Filter guidelines by scope
+        console.log('[DEBUG] Filtering guidelines by scope:', { scope: scopeSelection.scope, hospitalTrust: scopeSelection.hospitalTrust, beforeFilter: guidelines.length });
+        guidelines = filterGuidelinesByScope(guidelines, scopeSelection.scope, scopeSelection.hospitalTrust);
+        console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
+        
+        if (guidelines.length === 0) {
+            const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
+            appendToSummary1(noGuidelinesMsg, false);
+            alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
+            return;
+        }
+        
+        // Add scope info to summary
+        const scopeInfo = scopeSelection.scope === 'national' 
+            ? `Searching ${guidelines.length} national guidelines...\n`
+            : scopeSelection.scope === 'local'
+            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...\n`
+            : `Searching ${guidelines.length} guidelines (national + ${scopeSelection.hospitalTrust})...\n`;
+        appendToSummary1(scopeInfo, false);
         
         // Format guidelines for relevancy matching
         const guidelinesList = guidelines.map(g => ({

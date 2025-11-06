@@ -2772,3 +2772,194 @@ html, body {
 .clear-trust-btn:hover {
     background-color: #d0d0d0;
 }
+
+/* Guideline Scope Selection Modal */
+.guideline-scope-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.guideline-scope-modal.hidden {
+    display: none;
+}
+
+.guideline-scope-modal-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.guideline-scope-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guideline-scope-modal-header h2 {
+    margin: 0;
+    color: #2D3436;
+    font-size: 1.5rem;
+}
+
+.guideline-scope-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.guideline-scope-info {
+    margin-bottom: 20px;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.scope-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.scope-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+}
+
+.scope-btn:hover:not(:disabled) {
+    border-color: #4A90E2;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.scope-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.scope-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f8f9fa;
+}
+
+.scope-btn-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2D3436;
+    margin-bottom: 5px;
+}
+
+.scope-btn-desc {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.scope-btn-national:hover:not(:disabled) {
+    border-color: #4A90E2;
+}
+
+.scope-btn-local:hover:not(:disabled) {
+    border-color: #00B894;
+}
+
+.scope-btn-both:hover:not(:disabled) {
+    border-color: #9B59B6;
+}
+
+.scope-trust-display {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #4A90E2;
+}
+
+.scope-trust-info {
+    margin-bottom: 10px;
+}
+
+.scope-trust-info strong {
+    color: #2D3436;
+    font-weight: 600;
+}
+
+.scope-trust-info span {
+    color: #495057;
+    margin-left: 8px;
+}
+
+.scope-trust-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.change-trust-btn,
+.select-trust-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.change-trust-btn {
+    background-color: #4A90E2;
+    color: white;
+}
+
+.change-trust-btn:hover {
+    background-color: #357ABD;
+}
+
+.select-trust-btn {
+    background-color: #00B894;
+    color: white;
+}
+
+.select-trust-btn:hover {
+    background-color: #019874;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .guideline-scope-modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .scope-btn {
+        padding: 15px;
+    }
+    
+    .scope-btn-title {
+        font-size: 1rem;
+    }
+    
+    .scope-btn-desc {
+        font-size: 0.85rem;
+    }
+}
