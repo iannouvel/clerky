@@ -527,6 +527,18 @@ body {
     font-size: 1.5rem;
     margin-right: 8px;
     text-decoration: none; /* Extra safety */
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo:hover {
+    background: rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-center {
@@ -541,7 +553,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #FFFFFF;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
@@ -584,7 +596,7 @@ body {
     background: white;
     border: 2px solid #00b894;
     color: #00b894;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.2s;
     white-space: nowrap;

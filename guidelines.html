@@ -678,15 +678,58 @@
                     // Extract trusts array from nested structure
                     const trustsArray = data.regions?.['England & Wales']?.trusts || [];
                     
+                    // Fetch existing guidelines to count local guidelines per trust
+                    let trustCounts = {};
+                    try {
+                        const user = auth.currentUser;
+                        if (user) {
+                            const token = await user.getIdToken();
+                            const guidelinesResponse = await fetch('https://clerky-uzni.onrender.com/getAllGuidelines', {
+                                headers: { 'Authorization': `Bearer ${token}` }
+                            });
+                            
+                            if (guidelinesResponse.ok) {
+                                const guidelines = await guidelinesResponse.json();
+                                // Count guidelines per trust
+                                guidelines.forEach(guideline => {
+                                    if (guideline.scope === 'local' && guideline.hospitalTrust) {
+                                        trustCounts[guideline.hospitalTrust] = (trustCounts[guideline.hospitalTrust] || 0) + 1;
+                                    }
+                                });
+                            }
+                        }
+                    } catch (error) {
+                        console.log('[DEBUG] Could not fetch guidelines for trust sorting:', error);
+                    }
+                    
+                    // Sort trusts: those with guidelines first (by count descending), then alphabetically
+                    const sortedTrusts = trustsArray.sort((a, b) => {
+                        const countA = trustCounts[a] || 0;
+                        const countB = trustCounts[b] || 0;
+                        
+                        if (countA !== countB) {
+                            return countB - countA; // Higher counts first
+                        }
+                        return a.localeCompare(b); // Alphabetical for ties
+                    });
+                    
                     const trustSelect = document.getElementById('trustSelect');
-                    trustsArray.forEach(trust => {
+                    sortedTrusts.forEach(trust => {
                         const option = document.createElement('option');
                         option.value = trust;
-                        option.textContent = trust;
+                        
+                        // Add guideline count if available
+                        const count = trustCounts[trust];
+                        if (count) {
+                            option.textContent = `${trust} (${count} guideline${count > 1 ? 's' : ''})`;
+                        } else {
+                            option.textContent = trust;
+                        }
+                        
                         trustSelect.appendChild(option);
                     });
                     
-                    console.log(`[DEBUG] Loaded ${trustsArray.length} hospital trusts`);
+                    console.log(`[DEBUG] Loaded ${sortedTrusts.length} hospital trusts (${Object.keys(trustCounts).length} with local guidelines)`);
                 } catch (error) {
                     console.error('Error loading hospital trusts:', error);
                 }
