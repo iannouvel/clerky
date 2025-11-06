@@ -826,21 +826,46 @@ async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
     }
 }
 
-// Function to fetch the condensed file from GitHub
+// Function to fetch condensed text from Firestore
 async function fetchCondensedFile(guidelineFilename) {
-    // Replace .html with .pdf to get the correct file
-    // This function now assumes the primary PDF is in guidance/ and is the source for condensed text.
-    const pdfFilename = guidelineFilename.replace('.html', '.pdf');
-    const filePath = `guidance/${encodeURIComponent(pdfFilename)}`; // Path changed
-    const url = `https://raw.githubusercontent.com/${githubOwner}/${githubRepo}/${githubBranch}/${filePath}`;
-
     try {
-        console.log(`[FETCH_CONDENSED] Fetching raw file from GitHub: ${url}`);
-        const response = await axios.get(url);
-        console.log(`[FETCH_CONDENSED] Successfully fetched ${filePath}. Length: ${response.data?.length}`);
-        return response.data; // This will be the raw PDF content (binary or buffer-like depending on axios)
+        console.log(`[FETCH_CONDENSED] Fetching condensed text from Firestore for: ${guidelineFilename}`);
+        
+        // Generate guideline ID from filename (remove .pdf extension and convert to ID format)
+        const guidelineId = guidelineFilename
+            .replace('.html', '')
+            .replace('.pdf', '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\-]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        
+        // Try to fetch from main guidelines collection
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (guidelineDoc.exists) {
+            const data = guidelineDoc.data();
+            const condensedText = data.condensed || data.content;
+            
+            if (condensedText) {
+                console.log(`[FETCH_CONDENSED] Successfully fetched from Firestore (${condensedText.length} chars)`);
+                return condensedText;
+            }
+        }
+        
+        // If not found, try the condensed collection
+        const condensedDoc = await db.collection('condensed').doc(guidelineId).get();
+        if (condensedDoc.exists) {
+            const condensedText = condensedDoc.data().condensed;
+            if (condensedText) {
+                console.log(`[FETCH_CONDENSED] Successfully fetched from condensed collection (${condensedText.length} chars)`);
+                return condensedText;
+            }
+        }
+        
+        throw new Error(`No condensed text found for ${guidelineFilename}`);
     } catch (error) {
-        console.error('Error fetching condensed file from GitHub:', error.response?.data || error.message);
+        console.error('[FETCH_CONDENSED] Error fetching condensed text:', error.message);
         throw new Error('Failed to retrieve the condensed guideline');
     }
 }
@@ -877,68 +902,19 @@ async function extractTextFromPDF(pdfBuffer) {
 // Function to fetch PDF from GitHub and extract text
 async function fetchAndExtractPDFText(pdfFileName) {
     try {
-        // First try to fetch from Firebase Storage
-        console.log(`[FETCH_PDF] Attempting to fetch PDF from Firebase Storage: ${pdfFileName}`);
+        console.log(`[FETCH_PDF] Fetching PDF from Firebase Storage: ${pdfFileName}`);
         
-        try {
-            const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
-            const file = bucket.file(`pdfs/${pdfFileName}`);
-            
-            const [exists] = await file.exists();
-            if (exists) {
-                console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
-                const [buffer] = await file.download();
-                console.log(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
-                
-                // Extract text from PDF
-                const extractedText = await extractTextFromPDF(buffer);
-                return extractedText;
-            } else {
-                console.log(`[FETCH_PDF] PDF not found in Firebase Storage, trying GitHub: ${pdfFileName}`);
-            }
-        } catch (storageError) {
-            console.log(`[FETCH_PDF] Firebase Storage fetch failed, trying GitHub: ${storageError.message}`);
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        const file = bucket.file(`pdfs/${pdfFileName}`);
+        
+        const [exists] = await file.exists();
+        if (!exists) {
+            throw new Error(`PDF not found in Firebase Storage: ${pdfFileName}`);
         }
         
-        // Fallback to GitHub if not in Firebase Storage
-        const pdfPath = `guidance/${encodeURIComponent(pdfFileName)}`;
-        console.log(`[FETCH_PDF] Fetching PDF from GitHub: ${pdfPath}`);
-        
-        // Construct the GitHub raw content URL
-        const githubUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${pdfPath}`;
-        
-        // Fetch PDF file from GitHub API
-        let buffer;
-        try {
-            const response = await axios.get(githubUrl, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                }
-            });
-            
-            if (response.data.content) {
-                // Small files (<1MB) - GitHub API returns base64-encoded content
-                buffer = Buffer.from(response.data.content, 'base64');
-                console.log(`[FETCH_PDF] Successfully fetched PDF from GitHub API, size: ${buffer.length} bytes`);
-            } else if (response.data.download_url) {
-                // Large files (>1MB) - GitHub API returns download_url instead
-                console.log(`[FETCH_PDF] File too large for API, downloading from: ${response.data.download_url}`);
-                const downloadResponse = await axios.get(response.data.download_url, {
-                    responseType: 'arraybuffer',
-                    headers: {
-                        'Authorization': `token ${githubToken}`
-                    }
-                });
-                buffer = Buffer.from(downloadResponse.data);
-                console.log(`[FETCH_PDF] Successfully downloaded large PDF, size: ${buffer.length} bytes`);
-            } else {
-                throw new Error('No content or download_url found in GitHub API response');
-            }
-        } catch (err) {
-            console.error(`[FETCH_PDF] Failed to fetch from GitHub API: ${err.message}`);
-            throw err;
-        }
+        console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
+        const [buffer] = await file.download();
+        console.log(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
         
         // Extract text from PDF
         const extractedText = await extractTextFromPDF(buffer);
@@ -4393,6 +4369,172 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
     }
 });
 
+// New endpoint: Upload PDF directly to Firebase Storage and process
+app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (req, res) => {
+    console.log('[UPLOAD_PDF] Starting PDF upload to Firebase Storage');
+    
+    // Check if a file was uploaded
+    if (!req.file) {
+        console.error('[UPLOAD_PDF] No file uploaded');
+        return res.status(400).json({ success: false, error: 'No file uploaded' });
+    }
+
+    try {
+        const userId = req.user.uid;
+        const file = req.file;
+        const fileName = file.originalname;
+        const fileBuffer = file.buffer;
+        
+        console.log(`[UPLOAD_PDF] Processing file: ${fileName}, size: ${fileBuffer.length} bytes`);
+        
+        // Validate it's a PDF
+        if (!fileName.toLowerCase().endsWith('.pdf')) {
+            return res.status(400).json({ success: false, error: 'Only PDF files are allowed' });
+        }
+        
+        // Calculate file hash for duplicate detection
+        const fileHash = await calculateFileHash(fileBuffer);
+        console.log(`[UPLOAD_PDF] Calculated hash: ${fileHash.substring(0, 16)}...`);
+        
+        // Check for duplicate by hash
+        const existingDocs = await db.collection('guidelines')
+            .where('fileHash', '==', fileHash)
+            .limit(1)
+            .get();
+        
+        if (!existingDocs.empty) {
+            const existingDoc = existingDocs.docs[0];
+            console.log(`[UPLOAD_PDF] Duplicate detected: ${existingDoc.id}`);
+            return res.status(409).json({ 
+                success: false, 
+                error: 'This PDF already exists in the database',
+                existingGuidelineId: existingDoc.id
+            });
+        }
+        
+        // Generate clean guideline ID
+        const guidelineId = fileName
+            .replace('.pdf', '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\-]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        
+        console.log(`[UPLOAD_PDF] Generated guideline ID: ${guidelineId}`);
+        
+        // Upload PDF to Firebase Storage
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        const storageFile = bucket.file(`pdfs/${fileName}`);
+        
+        await storageFile.save(fileBuffer, {
+            metadata: {
+                contentType: 'application/pdf',
+                metadata: {
+                    uploadedBy: userId,
+                    uploadedAt: new Date().toISOString(),
+                    originalName: fileName
+                }
+            }
+        });
+        
+        console.log(`[UPLOAD_PDF] PDF uploaded to Firebase Storage: pdfs/${fileName}`);
+        
+        // Extract text from PDF
+        console.log('[UPLOAD_PDF] Extracting text from PDF...');
+        const fullText = await extractTextFromPDF(fileBuffer);
+        
+        if (!fullText || fullText.length < 100) {
+            throw new Error('Failed to extract meaningful text from PDF');
+        }
+        
+        console.log(`[UPLOAD_PDF] Extracted ${fullText.length} characters from PDF`);
+        
+        // Generate condensed text
+        console.log('[UPLOAD_PDF] Generating condensed text...');
+        const condensedText = await generateCondensedText(fullText, userId);
+        
+        console.log(`[UPLOAD_PDF] Generated condensed text: ${condensedText ? condensedText.length : 0} characters`);
+        
+        // Get metadata from request body
+        const title = req.body.title || fileName.replace('.pdf', '');
+        const organisation = req.body.organisation || 'Unknown';
+        const yearProduced = req.body.yearProduced || 'Unknown';
+        const scope = req.body.scope || 'national';
+        const nation = req.body.nation || null;
+        const hospitalTrust = req.body.hospitalTrust || null;
+        
+        // Prepare content for Firestore (handle large content)
+        const contentData = await prepareContentForFirestore(
+            fullText, 
+            condensedText, 
+            null, // summary will be generated later if needed
+            guidelineId
+        );
+        
+        // Create guideline document in Firestore
+        const guidelineDoc = {
+            id: guidelineId,
+            title: title,
+            filename: fileName,
+            originalFilename: fileName,
+            fileHash: fileHash,
+            organisation: organisation,
+            yearProduced: yearProduced,
+            content: contentData.content,
+            condensed: contentData.condensed,
+            summary: contentData.summary,
+            contentStorageUrl: contentData.contentStorageUrl,
+            condensedStorageUrl: contentData.condensedStorageUrl,
+            summaryStorageUrl: contentData.summaryStorageUrl,
+            contentInStorage: contentData.contentInStorage,
+            uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+            uploadedBy: userId,
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+            processed: true,
+            contentExtracted: true,
+            scope: scope,
+            nation: scope === 'national' ? nation : null,
+            hospitalTrust: scope === 'local' ? hospitalTrust : null,
+            keywords: [],
+            categories: [],
+            url: '',
+            metadataComplete: false
+        };
+        
+        await db.collection('guidelines').doc(guidelineId).set(guidelineDoc);
+        console.log(`[UPLOAD_PDF] Created Firestore document: ${guidelineId}`);
+        
+        // Save condensed text to condensed collection as well
+        if (condensedText) {
+            await db.collection('condensed').doc(guidelineId).set({
+                condensed: condensedText,
+                createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                generatedDate: new Date().toISOString(),
+                sourceType: 'uploaded_pdf'
+            });
+            console.log(`[UPLOAD_PDF] Saved condensed text to condensed collection`);
+        }
+        
+        res.json({
+            success: true,
+            message: 'PDF uploaded and processed successfully',
+            guidelineId: guidelineId,
+            filename: fileName,
+            contentLength: fullText.length,
+            condensedLength: condensedText ? condensedText.length : 0
+        });
+        
+    } catch (error) {
+        console.error('[UPLOAD_PDF] Error:', error.message);
+        console.error('[UPLOAD_PDF] Stack:', error.stack);
+        res.status(500).json({
+            success: false,
+            error: error.message || 'Failed to upload and process PDF'
+        });
+    }
+});
+
 // Helper function to update the list of guidelines
 async function updateGuidelinesMasterList(newFileName) {
     try {
@@ -4517,50 +4659,69 @@ async function appendExclusionEntry(entry) {
     return { skipped: false };
 }
 
-// Update the function that gets file contents
-async function getFileContents(fileName) { // fileName is expected to be the full path from repo root e.g., guidance/condensed/file.pdf
-    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${fileName}`;
+// DEPRECATED: Now fetches from Firestore instead of GitHub
+async function getFileContents(fileName) {
     try {
-        const response = await axios.get(url, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}`
+        console.log(`[FETCH_CONTENT] Fetching content from Firestore for: ${fileName}`);
+        
+        // Extract the filename from the path and generate guideline ID
+        const fileNameOnly = fileName.split('/').pop();
+        const guidelineId = fileNameOnly
+            .replace('.txt', '')
+            .replace('.pdf', '')
+            .toLowerCase()
+            .replace(/[^a-z0-9\-]/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '');
+        
+        // Fetch from Firestore guidelines collection
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (guidelineDoc.exists) {
+            const data = guidelineDoc.data();
+            
+            // Return appropriate field based on the path
+            if (fileName.includes('/condensed/')) {
+                return data.condensed || data.content;
+            } else if (fileName.includes('/summary/')) {
+                return data.summary || data.condensed || data.content;
+            } else {
+                return data.content || data.condensed;
             }
-        });
-        
-        // For PDF files, we can't directly extract text content via GitHub API
-        // The GitHub API returns base64-encoded binary data for PDFs
-        if (fileName.toLowerCase().endsWith('.pdf')) {
-            console.warn(`[FETCH_CONTENT] Cannot extract text from PDF file: ${fileName}. PDFs need specialized text extraction.`);
-            return null; // Return null to indicate that PDF text extraction is needed
         }
         
-        // For text files, decode the base64 content
-        if (response.data.content) {
-            return Buffer.from(response.data.content, 'base64').toString();
-        }
-        
-        console.warn(`[FETCH_CONTENT] No content found in response for: ${fileName}`);
+        console.warn(`[FETCH_CONTENT] No content found in Firestore for: ${fileName} (ID: ${guidelineId})`);
         return null;
     } catch (error) {
-        console.error('Error getting file contents:', error.response?.data || error.message);
+        console.error('[FETCH_CONTENT] Error fetching content from Firestore:', error.message);
         throw new Error('Failed to get file contents');
     }
 }
 
-// Update the function that gets list of guidelines
+// DEPRECATED: Now fetches from Firestore instead of GitHub
 async function getGuidelinesList() {
-    const listUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/guidance/list_of_guidelines.txt`;
     try {
-        const response = await axios.get(listUrl, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}`
+        console.log('[GET_GUIDELINES_LIST] Fetching guidelines list from Firestore');
+        
+        // Fetch all guidelines from Firestore
+        const snapshot = await db.collection('guidelines').get();
+        
+        // Build list in format similar to the old text file (one filename per line)
+        const guidelines = [];
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            const filename = data.filename || data.originalFilename;
+            if (filename) {
+                guidelines.push(filename);
             }
         });
-        return Buffer.from(response.data.content, 'base64').toString();
+        
+        // Return as newline-separated string to match old behavior
+        const result = guidelines.sort().join('\n');
+        console.log(`[GET_GUIDELINES_LIST] Found ${guidelines.length} guidelines in Firestore`);
+        return result;
     } catch (error) {
-        console.error('Error getting guidelines list:', error.response?.data || error.message);
+        console.error('[GET_GUIDELINES_LIST] Error fetching guidelines from Firestore:', error.message);
         throw new Error('Failed to get guidelines list');
     }
 }
@@ -8979,11 +9140,11 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
           const condensedText = await generateCondensedText(fullText, null);
           
           if (condensedText) {
-            content = condensedText;
-            condensed = condensedText;
-            updates.content = condensedText;
+            content = fullText; // Store FULL text in content field
+            condensed = condensedText; // Store condensed text in condensed field
+            updates.content = fullText; // Store FULL text in content field
             updates.condensed = condensedText;
-            console.log(`[CONTENT_REPAIR] ✓ Generated condensed text: ${condensedText.length} characters`);
+            console.log(`[CONTENT_REPAIR] ✓ Generated condensed text: ${condensedText.length} characters (full text: ${fullText.length} characters)`);
           } else {
             content = fullText;
             condensed = fullText;
@@ -12238,23 +12399,21 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
             return res.status(404).json({ success: false, error: 'PDF filename not found' });
         }
 
-        console.log('[DEBUG] api/pdf: Serving PDF:', filename);
+        console.log('[DEBUG] api/pdf: Fetching PDF from Firebase Storage:', filename);
 
-        // Construct file path
-        const filePath = path.join(__dirname, 'guidance', filename);
+        // Fetch from Firebase Storage
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        const file = bucket.file(`pdfs/${filename}`);
         
-        // Check if file exists
-        const fs = require('fs');
-        if (!fs.existsSync(filePath)) {
-            console.error('[DEBUG] api/pdf: File not found at path:', {
-                filePath,
-                filename,
-                guidanceDir: path.join(__dirname, 'guidance'),
-                dirExists: fs.existsSync(path.join(__dirname, 'guidance')),
-                filesInDir: fs.existsSync(path.join(__dirname, 'guidance')) ? fs.readdirSync(path.join(__dirname, 'guidance')).slice(0, 10) : 'directory not found'
-            });
-            return res.status(404).json({ success: false, error: 'PDF file not found on server' });
+        const [exists] = await file.exists();
+        if (!exists) {
+            console.error('[DEBUG] api/pdf: PDF not found in Firebase Storage:', filename);
+            return res.status(404).json({ success: false, error: 'PDF file not found in storage' });
         }
+
+        console.log('[DEBUG] api/pdf: Downloading PDF from Firebase Storage');
+        const [buffer] = await file.download();
+        console.log('[DEBUG] api/pdf: PDF downloaded, size:', buffer.length, 'bytes');
 
         // Set appropriate headers for PDF.js viewer
         res.setHeader('Content-Type', 'application/pdf');
@@ -12263,9 +12422,10 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
         res.setHeader('Access-Control-Allow-Credentials', 'true');
         res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
+        res.setHeader('Content-Length', buffer.length);
         
-        // Send file
-        res.sendFile(filePath);
+        // Send PDF buffer
+        res.send(buffer);
 
     } catch (error) {
         console.error('[DEBUG] api/pdf: Error in endpoint:', {
@@ -12302,17 +12462,21 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
             return res.status(404).json({ success: false, error: 'PDF filename not found' });
         }
 
-        console.log('[DEBUG] getGuidelinePDF: Serving PDF:', filename);
+        console.log('[DEBUG] getGuidelinePDF: Fetching PDF from Firebase Storage:', filename);
 
-        // Construct file path
-        const filePath = path.join(__dirname, 'guidance', filename);
+        // Fetch from Firebase Storage
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        const file = bucket.file(`pdfs/${filename}`);
         
-        // Check if file exists
-        const fs = require('fs');
-        if (!fs.existsSync(filePath)) {
-            console.log('[DEBUG] getGuidelinePDF: File not found at path:', filePath);
-            return res.status(404).json({ success: false, error: 'PDF file not found on server' });
+        const [exists] = await file.exists();
+        if (!exists) {
+            console.log('[DEBUG] getGuidelinePDF: PDF not found in Firebase Storage:', filename);
+            return res.status(404).json({ success: false, error: 'PDF file not found in storage' });
         }
+
+        console.log('[DEBUG] getGuidelinePDF: Downloading PDF from Firebase Storage');
+        const [buffer] = await file.download();
+        console.log('[DEBUG] getGuidelinePDF: PDF downloaded, size:', buffer.length, 'bytes');
 
         // Set appropriate headers for PDF and CORS
         res.setHeader('Content-Type', 'application/pdf');
@@ -12321,9 +12485,10 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
         res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
         res.setHeader('Access-Control-Allow-Credentials', 'true');
         res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
+        res.setHeader('Content-Length', buffer.length);
         
-        // Send file
-        res.sendFile(filePath);
+        // Send PDF buffer
+        res.send(buffer);
 
     } catch (error) {
         console.error('[DEBUG] getGuidelinePDF: Error in endpoint:', {
