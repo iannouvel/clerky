@@ -20,12 +20,9 @@
 ### 4. Dist Folder Inclusion
 - The `dist/` folder MUST be included in commits
 - This folder contains built/compiled assets that are deployed
-- Before committing, ensure the `dist/` folder is up to date by running the build script:
-  ```bash
-  npm run build
-  ```
-- Verify that changes in source files are reflected in the `dist/` folder before committing
-- If the user asks to commit changes, ask if they want to rebuild the `dist/` folder first
+- ALWAYS run `npm run build` before committing to ensure the `dist/` folder is up to date
+- The ONLY exception is if the commit contains ONLY documentation or non-code files (e.g., README.md, .cursorrules)
+- Before committing, verify the build completes successfully and changes in source files are reflected in the `dist/` folder
 
 ### 5. Force Push Protection
 - NEVER run `git push --force` to `main` or `master` branches
