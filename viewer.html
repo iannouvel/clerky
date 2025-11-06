@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guideline Viewer - ClerkyAI</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <!-- No Firebase needed - auth token is passed via localStorage -->
+    <!-- No Firebase needed - auth token is passed via sessionStorage -->
     <style>
         :root {
             --accent-color: #2563eb;
@@ -60,6 +60,14 @@
             font-size: 14px;
             opacity: 0.9;
             margin-left: 16px;
+        }
+        
+        .version-number {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 500;
         }
 
         .top-bar-center {
@@ -253,6 +261,7 @@
             }
         }
     </style>
+    <script src="version-loader.js"></script>
 </head>
 <body>
     <div class="top-bar">
@@ -260,6 +269,7 @@
             <a href="index.html" class="logo-link">
                 <div class="logo">clerky</div>
             </a>
+            <span class="version-number">v<span id="appVersion">loading...</span></span>
             <span class="guideline-title" id="guideline-title">Loading guideline...</span>
         </div>
         <div class="top-bar-center">
@@ -306,3 +316,4 @@
     <script src="viewer.js"></script>
 </body>
 </html>
+
