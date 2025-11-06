@@ -507,7 +507,7 @@ body {
     left: 0;
     right: 0;
     height: 48px;
-    background: linear-gradient(135deg, var(--accent-color), #00CEC9);
+    background: linear-gradient(135deg, #008060, #007C8C);
     display: flex;
     align-items: center;
     padding: 0 16px;
