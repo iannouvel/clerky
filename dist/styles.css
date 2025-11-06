@@ -1652,8 +1652,8 @@ div.third-column,
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.9em;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1em;
     resize: vertical;
     box-sizing: border-box;
 }
