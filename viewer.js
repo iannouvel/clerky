@@ -278,20 +278,16 @@ async function searchPDFForText(searchTerm) {
     try {
         console.log('[VIEWER] Searching PDF for:', searchTerm);
         
-        // Normalize search term - collapse whitespace and lowercase
-        const normalizedSearch = searchTerm.toLowerCase().trim().replace(/\s+/g, ' ');
+        const normalizedSearch = searchTerm.toLowerCase().trim();
         
         // Search through all pages
         for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
             const page = await pdfDoc.getPage(pageNum);
             const textContent = await page.getTextContent();
             
-            // Combine all text items into a single string with better spacing handling
+            // Combine all text items into a single string
             const pageText = textContent.items.map(item => item.str).join(' ');
-            // Normalize page text - collapse whitespace and lowercase
-            const normalizedPageText = pageText.toLowerCase().replace(/\s+/g, ' ');
-            
-            console.log(`[VIEWER] Searching page ${pageNum}/${pdfDoc.numPages}...`);
+            const normalizedPageText = pageText.toLowerCase();
             
             // Check if this page contains the search text
             if (normalizedPageText.includes(normalizedSearch)) {
@@ -340,8 +336,8 @@ function highlightTextOnPage(searchTerm, textContent) {
         // Clear existing highlights
         highlightLayer.innerHTML = '';
         
-        // Normalize search term - collapse whitespace
-        const normalizedSearch = searchTerm.toLowerCase().trim().replace(/\s+/g, ' ');
+        const normalizedSearch = searchTerm.toLowerCase().trim();
+        const searchWords = normalizedSearch.split(/\s+/);
         
         // Build continuous text with position tracking
         let fullText = '';
@@ -358,19 +354,12 @@ function highlightTextOnPage(searchTerm, textContent) {
             });
         });
         
-        // Normalize full text - collapse whitespace
-        const normalizedFullText = fullText.toLowerCase().replace(/\s+/g, ' ');
+        const normalizedFullText = fullText.toLowerCase();
         const searchIndex = normalizedFullText.indexOf(normalizedSearch);
         
         if (searchIndex === -1) {
             console.log('[VIEWER] Text not found on this specific page during highlighting');
-            // Still try to highlight the first few words as a fallback
-            const searchWords = normalizedSearch.split(' ').slice(0, 5).join(' ');
-            const fallbackIndex = normalizedFullText.indexOf(searchWords);
-            if (fallbackIndex === -1) {
-                return;
-            }
-            console.log('[VIEWER] Highlighting first few words instead');
+            return;
         }
         
         // Find which text items contain the search text
@@ -386,7 +375,7 @@ function highlightTextOnPage(searchTerm, textContent) {
             const viewport = page.getViewport({ scale: scale });
             
             // Create highlight boxes for each relevant text item
-            relevantItems.forEach((pos, index) => {
+            relevantItems.forEach(pos => {
                 const item = pos.item;
                 
                 // Get transform matrix for this text item
@@ -397,17 +386,8 @@ function highlightTextOnPage(searchTerm, textContent) {
                 const height = item.height || 12; // Fallback height
                 
                 // Convert PDF coordinates to canvas coordinates
-                // PDF.js uses bottom-left origin, canvas uses top-left origin
                 const canvasX = x;
-                const canvasY = viewport.height - y;
-                
-                console.log(`[VIEWER] Highlight ${index + 1}:`, {
-                    text: item.str.substring(0, 20) + '...',
-                    pdfCoords: { x, y },
-                    canvasCoords: { canvasX, canvasY },
-                    dimensions: { width, height },
-                    viewportHeight: viewport.height
-                });
+                const canvasY = viewport.height - y - height;
                 
                 // Create highlight div
                 const highlight = document.createElement('div');
@@ -451,4 +431,3 @@ function showSearchStatus(message, type = 'info') {
         }, 5000);
     }
 }
-
