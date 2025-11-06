@@ -424,6 +424,25 @@
             color: var(--text-color);
         }
 
+        .guideline-name {
+            font-weight: 600;
+        }
+
+        .guideline-scope {
+            font-style: italic;
+            font-weight: 500;
+            color: #6a1b9a;
+        }
+
+        .guideline-scope.local {
+            color: #1565c0;
+        }
+
+        .guideline-location {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+
         .guideline-badges {
             display: flex;
             gap: 8px;
@@ -918,25 +937,47 @@
                         guideline.replace(/\.(txt|pdf)$/i, '') : 
                         (guideline.humanFriendlyName || guideline.title || guideline.name || '');
                     
-                    // Append scope label to the title - always show labels
+                    // Create styled components for the title
+                    const nameSpan = document.createElement('span');
+                    nameSpan.className = 'guideline-name';
+                    nameSpan.textContent = guidelineName;
+                    title.appendChild(nameSpan);
+                    
+                    // Add scope label with styling
                     if (typeof guideline === 'object') {
                         // Default to 'national' if scope is undefined (backwards compatibility)
                         const guidelineScope = guideline.scope || 'national';
                         
+                        // Add separator
+                        title.appendChild(document.createTextNode(' - '));
+                        
+                        // Add scope label (Local/National)
+                        const scopeSpan = document.createElement('span');
+                        scopeSpan.className = guidelineScope === 'local' ? 'guideline-scope local' : 'guideline-scope';
+                        scopeSpan.textContent = guidelineScope === 'local' ? 'Local' : 'National';
+                        title.appendChild(scopeSpan);
+                        
+                        // Add location info
                         if (guidelineScope === 'local') {
                             const trustName = guideline.hospitalTrust || 'Local Trust';
-                            guidelineName += ` - Local - ${trustName}`;
+                            title.appendChild(document.createTextNode(' - '));
+                            const locationSpan = document.createElement('span');
+                            locationSpan.className = 'guideline-location';
+                            locationSpan.textContent = trustName;
+                            title.appendChild(locationSpan);
                         } else {
-                            // National (default)
+                            // National
                             if (guideline.nation) {
-                                guidelineName += ` - National (${guideline.nation})`;
-                            } else {
-                                guidelineName += ` - National`;
+                                title.appendChild(document.createTextNode(' ('));
+                                const locationSpan = document.createElement('span');
+                                locationSpan.className = 'guideline-location';
+                                locationSpan.textContent = guideline.nation;
+                                title.appendChild(locationSpan);
+                                title.appendChild(document.createTextNode(')'));
                             }
                         }
                     }
                     
-                    title.textContent = guidelineName;
                     titleContainer.appendChild(title);
                     
                     const actions = document.createElement('div');
