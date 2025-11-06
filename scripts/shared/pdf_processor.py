@@ -115,6 +115,10 @@ class PDFProcessor:
             # Basic text cleanup
             cleaned = text.strip()
             
+            # Remove invalid Unicode surrogate characters that can appear from PDF extraction
+            # These characters (like \udbff) can't be encoded in UTF-8
+            cleaned = cleaned.encode('utf-8', errors='ignore').decode('utf-8', errors='ignore')
+            
             # Remove excessive whitespace (multiple spaces/newlines)
             import re
             cleaned = re.sub(r'\n\s*\n\s*\n', '\n\n', cleaned)  # Multiple newlines to double
