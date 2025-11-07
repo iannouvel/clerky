@@ -1359,6 +1359,94 @@ async function checkAndMarkProcessingComplete(guidelineId) {
     }
 }
 
+// Routine background scanner for incomplete guidelines
+async function scanAndProcessIncompleteGuidelines() {
+    try {
+        console.log('[BACKGROUND_SCAN] Starting scan for incomplete guidelines...');
+        
+        const snapshot = await db.collection('guidelines').get();
+        let incomplete_count = 0;
+        let already_processing = 0;
+        
+        for (const doc of snapshot.docs) {
+            const guidelineId = doc.id;
+            const data = doc.data();
+            
+            // Skip if already processing
+            if (data.processing) {
+                already_processing++;
+                continue;
+            }
+            
+            // Check for missing content
+            const needsProcessing = 
+                !data.content ||
+                !data.condensed ||
+                !data.summary ||
+                !data.significantTerms ||
+                !data.auditableElements;
+            
+            if (needsProcessing && data.filename) {
+                console.log(`[BACKGROUND_SCAN] Found incomplete: ${guidelineId}, queueing jobs...`);
+                
+                // Queue missing jobs
+                if (!data.content || !data.processingStatus?.contentExtracted) {
+                    queueJob('extract_content', guidelineId);
+                }
+                if (!data.condensed || !data.processingStatus?.condensedGenerated) {
+                    queueJob('generate_condensed', guidelineId);
+                }
+                if (!data.summary || !data.processingStatus?.summaryGenerated) {
+                    queueJob('generate_summary', guidelineId);
+                }
+                if (!data.significantTerms || !data.processingStatus?.termsExtracted) {
+                    queueJob('extract_terms', guidelineId);
+                }
+                if (!data.auditableElements || !data.processingStatus?.auditableExtracted) {
+                    queueJob('extract_auditable', guidelineId);
+                }
+                
+                // Mark as processing
+                await doc.ref.update({
+                    processing: true,
+                    lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+                });
+                
+                incomplete_count++;
+                
+                // Limit batch size to avoid overwhelming system
+                if (incomplete_count >= 20) {
+                    console.log('[BACKGROUND_SCAN] Reached batch limit (20), will continue in next scan');
+                    break;
+                }
+            }
+        }
+        
+        console.log(`[BACKGROUND_SCAN] Scan complete: ${incomplete_count} queued, ${already_processing} already processing`);
+        
+    } catch (error) {
+        console.error('[BACKGROUND_SCAN] Error during scan:', error);
+    }
+}
+
+// Schedule routine background scans
+let backgroundScanInterval;
+function startBackgroundScanner() {
+    console.log('[BACKGROUND_SCAN] Starting routine background scanner...');
+    
+    // Run immediately on startup
+    setTimeout(() => {
+        scanAndProcessIncompleteGuidelines();
+    }, 30000); // 30 seconds after startup
+    
+    // Then run every 10 minutes
+    backgroundScanInterval = setInterval(() => {
+        scanAndProcessIncompleteGuidelines();
+    }, 10 * 60 * 1000); // 10 minutes
+    
+    console.log('[BACKGROUND_SCAN] Scanner scheduled: runs every 10 minutes');
+}
+
 // ============================================================================
 // FIREBASE STORAGE HELPERS FOR LARGE CONTENT
 // ============================================================================
@@ -4621,11 +4709,18 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
 });
 
 // Endpoint to handle guideline uploads
+// DEPRECATED: Old GitHub-based upload endpoint - kept for backwards compatibility
 app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
+    console.warn('[UPLOAD] ⚠️  DEPRECATED: /uploadGuideline endpoint called. Please use /uploadGuidelinePDF instead.');
+    console.warn('[UPLOAD] This endpoint uploads to GitHub which may fail. New endpoint uses Firebase Storage.');
+    
     // Check if a file was uploaded
     if (!req.file) {
         console.error('No file uploaded');
-        return res.status(400).json({ message: 'No file uploaded' });
+        return res.status(400).json({ 
+            message: 'No file uploaded',
+            warning: 'This endpoint is deprecated. Please use /uploadGuidelinePDF for better reliability.'
+        });
     }
 
     try {
@@ -7555,9 +7650,16 @@ app.listen(PORT, () => {
             } else {
                 console.log('GitHub permissions check passed');
             }
+            
+            // Start background scanner for incomplete guidelines
+            startBackgroundScanner();
+            
         } catch (error) {
             console.error('Background GitHub checks failed:', error.message);
             console.log('Server will continue to operate with limited GitHub functionality');
+            
+            // Still start background scanner even if GitHub checks fail
+            startBackgroundScanner();
         }
     });
 });
