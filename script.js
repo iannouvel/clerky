@@ -8192,6 +8192,10 @@ async function initializeMainApp() {
             console.log('[DEBUG] Starting background tasks...');
             window.syncGuidelinesInBackground();
             window.setupGuidelinesListenerInBackground();
+            // Ensure metadata completion is checked each startup (runs in background)
+            if (typeof window.scheduleBackgroundMetadataCompletion === 'function') {
+                window.scheduleBackgroundMetadataCompletion(['summary']);
+            }
         }, 1000);
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
