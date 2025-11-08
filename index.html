@@ -735,12 +735,12 @@
 
     <!-- TipTap Editor - Load from CDN -->
     <script type="module">
-        // Import TipTap from CDN and initialize
-        import { Editor } from 'https://cdn.jsdelivr.net/npm/@tiptap/core@2.1.13/+esm';
-        import StarterKit from 'https://cdn.jsdelivr.net/npm/@tiptap/starter-kit@2.1.13/+esm';
-        import Placeholder from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-placeholder@2.1.13/+esm';
-        import TextStyle from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-text-style@2.1.13/+esm';
-        import { Color } from 'https://cdn.jsdelivr.net/npm/@tiptap/extension-color@2.1.13/+esm';
+        // Import TipTap from CDN (esm.sh ensures single shared dependency graph)
+        import { Editor } from 'https://esm.sh/@tiptap/core@2.1.13';
+        import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.1.13';
+        import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13';
+        import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
+        import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
         
         // Create global editors object
         window.editors = window.editors || {};
