@@ -8619,6 +8619,73 @@ async function triggerMetadataCompletionForAll(targetFields = null) {
     }
 }
 
+// Schedule a background metadata completion check (defaults to summaries)
+function scheduleBackgroundMetadataCompletion(targetFields = ['summary'], options = {}) {
+    const {
+        retryDelay = 2000,
+        maxRetries = 5
+    } = options;
+
+    if (!Array.isArray(targetFields) || targetFields.length === 0) {
+        targetFields = ['summary'];
+    }
+
+    if (!window.__metadataCompletionState) {
+        window.__metadataCompletionState = {
+            scheduled: false,
+            attempts: 0
+        };
+    }
+
+    const state = window.__metadataCompletionState;
+    if (state.scheduled) {
+        console.log('[METADATA_COMPLETION] Background check already scheduled, skipping new request.');
+        return;
+    }
+
+    state.scheduled = true;
+    state.attempts = 0;
+
+    console.log(`[METADATA_COMPLETION] Scheduling background check for fields: ${targetFields.join(', ')}`);
+
+    const attemptTrigger = async () => {
+        const user = window.auth?.currentUser;
+        if (!user) {
+            state.attempts += 1;
+            if (state.attempts <= maxRetries) {
+                console.log(`[METADATA_COMPLETION] Auth not ready (attempt ${state.attempts}/${maxRetries}), retrying in ${retryDelay}ms...`);
+                setTimeout(attemptTrigger, retryDelay);
+            } else {
+                console.warn('[METADATA_COMPLETION] Auth not available after maximum retries. Metadata check aborted.');
+                state.scheduled = false;
+            }
+            return;
+        }
+
+        try {
+            const promise = triggerMetadataCompletionForAll(targetFields);
+            if (promise && typeof promise.then === 'function') {
+                promise
+                    .catch(error => {
+                        console.error('[METADATA_COMPLETION] Background check failed:', error);
+                    })
+                    .finally(() => {
+                        console.log('[METADATA_COMPLETION] Background check finished.');
+                        state.scheduled = false;
+                    });
+            } else {
+                console.warn('[METADATA_COMPLETION] Background check promise not returned as expected.');
+                state.scheduled = false;
+            }
+        } catch (error) {
+            console.error('[METADATA_COMPLETION] Error scheduling background check:', error);
+            state.scheduled = false;
+        }
+    };
+
+    setTimeout(attemptTrigger, 0);
+}
+
 // Make functions globally available
 window.enhanceGuidelineMetadata = enhanceGuidelineMetadata;
 window.batchEnhanceMetadata = batchEnhanceMetadata;
@@ -8627,6 +8694,7 @@ window.autoEnhanceIncompleteMetadata = autoEnhanceIncompleteMetadata;
 window.showMetadataProgress = showMetadataProgress;
 window.hideMetadataProgress = hideMetadataProgress;
 window.triggerMetadataCompletionForAll = triggerMetadataCompletionForAll;
+window.scheduleBackgroundMetadataCompletion = scheduleBackgroundMetadataCompletion;
 
 // Testing helper - trigger completion for specific fields only
 window.testMetadataCompletion = async function(fields = ['humanFriendlyName']) {
