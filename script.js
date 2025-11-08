@@ -4544,6 +4544,40 @@ window.handleCurrentSuggestionAction = async function(action) {
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
     
+    // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
+    function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
+        try {
+            const text = (suggestion?.suggestedText || '').toLowerCase();
+            const isAddPrefix = /^\s*add[:\-]/i.test(suggestion?.suggestedText || '');
+            const mentionsTumourMarkers = /(alpha[\s\-]?fetoprotein|afp|beta[\s\-]?hcg|β[\s\-]?hcg|tumou?r\s+markers?)/i.test(suggestion?.suggestedText || '');
+            const mentionsReferralOrPlan = /(refer|mdt|review|follow\s*up|counsel|consent)/i.test(suggestion?.suggestedText || '');
+
+            // Prefer Plan for action-oriented additions (tests to arrange, referrals, etc.)
+            if (suggestion?.category === 'addition' && (isAddPrefix || mentionsTumourMarkers || mentionsReferralOrPlan)) {
+                // If a Plan section exists in the note, target Plan; else keep original but append at end
+                const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
+                if (hasPlanSection) {
+                    return {
+                        section: 'Plan',
+                        insertionMethod: 'append',
+                        anchorText: '',
+                        reasoning: 'Action-oriented addition placed under Plan by client heuristic'
+                    };
+                }
+                // No Plan section found – fall back to end append
+                return {
+                    section: 'end',
+                    insertionMethod: 'append',
+                    anchorText: '',
+                    reasoning: 'No Plan section found; appending to end'
+                };
+            }
+        } catch (e) {
+            console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
+        }
+        return insertionPoint;
+    }
+    
     // Intercept reject action to show feedback modal
     if (action === 'reject') {
         const suggestionId = `current-review-${review.currentIndex}`;
@@ -4589,6 +4623,8 @@ window.handleCurrentSuggestionAction = async function(action) {
             } else {
                 console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
             }
+            // Apply client-side heuristic adjustment
+            insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
             console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
             
             // Insert at determined point
