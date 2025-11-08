@@ -4019,6 +4019,26 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
         insertionPoint
     });
 
+    // Normalize inserted text by trimming leading/trailing blank lines only
+    const cleanedNewText = (typeof newText === 'string' ? newText : '').replace(/^\s*\n+/, '').replace(/\n+\s*$/, '');
+
+    // Helper to compute appropriate prefix spacing to avoid duplicate blank lines
+    function computePrefixSpacing(text, insertPos) {
+        if (insertPos <= 0) return '';
+        const before = text.slice(0, insertPos);
+        if (/\n\n$/.test(before)) return '';
+        if (/\n$/.test(before)) return '\n';
+        return '\n\n';
+    }
+
+    // Helper to compute appropriate suffix spacing to avoid duplicate blank lines
+    function computeSuffixSpacing(text, insertPos) {
+        const after = text.slice(insertPos);
+        if (/^\n\n/.test(after)) return '';
+        if (/^\n/.test(after)) return '';
+        return '\n\n';
+    }
+
     const { section, insertionMethod, anchorText } = insertionPoint;
 
     // If method is append to a section, find the section and append within it
@@ -4078,17 +4098,18 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                 // Insert before the next section
                 insertPosition = sectionStartIndex + matchedPattern.length + nextSectionIndex;
                 console.log('[DEBUG] insertTextAtPoint: Inserting before next section at position', insertPosition);
-                return currentContent.slice(0, insertPosition) + '\n\n' + newText + currentContent.slice(insertPosition);
+                const prefix = computePrefixSpacing(currentContent, insertPosition);
+                return currentContent.slice(0, insertPosition) + prefix + cleanedNewText + currentContent.slice(insertPosition);
             } else {
                 // No next section found, append to end of document (this section is last)
                 console.log('[DEBUG] insertTextAtPoint: Section is last, appending to end');
-                const spacing = currentContent.trim() ? '\n\n' : '';
-                return currentContent + spacing + newText;
+                const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
+                return currentContent + spacing + cleanedNewText;
             }
         } else {
             console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
-            const spacing = currentContent.trim() ? '\n\n' : '';
-            return currentContent + spacing + newText;
+            const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
+            return currentContent + spacing + cleanedNewText;
         }
     }
 
@@ -4099,21 +4120,24 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
         if (anchorIndex !== -1) {
             if (insertionMethod === 'insertAfter') {
                 const insertPosition = anchorIndex + anchorText.length;
-                return currentContent.slice(0, insertPosition) + '\n\n' + newText + '\n\n' + currentContent.slice(insertPosition);
+                const prefix = computePrefixSpacing(currentContent, insertPosition);
+                // No forced trailing spacing to avoid creating an extra blank line
+                return currentContent.slice(0, insertPosition) + prefix + cleanedNewText + currentContent.slice(insertPosition);
             } else { // insertBefore
-                return currentContent.slice(0, anchorIndex) + newText + '\n\n' + currentContent.slice(anchorIndex);
+                const suffix = computeSuffixSpacing(currentContent, anchorIndex);
+                return currentContent.slice(0, anchorIndex) + cleanedNewText + suffix + currentContent.slice(anchorIndex);
             }
         } else {
             console.warn('[DEBUG] insertTextAtPoint: Anchor text not found, appending to end');
-            const spacing = currentContent.trim() ? '\n\n' : '';
-            return currentContent + spacing + newText;
+            const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
+            return currentContent + spacing + cleanedNewText;
         }
     }
 
     // Fallback: append to end
     console.warn('[DEBUG] insertTextAtPoint: Using fallback - appending to end');
-    const spacing = currentContent.trim() ? '\n\n' : '';
-    return currentContent + spacing + newText;
+    const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
+    return currentContent + spacing + cleanedNewText;
 }
 
 // Helper function to extract quoted text from context
