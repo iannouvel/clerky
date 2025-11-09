@@ -309,17 +309,12 @@ function completePIIReview() {
         }
     });
 
-    // Update the Clinical Note with anonymised text
-    if (replacementsCount > 0) {
-        pushToHistory(getUserInputContent());
-        setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
-    }
-
     // Show completion message
     const completionHtml = `
         <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
             <strong>✅ Privacy Review Complete</strong><br>
-            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original
+            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original<br>
+            <em>AI will receive a redacted version; the original remains visible locally.</em>
         </div>
     `;
     
