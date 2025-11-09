@@ -309,17 +309,12 @@ function completePIIReview() {
         }
     });
 
-    // Update the Clinical Note with anonymised text
-    if (replacementsCount > 0) {
-        pushToHistory(getUserInputContent());
-        setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
-    }
-
     // Show completion message
     const completionHtml = `
         <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
             <strong>✅ Privacy Review Complete</strong><br>
-            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original
+            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original<br>
+            <em>AI will receive a redacted version; the original remains visible locally.</em>
         </div>
     `;
     
@@ -4103,13 +4098,19 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             } else {
                 // No next section found, append to end of document (this section is last)
                 console.log('[DEBUG] insertTextAtPoint: Section is last, appending to end');
-                const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-                return currentContent + spacing + cleanedNewText;
+                // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+                let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+                const trailing = (base.match(/\n+$/) || [''])[0].length;
+                const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+                return base + spacing + cleanedNewText;
             }
         } else {
             console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
-            const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-            return currentContent + spacing + cleanedNewText;
+            // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+            let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+            const trailing = (base.match(/\n+$/) || [''])[0].length;
+            const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+            return base + spacing + cleanedNewText;
         }
     }
 
@@ -4136,8 +4137,11 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
 
     // Fallback: append to end
     console.warn('[DEBUG] insertTextAtPoint: Using fallback - appending to end');
-    const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-    return currentContent + spacing + cleanedNewText;
+    // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+    let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+    const trailing = (base.match(/\n+$/) || [''])[0].length;
+    const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+    return base + spacing + cleanedNewText;
 }
 
 // Helper function to extract quoted text from context
