@@ -161,7 +161,7 @@ function showCurrentPIIMatch() {
     }
 
     // Get default action from match
-    const defaultReplacement = currentMatch.replacement || '[REDACTED]';
+    const defaultReplacement = currentMatch.replacement || 'redacted';
 
     // Create the review HTML for this one match
     const reviewHtml = `
@@ -296,7 +296,7 @@ function completePIIReview() {
 
     review.decisions.forEach(({ match, action }) => {
         if (action === 'replace') {
-            const replacement = match.replacement || '[REDACTED]';
+            const replacement = match.replacement || 'redacted';
             anonymisedText = anonymisedText.replace(
                 new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
                 replacement
@@ -309,17 +309,12 @@ function completePIIReview() {
         }
     });
 
-    // Update the Clinical Note with anonymised text
-    if (replacementsCount > 0) {
-        pushToHistory(getUserInputContent());
-        setUserInputContent(anonymisedText, true, 'PII Anonymization', replacements);
-    }
-
     // Show completion message
     const completionHtml = `
         <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
             <strong>✅ Privacy Review Complete</strong><br>
-            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original
+            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original<br>
+            <em>AI will receive a redacted version; the original remains visible locally.</em>
         </div>
     `;
     
@@ -3382,6 +3377,37 @@ function appendToOutputField(content, clearExisting = true) {
     }
 }
 
+// Helper: ensure text is anonymised before outbound requests
+async function ensureAnonymisedForOutbound(originalText) {
+    let anonymisedText = originalText;
+    let anonymisationInfo = null;
+
+    try {
+        if (typeof window.clinicalAnonymiser !== 'undefined') {
+            const piiAnalysis = await window.clinicalAnonymiser.checkForPII(originalText);
+            if (piiAnalysis.containsPII) {
+                const reviewResult = await showPIIReviewInterface(originalText, piiAnalysis);
+                if (reviewResult.approved) {
+                    anonymisedText = reviewResult.anonymisedText;
+                    anonymisationInfo = {
+                        originalLength: originalText.length,
+                        anonymisedLength: anonymisedText.length,
+                        replacementsCount: reviewResult.replacementsCount,
+                        riskLevel: piiAnalysis.riskLevel,
+                        piiTypes: piiAnalysis.piiTypes,
+                        userReviewed: true
+                    };
+                }
+            }
+        }
+    } catch (error) {
+        console.warn('[ANONYMISER] Error during ensureAnonymisedForOutbound:', error);
+        anonymisedText = originalText;
+    }
+
+    return { anonymisedText, anonymisationInfo };
+}
+
 // Update checkAgainstGuidelines to use stored relevant guidelines
 async function checkAgainstGuidelines(suppressHeader = false) {
     const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
@@ -3421,6 +3447,27 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token');
+
+        // Ensure anonymisation before outbound calls
+        let anonymisedTranscript = transcript;
+        try {
+            if (typeof ensureAnonymisedForOutbound === 'function') {
+                const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
+                anonymisedTranscript = anonymisedText || transcript;
+            } else if (typeof window.clinicalAnonymiser !== 'undefined') {
+                // Fallback inline anonymisation if helper is unavailable
+                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
+                if (piiAnalysis.containsPII) {
+                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
+                    if (reviewResult.approved) {
+                        anonymisedTranscript = reviewResult.anonymisedText;
+                    }
+                }
+            }
+        } catch (anonError) {
+            console.warn('[ANONYMISER] Proceeding without anonymisation due to error:', anonError);
+            anonymisedTranscript = transcript;
+        }
 
         // Check if guidelines are loaded in cache
         console.log('[DEBUG] Checking guideline cache status:', {
@@ -3647,7 +3694,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                         'Authorization': `Bearer ${idToken}`
                     },
                     body: JSON.stringify({
-                        transcript: transcript,
+                        transcript: anonymisedTranscript,
                         guideline: guidelineData.id
                     })
                 });
