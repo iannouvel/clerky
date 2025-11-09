@@ -4103,13 +4103,19 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             } else {
                 // No next section found, append to end of document (this section is last)
                 console.log('[DEBUG] insertTextAtPoint: Section is last, appending to end');
-                const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-                return currentContent + spacing + cleanedNewText;
+                // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+                let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+                const trailing = (base.match(/\n+$/) || [''])[0].length;
+                const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+                return base + spacing + cleanedNewText;
             }
         } else {
             console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
-            const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-            return currentContent + spacing + cleanedNewText;
+            // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+            let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+            const trailing = (base.match(/\n+$/) || [''])[0].length;
+            const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+            return base + spacing + cleanedNewText;
         }
     }
 
@@ -4136,8 +4142,11 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
 
     // Fallback: append to end
     console.warn('[DEBUG] insertTextAtPoint: Using fallback - appending to end');
-    const spacing = currentContent.trim() ? (/\n\n$/.test(currentContent) ? '' : (/\n$/.test(currentContent) ? '\n' : '\n\n')) : '';
-    return currentContent + spacing + cleanedNewText;
+    // Trim trailing spaces and cap trailing newlines to avoid extra blank lines
+    let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+    const trailing = (base.match(/\n+$/) || [''])[0].length;
+    const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+    return base + spacing + cleanedNewText;
 }
 
 // Helper function to extract quoted text from context
