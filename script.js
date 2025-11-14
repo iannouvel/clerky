@@ -787,9 +787,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -801,9 +801,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -815,9 +815,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -829,9 +829,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -975,9 +975,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         categories.mostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1008,9 +1008,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1040,9 +1040,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -1072,9 +1072,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from database, fallback to title
+            // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             
             htmlContent += `
@@ -2186,6 +2186,7 @@ async function loadGuidelinesFromFirestore() {
                     acc[g.id] = {
                         id: g.id,
                         title: g.title,
+                        displayName: g.displayName || null,
                         humanFriendlyName: g.humanFriendlyName || g.human_friendly_name || g.title,
                         content: g.content,
                         summary: g.summary,
@@ -2269,6 +2270,7 @@ async function loadGuidelinesFromFirestore() {
             acc[g.id] = {
                 id: g.id,
                 title: g.title,
+                displayName: g.displayName || null,
                 humanFriendlyName: g.humanFriendlyName || g.human_friendly_name || g.title,
                 content: g.content,
                 summary: g.summary,
@@ -8914,7 +8916,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             <div class="guidelines-selection-list">
                 ${mostRelevantGuidelines.map((guideline, index) => {
                     const guidelineData = window.globalGuidelines[guideline.id];
-                    const displayTitle = guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
+                    const displayTitle = guidelineData?.displayName || guideline.displayName || guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
                     const organization = guidelineData?.organisation || 'Unknown';
                     const relevanceScore = guideline.relevance || 'N/A';
                     
