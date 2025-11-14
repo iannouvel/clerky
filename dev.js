@@ -282,6 +282,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('User not logged in, redirecting to login page...');
                     // If not logged in, redirect to login page
                     localStorage.setItem('returnToPage', 'dev.html');
+                    localStorage.setItem('returnAfterLogin', '1');
                     window.location.href = 'index.html';
                     return;
                 }
@@ -405,7 +406,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             } else {
                 // User is signed out - redirect to login page
                 console.log('User is signed out');
-                try { localStorage.setItem('returnToPage', 'dev.html'); } catch (_) {}
+                try { 
+                    localStorage.setItem('returnToPage', 'dev.html'); 
+                    localStorage.setItem('returnAfterLogin', '1');
+                } catch (_) {}
                 window.location.href = 'index.html';
             }
         });

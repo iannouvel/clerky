@@ -717,9 +717,15 @@
             onAuthStateChanged(auth, (user) => {
                 try {
                     const returnTo = localStorage.getItem('returnToPage');
-                    if (user && returnTo) {
+                    const returnAfterLogin = localStorage.getItem('returnAfterLogin');
+                    // Only redirect to a saved page if this was explicitly set during a login flow
+                    if (user && returnTo && returnAfterLogin === '1') {
                         localStorage.removeItem('returnToPage');
+                        localStorage.removeItem('returnAfterLogin');
                         window.location.href = returnTo;
+                    } else if (returnAfterLogin !== '1' && returnTo) {
+                        // Safety: clear stale returnTo without redirecting
+                        localStorage.removeItem('returnToPage');
                     }
                 } catch (e) {
                     // ignore
