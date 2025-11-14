@@ -4794,9 +4794,11 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                     const nation = req.body.nation || null;
                     const hospitalTrust = req.body.hospitalTrust || null;
                     
+                    const title = fileName.replace(/\.[^/.]+$/, ''); // Remove extension for title
                     const basicGuidelineDoc = {
                         id: cleanId,
-                        title: fileName.replace(/\.[^/.]+$/, ''), // Remove extension for title
+                        title: title,
+                        displayName: generateDisplayName(title), // Generate elegant display name
                         filename: fileName,
                         originalFilename: fileName,
                         fileHash: fileHash,
@@ -4943,6 +4945,7 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
         const guidelineDoc = {
             id: guidelineId,
             title: title,
+            displayName: generateDisplayName(title || fileName), // Generate elegant display name
             filename: fileName,
             originalFilename: fileName,
             fileHash: fileHash,
@@ -6304,6 +6307,90 @@ function cleanHumanFriendlyName(rawName) {
   cleaned = cleaned.replace(/\s+/g, ' ').trim();
   
   // Capitalize first letter if it's not already
+  if (cleaned.length > 0) {
+    cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+  }
+  
+  return cleaned;
+}
+
+// Generate elegant display name for guidelines
+// This function applies more aggressive cleaning than cleanHumanFriendlyName
+// to remove UHSx prefixes, hash codes, dates, version numbers, etc.
+function generateDisplayName(rawName) {
+  if (!rawName || typeof rawName !== 'string') {
+    return rawName;
+  }
+  
+  // Start with the base cleaning function
+  let cleaned = cleanHumanFriendlyName(rawName);
+  
+  // Remove "UHSx" prefixes (case-insensitive, with optional space after)
+  cleaned = cleaned.replace(/^UHSx\s*/i, '');
+  
+  // Remove hash codes like "UHS-CG-0009-2023" (pattern: UHS-CG-digits-digits)
+  cleaned = cleaned.replace(/\bUHS-CG-\d+-\d+\b/gi, '');
+  
+  // Remove version numbers in various formats (v0.0.1, V2, v1.2.3, etc.)
+  cleaned = cleaned.replace(/\s+v\d+(\.\d+)*(\.\d+)?\b/gi, '');
+  cleaned = cleaned.replace(/\s+V\d+\b/g, '');
+  cleaned = cleaned.replace(/\s+version\s+\d+(\.\d+)?/gi, '');
+  
+  // Remove dates in various formats (2020-10, 2011v2, etc.)
+  cleaned = cleaned.replace(/\b\d{4}-\d{1,2}\b/g, ''); // YYYY-MM format
+  cleaned = cleaned.replace(/\b\d{4}v\d+\b/gi, ''); // YYYYvN format
+  cleaned = cleaned.replace(/\b\d{4}\s+\d{1,2}\b/g, ''); // YYYY MM format
+  
+  // Remove "Appendix X" prefixes (case-insensitive)
+  cleaned = cleaned.replace(/^Appendix\s+\d+\s+/i, '');
+  
+  // Remove "Proforma" suffixes (case-insensitive, with optional text before)
+  cleaned = cleaned.replace(/\s+Proforma\s*$/i, '');
+  cleaned = cleaned.replace(/\s+-\s*Proforma\s*$/i, '');
+  
+  // Remove common suffixes like "FINAL", "DRAFT", etc.
+  cleaned = cleaned.replace(/\s+(FINAL|DRAFT|REVISED|UPDATED)\s*$/i, '');
+  
+  // Remove parenthetical hash codes and reference codes
+  cleaned = cleaned.replace(/\s*\([^)]*UHS[^)]*\)/gi, '');
+  cleaned = cleaned.replace(/\s*\([^)]*CG-\d+[^)]*\)/gi, '');
+  
+  // Remove standalone reference codes (e.g., "PID Proforma - June 2011v2")
+  cleaned = cleaned.replace(/\b(PID|GAU|MP|CG|SP|MD|GP)\s+Proforma\s*/gi, '');
+  
+  // Fix capitalization - Title Case for main words, lowercase for articles/prepositions
+  // List of words that should be lowercase (unless first word)
+  const lowercaseWords = ['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'from', 
+                          'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with'];
+  
+  // Split into words and capitalize appropriately
+  const words = cleaned.split(/\s+/);
+  const titleCased = words.map((word, index) => {
+    if (word.length === 0) return word;
+    
+    // Always capitalize first word
+    if (index === 0) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    
+    // Lowercase articles/prepositions unless they're acronyms (all caps)
+    if (lowercaseWords.includes(word.toLowerCase()) && word !== word.toUpperCase()) {
+      return word.toLowerCase();
+    }
+    
+    // Capitalize first letter, lowercase rest
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  
+  cleaned = titleCased.join(' ');
+  
+  // Clean up multiple spaces and normalize spacing
+  cleaned = cleaned.replace(/\s+/g, ' ').trim();
+  
+  // Remove leading/trailing dashes and spaces
+  cleaned = cleaned.replace(/^[- ]+|[- ]+$/g, '');
+  
+  // Ensure first letter is capitalized
   if (cleaned.length > 0) {
     cleaned = cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
   }
@@ -9090,9 +9177,11 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
 
         // Store in Firestore with metadata and clean ID structure
         console.log(`[SYNC_META] Storing ${rawGuidelineName} with clean ID in Firestore...`);
+        const title = metadata.humanFriendlyName || rawGuidelineName;
         await storeGuideline({
           filename: rawGuidelineName, // Original filename for GitHub reference
-          title: metadata.humanFriendlyName || rawGuidelineName, // Use AI-extracted clean name as main title
+          title: title, // Use AI-extracted clean name as main title
+          displayName: generateDisplayName(title), // Generate elegant display name
           content: guidelineContent,
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
@@ -12202,6 +12291,27 @@ app.put('/guideline/:id', authenticateUser, async (req, res) => {
       console.log(`[DEBUG] Generated new docId for ${id}:`, updates.docId);
     }
     
+    // Handle displayName: if provided, use it directly (manual override)
+    // If not provided but title/humanFriendlyName changed, auto-generate displayName
+    if (updates.displayName !== undefined) {
+      // Manual override - use provided displayName as-is
+      // (could be empty string to clear it, or a custom value)
+    } else if (updates.title || updates.humanFriendlyName) {
+      // Auto-generate displayName if title or humanFriendlyName is being updated
+      const guidelineRef = db.collection('guidelines').doc(id);
+      const currentDoc = await guidelineRef.get();
+      const currentData = currentDoc.data();
+      
+      const sourceTitle = updates.title || currentData.title;
+      const sourceHumanFriendly = updates.humanFriendlyName || currentData.humanFriendlyName;
+      const nameToUse = sourceHumanFriendly || sourceTitle;
+      
+      if (nameToUse) {
+        updates.displayName = generateDisplayName(nameToUse);
+        console.log(`[DEBUG] Auto-generated displayName for ${id}: "${updates.displayName}"`);
+      }
+    }
+    
     const guidelineRef = db.collection('guidelines').doc(id);
     await guidelineRef.update({
       ...updates,
@@ -12243,41 +12353,117 @@ app.get('/guideline/:id', authenticateUser, async (req, res) => {
     }
 });
 
-// Update the updateGuideline endpoint
-app.put('/guideline/:id', authenticateUser, async (req, res) => {
-    try {
-        const { id } = req.params;
-        const updates = req.body;
-        
-        // Generate new docId if we have all required fields
-        if (updates.organisation && updates.yearProduced && updates.title) {
-            updates.docId = await generateDocId(
-                updates.organisation,
-                updates.yearProduced,
-                updates.title
-            );
-            console.log(`[DEBUG] Generated new docId for ${id}:`, updates.docId);
-        }
-        
-        const guidelineRef = db.collection('guidelines').doc(id);
-        await guidelineRef.update({
-            ...updates,
-            updatedAt: admin.firestore.FieldValue.serverTimestamp()
-        });
-        
-        const doc = await guidelineRef.get();
-        const data = doc.data();
-        
-        res.json({
-            id: doc.id,
-            hasDocId: !!data.docId,
-            docId: data.docId,
-            ...data
-        });
-    } catch (error) {
-        console.error('[ERROR] Error in updateGuideline endpoint:', error);
-        res.status(500).json({ error: error.message });
+// Endpoint to populate displayName for all existing guidelines
+app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineId } = req.body;
+    
+    // If specific guidelineId provided, update only that one
+    if (guidelineId) {
+      const guidelineRef = db.collection('guidelines').doc(guidelineId);
+      const doc = await guidelineRef.get();
+      
+      if (!doc.exists) {
+        return res.status(404).json({ error: 'Guideline not found' });
+      }
+      
+      const data = doc.data();
+      const sourceName = data.humanFriendlyName || data.title || data.filename;
+      
+      if (!sourceName) {
+        return res.status(400).json({ error: 'No source name found to generate displayName' });
+      }
+      
+      const displayName = generateDisplayName(sourceName);
+      
+      await guidelineRef.update({
+        displayName: displayName,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+      });
+      
+      return res.json({
+        success: true,
+        updated: 1,
+        results: [{
+          guidelineId: guidelineId,
+          oldTitle: sourceName,
+          newDisplayName: displayName
+        }]
+      });
     }
+    
+    // Otherwise, process all guidelines
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const results = [];
+    let updatedCount = 0;
+    let batch = db.batch();
+    let batchCount = 0;
+    const BATCH_SIZE = 500; // Firestore batch limit
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      
+      // Skip if displayName already exists (unless force flag is set)
+      if (data.displayName && !req.body.force) {
+        continue;
+      }
+      
+      const sourceName = data.humanFriendlyName || data.title || data.filename;
+      
+      if (!sourceName) {
+        results.push({
+          guidelineId: doc.id,
+          success: false,
+          error: 'No source name found'
+        });
+        continue;
+      }
+      
+      const displayName = generateDisplayName(sourceName);
+      const guidelineRef = db.collection('guidelines').doc(doc.id);
+      
+      batch.update(guidelineRef, {
+        displayName: displayName,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+      });
+      
+      batchCount++;
+      updatedCount++;
+      
+      results.push({
+        guidelineId: doc.id,
+        success: true,
+        oldTitle: sourceName,
+        newDisplayName: displayName
+      });
+      
+      // Commit batch when it reaches the limit
+      if (batchCount >= BATCH_SIZE) {
+        await batch.commit();
+        console.log(`[POPULATE_DISPLAY_NAMES] Committed batch of ${batchCount} updates`);
+        batch = db.batch(); // Create new batch
+        batchCount = 0;
+      }
+    }
+    
+    // Commit remaining updates
+    if (batchCount > 0) {
+      await batch.commit();
+      console.log(`[POPULATE_DISPLAY_NAMES] Committed final batch of ${batchCount} updates`);
+    }
+    
+    console.log(`[POPULATE_DISPLAY_NAMES] Successfully updated ${updatedCount} guidelines`);
+    
+    res.json({
+      success: true,
+      updated: updatedCount,
+      total: guidelinesSnapshot.size,
+      results: results
+    });
+  } catch (error) {
+    console.error('[POPULATE_DISPLAY_NAMES] Error:', error);
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // Update getAllGuidelines to use document IDs
