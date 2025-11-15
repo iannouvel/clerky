@@ -760,13 +760,15 @@ function displayRelevantGuidelines(categories) {
             // console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
         } else {
             // No reliable download information available - don't show a link
-            // console.warn('[DEBUG] No downloadUrl or originalFilename available for guideline:', {
-            //     id: guideline.id,
-            //     title: guideline.title,
-            //     allAvailableFields: Object.keys(guideline),
-            //     fullGuidelineObject: guideline
-            // });
-            // console.warn('[DEBUG] Database should provide downloadUrl or originalFilename field');
+            const displayTitle = guideline.displayName || guideline.humanFriendlyName || guideline.title || guideline.id;
+            console.warn('[PDF-LINK] Missing PDF download link for guideline:', {
+                id: guideline.id,
+                title: displayTitle,
+                hasDownloadUrl: !!guideline.downloadUrl,
+                hasOriginalFilename: !!guideline.originalFilename,
+                hasFilename: !!guideline.filename,
+                allAvailableFields: Object.keys(guideline)
+            });
             return '';
         }
         
@@ -1233,6 +1235,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             overflow-wrap: break-word;
             margin: 0;
             padding: 0;
+            vertical-align: baseline;
         }
         
         .guideline-content {
@@ -1253,6 +1256,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             padding: 0;
             line-height: 1.3;
             flex-shrink: 0;
+            vertical-align: baseline;
         }
         
         .guideline-selection-interface .pdf-download-link {
@@ -1270,6 +1274,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             height: auto !important;
             flex-shrink: 0;
             white-space: nowrap;
+            min-width: 0;
+        }
+        
+        .guideline-selection-interface .pdf-download-link:empty {
+            display: none;
         }
         
         .selection-info {
