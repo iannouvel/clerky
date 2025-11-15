@@ -4801,7 +4801,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                     const basicGuidelineDoc = {
                         id: cleanId,
                         title: title,
-                        displayName: generateDisplayName(title), // Generate elegant display name
+                        displayName: generateDisplayName(title), // Generate rule-based display name initially, AI will improve it in background
                         filename: fileName,
                         originalFilename: fileName,
                         fileHash: fileHash,
@@ -9248,7 +9248,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         await storeGuideline({
           filename: rawGuidelineName, // Original filename for GitHub reference
           title: title, // Use AI-extracted clean name as main title
-          displayName: generateDisplayName(title), // Generate elegant display name
+          displayName: generateDisplayName(title), // Generate rule-based display name initially, AI will improve it in background
           content: guidelineContent,
           summary: guidelineSummary,
           keywords: extractKeywords(guidelineSummary),
