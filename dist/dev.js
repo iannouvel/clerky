@@ -1712,6 +1712,72 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle populate display names button
+        const populateDisplayNamesBtn = document.getElementById('populateDisplayNamesBtn');
+        if (populateDisplayNamesBtn) {
+            populateDisplayNamesBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to populate displayName fields for all guidelines? This will generate elegant display names by cleaning up titles (removing UHSx prefixes, hash codes, version numbers, dates, etc.) and fixing capitalization. This may take a few minutes.')) {
+                    return;
+                }
+                
+                const originalText = populateDisplayNamesBtn.textContent;
+                
+                try {
+                    populateDisplayNamesBtn.textContent = '⏳ Populating...';
+                    populateDisplayNamesBtn.disabled = true;
+                    
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = 'Populating displayName fields for all guidelines...';
+                    
+                    console.log('✨ [DISPLAY_NAMES] Starting displayName population...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/populateDisplayNames`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({})
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [DISPLAY_NAMES] Population completed:', result);
+                    
+                    statusDiv.style.display = 'block';
+                    statusDiv.innerHTML = `
+                        <strong>✅ Success!</strong><br>
+                        Updated ${result.updated} out of ${result.total} guidelines<br>
+                        <small style="color:#666">Check console for detailed results</small>
+                    `;
+                    statusDiv.style.backgroundColor = '#d4edda';
+                    statusDiv.style.border = '1px solid #c3e6cb';
+                    statusDiv.style.color = '#155724';
+                    
+                    alert(`Successfully populated displayName for ${result.updated} guidelines!`);
+                    
+                } catch (error) {
+                    console.error('❌ [DISPLAY_NAMES] Error:', error);
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = `Error: ${error.message}`;
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                    statusDiv.style.border = '1px solid #f5c6cb';
+                    statusDiv.style.color = '#721c24';
+                    alert('Error populating display names: ' + error.message);
+                } finally {
+                    populateDisplayNamesBtn.textContent = originalText;
+                    populateDisplayNamesBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
