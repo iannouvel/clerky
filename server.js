@@ -1249,6 +1249,9 @@ async function jobExtractContent(job, guidelineData) {
         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
     });
     
+    // Queue displayName generation now that content is available
+    queueJob('generate_display_name', job.guidelineId);
+    
     return { contentLength: fullText.length };
 }
 
@@ -9274,7 +9277,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         // Store in Firestore with metadata and clean ID structure
         console.log(`[SYNC_META] Storing ${rawGuidelineName} with clean ID in Firestore...`);
         const title = metadata.humanFriendlyName || rawGuidelineName;
-        await storeGuideline({
+        const docId = await storeGuideline({
           filename: rawGuidelineName, // Original filename for GitHub reference
           title: title, // Use AI-extracted clean name as main title
           displayName: generateDisplayName(title), // Generate rule-based display name initially, AI will improve it in background
@@ -9292,9 +9295,13 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           hospitalTrust: metadata.hospitalTrust || null,
           auditableElements: await extractAuditableElements(guidelineContent)
         });
-        console.log(`[SYNC_META] Successfully stored ${rawGuidelineName} (ID: ${cleanId}) in Firestore.`);
+        
+        // Queue AI displayName generation job (content is already available from sync)
+        queueJob('generate_display_name', docId);
+        
+        console.log(`[SYNC_META] Successfully stored ${rawGuidelineName} (ID: ${docId}) in Firestore.`);
 
-        results.push({ guideline: rawGuidelineName, success: true, message: 'Guideline synced successfully', cleanId });
+        results.push({ guideline: rawGuidelineName, success: true, message: 'Guideline synced successfully', cleanId: docId });
       } catch (error) {
         console.error(`[SYNC_META] Error processing guideline ${rawGuidelineName} (encoded: ${guideline}):`, error.message);
         results.push({ guideline: rawGuidelineName, success: false, error: error.message });
