@@ -1228,17 +1228,19 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-weight: 500;
             color: #2c3e50;
             line-height: 1.3;
-            flex: 1;
             min-width: 0;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            margin: 0;
+            padding: 0;
         }
         
         .guideline-content {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto min-content;
+            align-items: baseline;
             gap: 12px;
+            min-width: 0;
         }
         
         .relevance {
@@ -1246,9 +1248,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-weight: 500;
             white-space: nowrap;
             font-size: 0.9em;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            line-height: 1.3;
             flex-shrink: 0;
-            margin-left: auto;
-            padding-top: 2px;
         }
         
         .guideline-selection-interface .pdf-download-link {
@@ -1261,9 +1265,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             border: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
-            display: inline !important;
+            display: inline-block !important;
             width: auto !important;
             height: auto !important;
+            flex-shrink: 0;
+            white-space: nowrap;
         }
         
         .selection-info {
