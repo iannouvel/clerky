@@ -1232,11 +1232,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             min-width: 0;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            margin: 0;
+            padding: 0;
         }
         
         .guideline-content {
             display: flex;
-            align-items: flex-start;
+            align-items: baseline;
             justify-content: space-between;
             gap: 12px;
         }
@@ -1248,7 +1250,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-size: 0.9em;
             flex-shrink: 0;
             margin-left: auto;
-            padding-top: 2px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            line-height: 1.3;
         }
         
         .guideline-selection-interface .pdf-download-link {

@@ -6375,6 +6375,10 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       return null;
     }
     
+    // Get scope and hospitalTrust for formatting
+    const scope = guidelineData.scope || 'national';
+    const hospitalTrust = guidelineData.hospitalTrust || '';
+    
     // Get the prompt config
     const promptConfig = global.prompts?.['extractDisplayName'] || require('./prompts.json')['extractDisplayName'];
     if (!promptConfig) {
@@ -6382,9 +6386,11 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       return null;
     }
     
-    // Prepare the prompt with title and content
+    // Prepare the prompt with title, scope, trust, and content
     const prompt = promptConfig.prompt
       .replace('{{title}}', title)
+      .replace('{{scope}}', scope)
+      .replace('{{hospitalTrust}}', hospitalTrust || 'Not specified')
       .replace('{{text}}', (contentForAnalysis || '').substring(0, 2000));
     
     const messages = [
@@ -6398,7 +6404,7 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       const displayName = aiResult.content.trim();
       // Clean up any extra formatting the AI might add
       const cleaned = displayName.replace(/^["']|["']$/g, '').trim();
-      console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}"`);
+      console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}", scope: "${scope}", trust: "${hospitalTrust}"`);
       return cleaned;
     }
     
@@ -6456,10 +6462,24 @@ function generateDisplayName(rawName) {
   const lowercaseWords = ['a', 'an', 'and', 'as', 'at', 'but', 'by', 'for', 'from', 
                           'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with'];
   
+  // Known medical acronyms that should always be uppercase (even if they appear lowercase in source)
+  const knownAcronyms = new Set([
+    'BJOG', 'RCOG', 'NICE', 'FSRH', 'BASHH', 'BMS', 'BSH', 'BHIVA', 'BAPM', 'BSGE', 'BSUG', 
+    'BGCS', 'BSCCP', 'BFS', 'BMFMS', 'BritSPAG', 'ESHRE', 'FIGO', 'ACOG', 'WHO', 'UKMEC', 
+    'UK NSC', 'COCP', 'POP', 'IUD', 'IUS', 'PID', 'HIV', 'VTE', 'PPH', 'APH', 'VBAC', 
+    'CS', 'LSCS', 'ECV', 'CTG', 'NIPE', 'FGM', 'GTD', 'OHSS', 'PCOS', 'PMS', 'PMRT'
+  ]);
+  
   // Split into words and capitalize appropriately
   const words = cleaned.split(/\s+/);
   const titleCased = words.map((word, index) => {
     if (word.length === 0) return word;
+    
+    // Check if this is a known acronym (case-insensitive match)
+    const upperWord = word.toUpperCase();
+    if (knownAcronyms.has(upperWord)) {
+      return upperWord; // Convert to all caps if it's a known acronym
+    }
     
     // Preserve acronyms (words that are all caps and at least 2 characters)
     // Common medical acronyms: BJOG, RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, etc.
@@ -12477,7 +12497,7 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
         return res.status(400).json({ error: 'No source name found to generate displayName' });
       }
       
-      // Try AI generation first, fall back to rule-based if it fails
+      // Always try AI generation first to get best quality displayName with proper acronym handling
       const userId = req.user.uid;
       let displayName = await generateDisplayNameWithAI(data, userId);
       if (!displayName) {
@@ -12529,7 +12549,8 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
         continue;
       }
       
-      // Try AI generation first, fall back to rule-based if it fails
+      // Always try AI generation first (even if displayName exists and force is set)
+      // This ensures we get the best quality displayName with proper acronym handling
       let displayName = await generateDisplayNameWithAI(data, userId);
       if (!displayName) {
         console.log(`[POPULATE_DISPLAY_NAMES] AI generation failed for ${doc.id}, using rule-based fallback`);

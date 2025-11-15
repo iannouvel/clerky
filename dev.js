@@ -1716,7 +1716,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const populateDisplayNamesBtn = document.getElementById('populateDisplayNamesBtn');
         if (populateDisplayNamesBtn) {
             populateDisplayNamesBtn.addEventListener('click', async () => {
-                if (!confirm('Are you sure you want to populate displayName fields for all guidelines? This will generate elegant display names by cleaning up titles (removing UHSx prefixes, hash codes, version numbers, dates, etc.) and fixing capitalization. This may take a few minutes.')) {
+                if (!confirm('Are you sure you want to regenerate displayName fields for all guidelines? This will use AI to generate display names in the format: name (year) - region - trust. It will remove codes, version numbers, and format dates, while preserving organization names and abbreviating trust names. This may take several minutes as it processes each guideline with AI.')) {
                     return;
                 }
                 
@@ -1728,9 +1728,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     const statusDiv = document.getElementById('maintenanceStatus');
                     statusDiv.style.display = 'block';
-                    statusDiv.textContent = 'Populating displayName fields for all guidelines...';
+                    statusDiv.textContent = 'Regenerating displayName fields for all guidelines...';
                     
-                    console.log('✨ [DISPLAY_NAMES] Starting displayName population...');
+                    console.log('✨ [DISPLAY_NAMES] Starting displayName regeneration...');
                     
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/populateDisplayNames`, {
@@ -1739,7 +1739,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                             'Authorization': `Bearer ${token}`,
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({})
+                        body: JSON.stringify({ force: true })
                     });
                     
                     if (!response.ok) {
@@ -1760,7 +1760,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     statusDiv.style.border = '1px solid #c3e6cb';
                     statusDiv.style.color = '#155724';
                     
-                    alert(`Successfully populated displayName for ${result.updated} guidelines!`);
+                    alert(`Successfully regenerated displayName for ${result.updated} guidelines!`);
                     
                 } catch (error) {
                     console.error('❌ [DISPLAY_NAMES] Error:', error);
