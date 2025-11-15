@@ -1778,6 +1778,78 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle clear display names button
+        const clearDisplayNamesBtn = document.getElementById('clearDisplayNamesBtn');
+        if (clearDisplayNamesBtn) {
+            clearDisplayNamesBtn.addEventListener('click', async () => {
+                if (!confirm('⚠️ WARNING: This will delete ALL displayName fields from all guidelines. This action cannot be undone. Are you absolutely sure?')) {
+                    return;
+                }
+                
+                const confirmText = prompt('Type "yes" to confirm clearing all display names:');
+                if (confirmText !== 'yes') {
+                    alert('Confirmation failed. Operation cancelled.');
+                    return;
+                }
+                
+                const originalText = clearDisplayNamesBtn.textContent;
+                
+                try {
+                    clearDisplayNamesBtn.textContent = '⏳ Clearing...';
+                    clearDisplayNamesBtn.disabled = true;
+                    
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = 'Clearing all displayName fields...';
+                    
+                    console.log('🗑️ [CLEAR_DISPLAY_NAMES] Starting displayName clearing...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/clearDisplayNames`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ confirm: 'yes' })
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [CLEAR_DISPLAY_NAMES] Clearing completed:', result);
+                    
+                    statusDiv.style.display = 'block';
+                    statusDiv.innerHTML = `
+                        <strong>✅ Success!</strong><br>
+                        Cleared ${result.cleared} out of ${result.total} guidelines<br>
+                        <small style="color:#666">Display names will be regenerated automatically for new guidelines</small>
+                    `;
+                    statusDiv.style.backgroundColor = '#d4edda';
+                    statusDiv.style.border = '1px solid #c3e6cb';
+                    statusDiv.style.color = '#155724';
+                    
+                    alert(`Successfully cleared ${result.cleared} displayName fields!`);
+                    
+                } catch (error) {
+                    console.error('❌ [CLEAR_DISPLAY_NAMES] Error:', error);
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = `Error: ${error.message}`;
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                    statusDiv.style.border = '1px solid #f5c6cb';
+                    statusDiv.style.color = '#721c24';
+                    alert('Error clearing display names: ' + error.message);
+                } finally {
+                    clearDisplayNamesBtn.textContent = originalText;
+                    clearDisplayNamesBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
