@@ -1235,6 +1235,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         .guideline-content {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 12px;
             flex-wrap: wrap;
         }
@@ -1244,6 +1245,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-weight: 500;
             white-space: nowrap;
             font-size: 0.9em;
+            margin-left: auto;
         }
         
         .guideline-selection-interface .pdf-download-link {
