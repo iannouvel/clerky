@@ -12521,18 +12521,12 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
       });
     }
     
-    // Otherwise, process all guidelines in smaller batches to avoid timeouts
-    const userId = req.user.uid;
+    // Otherwise, queue jobs for all guidelines that need processing
+    // This returns immediately and processes in the background to avoid timeouts
     const guidelinesSnapshot = await db.collection('guidelines').get();
-    const results = [];
-    let updatedCount = 0;
-    let batch = db.batch();
-    let batchCount = 0;
-    const FIRESTORE_BATCH_SIZE = 500; // Firestore batch limit
-    const PROCESSING_BATCH_SIZE = 20; // Process 20 guidelines at a time before committing
+    const guidelinesToProcess = [];
     
     // Filter guidelines that need processing
-    const guidelinesToProcess = [];
     for (const doc of guidelinesSnapshot.docs) {
       const data = doc.data();
       
@@ -12543,82 +12537,24 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
       
       const sourceName = data.humanFriendlyName || data.title || data.filename;
       if (!sourceName) {
-        results.push({
-          guidelineId: doc.id,
-          success: false,
-          error: 'No source name found'
-        });
         continue;
       }
       
-      guidelinesToProcess.push({ doc, data, sourceName });
+      guidelinesToProcess.push(doc.id);
     }
     
-    console.log(`[POPULATE_DISPLAY_NAMES] Processing ${guidelinesToProcess.length} guidelines in batches of ${PROCESSING_BATCH_SIZE}`);
+    console.log(`[POPULATE_DISPLAY_NAMES] Queueing ${guidelinesToProcess.length} guidelines for background processing`);
     
-    // Process in smaller batches
-    for (let i = 0; i < guidelinesToProcess.length; i++) {
-      const { doc, data, sourceName } = guidelinesToProcess[i];
-      
-      try {
-        // Always try AI generation first (even if displayName exists and force is set)
-        // This ensures we get the best quality displayName with proper acronym handling
-        let displayName = await generateDisplayNameWithAI(data, userId);
-        if (!displayName) {
-          console.log(`[POPULATE_DISPLAY_NAMES] AI generation failed for ${doc.id}, using rule-based fallback`);
-          displayName = generateDisplayName(sourceName);
-        }
-        
-        const guidelineRef = db.collection('guidelines').doc(doc.id);
-        batch.update(guidelineRef, {
-          displayName: displayName,
-          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
-        });
-        
-        batchCount++;
-        updatedCount++;
-        
-        results.push({
-          guidelineId: doc.id,
-          success: true,
-          oldTitle: sourceName,
-          newDisplayName: displayName
-        });
-        
-        // Commit in smaller batches to avoid timeouts
-        if (batchCount >= PROCESSING_BATCH_SIZE || batchCount >= FIRESTORE_BATCH_SIZE) {
-          await batch.commit();
-          console.log(`[POPULATE_DISPLAY_NAMES] Committed batch of ${batchCount} updates (${updatedCount}/${guidelinesToProcess.length} total)`);
-          batch = db.batch(); // Create new batch
-          batchCount = 0;
-          
-          // Small delay to avoid overwhelming the system
-          await new Promise(resolve => setTimeout(resolve, 100));
-        }
-      } catch (error) {
-        console.error(`[POPULATE_DISPLAY_NAMES] Error processing guideline ${doc.id}:`, error);
-        results.push({
-          guidelineId: doc.id,
-          success: false,
-          error: error.message
-        });
-      }
+    // Queue jobs for each guideline - these will be processed by the background job processor
+    for (const guidelineId of guidelinesToProcess) {
+      queueJob('generate_display_name', guidelineId);
     }
-    
-    // Commit remaining updates
-    if (batchCount > 0) {
-      await batch.commit();
-      console.log(`[POPULATE_DISPLAY_NAMES] Committed final batch of ${batchCount} updates`);
-    }
-    
-    console.log(`[POPULATE_DISPLAY_NAMES] Successfully updated ${updatedCount} out of ${guidelinesToProcess.length} guidelines`);
     
     res.json({
       success: true,
-      updated: updatedCount,
-      total: guidelinesSnapshot.size,
-      processed: guidelinesToProcess.length,
-      results: results
+      message: `Queued ${guidelinesToProcess.length} guidelines for display name regeneration. Processing in background...`,
+      queued: guidelinesToProcess.length,
+      total: guidelinesSnapshot.size
     });
   } catch (error) {
     console.error('[POPULATE_DISPLAY_NAMES] Error:', error);

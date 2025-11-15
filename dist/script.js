@@ -1243,6 +1243,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             min-width: 0;
         }
         
+        .guideline-content > :empty {
+            display: none;
+        }
+        
         .relevance {
             color: #28a745;
             font-weight: 500;
@@ -1270,6 +1274,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             height: auto !important;
             flex-shrink: 0;
             white-space: nowrap;
+            min-width: 0;
+        }
+        
+        .guideline-selection-interface .pdf-download-link:empty {
+            display: none;
         }
         
         .selection-info {
