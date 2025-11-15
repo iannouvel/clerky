@@ -1192,6 +1192,9 @@ async function processJob(job) {
             case 'extract_auditable':
                 result = await jobExtractAuditable(job, guidelineData);
                 break;
+            case 'generate_display_name':
+                result = await jobGenerateDisplayName(job, guidelineData);
+                break;
             default:
                 throw new Error(`Unknown job type: ${job.type}`);
         }
@@ -4945,7 +4948,7 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
         const guidelineDoc = {
             id: guidelineId,
             title: title,
-            displayName: generateDisplayName(title || fileName), // Generate elegant display name
+            displayName: generateDisplayName(title || fileName), // Generate rule-based display name initially, AI will improve it in background
             filename: fileName,
             originalFilename: fileName,
             fileHash: fileHash,
@@ -6317,6 +6320,64 @@ function cleanHumanFriendlyName(rawName) {
 // Generate elegant display name for guidelines
 // This function applies more aggressive cleaning than cleanHumanFriendlyName
 // to remove UHSx prefixes, hash codes, dates, version numbers, etc.
+// AI-powered display name generation
+async function generateDisplayNameWithAI(guidelineData, userId) {
+  try {
+    // Get content for AI analysis
+    let contentForAnalysis = guidelineData.condensed || guidelineData.content;
+    
+    // If no content in Firestore, try to get it from PDF
+    if (!contentForAnalysis && guidelineData.filename) {
+      try {
+        contentForAnalysis = await fetchAndExtractPDFText(guidelineData.filename);
+      } catch (pdfError) {
+        console.log(`[DISPLAY_NAME_AI] PDF extraction failed: ${pdfError.message}`);
+      }
+    }
+    
+    // Get the title/name to use
+    const title = guidelineData.humanFriendlyName || guidelineData.title || guidelineData.filename || '';
+    
+    if (!title) {
+      console.log('[DISPLAY_NAME_AI] No title available for AI generation');
+      return null;
+    }
+    
+    // Get the prompt config
+    const promptConfig = global.prompts?.['extractDisplayName'] || require('./prompts.json')['extractDisplayName'];
+    if (!promptConfig) {
+      console.log('[DISPLAY_NAME_AI] No prompt config found for extractDisplayName');
+      return null;
+    }
+    
+    // Prepare the prompt with title and content
+    const prompt = promptConfig.prompt
+      .replace('{{title}}', title)
+      .replace('{{text}}', (contentForAnalysis || '').substring(0, 2000));
+    
+    const messages = [
+      { role: 'system', content: promptConfig.system_prompt },
+      { role: 'user', content: prompt }
+    ];
+    
+    const aiResult = await routeToAI({ messages }, userId);
+    
+    if (aiResult && aiResult.content) {
+      const displayName = aiResult.content.trim();
+      // Clean up any extra formatting the AI might add
+      const cleaned = displayName.replace(/^["']|["']$/g, '').trim();
+      console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}"`);
+      return cleaned;
+    }
+    
+    return null;
+  } catch (error) {
+    console.error('[DISPLAY_NAME_AI] Error generating display name with AI:', error);
+    return null;
+  }
+}
+
+// Fallback rule-based display name generation (kept for backward compatibility)
 function generateDisplayName(rawName) {
   if (!rawName || typeof rawName !== 'string') {
     return rawName;
@@ -6367,6 +6428,12 @@ function generateDisplayName(rawName) {
   const words = cleaned.split(/\s+/);
   const titleCased = words.map((word, index) => {
     if (word.length === 0) return word;
+    
+    // Preserve acronyms (words that are all caps and at least 2 characters)
+    // Common medical acronyms: BJOG, RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, etc.
+    if (word.length >= 2 && word === word.toUpperCase() && /^[A-Z]+$/.test(word)) {
+      return word; // Keep acronyms as-is
+    }
     
     // Always capitalize first word
     if (index === 0) {
@@ -12374,7 +12441,13 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
         return res.status(400).json({ error: 'No source name found to generate displayName' });
       }
       
-      const displayName = generateDisplayName(sourceName);
+      // Try AI generation first, fall back to rule-based if it fails
+      const userId = req.user.uid;
+      let displayName = await generateDisplayNameWithAI(data, userId);
+      if (!displayName) {
+        console.log(`[POPULATE_DISPLAY_NAMES] AI generation failed for ${guidelineId}, using rule-based fallback`);
+        displayName = generateDisplayName(sourceName);
+      }
       
       await guidelineRef.update({
         displayName: displayName,
@@ -12393,6 +12466,7 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
     }
     
     // Otherwise, process all guidelines
+    const userId = req.user.uid;
     const guidelinesSnapshot = await db.collection('guidelines').get();
     const results = [];
     let updatedCount = 0;
@@ -12419,7 +12493,12 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
         continue;
       }
       
-      const displayName = generateDisplayName(sourceName);
+      // Try AI generation first, fall back to rule-based if it fails
+      let displayName = await generateDisplayNameWithAI(data, userId);
+      if (!displayName) {
+        console.log(`[POPULATE_DISPLAY_NAMES] AI generation failed for ${doc.id}, using rule-based fallback`);
+        displayName = generateDisplayName(sourceName);
+      }
       const guidelineRef = db.collection('guidelines').doc(doc.id);
       
       batch.update(guidelineRef, {
