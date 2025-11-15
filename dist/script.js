@@ -1230,6 +1230,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             line-height: 1.3;
             flex: 1;
             min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
         
         .guideline-content {
@@ -1237,7 +1239,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            flex-wrap: wrap;
         }
         
         .relevance {
@@ -1245,6 +1246,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-weight: 500;
             white-space: nowrap;
             font-size: 0.9em;
+            flex-shrink: 0;
             margin-left: auto;
         }
         
