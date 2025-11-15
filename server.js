@@ -1330,6 +1330,35 @@ async function jobExtractAuditable(job, guidelineData) {
     return { elementsCount: elements.length };
 }
 
+async function jobGenerateDisplayName(job, guidelineData) {
+    // Wait for content to be available (either condensed or content)
+    const content = guidelineData.condensed || guidelineData.content;
+    if (!content) {
+        // If no content yet, skip and let it retry later
+        throw new Error('No content available yet for displayName generation');
+    }
+    
+    // Use system user ID for background jobs
+    const userId = 'system';
+    const displayName = await generateDisplayNameWithAI(guidelineData, userId);
+    
+    if (!displayName) {
+        // If AI generation fails, keep the existing rule-based one
+        console.log(`[JOB_DISPLAY_NAME] AI generation failed for ${job.guidelineId}, keeping existing displayName`);
+        return { skipped: true, reason: 'AI generation failed' };
+    }
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        displayName: displayName,
+        'processingStatus.displayNameGenerated': true,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    console.log(`[JOB_DISPLAY_NAME] Updated displayName for ${job.guidelineId}: "${displayName}"`);
+    return { displayName: displayName };
+}
+
 // Check if all processing steps are complete and update flag
 async function checkAndMarkProcessingComplete(guidelineId) {
     try {
@@ -12541,6 +12570,72 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
     });
   } catch (error) {
     console.error('[POPULATE_DISPLAY_NAMES] Error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Endpoint to clear all displayName fields
+app.post('/clearDisplayNames', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Admin access required' });
+    }
+    
+    const { confirm } = req.body;
+    if (confirm !== 'yes') {
+      return res.status(400).json({ 
+        error: 'Confirmation required. Send { "confirm": "yes" } to proceed.' 
+      });
+    }
+    
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    let clearedCount = 0;
+    let batch = db.batch();
+    let batchCount = 0;
+    const BATCH_SIZE = 500;
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      
+      // Only clear if displayName exists
+      if (data.displayName) {
+        const guidelineRef = db.collection('guidelines').doc(doc.id);
+        batch.update(guidelineRef, {
+          displayName: admin.firestore.FieldValue.delete(),
+          'processingStatus.displayNameGenerated': false,
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        batchCount++;
+        clearedCount++;
+        
+        // Commit batch when it reaches the limit
+        if (batchCount >= BATCH_SIZE) {
+          await batch.commit();
+          console.log(`[CLEAR_DISPLAY_NAMES] Cleared batch of ${batchCount} displayNames`);
+          batch = db.batch();
+          batchCount = 0;
+        }
+      }
+    }
+    
+    // Commit remaining updates
+    if (batchCount > 0) {
+      await batch.commit();
+      console.log(`[CLEAR_DISPLAY_NAMES] Cleared final batch of ${batchCount} displayNames`);
+    }
+    
+    console.log(`[CLEAR_DISPLAY_NAMES] Successfully cleared ${clearedCount} displayName fields`);
+    
+    res.json({
+      success: true,
+      cleared: clearedCount,
+      total: guidelinesSnapshot.size
+    });
+  } catch (error) {
+    console.error('[CLEAR_DISPLAY_NAMES] Error:', error);
     res.status(500).json({ error: error.message });
   }
 });
