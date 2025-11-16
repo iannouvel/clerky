@@ -56,7 +56,8 @@ const filesToCopy = [
     'significant_terms.json',
     'list_of_guidelines.txt',
     'links.txt',
-    'all_pdfs.txt'
+    'all_pdfs.txt',
+    'package.json'
 ];
 
 filesToCopy.forEach(file => {
