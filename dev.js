@@ -1944,6 +1944,232 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
         
+        // Handle guidelines editor
+        let allGuidelinesData = [];
+        const loadGuidelinesBtn = document.getElementById('loadGuidelinesBtn');
+        const guidelinesEditorContainer = document.getElementById('guidelinesEditorContainer');
+        const guidelinesEditorStatus = document.getElementById('guidelinesEditorStatus');
+        const guidelinesTableBody = document.getElementById('guidelinesTableBody');
+        const guidelineSearch = document.getElementById('guidelineSearch');
+
+        async function loadGuidelinesForEditing() {
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    throw new Error('Please sign in first');
+                }
+                const token = await user.getIdToken();
+
+                guidelinesEditorStatus.style.display = 'block';
+                guidelinesEditorStatus.textContent = 'Loading guidelines...';
+                guidelinesEditorStatus.style.backgroundColor = '#f8f9fa';
+                guidelinesEditorStatus.style.color = '#6c757d';
+
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+                if (!result.success || !result.guidelines) {
+                    throw new Error('Failed to fetch guidelines');
+                }
+
+                allGuidelinesData = result.guidelines;
+                displayGuidelinesTable(allGuidelinesData);
+
+                guidelinesEditorStatus.textContent = `Loaded ${allGuidelinesData.length} guidelines`;
+                guidelinesEditorStatus.style.backgroundColor = '#d4edda';
+                guidelinesEditorStatus.style.color = '#155724';
+                guidelinesEditorContainer.style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading guidelines:', error);
+                guidelinesEditorStatus.style.display = 'block';
+                guidelinesEditorStatus.textContent = `Error: ${error.message}`;
+                guidelinesEditorStatus.style.backgroundColor = '#f8d7da';
+                guidelinesEditorStatus.style.color = '#721c24';
+            }
+        }
+
+        function displayGuidelinesTable(guidelines) {
+            guidelinesTableBody.innerHTML = '';
+            
+            guidelines.forEach(guideline => {
+                const row = document.createElement('tr');
+                row.style.borderBottom = '1px solid #dee2e6';
+                row.dataset.guidelineId = guideline.id || guideline.guidelineId;
+                
+                const idCell = document.createElement('td');
+                idCell.style.padding = '10px';
+                idCell.style.fontSize = '12px';
+                idCell.style.fontFamily = 'monospace';
+                idCell.textContent = (guideline.id || guideline.guidelineId || '').substring(0, 8) + '...';
+                idCell.title = guideline.id || guideline.guidelineId || '';
+                
+                const titleCell = document.createElement('td');
+                titleCell.style.padding = '10px';
+                titleCell.style.fontSize = '13px';
+                titleCell.textContent = guideline.title || guideline.humanFriendlyName || 'Untitled';
+                
+                const displayNameCell = document.createElement('td');
+                displayNameCell.style.padding = '10px';
+                const displayNameInput = document.createElement('input');
+                displayNameInput.type = 'text';
+                displayNameInput.value = guideline.displayName || '';
+                displayNameInput.style.width = '100%';
+                displayNameInput.style.padding = '6px 8px';
+                displayNameInput.style.border = '1px solid #ced4da';
+                displayNameInput.style.borderRadius = '4px';
+                displayNameInput.style.fontSize = '13px';
+                displayNameInput.style.fontFamily = "'Inter', sans-serif";
+                displayNameInput.dataset.originalValue = guideline.displayName || '';
+                
+                const orgCell = document.createElement('td');
+                orgCell.style.padding = '10px';
+                orgCell.style.fontSize = '13px';
+                orgCell.textContent = guideline.organisation || '-';
+                
+                const actionsCell = document.createElement('td');
+                actionsCell.style.padding = '10px';
+                actionsCell.style.textAlign = 'center';
+                const saveBtn = document.createElement('button');
+                saveBtn.textContent = 'Save';
+                saveBtn.className = 'dev-btn';
+                saveBtn.style.padding = '4px 12px';
+                saveBtn.style.fontSize = '12px';
+                saveBtn.style.marginRight = '5px';
+                saveBtn.disabled = true;
+                
+                displayNameInput.addEventListener('input', function() {
+                    const hasChanges = this.value !== this.dataset.originalValue;
+                    saveBtn.disabled = !hasChanges;
+                    
+                    if (hasChanges) {
+                        this.style.borderColor = '#007bff';
+                        this.style.backgroundColor = '#f0f8ff';
+                        saveBtn.style.backgroundColor = '#28a745';
+                        saveBtn.style.color = '#fff';
+                        saveBtn.style.borderColor = '#28a745';
+                    } else {
+                        this.style.borderColor = '#ced4da';
+                        this.style.backgroundColor = '#fff';
+                        saveBtn.style.backgroundColor = '';
+                        saveBtn.style.color = '';
+                        saveBtn.style.borderColor = '';
+                    }
+                });
+                
+                displayNameCell.appendChild(displayNameInput);
+                
+                saveBtn.addEventListener('click', async function() {
+                    const guidelineId = row.dataset.guidelineId;
+                    const newDisplayName = displayNameInput.value;
+                    
+                    saveBtn.disabled = true;
+                    saveBtn.textContent = 'Saving...';
+                    
+                    try {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            throw new Error('Please sign in first');
+                        }
+                        const token = await user.getIdToken();
+                        
+                        const response = await fetch(`${SERVER_URL}/guideline/${guidelineId}`, {
+                            method: 'PUT',
+                            headers: {
+                                'Authorization': `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                displayName: newDisplayName
+                            })
+                        });
+                        
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || 'Failed to save');
+                        }
+                        
+                        displayNameInput.dataset.originalValue = newDisplayName;
+                        displayNameInput.style.borderColor = '#28a745';
+                        displayNameInput.style.backgroundColor = '#d4edda';
+                        saveBtn.textContent = 'Saved ✓';
+                        saveBtn.style.backgroundColor = '#28a745';
+                        saveBtn.style.color = '#fff';
+                        
+                        setTimeout(() => {
+                            displayNameInput.style.borderColor = '#ced4da';
+                            displayNameInput.style.backgroundColor = '#fff';
+                            saveBtn.textContent = 'Save';
+                            saveBtn.disabled = true;
+                            saveBtn.style.backgroundColor = '';
+                            saveBtn.style.color = '';
+                        }, 2000);
+                        
+                    } catch (error) {
+                        console.error('Error saving displayName:', error);
+                        saveBtn.textContent = 'Error';
+                        saveBtn.style.backgroundColor = '#dc3545';
+                        saveBtn.style.color = '#fff';
+                        alert(`Failed to save: ${error.message}`);
+                        setTimeout(() => {
+                            saveBtn.textContent = 'Save';
+                            saveBtn.disabled = false;
+                            saveBtn.style.backgroundColor = '';
+                            saveBtn.style.color = '';
+                        }, 3000);
+                    }
+                });
+                
+                actionsCell.appendChild(saveBtn);
+                
+                row.appendChild(idCell);
+                row.appendChild(titleCell);
+                row.appendChild(displayNameCell);
+                row.appendChild(orgCell);
+                row.appendChild(actionsCell);
+                
+                guidelinesTableBody.appendChild(row);
+            });
+        }
+
+        function filterGuidelinesTable(searchTerm) {
+            if (!searchTerm) {
+                displayGuidelinesTable(allGuidelinesData);
+                return;
+            }
+            
+            const filtered = allGuidelinesData.filter(g => {
+                const searchLower = searchTerm.toLowerCase();
+                const title = (g.title || '').toLowerCase();
+                const displayName = (g.displayName || '').toLowerCase();
+                const organisation = (g.organisation || '').toLowerCase();
+                const id = (g.id || g.guidelineId || '').toLowerCase();
+                
+                return title.includes(searchLower) || 
+                       displayName.includes(searchLower) || 
+                       organisation.includes(searchLower) ||
+                       id.includes(searchLower);
+            });
+            
+            displayGuidelinesTable(filtered);
+        }
+
+        if (loadGuidelinesBtn) {
+            loadGuidelinesBtn.addEventListener('click', loadGuidelinesForEditing);
+        }
+
+        if (guidelineSearch) {
+            guidelineSearch.addEventListener('input', function() {
+                filterGuidelinesTable(this.value);
+            });
+        }
+
         // Handle fix nation classifications button
         const fixNationsBtn = document.getElementById('fixNationsBtn');
         const fixNationsStatus = document.getElementById('fixNationsStatus');
