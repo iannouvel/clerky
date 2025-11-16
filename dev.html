@@ -340,6 +340,29 @@
                 <div id="enhancementStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;color:#6c757d;"></div>
                 <div id="fixNationsStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;color:#6c757d;"></div>
             </div>
+            <div class="tools-section" style="margin-top:30px;">
+                <h4>Edit Guideline Display Names</h4>
+                <div style="margin-bottom:10px;">
+                    <button id="loadGuidelinesBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;">📋 Load Guidelines</button>
+                    <input type="text" id="guidelineSearch" placeholder="Search guidelines..." style="margin-left:10px;padding:6px 12px;border:1px solid #ddd;border-radius:4px;width:300px;font-family:'Inter',sans-serif;" />
+                </div>
+                <div id="guidelinesEditorStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;"></div>
+                <div id="guidelinesEditorContainer" style="margin-top:15px;max-height:calc(100vh - 400px);overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;padding:10px;background:#fff;display:none;">
+                    <table id="guidelinesTable" style="width:100%;border-collapse:collapse;">
+                        <thead>
+                            <tr style="background:#f8f9fa;border-bottom:2px solid #dee2e6;">
+                                <th style="padding:10px;text-align:left;font-weight:600;font-size:13px;">ID</th>
+                                <th style="padding:10px;text-align:left;font-weight:600;font-size:13px;">Title</th>
+                                <th style="padding:10px;text-align:left;font-weight:600;font-size:13px;">Display Name</th>
+                                <th style="padding:10px;text-align:left;font-weight:600;font-size:13px;">Organisation</th>
+                                <th style="padding:10px;text-align:center;font-weight:600;font-size:13px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guidelinesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="tab-content" id="discoveryContent" style="display:none;padding:12px">
             <div class="tools-section">
