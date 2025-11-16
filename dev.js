@@ -1995,6 +1995,51 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
+        // Helper function to upload PDF from GitHub
+        async function uploadPdfFromGitHub(guidelineId, guidelineData, token) {
+            try {
+                const downloadUrl = guidelineData.downloadUrl;
+                
+                if (!downloadUrl || !downloadUrl.includes('github.com')) {
+                    return { 
+                        uploaded: false, 
+                        error: 'No GitHub download URL found for this guideline',
+                        downloadUrl: null
+                    };
+                }
+                
+                // Upload PDF from GitHub
+                const uploadResponse = await fetch(`${SERVER_URL}/uploadMissingPdf`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ guidelineId })
+                });
+                
+                const uploadResult = await uploadResponse.json();
+                
+                if (uploadResult.success) {
+                    return { uploaded: true, downloadUrl };
+                } else {
+                    return { 
+                        uploaded: false, 
+                        error: uploadResult.error || 'Upload failed',
+                        downloadUrl 
+                    };
+                }
+                
+            } catch (error) {
+                console.error('Error uploading PDF:', error);
+                return { 
+                    uploaded: false, 
+                    error: error.message,
+                    downloadUrl: guidelineData.downloadUrl || null
+                };
+            }
+        }
+
         function displayGuidelinesTable(guidelines) {
             guidelinesTableBody.innerHTML = '';
             
@@ -2145,8 +2190,91 @@ document.addEventListener('DOMContentLoaded', async function() {
                 viewPdfBtn.style.color = '#fff';
                 viewPdfBtn.style.borderColor = '#007bff';
                 
+                // Store error state in row dataset
+                row.dataset.pdfError = 'false';
+                row.dataset.pdfDownloadUrl = guideline.downloadUrl || '';
+                
+                // Function to open PDF viewer
+                function openPdfViewer(guidelineId, token) {
+                    const pdfUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(token)}`;
+                    const viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+                    window.open(viewerUrl, '_blank');
+                }
+                
+                // Function to show error state
+                function showPdfError(message, downloadUrl) {
+                    row.dataset.pdfError = 'true';
+                    viewPdfBtn.textContent = 'Error';
+                    viewPdfBtn.style.backgroundColor = '#dc3545';
+                    viewPdfBtn.disabled = true;
+                    
+                    // Create or update error message element
+                    let errorMsg = row.querySelector('.pdf-error-msg');
+                    if (!errorMsg) {
+                        errorMsg = document.createElement('div');
+                        errorMsg.className = 'pdf-error-msg';
+                        errorMsg.style.fontSize = '11px';
+                        errorMsg.style.color = '#dc3545';
+                        errorMsg.style.marginTop = '4px';
+                        errorMsg.style.padding = '4px';
+                        errorMsg.style.background = '#f8d7da';
+                        errorMsg.style.borderRadius = '3px';
+                        actionsCell.appendChild(errorMsg);
+                    }
+                    errorMsg.innerHTML = message;
+                    
+                    // Add retry and GitHub fallback buttons if not already present
+                    if (!row.querySelector('.pdf-retry-btn')) {
+                        const retryBtn = document.createElement('button');
+                        retryBtn.className = 'pdf-retry-btn dev-btn';
+                        retryBtn.textContent = 'Retry';
+                        retryBtn.style.padding = '2px 8px';
+                        retryBtn.style.fontSize = '11px';
+                        retryBtn.style.marginTop = '4px';
+                        retryBtn.style.backgroundColor = '#007bff';
+                        retryBtn.style.color = '#fff';
+                        retryBtn.style.borderColor = '#007bff';
+                        retryBtn.addEventListener('click', () => viewPdfBtn.click());
+                        actionsCell.appendChild(retryBtn);
+                        
+                        if (downloadUrl) {
+                            const githubBtn = document.createElement('button');
+                            githubBtn.className = 'pdf-github-btn dev-btn';
+                            githubBtn.textContent = 'Open GitHub';
+                            githubBtn.style.padding = '2px 8px';
+                            githubBtn.style.fontSize = '11px';
+                            githubBtn.style.marginTop = '4px';
+                            githubBtn.style.marginLeft = '4px';
+                            githubBtn.style.backgroundColor = '#6c757d';
+                            githubBtn.style.color = '#fff';
+                            githubBtn.style.borderColor = '#6c757d';
+                            githubBtn.addEventListener('click', () => {
+                                window.open(downloadUrl, '_blank');
+                            });
+                            actionsCell.appendChild(githubBtn);
+                        }
+                    }
+                }
+                
+                // Function to reset button state
+                function resetPdfButton() {
+                    row.dataset.pdfError = 'false';
+                    viewPdfBtn.textContent = 'View PDF';
+                    viewPdfBtn.style.backgroundColor = '#007bff';
+                    viewPdfBtn.disabled = false;
+                    
+                    // Remove error message and retry buttons
+                    const errorMsg = row.querySelector('.pdf-error-msg');
+                    if (errorMsg) errorMsg.remove();
+                    const retryBtn = row.querySelector('.pdf-retry-btn');
+                    if (retryBtn) retryBtn.remove();
+                    const githubBtn = row.querySelector('.pdf-github-btn');
+                    if (githubBtn) githubBtn.remove();
+                }
+                
                 viewPdfBtn.addEventListener('click', async function() {
                     const guidelineId = row.dataset.guidelineId;
+                    const downloadUrl = row.dataset.pdfDownloadUrl;
                     
                     try {
                         const user = auth.currentUser;
@@ -2155,21 +2283,71 @@ document.addEventListener('DOMContentLoaded', async function() {
                             return;
                         }
                         
+                        // Reset any previous error state
+                        resetPdfButton();
+                        
                         // Get fresh ID token
                         const idToken = await user.getIdToken();
                         
-                        // Build the PDF URL with token
-                        const pdfUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+                        // Show checking state
+                        viewPdfBtn.textContent = 'Checking...';
+                        viewPdfBtn.disabled = true;
                         
-                        // Build PDF.js viewer URL
-                        const viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+                        // Check if PDF exists
+                        const checkUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+                        let checkResponse;
+                        try {
+                            checkResponse = await fetch(checkUrl, { method: 'HEAD' });
+                        } catch (fetchError) {
+                            // Network error or HEAD not supported, try opening directly (let auto-retry handle it)
+                            console.warn('HEAD request failed, opening PDF directly:', fetchError.message);
+                            viewPdfBtn.textContent = 'Opening...';
+                            openPdfViewer(guidelineId, idToken);
+                            setTimeout(() => resetPdfButton(), 1000);
+                            return;
+                        }
                         
-                        // Open in new tab
-                        window.open(viewerUrl, '_blank');
+                        if (checkResponse.ok) {
+                            // PDF exists, open viewer
+                            viewPdfBtn.textContent = 'Opening...';
+                            openPdfViewer(guidelineId, idToken);
+                            setTimeout(() => resetPdfButton(), 1000);
+                            return;
+                        } else if (checkResponse.status === 404) {
+                            // PDF doesn't exist, upload from GitHub
+                            viewPdfBtn.textContent = 'Uploading...';
+                            const uploadResult = await uploadPdfFromGitHub(guidelineId, guideline, idToken);
+                            
+                            if (uploadResult.uploaded) {
+                                // PDF was uploaded successfully, open viewer
+                                viewPdfBtn.textContent = 'Opening...';
+                                openPdfViewer(guidelineId, idToken);
+                                
+                                // Reset button after a short delay
+                                setTimeout(() => {
+                                    resetPdfButton();
+                                }, 1000);
+                            } else {
+                                // Upload failed
+                                let errorMessage = uploadResult.error || 'Failed to upload PDF';
+                                if (!uploadResult.downloadUrl) {
+                                    errorMessage = 'PDF not found and no GitHub URL available';
+                                } else {
+                                    errorMessage = `PDF upload failed: ${errorMessage}`;
+                                }
+                                showPdfError(errorMessage, uploadResult.downloadUrl || downloadUrl);
+                            }
+                        } else {
+                            // Other error - try opening anyway (might be a CORS issue with HEAD)
+                            console.warn(`HEAD request returned ${checkResponse.status}, attempting to open PDF directly`);
+                            viewPdfBtn.textContent = 'Opening...';
+                            openPdfViewer(guidelineId, idToken);
+                            setTimeout(() => resetPdfButton(), 1000);
+                        }
                         
                     } catch (error) {
                         console.error('Error opening PDF:', error);
-                        alert(`Failed to open PDF: ${error.message}`);
+                        showPdfError(`Error: ${error.message}`, downloadUrl);
                     }
                 });
                 
