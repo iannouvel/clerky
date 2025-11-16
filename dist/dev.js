@@ -2007,7 +2007,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 idCell.style.padding = '10px';
                 idCell.style.fontSize = '12px';
                 idCell.style.fontFamily = 'monospace';
-                idCell.style.width = '10%';
+                idCell.style.width = '8%';
                 idCell.textContent = (guideline.id || guideline.guidelineId || '').substring(0, 8) + '...';
                 idCell.title = guideline.id || guideline.guidelineId || '';
                 
@@ -2037,13 +2037,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                 const orgCell = document.createElement('td');
                 orgCell.style.padding = '10px';
                 orgCell.style.fontSize = '13px';
-                orgCell.style.width = '20%';
+                orgCell.style.width = '18%';
                 orgCell.textContent = guideline.organisation || '-';
                 
                 const actionsCell = document.createElement('td');
                 actionsCell.style.padding = '10px';
                 actionsCell.style.textAlign = 'center';
-                actionsCell.style.width = '10%';
+                actionsCell.style.width = '14%';
                 const saveBtn = document.createElement('button');
                 saveBtn.textContent = 'Save';
                 saveBtn.className = 'dev-btn';
@@ -2134,7 +2134,47 @@ document.addEventListener('DOMContentLoaded', async function() {
                     }
                 });
                 
+                // Create View PDF button
+                const viewPdfBtn = document.createElement('button');
+                viewPdfBtn.textContent = 'View PDF';
+                viewPdfBtn.className = 'dev-btn';
+                viewPdfBtn.style.padding = '4px 12px';
+                viewPdfBtn.style.fontSize = '12px';
+                viewPdfBtn.style.marginLeft = '5px';
+                viewPdfBtn.style.backgroundColor = '#007bff';
+                viewPdfBtn.style.color = '#fff';
+                viewPdfBtn.style.borderColor = '#007bff';
+                
+                viewPdfBtn.addEventListener('click', async function() {
+                    const guidelineId = row.dataset.guidelineId;
+                    
+                    try {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            alert('Please sign in first to view PDFs');
+                            return;
+                        }
+                        
+                        // Get fresh ID token
+                        const idToken = await user.getIdToken();
+                        
+                        // Build the PDF URL with token
+                        const pdfUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+                        
+                        // Build PDF.js viewer URL
+                        const viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+                        
+                        // Open in new tab
+                        window.open(viewerUrl, '_blank');
+                        
+                    } catch (error) {
+                        console.error('Error opening PDF:', error);
+                        alert(`Failed to open PDF: ${error.message}`);
+                    }
+                });
+                
                 actionsCell.appendChild(saveBtn);
+                actionsCell.appendChild(viewPdfBtn);
                 
                 row.appendChild(idCell);
                 row.appendChild(titleCell);
