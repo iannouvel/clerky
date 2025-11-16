@@ -8022,7 +8022,9 @@ async function processWorkflow() {
     
     const processBtn = document.getElementById('processBtn');
     const processSpinner = document.getElementById('processSpinner');
-    const originalText = processBtn?.textContent || 'Process';
+    // Find the text span to preserve button structure
+    const textSpan = processBtn?.querySelector('span:not(#processSpinner)');
+    const originalText = textSpan?.textContent || processBtn?.textContent || 'Process';
     
     try {
         // Check if we have transcript content
@@ -8172,7 +8174,14 @@ async function processWorkflow() {
         // Reset button state
         if (processBtn) {
             processBtn.disabled = false;
-            processBtn.textContent = originalText;
+            // Update only the text span to preserve button structure
+            const textSpan = processBtn.querySelector('span:not(#processSpinner)');
+            if (textSpan) {
+                textSpan.textContent = originalText;
+            } else {
+                // Fallback if span structure is missing
+                processBtn.textContent = originalText;
+            }
         }
         if (processSpinner) processSpinner.style.display = 'none';
         
