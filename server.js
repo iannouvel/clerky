@@ -13724,7 +13724,25 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         const [exists] = await file.exists();
         if (!exists) {
             console.error('[DEBUG] api/pdf: PDF not found in Firebase Storage:', filename);
-            return res.status(404).json({ success: false, error: 'PDF file not found in storage' });
+            console.error('[DEBUG] api/pdf: Guideline data:', {
+                guidelineId,
+                filename,
+                hasDownloadUrl: !!guidelineData.downloadUrl,
+                downloadUrl: guidelineData.downloadUrl
+            });
+            
+            // Return detailed error with information about how to fix it
+            return res.status(404).json({ 
+                success: false, 
+                error: 'PDF file not found in Firebase Storage',
+                details: {
+                    guidelineId,
+                    filename,
+                    expectedPath: `pdfs/${filename}`,
+                    downloadUrl: guidelineData.downloadUrl,
+                    message: 'This PDF needs to be uploaded to Firebase Storage. Use the /uploadMissingPdf endpoint to upload it from GitHub.'
+                }
+            });
         }
 
         console.log('[DEBUG] api/pdf: Downloading PDF from Firebase Storage');
@@ -13749,6 +13767,208 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
             stack: error.stack
         });
         res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Endpoint to upload missing PDF from GitHub to Firebase Storage
+app.post('/uploadMissingPdf', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+
+        console.log('[UPLOAD_MISSING_PDF] Starting upload for guideline:', guidelineId);
+
+        // Look up guideline in Firestore
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({ success: false, error: 'Guideline not found in Firestore' });
+        }
+
+        const guidelineData = guidelineDoc.data();
+        const filename = guidelineData.filename || guidelineData.originalFilename;
+        const downloadUrl = guidelineData.downloadUrl;
+
+        if (!filename) {
+            return res.status(400).json({ success: false, error: 'PDF filename not found in guideline data' });
+        }
+
+        if (!downloadUrl || !downloadUrl.includes('github.com')) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'No GitHub download URL found for this guideline',
+                downloadUrl 
+            });
+        }
+
+        // Check if PDF already exists in Storage
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        const storageFile = bucket.file(`pdfs/${filename}`);
+        const [exists] = await storageFile.exists();
+        
+        if (exists) {
+            console.log('[UPLOAD_MISSING_PDF] PDF already exists in Storage, skipping upload');
+            return res.json({ 
+                success: true, 
+                message: 'PDF already exists in Firebase Storage',
+                filename,
+                path: `pdfs/${filename}`
+            });
+        }
+
+        // Download PDF from GitHub
+        console.log('[UPLOAD_MISSING_PDF] Downloading PDF from GitHub:', downloadUrl);
+        const response = await axios.get(downloadUrl, {
+            responseType: 'arraybuffer',
+            timeout: 60000, // 60 second timeout for large files
+            headers: {
+                'Accept': 'application/pdf',
+                'User-Agent': 'Mozilla/5.0'
+            }
+        });
+
+        const pdfBuffer = Buffer.from(response.data);
+        console.log('[UPLOAD_MISSING_PDF] Downloaded PDF from GitHub, size:', pdfBuffer.length, 'bytes');
+
+        // Upload to Firebase Storage
+        console.log('[UPLOAD_MISSING_PDF] Uploading PDF to Firebase Storage:', `pdfs/${filename}`);
+        await storageFile.save(pdfBuffer, {
+            metadata: {
+                contentType: 'application/pdf',
+                metadata: {
+                    uploadedBy: req.user.uid,
+                    uploadedAt: new Date().toISOString(),
+                    originalName: filename,
+                    source: 'github',
+                    guidelineId: guidelineId
+                }
+            }
+        });
+
+        console.log('[UPLOAD_MISSING_PDF] Successfully uploaded PDF to Firebase Storage');
+
+        res.json({
+            success: true,
+            message: 'PDF successfully uploaded to Firebase Storage',
+            filename,
+            path: `pdfs/${filename}`,
+            size: pdfBuffer.length
+        });
+
+    } catch (error) {
+        console.error('[UPLOAD_MISSING_PDF] Error:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to upload all missing PDFs from GitHub to Firebase Storage
+app.post('/uploadAllMissingPdfs', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - Admin access required' });
+        }
+
+        console.log('[UPLOAD_ALL_MISSING] Starting bulk upload of missing PDFs');
+
+        // Get all guidelines from Firestore
+        const guidelinesSnapshot = await db.collection('guidelines').get();
+        const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+        
+        const results = {
+            total: 0,
+            alreadyExists: 0,
+            uploaded: 0,
+            failed: 0,
+            errors: []
+        };
+
+        for (const doc of guidelinesSnapshot.docs) {
+            const guidelineData = doc.data();
+            const guidelineId = doc.id;
+            const filename = guidelineData.filename || guidelineData.originalFilename;
+            const downloadUrl = guidelineData.downloadUrl;
+
+            if (!filename || !downloadUrl || !downloadUrl.includes('github.com')) {
+                continue; // Skip guidelines without PDFs or GitHub URLs
+            }
+
+            results.total++;
+
+            try {
+                // Check if PDF already exists
+                const storageFile = bucket.file(`pdfs/${filename}`);
+                const [exists] = await storageFile.exists();
+                
+                if (exists) {
+                    results.alreadyExists++;
+                    console.log(`[UPLOAD_ALL_MISSING] Skipping ${filename} - already exists`);
+                    continue;
+                }
+
+                // Download from GitHub
+                console.log(`[UPLOAD_ALL_MISSING] Uploading ${filename}...`);
+                const response = await axios.get(downloadUrl, {
+                    responseType: 'arraybuffer',
+                    timeout: 60000,
+                    headers: {
+                        'Accept': 'application/pdf',
+                        'User-Agent': 'Mozilla/5.0'
+                    }
+                });
+
+                const pdfBuffer = Buffer.from(response.data);
+
+                // Upload to Storage
+                await storageFile.save(pdfBuffer, {
+                    metadata: {
+                        contentType: 'application/pdf',
+                        metadata: {
+                            uploadedBy: req.user.uid,
+                            uploadedAt: new Date().toISOString(),
+                            originalName: filename,
+                            source: 'github',
+                            guidelineId: guidelineId
+                        }
+                    }
+                });
+
+                results.uploaded++;
+                console.log(`[UPLOAD_ALL_MISSING] Successfully uploaded ${filename}`);
+
+            } catch (error) {
+                results.failed++;
+                results.errors.push({
+                    guidelineId,
+                    filename,
+                    error: error.message
+                });
+                console.error(`[UPLOAD_ALL_MISSING] Failed to upload ${filename}:`, error.message);
+            }
+        }
+
+        res.json({
+            success: true,
+            message: 'Bulk upload completed',
+            results
+        });
+
+    } catch (error) {
+        console.error('[UPLOAD_ALL_MISSING] Error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
     }
 });
 

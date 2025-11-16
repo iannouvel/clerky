@@ -334,6 +334,174 @@
         console.log('[Clerky Auth] PDF.js viewer DOM ready');
     });
     
+    // Auto-retry functionality: Upload missing PDFs from GitHub and retry
+    let retryAttempted = false;
+    const currentFileUrl = fileUrl; // Store fileUrl for use in error handlers
+    
+    // Intercept PDF.js loading errors to auto-upload missing PDFs
+    const originalOpen = window.PDFViewerApplication?.open;
+    if (originalOpen) {
+        window.PDFViewerApplication.open = async function(args) {
+            try {
+                return await originalOpen.call(this, args);
+            } catch (error) {
+                // Check if this is a 404 error indicating PDF is missing from Storage
+                if (error && error.message && error.message.includes('Missing PDF')) {
+                    console.log('[Clerky Auth] PDF loading failed, checking if auto-upload is needed...');
+                    
+                    // Extract guidelineId from the file URL
+                    const pdfUrl = args?.url || args?.src || currentFileUrl;
+                    if (pdfUrl && pdfUrl.includes('/api/pdf/')) {
+                        const match = pdfUrl.match(/\/api\/pdf\/([^?]+)/);
+                        if (match && !retryAttempted) {
+                            const guidelineId = match[1];
+                            console.log('[Clerky Auth] Attempting auto-upload for guideline:', guidelineId);
+                            retryAttempted = true;
+                            
+                            try {
+                                // Get auth token from URL
+                                const tokenMatch = pdfUrl.match(/[?&]token=([^&]+)/);
+                                const token = tokenMatch ? decodeURIComponent(tokenMatch[1]) : null;
+                                
+                                if (!token) {
+                                    console.error('[Clerky Auth] No auth token found for auto-upload');
+                                    throw error; // Re-throw original error
+                                }
+                                
+                                // Show loading message
+                                if (window.PDFViewerApplication) {
+                                    const loadingBar = document.querySelector('.loadingBar');
+                                    if (loadingBar) {
+                                        loadingBar.textContent = 'PDF not found in Storage. Uploading from GitHub...';
+                                    }
+                                }
+                                
+                                // Call upload endpoint
+                                const serverUrl = pdfUrl.match(/https?:\/\/[^/]+/)?.[0] || window.location.origin;
+                                const uploadResponse = await fetch(`${serverUrl}/uploadMissingPdf`, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': `Bearer ${token}`
+                                    },
+                                    body: JSON.stringify({ guidelineId })
+                                });
+                                
+                                const uploadResult = await uploadResponse.json();
+                                
+                                if (uploadResult.success) {
+                                    console.log('[Clerky Auth] PDF uploaded successfully, retrying load...');
+                                    
+                                    // Retry loading the PDF
+                                    setTimeout(() => {
+                                        retryAttempted = false; // Reset for retry
+                                        return originalOpen.call(this, args);
+                                    }, 1000);
+                                    return; // Don't throw error, retry is in progress
+                                } else {
+                                    console.error('[Clerky Auth] Auto-upload failed:', uploadResult.error);
+                                    throw new Error(`Failed to upload PDF: ${uploadResult.error}`);
+                                }
+                            } catch (uploadError) {
+                                console.error('[Clerky Auth] Error during auto-upload:', uploadError);
+                                throw error; // Re-throw original error
+                            }
+                        }
+                    }
+                }
+                
+                // Re-throw error if we couldn't handle it
+                throw error;
+            }
+        };
+    }
+    
+    // Also intercept fetch errors for PDF loading
+    const originalFetch = window.fetch;
+    window.fetch = async function(...args) {
+        const response = await originalFetch.apply(this, args);
+        
+        // Check if this is a PDF request that failed with 404
+        if (!response.ok && response.status === 404) {
+            const url = args[0];
+            if (typeof url === 'string' && url.includes('/api/pdf/')) {
+                try {
+                    // Clone response to read error without consuming the original
+                    const responseClone = response.clone();
+                    const errorData = await responseClone.json().catch(() => null);
+                    
+                    if (errorData && errorData.error === 'PDF file not found in Firebase Storage' && !retryAttempted) {
+                        console.log('[Clerky Auth] PDF not found in Storage, attempting auto-upload...');
+                        
+                        const match = url.match(/\/api\/pdf\/([^?]+)/);
+                        if (match) {
+                            const guidelineId = match[1];
+                            retryAttempted = true;
+                            
+                            // Get token from URL
+                            const tokenMatch = url.match(/[?&]token=([^&]+)/);
+                            const token = tokenMatch ? decodeURIComponent(tokenMatch[1]) : null;
+                            
+                            if (token) {
+                                const serverUrl = url.match(/https?:\/\/[^/]+/)?.[0] || window.location.origin;
+                                
+                                // Show loading message
+                                const loadingBar = document.querySelector('.loadingBar, .loadingBarContainer');
+                                if (loadingBar) {
+                                    loadingBar.textContent = 'PDF not found. Uploading from GitHub...';
+                                }
+                                
+                                try {
+                                    console.log('[Clerky Auth] Calling uploadMissingPdf for:', guidelineId);
+                                    const uploadResponse = await originalFetch(`${serverUrl}/uploadMissingPdf`, {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                            'Authorization': `Bearer ${token}`
+                                        },
+                                        body: JSON.stringify({ guidelineId })
+                                    });
+                                    
+                                    const uploadResult = await uploadResponse.json();
+                                    
+                                    if (uploadResult.success) {
+                                        console.log('[Clerky Auth] PDF uploaded successfully, retrying fetch...');
+                                        
+                                        // Reset retry flag for the retry attempt
+                                        retryAttempted = false;
+                                        
+                                        // Update loading message
+                                        if (loadingBar) {
+                                            loadingBar.textContent = 'Reloading PDF...';
+                                        }
+                                        
+                                        // Retry the original fetch
+                                        return await originalFetch.apply(this, args);
+                                    } else {
+                                        console.error('[Clerky Auth] Auto-upload failed:', uploadResult.error);
+                                        retryAttempted = false; // Reset so user can try again
+                                    }
+                                } catch (uploadError) {
+                                    console.error('[Clerky Auth] Error during auto-upload:', uploadError);
+                                    retryAttempted = false; // Reset so user can try again
+                                }
+                            } else {
+                                console.error('[Clerky Auth] No auth token found in URL for auto-upload');
+                                retryAttempted = false;
+                            }
+                        }
+                    }
+                } catch (e) {
+                    // Not JSON or other error, continue with original response
+                    console.log('[Clerky Auth] Error checking response:', e.message);
+                }
+            }
+        }
+        
+        return response;
+    };
+    
     console.log('[Clerky Auth] Authentication handler initialized successfully');
+    console.log('[Clerky Auth] Auto-retry functionality enabled');
 })();
 
