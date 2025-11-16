@@ -589,14 +589,8 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         console.log('Preview:', safeContent.substring(0, 150) + (safeContent.length > 150 ? '...' : ''));
         console.log('═══════════════════════════════════════════════');
         
-        // Store change in history
-        window.programmaticChangeHistory.push({
-            type: changeType,
-            content: safeContent,
-            timestamp: new Date(),
-            editorState: editor.getJSON()
-        });
-        window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
+        // Store the state BEFORE the change (for undo)
+        const stateBeforeChange = editor.getJSON();
         
         // Only apply amber color for PII and Dynamic Advice changes
         const shouldColor = changeType.includes('PII') || changeType.includes('Dynamic Advice');
@@ -632,6 +626,20 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
                 .join('');
             editor.commands.setContent(htmlContent);
         }
+        
+        // Store change in history AFTER applying the change
+        // Store stateBeforeChange for undo, and we'll use the current state for redo
+        window.programmaticChangeHistory.push({
+            type: changeType,
+            content: safeContent,
+            timestamp: new Date(),
+            editorState: editor.getJSON(), // State AFTER the change (for redo)
+            editorStateBefore: stateBeforeChange // State BEFORE the change (for undo)
+        });
+        window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
+        
+        // Update undo/redo button states
+        updateUndoRedoButtons();
     } else {
         // Regular content update without coloring
         // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
@@ -2684,12 +2692,35 @@ function undo() {
     const editor = window.editors?.userInput;
     if (!editor) return;
     
-    if (window.currentChangeIndex > 0) {
-        window.currentChangeIndex--;
-        const change = window.programmaticChangeHistory[window.currentChangeIndex];
-        console.log('[UNDO] Reverting to change:', change.type);
-        editor.commands.setContent(change.editorState);
-        updateUndoRedoButtons();
+    if (window.currentChangeIndex > 0 && window.programmaticChangeHistory.length > 0) {
+        const currentChange = window.programmaticChangeHistory[window.currentChangeIndex];
+        // Use editorStateBefore to go back to the state before this change
+        const stateToRestore = currentChange.editorStateBefore || 
+                              (window.currentChangeIndex > 0 ? window.programmaticChangeHistory[window.currentChangeIndex - 1].editorState : null);
+        
+        if (stateToRestore) {
+            window.currentChangeIndex--;
+            console.log('[UNDO] Reverting to before change:', currentChange.type);
+            editor.commands.setContent(stateToRestore);
+            updateUndoRedoButtons();
+        } else {
+            // Fall back to TipTap's built-in undo
+            editor.commands.undo();
+            updateUndoRedoButtons();
+        }
+    } else if (window.currentChangeIndex === 0 && window.programmaticChangeHistory.length > 0) {
+        // At the first programmatic change, undo to the state before it
+        const firstChange = window.programmaticChangeHistory[0];
+        if (firstChange.editorStateBefore) {
+            window.currentChangeIndex = -1;
+            console.log('[UNDO] Reverting to state before first programmatic change');
+            editor.commands.setContent(firstChange.editorStateBefore);
+            updateUndoRedoButtons();
+        } else {
+            // Use TipTap's built-in undo
+            editor.commands.undo();
+            updateUndoRedoButtons();
+        }
     } else {
         // Use TipTap's built-in undo
         editor.commands.undo();
@@ -2706,6 +2737,7 @@ function redo() {
         window.currentChangeIndex++;
         const change = window.programmaticChangeHistory[window.currentChangeIndex];
         console.log('[REDO] Advancing to change:', change.type);
+        // Use editorState which is the state AFTER this change was applied
         editor.commands.setContent(change.editorState);
         updateUndoRedoButtons();
     } else {
@@ -2719,12 +2751,37 @@ function redo() {
 function updateUndoRedoButtons() {
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
+    const editor = window.editors?.userInput;
     
-    if (undoBtn) {
-        undoBtn.disabled = window.clinicalNoteHistoryIndex <= 0;
-    }
-    if (redoBtn) {
-        redoBtn.disabled = window.clinicalNoteHistoryIndex >= window.clinicalNoteHistory.length - 1;
+    // Check if we have programmatic changes to track
+    const hasProgrammaticHistory = window.programmaticChangeHistory && window.programmaticChangeHistory.length > 0;
+    
+    if (hasProgrammaticHistory) {
+        // Use programmatic change history for button states
+        if (undoBtn) {
+            // Disable undo if we're at or before the first change (index -1 or 0)
+            undoBtn.disabled = window.currentChangeIndex < 0;
+        }
+        if (redoBtn) {
+            // Disable redo if we're at the last change
+            redoBtn.disabled = window.currentChangeIndex >= window.programmaticChangeHistory.length - 1;
+        }
+    } else if (editor) {
+        // Fall back to TipTap's built-in undo/redo state
+        if (undoBtn) {
+            undoBtn.disabled = !editor.can().undo();
+        }
+        if (redoBtn) {
+            redoBtn.disabled = !editor.can().redo();
+        }
+    } else {
+        // Fall back to clinical note history if no editor
+        if (undoBtn) {
+            undoBtn.disabled = window.clinicalNoteHistoryIndex <= 0;
+        }
+        if (redoBtn) {
+            redoBtn.disabled = window.clinicalNoteHistoryIndex >= window.clinicalNoteHistory.length - 1;
+        }
     }
 }
 

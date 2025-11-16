@@ -11906,6 +11906,157 @@ app.post('/saveUserPreferences', authenticateUser, async (req, res) => {
     }
 });
 
+// Helper function to determine correct nation based on organization
+function getCorrectNationForOrganization(organization) {
+    if (!organization) {
+        return 'England & Wales'; // Default
+    }
+    
+    const org = organization.toUpperCase();
+    
+    // SIGN is Scotland-only
+    if (org === 'SIGN' || org.includes('SCOTTISH INTERCOLLEGIATE')) {
+        return 'Scotland';
+    }
+    
+    // NICE is England & Wales only
+    if (org === 'NICE') {
+        return 'England & Wales';
+    }
+    
+    // RCOG, GTG, BJOG are UK-wide, default to England & Wales
+    if (org === 'RCOG' || org === 'GTG' || org === 'BJOG' || 
+        org.includes('ROYAL COLLEGE OF OBSTETRICIANS') || 
+        org.includes('GREEN-TOP') || 
+        org.includes('BRITISH JOURNAL')) {
+        return 'England & Wales';
+    }
+    
+    // All other organizations default to England & Wales
+    return 'England & Wales';
+}
+
+// Endpoint to fix incorrect nation classifications
+app.post('/fixNationClassifications', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ 
+                success: false, 
+                error: 'Admin access required' 
+            });
+        }
+        
+        if (!db) {
+            return res.status(500).json({ 
+                success: false, 
+                error: 'Firestore not available' 
+            });
+        }
+        
+        console.log('[FIX_NATIONS] Starting nation classification fix...');
+        
+        // Get all guidelines
+        const guidelinesSnapshot = await db.collection('guidelines').get();
+        const allGuidelines = [];
+        guidelinesSnapshot.forEach(doc => {
+            allGuidelines.push({ id: doc.id, ...doc.data() });
+        });
+        
+        console.log(`[FIX_NATIONS] Found ${allGuidelines.length} guidelines to check`);
+        
+        const updates = [];
+        const stats = {
+            checked: 0,
+            fixed: 0,
+            skipped: 0,
+            errors: 0
+        };
+        
+        // Process each guideline
+        for (const guideline of allGuidelines) {
+            stats.checked++;
+            
+            // Only process national guidelines
+            if (guideline.scope !== 'national') {
+                stats.skipped++;
+                continue;
+            }
+            
+            try {
+                // Detect organization
+                const organization = detectGuidelineOrganization(guideline);
+                
+                // Determine correct nation
+                const correctNation = getCorrectNationForOrganization(organization);
+                
+                // Check if current nation is incorrect
+                const currentNation = guideline.nation;
+                
+                if (currentNation !== correctNation) {
+                    console.log(`[FIX_NATIONS] Fixing: ${guideline.title || guideline.filename}`);
+                    console.log(`  Organization: ${organization || 'Unknown'}`);
+                    console.log(`  Current: ${currentNation || 'null'} -> Correct: ${correctNation}`);
+                    
+                    updates.push({
+                        id: guideline.id,
+                        organization: organization,
+                        oldNation: currentNation,
+                        newNation: correctNation,
+                        title: guideline.title || guideline.filename
+                    });
+                    stats.fixed++;
+                } else {
+                    stats.skipped++;
+                }
+            } catch (error) {
+                console.error(`[FIX_NATIONS] Error processing guideline ${guideline.id}:`, error);
+                stats.errors++;
+            }
+        }
+        
+        // Apply updates in batches (Firestore limit is 500 per batch)
+        const BATCH_SIZE = 500;
+        let totalUpdated = 0;
+        
+        for (let i = 0; i < updates.length; i += BATCH_SIZE) {
+            const batch = db.batch();
+            const batchUpdates = updates.slice(i, i + BATCH_SIZE);
+            
+            for (const update of batchUpdates) {
+                const docRef = db.collection('guidelines').doc(update.id);
+                batch.update(docRef, {
+                    nation: update.newNation,
+                    nationFixedAt: admin.firestore.FieldValue.serverTimestamp()
+                });
+            }
+            
+            await batch.commit();
+            totalUpdated += batchUpdates.length;
+            console.log(`[FIX_NATIONS] Updated batch: ${totalUpdated}/${updates.length}`);
+        }
+        
+        console.log(`[FIX_NATIONS] Complete! Fixed ${totalUpdated} guidelines`);
+        
+        res.json({
+            success: true,
+            message: `Fixed ${totalUpdated} guideline nation classifications`,
+            stats: {
+                ...stats,
+                updated: totalUpdated
+            },
+            sampleUpdates: updates.slice(0, 10) // Show first 10 as examples
+        });
+    } catch (error) {
+        console.error('[FIX_NATIONS] Error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
 // Endpoint to get list of available hospital trusts
 app.get('/getHospitalTrustsList', authenticateUser, async (req, res) => {
     try {
