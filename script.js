@@ -7076,6 +7076,18 @@ async function saveHospitalTrustSelection() {
         const result = await response.json();
         if (result.success) {
             currentTrustDisplay.textContent = selectedTrust;
+            
+            // Update saved guideline scope selection if it was using local/both
+            const savedScope = loadGuidelineScopeSelection();
+            if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
+                const updatedSelection = {
+                    scope: savedScope.scope,
+                    hospitalTrust: selectedTrust
+                };
+                saveGuidelineScopeSelection(updatedSelection);
+                console.log('[DEBUG] Updated guideline scope selection with new trust:', updatedSelection);
+            }
+            
             alert(`Hospital trust updated to: ${selectedTrust}\n\nGuidelines will now be filtered and prioritised for your trust.`);
             
             // Reload guidelines to reflect the new trust selection
@@ -7120,6 +7132,14 @@ async function clearHospitalTrustSelection() {
             if (trustSelect) {
                 trustSelect.value = '';
             }
+            
+            // Clear saved guideline scope selection if it was using local/both
+            const savedScope = loadGuidelineScopeSelection();
+            if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
+                clearGuidelineScopeSelection();
+                console.log('[DEBUG] Cleared guideline scope selection because trust was cleared');
+            }
+            
             alert('Hospital trust selection cleared.\n\nYou will now see all national guidelines.');
             
             // Reload guidelines
@@ -7140,6 +7160,41 @@ async function clearHospitalTrustSelection() {
 
 // Guideline Scope Selection Modal Functions
 let guidelineScopeResolve = null; // Promise resolver for scope selection
+
+// Save guideline scope selection to localStorage
+function saveGuidelineScopeSelection(scopeSelection) {
+    try {
+        localStorage.setItem('clerky_guideline_scope', JSON.stringify(scopeSelection));
+        console.log('[DEBUG] Saved guideline scope selection to localStorage:', scopeSelection);
+    } catch (error) {
+        console.error('[ERROR] Failed to save guideline scope selection:', error);
+    }
+}
+
+// Load guideline scope selection from localStorage
+function loadGuidelineScopeSelection() {
+    try {
+        const saved = localStorage.getItem('clerky_guideline_scope');
+        if (saved) {
+            const scopeSelection = JSON.parse(saved);
+            console.log('[DEBUG] Loaded guideline scope selection from localStorage:', scopeSelection);
+            return scopeSelection;
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load guideline scope selection:', error);
+    }
+    return null;
+}
+
+// Clear saved guideline scope selection
+function clearGuidelineScopeSelection() {
+    try {
+        localStorage.removeItem('clerky_guideline_scope');
+        console.log('[DEBUG] Cleared guideline scope selection from localStorage');
+    } catch (error) {
+        console.error('[ERROR] Failed to clear guideline scope selection:', error);
+    }
+}
 
 async function showGuidelineScopeModal() {
     console.log('[DEBUG] Showing guideline scope modal');
@@ -7217,20 +7272,26 @@ async function showGuidelineScopeModal() {
         // Set up button click handlers
         const handleNationalClick = () => {
             console.log('[DEBUG] User selected: National guidelines');
+            const selection = { scope: 'national', hospitalTrust: userHospitalTrust };
+            saveGuidelineScopeSelection(selection);
             cleanup();
-            resolve({ scope: 'national', hospitalTrust: userHospitalTrust });
+            resolve(selection);
         };
         
         const handleLocalClick = () => {
             console.log('[DEBUG] User selected: Local guidelines');
+            const selection = { scope: 'local', hospitalTrust: userHospitalTrust };
+            saveGuidelineScopeSelection(selection);
             cleanup();
-            resolve({ scope: 'local', hospitalTrust: userHospitalTrust });
+            resolve(selection);
         };
         
         const handleBothClick = () => {
             console.log('[DEBUG] User selected: Both guidelines');
+            const selection = { scope: 'both', hospitalTrust: userHospitalTrust };
+            saveGuidelineScopeSelection(selection);
             cleanup();
-            resolve({ scope: 'both', hospitalTrust: userHospitalTrust });
+            resolve(selection);
         };
         
         const handleChangeTrustClick = async () => {
@@ -7681,31 +7742,73 @@ async function processWorkflow() {
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
         appendToSummary1(workflowStart, false);
 
-        // Step 1: Select Guideline Scope
-        console.log('[DEBUG] processWorkflow: Step 1 - Show guideline scope selection modal');
-        const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
-        appendToSummary1(scopeSelectionStatus, false);
+        // Step 1: Select Guideline Scope (check for persisted selection first)
+        console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
         
         let scopeSelection;
-        try {
-            scopeSelection = await showGuidelineScopeModal();
-            console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
+        
+        // Check if we have a persisted selection
+        const savedScopeSelection = loadGuidelineScopeSelection();
+        
+        if (savedScopeSelection) {
+            // Verify the saved selection is still valid (check if trust still exists if local/both)
+            if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
+                // Need to verify the hospital trust is still valid
+                try {
+                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+                        }
+                    });
+                    const result = await response.json();
+                    if (result.success && result.hospitalTrust) {
+                        // Trust exists, use saved selection (but update trust name in case it changed)
+                        scopeSelection = {
+                            scope: savedScopeSelection.scope,
+                            hospitalTrust: result.hospitalTrust
+                        };
+                        console.log('[DEBUG] processWorkflow: Using persisted scope selection:', scopeSelection);
+                    } else {
+                        // Trust no longer exists, need to reselect
+                        console.log('[DEBUG] processWorkflow: Saved selection invalid (no trust), showing modal');
+                        scopeSelection = await showGuidelineScopeModal();
+                    }
+                } catch (error) {
+                    console.error('[ERROR] Failed to verify hospital trust, showing modal:', error);
+                    scopeSelection = await showGuidelineScopeModal();
+                }
+            } else {
+                // National scope doesn't need trust verification
+                scopeSelection = savedScopeSelection;
+                console.log('[DEBUG] processWorkflow: Using persisted scope selection:', scopeSelection);
+            }
+        } else {
+            // No saved selection, show modal
+            console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
+            const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
+            appendToSummary1(scopeSelectionStatus, false);
             
-            // Store the selection globally
-            window.selectedGuidelineScope = scopeSelection;
-            
-            const scopeMessage = scopeSelection.scope === 'national' 
-                ? '📘 **National Guidelines Selected**\n\n'
-                : scopeSelection.scope === 'local'
-                ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
-                : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
-            
-            appendToSummary1(scopeMessage, false);
-        } catch (error) {
-            console.log('[DEBUG] processWorkflow: Scope selection cancelled:', error.message);
-            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
-            return; // Exit workflow if user cancels
+            try {
+                scopeSelection = await showGuidelineScopeModal();
+                console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
+            } catch (error) {
+                console.log('[DEBUG] processWorkflow: Scope selection cancelled:', error.message);
+                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                return; // Exit workflow if user cancels
+            }
         }
+        
+        // Store the selection globally
+        window.selectedGuidelineScope = scopeSelection;
+        
+        const scopeMessage = scopeSelection.scope === 'national' 
+            ? '📘 **National Guidelines Selected**\n\n'
+            : scopeSelection.scope === 'local'
+            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
+        
+        appendToSummary1(scopeMessage, false);
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         

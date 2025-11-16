@@ -338,6 +338,65 @@
     let retryAttempted = false;
     const currentFileUrl = fileUrl; // Store fileUrl for use in error handlers
     
+    // Function to show user-friendly status messages
+    function showUploadStatus(message, isError = false) {
+        // Remove existing status overlay if present
+        let statusOverlay = document.getElementById('clerky-upload-status');
+        if (!statusOverlay) {
+            statusOverlay = document.createElement('div');
+            statusOverlay.id = 'clerky-upload-status';
+            statusOverlay.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                border: 2px solid #3b82f6;
+                border-radius: 8px;
+                padding: 24px 32px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                z-index: 10000;
+                max-width: 500px;
+                text-align: center;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            `;
+            document.body.appendChild(statusOverlay);
+        }
+        
+        statusOverlay.innerHTML = `
+            <div style="margin-bottom: 16px;">
+                ${isError ? '❌' : '⏳'}
+            </div>
+            <div style="font-size: 18px; font-weight: 600; color: #1f2937; margin-bottom: 8px;">
+                ${isError ? 'Upload Failed' : 'Preparing PDF'}
+            </div>
+            <div style="font-size: 14px; color: #6b7280; line-height: 1.5;">
+                ${message}
+            </div>
+            ${!isError ? `
+                <div style="margin-top: 16px;">
+                    <div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #e5e7eb; border-top-color: #3b82f6; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                </div>
+                <style>
+                    @keyframes spin {
+                        to { transform: rotate(360deg); }
+                    }
+                </style>
+            ` : ''}
+        `;
+        
+        if (isError) {
+            statusOverlay.style.borderColor = '#ef4444';
+        }
+    }
+    
+    function hideUploadStatus() {
+        const statusOverlay = document.getElementById('clerky-upload-status');
+        if (statusOverlay) {
+            statusOverlay.remove();
+        }
+    }
+    
     // Intercept PDF.js loading errors to auto-upload missing PDFs
     const originalOpen = window.PDFViewerApplication?.open;
     if (originalOpen) {
@@ -445,14 +504,17 @@
                             if (token) {
                                 const serverUrl = url.match(/https?:\/\/[^/]+/)?.[0] || window.location.origin;
                                 
-                                // Show loading message
-                                const loadingBar = document.querySelector('.loadingBar, .loadingBarContainer');
-                                if (loadingBar) {
-                                    loadingBar.textContent = 'PDF not found. Uploading from GitHub...';
-                                }
+                                // Show user-friendly status message
+                                showUploadStatus('PDF not found in storage. Uploading from GitHub...');
                                 
                                 try {
                                     console.log('[Clerky Auth] Calling uploadMissingPdf for:', guidelineId);
+                                    
+                                    // Update status during upload
+                                    setTimeout(() => {
+                                        showUploadStatus('Downloading PDF from GitHub... This may take a moment.');
+                                    }, 1000);
+                                    
                                     const uploadResponse = await originalFetch(`${serverUrl}/uploadMissingPdf`, {
                                         method: 'POST',
                                         headers: {
@@ -467,27 +529,49 @@
                                     if (uploadResult.success) {
                                         console.log('[Clerky Auth] PDF uploaded successfully, retrying fetch...');
                                         
+                                        // Update status for reload
+                                        showUploadStatus('PDF uploaded successfully! Loading PDF...');
+                                        
                                         // Reset retry flag for the retry attempt
                                         retryAttempted = false;
                                         
-                                        // Update loading message
-                                        if (loadingBar) {
-                                            loadingBar.textContent = 'Reloading PDF...';
-                                        }
-                                        
                                         // Retry the original fetch
-                                        return await originalFetch.apply(this, args);
+                                        const retryResponse = await originalFetch.apply(this, args);
+                                        
+                                        // Hide status overlay after a short delay to show it loaded
+                                        setTimeout(() => {
+                                            hideUploadStatus();
+                                        }, 500);
+                                        
+                                        return retryResponse;
                                     } else {
                                         console.error('[Clerky Auth] Auto-upload failed:', uploadResult.error);
+                                        showUploadStatus(`Upload failed: ${uploadResult.error || 'Unknown error'}`, true);
                                         retryAttempted = false; // Reset so user can try again
+                                        
+                                        // Hide error after 5 seconds
+                                        setTimeout(() => {
+                                            hideUploadStatus();
+                                        }, 5000);
                                     }
                                 } catch (uploadError) {
                                     console.error('[Clerky Auth] Error during auto-upload:', uploadError);
+                                    showUploadStatus(`Upload error: ${uploadError.message}`, true);
                                     retryAttempted = false; // Reset so user can try again
+                                    
+                                    // Hide error after 5 seconds
+                                    setTimeout(() => {
+                                        hideUploadStatus();
+                                    }, 5000);
                                 }
                             } else {
                                 console.error('[Clerky Auth] No auth token found in URL for auto-upload');
+                                showUploadStatus('Authentication error. Please try again.', true);
                                 retryAttempted = false;
+                                
+                                setTimeout(() => {
+                                    hideUploadStatus();
+                                }, 5000);
                             }
                         }
                     }
