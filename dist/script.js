@@ -6607,6 +6607,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add click handler for process workflow button
     const processBtn = document.getElementById('processBtn');
+    const processSpinner = document.getElementById('processSpinner');
+    if (processSpinner) {
+        // Ensure spinner is hidden on initialization
+        processSpinner.style.display = 'none';
+    }
     if (processBtn) {
         processBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Process button clicked...');
@@ -8036,7 +8041,7 @@ async function processWorkflow() {
 
         // Set loading state
         if (processBtn) processBtn.disabled = true;
-        if (processSpinner) processSpinner.style.display = 'inline';
+        // Don't show spinner - workflow completes quickly and pauses for user input
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
@@ -8183,6 +8188,7 @@ async function processWorkflow() {
                 processBtn.textContent = originalText;
             }
         }
+        // Ensure spinner is always hidden (shouldn't be shown for this workflow)
         if (processSpinner) processSpinner.style.display = 'none';
         
         console.log('[DEBUG] processWorkflow: Cleanup completed');
