@@ -734,40 +734,31 @@ function displayRelevantGuidelines(categories) {
             return '';
         }
 
-        // Enhanced debugging - log the full guideline object structure
-        // console.log('[DEBUG] createPdfDownloadLink called with guideline:', {
-        //     fullObject: guideline,
-        //     allKeys: Object.keys(guideline),
-        //     hasDownloadUrl: !!guideline.downloadUrl,
-        //     hasOriginalFilename: !!guideline.originalFilename,
-        //     hasFilename: !!guideline.filename,
-        //     downloadUrl: guideline.downloadUrl,
-        //     originalFilename: guideline.originalFilename,
-        //     filename: guideline.filename,
-        //     id: guideline.id,
-        //     title: guideline.title
-        // });
+        // Get full guideline data from globalGuidelines if available (has downloadUrl/originalFilename)
+        const fullGuidelineData = window.globalGuidelines?.[guideline.id];
+        const guidelineToUse = fullGuidelineData || guideline;
 
         // Only use downloadUrl field if available
         let downloadUrl;
-        if (guideline.downloadUrl) {
-            downloadUrl = guideline.downloadUrl;
+        if (guidelineToUse.downloadUrl) {
+            downloadUrl = guidelineToUse.downloadUrl;
             // console.log('[DEBUG] Using stored downloadUrl:', downloadUrl);
-        } else if (guideline.originalFilename) {
+        } else if (guidelineToUse.originalFilename) {
             // Use original filename if available
-            const encodedFilename = encodeURIComponent(guideline.originalFilename);
+            const encodedFilename = encodeURIComponent(guidelineToUse.originalFilename);
             downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
             // console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
         } else {
             // No reliable download information available - don't show a link
-            const displayTitle = guideline.displayName || guideline.humanFriendlyName || guideline.title || guideline.id;
+            const displayTitle = guidelineToUse.displayName || guidelineToUse.humanFriendlyName || guidelineToUse.title || guidelineToUse.id;
             console.warn('[PDF-LINK] Missing PDF download link for guideline:', {
                 id: guideline.id,
                 title: displayTitle,
-                hasDownloadUrl: !!guideline.downloadUrl,
-                hasOriginalFilename: !!guideline.originalFilename,
-                hasFilename: !!guideline.filename,
-                allAvailableFields: Object.keys(guideline)
+                hasDownloadUrl: !!guidelineToUse.downloadUrl,
+                hasOriginalFilename: !!guidelineToUse.originalFilename,
+                hasFilename: !!guidelineToUse.filename,
+                checkedGlobalGuidelines: !!fullGuidelineData,
+                allAvailableFields: Object.keys(guidelineToUse)
             });
             return '';
         }
