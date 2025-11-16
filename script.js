@@ -4843,7 +4843,7 @@ function completeSuggestionReview() {
             if (statusDiv) {
                 statusDiv.innerHTML = queue.map((id, index) => {
                     const guideline = window.relevantGuidelines.find(g => g.id === id);
-                    const title = guideline ? (guideline.title || id) : id;
+                    const title = getGuidelineDisplayName(id, guideline);
                     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
                     
                     let className = 'processing-step pending';
@@ -6037,7 +6037,7 @@ async function applyAllDecisions() {
                 if (statusDiv) {
                     statusDiv.innerHTML = queue.map((id, index) => {
                         const guideline = window.relevantGuidelines.find(g => g.id === id);
-                        const title = guideline ? (guideline.title || id) : id;
+                        const title = getGuidelineDisplayName(id, guideline);
                         const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
                         
                         let className = 'processing-step pending';
@@ -6118,7 +6118,7 @@ async function applyAllDecisions() {
                 if (statusDiv) {
                     statusDiv.innerHTML = queue.map((id, index) => {
                         const guideline = window.relevantGuidelines.find(g => g.id === id);
-                        const title = guideline ? (guideline.title || id) : id;
+                        const title = getGuidelineDisplayName(id, guideline);
                         const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
                         return `<div class="processing-step completed">✅ ${index + 1}. ${shortTitle}</div>`;
                     }).join('');
@@ -9345,7 +9345,7 @@ async function processSelectedGuidelines() {
             if (statusDiv) {
                 statusDiv.innerHTML = selectedGuidelineIds.map((id, index) => {
                     const guideline = window.relevantGuidelines.find(g => g.id === id);
-                    const title = guideline ? (guideline.title || id) : id;
+                    const title = getGuidelineDisplayName(id, guideline);
                     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
                     
                     let className = 'processing-step pending';
@@ -9404,6 +9404,30 @@ async function processSelectedGuidelines() {
     }
 }
 
+// Helper function to get the display name for a guideline consistently
+function getGuidelineDisplayName(guidelineId, guideline = null, guidelineData = null) {
+    // Get guideline from relevantGuidelines if not provided
+    if (!guideline) {
+        guideline = window.relevantGuidelines?.find(g => g.id === guidelineId);
+    }
+    
+    // Get guidelineData from globalGuidelines if not provided
+    if (!guidelineData) {
+        guidelineData = window.globalGuidelines?.[guidelineId];
+    }
+    
+    // Use the same fallback chain as the selection interface
+    return guidelineData?.displayName || 
+           guideline?.displayName || 
+           guidelineData?.humanFriendlyName || 
+           guideline?.humanFriendlyName || 
+           guidelineData?.humanFriendlyTitle || 
+           guideline?.humanFriendlyTitle ||
+           guideline?.title || 
+           guidelineData?.title || 
+           guidelineId;
+}
+
 // Function to process a single guideline (extracted from existing checkAgainstGuidelines logic)
 async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] processSingleGuideline called for: ${guidelineId}`);
@@ -9432,9 +9456,12 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         throw new Error(`Guideline data not found for ${guidelineId}`);
     }
 
-    console.log(`[DEBUG] Processing guideline: ${guidelineData.humanFriendlyTitle || guidelineData.title}`);
+    // Get the display name using the helper function
+    const displayName = getGuidelineDisplayName(guidelineId, targetGuideline, guidelineData);
 
-    const analyzeMessage = `Analyzing against: **${guidelineData.humanFriendlyTitle || guidelineData.title}**\n\n`;
+    console.log(`[DEBUG] Processing guideline: ${displayName}`);
+
+    const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
     appendToSummary1(analyzeMessage, false);
 
     // Directly generate dynamic advice for this guideline without server analysis
@@ -9443,11 +9470,11 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         transcript: transcript,
         analysis: null, // No separate analysis step
         guidelineId: guidelineId,
-        guidelineTitle: guidelineData.humanFriendlyTitle || guidelineData.title
+        guidelineTitle: displayName
     };
 
     // Automatically generate dynamic advice for this guideline
-    const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${guidelineData.humanFriendlyTitle || guidelineData.title}\n\n`;
+    const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${displayName}\n\n`;
     appendToSummary1(dynamicAdviceTitle, false);
 
     try {
@@ -9455,7 +9482,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         let analysisToUse = window.latestAnalysis?.analysis;
         if (!analysisToUse) {
             // Create a basic analysis description for this guideline
-            analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${guidelineData.humanFriendlyTitle || guidelineData.title}. ` +
+            analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${displayName}. ` +
                            `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
         }
         
@@ -9463,7 +9490,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
             transcript,
             analysisToUse,
             guidelineId,
-            guidelineData.humanFriendlyTitle || guidelineData.title
+            displayName
         );
     } catch (dynamicError) {
         console.error(`[DEBUG] Error generating dynamic advice for ${guidelineId}:`, dynamicError);
