@@ -6920,6 +6920,66 @@ async function generateOrganisation(currentData, userId) {
     return await extractUsingAI('extractOrganisation', currentData, userId);
 }
 
+// Helper function to detect organization from guideline metadata
+function detectGuidelineOrganization(guideline) {
+    // Check organisation field first
+    if (guideline.organisation) {
+        const org = guideline.organisation.toUpperCase();
+        // Normalize common variations
+        if (org.includes('RCOG') || org.includes('ROYAL COLLEGE OF OBSTETRICIANS')) return 'RCOG';
+        if (org.includes('NICE')) return 'NICE';
+        if (org.includes('SIGN') || org.includes('SCOTTISH INTERCOLLEGIATE')) return 'SIGN';
+        if (org.includes('BASHH') || org.includes('BRITISH ASSOCIATION')) return 'BASHH';
+        if (org.includes('FSRH') || org.includes('FACULTY OF SEXUAL')) return 'FSRH';
+        if (org.includes('WHO') || org.includes('WORLD HEALTH')) return 'WHO';
+        if (org.includes('BHIVA')) return 'BHIVA';
+        if (org.includes('BAPM')) return 'BAPM';
+        if (org.includes('BSH') || org.includes('BRITISH SOCIETY FOR HAEMATOLOGY')) return 'BSH';
+        if (org.includes('BJOG')) return 'BJOG';
+        return org; // Return as-is if recognized
+    }
+    
+    // Check title/filename patterns
+    const title = (guideline.title || guideline.humanFriendlyName || guideline.filename || '').toLowerCase();
+    const displayName = (guideline.displayName || '').toLowerCase();
+    const combinedText = `${title} ${displayName}`;
+    
+    // Pattern matching for common organizations
+    if (combinedText.includes('nice') || combinedText.includes('ng') || combinedText.includes('cg') && combinedText.includes('nice')) {
+        return 'NICE';
+    }
+    if (combinedText.includes('rcog') || combinedText.includes('green-top') || combinedText.includes('gtg')) {
+        return 'RCOG';
+    }
+    if (combinedText.includes('sign') || combinedText.includes('scottish intercollegiate')) {
+        return 'SIGN';
+    }
+    if (combinedText.includes('bashh') || combinedText.includes('british association for sexual health')) {
+        return 'BASHH';
+    }
+    if (combinedText.includes('fsrh') || combinedText.includes('faculty of sexual and reproductive health')) {
+        return 'FSRH';
+    }
+    if (combinedText.includes('who') || combinedText.includes('world health organization')) {
+        return 'WHO';
+    }
+    if (combinedText.includes('bhiva')) {
+        return 'BHIVA';
+    }
+    if (combinedText.includes('bapm')) {
+        return 'BAPM';
+    }
+    if (combinedText.includes('bsh') || combinedText.includes('british society for haematology')) {
+        return 'BSH';
+    }
+    if (combinedText.includes('bjog')) {
+        return 'BJOG';
+    }
+    
+    // Default: return null if cannot detect
+    return null;
+}
+
 async function generateYearProduced(currentData, userId) {
     // Try to extract year from title or filename
     const textToSearch = [currentData.title, currentData.filename, currentData.originalFilename]
@@ -11538,8 +11598,31 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         const userId = req.user.uid;
         const userHospitalTrust = await getUserHospitalTrust(userId);
         
-        // Filter and prioritise guidelines based on user's trust
-        // Priority: Local trust guidelines first, then national (England & Wales)
+        // Get user's guideline preferences
+        let userPreferences = {
+            enabledOrganizations: ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG'],
+            enabledTrusts: [],
+            includeAllNational: true
+        };
+        
+        try {
+            if (db) {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    userPreferences = {
+                        enabledOrganizations: data.enabledOrganizations || userPreferences.enabledOrganizations,
+                        enabledTrusts: data.enabledTrusts || userPreferences.enabledTrusts,
+                        includeAllNational: data.includeAllNational !== undefined ? data.includeAllNational : userPreferences.includeAllNational
+                    };
+                }
+            }
+        } catch (error) {
+            console.error('[ERROR] Failed to load user preferences, using defaults:', error);
+        }
+        
+        // Filter and prioritise guidelines based on user's trust and preferences
+        // Priority: Local trust guidelines first, then national (filtered by organization preferences)
         const localGuidelines = [];
         const nationalGuidelines = [];
         const otherGuidelines = [];
@@ -11548,11 +11631,35 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
             // Default scope is 'national' if not specified (for backwards compatibility)
             const scope = guideline.scope || 'national';
             
-            if (scope === 'local' && userHospitalTrust && guideline.hospitalTrust === userHospitalTrust) {
-                localGuidelines.push(guideline);
+            if (scope === 'local') {
+                // Check if this local guideline matches user's enabled trusts
+                const guidelineTrust = guideline.hospitalTrust;
+                const isUserTrust = userHospitalTrust && guidelineTrust === userHospitalTrust;
+                const isEnabledTrust = userPreferences.enabledTrusts.includes(guidelineTrust);
+                
+                if (isUserTrust || isEnabledTrust) {
+                    localGuidelines.push(guideline);
+                } else {
+                    otherGuidelines.push(guideline);
+                }
             } else if (scope === 'national' || !guideline.scope) {
-                // Include all national guidelines (or guidelines without scope field for backwards compatibility)
-                nationalGuidelines.push(guideline);
+                // Filter national guidelines by organization preferences
+                if (userPreferences.includeAllNational) {
+                    // If includeAllNational is true, show all national guidelines (backwards compatibility)
+                    nationalGuidelines.push(guideline);
+                } else {
+                    // Otherwise, filter by enabled organizations
+                    const organization = detectGuidelineOrganization(guideline);
+                    
+                    // If organization is detected and is in enabled list, include it
+                    if (organization && userPreferences.enabledOrganizations.includes(organization)) {
+                        nationalGuidelines.push(guideline);
+                    } else if (!organization) {
+                        // If organization cannot be detected, include it (to avoid hiding valid guidelines)
+                        nationalGuidelines.push(guideline);
+                    }
+                    // Otherwise, exclude it
+                }
             } else {
                 // Other local guidelines not for this trust
                 otherGuidelines.push(guideline);
@@ -11651,6 +11758,147 @@ app.post('/updateUserHospitalTrust', authenticateUser, async (req, res) => {
         }
     } catch (error) {
         console.error('[ERROR] Failed to update user hospital trust:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to get user's guideline preferences
+app.get('/getUserPreferences', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        
+        // Default preferences structure
+        const defaultPreferences = {
+            enabledOrganizations: ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG'],
+            enabledTrusts: [],
+            includeAllNational: true // Backwards compatibility: show all national by default
+        };
+        
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    // Merge with defaults, ensuring arrays exist
+                    const preferences = {
+                        enabledOrganizations: data.enabledOrganizations || defaultPreferences.enabledOrganizations,
+                        enabledTrusts: data.enabledTrusts || defaultPreferences.enabledTrusts,
+                        includeAllNational: data.includeAllNational !== undefined ? data.includeAllNational : defaultPreferences.includeAllNational
+                    };
+                    
+                    res.json({ 
+                        success: true, 
+                        preferences: preferences
+                    });
+                    return;
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserPreferences, returning defaults:', firestoreError);
+            }
+        }
+        
+        // Return default preferences if no user preferences found
+        res.json({ 
+            success: true, 
+            preferences: defaultPreferences
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get user preferences:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to save user's guideline preferences
+app.post('/saveUserPreferences', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { enabledOrganizations, enabledTrusts, includeAllNational } = req.body;
+        
+        // Validate input
+        if (!Array.isArray(enabledOrganizations)) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'enabledOrganizations must be an array' 
+            });
+        }
+        
+        if (!Array.isArray(enabledTrusts)) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'enabledTrusts must be an array' 
+            });
+        }
+        
+        const preferences = {
+            enabledOrganizations: enabledOrganizations,
+            enabledTrusts: enabledTrusts,
+            includeAllNational: includeAllNational !== undefined ? includeAllNational : true,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        };
+        
+        if (db) {
+            try {
+                // Get existing preferences to preserve other fields (like hospitalTrust)
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+                
+                await db.collection('userPreferences').doc(userId).set({
+                    ...existingData,
+                    ...preferences
+                }, { merge: true });
+                
+                console.log(`Successfully saved user preferences for user: ${userId}`);
+                res.json({ 
+                    success: true, 
+                    message: 'Preferences saved successfully',
+                    preferences: preferences
+                });
+                return;
+            } catch (firestoreError) {
+                console.error('Firestore error in saveUserPreferences:', firestoreError);
+                return res.status(500).json({ 
+                    success: false, 
+                    error: 'Failed to save preferences to database' 
+                });
+            }
+        }
+        
+        // Fallback: try file storage
+        try {
+            const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+            const existingData = fs.existsSync(userPrefsFilePath) 
+                ? JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8')) 
+                : {};
+            
+            const updatedData = {
+                ...existingData,
+                ...preferences,
+                updatedAt: new Date().toISOString()
+            };
+            
+            fs.writeFileSync(userPrefsFilePath, JSON.stringify(updatedData, null, 2));
+            
+            res.json({ 
+                success: true, 
+                message: 'Preferences saved successfully',
+                preferences: preferences
+            });
+        } catch (fileError) {
+            console.error('File storage error in saveUserPreferences:', fileError);
+            res.status(500).json({ 
+                success: false, 
+                error: 'Failed to save preferences' 
+            });
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to save user preferences:', error);
         res.status(500).json({ 
             success: false, 
             error: error.message 

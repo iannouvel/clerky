@@ -551,6 +551,127 @@
             margin-left: 15px;
             font-weight: 500;
         }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-content {
+            background-color: var(--card-background);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h2 {
+            margin: 0;
+            color: var(--text-color);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 28px;
+            font-weight: bold;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-close:hover {
+            color: #000;
+        }
+        
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .modal-footer {
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+        
+        .preferences-section {
+            margin-bottom: 25px;
+        }
+        
+        .preferences-section h3 {
+            margin: 0 0 10px 0;
+            color: var(--text-color);
+            font-size: 18px;
+        }
+        
+        .preferences-help {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 0 0 15px 0;
+        }
+        
+        .organization-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .trust-selection-wrapper {
+            margin-top: 10px;
+        }
+        
+        .trust-selection-wrapper select[multiple] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--accent-color);
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+        }
     </style>
     <script src="version-loader.js"></script>
 </head>
@@ -633,7 +754,12 @@
 
         <!-- Filter Section -->
         <div class="filter-section">
-            <div class="filter-label">Filter by:</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div class="filter-label">Filter by:</div>
+                <button id="preferencesBtn" class="action-btn" style="background: #6c757d; color: white; border: none;">
+                    ⚙️ Preferences
+                </button>
+            </div>
             <div class="filter-controls">
                 <div class="scope-filter-group">
                     <label class="radio-label">
@@ -668,6 +794,95 @@
         </div>
     </div>
 
+    <!-- Preferences Modal -->
+    <div id="preferencesModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Guideline Preferences</h2>
+                <button class="modal-close" id="closePreferencesModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preferences-section">
+                    <h3>National Guidelines</h3>
+                    <p class="preferences-help">Select which organizations' guidelines to include:</p>
+                    <div class="organization-checkboxes">
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="RCOG" class="org-checkbox">
+                            <span>RCOG (UK-wide)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="NICE" class="org-checkbox">
+                            <span>NICE (England & Wales)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="SIGN" class="org-checkbox">
+                            <span>SIGN (Scotland)</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="BASHH" class="org-checkbox">
+                            <span>BASHH</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="FSRH" class="org-checkbox">
+                            <span>FSRH</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="WHO" class="org-checkbox">
+                            <span>WHO</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="BHIVA" class="org-checkbox">
+                            <span>BHIVA</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="BAPM" class="org-checkbox">
+                            <span>BAPM</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="BSH" class="org-checkbox">
+                            <span>BSH</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" value="BJOG" class="org-checkbox">
+                            <span>BJOG</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="preferences-section">
+                    <h3>Local Guidelines</h3>
+                    <p class="preferences-help">Select which hospital trusts' guidelines to include:</p>
+                    <div class="trust-selection-wrapper">
+                        <select id="preferencesTrustSelect" class="form-select" multiple style="min-height: 150px;">
+                            <!-- Trusts will be populated here -->
+                        </select>
+                        <p class="preferences-help" style="margin-top: 8px; font-size: 12px;">
+                            Hold Ctrl (Cmd on Mac) to select multiple trusts
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="preferences-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="includeAllNationalCheckbox">
+                        <span>Include all national guidelines (backwards compatibility)</span>
+                    </label>
+                    <p class="preferences-help" style="font-size: 12px; margin-top: 4px;">
+                        If checked, shows all national guidelines regardless of organization selection above
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="savePreferencesBtn" class="action-btn" style="background: #28a745; color: white; border: none;">
+                    Save Preferences
+                </button>
+                <button id="cancelPreferencesBtn" class="action-btn" style="background: #6c757d; color: white; border: none;">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <button onclick="window.location.href='index.html'" class="back-btn">Back to Main</button>
 
     <!-- Include the Firebase initialization script -->
@@ -682,8 +897,45 @@
                 scope: 'all',
                 trust: ''
             };
+            let userPreferences = {
+                enabledOrganizations: ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG'],
+                enabledTrusts: [],
+                includeAllNational: true
+            };
             const searchInput = document.getElementById('guidelineSearch');
             const autocompleteList = document.getElementById('autocompleteList');
+            
+            // Load user preferences on page load
+            async function loadUserPreferences() {
+                try {
+                    const user = auth.currentUser;
+                    if (!user) return;
+                    
+                    const token = await user.getIdToken();
+                    const response = await fetch('https://clerky-uzni.onrender.com/getUserPreferences', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    if (result.success && result.preferences) {
+                        userPreferences = result.preferences;
+                        console.log('[PREFERENCES] Loaded user preferences:', userPreferences);
+                    }
+                } catch (error) {
+                    console.error('Error loading user preferences:', error);
+                }
+            }
+            
+            // Load preferences when user is authenticated
+            auth.onAuthStateChanged(async (user) => {
+                if (user) {
+                    await loadUserPreferences();
+                }
+            });
 
             // Ensure user is authenticated
             auth.onAuthStateChanged(user => {
@@ -1599,6 +1851,151 @@
                     } finally {
                         enhanceMetadataBtn.disabled = false;
                         enhanceMetadataBtn.textContent = 'Enhance Metadata for All Guidelines';
+                    }
+                });
+            }
+            
+            // Preferences Modal Handling
+            const preferencesBtn = document.getElementById('preferencesBtn');
+            const preferencesModal = document.getElementById('preferencesModal');
+            const closePreferencesModal = document.getElementById('closePreferencesModal');
+            const cancelPreferencesBtn = document.getElementById('cancelPreferencesBtn');
+            const savePreferencesBtn = document.getElementById('savePreferencesBtn');
+            const preferencesTrustSelect = document.getElementById('preferencesTrustSelect');
+            const includeAllNationalCheckbox = document.getElementById('includeAllNationalCheckbox');
+            
+            // Open preferences modal
+            if (preferencesBtn) {
+                preferencesBtn.addEventListener('click', async function() {
+                    // Load current preferences into modal
+                    await loadPreferencesIntoModal();
+                    preferencesModal.style.display = 'block';
+                });
+            }
+            
+            // Close modal handlers
+            if (closePreferencesModal) {
+                closePreferencesModal.addEventListener('click', () => {
+                    preferencesModal.style.display = 'none';
+                });
+            }
+            
+            if (cancelPreferencesBtn) {
+                cancelPreferencesBtn.addEventListener('click', () => {
+                    preferencesModal.style.display = 'none';
+                });
+            }
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', (event) => {
+                if (event.target === preferencesModal) {
+                    preferencesModal.style.display = 'none';
+                }
+            });
+            
+            // Load preferences into modal
+            async function loadPreferencesIntoModal() {
+                // Load current preferences
+                await loadUserPreferences();
+                
+                // Set organization checkboxes
+                document.querySelectorAll('.org-checkbox').forEach(checkbox => {
+                    checkbox.checked = userPreferences.enabledOrganizations.includes(checkbox.value);
+                });
+                
+                // Set include all national checkbox
+                if (includeAllNationalCheckbox) {
+                    includeAllNationalCheckbox.checked = userPreferences.includeAllNational;
+                }
+                
+                // Load trusts into select
+                try {
+                    const user = auth.currentUser;
+                    if (!user) return;
+                    
+                    const token = await user.getIdToken();
+                    const response = await fetch('https://clerky-uzni.onrender.com/getHospitalTrustsList', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    if (result.success && result.trusts && preferencesTrustSelect) {
+                        preferencesTrustSelect.innerHTML = '';
+                        result.trusts.forEach(trust => {
+                            const option = document.createElement('option');
+                            option.value = trust;
+                            option.textContent = trust;
+                            option.selected = userPreferences.enabledTrusts.includes(trust);
+                            preferencesTrustSelect.appendChild(option);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error loading trusts for preferences:', error);
+                }
+            }
+            
+            // Save preferences
+            if (savePreferencesBtn) {
+                savePreferencesBtn.addEventListener('click', async function() {
+                    try {
+                        const user = auth.currentUser;
+                        if (!user) {
+                            alert('Please sign in first');
+                            return;
+                        }
+                        
+                        // Collect enabled organizations
+                        const enabledOrganizations = Array.from(document.querySelectorAll('.org-checkbox:checked'))
+                            .map(cb => cb.value);
+                        
+                        // Collect enabled trusts
+                        const enabledTrusts = preferencesTrustSelect 
+                            ? Array.from(preferencesTrustSelect.selectedOptions).map(option => option.value)
+                            : [];
+                        
+                        // Get include all national setting
+                        const includeAllNational = includeAllNationalCheckbox ? includeAllNationalCheckbox.checked : true;
+                        
+                        const token = await user.getIdToken();
+                        const response = await fetch('https://clerky-uzni.onrender.com/saveUserPreferences', {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                enabledOrganizations: enabledOrganizations,
+                                enabledTrusts: enabledTrusts,
+                                includeAllNational: includeAllNational
+                            })
+                        });
+                        
+                        const result = await response.json();
+                        if (result.success) {
+                            // Update local preferences
+                            userPreferences = {
+                                enabledOrganizations: enabledOrganizations,
+                                enabledTrusts: enabledTrusts,
+                                includeAllNational: includeAllNational
+                            };
+                            
+                            // Close modal
+                            preferencesModal.style.display = 'none';
+                            
+                            // Reload guidelines to apply new preferences
+                            loadGuidelines();
+                            
+                            alert('Preferences saved successfully!');
+                        } else {
+                            alert('Failed to save preferences: ' + (result.error || 'Unknown error'));
+                        }
+                    } catch (error) {
+                        console.error('Error saving preferences:', error);
+                        alert('Error saving preferences: ' + error.message);
                     }
                 });
             }
