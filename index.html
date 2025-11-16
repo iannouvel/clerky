@@ -707,6 +707,57 @@
         </div>
     </div>
     
+    <!-- Preferences Modal -->
+    <div id="preferencesModal" class="preferences-modal hidden">
+        <div class="preferences-modal-content">
+            <div class="preferences-modal-header">
+                <h2>Preferences</h2>
+                <button id="closePreferencesModal" class="close-modal-btn">&times;</button>
+            </div>
+            <div class="preferences-modal-body">
+                <!-- Hospital Trust Section -->
+                <div class="preferences-section">
+                    <h3>Hospital Trust</h3>
+                    <p class="preferences-section-desc">Select your hospital trust to receive contextualised guidance relevant to your working environment.</p>
+                    <div class="preferences-trust-display">
+                        <strong>Current selection:</strong> <span id="preferencesTrustDisplay">None selected</span>
+                    </div>
+                    <div class="preferences-trust-actions">
+                        <button id="preferencesChangeTrustBtn" class="preferences-btn">Change Trust</button>
+                        <button id="preferencesSelectTrustBtn" class="preferences-btn">Select Trust</button>
+                        <button id="preferencesClearTrustBtn" class="preferences-btn preferences-btn-secondary">Clear</button>
+                    </div>
+                </div>
+                
+                <!-- Dynamic Advice Preferences Section -->
+                <div class="preferences-section">
+                    <h3>Dynamic Advice Guidelines</h3>
+                    <p class="preferences-section-desc">Choose which guidelines to apply when using Dynamic Advice. This preference will be remembered for future sessions.</p>
+                    <div class="preferences-scope-display">
+                        <strong>Current selection:</strong> <span id="preferencesScopeDisplay">Not set</span>
+                    </div>
+                    <div class="preferences-scope-buttons">
+                        <button id="preferencesNationalBtn" class="preferences-scope-btn preferences-scope-btn-national">
+                            <span class="preferences-scope-btn-title">National Guidelines</span>
+                            <span class="preferences-scope-btn-desc">NICE, RCOG, and other national bodies</span>
+                        </button>
+                        <button id="preferencesLocalBtn" class="preferences-scope-btn preferences-scope-btn-local">
+                            <span class="preferences-scope-btn-title">Local Guidelines</span>
+                            <span class="preferences-scope-btn-desc">Trust-specific protocols</span>
+                        </button>
+                        <button id="preferencesBothBtn" class="preferences-scope-btn preferences-scope-btn-both">
+                            <span class="preferences-scope-btn-title">Both</span>
+                            <span class="preferences-scope-btn-desc">National + Local guidelines</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="preferences-modal-footer">
+                <button id="preferencesSaveBtn" class="preferences-save-btn">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
     

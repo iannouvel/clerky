@@ -6451,6 +6451,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handler for Preferences button
+    const preferencesBtn = document.getElementById('preferencesBtn');
+    if (preferencesBtn) {
+        preferencesBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Preferences button clicked');
+            await showPreferencesModal();
+            // Close settings menu
+            if (settingsMenu) {
+                settingsMenu.classList.add('hidden');
+            }
+        });
+    }
+
     // Add click handler for Hospital Trust button
     const hospitalTrustBtn = document.getElementById('hospitalTrustBtn');
     if (hospitalTrustBtn) {
@@ -7156,6 +7169,291 @@ async function clearHospitalTrustSelection() {
         console.error('[ERROR] Failed to clear hospital trust:', error);
         alert('Failed to clear hospital trust selection. Please try again.');
     }
+}
+
+// Preferences Modal Functions
+async function showPreferencesModal() {
+    console.log('[DEBUG] Showing preferences modal');
+    
+    const modal = document.getElementById('preferencesModal');
+    const closeBtn = document.getElementById('closePreferencesModal');
+    const preferencesTrustDisplay = document.getElementById('preferencesTrustDisplay');
+    const preferencesScopeDisplay = document.getElementById('preferencesScopeDisplay');
+    const preferencesChangeTrustBtn = document.getElementById('preferencesChangeTrustBtn');
+    const preferencesSelectTrustBtn = document.getElementById('preferencesSelectTrustBtn');
+    const preferencesClearTrustBtn = document.getElementById('preferencesClearTrustBtn');
+    const preferencesNationalBtn = document.getElementById('preferencesNationalBtn');
+    const preferencesLocalBtn = document.getElementById('preferencesLocalBtn');
+    const preferencesBothBtn = document.getElementById('preferencesBothBtn');
+    const preferencesSaveBtn = document.getElementById('preferencesSaveBtn');
+    
+    if (!modal) {
+        console.error('[ERROR] Preferences modal not found');
+        return;
+    }
+    
+    // Show modal
+    modal.classList.remove('hidden');
+    
+    // Load current trust selection
+    let currentTrust = null;
+    try {
+        const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+            }
+        });
+        
+        const result = await response.json();
+        if (result.success && result.hospitalTrust) {
+            currentTrust = result.hospitalTrust;
+            preferencesTrustDisplay.textContent = currentTrust;
+            preferencesChangeTrustBtn.classList.remove('hidden');
+            preferencesSelectTrustBtn.classList.add('hidden');
+        } else {
+            preferencesTrustDisplay.textContent = 'None selected';
+            preferencesChangeTrustBtn.classList.add('hidden');
+            preferencesSelectTrustBtn.classList.remove('hidden');
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load current hospital trust:', error);
+        preferencesTrustDisplay.textContent = 'Error loading selection';
+        preferencesChangeTrustBtn.classList.add('hidden');
+        preferencesSelectTrustBtn.classList.remove('hidden');
+    }
+    
+    // Load current guideline scope selection
+    const savedScope = loadGuidelineScopeSelection();
+    if (savedScope) {
+        let scopeText = '';
+        if (savedScope.scope === 'national') {
+            scopeText = 'National Guidelines';
+        } else if (savedScope.scope === 'local') {
+            scopeText = `Local Guidelines (${savedScope.hospitalTrust || 'Trust'})`;
+        } else if (savedScope.scope === 'both') {
+            scopeText = `Both (National + ${savedScope.hospitalTrust || 'Trust'})`;
+        }
+        preferencesScopeDisplay.textContent = scopeText;
+        
+        // Highlight selected button
+        preferencesNationalBtn.classList.remove('selected');
+        preferencesLocalBtn.classList.remove('selected');
+        preferencesBothBtn.classList.remove('selected');
+        
+        if (savedScope.scope === 'national') {
+            preferencesNationalBtn.classList.add('selected');
+        } else if (savedScope.scope === 'local') {
+            preferencesLocalBtn.classList.add('selected');
+        } else if (savedScope.scope === 'both') {
+            preferencesBothBtn.classList.add('selected');
+        }
+    } else {
+        preferencesScopeDisplay.textContent = 'Not set';
+        preferencesNationalBtn.classList.remove('selected');
+        preferencesLocalBtn.classList.remove('selected');
+        preferencesBothBtn.classList.remove('selected');
+    }
+    
+    // Update button states based on trust selection
+    if (!currentTrust) {
+        preferencesLocalBtn.disabled = true;
+        preferencesBothBtn.disabled = true;
+    } else {
+        preferencesLocalBtn.disabled = false;
+        preferencesBothBtn.disabled = false;
+    }
+    
+    // Set up event handlers
+    const handleChangeTrustClick = async () => {
+        console.log('[DEBUG] Change Trust clicked in preferences');
+        modal.classList.add('hidden');
+        await showHospitalTrustModal();
+        
+        // Reload current trust after selection
+        try {
+            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+                }
+            });
+            const result = await response.json();
+            if (result.success && result.hospitalTrust) {
+                currentTrust = result.hospitalTrust;
+                // Update selectedScope if it was local/both to use new trust
+                if (selectedScope === 'local' || selectedScope === 'both') {
+                    // Keep the same scope but update trust reference
+                    preferencesScopeDisplay.textContent = selectedScope === 'local' 
+                        ? `Local Guidelines (${currentTrust})`
+                        : `Both (National + ${currentTrust})`;
+                }
+            }
+        } catch (error) {
+            console.error('[ERROR] Failed to reload trust:', error);
+        }
+        
+        // Reload preferences modal after trust selection
+        await showPreferencesModal();
+    };
+    
+    const handleSelectTrustClick = async () => {
+        console.log('[DEBUG] Select Trust clicked in preferences');
+        modal.classList.add('hidden');
+        await showHospitalTrustModal();
+        
+        // Reload current trust after selection
+        try {
+            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
+                }
+            });
+            const result = await response.json();
+            if (result.success && result.hospitalTrust) {
+                currentTrust = result.hospitalTrust;
+                // Update selectedScope if it was local/both to use new trust
+                if (selectedScope === 'local' || selectedScope === 'both') {
+                    // Keep the same scope but update trust reference
+                    preferencesScopeDisplay.textContent = selectedScope === 'local' 
+                        ? `Local Guidelines (${currentTrust})`
+                        : `Both (National + ${currentTrust})`;
+                }
+            }
+        } catch (error) {
+            console.error('[ERROR] Failed to reload trust:', error);
+        }
+        
+        // Reload preferences modal after trust selection
+        await showPreferencesModal();
+    };
+    
+    const handleClearTrustClick = async () => {
+        console.log('[DEBUG] Clear Trust clicked in preferences');
+        if (!confirm('Are you sure you want to clear your hospital trust selection?')) {
+            return;
+        }
+        
+        try {
+            const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ hospitalTrust: null })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                // Clear saved guideline scope selection if it was using local/both
+                const savedScope = loadGuidelineScopeSelection();
+                if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
+                    clearGuidelineScopeSelection();
+                }
+                
+                // Reload preferences modal
+                await showPreferencesModal();
+            } else {
+                throw new Error(result.error || 'Failed to clear hospital trust');
+            }
+        } catch (error) {
+            console.error('[ERROR] Failed to clear hospital trust:', error);
+            alert('Failed to clear hospital trust selection. Please try again.');
+        }
+    };
+    
+    let selectedScope = savedScope ? savedScope.scope : null;
+    
+    const handleNationalClick = () => {
+        console.log('[DEBUG] National scope selected in preferences');
+        selectedScope = 'national';
+        preferencesNationalBtn.classList.add('selected');
+        preferencesLocalBtn.classList.remove('selected');
+        preferencesBothBtn.classList.remove('selected');
+        preferencesScopeDisplay.textContent = 'National Guidelines';
+    };
+    
+    const handleLocalClick = () => {
+        if (!currentTrust) {
+            alert('Please select a hospital trust first.');
+            return;
+        }
+        console.log('[DEBUG] Local scope selected in preferences');
+        selectedScope = 'local';
+        preferencesNationalBtn.classList.remove('selected');
+        preferencesLocalBtn.classList.add('selected');
+        preferencesBothBtn.classList.remove('selected');
+        preferencesScopeDisplay.textContent = `Local Guidelines (${currentTrust})`;
+    };
+    
+    const handleBothClick = () => {
+        if (!currentTrust) {
+            alert('Please select a hospital trust first.');
+            return;
+        }
+        console.log('[DEBUG] Both scope selected in preferences');
+        selectedScope = 'both';
+        preferencesNationalBtn.classList.remove('selected');
+        preferencesLocalBtn.classList.remove('selected');
+        preferencesBothBtn.classList.add('selected');
+        preferencesScopeDisplay.textContent = `Both (National + ${currentTrust})`;
+    };
+    
+    const handleSaveClick = () => {
+        console.log('[DEBUG] Save Preferences clicked');
+        
+        // Save guideline scope selection if one was selected
+        if (selectedScope) {
+            const scopeSelection = {
+                scope: selectedScope,
+                hospitalTrust: (selectedScope === 'local' || selectedScope === 'both') ? currentTrust : null
+            };
+            saveGuidelineScopeSelection(scopeSelection);
+            console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
+        }
+        
+        // Close modal
+        modal.classList.add('hidden');
+        
+        // Remove event listeners
+        preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
+        preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
+        preferencesClearTrustBtn.removeEventListener('click', handleClearTrustClick);
+        preferencesNationalBtn.removeEventListener('click', handleNationalClick);
+        preferencesLocalBtn.removeEventListener('click', handleLocalClick);
+        preferencesBothBtn.removeEventListener('click', handleBothClick);
+        preferencesSaveBtn.removeEventListener('click', handleSaveClick);
+        closeBtn.removeEventListener('click', handleCloseClick);
+        
+        alert('Preferences saved successfully!');
+    };
+    
+    const handleCloseClick = () => {
+        console.log('[DEBUG] Close preferences modal clicked');
+        modal.classList.add('hidden');
+        
+        // Remove event listeners
+        preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
+        preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
+        preferencesClearTrustBtn.removeEventListener('click', handleClearTrustClick);
+        preferencesNationalBtn.removeEventListener('click', handleNationalClick);
+        preferencesLocalBtn.removeEventListener('click', handleLocalClick);
+        preferencesBothBtn.removeEventListener('click', handleBothClick);
+        preferencesSaveBtn.removeEventListener('click', handleSaveClick);
+        closeBtn.removeEventListener('click', handleCloseClick);
+    };
+    
+    // Add event listeners
+    preferencesChangeTrustBtn.addEventListener('click', handleChangeTrustClick);
+    preferencesSelectTrustBtn.addEventListener('click', handleSelectTrustClick);
+    preferencesClearTrustBtn.addEventListener('click', handleClearTrustClick);
+    preferencesNationalBtn.addEventListener('click', handleNationalClick);
+    preferencesLocalBtn.addEventListener('click', handleLocalClick);
+    preferencesBothBtn.addEventListener('click', handleBothClick);
+    preferencesSaveBtn.addEventListener('click', handleSaveClick);
+    closeBtn.addEventListener('click', handleCloseClick);
 }
 
 // Guideline Scope Selection Modal Functions
