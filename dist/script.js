@@ -2759,11 +2759,13 @@ function updateUndoRedoButtons() {
     if (hasProgrammaticHistory) {
         // Use programmatic change history for button states
         if (undoBtn) {
-            // Disable undo if we're at or before the first change (index -1 or 0)
+            // Enable undo if we're at index 0 or higher (can undo to before first change)
+            // Disable only if we're already before the first change (index -1)
             undoBtn.disabled = window.currentChangeIndex < 0;
         }
         if (redoBtn) {
             // Disable redo if we're at the last change
+            // Enable redo if currentChangeIndex < length - 1 (including -1)
             redoBtn.disabled = window.currentChangeIndex >= window.programmaticChangeHistory.length - 1;
         }
     } else if (editor) {
