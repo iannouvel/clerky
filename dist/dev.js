@@ -1850,6 +1850,166 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle enhance metadata button
+        const enhanceMetadataBtn = document.getElementById('enhanceMetadataBtn');
+        const enhancementStatus = document.getElementById('enhancementStatus');
+        
+        if (enhanceMetadataBtn) {
+            enhanceMetadataBtn.addEventListener('click', async function() {
+                if (!confirm('This will enhance metadata (scope, nation, hospitalTrust) for all guidelines using AI. This may take several minutes. Continue?')) {
+                    return;
+                }
+
+                enhanceMetadataBtn.disabled = true;
+                const originalText = enhanceMetadataBtn.textContent;
+                enhanceMetadataBtn.textContent = 'Enhancing...';
+                if (enhancementStatus) {
+                    enhancementStatus.style.display = 'block';
+                    enhancementStatus.textContent = 'Preparing enhancement...';
+                }
+
+                try {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    // Fetch all guidelines to get their IDs
+                    const guidelinesResponse = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    const guidelinesResult = await guidelinesResponse.json();
+                    if (!guidelinesResult.success || !guidelinesResult.guidelines) {
+                        throw new Error('Failed to fetch guidelines');
+                    }
+
+                    const allGuidelines = guidelinesResult.guidelines;
+                    const guidelineIds = allGuidelines.map(g => g.id || g.guidelineId).filter(id => id);
+                    
+                    if (guidelineIds.length === 0) {
+                        throw new Error('No guidelines found to enhance');
+                    }
+
+                    if (enhancementStatus) {
+                        enhancementStatus.textContent = `Enhancing metadata for ${guidelineIds.length} guidelines...`;
+                    }
+
+                    // Call batch enhancement endpoint
+                    const response = await fetch(`${SERVER_URL}/batchEnhanceMetadata`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({
+                            guidelineIds: guidelineIds,
+                            fieldsToEnhance: ['scope', 'nation', 'hospitalTrust']
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        if (enhancementStatus) {
+                            enhancementStatus.innerHTML = `
+                                <strong style="color: #28a745;">✓ Enhancement Complete!</strong><br>
+                                ${result.message}<br>
+                                Enhanced ${result.results?.reduce((sum, r) => sum + (r.enhancedFields?.length || 0), 0) || 0} fields across ${result.results?.filter(r => r.success).length || 0} guidelines
+                            `;
+                            enhancementStatus.style.backgroundColor = '#d4edda';
+                            enhancementStatus.style.border = '1px solid #c3e6cb';
+                            enhancementStatus.style.color = '#155724';
+                        }
+                    } else {
+                        throw new Error(result.error || 'Enhancement failed');
+                    }
+                } catch (error) {
+                    console.error('Error enhancing metadata:', error);
+                    if (enhancementStatus) {
+                        enhancementStatus.innerHTML = `<strong style="color: #dc3545;">✗ Error:</strong> ${error.message}`;
+                        enhancementStatus.style.backgroundColor = '#f8d7da';
+                        enhancementStatus.style.border = '1px solid #f5c6cb';
+                        enhancementStatus.style.color = '#721c24';
+                    }
+                } finally {
+                    enhanceMetadataBtn.disabled = false;
+                    enhanceMetadataBtn.textContent = originalText;
+                }
+            });
+        }
+        
+        // Handle fix nation classifications button
+        const fixNationsBtn = document.getElementById('fixNationsBtn');
+        const fixNationsStatus = document.getElementById('fixNationsStatus');
+        
+        if (fixNationsBtn) {
+            fixNationsBtn.addEventListener('click', async function() {
+                if (!confirm('This will fix incorrect nation classifications for all national guidelines based on their organization. Guidelines incorrectly marked as Scotland will be corrected. Continue?')) {
+                    return;
+                }
+
+                fixNationsBtn.disabled = true;
+                const originalText = fixNationsBtn.textContent;
+                fixNationsBtn.textContent = 'Fixing...';
+                if (fixNationsStatus) {
+                    fixNationsStatus.style.display = 'block';
+                    fixNationsStatus.textContent = 'Checking and fixing nation classifications...';
+                }
+
+                try {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    // Call fix nations endpoint
+                    const response = await fetch(`${SERVER_URL}/fixNationClassifications`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        if (fixNationsStatus) {
+                            fixNationsStatus.innerHTML = `
+                                <strong style="color: #28a745;">✓ Fix Complete!</strong><br>
+                                ${result.message}<br>
+                                Checked: ${result.stats.checked}, Fixed: ${result.stats.fixed}, Skipped: ${result.stats.skipped}, Errors: ${result.stats.errors}
+                                ${result.sampleUpdates && result.sampleUpdates.length > 0 ? '<br><br>Sample fixes:<br>' + result.sampleUpdates.map(u => `• ${u.title}: ${u.oldNation || 'null'} → ${u.newNation}`).join('<br>') : ''}
+                            `;
+                            fixNationsStatus.style.backgroundColor = '#d4edda';
+                            fixNationsStatus.style.border = '1px solid #c3e6cb';
+                            fixNationsStatus.style.color = '#155724';
+                        }
+                    } else {
+                        throw new Error(result.error || 'Fix failed');
+                    }
+                } catch (error) {
+                    console.error('Error fixing nation classifications:', error);
+                    if (fixNationsStatus) {
+                        fixNationsStatus.innerHTML = `<strong style="color: #dc3545;">✗ Error:</strong> ${error.message}`;
+                        fixNationsStatus.style.backgroundColor = '#f8d7da';
+                        fixNationsStatus.style.border = '1px solid #f5c6cb';
+                        fixNationsStatus.style.color = '#721c24';
+                    }
+                } finally {
+                    fixNationsBtn.disabled = false;
+                    fixNationsBtn.textContent = originalText;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
