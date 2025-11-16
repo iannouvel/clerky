@@ -1209,9 +1209,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         .guideline-checkbox-label {
             display: flex;
             align-items: center;
-            padding: 12px 15px;
+            padding: 12px 15px 12px 15px;
             cursor: pointer;
             width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
         }
         
         .guideline-checkbox {
@@ -1219,10 +1221,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             width: 18px;
             height: 18px;
             cursor: pointer;
+            flex-shrink: 0;
         }
         
         .guideline-info {
             flex: 1;
+            min-width: 0;
+            overflow: hidden;
         }
         
         .guideline-title {
@@ -1241,8 +1246,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             display: grid;
             grid-template-columns: 1fr auto min-content;
             align-items: baseline;
-            gap: 12px;
+            gap: 10px;
             min-width: 0;
+            width: 100%;
+            max-width: 100%;
         }
         
         .relevance {
