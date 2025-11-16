@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Alignment Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .guideline-selection-interface {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .guideline-category {
+            margin: 20px 0;
+        }
+        
+        .guideline-category h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        
+        .guidelines-list {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .guideline-item {
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+        
+        .guideline-item:last-child {
+            border-bottom: none;
+        }
+        
+        .guideline-checkbox-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .guideline-checkbox {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .guideline-info {
+            flex: 1;
+        }
+        
+        .guideline-title {
+            font-weight: 500;
+            color: #2c3e50;
+            line-height: 1.3;
+            flex: 1;
+            min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .guideline-content {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .relevance {
+            color: #28a745;
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 0.9em;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+        
+        .test-section {
+            margin-top: 30px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 4px;
+        }
+        
+        .test-section h4 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Percentage Alignment Test</h1>
+    
+    <div class="guideline-selection-interface">
+        <div class="guideline-category">
+            <h3>🎯 Most Relevant Guidelines</h3>
+            <div class="guidelines-list">
+                
+                <!-- Single line title -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Nice - 2025 - Intrapartum Care - NICE</span>
+                                <span class="relevance">95%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Short single line -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Miscarriage Guideline</span>
+                                <span class="relevance">90%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Long title that wraps -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Transfusion Medicine - 2025 - Regan - Guideline for the Investigation and Management of Red Cell Antibodies in Pregnancy</span>
+                                <span class="relevance">80%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Another wrapped title -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Bjog 2016 - Prevention and Management of Postpartum Haemorrhage</span>
+                                <span class="relevance">80%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Medium length -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Fsrh - 2023 - Intrauterine Contraception</span>
+                                <span class="relevance">85%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- Very long wrapped title -->
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" class="guideline-checkbox" checked>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">Management of Suspected Ovarian Masses in Premenopausal Women - RCOG</span>
+                                <span class="relevance">75%</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h4>Test Instructions:</h4>
+        <p>Check that all percentages (95%, 90%, 80%, 85%, 75%) are:</p>
+        <ul>
+            <li>Right-aligned consistently</li>
+            <li>Aligned with the <strong>first line</strong> of the title (not the wrapped line)</li>
+            <li>At the same vertical position relative to the first line of text</li>
+        </ul>
+        <p>If wrapped titles show percentages aligned with the second line, the fix needs adjustment.</p>
+    </div>
+</body>
+</html>

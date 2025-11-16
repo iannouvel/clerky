@@ -259,6 +259,40 @@ class CacheManager {
         }
     }
 
+    // Clear guidelines cache only
+    async clearGuidelinesCache() {
+        try {
+            await this.init();
+
+            return new Promise((resolve, reject) => {
+                const transaction = this.db.transaction(['guidelines', 'metadata'], 'readwrite');
+                const guidelinesStore = transaction.objectStore('guidelines');
+                const metadataStore = transaction.objectStore('metadata');
+
+                // Clear guidelines
+                const clearRequest = guidelinesStore.clear();
+
+                clearRequest.onsuccess = () => {
+                    // Clear metadata
+                    metadataStore.delete('guidelines');
+                    console.log('[CACHE] Guidelines cache cleared');
+                };
+
+                transaction.oncomplete = () => {
+                    resolve(true);
+                };
+
+                transaction.onerror = () => {
+                    console.error('[CACHE] Error clearing guidelines cache:', transaction.error);
+                    reject(transaction.error);
+                };
+            });
+        } catch (error) {
+            console.error('[CACHE] Error in clearGuidelinesCache:', error);
+            return false;
+        }
+    }
+
     // Clear all caches
     async clearAll() {
         try {

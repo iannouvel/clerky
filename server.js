@@ -12325,15 +12325,11 @@ async function getAllGuidelines() {
       return [];
     }
 
-    // Check and migrate guideline IDs if needed
-    console.log('[DEBUG] Checking guideline IDs...');
-    await checkAndMigrateGuidelineIds();
+    // NOTE: Migration functions removed from critical path for performance
+    // Migrations should be run via admin endpoint or background job, not on every request
+    // See /migrate-guideline-ids endpoint for manual migration trigger
 
-    // Check and migrate null metadata if needed
-    console.log('[DEBUG] Checking for null metadata...');
-    await migrateNullMetadata();
-
-    console.log('[DEBUG] Fetching guidelines from single collection (post-migration)');
+    console.log('[DEBUG] Fetching guidelines from single collection');
     
     // Add timeout and better error handling for Firestore queries
     const timeout = new Promise((_, reject) => 
@@ -12362,15 +12358,8 @@ async function getAllGuidelines() {
       const data = doc.data();
       const condensedFromCollection = condensedMap.get(doc.id);
       
-      console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
-        hasGuidelineId: !!data.guidelineId,
-        guidelineId: data.guidelineId,
-        hasContent: !!data.content,
-        hasSummary: !!data.summary,
-        hasKeywords: !!data.keywords,
-        hasCondensed: !!data.condensed,
-        hasCondensedFromCollection: !!condensedFromCollection
-      });
+      // Reduced logging for performance - only log in development if needed
+      // console.log(`[DEBUG] Processing guideline: ${doc.id}`);
       
       result.push({
         ...data,
