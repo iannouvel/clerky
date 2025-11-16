@@ -981,6 +981,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Always include PDF link placeholder to maintain grid structure
+            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
             htmlContent += `
                 <div class="guideline-item">
@@ -995,7 +997,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLink}
+                                ${pdfLinkHtml}
                             </div>
                         </div>
                     </label>
@@ -1014,6 +1016,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Always include PDF link placeholder to maintain grid structure
+            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
             htmlContent += `
                 <div class="guideline-item">
@@ -1027,7 +1031,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLink}
+                                ${pdfLinkHtml}
                             </div>
                         </div>
                     </label>
@@ -1046,6 +1050,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Always include PDF link placeholder to maintain grid structure
+            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
             htmlContent += `
                 <div class="guideline-item">
@@ -1059,7 +1065,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLink}
+                                ${pdfLinkHtml}
                             </div>
                         </div>
                     </label>
@@ -1078,6 +1084,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Always include PDF link placeholder to maintain grid structure
+            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
             htmlContent += `
                 <div class="guideline-item">
@@ -1091,7 +1099,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLink}
+                                ${pdfLinkHtml}
                             </div>
                         </div>
                     </label>
@@ -1279,6 +1287,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .guideline-selection-interface .pdf-download-link:empty {
             display: none;
+        }
+        
+        .pdf-download-link-placeholder {
+            visibility: hidden;
+            width: 0;
+            min-width: 0;
+            flex-shrink: 0;
         }
         
         .selection-info {
