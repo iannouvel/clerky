@@ -2007,16 +2007,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 idCell.style.padding = '10px';
                 idCell.style.fontSize = '12px';
                 idCell.style.fontFamily = 'monospace';
+                idCell.style.width = '10%';
                 idCell.textContent = (guideline.id || guideline.guidelineId || '').substring(0, 8) + '...';
                 idCell.title = guideline.id || guideline.guidelineId || '';
                 
                 const titleCell = document.createElement('td');
                 titleCell.style.padding = '10px';
                 titleCell.style.fontSize = '13px';
+                titleCell.style.width = '25%';
+                titleCell.style.wordWrap = 'break-word';
+                titleCell.style.overflowWrap = 'break-word';
                 titleCell.textContent = guideline.title || guideline.humanFriendlyName || 'Untitled';
                 
                 const displayNameCell = document.createElement('td');
                 displayNameCell.style.padding = '10px';
+                displayNameCell.style.width = '35%';
                 const displayNameInput = document.createElement('input');
                 displayNameInput.type = 'text';
                 displayNameInput.value = guideline.displayName || '';
@@ -2026,16 +2031,19 @@ document.addEventListener('DOMContentLoaded', async function() {
                 displayNameInput.style.borderRadius = '4px';
                 displayNameInput.style.fontSize = '13px';
                 displayNameInput.style.fontFamily = "'Inter', sans-serif";
+                displayNameInput.style.boxSizing = 'border-box';
                 displayNameInput.dataset.originalValue = guideline.displayName || '';
                 
                 const orgCell = document.createElement('td');
                 orgCell.style.padding = '10px';
                 orgCell.style.fontSize = '13px';
+                orgCell.style.width = '20%';
                 orgCell.textContent = guideline.organisation || '-';
                 
                 const actionsCell = document.createElement('td');
                 actionsCell.style.padding = '10px';
                 actionsCell.style.textAlign = 'center';
+                actionsCell.style.width = '10%';
                 const saveBtn = document.createElement('button');
                 saveBtn.textContent = 'Save';
                 saveBtn.className = 'dev-btn';
