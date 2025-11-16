@@ -2233,12 +2233,12 @@ async function loadGuidelinesFromFirestore() {
         
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
-        // Get user ID token using the imported auth object with force refresh to prevent 403 errors
+        // Get user ID token - only refresh if expired (not forcing refresh for better performance)
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
-        const idToken = await user.getIdToken(true); // Force refresh token
+        const idToken = await user.getIdToken(); // Use cached token if still valid
 
         // Fetch guidelines from Firestore
         const response = await fetch(`${window.SERVER_URL}/getAllGuidelines`, {
@@ -2383,6 +2383,13 @@ function setupGuidelinesListener() {
                 // The batch sync endpoint handles metadata extraction inline
                 // await triggerMetadataCompletionForAll();
                 
+                // Invalidate cache when changes detected
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
+                
                 // Refresh guidelines data after processing
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
@@ -2390,6 +2397,13 @@ function setupGuidelinesListener() {
                 }, 3000);
             } else if (addedDocs.length > 0) {
                 // If only processing new guidelines without count change detection
+                // Invalidate cache when new guidelines are added
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
+                
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
                     loadGuidelinesFromFirestore();
@@ -2401,6 +2415,13 @@ function setupGuidelinesListener() {
             
             if (modifiedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
+                
+                // Invalidate cache when guidelines are modified
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
                 
                 // Update global variables with modified data
                 modifiedDocs.forEach(change => {
@@ -2415,6 +2436,12 @@ function setupGuidelinesListener() {
                         console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
                     }
                 });
+                
+                // Reload guidelines to get fresh data
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
+                }, 1000);
             }
         }, (error) => {
             console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
@@ -7256,7 +7283,7 @@ async function showClinicalIssuesDropdown() {
         // Create dropdown HTML
         let dropdownHtml = `
             <div class="clinical-issues-selector">
-                <h3>⚡ Load Clinical Clerking (Fast Mode)</h3>
+                <h3>⚡ Load Clinical Clerking</h3>
                 <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
                 
                 <div class="issue-category">
@@ -10918,7 +10945,7 @@ const ClinicalConditionsService = {
                 throw new Error('User not authenticated');
             }
             
-            const idToken = await user.getIdToken(true); // Force refresh token
+            const idToken = await user.getIdToken(); // Only refresh if expired (was: true - force refresh)
             
             const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
                 method: 'GET',
