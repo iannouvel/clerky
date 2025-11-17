@@ -2043,6 +2043,29 @@ document.addEventListener('DOMContentLoaded', async function() {
         function displayGuidelinesTable(guidelines) {
             guidelinesTableBody.innerHTML = '';
             
+            // Collect unique organisations for the dropdown
+            const organisationsSet = new Set();
+            guidelines.forEach(guideline => {
+                if (guideline.organisation && guideline.organisation.trim()) {
+                    organisationsSet.add(guideline.organisation.trim());
+                }
+            });
+            const organisations = Array.from(organisationsSet).sort();
+            
+            // Create a datalist for organisation autocomplete (shared across all rows)
+            let orgDatalist = document.getElementById('organisationDatalist');
+            if (!orgDatalist) {
+                orgDatalist = document.createElement('datalist');
+                orgDatalist.id = 'organisationDatalist';
+                document.body.appendChild(orgDatalist);
+            }
+            orgDatalist.innerHTML = ''; // Clear existing options
+            organisations.forEach(org => {
+                const option = document.createElement('option');
+                option.value = org;
+                orgDatalist.appendChild(option);
+            });
+            
             guidelines.forEach(guideline => {
                 const row = document.createElement('tr');
                 row.style.borderBottom = '1px solid #dee2e6';
@@ -2083,7 +2106,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 orgCell.style.padding = '10px';
                 orgCell.style.fontSize = '13px';
                 orgCell.style.width = '18%';
-                orgCell.textContent = guideline.organisation || '-';
+                
+                const orgInput = document.createElement('input');
+                orgInput.type = 'text';
+                orgInput.value = guideline.organisation || '';
+                orgInput.setAttribute('list', 'organisationDatalist');
+                orgInput.style.width = '100%';
+                orgInput.style.padding = '6px 8px';
+                orgInput.style.border = '1px solid #ced4da';
+                orgInput.style.borderRadius = '4px';
+                orgInput.style.fontSize = '13px';
+                orgInput.style.fontFamily = "'Inter', sans-serif";
+                orgInput.style.boxSizing = 'border-box';
+                orgInput.dataset.originalValue = guideline.organisation || '';
+                
+                orgCell.appendChild(orgInput);
                 
                 const actionsCell = document.createElement('td');
                 actionsCell.style.padding = '10px';
@@ -2097,30 +2134,54 @@ document.addEventListener('DOMContentLoaded', async function() {
                 saveBtn.style.marginRight = '5px';
                 saveBtn.disabled = true;
                 
-                displayNameInput.addEventListener('input', function() {
-                    const hasChanges = this.value !== this.dataset.originalValue;
+                // Function to check for changes in either field
+                function checkForChanges() {
+                    const displayNameChanged = displayNameInput.value !== displayNameInput.dataset.originalValue;
+                    const orgChanged = orgInput.value !== orgInput.dataset.originalValue;
+                    const hasChanges = displayNameChanged || orgChanged;
+                    
                     saveBtn.disabled = !hasChanges;
                     
                     if (hasChanges) {
-                        this.style.borderColor = '#007bff';
-                        this.style.backgroundColor = '#f0f8ff';
+                        if (displayNameChanged) {
+                            displayNameInput.style.borderColor = '#007bff';
+                            displayNameInput.style.backgroundColor = '#f0f8ff';
+                        } else {
+                            displayNameInput.style.borderColor = '#ced4da';
+                            displayNameInput.style.backgroundColor = '#fff';
+                        }
+                        
+                        if (orgChanged) {
+                            orgInput.style.borderColor = '#007bff';
+                            orgInput.style.backgroundColor = '#f0f8ff';
+                        } else {
+                            orgInput.style.borderColor = '#ced4da';
+                            orgInput.style.backgroundColor = '#fff';
+                        }
+                        
                         saveBtn.style.backgroundColor = '#28a745';
                         saveBtn.style.color = '#fff';
                         saveBtn.style.borderColor = '#28a745';
                     } else {
-                        this.style.borderColor = '#ced4da';
-                        this.style.backgroundColor = '#fff';
+                        displayNameInput.style.borderColor = '#ced4da';
+                        displayNameInput.style.backgroundColor = '#fff';
+                        orgInput.style.borderColor = '#ced4da';
+                        orgInput.style.backgroundColor = '#fff';
                         saveBtn.style.backgroundColor = '';
                         saveBtn.style.color = '';
                         saveBtn.style.borderColor = '';
                     }
-                });
+                }
+                
+                displayNameInput.addEventListener('input', checkForChanges);
+                orgInput.addEventListener('input', checkForChanges);
                 
                 displayNameCell.appendChild(displayNameInput);
                 
                 saveBtn.addEventListener('click', async function() {
                     const guidelineId = row.dataset.guidelineId;
                     const newDisplayName = displayNameInput.value;
+                    const newOrganisation = orgInput.value.trim();
                     
                     saveBtn.disabled = true;
                     saveBtn.textContent = 'Saving...';
@@ -2132,15 +2193,22 @@ document.addEventListener('DOMContentLoaded', async function() {
                         }
                         const token = await user.getIdToken();
                         
+                        // Build update object with only changed fields
+                        const updates = {};
+                        if (displayNameInput.value !== displayNameInput.dataset.originalValue) {
+                            updates.displayName = newDisplayName;
+                        }
+                        if (orgInput.value !== orgInput.dataset.originalValue) {
+                            updates.organisation = newOrganisation || null; // Allow empty string to clear
+                        }
+                        
                         const response = await fetch(`${SERVER_URL}/guideline/${guidelineId}`, {
                             method: 'PUT',
                             headers: {
                                 'Authorization': `Bearer ${token}`,
                                 'Content-Type': 'application/json'
                             },
-                            body: JSON.stringify({
-                                displayName: newDisplayName
-                            })
+                            body: JSON.stringify(updates)
                         });
                         
                         if (!response.ok) {
@@ -2148,9 +2216,20 @@ document.addEventListener('DOMContentLoaded', async function() {
                             throw new Error(errorData.error || 'Failed to save');
                         }
                         
+                        // Update original values
                         displayNameInput.dataset.originalValue = newDisplayName;
-                        displayNameInput.style.borderColor = '#28a745';
-                        displayNameInput.style.backgroundColor = '#d4edda';
+                        orgInput.dataset.originalValue = newOrganisation;
+                        
+                        // Show success feedback
+                        if (updates.displayName !== undefined) {
+                            displayNameInput.style.borderColor = '#28a745';
+                            displayNameInput.style.backgroundColor = '#d4edda';
+                        }
+                        if (updates.organisation !== undefined) {
+                            orgInput.style.borderColor = '#28a745';
+                            orgInput.style.backgroundColor = '#d4edda';
+                        }
+                        
                         saveBtn.textContent = 'Saved ✓';
                         saveBtn.style.backgroundColor = '#28a745';
                         saveBtn.style.color = '#fff';
@@ -2158,6 +2237,8 @@ document.addEventListener('DOMContentLoaded', async function() {
                         setTimeout(() => {
                             displayNameInput.style.borderColor = '#ced4da';
                             displayNameInput.style.backgroundColor = '#fff';
+                            orgInput.style.borderColor = '#ced4da';
+                            orgInput.style.backgroundColor = '#fff';
                             saveBtn.textContent = 'Save';
                             saveBtn.disabled = true;
                             saveBtn.style.backgroundColor = '';
@@ -2165,7 +2246,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         }, 2000);
                         
                     } catch (error) {
-                        console.error('Error saving displayName:', error);
+                        console.error('Error saving fields:', error);
                         saveBtn.textContent = 'Error';
                         saveBtn.style.backgroundColor = '#dc3545';
                         saveBtn.style.color = '#fff';
