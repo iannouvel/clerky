@@ -12,7 +12,8 @@ const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
-let currentModel = 'OpenAI'; // Track current model
+// Track current model - default to DeepSeek to match server and main app
+let currentModel = 'DeepSeek';
 const MAX_RETRIES = 3; // Maximum number of retries for API calls
 const RETRY_DELAYS = [1000, 3000, 5000]; // Delays between retries in milliseconds
 
@@ -35,10 +36,42 @@ document.addEventListener('DOMContentLoaded', async function() {
         const buttons = document.querySelectorAll('.nav-btn');
         const contents = document.querySelectorAll('.tab-content');
         const modelToggle = document.getElementById('modelToggle');
-        // Set initial model toggle text
-        const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-        modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
-        modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+
+        // Helper to update the local toggle UI from the currentModel value
+        function applyModelToToggle() {
+            if (!modelToggle) return;
+            const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
+            modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
+            modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
+        }
+
+        // If the user is logged in, fetch their saved AI preference so dev tools
+        // and the main app share the same provider and default to DeepSeek if unset
+        const user = auth.currentUser;
+        if (user) {
+            try {
+                const token = await user.getIdToken();
+                const prefResponse = await fetch(`${SERVER_URL}/updateAIPreference`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (prefResponse.ok) {
+                    const prefData = await prefResponse.json();
+                    if (prefData && prefData.provider) {
+                        currentModel = prefData.provider;
+                    }
+                }
+            } catch (prefError) {
+                console.warn('Failed to load AI preference for dev tools, using default:', prefError);
+            }
+        }
+
+        // Apply initial state to the toggle
+        applyModelToToggle();
         
         let currentLogIndex = 0;
         let logs = [];
@@ -382,7 +415,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
         
         // Add click event listener for model toggle
-        modelToggle.addEventListener('click', updateAIModel);
+        if (modelToggle) {
+            modelToggle.addEventListener('click', updateAIModel);
+        }
 
         // Check authentication state on page load
         onAuthStateChanged(auth, (user) => {
