@@ -29,6 +29,107 @@ if (document.readyState === 'loading') {
     loadVersionNumber();
 }
 
+// ===== Shared AI Model Preference Helpers =====
+
+// Fetch the user's current AI provider preference from the server.
+// Falls back to DeepSeek if anything goes wrong.
+async function fetchUserAIProviderPreference() {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('[AI PREF] No authenticated user, defaulting to DeepSeek');
+            return 'DeepSeek';
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateAIPreference`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            console.warn('[AI PREF] Failed to fetch preference, status:', response.status);
+            return 'DeepSeek';
+        }
+
+        const data = await response.json();
+        if (data && data.provider) {
+            console.log('[AI PREF] Loaded provider preference:', data.provider);
+            return data.provider;
+        }
+
+        return 'DeepSeek';
+    } catch (error) {
+        console.error('[AI PREF] Error fetching provider preference, defaulting to DeepSeek:', error);
+        return 'DeepSeek';
+    }
+}
+
+// Initialise the top-bar model selector so it reflects the user's saved AI
+// provider preference (or DeepSeek by default) and keeps the server in sync.
+async function initialiseModelSelector() {
+    const selectEl = document.getElementById('modelSelect');
+    if (!selectEl) {
+        return;
+    }
+
+    try {
+        // Get current provider preference (DeepSeek default on error)
+        const provider = await fetchUserAIProviderPreference();
+
+        // Apply to the select element if the option exists
+        if (provider && Array.from(selectEl.options).some(opt => opt.value === provider)) {
+            selectEl.value = provider;
+        } else {
+            // Fallback to DeepSeek if an unknown provider is returned
+            selectEl.value = 'DeepSeek';
+        }
+
+        // When the user changes the selection, persist it via /updateAIPreference
+        selectEl.addEventListener('change', async (event) => {
+            const newProvider = event.target.value;
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    console.warn('[AI PREF] Cannot update provider, user not authenticated');
+                    return;
+                }
+
+                const token = await user.getIdToken();
+                const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateAIPreference`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({ provider: newProvider })
+                });
+
+                const data = await response.json().catch(() => ({}));
+                if (!response.ok && response.status !== 202) {
+                    console.error('[AI PREF] Failed to update provider:', data);
+                } else {
+                    console.log('[AI PREF] Provider updated to:', newProvider, data.warning ? '(with warning)' : '');
+                }
+            } catch (err) {
+                console.error('[AI PREF] Error updating provider preference:', err);
+            }
+        });
+    } catch (error) {
+        console.error('[AI PREF] Failed to initialise model selector:', error);
+    }
+}
+
+// Kick off model selector initialisation after DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialiseModelSelector);
+} else {
+    initialiseModelSelector();
+}
+
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
