@@ -3249,3 +3249,474 @@ html, body {
         width: 100%;
     }
 }
+
+/* ===== Mobile-Friendly Styles ===== */
+
+/* Mobile View Toggle Buttons */
+#mobileViewToggle {
+    display: none;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 16px;
+}
+
+#mobileViewToggle.hidden {
+    display: none !important;
+}
+
+.mobile-view-toggle-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.mobile-view-toggle-btn {
+    flex: 1;
+    padding: 12px 16px;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px; /* Touch-friendly size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-view-toggle-btn:hover {
+    background: #e8e8e8;
+    border-color: var(--accent-color);
+}
+
+.mobile-view-toggle-btn.active {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0, 184, 148, 0.3);
+}
+
+/* Smooth transition for view switching */
+.mobile-mode .user-input-col,
+.mobile-mode .summary-col {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-mode .user-input-col[style*="display: none"],
+.mobile-mode .summary-col[style*="display: none"] {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+/* Mobile Mode - General Styles */
+@media (max-width: 768px) {
+    body.mobile-mode {
+        overflow-x: hidden;
+    }
+    
+    /* Simplify top bar for mobile */
+    .top-bar {
+        padding: 8px 12px;
+        flex-wrap: wrap;
+        min-height: auto;
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .top-bar-left {
+        flex: 1 1 100%;
+        margin-bottom: 8px;
+        order: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .top-bar-center {
+        flex: 1 1 100%;
+        order: 3;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+        width: 100%;
+    }
+    
+    .right-content {
+        order: 2;
+        flex: 0 0 auto;
+        margin-left: auto;
+    }
+    
+    /* Touch-friendly buttons in top bar */
+    .top-bar .nav-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 10px 16px;
+        font-size: 14px;
+        margin: 2px;
+        touch-action: manipulation; /* Prevent double-tap zoom */
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .top-bar-center .nav-btn {
+        flex: 1 1 auto;
+        min-width: 120px;
+        max-width: calc(50% - 4px);
+    }
+    
+    /* Make primary action buttons more prominent */
+    .top-bar-center .nav-btn.primary {
+        background: rgba(255, 255, 255, 0.25);
+        font-weight: 600;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .top-bar-center .nav-btn.primary:hover,
+    .top-bar-center .nav-btn.primary:active {
+        background: rgba(255, 255, 255, 0.35);
+    }
+    
+    /* Simplify secondary buttons */
+    .top-bar-center .nav-btn.secondary {
+        background: rgba(255, 255, 255, 0.15);
+        font-weight: 500;
+    }
+    
+    .top-bar-center .nav-btn.secondary:hover,
+    .top-bar-center .nav-btn.secondary:active {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    /* Simplify logo and version */
+    .logo {
+        font-size: 1.2rem;
+        padding: 4px 10px;
+    }
+    
+    .version-number {
+        font-size: 0.75rem;
+        margin-left: 8px;
+        display: none; /* Hide version on mobile to save space */
+    }
+    
+    .model-select {
+        min-width: 150px;
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        touch-action: manipulation;
+    }
+    
+    /* Simplify model selector on mobile */
+    .model-selector {
+        margin-left: 0;
+    }
+    
+    /* Main content area adjustments */
+    #mainSection {
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    /* Single column view - show only one at a time */
+    .mobile-mode .main-two-column {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        height: auto;
+    }
+    
+    .mobile-mode .main-column {
+        width: 100%;
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        min-height: calc(100vh - 200px);
+    }
+    
+    /* Hide one column based on active view with smooth transition */
+    .mobile-mode .user-input-col[style*="display: none"],
+    .mobile-mode .summary-col[style*="display: none"] {
+        display: none !important;
+        opacity: 0;
+    }
+    
+    /* Show active column with smooth appearance */
+    .mobile-mode .user-input-col:not([style*="display: none"]),
+    .mobile-mode .summary-col:not([style*="display: none"]) {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Simplify column headers */
+    .mobile-mode .column-header {
+        padding: 10px 12px;
+        font-size: 1rem;
+        min-height: 48px;
+        background: #f8f9fa;
+        border-bottom: 2px solid #e0e0e0;
+    }
+    
+    .mobile-mode .header-buttons {
+        gap: 6px;
+    }
+    
+    .mobile-mode .nav-btn.icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .mobile-mode .record-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Simplify user input area */
+    .mobile-mode .user-input-col .tiptap-editor {
+        min-height: 300px;
+        height: calc(100vh - 250px);
+    }
+    
+    .mobile-mode .user-input-col .tiptap-editor .ProseMirror {
+        padding: 16px;
+        font-size: 16px; /* Prevent zoom on iOS */
+        min-height: 300px;
+    }
+    
+    /* Simplify summary area */
+    .mobile-mode .summary-col .transcript-pane {
+        padding: 16px;
+        font-size: 15px;
+        min-height: 300px;
+        height: calc(100vh - 200px);
+    }
+    
+    /* Remove hover effects on mobile */
+    .mobile-mode .main-column:hover {
+        flex: 1 1 0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        transform: none;
+    }
+    
+    /* Ensure no transform effects on mobile */
+    .mobile-mode .main-column {
+        transform: none;
+    }
+    
+    /* Simplify card shadows */
+    .mobile-mode .main-column {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        border: none;
+    }
+    
+    /* Optimise spacing */
+    .mobile-mode .container {
+        padding: 0;
+        margin-top: 0;
+    }
+    
+    /* Reduce padding throughout mobile interface */
+    .mobile-mode #mainContentArea {
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Simplify borders and remove decorative elements */
+    .mobile-mode .column-header {
+        border-bottom: 1px solid #e0e0e0;
+        box-shadow: none;
+    }
+    
+    /* Remove unnecessary gradients and effects */
+    .mobile-mode .top-bar {
+        background: linear-gradient(135deg, #008060, #007C8C);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Simplify text shadows on mobile */
+    .mobile-mode .nav-btn {
+        text-shadow: none;
+    }
+    
+    /* Reduce margins and padding in content areas */
+    .mobile-mode .transcript-pane,
+    .mobile-mode .tiptap-editor {
+        padding: 12px;
+    }
+    
+    /* Simplify scrollbars on mobile */
+    .mobile-mode ::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .mobile-mode ::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+    
+    /* Remove hover effects that don't work on touch */
+    .mobile-mode *:hover {
+        transition: none;
+    }
+    
+    /* Simplify focus states for touch devices */
+    .mobile-mode .nav-btn:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline-offset: 2px;
+    }
+    
+    /* Settings button adjustments */
+    .mobile-mode .settings-btn {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+    
+    .mobile-mode .settings-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* User info adjustments */
+    .mobile-mode .user-info {
+        font-size: 0.85rem;
+    }
+    
+    .mobile-mode .far-right {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .mobile-mode #signOutBtn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Show mobile view toggle */
+    #mobileViewToggle {
+        display: block;
+        padding: 12px 16px;
+        background: white;
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0;
+    }
+    
+    .mobile-view-toggle-container {
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    /* Ensure mobile view toggle buttons are prominent */
+    .mobile-view-toggle-btn {
+        font-size: 15px;
+        font-weight: 600;
+        min-height: 48px;
+    }
+    
+    /* Simplify main content area padding */
+    #mainContentArea {
+        padding: 0;
+    }
+    
+    /* Remove unnecessary margins and padding */
+    .mobile-mode #mainTwoColumn {
+        margin-top: 0;
+        padding: 0;
+    }
+    
+    /* Simplify shadows and borders for mobile */
+    .mobile-mode .main-column {
+        border: none;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Optimise font sizes for readability */
+    .mobile-mode .column-header {
+        font-size: 0.95rem;
+    }
+    
+    /* Ensure proper spacing for action buttons */
+    .mobile-mode .top-bar-center {
+        margin: 8px 0;
+        padding: 0;
+    }
+    
+    /* Make buttons stack better on mobile */
+    .mobile-mode .top-bar-center .nav-btn {
+        margin: 2px;
+        flex: 1 1 calc(50% - 4px);
+        max-width: calc(50% - 4px);
+    }
+    
+    /* Hide less critical elements on mobile */
+    .mobile-mode .version-number {
+        display: none;
+    }
+    
+    /* Simplify settings menu for mobile */
+    .mobile-mode .settings-menu {
+        right: 0;
+        left: auto;
+        min-width: 200px;
+    }
+}
+
+/* Additional mobile optimisations for very small screens */
+@media (max-width: 480px) {
+    .mobile-mode .top-bar-center .nav-btn {
+        flex: 1 1 100%;
+        width: 100%;
+        margin: 4px 0;
+        max-width: 100%;
+    }
+    
+    .mobile-mode .top-bar-center {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .mobile-mode .model-select {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .mobile-mode .user-input-col .tiptap-editor .ProseMirror {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .mobile-mode .summary-col .transcript-pane {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    /* Further simplify top bar on very small screens */
+    .mobile-mode .top-bar-left {
+        flex: 1 1 auto;
+    }
+    
+    .mobile-mode .logo {
+        font-size: 1rem;
+        padding: 4px 8px;
+    }
+    
+    /* Stack user info vertically on very small screens */
+    .mobile-mode .far-right {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    /* Make toggle buttons full width on very small screens */
+    .mobile-view-toggle-btn {
+        min-height: 44px;
+    }
+}
