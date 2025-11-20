@@ -138,6 +138,160 @@ window.programmaticChangeHistory = [];
 window.hasColoredChanges = false;
 window.currentChangeIndex = -1;
 
+// ===== Mobile Detection & Layout Management =====
+
+// Global mobile state
+window.isMobile = false;
+window.mobileView = 'userInput'; // 'userInput' or 'summary1'
+
+// Detect if device is mobile based on viewport width and user agent
+function detectMobile() {
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const isMobileWidth = viewportWidth <= 768;
+    
+    // User agent detection for additional mobile device detection
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isMobileUA = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+    
+    const wasMobile = window.isMobile;
+    window.isMobile = isMobileWidth || (isMobileUA && viewportWidth <= 1024);
+    
+    // If mobile state changed, update layout
+    if (wasMobile !== window.isMobile) {
+        applyMobileLayout();
+    }
+    
+    return window.isMobile;
+}
+
+// Apply mobile layout changes
+function applyMobileLayout() {
+    const body = document.body;
+    const mainContent = document.getElementById('mainContent');
+    const mainTwoColumn = document.getElementById('mainTwoColumn');
+    const userInputCol = document.querySelector('.user-input-col');
+    const summaryCol = document.querySelector('.summary-col');
+    const mobileToggleContainer = document.getElementById('mobileViewToggle');
+    
+    // If mainContent doesn't exist yet, try again after a short delay
+    if (!mainContent || !mainTwoColumn) {
+        // Retry after a short delay if elements aren't ready
+        setTimeout(() => {
+            if (document.getElementById('mainContent') && document.getElementById('mainTwoColumn')) {
+                applyMobileLayout();
+            }
+        }, 100);
+        return;
+    }
+    
+    if (window.isMobile) {
+        body.classList.add('mobile-mode');
+        mainContent.classList.add('mobile-mode');
+        
+        // Show mobile toggle buttons
+        if (mobileToggleContainer) {
+            mobileToggleContainer.classList.remove('hidden');
+        }
+        
+        // Load saved view preference or default to userInput
+        const savedView = sessionStorage.getItem('mobileView') || 'userInput';
+        switchMobileView(savedView);
+    } else {
+        body.classList.remove('mobile-mode');
+        mainContent.classList.remove('mobile-mode');
+        
+        // Hide mobile toggle buttons
+        if (mobileToggleContainer) {
+            mobileToggleContainer.classList.add('hidden');
+        }
+        
+        // Show both columns on desktop
+        if (userInputCol) userInputCol.style.display = '';
+        if (summaryCol) summaryCol.style.display = '';
+    }
+}
+
+// Switch between userInput and summary1 views on mobile
+function switchMobileView(view) {
+    if (!window.isMobile) return;
+    
+    const userInputCol = document.querySelector('.user-input-col');
+    const summaryCol = document.querySelector('.summary-col');
+    const userInputBtn = document.getElementById('mobileViewUserInputBtn');
+    const summaryBtn = document.getElementById('mobileViewSummaryBtn');
+    
+    window.mobileView = view;
+    sessionStorage.setItem('mobileView', view);
+    
+    if (view === 'userInput') {
+        if (userInputCol) {
+            userInputCol.style.display = 'flex';
+            // Ensure TipTap editor is properly visible when switching to userInput
+            const editorElement = userInputCol.querySelector('.tiptap-editor');
+            if (editorElement && window.editors && window.editors.userInput) {
+                // Small delay to ensure DOM update completes
+                setTimeout(() => {
+                    try {
+                        window.editors.userInput.commands.focus();
+                    } catch (e) {
+                        // Editor might not be ready, ignore
+                    }
+                }, 100);
+            }
+        }
+        if (summaryCol) summaryCol.style.display = 'none';
+        if (userInputBtn) userInputBtn.classList.add('active');
+        if (summaryBtn) summaryBtn.classList.remove('active');
+    } else {
+        if (userInputCol) userInputCol.style.display = 'none';
+        if (summaryCol) {
+            summaryCol.style.display = 'flex';
+            // Scroll to top of summary when switching to it
+            const summaryPane = summaryCol.querySelector('#summary1');
+            if (summaryPane) {
+                setTimeout(() => {
+                    summaryPane.scrollTop = 0;
+                }, 50);
+            }
+        }
+        if (userInputBtn) userInputBtn.classList.remove('active');
+        if (summaryBtn) summaryBtn.classList.add('active');
+    }
+}
+
+// Initialize mobile detection on page load and resize
+function initializeMobileDetection() {
+    detectMobile();
+    
+    // Listen for window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            detectMobile();
+        }, 150);
+    });
+    
+    // Set up mobile view toggle buttons
+    const userInputBtn = document.getElementById('mobileViewUserInputBtn');
+    const summaryBtn = document.getElementById('mobileViewSummaryBtn');
+    
+    if (userInputBtn) {
+        userInputBtn.addEventListener('click', () => switchMobileView('userInput'));
+    }
+    
+    if (summaryBtn) {
+        summaryBtn.addEventListener('click', () => switchMobileView('summary1'));
+    }
+}
+
+// Initialize mobile detection when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMobileDetection);
+} else {
+    initializeMobileDetection();
+}
+
 // Add disclaimer check function
 async function checkDisclaimerAcceptance() {
     const user = auth.currentUser;
