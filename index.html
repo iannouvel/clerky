@@ -221,6 +221,7 @@
                 </a>
                 <span class="version-number">v<span id="appVersion">loading...</span></span>
                 <div class="model-selector">
+                    <span class="model-selector-icon" title="AI Model">🧠</span>
                     <select id="modelSelect" class="model-select">
                         <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
                         <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
@@ -231,21 +232,25 @@
                 </div>
             </div>
             <div class="top-bar-center">
-                <button id="processBtn" class="nav-btn primary">
+                <button id="processBtn" class="nav-btn primary" title="Dynamic Advice">
                     <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span>Dynamic Advice</span>
+                    <span class="btn-icon">⚡</span>
+                    <span class="btn-text">Dynamic Advice</span>
                 </button>
-                <button id="generateClinicalNoteBtn" class="nav-btn secondary">
+                <button id="generateClinicalNoteBtn" class="nav-btn secondary" title="Generate Note">
                     <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="generateText">Generate Note</span>
+                    <span class="btn-icon">📝</span>
+                    <span class="btn-text" id="generateText">Generate Note</span>
                 </button>
-                <button id="askGuidelinesQuestionBtn" class="nav-btn secondary">
+                <button id="askGuidelinesQuestionBtn" class="nav-btn secondary" title="Ask Guidelines A Question">
                     <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span>Ask Guidelines A Question</span>
+                    <span class="btn-icon">❓</span>
+                    <span class="btn-text">Ask Guidelines A Question</span>
                 </button>
-                <button id="testBtn" class="nav-btn secondary">
+                <button id="testBtn" class="nav-btn secondary" title="Test">
                     <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span id="testText">Test</span>
+                    <span class="btn-icon">✓</span>
+                    <span class="btn-text" id="testText">Test</span>
                 </button>
             </div>
             <div class="right-content">
@@ -282,7 +287,10 @@
                         <span id="userLabel">User:</span>
                         <span id="userName" class="user-name hidden">User Name</span>
                     </div>
-                    <button id="signOutBtn">Sign Out</button>
+                    <button id="signOutBtn" title="Sign Out">
+                        <span class="signout-icon">🚪</span>
+                        <span class="signout-text">Sign Out</span>
+                    </button>
                 </div>
             </div>
         </div>
