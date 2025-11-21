@@ -130,6 +130,30 @@ if (document.readyState === 'loading') {
     initialiseModelSelector();
 }
 
+// Make model selector icon clickable on mobile to open dropdown
+function setupModelSelectorIcon() {
+    const iconEl = document.querySelector('.model-selector-icon');
+    const selectEl = document.getElementById('modelSelect');
+    
+    if (iconEl && selectEl) {
+        iconEl.addEventListener('click', () => {
+            // On mobile, clicking the icon should trigger the select dropdown
+            if (window.isMobile && selectEl) {
+                // Create a synthetic click event on the select element
+                selectEl.focus();
+                selectEl.click();
+            }
+        });
+    }
+}
+
+// Setup model selector icon after DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupModelSelectorIcon);
+} else {
+    setupModelSelectorIcon();
+}
+
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
 
