@@ -3767,16 +3767,21 @@ html, body {
         outline-offset: 2px;
     }
     
-    /* Settings button adjustments */
+    /* Settings button adjustments - ensure consistent 36px size */
     .mobile-mode .settings-btn {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        max-width: 36px;
+        min-height: 36px;
+        max-height: 36px;
+        padding: 6px;
+        box-sizing: border-box;
     }
     
     .mobile-mode .settings-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 18px;
+        height: 18px;
     }
     
     /* User info adjustments */
@@ -3790,8 +3795,8 @@ html, body {
     }
     
     .mobile-mode #signOutBtn {
-        padding: 6px 12px;
-        font-size: 0.85rem;
+        padding: 6px;
+        font-size: 16px;
     }
     
     /* Show mobile view toggle */
