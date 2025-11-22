@@ -3458,6 +3458,9 @@ html, body {
         min-height: 36px;
         max-width: 36px;
         max-height: 36px;
+        height: 36px;
+        width: 36px;
+        box-sizing: border-box;
         background: rgba(255, 255, 255, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
@@ -3472,6 +3475,8 @@ html, body {
         min-width: 36px;
         max-width: 36px;
         max-height: 36px;
+        height: 36px;
+        width: 36px;
         padding: 6px;
         font-size: 16px;
         margin: 0;
@@ -3547,6 +3552,8 @@ html, body {
         min-width: 36px;
         max-width: 36px;
         max-height: 36px;
+        height: 36px;
+        width: 36px;
         padding: 6px;
         display: flex;
         align-items: center;
@@ -3576,6 +3583,10 @@ html, body {
         max-width: 36px;
         min-height: 36px;
         max-height: 36px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .mobile-mode .settings-btn svg {
