@@ -3346,7 +3346,7 @@ html, body {
     
     /* Simplify top bar for mobile - single line with icons only */
     .mobile-mode .top-bar {
-        padding: 4px 6px;
+        padding: 4px 8px;
         flex-wrap: nowrap;
         min-height: 44px;
         height: 44px;
@@ -3357,7 +3357,7 @@ html, body {
         display: flex !important;
         align-items: center;
         justify-content: space-between;
-        gap: 2px;
+        gap: 8px;
         overflow-x: auto;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
@@ -3371,7 +3371,7 @@ html, body {
         flex: 0 0 auto;
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 6px;
         margin: 0;
         order: 1;
         white-space: nowrap;
@@ -3382,7 +3382,7 @@ html, body {
         display: flex !important;
         justify-content: center;
         align-items: center;
-        gap: 2px;
+        gap: 4px;
         margin: 0;
         order: 2;
         width: auto;
@@ -3411,7 +3411,7 @@ html, body {
         flex: 0 0 auto;
         display: flex;
         align-items: center;
-        gap: 2px;
+        gap: 6px;
         margin: 0;
         order: 3;
         white-space: nowrap;
