@@ -1182,7 +1182,7 @@ div.third-column,
 }
 
 .transcript-pane p {
-    margin: 0.5em 0;
+    margin: 0.2em 0;
 }
 
 .transcript-pane strong {
@@ -2331,15 +2331,16 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Action buttons below input */
+/* Action buttons below summary */
 .chatbot-action-buttons {
     display: flex;
     gap: 12px;
     padding: 12px 18px;
-    border-top: 1px solid #e0e0e0;
-    background-color: #fafafa;
-    border-radius: 0 0 8px 8px;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
     flex-wrap: wrap;
+    margin-top: 16px;
 }
 
 .chatbot-action-buttons.hidden {
@@ -2379,7 +2380,8 @@ html, body {
 .chatbot-summary-section .transcript-pane {
     flex: 1;
     padding: 18px;
-    font-size: 1em;
+    font-size: calc(1em - 2px);
+    line-height: 1.2;
     background: white;
     border: none;
     border-radius: 8px;
