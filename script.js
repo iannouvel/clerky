@@ -927,6 +927,11 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             .join('');
         editor.commands.setContent(htmlContent);
     }
+    
+    // Update button visibility after content is set (with small delay to ensure TipTap has processed)
+    setTimeout(() => {
+        updateChatbotButtonVisibility();
+    }, 100);
 }
 
 function updateClearFormattingButton() {
@@ -3164,12 +3169,17 @@ function initializeTipTapIntegration() {
 function updateChatbotButtonVisibility() {
     const editor = window.editors?.userInput;
     const actionButtons = document.getElementById('chatbotActionButtons');
+    const processBtn = document.getElementById('processBtn');
+    const askGuidelinesQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
     
     if (!editor || !actionButtons) return;
     
     const content = editor.getText().trim();
     if (content.length > 0) {
         actionButtons.classList.remove('hidden');
+        // Ensure buttons are enabled when content exists
+        if (processBtn) processBtn.disabled = false;
+        if (askGuidelinesQuestionBtn) askGuidelinesQuestionBtn.disabled = false;
     } else {
         actionButtons.classList.add('hidden');
     }
@@ -8358,6 +8368,11 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                 transcriptLength: transcript.length,
                 preview: transcript.substring(0, 100) + '...'
             });
+            
+            // Explicitly update button visibility after programmatic content update
+            setTimeout(() => {
+                updateChatbotButtonVisibility();
+            }, 200);
         } else {
             console.error('[DEBUG] Failed to add transcript to userInput:', {
                 hasTranscript: !!transcript,
