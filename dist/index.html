@@ -327,16 +327,14 @@
                     <div id="chatbotLayout" class="chatbot-layout">
                         <!-- Clinical Note Input Section -->
                         <div class="chatbot-input-section">
-                            <div class="column-header">
-                                Clinical Note
-                                <div class="header-buttons">
-                                    <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
-                                    <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
-                                    <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
-                                    <button id="recordBtn" class="nav-btn record-btn">
-                                        <span id="recordSymbol" class="record-symbol"></span>Record
-                                    </button>
-                                </div>
+                            <!-- Floating buttons in top right of input area -->
+                            <div class="floating-input-buttons">
+                                <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
+                                <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
+                                <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
+                                <button id="recordBtn" class="nav-btn record-btn">
+                                    <span id="recordSymbol" class="record-symbol"></span>Record
+                                </button>
                             </div>
                             <div id="userInput" class="expandable-input tiptap-editor"></div>
                             
@@ -357,7 +355,6 @@
                         
                         <!-- Summary Section (shown only when it has content) -->
                         <div id="summarySection" class="chatbot-summary-section hidden">
-                            <div class="column-header">Summary</div>
                             <div id="summary1" class="transcript-pane active">
                                 <div id="summaryLoadingSpinner" class="summary-loading-spinner hidden">
                                     <div class="spinner-circle"></div>

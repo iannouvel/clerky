@@ -2270,6 +2270,7 @@ html, body {
     margin: 24px auto 0;
     gap: 16px;
     padding: 0 16px;
+    height: calc(100vh - 120px); /* Full height minus top bar and margins */
 }
 
 .chatbot-input-section {
@@ -2278,13 +2279,47 @@ html, body {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    min-height: 300px;
+    height: 61.8%; /* Golden ratio */
+    position: relative;
+}
+
+/* Floating buttons in top right of input section */
+.floating-input-buttons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.floating-input-buttons .nav-btn {
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 0.9em;
+}
+
+.floating-input-buttons .icon-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 14px;
+}
+
+.floating-input-buttons .record-btn {
+    padding: 6px 12px;
+    font-size: 0.85em;
 }
 
 .chatbot-input-section .expandable-input {
     flex: 1;
     width: 100%;
-    min-height: 300px;
+    height: 100%;
     border: none;
     padding: 0;
     pointer-events: auto !important;
@@ -2292,7 +2327,7 @@ html, body {
     z-index: 1;
     font-size: 1em;
     background: transparent;
-    resize: vertical;
+    resize: none;
     box-sizing: border-box;
 }
 
@@ -2324,8 +2359,7 @@ html, body {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    min-height: 200px;
-    max-height: 600px;
+    height: 38.2%; /* Remaining space (100% - 61.8%) */
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
@@ -2348,9 +2382,11 @@ html, body {
     font-size: 1em;
     background: white;
     border: none;
+    border-radius: 8px;
     overflow-y: auto;
     box-sizing: border-box;
     position: relative;
+    height: 100%;
 }
 
 /* Loading spinner in summary */
@@ -2576,14 +2612,32 @@ html, body {
         padding: 0 8px;
         margin: 16px auto 0;
         gap: 12px;
+        height: calc(100vh - 100px);
     }
     
     .chatbot-input-section {
-        min-height: 250px;
+        height: 61.8%; /* Maintain golden ratio on mobile */
     }
     
-    .chatbot-input-section .expandable-input {
-        min-height: 250px;
+    .floating-input-buttons {
+        top: 4px;
+        right: 4px;
+        padding: 3px 6px;
+    }
+    
+    .floating-input-buttons .icon-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+    
+    .floating-input-buttons .record-btn {
+        padding: 4px 8px;
+        font-size: 0.75em;
+    }
+    
+    .chatbot-input-section .tiptap-editor .ProseMirror {
+        padding: 12px 50px 12px 12px;
     }
     
     .chatbot-action-buttons {
@@ -2597,7 +2651,7 @@ html, body {
     }
     
     .chatbot-summary-section {
-        max-height: 500px;
+        height: 38.2%; /* Maintain golden ratio on mobile */
     }
     
     .main-two-column {
@@ -2646,16 +2700,16 @@ html, body {
 .chatbot-input-section .tiptap-editor {
     height: 100%;
     border: none;
-    border-radius: 0;
+    border-radius: 8px;
     pointer-events: auto !important;
     cursor: text !important;
-    min-height: 300px;
 }
 
 .chatbot-input-section .tiptap-editor .ProseMirror {
-    padding: 18px;
-    min-height: 300px;
-    height: auto;
+    padding: 18px 60px 18px 18px; /* Extra right padding for floating buttons */
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .tiptap-editor .ProseMirror {
