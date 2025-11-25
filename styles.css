@@ -2261,7 +2261,132 @@ html, body {
     flex-direction: column;
 }
 
-/* Main two-column layout for user input and summary */
+/* Chatbot-style single column layout */
+.chatbot-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 24px auto 0;
+    gap: 16px;
+    padding: 0 16px;
+}
+
+.chatbot-input-section {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.chatbot-input-section .expandable-input {
+    flex: 1;
+    width: 100%;
+    min-height: 300px;
+    border: none;
+    padding: 0;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 1;
+    font-size: 1em;
+    background: transparent;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* Action buttons below input */
+.chatbot-action-buttons {
+    display: flex;
+    gap: 12px;
+    padding: 12px 18px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #fafafa;
+    border-radius: 0 0 8px 8px;
+    flex-wrap: wrap;
+}
+
+.chatbot-action-buttons.hidden {
+    display: none;
+}
+
+.chatbot-action-buttons .nav-btn {
+    flex: 1;
+    min-width: 150px;
+    margin: 0;
+}
+
+/* Summary section - only visible when it has content */
+.chatbot-summary-section {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    max-height: 600px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.chatbot-summary-section.hidden {
+    display: none;
+}
+
+.chatbot-summary-section:not(.loading) {
+    opacity: 1;
+}
+
+.chatbot-summary-section.loading {
+    opacity: 0.6;
+}
+
+.chatbot-summary-section .transcript-pane {
+    flex: 1;
+    padding: 18px;
+    font-size: 1em;
+    background: white;
+    border: none;
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Loading spinner in summary */
+.summary-loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 16px;
+}
+
+.summary-loading-spinner.hidden {
+    display: none;
+}
+
+.spinner-circle {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #00b894;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Main two-column layout for user input and summary (kept for backward compatibility) */
 .main-two-column {
     display: flex;
     width: 100%;
@@ -2445,7 +2570,36 @@ html, body {
     border: none;
 }
 
+/* Responsive styles for chatbot layout */
 @media (max-width: 900px) {
+    .chatbot-layout {
+        padding: 0 8px;
+        margin: 16px auto 0;
+        gap: 12px;
+    }
+    
+    .chatbot-input-section {
+        min-height: 250px;
+    }
+    
+    .chatbot-input-section .expandable-input {
+        min-height: 250px;
+    }
+    
+    .chatbot-action-buttons {
+        flex-direction: column;
+        padding: 10px 12px;
+    }
+    
+    .chatbot-action-buttons .nav-btn {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .chatbot-summary-section {
+        max-height: 500px;
+    }
+    
     .main-two-column {
         flex-direction: column;
         height: auto;
@@ -2486,6 +2640,22 @@ html, body {
     border-radius: 0;
     pointer-events: auto !important;
     cursor: text !important;
+}
+
+/* TipTap editor in chatbot layout */
+.chatbot-input-section .tiptap-editor {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    pointer-events: auto !important;
+    cursor: text !important;
+    min-height: 300px;
+}
+
+.chatbot-input-section .tiptap-editor .ProseMirror {
+    padding: 18px;
+    min-height: 300px;
+    height: auto;
 }
 
 .tiptap-editor .ProseMirror {

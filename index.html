@@ -237,20 +237,10 @@
                 </div>
             </div>
             <div class="top-bar-center">
-                <button id="processBtn" class="nav-btn primary" title="Dynamic Advice">
-                    <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span class="btn-icon">⚡</span>
-                    <span class="btn-text">Dynamic Advice</span>
-                </button>
                 <button id="generateClinicalNoteBtn" class="nav-btn secondary" title="Generate Note">
                     <span id="spinner" class="spinner" style="display: none;">&#x21BB;</span>
                     <span class="btn-icon">📝</span>
                     <span class="btn-text" id="generateText">Generate Note</span>
-                </button>
-                <button id="askGuidelinesQuestionBtn" class="nav-btn secondary" title="Ask Guidelines A Question">
-                    <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                    <span class="btn-icon">❓</span>
-                    <span class="btn-text">Ask Guidelines A Question</span>
                 </button>
                 <button id="testBtn" class="nav-btn secondary" title="Test">
                     <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
@@ -333,16 +323,10 @@
                     </div>
                 </div>
                 <div id="mainContentArea">
-                    <!-- Mobile View Toggle Buttons -->
-                    <div id="mobileViewToggle" class="hidden">
-                        <div class="mobile-view-toggle-container">
-                            <button id="mobileViewUserInputBtn" class="mobile-view-toggle-btn active">Clinical Note</button>
-                            <button id="mobileViewSummaryBtn" class="mobile-view-toggle-btn">Summary</button>
-                        </div>
-                    </div>
-
-                    <div id="mainTwoColumn" class="main-two-column">
-                        <div class="main-column user-input-col">
+                    <!-- Chatbot-style single column layout -->
+                    <div id="chatbotLayout" class="chatbot-layout">
+                        <!-- Clinical Note Input Section -->
+                        <div class="chatbot-input-section">
                             <div class="column-header">
                                 Clinical Note
                                 <div class="header-buttons">
@@ -355,10 +339,32 @@
                                 </div>
                             </div>
                             <div id="userInput" class="expandable-input tiptap-editor"></div>
+                            
+                            <!-- Action Buttons (shown when input has content) -->
+                            <div id="chatbotActionButtons" class="chatbot-action-buttons hidden">
+                                <button id="processBtn" class="nav-btn primary" title="Dynamic Advice">
+                                    <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                    <span class="btn-icon">⚡</span>
+                                    <span class="btn-text">Dynamic Advice</span>
+                                </button>
+                                <button id="askGuidelinesQuestionBtn" class="nav-btn secondary" title="Ask Guidelines A Question">
+                                    <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                    <span class="btn-icon">❓</span>
+                                    <span class="btn-text">Ask Guidelines A Question</span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="main-column summary-col">
+                        
+                        <!-- Summary Section (shown only when it has content) -->
+                        <div id="summarySection" class="chatbot-summary-section hidden">
                             <div class="column-header">Summary</div>
-                            <div id="summary1" class="transcript-pane active"><!-- Content will be inserted here --></div>
+                            <div id="summary1" class="transcript-pane active">
+                                <div id="summaryLoadingSpinner" class="summary-loading-spinner hidden">
+                                    <div class="spinner-circle"></div>
+                                    <span class="loading-text">Processing...</span>
+                                </div>
+                                <!-- Content will be inserted here -->
+                            </div>
                         </div>
                     </div>
                 </div>
