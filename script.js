@@ -8384,10 +8384,10 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
         const performanceText = forceRegenerate ? '🔄 Regenerated with updated formatting' : (isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache');
         const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
         const successMessage = `## ✅ Clinical Interaction ${actionText}\n\n` +
-                              `**Clinical Issue:** ${selectedIssue}\n\n` +
-                              `**Category:** ${condition.category}\n\n` +
-                              `**Status:** Successfully ${actionText.toLowerCase()} clinical interaction scenario\n\n` +
-                              `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n\n` +
+                              `**Clinical Issue:** ${selectedIssue}\n` +
+                              `**Category:** ${condition.category}\n` +
+                              `**Status:** Successfully ${actionText.toLowerCase()} clinical interaction scenario\n` +
+                              `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n` +
                               `**Performance:** ${performanceText}\n\n` +
                               `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
                               `- Use "Dynamic Advice" to get interactive suggestions based on clinical guidelines\n` +

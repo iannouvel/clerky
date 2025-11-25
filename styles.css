@@ -1168,7 +1168,7 @@ div.third-column,
 
 /* Enhance the border for new content */
 .new-content-entry:not(:first-child) {
-    border-top: 3px solid #00b894;
+    /* Removed green border-top for more condensed appearance */
     border-left: 2px solid rgba(0, 184, 148, 0.1);
 }
 
@@ -2271,6 +2271,7 @@ html, body {
     gap: 16px;
     padding: 0 16px;
     height: calc(100vh - 120px); /* Full height minus top bar and margins */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
 }
 
 .chatbot-input-section {
@@ -2279,7 +2280,8 @@ html, body {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    height: 61.8%; /* Golden ratio */
+    flex: 0 0 55%; /* Reduced to leave room for buttons */
+    min-height: 250px; /* Minimum height for input */
     position: relative;
 }
 
@@ -2341,6 +2343,7 @@ html, body {
     box-shadow: var(--shadow);
     flex-wrap: wrap;
     margin-top: 16px;
+    flex-shrink: 0; /* Don't shrink the buttons */
 }
 
 .chatbot-action-buttons.hidden {
@@ -2360,7 +2363,8 @@ html, body {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    height: 38.2%; /* Remaining space (100% - 61.8%) */
+    flex: 0 0 35%; /* Reduced to leave room for buttons */
+    min-height: 150px; /* Minimum height for summary */
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
@@ -2615,10 +2619,12 @@ html, body {
         margin: 16px auto 0;
         gap: 12px;
         height: calc(100vh - 100px);
+        overflow-y: auto;
     }
     
     .chatbot-input-section {
-        height: 61.8%; /* Maintain golden ratio on mobile */
+        flex: 0 0 55%; /* Reduced to leave room for buttons */
+        min-height: 250px;
     }
     
     .floating-input-buttons {
@@ -2653,7 +2659,12 @@ html, body {
     }
     
     .chatbot-summary-section {
-        height: 38.2%; /* Maintain golden ratio on mobile */
+        flex: 0 0 35%; /* Reduced to leave room for buttons */
+        min-height: 150px;
+    }
+    
+    .chatbot-action-buttons {
+        flex-shrink: 0;
     }
     
     .main-two-column {
