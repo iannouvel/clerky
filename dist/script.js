@@ -192,16 +192,14 @@ function detectMobile() {
 function applyMobileLayout() {
     const body = document.body;
     const mainContent = document.getElementById('mainContent');
-    const mainTwoColumn = document.getElementById('mainTwoColumn');
-    const userInputCol = document.querySelector('.user-input-col');
-    const summaryCol = document.querySelector('.summary-col');
+    const chatbotLayout = document.getElementById('chatbotLayout');
     const mobileToggleContainer = document.getElementById('mobileViewToggle');
     
     // If mainContent doesn't exist yet, try again after a short delay
-    if (!mainContent || !mainTwoColumn) {
+    if (!mainContent) {
         // Retry after a short delay if elements aren't ready
         setTimeout(() => {
-            if (document.getElementById('mainContent') && document.getElementById('mainTwoColumn')) {
+            if (document.getElementById('mainContent')) {
                 applyMobileLayout();
             }
         }, 100);
@@ -212,14 +210,10 @@ function applyMobileLayout() {
         body.classList.add('mobile-mode');
         mainContent.classList.add('mobile-mode');
         
-        // Show mobile toggle buttons
+        // Hide mobile toggle buttons (not needed with chatbot layout)
         if (mobileToggleContainer) {
-            mobileToggleContainer.classList.remove('hidden');
+            mobileToggleContainer.classList.add('hidden');
         }
-        
-        // Load saved view preference or default to userInput
-        const savedView = sessionStorage.getItem('mobileView') || 'userInput';
-        switchMobileView(savedView);
     } else {
         body.classList.remove('mobile-mode');
         mainContent.classList.remove('mobile-mode');
@@ -228,10 +222,6 @@ function applyMobileLayout() {
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
         }
-        
-        // Show both columns on desktop
-        if (userInputCol) userInputCol.style.display = '';
-        if (summaryCol) summaryCol.style.display = '';
     }
 }
 
@@ -3168,8 +3158,111 @@ function initializeTipTapIntegration() {
     };
 }
 
+// ===== Chatbot-style UX Functions =====
+
+// Show/hide action buttons based on input content
+function updateChatbotButtonVisibility() {
+    const editor = window.editors?.userInput;
+    const actionButtons = document.getElementById('chatbotActionButtons');
+    
+    if (!editor || !actionButtons) return;
+    
+    const content = editor.getText().trim();
+    if (content.length > 0) {
+        actionButtons.classList.remove('hidden');
+    } else {
+        actionButtons.classList.add('hidden');
+    }
+}
+
+// Show/hide summary section based on content
+function updateSummaryVisibility() {
+    const summarySection = document.getElementById('summarySection');
+    const summary1 = document.getElementById('summary1');
+    const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+    
+    if (!summarySection || !summary1) return;
+    
+    // Check if loading spinner is visible
+    const isLoading = loadingSpinner && !loadingSpinner.classList.contains('hidden');
+    
+    // Check if summary has actual content (excluding loading spinner)
+    const contentElements = Array.from(summary1.children).filter(
+        child => child.id !== 'summaryLoadingSpinner'
+    );
+    const hasContent = contentElements.length > 0 && 
+                       summary1.textContent.trim().length > 0;
+    
+    // Show summary if loading or has content
+    if (isLoading || hasContent) {
+        summarySection.classList.remove('hidden');
+    } else {
+        summarySection.classList.add('hidden');
+    }
+}
+
+// Show loading spinner in summary
+function showSummaryLoading() {
+    const summarySection = document.getElementById('summarySection');
+    const summary1 = document.getElementById('summary1');
+    const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+    
+    if (!summarySection || !summary1 || !loadingSpinner) return;
+    
+    // Show summary section
+    summarySection.classList.remove('hidden');
+    summarySection.classList.add('loading');
+    
+    // Show loading spinner
+    loadingSpinner.classList.remove('hidden');
+}
+
+// Hide loading spinner in summary
+function hideSummaryLoading() {
+    const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+    const summarySection = document.getElementById('summarySection');
+    
+    if (loadingSpinner) {
+        loadingSpinner.classList.add('hidden');
+    }
+    
+    if (summarySection) {
+        summarySection.classList.remove('loading');
+    }
+    
+    // Update visibility after hiding spinner
+    updateSummaryVisibility();
+}
+
+// Initialize chatbot UX functionality
+function initializeChatbotUX() {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[CHATBOT] Editor not ready, waiting for tiptapReady event');
+        return;
+    }
+    
+    console.log('[CHATBOT] Initializing chatbot UX');
+    
+    // Listen for content updates to show/hide buttons
+    editor.on('update', () => {
+        updateChatbotButtonVisibility();
+    });
+    
+    // Initial button visibility check
+    updateChatbotButtonVisibility();
+    
+    // Initial summary visibility check
+    updateSummaryVisibility();
+    
+    console.log('[CHATBOT] Chatbot UX initialized');
+}
+
 // Listen for TipTap ready event
-window.addEventListener('tiptapReady', initializeTipTapIntegration);
+window.addEventListener('tiptapReady', () => {
+    initializeTipTapIntegration();
+    initializeChatbotUX();
+});
 
 // Also try to initialize if TipTap is already loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -3626,7 +3719,19 @@ function appendToSummary1(content, clearExisting = false) {
                 clearTimeout(scrollTimeout);
                 scrollTimeout = null;
             }
+            // Re-add loading spinner container if it was cleared
+            const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+            if (!loadingSpinner) {
+                const spinnerDiv = document.createElement('div');
+                spinnerDiv.id = 'summaryLoadingSpinner';
+                spinnerDiv.className = 'summary-loading-spinner hidden';
+                spinnerDiv.innerHTML = '<div class="spinner-circle"></div><span class="loading-text">Processing...</span>';
+                summary1.appendChild(spinnerDiv);
+            }
         }
+        
+        // Hide loading spinner when content is being added
+        hideSummaryLoading();
 
         // Check if content is already HTML
         const isHtml = /<[a-z][\s\S]*>/i.test(content);
@@ -3731,11 +3836,20 @@ function appendToSummary1(content, clearExisting = false) {
                 });
             });
         }, 300); // Wait 300ms after the last content addition before scrolling
+        
+        // Update summary visibility after content is added
+        setTimeout(() => {
+            updateSummaryVisibility();
+        }, 100);
 
     } catch (error) {
         console.error('[DEBUG] Error in appendToSummary1:', error);
         // Fallback to direct content append if something goes wrong
         summary1.innerHTML += content;
+        // Update visibility even on error
+        setTimeout(() => {
+            updateSummaryVisibility();
+        }, 100);
     }
 }
 
@@ -8320,7 +8434,9 @@ async function processWorkflow() {
 
         // Set loading state
         if (processBtn) processBtn.disabled = true;
-        // Don't show spinner - workflow completes quickly and pauses for user input
+        
+        // Show loading spinner in summary
+        showSummaryLoading();
 
         // Initialize the workflow summary
         const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
@@ -8469,6 +8585,9 @@ async function processWorkflow() {
         }
         // Ensure spinner is always hidden (shouldn't be shown for this workflow)
         if (processSpinner) processSpinner.style.display = 'none';
+        
+        // Hide summary loading spinner (content has been added via appendToSummary1)
+        hideSummaryLoading();
         
         console.log('[DEBUG] processWorkflow: Cleanup completed');
     }
@@ -12058,6 +12177,9 @@ async function askGuidelinesQuestion() {
         askQuestionBtn.classList.add('loading');
         askQuestionBtn.disabled = true;
         questionSpinner.style.display = 'inline-block';
+        
+        // Show loading spinner in summary
+        showSummaryLoading();
 
         // Initialize the question search summary
         let searchProgress = '## Asking Guidelines A Question\n\n';
@@ -12265,6 +12387,9 @@ async function askGuidelinesQuestion() {
         askQuestionBtn.disabled = false;
         questionSpinner.style.display = 'none';
         askQuestionBtn.textContent = originalText;
+        
+        // Hide summary loading spinner (content has been added via appendToSummary1)
+        hideSummaryLoading();
     }
 }
 
