@@ -861,8 +861,8 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         // Store the state BEFORE the change (for undo)
         const stateBeforeChange = editor.getJSON();
         
-        // Only apply amber color for PII and Dynamic Advice changes
-        const shouldColor = changeType.includes('PII') || changeType.includes('Dynamic Advice');
+        // Only apply amber color for PII and Guideline Suggestions changes
+        const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
         
         if (shouldColor) {
             // Set content with amber color
@@ -1228,8 +1228,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     let htmlContent = `
         <div class="guideline-selection-interface">
             <div class="selection-header">
-                <h2>📋 Select Guidelines for Dynamic Advice</h2>
-                <p>Check which guidelines to generate dynamic advice for. Most relevant guidelines are pre-selected.</p>
+                <h2>📋 Select Guidelines for Guideline Suggestions</h2>
+                <p>Check which guidelines to generate suggestions for. Most relevant guidelines are pre-selected.</p>
                 <div class="selection-controls">
                     <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)">
                         ✅ Select All
@@ -1632,7 +1632,7 @@ let currentChatId = null;
 // Add session management
 let currentSessionId = null;
 
-// Global variables for dynamic advice
+// Global variables for guideline suggestions
 let currentAdviceSession = null;
 let currentSuggestions = [];
 let userDecisions = {};
@@ -3169,8 +3169,7 @@ function initializeTipTapIntegration() {
 function updateChatbotButtonVisibility() {
     const editor = window.editors?.userInput;
     const actionButtons = document.getElementById('chatbotActionButtons');
-    const processBtn = document.getElementById('processBtn');
-    const askGuidelinesQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
+    const analyseBtn = document.getElementById('analyseBtn');
     
     if (!editor || !actionButtons) return;
     
@@ -3178,8 +3177,7 @@ function updateChatbotButtonVisibility() {
     if (content.length > 0) {
         actionButtons.classList.remove('hidden');
         // Ensure buttons are enabled when content exists
-        if (processBtn) processBtn.disabled = false;
-        if (askGuidelinesQuestionBtn) askGuidelinesQuestionBtn.disabled = false;
+        if (analyseBtn) analyseBtn.disabled = false;
     } else {
         actionButtons.classList.add('hidden');
     }
@@ -4318,9 +4316,9 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         formattedAnalysis += finalSummary;
         appendToOutputField(finalSummary, true); // Append, don't clear
 
-        // Store the latest analysis result and guideline data for dynamic advice
+        // Store the latest analysis result and guideline data for guideline suggestions
         if (successCount > 0) {
-            console.log('[DEBUG] Storing analysis result for dynamic advice');
+            console.log('[DEBUG] Storing analysis result for guideline suggestions');
             
             // Store the combined analysis and the guidelines that were processed
             const processedGuidelineData = guidelinesToProcess.map(g => {
@@ -4360,7 +4358,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                         const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
                         if (makeDynamicAdviceBtn) {
                             makeDynamicAdviceBtn.style.display = 'inline-block';
-                            console.log('[DEBUG] Showed fallback dynamic advice button');
+                            console.log('[DEBUG] Showed fallback guideline suggestions button');
                         }
                     }
                 }, 1000);
@@ -4369,7 +4367,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 const makeDynamicAdviceBtn = document.getElementById('makeDynamicAdviceBtn');
                 if (makeDynamicAdviceBtn) {
                     makeDynamicAdviceBtn.style.display = 'inline-block';
-                    console.log('[DEBUG] Made dynamic advice button visible for single guideline');
+                    console.log('[DEBUG] Made guideline suggestions button visible for single guideline');
                 }
             }
         }
@@ -4387,7 +4385,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
     }
 }
 
-// Dynamic Advice function - converts guideline analysis into interactive suggestions
+// Guideline Suggestions function - converts guideline analysis into interactive suggestions
 async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) {
     console.log('[DEBUG] dynamicAdvice function called', {
         transcriptLength: transcript?.length,
@@ -4482,7 +4480,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         });
 
         if (!result.success) {
-            throw new Error(result.error || 'Dynamic advice generation failed');
+            throw new Error(result.error || 'Guideline suggestions generation failed');
         }
 
         // Store session data globally and ensure unique suggestion IDs
@@ -4538,9 +4536,9 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
     }
 }
 
-// ===== One-at-a-Time Dynamic Advice Workflow =====
+// ===== One-at-a-Time Guideline Suggestions Workflow =====
 
-// Global state for dynamic advice review  
+// Global state for guideline suggestions review  
 window.currentSuggestionReview = null;
 
 // Helper function to determine optimal insertion point for new text
@@ -5209,11 +5207,11 @@ window.handleCurrentSuggestionAction = async function(action) {
             
             // Insert at determined point
             newContent = insertTextAtPoint(currentContent, suggestion.suggestedText, insertionPoint);
-            setUserInputContent(newContent, true, 'Dynamic Advice - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
         } else if (suggestion.originalText) {
             // Modification/Deletion: replace existing text
             newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
-            setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
         }
     }
     
@@ -5240,11 +5238,11 @@ window.confirmCurrentModification = function() {
         // Addition: append the modified text to the end of the document
         const spacing = currentContent.trim() ? '\n\n' : '';
         newContent = currentContent + spacing + modifiedText;
-        setUserInputContent(newContent, true, 'Dynamic Advice - Modified Addition', [{findText: '', replacementText: modifiedText}]);
+        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
     } else if (suggestion.originalText) {
         // Modification: replace existing text with user's modified version
         newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
-        setUserInputContent(newContent, true, 'Dynamic Advice - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
     }
     
     clearHighlightInEditor();
@@ -5506,7 +5504,7 @@ function handleSuggestionAction(suggestionId, action) {
             }];
         }
         
-        setUserInputContent(newContent, true, 'Dynamic Advice - Accepted', replacements);
+        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', replacements);
         console.log('[DEBUG] handleSuggestionAction: Applied accepted suggestion immediately');
     }
 
@@ -6090,7 +6088,7 @@ function confirmModification(suggestionId) {
         }];
     }
     
-    setUserInputContent(newContent, true, 'Dynamic Advice - Modified', replacements);
+    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', replacements);
     console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
 
     // Hide modify section and update UI
@@ -6523,7 +6521,7 @@ async function applyAllDecisions() {
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
-                    setUserInputContent(result.updatedTranscript, true, 'Dynamic Advice Update');
+                    setUserInputContent(result.updatedTranscript, true, 'Guideline Suggestions Update');
                     console.log('[DEBUG] Sequential processing: Updated transcript automatically');
                 }
                 
@@ -6794,11 +6792,56 @@ document.addEventListener('DOMContentLoaded', () => {
         findGuidelinesBtn.addEventListener('click', findRelevantGuidelines);
     }
 
-    // Add click handler for ask guidelines question button
-    const askGuidelinesQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
-    if (askGuidelinesQuestionBtn) {
-        askGuidelinesQuestionBtn.addEventListener('click', askGuidelinesQuestion);
+    // Add click handlers for mode selection buttons
+    const guidelineSuggestionsBtn = document.getElementById('guidelineSuggestionsBtn');
+    const askGuidelinesBtn = document.getElementById('askGuidelinesBtn');
+    const auditBtnMode = document.getElementById('auditBtn');
+    const learnTopicBtn = document.getElementById('learnTopicBtn');
+    
+    if (guidelineSuggestionsBtn) {
+        guidelineSuggestionsBtn.addEventListener('click', () => {
+            window.selectedMode = 'guideline-suggestions';
+            transitionToMainContent();
+        });
     }
+    
+    if (askGuidelinesBtn) {
+        askGuidelinesBtn.addEventListener('click', () => {
+            window.selectedMode = 'ask-guidelines';
+            transitionToMainContent();
+        });
+    }
+    
+    if (auditBtnMode) {
+        auditBtnMode.addEventListener('click', () => {
+            alert('Audit feature is coming soon!');
+        });
+    }
+    
+    if (learnTopicBtn) {
+        learnTopicBtn.addEventListener('click', () => {
+            alert('Learn a Topic feature is coming soon!');
+        });
+    }
+    
+    // Function to transition from mode selection to main content
+    function transitionToMainContent() {
+        const modeSelectionPage = document.getElementById('modeSelectionPage');
+        const mainContent = document.getElementById('mainContent');
+        
+        if (modeSelectionPage) {
+            modeSelectionPage.classList.add('hidden');
+        }
+        
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+        }
+        
+        console.log('[DEBUG] Transitioned to main content with mode:', window.selectedMode);
+    }
+    
+    // Make transitionToMainContent globally accessible
+    window.transitionToMainContent = transitionToMainContent;
 
     // Add click handler for dev button
     const devBtn = document.getElementById('devBtn');
@@ -7009,16 +7052,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click handler for process workflow button
-    const processBtn = document.getElementById('processBtn');
-    const processSpinner = document.getElementById('processSpinner');
-    if (processSpinner) {
+    // Add click handler for analyse button
+    const analyseBtn = document.getElementById('analyseBtn');
+    const analyseSpinner = document.getElementById('analyseSpinner');
+    if (analyseSpinner) {
         // Ensure spinner is hidden on initialization
-        processSpinner.style.display = 'none';
+        analyseSpinner.style.display = 'none';
     }
-    if (processBtn) {
-        processBtn.addEventListener('click', async () => {
-            console.log('[DEBUG] Process button clicked...');
-            await processWorkflow();
+    if (analyseBtn) {
+        analyseBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Analyse button clicked, mode:', window.selectedMode);
+            
+            if (!window.selectedMode) {
+                alert('Please select a mode first');
+                return;
+            }
+            
+            // Route to appropriate function based on selected mode
+            if (window.selectedMode === 'guideline-suggestions') {
+                await processWorkflow();
+            } else if (window.selectedMode === 'ask-guidelines') {
+                await askGuidelinesQuestion();
+            } else if (window.selectedMode === 'audit') {
+                alert('Audit feature is coming soon!');
+            } else if (window.selectedMode === 'learn-topic') {
+                alert('Learn a Topic feature is coming soon!');
+            } else {
+                console.error('[ERROR] Unknown mode selected:', window.selectedMode);
+                alert('Unknown mode selected. Please try again.');
+            }
         });
     }
 
@@ -7318,7 +7380,7 @@ const Logger = {
 // Logger.info('Application initialized successfully', { userId: user.uid });
 // Logger.error('Failed to load data', { error: error.message, stack: error.stack });
 
-// Make dynamic advice functions globally accessible for onclick handlers
+// Make guideline suggestions functions globally accessible for onclick handlers
 window.handleSuggestionAction = handleSuggestionAction;
 window.confirmModification = confirmModification;
 window.cancelModification = cancelModification;
@@ -7892,6 +7954,88 @@ function loadGuidelineScopeSelection() {
     return null;
 }
 
+// Load and display user settings on mode selection page
+async function loadAndDisplayUserSettings() {
+    const trustDisplay = document.getElementById('settingsTrustDisplay');
+    const scopeDisplay = document.getElementById('settingsScopeDisplay');
+    
+    if (!trustDisplay || !scopeDisplay) {
+        console.warn('[DEBUG] Settings display elements not found');
+        return;
+    }
+    
+    // Load hospital trust
+    try {
+        const user = auth.currentUser;
+        if (user) {
+            const idToken = await user.getIdToken();
+            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`
+                }
+            });
+            
+            const result = await response.json();
+            if (result.success && result.hospitalTrust) {
+                trustDisplay.textContent = result.hospitalTrust;
+            } else {
+                trustDisplay.textContent = 'Not set';
+            }
+        } else {
+            trustDisplay.textContent = 'Not set';
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load hospital trust:', error);
+        trustDisplay.textContent = 'Error loading';
+    }
+    
+    // Load guideline scope preference
+    try {
+        const savedScope = loadGuidelineScopeSelection();
+        if (savedScope) {
+            let scopeText = '';
+            if (savedScope.scope === 'national') {
+                scopeText = 'National Guidelines';
+            } else if (savedScope.scope === 'local') {
+                scopeText = `Local Guidelines (${savedScope.hospitalTrust || 'Trust'})`;
+            } else if (savedScope.scope === 'both') {
+                scopeText = `Both (National + ${savedScope.hospitalTrust || 'Trust'})`;
+            }
+            scopeDisplay.textContent = scopeText;
+        } else {
+            scopeDisplay.textContent = 'Not set';
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load guideline scope:', error);
+        scopeDisplay.textContent = 'Error loading';
+    }
+}
+
+// Show mode selection page
+async function showModeSelectionPage() {
+    const modeSelectionPage = document.getElementById('modeSelectionPage');
+    const landingPage = document.getElementById('landingPage');
+    const mainContent = document.getElementById('mainContent');
+    
+    if (!modeSelectionPage) {
+        console.error('[ERROR] Mode selection page element not found');
+        return;
+    }
+    
+    // Hide other views
+    if (landingPage) landingPage.classList.add('hidden');
+    if (mainContent) mainContent.classList.add('hidden');
+    
+    // Show mode selection page
+    modeSelectionPage.classList.remove('hidden');
+    
+    // Load and display user settings
+    await loadAndDisplayUserSettings();
+    
+    console.log('[DEBUG] Mode selection page shown');
+}
+
 // Clear saved guideline scope selection
 function clearGuidelineScopeSelection() {
     try {
@@ -8390,7 +8534,7 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                               `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n` +
                               `**Performance:** ${performanceText}\n\n` +
                               `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
-                              `- Use "Dynamic Advice" to get interactive suggestions based on clinical guidelines\n` +
+                              `- Use "Guideline Suggestions" to get interactive suggestions based on clinical guidelines\n` +
                               `- Edit the transcript if needed before analysis\n` +
                               `- Save or clear the transcript using the respective buttons\n\n`;
         
@@ -8433,11 +8577,11 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
 async function processWorkflow() {
     console.log('[DEBUG] processWorkflow started');
     
-    const processBtn = document.getElementById('processBtn');
-    const processSpinner = document.getElementById('processSpinner');
+    const analyseBtn = document.getElementById('analyseBtn');
+    const analyseSpinner = document.getElementById('analyseSpinner');
     // Find the text span to preserve button structure
-    const textSpan = processBtn?.querySelector('span:not(#processSpinner)');
-    const originalText = textSpan?.textContent || processBtn?.textContent || 'Process';
+    const textSpan = analyseBtn?.querySelector('span:not(#analyseSpinner)');
+    const originalText = textSpan?.textContent || analyseBtn?.textContent || 'Analyse';
     
     try {
         // Check if we have transcript content
@@ -8448,7 +8592,7 @@ async function processWorkflow() {
         }
 
         // Set loading state
-        if (processBtn) processBtn.disabled = true;
+        if (analyseBtn) analyseBtn.disabled = true;
         
         // Show loading spinner in summary
         showSummaryLoading();
@@ -8587,19 +8731,19 @@ async function processWorkflow() {
         
     } finally {
         // Reset button state
-        if (processBtn) {
-            processBtn.disabled = false;
+        if (analyseBtn) {
+            analyseBtn.disabled = false;
             // Update only the text span to preserve button structure
-            const textSpan = processBtn.querySelector('span:not(#processSpinner)');
+            const textSpan = analyseBtn.querySelector('span:not(#analyseSpinner)');
             if (textSpan) {
                 textSpan.textContent = originalText;
             } else {
                 // Fallback if span structure is missing
-                processBtn.textContent = originalText;
+                analyseBtn.textContent = originalText;
             }
         }
         // Ensure spinner is always hidden (shouldn't be shown for this workflow)
-        if (processSpinner) processSpinner.style.display = 'none';
+        if (analyseSpinner) analyseSpinner.style.display = 'none';
         
         // Hide summary loading spinner (content has been added via appendToSummary1)
         hideSummaryLoading();
@@ -9340,21 +9484,14 @@ window.auth.onAuthStateChanged(async (user) => {
         // Initialize app immediately
         await initializeMainApp();
         
-        // Fallback timeout to hide loading screen and show main content after 10 seconds
-        setTimeout(() => {
-            const loading = document.getElementById('loading');
-            const mainContent = document.getElementById('mainContent');
-            
-            if (loading && !loading.classList.contains('hidden')) {
-                loading.classList.add('hidden');
-                console.log('[DEBUG] Loading screen hidden due to timeout');
-            }
-            
-            if (mainContent && mainContent.classList.contains('hidden')) {
-                mainContent.classList.remove('hidden');
-                console.log('[DEBUG] Main content shown due to timeout');
-            }
-        }, 10000);
+        // Hide loading screen and show mode selection page
+        const loading = document.getElementById('loading');
+        if (loading) {
+            loading.classList.add('hidden');
+        }
+        
+        // Show mode selection page instead of main content
+        await showModeSelectionPage();
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
@@ -9837,7 +9974,7 @@ function hideMetadataProgress() {
     }
 }
 
-// Show guideline selection interface for multi-guideline dynamic advice
+// Show guideline selection interface for multi-guideline guideline suggestions
 async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
     console.log('[DEBUG] showGuidelineSelectionInterface called with', mostRelevantGuidelines.length, 'guidelines');
 
@@ -9845,8 +9982,8 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
     const selectionHtml = `
         <div class="guideline-selection-container">
             <div class="selection-header">
-                <h3>🎯 Select Guidelines for Dynamic Advice</h3>
-                <p>Choose which guidelines to include in your dynamic advice generation. Multiple guidelines will be processed in parallel for faster results.</p>
+                <h3>🎯 Select Guidelines for Guideline Suggestions</h3>
+                <p>Choose which guidelines to include in your guideline suggestions generation. Multiple guidelines will be processed in parallel for faster results.</p>
                 <div class="selection-stats">
                     <span><strong>${mostRelevantGuidelines.length}</strong> most relevant guidelines available</span>
                 </div>
@@ -9897,7 +10034,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             <div class="selection-actions">
                 <button type="button" class="action-btn primary generate-advice-btn" onclick="generateMultiGuidelineAdvice()">
                     <span class="btn-icon">🚀</span>
-                    <span class="btn-text">Generate Dynamic Advice</span>
+                    <span class="btn-text">Generate Guideline Suggestions</span>
                     <span class="btn-spinner" style="display: none;">⏳</span>
                 </button>
                 <button type="button" class="action-btn secondary cancel-selection-btn" onclick="cancelGuidelineSelection()">
@@ -10352,8 +10489,8 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
     appendToSummary1(analyzeMessage, false);
 
-    // Directly generate dynamic advice for this guideline without server analysis
-    // Store the latest analysis for potential dynamic advice
+    // Directly generate guideline suggestions for this guideline without server analysis
+    // Store the latest analysis for potential guideline suggestions
     window.latestAnalysis = {
         transcript: transcript,
         analysis: null, // No separate analysis step
@@ -10361,7 +10498,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         guidelineTitle: displayName
     };
 
-    // Automatically generate dynamic advice for this guideline
+    // Automatically generate guideline suggestions for this guideline
     const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${displayName}\n\n`;
     appendToSummary1(dynamicAdviceTitle, false);
 
@@ -10381,8 +10518,8 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
             displayName
         );
     } catch (dynamicError) {
-        console.error(`[DEBUG] Error generating dynamic advice for ${guidelineId}:`, dynamicError);
-        const dynamicErrorMessage = `⚠️ **Note:** Dynamic advice generation failed for this guideline: ${dynamicError.message}\n\n`;
+        console.error(`[DEBUG] Error generating guideline suggestions for ${guidelineId}:`, dynamicError);
+        const dynamicErrorMessage = `⚠️ **Note:** Guideline suggestions generation failed for this guideline: ${dynamicError.message}\n\n`;
         appendToOutputField(dynamicErrorMessage, true);
     }
 
@@ -10455,7 +10592,7 @@ window.skipCurrentGuideline = function() {
     }
 };
 
-// Generate dynamic advice for multiple selected guidelines
+// Generate guideline suggestions for multiple selected guidelines
 async function generateMultiGuidelineAdvice() {
     // console.log('[DEBUG] generateMultiGuidelineAdvice called');
     
@@ -10508,7 +10645,7 @@ async function generateMultiGuidelineAdvice() {
         const progressHtml = `
             <div class="multi-guideline-progress">
                 <h3>🔄 Processing Multiple Guidelines</h3>
-                <p>Generating dynamic advice from ${selectedGuidelines.length} selected guideline${selectedGuidelines.length > 1 ? 's' : ''}...</p>
+                <p>Generating guideline suggestions from ${selectedGuidelines.length} selected guideline${selectedGuidelines.length > 1 ? 's' : ''}...</p>
                 <div class="processing-list">
                     ${selectedGuidelines.map(g => `
                         <div class="processing-item" data-guideline-id="${g.id}">
@@ -10555,7 +10692,7 @@ async function generateMultiGuidelineAdvice() {
         
         appendToOutputField(progressHtml, true);
         
-        // Call the multi-guideline dynamic advice function
+        // Call the multi-guideline guideline suggestions function
         await multiGuidelineDynamicAdvice(selectedGuidelines);
         
     } catch (error) {
@@ -10581,7 +10718,7 @@ async function generateMultiGuidelineAdvice() {
     }
 }
 
-// Multi-guideline dynamic advice - processes multiple guidelines in parallel
+// Multi-guideline guideline suggestions - processes multiple guidelines in parallel
 async function multiGuidelineDynamicAdvice(selectedGuidelines) {
     console.log('🔄 Processing', selectedGuidelines.length, 'guidelines in parallel...');
     
@@ -10645,7 +10782,7 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 const result = await response.json();
                 
                 if (!result.success) {
-                    throw new Error(result.error || 'Dynamic advice generation failed');
+                    throw new Error(result.error || 'Guideline suggestions generation failed');
                 }
                 
                 updateProcessingStatus(guideline.id, 'completed', '✅');
@@ -10725,7 +10862,7 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
         currentSuggestions = []; // Will be populated with combined suggestions
         userDecisions = {};
         
-        console.log('✅ Multi-guideline dynamic advice completed successfully');
+        console.log('✅ Multi-guideline guideline suggestions completed successfully');
         
     } catch (error) {
         console.error('❌ Error in multiGuidelineDynamicAdvice:', error);
@@ -11200,7 +11337,7 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
 
         console.log('📡 Sending multiple analyses to API...');
 
-        // Send all analyses to the dynamic advice API
+        // Send all analyses to the guideline suggestions API
         const response = await fetch(`${window.SERVER_URL}/multiGuidelineDynamicAdvice`, {
             method: 'POST',
             headers: {
@@ -11229,7 +11366,7 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
         });
 
         if (!result.success) {
-            throw new Error(result.error || 'Multi-guideline dynamic advice generation failed');
+            throw new Error(result.error || 'Multi-guideline guideline suggestions generation failed');
         }
 
         // Store session data globally
@@ -11246,7 +11383,7 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
         console.error('❌ Error generating combined suggestions:', error);
         
         // Fallback to single guideline approach
-        console.log('🔄 Falling back to single guideline dynamic advice');
+        console.log('🔄 Falling back to single guideline guideline suggestions');
         const firstResult = analysisResults[0];
         await dynamicAdvice(
             window.latestAnalysis.transcript, 
@@ -12177,9 +12314,10 @@ const ClinicalConditionsService = {
 
 // Ask Guidelines Question functionality
 async function askGuidelinesQuestion() {
-    const askQuestionBtn = document.getElementById('askGuidelinesQuestionBtn');
-    const questionSpinner = document.getElementById('askQuestionSpinner');
-    const originalText = askQuestionBtn.textContent;
+    const analyseBtn = document.getElementById('analyseBtn');
+    const analyseSpinner = document.getElementById('analyseSpinner');
+    const textSpan = analyseBtn?.querySelector('span:not(#analyseSpinner)');
+    const originalText = textSpan?.textContent || analyseBtn?.textContent || 'Analyse';
     
     try {
         const question = getUserInputContent();
@@ -12189,9 +12327,11 @@ async function askGuidelinesQuestion() {
         }
 
         // Set loading state
-        askQuestionBtn.classList.add('loading');
-        askQuestionBtn.disabled = true;
-        questionSpinner.style.display = 'inline-block';
+        if (analyseBtn) {
+            analyseBtn.classList.add('loading');
+            analyseBtn.disabled = true;
+        }
+        if (analyseSpinner) analyseSpinner.style.display = 'inline-block';
         
         // Show loading spinner in summary
         showSummaryLoading();
@@ -12398,10 +12538,17 @@ async function askGuidelinesQuestion() {
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Reset button state
-        askQuestionBtn.classList.remove('loading');
-        askQuestionBtn.disabled = false;
-        questionSpinner.style.display = 'none';
-        askQuestionBtn.textContent = originalText;
+        if (analyseBtn) {
+            analyseBtn.classList.remove('loading');
+            analyseBtn.disabled = false;
+            const textSpan = analyseBtn.querySelector('span:not(#analyseSpinner)');
+            if (textSpan) {
+                textSpan.textContent = originalText;
+            } else {
+                analyseBtn.textContent = originalText;
+            }
+        }
+        if (analyseSpinner) analyseSpinner.style.display = 'none';
         
         // Hide summary loading spinner (content has been added via appendToSummary1)
         hideSummaryLoading();
@@ -12535,7 +12682,7 @@ async function processQuestionAgainstGuidelines() {
 
 // Compliance Scoring Functions
 
-// Trigger compliance scoring after dynamic advice is applied
+// Trigger compliance scoring after guideline suggestions are applied
 async function triggerComplianceScoring(originalTranscript, updatedTranscript, changesSummary) {
     try {
         console.log('[DEBUG] triggerComplianceScoring called', {
