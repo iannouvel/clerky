@@ -217,6 +217,50 @@
         <button id="googleSignInBtn">Sign in with Google</button>
     </div>
     
+    <!-- Mode Selection Page -->
+    <div id="modeSelectionPage" class="mode-selection-page hidden">
+        <div class="mode-selection-container">
+            <div class="mode-selection-logo">
+                <h1>clerky</h1>
+            </div>
+            
+            <div class="mode-selection-buttons">
+                <button id="guidelineSuggestionsBtn" class="mode-btn primary" data-mode="guideline-suggestions">
+                    <span class="mode-btn-icon">💡</span>
+                    <span class="mode-btn-text">Guideline Suggestions</span>
+                </button>
+                <button id="askGuidelinesBtn" class="mode-btn secondary" data-mode="ask-guidelines">
+                    <span class="mode-btn-icon">❓</span>
+                    <span class="mode-btn-text">Ask Your Guidelines a Question</span>
+                </button>
+                <button id="auditBtn" class="mode-btn disabled" data-mode="audit" disabled>
+                    <span class="mode-btn-icon">📊</span>
+                    <span class="mode-btn-text">Audit</span>
+                    <span class="under-development-badge">Under Development</span>
+                </button>
+                <button id="learnTopicBtn" class="mode-btn disabled" data-mode="learn-topic" disabled>
+                    <span class="mode-btn-icon">📚</span>
+                    <span class="mode-btn-text">Learn a Topic</span>
+                    <span class="under-development-badge">Under Development</span>
+                </button>
+            </div>
+            
+            <div class="user-settings-display">
+                <h3>Your Settings</h3>
+                <div class="settings-info">
+                    <div class="setting-item">
+                        <span class="setting-label">Hospital Trust:</span>
+                        <span id="settingsTrustDisplay" class="setting-value">Loading...</span>
+                    </div>
+                    <div class="setting-item">
+                        <span class="setting-label">Guideline Scope:</span>
+                        <span id="settingsScopeDisplay" class="setting-value">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Main Application -->
     <div id="mainContent" class="hidden">
         <div class="top-bar">
@@ -352,15 +396,10 @@
                         
                         <!-- Action Buttons (shown when input has content) -->
                         <div id="chatbotActionButtons" class="chatbot-action-buttons hidden">
-                            <button id="processBtn" class="nav-btn primary" title="Dynamic Advice">
-                                <span id="processSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span class="btn-icon">⚡</span>
-                                <span class="btn-text">Dynamic Advice</span>
-                            </button>
-                            <button id="askGuidelinesQuestionBtn" class="nav-btn secondary" title="Ask Guidelines A Question">
-                                <span id="askQuestionSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span class="btn-icon">❓</span>
-                                <span class="btn-text">Ask Guidelines A Question</span>
+                            <button id="analyseBtn" class="nav-btn primary" title="Analyse">
+                                <span id="analyseSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                <span class="btn-icon">🔍</span>
+                                <span class="btn-text">Analyse</span>
                             </button>
                         </div>
                     </div>
@@ -752,10 +791,10 @@
                     </div>
                 </div>
                 
-                <!-- Dynamic Advice Preferences Section -->
+                <!-- Guideline Suggestions Preferences Section -->
                 <div class="preferences-section">
-                    <h3>Dynamic Advice Guidelines</h3>
-                    <p class="preferences-section-desc">Choose which guidelines to apply when using Dynamic Advice. This preference will be remembered for future sessions.</p>
+                    <h3>Guideline Suggestions Guidelines</h3>
+                    <p class="preferences-section-desc">Choose which guidelines to apply when using Guideline Suggestions. This preference will be remembered for future sessions.</p>
                     <div class="preferences-scope-display">
                         <strong>Current selection:</strong> <span id="preferencesScopeDisplay">Not set</span>
                     </div>
