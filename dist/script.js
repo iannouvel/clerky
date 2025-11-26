@@ -3168,18 +3168,18 @@ function initializeTipTapIntegration() {
 // Show/hide action buttons based on input content
 function updateChatbotButtonVisibility() {
     const editor = window.editors?.userInput;
-    const actionButtons = document.getElementById('chatbotActionButtons');
+    const floatingAnalyseButton = document.getElementById('floatingAnalyseButton');
     const analyseBtn = document.getElementById('analyseBtn');
     
-    if (!editor || !actionButtons) return;
+    if (!editor || !floatingAnalyseButton) return;
     
     const content = editor.getText().trim();
     if (content.length > 0) {
-        actionButtons.classList.remove('hidden');
-        // Ensure buttons are enabled when content exists
+        floatingAnalyseButton.classList.remove('hidden');
+        // Ensure button is enabled when content exists
         if (analyseBtn) analyseBtn.disabled = false;
     } else {
-        actionButtons.classList.add('hidden');
+        floatingAnalyseButton.classList.add('hidden');
     }
 }
 
