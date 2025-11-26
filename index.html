@@ -372,12 +372,20 @@
                         <!-- Clinical Note Input Section -->
                         <div class="chatbot-input-section">
                             <!-- Floating buttons in top right of input area -->
-                            <div class="floating-input-buttons">
+                            <div class="floating-input-buttons floating-input-buttons-top">
                                 <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
                                 <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
                                 <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
                                 <button id="recordBtn" class="nav-btn record-btn">
                                     <span id="recordSymbol" class="record-symbol"></span>Record
+                                </button>
+                            </div>
+                            <!-- Floating Analyse button in bottom right of input area -->
+                            <div class="floating-input-buttons floating-input-buttons-bottom hidden" id="floatingAnalyseButton">
+                                <button id="analyseBtn" class="nav-btn primary" title="Analyse">
+                                    <span id="analyseSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                                    <span class="btn-icon">🔍</span>
+                                    <span class="btn-text">Analyse</span>
                                 </button>
                             </div>
                             <div id="userInput" class="expandable-input tiptap-editor"></div>
@@ -392,15 +400,6 @@
                                 </div>
                                 <!-- Content will be inserted here -->
                             </div>
-                        </div>
-                        
-                        <!-- Action Buttons (shown when input has content) -->
-                        <div id="chatbotActionButtons" class="chatbot-action-buttons hidden">
-                            <button id="analyseBtn" class="nav-btn primary" title="Analyse">
-                                <span id="analyseSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span class="btn-icon">🔍</span>
-                                <span class="btn-text">Analyse</span>
-                            </button>
                         </div>
                     </div>
                 </div>
