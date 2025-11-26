@@ -3465,6 +3465,11 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             payloadSize: 'minimal - metadata only'
         });
 
+        // Check for abort before fetch
+        if (window.analysisAbortController?.signal.aborted) {
+            throw new Error('Analysis cancelled');
+        }
+        
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
@@ -3478,7 +3483,8 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 anonymisationInfo: anonymisationInfo, // Include anonymisation metadata
                 scope: scope, // Include scope filtering
                 hospitalTrust: hospitalTrust // Include hospital trust for local filtering
-            })
+            }),
+            signal: window.analysisAbortController?.signal
         });
 
         if (!response.ok) {
@@ -7059,8 +7065,50 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure spinner is hidden on initialization
         analyseSpinner.style.display = 'none';
     }
+    
+    // Global abort controller for cancelling analysis
+    window.analysisAbortController = null;
+    window.isAnalysisRunning = false;
+    
+    // Helper function to transform button to "Stop" mode
+    function transformToStopButton() {
+        if (!analyseBtn) return;
+        const btnIcon = analyseBtn.querySelector('.btn-icon');
+        const btnText = analyseBtn.querySelector('.btn-text');
+        if (btnIcon) btnIcon.textContent = '⏹';
+        if (btnText) btnText.textContent = 'Stop';
+        analyseBtn.classList.add('stop-mode');
+        window.isAnalysisRunning = true;
+    }
+    
+    // Helper function to restore button to "Analyse" mode
+    function restoreAnalyseButton() {
+        if (!analyseBtn) return;
+        const btnIcon = analyseBtn.querySelector('.btn-icon');
+        const btnText = analyseBtn.querySelector('.btn-text');
+        if (btnIcon) btnIcon.textContent = '🔍';
+        if (btnText) btnText.textContent = 'Analyse';
+        analyseBtn.classList.remove('stop-mode');
+        window.isAnalysisRunning = false;
+        if (analyseSpinner) analyseSpinner.style.display = 'none';
+    }
+    
     if (analyseBtn) {
         analyseBtn.addEventListener('click', async () => {
+            // Check if we're in stop mode
+            if (window.isAnalysisRunning && window.analysisAbortController) {
+                console.log('[DEBUG] Stop button clicked - cancelling analysis');
+                window.analysisAbortController.abort();
+                window.analysisAbortController = null;
+                restoreAnalyseButton();
+                
+                // Show cancellation message
+                const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
+                appendToSummary1(cancelMessage, false);
+                hideSummaryLoading();
+                return;
+            }
+            
             console.log('[DEBUG] Analyse button clicked, mode:', window.selectedMode);
             
             if (!window.selectedMode) {
@@ -7068,18 +7116,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Route to appropriate function based on selected mode
-            if (window.selectedMode === 'guideline-suggestions') {
-                await processWorkflow();
-            } else if (window.selectedMode === 'ask-guidelines') {
-                await askGuidelinesQuestion();
-            } else if (window.selectedMode === 'audit') {
-                alert('Audit feature is coming soon!');
-            } else if (window.selectedMode === 'learn-topic') {
-                alert('Learn a Topic feature is coming soon!');
-            } else {
-                console.error('[ERROR] Unknown mode selected:', window.selectedMode);
-                alert('Unknown mode selected. Please try again.');
+            // Create new abort controller for this analysis
+            window.analysisAbortController = new AbortController();
+            transformToStopButton();
+            
+            try {
+                // Route to appropriate function based on selected mode
+                if (window.selectedMode === 'guideline-suggestions') {
+                    await processWorkflow();
+                } else if (window.selectedMode === 'ask-guidelines') {
+                    await askGuidelinesQuestion();
+                } else if (window.selectedMode === 'audit') {
+                    alert('Audit feature is coming soon!');
+                } else if (window.selectedMode === 'learn-topic') {
+                    alert('Learn a Topic feature is coming soon!');
+                } else {
+                    console.error('[ERROR] Unknown mode selected:', window.selectedMode);
+                    alert('Unknown mode selected. Please try again.');
+                }
+            } catch (error) {
+                // Check if error is due to abort
+                if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
+                    console.log('[DEBUG] Analysis was aborted');
+                    return;
+                }
+                throw error;
+            } finally {
+                // Only restore if not already aborted
+                if (!window.analysisAbortController?.signal.aborted) {
+                    restoreAnalyseButton();
+                }
+                window.analysisAbortController = null;
             }
         });
     }
@@ -8579,9 +8646,12 @@ async function processWorkflow() {
     
     const analyseBtn = document.getElementById('analyseBtn');
     const analyseSpinner = document.getElementById('analyseSpinner');
-    // Find the text span to preserve button structure
-    const textSpan = analyseBtn?.querySelector('span:not(#analyseSpinner)');
-    const originalText = textSpan?.textContent || analyseBtn?.textContent || 'Analyse';
+    
+    // Check for abort signal
+    if (window.analysisAbortController?.signal.aborted) {
+        console.log('[DEBUG] processWorkflow: Already aborted');
+        return;
+    }
     
     try {
         // Check if we have transcript content
@@ -8591,8 +8661,7 @@ async function processWorkflow() {
             return;
         }
 
-        // Set loading state
-        if (analyseBtn) analyseBtn.disabled = true;
+        // Button state is already set by the click handler
         
         // Show loading spinner in summary
         showSummaryLoading();
@@ -8675,14 +8744,29 @@ async function processWorkflow() {
         const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
         appendToSummary1(step1Status, false);
         
+        // Check for abort before starting step 2
+        if (window.analysisAbortController?.signal.aborted) {
+            throw new Error('Analysis cancelled');
+        }
+        
         try {
             await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust); // Pass scope parameters
+            
+            // Check for abort after step 2
+            if (window.analysisAbortController?.signal.aborted) {
+                throw new Error('Analysis cancelled');
+            }
+            
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             
             const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
             appendToSummary1(step1Complete, false);
             
         } catch (error) {
+            // Check if error is due to abort
+            if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
+                throw new Error('Analysis cancelled');
+            }
             console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
             throw new Error(`Step 2 (Find Guidelines) failed: ${error.message}`);
         }
@@ -8717,6 +8801,13 @@ async function processWorkflow() {
         console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
 
     } catch (error) {
+        // Check if error is due to abort
+        if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+            console.log('[DEBUG] processWorkflow: Analysis was cancelled');
+            // Don't show error alert for user-initiated cancellation
+            return;
+        }
+        
         console.error('[DEBUG] processWorkflow: Workflow failed:', {
             error: error.message,
             stack: error.stack
@@ -8730,21 +8821,7 @@ async function processWorkflow() {
         alert(`Workflow failed: ${error.message}`);
         
     } finally {
-        // Reset button state
-        if (analyseBtn) {
-            analyseBtn.disabled = false;
-            // Update only the text span to preserve button structure
-            const textSpan = analyseBtn.querySelector('span:not(#analyseSpinner)');
-            if (textSpan) {
-                textSpan.textContent = originalText;
-            } else {
-                // Fallback if span structure is missing
-                analyseBtn.textContent = originalText;
-            }
-        }
-        // Ensure spinner is always hidden (shouldn't be shown for this workflow)
-        if (analyseSpinner) analyseSpinner.style.display = 'none';
-        
+        // Button state is restored by the click handler's finally block
         // Hide summary loading spinner (content has been added via appendToSummary1)
         hideSummaryLoading();
         
@@ -12316,8 +12393,12 @@ const ClinicalConditionsService = {
 async function askGuidelinesQuestion() {
     const analyseBtn = document.getElementById('analyseBtn');
     const analyseSpinner = document.getElementById('analyseSpinner');
-    const textSpan = analyseBtn?.querySelector('span:not(#analyseSpinner)');
-    const originalText = textSpan?.textContent || analyseBtn?.textContent || 'Analyse';
+    
+    // Check for abort signal
+    if (window.analysisAbortController?.signal.aborted) {
+        console.log('[DEBUG] askGuidelinesQuestion: Already aborted');
+        return;
+    }
     
     try {
         const question = getUserInputContent();
@@ -12326,12 +12407,7 @@ async function askGuidelinesQuestion() {
             return;
         }
 
-        // Set loading state
-        if (analyseBtn) {
-            analyseBtn.classList.add('loading');
-            analyseBtn.disabled = true;
-        }
-        if (analyseSpinner) analyseSpinner.style.display = 'inline-block';
+        // Button state is already set by the click handler
         
         // Show loading spinner in summary
         showSummaryLoading();
@@ -12346,6 +12422,12 @@ async function askGuidelinesQuestion() {
         let scopeSelection;
         try {
             scopeSelection = await showGuidelineScopeModal();
+            
+            // Check for abort after modal
+            if (window.analysisAbortController?.signal.aborted) {
+                throw new Error('Analysis cancelled');
+            }
+            
             console.log('[DEBUG] askGuidelinesQuestion: User selected scope:', scopeSelection);
             
             // Store the selection globally
@@ -12359,6 +12441,10 @@ async function askGuidelinesQuestion() {
             
             appendToSummary1(scopeMessage, false);
         } catch (error) {
+            // Check if error is due to abort
+            if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                throw new Error('Analysis cancelled');
+            }
             console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
             appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
             return; // Exit if user cancels
@@ -12421,6 +12507,11 @@ async function askGuidelinesQuestion() {
             guidelinesCount: guidelinesList.length
         });
 
+        // Check for abort before fetch
+        if (window.analysisAbortController?.signal.aborted) {
+            throw new Error('Analysis cancelled');
+        }
+        
         // Use same optimised pattern as main findRelevantGuidelines function
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
@@ -12435,7 +12526,8 @@ async function askGuidelinesQuestion() {
                 anonymisationInfo: null, // No anonymisation needed for questions
                 scope: scopeSelection.scope, // Include scope filtering
                 hospitalTrust: scopeSelection.hospitalTrust // Include hospital trust for local filtering
-            })
+            }),
+            signal: window.analysisAbortController?.signal
         });
 
         if (!response.ok) {
@@ -12497,6 +12589,11 @@ async function askGuidelinesQuestion() {
             return; // Exit early, don't try to process empty guidelines
         }
 
+        // Check for abort before second fetch
+        if (window.analysisAbortController?.signal.aborted) {
+            throw new Error('Analysis cancelled');
+        }
+        
         // Process the selected guidelines
         const response2 = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
             method: 'POST',
@@ -12507,7 +12604,8 @@ async function askGuidelinesQuestion() {
             body: JSON.stringify({
                 question: question,
                 relevantGuidelines: selectedGuidelines
-            })
+            }),
+            signal: window.analysisAbortController?.signal
         });
 
         if (!response2.ok) {
@@ -12526,6 +12624,13 @@ async function askGuidelinesQuestion() {
         appendToOutputField(finalOutput, true); // Display in output field, clear existing content
 
     } catch (error) {
+        // Check if error is due to abort
+        if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+            console.log('[DEBUG] askGuidelinesQuestion: Analysis was cancelled');
+            // Don't show error alert for user-initiated cancellation
+            return;
+        }
+        
         console.error('[DEBUG] Error in askGuidelinesQuestion:', {
             error: error.message,
             stack: error.stack
@@ -12537,20 +12642,8 @@ async function askGuidelinesQuestion() {
         
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
-        // Reset button state
-        if (analyseBtn) {
-            analyseBtn.classList.remove('loading');
-            analyseBtn.disabled = false;
-            const textSpan = analyseBtn.querySelector('span:not(#analyseSpinner)');
-            if (textSpan) {
-                textSpan.textContent = originalText;
-            } else {
-                analyseBtn.textContent = originalText;
-            }
-        }
-        if (analyseSpinner) analyseSpinner.style.display = 'none';
-        
-        // Hide summary loading spinner (content has been added via appendToSummary1)
+        // Button state is restored by the click handler's finally block
+        // Hide summary loading spinner
         hideSummaryLoading();
     }
 }

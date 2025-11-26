@@ -8924,7 +8924,7 @@ async function extractAuditableElements(content, aiProvider = 'DeepSeek') {
   }
   
   try {
-    const prompt = `You are a clinical guideline auditor. Your task is to extract clinically relevant auditable elements from this guideline.
+    const prompt = `You are a clinical guideline auditor. Your task is to extract clinically relevant auditable elements from this guideline with detailed variation points and thresholds.
 
 CRITICAL REQUIREMENTS:
 1. Parse the guideline carefully to identify ALL clinically relevant advice
@@ -8934,32 +8934,113 @@ CRITICAL REQUIREMENTS:
    - Input variables/conditions that determine the advice
    - The derived clinical advice/action
    - Clinical context and reasoning
+   - Specific thresholds that change recommendations
+   - Variation points where subtle changes should alter guidance
 
 OUTPUT FORMAT:
 Return a JSON array of objects, each with:
 {
   "type": "clinical_advice",
+  "elementId": "unique-id-format",
   "name": "Brief description of the clinical decision point",
   "element": "Detailed description including input variables and derived advice",
   "significance": "high|medium|low",
-  "inputVariables": ["variable1", "variable2"],
-  "derivedAdvice": "The specific clinical action/advice"
+  "inputVariables": [
+    {
+      "name": "variable_name",
+      "type": "numeric|boolean|categorical|text",
+      "description": "What this variable represents",
+      "required": true|false,
+      "threshold": "e.g., >=26 weeks, >100 mmHg, etc.",
+      "thresholdDescription": "What happens at this threshold",
+      "variationPoints": ["point1", "point2"]
+    }
+  ],
+  "derivedAdvice": "The specific clinical action/advice",
+  "expectedGuidance": "Exact guidance text or acceptable variations",
+  "variationPoints": [
+    {
+      "parameter": "variable_name",
+      "description": "What changes at this point",
+      "belowThreshold": "Guidance when below threshold",
+      "atThreshold": "Guidance at threshold",
+      "aboveThreshold": "Guidance when above threshold"
+    }
+  ],
+  "thresholds": [
+    {
+      "variable": "variable_name",
+      "thresholdValue": "26+0 weeks",
+      "comparison": ">=",
+      "impact": "Changes recommendation from X to Y"
+    }
+  ],
+  "clinicalContext": {
+    "requiredFactors": ["factor1", "factor2"],
+    "contraindications": ["condition1", "condition2"],
+    "patientDemographics": "Any relevant demographic requirements"
+  },
+  "guidelineSection": "Section reference if available"
 }
 
 EXAMPLE:
 {
   "type": "clinical_advice",
+  "elementId": "rfm-ctg-26weeks",
   "name": "CTG monitoring for reduced fetal movements at 26+ weeks",
   "element": "If patient reports reduced fetal movements at 26+0 weeks or later, perform computerized CTG within 2 hours. Input variables: gestational age (≥26+0 weeks), patient report of reduced movements, absence of other risk factors. Derived advice: Immediate CTG monitoring within 2 hours of report.",
   "significance": "high",
-  "inputVariables": ["gestational_age", "fetal_movement_report", "risk_factors"],
-  "derivedAdvice": "Perform computerized CTG within 2 hours"
+  "inputVariables": [
+    {
+      "name": "gestational_age",
+      "type": "numeric",
+      "description": "Gestational age in weeks",
+      "required": true,
+      "threshold": ">=26+0 weeks",
+      "thresholdDescription": "Guidance applies from 26+0 weeks gestation",
+      "variationPoints": ["<26 weeks: different guidance", ">=26 weeks: CTG required"]
+    },
+    {
+      "name": "fetal_movement_report",
+      "type": "boolean",
+      "description": "Patient reports reduced fetal movements",
+      "required": true,
+      "threshold": null,
+      "thresholdDescription": "Must be reported by patient",
+      "variationPoints": ["Reported: triggers action", "Not reported: no action"]
+    }
+  ],
+  "derivedAdvice": "Perform computerized CTG within 2 hours",
+  "expectedGuidance": "Immediate CTG monitoring within 2 hours of report of reduced movements",
+  "variationPoints": [
+    {
+      "parameter": "gestational_age",
+      "description": "Age threshold for CTG requirement",
+      "belowThreshold": "Different guidance for earlier gestation",
+      "atThreshold": "CTG monitoring required",
+      "aboveThreshold": "CTG monitoring required"
+    }
+  ],
+  "thresholds": [
+    {
+      "variable": "gestational_age",
+      "thresholdValue": "26+0 weeks",
+      "comparison": ">=",
+      "impact": "Triggers CTG monitoring requirement"
+    }
+  ],
+  "clinicalContext": {
+    "requiredFactors": ["reduced fetal movement report", "gestational age >=26 weeks"],
+    "contraindications": [],
+    "patientDemographics": "All pregnant patients"
+  },
+  "guidelineSection": "Antenatal Care - Fetal Movement Monitoring"
 }
 
 Guideline content:
 ${content}
 
-Extract ALL clinically relevant auditable elements, ordered by significance. Focus on actionable clinical decisions that can be audited for accuracy.`;
+Extract ALL clinically relevant auditable elements, ordered by significance. Focus on actionable clinical decisions that can be audited for accuracy. For each element, identify ALL thresholds, variation points, and input variable specifications.`;
 
     const result = await routeToAI({ 
       messages: [
@@ -11344,6 +11425,611 @@ Generate an incorrect transcript that would fail audit testing for the specific 
     });
   }
 });
+
+// ============================================================================
+// ENHANCED AUDIT SYSTEM ENDPOINTS
+// ============================================================================
+
+// Helper function to generate scenario variations for an element
+async function generateScenarioVariationsForElement(element, baseScenario, guidelineContent, aiProvider, userId) {
+  const variations = [];
+  
+  // Generate threshold variations if thresholds exist
+  if (element.thresholds && element.thresholds.length > 0) {
+    for (const threshold of element.thresholds.slice(0, 2)) { // Limit to 2 threshold variations
+      const variationPrompt = `Modify this clinical scenario to have ${threshold.variable} just below threshold (${threshold.thresholdValue}).
+
+BASE SCENARIO:
+${baseScenario.transcript}
+
+Create a realistic variation with the threshold parameter modified.`;
+      
+      const response = await routeToAI({
+        messages: [
+          { role: 'system', content: 'You are generating clinical scenario variations for audit testing.' },
+          { role: 'user', content: variationPrompt }
+        ]
+      }, userId, aiProvider);
+      
+      variations.push({
+        type: 'threshold_variation',
+        threshold: threshold.variable,
+        direction: 'below',
+        transcript: response.content || '',
+        expectedGuidance: element.derivedAdvice
+      });
+    }
+  }
+  
+  // Generate omission variations for required variables
+  if (element.inputVariables) {
+    const requiredVars = element.inputVariables.filter(v => v.required);
+    for (const reqVar of requiredVars.slice(0, 2)) { // Limit to 2 omissions
+      const omissionPrompt = `Modify this clinical scenario to omit information about ${reqVar.name}.
+
+BASE SCENARIO:
+${baseScenario.transcript}
+
+Create a variation that is missing the ${reqVar.name} information.`;
+      
+      const response = await routeToAI({
+        messages: [
+          { role: 'system', content: 'You are generating clinical scenario variations for audit testing.' },
+          { role: 'user', content: omissionPrompt }
+        ]
+      }, userId, aiProvider);
+      
+      variations.push({
+        type: 'variable_omission',
+        omittedVariable: reqVar.name,
+        transcript: response.content || '',
+        expectedGuidance: 'Should flag missing information'
+      });
+    }
+  }
+  
+  return variations;
+}
+
+// Endpoint to generate systematic audit scenarios for an element
+app.post('/generateAuditScenarios', authenticateUser, async (req, res) => {
+  try {
+    console.log('[AUDIT-SCENARIOS] Generating audit scenarios...');
+    
+    const {
+      guidelineId,
+      elementId,
+      auditableElements,
+      aiProvider = 'DeepSeek',
+      options = {}
+    } = req.body;
+    
+    if (!guidelineId || !auditableElements || !Array.isArray(auditableElements)) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required parameters: guidelineId and auditableElements array'
+      });
+    }
+    
+    // Get guideline content
+    const guideline = await getGuideline(guidelineId);
+    if (!guideline) {
+      return res.status(404).json({ success: false, error: 'Guideline not found' });
+    }
+    const guidelineContent = guideline.condensed || guideline.content || '';
+    
+    // Generate scenarios for each element (or specific element if elementId provided)
+    const elementsToProcess = elementId 
+      ? auditableElements.filter(el => (el.elementId || el.name) === elementId)
+      : auditableElements;
+    
+    const allScenarios = [];
+    
+    for (const element of elementsToProcess) {
+      try {
+        // Generate base scenario prompt
+        const baseScenarioPrompt = `Generate a realistic clinical scenario transcript that would trigger this auditable element.
+
+AUDITABLE ELEMENT:
+- Name: ${element.name}
+- Input Variables: ${JSON.stringify(element.inputVariables || [])}
+- Derived Advice: ${element.derivedAdvice}
+- Expected Guidance: ${element.expectedGuidance || element.derivedAdvice}
+
+Generate a baseline clinical transcript.`;
+        
+        const baseScenarioResponse = await routeToAI({
+          messages: [
+            { role: 'system', content: 'You are a clinical scenario generator for audit testing.' },
+            { role: 'user', content: baseScenarioPrompt }
+          ]
+        }, req.user.uid, aiProvider);
+        
+        const baseScenario = {
+          transcript: baseScenarioResponse.content || '',
+          elementId: element.elementId || element.name
+        };
+        
+        // Generate variations
+        const variations = await generateScenarioVariationsForElement(element, baseScenario, guidelineContent, aiProvider, req.user.uid);
+        
+        allScenarios.push({
+          elementId: element.elementId || element.name,
+          elementName: element.name,
+          baseScenario: baseScenario.transcript,
+          variations: variations,
+          totalVariations: variations.length
+        });
+      } catch (error) {
+        console.error(`[AUDIT-SCENARIOS] Error generating scenarios for element ${element.elementId}:`, error);
+      }
+    }
+    
+    // Store in Firestore
+    const testId = db.collection('auditTests').doc().id;
+    await db.collection('auditTests').doc(testId).set({
+      testId,
+      guidelineId,
+      scenarios: allScenarios,
+      totalElements: allScenarios.length,
+      generatedBy: req.user.uid,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      status: 'created'
+    });
+    
+    res.json({
+      success: true,
+      testId,
+      scenarios: allScenarios,
+      totalScenarios: allScenarios.reduce((sum, s) => sum + s.totalVariations, 0),
+      generated: new Date().toISOString()
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-SCENARIOS] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate audit scenarios',
+      details: error.message
+    });
+  }
+});
+
+// Endpoint to evaluate guidance multi-dimensionally
+app.post('/evaluateGuidance', authenticateUser, async (req, res) => {
+  try {
+    console.log('[AUDIT-EVAL] Evaluating guidance...');
+    
+    const {
+      guidance,
+      expectedGuidance,
+      element,
+      scenario,
+      testId,
+      aiProvider = 'DeepSeek'
+    } = req.body;
+    
+    if (!guidance || !expectedGuidance || !element) {
+      return res.status(400).json({
+        success: false,
+        error: 'Missing required parameters: guidance, expectedGuidance, element'
+      });
+    }
+    
+    const startTime = Date.now();
+    
+    // Multi-dimensional evaluation prompt
+    const evalPrompt = `Evaluate this clinical guidance across multiple dimensions.
+
+PROVIDED GUIDANCE:
+${guidance}
+
+EXPECTED GUIDANCE:
+${expectedGuidance}
+
+AUDITABLE ELEMENT:
+${JSON.stringify(element, null, 2)}
+
+EVALUATION CRITERIA:
+1. Accuracy (0-100): Does guidance match expected advice?
+2. Contextual Appropriateness (0-100): Is guidance appropriate for scenario?
+3. Completeness (0-100): Are all required elements present?
+4. Precision (0-100): Is guidance sufficiently specific?
+
+Return JSON:
+{
+  "accuracyScore": number,
+  "contextualScore": number,
+  "completenessScore": number,
+  "precisionScore": number,
+  "overallScore": number,
+  "issues": string[],
+  "strengths": string[],
+  "recommendations": string[]
+}`;
+    
+    const evalResponse = await routeToAI({
+      messages: [
+        { role: 'system', content: 'You are an automated clinical guidance evaluator. Return only valid JSON.' },
+        { role: 'user', content: evalPrompt }
+      ]
+    }, req.user.uid, aiProvider);
+    
+    const processingTimeMs = Date.now() - startTime;
+    
+    // Log interaction
+    try {
+      const { logAuditInteraction } = await import('./modules/audit-logging.js');
+      await logAuditInteraction({
+        guidelineId: element.guidelineId,
+        elementId: element.elementId || element.name,
+        testId: testId,
+        promptChain: {
+          systemPrompt: 'You are an automated clinical guidance evaluator. Return only valid JSON.',
+          userPrompt: evalPrompt,
+          fullPrompt: evalPrompt
+        },
+        response: evalResponse,
+        modelConfig: {
+          provider: evalResponse.ai_provider || aiProvider,
+          model: evalResponse.ai_model || 'unknown'
+        },
+        tokenUsage: evalResponse.token_usage,
+        endpoint: 'evaluateGuidance',
+        userId: req.user.uid,
+        processingTimeMs,
+        context: {
+          elementName: element.name,
+          scenarioType: scenario?.type
+        }
+      });
+    } catch (logError) {
+      console.error('[AUDIT-EVAL] Error logging interaction:', logError);
+    }
+    
+    // Parse JSON from response
+    let evaluationResult;
+    try {
+      const jsonMatch = evalResponse.content.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        evaluationResult = JSON.parse(jsonMatch[0]);
+      } else {
+        throw new Error('No JSON found in response');
+      }
+    } catch (parseError) {
+      return res.status(500).json({
+        success: false,
+        error: 'Failed to parse evaluation result',
+        details: parseError.message
+      });
+    }
+    
+    // Calculate overall score if not provided
+    if (!evaluationResult.overallScore) {
+      evaluationResult.overallScore = Math.round(
+        (evaluationResult.accuracyScore * 0.40) +
+        (evaluationResult.contextualScore * 0.35) +
+        (evaluationResult.completenessScore * 0.25)
+      );
+    }
+    
+    // Store result in Firestore
+    const resultId = db.collection('auditResults').doc().id;
+    await db.collection('auditResults').doc(resultId).set({
+      resultId,
+      testId: testId || null,
+      elementId: element.elementId || element.name,
+      scenarioId: scenario?.variationId || scenario?.id || null,
+      evaluation: evaluationResult,
+      guidance,
+      expectedGuidance,
+      timestamp: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    res.json({
+      success: true,
+      resultId,
+      evaluation: evaluationResult
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-EVAL] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to evaluate guidance',
+      details: error.message
+    });
+  }
+});
+
+// Endpoint to get traceability matrix
+app.get('/auditTraceability', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineId } = req.query;
+    
+    if (!guidelineId) {
+      return res.status(400).json({
+        success: false,
+        error: 'guidelineId is required'
+      });
+    }
+    
+    // Get traceability chain
+    const tests = await db.collection('auditTests')
+      .where('guidelineId', '==', guidelineId)
+      .get();
+    
+    const elements = [];
+    const scenarios = [];
+    const interactions = [];
+    const results = [];
+    
+    for (const testDoc of tests.docs) {
+      const test = testDoc.data();
+      
+      // Get elements
+      if (test.scenarios) {
+        for (const scenarioGroup of test.scenarios) {
+          if (scenarioGroup.elementId && !elements.find(e => e.elementId === scenarioGroup.elementId)) {
+            elements.push({ elementId: scenarioGroup.elementId, elementName: scenarioGroup.elementName });
+          }
+        }
+      }
+      
+      // Get scenarios
+      if (test.scenarios) {
+        scenarios.push(...test.scenarios.map(s => ({ ...s, testId: test.testId || testDoc.id })));
+      }
+      
+      // Get interactions for this test
+      const testInteractions = await db.collection('auditInteractions')
+        .where('testId', '==', test.testId || testDoc.id)
+        .get();
+      interactions.push(...testInteractions.docs.map(d => d.data()));
+      
+      // Get results for this test
+      const testResults = await db.collection('auditResults')
+        .where('testId', '==', test.testId || testDoc.id)
+        .get();
+      results.push(...testResults.docs.map(d => d.data()));
+    }
+    
+    const matrix = {
+      guidelineId,
+      elements,
+      tests: tests.docs.map(d => ({ id: d.id, ...d.data() })),
+      scenarios,
+      interactions,
+      results,
+      summary: {
+        totalElements: elements.length,
+        totalTests: tests.size,
+        totalScenarios: scenarios.length,
+        totalInteractions: interactions.length,
+        totalResults: results.length
+      },
+      generatedAt: new Date().toISOString()
+    };
+    
+    // Store matrix
+    await db.collection('traceabilityMatrix').doc(guidelineId).set({
+      ...matrix,
+      updatedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    res.json({
+      success: true,
+      matrix
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-TRACEABILITY] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate traceability matrix',
+      details: error.message
+    });
+  }
+});
+
+// Endpoint to generate audit report
+app.post('/auditReport', authenticateUser, async (req, res) => {
+  try {
+    const {
+      guidelineId,
+      testId,
+      format = 'json'
+    } = req.body;
+    
+    if (!guidelineId && !testId) {
+      return res.status(400).json({
+        success: false,
+        error: 'Either guidelineId or testId is required'
+      });
+    }
+    
+    // Get guideline
+    let guideline = null;
+    if (guidelineId) {
+      guideline = await getGuideline(guidelineId);
+    }
+    
+    // Get tests
+    let testsQuery = db.collection('auditTests');
+    if (testId) {
+      testsQuery = testsQuery.where('testId', '==', testId);
+    } else if (guidelineId) {
+      testsQuery = testsQuery.where('guidelineId', '==', guidelineId);
+    }
+    const testsSnapshot = await testsQuery.get();
+    const tests = testsSnapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+    
+    // Get all results
+    const allResults = [];
+    for (const test of tests) {
+      const resultsSnapshot = await db.collection('auditResults')
+        .where('testId', '==', test.testId || test.id)
+        .get();
+      allResults.push(...resultsSnapshot.docs.map(d => d.data()));
+    }
+    
+    // Calculate statistics
+    const stats = {
+      totalTests: tests.length,
+      totalResults: allResults.length,
+      averageScore: 0,
+      scoreDistribution: { excellent: 0, good: 0, needsImprovement: 0, poor: 0 }
+    };
+    
+    if (allResults.length > 0) {
+      const scores = allResults
+        .filter(r => r.evaluation && r.evaluation.overallScore !== undefined)
+        .map(r => r.evaluation.overallScore);
+      
+      if (scores.length > 0) {
+        stats.averageScore = scores.reduce((sum, s) => sum + s, 0) / scores.length;
+        
+        scores.forEach(score => {
+          if (score >= 90) stats.scoreDistribution.excellent++;
+          else if (score >= 75) stats.scoreDistribution.good++;
+          else if (score >= 60) stats.scoreDistribution.needsImprovement++;
+          else stats.scoreDistribution.poor++;
+        });
+      }
+    }
+    
+    // Generate ISO-compliant report
+    let isoReport = null;
+    try {
+      const { generateISOCompliantReport } = await import('./modules/audit-reporting.js');
+      isoReport = await generateISOCompliantReport({
+        guidelineId: guidelineId || tests[0]?.guidelineId,
+        guidelineTitle: guideline?.title || guideline?.humanFriendlyName || 'Unknown',
+        testId: testId || null,
+        tests,
+        results: allResults,
+        statistics: stats,
+        generatedBy: req.user.uid
+      });
+    } catch (error) {
+      console.error('[AUDIT-REPORT] Error generating ISO report:', error);
+      // Fall back to basic report
+    }
+    
+    const report = isoReport || {
+      reportId: db.collection('auditReports').doc().id,
+      guidelineId: guidelineId || tests[0]?.guidelineId,
+      guidelineTitle: guideline?.title || guideline?.humanFriendlyName || 'Unknown',
+      testId: testId || null,
+      tests,
+      results: allResults,
+      statistics: stats,
+      generatedBy: req.user.uid,
+      generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      format,
+      isoCompliant: false
+    };
+    
+    // Store report
+    await db.collection('auditReports').doc(report.reportId).set(report);
+    
+    res.json({
+      success: true,
+      report
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-REPORT] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate audit report',
+      details: error.message
+    });
+  }
+});
+
+// Endpoint to get audit metrics
+app.get('/auditMetrics', authenticateUser, async (req, res) => {
+  try {
+    const { guidelineId } = req.query;
+    
+    let testsQuery = db.collection('auditTests');
+    if (guidelineId) {
+      testsQuery = testsQuery.where('guidelineId', '==', guidelineId);
+    }
+    const testsSnapshot = await testsQuery.get();
+    
+    const metrics = {
+      totalTests: testsSnapshot.size,
+      totalScenarios: 0,
+      totalInteractions: 0,
+      totalResults: 0,
+      averageScore: 0,
+      totalTokens: 0,
+      totalCost: 0,
+      byGuideline: {},
+      byElement: {}
+    };
+    
+    // Process each test
+    for (const testDoc of testsSnapshot.docs) {
+      const test = testDoc.data();
+      
+      if (test.scenarios) {
+        metrics.totalScenarios += test.scenarios.reduce((sum, s) => sum + (s.totalVariations || 0), 0);
+      }
+      
+      // Get interactions
+      const interactionsSnapshot = await db.collection('auditInteractions')
+        .where('testId', '==', test.testId || testDoc.id)
+        .get();
+      metrics.totalInteractions += interactionsSnapshot.size;
+      
+      // Get token usage from interactions
+      interactionsSnapshot.docs.forEach(doc => {
+        const interaction = doc.data();
+        if (interaction.tokenUsage) {
+          metrics.totalTokens += interaction.tokenUsage.total_tokens || 0;
+          if (interaction.tokenUsage.estimated_cost_usd) {
+            metrics.totalCost += interaction.tokenUsage.estimated_cost_usd;
+          }
+        }
+      });
+      
+      // Get results
+      const resultsSnapshot = await db.collection('auditResults')
+        .where('testId', '==', test.testId || testDoc.id)
+        .get();
+      metrics.totalResults += resultsSnapshot.size;
+      
+      // Aggregate scores
+      const scores = resultsSnapshot.docs
+        .map(d => d.data().evaluation?.overallScore)
+        .filter(s => s !== undefined);
+      
+      if (scores.length > 0) {
+        const avgScore = scores.reduce((sum, s) => sum + s, 0) / scores.length;
+        if (metrics.totalResults > 0) {
+          metrics.averageScore = (metrics.averageScore * (metrics.totalResults - scores.length) + avgScore * scores.length) / metrics.totalResults;
+        }
+      }
+    }
+    
+    res.json({
+      success: true,
+      metrics
+    });
+    
+  } catch (error) {
+    console.error('[AUDIT-METRICS] Error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get audit metrics',
+      details: error.message
+    });
+  }
+});
+
 // ============================================================================
 // GUIDELINE DISCOVERY API ENDPOINTS
 // ============================================================================

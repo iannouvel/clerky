@@ -1523,6 +1523,19 @@ div.third-column,
     margin: 0;
 }
 
+/* Button stop mode (when analysis is running) */
+.nav-btn.stop-mode {
+    background: rgba(220, 53, 69, 0.9);
+    border: 1px solid rgba(220, 53, 69, 1);
+    color: white;
+    font-weight: 600;
+}
+
+.nav-btn.stop-mode:hover {
+    background: rgba(220, 53, 69, 1);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
 /* Guideline Suggestions Interface Styles */
 .dynamic-advice-container {
     background: #f8f9fa;
