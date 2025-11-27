@@ -649,7 +649,7 @@ export class AuditPage {
         this.setupTranscriptModal();
         
         // Add automated testing if needed
-        if (incorrectCount > 0 && !hasTests) {
+        if (incorrectCount > 0) {
             this.addAutomatedTesting(auditData);
         }
     }
