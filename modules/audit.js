@@ -569,7 +569,7 @@ export class AuditPage {
         }
     }
 
-    // Display audit results
+    // Display audit results with tabbed interface
     displayAuditResults(auditData) {
         const resultsDiv = document.getElementById('auditResults');
         resultsDiv.className = 'audit-results';
@@ -579,105 +579,286 @@ export class AuditPage {
             return;
         }
         
+        // Store audit data for later use
+        this.currentAuditData = auditData;
+        
+        // Create tabbed interface
+        const incorrectCount = auditData.incorrectScripts ? auditData.incorrectScripts.length : 0;
+        
         let html = `
-            <h3>Audit Results</h3>
-            <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-                <strong>Audit ID:</strong> ${auditData.auditId}<br>
-                <strong>Generated:</strong> ${new Date(auditData.generated).toLocaleString()}<br>
-                <strong>Audit Scope:</strong> ${auditData.auditScope.replace('_', ' ')}<br>
-                <strong>Elements Covered:</strong> ${auditData.auditableElements.length}<br>
-                <strong>Incorrect Scripts:</strong> ${auditData.incorrectScripts ? auditData.incorrectScripts.length : 0}
+            <!-- Summary Card -->
+            <div class="summary-card">
+                <div class="summary-card-header">
+                    <h3 class="summary-card-title">Audit Summary</h3>
+                    <div style="font-size: 12px; color: #6c757d;">
+                        ID: ${auditData.auditId.substring(0, 20)}...
+                    </div>
+                </div>
+                <div class="summary-stats">
+                    <div class="summary-stat">
+                        <span class="summary-stat-value">${auditData.auditableElements.length}</span>
+                        <span class="summary-stat-label">Elements</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value">${incorrectCount}</span>
+                        <span class="summary-stat-label">Issues Found</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value">${auditData.auditScope.replace(/_/g, ' ')}</span>
+                        <span class="summary-stat-label">Scope</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value" style="font-size: 14px;">${new Date(auditData.generated).toLocaleDateString()}</span>
+                        <span class="summary-stat-label">Generated</span>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Tab Navigation -->
+            <div class="audit-tabs">
+                <button class="audit-tab active" data-tab="transcripts">Transcripts</button>
+                <button class="audit-tab" data-tab="elements">Elements (${auditData.auditableElements.length})</button>
+                ${incorrectCount > 0 ? `<button class="audit-tab" data-tab="issues">Issues (${incorrectCount})</button>` : ''}
+            </div>
+            
+            <!-- Tab Content: Transcripts -->
+            <div id="tab-transcripts" class="audit-tab-content active">
+                ${this.renderTranscriptsTab(auditData)}
+            </div>
+            
+            <!-- Tab Content: Elements -->
+            <div id="tab-elements" class="audit-tab-content">
+                ${this.renderElementsTab(auditData)}
+            </div>
+            
+            ${incorrectCount > 0 ? `
+            <!-- Tab Content: Issues -->
+            <div id="tab-issues" class="audit-tab-content">
+                ${this.renderIssuesTab(auditData)}
+            </div>
+            ` : ''}
+            
         `;
         
-        // Display correct transcript
-        html += `
-            <div style="border: 1px solid #28a745; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #f8fff9;">
-                <h4 style="color: #28a745; margin: 0 0 10px 0;">✅ Correct Transcript</h4>
-                <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
-                            background: white; padding: 15px; border-radius: 4px; border: 1px solid #e9ecef; 
-                            white-space: pre-wrap; word-wrap: break-word; max-height: 400px; overflow-y: auto;">
-                    ${auditData.correctTranscript}
+        resultsDiv.innerHTML = html;
+        
+        // Set up tab switching
+        this.setupTabNavigation();
+        
+        // Set up transcript modal
+        this.setupTranscriptModal();
+        
+        // Add automated testing if needed
+        if (incorrectCount > 0 && !hasTests) {
+            this.addAutomatedTesting(auditData);
+        }
+    }
+    
+    // Render transcripts tab
+    renderTranscriptsTab(auditData) {
+        // Correct transcript preview
+        const transcriptPreview = auditData.correctTranscript.substring(0, 500) + '...';
+        
+        let html = `
+            <div class="transcript-card">
+                <div class="transcript-card-header" onclick="this.parentElement.querySelector('.transcript-card-body').classList.toggle('expanded')">
+                    <h5>✅ Correct Transcript</h5>
+                    <span style="font-size: 12px; color: #6c757d;">Click to expand</span>
+                </div>
+                <div class="transcript-card-body">
+                    <div class="transcript-preview">${this.escapeHtml(auditData.correctTranscript)}</div>
+                    <button class="view-full-btn" data-transcript-title="Correct Transcript" data-transcript-content="${this.escapeHtml(JSON.stringify(auditData.correctTranscript))}">
+                        View Full Transcript
+                    </button>
                 </div>
             </div>
         `;
         
-        // Display auditable elements
-        html += `
-            <div style="border: 1px solid #007bff; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #f8f9ff;">
-                <h4 style="color: #007bff; margin: 0 0 10px 0;">📋 Auditable Elements Covered</h4>
-        `;
+        // Incorrect transcripts
+        if (auditData.incorrectScripts && auditData.incorrectScripts.length > 0) {
+            auditData.incorrectScripts.forEach((script, index) => {
+                html += `
+                    <div class="transcript-card">
+                        <div class="transcript-card-header" onclick="this.parentElement.querySelector('.transcript-card-body').classList.toggle('expanded')">
+                            <h5>❌ Incorrect Script ${index + 1}: ${this.escapeHtml(script.elementName)}</h5>
+                            <span style="font-size: 12px; color: #6c757d;">Click to expand</span>
+                        </div>
+                        <div class="transcript-card-body">
+                            <div style="margin-bottom: 10px; font-size: 13px;">
+                                <strong>Error Type:</strong> ${this.escapeHtml(script.errorType || 'Unknown')}
+                            </div>
+                            <div class="transcript-preview">${this.escapeHtml(script.incorrectTranscript)}</div>
+                            <button class="view-full-btn" data-transcript-title="Incorrect Script ${index + 1}: ${this.escapeHtml(script.elementName)}" data-transcript-content="${this.escapeHtml(JSON.stringify(script.incorrectTranscript))}">
+                                View Full Transcript
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        
+        return html;
+    }
+    
+    // Render elements tab
+    renderElementsTab(auditData) {
+        let html = '<div style="display: flex; flex-direction: column; gap: 10px;">';
         
         auditData.auditableElements.forEach((element, index) => {
+            const significance = element.significance || 'unknown';
             html += `
-                <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 10px; margin: 5px 0;">
-                    <strong>Element ${index + 1}:</strong> ${element.name}<br>
-                    <strong>Type:</strong> ${element.type}<br>
-                    <strong>Significance:</strong> ${element.significance}<br>
-                    <strong>Input Variables:</strong> ${element.inputVariables ? element.inputVariables.join(', ') : 'None'}<br>
-                    <strong>Derived Advice:</strong> ${element.derivedAdvice}
+                <div class="element-item" onclick="this.classList.toggle('expanded')">
+                    <div class="element-header">
+                        <div>
+                            <span class="element-title">Element ${index + 1}: ${this.escapeHtml(element.name)}</span>
+                            <span class="element-badge ${significance}">${significance}</span>
+                        </div>
+                        <span style="font-size: 12px; color: #6c757d;">▼</span>
+                    </div>
+                    <div class="element-details">
+                        <div style="margin-top: 10px;">
+                            <strong>Type:</strong> ${this.escapeHtml(element.type || 'N/A')}<br>
+                            <strong>Input Variables:</strong> ${element.inputVariables ? this.escapeHtml(element.inputVariables.join(', ')) : 'None'}<br>
+                            <strong>Derived Advice:</strong> ${this.escapeHtml(element.derivedAdvice || 'N/A')}
+                        </div>
+                    </div>
                 </div>
             `;
         });
         
         html += '</div>';
-        
-        // Display incorrect scripts if available
-        if (auditData.incorrectScripts && auditData.incorrectScripts.length > 0) {
-            html += `
-                <div style="border: 1px solid #dc3545; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #fff8f8;">
-                    <h4 style="color: #dc3545; margin: 0 0 10px 0;">❌ Incorrect Scripts Generated</h4>
-            `;
-            
-            auditData.incorrectScripts.forEach((script, index) => {
-                html += `
-                    <div style="background: white; border: 1px solid #e9ecef; border-radius: 4px; padding: 15px; margin: 10px 0;">
-                        <h5 style="color: #dc3545; margin: 0 0 10px 0;">Incorrect Script ${index + 1} - ${script.elementName}</h5>
-                        <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #495057; 
-                                    background: #f8f9fa; padding: 10px; border-radius: 4px; border: 1px solid #e9ecef; 
-                                    white-space: pre-wrap; word-wrap: break-word; max-height: 300px; overflow-y: auto;">
-                            ${script.incorrectTranscript}
-                        </div>
-                        <div style="margin-top: 10px; font-size: 12px; color: #6c757d;">
-                            <strong>Error Type:</strong> ${script.errorType}<br>
-                            <strong>Generated:</strong> ${new Date(script.generatedAt).toLocaleString()}
-                        </div>
-                    </div>
-                `;
-            });
-            
-            html += '</div>';
+        return html;
+    }
+    
+    // Render issues tab
+    renderIssuesTab(auditData) {
+        if (!auditData.incorrectScripts || auditData.incorrectScripts.length === 0) {
+            return '<div style="text-align: center; color: #6c757d; padding: 40px;">No issues found</div>';
         }
         
-        resultsDiv.innerHTML = html;
-        
-        // Add automated testing button if we have incorrect scripts
-        if (auditData.incorrectScripts && auditData.incorrectScripts.length > 0) {
+        let html = '';
+        auditData.incorrectScripts.forEach((script, index) => {
             html += `
-                <div style="border: 1px solid #ffc107; border-radius: 4px; padding: 15px; margin-bottom: 20px; background: #fffbf0;">
-                    <h4 style="color: #856404; margin: 0 0 10px 0;">🧪 Automated Testing</h4>
-                    <p style="margin: 0 0 15px 0;">Test the generated transcripts against the auditable elements using AI validation.</p>
-                    <button id="runAutomatedTestsBtn" class="audit-btn" style="background: #ffc107; color: #212529;">
-                        <span id="automatedTestSpinner" class="spinner" style="display: none;"></span>
-                        Run Automated Tests
+                <div class="summary-card" style="border-left: 4px solid #dc3545;">
+                    <h4 style="color: #dc3545; margin: 0 0 10px 0;">Issue ${index + 1}: ${this.escapeHtml(script.elementName)}</h4>
+                    <div style="margin-bottom: 10px;">
+                        <strong>Error Type:</strong> ${this.escapeHtml(script.errorType || 'Unknown')}<br>
+                        <strong>Generated:</strong> ${new Date(script.generatedAt).toLocaleString()}
+                    </div>
+                    <button class="view-full-btn" data-transcript-title="Issue ${index + 1}: ${this.escapeHtml(script.elementName)}" data-transcript-content="${this.escapeHtml(JSON.stringify(script.incorrectTranscript))}">
+                        View Full Transcript
                     </button>
-                    <div id="automatedTestResults" style="margin-top: 15px; display: none;"></div>
                 </div>
             `;
-            resultsDiv.innerHTML = html;
+        });
+        
+        return html;
+    }
+    
+    // Set up tab navigation
+    setupTabNavigation() {
+        const tabs = document.querySelectorAll('.audit-tab');
+        const tabContents = document.querySelectorAll('.audit-tab-content');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+                
+                // Remove active from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked tab and corresponding content
+                tab.classList.add('active');
+                const content = document.getElementById(`tab-${targetTab}`);
+                if (content) {
+                    content.classList.add('active');
+                }
+            });
+        });
+    }
+    
+        // Set up transcript modal
+        setupTranscriptModal() {
+            const modal = document.getElementById('transcriptModal');
+            const closeBtn = document.getElementById('transcriptModalClose');
             
-            // Add event listener for automated testing
-            const testBtn = document.getElementById('runAutomatedTestsBtn');
-            console.log('[DEBUG] Looking for runAutomatedTestsBtn:', testBtn);
-            if (testBtn) {
-                console.log('[DEBUG] Adding click event listener to runAutomatedTestsBtn');
-                testBtn.addEventListener('click', () => {
-                    console.log('[DEBUG] runAutomatedTestsBtn clicked!');
-                    this.runAutomatedTests(auditData);
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    if (modal) modal.classList.remove('active');
                 });
-            } else {
-                console.error('[DEBUG] runAutomatedTestsBtn not found in DOM');
             }
+            
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Set up view full transcript buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('view-full-btn')) {
+                    const title = e.target.dataset.transcriptTitle;
+                    const contentJson = e.target.dataset.transcriptContent;
+                    if (title && contentJson) {
+                        try {
+                            const content = JSON.parse(contentJson);
+                            this.openTranscriptModal(title, content);
+                        } catch (error) {
+                            console.error('Error parsing transcript content:', error);
+                        }
+                    }
+                }
+            });
+        }
+    
+    // Open transcript modal
+    openTranscriptModal(title, content) {
+        const modal = document.getElementById('transcriptModal');
+        const modalTitle = document.getElementById('transcriptModalTitle');
+        const modalText = document.getElementById('transcriptModalText');
+        
+        if (modal && modalTitle && modalText) {
+            modalTitle.textContent = title;
+            modalText.textContent = content;
+            modal.classList.add('active');
+        }
+    }
+    
+    // Escape HTML for safe display
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+    // Add automated testing section
+    addAutomatedTesting(auditData) {
+        // Find the issues tab and add testing section there
+        const issuesTab = document.getElementById('tab-issues');
+        if (!issuesTab) return;
+        
+        const testingHtml = `
+            <div class="summary-card" style="border: 1px solid #ffc107; background: #fffbf0;">
+                <h4 style="color: #856404; margin: 0 0 10px 0;">🧪 Automated Testing</h4>
+                <p style="margin: 0 0 15px 0; color: #856404;">Test the generated transcripts against the auditable elements using AI validation.</p>
+                <button id="runAutomatedTestsBtn" class="audit-btn" style="background: #ffc107; color: #212529;">
+                    <span id="automatedTestSpinner" class="spinner" style="display: none;"></span>
+                    Run Automated Tests
+                </button>
+                <div id="automatedTestResults" style="margin-top: 15px; display: none;"></div>
+            </div>
+        `;
+        
+        issuesTab.insertAdjacentHTML('beforeend', testingHtml);
+        
+        const testBtn = document.getElementById('runAutomatedTestsBtn');
+        if (testBtn) {
+            testBtn.addEventListener('click', () => {
+                this.runAutomatedTests(auditData);
+            });
         }
     }
 
@@ -828,9 +1009,13 @@ export class AuditPage {
     // Display automated test results
     displayAutomatedTestResults(testResults, correctTests, incorrectTests) {
         const resultsDiv = document.getElementById('automatedTestResults');
+        if (!resultsDiv) return;
         
         const totalTests = testResults.length;
         const passRate = totalTests > 0 ? ((correctTests / totalTests) * 100).toFixed(1) : 0;
+        
+        // Create or update test results tab
+        this.createTestResultsTab(testResults, correctTests, incorrectTests, totalTests, passRate);
         
         let html = `
             <div style="background: ${passRate >= 80 ? '#d4edda' : passRate >= 60 ? '#fff3cd' : '#f8d7da'}; 
@@ -897,6 +1082,148 @@ export class AuditPage {
         }
         
         resultsDiv.innerHTML = html;
+        
+        // Switch to test results tab
+        const testTab = document.querySelector('.audit-tab[data-tab="tests"]');
+        if (testTab) {
+            testTab.click();
+        }
+    }
+    
+    // Create or update test results tab
+    createTestResultsTab(testResults, correctTests, incorrectTests, totalTests, passRate) {
+        // Check if tab already exists
+        let testTab = document.querySelector('.audit-tab[data-tab="tests"]');
+        let testTabContent = document.getElementById('tab-tests');
+        
+        // Create tab button if it doesn't exist
+        if (!testTab) {
+            const tabsContainer = document.querySelector('.audit-tabs');
+            if (tabsContainer) {
+                testTab = document.createElement('button');
+                testTab.className = 'audit-tab';
+                testTab.dataset.tab = 'tests';
+                testTab.textContent = `Test Results (${passRate}%)`;
+                tabsContainer.appendChild(testTab);
+                
+                // Set up click handler
+                testTab.addEventListener('click', () => {
+                    document.querySelectorAll('.audit-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.audit-tab-content').forEach(c => c.classList.remove('active'));
+                    testTab.classList.add('active');
+                    if (testTabContent) testTabContent.classList.add('active');
+                });
+            }
+        } else {
+            testTab.textContent = `Test Results (${passRate}%)`;
+        }
+        
+        // Create or update tab content
+        if (!testTabContent) {
+            testTabContent = document.createElement('div');
+            testTabContent.id = 'tab-tests';
+            testTabContent.className = 'audit-tab-content';
+            const resultsContainer = document.getElementById('auditResults');
+            if (resultsContainer) {
+                resultsContainer.appendChild(testTabContent);
+            }
+        }
+        
+        // Group tests by type
+        const correctTranscriptTests = testResults.filter(t => t.testType === 'correct_transcript');
+        const incorrectTranscriptTests = testResults.filter(t => t.testType === 'incorrect_transcript');
+        
+        let html = `
+            <div class="summary-card">
+                <h4 style="margin: 0 0 15px 0; color: #2c3e50;">📊 Test Results Summary</h4>
+                <div class="summary-stats">
+                    <div class="summary-stat">
+                        <span class="summary-stat-value">${totalTests}</span>
+                        <span class="summary-stat-label">Total Tests</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value" style="color: #28a745;">${correctTests}</span>
+                        <span class="summary-stat-label">Passed</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value" style="color: #dc3545;">${incorrectTests}</span>
+                        <span class="summary-stat-label">Failed</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="summary-stat-value" style="color: ${passRate >= 80 ? '#28a745' : passRate >= 60 ? '#ffc107' : '#dc3545'};">${passRate}%</span>
+                        <span class="summary-stat-label">Pass Rate</span>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Display correct transcript tests
+        if (correctTranscriptTests.length > 0) {
+            html += `
+                <div class="summary-card" style="border-left: 4px solid #28a745;">
+                    <h4 style="color: #28a745; margin: 0 0 15px 0;">✅ Correct Transcript Tests</h4>
+            `;
+            
+            correctTranscriptTests.forEach(test => {
+                const status = test.passed ? '✅ PASSED' : '❌ FAILED';
+                const statusColor = test.passed ? '#28a745' : '#dc3545';
+                
+                html += `
+                    <div class="element-item" style="cursor: default;" onclick="this.classList.toggle('expanded')">
+                        <div class="element-header">
+                            <div>
+                                <span class="element-title">${this.escapeHtml(test.elementName)}</span>
+                                <span class="element-badge ${test.elementSignificance}" style="margin-left: 10px;">${test.elementSignificance}</span>
+                                <span style="margin-left: 10px; color: ${statusColor}; font-weight: 600;">${status}</span>
+                            </div>
+                            <span style="font-size: 12px; color: #6c757d;">▼</span>
+                        </div>
+                        <div class="element-details">
+                            ${test.issues.length > 0 ? `<div style="margin-top: 10px;"><strong>Issues:</strong> ${this.escapeHtml(test.issues.join(', '))}</div>` : ''}
+                            ${test.suggestedFixes.length > 0 ? `<div style="margin-top: 10px;"><strong>Suggested Fixes:</strong> ${this.escapeHtml(test.suggestedFixes.join(', '))}</div>` : ''}
+                            ${test.error ? `<div style="margin-top: 10px; color: #dc3545;"><strong>Error:</strong> ${this.escapeHtml(test.error)}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
+        
+        // Display incorrect transcript tests
+        if (incorrectTranscriptTests.length > 0) {
+            html += `
+                <div class="summary-card" style="border-left: 4px solid #dc3545;">
+                    <h4 style="color: #dc3545; margin: 0 0 15px 0;">❌ Incorrect Transcript Tests</h4>
+            `;
+            
+            incorrectTranscriptTests.forEach(test => {
+                const status = test.passed ? '✅ PASSED' : '❌ FAILED';
+                const statusColor = test.passed ? '#28a745' : '#dc3545';
+                
+                html += `
+                    <div class="element-item" style="cursor: default;" onclick="this.classList.toggle('expanded')">
+                        <div class="element-header">
+                            <div>
+                                <span class="element-title">${this.escapeHtml(test.elementName)}</span>
+                                <span class="element-badge ${test.elementSignificance}" style="margin-left: 10px;">${test.elementSignificance}</span>
+                                <span style="margin-left: 10px; color: ${statusColor}; font-weight: 600;">${status}</span>
+                            </div>
+                            <span style="font-size: 12px; color: #6c757d;">▼</span>
+                        </div>
+                        <div class="element-details">
+                            ${test.issues.length > 0 ? `<div style="margin-top: 10px;"><strong>Issues:</strong> ${this.escapeHtml(test.issues.join(', '))}</div>` : ''}
+                            ${test.suggestedFixes.length > 0 ? `<div style="margin-top: 10px;"><strong>Suggested Fixes:</strong> ${this.escapeHtml(test.suggestedFixes.join(', '))}</div>` : ''}
+                            ${test.error ? `<div style="margin-top: 10px; color: #dc3545;"><strong>Error:</strong> ${this.escapeHtml(test.error)}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+        }
+        
+        testTabContent.innerHTML = html;
     }
 
     // Show audit success

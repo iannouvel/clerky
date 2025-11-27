@@ -33,6 +33,402 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Tab navigation for audit results */
+        .audit-tabs {
+            display: flex;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+            gap: 5px;
+        }
+        
+        .audit-tab {
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #6c757d;
+            transition: all 0.2s;
+            position: relative;
+            bottom: -2px;
+        }
+        
+        .audit-tab:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+        
+        .audit-tab.active {
+            background: white;
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .audit-tab-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .audit-tab-content.active {
+            display: block;
+        }
+        
+        /* Collapsible transcript cards */
+        .transcript-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .transcript-card-header {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .transcript-card-header:hover {
+            background: #e9ecef;
+        }
+        
+        .transcript-card-header h5 {
+            margin: 0;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        
+        .transcript-card-body {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .transcript-card-body.expanded {
+            max-height: 600px;
+            padding: 20px;
+        }
+        
+        .transcript-preview {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #495057;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .transcript-preview::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, white);
+        }
+        
+        .view-full-btn {
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+        
+        .view-full-btn:hover {
+            background: #4d7a56;
+        }
+        
+        /* Modal for full transcript viewing */
+        .transcript-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .transcript-modal.active {
+            display: flex;
+        }
+        
+        .transcript-modal-content {
+            background: white;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .transcript-modal-header {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .transcript-modal-header h3 {
+            margin: 0;
+            color: #2c3e50;
+        }
+        
+        .transcript-modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #6c757d;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .transcript-modal-close:hover {
+            background: #f8f9fa;
+        }
+        
+        .transcript-modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        
+        .transcript-full {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #2c3e50;
+        }
+        
+        /* Summary cards */
+        .summary-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .summary-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .summary-card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-stat {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .summary-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            display: block;
+        }
+        
+        .summary-stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+            margin-top: 5px;
+            display: block;
+        }
+        
+        /* Element list with expand/collapse */
+        .element-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .element-item:hover {
+            border-color: var(--accent-color);
+            background: #f0f8f2;
+        }
+        
+        .element-item.expanded {
+            border-color: var(--accent-color);
+            background: white;
+        }
+        
+        .element-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .element-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+        
+        .element-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .element-badge.high {
+            background: #fee;
+            color: #c33;
+        }
+        
+        .element-badge.medium {
+            background: #ffeaa7;
+            color: #d68910;
+        }
+        
+        .element-badge.low {
+            background: #d5f4e6;
+            color: #16a085;
+        }
+        
+        .element-details {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+            display: none;
+        }
+        
+        .element-item.expanded .element-details {
+            display: block;
+        }
+        
+        /* Progress indicator */
+        .audit-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: #e9ecef;
+            z-index: 0;
+        }
+        
+        .progress-step:last-child::after {
+            display: none;
+        }
+        
+        .progress-step.completed::after {
+            background: var(--accent-color);
+        }
+        
+        .progress-dot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9ecef;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .progress-step.completed .progress-dot {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .progress-step.active .progress-dot {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+        }
+        
+        .progress-label {
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .progress-step.completed .progress-label,
+        .progress-step.active .progress-label {
+            color: #2c3e50;
+            font-weight: 500;
         }
 
         .audit-section {
@@ -447,6 +843,19 @@
 
     <!-- Loading Screen -->
     <div id="loading" class="loading">Loading...</div>
+    
+    <!-- Transcript Modal -->
+    <div id="transcriptModal" class="transcript-modal">
+        <div class="transcript-modal-content">
+            <div class="transcript-modal-header">
+                <h3 id="transcriptModalTitle">Transcript</h3>
+                <button class="transcript-modal-close" id="transcriptModalClose">&times;</button>
+            </div>
+            <div class="transcript-modal-body">
+                <div id="transcriptModalText" class="transcript-full"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script type="module">
@@ -471,6 +880,7 @@
             try {
                 // Create and initialize audit page
                 const auditPage = new AuditPage();
+                window.auditPageInstance = auditPage; // Store for modal access
                 await auditPage.initialize();
                 
                 console.log('Audit page initialization complete');
