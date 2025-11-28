@@ -613,6 +613,10 @@ export class AuditPage {
                     
                     // Step 3: Display audit results with retry result
                     this.updateProgress(3, 'Compiling results...', 95);
+                    
+                    // Small delay to show compilation step
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                    
                     this.displayAuditResults({
                         auditId: transcriptResult.auditId,
                         correctTranscript: transcriptResult.transcript,
@@ -621,6 +625,11 @@ export class AuditPage {
                         auditScope: auditScope,
                         generated: transcriptResult.generated
                     });
+                    
+                    this.updateProgress(3, 'Complete!', 100);
+                    
+                    // Small delay to show completion before hiding progress
+                    await new Promise(resolve => setTimeout(resolve, 500));
                     
                     this.hideAuditProgress();
                     this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
