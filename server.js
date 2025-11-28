@@ -12687,7 +12687,7 @@ ${trimmedText}`;
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
         const aiResult = await sendToAI(formattedMessages, model, null, userId, 0.3);
         
-        if (!aiResult || !aiResult.response) {
+        if (!aiResult || !aiResult.content) {
             console.error('[ERROR] detectInputType: No response from AI');
             return res.status(500).json({ 
                 success: false, 
@@ -12696,7 +12696,7 @@ ${trimmedText}`;
         }
         
         // Parse the response - should be "question" or "note"
-        const responseText = aiResult.response.trim().toLowerCase();
+        const responseText = aiResult.content.trim().toLowerCase();
         const isQuestion = responseText.includes('question');
         const isNote = responseText.includes('note');
         
