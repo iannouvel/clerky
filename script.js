@@ -6773,6 +6773,13 @@ function setupGoogleSignIn() {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, starting initialization...');
     
+    // Ensure mode selection page is hidden on initial load
+    const modeSelectionPage = document.getElementById('modeSelectionPage');
+    if (modeSelectionPage) {
+        modeSelectionPage.classList.add('hidden');
+        console.log('[DEBUG] Ensured mode selection page is hidden on DOM load');
+    }
+    
     // Skip full initialization on audit page - only load functions
     if (window.AUDIT_PAGE) {
         console.log('Audit page detected, skipping DOM-dependent initialization');
@@ -10034,6 +10041,12 @@ window.auth.onAuthStateChanged(async (user) => {
             console.log('[DEBUG] Updated user info display');
         }
         
+        // Ensure mode selection page is hidden before initialization
+        const modeSelectionPagePre = document.getElementById('modeSelectionPage');
+        if (modeSelectionPagePre) {
+            modeSelectionPagePre.classList.add('hidden');
+        }
+        
         // Initialize app immediately
         await initializeMainApp();
         
@@ -10054,6 +10067,12 @@ window.auth.onAuthStateChanged(async (user) => {
         
         // Load and display user preferences in the preferences panel
         await loadAndDisplayUserPreferences();
+        
+        // Double-check mode selection page is hidden (defensive)
+        if (modeSelectionPage && !modeSelectionPage.classList.contains('hidden')) {
+            console.warn('[DEBUG] Mode selection page was visible, hiding it now');
+            modeSelectionPage.classList.add('hidden');
+        }
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
