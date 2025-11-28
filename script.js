@@ -10029,8 +10029,8 @@ window.auth.onAuthStateChanged(async (user) => {
         
         console.log('[DEBUG] Disclaimer accepted, starting initialization');
         // Keep main content hidden until initialization is complete
-        landingPage.classList.add('hidden');
-        mainContent.classList.add('hidden'); // Keep hidden during initialization
+        if (landingPage) landingPage.classList.add('hidden');
+        if (mainContent) mainContent.classList.add('hidden'); // Keep hidden during initialization
         
         // Update user info
         const userLabel = document.getElementById('userLabel');
