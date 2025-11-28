@@ -10029,8 +10029,8 @@ window.auth.onAuthStateChanged(async (user) => {
         
         console.log('[DEBUG] Disclaimer accepted, starting initialization');
         // Keep main content hidden until initialization is complete
-        landingPage.classList.add('hidden');
-        mainContent.classList.add('hidden'); // Keep hidden during initialization
+        if (landingPage) landingPage.classList.add('hidden');
+        if (mainContent) mainContent.classList.add('hidden'); // Keep hidden during initialization
         
         // Update user info
         const userLabel = document.getElementById('userLabel');
@@ -10051,18 +10051,19 @@ window.auth.onAuthStateChanged(async (user) => {
         await initializeMainApp();
         
         // Hide loading screen and show main content directly
-        const loading = document.getElementById('loading');
+        // Reuse existing variables declared at top of function
+        const loadingAfterInit = document.getElementById('loading');
         const modeSelectionPage = document.getElementById('modeSelectionPage');
-        const mainContent = document.getElementById('mainContent');
+        const mainContentAfterInit = document.getElementById('mainContent');
         
-        if (loading) {
-            loading.classList.add('hidden');
+        if (loadingAfterInit) {
+            loadingAfterInit.classList.add('hidden');
         }
         if (modeSelectionPage) {
             modeSelectionPage.classList.add('hidden');
         }
-        if (mainContent) {
-            mainContent.classList.remove('hidden');
+        if (mainContentAfterInit) {
+            mainContentAfterInit.classList.remove('hidden');
         }
         
         // Load and display user preferences in the preferences panel
