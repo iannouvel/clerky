@@ -7114,30 +7114,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            console.log('[DEBUG] Analyse button clicked, mode:', window.selectedMode);
-            
-            if (!window.selectedMode) {
-                alert('Please select a mode first');
+            // Get user input text
+            const editor = window.editors?.userInput;
+            if (!editor) {
+                alert('Editor not available. Please try again.');
                 return;
             }
+            
+            const inputText = editor.getHTML();
+            const plainText = editor.getText().trim();
+            
+            if (!plainText) {
+                alert('Please enter some text to analyse.');
+                return;
+            }
+            
+            // Show loading state
+            const btnIcon = analyseBtn.querySelector('.btn-icon');
+            const btnText = analyseBtn.querySelector('.btn-text');
+            if (btnIcon) btnIcon.textContent = '⏳';
+            if (btnText) btnText.textContent = 'Detecting...';
+            analyseBtn.disabled = true;
+            
+            // Detect if input is a question or clinical note using LLM
+            const isQuestion = await detectInputType(plainText);
+            console.log('[DEBUG] Analyse button clicked, detected type:', isQuestion ? 'question' : 'clinical note');
+            
+            // Restore button state
+            if (btnIcon) btnIcon.textContent = '🔍';
+            if (btnText) btnText.textContent = 'Analyse';
+            analyseBtn.disabled = false;
             
             // Create new abort controller for this analysis
             window.analysisAbortController = new AbortController();
             transformToStopButton();
             
             try {
-                // Route to appropriate function based on selected mode
-                if (window.selectedMode === 'guideline-suggestions') {
-                    await processWorkflow();
-                } else if (window.selectedMode === 'ask-guidelines') {
+                // Route to appropriate function based on detected type
+                if (isQuestion) {
+                    // Set mode for ask-guidelines workflow
+                    window.selectedMode = 'ask-guidelines';
                     await askGuidelinesQuestion();
-                } else if (window.selectedMode === 'audit') {
-                    alert('Audit feature is coming soon!');
-                } else if (window.selectedMode === 'learn-topic') {
-                    alert('Learn a Topic feature is coming soon!');
                 } else {
-                    console.error('[ERROR] Unknown mode selected:', window.selectedMode);
-                    alert('Unknown mode selected. Please try again.');
+                    // Set mode for guideline-suggestions (dynamic advice) workflow
+                    window.selectedMode = 'guideline-suggestions';
+                    await processWorkflow();
                 }
             } catch (error) {
                 // Check if error is due to abort
@@ -8062,6 +8083,239 @@ async function loadGuidelineScopeSelection() {
     } catch (error) {
         console.error('[ERROR] Failed to load guideline scope selection:', error);
         return null;
+    }
+}
+
+// Detect if user input is a question or a clinical note using LLM via server
+async function detectInputType(text) {
+    if (!text || text.trim().length === 0) {
+        return false; // Empty text defaults to clinical note
+    }
+    
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot detect input type, user not authenticated');
+            return false; // Default to clinical note
+        }
+        
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/detectInputType`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ text: text.trim() })
+        });
+        
+        const result = await response.json();
+        if (result.success && result.isQuestion !== undefined) {
+            console.log('[DEBUG] Input type detected:', result.type, result.isQuestion);
+            return result.isQuestion;
+        } else {
+            console.error('[ERROR] Failed to detect input type:', result.error);
+            // Default to clinical note on error
+            return false;
+        }
+    } catch (error) {
+        console.error('[ERROR] Error detecting input type:', error);
+        // Default to clinical note on error
+        return false;
+    }
+}
+
+// Load and display user preferences in the main preferences panel
+async function loadAndDisplayUserPreferences() {
+    const trustDisplay = document.getElementById('mainTrustDisplay');
+    const scopeDisplay = document.getElementById('mainScopeDisplay');
+    
+    if (!trustDisplay || !scopeDisplay) {
+        console.warn('[DEBUG] Main preferences display elements not found');
+        return;
+    }
+    
+    // Load hospital trust
+    try {
+        const user = auth.currentUser;
+        if (user) {
+            const idToken = await user.getIdToken();
+            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`
+                }
+            });
+            
+            const result = await response.json();
+            if (result.success && result.hospitalTrust) {
+                trustDisplay.textContent = result.hospitalTrust;
+            } else {
+                trustDisplay.textContent = 'Not set';
+            }
+        } else {
+            trustDisplay.textContent = 'Not set';
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load hospital trust:', error);
+        trustDisplay.textContent = 'Error loading';
+    }
+    
+    // Load guideline scope preference
+    try {
+        const savedScope = await loadGuidelineScopeSelection();
+        if (savedScope) {
+            let scopeText = '';
+            if (savedScope.scope === 'national') {
+                scopeText = 'National';
+            } else if (savedScope.scope === 'local') {
+                scopeText = `Local (${savedScope.hospitalTrust || 'Trust'})`;
+            } else if (savedScope.scope === 'both') {
+                scopeText = `Both (${savedScope.hospitalTrust || 'Trust'})`;
+            }
+            scopeDisplay.textContent = scopeText;
+        } else {
+            scopeDisplay.textContent = 'Not set';
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load guideline scope:', error);
+        scopeDisplay.textContent = 'Error loading';
+    }
+    
+    // Setup inline editing handlers for main panel
+    setupMainPreferencesEditing();
+}
+
+// Setup inline editing functionality for main preferences panel
+function setupMainPreferencesEditing() {
+    const editTrustBtn = document.getElementById('mainEditTrustBtn');
+    const editScopeBtn = document.getElementById('mainEditScopeBtn');
+    const openTrustModalBtn = document.getElementById('mainOpenTrustModalBtn');
+    const cancelTrustEditBtn = document.getElementById('mainCancelTrustEditBtn');
+    const cancelScopeEditBtn = document.getElementById('mainCancelScopeEditBtn');
+    const scopeNationalBtn = document.getElementById('mainScopeNationalBtn');
+    const scopeLocalBtn = document.getElementById('mainScopeLocalBtn');
+    const scopeBothBtn = document.getElementById('mainScopeBothBtn');
+    const trustEditMode = document.getElementById('mainTrustEditMode');
+    const scopeEditMode = document.getElementById('mainScopeEditMode');
+    
+    // Trust editing
+    if (editTrustBtn && openTrustModalBtn && cancelTrustEditBtn && trustEditMode) {
+        editTrustBtn.addEventListener('click', () => {
+            trustEditMode.classList.remove('hidden');
+            editTrustBtn.style.display = 'none';
+        });
+        
+        openTrustModalBtn.addEventListener('click', async () => {
+            await showHospitalTrustModal();
+            await loadAndDisplayUserPreferences();
+            trustEditMode.classList.add('hidden');
+            editTrustBtn.style.display = '';
+        });
+        
+        cancelTrustEditBtn.addEventListener('click', () => {
+            trustEditMode.classList.add('hidden');
+            editTrustBtn.style.display = '';
+        });
+    }
+    
+    // Scope editing
+    if (editScopeBtn && cancelScopeEditBtn && scopeEditMode) {
+        editScopeBtn.addEventListener('click', async () => {
+            const savedScope = await loadGuidelineScopeSelection();
+            if (savedScope) {
+                scopeNationalBtn.classList.remove('selected');
+                scopeLocalBtn.classList.remove('selected');
+                scopeBothBtn.classList.remove('selected');
+                if (savedScope.scope === 'national') {
+                    scopeNationalBtn.classList.add('selected');
+                } else if (savedScope.scope === 'local') {
+                    scopeLocalBtn.classList.add('selected');
+                } else if (savedScope.scope === 'both') {
+                    scopeBothBtn.classList.add('selected');
+                }
+            }
+            
+            scopeEditMode.classList.remove('hidden');
+            editScopeBtn.style.display = 'none';
+        });
+        
+        const handleScopeSelection = async (scope) => {
+            let currentTrust = null;
+            try {
+                const user = auth.currentUser;
+                if (user) {
+                    const idToken = await user.getIdToken();
+                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${idToken}`
+                        }
+                    });
+                    const result = await response.json();
+                    if (result.success && result.hospitalTrust) {
+                        currentTrust = result.hospitalTrust;
+                    }
+                }
+            } catch (error) {
+                console.error('[ERROR] Failed to load hospital trust:', error);
+            }
+            
+            if ((scope === 'local' || scope === 'both') && !currentTrust) {
+                alert('Please select a hospital trust first.');
+                return;
+            }
+            
+            scopeNationalBtn.classList.remove('selected');
+            scopeLocalBtn.classList.remove('selected');
+            scopeBothBtn.classList.remove('selected');
+            
+            if (scope === 'national') {
+                scopeNationalBtn.classList.add('selected');
+            } else if (scope === 'local') {
+                scopeLocalBtn.classList.add('selected');
+            } else if (scope === 'both') {
+                scopeBothBtn.classList.add('selected');
+            }
+            
+            const scopeSelection = {
+                scope: scope,
+                hospitalTrust: (scope === 'local' || scope === 'both') ? currentTrust : null
+            };
+            
+            const success = await saveGuidelineScopeSelection(scopeSelection);
+            if (success) {
+                let scopeText = '';
+                if (scope === 'national') {
+                    scopeText = 'National';
+                } else if (scope === 'local') {
+                    scopeText = `Local (${currentTrust})`;
+                } else if (scope === 'both') {
+                    scopeText = `Both (${currentTrust})`;
+                }
+                document.getElementById('mainScopeDisplay').textContent = scopeText;
+                
+                scopeEditMode.classList.add('hidden');
+                editScopeBtn.style.display = '';
+            } else {
+                alert('Failed to save guideline scope preference. Please try again.');
+            }
+        };
+        
+        if (scopeNationalBtn) {
+            scopeNationalBtn.addEventListener('click', () => handleScopeSelection('national'));
+        }
+        if (scopeLocalBtn) {
+            scopeLocalBtn.addEventListener('click', () => handleScopeSelection('local'));
+        }
+        if (scopeBothBtn) {
+            scopeBothBtn.addEventListener('click', () => handleScopeSelection('both'));
+        }
+        
+        cancelScopeEditBtn.addEventListener('click', () => {
+            scopeEditMode.classList.add('hidden');
+            editScopeBtn.style.display = '';
+        });
     }
 }
 
@@ -9783,14 +10037,23 @@ window.auth.onAuthStateChanged(async (user) => {
         // Initialize app immediately
         await initializeMainApp();
         
-        // Hide loading screen and show mode selection page
+        // Hide loading screen and show main content directly
         const loading = document.getElementById('loading');
+        const modeSelectionPage = document.getElementById('modeSelectionPage');
+        const mainContent = document.getElementById('mainContent');
+        
         if (loading) {
             loading.classList.add('hidden');
         }
+        if (modeSelectionPage) {
+            modeSelectionPage.classList.add('hidden');
+        }
+        if (mainContent) {
+            mainContent.classList.remove('hidden');
+        }
         
-        // Show mode selection page instead of main content
-        await showModeSelectionPage();
+        // Load and display user preferences in the preferences panel
+        await loadAndDisplayUserPreferences();
         
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');

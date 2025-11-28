@@ -12627,6 +12627,103 @@ app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
     }
 });
 
+// Endpoint to detect if user input is a question or clinical note
+app.post('/detectInputType', authenticateUser, async (req, res) => {
+    try {
+        const { text } = req.body;
+        const userId = req.user.uid;
+        
+        if (!text || typeof text !== 'string' || text.trim().length === 0) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Text is required' 
+            });
+        }
+        
+        const trimmedText = text.trim();
+        
+        // Use LLM to determine if input is a question or clinical note
+        const systemPrompt = `You are a clinical assistant that helps determine whether user input is a question about clinical guidelines or a clinical note/transcript.
+
+A QUESTION typically:
+- Asks for information, guidance, or explanation
+- Starts with question words (what, when, where, who, why, how, which, can, could, should, would, is, are, etc.)
+- Ends with a question mark
+- Uses phrases like "please explain", "tell me", "what is", "how do", etc.
+- Seeks knowledge or clarification
+
+A CLINICAL NOTE typically:
+- Describes a patient encounter, history, examination, or assessment
+- Contains clinical data (age, vital signs, measurements, dates)
+- Uses clinical terminology and structured format
+- Describes symptoms, findings, or clinical events
+- May include patient demographics, medical history, or treatment plans
+
+Respond with ONLY one word: "question" or "note" (lowercase, no punctuation, no explanation).`;
+
+        const userPrompt = `Determine if this input is a question or clinical note:
+
+${trimmedText}`;
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+        
+        console.log('[DEBUG] detectInputType: Sending to LLM', {
+            userId,
+            textLength: trimmedText.length,
+            textPreview: trimmedText.substring(0, 100)
+        });
+        
+        // Get user's AI preference
+        const preferredProvider = await getUserAIPreference(userId);
+        const model = preferredProvider === 'DeepSeek' ? 'deepseek-chat' : 
+                     preferredProvider === 'OpenAI' ? 'gpt-3.5-turbo' :
+                     preferredProvider === 'Anthropic' ? 'claude-3-sonnet' :
+                     preferredProvider === 'Mistral' ? 'mistral-large' :
+                     preferredProvider === 'Gemini' ? 'gemini-1.5-pro' : 'deepseek-chat';
+        
+        const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
+        const aiResult = await sendToAI(formattedMessages, model, null, userId, 0.3);
+        
+        if (!aiResult || !aiResult.response) {
+            console.error('[ERROR] detectInputType: No response from AI');
+            return res.status(500).json({ 
+                success: false, 
+                error: 'Failed to get response from AI' 
+            });
+        }
+        
+        // Parse the response - should be "question" or "note"
+        const responseText = aiResult.response.trim().toLowerCase();
+        const isQuestion = responseText.includes('question');
+        const isNote = responseText.includes('note');
+        
+        // Default to note if unclear
+        const detectedType = isQuestion ? 'question' : 'note';
+        
+        console.log('[DEBUG] detectInputType: Result', {
+            userId,
+            detectedType,
+            aiResponse: responseText
+        });
+        
+        res.json({ 
+            success: true, 
+            type: detectedType,
+            isQuestion: isQuestion
+        });
+        
+    } catch (error) {
+        console.error('[ERROR] Failed to detect input type:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message || 'Failed to detect input type' 
+        });
+    }
+});
+
 // Endpoint to update user's guideline scope preference
 app.post('/updateUserGuidelineScope', authenticateUser, async (req, res) => {
     try {
