@@ -1106,9 +1106,11 @@ body {
 
 .preference-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
     padding: 8px 0;
+    margin-bottom: 12px;
     border-bottom: 1px solid #e8e8e8;
 }
 
@@ -1117,18 +1119,17 @@ body {
 }
 
 .preference-label {
-    font-weight: 500;
-    color: #666;
+    font-weight: 600;
+    color: #333;
     font-size: 0.9rem;
-    flex-shrink: 0;
+    margin-bottom: 4px;
 }
 
 .preference-value-container {
     display: flex;
     align-items: center;
-    gap: 6px;
-    flex: 1;
-    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
 }
 
 .preference-value {
@@ -1243,15 +1244,6 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
-    }
-    
-    .preference-value-container {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .preference-edit-btn {
-        opacity: 1;
     }
 }
 

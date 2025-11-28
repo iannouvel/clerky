@@ -8156,7 +8156,7 @@ async function loadAndDisplayUserPreferences() {
             
             const result = await response.json();
             if (result.success && result.hospitalTrust) {
-                trustDisplay.textContent = result.hospitalTrust;
+                trustDisplay.textContent = abbreviateHospitalTrust(result.hospitalTrust);
             } else {
                 trustDisplay.textContent = 'Not set';
             }
@@ -8173,12 +8173,13 @@ async function loadAndDisplayUserPreferences() {
         const savedScope = await loadGuidelineScopeSelection();
         if (savedScope) {
             let scopeText = '';
+            const trustAbbrev = savedScope.hospitalTrust ? abbreviateHospitalTrust(savedScope.hospitalTrust) : '';
             if (savedScope.scope === 'national') {
                 scopeText = 'National';
             } else if (savedScope.scope === 'local') {
-                scopeText = `Local (${savedScope.hospitalTrust || 'Trust'})`;
+                scopeText = trustAbbrev || 'Local';
             } else if (savedScope.scope === 'both') {
-                scopeText = `Both (${savedScope.hospitalTrust || 'Trust'})`;
+                scopeText = trustAbbrev ? `National + ${trustAbbrev}` : 'National + Local';
             }
             scopeDisplay.textContent = scopeText;
         } else {
@@ -8350,7 +8351,7 @@ async function loadAndDisplayUserSettings() {
             
             const result = await response.json();
             if (result.success && result.hospitalTrust) {
-                trustDisplay.textContent = result.hospitalTrust;
+                trustDisplay.textContent = abbreviateHospitalTrust(result.hospitalTrust);
             } else {
                 trustDisplay.textContent = 'Not set';
             }
@@ -10093,6 +10094,61 @@ window.auth.onAuthStateChanged(async (user) => {
         setupGoogleSignIn();
     }
 });
+
+// Helper function to abbreviate hospital trust names
+function abbreviateHospitalTrust(trustName) {
+    if (!trustName) return '';
+    
+    // Common abbreviations for hospital trusts
+    const mapping = {
+        'University Hospitals Sussex NHS Foundation Trust': 'UHSussex',
+        'University Hospitals Sussex': 'UHSussex',
+        'UHSussex': 'UHSussex',
+        'NHS Foundation Trust': '',
+        'NHS Trust': '',
+    };
+    
+    // Check for exact match first
+    if (mapping[trustName]) {
+        return mapping[trustName];
+    }
+    
+    // Try to find partial matches and replace
+    let abbreviated = trustName;
+    for (const [full, abbrev] of Object.entries(mapping)) {
+        if (abbreviated.includes(full)) {
+            abbreviated = abbreviated.replace(full, abbrev).trim();
+        }
+    }
+    
+    // If it contains "University Hospitals", try to extract key parts
+    if (abbreviated.includes('University Hospitals')) {
+        const parts = abbreviated.split('University Hospitals');
+        if (parts.length > 1) {
+            const location = parts[1].split('NHS')[0].trim();
+            if (location) {
+                // Extract key location name
+                const words = location.split(' ');
+                if (words.length > 0) {
+                    // Take first significant word (skip common words)
+                    const significantWord = words.find(w => !['and', 'of', 'the'].includes(w.toLowerCase())) || words[0];
+                    return 'UH' + significantWord;
+                }
+            }
+        }
+    }
+    
+    // Remove common suffixes
+    abbreviated = abbreviated.replace(/\s+NHS\s+Foundation\s+Trust$/i, '');
+    abbreviated = abbreviated.replace(/\s+NHS\s+Trust$/i, '');
+    
+    // Default: return as is if reasonable length, otherwise truncate
+    if (abbreviated.length > 25) {
+        return abbreviated.substring(0, 25) + '...';
+    }
+    
+    return abbreviated || trustName;
+}
 
 // Helper function to standardize guideline titles for better display
 function abbreviateOrganization(orgName) {
