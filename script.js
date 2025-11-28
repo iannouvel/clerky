@@ -6880,8 +6880,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const auditBtn = document.getElementById('auditBtn');
     if (auditBtn) {
         auditBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Audit button clicked, opening audit page in new tab...');
-            window.open('audit.html', '_blank');
+            console.log('[DEBUG] Audit button clicked, redirecting to audit page...');
+            window.location.href = 'audit.html';
+            // Close settings menu
+            const settingsMenu = document.getElementById('settingsMenu');
+            if (settingsMenu) {
+                settingsMenu.classList.add('hidden');
+            }
         });
     }
 
