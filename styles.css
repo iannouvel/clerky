@@ -659,6 +659,16 @@ body {
     text-align: center;
     background: linear-gradient(135deg, var(--accent-color) 0%, #20bf6b 100%);
     padding: 40px 20px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .mode-selection-container {
@@ -668,6 +678,25 @@ body {
     border-radius: 16px;
     padding: 40px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mode-selection-page,
+    .mode-selection-container {
+        animation: none;
+    }
 }
 
 .mode-selection-logo h1 {
@@ -675,6 +704,18 @@ body {
     font-weight: 600;
     margin: 0 0 40px 0;
     color: var(--accent-color);
+    animation: fadeInScale 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .mode-selection-buttons {
@@ -692,7 +733,7 @@ body {
     border: 2px solid #e0e0e0;
     border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: white;
     display: flex;
     flex-direction: column;
@@ -700,6 +741,34 @@ body {
     gap: 12px;
     min-height: 140px;
     justify-content: center;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.mode-btn:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.mode-btn:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.mode-btn:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.mode-btn:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mode-btn.primary {
@@ -713,18 +782,24 @@ body {
 }
 
 .mode-btn:hover:not(.disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .mode-btn.primary:hover:not(.disabled) {
     background: var(--accent-color);
     color: white;
+    border-color: var(--accent-color);
 }
 
 .mode-btn.secondary:hover:not(.disabled) {
     background: #4caf50;
     color: white;
+    border-color: #4caf50;
+}
+
+.mode-btn:active:not(.disabled) {
+    transform: translateY(-2px) scale(1);
 }
 
 .mode-btn.disabled {
@@ -735,6 +810,11 @@ body {
 
 .mode-btn-icon {
     font-size: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.mode-btn:hover:not(.disabled) .mode-btn-icon {
+    transform: scale(1.1);
 }
 
 .mode-btn-text {
@@ -752,12 +832,23 @@ body {
     padding: 4px 8px;
     border-radius: 4px;
     font-weight: 600;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .user-settings-display {
     margin-top: 40px;
     padding-top: 30px;
     border-top: 2px solid #e0e0e0;
+    animation: fadeIn 0.8s ease-out 0.5s both;
 }
 
 .user-settings-display h3 {
@@ -777,18 +868,176 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
+    padding: 16px;
     background: #f9f9f9;
     border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.setting-item:hover {
+    background: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .setting-label {
     font-weight: 500;
     color: #666;
+    flex-shrink: 0;
+}
+
+.setting-value-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .setting-value {
     font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.setting-value.editable {
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.setting-value.editable:hover {
+    background: rgba(0, 184, 148, 0.1);
+    color: var(--accent-color);
+}
+
+.setting-edit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.setting-item:hover .setting-edit-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.setting-edit-btn:hover {
+    color: var(--accent-color);
+    background: rgba(0, 184, 148, 0.1);
+    transform: scale(1.1);
+}
+
+.setting-edit-btn:active {
+    transform: scale(0.95);
+}
+
+.setting-edit-mode {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.setting-edit-mode.hidden {
+    display: none;
+}
+
+.scope-edit-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.scope-edit-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--accent-color);
+    background: white;
+    color: var(--accent-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.scope-edit-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 184, 148, 0.3);
+}
+
+.scope-edit-btn:active {
+    transform: translateY(0);
+}
+
+.scope-edit-btn.selected {
+    background: var(--accent-color);
+    color: white;
+}
+
+.setting-action-btn {
+    padding: 8px 16px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.setting-action-btn:hover {
+    background: #00a085;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 184, 148, 0.3);
+}
+
+.setting-action-btn:active {
+    transform: translateY(0);
+}
+
+.setting-cancel-btn {
+    padding: 8px 16px;
+    background: transparent;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.setting-cancel-btn:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
     color: #333;
 }
 
@@ -803,6 +1052,31 @@ body {
     
     .mode-selection-logo h1 {
         font-size: 3rem;
+    }
+    
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .setting-value-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .setting-edit-btn {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+    .scope-edit-buttons {
+        width: 100%;
+    }
+    
+    .scope-edit-btn {
+        flex: 1;
+        min-width: 0;
     }
 }
 

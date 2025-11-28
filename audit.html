@@ -359,31 +359,61 @@
         }
         
         /* Progress indicator */
-        .audit-progress {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
+        .audit-progress-container {
+            background: white;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .progress-header h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #212529;
+        }
+        
+        .progress-status {
+            font-size: 14px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        .progress-steps {
+            margin-bottom: 24px;
         }
         
         .progress-step {
-            flex: 1;
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
+            padding: 16px 0;
             position: relative;
+            padding-left: 48px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        .progress-step.active,
+        .progress-step.completed {
+            opacity: 1;
         }
         
         .progress-step::after {
             content: '';
             position: absolute;
-            top: 15px;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: #e9ecef;
-            z-index: 0;
+            left: 19px;
+            top: 44px;
+            width: 2px;
+            height: calc(100% - 16px);
+            background: #dee2e6;
+            transition: background 0.3s ease;
         }
         
         .progress-step:last-child::after {
@@ -391,43 +421,104 @@
         }
         
         .progress-step.completed::after {
-            background: var(--accent-color);
+            background: #28a745;
+        }
+        
+        .progress-step.active::after {
+            background: #007bff;
         }
         
         .progress-dot {
-            width: 30px;
-            height: 30px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: #e9ecef;
-            color: #6c757d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 8px;
-            font-weight: 600;
-            position: relative;
+            background: #dee2e6;
+            border: 3px solid #fff;
+            position: absolute;
+            left: 12px;
             z-index: 1;
+            transition: all 0.3s ease;
         }
         
         .progress-step.completed .progress-dot {
-            background: var(--accent-color);
-            color: white;
+            background: #28a745;
+            border-color: #28a745;
         }
         
         .progress-step.active .progress-dot {
-            background: var(--accent-color);
-            color: white;
-            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+            background: #007bff;
+            border-color: #007bff;
+            animation: progressPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes progressPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(0, 123, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+            }
         }
         
         .progress-label {
-            font-size: 12px;
+            font-weight: 600;
             color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+        
+        .progress-description {
+            font-size: 13px;
+            color: #868e96;
+            line-height: 1.4;
         }
         
         .progress-step.completed .progress-label,
         .progress-step.active .progress-label {
-            color: #2c3e50;
+            color: #212529;
+        }
+        
+        .progress-step.completed .progress-description,
+        .progress-step.active .progress-description {
+            color: #495057;
+        }
+        
+        .progress-bar-container {
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            width: 0%;
+        }
+        
+        .progress-percentage {
+            position: absolute;
+            right: 0;
+            top: -24px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6c757d;
+        }
+        
+        .progress-step.active .progress-description {
             font-weight: 500;
         }
 
@@ -838,6 +929,37 @@
 
         <!-- Right Column - Results -->
         <div class="audit-right-column">
+            <!-- Progress Indicator -->
+            <div id="auditProgress" class="audit-progress-container" style="display: none;">
+                <div class="progress-header">
+                    <h3>Audit Progress</h3>
+                    <div class="progress-status" id="progressStatus">Initialising...</div>
+                </div>
+                <div class="progress-steps">
+                    <div class="progress-step" id="step-1">
+                        <div class="progress-dot"></div>
+                        <div class="progress-label">Generating Correct Transcript</div>
+                        <div class="progress-description">Creating a clinical transcript that follows the guideline correctly...</div>
+                    </div>
+                    <div class="progress-step" id="step-2">
+                        <div class="progress-dot"></div>
+                        <div class="progress-label">Generating Incorrect Scripts</div>
+                        <div class="progress-description">Creating test scenarios that deviate from the guideline...</div>
+                    </div>
+                    <div class="progress-step" id="step-3">
+                        <div class="progress-dot"></div>
+                        <div class="progress-label">Compiling Results</div>
+                        <div class="progress-description">Organising audit results for review...</div>
+                    </div>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                    </div>
+                    <div class="progress-percentage" id="progressPercentage">0%</div>
+                </div>
+            </div>
+            
             <div id="auditResults" class="audit-results empty">
                 <div>Select a guideline and run an audit to view results</div>
             </div>
