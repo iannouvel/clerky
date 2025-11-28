@@ -7633,13 +7633,13 @@ async function saveHospitalTrustSelection() {
             currentTrustDisplay.textContent = selectedTrust;
             
             // Update saved guideline scope selection if it was using local/both
-            const savedScope = loadGuidelineScopeSelection();
+            const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
                 const updatedSelection = {
                     scope: savedScope.scope,
                     hospitalTrust: selectedTrust
                 };
-                saveGuidelineScopeSelection(updatedSelection);
+                await saveGuidelineScopeSelection(updatedSelection);
                 console.log('[DEBUG] Updated guideline scope selection with new trust:', updatedSelection);
             }
             
@@ -7689,7 +7689,7 @@ async function clearHospitalTrustSelection() {
             }
             
             // Clear saved guideline scope selection if it was using local/both
-            const savedScope = loadGuidelineScopeSelection();
+            const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
                 clearGuidelineScopeSelection();
                 console.log('[DEBUG] Cleared guideline scope selection because trust was cleared');
@@ -7766,7 +7766,7 @@ async function showPreferencesModal() {
     }
     
     // Load current guideline scope selection
-    const savedScope = loadGuidelineScopeSelection();
+    const savedScope = await loadGuidelineScopeSelection();
     if (savedScope) {
         let scopeText = '';
         if (savedScope.scope === 'national') {
@@ -8001,29 +8001,68 @@ async function showPreferencesModal() {
 // Guideline Scope Selection Modal Functions
 let guidelineScopeResolve = null; // Promise resolver for scope selection
 
-// Save guideline scope selection to localStorage
-function saveGuidelineScopeSelection(scopeSelection) {
+// Save guideline scope selection to Firestore
+async function saveGuidelineScopeSelection(scopeSelection) {
     try {
-        localStorage.setItem('clerky_guideline_scope', JSON.stringify(scopeSelection));
-        console.log('[DEBUG] Saved guideline scope selection to localStorage:', scopeSelection);
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot save guideline scope, user not authenticated');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/updateUserGuidelineScope`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ guidelineScope: scopeSelection })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('[DEBUG] Saved guideline scope selection to Firestore:', scopeSelection);
+            return true;
+        } else {
+            console.error('[ERROR] Failed to save guideline scope selection:', result.error);
+            return false;
+        }
     } catch (error) {
         console.error('[ERROR] Failed to save guideline scope selection:', error);
+        return false;
     }
 }
 
-// Load guideline scope selection from localStorage
-function loadGuidelineScopeSelection() {
+// Load guideline scope selection from Firestore
+async function loadGuidelineScopeSelection() {
     try {
-        const saved = localStorage.getItem('clerky_guideline_scope');
-        if (saved) {
-            const scopeSelection = JSON.parse(saved);
-            console.log('[DEBUG] Loaded guideline scope selection from localStorage:', scopeSelection);
-            return scopeSelection;
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot load guideline scope, user not authenticated');
+            return null;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/getUserGuidelineScope`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const result = await response.json();
+        if (result.success && result.guidelineScope) {
+            console.log('[DEBUG] Loaded guideline scope selection from Firestore:', result.guidelineScope);
+            return result.guidelineScope;
+        } else {
+            console.log('[DEBUG] No guideline scope preference found');
+            return null;
         }
     } catch (error) {
         console.error('[ERROR] Failed to load guideline scope selection:', error);
+        return null;
     }
-    return null;
 }
 
 // Load and display user settings on mode selection page
@@ -8064,7 +8103,7 @@ async function loadAndDisplayUserSettings() {
     
     // Load guideline scope preference
     try {
-        const savedScope = loadGuidelineScopeSelection();
+        const savedScope = await loadGuidelineScopeSelection();
         if (savedScope) {
             let scopeText = '';
             if (savedScope.scope === 'national') {
@@ -8192,26 +8231,26 @@ async function showGuidelineScopeModal() {
         guidelineScopeResolve = resolve;
         
         // Set up button click handlers
-        const handleNationalClick = () => {
+        const handleNationalClick = async () => {
             console.log('[DEBUG] User selected: National guidelines');
             const selection = { scope: 'national', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
         
-        const handleLocalClick = () => {
+        const handleLocalClick = async () => {
             console.log('[DEBUG] User selected: Local guidelines');
             const selection = { scope: 'local', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
         
-        const handleBothClick = () => {
+        const handleBothClick = async () => {
             console.log('[DEBUG] User selected: Both guidelines');
             const selection = { scope: 'both', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
