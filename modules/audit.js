@@ -289,6 +289,10 @@ export class AuditPage {
                     auditableElementsSpan.textContent = auditableCount;
                     auditableElementsSpan.className = 'auditable-elements-clickable';
                     auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                    
+                    // Update will audit count and setup listeners
+                    this.updateWillAuditCount(fullGuideline.auditableElements || []);
+                    this.setupScopeChangeListeners(fullGuideline.auditableElements || []);
                 } else {
                     // Show loading indicator and extract auditable elements
                     const auditableElementsSpan = document.getElementById('auditableElements');
@@ -335,6 +339,10 @@ export class AuditPage {
                                 const auditableElementsSelection = document.getElementById('auditableElementsSelection');
                                 if (auditableElementsSelection && auditableCount > 0) {
                                     auditableElementsSelection.style.display = 'block';
+                                    // Update will audit count
+                                    this.updateWillAuditCount(updatedGuideline.auditableElements || []);
+                                    // Setup scope change listeners
+                                    this.setupScopeChangeListeners(updatedGuideline.auditableElements || []);
                                 }
                             } else {
                                 auditableCount = 0;
@@ -379,6 +387,12 @@ export class AuditPage {
                 // Populate metadata content for expandable view
                 this.populateMetadataContent(fullGuideline);
                 
+                // Update "will be audited" count based on selected scope
+                this.updateWillAuditCount(fullGuideline.auditableElements || []);
+                
+                // Add listeners for scope changes
+                this.setupScopeChangeListeners(fullGuideline.auditableElements || []);
+                
                 console.log('Updated guideline info with full metadata:', {
                     completeness: completenessPercent,
                     auditableElements: auditableCount,
@@ -407,6 +421,14 @@ export class AuditPage {
                 const auditableElementsSelection = document.getElementById('auditableElementsSelection');
                 if (auditableElementsSelection && auditableCount > 0) {
                     auditableElementsSelection.style.display = 'block';
+                    // Update will audit count (using fallback calculation)
+                    const fallbackElements = guideline.significant_terms ? 
+                        guideline.significant_terms.split(',').map((term, idx) => ({ 
+                            significance: 'high',
+                            name: term.trim()
+                        })) : [];
+                    this.updateWillAuditCount(fallbackElements);
+                    this.setupScopeChangeListeners(fallbackElements);
                 }
             }
         }
@@ -485,11 +507,18 @@ export class AuditPage {
             
             // Step 2: Generate incorrect scripts
             console.log('Step 2: Generating incorrect audit scripts...');
+            
+            // Refresh auth token before second request to avoid expiration during long operations
+            const freshAuthToken = await this.getAuthToken(true);
+            if (!freshAuthToken) {
+                throw new Error('Authentication failed - please sign in again');
+            }
+            
             const incorrectResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${await this.getAuthToken()}`
+                    'Authorization': `Bearer ${freshAuthToken}`
                 },
                 body: JSON.stringify({
                     auditId: transcriptResult.auditId,
@@ -498,6 +527,67 @@ export class AuditPage {
                     aiProvider: this.currentAIProvider
                 })
             });
+            
+            // Check for authentication errors or other HTTP errors
+            if (!incorrectResponse.ok) {
+                if (incorrectResponse.status === 401) {
+                    // Token might have expired, try once more with forced refresh
+                    console.warn('Received 401, attempting token refresh...');
+                    const refreshedToken = await this.getAuthToken(true);
+                    if (!refreshedToken) {
+                        throw new Error('Authentication failed - your session may have expired. Please refresh the page and sign in again.');
+                    }
+                    
+                    // Retry the request with refreshed token
+                    const retryResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${refreshedToken}`
+                        },
+                        body: JSON.stringify({
+                            auditId: transcriptResult.auditId,
+                            correctTranscript: transcriptResult.transcript,
+                            auditableElements: transcriptResult.auditableElements,
+                            aiProvider: this.currentAIProvider
+                        })
+                    });
+                    
+                    if (!retryResponse.ok) {
+                        const errorText = await retryResponse.text();
+                        throw new Error(`Failed to generate incorrect scripts (HTTP ${retryResponse.status}): ${errorText || 'Unknown error'}`);
+                    }
+                    
+                    const retryResult = await retryResponse.json();
+                    if (!retryResult.success) {
+                        throw new Error(retryResult.error || 'Failed to generate incorrect scripts after authentication retry');
+                    }
+                    
+                    console.log('Incorrect scripts generated after retry:', retryResult.incorrectScripts?.length || 0);
+                    
+                    // Step 3: Display audit results with retry result
+                    this.displayAuditResults({
+                        auditId: transcriptResult.auditId,
+                        correctTranscript: transcriptResult.transcript,
+                        auditableElements: transcriptResult.auditableElements,
+                        incorrectScripts: retryResult.incorrectScripts,
+                        auditScope: auditScope,
+                        generated: transcriptResult.generated
+                    });
+                    
+                    this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
+                    
+                    // Ensure the Retrieve Previous Audits button is visible
+                    const retrieveBtn = document.getElementById('retrieveAuditsBtn');
+                    if (retrieveBtn) retrieveBtn.style.display = 'inline-block';
+                    
+                    return; // Exit early since we handled the retry
+                } else {
+                    // Other HTTP errors
+                    const errorText = await incorrectResponse.text();
+                    throw new Error(`Failed to generate incorrect scripts (HTTP ${incorrectResponse.status}): ${errorText || 'Unknown error'}`);
+                }
+            }
             
             const incorrectResult = await incorrectResponse.json();
             
@@ -1253,6 +1343,63 @@ export class AuditPage {
         }
     }
     
+    // Calculate how many elements will be audited based on scope
+    calculateWillAuditCount(auditableElements, scope) {
+        if (!auditableElements || auditableElements.length === 0) {
+            return 0;
+        }
+        
+        switch (scope) {
+            case 'most_significant':
+                return auditableElements.filter(el => el.significance === 'high').slice(0, 1).length;
+            case 'high_significance':
+                return auditableElements.filter(el => el.significance === 'high').length;
+            case 'high_medium':
+                return auditableElements.filter(el => 
+                    el.significance === 'high' || el.significance === 'medium'
+                ).length;
+            case 'all_elements':
+                return auditableElements.length;
+            default:
+                return auditableElements.filter(el => el.significance === 'high').slice(0, 1).length;
+        }
+    }
+    
+    // Update the "will be audited" count display
+    updateWillAuditCount(auditableElements) {
+        const willAuditCountEl = document.getElementById('willAuditCount');
+        const willAuditElementsEl = document.getElementById('willAuditElements');
+        
+        if (!willAuditCountEl || !willAuditElementsEl || !auditableElements || auditableElements.length === 0) {
+            if (willAuditElementsEl) {
+                willAuditElementsEl.style.display = 'none';
+            }
+            return;
+        }
+        
+        const scope = document.querySelector('input[name="auditScope"]:checked')?.value || 'most_significant';
+        const willAuditCount = this.calculateWillAuditCount(auditableElements, scope);
+        
+        willAuditCountEl.textContent = willAuditCount;
+        willAuditElementsEl.style.display = 'inline';
+    }
+    
+    // Setup listeners for scope changes
+    setupScopeChangeListeners(auditableElements) {
+        const scopeInputs = document.querySelectorAll('input[name="auditScope"]');
+        scopeInputs.forEach(input => {
+            // Remove existing listeners to avoid duplicates by cloning
+            const parent = input.parentNode;
+            const newInput = input.cloneNode(true);
+            parent.replaceChild(newInput, input);
+            
+            // Add new listener
+            newInput.addEventListener('change', () => {
+                this.updateWillAuditCount(auditableElements);
+            });
+        });
+    }
+    
     // Toggle metadata view
     toggleMetadataView() {
         const toggleBtn = document.getElementById('toggleMetadataBtn');
@@ -1276,11 +1423,12 @@ export class AuditPage {
     }
     
     // Get authentication token for API calls
-    async getAuthToken() {
+    async getAuthToken(forceRefresh = false) {
         try {
             const user = getCurrentUser();
             if (user) {
-                return await user.getIdToken();
+                // Force token refresh if requested (useful after long operations)
+                return await user.getIdToken(forceRefresh);
             }
             return null;
         } catch (error) {
