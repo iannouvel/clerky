@@ -248,13 +248,41 @@
             <div class="user-settings-display">
                 <h3>Your Settings</h3>
                 <div class="settings-info">
-                    <div class="setting-item">
+                    <div class="setting-item" id="trustSettingItem">
                         <span class="setting-label">Hospital Trust:</span>
-                        <span id="settingsTrustDisplay" class="setting-value">Loading...</span>
+                        <div class="setting-value-container">
+                            <span id="settingsTrustDisplay" class="setting-value editable">Loading...</span>
+                            <button class="setting-edit-btn" id="editTrustBtn" aria-label="Edit Hospital Trust" title="Click to edit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="setting-edit-mode hidden" id="trustEditMode">
+                            <button class="setting-action-btn" id="openTrustModalBtn">Select Trust</button>
+                            <button class="setting-cancel-btn" id="cancelTrustEditBtn">Cancel</button>
+                        </div>
                     </div>
-                    <div class="setting-item">
+                    <div class="setting-item" id="scopeSettingItem">
                         <span class="setting-label">Guideline Scope:</span>
-                        <span id="settingsScopeDisplay" class="setting-value">Loading...</span>
+                        <div class="setting-value-container">
+                            <span id="settingsScopeDisplay" class="setting-value editable">Loading...</span>
+                            <button class="setting-edit-btn" id="editScopeBtn" aria-label="Edit Guideline Scope" title="Click to edit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="setting-edit-mode hidden" id="scopeEditMode">
+                            <div class="scope-edit-buttons">
+                                <button class="scope-edit-btn" id="scopeNationalBtn" data-scope="national">National</button>
+                                <button class="scope-edit-btn" id="scopeLocalBtn" data-scope="local">Local</button>
+                                <button class="scope-edit-btn" id="scopeBothBtn" data-scope="both">Both</button>
+                            </div>
+                            <button class="setting-cancel-btn" id="cancelScopeEditBtn">Cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>

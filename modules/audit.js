@@ -477,25 +477,47 @@ export class AuditPage {
             btn.disabled = true;
             spinner.style.display = 'inline-block';
             
+            // Show progress indicator and hide results
+            this.showAuditProgress();
+            this.updateProgress(1, 'Initialising audit process...', 10);
+            
             console.log('Running new audit for guideline:', this.selectedGuideline.id, 'with scope:', auditScope);
             
-            // Step 1: Generate the correct audit transcript
-            console.log('Step 1: Generating correct audit transcript...');
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
             
-            const transcriptResponse = await fetch(`${serverUrl}/generateAuditTranscript`, {
+            // Step 1: Generate the correct audit transcript
+            this.updateProgress(1, 'Generating correct transcript...', 20);
+            console.log('Step 1: Generating correct audit transcript...');
+            
+            let transcriptResponse;
+            try {
+                transcriptResponse = await fetch(`${serverUrl}/generateAuditTranscript`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${await this.getAuthToken()}`
                 },
-                body: JSON.stringify({
-                    guidelineId: this.selectedGuideline.id,
-                    auditableElements: this.selectedGuidelineFullData.auditableElements,
-                    auditScope: auditScope,
-                    aiProvider: this.currentAIProvider
-                })
-            });
+                    body: JSON.stringify({
+                        guidelineId: this.selectedGuideline.id,
+                        auditableElements: this.selectedGuidelineFullData.auditableElements,
+                        auditScope: auditScope,
+                        aiProvider: this.currentAIProvider
+                    })
+                });
+            } catch (fetchError) {
+                if (fetchError.name === 'TypeError' && fetchError.message.includes('fetch')) {
+                    throw new Error('Network error: Unable to connect to the server. Please check your internet connection and try again.');
+                }
+                throw fetchError;
+            }
+            
+            if (!transcriptResponse.ok) {
+                if (transcriptResponse.status === 0 || transcriptResponse.type === 'error') {
+                    throw new Error('Network error: Unable to connect to the server. This may be a CORS issue or the server may be unavailable. Please try again later.');
+                }
+                const errorText = await transcriptResponse.text();
+                throw new Error(`Failed to generate transcript (HTTP ${transcriptResponse.status}): ${errorText || 'Unknown error'}`);
+            }
             
             const transcriptResult = await transcriptResponse.json();
             
@@ -504,8 +526,10 @@ export class AuditPage {
             }
             
             console.log('Correct transcript generated:', transcriptResult.auditId);
+            this.updateProgress(1, 'Transcript generated successfully', 50);
             
             // Step 2: Generate incorrect scripts
+            this.updateProgress(2, 'Generating incorrect scripts...', 60);
             console.log('Step 2: Generating incorrect audit scripts...');
             
             // Refresh auth token before second request to avoid expiration during long operations
@@ -514,24 +538,33 @@ export class AuditPage {
                 throw new Error('Authentication failed - please sign in again');
             }
             
-            const incorrectResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
+            let incorrectResponse;
+            try {
+                incorrectResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${freshAuthToken}`
                 },
-                body: JSON.stringify({
-                    auditId: transcriptResult.auditId,
-                    correctTranscript: transcriptResult.transcript,
-                    auditableElements: transcriptResult.auditableElements,
-                    aiProvider: this.currentAIProvider
-                })
-            });
+                    body: JSON.stringify({
+                        auditId: transcriptResult.auditId,
+                        correctTranscript: transcriptResult.transcript,
+                        auditableElements: transcriptResult.auditableElements,
+                        aiProvider: this.currentAIProvider
+                    })
+                });
+            } catch (fetchError) {
+                if (fetchError.name === 'TypeError' && fetchError.message.includes('fetch')) {
+                    throw new Error('Network error: Unable to connect to the server while generating incorrect scripts. Please check your internet connection and try again.');
+                }
+                throw fetchError;
+            }
             
             // Check for authentication errors or other HTTP errors
             if (!incorrectResponse.ok) {
                 if (incorrectResponse.status === 401) {
                     // Token might have expired, try once more with forced refresh
+                    this.updateProgress(2, 'Authentication expired, refreshing token...', 65);
                     console.warn('Received 401, attempting token refresh...');
                     const refreshedToken = await this.getAuthToken(true);
                     if (!refreshedToken) {
@@ -539,21 +572,33 @@ export class AuditPage {
                     }
                     
                     // Retry the request with refreshed token
-                    const retryResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
+                    this.updateProgress(2, 'Retrying with refreshed token...', 70);
+                    let retryResponse;
+                    try {
+                        retryResponse = await fetch(`${serverUrl}/generateIncorrectAuditScripts`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${refreshedToken}`
                         },
-                        body: JSON.stringify({
-                            auditId: transcriptResult.auditId,
-                            correctTranscript: transcriptResult.transcript,
-                            auditableElements: transcriptResult.auditableElements,
-                            aiProvider: this.currentAIProvider
-                        })
-                    });
+                            body: JSON.stringify({
+                                auditId: transcriptResult.auditId,
+                                correctTranscript: transcriptResult.transcript,
+                                auditableElements: transcriptResult.auditableElements,
+                                aiProvider: this.currentAIProvider
+                            })
+                        });
+                    } catch (retryFetchError) {
+                        if (retryFetchError.name === 'TypeError' && retryFetchError.message.includes('fetch')) {
+                            throw new Error('Network error: Unable to connect to the server. Please check your internet connection and try again.');
+                        }
+                        throw retryFetchError;
+                    }
                     
                     if (!retryResponse.ok) {
+                        if (retryResponse.status === 0 || retryResponse.type === 'error') {
+                            throw new Error('Network error: Unable to connect to the server. This may be a CORS issue or the server may be unavailable.');
+                        }
                         const errorText = await retryResponse.text();
                         throw new Error(`Failed to generate incorrect scripts (HTTP ${retryResponse.status}): ${errorText || 'Unknown error'}`);
                     }
@@ -564,8 +609,10 @@ export class AuditPage {
                     }
                     
                     console.log('Incorrect scripts generated after retry:', retryResult.incorrectScripts?.length || 0);
+                    this.updateProgress(2, 'Incorrect scripts generated', 90);
                     
                     // Step 3: Display audit results with retry result
+                    this.updateProgress(3, 'Compiling results...', 95);
                     this.displayAuditResults({
                         auditId: transcriptResult.auditId,
                         correctTranscript: transcriptResult.transcript,
@@ -575,6 +622,7 @@ export class AuditPage {
                         generated: transcriptResult.generated
                     });
                     
+                    this.hideAuditProgress();
                     this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
                     
                     // Ensure the Retrieve Previous Audits button is visible
@@ -582,6 +630,9 @@ export class AuditPage {
                     if (retrieveBtn) retrieveBtn.style.display = 'inline-block';
                     
                     return; // Exit early since we handled the retry
+                } else if (incorrectResponse.status === 0 || incorrectResponse.type === 'error') {
+                    // Network/CORS error
+                    throw new Error('Network error: Unable to connect to the server. This may be a CORS issue or the server may be unavailable. Please check your internet connection and try again.');
                 } else {
                     // Other HTTP errors
                     const errorText = await incorrectResponse.text();
@@ -596,8 +647,10 @@ export class AuditPage {
             }
             
             console.log('Incorrect scripts generated:', incorrectResult.incorrectScripts.length);
+            this.updateProgress(2, 'Incorrect scripts generated', 90);
             
             // Step 3: Display audit results
+            this.updateProgress(3, 'Compiling results...', 95);
             this.displayAuditResults({
                 auditId: transcriptResult.auditId,
                 correctTranscript: transcriptResult.transcript,
@@ -607,6 +660,12 @@ export class AuditPage {
                 generated: transcriptResult.generated
             });
             
+            this.updateProgress(3, 'Complete!', 100);
+            
+            // Small delay to show completion before hiding progress
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            this.hideAuditProgress();
             this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
             
             // Ensure the Retrieve Previous Audits button is visible after a successful audit
@@ -615,7 +674,17 @@ export class AuditPage {
             
         } catch (error) {
             console.error('Audit failed:', error);
-            this.showAuditError('Audit failed: ' + error.message);
+            this.hideAuditProgress();
+            
+            // Show more helpful error messages
+            let errorMessage = error.message;
+            if (errorMessage.includes('Network error') || errorMessage.includes('fetch')) {
+                errorMessage = 'Network Error: Unable to connect to the server. Please check your internet connection. If the problem persists, the server may be temporarily unavailable.';
+            } else if (errorMessage.includes('CORS')) {
+                errorMessage = 'Connection Error: There was a CORS (Cross-Origin) issue connecting to the server. Please try again or contact support.';
+            }
+            
+            this.showAuditError('Audit failed: ' + errorMessage);
         } finally {
             btn.disabled = false;
             spinner.style.display = 'none';
@@ -957,6 +1026,83 @@ export class AuditPage {
         const resultsDiv = document.getElementById('auditResults');
         resultsDiv.className = 'audit-results';
         resultsDiv.innerHTML = `<div class="audit-error">${message}</div>`;
+    }
+    
+    // Show progress indicator
+    showAuditProgress() {
+        const progressContainer = document.getElementById('auditProgress');
+        const resultsDiv = document.getElementById('auditResults');
+        
+        if (progressContainer) {
+            progressContainer.style.display = 'block';
+        }
+        
+        if (resultsDiv) {
+            resultsDiv.className = 'audit-results empty';
+            resultsDiv.style.display = 'none';
+        }
+        
+        // Reset all steps
+        for (let i = 1; i <= 3; i++) {
+            const step = document.getElementById(`step-${i}`);
+            if (step) {
+                step.classList.remove('active', 'completed');
+            }
+        }
+        
+        // Reset progress bar
+        const progressBarFill = document.getElementById('progressBarFill');
+        const progressPercentage = document.getElementById('progressPercentage');
+        if (progressBarFill) progressBarFill.style.width = '0%';
+        if (progressPercentage) progressPercentage.textContent = '0%';
+    }
+    
+    // Hide progress indicator
+    hideAuditProgress() {
+        const progressContainer = document.getElementById('auditProgress');
+        if (progressContainer) {
+            progressContainer.style.display = 'none';
+        }
+        
+        // Show results again
+        const resultsDiv = document.getElementById('auditResults');
+        if (resultsDiv) {
+            resultsDiv.style.display = 'block';
+        }
+    }
+    
+    // Update progress indicator
+    updateProgress(stepNumber, statusText, percentage) {
+        const statusEl = document.getElementById('progressStatus');
+        if (statusEl) {
+            statusEl.textContent = statusText || 'Processing...';
+        }
+        
+        // Update step states
+        for (let i = 1; i <= 3; i++) {
+            const step = document.getElementById(`step-${i}`);
+            if (step) {
+                step.classList.remove('active', 'completed');
+                
+                if (i < stepNumber) {
+                    step.classList.add('completed');
+                } else if (i === stepNumber) {
+                    step.classList.add('active');
+                }
+            }
+        }
+        
+        // Update progress bar
+        const progressBarFill = document.getElementById('progressBarFill');
+        const progressPercentage = document.getElementById('progressPercentage');
+        
+        if (progressBarFill) {
+            progressBarFill.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
+        }
+        
+        if (progressPercentage) {
+            progressPercentage.textContent = `${Math.min(100, Math.max(0, percentage))}%`;
+        }
     }
 
     // Run automated tests using /auditElementCheck endpoint

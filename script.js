@@ -7633,13 +7633,13 @@ async function saveHospitalTrustSelection() {
             currentTrustDisplay.textContent = selectedTrust;
             
             // Update saved guideline scope selection if it was using local/both
-            const savedScope = loadGuidelineScopeSelection();
+            const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
                 const updatedSelection = {
                     scope: savedScope.scope,
                     hospitalTrust: selectedTrust
                 };
-                saveGuidelineScopeSelection(updatedSelection);
+                await saveGuidelineScopeSelection(updatedSelection);
                 console.log('[DEBUG] Updated guideline scope selection with new trust:', updatedSelection);
             }
             
@@ -7689,9 +7689,9 @@ async function clearHospitalTrustSelection() {
             }
             
             // Clear saved guideline scope selection if it was using local/both
-            const savedScope = loadGuidelineScopeSelection();
+            const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
-                clearGuidelineScopeSelection();
+                await clearGuidelineScopeSelection();
                 console.log('[DEBUG] Cleared guideline scope selection because trust was cleared');
             }
             
@@ -7766,7 +7766,7 @@ async function showPreferencesModal() {
     }
     
     // Load current guideline scope selection
-    const savedScope = loadGuidelineScopeSelection();
+    const savedScope = await loadGuidelineScopeSelection();
     if (savedScope) {
         let scopeText = '';
         if (savedScope.scope === 'national') {
@@ -7943,7 +7943,7 @@ async function showPreferencesModal() {
         preferencesScopeDisplay.textContent = `Both (National + ${currentTrust})`;
     };
     
-    const handleSaveClick = () => {
+    const handleSaveClick = async () => {
         console.log('[DEBUG] Save Preferences clicked');
         
         // Save guideline scope selection if one was selected
@@ -7952,7 +7952,7 @@ async function showPreferencesModal() {
                 scope: selectedScope,
                 hospitalTrust: (selectedScope === 'local' || selectedScope === 'both') ? currentTrust : null
             };
-            saveGuidelineScopeSelection(scopeSelection);
+            await saveGuidelineScopeSelection(scopeSelection);
             console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
         }
         
@@ -8001,29 +8001,68 @@ async function showPreferencesModal() {
 // Guideline Scope Selection Modal Functions
 let guidelineScopeResolve = null; // Promise resolver for scope selection
 
-// Save guideline scope selection to localStorage
-function saveGuidelineScopeSelection(scopeSelection) {
+// Save guideline scope selection to Firestore
+async function saveGuidelineScopeSelection(scopeSelection) {
     try {
-        localStorage.setItem('clerky_guideline_scope', JSON.stringify(scopeSelection));
-        console.log('[DEBUG] Saved guideline scope selection to localStorage:', scopeSelection);
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot save guideline scope, user not authenticated');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/updateUserGuidelineScope`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ guidelineScope: scopeSelection })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('[DEBUG] Saved guideline scope selection to Firestore:', scopeSelection);
+            return true;
+        } else {
+            console.error('[ERROR] Failed to save guideline scope selection:', result.error);
+            return false;
+        }
     } catch (error) {
         console.error('[ERROR] Failed to save guideline scope selection:', error);
+        return false;
     }
 }
 
-// Load guideline scope selection from localStorage
-function loadGuidelineScopeSelection() {
+// Load guideline scope selection from Firestore
+async function loadGuidelineScopeSelection() {
     try {
-        const saved = localStorage.getItem('clerky_guideline_scope');
-        if (saved) {
-            const scopeSelection = JSON.parse(saved);
-            console.log('[DEBUG] Loaded guideline scope selection from localStorage:', scopeSelection);
-            return scopeSelection;
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot load guideline scope, user not authenticated');
+            return null;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/getUserGuidelineScope`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const result = await response.json();
+        if (result.success && result.guidelineScope) {
+            console.log('[DEBUG] Loaded guideline scope selection from Firestore:', result.guidelineScope);
+            return result.guidelineScope;
+        } else {
+            console.log('[DEBUG] No guideline scope preference found');
+            return null;
         }
     } catch (error) {
         console.error('[ERROR] Failed to load guideline scope selection:', error);
+        return null;
     }
-    return null;
 }
 
 // Load and display user settings on mode selection page
@@ -8064,7 +8103,7 @@ async function loadAndDisplayUserSettings() {
     
     // Load guideline scope preference
     try {
-        const savedScope = loadGuidelineScopeSelection();
+        const savedScope = await loadGuidelineScopeSelection();
         if (savedScope) {
             let scopeText = '';
             if (savedScope.scope === 'national') {
@@ -8081,6 +8120,161 @@ async function loadAndDisplayUserSettings() {
     } catch (error) {
         console.error('[ERROR] Failed to load guideline scope:', error);
         scopeDisplay.textContent = 'Error loading';
+    }
+    
+    // Setup inline editing handlers
+    setupInlineEditing();
+}
+
+// Setup inline editing functionality for settings
+function setupInlineEditing() {
+    const editTrustBtn = document.getElementById('editTrustBtn');
+    const editScopeBtn = document.getElementById('editScopeBtn');
+    const openTrustModalBtn = document.getElementById('openTrustModalBtn');
+    const cancelTrustEditBtn = document.getElementById('cancelTrustEditBtn');
+    const cancelScopeEditBtn = document.getElementById('cancelScopeEditBtn');
+    const scopeNationalBtn = document.getElementById('scopeNationalBtn');
+    const scopeLocalBtn = document.getElementById('scopeLocalBtn');
+    const scopeBothBtn = document.getElementById('scopeBothBtn');
+    const trustEditMode = document.getElementById('trustEditMode');
+    const scopeEditMode = document.getElementById('scopeEditMode');
+    const trustSettingItem = document.getElementById('trustSettingItem');
+    const scopeSettingItem = document.getElementById('scopeSettingItem');
+    
+    // Trust editing
+    if (editTrustBtn && openTrustModalBtn && cancelTrustEditBtn && trustEditMode) {
+        editTrustBtn.addEventListener('click', () => {
+            trustEditMode.classList.remove('hidden');
+            editTrustBtn.style.display = 'none';
+        });
+        
+        openTrustModalBtn.addEventListener('click', async () => {
+            await showHospitalTrustModal();
+            // Reload settings after trust selection
+            await loadAndDisplayUserSettings();
+            // Exit edit mode
+            trustEditMode.classList.add('hidden');
+            editTrustBtn.style.display = '';
+        });
+        
+        cancelTrustEditBtn.addEventListener('click', () => {
+            trustEditMode.classList.add('hidden');
+            editTrustBtn.style.display = '';
+        });
+    }
+    
+    // Scope editing
+    if (editScopeBtn && cancelScopeEditBtn && scopeEditMode) {
+        let selectedScope = null;
+        
+        editScopeBtn.addEventListener('click', async () => {
+            // Load current scope to highlight selected button
+            const savedScope = await loadGuidelineScopeSelection();
+            if (savedScope) {
+                selectedScope = savedScope.scope;
+                // Highlight the selected button
+                scopeNationalBtn.classList.remove('selected');
+                scopeLocalBtn.classList.remove('selected');
+                scopeBothBtn.classList.remove('selected');
+                if (savedScope.scope === 'national') {
+                    scopeNationalBtn.classList.add('selected');
+                } else if (savedScope.scope === 'local') {
+                    scopeLocalBtn.classList.add('selected');
+                } else if (savedScope.scope === 'both') {
+                    scopeBothBtn.classList.add('selected');
+                }
+            }
+            
+            scopeEditMode.classList.remove('hidden');
+            editScopeBtn.style.display = 'none';
+        });
+        
+        const handleScopeSelection = async (scope) => {
+            // Get current trust
+            let currentTrust = null;
+            try {
+                const user = auth.currentUser;
+                if (user) {
+                    const idToken = await user.getIdToken();
+                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${idToken}`
+                        }
+                    });
+                    const result = await response.json();
+                    if (result.success && result.hospitalTrust) {
+                        currentTrust = result.hospitalTrust;
+                    }
+                }
+            } catch (error) {
+                console.error('[ERROR] Failed to load hospital trust:', error);
+            }
+            
+            // Check if trust is required
+            if ((scope === 'local' || scope === 'both') && !currentTrust) {
+                alert('Please select a hospital trust first.');
+                return;
+            }
+            
+            selectedScope = scope;
+            
+            // Update button states
+            scopeNationalBtn.classList.remove('selected');
+            scopeLocalBtn.classList.remove('selected');
+            scopeBothBtn.classList.remove('selected');
+            
+            if (scope === 'national') {
+                scopeNationalBtn.classList.add('selected');
+            } else if (scope === 'local') {
+                scopeLocalBtn.classList.add('selected');
+            } else if (scope === 'both') {
+                scopeBothBtn.classList.add('selected');
+            }
+            
+            // Save immediately
+            const scopeSelection = {
+                scope: scope,
+                hospitalTrust: (scope === 'local' || scope === 'both') ? currentTrust : null
+            };
+            
+            const success = await saveGuidelineScopeSelection(scopeSelection);
+            if (success) {
+                // Update display
+                let scopeText = '';
+                if (scope === 'national') {
+                    scopeText = 'National Guidelines';
+                } else if (scope === 'local') {
+                    scopeText = `Local Guidelines (${currentTrust})`;
+                } else if (scope === 'both') {
+                    scopeText = `Both (National + ${currentTrust})`;
+                }
+                document.getElementById('settingsScopeDisplay').textContent = scopeText;
+                
+                // Exit edit mode
+                scopeEditMode.classList.add('hidden');
+                editScopeBtn.style.display = '';
+            } else {
+                alert('Failed to save guideline scope preference. Please try again.');
+            }
+        };
+        
+        if (scopeNationalBtn) {
+            scopeNationalBtn.addEventListener('click', () => handleScopeSelection('national'));
+        }
+        
+        if (scopeLocalBtn) {
+            scopeLocalBtn.addEventListener('click', () => handleScopeSelection('local'));
+        }
+        
+        if (scopeBothBtn) {
+            scopeBothBtn.addEventListener('click', () => handleScopeSelection('both'));
+        }
+        
+        cancelScopeEditBtn.addEventListener('click', () => {
+            scopeEditMode.classList.add('hidden');
+            editScopeBtn.style.display = '';
+        });
     }
 }
 
@@ -8109,12 +8303,35 @@ async function showModeSelectionPage() {
 }
 
 // Clear saved guideline scope selection
-function clearGuidelineScopeSelection() {
+async function clearGuidelineScopeSelection() {
     try {
-        localStorage.removeItem('clerky_guideline_scope');
-        console.log('[DEBUG] Cleared guideline scope selection from localStorage');
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[DEBUG] Cannot clear guideline scope, user not authenticated');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/updateUserGuidelineScope`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ guidelineScope: null })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            console.log('[DEBUG] Cleared guideline scope selection from Firestore');
+            return true;
+        } else {
+            console.error('[ERROR] Failed to clear guideline scope selection:', result.error);
+            return false;
+        }
     } catch (error) {
         console.error('[ERROR] Failed to clear guideline scope selection:', error);
+        return false;
     }
 }
 
@@ -8192,26 +8409,26 @@ async function showGuidelineScopeModal() {
         guidelineScopeResolve = resolve;
         
         // Set up button click handlers
-        const handleNationalClick = () => {
+        const handleNationalClick = async () => {
             console.log('[DEBUG] User selected: National guidelines');
             const selection = { scope: 'national', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
         
-        const handleLocalClick = () => {
+        const handleLocalClick = async () => {
             console.log('[DEBUG] User selected: Local guidelines');
             const selection = { scope: 'local', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
         
-        const handleBothClick = () => {
+        const handleBothClick = async () => {
             console.log('[DEBUG] User selected: Both guidelines');
             const selection = { scope: 'both', hospitalTrust: userHospitalTrust };
-            saveGuidelineScopeSelection(selection);
+            await saveGuidelineScopeSelection(selection);
             cleanup();
             resolve(selection);
         };
@@ -8681,7 +8898,7 @@ async function processWorkflow() {
         let scopeSelection;
         
         // Check if we have a persisted selection
-        const savedScopeSelection = loadGuidelineScopeSelection();
+        const savedScopeSelection = await loadGuidelineScopeSelection();
         
         if (savedScopeSelection) {
             // Verify the saved selection is still valid (check if trust still exists if local/both)

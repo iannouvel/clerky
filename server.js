@@ -2003,6 +2003,9 @@ async function updateUserAIPreference(userId, provider) {
 // Hospital Trust preference cache
 const userHospitalTrustCache = new Map();
 
+// Guideline Scope preference cache
+const userGuidelineScopeCache = new Map();
+
 // Get user's hospital trust preference
 async function getUserHospitalTrust(userId) {
     // Check if we have a cached preference for this user
@@ -2130,6 +2133,160 @@ async function updateUserHospitalTrust(userId, hospitalTrust) {
         }
     } catch (error) {
         console.error('Error in updateUserHospitalTrust:', error);
+        return false;
+    }
+}
+
+// Get user's guideline scope preference
+async function getUserGuidelineScope(userId) {
+    // Check if we have a cached preference for this user
+    if (userGuidelineScopeCache.has(userId)) {
+        const cachedData = userGuidelineScopeCache.get(userId);
+        // Check if the cached data is still valid
+        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
+            console.log(`Using cached guideline scope for user ${userId}:`, cachedData.guidelineScope);
+            return cachedData.guidelineScope;
+        } else {
+            // Cached data is expired, remove it
+            userGuidelineScopeCache.delete(userId);
+        }
+    }
+
+    console.log(`Attempting to get guideline scope preference for user: ${userId}`);
+    
+    try {
+        // Try Firestore first if available
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    console.log('User preference document exists in Firestore:', data);
+                    
+                    if (data && data.guidelineScope) {
+                        // Cache the preference
+                        userGuidelineScopeCache.set(userId, {
+                            guidelineScope: data.guidelineScope,
+                            timestamp: Date.now()
+                        });
+                        return data.guidelineScope;
+                    }
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserGuidelineScope, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+        
+        try {
+            if (fs.existsSync(userPrefsFilePath)) {
+                const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+                console.log('User preference file exists:', userData);
+                if (userData && userData.guidelineScope) {
+                    // Cache the preference
+                    userGuidelineScopeCache.set(userId, {
+                        guidelineScope: userData.guidelineScope,
+                        timestamp: Date.now()
+                    });
+                    return userData.guidelineScope;
+                }
+            }
+        } catch (error) {
+            console.error('Error reading user preference file:', error);
+        }
+        
+        // No guideline scope set
+        return null;
+    } catch (error) {
+        console.error('Critical error in getUserGuidelineScope:', error);
+        return null;
+    }
+}
+
+// Update user's guideline scope preference
+async function updateUserGuidelineScope(userId, scopeSelection) {
+    if (scopeSelection === null) {
+        console.log(`Clearing guideline scope preference for user ${userId}`);
+    } else {
+        console.log(`Updating guideline scope preference for user ${userId} to`, scopeSelection);
+    }
+    
+    // Update cache immediately (or clear if null)
+    if (scopeSelection === null) {
+        userGuidelineScopeCache.delete(userId);
+    } else {
+        userGuidelineScopeCache.set(userId, {
+            guidelineScope: scopeSelection,
+            timestamp: Date.now()
+        });
+    }
+    
+    try {
+        // Try to update in Firestore if available
+        if (db) {
+            try {
+                // Get existing preferences to merge with them
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+                
+                // If scopeSelection is null, remove the field; otherwise set it
+                if (scopeSelection === null) {
+                    // Remove guidelineScope field using update
+                    await db.collection('userPreferences').doc(userId).update({
+                        guidelineScope: admin.firestore.FieldValue.delete(),
+                        updatedAt: new Date().toISOString()
+                    });
+                } else {
+                    // Set the guidelineScope field
+                    const updateData = {
+                        ...existingData,
+                        guidelineScope: scopeSelection,
+                        updatedAt: new Date().toISOString()
+                    };
+                    await db.collection('userPreferences').doc(userId).set(updateData);
+                }
+                
+                console.log(`Successfully ${scopeSelection === null ? 'cleared' : 'updated'} guideline scope preference in Firestore for user: ${userId}`);
+                return true;
+            } catch (firestoreError) {
+                console.error('Firestore error in updateUserGuidelineScope, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        try {
+            // Save to local JSON file
+            const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+            
+            let existingData = {};
+            if (fs.existsSync(userPrefsFilePath)) {
+                existingData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+            }
+            
+            // If scopeSelection is null, remove the field
+            if (scopeSelection === null) {
+                delete existingData.guidelineScope;
+            } else {
+                existingData.guidelineScope = scopeSelection;
+            }
+            
+            existingData.updatedAt = new Date().toISOString();
+            
+            fs.writeFileSync(userPrefsFilePath, JSON.stringify(existingData));
+            
+            console.log(`Successfully ${scopeSelection === null ? 'cleared' : 'updated'} guideline scope preference in local file for user: ${userId}`);
+            return true;
+        } catch (fileError) {
+            console.error('Failed to update user preference file:', fileError);
+            return false;
+        }
+    } catch (error) {
+        console.error('Error in updateUserGuidelineScope:', error);
         return false;
     }
 }
@@ -12444,6 +12601,61 @@ app.post('/updateUserHospitalTrust', authenticateUser, async (req, res) => {
         }
     } catch (error) {
         console.error('[ERROR] Failed to update user hospital trust:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to get user's guideline scope preference
+app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const guidelineScope = await getUserGuidelineScope(userId);
+        
+        res.json({ 
+            success: true, 
+            guidelineScope: guidelineScope 
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get user guideline scope:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to update user's guideline scope preference
+app.post('/updateUserGuidelineScope', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineScope } = req.body;
+        
+        // Allow null to clear the preference
+        if (guidelineScope !== null && (!guidelineScope || !guidelineScope.scope)) {
+            return res.status(400).json({ 
+                success: false, 
+                error: 'Guideline scope selection is required' 
+            });
+        }
+        
+        const success = await updateUserGuidelineScope(userId, guidelineScope);
+        
+        if (success) {
+            res.json({ 
+                success: true, 
+                message: guidelineScope === null ? 'Guideline scope preference cleared successfully' : 'Guideline scope preference updated successfully' 
+            });
+        } else {
+            res.status(500).json({ 
+                success: false, 
+                error: 'Failed to update guideline scope preference' 
+            });
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to update user guideline scope:', error);
         res.status(500).json({ 
             success: false, 
             error: error.message 
