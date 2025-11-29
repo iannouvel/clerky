@@ -8049,6 +8049,17 @@ async function showPreferencesModal() {
             const saved = await saveUserModelPreferences(modelOrder);
             if (saved) {
                 console.log('[DEBUG] Saved model preferences:', modelOrder);
+                // Update main panel display with new preferred model
+                const modelDisplay = document.getElementById('mainModelDisplay');
+                if (modelDisplay && modelOrder.length > 0) {
+                    const firstModel = modelOrder[0];
+                    const model = AVAILABLE_MODELS.find(m => m.name === firstModel);
+                    if (model) {
+                        modelDisplay.textContent = model.displayName;
+                    } else {
+                        modelDisplay.textContent = firstModel;
+                    }
+                }
             } else {
                 console.warn('[DEBUG] Failed to save model preferences');
             }
@@ -8206,8 +8217,9 @@ async function detectInputType(text) {
 async function loadAndDisplayUserPreferences() {
     const trustDisplay = document.getElementById('mainTrustDisplay');
     const scopeDisplay = document.getElementById('mainScopeDisplay');
+    const modelDisplay = document.getElementById('mainModelDisplay');
     
-    if (!trustDisplay || !scopeDisplay) {
+    if (!trustDisplay || !scopeDisplay || !modelDisplay) {
         console.warn('[DEBUG] Main preferences display elements not found');
         return;
     }
@@ -8258,6 +8270,26 @@ async function loadAndDisplayUserPreferences() {
     } catch (error) {
         console.error('[ERROR] Failed to load guideline scope:', error);
         scopeDisplay.textContent = 'Error loading';
+    }
+    
+    // Load and display current preferred AI model
+    try {
+        const modelOrder = await fetchUserModelPreferences();
+        if (modelOrder && modelOrder.length > 0) {
+            const firstModel = modelOrder[0];
+            const model = AVAILABLE_MODELS.find(m => m.name === firstModel);
+            if (model) {
+                modelDisplay.textContent = model.displayName;
+            } else {
+                modelDisplay.textContent = firstModel;
+            }
+        } else {
+            // Default to first model in AVAILABLE_MODELS
+            modelDisplay.textContent = AVAILABLE_MODELS[0].displayName;
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load model preferences:', error);
+        modelDisplay.textContent = 'Error loading';
     }
     
     // Setup inline editing handlers for main panel
