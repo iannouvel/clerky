@@ -2141,6 +2141,10 @@ export class AuditPage {
                 throw new Error(data.error || 'Failed to load CGP state');
             }
             
+            // Get guideline metadata for viewer link
+            const guidelineTitle = this.selectedGuideline?.title || this.selectedGuidelineFullData?.title || null;
+            const guidelineFilename = this.selectedGuideline?.filename || this.selectedGuidelineFullData?.filename || null;
+            
             // Hide audit results and show CGP review
             const auditResults = document.getElementById('auditResults');
             const cgpReview = document.getElementById('cgpReviewInterface');
@@ -2148,7 +2152,7 @@ export class AuditPage {
             if (auditResults) auditResults.style.display = 'none';
             if (cgpReview) {
                 cgpReview.style.display = 'block';
-                this.renderCGPReviewContent(data.cgps, data.statistics);
+                this.renderCGPReviewContent(data.cgps, data.statistics, guidelineId, guidelineTitle, guidelineFilename);
             }
             
         } catch (error) {
@@ -2160,7 +2164,7 @@ export class AuditPage {
     /**
      * Render CGP review content
      */
-    renderCGPReviewContent(cgps, stats) {
+    renderCGPReviewContent(cgps, stats, guidelineId, guidelineTitle, guidelineFilename) {
         const container = document.getElementById('cgpReviewContent');
         if (!container) return;
         
@@ -2181,11 +2185,24 @@ export class AuditPage {
             const isArbitrated = cgp.validationStatus === 'arbitrated';
             const hasReview = cgp.clinicianReview !== null;
             
+            // Create guideline viewer link for this CGP
+            // Use guidance text as context for searching in the PDF
+            let guidelineLink = '';
+            if (guidelineId && typeof createGuidelineViewerLink === 'function') {
+                const guidanceContext = `"${cgp.guidance}"`;
+                guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, guidanceContext, true);
+            } else if (guidelineId) {
+                // Fallback if createGuidelineViewerLink is not available
+                const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+                guidelineLink = `<a href="#" onclick="window.auditPage.openGuidelineViewer('${guidelineId}', '${this.escapeHtml(cgp.guidance)}'); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 View in Guideline</a>`;
+            }
+            
             html += `
                 <div class="cgp-item ${hasDisagreement ? 'has-disagreement' : ''} ${isArbitrated ? 'arbitrated' : ''}" data-cgp-id="${cgp.cgpId}">
                     <div class="cgp-header">
                         <div class="cgp-id">${this.escapeHtml(cgp.cgpId)}</div>
                         <span class="cgp-status-badge ${cgp.validationStatus}">${cgp.validationStatus.replace('_', ' ')}</span>
+                        ${guidelineLink ? `<div class="cgp-guideline-link" style="margin-top: 5px;">${guidelineLink}</div>` : ''}
                     </div>
                     
                     <div class="cgp-content">
@@ -2330,6 +2347,44 @@ export class AuditPage {
                     </div>
                 `;
             }
+        }
+    }
+    
+    /**
+     * Open guideline viewer for a specific CGP (fallback if createGuidelineViewerLink not available)
+     */
+    async openGuidelineViewer(guidelineId, searchText) {
+        try {
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                alert('Please sign in to view guidelines');
+                return;
+            }
+            
+            // Get fresh ID token
+            const idToken = await user.getIdToken();
+            
+            // Build the complete PDF URL with token
+            const baseUrl = window.SERVER_URL || window.location.origin;
+            const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+            
+            // Build PDF.js viewer URL with the PDF file URL
+            let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+            
+            // Add search hash parameters if we have search text
+            if (searchText) {
+                // Clean and extract quote if present
+                const cleanedText = searchText.replace(/^["']|["']$/g, '').trim();
+                const searchHash = `#search=${encodeURIComponent(cleanedText)}&phrase=true&highlightAll=true&caseSensitive=false`;
+                viewerUrl += searchHash;
+            }
+            
+            // Open in new window/tab
+            window.open(viewerUrl, '_blank', 'noopener,noreferrer');
+            
+        } catch (error) {
+            console.error('[CGP] Failed to open guideline viewer:', error);
+            alert('Failed to open guideline viewer. Please try again.');
         }
     }
     
