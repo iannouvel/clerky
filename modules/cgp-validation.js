@@ -240,10 +240,12 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
         }
 
         // Add metadata to each CGP
+        // Note: Using Date objects instead of serverTimestamp() because Firestore
+        // doesn't allow FieldValue.serverTimestamp() inside arrays
         const enrichedCGPs = extractedCGPs.map((cgp, index) => ({
             cgpId: cgp.cgpId || `CGP_${String(index + 1).padStart(3, '0')}`,
             extractedBy: 'llm1',
-            extractionTimestamp: admin.firestore.FieldValue.serverTimestamp(),
+            extractionTimestamp: new Date(), // Firestore will convert Date to Timestamp automatically
             guidance: cgp.guidance || '',
             clinicalContext: cgp.clinicalContext || '',
             inputVariables: cgp.inputVariables || [],

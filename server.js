@@ -11394,11 +11394,9 @@ app.post('/extractClinicalGuidancePoints', authenticateUser, async (req, res) =>
             });
         }
         
-        // Convert Date objects to Firestore timestamps
-        const enrichedCGPs = result.cgps.map(cgp => ({
-            ...cgp,
-            extractionTimestamp: admin.firestore.FieldValue.serverTimestamp()
-        }));
+        // CGPs already have Date objects for timestamps - Firestore will convert them automatically
+        // No need to convert here since serverTimestamp() cannot be used inside arrays
+        const enrichedCGPs = result.cgps;
         
         // Update guideline with extracted CGPs and approval state
         await guidelineRef.update({
