@@ -3335,7 +3335,11 @@ html, body {
 }
 
 /* TipTap Editor Styling */
-#userInput { display: block !important; visibility: visible !important; }
+#userInput { 
+    display: block !important; 
+    visibility: visible !important;
+    padding-top: 16px;
+}
 #userInput .ProseMirror { display: block !important; visibility: visible !important; }
 .tiptap-editor {
     min-height: 150px;
