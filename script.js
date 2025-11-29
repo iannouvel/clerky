@@ -1237,7 +1237,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                     <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)">
                         ❌ Deselect All
                     </button>
-                    <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines()">
+                    <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)">
                         <span class="btn-icon">🚀</span>
                         <span class="btn-text">Process Selected Guidelines</span>
                     </button>
@@ -8249,6 +8249,14 @@ function setupMainPreferencesEditing() {
         });
         
         const handleScopeSelection = async (scope) => {
+            // Warn user if workflow is in progress
+            if (window.workflowInProgress || window.sequentialProcessingActive) {
+                const proceed = confirm('A workflow is currently in progress. Changing the scope now will not affect the current analysis, but will be used for future analyses. Continue?');
+                if (!proceed) {
+                    return;
+                }
+            }
+            
             let currentTrust = null;
             try {
                 const user = auth.currentUser;
@@ -8305,6 +8313,8 @@ function setupMainPreferencesEditing() {
                 
                 scopeEditMode.classList.add('hidden');
                 editScopeBtn.style.display = '';
+                
+                console.log('[DEBUG] Scope selection updated (workflow will not restart):', scopeSelection);
             } else {
                 alert('Failed to save guideline scope preference. Please try again.');
             }
@@ -8452,6 +8462,14 @@ function setupInlineEditing() {
         });
         
         const handleScopeSelection = async (scope) => {
+            // Warn user if workflow is in progress
+            if (window.workflowInProgress || window.sequentialProcessingActive) {
+                const proceed = confirm('A workflow is currently in progress. Changing the scope now will not affect the current analysis, but will be used for future analyses. Continue?');
+                if (!proceed) {
+                    return;
+                }
+            }
+            
             // Get current trust
             let currentTrust = null;
             try {
@@ -8516,6 +8534,8 @@ function setupInlineEditing() {
                 // Exit edit mode
                 scopeEditMode.classList.add('hidden');
                 editScopeBtn.style.display = '';
+                
+                console.log('[DEBUG] Scope selection updated (workflow will not restart):', scopeSelection);
             } else {
                 alert('Failed to save guideline scope preference. Please try again.');
             }
@@ -9128,12 +9148,28 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
 async function processWorkflow() {
     console.log('[DEBUG] processWorkflow started');
     
+    // Prevent multiple simultaneous workflow executions
+    if (window.workflowInProgress) {
+        console.log('[DEBUG] processWorkflow: Already in progress, ignoring duplicate call');
+        return;
+    }
+    
+    // Prevent workflow restart if we're already processing guidelines
+    if (window.sequentialProcessingActive) {
+        console.log('[DEBUG] processWorkflow: Guidelines are being processed, ignoring workflow restart');
+        return;
+    }
+    
+    // Set flag to prevent duplicate executions
+    window.workflowInProgress = true;
+    
     const analyseBtn = document.getElementById('analyseBtn');
     const analyseSpinner = document.getElementById('analyseSpinner');
     
     // Check for abort signal
     if (window.analysisAbortController?.signal.aborted) {
         console.log('[DEBUG] processWorkflow: Already aborted');
+        window.workflowInProgress = false;
         return;
     }
     
@@ -9289,6 +9325,7 @@ async function processWorkflow() {
         if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
             console.log('[DEBUG] processWorkflow: Analysis was cancelled');
             // Don't show error alert for user-initiated cancellation
+            window.workflowInProgress = false; // Clear flag before returning
             return;
         }
         
@@ -9308,6 +9345,9 @@ async function processWorkflow() {
         // Button state is restored by the click handler's finally block
         // Hide summary loading spinner (content has been added via appendToSummary1)
         hideSummaryLoading();
+        
+        // Clear the workflow in progress flag
+        window.workflowInProgress = false;
         
         console.log('[DEBUG] processWorkflow: Cleanup completed');
     }
@@ -10926,13 +10966,26 @@ function cancelGuidelineSelection() {
 }
 
 // NEW: Process selected guidelines sequentially (one-by-one)
-async function processSelectedGuidelines() {
+async function processSelectedGuidelines(event) {
     console.log('[DEBUG] processSelectedGuidelines function called!');
-    const button = document.querySelector('.process-selected-btn');
+    
+    // Prevent event propagation and default behavior
+    if (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+    
+    const button = event?.target?.closest('.process-selected-btn') || document.querySelector('.process-selected-btn');
     
     if (!button) {
         console.error('[DEBUG] Process button not found!');
         alert('Process button not found. Please try refreshing the page.');
+        return;
+    }
+    
+    // Prevent double-clicking
+    if (button.disabled) {
+        console.log('[DEBUG] Button already processing, ignoring click');
         return;
     }
     
