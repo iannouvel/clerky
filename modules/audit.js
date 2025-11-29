@@ -1868,6 +1868,17 @@ export class AuditPage {
      * Run complete CGP validation workflow
      */
     async runCGPValidationWorkflow(guidelineId) {
+        // Disable and update button immediately
+        const startBtn = document.getElementById('startCGPValidation');
+        const continueBtn = document.getElementById('continueCGPValidation');
+        const activeBtn = startBtn && startBtn.style.display !== 'none' ? startBtn : 
+                         (continueBtn && continueBtn.style.display !== 'none' ? continueBtn : null);
+        
+        if (activeBtn) {
+            activeBtn.disabled = true;
+            activeBtn.innerHTML = `<span class="spinner"></span>Starting extraction...`;
+        }
+        
         try {
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
             const user = await this.waitForAuth();
@@ -1879,24 +1890,57 @@ export class AuditPage {
             console.log('[CGP] Step 1: Starting extraction...');
             this.updateCGPProgress('Extracting Clinical Guidance Points...', 25);
             
-            const extractResponse = await fetch(`${serverUrl}/extractClinicalGuidancePoints`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    guidelineId: guidelineId,
-                    aiProvider: this.currentAIProvider
-                })
-            });
+            // Add timeout wrapper for fetch
+            const fetchWithTimeout = (url, options, timeout = 300000) => { // 5 minute timeout
+                return Promise.race([
+                    fetch(url, options),
+                    new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error('Request timeout - extraction took too long')), timeout)
+                    )
+                ]);
+            };
             
-            if (!extractResponse.ok) {
-                const errorData = await extractResponse.json();
-                throw new Error(errorData.error || 'Failed to extract CGPs');
+            let extractResponse;
+            try {
+                extractResponse = await fetchWithTimeout(`${serverUrl}/extractClinicalGuidancePoints`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        guidelineId: guidelineId,
+                        aiProvider: this.currentAIProvider
+                    })
+                }, 300000); // 5 minute timeout for LLM extraction
+            } catch (fetchError) {
+                console.error('[CGP] Fetch error:', fetchError);
+                if (fetchError.message.includes('timeout')) {
+                    throw new Error('Extraction timed out after 5 minutes. The guideline may be too large. Please try again or contact support.');
+                } else if (fetchError.name === 'TypeError' && fetchError.message.includes('fetch')) {
+                    throw new Error('Network error: Unable to connect to server. Please check your connection.');
+                }
+                throw fetchError;
             }
             
-            const extractResult = await extractResponse.json();
+            if (!extractResponse.ok) {
+                let errorData;
+                try {
+                    errorData = await extractResponse.json();
+                } catch (e) {
+                    errorData = { error: `HTTP ${extractResponse.status}: ${extractResponse.statusText}` };
+                }
+                console.error('[CGP] Server error response:', errorData);
+                throw new Error(errorData.error || `Failed to extract CGPs (HTTP ${extractResponse.status})`);
+            }
+            
+            let extractResult;
+            try {
+                extractResult = await extractResponse.json();
+            } catch (parseError) {
+                console.error('[CGP] Failed to parse response:', parseError);
+                throw new Error('Invalid response from server. Please try again.');
+            }
             if (!extractResult.success) {
                 throw new Error(extractResult.error || 'Extraction failed');
             }
@@ -1905,7 +1949,7 @@ export class AuditPage {
             
             // Step 2: Cross-validation
             console.log('[CGP] Step 2: Starting cross-validation...');
-            this.updateCGPProgress('Cross-validating CGPs...', 50);
+            this.updateCGPProgress('Cross-validating with second LLM...', 50);
             
             const validateResponse = await fetch(`${serverUrl}/crossValidateCGPs`, {
                 method: 'POST',
@@ -1933,7 +1977,7 @@ export class AuditPage {
             // Step 3: Arbitration (if needed)
             if (validateResult.metadata.disagreements > 0) {
                 console.log('[CGP] Step 3: Starting arbitration...');
-                this.updateCGPProgress('Arbitrating disagreements...', 75);
+                this.updateCGPProgress('Arbitrating disagreements with third LLM...', 75);
                 
                 const arbitrateResponse = await fetch(`${serverUrl}/arbitrateCGPDisagreements`, {
                     method: 'POST',
@@ -1962,7 +2006,23 @@ export class AuditPage {
             }
             
             // Complete
-            this.updateCGPProgress('Complete!', 100);
+            this.updateCGPProgress('Validation complete!', 100);
+            
+            // Reset button after a short delay
+            setTimeout(() => {
+                const startBtn = document.getElementById('startCGPValidation');
+                const continueBtn = document.getElementById('continueCGPValidation');
+                const activeBtn = startBtn && startBtn.style.display !== 'none' ? startBtn : 
+                                 (continueBtn && continueBtn.style.display !== 'none' ? continueBtn : null);
+                if (activeBtn) {
+                    activeBtn.disabled = false;
+                    if (activeBtn === startBtn) {
+                        activeBtn.innerHTML = 'Start CGP Validation';
+                    } else {
+                        activeBtn.innerHTML = 'Continue Validation';
+                    }
+                }
+            }, 1000);
             
             // Refresh guideline data
             await this.loadSelectedGuideline(guidelineId);
@@ -1972,17 +2032,85 @@ export class AuditPage {
             
         } catch (error) {
             console.error('[CGP] Validation workflow failed:', error);
-            alert(`CGP Validation failed: ${error.message}`);
+            console.error('[CGP] Error stack:', error.stack);
+            
+            // Hide progress indicator
+            const progressContainer = document.getElementById('auditProgress');
+            if (progressContainer) {
+                progressContainer.style.display = 'none';
+            }
+            
+            // Reset button on error
+            const startBtn = document.getElementById('startCGPValidation');
+            const continueBtn = document.getElementById('continueCGPValidation');
+            const activeBtn = startBtn && startBtn.style.display !== 'none' ? startBtn : 
+                             (continueBtn && continueBtn.style.display !== 'none' ? continueBtn : null);
+            if (activeBtn) {
+                activeBtn.disabled = false;
+                if (activeBtn === startBtn) {
+                    activeBtn.innerHTML = 'Start CGP Validation';
+                } else {
+                    activeBtn.innerHTML = 'Continue Validation';
+                }
+            }
+            
+            // Show error message
+            const errorMsg = error.message || 'An unknown error occurred';
+            alert(`CGP Validation failed: ${errorMsg}\n\nPlease check the console for more details.`);
+            
+            // Also show error in UI if available
+            const auditResults = document.getElementById('auditResults');
+            if (auditResults) {
+                auditResults.style.display = 'block';
+                auditResults.innerHTML = `
+                    <div class="audit-error" style="padding: 20px; background: #fee; border: 2px solid #fcc; border-radius: 5px; margin: 20px 0;">
+                        <h3 style="color: #c00; margin-top: 0;">CGP Validation Error</h3>
+                        <p><strong>Error:</strong> ${this.escapeHtml(errorMsg)}</p>
+                        <p>Please try again or contact support if the issue persists.</p>
+                    </div>
+                `;
+            }
         }
     }
     
     /**
-     * Update CGP progress indicator
+     * Update CGP progress indicator and button state
      */
     updateCGPProgress(message, percent) {
         // Update workflow step indicators if needed
-        // For now, just log
         console.log(`[CGP Progress] ${message} (${percent}%)`);
+        
+        // Also update UI if progress indicator exists
+        const progressStatus = document.getElementById('progressStatus');
+        if (progressStatus) {
+            progressStatus.textContent = message;
+        }
+        
+        // Show progress container if it exists
+        const progressContainer = document.getElementById('auditProgress');
+        if (progressContainer) {
+            progressContainer.style.display = 'block';
+        }
+        
+        // Update button text and state
+        const startBtn = document.getElementById('startCGPValidation');
+        const continueBtn = document.getElementById('continueCGPValidation');
+        const activeBtn = startBtn && startBtn.style.display !== 'none' ? startBtn : 
+                         (continueBtn && continueBtn.style.display !== 'none' ? continueBtn : null);
+        
+        if (activeBtn && percent < 100) {
+            // Show spinner and update text
+            activeBtn.disabled = true;
+            activeBtn.innerHTML = `<span class="spinner"></span>${message}`;
+        } else if (activeBtn && percent === 100) {
+            // Reset button when complete
+            activeBtn.disabled = false;
+            if (activeBtn === startBtn) {
+                activeBtn.innerHTML = 'Start CGP Validation';
+            } else {
+                activeBtn.innerHTML = 'Continue Validation';
+            }
+        }
     }
     
     /**
