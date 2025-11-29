@@ -11762,16 +11762,9 @@ app.post('/crossValidateCGPs', authenticateUser, async (req, res) => {
             });
         }
         
-        // Convert Date objects to Firestore timestamps for new CGPs
-        const validatedCGPs = result.cgps.map(cgp => {
-            if (cgp.extractionTimestamp instanceof Date) {
-                return {
-                    ...cgp,
-                    extractionTimestamp: admin.firestore.FieldValue.serverTimestamp()
-                };
-            }
-            return cgp;
-        });
+        // CGPs already have Date objects for timestamps - Firestore will convert them automatically
+        // No need to convert here since serverTimestamp() cannot be used inside arrays
+        const validatedCGPs = result.cgps;
         
         // Update guideline with validated CGPs
         await guidelineRef.update({
