@@ -1217,6 +1217,38 @@ body {
     color: #333;
 }
 
+/* Preferences Panel Button */
+.preferences-panel-btn {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #00B894;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.preferences-panel-btn:hover {
+    background-color: #019874;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+}
+
+.preferences-panel-btn:active {
+    transform: translateY(0);
+}
+
+.preferences-panel-btn svg {
+    flex-shrink: 0;
+}
+
 /* Preferences panel layout - mainSection is already set to flex row above */
 #mainSection > .user-preferences-panel {
     flex-shrink: 0;
@@ -2938,6 +2970,19 @@ html, body {
 .floating-input-buttons .record-btn {
     padding: 6px 12px;
     font-size: 0.85em;
+}
+
+.floating-input-buttons .test-btn {
+    padding: 6px 10px;
+    font-size: 0.8em;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.floating-input-buttons .test-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
 }
 
 .floating-input-buttons .primary {
