@@ -18,6 +18,141 @@ const admin = require('firebase-admin');
 // to avoid circular dependencies
 
 /**
+ * Attempt to repair common JSON issues from LLM responses
+ * @param {string} jsonString - Potentially malformed JSON string
+ * @returns {string} - Repaired JSON string
+ */
+function repairJSON(jsonString) {
+    let repaired = jsonString;
+    
+    // Try to fix unterminated strings at the end
+    // Count open quotes vs closed quotes
+    const openQuotes = (repaired.match(/":\s*"/g) || []).length;
+    const closeQuotes = (repaired.match(/",?\s*}/g) || []).length + (repaired.match(/",?\s*]/g) || []).length;
+    
+    // If we're in a string at the end, try to close it
+    const lastQuoteIndex = repaired.lastIndexOf('"');
+    const lastOpenBrace = repaired.lastIndexOf('{');
+    const lastOpenBracket = repaired.lastIndexOf('[');
+    const lastCloseBrace = repaired.lastIndexOf('}');
+    const lastCloseBracket = repaired.lastIndexOf(']');
+    
+    // Check if we're inside an unclosed string
+    if (lastQuoteIndex > Math.max(lastCloseBrace, lastCloseBracket)) {
+        // We might be in an unterminated string
+        // Try to find where it should end by looking for the next structural character
+        const afterQuote = repaired.substring(lastQuoteIndex + 1);
+        // If there's no comma, brace, or bracket after the quote, we might need to add a closing quote
+        if (!afterQuote.trim().match(/^[,\]\}]/)) {
+            // Find the last incomplete string field and try to close it
+            const lines = repaired.split('\n');
+            const lastLine = lines[lines.length - 1];
+            
+            // If the last line has an unclosed quote, try to close it
+            if (lastLine && lastLine.includes('"') && !lastLine.match(/":\s*"[^"]*",?\s*$/)) {
+                // Count quotes in the last line
+                const quoteCount = (lastLine.match(/"/g) || []).length;
+                if (quoteCount % 2 !== 0) {
+                    // Odd number of quotes means unclosed
+                    repaired = repaired.trim() + '"';
+                }
+            }
+        }
+    }
+    
+    // Try to fix unescaped newlines in strings
+    // This is a simpler approach: replace unescaped newlines with escaped ones
+    // But we need to be careful not to break valid JSON structure
+    repaired = repaired.replace(/([^\\]|^)"([^"]*)\n([^"]*)"([^,}\]]*)/g, (match, before, part1, part2, after) => {
+        // Only fix if it looks like we're inside a JSON string value
+        if (before.match(/:\s*$/) || before === '') {
+            return `${before}"${part1}\\n${part2}"${after}`;
+        }
+        return match;
+    });
+    
+    // Ensure closing brackets/braces exist
+    const openBraces = (repaired.match(/{/g) || []).length;
+    const closeBraces = (repaired.match(/}/g) || []).length;
+    const openBrackets = (repaired.match(/\[/g) || []).length;
+    const closeBrackets = (repaired.match(/\]/g) || []).length;
+    
+    if (openBraces > closeBraces) {
+        repaired += '}'.repeat(openBraces - closeBraces);
+    }
+    if (openBrackets > closeBrackets) {
+        repaired += ']'.repeat(openBrackets - closeBrackets);
+    }
+    
+    return repaired;
+}
+
+/**
+ * Parse JSON with error handling and repair attempts
+ * @param {string} content - JSON string content
+ * @returns {any} - Parsed JSON object
+ * @throws {Error} - If JSON cannot be parsed even after repair attempts
+ */
+function parseJSONSafely(content) {
+    let cleaned = content.trim();
+    
+    // Remove markdown code blocks
+    if (cleaned.startsWith('```json')) {
+        cleaned = cleaned.replace(/^```json\s*/i, '');
+    }
+    if (cleaned.startsWith('```')) {
+        cleaned = cleaned.replace(/^```\s*/, '');
+    }
+    if (cleaned.endsWith('```')) {
+        cleaned = cleaned.replace(/\s*```$/, '');
+    }
+    cleaned = cleaned.trim();
+    
+    // Try parsing as-is first
+    try {
+        return JSON.parse(cleaned);
+    } catch (error) {
+        console.warn(`[CGP] Initial JSON parse failed: ${error.message}. Attempting repair...`);
+        
+        // Try to extract JSON array/object from text
+        // Look for the first [ or { and try to extract from there
+        const firstBrace = cleaned.indexOf('{');
+        const firstBracket = cleaned.indexOf('[');
+        const startIndex = firstBrace !== -1 && firstBracket !== -1 
+            ? Math.min(firstBrace, firstBracket)
+            : firstBrace !== -1 ? firstBrace : firstBracket;
+        
+        if (startIndex !== -1) {
+            cleaned = cleaned.substring(startIndex);
+        }
+        
+        // Try repair
+        try {
+            const repaired = repairJSON(cleaned);
+            return JSON.parse(repaired);
+        } catch (repairError) {
+            console.error(`[CGP] JSON repair failed: ${repairError.message}`);
+            console.error(`[CGP] Problematic content (first 500 chars): ${cleaned.substring(0, 500)}`);
+            console.error(`[CGP] Problematic content (last 500 chars): ${cleaned.substring(Math.max(0, cleaned.length - 500))}`);
+            
+            // If repair fails, try to find and extract just the array portion
+            const arrayMatch = cleaned.match(/\[\s*\{[\s\S]*\}\s*\]/);
+            if (arrayMatch) {
+                try {
+                    return JSON.parse(arrayMatch[0]);
+                } catch (arrayParseError) {
+                    // Last resort: log full content for debugging
+                    console.error(`[CGP] Failed to parse even extracted array: ${arrayParseError.message}`);
+                    throw new Error(`Failed to parse JSON after multiple repair attempts. Original error: ${error.message}. Repair error: ${repairError.message}. Please check the LLM response format.`);
+                }
+            }
+            
+            throw new Error(`Failed to parse JSON after multiple repair attempts. Original error: ${error.message}. Repair error: ${repairError.message}. Please check the LLM response format.`);
+        }
+    }
+}
+
+/**
  * Get the next available LLM provider that's different from the ones already used
  */
 function getNextLLMProvider(usedProviders = []) {
@@ -79,7 +214,7 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
         const messages = [
             {
                 role: 'system',
-                content: 'You are a clinical guidelines expert specialized in extracting comprehensive, actionable clinical guidance. Return ONLY valid JSON array format.'
+                content: 'You are a clinical guidelines expert specialized in extracting comprehensive, actionable clinical guidance. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
             },
             {
                 role: 'user',
@@ -97,19 +232,8 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
             throw new Error('No response from AI provider');
         }
 
-        // Parse JSON response
-        let cleanedContent = aiResult.content.trim();
-        if (cleanedContent.startsWith('```json')) {
-            cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-        }
-        if (cleanedContent.startsWith('```')) {
-            cleanedContent = cleanedContent.replace(/^```\s*/, '');
-        }
-        if (cleanedContent.endsWith('```')) {
-            cleanedContent = cleanedContent.replace(/\s*```$/, '');
-        }
-
-        const extractedCGPs = JSON.parse(cleanedContent);
+        // Parse JSON response with error handling and repair
+        const extractedCGPs = parseJSONSafely(aiResult.content);
         
         if (!Array.isArray(extractedCGPs)) {
             throw new Error('AI response is not a valid array');
@@ -241,7 +365,7 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
         const messages = [
             {
                 role: 'system',
-                content: 'You are a clinical guidelines validator. Your role is to critically assess extracted guidance points for accuracy and completeness. Return ONLY valid JSON format.'
+                content: 'You are a clinical guidelines validator. Your role is to critically assess extracted guidance points for accuracy and completeness. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
             },
             {
                 role: 'user',
@@ -259,19 +383,8 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
             throw new Error('No response from AI provider');
         }
 
-        // Parse JSON response
-        let cleanedContent = aiResult.content.trim();
-        if (cleanedContent.startsWith('```json')) {
-            cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-        }
-        if (cleanedContent.startsWith('```')) {
-            cleanedContent = cleanedContent.replace(/^```\s*/, '');
-        }
-        if (cleanedContent.endsWith('```')) {
-            cleanedContent = cleanedContent.replace(/\s*```$/, '');
-        }
-
-        const validationResult = JSON.parse(cleanedContent);
+        // Parse JSON response with error handling and repair
+        const validationResult = parseJSONSafely(aiResult.content);
         
         // Update CGPs with validation assessments
         const validatedCGPs = extractedCGPs.map(cgp => {
@@ -466,7 +579,7 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
         const messages = [
             {
                 role: 'system',
-                content: 'You are an independent clinical guidelines arbitrator. Your role is to resolve disagreements by carefully analyzing both extractions against the source guideline. Return ONLY valid JSON format.'
+                content: 'You are an independent clinical guidelines arbitrator. Your role is to resolve disagreements by carefully analyzing both extractions against the source guideline. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
             },
             {
                 role: 'user',
@@ -484,19 +597,8 @@ ${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[.
             throw new Error('No response from AI provider');
         }
 
-        // Parse JSON response
-        let cleanedContent = aiResult.content.trim();
-        if (cleanedContent.startsWith('```json')) {
-            cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-        }
-        if (cleanedContent.startsWith('```')) {
-            cleanedContent = cleanedContent.replace(/^```\s*/, '');
-        }
-        if (cleanedContent.endsWith('```')) {
-            cleanedContent = cleanedContent.replace(/\s*```$/, '');
-        }
-
-        const arbitrationResult = JSON.parse(cleanedContent);
+        // Parse JSON response with error handling and repair
+        const arbitrationResult = parseJSONSafely(aiResult.content);
 
         // Apply arbitrations to CGPs
         const arbitratedCGPs = llm2CGPs.map(cgp => {
