@@ -8300,6 +8300,7 @@ async function loadAndDisplayUserPreferences() {
 function setupMainPreferencesEditing() {
     const editTrustBtn = document.getElementById('mainEditTrustBtn');
     const editScopeBtn = document.getElementById('mainEditScopeBtn');
+    const editModelBtn = document.getElementById('mainEditModelBtn');
     const openTrustModalBtn = document.getElementById('mainOpenTrustModalBtn');
     const cancelTrustEditBtn = document.getElementById('mainCancelTrustEditBtn');
     const cancelScopeEditBtn = document.getElementById('mainCancelScopeEditBtn');
@@ -8435,6 +8436,16 @@ function setupMainPreferencesEditing() {
         cancelScopeEditBtn.addEventListener('click', () => {
             scopeEditMode.classList.add('hidden');
             editScopeBtn.style.display = '';
+        });
+    }
+    
+    // AI Model editing - opens preferences modal
+    if (editModelBtn) {
+        editModelBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] AI Model edit button clicked');
+            await showPreferencesModal();
+            // Reload preferences after modal closes to update display
+            await loadAndDisplayUserPreferences();
         });
     }
 }
