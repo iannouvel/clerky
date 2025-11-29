@@ -11295,6 +11295,606 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
   }
 });
 
+// ============================================================================
+// CLINICAL GUIDANCE POINT (CGP) VALIDATION ENDPOINTS
+// ISO 13485-compliant multi-stage validation workflow
+// ============================================================================
+
+// Import CGP validation module
+const {
+    extractClinicalGuidancePoints,
+    crossValidateClinicalGuidancePoints,
+    arbitrateCGPDisagreements,
+    getNextLLMProvider
+} = require('./modules/cgp-validation.js');
+
+/**
+ * Step 1: Extract Clinical Guidance Points with clinical context
+ */
+app.post('/extractClinicalGuidancePoints', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineId, aiProvider = 'DeepSeek' } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId is required'
+            });
+        }
+        
+        // Get guideline from Firestore
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guideline = guidelineDoc.data();
+        const content = guideline.content || guideline.condensed;
+        
+        if (!content) {
+            return res.status(400).json({
+                success: false,
+                error: 'No content available for extraction'
+            });
+        }
+        
+        // Check current approval state
+        const currentState = guideline.cgpApprovalState || { status: 'not_started' };
+        if (currentState.status === 'approved') {
+            return res.status(400).json({
+                success: false,
+                error: 'Guideline is already approved. Cannot re-extract CGPs.',
+                currentState: currentState.status
+            });
+        }
+        
+        // Create wrapper for logAIInteraction to match expected signature
+        const logAIWrapper = async (interactionData, metadata) => {
+            // Extract prompt and response from interactionData
+            const prompt = interactionData.prompt || '';
+            const response = { 
+                ...metadata,
+                ai_provider: interactionData.aiProvider,
+                ai_model: interactionData.aiModel,
+                token_usage: interactionData.tokenUsage,
+                content: JSON.stringify(metadata, null, 2)
+            };
+            const endpoint = interactionData.endpoint || 'extractClinicalGuidancePoints';
+            return await logAIInteraction(prompt, response, endpoint);
+        };
+        
+        // Run Step 1 extraction
+        const result = await extractClinicalGuidancePoints(
+            content,
+            aiProvider,
+            userId,
+            routeToAI,
+            logAIWrapper
+        );
+        
+        if (!result.success) {
+            return res.status(500).json({
+                success: false,
+                error: result.error || 'Failed to extract CGPs'
+            });
+        }
+        
+        // Convert Date objects to Firestore timestamps
+        const enrichedCGPs = result.cgps.map(cgp => ({
+            ...cgp,
+            extractionTimestamp: admin.firestore.FieldValue.serverTimestamp()
+        }));
+        
+        // Update guideline with extracted CGPs and approval state
+        await guidelineRef.update({
+            clinicalGuidancePoints: enrichedCGPs,
+            cgpApprovalState: {
+                status: 'llm_extraction',
+                currentStep: 'extraction',
+                startedAt: currentState.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+                reviewedBy: null,
+                approvalDate: null
+            },
+            cgpValidationLog: {
+                extraction: {
+                    llmProvider: result.metadata.llmProvider,
+                    timestamp: admin.firestore.FieldValue.serverTimestamp(),
+                    elementsExtracted: result.cgps.length
+                }
+            },
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        res.json({
+            success: true,
+            cgps: enrichedCGPs,
+            metadata: result.metadata,
+            guidelineId: guidelineId
+        });
+        
+    } catch (error) {
+        console.error('[CGP] Error in extractClinicalGuidancePoints endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * Step 2: Cross-validate CGPs using a different LLM provider
+ */
+app.post('/crossValidateCGPs', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineId, aiProvider } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId is required'
+            });
+        }
+        
+        // Get guideline from Firestore
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guideline = guidelineDoc.data();
+        const content = guideline.content || guideline.condensed;
+        const extractedCGPs = guideline.clinicalGuidancePoints || [];
+        
+        if (extractedCGPs.length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'No CGPs found. Please run extraction first.'
+            });
+        }
+        
+        if (!content) {
+            return res.status(400).json({
+                success: false,
+                error: 'No content available for validation'
+            });
+        }
+        
+        // Determine validation provider (different from extraction)
+        const extractionProvider = guideline.cgpValidationLog?.extraction?.llmProvider || 'DeepSeek';
+        const validationProvider = aiProvider || getNextLLMProvider([extractionProvider]);
+        
+        // Create wrapper for logAIInteraction
+        const logAIWrapper = async (interactionData, metadata) => {
+            const prompt = interactionData.prompt || '';
+            const response = { 
+                ...metadata,
+                ai_provider: interactionData.aiProvider,
+                ai_model: interactionData.aiModel,
+                token_usage: interactionData.tokenUsage,
+                content: JSON.stringify(metadata, null, 2)
+            };
+            const endpoint = interactionData.endpoint || 'crossValidateCGPs';
+            return await logAIInteraction(prompt, response, endpoint);
+        };
+        
+        // Run Step 2 cross-validation
+        const result = await crossValidateClinicalGuidancePoints(
+            content,
+            extractedCGPs,
+            validationProvider,
+            userId,
+            routeToAI,
+            logAIWrapper
+        );
+        
+        if (!result.success) {
+            return res.status(500).json({
+                success: false,
+                error: result.error || 'Failed to cross-validate CGPs'
+            });
+        }
+        
+        // Convert Date objects to Firestore timestamps for new CGPs
+        const validatedCGPs = result.cgps.map(cgp => {
+            if (cgp.extractionTimestamp instanceof Date) {
+                return {
+                    ...cgp,
+                    extractionTimestamp: admin.firestore.FieldValue.serverTimestamp()
+                };
+            }
+            return cgp;
+        });
+        
+        // Update guideline with validated CGPs
+        await guidelineRef.update({
+            clinicalGuidancePoints: validatedCGPs,
+            cgpApprovalState: {
+                status: 'cross_validation',
+                currentStep: 'validation',
+                startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+                reviewedBy: null,
+                approvalDate: null
+            },
+            'cgpValidationLog.crossValidation': {
+                llmProvider: result.metadata.llmProvider,
+                timestamp: admin.firestore.FieldValue.serverTimestamp(),
+                totalElements: result.metadata.totalElements,
+                validated: result.metadata.validated,
+                disagreements: result.metadata.disagreements
+            },
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        res.json({
+            success: true,
+            cgps: validatedCGPs,
+            metadata: result.metadata,
+            summary: result.summary,
+            guidelineId: guidelineId
+        });
+        
+    } catch (error) {
+        console.error('[CGP] Error in crossValidateCGPs endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * Step 3: Arbitrate disagreements between Step 1 and Step 2
+ */
+app.post('/arbitrateCGPDisagreements', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineId, aiProvider } = req.body;
+        
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId is required'
+            });
+        }
+        
+        // Get guideline from Firestore
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guideline = guidelineDoc.data();
+        const content = guideline.content || guideline.condensed;
+        const validatedCGPs = guideline.clinicalGuidancePoints || [];
+        
+        if (validatedCGPs.length === 0) {
+            return res.status(400).json({
+                success: false,
+                error: 'No CGPs found. Please run extraction and validation first.'
+            });
+        }
+        
+        if (!content) {
+            return res.status(400).json({
+                success: false,
+                error: 'No content available for arbitration'
+            });
+        }
+        
+        // Check if there are disagreements
+        const disagreementCount = validatedCGPs.filter(cgp => 
+            cgp.validationStatus === 'disagreement'
+        ).length;
+        
+        if (disagreementCount === 0) {
+            // No disagreements, skip arbitration
+            await guidelineRef.update({
+                cgpApprovalState: {
+                    status: 'arbitration',
+                    currentStep: 'arbitration',
+                    startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+                    lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+                    reviewedBy: null,
+                    approvalDate: null
+                },
+                'cgpValidationLog.arbitration': {
+                    llmProvider: 'none',
+                    timestamp: admin.firestore.FieldValue.serverTimestamp(),
+                    disagreementsResolved: 0
+                },
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+            });
+            
+            return res.json({
+                success: true,
+                cgps: validatedCGPs,
+                metadata: {
+                    llmProvider: 'none',
+                    disagreementsResolved: 0,
+                    skipped: true,
+                    reason: 'No disagreements found'
+                },
+                guidelineId: guidelineId
+            });
+        }
+        
+        // Determine arbitration provider (different from both previous steps)
+        const extractionProvider = guideline.cgpValidationLog?.extraction?.llmProvider || 'DeepSeek';
+        const validationProvider = guideline.cgpValidationLog?.crossValidation?.llmProvider || 'Anthropic';
+        const arbitrationProvider = aiProvider || getNextLLMProvider([extractionProvider, validationProvider]);
+        
+        // Get original extraction CGPs for comparison (stored in validation log or reconstruct)
+        // For now, we'll use validated CGPs and filter by extractedBy field
+        const llm1CGPs = validatedCGPs.filter(cgp => cgp.extractedBy === 'llm1');
+        const llm2CGPs = validatedCGPs;
+        
+        // Create wrapper for logAIInteraction
+        const logAIWrapper = async (interactionData, metadata) => {
+            const prompt = interactionData.prompt || '';
+            const response = { 
+                ...metadata,
+                ai_provider: interactionData.aiProvider,
+                ai_model: interactionData.aiModel,
+                token_usage: interactionData.tokenUsage,
+                content: JSON.stringify(metadata, null, 2)
+            };
+            const endpoint = interactionData.endpoint || 'arbitrateCGPDisagreements';
+            return await logAIInteraction(prompt, response, endpoint);
+        };
+        
+        // Run Step 3 arbitration
+        const result = await arbitrateCGPDisagreements(
+            content,
+            llm1CGPs,
+            llm2CGPs,
+            arbitrationProvider,
+            userId,
+            routeToAI,
+            logAIWrapper
+        );
+        
+        if (!result.success) {
+            return res.status(500).json({
+                success: false,
+                error: result.error || 'Failed to arbitrate disagreements'
+            });
+        }
+        
+        // Update guideline with arbitrated CGPs
+        await guidelineRef.update({
+            clinicalGuidancePoints: result.cgps,
+            cgpApprovalState: {
+                status: 'arbitration',
+                currentStep: 'arbitration',
+                startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+                reviewedBy: null,
+                approvalDate: null
+            },
+            'cgpValidationLog.arbitration': {
+                llmProvider: result.metadata.llmProvider,
+                timestamp: admin.firestore.FieldValue.serverTimestamp(),
+                disagreementsResolved: result.metadata.disagreementsResolved
+            },
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        res.json({
+            success: true,
+            cgps: result.cgps,
+            metadata: result.metadata,
+            guidelineId: guidelineId
+        });
+        
+    } catch (error) {
+        console.error('[CGP] Error in arbitrateCGPDisagreements endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * Save clinician review decisions for CGPs
+ */
+app.post('/saveCGPClinicianReview', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineId, reviews } = req.body;
+        
+        if (!guidelineId || !reviews || !Array.isArray(reviews)) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId and reviews array are required'
+            });
+        }
+        
+        // Get guideline from Firestore
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guideline = guidelineDoc.data();
+        const currentCGPs = guideline.clinicalGuidancePoints || [];
+        
+        // Update CGPs with clinician reviews
+        const updatedCGPs = currentCGPs.map(cgp => {
+            const review = reviews.find(r => r.cgpId === cgp.cgpId);
+            
+            if (review) {
+                let newStatus = cgp.validationStatus;
+                if (review.decision === 'approved') {
+                    newStatus = 'clinician_approved';
+                } else if (review.decision === 'rejected') {
+                    newStatus = 'clinician_rejected';
+                } else if (review.decision === 'modified') {
+                    newStatus = 'clinician_modified';
+                }
+                
+                return {
+                    ...cgp,
+                    guidance: review.modifiedGuidance !== undefined ? review.modifiedGuidance : cgp.guidance,
+                    clinicalContext: review.modifiedContext !== undefined ? review.modifiedContext : cgp.clinicalContext,
+                    validationStatus: newStatus,
+                    clinicianReview: {
+                        reviewedAt: admin.firestore.FieldValue.serverTimestamp(),
+                        reviewerId: userId,
+                        decision: review.decision,
+                        modifiedGuidance: review.modifiedGuidance || null,
+                        modifiedContext: review.modifiedContext || null,
+                        notes: review.notes || '',
+                        hasDisagreement: cgp.validationStatus === 'disagreement' || cgp.validationStatus === 'arbitrated'
+                    }
+                };
+            }
+            
+            return cgp;
+        });
+        
+        // Determine overall approval state
+        const allReviewed = updatedCGPs.every(cgp => cgp.clinicianReview !== null);
+        const allApproved = updatedCGPs.every(cgp => 
+            cgp.clinicianReview && cgp.clinicianReview.decision === 'approved'
+        );
+        const anyRejected = updatedCGPs.some(cgp => 
+            cgp.clinicianReview && cgp.clinicianReview.decision === 'rejected'
+        );
+        
+        let approvalStatus = 'clinician_review';
+        if (allReviewed && allApproved) {
+            approvalStatus = 'approved';
+        } else if (anyRejected) {
+            approvalStatus = 'rejected';
+        }
+        
+        // Update guideline
+        const updateData = {
+            clinicalGuidancePoints: updatedCGPs,
+            cgpApprovalState: {
+                status: approvalStatus,
+                currentStep: 'review',
+                startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+                lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+                reviewedBy: userId,
+                approvalDate: approvalStatus === 'approved' ? admin.firestore.FieldValue.serverTimestamp() : null
+            },
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        };
+        
+        if (approvalStatus === 'approved') {
+            updateData.cgpApprovalState.completedAt = admin.firestore.FieldValue.serverTimestamp();
+        }
+        
+        await guidelineRef.update(updateData);
+        
+        res.json({
+            success: true,
+            cgps: updatedCGPs,
+            approvalStatus: approvalStatus,
+            allReviewed: allReviewed,
+            allApproved: allApproved,
+            guidelineId: guidelineId
+        });
+        
+    } catch (error) {
+        console.error('[CGP] Error in saveCGPClinicianReview endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+/**
+ * Get current CGP validation state for a guideline
+ */
+app.get('/getCGPValidationState/:guidelineId', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.params;
+        
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId is required'
+            });
+        }
+        
+        // Get guideline from Firestore
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Guideline not found'
+            });
+        }
+        
+        const guideline = guidelineDoc.data();
+        
+        // Calculate statistics
+        const cgps = guideline.clinicalGuidancePoints || [];
+        const stats = {
+            total: cgps.length,
+            extracted: cgps.filter(c => c.validationStatus === 'extracted').length,
+            validated: cgps.filter(c => c.validationStatus === 'validated').length,
+            disagreement: cgps.filter(c => c.validationStatus === 'disagreement').length,
+            arbitrated: cgps.filter(c => c.validationStatus === 'arbitrated').length,
+            clinicianApproved: cgps.filter(c => c.validationStatus === 'clinician_approved').length,
+            clinicianRejected: cgps.filter(c => c.validationStatus === 'clinician_rejected').length,
+            clinicianModified: cgps.filter(c => c.validationStatus === 'clinician_modified').length,
+            reviewed: cgps.filter(c => c.clinicianReview !== null).length,
+            withDisagreement: cgps.filter(c => 
+                c.validationStatus === 'disagreement' || 
+                c.validationStatus === 'arbitrated' ||
+                (c.clinicianReview && c.clinicianReview.hasDisagreement)
+            ).length
+        };
+        
+        res.json({
+            success: true,
+            guidelineId: guidelineId,
+            approvalState: guideline.cgpApprovalState || { status: 'not_started' },
+            cgps: cgps,
+            validationLog: guideline.cgpValidationLog || {},
+            statistics: stats
+        });
+        
+    } catch (error) {
+        console.error('[CGP] Error in getCGPValidationState endpoint:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
 // Endpoint to generate audit transcript for a guideline
 app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
   try {

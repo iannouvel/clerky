@@ -794,6 +794,324 @@
             cursor: pointer;
         }
         
+        /* CGP Validation Styles */
+        .cgp-approval-state {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #6c757d;
+        }
+        
+        .approval-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .badge-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .badge-value {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        
+        .badge-value.not_started {
+            background: #e9ecef;
+            color: #6c757d;
+        }
+        
+        .badge-value.llm_extraction,
+        .badge-value.cross_validation,
+        .badge-value.arbitration {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .badge-value.clinician_review {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .badge-value.approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-value.rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .cgp-workflow-progress {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .cgp-workflow-progress::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: #e9ecef;
+            z-index: 0;
+        }
+        
+        .workflow-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e9ecef;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 8px;
+            transition: all 0.3s;
+        }
+        
+        .workflow-step.active .step-number {
+            background: #007bff;
+            color: white;
+        }
+        
+        .workflow-step.completed .step-number {
+            background: #28a745;
+            color: white;
+        }
+        
+        .step-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: center;
+        }
+        
+        .workflow-step.active .step-label {
+            color: #007bff;
+            font-weight: 600;
+        }
+        
+        .cgp-statistics {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stat-label {
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .cgp-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* CGP Review Interface Styles */
+        .cgp-review-interface {
+            margin-top: 20px;
+        }
+        
+        .cgp-item {
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: white;
+        }
+        
+        .cgp-item.has-disagreement {
+            border-left: 4px solid #ffc107;
+            background: #fffbf0;
+        }
+        
+        .cgp-item.arbitrated {
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .cgp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+        
+        .cgp-id {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+        
+        .cgp-status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .cgp-status-badge.extracted {
+            background: #e9ecef;
+            color: #6c757d;
+        }
+        
+        .cgp-status-badge.validated {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .cgp-status-badge.disagreement {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .cgp-status-badge.arbitrated {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .cgp-status-badge.clinician_approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .cgp-status-badge.clinician_rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .cgp-content {
+            margin: 15px 0;
+        }
+        
+        .cgp-field {
+            margin-bottom: 12px;
+        }
+        
+        .cgp-field-label {
+            font-weight: 600;
+            color: #495057;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        
+        .cgp-field-value {
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .cgp-disagreement-info {
+            margin-top: 15px;
+            padding: 12px;
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            border-radius: 4px;
+        }
+        
+        .cgp-arbitration-info {
+            margin-top: 15px;
+            padding: 12px;
+            background: #d1ecf1;
+            border-left: 3px solid #17a2b8;
+            border-radius: 4px;
+        }
+        
+        .cgp-review-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .cgp-review-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .cgp-review-btn.approve {
+            background: #28a745;
+            color: white;
+        }
+        
+        .cgp-review-btn.approve:hover {
+            background: #218838;
+        }
+        
+        .cgp-review-btn.reject {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .cgp-review-btn.reject:hover {
+            background: #c82333;
+        }
+        
+        .cgp-review-btn.modify {
+            background: #ffc107;
+            color: #856404;
+        }
+        
+        .cgp-review-btn.modify:hover {
+            background: #e0a800;
+        }
+        
+        .cgp-notes-input {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+            min-height: 60px;
+            resize: vertical;
+        }
+        
         .version-number {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.85rem;
@@ -853,6 +1171,68 @@
             </div>
 
             <!-- Audit Controls -->
+            <!-- Clinical Guidance Point (CGP) Validation Section -->
+            <div id="cgpValidationSection" class="audit-section" style="display: none;">
+                <h3>Clinical Guidance Point Validation</h3>
+                
+                <!-- Approval State Display -->
+                <div id="cgpApprovalState" class="cgp-approval-state">
+                    <div class="approval-badge" id="approvalBadge">
+                        <span class="badge-label">Status:</span>
+                        <span class="badge-value" id="approvalStatus">Not Started</span>
+                    </div>
+                </div>
+                
+                <!-- Workflow Progress -->
+                <div id="cgpWorkflowProgress" class="cgp-workflow-progress">
+                    <div class="workflow-step" id="step-extraction">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Extraction</div>
+                    </div>
+                    <div class="workflow-step" id="step-validation">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Validation</div>
+                    </div>
+                    <div class="workflow-step" id="step-arbitration">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Arbitration</div>
+                    </div>
+                    <div class="workflow-step" id="step-review">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+                
+                <!-- CGP Statistics -->
+                <div id="cgpStatistics" class="cgp-statistics">
+                    <div class="stat-item">
+                        <span class="stat-label">Total CGPs:</span>
+                        <span class="stat-value" id="cgpTotal">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">With Disagreements:</span>
+                        <span class="stat-value" id="cgpDisagreements">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Reviewed:</span>
+                        <span class="stat-value" id="cgpReviewed">-</span>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div id="cgpActions" class="cgp-actions">
+                    <button id="startCGPValidation" class="audit-btn" style="display: none;">
+                        Start CGP Validation
+                    </button>
+                    <button id="continueCGPValidation" class="audit-btn" style="display: none;">
+                        Continue Validation
+                    </button>
+                    <button id="viewCGPReview" class="audit-btn secondary" style="display: none;">
+                        Review CGPs
+                    </button>
+                </div>
+            </div>
+            
             <div id="auditControlsSection" class="audit-section" style="display: none;">
                 <h3>Audit Controls</h3>
                 <div class="audit-controls">
@@ -929,6 +1309,20 @@
 
         <!-- Right Column - Results -->
         <div class="audit-right-column">
+            <!-- CGP Review Interface -->
+            <div id="cgpReviewInterface" class="cgp-review-interface" style="display: none;">
+                <h3>Clinical Guidance Point Review</h3>
+                <div id="cgpReviewContent">
+                    <!-- CGPs will be rendered here -->
+                </div>
+                <div id="cgpReviewActions" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <button id="saveCGPReview" class="audit-btn" style="display: none;">
+                        Save Review
+                    </button>
+                    <div id="cgpReviewSummary" style="margin-top: 15px; font-size: 14px; color: #495057;"></div>
+                </div>
+            </div>
+            
             <!-- Progress Indicator -->
             <div id="auditProgress" class="audit-progress-container" style="display: none;">
                 <div class="progress-header">

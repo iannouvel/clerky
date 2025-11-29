@@ -34,6 +34,9 @@ export class AuditPage {
         // Setup AI provider selector
         this.setupAIProviderSelector();
         
+        // Setup CGP validation event listeners
+        this.setupCGPValidationListeners();
+        
         console.log('Audit page initialization complete');
     }
 
@@ -96,6 +99,9 @@ export class AuditPage {
 
     // Setup event listeners
     setupEventListeners() {
+        // Setup CGP validation listeners
+        this.setupCGPValidationListeners();
+        
         // Guideline input autocomplete
         const guidelineInput = document.getElementById('guidelineInput');
         const guidelineDropdown = document.getElementById('guidelineDropdown');
@@ -190,6 +196,9 @@ export class AuditPage {
 
         // Update guideline information (now async)
         await this.updateGuidelineInfo(guideline);
+        
+        // Display CGP validation section
+        this.displayCGPValidationSection(guideline);
 
         // Check if there are previous audits for this guideline to decide button visibility
         await this.updateRetrieveButtonVisibility(guideline.id);
