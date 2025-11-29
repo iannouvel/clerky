@@ -318,16 +318,6 @@
                     <div class="logo">clerky</div>
                 </a>
                 <span class="version-number">v<span id="appVersion">loading...</span></span>
-                <div class="model-selector">
-                    <span class="model-selector-icon" title="AI Model">🧠</span>
-                    <select id="modelSelect" class="model-select">
-                        <option value="DeepSeek">DeepSeek (deepseek-chat)</option>
-                        <option value="OpenAI">OpenAI (gpt-3.5-turbo)</option>
-                        <option value="Anthropic">Claude (claude-3-sonnet)</option>
-                        <option value="Mistral">Mistral (mistral-large)</option>
-                        <option value="Gemini">Gemini (gemini-1.5-pro)</option>
-                    </select>
-                </div>
             </div>
             <div class="top-bar-center">
                 <button id="generateClinicalNoteBtn" class="nav-btn secondary" title="Generate Note">
@@ -905,6 +895,15 @@
                             <span class="preferences-scope-btn-title">Both</span>
                             <span class="preferences-scope-btn-desc">National + Local guidelines</span>
                         </button>
+                    </div>
+                </div>
+                
+                <!-- AI Model Preferences Section -->
+                <div class="preferences-section">
+                    <h3>AI Model Preferences</h3>
+                    <p class="preferences-section-desc">Order your preferred AI models. Models are tried in order (1 = first choice) when generating responses.</p>
+                    <div id="modelPreferencesList" class="model-preferences-list">
+                        <!-- Model items will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
