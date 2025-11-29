@@ -6778,24 +6778,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click handler for settings button
-    const settingsBtn = document.getElementById('settingsBtn');
-    const settingsMenu = document.getElementById('settingsMenu');
-    const settingsContainer = document.getElementById('settingsContainer');
-    if (settingsBtn && settingsMenu) {
-        settingsBtn.addEventListener('click', (event) => {
-            event.stopPropagation();
-            settingsMenu.classList.toggle('hidden');
-        });
-        
-        // Close menu if clicking outside
-        window.addEventListener('click', (event) => {
-            if (!settingsMenu.classList.contains('hidden') && !settingsContainer.contains(event.target)) {
-                settingsMenu.classList.add('hidden');
-            }
-        });
-    }
+    // Settings button and menu removed from top bar - now in left panel
 
     // Add click handler for Preferences button
+    // Handle preferences button from settings menu (if it still exists)
     const preferencesBtn = document.getElementById('preferencesBtn');
     if (preferencesBtn) {
         preferencesBtn.addEventListener('click', async () => {
@@ -6805,6 +6791,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (settingsMenu) {
                 settingsMenu.classList.add('hidden');
             }
+        });
+    }
+    
+    // Handle preferences button from left panel
+    const preferencesPanelBtn = document.getElementById('preferencesPanelBtn');
+    if (preferencesPanelBtn) {
+        preferencesPanelBtn.addEventListener('click', async () => {
+            console.log('[DEBUG] Preferences panel button clicked');
+            await showPreferencesModal();
         });
     }
 
