@@ -12978,46 +12978,109 @@ async function askGuidelinesQuestion() {
         searchProgress += `**Your Question:** ${question}\n\n`;
         appendToSummary1(searchProgress);
 
-        // Show guideline scope selection modal
-        console.log('[DEBUG] askGuidelinesQuestion: Showing guideline scope selection modal');
-        let scopeSelection;
-        try {
-            scopeSelection = await showGuidelineScopeModal();
-            
-            // Check for abort after modal
-            if (window.analysisAbortController?.signal.aborted) {
-                throw new Error('Analysis cancelled');
-            }
-            
-            console.log('[DEBUG] askGuidelinesQuestion: User selected scope:', scopeSelection);
-            
-            // Store the selection globally
-            window.selectedGuidelineScope = scopeSelection;
-            
-            const scopeMessage = scopeSelection.scope === 'national' 
-                ? '📘 **National Guidelines Selected**\n\n'
-                : scopeSelection.scope === 'local'
-                ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
-                : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
-            
-            appendToSummary1(scopeMessage, false);
-        } catch (error) {
-            // Check if error is due to abort
-            if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-                throw new Error('Analysis cancelled');
-            }
-            console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
-            return; // Exit if user cancels
-        }
-
-        // Get user ID token
+        // Get user ID token (needed for loading preferences)
         const user = auth.currentUser;
         if (!user) {
             alert('Please sign in to use this feature');
             return;
         }
         const idToken = await user.getIdToken();
+
+        // Check for saved scope preference first
+        console.log('[DEBUG] askGuidelinesQuestion: Checking for saved scope preference');
+        let scopeSelection;
+        const savedScopeSelection = await loadGuidelineScopeSelection();
+        
+        if (savedScopeSelection) {
+            // Verify the saved selection is still valid (check if trust still exists if local/both)
+            if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
+                // Need to verify the hospital trust is still valid
+                try {
+                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${idToken}`
+                        }
+                    });
+                    const result = await response.json();
+                    if (result.success && result.hospitalTrust) {
+                        // Trust exists, use saved selection (but update trust name in case it changed)
+                        scopeSelection = {
+                            scope: savedScopeSelection.scope,
+                            hospitalTrust: result.hospitalTrust
+                        };
+                        console.log('[DEBUG] askGuidelinesQuestion: Using saved scope selection:', scopeSelection);
+                    } else {
+                        // Trust no longer exists, need to reselect
+                        console.log('[DEBUG] askGuidelinesQuestion: Saved selection invalid (no trust), showing modal');
+                        try {
+                            scopeSelection = await showGuidelineScopeModal();
+                        } catch (error) {
+                            // Check if error is due to abort
+                            if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                                throw new Error('Analysis cancelled');
+                            }
+                            console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
+                            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                            return; // Exit if user cancels
+                        }
+                    }
+                } catch (error) {
+                    // Check if error is due to abort
+                    if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                        throw new Error('Analysis cancelled');
+                    }
+                    console.error('[ERROR] Failed to verify hospital trust, showing modal:', error);
+                    try {
+                        scopeSelection = await showGuidelineScopeModal();
+                    } catch (modalError) {
+                        // Check if error is due to abort
+                        if (modalError.name === 'AbortError' || modalError.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                            throw new Error('Analysis cancelled');
+                        }
+                        console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', modalError.message);
+                        appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                        return; // Exit if user cancels
+                    }
+                }
+            } else {
+                // National scope doesn't need trust verification
+                scopeSelection = savedScopeSelection;
+                console.log('[DEBUG] askGuidelinesQuestion: Using saved scope selection:', scopeSelection);
+            }
+        } else {
+            // No saved selection, show modal
+            console.log('[DEBUG] askGuidelinesQuestion: No saved selection, showing guideline scope selection modal');
+            try {
+                scopeSelection = await showGuidelineScopeModal();
+            } catch (error) {
+                // Check if error is due to abort
+                if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                    throw new Error('Analysis cancelled');
+                }
+                console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
+                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                return; // Exit if user cancels
+            }
+        }
+        
+        // Check for abort after scope selection
+        if (window.analysisAbortController?.signal.aborted) {
+            throw new Error('Analysis cancelled');
+        }
+        
+        console.log('[DEBUG] askGuidelinesQuestion: Using scope selection:', scopeSelection);
+        
+        // Store the selection globally
+        window.selectedGuidelineScope = scopeSelection;
+        
+        const scopeMessage = scopeSelection.scope === 'national' 
+            ? '📘 **National Guidelines Selected**\n\n'
+            : scopeSelection.scope === 'local'
+            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
+        
+        appendToSummary1(scopeMessage, false);
 
         // Update progress
         const loadingMessage = 'Loading guidelines from database...\n';
