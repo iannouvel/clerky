@@ -33,126 +33,6 @@ if (document.readyState === 'loading') {
 
 // Fetch the user's current AI provider preference from the server.
 // Falls back to DeepSeek if anything goes wrong.
-async function fetchUserAIProviderPreference() {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            console.log('[AI PREF] No authenticated user, defaulting to DeepSeek');
-            return 'DeepSeek';
-        }
-
-        const token = await user.getIdToken();
-        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateAIPreference`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) {
-            console.warn('[AI PREF] Failed to fetch preference, status:', response.status);
-            return 'DeepSeek';
-        }
-
-        const data = await response.json();
-        if (data && data.provider) {
-            console.log('[AI PREF] Loaded provider preference:', data.provider);
-            return data.provider;
-        }
-
-        return 'DeepSeek';
-    } catch (error) {
-        console.error('[AI PREF] Error fetching provider preference, defaulting to DeepSeek:', error);
-        return 'DeepSeek';
-    }
-}
-
-// Initialise the top-bar model selector so it reflects the user's saved AI
-// provider preference (or DeepSeek by default) and keeps the server in sync.
-async function initialiseModelSelector() {
-    const selectEl = document.getElementById('modelSelect');
-    if (!selectEl) {
-        return;
-    }
-
-    try {
-        // Get current provider preference (DeepSeek default on error)
-        const provider = await fetchUserAIProviderPreference();
-
-        // Apply to the select element if the option exists
-        if (provider && Array.from(selectEl.options).some(opt => opt.value === provider)) {
-            selectEl.value = provider;
-        } else {
-            // Fallback to DeepSeek if an unknown provider is returned
-            selectEl.value = 'DeepSeek';
-        }
-
-        // When the user changes the selection, persist it via /updateAIPreference
-        selectEl.addEventListener('change', async (event) => {
-            const newProvider = event.target.value;
-            try {
-                const user = auth.currentUser;
-                if (!user) {
-                    console.warn('[AI PREF] Cannot update provider, user not authenticated');
-                    return;
-                }
-
-                const token = await user.getIdToken();
-                const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateAIPreference`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    },
-                    body: JSON.stringify({ provider: newProvider })
-                });
-
-                const data = await response.json().catch(() => ({}));
-                if (!response.ok && response.status !== 202) {
-                    console.error('[AI PREF] Failed to update provider:', data);
-                } else {
-                    console.log('[AI PREF] Provider updated to:', newProvider, data.warning ? '(with warning)' : '');
-                }
-            } catch (err) {
-                console.error('[AI PREF] Error updating provider preference:', err);
-            }
-        });
-    } catch (error) {
-        console.error('[AI PREF] Failed to initialise model selector:', error);
-    }
-}
-
-// Kick off model selector initialisation after DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initialiseModelSelector);
-} else {
-    initialiseModelSelector();
-}
-
-// Make model selector icon clickable on mobile to open dropdown
-function setupModelSelectorIcon() {
-    const iconEl = document.querySelector('.model-selector-icon');
-    const selectEl = document.getElementById('modelSelect');
-    
-    if (iconEl && selectEl) {
-        iconEl.addEventListener('click', () => {
-            // On mobile, clicking the icon should trigger the select dropdown
-            if (window.isMobile && selectEl) {
-                // Create a synthetic click event on the select element
-                selectEl.focus();
-                selectEl.click();
-            }
-        });
-    }
-}
-
-// Setup model selector icon after DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupModelSelectorIcon);
-} else {
-    setupModelSelectorIcon();
-}
 
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
@@ -7742,6 +7622,180 @@ async function clearHospitalTrustSelection() {
 }
 
 // Preferences Modal Functions
+// Available AI models with their display names and model identifiers
+const AVAILABLE_MODELS = [
+    { name: 'DeepSeek', model: 'deepseek-chat', displayName: 'DeepSeek' },
+    { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral' },
+    { name: 'Anthropic', model: 'claude-3-sonnet-20240229', displayName: 'Claude' },
+    { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'OpenAI' },
+    { name: 'Gemini', model: 'gemini-1.5-pro-latest', displayName: 'Gemini' }
+];
+
+// Fetch user's model preference order from backend
+async function fetchUserModelPreferences() {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.log('[MODEL PREF] No authenticated user, using default order');
+            return AVAILABLE_MODELS.map(m => m.name);
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getModelPreferences`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            console.warn('[MODEL PREF] Failed to fetch preferences, using default order');
+            return AVAILABLE_MODELS.map(m => m.name);
+        }
+
+        const data = await response.json();
+        if (data && data.success && Array.isArray(data.modelOrder)) {
+            console.log('[MODEL PREF] Loaded model preferences:', data.modelOrder);
+            // Validate that all models are present
+            const validOrder = data.modelOrder.filter(name => 
+                AVAILABLE_MODELS.some(m => m.name === name)
+            );
+            // Add any missing models to the end
+            const missingModels = AVAILABLE_MODELS
+                .map(m => m.name)
+                .filter(name => !validOrder.includes(name));
+            return [...validOrder, ...missingModels];
+        }
+
+        return AVAILABLE_MODELS.map(m => m.name);
+    } catch (error) {
+        console.error('[MODEL PREF] Error fetching model preferences, using default order:', error);
+        return AVAILABLE_MODELS.map(m => m.name);
+    }
+}
+
+// Save user's model preference order to backend
+async function saveUserModelPreferences(modelOrder) {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[MODEL PREF] Cannot save preferences, user not authenticated');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateModelPreferences`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ modelOrder })
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok && response.status !== 202) {
+            console.error('[MODEL PREF] Failed to save preferences:', data);
+            return false;
+        } else {
+            console.log('[MODEL PREF] Model preferences saved:', modelOrder, data.warning ? '(with warning)' : '');
+            return true;
+        }
+    } catch (err) {
+        console.error('[MODEL PREF] Error saving model preferences:', err);
+        return false;
+    }
+}
+
+// Render model preferences list with drag and drop
+let draggedModelElement = null;
+
+function renderModelPreferencesList(modelOrder) {
+    const listContainer = document.getElementById('modelPreferencesList');
+    if (!listContainer) {
+        console.error('[MODEL PREF] Model preferences list container not found');
+        return;
+    }
+
+    listContainer.innerHTML = '';
+    draggedModelElement = null;
+
+    modelOrder.forEach((modelName, index) => {
+        const model = AVAILABLE_MODELS.find(m => m.name === modelName);
+        if (!model) return;
+
+        const item = document.createElement('div');
+        item.className = 'model-preference-item';
+        item.draggable = true;
+        item.dataset.modelName = modelName;
+        
+        item.innerHTML = `
+            <div class="model-preference-number">${index + 1}</div>
+            <div class="model-preference-name">${model.displayName}</div>
+            <div class="model-preference-model">${model.model}</div>
+            <div class="model-preference-drag-handle">⋮⋮</div>
+        `;
+
+        // Drag and drop handlers
+        item.addEventListener('dragstart', (e) => {
+            draggedModelElement = item;
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+            item.classList.add('dragging');
+        });
+
+        item.addEventListener('dragend', () => {
+            item.classList.remove('dragging');
+            draggedModelElement = null;
+        });
+
+        item.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            
+            if (draggedModelElement && draggedModelElement !== item) {
+                const allItems = Array.from(listContainer.querySelectorAll('.model-preference-item'));
+                const draggingIndex = allItems.indexOf(draggedModelElement);
+                const currentIndex = allItems.indexOf(item);
+                
+                if (draggingIndex < currentIndex) {
+                    listContainer.insertBefore(draggedModelElement, item.nextSibling);
+                } else {
+                    listContainer.insertBefore(draggedModelElement, item);
+                }
+                updateModelPreferenceNumbers();
+            }
+        });
+
+        item.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (draggedModelElement) {
+                updateModelPreferenceNumbers();
+            }
+        });
+
+        listContainer.appendChild(item);
+    });
+}
+
+// Update the number badges after reordering
+function updateModelPreferenceNumbers() {
+    const items = document.querySelectorAll('.model-preference-item');
+    items.forEach((item, index) => {
+        const numberEl = item.querySelector('.model-preference-number');
+        if (numberEl) {
+            numberEl.textContent = index + 1;
+        }
+    });
+}
+
+// Get current model order from the DOM
+function getCurrentModelOrder() {
+    const items = Array.from(document.querySelectorAll('.model-preference-item'));
+    return items.map(item => item.dataset.modelName);
+}
+
 async function showPreferencesModal() {
     console.log('[DEBUG] Showing preferences modal');
     
@@ -7832,6 +7886,16 @@ async function showPreferencesModal() {
     } else {
         preferencesLocalBtn.disabled = false;
         preferencesBothBtn.disabled = false;
+    }
+    
+    // Load and display model preferences
+    try {
+        const modelOrder = await fetchUserModelPreferences();
+        renderModelPreferencesList(modelOrder);
+    } catch (error) {
+        console.error('[ERROR] Failed to load model preferences:', error);
+        // Use default order on error
+        renderModelPreferencesList(AVAILABLE_MODELS.map(m => m.name));
     }
     
     // Set up event handlers
@@ -7982,6 +8046,17 @@ async function showPreferencesModal() {
             };
             await saveGuidelineScopeSelection(scopeSelection);
             console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
+        }
+        
+        // Save model preferences
+        const modelOrder = getCurrentModelOrder();
+        if (modelOrder.length > 0) {
+            const saved = await saveUserModelPreferences(modelOrder);
+            if (saved) {
+                console.log('[DEBUG] Saved model preferences:', modelOrder);
+            } else {
+                console.warn('[DEBUG] Failed to save model preferences');
+            }
         }
         
         // Close modal

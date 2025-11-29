@@ -2015,6 +2015,148 @@ const userHospitalTrustCache = new Map();
 // Guideline Scope preference cache
 const userGuidelineScopeCache = new Map();
 
+// Model Preferences cache
+const userModelPreferencesCache = new Map();
+
+// Get user's model preferences (ordered list)
+async function getUserModelPreferences(userId) {
+    // Check if we have a cached preference for this user
+    if (userModelPreferencesCache.has(userId)) {
+        const cachedData = userModelPreferencesCache.get(userId);
+        // Check if the cached data is still valid
+        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
+            console.log(`Using cached model preferences for user ${userId}:`, cachedData.modelOrder);
+            return cachedData.modelOrder;
+        } else {
+            // Cached data is expired, remove it
+            userModelPreferencesCache.delete(userId);
+        }
+    }
+
+    console.log(`Attempting to get model preferences for user: ${userId}`);
+    
+    try {
+        // Try Firestore first if available
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    console.log('User preference document exists in Firestore:', data);
+                    
+                    if (data && data.modelPreferences && Array.isArray(data.modelPreferences)) {
+                        // Cache the preference
+                        userModelPreferencesCache.set(userId, {
+                            modelOrder: data.modelPreferences,
+                            timestamp: Date.now()
+                        });
+                        return data.modelPreferences;
+                    }
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserModelPreferences, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+        
+        try {
+            if (fs.existsSync(userPrefsFilePath)) {
+                const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+                console.log('User preference file exists:', userData);
+                if (userData && userData.modelPreferences && Array.isArray(userData.modelPreferences)) {
+                    // Cache the preference
+                    userModelPreferencesCache.set(userId, {
+                        modelOrder: userData.modelPreferences,
+                        timestamp: Date.now()
+                    });
+                    return userData.modelPreferences;
+                }
+            }
+        } catch (error) {
+            console.error('Error reading user preference file:', error);
+        }
+        
+        // Default to cost-ordered list if no preference found
+        const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
+        
+        // Cache the default preference
+        userModelPreferencesCache.set(userId, {
+            modelOrder: defaultOrder,
+            timestamp: Date.now()
+        });
+        
+        return defaultOrder;
+    } catch (error) {
+        console.error('Critical error in getUserModelPreferences:', error);
+        return AI_PROVIDER_PREFERENCE.map(p => p.name); // Default to cost-ordered list on error
+    }
+}
+
+// Update user's model preferences (ordered list)
+async function updateUserModelPreferences(userId, modelOrder) {
+    console.log(`Updating model preferences for user ${userId} to:`, modelOrder);
+    
+    // Update cache immediately
+    userModelPreferencesCache.set(userId, {
+        modelOrder: modelOrder,
+        timestamp: Date.now()
+    });
+    
+    try {
+        // Try to update in Firestore if available
+        if (db) {
+            try {
+                // Get existing preferences to merge with them
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+                
+                // Set the modelPreferences field
+                const updateData = {
+                    ...existingData,
+                    modelPreferences: modelOrder,
+                    updatedAt: new Date().toISOString()
+                };
+                await db.collection('userPreferences').doc(userId).set(updateData);
+                
+                console.log(`Successfully updated model preferences in Firestore for user: ${userId}`);
+                return true;
+            } catch (firestoreError) {
+                console.error('Firestore error in updateUserModelPreferences, falling back to file storage:', firestoreError);
+                // Fall through to file-based storage
+            }
+        }
+        
+        // Fallback to local file storage
+        try {
+            // Save to local JSON file
+            const userPrefsFilePath = path.join(userPrefsDir, `${userId}.json`);
+            
+            let existingData = {};
+            if (fs.existsSync(userPrefsFilePath)) {
+                existingData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
+            }
+            
+            existingData.modelPreferences = modelOrder;
+            existingData.updatedAt = new Date().toISOString();
+            
+            fs.writeFileSync(userPrefsFilePath, JSON.stringify(existingData, null, 2));
+            
+            console.log(`Successfully updated model preferences in local file for user: ${userId}`);
+            return true;
+        } catch (fileError) {
+            console.error('Failed to update user preference file:', fileError);
+            return false;
+        }
+    } catch (error) {
+        console.error('Error in updateUserModelPreferences:', error);
+        return false;
+    }
+}
+
 // Get user's hospital trust preference
 async function getUserHospitalTrust(userId) {
     // Check if we have a cached preference for this user
@@ -2364,39 +2506,33 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Override with userId preference if provided
     if (userId) {
       try {
-        // Use the cached preference (which will fetch if needed)
-        const userPreference = await getUserAIPreference(userId);
+        // Use the ordered model preferences (which will fetch if needed)
+        const userModelOrder = await getUserModelPreferences(userId);
         
-        // Only update if the user preference is different from what was requested
-        if (userPreference !== preferredProvider) {
-          console.log('[DEBUG] Overriding provider based on user preference:', {
-            requestedModel: model,
-            initialProvider: preferredProvider,
-            userPreference,
-            userId
-          });
-          preferredProvider = userPreference;
+        if (userModelOrder && userModelOrder.length > 0) {
+          // Use the first model in the user's preference order
+          const firstPreferredProvider = userModelOrder[0];
           
-          // Only update the model if it doesn't match the preferred provider
-          if (preferredProvider === 'OpenAI' && !model.includes('gpt')) {
-            console.log('[DEBUG] Updating model to match OpenAI provider');
-            model = 'gpt-3.5-turbo';
-          } else if (preferredProvider === 'DeepSeek' && !model.includes('deepseek')) {
-            console.log('[DEBUG] Updating model to match DeepSeek provider');
-            model = 'deepseek-chat';
-          } else if (preferredProvider === 'Anthropic' && !model.includes('claude')) {
-            console.log('[DEBUG] Updating model to match Anthropic provider');
-            model = 'claude-3-sonnet-20240229';
-          } else if (preferredProvider === 'Mistral' && !model.includes('mistral')) {
-            console.log('[DEBUG] Updating model to match Mistral provider');
-            model = 'mistral-large-latest';
-          } else if (preferredProvider === 'Gemini' && !model.includes('gemini')) {
-            console.log('[DEBUG] Updating model to match Gemini provider');
-            model = 'gemini-1.5-pro';
+          if (firstPreferredProvider !== preferredProvider) {
+            console.log('[DEBUG] Overriding provider based on user model preferences:', {
+              requestedModel: model,
+              initialProvider: preferredProvider,
+              firstPreferredProvider,
+              fullOrder: userModelOrder,
+              userId
+            });
+            preferredProvider = firstPreferredProvider;
+            
+            // Update the model to match the preferred provider
+            const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === preferredProvider);
+            if (providerConfig) {
+              model = providerConfig.model;
+              console.log('[DEBUG] Updated model to match preferred provider:', model);
+            }
           }
         }
       } catch (error) {
-        console.error('[DEBUG] Error getting user AI preference:', {
+        console.error('[DEBUG] Error getting user model preferences:', {
           error: error.message,
           userId,
           usingModelBasedProvider: true
@@ -2438,10 +2574,51 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     const hasCurrentProviderKey = availableKeys[`has${preferredProvider}Key`];
     
     if (!hasCurrentProviderKey) {
-      console.log(`[DEBUG] No API key for ${preferredProvider}, searching for next available provider in cost order...`);
+      console.log(`[DEBUG] No API key for ${preferredProvider}, searching for next available provider...`);
       
-      // Get next available provider in cost order
-      const nextProvider = getNextAvailableProvider(preferredProvider, availableKeys);
+      // Try to use user's preference order for fallback, otherwise use cost order
+      let fallbackOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
+      if (userId) {
+        try {
+          const userModelOrder = await getUserModelPreferences(userId);
+          if (userModelOrder && userModelOrder.length > 0) {
+            fallbackOrder = userModelOrder;
+            console.log('[DEBUG] Using user preference order for fallback:', fallbackOrder);
+          }
+        } catch (error) {
+          console.warn('[DEBUG] Error getting user model preferences for fallback, using cost order:', error);
+        }
+      }
+      
+      // Find next available provider in the fallback order
+      let nextProvider = null;
+      const currentIndex = fallbackOrder.indexOf(preferredProvider);
+      
+      // Start from the next provider after current
+      for (let i = currentIndex + 1; i < fallbackOrder.length; i++) {
+        const providerName = fallbackOrder[i];
+        if (availableKeys[`has${providerName}Key`]) {
+          const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === providerName);
+          if (providerConfig) {
+            nextProvider = providerConfig;
+            break;
+          }
+        }
+      }
+      
+      // If no next provider available, try from the beginning
+      if (!nextProvider) {
+        for (let i = 0; i < currentIndex; i++) {
+          const providerName = fallbackOrder[i];
+          if (availableKeys[`has${providerName}Key`]) {
+            const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === providerName);
+            if (providerConfig) {
+              nextProvider = providerConfig;
+              break;
+            }
+          }
+        }
+      }
       
       if (nextProvider) {
         console.log(`[DEBUG] Falling back to ${nextProvider.name} (${nextProvider.description}) - Cost: $${nextProvider.costPer1kTokens}/1k tokens`);
@@ -5919,6 +6096,77 @@ app.all('/updateAIPreference', authenticateUser, async (req, res) => {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   } catch (error) {
     console.error('Unexpected error in updateAIPreference endpoint:', error);
+    res.status(500).json({ success: false, message: 'Server error', error: error.message });
+  }
+});
+
+// Get user's model preferences (ordered list)
+app.get('/getModelPreferences', authenticateUser, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const modelOrder = await getUserModelPreferences(userId);
+    return res.json({ success: true, modelOrder });
+  } catch (error) {
+    console.error('Error getting model preferences:', error);
+    // Return default order on error
+    const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
+    return res.json({ success: true, modelOrder: defaultOrder });
+  }
+});
+
+// Update user's model preferences (ordered list)
+app.post('/updateModelPreferences', authenticateUser, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const { modelOrder } = req.body;
+    
+    if (!modelOrder || !Array.isArray(modelOrder)) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'modelOrder must be an array' 
+      });
+    }
+    
+    // Validate that all models in the order are valid
+    const validModels = AI_PROVIDER_PREFERENCE.map(p => p.name);
+    const invalidModels = modelOrder.filter(name => !validModels.includes(name));
+    if (invalidModels.length > 0) {
+      return res.status(400).json({ 
+        success: false, 
+        message: `Invalid models: ${invalidModels.join(', ')}` 
+      });
+    }
+    
+    // Ensure all models are present (add missing ones to the end)
+    const allModels = [...modelOrder];
+    validModels.forEach(model => {
+      if (!allModels.includes(model)) {
+        allModels.push(model);
+      }
+    });
+    
+    try {
+      const updated = await updateUserModelPreferences(userId, allModels);
+      
+      if (updated === false) {
+        return res.status(202).json({
+          success: true,
+          modelOrder: allModels,
+          warning: 'Preferences updated temporarily but may not persist across sessions'
+        });
+      }
+      
+      return res.json({ success: true, modelOrder: allModels });
+    } catch (error) {
+      console.error('Error updating model preferences:', error);
+      return res.status(202).json({ 
+        success: true, 
+        modelOrder: allModels,
+        warning: 'Preferences updated temporarily but may not persist across sessions'
+      });
+    }
+  } catch (error) {
+    console.error('Unexpected error in updateModelPreferences endpoint:', error);
     res.status(500).json({ success: false, message: 'Server error', error: error.message });
   }
 });
