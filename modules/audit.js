@@ -34,9 +34,6 @@ export class AuditPage {
         // Setup AI provider selector
         this.setupAIProviderSelector();
         
-        // Setup CGP validation event listeners
-        this.setupCGPValidationListeners();
-        
         console.log('Audit page initialization complete');
     }
 
@@ -1683,5 +1680,617 @@ export class AuditPage {
         
         resultsDiv.innerHTML = elementsHtml;
         resultsDiv.classList.remove('empty');
+    }
+    
+    // ============================================================================
+    // CLINICAL GUIDANCE POINT (CGP) VALIDATION METHODS
+    // ============================================================================
+    
+    /**
+     * Setup CGP validation event listeners
+     */
+    setupCGPValidationListeners() {
+        // Start CGP validation button
+        const startBtn = document.getElementById('startCGPValidation');
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                if (this.selectedGuideline) {
+                    this.runCGPValidationWorkflow(this.selectedGuideline.id);
+                }
+            });
+        }
+        
+        // Continue CGP validation button
+        const continueBtn = document.getElementById('continueCGPValidation');
+        if (continueBtn) {
+            continueBtn.addEventListener('click', () => {
+                if (this.selectedGuideline) {
+                    this.runCGPValidationWorkflow(this.selectedGuideline.id);
+                }
+            });
+        }
+        
+        // View CGP review button
+        const viewBtn = document.getElementById('viewCGPReview');
+        if (viewBtn) {
+            viewBtn.addEventListener('click', () => {
+                if (this.selectedGuideline) {
+                    this.displayCGPReviewInterface(this.selectedGuideline.id);
+                }
+            });
+        }
+        
+        // Save CGP review button
+        const saveBtn = document.getElementById('saveCGPReview');
+        if (saveBtn) {
+            saveBtn.addEventListener('click', () => {
+                if (this.selectedGuideline) {
+                    this.saveCGPReviews(this.selectedGuideline.id);
+                }
+            });
+        }
+    }
+    
+    /**
+     * Display CGP validation section for selected guideline
+     */
+    displayCGPValidationSection(guideline) {
+        const section = document.getElementById('cgpValidationSection');
+        if (!section) return;
+        
+        if (!guideline) {
+            section.style.display = 'none';
+            return;
+        }
+        
+        section.style.display = 'block';
+        
+        // Get approval state
+        const approvalState = guideline.cgpApprovalState || { status: 'not_started' };
+        const cgps = guideline.clinicalGuidancePoints || [];
+        const validationLog = guideline.cgpValidationLog || {};
+        
+        // Update approval badge
+        const approvalStatus = document.getElementById('approvalStatus');
+        if (approvalStatus) {
+            approvalStatus.textContent = approvalState.status.replace('_', ' ').toUpperCase();
+            approvalStatus.className = `badge-value ${approvalState.status}`;
+        }
+        
+        // Update workflow progress
+        this.updateCGPWorkflowProgress(approvalState);
+        
+        // Update statistics
+        const stats = this.calculateCGPStatistics(cgps);
+        const totalEl = document.getElementById('cgpTotal');
+        const disagreementsEl = document.getElementById('cgpDisagreements');
+        const reviewedEl = document.getElementById('cgpReviewed');
+        
+        if (totalEl) totalEl.textContent = stats.total;
+        if (disagreementsEl) disagreementsEl.textContent = stats.withDisagreement;
+        if (reviewedEl) reviewedEl.textContent = stats.reviewed;
+        
+        // Update action buttons based on state
+        this.updateCGPActionButtons(approvalState);
+    }
+    
+    /**
+     * Update workflow progress indicators
+     */
+    updateCGPWorkflowProgress(approvalState) {
+        const steps = ['extraction', 'validation', 'arbitration', 'review'];
+        steps.forEach(step => {
+            const stepEl = document.getElementById(`step-${step}`);
+            if (stepEl) {
+                stepEl.classList.remove('active', 'completed');
+            }
+        });
+        
+        switch (approvalState.status) {
+            case 'not_started':
+                // No steps active
+                break;
+            case 'llm_extraction':
+                document.getElementById('step-extraction')?.classList.add('active');
+                break;
+            case 'cross_validation':
+                document.getElementById('step-extraction')?.classList.add('completed');
+                document.getElementById('step-validation')?.classList.add('active');
+                break;
+            case 'arbitration':
+                document.getElementById('step-extraction')?.classList.add('completed');
+                document.getElementById('step-validation')?.classList.add('completed');
+                document.getElementById('step-arbitration')?.classList.add('active');
+                break;
+            case 'clinician_review':
+            case 'approved':
+            case 'rejected':
+                steps.slice(0, 3).forEach(step => {
+                    document.getElementById(`step-${step}`)?.classList.add('completed');
+                });
+                document.getElementById('step-review')?.classList.add('active');
+                if (approvalState.status === 'approved' || approvalState.status === 'rejected') {
+                    document.getElementById('step-review')?.classList.add('completed');
+                }
+                break;
+        }
+    }
+    
+    /**
+     * Calculate CGP statistics
+     */
+    calculateCGPStatistics(cgps) {
+        return {
+            total: cgps.length,
+            extracted: cgps.filter(c => c.validationStatus === 'extracted').length,
+            validated: cgps.filter(c => c.validationStatus === 'validated').length,
+            disagreement: cgps.filter(c => c.validationStatus === 'disagreement').length,
+            arbitrated: cgps.filter(c => c.validationStatus === 'arbitrated').length,
+            reviewed: cgps.filter(c => c.clinicianReview !== null).length,
+            withDisagreement: cgps.filter(c => 
+                c.validationStatus === 'disagreement' || 
+                c.validationStatus === 'arbitrated' ||
+                (c.clinicianReview && c.clinicianReview.hasDisagreement)
+            ).length
+        };
+    }
+    
+    /**
+     * Update action buttons based on approval state
+     */
+    updateCGPActionButtons(approvalState) {
+        const startBtn = document.getElementById('startCGPValidation');
+        const continueBtn = document.getElementById('continueCGPValidation');
+        const viewBtn = document.getElementById('viewCGPReview');
+        
+        if (startBtn) startBtn.style.display = 'none';
+        if (continueBtn) continueBtn.style.display = 'none';
+        if (viewBtn) viewBtn.style.display = 'none';
+        
+        switch (approvalState.status) {
+            case 'not_started':
+                if (startBtn) startBtn.style.display = 'block';
+                break;
+            case 'llm_extraction':
+            case 'cross_validation':
+            case 'arbitration':
+                if (continueBtn) continueBtn.style.display = 'block';
+                break;
+            case 'clinician_review':
+            case 'approved':
+            case 'rejected':
+                if (viewBtn) viewBtn.style.display = 'block';
+                break;
+        }
+    }
+    
+    /**
+     * Run complete CGP validation workflow
+     */
+    async runCGPValidationWorkflow(guidelineId) {
+        try {
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const user = await this.waitForAuth();
+            if (!user) throw new Error('User not authenticated');
+            
+            const token = await user.getIdToken();
+            
+            // Step 1: Extraction
+            console.log('[CGP] Step 1: Starting extraction...');
+            this.updateCGPProgress('Extracting Clinical Guidance Points...', 25);
+            
+            const extractResponse = await fetch(`${serverUrl}/extractClinicalGuidancePoints`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    guidelineId: guidelineId,
+                    aiProvider: this.currentAIProvider
+                })
+            });
+            
+            if (!extractResponse.ok) {
+                const errorData = await extractResponse.json();
+                throw new Error(errorData.error || 'Failed to extract CGPs');
+            }
+            
+            const extractResult = await extractResponse.json();
+            if (!extractResult.success) {
+                throw new Error(extractResult.error || 'Extraction failed');
+            }
+            
+            console.log(`[CGP] Step 1: Extracted ${extractResult.cgps.length} CGPs`);
+            
+            // Step 2: Cross-validation
+            console.log('[CGP] Step 2: Starting cross-validation...');
+            this.updateCGPProgress('Cross-validating CGPs...', 50);
+            
+            const validateResponse = await fetch(`${serverUrl}/crossValidateCGPs`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    guidelineId: guidelineId
+                })
+            });
+            
+            if (!validateResponse.ok) {
+                const errorData = await validateResponse.json();
+                throw new Error(errorData.error || 'Failed to cross-validate CGPs');
+            }
+            
+            const validateResult = await validateResponse.json();
+            if (!validateResult.success) {
+                throw new Error(validateResult.error || 'Cross-validation failed');
+            }
+            
+            console.log(`[CGP] Step 2: Validated ${validateResult.metadata.validated}, found ${validateResult.metadata.disagreements} disagreements`);
+            
+            // Step 3: Arbitration (if needed)
+            if (validateResult.metadata.disagreements > 0) {
+                console.log('[CGP] Step 3: Starting arbitration...');
+                this.updateCGPProgress('Arbitrating disagreements...', 75);
+                
+                const arbitrateResponse = await fetch(`${serverUrl}/arbitrateCGPDisagreements`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        guidelineId: guidelineId
+                    })
+                });
+                
+                if (!arbitrateResponse.ok) {
+                    const errorData = await arbitrateResponse.json();
+                    throw new Error(errorData.error || 'Failed to arbitrate disagreements');
+                }
+                
+                const arbitrateResult = await arbitrateResponse.json();
+                if (!arbitrateResult.success) {
+                    throw new Error(arbitrateResult.error || 'Arbitration failed');
+                }
+                
+                console.log(`[CGP] Step 3: Resolved ${arbitrateResult.metadata.disagreementsResolved} disagreements`);
+            } else {
+                console.log('[CGP] Step 3: No disagreements to arbitrate');
+            }
+            
+            // Complete
+            this.updateCGPProgress('Complete!', 100);
+            
+            // Refresh guideline data
+            await this.loadSelectedGuideline(guidelineId);
+            
+            // Show review interface
+            await this.displayCGPReviewInterface(guidelineId);
+            
+        } catch (error) {
+            console.error('[CGP] Validation workflow failed:', error);
+            alert(`CGP Validation failed: ${error.message}`);
+        }
+    }
+    
+    /**
+     * Update CGP progress indicator
+     */
+    updateCGPProgress(message, percent) {
+        // Update workflow step indicators if needed
+        // For now, just log
+        console.log(`[CGP Progress] ${message} (${percent}%)`);
+    }
+    
+    /**
+     * Display CGP review interface
+     */
+    async displayCGPReviewInterface(guidelineId) {
+        try {
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const user = await this.waitForAuth();
+            if (!user) throw new Error('User not authenticated');
+            
+            const token = await user.getIdToken();
+            
+            const response = await fetch(`${serverUrl}/getCGPValidationState/${guidelineId}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to get CGP validation state');
+            }
+            
+            const data = await response.json();
+            if (!data.success) {
+                throw new Error(data.error || 'Failed to load CGP state');
+            }
+            
+            // Hide audit results and show CGP review
+            const auditResults = document.getElementById('auditResults');
+            const cgpReview = document.getElementById('cgpReviewInterface');
+            
+            if (auditResults) auditResults.style.display = 'none';
+            if (cgpReview) {
+                cgpReview.style.display = 'block';
+                this.renderCGPReviewContent(data.cgps, data.statistics);
+            }
+            
+        } catch (error) {
+            console.error('[CGP] Failed to display review interface:', error);
+            alert(`Failed to load CGP review: ${error.message}`);
+        }
+    }
+    
+    /**
+     * Render CGP review content
+     */
+    renderCGPReviewContent(cgps, stats) {
+        const container = document.getElementById('cgpReviewContent');
+        if (!container) return;
+        
+        let html = '';
+        
+        // Sort CGPs: disagreements first, then by status
+        const sortedCGPs = [...cgps].sort((a, b) => {
+            const aHasDisagreement = a.validationStatus === 'disagreement' || a.validationStatus === 'arbitrated';
+            const bHasDisagreement = b.validationStatus === 'disagreement' || b.validationStatus === 'arbitrated';
+            
+            if (aHasDisagreement && !bHasDisagreement) return -1;
+            if (!aHasDisagreement && bHasDisagreement) return 1;
+            return 0;
+        });
+        
+        sortedCGPs.forEach(cgp => {
+            const hasDisagreement = cgp.validationStatus === 'disagreement' || cgp.validationStatus === 'arbitrated';
+            const isArbitrated = cgp.validationStatus === 'arbitrated';
+            const hasReview = cgp.clinicianReview !== null;
+            
+            html += `
+                <div class="cgp-item ${hasDisagreement ? 'has-disagreement' : ''} ${isArbitrated ? 'arbitrated' : ''}" data-cgp-id="${cgp.cgpId}">
+                    <div class="cgp-header">
+                        <div class="cgp-id">${this.escapeHtml(cgp.cgpId)}</div>
+                        <span class="cgp-status-badge ${cgp.validationStatus}">${cgp.validationStatus.replace('_', ' ')}</span>
+                    </div>
+                    
+                    <div class="cgp-content">
+                        <div class="cgp-field">
+                            <div class="cgp-field-label">Guidance:</div>
+                            <div class="cgp-field-value">${this.escapeHtml(cgp.guidance)}</div>
+                        </div>
+                        
+                        <div class="cgp-field">
+                            <div class="cgp-field-label">Clinical Context:</div>
+                            <div class="cgp-field-value">${this.escapeHtml(cgp.clinicalContext)}</div>
+                        </div>
+                        
+                        ${cgp.derivedAdvice ? `
+                            <div class="cgp-field">
+                                <div class="cgp-field-label">Derived Advice:</div>
+                                <div class="cgp-field-value">${this.escapeHtml(cgp.derivedAdvice)}</div>
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    ${hasDisagreement && cgp.crossValidatorAssessment ? `
+                        <div class="cgp-disagreement-info">
+                            <strong>Disagreement:</strong>
+                            <ul>
+                                ${cgp.crossValidatorAssessment.disagreements.map(d => `<li>${this.escapeHtml(d)}</li>`).join('')}
+                            </ul>
+                            ${cgp.crossValidatorAssessment.notes ? `<p>${this.escapeHtml(cgp.crossValidatorAssessment.notes)}</p>` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    ${isArbitrated && cgp.arbitratorAssessment ? `
+                        <div class="cgp-arbitration-info">
+                            <strong>Arbitration:</strong>
+                            <p><strong>Resolution:</strong> ${this.escapeHtml(cgp.arbitratorAssessment.resolution)}</p>
+                            ${cgp.arbitratorAssessment.reasoning ? `<p>${this.escapeHtml(cgp.arbitratorAssessment.reasoning)}</p>` : ''}
+                        </div>
+                    ` : ''}
+                    
+                    ${!hasReview ? `
+                        <div class="cgp-review-actions">
+                            <button class="cgp-review-btn approve" onclick="window.auditPage.reviewCGP('${cgp.cgpId}', 'approved')">Approve</button>
+                            <button class="cgp-review-btn reject" onclick="window.auditPage.reviewCGP('${cgp.cgpId}', 'rejected')">Reject</button>
+                            <button class="cgp-review-btn modify" onclick="window.auditPage.openCGPModify('${cgp.cgpId}')">Modify</button>
+                            <textarea class="cgp-notes-input" id="cgp-notes-${cgp.cgpId}" placeholder="Optional notes..."></textarea>
+                        </div>
+                    ` : `
+                        <div style="margin-top: 15px; padding: 10px; background: #e9ecef; border-radius: 4px;">
+                            <strong>Reviewed:</strong> ${cgp.clinicianReview.decision}
+                            ${cgp.clinicianReview.notes ? `<br><strong>Notes:</strong> ${this.escapeHtml(cgp.clinicianReview.notes)}` : ''}
+                        </div>
+                    `}
+                </div>
+            `;
+        });
+        
+        container.innerHTML = html;
+        
+        // Update review summary
+        const summaryEl = document.getElementById('cgpReviewSummary');
+        if (summaryEl) {
+            summaryEl.innerHTML = `
+                Total: ${stats.total} | 
+                Reviewed: ${stats.reviewed}/${stats.total} | 
+                With Disagreements: ${stats.withDisagreement}
+            `;
+        }
+        
+        // Show save button if any CGPs need review
+        const saveBtn = document.getElementById('saveCGPReview');
+        if (saveBtn) {
+            const needsReview = cgps.some(c => !c.clinicianReview);
+            saveBtn.style.display = needsReview ? 'block' : 'none';
+        }
+    }
+    
+    /**
+     * Review a single CGP
+     */
+    reviewCGP(cgpId, decision) {
+        // Store review in memory, will save all at once
+        if (!this.cgpReviews) {
+            this.cgpReviews = {};
+        }
+        
+        const cgpEl = document.querySelector(`[data-cgp-id="${cgpId}"]`);
+        const notesEl = document.getElementById(`cgp-notes-${cgpId}`);
+        
+        this.cgpReviews[cgpId] = {
+            decision: decision,
+            notes: notesEl ? notesEl.value : '',
+            modifiedGuidance: null,
+            modifiedContext: null
+        };
+        
+        // Update UI to show review state
+        if (cgpEl) {
+            cgpEl.style.opacity = '0.7';
+            const reviewActions = cgpEl.querySelector('.cgp-review-actions');
+            if (reviewActions) {
+                reviewActions.innerHTML = `
+                    <div style="padding: 10px; background: #d4edda; border-radius: 4px; color: #155724;">
+                        Marked as: ${decision.toUpperCase()}
+                        ${notesEl && notesEl.value ? `<br>Notes: ${this.escapeHtml(notesEl.value)}` : ''}
+                    </div>
+                `;
+            }
+        }
+    }
+    
+    /**
+     * Open modify dialog for CGP
+     */
+    openCGPModify(cgpId) {
+        // For now, just prompt for modifications
+        // In production, would use a proper modal dialog
+        const modifiedGuidance = prompt('Enter modified guidance (or leave empty to keep original):');
+        const modifiedContext = prompt('Enter modified context (or leave empty to keep original):');
+        
+        if (!this.cgpReviews) {
+            this.cgpReviews = {};
+        }
+        
+        this.cgpReviews[cgpId] = {
+            decision: 'modified',
+            notes: '',
+            modifiedGuidance: modifiedGuidance || null,
+            modifiedContext: modifiedContext || null
+        };
+        
+        // Update UI
+        const cgpEl = document.querySelector(`[data-cgp-id="${cgpId}"]`);
+        if (cgpEl) {
+            cgpEl.style.opacity = '0.7';
+            const reviewActions = cgpEl.querySelector('.cgp-review-actions');
+            if (reviewActions) {
+                reviewActions.innerHTML = `
+                    <div style="padding: 10px; background: #fff3cd; border-radius: 4px; color: #856404;">
+                        Modified
+                        ${modifiedGuidance ? `<br>New Guidance: ${this.escapeHtml(modifiedGuidance.substring(0, 100))}...` : ''}
+                        ${modifiedContext ? `<br>New Context: ${this.escapeHtml(modifiedContext.substring(0, 100))}...` : ''}
+                    </div>
+                `;
+            }
+        }
+    }
+    
+    /**
+     * Save all CGP reviews
+     */
+    async saveCGPReviews(guidelineId) {
+        try {
+            if (!this.cgpReviews || Object.keys(this.cgpReviews).length === 0) {
+                alert('No reviews to save');
+                return;
+            }
+            
+            const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+            const user = await this.waitForAuth();
+            if (!user) throw new Error('User not authenticated');
+            
+            const token = await user.getIdToken();
+            
+            // Convert reviews object to array
+            const reviews = Object.entries(this.cgpReviews).map(([cgpId, review]) => ({
+                cgpId: cgpId,
+                ...review
+            }));
+            
+            const response = await fetch(`${serverUrl}/saveCGPClinicianReview`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    guidelineId: guidelineId,
+                    reviews: reviews
+                })
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to save reviews');
+            }
+            
+            const result = await response.json();
+            if (!result.success) {
+                throw new Error(result.error || 'Save failed');
+            }
+            
+            // Clear reviews
+            this.cgpReviews = {};
+            
+            // Refresh display
+            await this.displayCGPReviewInterface(guidelineId);
+            
+            alert(`Successfully saved ${reviews.length} review(s). Approval status: ${result.approvalStatus}`);
+            
+        } catch (error) {
+            console.error('[CGP] Failed to save reviews:', error);
+            alert(`Failed to save reviews: ${error.message}`);
+        }
+    }
+    
+    /**
+     * Load selected guideline with CGP data
+     */
+    async loadSelectedGuideline(guidelineId) {
+        // This would reload the guideline data from Firestore
+        // For now, we'll get it from the validation state endpoint
+        const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+        const user = await this.waitForAuth();
+        if (!user) return;
+        
+        const token = await user.getIdToken();
+        
+        try {
+            const response = await fetch(`${serverUrl}/getCGPValidationState/${guidelineId}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success && this.selectedGuideline) {
+                    // Update selected guideline with CGP data
+                    this.selectedGuideline.clinicalGuidancePoints = data.cgps;
+                    this.selectedGuideline.cgpApprovalState = data.approvalState;
+                    this.displayCGPValidationSection(this.selectedGuideline);
+                }
+            }
+        } catch (error) {
+            console.error('[CGP] Failed to reload guideline:', error);
+        }
     }
 } 
