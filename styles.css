@@ -1086,7 +1086,10 @@ body {
 .user-preferences-panel {
     background: #f9f9f9;
     border-radius: 8px;
-    padding: 16px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 16px;
+    padding-bottom: 16px;
     margin-top: 8px;
     margin-bottom: 16px;
     border: 1px solid #e0e0e0;
@@ -3340,6 +3343,7 @@ html, body {
     display: block !important; 
     visibility: visible !important;
     padding-top: 8px;
+    padding-left: 8px;
 }
 #userInput .ProseMirror { display: block !important; visibility: visible !important; }
 .tiptap-editor {
