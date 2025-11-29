@@ -2879,7 +2879,7 @@ html, body {
     max-width: 1200px;
     margin: 0;
     gap: 16px;
-    padding: 0;
+    padding-top: 16px;
     height: calc(100vh - 120px); /* Full height minus top bar and margins */
     overflow-y: auto; /* Allow scrolling if content exceeds height */
 }
@@ -3268,7 +3268,7 @@ html, body {
 /* Responsive styles for chatbot layout */
 @media (max-width: 900px) {
     .chatbot-layout {
-        padding: 0;
+        padding-top: 16px;
         margin: 0;
         gap: 12px;
         height: calc(100vh - 100px);
@@ -3338,7 +3338,6 @@ html, body {
 #userInput { 
     display: block !important; 
     visibility: visible !important;
-    padding-top: 16px;
 }
 #userInput .ProseMirror { display: block !important; visibility: visible !important; }
 .tiptap-editor {
