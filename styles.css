@@ -4091,6 +4091,75 @@ html, body {
     border-color: #9B59B6;
 }
 
+/* Model Preferences List */
+.model-preferences-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.model-preference-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    cursor: move;
+    transition: all 0.2s;
+}
+
+.model-preference-item:hover {
+    background-color: #f0f8f2;
+    border-color: #00B894;
+}
+
+.model-preference-item.dragging {
+    opacity: 0.5;
+    border-color: #00B894;
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.2);
+}
+
+.model-preference-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #00B894;
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.model-preference-name {
+    flex: 1;
+    font-weight: 500;
+    color: #2D3436;
+    font-size: 0.95rem;
+}
+
+.model-preference-model {
+    color: #6c757d;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.model-preference-drag-handle {
+    color: #6c757d;
+    font-size: 1.2rem;
+    cursor: grab;
+    user-select: none;
+}
+
+.model-preference-drag-handle:active {
+    cursor: grabbing;
+}
+
 .preferences-modal-footer {
     padding: 20px;
     border-top: 1px solid #e0e0e0;
