@@ -350,7 +350,7 @@ function getNextAvailableProvider(currentProvider, availableKeys) {
 const app = express();
 
 // Apply middleware
-app.use(cors());
+// CORS will be configured later with specific options
 
 // Configure helmet with proper Firebase exceptions
 app.use(helmet({
@@ -669,15 +669,24 @@ app.options('*', cors(corsOptions));
 // --- 3. Apply CORS to all routes ---
 app.use(cors(corsOptions));
 
-// --- 4. Add CORS headers to all responses ---
+// --- 4. Add CORS headers to all responses (backup) ---
+// This is redundant but ensures headers are set even if cors() middleware fails
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && corsOptions.origin(origin, (err, allowed) => allowed)) {
+  const allowedOrigins = [
+    'https://iannouvel.github.io',
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'http://localhost:5500',
+    'https://clerkyai.health'
+  ];
+  
+  if (origin && allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Methods', corsOptions.methods.join(', '));
     res.header('Access-Control-Allow-Headers', corsOptions.allowedHeaders.join(', '));
     res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Max-Age', corsOptions.maxAge);
+    res.header('Access-Control-Max-Age', corsOptions.maxAge.toString());
   }
   next();
 });

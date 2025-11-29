@@ -223,12 +223,14 @@ export class AuditPage {
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
             const authToken = await this.getAuthToken();
             const url = `${serverUrl}/getAudits?guidelineId=${encodeURIComponent(guidelineId)}`;
+            
             const response = await fetch(url, {
                 headers: authToken ? { 'Authorization': `Bearer ${authToken}` } : {}
-            });
+            }).catch(() => null); // Suppress network errors
 
-            if (!response.ok) {
-                // Treat non-200 responses (e.g., 404) as "no audits"
+            if (!response || !response.ok) {
+                // Treat non-200 responses (e.g., 404) as "no audits" - this is expected
+                // Don't log errors for 404s as this endpoint may not be implemented yet
                 retrieveBtn.style.display = 'none';
                 return;
             }
@@ -241,7 +243,7 @@ export class AuditPage {
                 retrieveBtn.style.display = 'none';
             }
         } catch (error) {
-            console.warn('Could not determine previous audits; hiding Retrieve button by default.', error);
+            // Silently handle errors - 404s are expected if endpoint doesn't exist
             retrieveBtn.style.display = 'none';
         }
     }
