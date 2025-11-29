@@ -3298,7 +3298,7 @@ html, body {
     }
     
     .chatbot-input-section .tiptap-editor .ProseMirror {
-        padding: 12px 50px 12px 12px;
+        padding: 0;
     }
     
     .chatbot-action-buttons {
@@ -3372,14 +3372,14 @@ html, body {
 }
 
 .chatbot-input-section .tiptap-editor .ProseMirror {
-    padding: 18px 60px 18px 18px; /* Extra right padding for floating buttons */
+    padding: 0; /* Extra right padding for floating buttons */
     height: 100%;
     overflow-y: auto;
     box-sizing: border-box;
 }
 
 .tiptap-editor .ProseMirror {
-    padding: 12px;
+    padding: 0;
     outline: none;
     min-height: 150px;
     height: auto;
@@ -4570,7 +4570,7 @@ html, body {
     }
     
     .mobile-mode .user-input-col .tiptap-editor .ProseMirror {
-        padding: 16px;
+        padding: 0;
         font-size: 16px; /* Prevent zoom on iOS */
         min-height: 300px;
     }
@@ -4835,7 +4835,7 @@ html, body {
     
     .mobile-mode .user-input-col .tiptap-editor .ProseMirror {
         font-size: 16px;
-        padding: 12px;
+        padding: 0;
     }
     
     .mobile-mode .summary-col .transcript-pane {
