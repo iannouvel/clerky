@@ -164,9 +164,12 @@ export class AuditPage {
             
             // Use human_friendly_name if available, otherwise fall back to title
             const displayName = guideline.human_friendly_name || guideline.title;
-            const organisation = guideline.organisation || 'Unknown';
+            const organisation = guideline.organisation;
             
-            option.textContent = `${displayName} (${organisation})`;
+            // Only show organisation if it exists and is not "Unknown"
+            option.textContent = organisation && organisation !== 'Unknown' 
+                ? `${displayName} (${organisation})`
+                : displayName;
             option.addEventListener('click', async () => await this.selectGuideline(guideline));
             dropdown.appendChild(option);
         });
@@ -1619,7 +1622,11 @@ export class AuditPage {
                            organisation.includes(query);
             
             if (matches) {
-                console.log(`✅ Match found: "${guideline.human_friendly_name || guideline.title}" (${guideline.organisation})`);
+                const displayName = guideline.human_friendly_name || guideline.title;
+                const orgDisplay = guideline.organisation && guideline.organisation !== 'Unknown' 
+                    ? ` (${guideline.organisation})` 
+                    : '';
+                console.log(`✅ Match found: "${displayName}"${orgDisplay}`);
             }
             
             return matches;
@@ -1868,6 +1875,7 @@ export class AuditPage {
     
     /**
      * Run complete CGP validation workflow
+     * Checks current state and resumes from the appropriate step
      */
     async runCGPValidationWorkflow(guidelineId) {
         // Disable and update button immediately
@@ -1876,11 +1884,6 @@ export class AuditPage {
         const activeBtn = startBtn && startBtn.style.display !== 'none' ? startBtn : 
                          (continueBtn && continueBtn.style.display !== 'none' ? continueBtn : null);
         
-        if (activeBtn) {
-            activeBtn.disabled = true;
-            activeBtn.innerHTML = `<span class="spinner"></span>Starting extraction...`;
-        }
-        
         try {
             const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
             const user = await this.waitForAuth();
@@ -1888,9 +1891,77 @@ export class AuditPage {
             
             const token = await user.getIdToken();
             
-            // Step 1: Extraction
-            console.log('[CGP] Step 1: Starting extraction...');
-            this.updateCGPProgress('Extracting Clinical Guidance Points...', 25);
+            // First, get current approval state to determine where to resume
+            const stateResponse = await fetch(`${serverUrl}/getCGPValidationState/${guidelineId}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            
+            let currentState = { status: 'not_started' };
+            let needsExtraction = true;
+            let needsCrossValidation = true;
+            let needsArbitration = false;
+            
+            if (stateResponse.ok) {
+                const stateData = await stateResponse.json();
+                if (stateData.success && stateData.approvalState) {
+                    currentState = stateData.approvalState;
+                    const cgps = stateData.cgps || [];
+                    
+                    // Determine which steps need to be run
+                    needsExtraction = currentState.status === 'not_started' || cgps.length === 0;
+                    
+                    // Check if cross-validation has been done
+                    const hasCrossValidation = cgps.some(cgp => 
+                        cgp.validationStatus === 'validated' || 
+                        cgp.validationStatus === 'disagreement' || 
+                        cgp.validationStatus === 'arbitrated'
+                    );
+                    needsCrossValidation = !hasCrossValidation && !needsExtraction;
+                    
+                    // Check if arbitration is needed (disagreements exist but not yet arbitrated)
+                    // Arbitration is needed if we have disagreements that haven't been arbitrated yet
+                    const hasUnarbitratedDisagreements = cgps.some(cgp => 
+                        cgp.validationStatus === 'disagreement'
+                    );
+                    // Also check if state is "arbitration" but some CGPs still need arbitration
+                    needsArbitration = (currentState.status === 'arbitration' || hasUnarbitratedDisagreements) && !needsCrossValidation;
+                    
+                    console.log('[CGP] Current state:', currentState.status);
+                    console.log('[CGP] Workflow needs:', {
+                        extraction: needsExtraction,
+                        crossValidation: needsCrossValidation,
+                        arbitration: needsArbitration
+                    });
+                }
+            }
+            
+            if (activeBtn) {
+                activeBtn.disabled = true;
+                if (needsExtraction) {
+                    activeBtn.innerHTML = `<span class="spinner"></span>Starting extraction...`;
+                } else if (needsCrossValidation) {
+                    activeBtn.innerHTML = `<span class="spinner"></span>Starting cross-validation...`;
+                } else if (needsArbitration) {
+                    activeBtn.innerHTML = `<span class="spinner"></span>Starting arbitration...`;
+                } else {
+                    // All steps complete, just refresh
+                    activeBtn.innerHTML = `<span class="spinner"></span>Refreshing...`;
+                    await this.loadSelectedGuideline(guidelineId);
+                    await this.displayCGPReviewInterface(guidelineId);
+                    if (activeBtn) {
+                        activeBtn.disabled = false;
+                        activeBtn.innerHTML = 'Continue Validation';
+                    }
+                    return;
+                }
+            }
+            
+            // Step 1: Extraction (only if needed)
+            if (needsExtraction) {
+                console.log('[CGP] Step 1: Starting extraction...');
+                this.updateCGPProgress('Extracting Clinical Guidance Points...', 25);
             
             // Add timeout wrapper for fetch
             const fetchWithTimeout = (url, options, timeout = 300000) => { // 5 minute timeout
@@ -1947,37 +2018,61 @@ export class AuditPage {
                 throw new Error(extractResult.error || 'Extraction failed');
             }
             
-            console.log(`[CGP] Step 1: Extracted ${extractResult.cgps.length} CGPs`);
-            
-            // Step 2: Cross-validation
-            console.log('[CGP] Step 2: Starting cross-validation...');
-            this.updateCGPProgress('Cross-validating with second LLM...', 50);
-            
-            const validateResponse = await fetch(`${serverUrl}/crossValidateCGPs`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({
-                    guidelineId: guidelineId
-                })
-            });
-            
-            if (!validateResponse.ok) {
-                const errorData = await validateResponse.json();
-                throw new Error(errorData.error || 'Failed to cross-validate CGPs');
+                console.log(`[CGP] Step 1: Extracted ${extractResult.cgps.length} CGPs`);
+            } else {
+                console.log('[CGP] Step 1: Skipped (already extracted)');
             }
             
-            const validateResult = await validateResponse.json();
-            if (!validateResult.success) {
-                throw new Error(validateResult.error || 'Cross-validation failed');
+            // Step 2: Cross-validation (only if needed)
+            let validateResult = null;
+            if (needsCrossValidation || needsExtraction) {
+                console.log('[CGP] Step 2: Starting cross-validation...');
+                this.updateCGPProgress('Cross-validating with second LLM...', 50);
+                
+                const validateResponse = await fetch(`${serverUrl}/crossValidateCGPs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        guidelineId: guidelineId
+                    })
+                });
+                
+                if (!validateResponse.ok) {
+                    const errorData = await validateResponse.json();
+                    throw new Error(errorData.error || 'Failed to cross-validate CGPs');
+                }
+                
+                validateResult = await validateResponse.json();
+                if (!validateResult.success) {
+                    throw new Error(validateResult.error || 'Cross-validation failed');
+                }
+                
+                console.log(`[CGP] Step 2: Validated ${validateResult.metadata.validated}, found ${validateResult.metadata.disagreements} disagreements`);
+            } else {
+                console.log('[CGP] Step 2: Skipped (already validated)');
+                // Get current state to check for disagreements
+                const stateCheck = await fetch(`${serverUrl}/getCGPValidationState/${guidelineId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (stateCheck.ok) {
+                    const stateData = await stateCheck.json();
+                    if (stateData.success) {
+                        const cgps = stateData.cgps || [];
+                        // Count only unarbitrated disagreements
+                        const disagreements = cgps.filter(cgp => 
+                            cgp.validationStatus === 'disagreement'
+                        ).length;
+                        validateResult = { metadata: { disagreements } };
+                    }
+                }
             }
-            
-            console.log(`[CGP] Step 2: Validated ${validateResult.metadata.validated}, found ${validateResult.metadata.disagreements} disagreements`);
             
             // Step 3: Arbitration (if needed)
-            if (validateResult.metadata.disagreements > 0) {
+            const hasDisagreements = validateResult && validateResult.metadata && validateResult.metadata.disagreements > 0;
+            if (needsArbitration || (needsCrossValidation && hasDisagreements)) {
                 console.log('[CGP] Step 3: Starting arbitration...');
                 this.updateCGPProgress('Arbitrating disagreements with third LLM...', 75);
                 
@@ -2004,7 +2099,7 @@ export class AuditPage {
                 
                 console.log(`[CGP] Step 3: Resolved ${arbitrateResult.metadata.disagreementsResolved} disagreements`);
             } else {
-                console.log('[CGP] Step 3: No disagreements to arbitrate');
+                console.log('[CGP] Step 3: Skipped (no disagreements or already arbitrated)');
             }
             
             // Complete
