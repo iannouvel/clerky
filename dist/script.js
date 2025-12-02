@@ -4963,12 +4963,14 @@ async function showCurrentSuggestion() {
 
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
-            <h3 style="color: #2563eb; margin: 0 0 15px 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
-            <p style="margin: 0 0 10px 0; font-size: 13px; color: #666;"><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 15px 0;">
+                <h3 style="color: #2563eb; margin: 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
+                <p style="margin: 0; font-size: 13px; color: #666; text-align: right;"><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
+            </div>
             <div class="suggestion-current" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
                 <div style="margin: 0 0 15px 0;"><strong style="color: #2563eb;">${categoryIcon} ${suggestion.category || 'Suggestion'}:</strong></div>
-                ${suggestion.originalText ? `<div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #dc2626;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong><br><span style="background: #fef3c7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
-                <div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #16a34a;">Suggested:</strong><br><span style="background: #dcfce7; padding: 4px 8px; border-radius: 3px; display: inline-block; margin-top: 5px;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
+                ${suggestion.originalText ? `<div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #dc2626;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong> <span style="background: #fef3c7; padding: 4px 8px; border-radius: 3px; display: inline;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
+                <div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #16a34a;">Suggested:</strong> <span style="background: #dcfce7; padding: 4px 8px; border-radius: 3px; display: inline;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
                 <div style="margin: 0 0 15px 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
                 <div style="margin: 0; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;"><strong>Link:</strong> ${guidelineLink}</div>
             </div>
@@ -12282,14 +12284,12 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
                             </div>
                         ` : `
                             <div class="gap-identified">
-                                <strong>Gap identified:</strong>
-                                <div class="gap-content">"${suggestion.gapDescription || 'Missing documentation identified'}"</div>
+                                <strong>Gap identified:</strong> <span class="gap-content">"${suggestion.gapDescription || 'Missing documentation identified'}"</span>
                             </div>
                         `}
                         
                         <div class="suggested-text">
-                            <strong>${suggestion.category === 'gap' ? 'Suggested addition:' : 'Suggested modification:'}</strong>
-                            <div class="suggestion-text" id="suggestion-text-${suggestionId}">"${suggestion.suggestedText}"</div>
+                            <strong>${suggestion.category === 'gap' ? 'Suggested addition:' : 'Suggested modification:'}</strong> <span class="suggestion-text" id="suggestion-text-${suggestionId}">"${suggestion.suggestedText}"</span>
                         </div>
                         
                         <div class="suggestion-reason">
