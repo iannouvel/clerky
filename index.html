@@ -200,6 +200,47 @@
             margin: 4px 0;
         }
         
+        /* Zero out all spacing within summary1 for maximum visibility */
+        #summary1 * {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+        }
+        
+        /* Restore minimal necessary spacing for readability */
+        #summary1 p {
+            margin-bottom: 4px !important;
+        }
+        
+        #summary1 h1,
+        #summary1 h2,
+        #summary1 h3,
+        #summary1 h4,
+        #summary1 h5,
+        #summary1 h6 {
+            margin-top: 4px !important;
+            margin-bottom: 4px !important;
+        }
+        
+        #summary1 ul,
+        #summary1 ol {
+            padding-left: 20px !important;
+            margin-bottom: 4px !important;
+        }
+        
+        #summary1 li {
+            margin-bottom: 2px !important;
+        }
+        
+        #summary1 strong {
+            font-weight: 600;
+        }
+        
+        #summary1 a {
+            margin-top: 4px !important;
+            display: inline-block;
+        }
+        
         /* Make textarea fill the entire user input section */
         .user-input-section textarea {
             width: 100%;
