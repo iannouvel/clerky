@@ -1314,6 +1314,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             cursor: pointer;
             font-size: 0.9em;
             transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .action-btn.primary {
