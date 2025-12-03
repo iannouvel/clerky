@@ -3735,6 +3735,19 @@ const streamingEngine = {
                 console.log('[STREAMING] Adding highlight to first interactive:', firstInteractive.tagName);
                 firstInteractive.classList.add('streaming-paused-interactive');
                 
+                // Scroll to show the first interactive element (the buttons/controls)
+                const summary1 = document.getElementById('summary1');
+                if (summary1 && firstInteractive) {
+                    requestAnimationFrame(() => {
+                        const interactiveTop = firstInteractive.getBoundingClientRect().top;
+                        const summary1Top = summary1.getBoundingClientRect().top;
+                        const relativeTop = interactiveTop - summary1Top + summary1.scrollTop;
+                        const targetScroll = Math.max(0, relativeTop - 100); // 100px buffer above
+                        summary1.scrollTop = targetScroll;
+                        console.log('[STREAMING] Scrolled to show interactive element');
+                    });
+                }
+                
                 // Pause streaming
                 this.isPaused = true;
                 console.log('[STREAMING] isPaused set to TRUE');
@@ -3819,6 +3832,19 @@ const streamingEngine = {
                 if (updatedInteractiveElements.length > 0) {
                     const firstInteractive = updatedInteractiveElements[0];
                     firstInteractive.classList.add('streaming-paused-interactive');
+                    
+                    // Scroll to show the interactive element
+                    const summary1 = document.getElementById('summary1');
+                    if (summary1 && firstInteractive) {
+                        requestAnimationFrame(() => {
+                            const interactiveTop = firstInteractive.getBoundingClientRect().top;
+                            const summary1Top = summary1.getBoundingClientRect().top;
+                            const relativeTop = interactiveTop - summary1Top + summary1.scrollTop;
+                            const targetScroll = Math.max(0, relativeTop - 100); // 100px buffer above
+                            summary1.scrollTop = targetScroll;
+                            console.log('[STREAMING] Scrolled to show interactive element after streaming');
+                        });
+                    }
                     
                     // Pause streaming
                     this.isPaused = true;
@@ -4013,20 +4039,29 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
 
         // STREAMING DECISION POINT
         if (isTransient) {
-            // Transient messages: show instantly, no streaming
-            console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly');
+            // Transient messages: show instantly, no streaming, auto-remove after delay
+            console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
             newContentWrapper.style.opacity = '1';
             
-            // Scroll to show new content
-            requestAnimationFrame(() => {
-                if (clearExisting) {
-                    summary1.scrollTop = 0;
-                } else {
-                    const targetScrollTop = Math.max(0, newContentWrapper.offsetTop - 20);
-                    summary1.scrollTop = targetScrollTop;
+            // Auto-remove transient messages after 5 seconds
+            setTimeout(() => {
+                if (newContentWrapper.parentNode) {
+                    console.log('[SUMMARY1 DEBUG] Auto-removing transient message');
+                    newContentWrapper.style.transition = 'opacity 0.5s ease-out, max-height 0.5s ease-out';
+                    newContentWrapper.style.opacity = '0';
+                    newContentWrapper.style.maxHeight = '0';
+                    newContentWrapper.style.overflow = 'hidden';
+                    
+                    setTimeout(() => {
+                        if (newContentWrapper.parentNode) {
+                            newContentWrapper.remove();
+                        }
+                    }, 500);
                 }
-                console.log('[SUMMARY1 DEBUG] Transient content scrolled into view');
-            });
+            }, 5000);
+            
+            // Don't scroll for transient messages - they're temporary
+            console.log('[SUMMARY1 DEBUG] Transient content shown (no scroll)');
         } else {
             // Permanent content: use streaming engine
             console.log('[SUMMARY1 DEBUG] ✓ PERMANENT PATH - queueing for streaming');
