@@ -1475,8 +1475,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     htmlContent += `</div>`; // Close the main container div
 
-    // Append the generated HTML to the summary view - mark as transient
-    appendToSummary1(htmlContent, false, true); // Transient - will be removed after processing
+    // Append the generated HTML to the summary view - PERMANENT so it stays visible
+    appendToSummary1(htmlContent, false, false); // Permanent - stays until user processes guidelines
 }
 
 function createGuidelineElement(guideline) {
@@ -9405,11 +9405,30 @@ async function showClinicalIssuesDropdown() {
             clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
         
+        // Function to remove the dropdown interface
+        function removeDropdownInterface() {
+            const dropdownContainer = document.querySelector('.clinical-issues-selector');
+            if (dropdownContainer) {
+                console.log('[DEBUG] Removing dropdown interface');
+                dropdownContainer.style.transition = 'opacity 0.3s ease-out, max-height 0.3s ease-out';
+                dropdownContainer.style.opacity = '0';
+                dropdownContainer.style.maxHeight = '0';
+                dropdownContainer.style.overflow = 'hidden';
+                
+                setTimeout(() => {
+                    if (dropdownContainer.parentNode) {
+                        dropdownContainer.remove();
+                    }
+                }, 300);
+            }
+        }
+        
         if (generateBtn) {
             generateBtn.addEventListener('click', async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
                 
                 if (selectedIssue) {
+                    removeDropdownInterface(); // Remove dropdown when button clicked
                     await generateFakeClinicalInteraction(selectedIssue);
                 }
             });
@@ -9433,6 +9452,9 @@ async function showClinicalIssuesDropdown() {
                     // Update the generate button state
                     updateGenerateButton();
                     
+                    // Remove dropdown interface
+                    removeDropdownInterface();
+                    
                     // Automatically generate the interaction
                     await generateFakeClinicalInteraction(randomIssue);
                 } else {
@@ -9447,6 +9469,9 @@ async function showClinicalIssuesDropdown() {
                 const selectedIssue = clinicalDropdown?.value || '';
                 
                 if (selectedIssue) {
+                    // Remove dropdown interface
+                    removeDropdownInterface();
+                    
                     // Force regeneration of the transcript
                     await generateFakeClinicalInteraction(selectedIssue, true);
                 }
@@ -9455,6 +9480,7 @@ async function showClinicalIssuesDropdown() {
         
         if (cancelBtn) {
             cancelBtn.addEventListener('click', () => {
+                removeDropdownInterface(); // Remove dropdown when cancelled
                 appendToSummary1('Clinical interaction generation cancelled.\n\n', true);
             });
         }
@@ -9592,7 +9618,7 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             });
         }
         
-        // Show success message in summary1 (append, don't clear)
+        // Show success message in summary1 (append, don't clear) - TRANSIENT so it auto-removes
         const performanceText = forceRegenerate ? '🔄 Regenerated with updated formatting' : (isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache');
         const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
         const successMessage = `## ✅ Clinical Interaction ${actionText}\n\n` +
@@ -9606,7 +9632,7 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                               `- Edit the transcript if needed before analysis\n` +
                               `- Save or clear the transcript using the respective buttons\n\n`;
         
-        appendToSummary1(successMessage, false); // Don't clear existing content
+        appendToSummary1(successMessage, false, true); // TRANSIENT - will auto-remove after 5s
         
     } catch (error) {
         console.error('[DEBUG] Error loading fake clinical interaction:', {
