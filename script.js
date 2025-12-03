@@ -11533,7 +11533,23 @@ async function processSelectedGuidelines(event) {
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
 
-        // Remove all transient messages (progress indicators, guideline selection interface, etc.)
+        // Remove the guideline selection interface (it's permanent, not transient)
+        const guidelineInterface = document.querySelector('.guideline-selection-interface');
+        if (guidelineInterface) {
+            console.log('[DEBUG] Removing guideline selection interface');
+            guidelineInterface.style.transition = 'opacity 0.3s ease-out, max-height 0.3s ease-out';
+            guidelineInterface.style.opacity = '0';
+            guidelineInterface.style.maxHeight = '0';
+            guidelineInterface.style.overflow = 'hidden';
+            
+            setTimeout(() => {
+                if (guidelineInterface.parentNode) {
+                    guidelineInterface.parentNode.remove(); // Remove the wrapper too
+                }
+            }, 300);
+        }
+
+        // Remove all transient messages (progress indicators, etc.)
         removeTransientMessages();
 
         // Add a brief delay to let the fade animation complete
