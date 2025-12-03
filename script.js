@@ -12803,6 +12803,23 @@ const ClinicalConditionsService = {
         return clinicalConditionsFirebaseLoadPromise;
     },
     
+    // Normalize category names (merge American/British spellings)
+    _normalizeCategories(conditions) {
+        // If there's both 'gynecology' and 'gynaecology', merge into 'gynaecology'
+        if (conditions.gynecology && conditions.gynaecology) {
+            console.log('[CLINICAL-SERVICE] Merging gynecology into gynaecology');
+            // Merge conditions from gynecology into gynaecology
+            conditions.gynaecology = { ...conditions.gynaecology, ...conditions.gynecology };
+            delete conditions.gynecology;
+        } else if (conditions.gynecology && !conditions.gynaecology) {
+            console.log('[CLINICAL-SERVICE] Renaming gynecology to gynaecology');
+            // Just rename if only American spelling exists
+            conditions.gynaecology = conditions.gynecology;
+            delete conditions.gynecology;
+        }
+        return conditions;
+    },
+    
     async _fetchConditionsFromServer() {
         try {
             // Try to get from IndexedDB cache first
@@ -12810,8 +12827,10 @@ const ClinicalConditionsService = {
                 const cachedConditions = await window.cacheManager.getClinicalConditions();
                 if (cachedConditions) {
                     console.log('[CLINICAL-SERVICE] ⚡ Loaded clinical conditions from IndexedDB cache');
-                    clinicalConditionsFirebaseCache = cachedConditions;
-                    return cachedConditions;
+                    // Normalize categories before caching
+                    const normalized = this._normalizeCategories(cachedConditions);
+                    clinicalConditionsFirebaseCache = normalized;
+                    return normalized;
                 }
             }
             
@@ -12860,11 +12879,13 @@ const ClinicalConditionsService = {
                 if (retryResponse.ok) {
                     const retryData = await retryResponse.json();
                     if (retryData.success && retryData.summary?.totalConditions > 0) {
-                        clinicalConditionsFirebaseCache = retryData.conditions;
+                        // Normalize categories before caching
+                        const normalizedConditions = this._normalizeCategories(retryData.conditions);
+                        clinicalConditionsFirebaseCache = normalizedConditions;
                         
-                        // Save to IndexedDB cache in background
+                        // Save normalized data to IndexedDB cache in background
                         if (window.cacheManager) {
-                            window.cacheManager.saveClinicalConditions(retryData.conditions).catch(err => {
+                            window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
                                 console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
                             });
                         }
@@ -12883,11 +12904,13 @@ const ClinicalConditionsService = {
                 return this._loadFromJsonFallback();
             }
             
-            clinicalConditionsFirebaseCache = data.conditions;
+            // Normalize categories before caching
+            const normalizedConditions = this._normalizeCategories(data.conditions);
+            clinicalConditionsFirebaseCache = normalizedConditions;
             
-            // Save to IndexedDB cache in background
+            // Save normalized data to IndexedDB cache in background
             if (window.cacheManager) {
-                window.cacheManager.saveClinicalConditions(data.conditions).catch(err => {
+                window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
                     console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
                 });
             }
