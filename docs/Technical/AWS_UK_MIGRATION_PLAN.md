@@ -608,3 +608,5 @@ If Firebase offers UK data residency:
 - S3: https://aws.amazon.com/s3/
 - Cognito: https://aws.amazon.com/cognito/
 
+
+

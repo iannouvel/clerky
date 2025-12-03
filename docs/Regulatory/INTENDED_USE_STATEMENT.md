@@ -63,3 +63,5 @@ Clerky is intended to provide administrative and informational support for healt
 
 It does not drive diagnostic or therapeutic decisions and therefore is expected to be classified as a UKCA Class I medical device (Software as a Medical Device) under the UK Medical Devices Regulations 2002 (as amended) and MHRA guidance on SaMD.
 
+
+
