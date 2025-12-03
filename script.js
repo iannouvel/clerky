@@ -6983,20 +6983,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     if (analyseBtn) {
-        analyseBtn.addEventListener('click', async () => {
-            // Check if we're in stop mode
-            if (window.isAnalysisRunning && window.analysisAbortController) {
-                console.log('[DEBUG] Stop button clicked - cancelling analysis');
-                window.analysisAbortController.abort();
-                window.analysisAbortController = null;
-                restoreAnalyseButton();
+        // Prevent duplicate event listeners
+        if (analyseBtn.dataset.listenerAttached === 'true') {
+            console.log('[DEBUG] Analyse button listener already attached, skipping');
+        } else {
+            console.log('[DEBUG] Attaching analyse button listener');
+            analyseBtn.dataset.listenerAttached = 'true';
+            
+            analyseBtn.addEventListener('click', async () => {
+                // Check if we're in stop mode
+                if (window.isAnalysisRunning && window.analysisAbortController) {
+                    console.log('[DEBUG] Stop button clicked - cancelling analysis');
+                    window.analysisAbortController.abort();
+                    window.analysisAbortController = null;
+                    restoreAnalyseButton();
+                    
+                    // Show cancellation message
+                    const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
+                    appendToSummary1(cancelMessage, false);
+                    hideSummaryLoading();
+                    return;
+                }
                 
-                // Show cancellation message
-                const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
-                appendToSummary1(cancelMessage, false);
-                hideSummaryLoading();
-                return;
-            }
+                // Check if workflow is already in progress
+                if (window.workflowInProgress) {
+                    console.log('[DEBUG] Analyse button clicked but workflow already in progress, ignoring');
+                    return;
+                }
             
             // Get user input text
             const editor = window.editors?.userInput;
@@ -7058,7 +7071,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 window.analysisAbortController = null;
             }
-        });
+            });
+        }
     }
 
     // Add click handler for make advice dynamic button
