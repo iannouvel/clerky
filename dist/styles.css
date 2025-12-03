@@ -3153,6 +3153,18 @@ html, body {
     background: white !important;
 }
 
+/* Transient messages (temporary progress messages) */
+.transient-message {
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.7; }
+}
+
 /* Loading spinner in summary */
 .summary-loading-spinner {
     display: flex;

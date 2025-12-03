@@ -1469,8 +1469,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     htmlContent += `</div>`; // Close the main container div
 
-    // Append the generated HTML to the summary view
-    appendToSummary1(htmlContent, false);
+    // Append the generated HTML to the summary view - mark as transient
+    appendToSummary1(htmlContent, false, true); // Transient - will be removed after processing
 }
 
 function createGuidelineElement(guideline) {
@@ -3251,7 +3251,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false);
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3272,7 +3272,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress
         const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false);
+        appendToSummary1(loadingMessage, false, true); // Transient
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
@@ -3296,7 +3296,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 : scope === 'local'
                 ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
                 : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...\n`;
-            appendToSummary1(scopeInfo, false);
+            appendToSummary1(scopeInfo, false, true); // Transient
         }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
@@ -3329,7 +3329,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress with guideline count
         const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false);
+        appendToSummary1(analyzeMessage, false, true); // Transient
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: anonymisedTranscript.length,
@@ -3395,7 +3395,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress with completion
         const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
-        appendToSummary1(completionMessage, false);
+        appendToSummary1(completionMessage, false, true); // Transient
 
         // Process and display the results with the new selection interface
         createGuidelineSelectionInterface(data.categories, window.relevantGuidelines);
@@ -3412,7 +3412,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                               `💡 **Tip:** Click on the 📄 PDF links next to any guideline to download the full document.\n\n` +
                               `Guidelines are now ready for analysis. Use "Check against guidelines" to proceed.\n`;
         
-        appendToSummary1(summaryMessage, false);
+        appendToSummary1(summaryMessage, false, true); // Transient - will be cleaned up after processing
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
@@ -3502,7 +3502,7 @@ async function generateClinicalNote() {
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false);
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3586,10 +3586,38 @@ async function generateClinicalNote() {
 let scrollTimeout = null;
 let pendingScrollTarget = null;
 
-function appendToSummary1(content, clearExisting = false) {
+// Function to remove all transient messages from summary1
+function removeTransientMessages() {
+    console.log('[DEBUG] removeTransientMessages called');
+    const summary1 = document.getElementById('summary1');
+    if (!summary1) {
+        console.error('[DEBUG] summary1 element not found');
+        return;
+    }
+
+    const transientElements = summary1.querySelectorAll('[data-transient="true"]');
+    console.log(`[DEBUG] Found ${transientElements.length} transient messages to remove`);
+    
+    transientElements.forEach((element, index) => {
+        // Fade out animation
+        element.style.transition = 'opacity 0.3s ease-out, max-height 0.3s ease-out';
+        element.style.opacity = '0';
+        element.style.maxHeight = '0';
+        element.style.overflow = 'hidden';
+        
+        // Remove after animation completes
+        setTimeout(() => {
+            element.remove();
+            console.log(`[DEBUG] Removed transient message ${index + 1}`);
+        }, 300);
+    });
+}
+
+function appendToSummary1(content, clearExisting = false, isTransient = false) {
     console.log('[DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
         clearExisting,
+        isTransient,
         contentPreview: content?.substring(0, 100) + '...'
     });
 
@@ -3658,11 +3686,15 @@ function appendToSummary1(content, clearExisting = false) {
         // Create a wrapper div for the new content to help with scrolling
         const newContentWrapper = document.createElement('div');
         newContentWrapper.className = 'new-content-entry';
+        if (isTransient) {
+            newContentWrapper.setAttribute('data-transient', 'true');
+            newContentWrapper.classList.add('transient-message');
+        }
         newContentWrapper.innerHTML = tempDiv.innerHTML;
 
         // Append the sanitized content
         summary1.appendChild(newContentWrapper);
-        console.log('[DEBUG] Content appended successfully');
+        console.log('[DEBUG] Content appended successfully', isTransient ? '(transient)' : '(permanent)');
 
         // Store the first new content element for scrolling (if we don't have one yet)
         if (!pendingScrollTarget || clearExisting) {
@@ -5149,7 +5181,7 @@ window.navigateSuggestion = function(direction) {
     showCurrentSuggestion();
 };
 
-function completeSuggestionReview() {
+async function completeSuggestionReview() {
     const review = window.currentSuggestionReview;
     if (!review) return;
     clearHighlightInEditor();
@@ -5229,6 +5261,13 @@ function completeSuggestionReview() {
             // All guidelines processed
             console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
             window.sequentialProcessingActive = false;
+            
+            // Remove any remaining transient messages (progress indicators, processing status, etc.)
+            removeTransientMessages();
+            
+            // Wait briefly for animation to complete
+            await new Promise(resolve => setTimeout(resolve, 350));
+            
             const finalMessage = `
                 <div class="sequential-processing-complete">
                     <h3>🎉 All Guidelines Processed!</h3>
@@ -9364,7 +9403,7 @@ async function processWorkflow() {
             // No saved selection, show modal
             console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
             const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
-            appendToSummary1(scopeSelectionStatus, false);
+            appendToSummary1(scopeSelectionStatus, false, true); // Transient
             
             try {
                 scopeSelection = await showGuidelineScopeModal();
@@ -9385,13 +9424,13 @@ async function processWorkflow() {
             ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
             : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
         
-        appendToSummary1(scopeMessage, false);
+        appendToSummary1(scopeMessage, false, true); // Transient
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         
         // Step 2: Find Relevant Guidelines (with scope filtering)
         const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
-        appendToSummary1(step1Status, false);
+        appendToSummary1(step1Status, false, true); // Transient
         
         // Check for abort before starting step 2
         if (window.analysisAbortController?.signal.aborted) {
@@ -9409,7 +9448,7 @@ async function processWorkflow() {
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             
             const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
-            appendToSummary1(step1Complete, false);
+            appendToSummary1(step1Complete, false, true); // Transient
             
         } catch (error) {
             // Check if error is due to abort
@@ -9442,7 +9481,7 @@ async function processWorkflow() {
                            `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
                            `incorporated before moving to the next guideline.\n\n`;
         
-        appendToSummary1(step2Status, false);
+        appendToSummary1(step2Status, false, true); // Transient
         
         // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
         console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
@@ -11139,6 +11178,17 @@ async function processSelectedGuidelines(event) {
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
 
+        // Remove all transient messages (progress indicators, guideline selection interface, etc.)
+        removeTransientMessages();
+
+        // Add a brief delay to let the fade animation complete
+        await new Promise(resolve => setTimeout(resolve, 350));
+
+        // Add a clean final summary of what was selected
+        const selectionSummary = `## 📋 Processing Selected Guidelines\n\n` +
+                                `Analysing ${selectedGuidelineIds.length} guideline${selectedGuidelineIds.length > 1 ? 's' : ''} to generate interactive suggestions...\n\n`;
+        appendToSummary1(selectionSummary, false); // Permanent summary
+
         // Set up sequential processing globals
         window.sequentialProcessingActive = true;
         window.sequentialProcessingQueue = selectedGuidelineIds;
@@ -11182,7 +11232,7 @@ async function processSelectedGuidelines(event) {
             </style>
         `;
         
-        appendToSummary1(sequentialProcessingMessage, false);
+        appendToSummary1(sequentialProcessingMessage, false, true); // Transient - will be removed when processing completes
 
         // Function to update status display
         function updateSequentialStatus() {
@@ -11222,7 +11272,7 @@ async function processSelectedGuidelines(event) {
             const processingStepMessage = `
                 <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
             `;
-            appendToSummary1(processingStepMessage, false);
+            appendToSummary1(processingStepMessage, false, true); // Transient
 
             try {
                 // Process only the first guideline - the rest will be handled in applyAllDecisions
@@ -11307,7 +11357,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] Processing guideline: ${displayName}`);
 
     const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
-    appendToSummary1(analyzeMessage, false);
+    appendToSummary1(analyzeMessage, false, true); // Transient
 
     // Directly generate guideline suggestions for this guideline without server analysis
     // Store the latest analysis for potential guideline suggestions
