@@ -3704,12 +3704,37 @@ const streamingEngine = {
             interactiveCount: interactiveElements.length
         });
         
-        // If no text or very short, show instantly
-        if (textContent.length < 20) {
-            console.log('[STREAMING] Short content, showing instantly');
+        // OPTIMIZATION: Only stream short content character-by-character
+        // For long content (>500 chars), show instantly to avoid long delays
+        const MAX_STREAM_LENGTH = 500;
+        const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH;
+        
+        if (textContent.length < 20 || !shouldStreamFully) {
+            console.log('[STREAMING] Content shown instantly', {
+                reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
+                length: textContent.length
+            });
+            
+            // Show interactive elements if present
+            if (hasInteractiveElements && shouldPauseAfter) {
+                // Small delay for visual effect
+                await this.delay(100);
+                
+                const firstInteractive = interactiveElements[0];
+                firstInteractive.classList.add('streaming-paused-interactive');
+                
+                // Pause streaming
+                this.isPaused = true;
+                
+                // Set up auto-resume
+                this.setupAutoResume(firstInteractive, interactiveElements);
+                
+                console.log('[STREAMING] Paused at interactive element (instant display)');
+            }
             return;
         }
         
+        // Stream short content with animation
         // Hide interactive elements initially
         interactiveElements.forEach(el => {
             el.style.opacity = '0';
@@ -3733,7 +3758,9 @@ const streamingEngine = {
         
         // Stream the text content character by character
         let displayedText = '';
-        for (let i = 0; i < textContent.length; i++) {
+        const streamLength = Math.min(textContent.length, MAX_STREAM_LENGTH);
+        
+        for (let i = 0; i < streamLength; i++) {
             if (this.isPaused) {
                 // If paused, show remaining text instantly
                 displayedText = textContent;
@@ -3754,6 +3781,8 @@ const streamingEngine = {
         
         // Restore original HTML to preserve formatting and structure
         wrapper.innerHTML = originalHTML;
+        
+        console.log('[STREAMING] Text streaming complete, showing interactive elements');
         
         // Show interactive elements with fade-in
         if (hasInteractiveElements) {
