@@ -3683,12 +3683,14 @@ const streamingEngine = {
     
     // Stream a single element's content
     async streamElement(wrapper, shouldPauseAfter) {
-        console.log('[STREAMING] Starting stream of element', {
-            willPauseAfter: shouldPauseAfter
+        console.log('[STREAMING] ►►► Starting stream of element', {
+            willPauseAfter: shouldPauseAfter,
+            timestamp: new Date().toISOString()
         });
         
         // Show the wrapper immediately
         wrapper.style.opacity = '1';
+        console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
         
         // Extract all text content and HTML structure
         const originalHTML = wrapper.innerHTML;
@@ -3698,10 +3700,11 @@ const streamingEngine = {
         const interactiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
         const hasInteractiveElements = interactiveElements.length > 0;
         
-        console.log('[STREAMING] Content analysis', {
+        console.log('[STREAMING] Content analysis:', {
             textLength: textContent.length,
             hasInteractive: hasInteractiveElements,
-            interactiveCount: interactiveElements.length
+            interactiveCount: interactiveElements.length,
+            textPreview: textContent.substring(0, 200) + '...'
         });
         
         // OPTIMIZATION: Only stream short content character-by-character
@@ -3709,28 +3712,41 @@ const streamingEngine = {
         const MAX_STREAM_LENGTH = 500;
         const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH;
         
+        console.log('[STREAMING] Streaming decision:', {
+            textLength: textContent.length,
+            maxStreamLength: MAX_STREAM_LENGTH,
+            shouldStreamFully,
+            willShowInstantly: textContent.length < 20 || !shouldStreamFully
+        });
+        
         if (textContent.length < 20 || !shouldStreamFully) {
-            console.log('[STREAMING] Content shown instantly', {
+            console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
                 reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
                 length: textContent.length
             });
             
             // Show interactive elements if present
             if (hasInteractiveElements && shouldPauseAfter) {
+                console.log('[STREAMING] Has interactive elements, setting up pause...');
                 // Small delay for visual effect
                 await this.delay(100);
                 
                 const firstInteractive = interactiveElements[0];
+                console.log('[STREAMING] Adding highlight to first interactive:', firstInteractive.tagName);
                 firstInteractive.classList.add('streaming-paused-interactive');
                 
                 // Pause streaming
                 this.isPaused = true;
+                console.log('[STREAMING] isPaused set to TRUE');
                 
                 // Set up auto-resume
                 this.setupAutoResume(firstInteractive, interactiveElements);
                 
-                console.log('[STREAMING] Paused at interactive element (instant display)');
+                console.log('[STREAMING] ⏸️  PAUSED at interactive element (instant display mode)');
+            } else {
+                console.log('[STREAMING] No interactive pause needed');
             }
+            console.log('[STREAMING] ✓✓ Instant display complete, returning');
             return;
         }
         
@@ -3810,7 +3826,7 @@ const streamingEngine = {
             }
         }
         
-        console.log('[STREAMING] Element streaming complete');
+        console.log('[STREAMING] ✓✓✓ Element streaming FULLY COMPLETE');
     },
     
     // Check if an element is interactive (requires user decision)
@@ -3906,12 +3922,15 @@ const streamingEngine = {
 // ==================== END STREAMING ENGINE ====================
 
 function appendToSummary1(content, clearExisting = false, isTransient = false) {
-    console.log('[DEBUG] appendToSummary1 called with:', {
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('[SUMMARY1 DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
         clearExisting,
         isTransient,
-        contentPreview: content?.substring(0, 100) + '...'
+        timestamp: new Date().toISOString()
     });
+    console.log('[SUMMARY1 DEBUG] Full content:', content);
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
 
     const summary1 = document.getElementById('summary1');
     if (!summary1) {
@@ -3985,12 +4004,14 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
 
         // Append the sanitized content to DOM
         summary1.appendChild(newContentWrapper);
-        console.log('[DEBUG] Content appended successfully', isTransient ? '(transient)' : '(permanent)');
+        console.log('[SUMMARY1 DEBUG] Content appended to DOM successfully', isTransient ? '(transient)' : '(permanent)');
+        console.log('[SUMMARY1 DEBUG] Wrapper innerHTML:', newContentWrapper.innerHTML);
+        console.log('[SUMMARY1 DEBUG] Wrapper textContent length:', newContentWrapper.textContent?.length);
 
         // STREAMING DECISION POINT
         if (isTransient) {
             // Transient messages: show instantly, no streaming
-            console.log('[DEBUG] Transient message - showing instantly');
+            console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly');
             newContentWrapper.style.opacity = '1';
             
             // Scroll to show new content
@@ -4001,24 +4022,31 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
                     const targetScrollTop = Math.max(0, newContentWrapper.offsetTop - 20);
                     summary1.scrollTop = targetScrollTop;
                 }
+                console.log('[SUMMARY1 DEBUG] Transient content scrolled into view');
             });
         } else {
             // Permanent content: use streaming engine
-            console.log('[DEBUG] Permanent content - queueing for streaming');
+            console.log('[SUMMARY1 DEBUG] ✓ PERMANENT PATH - queueing for streaming');
             
             // Check if content has interactive elements
             const hasInteractive = streamingEngine.isInteractiveElement(newContentWrapper) ||
                                    newContentWrapper.querySelector('button, select, input, textarea, [onclick]');
             
-            console.log('[DEBUG] Interactive elements detected:', hasInteractive);
+            const interactiveElements = newContentWrapper.querySelectorAll('button, select, input, textarea, [onclick]');
+            console.log('[SUMMARY1 DEBUG] Interactive elements check:', {
+                hasInteractive,
+                elementCount: interactiveElements.length,
+                elementTypes: Array.from(interactiveElements).map(el => el.tagName)
+            });
             
             // Enqueue for streaming
+            console.log('[SUMMARY1 DEBUG] Enqueueing content to streaming engine...');
             streamingEngine.enqueue(
                 newContentWrapper,
                 hasInteractive, // Should pause after streaming if interactive
                 () => {
                     // On completion callback
-                    console.log('[DEBUG] Streaming complete for this content block');
+                    console.log('[SUMMARY1 DEBUG] ✓✓✓ Streaming COMPLETE for this content block');
                     updateSummaryVisibility();
                 }
             );
