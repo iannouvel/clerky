@@ -3149,7 +3149,13 @@ html, body {
 /* Ensure all elements in summary1 have white background */
 #summary1 code,
 #summary1 pre,
-#summary1 blockquote {
+#summary1 blockquote,
+#summary1 ins,
+#summary1 mark,
+#summary1 kbd,
+#summary1 samp,
+#summary1 var,
+#summary1 span {
     background: white !important;
 }
 
