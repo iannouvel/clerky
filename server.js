@@ -2659,7 +2659,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-        }
+        },
+        timeout: 120000 // 120 second timeout for AI generation
       });
       
       responseData = response.data;
@@ -2694,7 +2695,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         headers: {
           'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
           'Content-Type': 'application/json'
-        }
+        },
+        timeout: 120000 // 120 second timeout for AI generation
       });
       
       responseData = response.data;
@@ -2730,7 +2732,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           'Authorization': `Bearer ${process.env.ANTHROPIC_API_KEY}`,
           'Content-Type': 'application/json',
           'anthropic-version': '2023-06-01'
-        }
+        },
+        timeout: 120000 // 120 second timeout for AI generation
       });
       
       responseData = response.data;
@@ -2764,7 +2767,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         headers: {
           'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
           'Content-Type': 'application/json'
-        }
+        },
+        timeout: 120000 // 120 second timeout for AI generation
       });
       
       responseData = response.data;
@@ -2810,7 +2814,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           },
           params: {
             key: process.env.GOOGLE_AI_API_KEY
-          }
+          },
+          timeout: 120000 // 120 second timeout for AI generation
         }
       );
       
@@ -2894,7 +2899,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               headers: {
                 'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
                 'Content-Type': 'application/json'
-              }
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
             });
           } else if (nextProvider.name === 'OpenAI') {
             response = await axios.post('https://api.openai.com/v1/chat/completions', {
@@ -2906,7 +2912,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               headers: {
                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
                 'Content-Type': 'application/json'
-              }
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
             });
           } else if (nextProvider.name === 'Anthropic') {
             response = await axios.post('https://api.anthropic.com/v1/messages', {
@@ -2919,7 +2926,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
                 'x-api-key': process.env.ANTHROPIC_API_KEY,
                 'Content-Type': 'application/json',
                 'anthropic-version': '2023-06-01'
-              }
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
             });
           } else if (nextProvider.name === 'Mistral') {
             response = await axios.post('https://api.mistral.ai/v1/chat/completions', {
@@ -2931,7 +2939,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               headers: {
                 'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
                 'Content-Type': 'application/json'
-              }
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
             });
           } else if (nextProvider.name === 'Gemini') {
             // Gemini requires a different message format
@@ -2952,7 +2961,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               },
               params: {
                 key: process.env.GOOGLE_AI_API_KEY
-              }
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
             });
           }
           
@@ -3860,20 +3870,7 @@ async function saveToGitHub(content, type) {
         githubTokenLength: githubToken ? githubToken.length : 0
     });
     
-    // OPTIMISATION: Use minimal content instead of full interaction data
-    const minimalContent = {
-        ...summary,
-        // Only include full data for critical failures or important interactions
-        full_data: type.includes('error') || content.critical ? content : null
-    };
-    
-    const jsonBody = {
-        message: `Add ${type} summary: ${timestamp}`,
-        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
-        branch: githubBranch
-    };
-
-    // OPTIMISATION: Create minimal log content instead of full text
+    // OPTIMISATION: Create minimal log content instead of full text (MOVED BEFORE USE TO FIX TDZ ERROR)
     const summary = {
         type: type,
         timestamp: timestamp,
@@ -3886,6 +3883,19 @@ async function saveToGitHub(content, type) {
         // Store only first 200 chars of prompt/response for debugging
         prompt_preview: content.prompt ? (typeof content.prompt === 'string' ? content.prompt.substring(0, 200) : JSON.stringify(content.prompt).substring(0, 200)) + '...' : null,
         response_preview: content.response ? (typeof content.response === 'string' ? content.response.substring(0, 200) : JSON.stringify(content.response).substring(0, 200)) + '...' : null
+    };
+    
+    // OPTIMISATION: Use minimal content instead of full interaction data
+    const minimalContent = {
+        ...summary,
+        // Only include full data for critical failures or important interactions
+        full_data: type.includes('error') || content.critical ? content : null
+    };
+    
+    const jsonBody = {
+        message: `Add ${type} summary: ${timestamp}`,
+        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
+        branch: githubBranch
     };
     
     console.log('Creating optimised log summary:', {
