@@ -3619,6 +3619,263 @@ function removeTransientMessages() {
     });
 }
 
+// ==================== STREAMING ENGINE FOR SUMMARY1 ====================
+// Modern ChatGPT-style streaming text reveal with intelligent pausing
+
+const streamingEngine = {
+    queue: [],
+    isStreaming: false,
+    isPaused: false,
+    currentStreamController: null,
+    charDelay: 50, // milliseconds per character (fast streaming)
+    
+    // Add content to the streaming queue
+    enqueue(contentWrapper, shouldPause, onComplete) {
+        console.log('[STREAMING] Enqueuing content for streaming', {
+            hasInteractive: shouldPause,
+            queueLength: this.queue.length
+        });
+        
+        this.queue.push({
+            wrapper: contentWrapper,
+            shouldPause,
+            onComplete
+        });
+        
+        // Start processing if not already streaming
+        if (!this.isStreaming) {
+            this.processQueue();
+        }
+    },
+    
+    // Process the streaming queue
+    async processQueue() {
+        if (this.queue.length === 0) {
+            this.isStreaming = false;
+            console.log('[STREAMING] Queue empty, streaming stopped');
+            return;
+        }
+        
+        if (this.isPaused) {
+            console.log('[STREAMING] Streaming paused, waiting for resume');
+            return;
+        }
+        
+        this.isStreaming = true;
+        const item = this.queue.shift();
+        
+        console.log('[STREAMING] Processing queue item', {
+            shouldPause: item.shouldPause,
+            remainingInQueue: this.queue.length
+        });
+        
+        await this.streamElement(item.wrapper, item.shouldPause);
+        
+        if (item.onComplete) {
+            item.onComplete();
+        }
+        
+        // Continue with next item unless paused
+        if (!this.isPaused) {
+            this.processQueue();
+        }
+    },
+    
+    // Stream a single element's content
+    async streamElement(wrapper, shouldPauseAfter) {
+        console.log('[STREAMING] Starting stream of element', {
+            willPauseAfter: shouldPauseAfter
+        });
+        
+        // Show the wrapper immediately
+        wrapper.style.opacity = '1';
+        
+        // Extract all text content and HTML structure
+        const originalHTML = wrapper.innerHTML;
+        const textContent = wrapper.textContent || '';
+        
+        // Check for interactive elements first
+        const interactiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
+        const hasInteractiveElements = interactiveElements.length > 0;
+        
+        console.log('[STREAMING] Content analysis', {
+            textLength: textContent.length,
+            hasInteractive: hasInteractiveElements,
+            interactiveCount: interactiveElements.length
+        });
+        
+        // If no text or very short, show instantly
+        if (textContent.length < 20) {
+            console.log('[STREAMING] Short content, showing instantly');
+            return;
+        }
+        
+        // Hide interactive elements initially
+        interactiveElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.3s ease-in';
+        });
+        
+        // Create a streaming container
+        const streamContainer = document.createElement('div');
+        streamContainer.className = 'streaming-container';
+        streamContainer.style.display = 'inline';
+        
+        // Create cursor
+        const cursor = document.createElement('span');
+        cursor.className = 'streaming-cursor';
+        cursor.textContent = '▋';
+        
+        // Clear wrapper and add streaming elements
+        wrapper.innerHTML = '';
+        wrapper.appendChild(streamContainer);
+        wrapper.appendChild(cursor);
+        
+        // Stream the text content character by character
+        let displayedText = '';
+        for (let i = 0; i < textContent.length; i++) {
+            if (this.isPaused) {
+                // If paused, show remaining text instantly
+                displayedText = textContent;
+                break;
+            }
+            
+            displayedText += textContent[i];
+            streamContainer.textContent = displayedText;
+            
+            // Smooth scroll to keep cursor visible
+            this.scrollToKeepVisible(cursor);
+            
+            await this.delay(this.charDelay);
+        }
+        
+        // Remove cursor
+        cursor.remove();
+        
+        // Restore original HTML to preserve formatting and structure
+        wrapper.innerHTML = originalHTML;
+        
+        // Show interactive elements with fade-in
+        if (hasInteractiveElements) {
+            await this.delay(100); // Small delay before showing interactive elements
+            
+            const updatedInteractiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
+            updatedInteractiveElements.forEach(el => {
+                el.style.opacity = '1';
+            });
+            
+            if (shouldPauseAfter) {
+                console.log('[STREAMING] Interactive elements present, pausing for user interaction');
+                
+                // Highlight the first interactive element
+                if (updatedInteractiveElements.length > 0) {
+                    const firstInteractive = updatedInteractiveElements[0];
+                    firstInteractive.classList.add('streaming-paused-interactive');
+                    
+                    // Pause streaming
+                    this.isPaused = true;
+                    
+                    // Set up auto-resume on any interaction
+                    this.setupAutoResume(firstInteractive, updatedInteractiveElements);
+                }
+            }
+        }
+        
+        console.log('[STREAMING] Element streaming complete');
+    },
+    
+    // Check if an element is interactive (requires user decision)
+    isInteractiveElement(element) {
+        const tagName = element.tagName.toLowerCase();
+        
+        // Check for interactive tags
+        if (['button', 'select', 'input', 'textarea'].includes(tagName)) {
+            return true;
+        }
+        
+        // Check for elements with click handlers or certain classes
+        if (element.onclick || 
+            element.getAttribute('onclick') ||
+            element.classList.contains('btn') ||
+            element.classList.contains('button') ||
+            element.classList.contains('dropdown') ||
+            element.querySelector('button, select, input')) {
+            return true;
+        }
+        
+        return false;
+    },
+    
+    // Set up automatic resume when user interacts with any interactive element
+    setupAutoResume(highlightedElement, allInteractiveElements) {
+        const resumeHandler = (event) => {
+            console.log('[STREAMING] User interaction detected, resuming stream');
+            
+            // Remove highlight from all elements
+            allInteractiveElements.forEach(el => {
+                el.classList.remove('streaming-paused-interactive');
+            });
+            
+            // Resume streaming
+            this.resume();
+            
+            // Remove listeners from all elements
+            allInteractiveElements.forEach(el => {
+                el.removeEventListener('click', resumeHandler);
+                el.removeEventListener('change', resumeHandler);
+            });
+        };
+        
+        // Add listeners to all interactive elements
+        allInteractiveElements.forEach(el => {
+            el.addEventListener('click', resumeHandler, { once: true });
+            el.addEventListener('change', resumeHandler, { once: true });
+        });
+    },
+    
+    // Scroll to keep the streaming cursor visible
+    scrollToKeepVisible(cursor) {
+        const summary1 = document.getElementById('summary1');
+        if (!summary1 || !cursor.parentNode) return;
+        
+        const cursorRect = cursor.getBoundingClientRect();
+        const containerRect = summary1.getBoundingClientRect();
+        
+        // Check if cursor is below viewport
+        if (cursorRect.bottom > containerRect.bottom - 50) {
+            const scrollAmount = cursorRect.bottom - containerRect.bottom + 50;
+            summary1.scrollTop += scrollAmount;
+        }
+    },
+    
+    // Resume streaming after pause
+    resume() {
+        console.log('[STREAMING] Resuming streaming');
+        this.isPaused = false;
+        this.processQueue();
+    },
+    
+    // Stop all streaming and clear queue
+    stop() {
+        console.log('[STREAMING] Stopping all streaming');
+        this.queue = [];
+        this.isStreaming = false;
+        this.isPaused = false;
+        
+        if (this.currentStreamController) {
+            this.currentStreamController.abort();
+            this.currentStreamController = null;
+        }
+    },
+    
+    // Utility delay function
+    delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+};
+
+// ==================== END STREAMING ENGINE ====================
+
 function appendToSummary1(content, clearExisting = false, isTransient = false) {
     console.log('[DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
@@ -3634,12 +3891,11 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
     }
 
     try {
-        // Store the initial scroll position if not clearing existing content
-        const initialScrollTop = clearExisting ? 0 : summary1.scrollTop;
-        const initialScrollHeight = clearExisting ? 0 : summary1.scrollHeight;
-
         // Clear existing content if requested
         if (clearExisting) {
+            // Stop any active streaming
+            streamingEngine.stop();
+            
             summary1.innerHTML = '';
             // Reset scroll tracking when clearing content
             pendingScrollTarget = null;
@@ -3689,7 +3945,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = processedContent;
 
-        // Create a wrapper div for the new content to help with scrolling
+        // Create a wrapper div for the new content
         const newContentWrapper = document.createElement('div');
         newContentWrapper.className = 'new-content-entry';
         if (isTransient) {
@@ -3698,81 +3954,53 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         }
         newContentWrapper.innerHTML = tempDiv.innerHTML;
 
-        // Append the sanitized content
+        // Append the sanitized content to DOM
         summary1.appendChild(newContentWrapper);
         console.log('[DEBUG] Content appended successfully', isTransient ? '(transient)' : '(permanent)');
 
-        // Store the first new content element for scrolling (if we don't have one yet)
-        if (!pendingScrollTarget || clearExisting) {
-            pendingScrollTarget = newContentWrapper;
-            console.log('[DEBUG] Set new scroll target');
-        }
-
-        // Clear any existing scroll timeout
-        if (scrollTimeout) {
-            clearTimeout(scrollTimeout);
-        }
-
-        // Set up debounced scrolling - only scroll after content additions have stopped for 300ms
-        scrollTimeout = setTimeout(() => {
+        // STREAMING DECISION POINT
+        if (isTransient) {
+            // Transient messages: show instantly, no streaming
+            console.log('[DEBUG] Transient message - showing instantly');
+            newContentWrapper.style.opacity = '1';
+            
+            // Scroll to show new content
             requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    try {
-                        // If clearing existing content, scroll to top
-                        if (clearExisting) {
-                            summary1.scrollTop = 0;
-                            console.log('[DEBUG] Scrolled to top (cleared existing content)');
-                        } else if (pendingScrollTarget) {
-                            // Calculate the scroll position to show the top of the first new content
-                            const newContentOffsetTop = pendingScrollTarget.offsetTop;
-                            const containerHeight = summary1.clientHeight;
-                            
-                            // Position the scroll so the top of the new content is visible
-                            // Add a small buffer (20px) to ensure it's clearly visible
-                            const targetScrollTop = Math.max(0, newContentOffsetTop - 20);
-                            
-                            summary1.scrollTop = targetScrollTop;
-                            
-                            console.log('[DEBUG] Debounced scroll to show top of first new content:', {
-                                newContentOffsetTop,
-                                containerHeight,
-                                targetScrollTop,
-                                finalScrollTop: summary1.scrollTop,
-                                summary1ScrollHeight: summary1.scrollHeight
-                            });
-                        }
-
-                        // Reset the scroll target after scrolling
-                        pendingScrollTarget = null;
-                        scrollTimeout = null;
-
-                    } catch (scrollError) {
-                        console.error('[DEBUG] Error in debounced scroll:', scrollError);
-                        // Simple fallback
-                        try {
-                            if (!clearExisting && pendingScrollTarget) {
-                                const maxScroll = summary1.scrollHeight - summary1.clientHeight;
-                                const newContentHeight = pendingScrollTarget.offsetHeight;
-                                const targetScroll = Math.max(0, maxScroll - newContentHeight - 50);
-                                summary1.scrollTop = targetScroll;
-                                console.log('[DEBUG] Fallback scroll completed');
-                            }
-                        } catch (fallbackError) {
-                            console.error('[DEBUG] Fallback scroll also failed:', fallbackError);
-                        }
-                        
-                        // Reset tracking even if scroll failed
-                        pendingScrollTarget = null;
-                        scrollTimeout = null;
-                    }
-                });
+                if (clearExisting) {
+                    summary1.scrollTop = 0;
+                } else {
+                    const targetScrollTop = Math.max(0, newContentWrapper.offsetTop - 20);
+                    summary1.scrollTop = targetScrollTop;
+                }
             });
-        }, 300); // Wait 300ms after the last content addition before scrolling
-        
-        // Update summary visibility after content is added
-        setTimeout(() => {
-            updateSummaryVisibility();
-        }, 100);
+        } else {
+            // Permanent content: use streaming engine
+            console.log('[DEBUG] Permanent content - queueing for streaming');
+            
+            // Check if content has interactive elements
+            const hasInteractive = streamingEngine.isInteractiveElement(newContentWrapper) ||
+                                   newContentWrapper.querySelector('button, select, input, textarea, [onclick]');
+            
+            console.log('[DEBUG] Interactive elements detected:', hasInteractive);
+            
+            // Enqueue for streaming
+            streamingEngine.enqueue(
+                newContentWrapper,
+                hasInteractive, // Should pause after streaming if interactive
+                () => {
+                    // On completion callback
+                    console.log('[DEBUG] Streaming complete for this content block');
+                    updateSummaryVisibility();
+                }
+            );
+        }
+
+        // Update summary visibility for transient messages
+        if (isTransient) {
+            setTimeout(() => {
+                updateSummaryVisibility();
+            }, 100);
+        }
 
     } catch (error) {
         console.error('[DEBUG] Error in appendToSummary1:', error);
