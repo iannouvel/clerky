@@ -1702,10 +1702,10 @@ div.third-column,
 
 /* Summary1 specific: flex-shrink to minimize blank space */
 #summary1 {
-    flex: 0 1 auto !important; /* Don't grow, but can shrink, size based on content */
+    flex: none !important; /* Don't participate in flex */
     min-height: 50px !important; /* Minimum visible height */
-    max-height: 80vh !important; /* Don't take more than 80% of viewport */
-    height: auto !important; /* Override any fixed height */
+    max-height: 70vh !important; /* Don't take more than 70% of viewport */
+    height: fit-content !important; /* Wrap content tightly */
     overflow-y: auto !important;
 }
 
@@ -2940,7 +2940,7 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 1 1 0; /* Allow flexing to share space */
+    flex: 1 1 auto; /* Grow to fill remaining space after summary */
     min-height: 200px; /* Minimum height for input */
     position: relative;
     overflow: hidden; /* Let internal content handle scrolling */
@@ -3080,12 +3080,12 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 0 1 auto; /* Size based on content, don't grow unnecessarily */
+    flex: 0 0 auto; /* Strict content-based sizing, no flex growth/shrink */
     min-height: 50px; /* Minimum height for summary */
     max-height: 80vh; /* Cap at 80% of viewport */
     opacity: 0.7;
-    transition: opacity 0.3s ease, height 0.3s ease;
-    overflow: hidden; /* Let internal content handle scrolling */
+    transition: opacity 0.3s ease;
+    overflow: visible; /* Allow content to determine height */
 }
 
 .chatbot-summary-section.hidden {
@@ -3101,7 +3101,7 @@ html, body {
 }
 
 .chatbot-summary-section .transcript-pane {
-    flex: 0 1 auto; /* Size based on content */
+    flex: none; /* Don't participate in flex, use content height */
     padding: 6px; /* Minimal padding for tighter layout */
     font-size: calc(1em - 2px);
     line-height: 1.3; /* Slightly increased for readability while keeping compact */
@@ -3111,6 +3111,7 @@ html, body {
     overflow-y: auto;
     box-sizing: border-box;
     position: relative;
+    height: fit-content; /* Wrap content tightly */
     height: 100%;
     min-height: 0; /* Allow shrinking below content size */
 }
