@@ -3627,7 +3627,7 @@ const streamingEngine = {
     isStreaming: false,
     isPaused: false,
     currentStreamController: null,
-    charDelay: 50, // milliseconds per character (fast streaming)
+    charDelay: 10, // milliseconds per character (very fast streaming)
     
     // Add content to the streaming queue
     enqueue(contentWrapper, shouldPause, onComplete) {
@@ -3708,18 +3708,18 @@ const streamingEngine = {
         });
         
         // OPTIMIZATION: Only stream short content character-by-character
-        // For long content (>500 chars), show instantly to avoid long delays
-        const MAX_STREAM_LENGTH = 500;
-        const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH;
+        // For long content (>200 chars), show instantly to avoid delays
+        const MAX_STREAM_LENGTH = 200;
+        const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20;
         
         console.log('[STREAMING] Streaming decision:', {
             textLength: textContent.length,
             maxStreamLength: MAX_STREAM_LENGTH,
             shouldStreamFully,
-            willShowInstantly: textContent.length < 20 || !shouldStreamFully
+            willShowInstantly: textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH
         });
         
-        if (textContent.length < 20 || !shouldStreamFully) {
+        if (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH) {
             console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
                 reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
                 length: textContent.length
@@ -3751,6 +3751,8 @@ const streamingEngine = {
         }
         
         // Stream short content with animation
+        console.log('[STREAMING] Starting character-by-character streaming');
+        
         // Hide interactive elements initially
         interactiveElements.forEach(el => {
             el.style.opacity = '0';
@@ -3774,9 +3776,8 @@ const streamingEngine = {
         
         // Stream the text content character by character
         let displayedText = '';
-        const streamLength = Math.min(textContent.length, MAX_STREAM_LENGTH);
         
-        for (let i = 0; i < streamLength; i++) {
+        for (let i = 0; i < textContent.length; i++) {
             if (this.isPaused) {
                 // If paused, show remaining text instantly
                 displayedText = textContent;
@@ -3797,6 +3798,8 @@ const streamingEngine = {
         
         // Restore original HTML to preserve formatting and structure
         wrapper.innerHTML = originalHTML;
+        
+        console.log('[STREAMING] Character streaming complete');
         
         console.log('[STREAMING] Text streaming complete, showing interactive elements');
         
