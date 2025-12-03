@@ -1317,12 +1317,14 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             display: flex;
             align-items: center;
             gap: 8px;
+            background: white;
+            color: black;
         }
         
         .action-btn.primary {
-            background: #007bff;
-            color: white;
-            border-color: #007bff;
+            background: white;
+            color: black;
+            border-color: #ddd;
             font-weight: 500;
         }
         
@@ -1337,7 +1339,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .action-btn.primary:hover {
-            background: #0056b3;
+            background: #f8f9fa;
+            border-color: #007bff;
         }
         
         .guideline-category {
