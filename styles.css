@@ -3146,6 +3146,13 @@ html, body {
     display: inline-block;
 }
 
+/* Ensure all elements in summary1 have white background */
+#summary1 code,
+#summary1 pre,
+#summary1 blockquote {
+    background: white !important;
+}
+
 /* Loading spinner in summary */
 .summary-loading-spinner {
     display: flex;
