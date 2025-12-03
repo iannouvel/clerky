@@ -1250,6 +1250,10 @@ body {
     flex-shrink: 0;
 }
 
+.preferences-panel-btn .spinner {
+    margin-right: 4px;
+}
+
 /* Preferences panel layout - mainSection is already set to flex row above */
 #mainSection > .user-preferences-panel {
     flex-shrink: 0;
