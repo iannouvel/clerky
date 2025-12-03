@@ -3318,7 +3318,11 @@ app.get('/clinicalConditions', authenticateUser, async (req, res) => {
         
         snapshot.forEach(doc => {
             const data = doc.data();
-            const category = data.category || 'uncategorized';
+            // Normalise American spelling to British (gynecology -> gynaecology)
+            let category = data.category || 'uncategorized';
+            if (category === 'gynecology') {
+                category = 'gynaecology';
+            }
             
             if (!conditions[category]) {
                 conditions[category] = {};
@@ -3327,7 +3331,7 @@ app.get('/clinicalConditions', authenticateUser, async (req, res) => {
             conditions[category][data.name] = {
                 id: doc.id,
                 name: data.name,
-                category: data.category,
+                category: category, // Use normalised category
                 transcript: data.transcript || null,
                 lastGenerated: data.lastGenerated || null,
                 hasTranscript: !!data.transcript,
