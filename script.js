@@ -9951,6 +9951,12 @@ async function showClinicalIssuesDropdown() {
         }
         clinicalPanel.classList.remove('hidden');
         
+        // Show the buttons in the button container
+        const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+        if (clerkingButtonsGroup) {
+            clerkingButtonsGroup.style.display = 'flex';
+        }
+        
         // Reset dropdown options
         clinicalDropdown.innerHTML = '<option value=\"\">Select a clinical issue...</option>';
         
@@ -9993,6 +9999,10 @@ async function showClinicalIssuesDropdown() {
         // Helper to hide the panel (used by Cancel)
         function hideClinicalIssuesPanel() {
             clinicalPanel.classList.add('hidden');
+            const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+            if (clerkingButtonsGroup) {
+                clerkingButtonsGroup.style.display = 'none';
+            }
             updateSummaryVisibility();
         }
         
