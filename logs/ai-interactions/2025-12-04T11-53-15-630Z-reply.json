@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-53-15-630Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1696,
+  "response_length": 1527,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":992,\"transcriptPreview\":\"26yo, G1P0, 9+2, BMI 24\\n\\nPresenting Complaint:\\nNausea with vomiting (up to 4x/day) for 4/52, worsening over last 1/52. Unable to k...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2024-nelson-piercy-management-of-nausea-and-vomiting-in-pregnancy-and-hyperemesis-gravidarum-pdf\\\", \\\"title\\\": \\\"Managemen...",
+  "full_data": null
+}
