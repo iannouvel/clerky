@@ -239,6 +239,7 @@ body {
     height: 100%;
     min-height: 0;
     flex: 1 1 0;
+    padding-bottom: 80px; /* Space for fixed button row */
 }
 
 /* History column hidden */
@@ -3248,22 +3249,25 @@ html, body {
 
 /* ==================== SUMMARY ANALYSE BUTTON ==================== */
 
-/* Container for Analyse button just under summary1 */
-.summary-analyse-button-container {
-    position: relative;
+/* Fixed button row at bottom of three-column view - always visible */
+.fixed-button-row {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 100%;
-    padding: 12px 8px; /* Standard padding */
-    padding-right: 30px; /* Extra right padding to clear scrollbar */
-    background: transparent;
+    padding: 12px 20px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
+    backdrop-filter: blur(8px);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    z-index: 100; /* Higher z-index to ensure visibility */
+    z-index: 1000; /* Very high z-index to stay above all content */
     flex-wrap: wrap; /* Allow wrapping if needed */
-    gap: 10px; /* Space between Analyse button and selection buttons */
-    flex-shrink: 0; /* Don't shrink - always show */
-    min-height: 50px; /* Ensure minimum height for buttons */
-    box-sizing: border-box; /* Include padding in width calculation */
+    gap: 10px; /* Space between buttons */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow above for separation */
+    box-sizing: border-box;
+    border-top: 1px solid #e0e0e0;
 }
 
 /* Analyse button styling - always visible */

@@ -574,39 +574,43 @@
                                 <!-- Content will be inserted here -->
                             </div>
                             <!-- Analyse button at bottom-left of summary1 -->
-                            <div class="summary-analyse-button-container">
-                                <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
-                                    <span id="analyseSpinner" class="spinner-icon" style="display: none;">⟳</span>
-                                    <span class="btn-icon">🔍</span>
-                                    <span class="btn-text">Analyse</span>
-                                </button>
-                                
-                                <!-- Clerking Buttons Group (moved from panel) -->
-                                <div id="clerkingButtonsGroup" class="clerking-buttons-group" style="display: none;">
-                                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
-                                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
-                                        <span id="generate-text">Load Clerking</span>
-                                    </button>
-                                    <button id="random-issue-btn" class="nav-btn secondary">
-                                        <span id="random-spinner" class="spinner" style="display: none;"></span>
-                                        <span id="random-text">Random Issue</span>
-                                    </button>
-                                    <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
-                                        <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
-                                        <span id="regenerate-text">Regenerate Clerking</span>
-                                    </button>
-                                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
-                                </div>
-                                
-                                <!-- Global Reset button (aligned to right) -->
-                                <button id="resetBtn" class="summary-analyse-btn summary-reset-btn" title="Reset transcript and summary">
-                                    <span class="btn-icon">↺</span>
-                                    <span class="btn-text">Reset</span>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Fixed Button Row (always visible at bottom) -->
+            <div id="fixedButtonRow" class="fixed-button-row">
+                <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
+                    <span id="analyseSpinner" class="spinner-icon" style="display: none;">⟳</span>
+                    <span class="btn-icon">🔍</span>
+                    <span class="btn-text">Analyse</span>
+                </button>
+                
+                <!-- Selection buttons group (dynamically added by JavaScript) -->
+                
+                <!-- Clerking Buttons Group -->
+                <div id="clerkingButtonsGroup" class="clerking-buttons-group" style="display: none;">
+                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
+                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
+                        <span id="generate-text">Load Clerking</span>
+                    </button>
+                    <button id="random-issue-btn" class="nav-btn secondary">
+                        <span id="random-spinner" class="spinner" style="display: none;"></span>
+                        <span id="random-text">Random Issue</span>
+                    </button>
+                    <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
+                        <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
+                        <span id="regenerate-text">Regenerate Clerking</span>
+                    </button>
+                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
+                </div>
+                
+                <!-- Global Reset button (aligned to right) -->
+                <button id="resetBtn" class="summary-analyse-btn summary-reset-btn" title="Reset transcript and summary">
+                    <span class="btn-icon">↺</span>
+                    <span class="btn-text">Reset</span>
+                </button>
             </div>
             
             <!-- Proforma View (initially hidden) -->

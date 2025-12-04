@@ -1417,11 +1417,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     showSelectionButtons();
 }
 
-// Function to show selection buttons in the button container
+// Function to show selection buttons in the fixed button row
 function showSelectionButtons() {
-    const buttonContainer = document.querySelector('.summary-analyse-button-container');
+    const buttonContainer = document.getElementById('fixedButtonRow');
     if (!buttonContainer) {
-        console.warn('[DEBUG] Button container not found');
+        console.warn('[DEBUG] Fixed button row not found');
         return;
     }
     
@@ -1451,9 +1451,14 @@ function showSelectionButtons() {
         </button>
     `;
     
-    // Append to button container
-    buttonContainer.appendChild(buttonsGroup);
-    console.log('[DEBUG] Selection buttons added to button container', buttonsGroup);
+    // Insert after Analyse button (before clerking buttons)
+    const analyseBtn = document.getElementById('analyseBtn');
+    if (analyseBtn && analyseBtn.nextSibling) {
+        buttonContainer.insertBefore(buttonsGroup, analyseBtn.nextSibling);
+    } else {
+        buttonContainer.appendChild(buttonsGroup);
+    }
+    console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
 }
 
 // Function to hide selection buttons from the button container
