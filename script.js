@@ -4871,6 +4871,144 @@ async function determineInsertionPoint(suggestion, clinicalNote) {
     }
 }
 
+// Helper function to detect list pattern in text
+function detectListPattern(text, startPos = 0) {
+    console.log('[DEBUG] detectListPattern: Analysing text from position', startPos);
+    
+    // Get text from startPos to analyse
+    const textToAnalyse = text.slice(startPos);
+    
+    // Patterns to detect different list types
+    const patterns = {
+        // Numbered lists: "1. ", "2. ", "3. " etc
+        numbered: /^(\s*)(\d+)\.\s/gm,
+        // Bullet points: "* " or "• "
+        bullet: /^(\s*)[\*•]\s/gm,
+        // Hyphen lists: "- "
+        hyphen: /^(\s*)-\s/gm
+    };
+    
+    let detectedType = 'none';
+    let lastItemNumber = null;
+    let indentation = '';
+    let matches = [];
+    
+    // Check for numbered lists first (most specific)
+    patterns.numbered.lastIndex = 0;
+    let match;
+    while ((match = patterns.numbered.exec(textToAnalyse)) !== null) {
+        matches.push({
+            type: 'numbered',
+            number: parseInt(match[2]),
+            indentation: match[1],
+            index: match.index
+        });
+    }
+    
+    if (matches.length > 0) {
+        // Get the last numbered item
+        const lastMatch = matches[matches.length - 1];
+        detectedType = 'numbered';
+        lastItemNumber = lastMatch.number;
+        indentation = lastMatch.indentation;
+        console.log('[DEBUG] detectListPattern: Found numbered list, last item:', lastItemNumber);
+        return { type: detectedType, lastItemNumber, indentation };
+    }
+    
+    // Check for bullet points
+    patterns.bullet.lastIndex = 0;
+    match = null;
+    while ((match = patterns.bullet.exec(textToAnalyse)) !== null) {
+        detectedType = 'bullet';
+        indentation = match[1];
+    }
+    
+    if (detectedType === 'bullet') {
+        console.log('[DEBUG] detectListPattern: Found bullet list');
+        return { type: detectedType, lastItemNumber: null, indentation };
+    }
+    
+    // Check for hyphen lists
+    patterns.hyphen.lastIndex = 0;
+    match = null;
+    while ((match = patterns.hyphen.exec(textToAnalyse)) !== null) {
+        detectedType = 'hyphen';
+        indentation = match[1];
+    }
+    
+    if (detectedType === 'hyphen') {
+        console.log('[DEBUG] detectListPattern: Found hyphen list');
+        return { type: detectedType, lastItemNumber: null, indentation };
+    }
+    
+    console.log('[DEBUG] detectListPattern: No list pattern detected');
+    return { type: 'none', lastItemNumber: null, indentation: '' };
+}
+
+// Helper function to format text as a list item
+function formatAsListItem(text, listInfo) {
+    console.log('[DEBUG] formatAsListItem:', { listInfo, textLength: text.length });
+    
+    if (!listInfo || listInfo.type === 'none') {
+        // No list formatting needed
+        return text;
+    }
+    
+    // Clean the text (remove leading/trailing whitespace from each line)
+    const cleanedText = text.trim();
+    
+    // Split into lines for multi-line handling
+    const lines = cleanedText.split('\n');
+    const indentation = listInfo.indentation || '';
+    
+    let formattedText = '';
+    
+    switch (listInfo.type) {
+        case 'numbered':
+            const nextNumber = (listInfo.lastItemNumber || 0) + 1;
+            // First line gets the number
+            formattedText = `${indentation}${nextNumber}. ${lines[0]}`;
+            // Subsequent lines get indented to align with text (not the number)
+            if (lines.length > 1) {
+                const continueIndent = indentation + '   '; // 3 spaces for "N. "
+                for (let i = 1; i < lines.length; i++) {
+                    formattedText += '\n' + continueIndent + lines[i].trim();
+                }
+            }
+            break;
+            
+        case 'bullet':
+            // First line gets the bullet
+            formattedText = `${indentation}* ${lines[0]}`;
+            // Subsequent lines get indented to align
+            if (lines.length > 1) {
+                const continueIndent = indentation + '  '; // 2 spaces for "* "
+                for (let i = 1; i < lines.length; i++) {
+                    formattedText += '\n' + continueIndent + lines[i].trim();
+                }
+            }
+            break;
+            
+        case 'hyphen':
+            // First line gets the hyphen
+            formattedText = `${indentation}- ${lines[0]}`;
+            // Subsequent lines get indented to align
+            if (lines.length > 1) {
+                const continueIndent = indentation + '  '; // 2 spaces for "- "
+                for (let i = 1; i < lines.length; i++) {
+                    formattedText += '\n' + continueIndent + lines[i].trim();
+                }
+            }
+            break;
+            
+        default:
+            formattedText = text;
+    }
+    
+    console.log('[DEBUG] formatAsListItem: Formatted text:', formattedText.substring(0, 100));
+    return formattedText;
+}
+
 // Helper function to insert text at the determined point
 function insertTextAtPoint(currentContent, newText, insertionPoint) {
     console.log('[DEBUG] insertTextAtPoint:', {
@@ -4899,10 +5037,156 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
         return '\n\n';
     }
 
-    const { section, insertionMethod, anchorText } = insertionPoint;
+    const { section, subsection, insertionMethod, anchorText, listType, lastItemNumber } = insertionPoint;
 
-    // If method is append to a section, find the section and append within it
-    if (insertionMethod === 'append' && section) {
+    // Handle appendToList insertion method with nested subsection support
+    if ((insertionMethod === 'appendToList' || insertionMethod === 'append') && section) {
+        // Find the main section
+        const sectionPatterns = [
+            new RegExp(`^${section}:`, 'im'),
+            new RegExp(`^${section}\\s*$`, 'im'),
+            new RegExp(`^${section}\\s*-`, 'im'),
+            new RegExp(`${section}:`, 'i')
+        ];
+        
+        let sectionStartIndex = -1;
+        let matchedPattern = null;
+        
+        for (const pattern of sectionPatterns) {
+            const match = currentContent.match(pattern);
+            if (match) {
+                sectionStartIndex = match.index;
+                matchedPattern = match[0];
+                break;
+            }
+        }
+        
+        if (sectionStartIndex !== -1) {
+            console.log('[DEBUG] insertTextAtPoint: Found section', section, 'at index', sectionStartIndex);
+            
+            // Get the section content (from section start to end)
+            const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
+            
+            // Find where this section ends
+            const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
+            let nextSectionIndex = -1;
+            
+            for (const nextSection of commonSections) {
+                if (nextSection === section) continue;
+                
+                const nextPatterns = [
+                    new RegExp(`\n${nextSection}:`, 'i'),
+                    new RegExp(`\n${nextSection}\\s*$`, 'm'),
+                    new RegExp(`\n${nextSection}\\s*-`, 'i')
+                ];
+                
+                for (const pattern of nextPatterns) {
+                    const match = afterSection.match(pattern);
+                    if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
+                        nextSectionIndex = match.index;
+                    }
+                }
+            }
+            
+            // Extract section content
+            const sectionContent = nextSectionIndex !== -1 
+                ? afterSection.slice(0, nextSectionIndex) 
+                : afterSection;
+            
+            // If we have a subsection, find it within the section content
+            let targetContent = sectionContent;
+            let targetStartInSection = 0;
+            
+            if (subsection) {
+                console.log('[DEBUG] insertTextAtPoint: Looking for subsection', subsection);
+                
+                // Look for subsection patterns (markdown bold, bullet points, etc.)
+                const subsectionPatterns = [
+                    new RegExp(`\\*\\*\\s*${subsection}\\s*:\\*\\*`, 'i'),  // "** Counselling:**"
+                    new RegExp(`\\*\\s*\\*\\*${subsection}:\\*\\*`, 'i'),   // "* **Counselling:**"
+                    new RegExp(`-\\s*\\*\\*${subsection}:\\*\\*`, 'i'),     // "- **Counselling:**"
+                    new RegExp(`\\d+\\.\\s*\\*\\*${subsection}:\\*\\*`, 'i'), // "1. **Counselling:**"
+                    new RegExp(`${subsection}:`, 'i')                       // "Counselling:"
+                ];
+                
+                let subsectionStartIndex = -1;
+                let subsectionMatchedPattern = null;
+                
+                for (const pattern of subsectionPatterns) {
+                    const match = sectionContent.match(pattern);
+                    if (match) {
+                        subsectionStartIndex = match.index;
+                        subsectionMatchedPattern = match[0];
+                        break;
+                    }
+                }
+                
+                if (subsectionStartIndex !== -1) {
+                    console.log('[DEBUG] insertTextAtPoint: Found subsection at index', subsectionStartIndex);
+                    
+                    // Find where subsection ends (next subsection or section end)
+                    const afterSubsection = sectionContent.slice(subsectionStartIndex + subsectionMatchedPattern.length);
+                    
+                    // Look for next subsection (starts with * ** or - ** or number. **)
+                    const nextSubsectionPattern = /\n[\*\-]?\s*\*\*[^:]+:\*\*/;
+                    const nextSubMatch = afterSubsection.match(nextSubsectionPattern);
+                    
+                    if (nextSubMatch) {
+                        targetContent = afterSubsection.slice(0, nextSubMatch.index);
+                        targetStartInSection = subsectionStartIndex + subsectionMatchedPattern.length;
+                    } else {
+                        targetContent = afterSubsection;
+                        targetStartInSection = subsectionStartIndex + subsectionMatchedPattern.length;
+                    }
+                } else {
+                    console.warn('[DEBUG] insertTextAtPoint: Subsection not found, using entire section');
+                }
+            }
+            
+            // Detect list pattern in the target content or use provided listType
+            let listInfo;
+            if (insertionMethod === 'appendToList' && listType && listType !== 'none') {
+                // Use provided list info from AI
+                listInfo = {
+                    type: listType,
+                    lastItemNumber: lastItemNumber,
+                    indentation: ''
+                };
+                console.log('[DEBUG] insertTextAtPoint: Using AI-provided list info:', listInfo);
+            } else {
+                // Auto-detect list pattern
+                listInfo = detectListPattern(targetContent, 0);
+                console.log('[DEBUG] insertTextAtPoint: Auto-detected list info:', listInfo);
+            }
+            
+            // Format the new text as a list item if applicable
+            let textToInsert = cleanedNewText;
+            if (listInfo.type !== 'none') {
+                textToInsert = formatAsListItem(cleanedNewText, listInfo);
+                console.log('[DEBUG] insertTextAtPoint: Formatted as list item');
+            }
+            
+            // Calculate final insertion position
+            const insertPosition = sectionStartIndex + matchedPattern.length + targetStartInSection + targetContent.length;
+            
+            console.log('[DEBUG] insertTextAtPoint: Final insertion at position', insertPosition);
+            
+            // Insert with appropriate spacing
+            const prefix = computePrefixSpacing(currentContent, insertPosition);
+            const suffix = nextSectionIndex !== -1 ? '' : '';
+            
+            return currentContent.slice(0, insertPosition) + prefix + textToInsert + suffix + currentContent.slice(insertPosition);
+        } else {
+            console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
+            let base = currentContent.replace(/[ \t]+$/, '').replace(/\n{3,}$/, '\n\n');
+            const trailing = (base.match(/\n+$/) || [''])[0].length;
+            const spacing = base.trim() ? (trailing >= 2 ? '' : (trailing === 1 ? '\n' : '\n\n')) : '';
+            return base + spacing + cleanedNewText;
+        }
+    }
+
+    // Legacy: If method is append to a section (old behavior, kept for backwards compatibility)
+    if (insertionMethod === 'append' && section && !subsection) {
         // Find the section in the document
         // Try different section header formats: "Section:", "Section", "Section -", etc.
         const sectionPatterns = [
@@ -5428,17 +5712,24 @@ window.handleCurrentSuggestionAction = async function(action) {
                 // If a Plan section exists in the note, target Plan; else keep original but append at end
                 const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
                 if (hasPlanSection) {
+                    // Preserve list metadata from AI if present
                     return {
                         section: 'Plan',
-                        insertionMethod: 'append',
+                        subsection: insertionPoint.subsection || null,
+                        insertionMethod: insertionPoint.insertionMethod || 'append',
+                        listType: insertionPoint.listType || 'none',
+                        lastItemNumber: insertionPoint.lastItemNumber || null,
                         anchorText: '',
-                        reasoning: 'Action-oriented addition placed under Plan by client heuristic'
+                        reasoning: 'Action-oriented addition placed under Plan by client heuristic (preserving AI metadata)'
                     };
                 }
                 // No Plan section found – fall back to end append
                 return {
                     section: 'end',
+                    subsection: null,
                     insertionMethod: 'append',
+                    listType: 'none',
+                    lastItemNumber: null,
                     anchorText: '',
                     reasoning: 'No Plan section found; appending to end'
                 };
@@ -5446,6 +5737,7 @@ window.handleCurrentSuggestionAction = async function(action) {
         } catch (e) {
             console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
         }
+        // Return insertion point with preserved metadata
         return insertionPoint;
     }
     
