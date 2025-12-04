@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T22-22-19-119Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1366,
+  "response_length": 1627,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":1032,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2024-neonatal-infection-antibiotics-for-prevention-and-treatment-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2024 - Ne...",
+  "full_data": null
+}
