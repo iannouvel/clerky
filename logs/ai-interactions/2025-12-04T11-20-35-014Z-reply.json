@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-35-014Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1322,
+  "response_length": 1296,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-red-cell-antibodies-during-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Red Cell Antibodies during Pregnancy\\\", \\\"relevanc...",
+  "full_data": null
+}
