@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T22-22-24-203Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1129,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravida, otherwise uncomplicated pregnancy\\nGBS positive on...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 8,\n  \"potentiallyRelevantCount\": 15,\n  \"lessRelevantCount\": 38,\n  \"notRelevantCount\": 236\n}...",
+  "full_data": null
+}
