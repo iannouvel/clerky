@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-32-814Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1282,
+  "response_length": 1265,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg17003-nipe-guideline-pdf\\\", \\\"title\\\": \\\"NIPE guideline\\\", \\\"relevance\\\": \\\"0.60\\\"},\\n ...",
+  "full_data": null
+}
