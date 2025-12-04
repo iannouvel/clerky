@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-01-05-071Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1362,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positive urinary pregnancy test.\\n\\nKey Clinical Issue:\\nSus...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 18,\n  \"lessRelevantCount\": 40,\n  \"notRelevantCount\": 230\n}...",
+  "full_data": null
+}
