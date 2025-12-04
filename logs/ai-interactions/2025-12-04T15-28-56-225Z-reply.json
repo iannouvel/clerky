@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-28-56-225Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2807,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"**OBSTETRICS & GYNAECOLOGY CLERKING – SBAR FORMAT**\\n\\n**SITUATION:** \\n- **Patient:** 32F, G2P1 (SVD 2019), BMI 28 \\n- **Presenting complaint:** Chronic pelvic pain (6/12 duration), wo...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 11,\n  \"potentiallyRelevantCount\": 13,\n  \"lessRelevantCount\": 38,\n  \"notRelevantCount\": 235\n}...",
+  "full_data": null
+}
