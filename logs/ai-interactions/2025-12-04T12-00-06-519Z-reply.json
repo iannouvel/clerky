@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T12-00-06-519Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1279,
+  "response_length": 1237,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":2164,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg14020-female-genital-mutilation-fgm-pdf\\\", \\\"title\\\": \\\"Female Genital Mutilation (FGM)\\\", \\\"...",
+  "full_data": null
+}

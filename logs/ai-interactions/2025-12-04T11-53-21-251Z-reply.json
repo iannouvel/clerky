@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-53-21-251Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1106,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"26yo, G1P0, 9+2, BMI 24\\n\\nPresenting Complaint:\\nNausea with vomiting (up to 4x/day) for 4/52, worsening over last 1/52. Unable to keep solids down, tolerating sips of fluid.\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 16,\n  \"lessRelevantCount\": 31,\n  \"notRelevantCount\": 245\n}...",
+  "full_data": null
+}

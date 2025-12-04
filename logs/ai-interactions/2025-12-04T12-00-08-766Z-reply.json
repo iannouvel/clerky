@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T12-00-08-766Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 1357,
+  "response_length": 1339,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":2164,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 58F, PMHx of hypothyroidism (on levothyroxine 50mcg OD...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf\\\", \\\"title\\\": \\\"Penthrox (use of) in am...",
+  "full_data": null
+}
