@@ -1110,18 +1110,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             <div class="selection-header">
                 <h2>📋 Select Guidelines for Guideline Suggestions</h2>
                 <p>Check which guidelines to generate suggestions for. Most relevant guidelines are pre-selected.</p>
-                <div class="selection-controls">
-                    <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)">
-                        ✅ Select All
-                    </button>
-                    <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)">
-                        ❌ Deselect All
-                    </button>
-                    <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)">
-                        <span class="btn-icon">🚀</span>
-                        <span class="btn-text">Process Selected Guidelines</span>
-                    </button>
-                </div>
             </div>
     `;
 
@@ -1290,59 +1278,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             line-height: 1.5;
         }
         
-        .selection-controls {
-            margin: 15px 0;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .selection-btn {
-            padding: 8px 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: white;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.2s;
-        }
-        
-        .guideline-selection-interface .action-btn {
-            padding: 8px 16px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: white;
-            color: black;
-        }
-        
-        .action-btn.primary {
-            background: white;
-            color: black;
-            border-color: #ddd;
-            font-weight: 500;
-        }
-        
-        .selection-btn:hover {
-            background: #f8f9fa;
-            border-color: #007bff;
-        }
-        
-        .guideline-selection-interface .action-btn:hover {
-            background: #f8f9fa;
-            border-color: #007bff;
-        }
-        
-        .action-btn.primary:hover {
-            background: #f8f9fa;
-            border-color: #007bff;
-        }
-        
         .guideline-category {
             margin: 20px 0;
         }
@@ -1477,6 +1412,54 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Append the generated HTML to the summary view - PERMANENT so it stays visible
     appendToSummary1(htmlContent, false, false); // Permanent - stays until user processes guidelines
+    
+    // Show the selection buttons in the button container
+    showSelectionButtons();
+}
+
+// Function to show selection buttons in the button container
+function showSelectionButtons() {
+    const buttonContainer = document.querySelector('.summary-analyse-button-container');
+    if (!buttonContainer) {
+        console.warn('[DEBUG] Button container not found');
+        return;
+    }
+    
+    // Check if buttons already exist
+    if (document.getElementById('selectionButtonsGroup')) {
+        console.log('[DEBUG] Selection buttons already exist');
+        return;
+    }
+    
+    // Create the buttons group
+    const buttonsGroup = document.createElement('div');
+    buttonsGroup.id = 'selectionButtonsGroup';
+    buttonsGroup.className = 'selection-buttons-group';
+    buttonsGroup.innerHTML = `
+        <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)" title="Select all guidelines">
+            ✅ Select All
+        </button>
+        <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)" title="Deselect all guidelines">
+            ❌ Deselect All
+        </button>
+        <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)" title="Process selected guidelines">
+            <span class="btn-icon">🚀</span>
+            <span class="btn-text">Process Selected Guidelines</span>
+        </button>
+    `;
+    
+    // Append to button container
+    buttonContainer.appendChild(buttonsGroup);
+    console.log('[DEBUG] Selection buttons added to button container');
+}
+
+// Function to hide selection buttons from the button container
+function hideSelectionButtons() {
+    const buttonsGroup = document.getElementById('selectionButtonsGroup');
+    if (buttonsGroup) {
+        buttonsGroup.remove();
+        console.log('[DEBUG] Selection buttons removed from button container');
+    }
 }
 
 function createGuidelineElement(guideline) {
@@ -7722,6 +7705,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handlers for new panel buttons
+    const promptsPanelBtn = document.getElementById('promptsPanelBtn');
+    if (promptsPanelBtn) {
+        promptsPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Prompts panel button clicked');
+            showSection('promptsSection');
+        });
+    }
+
+    const guidelinesPanelBtn = document.getElementById('guidelinesPanelBtn');
+    if (guidelinesPanelBtn) {
+        guidelinesPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Guidelines panel button clicked');
+            showSection('guidelinesSection');
+        });
+    }
+
+    const workflowsPanelBtn = document.getElementById('workflowsPanelBtn');
+    if (workflowsPanelBtn) {
+        workflowsPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Workflows panel button clicked');
+            showSection('workflowsView');
+        });
+    }
+
+    const devPanelBtn = document.getElementById('devPanelBtn');
+    if (devPanelBtn) {
+        devPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Dev panel button clicked');
+            showSection('devSection');
+        });
+    }
+
+    const linksPanelBtn = document.getElementById('linksPanelBtn');
+    if (linksPanelBtn) {
+        linksPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Links panel button clicked');
+            showSection('linksSection');
+        });
+    }
+
+    // Function to show a section and hide others
+    function showSection(sectionId) {
+        // Hide main content views
+        const threeColumnView = document.getElementById('threeColumnView');
+        const workflowsView = document.getElementById('workflowsView');
+        const proformaView = document.getElementById('proformaView');
+        
+        if (threeColumnView) threeColumnView.classList.add('hidden');
+        if (workflowsView) workflowsView.classList.add('hidden');
+        if (proformaView) proformaView.classList.add('hidden');
+        
+        // Hide all section containers
+        const sections = ['promptsSection', 'guidelinesSection', 'devSection', 'linksSection'];
+        sections.forEach(id => {
+            const section = document.getElementById(id);
+            if (section) section.classList.add('hidden');
+        });
+        
+        // Show the requested section
+        if (sectionId === 'workflowsView') {
+            if (workflowsView) workflowsView.classList.remove('hidden');
+        } else if (sectionId === 'threeColumnView') {
+            // Show main chatbot view
+            if (threeColumnView) threeColumnView.classList.remove('hidden');
+        } else {
+            const section = document.getElementById(sectionId);
+            if (section) section.classList.remove('hidden');
+        }
+        
+        console.log('[DEBUG] Showing section:', sectionId);
+    }
+
+    // Add logo click handler to return to main view
+    const logoLink = document.querySelector('.logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent page reload
+            console.log('[DEBUG] Logo clicked - returning to main view');
+            showSection('threeColumnView');
+        });
+    }
+
     // Add click handler for generate transcript button
     const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
     if (directFakeTranscriptBtn) {
@@ -12078,6 +12144,9 @@ async function processSelectedGuidelines(event) {
                 }
             }, 300);
         }
+        
+        // Hide the selection buttons from the button container
+        hideSelectionButtons();
 
         // Remove all transient messages (progress indicators, etc.)
         removeTransientMessages();
