@@ -3302,6 +3302,62 @@ html, body {
     }
 }
 
+/* Selection buttons group (appears when guideline selection is active) */
+.selection-buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.selection-buttons-group .selection-btn {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.selection-buttons-group .selection-btn:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+.selection-buttons-group .action-btn {
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.selection-buttons-group .action-btn:hover {
+    background: #00a085;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 184, 148, 0.3);
+}
+
+.selection-buttons-group .action-btn.primary {
+    background: var(--accent-color);
+}
+
+.selection-buttons-group .action-btn .btn-icon {
+    font-size: 16px;
+}
+
 /* ==================== END SUMMARY ANALYSE BUTTON ==================== */
 
 /* Transient messages (temporary progress messages) */
