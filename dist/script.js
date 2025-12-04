@@ -1417,6 +1417,25 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     showSelectionButtons();
 }
 
+// Function to update the process button text based on selected guideline count
+function updateProcessButtonText() {
+    const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+    const count = checkedCheckboxes.length;
+    const processBtn = document.querySelector('.process-selected-btn');
+    
+    if (processBtn) {
+        const btnText = processBtn.querySelector('.btn-text');
+        const isSingular = count === 1;
+        
+        if (btnText) {
+            btnText.textContent = isSingular ? 'Process Selected Guideline' : 'Process Selected Guidelines';
+        }
+        
+        // Update title attribute as well
+        processBtn.title = isSingular ? 'Process selected guideline' : 'Process selected guidelines';
+    }
+}
+
 // Function to show selection buttons in the fixed button row
 function showSelectionButtons() {
     const buttonContainer = document.getElementById('fixedButtonRow');
@@ -1458,6 +1477,26 @@ function showSelectionButtons() {
     } else {
         buttonContainer.appendChild(buttonsGroup);
     }
+    
+    // Update button text based on initial selection count
+    updateProcessButtonText();
+    
+    // Use event delegation on document to handle checkbox changes (works for dynamically created checkboxes)
+    // Remove any existing listener first to avoid duplicates
+    if (window.guidelineCheckboxChangeHandler) {
+        document.removeEventListener('change', window.guidelineCheckboxChangeHandler);
+    }
+    
+    // Create and store the handler function
+    window.guidelineCheckboxChangeHandler = function(event) {
+        if (event.target && event.target.classList.contains('guideline-checkbox')) {
+            updateProcessButtonText();
+        }
+    };
+    
+    // Add event listener using delegation
+    document.addEventListener('change', window.guidelineCheckboxChangeHandler);
+    
     console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
 }
 
@@ -5856,7 +5895,12 @@ function updateSuggestionActionButtons() {
     if (!review) {
         // Hide suggestion buttons, show standard buttons
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
-        if (analyseBtn) analyseBtn.style.display = 'flex';
+        // Keep analyse button hidden if it has already been used
+        if (analyseBtn && !window.analyseButtonUsed) {
+            analyseBtn.style.display = 'flex';
+        } else if (analyseBtn) {
+            analyseBtn.style.display = 'none';
+        }
         if (resetBtn) resetBtn.style.display = 'flex';
         return;
     }
@@ -8141,6 +8185,8 @@ document.addEventListener('DOMContentLoaded', () => {
         analyseBtn.classList.remove('stop-mode');
         window.isAnalysisRunning = false;
         if (analyseSpinner) analyseSpinner.style.display = 'none';
+        // Keep button hidden after analysis completes
+        analyseBtn.style.display = 'none';
     }
     
     if (analyseBtn) {
@@ -8163,6 +8209,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
                     appendToSummary1(cancelMessage, false);
                     hideSummaryLoading();
+                    // Keep button hidden after cancellation
+                    if (analyseBtn) analyseBtn.style.display = 'none';
                     return;
                 }
                 
@@ -8206,6 +8254,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create new abort controller for this analysis
             window.analysisAbortController = new AbortController();
             transformToStopButton();
+            
+            // Hide the analyse button once analysis starts
+            window.analyseButtonUsed = true;
+            if (analyseBtn) {
+                analyseBtn.style.display = 'none';
+            }
             
             try {
                 // Route to appropriate function based on detected type
@@ -12276,6 +12330,9 @@ function selectAllGuidelines(select) {
     checkboxes.forEach(checkbox => {
         checkbox.checked = select;
     });
+    
+    // Update button text after selection change
+    updateProcessButtonText();
     
     console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all guidelines');
 }
