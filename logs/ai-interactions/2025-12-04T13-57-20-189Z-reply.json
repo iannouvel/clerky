@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-57-20-189Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 815,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P0 (prev TOP), 32+6, BMI 31\\n\\nIssues:\\nGestational diabetes mellitus (GDM) diagnosed at 28/40 on OGTT (fasting 5.8, 2hr 9.2)\\nCurrently diet-controlled\\n\\nBackground:\\nNo pre-e...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 14,\n  \"potentiallyRelevantCount\": 30,\n  \"lessRelevantCount\": 60,\n  \"notRelevantCount\": 193\n}...",
+  "full_data": null
+}
