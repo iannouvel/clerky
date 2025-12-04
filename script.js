@@ -1465,6 +1465,55 @@ function hideSelectionButtons() {
     }
 }
 
+// Global reset handler - clears input, summary, and action UIs when idle
+function handleGlobalReset() {
+    console.log('[DEBUG] Reset button clicked');
+    
+    // Don't allow reset while workflows or sequential processing are active
+    if (window.workflowInProgress || window.sequentialProcessingActive) {
+        console.log('[DEBUG] Reset ignored because a workflow is in progress');
+        return;
+    }
+    
+    // Clear user input (TipTap editor)
+    const editor = window.editors?.userInput;
+    if (editor) {
+        editor.commands.setContent('');
+    }
+    
+    // Clear summary content (except loading spinner)
+    const summary1 = document.getElementById('summary1');
+    const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+    if (summary1) {
+        Array.from(summary1.children).forEach(child => {
+            if (!loadingSpinner || child !== loadingSpinner) {
+                summary1.removeChild(child);
+            }
+        });
+    }
+    
+    // Remove any injected clinical issues panel
+    const clinicalPanel = document.getElementById('clinicalIssuesPanel');
+    if (clinicalPanel && clinicalPanel.parentNode) {
+        clinicalPanel.parentNode.removeChild(clinicalPanel);
+    }
+    
+    // Hide any clerking or guideline selection buttons
+    const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+    if (clerkingButtonsGroup) {
+        clerkingButtonsGroup.style.display = 'none';
+    }
+    hideSelectionButtons();
+    
+    // Clear transient messages and hide summary section if now empty
+    if (typeof removeTransientMessages === 'function') {
+        removeTransientMessages();
+    }
+    updateSummaryVisibility();
+    
+    console.log('[DEBUG] Global reset completed');
+}
+
 function createGuidelineElement(guideline) {
     const div = document.createElement('div');
     div.className = 'guideline-item';
@@ -6726,6 +6775,14 @@ function checkAndSubmitGuidelineFeedback() {
             }
         }
     });
+
+// Wire up global reset button once DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    const resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', handleGlobalReset);
+    }
+});
 }
 
 // Submit feedback batch to backend
