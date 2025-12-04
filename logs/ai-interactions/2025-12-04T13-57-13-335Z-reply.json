@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-57-13-335Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1328,
+  "response_length": 1300,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":716,\"transcriptPreview\":\"28yo, G2P0 (prev TOP), 32+6, BMI 31\\n\\nIssues:\\nGestational diabetes mellitus (GDM) diagnosed at 28/40 on OGTT (fasting 5.8, 2hr 9.2...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-longterm-pcos-consequences-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Longterm PCOS Consequences\\\"...",
+  "full_data": null
+}
