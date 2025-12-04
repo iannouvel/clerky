@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-33-400Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1392,
+  "response_length": 1406,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp010-anti-d-rhesus-negative-women-pdf\\\", \\\"title\\\": \\\"MP010 Anti D Rhesus Negative Women\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"pot...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-33-098Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1146,
+  "response_length": 1125,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"fetal-monitoring-guideline-antenatal-pdf\\\", \\\"title\\\": \\\"Fetal monitor...",
+  "full_data": null
+}

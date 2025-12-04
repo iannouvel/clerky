@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-32-189Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1204,
+  "response_length": 1191,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"Caesarean Section\\\", \\\"relevance\\\": \\\"0.65\\\"}...",
+  "full_data": null
+}

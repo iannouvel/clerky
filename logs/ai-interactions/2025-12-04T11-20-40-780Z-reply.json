@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-40-780Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 885,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\nAnti-D antibodies detected at booking (16/52), titre...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 8,\n  \"potentiallyRelevantCount\": 32,\n  \"lessRelevantCount\": 64,\n  \"notRelevantCount\": 193\n}...",
+  "full_data": null
+}
