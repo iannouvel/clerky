@@ -2975,7 +2975,7 @@ html, body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto; /* Grow to fill remaining space after summary */
-    min-height: 150px; /* Reduced minimum height */
+    min-height: max(150px, 25vh); /* Ensure at least 25vh or 150px */
     position: relative;
     overflow: hidden; /* Let internal content handle scrolling */
     order: 1; /* Ensure input is at top */
@@ -3137,6 +3137,15 @@ html, body {
 
 .chatbot-summary-section.loading {
     opacity: 0.6;
+}
+
+/* Critical content mode - expand summary, shrink input */
+.chatbot-summary-section.critical {
+    flex: 1 1 auto; /* Allow growing */
+    max-height: 60vh; /* Increase max height */
+    opacity: 1; /* Full opacity for important content */
+    border: 2px solid #3B82F6; /* Visual indicator */
+    transition: all 0.3s ease;
 }
 
 .chatbot-summary-section .transcript-pane {
