@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-51-37-582Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1250,
+  "response_length": 1273,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":682,\"transcriptPreview\":\"28yo, G1P0, 39+1, BMI 31, Rh+ve\\n\\nIssues:\\nCTG abnormalities suspicious for fetal distress\\nMeconium stained liquor\\n\\nBackground:\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1147-maternal-sepsis-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
