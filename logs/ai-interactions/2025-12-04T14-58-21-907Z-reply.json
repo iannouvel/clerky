@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T14-58-21-907Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1332,
+  "response_length": 1367,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":964,\"transcriptPreview\":\"28yo, G1P0, 26+2, BMI 24, Rh+ve\\n\\nIssues:\\nKnown bicornuate uterus on pre-pregnancy MRI\\nCurrent presentation with persistent lower ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1114-breech-guideline-pdf\\\", \\\"title\\\": \\\"Breech guideline\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n    {\\\"id\\\": \\\"care-in-labour-...",
+  "full_data": null
+}
