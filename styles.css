@@ -3254,6 +3254,8 @@ html, body {
     justify-content: flex-start;
     align-items: center;
     z-index: 50;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 10px; /* Space between Analyse button and selection buttons */
 }
 
 /* Analyse button styling - always visible */
