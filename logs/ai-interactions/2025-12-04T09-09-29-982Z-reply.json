@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-09-29-982Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1405,
+  "response_length": 1388,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":3608,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp001-management-of-miscarriage-pdf\\\", \\\"title\\\": \\\"GP001 - Management of Miscarriage\\\", \\\"rele...",
+  "full_data": null
+}
