@@ -9915,7 +9915,7 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
 // Store selected scope globally
 window.selectedGuidelineScope = null;
 
-// Show clinical issues dropdown in summary section (persistent panel below summary1)
+// Show clinical issues dropdown as a block within summary1 (and use bottom bar buttons)
 async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
     
@@ -9930,9 +9930,36 @@ async function showClinicalIssuesDropdown() {
         
         console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
         
-        // Get persistent panel elements
         const summarySection = document.getElementById('summarySection');
-        const clinicalPanel = document.getElementById('clinicalIssuesPanel');
+        if (summarySection) {
+            summarySection.classList.remove('hidden');
+        }
+        
+        // Ensure the clinical issues panel exists inside summary1
+        let clinicalPanel = document.getElementById('clinicalIssuesPanel');
+        if (!clinicalPanel) {
+            const panelHtml = `
+<div id=\"clinicalIssuesPanel\" class=\"clinical-issues-selector\">
+    <h3>⚡ Load Clinical Clerking</h3>
+    <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
+    
+    <div class=\"issue-category\">
+        <h4>Clinical Issues</h4>
+        <select id=\"clinical-issues-dropdown\" class=\"clinical-dropdown\">
+            <option value=\"\">Select a clinical issue...</option>
+        </select>
+    </div>
+    
+    <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
+</div>`;
+            
+            // Append the panel content into summary1 as a permanent block
+            appendToSummary1(panelHtml, false, false);
+            clinicalPanel = document.getElementById('clinicalIssuesPanel');
+        } else {
+            clinicalPanel.classList.remove('hidden');
+        }
+        
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
         const randomBtn = document.getElementById('random-issue-btn');
@@ -9940,16 +9967,10 @@ async function showClinicalIssuesDropdown() {
         const cancelBtn = document.getElementById('cancel-generation-btn');
         
         if (!clinicalPanel || !clinicalDropdown) {
-            console.error('[DEBUG] Clinical issues panel elements not found');
+            console.error('[DEBUG] Clinical issues panel elements not found after injection');
             appendToSummary1('❌ **Error:** Unable to initialise clinical issues panel.\n\n', false);
             return;
         }
-        
-        // Ensure summary section and panel are visible
-        if (summarySection) {
-            summarySection.classList.remove('hidden');
-        }
-        clinicalPanel.classList.remove('hidden');
         
         // Show the buttons in the button container
         const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
@@ -9992,17 +10013,21 @@ async function showClinicalIssuesDropdown() {
         }
         
         if (clinicalDropdown) {
-            clinicalDropdown.removeEventListener('change', updateGenerateButton);
             clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
         
-        // Helper to hide the panel (used by Cancel)
+        // Helper to completely clean up the test UI
         function hideClinicalIssuesPanel() {
-            clinicalPanel.classList.add('hidden');
-            const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
-            if (clerkingButtonsGroup) {
-                clerkingButtonsGroup.style.display = 'none';
+            const panel = document.getElementById('clinicalIssuesPanel');
+            if (panel && panel.parentNode) {
+                panel.parentNode.removeChild(panel);
             }
+            
+            const buttonsGroup = document.getElementById('clerkingButtonsGroup');
+            if (buttonsGroup) {
+                buttonsGroup.style.display = 'none';
+            }
+            
             updateSummaryVisibility();
         }
         
@@ -10012,6 +10037,8 @@ async function showClinicalIssuesDropdown() {
                 
                 if (selectedIssue) {
                     await generateFakeClinicalInteraction(selectedIssue);
+                    // After loading clerking, remove the test UI
+                    hideClinicalIssuesPanel();
                 }
             };
         }
@@ -10038,6 +10065,9 @@ async function showClinicalIssuesDropdown() {
                     
                     // Automatically generate the interaction
                     await generateFakeClinicalInteraction(randomIssue);
+                    
+                    // After loading clerking, remove the test UI
+                    hideClinicalIssuesPanel();
                 } else {
                     console.error('No clinical issues available for random selection');
                     appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', false, true);
@@ -10052,6 +10082,8 @@ async function showClinicalIssuesDropdown() {
                 if (selectedIssue) {
                     // Force regeneration of the transcript
                     await generateFakeClinicalInteraction(selectedIssue, true);
+                    // After regeneration, remove the test UI for consistency
+                    hideClinicalIssuesPanel();
                 }
             };
         }
