@@ -3123,7 +3123,6 @@ html, body {
     transition: opacity 0.3s ease;
     overflow: hidden; /* Contain scrolling to transcript-pane */
     position: relative; /* Ensure proper stacking context */
-    padding-right: 20px; /* Prevent scrollbar from overlaying content */
     order: 2; /* Ensure summary is below input */
     margin-bottom: 0; /* No bottom margin to stay above fixed button row */
 }
@@ -3503,6 +3502,16 @@ html, body {
 .suggestion-actions-group .nav-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.suggestion-actions-group .nav-btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #5a6268;
+}
+
+.suggestion-actions-group .nav-btn.secondary:hover {
+    background-color: #5a6268;
 }
 
 .nav-btn.success {
