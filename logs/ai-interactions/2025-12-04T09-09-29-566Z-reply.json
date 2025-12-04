@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-09-29-566Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 1402,
+  "response_length": 1321,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":3608,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevanc...",
+  "full_data": null
+}
