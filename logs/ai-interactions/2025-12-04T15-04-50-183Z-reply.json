@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-04-50-183Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1199,
+  "response_length": 1194,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":964,\"transcriptPreview\":\"28yo, G1P0, 26+2, BMI 24, Rh+ve\\n\\nIssues:\\nKnown bicornuate uterus on pre-pregnancy MRI\\nCurrent presentation with persistent lower...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp025-day-assessment-unit-dau-pdf\\\", \\\"title\\\": \\\"Day Assessment Unit (DAU)\\\", \\\"relevanc...",
+  "full_data": null
+}
