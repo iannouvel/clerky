@@ -367,8 +367,74 @@ function showCurrentPIIMatch() {
     const existingReview = document.getElementById('pii-review-current');
     if (existingReview && existingReview.parentElement) {
         existingReview.outerHTML = reviewHtml;
+        // Update critical status and scroll to show the buttons after replacing
+        setTimeout(() => {
+            updateSummaryCriticalStatus();
+            scrollToPIIReviewButtons();
+        }, 100);
     } else {
         appendToSummary1(reviewHtml, true);
+        // Note: updateSummaryCriticalStatus will be called by appendToSummary1
+        // Just need to ensure scroll happens after
+        setTimeout(() => scrollToPIIReviewButtons(), 200);
+    }
+}
+
+// Scroll summary1 to show the PII review buttons
+window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts = 10) {
+    const summary1 = document.getElementById('summary1');
+    const reviewContainer = document.getElementById('pii-review-current');
+    
+    if (!summary1) {
+        console.warn('[PII REVIEW] Cannot scroll: summary1 not found');
+        return;
+    }
+    
+    if (!reviewContainer) {
+        if (maxAttempts > 0) {
+            // Retry after a short delay if container isn't ready yet (e.g., still streaming)
+            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+            return;
+        }
+        console.warn('[PII REVIEW] Cannot scroll: review container not found after retries');
+        return;
+    }
+    
+    // Find the navigation buttons container
+    const buttonsContainer = reviewContainer.querySelector('.pii-navigation');
+    if (!buttonsContainer) {
+        if (maxAttempts > 0) {
+            // Retry after a short delay if buttons aren't ready yet
+            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+            return;
+        }
+        console.warn('[PII REVIEW] Buttons container not found after retries');
+        return;
+    }
+    
+    // Wait for buttons to be fully rendered (have dimensions)
+    const buttonsRect = buttonsContainer.getBoundingClientRect();
+    if (buttonsRect.height === 0 && maxAttempts > 0) {
+        setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+        return;
+    }
+    
+    // Calculate scroll position to show buttons
+    const summaryRect = summary1.getBoundingClientRect();
+    
+    // Check if buttons are below the visible area
+    if (buttonsRect.bottom > summaryRect.bottom) {
+        // Calculate how much to scroll
+        const scrollAmount = buttonsRect.bottom - summaryRect.bottom + 20; // Add 20px padding
+        summary1.scrollTop += scrollAmount;
+        console.log('[PII REVIEW] Scrolled summary1 to show buttons');
+    } else if (buttonsRect.top < summaryRect.top) {
+        // Buttons are above visible area, scroll up to show them
+        const scrollAmount = buttonsRect.top - summaryRect.top - 20; // Add 20px padding
+        summary1.scrollTop += scrollAmount;
+        console.log('[PII REVIEW] Scrolled summary1 up to show buttons');
+    } else {
+        console.log('[PII REVIEW] Buttons are already visible');
     }
 }
 
@@ -1417,6 +1483,25 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     showSelectionButtons();
 }
 
+// Function to update the process button text based on selected guideline count
+function updateProcessButtonText() {
+    const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
+    const count = checkedCheckboxes.length;
+    const processBtn = document.querySelector('.process-selected-btn');
+    
+    if (processBtn) {
+        const btnText = processBtn.querySelector('.btn-text');
+        const isSingular = count === 1;
+        
+        if (btnText) {
+            btnText.textContent = isSingular ? 'Process Selected Guideline' : 'Process Selected Guidelines';
+        }
+        
+        // Update title attribute as well
+        processBtn.title = isSingular ? 'Process selected guideline' : 'Process selected guidelines';
+    }
+}
+
 // Function to show selection buttons in the fixed button row
 function showSelectionButtons() {
     const buttonContainer = document.getElementById('fixedButtonRow');
@@ -1458,6 +1543,26 @@ function showSelectionButtons() {
     } else {
         buttonContainer.appendChild(buttonsGroup);
     }
+    
+    // Update button text based on initial selection count
+    updateProcessButtonText();
+    
+    // Use event delegation on document to handle checkbox changes (works for dynamically created checkboxes)
+    // Remove any existing listener first to avoid duplicates
+    if (window.guidelineCheckboxChangeHandler) {
+        document.removeEventListener('change', window.guidelineCheckboxChangeHandler);
+    }
+    
+    // Create and store the handler function
+    window.guidelineCheckboxChangeHandler = function(event) {
+        if (event.target && event.target.classList.contains('guideline-checkbox')) {
+            updateProcessButtonText();
+        }
+    };
+    
+    // Add event listener using delegation
+    document.addEventListener('change', window.guidelineCheckboxChangeHandler);
+    
     console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
 }
 
@@ -3146,6 +3251,30 @@ function updateSummaryVisibility() {
     }
 }
 
+// Update summary critical status based on interactive content
+window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
+    const summarySection = document.getElementById('summarySection');
+    const summary1 = document.getElementById('summary1');
+    
+    if (!summarySection || !summary1) return;
+    
+    // Check for any interactive elements
+    const hasInteractive = summary1.querySelector('button, input, select, textarea, [onclick]');
+    
+    if (hasInteractive) {
+        summarySection.classList.add('critical');
+        console.log('[SUMMARY] Critical mode activated - interactive content detected');
+        
+        // Auto-scroll to show interactive elements after layout settles
+        setTimeout(() => {
+            scrollToPIIReviewButtons();
+        }, 200);
+    } else {
+        summarySection.classList.remove('critical');
+        console.log('[SUMMARY] Critical mode deactivated - no interactive content');
+    }
+}
+
 // Show loading spinner in summary
 function showSummaryLoading() {
     const summarySection = document.getElementById('summarySection');
@@ -4181,6 +4310,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
                     // On completion callback
                     console.log('[SUMMARY1 DEBUG] ✓✓✓ Streaming COMPLETE for this content block');
                     updateSummaryVisibility();
+                    updateSummaryCriticalStatus();
                 }
             );
         }
@@ -4189,6 +4319,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         if (isTransient) {
             setTimeout(() => {
                 updateSummaryVisibility();
+                updateSummaryCriticalStatus();
             }, 100);
         }
 
@@ -4199,6 +4330,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         // Update visibility even on error
         setTimeout(() => {
             updateSummaryVisibility();
+            updateSummaryCriticalStatus();
         }, 100);
     }
 }
@@ -5856,7 +5988,12 @@ function updateSuggestionActionButtons() {
     if (!review) {
         // Hide suggestion buttons, show standard buttons
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
-        if (analyseBtn) analyseBtn.style.display = 'flex';
+        // Keep analyse button hidden if it has already been used
+        if (analyseBtn && !window.analyseButtonUsed) {
+            analyseBtn.style.display = 'flex';
+        } else if (analyseBtn) {
+            analyseBtn.style.display = 'none';
+        }
         if (resetBtn) resetBtn.style.display = 'flex';
         return;
     }
@@ -8141,6 +8278,8 @@ document.addEventListener('DOMContentLoaded', () => {
         analyseBtn.classList.remove('stop-mode');
         window.isAnalysisRunning = false;
         if (analyseSpinner) analyseSpinner.style.display = 'none';
+        // Keep button hidden after analysis completes
+        analyseBtn.style.display = 'none';
     }
     
     if (analyseBtn) {
@@ -8163,6 +8302,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
                     appendToSummary1(cancelMessage, false);
                     hideSummaryLoading();
+                    // Keep button hidden after cancellation
+                    if (analyseBtn) analyseBtn.style.display = 'none';
                     return;
                 }
                 
@@ -8206,6 +8347,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create new abort controller for this analysis
             window.analysisAbortController = new AbortController();
             transformToStopButton();
+            
+            // Hide the analyse button once analysis starts
+            window.analyseButtonUsed = true;
+            if (analyseBtn) {
+                analyseBtn.style.display = 'none';
+            }
             
             try {
                 // Route to appropriate function based on detected type
@@ -12276,6 +12423,9 @@ function selectAllGuidelines(select) {
     checkboxes.forEach(checkbox => {
         checkbox.checked = select;
     });
+    
+    // Update button text after selection change
+    updateProcessButtonText();
     
     console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all guidelines');
 }
