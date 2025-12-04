@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-28-47-166Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1390,
+  "response_length": 1322,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":2680,\"transcriptPreview\":\"**OBSTETRICS & GYNAECOLOGY CLERKING – SBAR FORMAT**\\n\\n**SITUATION:** \\n- **Patient:** 32F, G2P1 (SVD 2019), BMI 28 \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Obesity In Pregnancy\\\", \\\"relevance\\\": \\\"0.30\\\"}...",
+  "full_data": null
+}

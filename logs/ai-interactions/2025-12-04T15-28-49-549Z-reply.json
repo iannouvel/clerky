@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-28-49-549Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1320,
+  "response_length": 1360,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":2680,\"transcriptPreview\":\"**OBSTETRICS & GYNAECOLOGY CLERKING – SBAR FORMAT**\\n\\n**SITUATION:** \\n- **Patient:** 32F, G2P1 (SVD 2019), BMI 28 \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\", \\\"title\\\": \\\"GTG 2012 - Initial Mx of Chronic Pelvic Pain\\\", \\\"relevanc...",
+  "full_data": null
+}
