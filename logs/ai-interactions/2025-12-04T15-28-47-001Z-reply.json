@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-28-47-001Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 1266,
+  "response_length": 1308,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":2680,\"transcriptPreview\":\"**OBSTETRICS & GYNAECOLOGY CLERKING – SBAR FORMAT**\\n\\n**SITUATION:** \\n- **Patient:** 32F, G2P1 (SVD 2019), BMI 28 \\n- **Presentin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"eshre-guideline-2022-endometriosis-pdf\\\", \\\"title\\\": \\\"ESHRE Guideline - 2022 - Endometriosis\\\", \\\"relevance\\\": \\\"0.85\\\"}...",
+  "full_data": null
+}
