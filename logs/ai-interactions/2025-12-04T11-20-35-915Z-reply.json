@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-20-35-915Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1581,
+  "response_length": 1450,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":792,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 24, Rh-ve\\n\\nIssues:\\nConfirmed anti-D alloimmunisation, requires monitoring for fetal anaemia\\n\\nBackground:\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2018-jauniaux-vasa-praevia-pdf\\\", \\...",
+  "full_data": null
+}
