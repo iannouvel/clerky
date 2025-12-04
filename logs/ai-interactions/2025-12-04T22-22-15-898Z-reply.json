@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T22-22-15-898Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1199,
+  "response_length": 1237,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":1032,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp022-emergency-maternity-admissions-pdf\\\", \\\"title\\\": \\\"MP022 Emergency Maternity Admiss...",
+  "full_data": null
+}
