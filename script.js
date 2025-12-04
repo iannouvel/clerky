@@ -3054,18 +3054,18 @@ function initializeTipTapIntegration() {
 // Show/hide action buttons based on input content
 function updateChatbotButtonVisibility() {
     const editor = window.editors?.userInput;
-    const floatingAnalyseButton = document.getElementById('floatingAnalyseButton');
     const analyseBtn = document.getElementById('analyseBtn');
+    const summarySection = document.getElementById('summarySection');
     
-    if (!editor || !floatingAnalyseButton) return;
+    if (!editor || !summarySection) return;
     
     const content = editor.getText().trim();
-    if (content.length > 0) {
-        floatingAnalyseButton.classList.remove('hidden');
-        // Ensure button is enabled when content exists
-        if (analyseBtn) analyseBtn.disabled = false;
-    } else {
-        floatingAnalyseButton.classList.add('hidden');
+    const hasContent = content.length > 0;
+    
+    // The analyse button visibility is controlled by the summarySection visibility
+    // Just ensure the button is enabled when content exists
+    if (analyseBtn && hasContent) {
+        analyseBtn.disabled = false;
     }
 }
 
