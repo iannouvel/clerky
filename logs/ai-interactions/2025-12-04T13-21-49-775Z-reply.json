@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-21-49-775Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 908,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 32+6, BMI 24, Rh+ve\\n\\nIssues:\\nReduced liquor volume noted on growth scan\\nNo fetal anomalies identified\\n\\nBackground:\\nUncomplicated pregnancy to date\\nAnomaly scan at 20...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 14,\n  \"potentiallyRelevantCount\": 21,\n  \"lessRelevantCount\": 47,\n  \"notRelevantCount\": 215\n}...",
+  "full_data": null
+}
