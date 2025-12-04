@@ -253,8 +253,11 @@ body {
     max-width: 100% !important;
     display: flex;
     flex-direction: column;
-    position: relative; /* For absolute positioning of button row */
+    position: relative; /* For positioning of button row */
     overflow: hidden; /* Contain content */
+    min-height: 0; /* Critical for flex children to shrink */
+    /* Ensure fixed button row stays at bottom */
+    justify-content: flex-start;
 }
 
 /* Ensure two columns take full width */
@@ -1702,14 +1705,19 @@ div.third-column,
     z-index: 1;
 }
 
-/* Summary1 specific: flex-shrink to minimize blank space */
+/* Summary1 specific: ensure it scrolls and stays above fixed button row */
 #summary1 {
-    flex: none !important; /* Don't participate in flex */
-    min-height: 50px !important; /* Minimum visible height */
-    max-height: 70vh !important; /* Don't take more than 70% of viewport */
-    height: fit-content !important; /* Wrap content tightly */
-    overflow-y: auto !important;
-    position: relative !important; /* Normal positioning, not absolute */
+    width: 100% !important;
+    height: 100% !important; /* Fill parent container */
+    overflow-y: auto !important; /* Scroll internally when content exceeds height */
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    /* Ensure bottom content is always visible above fixed button row */
+    padding-bottom: 8px !important; /* Small padding at bottom for readability */
+    min-height: 0 !important; /* Allow shrinking */
+    max-height: 100% !important; /* Respect parent's max-height */
+    position: relative !important; /* Normal positioning */
     z-index: 1 !important; /* Lower than button container */
 }
 
@@ -2955,8 +2963,9 @@ html, body {
     padding-bottom: 0;
     flex: 1;
     min-height: 0;
-    height: auto;
     overflow: hidden;
+    /* Ensure layout respects fixed button row at bottom */
+    margin-bottom: 0;
 }
 
 .chatbot-input-section {
@@ -2969,6 +2978,7 @@ html, body {
     min-height: 150px; /* Reduced minimum height */
     position: relative;
     overflow: hidden; /* Let internal content handle scrolling */
+    order: 1; /* Ensure input is at top */
 }
 
 /* Floating buttons in top right of input section */
@@ -3105,15 +3115,17 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 0 1 auto; /* Allow shrinking */
+    flex: 0 1 auto; /* Allow shrinking, don't grow */
     height: auto; /* Auto height based on content */
-    max-height: 45vh; /* Cap height */
+    max-height: calc(50vh - 80px); /* Cap height accounting for fixed button row (~80px) */
     min-height: 0;
     opacity: 0.7;
     transition: opacity 0.3s ease;
-    overflow: visible; /* Allow button container to be visible */
+    overflow: hidden; /* Contain scrolling to transcript-pane */
     position: relative; /* Ensure proper stacking context */
     padding-right: 20px; /* Prevent scrollbar from overlaying content */
+    order: 2; /* Ensure summary is below input */
+    margin-bottom: 0; /* No bottom margin to stay above fixed button row */
 }
 
 .chatbot-summary-section.hidden {
@@ -3136,12 +3148,16 @@ html, body {
     background: white;
     border: none;
     border-radius: 8px;
-    overflow-y: auto; /* Always scrollable */
+    overflow-y: auto; /* Always scrollable - critical for long content */
+    overflow-x: hidden; /* Prevent horizontal scroll */
     box-sizing: border-box;
     position: relative;
-    max-height: 100%;
-    height: auto;
+    max-height: 100%; /* Respect parent's max-height */
+    height: 100%; /* Fill parent container */
     min-height: 0;
+    /* Ensure content doesn't overflow below */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Zero out all spacing within summary1 for maximum visibility */
@@ -3511,6 +3527,15 @@ html, body {
 }
 .nav-btn.warning:hover {
     background-color: #d97706;
+}
+
+#suggestionSkipBtn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+#suggestionSkipBtn:hover {
+    background-color: #138496;
 }
 
 .nav-btn.danger-outline {
