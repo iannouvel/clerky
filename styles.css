@@ -3311,22 +3311,27 @@ html, body {
 
 /* Selection buttons group (appears when guideline selection is active) */
 .selection-buttons-group {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 10px;
     margin-left: 15px;
     flex-wrap: wrap;
+    visibility: visible !important;
 }
 
 .selection-buttons-group .selection-btn {
     padding: 8px 16px;
-    border: 1px solid #ddd;
+    border: 2px solid #00b894 !important;
     border-radius: 4px;
-    background: white;
+    background: white !important;
+    color: #2c3e50 !important;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 500;
     transition: all 0.2s;
     white-space: nowrap;
+    display: inline-flex !important;
+    visibility: visible !important;
 }
 
 .selection-buttons-group .selection-btn:hover {
@@ -3339,16 +3344,17 @@ html, body {
     padding: 8px 16px;
     border: 1px solid transparent;
     border-radius: 4px;
-    background: var(--accent-color);
-    color: white;
+    background: var(--accent-color) !important;
+    color: white !important;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
     transition: all 0.2s;
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 6px;
     white-space: nowrap;
+    visibility: visible !important;
 }
 
 .selection-buttons-group .action-btn:hover {
