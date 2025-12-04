@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T14-04-11-521Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1504,
+  "response_length": 1757,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":1876,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32F, G2P1 (SVD 2019), presents to **Gynae Clinic** with...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-...",
+  "full_data": null
+}
