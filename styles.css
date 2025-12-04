@@ -3089,6 +3089,7 @@ html, body {
     transition: opacity 0.3s ease;
     overflow: visible; /* Allow button container to be visible */
     position: relative; /* Ensure proper stacking context */
+    padding-right: 20px; /* Prevent scrollbar from overlaying content */
 }
 
 .chatbot-summary-section.hidden {
@@ -3250,7 +3251,8 @@ html, body {
 .summary-analyse-button-container {
     position: relative;
     width: 100%;
-    padding: 12px 20px 12px 8px; /* Extra right padding to clear scrollbar */
+    padding: 12px 8px; /* Standard padding */
+    padding-right: 30px; /* Extra right padding to clear scrollbar */
     background: transparent;
     display: flex;
     justify-content: flex-start;
@@ -3260,6 +3262,7 @@ html, body {
     gap: 10px; /* Space between Analyse button and selection buttons */
     flex-shrink: 0; /* Don't shrink - always show */
     min-height: 50px; /* Ensure minimum height for buttons */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 /* Analyse button styling - always visible */
@@ -3316,6 +3319,9 @@ html, body {
     margin-left: 15px;
     flex-wrap: wrap;
     visibility: visible !important;
+    background: rgba(255, 0, 0, 0.1); /* Temporary debug background */
+    padding: 4px; /* Make it visible even if buttons are invisible */
+    border: 2px solid red; /* Temporary debug border */
 }
 
 .selection-buttons-group .selection-btn {
