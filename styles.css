@@ -1707,6 +1707,8 @@ div.third-column,
     max-height: 70vh !important; /* Don't take more than 70% of viewport */
     height: fit-content !important; /* Wrap content tightly */
     overflow-y: auto !important;
+    position: relative !important; /* Normal positioning, not absolute */
+    z-index: 1 !important; /* Lower than button container */
 }
 
 /* Removed hover effects to prevent flickering */
@@ -3086,6 +3088,7 @@ html, body {
     opacity: 0.7;
     transition: opacity 0.3s ease;
     overflow: visible; /* Allow content to determine height */
+    position: relative; /* Ensure proper stacking context */
 }
 
 .chatbot-summary-section.hidden {
@@ -3253,9 +3256,11 @@ html, body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    z-index: 50;
+    z-index: 100; /* Higher z-index to ensure visibility */
     flex-wrap: wrap; /* Allow wrapping if needed */
     gap: 10px; /* Space between Analyse button and selection buttons */
+    flex-shrink: 0; /* Don't shrink - always show */
+    min-height: 50px; /* Ensure minimum height for buttons */
 }
 
 /* Analyse button styling - always visible */
