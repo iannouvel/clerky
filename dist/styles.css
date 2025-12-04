@@ -2955,8 +2955,9 @@ html, body {
     padding-bottom: 0;
     flex: 1;
     min-height: 0;
-    height: auto;
     overflow: hidden;
+    /* Ensure layout respects fixed button row at bottom */
+    margin-bottom: 0;
 }
 
 .chatbot-input-section {
@@ -2969,6 +2970,7 @@ html, body {
     min-height: 150px; /* Reduced minimum height */
     position: relative;
     overflow: hidden; /* Let internal content handle scrolling */
+    order: 1; /* Ensure input is at top */
 }
 
 /* Floating buttons in top right of input section */
@@ -3105,15 +3107,17 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 0 1 auto; /* Allow shrinking */
+    flex: 0 1 auto; /* Allow shrinking, don't grow */
     height: auto; /* Auto height based on content */
-    max-height: 45vh; /* Cap height */
+    max-height: calc(50vh - 80px); /* Cap height accounting for fixed button row (~80px) */
     min-height: 0;
     opacity: 0.7;
     transition: opacity 0.3s ease;
-    overflow: visible; /* Allow button container to be visible */
+    overflow: hidden; /* Contain scrolling to transcript-pane */
     position: relative; /* Ensure proper stacking context */
     padding-right: 20px; /* Prevent scrollbar from overlaying content */
+    order: 2; /* Ensure summary is below input */
+    margin-bottom: 0; /* No bottom margin to stay above fixed button row */
 }
 
 .chatbot-summary-section.hidden {
@@ -3511,6 +3515,15 @@ html, body {
 }
 .nav-btn.warning:hover {
     background-color: #d97706;
+}
+
+#suggestionSkipBtn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+#suggestionSkipBtn:hover {
+    background-color: #138496;
 }
 
 .nav-btn.danger-outline {
