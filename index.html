@@ -573,6 +573,36 @@
                                 </div>
                                 <!-- Content will be inserted here -->
                             </div>
+                            <!-- Clinical issues test panel (shown when Test is clicked) -->
+                            <div id="clinicalIssuesPanel" class="clinical-issues-selector hidden">
+                                <h3>⚡ Load Clinical Clerking</h3>
+                                <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
+                                
+                                <div class="issue-category">
+                                    <h4>Clinical Issues</h4>
+                                    <select id="clinical-issues-dropdown" class="clinical-dropdown">
+                                        <option value="">Select a clinical issue...</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
+                                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
+                                        <span id="generate-text">Load Clerking</span>
+                                    </button>
+                                    <button id="random-issue-btn" class="nav-btn secondary">
+                                        <span id="random-spinner" class="spinner" style="display: none;"></span>
+                                        <span id="random-text">Random Issue</span>
+                                    </button>
+                                    <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
+                                        <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
+                                        <span id="regenerate-text">Regenerate Clerking</span>
+                                    </button>
+                                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
+                                </div>
+                                
+                                <div id="generation-status" class="generation-status" style="display: none;"></div>
+                            </div>
                             <!-- Analyse button at bottom-left of summary1 -->
                             <div class="summary-analyse-button-container">
                                 <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
