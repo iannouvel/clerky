@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-32-35-334Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 4065,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"**Professional Medical Clerking – SBAR Format**\\n\\n---\\n\\n### **SITUATION:** \\n**Patient Demographics:** \\n- 32-year-old **G3P1+1** (1 SVD, 1 TOP, 1 miscarriage) \\n- Presented to **GYN ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 3,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 38,\n  \"notRelevantCount\": 249\n}...",
+  "full_data": null
+}
