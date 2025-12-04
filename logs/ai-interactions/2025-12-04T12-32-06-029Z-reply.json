@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T12-32-06-029Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1316,
+  "response_length": 1300,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":2922,\"transcriptPreview\":\"Of course. Here is a medical clerking for the provided scenario, written in SBAR format using appropriate UK medical terminology an...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-endometrial-hyperplasia-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Endometrial Hyperplasia\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"pote...",
+  "full_data": null
+}
