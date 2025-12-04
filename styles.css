@@ -3244,22 +3244,19 @@ html, body {
 
 /* ==================== SUMMARY ANALYSE BUTTON ==================== */
 
-/* Container for Analyse button at bottom of summary1 */
+/* Container for Analyse button just under summary1 */
 .summary-analyse-button-container {
-    position: sticky;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    padding: 8px;
-    background: linear-gradient(to top, rgba(255,255,255,0.98) 80%, rgba(255,255,255,0) 100%);
-    backdrop-filter: blur(4px);
-    border-top: 1px solid rgba(0, 184, 148, 0.1);
+    padding: 12px 8px;
+    background: transparent;
     display: flex;
     justify-content: flex-start;
-    z-index: 100;
+    align-items: center;
+    z-index: 50;
 }
 
-/* Analyse button styling */
+/* Analyse button styling - always visible */
 .summary-analyse-btn {
     display: flex;
     align-items: center;
@@ -3274,6 +3271,8 @@ html, body {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 184, 148, 0.3);
+    opacity: 1;
+    visibility: visible;
 }
 
 .summary-analyse-btn:hover:not(:disabled) {
