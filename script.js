@@ -5810,6 +5810,51 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
     debouncedSaveState(); // Save state after displaying suggestions
 }
 
+// Update fixed button row state for suggestion review
+function updateSuggestionActionButtons() {
+    const review = window.currentSuggestionReview;
+    const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const clerkyButtonsGroup = document.getElementById('clerkyButtonsGroup');
+
+    if (!review) {
+        // Hide suggestion buttons, show standard buttons
+        if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
+        if (analyseBtn) analyseBtn.style.display = 'flex';
+        if (resetBtn) resetBtn.style.display = 'flex';
+        return;
+    }
+
+    // Show suggestion buttons, hide standard buttons
+    if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'flex';
+    if (analyseBtn) analyseBtn.style.display = 'none';
+    if (resetBtn) resetBtn.style.display = 'none';
+    if (clerkyButtonsGroup) clerkyButtonsGroup.style.display = 'none'; // Hide clerky buttons if present
+
+    // Update specific buttons
+    const prevBtn = document.getElementById('suggestionPrevBtn');
+    if (prevBtn) {
+        prevBtn.style.display = review.currentIndex > 0 ? 'flex' : 'none';
+        prevBtn.onclick = () => navigateSuggestion(-1);
+    }
+
+    const acceptBtn = document.getElementById('suggestionAcceptBtn');
+    if (acceptBtn) acceptBtn.onclick = () => handleCurrentSuggestionAction('accept');
+
+    const rejectBtn = document.getElementById('suggestionRejectBtn');
+    if (rejectBtn) rejectBtn.onclick = () => handleCurrentSuggestionAction('reject');
+
+    const modifyBtn = document.getElementById('suggestionModifyBtn');
+    if (modifyBtn) modifyBtn.onclick = () => showModifySection();
+
+    const skipBtn = document.getElementById('suggestionSkipBtn');
+    if (skipBtn) skipBtn.onclick = () => handleCurrentSuggestionAction('skip');
+
+    const cancelBtn = document.getElementById('suggestionCancelBtn');
+    if (cancelBtn) cancelBtn.onclick = () => cancelSuggestionReview();
+}
+
 // Display the current suggestion being reviewed
 async function showCurrentSuggestion() {
     const review = window.currentSuggestionReview;
@@ -5822,6 +5867,9 @@ async function showCurrentSuggestion() {
         completeSuggestionReview();
         return;
     }
+
+    // Update buttons in fixed row
+    updateSuggestionActionButtons();
 
     const suggestion = suggestions[currentIndex];
     const progressText = `${currentIndex + 1} of ${totalSuggestions}`;
@@ -5870,14 +5918,7 @@ async function showCurrentSuggestion() {
                     <button onclick="hideModifySection()" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px;">❌ Cancel</button>
                 </div>
             </div>
-            <div class="suggestion-navigation" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                ${currentIndex > 0 ? `<button onclick="navigateSuggestion(-1)" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">⬅ Previous</button>` : ''}
-                <button onclick="handleCurrentSuggestionAction('accept')" style="background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">✅ Accept</button>
-                <button onclick="handleCurrentSuggestionAction('reject')" style="background: #dc2626; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">❌ Reject</button>
-                <button onclick="showModifySection()" style="background: #f59e0b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">✏️ Modify</button>
-                <button onclick="handleCurrentSuggestionAction('skip')" style="background: #64748b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">⏭ Skip</button>
-                <button onclick="cancelSuggestionReview()" style="background: #991b1b; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">❌ Cancel All</button>
-            </div>
+            <!-- Navigation buttons moved to fixed bottom row -->
             <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalSuggestions - currentIndex - 1} remaining</div>
         </div>
     `;
@@ -6101,6 +6142,9 @@ async function completeSuggestionReview() {
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
     window.currentSuggestionReview = null;
+
+    // Update buttons state
+    updateSuggestionActionButtons();
     
     // Check if we're in sequential processing mode and need to move to next guideline
     if (window.sequentialProcessingActive) {
@@ -6192,6 +6236,9 @@ window.cancelSuggestionReview = function() {
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
     window.currentSuggestionReview = null;
+
+    // Update buttons state
+    updateSuggestionActionButtons();
 };
 
 // Get category icon for suggestion type
