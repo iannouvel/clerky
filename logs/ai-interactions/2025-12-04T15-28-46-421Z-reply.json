@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-28-46-421Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1244,
+  "response_length": 1168,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":2680,\"transcriptPreview\":\"**OBSTETRICS & GYNAECOLOGY CLERKING – SBAR FORMAT**\\n\\n**SITUATION:** \\n- **Patient:** 32F, G2P1 (SVD 2019), BMI 28 \\n- **Presenting...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg12018-ectopic-pregnancy-guideline-pdf\\\", \\\"title\\\": \\\"Ectopic Pregnancy Guideline\\\", \\\"releva...",
+  "full_data": null
+}
