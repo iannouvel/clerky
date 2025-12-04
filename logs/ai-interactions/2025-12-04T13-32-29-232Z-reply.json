@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-32-29-232Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1689,
+  "response_length": 1814,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":3888,\"transcriptPreview\":\"**Professional Medical Clerking – SBAR Format**\\n\\n---\\n\\n### **SITUATION:** \\n**Patient Demographics:** \\n- 32-year-old **G3P1+1** ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\\\",\\n      \\\"title\\\": \\\"Outpatient Hysteroscopy\\\",\\n      \\\"relevan...",
+  "full_data": null
+}
