@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T11-36-01-393Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1582,
+  "response_length": 1541,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":3833,\"transcriptPreview\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf\\\", \\\"title\\\": \\\"Urogynaecology Specialist Nurse-Led Clinic\\\", \\\"re...",
+  "full_data": null
+}
