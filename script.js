@@ -2932,6 +2932,12 @@ function updateUndoRedoButtons() {
 
 // Initialize TipTap editor integration when ready
 function initializeTipTapIntegration() {
+    // Prevent multiple initializations
+    if (window.tiptapIntegrationInitialized) {
+        console.log('[TIPTAP] Integration already initialized, skipping');
+        return;
+    }
+    
     const editor = window.editors?.userInput;
     if (!editor) {
         console.warn('[TIPTAP] Editor not ready, waiting for tiptapReady event');
@@ -2939,6 +2945,7 @@ function initializeTipTapIntegration() {
     }
     
     console.log('[TIPTAP] Initializing integration');
+    window.tiptapIntegrationInitialized = true;
     
     // Initialize history with empty content
     pushToHistory('');
