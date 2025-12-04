@@ -253,8 +253,11 @@ body {
     max-width: 100% !important;
     display: flex;
     flex-direction: column;
-    position: relative; /* For absolute positioning of button row */
+    position: relative; /* For positioning of button row */
     overflow: hidden; /* Contain content */
+    min-height: 0; /* Critical for flex children to shrink */
+    /* Ensure fixed button row stays at bottom */
+    justify-content: flex-start;
 }
 
 /* Ensure two columns take full width */
@@ -1702,14 +1705,19 @@ div.third-column,
     z-index: 1;
 }
 
-/* Summary1 specific: flex-shrink to minimize blank space */
+/* Summary1 specific: ensure it scrolls and stays above fixed button row */
 #summary1 {
-    flex: none !important; /* Don't participate in flex */
-    min-height: 50px !important; /* Minimum visible height */
-    max-height: 70vh !important; /* Don't take more than 70% of viewport */
-    height: fit-content !important; /* Wrap content tightly */
-    overflow-y: auto !important;
-    position: relative !important; /* Normal positioning, not absolute */
+    width: 100% !important;
+    height: 100% !important; /* Fill parent container */
+    overflow-y: auto !important; /* Scroll internally when content exceeds height */
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    /* Ensure bottom content is always visible above fixed button row */
+    padding-bottom: 8px !important; /* Small padding at bottom for readability */
+    min-height: 0 !important; /* Allow shrinking */
+    max-height: 100% !important; /* Respect parent's max-height */
+    position: relative !important; /* Normal positioning */
     z-index: 1 !important; /* Lower than button container */
 }
 
@@ -3140,12 +3148,16 @@ html, body {
     background: white;
     border: none;
     border-radius: 8px;
-    overflow-y: auto; /* Always scrollable */
+    overflow-y: auto; /* Always scrollable - critical for long content */
+    overflow-x: hidden; /* Prevent horizontal scroll */
     box-sizing: border-box;
     position: relative;
-    max-height: 100%;
-    height: auto;
+    max-height: 100%; /* Respect parent's max-height */
+    height: 100%; /* Fill parent container */
     min-height: 0;
+    /* Ensure content doesn't overflow below */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Zero out all spacing within summary1 for maximum visibility */
