@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T22-22-16-473Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 1440,
+  "response_length": 1417,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/38\",\"transcriptLength\":1032,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nhs-2023-saving-babies-lives-care-bundle-v3-pdf\\\", \\\"title\\\": \\\"NHS - 2023 - Saving Babies Lives Care Bundle v3\\\", \\\"relevance\\...",
+  "full_data": null
+}
