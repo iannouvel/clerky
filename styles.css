@@ -1708,15 +1708,15 @@ div.third-column,
 /* Summary1 specific: ensure it scrolls and stays above fixed button row */
 #summary1 {
     width: 100% !important;
-    height: 100% !important; /* Fill parent container */
-    overflow-y: auto !important; /* Scroll internally when content exceeds height */
+    height: auto !important; /* Fit content, don't fill parent */
+    overflow-y: visible !important; /* Let content determine size */
     overflow-x: hidden !important;
     box-sizing: border-box !important;
     display: block !important;
     /* Ensure bottom content is always visible above fixed button row */
     padding-bottom: 8px !important; /* Small padding at bottom for readability */
     min-height: 0 !important; /* Allow shrinking */
-    max-height: 100% !important; /* Respect parent's max-height */
+    max-height: none !important; /* No max height - fit content */
     position: relative !important; /* Normal positioning */
     z-index: 1 !important; /* Lower than button container */
 }
@@ -3139,13 +3139,10 @@ html, body {
     opacity: 0.6;
 }
 
-/* Critical content mode - expand summary, shrink input */
+/* Critical content mode - just visual indicator, same sizing */
 .chatbot-summary-section.critical {
-    flex: 1 1 auto; /* Allow growing */
-    max-height: 60vh; /* Increase max height */
     opacity: 1; /* Full opacity for important content */
     border: 2px solid #3B82F6; /* Visual indicator */
-    transition: all 0.3s ease;
 }
 
 .chatbot-summary-section .transcript-pane {
@@ -3156,22 +3153,15 @@ html, body {
     background: white;
     border: none;
     border-radius: 8px;
-    overflow-y: visible; /* Let content determine size by default */
+    overflow-y: visible; /* Let content determine size */
     overflow-x: hidden; /* Prevent horizontal scroll */
     box-sizing: border-box;
     position: relative;
-    max-height: none; /* No max height by default */
+    max-height: none; /* No max height - always fit content */
     height: auto; /* Auto height based on content */
     min-height: 0;
-    /* Ensure content doesn't overflow below */
     display: flex;
     flex-direction: column;
-}
-
-/* When critical, allow scrolling for long content */
-.chatbot-summary-section.critical .transcript-pane {
-    overflow-y: auto; /* Enable scrolling in critical mode */
-    max-height: 60vh; /* Cap at 60vh in critical mode */
 }
 
 /* Zero out all spacing within summary1 for maximum visibility */
