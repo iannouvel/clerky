@@ -3360,6 +3360,59 @@ html, body {
     font-size: 16px;
 }
 
+/* Clerking buttons group */
+.clerking-buttons-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.clerking-buttons-group .nav-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.clerking-buttons-group .nav-btn.primary {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.clerking-buttons-group .nav-btn.primary:hover:not(:disabled) {
+    background: #00a085;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 184, 148, 0.3);
+}
+
+.clerking-buttons-group .nav-btn.secondary {
+    background: white;
+    border: 1px solid #ddd;
+    color: #2c3e50;
+}
+
+.clerking-buttons-group .nav-btn.secondary:hover:not(:disabled) {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    transform: translateY(-1px);
+}
+
+.clerking-buttons-group .nav-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 /* ==================== END SUMMARY ANALYSE BUTTON ==================== */
 
 /* Transient messages (temporary progress messages) */
