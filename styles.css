@@ -3242,6 +3242,69 @@ html, body {
 
 /* ==================== END STREAMING ANIMATIONS ==================== */
 
+/* ==================== SUMMARY ANALYSE BUTTON ==================== */
+
+/* Container for Analyse button at bottom of summary1 */
+.summary-analyse-button-container {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    background: linear-gradient(to top, rgba(255,255,255,0.98) 80%, rgba(255,255,255,0) 100%);
+    backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(0, 184, 148, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    z-index: 100;
+}
+
+/* Analyse button styling */
+.summary-analyse-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 184, 148, 0.3);
+}
+
+.summary-analyse-btn:hover:not(:disabled) {
+    background: #00a085;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 184, 148, 0.4);
+}
+
+.summary-analyse-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Spinner icon animation */
+.spinner-icon {
+    display: inline-block;
+    font-size: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==================== END SUMMARY ANALYSE BUTTON ==================== */
+
 /* Transient messages (temporary progress messages) */
 .transient-message {
     opacity: 0.7;

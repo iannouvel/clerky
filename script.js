@@ -3619,6 +3619,50 @@ function removeTransientMessages() {
     });
 }
 
+// ==================== ANALYSE BUTTON PROGRESS INDICATOR ====================
+
+function updateAnalyseButtonProgress(stepText = null, isActive = false) {
+    const analyseBtn = document.getElementById('analyseBtn');
+    const analyseSpinner = document.getElementById('analyseSpinner');
+    const btnIcon = analyseBtn?.querySelector('.btn-icon');
+    const btnText = analyseBtn?.querySelector('.btn-text');
+    
+    if (!analyseBtn) {
+        console.warn('[PROGRESS] Analyse button not found');
+        return;
+    }
+    
+    console.log('[PROGRESS] Updating analyse button:', { stepText, isActive });
+    
+    if (isActive && stepText) {
+        // Show progress with spinner
+        if (analyseSpinner) analyseSpinner.style.display = 'inline-block';
+        if (btnIcon) btnIcon.style.display = 'none';
+        if (btnText) btnText.textContent = stepText;
+        analyseBtn.disabled = true;
+    } else if (stepText) {
+        // Show completion message briefly, then reset
+        if (analyseSpinner) analyseSpinner.style.display = 'none';
+        if (btnIcon) btnIcon.style.display = 'inline';
+        if (btnText) btnText.textContent = stepText;
+        analyseBtn.disabled = false;
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+            if (btnIcon) btnIcon.style.display = 'inline';
+            if (btnText) btnText.textContent = 'Analyse';
+        }, 2000);
+    } else {
+        // Reset to default state
+        if (analyseSpinner) analyseSpinner.style.display = 'none';
+        if (btnIcon) btnIcon.style.display = 'inline';
+        if (btnText) btnText.textContent = 'Analyse';
+        analyseBtn.disabled = false;
+    }
+}
+
+// ==================== END ANALYSE BUTTON PROGRESS ====================
+
 // ==================== STREAMING ENGINE FOR SUMMARY1 ====================
 // Modern ChatGPT-style streaming text reveal with intelligent pausing
 
@@ -5590,6 +5634,7 @@ async function completeSuggestionReview() {
             // All guidelines processed
             console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
             window.sequentialProcessingActive = false;
+            updateAnalyseButtonProgress('All Guidelines Complete!', false);
             
             // Remove any remaining transient messages (progress indicators, processing status, etc.)
             removeTransientMessages();
@@ -9715,6 +9760,7 @@ async function processWorkflow() {
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
+        updateAnalyseButtonProgress('Checking Guidelines Scope...', true);
         
         let scopeSelection;
         
@@ -9782,6 +9828,7 @@ async function processWorkflow() {
         appendToSummary1(scopeMessage, false, true); // Transient
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
+        updateAnalyseButtonProgress('Finding Relevant Guidelines...', true);
         
         // Step 2: Find Relevant Guidelines (with scope filtering)
         const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
@@ -9801,6 +9848,7 @@ async function processWorkflow() {
             }
             
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
+            updateAnalyseButtonProgress('Guidelines Found', false);
             
             const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
             appendToSummary1(step1Complete, false, true); // Transient
@@ -9827,6 +9875,7 @@ async function processWorkflow() {
         }
 
         console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
+        updateAnalyseButtonProgress('Select Guidelines to Process', false);
         
         // Step 3: Show Guideline Selection Interface
         const step2Status = `## Step 3: Select Guidelines to Process\n\n` +
@@ -11532,6 +11581,7 @@ async function processSelectedGuidelines(event) {
         button.innerHTML = '⏳ Processing...';
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
+        updateAnalyseButtonProgress(`Processing ${selectedGuidelineIds.length} Guidelines...`, true);
 
         // Remove the guideline selection interface (it's permanent, not transient)
         const guidelineInterface = document.querySelector('.guideline-selection-interface');
@@ -11726,6 +11776,9 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const displayName = getGuidelineDisplayName(guidelineId, targetGuideline, guidelineData);
 
     console.log(`[DEBUG] Processing guideline: ${displayName}`);
+    
+    // Update progress button
+    updateAnalyseButtonProgress(`Processing Guideline ${stepNumber}/${totalSteps}`, true);
 
     const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
     appendToSummary1(analyzeMessage, false, true); // Transient
