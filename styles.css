@@ -3082,9 +3082,9 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 0 0 auto; /* Strict content-based sizing, no flex growth/shrink */
-    min-height: 100px; /* Minimum height to ensure button container is visible */
-    max-height: 60vh; /* Strict cap - don't push buttons off screen */
+    flex: 0 0 auto; /* No flex growth or shrink */
+    height: auto; /* Auto height based on content */
+    max-height: 40vh !important; /* Very strict cap */
     opacity: 0.7;
     transition: opacity 0.3s ease;
     overflow: visible; /* Allow button container to be visible */
@@ -3105,18 +3105,19 @@ html, body {
 }
 
 .chatbot-summary-section .transcript-pane {
-    flex: 0 1 auto; /* Don't grow, allow shrink */
+    flex: 0 0 auto; /* No flex grow or shrink */
     padding: 6px; /* Minimal padding for tighter layout */
     font-size: calc(1em - 2px);
     line-height: 1.3; /* Slightly increased for readability while keeping compact */
     background: white;
     border: none;
     border-radius: 8px;
-    overflow-y: auto;
+    overflow-y: auto; /* Always scrollable */
     box-sizing: border-box;
     position: relative;
-    max-height: 50vh; /* Strict limit - don't exceed 50vh */
-    min-height: 0; /* Allow shrinking below content size */
+    max-height: 30vh !important; /* Strict 30vh limit */
+    height: 30vh; /* Fixed height */
+    min-height: 30vh; /* Force fixed height */
 }
 
 /* Zero out all spacing within summary1 for maximum visibility */
