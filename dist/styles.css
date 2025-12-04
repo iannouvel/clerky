@@ -3123,7 +3123,6 @@ html, body {
     transition: opacity 0.3s ease;
     overflow: hidden; /* Contain scrolling to transcript-pane */
     position: relative; /* Ensure proper stacking context */
-    padding-right: 20px; /* Prevent scrollbar from overlaying content */
     order: 2; /* Ensure summary is below input */
     margin-bottom: 0; /* No bottom margin to stay above fixed button row */
 }
