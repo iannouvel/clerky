@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-05-01-781Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1062,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 26+2, BMI 24, Rh+ve\\n\\nIssues:\\nKnown bicornuate uterus on pre-pregnancy MRI\\nCurrent presentation with persistent lower abdominal discomfort and tightening\\n\\nBackground:\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 17,\n  \"potentiallyRelevantCount\": 38,\n  \"lessRelevantCount\": 64,\n  \"notRelevantCount\": 178\n}...",
+  "full_data": null
+}
