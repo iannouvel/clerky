@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T14-04-10-730Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 1273,
+  "response_length": 1523,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":1876,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32F, G2P1 (SVD 2019), presents to **Gynae Clinic** wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2024-endometriosis-pdf\\\",\\n      \\\"title\\\": \\\"NICE Guidance - 2024 - Endomet...",
+  "full_data": null
+}
