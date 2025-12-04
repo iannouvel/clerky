@@ -3504,6 +3504,16 @@ html, body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.suggestion-actions-group .nav-btn.secondary {
+    background-color: #6c757d;
+    color: white;
+    border: 1px solid #5a6268;
+}
+
+.suggestion-actions-group .nav-btn.secondary:hover {
+    background-color: #5a6268;
+}
+
 .nav-btn.success {
     background-color: #16a34a;
     color: white;
