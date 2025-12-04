@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-04-54-054Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1323,
+  "response_length": 1575,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":964,\"transcriptPreview\":\"28yo, G1P0, 26+2, BMI 24, Rh+ve\\n\\nIssues:\\nKnown bicornuate uterus on pre-pregnancy MRI\\nCurrent presentation with persistent lower...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\",\\n     ...",
+  "full_data": null
+}
