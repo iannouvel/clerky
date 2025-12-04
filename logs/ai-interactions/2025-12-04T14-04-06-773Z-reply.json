@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T14-04-06-773Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 1245,
+  "response_length": 1162,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":1876,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32F, G2P1 (SVD 2019), presents to **Gynae Clinic** wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg14004-miscarriage-guideline-pdf\\\", \\\"title\\\": \\\"Miscarriage Guideline\\\", \\\"relevance\\\": \\\"0.4...",
+  "full_data": null
+}
