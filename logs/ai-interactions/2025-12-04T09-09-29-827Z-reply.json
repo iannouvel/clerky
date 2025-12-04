@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-09-29-827Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1342,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":3608,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"sensitive-disposal-of-fetal-remains-under-24-weeks-pdf\\\", \\\"title\\\": \\\"Sensitive Disposal of Fe...",
+  "full_data": null
+}
