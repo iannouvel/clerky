@@ -2917,12 +2917,30 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Prevent scroll bounce */
 }
 
-#mainContent, .container {
-    min-height: 100vh;
+#mainContent {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    /* Only apply min-height if it's a top-level container, not nested */
+}
+
+/* Override for mainSection to ensure it fits within flex parent */
+#mainSection.container {
+    min-height: 0;
+    flex: 1;
+    height: auto;
+    overflow: hidden;
 }
 
 /* Chatbot-style single column layout */
@@ -2934,9 +2952,11 @@ html, body {
     margin: 0;
     gap: 16px;
     padding-top: 8px;
-    padding-bottom: 80px; /* Space for fixed button row */
-    height: calc(100vh - 120px); /* Full height minus top bar and margins */
-    overflow: hidden; /* Let sections handle their own scrolling */
+    padding-bottom: 0;
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    overflow: hidden;
 }
 
 .chatbot-input-section {
@@ -2946,7 +2966,7 @@ html, body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto; /* Grow to fill remaining space after summary */
-    min-height: 200px; /* Minimum height for input */
+    min-height: 150px; /* Reduced minimum height */
     position: relative;
     overflow: hidden; /* Let internal content handle scrolling */
 }
@@ -3085,9 +3105,10 @@ html, body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    flex: 0 0 auto; /* No flex growth or shrink */
+    flex: 0 1 auto; /* Allow shrinking */
     height: auto; /* Auto height based on content */
-    max-height: 40vh !important; /* Very strict cap */
+    max-height: 45vh; /* Cap height */
+    min-height: 0;
     opacity: 0.7;
     transition: opacity 0.3s ease;
     overflow: visible; /* Allow button container to be visible */
@@ -3108,7 +3129,7 @@ html, body {
 }
 
 .chatbot-summary-section .transcript-pane {
-    flex: 0 0 auto; /* No flex grow or shrink */
+    flex: 1 1 auto; /* Flex within summary section */
     padding: 6px; /* Minimal padding for tighter layout */
     font-size: calc(1em - 2px);
     line-height: 1.3; /* Slightly increased for readability while keeping compact */
@@ -3118,9 +3139,9 @@ html, body {
     overflow-y: auto; /* Always scrollable */
     box-sizing: border-box;
     position: relative;
-    max-height: 30vh !important; /* Strict 30vh limit */
-    height: 30vh; /* Fixed height */
-    min-height: 30vh; /* Force fixed height */
+    max-height: 100%;
+    height: auto;
+    min-height: 0;
 }
 
 /* Zero out all spacing within summary1 for maximum visibility */
@@ -3253,8 +3274,7 @@ html, body {
 
 /* Fixed button row at bottom of mainContentArea - always visible */
 .fixed-button-row {
-    position: sticky;
-    bottom: 0;
+    position: relative;
     width: 100%;
     padding: 12px 20px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
@@ -3268,7 +3288,7 @@ html, body {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow above for separation */
     box-sizing: border-box;
     border-top: 1px solid #e0e0e0;
-    margin-top: auto; /* Push to bottom of flex container */
+    flex-shrink: 0;
 }
 
 /* Analyse button styling - always visible */
@@ -3679,13 +3699,14 @@ html, body {
         padding-top: 8px;
         margin: 0;
         gap: 12px;
-        height: calc(100vh - 100px);
-        overflow: hidden; /* Let sections handle their own scrolling */
+        height: auto;
+        flex: 1;
+        overflow: hidden;
     }
     
     .chatbot-input-section {
-        flex: 1 1 0; /* Allow flexing to share space */
-        min-height: 200px;
+        flex: 1 1 auto; /* Allow flexing to share space */
+        min-height: 150px;
     }
     
     .floating-input-buttons {
@@ -3720,8 +3741,9 @@ html, body {
     }
     
     .chatbot-summary-section {
-        flex: 1 1 0; /* Allow flexing to share space */
-        min-height: 150px;
+        flex: 0 1 auto; /* Allow shrinking, don't force equal split */
+        min-height: 0;
+        max-height: 40vh;
     }
     
     .chatbot-action-buttons {
