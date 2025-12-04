@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-32-24-787Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 1267,
+  "response_length": 1248,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":3888,\"transcriptPreview\":\"**Professional Medical Clerking – SBAR Format**\\n\\n---\\n\\n### **SITUATION:** \\n**Patient Demographics:** \\n- 32-year-old **G3P1+1**...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"eshre-guideline-2022-endometriosis-pdf\\\", \\\"title\\\": \\\"ESHRE Guideline...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-32-25-629Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1330,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":3888,\"transcriptPreview\":\"**Professional Medical Clerking – SBAR Format**\\n\\n---\\n\\n### **SITUATION:** \\n**Patient Demographics:** \\n- 32-year-old **G3P1+1** ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"cg11103-recovery-post-regional-and-ga-anaesthesia-pdf\\\", \\\"title\\\": \\\"...",
+  "full_data": null
+}
