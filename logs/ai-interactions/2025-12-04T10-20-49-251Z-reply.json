@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T10-20-49-251Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1347,
+  "response_length": 1384,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on se...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"sop001-consultant-ward-round-east-uhs-maternity-pdf\\\", \\\"title\\\": \\\"SOP001 Consultant War...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T10-20-48-264Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1247,
+  "response_length": 1231,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on ser...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\\\", \\\"title\\\": \\\"Management of Hypertensive disorders of preg...",
+  "full_data": null
+}
