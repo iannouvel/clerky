@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T12-15-20-997Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2214,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vaginal discharge ++ 5/7, dysuria, suprapubic discomfort. \\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 11,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 20,\n  \"notRelevantCount\": 258\n}...",
+  "full_data": null
+}
