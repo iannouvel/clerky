@@ -5810,6 +5810,41 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
     debouncedSaveState(); // Save state after displaying suggestions
 }
 
+// Helper function to set button applying state
+function setSuggestionButtonApplying(buttonId, isApplying) {
+    const button = document.getElementById(buttonId);
+    if (!button) return;
+    
+    if (isApplying) {
+        // Store original text if not already stored
+        if (!button.dataset.originalText) {
+            button.dataset.originalText = button.textContent.trim();
+        }
+        button.textContent = '⏳ Applying...';
+        button.disabled = true;
+        button.style.opacity = '0.7';
+        button.style.cursor = 'wait';
+    } else {
+        // Restore original text
+        if (button.dataset.originalText) {
+            button.textContent = button.dataset.originalText;
+            delete button.dataset.originalText;
+        }
+        button.disabled = false;
+        button.style.opacity = '1';
+        button.style.cursor = 'pointer';
+    }
+}
+
+// Helper function to set all action buttons to applying state
+function setAllSuggestionButtonsApplying(isApplying) {
+    setSuggestionButtonApplying('suggestionAcceptBtn', isApplying);
+    setSuggestionButtonApplying('suggestionRejectBtn', isApplying);
+    setSuggestionButtonApplying('suggestionModifyBtn', isApplying);
+    setSuggestionButtonApplying('suggestionSkipBtn', isApplying);
+    setSuggestionButtonApplying('suggestionCancelBtn', isApplying);
+}
+
 // Update fixed button row state for suggestion review
 function updateSuggestionActionButtons() {
     const review = window.currentSuggestionReview;
@@ -5853,6 +5888,9 @@ function updateSuggestionActionButtons() {
 
     const cancelBtn = document.getElementById('suggestionCancelBtn');
     if (cancelBtn) cancelBtn.onclick = () => cancelSuggestionReview();
+    
+    // Ensure buttons are not in applying state when updating
+    setAllSuggestionButtonsApplying(false);
 }
 
 // Display the current suggestion being reviewed
@@ -5939,7 +5977,19 @@ window.handleCurrentSuggestionAction = async function(action) {
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
     
-    // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
+    // Set button to applying state
+    const buttonMap = {
+        'accept': 'suggestionAcceptBtn',
+        'reject': 'suggestionRejectBtn',
+        'skip': 'suggestionSkipBtn'
+    };
+    const buttonId = buttonMap[action];
+    if (buttonId) {
+        setSuggestionButtonApplying(buttonId, true);
+    }
+    
+    try {
+        // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
     function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
         try {
             const text = (suggestion?.suggestedText || '').toLowerCase();
@@ -5973,116 +6023,127 @@ window.handleCurrentSuggestionAction = async function(action) {
         return insertionPoint;
     }
     
-    // Intercept reject action to show feedback modal
-    if (action === 'reject') {
-        const suggestionId = `current-review-${review.currentIndex}`;
-        showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
-            // Record decision with feedback
-            review.decisions.push({ 
-                suggestion, 
-                action: 'reject',
-                feedbackReason: feedbackReason 
-            });
-            
-            console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
-                index: review.currentIndex,
-                hasFeedback: !!feedbackReason,
-                feedbackLength: feedbackReason.length
-            });
-            
-            // Continue to next suggestion
-            clearHighlightInEditor();
-            review.currentIndex++;
-            showCurrentSuggestion();
-        });
-        return; // Don't continue with normal flow
-    }
-    
-    // For non-reject actions, continue normally
-    review.decisions.push({ suggestion, action });
-    
-    if (action === 'accept' && suggestion.suggestedText) {
-        const currentContent = getUserInputContent();
-        let newContent;
-        
-        // Handle additions (missing documentation) vs modifications (replacing existing text)
-        if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: use new AI incorporation workflow
-            console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
-            
-            try {
-                // Use cached insertion point if available, otherwise fetch it now
-                let insertionPoint = suggestion.cachedInsertionPoint;
-                if (!insertionPoint) {
-                    console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
-                    insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-                } else {
-                    console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+        // Intercept reject action to show feedback modal
+        if (action === 'reject') {
+            const suggestionId = `current-review-${review.currentIndex}`;
+            showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
+                // Record decision with feedback
+                review.decisions.push({ 
+                    suggestion, 
+                    action: 'reject',
+                    feedbackReason: feedbackReason 
+                });
+                
+                console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
+                    index: review.currentIndex,
+                    hasFeedback: !!feedbackReason,
+                    feedbackLength: feedbackReason.length
+                });
+                
+                // Continue to next suggestion
+                clearHighlightInEditor();
+                review.currentIndex++;
+                showCurrentSuggestion();
+                
+                // Restore button state after modal callback completes
+                if (buttonId) {
+                    setSuggestionButtonApplying(buttonId, false);
                 }
+            });
+            return; // Don't continue with normal flow - button state restored in callback
+        }
+    
+        // For non-reject actions, continue normally
+        review.decisions.push({ suggestion, action });
+        
+        if (action === 'accept' && suggestion.suggestedText) {
+            const currentContent = getUserInputContent();
+            let newContent;
+            
+            // Handle additions (missing documentation) vs modifications (replacing existing text)
+            if (suggestion.category === 'addition' || !suggestion.originalText) {
+                // Addition: use new AI incorporation workflow
+                console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
                 
-                // Apply client-side heuristic adjustment
-                insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-                console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
-                
-                // Extract section content
-                const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
-                
-                if (!sectionInfo) {
-                    console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
-                    newContent = currentContent + '\n\n' + suggestion.suggestedText;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
-                } else {
-                    // Call AI to incorporate suggestion into section
-                    console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
-                    const idToken = await firebase.auth().currentUser.getIdToken();
-                    const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${idToken}`
-                        },
-                        body: JSON.stringify({
-                            sectionName: insertionPoint.section,
-                            subsectionName: insertionPoint.subsection,
-                            currentSectionContent: sectionInfo.content,
-                            suggestionText: suggestion.suggestedText
-                        })
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`Failed to incorporate suggestion: ${response.status}`);
+                try {
+                    // Use cached insertion point if available, otherwise fetch it now
+                    let insertionPoint = suggestion.cachedInsertionPoint;
+                    if (!insertionPoint) {
+                        console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
+                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                    } else {
+                        console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
                     }
                     
-                    const result = await response.json();
-                    console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
+                    // Apply client-side heuristic adjustment
+                    insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
                     
-                    // Replace section content with modified version
-                    newContent = replaceSectionContent(
-                        currentContent,
-                        insertionPoint.section,
-                        insertionPoint.subsection,
-                        sectionInfo.content,
-                        result.modifiedSectionContent
-                    );
+                    // Extract section content
+                    const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
                     
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                    if (!sectionInfo) {
+                        console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
+                        newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                    } else {
+                        // Call AI to incorporate suggestion into section
+                        console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
+                        const idToken = await firebase.auth().currentUser.getIdToken();
+                        const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${idToken}`
+                            },
+                            body: JSON.stringify({
+                                sectionName: insertionPoint.section,
+                                subsectionName: insertionPoint.subsection,
+                                currentSectionContent: sectionInfo.content,
+                                suggestionText: suggestion.suggestedText
+                            })
+                        });
+                        
+                        if (!response.ok) {
+                            throw new Error(`Failed to incorporate suggestion: ${response.status}`);
+                        }
+                        
+                        const result = await response.json();
+                        console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
+                        
+                        // Replace section content with modified version
+                        newContent = replaceSectionContent(
+                            currentContent,
+                            insertionPoint.section,
+                            insertionPoint.subsection,
+                            sectionInfo.content,
+                            result.modifiedSectionContent
+                        );
+                        
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                    }
+                } catch (error) {
+                    console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
+                    // Fallback to simple append
+                    newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
                 }
-            } catch (error) {
-                console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
-                // Fallback to simple append
-                newContent = currentContent + '\n\n' + suggestion.suggestedText;
-                setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
+            } else if (suggestion.originalText) {
+                // Modification/Deletion: replace existing text
+                newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
             }
-        } else if (suggestion.originalText) {
-            // Modification/Deletion: replace existing text
-            newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
-            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+        }
+        
+        clearHighlightInEditor();
+        review.currentIndex++;
+        showCurrentSuggestion();
+    } finally {
+        // Restore button state (only if not reject, as reject restores in callback)
+        if (buttonId && action !== 'reject') {
+            setSuggestionButtonApplying(buttonId, false);
         }
     }
-    
-    clearHighlightInEditor();
-    review.currentIndex++;
-    showCurrentSuggestion();
 };
 
 window.confirmCurrentModification = function() {
@@ -6092,27 +6153,36 @@ window.confirmCurrentModification = function() {
     if (!modifyTextarea) return;
     const modifiedText = modifyTextarea.value.trim();
     if (!modifiedText) { alert('Please enter some text.'); return; }
-    const suggestion = review.suggestions[review.currentIndex];
-    review.decisions.push({ suggestion, action: 'modify', modifiedText });
     
-    const currentContent = getUserInputContent();
-    let newContent;
+    // Set modify button to applying state
+    setSuggestionButtonApplying('suggestionModifyBtn', true);
     
-    // Handle additions (missing documentation) vs modifications (replacing existing text)
-    if (suggestion.category === 'addition' || !suggestion.originalText) {
-        // Addition: append the modified text to the end of the document
-        const spacing = currentContent.trim() ? '\n\n' : '';
-        newContent = currentContent + spacing + modifiedText;
-        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
-    } else if (suggestion.originalText) {
-        // Modification: replace existing text with user's modified version
-        newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
-        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+    try {
+        const suggestion = review.suggestions[review.currentIndex];
+        review.decisions.push({ suggestion, action: 'modify', modifiedText });
+        
+        const currentContent = getUserInputContent();
+        let newContent;
+        
+        // Handle additions (missing documentation) vs modifications (replacing existing text)
+        if (suggestion.category === 'addition' || !suggestion.originalText) {
+            // Addition: append the modified text to the end of the document
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            newContent = currentContent + spacing + modifiedText;
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
+        } else if (suggestion.originalText) {
+            // Modification: replace existing text with user's modified version
+            newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+        }
+        
+        clearHighlightInEditor();
+        review.currentIndex++;
+        showCurrentSuggestion();
+    } finally {
+        // Restore button state
+        setSuggestionButtonApplying('suggestionModifyBtn', false);
     }
-    
-    clearHighlightInEditor();
-    review.currentIndex++;
-    showCurrentSuggestion();
 };
 
 window.navigateSuggestion = function(direction) {
@@ -6231,14 +6301,23 @@ async function completeSuggestionReview() {
 window.cancelSuggestionReview = function() {
     const review = window.currentSuggestionReview;
     if (!review) return;
-    clearHighlightInEditor();
-    const cancelHtml = `<div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>⚠️ Suggestions Review Cancelled</strong><br>No changes were applied</div>`;
-    const reviewContainer = document.getElementById('suggestion-review-current');
-    if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
-    window.currentSuggestionReview = null;
+    
+    // Set cancel button to applying state
+    setSuggestionButtonApplying('suggestionCancelBtn', true);
+    
+    try {
+        clearHighlightInEditor();
+        const cancelHtml = `<div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>⚠️ Suggestions Review Cancelled</strong><br>No changes were applied</div>`;
+        const reviewContainer = document.getElementById('suggestion-review-current');
+        if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
+        window.currentSuggestionReview = null;
 
-    // Update buttons state
-    updateSuggestionActionButtons();
+        // Update buttons state
+        updateSuggestionActionButtons();
+    } finally {
+        // Restore button state
+        setSuggestionButtonApplying('suggestionCancelBtn', false);
+    }
 };
 
 // Get category icon for suggestion type
