@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-51-38-080Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1150,
+  "response_length": 1179,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":682,\"transcriptPreview\":\"28yo, G1P0, 39+1, BMI 31, Rh+ve\\n\\nIssues:\\nCTG abnormalities suspicious for fetal distress\\nMeconium stained liquor\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"fetal-monitoring-guideline-intrapartum-pdf\\\", \\\"title\\\": \\\"Fetal monitoring guideline INTRAPARTUM\\\", \\\"relevance\\\": \\\"0.9...",
+  "full_data": null
+}
