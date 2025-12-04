@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T14-04-15-783Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1995,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32F, G2P1 (SVD 2019), presents to **Gynae Clinic** with **secondary infertility x 18 months**. Regular cycle...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 0,\n  \"potentiallyRelevantCount\": 10,\n  \"lessRelevantCount\": 21,\n  \"notRelevantCount\": 266\n}...",
+  "full_data": null
+}
