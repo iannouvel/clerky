@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-21-42-661Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1696,
+  "response_length": 1591,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":808,\"transcriptPreview\":\"28yo, G1P0, 32+6, BMI 24, Rh+ve\\n\\nIssues:\\nReduced liquor volume noted on growth scan\\nNo fetal anomalies identified\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\\\", \\\"title\\\": \\\"Antenatal cortic...",
+  "full_data": null
+}

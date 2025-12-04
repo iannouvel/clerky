@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-21-44-509Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1587,
+  "response_length": 1561,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":808,\"transcriptPreview\":\"28yo, G1P0, 32+6, BMI 24, Rh+ve\\n\\nIssues:\\nReduced liquor volume noted on growth scan\\nNo fetal anomalies identified\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\", \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm Prelabour Rupture of ...",
+  "full_data": null
+}

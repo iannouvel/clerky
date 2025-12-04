@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-21-42-376Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1568,
+  "response_length": 1587,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":808,\"transcriptPreview\":\"28yo, G1P0, 32+6, BMI 24, Rh+ve\\n\\nIssues:\\nReduced liquor volume noted on growth scan\\nNo fetal anomalies identified\\n\\nBackground:...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp006-management-of-bartholins-cyst-absc...",
+  "full_data": null
+}
