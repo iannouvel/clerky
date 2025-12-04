@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-55-17-118Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 1285,
+  "response_length": 1262,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":1068,\"transcriptPreview\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and saf...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uhsx-baby-abduction-security-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Baby Abduction & Security guideline\\\", \\\"relevance\\\": \\\"0.85\\\"}...",
+  "full_data": null
+}
