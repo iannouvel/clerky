@@ -7705,6 +7705,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Add click handlers for new panel buttons
+    const promptsPanelBtn = document.getElementById('promptsPanelBtn');
+    if (promptsPanelBtn) {
+        promptsPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Prompts panel button clicked');
+            showSection('promptsSection');
+        });
+    }
+
+    const guidelinesPanelBtn = document.getElementById('guidelinesPanelBtn');
+    if (guidelinesPanelBtn) {
+        guidelinesPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Guidelines panel button clicked');
+            showSection('guidelinesSection');
+        });
+    }
+
+    const workflowsPanelBtn = document.getElementById('workflowsPanelBtn');
+    if (workflowsPanelBtn) {
+        workflowsPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Workflows panel button clicked');
+            showSection('workflowsView');
+        });
+    }
+
+    const devPanelBtn = document.getElementById('devPanelBtn');
+    if (devPanelBtn) {
+        devPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Dev panel button clicked');
+            showSection('devSection');
+        });
+    }
+
+    const linksPanelBtn = document.getElementById('linksPanelBtn');
+    if (linksPanelBtn) {
+        linksPanelBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Links panel button clicked');
+            showSection('linksSection');
+        });
+    }
+
+    // Function to show a section and hide others
+    function showSection(sectionId) {
+        // Hide main content views
+        const threeColumnView = document.getElementById('threeColumnView');
+        const workflowsView = document.getElementById('workflowsView');
+        const proformaView = document.getElementById('proformaView');
+        
+        if (threeColumnView) threeColumnView.classList.add('hidden');
+        if (workflowsView) workflowsView.classList.add('hidden');
+        if (proformaView) proformaView.classList.add('hidden');
+        
+        // Hide all section containers
+        const sections = ['promptsSection', 'guidelinesSection', 'devSection', 'linksSection'];
+        sections.forEach(id => {
+            const section = document.getElementById(id);
+            if (section) section.classList.add('hidden');
+        });
+        
+        // Show the requested section
+        if (sectionId === 'workflowsView') {
+            if (workflowsView) workflowsView.classList.remove('hidden');
+        } else if (sectionId === 'threeColumnView') {
+            // Show main chatbot view
+            if (threeColumnView) threeColumnView.classList.remove('hidden');
+        } else {
+            const section = document.getElementById(sectionId);
+            if (section) section.classList.remove('hidden');
+        }
+        
+        console.log('[DEBUG] Showing section:', sectionId);
+    }
+
+    // Add logo click handler to return to main view
+    const logoLink = document.querySelector('.logo-link');
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent page reload
+            console.log('[DEBUG] Logo clicked - returning to main view');
+            showSection('threeColumnView');
+        });
+    }
+
     // Add click handler for generate transcript button
     const directFakeTranscriptBtn = document.getElementById('directFakeTranscriptBtn');
     if (directFakeTranscriptBtn) {
