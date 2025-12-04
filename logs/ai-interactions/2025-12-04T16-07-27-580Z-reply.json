@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T16-07-27-580Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1617,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 9+2, BMI 24, Rh+ve\\n\\nIssues:\\nConfirmed molar pregnancy on histology\\nRequires counselling and planning for definitive management\\n\\nBackground:\\nPresented with PV bleeding...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 7,\n  \"potentiallyRelevantCount\": 4,\n  \"lessRelevantCount\": 16,\n  \"notRelevantCount\": 270\n}...",
+  "full_data": null
+}
