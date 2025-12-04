@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-32-30-456Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1504,
+  "response_length": 1758,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":3888,\"transcriptPreview\":\"**Professional Medical Clerking – SBAR Format**\\n\\n---\\n\\n### **SITUATION:** \\n**Patient Demographics:** \\n- 32-year-old **G3P1+1** ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-...",
+  "full_data": null
+}
