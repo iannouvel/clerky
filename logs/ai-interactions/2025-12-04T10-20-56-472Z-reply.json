@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T10-20-56-472Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1002,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on serial scans\\nControlled gestational hypertension (on l...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 29,\n  \"potentiallyRelevantCount\": 40,\n  \"lessRelevantCount\": 48,\n  \"notRelevantCount\": 180\n}...",
+  "full_data": null
+}
