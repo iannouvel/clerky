@@ -239,7 +239,6 @@ body {
     height: 100%;
     min-height: 0;
     flex: 1 1 0;
-    padding-bottom: 80px; /* Space for fixed button row */
 }
 
 /* History column hidden */
@@ -254,6 +253,8 @@ body {
     max-width: 100% !important;
     display: flex;
     flex-direction: column;
+    position: relative; /* For absolute positioning of button row */
+    overflow: hidden; /* Contain content */
 }
 
 /* Ensure two columns take full width */
@@ -2933,6 +2934,7 @@ html, body {
     margin: 0;
     gap: 16px;
     padding-top: 8px;
+    padding-bottom: 80px; /* Space for fixed button row */
     height: calc(100vh - 120px); /* Full height minus top bar and margins */
     overflow: hidden; /* Let sections handle their own scrolling */
 }
@@ -3249,12 +3251,10 @@ html, body {
 
 /* ==================== SUMMARY ANALYSE BUTTON ==================== */
 
-/* Fixed button row at bottom of three-column view - always visible */
+/* Fixed button row at bottom of mainContentArea - always visible */
 .fixed-button-row {
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     padding: 12px 20px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
@@ -3268,6 +3268,7 @@ html, body {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow above for separation */
     box-sizing: border-box;
     border-top: 1px solid #e0e0e0;
+    margin-top: auto; /* Push to bottom of flex container */
 }
 
 /* Analyse button styling - always visible */
