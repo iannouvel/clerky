@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T13-21-40-580Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1359,
+  "response_length": 1337,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":808,\"transcriptPreview\":\"28yo, G1P0, 32+6, BMI 24, Rh+ve\\n\\nIssues:\\nReduced liquor volume noted on growth scan\\nNo fetal anomalies identified\\n\\nBackground:...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"iol-flowchart-pdf\\\", \\\"title\\\": \\\"IOL flowchart\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n  \\\"lessRelevant...",
+  "full_data": null
+}
