@@ -1425,16 +1425,19 @@ function showSelectionButtons() {
         return;
     }
     
-    // Check if buttons already exist
-    if (document.getElementById('selectionButtonsGroup')) {
-        console.log('[DEBUG] Selection buttons already exist');
-        return;
+    // Remove existing buttons if any (cleanup first)
+    const existingGroup = document.getElementById('selectionButtonsGroup');
+    if (existingGroup) {
+        console.log('[DEBUG] Removing existing selection buttons before adding new ones');
+        existingGroup.remove();
     }
     
     // Create the buttons group
     const buttonsGroup = document.createElement('div');
     buttonsGroup.id = 'selectionButtonsGroup';
     buttonsGroup.className = 'selection-buttons-group';
+    buttonsGroup.style.display = 'flex'; // Force display
+    buttonsGroup.style.visibility = 'visible'; // Force visibility
     buttonsGroup.innerHTML = `
         <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)" title="Select all guidelines">
             ✅ Select All
@@ -1450,7 +1453,7 @@ function showSelectionButtons() {
     
     // Append to button container
     buttonContainer.appendChild(buttonsGroup);
-    console.log('[DEBUG] Selection buttons added to button container');
+    console.log('[DEBUG] Selection buttons added to button container', buttonsGroup);
 }
 
 // Function to hide selection buttons from the button container
@@ -3064,6 +3067,7 @@ function updateSummaryVisibility() {
     const summarySection = document.getElementById('summarySection');
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
+    const clinicalPanel = document.getElementById('clinicalIssuesPanel');
     
     if (!summarySection || !summary1) return;
     
@@ -3077,8 +3081,11 @@ function updateSummaryVisibility() {
     const hasContent = contentElements.length > 0 && 
                        summary1.textContent.trim().length > 0;
     
+    // Treat visible clinical issues panel as content so the section stays open
+    const hasClinicalPanel = clinicalPanel && !clinicalPanel.classList.contains('hidden');
+    
     // Show summary if loading or has content
-    if (isLoading || hasContent) {
+    if (isLoading || hasContent || hasClinicalPanel) {
         summarySection.classList.remove('hidden');
     } else {
         summarySection.classList.add('hidden');
@@ -9908,7 +9915,7 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
 // Store selected scope globally
 window.selectedGuidelineScope = null;
 
-// Show clinical issues dropdown in summary1
+// Show clinical issues dropdown in summary section (persistent panel below summary1)
 async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
     
@@ -9923,69 +9930,48 @@ async function showClinicalIssuesDropdown() {
         
         console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
         
-        // Create dropdown HTML
-        let dropdownHtml = `
-            <div class="clinical-issues-selector">
-                <h3>⚡ Load Clinical Clerking</h3>
-                <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
-                
-                <div class="issue-category">
-                    <h4>Clinical Issues</h4>
-                    <select id="clinical-issues-dropdown" class="clinical-dropdown">
-                        <option value="">Select a clinical issue...</option>
-        `;
-        
-        // Add options from Firebase data
-        Object.entries(clinicalConditions).forEach(([category, conditions]) => {
-            const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
-            
-            dropdownHtml += `
-                        <optgroup label="${categoryLabel}">
-            `;
-            
-            Object.entries(conditions).forEach(([conditionName, conditionData]) => {
-                const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
-                dropdownHtml += `<option value="${conditionName}" data-condition-id="${conditionData.id}">${conditionName}${hasTranscript}</option>`;
-            });
-            
-            dropdownHtml += `
-                        </optgroup>
-            `;
-        });
-        
-        dropdownHtml += `
-                    </select>
-                </div>
-                
-                <div class="action-buttons">
-                    <button id="generate-interaction-btn" class="nav-btn primary" disabled>
-                        <span id="generate-spinner" class="spinner" style="display: none;"></span>
-                        <span id="generate-text">Load Clerking</span>
-                    </button>
-                    <button id="random-issue-btn" class="nav-btn secondary">
-                        <span id="random-spinner" class="spinner" style="display: none;"></span>
-                        <span id="random-text">Random Issue</span>
-                    </button>
-                    <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
-                        <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
-                        <span id="regenerate-text">Regenerate Clerking</span>
-                    </button>
-                    <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
-                </div>
-                
-                <div id="generation-status" class="generation-status" style="display: none;"></div>
-            </div>
-        `;
-        
-        // Display in summary1
-        appendToSummary1(dropdownHtml, true); // Clear existing content
-        
-        // Add event listeners for the single dropdown
+        // Get persistent panel elements
+        const summarySection = document.getElementById('summarySection');
+        const clinicalPanel = document.getElementById('clinicalIssuesPanel');
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
         const randomBtn = document.getElementById('random-issue-btn');
         const regenerateBtn = document.getElementById('regenerate-clerking-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
+        
+        if (!clinicalPanel || !clinicalDropdown) {
+            console.error('[DEBUG] Clinical issues panel elements not found');
+            appendToSummary1('❌ **Error:** Unable to initialise clinical issues panel.\n\n', false);
+            return;
+        }
+        
+        // Ensure summary section and panel are visible
+        if (summarySection) {
+            summarySection.classList.remove('hidden');
+        }
+        clinicalPanel.classList.remove('hidden');
+        
+        // Reset dropdown options
+        clinicalDropdown.innerHTML = '<option value=\"\">Select a clinical issue...</option>';
+        
+        // Add options from Firebase data
+        Object.entries(clinicalConditions).forEach(([category, conditions]) => {
+            const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+            
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = categoryLabel;
+            
+            Object.entries(conditions).forEach(([conditionName, conditionData]) => {
+                const option = document.createElement('option');
+                const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
+                option.value = conditionName;
+                option.dataset.conditionId = conditionData.id;
+                option.textContent = `${conditionName}${hasTranscript}`;
+                optgroup.appendChild(option);
+            });
+            
+            clinicalDropdown.appendChild(optgroup);
+        });
         
         function updateGenerateButton() {
             const selectedValue = clinicalDropdown?.value || '';
@@ -10000,40 +9986,30 @@ async function showClinicalIssuesDropdown() {
         }
         
         if (clinicalDropdown) {
+            clinicalDropdown.removeEventListener('change', updateGenerateButton);
             clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
         
-        // Function to remove the dropdown interface
-        function removeDropdownInterface() {
-            const dropdownContainer = document.querySelector('.clinical-issues-selector');
-            if (dropdownContainer) {
-                console.log('[DEBUG] Removing dropdown interface');
-                dropdownContainer.style.transition = 'opacity 0.3s ease-out, max-height 0.3s ease-out';
-                dropdownContainer.style.opacity = '0';
-                dropdownContainer.style.maxHeight = '0';
-                dropdownContainer.style.overflow = 'hidden';
-                
-                setTimeout(() => {
-                    if (dropdownContainer.parentNode) {
-                        dropdownContainer.remove();
-                    }
-                }, 300);
-            }
+        // Helper to hide the panel (used by Cancel)
+        function hideClinicalIssuesPanel() {
+            clinicalPanel.classList.add('hidden');
+            updateSummaryVisibility();
         }
         
         if (generateBtn) {
-            generateBtn.addEventListener('click', async () => {
+            generateBtn.onclick = async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
                 
                 if (selectedIssue) {
-                    removeDropdownInterface(); // Remove dropdown when button clicked
                     await generateFakeClinicalInteraction(selectedIssue);
                 }
-            });
+            };
         }
         
         if (randomBtn) {
-            randomBtn.addEventListener('click', async () => {
+            randomBtn.onclick = async () => {
+                if (!clinicalDropdown) return;
+                
                 // Get all available options from the dropdown (excluding the default option)
                 const options = Array.from(clinicalDropdown.options).filter(option => 
                     option.value && option.value.trim() !== ''
@@ -10050,37 +10026,31 @@ async function showClinicalIssuesDropdown() {
                     // Update the generate button state
                     updateGenerateButton();
                     
-                    // Remove dropdown interface
-                    removeDropdownInterface();
-                    
                     // Automatically generate the interaction
                     await generateFakeClinicalInteraction(randomIssue);
                 } else {
                     console.error('No clinical issues available for random selection');
-                    appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', true);
+                    appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', false, true);
                 }
-            });
+            };
         }
         
         if (regenerateBtn) {
-            regenerateBtn.addEventListener('click', async () => {
+            regenerateBtn.onclick = async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
                 
                 if (selectedIssue) {
-                    // Remove dropdown interface
-                    removeDropdownInterface();
-                    
                     // Force regeneration of the transcript
                     await generateFakeClinicalInteraction(selectedIssue, true);
                 }
-            });
+            };
         }
         
         if (cancelBtn) {
-            cancelBtn.addEventListener('click', () => {
-                removeDropdownInterface(); // Remove dropdown when cancelled
-                appendToSummary1('Clinical interaction generation cancelled.\n\n', true);
-            });
+            cancelBtn.onclick = () => {
+                hideClinicalIssuesPanel();
+                appendToSummary1('Clinical interaction generation cancelled.\n\n', false, true);
+            };
         }
         
     } catch (error) {
