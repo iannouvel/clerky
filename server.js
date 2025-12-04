@@ -15395,30 +15395,52 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
 
 Your task is to:
 1. Analyse the structure of the clinical note and identify its sections (e.g., Situation, Issues, Background, Assessment, Discussion, Plan)
-2. Determine which section the new text belongs to based on its content
-3. Specify the exact insertion point within that section
+2. Identify any nested subsections within those sections (e.g., "**Counselling:**" under "Plan", "**Management Plan:**" under "Plan")
+3. Detect list structures (numbered lists, bullet points, hyphens) and determine if the new text should be added as a list item
+4. Determine which section or subsection the new text belongs to based on its content
+5. Specify the exact insertion point within that section/subsection
 
 Common clinical note structures to recognise:
 - SOAP (Subjective, Objective, Assessment, Plan)
 - SBAR (Situation, Background, Assessment, Recommendation)
 - Custom sections like: Situation, Issues, Background, Assessment, Discussion, Plan
+- Nested subsections often use markdown bold formatting: "* **Management Plan:**", "* **Counselling:**"
+- Subsections may contain numbered lists: "1. First item", "2. Second item"
 
 Guidelines for categorising content:
 - Patient demographics, presentation details → Situation/Subjective section
 - Medical history, context → Background section
 - Clinical findings, risk assessments, observations → Assessment section
 - Treatment discussions, considerations → Discussion section
-- Management steps, follow-up plans → Plan section
+- Management steps, follow-up plans → Plan section (or subsections within Plan like Management Plan, Counselling, etc.)
+
+Guidelines for list detection:
+- If the target location contains a numbered list (1. 2. 3.), the new text should be added as the next numbered item
+- If the target location contains bullet points (* or -), the new text should be added as another bullet
+- Detect the last item number in numbered lists
+- Preserve list formatting and indentation patterns
 
 Return ONLY a valid JSON object with this structure:
 {
-  "section": "name of the section where text should be inserted",
-  "insertionMethod": "append|insertAfter|insertBefore",
+  "section": "name of the main section where text should be inserted",
+  "subsection": "name of nested subsection if applicable, otherwise null",
+  "insertionMethod": "append|appendToList|insertAfter|insertBefore",
+  "listType": "numbered|bullet|hyphen|none",
+  "lastItemNumber": 3,
   "anchorText": "text to insert after/before (if using insertAfter/insertBefore)",
   "reasoning": "brief explanation of why this location is appropriate"
 }
 
-If the section doesn't exist in the note, use "append" method with the section name.
+Field descriptions:
+- section: Main section name (e.g., "Plan", "Assessment")
+- subsection: Nested subsection name if the text belongs in one (e.g., "Counselling", "Management Plan"), otherwise null
+- insertionMethod: "appendToList" if adding to a list, "append" if adding to section end, "insertAfter"/"insertBefore" for anchor-based insertion
+- listType: "numbered" for numbered lists (1. 2. 3.), "bullet" for bullet points (*), "hyphen" for hyphen lists (-), "none" if not in a list
+- lastItemNumber: For numbered lists, the number of the last item (so new item will be lastItemNumber + 1). Omit or set to null for non-numbered lists.
+- anchorText: Text to insert after/before (if using insertAfter/insertBefore methods)
+- reasoning: Brief explanation of placement decision
+
+If the section doesn't exist in the note, use "append" method with the section name and set subsection to null.
 
 CRITICAL FORMATTING REQUIREMENTS:
 - Return ONLY the JSON object - no markdown code blocks, no explanatory text
@@ -15473,6 +15495,11 @@ Please analyse the clinical note structure and determine the optimal insertion p
             console.error('[DEBUG] determineInsertionPoint: Invalid insertion point structure:', insertionPoint);
             return res.status(500).json({ success: false, error: 'Invalid insertion point structure' });
         }
+        
+        // Ensure optional fields have default values
+        insertionPoint.subsection = insertionPoint.subsection || null;
+        insertionPoint.listType = insertionPoint.listType || 'none';
+        insertionPoint.lastItemNumber = insertionPoint.lastItemNumber || null;
 
         res.json({
             success: true,
