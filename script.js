@@ -4871,6 +4871,140 @@ async function determineInsertionPoint(suggestion, clinicalNote) {
     }
 }
 
+// Helper function to extract section content from clinical note
+function extractSectionContent(clinicalNote, sectionName, subsectionName = null) {
+    console.log('[DEBUG] extractSectionContent:', { sectionName, subsectionName });
+    
+    // Find the main section
+    const sectionPatterns = [
+        new RegExp(`^${sectionName}:`, 'im'),
+        new RegExp(`^${sectionName}\\s*$`, 'im'),
+        new RegExp(`^${sectionName}\\s*-`, 'im'),
+        new RegExp(`${sectionName}:`, 'i')
+    ];
+    
+    let sectionStartIndex = -1;
+    let matchedPattern = null;
+    
+    for (const pattern of sectionPatterns) {
+        const match = clinicalNote.match(pattern);
+        if (match) {
+            sectionStartIndex = match.index;
+            matchedPattern = match[0];
+            break;
+        }
+    }
+    
+    if (sectionStartIndex === -1) {
+        console.warn('[DEBUG] extractSectionContent: Section not found:', sectionName);
+        return null;
+    }
+    
+    // Get content after section header
+    const afterSection = clinicalNote.slice(sectionStartIndex + matchedPattern.length);
+    
+    // Find where this section ends (next main section or end of document)
+    const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
+    let nextSectionIndex = -1;
+    
+    for (const nextSection of commonSections) {
+        if (nextSection === sectionName) continue;
+        
+        const nextPatterns = [
+            new RegExp(`\n${nextSection}:`, 'i'),
+            new RegExp(`\n${nextSection}\\s*$`, 'm'),
+            new RegExp(`\n${nextSection}\\s*-`, 'i')
+        ];
+        
+        for (const pattern of nextPatterns) {
+            const match = afterSection.match(pattern);
+            if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
+                nextSectionIndex = match.index;
+            }
+        }
+    }
+    
+    // Extract section content
+    let sectionContent = nextSectionIndex !== -1 
+        ? afterSection.slice(0, nextSectionIndex)
+        : afterSection;
+    
+    // If we have a subsection, extract that specific content
+    if (subsectionName) {
+        console.log('[DEBUG] extractSectionContent: Looking for subsection:', subsectionName);
+        
+        const subsectionPatterns = [
+            new RegExp(`\\*\\*\\s*${subsectionName}\\s*:\\*\\*`, 'i'),
+            new RegExp(`\\*\\s*\\*\\*${subsectionName}:\\*\\*`, 'i'),
+            new RegExp(`-\\s*\\*\\*${subsectionName}:\\*\\*`, 'i'),
+            new RegExp(`\\d+\\.\\s*\\*\\*${subsectionName}:\\*\\*`, 'i'),
+            new RegExp(`${subsectionName}:`, 'i')
+        ];
+        
+        let subsectionStartIndex = -1;
+        let subsectionMatchedPattern = null;
+        
+        for (const pattern of subsectionPatterns) {
+            const match = sectionContent.match(pattern);
+            if (match) {
+                subsectionStartIndex = match.index;
+                subsectionMatchedPattern = match[0];
+                break;
+            }
+        }
+        
+        if (subsectionStartIndex === -1) {
+            console.warn('[DEBUG] extractSectionContent: Subsection not found:', subsectionName);
+            return null;
+        }
+        
+        // Find where subsection ends (next subsection or section end)
+        const afterSubsection = sectionContent.slice(subsectionStartIndex + subsectionMatchedPattern.length);
+        const nextSubsectionPattern = /\n[\*\-]?\s*\*\*[^:]+:\*\*/;
+        const nextSubMatch = afterSubsection.match(nextSubsectionPattern);
+        
+        sectionContent = nextSubMatch 
+            ? afterSubsection.slice(0, nextSubMatch.index)
+            : afterSubsection;
+        
+        return {
+            content: sectionContent.trim(),
+            startIndex: sectionStartIndex + matchedPattern.length + subsectionStartIndex + subsectionMatchedPattern.length,
+            endIndex: sectionStartIndex + matchedPattern.length + subsectionStartIndex + subsectionMatchedPattern.length + sectionContent.length,
+            headerPattern: subsectionMatchedPattern
+        };
+    }
+    
+    // Return main section content
+    return {
+        content: sectionContent.trim(),
+        startIndex: sectionStartIndex + matchedPattern.length,
+        endIndex: sectionStartIndex + matchedPattern.length + sectionContent.length,
+        headerPattern: matchedPattern
+    };
+}
+
+// Helper function to replace section content in clinical note
+function replaceSectionContent(clinicalNote, sectionName, subsectionName, oldContent, newContent) {
+    console.log('[DEBUG] replaceSectionContent:', { sectionName, subsectionName, oldContentLength: oldContent.length, newContentLength: newContent.length });
+    
+    // Extract the section to get boundaries
+    const sectionInfo = extractSectionContent(clinicalNote, sectionName, subsectionName);
+    if (!sectionInfo) {
+        console.error('[DEBUG] replaceSectionContent: Could not extract section');
+        return clinicalNote; // Return unchanged if section not found
+    }
+    
+    // Replace the content
+    const before = clinicalNote.slice(0, sectionInfo.startIndex);
+    const after = clinicalNote.slice(sectionInfo.endIndex);
+    
+    // Add appropriate spacing
+    const newContentWithSpacing = '\n' + newContent.trim();
+    
+    return before + newContentWithSpacing + after;
+}
+
 // Helper function to detect list pattern in text
 function detectListPattern(text, startPos = 0) {
     console.log('[DEBUG] detectListPattern: Analysing text from position', startPos);
@@ -5172,7 +5306,21 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             console.log('[DEBUG] insertTextAtPoint: Final insertion at position', insertPosition);
             
             // Insert with appropriate spacing
-            const prefix = computePrefixSpacing(currentContent, insertPosition);
+            // For list items or when appending to existing content, use single newline
+            // For non-list additions, use double newline (blank line)
+            let prefix;
+            if (listInfo.type !== 'none' || insertionMethod === 'appendToList') {
+                // List item: use single newline spacing
+                const before = currentContent.slice(0, insertPosition);
+                if (/\n$/.test(before)) {
+                    prefix = ''; // Already has newline
+                } else {
+                    prefix = '\n';
+                }
+            } else {
+                // Non-list: use normal spacing logic (can add blank line)
+                prefix = computePrefixSpacing(currentContent, insertPosition);
+            }
             const suffix = nextSectionIndex !== -1 ? '' : '';
             
             return currentContent.slice(0, insertPosition) + prefix + textToInsert + suffix + currentContent.slice(insertPosition);
@@ -5712,25 +5860,17 @@ window.handleCurrentSuggestionAction = async function(action) {
                 // If a Plan section exists in the note, target Plan; else keep original but append at end
                 const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
                 if (hasPlanSection) {
-                    // Preserve list metadata from AI if present
+                    // Preserve subsection from AI if present
                     return {
                         section: 'Plan',
                         subsection: insertionPoint.subsection || null,
-                        insertionMethod: insertionPoint.insertionMethod || 'append',
-                        listType: insertionPoint.listType || 'none',
-                        lastItemNumber: insertionPoint.lastItemNumber || null,
-                        anchorText: '',
-                        reasoning: 'Action-oriented addition placed under Plan by client heuristic (preserving AI metadata)'
+                        reasoning: 'Action-oriented addition placed under Plan by client heuristic'
                     };
                 }
                 // No Plan section found – fall back to end append
                 return {
                     section: 'end',
                     subsection: null,
-                    insertionMethod: 'append',
-                    listType: 'none',
-                    lastItemNumber: null,
-                    anchorText: '',
                     reasoning: 'No Plan section found; appending to end'
                 };
             }
@@ -5775,24 +5915,72 @@ window.handleCurrentSuggestionAction = async function(action) {
         
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: use smart insertion to determine best location
-            console.log('[DEBUG] handleCurrentSuggestionAction: Using smart insertion for addition');
+            // Addition: use new AI incorporation workflow
+            console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
             
-            // Use cached insertion point if available, otherwise fetch it now
-            let insertionPoint = suggestion.cachedInsertionPoint;
-            if (!insertionPoint) {
-                console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
-                insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-            } else {
-                console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+            try {
+                // Use cached insertion point if available, otherwise fetch it now
+                let insertionPoint = suggestion.cachedInsertionPoint;
+                if (!insertionPoint) {
+                    console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
+                    insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                } else {
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+                }
+                
+                // Apply client-side heuristic adjustment
+                insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
+                
+                // Extract section content
+                const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+                
+                if (!sectionInfo) {
+                    console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
+                    newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                } else {
+                    // Call AI to incorporate suggestion into section
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
+                    const idToken = await firebase.auth().currentUser.getIdToken();
+                    const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${idToken}`
+                        },
+                        body: JSON.stringify({
+                            sectionName: insertionPoint.section,
+                            subsectionName: insertionPoint.subsection,
+                            currentSectionContent: sectionInfo.content,
+                            suggestionText: suggestion.suggestedText
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Failed to incorporate suggestion: ${response.status}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
+                    
+                    // Replace section content with modified version
+                    newContent = replaceSectionContent(
+                        currentContent,
+                        insertionPoint.section,
+                        insertionPoint.subsection,
+                        sectionInfo.content,
+                        result.modifiedSectionContent
+                    );
+                    
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                }
+            } catch (error) {
+                console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
+                // Fallback to simple append
+                newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
             }
-            // Apply client-side heuristic adjustment
-            insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-            console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
-            
-            // Insert at determined point
-            newContent = insertTextAtPoint(currentContent, suggestion.suggestedText, insertionPoint);
-            setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
         } else if (suggestion.originalText) {
             // Modification/Deletion: replace existing text
             newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);

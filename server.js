@@ -15391,56 +15391,37 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
         });
 
         // Create AI prompt to analyse note structure and determine insertion point
-        const systemPrompt = `You are a medical AI assistant that analyses clinical note structure to determine optimal insertion points for new information.
+        const systemPrompt = `You are a medical AI assistant that analyses clinical note structure to identify where new information should be added.
 
 Your task is to:
 1. Analyse the structure of the clinical note and identify its sections (e.g., Situation, Issues, Background, Assessment, Discussion, Plan)
 2. Identify any nested subsections within those sections (e.g., "**Counselling:**" under "Plan", "**Management Plan:**" under "Plan")
-3. Detect list structures (numbered lists, bullet points, hyphens) and determine if the new text should be added as a list item
-4. Determine which section or subsection the new text belongs to based on its content
-5. Specify the exact insertion point within that section/subsection
+3. Determine which section or subsection the new text belongs to based on its content
 
 Common clinical note structures to recognise:
 - SOAP (Subjective, Objective, Assessment, Plan)
 - SBAR (Situation, Background, Assessment, Recommendation)
 - Custom sections like: Situation, Issues, Background, Assessment, Discussion, Plan
 - Nested subsections often use markdown bold formatting: "* **Management Plan:**", "* **Counselling:**"
-- Subsections may contain numbered lists: "1. First item", "2. Second item"
 
 Guidelines for categorising content:
 - Patient demographics, presentation details → Situation/Subjective section
 - Medical history, context → Background section
 - Clinical findings, risk assessments, observations → Assessment section
 - Treatment discussions, considerations → Discussion section
-- Management steps, follow-up plans → Plan section (or subsections within Plan like Management Plan, Counselling, etc.)
-
-Guidelines for list detection:
-- If the target location contains a numbered list (1. 2. 3.), the new text should be added as the next numbered item
-- If the target location contains bullet points (* or -), the new text should be added as another bullet
-- Detect the last item number in numbered lists
-- Preserve list formatting and indentation patterns
+- Management steps, follow-up plans, counselling → Plan section (or subsections within Plan like Management Plan, Counselling, etc.)
 
 Return ONLY a valid JSON object with this structure:
 {
   "section": "name of the main section where text should be inserted",
   "subsection": "name of nested subsection if applicable, otherwise null",
-  "insertionMethod": "append|appendToList|insertAfter|insertBefore",
-  "listType": "numbered|bullet|hyphen|none",
-  "lastItemNumber": 3,
-  "anchorText": "text to insert after/before (if using insertAfter/insertBefore)",
   "reasoning": "brief explanation of why this location is appropriate"
 }
 
 Field descriptions:
 - section: Main section name (e.g., "Plan", "Assessment")
 - subsection: Nested subsection name if the text belongs in one (e.g., "Counselling", "Management Plan"), otherwise null
-- insertionMethod: "appendToList" if adding to a list, "append" if adding to section end, "insertAfter"/"insertBefore" for anchor-based insertion
-- listType: "numbered" for numbered lists (1. 2. 3.), "bullet" for bullet points (*), "hyphen" for hyphen lists (-), "none" if not in a list
-- lastItemNumber: For numbered lists, the number of the last item (so new item will be lastItemNumber + 1). Omit or set to null for non-numbered lists.
-- anchorText: Text to insert after/before (if using insertAfter/insertBefore methods)
 - reasoning: Brief explanation of placement decision
-
-If the section doesn't exist in the note, use "append" method with the section name and set subsection to null.
 
 CRITICAL FORMATTING REQUIREMENTS:
 - Return ONLY the JSON object - no markdown code blocks, no explanatory text
@@ -15491,15 +15472,13 @@ Please analyse the clinical note structure and determine the optimal insertion p
         }
 
         // Validate response structure
-        if (!insertionPoint.section || !insertionPoint.insertionMethod) {
+        if (!insertionPoint.section) {
             console.error('[DEBUG] determineInsertionPoint: Invalid insertion point structure:', insertionPoint);
-            return res.status(500).json({ success: false, error: 'Invalid insertion point structure' });
+            return res.status(500).json({ success: false, error: 'Invalid insertion point structure - missing section' });
         }
         
         // Ensure optional fields have default values
         insertionPoint.subsection = insertionPoint.subsection || null;
-        insertionPoint.listType = insertionPoint.listType || 'none';
-        insertionPoint.lastItemNumber = insertionPoint.lastItemNumber || null;
 
         res.json({
             success: true,
@@ -15912,6 +15891,137 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
 
     } catch (error) {
         console.error('[DEBUG] getGuidelinePDF: Error in endpoint:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Incorporate Suggestion endpoint - intelligently adds suggestion to section content
+app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
+    try {
+        console.log('[DEBUG] incorporateSuggestion endpoint called');
+        const { sectionName, subsectionName, currentSectionContent, suggestionText } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!sectionName) {
+            console.log('[DEBUG] incorporateSuggestion: Missing section name');
+            return res.status(400).json({ success: false, error: 'Section name is required' });
+        }
+        
+        if (!currentSectionContent) {
+            console.log('[DEBUG] incorporateSuggestion: Missing section content');
+            return res.status(400).json({ success: false, error: 'Section content is required' });
+        }
+        
+        if (!suggestionText) {
+            console.log('[DEBUG] incorporateSuggestion: Missing suggestion text');
+            return res.status(400).json({ success: false, error: 'Suggestion text is required' });
+        }
+
+        console.log('[DEBUG] incorporateSuggestion request data:', {
+            userId,
+            sectionName,
+            subsectionName: subsectionName || 'none',
+            sectionContentLength: currentSectionContent.length,
+            suggestionTextLength: suggestionText.length
+        });
+
+        // Create AI prompt to incorporate suggestion into section
+        const targetDescription = subsectionName 
+            ? `the "${subsectionName}" subsection within the "${sectionName}" section`
+            : `the "${sectionName}" section`;
+        
+        const systemPrompt = `You are a medical AI assistant that helps incorporate new information into clinical notes while preserving existing formatting.
+
+Your task is to:
+1. Analyse the current ${targetDescription} content and understand its structure and formatting
+2. Determine the most appropriate location to add the new suggestion text
+3. Insert the suggestion text VERBATIM (word-for-word, exactly as provided) into the appropriate location
+4. Preserve all existing formatting (numbered lists, bullet points, plain text, indentation, etc.)
+5. Return the complete modified section with the suggestion incorporated
+
+CRITICAL RULES:
+- You MUST insert the suggestion text EXACTLY as provided - do not rephrase, reword, or modify it
+- If the section has numbered items, add the suggestion as the next numbered item
+- If the section has bullet points, add the suggestion as another bullet point
+- If the section has plain text lines, add the suggestion as another plain text line
+- Preserve the exact formatting style of existing items
+- Do not add extra blank lines between items unless the existing format has them
+- Match the indentation and spacing of existing items
+
+Return ONLY a valid JSON object with this structure:
+{
+  "modifiedSectionContent": "the complete section content with suggestion incorporated",
+  "insertionLocation": "brief description of where the suggestion was added (e.g., 'Added as 6th item in numbered list', 'Added as last bullet point', 'Appended to end of section')"
+}
+
+CRITICAL FORMATTING REQUIREMENTS:
+- Return ONLY the JSON object - no markdown code blocks, no explanatory text
+- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
+- Start your response directly with { and end with }
+- Ensure all JSON is properly formatted and valid
+- Ensure the suggestion text appears verbatim in the output`;
+
+        const userPrompt = `Current ${targetDescription} content:
+${currentSectionContent}
+
+Suggestion text to incorporate (VERBATIM):
+${suggestionText}
+
+Please incorporate this suggestion into the section content, preserving existing formatting and inserting the suggestion text exactly as provided.`;
+
+        console.log('[DEBUG] incorporateSuggestion: Sending to AI');
+
+        // Send to AI
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        const aiResponse = await routeToAI({ messages }, userId);
+        
+        console.log('[DEBUG] incorporateSuggestion: AI response received', {
+            success: !!aiResponse,
+            hasContent: !!aiResponse?.content,
+            contentLength: aiResponse?.content?.length
+        });
+        
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[DEBUG] incorporateSuggestion: Invalid AI response:', aiResponse);
+            return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // Parse AI response
+        let result;
+        try {
+            result = JSON.parse(aiResponse.content);
+            console.log('[DEBUG] incorporateSuggestion: Parsed result:', {
+                hasModifiedContent: !!result.modifiedSectionContent,
+                insertionLocation: result.insertionLocation
+            });
+        } catch (parseError) {
+            console.error('[DEBUG] incorporateSuggestion: Failed to parse AI response:', parseError);
+            console.error('[DEBUG] incorporateSuggestion: Raw AI response:', aiResponse.content);
+            return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
+        }
+
+        // Validate response structure
+        if (!result.modifiedSectionContent) {
+            console.error('[DEBUG] incorporateSuggestion: Invalid result structure:', result);
+            return res.status(500).json({ success: false, error: 'Invalid result structure' });
+        }
+
+        res.json({
+            success: true,
+            modifiedSectionContent: result.modifiedSectionContent,
+            insertionLocation: result.insertionLocation || 'Unknown'
+        });
+
+    } catch (error) {
+        console.error('[DEBUG] incorporateSuggestion: Error in endpoint:', {
             error: error.message,
             stack: error.stack
         });
