@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T15-04-52-506Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 1269,
+  "response_length": 1531,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":964,\"transcriptPreview\":\"28yo, G1P0, 26+2, BMI 24, Rh+ve\\n\\nIssues:\\nKnown bicornuate uterus on pre-pregnancy MRI\\nCurrent presentation with persistent lower...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"concerns-during-intermittent-auscultation-flowchart-pdf\\\",\\n      \\\"title\\\": \\\"Co...",
+  "full_data": null
+}
