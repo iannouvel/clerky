@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T09-09-32-958Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1686,
+  "response_length": 1535,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":3608,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and c...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2023-regan-recurrent-miscarriage-pdf\\\", \\\"title\\\": \\\"Recurrent Miscarriage\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyR...",
+  "full_data": null
+}
