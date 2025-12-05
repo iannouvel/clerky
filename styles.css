@@ -2953,9 +2953,9 @@ html, body {
 .chatbot-layout {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Ensure centered */
+    width: auto; /* Let margins define width */
+    max-width: none; /* Allow full width */
+    margin: 0 5px; /* Small consistent margin */
     gap: 16px;
     padding-top: 8px;
     padding-bottom: 0;
@@ -3304,9 +3304,9 @@ html, body {
 /* Fixed button row at bottom of mainContentArea - always visible */
 .fixed-button-row {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto; /* Center horizontally like chatbot-layout */
+    width: auto; /* Let margins define width */
+    max-width: none; /* Allow full width */
+    margin: 0 5px; /* Match chatbot-layout margins */
     padding: 12px 20px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
     backdrop-filter: blur(8px);
