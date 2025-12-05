@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-30-444Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 831,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBackground:\\nUncomplicated pregnancy, low risk\\nUSS tod...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 23,\n  \"lessRelevantCount\": 62,\n  \"notRelevantCount\": 203\n}...",
+  "full_data": null
+}
