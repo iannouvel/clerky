@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-04T22-22-16-811Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 1407,
+  "response_length": 1321,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":1032,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg20015-parent-to-baby-skin-contact-pdf\\\", \\\"title\\\": \\\"Parent-to-Baby Skin Contact\\\", \\\"releva...",
+  "full_data": null
+}
