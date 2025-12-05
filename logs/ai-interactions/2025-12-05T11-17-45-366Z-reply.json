@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-17-45-366Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1322,
+  "response_length": 1347,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":1282,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nShoulder dystocia managed at delivery 2 hours ago\\nBaby delivered with active manoeuvre...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2011-aph-pdf\\\", \\\"title\\\": \\\"GTG 201...",
+  "full_data": null
+}
