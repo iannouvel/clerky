@@ -15608,6 +15608,39 @@ function initializeSummaryAutoHeight() {
 
     // Create observer to monitor content changes
     const observer = new MutationObserver((mutations) => {
+        // Debug what's inside summary1 when it changes
+        if (summary1.children.length > 0) {
+            console.log('[DEBUG] Summary1 content changed. Children:', summary1.children.length);
+            // Check for empty new-content-entry divs which might be causing whitespace
+            const emptyEntries = Array.from(summary1.querySelectorAll('.new-content-entry')).filter(el => {
+                // Use a more robust check for emptiness including whitespace
+                const hasText = el.textContent.trim().length > 0;
+                const hasMedia = el.querySelector('img, svg, video, input, select, textarea, button, hr');
+                // Check if it has height but no visible content (could be margin collapse or padding)
+                const style = window.getComputedStyle(el);
+                const hasHeight = el.offsetHeight > 0;
+                
+                // Log suspicious entries
+                if (!hasText && !hasMedia && hasHeight) {
+                    console.log('[DEBUG] Suspicious empty entry found:', {
+                        height: el.offsetHeight,
+                        html: el.innerHTML,
+                        classes: el.className
+                    });
+                    return true;
+                }
+                return false;
+            });
+
+            if (emptyEntries.length > 0) {
+                console.log('[DEBUG] Found empty content entries:', emptyEntries.length);
+                // Hide them to fix the whitespace
+                emptyEntries.forEach(el => {
+                     el.style.display = 'none';
+                     console.log('[DEBUG] Hidden empty entry');
+                });
+            }
+        }
         adjustHeight();
     });
 
