@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-38-04-476Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 1297,
+  "response_length": 1280,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":1032,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24, Rh+ve\\n\\nIssues:\\nGBS colonisation identified on routine MSU at 36/40\\n\\nBackground:\\nLow-risk primigravi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp032-pre-labour-rupture-of-membranes-term-pre-term-pdf\\\", \\\"title\\\": \\\"MP032 Pre Labour Ruptur...",
+  "full_data": null
+}

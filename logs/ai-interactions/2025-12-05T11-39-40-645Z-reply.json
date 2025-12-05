@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-40-645Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1393,
+  "response_length": 1411,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":1501,\"transcriptPreview\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leak...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP011 Obesity In Pregnancy\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}

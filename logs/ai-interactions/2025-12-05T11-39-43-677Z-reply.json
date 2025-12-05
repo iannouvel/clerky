@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-43-677Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1582,
+  "response_length": 1677,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":1501,\"transcriptPreview\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leaka...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2020-murphy-assisted-vaginal-birth-pdf\\\",\\n      \\\"...",
+  "full_data": null
+}

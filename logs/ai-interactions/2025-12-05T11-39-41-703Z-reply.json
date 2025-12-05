@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-41-703Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1514,
+  "response_length": 1540,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":1501,\"transcriptPreview\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leaka...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bms-2024-management-of-unscheduled-bleed...",
+  "full_data": null
+}

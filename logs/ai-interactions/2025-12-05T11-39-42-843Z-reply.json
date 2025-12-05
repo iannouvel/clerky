@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-42-843Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1583,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":1501,\"transcriptPreview\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leak...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"sp22003-maternity-telephone-triage-sop-p...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-41-618Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1563,
+  "response_length": 1492,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":1501,\"transcriptPreview\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leak...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pdf\\\", \\\"title\\\": \\\"Management of patients admitted fo...",
+  "full_data": null
+}

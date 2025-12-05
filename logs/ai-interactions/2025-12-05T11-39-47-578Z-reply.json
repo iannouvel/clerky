@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-39-47-578Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1609,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P1 (SVD 2020), BMI 29\\n\\nPresenting Complaint:\\nStress urinary incontinence (SUI) for 18/12, worsening over last 3/12. Leakage with coughing, sneezing, and exercise. No urgency ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 3,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 18,\n  \"notRelevantCount\": 271\n}...",
+  "full_data": null
+}
