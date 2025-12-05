@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-17-42-760Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1198,
+  "response_length": 1223,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":1282,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nShoulder dystocia managed at delivery 2 hours ago\\nBaby delivered with active manoeuvre...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp017-dna-appointments-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
