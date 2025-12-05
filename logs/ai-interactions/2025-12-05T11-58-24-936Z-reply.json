@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-24-936Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1356,
+  "response_length": 1613,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":734,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"iol-flowchart-pdf\\\",\\n      \\\"title\\\": \\\"IOL flowchart\\\"...",
+  "full_data": null
+}
