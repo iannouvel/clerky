@@ -3970,6 +3970,7 @@ const streamingEngine = {
         });
         
         // Show the wrapper immediately
+        wrapper.style.display = ''; // Restore default display (block)
         wrapper.style.opacity = '1';
         console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
         
@@ -4323,8 +4324,9 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
         if (options.streamEffect === 'in-out') {
             console.log('[SUMMARY1 DEBUG] ✓ STREAM TRANSIENT PATH - appearing and disappearing by stream');
             
-            // Start hidden
+            // Start hidden and collapsed
             newContentWrapper.style.opacity = '0';
+            newContentWrapper.style.display = 'none'; // Hide from layout until streamed
             
             // 1. Stream In
             streamingEngine.enqueue(
