@@ -1708,17 +1708,15 @@ div.third-column,
 /* Summary1 specific: ensure it scrolls and stays above fixed button row */
 #summary1 {
     width: 100% !important;
-    height: auto !important; /* Fit content, don't fill parent */
-    overflow-y: visible !important; /* Let content determine size */
-    overflow-x: hidden !important;
     box-sizing: border-box !important;
-    display: block !important;
-    /* Ensure bottom content is always visible above fixed button row */
+    flex: 1 1 auto !important;     /* Let it fill summarySection */
+    min-height: 0 !important;      /* Allow shrinking inside flex parent */
+    max-height: none !important;   /* Height governed by parent */
+    overflow-y: auto !important;   /* Scroll when content exceeds space */
+    overflow-x: hidden !important;
     padding-bottom: 8px !important; /* Small padding at bottom for readability */
-    min-height: 0 !important; /* Allow shrinking */
-    max-height: none !important; /* No max height - fit content */
-    position: relative !important; /* Normal positioning */
-    z-index: 1 !important; /* Lower than button container */
+    position: relative !important;
+    z-index: 1 !important;         /* Below the fixed button row */
 }
 
 /* Removed hover effects to prevent flickering */
@@ -2966,6 +2964,17 @@ html, body {
     overflow: hidden;
     /* Ensure layout respects fixed button row at bottom */
     margin-bottom: 0;
+}
+
+/* Summary section should fill remaining space and scroll */
+#summarySection {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;              /* Allow it to shrink within flex parent */
+    overflow-y: auto;           /* Scroll summary content inside this area */
+    overflow-x: hidden;
+    padding-bottom: 8px;        /* Breathing room above fixed button row */
 }
 
 .chatbot-input-section {
