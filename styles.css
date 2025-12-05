@@ -256,7 +256,7 @@ body {
     position: relative; /* For positioning of button row */
     overflow: hidden; /* Contain content */
     min-height: 0; /* Critical for flex children to shrink */
-    /* Ensure fixed button row stays at bottom */
+    height: 100%; /* Ensure full height */
     justify-content: flex-start;
 }
 
@@ -2955,11 +2955,11 @@ html, body {
     flex-direction: column;
     width: 100%;
     max-width: 1200px;
-    margin: 0;
+    margin: 0 auto; /* Ensure centered */
     gap: 16px;
     padding-top: 8px;
     padding-bottom: 0;
-    flex: 1;
+    flex: 1 1 auto; /* Allow shrinking and growing */
     min-height: 0;
     overflow: hidden;
     /* Ensure layout respects fixed button row at bottom */
@@ -3320,6 +3320,7 @@ html, body {
     box-sizing: border-box;
     border-top: 1px solid #e0e0e0;
     flex-shrink: 0; /* Do not shrink, stay fixed height */
+    flex-grow: 0;
 }
 
 /* Analyse button styling - always visible */
