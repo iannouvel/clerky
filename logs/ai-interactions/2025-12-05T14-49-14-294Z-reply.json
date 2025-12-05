@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T14-49-14-294Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1323,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 8+2, BMI 23\\n\\nIssues:\\nHyperemesis gravidarum requiring admission for IV rehydration and antiemetics\\n\\nBackground:\\nPresented to EPU with 2/52 history of persistent nausea...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 14,\n  \"lessRelevantCount\": 32,\n  \"notRelevantCount\": 246\n}...",
+  "full_data": null
+}

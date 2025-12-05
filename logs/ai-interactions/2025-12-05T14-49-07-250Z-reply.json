@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T14-49-07-250Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1584,
+  "response_length": 1601,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 23\\n\\nIssues:\\nHyperemesis gravidarum requiring admission for IV rehydration and antiemetics\\n\\nBackground:\\nP...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\\"title\\\": \\\"GP016 Operational Guideline for Adm...",
+  "full_data": null
+}

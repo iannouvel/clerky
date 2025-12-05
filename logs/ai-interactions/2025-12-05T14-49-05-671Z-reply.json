@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T14-49-05-671Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 1290,
+  "response_length": 1267,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 23\\n\\nIssues:\\nHyperemesis gravidarum requiring admission for IV rehydration and antiemetics\\n\\nBackground:\\nP...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-reducing-the-risk-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Reducing the risk...",
+  "full_data": null
+}
