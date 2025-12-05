@@ -15593,3 +15593,36 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
     
     console.log('[DEBUG] displayComplianceScoring: Results displayed successfully');
 }
+
+// Function to auto-adjust summary1 height to fit content
+function initializeSummaryAutoHeight() {
+    const summary1 = document.getElementById('summary1');
+    if (!summary1) return;
+
+    const adjustHeight = () => {
+        // Force height to auto and disable flex-grow so it shrinks to content
+        summary1.style.setProperty('height', 'auto', 'important');
+        summary1.style.setProperty('flex', '0 0 auto', 'important');
+        summary1.style.setProperty('min-height', '0', 'important');
+    };
+
+    // Create observer to monitor content changes
+    const observer = new MutationObserver((mutations) => {
+        adjustHeight();
+    });
+
+    observer.observe(summary1, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+        attributes: true
+    });
+    
+    // Initial adjustment
+    adjustHeight();
+    
+    console.log('[DEBUG] Summary1 auto-height observer initialized');
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', initializeSummaryAutoHeight);
