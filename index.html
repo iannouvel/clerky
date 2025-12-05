@@ -597,6 +597,15 @@
                             <button id="suggestionCancelBtn" class="nav-btn danger-outline">❌ Cancel All</button>
                         </div>
 
+                        <!-- Privacy Review Actions Group (Hidden by default) -->
+                        <div id="piiActionsGroup" class="suggestion-actions-group" style="display: none;">
+                            <button id="piiPrevBtn" class="nav-btn secondary" style="display: none;" onclick="navigatePIIReview(-1)">⬅ Previous</button>
+                            <button id="piiReplaceBtn" class="nav-btn success" onclick="handlePIIDecision('replace')">✅ Replace</button>
+                            <button id="piiKeepBtn" class="nav-btn info" onclick="handlePIIDecision('keep')">📝 Keep</button>
+                            <button id="piiSkipBtn" class="nav-btn warning" onclick="handlePIIDecision('skip')">⏭ Skip</button>
+                            <button id="piiCancelBtn" class="nav-btn danger-outline" onclick="cancelPIIReview()">❌ Cancel All</button>
+                        </div>
+
                         <!-- Selection buttons group (dynamically added by JavaScript) -->
                         
                         <!-- Clerking Buttons Group -->

@@ -2971,7 +2971,7 @@ html, body {
 #summarySection {
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-height: 0;              /* Allow it to shrink within flex parent */
     overflow-y: auto;           /* Scroll summary content inside this area */
     overflow-x: hidden;
@@ -3538,6 +3538,14 @@ html, body {
 }
 .nav-btn.success:hover {
     background-color: #15803d;
+}
+
+.nav-btn.info {
+    background-color: #17a2b8;
+    color: white;
+}
+.nav-btn.info:hover {
+    background-color: #138496;
 }
 
 .nav-btn.danger {
