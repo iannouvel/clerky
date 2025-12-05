@@ -337,26 +337,6 @@ function showCurrentPIIMatch() {
                 </div>
             </div>
             
-            <div class="pii-navigation" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                ${currentIndex > 0 ? `
-                    <button onclick="navigatePIIReview(-1)" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                        ⬅ Previous
-                    </button>
-                ` : ''}
-                <button onclick="handlePIIDecision('replace')" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">
-                    ✅ Replace
-                </button>
-                <button onclick="handlePIIDecision('keep')" style="background: #17a2b8; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    📝 Keep
-                </button>
-                <button onclick="handlePIIDecision('skip')" style="background: #ffc107; color: #000; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    ⏭ Skip
-                </button>
-                <button onclick="cancelPIIReview()" style="background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    ❌ Cancel All
-                </button>
-            </div>
-            
             <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">
                 ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
             </div>
@@ -367,16 +347,34 @@ function showCurrentPIIMatch() {
     const existingReview = document.getElementById('pii-review-current');
     if (existingReview && existingReview.parentElement) {
         existingReview.outerHTML = reviewHtml;
-        // Update critical status and scroll to show the buttons after replacing
+        // Update critical status
         setTimeout(() => {
             updateSummaryCriticalStatus();
-            scrollToPIIReviewButtons();
         }, 100);
     } else {
         appendToSummary1(reviewHtml, true);
         // Note: updateSummaryCriticalStatus will be called by appendToSummary1
-        // Just need to ensure scroll happens after
-        setTimeout(() => scrollToPIIReviewButtons(), 200);
+    }
+    
+    // Show PII buttons in fixedButtonRow
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+    const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+    const piiPrevBtn = document.getElementById('piiPrevBtn');
+
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'flex';
+        if (analyseBtn) analyseBtn.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
+        if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
+        if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
+        
+        // Update Previous button visibility
+        if (piiPrevBtn) {
+             piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+        }
     }
 }
 
@@ -447,7 +445,7 @@ window.handlePIIDecision = function(action) {
     
     // If action is from button click, use it; otherwise get from radio
     let finalAction = action;
-    if (action === 'replace' || action === 'keep') {
+    if (action === 'replace' || action === 'keep' || action === 'skip') {
         // Use the action parameter
     } else {
         // Get from radio selection
@@ -535,10 +533,9 @@ function completePIIReview() {
     
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
-        reviewContainer.outerHTML = completionHtml;
-    } else {
-        appendToSummary1(completionHtml, false);
+        reviewContainer.remove();
     }
+    appendToSummary1(completionHtml, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
 
     // Resolve the promise
     review.resolve({
@@ -571,10 +568,9 @@ window.cancelPIIReview = function() {
     
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
-        reviewContainer.outerHTML = cancelHtml;
-    } else {
-        appendToSummary1(cancelHtml, false);
+        reviewContainer.remove();
     }
+    appendToSummary1(cancelHtml, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
 
     // Resolve with cancellation
     review.resolve({
@@ -3428,16 +3424,16 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                         const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
                             `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
                             `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false);
+                        appendToSummary1(anonymisationNotice, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
+                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 });
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3458,7 +3454,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress
         const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false, true); // Transient
+        appendToSummary1(loadingMessage, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
@@ -3482,7 +3478,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 : scope === 'local'
                 ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
                 : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...\n`;
-            appendToSummary1(scopeInfo, false, true); // Transient
+            appendToSummary1(scopeInfo, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
         }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
@@ -3515,7 +3511,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress with guideline count
         const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false, true); // Transient
+        appendToSummary1(analyzeMessage, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: anonymisedTranscript.length,
@@ -3679,16 +3675,16 @@ async function generateClinicalNote() {
                         const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
                             `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
                             `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false);
+                        appendToSummary1(anonymisationNotice, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
+                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 });
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
+                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3854,16 +3850,18 @@ const streamingEngine = {
     charDelay: 10, // milliseconds per character (very fast streaming)
     
     // Add content to the streaming queue
-    enqueue(contentWrapper, shouldPause, onComplete) {
+    enqueue(contentWrapper, shouldPause, onComplete, options = {}) {
         console.log('[STREAMING] Enqueuing content for streaming', {
             hasInteractive: shouldPause,
-            queueLength: this.queue.length
+            queueLength: this.queue.length,
+            options
         });
         
         this.queue.push({
             wrapper: contentWrapper,
             shouldPause,
-            onComplete
+            onComplete,
+            options
         });
         
         // Start processing if not already streaming
@@ -3890,13 +3888,18 @@ const streamingEngine = {
         
         console.log('[STREAMING] Processing queue item', {
             shouldPause: item.shouldPause,
-            remainingInQueue: this.queue.length
+            remainingInQueue: this.queue.length,
+            action: item.options?.action || 'streamIn'
         });
         
-        await this.streamElement(item.wrapper, item.shouldPause);
-        
-        if (item.onComplete) {
-            item.onComplete();
+        if (item.options?.action === 'unstream') {
+            await this.unstreamElement(item.wrapper, item.onComplete);
+        } else if (item.options?.action === 'wait') {
+            await this.delay(item.options.duration || 1000);
+            if (item.onComplete) item.onComplete();
+        } else {
+            await this.streamElement(item.wrapper, item.shouldPause, item.options);
+            if (item.onComplete) item.onComplete();
         }
         
         // Continue with next item unless paused
@@ -3904,12 +3907,66 @@ const streamingEngine = {
             this.processQueue();
         }
     },
+
+    // Stream removal of an element's content (reverse typing)
+    async unstreamElement(wrapper, onComplete) {
+        console.log('[STREAMING] ◄◄◄ Starting unstream of element');
+        
+        if (!wrapper || !wrapper.parentNode) {
+            console.log('[STREAMING] Wrapper missing, skipping unstream');
+            if (onComplete) onComplete();
+            return;
+        }
+
+        // Get text content to unstream
+        const textContent = wrapper.textContent || '';
+        
+        // Create streaming container
+        const streamContainer = document.createElement('div');
+        streamContainer.className = 'streaming-container';
+        streamContainer.style.display = 'inline';
+        
+        // Create cursor
+        const cursor = document.createElement('span');
+        cursor.className = 'streaming-cursor';
+        cursor.textContent = '▋';
+        
+        // Replace content with streaming setup
+        wrapper.innerHTML = '';
+        wrapper.appendChild(streamContainer);
+        wrapper.appendChild(cursor);
+        
+        let currentText = textContent;
+        streamContainer.textContent = currentText;
+        
+        // Unstream character by character
+        while (currentText.length > 0) {
+            if (this.isPaused) {
+                wrapper.remove();
+                break;
+            }
+            
+            currentText = currentText.slice(0, -1);
+            streamContainer.textContent = currentText;
+            
+            await this.delay(this.charDelay);
+        }
+        
+        // Clean up
+        cursor.remove();
+        wrapper.remove();
+        
+        console.log('[STREAMING] Unstream complete');
+        
+        if (onComplete) onComplete();
+    },
     
     // Stream a single element's content
-    async streamElement(wrapper, shouldPauseAfter) {
+    async streamElement(wrapper, shouldPauseAfter, options = {}) {
         console.log('[STREAMING] ►►► Starting stream of element', {
             willPauseAfter: shouldPauseAfter,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            forceStream: options?.forceStream
         });
         
         // Show the wrapper immediately
@@ -3934,16 +3991,16 @@ const streamingEngine = {
         // OPTIMIZATION: Only stream short content character-by-character
         // For long content (>200 chars), show instantly to avoid delays
         const MAX_STREAM_LENGTH = 200;
-        const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20;
+        const shouldStreamFully = options.forceStream || (textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20);
         
         console.log('[STREAMING] Streaming decision:', {
             textLength: textContent.length,
             maxStreamLength: MAX_STREAM_LENGTH,
             shouldStreamFully,
-            willShowInstantly: textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH
+            willShowInstantly: !options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)
         });
         
-        if (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH) {
+        if (!options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)) {
             console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
                 reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
                 length: textContent.length
@@ -4174,12 +4231,13 @@ const streamingEngine = {
 
 // ==================== END STREAMING ENGINE ====================
 
-function appendToSummary1(content, clearExisting = false, isTransient = false) {
+function appendToSummary1(content, clearExisting = false, isTransient = false, options = {}) {
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('[SUMMARY1 DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
         clearExisting,
         isTransient,
+        options,
         timestamp: new Date().toISOString()
     });
     console.log('[SUMMARY1 DEBUG] Full content:', content);
@@ -4262,7 +4320,46 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         console.log('[SUMMARY1 DEBUG] Wrapper textContent length:', newContentWrapper.textContent?.length);
 
         // STREAMING DECISION POINT
-        if (isTransient) {
+        if (options.streamEffect === 'in-out') {
+            console.log('[SUMMARY1 DEBUG] ✓ STREAM TRANSIENT PATH - appearing and disappearing by stream');
+            
+            // Start hidden
+            newContentWrapper.style.opacity = '0';
+            
+            // 1. Stream In
+            streamingEngine.enqueue(
+                newContentWrapper, 
+                false, 
+                () => {
+                    console.log('[SUMMARY1 DEBUG] Stream transient IN complete');
+                    updateSummaryVisibility();
+                    updateSummaryCriticalStatus();
+                }, 
+                { forceStream: true, action: 'streamIn' }
+            );
+            
+            // 2. Wait
+            streamingEngine.enqueue(
+                null,
+                false,
+                null,
+                { action: 'wait', duration: options.transientDelay || 5000 }
+            );
+            
+            // 3. Stream Out
+            streamingEngine.enqueue(
+                newContentWrapper,
+                false,
+                () => {
+                    // On removal complete
+                    console.log('[SUMMARY1 DEBUG] Stream transient removal complete');
+                    updateSummaryVisibility();
+                    updateSummaryCriticalStatus();
+                },
+                { action: 'unstream' }
+            );
+            
+        } else if (isTransient) {
             // Transient messages: show instantly, no streaming, auto-remove after delay
             console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
             newContentWrapper.style.opacity = '1';
