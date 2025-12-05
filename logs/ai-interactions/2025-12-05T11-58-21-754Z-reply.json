@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-21-754Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1207,
+  "response_length": 1177,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":734,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp046-management-of-breech-and-ecv-pdf\\\", \\\"title\\\": \\\"MP046 Management of Breech and ECV\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"pot...",
+  "full_data": null
+}

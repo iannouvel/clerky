@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-22-154Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1249,
+  "response_length": 1236,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":734,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBac...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1192-large-for-gestational-age-pdf\\\", \\\"title\\\": \\\"Large for Gestational Age\\\", \\\"relev...",
+  "full_data": null
+}

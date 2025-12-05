@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-24-943Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1586,
+  "response_length": 1561,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":734,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\\"title\\\": \\\"GP0...",
+  "full_data": null
+}

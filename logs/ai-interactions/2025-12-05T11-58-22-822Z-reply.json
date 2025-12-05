@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-58-22-822Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1285,
+  "response_length": 1265,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":734,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 25, Rh+ve\\n\\nIssues:\\nPersistent breech presentation at term\\nRequesting external cephalic version (ECV)\\n\\nBa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14021-birth-centre-guideline-pdf\\\", \\\"title\\\": \\\"Birth Centre guideline\\\", \\\"relevance\\...",
+  "full_data": null
+}
