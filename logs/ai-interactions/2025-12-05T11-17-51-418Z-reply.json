@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-17-51-418Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1384,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nShoulder dystocia managed at delivery 2 hours ago\\nBaby delivered with active manoeuvres, good condition at birth\\n\\nBackground:\\nUncomplicat...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 20,\n  \"potentiallyRelevantCount\": 37,\n  \"lessRelevantCount\": 54,\n  \"notRelevantCount\": 186\n}...",
+  "full_data": null
+}
