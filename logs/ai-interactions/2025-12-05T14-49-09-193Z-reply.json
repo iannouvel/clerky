@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T14-49-09-193Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1506,
+  "response_length": 1757,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 23\\n\\nIssues:\\nHyperemesis gravidarum requiring admission for IV rehydration and antiemetics\\n\\nBackground:\\nPr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-...",
+  "full_data": null
+}
