@@ -870,6 +870,14 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         editor.commands.setContent(htmlContent);
     }
     
+    // Manually update Analyse/Reset button visibility
+    const hasContent = safeContent.trim().length > 0;
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    
+    if (analyseBtn) analyseBtn.style.display = hasContent ? 'flex' : 'none';
+    if (resetBtn) resetBtn.style.display = hasContent ? 'flex' : 'none';
+    
     // Update button visibility after content is set (with small delay to ensure TipTap has processed)
     setTimeout(() => {
         updateChatbotButtonVisibility();
@@ -1585,6 +1593,11 @@ function handleGlobalReset() {
     const editor = window.editors?.userInput;
     if (editor) {
         editor.commands.setContent('');
+        // Force button update since we're clearing content
+        const analyseBtn = document.getElementById('analyseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        if (analyseBtn) analyseBtn.style.display = 'none';
+        if (resetBtn) resetBtn.style.display = 'none';
     }
     
     // Clear summary content (except loading spinner)
