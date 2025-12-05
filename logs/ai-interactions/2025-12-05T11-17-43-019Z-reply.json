@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T11-17-43-019Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 1304,
+  "response_length": 1346,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":1282,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nShoulder dystocia managed at delivery 2 hours ago\\nBaby delivered with active manoeuvre...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp069-care-of-the-newborn-pdf\\\", \\\"title\\\": \\\"MP069 Care of the Newborn\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n    {\\\"id\\\": \\\"mp07...",
+  "full_data": null
+}
