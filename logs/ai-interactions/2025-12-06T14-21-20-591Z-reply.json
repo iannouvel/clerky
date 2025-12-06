@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-06T14-21-20-591Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 224,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"What particular advice would we give a patient who previously had a PPH (and didn't require a blood transfusion) regarding having a home birth?\\n\\n\",\"guidelinesCount\":297,\"chunksProcess...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 16,\n  \"potentiallyRelevantCount\": 18,\n  \"lessRelevantCount\": 36,\n  \"notRelevantCount\": 227\n}...",
+  "full_data": null
+}
