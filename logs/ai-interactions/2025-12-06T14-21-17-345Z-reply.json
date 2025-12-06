@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-06T14-21-17-345Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1352,
+  "response_length": 1573,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":145,\"transcriptPreview\":\"What particular advice would we give a patient who previously had a PPH (and didn't require a blood transfusion) regarding having a h...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"Prevention and Management of Postpartum Haemo...",
+  "full_data": null
+}
