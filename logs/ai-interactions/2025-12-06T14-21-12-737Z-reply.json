@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-06T14-21-12-737Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 839,
+  "response_length": 1135,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":145,\"transcriptPreview\":\"What particular advice would we give a patient who previously had a PPH (and didn't require a blood transfusion) regarding having a ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp053-obstetric-haemorrhage-pdf\\\", \\\"title\\\": \\\"Obstetric Haemorrhage\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\":...",
+  "full_data": null
+}
