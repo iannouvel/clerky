@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-06T14-21-13-686Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 879,
+  "response_length": 1269,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":145,\"transcriptPreview\":\"What particular advice would we give a patient who previously had a PPH (and didn't require a blood transfusion) regarding having a ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-local-requirements-pmrt-sop-pdf\\\", ...",
+  "full_data": null
+}
