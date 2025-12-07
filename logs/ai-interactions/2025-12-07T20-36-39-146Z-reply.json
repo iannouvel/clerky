@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-36-39-146Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1113,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":118,\"transcriptPreview\":\"How do we determine low, intermediate and high risk of preterm birth and what is the care afforded to each category?\\n\\n...\",\"chunkGu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
