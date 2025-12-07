@@ -780,7 +780,7 @@ function getUserInputContent() {
     return '';
 }
 
-function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null) {
+function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null, isHtml = false) {
     const editor = window.editors?.userInput;
     
     if (!editor || !editor.commands) {
@@ -806,7 +806,10 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         // Only apply amber color for PII and Guideline Suggestions changes
         const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
         
-        if (shouldColor) {
+        if (isHtml) {
+            // Directly set HTML content
+            editor.commands.setContent(safeContent);
+        } else if (shouldColor) {
             // Set content with amber color
             if (replacements && replacements.length > 0) {
                 // Only color the specific replacements
@@ -852,22 +855,26 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         // Update undo/redo button states
         updateUndoRedoButtons();
     } else {
-        // Regular content update without coloring
-        // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
-        // First, normalize multiple consecutive blank lines into single blank lines
-        const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-        
-        // Split by double newlines (paragraph breaks) and single newlines (line breaks)
-        const paragraphs = normalizedContent.split('\n\n');
-        const htmlContent = paragraphs
-            .filter(para => para.trim().length > 0)
-            .map(para => {
-                // Within each paragraph, convert single newlines to <br>
-                const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
-                return `<p>${lines}</p>`;
-            })
-            .join('');
-        editor.commands.setContent(htmlContent);
+        if (isHtml) {
+            editor.commands.setContent(safeContent);
+        } else {
+            // Regular content update without coloring
+            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
+            // First, normalize multiple consecutive blank lines into single blank lines
+            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+            
+            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    // Within each paragraph, convert single newlines to <br>
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
+                    return `<p>${lines}</p>`;
+                })
+                .join('');
+            editor.commands.setContent(htmlContent);
+        }
     }
     
     // Manually update Analyse/Reset button visibility
