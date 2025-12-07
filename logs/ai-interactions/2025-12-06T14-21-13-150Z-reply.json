@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-06T14-21-13-150Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 781,
+  "response_length": 1170,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":145,\"transcriptPreview\":\"What particular advice would we give a patient who previously had a PPH (and didn't require a blood transfusion) regarding having a ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"fetal-blood-sampling-sop-pdf\\\", \\\"title\\...",
+  "full_data": null
+}

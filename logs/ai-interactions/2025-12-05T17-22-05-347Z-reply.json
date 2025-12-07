@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-05T17-22-05-347Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1586,
+  "response_length": 1559,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":1505,\"transcriptPreview\":\"28yo, G1P0, 9+2, BMI 24, Rh+ve\\n\\nIssues:\\nConfirmed molar pregnancy on histology\\nRequires counselling and planning for definitive...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"sp22007-im-methotrexate-sop-and-competency-document-pdf\\\", \\\"title\\\": \\\"SP22007 IM Methotrexate SOP and Competency document\\\", ...",
+  "full_data": null
+}
