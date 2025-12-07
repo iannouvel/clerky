@@ -1583,11 +1583,17 @@ function hideSelectionButtons() {
 function handleGlobalReset() {
     console.log('[DEBUG] Reset button clicked');
     
-    // Don't allow reset while workflows or sequential processing are active
-    if (window.workflowInProgress || window.sequentialProcessingActive) {
-        console.log('[DEBUG] Reset ignored because a workflow is in progress');
-        return;
+    // Stop any active analysis/workflow
+    if (window.analysisAbortController) {
+        console.log('[DEBUG] Aborting active analysis');
+        window.analysisAbortController.abort();
+        window.analysisAbortController = null;
     }
+    
+    // Reset processing flags
+    window.workflowInProgress = false;
+    window.sequentialProcessingActive = false;
+    window.isAnalysisRunning = false;
     
     // Clear user input (TipTap editor)
     const editor = window.editors?.userInput;
@@ -4448,10 +4454,11 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
 }
 
 // Function to replace content in the user input field
-function appendToOutputField(content, clearExisting = true) {
+function appendToOutputField(content, clearExisting = true, isHtml = false) {
     console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
         contentLength: content?.length,
         clearExisting,
+        isHtml,
         contentPreview: content?.substring(0, 100) + '...'
     });
 
@@ -4462,20 +4469,33 @@ function appendToOutputField(content, clearExisting = true) {
     }
 
     try {
-        // Strip HTML tags for plain text display in textarea
         let processedContent = content;
-        if (/<[a-z][\s\S]*>/i.test(content)) {
-            // Remove HTML tags and convert to plain text
+        
+        if (isHtml) {
+            // If isHtml is explicitly true, trust the content
+            processedContent = content;
+        } else if (/<[a-z][\s\S]*>/i.test(content)) {
+            // If HTML is detected but isHtml is false, strip tags (legacy behavior)
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = content;
             processedContent = tempDiv.textContent || tempDiv.innerText || '';
         }
 
         if (clearExisting) {
-            setUserInputContent(processedContent, true, 'Content Replacement');
+            setUserInputContent(processedContent, true, 'Content Replacement', null, isHtml);
         } else {
-            const currentContent = getUserInputContent();
-            setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition');
+            // If appending, we need to get current content as HTML if new content is HTML
+            const editor = window.editors?.userInput;
+            if (editor) {
+                const currentContent = isHtml ? editor.getHTML() : getUserInputContent();
+                const separator = isHtml ? '<br><br>' : '\n\n';
+                const newContent = currentContent + separator + processedContent;
+                setUserInputContent(newContent, true, 'Content Addition', null, isHtml);
+            } else {
+                // Fallback
+                const currentContent = getUserInputContent();
+                setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition', null, false);
+            }
         }
 
         console.log('[DEBUG] Content replaced in user input successfully');
@@ -15067,15 +15087,42 @@ async function processQuestionAgainstGuidelines() {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
 
-        // Display the comprehensive answer
-        const answerMessage = `## 💡 Answer Based on Guidelines\n\n` +
-                             `**Question:** ${question}\n\n` +
-                             `**Guidelines Used:** ${data.guidelinesUsed?.length || 0}\n\n` +
-                             `**Answer:**\n\n${data.answer}\n\n` +
-                             `---\n\n` +
-                             `*Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})*\n\n`;
+        // Parse and format citations in the answer
+        let answerText = data.answer;
         
-        appendToOutputField(answerMessage, false);
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links
+        // Format: [[REF:guideline-id|Link Text|Search Text]]
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        
+        // Use a temporary placeholder for newlines to preserve them during HTML conversion
+        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
+        
+        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            // Decode HTML entities in search text to ensure it matches the PDF content
+            const decodedSearch = unescapeHtml(search);
+            
+            // Use existing createGuidelineViewerLink function
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting
+            // We construct a fake context with the search text to be extracted
+            return createGuidelineViewerLink(
+                id.trim(), 
+                text.trim(), 
+                null, // filename not needed if ID provided
+                decodedSearch, // Context (search text)
+                true // hasVerbatimQuote
+            );
+        });
+
+        // Display the comprehensive answer with HTML formatting
+        const answerMessage = `<h2>💡 Answer Based on Guidelines</h2>` +
+                             `<p><strong>Question:</strong> ${escapeHtml(question)}</p>` +
+                             `<p><strong>Guidelines Used:</strong> ${data.guidelinesUsed?.length || 0}</p>` +
+                             `<hr>` +
+                             `<div class="guideline-answer">${formattedAnswer}</div>` +
+                             `<hr>` +
+                             `<p style="font-size: 0.8em; color: #666;"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
+        
+        appendToOutputField(answerMessage, false, true);
 
     } catch (error) {
         console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);

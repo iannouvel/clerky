@@ -17129,7 +17129,17 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
 6. If the guidelines don't fully address the question, acknowledge this and provide the best available guidance
 7. Structure your response in a clear, organized manner
 
-Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations.`;
+CITATION FORMATTING (CRITICAL):
+When you refer to information from a specific guideline, you MUST use the following citation format EXACTLY:
+[[REF:GuidelineID|LinkText|SearchText]]
+
+- GuidelineID: The exact ID of the guideline as provided in the context (e.g., 'mp046-management-of-breech-and-ecv.txt').
+- LinkText: A short, readable text for the link (e.g., 'See Guideline', 'Management of Breech', 'Section 4.1').
+- SearchText: A unique snippet of text (approx 5-10 words) from the guideline that can be used to locate the exact section you are referencing.
+
+Example: "The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|ECV Guideline|External cephalic version should be offered]]."
+
+Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations using this citation format.`;
 
         // Create user prompt with question and guidelines
         const guidelinesText = guidelinesWithContent.map(guideline => {

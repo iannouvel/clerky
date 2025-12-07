@@ -1121,6 +1121,15 @@
                         }),
                         TextStyle,
                         Color,
+                        Link.configure({
+                            openOnClick: false, // We'll handle clicks manually
+                            autolink: true,
+                            HTMLAttributes: {
+                                class: 'guideline-link',
+                                rel: 'noopener noreferrer',
+                                target: '_blank',
+                            },
+                        }),
                         Placeholder.configure({
                             placeholder: 'Record a transcript, enter a clinical note or ask a question here...'
                         })
@@ -1182,6 +1191,33 @@
     <!-- Anonymisation module -->
     <script type="module" src="anonymisation.js"></script>
     
+    <!-- Link Click Handler for TipTap -->
+    <script>
+        // Global click handler for TipTap links
+        // TipTap sanitizes onclick attributes, so we need to handle clicks at the container level
+        document.addEventListener('DOMContentLoaded', () => {
+            const userInput = document.getElementById('userInput');
+            if (userInput) {
+                userInput.addEventListener('click', (event) => {
+                    const link = event.target.closest('a');
+                    if (link && link.hasAttribute('data-link-data')) {
+                        console.log('[TIPTAP] Citation link clicked');
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        // Check if prepareViewerAuth is available
+                        if (typeof window.prepareViewerAuth === 'function') {
+                            window.prepareViewerAuth(event, link);
+                        } else {
+                            console.error('[TIPTAP] window.prepareViewerAuth is not defined');
+                        }
+                    }
+                });
+                console.log('[TIPTAP] Link click handler initialized');
+            }
+        });
+    </script>
+
     <!-- Cache Manager - Load before main script -->
     <script src="cache-manager.js"></script>
     
