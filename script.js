@@ -546,6 +546,12 @@ function completePIIReview() {
 
     // Clean up
     window.currentPIIReview = null;
+    
+    // Hide PII buttons
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'none';
+    }
 }
 
 // Cancel the entire PII review
@@ -581,6 +587,12 @@ window.cancelPIIReview = function() {
 
     // Clean up
     window.currentPIIReview = null;
+
+    // Hide PII buttons
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'none';
+    }
 };
 
 // Helper to escape HTML entities
