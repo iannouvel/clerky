@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-34-40-757Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 1272,
+  "response_length": 1253,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":3244,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-guidance-2024-endometriosis-pdf\\\", \\\"title\\\": \\\"NICE Guidance - 2024 - Endometriosis\\\", \\\"...",
+  "full_data": null
+}
