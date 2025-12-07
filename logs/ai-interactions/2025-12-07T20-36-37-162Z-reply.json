@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-36-37-162Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 773,
+  "response_length": 1199,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":118,\"transcriptPreview\":\"How do we determine low, intermediate and high risk of preterm birth and what is the care afforded to each category?\\n\\n...\",\"chunkG...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"placental-histology-poster-pdf\\\", \\\"title\\\": \\\"Placental Histology poster\\\", \\\"relevance\\...",
+  "full_data": null
+}
