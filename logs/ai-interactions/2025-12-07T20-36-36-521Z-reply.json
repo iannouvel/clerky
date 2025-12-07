@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-36-36-521Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 890,
+  "response_length": 1210,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":118,\"transcriptPreview\":\"How do we determine low, intermediate and high risk of preterm birth and what is the care afforded to each category?\\n\\n...\",\"chunkG...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg14021-birth-centre-guideline-pdf\\\", \\\"title\\\": \\\"Birth Centre guideline\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-36-38-020Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1121,
+  "response_length": 1491,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":118,\"transcriptPreview\":\"How do we determine low, intermediate and high risk of preterm birth and what is the care afforded to each category?\\n\\n...\",\"chunkGu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bsh-2021-sickle-cell-disease-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Management of Sickle Cell Disease...",
+  "full_data": null
+}

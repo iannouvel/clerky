@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-34-39-391Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 1266,
+  "response_length": 1244,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":3244,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"eshre-guideline-2022-endometriosis-pdf\\\", \\\"title\\\": \\\"ESHRE Guideline - 2022 - Endometriosis\\\", \\\"relevance\\\": \\\"0.85\\\"}],\\n  ...",
+  "full_data": null
+}

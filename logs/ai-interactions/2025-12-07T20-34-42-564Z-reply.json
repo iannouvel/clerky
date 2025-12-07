@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-34-42-564Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1580,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":3244,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"sp22003-maternity-telephone-triage-sop-p...",
+  "full_data": null
+}

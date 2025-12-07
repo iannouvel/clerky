@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-36-37-056Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 904,
+  "response_length": 1307,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":118,\"transcriptPreview\":\"How do we determine low, intermediate and high risk of preterm birth and what is the care afforded to each category?\\n\\n...\",\"chunkG...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": \\\"MP031 Pre-term labour\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id...",
+  "full_data": null
+}

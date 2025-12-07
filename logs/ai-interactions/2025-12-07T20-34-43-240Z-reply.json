@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-07T20-34-43-240Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1320,
+  "response_length": 1582,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":3244,\"transcriptPreview\":\"Of course. Here is a medical clerking in SBAR format for the provided clinical scenario, using appropriate medical terminology and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2014-longterm-pcos-consequences-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2014 - Longter...",
+  "full_data": null
+}
