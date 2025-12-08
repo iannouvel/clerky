@@ -17151,7 +17151,13 @@ Always base your answers on the provided guidelines and clearly indicate when yo
                 guidelineText += `\nSummary: ${guideline.summary}`;
             }
             if (guideline.content) {
-                guidelineText += `\nContent: ${guideline.content}`;
+                // Truncate content to prevent context window overflow (approx 20k chars per guideline)
+                const MAX_CONTENT_LENGTH = 20000;
+                let content = guideline.content;
+                if (content.length > MAX_CONTENT_LENGTH) {
+                    content = content.substring(0, MAX_CONTENT_LENGTH) + '\n...[Content truncated]...';
+                }
+                guidelineText += `\nContent: ${content}`;
             }
             return guidelineText;
         }).join('\n\n');
