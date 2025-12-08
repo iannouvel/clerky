@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-26-25-847Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 126,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"how do we diagnose hypertension in pregnancy?\\n\\n\",\"guidelinesCount\":297,\"chunksProcessed\":38,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 17,\n  \"notRelevantCount\": 270\n}...",
+  "full_data": null
+}
