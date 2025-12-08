@@ -1777,6 +1777,142 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle semantic compression for all remaining guidelines
+        const compressAllGuidelinesBtn = document.getElementById('compressAllGuidelinesBtn');
+        if (compressAllGuidelinesBtn) {
+            compressAllGuidelinesBtn.addEventListener('click', async () => {
+                const statusDiv = document.getElementById('semanticCompressionStatus');
+
+                try {
+                    if (!confirm('This will sequentially semantically compress all guidelines that are still missing compressed text. This may take several minutes and use AI credits. Continue?')) {
+                        return;
+                    }
+
+                    compressAllGuidelinesBtn.disabled = true;
+                    if (compressNextGuidelineBtn) compressNextGuidelineBtn.disabled = true;
+
+                    const originalText = compressAllGuidelinesBtn.textContent;
+                    compressAllGuidelinesBtn.textContent = '⏳ Compressing all...';
+
+                    if (statusDiv) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.backgroundColor = '#f8f9fa';
+                        statusDiv.style.border = '1px solid #e5e7eb';
+                        statusDiv.style.color = '#6c757d';
+                        statusDiv.textContent = 'Starting bulk semantic compression...';
+                    }
+
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    let processedCount = 0;
+                    let lastRemainingEstimate = null;
+
+                    // Loop until the server reports that all guidelines are done
+                    // or until a safety cap is reached
+                    const MAX_ITERATIONS = 10000;
+
+                    for (let i = 0; i < MAX_ITERATIONS; i++) {
+                        if (statusDiv) {
+                            statusDiv.style.display = 'block';
+                            statusDiv.textContent = `Processing guideline ${processedCount + 1}...`;
+                        }
+
+                        const response = await fetch(`${SERVER_URL}/compressNextGuideline`, {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                        const result = await response.json();
+
+                        if (!response.ok || !result.success) {
+                            throw new Error(result.error || `Server error: ${response.status}`);
+                        }
+
+                        if (result.done) {
+                            if (statusDiv) {
+                                statusDiv.style.display = 'block';
+                                statusDiv.style.backgroundColor = '#d4edda';
+                                statusDiv.style.border = '1px solid #c3e6cb';
+                                statusDiv.style.color = '#155724';
+                                statusDiv.innerHTML = `
+                                    <strong>✅ Bulk compression complete.</strong><br>
+                                    Guidelines processed this run: ${processedCount}<br>
+                                    ${result.message || 'Every guideline already has semantically compressed text.'}
+                                `;
+                            }
+                            alert(`Bulk semantic compression complete. Processed ${processedCount} guideline(s) this run.`);
+                            break;
+                        }
+
+                        processedCount += 1;
+                        const { id, title, sourceLength, compressedLength, remainingNeedingCompression } = result;
+                        lastRemainingEstimate = typeof remainingNeedingCompression === 'number'
+                            ? remainingNeedingCompression
+                            : lastRemainingEstimate;
+
+                        const displayTitle = title || id;
+                        const reduction = sourceLength > 0
+                            ? Math.round(100 - (compressedLength / sourceLength) * 100)
+                            : 0;
+
+                        if (statusDiv) {
+                            statusDiv.style.display = 'block';
+                            statusDiv.style.backgroundColor = '#d4edda';
+                            statusDiv.style.border = '1px solid #c3e6cb';
+                            statusDiv.style.color = '#155724';
+                            statusDiv.innerHTML = `
+                                <strong>✅ Compressed guideline:</strong> ${displayTitle}<br>
+                                ID: ${id}<br>
+                                Length: ${sourceLength} → ${compressedLength} chars (${isNaN(reduction) ? 'n/a' : reduction + '%'} reduction)<br>
+                                Processed this run: ${processedCount}<br>
+                                Remaining needing compression (approx): ${lastRemainingEstimate ?? 'unknown'}
+                            `;
+                        }
+
+                        // Small delay between calls to avoid hammering the AI / backend
+                        await new Promise(resolve => setTimeout(resolve, 800));
+                    }
+
+                    if (processedCount >= MAX_ITERATIONS) {
+                        console.warn('[SEMANTIC_COMPRESS] Reached max iterations in bulk compression loop');
+                        if (statusDiv) {
+                            statusDiv.style.display = 'block';
+                            statusDiv.style.backgroundColor = '#fff3cd';
+                            statusDiv.style.border = '1px solid #ffeeba';
+                            statusDiv.style.color = '#856404';
+                            statusDiv.innerHTML = `
+                                <strong>⚠️ Stopped bulk compression early.</strong><br>
+                                Safety limit of ${MAX_ITERATIONS} iterations reached.<br>
+                                Processed this run: ${processedCount}
+                            `;
+                        }
+                    }
+                } catch (error) {
+                    console.error('[SEMANTIC_COMPRESS] Bulk compression error from dev tools:', error);
+                    const statusDiv = document.getElementById('semanticCompressionStatus');
+                    if (statusDiv) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.backgroundColor = '#f8d7da';
+                        statusDiv.style.border = '1px solid #f5c6cb';
+                        statusDiv.style.color = '#721c24';
+                        statusDiv.textContent = `Error during bulk compression: ${error.message}`;
+                    }
+                    alert(`Error during bulk compression: ${error.message}`);
+                } finally {
+                    compressAllGuidelinesBtn.disabled = false;
+                    compressAllGuidelinesBtn.textContent = '🧠 Compress All Remaining';
+                    if (compressNextGuidelineBtn) compressNextGuidelineBtn.disabled = false;
+                }
+            });
+        }
+
         // Handle initialize clinical conditions button
         const initClinicalConditionsBtn = document.getElementById('initClinicalConditionsBtn');
         if (initClinicalConditionsBtn) {
