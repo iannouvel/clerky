@@ -8198,6 +8198,103 @@ app.post('/batchEnhanceMetadata', authenticateUser, async (req, res) => {
   }
 });
 
+// Endpoint to generate a semantically compressed version for the next guideline that needs it
+app.post('/compressNextGuideline', authenticateUser, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({
+        success: false,
+        error: 'Admin access required'
+      });
+    }
+
+    console.log('[SEMANTIC_COMPRESS] Searching for next guideline without semanticallyCompressed text...');
+
+    const snapshot = await db.collection('guidelines').get();
+    if (snapshot.empty) {
+      return res.json({
+        success: true,
+        done: true,
+        message: 'No guidelines found in collection'
+      });
+    }
+
+    let targetDoc = null;
+    let remainingNeedingCompression = 0;
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      const compressed = data.semanticallyCompressed;
+      const needsCompression =
+        !compressed || typeof compressed !== 'string' || !compressed.trim();
+
+      if (needsCompression) {
+        if (!targetDoc) {
+          targetDoc = { id: doc.id, data };
+        } else {
+          remainingNeedingCompression += 1;
+        }
+      }
+    });
+
+    if (!targetDoc) {
+      console.log('[SEMANTIC_COMPRESS] All guidelines already have semanticallyCompressed text');
+      return res.json({
+        success: true,
+        done: true,
+        message: 'All guidelines already have semanticallyCompressed text'
+      });
+    }
+
+    console.log('[SEMANTIC_COMPRESS] Compressing guideline:', {
+      id: targetDoc.id,
+      title: targetDoc.data.displayName || targetDoc.data.title
+    });
+
+    const guidelineForCompression = {
+      id: targetDoc.id,
+      ...targetDoc.data
+    };
+
+    const compressedText = await compressGuidelineText(guidelineForCompression, userId);
+
+    const sourceText =
+      (targetDoc.data.condensed && targetDoc.data.condensed.trim()) ||
+      (targetDoc.data.content && targetDoc.data.content.trim()) ||
+      (targetDoc.data.summary && targetDoc.data.summary.trim()) ||
+      '';
+
+    await db.collection('guidelines').doc(targetDoc.id).update({
+      semanticallyCompressed: compressedText,
+      lastCompressedAt: admin.firestore.FieldValue.serverTimestamp()
+    });
+
+    console.log('[SEMANTIC_COMPRESS] Stored semanticallyCompressed text for guideline', {
+      id: targetDoc.id,
+      sourceLength: sourceText.length,
+      compressedLength: compressedText.length
+    });
+
+    return res.json({
+      success: true,
+      done: false,
+      id: targetDoc.id,
+      title: targetDoc.data.displayName || targetDoc.data.title || targetDoc.id,
+      sourceLength: sourceText.length,
+      compressedLength: compressedText.length,
+      remainingNeedingCompression
+    });
+  } catch (error) {
+    console.error('[SEMANTIC_COMPRESS] Error in /compressNextGuideline endpoint:', error);
+    return res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
 // -----------------------------------------------------------------------------
 //  NEW ENDPOINT: Audit Element Check
 // -----------------------------------------------------------------------------
@@ -9166,6 +9263,84 @@ async function getGuideline(id) {
     condensed: data.condensed || null,
     ...data // Include all other fields
   };
+}
+
+// Helper to generate a semantically compressed version of a guideline's text
+async function compressGuidelineText(guideline, userId = 'system') {
+  try {
+    const sourceText =
+      (guideline.condensed && guideline.condensed.trim()) ||
+      (guideline.content && guideline.content.trim()) ||
+      (guideline.summary && guideline.summary.trim());
+
+    if (!sourceText) {
+      throw new Error('No condensed, content or summary text available for semantic compression');
+    }
+
+    const title = guideline.displayName || guideline.title || guideline.id || 'Untitled Guideline';
+
+    // Rough target: 30–50% of the condensed length
+    const targetChars = Math.max(800, Math.floor(sourceText.length * 0.4));
+
+    const systemPrompt = `
+You are a clinical summarisation assistant.
+
+Your task is to perform semantic compression on guideline text: produce a substantially shorter version that preserves all clinically important meaning.
+
+Requirements:
+- Maintain clinical accuracy and nuance.
+- Prioritise diagnostic criteria, thresholds, risk factors, key decision points and treatment recommendations.
+- Drop methodology sections, references, authorship, editorial boilerplate and detailed trial descriptions.
+- Aim for roughly ${targetChars} characters or less (about 30–50% of the original length).
+- Use clear, professional medical language and either short paragraphs or bullet points.
+`.trim();
+
+    const userPrompt = `
+Guideline title: ${title}
+
+Original condensed text:
+${sourceText}
+
+Task:
+Provide a semantically compressed version of this guideline that a clinician could safely use as a high‑level reference. Do not mention that this is a summary or talk about tokens; just present the compressed content itself.
+`.trim();
+
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt }
+    ];
+
+    const aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+
+    if (!aiResponse || !aiResponse.content) {
+      throw new Error('AI returned an empty response for semantic compression');
+    }
+
+    const compressed = aiResponse.content.trim();
+
+    // Basic sanity check – if somehow longer than source, keep it but log
+    if (compressed.length >= sourceText.length) {
+      console.warn('[SEMANTIC_COMPRESS] Compressed text is not shorter than source', {
+        id: guideline.id,
+        sourceLength: sourceText.length,
+        compressedLength: compressed.length
+      });
+    } else {
+      console.log('[SEMANTIC_COMPRESS] Successfully compressed guideline text', {
+        id: guideline.id,
+        sourceLength: sourceText.length,
+        compressedLength: compressed.length
+      });
+    }
+
+    return compressed;
+  } catch (error) {
+    console.error('[SEMANTIC_COMPRESS] Error during compression:', {
+      id: guideline.id,
+      error: error.message
+    });
+    throw error;
+  }
 }
 
 async function getAllGuidelines() {
@@ -17096,10 +17271,11 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
                 console.log(`[DEBUG] askGuidelinesQuestion: Fetching content for guideline: ${guideline.id}`);
                 const fullGuideline = await getGuideline(guideline.id);
                 if (fullGuideline) {
+                    // Merge client-provided guideline info with full Firestore document,
+                    // preferring the Firestore data for all content fields
                     guidelinesWithContent.push({
                         ...guideline,
-                        content: fullGuideline.content || fullGuideline.condensed || '',
-                        summary: fullGuideline.summary || ''
+                        ...fullGuideline
                     });
                 } else {
                     console.warn(`[DEBUG] askGuidelinesQuestion: Could not fetch guideline content for: ${guideline.id}`);
@@ -17150,14 +17326,24 @@ Always base your answers on the provided guidelines and clearly indicate when yo
             if (guideline.summary) {
                 guidelineText += `\nSummary: ${guideline.summary}`;
             }
-            if (guideline.content) {
-                // Truncate content to prevent context window overflow (approx 20k chars per guideline)
+            // Prefer semantically compressed text, then condensed, and only fall back to full content
+            let contentToUse = null;
+            if (guideline.semanticallyCompressed && guideline.semanticallyCompressed.trim()) {
+                contentToUse = guideline.semanticallyCompressed.trim();
+            } else if (guideline.condensed && guideline.condensed.trim()) {
+                contentToUse = guideline.condensed.trim();
+            } else if (guideline.content) {
+                // Truncate raw content to prevent context window overflow (approx 20k chars per guideline)
                 const MAX_CONTENT_LENGTH = 20000;
                 let content = guideline.content;
                 if (content.length > MAX_CONTENT_LENGTH) {
                     content = content.substring(0, MAX_CONTENT_LENGTH) + '\n...[Content truncated]...';
                 }
-                guidelineText += `\nContent: ${content}`;
+                contentToUse = content;
+            }
+
+            if (contentToUse) {
+                guidelineText += `\nContent: ${contentToUse}`;
             }
             return guidelineText;
         }).join('\n\n');
