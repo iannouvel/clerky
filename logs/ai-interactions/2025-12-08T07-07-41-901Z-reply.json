@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-41-901Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 875,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"gtg-2011-aph-pdf: GTG 2011 - APH\",\"gtg-201...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2011-aph-pdf\\\", \\\"title\\\": \\\"GTG 2011 - APH\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n  \\\"lessRelevant...",
+  "full_data": null
+}
