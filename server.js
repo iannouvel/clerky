@@ -9457,38 +9457,58 @@ app.post('/syncGuidelines', authenticateUser, async (req, res) => {
     
     // Process each guideline
     for (const guideline of guidelines) {
-            console.log(`[DEBUG] Processing guideline: ${guideline}`);
-            try {
-                // Convert guideline filename to the correct format for summary
-                const summaryFilename = guideline.replace(/\.pdf$/i, '.txt');
-                console.log(`[DEBUG] Looking for summary file: ${summaryFilename}`);
-                
-      const content = await getFileContents(`guidance/condensed/${guideline}`);
-                const summary = await getFileContents(`guidance/summary/${summaryFilename}`);
-                
-                if (!summary) {
-                    console.warn(`[WARNING] No summary found for guideline: ${guideline}`);
-                    continue;
-                }
-                
-                // Extract keywords from summary
-      const keywords = extractKeywords(summary);
-      
-      // Store in Firestore
-      await storeGuideline({
-        id: guideline,
-        title: guideline,
-        content,
-        summary,
-        keywords,
-        condensed: content // Using the same content for now
-      });
-                
-                console.log(`[DEBUG] Successfully stored guideline: ${guideline}`);
-            } catch (error) {
-                console.error(`[ERROR] Failed to process guideline ${guideline}:`, error);
-            }
+      console.log(`[DEBUG] Processing guideline: ${guideline}`);
+      try {
+        // Convert guideline filename to the correct format for summary
+        const summaryFilename = guideline.replace(/\.pdf$/i, '.txt');
+        console.log(`[DEBUG] Looking for summary file: ${summaryFilename}`);
+        
+        const content = await getFileContents(`guidance/condensed/${guideline}`);
+        const summary = await getFileContents(`guidance/summary/${summaryFilename}`);
+        
+        if (!summary) {
+          console.warn(`[WARNING] No summary found for guideline: ${guideline}`);
+          continue;
         }
+        
+        // Extract keywords from summary
+        const keywords = extractKeywords(summary);
+
+        // Generate semantically compressed text from condensed content (best-effort)
+        let semanticallyCompressed = null;
+        try {
+          semanticallyCompressed = await compressGuidelineText(
+            {
+              id: guideline,
+              title: guideline,
+              condensed: content,
+              summary
+            },
+            'system'
+          );
+        } catch (compressError) {
+          console.error('[SEMANTIC_COMPRESS] Failed during /syncGuidelines for guideline:', {
+            id: guideline,
+            error: compressError.message
+          });
+        }
+        
+        // Store in Firestore
+        await storeGuideline({
+          id: guideline,
+          title: guideline,
+          content,
+          summary,
+          keywords,
+          condensed: content, // Using the same content for now
+          ...(semanticallyCompressed ? { semanticallyCompressed } : {})
+        });
+        
+        console.log(`[DEBUG] Successfully stored guideline: ${guideline}`);
+      } catch (error) {
+        console.error(`[ERROR] Failed to process guideline ${guideline}:`, error);
+      }
+    }
 
         res.json({ 
             success: true, 
@@ -10038,6 +10058,26 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
         
         console.log(`[SYNC_META] Successfully extracted metadata for ${guideline}:`, metadata);
 
+        // Generate semantically compressed text from condensed content (best-effort)
+        let semanticallyCompressed = null;
+        try {
+          semanticallyCompressed = await compressGuidelineText(
+            {
+              id: cleanId,
+              title,
+              condensed: guidelineContent,
+              summary: guidelineSummary
+            },
+            'system'
+          );
+        } catch (compressError) {
+          console.error('[SEMANTIC_COMPRESS] Failed during /syncGuidelinesWithMetadata for guideline:', {
+            id: cleanId,
+            rawName: rawGuidelineName,
+            error: compressError.message
+          });
+        }
+
         // Store in Firestore with metadata and clean ID structure
         console.log(`[SYNC_META] Storing ${rawGuidelineName} with clean ID in Firestore...`);
         const title = metadata.humanFriendlyName || rawGuidelineName;
@@ -10057,7 +10097,8 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
           scope: metadata.scope || 'national',
           nation: metadata.nation || null,
           hospitalTrust: metadata.hospitalTrust || null,
-          auditableElements: await extractAuditableElements(guidelineContent)
+          auditableElements: await extractAuditableElements(guidelineContent),
+          ...(semanticallyCompressed ? { semanticallyCompressed } : {})
         });
         
         // Queue AI displayName generation job (content is already available from sync)
