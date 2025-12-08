@@ -3570,6 +3570,8 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error('Analysis cancelled');
         }
         
+        updateUser('Finding relevant guidelines...', true);
+
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
@@ -3599,8 +3601,11 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         const data = await response.json();
         if (!data.success) {
+            updateUser('Error finding guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
+        
+        updateUser('Guidelines found', false);
 
         console.log('[DEBUG] Server response categories structure:', {
             categories: data.categories,
@@ -3748,6 +3753,8 @@ async function generateClinicalNote() {
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token');
 
+        updateUser('Generating clinical note...', true);
+
         console.log('[DEBUG] Sending request to server...');
         const response = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
             method: 'POST',
@@ -3779,8 +3786,11 @@ async function generateClinicalNote() {
 
         if (!data.success || !data.note) {
             console.error('[DEBUG] Invalid response format:', data);
+            updateUser('Error generating note', false);
             throw new Error('Invalid response format from server');
         }
+
+        updateUser('Clinical note generated', false);
 
         // Replace the user input with the generated note
         console.log('[DEBUG] Replacing user input with generated note');
@@ -3792,6 +3802,7 @@ async function generateClinicalNote() {
             error: error.message,
             stack: error.stack
         });
+        updateUser('Error generating note', false);
         alert(`Error generating clinical note: ${error.message}`);
     } finally {
         // Reset button state
@@ -5030,6 +5041,8 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         const idToken = await user.getIdToken();
         console.log('[DEBUG] dynamicAdvice: Got ID token');
 
+        updateUser(`Generating suggestions for ${guidelineTitle}...`, true);
+
         // Call the dynamicAdvice API with retry logic
         console.log('[DEBUG] dynamicAdvice: Calling API endpoint');
         let response;
@@ -5105,8 +5118,11 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         });
 
         if (!result.success) {
+            updateUser('Error generating suggestions', false);
             throw new Error(result.error || 'Guideline suggestions generation failed');
         }
+        
+        updateUser('Suggestions generated', false);
 
         // Store session data globally and ensure unique suggestion IDs
         currentAdviceSession = result.sessionId;
@@ -10812,6 +10828,7 @@ async function processWorkflow() {
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
         updateAnalyseButtonProgress('Checking Guidelines Scope...', true);
+        updateUser('Checking guideline scope...', true);
         
         let scopeSelection;
         
@@ -10823,6 +10840,7 @@ async function processWorkflow() {
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
                 // Need to verify the hospital trust is still valid
                 try {
+                    updateUser('Verifying hospital trust...', true);
                     const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
                         method: 'GET',
                         headers: {
@@ -12633,6 +12651,8 @@ async function processSelectedGuidelines(event) {
         // Set loading state
         button.disabled = true;
         button.innerHTML = '⏳ Processing...';
+        
+        updateUser(`Processing ${selectedGuidelineIds.length} guidelines...`, true);
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
         updateAnalyseButtonProgress(`Processing ${selectedGuidelineIds.length} Guidelines...`, true);
@@ -12766,6 +12786,7 @@ async function processSelectedGuidelines(event) {
 
     } catch (error) {
         console.error('[DEBUG] Error in processSelectedGuidelines:', error);
+        updateUser('Error processing guidelines', false);
         const errorMessage = `\n❌ **Sequential Processing Error:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
         appendToOutputField(errorMessage, true);
         alert('Error processing selected guidelines: ' + error.message);
@@ -12774,6 +12795,9 @@ async function processSelectedGuidelines(event) {
         // Reset button state
         button.disabled = false;
         button.textContent = originalText;
+        if (!document.getElementById('serverStatusMessage').textContent.includes('Error')) {
+             updateUser('', false);
+        }
     }
 }
 
@@ -14976,10 +15000,42 @@ async function askGuidelinesQuestion() {
             throw new Error(data2.error || 'Failed to process guidelines');
         }
 
-        // Display the answer
-        const selectedGuidelinesList = data2.guidelinesUsed.map(g => `- ${g.title}`).join('\n');
-        const finalOutput = `## Guidelines Used\n${selectedGuidelinesList}\n\n## Answer\n${data2.answer}`;
-        appendToOutputField(finalOutput, true); // Display in output field, clear existing content
+        // Parse and format citations in the answer
+        let answerText = data2.answer;
+        
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links
+        // Format: [[REF:guideline-id|Link Text|Search Text]]
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        
+        // Use a temporary placeholder for newlines to preserve them during HTML conversion
+        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
+        
+        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            // Decode HTML entities in search text to ensure it matches the PDF content
+            const decodedSearch = unescapeHtml(search);
+            
+            // Use existing createGuidelineViewerLink function
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting
+            // We construct a fake context with the search text to be extracted
+            return createGuidelineViewerLink(
+                id.trim(), 
+                text.trim(), 
+                null, // filename not needed if ID provided
+                decodedSearch, // Context (search text)
+                true // hasVerbatimQuote
+            );
+        });
+
+        // Display the answer with HTML formatting
+        const selectedGuidelinesList = data2.guidelinesUsed.map(g => `<li>${escapeHtml(g.title)}</li>`).join('');
+        
+        const answerMessage = `<h2>Guidelines Used</h2>` +
+                             `<ul>${selectedGuidelinesList}</ul>` +
+                             `<hr>` +
+                             `<h2>Answer</h2>` +
+                             `<div class="guideline-answer">${formattedAnswer}</div>`;
+        
+        appendToOutputField(answerMessage, true, true); // Display in output field, clear existing content, isHtml=true
 
     } catch (error) {
         // Check if error is due to abort
