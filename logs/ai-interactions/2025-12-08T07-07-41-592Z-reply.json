@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-41-592Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 937,
+  "response_length": 1368,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"management-of-latent-phase-flowchart-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp001-provision-and-schedules-of-antenatal-care-pdf\\\", \\\"title\\\": \\\"MP001 Provision and Schedul...",
+  "full_data": null
+}
