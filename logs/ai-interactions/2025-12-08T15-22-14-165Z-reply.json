@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-22-14-165Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1202,
+  "response_length": 1185,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":2399,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using Br...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"Caesarean Section\\\",...",
+  "full_data": null
+}
