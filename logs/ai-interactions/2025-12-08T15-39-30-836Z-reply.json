@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-39-30-836Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 916,
+  "response_length": 1361,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":45,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?...\",\"chunkGuidelines\":[\"management-of-latent-phase-flowchart-pdf: Management of Latent ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp001-provision-and-schedules-of-antenatal-care-pdf\\\", \\\"title\\\": \\\"MP001 Provision and Schedul...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-39-31-296Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 863,
+  "response_length": 1314,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":45,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?...\",\"chunkGuidelines\":[\"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf: Carbetocin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1103-antenatal-care-patient-info-pdf\\\", \\\"title\\\": \\\"CG1103 Antenatal Care & Patient Info\\\", \\\"relevance\\\": \\\"0.90\\\"}],\\n  \\\"...",
+  "full_data": null
+}

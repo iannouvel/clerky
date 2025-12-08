@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-39-30-295Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 828,
+  "response_length": 1321,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":45,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: MP031 Pre-term labour\",\"mp032-pre-la...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": ...",
+  "full_data": null
+}
