@@ -8248,44 +8248,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handlers for new panel buttons
+    // Add click handlers for new panel buttons - navigate to dedicated pages where available
     const promptsPanelBtn = document.getElementById('promptsPanelBtn');
     if (promptsPanelBtn) {
         promptsPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Prompts panel button clicked');
-            showSection('promptsSection');
+            console.log('[DEBUG] Prompts panel button clicked - navigating to prompts.html');
+            window.location.href = 'prompts.html';
         });
     }
-
+    
     const guidelinesPanelBtn = document.getElementById('guidelinesPanelBtn');
     if (guidelinesPanelBtn) {
         guidelinesPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Guidelines panel button clicked');
-            showSection('guidelinesSection');
+            console.log('[DEBUG] Guidelines panel button clicked - navigating to guidelines.html');
+            window.location.href = 'guidelines.html';
         });
     }
-
+    
     const workflowsPanelBtn = document.getElementById('workflowsPanelBtn');
     if (workflowsPanelBtn) {
         workflowsPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Workflows panel button clicked');
-            showSection('workflowsView');
+            console.log('[DEBUG] Workflows panel button clicked - navigating to workflows.html');
+            window.location.href = 'workflows.html';
         });
     }
-
+    
     const devPanelBtn = document.getElementById('devPanelBtn');
     if (devPanelBtn) {
         devPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Dev panel button clicked');
-            showSection('devSection');
+            console.log('[DEBUG] Dev panel button clicked - navigating to dev.html');
+            window.location.href = 'dev.html';
         });
     }
-
+    
+    // Lazy-load helpful external links into the in-app Links panel
+    let linksLoaded = false;
+    async function loadLinksIfNeeded() {
+        if (linksLoaded) return;
+        
+        const linksList = document.getElementById('linksList');
+        if (!linksList) return;
+        
+        try {
+            const response = await fetch('links.txt');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const text = await response.text();
+            linksList.innerHTML = '';
+            
+            text.split('\n').forEach(line => {
+                const trimmed = line.trim();
+                if (!trimmed) return;
+                
+                const parts = trimmed.split(';');
+                if (parts.length < 2) return;
+                
+                const label = parts[0].trim();
+                const url = parts[1].trim();
+                if (!label || !url) return;
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = url;
+                a.textContent = label;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                li.appendChild(a);
+                linksList.appendChild(li);
+            });
+            
+            linksLoaded = true;
+        } catch (error) {
+            console.error('Failed to load links:', error);
+            linksList.innerHTML = '<li>Failed to load links. Please try again later.</li>';
+        }
+    }
+    
     const linksPanelBtn = document.getElementById('linksPanelBtn');
     if (linksPanelBtn) {
         linksPanelBtn.addEventListener('click', () => {
             console.log('[DEBUG] Links panel button clicked');
             showSection('linksSection');
+            loadLinksIfNeeded();
         });
     }
 
