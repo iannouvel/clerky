@@ -1635,8 +1635,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-
-
         // Handle database migration button
         const migrateDatabaseBtn = document.getElementById('migrateDatabaseBtn');
         if (migrateDatabaseBtn) {
@@ -1686,6 +1684,95 @@ document.addEventListener('DOMContentLoaded', async function() {
                 } finally {
                     migrateDatabaseBtn.textContent = '🔄 Migrate to Single Collection';
                     migrateDatabaseBtn.disabled = false;
+                }
+            });
+        }
+
+        // Handle semantic compression button (one guideline at a time)
+        const compressNextGuidelineBtn = document.getElementById('compressNextGuidelineBtn');
+        if (compressNextGuidelineBtn) {
+            compressNextGuidelineBtn.addEventListener('click', async () => {
+                const statusDiv = document.getElementById('semanticCompressionStatus');
+
+                try {
+                    compressNextGuidelineBtn.disabled = true;
+                    const originalText = compressNextGuidelineBtn.textContent;
+                    compressNextGuidelineBtn.textContent = '⏳ Compressing...';
+
+                    if (statusDiv) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.backgroundColor = '#f8f9fa';
+                        statusDiv.style.border = '1px solid #e5e7eb';
+                        statusDiv.style.color = '#6c757d';
+                        statusDiv.textContent = 'Finding next guideline without semantically compressed text...';
+                    }
+
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    const response = await fetch(`${SERVER_URL}/compressNextGuideline`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    if (!response.ok || !result.success) {
+                        throw new Error(result.error || `Server error: ${response.status}`);
+                    }
+
+                    if (result.done) {
+                        if (statusDiv) {
+                            statusDiv.style.display = 'block';
+                            statusDiv.style.backgroundColor = '#d4edda';
+                            statusDiv.style.border = '1px solid #c3e6cb';
+                            statusDiv.style.color = '#155724';
+                            statusDiv.innerHTML = `
+                                <strong>✅ All guidelines processed.</strong><br>
+                                ${result.message || 'Every guideline already has semantically compressed text.'}
+                            `;
+                        }
+                        alert('All guidelines already have semantically compressed text.');
+                    } else {
+                        const { id, title, sourceLength, compressedLength, remainingNeedingCompression } = result;
+                        const displayTitle = title || id;
+                        const reduction = sourceLength > 0
+                            ? Math.round(100 - (compressedLength / sourceLength) * 100)
+                            : 0;
+
+                        if (statusDiv) {
+                            statusDiv.style.display = 'block';
+                            statusDiv.style.backgroundColor = '#d4edda';
+                            statusDiv.style.border = '1px solid #c3e6cb';
+                            statusDiv.style.color = '#155724';
+                            statusDiv.innerHTML = `
+                                <strong>✅ Compressed guideline:</strong> ${displayTitle}<br>
+                                ID: ${id}<br>
+                                Length: ${sourceLength} → ${compressedLength} chars (${isNaN(reduction) ? 'n/a' : reduction + '%'} reduction)<br>
+                                Remaining needing compression (approx): ${remainingNeedingCompression}
+                            `;
+                        }
+                    }
+                } catch (error) {
+                    console.error('[SEMANTIC_COMPRESS] Error from dev tools:', error);
+                    const statusDiv = document.getElementById('semanticCompressionStatus');
+                    if (statusDiv) {
+                        statusDiv.style.display = 'block';
+                        statusDiv.style.backgroundColor = '#f8d7da';
+                        statusDiv.style.border = '1px solid #f5c6cb';
+                        statusDiv.style.color = '#721c24';
+                        statusDiv.textContent = `Error compressing guideline: ${error.message}`;
+                    }
+                    alert(`Error compressing guideline: ${error.message}`);
+                } finally {
+                    compressNextGuidelineBtn.disabled = false;
+                    compressNextGuidelineBtn.textContent = '🧠 Compress Next Guideline';
                 }
             });
         }
