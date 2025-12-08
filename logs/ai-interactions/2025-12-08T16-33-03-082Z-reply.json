@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T16-33-03-082Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1580,
+  "response_length": 1601,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregn...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\\"title\\\": \\\"GP016 Operational Guideline for Adm...",
+  "full_data": null
+}
