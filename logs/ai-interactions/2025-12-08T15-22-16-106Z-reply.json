@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-22-16-106Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1511,
+  "response_length": 1495,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":2399,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using Bri...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"c039-checking-pregnancy-before-surgery-policy-pdf\\\", \\\"title\\\": \\\"C039 - Checking Pregnancy bef...",
+  "full_data": null
+}

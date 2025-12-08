@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-22-23-481Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2527,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using British medical terminology and abbreviations:\\n\\n---\\n\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 1,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 14,\n  \"notRelevantCount\": 275\n}...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-31-093Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 246,
+  "response_length": 308,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"uhsx-surrogacy-protocol-pdf: UHSx Surrogac...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}

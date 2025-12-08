@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-40-005Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 751,
+  "response_length": 1223,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp017-dna-appointments-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}

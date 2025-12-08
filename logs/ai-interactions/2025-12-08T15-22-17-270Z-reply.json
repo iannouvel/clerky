@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-22-17-270Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1320,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":2399,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using Br...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-endometrial-hyperplasia-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Endometrial Hyperplasia\\\", \\\"re...",
+  "full_data": null
+}

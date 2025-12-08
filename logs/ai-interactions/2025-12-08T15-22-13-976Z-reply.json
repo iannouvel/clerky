@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-22-13-976Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1196,
+  "response_length": 1223,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":2399,\"transcriptPreview\":\"Here’s a fictional but clinically authentic SBAR clerking for a patient with **cervical intraepithelial neoplasia (CIN)**, using Br...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp017-dna-appointments-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}

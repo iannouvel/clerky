@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-42-003Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 875,
+  "response_length": 1366,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"2020-10-secamb-suspected-preterm-labour-gui...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bapm-2025-extreme-prematurity-pdf\\\", \\\"title\\\": \\\"BAPM - 2025 - Extreme Prematurity\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"...",
+  "full_data": null
+}

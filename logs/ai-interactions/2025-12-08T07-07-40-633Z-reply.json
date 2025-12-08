@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T07-07-40-633Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 718,
+  "response_length": 1203,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":66,\"transcriptPreview\":\"What are the different interventions for preventing preterm birth?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: P...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"placental-histology-poster-pdf\\\", \\\"title\\\": \\\"Placental Histology poster\\\", \\\"relevance\\...",
+  "full_data": null
+}
