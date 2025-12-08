@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T16-33-02-565Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1343,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregn...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"sop001-consultant-ward-round-east-uhs-maternity-pdf\\\", \\\"title\\\": \\\"SOP001 Consultant Ward Roun...",
+  "full_data": null
+}

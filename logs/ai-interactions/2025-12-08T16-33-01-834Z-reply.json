@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T16-33-01-834Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1328,
+  "response_length": 1356,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregna...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf\\\", \\\"title\\\": \\\"Carbetocin to preven...",
+  "full_data": null
+}

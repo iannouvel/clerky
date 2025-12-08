@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T16-33-01-589Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 1403,
+  "response_length": 1384,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregn...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T16-33-01-023Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 1293,
+  "response_length": 1335,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregn...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": \\\"MP031 Pre-term labour\\\", \\\"relevance\\\": \\\"0.75\\...",
+  "full_data": null
+}
