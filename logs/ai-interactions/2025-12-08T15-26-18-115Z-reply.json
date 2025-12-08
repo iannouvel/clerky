@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-08T15-26-18-115Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1226,
+  "response_length": 1531,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":47,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?\\n\\n...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"bjog-2024-morris-small-for-gestational-age-and-fetal-growth-restrictio...",
+  "full_data": null
+}
