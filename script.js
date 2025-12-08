@@ -1525,6 +1525,43 @@ function updateProcessButtonText() {
     }
 }
 
+// Function to show update messages to the user in the fixed button row
+function updateUser(message, isLoading = false) {
+    const statusEl = document.getElementById('serverStatusMessage');
+    
+    if (!statusEl) {
+        console.warn('[STATUS] serverStatusMessage element not found');
+        return;
+    }
+
+    if (message) {
+        // When loading, show spinner + message; otherwise just text
+        if (isLoading) {
+            statusEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
+        } else {
+            statusEl.textContent = message;
+        }
+
+        statusEl.style.display = 'flex';
+
+        // Auto-hide non-loading messages after a short delay
+        if (!isLoading) {
+            const currentMessage = statusEl.textContent;
+            setTimeout(() => {
+                // Only hide if nothing has changed since we scheduled the hide
+                if (statusEl.textContent === currentMessage) {
+                    statusEl.style.display = 'none';
+                    statusEl.textContent = '';
+                }
+            }, 5000);
+        }
+    } else {
+        // Explicit clear
+        statusEl.style.display = 'none';
+        statusEl.textContent = '';
+    }
+}
+
 // Function to show selection buttons in the fixed button row
 function showSelectionButtons() {
     const buttonContainer = document.getElementById('fixedButtonRow');
