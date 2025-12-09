@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-35-44-665Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1259,
+  "response_length": 1564,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":82,\"transcriptPreview\":\"how often should we repeat thyroid function tests in pregnancy if stable at 28/40?...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-c...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2025-chan-management-of-thyroid-disorders-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Management of Thyroid Disorders in Pregnancy\\\",...",
+  "full_data": null
+}
