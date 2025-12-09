@@ -3374,7 +3374,7 @@ html, body {
 /* Server status message in fixed button row */
 .server-status-message {
     font-size: 13px;
-    color: #666;
+    color: #222;
     background: rgba(0, 0, 0, 0.05);
     padding: 6px 12px;
     border-radius: 20px;
