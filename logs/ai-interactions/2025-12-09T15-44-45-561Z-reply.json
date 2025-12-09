@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-45-561Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 804,
+  "response_length": 1362,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-gu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg12029-pph-guideline-pdf\\\", \\\"title\\\": \\\"Postpartum Haemorrhage Management Guideline\\\", ...",
+  "full_data": null
+}
