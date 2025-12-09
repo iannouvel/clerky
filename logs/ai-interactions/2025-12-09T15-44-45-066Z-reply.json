@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-45-066Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 762,
+  "response_length": 1194,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: M...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp049-assisted-vaginal-birth-pdf\\\", \\\"title\\\": \\\"Assisted Vaginal Birth\\\", \\\"relevance\\\":...",
+  "full_data": null
+}
