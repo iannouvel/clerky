@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-43-075Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 158,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?\",\"guidelinesCount\":297,\"chunksProcessed\":38,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 14,\n  \"lessRelevantCount\": 20,\n  \"notRelevantCount\": 254\n}...",
+  "full_data": null
+}
