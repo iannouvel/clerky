@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-46-201Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 840,
+  "response_length": 1262,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"cg14009-pcea-epidural-in-labour-guide...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guideline-pdf\\\", \\\"title\\\": \\\"CG14009 PCEA (Epidural) in Labour...",
+  "full_data": null
+}
