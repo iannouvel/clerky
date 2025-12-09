@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T14-18-35-445Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 879,
+  "response_length": 1312,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":115,\"transcriptPreview\":\"what is the routine advice we would give to a patient in the early 1st trimester regarding a DCDA twin pregnancy?\\n\\n...\",\"chunkGuid...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-maternal-and-child-nutrition-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Maternal and Chi...",
+  "full_data": null
+}
