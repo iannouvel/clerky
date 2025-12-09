@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-44-539Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 756,
+  "response_length": 1135,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp028-medical-disorders-pdf\\\", \\\"title\\\": \\\"Medical Disorders\\\", \\\"relevance\\\": \\\"0.45\\\"}],\\n  ...",
+  "full_data": null
+}
