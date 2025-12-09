@@ -121,8 +121,9 @@
                 console.log('No user in disclaimer page, redirecting to index');
                 // If no user is signed in, redirect to index
                 try {
-                    localStorage.removeItem('returnToPage');
-                    localStorage.removeItem('returnAfterLogin');
+                    // Clear any tab-scoped redirect intent for this session
+                    sessionStorage.removeItem('returnToPage');
+                    sessionStorage.removeItem('returnAfterLogin');
                 } catch (e) {}
                 window.location.href = 'index.html';
                 return;
@@ -145,8 +146,9 @@
                         console.log('Disclaimer already accepted today, redirecting to main page');
                         // If already accepted today, redirect to main page
                         try {
-                            localStorage.removeItem('returnToPage');
-                            localStorage.removeItem('returnAfterLogin');
+                            // Clear any tab-scoped redirect intent for this session
+                            sessionStorage.removeItem('returnToPage');
+                            sessionStorage.removeItem('returnAfterLogin');
                         } catch (e) {}
                         window.location.href = 'index.html';
                         return;
@@ -187,8 +189,9 @@
                     console.log('Redirecting to main page');
                     // Redirect to main page
                     try {
-                        localStorage.removeItem('returnToPage');
-                        localStorage.removeItem('returnAfterLogin');
+                        // Clear any tab-scoped redirect intent for this session
+                        sessionStorage.removeItem('returnToPage');
+                        sessionStorage.removeItem('returnAfterLogin');
                     } catch (e) {}
                     window.location.href = 'index.html';
                 } catch (error) {
