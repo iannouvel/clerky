@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-35-407Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 864,
+  "response_length": 1272,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":81,\"transcriptPreview\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": \\\"MP031 Pre-term labour\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"i...",
+  "full_data": null
+}
