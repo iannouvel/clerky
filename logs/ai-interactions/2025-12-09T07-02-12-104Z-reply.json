@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T07-02-12-104Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 778,
+  "response_length": 1221,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":45,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg13019-triage-of-maternity-patients-guideline-pdf\\\", \\\"title\\\": \\\"Triage of Maternity Pa...",
+  "full_data": null
+}
