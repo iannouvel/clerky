@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T14-18-36-417Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1322,
+  "response_length": 1602,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":115,\"transcriptPreview\":\"what is the routine advice we would give to a patient in the early 1st trimester regarding a DCDA twin pregnancy?\\n\\n...\",\"chunkGuide...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2017-management-of-breech-presentation-pdf\\\", \\\"title\\\": \\\"Management of Breech Presentati...",
+  "full_data": null
+}

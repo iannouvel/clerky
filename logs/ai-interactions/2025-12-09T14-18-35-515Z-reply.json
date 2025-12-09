@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T14-18-35-515Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 965,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":115,\"transcriptPreview\":\"what is the routine advice we would give to a patient in the early 1st trimester regarding a DCDA twin pregnancy?\\n\\n...\",\"chunkGuid...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-interventional-guidance-2007-laparo...",
+  "full_data": null
+}

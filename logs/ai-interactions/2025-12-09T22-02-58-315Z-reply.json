@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T22-02-58-315Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 954,
+  "response_length": 1340,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":61,\"transcriptPreview\":\"describe the various criteria for inserting a cervical suture...\",\"chunkGuidelines\":[\"cg18007-newborn-screening-failsafes-pdf: CG1800...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiall...",
+  "full_data": null
+}

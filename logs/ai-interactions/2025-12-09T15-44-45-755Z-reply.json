@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-45-755Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 911,
+  "response_length": 1331,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"iol-flowchart-pdf: IOL flowchart\",\"jo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"iol-flowchart-pdf\\\", \\\"title\\\": \\\"IOL flowchart\\\", \\\"relevance\\\": \\\"0....",
+  "full_data": null
+}

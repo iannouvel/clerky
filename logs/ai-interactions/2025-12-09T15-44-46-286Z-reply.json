@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-46-286Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 847,
+  "response_length": 1269,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"gtg-2015-reduced-fetal-movements-pdf:...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-reducing-the-risk-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Reducing the risk...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T22-02-58-903Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 879,
+  "response_length": 1351,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":61,\"transcriptPreview\":\"describe the various criteria for inserting a cervical suture...\",\"chunkGuidelines\":[\"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"cg1103-antenatal-care-patient-info-pdf\\\", \\\"title\\\": \\\"CG1103 Antenata...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-47-842Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1139,
+  "response_length": 1464,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: B...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-shennan-cervical-cerclage-pdf\\\", \\\"title\\\": \\\"Cervical Cerclage\\\", \\\"relevance\\...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-35-41-916Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 734,
+  "response_length": 1189,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":82,\"transcriptPreview\":\"how often should we repeat thyroid function tests in pregnancy if stable at 28/40?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitorin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"peripartum-sodim-monitoring-pathway-pdf\\...",
+  "full_data": null
+}

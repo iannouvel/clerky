@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T15-44-47-557Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 778,
+  "response_length": 1480,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what are the clinical risks associated with hypermobility in pregnancy?...\",\"chunkGuidelines\":[\"uhsx-multiple-pregnancy-birth-guideli...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uhsx-perineal-trauma-repair-guideline-pdf\\\",\\n      \\\"title\\\": \\\"UHSx Perineal Tr...",
+  "full_data": null
+}

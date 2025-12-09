@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-37-457Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1130,
+  "response_length": 1587,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":81,\"transcriptPreview\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?...\",\"chunkGuidelines\":[\"gp006-management-of-barthol...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp006-management-of-bartholins-cyst-absc...",
+  "full_data": null
+}

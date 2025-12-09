@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-35-178Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 836,
+  "response_length": 1246,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":81,\"transcriptPreview\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?...\",\"chunkGuidelines\":[\"cg22005-management-of-weigh...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"concerns-during-intermittent-auscultation-flowchart-pdf\\\", \\\"title\\\": ...",
+  "full_data": null
+}

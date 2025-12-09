@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-37-923Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1073,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":81,\"transcriptPreview\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
