@@ -3966,7 +3966,6 @@ html, body {
     min-height: 150px;
     height: auto;
     white-space: pre-wrap;
-    cursor: text !important;
     user-select: text !important;
     -webkit-user-select: text !important;
     -moz-user-select: text !important;
@@ -3977,8 +3976,13 @@ html, body {
 }
 
 .tiptap-editor .ProseMirror[contenteditable="true"] {
-    cursor: text !important;
     user-select: text !important;
+}
+
+/* Ensure links inside the TipTap editor show the pointer cursor */
+.tiptap-editor .ProseMirror a,
+.tiptap-editor .ProseMirror a.guideline-link {
+    cursor: pointer !important;
 }
 
 .tiptap-editor .ProseMirror:focus {
