@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T09-41-19-500Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1049,
+  "response_length": 1767,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":49,\"transcriptPreview\":\"how do we treat severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: BMS ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bsh-2019-pavord-management-of-iron-deficiency-in-pregnan...",
+  "full_data": null
+}
