@@ -971,6 +971,106 @@ ${fullText}`;
     }
 }
 
+// Function to find a short verbatim quote in a guideline that best matches a semantic statement
+async function findGuidelineQuoteInText(guidelineId, semanticStatement, guidelineText, userId = null) {
+    try {
+        if (!guidelineText || !guidelineText.trim()) {
+            console.warn(`[QUOTE_FINDER] No guideline text available for ${guidelineId}, cannot find quote`);
+            return null;
+        }
+
+        const CLEAN_MAX_CHARS = 8000;
+        let sourceText = String(guidelineText);
+        if (sourceText.length > CLEAN_MAX_CHARS) {
+            sourceText = sourceText.substring(0, CLEAN_MAX_CHARS);
+        }
+
+        const systemPrompt = `
+You are a careful clinical guideline assistant.
+
+You are given:
+- A passage of text from a clinical guideline.
+- A semantic statement written by another AI that describes some information from the guideline.
+
+Your task:
+- Find a SHORT verbatim quote from the guideline text (5–20 words) that best matches the semantic statement.
+- The quote MUST be copied exactly from the guideline text (no paraphrasing, no invented words).
+- If you cannot find a clearly matching phrase, return a short neutral phrase from the guideline text that is still relevant.
+
+Output:
+- Return ONLY the verbatim quote text, with no explanations, no quotation marks, and no additional formatting.
+`.trim();
+
+        const userPrompt = `
+Guideline ID: ${guidelineId}
+
+Semantic statement (from previous answer):
+${semanticStatement}
+
+Guideline text (for searching a verbatim quote):
+${sourceText}
+`.trim();
+
+        const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ];
+
+        console.log('[QUOTE_FINDER] Requesting verbatim quote from AI', {
+            guidelineId,
+            semanticLength: semanticStatement.length,
+            textLength: sourceText.length
+        });
+
+        const aiResult = await routeToAI({ messages, temperature: 0.1 }, userId);
+
+        if (!aiResult || !aiResult.content) {
+            console.warn('[QUOTE_FINDER] AI returned no quote', { guidelineId });
+            return null;
+        }
+
+        let quote = aiResult.content.trim();
+
+        // Strip surrounding quotes if the model added them
+        if ((quote.startsWith('"') && quote.endsWith('"')) || (quote.startsWith("'") && quote.endsWith("'"))) {
+            quote = quote.slice(1, -1).trim();
+        }
+
+        // Basic sanity checks
+        if (!quote || quote.length < 5) {
+            console.warn('[QUOTE_FINDER] Quote too short, falling back to semantic statement', {
+                guidelineId,
+                quote
+            });
+            return null;
+        }
+
+        // Ensure the quote appears somewhere in the guideline text (case-insensitive)
+        const lowerSource = sourceText.toLowerCase();
+        const lowerQuote = quote.toLowerCase();
+        if (!lowerSource.includes(lowerQuote)) {
+            console.warn('[QUOTE_FINDER] Quote not found verbatim in guideline text, using semantic statement instead', {
+                guidelineId,
+                quoteSample: quote.substring(0, 80)
+            });
+            return null;
+        }
+
+        console.log('[QUOTE_FINDER] Successfully found verbatim quote', {
+            guidelineId,
+            quoteSample: quote.substring(0, 80)
+        });
+
+        return quote;
+    } catch (error) {
+        console.error('[QUOTE_FINDER] Error during quote search', {
+            guidelineId,
+            error: error.message
+        });
+        return null;
+    }
+}
+
 // Function to generate summary from content using AI
 async function generateSummary(text, userId = null) {
     try {
@@ -6553,12 +6653,21 @@ app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => 
                     deleteResults.deleted++;
                     console.log(`Deleted: ${file.name}`);
                 } catch (error) {
-                    deleteResults.failed++;
+                    const status = error.response?.status;
+                    const message = error.response?.data?.message || error.message;
                     const errorInfo = {
                         file: file.name,
-                        status: error.response?.status,
-                        message: error.response?.data?.message || error.message
+                        status,
+                        message
                     };
+
+                    // Treat 409 conflicts as "already handled/modified" to avoid noisy error logs
+                    if (status === 409) {
+                        console.warn(`Conflict deleting ${file.name} (likely already modified or removed). Treating as handled.`, errorInfo);
+                        return;
+                    }
+
+                    deleteResults.failed++;
                     deleteResults.errors.push(errorInfo);
                     console.error(`Failed to delete ${file.name}:`, errorInfo);
                 }
@@ -17096,10 +17205,12 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
                 console.log(`[DEBUG] askGuidelinesQuestion: Fetching content for guideline: ${guideline.id}`);
                 const fullGuideline = await getGuideline(guideline.id);
                 if (fullGuideline) {
+                    // Merge client-provided guideline info with full Firestore document,
+                    // preferring the Firestore data for all content fields so we have
+                    // access to semanticallyCompressed, condensed, summary, etc.
                     guidelinesWithContent.push({
                         ...guideline,
-                        content: fullGuideline.content || fullGuideline.condensed || '',
-                        summary: fullGuideline.summary || ''
+                        ...fullGuideline
                     });
                 } else {
                     console.warn(`[DEBUG] askGuidelinesQuestion: Could not fetch guideline content for: ${guideline.id}`);
@@ -17115,12 +17226,13 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
 
         console.log('[DEBUG] askGuidelinesQuestion: Retrieved guidelines with content:', {
             count: guidelinesWithContent.length,
-            withContent: guidelinesWithContent.filter(g => g.content).length
+            withContent: guidelinesWithContent.filter(g => g.content || g.condensed || g.semanticallyCompressed).length,
+            withCompressed: guidelinesWithContent.filter(g => g.semanticallyCompressed).length
         });
 
         // Create system prompt for answering questions based on guidelines
         const systemPrompt = `You are a medical AI assistant that answers clinical questions based on relevant medical guidelines. Your role is to:
-
+        
 1. Analyze the user's question carefully
 2. Review the provided relevant guidelines thoroughly
 3. Provide a comprehensive, evidence-based answer that directly addresses the question
@@ -17129,7 +17241,23 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
 6. If the guidelines don't fully address the question, acknowledge this and provide the best available guidance
 7. Structure your response in a clear, organized manner
 
-Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations.`;
+CITATION FORMATTING (CRITICAL):
+When you refer to information from a specific guideline, you MUST use the following citation format EXACTLY:
+[[REF:GuidelineID|LinkText|SearchText]]
+
+- GuidelineID: The exact ID of the guideline as provided in the context (e.g., 'mp046-management-of-breech-and-ecv.txt').
+- LinkText: A short, readable text for the link (e.g., 'See Guideline', 'Management of Breech', 'Section 4.1').
+- SearchText: A unique snippet of text (approx 5-10 words) from the guideline that can be used to locate the exact section you are referencing.
+
+Example: "The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|ECV Guideline|External cephalic version should be offered]]."
+
+Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations using this citation format.`;
+
+        // Build a fast lookup of guideline text for quote finding (prefer condensed)
+        const guidelineTextById = {};
+        for (const g of guidelinesWithContent) {
+            guidelineTextById[g.id] = g.condensed || g.content || g.summary || '';
+        }
 
         // Create user prompt with question and guidelines
         const guidelinesText = guidelinesWithContent.map(guideline => {
@@ -17140,9 +17268,27 @@ Always base your answers on the provided guidelines and clearly indicate when yo
             if (guideline.summary) {
                 guidelineText += `\nSummary: ${guideline.summary}`;
             }
-            if (guideline.content) {
-                guidelineText += `\nContent: ${guideline.content}`;
+
+            // Prefer semantically compressed text, then condensed, then full content
+            let contentToUse = null;
+            if (guideline.semanticallyCompressed && String(guideline.semanticallyCompressed).trim()) {
+                contentToUse = String(guideline.semanticallyCompressed).trim();
+            } else if (guideline.condensed && String(guideline.condensed).trim()) {
+                contentToUse = String(guideline.condensed).trim();
+            } else if (guideline.content) {
+                // Truncate raw content to prevent context window overflow (approx 20k chars per guideline)
+                const MAX_CONTENT_LENGTH = 20000;
+                let content = String(guideline.content);
+                if (content.length > MAX_CONTENT_LENGTH) {
+                    content = content.substring(0, MAX_CONTENT_LENGTH) + '\n...[Content truncated]...';
+                }
+                contentToUse = content;
             }
+
+            if (contentToUse) {
+                guidelineText += `\nContent: ${contentToUse}`;
+            }
+
             return guidelineText;
         }).join('\n\n');
 
@@ -17165,7 +17311,7 @@ Please provide a comprehensive answer to the question based on the relevant guid
             { role: 'user', content: userPrompt }
         ];
 
-        const aiResponse = await routeToAI({ messages }, userId);
+        let aiResponse = await routeToAI({ messages }, userId);
         
         console.log('[DEBUG] askGuidelinesQuestion: AI response received', {
             success: !!aiResponse,
@@ -17177,6 +17323,98 @@ Please provide a comprehensive answer to the question based on the relevant guid
         if (!aiResponse || !aiResponse.content) {
             console.error('[DEBUG] askGuidelinesQuestion: Invalid AI response:', aiResponse);
             return res.status(500).json({ success: false, error: 'Invalid AI response' });
+        }
+
+        // STEP 2: Upgrade citation search text to verbatim quotes where possible.
+        // We parse all [[REF:GuidelineID|LinkText|SearchText]] markers, ask the AI
+        // to find a verbatim quote within the (condensed) guideline text that
+        // best matches SearchText, and then replace the third field with the
+        // verbatim quote. The frontend can stay unchanged.
+
+        let enhancedAnswer = aiResponse.content;
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        const citationTasks = [];
+        const seenCitationKeys = new Set();
+
+        let match;
+        while ((match = citationRegex.exec(enhancedAnswer)) !== null) {
+            const rawGuidelineId = match[1].trim();
+            const semanticText = match[3].trim();
+            const key = `${rawGuidelineId}||${semanticText}`;
+            if (!seenCitationKeys.has(key)) {
+                seenCitationKeys.add(key);
+                citationTasks.push({
+                    guidelineId: rawGuidelineId,
+                    semanticText
+                });
+            }
+        }
+
+        console.log('[DEBUG] askGuidelinesQuestion: Parsed citation markers', {
+            totalMarkers: [...enhancedAnswer.matchAll(citationRegex)].length,
+            uniqueTasks: citationTasks.length
+        });
+
+        // Helper to escape text for use in RegExp
+        function escapeRegExp(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        const MAX_CITATION_QUOTES = 6;
+        let quotesResolved = 0;
+
+        for (const task of citationTasks) {
+            if (quotesResolved >= MAX_CITATION_QUOTES) {
+                console.log('[DEBUG] askGuidelinesQuestion: Reached max citation quote limit, skipping remaining');
+                break;
+            }
+
+            const baseText = guidelineTextById[task.guidelineId];
+            if (!baseText || !baseText.trim()) {
+                console.warn('[DEBUG] askGuidelinesQuestion: No base text for guideline in quote finder', {
+                    guidelineId: task.guidelineId
+                });
+                continue;
+            }
+
+            const verbatimQuote = await findGuidelineQuoteInText(
+                task.guidelineId,
+                task.semanticText,
+                baseText,
+                userId
+            );
+
+            if (!verbatimQuote) {
+                // Keep the original semantic search text if we couldn't improve it
+                continue;
+            }
+
+            // Ensure the quote is safe for inclusion in REF (no pipes)
+            const safeQuote = verbatimQuote.replace(/\|/g, ' ');
+
+            // Replace all matching REF markers for this guideline+semanticText pair
+            const pattern = new RegExp(
+                `\\[\\[REF:${escapeRegExp(task.guidelineId)}\\|([^|]+)\\|${escapeRegExp(task.semanticText)}\\]\\]`,
+                'g'
+            );
+
+            enhancedAnswer = enhancedAnswer.replace(
+                pattern,
+                (_match, linkText) => `[[REF:${task.guidelineId}|${linkText}|${safeQuote}]]`
+            );
+
+            quotesResolved += 1;
+        }
+
+        if (quotesResolved > 0) {
+            console.log('[DEBUG] askGuidelinesQuestion: Upgraded citation search text with verbatim quotes', {
+                quotesResolved
+            });
+            // Use the enhanced answer going forward
+            aiResponse = {
+                ...aiResponse,
+                content: enhancedAnswer
+            };
         }
 
         // Log the AI interaction
