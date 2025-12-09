@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T16-18-35-752Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 872,
+  "response_length": 1329,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":81,\"transcriptPreview\":\"with 1 previous LLETZ to a depth of 13mm, when do we scan them in preterm clinic?...\",\"chunkGuidelines\":[\"mp057-communication-and-han...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp057-communication-and-handover-of-care...",
+  "full_data": null
+}
