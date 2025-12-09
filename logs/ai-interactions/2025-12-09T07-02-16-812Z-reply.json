@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T07-02-16-812Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 776,
+  "response_length": 1269,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":45,\"transcriptPreview\":\"how do we diagnose hypertension in pregnancy?...\",\"chunkGuidelines\":[\"uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements P...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-local-requirements-pmrt-sop-pdf\\\", ...",
+  "full_data": null
+}
