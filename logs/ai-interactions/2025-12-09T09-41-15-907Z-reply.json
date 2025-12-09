@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T09-41-15-907Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 782,
+  "response_length": 1163,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":49,\"transcriptPreview\":\"how do we treat severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis\",\"cg1151-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\\\", \\\"title\\\": \\\"Management of Hypertensive disorders of pregnancy\\...",
+  "full_data": null
+}
