@@ -1063,23 +1063,24 @@
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
     
-    <!-- Auto-return to requested page after sign-in -->
+    <!-- Auto-return to requested page after sign-in (tab-scoped using sessionStorage) -->
     <script type="module">
         import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
         const auth = window.auth;
         if (auth) {
             onAuthStateChanged(auth, (user) => {
                 try {
-                    const returnTo = localStorage.getItem('returnToPage');
-                    const returnAfterLogin = localStorage.getItem('returnAfterLogin');
+                    // Use sessionStorage so redirect intent is scoped to the current tab only
+                    const returnTo = sessionStorage.getItem('returnToPage');
+                    const returnAfterLogin = sessionStorage.getItem('returnAfterLogin');
                     // Only redirect to a saved page if this was explicitly set during a login flow
                     if (user && returnTo && returnAfterLogin === '1') {
-                        localStorage.removeItem('returnToPage');
-                        localStorage.removeItem('returnAfterLogin');
+                        sessionStorage.removeItem('returnToPage');
+                        sessionStorage.removeItem('returnAfterLogin');
                         window.location.href = returnTo;
                     } else if (returnAfterLogin !== '1' && returnTo) {
                         // Safety: clear stale returnTo without redirecting
-                        localStorage.removeItem('returnToPage');
+                        sessionStorage.removeItem('returnToPage');
                     }
                 } catch (e) {
                     // ignore
@@ -1103,6 +1104,24 @@
         import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
         import Link from 'https://esm.sh/@tiptap/extension-link@2.1.13';
         
+        // Extend TipTap's Link extension to preserve our data-link-data attribute
+        const GuidelineLink = Link.extend({
+            addAttributes() {
+                const parent = this.parent ? this.parent() : {};
+                return {
+                    ...parent,
+                    'data-link-data': {
+                        default: null,
+                        parseHTML: element => element.getAttribute('data-link-data'),
+                        renderHTML: attributes => {
+                            if (!attributes['data-link-data']) return {};
+                            return { 'data-link-data': attributes['data-link-data'] };
+                        }
+                    }
+                };
+            }
+        });
+        
         // Create global editors object
         window.editors = window.editors || {};
         
@@ -1125,7 +1144,7 @@
                         }),
                         TextStyle,
                         Color,
-                        Link.configure({
+                        GuidelineLink.configure({
                             openOnClick: false, // We'll handle clicks manually
                             autolink: true,
                             HTMLAttributes: {

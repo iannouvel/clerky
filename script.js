@@ -5925,9 +5925,10 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         ? ' <span style="color: #f59e0b; font-size: 12px; font-weight: normal;">(Guideline recommendation paraphrased)</span>' 
         : '';
     
-    // Create link with onclick to build authenticated URL and open viewer
-    // We'll build the final URL in prepareViewerAuth to include the fresh token
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    // Create link with data-link-data; the actual click is handled by a
+    // delegated listener in index.html so we don't rely on inline onclick.
+    // TipTap will preserve data-link-data via the custom Link extension.
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
@@ -14800,7 +14801,7 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] askGuidelinesQuestion: Already aborted');
         return;
     }
-    
+
     try {
         const question = getUserInputContent();
         if (!question) {
@@ -14813,6 +14814,9 @@ async function askGuidelinesQuestion() {
         // Show loading spinner in summary
         showSummaryLoading();
 
+        // Update user status - starting Q&A flow
+        updateUser('Preparing to ask guidelines your question...', true);
+
         // Initialize the question search summary
         let searchProgress = '## Asking Guidelines A Question\n\n';
         searchProgress += `**Your Question:** ${question}\n\n`;
@@ -14824,6 +14828,10 @@ async function askGuidelinesQuestion() {
             alert('Please sign in to use this feature');
             return;
         }
+
+        // Update user status - getting authentication
+        updateUser('Checking sign-in and loading your preferences...', true);
+
         const idToken = await user.getIdToken();
 
         // Check for saved scope preference first
@@ -14834,6 +14842,9 @@ async function askGuidelinesQuestion() {
         if (savedScopeSelection) {
             // Verify the saved selection is still valid (check if trust still exists if local/both)
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
+                // Update user status while we verify hospital trust
+                updateUser('Checking guideline scope...', true);
+
                 // Need to verify the hospital trust is still valid
                 try {
                     const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
@@ -14854,6 +14865,7 @@ async function askGuidelinesQuestion() {
                         // Trust no longer exists, need to reselect
                         console.log('[DEBUG] askGuidelinesQuestion: Saved selection invalid (no trust), showing modal');
                         try {
+                            updateUser('Select which guidelines to use for this question...', true);
                             scopeSelection = await showGuidelineScopeModal();
                         } catch (error) {
                             // Check if error is due to abort
@@ -14868,18 +14880,22 @@ async function askGuidelinesQuestion() {
                 } catch (error) {
                     // Check if error is due to abort
                     if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                        updateUser('Analysis cancelled', false);
                         throw new Error('Analysis cancelled');
                     }
                     console.error('[ERROR] Failed to verify hospital trust, showing modal:', error);
                     try {
+                        updateUser('Select which guidelines to use for this question...', true);
                         scopeSelection = await showGuidelineScopeModal();
                     } catch (modalError) {
                         // Check if error is due to abort
                         if (modalError.name === 'AbortError' || modalError.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                            updateUser('Analysis cancelled', false);
                             throw new Error('Analysis cancelled');
                         }
                         console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', modalError.message);
                         appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                        updateUser('Scope selection cancelled', false);
                         return; // Exit if user cancels
                     }
                 }
@@ -14892,20 +14908,24 @@ async function askGuidelinesQuestion() {
             // No saved selection, show modal
             console.log('[DEBUG] askGuidelinesQuestion: No saved selection, showing guideline scope selection modal');
             try {
+                updateUser('Select which guidelines to use for this question...', true);
                 scopeSelection = await showGuidelineScopeModal();
             } catch (error) {
                 // Check if error is due to abort
                 if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                    updateUser('Analysis cancelled', false);
                     throw new Error('Analysis cancelled');
                 }
                 console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
                 appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                updateUser('Scope selection cancelled', false);
                 return; // Exit if user cancels
             }
         }
         
         // Check for abort after scope selection
         if (window.analysisAbortController?.signal.aborted) {
+            updateUser('Analysis cancelled', false);
             throw new Error('Analysis cancelled');
         }
         
@@ -14919,8 +14939,11 @@ async function askGuidelinesQuestion() {
             : scopeSelection.scope === 'local'
             ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
             : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
-        
+
         appendToSummary1(scopeMessage, false);
+
+        // Update user status - scope confirmed
+        updateUser('Guideline scope confirmed. Loading guidelines...', true);
 
         // Update progress
         const loadingMessage = 'Loading guidelines from database...\n';
@@ -14935,6 +14958,7 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
         
         if (guidelines.length === 0) {
+            updateUser('No guidelines found for selected scope', false);
             const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
             appendToSummary1(noGuidelinesMsg, false);
             alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
@@ -14950,6 +14974,8 @@ async function askGuidelinesQuestion() {
         appendToSummary1(scopeInfo, false);
         
         // Format guidelines for relevancy matching
+        updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
+
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
             title: g.title,
@@ -14965,6 +14991,9 @@ async function askGuidelinesQuestion() {
         // Update progress with guideline count
         const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...\n`;
         appendToSummary1(analyzeMessage, false);
+
+        // Let user know we’re finding most relevant guidelines
+        updateUser('Finding the most relevant guidelines for your question...', true);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines for question:', {
             questionLength: question.length,
@@ -15001,12 +15030,15 @@ async function askGuidelinesQuestion() {
 
         const data = await response.json();
         if (!data.success) {
+            updateUser('Error finding relevant guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
         // Update progress with completion
         const completionMessage = 'Analysis complete! Processing most relevant guidelines...\n\n';
         appendToSummary1(completionMessage, false);
+
+        updateUser('Guidelines found. Preparing detailed answer...', true);
 
         // Automatically select the top 3 most relevant guidelines
         const allGuidelines = [];
@@ -15037,6 +15069,7 @@ async function askGuidelinesQuestion() {
 
         // Check if we have any guidelines to process
         if (selectedGuidelines.length === 0) {
+            updateUser('No relevant guidelines found for this question', false);
             const noGuidelinesMessage = `## ℹ️ No Relevant Guidelines Found\n\n` +
                                        `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
                                        `**"${question}"**\n\n` +
@@ -15079,6 +15112,7 @@ async function askGuidelinesQuestion() {
 
         const data2 = await response2.json();
         if (!data2.success) {
+            updateUser('Error answering your guideline question', false);
             throw new Error(data2.error || 'Failed to process guidelines');
         }
 
@@ -15119,10 +15153,14 @@ async function askGuidelinesQuestion() {
         
         appendToOutputField(answerMessage, true, true); // Display in output field, clear existing content, isHtml=true
 
+        // Final user status - success
+        updateUser('Answer generated from guidelines', false);
+
     } catch (error) {
         // Check if error is due to abort
         if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
             console.log('[DEBUG] askGuidelinesQuestion: Analysis was cancelled');
+            updateUser('Analysis cancelled', false);
             // Don't show error alert for user-initiated cancellation
             return;
         }
@@ -15135,7 +15173,10 @@ async function askGuidelinesQuestion() {
         // Display error in summary1 field
         const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
         appendToSummary1(errorMessage, false);
-        
+
+        // Surface error to top-level status
+        updateUser('Error answering guideline question', false);
+
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Button state is restored by the click handler's finally block
