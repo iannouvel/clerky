@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T12-54-36-243Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 980,
+  "response_length": 1347,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":125,\"transcriptPreview\":\"how do we counsel patients that have a non-low risk history of preterm birth and a short cervix in the early 2nd trimester?\\n\\n...\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2024-twin-and-triplet-pregnancy-pdf\\\", \\\"title\\\": \\\"NICE 2024 - Twin and triplet pregnancy\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n...",
+  "full_data": null
+}
