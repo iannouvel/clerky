@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T12-54-37-524Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1198,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":125,\"transcriptPreview\":\"how do we counsel patients that have a non-low risk history of preterm birth and a short cervix in the early 2nd trimester?\\n\\n...\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp016-operational-guideline-for-admissio...",
+  "full_data": null
+}

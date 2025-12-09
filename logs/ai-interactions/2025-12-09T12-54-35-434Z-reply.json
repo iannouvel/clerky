@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T12-54-35-434Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 780,
+  "response_length": 1201,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":125,\"transcriptPreview\":\"how do we counsel patients that have a non-low risk history of preterm birth and a short cervix in the early 2nd trimester?\\n\\n...\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"rag-rating-for-iol-pdf\\\", \\\"title\\\": \\\"RAG rating for IOL\\\", \\\"relevance\\\": \\\"0.65\\\"},\\n ...",
+  "full_data": null
+}

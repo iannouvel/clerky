@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T12-54-37-786Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1196,
+  "response_length": 1459,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":125,\"transcriptPreview\":\"how do we counsel patients that have a non-low risk history of preterm birth and a short cervix in the early 2nd trimester?\\n\\n...\",\"...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-shennan-cervical-cerclage-pdf\\\", \\\"title\\\": \\\"Cervical Cerclage\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\\"potential...",
+  "full_data": null
+}
