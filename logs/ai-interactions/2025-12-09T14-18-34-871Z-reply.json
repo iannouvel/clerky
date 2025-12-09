@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T14-18-34-871Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 901,
+  "response_length": 1274,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":115,\"transcriptPreview\":\"what is the routine advice we would give to a patient in the early 1st trimester regarding a DCDA twin pregnancy?\\n\\n...\",\"chunkGuid...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": \\\"MP031 Pre-term labour\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n...",
+  "full_data": null
+}
