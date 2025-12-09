@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T09-41-16-913Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 889,
+  "response_length": 1378,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":49,\"transcriptPreview\":\"how do we treat severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"iol-flowchart-pdf: IOL flowchart\",\"joint-rcog-and-bsge-guid...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"iol-flowchart-pdf\\\", \\\"title\\\": \\\"IOL fl...",
+  "full_data": null
+}
