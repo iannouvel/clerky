@@ -5928,7 +5928,8 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     // Create link with data-link-data; the actual click is handled by a
     // delegated listener in index.html so we don't rely on inline onclick.
     // TipTap will preserve data-link-data via the custom Link extension.
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    // Explicit cursor: pointer so users see it's clickable even inside TipTap.
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
@@ -15116,11 +15117,31 @@ async function askGuidelinesQuestion() {
             throw new Error(data2.error || 'Failed to process guidelines');
         }
 
+        // Build a map from both guideline IDs and titles to canonical IDs,
+        // so citations can use either and still resolve to the correct PDF.
+        const guidelineIdMap = new Map();
+        if (Array.isArray(data2.guidelinesUsed)) {
+            data2.guidelinesUsed.forEach(g => {
+                if (!g) return;
+                const id = g.id ? String(g.id) : null;
+                const title = g.title ? String(g.title) : null;
+                if (id) {
+                    guidelineIdMap.set(id, id);
+                    guidelineIdMap.set(id.toLowerCase(), id);
+                }
+                if (title && id) {
+                    guidelineIdMap.set(title, id);
+                    guidelineIdMap.set(title.toLowerCase(), id);
+                }
+            });
+        }
+        console.log('[DEBUG] askGuidelinesQuestion: guidelineIdMap keys:', Array.from(guidelineIdMap.keys()));
+
         // Parse and format citations in the answer
         let answerText = data2.answer;
         
         // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links
-        // Format: [[REF:guideline-id|Link Text|Search Text]]
+        // Format: [[REF:guideline-id-or-title|Link Text|Search Text]]
         const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
@@ -15129,12 +15150,18 @@ async function askGuidelinesQuestion() {
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
+
+            const rawId = id.trim();
+            const canonicalId =
+                guidelineIdMap.get(rawId) ||
+                guidelineIdMap.get(rawId.toLowerCase()) ||
+                rawId;
             
             // Use existing createGuidelineViewerLink function
             // We pass 'true' for hasVerbatimQuote to trigger search highlighting
             // We construct a fake context with the search text to be extracted
             return createGuidelineViewerLink(
-                id.trim(), 
+                canonicalId, 
                 text.trim(), 
                 null, // filename not needed if ID provided
                 decodedSearch, // Context (search text)
