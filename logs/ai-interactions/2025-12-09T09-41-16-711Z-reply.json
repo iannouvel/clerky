@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-09T09-41-16-711Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 942,
+  "response_length": 1326,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":49,\"transcriptPreview\":\"how do we treat severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"cg18007-newborn-screening-failsafes-pdf: CG18007 Newborn sc...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevanc...",
+  "full_data": null
+}
