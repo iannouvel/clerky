@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-03-11-836Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 664,
+  "response_length": 1125,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":29,\"transcriptPreview\":\"how do we manage abruption?\\n\\n...\",\"chunkGuidelines\":[\"fetal-blood-sampling-sop-pdf: Fetal blood sampling SOP\",\"fetal-monitoring-gui...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"fetal-monitoring-guideline-intrapartum-pdf\\\", \\\"title\\\": \\\"Fetal monit...",
+  "full_data": null
+}
