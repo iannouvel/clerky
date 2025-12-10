@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-54-03-517Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1411,
+  "response_length": 1388,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":1173,\"transcriptPreview\":\"32yo, G0\\n\\nPresenting Complaint:\\nUnable to tolerate vaginal penetration for 12/12, preventing intercourse and use of tampons. Ass...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"gau-proforma-july-19-pdf\\\", \\\"title\\\": \\\"GAU Proforma JULY 19\\\", \\\"rel...",
+  "full_data": null
+}

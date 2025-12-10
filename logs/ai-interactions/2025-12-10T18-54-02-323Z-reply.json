@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-54-02-323Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1200,
+  "response_length": 1170,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":1173,\"transcriptPreview\":\"32yo, G0\\n\\nPresenting Complaint:\\nUnable to tolerate vaginal penetration for 12/12, preventing intercourse and use of tampons. Ass...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"mp027-female-genital-mutilation-fgm-pdf\\\", \\\"title\\\": \\\"Female Genital...",
+  "full_data": null
+}
