@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-46-00-662Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 3033,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"Of course. Here is a medical clerking for the provided scenario, written in SBAR format using appropriate UK medical terminology and abbreviations.\\n\\n***\\n\\n**SITUATION:**\\nMrs. redact...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 6,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 27,\n  \"notRelevantCount\": 259\n}...",
+  "full_data": null
+}
