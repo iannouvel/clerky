@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-22-016Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 782,
+  "response_length": 1251,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management of Weight L...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"eclampsia-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"Eclampsia prompt card ED RSCH PRH\\\", \\\"re...",
+  "full_data": null
+}
