@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-08-14-692Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 959,
+  "response_length": 1416,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we counsel regarding VBAC?...\",\"chunkGuidelines\":[\"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pd...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.90\\\"}],\\n  \\\"potentiallyRelevan...",
+  "full_data": null
+}
