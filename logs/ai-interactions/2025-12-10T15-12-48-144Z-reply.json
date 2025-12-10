@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-12-48-144Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1329,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":1690,\"transcriptPreview\":\"28yo\\n\\nPresenting Complaint:\\nSecondary amenorrhoea for 9/12, associated with hot flushes and low mood\\n\\nKey Clinical Issue:\\nSus...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-longterm-pcos-consequences-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Longterm PCOS Consequences\\\"...",
+  "full_data": null
+}
