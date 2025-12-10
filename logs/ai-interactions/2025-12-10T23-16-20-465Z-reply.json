@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-20-465Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 712,
+  "response_length": 1194,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appointments\",\"mp019-hypertension-and-pre-e...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp022-emergency-maternity-admissions-pdf\\\", \\\"title\\\": \\\"Emergency Maternity Admissions\\\"...",
+  "full_data": null
+}
