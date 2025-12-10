@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-15-627Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 696,
+  "response_length": 308,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since de...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}
