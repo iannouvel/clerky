@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-12-46-209Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 1311,
+  "response_length": 1283,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":1690,\"transcriptPreview\":\"28yo\\n\\nPresenting Complaint:\\nSecondary amenorrhoea for 9/12, associated with hot flushes and low mood\\n\\nKey Clinical Issue:\\nSus...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\\\", \\\"title\\\": \\\"MP057 Commu...",
+  "full_data": null
+}

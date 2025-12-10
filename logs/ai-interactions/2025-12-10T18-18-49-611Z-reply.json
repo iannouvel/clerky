@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-18-49-611Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 111,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"how do we manage cord prolapse\\n\\n\",\"guidelinesCount\":297,\"chunksProcessed\":38,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 8,\n  \"potentiallyRelevantCount\": 19,\n  \"lessRelevantCount\": 44,\n  \"notRelevantCount\": 226\n}...",
+  "full_data": null
+}

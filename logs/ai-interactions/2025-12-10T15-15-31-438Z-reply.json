@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-31-438Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 265,
+  "response_length": 308,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"uhsx-surrogacy-protocol...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}

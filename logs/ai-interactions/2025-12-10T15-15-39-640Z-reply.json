@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-39-640Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 818,
+  "response_length": 1206,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentani...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg12027-pca-remifentanil-in-labour-guide...",
+  "full_data": null
+}

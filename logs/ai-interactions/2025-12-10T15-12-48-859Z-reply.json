@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-12-48-859Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1697,
+  "response_length": 1578,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":1690,\"transcriptPreview\":\"28yo\\n\\nPresenting Complaint:\\nSecondary amenorrhoea for 9/12, associated with hot flushes and low mood\\n\\nKey Clinical Issue:\\nSusp...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroid...",
+  "full_data": null
+}

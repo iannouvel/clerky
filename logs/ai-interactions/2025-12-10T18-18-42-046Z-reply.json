@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-18-42-046Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 686,
+  "response_length": 1150,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":32,\"transcriptPreview\":\"how do we manage cord prolapse\\n\\n...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitoring pathw...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"proforma-shoulder-dystocia-uhsx-pdf\\\", \\\"title\\\": \\\"Proforma Shoulder ...",
+  "full_data": null
+}

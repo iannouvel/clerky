@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-52-367Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 766,
+  "response_length": 1368,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remifentanil...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg12029-pph-guideline-pdf\\\", \\\"title\\\": \\\"Postpartum Haemorrhage Management Guideline\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {...",
+  "full_data": null
+}

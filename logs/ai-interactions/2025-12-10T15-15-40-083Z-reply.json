@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-40-083Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 718,
+  "response_length": 1122,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"fetal-blood-sampling-so...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"fsrh-2023-pop-pdf\\\", \\\"title\\\": \\\"FSRH - 2023 - POP\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"fsrh-...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-53-544Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 794,
+  "response_length": 1316,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"nice-2025-caesarean-birth-pdf: NICE 2025 - Caesarean Birth\",\"nice-2025-intr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-intrapartum-care-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Intrapartum Care\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": ...",
+  "full_data": null
+}

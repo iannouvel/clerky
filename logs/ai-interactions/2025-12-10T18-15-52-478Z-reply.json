@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-52-478Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 766,
+  "response_length": 1284,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis\",\"cg1151-uterine-rupture-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1151-uterine-rupture-pdf\\\", \\\"title\\\": \\\"CG1151 Uterine Rupture\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\\"potentiallyReleva...",
+  "full_data": null
+}

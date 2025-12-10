@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-59-289Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 110,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"how do we manage uterine rupture?\",\"guidelinesCount\":297,\"chunksProcessed\":38,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 17,\n  \"potentiallyRelevantCount\": 46,\n  \"lessRelevantCount\": 65,\n  \"notRelevantCount\": 169\n}...",
+  "full_data": null
+}

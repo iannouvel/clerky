@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-51-933Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 788,
+  "response_length": 1252,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management of We...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"concerns-during-intermittent-auscultation-flowchart-pdf\\\", \\\"title\\\": \\\"Concerns during intermi...",
+  "full_data": null
+}

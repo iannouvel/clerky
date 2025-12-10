@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-41-123Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 981,
+  "response_length": 1387,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"fsrh-contraception-in-w...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"fsrh-contraception-in-women-aged-over-40-pdf\\\", \\\"title\\\": \\\"FSRH - Co...",
+  "full_data": null
+}
