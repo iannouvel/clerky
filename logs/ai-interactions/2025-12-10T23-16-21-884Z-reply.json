@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-21-884Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 758,
+  "response_length": 1269,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"uhsx-local-requirements-pmrt-sop-pdf: UHSx Local Requirements PMRT SOP\",\"uhsx-mat...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-local-requirements-pmrt-sop-pdf\\\", ...",
+  "full_data": null
+}
