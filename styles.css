@@ -1718,6 +1718,11 @@ div.third-column,
     padding-bottom: 8px !important; /* Small padding at bottom for readability */
     position: relative !important;
     z-index: 1 !important;         /* Below the fixed button row */
+
+    /* Force a consistent "stream" typography for all content */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* Removed hover effects to prevent flickering */
@@ -3174,11 +3179,14 @@ html, body {
     flex-direction: column;
 }
 
-/* Zero out all spacing within summary1 for maximum visibility */
+/* Zero out all spacing within summary1 for maximum visibility
+   and enforce a single, consistent font for everything in the stream */
 #summary1 * {
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
 }
 
 /* Restore minimal necessary spacing for readability */
@@ -3194,6 +3202,12 @@ html, body {
 #summary1 h6 {
     margin-top: 4px !important;
     margin-bottom: 4px !important;
+
+    /* Make headings the same size as body text so everything looks uniform,
+       but keep a slightly stronger weight for emphasis */
+    font-size: 1rem !important;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 #summary1 ul,
@@ -3226,6 +3240,7 @@ html, body {
 #summary1 var,
 #summary1 span {
     background: white !important;
+    font-family: inherit !important;
 }
 
 /* ==================== STREAMING TEXT ANIMATIONS ==================== */
