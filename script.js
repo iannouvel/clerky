@@ -1226,6 +1226,9 @@ function updateAnalyseAndResetButtons(hasContent) {
     }
 }
 
+// Expose helper globally so inline scripts (e.g. TipTap initialiser in index.html) can use it
+window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
+
 // New function to create guideline selection interface with checkboxes
 function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     console.log('[DEBUG] createGuidelineSelectionInterface called with:', {
@@ -15187,9 +15190,6 @@ async function askGuidelinesQuestion() {
 
         // Button state is already set by the click handler
         
-        // Show loading spinner in summary
-        showSummaryLoading();
-
         // Update user status - starting Q&A flow
         updateUser('Preparing to ask guidelines your question...', true);
 
