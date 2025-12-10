@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-54-133Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1101,
+  "response_length": 1407,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: BJOG - 2018 - Jauniaux - Vasa Praevia\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-chu-maternal-collapse-in-pregnancy-and-the-puerperium-pdf\\\", \\\"title\\\": \\\"Maternal Collapse in Pregnancy and the Puer...",
+  "full_data": null
+}
