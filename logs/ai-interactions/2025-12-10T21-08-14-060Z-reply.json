@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-08-14-060Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 816,
+  "response_length": 1246,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we counsel regarding VBAC?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: MP031 Pre-term labour\",\"mp032-pre-labour-rupture...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp034-vaginal-birth-after-caesarean-section-vbac-pdf\\\", \\\"title\\\": \\\"Vaginal Birth after Caesarean Section (VBAC)\\\", \\\"relevanc...",
+  "full_data": null
+}
