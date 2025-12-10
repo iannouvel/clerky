@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-45-54-168Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 1298,
+  "response_length": 1282,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":2922,\"transcriptPreview\":\"Of course. Here is a medical clerking for the provided scenario, written in SBAR format using appropriate UK medical terminology an...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"mp057-communication-and-handover-of-care-betweeen-professionals-pdf\\\",...",
+  "full_data": null
+}
