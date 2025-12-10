@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-04-959Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 1301,
+  "response_length": 1315,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":1593,\"transcriptPreview\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp036-care-of-women-with-haemoglobinopathies-pdf\\\", \\\"title\\\": \\\"MP036 Care of Women with Haemo...",
+  "full_data": null
+}
