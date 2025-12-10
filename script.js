@@ -5908,8 +5908,37 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     let searchText = null;
     if (context && hasVerbatimQuote === true) {
         const decodedContext = unescapeHtml(context);
+
+        // First, try to extract an explicit quoted segment (used by processWorkflow and audit flows)
         searchText = extractQuotedText(decodedContext);
-        console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
+
+        // Fallback: if there are no explicit quotes but we were told this is a verbatim quote
+        // (e.g. Ask-Guidelines provides a plain snippet via the REF marker), treat the entire
+        // context as the search text, after cleaning it for PDF search.
+        if (!searchText) {
+            const rawContext = decodedContext.trim();
+            if (rawContext.length >= 10) {
+                const cleanedContext = cleanQuoteForSearch(rawContext);
+                if (cleanedContext && cleanedContext.length >= 10) {
+                    searchText = cleanedContext;
+                    console.log('[DEBUG] createGuidelineViewerLink: Using full context as fallback search text', {
+                        length: searchText.length,
+                        preview: searchText.substring(0, 80) + '...'
+                    });
+                } else {
+                    console.log('[DEBUG] createGuidelineViewerLink: Cleaned context too short for fallback search text', {
+                        rawLength: rawContext.length,
+                        cleanedLength: cleanedContext ? cleanedContext.length : 0
+                    });
+                }
+            } else {
+                console.log('[DEBUG] createGuidelineViewerLink: Context too short for fallback search text', {
+                    rawLength: rawContext.length
+                });
+            }
+        } else {
+            console.log('[DEBUG] Extracted search text for PDF.js viewer from quoted context:', searchText.substring(0, 80) + '...');
+        }
     } else if (hasVerbatimQuote === false) {
         console.log('[DEBUG] hasVerbatimQuote is false - opening PDF to first page without search');
     }
@@ -15140,33 +15169,43 @@ async function askGuidelinesQuestion() {
         // Parse and format citations in the answer
         let answerText = data2.answer;
         
-        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
         // Format: [[REF:guideline-id-or-title|Link Text|Search Text]]
+        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
         const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
-        
+
+        let citationCount = 0;
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            citationCount += 1;
+
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
-
+            
             const rawId = id.trim();
             const canonicalId =
                 guidelineIdMap.get(rawId) ||
                 guidelineIdMap.get(rawId.toLowerCase()) ||
                 rawId;
             
-            // Use existing createGuidelineViewerLink function
-            // We pass 'true' for hasVerbatimQuote to trigger search highlighting
-            // We construct a fake context with the search text to be extracted
+            // Use existing createGuidelineViewerLink function.
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
+            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
+            // link helper will either extract a quoted segment or fall back to using
+            // the full snippet directly for the PDF search.
             return createGuidelineViewerLink(
                 canonicalId, 
                 text.trim(), 
                 null, // filename not needed if ID provided
-                decodedSearch, // Context (search text)
+                decodedSearch, // Context / search snippet
                 true // hasVerbatimQuote
             );
+        });
+
+        console.log('[DEBUG] askGuidelinesQuestion: Replaced citation markers in answer', {
+            citationCount
         });
 
         // Display the answer with HTML formatting
@@ -15315,27 +15354,37 @@ async function processQuestionAgainstGuidelines() {
         // Parse and format citations in the answer
         let answerText = data.answer;
         
-        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
         // Format: [[REF:guideline-id|Link Text|Search Text]]
+        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
         const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
-        
+
+        let citationCount = 0;
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            citationCount += 1;
+
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
             
-            // Use existing createGuidelineViewerLink function
-            // We pass 'true' for hasVerbatimQuote to trigger search highlighting
-            // We construct a fake context with the search text to be extracted
+            // Use existing createGuidelineViewerLink function.
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
+            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
+            // link helper will either extract a quoted segment or fall back to using
+            // the full snippet directly for the PDF search.
             return createGuidelineViewerLink(
                 id.trim(), 
                 text.trim(), 
                 null, // filename not needed if ID provided
-                decodedSearch, // Context (search text)
+                decodedSearch, // Context / search snippet
                 true // hasVerbatimQuote
             );
+        });
+
+        console.log('[DEBUG] processQuestionAgainstGuidelines: Replaced citation markers in answer', {
+            citationCount
         });
 
         // Display the comprehensive answer with HTML formatting

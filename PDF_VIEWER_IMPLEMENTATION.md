@@ -49,8 +49,10 @@ October 27, 2025
 
 ## How It Works
 
-1. **User clicks PDF link** from dynamic advice suggestion
-2. **Frontend extracts quoted text** from AI context using `extractQuotedText()`
+1. **User clicks PDF link** from a dynamic advice suggestion, audit view, or Ask-Guidelines answer.
+2. **Frontend determines the search text** for the guideline:
+   - If the AI context includes explicit quotes, `extractQuotedText()` pulls out the longest quoted segment.
+   - If `hasVerbatimQuote === true` but no explicit quotes are found (for example when Ask-Guidelines passes a `SearchText` snippet via a `[[REF:GuidelineID|LinkText|SearchText]]` marker), `createGuidelineViewerLink()` falls back to using the full context/snippet, cleaned via `cleanQuoteForSearch()`.
 3. **Builds viewer URL** with:
    - `file` parameter: `/api/pdf/[guidelineId]`
    - `token` parameter: Firebase auth token
@@ -59,7 +61,7 @@ October 27, 2025
 5. **clerky-auth.js** intercepts PDF loading and adds auth header
 6. **Backend serves PDF** from guidance directory
 7. **PDF.js automatically**:
-   - Searches for the quoted text
+   - Searches for the extracted or fallback verbatim text
    - Highlights all matches in yellow
    - Scrolls to first match
    - Shows search controls
