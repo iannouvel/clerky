@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-42-02-843Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 992,
+  "response_length": 1368,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":120,\"transcriptPreview\":\"how should we counsel a patient regarding their options with regard to delivery for GIDDM with macrosomia at 40+1 weeks?...\",\"chunkG...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"md090-disengaging-a-deeply-impacted-head-at-lscs-and-use-of-fetal-pillow-pdf\\\", \\\"title\\\": \\\"MD...",
+  "full_data": null
+}
