@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-01-110Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 854,
+  "response_length": 1239,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: MP031 Pre-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp043-prevention-of-acid-aspiration-pdf\\\", \\\"title\\\": \\\"Prevention of Acid Aspiration\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potent...",
+  "full_data": null
+}
