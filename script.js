@@ -471,16 +471,12 @@ function showCurrentPIIMatch() {
     
     // Show PII buttons in fixedButtonRow
     const piiActionsGroup = document.getElementById('piiActionsGroup');
-    const analyseBtn = document.getElementById('analyseBtn');
-    const resetBtn = document.getElementById('resetBtn');
     const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
     const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
     const piiPrevBtn = document.getElementById('piiPrevBtn');
 
     if (piiActionsGroup) {
         piiActionsGroup.style.display = 'flex';
-        if (analyseBtn) analyseBtn.style.display = 'none';
-        if (resetBtn) resetBtn.style.display = 'none';
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
         if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
         
@@ -993,13 +989,9 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         }
     }
     
-    // Manually update Analyse/Reset button visibility
+    // Manually update Analyse/Reset button visibility after programmatic content changes
     const hasContent = safeContent.trim().length > 0;
-    const analyseBtn = document.getElementById('analyseBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    
-    if (analyseBtn) analyseBtn.style.display = hasContent ? 'flex' : 'none';
-    if (resetBtn) resetBtn.style.display = hasContent ? 'flex' : 'none';
+    updateAnalyseAndResetButtons(hasContent);
     
     // Update button visibility after content is set (with small delay to ensure TipTap has processed)
     setTimeout(() => {
@@ -1190,6 +1182,25 @@ function displayRelevantGuidelines(categories) {
 
     // Create and display the new guideline selection interface
     createGuidelineSelectionInterface(categories, allRelevantGuidelines);
+}
+
+// Central helper to manage Analyse/Reset button visibility and state
+function updateAnalyseAndResetButtons(hasContent) {
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Analyse button only appears when there is content
+    if (analyseBtn) {
+        analyseBtn.style.display = hasContent ? 'flex' : 'none';
+    }
+
+    // Reset button should remain visible at all times in the fixed bar
+    if (resetBtn) {
+        resetBtn.style.display = 'flex';
+        // Disable Reset when there is nothing meaningful to clear
+        const hasWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+        resetBtn.disabled = !hasContent && !hasWorkflows;
+    }
 }
 
 // New function to create guideline selection interface with checkboxes
@@ -1750,20 +1761,10 @@ function handleGlobalReset() {
         window.analysisAbortController = null;
     }
     
-    // Reset processing flags
-    window.workflowInProgress = false;
-    window.sequentialProcessingActive = false;
-    window.isAnalysisRunning = false;
-    
     // Clear user input (TipTap editor)
     const editor = window.editors?.userInput;
     if (editor) {
         editor.commands.setContent('');
-        // Force button update since we're clearing content
-        const analyseBtn = document.getElementById('analyseBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        if (analyseBtn) analyseBtn.style.display = 'none';
-        if (resetBtn) resetBtn.style.display = 'none';
     }
     
     // Clear summary content (except loading spinner)
@@ -1789,12 +1790,36 @@ function handleGlobalReset() {
         clerkingButtonsGroup.style.display = 'none';
     }
     hideSelectionButtons();
+
+    // Clear any multi-guideline selection state if helper is available
+    if (typeof window.clearMultiGuidelineState === 'function') {
+        window.clearMultiGuidelineState();
+    }
+
+    // Clear proforma inputs (both obstetric and gynaecology)
+    const proformaInputs = document.querySelectorAll('.proforma-input');
+    proformaInputs.forEach(input => {
+        if (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA') {
+            input.value = '';
+        } else if (input.tagName === 'SELECT') {
+            input.selectedIndex = 0;
+        }
+    });
     
     // Clear transient messages and hide summary section if now empty
     if (typeof removeTransientMessages === 'function') {
         removeTransientMessages();
     }
     updateSummaryVisibility();
+    
+    // Reset processing flags after UI has been cleared
+    window.workflowInProgress = false;
+    window.sequentialProcessingActive = false;
+    window.isAnalysisRunning = false;
+
+    // Update analyse/reset button state based on cleared content
+    const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
+    updateAnalyseAndResetButtons(hasContent);
     
     console.log('[DEBUG] Global reset completed');
 }
@@ -3456,13 +3481,27 @@ function showSummaryLoading() {
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
     
-    if (!summarySection || !summary1 || !loadingSpinner) return;
+    if (!summary1 || !loadingSpinner) return;
     
-    // Show summary section
-    summarySection.classList.remove('hidden');
-    summarySection.classList.add('loading');
+    // Determine if there's already real content/decision UI in summary1
+    const hasRealContent =
+        summary1.textContent.trim().length > 0 ||
+        Array.from(summary1.children).some(child => child.id !== 'summaryLoadingSpinner');
     
-    // Show loading spinner
+    const sectionVisible = summarySection && !summarySection.classList.contains('hidden');
+    
+    // If there's no existing content and the section is hidden, avoid popping up
+    // an empty summary panel with just \"Processing...\" – use serverStatusMessage instead.
+    if (!sectionVisible && !hasRealContent) {
+        return;
+    }
+    
+    if (summarySection) {
+        summarySection.classList.remove('hidden');
+        summarySection.classList.add('loading');
+    }
+    
+    // Show loading spinner over existing content/decision UI
     loadingSpinner.classList.remove('hidden');
 }
 
@@ -6331,27 +6370,21 @@ function setAllSuggestionButtonsApplying(isApplying) {
 function updateSuggestionActionButtons() {
     const review = window.currentSuggestionReview;
     const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
-    const analyseBtn = document.getElementById('analyseBtn');
-    const resetBtn = document.getElementById('resetBtn');
     const clerkyButtonsGroup = document.getElementById('clerkyButtonsGroup');
 
     if (!review) {
         // Hide suggestion buttons, show standard buttons
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
-        // Keep analyse button hidden if it has already been used
-        if (analyseBtn && !window.analyseButtonUsed) {
-            analyseBtn.style.display = 'flex';
-        } else if (analyseBtn) {
-            analyseBtn.style.display = 'none';
-        }
-        if (resetBtn) resetBtn.style.display = 'flex';
+        // Delegate standard button visibility to central helper
+        const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
+        updateAnalyseAndResetButtons(hasContent);
         return;
     }
 
     // Show suggestion buttons, hide standard buttons
     if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'flex';
-    if (analyseBtn) analyseBtn.style.display = 'none';
-    if (resetBtn) resetBtn.style.display = 'none';
+    // While in suggestion review, hide analyse but keep reset visible
+    updateAnalyseAndResetButtons(true);
     if (clerkyButtonsGroup) clerkyButtonsGroup.style.display = 'none'; // Hide clerky buttons if present
 
     // Update specific buttons
