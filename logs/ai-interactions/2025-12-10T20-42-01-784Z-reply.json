@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-42-01-784Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 773,
+  "response_length": 1205,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":120,\"transcriptPreview\":\"how should we counsel a patient regarding their options with regard to delivery for GIDDM with macrosomia at 40+1 weeks?...\",\"chunkG...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"rag-rating-for-iol-pdf\\\", \\\"title\\\": \\\"RAG rating for IOL\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"proforma-shoulder-...",
+  "full_data": null
+}
