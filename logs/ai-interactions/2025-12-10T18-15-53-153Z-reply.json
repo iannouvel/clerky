@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-53-153Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 866,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline\",\"...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"shoulder-dystocia-guideline-uhsx-pdf\\\", \\\"title\\\": \\\"Shoulder Dystocia Guideline UHSx\\\", ...",
+  "full_data": null
+}
