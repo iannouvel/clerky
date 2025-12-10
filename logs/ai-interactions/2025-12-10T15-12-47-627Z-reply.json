@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-12-47-627Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 1291,
+  "response_length": 1309,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":1690,\"transcriptPreview\":\"28yo\\n\\nPresenting Complaint:\\nSecondary amenorrhoea for 9/12, associated with hot flushes and low mood\\n\\nKey Clinical Issue:\\nSus...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uae-bsuh-guidelines-september-2016-pdf\\\"...",
+  "full_data": null
+}
