@@ -1180,19 +1180,16 @@
                     autofocus: false,
                     onUpdate: ({ editor }) => {
                         const hasContent = editor.getText().trim().length > 0;
-                        const analyseBtn = document.getElementById('analyseBtn');
-                        const resetBtn = document.getElementById('resetBtn');
-                        
-                        if (analyseBtn) analyseBtn.style.display = hasContent ? 'flex' : 'none';
-                        if (resetBtn) resetBtn.style.display = hasContent ? 'flex' : 'none';
+                        if (typeof updateAnalyseAndResetButtons === 'function') {
+                            updateAnalyseAndResetButtons(hasContent);
+                        }
                     }
                 });
                 
                 // Initial visibility check
-                const analyseBtn = document.getElementById('analyseBtn');
-                const resetBtn = document.getElementById('resetBtn');
-                if (analyseBtn) analyseBtn.style.display = 'none';
-                if (resetBtn) resetBtn.style.display = 'none';
+                if (typeof updateAnalyseAndResetButtons === 'function') {
+                    updateAnalyseAndResetButtons(false);
+                }
                 
                 // Basic editor setup
                 editor.on('create', () => {

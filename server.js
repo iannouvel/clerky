@@ -17360,6 +17360,64 @@ Please provide a comprehensive answer to the question based on the relevant guid
             return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
+        // Helper to build a contiguous fallback quote from the base guideline text
+        // when we cannot obtain a verbatim quote from findGuidelineQuoteInText.
+        // It looks for the best matching word chunk (favouring later parts of the
+        // semantic text) and returns a short window around that chunk.
+        function buildFallbackQuote(baseText, semanticText) {
+            if (!baseText || !semanticText) {
+                return null;
+            }
+
+            // Clean up the semantic text: remove ellipses and normalise whitespace
+            const cleanedSemantic = String(semanticText)
+                .replace(/\.{3}|…/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            if (!cleanedSemantic) {
+                return null;
+            }
+
+            const words = cleanedSemantic.split(' ').filter(Boolean);
+            if (words.length === 0) {
+                return null;
+            }
+
+            const baseLower = String(baseText).toLowerCase();
+
+            const maxChunkSize = Math.min(8, words.length);
+            const minChunkSize = Math.min(3, maxChunkSize);
+            const contextPadding = 80; // characters before/after the match
+
+            // Prefer chunks from the end of the phrase (often the most specific part)
+            for (let size = maxChunkSize; size >= minChunkSize; size--) {
+                for (let start = words.length - size; start >= 0; start--) {
+                    const chunk = words.slice(start, start + size).join(' ').toLowerCase();
+                    const idx = baseLower.indexOf(chunk);
+                    if (idx !== -1) {
+                        const startIdx = Math.max(0, idx - contextPadding);
+                        const endIdx = Math.min(baseText.length, idx + chunk.length + contextPadding);
+                        let slice = baseText.slice(startIdx, endIdx);
+
+                        // Normalise whitespace for more reliable PDF search
+                        slice = String(slice).replace(/\s+/g, ' ').trim();
+
+                        if (slice) {
+                            console.log('[DEBUG] askGuidelinesQuestion: Built fallback quote from base text', {
+                                semanticSample: cleanedSemantic.substring(0, 80),
+                                chunkSample: chunk.substring(0, 80),
+                                sliceSample: slice.substring(0, 120)
+                            });
+                            return slice;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         const MAX_CITATION_QUOTES = 6;
         let quotesResolved = 0;
 
@@ -17384,13 +17442,35 @@ Please provide a comprehensive answer to the question based on the relevant guid
                 userId
             );
 
-            if (!verbatimQuote) {
-                // Keep the original semantic search text if we couldn't improve it
-                continue;
+            let finalQuote = verbatimQuote;
+
+            if (!finalQuote) {
+                // If we could not obtain a verbatim quote, try to build a best-effort
+                // contiguous slice from the underlying guideline text instead.
+                finalQuote = buildFallbackQuote(baseText, task.semanticText);
+                if (!finalQuote) {
+                    // Keep the original semantic search text if we couldn't improve it
+                    console.log('[DEBUG] askGuidelinesQuestion: No verbatim or fallback quote found for citation task', {
+                        guidelineId: task.guidelineId,
+                        semanticSample: task.semanticText.substring(0, 100)
+                    });
+                    continue;
+                }
             }
 
-            // Ensure the quote is safe for inclusion in REF (no pipes)
-            const safeQuote = verbatimQuote.replace(/\|/g, ' ');
+            // Ensure the quote is safe for inclusion in REF:
+            // - Remove pipes (field separator)
+            // - Strip ellipses so the viewer does not treat them as literal text
+            // - Normalise whitespace
+            let safeQuote = String(finalQuote)
+                .replace(/\|/g, ' ')
+                .replace(/\.{3}|…/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            if (!safeQuote) {
+                continue;
+            }
 
             // Replace all matching REF markers for this guideline+semanticText pair
             const pattern = new RegExp(

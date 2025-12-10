@@ -44,20 +44,60 @@
                 availableKeys: Object.keys(window.PDFViewerApplication).slice(0, 20)
             });
             
-            // Generate search variants for fuzzy matching (from exact to increasingly fuzzy)
-            const generateSearchVariants = function(text) {
-                const variants = [];
+            // Normalise the incoming search term for PDF search while still
+            // preserving useful structure (ellipses, etc.) for variant generation.
+            const normaliseSearchTermForPdf = function(text) {
+                if (!text) return '';
                 
-                // 1. Exact phrase (already cleaned of citations)
+                let cleaned = String(text);
+                
+                // Strip common trademark / copyright symbols that often differ between
+                // AI output and the actual PDF text.
+                cleaned = cleaned.replace(/[™®©]/g, '');
+                
+                // Normalise number-unit spacing, e.g. "1ml" -> "1 ml"
+                cleaned = cleaned.replace(/(\d+)\s*([a-zA-Z]+)\b/g, '$1 $2');
+                
+                // Collapse whitespace
+                cleaned = cleaned.replace(/\s+/g, ' ').trim();
+                
+                return cleaned;
+            };
+
+            // Generate search variants for fuzzy matching (from exact to increasingly fuzzy)
+            const generateSearchVariants = function(originalText) {
+                const variants = [];
+
+                const baseText = normaliseSearchTermForPdf(originalText) || originalText || '';
+                if (!baseText) {
+                    return variants;
+                }
+
+                // If the text contains ellipses, add a high-priority variant using the
+                // longest contiguous segment without the ellipsis. This helps when AI
+                // output compresses text with "..." that does not exist in the PDF.
+                const ellipsisSplit = baseText.split(/\s*(?:\.{3}|…)+\s*/).map(p => p.trim()).filter(Boolean);
+                if (ellipsisSplit.length > 1) {
+                    const longestSegment = ellipsisSplit.reduce((a, b) => (b.length > a.length ? b : a), '');
+                    if (longestSegment && longestSegment.length >= 10) {
+                        variants.push({
+                            query: longestSegment,
+                            phraseSearch: true,
+                            description: 'segment without ellipsis'
+                        });
+                    }
+                }
+
+                // 1. Exact phrase (already cleaned of basic noise)
                 variants.push({
-                    query: text,
+                    query: baseText,
                     phraseSearch: true,
                     description: 'exact phrase'
                 });
                 
                 // 2. Try removing punctuation
-                const noPunctuation = text.replace(/[.,;:!?]/g, '');
-                if (noPunctuation !== text) {
+                const noPunctuation = baseText.replace(/[.,;:!?]/g, '');
+                if (noPunctuation !== baseText) {
                     variants.push({
                         query: noPunctuation,
                         phraseSearch: true,
@@ -66,7 +106,7 @@
                 }
                 
                 // 3. Try first significant sentence (if multi-sentence)
-                const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 20);
+                const sentences = baseText.split(/[.!?]+/).filter(s => s.trim().length > 20);
                 if (sentences.length > 1 && sentences[0].trim().length > 30) {
                     variants.push({
                         query: sentences[0].trim(),
@@ -76,7 +116,7 @@
                 }
                 
                 // 4. Try key phrases (chunks of 10+ words)
-                const words = text.split(/\s+/);
+                const words = baseText.split(/\s+/);
                 if (words.length > 15) {
                     // Take middle portion (often the most specific)
                     const start = Math.floor(words.length * 0.2);
@@ -102,15 +142,25 @@
                 
                 // 6. Last resort: search for distinctive words (5+ chars, not common)
                 const commonWords = new Set(['the', 'and', 'for', 'that', 'this', 'with', 'from', 'have', 'been', 'should', 'would', 'could']);
-                const distinctiveWords = words
+                const distinctiveWordList = words
                     .filter(w => w.length >= 5 && !commonWords.has(w.toLowerCase()))
-                    .slice(0, 5)
-                    .join(' ');
-                if (distinctiveWords && distinctiveWords.split(/\s+/).length >= 3) {
+                    .slice(0, 6);
+                const distinctiveWords = distinctiveWordList.join(' ');
+                if (distinctiveWordList.length >= 1) {
                     variants.push({
                         query: distinctiveWords,
                         phraseSearch: false, // Allow words in any order
                         description: 'distinctive keywords'
+                    });
+                }
+
+                // 7. For short snippets, add an "all keywords" variant to ensure we at
+                // least land near any occurrence of the combined terms.
+                if (words.length > 1 && words.length <= 10) {
+                    variants.push({
+                        query: words.join(' '),
+                        phraseSearch: false,
+                        description: 'all keywords'
                     });
                 }
                 
