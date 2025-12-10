@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T09-21-13-627Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1142,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":72,\"transcriptPreview\":\"how many doses of syntometrine and carboprost can we give for mx of PPH?...\",\"chunkGuidelines\":[\"gp016-operational-guideline-for-admi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp016-operational-guideline-for-admissio...",
+  "full_data": null
+}

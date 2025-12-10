@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T09-21-11-856Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 951,
+  "response_length": 1417,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":72,\"transcriptPreview\":\"how many doses of syntometrine and carboprost can we give for mx of PPH?...\",\"chunkGuidelines\":[\"mp004-antenatal-screening-infectious...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp004-antenatal-screening-infectious-dis...",
+  "full_data": null
+}
