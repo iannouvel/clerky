@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-22-769Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 1249,
+  "response_length": 1160,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since de...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg12030-caesarean-birth-guideline-pdf\\\", \\\"title\\\": \\\"Caesarean Birth Guideline\\\", \\\"relevance\\...",
+  "full_data": null
+}
