@@ -702,6 +702,47 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Helper to safely apply modification suggestions to the userInput content
+// Ensures we don't silently "succeed" when the original text is no longer present
+function applySuggestionTextReplacement(currentContent, originalText, replacementText, contextLabel = 'Guideline Suggestions') {
+    if (!originalText || typeof originalText !== 'string') {
+        console.warn('[DEBUG] applySuggestionTextReplacement: No originalText provided');
+        return { content: currentContent, didReplace: false };
+    }
+
+    const escapedOriginal = originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(escapedOriginal, 'gi');
+
+    if (!regex.test(currentContent)) {
+        console.warn('[DEBUG] applySuggestionTextReplacement: Original text not found in current content', {
+            originalTextSnippet: originalText.slice(0, 120)
+        });
+
+        // Show a brief, non-intrusive notice in the summary panel so the user
+        // understands why nothing changed in their clerking
+        const messageHtml = `
+            <div class="dynamic-advice-container">
+                <p style="margin: 0;">
+                    <strong>${contextLabel}:</strong>
+                    I couldn't find the exact text
+                    <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px; font-family: monospace;">
+                        ${escapeHtml(originalText)}
+                    </span>
+                    in your clerking, so this suggestion was not applied.
+                    This can happen if you've edited the note since the suggestions were generated.
+                </p>
+            </div>
+        `;
+        // Transient message (auto-removes after a few seconds)
+        appendToSummary1(messageHtml, false, true);
+
+        return { content: currentContent, didReplace: false };
+    }
+
+    const newContent = currentContent.replace(regex, replacementText);
+    return { content: newContent, didReplace: true };
+}
+
 // Helper to unescape HTML entities
 function unescapeHtml(text) {
     const div = document.createElement('div');
@@ -6688,8 +6729,19 @@ window.handleCurrentSuggestionAction = async function(action) {
                 }
             } else if (suggestion.originalText) {
                 // Modification/Deletion: replace existing text
-                newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
-                setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+                const replacementResult = applySuggestionTextReplacement(
+                    currentContent,
+                    suggestion.originalText,
+                    suggestion.suggestedText,
+                    'Guideline Suggestions - Accepted'
+                );
+
+                if (replacementResult.didReplace) {
+                    newContent = replacementResult.content;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [
+                        { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
+                    ]);
+                }
             }
         }
         
@@ -6730,8 +6782,19 @@ window.confirmCurrentModification = function() {
             setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
         } else if (suggestion.originalText) {
             // Modification: replace existing text with user's modified version
-            newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
-            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+            const replacementResult = applySuggestionTextReplacement(
+                currentContent,
+                suggestion.originalText,
+                modifiedText,
+                'Guideline Suggestions - Modified'
+            );
+
+            if (replacementResult.didReplace) {
+                newContent = replacementResult.content;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [
+                    { findText: suggestion.originalText, replacementText: modifiedText }
+                ]);
+            }
         }
         
         clearHighlightInEditor();
