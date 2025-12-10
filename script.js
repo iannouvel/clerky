@@ -6815,7 +6815,7 @@ window.handleCurrentSuggestionAction = async function(action) {
     }
 };
 
-window.confirmCurrentModification = function() {
+window.confirmCurrentModification = async function() {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const modifyTextarea = document.getElementById('modify-textarea-current');
