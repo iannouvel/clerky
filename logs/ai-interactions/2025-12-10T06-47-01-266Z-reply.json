@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-01-266Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 950,
+  "response_length": 1348,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"mp004-antenatal-screening-infectious-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp008-infections-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Infections in Pregnancy\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}
