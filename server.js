@@ -16011,7 +16011,7 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
 app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
     try {
         console.log('[DEBUG] incorporateSuggestion endpoint called');
-        const { sectionName, subsectionName, currentSectionContent, suggestionText } = req.body;
+        const { sectionName, subsectionName, currentSectionContent, suggestionText, originalText } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
@@ -16035,7 +16035,8 @@ app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
             sectionName,
             subsectionName: subsectionName || 'none',
             sectionContentLength: currentSectionContent.length,
-            suggestionTextLength: suggestionText.length
+            suggestionTextLength: suggestionText.length,
+            originalTextLength: originalText ? originalText.length : 0
         });
 
         // Create AI prompt to incorporate suggestion into section
@@ -16043,6 +16044,8 @@ app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
             ? `the "${subsectionName}" subsection within the "${sectionName}" section`
             : `the "${sectionName}" section`;
         
+        const hasOriginalText = !!originalText;
+
         const systemPrompt = `You are a medical AI assistant that helps incorporate new information into clinical notes while preserving existing formatting.
 
 Your task is to:
@@ -16060,6 +16063,17 @@ CRITICAL RULES:
 - Preserve the exact formatting style of existing items
 - Do not add extra blank lines between items unless the existing format has them
 - Match the indentation and spacing of existing items
+${
+    hasOriginalText
+        ? `
+
+SPECIAL RULES WHEN ORIGINAL REFERENCE TEXT IS PROVIDED:
+- You may also be given an "original reference text" from the same section.
+- First, look for a sentence, bullet point, or line in the current section that closely matches this original reference text (it may not be exactly identical – minor wording or punctuation differences are allowed).
+- If you find such a match, UPDATE or REPLACE that matched sentence/bullet so that it now expresses the suggestion text verbatim, instead of simply adding a separate new line.
+- Only if no reasonably close match exists should you add the suggestion text as a new item at the most appropriate location.`
+        : ''
+}
 
 Return ONLY a valid JSON object with this structure:
 {
@@ -16073,12 +16087,24 @@ CRITICAL FORMATTING REQUIREMENTS:
 - Start your response directly with { and end with }
 - Ensure all JSON is properly formatted and valid
 - Ensure the suggestion text appears verbatim in the output`;
+- Ensure the suggestion text appears verbatim in the output`;
 
-        const userPrompt = `Current ${targetDescription} content:
+        let userPrompt = `Current ${targetDescription} content:
 ${currentSectionContent}
 
 Suggestion text to incorporate (VERBATIM):
 ${suggestionText}
+`;
+
+        if (hasOriginalText) {
+            userPrompt += `
+
+Original reference text (if present in the section, update this content instead of adding a separate new line):
+${originalText}
+`;
+        }
+
+        userPrompt += `
 
 Please incorporate this suggestion into the section content, preserving existing formatting and inserting the suggestion text exactly as provided.`;
 

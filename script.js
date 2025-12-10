@@ -702,9 +702,10 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Helper to safely apply modification suggestions to the userInput content
-// Ensures we don't silently "succeed" when the original text is no longer present
-function applySuggestionTextReplacement(currentContent, originalText, replacementText, contextLabel = 'Guideline Suggestions') {
+// Helper to safely apply modification suggestions to the userInput content.
+// Returns { content, didReplace } and leaves it up to the caller to decide
+// how to handle cases where the original text is no longer present.
+function applySuggestionTextReplacement(currentContent, originalText, replacementText) {
     if (!originalText || typeof originalText !== 'string') {
         console.warn('[DEBUG] applySuggestionTextReplacement: No originalText provided');
         return { content: currentContent, didReplace: false };
@@ -717,25 +718,6 @@ function applySuggestionTextReplacement(currentContent, originalText, replacemen
         console.warn('[DEBUG] applySuggestionTextReplacement: Original text not found in current content', {
             originalTextSnippet: originalText.slice(0, 120)
         });
-
-        // Show a brief, non-intrusive notice in the summary panel so the user
-        // understands why nothing changed in their clerking
-        const messageHtml = `
-            <div class="dynamic-advice-container">
-                <p style="margin: 0;">
-                    <strong>${contextLabel}:</strong>
-                    I couldn't find the exact text
-                    <span style="background: #fef3c7; padding: 2px 6px; border-radius: 3px; font-family: monospace;">
-                        ${escapeHtml(originalText)}
-                    </span>
-                    in your clerking, so this suggestion was not applied.
-                    This can happen if you've edited the note since the suggestions were generated.
-                </p>
-            </div>
-        `;
-        // Transient message (auto-removes after a few seconds)
-        appendToSummary1(messageHtml, false, true);
-
         return { content: currentContent, didReplace: false };
     }
 
@@ -1801,6 +1783,11 @@ function handleGlobalReset() {
         window.analysisAbortController.abort();
         window.analysisAbortController = null;
     }
+    // Immediately reset Analyse button progress UI if helper is available
+    if (typeof updateAnalyseButtonProgress === 'function') {
+        // No args → reset to default idle state ('Analyse', no spinner)
+        updateAnalyseButtonProgress();
+    }
     
     // Clear user input (TipTap editor)
     const editor = window.editors?.userInput;
@@ -1882,10 +1869,12 @@ function handleGlobalReset() {
     }
     updateSummaryVisibility();
     
-    // Reset processing flags after UI has been cleared
+    // Reset processing flags and sequential state after UI has been cleared
     window.workflowInProgress = false;
     window.sequentialProcessingActive = false;
     window.isAnalysisRunning = false;
+    window.sequentialProcessingQueue = [];
+    window.sequentialProcessingIndex = 0;
 
     // Update analyse/reset button state based on cleared content
     const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
@@ -6728,12 +6717,11 @@ window.handleCurrentSuggestionAction = async function(action) {
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
                 }
             } else if (suggestion.originalText) {
-                // Modification/Deletion: replace existing text
-                const replacementResult = applySuggestionTextReplacement(
+                // Modification/Deletion: try exact replacement first
+                let replacementResult = applySuggestionTextReplacement(
                     currentContent,
                     suggestion.originalText,
-                    suggestion.suggestedText,
-                    'Guideline Suggestions - Accepted'
+                    suggestion.suggestedText
                 );
 
                 if (replacementResult.didReplace) {
@@ -6741,6 +6729,77 @@ window.handleCurrentSuggestionAction = async function(action) {
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [
                         { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
                     ]);
+                } else {
+                    // Fallback: use AI section-merging workflow to fold the new text into the correct section
+                    try {
+                        // Reuse cached insertion point if available, otherwise fetch it now
+                        let insertionPoint = suggestion.cachedInsertionPoint;
+                        if (!insertionPoint) {
+                            console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point for modification, fetching now');
+                            insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                        } else {
+                            console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point for modification');
+                        }
+
+                        // Apply client-side heuristic adjustment (same as for additions)
+                        insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                        console.log('[DEBUG] handleCurrentSuggestionAction (modification): Insertion point:', insertionPoint);
+
+                        // Extract section content
+                        const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                        if (!sectionInfo) {
+                            console.error('[DEBUG] handleCurrentSuggestionAction (modification): Could not extract section, falling back to simple append');
+                            newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (Fallback Append)', [
+                                { findText: '', replacementText: suggestion.suggestedText }
+                            ]);
+                        } else {
+                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Calling incorporateSuggestion API with originalText');
+                            const idToken = await firebase.auth().currentUser.getIdToken();
+                            const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
+                                body: JSON.stringify({
+                                    sectionName: insertionPoint.section,
+                                    subsectionName: insertionPoint.subsection,
+                                    currentSectionContent: sectionInfo.content,
+                                    suggestionText: suggestion.suggestedText,
+                                    originalText: suggestion.originalText
+                                })
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(`Failed to incorporate suggestion (modification): ${response.status}`);
+                            }
+
+                            const result = await response.json();
+                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Incorporation result:', result.insertionLocation);
+
+                            // Replace section content with modified version
+                            newContent = replaceSectionContent(
+                                currentContent,
+                                insertionPoint.section,
+                                insertionPoint.subsection,
+                                sectionInfo.content,
+                                result.modifiedSectionContent
+                            );
+
+                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Section Merge)', [
+                                { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
+                            ]);
+                        }
+                    } catch (error) {
+                        console.error('[DEBUG] handleCurrentSuggestionAction (modification): Error incorporating via AI, falling back to append:', error);
+                        // Final fallback: append suggested text so it is at least present in the note
+                        newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Fallback Append)', [
+                            { findText: '', replacementText: suggestion.suggestedText }
+                        ]);
+                    }
                 }
             }
         }
@@ -6781,12 +6840,11 @@ window.confirmCurrentModification = function() {
             newContent = currentContent + spacing + modifiedText;
             setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
         } else if (suggestion.originalText) {
-            // Modification: replace existing text with user's modified version
-            const replacementResult = applySuggestionTextReplacement(
+            // Modification: try to replace existing text with user's modified version
+            let replacementResult = applySuggestionTextReplacement(
                 currentContent,
                 suggestion.originalText,
-                modifiedText,
-                'Guideline Suggestions - Modified'
+                modifiedText
             );
 
             if (replacementResult.didReplace) {
@@ -6794,6 +6852,72 @@ window.confirmCurrentModification = function() {
                 setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [
                     { findText: suggestion.originalText, replacementText: modifiedText }
                 ]);
+            } else {
+                // Fallback: use AI section-merging workflow with the user's modified text
+                try {
+                    let insertionPoint = suggestion.cachedInsertionPoint;
+                    if (!insertionPoint) {
+                        console.log('[DEBUG] confirmCurrentModification: No cached insertion point for modification, fetching now');
+                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                    } else {
+                        console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for modification');
+                    }
+
+                    insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                    console.log('[DEBUG] confirmCurrentModification: Insertion point:', insertionPoint);
+
+                    const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                    if (!sectionInfo) {
+                        console.error('[DEBUG] confirmCurrentModification: Could not extract section, falling back to simple append');
+                        newContent = currentContent + '\n\n' + modifiedText;
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (Fallback Append)', [
+                            { findText: '', replacementText: modifiedText }
+                        ]);
+                    } else {
+                        console.log('[DEBUG] confirmCurrentModification: Calling incorporateSuggestion API with originalText and modifiedText');
+                        const idToken = await firebase.auth().currentUser.getIdToken();
+                        const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${idToken}`
+                            },
+                            body: JSON.stringify({
+                                sectionName: insertionPoint.section,
+                                subsectionName: insertionPoint.subsection,
+                                currentSectionContent: sectionInfo.content,
+                                suggestionText: modifiedText,
+                                originalText: suggestion.originalText
+                            })
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Failed to incorporate modified suggestion: ${response.status}`);
+                        }
+
+                        const result = await response.json();
+                        console.log('[DEBUG] confirmCurrentModification: Incorporation result:', result.insertionLocation);
+
+                        newContent = replaceSectionContent(
+                            currentContent,
+                            insertionPoint.section,
+                            insertionPoint.subsection,
+                            sectionInfo.content,
+                            result.modifiedSectionContent
+                        );
+
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Section Merge)', [
+                            { findText: suggestion.originalText, replacementText: modifiedText }
+                        ]);
+                    }
+                } catch (error) {
+                    console.error('[DEBUG] confirmCurrentModification: Error incorporating via AI, falling back to append:', error);
+                    newContent = currentContent + '\n\n' + modifiedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Fallback Append)', [
+                        { findText: '', replacementText: modifiedText }
+                    ]);
+                }
             }
         }
         
