@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-01-786Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 723,
+  "response_length": 1190,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"peripartum-sodim-monitoring-pathway-pdf\\...",
+  "full_data": null
+}
