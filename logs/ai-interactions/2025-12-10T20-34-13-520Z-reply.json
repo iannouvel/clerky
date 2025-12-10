@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-34-13-520Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1197,
+  "response_length": 1223,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":3833,\"transcriptPreview\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp017-dna-appointments-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-44-313Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1366,
+  "response_length": 1346,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vagina...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-2024-suspected-sepsis-pdf\\\", \\\"title\\\": \\\"NICE - 2024 - Suspected Sepsis\\\", \\\"relevance\\\":...",
+  "full_data": null
+}

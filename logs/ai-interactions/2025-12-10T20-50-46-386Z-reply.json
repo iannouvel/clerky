@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-46-386Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1506,
+  "response_length": 1485,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vaginal...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\": \\\"BASHH - 2025 - Gonorrhoeae\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\":...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-47-308Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1718,
+  "response_length": 1744,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vaginal...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-management-of-premenstrual-syn...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-34-13-593Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1345,
+  "response_length": 1324,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":3833,\"transcriptPreview\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"sop001-consultant-ward-round-east-uhs-maternity-pdf\\\", \\\"title\\\": \\\"SOP001 Consultant Ward Roun...",
+  "full_data": null
+}

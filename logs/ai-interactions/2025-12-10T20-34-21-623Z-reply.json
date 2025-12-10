@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-34-21-623Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 3960,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a British hospital setting.\\n\\n***\\n\\n**SITUATION:**\\n*...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 4,\n  \"potentiallyRelevantCount\": 4,\n  \"lessRelevantCount\": 16,\n  \"notRelevantCount\": 273\n}...",
+  "full_data": null
+}

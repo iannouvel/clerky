@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-34-16-640Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1225,
+  "response_length": 1484,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":3833,\"transcriptPreview\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2015-post-hysterectomy-vaginal-vault-prolapse-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2015 - Post-hysterectomy Vaginal...",
+  "full_data": null
+}

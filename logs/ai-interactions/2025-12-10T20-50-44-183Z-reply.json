@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-44-183Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1410,
+  "response_length": 1443,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vagina...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp003-pelvic-inflammatory-disease-pid-pdf\\\", \\\"title\\\": \\\"GP003 Pelvic Inflammatory Disease (PID)\\\", \\\"relevance\\\": \\\"1.0...",
+  "full_data": null
+}
