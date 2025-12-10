@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-47-262Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1323,
+  "response_length": 1575,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vagina...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2012 - ...",
+  "full_data": null
+}
