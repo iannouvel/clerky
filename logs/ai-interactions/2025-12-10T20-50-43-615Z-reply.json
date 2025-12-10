@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-43-615Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1147,
+  "response_length": 1184,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vagina...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-2023-intrauterine-contraception-pdf\\\", \\\"title\\\": \\\"FSRH - 2023 - Intrauterine Contraception\\\", \\\"relevance\\\": \\\"0.8...",
+  "full_data": null
+}
