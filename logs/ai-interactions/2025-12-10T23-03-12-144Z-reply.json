@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-03-12-144Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 764,
+  "response_length": 1224,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":29,\"transcriptPreview\":\"how do we manage abruption?\\n\\n...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remifentanil) ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg12029-pph-guideline-pdf\\\", \\\"title\\\": \\\"PPH guideline\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"cg12030-caesarean-bi...",
+  "full_data": null
+}

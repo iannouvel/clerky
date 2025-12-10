@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-03-13-862Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 744,
+  "response_length": 1265,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":29,\"transcriptPreview\":\"how do we manage abruption?\\n\\n...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolapse-pdf: GTG - 2014 - Umbilical Cord Prolapse\",\"...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-blood-transfusion-in-obstetrics-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Blood transfusion...",
+  "full_data": null
+}
