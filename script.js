@@ -635,20 +635,17 @@ function completePIIReview() {
         }
     });
 
-    // Show completion message
-    const completionHtml = `
-        <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
-            <strong>✅ Privacy Review Complete</strong><br>
-            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original<br>
-            <em>AI will receive a redacted version; the original remains visible locally.</em>
-        </div>
-    `;
-    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
     }
-    appendToSummary1(completionHtml, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+    
+    // Summarise outcome via status message instead of summary1 content
+    const keptOriginal = review.decisions.length - replacementsCount;
+    updateUser(
+        `Privacy review complete: ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised, ${keptOriginal} kept original.`,
+        false
+    );
 
     // Resolve the promise
     review.resolve({
@@ -677,19 +674,13 @@ window.cancelPIIReview = function() {
     // Clear highlighting
     clearHighlightInEditor();
 
-    // Show cancellation message
-    const cancelHtml = `
-        <div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;">
-            <strong>⚠️ Privacy Review Cancelled</strong><br>
-            Original text will be used without anonymisation
-        </div>
-    `;
-    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
     }
-    appendToSummary1(cancelHtml, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+    
+    // Inform user via status message
+    updateUser('Privacy review cancelled – original text will be used without anonymisation.', false);
 
     // Resolve with cancellation
     review.resolve({
@@ -3608,20 +3599,19 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
-                        // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
-                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
-                            `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+                        // Surface outcome via status message (decision itself happens in the PII UI)
+                        const redactedCount = reviewResult.replacementsCount;
+                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
+                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+                        updateUser('Privacy review cancelled – using original transcript.', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
+                    updateUser('Privacy check complete – no significant personal information detected.', false);
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3641,8 +3631,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         const idToken = await user.getIdToken();
 
         // Update progress
-        const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
+        updateUser('Loading guidelines from database...', true);
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
@@ -3654,19 +3643,19 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
             
             if (guidelines.length === 0) {
-                const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
-                appendToSummary1(noGuidelinesMsg, false);
+                const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+                updateUser(noGuidelinesMsg, false);
                 alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
                 return;
             }
             
-            // Add scope info to summary
+            // Add scope info via status message
             const scopeInfo = scope === 'national' 
-                ? `Searching ${guidelines.length} national guidelines...\n`
+                ? `Searching ${guidelines.length} national guidelines...`
                 : scope === 'local'
-                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
-                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...\n`;
-            appendToSummary1(scopeInfo, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
+                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
+                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
+            updateUser(scopeInfo, true);
         }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
@@ -3698,8 +3687,8 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         });
 
         // Update progress with guideline count
-        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
+        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...`;
+        updateUser(analyzeMessage, true);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: anonymisedTranscript.length,
@@ -3769,34 +3758,29 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         });
 
         // Update progress with completion
-        const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
-        appendToSummary1(completionMessage, false, true); // Transient
+        const completionMessage = 'Analysis complete – categorising relevant guidelines...';
+        updateUser(completionMessage, true);
 
         // Process and display the results with the new selection interface
         createGuidelineSelectionInterface(data.categories, window.relevantGuidelines);
 
-        // Add final summary
+        // Add final summary via status message
         const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
                             (data.categories.potentiallyRelevant?.length || 0) + 
                             (data.categories.lessRelevant?.length || 0);
         
-        const summaryMessage = `## Summary\n\nFound ${totalRelevant} relevant guidelines out of ${guidelinesList.length} total guidelines.\n\n` +
-                              `**Most Relevant:** ${data.categories.mostRelevant?.length || 0} guidelines\n` +
-                              `**Potentially Relevant:** ${data.categories.potentiallyRelevant?.length || 0} guidelines\n` +
-                              `**Less Relevant:** ${data.categories.lessRelevant?.length || 0} guidelines\n\n` +
-                              `💡 **Tip:** Click on the 📄 PDF links next to any guideline to download the full document.\n\n` +
-                              `Guidelines are now ready for analysis. Use "Check against guidelines" to proceed.\n`;
+        const summaryMessage = `Found ${totalRelevant} relevant guidelines out of ${guidelinesList.length}. Most: ${data.categories.mostRelevant?.length || 0}, potentially: ${data.categories.potentiallyRelevant?.length || 0}, less relevant: ${data.categories.lessRelevant?.length || 0}.`;
         
-        appendToSummary1(summaryMessage, false, true); // Transient - will be cleaned up after processing
+        updateUser(summaryMessage, false);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
         
-        // Display error in summary1
-        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
+        // Display error via status message (alert also shown below)
+        const errorMessage = `Error finding relevant guidelines: ${error.message}`;
+        updateUser(errorMessage, false);
         
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
@@ -3864,20 +3848,19 @@ async function generateClinicalNote() {
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
-                        // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
-                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
-                            `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+                        // Surface outcome via status message (decision itself happens in the PII UI)
+                        const redactedCount = reviewResult.replacementsCount;
+                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
+                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 });
+                        updateUser('Privacy review cancelled – using original transcript.', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, false, { streamEffect: 'in-out', transientDelay: 5000 }); // Transient
+                    updateUser('Privacy check complete – no significant personal information detected.', false);
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -4652,6 +4635,12 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
     }
 }
 
+// Helper for decision-only UIs in summary1.
+// Use this for new code that renders interactive panels where the user must make a choice.
+function appendDecisionUIToSummary(htmlContent, clearExisting = false, options = {}) {
+    appendToSummary1(htmlContent, clearExisting, false, options);
+}
+
 // Function to replace content in the user input field
 function appendToOutputField(content, clearExisting = true, isHtml = false) {
     console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
@@ -4987,9 +4976,9 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             guidelinesToProcess = mostRelevantGuidelines.slice(0, MAX_AUTO_PROCESS);
         }
         
-        // Update UI to show guidelines being processed
-        const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...\n\n`;
-        appendToSummary1(processingStatus, false);
+        // Update UI to show guidelines being processed (status bar only)
+        const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...`;
+        updateUser(processingStatus, true);
         
         // Process guidelines in parallel for better performance
         const guidelinePromises = guidelinesToProcess.map(async (relevantGuideline, index) => {
@@ -5332,15 +5321,8 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             analysisLength: analysis?.length
         });
         
-        // Display error message using appendToOutputField
-        const errorHtml = `
-            <div class="dynamic-advice-error">
-                <h3>❌ Error generating interactive suggestions</h3>
-                <p><strong>Error:</strong> ${error.message}</p>
-                <p>The original analysis is still available above.</p>
-            </div>
-        `;
-        appendToSummary1(errorHtml, false);
+        // Surface error via status bar instead of populating summary1
+        updateUser(`Error generating interactive suggestions: ${error.message}`, false);
         
         throw error;
     }
@@ -6170,7 +6152,8 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidel
                 <p><em>Guideline: ${guidelineTitle || 'Unknown'}</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        // Inform user that no suggestions were generated via status bar
+        updateUser(`No specific suggestions were generated from the guideline analysis (${guidelineTitle || 'Unknown'}).`, false);
         return;
     }
 
@@ -6714,7 +6697,13 @@ async function completeSuggestionReview() {
     
     const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
     const reviewContainer = document.getElementById('suggestion-review-current');
-    if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
+    if (reviewContainer) reviewContainer.outerHTML = ''; // Remove review UI
+    
+    // Summarise outcomes via status bar instead of summary1 banner
+    updateUser(
+        `Suggestions review complete: ${accepted} accepted, ${rejected} rejected, ${modified} modified, ${skipped} skipped.`,
+        false
+    );
     window.currentSuggestionReview = null;
 
     // Update buttons state
@@ -6763,24 +6752,24 @@ async function completeSuggestionReview() {
                 }).join('');
             }
             
-            // Show transition message
-            const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-            appendToSummary1(transitionMessage, false);
+            // Show transition message in status bar
+            const transitionMessage = 'Incorporating changes and preparing for next guideline...';
+            updateUser(transitionMessage, true);
             
             // Process next guideline after a short delay
             setTimeout(async () => {
                 try {
-                    const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                    appendToSummary1(processingStepMessage, false);
+                    const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+                    updateUser(processingStepMessage, true);
                     await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                 } catch (error) {
                     console.error('[DEBUG] Error processing next guideline after completion:', error);
-                    const errorMessage = `❌ **Error processing guideline ${nextStepNumber}:** ${error.message}\n\n`;
-                    appendToSummary1(errorMessage, false);
+                    const errorMessage = `Error processing guideline ${nextStepNumber}: ${error.message}`;
+                    updateUser(errorMessage, false);
                 }
             }, 1000);
         } else {
-            // All guidelines processed
+            // All guidelines processed – report via status bar
             console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
             window.sequentialProcessingActive = false;
             updateAnalyseButtonProgress('All Guidelines Complete!', false);
@@ -6797,7 +6786,7 @@ async function completeSuggestionReview() {
                     <p>Successfully processed all ${queue.length} selected guidelines.</p>
                 </div>
             `;
-            appendToSummary1(finalMessage, false);
+            updateUser(`All ${queue.length} selected guidelines processed successfully.`, false);
         }
     }
 }
@@ -6811,9 +6800,9 @@ window.cancelSuggestionReview = function() {
     
     try {
         clearHighlightInEditor();
-        const cancelHtml = `<div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>⚠️ Suggestions Review Cancelled</strong><br>No changes were applied</div>`;
         const reviewContainer = document.getElementById('suggestion-review-current');
-        if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
+        if (reviewContainer) reviewContainer.outerHTML = '';
+        updateUser('Suggestions review cancelled – no changes were applied.', false);
         window.currentSuggestionReview = null;
 
         // Update buttons state
@@ -7934,7 +7923,7 @@ async function applyAllDecisions() {
             </div>
         `;
 
-        appendToSummary1(summaryHtml, false);
+        appendToSummary1(summaryHtml, false); // Decision panel: shows Copy/Replace actions
         
         // Replace the user input with the updated transcript text
         const transcriptOutput = `${result.updatedTranscript}`;
@@ -7985,9 +7974,9 @@ async function applyAllDecisions() {
                     }).join('');
                 }
                 
-                // Show transition message
-                const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-                appendToSummary1(transitionMessage, false);
+                // Show transition message via status bar
+                const transitionMessage = 'Incorporating changes and preparing for next guideline...';
+                updateUser(transitionMessage, true);
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
@@ -7998,8 +7987,8 @@ async function applyAllDecisions() {
                 // Process next guideline after a brief delay
                 setTimeout(async () => {
                     try {
-                                const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-        appendToSummary1(processingStepMessage, false);
+                                const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+        updateUser(processingStepMessage, true);
                         
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
@@ -8074,7 +8063,7 @@ async function applyAllDecisions() {
                     </style>
                 `;
                 
-                appendToSummary1(finalMessage, false);
+                updateUser('Sequential processing completed for all selected guidelines.', false);
                 console.log('[DEBUG] Sequential processing completed successfully');
             }
         }
@@ -8139,7 +8128,7 @@ async function applyAllDecisions() {
                 ${refreshButtonHtml}
             </div>
         `;
-        appendToSummary1(errorHtml, false);
+        updateUser('Error applying guideline decisions. Please refresh and try again.', false);
 
     } finally {
         // Reset UI state
@@ -8710,9 +8699,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.analysisAbortController = null;
                     restoreAnalyseButton();
                     
-                    // Show cancellation message
-                    const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
-                    appendToSummary1(cancelMessage, false);
+        // Show cancellation message via status bar
+        const cancelMessage = 'Analysis cancelled by user.';
+        updateUser(cancelMessage, false);
                     hideSummaryLoading();
                     // Keep button hidden after cancellation
                     if (analyseBtn) analyseBtn.style.display = 'none';
@@ -10700,7 +10689,7 @@ async function showClinicalIssuesDropdown() {
     <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
 </div>`;
             
-            // Append the panel content into summary1 as a permanent block
+            // Append the panel content into summary1 as a permanent block (decision UI)
             appendToSummary1(panelHtml, false, false);
             clinicalPanel = document.getElementById('clinicalIssuesPanel');
         } else {
@@ -10715,7 +10704,7 @@ async function showClinicalIssuesDropdown() {
         
         if (!clinicalPanel || !clinicalDropdown) {
             console.error('[DEBUG] Clinical issues panel elements not found after injection');
-            appendToSummary1('❌ **Error:** Unable to initialise clinical issues panel.\n\n', false);
+            updateUser('Error: Unable to initialise clinical issues panel.', false);
             return;
         }
         
@@ -10817,7 +10806,7 @@ async function showClinicalIssuesDropdown() {
                     hideClinicalIssuesPanel();
                 } else {
                     console.error('No clinical issues available for random selection');
-                    appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', false, true);
+                    updateUser('Error: No clinical issues available for random selection.', false);
                 }
             };
         }
@@ -10838,13 +10827,13 @@ async function showClinicalIssuesDropdown() {
         if (cancelBtn) {
             cancelBtn.onclick = () => {
                 hideClinicalIssuesPanel();
-                appendToSummary1('Clinical interaction generation cancelled.\n\n', false, true);
+                updateUser('Clinical interaction generation cancelled.', false);
             };
         }
         
     } catch (error) {
         console.error('[DEBUG] Error showing clinical issues dropdown:', error);
-        appendToSummary1(`❌ **Error loading clinical issues:** ${error.message}\n\nPlease try again or contact support.\n\n`, true);
+        updateUser(`Error loading clinical issues: ${error.message}. Please try again or contact support.`, false);
     }
 }
 
@@ -10975,21 +10964,14 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             });
         }
         
-        // Show success message in summary1 (append, don't clear) - TRANSIENT so it auto-removes
-        const performanceText = forceRegenerate ? '🔄 Regenerated with updated formatting' : (isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache');
+        // Show success message via status bar instead of summary1
+        const performanceText = forceRegenerate
+            ? 'regenerated with updated formatting'
+            : (isGenerated ? 'generated using AI' : 'loaded instantly from cache');
         const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
-        const successMessage = `## ✅ Clinical Interaction ${actionText}\n\n` +
-                              `**Clinical Issue:** ${selectedIssue}\n` +
-                              `**Category:** ${condition.category}\n` +
-                              `**Status:** Successfully ${actionText.toLowerCase()} clinical interaction scenario\n` +
-                              `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n` +
-                              `**Performance:** ${performanceText}\n\n` +
-                              `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
-                              `- Use "Guideline Suggestions" to get interactive suggestions based on clinical guidelines\n` +
-                              `- Edit the transcript if needed before analysis\n` +
-                              `- Save or clear the transcript using the respective buttons\n\n`;
-        
-        appendToSummary1(successMessage, false, true); // TRANSIENT - will auto-remove after 5s
+        const successMessage = `${actionText} clinical interaction for ${selectedIssue} (${condition.category}); ` +
+            `transcript length ~${Math.round(transcript.split(' ').length)} words, ${performanceText}.`;
+        updateUser(successMessage, false);
         
     } catch (error) {
         console.error('[DEBUG] Error loading fake clinical interaction:', {
@@ -11003,13 +10985,9 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
         }
         
-        // Show error message in summary1 (append, don't clear)
-        const errorMessage = `## ❌ Loading Failed\n\n` +
-                            `**Error:** ${error.message}\n\n` +
-                            `**Selected Issue:** ${selectedIssue}\n\n` +
-                            `This might indicate the transcript database needs to be regenerated or the selected issue is not available in the pre-generated transcripts.\n\n`;
-        
-        appendToSummary1(errorMessage, false); // Don't clear existing content
+        // Surface error via status bar instead of summary1
+        const errorMessage = `Error loading clinical interaction for ${selectedIssue}: ${error.message}`;
+        updateUser(errorMessage, false);
         
     } finally {
         // Reset button states
@@ -11063,12 +11041,9 @@ async function processWorkflow() {
 
         // Button state is already set by the click handler
         
-        // Show loading spinner in summary
+        // Show loading spinner in summary (UI) and status in bottom bar
         showSummaryLoading();
-
-        // Initialize the workflow summary
-        const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToSummary1(workflowStart, false);
+        updateUser('Starting complete workflow processing...', true);
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
@@ -11117,15 +11092,14 @@ async function processWorkflow() {
         } else {
             // No saved selection, show modal
             console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
-            const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
-            appendToSummary1(scopeSelectionStatus, false, true); // Transient
+            updateUser('Step 1: Select which guidelines to apply...', true);
             
             try {
                 scopeSelection = await showGuidelineScopeModal();
                 console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
             } catch (error) {
                 console.log('[DEBUG] processWorkflow: Scope selection cancelled:', error.message);
-                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                updateUser('Scope selection cancelled.', false);
                 return; // Exit workflow if user cancels
             }
         }
@@ -11134,19 +11108,16 @@ async function processWorkflow() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 National Guidelines Selected\n\n'
+            ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `🏥 Local Guidelines Selected (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 Both Guidelines Selected (National + ${scopeSelection.hospitalTrust})\n\n`;
+            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
         
-        appendToSummary1(scopeMessage, false, true); // Transient
+        updateUser(scopeMessage, false);
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         updateAnalyseButtonProgress('Finding Relevant Guidelines...', true);
-        
-        // Step 2: Find Relevant Guidelines (with scope filtering)
-        const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
-        appendToSummary1(step1Status, false, true); // Transient
+        updateUser('Step 2: Finding relevant guidelines...', true);
         
         // Check for abort before starting step 2
         if (window.analysisAbortController?.signal.aborted) {
@@ -11164,8 +11135,8 @@ async function processWorkflow() {
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             updateAnalyseButtonProgress('Guidelines Found', false);
             
-            const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
-            appendToSummary1(step1Complete, false, true); // Transient
+            const step1Complete = 'Step 2 complete: relevant guidelines identified.';
+            updateUser(step1Complete, false);
             
         } catch (error) {
             // Check if error is due to abort
@@ -11191,15 +11162,11 @@ async function processWorkflow() {
         console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
         updateAnalyseButtonProgress('Select Guidelines to Process', false);
         
-        // Step 3: Show Guideline Selection Interface
-        const step2Status = `## Step 3: Select Guidelines to Process\n\n` +
-                           `✅ **Step 2 Complete:** Found ${window.relevantGuidelines.length} relevant guidelines\n\n` +
-                           `**Next:** Use the interface above to select which guidelines to process. ` +
-                           `Most relevant guidelines are pre-selected. Click "Process Selected Guidelines" when ready.\n\n` +
-                           `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
-                           `incorporated before moving to the next guideline.\n\n`;
-        
-        appendToSummary1(step2Status, false, true); // Transient
+        // Step 3: Show Guideline Selection Interface (decision UI now visible in summary1)
+        updateUser(
+            `Step 3: Select guidelines to process – found ${window.relevantGuidelines.length} relevant guidelines.`,
+            false
+        );
         
         // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
         console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
@@ -12927,10 +12894,11 @@ async function processSelectedGuidelines(event) {
         // Add a brief delay to let the fade animation complete
         await new Promise(resolve => setTimeout(resolve, 350));
 
-        // Add a clean final summary of what was selected
-        const selectionSummary = `## 📋 Processing Selected Guidelines\n\n` +
-                                `Analysing ${selectedGuidelineIds.length} guideline${selectedGuidelineIds.length > 1 ? 's' : ''} to generate interactive suggestions...\n\n`;
-        appendToSummary1(selectionSummary, false); // Permanent summary
+        // Add a clean final summary of what was selected via status bar
+        updateUser(
+            `Processing ${selectedGuidelineIds.length} selected guidelines to generate interactive suggestions...`,
+            true
+        );
 
         // Set up sequential processing globals
         window.sequentialProcessingActive = true;
@@ -12939,11 +12907,8 @@ async function processSelectedGuidelines(event) {
 
         const sequentialProcessingMessage = `
             <div class="sequential-processing-container">
-                <h3>🔄 Sequential Guideline Processing</h3>
-                <p>Processing ${selectedGuidelineIds.length} selected guidelines one-by-one...</p>
                 <div class="processing-status" id="processing-status"></div>
             </div>
-            
             <style>
             .sequential-processing-container {
                 background: #e8f5e8;
@@ -12975,7 +12940,7 @@ async function processSelectedGuidelines(event) {
             </style>
         `;
         
-        appendToSummary1(sequentialProcessingMessage, false, true); // Transient - will be removed when processing completes
+        appendToSummary1(sequentialProcessingMessage, false, true); // Transient structural container only
 
         // Function to update status display
         function updateSequentialStatus() {
@@ -13012,10 +12977,9 @@ async function processSelectedGuidelines(event) {
 
             console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
             
-            const processingStepMessage = `
-                <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
-            `;
-            appendToSummary1(processingStepMessage, false, true); // Transient
+            // Update status bar for first guideline
+            const processingStepMessage = `Processing guideline ${stepNumber}/${selectedGuidelineIds.length}...`;
+            updateUser(processingStepMessage, true);
 
             try {
                 // Process only the first guideline - the rest will be handled in applyAllDecisions
@@ -13106,8 +13070,8 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     // Update progress button
     updateAnalyseButtonProgress(`Processing Guideline ${stepNumber}/${totalSteps}`, true);
 
-    const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
-    appendToSummary1(analyzeMessage, false, true); // Transient
+    const analyzeMessage = `Analysing against: ${displayName}`;
+    updateUser(analyzeMessage, true);
 
     // Directly generate guideline suggestions for this guideline without server analysis
     // Store the latest analysis for potential guideline suggestions
@@ -13120,7 +13084,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 
     // Automatically generate guideline suggestions for this guideline
     const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${displayName}\n\n`;
-    appendToSummary1(dynamicAdviceTitle, false);
+    appendToSummary1(dynamicAdviceTitle, false); // Heading for decision UI (interactive suggestions)
 
     try {
         // For sequential processing, use existing analysis if available, otherwise create a basic one
@@ -13192,8 +13156,8 @@ window.skipCurrentGuideline = function() {
         
         setTimeout(async () => {
             try {
-                        const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-        appendToSummary1(processingStepMessage, false);
+                        const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+        updateUser(processingStepMessage, true);
                 await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
             } catch (error) {
                 console.error('[DEBUG] Error processing next guideline after skip:', error);
@@ -13202,13 +13166,8 @@ window.skipCurrentGuideline = function() {
     } else {
         // All done
         window.sequentialProcessingActive = false;
-        const finalMessage = `
-            <div class="sequential-processing-complete">
-                <h3>🎉 Sequential Processing Complete!</h3>
-                <p>Processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).</p>
-            </div>
-        `;
-        appendToSummary1(finalMessage, false);
+        const finalMessage = `Sequential processing complete: processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).`;
+        updateUser(finalMessage, false);
     }
 };
 
@@ -14035,7 +13994,7 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
                 <p><em>Analyzed: ${guidelinesSummary?.length || 0} guidelines</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        updateUser('No specific suggestions were generated from the multi-guideline analysis.', false);
         return;
     }
 
@@ -14177,7 +14136,7 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
     `;
 
     console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to summary1');
-    appendToSummary1(suggestionsHtml, false);
+    appendToSummary1(suggestionsHtml, false); // Decision UI: combined interactive suggestions
 
     // Update the decisions summary
     updateDecisionsSummary();
@@ -14979,10 +14938,7 @@ async function askGuidelinesQuestion() {
         // Update user status - starting Q&A flow
         updateUser('Preparing to ask guidelines your question...', true);
 
-        // Initialize the question search summary (plain text so it matches stream styling)
-        let searchProgress = 'Asking Guidelines A Question\n\n';
-        searchProgress += `Your Question: ${question}\n\n`;
-        appendToSummary1(searchProgress);
+        // Question text is already visible in the input; use status bar for progress instead of summary1
 
         // Get user ID token (needed for loading preferences)
         const user = auth.currentUser;
@@ -15035,7 +14991,7 @@ async function askGuidelinesQuestion() {
                                 throw new Error('Analysis cancelled');
                             }
                             console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                            updateUser('Scope selection cancelled.', false);
                             return; // Exit if user cancels
                         }
                     }
@@ -15056,8 +15012,7 @@ async function askGuidelinesQuestion() {
                             throw new Error('Analysis cancelled');
                         }
                         console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', modalError.message);
-                        appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
-                        updateUser('Scope selection cancelled', false);
+                        updateUser('Scope selection cancelled.', false);
                         return; // Exit if user cancels
                     }
                 }
@@ -15079,8 +15034,7 @@ async function askGuidelinesQuestion() {
                     throw new Error('Analysis cancelled');
                 }
                 console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
-                updateUser('Scope selection cancelled', false);
+                updateUser('Scope selection cancelled.', false);
                 return; // Exit if user cancels
             }
         }
@@ -15097,19 +15051,19 @@ async function askGuidelinesQuestion() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 National Guidelines Selected\n\n'
+            ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `🏥 Local Guidelines Selected (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 Both Guidelines Selected (National + ${scopeSelection.hospitalTrust})\n\n`;
+            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
 
-        appendToSummary1(scopeMessage, false);
+        updateUser(scopeMessage, false);
 
         // Update user status - scope confirmed
         updateUser('Guideline scope confirmed. Loading guidelines...', true);
 
-        // Update progress
-        const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false);
+        // Update progress (status bar only)
+        const loadingMessage = 'Loading guidelines from database...';
+        updateUser(loadingMessage, true);
 
         // Get guidelines and summaries from Firestore (reuse existing logic)
         let guidelines = await loadGuidelinesFromFirestore();
@@ -15120,20 +15074,19 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
         
         if (guidelines.length === 0) {
-            updateUser('No guidelines found for selected scope', false);
-            const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
-            appendToSummary1(noGuidelinesMsg, false);
+            const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+            updateUser(noGuidelinesMsg, false);
             alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
             return;
         }
         
-        // Add scope info to summary
+        // Add scope info via status bar
         const scopeInfo = scopeSelection.scope === 'national' 
-            ? `Searching ${guidelines.length} national guidelines...\n`
+            ? `Searching ${guidelines.length} national guidelines...`
             : scopeSelection.scope === 'local'
-            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...\n`
-            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...\n`;
-        appendToSummary1(scopeInfo, false);
+            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
+            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
+        updateUser(scopeInfo, true);
         
         // Format guidelines for relevancy matching
         updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
@@ -15151,8 +15104,8 @@ async function askGuidelinesQuestion() {
         }));
 
         // Update progress with guideline count
-        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false);
+        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...`;
+        updateUser(analyzeMessage, true);
 
         // Let user know we’re finding most relevant guidelines
         updateUser('Finding the most relevant guidelines for your question...', true);
@@ -15197,8 +15150,8 @@ async function askGuidelinesQuestion() {
         }
 
         // Update progress with completion
-        const completionMessage = 'Analysis complete! Processing most relevant guidelines...\n\n';
-        appendToSummary1(completionMessage, false);
+        const completionMessage = 'Analysis complete – processing most relevant guidelines...';
+        updateUser(completionMessage, true);
 
         updateUser('Guidelines found. Preparing detailed answer...', true);
 
@@ -15244,7 +15197,10 @@ async function askGuidelinesQuestion() {
                                        `- Include more clinical context or keywords\n` +
                                        `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
             
-            appendToSummary1(noGuidelinesMessage, false);
+            updateUser(
+                'No highly relevant guidelines found for this question. Try rephrasing, adding clinical context, or broadening the query.',
+                false
+            );
             return; // Exit early, don't try to process empty guidelines
         }
 
@@ -15368,12 +15324,9 @@ async function askGuidelinesQuestion() {
             stack: error.stack
         });
         
-        // Display error in summary1 field
-        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
-
-        // Surface error to top-level status
-        updateUser('Error answering guideline question', false);
+        // Surface error to top-level status instead of summary1
+        const errorMessage = `Error finding relevant guidelines: ${error.message}`;
+        updateUser(errorMessage, false);
 
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
@@ -15569,15 +15522,9 @@ async function triggerComplianceScoring(originalTranscript, updatedTranscript, c
             return;
         }
 
-        // Show scoring initiation message
-        const scoringInitMessage = `
-            <div class="compliance-scoring-init">
-                <h3>📊 Generating Compliance Score...</h3>
-                <p>Analysing how well the original clinical note complied with guideline requirements.</p>
-                <div class="scoring-spinner">⏳ Processing...</div>
-            </div>
-        `;
-        appendToSummary1(scoringInitMessage, false);
+        // Show scoring initiation message via status bar
+        const scoringInitMessage = 'Generating compliance score for the original clinical note...';
+        updateUser(scoringInitMessage, true);
 
         // Generate the recommended changes summary for scoring
         const recommendedChanges = generateRecommendedChangesSummary();
@@ -15593,13 +15540,8 @@ async function triggerComplianceScoring(originalTranscript, updatedTranscript, c
     } catch (error) {
         console.error('[DEBUG] triggerComplianceScoring: Error:', error);
         
-        const errorMessage = `
-            <div class="compliance-scoring-error">
-                <h3>❌ Compliance Scoring Error</h3>
-                <p>Unable to generate compliance score: ${error.message}</p>
-            </div>
-        `;
-        appendToSummary1(errorMessage, false);
+        const errorMessage = `Compliance scoring error: ${error.message}`;
+        updateUser(errorMessage, false);
     }
 }
 
