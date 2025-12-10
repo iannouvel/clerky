@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-34-15-186Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 1321,
+  "response_length": 1349,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":3833,\"transcriptPreview\":\"Of course. Here is a medical clerking for a fictional patient with pelvic organ prolapse, presented in the SBAR format as used in a ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"2020-10-secamb-suspected-preterm-labour-...",
+  "full_data": null
+}
