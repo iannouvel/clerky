@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-08-13-818Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 685,
+  "response_length": 1148,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we counsel regarding VBAC?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitoring pathwa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"rag-rating-for-iol-pdf\\\", \\\"title\\\": \\\"RAG rating for IOL\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n  \\\"le...",
+  "full_data": null
+}
