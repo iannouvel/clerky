@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T09-21-14-392Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1064,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":72,\"transcriptPreview\":\"how many doses of syntometrine and carboprost can we give for mx of PPH?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 2...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
