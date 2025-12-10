@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-52-584Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 809,
+  "response_length": 1271,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"gtg-2015-reduced-fetal-movements-pdf: RCOG Green-top Guideline No. 57 - Red...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gynae-cepod-pathway-pdf\\\", \\\"title\\\": \\\"Gynae CEPOD pathway\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n  \\\"...",
+  "full_data": null
+}
