@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-12-54-090Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1810,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"28yo\\n\\nPresenting Complaint:\\nSecondary amenorrhoea for 9/12, associated with hot flushes and low mood\\n\\nKey Clinical Issue:\\nSuspected premature ovarian insufficiency (POI) in a youn...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 1,\n  \"potentiallyRelevantCount\": 4,\n  \"lessRelevantCount\": 18,\n  \"notRelevantCount\": 274\n}...",
+  "full_data": null
+}
