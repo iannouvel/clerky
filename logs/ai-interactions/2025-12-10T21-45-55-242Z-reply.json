@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-45-55-242Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1359,
+  "response_length": 1346,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":2922,\"transcriptPreview\":\"Of course. Here is a medical clerking for the provided scenario, written in SBAR format using appropriate UK medical terminology an...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2024-menopause-pdf\\\", \\\"title\\\": \\\"NICE - 2024 - Menopause\\\", \\\"relevance\\\": \\\"0.90\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"i...",
+  "full_data": null
+}
