@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-05-656Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1063,
+  "response_length": 1544,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 20...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"bhiva-2025-hiv-in-pregnancy-pdf\\\", \\\"title\\\": \\\"BHIVA - 2025 - HIV in Pregnancy\\\", \\\"rele...",
+  "full_data": null
+}
