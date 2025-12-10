@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-52-327Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 685,
+  "response_length": 1206,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitoring pathwa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"pph-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"PPH prompt card ED RSCH PRH\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"...",
+  "full_data": null
+}
