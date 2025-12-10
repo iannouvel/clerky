@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-18-42-584Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 913,
+  "response_length": 1417,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":32,\"transcriptPreview\":\"how do we manage cord prolapse\\n\\n...\",\"chunkGuidelines\":[\"mp004-antenatal-screening-infectious-diseases-hiv-pdf: MP004 Antenatal Scr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp004-antenatal-screening-infectious-dis...",
+  "full_data": null
+}
