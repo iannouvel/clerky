@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-01-493Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 804,
+  "response_length": 1271,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-gu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg12030-caesarean-birth-guideline-pdf\\\", \\\"title\\\": \\\"Caesarean Section Birth Guideline\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"poten...",
+  "full_data": null
+}

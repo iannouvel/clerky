@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-01-865Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 862,
+  "response_length": 1329,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"mp057-communication-and-handover-of-c...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp057-communication-and-handover-of-care...",
+  "full_data": null
+}

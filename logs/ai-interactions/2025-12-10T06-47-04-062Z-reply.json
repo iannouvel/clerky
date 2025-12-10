@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-04-062Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1248,
+  "response_length": 1531,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-corticostero...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\\\", \\\"title\\\": \\\"Antenatal corticostero...",
+  "full_data": null
+}

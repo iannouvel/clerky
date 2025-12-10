@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T06-47-00-131Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 762,
+  "response_length": 1129,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":71,\"transcriptPreview\":\"what medications should a patient be given prior to elective C-section?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: M...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"Caesarean Section\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\"...",
+  "full_data": null
+}
