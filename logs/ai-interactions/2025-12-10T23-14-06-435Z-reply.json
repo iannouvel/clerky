@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-06-435Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1358,
+  "response_length": 1330,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":1593,\"transcriptPreview\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\\\", \\\"title\\\": \\\"J...",
+  "full_data": null
+}
