@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-41-640Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1085,
+  "response_length": 1540,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"bms-2024-management-of-u...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bms-2024-management-of-unscheduled-bleed...",
+  "full_data": null
+}
