@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-24-163Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1096,
+  "response_length": 1621,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Telephone Triage SO...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"suggested-management-when-dr-criteria-not-met-pdf\\\", \\\"title\\\": \\\"Suggested management wh...",
+  "full_data": null
+}
