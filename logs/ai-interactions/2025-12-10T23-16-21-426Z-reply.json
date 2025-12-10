@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-21-426Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 867,
+  "response_length": 1337,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"iol-flowchart-pdf: IOL flowchart\",\"joint-rcog-and-bsge-guideline-laparoscopy-in-p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"iol-flowchart-pdf\\\", \\\"title\\\": \\\"IOL flowchart\\\", \\\"relevance\\\": \\\"0.70\\\"}],\\n  \\\"lessRelevant...",
+  "full_data": null
+}
