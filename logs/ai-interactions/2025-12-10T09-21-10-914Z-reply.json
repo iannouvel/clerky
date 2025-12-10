@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T09-21-10-914Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 763,
+  "response_length": 1177,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":72,\"transcriptPreview\":\"how many doses of syntometrine and carboprost can we give for mx of PPH?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp053-obstetric-haemorrhage-pdf\\\", \\\"title\\\": \\\"MP053 Obstetric Haemorrhage\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyReleva...",
+  "full_data": null
+}
