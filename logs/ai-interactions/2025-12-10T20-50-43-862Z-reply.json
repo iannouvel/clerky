@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T20-50-43-862Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1393,
+  "response_length": 1372,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":2085,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 24F, G0P0 \\n**Presenting Complaint:** Offensive vagina...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp007-antenatal-screening-infectious-diseases-syphilis-pdf\\\", \\\"title\\\": \\\"MP007 Antenatal Scre...",
+  "full_data": null
+}
