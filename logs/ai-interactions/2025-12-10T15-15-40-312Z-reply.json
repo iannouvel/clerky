@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-40-312Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 870,
+  "response_length": 1311,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1134-postnatal-care-pdf\\\", \\\"title\\\": \\\"Postnatal Care Guideline\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{...",
+  "full_data": null
+}
