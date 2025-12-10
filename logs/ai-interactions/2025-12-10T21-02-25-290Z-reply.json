@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-25-290Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1586,
+  "response_length": 1619,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since de...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf\\\", \\\"title\\\": \\\"GP020 Urogynaecology Specialist Nurse-Led Clinic (...",
+  "full_data": null
+}
