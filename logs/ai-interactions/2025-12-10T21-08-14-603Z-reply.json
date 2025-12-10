@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-08-14-603Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 818,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we counsel regarding VBAC?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transf...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover...",
+  "full_data": null
+}
