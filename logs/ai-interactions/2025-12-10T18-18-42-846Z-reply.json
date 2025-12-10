@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-18-42-846Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 767,
+  "response_length": 1273,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":32,\"transcriptPreview\":\"how do we manage cord prolapse\\n\\n...\",\"chunkGuidelines\":[\"cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis\",\"cg1151-uterine-rupture...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1147-maternal-sepsis-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
