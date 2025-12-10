@@ -17427,42 +17427,76 @@ Please provide a comprehensive answer to the question based on the relevant guid
                 break;
             }
 
-            const baseText = guidelineTextById[task.guidelineId];
-            if (!baseText || !baseText.trim()) {
-                console.warn('[DEBUG] askGuidelinesQuestion: No base text for guideline in quote finder', {
-                    guidelineId: task.guidelineId
-                });
-                continue;
+            let bestGuidelineId = null;
+            let bestQuote = null;
+
+            // 1. First, try the guideline originally referenced in the REF marker.
+            const primaryText = guidelineTextById[task.guidelineId];
+            if (primaryText && primaryText.trim()) {
+                const primaryQuote = await findGuidelineQuoteInText(
+                    task.guidelineId,
+                    task.semanticText,
+                    primaryText,
+                    userId
+                );
+                if (primaryQuote) {
+                    bestGuidelineId = task.guidelineId;
+                    bestQuote = primaryQuote;
+                }
             }
 
-            const verbatimQuote = await findGuidelineQuoteInText(
-                task.guidelineId,
-                task.semanticText,
-                baseText,
-                userId
-            );
+            // 2. If that fails, look for a stronger match in any of the other
+            // guidelines used in this answer. This lets citations \"follow\" the
+            // guideline that actually supplies the wording (e.g. RCOG GTG vs trust BAC).
+            if (!bestQuote) {
+                for (const g of guidelinesWithContent) {
+                    if (!g.id || g.id === task.guidelineId) continue;
+                    const text = guidelineTextById[g.id];
+                    if (!text || !String(text).trim()) continue;
 
-            let finalQuote = verbatimQuote;
+                    const candidateQuote = await findGuidelineQuoteInText(
+                        g.id,
+                        task.semanticText,
+                        text,
+                        userId
+                    );
 
-            if (!finalQuote) {
-                // If we could not obtain a verbatim quote, try to build a best-effort
-                // contiguous slice from the underlying guideline text instead.
-                finalQuote = buildFallbackQuote(baseText, task.semanticText);
-                if (!finalQuote) {
-                    // Keep the original semantic search text if we couldn't improve it
-                    console.log('[DEBUG] askGuidelinesQuestion: No verbatim or fallback quote found for citation task', {
-                        guidelineId: task.guidelineId,
-                        semanticSample: task.semanticText.substring(0, 100)
-                    });
-                    continue;
+                    if (candidateQuote) {
+                        bestGuidelineId = g.id;
+                        bestQuote = candidateQuote;
+                        console.log('[DEBUG] askGuidelinesQuestion: Citation remapped to guideline with better quote', {
+                            originalGuidelineId: task.guidelineId,
+                            newGuidelineId: bestGuidelineId
+                        });
+                        break;
+                    }
                 }
+            }
+
+            // 3. If we still do not have a verbatim quote, fall back to building a
+            // contiguous slice from the *primary* guideline text (if available),
+            // so that we at least land in the right document.
+            if (!bestQuote && primaryText && primaryText.trim()) {
+                const fallbackQuote = buildFallbackQuote(primaryText, task.semanticText);
+                if (fallbackQuote) {
+                    bestGuidelineId = task.guidelineId;
+                    bestQuote = fallbackQuote;
+                }
+            }
+
+            if (!bestQuote || !bestGuidelineId) {
+                console.log('[DEBUG] askGuidelinesQuestion: No verbatim or fallback quote found for citation task', {
+                    guidelineId: task.guidelineId,
+                    semanticSample: task.semanticText.substring(0, 100)
+                });
+                continue;
             }
 
             // Ensure the quote is safe for inclusion in REF:
             // - Remove pipes (field separator)
             // - Strip ellipses so the viewer does not treat them as literal text
             // - Normalise whitespace
-            let safeQuote = String(finalQuote)
+            let safeQuote = String(bestQuote)
                 .replace(/\|/g, ' ')
                 .replace(/\.{3}|…/g, ' ')
                 .replace(/\s+/g, ' ')
@@ -17472,7 +17506,9 @@ Please provide a comprehensive answer to the question based on the relevant guid
                 continue;
             }
 
-            // Replace all matching REF markers for this guideline+semanticText pair
+            // Replace all matching REF markers for this guideline+semanticText pair,
+            // updating the GuidelineID to the guideline that actually provided the
+            // verbatim or fallback quote.
             const pattern = new RegExp(
                 `\\[\\[REF:${escapeRegExp(task.guidelineId)}\\|([^|]+)\\|${escapeRegExp(task.semanticText)}\\]\\]`,
                 'g'
@@ -17480,7 +17516,7 @@ Please provide a comprehensive answer to the question based on the relevant guid
 
             enhancedAnswer = enhancedAnswer.replace(
                 pattern,
-                (_match, linkText) => `[[REF:${task.guidelineId}|${linkText}|${safeQuote}]]`
+                (_match, linkText) => `[[REF:${bestGuidelineId}|${linkText}|${safeQuote}]]`
             );
 
             quotesResolved += 1;
