@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-25-555Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1693,
+  "response_length": 1537,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since del...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2024-lissauer-maternal-sepsis-pdf\\\", \\\"title\\\": \\\"Maternal Sepsis\\\", \\\"relevance\\\": \\\"0.55...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-08-15-329Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 880,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we counsel regarding VBAC?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf: NICE Inter...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-interventional-guidance-2007-laparo...",
+  "full_data": null
+}

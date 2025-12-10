@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-31-898Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1320,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since delivery 6/12 ago\\nNo control over urine leakage, soakin...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 7,\n  \"potentiallyRelevantCount\": 14,\n  \"lessRelevantCount\": 49,\n  \"notRelevantCount\": 227\n}...",
+  "full_data": null
+}

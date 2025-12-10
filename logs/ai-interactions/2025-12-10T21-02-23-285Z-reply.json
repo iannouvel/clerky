@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T21-02-23-285Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 1168,
+  "response_length": 1203,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":1212,\"transcriptPreview\":\"28yo, G2P2, 6/12 post LSCS for obstructed labour in home country\\n\\nPresenting Complaint:\\nContinuous urinary incontinence since de...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"pph-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"PPH prompt card ED RSCH PRH\\\", \\\"relevanc...",
+  "full_data": null
+}
