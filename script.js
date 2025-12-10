@@ -1791,6 +1791,35 @@ function handleGlobalReset() {
     }
     hideSelectionButtons();
 
+    // Reset any suggestion-review buttons and state in the fixed button row
+    if (typeof updateSuggestionActionButtons === 'function') {
+        // Clear current review state so helper hides the suggestion group
+        window.currentSuggestionReview = null;
+        updateSuggestionActionButtons();
+    } else {
+        const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+        if (suggestionActionsGroup) {
+            suggestionActionsGroup.style.display = 'none';
+        }
+    }
+
+    // Cancel any active PII review and hide its buttons
+    if (typeof window.cancelPIIReview === 'function') {
+        window.cancelPIIReview();
+    } else {
+        const piiActionsGroup = document.getElementById('piiActionsGroup');
+        if (piiActionsGroup) {
+            piiActionsGroup.style.display = 'none';
+        }
+    }
+
+    // Clear server status message in the fixed button row
+    const serverStatusMessage = document.getElementById('serverStatusMessage');
+    if (serverStatusMessage) {
+        serverStatusMessage.style.display = 'none';
+        serverStatusMessage.textContent = '';
+    }
+
     // Clear any multi-guideline selection state if helper is available
     if (typeof window.clearMultiGuidelineState === 'function') {
         window.clearMultiGuidelineState();
@@ -4012,6 +4041,15 @@ function removeTransientMessages() {
         setTimeout(() => {
             element.remove();
             console.log(`[DEBUG] Removed transient message ${index + 1}`);
+            
+            // After the last element is removed, re-evaluate visibility
+            if (index === transientElements.length - 1) {
+                setTimeout(() => {
+                    if (typeof updateSummaryVisibility === 'function') {
+                        updateSummaryVisibility();
+                    }
+                }, 50);
+            }
         }, 300);
     });
 }
