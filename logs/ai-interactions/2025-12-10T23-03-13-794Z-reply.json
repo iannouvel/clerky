@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-03-13-794Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 902,
+  "response_length": 1409,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":29,\"transcriptPreview\":\"how do we manage abruption?\\n\\n...\",\"chunkGuidelines\":[\"management-of-latent-phase-flowchart-pdf: Management of Latent Phase flowchar...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"management-of-latent-phase-flowchart-pdf...",
+  "full_data": null
+}
