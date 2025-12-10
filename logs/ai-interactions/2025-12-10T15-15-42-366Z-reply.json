@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T15-15-42-366Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1155,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":85,\"transcriptPreview\":\"when should a patient start the progesterone only pill postnatally for contraception?...\",\"chunkGuidelines\":[\"gp016-operational-guide...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp016-operational-guideline-for-admissio...",
+  "full_data": null
+}
