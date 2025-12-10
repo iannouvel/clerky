@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-15-53-046Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 929,
+  "response_length": 1446,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we manage uterine rupture?...\",\"chunkGuidelines\":[\"fsrh-contraception-in-women-aged-over-40-pdf: FSRH - Contraception in women...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gp005-emergency-gynaecology-admissions-gau-ready-pdf\\\", \\\"title\\\": \\\"GP005 Emergency Gyna...",
+  "full_data": null
+}
