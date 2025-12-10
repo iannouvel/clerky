@@ -131,7 +131,19 @@
                     }
                 }
                 
-                // 5. Try first 10 words as phrase
+                // 5. Tail phrase: last 6–8 words, which often carry the specific
+                // threshold or condition (e.g. "EFW >90th centile").
+                if (words.length >= 6) {
+                    const tailSize = Math.min(8, words.length);
+                    const tail = words.slice(words.length - tailSize).join(' ');
+                    variants.push({
+                        query: tail,
+                        phraseSearch: true,
+                        description: 'tail phrase'
+                    });
+                }
+                
+                // 6. Try first 10 words as phrase
                 if (words.length > 10) {
                     variants.push({
                         query: words.slice(0, 10).join(' '),
@@ -140,7 +152,7 @@
                     });
                 }
                 
-                // 6. Last resort: search for distinctive words (5+ chars, not common)
+                // 7. Last resort: search for distinctive words (5+ chars, not common)
                 const commonWords = new Set(['the', 'and', 'for', 'that', 'this', 'with', 'from', 'have', 'been', 'should', 'would', 'could']);
                 const distinctiveWordList = words
                     .filter(w => w.length >= 5 && !commonWords.has(w.toLowerCase()))
@@ -154,7 +166,7 @@
                     });
                 }
 
-                // 7. For short snippets, add an "all keywords" variant to ensure we at
+                // 8. For short snippets, add an "all keywords" variant to ensure we at
                 // least land near any occurrence of the combined terms.
                 if (words.length > 1 && words.length <= 10) {
                     variants.push({

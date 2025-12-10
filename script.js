@@ -7432,15 +7432,17 @@ function checkAndSubmitGuidelineFeedback() {
             }
         }
     });
+}
 
-// Wire up global reset button once DOM is ready
+// Wire up global reset button once DOM is ready (top-level, not gated by feedback flows)
 document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {
         resetBtn.addEventListener('click', handleGlobalReset);
+    } else {
+        console.warn('[DEBUG] resetBtn not found when wiring global reset handler');
     }
 });
-}
 
 // Submit feedback batch to backend
 async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries) {
@@ -11074,8 +11076,7 @@ async function processWorkflow() {
 
         // Button state is already set by the click handler
         
-        // Show loading spinner in summary (UI) and status in bottom bar
-        showSummaryLoading();
+        // Use status bar for progress; avoid popping summary1 open during workflow
         updateUser('Starting complete workflow processing...', true);
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
@@ -13114,10 +13115,6 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         guidelineId: guidelineId,
         guidelineTitle: displayName
     };
-
-    // Automatically generate guideline suggestions for this guideline
-    const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${displayName}\n\n`;
-    appendToSummary1(dynamicAdviceTitle, false); // Heading for decision UI (interactive suggestions)
 
     try {
         // For sequential processing, use existing analysis if available, otherwise create a basic one
