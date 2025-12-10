@@ -48,104 +48,6 @@ window.currentChangeIndex = -1;
 window.isMobile = false;
 window.mobileView = 'userInput'; // 'userInput' or 'summary1'
 
-// Mobile settings overlay state
-let mobileSettingsInitialized = false;
-let mobileSettingsOverlayOpen = false;
-let userPreferencesOriginalParent = null;
-let userPreferencesOriginalNextSibling = null;
-
-function openMobileSettingsOverlay() {
-    if (!window.isMobile) return;
-
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const bodyContainer = document.getElementById('mobileSettingsBody');
-    const panel = document.getElementById('userPreferencesPanel');
-
-    if (!overlay || !bodyContainer || !panel) {
-        console.warn('[MOBILE] Mobile settings elements not found');
-        return;
-    }
-
-    // Remember original placement on first open
-    if (!userPreferencesOriginalParent) {
-        userPreferencesOriginalParent = panel.parentElement;
-        userPreferencesOriginalNextSibling = panel.nextSibling;
-    }
-
-    // Move preferences panel into the overlay body
-    if (panel.parentElement !== bodyContainer) {
-        bodyContainer.appendChild(panel);
-    }
-
-    overlay.classList.remove('hidden');
-    document.body.classList.add('mobile-settings-open');
-    mobileSettingsOverlayOpen = true;
-}
-
-function closeMobileSettingsOverlay() {
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const panel = document.getElementById('userPreferencesPanel');
-
-    if (overlay) {
-        overlay.classList.add('hidden');
-    }
-
-    // Move the panel back to its original location so desktop layout is unchanged
-    if (panel && userPreferencesOriginalParent) {
-        if (userPreferencesOriginalNextSibling && userPreferencesOriginalNextSibling.parentElement === userPreferencesOriginalParent) {
-            userPreferencesOriginalParent.insertBefore(panel, userPreferencesOriginalNextSibling);
-        } else {
-            userPreferencesOriginalParent.appendChild(panel);
-        }
-    }
-
-    document.body.classList.remove('mobile-settings-open');
-    mobileSettingsOverlayOpen = false;
-}
-
-function initializeMobileSettingsOverlay() {
-    if (mobileSettingsInitialized) return;
-
-    const toggleBtn = document.getElementById('mobileSettingsToggleBtn');
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const closeBtn = document.getElementById('mobileSettingsCloseBtn');
-
-    if (!toggleBtn || !overlay) {
-        // Elements may not be ready yet
-        return;
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        if (mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        } else {
-            openMobileSettingsOverlay();
-        }
-    });
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            closeMobileSettingsOverlay();
-        });
-    }
-
-    // Close when clicking outside the dialog
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            closeMobileSettingsOverlay();
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        }
-    });
-
-    mobileSettingsInitialized = true;
-}
-
 // Detect if device is mobile based on viewport width and user agent
 function detectMobile() {
     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -172,7 +74,6 @@ function applyMobileLayout() {
     const mainContent = document.getElementById('mainContent');
     const chatbotLayout = document.getElementById('chatbotLayout');
     const mobileToggleContainer = document.getElementById('mobileViewToggle');
-    const mobileSettingsToggleBtn = document.getElementById('mobileSettingsToggleBtn');
     
     // If mainContent doesn't exist yet, try again after a short delay
     if (!mainContent) {
@@ -188,32 +89,18 @@ function applyMobileLayout() {
     if (window.isMobile) {
         body.classList.add('mobile-mode');
         mainContent.classList.add('mobile-mode');
-        initializeMobileSettingsOverlay();
         
         // Hide mobile toggle buttons (not needed with chatbot layout)
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
         }
-
-        if (mobileSettingsToggleBtn) {
-            mobileSettingsToggleBtn.classList.remove('hidden');
-        }
     } else {
-        // Ensure any open mobile settings overlay is closed when leaving mobile mode
-        if (mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        }
-
         body.classList.remove('mobile-mode');
         mainContent.classList.remove('mobile-mode');
         
         // Hide mobile toggle buttons
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
-        }
-
-        if (mobileSettingsToggleBtn) {
-            mobileSettingsToggleBtn.classList.add('hidden');
         }
     }
 }
@@ -4431,22 +4318,6 @@ const streamingEngine = {
 
 // ==================== END STREAMING ENGINE ====================
 
-// Utility: strip emoji/icon characters from text before rendering in summary1
-function stripSummaryEmojis(text) {
-    if (!text || typeof text !== 'string') return text;
-    
-    try {
-        // Preferred: use Unicode property escapes for pictographic symbols
-        const emojiRegex = /\p{Extended_Pictographic}/gu;
-        return text.replace(emojiRegex, '');
-    } catch (e) {
-        // Fallback for environments without Unicode property escapes:
-        // remove common emoji/icon blocks
-        const basicEmojiRegex = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu;
-        return text.replace(basicEmojiRegex, '');
-    }
-}
-
 function appendToSummary1(content, clearExisting = false, isTransient = false, options = {}) {
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('[SUMMARY1 DEBUG] appendToSummary1 called with:', {
@@ -4492,29 +4363,26 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
         // Hide loading spinner when content is being added
         hideSummaryLoading();
 
-        // Normalise content for summary1: strip emojis/icons so typography stays clean
-        const sanitizedContent = typeof content === 'string' ? stripSummaryEmojis(content) : content;
-
         // Check if content is already HTML
-        const isHtml = typeof sanitizedContent === 'string' && /<[a-z][\s\S]*>/i.test(sanitizedContent);
+        const isHtml = /<[a-z][\s\S]*>/i.test(content);
         console.log('[DEBUG] Content type check:', { isHtml });
 
         let processedContent;
         if (isHtml) {
             // If content is already HTML, use it directly
-            processedContent = sanitizedContent;
+            processedContent = content;
         } else {
             // If content is markdown, parse it with marked
             if (!window.marked) {
                 console.error('[DEBUG] Marked library not loaded');
-                processedContent = sanitizedContent;
+                processedContent = content;
             } else {
                 try {
-                    processedContent = window.marked.parse(sanitizedContent);
+                    processedContent = window.marked.parse(content);
                     console.log('[DEBUG] Marked parsing successful');
                 } catch (parseError) {
                     console.error('[DEBUG] Error parsing with marked:', parseError);
-                    processedContent = sanitizedContent;
+                    processedContent = content;
                 }
             }
         }
@@ -11134,10 +11002,10 @@ async function processWorkflow() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 National Guidelines Selected\n\n'
+            ? '📘 **National Guidelines Selected**\n\n'
             : scopeSelection.scope === 'local'
-            ? `🏥 Local Guidelines Selected (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 Both Guidelines Selected (National + ${scopeSelection.hospitalTrust})\n\n`;
+            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
         
         appendToSummary1(scopeMessage, false, true); // Transient
 
@@ -14979,9 +14847,9 @@ async function askGuidelinesQuestion() {
         // Update user status - starting Q&A flow
         updateUser('Preparing to ask guidelines your question...', true);
 
-        // Initialize the question search summary (plain text so it matches stream styling)
-        let searchProgress = 'Asking Guidelines A Question\n\n';
-        searchProgress += `Your Question: ${question}\n\n`;
+        // Initialize the question search summary
+        let searchProgress = '## Asking Guidelines A Question\n\n';
+        searchProgress += `**Your Question:** ${question}\n\n`;
         appendToSummary1(searchProgress);
 
         // Get user ID token (needed for loading preferences)
@@ -15097,10 +14965,10 @@ async function askGuidelinesQuestion() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 National Guidelines Selected\n\n'
+            ? '📘 **National Guidelines Selected**\n\n'
             : scopeSelection.scope === 'local'
-            ? `🏥 Local Guidelines Selected (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 Both Guidelines Selected (National + ${scopeSelection.hospitalTrust})\n\n`;
+            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
+            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
 
         appendToSummary1(scopeMessage, false);
 

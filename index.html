@@ -374,11 +374,6 @@
                 <span class="version-number">v<span id="appVersion">loading...</span></span>
             </div>
             <div class="top-bar-center">
-                <!-- Mobile-only settings toggle (shown in mobile layout) -->
-                <button id="mobileSettingsToggleBtn" class="nav-btn mobile-settings-toggle-btn hidden" aria-label="Open settings and tools" title="Settings and tools">
-                    <span class="btn-icon">☰</span>
-                    <span class="btn-text">Menu</span>
-                </button>
             </div>
             <div class="right-content">
                 <div class="far-right">
@@ -929,19 +924,6 @@
             <div id="linksContainer" class="links-container">
                 <h2>Links</h2>
                 <ul id="linksList"></ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Settings Overlay (reuses main preferences panel content on mobile) -->
-    <div id="mobileSettingsOverlay" class="mobile-settings-overlay hidden" aria-hidden="true">
-        <div class="mobile-settings-dialog" role="dialog" aria-modal="true" aria-labelledby="mobileSettingsTitle">
-            <div class="mobile-settings-header">
-                <h2 id="mobileSettingsTitle">Settings &amp; Tools</h2>
-                <button id="mobileSettingsCloseBtn" class="close-modal-btn" aria-label="Close settings">&times;</button>
-            </div>
-            <div id="mobileSettingsBody" class="mobile-settings-body">
-                <!-- The existing userPreferencesPanel will be moved into this container on mobile -->
             </div>
         </div>
     </div>
