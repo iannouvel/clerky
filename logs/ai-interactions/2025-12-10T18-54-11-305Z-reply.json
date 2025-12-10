@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T18-54-11-305Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1275,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"32yo, G0\\n\\nPresenting Complaint:\\nUnable to tolerate vaginal penetration for 12/12, preventing intercourse and use of tampons. Associated with anticipatory anxiety.\\n\\nKey Clinical Iss...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 0,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 14,\n  \"notRelevantCount\": 278\n}...",
+  "full_data": null
+}
