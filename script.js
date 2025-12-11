@@ -1524,6 +1524,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             border: 1px solid #ddd;
             border-radius: 4px;
             background: white;
+            /* Keep the guideline list scrollable within the visible interface */
+            max-height: min(60vh, 600px);
+            overflow-y: auto;
+            overflow-x: hidden;
         }
         
         .guideline-item {
