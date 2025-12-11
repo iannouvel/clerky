@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-47-21-656Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 830,
+  "response_length": 1234,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"mp057-communication-and-handover-of-care-betweeen-professionals-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp071-provisions-and-schedules-of-postnatal-care-pdf\\\", \\\"title\\\": \\\"Provisions and Schedules o...",
+  "full_data": null
+}
