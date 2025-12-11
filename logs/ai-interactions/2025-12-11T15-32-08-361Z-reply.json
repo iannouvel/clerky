@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-32-08-361Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 811,
+  "response_length": 1212,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":78,\"transcriptPreview\":\"when assessing a previous baby's birthweight centile - how do we calculate it?...\",\"chunkGuidelines\":[\"cg1147-maternal-sepsis-pdf: CG1...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg1192-large-for-gestational-age-pdf\\\", \\\"title\\\": \\\"Large for Gestational Age\\\", \\\"relevance\\\"...",
+  "full_data": null
+}
