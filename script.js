@@ -6990,6 +6990,10 @@ async function completeSuggestionReview() {
 
     // Update buttons state
     updateSuggestionActionButtons();
+    // Re-evaluate whether summary1 should still be visible now that the review UI is gone
+    if (typeof updateSummaryVisibility === 'function') {
+        updateSummaryVisibility();
+    }
     
     // Check if we're in sequential processing mode and need to move to next guideline
     if (window.sequentialProcessingActive) {
