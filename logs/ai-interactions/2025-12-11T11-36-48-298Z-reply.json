@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-48-298Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 939,
+  "response_length": 1443,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"fsrh-contraception-in-women-aged-over-40-pdf: FSRH - Contraceptio...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp001-management-of-confirmed-ectopic-pregnancy-pdf\\\", \\\"title\\\": \\\"GP001 - Management of Confirmed Ectopic Pregnancy\\\", ...",
+  "full_data": null
+}
