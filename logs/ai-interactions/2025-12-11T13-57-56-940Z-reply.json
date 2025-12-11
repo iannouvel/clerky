@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-57-56-940Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1209,
+  "response_length": 1238,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":1587,\"transcriptPreview\":\"28yo, G2P1, 5 days post SVD (2nd degree tear repair), BMI 31\\n\\nPresenting Complaint:\\nPyrexia, rigors, offensive lochia, and gener...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp045-pyrexia-in-labour-sepsis-pdf\\\", \\\"title\\\": \\\"MP045 Pyrexia in Labour & Sepsis\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\...",
+  "full_data": null
+}
