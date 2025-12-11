@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-07-925Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 875,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements gui...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"referral-for-low-platelets-sop-pdf\\\", \\\"title\\\": \\\"Referral for low platelets SOP\\\", \\\"relevanc...",
+  "full_data": null
+}
