@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-15-13-258Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1073,
+  "response_length": 1397,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":81,\"transcriptPreview\":\"write a simple treatment plan for 16 week DCDA twins (with no other risk factors)...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-management-of-monochorionic-twin-pregnancy-pdf\\\", \\\"title\\\": \\\"Management of Monochorionic Twin Pregnancy\\\", \\\"releva...",
+  "full_data": null
+}
