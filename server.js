@@ -17530,6 +17530,22 @@ Please provide a comprehensive answer to the question based on the relevant guid
                     guidelineId: task.guidelineId,
                     semanticSample: task.semanticText.substring(0, 100)
                 });
+
+                // SAFETY DEGRADE: if we cannot find any verbatim or fallback quote
+                // in the underlying guideline text, we should avoid passing a
+                // semantic snippet that will only trigger fuzzy keyword search in
+                // the PDF viewer. Instead, rewrite the REF markers for this task
+                // so that they open the guideline PDF without a search term.
+                const degradePattern = new RegExp(
+                    `\\[\\[REF:${escapeRegExp(task.guidelineId)}\\|([^|]+)\\|${escapeRegExp(task.semanticText)}\\]\\]`,
+                    'g'
+                );
+
+                enhancedAnswer = enhancedAnswer.replace(
+                    degradePattern,
+                    (_match, linkText) => `[[REF:${task.guidelineId}|${linkText}|]]`
+                );
+
                 continue;
             }
 
