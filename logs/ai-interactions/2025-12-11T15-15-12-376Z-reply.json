@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-15-12-376Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 952,
+  "response_length": 1348,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":81,\"transcriptPreview\":\"write a simple treatment plan for 16 week DCDA twins (with no other risk factors)...\",\"chunkGuidelines\":[\"management-of-latent-phase-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp001-provision-and-schedules-of-antenatal-care-pdf\\\", \\\"title\\\": \\\"Provision and Schedules of Antenatal Care\\\", \\\"relevance\\\":...",
+  "full_data": null
+}
