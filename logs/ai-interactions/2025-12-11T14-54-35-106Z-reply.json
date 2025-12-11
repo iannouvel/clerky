@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-35-106Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 211,
+  "response_length": 309,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol\"],\"chunkIndex\":38,\"total...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}
