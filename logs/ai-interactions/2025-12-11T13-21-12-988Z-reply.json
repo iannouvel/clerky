@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-21-12-988Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1396,
+  "response_length": 1371,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":682,\"transcriptPreview\":\"28yo, G1P0, 39+1, BMI 31, Rh+ve\\n\\nIssues:\\nCTG abnormalities suspicious for fetal distress\\nMeconium stained liquor\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP011 Obesity In Pregnancy\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}
