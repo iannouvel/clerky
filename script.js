@@ -3511,11 +3511,19 @@ function updateSummaryVisibility() {
         );
     });
     
+    // Explicit decision UIs that should always be visible in summary1
+    const hasPIIReview = !!document.getElementById('pii-review-current');
+    const hasSuggestionReview = !!document.getElementById('suggestion-review-current');
+    const hasSuggestionList = !!summary1.querySelector('.dynamic-advice-container');
+    const hasGuidelineSelection = !!summary1.querySelector('.guideline-selection-interface');
+    
+    const hasDecisionUI = hasPIIReview || hasSuggestionReview || hasSuggestionList || hasGuidelineSelection;
+    
     // Treat visible clinical issues panel as content so the section stays open
     const hasClinicalPanel = clinicalPanel && !clinicalPanel.classList.contains('hidden');
     
-    // Show summary if loading or has visible content
-    if (isLoading || hasVisibleContent || hasClinicalPanel) {
+    // Show summary if loading, has visible content, or has any decision UI
+    if (isLoading || hasVisibleContent || hasClinicalPanel || hasDecisionUI) {
         summarySection.classList.remove('hidden');
     } else {
         summarySection.classList.add('hidden');
