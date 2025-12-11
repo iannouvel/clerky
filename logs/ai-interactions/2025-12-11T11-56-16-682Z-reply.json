@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-56-16-682Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1506,
+  "response_length": 1759,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":656,\"transcriptPreview\":\"28yo, G2P0 (1x TOP), 28+3, BMI 31, Rh+ve\\n\\nIssues:\\nIron deficiency anaemia in pregnancy\\n\\nBackground:\\nBooked Hb 112 g/L at 12/40....",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bhiva-2025-hiv-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"B...",
+  "full_data": null
+}
