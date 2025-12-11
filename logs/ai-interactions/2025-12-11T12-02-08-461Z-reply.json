@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-08-461Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 889,
+  "response_length": 1339,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf: N...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf\\\", \\\"title\\\": \\\"NICE Interventi...",
+  "full_data": null
+}
