@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-31-631Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 832,
+  "response_length": 1284,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"mp057-communication-and-handover-of-care-betweeen-professionals-pdf...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp069-care-of-the-newborn-pdf\\\", \\\"title\\\": \\\"MP069 Care of the Newborn\\\", \\\"relevance\\\": \\\"0.5...",
+  "full_data": null
+}
