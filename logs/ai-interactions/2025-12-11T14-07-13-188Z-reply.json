@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-13-188Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 816,
+  "response_length": 1267,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/38\",\"transcriptLength\":40,\"transcriptPreview\":\"how do we treat failed TWOC after birth?...\",\"chunkGuidelines\":[\"gtg-2015-reduced-fetal-movements-pdf: RCOG Green-top Guideline No. 5...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gynae-cepod-pathway-pdf\\\", \\\"title\\\": \\\"Gynae CEPOD pathway\\\", \\\"relevance\\\": \\\"0.65\\\"}],\\n  \\\"...",
+  "full_data": null
+}
