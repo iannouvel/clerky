@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-09-740Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1091,
+  "response_length": 1489,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"gp006-management-of-bartholins-cyst-abscess-n-pdf: GP006 Managemen...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gp011-referral-criteria-for-outpatient-hysteroscopy-pdf\\\", \\\"title\\\": \\\"Referral criteria for Outpatient Hysteroscopy\\\", \\\"rele...",
+  "full_data": null
+}
