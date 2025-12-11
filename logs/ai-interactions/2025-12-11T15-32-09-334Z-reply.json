@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-32-09-334Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 887,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":78,\"transcriptPreview\":\"when assessing a previous baby's birthweight centile - how do we calculate it?...\",\"chunkGuidelines\":[\"2020-10-secamb-suspected-preter...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"antenatal-screening-for-gestational-diabetes-flowchart-pdf\\\", \\\"title\\...",
+  "full_data": null
+}
