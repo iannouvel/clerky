@@ -17462,7 +17462,7 @@ RIGHT: recommends "using consistent reference charts" [[REF:guideline|Link|using
 RIGHT: The guideline states providers should "ensure clear identification of reference charts" [[REF:guideline|Link|ensure clear identification of reference charts]]
   - The quoted text and SearchText match!
 
-- GuidelineID: The exact ID of the guideline as provided (e.g., 'mp046-management-of-breech-and-ecv.txt').
+- GuidelineID: Use the EXACT ID from the [GuidelineID: ...] field (e.g., 'mp046-management-of-breech-and-ecv.txt'). Do NOT use the guideline title!
 - LinkText: A short description (e.g., 'Reference charts', 'Category 1 DDI').
 - SearchText: The EXACT TEXT you are quoting. If you write "X" in quotation marks, SearchText must be X.
   * The phrase MUST exist word-for-word in the guideline.
@@ -17492,7 +17492,9 @@ Always base your answers on the provided guidelines.`;
 
         // Create user prompt with question and guidelines
         const guidelinesText = guidelinesWithContent.map(guideline => {
+            // CRITICAL: Include the guideline ID explicitly so the AI uses it correctly in REF markers
             let guidelineText = `**${guideline.title || guideline.id}**`;
+            guidelineText += `\n[GuidelineID: ${guideline.id}]`;  // This is what the AI must use in [[REF:GuidelineID|...]]
             if (guideline.organisation) {
                 guidelineText += ` (${guideline.organisation})`;
             }
