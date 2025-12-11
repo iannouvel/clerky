@@ -3495,18 +3495,27 @@ function updateSummaryVisibility() {
     // Check if loading spinner is visible
     const isLoading = loadingSpinner && !loadingSpinner.classList.contains('hidden');
     
-    // Check if summary has actual content (excluding loading spinner)
+    // Check if summary has actual *visible* content (excluding loading spinner)
     const contentElements = Array.from(summary1.children).filter(
         child => child.id !== 'summaryLoadingSpinner'
     );
-    const hasContent = contentElements.length > 0 && 
-                       summary1.textContent.trim().length > 0;
+    
+    const hasVisibleContent = contentElements.some(child => {
+        const style = window.getComputedStyle(child);
+        const text = child.textContent ? child.textContent.trim() : '';
+        return (
+            style.display !== 'none' &&
+            style.visibility !== 'hidden' &&
+            child.offsetHeight > 0 &&
+            text.length > 0
+        );
+    });
     
     // Treat visible clinical issues panel as content so the section stays open
     const hasClinicalPanel = clinicalPanel && !clinicalPanel.classList.contains('hidden');
     
-    // Show summary if loading or has content
-    if (isLoading || hasContent || hasClinicalPanel) {
+    // Show summary if loading or has visible content
+    if (isLoading || hasVisibleContent || hasClinicalPanel) {
         summarySection.classList.remove('hidden');
     } else {
         summarySection.classList.add('hidden');
