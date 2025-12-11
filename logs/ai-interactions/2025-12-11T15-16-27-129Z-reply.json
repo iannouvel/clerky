@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-27-129Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 735,
+  "response_length": 1175,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appointments\",\"mp019...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\\\", \\\"title\\\": \\\"...",
+  "full_data": null
+}
