@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-59-23-692Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2977,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female. \\n**Presenting complaint:** Chronic pelvic pain (CPP) worsening ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 11,\n  \"potentiallyRelevantCount\": 15,\n  \"lessRelevantCount\": 28,\n  \"notRelevantCount\": 243\n}...",
+  "full_data": null
+}
