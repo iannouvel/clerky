@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-31-748Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 826,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Materna...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover...",
+  "full_data": null
+}
