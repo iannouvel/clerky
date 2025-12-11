@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-46-750Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 810,
+  "response_length": 1309,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"uae-bsuh-guidelines-september-2016-pdf: UAE BSUH guidelines September...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uae-bsuh-guidelines-september-2016-pdf\\\"...",
+  "full_data": null
+}
