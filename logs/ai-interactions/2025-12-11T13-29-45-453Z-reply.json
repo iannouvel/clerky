@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-45-453Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 879,
+  "response_length": 1331,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"iol-flowchart-pdf: IOL flowchart\",\"joint-rcog-and-bsge-guideline-lapa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"iol-flowchart-pdf\\\", \\\"title\\\": \\\"IOL flowchart\\\", \\\"relevance\\\": \\\"0....",
+  "full_data": null
+}
