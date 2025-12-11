@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-31-320Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 748,
+  "response_length": 1195,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"uhsx-multiple-pregnancy-birth-guideline-pdf: UHSx Multiple Pregnanc...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uhsx-sga-fgr-guideline-pdf\\\", \\\"title\\\": \\\"UHSx SGA & FGR guideline\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [...",
+  "full_data": null
+}
