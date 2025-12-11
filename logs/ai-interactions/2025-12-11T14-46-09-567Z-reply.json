@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-46-09-567Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1116,
+  "response_length": 1406,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":48,\"transcriptPreview\":\"how do we counsel on breech presentation at term...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: BJOG - 2018 - Jauniaux -...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2020-murphy-assisted-vaginal-birth-pdf\\\", \\\"title\\\": \\\"Assisted Vaginal Birth\\\", \\\"relevan...",
+  "full_data": null
+}
