@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-47-23-563Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1088,
+  "response_length": 1521,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"gp006-management-of-bartholins-cyst-abscess-n-pdf: GP006 Management o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp014-management-of-patients-admitted-for-major-vaginal-surgery-for-pelvic-organ-prolapse-pop-p...",
+  "full_data": null
+}
