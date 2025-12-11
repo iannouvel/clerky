@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-20-28-697Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1314,
+  "response_length": 1356,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/38\",\"transcriptLength\":3734,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G3P2** (2 SVD, 0 miscarriages) **AFAB** ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\", \\\"title\\\": \\\"GTG 2012 - Initial Mx of Chronic Pelvic Pain\\\", \\\"relevanc...",
+  "full_data": null
+}
