@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-12-566Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 873,
+  "response_length": 1371,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":40,\"transcriptPreview\":\"how do we treat failed TWOC after birth?...\",\"chunkGuidelines\":[\"reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guide...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"reduced-fetal-movements-guideline-pdf\\\",...",
+  "full_data": null
+}
