@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-20-27-871Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 1314,
+  "response_length": 1300,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":3734,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G3P2** (2 SVD, 0 miscarriages) **AFAB** p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bashh-2019-pid-guideline-pdf\\\", \\\"title\\\": \\\"BASHH - 2019 - PID Guideline\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevan...",
+  "full_data": null
+}
