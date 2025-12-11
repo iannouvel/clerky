@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-06-422Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 797,
+  "response_length": 1244,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Managem...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"eshre-guideline-2022-endometriosis-pdf\\\", \\\"title\\\": \\\"ESHRE Guideline - 2022 - Endometriosis\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  ...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-07-114Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 694,
+  "response_length": 1178,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitori...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"pid-proforma-june-2011v2-pdf\\\", \\\"title\\\": \\\"PID Proforma - June 2011v2\\\", \\\"relevance\\\": \\\"0.6...",
+  "full_data": null
+}

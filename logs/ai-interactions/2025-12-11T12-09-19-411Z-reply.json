@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-09-19-411Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1365,
+  "response_length": 1349,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-2021-postnatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Postnatal Care\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}

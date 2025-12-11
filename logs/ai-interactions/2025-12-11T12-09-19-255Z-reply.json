@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-09-19-255Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1409,
+  "response_length": 1387,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp005-emergency-gynaecology-admissions-gau-ready-pdf\\\", \\\"title\\\": \\\"GP005 Emergency Gynaecolog...",
+  "full_data": null
+}

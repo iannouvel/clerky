@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-56-13-451Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1584,
+  "response_length": 1607,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":656,\"transcriptPreview\":\"28yo, G2P0 (1x TOP), 28+3, BMI 31, Rh+ve\\n\\nIssues:\\nIron deficiency anaemia in pregnancy\\n\\nBackground:\\nBooked Hb 112 g/L at 12/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp016-operational-guideline-for-admissio...",
+  "full_data": null
+}

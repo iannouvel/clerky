@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-56-10-333Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 1199,
+  "response_length": 1133,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":656,\"transcriptPreview\":\"28yo, G2P0 (1x TOP), 28+3, BMI 31, Rh+ve\\n\\nIssues:\\nIron deficiency anaemia in pregnancy\\n\\nBackground:\\nBooked Hb 112 g/L at 12/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp025-day-assessment-unit-dau-pdf\\\", \\\"title\\\": \\\"Day Assessment Unit (DAU)\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}

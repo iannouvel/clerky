@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-56-11-534Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 1393,
+  "response_length": 1375,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":656,\"transcriptPreview\":\"28yo, G2P0 (1x TOP), 28+3, BMI 31, Rh+ve\\n\\nIssues:\\nIron deficiency anaemia in pregnancy\\n\\nBackground:\\nBooked Hb 112 g/L at 12/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP011 Obesity In Pregnancy\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}

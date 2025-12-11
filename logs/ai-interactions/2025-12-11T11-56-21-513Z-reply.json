@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-56-21-513Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 749,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P0 (1x TOP), 28+3, BMI 31, Rh+ve\\n\\nIssues:\\nIron deficiency anaemia in pregnancy\\n\\nBackground:\\nBooked Hb 112 g/L at 12/40. Routine FBC at 28/40 shows Hb 98 g/L, MCV 72 fL (mi...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 8,\n  \"potentiallyRelevantCount\": 12,\n  \"lessRelevantCount\": 36,\n  \"notRelevantCount\": 241\n}...",
+  "full_data": null
+}

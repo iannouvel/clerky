@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-09-27-333Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1366,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagulation\\n\\nBackground:\\nPresented to MAU with 3-day histo...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 27,\n  \"lessRelevantCount\": 60,\n  \"notRelevantCount\": 201\n}...",
+  "full_data": null
+}
