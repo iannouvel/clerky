@@ -1494,6 +1494,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             padding: 20px;
             margin: 20px 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* Keep the whole guideline interface within the visible summary pane */
+            max-height: min(60vh, 600px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
         }
         
         .selection-header h2 {
@@ -1524,10 +1529,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             border: 1px solid #ddd;
             border-radius: 4px;
             background: white;
-            /* Keep the guideline list scrollable within the visible interface */
-            max-height: min(60vh, 600px);
-            overflow-y: auto;
-            overflow-x: hidden;
         }
         
         .guideline-item {
