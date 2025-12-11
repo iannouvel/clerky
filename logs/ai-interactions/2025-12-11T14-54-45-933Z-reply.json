@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-45-933Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 792,
+  "response_length": 1314,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"nice-2025-caesarean-birth-pdf: NICE 2025 - Caesarean Birth\",\"nice-2025-intrap...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-intrapartum-care-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Intrapartum Care\\\", \\\"relevance\\\": \\\"0.95\\\"}\\n  ],\\n  \\\"pote...",
+  "full_data": null
+}
