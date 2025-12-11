@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-23-05-874Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1414,
+  "response_length": 1434,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":821,\"transcriptPreview\":\"26yo, G2P0 (previous TOP), 11+2, BMI 31, Rh+ve\\n\\nIssues:\\nDichorionic diamniotic (DCDA) twin pregnancy\\nHigh BMI\\n\\nBackground:\\nCo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-contraception-in-women-aged-over-40...",
+  "full_data": null
+}
