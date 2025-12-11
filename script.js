@@ -15546,6 +15546,8 @@ async function askGuidelinesQuestion() {
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
+            const originalText = text.trim();
+
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
             
@@ -15554,6 +15556,34 @@ async function askGuidelinesQuestion() {
                 guidelineIdMap.get(rawId) ||
                 guidelineIdMap.get(rawId.toLowerCase()) ||
                 rawId;
+
+            // Determine if this REF is just a generic reference to the guideline
+            // name. If so, suppress the inline link and rely on the \"Guidelines
+            // Used\" list instead.
+            let isGuidelineName = false;
+            const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+            const textNorm = normalise(originalText);
+            if (textNorm) {
+                if (Array.isArray(data2.guidelinesUsed)) {
+                    for (const g of data2.guidelinesUsed) {
+                        if (!g || !g.title) continue;
+                        const titleNorm = normalise(g.title);
+                        if (titleNorm && titleNorm === textNorm) {
+                            isGuidelineName = true;
+                            break;
+                        }
+                    }
+                }
+                if (!isGuidelineName && textNorm.includes('guideline') && !/\d/.test(originalText)) {
+                    isGuidelineName = true;
+                }
+            }
+
+            if (isGuidelineName) {
+                // Drop generic inline guideline references entirely; the guideline
+                // will already be listed (with a link) in the \"Guidelines Used\" section.
+                return '';
+            }
             
             // Use the canonical guideline title as link text so that links
             // always reference the guideline name rather than an internal
@@ -15564,7 +15594,7 @@ async function askGuidelinesQuestion() {
                 (Array.isArray(data2.guidelinesUsed)
                     ? (data2.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
                     : '') ||
-                text.trim();
+                originalText;
             
             // Use existing createGuidelineViewerLink function.
             // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
@@ -15585,7 +15615,20 @@ async function askGuidelinesQuestion() {
         });
 
         // Display the answer with HTML formatting
-        const selectedGuidelinesList = data2.guidelinesUsed.map(g => `<li>${escapeHtml(g.title)}</li>`).join('');
+        const selectedGuidelinesList = data2.guidelinesUsed.map(g => {
+            if (!g || !g.id) return '';
+            const title = g.title ? g.title : g.id;
+            // Use createGuidelineViewerLink with hasVerbatimQuote=false so the
+            // guideline link simply opens the PDF (no specific search/highlight).
+            const link = createGuidelineViewerLink(
+                String(g.id),
+                title,
+                null,
+                null,
+                false
+            );
+            return `<li>${link}</li>`;
+        }).join('');
         
         const answerMessage = `<h2>Guidelines Used</h2>` +
                              `<ul>${selectedGuidelinesList}</ul>` +
@@ -15749,10 +15792,39 @@ async function processQuestionAgainstGuidelines() {
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
+            const originalText = text.trim();
+
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
             
             const canonicalId = id.trim();
+
+            // Determine if this REF is just a generic reference to the guideline
+            // name. If so, suppress the inline link and rely on the \"Guidelines
+            // Used\" list instead.
+            let isGuidelineName = false;
+            const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+            const textNorm = normalise(originalText);
+            if (textNorm) {
+                if (Array.isArray(data.guidelinesUsed)) {
+                    for (const g of data.guidelinesUsed) {
+                        if (!g || !g.title) continue;
+                        const titleNorm = normalise(g.title);
+                        if (titleNorm && titleNorm === textNorm) {
+                            isGuidelineName = true;
+                            break;
+                        }
+                    }
+                }
+                if (!isGuidelineName && textNorm.includes('guideline') && !/\d/.test(originalText)) {
+                    isGuidelineName = true;
+                }
+            }
+
+            if (isGuidelineName) {
+                return '';
+            }
+            
             // Prefer the guideline title for link text so that links clearly
             // show which guideline they come from.
             const displayTitle =
@@ -15760,7 +15832,7 @@ async function processQuestionAgainstGuidelines() {
                 (Array.isArray(data.guidelinesUsed)
                     ? (data.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
                     : '') ||
-                text.trim();
+                originalText;
             
             // Use existing createGuidelineViewerLink function.
             // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
@@ -15781,7 +15853,23 @@ async function processQuestionAgainstGuidelines() {
         });
 
         // Display the comprehensive answer with HTML formatting
-        const answerMessage = `<h2>💡 Answer Based on Guidelines</h2>` +
+        const guidelinesUsedList = (data.guidelinesUsed || []).map(g => {
+            if (!g || !g.id) return '';
+            const title = g.title ? g.title : g.id;
+            const link = createGuidelineViewerLink(
+                String(g.id),
+                title,
+                null,
+                null,
+                false
+            );
+            return `<li>${link}</li>`;
+        }).join('');
+
+        const answerMessage = `<h2>Guidelines Used</h2>` +
+                             `<ul>${guidelinesUsedList}</ul>` +
+                             `<hr>` +
+                             `<h2>💡 Answer Based on Guidelines</h2>` +
                              `<p><strong>Question:</strong> ${escapeHtml(question)}</p>` +
                              `<p><strong>Guidelines Used:</strong> ${data.guidelinesUsed?.length || 0}</p>` +
                              `<hr>` +
