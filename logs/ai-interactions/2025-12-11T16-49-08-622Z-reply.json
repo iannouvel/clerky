@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-49-08-622Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1107,
+  "response_length": 1444,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: BJOG - 2018 - Jauniaux - Vasa Pra...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2020-murphy-assisted-vaginal-birth-pdf\\\", \\\"title\\\": \\\"Assisted Vaginal Birth\\\", \\\"relevance\\\": \\\"0.85\\\"}],\\n  \\\"potential...",
+  "full_data": null
+}
