@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-28-741Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 821,
+  "response_length": 1309,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"uae-bsuh-guidelines-september-2016-pdf: UAE BSUH guideline...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uae-bsuh-guidelines-september-2016-pdf\\\"...",
+  "full_data": null
+}
