@@ -630,7 +630,7 @@ function completePIIReview() {
             replacementsCount++;
         }
     });
-
+    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
@@ -669,7 +669,7 @@ window.cancelPIIReview = function() {
 
     // Clear highlighting
     clearHighlightInEditor();
-
+    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
@@ -3581,8 +3581,8 @@ function showSummaryLoading() {
     }
     
     if (summarySection) {
-        summarySection.classList.remove('hidden');
-        summarySection.classList.add('loading');
+    summarySection.classList.remove('hidden');
+    summarySection.classList.add('loading');
     }
     
     // Show loading spinner over existing content/decision UI
@@ -6886,8 +6886,8 @@ window.confirmCurrentModification = async function() {
 
                 if (!sectionInfo) {
                     console.error('[DEBUG] confirmCurrentModification (addition): Could not extract section, falling back to simple append');
-                    const spacing = currentContent.trim() ? '\n\n' : '';
-                    newContent = currentContent + spacing + modifiedText;
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            newContent = currentContent + spacing + modifiedText;
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (Fallback Append)', [
                         { findText: '', replacementText: modifiedText }
                     ]);
@@ -15293,7 +15293,7 @@ async function askGuidelinesQuestion() {
         }
 
         // Button state is already set by the click handler
-        
+
         // Update user status - starting Q&A flow
         updateUser('Preparing to ask guidelines your question...', true);
 
@@ -15645,7 +15645,7 @@ async function askGuidelinesQuestion() {
         let citationCount = 0;
         let highConfidenceCitations = 0;
         let lowConfidenceCitations = 0;
-
+        
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
@@ -15671,13 +15671,13 @@ async function askGuidelinesQuestion() {
                 hasHighConfidenceQuote,
                 searchPreview: decodedSearch.substring(0, 50)
             });
-            
+
             const rawId = id.trim();
             const canonicalId =
                 guidelineIdMap.get(rawId) ||
                 guidelineIdMap.get(rawId.toLowerCase()) ||
                 rawId;
-
+            
             // Determine if this REF is just a generic reference to the guideline
             // name. If so, suppress the inline link and rely on the "Guidelines
             // Used" list instead.
@@ -15917,7 +15917,7 @@ async function processQuestionAgainstGuidelines() {
         let citationCount = 0;
         let highConfidenceCitations = 0;
         let lowConfidenceCitations = 0;
-
+        
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
