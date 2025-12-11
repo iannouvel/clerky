@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-45-708Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 772,
+  "response_length": 1287,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis\",\"cg1151-uterine-ru...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1151-uterine-rupture-pdf\\\", \\\"title\\\": \\\"CG1151 Uterine Rupture\\\", \\\"relevance\\\": \\\"0.7...",
+  "full_data": null
+}
