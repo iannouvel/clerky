@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-59-15-018Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1144,
+  "response_length": 1184,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":2841,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female. \\n**Presen...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-2023-intrauterine-contraception-pdf\\\", \\\"title\\\": \\\"FSRH - 2023 - Intrauterine Contraception\\\", \\\"relevance\\\": \\\"0.9...",
+  "full_data": null
+}
