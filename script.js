@@ -15590,8 +15590,20 @@ async function askGuidelinesQuestion() {
         const data2 = await response2.json();
         if (!data2.success) {
             updateUser('Error answering your guideline question', false);
+            console.error('[DEBUG] askGuidelinesQuestion: Server error', {
+                error: data2.error,
+                traceId: data2.traceId
+            });
             throw new Error(data2.error || 'Failed to process guidelines');
         }
+
+        // Log trace ID for debugging correlation with server logs
+        console.log('[DEBUG] askGuidelinesQuestion: Response received', {
+            traceId: data2.traceId,
+            answerLength: data2.answer?.length,
+            guidelinesUsedCount: data2.guidelinesUsed?.length,
+            aiProvider: data2.ai_provider
+        });
 
         // Build maps from IDs/titles to canonical IDs and titles,
         // so citations can use either and still resolve to the correct PDF,
@@ -15623,20 +15635,42 @@ async function askGuidelinesQuestion() {
         
         // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
         // Format: [[REF:guideline-id-or-title|Link Text|Search Text]]
-        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
-        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        // SearchText may be empty if the backend could not find a high-confidence quote.
+        // Updated regex to allow empty SearchText (the third capture group is now optional).
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]*)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
 
         let citationCount = 0;
+        let highConfidenceCitations = 0;
+        let lowConfidenceCitations = 0;
+
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
             const originalText = text.trim();
 
             // Decode HTML entities in search text to ensure it matches the PDF content
-            const decodedSearch = unescapeHtml(search);
+            const decodedSearch = search ? unescapeHtml(search).trim() : '';
+            
+            // Determine if this is a high-confidence citation (non-empty SearchText)
+            // or a low-confidence one (empty SearchText - backend stripped it)
+            const hasHighConfidenceQuote = decodedSearch.length >= 5;
+
+            if (hasHighConfidenceQuote) {
+                highConfidenceCitations += 1;
+            } else {
+                lowConfidenceCitations += 1;
+            }
+
+            console.log('[DEBUG] askGuidelinesQuestion: Processing citation', {
+                citationNum: citationCount,
+                guidelineId: id.trim(),
+                searchTextLength: decodedSearch.length,
+                hasHighConfidenceQuote,
+                searchPreview: decodedSearch.substring(0, 50)
+            });
             
             const rawId = id.trim();
             const canonicalId =
@@ -15645,8 +15679,8 @@ async function askGuidelinesQuestion() {
                 rawId;
 
             // Determine if this REF is just a generic reference to the guideline
-            // name. If so, suppress the inline link and rely on the \"Guidelines
-            // Used\" list instead.
+            // name. If so, suppress the inline link and rely on the "Guidelines
+            // Used" list instead.
             let isGuidelineName = false;
             const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
             const textNorm = normalise(originalText);
@@ -15668,7 +15702,7 @@ async function askGuidelinesQuestion() {
 
             if (isGuidelineName) {
                 // Drop generic inline guideline references entirely; the guideline
-                // will already be listed (with a link) in the \"Guidelines Used\" section.
+                // will already be listed (with a link) in the "Guidelines Used" section.
                 return '';
             }
             
@@ -15684,17 +15718,22 @@ async function askGuidelinesQuestion() {
                 originalText;
             
             // Use existing createGuidelineViewerLink function.
-            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
-            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
-            // link helper will either extract a quoted segment or fall back to using
-            // the full snippet directly for the PDF search.
+            // Pass hasVerbatimQuote=true ONLY for high-confidence citations
+            // (where backend kept the SearchText). For low-confidence citations,
+            // pass hasVerbatimQuote=false so the link opens the PDF without search.
             return createGuidelineViewerLink(
                 canonicalId, 
                 displayTitle, 
                 null, // filename not needed if ID provided
-                decodedSearch, // Context / search snippet
-                true // hasVerbatimQuote
+                hasHighConfidenceQuote ? decodedSearch : null, // Only pass context for high-confidence
+                hasHighConfidenceQuote // hasVerbatimQuote
             );
+        });
+
+        console.log('[DEBUG] askGuidelinesQuestion: Citation processing complete', {
+            totalCitations: citationCount,
+            highConfidence: highConfidenceCitations,
+            lowConfidence: lowConfidenceCitations
         });
 
         console.log('[DEBUG] askGuidelinesQuestion: Replaced citation markers in answer', {
@@ -15869,26 +15908,45 @@ async function processQuestionAgainstGuidelines() {
         
         // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
         // Format: [[REF:guideline-id|Link Text|Search Text]]
-        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
-        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        // SearchText may be empty if the backend could not find a high-confidence quote.
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]*)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
 
         let citationCount = 0;
+        let highConfidenceCitations = 0;
+        let lowConfidenceCitations = 0;
+
         const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
             citationCount += 1;
 
             const originalText = text.trim();
 
             // Decode HTML entities in search text to ensure it matches the PDF content
-            const decodedSearch = unescapeHtml(search);
+            const decodedSearch = search ? unescapeHtml(search).trim() : '';
+            
+            // Determine if this is a high-confidence citation (non-empty SearchText)
+            const hasHighConfidenceQuote = decodedSearch.length >= 5;
+
+            if (hasHighConfidenceQuote) {
+                highConfidenceCitations += 1;
+            } else {
+                lowConfidenceCitations += 1;
+            }
+
+            console.log('[DEBUG] processQuestionAgainstGuidelines: Processing citation', {
+                citationNum: citationCount,
+                guidelineId: id.trim(),
+                searchTextLength: decodedSearch.length,
+                hasHighConfidenceQuote
+            });
             
             const canonicalId = id.trim();
 
             // Determine if this REF is just a generic reference to the guideline
-            // name. If so, suppress the inline link and rely on the \"Guidelines
-            // Used\" list instead.
+            // name. If so, suppress the inline link and rely on the "Guidelines
+            // Used" list instead.
             let isGuidelineName = false;
             const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
             const textNorm = normalise(originalText);
@@ -15922,21 +15980,20 @@ async function processQuestionAgainstGuidelines() {
                 originalText;
             
             // Use existing createGuidelineViewerLink function.
-            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
-            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
-            // link helper will either extract a quoted segment or fall back to using
-            // the full snippet directly for the PDF search.
+            // Pass hasVerbatimQuote=true ONLY for high-confidence citations.
             return createGuidelineViewerLink(
                 canonicalId, 
                 displayTitle, 
                 null, // filename not needed if ID provided
-                decodedSearch, // Context / search snippet
-                true // hasVerbatimQuote
+                hasHighConfidenceQuote ? decodedSearch : null,
+                hasHighConfidenceQuote
             );
         });
 
-        console.log('[DEBUG] processQuestionAgainstGuidelines: Replaced citation markers in answer', {
-            citationCount
+        console.log('[DEBUG] processQuestionAgainstGuidelines: Citation processing complete', {
+            totalCitations: citationCount,
+            highConfidence: highConfidenceCitations,
+            lowConfidence: lowConfidenceCitations
         });
 
         // Display the comprehensive answer with HTML formatting
