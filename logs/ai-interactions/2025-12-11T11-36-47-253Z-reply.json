@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-47-253Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 883,
+  "response_length": 1332,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"iol-flowchart-pdf: IOL flowchart\",\"joint-rcog-and-bsge-guideline-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Joint RCOG and BSGE ...",
+  "full_data": null
+}

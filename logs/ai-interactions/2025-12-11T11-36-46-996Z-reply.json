@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-46-996Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 812,
+  "response_length": 1307,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epid...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guidelin...",
+  "full_data": null
+}

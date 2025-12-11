@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-30-38-046Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1509,
+  "response_length": 1481,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":1256,\"transcriptPreview\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positiv...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\\\", \\\"title\\\": \\\"BJOG - 2016 - Diagnosis and Management of Ectopic P...",
+  "full_data": null
+}

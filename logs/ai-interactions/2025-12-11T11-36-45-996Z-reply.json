@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-45-996Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 834,
+  "response_length": 1234,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"mp057-communication-and-handover-of-care-betweeen-professionals-p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp073-pregnancy-loss-pdf\\\", \\\"title\\\": \\\"Pregnancy Loss\\\", \\\"relevance\\\": \\\"0.55\\\"}],\\n  \\\"less...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-47-909Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 914,
+  "response_length": 1409,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"management-of-latent-phase-flowchart-pdf: Management of Latent Ph...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"management-of-latent-phase-flowchart-pdf...",
+  "full_data": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-36-46-245Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 695,
+  "response_length": 1142,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":43,\"transcriptPreview\":\"what is the decision tree for mx of ectopic...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"pid-proforma-june-2011v2-pdf\\\", \\\"title\\\": \\\"PID Proforma - June 2011v2\\\", \\\"relevance\\\": \\\"0.6...",
+  "full_data": null
+}
