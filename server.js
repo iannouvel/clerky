@@ -16087,7 +16087,6 @@ CRITICAL FORMATTING REQUIREMENTS:
 - Start your response directly with { and end with }
 - Ensure all JSON is properly formatted and valid
 - Ensure the suggestion text appears verbatim in the output`;
-- Ensure the suggestion text appears verbatim in the output`;
 
         let userPrompt = `Current ${targetDescription} content:
 ${currentSectionContent}
@@ -17266,17 +17265,19 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
 5. Use clear, professional medical language
 6. If the guidelines don't fully address the question, acknowledge this and provide the best available guidance
 7. Structure your response in a clear, organized manner
-
+        
 CITATION FORMATTING (CRITICAL):
-When you refer to information from a specific guideline, you MUST use the following citation format EXACTLY:
+When you refer to **specific, detailed recommendations** from a guideline (for example, a numeric threshold, dose, named pathway, or a clearly quotable sentence), you MUST use the following citation format EXACTLY:
 [[REF:GuidelineID|LinkText|SearchText]]
-
+        
 - GuidelineID: The exact ID of the guideline as provided in the context (e.g., 'mp046-management-of-breech-and-ecv.txt').
-- LinkText: A short, readable text for the link (e.g., 'See Guideline', 'Management of Breech', 'Section 4.1').
+- LinkText: A short, readable text describing the **specific recommendation or section** (e.g., 'Expectant management criteria', 'Methotrexate contraindications', 'Section 4.1 – Indications for hysteroscopy').
 - SearchText: A unique snippet of text (approx 5-10 words) from the guideline that can be used to locate the exact section you are referencing.
-
-Example: "The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|ECV Guideline|External cephalic version should be offered]]."
-
+        
+You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE HMB guideline" or "based on RCOG recommendations"). Generic guideline references will be shown separately in a \"Guidelines Used\" list instead of inline links.
+        
+Example (specific recommendation): "The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|ECV should be offered|External cephalic version should be offered]]."
+        
 Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations using this citation format.`;
 
         // Build a fast lookup of guideline text for quote finding (prefer condensed)
