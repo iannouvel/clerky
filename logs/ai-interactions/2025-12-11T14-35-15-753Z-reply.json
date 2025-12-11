@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-35-15-753Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 1244,
+  "response_length": 1283,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Maternity Smoking & Smoke Free Pregnancy g...",
+  "full_data": null
+}
