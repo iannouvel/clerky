@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-15-11-914Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 788,
+  "response_length": 1254,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/38\",\"transcriptLength\":81,\"transcriptPreview\":\"write a simple treatment plan for 16 week DCDA twins (with no other risk factors)...\",\"chunkGuidelines\":[\"uhsx-multiple-pregnancy-bir...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-multiple-pregnancy-birth-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Multiple Pregnancy & Birth guideline\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}
