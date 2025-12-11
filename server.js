@@ -15113,6 +15113,7 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
 
         // Fetch guideline content for verbatim quote extraction
         let guidelineContent = '';
+        let semanticallyCompressedContent = ''; // Fallback for context length exceeded
         let resolvedGuidelineTitle = guidelineTitle || 'Unknown';
         let guidelineFilename = null;
         let feedbackSummary = null;
@@ -15122,17 +15123,22 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
             try {
                 console.log(`[DEBUG] dynamicAdvice: Fetching guideline content for ID: ${guidelineId}`);
                 
-                const [guidelineDoc, condensedDoc] = await Promise.all([
+                const [guidelineDoc, condensedDoc, compressedDoc] = await Promise.all([
                     db.collection('guidelines').doc(guidelineId).get(),
-                    db.collection('guidelineCondensed').doc(guidelineId).get()
+                    db.collection('guidelineCondensed').doc(guidelineId).get(),
+                    db.collection('guidelineSemanticallyCompressed').doc(guidelineId).get()
                 ]);
 
                 if (guidelineDoc.exists) {
                     const guidelineData = guidelineDoc.data();
                     const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
+                    const compressedData = compressedDoc.exists ? compressedDoc.data() : null;
                     
                     // Get content - prefer condensed version for better performance
                     guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || '';
+                    
+                    // Store semantically compressed version for fallback if context length exceeded
+                    semanticallyCompressedContent = compressedData?.semanticallyCompressed || compressedData?.compressed || '';
                     
                     // Get proper title
                     resolvedGuidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.fileName || guidelineTitle || 'Unknown';
@@ -15158,9 +15164,11 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
                     console.log(`[DEBUG] dynamicAdvice: Retrieved guideline content`, {
                         guidelineId,
                         contentLength: guidelineContent.length,
+                        semanticallyCompressedLength: semanticallyCompressedContent.length,
                         contentSource: condensedData?.condensed ? 'condensed' : guidelineData.content ? 'full' : 'missing',
                         contentSample: guidelineContent.length > 0 ? guidelineContent.substring(0, 500) : 'EMPTY CONTENT',
-                        hasFeedbackSummary: !!feedbackSummary
+                        hasFeedbackSummary: !!feedbackSummary,
+                        hasSemanticFallback: semanticallyCompressedContent.length > 0
                     });
                 } else {
                     console.warn(`[DEBUG] dynamicAdvice: Guideline not found with ID: ${guidelineId}`);
@@ -15312,12 +15320,108 @@ IMPORTANT:
         });
 
         // Send to AI with lower temperature for more accurate quote extraction
-        const messages = [
+        // Use retry logic with fallback to semantically compressed content if context length exceeded
+        let messages = [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ];
 
-        const aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+        let aiResponse;
+        let usedFallback = false;
+        
+        try {
+            aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+        } catch (aiError) {
+            // Check if error is due to context length exceeded
+            const isContextLengthError = aiError.message && (
+                aiError.message.includes('maximum context length') ||
+                aiError.message.includes('context_length_exceeded') ||
+                aiError.message.includes('too many tokens')
+            );
+            
+            if (isContextLengthError && (semanticallyCompressedContent || guidelineContent.length > 20000)) {
+                console.log('[DEBUG] dynamicAdvice: Context length exceeded, attempting fallback with compressed content');
+                
+                // Determine fallback content - use semantically compressed if available, otherwise truncate
+                let fallbackContent = '';
+                if (semanticallyCompressedContent && semanticallyCompressedContent.length > 0) {
+                    fallbackContent = semanticallyCompressedContent;
+                    console.log(`[DEBUG] dynamicAdvice: Using semantically compressed content (${fallbackContent.length} chars)`);
+                } else {
+                    // Truncate the guideline content to ~20k chars
+                    const MAX_FALLBACK_LENGTH = 20000;
+                    fallbackContent = guidelineContent.substring(0, MAX_FALLBACK_LENGTH);
+                    if (guidelineContent.length > MAX_FALLBACK_LENGTH) {
+                        fallbackContent += '\n...[Content truncated due to length]...';
+                    }
+                    console.log(`[DEBUG] dynamicAdvice: Using truncated content (${fallbackContent.length} chars from ${guidelineContent.length})`);
+                }
+                
+                // Rebuild the user prompt with compressed/truncated content
+                const fallbackUserPrompt = `Original Transcript:
+${transcript}
+
+Full Guideline Content:
+${fallbackContent || 'Guideline content not available - use analysis only'}
+
+Guideline Analysis:
+${analysis}
+
+Guideline: ${resolvedGuidelineTitle}
+${feedbackSummary ? `
+
+CLINICAL FEEDBACK FROM PREVIOUS USERS:
+The following patterns have been identified from clinician feedback on this guideline:
+
+${feedbackSummary}
+
+Please consider this feedback when determining if suggestions are appropriate for this specific case.` : ''}
+
+Please extract actionable suggestions from this analysis and format them as specified. For each suggestion, include detailed context with relevant information from the guideline. 
+
+CRITICAL QUOTING REQUIREMENTS:
+- Search the "Full Guideline Content" section for EXACT text matches before adding quotes
+- ONLY use quotation marks if you can copy the text VERBATIM from the Full Guideline Content
+- Set hasVerbatimQuote to true ONLY when using exact quoted text from the guideline
+- Set hasVerbatimQuote to false when paraphrasing or when exact text cannot be found
+- Accuracy is essential - verbatim quotes enable PDF highlighting for the user
+- When in doubt, use hasVerbatimQuote: false and paraphrase clearly
+- DO NOT add meta-commentary about whether text appears in the guideline - just provide the quote or paraphrase
+
+CONTEXT FIELD EXAMPLES:
+Example 1 - With verbatim quote (hasVerbatimQuote: true):
+"For major PPH with ongoing bleeding, the guideline specifies: 'Immediate venepuncture (20 ml) for: cross-match (4 units minimum)' - therefore the current order for 2 units is insufficient."
+
+Example 2 - With paraphrase (hasVerbatimQuote: false):
+"The guideline recommends cross-matching a minimum of 4 units for major postpartum haemorrhage with blood loss exceeding 1000ml and ongoing bleeding. The current order for 2 units is below this recommendation."
+
+IMPORTANT: 
+- Make actionable suggestions that are supported by the guideline and clinically appropriate
+- When transcript details are limited, suggest guideline-recommended actions appropriate for the presenting condition
+- Prioritise accuracy over quantity - better to have fewer suggestions with accurate quotes than many with fabricated ones
+- The context field should be informative and educational - avoid meta-commentary about the guideline itself`;
+
+                messages = [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: fallbackUserPrompt }
+                ];
+                
+                console.log('[DEBUG] dynamicAdvice: Retrying with fallback content', {
+                    fallbackUserPromptLength: fallbackUserPrompt.length,
+                    fallbackContentLength: fallbackContent.length
+                });
+                
+                aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+                usedFallback = true;
+            } else {
+                // Re-throw if not a context length error or no fallback available
+                throw aiError;
+            }
+        }
+        
+        if (usedFallback) {
+            console.log('[DEBUG] dynamicAdvice: Successfully completed with fallback content');
+        }
         
         console.log('[DEBUG] dynamicAdvice: AI response received', {
             success: !!aiResponse,
@@ -16344,13 +16448,71 @@ Please extract and consolidate actionable suggestions from these multiple guidel
             guidelinesCount: guidelineAnalyses.length
         });
 
-        // Send to AI
-        const messages = [
+        // Send to AI with retry logic for context length exceeded
+        let messages = [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ];
 
-        const aiResponse = await routeToAI({ messages }, userId);
+        let aiResponse;
+        let usedFallback = false;
+        
+        try {
+            aiResponse = await routeToAI({ messages }, userId);
+        } catch (aiError) {
+            // Check if error is due to context length exceeded
+            const isContextLengthError = aiError.message && (
+                aiError.message.includes('maximum context length') ||
+                aiError.message.includes('context_length_exceeded') ||
+                aiError.message.includes('too many tokens')
+            );
+            
+            if (isContextLengthError) {
+                console.log('[DEBUG] multiGuidelineDynamicAdvice: Context length exceeded, attempting fallback with truncated analyses');
+                
+                // Truncate each analysis to reduce total size
+                const MAX_ANALYSIS_LENGTH_PER_GUIDELINE = 5000;
+                let truncatedAnalysesText = '';
+                guidelineAnalyses.forEach((analysis, index) => {
+                    truncatedAnalysesText += `\n\n=== GUIDELINE ${index + 1}: ${analysis.guidelineTitle || analysis.guidelineId} ===\n`;
+                    const analysisText = analysis.analysis || '';
+                    if (analysisText.length > MAX_ANALYSIS_LENGTH_PER_GUIDELINE) {
+                        truncatedAnalysesText += analysisText.substring(0, MAX_ANALYSIS_LENGTH_PER_GUIDELINE) + '\n...[Analysis truncated]...';
+                    } else {
+                        truncatedAnalysesText += analysisText;
+                    }
+                });
+                
+                const fallbackUserPrompt = `Original Transcript:
+${transcript}
+
+Combined Guideline Analyses (condensed):
+${truncatedAnalysesText}
+${feedbackSummariesText}
+
+Please extract and consolidate actionable suggestions from these multiple guideline analyses. Create combined suggestions when multiple guidelines recommend similar interventions, and prioritize suggestions based on clinical importance and consensus across guidelines. For each suggestion, include detailed context with relevant quoted text from the supporting guidelines.`;
+
+                messages = [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: fallbackUserPrompt }
+                ];
+                
+                console.log('[DEBUG] multiGuidelineDynamicAdvice: Retrying with truncated analyses', {
+                    fallbackUserPromptLength: fallbackUserPrompt.length,
+                    originalUserPromptLength: userPrompt.length
+                });
+                
+                aiResponse = await routeToAI({ messages }, userId);
+                usedFallback = true;
+            } else {
+                // Re-throw if not a context length error
+                throw aiError;
+            }
+        }
+        
+        if (usedFallback) {
+            console.log('[DEBUG] multiGuidelineDynamicAdvice: Successfully completed with fallback truncated content');
+        }
         
         console.log('[DEBUG] multiGuidelineDynamicAdvice: AI response received', {
             success: !!aiResponse,
