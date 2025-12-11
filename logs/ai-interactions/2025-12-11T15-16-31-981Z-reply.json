@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-31-981Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1119,
+  "response_length": 1804,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"sp22003-maternity-telephone-triage-sop-pdf: SP22003 Matern...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\",\\n      \\\"title\\\": \\\"...",
+  "full_data": null
+}
