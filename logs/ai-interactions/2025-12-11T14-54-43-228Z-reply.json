@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-43-228Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 716,
+  "response_length": 1135,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appointments\",\"mp019-hypertension-and-p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp022-emergency-maternity-admissions-pdf\\\", \\\"title\\\": \\\"Emergency Maternity Admissions\\\", \\\"re...",
+  "full_data": null
+}
