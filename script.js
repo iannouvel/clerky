@@ -6194,16 +6194,16 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         searchText: searchText
     };
     
-    // Add note if hasVerbatimQuote is false (paraphrased content)
-    const paraphraseNote = hasVerbatimQuote === false 
-        ? ' <span style="color: #f59e0b; font-size: 12px; font-weight: normal;">(Guideline recommendation paraphrased)</span>' 
-        : '';
+    // We no longer append any explanatory note after links; the guideline
+    // name and context in the surrounding text provide sufficient clarity.
+    const paraphraseNote = '';
     
     // Create link with data-link-data; the actual click is handled by a
     // delegated listener in index.html so we don't rely on inline onclick.
     // TipTap will preserve data-link-data via the custom Link extension.
-    // Explicit cursor: pointer so users see it's clickable even inside TipTap.
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    // Use simple underlined styling without bold or colour changes so links
+    // integrate cleanly with surrounding text.
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
@@ -6859,10 +6859,80 @@ window.confirmCurrentModification = async function() {
         
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: append the modified text to the end of the document
-            const spacing = currentContent.trim() ? '\n\n' : '';
-            newContent = currentContent + spacing + modifiedText;
-            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
+            // Addition: fold the modified text into the correct section/list using the same
+            // AI insertion pipeline as for accepted additions, rather than appending at the end.
+            try {
+                let insertionPoint = suggestion.cachedInsertionPoint;
+                if (!insertionPoint) {
+                    console.log('[DEBUG] confirmCurrentModification: No cached insertion point for addition, fetching now');
+                    insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                } else {
+                    console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for addition');
+                }
+
+                insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                console.log('[DEBUG] confirmCurrentModification (addition): Insertion point:', insertionPoint);
+
+                const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                if (!sectionInfo) {
+                    console.error('[DEBUG] confirmCurrentModification (addition): Could not extract section, falling back to simple append');
+                    const spacing = currentContent.trim() ? '\n\n' : '';
+                    newContent = currentContent + spacing + modifiedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (Fallback Append)', [
+                        { findText: '', replacementText: modifiedText }
+                    ]);
+                } else {
+                    console.log('[DEBUG] confirmCurrentModification (addition): Calling incorporateSuggestion API with modifiedText');
+                    const idToken = await firebase.auth().currentUser.getIdToken();
+                    const body = {
+                        sectionName: insertionPoint.section,
+                        subsectionName: insertionPoint.subsection,
+                        currentSectionContent: sectionInfo.content,
+                        suggestionText: modifiedText
+                    };
+                    // If we have an original reference text (e.g. an existing bullet), pass it so
+                    // the AI can update/merge that line rather than always adding a new one.
+                    if (suggestion.originalText) {
+                        body.originalText = suggestion.originalText;
+                    }
+
+                    const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${idToken}`
+                        },
+                        body: JSON.stringify(body)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to incorporate modified addition: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    console.log('[DEBUG] confirmCurrentModification (addition): Incorporation result:', result.insertionLocation);
+
+                    newContent = replaceSectionContent(
+                        currentContent,
+                        insertionPoint.section,
+                        insertionPoint.subsection,
+                        sectionInfo.content,
+                        result.modifiedSectionContent
+                    );
+
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [
+                        { findText: suggestion.originalText || '', replacementText: modifiedText }
+                    ]);
+                }
+            } catch (error) {
+                console.error('[DEBUG] confirmCurrentModification (addition): Error incorporating via AI, falling back to append:', error);
+                const spacing = currentContent.trim() ? '\n\n' : '';
+                newContent = currentContent + spacing + modifiedText;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (AI Fallback Append)', [
+                    { findText: '', replacementText: modifiedText }
+                ]);
+            }
         } else if (suggestion.originalText) {
             // Modification: try to replace existing text with user's modified version
             let replacementResult = applySuggestionTextReplacement(
