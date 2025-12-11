@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-38-12-226Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 853,
+  "response_length": 1282,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":68,\"transcriptPreview\":\"how do we manage a conflict of opinion between doctors and midwives?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover-of-care-pdf\\\", \\\"title\\\": \\\"CG1122 Maternal Transfer & Onsite Handover of Care\\\", \\\"re...",
+  "full_data": null
+}
