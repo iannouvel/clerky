@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-57-59-053Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1231,
+  "response_length": 1260,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":1587,\"transcriptPreview\":\"28yo, G2P1, 5 days post SVD (2nd degree tear repair), BMI 31\\n\\nPresenting Complaint:\\nPyrexia, rigors, offensive lochia, and gener...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-management-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Management of VTE ...",
+  "full_data": null
+}
