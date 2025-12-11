@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-30-272Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1227,
+  "response_length": 1588,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonata...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\\...",
+  "full_data": null
+}
