@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-45-588Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 902,
+  "response_length": 1419,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"management-of-latent-phase-flowchart-pdf: Management of Latent Phase flowchar...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"md089-labour-ward-staffing-pdf\\\", \\\"title\\\": \\\"MD089 Labour Ward Staffing\\\", \\\"relevance\\...",
+  "full_data": null
+}
