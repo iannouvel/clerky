@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-18-811Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 117,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"how do we treat failed TWOC after birth?\",\"guidelinesCount\":297,\"chunksProcessed\":38,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 12,\n  \"potentiallyRelevantCount\": 21,\n  \"lessRelevantCount\": 28,\n  \"notRelevantCount\": 236\n}...",
+  "full_data": null
+}
