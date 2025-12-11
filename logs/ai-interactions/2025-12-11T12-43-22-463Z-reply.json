@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-43-22-463Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 1301,
+  "response_length": 1346,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/38\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp066-neonatal-resuscitation-term-and-pre-term-pdf\\\", \\\"title\\\": \\\"MP066 Neonatal Resuscitation (Term and Pre-term)\\\", \\\"...",
+  "full_data": null
+}

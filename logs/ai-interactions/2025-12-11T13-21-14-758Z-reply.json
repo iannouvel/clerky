@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-21-14-758Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1585,
+  "response_length": 1409,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":682,\"transcriptPreview\":\"28yo, G1P0, 39+1, BMI 31, Rh+ve\\n\\nIssues:\\nCTG abnormalities suspicious for fetal distress\\nMeconium stained liquor\\n\\nBackground:\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2020-murphy-assisted-vaginal-birth-pdf\\\", \\\"title\\\": \\\"Assisted Vaginal Birth\\\", \\\"relevan...",
+  "full_data": null
+}
