@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-47-21-914Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 691,
+  "response_length": 1140,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitoring ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"pph-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"PPH prompt card ED RSCH PRH\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}
