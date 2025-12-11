@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-58-06-195Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1708,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P1, 5 days post SVD (2nd degree tear repair), BMI 31\\n\\nPresenting Complaint:\\nPyrexia, rigors, offensive lochia, and general malaise for 24 hours\\n\\nKey Clinical Issue:\\nSuspec...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 15,\n  \"potentiallyRelevantCount\": 22,\n  \"lessRelevantCount\": 36,\n  \"notRelevantCount\": 224\n}...",
+  "full_data": null
+}
