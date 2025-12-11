@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-39-28-945Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1248,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G0\\n\\nPresenting Complaint:\\nSecondary dysmenorrhoea for 9/12, worsening. Deep dyspareunia.\\n\\nKey Clinical Issue:\\nChronic pelvic pain impacting quality of life. Suspected endome...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 11,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 15,\n  \"notRelevantCount\": 264\n}...",
+  "full_data": null
+}
