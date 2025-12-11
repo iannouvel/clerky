@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-45-668Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 878,
+  "response_length": 1339,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf: NICE Interve...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"p19005-locsop-for-obstetric-procedural-counts-pdf\\\", \\\"title\\\": \\\"P19005 LocSOP for Obstetric P...",
+  "full_data": null
+}
