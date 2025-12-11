@@ -256,7 +256,7 @@ body {
     position: relative; /* For positioning of button row */
     overflow: hidden; /* Contain content */
     min-height: 0; /* Critical for flex children to shrink */
-    /* Ensure fixed button row stays at bottom */
+    height: 100%; /* Ensure full height */
     justify-content: flex-start;
 }
 
@@ -1093,11 +1093,12 @@ body {
     border-radius: 8px 8px 0 0; /* Rounded top corners only */
     padding-top: 8px;
     padding-left: 8px;
-    padding-right: 16px;
+    padding-right: 0;
     padding-bottom: 16px;
     margin-top: 8px;
     margin-bottom: 16px;
     border: 1px solid #e0e0e0;
+    border-top: 0;
     border-bottom: none; /* Remove bottom border */
 }
 
@@ -1111,7 +1112,7 @@ body {
 .preferences-panel-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
 }
 
 .preference-item {
@@ -1291,6 +1292,88 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
+    }
+}
+
+/* Mobile settings toggle + overlay (reusing user-preferences-panel) */
+
+/* Hidden by default - only shown in mobile layout */
+#mobileSettingsToggleBtn,
+.mobile-settings-toggle-btn {
+    display: none;
+}
+
+.mobile-settings-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 64px 12px 16px;
+    box-sizing: border-box;
+    z-index: 11000;
+}
+
+.mobile-settings-overlay.hidden {
+    display: none !important;
+}
+
+.mobile-settings-dialog {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 480px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mobile-settings-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-settings-header h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.mobile-settings-body {
+    padding: 8px 12px 12px;
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    /* Show compact toggle button in the top bar when in mobile mode */
+    body.mobile-mode .mobile-settings-toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 10px;
+        font-size: 0.9rem;
+        min-height: 32px;
+    }
+
+    /* Hide the inline preferences panel in the main layout on mobile */
+    body.mobile-mode #mainSection > .user-preferences-panel {
+        display: none;
+    }
+
+    /* When opened in the mobile settings dialog, ensure the panel is visible and fills width */
+    body.mobile-mode .mobile-settings-dialog .user-preferences-panel {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        border-radius: 8px;
     }
 }
 
@@ -1708,17 +1791,20 @@ div.third-column,
 /* Summary1 specific: ensure it scrolls and stays above fixed button row */
 #summary1 {
     width: 100% !important;
-    height: auto !important; /* Fit content, don't fill parent */
-    overflow-y: visible !important; /* Let content determine size */
-    overflow-x: hidden !important;
     box-sizing: border-box !important;
-    display: block !important;
-    /* Ensure bottom content is always visible above fixed button row */
+    flex: 1 1 auto !important;     /* Let it fill summarySection */
+    min-height: 0 !important;      /* Allow shrinking inside flex parent */
+    max-height: none !important;   /* Height governed by parent */
+    overflow-y: auto !important;   /* Scroll when content exceeds space */
+    overflow-x: hidden !important;
     padding-bottom: 8px !important; /* Small padding at bottom for readability */
-    min-height: 0 !important; /* Allow shrinking */
-    max-height: none !important; /* No max height - fit content */
-    position: relative !important; /* Normal positioning */
-    z-index: 1 !important; /* Lower than button container */
+    position: relative !important;
+    z-index: 1 !important;         /* Below the fixed button row */
+
+    /* Force a consistent "stream" typography for all content */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 /* Removed hover effects to prevent flickering */
@@ -2955,17 +3041,28 @@ html, body {
 .chatbot-layout {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0;
+    width: auto; /* Let margins define width */
+    max-width: none; /* Allow full width */
+    margin: 0 5px; /* Small consistent margin */
     gap: 16px;
     padding-top: 8px;
     padding-bottom: 0;
-    flex: 1;
+    flex: 1 1 auto; /* Allow shrinking and growing */
     min-height: 0;
     overflow: hidden;
     /* Ensure layout respects fixed button row at bottom */
     margin-bottom: 0;
+}
+
+/* Summary section should fill remaining space and scroll */
+#summarySection {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    min-height: 0;              /* Allow it to shrink within flex parent */
+    overflow-y: auto;           /* Scroll summary content inside this area */
+    overflow-x: hidden;
+    padding-bottom: 8px;        /* Breathing room above fixed button row */
 }
 
 .chatbot-input-section {
@@ -3164,11 +3261,14 @@ html, body {
     flex-direction: column;
 }
 
-/* Zero out all spacing within summary1 for maximum visibility */
+/* Zero out all spacing within summary1 for maximum visibility
+   and enforce a single, consistent font for everything in the stream */
 #summary1 * {
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
 }
 
 /* Restore minimal necessary spacing for readability */
@@ -3184,6 +3284,12 @@ html, body {
 #summary1 h6 {
     margin-top: 4px !important;
     margin-bottom: 4px !important;
+
+    /* Make headings the same size as body text so everything looks uniform,
+       but keep a slightly stronger weight for emphasis */
+    font-size: 1rem !important;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 #summary1 ul,
@@ -3216,6 +3322,7 @@ html, body {
 #summary1 var,
 #summary1 span {
     background: white !important;
+    font-family: inherit !important;
 }
 
 /* ==================== STREAMING TEXT ANIMATIONS ==================== */
@@ -3295,9 +3402,9 @@ html, body {
 /* Fixed button row at bottom of mainContentArea - always visible */
 .fixed-button-row {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: auto; /* Let margins define width */
+    max-width: none; /* Allow full width */
+    margin: 0 5px; /* Match chatbot-layout margins */
     padding: 12px 20px;
     background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.98));
     backdrop-filter: blur(8px);
@@ -3310,7 +3417,8 @@ html, body {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Shadow above for separation */
     box-sizing: border-box;
     border-top: 1px solid #e0e0e0;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Do not shrink, stay fixed height */
+    flex-grow: 0;
 }
 
 /* Analyse button styling - always visible */
@@ -3357,6 +3465,35 @@ html, body {
     to {
         transform: rotate(360deg);
     }
+}
+
+
+/* Server status message in fixed button row */
+.server-status-message {
+    font-size: 13px;
+    color: #222;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-left: 10px;
+    max-width: 420px;
+    line-height: 1.4;
+    white-space: normal; /* Allow wrapping for clearer multi-line text */
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.spinner-small {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+    flex-shrink: 0;
 }
 
 /* Selection buttons group (appears when guideline selection is active) */
@@ -3527,6 +3664,14 @@ html, body {
 }
 .nav-btn.success:hover {
     background-color: #15803d;
+}
+
+.nav-btn.info {
+    background-color: #17a2b8;
+    color: white;
+}
+.nav-btn.info:hover {
+    background-color: #138496;
 }
 
 .nav-btn.danger {
@@ -3920,7 +4065,6 @@ html, body {
     min-height: 150px;
     height: auto;
     white-space: pre-wrap;
-    cursor: text !important;
     user-select: text !important;
     -webkit-user-select: text !important;
     -moz-user-select: text !important;
@@ -3931,8 +4075,13 @@ html, body {
 }
 
 .tiptap-editor .ProseMirror[contenteditable="true"] {
-    cursor: text !important;
     user-select: text !important;
+}
+
+/* Ensure links inside the TipTap editor show the pointer cursor */
+.tiptap-editor .ProseMirror a,
+.tiptap-editor .ProseMirror a.guideline-link {
+    cursor: pointer !important;
 }
 
 .tiptap-editor .ProseMirror:focus {

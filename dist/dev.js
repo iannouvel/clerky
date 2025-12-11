@@ -314,8 +314,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (!user) {
                     console.log('User not logged in, redirecting to login page...');
                     // If not logged in, redirect to login page
-                    localStorage.setItem('returnToPage', 'dev.html');
-                    localStorage.setItem('returnAfterLogin', '1');
+                    // Use sessionStorage so redirect intent is scoped to this tab only
+                    sessionStorage.setItem('returnToPage', 'dev.html');
+                    sessionStorage.setItem('returnAfterLogin', '1');
                     window.location.href = 'index.html';
                     return;
                 }
@@ -442,8 +443,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 // User is signed out - redirect to login page
                 console.log('User is signed out');
                 try { 
-                    localStorage.setItem('returnToPage', 'dev.html'); 
-                    localStorage.setItem('returnAfterLogin', '1');
+                    // Use sessionStorage so redirect intent is scoped to this tab only
+                    sessionStorage.setItem('returnToPage', 'dev.html'); 
+                    sessionStorage.setItem('returnAfterLogin', '1');
                 } catch (_) {}
                 window.location.href = 'index.html';
             }

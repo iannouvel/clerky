@@ -374,6 +374,11 @@
                 <span class="version-number">v<span id="appVersion">loading...</span></span>
             </div>
             <div class="top-bar-center">
+                <!-- Mobile-only settings toggle (shown in mobile layout) -->
+                <button id="mobileSettingsToggleBtn" class="nav-btn mobile-settings-toggle-btn hidden" aria-label="Open settings and tools" title="Settings and tools">
+                    <span class="btn-icon">☰</span>
+                    <span class="btn-text">Menu</span>
+                </button>
             </div>
             <div class="right-content">
                 <div class="far-right">
@@ -575,6 +580,8 @@
                             </div>
                             <!-- Analyse button at bottom-left of summary1 -->
                         </div>
+                        
+                        </div>
                     </div>
                     
                     <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
@@ -584,6 +591,9 @@
                             <span class="btn-icon">🔍</span>
                             <span class="btn-text">Analyse</span>
                         </button>
+
+                        <!-- Server Status Message -->
+                        <div id="serverStatusMessage" class="server-status-message" style="display: none;"></div>
                         
                         <!-- Suggestion Actions Group (Hidden by default) -->
                         <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">
@@ -593,6 +603,15 @@
                             <button id="suggestionModifyBtn" class="nav-btn warning">✏️ Modify</button>
                             <button id="suggestionSkipBtn" class="nav-btn secondary">⏭ Skip</button>
                             <button id="suggestionCancelBtn" class="nav-btn danger-outline">❌ Cancel All</button>
+                        </div>
+
+                        <!-- Privacy Review Actions Group (Hidden by default) -->
+                        <div id="piiActionsGroup" class="suggestion-actions-group" style="display: none;">
+                            <button id="piiPrevBtn" class="nav-btn secondary" style="display: none;" onclick="navigatePIIReview(-1)">⬅ Previous</button>
+                            <button id="piiReplaceBtn" class="nav-btn success" onclick="handlePIIDecision('replace')">✅ Replace</button>
+                            <button id="piiKeepBtn" class="nav-btn info" onclick="handlePIIDecision('keep')">📝 Keep</button>
+                            <button id="piiSkipBtn" class="nav-btn warning" onclick="handlePIIDecision('skip')">⏭ Skip</button>
+                            <button id="piiCancelBtn" class="nav-btn danger-outline" onclick="cancelPIIReview()">❌ Cancel All</button>
                         </div>
 
                         <!-- Selection buttons group (dynamically added by JavaScript) -->
@@ -913,6 +932,19 @@
             </div>
         </div>
     </div>
+
+    <!-- Mobile Settings Overlay (reuses main preferences panel content on mobile) -->
+    <div id="mobileSettingsOverlay" class="mobile-settings-overlay hidden" aria-hidden="true">
+        <div class="mobile-settings-dialog" role="dialog" aria-modal="true" aria-labelledby="mobileSettingsTitle">
+            <div class="mobile-settings-header">
+                <h2 id="mobileSettingsTitle">Settings &amp; Tools</h2>
+                <button id="mobileSettingsCloseBtn" class="close-modal-btn" aria-label="Close settings">&times;</button>
+            </div>
+            <div id="mobileSettingsBody" class="mobile-settings-body">
+                <!-- The existing userPreferencesPanel will be moved into this container on mobile -->
+            </div>
+        </div>
+    </div>
     
     <!-- Hospital Trust Selection Modal -->
     <div id="hospitalTrustModal" class="hospital-trust-modal hidden">
@@ -1049,23 +1081,24 @@
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
     
-    <!-- Auto-return to requested page after sign-in -->
+    <!-- Auto-return to requested page after sign-in (tab-scoped using sessionStorage) -->
     <script type="module">
         import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
         const auth = window.auth;
         if (auth) {
             onAuthStateChanged(auth, (user) => {
                 try {
-                    const returnTo = localStorage.getItem('returnToPage');
-                    const returnAfterLogin = localStorage.getItem('returnAfterLogin');
+                    // Use sessionStorage so redirect intent is scoped to the current tab only
+                    const returnTo = sessionStorage.getItem('returnToPage');
+                    const returnAfterLogin = sessionStorage.getItem('returnAfterLogin');
                     // Only redirect to a saved page if this was explicitly set during a login flow
                     if (user && returnTo && returnAfterLogin === '1') {
-                        localStorage.removeItem('returnToPage');
-                        localStorage.removeItem('returnAfterLogin');
+                        sessionStorage.removeItem('returnToPage');
+                        sessionStorage.removeItem('returnAfterLogin');
                         window.location.href = returnTo;
                     } else if (returnAfterLogin !== '1' && returnTo) {
                         // Safety: clear stale returnTo without redirecting
-                        localStorage.removeItem('returnToPage');
+                        sessionStorage.removeItem('returnToPage');
                     }
                 } catch (e) {
                     // ignore
@@ -1087,6 +1120,25 @@
         import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13';
         import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
         import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
+        import Link from 'https://esm.sh/@tiptap/extension-link@2.1.13';
+        
+        // Extend TipTap's Link extension to preserve our data-link-data attribute
+        const GuidelineLink = Link.extend({
+            addAttributes() {
+                const parent = this.parent ? this.parent() : {};
+                return {
+                    ...parent,
+                    'data-link-data': {
+                        default: null,
+                        parseHTML: element => element.getAttribute('data-link-data'),
+                        renderHTML: attributes => {
+                            if (!attributes['data-link-data']) return {};
+                            return { 'data-link-data': attributes['data-link-data'] };
+                        }
+                    }
+                };
+            }
+        });
         
         // Create global editors object
         window.editors = window.editors || {};
@@ -1110,6 +1162,15 @@
                         }),
                         TextStyle,
                         Color,
+                        GuidelineLink.configure({
+                            openOnClick: false, // We'll handle clicks manually
+                            autolink: true,
+                            HTMLAttributes: {
+                                class: 'guideline-link',
+                                rel: 'noopener noreferrer',
+                                target: '_blank',
+                            },
+                        }),
                         Placeholder.configure({
                             placeholder: 'Record a transcript, enter a clinical note or ask a question here...'
                         })
@@ -1117,7 +1178,18 @@
                     content: '',
                     editable: true,
                     autofocus: false,
+                    onUpdate: ({ editor }) => {
+                        const hasContent = editor.getText().trim().length > 0;
+                        if (typeof updateAnalyseAndResetButtons === 'function') {
+                            updateAnalyseAndResetButtons(hasContent);
+                        }
+                    }
                 });
+                
+                // Initial visibility check
+                if (typeof updateAnalyseAndResetButtons === 'function') {
+                    updateAnalyseAndResetButtons(false);
+                }
                 
                 // Basic editor setup
                 editor.on('create', () => {
@@ -1157,6 +1229,33 @@
     <!-- Anonymisation module -->
     <script type="module" src="anonymisation.js"></script>
     
+    <!-- Link Click Handler for TipTap -->
+    <script>
+        // Global click handler for TipTap links
+        // TipTap sanitizes onclick attributes, so we need to handle clicks at the container level
+        document.addEventListener('DOMContentLoaded', () => {
+            const userInput = document.getElementById('userInput');
+            if (userInput) {
+                userInput.addEventListener('click', (event) => {
+                    const link = event.target.closest('a');
+                    if (link && link.hasAttribute('data-link-data')) {
+                        console.log('[TIPTAP] Citation link clicked');
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        // Check if prepareViewerAuth is available
+                        if (typeof window.prepareViewerAuth === 'function') {
+                            window.prepareViewerAuth(event, link);
+                        } else {
+                            console.error('[TIPTAP] window.prepareViewerAuth is not defined');
+                        }
+                    }
+                });
+                console.log('[TIPTAP] Link click handler initialized');
+            }
+        });
+    </script>
+
     <!-- Cache Manager - Load before main script -->
     <script src="cache-manager.js"></script>
     

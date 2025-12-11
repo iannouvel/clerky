@@ -48,6 +48,104 @@ window.currentChangeIndex = -1;
 window.isMobile = false;
 window.mobileView = 'userInput'; // 'userInput' or 'summary1'
 
+// Mobile settings overlay state
+let mobileSettingsInitialized = false;
+let mobileSettingsOverlayOpen = false;
+let userPreferencesOriginalParent = null;
+let userPreferencesOriginalNextSibling = null;
+
+function openMobileSettingsOverlay() {
+    if (!window.isMobile) return;
+
+    const overlay = document.getElementById('mobileSettingsOverlay');
+    const bodyContainer = document.getElementById('mobileSettingsBody');
+    const panel = document.getElementById('userPreferencesPanel');
+
+    if (!overlay || !bodyContainer || !panel) {
+        console.warn('[MOBILE] Mobile settings elements not found');
+        return;
+    }
+
+    // Remember original placement on first open
+    if (!userPreferencesOriginalParent) {
+        userPreferencesOriginalParent = panel.parentElement;
+        userPreferencesOriginalNextSibling = panel.nextSibling;
+    }
+
+    // Move preferences panel into the overlay body
+    if (panel.parentElement !== bodyContainer) {
+        bodyContainer.appendChild(panel);
+    }
+
+    overlay.classList.remove('hidden');
+    document.body.classList.add('mobile-settings-open');
+    mobileSettingsOverlayOpen = true;
+}
+
+function closeMobileSettingsOverlay() {
+    const overlay = document.getElementById('mobileSettingsOverlay');
+    const panel = document.getElementById('userPreferencesPanel');
+
+    if (overlay) {
+        overlay.classList.add('hidden');
+    }
+
+    // Move the panel back to its original location so desktop layout is unchanged
+    if (panel && userPreferencesOriginalParent) {
+        if (userPreferencesOriginalNextSibling && userPreferencesOriginalNextSibling.parentElement === userPreferencesOriginalParent) {
+            userPreferencesOriginalParent.insertBefore(panel, userPreferencesOriginalNextSibling);
+        } else {
+            userPreferencesOriginalParent.appendChild(panel);
+        }
+    }
+
+    document.body.classList.remove('mobile-settings-open');
+    mobileSettingsOverlayOpen = false;
+}
+
+function initializeMobileSettingsOverlay() {
+    if (mobileSettingsInitialized) return;
+
+    const toggleBtn = document.getElementById('mobileSettingsToggleBtn');
+    const overlay = document.getElementById('mobileSettingsOverlay');
+    const closeBtn = document.getElementById('mobileSettingsCloseBtn');
+
+    if (!toggleBtn || !overlay) {
+        // Elements may not be ready yet
+        return;
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        if (mobileSettingsOverlayOpen) {
+            closeMobileSettingsOverlay();
+        } else {
+            openMobileSettingsOverlay();
+        }
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            closeMobileSettingsOverlay();
+        });
+    }
+
+    // Close when clicking outside the dialog
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+            closeMobileSettingsOverlay();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobileSettingsOverlayOpen) {
+            closeMobileSettingsOverlay();
+        }
+    });
+
+    mobileSettingsInitialized = true;
+}
+
 // Detect if device is mobile based on viewport width and user agent
 function detectMobile() {
     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
@@ -74,6 +172,7 @@ function applyMobileLayout() {
     const mainContent = document.getElementById('mainContent');
     const chatbotLayout = document.getElementById('chatbotLayout');
     const mobileToggleContainer = document.getElementById('mobileViewToggle');
+    const mobileSettingsToggleBtn = document.getElementById('mobileSettingsToggleBtn');
     
     // If mainContent doesn't exist yet, try again after a short delay
     if (!mainContent) {
@@ -89,18 +188,32 @@ function applyMobileLayout() {
     if (window.isMobile) {
         body.classList.add('mobile-mode');
         mainContent.classList.add('mobile-mode');
+        initializeMobileSettingsOverlay();
         
         // Hide mobile toggle buttons (not needed with chatbot layout)
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
         }
+
+        if (mobileSettingsToggleBtn) {
+            mobileSettingsToggleBtn.classList.remove('hidden');
+        }
     } else {
+        // Ensure any open mobile settings overlay is closed when leaving mobile mode
+        if (mobileSettingsOverlayOpen) {
+            closeMobileSettingsOverlay();
+        }
+
         body.classList.remove('mobile-mode');
         mainContent.classList.remove('mobile-mode');
         
         // Hide mobile toggle buttons
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
+        }
+
+        if (mobileSettingsToggleBtn) {
+            mobileSettingsToggleBtn.classList.add('hidden');
         }
     }
 }
@@ -337,26 +450,6 @@ function showCurrentPIIMatch() {
                 </div>
             </div>
             
-            <div class="pii-navigation" style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                ${currentIndex > 0 ? `
-                    <button onclick="navigatePIIReview(-1)" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                        ⬅ Previous
-                    </button>
-                ` : ''}
-                <button onclick="handlePIIDecision('replace')" style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">
-                    ✅ Replace
-                </button>
-                <button onclick="handlePIIDecision('keep')" style="background: #17a2b8; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    📝 Keep
-                </button>
-                <button onclick="handlePIIDecision('skip')" style="background: #ffc107; color: #000; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    ⏭ Skip
-                </button>
-                <button onclick="cancelPIIReview()" style="background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                    ❌ Cancel All
-                </button>
-            </div>
-            
             <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">
                 ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
             </div>
@@ -367,16 +460,30 @@ function showCurrentPIIMatch() {
     const existingReview = document.getElementById('pii-review-current');
     if (existingReview && existingReview.parentElement) {
         existingReview.outerHTML = reviewHtml;
-        // Update critical status and scroll to show the buttons after replacing
+        // Update critical status
         setTimeout(() => {
             updateSummaryCriticalStatus();
-            scrollToPIIReviewButtons();
         }, 100);
     } else {
         appendToSummary1(reviewHtml, true);
         // Note: updateSummaryCriticalStatus will be called by appendToSummary1
-        // Just need to ensure scroll happens after
-        setTimeout(() => scrollToPIIReviewButtons(), 200);
+    }
+    
+    // Show PII buttons in fixedButtonRow
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+    const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+    const piiPrevBtn = document.getElementById('piiPrevBtn');
+
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'flex';
+        if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
+        if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
+        
+        // Update Previous button visibility
+        if (piiPrevBtn) {
+             piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+        }
     }
 }
 
@@ -447,7 +554,7 @@ window.handlePIIDecision = function(action) {
     
     // If action is from button click, use it; otherwise get from radio
     let finalAction = action;
-    if (action === 'replace' || action === 'keep') {
+    if (action === 'replace' || action === 'keep' || action === 'skip') {
         // Use the action parameter
     } else {
         // Get from radio selection
@@ -524,21 +631,17 @@ function completePIIReview() {
         }
     });
 
-    // Show completion message
-    const completionHtml = `
-        <div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;">
-            <strong>✅ Privacy Review Complete</strong><br>
-            ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised • ${review.decisions.length - replacementsCount} kept original<br>
-            <em>AI will receive a redacted version; the original remains visible locally.</em>
-        </div>
-    `;
-    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
-        reviewContainer.outerHTML = completionHtml;
-    } else {
-        appendToSummary1(completionHtml, false);
+        reviewContainer.remove();
     }
+    
+    // Summarise outcome via status message instead of summary1 content
+    const keptOriginal = review.decisions.length - replacementsCount;
+    updateUser(
+        `Privacy review complete: ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised, ${keptOriginal} kept original.`,
+        false
+    );
 
     // Resolve the promise
     review.resolve({
@@ -549,6 +652,12 @@ function completePIIReview() {
 
     // Clean up
     window.currentPIIReview = null;
+    
+    // Hide PII buttons
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'none';
+    }
 }
 
 // Cancel the entire PII review
@@ -561,20 +670,13 @@ window.cancelPIIReview = function() {
     // Clear highlighting
     clearHighlightInEditor();
 
-    // Show cancellation message
-    const cancelHtml = `
-        <div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;">
-            <strong>⚠️ Privacy Review Cancelled</strong><br>
-            Original text will be used without anonymisation
-        </div>
-    `;
-    
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
-        reviewContainer.outerHTML = cancelHtml;
-    } else {
-        appendToSummary1(cancelHtml, false);
+        reviewContainer.remove();
     }
+    
+    // Inform user via status message
+    updateUser('Privacy review cancelled – original text will be used without anonymisation.', false);
 
     // Resolve with cancellation
     review.resolve({
@@ -585,6 +687,12 @@ window.cancelPIIReview = function() {
 
     // Clean up
     window.currentPIIReview = null;
+
+    // Hide PII buttons
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = 'none';
+    }
 };
 
 // Helper to escape HTML entities
@@ -592,6 +700,29 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// Helper to safely apply modification suggestions to the userInput content.
+// Returns { content, didReplace } and leaves it up to the caller to decide
+// how to handle cases where the original text is no longer present.
+function applySuggestionTextReplacement(currentContent, originalText, replacementText) {
+    if (!originalText || typeof originalText !== 'string') {
+        console.warn('[DEBUG] applySuggestionTextReplacement: No originalText provided');
+        return { content: currentContent, didReplace: false };
+    }
+
+    const escapedOriginal = originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(escapedOriginal, 'gi');
+
+    if (!regex.test(currentContent)) {
+        console.warn('[DEBUG] applySuggestionTextReplacement: Original text not found in current content', {
+            originalTextSnippet: originalText.slice(0, 120)
+        });
+        return { content: currentContent, didReplace: false };
+    }
+
+    const newContent = currentContent.replace(regex, replacementText);
+    return { content: newContent, didReplace: true };
 }
 
 // Helper to unescape HTML entities
@@ -784,7 +915,7 @@ function getUserInputContent() {
     return '';
 }
 
-function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null) {
+function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null, isHtml = false) {
     const editor = window.editors?.userInput;
     
     if (!editor || !editor.commands) {
@@ -810,7 +941,10 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         // Only apply amber color for PII and Guideline Suggestions changes
         const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
         
-        if (shouldColor) {
+        if (isHtml) {
+            // Directly set HTML content
+            editor.commands.setContent(safeContent);
+        } else if (shouldColor) {
             // Set content with amber color
             if (replacements && replacements.length > 0) {
                 // Only color the specific replacements
@@ -856,23 +990,31 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         // Update undo/redo button states
         updateUndoRedoButtons();
     } else {
-        // Regular content update without coloring
-        // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
-        // First, normalize multiple consecutive blank lines into single blank lines
-        const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-        
-        // Split by double newlines (paragraph breaks) and single newlines (line breaks)
-        const paragraphs = normalizedContent.split('\n\n');
-        const htmlContent = paragraphs
-            .filter(para => para.trim().length > 0)
-            .map(para => {
-                // Within each paragraph, convert single newlines to <br>
-                const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
-                return `<p>${lines}</p>`;
-            })
-            .join('');
-        editor.commands.setContent(htmlContent);
+        if (isHtml) {
+            editor.commands.setContent(safeContent);
+        } else {
+            // Regular content update without coloring
+            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
+            // First, normalize multiple consecutive blank lines into single blank lines
+            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+            
+            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    // Within each paragraph, convert single newlines to <br>
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
+                    return `<p>${lines}</p>`;
+                })
+                .join('');
+            editor.commands.setContent(htmlContent);
+        }
     }
+    
+    // Manually update Analyse/Reset button visibility after programmatic content changes
+    const hasContent = safeContent.trim().length > 0;
+    updateAnalyseAndResetButtons(hasContent);
     
     // Update button visibility after content is set (with small delay to ensure TipTap has processed)
     setTimeout(() => {
@@ -1064,6 +1206,28 @@ function displayRelevantGuidelines(categories) {
     // Create and display the new guideline selection interface
     createGuidelineSelectionInterface(categories, allRelevantGuidelines);
 }
+
+// Central helper to manage Analyse/Reset button visibility and state
+function updateAnalyseAndResetButtons(hasContent) {
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Analyse button only appears when there is content
+    if (analyseBtn) {
+        analyseBtn.style.display = hasContent ? 'flex' : 'none';
+    }
+
+    // Reset button should remain visible at all times in the fixed bar
+    if (resetBtn) {
+        resetBtn.style.display = 'flex';
+        // Disable Reset when there is nothing meaningful to clear
+        const hasWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+        resetBtn.disabled = !hasContent && !hasWorkflows;
+    }
+}
+
+// Expose helper globally so inline scripts (e.g. TipTap initialiser in index.html) can use it
+window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 
 // New function to create guideline selection interface with checkboxes
 function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
@@ -1502,6 +1666,43 @@ function updateProcessButtonText() {
     }
 }
 
+// Function to show update messages to the user in the fixed button row
+function updateUser(message, isLoading = false) {
+    const statusEl = document.getElementById('serverStatusMessage');
+    
+    if (!statusEl) {
+        console.warn('[STATUS] serverStatusMessage element not found');
+        return;
+    }
+
+    if (message) {
+        // When loading, show spinner + message; otherwise just text
+        if (isLoading) {
+            statusEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
+        } else {
+            statusEl.textContent = message;
+        }
+
+        statusEl.style.display = 'flex';
+
+        // Auto-hide non-loading messages after a short delay
+        if (!isLoading) {
+            const currentMessage = statusEl.textContent;
+            setTimeout(() => {
+                // Only hide if nothing has changed since we scheduled the hide
+                if (statusEl.textContent === currentMessage) {
+                    statusEl.style.display = 'none';
+                    statusEl.textContent = '';
+                }
+            }, 5000);
+        }
+    } else {
+        // Explicit clear
+        statusEl.style.display = 'none';
+        statusEl.textContent = '';
+    }
+}
+
 // Function to show selection buttons in the fixed button row
 function showSelectionButtons() {
     const buttonContainer = document.getElementById('fixedButtonRow');
@@ -1579,10 +1780,16 @@ function hideSelectionButtons() {
 function handleGlobalReset() {
     console.log('[DEBUG] Reset button clicked');
     
-    // Don't allow reset while workflows or sequential processing are active
-    if (window.workflowInProgress || window.sequentialProcessingActive) {
-        console.log('[DEBUG] Reset ignored because a workflow is in progress');
-        return;
+    // Stop any active analysis/workflow
+    if (window.analysisAbortController) {
+        console.log('[DEBUG] Aborting active analysis');
+        window.analysisAbortController.abort();
+        window.analysisAbortController = null;
+    }
+    // Immediately reset Analyse button progress UI if helper is available
+    if (typeof updateAnalyseButtonProgress === 'function') {
+        // No args → reset to default idle state ('Analyse', no spinner)
+        updateAnalyseButtonProgress();
     }
     
     // Clear user input (TipTap editor)
@@ -1614,12 +1821,67 @@ function handleGlobalReset() {
         clerkingButtonsGroup.style.display = 'none';
     }
     hideSelectionButtons();
+
+    // Reset any suggestion-review buttons and state in the fixed button row
+    if (typeof updateSuggestionActionButtons === 'function') {
+        // Clear current review state so helper hides the suggestion group
+        window.currentSuggestionReview = null;
+        updateSuggestionActionButtons();
+    } else {
+        const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+        if (suggestionActionsGroup) {
+            suggestionActionsGroup.style.display = 'none';
+        }
+    }
+
+    // Cancel any active PII review and hide its buttons
+    if (typeof window.cancelPIIReview === 'function') {
+        window.cancelPIIReview();
+    } else {
+        const piiActionsGroup = document.getElementById('piiActionsGroup');
+        if (piiActionsGroup) {
+            piiActionsGroup.style.display = 'none';
+        }
+    }
+
+    // Clear server status message in the fixed button row
+    const serverStatusMessage = document.getElementById('serverStatusMessage');
+    if (serverStatusMessage) {
+        serverStatusMessage.style.display = 'none';
+        serverStatusMessage.textContent = '';
+    }
+
+    // Clear any multi-guideline selection state if helper is available
+    if (typeof window.clearMultiGuidelineState === 'function') {
+        window.clearMultiGuidelineState();
+    }
+
+    // Clear proforma inputs (both obstetric and gynaecology)
+    const proformaInputs = document.querySelectorAll('.proforma-input');
+    proformaInputs.forEach(input => {
+        if (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA') {
+            input.value = '';
+        } else if (input.tagName === 'SELECT') {
+            input.selectedIndex = 0;
+        }
+    });
     
     // Clear transient messages and hide summary section if now empty
     if (typeof removeTransientMessages === 'function') {
         removeTransientMessages();
     }
     updateSummaryVisibility();
+    
+    // Reset processing flags and sequential state after UI has been cleared
+    window.workflowInProgress = false;
+    window.sequentialProcessingActive = false;
+    window.isAnalysisRunning = false;
+    window.sequentialProcessingQueue = [];
+    window.sequentialProcessingIndex = 0;
+
+    // Update analyse/reset button state based on cleared content
+    const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
+    updateAnalyseAndResetButtons(hasContent);
     
     console.log('[DEBUG] Global reset completed');
 }
@@ -3233,18 +3495,27 @@ function updateSummaryVisibility() {
     // Check if loading spinner is visible
     const isLoading = loadingSpinner && !loadingSpinner.classList.contains('hidden');
     
-    // Check if summary has actual content (excluding loading spinner)
+    // Check if summary has actual *visible* content (excluding loading spinner)
     const contentElements = Array.from(summary1.children).filter(
         child => child.id !== 'summaryLoadingSpinner'
     );
-    const hasContent = contentElements.length > 0 && 
-                       summary1.textContent.trim().length > 0;
+    
+    const hasVisibleContent = contentElements.some(child => {
+        const style = window.getComputedStyle(child);
+        const text = child.textContent ? child.textContent.trim() : '';
+        return (
+            style.display !== 'none' &&
+            style.visibility !== 'hidden' &&
+            child.offsetHeight > 0 &&
+            text.length > 0
+        );
+    });
     
     // Treat visible clinical issues panel as content so the section stays open
     const hasClinicalPanel = clinicalPanel && !clinicalPanel.classList.contains('hidden');
     
-    // Show summary if loading or has content
-    if (isLoading || hasContent || hasClinicalPanel) {
+    // Show summary if loading or has visible content
+    if (isLoading || hasVisibleContent || hasClinicalPanel) {
         summarySection.classList.remove('hidden');
     } else {
         summarySection.classList.add('hidden');
@@ -3281,13 +3552,27 @@ function showSummaryLoading() {
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
     
-    if (!summarySection || !summary1 || !loadingSpinner) return;
+    if (!summary1 || !loadingSpinner) return;
     
-    // Show summary section
-    summarySection.classList.remove('hidden');
-    summarySection.classList.add('loading');
+    // Determine if there's already real content/decision UI in summary1
+    const hasRealContent =
+        summary1.textContent.trim().length > 0 ||
+        Array.from(summary1.children).some(child => child.id !== 'summaryLoadingSpinner');
     
-    // Show loading spinner
+    const sectionVisible = summarySection && !summarySection.classList.contains('hidden');
+    
+    // If there's no existing content and the section is hidden, avoid popping up
+    // an empty summary panel with just \"Processing...\" – use serverStatusMessage instead.
+    if (!sectionVisible && !hasRealContent) {
+        return;
+    }
+    
+    if (summarySection) {
+        summarySection.classList.remove('hidden');
+        summarySection.classList.add('loading');
+    }
+    
+    // Show loading spinner over existing content/decision UI
     loadingSpinner.classList.remove('hidden');
 }
 
@@ -3424,20 +3709,19 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
-                        // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
-                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
-                            `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false);
+                        // Surface outcome via status message (decision itself happens in the PII UI)
+                        const redactedCount = reviewResult.replacementsCount;
+                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
+                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
+                        updateUser('Privacy review cancelled – using original transcript.', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
+                    updateUser('Privacy check complete – no significant personal information detected.', false);
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3457,8 +3741,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         const idToken = await user.getIdToken();
 
         // Update progress
-        const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false, true); // Transient
+        updateUser('Loading guidelines from database...', true);
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
@@ -3470,19 +3753,19 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
             
             if (guidelines.length === 0) {
-                const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
-                appendToSummary1(noGuidelinesMsg, false);
+                const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+                updateUser(noGuidelinesMsg, false);
                 alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
                 return;
             }
             
-            // Add scope info to summary
+            // Add scope info via status message
             const scopeInfo = scope === 'national' 
-                ? `Searching ${guidelines.length} national guidelines...\n`
+                ? `Searching ${guidelines.length} national guidelines...`
                 : scope === 'local'
-                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...\n`
-                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...\n`;
-            appendToSummary1(scopeInfo, false, true); // Transient
+                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
+                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
+            updateUser(scopeInfo, true);
         }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
@@ -3514,8 +3797,8 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         });
 
         // Update progress with guideline count
-        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false, true); // Transient
+        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...`;
+        updateUser(analyzeMessage, true);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: anonymisedTranscript.length,
@@ -3536,6 +3819,8 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error('Analysis cancelled');
         }
         
+        updateUser('Finding relevant guidelines...', true);
+
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
             headers: {
@@ -3565,8 +3850,11 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         const data = await response.json();
         if (!data.success) {
+            updateUser('Error finding guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
+        
+        updateUser('Guidelines found', false);
 
         console.log('[DEBUG] Server response categories structure:', {
             categories: data.categories,
@@ -3580,34 +3868,29 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         });
 
         // Update progress with completion
-        const completionMessage = 'Analysis complete! Categorising relevant guidelines...\n\n';
-        appendToSummary1(completionMessage, false, true); // Transient
+        const completionMessage = 'Analysis complete – categorising relevant guidelines...';
+        updateUser(completionMessage, true);
 
         // Process and display the results with the new selection interface
         createGuidelineSelectionInterface(data.categories, window.relevantGuidelines);
 
-        // Add final summary
+        // Add final summary via status message
         const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
                             (data.categories.potentiallyRelevant?.length || 0) + 
                             (data.categories.lessRelevant?.length || 0);
         
-        const summaryMessage = `## Summary\n\nFound ${totalRelevant} relevant guidelines out of ${guidelinesList.length} total guidelines.\n\n` +
-                              `**Most Relevant:** ${data.categories.mostRelevant?.length || 0} guidelines\n` +
-                              `**Potentially Relevant:** ${data.categories.potentiallyRelevant?.length || 0} guidelines\n` +
-                              `**Less Relevant:** ${data.categories.lessRelevant?.length || 0} guidelines\n\n` +
-                              `💡 **Tip:** Click on the 📄 PDF links next to any guideline to download the full document.\n\n` +
-                              `Guidelines are now ready for analysis. Use "Check against guidelines" to proceed.\n`;
+        const summaryMessage = `Found ${totalRelevant} relevant guidelines out of ${guidelinesList.length}. Most: ${data.categories.mostRelevant?.length || 0}, potentially: ${data.categories.potentiallyRelevant?.length || 0}, less relevant: ${data.categories.lessRelevant?.length || 0}.`;
         
-        appendToSummary1(summaryMessage, false, true); // Transient - will be cleaned up after processing
+        updateUser(summaryMessage, false);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
         
-        // Display error in summary1
-        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
+        // Display error via status message (alert also shown below)
+        const errorMessage = `Error finding relevant guidelines: ${error.message}`;
+        updateUser(errorMessage, false);
         
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
@@ -3675,20 +3958,19 @@ async function generateClinicalNote() {
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
                         
-                        // Add anonymisation notice to the summary
-                        const anonymisationNotice = `\n🔒 **Privacy Protection Applied**\n` +
-                            `- ${reviewResult.replacementsCount} personal ${reviewResult.replacementsCount === 1 ? 'item' : 'items'} redacted\n` +
-                            `- Clinical information preserved\n\n`;
-                        appendToSummary1(anonymisationNotice, false);
+                        // Surface outcome via status message (decision itself happens in the PII UI)
+                        const redactedCount = reviewResult.replacementsCount;
+                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
+                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
                     } else {
                         // User cancelled the review, use original transcript
                         console.log('[ANONYMISER] User cancelled PII review, using original transcript');
                         anonymisedTranscript = transcript;
-                        appendToSummary1('\n⚠️ **Privacy Note:** PII review was cancelled, using original data\n\n', false);
+                        updateUser('Privacy review cancelled – using original transcript.', false);
                     }
                 } else {
                     console.log('[ANONYMISER] No significant PII detected');
-                    appendToSummary1('\n✅ **Privacy Check:** No significant personal information detected\n\n', false, true); // Transient
+                    updateUser('Privacy check complete – no significant personal information detected.', false);
                 }
             } else {
                 console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
@@ -3713,6 +3995,8 @@ async function generateClinicalNote() {
         // Get ID token for authentication
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token');
+
+        updateUser('Generating clinical note...', true);
 
         console.log('[DEBUG] Sending request to server...');
         const response = await fetch(`${window.SERVER_URL}/generateClinicalNote`, {
@@ -3745,8 +4029,11 @@ async function generateClinicalNote() {
 
         if (!data.success || !data.note) {
             console.error('[DEBUG] Invalid response format:', data);
+            updateUser('Error generating note', false);
             throw new Error('Invalid response format from server');
         }
+
+        updateUser('Clinical note generated', false);
 
         // Replace the user input with the generated note
         console.log('[DEBUG] Replacing user input with generated note');
@@ -3758,6 +4045,7 @@ async function generateClinicalNote() {
             error: error.message,
             stack: error.stack
         });
+        updateUser('Error generating note', false);
         alert(`Error generating clinical note: ${error.message}`);
     } finally {
         // Reset button state
@@ -3795,6 +4083,15 @@ function removeTransientMessages() {
         setTimeout(() => {
             element.remove();
             console.log(`[DEBUG] Removed transient message ${index + 1}`);
+            
+            // After the last element is removed, re-evaluate visibility
+            if (index === transientElements.length - 1) {
+                setTimeout(() => {
+                    if (typeof updateSummaryVisibility === 'function') {
+                        updateSummaryVisibility();
+                    }
+                }, 50);
+            }
         }, 300);
     });
 }
@@ -3854,16 +4151,18 @@ const streamingEngine = {
     charDelay: 10, // milliseconds per character (very fast streaming)
     
     // Add content to the streaming queue
-    enqueue(contentWrapper, shouldPause, onComplete) {
+    enqueue(contentWrapper, shouldPause, onComplete, options = {}) {
         console.log('[STREAMING] Enqueuing content for streaming', {
             hasInteractive: shouldPause,
-            queueLength: this.queue.length
+            queueLength: this.queue.length,
+            options
         });
         
         this.queue.push({
             wrapper: contentWrapper,
             shouldPause,
-            onComplete
+            onComplete,
+            options
         });
         
         // Start processing if not already streaming
@@ -3890,13 +4189,18 @@ const streamingEngine = {
         
         console.log('[STREAMING] Processing queue item', {
             shouldPause: item.shouldPause,
-            remainingInQueue: this.queue.length
+            remainingInQueue: this.queue.length,
+            action: item.options?.action || 'streamIn'
         });
         
-        await this.streamElement(item.wrapper, item.shouldPause);
-        
-        if (item.onComplete) {
-            item.onComplete();
+        if (item.options?.action === 'unstream') {
+            await this.unstreamElement(item.wrapper, item.onComplete);
+        } else if (item.options?.action === 'wait') {
+            await this.delay(item.options.duration || 1000);
+            if (item.onComplete) item.onComplete();
+        } else {
+            await this.streamElement(item.wrapper, item.shouldPause, item.options);
+            if (item.onComplete) item.onComplete();
         }
         
         // Continue with next item unless paused
@@ -3904,15 +4208,70 @@ const streamingEngine = {
             this.processQueue();
         }
     },
+
+    // Stream removal of an element's content (reverse typing)
+    async unstreamElement(wrapper, onComplete) {
+        console.log('[STREAMING] ◄◄◄ Starting unstream of element');
+        
+        if (!wrapper || !wrapper.parentNode) {
+            console.log('[STREAMING] Wrapper missing, skipping unstream');
+            if (onComplete) onComplete();
+            return;
+        }
+
+        // Get text content to unstream
+        const textContent = wrapper.textContent || '';
+        
+        // Create streaming container
+        const streamContainer = document.createElement('div');
+        streamContainer.className = 'streaming-container';
+        streamContainer.style.display = 'inline';
+        
+        // Create cursor
+        const cursor = document.createElement('span');
+        cursor.className = 'streaming-cursor';
+        cursor.textContent = '▋';
+        
+        // Replace content with streaming setup
+        wrapper.innerHTML = '';
+        wrapper.appendChild(streamContainer);
+        wrapper.appendChild(cursor);
+        
+        let currentText = textContent;
+        streamContainer.textContent = currentText;
+        
+        // Unstream character by character
+        while (currentText.length > 0) {
+            if (this.isPaused) {
+                wrapper.remove();
+                break;
+            }
+            
+            currentText = currentText.slice(0, -1);
+            streamContainer.textContent = currentText;
+            
+            await this.delay(this.charDelay);
+        }
+        
+        // Clean up
+        cursor.remove();
+        wrapper.remove();
+        
+        console.log('[STREAMING] Unstream complete');
+        
+        if (onComplete) onComplete();
+    },
     
     // Stream a single element's content
-    async streamElement(wrapper, shouldPauseAfter) {
+    async streamElement(wrapper, shouldPauseAfter, options = {}) {
         console.log('[STREAMING] ►►► Starting stream of element', {
             willPauseAfter: shouldPauseAfter,
-            timestamp: new Date().toISOString()
+            timestamp: new Date().toISOString(),
+            forceStream: options?.forceStream
         });
         
         // Show the wrapper immediately
+        wrapper.style.display = ''; // Restore default display (block)
         wrapper.style.opacity = '1';
         console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
         
@@ -3934,16 +4293,16 @@ const streamingEngine = {
         // OPTIMIZATION: Only stream short content character-by-character
         // For long content (>200 chars), show instantly to avoid delays
         const MAX_STREAM_LENGTH = 200;
-        const shouldStreamFully = textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20;
+        const shouldStreamFully = options.forceStream || (textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20);
         
         console.log('[STREAMING] Streaming decision:', {
             textLength: textContent.length,
             maxStreamLength: MAX_STREAM_LENGTH,
             shouldStreamFully,
-            willShowInstantly: textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH
+            willShowInstantly: !options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)
         });
         
-        if (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH) {
+        if (!options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)) {
             console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
                 reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
                 length: textContent.length
@@ -4174,12 +4533,29 @@ const streamingEngine = {
 
 // ==================== END STREAMING ENGINE ====================
 
-function appendToSummary1(content, clearExisting = false, isTransient = false) {
+// Utility: strip emoji/icon characters from text before rendering in summary1
+function stripSummaryEmojis(text) {
+    if (!text || typeof text !== 'string') return text;
+    
+    try {
+        // Preferred: use Unicode property escapes for pictographic symbols
+        const emojiRegex = /\p{Extended_Pictographic}/gu;
+        return text.replace(emojiRegex, '');
+    } catch (e) {
+        // Fallback for environments without Unicode property escapes:
+        // remove common emoji/icon blocks
+        const basicEmojiRegex = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu;
+        return text.replace(basicEmojiRegex, '');
+    }
+}
+
+function appendToSummary1(content, clearExisting = false, isTransient = false, options = {}) {
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log('[SUMMARY1 DEBUG] appendToSummary1 called with:', {
         contentLength: content?.length,
         clearExisting,
         isTransient,
+        options,
         timestamp: new Date().toISOString()
     });
     console.log('[SUMMARY1 DEBUG] Full content:', content);
@@ -4218,26 +4594,29 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         // Hide loading spinner when content is being added
         hideSummaryLoading();
 
+        // Normalise content for summary1: strip emojis/icons so typography stays clean
+        const sanitizedContent = typeof content === 'string' ? stripSummaryEmojis(content) : content;
+
         // Check if content is already HTML
-        const isHtml = /<[a-z][\s\S]*>/i.test(content);
+        const isHtml = typeof sanitizedContent === 'string' && /<[a-z][\s\S]*>/i.test(sanitizedContent);
         console.log('[DEBUG] Content type check:', { isHtml });
 
         let processedContent;
         if (isHtml) {
             // If content is already HTML, use it directly
-            processedContent = content;
+            processedContent = sanitizedContent;
         } else {
             // If content is markdown, parse it with marked
             if (!window.marked) {
                 console.error('[DEBUG] Marked library not loaded');
-                processedContent = content;
+                processedContent = sanitizedContent;
             } else {
                 try {
-                    processedContent = window.marked.parse(content);
+                    processedContent = window.marked.parse(sanitizedContent);
                     console.log('[DEBUG] Marked parsing successful');
                 } catch (parseError) {
                     console.error('[DEBUG] Error parsing with marked:', parseError);
-                    processedContent = content;
+                    processedContent = sanitizedContent;
                 }
             }
         }
@@ -4262,7 +4641,47 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
         console.log('[SUMMARY1 DEBUG] Wrapper textContent length:', newContentWrapper.textContent?.length);
 
         // STREAMING DECISION POINT
-        if (isTransient) {
+        if (options.streamEffect === 'in-out') {
+            console.log('[SUMMARY1 DEBUG] ✓ STREAM TRANSIENT PATH - appearing and disappearing by stream');
+            
+            // Start hidden and collapsed
+            newContentWrapper.style.opacity = '0';
+            newContentWrapper.style.display = 'none'; // Hide from layout until streamed
+            
+            // 1. Stream In
+            streamingEngine.enqueue(
+                newContentWrapper, 
+                false, 
+                () => {
+                    console.log('[SUMMARY1 DEBUG] Stream transient IN complete');
+                    updateSummaryVisibility();
+                    updateSummaryCriticalStatus();
+                }, 
+                { forceStream: true, action: 'streamIn' }
+            );
+            
+            // 2. Wait
+            streamingEngine.enqueue(
+                null,
+                false,
+                null,
+                { action: 'wait', duration: options.transientDelay || 5000 }
+            );
+            
+            // 3. Stream Out
+            streamingEngine.enqueue(
+                newContentWrapper,
+                false,
+                () => {
+                    // On removal complete
+                    console.log('[SUMMARY1 DEBUG] Stream transient removal complete');
+                    updateSummaryVisibility();
+                    updateSummaryCriticalStatus();
+                },
+                { action: 'unstream' }
+            );
+            
+        } else if (isTransient) {
             // Transient messages: show instantly, no streaming, auto-remove after delay
             console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
             newContentWrapper.style.opacity = '1';
@@ -4335,11 +4754,18 @@ function appendToSummary1(content, clearExisting = false, isTransient = false) {
     }
 }
 
+// Helper for decision-only UIs in summary1.
+// Use this for new code that renders interactive panels where the user must make a choice.
+function appendDecisionUIToSummary(htmlContent, clearExisting = false, options = {}) {
+    appendToSummary1(htmlContent, clearExisting, false, options);
+}
+
 // Function to replace content in the user input field
-function appendToOutputField(content, clearExisting = true) {
+function appendToOutputField(content, clearExisting = true, isHtml = false) {
     console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
         contentLength: content?.length,
         clearExisting,
+        isHtml,
         contentPreview: content?.substring(0, 100) + '...'
     });
 
@@ -4350,20 +4776,33 @@ function appendToOutputField(content, clearExisting = true) {
     }
 
     try {
-        // Strip HTML tags for plain text display in textarea
         let processedContent = content;
-        if (/<[a-z][\s\S]*>/i.test(content)) {
-            // Remove HTML tags and convert to plain text
+        
+        if (isHtml) {
+            // If isHtml is explicitly true, trust the content
+            processedContent = content;
+        } else if (/<[a-z][\s\S]*>/i.test(content)) {
+            // If HTML is detected but isHtml is false, strip tags (legacy behavior)
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = content;
             processedContent = tempDiv.textContent || tempDiv.innerText || '';
         }
 
         if (clearExisting) {
-            setUserInputContent(processedContent, true, 'Content Replacement');
+            setUserInputContent(processedContent, true, 'Content Replacement', null, isHtml);
         } else {
-            const currentContent = getUserInputContent();
-            setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition');
+            // If appending, we need to get current content as HTML if new content is HTML
+            const editor = window.editors?.userInput;
+            if (editor) {
+                const currentContent = isHtml ? editor.getHTML() : getUserInputContent();
+                const separator = isHtml ? '<br><br>' : '\n\n';
+                const newContent = currentContent + separator + processedContent;
+                setUserInputContent(newContent, true, 'Content Addition', null, isHtml);
+            } else {
+                // Fallback
+                const currentContent = getUserInputContent();
+                setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition', null, false);
+            }
         }
 
         console.log('[DEBUG] Content replaced in user input successfully');
@@ -4656,9 +5095,9 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             guidelinesToProcess = mostRelevantGuidelines.slice(0, MAX_AUTO_PROCESS);
         }
         
-        // Update UI to show guidelines being processed
-        const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...\n\n`;
-        appendToSummary1(processingStatus, false);
+        // Update UI to show guidelines being processed (status bar only)
+        const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...`;
+        updateUser(processingStatus, true);
         
         // Process guidelines in parallel for better performance
         const guidelinePromises = guidelinesToProcess.map(async (relevantGuideline, index) => {
@@ -4879,6 +5318,8 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         const idToken = await user.getIdToken();
         console.log('[DEBUG] dynamicAdvice: Got ID token');
 
+        updateUser(`Generating suggestions for ${guidelineTitle}...`, true);
+
         // Call the dynamicAdvice API with retry logic
         console.log('[DEBUG] dynamicAdvice: Calling API endpoint');
         let response;
@@ -4954,8 +5395,11 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         });
 
         if (!result.success) {
+            updateUser('Error generating suggestions', false);
             throw new Error(result.error || 'Guideline suggestions generation failed');
         }
+        
+        updateUser('Suggestions generated', false);
 
         // Store session data globally and ensure unique suggestion IDs
         currentAdviceSession = result.sessionId;
@@ -4996,15 +5440,8 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             analysisLength: analysis?.length
         });
         
-        // Display error message using appendToOutputField
-        const errorHtml = `
-            <div class="dynamic-advice-error">
-                <h3>❌ Error generating interactive suggestions</h3>
-                <p><strong>Error:</strong> ${error.message}</p>
-                <p>The original analysis is still available above.</p>
-            </div>
-        `;
-        appendToSummary1(errorHtml, false);
+        // Surface error via status bar instead of populating summary1
+        updateUser(`Error generating interactive suggestions: ${error.message}`, false);
         
         throw error;
     }
@@ -5704,8 +6141,37 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     let searchText = null;
     if (context && hasVerbatimQuote === true) {
         const decodedContext = unescapeHtml(context);
+
+        // First, try to extract an explicit quoted segment (used by processWorkflow and audit flows)
         searchText = extractQuotedText(decodedContext);
-        console.log('[DEBUG] Extracted search text for PDF.js viewer:', searchText ? searchText.substring(0, 50) + '...' : 'none');
+
+        // Fallback: if there are no explicit quotes but we were told this is a verbatim quote
+        // (e.g. Ask-Guidelines provides a plain snippet via the REF marker), treat the entire
+        // context as the search text, after cleaning it for PDF search.
+        if (!searchText) {
+            const rawContext = decodedContext.trim();
+            if (rawContext.length >= 10) {
+                const cleanedContext = cleanQuoteForSearch(rawContext);
+                if (cleanedContext && cleanedContext.length >= 10) {
+                    searchText = cleanedContext;
+                    console.log('[DEBUG] createGuidelineViewerLink: Using full context as fallback search text', {
+                        length: searchText.length,
+                        preview: searchText.substring(0, 80) + '...'
+                    });
+                } else {
+                    console.log('[DEBUG] createGuidelineViewerLink: Cleaned context too short for fallback search text', {
+                        rawLength: rawContext.length,
+                        cleanedLength: cleanedContext ? cleanedContext.length : 0
+                    });
+                }
+            } else {
+                console.log('[DEBUG] createGuidelineViewerLink: Context too short for fallback search text', {
+                    rawLength: rawContext.length
+                });
+            }
+        } else {
+            console.log('[DEBUG] Extracted search text for PDF.js viewer from quoted context:', searchText.substring(0, 80) + '...');
+        }
     } else if (hasVerbatimQuote === false) {
         console.log('[DEBUG] hasVerbatimQuote is false - opening PDF to first page without search');
     }
@@ -5721,9 +6187,11 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
         ? ' <span style="color: #f59e0b; font-size: 12px; font-weight: normal;">(Guideline recommendation paraphrased)</span>' 
         : '';
     
-    // Create link with onclick to build authenticated URL and open viewer
-    // We'll build the final URL in prepareViewerAuth to include the fresh token
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' target="_blank" rel="noopener noreferrer" onclick="prepareViewerAuth(event, this); return false;" style="color: #0ea5e9; text-decoration: underline; font-weight: 500;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    // Create link with data-link-data; the actual click is handled by a
+    // delegated listener in index.html so we don't rely on inline onclick.
+    // TipTap will preserve data-link-data via the custom Link extension.
+    // Explicit cursor: pointer so users see it's clickable even inside TipTap.
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="color: #0ea5e9; text-decoration: underline; font-weight: 500; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
@@ -5803,7 +6271,8 @@ async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidel
                 <p><em>Guideline: ${guidelineTitle || 'Unknown'}</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        // Inform user that no suggestions were generated via status bar
+        updateUser(`No specific suggestions were generated from the guideline analysis (${guidelineTitle || 'Unknown'}).`, false);
         return;
     }
 
@@ -5981,27 +6450,21 @@ function setAllSuggestionButtonsApplying(isApplying) {
 function updateSuggestionActionButtons() {
     const review = window.currentSuggestionReview;
     const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
-    const analyseBtn = document.getElementById('analyseBtn');
-    const resetBtn = document.getElementById('resetBtn');
     const clerkyButtonsGroup = document.getElementById('clerkyButtonsGroup');
 
     if (!review) {
         // Hide suggestion buttons, show standard buttons
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
-        // Keep analyse button hidden if it has already been used
-        if (analyseBtn && !window.analyseButtonUsed) {
-            analyseBtn.style.display = 'flex';
-        } else if (analyseBtn) {
-            analyseBtn.style.display = 'none';
-        }
-        if (resetBtn) resetBtn.style.display = 'flex';
+        // Delegate standard button visibility to central helper
+        const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
+        updateAnalyseAndResetButtons(hasContent);
         return;
     }
 
     // Show suggestion buttons, hide standard buttons
     if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'flex';
-    if (analyseBtn) analyseBtn.style.display = 'none';
-    if (resetBtn) resetBtn.style.display = 'none';
+    // While in suggestion review, hide analyse but keep reset visible
+    updateAnalyseAndResetButtons(true);
     if (clerkyButtonsGroup) clerkyButtonsGroup.style.display = 'none'; // Hide clerky buttons if present
 
     // Update specific buttons
@@ -6266,9 +6729,90 @@ window.handleCurrentSuggestionAction = async function(action) {
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
                 }
             } else if (suggestion.originalText) {
-                // Modification/Deletion: replace existing text
-                newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), suggestion.suggestedText);
-                setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [{findText: suggestion.originalText, replacementText: suggestion.suggestedText}]);
+                // Modification/Deletion: try exact replacement first
+                let replacementResult = applySuggestionTextReplacement(
+                    currentContent,
+                    suggestion.originalText,
+                    suggestion.suggestedText
+                );
+
+                if (replacementResult.didReplace) {
+                    newContent = replacementResult.content;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [
+                        { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
+                    ]);
+                } else {
+                    // Fallback: use AI section-merging workflow to fold the new text into the correct section
+                    try {
+                        // Reuse cached insertion point if available, otherwise fetch it now
+                        let insertionPoint = suggestion.cachedInsertionPoint;
+                        if (!insertionPoint) {
+                            console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point for modification, fetching now');
+                            insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                        } else {
+                            console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point for modification');
+                        }
+
+                        // Apply client-side heuristic adjustment (same as for additions)
+                        insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                        console.log('[DEBUG] handleCurrentSuggestionAction (modification): Insertion point:', insertionPoint);
+
+                        // Extract section content
+                        const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                        if (!sectionInfo) {
+                            console.error('[DEBUG] handleCurrentSuggestionAction (modification): Could not extract section, falling back to simple append');
+                            newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (Fallback Append)', [
+                                { findText: '', replacementText: suggestion.suggestedText }
+                            ]);
+                        } else {
+                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Calling incorporateSuggestion API with originalText');
+                            const idToken = await firebase.auth().currentUser.getIdToken();
+                            const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Authorization': `Bearer ${idToken}`
+                                },
+                                body: JSON.stringify({
+                                    sectionName: insertionPoint.section,
+                                    subsectionName: insertionPoint.subsection,
+                                    currentSectionContent: sectionInfo.content,
+                                    suggestionText: suggestion.suggestedText,
+                                    originalText: suggestion.originalText
+                                })
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(`Failed to incorporate suggestion (modification): ${response.status}`);
+                            }
+
+                            const result = await response.json();
+                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Incorporation result:', result.insertionLocation);
+
+                            // Replace section content with modified version
+                            newContent = replaceSectionContent(
+                                currentContent,
+                                insertionPoint.section,
+                                insertionPoint.subsection,
+                                sectionInfo.content,
+                                result.modifiedSectionContent
+                            );
+
+                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Section Merge)', [
+                                { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
+                            ]);
+                        }
+                    } catch (error) {
+                        console.error('[DEBUG] handleCurrentSuggestionAction (modification): Error incorporating via AI, falling back to append:', error);
+                        // Final fallback: append suggested text so it is at least present in the note
+                        newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Fallback Append)', [
+                            { findText: '', replacementText: suggestion.suggestedText }
+                        ]);
+                    }
+                }
             }
         }
         
@@ -6283,7 +6827,7 @@ window.handleCurrentSuggestionAction = async function(action) {
     }
 };
 
-window.confirmCurrentModification = function() {
+window.confirmCurrentModification = async function() {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const modifyTextarea = document.getElementById('modify-textarea-current');
@@ -6308,9 +6852,85 @@ window.confirmCurrentModification = function() {
             newContent = currentContent + spacing + modifiedText;
             setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [{findText: '', replacementText: modifiedText}]);
         } else if (suggestion.originalText) {
-            // Modification: replace existing text with user's modified version
-            newContent = currentContent.replace(new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), modifiedText);
-            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [{findText: suggestion.originalText, replacementText: modifiedText}]);
+            // Modification: try to replace existing text with user's modified version
+            let replacementResult = applySuggestionTextReplacement(
+                currentContent,
+                suggestion.originalText,
+                modifiedText
+            );
+
+            if (replacementResult.didReplace) {
+                newContent = replacementResult.content;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [
+                    { findText: suggestion.originalText, replacementText: modifiedText }
+                ]);
+            } else {
+                // Fallback: use AI section-merging workflow with the user's modified text
+                try {
+                    let insertionPoint = suggestion.cachedInsertionPoint;
+                    if (!insertionPoint) {
+                        console.log('[DEBUG] confirmCurrentModification: No cached insertion point for modification, fetching now');
+                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                    } else {
+                        console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for modification');
+                    }
+
+                    insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                    console.log('[DEBUG] confirmCurrentModification: Insertion point:', insertionPoint);
+
+                    const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                    if (!sectionInfo) {
+                        console.error('[DEBUG] confirmCurrentModification: Could not extract section, falling back to simple append');
+                        newContent = currentContent + '\n\n' + modifiedText;
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (Fallback Append)', [
+                            { findText: '', replacementText: modifiedText }
+                        ]);
+                    } else {
+                        console.log('[DEBUG] confirmCurrentModification: Calling incorporateSuggestion API with originalText and modifiedText');
+                        const idToken = await firebase.auth().currentUser.getIdToken();
+                        const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${idToken}`
+                            },
+                            body: JSON.stringify({
+                                sectionName: insertionPoint.section,
+                                subsectionName: insertionPoint.subsection,
+                                currentSectionContent: sectionInfo.content,
+                                suggestionText: modifiedText,
+                                originalText: suggestion.originalText
+                            })
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`Failed to incorporate modified suggestion: ${response.status}`);
+                        }
+
+                        const result = await response.json();
+                        console.log('[DEBUG] confirmCurrentModification: Incorporation result:', result.insertionLocation);
+
+                        newContent = replaceSectionContent(
+                            currentContent,
+                            insertionPoint.section,
+                            insertionPoint.subsection,
+                            sectionInfo.content,
+                            result.modifiedSectionContent
+                        );
+
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Section Merge)', [
+                            { findText: suggestion.originalText, replacementText: modifiedText }
+                        ]);
+                    }
+                } catch (error) {
+                    console.error('[DEBUG] confirmCurrentModification: Error incorporating via AI, falling back to append:', error);
+                    newContent = currentContent + '\n\n' + modifiedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Fallback Append)', [
+                        { findText: '', replacementText: modifiedText }
+                    ]);
+                }
+            }
         }
         
         clearHighlightInEditor();
@@ -6347,7 +6967,13 @@ async function completeSuggestionReview() {
     
     const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
     const reviewContainer = document.getElementById('suggestion-review-current');
-    if (reviewContainer) reviewContainer.outerHTML = completionHtml; else appendToSummary1(completionHtml, false);
+    if (reviewContainer) reviewContainer.outerHTML = ''; // Remove review UI
+    
+    // Summarise outcomes via status bar instead of summary1 banner
+    updateUser(
+        `Suggestions review complete: ${accepted} accepted, ${rejected} rejected, ${modified} modified, ${skipped} skipped.`,
+        false
+    );
     window.currentSuggestionReview = null;
 
     // Update buttons state
@@ -6396,24 +7022,24 @@ async function completeSuggestionReview() {
                 }).join('');
             }
             
-            // Show transition message
-            const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-            appendToSummary1(transitionMessage, false);
+            // Show transition message in status bar
+            const transitionMessage = 'Incorporating changes and preparing for next guideline...';
+            updateUser(transitionMessage, true);
             
             // Process next guideline after a short delay
             setTimeout(async () => {
                 try {
-                    const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-                    appendToSummary1(processingStepMessage, false);
+                    const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+                    updateUser(processingStepMessage, true);
                     await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                 } catch (error) {
                     console.error('[DEBUG] Error processing next guideline after completion:', error);
-                    const errorMessage = `❌ **Error processing guideline ${nextStepNumber}:** ${error.message}\n\n`;
-                    appendToSummary1(errorMessage, false);
+                    const errorMessage = `Error processing guideline ${nextStepNumber}: ${error.message}`;
+                    updateUser(errorMessage, false);
                 }
             }, 1000);
         } else {
-            // All guidelines processed
+            // All guidelines processed – report via status bar
             console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
             window.sequentialProcessingActive = false;
             updateAnalyseButtonProgress('All Guidelines Complete!', false);
@@ -6430,7 +7056,7 @@ async function completeSuggestionReview() {
                     <p>Successfully processed all ${queue.length} selected guidelines.</p>
                 </div>
             `;
-            appendToSummary1(finalMessage, false);
+            updateUser(`All ${queue.length} selected guidelines processed successfully.`, false);
         }
     }
 }
@@ -6444,9 +7070,9 @@ window.cancelSuggestionReview = function() {
     
     try {
         clearHighlightInEditor();
-        const cancelHtml = `<div style="background: #fff3cd; border: 1px solid #ffeeba; color: #856404; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>⚠️ Suggestions Review Cancelled</strong><br>No changes were applied</div>`;
         const reviewContainer = document.getElementById('suggestion-review-current');
-        if (reviewContainer) reviewContainer.outerHTML = cancelHtml; else appendToSummary1(cancelHtml, false);
+        if (reviewContainer) reviewContainer.outerHTML = '';
+        updateUser('Suggestions review cancelled – no changes were applied.', false);
         window.currentSuggestionReview = null;
 
         // Update buttons state
@@ -7043,15 +7669,17 @@ function checkAndSubmitGuidelineFeedback() {
             }
         }
     });
+}
 
-// Wire up global reset button once DOM is ready
+// Wire up global reset button once DOM is ready (top-level, not gated by feedback flows)
 document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('resetBtn');
     if (resetBtn) {
         resetBtn.addEventListener('click', handleGlobalReset);
+    } else {
+        console.warn('[DEBUG] resetBtn not found when wiring global reset handler');
     }
 });
-}
 
 // Submit feedback batch to backend
 async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries) {
@@ -7567,7 +8195,7 @@ async function applyAllDecisions() {
             </div>
         `;
 
-        appendToSummary1(summaryHtml, false);
+        appendToSummary1(summaryHtml, false); // Decision panel: shows Copy/Replace actions
         
         // Replace the user input with the updated transcript text
         const transcriptOutput = `${result.updatedTranscript}`;
@@ -7618,9 +8246,9 @@ async function applyAllDecisions() {
                     }).join('');
                 }
                 
-                // Show transition message
-                const transitionMessage = `\n**Incorporating changes and preparing for next guideline...**\n\n`;
-                appendToSummary1(transitionMessage, false);
+                // Show transition message via status bar
+                const transitionMessage = 'Incorporating changes and preparing for next guideline...';
+                updateUser(transitionMessage, true);
                 
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
@@ -7631,8 +8259,8 @@ async function applyAllDecisions() {
                 // Process next guideline after a brief delay
                 setTimeout(async () => {
                     try {
-                                const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-        appendToSummary1(processingStepMessage, false);
+                                const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+        updateUser(processingStepMessage, true);
                         
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
@@ -7707,7 +8335,7 @@ async function applyAllDecisions() {
                     </style>
                 `;
                 
-                appendToSummary1(finalMessage, false);
+                updateUser('Sequential processing completed for all selected guidelines.', false);
                 console.log('[DEBUG] Sequential processing completed successfully');
             }
         }
@@ -7772,7 +8400,7 @@ async function applyAllDecisions() {
                 ${refreshButtonHtml}
             </div>
         `;
-        appendToSummary1(errorHtml, false);
+        updateUser('Error applying guideline decisions. Please refresh and try again.', false);
 
     } finally {
         // Reset UI state
@@ -8044,44 +8672,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handlers for new panel buttons
+    // Add click handlers for new panel buttons - navigate to dedicated pages where available
     const promptsPanelBtn = document.getElementById('promptsPanelBtn');
     if (promptsPanelBtn) {
         promptsPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Prompts panel button clicked');
-            showSection('promptsSection');
+            console.log('[DEBUG] Prompts panel button clicked - navigating to prompts.html');
+            window.location.href = 'prompts.html';
         });
     }
-
+    
     const guidelinesPanelBtn = document.getElementById('guidelinesPanelBtn');
     if (guidelinesPanelBtn) {
         guidelinesPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Guidelines panel button clicked');
-            showSection('guidelinesSection');
+            console.log('[DEBUG] Guidelines panel button clicked - navigating to guidelines.html');
+            window.location.href = 'guidelines.html';
         });
     }
-
+    
     const workflowsPanelBtn = document.getElementById('workflowsPanelBtn');
     if (workflowsPanelBtn) {
         workflowsPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Workflows panel button clicked');
-            showSection('workflowsView');
+            console.log('[DEBUG] Workflows panel button clicked - navigating to workflows.html');
+            window.location.href = 'workflows.html';
         });
     }
-
+    
     const devPanelBtn = document.getElementById('devPanelBtn');
     if (devPanelBtn) {
         devPanelBtn.addEventListener('click', () => {
-            console.log('[DEBUG] Dev panel button clicked');
-            showSection('devSection');
+            console.log('[DEBUG] Dev panel button clicked - navigating to dev.html');
+            window.location.href = 'dev.html';
         });
     }
-
+    
+    // Lazy-load helpful external links into the in-app Links panel
+    let linksLoaded = false;
+    async function loadLinksIfNeeded() {
+        if (linksLoaded) return;
+        
+        const linksList = document.getElementById('linksList');
+        if (!linksList) return;
+        
+        try {
+            const response = await fetch('links.txt');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const text = await response.text();
+            linksList.innerHTML = '';
+            
+            text.split('\n').forEach(line => {
+                const trimmed = line.trim();
+                if (!trimmed) return;
+                
+                const parts = trimmed.split(';');
+                if (parts.length < 2) return;
+                
+                const label = parts[0].trim();
+                const url = parts[1].trim();
+                if (!label || !url) return;
+                
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = url;
+                a.textContent = label;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                li.appendChild(a);
+                linksList.appendChild(li);
+            });
+            
+            linksLoaded = true;
+        } catch (error) {
+            console.error('Failed to load links:', error);
+            linksList.innerHTML = '<li>Failed to load links. Please try again later.</li>';
+        }
+    }
+    
     const linksPanelBtn = document.getElementById('linksPanelBtn');
     if (linksPanelBtn) {
         linksPanelBtn.addEventListener('click', () => {
             console.log('[DEBUG] Links panel button clicked');
             showSection('linksSection');
+            loadLinksIfNeeded();
         });
     }
 
@@ -8298,9 +8971,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.analysisAbortController = null;
                     restoreAnalyseButton();
                     
-                    // Show cancellation message
-                    const cancelMessage = '\n⚠️ **Analysis cancelled by user**\n\n';
-                    appendToSummary1(cancelMessage, false);
+        // Show cancellation message via status bar
+        const cancelMessage = 'Analysis cancelled by user.';
+        updateUser(cancelMessage, false);
                     hideSummaryLoading();
                     // Keep button hidden after cancellation
                     if (analyseBtn) analyseBtn.style.display = 'none';
@@ -10288,7 +10961,7 @@ async function showClinicalIssuesDropdown() {
     <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
 </div>`;
             
-            // Append the panel content into summary1 as a permanent block
+            // Append the panel content into summary1 as a permanent block (decision UI)
             appendToSummary1(panelHtml, false, false);
             clinicalPanel = document.getElementById('clinicalIssuesPanel');
         } else {
@@ -10303,7 +10976,7 @@ async function showClinicalIssuesDropdown() {
         
         if (!clinicalPanel || !clinicalDropdown) {
             console.error('[DEBUG] Clinical issues panel elements not found after injection');
-            appendToSummary1('❌ **Error:** Unable to initialise clinical issues panel.\n\n', false);
+            updateUser('Error: Unable to initialise clinical issues panel.', false);
             return;
         }
         
@@ -10405,7 +11078,7 @@ async function showClinicalIssuesDropdown() {
                     hideClinicalIssuesPanel();
                 } else {
                     console.error('No clinical issues available for random selection');
-                    appendToSummary1('❌ **Error:** No clinical issues available for random selection.\n\n', false, true);
+                    updateUser('Error: No clinical issues available for random selection.', false);
                 }
             };
         }
@@ -10426,13 +11099,13 @@ async function showClinicalIssuesDropdown() {
         if (cancelBtn) {
             cancelBtn.onclick = () => {
                 hideClinicalIssuesPanel();
-                appendToSummary1('Clinical interaction generation cancelled.\n\n', false, true);
+                updateUser('Clinical interaction generation cancelled.', false);
             };
         }
         
     } catch (error) {
         console.error('[DEBUG] Error showing clinical issues dropdown:', error);
-        appendToSummary1(`❌ **Error loading clinical issues:** ${error.message}\n\nPlease try again or contact support.\n\n`, true);
+        updateUser(`Error loading clinical issues: ${error.message}. Please try again or contact support.`, false);
     }
 }
 
@@ -10563,21 +11236,14 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             });
         }
         
-        // Show success message in summary1 (append, don't clear) - TRANSIENT so it auto-removes
-        const performanceText = forceRegenerate ? '🔄 Regenerated with updated formatting' : (isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache');
+        // Show success message via status bar instead of summary1
+        const performanceText = forceRegenerate
+            ? 'regenerated with updated formatting'
+            : (isGenerated ? 'generated using AI' : 'loaded instantly from cache');
         const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
-        const successMessage = `## ✅ Clinical Interaction ${actionText}\n\n` +
-                              `**Clinical Issue:** ${selectedIssue}\n` +
-                              `**Category:** ${condition.category}\n` +
-                              `**Status:** Successfully ${actionText.toLowerCase()} clinical interaction scenario\n` +
-                              `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n` +
-                              `**Performance:** ${performanceText}\n\n` +
-                              `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
-                              `- Use "Guideline Suggestions" to get interactive suggestions based on clinical guidelines\n` +
-                              `- Edit the transcript if needed before analysis\n` +
-                              `- Save or clear the transcript using the respective buttons\n\n`;
-        
-        appendToSummary1(successMessage, false, true); // TRANSIENT - will auto-remove after 5s
+        const successMessage = `${actionText} clinical interaction for ${selectedIssue} (${condition.category}); ` +
+            `transcript length ~${Math.round(transcript.split(' ').length)} words, ${performanceText}.`;
+        updateUser(successMessage, false);
         
     } catch (error) {
         console.error('[DEBUG] Error loading fake clinical interaction:', {
@@ -10591,13 +11257,9 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
         }
         
-        // Show error message in summary1 (append, don't clear)
-        const errorMessage = `## ❌ Loading Failed\n\n` +
-                            `**Error:** ${error.message}\n\n` +
-                            `**Selected Issue:** ${selectedIssue}\n\n` +
-                            `This might indicate the transcript database needs to be regenerated or the selected issue is not available in the pre-generated transcripts.\n\n`;
-        
-        appendToSummary1(errorMessage, false); // Don't clear existing content
+        // Surface error via status bar instead of summary1
+        const errorMessage = `Error loading clinical interaction for ${selectedIssue}: ${error.message}`;
+        updateUser(errorMessage, false);
         
     } finally {
         // Reset button states
@@ -10651,16 +11313,13 @@ async function processWorkflow() {
 
         // Button state is already set by the click handler
         
-        // Show loading spinner in summary
-        showSummaryLoading();
-
-        // Initialize the workflow summary
-        const workflowStart = '# Complete Workflow Processing\n\nStarting comprehensive analysis workflow...\n\n';
-        appendToSummary1(workflowStart, false);
+        // Use status bar for progress; avoid popping summary1 open during workflow
+        updateUser('Starting complete workflow processing...', true);
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
         updateAnalyseButtonProgress('Checking Guidelines Scope...', true);
+        updateUser('Checking guideline scope...', true);
         
         let scopeSelection;
         
@@ -10672,6 +11331,7 @@ async function processWorkflow() {
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
                 // Need to verify the hospital trust is still valid
                 try {
+                    updateUser('Verifying hospital trust...', true);
                     const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
                         method: 'GET',
                         headers: {
@@ -10703,15 +11363,14 @@ async function processWorkflow() {
         } else {
             // No saved selection, show modal
             console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
-            const scopeSelectionStatus = '## Step 1: Select Guidelines to Apply\n\nPlease select which guidelines to use...\n\n';
-            appendToSummary1(scopeSelectionStatus, false, true); // Transient
+            updateUser('Step 1: Select which guidelines to apply...', true);
             
             try {
                 scopeSelection = await showGuidelineScopeModal();
                 console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
             } catch (error) {
                 console.log('[DEBUG] processWorkflow: Scope selection cancelled:', error.message);
-                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                updateUser('Scope selection cancelled.', false);
                 return; // Exit workflow if user cancels
             }
         }
@@ -10720,19 +11379,16 @@ async function processWorkflow() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 **National Guidelines Selected**\n\n'
+            ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
+            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
         
-        appendToSummary1(scopeMessage, false, true); // Transient
+        updateUser(scopeMessage, false);
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         updateAnalyseButtonProgress('Finding Relevant Guidelines...', true);
-        
-        // Step 2: Find Relevant Guidelines (with scope filtering)
-        const step1Status = '## Step 2: Finding Relevant Guidelines\n\n';
-        appendToSummary1(step1Status, false, true); // Transient
+        updateUser('Step 2: Finding relevant guidelines...', true);
         
         // Check for abort before starting step 2
         if (window.analysisAbortController?.signal.aborted) {
@@ -10750,8 +11406,8 @@ async function processWorkflow() {
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             updateAnalyseButtonProgress('Guidelines Found', false);
             
-            const step1Complete = '✅ **Step 2 Complete:** Relevant guidelines identified\n\n';
-            appendToSummary1(step1Complete, false, true); // Transient
+            const step1Complete = 'Step 2 complete: relevant guidelines identified.';
+            updateUser(step1Complete, false);
             
         } catch (error) {
             // Check if error is due to abort
@@ -10777,15 +11433,11 @@ async function processWorkflow() {
         console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
         updateAnalyseButtonProgress('Select Guidelines to Process', false);
         
-        // Step 3: Show Guideline Selection Interface
-        const step2Status = `## Step 3: Select Guidelines to Process\n\n` +
-                           `✅ **Step 2 Complete:** Found ${window.relevantGuidelines.length} relevant guidelines\n\n` +
-                           `**Next:** Use the interface above to select which guidelines to process. ` +
-                           `Most relevant guidelines are pre-selected. Click "Process Selected Guidelines" when ready.\n\n` +
-                           `📝 **Note:** Guidelines will be processed one-by-one, with each guideline's suggestions ` +
-                           `incorporated before moving to the next guideline.\n\n`;
-        
-        appendToSummary1(step2Status, false, true); // Transient
+        // Step 3: Show Guideline Selection Interface (decision UI now visible in summary1)
+        updateUser(
+            `Step 3: Select guidelines to process – found ${window.relevantGuidelines.length} relevant guidelines.`,
+            false
+        );
         
         // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
         console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
@@ -12482,6 +13134,8 @@ async function processSelectedGuidelines(event) {
         // Set loading state
         button.disabled = true;
         button.innerHTML = '⏳ Processing...';
+        
+        updateUser(`Processing ${selectedGuidelineIds.length} guidelines...`, true);
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
         updateAnalyseButtonProgress(`Processing ${selectedGuidelineIds.length} Guidelines...`, true);
@@ -12511,10 +13165,11 @@ async function processSelectedGuidelines(event) {
         // Add a brief delay to let the fade animation complete
         await new Promise(resolve => setTimeout(resolve, 350));
 
-        // Add a clean final summary of what was selected
-        const selectionSummary = `## 📋 Processing Selected Guidelines\n\n` +
-                                `Analysing ${selectedGuidelineIds.length} guideline${selectedGuidelineIds.length > 1 ? 's' : ''} to generate interactive suggestions...\n\n`;
-        appendToSummary1(selectionSummary, false); // Permanent summary
+        // Add a clean final summary of what was selected via status bar
+        updateUser(
+            `Processing ${selectedGuidelineIds.length} selected guidelines to generate interactive suggestions...`,
+            true
+        );
 
         // Set up sequential processing globals
         window.sequentialProcessingActive = true;
@@ -12523,11 +13178,8 @@ async function processSelectedGuidelines(event) {
 
         const sequentialProcessingMessage = `
             <div class="sequential-processing-container">
-                <h3>🔄 Sequential Guideline Processing</h3>
-                <p>Processing ${selectedGuidelineIds.length} selected guidelines one-by-one...</p>
                 <div class="processing-status" id="processing-status"></div>
             </div>
-            
             <style>
             .sequential-processing-container {
                 background: #e8f5e8;
@@ -12559,7 +13211,7 @@ async function processSelectedGuidelines(event) {
             </style>
         `;
         
-        appendToSummary1(sequentialProcessingMessage, false, true); // Transient - will be removed when processing completes
+        appendToSummary1(sequentialProcessingMessage, false, true); // Transient structural container only
 
         // Function to update status display
         function updateSequentialStatus() {
@@ -12596,10 +13248,9 @@ async function processSelectedGuidelines(event) {
 
             console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
             
-            const processingStepMessage = `
-                <h4>🔄 Processing Guideline ${stepNumber}/${selectedGuidelineIds.length}</h4>
-            `;
-            appendToSummary1(processingStepMessage, false, true); // Transient
+            // Update status bar for first guideline
+            const processingStepMessage = `Processing guideline ${stepNumber}/${selectedGuidelineIds.length}...`;
+            updateUser(processingStepMessage, true);
 
             try {
                 // Process only the first guideline - the rest will be handled in applyAllDecisions
@@ -12615,6 +13266,7 @@ async function processSelectedGuidelines(event) {
 
     } catch (error) {
         console.error('[DEBUG] Error in processSelectedGuidelines:', error);
+        updateUser('Error processing guidelines', false);
         const errorMessage = `\n❌ **Sequential Processing Error:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
         appendToOutputField(errorMessage, true);
         alert('Error processing selected guidelines: ' + error.message);
@@ -12623,6 +13275,9 @@ async function processSelectedGuidelines(event) {
         // Reset button state
         button.disabled = false;
         button.textContent = originalText;
+        if (!document.getElementById('serverStatusMessage').textContent.includes('Error')) {
+             updateUser('', false);
+        }
     }
 }
 
@@ -12686,8 +13341,8 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     // Update progress button
     updateAnalyseButtonProgress(`Processing Guideline ${stepNumber}/${totalSteps}`, true);
 
-    const analyzeMessage = `Analyzing against: **${displayName}**\n\n`;
-    appendToSummary1(analyzeMessage, false, true); // Transient
+    const analyzeMessage = `Analysing against: ${displayName}`;
+    updateUser(analyzeMessage, true);
 
     // Directly generate guideline suggestions for this guideline without server analysis
     // Store the latest analysis for potential guideline suggestions
@@ -12697,10 +13352,6 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         guidelineId: guidelineId,
         guidelineTitle: displayName
     };
-
-    // Automatically generate guideline suggestions for this guideline
-    const dynamicAdviceTitle = `### 🎯 Interactive Suggestions for: ${displayName}\n\n`;
-    appendToSummary1(dynamicAdviceTitle, false);
 
     try {
         // For sequential processing, use existing analysis if available, otherwise create a basic one
@@ -12772,8 +13423,8 @@ window.skipCurrentGuideline = function() {
         
         setTimeout(async () => {
             try {
-                        const processingStepMessage = `<h4>🔄 Processing Guideline ${nextStepNumber}/${queue.length}</h4>\n`;
-        appendToSummary1(processingStepMessage, false);
+                        const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+        updateUser(processingStepMessage, true);
                 await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
             } catch (error) {
                 console.error('[DEBUG] Error processing next guideline after skip:', error);
@@ -12782,13 +13433,8 @@ window.skipCurrentGuideline = function() {
     } else {
         // All done
         window.sequentialProcessingActive = false;
-        const finalMessage = `
-            <div class="sequential-processing-complete">
-                <h3>🎉 Sequential Processing Complete!</h3>
-                <p>Processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).</p>
-            </div>
-        `;
-        appendToSummary1(finalMessage, false);
+        const finalMessage = `Sequential processing complete: processed ${currentIndex + 1} of ${queue.length} guidelines (${queue.length - currentIndex - 1} skipped).`;
+        updateUser(finalMessage, false);
     }
 };
 
@@ -13615,7 +14261,7 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
                 <p><em>Analyzed: ${guidelinesSummary?.length || 0} guidelines</em></p>
             </div>
         `;
-        appendToSummary1(noSuggestionsHtml, false);
+        updateUser('No specific suggestions were generated from the multi-guideline analysis.', false);
         return;
     }
 
@@ -13757,7 +14403,7 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
     `;
 
     console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to summary1');
-    appendToSummary1(suggestionsHtml, false);
+    appendToSummary1(suggestionsHtml, false); // Decision UI: combined interactive suggestions
 
     // Update the decisions summary
     updateDecisionsSummary();
@@ -14543,7 +15189,7 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] askGuidelinesQuestion: Already aborted');
         return;
     }
-    
+
     try {
         const question = getUserInputContent();
         if (!question) {
@@ -14553,13 +15199,10 @@ async function askGuidelinesQuestion() {
 
         // Button state is already set by the click handler
         
-        // Show loading spinner in summary
-        showSummaryLoading();
+        // Update user status - starting Q&A flow
+        updateUser('Preparing to ask guidelines your question...', true);
 
-        // Initialize the question search summary
-        let searchProgress = '## Asking Guidelines A Question\n\n';
-        searchProgress += `**Your Question:** ${question}\n\n`;
-        appendToSummary1(searchProgress);
+        // Question text is already visible in the input; use status bar for progress instead of summary1
 
         // Get user ID token (needed for loading preferences)
         const user = auth.currentUser;
@@ -14567,6 +15210,10 @@ async function askGuidelinesQuestion() {
             alert('Please sign in to use this feature');
             return;
         }
+
+        // Update user status - getting authentication
+        updateUser('Checking sign-in and loading your preferences...', true);
+
         const idToken = await user.getIdToken();
 
         // Check for saved scope preference first
@@ -14577,6 +15224,9 @@ async function askGuidelinesQuestion() {
         if (savedScopeSelection) {
             // Verify the saved selection is still valid (check if trust still exists if local/both)
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
+                // Update user status while we verify hospital trust
+                updateUser('Checking guideline scope...', true);
+
                 // Need to verify the hospital trust is still valid
                 try {
                     const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
@@ -14597,6 +15247,7 @@ async function askGuidelinesQuestion() {
                         // Trust no longer exists, need to reselect
                         console.log('[DEBUG] askGuidelinesQuestion: Saved selection invalid (no trust), showing modal');
                         try {
+                            updateUser('Select which guidelines to use for this question...', true);
                             scopeSelection = await showGuidelineScopeModal();
                         } catch (error) {
                             // Check if error is due to abort
@@ -14604,25 +15255,28 @@ async function askGuidelinesQuestion() {
                                 throw new Error('Analysis cancelled');
                             }
                             console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                            appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                            updateUser('Scope selection cancelled.', false);
                             return; // Exit if user cancels
                         }
                     }
                 } catch (error) {
                     // Check if error is due to abort
                     if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                        updateUser('Analysis cancelled', false);
                         throw new Error('Analysis cancelled');
                     }
                     console.error('[ERROR] Failed to verify hospital trust, showing modal:', error);
                     try {
+                        updateUser('Select which guidelines to use for this question...', true);
                         scopeSelection = await showGuidelineScopeModal();
                     } catch (modalError) {
                         // Check if error is due to abort
                         if (modalError.name === 'AbortError' || modalError.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                            updateUser('Analysis cancelled', false);
                             throw new Error('Analysis cancelled');
                         }
                         console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', modalError.message);
-                        appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                        updateUser('Scope selection cancelled.', false);
                         return; // Exit if user cancels
                     }
                 }
@@ -14635,20 +15289,23 @@ async function askGuidelinesQuestion() {
             // No saved selection, show modal
             console.log('[DEBUG] askGuidelinesQuestion: No saved selection, showing guideline scope selection modal');
             try {
+                updateUser('Select which guidelines to use for this question...', true);
                 scopeSelection = await showGuidelineScopeModal();
             } catch (error) {
                 // Check if error is due to abort
                 if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+                    updateUser('Analysis cancelled', false);
                     throw new Error('Analysis cancelled');
                 }
                 console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                appendToSummary1('❌ **Scope selection cancelled**\n\n', false);
+                updateUser('Scope selection cancelled.', false);
                 return; // Exit if user cancels
             }
         }
         
         // Check for abort after scope selection
         if (window.analysisAbortController?.signal.aborted) {
+            updateUser('Analysis cancelled', false);
             throw new Error('Analysis cancelled');
         }
         
@@ -14658,16 +15315,19 @@ async function askGuidelinesQuestion() {
         window.selectedGuidelineScope = scopeSelection;
         
         const scopeMessage = scopeSelection.scope === 'national' 
-            ? '📘 **National Guidelines Selected**\n\n'
+            ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `🏥 **Local Guidelines Selected** (${scopeSelection.hospitalTrust})\n\n`
-            : `📚 **Both Guidelines Selected** (National + ${scopeSelection.hospitalTrust})\n\n`;
-        
-        appendToSummary1(scopeMessage, false);
+            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
 
-        // Update progress
-        const loadingMessage = 'Loading guidelines from database...\n';
-        appendToSummary1(loadingMessage, false);
+        updateUser(scopeMessage, false);
+
+        // Update user status - scope confirmed
+        updateUser('Guideline scope confirmed. Loading guidelines...', true);
+
+        // Update progress (status bar only)
+        const loadingMessage = 'Loading guidelines from database...';
+        updateUser(loadingMessage, true);
 
         // Get guidelines and summaries from Firestore (reuse existing logic)
         let guidelines = await loadGuidelinesFromFirestore();
@@ -14678,21 +15338,23 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
         
         if (guidelines.length === 0) {
-            const noGuidelinesMsg = `⚠️ **No guidelines found** for the selected scope.\n\n`;
-            appendToSummary1(noGuidelinesMsg, false);
+            const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+            updateUser(noGuidelinesMsg, false);
             alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
             return;
         }
         
-        // Add scope info to summary
+        // Add scope info via status bar
         const scopeInfo = scopeSelection.scope === 'national' 
-            ? `Searching ${guidelines.length} national guidelines...\n`
+            ? `Searching ${guidelines.length} national guidelines...`
             : scopeSelection.scope === 'local'
-            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...\n`
-            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...\n`;
-        appendToSummary1(scopeInfo, false);
+            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
+            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
+        updateUser(scopeInfo, true);
         
         // Format guidelines for relevancy matching
+        updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
+
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
             title: g.title,
@@ -14706,8 +15368,11 @@ async function askGuidelinesQuestion() {
         }));
 
         // Update progress with guideline count
-        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...\n`;
-        appendToSummary1(analyzeMessage, false);
+        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...`;
+        updateUser(analyzeMessage, true);
+
+        // Let user know we’re finding most relevant guidelines
+        updateUser('Finding the most relevant guidelines for your question...', true);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines for question:', {
             questionLength: question.length,
@@ -14744,12 +15409,15 @@ async function askGuidelinesQuestion() {
 
         const data = await response.json();
         if (!data.success) {
+            updateUser('Error finding relevant guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
         // Update progress with completion
-        const completionMessage = 'Analysis complete! Processing most relevant guidelines...\n\n';
-        appendToSummary1(completionMessage, false);
+        const completionMessage = 'Analysis complete – processing most relevant guidelines...';
+        updateUser(completionMessage, true);
+
+        updateUser('Guidelines found. Preparing detailed answer...', true);
 
         // Automatically select the top 3 most relevant guidelines
         const allGuidelines = [];
@@ -14780,6 +15448,7 @@ async function askGuidelinesQuestion() {
 
         // Check if we have any guidelines to process
         if (selectedGuidelines.length === 0) {
+            updateUser('No relevant guidelines found for this question', false);
             const noGuidelinesMessage = `## ℹ️ No Relevant Guidelines Found\n\n` +
                                        `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
                                        `**"${question}"**\n\n` +
@@ -14792,7 +15461,10 @@ async function askGuidelinesQuestion() {
                                        `- Include more clinical context or keywords\n` +
                                        `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
             
-            appendToSummary1(noGuidelinesMessage, false);
+            updateUser(
+                'No highly relevant guidelines found for this question. Try rephrasing, adding clinical context, or broadening the query.',
+                false
+            );
             return; // Exit early, don't try to process empty guidelines
         }
 
@@ -14822,18 +15494,107 @@ async function askGuidelinesQuestion() {
 
         const data2 = await response2.json();
         if (!data2.success) {
+            updateUser('Error answering your guideline question', false);
             throw new Error(data2.error || 'Failed to process guidelines');
         }
 
-        // Display the answer
-        const selectedGuidelinesList = data2.guidelinesUsed.map(g => `- ${g.title}`).join('\n');
-        const finalOutput = `## Guidelines Used\n${selectedGuidelinesList}\n\n## Answer\n${data2.answer}`;
-        appendToOutputField(finalOutput, true); // Display in output field, clear existing content
+        // Build maps from IDs/titles to canonical IDs and titles,
+        // so citations can use either and still resolve to the correct PDF,
+        // and links can always display the guideline name.
+        const guidelineIdMap = new Map();
+        const guidelineTitleMap = new Map();
+        if (Array.isArray(data2.guidelinesUsed)) {
+            data2.guidelinesUsed.forEach(g => {
+                if (!g) return;
+                const id = g.id ? String(g.id) : null;
+                const title = g.title ? String(g.title) : null;
+                if (id) {
+                    guidelineIdMap.set(id, id);
+                    guidelineIdMap.set(id.toLowerCase(), id);
+                    if (title) {
+                        guidelineTitleMap.set(id, title);
+                    }
+                }
+                if (title && id) {
+                    guidelineIdMap.set(title, id);
+                    guidelineIdMap.set(title.toLowerCase(), id);
+                }
+            });
+        }
+        console.log('[DEBUG] askGuidelinesQuestion: guidelineIdMap keys:', Array.from(guidelineIdMap.keys()));
+
+        // Parse and format citations in the answer
+        let answerText = data2.answer;
+        
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
+        // Format: [[REF:guideline-id-or-title|Link Text|Search Text]]
+        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        
+        // Use a temporary placeholder for newlines to preserve them during HTML conversion
+        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
+
+        let citationCount = 0;
+        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            citationCount += 1;
+
+            // Decode HTML entities in search text to ensure it matches the PDF content
+            const decodedSearch = unescapeHtml(search);
+            
+            const rawId = id.trim();
+            const canonicalId =
+                guidelineIdMap.get(rawId) ||
+                guidelineIdMap.get(rawId.toLowerCase()) ||
+                rawId;
+            
+            // Use the canonical guideline title as link text so that links
+            // always reference the guideline name rather than an internal
+            // section label. Fall back to the AI-provided link text if we
+            // cannot resolve the title for some reason.
+            const displayTitle =
+                guidelineTitleMap.get(canonicalId) ||
+                (Array.isArray(data2.guidelinesUsed)
+                    ? (data2.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
+                    : '') ||
+                text.trim();
+            
+            // Use existing createGuidelineViewerLink function.
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
+            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
+            // link helper will either extract a quoted segment or fall back to using
+            // the full snippet directly for the PDF search.
+            return createGuidelineViewerLink(
+                canonicalId, 
+                displayTitle, 
+                null, // filename not needed if ID provided
+                decodedSearch, // Context / search snippet
+                true // hasVerbatimQuote
+            );
+        });
+
+        console.log('[DEBUG] askGuidelinesQuestion: Replaced citation markers in answer', {
+            citationCount
+        });
+
+        // Display the answer with HTML formatting
+        const selectedGuidelinesList = data2.guidelinesUsed.map(g => `<li>${escapeHtml(g.title)}</li>`).join('');
+        
+        const answerMessage = `<h2>Guidelines Used</h2>` +
+                             `<ul>${selectedGuidelinesList}</ul>` +
+                             `<hr>` +
+                             `<h2>Answer</h2>` +
+                             `<div class="guideline-answer">${formattedAnswer}</div>`;
+        
+        appendToOutputField(answerMessage, true, true); // Display in output field, clear existing content, isHtml=true
+
+        // Final user status - success
+        updateUser('Answer generated from guidelines', false);
 
     } catch (error) {
         // Check if error is due to abort
         if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
             console.log('[DEBUG] askGuidelinesQuestion: Analysis was cancelled');
+            updateUser('Analysis cancelled', false);
             // Don't show error alert for user-initiated cancellation
             return;
         }
@@ -14843,10 +15604,10 @@ async function askGuidelinesQuestion() {
             stack: error.stack
         });
         
-        // Display error in summary1 field
-        const errorMessage = `\n❌ **Error finding relevant guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
-        appendToSummary1(errorMessage, false);
-        
+        // Surface error to top-level status instead of summary1
+        const errorMessage = `Error finding relevant guidelines: ${error.message}`;
+        updateUser(errorMessage, false);
+
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Button state is restored by the click handler's finally block
@@ -14955,15 +15716,72 @@ async function processQuestionAgainstGuidelines() {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
 
-        // Display the comprehensive answer
-        const answerMessage = `## 💡 Answer Based on Guidelines\n\n` +
-                             `**Question:** ${question}\n\n` +
-                             `**Guidelines Used:** ${data.guidelinesUsed?.length || 0}\n\n` +
-                             `**Answer:**\n\n${data.answer}\n\n` +
-                             `---\n\n` +
-                             `*Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})*\n\n`;
+        // Build a simple ID -> title map so that link text can always show the
+        // guideline name, regardless of the AI-provided LinkText field.
+        const guidelineTitleMap = new Map();
+        if (Array.isArray(data.guidelinesUsed)) {
+            data.guidelinesUsed.forEach(g => {
+                if (!g || !g.id) return;
+                guidelineTitleMap.set(String(g.id), g.title ? String(g.title) : '');
+            });
+        }
+
+        // Parse and format citations in the answer
+        let answerText = data.answer;
         
-        appendToOutputField(answerMessage, false);
+        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
+        // Format: [[REF:guideline-id|Link Text|Search Text]]
+        // For Ask-Guidelines, SearchText is already a verbatim snippet (upgraded on the server).
+        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]+)\]\]/g;
+        
+        // Use a temporary placeholder for newlines to preserve them during HTML conversion
+        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
+
+        let citationCount = 0;
+        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+            citationCount += 1;
+
+            // Decode HTML entities in search text to ensure it matches the PDF content
+            const decodedSearch = unescapeHtml(search);
+            
+            const canonicalId = id.trim();
+            // Prefer the guideline title for link text so that links clearly
+            // show which guideline they come from.
+            const displayTitle =
+                guidelineTitleMap.get(canonicalId) ||
+                (Array.isArray(data.guidelinesUsed)
+                    ? (data.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
+                    : '') ||
+                text.trim();
+            
+            // Use existing createGuidelineViewerLink function.
+            // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
+            // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
+            // link helper will either extract a quoted segment or fall back to using
+            // the full snippet directly for the PDF search.
+            return createGuidelineViewerLink(
+                canonicalId, 
+                displayTitle, 
+                null, // filename not needed if ID provided
+                decodedSearch, // Context / search snippet
+                true // hasVerbatimQuote
+            );
+        });
+
+        console.log('[DEBUG] processQuestionAgainstGuidelines: Replaced citation markers in answer', {
+            citationCount
+        });
+
+        // Display the comprehensive answer with HTML formatting
+        const answerMessage = `<h2>💡 Answer Based on Guidelines</h2>` +
+                             `<p><strong>Question:</strong> ${escapeHtml(question)}</p>` +
+                             `<p><strong>Guidelines Used:</strong> ${data.guidelinesUsed?.length || 0}</p>` +
+                             `<hr>` +
+                             `<div class="guideline-answer">${formattedAnswer}</div>` +
+                             `<hr>` +
+                             `<p style="font-size: 0.8em; color: #666;"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
+        
+        appendToOutputField(answerMessage, false, true);
 
     } catch (error) {
         console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);
@@ -15004,15 +15822,9 @@ async function triggerComplianceScoring(originalTranscript, updatedTranscript, c
             return;
         }
 
-        // Show scoring initiation message
-        const scoringInitMessage = `
-            <div class="compliance-scoring-init">
-                <h3>📊 Generating Compliance Score...</h3>
-                <p>Analysing how well the original clinical note complied with guideline requirements.</p>
-                <div class="scoring-spinner">⏳ Processing...</div>
-            </div>
-        `;
-        appendToSummary1(scoringInitMessage, false);
+        // Show scoring initiation message via status bar
+        const scoringInitMessage = 'Generating compliance score for the original clinical note...';
+        updateUser(scoringInitMessage, true);
 
         // Generate the recommended changes summary for scoring
         const recommendedChanges = generateRecommendedChangesSummary();
@@ -15028,13 +15840,8 @@ async function triggerComplianceScoring(originalTranscript, updatedTranscript, c
     } catch (error) {
         console.error('[DEBUG] triggerComplianceScoring: Error:', error);
         
-        const errorMessage = `
-            <div class="compliance-scoring-error">
-                <h3>❌ Compliance Scoring Error</h3>
-                <p>Unable to generate compliance score: ${error.message}</p>
-            </div>
-        `;
-        appendToSummary1(errorMessage, false);
+        const errorMessage = `Compliance scoring error: ${error.message}`;
+        updateUser(errorMessage, false);
     }
 }
 
@@ -15496,3 +16303,69 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
     
     console.log('[DEBUG] displayComplianceScoring: Results displayed successfully');
 }
+
+// Function to auto-adjust summary1 height to fit content
+function initializeSummaryAutoHeight() {
+    const summary1 = document.getElementById('summary1');
+    if (!summary1) return;
+
+    const adjustHeight = () => {
+        // Force height to auto and disable flex-grow so it shrinks to content
+        summary1.style.setProperty('height', 'auto', 'important');
+        summary1.style.setProperty('flex', '0 0 auto', 'important');
+        summary1.style.setProperty('min-height', '0', 'important');
+    };
+
+    // Create observer to monitor content changes
+    const observer = new MutationObserver((mutations) => {
+        // Debug what's inside summary1 when it changes
+        if (summary1.children.length > 0) {
+            console.log('[DEBUG] Summary1 content changed. Children:', summary1.children.length);
+            // Check for empty new-content-entry divs which might be causing whitespace
+            const emptyEntries = Array.from(summary1.querySelectorAll('.new-content-entry')).filter(el => {
+                // Use a more robust check for emptiness including whitespace
+                const hasText = el.textContent.trim().length > 0;
+                const hasMedia = el.querySelector('img, svg, video, input, select, textarea, button, hr');
+                // Check if it has height but no visible content (could be margin collapse or padding)
+                const style = window.getComputedStyle(el);
+                const hasHeight = el.offsetHeight > 0;
+                
+                // Log suspicious entries
+                if (!hasText && !hasMedia && hasHeight) {
+                    console.log('[DEBUG] Suspicious empty entry found:', {
+                        height: el.offsetHeight,
+                        html: el.innerHTML,
+                        classes: el.className
+                    });
+                    return true;
+                }
+                return false;
+            });
+
+            if (emptyEntries.length > 0) {
+                console.log('[DEBUG] Found empty content entries:', emptyEntries.length);
+                // Hide them to fix the whitespace
+                emptyEntries.forEach(el => {
+                     el.style.display = 'none';
+                     console.log('[DEBUG] Hidden empty entry');
+                });
+            }
+        }
+        adjustHeight();
+    });
+
+    observer.observe(summary1, {
+        childList: true,
+        subtree: true,
+        characterData: true,
+        attributes: true
+    });
+    
+    // Initial adjustment
+    adjustHeight();
+    
+    console.log('[DEBUG] Summary1 auto-height observer initialized');
+}
+
+// Initialize on load
+document.addEventListener('DOMContentLoaded', initializeSummaryAutoHeight);
