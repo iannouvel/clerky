@@ -2574,7 +2574,8 @@ function formatMessagesForProvider(messages, provider) {
     }
 }
 // Function to send prompts to AI services
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7) {
+// timeoutMs controls the per-request timeout to the upstream AI provider
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
   let preferredProvider = 'DeepSeek'; // Default fallback
   
@@ -2760,7 +2761,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         },
-        timeout: 120000 // 120 second timeout for AI generation
+        timeout: timeoutMs
       });
       
       responseData = response.data;
@@ -2796,7 +2797,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
           'Content-Type': 'application/json'
         },
-        timeout: 120000 // 120 second timeout for AI generation
+        timeout: timeoutMs
       });
       
       responseData = response.data;
@@ -2833,7 +2834,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           'Content-Type': 'application/json',
           'anthropic-version': '2023-06-01'
         },
-        timeout: 120000 // 120 second timeout for AI generation
+        timeout: timeoutMs
       });
       
       responseData = response.data;
@@ -2868,7 +2869,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
           'Content-Type': 'application/json'
         },
-        timeout: 120000 // 120 second timeout for AI generation
+        timeout: timeoutMs
       });
       
       responseData = response.data;
@@ -2915,7 +2916,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           params: {
             key: process.env.GOOGLE_AI_API_KEY
           },
-          timeout: 120000 // 120 second timeout for AI generation
+          timeout: timeoutMs
         }
       );
       
@@ -2959,15 +2960,18 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     }
     
     // ============================================================================
-    // COST-EFFECTIVE QUOTA EXCEEDED FALLBACK SYSTEM
+    // COST-EFFECTIVE QUOTA/TIMEOUT FALLBACK SYSTEM
     // ============================================================================
-    // Check if it's a quota exceeded error and try next available provider in cost order
+    // Check if it's a quota exceeded or timeout error and try next available provider
     const quotaExceededError = error.response?.data?.error?.message?.includes('exceeded your current quota') ||
                                error.response?.data?.error?.message?.includes('quota') ||
                                error.response?.data?.error?.message?.includes('rate limit');
+    const timeoutError = error.code === 'ECONNABORTED' ||
+                         error.message?.toLowerCase?.().includes('timeout') ||
+                         error.message?.toLowerCase?.().includes('timed out');
     
-    if (quotaExceededError) {
-      console.log(`[DEBUG] ${preferredProvider} quota exceeded, attempting cost-effective fallback...`);
+    if (quotaExceededError || timeoutError) {
+      console.log(`[DEBUG] ${preferredProvider} ${quotaExceededError ? 'quota exceeded' : 'timeout/error'}, attempting cost-effective fallback...`);
       
       // Get available keys for fallback
       const availableKeys = {
@@ -2985,8 +2989,17 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         console.log(`[DEBUG] Falling back to ${nextProvider.name} (${nextProvider.description}) - Cost: $${nextProvider.costPer1kTokens}/1k tokens`);
         
         try {
-          // Retry with next provider
-          const formattedMessages = formatMessagesForProvider(messages, nextProvider.name);
+          // Reconstruct messages for fallback based on original prompt
+          let fallbackMessages = [];
+          if (Array.isArray(prompt)) {
+            fallbackMessages = prompt;
+          } else {
+            if (systemPrompt) {
+              fallbackMessages.push({ role: 'system', content: systemPrompt });
+            }
+            fallbackMessages.push({ role: 'user', content: prompt });
+          }
+          const formattedMessages = formatMessagesForProvider(fallbackMessages, nextProvider.name);
           
           let response;
           if (nextProvider.name === 'DeepSeek') {
@@ -13656,7 +13669,8 @@ ${trimmedText}`;
                      preferredProvider === 'Gemini' ? 'gemini-1.5-pro' : 'deepseek-chat';
         
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
-        const aiResult = await sendToAI(formattedMessages, model, null, userId, 0.3);
+        // Use a shorter timeout for fast UX when just detecting type
+        const aiResult = await sendToAI(formattedMessages, model, null, userId, 0.3, 15000);
         
         if (!aiResult || !aiResult.content) {
             console.error('[ERROR] detectInputType: No response from AI');
