@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-43-293Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 722,
+  "response_length": 1129,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: MP045 Pyrexia in Labour & Sepsis\",\"mp046-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"Caesarean Section\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\"...",
+  "full_data": null
+}
