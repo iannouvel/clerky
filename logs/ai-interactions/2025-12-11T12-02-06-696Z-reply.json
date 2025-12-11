@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-06-696Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 733,
+  "response_length": 1183,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: MP045 Pyrexia in Labour & Seps...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp053-obstetric-haemorrhage-pdf\\\", \\\"title\\\": \\\"MP053 Obstetric Haemorrhage\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}
