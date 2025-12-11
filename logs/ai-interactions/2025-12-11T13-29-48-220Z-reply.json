@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-48-220Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1243,
+  "response_length": 1578,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"bjog-2016-management-of-premenstrual-syndrome-pdf: BJOG - 2016 -  Mana...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta-pdf\\\", \\\"title\\\": \\\"Placenta Praevia a...",
+  "full_data": null
+}
