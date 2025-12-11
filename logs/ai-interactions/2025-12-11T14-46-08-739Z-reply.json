@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-46-08-739Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1118,
+  "response_length": 1560,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":48,\"transcriptPreview\":\"how do we counsel on breech presentation at term...\",\"chunkGuidelines\":[\"gp016-operational-guideline-for-admission-to-gynaecology-mat...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-war...",
+  "full_data": null
+}

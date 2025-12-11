@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-46-08-471Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 761,
+  "response_length": 1210,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":48,\"transcriptPreview\":\"how do we counsel on breech presentation at term...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolapse-pdf: GTG - 2014 - Umbilical...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", \\\"title\\\": \\\"GTG - 2014 - Umbilical Cord Prolapse\\\", \\\"...",
+  "full_data": null
+}
