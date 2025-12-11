@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-23-13-910Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 919,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"26yo, G2P0 (previous TOP), 11+2, BMI 31, Rh+ve\\n\\nIssues:\\nDichorionic diamniotic (DCDA) twin pregnancy\\nHigh BMI\\n\\nBackground:\\nConceived spontaneously\\nDating scan at 8+3 confirmed D...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 26,\n  \"potentiallyRelevantCount\": 33,\n  \"lessRelevantCount\": 70,\n  \"notRelevantCount\": 168\n}...",
+  "full_data": null
+}
