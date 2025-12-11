@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-38-12-721Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 720,
+  "response_length": 1189,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":68,\"transcriptPreview\":\"how do we manage a conflict of opinion between doctors and midwives?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf:...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"peripartum-sodim-monitoring-pathway-pdf\\...",
+  "full_data": null
+}

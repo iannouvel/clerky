@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-39-22-121Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 1328,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":1141,\"transcriptPreview\":\"28yo, G0\\n\\nPresenting Complaint:\\nSecondary dysmenorrhoea for 9/12, worsening. Deep dyspareunia.\\n\\nKey Clinical Issue:\\nChronic pe...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bashh-2019-pid-guideline-pdf\\\", \\\"title\\\": \\\"BASHH - 2019 - PID Guideline\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}

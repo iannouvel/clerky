@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-39-21-959Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1359,
+  "response_length": 1391,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/38\",\"transcriptLength\":1141,\"transcriptPreview\":\"28yo, G0\\n\\nPresenting Complaint:\\nSecondary dysmenorrhoea for 9/12, worsening. Deep dyspareunia.\\n\\nKey Clinical Issue:\\nChronic p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women-pdf\\\", \\\"title\\\": \\\"Joint RCOG BSGE Guideline -...",
+  "full_data": null
+}
