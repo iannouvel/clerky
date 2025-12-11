@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-11-554Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 811,
+  "response_length": 1260,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":40,\"transcriptPreview\":\"how do we treat failed TWOC after birth?...\",\"chunkGuidelines\":[\"uae-bsuh-guidelines-september-2016-pdf: UAE BSUH guidelines Septembe...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uhsx-bladder-care-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Bladder Care guideline\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelev...",
+  "full_data": null
+}

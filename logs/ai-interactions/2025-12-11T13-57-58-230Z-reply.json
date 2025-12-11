@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-57-58-230Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1518,
+  "response_length": 1492,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":1587,\"transcriptPreview\":\"28yo, G2P1, 5 days post SVD (2nd degree tear repair), BMI 31\\n\\nPresenting Complaint:\\nPyrexia, rigors, offensive lochia, and genera...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bsh-2019-pavord-management-of-iron-deficiency-in-pregnancy-pdf\\\", \\\"title\\\": \\\"BSH- 2019 - Pavo...",
+  "full_data": null
+}

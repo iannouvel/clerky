@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-57-59-518Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1695,
+  "response_length": 1584,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":1587,\"transcriptPreview\":\"28yo, G2P1, 5 days post SVD (2nd degree tear repair), BMI 31\\n\\nPresenting Complaint:\\nPyrexia, rigors, offensive lochia, and genera...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2024-lissauer-maternal-sepsis-pdf\\\", \\\"title\\\": \\\"Maternal Sepsis\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\\"potentiallyR...",
+  "full_data": null
+}

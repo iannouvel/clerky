@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-02-202Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 220,
+  "response_length": 308,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":40,\"transcriptPreview\":\"how do we treat failed TWOC after birth?...\",\"chunkGuidelines\":[\"uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol\"],\"chunkIndex\":...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}
