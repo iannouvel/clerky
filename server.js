@@ -17288,9 +17288,11 @@ When you refer to **specific, detailed recommendations** from a guideline (for e
 - LinkText: A short, readable text describing the **specific recommendation or section** (e.g., 'Expectant management criteria', 'Methotrexate contraindications', 'Section 4.1 – Indications for hysteroscopy').
 - SearchText: A unique snippet of text (approx 5-10 words) from the guideline that can be used to locate the exact section you are referencing.
         
-You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE HMB guideline" or "based on RCOG recommendations"). Generic guideline references will be shown separately in a \"Guidelines Used\" list instead of inline links.
+You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE HMB guideline" or "based on RCOG recommendations"). Generic guideline references will be shown separately in a "Guidelines Used" list instead of inline links.
+
+When you are paraphrasing a recommendation in your own words, do not put your wording in quotation marks. Only use quotation marks around text if you are copying an exact phrase from the guideline, and in that case ensure the quoted words exactly match the guideline text.
         
-Example (specific recommendation): "The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|ECV should be offered|External cephalic version should be offered]]."
+Example (specific recommendation): The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|External cephalic version should be offered|External cephalic version should be offered]].
         
 Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations using this citation format.`;
 
