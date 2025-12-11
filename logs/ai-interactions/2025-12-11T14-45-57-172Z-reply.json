@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-45-57-172Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-38",
+  "token_usage": null,
+  "prompt_length": 228,
+  "response_length": 309,
+  "prompt_preview": "{\"prompt\":\"Chunk 38/38\",\"transcriptLength\":48,\"transcriptPreview\":\"how do we counsel on breech presentation at term...\",\"chunkGuidelines\":[\"uhsx-surrogacy-protocol-pdf: UHSx Surrogacy protocol\"],\"chun...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"uhsx-surrogacy-protocol-pdf\\\", \\\"title\\\": \\\"UH...",
+  "full_data": null
+}
