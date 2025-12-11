@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-38-14-436Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 915,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":68,\"transcriptPreview\":\"how do we manage a conflict of opinion between doctors and midwives?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-interventional-guidance-2007-laparo...",
+  "full_data": null
+}
