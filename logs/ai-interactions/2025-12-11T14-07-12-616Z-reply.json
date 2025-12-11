@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-07-12-616Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1110,
+  "response_length": 1486,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":40,\"transcriptPreview\":\"how do we treat failed TWOC after birth?...\",\"chunkGuidelines\":[\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-w...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gp020-urogynaecology-specialist-nurse-led-clinic-1-pdf\\\", \\\"title\\\": \\\"Urogynaecology Specialist Nurse-Led Clinic\\\", \\\"relevanc...",
+  "full_data": null
+}
