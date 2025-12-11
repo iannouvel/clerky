@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-49-07-237Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 886,
+  "response_length": 1339,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf: NICE...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"p19005-locsop-for-obstetric-procedural-counts-pdf\\\", \\\"title\\\": \\\"P19005 LocSOP for Obstetric Procedural Counts\\\", \\\"relevance\\...",
+  "full_data": null
+}
