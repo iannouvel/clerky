@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-59-15-920Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 1407,
+  "response_length": 1443,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":2841,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G2P1** (1 SVD, 1 TOP) female. \\n**Presen...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gp003-pelvic-inflammatory-disease-pid-pdf\\\", \\\"title\\\": \\\"GP003 Pelvic Inflammatory Disea...",
+  "full_data": null
+}
