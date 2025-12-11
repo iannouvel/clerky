@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-07-917Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1231,
+  "response_length": 1483,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":1593,\"transcriptPreview\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2015-blood-transfusion-in-obstetrics-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2015 - Bl...",
+  "full_data": null
+}

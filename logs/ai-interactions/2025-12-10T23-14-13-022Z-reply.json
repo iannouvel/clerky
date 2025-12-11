@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-13-022Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1702,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenorrhoea and pelvic pressure\\n\\nKey Clinical Issue:\\nSymp...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 297,\n  \"mostRelevantCount\": 3,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 28,\n  \"notRelevantCount\": 258\n}...",
+  "full_data": null
+}

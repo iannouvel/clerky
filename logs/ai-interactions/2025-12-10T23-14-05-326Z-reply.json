@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-05-326Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1287,
+  "response_length": 1307,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":1593,\"transcriptPreview\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guidelin...",
+  "full_data": null
+}

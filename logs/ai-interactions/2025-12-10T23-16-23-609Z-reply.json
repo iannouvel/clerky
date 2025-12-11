@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-16-23-609Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1019,
+  "response_length": 1486,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":27,\"transcriptPreview\":\"how do we manage abruption?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 2025 - Gonorrhoeae\",\"bashh-2025-mycoplasma-gen...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\\\", \\\"title\\\": \\\"BJOG - 2016 - Diagn...",
+  "full_data": null
+}

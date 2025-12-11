@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-10T23-14-07-338Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1588,
+  "response_length": 1596,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":1593,\"transcriptPreview\":\"32yo, G0, BMI 31\\n\\nPresenting Complaint:\\nSymptomatic uterine fibroids – HMB with flooding and clots for 9/12, associated dysmenor...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gtg-2008-prevention-of-entry-related-laparoscopic-injuries-pdf\\\", \\\"title\\\": \\\"GTG 2008 - Prevention of Entry-Related Laparosco...",
+  "full_data": null
+}
