@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-15-12-580Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 794,
+  "response_length": 1251,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":81,\"transcriptPreview\":\"write a simple treatment plan for 16 week DCDA twins (with no other risk factors)...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-pro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", ...",
+  "full_data": null
+}
