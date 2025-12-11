@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-30-34-465Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1250,
+  "response_length": 1163,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":1256,\"transcriptPreview\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positiv...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg12018-ectopic-pregnancy-guideline-pdf\\\", \\\"title\\\": \\\"Ectopic Pregnancy Guideline\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potential...",
+  "full_data": null
+}
