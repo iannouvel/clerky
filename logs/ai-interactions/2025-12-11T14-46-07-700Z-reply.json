@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-46-07-700Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 857,
+  "response_length": 1349,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":48,\"transcriptPreview\":\"how do we counsel on breech presentation at term...\",\"chunkGuidelines\":[\"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 20...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"2020-10-secamb-suspected-preterm-labour-...",
+  "full_data": null
+}
