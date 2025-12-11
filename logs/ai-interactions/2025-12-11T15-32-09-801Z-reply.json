@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-32-09-801Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 791,
+  "response_length": 1251,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":78,\"transcriptPreview\":\"when assessing a previous baby's birthweight centile - how do we calculate it?...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolap...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", ...",
+  "full_data": null
+}
