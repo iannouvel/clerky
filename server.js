@@ -17376,27 +17376,31 @@ app.post('/generateChatSummary', authenticateUser, async (req, res) => {
 
 // Ask Guidelines Question endpoint - answers questions using relevant guidelines
 app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
+    // Generate a unique trace ID for this request to correlate all logs
+    const traceId = `AGQ-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 7)}`;
+    
     try {
-        console.log('[DEBUG] askGuidelinesQuestion endpoint called');
+        console.log(`[ASK_GUIDELINES][${traceId}] === REQUEST START ===`);
         const { question, relevantGuidelines } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!question) {
-            console.log('[DEBUG] askGuidelinesQuestion: Missing question');
-            return res.status(400).json({ success: false, error: 'Question is required' });
+            console.log(`[ASK_GUIDELINES][${traceId}] Validation failed: Missing question`);
+            return res.status(400).json({ success: false, error: 'Question is required', traceId });
         }
         
         if (!relevantGuidelines || !Array.isArray(relevantGuidelines) || relevantGuidelines.length === 0) {
-            console.log('[DEBUG] askGuidelinesQuestion: Missing or invalid relevant guidelines');
-            return res.status(400).json({ success: false, error: 'Relevant guidelines array is required' });
+            console.log(`[ASK_GUIDELINES][${traceId}] Validation failed: Missing or invalid relevant guidelines`);
+            return res.status(400).json({ success: false, error: 'Relevant guidelines array is required', traceId });
         }
 
-        console.log('[DEBUG] askGuidelinesQuestion request data:', {
-            userId,
+        console.log(`[ASK_GUIDELINES][${traceId}] Request received:`, {
+            userId: userId.substring(0, 8) + '...',
             questionLength: question.length,
+            questionPreview: question.substring(0, 100) + (question.length > 100 ? '...' : ''),
             guidelinesCount: relevantGuidelines.length,
-            guidelines: relevantGuidelines.map(g => ({ id: g.id, title: g.title }))
+            guidelineIds: relevantGuidelines.map(g => g.id)
         });
 
         // Fetch full guideline content for each relevant guideline
@@ -17443,18 +17447,28 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
 7. Structure your response in a clear, organized manner
         
 CITATION FORMATTING (CRITICAL):
-When you refer to **specific, detailed recommendations** from a guideline (for example, a numeric threshold, dose, named pathway, or a clearly quotable sentence), you MUST use the following citation format EXACTLY:
+When you refer to **specific, detailed recommendations** from a guideline (for example, a numeric threshold, dose, time limit, or clearly quotable sentence), you MUST use the following citation format EXACTLY:
 [[REF:GuidelineID|LinkText|SearchText]]
         
 - GuidelineID: The exact ID of the guideline as provided in the context (e.g., 'mp046-management-of-breech-and-ecv.txt').
-- LinkText: A short, readable text describing the **specific recommendation or section** (e.g., 'Expectant management criteria', 'Methotrexate contraindications', 'Section 4.1 – Indications for hysteroscopy').
-- SearchText: A unique snippet of text (approx 5-10 words) from the guideline that can be used to locate the exact section you are referencing.
+- LinkText: A short, readable text describing the **specific recommendation or section** (e.g., 'Expectant management criteria', 'Post-op catheter removal', 'Category 1 DDI').
+- SearchText: A SHORT CONTIGUOUS PHRASE (5-12 words) that ACTUALLY APPEARS VERBATIM in the guideline text. This is critical:
+  * The phrase MUST exist word-for-word in the guideline you are citing.
+  * Include any numeric values, thresholds, or time limits (e.g., "within 30 minutes", "12-24 hours", ">90th centile").
+  * Do NOT paraphrase, summarise, or invent text for SearchText.
+  * If unsure whether a phrase exists verbatim, use a shorter, more generic phrase from the guideline.
         
-You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE HMB guideline" or "based on RCOG recommendations"). Generic guideline references will be shown separately in a "Guidelines Used" list instead of inline links.
+You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE guideline" or "based on RCOG recommendations"). Generic guideline references will be shown separately in a "Guidelines Used" list instead of inline links.
 
-When you are paraphrasing a recommendation in your own words, do not put your wording in quotation marks. Only use quotation marks around text if you are copying an exact phrase from the guideline, and in that case ensure the quoted words exactly match the guideline text.
-        
-Example (specific recommendation): The management of breech presentation includes external cephalic version [[REF:mp046-management-of-breech-and-ecv.txt|External cephalic version should be offered|External cephalic version should be offered]].
+QUOTATION MARKS:
+- Do NOT put your own paraphrased wording in quotation marks.
+- Only use quotation marks when copying an EXACT phrase from the guideline.
+- If you quote text, ensure it matches the guideline exactly.
+
+EXAMPLES:
+Good: [[REF:mp050-caesarean-section|Category 1 timing|within 30 minutes of making the decision]]
+Good: [[REF:cg12030-caesarean-birth|Catheter removal|between 12 and 24 hours]]
+Bad:  [[REF:mp050-caesarean-section|CS timing|Decision to delivery should be quick]] (paraphrase, not verbatim)
         
 Always base your answers on the provided guidelines and clearly indicate when you're referencing specific guideline recommendations using this citation format.`;
 
@@ -17623,8 +17637,166 @@ Please provide a comprehensive answer to the question based on the relevant guid
             return null;
         }
 
+        // --------------------------------------------------------------------------
+        // QUOTE CLASSIFICATION SYSTEM
+        // --------------------------------------------------------------------------
+        // Classes:
+        //   verbatim_exact   - Quote exists as a contiguous substring (phrase match)
+        //   verbatim_numeric - Quote contains key numerics found in text
+        //   fallback_window  - A contiguous window was found but anchor is weak
+        //   no_phrase_match  - Only broad keyword overlap or nothing
+        // --------------------------------------------------------------------------
+
+        // Normalise text for comparison: lowercase, strip punctuation except hyphens,
+        // collapse whitespace, preserve numerics.
+        function normaliseForComparison(text) {
+            if (!text) return '';
+            return String(text)
+                .toLowerCase()
+                .replace(/[™®©]/g, '')           // Strip trademark symbols
+                .replace(/[.,;:!?'"()[\]{}]/g, ' ')  // Replace punctuation with space
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        // Extract numeric tokens (e.g. "30", "12-24", "90th") from text
+        function extractNumericTokens(text) {
+            if (!text) return [];
+            const matches = String(text).match(/\d+(?:[-–—]\d+)?(?:st|nd|rd|th)?/gi);
+            return matches ? matches.map(m => m.toLowerCase()) : [];
+        }
+
+        // Simulate search variants similar to clerky-auth.js generateSearchVariants
+        // Returns { matched: boolean, matchedVariant: string|null, matchIndex: number }
+        function simulateSearchVariants(guidelineText, quote) {
+            if (!guidelineText || !quote) {
+                return { matched: false, matchedVariant: null, matchIndex: -1 };
+            }
+
+            const normGuideline = normaliseForComparison(guidelineText);
+            const normQuote = normaliseForComparison(quote);
+
+            if (!normQuote || normQuote.length < 5) {
+                return { matched: false, matchedVariant: null, matchIndex: -1 };
+            }
+
+            // Build variants (phrase-based)
+            const variants = [];
+
+            // 1. Exact normalised phrase
+            variants.push({ query: normQuote, description: 'exact_normalised' });
+
+            // 2. Split on ellipsis and use longest segment
+            const ellipsisParts = normQuote.split(/\s*(?:\.{3}|…)+\s*/).filter(p => p.length >= 8);
+            if (ellipsisParts.length > 1) {
+                const longest = ellipsisParts.reduce((a, b) => b.length > a.length ? b : a, '');
+                if (longest) {
+                    variants.push({ query: longest, description: 'longest_segment' });
+                }
+            }
+
+            // 3. Tail phrase (last 6-8 words)
+            const words = normQuote.split(/\s+/).filter(Boolean);
+            if (words.length >= 6) {
+                const tailSize = Math.min(8, words.length);
+                const tail = words.slice(-tailSize).join(' ');
+                variants.push({ query: tail, description: 'tail_phrase' });
+            }
+
+            // 4. First 8 words
+            if (words.length > 8) {
+                const head = words.slice(0, 8).join(' ');
+                variants.push({ query: head, description: 'head_phrase' });
+            }
+
+            // 5. Numeric-focused: if quote contains numbers, build a phrase around them
+            const numericTokens = extractNumericTokens(quote);
+            if (numericTokens.length > 0) {
+                // Find a 5-word window around the first numeric
+                const firstNum = numericTokens[0];
+                const numIdx = words.findIndex(w => w.includes(firstNum));
+                if (numIdx !== -1) {
+                    const start = Math.max(0, numIdx - 2);
+                    const end = Math.min(words.length, numIdx + 3);
+                    const numPhrase = words.slice(start, end).join(' ');
+                    if (numPhrase.length >= 8) {
+                        variants.push({ query: numPhrase, description: 'numeric_window' });
+                    }
+                }
+            }
+
+            // Try each variant as a substring search
+            for (const v of variants) {
+                const idx = normGuideline.indexOf(v.query);
+                if (idx !== -1) {
+                    console.log(`[CITATION_CLASS] Phrase variant matched: ${v.description}`, {
+                        variantSample: v.query.substring(0, 60),
+                        matchIndex: idx
+                    });
+                    return { matched: true, matchedVariant: v.description, matchIndex: idx };
+                }
+            }
+
+            return { matched: false, matchedVariant: null, matchIndex: -1 };
+        }
+
+        // Classify a quote against guideline text
+        // Returns: { class: 'verbatim_exact'|'verbatim_numeric'|'fallback_window'|'no_phrase_match', details: {...} }
+        function classifyQuote(guidelineText, quote, source) {
+            const result = {
+                class: 'no_phrase_match',
+                source: source || 'unknown',
+                details: {}
+            };
+
+            if (!guidelineText || !quote) {
+                return result;
+            }
+
+            // First, check if any phrase variant matches
+            const variantMatch = simulateSearchVariants(guidelineText, quote);
+
+            if (variantMatch.matched) {
+                // Determine if it's exact or numeric-focused
+                if (variantMatch.matchedVariant === 'exact_normalised') {
+                    result.class = 'verbatim_exact';
+                } else if (variantMatch.matchedVariant === 'numeric_window') {
+                    result.class = 'verbatim_numeric';
+                } else if (['tail_phrase', 'head_phrase', 'longest_segment'].includes(variantMatch.matchedVariant)) {
+                    result.class = 'verbatim_exact';  // Still a phrase match
+                } else {
+                    result.class = 'fallback_window';
+                }
+                result.details = {
+                    matchedVariant: variantMatch.matchedVariant,
+                    matchIndex: variantMatch.matchIndex
+                };
+                return result;
+            }
+
+            // If no phrase match, check if key numerics from quote appear in guideline
+            const quoteNumerics = extractNumericTokens(quote);
+            const guidelineNumerics = extractNumericTokens(guidelineText);
+            const numericOverlap = quoteNumerics.filter(n => guidelineNumerics.includes(n));
+
+            if (numericOverlap.length > 0 && numericOverlap.length === quoteNumerics.length) {
+                // All numerics from quote are in guideline - weak numeric match
+                result.class = 'verbatim_numeric';
+                result.details = { numericsMatched: numericOverlap };
+                return result;
+            }
+
+            // No good match
+            result.class = 'no_phrase_match';
+            result.details = { reason: 'no_phrase_or_numeric_match' };
+            return result;
+        }
+
         const MAX_CITATION_QUOTES = 6;
         let quotesResolved = 0;
+
+        // Track classification results for logging
+        const citationClassifications = [];
 
         for (const task of citationTasks) {
             if (quotesResolved >= MAX_CITATION_QUOTES) {
@@ -17690,9 +17862,19 @@ Please provide a comprehensive answer to the question based on the relevant guid
             }
 
             if (!bestQuote || !bestGuidelineId) {
-                console.log('[DEBUG] askGuidelinesQuestion: No verbatim or fallback quote found for citation task', {
+                console.log('[CITATION_CLASS] No verbatim or fallback quote found', {
                     guidelineId: task.guidelineId,
                     semanticSample: task.semanticText.substring(0, 100)
+                });
+
+                // Track classification
+                citationClassifications.push({
+                    originalGuidelineId: task.guidelineId,
+                    finalGuidelineId: task.guidelineId,
+                    semanticSample: task.semanticText.substring(0, 80),
+                    quoteClass: 'no_phrase_match',
+                    action: 'stripped_search_text',
+                    reason: 'no_quote_found'
                 });
 
                 // SAFETY DEGRADE: if we cannot find any verbatim or fallback quote
@@ -17724,10 +17906,64 @@ Please provide a comprehensive answer to the question based on the relevant guid
                 .trim();
 
             if (!safeQuote) {
+                citationClassifications.push({
+                    originalGuidelineId: task.guidelineId,
+                    finalGuidelineId: bestGuidelineId,
+                    semanticSample: task.semanticText.substring(0, 80),
+                    quoteClass: 'no_phrase_match',
+                    action: 'stripped_search_text',
+                    reason: 'empty_safe_quote'
+                });
                 continue;
             }
 
-            // Replace all matching REF markers for this guideline+semanticText pair,
+            // CLASSIFY the quote against the target guideline text
+            const targetGuidelineText = guidelineTextById[bestGuidelineId] || '';
+            const classification = classifyQuote(targetGuidelineText, safeQuote, 'quote_upgrade');
+
+            console.log('[CITATION_CLASS] Quote classified', {
+                guidelineId: bestGuidelineId,
+                quoteClass: classification.class,
+                quoteSample: safeQuote.substring(0, 80),
+                details: classification.details
+            });
+
+            // Decision: only keep SearchText for high-confidence classes
+            const highConfidenceClasses = ['verbatim_exact', 'verbatim_numeric'];
+            const keepSearchText = highConfidenceClasses.includes(classification.class);
+
+            // Track classification
+            citationClassifications.push({
+                originalGuidelineId: task.guidelineId,
+                finalGuidelineId: bestGuidelineId,
+                semanticSample: task.semanticText.substring(0, 80),
+                quoteSample: safeQuote.substring(0, 80),
+                quoteClass: classification.class,
+                action: keepSearchText ? 'kept_search_text' : 'stripped_search_text',
+                matchedVariant: classification.details.matchedVariant || null
+            });
+
+            if (!keepSearchText) {
+                // Low confidence: strip SearchText so link opens PDF without highlight
+                console.log('[CITATION_CLASS] Low confidence - stripping SearchText', {
+                    guidelineId: bestGuidelineId,
+                    class: classification.class
+                });
+
+                const degradePattern = new RegExp(
+                    `\\[\\[REF:${escapeRegExp(task.guidelineId)}\\|([^|]+)\\|${escapeRegExp(task.semanticText)}\\]\\]`,
+                    'g'
+                );
+
+                enhancedAnswer = enhancedAnswer.replace(
+                    degradePattern,
+                    (_match, linkText) => `[[REF:${bestGuidelineId}|${linkText}|]]`
+                );
+
+                continue;
+            }
+
+            // HIGH CONFIDENCE: Replace all matching REF markers for this guideline+semanticText pair,
             // updating the GuidelineID to the guideline that actually provided the
             // verbatim or fallback quote.
             const pattern = new RegExp(
@@ -17743,9 +17979,31 @@ Please provide a comprehensive answer to the question based on the relevant guid
             quotesResolved += 1;
         }
 
+        // Log citation classification summary
+        if (citationClassifications.length > 0) {
+            const classBreakdown = {
+                verbatim_exact: citationClassifications.filter(c => c.quoteClass === 'verbatim_exact').length,
+                verbatim_numeric: citationClassifications.filter(c => c.quoteClass === 'verbatim_numeric').length,
+                fallback_window: citationClassifications.filter(c => c.quoteClass === 'fallback_window').length,
+                no_phrase_match: citationClassifications.filter(c => c.quoteClass === 'no_phrase_match').length
+            };
+            const actionBreakdown = {
+                kept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
+                stripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
+            };
+
+            console.log(`[ASK_GUIDELINES][${traceId}] === CITATION CLASSIFICATION SUMMARY ===`);
+            console.log(`[ASK_GUIDELINES][${traceId}] Total citations processed:`, citationClassifications.length);
+            console.log(`[ASK_GUIDELINES][${traceId}] Class breakdown:`, classBreakdown);
+            console.log(`[ASK_GUIDELINES][${traceId}] Action breakdown:`, actionBreakdown);
+            console.log(`[ASK_GUIDELINES][${traceId}] Individual classifications:`, JSON.stringify(citationClassifications, null, 2));
+        }
+
         if (quotesResolved > 0) {
-            console.log('[DEBUG] askGuidelinesQuestion: Upgraded citation search text with verbatim quotes', {
-                quotesResolved
+            console.log(`[ASK_GUIDELINES][${traceId}] Citation upgrade complete:`, {
+                quotesResolved,
+                totalCitations: citationClassifications.length,
+                keptSearchText: citationClassifications.filter(c => c.action === 'kept_search_text').length
             });
             // Use the enhanced answer going forward
             aiResponse = {
@@ -17762,25 +18020,33 @@ Please provide a comprehensive answer to the question based on the relevant guid
                     system_prompt: systemPrompt,
                     question_length: question.length,
                     guidelines_count: guidelinesWithContent.length,
-                    guidelines: guidelinesWithContent.map(g => ({ id: g.id, title: g.title }))
+                    guidelines: guidelinesWithContent.map(g => ({ id: g.id, title: g.title })),
+                    traceId: traceId
                 },
                 {
                     success: true,
                     response: aiResponse.content,
                     ai_provider: aiResponse.ai_provider,
                     ai_model: aiResponse.ai_model,
-                    token_usage: aiResponse.token_usage
+                    token_usage: aiResponse.token_usage,
+                    citationStats: {
+                        total: citationClassifications.length,
+                        kept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
+                        stripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
+                    }
                 },
                 'askGuidelinesQuestion'
             );
-            console.log('[DEBUG] askGuidelinesQuestion: AI interaction logged successfully');
+            console.log(`[ASK_GUIDELINES][${traceId}] AI interaction logged successfully`);
         } catch (logError) {
-            console.error('[DEBUG] askGuidelinesQuestion: Error logging AI interaction:', logError.message);
+            console.error(`[ASK_GUIDELINES][${traceId}] Error logging AI interaction:`, logError.message);
         }
 
-        console.log('[DEBUG] askGuidelinesQuestion: Returning response', {
+        console.log(`[ASK_GUIDELINES][${traceId}] === REQUEST COMPLETE ===`, {
             success: true,
-            answerLength: aiResponse.content.length
+            answerLength: aiResponse.content.length,
+            citationsKept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
+            citationsStripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
         });
 
         res.json({
@@ -17788,18 +18054,19 @@ Please provide a comprehensive answer to the question based on the relevant guid
             answer: aiResponse.content,
             guidelinesUsed: guidelinesWithContent.map(g => ({ id: g.id, title: g.title })),
             ai_provider: aiResponse.ai_provider,
-            ai_model: aiResponse.ai_model
+            ai_model: aiResponse.ai_model,
+            traceId: traceId  // Include trace ID for frontend debugging
         });
 
     } catch (error) {
-        console.error('[DEBUG] askGuidelinesQuestion: Error in endpoint:', {
+        console.error(`[ASK_GUIDELINES][${traceId}] === REQUEST ERROR ===`, {
             error: error.message,
-            stack: error.stack,
-            userId: req.user?.uid,
-            question: req.body?.question,
+            stack: error.stack?.substring(0, 500),
+            userId: req.user?.uid?.substring(0, 8) + '...',
+            questionLength: req.body?.question?.length,
             guidelinesCount: req.body?.relevantGuidelines?.length
         });
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: error.message, traceId: traceId });
     }
 });
 

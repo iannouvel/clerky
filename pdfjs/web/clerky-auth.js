@@ -131,7 +131,44 @@
                     }
                 }
                 
-                // 5. Tail phrase: last 6–8 words, which often carry the specific
+                // 5. NUMERIC-FOCUSED VARIANT: If the text contains numeric values
+                // (times, doses, percentiles), build a phrase around them.
+                // This is critical for medical guidelines where numbers matter.
+                const numericPattern = /\d+(?:[-–—]\d+)?(?:st|nd|rd|th)?/gi;
+                const numericMatches = baseText.match(numericPattern);
+                if (numericMatches && numericMatches.length > 0) {
+                    // Find the position of the first numeric in the word list
+                    const firstNumeric = numericMatches[0];
+                    const numIdx = words.findIndex(w => w.match(numericPattern));
+                    if (numIdx !== -1) {
+                        // Build a 5-7 word window around the numeric
+                        const windowStart = Math.max(0, numIdx - 2);
+                        const windowEnd = Math.min(words.length, numIdx + 5);
+                        const numericPhrase = words.slice(windowStart, windowEnd).join(' ');
+                        if (numericPhrase.length >= 10) {
+                            variants.push({
+                                query: numericPhrase,
+                                phraseSearch: true,
+                                description: 'numeric window phrase'
+                            });
+                        }
+                    }
+                    
+                    // Also try just the numeric with a few surrounding words
+                    // This helps when the exact phrasing differs but the number is key
+                    if (words.length >= 3) {
+                        const numericWords = words.filter(w => w.match(numericPattern) || w.length >= 4);
+                        if (numericWords.length >= 2 && numericWords.length <= 8) {
+                            variants.push({
+                                query: numericWords.join(' '),
+                                phraseSearch: false, // Allow flexibility in word order
+                                description: 'numeric keywords'
+                            });
+                        }
+                    }
+                }
+                
+                // 6. Tail phrase: last 6–8 words, which often carry the specific
                 // threshold or condition (e.g. "EFW >90th centile").
                 if (words.length >= 6) {
                     const tailSize = Math.min(8, words.length);
@@ -143,7 +180,7 @@
                     });
                 }
                 
-                // 6. Try first 10 words as phrase
+                // 7. Try first 10 words as phrase
                 if (words.length > 10) {
                     variants.push({
                         query: words.slice(0, 10).join(' '),
@@ -152,7 +189,7 @@
                     });
                 }
                 
-                // 7. Last resort: search for distinctive words (5+ chars, not common)
+                // 8. Last resort: search for distinctive words (5+ chars, not common)
                 const commonWords = new Set(['the', 'and', 'for', 'that', 'this', 'with', 'from', 'have', 'been', 'should', 'would', 'could']);
                 const distinctiveWordList = words
                     .filter(w => w.length >= 5 && !commonWords.has(w.toLowerCase()))
@@ -166,7 +203,7 @@
                     });
                 }
 
-                // 8. For short snippets, add an "all keywords" variant to ensure we at
+                // 9. For short snippets, add an "all keywords" variant to ensure we at
                 // least land near any occurrence of the combined terms.
                 if (words.length > 1 && words.length <= 10) {
                     variants.push({
@@ -175,6 +212,10 @@
                         description: 'all keywords'
                     });
                 }
+                
+                // Log variant summary for debugging
+                console.log('[PDF Search] Generated', variants.length, 'search variants:', 
+                    variants.map(v => v.description).join(', '));
                 
                 return variants;
             };
