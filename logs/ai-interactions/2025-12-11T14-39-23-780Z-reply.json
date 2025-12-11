@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-39-23-780Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1696,
+  "response_length": 1531,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":1141,\"transcriptPreview\":\"28yo, G0\\n\\nPresenting Complaint:\\nSecondary dysmenorrhoea for 9/12, worsening. Deep dyspareunia.\\n\\nKey Clinical Issue:\\nChronic pe...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\\\", \\\"title\\\": \\\"Outpatient Hysteroscopy\\\", \\\"rel...",
+  "full_data": null
+}
