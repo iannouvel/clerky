@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-49-07-125Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 794,
+  "response_length": 1293,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg22005-management-of-weight-loss-in-neo...",
+  "full_data": null
+}
