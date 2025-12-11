@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-29-188Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 897,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectom...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-interventional-guidance-2007-laparo...",
+  "full_data": null
+}
