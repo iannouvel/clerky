@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-31-367Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 810,
+  "response_length": 1307,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidur...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guidelin...",
+  "full_data": null
+}
