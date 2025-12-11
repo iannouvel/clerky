@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-33-526Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 802,
+  "response_length": 1302,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"nice-2025-caesarean-birth-pdf: NICE 2025 - Caesarean Birth\",\"nice-2...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-intrapartum-care-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Int...",
+  "full_data": null
+}
