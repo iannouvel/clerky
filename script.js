@@ -5622,11 +5622,11 @@ function replaceSectionContent(clinicalNote, sectionName, subsectionName, oldCon
     console.log('[DEBUG] replaceSectionContent:', { sectionName, subsectionName, oldContentLength: oldContent.length, newContentLength: newContent.length });
     
     // Light normalisation: for action-oriented sections like Plan / Monitoring / Recommendation,
-    // collapse extra blank lines inside the section content so added items sit flush with
-    // preceding items rather than being separated by an empty paragraph.
+    // collapse extra blank/whitespace-only lines inside the section content so added items sit
+    // flush with preceding items rather than being separated by an empty paragraph.
     const normaliseSpacingSections = ['Plan', 'Monitoring & Follow-Up', 'Recommendation'];
     if (normaliseSpacingSections.includes(sectionName)) {
-        newContent = newContent.replace(/\n{2,}/g, '\n');
+        newContent = newContent.replace(/\n\s*\n/g, '\n');
     }
     
     // Extract the section to get boundaries
