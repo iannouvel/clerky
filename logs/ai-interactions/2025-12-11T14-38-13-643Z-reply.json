@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-38-13-643Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1068,
+  "response_length": 1540,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":68,\"transcriptPreview\":\"how do we manage a conflict of opinion between doctors and midwives?...\",\"chunkGuidelines\":[\"bms-2024-management-of-unscheduled-bleedi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bms-2024-management-of-unscheduled-bleed...",
+  "full_data": null
+}
