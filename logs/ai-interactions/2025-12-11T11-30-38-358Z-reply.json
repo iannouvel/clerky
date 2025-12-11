@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T11-30-38-358Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 1278,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":1256,\"transcriptPreview\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-guidance-2023-ectopic-pdf\\\",\\n      \\\"title\\\": \\\"NICE Guidance - 2023 - Ectopic\\\",\\n      \\\"relevance\\\": \\\"1...",
+  "full_data": null
+}
