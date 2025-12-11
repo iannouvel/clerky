@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-44-951Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 772,
+  "response_length": 1155,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Remife...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg12030-caesarean-birth-guideline-pdf\\\", \\\"title\\\": \\\"Caesarean Birth Guideline\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyRe...",
+  "full_data": null
+}
