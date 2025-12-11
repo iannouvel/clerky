@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-16-30-434Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1254,
+  "response_length": 1576,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":50,\"transcriptPreview\":\"what is the guidance for management of DCDA twins?...\",\"chunkGuidelines\":[\"bjog-2016-management-of-premenstrual-syndrome-pdf: BJOG - 2...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2017-management-of-breech-presentation-pdf\\\", \\\"title\\\": \\\"Management of Breech Presentati...",
+  "full_data": null
+}
