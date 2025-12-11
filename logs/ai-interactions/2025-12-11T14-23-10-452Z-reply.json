@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-23-10-452Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1586,
+  "response_length": 1789,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":821,\"transcriptPreview\":\"26yo, G2P0 (previous TOP), 11+2, BMI 31, Rh+ve\\n\\nIssues:\\nDichorionic diamniotic (DCDA) twin pregnancy\\nHigh BMI\\n\\nBackground:\\nCon...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\",\\n      \\\"ti...",
+  "full_data": null
+}

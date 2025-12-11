@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-23-07-165Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1151,
+  "response_length": 1401,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/38\",\"transcriptLength\":821,\"transcriptPreview\":\"26yo, G2P0 (previous TOP), 11+2, BMI 31, Rh+ve\\n\\nIssues:\\nDichorionic diamniotic (DCDA) twin pregnancy\\nHigh BMI\\n\\nBackground:\\nCo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"fetal-monitoring-guideline-antenatal-pdf\\\",\\n      \\\"tit...",
+  "full_data": null
+}

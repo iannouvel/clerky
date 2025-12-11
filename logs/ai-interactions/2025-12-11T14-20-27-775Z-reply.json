@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-20-27-775Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1238,
+  "response_length": 1447,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/38\",\"transcriptLength\":3734,\"transcriptPreview\":\"### **Medical Clerking – SBAR Format**\\n\\n#### **SITUATION:** \\n**Patient:** 32-year-old **G3P2** (2 SVD, 0 miscarriages) **AFAB** p...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"cg12018-ectopic-pregnancy-guideline-pdf\\\",\\n      \\\"title\\\": \\\"Ectopic Pregnancy ...",
+  "full_data": null
+}
