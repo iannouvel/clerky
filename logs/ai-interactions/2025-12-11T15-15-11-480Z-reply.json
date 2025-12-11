@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-15-11-480Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 812,
+  "response_length": 1269,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":81,\"transcriptPreview\":\"write a simple treatment plan for 16 week DCDA twins (with no other risk factors)...\",\"chunkGuidelines\":[\"uhsx-local-requirements-pmr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-local-requirements-pmrt-sop-pdf\\\", ...",
+  "full_data": null
+}
