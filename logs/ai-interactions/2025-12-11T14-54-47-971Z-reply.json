@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-47-971Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1235,
+  "response_length": 1633,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"bjog-2016-management-of-premenstrual-syndrome-pdf: BJOG - 2016 -  Management o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2017-management-of-breech-presentation-pdf\\\", \\\"title\\\": \\\"Management of Breech Pres...",
+  "full_data": null
+}
