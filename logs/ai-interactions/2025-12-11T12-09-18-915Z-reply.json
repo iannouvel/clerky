@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-09-18-915Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 1220,
+  "response_length": 1254,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-obstetric-vte-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Obstetric VTE guideline\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\\"poten...",
+  "full_data": null
+}
