@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-43-23-855Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1201,
+  "response_length": 1246,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"MP050 Caesarean Section\\\", \\\"relevance\\\": \\\"0.95\\\"}\\n  ],\\n  \\\"potentiallyRel...",
+  "full_data": null
+}
