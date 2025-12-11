@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-49-08-102Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1109,
+  "response_length": 1561,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-wa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-war...",
+  "full_data": null
+}
