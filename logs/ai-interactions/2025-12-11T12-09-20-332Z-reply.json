@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-09-20-332Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1226,
+  "response_length": 1199,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-management-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Management of VTE in pregnancy\\\", \\\"relevance\\\": \\\"1.0\\\"...",
+  "full_data": null
+}
