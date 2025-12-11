@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-46-062Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 848,
+  "response_length": 1306,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"2020-10-secamb-suspected-preterm-labour-guidance-v001-pdf: 2020-10 SEC...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"actions-following-ctg-categorisation-pdf\\\", \\\"title\\\": \\\"Actions following CTG categorisation\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  ...",
+  "full_data": null
+}
