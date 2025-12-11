@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-27-32-744Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 893,
+  "response_length": 1343,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":41,\"transcriptPreview\":\"how do we calculate birthweight centiles?...\",\"chunkGuidelines\":[\"nice-2021-postnatal-care-pdf: NICE - 2021 - Postnatal Care\",\"nice-2...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"nice-2021-postnatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Postnatal C...",
+  "full_data": null
+}
