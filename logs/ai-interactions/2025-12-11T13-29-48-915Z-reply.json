@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-48-915Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1216,
+  "response_length": 1808,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortal...",
+  "full_data": null
+}

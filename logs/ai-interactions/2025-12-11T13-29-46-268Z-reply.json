@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-46-268Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 891,
+  "response_length": 1347,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"nice-2021-postnatal-care-pdf: NICE - 2021 - Postnatal Care\",\"nice-202...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-2022-fetal-monitoring-in-labour-pdf\\\", \\\"title\\\": \\\"NICE 2022 - Fetal monitoring in labour...",
+  "full_data": null
+}
