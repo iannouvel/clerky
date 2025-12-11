@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-43-27-351Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1362,
+  "response_length": 1399,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2022-fetal-monitoring-in-labour-pdf\\\", \\\"title\\\": \\\"NICE 2022 - Fetal monitoring in labour\\\", \\\"relevance\\\": \\\"1.0\\\"...",
+  "full_data": null
+}
