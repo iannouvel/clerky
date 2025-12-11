@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-54-47-181Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1023,
+  "response_length": 1634,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":31,\"transcriptPreview\":\"how do we manage cord prolapse?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 2025 - Gonorrhoeae\",\"bashh-2025-mycoplasma...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-management-of-monochorionic-twin-pregnancy-pdf...",
+  "full_data": null
+}
