@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-29-46-456Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 752,
+  "response_length": 1251,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":39,\"transcriptPreview\":\"what is required for a Cat 1 C-section?...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolapse-pdf: GTG - 2014 - Umbilical Cord Pro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", ...",
+  "full_data": null
+}
