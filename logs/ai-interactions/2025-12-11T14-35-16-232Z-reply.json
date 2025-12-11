@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-35-16-232Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 1439,
+  "response_length": 1421,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/38\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.85\\\"}],\\n  \\\"potentiallyRelevan...",
+  "full_data": null
+}
