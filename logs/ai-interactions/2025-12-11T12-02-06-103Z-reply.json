@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T12-02-06-103Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 775,
+  "response_length": 1161,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how to we manage heavy menstural bleeding?...\",\"chunkGuidelines\":[\"cg12027-pca-remifentanil-in-labour-guideline-pdf: CG12027 PCA (Rem...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg14004-miscarriage-guideline-pdf\\\", \\\"title\\\": \\\"Miscarriage Guideline\\\", \\\"relevance\\\": \\\"0.6...",
+  "full_data": null
+}
