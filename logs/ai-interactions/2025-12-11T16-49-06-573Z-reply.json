@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T16-49-06-573Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 824,
+  "response_length": 1305,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":37,\"transcriptPreview\":\"how do we manage a 4th degree tear?\\n\\n...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1134-postnatal-care-pdf\\\", \\\"title\\\": \\\"Postnatal Care Guideline\\\", \\\"relevance\\\": \\\"0.90\\\"}\\n  ],\\n  \\\"potentiallyRele...",
+  "full_data": null
+}
