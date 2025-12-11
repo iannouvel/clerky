@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-38-14-899Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 1245,
+  "response_length": 1578,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/38\",\"transcriptLength\":68,\"transcriptPreview\":\"how do we manage a conflict of opinion between doctors and midwives?...\",\"chunkGuidelines\":[\"bjog-2022-stock-antenatal-corticosteroids...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroid...",
+  "full_data": null
+}
