@@ -15489,9 +15489,11 @@ async function askGuidelinesQuestion() {
             throw new Error(data2.error || 'Failed to process guidelines');
         }
 
-        // Build a map from both guideline IDs and titles to canonical IDs,
-        // so citations can use either and still resolve to the correct PDF.
+        // Build maps from IDs/titles to canonical IDs and titles,
+        // so citations can use either and still resolve to the correct PDF,
+        // and links can always display the guideline name.
         const guidelineIdMap = new Map();
+        const guidelineTitleMap = new Map();
         if (Array.isArray(data2.guidelinesUsed)) {
             data2.guidelinesUsed.forEach(g => {
                 if (!g) return;
@@ -15500,6 +15502,9 @@ async function askGuidelinesQuestion() {
                 if (id) {
                     guidelineIdMap.set(id, id);
                     guidelineIdMap.set(id.toLowerCase(), id);
+                    if (title) {
+                        guidelineTitleMap.set(id, title);
+                    }
                 }
                 if (title && id) {
                     guidelineIdMap.set(title, id);
@@ -15533,6 +15538,17 @@ async function askGuidelinesQuestion() {
                 guidelineIdMap.get(rawId.toLowerCase()) ||
                 rawId;
             
+            // Use the canonical guideline title as link text so that links
+            // always reference the guideline name rather than an internal
+            // section label. Fall back to the AI-provided link text if we
+            // cannot resolve the title for some reason.
+            const displayTitle =
+                guidelineTitleMap.get(canonicalId) ||
+                (Array.isArray(data2.guidelinesUsed)
+                    ? (data2.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
+                    : '') ||
+                text.trim();
+            
             // Use existing createGuidelineViewerLink function.
             // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
             // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
@@ -15540,7 +15556,7 @@ async function askGuidelinesQuestion() {
             // the full snippet directly for the PDF search.
             return createGuidelineViewerLink(
                 canonicalId, 
-                text.trim(), 
+                displayTitle, 
                 null, // filename not needed if ID provided
                 decodedSearch, // Context / search snippet
                 true // hasVerbatimQuote
@@ -15691,6 +15707,16 @@ async function processQuestionAgainstGuidelines() {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
 
+        // Build a simple ID -> title map so that link text can always show the
+        // guideline name, regardless of the AI-provided LinkText field.
+        const guidelineTitleMap = new Map();
+        if (Array.isArray(data.guidelinesUsed)) {
+            data.guidelinesUsed.forEach(g => {
+                if (!g || !g.id) return;
+                guidelineTitleMap.set(String(g.id), g.title ? String(g.title) : '');
+            });
+        }
+
         // Parse and format citations in the answer
         let answerText = data.answer;
         
@@ -15709,14 +15735,24 @@ async function processQuestionAgainstGuidelines() {
             // Decode HTML entities in search text to ensure it matches the PDF content
             const decodedSearch = unescapeHtml(search);
             
+            const canonicalId = id.trim();
+            // Prefer the guideline title for link text so that links clearly
+            // show which guideline they come from.
+            const displayTitle =
+                guidelineTitleMap.get(canonicalId) ||
+                (Array.isArray(data.guidelinesUsed)
+                    ? (data.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
+                    : '') ||
+                text.trim();
+            
             // Use existing createGuidelineViewerLink function.
             // We pass 'true' for hasVerbatimQuote to trigger search highlighting.
             // Because Ask-Guidelines now passes a verbatim snippet as SearchText, the
             // link helper will either extract a quoted segment or fall back to using
             // the full snippet directly for the PDF search.
             return createGuidelineViewerLink(
-                id.trim(), 
-                text.trim(), 
+                canonicalId, 
+                displayTitle, 
                 null, // filename not needed if ID provided
                 decodedSearch, // Context / search snippet
                 true // hasVerbatimQuote
