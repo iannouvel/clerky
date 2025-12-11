@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T15-32-08-845Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 971,
+  "response_length": 1370,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":78,\"transcriptPreview\":\"when assessing a previous baby's birthweight centile - how do we calculate it?...\",\"chunkGuidelines\":[\"cg18007-newborn-screening-fail...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20003-first-trimester-dating-uss-protocol-pdf\\\", \\\"title\\\": \\\"...",
+  "full_data": null
+}
