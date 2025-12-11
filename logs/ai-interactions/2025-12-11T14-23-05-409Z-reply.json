@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T14-23-05-409Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 1249,
+  "response_length": 1222,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/38\",\"transcriptLength\":821,\"transcriptPreview\":\"26yo, G2P0 (previous TOP), 11+2, BMI 31, Rh+ve\\n\\nIssues:\\nDichorionic diamniotic (DCDA) twin pregnancy\\nHigh BMI\\n\\nBackground:\\nCo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"uhsx-maternity-smoking-smoke-free-pregnancy-guideline-pdf\\\", \\\"title\\\"...",
+  "full_data": null
+}
