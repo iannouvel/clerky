@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-11T13-21-13-460Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1286,
+  "response_length": 1314,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/38\",\"transcriptLength\":682,\"transcriptPreview\":\"28yo, G1P0, 39+1, BMI 31, Rh+ve\\n\\nIssues:\\nCTG abnormalities suspicious for fetal distress\\nMeconium stained liquor\\n\\nBackground:\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"cg14009-pcea-epidural-in-labour-guideline-pdf\\\", \\\"title\\\": \\\"CG...",
+  "full_data": null
+}
