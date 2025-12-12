@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-38-38-016Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1042,
+  "response_length": 1493,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: BMS - 2024 ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"bsh-2021-sickle-cell-disease-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Manageme...",
+  "full_data": null
+}
