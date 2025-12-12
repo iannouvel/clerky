@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-40-309Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1111,
+  "response_length": 1618,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"sp22003-maternity-telephone-triage-sop-pdf: SP22003 Maternity Tele...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\", \\\"title\\\": \\\"Sussex Regional...",
+  "full_data": null
+}
