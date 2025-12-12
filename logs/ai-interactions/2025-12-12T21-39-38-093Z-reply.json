@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-38-093Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-32",
+  "token_usage": null,
+  "prompt_length": 694,
+  "response_length": 1205,
+  "prompt_preview": "{\"prompt\":\"Chunk 32/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"peripartum-sodim-monitoring-pathway-pdf: Peripartum sodim monitori...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"rag-rating-for-iol-pdf\\\", \\\"title\\\": \\\"RAG rating for IOL\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"placental-histolog...",
+  "full_data": null
+}
