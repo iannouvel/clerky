@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-39-256Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 860,
+  "response_length": 1363,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf: Carbetocin to...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"care-in-labour-guideline-pdf\\\", \\\"title\\\": \\\"Care in Labour guideline\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}
