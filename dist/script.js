@@ -3621,6 +3621,18 @@ function initializeChatbotUX() {
         updateChatbotButtonVisibility();
     });
     
+    // Hide record button when editor is focused (user is typing)
+    const recordBtn = document.getElementById('recordBtn');
+    if (recordBtn) {
+        editor.on('focus', () => {
+            recordBtn.classList.add('hidden-while-typing');
+        });
+        
+        editor.on('blur', () => {
+            recordBtn.classList.remove('hidden-while-typing');
+        });
+    }
+    
     // Initial button visibility check
     updateChatbotButtonVisibility();
     
@@ -15633,111 +15645,65 @@ async function askGuidelinesQuestion() {
         // Parse and format citations in the answer
         let answerText = data2.answer;
         
-        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
-        // Format: [[REF:guideline-id-or-title|Link Text|Search Text]]
-        // SearchText may be empty if the backend could not find a high-confidence quote.
-        // Updated regex to allow empty SearchText (the third capture group is now optional).
-        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]*)\]\]/g;
+        // NEW SIMPLIFIED FORMAT: Replace [[CITATION:guidelineId|searchText]] with clickable links
+        // searchText may be empty if no verbatim quote was found
+        const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
 
         let citationCount = 0;
-        let highConfidenceCitations = 0;
-        let lowConfidenceCitations = 0;
+        let withQuotes = 0;
+        let withoutQuotes = 0;
         
-        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+        const formattedAnswer = answerText.replace(citationRegex, (match, guidelineId, searchText) => {
             citationCount += 1;
 
-            const originalText = text.trim();
+            const rawId = guidelineId.trim();
+            const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
+            const hasQuote = decodedSearch.length >= 5;
 
-            // Decode HTML entities in search text to ensure it matches the PDF content
-            const decodedSearch = search ? unescapeHtml(search).trim() : '';
-            
-            // Determine if this is a high-confidence citation (non-empty SearchText)
-            // or a low-confidence one (empty SearchText - backend stripped it)
-            const hasHighConfidenceQuote = decodedSearch.length >= 5;
-
-            if (hasHighConfidenceQuote) {
-                highConfidenceCitations += 1;
+            if (hasQuote) {
+                withQuotes += 1;
             } else {
-                lowConfidenceCitations += 1;
+                withoutQuotes += 1;
             }
 
-            console.log('[DEBUG] askGuidelinesQuestion: Processing citation', {
-                citationNum: citationCount,
-                guidelineId: id.trim(),
-                searchTextLength: decodedSearch.length,
-                hasHighConfidenceQuote,
-                searchPreview: decodedSearch.substring(0, 50)
-            });
-
-            const rawId = id.trim();
+            // Resolve the canonical guideline ID and title
             const canonicalId =
                 guidelineIdMap.get(rawId) ||
                 guidelineIdMap.get(rawId.toLowerCase()) ||
                 rawId;
             
-            // Determine if this REF is just a generic reference to the guideline
-            // name. If so, suppress the inline link and rely on the "Guidelines
-            // Used" list instead.
-            let isGuidelineName = false;
-            const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-            const textNorm = normalise(originalText);
-            if (textNorm) {
-                if (Array.isArray(data2.guidelinesUsed)) {
-                    for (const g of data2.guidelinesUsed) {
-                        if (!g || !g.title) continue;
-                        const titleNorm = normalise(g.title);
-                        if (titleNorm && titleNorm === textNorm) {
-                            isGuidelineName = true;
-                            break;
-                        }
-                    }
-                }
-                if (!isGuidelineName && textNorm.includes('guideline') && !/\d/.test(originalText)) {
-                    isGuidelineName = true;
-                }
-            }
-
-            if (isGuidelineName) {
-                // Drop generic inline guideline references entirely; the guideline
-                // will already be listed (with a link) in the "Guidelines Used" section.
-                return '';
-            }
-            
-            // Use the canonical guideline title as link text so that links
-            // always reference the guideline name rather than an internal
-            // section label. Fall back to the AI-provided link text if we
-            // cannot resolve the title for some reason.
+            // Get the guideline title for display
             const displayTitle =
                 guidelineTitleMap.get(canonicalId) ||
                 (Array.isArray(data2.guidelinesUsed)
                     ? (data2.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
                     : '') ||
-                originalText;
+                canonicalId;
+
+            console.log('[DEBUG] askGuidelinesQuestion: Processing citation', {
+                citationNum: citationCount,
+                guidelineId: canonicalId,
+                hasQuote,
+                searchPreview: decodedSearch.substring(0, 50)
+            });
             
-            // Use existing createGuidelineViewerLink function.
-            // Pass hasVerbatimQuote=true ONLY for high-confidence citations
-            // (where backend kept the SearchText). For low-confidence citations,
-            // pass hasVerbatimQuote=false so the link opens the PDF without search.
+            // Create the link with or without search text
             return createGuidelineViewerLink(
                 canonicalId, 
                 displayTitle, 
                 null, // filename not needed if ID provided
-                hasHighConfidenceQuote ? decodedSearch : null, // Only pass context for high-confidence
-                hasHighConfidenceQuote // hasVerbatimQuote
+                hasQuote ? decodedSearch : null,
+                hasQuote
             );
         });
 
         console.log('[DEBUG] askGuidelinesQuestion: Citation processing complete', {
             totalCitations: citationCount,
-            highConfidence: highConfidenceCitations,
-            lowConfidence: lowConfidenceCitations
-        });
-
-        console.log('[DEBUG] askGuidelinesQuestion: Replaced citation markers in answer', {
-            citationCount
+            withQuotes,
+            withoutQuotes
         });
 
         // Display the answer with HTML formatting
@@ -15906,94 +15872,58 @@ async function processQuestionAgainstGuidelines() {
         // Parse and format citations in the answer
         let answerText = data.answer;
         
-        // Replace [[REF:GuidelineID|LinkText|SearchText]] with clickable links.
-        // Format: [[REF:guideline-id|Link Text|Search Text]]
-        // SearchText may be empty if the backend could not find a high-confidence quote.
-        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]*)\]\]/g;
+        // NEW SIMPLIFIED FORMAT: Replace [[CITATION:guidelineId|searchText]] with clickable links
+        const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
         
         // Use a temporary placeholder for newlines to preserve them during HTML conversion
         answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
 
         let citationCount = 0;
-        let highConfidenceCitations = 0;
-        let lowConfidenceCitations = 0;
+        let withQuotes = 0;
+        let withoutQuotes = 0;
         
-        const formattedAnswer = answerText.replace(citationRegex, (match, id, text, search) => {
+        const formattedAnswer = answerText.replace(citationRegex, (match, guidelineId, searchText) => {
             citationCount += 1;
 
-            const originalText = text.trim();
+            const rawId = guidelineId.trim();
+            const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
+            const hasQuote = decodedSearch.length >= 5;
 
-            // Decode HTML entities in search text to ensure it matches the PDF content
-            const decodedSearch = search ? unescapeHtml(search).trim() : '';
-            
-            // Determine if this is a high-confidence citation (non-empty SearchText)
-            const hasHighConfidenceQuote = decodedSearch.length >= 5;
-
-            if (hasHighConfidenceQuote) {
-                highConfidenceCitations += 1;
+            if (hasQuote) {
+                withQuotes += 1;
             } else {
-                lowConfidenceCitations += 1;
+                withoutQuotes += 1;
             }
+            
+            // Get the guideline title for display
+            const displayTitle =
+                guidelineTitleMap.get(rawId) ||
+                (Array.isArray(data.guidelinesUsed)
+                    ? (data.guidelinesUsed.find(g => String(g.id) === String(rawId))?.title || '').trim()
+                    : '') ||
+                rawId;
 
             console.log('[DEBUG] processQuestionAgainstGuidelines: Processing citation', {
                 citationNum: citationCount,
-                guidelineId: id.trim(),
-                searchTextLength: decodedSearch.length,
-                hasHighConfidenceQuote
+                guidelineId: rawId,
+                hasQuote,
+                searchPreview: decodedSearch.substring(0, 50)
             });
             
-            const canonicalId = id.trim();
-
-            // Determine if this REF is just a generic reference to the guideline
-            // name. If so, suppress the inline link and rely on the "Guidelines
-            // Used" list instead.
-            let isGuidelineName = false;
-            const normalise = s => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
-            const textNorm = normalise(originalText);
-            if (textNorm) {
-                if (Array.isArray(data.guidelinesUsed)) {
-                    for (const g of data.guidelinesUsed) {
-                        if (!g || !g.title) continue;
-                        const titleNorm = normalise(g.title);
-                        if (titleNorm && titleNorm === textNorm) {
-                            isGuidelineName = true;
-                            break;
-                        }
-                    }
-                }
-                if (!isGuidelineName && textNorm.includes('guideline') && !/\d/.test(originalText)) {
-                    isGuidelineName = true;
-                }
-            }
-
-            if (isGuidelineName) {
-                return '';
-            }
-            
-            // Prefer the guideline title for link text so that links clearly
-            // show which guideline they come from.
-            const displayTitle =
-                guidelineTitleMap.get(canonicalId) ||
-                (Array.isArray(data.guidelinesUsed)
-                    ? (data.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
-                    : '') ||
-                originalText;
-            
-            // Use existing createGuidelineViewerLink function.
-            // Pass hasVerbatimQuote=true ONLY for high-confidence citations.
+            // Create the link with or without search text
             return createGuidelineViewerLink(
-                canonicalId, 
+                rawId, 
                 displayTitle, 
-                null, // filename not needed if ID provided
-                hasHighConfidenceQuote ? decodedSearch : null,
-                hasHighConfidenceQuote
+                null,
+                hasQuote ? decodedSearch : null,
+                hasQuote
             );
         });
 
         console.log('[DEBUG] processQuestionAgainstGuidelines: Citation processing complete', {
             totalCitations: citationCount,
-            highConfidence: highConfidenceCitations,
-            lowConfidence: lowConfidenceCitations
+            withQuotes,
+            withoutQuotes
         });
 
         // Display the comprehensive answer with HTML formatting

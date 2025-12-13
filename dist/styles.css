@@ -1119,9 +1119,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
-    padding: 4px 0;
-    margin-bottom: 4px;
+    gap: 2px;
+    padding: 2px 0;
+    margin-bottom: 0;
     border-bottom: 1px solid #e8e8e8;
 }
 
@@ -1133,7 +1133,7 @@ body {
     font-weight: 600;
     color: #333;
     font-size: 0.9rem;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
 .preference-value-container {
@@ -1227,7 +1227,7 @@ body {
 /* Preferences Panel Button */
 .preferences-panel-btn {
     width: 100%;
-    padding: 10px 12px;
+    padding: 6px 10px;
     background-color: #00B894;
     color: white;
     border: none;
@@ -1238,7 +1238,7 @@ body {
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
 }
 
@@ -1291,7 +1291,7 @@ body {
     .preference-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 6px;
+        gap: 2px;
     }
 }
 
@@ -3089,6 +3089,16 @@ html, body {
     padding: 4px 8px;
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide icon buttons (undo/redo) when disabled - shrinks container */
+.floating-input-buttons .icon-btn:disabled {
+    display: none;
+}
+
+/* Hide record button when user is typing */
+.floating-input-buttons .record-btn.hidden-while-typing {
+    display: none;
 }
 
 .floating-input-buttons-top {
