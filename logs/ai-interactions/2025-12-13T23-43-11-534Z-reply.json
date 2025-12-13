@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-43-11-534Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 853,
+  "response_length": 1369,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/38\",\"transcriptLength\":20,\"transcriptPreview\":\"how do we use MgSO4?...\",\"chunkGuidelines\":[\"reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline\",\"referral-for-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"reduced-fetal-movements-guideline-pdf\\\",...",
+  "full_data": null
+}
