@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-46-24-211Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1268,
+  "response_length": 1744,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":64,\"transcriptPreview\":\"how do we use hydralazine with severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"bjog-2016-management-of-premenstrual-syndrome...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-management-of-premenstrual-syn...",
+  "full_data": null
+}
