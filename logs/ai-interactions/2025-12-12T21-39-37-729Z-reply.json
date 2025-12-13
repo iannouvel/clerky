@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-37-729Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 797,
+  "response_length": 1249,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Managem...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"eclampsia-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"Eclampsia prompt card ED RSCH PRH\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"pote...",
+  "full_data": null
+}

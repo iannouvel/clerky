@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-38-37-198Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 938,
+  "response_length": 1434,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"fsrh-contraception-in-women-aged-over-40-pdf: FSRH - Contraception...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-contraception-in-women-aged-over-40...",
+  "full_data": null
+}

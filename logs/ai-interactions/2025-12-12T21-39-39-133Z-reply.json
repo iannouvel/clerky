@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-39-133Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 749,
+  "response_length": 1245,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"uhsx-multiple-pregnancy-birth-guideline-pdf: UHSx Multiple Pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-multiple-pregnancy-birth-guideline-...",
+  "full_data": null
+}

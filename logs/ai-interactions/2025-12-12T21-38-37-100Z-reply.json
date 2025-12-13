@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-38-37-100Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 827,
+  "response_length": 1284,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Matern...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover-of-care-pdf\\\", \\\"title\\\": \\\"CG1122 Maternal Transfer &...",
+  "full_data": null
+}

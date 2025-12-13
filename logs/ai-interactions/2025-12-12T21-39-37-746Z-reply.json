@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-12T21-39-37-746Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 733,
+  "response_length": 1243,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/38\",\"transcriptLength\":42,\"transcriptPreview\":\"How do we manage preeclampsia at 35 weeks?...\",\"chunkGuidelines\":[\"mp045-pyrexia-in-labour-sepsis-pdf: MP045 Pyrexia in Labour & Seps...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"mp050-caesarean-section-pdf\\\", \\\"title\\\": \\\"MP050 Caesarean Section\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}
