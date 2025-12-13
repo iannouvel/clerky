@@ -9361,14 +9361,14 @@ document.addEventListener('DOMContentLoaded', () => {
             isRecording = true;
             finalTranscript = getUserInputContent();
             recordBtn.classList.add('recording');
-            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Stop`;
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>`;
             console.log('Speech recognition started.');
         };
 
         recognition.onend = () => {
             isRecording = false;
             recordBtn.classList.remove('recording');
-            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>Record`;
+            recordBtn.innerHTML = `<span id="recordSymbol" class="record-symbol"></span>`;
             debouncedSaveState();
             console.log('Speech recognition ended.');
         };
