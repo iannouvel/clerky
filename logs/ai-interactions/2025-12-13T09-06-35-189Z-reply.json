@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T09-06-35-189Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 894,
+  "response_length": 1345,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how and when do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"nice-2021-postnatal-care-pdf: NICE - 2021 - Postnatal Care\",\"nice-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2023-hypertension-in-pregnancy-pdf\\\", \\\"title\\\": \\\"NICE - 2023 - Hypertension In Pregnancy\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n...",
+  "full_data": null
+}
