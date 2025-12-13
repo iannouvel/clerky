@@ -10825,11 +10825,44 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                 
                 console.log(`[REEXTRACT] Possible filenames:`, possibleFilenames);
                 
+                // Helper function to normalize filename for comparison
+                const normalizeForMatch = (str) => {
+                    return str
+                        .toLowerCase()
+                        .replace(/\.pdf$/i, '')
+                        .replace(/[''""]/g, "'")
+                        .replace(/[–—]/g, '-')
+                        .replace(/[\s\-_]+/g, '')  // Remove all spaces, hyphens, underscores
+                        .replace(/[^\w]/g, '');     // Remove all non-alphanumeric
+                };
+                
+                // Helper function to calculate similarity (simple containment check)
+                const calculateSimilarity = (target, candidate) => {
+                    const t = normalizeForMatch(target);
+                    const c = normalizeForMatch(candidate);
+                    if (t === c) return 1.0;
+                    if (t.includes(c) || c.includes(t)) return 0.9;
+                    
+                    // Check how many consecutive characters match
+                    let maxMatch = 0;
+                    for (let i = 0; i < t.length; i++) {
+                        for (let j = 0; j < c.length; j++) {
+                            let k = 0;
+                            while (i + k < t.length && j + k < c.length && t[i + k] === c[j + k]) {
+                                k++;
+                            }
+                            maxMatch = Math.max(maxMatch, k);
+                        }
+                    }
+                    return maxMatch / Math.max(t.length, c.length);
+                };
+                
                 // Fetch from Firebase Storage (where PDFs are stored)
                 const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
                 let pdfBuffer = null;
                 let usedFilename = null;
                 
+                // First, try exact matches
                 for (const filename of possibleFilenames) {
                     // Ensure .pdf extension
                     const pdfFileName = filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf';
@@ -10851,41 +10884,50 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                     }
                 }
                 
+                // If not found with exact match, try fuzzy matching in Firebase Storage
+                if (!pdfBuffer) {
+                    console.log(`[REEXTRACT] Exact match not found, trying fuzzy match in Firebase Storage...`);
+                    try {
+                        // List all files in the pdfs folder
+                        const [files] = await bucket.getFiles({ prefix: 'pdfs/' });
+                        const pdfFiles = files.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+                        console.log(`[REEXTRACT] Found ${pdfFiles.length} PDF files in Firebase Storage`);
+                        
+                        let bestMatch = null;
+                        let bestScore = 0;
+                        
+                        for (const targetFilename of possibleFilenames) {
+                            const targetName = (targetFilename.toLowerCase().endsWith('.pdf') ? targetFilename : targetFilename + '.pdf');
+                            
+                            for (const file of pdfFiles) {
+                                // file.name includes 'pdfs/' prefix, so extract just the filename
+                                const storedFilename = file.name.replace(/^pdfs\//, '');
+                                const score = calculateSimilarity(targetName, storedFilename);
+                                
+                                if (score > bestScore) {
+                                    bestScore = score;
+                                    bestMatch = file;
+                                }
+                            }
+                        }
+                        
+                        if (bestMatch && bestScore >= 0.7) {
+                            const matchedName = bestMatch.name.replace(/^pdfs\//, '');
+                            console.log(`[REEXTRACT] ✅ Fuzzy match in Firebase Storage: ${matchedName} (score: ${bestScore.toFixed(2)})`);
+                            const [buffer] = await bestMatch.download();
+                            pdfBuffer = buffer;
+                            usedFilename = matchedName;
+                        } else if (bestMatch) {
+                            console.log(`[REEXTRACT] Best Storage match was ${bestMatch.name} but score too low: ${bestScore.toFixed(2)}`);
+                        }
+                    } catch (listError) {
+                        console.log(`[REEXTRACT] Error listing Firebase Storage files: ${listError.message}`);
+                    }
+                }
+                
                 // If not found in Storage, try GitHub as fallback
                 if (!pdfBuffer) {
                     console.log(`[REEXTRACT] Not in Firebase Storage, trying GitHub...`);
-                    
-                    // Helper function to normalize filename for comparison
-                    const normalizeForMatch = (str) => {
-                        return str
-                            .toLowerCase()
-                            .replace(/\.pdf$/i, '')
-                            .replace(/[''""]/g, "'")
-                            .replace(/[–—]/g, '-')
-                            .replace(/[\s\-_]+/g, '')  // Remove all spaces, hyphens, underscores
-                            .replace(/[^\w]/g, '');     // Remove all non-alphanumeric
-                    };
-                    
-                    // Helper function to calculate similarity (simple containment check)
-                    const calculateSimilarity = (target, candidate) => {
-                        const t = normalizeForMatch(target);
-                        const c = normalizeForMatch(candidate);
-                        if (t === c) return 1.0;
-                        if (t.includes(c) || c.includes(t)) return 0.9;
-                        
-                        // Check how many consecutive characters match
-                        let maxMatch = 0;
-                        for (let i = 0; i < t.length; i++) {
-                            for (let j = 0; j < c.length; j++) {
-                                let k = 0;
-                                while (i + k < t.length && j + k < c.length && t[i + k] === c[j + k]) {
-                                    k++;
-                                }
-                                maxMatch = Math.max(maxMatch, k);
-                            }
-                        }
-                        return maxMatch / Math.max(t.length, c.length);
-                    };
                     
                     // First, list all files in the guidance folder to find a match
                     try {
