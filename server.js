@@ -17436,52 +17436,41 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
         });
 
         // Create system prompt for answering questions based on guidelines
-        const systemPrompt = `You are a medical AI assistant that answers clinical questions based on relevant medical guidelines. Your role is to:
-        
-1. Analyze the user's question carefully
-2. Review the provided relevant guidelines thoroughly
-3. Provide a comprehensive, evidence-based answer that directly addresses the question
-4. Reference specific guidelines and their recommendations when applicable
-5. Use clear, professional medical language
-6. If the guidelines don't fully address the question, acknowledge this and provide the best available guidance
-7. Structure your response in a clear, organized manner
-        
-CITATION FORMATTING (CRITICAL):
-When you quote text from a guideline, you MUST use this citation format:
-[[REF:GuidelineID|LinkText|SearchText]]
+        // SIMPLIFIED PROMPT: AI just answers and tags each piece of advice with a GuidelineID
+        // We'll find verbatim quotes in a separate step
+        const systemPrompt = `You are a medical AI assistant that answers clinical questions based on relevant medical guidelines.
 
-ABSOLUTELY CRITICAL - SEARCH TEXT MUST MATCH DISPLAYED TEXT:
-If you put text in quotation marks in your answer, the SearchText in the citation MUST BE THE SAME TEXT (or very close to it).
+RESPONSE FORMAT:
+Your answer MUST follow this exact structure:
 
-WRONG: recommends "using consistent reference charts" [[REF:guideline|Link|Maternity providers should ensure clear identification]]
-  - The quoted text is "using consistent reference charts" but SearchText is completely different!
+### [Title of Answer]
 
-RIGHT: recommends "using consistent reference charts" [[REF:guideline|Link|using consistent reference charts]]
-  - The quoted text and SearchText match!
+[One paragraph summary providing an overview of the key points]
 
-RIGHT: The guideline states providers should "ensure clear identification of reference charts" [[REF:guideline|Link|ensure clear identification of reference charts]]
-  - The quoted text and SearchText match!
+**Detailed Advice:**
 
-- GuidelineID: Use the EXACT ID from the [GuidelineID: ...] field (e.g., 'mp046-management-of-breech-and-ecv.txt'). Do NOT use the guideline title!
-- LinkText: A short description (e.g., 'Reference charts', 'Category 1 DDI').
-- SearchText: The EXACT TEXT you are quoting. If you write "X" in quotation marks, SearchText must be X.
-  * The phrase MUST exist word-for-word in the guideline.
-  * Include any numeric values, thresholds, or time limits.
-  * If you cannot find verbatim text, do NOT use quotation marks - paraphrase instead.
-        
-You MUST **NOT** use this citation format for purely generic statements about a guideline (e.g., "according to the NICE guideline"). Generic references will appear in a "Guidelines Used" list.
+[Provide detailed, specific advice. For EACH piece of clinical advice, tag it with the guideline it came from using this format: [GuidelineID: xxx] where xxx is the exact ID from the [GuidelineID: ...] field provided with each guideline.]
 
-QUOTATION MARKS:
-- ONLY use quotation marks for EXACT phrases from the guideline.
-- If you cannot find the exact phrase, do NOT use quotation marks.
-- NEVER quote your own paraphrasing.
-- The text in quotes MUST be the SearchText (or very close to it).
+You may use bullet points, numbered lists, or prose paragraphs - whatever best suits the answer. But EVERY piece of specific clinical advice MUST have a [GuidelineID: xxx] tag immediately after it.
 
-EXAMPLES:
-Good: "within 30 minutes of making the decision" [[REF:mp050-caesarean-section|Category 1 timing|within 30 minutes of making the decision]]
-Good: "between 12 and 24 hours" [[REF:cg12030-caesarean-birth|Catheter removal|between 12 and 24 hours]]
-Bad:  "quick delivery is important" [[REF:mp050-caesarean-section|CS timing|within 30 minutes]] (quoted text doesn't match SearchText!)
-        
+IMPORTANT RULES:
+1. Use the EXACT GuidelineID from the [GuidelineID: ...] field - do NOT use the guideline title
+2. Tag each specific recommendation, threshold, timing, or clinical action
+3. If multiple guidelines support the same advice, you may list multiple tags
+4. Use clear, professional medical language
+5. If guidelines don't fully address the question, acknowledge this
+
+EXAMPLE FORMAT:
+### Managing Postpartum Haemorrhage
+
+PPH is defined as blood loss >500ml after vaginal delivery or >1000ml after caesarean section. Prompt recognition and treatment are essential for maternal safety.
+
+**Detailed Advice:**
+
+- Administer oxytocin 10 IU IV immediately after delivery of the placenta [GuidelineID: mp046-pph-guideline]
+- Estimate blood loss using visual aids and weighing of swabs [GuidelineID: cg12029-pph-management]
+- If blood loss exceeds 1500ml, activate the major obstetric haemorrhage protocol [GuidelineID: mp046-pph-guideline]
+
 Always base your answers on the provided guidelines.`;
 
         // Build a fast lookup of guideline text for quote finding (prefer condensed)
@@ -17492,9 +17481,9 @@ Always base your answers on the provided guidelines.`;
 
         // Create user prompt with question and guidelines
         const guidelinesText = guidelinesWithContent.map(guideline => {
-            // CRITICAL: Include the guideline ID explicitly so the AI uses it correctly in REF markers
+            // Include the guideline ID explicitly so the AI can tag advice with it
             let guidelineText = `**${guideline.title || guideline.id}**`;
-            guidelineText += `\n[GuidelineID: ${guideline.id}]`;  // This is what the AI must use in [[REF:GuidelineID|...]]
+            guidelineText += `\n[GuidelineID: ${guideline.id}]`;  // AI will use this in [GuidelineID: xxx] tags
             if (guideline.organisation) {
                 guidelineText += ` (${guideline.organisation})`;
             }
@@ -17527,10 +17516,10 @@ Always base your answers on the provided guidelines.`;
 
         const userPrompt = `**Question:** ${question}
 
-**Relevant Guidelines:**
+**Guidelines (${guidelinesWithContent.length} total):**
 ${guidelinesText}
 
-Please provide a comprehensive answer to the question based on the relevant guidelines above. Structure your response clearly and reference specific guidelines when applicable.`;
+Please answer this question using the guidelines above. Remember to tag each piece of specific advice with the GuidelineID it came from.`;
 
         console.log('[DEBUG] askGuidelinesQuestion: Sending to AI', {
             systemPromptLength: systemPrompt.length,
@@ -17558,567 +17547,136 @@ Please provide a comprehensive answer to the question based on the relevant guid
             return res.status(500).json({ success: false, error: 'Invalid AI response' });
         }
 
-        // STEP 2: Upgrade citation search text to verbatim quotes where possible.
-        // We parse all [[REF:GuidelineID|LinkText|SearchText]] markers, ask the AI
-        // to find a verbatim quote within the (condensed) guideline text that
-        // best matches SearchText, and then replace the third field with the
-        // verbatim quote. The frontend can stay unchanged.
-        //
-        // CRITICAL FIX: The AI often puts different text in the answer (what the user sees
-        // in quotation marks) vs the SearchText field. We need to extract the VISIBLE quoted
-        // text near the REF marker and use THAT for searching, not the SearchText.
-
+        // STEP 2: SIMPLIFIED CITATION PIPELINE
+        // Parse [GuidelineID: xxx] tags from the AI response, find verbatim quotes
+        // for each piece of advice, and replace tags with links.
+        
         let enhancedAnswer = aiResponse.content;
-        const citationRegex = /\[\[REF:([^|]+)\|([^|]+)\|([^\]]*)\]\]/g;
+        
+        // Parse all [GuidelineID: xxx] tags and the advice text before each
+        const guidelineTagRegex = /\[GuidelineID:\s*([^\]]+)\]/g;
         const citationTasks = [];
-        const seenCitationKeys = new Set();
-
-        // Helper function to find quoted text before a REF marker position
-        // Returns the quoted text if found within a reasonable distance (500 chars)
-        function findVisibleQuoteBeforePosition(text, position) {
-            // Look backwards from the position for quoted text
-            const searchWindow = Math.max(0, position - 500);
-            const windowText = text.substring(searchWindow, position);
+        const seenTags = new Set();
+        
+        let tagMatch;
+        while ((tagMatch = guidelineTagRegex.exec(enhancedAnswer)) !== null) {
+            const guidelineId = tagMatch[1].trim();
+            const tagPosition = tagMatch.index;
+            const fullMatch = tagMatch[0];
             
-            // Match text in various quote styles: "...", '...', "..." (curly quotes)
-            // We want the LAST quote before the REF marker (closest one)
-            const quotePatterns = [
-                /"([^"]+)"/g,    // Curly quotes
-                /"([^"]+)"/g,    // Straight double quotes
-                /'([^']+)'/g     // Single quotes
-            ];
+            // Extract the advice text before this tag (look back up to 500 chars)
+            // Find the start of the current line/bullet/sentence
+            const textBefore = enhancedAnswer.substring(Math.max(0, tagPosition - 500), tagPosition);
             
-            let lastQuote = null;
-            let lastQuoteEnd = -1;
+            // Find the advice text - look for the start of the current bullet, numbered item, or sentence
+            let adviceText = '';
             
-            for (const pattern of quotePatterns) {
-                let quoteMatch;
-                while ((quoteMatch = pattern.exec(windowText)) !== null) {
-                    const quoteContent = quoteMatch[1].trim();
-                    const quoteEnd = quoteMatch.index + quoteMatch[0].length;
-                    
-                    // Check if this quote is within ~200 chars of the REF marker
-                    // and is longer than 10 chars (meaningful quote)
-                    if (quoteContent.length >= 10 && quoteEnd > lastQuoteEnd) {
-                        // Make sure there isn't too much text between the quote and the REF marker
-                        const distanceToRef = windowText.length - quoteEnd;
-                        if (distanceToRef < 200) {
-                            lastQuote = quoteContent;
-                            lastQuoteEnd = quoteEnd;
-                        }
-                    }
-                }
-            }
-            
-            return lastQuote;
-        }
-
-        let match;
-        while ((match = citationRegex.exec(enhancedAnswer)) !== null) {
-            const rawGuidelineId = match[1].trim();
-            const aiProvidedSearchText = match[3].trim();
-            const markerPosition = match.index;
-            
-            // Try to find the VISIBLE quoted text near this REF marker
-            const visibleQuote = findVisibleQuoteBeforePosition(enhancedAnswer, markerPosition);
-            
-            // Use the visible quote if found, otherwise fall back to AI's search text
-            let semanticText;
-            let usedVisibleQuote = false;
-            
-            if (visibleQuote) {
-                semanticText = visibleQuote;
-                usedVisibleQuote = true;
-                console.log(`[${traceId}] Found visible quote near REF marker`, {
-                    guidelineId: rawGuidelineId,
-                    visibleQuote: visibleQuote.substring(0, 80),
-                    aiProvided: aiProvidedSearchText.substring(0, 80),
-                    matches: visibleQuote.toLowerCase() === aiProvidedSearchText.toLowerCase()
-                });
+            // Try to find bullet point or numbered list start
+            const bulletMatch = textBefore.match(/(?:^|\n)\s*(?:[-*•]|\d+\.)\s*(.+)$/s);
+            if (bulletMatch) {
+                adviceText = bulletMatch[1].trim();
             } else {
-                semanticText = aiProvidedSearchText;
-                console.log(`[${traceId}] No visible quote found, using AI-provided search text`, {
-                    guidelineId: rawGuidelineId,
-                    aiProvided: aiProvidedSearchText.substring(0, 80)
-                });
+                // Fall back to last sentence or line
+                const lines = textBefore.split('\n');
+                const lastLine = lines[lines.length - 1].trim();
+                adviceText = lastLine || textBefore.trim().slice(-200);
             }
             
-            const key = `${rawGuidelineId}||${match[0]}`;  // Use full match as key to handle duplicates
-            if (!seenCitationKeys.has(key)) {
-                seenCitationKeys.add(key);
+            // Clean up the advice text (remove markdown formatting)
+            adviceText = adviceText
+                .replace(/\*\*/g, '')  // Remove bold markers
+                .replace(/\*/g, '')     // Remove italic markers
+                .replace(/`/g, '')      // Remove code markers
+                .trim();
+            
+            // Only process if we have meaningful advice text
+            if (adviceText.length >= 10 && !seenTags.has(`${guidelineId}|${adviceText.substring(0, 50)}`)) {
+                seenTags.add(`${guidelineId}|${adviceText.substring(0, 50)}`);
                 citationTasks.push({
-                    guidelineId: rawGuidelineId,
-                    semanticText,
-                    aiProvidedSearchText,
-                    usedVisibleQuote,
-                    originalMatch: match[0],
-                    markerPosition
+                    guidelineId,
+                    adviceText,
+                    originalTag: fullMatch,
+                    tagPosition
                 });
             }
         }
-
-        console.log(`[${traceId}] Parsed citation markers`, {
-            totalMarkers: [...enhancedAnswer.matchAll(/\[\[REF:/g)].length,
+        
+        console.log(`[${traceId}] Parsed GuidelineID tags`, {
+            totalTags: [...enhancedAnswer.matchAll(/\[GuidelineID:/g)].length,
             uniqueTasks: citationTasks.length,
-            usedVisibleQuotes: citationTasks.filter(t => t.usedVisibleQuote).length
+            guidelines: citationTasks.map(t => t.guidelineId)
         });
 
-        // Helper to escape text for use in RegExp
-        function escapeRegExp(str) {
-            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        }
-
-        // Helper to build a contiguous fallback quote from the base guideline text
-        // when we cannot obtain a verbatim quote from findGuidelineQuoteInText.
-        // It looks for the best matching word chunk (favouring later parts of the
-        // semantic text) and returns a short window around that chunk.
-        function buildFallbackQuote(baseText, semanticText) {
-            if (!baseText || !semanticText) {
-                return null;
-            }
-
-            // Clean up the semantic text: remove ellipses and normalise whitespace
-            const cleanedSemantic = String(semanticText)
-                .replace(/\.{3}|…/g, ' ')
-                .replace(/\s+/g, ' ')
-                .trim();
-
-            if (!cleanedSemantic) {
-                return null;
-            }
-
-            const words = cleanedSemantic.split(' ').filter(Boolean);
-            if (words.length === 0) {
-                return null;
-            }
-
-            const baseLower = String(baseText).toLowerCase();
-
-            const maxChunkSize = Math.min(8, words.length);
-            const minChunkSize = Math.min(3, maxChunkSize);
-            const contextPadding = 80; // characters before/after the match
-
-            // Prefer chunks from the end of the phrase (often the most specific part)
-            for (let size = maxChunkSize; size >= minChunkSize; size--) {
-                for (let start = words.length - size; start >= 0; start--) {
-                    const chunk = words.slice(start, start + size).join(' ').toLowerCase();
-                    const idx = baseLower.indexOf(chunk);
-                    if (idx !== -1) {
-                        const startIdx = Math.max(0, idx - contextPadding);
-                        const endIdx = Math.min(baseText.length, idx + chunk.length + contextPadding);
-                        let slice = baseText.slice(startIdx, endIdx);
-
-                        // Normalise whitespace for more reliable PDF search
-                        slice = String(slice).replace(/\s+/g, ' ').trim();
-
-                        if (slice) {
-                            console.log('[DEBUG] askGuidelinesQuestion: Built fallback quote from base text', {
-                                semanticSample: cleanedSemantic.substring(0, 80),
-                                chunkSample: chunk.substring(0, 80),
-                                sliceSample: slice.substring(0, 120)
-                            });
-                            return slice;
-                        }
-                    }
-                }
-            }
-
-            return null;
-        }
-
-        // --------------------------------------------------------------------------
-        // QUOTE CLASSIFICATION SYSTEM
-        // --------------------------------------------------------------------------
-        // Classes:
-        //   verbatim_exact   - Quote exists as a contiguous substring (phrase match)
-        //   verbatim_numeric - Quote contains key numerics found in text
-        //   fallback_window  - A contiguous window was found but anchor is weak
-        //   no_phrase_match  - Only broad keyword overlap or nothing
-        // --------------------------------------------------------------------------
-
-        // Normalise text for comparison: lowercase, strip punctuation except hyphens,
-        // collapse whitespace, preserve numerics.
-        function normaliseForComparison(text) {
-            if (!text) return '';
-            return String(text)
-                .toLowerCase()
-                .replace(/[™®©]/g, '')           // Strip trademark symbols
-                .replace(/[.,;:!?'"()[\]{}]/g, ' ')  // Replace punctuation with space
-                .replace(/\s+/g, ' ')
-                .trim();
-        }
-
-        // Extract numeric tokens (e.g. "30", "12-24", "90th") from text
-        function extractNumericTokens(text) {
-            if (!text) return [];
-            const matches = String(text).match(/\d+(?:[-–—]\d+)?(?:st|nd|rd|th)?/gi);
-            return matches ? matches.map(m => m.toLowerCase()) : [];
-        }
-
-        // Simulate search variants similar to clerky-auth.js generateSearchVariants
-        // Returns { matched: boolean, matchedVariant: string|null, matchIndex: number }
-        function simulateSearchVariants(guidelineText, quote) {
-            if (!guidelineText || !quote) {
-                return { matched: false, matchedVariant: null, matchIndex: -1 };
-            }
-
-            const normGuideline = normaliseForComparison(guidelineText);
-            const normQuote = normaliseForComparison(quote);
-
-            if (!normQuote || normQuote.length < 5) {
-                return { matched: false, matchedVariant: null, matchIndex: -1 };
-            }
-
-            // Build variants (phrase-based)
-            const variants = [];
-
-            // 1. Exact normalised phrase
-            variants.push({ query: normQuote, description: 'exact_normalised' });
-
-            // 2. Split on ellipsis and use longest segment
-            const ellipsisParts = normQuote.split(/\s*(?:\.{3}|…)+\s*/).filter(p => p.length >= 8);
-            if (ellipsisParts.length > 1) {
-                const longest = ellipsisParts.reduce((a, b) => b.length > a.length ? b : a, '');
-                if (longest) {
-                    variants.push({ query: longest, description: 'longest_segment' });
-                }
-            }
-
-            // 3. Tail phrase (last 6-8 words)
-            const words = normQuote.split(/\s+/).filter(Boolean);
-            if (words.length >= 6) {
-                const tailSize = Math.min(8, words.length);
-                const tail = words.slice(-tailSize).join(' ');
-                variants.push({ query: tail, description: 'tail_phrase' });
-            }
-
-            // 4. First 8 words
-            if (words.length > 8) {
-                const head = words.slice(0, 8).join(' ');
-                variants.push({ query: head, description: 'head_phrase' });
-            }
-
-            // 5. Numeric-focused: if quote contains numbers, build a phrase around them
-            const numericTokens = extractNumericTokens(quote);
-            if (numericTokens.length > 0) {
-                // Find a 5-word window around the first numeric
-                const firstNum = numericTokens[0];
-                const numIdx = words.findIndex(w => w.includes(firstNum));
-                if (numIdx !== -1) {
-                    const start = Math.max(0, numIdx - 2);
-                    const end = Math.min(words.length, numIdx + 3);
-                    const numPhrase = words.slice(start, end).join(' ');
-                    if (numPhrase.length >= 8) {
-                        variants.push({ query: numPhrase, description: 'numeric_window' });
-                    }
-                }
-            }
-
-            // Try each variant as a substring search
-            for (const v of variants) {
-                const idx = normGuideline.indexOf(v.query);
-                if (idx !== -1) {
-                    console.log(`[CITATION_CLASS] Phrase variant matched: ${v.description}`, {
-                        variantSample: v.query.substring(0, 60),
-                        matchIndex: idx
-                    });
-                    return { matched: true, matchedVariant: v.description, matchIndex: idx };
-                }
-            }
-
-            return { matched: false, matchedVariant: null, matchIndex: -1 };
-        }
-
-        // Classify a quote against guideline text
-        // Returns: { class: 'verbatim_exact'|'verbatim_numeric'|'fallback_window'|'no_phrase_match', details: {...} }
-        function classifyQuote(guidelineText, quote, source) {
-            const result = {
-                class: 'no_phrase_match',
-                source: source || 'unknown',
-                details: {}
-            };
-
-            if (!guidelineText || !quote) {
-                return result;
-            }
-
-            // First, check if any phrase variant matches
-            const variantMatch = simulateSearchVariants(guidelineText, quote);
-
-            if (variantMatch.matched) {
-                // Determine if it's exact or numeric-focused
-                if (variantMatch.matchedVariant === 'exact_normalised') {
-                    result.class = 'verbatim_exact';
-                } else if (variantMatch.matchedVariant === 'numeric_window') {
-                    result.class = 'verbatim_numeric';
-                } else if (['tail_phrase', 'head_phrase', 'longest_segment'].includes(variantMatch.matchedVariant)) {
-                    result.class = 'verbatim_exact';  // Still a phrase match
-                } else {
-                    result.class = 'fallback_window';
-                }
-                result.details = {
-                    matchedVariant: variantMatch.matchedVariant,
-                    matchIndex: variantMatch.matchIndex
-                };
-                return result;
-            }
-
-            // If no phrase match, check if key numerics from quote appear in guideline
-            const quoteNumerics = extractNumericTokens(quote);
-            const guidelineNumerics = extractNumericTokens(guidelineText);
-            const numericOverlap = quoteNumerics.filter(n => guidelineNumerics.includes(n));
-
-            if (numericOverlap.length > 0 && numericOverlap.length === quoteNumerics.length) {
-                // All numerics from quote are in guideline - weak numeric match
-                result.class = 'verbatim_numeric';
-                result.details = { numericsMatched: numericOverlap };
-                return result;
-            }
-
-            // No good match
-            result.class = 'no_phrase_match';
-            result.details = { reason: 'no_phrase_or_numeric_match' };
-            return result;
-        }
-
-        const MAX_CITATION_QUOTES = 6;
+        // STEP 3: For each citation task, find a verbatim quote from the guideline
+        const MAX_CITATION_QUOTES = 10;
         let quotesResolved = 0;
-
-        // Track classification results for logging
-        const citationClassifications = [];
+        const citationResults = [];
 
         for (const task of citationTasks) {
             if (quotesResolved >= MAX_CITATION_QUOTES) {
-                console.log('[DEBUG] askGuidelinesQuestion: Reached max citation quote limit, skipping remaining');
+                console.log(`[${traceId}] Reached max citation quote limit, skipping remaining`);
                 break;
             }
 
-            let bestGuidelineId = null;
-            let bestQuote = null;
+            const guidelineText = guidelineTextById[task.guidelineId];
+            let verbatimQuote = null;
 
-            // 1. First, try the guideline originally referenced in the REF marker.
-            const primaryText = guidelineTextById[task.guidelineId];
-            if (primaryText && primaryText.trim()) {
-                const primaryQuote = await findGuidelineQuoteInText(
-                    task.guidelineId,
-                    task.semanticText,
-                    primaryText,
-                    userId
-                );
-                if (primaryQuote) {
-                    bestGuidelineId = task.guidelineId;
-                    bestQuote = primaryQuote;
-                }
-            }
-
-            // 2. If that fails, look for a stronger match in any of the other
-            // guidelines used in this answer. This lets citations \"follow\" the
-            // guideline that actually supplies the wording (e.g. RCOG GTG vs trust BAC).
-            if (!bestQuote) {
-                for (const g of guidelinesWithContent) {
-                    if (!g.id || g.id === task.guidelineId) continue;
-                    const text = guidelineTextById[g.id];
-                    if (!text || !String(text).trim()) continue;
-
-                    const candidateQuote = await findGuidelineQuoteInText(
-                        g.id,
-                        task.semanticText,
-                        text,
+            // Try to find a verbatim quote from the guideline for this advice
+            if (guidelineText && guidelineText.trim()) {
+                try {
+                    verbatimQuote = await findGuidelineQuoteInText(
+                        task.guidelineId,
+                        task.adviceText,
+                        guidelineText,
                         userId
                     );
-
-                    if (candidateQuote) {
-                        bestGuidelineId = g.id;
-                        bestQuote = candidateQuote;
-                        console.log('[DEBUG] askGuidelinesQuestion: Citation remapped to guideline with better quote', {
-                            originalGuidelineId: task.guidelineId,
-                            newGuidelineId: bestGuidelineId
-                        });
-                        break;
-                    }
+                } catch (quoteError) {
+                    console.log(`[${traceId}] Error finding quote for citation:`, quoteError.message);
                 }
             }
 
-            // 3. If we still do not have a verbatim quote, fall back to building a
-            // contiguous slice from the *primary* guideline text (if available),
-            // so that we at least land in the right document.
-            if (!bestQuote && primaryText && primaryText.trim()) {
-                const fallbackQuote = buildFallbackQuote(primaryText, task.semanticText);
-                if (fallbackQuote) {
-                    bestGuidelineId = task.guidelineId;
-                    bestQuote = fallbackQuote;
-                }
+            // Clean up the quote for safe use in links
+            let safeQuote = '';
+            if (verbatimQuote) {
+                safeQuote = String(verbatimQuote)
+                    .replace(/\|/g, ' ')
+                    .replace(/\.{3}|…/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
             }
 
-            if (!bestQuote || !bestGuidelineId) {
-                console.log(`[${traceId}][CITATION_CLASS] No verbatim or fallback quote found`, {
-                    guidelineId: task.guidelineId,
-                    semanticSample: task.semanticText.substring(0, 100),
-                    usedVisibleQuote: task.usedVisibleQuote
-                });
+            citationResults.push({
+                guidelineId: task.guidelineId,
+                adviceText: task.adviceText.substring(0, 100),
+                verbatimQuote: safeQuote || null,
+                originalTag: task.originalTag
+            });
 
-                // Track classification
-                citationClassifications.push({
-                    originalGuidelineId: task.guidelineId,
-                    finalGuidelineId: task.guidelineId,
-                    semanticSample: task.semanticText.substring(0, 80),
-                    quoteClass: 'no_phrase_match',
-                    action: 'stripped_search_text',
-                    reason: 'no_quote_found',
-                    usedVisibleQuote: task.usedVisibleQuote
-                });
-
-                // SAFETY DEGRADE: if we cannot find any verbatim or fallback quote
-                // in the underlying guideline text, we should avoid passing a
-                // semantic snippet that will only trigger fuzzy keyword search in
-                // the PDF viewer. Instead, rewrite the REF markers for this task
-                // so that they open the guideline PDF without a search term.
-                // Use the originalMatch to find and replace the exact marker.
-                const escapedOriginalMatch = escapeRegExp(task.originalMatch);
-                const degradePattern = new RegExp(escapedOriginalMatch, 'g');
-
-                // Extract linkText from original match
-                const linkTextMatch = task.originalMatch.match(/\[\[REF:[^|]+\|([^|]+)\|/);
-                const linkText = linkTextMatch ? linkTextMatch[1] : task.guidelineId;
-
+            // Replace [GuidelineID: xxx] with [[CITATION:guidelineId|searchText]]
+            // The frontend will convert this to a clickable link
+            if (safeQuote) {
                 enhancedAnswer = enhancedAnswer.replace(
-                    degradePattern,
-                    `[[REF:${task.guidelineId}|${linkText}|]]`
+                    task.originalTag,
+                    `[[CITATION:${task.guidelineId}|${safeQuote}]]`
                 );
-
-                continue;
-            }
-
-            // Ensure the quote is safe for inclusion in REF:
-            // - Remove pipes (field separator)
-            // - Strip ellipses so the viewer does not treat them as literal text
-            // - Normalise whitespace
-            let safeQuote = String(bestQuote)
-                .replace(/\|/g, ' ')
-                .replace(/\.{3}|…/g, ' ')
-                .replace(/\s+/g, ' ')
-                .trim();
-
-            if (!safeQuote) {
-                citationClassifications.push({
-                    originalGuidelineId: task.guidelineId,
-                    finalGuidelineId: bestGuidelineId,
-                    semanticSample: task.semanticText.substring(0, 80),
-                    quoteClass: 'no_phrase_match',
-                    action: 'stripped_search_text',
-                    reason: 'empty_safe_quote'
-                });
-                continue;
-            }
-
-            // CLASSIFY the quote against the target guideline text
-            const targetGuidelineText = guidelineTextById[bestGuidelineId] || '';
-            const classification = classifyQuote(targetGuidelineText, safeQuote, 'quote_upgrade');
-
-            console.log('[CITATION_CLASS] Quote classified', {
-                guidelineId: bestGuidelineId,
-                quoteClass: classification.class,
-                quoteSample: safeQuote.substring(0, 80),
-                details: classification.details
-            });
-
-            // Decision: only keep SearchText for high-confidence classes
-            const highConfidenceClasses = ['verbatim_exact', 'verbatim_numeric'];
-            const keepSearchText = highConfidenceClasses.includes(classification.class);
-
-            // Track classification
-            citationClassifications.push({
-                originalGuidelineId: task.guidelineId,
-                finalGuidelineId: bestGuidelineId,
-                semanticSample: task.semanticText.substring(0, 80),
-                quoteSample: safeQuote.substring(0, 80),
-                quoteClass: classification.class,
-                action: keepSearchText ? 'kept_search_text' : 'stripped_search_text',
-                matchedVariant: classification.details.matchedVariant || null,
-                usedVisibleQuote: task.usedVisibleQuote
-            });
-
-            if (!keepSearchText) {
-                // Low confidence: strip SearchText so link opens PDF without highlight
-                console.log(`[${traceId}][CITATION_CLASS] Low confidence - stripping SearchText`, {
-                    guidelineId: bestGuidelineId,
-                    class: classification.class,
-                    usedVisibleQuote: task.usedVisibleQuote
-                });
-
-                // Use originalMatch to replace the exact marker
-                const escapedOriginalMatch = escapeRegExp(task.originalMatch);
-                const degradePattern = new RegExp(escapedOriginalMatch, 'g');
-                
-                // Extract linkText from original match
-                const linkTextMatch = task.originalMatch.match(/\[\[REF:[^|]+\|([^|]+)\|/);
-                const linkText = linkTextMatch ? linkTextMatch[1] : task.guidelineId;
-
+                quotesResolved += 1;
+            } else {
+                // No quote found - still create a link but without search text
                 enhancedAnswer = enhancedAnswer.replace(
-                    degradePattern,
-                    `[[REF:${bestGuidelineId}|${linkText}|]]`
+                    task.originalTag,
+                    `[[CITATION:${task.guidelineId}|]]`
                 );
-
-                continue;
             }
-
-            // HIGH CONFIDENCE: Replace all matching REF markers for this task,
-            // updating the GuidelineID to the guideline that actually provided the
-            // verbatim or fallback quote, and using the validated safe quote.
-            const escapedOriginalMatch = escapeRegExp(task.originalMatch);
-            const pattern = new RegExp(escapedOriginalMatch, 'g');
-            
-            // Extract linkText from original match
-            const linkTextMatch = task.originalMatch.match(/\[\[REF:[^|]+\|([^|]+)\|/);
-            const linkText = linkTextMatch ? linkTextMatch[1] : task.guidelineId;
-
-            console.log(`[${traceId}][CITATION_CLASS] HIGH CONFIDENCE - keeping SearchText`, {
-                guidelineId: bestGuidelineId,
-                class: classification.class,
-                usedVisibleQuote: task.usedVisibleQuote,
-                safeQuoteSample: safeQuote.substring(0, 60)
-            });
-
-            enhancedAnswer = enhancedAnswer.replace(
-                pattern,
-                `[[REF:${bestGuidelineId}|${linkText}|${safeQuote}]]`
-            );
-
-            quotesResolved += 1;
         }
 
-        // Log citation classification summary
-        if (citationClassifications.length > 0) {
-            const classBreakdown = {
-                verbatim_exact: citationClassifications.filter(c => c.quoteClass === 'verbatim_exact').length,
-                verbatim_numeric: citationClassifications.filter(c => c.quoteClass === 'verbatim_numeric').length,
-                fallback_window: citationClassifications.filter(c => c.quoteClass === 'fallback_window').length,
-                no_phrase_match: citationClassifications.filter(c => c.quoteClass === 'no_phrase_match').length
-            };
-            const actionBreakdown = {
-                kept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
-                stripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
-            };
-            const sourceBreakdown = {
-                usedVisibleQuote: citationClassifications.filter(c => c.usedVisibleQuote).length,
-                usedAiProvided: citationClassifications.filter(c => !c.usedVisibleQuote).length
-            };
+        // Log citation processing summary
+        console.log(`[ASK_GUIDELINES][${traceId}] === CITATION PROCESSING SUMMARY ===`);
+        console.log(`[ASK_GUIDELINES][${traceId}] Total citations:`, citationResults.length);
+        console.log(`[ASK_GUIDELINES][${traceId}] With verbatim quotes:`, citationResults.filter(c => c.verbatimQuote).length);
+        console.log(`[ASK_GUIDELINES][${traceId}] Without quotes (link only):`, citationResults.filter(c => !c.verbatimQuote).length);
 
-            console.log(`[ASK_GUIDELINES][${traceId}] === CITATION CLASSIFICATION SUMMARY ===`);
-            console.log(`[ASK_GUIDELINES][${traceId}] Total citations processed:`, citationClassifications.length);
-            console.log(`[ASK_GUIDELINES][${traceId}] Class breakdown:`, classBreakdown);
-            console.log(`[ASK_GUIDELINES][${traceId}] Action breakdown:`, actionBreakdown);
-            console.log(`[ASK_GUIDELINES][${traceId}] Source breakdown (CRITICAL):`, sourceBreakdown);
-            console.log(`[ASK_GUIDELINES][${traceId}] Individual classifications:`, JSON.stringify(citationClassifications, null, 2));
-        }
-
-        if (quotesResolved > 0) {
-            console.log(`[ASK_GUIDELINES][${traceId}] Citation upgrade complete:`, {
-                quotesResolved,
-                totalCitations: citationClassifications.length,
-                keptSearchText: citationClassifications.filter(c => c.action === 'kept_search_text').length
-            });
-            // Use the enhanced answer going forward
+        // Update the response with the enhanced answer
+        if (citationResults.length > 0) {
             aiResponse = {
                 ...aiResponse,
                 content: enhancedAnswer
@@ -18143,9 +17701,9 @@ Please provide a comprehensive answer to the question based on the relevant guid
                     ai_model: aiResponse.ai_model,
                     token_usage: aiResponse.token_usage,
                     citationStats: {
-                        total: citationClassifications.length,
-                        kept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
-                        stripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
+                        total: citationResults.length,
+                        withQuotes: citationResults.filter(c => c.verbatimQuote).length,
+                        withoutQuotes: citationResults.filter(c => !c.verbatimQuote).length
                     }
                 },
                 'askGuidelinesQuestion'
@@ -18158,8 +17716,8 @@ Please provide a comprehensive answer to the question based on the relevant guid
         console.log(`[ASK_GUIDELINES][${traceId}] === REQUEST COMPLETE ===`, {
             success: true,
             answerLength: aiResponse.content.length,
-            citationsKept: citationClassifications.filter(c => c.action === 'kept_search_text').length,
-            citationsStripped: citationClassifications.filter(c => c.action === 'stripped_search_text').length
+            totalCitations: citationResults.length,
+            citationsWithQuotes: citationResults.filter(c => c.verbatimQuote).length
         });
 
         res.json({
