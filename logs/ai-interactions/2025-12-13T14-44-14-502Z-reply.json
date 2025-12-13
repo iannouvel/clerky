@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T14-44-14-502Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 718,
+  "response_length": 1177,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":33,\"transcriptPreview\":\"How do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appointments\",\"mp019-hypertension-and...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP019 Hypertension and Pr...",
+  "full_data": null
+}
