@@ -3091,6 +3091,16 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Hide icon buttons (undo/redo) when disabled - shrinks container */
+.floating-input-buttons .icon-btn:disabled {
+    display: none;
+}
+
+/* Hide record button when user is typing */
+.floating-input-buttons .record-btn.hidden-while-typing {
+    display: none;
+}
+
 .floating-input-buttons-top {
     top: 8px;
     right: 8px;
