@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-11-31-606Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 922,
+  "response_length": 1417,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/38\",\"transcriptLength\":43,\"transcriptPreview\":\"when and why do we give magnesium sulphate?...\",\"chunkGuidelines\":[\"mp004-antenatal-screening-infectious-diseases-hiv-pdf: MP004 Ante...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp004-antenatal-screening-infectious-dis...",
+  "full_data": null
+}
