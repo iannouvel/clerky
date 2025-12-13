@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-11-32-271Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 756,
+  "response_length": 1251,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":43,\"transcriptPreview\":\"when and why do we give magnesium sulphate?...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolapse-pdf: GTG - 2014 - Umbilical Cord...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", ...",
+  "full_data": null
+}
