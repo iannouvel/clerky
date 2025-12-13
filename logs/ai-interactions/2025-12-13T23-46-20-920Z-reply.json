@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-46-20-920Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 847,
+  "response_length": 1321,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":64,\"transcriptPreview\":\"how do we use hydralazine with severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: MP031 Pre-term la...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": ...",
+  "full_data": null
+}
