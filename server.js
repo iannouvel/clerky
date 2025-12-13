@@ -17568,21 +17568,28 @@ Please answer this question using the guidelines above. Remember to tag each pie
             const fullMatch = tagMatch[0];
             
             // Extract the advice text before this tag (look back up to 500 chars)
-            // Find the start of the current line/bullet/sentence
             const textBefore = enhancedAnswer.substring(Math.max(0, tagPosition - 500), tagPosition);
             
-            // Find the advice text - look for the start of the current bullet, numbered item, or sentence
+            // Find the advice text using multiple strategies
             let adviceText = '';
             
-            // Try to find bullet point or numbered list start
-            const bulletMatch = textBefore.match(/(?:^|\n)\s*(?:[-*•]|\d+\.)\s*(.+)$/s);
+            // Strategy 1: Look for bullet point or numbered list start
+            // Use a more permissive regex that captures everything after the bullet marker
+            const bulletMatch = textBefore.match(/(?:^|\n)\s*(?:[-*•]|\d+\.)\s*([\s\S]+)$/);
             if (bulletMatch) {
                 adviceText = bulletMatch[1].trim();
-            } else {
-                // Fall back to last sentence or line
-                const lines = textBefore.split('\n');
-                const lastLine = lines[lines.length - 1].trim();
-                adviceText = lastLine || textBefore.trim().slice(-200);
+            }
+            
+            // Strategy 2: If no bullet, look for the last sentence (ending in period before the tag)
+            if (!adviceText) {
+                // Find the last complete sentence or fragment
+                const lastLine = textBefore.split('\n').pop() || '';
+                adviceText = lastLine.trim();
+            }
+            
+            // Strategy 3: If still no text, use the last 200 chars
+            if (!adviceText || adviceText.length < 10) {
+                adviceText = textBefore.trim().slice(-200);
             }
             
             // Clean up the advice text (remove markdown formatting)
@@ -17592,12 +17599,14 @@ Please answer this question using the guidelines above. Remember to tag each pie
                 .replace(/`/g, '')      // Remove code markers
                 .trim();
             
-            // Only process if we have meaningful advice text
-            if (adviceText.length >= 10 && !seenTags.has(`${guidelineId}|${adviceText.substring(0, 50)}`)) {
-                seenTags.add(`${guidelineId}|${adviceText.substring(0, 50)}`);
+            // Always add the task if we have a valid guideline ID
+            // (we'll create a link even if advice text extraction wasn't perfect)
+            const taskKey = `${guidelineId}|${tagPosition}`;
+            if (!seenTags.has(taskKey)) {
+                seenTags.add(taskKey);
                 citationTasks.push({
                     guidelineId,
-                    adviceText,
+                    adviceText: adviceText.length >= 10 ? adviceText : '',
                     originalTag: fullMatch,
                     tagPosition
                 });
@@ -17611,7 +17620,8 @@ Please answer this question using the guidelines above. Remember to tag each pie
         });
 
         // STEP 3: For each citation task, find a verbatim quote from the guideline
-        const MAX_CITATION_QUOTES = 10;
+        // Increased limit to handle longer answers with many citations
+        const MAX_CITATION_QUOTES = 20;
         let quotesResolved = 0;
         const citationResults = [];
 
@@ -17624,8 +17634,9 @@ Please answer this question using the guidelines above. Remember to tag each pie
             const guidelineText = guidelineTextById[task.guidelineId];
             let verbatimQuote = null;
 
-            // Try to find a verbatim quote from the guideline for this advice
-            if (guidelineText && guidelineText.trim()) {
+            // Only attempt quote finding if we have meaningful advice text
+            // If advice text is empty/short, we'll still create a link but without search
+            if (task.adviceText && task.adviceText.length >= 10 && guidelineText && guidelineText.trim()) {
                 try {
                     verbatimQuote = await findGuidelineQuoteInText(
                         task.guidelineId,
@@ -17636,6 +17647,10 @@ Please answer this question using the guidelines above. Remember to tag each pie
                 } catch (quoteError) {
                     console.log(`[${traceId}] Error finding quote for citation:`, quoteError.message);
                 }
+            } else if (!task.adviceText || task.adviceText.length < 10) {
+                console.log(`[${traceId}] Skipping quote search - no advice text extracted`, {
+                    guidelineId: task.guidelineId
+                });
             }
 
             // Clean up the quote for safe use in links
