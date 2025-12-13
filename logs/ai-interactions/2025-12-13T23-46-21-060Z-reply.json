@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-46-21-060Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-35",
+  "token_usage": null,
+  "prompt_length": 835,
+  "response_length": 1309,
+  "prompt_preview": "{\"prompt\":\"Chunk 35/38\",\"transcriptLength\":64,\"transcriptPreview\":\"how do we use hydralazine with severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"uae-bsuh-guidelines-september-2016-pdf: UAE ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uae-bsuh-guidelines-september-2016-pdf\\\"...",
+  "full_data": null
+}
