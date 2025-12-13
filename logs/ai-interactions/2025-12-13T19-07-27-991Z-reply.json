@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T19-07-27-991Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 869,
+  "response_length": 1385,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/38\",\"transcriptLength\":22,\"transcriptPreview\":\"when do we give MgSO4?...\",\"chunkGuidelines\":[\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf: NICE Interventional G...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-interventional-guidance-2007-laparo...",
+  "full_data": null
+}
