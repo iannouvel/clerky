@@ -1,0 +1,25 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-40-32-734Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 57,
+  "response_length": 65,
+  "prompt_preview": "{\"transcript\":\"how do we use MgSO4?\",\"guidelinesCount\":0}...",
+  "response_preview": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}...",
+  "full_data": {
+    "prompt": {
+      "transcript": "how do we use MgSO4?",
+      "guidelinesCount": 0
+    },
+    "response": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}",
+    "endpoint": "findRelevantGuidelines",
+    "timestamp": "2025-12-13T23-40-32",
+    "ai_provider": "DeepSeek",
+    "ai_model": "deepseek-chat",
+    "token_usage": null,
+    "critical": "All chunks failed to process"
+  }
+}
