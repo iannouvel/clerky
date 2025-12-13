@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T14-44-17-491Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1082,
+  "response_length": 1587,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/38\",\"transcriptLength\":33,\"transcriptPreview\":\"How do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"gp006-management-of-bartholins-cyst-abscess-n-pdf: GP006 Management of Bart...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp006-management-of-bartholins-cyst-absc...",
+  "full_data": null
+}
