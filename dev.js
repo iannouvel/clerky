@@ -2597,7 +2597,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 
                 if (response.ok) {
-                    const guidelines = await response.json();
+                    const data = await response.json();
+                    // Handle both array response and object with guidelines property
+                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
                     if (reextractGuidelineSelect) {
                         reextractGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
                         guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
