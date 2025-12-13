@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T19-07-26-207Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 777,
+  "response_length": 1242,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/38\",\"transcriptLength\":22,\"transcriptPreview\":\"when do we give MgSO4?...\",\"chunkGuidelines\":[\"cg22005-management-of-weight-loss-in-neonates-pdf: CG22005 Management of Weight Loss i...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"eclampsia-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"Eclampsia prompt card ED RSCH PRH\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"poten...",
+  "full_data": null
+}
