@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-46-22-125Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 1064,
+  "response_length": 1540,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/38\",\"transcriptLength\":64,\"transcriptPreview\":\"how do we use hydralazine with severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"bms-2024-management-of-unscheduled-bleeding-o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bms-2024-management-of-unscheduled-bleed...",
+  "full_data": null
+}
