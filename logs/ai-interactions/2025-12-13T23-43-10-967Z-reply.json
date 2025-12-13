@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-43-10-967Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 803,
+  "response_length": 1274,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/38\",\"transcriptLength\":20,\"transcriptPreview\":\"how do we use MgSO4?...\",\"chunkGuidelines\":[\"mp031-pre-term-labour-pdf: MP031 Pre-term labour\",\"mp032-pre-labour-rupture-of-membranes...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp031-pre-term-labour-pdf\\\", \\\"title\\\": \\\"MP031 Pre-term labour\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"i...",
+  "full_data": null
+}
