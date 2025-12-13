@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T19-07-27-547Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 915,
+  "response_length": 1348,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":22,\"transcriptPreview\":\"when do we give MgSO4?...\",\"chunkGuidelines\":[\"cg18007-newborn-screening-failsafes-pdf: CG18007 Newborn screening failsafes\",\"cg19002...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentially...",
+  "full_data": null
+}
