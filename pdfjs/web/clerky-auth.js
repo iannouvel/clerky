@@ -20,7 +20,13 @@
     
     if (searchMatch && searchMatch[1]) {
         const searchTerm = decodeURIComponent(searchMatch[1]);
-        console.log('[Clerky Auth] Search term detected in URL:', searchTerm.substring(0, 100) + '...');
+        console.log('═══════════════════════════════════════════════════════════════');
+        console.log('[Clerky Auth] 🔍 VERBATIM QUOTE TO SEARCH FOR:');
+        console.log('───────────────────────────────────────────────────────────────');
+        console.log(searchTerm);
+        console.log('───────────────────────────────────────────────────────────────');
+        console.log('[Clerky Auth] Quote length:', searchTerm.length, 'characters');
+        console.log('═══════════════════════════════════════════════════════════════');
         
         // Function to trigger the search
         const triggerSearch = function() {

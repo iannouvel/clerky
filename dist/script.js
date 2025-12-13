@@ -6267,12 +6267,14 @@ window.prepareViewerAuth = async function(event, linkElement) {
         if (searchText) {
             const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
             viewerUrl += searchHash;
-            console.log('[DEBUG] Added search parameters:', {
-                searchTextLength: searchText.length,
-                searchTextPreview: searchText.substring(0, 100) + '...',
-                fullSearchText: searchText,
-                encodedLength: encodeURIComponent(searchText).length
-            });
+            console.log('═══════════════════════════════════════════════════════════════');
+            console.log('[Clerky] 🔍 VERBATIM QUOTE BEING SENT TO PDF VIEWER:');
+            console.log('───────────────────────────────────────────────────────────────');
+            console.log(searchText);
+            console.log('───────────────────────────────────────────────────────────────');
+            console.log('[Clerky] Quote length:', searchText.length, 'characters');
+            console.log('[Clerky] Guideline ID:', guidelineId);
+            console.log('═══════════════════════════════════════════════════════════════');
         }
         
         console.log('[DEBUG] Opening PDF.js viewer with full URL:', viewerUrl);

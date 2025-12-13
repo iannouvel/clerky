@@ -1122,6 +1122,29 @@ ${sourceText}
             }
         }
         
+        // If still no match, try with whitespace normalization
+        // PDF extraction often has different whitespace around special characters
+        // e.g., "24 +0" in PDF vs "24+0" in AI-generated quote
+        if (!foundMatch) {
+            const normalizeWhitespace = (text) => text
+                .replace(/\s+/g, ' ')  // Collapse multiple spaces
+                .replace(/\s*([+\-*/=<>()[\]{}])\s*/g, ' $1 ')  // Normalize spaces around operators/brackets
+                .replace(/\s+/g, ' ')  // Collapse again after normalization
+                .trim();
+            
+            const normalizedSource = normalizeWhitespace(lowerSource);
+            const normalizedQuote = normalizeWhitespace(lowerQuote);
+            
+            if (normalizedSource.includes(normalizedQuote)) {
+                console.log('[QUOTE_FINDER] Quote found after whitespace normalization', {
+                    guidelineId,
+                    original: quote.substring(0, 50),
+                    normalizedQuote: normalizedQuote.substring(0, 50)
+                });
+                foundMatch = true;
+            }
+        }
+        
         if (!foundMatch) {
             console.warn('[QUOTE_FINDER] Quote not found verbatim in guideline text, using semantic statement instead', {
                 guidelineId,
