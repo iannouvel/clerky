@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-38-21-805Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 809,
+  "response_length": 1248,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":48,\"transcriptPreview\":\"How and why do we administer magnesium sulphate?...\",\"chunkGuidelines\":[\"nice-2025-caesarean-birth-pdf: NICE 2025 - Caesarean Birth\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-guidance-2022-preterm-labour-and-birth-pdf\\\", \\\"title\\\": \\\"NICE Guidance - 2022 - Preterm Labour and Birth\\\", \\\"relevance\\...",
+  "full_data": null
+}
