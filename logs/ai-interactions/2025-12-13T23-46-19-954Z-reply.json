@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-46-19-954Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-24",
+  "token_usage": null,
+  "prompt_length": 749,
+  "response_length": 1171,
+  "prompt_preview": "{\"prompt\":\"Chunk 24/38\",\"transcriptLength\":64,\"transcriptPreview\":\"how do we use hydralazine with severe hypertension in pregnancy?...\",\"chunkGuidelines\":[\"mp017-dna-appointments-pdf: MP017 DNA Appoin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP019 Hypertension and Pre-eclampsia in Pregnancy\\\", \\\"re...",
+  "full_data": null
+}
