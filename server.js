@@ -10812,49 +10812,53 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
         for (const guideline of guidelinesToProcess) {
             try {
                 console.log(`[REEXTRACT] Processing: ${guideline.id}`);
+                console.log(`[REEXTRACT] Available fields:`, Object.keys(guideline).join(', '));
                 
-                // Determine the PDF filename
-                let pdfFileName = guideline.filename || guideline.originalFilename;
-                if (!pdfFileName) {
-                    // Try to derive from ID
-                    const idWithoutPdf = guideline.id.replace(/-pdf$/, '');
-                    // Convert slug back to filename format (best effort)
-                    pdfFileName = idWithoutPdf.replace(/-/g, ' ') + '.pdf';
-                }
+                // Try multiple filename fields in order of preference
+                const possibleFilenames = [
+                    guideline.filename,
+                    guideline.originalFilename,
+                    guideline.pdfFilename,
+                    guideline.title ? guideline.title + '.pdf' : null,
+                    guideline.humanFriendlyName ? guideline.humanFriendlyName + '.pdf' : null
+                ].filter(Boolean);
                 
-                // Clean up filename
-                if (!pdfFileName.toLowerCase().endsWith('.pdf')) {
-                    pdfFileName = pdfFileName + '.pdf';
-                }
+                console.log(`[REEXTRACT] Possible filenames:`, possibleFilenames);
                 
-                console.log(`[REEXTRACT] Attempting to fetch PDF: ${pdfFileName}`);
-                
-                // Try to fetch from GitHub
+                // Fetch from Firebase Storage (where PDFs are stored)
+                const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
                 let pdfBuffer = null;
-                try {
-                    const response = await axios.get(
-                        `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(pdfFileName)}`,
-                        {
-                            headers: {
-                                'Authorization': `token ${GITHUB_TOKEN}`,
-                                'Accept': 'application/vnd.github.v3.raw'
-                            },
-                            responseType: 'arraybuffer'
-                        }
-                    );
-                    pdfBuffer = Buffer.from(response.data);
-                    console.log(`[REEXTRACT] Downloaded PDF from GitHub: ${pdfBuffer.length} bytes`);
-                } catch (fetchError) {
-                    // Try alternate filename patterns
-                    const alternateNames = [
-                        guideline.title + '.pdf',
-                        guideline.id.replace(/-pdf$/, '').replace(/-/g, ' ') + '.pdf'
-                    ];
+                let usedFilename = null;
+                
+                for (const filename of possibleFilenames) {
+                    // Ensure .pdf extension
+                    const pdfFileName = filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf';
                     
-                    for (const altName of alternateNames) {
+                    try {
+                        console.log(`[REEXTRACT] Trying Firebase Storage: pdfs/${pdfFileName}`);
+                        const file = bucket.file(`pdfs/${pdfFileName}`);
+                        const [exists] = await file.exists();
+                        
+                        if (exists) {
+                            const [buffer] = await file.download();
+                            pdfBuffer = buffer;
+                            usedFilename = pdfFileName;
+                            console.log(`[REEXTRACT] ✅ Found in Firebase Storage: ${pdfFileName} (${buffer.length} bytes)`);
+                            break;
+                        }
+                    } catch (e) {
+                        console.log(`[REEXTRACT] Not found: pdfs/${pdfFileName}`);
+                    }
+                }
+                
+                // If not found in Storage, try GitHub as fallback
+                if (!pdfBuffer) {
+                    console.log(`[REEXTRACT] Not in Firebase Storage, trying GitHub...`);
+                    for (const filename of possibleFilenames) {
+                        const pdfFileName = filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf';
                         try {
                             const response = await axios.get(
-                                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(altName)}`,
+                                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(pdfFileName)}`,
                                 {
                                     headers: {
                                         'Authorization': `token ${GITHUB_TOKEN}`,
@@ -10864,7 +10868,8 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                                 }
                             );
                             pdfBuffer = Buffer.from(response.data);
-                            console.log(`[REEXTRACT] Downloaded PDF using alternate name: ${altName}`);
+                            usedFilename = pdfFileName;
+                            console.log(`[REEXTRACT] ✅ Found in GitHub: ${pdfFileName} (${pdfBuffer.length} bytes)`);
                             break;
                         } catch (e) {
                             // Continue trying
@@ -10876,7 +10881,7 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                     results.push({
                         id: guideline.id,
                         success: false,
-                        error: 'Could not fetch PDF from GitHub'
+                        error: `Could not fetch PDF. Tried: ${possibleFilenames.join(', ')}`
                     });
                     continue;
                 }
