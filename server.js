@@ -17663,27 +17663,40 @@ Please answer this question using the guidelines above. Remember to tag each pie
                     .trim();
             }
 
+            // If no verbatim quote but we have meaningful advice text, use a shortened version
+            // This gives the user something to search for rather than nothing
+            let fallbackSearch = '';
+            if (!safeQuote && task.adviceText && task.adviceText.length >= 10) {
+                // Extract first 5-8 distinctive words from advice text for fallback search
+                const words = task.adviceText.split(/\s+/).filter(w => w.length > 3);
+                fallbackSearch = words.slice(0, 8).join(' ');
+                console.log(`[${traceId}] Using fallback search from advice text`, {
+                    guidelineId: task.guidelineId,
+                    fallbackSearch: fallbackSearch.substring(0, 50)
+                });
+            }
+
+            const finalSearchText = safeQuote || fallbackSearch;
+
             citationResults.push({
                 guidelineId: task.guidelineId,
-                adviceText: task.adviceText.substring(0, 100),
+                adviceText: task.adviceText ? task.adviceText.substring(0, 100) : '',
                 verbatimQuote: safeQuote || null,
-                originalTag: task.originalTag
+                fallbackSearch: fallbackSearch || null,
+                finalSearchText: finalSearchText || null,
+                originalTag: task.originalTag,
+                guidelineTextAvailable: !!(guidelineText && guidelineText.trim())
             });
 
             // Replace [GuidelineID: xxx] with [[CITATION:guidelineId|searchText]]
             // The frontend will convert this to a clickable link
+            enhancedAnswer = enhancedAnswer.replace(
+                task.originalTag,
+                `[[CITATION:${task.guidelineId}|${finalSearchText}]]`
+            );
+            
             if (safeQuote) {
-                enhancedAnswer = enhancedAnswer.replace(
-                    task.originalTag,
-                    `[[CITATION:${task.guidelineId}|${safeQuote}]]`
-                );
                 quotesResolved += 1;
-            } else {
-                // No quote found - still create a link but without search text
-                enhancedAnswer = enhancedAnswer.replace(
-                    task.originalTag,
-                    `[[CITATION:${task.guidelineId}|]]`
-                );
             }
         }
 
@@ -17691,7 +17704,21 @@ Please answer this question using the guidelines above. Remember to tag each pie
         console.log(`[ASK_GUIDELINES][${traceId}] === CITATION PROCESSING SUMMARY ===`);
         console.log(`[ASK_GUIDELINES][${traceId}] Total citations:`, citationResults.length);
         console.log(`[ASK_GUIDELINES][${traceId}] With verbatim quotes:`, citationResults.filter(c => c.verbatimQuote).length);
-        console.log(`[ASK_GUIDELINES][${traceId}] Without quotes (link only):`, citationResults.filter(c => !c.verbatimQuote).length);
+        console.log(`[ASK_GUIDELINES][${traceId}] With fallback search:`, citationResults.filter(c => !c.verbatimQuote && c.fallbackSearch).length);
+        console.log(`[ASK_GUIDELINES][${traceId}] Without any search:`, citationResults.filter(c => !c.finalSearchText).length);
+        console.log(`[ASK_GUIDELINES][${traceId}] Missing guideline text:`, citationResults.filter(c => !c.guidelineTextAvailable).length);
+        
+        // Log details for debugging if any citations failed
+        const failedCitations = citationResults.filter(c => !c.finalSearchText);
+        if (failedCitations.length > 0) {
+            console.log(`[ASK_GUIDELINES][${traceId}] Failed citations detail:`, 
+                failedCitations.map(c => ({
+                    id: c.guidelineId,
+                    adviceLength: c.adviceText?.length || 0,
+                    hasGuidelineText: c.guidelineTextAvailable
+                }))
+            );
+        }
 
         // Update the response with the enhanced answer
         if (citationResults.length > 0) {
