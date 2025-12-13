@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T09-06-34-980Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 803,
+  "response_length": 1253,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how and when do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"nice-2025-caesarean-birth-pdf: NICE 2025 - Caesarean Birth\",\"nice-...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-guidance-2022-preterm-labour-and-birth-pdf\\\", \\\"title\\\": \\\"NICE Guidance - 2022 - Preterm Labour and Birth\\\", \\\"relevance\\...",
+  "full_data": null
+}
