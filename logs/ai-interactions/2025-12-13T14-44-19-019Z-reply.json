@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T14-44-19-019Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1101,
+  "response_length": 1684,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":33,\"transcriptPreview\":\"How do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: BJOG - 2018 - Jauniaux - Vasa Praevia\",...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\",\\n      \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm ...",
+  "full_data": null
+}
