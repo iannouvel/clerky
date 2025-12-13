@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-38-22-003Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1116,
+  "response_length": 1403,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/38\",\"transcriptLength\":48,\"transcriptPreview\":\"How and why do we administer magnesium sulphate?...\",\"chunkGuidelines\":[\"bjog-2018-jauniaux-vasa-praevia-pdf: BJOG - 2018 - Jauniaux -...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\", \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm Prelabour Rupture of ...",
+  "full_data": null
+}
