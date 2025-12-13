@@ -10824,6 +10824,7 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                 ].filter(Boolean);
                 
                 console.log(`[REEXTRACT] Possible filenames:`, possibleFilenames);
+                console.log(`[REEXTRACT] downloadUrl:`, guideline.downloadUrl || 'not set');
                 
                 // Helper function to normalize filename for comparison
                 const normalizeForMatch = (str) => {
@@ -10857,13 +10858,34 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                     return maxMatch / Math.max(t.length, c.length);
                 };
                 
-                // Fetch from Firebase Storage (where PDFs are stored)
-                const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
                 let pdfBuffer = null;
                 let usedFilename = null;
                 
-                // First, try exact matches
-                for (const filename of possibleFilenames) {
+                // STRATEGY 1: Try downloadUrl field first (most reliable)
+                if (guideline.downloadUrl) {
+                    try {
+                        console.log(`[REEXTRACT] Trying downloadUrl: ${guideline.downloadUrl}`);
+                        const response = await axios.get(guideline.downloadUrl, { 
+                            responseType: 'arraybuffer',
+                            timeout: 30000,
+                            headers: {
+                                'User-Agent': 'Clerky/1.0'
+                            }
+                        });
+                        pdfBuffer = Buffer.from(response.data);
+                        usedFilename = guideline.downloadUrl.split('/').pop() || 'downloaded.pdf';
+                        console.log(`[REEXTRACT] ✅ Downloaded from downloadUrl: ${usedFilename} (${pdfBuffer.length} bytes)`);
+                    } catch (downloadError) {
+                        console.log(`[REEXTRACT] ❌ downloadUrl failed: ${downloadError.message}`);
+                    }
+                }
+                
+                // STRATEGY 2: Try Firebase Storage (where PDFs may be stored)
+                if (!pdfBuffer) {
+                    const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
+                    
+                    // First, try exact matches
+                    for (const filename of possibleFilenames) {
                     // Ensure .pdf extension
                     const pdfFileName = filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf';
                     
@@ -10924,10 +10946,11 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                         console.log(`[REEXTRACT] Error listing Firebase Storage files: ${listError.message}`);
                     }
                 }
+                } // End of Firebase Storage strategy
                 
-                // If not found in Storage, try GitHub as fallback
+                // STRATEGY 3: Try GitHub API as fallback
                 if (!pdfBuffer) {
-                    console.log(`[REEXTRACT] Not in Firebase Storage, trying GitHub...`);
+                    console.log(`[REEXTRACT] Not found via downloadUrl or Firebase Storage, trying GitHub API...`);
                     
                     // First, list all files in the guidance folder to find a match
                     try {
