@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-38-25-180Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1252,
+  "response_length": 1744,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/38\",\"transcriptLength\":48,\"transcriptPreview\":\"How and why do we administer magnesium sulphate?...\",\"chunkGuidelines\":[\"bjog-2016-management-of-premenstrual-syndrome-pdf: BJOG - 201...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-management-of-premenstrual-syn...",
+  "full_data": null
+}
