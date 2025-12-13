@@ -971,6 +971,61 @@ ${fullText}`;
     }
 }
 
+// Helper function to normalize American spellings to British (UK medical guidelines use British)
+function normalizeAmericanToBritish(text) {
+    if (!text) return '';
+    
+    const americanToBritish = {
+        'sulfate': 'sulphate',
+        'sulfur': 'sulphur',
+        'anemia': 'anaemia',
+        'anemic': 'anaemic',
+        'anesthesia': 'anaesthesia',
+        'anesthetic': 'anaesthetic',
+        'cesarean': 'caesarean',
+        'cesarian': 'caesarean',
+        'edema': 'oedema',
+        'esophagus': 'oesophagus',
+        'estrogen': 'oestrogen',
+        'fetus': 'foetus',
+        'fetal': 'foetal',
+        'gynecology': 'gynaecology',
+        'gynecological': 'gynaecological',
+        'hemoglobin': 'haemoglobin',
+        'hemorrhage': 'haemorrhage',
+        'hemorrhagic': 'haemorrhagic',
+        'hemolytic': 'haemolytic',
+        'pediatric': 'paediatric',
+        'pediatrics': 'paediatrics',
+        'labor': 'labour',
+        'tumor': 'tumour',
+        'fiber': 'fibre',
+        'liter': 'litre',
+        'meter': 'metre',
+        'center': 'centre',
+        'color': 'colour',
+        'behavior': 'behaviour',
+        'leukemia': 'leukaemia',
+        'diarrhea': 'diarrhoea',
+        'maneuver': 'manoeuvre',
+        'orthopedic': 'orthopaedic'
+    };
+    
+    let normalized = text;
+    for (const [american, british] of Object.entries(americanToBritish)) {
+        // Case-insensitive replace, preserving first letter case
+        const regex = new RegExp(american, 'gi');
+        normalized = normalized.replace(regex, match => {
+            if (match[0] === match[0].toUpperCase()) {
+                return british.charAt(0).toUpperCase() + british.slice(1);
+            }
+            return british;
+        });
+    }
+    
+    return normalized;
+}
+
 // Function to find a short verbatim quote in a guideline that best matches a semantic statement
 async function findGuidelineQuoteInText(guidelineId, semanticStatement, guidelineText, userId = null) {
     try {
@@ -1048,7 +1103,26 @@ ${sourceText}
         // Ensure the quote appears somewhere in the guideline text (case-insensitive)
         const lowerSource = sourceText.toLowerCase();
         const lowerQuote = quote.toLowerCase();
-        if (!lowerSource.includes(lowerQuote)) {
+        
+        // Try exact match first
+        let foundMatch = lowerSource.includes(lowerQuote);
+        
+        // If no exact match, try with British spelling normalization
+        // (UK guidelines use British spellings but AI often uses American)
+        if (!foundMatch) {
+            const britishQuote = normalizeAmericanToBritish(quote).toLowerCase();
+            if (britishQuote !== lowerQuote && lowerSource.includes(britishQuote)) {
+                console.log('[QUOTE_FINDER] Quote found after British spelling normalization', {
+                    guidelineId,
+                    original: quote.substring(0, 50),
+                    normalized: normalizeAmericanToBritish(quote).substring(0, 50)
+                });
+                // Return the British-normalized version since that's what's in the PDF
+                return normalizeAmericanToBritish(quote);
+            }
+        }
+        
+        if (!foundMatch) {
             console.warn('[QUOTE_FINDER] Quote not found verbatim in guideline text, using semantic statement instead', {
                 guidelineId,
                 quoteSample: quote.substring(0, 80)
@@ -17951,6 +18025,24 @@ Please answer this question using the guidelines above. Remember to tag each pie
                 .replace(/`/g, '')      // Remove code markers
                 .trim();
             
+            // Strip common section headers that the AI adds but won't be in the PDF
+            // These headers confuse the PDF search when used as fallback
+            const headerPatterns = [
+                /^Detailed Advice:\s*/i,
+                /^Key Recommendations:\s*/i,
+                /^Important:\s*/i,
+                /^Note:\s*/i,
+                /^Summary:\s*/i,
+                /^For [^:]+:\s*/i,  // "For fetal neuroprotection:", "For eclampsia:", etc.
+                /^Treatment [^:]+:\s*/i,  // "Treatment of Eclampsia:", etc.
+                /^Management [^:]+:\s*/i,  // "Management of Recurrent Seizures:", etc.
+                /^Emergency [^:]+:\s*/i,  // "Emergency Treatment Eclampsia:", etc.
+            ];
+            for (const pattern of headerPatterns) {
+                adviceText = adviceText.replace(pattern, '');
+            }
+            adviceText = adviceText.trim();
+            
             // Always add the task if we have a valid guideline ID
             // (we'll create a link even if advice text extraction wasn't perfect)
             const taskKey = `${guidelineId}|${tagPosition}`;
@@ -18042,7 +18134,20 @@ Please answer this question using the guidelines above. Remember to tag each pie
                 });
             }
 
-            const finalSearchText = safeQuote || fallbackSearch;
+            // Apply British spelling normalization to search text
+            // (UK guidelines use British spellings, but AI often generates American)
+            let finalSearchText = safeQuote || fallbackSearch;
+            if (finalSearchText) {
+                const britishText = normalizeAmericanToBritish(finalSearchText);
+                if (britishText !== finalSearchText) {
+                    console.log(`[${traceId}] Normalized search text to British spelling`, {
+                        guidelineId: task.guidelineId,
+                        original: finalSearchText.substring(0, 50),
+                        normalized: britishText.substring(0, 50)
+                    });
+                    finalSearchText = britishText;
+                }
+            }
 
             citationResults.push({
                 guidelineId: task.guidelineId,

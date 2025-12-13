@@ -58,6 +58,57 @@
                 // Normalise number-unit spacing, e.g. "1ml" -> "1 ml"
                 cleaned = cleaned.replace(/(\d+)\s*([a-zA-Z]+)\b/g, '$1 $2');
                 
+                // Normalise American to British spellings (UK medical guidelines use British)
+                // This is critical for medical terms like magnesium sulfate/sulphate
+                const americanToBritish = {
+                    'sulfate': 'sulphate',
+                    'sulfur': 'sulphur',
+                    'anemia': 'anaemia',
+                    'anemic': 'anaemic',
+                    'anesthesia': 'anaesthesia',
+                    'anesthetic': 'anaesthetic',
+                    'cesarean': 'caesarean',
+                    'cesarian': 'caesarean',
+                    'edema': 'oedema',
+                    'esophagus': 'oesophagus',
+                    'estrogen': 'oestrogen',
+                    'fetus': 'foetus',
+                    'fetal': 'foetal',
+                    'gynecology': 'gynaecology',
+                    'gynecological': 'gynaecological',
+                    'hemoglobin': 'haemoglobin',
+                    'hemorrhage': 'haemorrhage',
+                    'hemorrhagic': 'haemorrhagic',
+                    'hemolytic': 'haemolytic',
+                    'pediatric': 'paediatric',
+                    'pediatrics': 'paediatrics',
+                    'labor': 'labour',
+                    'tumor': 'tumour',
+                    'tumor': 'tumour',
+                    'fiber': 'fibre',
+                    'liter': 'litre',
+                    'meter': 'metre',
+                    'center': 'centre',
+                    'color': 'colour',
+                    'behavior': 'behaviour',
+                    'leukemia': 'leukaemia',
+                    'diarrhea': 'diarrhoea',
+                    'maneuver': 'manoeuvre',
+                    'orthopedic': 'orthopaedic'
+                };
+                
+                // Apply American to British conversions (case-insensitive)
+                for (const [american, british] of Object.entries(americanToBritish)) {
+                    const regex = new RegExp(american, 'gi');
+                    cleaned = cleaned.replace(regex, match => {
+                        // Preserve case of first letter
+                        if (match[0] === match[0].toUpperCase()) {
+                            return british.charAt(0).toUpperCase() + british.slice(1);
+                        }
+                        return british;
+                    });
+                }
+                
                 // Collapse whitespace
                 cleaned = cleaned.replace(/\s+/g, ' ').trim();
                 
@@ -374,6 +425,15 @@
             }
         }, 500);
         
+        // Listen for retry search event (fired after successful PDF upload retry)
+        document.addEventListener('clerky-retry-search', function(e) {
+            console.log('[Clerky Auth] Received clerky-retry-search event');
+            if (e.detail && e.detail.searchTerm) {
+                console.log('[Clerky Auth] Re-triggering search after PDF retry...');
+                triggerSearch();
+            }
+        });
+        
         // Wait specifically for find controller to be available
         function waitForFindController(callback) {
             let findControllerPollCount = 0;
@@ -645,6 +705,41 @@
                                         setTimeout(() => {
                                             hideUploadStatus();
                                         }, 500);
+                                        
+                                        // After successful retry, we need to re-trigger the search
+                                        // because the original pagesloaded/polling setup may have already fired/completed
+                                        console.log('[Clerky Auth] Setting up post-retry search trigger...');
+                                        setTimeout(() => {
+                                            // Re-check for search term and trigger search if PDF is loaded
+                                            const hash = window.location.hash;
+                                            const searchMatch = hash.match(/[#&]search=([^&]+)/);
+                                            
+                                            if (searchMatch && searchMatch[1]) {
+                                                const searchTerm = decodeURIComponent(searchMatch[1]);
+                                                console.log('[Clerky Auth] Post-retry: Re-triggering search for:', searchTerm.substring(0, 50) + '...');
+                                                
+                                                // Poll for PDF to be ready and findController to be available
+                                                let postRetryPolls = 0;
+                                                const maxPostRetryPolls = 30; // 15 seconds
+                                                
+                                                const postRetryPollInterval = setInterval(() => {
+                                                    postRetryPolls++;
+                                                    
+                                                    if (window.PDFViewerApplication?.pdfDocument && window.PDFViewerApplication?.findController) {
+                                                        console.log('[Clerky Auth] Post-retry: PDF and findController ready, triggering search');
+                                                        clearInterval(postRetryPollInterval);
+                                                        
+                                                        // Dispatch a custom event that will trigger the search
+                                                        document.dispatchEvent(new CustomEvent('clerky-retry-search', { detail: { searchTerm } }));
+                                                    } else if (postRetryPolls >= maxPostRetryPolls) {
+                                                        console.error('[Clerky Auth] Post-retry: Gave up waiting for PDF/findController after 15 seconds');
+                                                        clearInterval(postRetryPollInterval);
+                                                    } else if (postRetryPolls % 5 === 0) {
+                                                        console.log(`[Clerky Auth] Post-retry: Waiting for PDF to load... (${postRetryPolls}/${maxPostRetryPolls})`);
+                                                    }
+                                                }, 500);
+                                            }
+                                        }, 1000); // Wait a second for the PDF to start loading
                                         
                                         return retryResponse;
                                     } else {
