@@ -3101,6 +3101,14 @@ html, body {
     display: none;
 }
 
+/* Fix button text color on white background */
+.floating-input-buttons .nav-btn {
+    color: #2c3e50;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    text-shadow: none;
+}
+
 .floating-input-buttons-top {
     top: 8px;
     right: 8px;
@@ -3125,8 +3133,14 @@ html, body {
 }
 
 .floating-input-buttons .record-btn {
-    padding: 6px 12px;
+    padding: 6px 8px;
     font-size: 0.85em;
+    min-width: auto;
+}
+
+/* Remove margin from record symbol when no text follows */
+.floating-input-buttons .record-btn .record-symbol {
+    margin-right: 0;
 }
 
 .floating-input-buttons .test-btn {
