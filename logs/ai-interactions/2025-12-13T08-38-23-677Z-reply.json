@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-38-23-677Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1040,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":48,\"transcriptPreview\":\"How and why do we administer magnesium sulphate?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 2025 - Gonorrhoeae\",\"bash...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
