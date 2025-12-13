@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T23-43-11-222Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 805,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/38\",\"transcriptLength\":20,\"transcriptPreview\":\"how do we use MgSO4?...\",\"chunkGuidelines\":[\"cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite H...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover...",
+  "full_data": null
+}
