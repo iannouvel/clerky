@@ -10855,6 +10855,38 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                 if (!pdfBuffer) {
                     console.log(`[REEXTRACT] Not in Firebase Storage, trying GitHub...`);
                     
+                    // Helper function to normalize filename for comparison
+                    const normalizeForMatch = (str) => {
+                        return str
+                            .toLowerCase()
+                            .replace(/\.pdf$/i, '')
+                            .replace(/[''""]/g, "'")
+                            .replace(/[–—]/g, '-')
+                            .replace(/[\s\-_]+/g, '')  // Remove all spaces, hyphens, underscores
+                            .replace(/[^\w]/g, '');     // Remove all non-alphanumeric
+                    };
+                    
+                    // Helper function to calculate similarity (simple containment check)
+                    const calculateSimilarity = (target, candidate) => {
+                        const t = normalizeForMatch(target);
+                        const c = normalizeForMatch(candidate);
+                        if (t === c) return 1.0;
+                        if (t.includes(c) || c.includes(t)) return 0.9;
+                        
+                        // Check how many consecutive characters match
+                        let maxMatch = 0;
+                        for (let i = 0; i < t.length; i++) {
+                            for (let j = 0; j < c.length; j++) {
+                                let k = 0;
+                                while (i + k < t.length && j + k < c.length && t[i + k] === c[j + k]) {
+                                    k++;
+                                }
+                                maxMatch = Math.max(maxMatch, k);
+                            }
+                        }
+                        return maxMatch / Math.max(t.length, c.length);
+                    };
+                    
                     // First, list all files in the guidance folder to find a match
                     try {
                         const listResponse = await axios.get(
@@ -10868,31 +10900,51 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                         );
                         
                         const files = listResponse.data.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+                        console.log(`[REEXTRACT] Found ${files.length} PDF files in GitHub guidance folder`);
                         
-                        // Try to find a matching file
-                        for (const filename of possibleFilenames) {
-                            const targetName = (filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf').toLowerCase();
+                        // Try to find a matching file using multiple strategies
+                        let matchedFile = null;
+                        let bestScore = 0;
+                        
+                        for (const targetFilename of possibleFilenames) {
+                            const targetName = (targetFilename.toLowerCase().endsWith('.pdf') ? targetFilename : targetFilename + '.pdf');
+                            const normalizedTarget = normalizeForMatch(targetName);
                             
-                            // Try exact match first
-                            let matchedFile = files.find(f => f.name.toLowerCase() === targetName);
-                            
-                            // Try without special spacing differences
-                            if (!matchedFile) {
-                                const normalizedTarget = targetName.replace(/\s+/g, ' ').replace(/ - /g, '-').replace(/-/g, ' ');
-                                matchedFile = files.find(f => {
-                                    const normalizedFile = f.name.toLowerCase().replace(/\s+/g, ' ').replace(/ - /g, '-').replace(/-/g, ' ');
-                                    return normalizedFile === normalizedTarget;
-                                });
-                            }
-                            
+                            // Strategy 1: Exact match
+                            matchedFile = files.find(f => f.name.toLowerCase() === targetName.toLowerCase());
                             if (matchedFile) {
-                                console.log(`[REEXTRACT] Found matching file in GitHub: ${matchedFile.name}`);
-                                const fileResponse = await axios.get(matchedFile.download_url, { responseType: 'arraybuffer' });
-                                pdfBuffer = Buffer.from(fileResponse.data);
-                                usedFilename = matchedFile.name;
-                                console.log(`[REEXTRACT] ✅ Downloaded from GitHub: ${matchedFile.name} (${pdfBuffer.length} bytes)`);
+                                console.log(`[REEXTRACT] ✅ Exact match found: ${matchedFile.name}`);
                                 break;
                             }
+                            
+                            // Strategy 2: Normalized exact match
+                            matchedFile = files.find(f => normalizeForMatch(f.name) === normalizedTarget);
+                            if (matchedFile) {
+                                console.log(`[REEXTRACT] ✅ Normalized match found: ${matchedFile.name}`);
+                                break;
+                            }
+                            
+                            // Strategy 3: Find best fuzzy match
+                            for (const file of files) {
+                                const score = calculateSimilarity(targetName, file.name);
+                                if (score > bestScore) {
+                                    bestScore = score;
+                                    matchedFile = file;
+                                }
+                            }
+                        }
+                        
+                        // Accept fuzzy match if score is good enough (>0.7)
+                        if (matchedFile && bestScore >= 0.7) {
+                            console.log(`[REEXTRACT] Found matching file in GitHub: ${matchedFile.name} (score: ${bestScore.toFixed(2)})`);
+                            const fileResponse = await axios.get(matchedFile.download_url, { responseType: 'arraybuffer' });
+                            pdfBuffer = Buffer.from(fileResponse.data);
+                            usedFilename = matchedFile.name;
+                            console.log(`[REEXTRACT] ✅ Downloaded from GitHub: ${matchedFile.name} (${pdfBuffer.length} bytes)`);
+                        } else if (matchedFile) {
+                            console.log(`[REEXTRACT] Best match was ${matchedFile.name} but score too low: ${bestScore.toFixed(2)}`);
+                        } else {
+                            console.log(`[REEXTRACT] No matching file found in GitHub for: ${possibleFilenames.join(', ')}`);
                         }
                     } catch (listError) {
                         console.log(`[REEXTRACT] Error listing GitHub files: ${listError.message}`);
