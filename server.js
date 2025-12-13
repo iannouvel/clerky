@@ -17474,12 +17474,35 @@ PPH is defined as blood loss >500ml after vaginal delivery or >1000ml after caes
 Always base your answers on the provided guidelines.`;
 
         // Build a fast lookup of guideline text for quote finding
-        // IMPORTANT: Use raw content (g.content) for quote verification, NOT condensed text
-        // The condensed text has been reformatted and may not match the actual PDF
+        // CRITICAL: ONLY use raw content (g.content) for quote verification
+        // The condensed/semanticallyCompressed text has been reformatted and won't match the PDF
         const guidelineTextById = {};
+        const guidelinesWithMissingContent = [];
+        
         for (const g of guidelinesWithContent) {
-            // Prefer raw content for quote matching to ensure phrases exist in actual PDF
-            guidelineTextById[g.id] = g.content || g.condensed || g.summary || '';
+            if (g.content && String(g.content).trim()) {
+                guidelineTextById[g.id] = String(g.content).trim();
+            } else {
+                // LOG ERROR - guideline is missing content, this needs to be fixed
+                guidelinesWithMissingContent.push({
+                    id: g.id,
+                    title: g.title,
+                    hasCondensed: !!(g.condensed && String(g.condensed).trim()),
+                    hasSemanticallyCompressed: !!(g.semanticallyCompressed && String(g.semanticallyCompressed).trim())
+                });
+                guidelineTextById[g.id] = ''; // Empty - will trigger fallback search
+            }
+        }
+        
+        // Log error for guidelines missing content - these need data fixes
+        if (guidelinesWithMissingContent.length > 0) {
+            console.error(`[ASK_GUIDELINES][${traceId}] ⚠️ CRITICAL: ${guidelinesWithMissingContent.length} guidelines are MISSING raw content!`);
+            console.error(`[ASK_GUIDELINES][${traceId}] These guidelines cannot have accurate PDF search. Data needs fixing:`);
+            for (const g of guidelinesWithMissingContent) {
+                console.error(`[ASK_GUIDELINES][${traceId}]   - ID: ${g.id}`);
+                console.error(`[ASK_GUIDELINES][${traceId}]     Title: ${g.title}`);
+                console.error(`[ASK_GUIDELINES][${traceId}]     Has condensed: ${g.hasCondensed}, Has semanticallyCompressed: ${g.hasSemanticallyCompressed}`);
+            }
         }
 
         // Create user prompt with question and guidelines
@@ -17634,8 +17657,7 @@ Please answer this question using the guidelines above. Remember to tag each pie
             const guidelineText = guidelineTextById[task.guidelineId];
             let verbatimQuote = null;
 
-            // Only attempt quote finding if we have meaningful advice text
-            // If advice text is empty/short, we'll still create a link but without search
+            // Only attempt quote finding if we have meaningful advice text AND guideline content
             if (task.adviceText && task.adviceText.length >= 10 && guidelineText && guidelineText.trim()) {
                 try {
                     verbatimQuote = await findGuidelineQuoteInText(
@@ -17644,11 +17666,26 @@ Please answer this question using the guidelines above. Remember to tag each pie
                         guidelineText,
                         userId
                     );
+                    
+                    // Log warning if quote finder returned null despite having content
+                    if (!verbatimQuote) {
+                        console.warn(`[${traceId}] Quote finder returned null for guideline with content`, {
+                            guidelineId: task.guidelineId,
+                            adviceTextPreview: task.adviceText.substring(0, 100),
+                            contentLength: guidelineText.length
+                        });
+                    }
                 } catch (quoteError) {
-                    console.log(`[${traceId}] Error finding quote for citation:`, quoteError.message);
+                    console.error(`[${traceId}] Error finding quote for citation:`, quoteError.message);
                 }
+            } else if (!guidelineText || !guidelineText.trim()) {
+                // This is a data error - guideline has no content
+                console.error(`[${traceId}] ⚠️ Cannot find quote - guideline has NO CONTENT`, {
+                    guidelineId: task.guidelineId,
+                    adviceTextPreview: task.adviceText ? task.adviceText.substring(0, 100) : 'N/A'
+                });
             } else if (!task.adviceText || task.adviceText.length < 10) {
-                console.log(`[${traceId}] Skipping quote search - no advice text extracted`, {
+                console.warn(`[${traceId}] Skipping quote search - no advice text extracted`, {
                     guidelineId: task.guidelineId
                 });
             }
