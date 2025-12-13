@@ -2580,6 +2580,177 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Re-extract PDF content handlers
+        const reextractGuidelineSelect = document.getElementById('reextractGuidelineSelect');
+        const reextractSingleBtn = document.getElementById('reextractSingleBtn');
+        const reextractAllBtn = document.getElementById('reextractAllBtn');
+        const reextractStatus = document.getElementById('reextractStatus');
+        
+        // Load guidelines into the select dropdown
+        async function loadGuidelinesForReextract() {
+            try {
+                const token = await auth.currentUser?.getIdToken();
+                if (!token) return;
+                
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (response.ok) {
+                    const guidelines = await response.json();
+                    if (reextractGuidelineSelect) {
+                        reextractGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
+                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
+                        guidelines.forEach(g => {
+                            const option = document.createElement('option');
+                            option.value = g.id;
+                            option.textContent = `${g.title || g.id} (${g.id})`;
+                            reextractGuidelineSelect.appendChild(option);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading guidelines for re-extract:', error);
+            }
+        }
+        
+        // Load guidelines when auth state changes
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                await loadGuidelinesForReextract();
+            }
+        });
+        
+        // Re-extract single guideline
+        if (reextractSingleBtn) {
+            reextractSingleBtn.addEventListener('click', async () => {
+                const selectedId = reextractGuidelineSelect?.value;
+                if (!selectedId) {
+                    alert('Please select a guideline first');
+                    return;
+                }
+                
+                try {
+                    reextractSingleBtn.disabled = true;
+                    const originalText = reextractSingleBtn.textContent;
+                    reextractSingleBtn.textContent = '🔄 Re-extracting...';
+                    
+                    if (reextractStatus) {
+                        reextractStatus.style.display = 'block';
+                        reextractStatus.innerHTML = `<strong>Processing:</strong> ${selectedId}...`;
+                    }
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/reextractGuidelineContent`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ guidelineId: selectedId })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success && result.results?.length > 0) {
+                        const r = result.results[0];
+                        if (r.success) {
+                            reextractStatus.innerHTML = `<span style="color:green;">✅ <strong>${r.id}</strong></span><br>
+                                Old content: ${r.oldLength} chars<br>
+                                New content: ${r.newLength} chars<br>
+                                ${r.spellingCheck ? `Spelling check: "${r.spellingCheck}"` : 'No magnesium spelling found'}`;
+                        } else {
+                            reextractStatus.innerHTML = `<span style="color:red;">❌ <strong>${r.id}</strong>: ${r.error}</span>`;
+                        }
+                    } else {
+                        reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    }
+                    
+                    reextractSingleBtn.textContent = originalText;
+                    reextractSingleBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error('Error re-extracting content:', error);
+                    if (reextractStatus) {
+                        reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+                    }
+                    reextractSingleBtn.textContent = '📄 Re-extract Selected';
+                    reextractSingleBtn.disabled = false;
+                }
+            });
+        }
+        
+        // Re-extract all guidelines
+        if (reextractAllBtn) {
+            reextractAllBtn.addEventListener('click', async () => {
+                if (!confirm('This will re-extract content for ALL guidelines. This may take several minutes. Continue?')) {
+                    return;
+                }
+                
+                try {
+                    reextractAllBtn.disabled = true;
+                    const originalText = reextractAllBtn.textContent;
+                    reextractAllBtn.textContent = '🔄 Processing...';
+                    
+                    if (reextractStatus) {
+                        reextractStatus.style.display = 'block';
+                        reextractStatus.innerHTML = '<strong>Processing all guidelines...</strong> This may take a while.';
+                    }
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/reextractGuidelineContent`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ processAll: true })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        let html = `<strong>Completed:</strong> ${result.successCount} success, ${result.failureCount} failed<br><br>`;
+                        
+                        // Show successes
+                        const successes = result.results.filter(r => r.success);
+                        if (successes.length > 0) {
+                            html += '<details><summary style="cursor:pointer;color:green;">✅ Successful (' + successes.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                            successes.forEach(r => {
+                                html += `<li>${r.id}: ${r.oldLength} → ${r.newLength} chars ${r.spellingCheck ? `(${r.spellingCheck})` : ''}</li>`;
+                            });
+                            html += '</ul></details>';
+                        }
+                        
+                        // Show failures
+                        const failures = result.results.filter(r => !r.success);
+                        if (failures.length > 0) {
+                            html += '<details open><summary style="cursor:pointer;color:red;">❌ Failed (' + failures.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                            failures.forEach(r => {
+                                html += `<li>${r.id}: ${r.error}</li>`;
+                            });
+                            html += '</ul></details>';
+                        }
+                        
+                        reextractStatus.innerHTML = html;
+                    } else {
+                        reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    }
+                    
+                    reextractAllBtn.textContent = originalText;
+                    reextractAllBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error('Error re-extracting all content:', error);
+                    if (reextractStatus) {
+                        reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+                    }
+                    reextractAllBtn.textContent = '📚 Re-extract ALL Guidelines';
+                    reextractAllBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);

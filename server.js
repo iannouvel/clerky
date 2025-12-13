@@ -10773,6 +10773,191 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
   }
 });
 
+// Endpoint to re-extract raw PDF content and update Firestore
+// This uses pdf-parse (same as our extractTextFromPDF function) to get verbatim text
+app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId, processAll } = req.body;
+        
+        console.log('[REEXTRACT] Starting content re-extraction', { guidelineId, processAll });
+        
+        // Check if user is admin (optional - for now allow any authenticated user)
+        const userId = req.user?.uid;
+        if (!userId) {
+            return res.status(401).json({ success: false, error: 'User not authenticated' });
+        }
+        
+        const results = [];
+        let guidelinesToProcess = [];
+        
+        if (processAll) {
+            // Get all guidelines from Firestore
+            const snapshot = await db.collection('guidelines').get();
+            snapshot.forEach(doc => {
+                guidelinesToProcess.push({ id: doc.id, ...doc.data() });
+            });
+            console.log(`[REEXTRACT] Processing all ${guidelinesToProcess.length} guidelines`);
+        } else if (guidelineId) {
+            // Process single guideline
+            const doc = await db.collection('guidelines').doc(guidelineId).get();
+            if (!doc.exists) {
+                return res.status(404).json({ success: false, error: `Guideline not found: ${guidelineId}` });
+            }
+            guidelinesToProcess.push({ id: doc.id, ...doc.data() });
+            console.log(`[REEXTRACT] Processing single guideline: ${guidelineId}`);
+        } else {
+            return res.status(400).json({ success: false, error: 'Must provide guidelineId or processAll=true' });
+        }
+        
+        for (const guideline of guidelinesToProcess) {
+            try {
+                console.log(`[REEXTRACT] Processing: ${guideline.id}`);
+                
+                // Determine the PDF filename
+                let pdfFileName = guideline.filename || guideline.originalFilename;
+                if (!pdfFileName) {
+                    // Try to derive from ID
+                    const idWithoutPdf = guideline.id.replace(/-pdf$/, '');
+                    // Convert slug back to filename format (best effort)
+                    pdfFileName = idWithoutPdf.replace(/-/g, ' ') + '.pdf';
+                }
+                
+                // Clean up filename
+                if (!pdfFileName.toLowerCase().endsWith('.pdf')) {
+                    pdfFileName = pdfFileName + '.pdf';
+                }
+                
+                console.log(`[REEXTRACT] Attempting to fetch PDF: ${pdfFileName}`);
+                
+                // Try to fetch from GitHub
+                let pdfBuffer = null;
+                try {
+                    const response = await axios.get(
+                        `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(pdfFileName)}`,
+                        {
+                            headers: {
+                                'Authorization': `token ${GITHUB_TOKEN}`,
+                                'Accept': 'application/vnd.github.v3.raw'
+                            },
+                            responseType: 'arraybuffer'
+                        }
+                    );
+                    pdfBuffer = Buffer.from(response.data);
+                    console.log(`[REEXTRACT] Downloaded PDF from GitHub: ${pdfBuffer.length} bytes`);
+                } catch (fetchError) {
+                    // Try alternate filename patterns
+                    const alternateNames = [
+                        guideline.title + '.pdf',
+                        guideline.id.replace(/-pdf$/, '').replace(/-/g, ' ') + '.pdf'
+                    ];
+                    
+                    for (const altName of alternateNames) {
+                        try {
+                            const response = await axios.get(
+                                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(altName)}`,
+                                {
+                                    headers: {
+                                        'Authorization': `token ${GITHUB_TOKEN}`,
+                                        'Accept': 'application/vnd.github.v3.raw'
+                                    },
+                                    responseType: 'arraybuffer'
+                                }
+                            );
+                            pdfBuffer = Buffer.from(response.data);
+                            console.log(`[REEXTRACT] Downloaded PDF using alternate name: ${altName}`);
+                            break;
+                        } catch (e) {
+                            // Continue trying
+                        }
+                    }
+                }
+                
+                if (!pdfBuffer) {
+                    results.push({
+                        id: guideline.id,
+                        success: false,
+                        error: 'Could not fetch PDF from GitHub'
+                    });
+                    continue;
+                }
+                
+                // Extract text using pdf-parse (same library as extractTextFromPDF)
+                const pdfData = await PDFParser(pdfBuffer);
+                let extractedText = pdfData.text;
+                
+                if (!extractedText || extractedText.trim().length < 100) {
+                    results.push({
+                        id: guideline.id,
+                        success: false,
+                        error: 'Extracted text too short or empty'
+                    });
+                    continue;
+                }
+                
+                // Basic cleanup only - preserve verbatim text
+                const cleanedText = extractedText
+                    .replace(/\f/g, '\n')  // Form feeds to newlines
+                    .replace(/\x0c/g, '\n')  // Form feeds to newlines
+                    .replace(/\n\s*\n\s*\n/g, '\n\n')  // Multiple newlines to double
+                    .replace(/ +/g, ' ')  // Multiple spaces to single
+                    .replace(/\t+/g, ' ')  // Tabs to spaces
+                    .trim();
+                
+                // Check for spelling sample to verify extraction
+                const spellingCheck = cleanedText.match(/magnesium.{0,5}(sulf|sulph)/i);
+                console.log(`[REEXTRACT] ${guideline.id} - Spelling check: ${spellingCheck ? spellingCheck[0] : 'not found'}`);
+                
+                // Update Firestore with the new content
+                const oldContentLength = guideline.content ? guideline.content.length : 0;
+                
+                await db.collection('guidelines').doc(guideline.id).update({
+                    content: cleanedText,
+                    contentReextractedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    contentLength: cleanedText.length
+                });
+                
+                results.push({
+                    id: guideline.id,
+                    success: true,
+                    oldLength: oldContentLength,
+                    newLength: cleanedText.length,
+                    spellingCheck: spellingCheck ? spellingCheck[0] : null
+                });
+                
+                console.log(`[REEXTRACT] ✅ Updated ${guideline.id}: ${oldContentLength} -> ${cleanedText.length} chars`);
+                
+            } catch (guidelineError) {
+                console.error(`[REEXTRACT] Error processing ${guideline.id}:`, guidelineError.message);
+                results.push({
+                    id: guideline.id,
+                    success: false,
+                    error: guidelineError.message
+                });
+            }
+        }
+        
+        const successCount = results.filter(r => r.success).length;
+        const failureCount = results.filter(r => !r.success).length;
+        
+        console.log(`[REEXTRACT] Completed: ${successCount} success, ${failureCount} failed`);
+        
+        res.json({
+            success: true,
+            processed: results.length,
+            successCount,
+            failureCount,
+            results
+        });
+        
+    } catch (error) {
+        console.error('[REEXTRACT] Error:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
 // Endpoint to get guidelines list from GitHub
 app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     try {
