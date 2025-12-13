@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T19-07-29-340Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1014,
+  "response_length": 1532,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/38\",\"transcriptLength\":22,\"transcriptPreview\":\"when do we give MgSO4?...\",\"chunkGuidelines\":[\"bashh-2025-gonorrhoeae-pdf: BASHH - 2025 - Gonorrhoeae\",\"bashh-2025-mycoplasma-genitali...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bashh-2025-gonorrhoeae-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
