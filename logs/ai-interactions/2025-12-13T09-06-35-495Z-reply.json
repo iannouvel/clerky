@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T09-06-35-495Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 755,
+  "response_length": 1257,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/38\",\"transcriptLength\":42,\"transcriptPreview\":\"how and when do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"gtg-2014-umbilical-cord-prolapse-pdf: GTG - 2014 - Umbilical Cord ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-umbilical-cord-prolapse-pdf\\\", \\\"title\\\": \\\"GTG - 2014 - Umbilical Cord Prolapse...",
+  "full_data": null
+}
