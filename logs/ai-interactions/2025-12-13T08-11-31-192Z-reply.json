@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-13T08-11-31-192Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 936,
+  "response_length": 1321,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/38\",\"transcriptLength\":43,\"transcriptPreview\":\"when and why do we give magnesium sulphate?...\",\"chunkGuidelines\":[\"cg18007-newborn-screening-failsafes-pdf: CG18007 Newborn screenin...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiall...",
+  "full_data": null
+}
