@@ -337,6 +337,18 @@
                     <button id="fixNationsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🌍 Fix Nation Classifications</button>
                 </div>
                 <div id="maintenanceStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;"></div>
+            </div>
+            <div class="tools-section" style="margin-top:20px;">
+                <h4>Re-extract PDF Content</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">Re-extract verbatim text from PDFs using pdf-parse and update Firestore content field. This fixes issues where stored content doesn't match the actual PDF text.</p>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <select id="reextractGuidelineSelect" style="padding:8px 12px;border:1px solid #ddd;border-radius:4px;min-width:300px;font-family:'Inter',sans-serif;font-size:13px;">
+                        <option value="">-- Select a guideline --</option>
+                    </select>
+                    <button id="reextractSingleBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;">📄 Re-extract Selected</button>
+                    <button id="reextractAllBtn" class="dev-btn" style="background-color:#dc3545;color:#fff;border-color:#dc3545;">📚 Re-extract ALL Guidelines</button>
+                </div>
+                <div id="reextractStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:13px;"></div>
                 <div id="enhancementStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;color:#6c757d;"></div>
                 <div id="fixNationsStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;color:#6c757d;"></div>
             </div>
