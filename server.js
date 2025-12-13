@@ -17473,10 +17473,13 @@ PPH is defined as blood loss >500ml after vaginal delivery or >1000ml after caes
 
 Always base your answers on the provided guidelines.`;
 
-        // Build a fast lookup of guideline text for quote finding (prefer condensed)
+        // Build a fast lookup of guideline text for quote finding
+        // IMPORTANT: Use raw content (g.content) for quote verification, NOT condensed text
+        // The condensed text has been reformatted and may not match the actual PDF
         const guidelineTextById = {};
         for (const g of guidelinesWithContent) {
-            guidelineTextById[g.id] = g.condensed || g.content || g.summary || '';
+            // Prefer raw content for quote matching to ensure phrases exist in actual PDF
+            guidelineTextById[g.id] = g.content || g.condensed || g.summary || '';
         }
 
         // Create user prompt with question and guidelines
