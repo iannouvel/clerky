@@ -67,7 +67,7 @@
             // Generate search variants for fuzzy matching (from exact to increasingly fuzzy)
             const generateSearchVariants = function(originalText) {
                 const variants = [];
-
+                
                 const baseText = normaliseSearchTermForPdf(originalText) || originalText || '';
                 if (!baseText) {
                     return variants;
