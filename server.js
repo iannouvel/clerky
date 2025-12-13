@@ -10854,26 +10854,48 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
                 // If not found in Storage, try GitHub as fallback
                 if (!pdfBuffer) {
                     console.log(`[REEXTRACT] Not in Firebase Storage, trying GitHub...`);
-                    for (const filename of possibleFilenames) {
-                        const pdfFileName = filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf';
-                        try {
-                            const response = await axios.get(
-                                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance/${encodeURIComponent(pdfFileName)}`,
-                                {
-                                    headers: {
-                                        'Authorization': `token ${GITHUB_TOKEN}`,
-                                        'Accept': 'application/vnd.github.v3.raw'
-                                    },
-                                    responseType: 'arraybuffer'
+                    
+                    // First, list all files in the guidance folder to find a match
+                    try {
+                        const listResponse = await axios.get(
+                            `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/guidance`,
+                            {
+                                headers: {
+                                    'Authorization': `token ${GITHUB_TOKEN}`,
+                                    'Accept': 'application/vnd.github.v3+json'
                                 }
-                            );
-                            pdfBuffer = Buffer.from(response.data);
-                            usedFilename = pdfFileName;
-                            console.log(`[REEXTRACT] ✅ Found in GitHub: ${pdfFileName} (${pdfBuffer.length} bytes)`);
-                            break;
-                        } catch (e) {
-                            // Continue trying
+                            }
+                        );
+                        
+                        const files = listResponse.data.filter(f => f.name.toLowerCase().endsWith('.pdf'));
+                        
+                        // Try to find a matching file
+                        for (const filename of possibleFilenames) {
+                            const targetName = (filename.toLowerCase().endsWith('.pdf') ? filename : filename + '.pdf').toLowerCase();
+                            
+                            // Try exact match first
+                            let matchedFile = files.find(f => f.name.toLowerCase() === targetName);
+                            
+                            // Try without special spacing differences
+                            if (!matchedFile) {
+                                const normalizedTarget = targetName.replace(/\s+/g, ' ').replace(/ - /g, '-').replace(/-/g, ' ');
+                                matchedFile = files.find(f => {
+                                    const normalizedFile = f.name.toLowerCase().replace(/\s+/g, ' ').replace(/ - /g, '-').replace(/-/g, ' ');
+                                    return normalizedFile === normalizedTarget;
+                                });
+                            }
+                            
+                            if (matchedFile) {
+                                console.log(`[REEXTRACT] Found matching file in GitHub: ${matchedFile.name}`);
+                                const fileResponse = await axios.get(matchedFile.download_url, { responseType: 'arraybuffer' });
+                                pdfBuffer = Buffer.from(fileResponse.data);
+                                usedFilename = matchedFile.name;
+                                console.log(`[REEXTRACT] ✅ Downloaded from GitHub: ${matchedFile.name} (${pdfBuffer.length} bytes)`);
+                                break;
+                            }
                         }
+                    } catch (listError) {
+                        console.log(`[REEXTRACT] Error listing GitHub files: ${listError.message}`);
                     }
                 }
                 
