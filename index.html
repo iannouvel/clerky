@@ -399,39 +399,15 @@
                 <div class="preferences-panel-content">
                     <div class="preference-item">
                         <span class="preference-label">Hospital Trust:</span>
-                        <div class="preference-value-container">
-                            <span id="mainTrustDisplay" class="preference-value">Loading...</span>
-                            <button class="preference-edit-btn" id="mainEditTrustBtn" aria-label="Edit Hospital Trust" title="Click to edit">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        <span id="mainTrustDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <span class="preference-label">Guideline Scope:</span>
-                        <div class="preference-value-container">
-                            <span id="mainScopeDisplay" class="preference-value">Loading...</span>
-                            <button class="preference-edit-btn" id="mainEditScopeBtn" aria-label="Edit Guideline Scope" title="Click to edit">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        <span id="mainScopeDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <span class="preference-label">AI Model:</span>
-                        <div class="preference-value-container">
-                            <span id="mainModelDisplay" class="preference-value">Loading...</span>
-                            <button class="preference-edit-btn" id="mainEditModelBtn" aria-label="Edit AI Model Preferences" title="Click to edit">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        <span id="mainModelDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <button id="preferencesPanelBtn" class="preferences-panel-btn" title="Open Preferences">
@@ -503,20 +479,6 @@
                             </svg>
                             <span>Links</span>
                         </button>
-                    </div>
-                </div>
-                <div class="preferences-panel-edit-modes">
-                    <div class="preference-edit-mode hidden" id="mainTrustEditMode">
-                        <button class="preference-action-btn" id="mainOpenTrustModalBtn">Select Trust</button>
-                        <button class="preference-cancel-btn" id="mainCancelTrustEditBtn">Cancel</button>
-                    </div>
-                    <div class="preference-edit-mode hidden" id="mainScopeEditMode">
-                        <div class="scope-edit-buttons">
-                            <button class="scope-edit-btn" id="mainScopeNationalBtn" data-scope="national">National</button>
-                            <button class="scope-edit-btn" id="mainScopeLocalBtn" data-scope="local">Local</button>
-                            <button class="scope-edit-btn" id="mainScopeBothBtn" data-scope="both">Both</button>
-                        </div>
-                        <button class="preference-cancel-btn" id="mainCancelScopeEditBtn">Cancel</button>
                     </div>
                 </div>
             </div>
