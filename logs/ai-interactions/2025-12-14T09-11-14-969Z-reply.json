@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-14-969Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 420,
+  "response_length": 696,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"uhsx-retained-placenta-protocol-pdf: UHSx Retained Placenta protocol\",\"uhsx...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-retained-placenta-protocol-pdf\\\", \\...",
+  "full_data": null
+}
