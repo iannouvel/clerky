@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-10-413Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1618,
+  "response_length": 1719,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBoo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\\\",\\n      \\\"title\\\": \\\"A...",
+  "full_data": null
+}
