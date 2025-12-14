@@ -1253,6 +1253,26 @@
                 });
                 console.log('[TIPTAP] Link click handler initialized');
             }
+
+            // Also handle guideline links rendered OUTSIDE TipTap (e.g. suggestion cards).
+            // Those anchors are created with href="#", so without interception they navigate
+            // to index.html# (or open a useless blank tab if target="_blank" is set).
+            document.addEventListener('click', (event) => {
+                const link = event.target.closest('a.guideline-link');
+                if (!link || !link.hasAttribute('data-link-data')) return;
+
+                // TipTap editor already has its own handler; avoid double-open.
+                if (userInput && userInput.contains(link)) return;
+
+                console.log('[LINK] Guideline link clicked (non-editor)');
+                event.preventDefault();
+
+                if (typeof window.prepareViewerAuth === 'function') {
+                    window.prepareViewerAuth(event, link);
+                } else {
+                    console.error('[LINK] window.prepareViewerAuth is not defined');
+                }
+            });
         });
     </script>
 
