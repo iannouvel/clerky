@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-42-534Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 96,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"how do we use MgSO4\",\"guidelinesCount\":291,\"chunksProcessed\":37,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 12,\n  \"notRelevantCount\": 265\n}...",
+  "full_data": null
+}
