@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-09-834Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1733,
+  "response_length": 1712,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\\"title\\\": \\\"GP0...",
+  "full_data": null
+}
