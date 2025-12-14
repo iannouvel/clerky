@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-19-787Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-12",
+  "token_usage": null,
+  "prompt_length": 840,
+  "response_length": 1331,
+  "prompt_preview": "{\"prompt\":\"Chunk 12/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"cg20013-preterm-birth-risk-pathway-pdf: CG20013 Preterm birth risk pathway\"...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"CG20013 Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"pot...",
+  "full_data": null
+}
