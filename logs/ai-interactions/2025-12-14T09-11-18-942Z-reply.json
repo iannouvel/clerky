@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-18-942Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-23",
+  "token_usage": null,
+  "prompt_length": 762,
+  "response_length": 1267,
+  "prompt_preview": "{\"prompt\":\"Chunk 23/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"mp010-anti-d-rhesus-negative-women-pdf: MP010 Anti D Rhesus Negative Women\"...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp010-anti-d-rhesus-negative-women-pdf\\\"...",
+  "full_data": null
+}
