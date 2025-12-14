@@ -1026,6 +1026,166 @@ function normalizeAmericanToBritish(text) {
     return normalized;
 }
 
+// Heuristic fallback: try to extract a short, verbatim snippet from the guideline text
+// when the AI quote finder cannot find a direct match.
+// This is designed to improve PDF search by anchoring on distinctive numeric tokens
+// (e.g. gestational age ranges like 30+0 – 33+6) and nearby keywords.
+function heuristicExtractQuoteFromGuidelineText(guidelineText, paraphrasedStatement) {
+    try {
+        const source = String(guidelineText || '');
+        const statement = String(paraphrasedStatement || '').toLowerCase();
+        if (!source.trim() || !statement.trim()) return null;
+
+        const numericTokens = Array.from(new Set(statement.match(/\d+\+\d+/g) || []));
+
+        // A small stopword list to keep keyword scoring useful without heavy NLP.
+        const stopwords = new Set([
+            'the','and','with','that','this','from','into','then','than','when','where','which',
+            'should','could','would','must','may','might','will','can','also','only','within',
+            'between','before','after','during','offer','offered','consider','considered','discuss','discussed'
+        ]);
+
+        const keywords = Array.from(
+            new Set(
+                statement
+                    .split(/[^a-z0-9+]+/g)
+                    .filter(w => w.length >= 5 && !stopwords.has(w))
+            )
+        );
+
+        const looksLikeHeading = (line) => {
+            const trimmed = line.trim();
+            if (!trimmed) return true;
+            // Headings are often short, contain dashes, and contain no digits.
+            const hasDigits = /\d/.test(trimmed);
+            const wordCount = trimmed.split(/\s+/).filter(Boolean).length;
+            const hasDash = /[–—-]/.test(trimmed);
+            const hasSentencePunct = /[.]/.test(trimmed);
+            if (!hasDigits && wordCount <= 10 && hasDash && !hasSentencePunct) return true;
+            return false;
+        };
+
+        const normalizeLineForMatch = (line) =>
+            String(line || '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
+
+        const lines = source.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+
+        let best = null;
+        let bestScore = 0;
+
+        for (const rawLine of lines) {
+            const line = rawLine.trim();
+            if (!line) continue;
+            if (line.length < 10) continue;
+            if (looksLikeHeading(line)) continue;
+
+            const nLine = normalizeLineForMatch(line);
+
+            // Must match at least one numeric token if any exist in the statement.
+            if (numericTokens.length > 0) {
+                const numericMatches = numericTokens.filter(t => nLine.includes(t)).length;
+                if (numericMatches === 0) continue;
+            }
+
+            let score = 0;
+            for (const t of numericTokens) {
+                if (nLine.includes(t)) score += 20;
+            }
+            for (const kw of keywords) {
+                if (kw && nLine.includes(kw)) score += 2;
+            }
+
+            // Prefer guideline-style "range – action" lines by rewarding dashes/bullets.
+            if (/[–—-]/.test(line)) score += 2;
+            if (/^\s*[-*•]\s+/.test(rawLine)) score += 1;
+
+            if (score > bestScore) {
+                bestScore = score;
+                best = line;
+            }
+        }
+
+        if (!best || bestScore <= 0) return null;
+
+        // Clean bullet markers and normalise whitespace (still verbatim words).
+        let cleaned = best.replace(/^\s*[-*•]\s+/, '').replace(/\s+/g, ' ').trim();
+
+        // Enforce 5–25 words window; if too long, crop around the first numeric token.
+        const words = cleaned.split(/\s+/).filter(Boolean);
+        if (words.length < 5) return null;
+        if (words.length > 25) {
+            if (numericTokens.length > 0) {
+                const firstToken = numericTokens[0];
+                const idx = words.findIndex(w => w.includes(firstToken));
+                if (idx >= 0) {
+                    const start = Math.max(0, idx - 6);
+                    const end = Math.min(words.length, start + 25);
+                    cleaned = words.slice(start, end).join(' ');
+                } else {
+                    cleaned = words.slice(0, 25).join(' ');
+                }
+            } else {
+                cleaned = words.slice(0, 25).join(' ');
+            }
+        }
+
+        return cleaned;
+    } catch (e) {
+        console.warn('[QUOTE_FINDER] Heuristic extract failed', { error: e?.message });
+        return null;
+    }
+}
+
+// Attempt to "snap" an AI-produced quote to the exact substring in the extracted guideline text.
+// This helps when the model returns the correct words but with different whitespace/dash characters
+// than the PDF extractor produced.
+function findVerbatimSubstringInGuidelineText(guidelineText, aiQuote) {
+    const sourceText = String(guidelineText || '');
+    let quote = String(aiQuote || '').trim();
+    if (!sourceText.trim() || !quote) return null;
+
+    // Build a tolerant regex:
+    // - whitespace becomes \s+
+    // - hyphen/en-dash/em-dash become a dash character class
+    // - plus sign allows optional surrounding whitespace (30+0 vs 30 +0)
+    const toTokenPattern = (token) => {
+        if (!token) return '';
+        let t = token;
+        t = t.replace(/\+/g, '__PLUS__');
+        t = t.replace(/[–—-]/g, '__DASH__');
+        // Escape regex special chars
+        t = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        // Re-inject placeholders as tolerant patterns
+        t = t.replace(/__PLUS__/g, '\\s*\\+\\s*');
+        t = t.replace(/__DASH__/g, '[\\-–—]');
+        return t;
+    };
+
+    // Normalise fancy quotes to plain equivalents for matching (without modifying return value).
+    quote = quote
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'")
+        .replace(/\u00A0/g, ' '); // NBSP
+
+    const tokens = quote.split(/\s+/).filter(Boolean);
+    if (tokens.length === 0) return null;
+
+    const pattern = tokens.map(toTokenPattern).join('\\s+');
+
+    try {
+        const re = new RegExp(pattern, 'i');
+        const match = sourceText.match(re);
+        if (!match || !match[0]) return null;
+        return String(match[0]).trim();
+    } catch (e) {
+        console.warn('[QUOTE_FINDER] Failed to build/use quote snapping regex', { error: e?.message });
+        return null;
+    }
+}
+
 // Function to find a short verbatim quote in a guideline that best matches a semantic statement
 async function findGuidelineQuoteInText(guidelineId, semanticStatement, guidelineText, userId = null) {
     try {
@@ -1048,6 +1208,19 @@ You are given:
 Your task:
 - Find the most appropriate SHORT verbatim quote (5–25 words) from the guideline that DIRECTLY supports the statement.
 - Please return only verbatim guideline text.
+
+IMPORTANT CONTEXT:
+- The statement may have VERY different grammar/word order to the guideline (because it is paraphrased).
+- The guideline may have unusual formatting: bullet points, line breaks, headings, en-dashes (–), em-dashes (—), hyphens (-), and spacing differences (e.g. "30 +0" vs "30+0").
+- Despite these differences, you must return ONLY text that exists verbatim in the guideline.
+
+Example (what we mean by “different grammar/formatting”):
+- Statement (paraphrased): "Consider neuroprotection between 30+0 and 33+6 weeks, discuss individually at 23+0–23+6."
+- Guideline text might be formatted like:
+  "When preterm birth is planned or expected within 24 hours, Magnesium Sulfate for neuroprotection should be:
+   - 23+0 – 23+6 weeks - Discussed with the pregnant woman or person ...
+   - 24+0 – 29+6 weeks – Offered.
+   - 30+0 – 33+6 weeks – Considered"
 
 IMPORTANT - DO NOT return:
 - Section headings, titles, or headers (e.g., "Intravenous hydralazine – Third Line Treatment")
@@ -1099,6 +1272,14 @@ ${sourceText}
         // Check if AI explicitly said no match was found
         if (quote.toUpperCase() === 'NO_MATCH' || quote.toUpperCase().includes('NO_MATCH')) {
             console.log('[QUOTE_FINDER] AI reported no matching quote found', { guidelineId });
+            const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
+            if (heuristic) {
+                console.log('[QUOTE_FINDER] Using heuristic extracted quote after NO_MATCH', {
+                    guidelineId,
+                    quoteSample: heuristic.substring(0, 80)
+                });
+                return heuristic;
+            }
             return null;
         }
 
@@ -1108,6 +1289,14 @@ ${sourceText}
                 guidelineId,
                 quote
             });
+            const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
+            if (heuristic) {
+                console.log('[QUOTE_FINDER] Using heuristic extracted quote after short quote', {
+                    guidelineId,
+                    quoteSample: heuristic.substring(0, 80)
+                });
+                return heuristic;
+            }
             return null;
         }
 
@@ -1128,7 +1317,10 @@ ${sourceText}
                     original: quote.substring(0, 50),
                     normalized: normalizeAmericanToBritish(quote).substring(0, 50)
                 });
-                // Return the British-normalized version since that's what's in the PDF
+                // Snap to exact extracted substring if possible (preserves exact PDF extraction punctuation)
+                const snapped = findVerbatimSubstringInGuidelineText(sourceText, normalizeAmericanToBritish(quote));
+                if (snapped) return snapped;
+                // Otherwise, return the British-normalised version (better chance of matching PDF)
                 return normalizeAmericanToBritish(quote);
             }
         }
@@ -1161,7 +1353,34 @@ ${sourceText}
                 guidelineId,
                 quoteSample: quote.substring(0, 80)
             });
+            // As a last attempt, try to snap the quote to an exact substring using tolerant matching.
+            const snapped = findVerbatimSubstringInGuidelineText(sourceText, quote);
+            if (snapped) {
+                console.log('[QUOTE_FINDER] Snapped AI quote to extracted guideline substring', {
+                    guidelineId,
+                    quoteSample: snapped.substring(0, 80)
+                });
+                return snapped;
+            }
+            const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
+            if (heuristic) {
+                console.log('[QUOTE_FINDER] Using heuristic extracted quote after mismatch', {
+                    guidelineId,
+                    quoteSample: heuristic.substring(0, 80)
+                });
+                return heuristic;
+            }
             return null;
+        }
+
+        // We found a match by some means; prefer returning the exact substring from extracted text if we can.
+        const snapped = findVerbatimSubstringInGuidelineText(sourceText, quote);
+        if (snapped) {
+            console.log('[QUOTE_FINDER] Snapped matching quote to extracted guideline substring', {
+                guidelineId,
+                quoteSample: snapped.substring(0, 80)
+            });
+            quote = snapped;
         }
 
         console.log('[QUOTE_FINDER] Successfully found verbatim quote', {
