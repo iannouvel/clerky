@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-15-982Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1158,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBooked at 10/40, low risk pregnancy to date\\nAnomaly sca...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 17,\n  \"potentiallyRelevantCount\": 25,\n  \"lessRelevantCount\": 56,\n  \"notRelevantCount\": 193\n}...",
+  "full_data": null
+}
