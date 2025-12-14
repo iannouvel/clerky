@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-34-850Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 904,
+  "response_length": 1377,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"nice-2021-antenatal-care-pdf: NICE - 2021 - Antenatal Care\",\"nice-2021-heavy-menstrual-bl...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2023-hypertension-in-pregnancy-pdf\\\", \\\"title\\\": \\\"NICE - 2023 - Hypertension In Pregnancy\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n...",
+  "full_data": null
+}
