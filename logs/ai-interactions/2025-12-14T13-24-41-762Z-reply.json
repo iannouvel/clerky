@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T13-24-41-762Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 1162,
+  "response_length": 1141,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/37\",\"transcriptLength\":1097,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nGestational hypertension (GHTN) diagnosed at 36+0, now requiring monitoring for progres...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"fetal-monitoring-guideline-antenatal-pdf\\\", \\\"title\\\": \\\"Fetal monitoring guideline ANTENATAL\\\", \\\"relevance\\\": \\\"0.85\\\"}],\\n  ...",
+  "full_data": null
+}
