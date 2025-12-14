@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-08-850Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1476,
+  "response_length": 1513,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\", \\\"title\\\": \\\"Sussex Regional In utero transfer to RSCH SOP V...",
+  "full_data": null
+}
