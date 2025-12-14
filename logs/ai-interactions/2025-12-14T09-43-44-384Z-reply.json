@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-44-384Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 851,
+  "response_length": 1287,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/37\",\"transcriptLength\":101,\"transcriptPreview\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?...\",\"chunkGuidelines\":[\"gtg-20...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-longterm-pcos-consequences-pdf\\...",
+  "full_data": null
+}
