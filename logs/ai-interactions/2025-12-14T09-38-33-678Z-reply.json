@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-33-678Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 728,
+  "response_length": 1202,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Preceptorship Protocol\",\"uhsx-m...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uhsx-midwives-exemption-pdf\\\", \\\"title\\\": \\\"UHSx Midwives Exemption\\\", \\\"relevance\\\": \\\"0.60\\\"}...",
+  "full_data": null
+}
