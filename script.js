@@ -10425,156 +10425,48 @@ async function loadAndDisplayUserPreferences() {
     setupMainPreferencesEditing();
 }
 
-// Setup inline editing functionality for main preferences panel
+// Setup click handlers for main preferences panel values
 function setupMainPreferencesEditing() {
-    const editTrustBtn = document.getElementById('mainEditTrustBtn');
-    const editScopeBtn = document.getElementById('mainEditScopeBtn');
-    const editModelBtn = document.getElementById('mainEditModelBtn');
-    const openTrustModalBtn = document.getElementById('mainOpenTrustModalBtn');
-    const cancelTrustEditBtn = document.getElementById('mainCancelTrustEditBtn');
-    const cancelScopeEditBtn = document.getElementById('mainCancelScopeEditBtn');
-    const scopeNationalBtn = document.getElementById('mainScopeNationalBtn');
-    const scopeLocalBtn = document.getElementById('mainScopeLocalBtn');
-    const scopeBothBtn = document.getElementById('mainScopeBothBtn');
-    const trustEditMode = document.getElementById('mainTrustEditMode');
-    const scopeEditMode = document.getElementById('mainScopeEditMode');
+    const trustDisplay = document.getElementById('mainTrustDisplay');
+    const scopeDisplay = document.getElementById('mainScopeDisplay');
+    const modelDisplay = document.getElementById('mainModelDisplay');
     
-    // Trust editing
-    if (editTrustBtn && openTrustModalBtn && cancelTrustEditBtn && trustEditMode) {
-        editTrustBtn.addEventListener('click', () => {
-            trustEditMode.classList.remove('hidden');
-            editTrustBtn.style.display = 'none';
-        });
-        
-        openTrustModalBtn.addEventListener('click', async () => {
-            await showHospitalTrustModal();
-            await loadAndDisplayUserPreferences();
-            trustEditMode.classList.add('hidden');
-            editTrustBtn.style.display = '';
-        });
-        
-        cancelTrustEditBtn.addEventListener('click', () => {
-            trustEditMode.classList.add('hidden');
-            editTrustBtn.style.display = '';
+    // Helper to open preferences modal
+    const openPreferences = async () => {
+        console.log('[DEBUG] Preference value clicked - opening preferences modal');
+        await showPreferencesModal();
+        // Reload preferences after modal closes to update display
+        await loadAndDisplayUserPreferences();
+    };
+    
+    // Make preference values clickable to open preferences modal
+    if (trustDisplay) {
+        trustDisplay.addEventListener('click', openPreferences);
+        trustDisplay.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openPreferences();
+            }
         });
     }
     
-    // Scope editing
-    if (editScopeBtn && cancelScopeEditBtn && scopeEditMode) {
-        editScopeBtn.addEventListener('click', async () => {
-            const savedScope = await loadGuidelineScopeSelection();
-            if (savedScope) {
-                scopeNationalBtn.classList.remove('selected');
-                scopeLocalBtn.classList.remove('selected');
-                scopeBothBtn.classList.remove('selected');
-                if (savedScope.scope === 'national') {
-                    scopeNationalBtn.classList.add('selected');
-                } else if (savedScope.scope === 'local') {
-                    scopeLocalBtn.classList.add('selected');
-                } else if (savedScope.scope === 'both') {
-                    scopeBothBtn.classList.add('selected');
-                }
+    if (scopeDisplay) {
+        scopeDisplay.addEventListener('click', openPreferences);
+        scopeDisplay.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openPreferences();
             }
-            
-            scopeEditMode.classList.remove('hidden');
-            editScopeBtn.style.display = 'none';
-        });
-        
-        const handleScopeSelection = async (scope) => {
-            // Warn user if workflow is in progress
-            if (window.workflowInProgress || window.sequentialProcessingActive) {
-                const proceed = confirm('A workflow is currently in progress. Changing the scope now will not affect the current analysis, but will be used for future analyses. Continue?');
-                if (!proceed) {
-                    return;
-                }
-            }
-            
-            let currentTrust = null;
-            try {
-                const user = auth.currentUser;
-                if (user) {
-                    const idToken = await user.getIdToken();
-                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${idToken}`
-                        }
-                    });
-                    const result = await response.json();
-                    if (result.success && result.hospitalTrust) {
-                        currentTrust = result.hospitalTrust;
-                    }
-                }
-            } catch (error) {
-                console.error('[ERROR] Failed to load hospital trust:', error);
-            }
-            
-            if ((scope === 'local' || scope === 'both') && !currentTrust) {
-                alert('Please select a hospital trust first.');
-                return;
-            }
-            
-            scopeNationalBtn.classList.remove('selected');
-            scopeLocalBtn.classList.remove('selected');
-            scopeBothBtn.classList.remove('selected');
-            
-            if (scope === 'national') {
-                scopeNationalBtn.classList.add('selected');
-            } else if (scope === 'local') {
-                scopeLocalBtn.classList.add('selected');
-            } else if (scope === 'both') {
-                scopeBothBtn.classList.add('selected');
-            }
-            
-            const scopeSelection = {
-                scope: scope,
-                hospitalTrust: (scope === 'local' || scope === 'both') ? currentTrust : null
-            };
-            
-            const success = await saveGuidelineScopeSelection(scopeSelection);
-            if (success) {
-                let scopeText = '';
-                if (scope === 'national') {
-                    scopeText = 'National';
-                } else if (scope === 'local') {
-                    scopeText = `Local (${currentTrust})`;
-                } else if (scope === 'both') {
-                    scopeText = `Both (${currentTrust})`;
-                }
-                document.getElementById('mainScopeDisplay').textContent = scopeText;
-                
-                scopeEditMode.classList.add('hidden');
-                editScopeBtn.style.display = '';
-                
-                console.log('[DEBUG] Scope selection updated (workflow will not restart):', scopeSelection);
-            } else {
-                alert('Failed to save guideline scope preference. Please try again.');
-            }
-        };
-        
-        if (scopeNationalBtn) {
-            scopeNationalBtn.addEventListener('click', () => handleScopeSelection('national'));
-        }
-        if (scopeLocalBtn) {
-            scopeLocalBtn.addEventListener('click', () => handleScopeSelection('local'));
-        }
-        if (scopeBothBtn) {
-            scopeBothBtn.addEventListener('click', () => handleScopeSelection('both'));
-        }
-        
-        cancelScopeEditBtn.addEventListener('click', () => {
-            scopeEditMode.classList.add('hidden');
-            editScopeBtn.style.display = '';
         });
     }
     
-    // AI Model editing - opens preferences modal
-    if (editModelBtn) {
-        editModelBtn.addEventListener('click', async () => {
-            console.log('[DEBUG] AI Model edit button clicked');
-            await showPreferencesModal();
-            // Reload preferences after modal closes to update display
-            await loadAndDisplayUserPreferences();
+    if (modelDisplay) {
+        modelDisplay.addEventListener('click', openPreferences);
+        modelDisplay.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openPreferences();
+            }
         });
     }
 }
