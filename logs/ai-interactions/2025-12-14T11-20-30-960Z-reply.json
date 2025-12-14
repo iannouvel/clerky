@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T11-20-30-960Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1260,
+  "response_length": 1255,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/37\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontane...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1128-neonatal-resuscitation-pdf\\\", \\\"title\\\": \\\"Neonatal Resuscitation\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"cg1...",
+  "full_data": null
+}
