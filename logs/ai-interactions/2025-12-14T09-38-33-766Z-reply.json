@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-33-766Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 666,
+  "response_length": 1184,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"eshre-guideline-2022-endometriosis-pdf: ESHRE Guideline - 2022 - Endometriosis\",\"eshre-pi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"eshre-guideline-2022-endometriosis-pdf\\\"...",
+  "full_data": null
+}
