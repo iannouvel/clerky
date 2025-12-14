@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T11-20-39-102Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 996,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontaneous labour onset at 04:00. SROM clear liquor at 06:0...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 19,\n  \"potentiallyRelevantCount\": 26,\n  \"lessRelevantCount\": 63,\n  \"notRelevantCount\": 183\n}...",
+  "full_data": null
+}
