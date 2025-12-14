@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-27-596Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 110,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"how do we use magnesium sulphate?\",\"guidelinesCount\":292,\"chunksProcessed\":37,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 292,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 5,\n  \"lessRelevantCount\": 16,\n  \"notRelevantCount\": 262\n}...",
+  "full_data": null
+}
