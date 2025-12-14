@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-46-426Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1060,
+  "response_length": 1448,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/37\",\"transcriptLength\":101,\"transcriptPreview\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?...\",\"chunkGuidelines\":[\"should...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\", \\\"title\\\": \\\"Sussex Regional In utero transfer to RSCH SOP V7 2022...",
+  "full_data": null
+}
