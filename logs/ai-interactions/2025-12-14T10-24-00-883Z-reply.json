@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-00-883Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 834,
+  "response_length": 546,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"uhsx-role-of-the-rn-within-maternity-pdf\\\", \\\"title\\\": \\\"UHSx Role of ...",
+  "full_data": null
+}
