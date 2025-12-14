@@ -1,6 +1,5 @@
 Actions following CTG categorisation.pdf
 Antenatal Screening for Gestational Diabetes flowchart.pdf
-Appendix 7 PCEA Labour Chart V2 July 2020 FINAL.pdf
 BAPM - 2025 - Extreme Prematurity.pdf
 BASHH - 2012 - Bacterial Vaginosis.pdf
 BASHH - 2019 - PID Guideline.pdf
@@ -39,7 +38,6 @@ BJOG - 2025 - Chan - Management of Thyroid Disorders in Pregnancy.pdf
 BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
 BSH - 2021 - Sickle Cell Disease In Pregnancy.pdf
 BSH- 2019 - Pavord - Management of Iron Deficiency In Pregnancy.pdf
-C004 - Procurement, Management and Use of Clinical Point Of Care Testing Equipment Policy.pdf
 C039 - Checking Pregnancy before Surgery policy.pdf
 CG1103 Antenatal Care & Patient Info.pdf
 CG1105 Maternal Antenatal Screening tests guideline.pdf
