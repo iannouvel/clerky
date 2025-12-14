@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-22-083Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1274,
+  "response_length": 1779,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"gp013-management-of-patients-admitted-for-urinary-incontinence-surgery-n-pd...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gp013-management-of-patients-admitted-fo...",
+  "full_data": null
+}
