@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-22-688Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1206,
+  "response_length": 1713,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"bgcs-2024-ovarian-tubal-and-primary-peritoneal-cancer-pdf: British Gynaecolo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bgcs-2024-ovarian-tubal-and-primary-peri...",
+  "full_data": null
+}
