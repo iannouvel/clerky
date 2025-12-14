@@ -3549,9 +3549,28 @@ window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
         summarySection.classList.add('critical');
         console.log('[SUMMARY] Critical mode activated - interactive content detected');
         
-        // Auto-scroll to show interactive elements after layout settles
+        // Auto-scroll to the most relevant interactive UI after layout settles.
+        // Prefer PII review (if present), otherwise scroll to the Test/clerking selector panel,
+        // otherwise fall back to the first interactive element.
         setTimeout(() => {
-            scrollToPIIReviewButtons();
+            const piiReview = document.getElementById('pii-review-current');
+            if (piiReview) {
+                scrollToPIIReviewButtons();
+                return;
+            }
+            
+            const clinicalPanel = document.getElementById('clinicalIssuesPanel');
+            if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
+                clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                const dropdown = clinicalPanel.querySelector('select');
+                if (dropdown && typeof dropdown.focus === 'function') dropdown.focus();
+                return;
+            }
+            
+            const firstInteractive = summary1.querySelector('button, input, select, textarea, [onclick]');
+            if (firstInteractive && typeof firstInteractive.scrollIntoView === 'function') {
+                firstInteractive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }, 200);
     } else {
         summarySection.classList.remove('critical');
@@ -11056,10 +11075,8 @@ async function showClinicalIssuesDropdown() {
             summarySection.classList.remove('hidden');
         }
         
-        // Ensure the clinical issues panel exists inside summary1
-        let clinicalPanel = document.getElementById('clinicalIssuesPanel');
-        if (!clinicalPanel) {
-            const panelHtml = `
+        // Always render a single Test panel instance (avoid stacking multiple panels off-screen)
+        const panelHtml = `
 <div id=\"clinicalIssuesPanel\" class=\"clinical-issues-selector\">
     <h3>⚡ Load Clinical Clerking</h3>
     <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
@@ -11073,13 +11090,12 @@ async function showClinicalIssuesDropdown() {
     
     <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
 </div>`;
-            
-            // Append the panel content into summary1 as a permanent block (decision UI)
-            appendToSummary1(panelHtml, false, false);
-            clinicalPanel = document.getElementById('clinicalIssuesPanel');
-        } else {
-            clinicalPanel.classList.remove('hidden');
-        }
+        
+        // Replace existing summary content so the Test panel is always visible
+        appendToSummary1(panelHtml, true, false);
+        
+        // Ensure the clinical issues panel exists inside summary1
+        const clinicalPanel = document.getElementById('clinicalIssuesPanel');
         
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
@@ -11103,8 +11119,15 @@ async function showClinicalIssuesDropdown() {
         clinicalDropdown.innerHTML = '<option value=\"\">Select a clinical issue...</option>';
         
         // Add options from Firebase data
+        // Note: we intentionally exclude gynaecology from the "Test" dropdown.
+        const excludedTestCategories = new Set(['gynaecology', 'gynecology']);
         Object.entries(clinicalConditions).forEach(([category, conditions]) => {
-            const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+            const categoryKey = String(category || '').toLowerCase();
+            if (excludedTestCategories.has(categoryKey)) {
+                return;
+            }
+            
+            const categoryLabel = String(category || '').charAt(0).toUpperCase() + String(category || '').slice(1);
             
             const optgroup = document.createElement('optgroup');
             optgroup.label = categoryLabel;
@@ -11119,6 +11142,21 @@ async function showClinicalIssuesDropdown() {
             });
             
             clinicalDropdown.appendChild(optgroup);
+        });
+        
+        // Ensure summary visibility and scroll/focus the Test panel so it’s obvious
+        updateSummaryVisibility();
+        updateSummaryCriticalStatus();
+        requestAnimationFrame(() => {
+            if (summarySection && typeof summarySection.scrollIntoView === 'function') {
+                summarySection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+            if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
+                clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            if (clinicalDropdown && typeof clinicalDropdown.focus === 'function') {
+                clinicalDropdown.focus();
+            }
         });
         
         function updateGenerateButton() {
