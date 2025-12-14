@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T13-24-48-880Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1196,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nGestational hypertension (GHTN) diagnosed at 36+0, now requiring monitoring for progression to pre-eclampsia\\n\\nBackground:\\nNo significant P...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 12,\n  \"potentiallyRelevantCount\": 31,\n  \"lessRelevantCount\": 57,\n  \"notRelevantCount\": 191\n}...",
+  "full_data": null
+}
