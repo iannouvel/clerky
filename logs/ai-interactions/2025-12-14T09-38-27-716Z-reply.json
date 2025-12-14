@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-27-716Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 335,
+  "response_length": 568,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"uhsx-role-of-the-rn-within-maternity-pdf: UHSx Role of the RN within Maternity\",\"uhsx-sga...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-role-of-the-rn-within-maternity-pdf...",
+  "full_data": null
+}
