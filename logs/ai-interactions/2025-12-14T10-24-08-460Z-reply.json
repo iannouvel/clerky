@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-08-460Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 1403,
+  "response_length": 1437,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.85\\\"},\\n    {\\\"id\\\": \\\"ni...",
+  "full_data": null
+}
