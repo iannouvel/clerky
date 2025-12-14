@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-51-538Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 178,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?\",\"guidelinesCount\":291,\"chunksProcessed\":37,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 11,\n  \"potentiallyRelevantCount\": 11,\n  \"lessRelevantCount\": 33,\n  \"notRelevantCount\": 236\n}...",
+  "full_data": null
+}
