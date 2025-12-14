@@ -1266,8 +1266,8 @@ body {
 /* Preferences panel layout - mainSection is already set to flex row above */
 #mainSection > .user-preferences-panel {
     flex-shrink: 0;
-    width: 200px;
-    min-width: 200px;
+    width: fit-content;
+    min-width: 0;
     align-self: flex-start;
 }
 
