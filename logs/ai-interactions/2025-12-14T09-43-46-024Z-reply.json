@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-46-024Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1243,
+  "response_length": 1510,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/37\",\"transcriptLength\":101,\"transcriptPreview\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?...\",\"chunkGuidelines\":[\"bjog-20...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\", \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm Prelabour Rupture of ...",
+  "full_data": null
+}
