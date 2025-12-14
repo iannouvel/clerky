@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-19-120Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 867,
+  "response_length": 1325,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"mp071-provisions-and-schedules-of-postnatal-care-pdf: MP071 Provisions and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nhs-2023-saving-babies-lives-care-bundle-v3-pdf\\\", \\\"title\\\": \\\"NHS - 2023 - Saving Babies Lives Care Bundle v3\\\", \\\"relevance\\...",
+  "full_data": null
+}
