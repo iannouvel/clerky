@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T17-56-47-945Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1396,
+  "response_length": 1647,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/37\",\"transcriptLength\":1256,\"transcriptPreview\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"mp057-communication-and-handover-of-care-betweeen-profes...",
+  "full_data": null
+}
