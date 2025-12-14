@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-36-034Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 830,
+  "response_length": 1349,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"gtg-2010-malaria-in-pregnancy-prevention-pdf: GTG 2010 - Malaria in Pregnancy - Preventio...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2010-malaria-in-pregnancy-prevention...",
+  "full_data": null
+}
