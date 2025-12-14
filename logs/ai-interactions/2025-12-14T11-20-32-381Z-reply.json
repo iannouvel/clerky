@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T11-20-32-381Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1445,
+  "response_length": 1432,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/37\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uhsx-bladder-care-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Bladder Care guideline\\\", \\\"relevance\\\": \\...",
+  "full_data": null
+}
