@@ -3549,9 +3549,28 @@ window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
         summarySection.classList.add('critical');
         console.log('[SUMMARY] Critical mode activated - interactive content detected');
         
-        // Auto-scroll to show interactive elements after layout settles
+        // Auto-scroll to the most relevant interactive UI after layout settles.
+        // Prefer PII review (if present), otherwise scroll to the Test/clerking selector panel,
+        // otherwise fall back to the first interactive element.
         setTimeout(() => {
-            scrollToPIIReviewButtons();
+            const piiReview = document.getElementById('pii-review-current');
+            if (piiReview) {
+                scrollToPIIReviewButtons();
+                return;
+            }
+            
+            const clinicalPanel = document.getElementById('clinicalIssuesPanel');
+            if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
+                clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                const dropdown = clinicalPanel.querySelector('select');
+                if (dropdown && typeof dropdown.focus === 'function') dropdown.focus();
+                return;
+            }
+            
+            const firstInteractive = summary1.querySelector('button, input, select, textarea, [onclick]');
+            if (firstInteractive && typeof firstInteractive.scrollIntoView === 'function') {
+                firstInteractive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         }, 200);
     } else {
         summarySection.classList.remove('critical');

@@ -1226,7 +1226,8 @@ body {
 
 /* Preferences Panel Button */
 .preferences-panel-btn {
-    width: 100%;
+    width: fit-content;
+    max-width: 100%;
     padding: 6px 10px;
     background-color: #00B894;
     color: white;
@@ -1239,7 +1240,9 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    justify-content: center;
+    justify-content: flex-start;
+    text-align: left;
+    align-self: flex-start;
 }
 
 .preferences-panel-btn:hover {
