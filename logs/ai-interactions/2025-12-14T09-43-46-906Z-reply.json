@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-46-906Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 1037,
+  "response_length": 1662,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/37\",\"transcriptLength\":101,\"transcriptPreview\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?...\",\"chunkGuidelines\":[\"tongue...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uhs-intrahepatic-cholestasisicp-protocol-pdf\\\",\\n      \\...",
+  "full_data": null
+}
