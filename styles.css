@@ -1149,6 +1149,15 @@ body {
     font-size: 1rem;
     font-size: 0.9rem;
     text-align: right;
+    margin-right: 8px;
+}
+
+.preference-value.clickable {
+    cursor: pointer;
+}
+
+.preference-value.clickable:hover {
+    color: #00B894;
 }
 
 .preference-edit-btn {
@@ -1226,8 +1235,7 @@ body {
 
 /* Preferences Panel Button */
 .preferences-panel-btn {
-    width: fit-content;
-    max-width: 100%;
+    width: 100%;
     padding: 6px 10px;
     background-color: #00B894;
     color: white;
