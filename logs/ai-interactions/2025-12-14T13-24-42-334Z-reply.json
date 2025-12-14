@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T13-24-42-334Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1264,
+  "response_length": 1240,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/37\",\"transcriptLength\":1097,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nGestational hypertension (GHTN) diagnosed at 36+0, now requiring monitoring for progres...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-management-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Management of VTE in pre...",
+  "full_data": null
+}
