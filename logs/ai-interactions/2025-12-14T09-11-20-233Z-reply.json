@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-20-233Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 757,
+  "response_length": 1262,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"p19005-locsop-for-obstetric-procedural-counts-pdf: P19005 LocSOP for Obstet...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"p19005-locsop-for-obstetric-procedural-c...",
+  "full_data": null
+}
