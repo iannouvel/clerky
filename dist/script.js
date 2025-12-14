@@ -6224,7 +6224,11 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     // TipTap will preserve data-link-data via the custom Link extension.
     // Use simple underlined styling without bold or colour changes so links
     // integrate cleanly with surrounding text.
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    //
+    // Note: we intentionally avoid target="_blank" here because if the click handler
+    // isn't wired up (e.g. in non-editor surfaces), the browser would open a useless
+    // index.html# tab. Our click handler opens the PDF viewer in a new tab/window.
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 // Function to prepare auth token for viewer
