@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T17-56-48-955Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1328,
+  "response_length": 1578,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/37\",\"transcriptLength\":1256,\"transcriptPreview\":\"28yo, G3P0 (2x TOP, 1x SAB), LMP 8/52 ago\\n\\nPresenting Complaint:\\nR-sided lower abdominal pain and PV spotting for 5 days. Positi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2011-suspected-ovarian-masses-in-premenopausal-women...",
+  "full_data": null
+}
