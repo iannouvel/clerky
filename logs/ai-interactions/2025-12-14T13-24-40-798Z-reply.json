@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T13-24-40-798Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1265,
+  "response_length": 1191,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/37\",\"transcriptLength\":1097,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nGestational hypertension (GHTN) diagnosed at 36+0, now requiring monitoring for progress...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg1122-maternal-transfer-onsite-handover-of-care-pdf\\\", \\\"title\\\": \\\"Maternal Transfer & Onsite...",
+  "full_data": null
+}
