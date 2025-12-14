@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-36-057Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1160,
+  "response_length": 1507,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"bjog-2017-management-of-breech-presentation-pdf: BJOG - 2017 -  Management of Breech Prese...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\", \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm Prelabour Rupture of ...",
+  "full_data": null
+}
