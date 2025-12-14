@@ -1034,30 +1034,25 @@ async function findGuidelineQuoteInText(guidelineId, semanticStatement, guidelin
             return null;
         }
 
-        const CLEAN_MAX_CHARS = 8000;
+        // Pass the full guideline text to ensure verbatim quotes can be found
+        // Most guidelines are under 50k chars which fits within modern LLM context windows
         let sourceText = String(guidelineText);
-        if (sourceText.length > CLEAN_MAX_CHARS) {
-            sourceText = sourceText.substring(0, CLEAN_MAX_CHARS);
-        }
 
         const systemPrompt = `
 You are a careful clinical guideline assistant tasked with finding SPECIFIC verbatim quotes.
 
 You are given:
-- A passage of text from a clinical guideline.
-- A semantic statement written by another AI that describes specific clinical advice from the guideline.
+- A clinical guideline.
+- A statement paraphrased from the guideline.
 
 Your task:
-- Find a SHORT verbatim quote (5–25 words) from the guideline that DIRECTLY supports the semantic statement.
-- The quote MUST contain the SPECIFIC clinical content mentioned (e.g., dosages, timing, recommendations).
-- The quote MUST be copied EXACTLY from the guideline text (no paraphrasing, no invented words).
+- Find the most appropriate SHORT verbatim quote (5–25 words) from the guideline that DIRECTLY supports the statement.
+- Please return only verbatim guideline text.
 
 IMPORTANT - DO NOT return:
 - Section headings, titles, or headers (e.g., "Intravenous hydralazine – Third Line Treatment")
 - Table headers or labels
 - Generic phrases that are merely "relevant" but don't contain the specific advice
-
-If the semantic statement mentions specific details like dosages, volumes, timing, or procedures, the quote MUST include those details.
 
 If you genuinely cannot find a matching quote with the specific content, respond with exactly: NO_MATCH
 
