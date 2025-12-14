@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-20-697Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 949,
+  "response_length": 1454,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"shoulder-dystocia-guideline-uhsx-pdf: Shoulder Dystocia Guideline UHSx\",\"sh...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"shoulder-dystocia-guideline-uhsx-pdf\\\", ...",
+  "full_data": null
+}
