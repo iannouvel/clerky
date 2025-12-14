@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T11-20-32-386Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1283,
+  "response_length": 1328,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/37\",\"transcriptLength\":903,\"transcriptPreview\":\"28yo, G1P0, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nIntrapartum CTG abnormalities - recurrent variable decelerations\\n\\nBackground:\\nSpontan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-intrapartum-care-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Intrapartum Care\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": ...",
+  "full_data": null
+}
