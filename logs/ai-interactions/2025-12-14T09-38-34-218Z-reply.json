@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-38-34-218Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 808,
+  "response_length": 1283,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/37\",\"transcriptLength\":19,\"transcriptPreview\":\"how do we use MgSO4...\",\"chunkGuidelines\":[\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf: CG1198 Management of Hyperte...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\\\", \\\"title\\\": \\\"CG1198 Management of Hypertensive disorders of pre...",
+  "full_data": null
+}
