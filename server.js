@@ -1041,19 +1041,29 @@ async function findGuidelineQuoteInText(guidelineId, semanticStatement, guidelin
         }
 
         const systemPrompt = `
-You are a careful clinical guideline assistant.
+You are a careful clinical guideline assistant tasked with finding SPECIFIC verbatim quotes.
 
 You are given:
 - A passage of text from a clinical guideline.
-- A semantic statement written by another AI that describes some information from the guideline.
+- A semantic statement written by another AI that describes specific clinical advice from the guideline.
 
 Your task:
-- Find a SHORT verbatim quote from the guideline text (5–20 words) that best matches the semantic statement.
-- The quote MUST be copied exactly from the guideline text (no paraphrasing, no invented words).
-- If you cannot find a clearly matching phrase, return a short neutral phrase from the guideline text that is still relevant.
+- Find a SHORT verbatim quote (5–25 words) from the guideline that DIRECTLY supports the semantic statement.
+- The quote MUST contain the SPECIFIC clinical content mentioned (e.g., dosages, timing, recommendations).
+- The quote MUST be copied EXACTLY from the guideline text (no paraphrasing, no invented words).
+
+IMPORTANT - DO NOT return:
+- Section headings, titles, or headers (e.g., "Intravenous hydralazine – Third Line Treatment")
+- Table headers or labels
+- Generic phrases that are merely "relevant" but don't contain the specific advice
+
+If the semantic statement mentions specific details like dosages, volumes, timing, or procedures, the quote MUST include those details.
+
+If you genuinely cannot find a matching quote with the specific content, respond with exactly: NO_MATCH
 
 Output:
 - Return ONLY the verbatim quote text, with no explanations, no quotation marks, and no additional formatting.
+- Or respond with exactly NO_MATCH if no suitable quote exists.
 `.trim();
 
         const userPrompt = `
@@ -1089,6 +1099,12 @@ ${sourceText}
         // Strip surrounding quotes if the model added them
         if ((quote.startsWith('"') && quote.endsWith('"')) || (quote.startsWith("'") && quote.endsWith("'"))) {
             quote = quote.slice(1, -1).trim();
+        }
+
+        // Check if AI explicitly said no match was found
+        if (quote.toUpperCase() === 'NO_MATCH' || quote.toUpperCase().includes('NO_MATCH')) {
+            console.log('[QUOTE_FINDER] AI reported no matching quote found', { guidelineId });
+            return null;
         }
 
         // Basic sanity checks
