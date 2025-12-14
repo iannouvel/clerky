@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-43-46-136Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 1202,
+  "response_length": 1492,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/37\",\"transcriptLength\":101,\"transcriptPreview\":\"how do we counsel regarding the options for treatment of short cervix and high risk of preterm birth?...\",\"chunkGuidelines\":[\"bjog-20...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2022-shennan-cervical-cerclage-pdf\\\", \\\"title\\\": \\\"Cervical Cerclage\\\", \\\"relevance\\\": \\\"1.0\\\"},\\n    {\\\"id\\\": \\\"bjo...",
+  "full_data": null
+}
