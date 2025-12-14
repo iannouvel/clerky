@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T10-24-06-940Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1279,
+  "response_length": 1299,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/37\",\"transcriptLength\":1050,\"transcriptPreview\":\"26yo, G1P0, 29+3, BMI 24, Rh+ve\\n\\nIssues:\\nAdmitted with regular painful contractions, ?PPROM vs preterm labour\\n\\nBackground:\\nBo...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-2023-intrauterine-contraception-pdf...",
+  "full_data": null
+}
