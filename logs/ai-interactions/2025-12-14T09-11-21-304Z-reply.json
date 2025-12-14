@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-14T09-11-21-304Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-34",
+  "token_usage": null,
+  "prompt_length": 974,
+  "response_length": 1448,
+  "prompt_preview": "{\"prompt\":\"Chunk 34/37\",\"transcriptLength\":33,\"transcriptPreview\":\"how do we use magnesium sulphate?...\",\"chunkGuidelines\":[\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf: Sussex Regional ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [\\n    {\\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\", \\\"t...",
+  "full_data": null
+}
