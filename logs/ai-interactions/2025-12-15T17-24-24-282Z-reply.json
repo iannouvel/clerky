@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-24-282Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 890,
+  "response_length": 1383,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"mp072-newborn-feeding-pdf: MP072 Newborn Feeding\",\"mp073-pregna...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp072-newborn-feeding-pdf\\\", \\\"title\\\": ...",
+  "full_data": null
+}
