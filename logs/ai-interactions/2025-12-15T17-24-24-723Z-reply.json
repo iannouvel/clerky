@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-24-723Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 806,
+  "response_length": 1316,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"fsrh-2023-intrauterine-contraception-pdf: FSRH - 2023 - Intraut...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-2023-intrauterine-contraception-pdf\\\", \\\"title\\\": \\\"FSRH - 2023 - Intrauterine Contraception\\\", \\\"relevance\\\": \\\"0.9...",
+  "full_data": null
+}
