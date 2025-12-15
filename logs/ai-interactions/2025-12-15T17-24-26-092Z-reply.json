@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-26-092Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 856,
+  "response_length": 1359,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"gtg-2010-malaria-in-pregnancy-prevention-pdf: GTG 2010 - Malari...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2011-pregnancy-and-breast-cancer-pdf\\\", \\\"title\\\": \\\"GTG 2011 - Pregnancy and Breast ...",
+  "full_data": null
+}
