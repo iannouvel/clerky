@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-25-353Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 768,
+  "response_length": 1217,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"cg1134-postnatal-care-pdf: CG1134 Postnatal Care\",\"cg1139-obesit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"cg1134-postnatal-care-pdf\\\", \\\"title\\\": \\\"CG1134 Postnatal Care\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"i...",
+  "full_data": null
+}
