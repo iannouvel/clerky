@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-25-308Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 860,
+  "response_length": 1353,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"cg17003-nipe-guideline-pdf: CG17003 NIPE guideline\",\"cg18005-ne...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg17003-nipe-guideline-pdf\\\", \\\"title\\\":...",
+  "full_data": null
+}
