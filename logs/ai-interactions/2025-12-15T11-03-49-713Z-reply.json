@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T11-03-49-713Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-13",
+  "token_usage": null,
+  "prompt_length": 692,
+  "response_length": 1138,
+  "prompt_preview": "{\"prompt\":\"Chunk 13/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"eshre-guideline-2022-endometriosis-pdf: ESHRE Guideline - 2022 ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"fsrh-2019-ukmec-pdf\\\", \\\"title\\\": \\\"FSRH - 2019 - UKMEC\\\", \\\"relevance\\\": \\\"0.95\\\"}, {\\\"id\\\": \\\"fsrh-2023-emergency-cotraceptio...",
+  "full_data": null
+}
