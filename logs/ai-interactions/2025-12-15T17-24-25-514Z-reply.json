@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-25-514Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 1012,
+  "response_length": 1505,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"mp002-fetal-anomaly-screening-programme-sr-sept-pdf: MP002 Feta...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp002-fetal-anomaly-screening-programme-...",
+  "full_data": null
+}
