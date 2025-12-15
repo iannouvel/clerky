@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T11-03-50-106Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 924,
+  "response_length": 1376,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"mp055-perinatal-collapse-in-pregnancy-puerperium-pdf: MP055 Per...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"mp071-provisions-and-schedules-of-postnatal-care-pdf\\\", \\\"title\\\": \\\"MP071 Provisions and Schedules of Postnatal Care\\\", \\\"rele...",
+  "full_data": null
+}
