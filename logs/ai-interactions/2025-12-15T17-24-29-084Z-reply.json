@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-29-084Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1186,
+  "response_length": 1551,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"bjog-2017-management-of-breech-presentation-pdf: BJOG - 2017 -  ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2018-denison-care-of-women-with-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Care of Women wit...",
+  "full_data": null
+}
