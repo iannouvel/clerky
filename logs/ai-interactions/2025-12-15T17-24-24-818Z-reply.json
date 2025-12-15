@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-24-818Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 754,
+  "response_length": 1201,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"uhsx-midwifery-preceptorship-protocol-pdf: UHSx Midwifery Prece...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uhsx-midwives-exemption-pdf\\\", \\\"title\\\": \\\"UHSx Midwives Exemption\\\", \\\"relevance\\\": \\\"0.65\\\"}...",
+  "full_data": null
+}
