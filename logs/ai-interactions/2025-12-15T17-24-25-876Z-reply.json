@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-25-876Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 745,
+  "response_length": 1470,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"peanut-ball-positions-pdf: Peanut Ball Positions\",\"penthrox-use...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf\\\",\\n      \\\"title\\\": \\\"Pe...",
+  "full_data": null
+}
