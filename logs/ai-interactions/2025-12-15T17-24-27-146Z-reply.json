@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T17-24-27-146Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 815,
+  "response_length": 1540,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"gtg-2015-oasi-pdf: GTG 2015 - OASI\",\"gtg-2015-post-hysterectomy...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2016-epilepsy-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2016 - Epilepsy in ...",
+  "full_data": null
+}
