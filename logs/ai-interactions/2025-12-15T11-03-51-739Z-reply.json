@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-15T11-03-51-739Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 864,
+  "response_length": 1357,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/37\",\"transcriptLength\":45,\"transcriptPreview\":\"What are the postnatal contraceptive options?...\",\"chunkGuidelines\":[\"nice-guidance-2024-endometriosis-pdf: NICE Guidance - 2024 - En...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-guidance-2024-endometriosis-pdf\\\", ...",
+  "full_data": null
+}
