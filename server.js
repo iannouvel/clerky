@@ -5302,13 +5302,27 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Created ${chunks.length} chunks of max ${CHUNK_SIZE} guidelines each`);
     timer.step('Create chunks');
     
-    // Process all chunks concurrently
+    // Get available AI providers for parallel distribution
+    const availableProviders = [];
+    if (process.env.DEEPSEEK_API_KEY) availableProviders.push('DeepSeek');
+    if (process.env.MISTRAL_API_KEY) availableProviders.push('Mistral');
+    if (process.env.ANTHROPIC_API_KEY) availableProviders.push('Anthropic');
+    if (process.env.OPENAI_API_KEY) availableProviders.push('OpenAI');
+    if (process.env.GEMINI_API_KEY) availableProviders.push('Gemini');
+    
+    console.log(`[DEBUG] Distributing ${chunks.length} chunks across ${availableProviders.length} providers:`, availableProviders);
+    
+    // Process all chunks concurrently, distributing across providers
     const chunkPromises = chunks.map(async (chunk, index) => {
+        // Round-robin distribution across available providers
+        const providerIndex = index % availableProviders.length;
+        const provider = availableProviders[providerIndex] || null;
+        
         try {
-            console.log(`[DEBUG] Processing chunk ${index + 1}/${chunks.length} with ${chunk.length} guidelines`);
+            console.log(`[DEBUG] Processing chunk ${index + 1}/${chunks.length} with ${chunk.length} guidelines via ${provider || 'default'}`);
             
             const prompt = createPromptForChunk(transcript, chunk);
-            const aiResponse = await routeToAI(prompt, userId);
+            const aiResponse = await routeToAI(prompt, userId, provider);
             
             // Extract content from the response
             const responseContent = aiResponse && typeof aiResponse === 'object' 
@@ -5320,11 +5334,11 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             }
             
             // Log each chunk's AI response for debugging
-            console.log(`[DEBUG] Chunk ${index + 1} AI Response:`, JSON.stringify({
+            console.log(`[DEBUG] Chunk ${index + 1} (${provider || 'default'}) AI Response:`, JSON.stringify({
+                provider: provider || 'default',
                 responseType: typeof responseContent,
                 responseLength: responseContent.length,
-                responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : ''),
-                fullResponse: responseContent
+                responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : '')
             }, null, 2));
             
             // Log the interaction for this chunk
