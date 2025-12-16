@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-58-30-021Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3934,
+  "response_length": 5807,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":1007,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nAntenatal finding of fetal pyelectasis/pelviectasis\\n\\nBackground:\\nAnomaly scan at 20/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\\\", \\\"title\\\": \\\"CG1145 Fetal Abnormality Gu...",
+  "full_data": null
+}
