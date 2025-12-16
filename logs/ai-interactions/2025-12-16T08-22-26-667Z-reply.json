@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-22-26-667Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-27",
+  "token_usage": null,
+  "prompt_length": 1358,
+  "response_length": 1622,
+  "prompt_preview": "{\"prompt\":\"Chunk 27/37\",\"transcriptLength\":960,\"transcriptPreview\":\"38yo, G1P0, 10+2, BMI 31, Rh+ve\\n\\nIssues:\\nAdvanced maternal age (AMA) - increased risk of aneuploidy and pregnancy complications\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2020-diabetes-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"Diabetes in pregnancy: management from preconception t...",
+  "full_data": null
+}
