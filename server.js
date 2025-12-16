@@ -2507,6 +2507,9 @@ const userGuidelineScopeCache = new Map();
 // Model Preferences cache
 const userModelPreferencesCache = new Map();
 
+// Chunk distribution provider preferences cache
+const userChunkDistributionProvidersCache = new Map();
+
 // Get user's model preferences (ordered list)
 async function getUserModelPreferences(userId) {
     // Check if we have a cached preference for this user
@@ -2644,6 +2647,62 @@ async function updateUserModelPreferences(userId, modelOrder) {
         console.error('Error in updateUserModelPreferences:', error);
         return false;
     }
+}
+
+// Get user's chunk distribution providers (allowed providers for chunked requests)
+async function getUserChunkDistributionProviders(userId) {
+    try {
+        const cached = userChunkDistributionProvidersCache.get(userId);
+        if (cached && (Date.now() - cached.timestamp) < (5 * 60 * 1000)) {
+            return cached.providers;
+        }
+
+        const defaultProviders = AI_PROVIDER_PREFERENCE.map(p => p.name);
+
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    if (data && Array.isArray(data.chunkDistributionProviders) && data.chunkDistributionProviders.length > 0) {
+                        const providers = data.chunkDistributionProviders;
+                        userChunkDistributionProvidersCache.set(userId, { providers, timestamp: Date.now() });
+                        return providers;
+                    }
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserChunkDistributionProviders:', firestoreError);
+            }
+        }
+
+        userChunkDistributionProvidersCache.set(userId, { providers: defaultProviders, timestamp: Date.now() });
+        return defaultProviders;
+    } catch (error) {
+        console.error('Critical error in getUserChunkDistributionProviders:', error);
+        return AI_PROVIDER_PREFERENCE.map(p => p.name);
+    }
+}
+
+// Update user's chunk distribution providers
+async function updateUserChunkDistributionProviders(userId, providers) {
+    userChunkDistributionProvidersCache.set(userId, { providers, timestamp: Date.now() });
+
+    try {
+        if (db) {
+            const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+            const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+            await db.collection('userPreferences').doc(userId).set({
+                ...existingData,
+                chunkDistributionProviders: providers,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp()
+            }, { merge: true });
+            return true;
+        }
+    } catch (error) {
+        console.error('Error updating chunk distribution providers in Firestore:', error);
+    }
+
+    return false;
 }
 
 // Get user's hospital trust preference
@@ -5291,7 +5350,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
     
     // Configuration - reduced chunk size due to enhanced guideline information
-    const CHUNK_SIZE = 40; // Increased to 40 - using lightweight summaries allows larger chunks (290 / 40 = ~8 chunks)
+    const CHUNK_SIZE = 40; // Using lightweight summaries allows larger chunks
     const chunks = [];
     
     // Split guidelines into chunks
@@ -5302,13 +5361,21 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Created ${chunks.length} chunks of max ${CHUNK_SIZE} guidelines each`);
     timer.step('Create chunks');
     
-    // Get available AI providers for parallel distribution
-    const availableProviders = [];
-    if (process.env.DEEPSEEK_API_KEY) availableProviders.push('DeepSeek');
-    if (process.env.MISTRAL_API_KEY) availableProviders.push('Mistral');
-    if (process.env.ANTHROPIC_API_KEY) availableProviders.push('Anthropic');
-    if (process.env.OPENAI_API_KEY) availableProviders.push('OpenAI');
-    if (process.env.GOOGLE_AI_API_KEY) availableProviders.push('Gemini'); // Note: env var is GOOGLE_AI_API_KEY, provider name is Gemini
+    // Get available AI providers for parallel distribution (env keys + user preference)
+    const enabledChunkProviders = await getUserChunkDistributionProviders(userId).catch(() => AI_PROVIDER_PREFERENCE.map(p => p.name));
+    const envAvailableProviders = [];
+    if (process.env.DEEPSEEK_API_KEY) envAvailableProviders.push('DeepSeek');
+    if (process.env.MISTRAL_API_KEY) envAvailableProviders.push('Mistral');
+    if (process.env.ANTHROPIC_API_KEY) envAvailableProviders.push('Anthropic');
+    if (process.env.OPENAI_API_KEY) envAvailableProviders.push('OpenAI');
+    if (process.env.GOOGLE_AI_API_KEY) envAvailableProviders.push('Gemini'); // Note: env var is GOOGLE_AI_API_KEY, provider name is Gemini
+    
+    let availableProviders = envAvailableProviders.filter(p => enabledChunkProviders.includes(p));
+    if (availableProviders.length === 0) {
+        // Safety: if user disables everything, fall back to env-available providers
+        console.warn('[WARN] No enabled providers for chunk distribution; falling back to env-available providers');
+        availableProviders = envAvailableProviders;
+    }
     
     console.log(`[DEBUG] Distributing ${chunks.length} chunks across ${availableProviders.length} providers:`, availableProviders);
     
@@ -6707,6 +6774,51 @@ app.post('/updateModelPreferences', authenticateUser, async (req, res) => {
   } catch (error) {
     console.error('Unexpected error in updateModelPreferences endpoint:', error);
     res.status(500).json({ success: false, message: 'Server error', error: error.message });
+  }
+});
+
+// Get user's chunk distribution providers (allowed providers for chunked requests)
+app.get('/getChunkDistributionProviders', authenticateUser, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const providers = await getUserChunkDistributionProviders(userId);
+    return res.json({ success: true, providers });
+  } catch (error) {
+    console.error('Error getting chunk distribution providers:', error);
+    const defaultProviders = AI_PROVIDER_PREFERENCE.map(p => p.name);
+    return res.json({ success: true, providers: defaultProviders });
+  }
+});
+
+// Update user's chunk distribution providers
+app.post('/updateChunkDistributionProviders', authenticateUser, async (req, res) => {
+  try {
+    const userId = req.user.uid;
+    const { providers } = req.body;
+
+    if (!providers || !Array.isArray(providers) || providers.length === 0) {
+      return res.status(400).json({ success: false, message: 'providers must be a non-empty array' });
+    }
+
+    const validProviders = AI_PROVIDER_PREFERENCE.map(p => p.name);
+    const invalid = providers.filter(p => !validProviders.includes(p));
+    if (invalid.length > 0) {
+      return res.status(400).json({ success: false, message: `Invalid providers: ${invalid.join(', ')}` });
+    }
+
+    const updated = await updateUserChunkDistributionProviders(userId, providers);
+    if (updated === false) {
+      return res.status(202).json({
+        success: true,
+        providers,
+        warning: 'Preferences updated temporarily but may not persist across sessions'
+      });
+    }
+
+    return res.json({ success: true, providers });
+  } catch (error) {
+    console.error('Unexpected error in updateChunkDistributionProviders endpoint:', error);
+    return res.status(500).json({ success: false, message: 'Server error', error: error.message });
   }
 });
 

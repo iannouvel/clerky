@@ -9912,6 +9912,109 @@ const AVAILABLE_MODELS = [
     { name: 'Gemini', model: 'gemini-1.5-pro-latest', displayName: 'Gemini' }
 ];
 
+// ---- Chunk distribution provider preferences ----
+async function fetchChunkDistributionProviders() {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            return AVAILABLE_MODELS.map(m => m.name);
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getChunkDistributionProviders`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            return AVAILABLE_MODELS.map(m => m.name);
+        }
+
+        const data = await response.json().catch(() => ({}));
+        if (data && data.success && Array.isArray(data.providers)) {
+            const valid = data.providers.filter(p => AVAILABLE_MODELS.some(m => m.name === p));
+            const missing = AVAILABLE_MODELS.map(m => m.name).filter(p => !valid.includes(p));
+            return [...valid, ...missing];
+        }
+
+        return AVAILABLE_MODELS.map(m => m.name);
+    } catch (error) {
+        console.error('[CHUNK PREF] Error fetching chunk distribution providers:', error);
+        return AVAILABLE_MODELS.map(m => m.name);
+    }
+}
+
+async function saveChunkDistributionProviders(providers) {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.warn('[CHUNK PREF] Cannot save chunk distribution providers, user not authenticated');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateChunkDistributionProviders`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ providers })
+        });
+
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok && response.status !== 202) {
+            console.error('[CHUNK PREF] Failed to save chunk distribution providers:', data);
+            return false;
+        }
+
+        return true;
+    } catch (error) {
+        console.error('[CHUNK PREF] Error saving chunk distribution providers:', error);
+        return false;
+    }
+}
+
+function renderChunkDistributionProvidersList(enabledProviders) {
+    const container = document.getElementById('chunkDistributionProvidersList');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const enabledSet = new Set(enabledProviders || []);
+
+    AVAILABLE_MODELS.forEach((model) => {
+        const row = document.createElement('div');
+        row.className = 'model-preference-item';
+        row.style.cursor = 'default';
+        row.draggable = false;
+
+        const isEnabled = enabledSet.has(model.name);
+
+        row.innerHTML = `
+            <div class="model-preference-number" style="width:28px;"> </div>
+            <div class="model-preference-name">${model.displayName}</div>
+            <div class="model-preference-model">${model.name}</div>
+            <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+                <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+                    <input type="checkbox" class="chunk-provider-checkbox" data-provider="${model.name}" ${isEnabled ? 'checked' : ''} />
+                    <span>Use for chunks</span>
+                </label>
+            </div>
+        `;
+
+        container.appendChild(row);
+    });
+}
+
+function getSelectedChunkDistributionProviders() {
+    const inputs = Array.from(document.querySelectorAll('.chunk-provider-checkbox'));
+    return inputs.filter(i => i.checked).map(i => i.dataset.provider).filter(Boolean);
+}
+
 // Fetch user's model preference order from backend
 async function fetchUserModelPreferences() {
     try {
@@ -10178,6 +10281,15 @@ async function showPreferencesModal() {
         // Use default order on error
         renderModelPreferencesList(AVAILABLE_MODELS.map(m => m.name));
     }
+
+    // Load and display chunk distribution provider preferences
+    try {
+        const enabledProviders = await fetchChunkDistributionProviders();
+        renderChunkDistributionProvidersList(enabledProviders);
+    } catch (error) {
+        console.error('[ERROR] Failed to load chunk distribution provider preferences:', error);
+        renderChunkDistributionProvidersList(AVAILABLE_MODELS.map(m => m.name));
+    }
     
     // Set up event handlers
     const handleChangeTrustClick = async () => {
@@ -10349,6 +10461,17 @@ async function showPreferencesModal() {
             } else {
                 console.warn('[DEBUG] Failed to save model preferences');
             }
+        }
+        
+        // Save chunk distribution provider preferences
+        const chunkProviders = getSelectedChunkDistributionProviders();
+        if (chunkProviders.length > 0) {
+            const savedChunkProviders = await saveChunkDistributionProviders(chunkProviders);
+            if (!savedChunkProviders) {
+                console.warn('[CHUNK PREF] Failed to save chunk distribution providers');
+            }
+        } else {
+            console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
         }
         
         // Close modal
