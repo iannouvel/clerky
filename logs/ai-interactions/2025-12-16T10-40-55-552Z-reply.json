@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-40-55-552Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1264,
+  "response_length": 1303,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/37\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on ser...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1128-neonatal-resuscitation-pdf\\\", \\\"title\\\": \\\"CG1128 Neonatal Resuscitation\\\", \\\"rele...",
+  "full_data": null
+}
