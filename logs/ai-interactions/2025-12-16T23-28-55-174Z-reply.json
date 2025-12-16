@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-28-55-174Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3930,
+  "response_length": 6968,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"cg12004-aph-intrapartum-haemorrhage-pdf\\\",\\n      \\\"title\\\": \\\"CG12004 APH & Intrapartum Haemorrhage\\\",\\...",
+  "full_data": null
+}
