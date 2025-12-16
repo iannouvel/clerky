@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-58-42-204Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1101,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nAntenatal finding of fetal pyelectasis/pelviectasis\\n\\nBackground:\\nAnomaly scan at 20/40 reported bilateral renal pelvis dilatation (RPD): L...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 12,\n  \"potentiallyRelevantCount\": 10,\n  \"lessRelevantCount\": 39,\n  \"notRelevantCount\": 230\n}...",
+  "full_data": null
+}
