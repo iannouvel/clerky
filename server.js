@@ -5308,7 +5308,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     if (process.env.MISTRAL_API_KEY) availableProviders.push('Mistral');
     if (process.env.ANTHROPIC_API_KEY) availableProviders.push('Anthropic');
     if (process.env.OPENAI_API_KEY) availableProviders.push('OpenAI');
-    if (process.env.GEMINI_API_KEY) availableProviders.push('Gemini');
+    if (process.env.GOOGLE_AI_API_KEY) availableProviders.push('Gemini'); // Note: env var is GOOGLE_AI_API_KEY, provider name is Gemini
     
     console.log(`[DEBUG] Distributing ${chunks.length} chunks across ${availableProviders.length} providers:`, availableProviders);
     
