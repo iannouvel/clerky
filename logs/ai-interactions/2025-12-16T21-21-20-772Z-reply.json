@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T21-21-20-772Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 771,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nCTG findings suspicious for fetal compromise\\nReduced fetal movements (RFM) x 24 hours\\n\\nBackground:\\nUncomplicated pregnancy to date\\nAnoma...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 292,\n  \"mostRelevantCount\": 25,\n  \"potentiallyRelevantCount\": 32,\n  \"lessRelevantCount\": 52,\n  \"notRelevantCount\": 183\n}...",
+  "full_data": null
+}
