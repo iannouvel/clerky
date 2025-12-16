@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-45-35-982Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1416,
+  "response_length": 1620,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1037,\"transcriptPreview\":\"28yo, G1P0, 34+2, BMI 31\\n\\nIssues:\\nPruritus without rash, onset 32/52 gestation, worse at night, palms and soles\\nConcern for obste...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-sga-fgr-guideline-pdf\\\", \\\"title\\\": \\\"UHSx SGA & FGR guideline\\\", \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}
