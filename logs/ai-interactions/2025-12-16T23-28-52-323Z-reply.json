@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-28-52-323Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3881,
+  "response_length": 6920,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"mp050-caesarean-section-pdf\\\",\\n      \\\"title\\\": \\\"MP050 Caesarean Section\\\",\\n      \\\"relevance\\\": \\\"0....",
+  "full_data": null
+}
