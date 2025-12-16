@@ -2787,18 +2787,69 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
+        // Toggle between summary and detail views
+        let currentView = 'detail'; // 'detail' or 'summary'
+        
+        document.getElementById('toggleViewBtn')?.addEventListener('click', () => {
+            currentView = currentView === 'detail' ? 'summary' : 'detail';
+            const btn = document.getElementById('toggleViewBtn');
+            const summaryView = document.getElementById('summaryView');
+            const detailView = document.getElementById('detailView');
+            
+            if (currentView === 'summary') {
+                btn.textContent = '📋 Detail View';
+                summaryView.style.display = 'block';
+                detailView.style.display = 'none';
+            } else {
+                btn.textContent = '📊 Summary View';
+                summaryView.style.display = 'none';
+                detailView.style.display = 'block';
+            }
+            
+            // Re-render if we have data
+            if (window.lastTimingsData) {
+                renderTimingsTable(window.lastTimingsData);
+            }
+        });
+
         function renderTimingsTable(data) {
+            window.lastTimingsData = data; // Store for view toggle
+            
             const tbody = document.getElementById('timingsTableBody');
+            const summaryTbody = document.getElementById('summaryTableBody');
             const summary = document.getElementById('timingsSummary');
 
-            if (!tbody || !summary) return;
+            if (!summary) return;
 
-            summary.textContent = `${data.summary.totalRequests} requests | Avg: ${data.summary.avgDuration}ms`;
+            summary.textContent = `${data.summary.totalRequests} requests | ${data.summary.uniqueEndpoints || 0} endpoints | Avg: ${data.summary.avgDuration}ms`;
 
-            if (data.timings.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:#666;">No timing data available yet</td></tr>';
-                return;
+            // Render Summary View (Aggregated Stats)
+            if (summaryTbody && data.aggregatedEndpoints) {
+                if (data.aggregatedEndpoints.length === 0) {
+                    summaryTbody.innerHTML = '<tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">No timing data available yet</td></tr>';
+                } else {
+                    summaryTbody.innerHTML = data.aggregatedEndpoints.map(e => {
+                        const avgColor = e.avgDuration > 10000 ? '#dc3545' : e.avgDuration > 3000 ? '#ff9800' : '#28a745';
+                        const shortEndpoint = e.endpoint.length > 60 ? e.endpoint.substring(0, 57) + '...' : e.endpoint;
+                        return `<tr style="border-bottom:1px solid #eee;">
+                            <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${e.method}</code></td>
+                            <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${e.endpoint}">${shortEndpoint}</td>
+                            <td style="padding:6px 8px;text-align:center;">${e.count}</td>
+                            <td style="padding:6px 8px;text-align:right;font-weight:bold;color:${avgColor};">${e.avgDuration.toLocaleString()}ms</td>
+                            <td style="padding:6px 8px;text-align:right;color:#666;">${e.minDuration.toLocaleString()}ms</td>
+                            <td style="padding:6px 8px;text-align:right;color:#666;">${e.maxDuration.toLocaleString()}ms</td>
+                            <td style="padding:6px 8px;text-align:center;color:${e.errorCount > 0 ? '#dc3545' : '#28a745'};">${e.errorCount}${e.errorRate > 0 ? ` (${e.errorRate}%)` : ''}</td>
+                        </tr>`;
+                    }).join('');
+                }
             }
+
+            // Render Detail View (Recent Requests)
+            if (tbody) {
+                if (data.timings.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:#666;">No timing data available yet</td></tr>';
+                    return;
+                }
 
             tbody.innerHTML = data.timings.map((t, idx) => {
                 const durationColor = t.duration > 10000 ? '#dc3545' :
