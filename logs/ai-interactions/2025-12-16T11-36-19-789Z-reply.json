@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-19-789Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 1333,
+  "response_length": 1316,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/37\",\"transcriptLength\":935,\"transcriptPreview\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x L...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"nice-interventional-guidance-2007-laparoscopic-hysterectomy-pdf\\\", \\\"title\\\": \\\"NICE Interventi...",
+  "full_data": null
+}
