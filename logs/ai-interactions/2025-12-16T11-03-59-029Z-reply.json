@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-03-59-029Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1168,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and safeguarding of neonate\\n\\nBackground:\\nUncomplicated pre...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 16,\n  \"lessRelevantCount\": 35,\n  \"notRelevantCount\": 235\n}...",
+  "full_data": null
+}
