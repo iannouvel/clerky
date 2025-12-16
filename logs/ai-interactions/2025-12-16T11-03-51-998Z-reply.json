@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-03-51-998Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1687,
+  "response_length": 1579,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/37\",\"transcriptLength\":1068,\"transcriptPreview\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and safe...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"Prevention an...",
+  "full_data": null
+}
