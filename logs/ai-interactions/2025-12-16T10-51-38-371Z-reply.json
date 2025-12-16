@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-38-371Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-25",
+  "token_usage": null,
+  "prompt_length": 1209,
+  "response_length": 1199,
+  "prompt_preview": "{\"prompt\":\"Chunk 25/37\",\"transcriptLength\":991,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Synt...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp053-obstetric-haemorrhage-pdf\\\", \\\"title\\\": \\\"Obstetric Haemorrhage\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"mp051-...",
+  "full_data": null
+}
