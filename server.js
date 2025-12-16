@@ -349,6 +349,22 @@ function getNextAvailableProvider(currentProvider, availableKeys) {
 // Initialize Express app
 const app = express();
 
+// Request/Response timing middleware for debugging
+app.use((req, res, next) => {
+    const startTime = Date.now();
+    const requestTimestamp = new Date().toISOString();
+    
+    console.log(`[REQUEST] ${requestTimestamp} | ${req.method} ${req.originalUrl}`);
+    
+    res.on('finish', () => {
+        const duration = Date.now() - startTime;
+        const responseTimestamp = new Date().toISOString();
+        console.log(`[RESPONSE] ${responseTimestamp} | ${req.method} ${req.originalUrl} | Status: ${res.statusCode} | Duration: ${duration}ms`);
+    });
+    
+    next();
+});
+
 // Apply middleware
 // CORS will be configured later with specific options
 
@@ -16835,8 +16851,10 @@ CRITICAL RULES:
 - If the section has bullet points, add the suggestion as another bullet point
 - If the section has plain text lines, add the suggestion as another plain text line
 - Preserve the exact formatting style of existing items
-- Do not add extra blank lines between items unless the existing format has them
-- Match the indentation and spacing of existing items
+- NEVER add blank lines between the existing content and the new suggestion - add new items immediately after existing items with only a single line break
+- Do not add extra blank lines between items - items should follow each other with single line breaks only
+- Match the indentation and spacing of existing items exactly
+- The modifiedSectionContent must NOT start or end with blank lines
 ${
     hasOriginalText
         ? `
