@@ -379,17 +379,34 @@ class StepTimer {
     }
 }
 
+// Debug logging helper - only logs when DEBUG_LOGGING env var is set
+const DEBUG_LOGGING = process.env.DEBUG_LOGGING === 'true';
+const debugLog = (...args) => { if (DEBUG_LOGGING) console.log(...args); };
+
 // Request/Response timing middleware for debugging
 app.use((req, res, next) => {
     const startTime = Date.now();
     const requestTimestamp = new Date().toISOString();
     
-    console.log(`[REQUEST] ${requestTimestamp} | ${req.method} ${req.originalUrl}`);
+    // Skip logging for health checks to reduce noise
+    const isHealthCheck = req.originalUrl === '/health' || req.originalUrl === '/api/health';
+    
+    if (!isHealthCheck) {
+        debugLog(`[REQUEST] ${requestTimestamp} | ${req.method} ${req.originalUrl}`);
+    }
     
     res.on('finish', () => {
         const duration = Date.now() - startTime;
         const responseTimestamp = new Date().toISOString();
-        console.log(`[RESPONSE] ${responseTimestamp} | ${req.method} ${req.originalUrl} | Status: ${res.statusCode} | Duration: ${duration}ms`);
+        
+        // Only log non-health-check responses, or slow responses (>5s), or errors
+        if (!isHealthCheck || duration > 5000 || res.statusCode >= 400) {
+            if (res.statusCode >= 400 || duration > 5000) {
+                console.log(`[RESPONSE] ${responseTimestamp} | ${req.method} ${req.originalUrl} | Status: ${res.statusCode} | Duration: ${duration}ms`);
+            } else {
+                debugLog(`[RESPONSE] ${responseTimestamp} | ${req.method} ${req.originalUrl} | Status: ${res.statusCode} | Duration: ${duration}ms`);
+            }
+        }
         
         // Store timing data in buffer for the performance monitor
         endpointTimings.unshift({
@@ -4589,8 +4606,8 @@ async function logAIInteraction(prompt, response, endpoint) {
       return true;
     }
     
-    // Log the raw inputs for debugging
-    console.log('logAIInteraction called with:', JSON.stringify({
+    // Log the raw inputs for debugging (only when DEBUG_LOGGING is enabled)
+    debugLog('logAIInteraction called with:', JSON.stringify({
       promptType: typeof prompt,
       responseType: typeof response,
       endpoint,
