@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-16-136Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1687,
+  "response_length": 1947,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/37\",\"transcriptLength\":935,\"transcriptPreview\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x LS...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2016 -  Preventio...",
+  "full_data": null
+}
