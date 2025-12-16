@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-11-28-234Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-31",
+  "token_usage": null,
+  "prompt_length": 1218,
+  "response_length": 1247,
+  "prompt_preview": "{\"prompt\":\"Chunk 31/37\",\"transcriptLength\":1139,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nPrimary postpartum haemorrhage (PPH) secondary to uterine atony following SVD\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"pph-prompt-card-ed-rsch-prh-pdf\\\", \\\"title\\\": \\\"PPH prompt card ED RSCH PRH\\\", \\\"relevance\\\": \\\"1.0\\\"}\\n  ],\\n  \\\"potenti...",
+  "full_data": null
+}
