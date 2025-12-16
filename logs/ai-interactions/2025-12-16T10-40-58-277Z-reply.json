@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-40-58-277Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-16",
+  "token_usage": null,
+  "prompt_length": 1729,
+  "response_length": 1745,
+  "prompt_preview": "{\"prompt\":\"Chunk 16/37\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on se...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gp016-operational-guideline-for-admission-to-gynaecology-maternity-ward-pdf\\\", \\\"title\\\": \\\"GP0...",
+  "full_data": null
+}
