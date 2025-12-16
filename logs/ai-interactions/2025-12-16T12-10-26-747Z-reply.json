@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-26-747Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1800,
+  "response_length": 2245,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/20\",\"transcriptLength\":1163,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparou...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-midwives-exemption-pdf\\\", \\\"title\\\": \\\"UHSx Midwives Exemption\\\", \\\"relevance\\\": \\\"0.85\\\"},\\n    {\\\"id\\\": \\\"uhsx-obs...",
+  "full_data": null
+}
