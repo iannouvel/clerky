@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-22-33-784Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1056,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"38yo, G1P0, 10+2, BMI 31, Rh+ve\\n\\nIssues:\\nAdvanced maternal age (AMA) - increased risk of aneuploidy and pregnancy complications\\n\\nBackground:\\nConceived spontaneously. Regular cycle...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 18,\n  \"potentiallyRelevantCount\": 25,\n  \"lessRelevantCount\": 67,\n  \"notRelevantCount\": 181\n}...",
+  "full_data": null
+}
