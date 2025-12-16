@@ -4924,26 +4924,19 @@ app.post('/SendToAI', authenticateUser, async (req, res) => {
 
 // Helper function to create prompt for a chunk of guidelines
 function createPromptForChunk(transcript, guidelinesChunk) {
-    // Enhanced guideline formatting with more comprehensive information
+    // Lightweight guideline formatting - only title + summary for relevance determination
+    // This reduces token usage significantly, allowing larger chunks and faster processing
     const guidelinesText = guidelinesChunk.map(g => {
         let guidelineInfo = `[${g.id}] ${g.title}`;
         
-        // Add summary if available
+        // Add summary if available - this is sufficient for relevance scoring
         if (g.summary && g.summary.trim()) {
             guidelineInfo += `\nSummary: ${g.summary.trim()}`;
         }
         
-        // Add condensed content preview if available (first 300 chars)
-        if (g.condensed && g.condensed.trim()) {
-            const condensedPreview = g.condensed.trim().substring(0, 300);
-            guidelineInfo += `\nKey Content: ${condensedPreview}${g.condensed.length > 300 ? '...' : ''}`;
-        }
-        
-        // Add keywords if available
+        // Add keywords for additional context (lightweight)
         if (g.keywords && Array.isArray(g.keywords) && g.keywords.length > 0) {
-            guidelineInfo += `\nKeywords: ${g.keywords.join(', ')}`;
-        } else if (g.keywords && typeof g.keywords === 'string' && g.keywords.trim()) {
-            guidelineInfo += `\nKeywords: ${g.keywords.trim()}`;
+            guidelineInfo += `\nKeywords: ${g.keywords.slice(0, 10).join(', ')}`; // Limit to 10 keywords
         }
         
         return guidelineInfo;
@@ -5298,7 +5291,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
     
     // Configuration - reduced chunk size due to enhanced guideline information
-    const CHUNK_SIZE = 15; // Increased from 8 to reduce AI calls (290 guidelines / 15 = ~20 chunks instead of ~36)
+    const CHUNK_SIZE = 40; // Increased to 40 - using lightweight summaries allows larger chunks (290 / 40 = ~8 chunks)
     const chunks = [];
     
     // Split guidelines into chunks
