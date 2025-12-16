@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-48-634Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1314,
+  "response_length": 2221,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"uhsx-bladder-care-guideline-pdf: UHSx Bladder Care guideline\",\"uhsx-conflict-o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-bladder-care-guideline-pdf\\\", \\\"tit...",
+  "full_data": null
+}
