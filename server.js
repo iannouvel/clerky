@@ -351,7 +351,7 @@ const app = express();
 
 // Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
 const endpointTimings = [];
-const MAX_TIMING_ENTRIES = 100;
+const MAX_TIMING_ENTRIES = 500; // Increased from 100 to capture more history
 
 // Step timer helper for profiling endpoint internals
 class StepTimer {
