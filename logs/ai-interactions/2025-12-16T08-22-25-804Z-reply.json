@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-22-25-804Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-14",
+  "token_usage": null,
+  "prompt_length": 1274,
+  "response_length": 1299,
+  "prompt_preview": "{\"prompt\":\"Chunk 14/37\",\"transcriptLength\":960,\"transcriptPreview\":\"38yo, G1P0, 10+2, BMI 31, Rh+ve\\n\\nIssues:\\nAdvanced maternal age (AMA) - increased risk of aneuploidy and pregnancy complications\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"fsrh-2023-intrauterine-contraception-pdf...",
+  "full_data": null
+}
