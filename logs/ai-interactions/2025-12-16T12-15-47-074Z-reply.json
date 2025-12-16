@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-47-074Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1286,
+  "response_length": 2107,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"peanut-ball-positions-pdf: Peanut Ball Positions\",\"penthrox-use-of-in-ambulato...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"rag-rating-for-iol-pdf\\\", \\\"title\\\": \\\"RAG rating for IOL\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"...",
+  "full_data": null
+}
