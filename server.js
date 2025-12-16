@@ -5341,9 +5341,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : '')
             }, null, 2));
             
-            // Log the interaction for this chunk
+            // Log the interaction for this chunk (fire-and-forget so it doesn't slow the endpoint)
             try {
-                await logAIInteraction({
+                logAIInteraction({
                     prompt: `Chunk ${index + 1}/${chunks.length}`,
                     transcriptLength: transcript.length,
                     transcriptPreview: transcript.substring(0, 500) + '...',
@@ -5355,7 +5355,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                     aiResponse: responseContent,
                     responseType: typeof responseContent,
                     responseLength: responseContent.length
-                }, `findRelevantGuidelines-chunk-${index + 1}`);
+                }, `findRelevantGuidelines-chunk-${index + 1}`).catch((logError) => {
+                    console.error(`Error logging chunk ${index + 1} interaction:`, logError);
+                });
             } catch (logError) {
                 console.error(`Error logging chunk ${index + 1} interaction:`, logError);
             }
@@ -5401,9 +5403,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     const mergedCategories = mergeChunkResults(successfulResults);
     timer.step('Merge results');
     
-    // Log the interaction
+    // Log the interaction (fire-and-forget)
     try {
-        await logAIInteraction({
+        logAIInteraction({
             transcript,
             guidelinesCount: guidelines.length,
             chunksProcessed: successfulResults.length,
@@ -5415,7 +5417,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             potentiallyRelevantCount: mergedCategories.potentiallyRelevant.length,
             lessRelevantCount: mergedCategories.lessRelevant.length,
             notRelevantCount: mergedCategories.notRelevant.length
-        }, 'findRelevantGuidelines');
+        }, 'findRelevantGuidelines').catch((logError) => {
+            console.error('Error logging interaction:', logError);
+        });
     } catch (logError) {
         console.error('Error logging interaction:', logError);
     }
@@ -5430,15 +5434,17 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   } catch (error) {
     console.error('[ERROR] Error in findRelevantGuidelines:', error);
     
-    // Log the error
+    // Log the error (fire-and-forget)
     try {
-        await logAIInteraction({
+        logAIInteraction({
             transcript: req.body.transcript,
             guidelinesCount: req.body.guidelines?.length || 0
         }, {
             success: false,
             error: error.message
-        }, 'findRelevantGuidelines');
+        }, 'findRelevantGuidelines').catch((logError) => {
+            console.error('Error logging failure:', logError);
+        });
     } catch (logError) {
         console.error('Error logging failure:', logError);
     }
@@ -16395,7 +16401,7 @@ IMPORTANT:
 
         // Log the AI interaction
         try {
-            await logAIInteraction(
+            logAIInteraction(
                 {
                     prompt: userPrompt,
                     system_prompt: systemPrompt,
@@ -16415,8 +16421,11 @@ IMPORTANT:
                     session_id: sessionId
                 },
                 'dynamicAdvice'
-            );
-            console.log('[DEBUG] dynamicAdvice: AI interaction logged successfully');
+            ).then(() => {
+                console.log('[DEBUG] dynamicAdvice: AI interaction logged successfully');
+            }).catch((logError) => {
+                console.error('[DEBUG] dynamicAdvice: Error logging AI interaction:', logError.message);
+            });
         } catch (logError) {
             console.error('[DEBUG] dynamicAdvice: Error logging AI interaction:', logError.message);
         }
