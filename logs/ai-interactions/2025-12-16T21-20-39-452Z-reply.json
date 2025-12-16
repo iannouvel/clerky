@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T21-20-39-452Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1415,
+  "response_length": 1625,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":675,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nCTG findings suspicious for fetal compromise\\nReduced fetal movements (RFM) x 24 hours\\n\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-sga-fgr-guideline-pdf\\\", \\\"title\\\": \\\"UHSx SGA & FGR guideline\\\", \\\"relevance\\\": \\\"0.95\\\"}\\n  ],\\n  \\\"potentiallyRel...",
+  "full_data": null
+}
