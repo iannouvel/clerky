@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T20-57-51-034Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1404,
+  "response_length": 1548,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1117,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 24, Rh+ve\\n\\nIssues:\\nNausea and vomiting of pregnancy (NVP) - symptoms uncontrolled with first-line measures, i...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"uhsx-midwives-exemption-pdf\\\", \\\"title\\\": \\\"UHSx Midwives Exemption\\\", \\\"relevance\\\": \\\"0.65\\\"}...",
+  "full_data": null
+}
