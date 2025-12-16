@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-40-54-661Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1317,
+  "response_length": 1297,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/37\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on se...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp001-provision-and-schedules-of-antenatal-care-pdf\\\", \\\"title\\\": \\\"MP001 Provision and Schedul...",
+  "full_data": null
+}
