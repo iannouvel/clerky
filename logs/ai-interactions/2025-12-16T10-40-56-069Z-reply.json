@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-40-56-069Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-29",
+  "token_usage": null,
+  "prompt_length": 1287,
+  "response_length": 1327,
+  "prompt_preview": "{\"prompt\":\"Chunk 29/37\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on se...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-guidance-2022-preterm-labour-and-birth-pdf\\\", \\\"title\\\": \\\"NICE Guidance - 2022 - Preterm Labour and Birth\\\", \\\"rele...",
+  "full_data": null
+}
