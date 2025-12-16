@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T20-58-27-249Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4205,
+  "response_length": 6112,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":1117,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 24, Rh+ve\\n\\nIssues:\\nNausea and vomiting of pregnancy (NVP) - symptoms uncontrolled with first-line measures, i...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.95\\\"}\\n  ],\\n  \\\"potentia...",
+  "full_data": null
+}
