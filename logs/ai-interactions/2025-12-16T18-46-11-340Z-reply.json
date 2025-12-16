@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-46-11-340Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4217,
+  "response_length": 6098,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":1037,\"transcriptPreview\":\"28yo, G1P0, 34+2, BMI 31\\n\\nIssues:\\nPruritus without rash, onset 32/52 gestation, worse at night, palms and soles\\nConcern for obste...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.85\\\"},\\n    {\\\"id\\\": \\\"ni...",
+  "full_data": null
+}

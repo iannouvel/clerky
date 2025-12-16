@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-46-09-613Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4025,
+  "response_length": 5869,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1037,\"transcriptPreview\":\"28yo, G1P0, 34+2, BMI 31\\n\\nIssues:\\nPruritus without rash, onset 32/52 gestation, worse at night, palms and soles\\nConcern for obste...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"Preterm birth risk pathway\\\", \\\"re...",
+  "full_data": null
+}

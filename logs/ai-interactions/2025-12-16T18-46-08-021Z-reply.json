@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-46-08-021Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3891,
+  "response_length": 5763,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1037,\"transcriptPreview\":\"28yo, G1P0, 34+2, BMI 31\\n\\nIssues:\\nPruritus without rash, onset 32/52 gestation, worse at night, palms and soles\\nConcern for obste...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\", \\\"title\\\": \\\"MP011 Obesity In Pregnancy\\\", \\\"relevance\\\": \\\"0.85\\\"},\\n    {\\\"id\\\": \\\"mp...",
+  "full_data": null
+}
