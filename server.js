@@ -349,6 +349,10 @@ function getNextAvailableProvider(currentProvider, availableKeys) {
 // Initialize Express app
 const app = express();
 
+// Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
+const endpointTimings = [];
+const MAX_TIMING_ENTRIES = 100;
+
 // Request/Response timing middleware for debugging
 app.use((req, res, next) => {
     const startTime = Date.now();
@@ -360,6 +364,21 @@ app.use((req, res, next) => {
         const duration = Date.now() - startTime;
         const responseTimestamp = new Date().toISOString();
         console.log(`[RESPONSE] ${responseTimestamp} | ${req.method} ${req.originalUrl} | Status: ${res.statusCode} | Duration: ${duration}ms`);
+        
+        // Store timing data in buffer for the performance monitor
+        endpointTimings.unshift({
+            method: req.method,
+            endpoint: req.originalUrl,
+            status: res.statusCode,
+            duration,
+            requestTime: requestTimestamp,
+            responseTime: responseTimestamp
+        });
+        
+        // Keep buffer size limited
+        if (endpointTimings.length > MAX_TIMING_ENTRIES) {
+            endpointTimings.pop();
+        }
     });
     
     next();
@@ -6869,6 +6888,32 @@ app.post('/delete-all-logs', authenticateUser, async (req, res) => {
             error: error.message,
             details: error.response?.data
         });
+    }
+});
+
+// Endpoint to get recent endpoint timings for performance monitoring
+app.get('/api/endpoint-timings', authenticateUser, async (req, res) => {
+    try {
+        // Calculate summary statistics
+        const summary = {
+            totalRequests: endpointTimings.length,
+            avgDuration: endpointTimings.length > 0 
+                ? Math.round(endpointTimings.reduce((sum, t) => sum + t.duration, 0) / endpointTimings.length)
+                : 0,
+            slowestEndpoints: [...endpointTimings]
+                .sort((a, b) => b.duration - a.duration)
+                .slice(0, 5)
+                .map(t => ({ endpoint: t.endpoint, duration: t.duration, method: t.method }))
+        };
+        
+        res.json({
+            success: true,
+            timings: endpointTimings,
+            summary
+        });
+    } catch (error) {
+        console.error('Error fetching endpoint timings:', error);
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 

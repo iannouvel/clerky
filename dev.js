@@ -2753,6 +2753,93 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // ============================================
+        // ENDPOINT PERFORMANCE MONITOR
+        // ============================================
+        let autoRefreshTimingsInterval = null;
+
+        async function fetchEndpointTimings() {
+            const user = auth.currentUser;
+            const summaryEl = document.getElementById('timingsSummary');
+            const tbodyEl = document.getElementById('timingsTableBody');
+            
+            if (!user) {
+                if (summaryEl) summaryEl.textContent = 'Please log in to view timings';
+                return;
+            }
+            
+            try {
+                if (summaryEl) summaryEl.textContent = 'Loading...';
+                
+                const token = await user.getIdToken();
+                const response = await fetch(`${SERVER_URL}/api/endpoint-timings`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (!response.ok) throw new Error('Failed to fetch timings');
+                
+                const data = await response.json();
+                renderTimingsTable(data);
+            } catch (error) {
+                console.error('Error fetching timings:', error);
+                if (summaryEl) summaryEl.textContent = `Error: ${error.message}`;
+            }
+        }
+
+        function renderTimingsTable(data) {
+            const tbody = document.getElementById('timingsTableBody');
+            const summary = document.getElementById('timingsSummary');
+            
+            if (!tbody || !summary) return;
+            
+            summary.textContent = `${data.summary.totalRequests} requests | Avg: ${data.summary.avgDuration}ms`;
+            
+            if (data.timings.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:#666;">No timing data available yet</td></tr>';
+                return;
+            }
+            
+            tbody.innerHTML = data.timings.map(t => {
+                const durationColor = t.duration > 10000 ? '#dc3545' : 
+                                     t.duration > 3000 ? '#ff9800' : '#28a745';
+                const statusColor = t.status >= 400 ? '#dc3545' : '#28a745';
+                const time = new Date(t.requestTime).toLocaleTimeString();
+                const shortEndpoint = t.endpoint.length > 50 ? t.endpoint.substring(0, 47) + '...' : t.endpoint;
+                
+                return `<tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:6px 8px;white-space:nowrap;">${time}</td>
+                    <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${t.method}</code></td>
+                    <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${t.endpoint}">${shortEndpoint}</td>
+                    <td style="padding:6px 8px;text-align:center;color:${statusColor};font-weight:bold;">${t.status}</td>
+                    <td style="padding:6px 8px;text-align:right;font-weight:bold;color:${durationColor};">${t.duration.toLocaleString()}ms</td>
+                </tr>`;
+            }).join('');
+        }
+
+        // Event listeners for timing buttons
+        const refreshTimingsBtn = document.getElementById('refreshTimingsBtn');
+        const autoRefreshTimingsBtn = document.getElementById('autoRefreshTimingsBtn');
+        
+        if (refreshTimingsBtn) {
+            refreshTimingsBtn.addEventListener('click', fetchEndpointTimings);
+        }
+        
+        if (autoRefreshTimingsBtn) {
+            autoRefreshTimingsBtn.addEventListener('click', function() {
+                if (autoRefreshTimingsInterval) {
+                    clearInterval(autoRefreshTimingsInterval);
+                    autoRefreshTimingsInterval = null;
+                    this.textContent = '⏱️ Auto-refresh: OFF';
+                    this.style.backgroundColor = '#6c757d';
+                } else {
+                    fetchEndpointTimings();
+                    autoRefreshTimingsInterval = setInterval(fetchEndpointTimings, 5000);
+                    this.textContent = '⏱️ Auto-refresh: ON';
+                    this.style.backgroundColor = '#28a745';
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
