@@ -6296,6 +6296,114 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
+/**
+ * Shared helper function to parse [[CITATION:guidelineId|searchText]] markers in AI responses
+ * and convert them to clickable PDF links.
+ * 
+ * @param {string} answerText - The raw answer text containing citation markers
+ * @param {Array} guidelinesUsed - Array of guideline objects with id and title properties
+ * @param {string} callerName - Name of calling function for debug logging
+ * @returns {Object} - { formattedAnswer, stats: { totalCitations, withQuotes, withoutQuotes } }
+ */
+function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCitationsToLinks') {
+    // Build maps from IDs/titles to canonical IDs and titles,
+    // so citations can use either and still resolve to the correct PDF,
+    // and links can always display the guideline name.
+    const guidelineIdMap = new Map();
+    const guidelineTitleMap = new Map();
+    
+    if (Array.isArray(guidelinesUsed)) {
+        guidelinesUsed.forEach(g => {
+            if (!g) return;
+            const id = g.id ? String(g.id) : null;
+            const title = g.title ? String(g.title) : null;
+            if (id) {
+                guidelineIdMap.set(id, id);
+                guidelineIdMap.set(id.toLowerCase(), id);
+                if (title) {
+                    guidelineTitleMap.set(id, title);
+                }
+            }
+            if (title && id) {
+                guidelineIdMap.set(title, id);
+                guidelineIdMap.set(title.toLowerCase(), id);
+            }
+        });
+    }
+    
+    console.log(`[DEBUG] ${callerName}: guidelineIdMap keys:`, Array.from(guidelineIdMap.keys()));
+
+    // Citation regex pattern: [[CITATION:guidelineId|searchText]]
+    // searchText may be empty if no verbatim quote was found
+    const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
+    
+    // Escape HTML and preserve newlines
+    let processedText = escapeHtml(answerText).replace(/\n/g, '<br>');
+
+    let citationCount = 0;
+    let withQuotes = 0;
+    let withoutQuotes = 0;
+    
+    const formattedAnswer = processedText.replace(citationRegex, (match, guidelineId, searchText) => {
+        citationCount += 1;
+
+        const rawId = guidelineId.trim();
+        const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
+        const hasQuote = decodedSearch.length >= 5;
+
+        if (hasQuote) {
+            withQuotes += 1;
+        } else {
+            withoutQuotes += 1;
+        }
+
+        // Resolve the canonical guideline ID (handles cases where AI uses title instead of ID)
+        const canonicalId =
+            guidelineIdMap.get(rawId) ||
+            guidelineIdMap.get(rawId.toLowerCase()) ||
+            rawId;
+        
+        // Get the guideline title for display
+        const displayTitle =
+            guidelineTitleMap.get(canonicalId) ||
+            (Array.isArray(guidelinesUsed)
+                ? (guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
+                : '') ||
+            canonicalId;
+
+        console.log(`[DEBUG] ${callerName}: Processing citation`, {
+            citationNum: citationCount,
+            guidelineId: canonicalId,
+            hasQuote,
+            searchPreview: decodedSearch.substring(0, 50)
+        });
+        
+        // Create the link with or without search text
+        return createGuidelineViewerLink(
+            canonicalId, 
+            displayTitle, 
+            null, // filename not needed if ID provided
+            hasQuote ? decodedSearch : null,
+            hasQuote
+        );
+    });
+
+    console.log(`[DEBUG] ${callerName}: Citation processing complete`, {
+        totalCitations: citationCount,
+        withQuotes,
+        withoutQuotes
+    });
+
+    return {
+        formattedAnswer,
+        stats: {
+            totalCitations: citationCount,
+            withQuotes,
+            withoutQuotes
+        }
+    };
+}
+
 // Function to prepare auth token for viewer
 window.prepareViewerAuth = async function(event, linkElement) {
     try {
@@ -15602,94 +15710,12 @@ async function askGuidelinesQuestion() {
             aiProvider: data2.ai_provider
         });
 
-        // Build maps from IDs/titles to canonical IDs and titles,
-        // so citations can use either and still resolve to the correct PDF,
-        // and links can always display the guideline name.
-        const guidelineIdMap = new Map();
-        const guidelineTitleMap = new Map();
-        if (Array.isArray(data2.guidelinesUsed)) {
-            data2.guidelinesUsed.forEach(g => {
-                if (!g) return;
-                const id = g.id ? String(g.id) : null;
-                const title = g.title ? String(g.title) : null;
-                if (id) {
-                    guidelineIdMap.set(id, id);
-                    guidelineIdMap.set(id.toLowerCase(), id);
-                    if (title) {
-                        guidelineTitleMap.set(id, title);
-                    }
-                }
-                if (title && id) {
-                    guidelineIdMap.set(title, id);
-                    guidelineIdMap.set(title.toLowerCase(), id);
-                }
-            });
-        }
-        console.log('[DEBUG] askGuidelinesQuestion: guidelineIdMap keys:', Array.from(guidelineIdMap.keys()));
-
-        // Parse and format citations in the answer
-        let answerText = data2.answer;
-        
-        // NEW SIMPLIFIED FORMAT: Replace [[CITATION:guidelineId|searchText]] with clickable links
-        // searchText may be empty if no verbatim quote was found
-        const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
-        
-        // Use a temporary placeholder for newlines to preserve them during HTML conversion
-        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
-
-        let citationCount = 0;
-        let withQuotes = 0;
-        let withoutQuotes = 0;
-        
-        const formattedAnswer = answerText.replace(citationRegex, (match, guidelineId, searchText) => {
-            citationCount += 1;
-
-            const rawId = guidelineId.trim();
-            const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
-            const hasQuote = decodedSearch.length >= 5;
-
-            if (hasQuote) {
-                withQuotes += 1;
-            } else {
-                withoutQuotes += 1;
-            }
-
-            // Resolve the canonical guideline ID and title
-            const canonicalId =
-                guidelineIdMap.get(rawId) ||
-                guidelineIdMap.get(rawId.toLowerCase()) ||
-                rawId;
-            
-            // Get the guideline title for display
-            const displayTitle =
-                guidelineTitleMap.get(canonicalId) ||
-                (Array.isArray(data2.guidelinesUsed)
-                    ? (data2.guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
-                    : '') ||
-                canonicalId;
-
-            console.log('[DEBUG] askGuidelinesQuestion: Processing citation', {
-                citationNum: citationCount,
-                guidelineId: canonicalId,
-                hasQuote,
-                searchPreview: decodedSearch.substring(0, 50)
-            });
-            
-            // Create the link with or without search text
-            return createGuidelineViewerLink(
-                canonicalId, 
-                displayTitle, 
-                null, // filename not needed if ID provided
-                hasQuote ? decodedSearch : null,
-                hasQuote
-            );
-        });
-
-        console.log('[DEBUG] askGuidelinesQuestion: Citation processing complete', {
-            totalCitations: citationCount,
-            withQuotes,
-            withoutQuotes
-        });
+        // Parse citations in the answer and convert to clickable links
+        const { formattedAnswer } = parseCitationsToLinks(
+            data2.answer,
+            data2.guidelinesUsed,
+            'askGuidelinesQuestion'
+        );
 
         // Display the answer with HTML formatting
         const selectedGuidelinesList = data2.guidelinesUsed.map(g => {
@@ -15844,72 +15870,12 @@ async function processQuestionAgainstGuidelines() {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
 
-        // Build a simple ID -> title map so that link text can always show the
-        // guideline name, regardless of the AI-provided LinkText field.
-        const guidelineTitleMap = new Map();
-        if (Array.isArray(data.guidelinesUsed)) {
-            data.guidelinesUsed.forEach(g => {
-                if (!g || !g.id) return;
-                guidelineTitleMap.set(String(g.id), g.title ? String(g.title) : '');
-            });
-        }
-
-        // Parse and format citations in the answer
-        let answerText = data.answer;
-        
-        // NEW SIMPLIFIED FORMAT: Replace [[CITATION:guidelineId|searchText]] with clickable links
-        const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
-        
-        // Use a temporary placeholder for newlines to preserve them during HTML conversion
-        answerText = escapeHtml(answerText).replace(/\n/g, '<br>');
-
-        let citationCount = 0;
-        let withQuotes = 0;
-        let withoutQuotes = 0;
-        
-        const formattedAnswer = answerText.replace(citationRegex, (match, guidelineId, searchText) => {
-            citationCount += 1;
-
-            const rawId = guidelineId.trim();
-            const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
-            const hasQuote = decodedSearch.length >= 5;
-
-            if (hasQuote) {
-                withQuotes += 1;
-            } else {
-                withoutQuotes += 1;
-            }
-            
-            // Get the guideline title for display
-            const displayTitle =
-                guidelineTitleMap.get(rawId) ||
-                (Array.isArray(data.guidelinesUsed)
-                    ? (data.guidelinesUsed.find(g => String(g.id) === String(rawId))?.title || '').trim()
-                    : '') ||
-                rawId;
-
-            console.log('[DEBUG] processQuestionAgainstGuidelines: Processing citation', {
-                citationNum: citationCount,
-                guidelineId: rawId,
-                hasQuote,
-                searchPreview: decodedSearch.substring(0, 50)
-            });
-            
-            // Create the link with or without search text
-            return createGuidelineViewerLink(
-                rawId, 
-                displayTitle, 
-                null,
-                hasQuote ? decodedSearch : null,
-                hasQuote
-            );
-        });
-
-        console.log('[DEBUG] processQuestionAgainstGuidelines: Citation processing complete', {
-            totalCitations: citationCount,
-            withQuotes,
-            withoutQuotes
-        });
+        // Parse citations in the answer and convert to clickable links
+        const { formattedAnswer } = parseCitationsToLinks(
+            data.answer,
+            data.guidelinesUsed,
+            'processQuestionAgainstGuidelines'
+        );
 
         // Display the comprehensive answer with HTML formatting
         const guidelinesUsedList = (data.guidelinesUsed || []).map(g => {
