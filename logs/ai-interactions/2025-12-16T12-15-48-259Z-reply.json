@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-48-259Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1286,
+  "response_length": 2195,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"cg21010-care-of-the-late-preterm-newborn-guideline-pdf: CG21010 Care of the Lat...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"cg21010-care-of-the-late-preterm-newborn...",
+  "full_data": null
+}
