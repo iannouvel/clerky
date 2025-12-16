@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-10-570Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-28",
+  "token_usage": null,
+  "prompt_length": 1399,
+  "response_length": 1380,
+  "prompt_preview": "{\"prompt\":\"Chunk 28/37\",\"transcriptLength\":935,\"transcriptPreview\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x L...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.85\\\"}],\\n  \\\"potentiallyRelevan...",
+  "full_data": null
+}
