@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-11-29-315Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1267,
+  "response_length": 1240,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/37\",\"transcriptLength\":1139,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nPrimary postpartum haemorrhage (PPH) secondary to uterine atony following SVD\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-blood-transfusion-in-obstetrics-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Blood transfusion in Obstetrics\\\", \\\"relevance\\\": \\\"0.9...",
+  "full_data": null
+}
