@@ -6938,21 +6938,73 @@ app.post('/delete-all-logs', authenticateUser, async (req, res) => {
 // Endpoint to get recent endpoint timings for performance monitoring
 app.get('/api/endpoint-timings', authenticateUser, async (req, res) => {
     try {
-        // Calculate summary statistics
+        // Aggregate stats by endpoint
+        const endpointStats = {};
+        
+        endpointTimings.forEach(t => {
+            const key = `${t.method} ${t.endpoint}`;
+            if (!endpointStats[key]) {
+                endpointStats[key] = {
+                    method: t.method,
+                    endpoint: t.endpoint,
+                    count: 0,
+                    totalDuration: 0,
+                    minDuration: Infinity,
+                    maxDuration: 0,
+                    lastRequest: null,
+                    errorCount: 0
+                };
+            }
+            
+            const stats = endpointStats[key];
+            stats.count++;
+            stats.totalDuration += t.duration;
+            stats.minDuration = Math.min(stats.minDuration, t.duration);
+            stats.maxDuration = Math.max(stats.maxDuration, t.duration);
+            
+            if (t.status >= 400) stats.errorCount++;
+            
+            // Track most recent request
+            if (!stats.lastRequest || new Date(t.requestTime) > new Date(stats.lastRequest.requestTime)) {
+                stats.lastRequest = t;
+            }
+        });
+        
+        // Calculate averages and format
+        const aggregatedEndpoints = Object.values(endpointStats).map(stats => ({
+            method: stats.method,
+            endpoint: stats.endpoint,
+            count: stats.count,
+            avgDuration: Math.round(stats.totalDuration / stats.count),
+            minDuration: stats.minDuration === Infinity ? 0 : stats.minDuration,
+            maxDuration: stats.maxDuration,
+            errorCount: stats.errorCount,
+            errorRate: Math.round((stats.errorCount / stats.count) * 100),
+            lastRequest: stats.lastRequest
+        }));
+        
+        // Sort by average duration (slowest first)
+        aggregatedEndpoints.sort((a, b) => b.avgDuration - a.avgDuration);
+        
+        // Calculate overall summary
         const summary = {
             totalRequests: endpointTimings.length,
+            uniqueEndpoints: aggregatedEndpoints.length,
             avgDuration: endpointTimings.length > 0 
                 ? Math.round(endpointTimings.reduce((sum, t) => sum + t.duration, 0) / endpointTimings.length)
                 : 0,
-            slowestEndpoints: [...endpointTimings]
-                .sort((a, b) => b.duration - a.duration)
-                .slice(0, 5)
-                .map(t => ({ endpoint: t.endpoint, duration: t.duration, method: t.method }))
+            slowestEndpoints: aggregatedEndpoints.slice(0, 10).map(e => ({
+                endpoint: e.endpoint,
+                method: e.method,
+                avgDuration: e.avgDuration,
+                count: e.count
+            }))
         };
         
         res.json({
             success: true,
-            timings: endpointTimings,
+            timings: endpointTimings, // Keep raw timings for detail view
+            aggregatedEndpoints, // New: stats per endpoint
             summary
         });
     } catch (error) {

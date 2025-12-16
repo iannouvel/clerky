@@ -355,14 +355,35 @@
             <div class="tools-section" style="margin-top:20px;">
                 <h4>Endpoint Performance Monitor</h4>
                 <p style="color:#666;font-size:13px;margin-bottom:10px;">
-                    View recent API endpoint response times. Data shows the last 100 requests.
+                    View API endpoint performance stats. Data shows the last 500 requests.
                 </p>
-                <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap;">
                     <button id="refreshTimingsBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;">🔄 Refresh Timings</button>
                     <button id="autoRefreshTimingsBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;">⏱️ Auto-refresh: OFF</button>
+                    <button id="toggleViewBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">📊 Summary View</button>
                     <span id="timingsSummary" style="font-size:13px;color:#666;"></span>
                 </div>
-                <div id="timingsContainer" style="max-height:400px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
+                <!-- Summary View (Aggregated Stats) -->
+                <div id="summaryView" style="display:none;max-height:400px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
+                    <table id="summaryTable" style="width:100%;border-collapse:collapse;font-size:13px;">
+                        <thead style="position:sticky;top:0;background:#f8f9fa;">
+                            <tr>
+                                <th style="padding:8px;text-align:left;border-bottom:2px solid #dee2e6;">Method</th>
+                                <th style="padding:8px;text-align:left;border-bottom:2px solid #dee2e6;">Endpoint</th>
+                                <th style="padding:8px;text-align:center;border-bottom:2px solid #dee2e6;">Count</th>
+                                <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Avg</th>
+                                <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Min</th>
+                                <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Max</th>
+                                <th style="padding:8px;text-align:center;border-bottom:2px solid #dee2e6;">Errors</th>
+                            </tr>
+                        </thead>
+                        <tbody id="summaryTableBody">
+                            <tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">Click "Refresh Timings" to load data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Detail View (Recent Requests) -->
+                <div id="detailView" style="max-height:400px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
                     <table id="timingsTable" style="width:100%;border-collapse:collapse;font-size:13px;">
                         <thead style="position:sticky;top:0;background:#f8f9fa;">
                             <tr>
