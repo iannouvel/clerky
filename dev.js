@@ -2851,7 +2851,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     return;
                 }
 
-            tbody.innerHTML = data.timings.map((t, idx) => {
+                tbody.innerHTML = data.timings.map((t, idx) => {
                 const durationColor = t.duration > 10000 ? '#dc3545' :
                                      t.duration > 3000 ? '#ff9800' : '#28a745';
                 const statusColor = t.status >= 400 ? '#dc3545' : '#28a745';
