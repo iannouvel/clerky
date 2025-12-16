@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T21-21-12-016Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3890,
+  "response_length": 5766,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":675,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nCTG findings suspicious for fetal compromise\\nReduced fetal movements (RFM) x 24 hours\\n\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp026-bsots-pdf\\\", \\\"title\\\": \\\"MP026 BSOTS\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"mp025-day-assessment-unit-dau-pd...",
+  "full_data": null
+}
