@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-04-37-834Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3882,
+  "response_length": 6880,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1639,\"transcriptPreview\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nPresenting Complaint:\\nPelvic girdle pain (PGP) – symphysis pubis dysfunction (SPD) for 4/52, wors...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"mp011-obesity-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"MP011 Obesity In Pregnancy\\\",\\n      \\\"relevance\\\"...",
+  "full_data": null
+}
