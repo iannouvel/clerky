@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-58-31-607Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4092,
+  "response_length": 5956,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":1007,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nAntenatal finding of fetal pyelectasis/pelviectasis\\n\\nBackground:\\nAnomaly scan at 20/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"placental-histology-poster-pdf\\\", \\\"title\\\": \\\"Placental Histology poster\\\", \\\"relevance\\...",
+  "full_data": null
+}
