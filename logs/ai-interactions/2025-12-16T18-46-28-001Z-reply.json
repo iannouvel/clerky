@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-46-28-001Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5332,
+  "response_length": 8313,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1037,\"transcriptPreview\":\"28yo, G1P0, 34+2, BMI 31\\n\\nIssues:\\nPruritus without rash, onset 32/52 gestation, worse at night, palms and soles\\nConcern for obste...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2022 - Girling - Intrah...",
+  "full_data": null
+}
