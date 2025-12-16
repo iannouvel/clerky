@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-04-39-598Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4208,
+  "response_length": 7246,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":1639,\"transcriptPreview\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nPresenting Complaint:\\nPelvic girdle pain (PGP) – symphysis pubis dysfunction (SPD) for 4/52, wors...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\",\\n      \\\"relevance\\\"...",
+  "full_data": null
+}
