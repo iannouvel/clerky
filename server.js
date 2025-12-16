@@ -353,6 +353,32 @@ const app = express();
 const endpointTimings = [];
 const MAX_TIMING_ENTRIES = 100;
 
+// Step timer helper for profiling endpoint internals
+class StepTimer {
+    constructor(endpoint) {
+        this.endpoint = endpoint;
+        this.steps = [];
+        this.startTime = Date.now();
+        this.lastStep = this.startTime;
+    }
+    
+    step(name) {
+        const now = Date.now();
+        const duration = now - this.lastStep;
+        this.steps.push({ name, duration, timestamp: new Date().toISOString() });
+        this.lastStep = now;
+        return duration;
+    }
+    
+    getSteps() {
+        return this.steps;
+    }
+    
+    getTotalTime() {
+        return Date.now() - this.startTime;
+    }
+}
+
 // Request/Response timing middleware for debugging
 app.use((req, res, next) => {
     const startTime = Date.now();
@@ -372,7 +398,8 @@ app.use((req, res, next) => {
             status: res.statusCode,
             duration,
             requestTime: requestTimestamp,
-            responseTime: responseTimestamp
+            responseTime: responseTimestamp,
+            steps: req.stepTimer?.getSteps() || []  // Include step timings if available
         });
         
         // Keep buffer size limited
@@ -14110,9 +14137,11 @@ app.post('/processApprovedGuidelines', authenticateUser, async (req, res) => {
 
 // Endpoint to get all guidelines
 app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
+    // Initialize step timer for profiling
+    const timer = new StepTimer('/getAllGuidelines');
+    req.stepTimer = timer;
+    
     try {
-        // console.log('[DEBUG] getAllGuidelines endpoint called');
-        
         // Check if Firestore is initialized
         if (!db) {
             console.log('[DEBUG] Firestore not initialized, returning empty guidelines with warning');
@@ -14123,10 +14152,11 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
                 message: 'Application running in limited mode without guideline persistence'
             });
         }
+        timer.step('Firestore check');
 
-        // console.log('[DEBUG] Calling getAllGuidelines function');
+        // Fetch all guidelines from Firestore
         const allGuidelines = await getAllGuidelines();
-        // console.log('[DEBUG] getAllGuidelines returned:', allGuidelines.length, 'guidelines');
+        timer.step('Fetch all guidelines');
         
         // Check if we got empty results due to authentication issues
         if (allGuidelines.length === 0) {
@@ -14141,6 +14171,7 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         // Get user's hospital trust preference
         const userId = req.user.uid;
         const userHospitalTrust = await getUserHospitalTrust(userId);
+        timer.step('Get user hospital trust');
         
         // Get user's guideline preferences
         let userPreferences = {
@@ -14164,6 +14195,7 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         } catch (error) {
             console.error('[ERROR] Failed to load user preferences, using defaults:', error);
         }
+        timer.step('Get user preferences');
         
         // Filter and prioritise guidelines based on user's trust and preferences
         // Priority: Local trust guidelines first, then national (filtered by organization preferences)
@@ -14209,9 +14241,11 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
                 otherGuidelines.push(guideline);
             }
         }
+        timer.step('Filter and categorize');
         
         // Combine in priority order: local first, then national, then others
         const sortedGuidelines = [...localGuidelines, ...nationalGuidelines, ...otherGuidelines];
+        timer.step('Sort guidelines');
         
         res.json({ 
             success: true, 
@@ -16312,6 +16346,10 @@ IMPORTANT:
 
 // Determine Insertion Point API endpoint - finds optimal location in clinical note for new text
 app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
+    // Initialize step timer for profiling
+    const timer = new StepTimer('/determineInsertionPoint');
+    req.stepTimer = timer;
+    
     try {
         console.log('[DEBUG] determineInsertionPoint endpoint called');
         const { suggestion, clinicalNote } = req.body;
@@ -16327,6 +16365,7 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
             console.log('[DEBUG] determineInsertionPoint: Missing clinical note');
             return res.status(400).json({ success: false, error: 'Clinical note is required' });
         }
+        timer.step('Validation');
 
         console.log('[DEBUG] determineInsertionPoint request data:', {
             userId,
@@ -16384,6 +16423,7 @@ Context: ${suggestion.context || 'No additional context'}
 Please analyse the clinical note structure and determine the optimal insertion point for this new text.`;
 
         console.log('[DEBUG] determineInsertionPoint: Sending to AI');
+        timer.step('Build prompts');
 
         // Send to AI
         const messages = [
@@ -16392,6 +16432,7 @@ Please analyse the clinical note structure and determine the optimal insertion p
         ];
 
         const aiResponse = await routeToAI({ messages }, userId);
+        timer.step('AI API call');
         
         console.log('[DEBUG] determineInsertionPoint: AI response received', {
             success: !!aiResponse,
@@ -16414,6 +16455,7 @@ Please analyse the clinical note structure and determine the optimal insertion p
             console.error('[DEBUG] determineInsertionPoint: Raw AI response:', aiResponse.content);
             return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
         }
+        timer.step('Parse response');
 
         // Validate response structure
         if (!insertionPoint.section) {
