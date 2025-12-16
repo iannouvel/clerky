@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-28-599Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-15",
+  "token_usage": null,
+  "prompt_length": 2086,
+  "response_length": 2524,
+  "prompt_preview": "{\"prompt\":\"Chunk 15/20\",\"transcriptLength\":1163,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparou...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-postnatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Postnatal Care\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"ni...",
+  "full_data": null
+}
