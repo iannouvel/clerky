@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-20-359Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1034,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x LSCS and anterior low-lying placenta\\n\\nBackground:\\nP...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 26,\n  \"potentiallyRelevantCount\": 39,\n  \"lessRelevantCount\": 52,\n  \"notRelevantCount\": 174\n}...",
+  "full_data": null
+}
