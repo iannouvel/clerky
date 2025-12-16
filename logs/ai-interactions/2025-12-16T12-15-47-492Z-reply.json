@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-47-492Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-11",
+  "token_usage": null,
+  "prompt_length": 1369,
+  "response_length": 2282,
+  "prompt_preview": "{\"prompt\":\"Chunk 11/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"gtg-2016-postmenopausal-ovarian-cysts-pdf: GTG 2016 - Postmenopausal Ovarian C...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2016-postmenopausal-ovarian-cysts-pdf\\\", \\\"title\\\": \\\"GTG 2016 - Postmenopausal Ovari...",
+  "full_data": null
+}
