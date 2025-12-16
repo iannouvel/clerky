@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-38-768Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-36",
+  "token_usage": null,
+  "prompt_length": 1225,
+  "response_length": 1195,
+  "prompt_preview": "{\"prompt\":\"Chunk 36/37\",\"transcriptLength\":991,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Synt...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"uhsx-retained-placenta-protocol-pdf\\\", \\\"title\\\": \\\"UHSx Retained Placenta protocol\\\", \\\"relevance\\\": \\\"1.0\\\"}],\\n  \\\"potential...",
+  "full_data": null
+}
