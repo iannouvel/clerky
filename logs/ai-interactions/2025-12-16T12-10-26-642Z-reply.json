@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-26-642Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 1772,
+  "response_length": 2180,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/20\",\"transcriptLength\":1163,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparous...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"cg23001-support-infant-feeding-in-ccu-pdf\\\", \\\"title\\\": \\\"Support Infant Feeding in CCU\\\"...",
+  "full_data": null
+}
