@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T21-21-15-082Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4216,
+  "response_length": 6112,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":675,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nCTG findings suspicious for fetal compromise\\nReduced fetal movements (RFM) x 24 hours\\n\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2022-fetal-monitoring-in-labour-pdf\\\", \\\"title\\\": \\\"NICE 2022 - Fetal monitoring in labour\\\", \\\"relevance\\\": \\\"0.95\\...",
+  "full_data": null
+}
