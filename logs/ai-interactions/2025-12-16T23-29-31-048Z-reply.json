@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-29-31-048Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1044,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnancy to date. Anomaly scan at 20/40 reported low-lyin...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 290,\n  \"mostRelevantCount\": 43,\n  \"potentiallyRelevantCount\": 28,\n  \"lessRelevantCount\": 60,\n  \"notRelevantCount\": 159\n}...",
+  "full_data": null
+}
