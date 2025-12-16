@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-26-156Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1772,
+  "response_length": 2112,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/20\",\"transcriptLength\":1163,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparou...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [{\\\"id\\\": \\\"risk-assessment-obstetric-vte-non-maternity-wards-pdf\\\", \\\"title\\\": \\\"...",
+  "full_data": null
+}
