@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-40-56-067Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-22",
+  "token_usage": null,
+  "prompt_length": 1481,
+  "response_length": 1456,
+  "prompt_preview": "{\"prompt\":\"Chunk 22/37\",\"transcriptLength\":905,\"transcriptPreview\":\"32yo, G2P1 (prev SVD), 32+4, BMI 35, Rh+ve\\n\\nIssues:\\nSuspected placental insufficiency - reduced fetal growth velocity noted on se...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"mp010-anti-d-rhesus-negative-women-pdf\\\", \\\"title\\\": \\\"MP010 Anti D Rhesus Negative Women\\\", \\\"...",
+  "full_data": null
+}
