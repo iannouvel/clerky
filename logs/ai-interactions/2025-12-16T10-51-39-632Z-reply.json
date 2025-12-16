@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-39-632Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 1354,
+  "response_length": 1376,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/37\",\"transcriptLength\":991,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Synt...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"hyponatraemia-in-labour-guideline-pdf\\\",...",
+  "full_data": null
+}
