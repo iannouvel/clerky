@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-11-27-767Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-21",
+  "token_usage": null,
+  "prompt_length": 1321,
+  "response_length": 1341,
+  "prompt_preview": "{\"prompt\":\"Chunk 21/37\",\"transcriptLength\":1139,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nPrimary postpartum haemorrhage (PPH) secondary to uterine atony following SVD\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"lone-worker-checklist-pdf\\\", \\\"title\\\": ...",
+  "full_data": null
+}
