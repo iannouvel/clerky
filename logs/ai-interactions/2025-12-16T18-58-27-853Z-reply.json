@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-58-27-853Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3885,
+  "response_length": 5758,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1007,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nAntenatal finding of fetal pyelectasis/pelviectasis\\n\\nBackground:\\nAnomaly scan at 20/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp002-fetal-anomaly-screening-programme-sr-sept-pdf\\\", \\\"title\\\": \\\"MP002 Fetal Anomaly Screening Programme SR Sept\\\", \\\"...",
+  "full_data": null
+}
