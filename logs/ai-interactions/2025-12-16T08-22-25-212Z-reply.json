@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-22-25-212Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-9",
+  "token_usage": null,
+  "prompt_length": 1302,
+  "response_length": 1288,
+  "prompt_preview": "{\"prompt\":\"Chunk 9/37\",\"transcriptLength\":960,\"transcriptPreview\":\"38yo, G1P0, 10+2, BMI 31, Rh+ve\\n\\nIssues:\\nAdvanced maternal age (AMA) - increased risk of aneuploidy and pregnancy complications\\n\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\\\", \\\"title\\\": \\\"CG1198 Management ...",
+  "full_data": null
+}
