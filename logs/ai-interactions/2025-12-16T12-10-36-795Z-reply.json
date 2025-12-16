@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-36-795Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1265,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparous, breastfeeding well-established\\nPresented to commun...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 15,\n  \"potentiallyRelevantCount\": 13,\n  \"lessRelevantCount\": 32,\n  \"notRelevantCount\": 231\n}...",
+  "full_data": null
+}
