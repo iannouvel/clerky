@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-03-583Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-37",
+  "token_usage": null,
+  "prompt_length": 830,
+  "response_length": 569,
+  "prompt_preview": "{\"prompt\":\"Chunk 37/37\",\"transcriptLength\":935,\"transcriptPreview\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x L...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-role-of-the-rn-within-maternity-pdf...",
+  "full_data": null
+}
