@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-36-11-069Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1284,
+  "response_length": 1261,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/37\",\"transcriptLength\":935,\"transcriptPreview\":\"32yo, G3P2 (2x prev LSCS), 30+2, BMI 35\\n\\nIssues:\\nPlacenta accreta spectrum (PAS) suspected on USS\\nHigh risk due to previous 2x L...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-reducing-the-risk-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Reducing the risk...",
+  "full_data": null
+}
