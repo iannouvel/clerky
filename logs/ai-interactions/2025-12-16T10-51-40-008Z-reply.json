@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-40-008Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1265,
+  "response_length": 1240,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/37\",\"transcriptLength\":991,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Synt...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"gtg-2015-blood-transfusion-in-obstetrics-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Blood transfusion in Ob...",
+  "full_data": null
+}
