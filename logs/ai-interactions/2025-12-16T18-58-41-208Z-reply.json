@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T18-58-41-208Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5326,
+  "response_length": 6975,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1007,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nAntenatal finding of fetal pyelectasis/pelviectasis\\n\\nBackground:\\nAnomaly scan at 20/40...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2024-morris-small-for-gestational-age-and-fetal-growth-restriction-pdf\\\", \\\"title\\\": \\\"BJO...",
+  "full_data": null
+}
