@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-04-55-597Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4390,
+  "response_length": 7426,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1639,\"transcriptPreview\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nPresenting Complaint:\\nPelvic girdle pain (PGP) – symphysis pubis dysfunction (SPD) for 4/52, wors...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\",\\n      \\\"title\\\": \\\"GTG 2012 - Initial Mx of Chronic P...",
+  "full_data": null
+}
