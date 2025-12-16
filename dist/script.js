@@ -5652,13 +5652,10 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
 function replaceSectionContent(clinicalNote, sectionName, subsectionName, oldContent, newContent) {
     console.log('[DEBUG] replaceSectionContent:', { sectionName, subsectionName, oldContentLength: oldContent.length, newContentLength: newContent.length });
     
-    // Light normalisation: for action-oriented sections like Plan / Monitoring / Recommendation,
-    // collapse extra blank/whitespace-only lines inside the section content so added items sit
-    // flush with preceding items rather than being separated by an empty paragraph.
-    const normaliseSpacingSections = ['Plan', 'Monitoring & Follow-Up', 'Recommendation'];
-    if (normaliseSpacingSections.includes(sectionName)) {
-        newContent = newContent.replace(/\n\s*\n/g, '\n');
-    }
+    // Normalise spacing: collapse extra blank/whitespace-only lines inside the section content
+    // so added items sit flush with preceding items rather than being separated by empty lines.
+    // Apply to all sections to ensure consistent formatting when incorporating suggestions.
+    newContent = newContent.replace(/\n\s*\n/g, '\n');
     
     // Extract the section to get boundaries
     const sectionInfo = extractSectionContent(clinicalNote, sectionName, subsectionName);
@@ -6742,7 +6739,7 @@ window.handleCurrentSuggestionAction = async function(action) {
                     
                     if (!sectionInfo) {
                         console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
-                        newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                        newContent = currentContent + '\n' + suggestion.suggestedText;
                         setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
                     } else {
                         // Call AI to incorporate suggestion into section
@@ -6782,8 +6779,8 @@ window.handleCurrentSuggestionAction = async function(action) {
                     }
                 } catch (error) {
                     console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
-                    // Fallback to simple append
-                    newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                    // Fallback to simple append - use single newline to avoid inappropriate blank lines
+                    newContent = currentContent + '\n' + suggestion.suggestedText;
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
                 }
             } else if (suggestion.originalText) {
@@ -6820,7 +6817,7 @@ window.handleCurrentSuggestionAction = async function(action) {
 
                         if (!sectionInfo) {
                             console.error('[DEBUG] handleCurrentSuggestionAction (modification): Could not extract section, falling back to simple append');
-                            newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                            newContent = currentContent + '\n' + suggestion.suggestedText;
                             setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (Fallback Append)', [
                                 { findText: '', replacementText: suggestion.suggestedText }
                             ]);
@@ -6865,7 +6862,8 @@ window.handleCurrentSuggestionAction = async function(action) {
                     } catch (error) {
                         console.error('[DEBUG] handleCurrentSuggestionAction (modification): Error incorporating via AI, falling back to append:', error);
                         // Final fallback: append suggested text so it is at least present in the note
-                        newContent = currentContent + '\n\n' + suggestion.suggestedText;
+                        // Use single newline to avoid inappropriate blank lines
+                        newContent = currentContent + '\n' + suggestion.suggestedText;
                         setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Fallback Append)', [
                             { findText: '', replacementText: suggestion.suggestedText }
                         ]);
@@ -7010,7 +7008,7 @@ window.confirmCurrentModification = async function() {
 
                     if (!sectionInfo) {
                         console.error('[DEBUG] confirmCurrentModification: Could not extract section, falling back to simple append');
-                        newContent = currentContent + '\n\n' + modifiedText;
+                        newContent = currentContent + '\n' + modifiedText;
                         setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (Fallback Append)', [
                             { findText: '', replacementText: modifiedText }
                         ]);
@@ -7053,7 +7051,8 @@ window.confirmCurrentModification = async function() {
                     }
                 } catch (error) {
                     console.error('[DEBUG] confirmCurrentModification: Error incorporating via AI, falling back to append:', error);
-                    newContent = currentContent + '\n\n' + modifiedText;
+                    // Use single newline to avoid inappropriate blank lines
+                    newContent = currentContent + '\n' + modifiedText;
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Fallback Append)', [
                         { findText: '', replacementText: modifiedText }
                     ]);
@@ -7339,7 +7338,8 @@ function handleSuggestionAction(suggestionId, action) {
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
             // Addition: append the suggested text to the end of the document
-            const spacing = currentContent.trim() ? '\n\n' : '';
+            // Use single newline to avoid inappropriate blank lines between content
+            const spacing = currentContent.trim() ? '\n' : '';
             newContent = currentContent + spacing + suggestion.suggestedText;
             replacements = [{
                 findText: '',
