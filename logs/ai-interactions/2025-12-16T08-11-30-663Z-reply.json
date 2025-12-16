@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-11-30-663Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1691,
+  "response_length": 1531,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/37\",\"transcriptLength\":1139,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nPrimary postpartum haemorrhage (PPH) secondary to uterine atony following SVD\\n\\nBackgro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"Prevention and Management of Postpartum Haemo...",
+  "full_data": null
+}
