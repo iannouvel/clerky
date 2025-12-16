@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-46-910Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1095,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Syntometrine given\\nNo significant PPH at present (EBL ~3...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 13,\n  \"potentiallyRelevantCount\": 28,\n  \"lessRelevantCount\": 44,\n  \"notRelevantCount\": 206\n}...",
+  "full_data": null
+}
