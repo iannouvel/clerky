@@ -9988,7 +9988,9 @@ function renderChunkDistributionProvidersList(enabledProviders) {
 
     AVAILABLE_MODELS.forEach((model) => {
         const row = document.createElement('div');
-        row.className = 'model-preference-item';
+        // Important: do NOT use 'model-preference-item' here, otherwise saving model order
+        // will accidentally include these rows and break /updateModelPreferences.
+        row.className = 'chunk-provider-item';
         row.style.cursor = 'default';
         row.draggable = false;
 
@@ -10165,7 +10167,7 @@ function renderModelPreferencesList(modelOrder) {
 
 // Update the number badges after reordering
 function updateModelPreferenceNumbers() {
-    const items = document.querySelectorAll('.model-preference-item');
+    const items = document.querySelectorAll('#modelPreferencesList .model-preference-item');
     items.forEach((item, index) => {
         const numberEl = item.querySelector('.model-preference-number');
         if (numberEl) {
@@ -10176,8 +10178,8 @@ function updateModelPreferenceNumbers() {
 
 // Get current model order from the DOM
 function getCurrentModelOrder() {
-    const items = Array.from(document.querySelectorAll('.model-preference-item'));
-    return items.map(item => item.dataset.modelName);
+    const items = Array.from(document.querySelectorAll('#modelPreferencesList .model-preference-item'));
+    return items.map(item => item.dataset.modelName).filter(Boolean);
 }
 
 async function showPreferencesModal() {
