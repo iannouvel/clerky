@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-49-871Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1792,
+  "response_length": 2531,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"bjog-2023-regan-recurrent-miscarriage-pdf: Recurrent Miscarriage\",\"bjog-2024-bu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2023-regan-recurrent-miscarriage-pd...",
+  "full_data": null
+}
