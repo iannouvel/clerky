@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-50-845Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-18",
+  "token_usage": null,
+  "prompt_length": 1699,
+  "response_length": 2606,
+  "prompt_preview": "{\"prompt\":\"Chunk 18/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"shoulder-dystocia-guideline-uhsx-pdf: Shoulder Dystocia Guideline UHSx\",\"shoul...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"shoulder-dystocia-guideline-uhsx-pdf\\\", ...",
+  "full_data": null
+}
