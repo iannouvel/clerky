@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T21-21-20-656Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4398,
+  "response_length": 6388,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":675,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 31, Rh+ve\\n\\nIssues:\\nCTG findings suspicious for fetal compromise\\nReduced fetal movements (RFM) x 24 hours\\n\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-reduced-fetal-movements-pdf\\\", \\\"title\\\": \\\"RCOG Green-top Guideline No. 57 - Reduced Fetal Movements\\\", \\\"relev...",
+  "full_data": null
+}
