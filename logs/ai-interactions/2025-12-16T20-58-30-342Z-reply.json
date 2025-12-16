@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T20-58-30-342Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4387,
+  "response_length": 6271,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1117,\"transcriptPreview\":\"28yo, G1P0, 8+2, BMI 24, Rh+ve\\n\\nIssues:\\nNausea and vomiting of pregnancy (NVP) - symptoms uncontrolled with first-line measures, i...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"joint-rcog-and-bsge-guideline-laparoscopy-in-pregnancy-pdf\\\", \\\"title\\\": \\\"Joint RCOG and...",
+  "full_data": null
+}
