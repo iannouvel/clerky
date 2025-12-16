@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-03-51-125Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-20",
+  "token_usage": null,
+  "prompt_length": 1352,
+  "response_length": 1376,
+  "prompt_preview": "{\"prompt\":\"Chunk 20/37\",\"transcriptLength\":1068,\"transcriptPreview\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and saf...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"hyponatraemia-in-labour-guideline-pdf\\\",...",
+  "full_data": null
+}
