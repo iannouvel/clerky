@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-51-39-593Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-19",
+  "token_usage": null,
+  "prompt_length": 1286,
+  "response_length": 1260,
+  "prompt_preview": "{\"prompt\":\"Chunk 19/37\",\"transcriptLength\":991,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31\\n\\nIssues:\\nRetained placenta following SVD 45 minutes ago\\nActive management of 3rd stage with 1mg IM Synt...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"gynae-cepod-pathway-pdf\\\", \\\"title\\\": \\\"Gynae CEPOD pathway\\\", \\\"relevance\\\": \\\"0.95\\\"}],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\":...",
+  "full_data": null
+}
