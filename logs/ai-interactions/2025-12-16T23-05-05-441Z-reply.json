@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-05-05-441Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1753,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nPresenting Complaint:\\nPelvic girdle pain (PGP) – symphysis pubis dysfunction (SPD) for 4/52, worsening over last 10/7. Pain localised to pubic symphy...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 13,\n  \"potentiallyRelevantCount\": 20,\n  \"lessRelevantCount\": 59,\n  \"notRelevantCount\": 199\n}...",
+  "full_data": null
+}
