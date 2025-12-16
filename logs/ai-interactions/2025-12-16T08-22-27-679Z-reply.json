@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-22-27-679Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-33",
+  "token_usage": null,
+  "prompt_length": 1471,
+  "response_length": 1508,
+  "prompt_preview": "{\"prompt\":\"Chunk 33/37\",\"transcriptLength\":960,\"transcriptPreview\":\"38yo, G1P0, 10+2, BMI 31, Rh+ve\\n\\nIssues:\\nAdvanced maternal age (AMA) - increased risk of aneuploidy and pregnancy complications\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"sp22003-maternity-telephone-triage-sop-pdf\\\", \\\"title\\\": \\\"SP22003 Maternity Telephone Tr...",
+  "full_data": null
+}
