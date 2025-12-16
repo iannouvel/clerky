@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-03-52-389Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 1655,
+  "response_length": 1510,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/37\",\"transcriptLength\":1068,\"transcriptPreview\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and safe...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [{\\\"id\\\": \\\"bjog-2019-chu-maternal-collapse-in-pregnancy-and-the-puerperium-pdf\\\", \\\"title\\\": \\\"Maternal Co...",
+  "full_data": null
+}
