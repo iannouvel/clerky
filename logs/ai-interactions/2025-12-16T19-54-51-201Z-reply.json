@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T19-54-51-201Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5322,
+  "response_length": 6770,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":933,\"transcriptPreview\":\"28yo, G1P0, 25+2, BMI 24, Rh+ve\\n\\nIssues:\\nFetal gastroschisis diagnosed on 20-week anomaly scan\\n\\nBackground:\\nDiagnosis confirmed ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\", \\\"title\\\": \\\"Care of Women Presenting with Suspected Preterm Prelabour Ruptu...",
+  "full_data": null
+}
