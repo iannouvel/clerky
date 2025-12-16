@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T08-11-29-391Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-30",
+  "token_usage": null,
+  "prompt_length": 1337,
+  "response_length": 1314,
+  "prompt_preview": "{\"prompt\":\"Chunk 30/37\",\"transcriptLength\":1139,\"transcriptPreview\":\"28yo, G2P1, 39+2, BMI 31, Rh+ve\\n\\nIssues:\\nPrimary postpartum haemorrhage (PPH) secondary to uterine atony following SVD\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [{\\\"id\\\": \\\"oxytocin-infusion-regime-pdf\\\", \\\"title\\\": \\\"Oxytocin infusion regime\\\", \\\"relevance\\\": \\\"0.90\\\"}],\\n  \\\"potentiallyRelevant\\\":...",
+  "full_data": null
+}
