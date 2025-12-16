@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-50-251Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-10",
+  "token_usage": null,
+  "prompt_length": 1367,
+  "response_length": 2194,
+  "prompt_preview": "{\"prompt\":\"Chunk 10/20\",\"transcriptLength\":30,\"transcriptPreview\":\"what is the treatment for PET?...\",\"chunkGuidelines\":[\"gtg-2014-endometrial-hyperplasia-pdf: GTG 2014 - Endometrial Hyperplasia\",\"gtg...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [{\\\"id\\\": \\\"gtg-2014-endometrial-hyperplasia-pdf\\\", \\\"titl...",
+  "full_data": null
+}
