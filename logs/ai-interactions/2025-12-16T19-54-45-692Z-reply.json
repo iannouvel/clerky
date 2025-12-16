@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T19-54-45-692Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4088,
+  "response_length": 5993,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":933,\"transcriptPreview\":\"28yo, G1P0, 25+2, BMI 24, Rh+ve\\n\\nIssues:\\nFetal gastroschisis diagnosed on 20-week anomaly scan\\n\\nBackground:\\nDiagnosis confirmed ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022-pdf\\\", \\\"title\\\": \\\"Sussex Regional In utero transfer to RSCH SOP V...",
+  "full_data": null
+}
