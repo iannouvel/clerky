@@ -1729,11 +1729,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const result = await response.json();
                     console.log('✅ [CLINICAL_INIT] Initialization completed:', result);
                     
-                    const categoriesText = Object.entries(result.summary.categoriesWithCounts || {})
-                        .map(([cat, count]) => `- ${cat}: ${count} conditions`).join('\n');
                     const message = `Clinical conditions initialized successfully!\n\n` +
                         `Total conditions: ${result.totalConditions}\n` +
-                        `Categories:\n` + categoriesText;
+                        `Categories:\n` +
+                        result.summary.map(cat => `- ${cat.category}: ${cat.count} conditions`).join('\n');
                     
                     statusDiv.textContent = message;
                     alert(message);
