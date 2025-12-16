@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T11-03-51-961Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-17",
+  "token_usage": null,
+  "prompt_length": 1325,
+  "response_length": 1349,
+  "prompt_preview": "{\"prompt\":\"Chunk 17/37\",\"transcriptLength\":1068,\"transcriptPreview\":\"28yo, G1P1, 2/7 post SVD, BMI 24\\n\\nIssues:\\nAcute onset of psychotic symptoms postpartum, requiring psychiatric assessment and saf...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2010-malaria-in-pregnancy-prevention...",
+  "full_data": null
+}
