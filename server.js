@@ -5377,7 +5377,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         availableProviders = envAvailableProviders;
     }
     
-    console.log(`[DEBUG] Distributing ${chunks.length} chunks across ${availableProviders.length} providers:`, availableProviders);
+    console.log(`[CHUNK DISTRIBUTION] User ${userId} enabled providers: ${enabledChunkProviders.join(', ')}`);
+    console.log(`[CHUNK DISTRIBUTION] Env-available providers: ${envAvailableProviders.join(', ')}`);
+    console.log(`[CHUNK DISTRIBUTION] Using ${availableProviders.length} providers for ${chunks.length} chunks: ${availableProviders.join(', ')}`);
     
     // Process all chunks concurrently, distributing across providers
     const chunkPromises = chunks.map(async (chunk, index) => {

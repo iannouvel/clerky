@@ -9935,11 +9935,15 @@ async function fetchChunkDistributionProviders() {
 
         const data = await response.json().catch(() => ({}));
         if (data && data.success && Array.isArray(data.providers)) {
+            // Only return the providers the user has explicitly enabled
+            // Don't add back missing providers - that would defeat the purpose of deselecting them
             const valid = data.providers.filter(p => AVAILABLE_MODELS.some(m => m.name === p));
-            const missing = AVAILABLE_MODELS.map(m => m.name).filter(p => !valid.includes(p));
-            return [...valid, ...missing];
+            console.log('[CHUNK PREF] Loaded enabled providers:', valid);
+            return valid;
         }
 
+        // Default: all providers enabled (for new users who haven't set preferences)
+        console.log('[CHUNK PREF] No saved preferences, using all providers');
         return AVAILABLE_MODELS.map(m => m.name);
     } catch (error) {
         console.error('[CHUNK PREF] Error fetching chunk distribution providers:', error);
