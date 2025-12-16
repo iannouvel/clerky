@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-10-31-592Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2278,
+  "response_length": 2718,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/20\",\"transcriptLength\":1163,\"transcriptPreview\":\"28yo, G1P0, 38+2, BMI 24\\n\\nIssues:\\nLeft breast mastitis, not responding to initial oral flucloxacillin\\n\\nBackground:\\nPrimiparous...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2024-lissauer-maternal-sepsis-pdf\\\", \\\"title\\\": \\\"BJOG - 2024 - Lissauer - Maternal Sepsis\\\", \\\"relevance\\\": \\\"0.95\\...",
+  "full_data": null
+}
