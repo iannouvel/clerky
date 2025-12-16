@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T10-29-56-471Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-26",
+  "token_usage": null,
+  "prompt_length": 1392,
+  "response_length": 1417,
+  "prompt_preview": "{\"prompt\":\"Chunk 26/37\",\"transcriptLength\":1265,\"transcriptPreview\":\"28yo, G1P0, 28+2, BMI 31, Smoker (10/day)\\n\\nIssues:\\nConfirmed left lower limb DVT in pregnancy, requiring therapeutic anticoagula...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [],\\n  \\\"lessRelevant\\\": [],\\n  \\\"notRelevant\\\": [\\n    {\\\"id\\\": \\\"mp055-perinatal-collapse-in-pregnancy-pu...",
+  "full_data": null
+}
