@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T12-15-56-989Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 107,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"what is the treatment for PET?\",\"guidelinesCount\":291,\"chunksProcessed\":20,\"chunksFailed\":0}...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 291,\n  \"mostRelevantCount\": 2,\n  \"potentiallyRelevantCount\": 3,\n  \"lessRelevantCount\": 13,\n  \"notRelevantCount\": 273\n}...",
+  "full_data": null
+}
