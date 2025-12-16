@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-16T23-04-39-173Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4016,
+  "response_length": 7014,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1639,\"transcriptPreview\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nPresenting Complaint:\\nPelvic girdle pain (PGP) – symphysis pubis dysfunction (SPD) for 4/52, wors...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"cg20011-maternity-pressure-area-care-guideline-pdf\\\",\\n      \\\"title\\\": \\\"CG20011 Maternity Pressure Are...",
+  "full_data": null
+}
