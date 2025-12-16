@@ -5204,9 +5204,14 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 }
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
+  // Initialize step timer for profiling
+  const timer = new StepTimer('/findRelevantGuidelines');
+  req.stepTimer = timer;
+  
   try {
     const { transcript, guidelinesPayload, anonymisationInfo, scope, hospitalTrust } = req.body;
     const userId = req.user.uid;
+    timer.step('Parse request');
     
     // Handle optimized guidelines payload
     let guidelines = [];
@@ -5225,8 +5230,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         
         // If we only have partial data, we need to get full guidelines from Firestore
         if (guidelines.length < guidelinesPayload.totalCount) {
-          console.log('[CACHE] Partial payload received, loading full guidelines from Firestore...');
-                     const fullGuidelines = await getAllGuidelines();
+          console.log('[CACHE] Partial payload received, loading full guidelines from cache...');
+                     const fullGuidelines = await getCachedGuidelines();
           guidelines = fullGuidelines;
         }
       } else {
@@ -5234,10 +5239,11 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         guidelines = guidelinesPayload.newGuidelines || [];
       }
     } else {
-      // Fallback: load guidelines from Firestore if no payload
-      console.log('[CACHE] No guidelines payload, loading from Firestore...');
-             guidelines = await getAllGuidelines();
+      // Fallback: load guidelines from cache if no payload
+      console.log('[CACHE] No guidelines payload, loading from cache...');
+             guidelines = await getCachedGuidelines();
     }
+    timer.step('Load guidelines');
     
     // Apply scope filtering if specified
     if (scope) {
@@ -5276,6 +5282,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
       
       console.log('[SCOPE_FILTER] After filtering:', guidelines.length, 'guidelines');
     }
+    timer.step('Apply filters');
     
     // Log anonymisation information if provided
     if (anonymisationInfo) {
@@ -5291,7 +5298,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[DEBUG] Processing ${guidelines.length} guidelines in chunks`);
     
     // Configuration - reduced chunk size due to enhanced guideline information
-    const CHUNK_SIZE = 8; // Safe token limit per chunk with enhanced prompts
+    const CHUNK_SIZE = 15; // Increased from 8 to reduce AI calls (290 guidelines / 15 = ~20 chunks instead of ~36)
     const chunks = [];
     
     // Split guidelines into chunks
@@ -5300,6 +5307,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     }
     
     console.log(`[DEBUG] Created ${chunks.length} chunks of max ${CHUNK_SIZE} guidelines each`);
+    timer.step('Create chunks');
     
     // Process all chunks concurrently
     const chunkPromises = chunks.map(async (chunk, index) => {
@@ -5376,6 +5384,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         .length;
     
     console.log(`[DEBUG] Processed ${successfulResults.length}/${chunks.length} chunks successfully`);
+    timer.step(`Process ${chunks.length} AI chunks`);
     
     if (successfulResults.length === 0) {
         throw new Error('All chunks failed to process');
@@ -5383,6 +5392,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     
     // Merge all categorized results
     const mergedCategories = mergeChunkResults(successfulResults);
+    timer.step('Merge results');
     
     // Log the interaction
     try {
@@ -9705,6 +9715,37 @@ async function getGuideline(id) {
   };
 }
 
+// In-memory cache for guidelines to reduce Firestore calls
+const guidelinesCache = {
+    data: null,
+    timestamp: null,
+    TTL: 5 * 60 * 1000 // 5 minutes
+};
+
+// Get guidelines from cache or fetch from Firestore
+async function getCachedGuidelines() {
+    const now = Date.now();
+    if (guidelinesCache.data && guidelinesCache.timestamp && 
+        (now - guidelinesCache.timestamp) < guidelinesCache.TTL) {
+        console.log('[CACHE] Returning cached guidelines:', guidelinesCache.data.length, 'guidelines');
+        return guidelinesCache.data;
+    }
+    
+    console.log('[CACHE] Cache miss or expired, fetching from Firestore...');
+    const guidelines = await getAllGuidelines();
+    guidelinesCache.data = guidelines;
+    guidelinesCache.timestamp = now;
+    console.log('[CACHE] Guidelines cached:', guidelines.length, 'guidelines');
+    return guidelines;
+}
+
+// Function to invalidate guidelines cache (call after updates)
+function invalidateGuidelinesCache() {
+    guidelinesCache.data = null;
+    guidelinesCache.timestamp = null;
+    console.log('[CACHE] Guidelines cache invalidated');
+}
+
 async function getAllGuidelines() {
   try {
     // console.log('[DEBUG] getAllGuidelines function called');
@@ -11915,10 +11956,10 @@ app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
         const userId = req.user.uid;
         console.log('[DISCOVERY] Starting hybrid guideline discovery...');
         
-        // Load existing guidelines from Firestore
+        // Load existing guidelines from cache
         let allGuidelines = [];
         try {
-            allGuidelines = await getAllGuidelines();
+            allGuidelines = await getCachedGuidelines();
         } catch (_) {
             allGuidelines = [];
         }
@@ -14154,8 +14195,8 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
         }
         timer.step('Firestore check');
 
-        // Fetch all guidelines from Firestore
-        const allGuidelines = await getAllGuidelines();
+        // Fetch all guidelines from cache (or Firestore if cache expired)
+        const allGuidelines = await getCachedGuidelines();
         timer.step('Fetch all guidelines');
         
         // Check if we got empty results due to authentication issues
@@ -14168,34 +14209,32 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
             });
         }
         
-        // Get user's hospital trust preference
+        // Get user's hospital trust and preferences in PARALLEL for better performance
         const userId = req.user.uid;
-        const userHospitalTrust = await getUserHospitalTrust(userId);
-        timer.step('Get user hospital trust');
         
-        // Get user's guideline preferences
+        // Default preferences
         let userPreferences = {
             enabledOrganizations: ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG'],
             enabledTrusts: [],
             includeAllNational: true
         };
         
-        try {
-            if (db) {
-                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
-                if (userPrefsDoc.exists) {
-                    const data = userPrefsDoc.data();
-                    userPreferences = {
-                        enabledOrganizations: data.enabledOrganizations || userPreferences.enabledOrganizations,
-                        enabledTrusts: data.enabledTrusts || userPreferences.enabledTrusts,
-                        includeAllNational: data.includeAllNational !== undefined ? data.includeAllNational : userPreferences.includeAllNational
-                    };
-                }
-            }
-        } catch (error) {
-            console.error('[ERROR] Failed to load user preferences, using defaults:', error);
+        // Run both queries in parallel
+        const [userHospitalTrust, userPrefsDoc] = await Promise.all([
+            getUserHospitalTrust(userId),
+            db ? db.collection('userPreferences').doc(userId).get().catch(() => null) : Promise.resolve(null)
+        ]);
+        
+        // Process user preferences if found
+        if (userPrefsDoc && userPrefsDoc.exists) {
+            const data = userPrefsDoc.data();
+            userPreferences = {
+                enabledOrganizations: data.enabledOrganizations || userPreferences.enabledOrganizations,
+                enabledTrusts: data.enabledTrusts || userPreferences.enabledTrusts,
+                includeAllNational: data.includeAllNational !== undefined ? data.includeAllNational : userPreferences.includeAllNational
+            };
         }
-        timer.step('Get user preferences');
+        timer.step('Get user trust & preferences (parallel)');
         
         // Filter and prioritise guidelines based on user's trust and preferences
         // Priority: Local trust guidelines first, then national (filtered by organization preferences)
@@ -15838,6 +15877,10 @@ async function getAllGuidelines() {
 }
 // Dynamic Advice API endpoint - converts analysis into interactive suggestions
 app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
+    // Initialize step timer for profiling
+    const timer = new StepTimer('/dynamicAdvice');
+    req.stepTimer = timer;
+    
     try {
         console.log('[DEBUG] dynamicAdvice endpoint called');
         const { transcript, analysis, guidelineId, guidelineTitle } = req.body;
@@ -15853,6 +15896,7 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
             console.log('[DEBUG] dynamicAdvice: Missing analysis');
             return res.status(400).json({ success: false, error: 'Analysis is required' });
         }
+        timer.step('Validation');
 
         console.log('[DEBUG] dynamicAdvice request data:', {
             userId,
@@ -15931,6 +15975,7 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
         } else {
             console.log(`[DEBUG] dynamicAdvice: No guidelineId provided, proceeding without guideline content`);
         }
+        timer.step('Fetch guideline content');
 
         // Create AI prompt to convert analysis into structured suggestions
         const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
@@ -16069,6 +16114,7 @@ IMPORTANT:
             hasGuidelineContent: guidelineContent.length > 0,
             guidelineContentSample: guidelineContent.substring(0, 200) + '...'
         });
+        timer.step('Build prompts');
 
         // Send to AI with lower temperature for more accurate quote extraction
         // Use retry logic with fallback to semantically compressed content if context length exceeded
@@ -16180,6 +16226,7 @@ IMPORTANT:
             contentLength: aiResponse?.content?.length,
             aiProvider: aiResponse?.ai_provider
         });
+        timer.step('AI API call');
         
         if (!aiResponse || !aiResponse.content) {
             console.error('[DEBUG] dynamicAdvice: Invalid AI response:', aiResponse);
@@ -16259,6 +16306,8 @@ IMPORTANT:
             }
         }
 
+        timer.step('Parse response');
+        
         // Add unique session ID for tracking user decisions
         const sessionId = `advice_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
         
@@ -16283,6 +16332,7 @@ IMPORTANT:
             console.error('[DEBUG] dynamicAdvice: Database storage error:', dbError.message);
             // Continue without failing the request
         }
+        timer.step('Store session');
 
         // Log the AI interaction
         try {
@@ -16886,6 +16936,10 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
 
 // Incorporate Suggestion endpoint - intelligently adds suggestion to section content
 app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
+    // Initialize step timer for profiling
+    const timer = new StepTimer('/incorporateSuggestion');
+    req.stepTimer = timer;
+    
     try {
         console.log('[DEBUG] incorporateSuggestion endpoint called');
         const { sectionName, subsectionName, currentSectionContent, suggestionText, originalText } = req.body;
@@ -16906,6 +16960,7 @@ app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
             console.log('[DEBUG] incorporateSuggestion: Missing suggestion text');
             return res.status(400).json({ success: false, error: 'Suggestion text is required' });
         }
+        timer.step('Validation');
 
         console.log('[DEBUG] incorporateSuggestion request data:', {
             userId,
@@ -16987,6 +17042,7 @@ ${originalText}
 Please incorporate this suggestion into the section content, preserving existing formatting and inserting the suggestion text exactly as provided.`;
 
         console.log('[DEBUG] incorporateSuggestion: Sending to AI');
+        timer.step('Build prompts');
 
         // Send to AI
         const messages = [
@@ -16995,6 +17051,7 @@ Please incorporate this suggestion into the section content, preserving existing
         ];
 
         const aiResponse = await routeToAI({ messages }, userId);
+        timer.step('AI API call');
         
         console.log('[DEBUG] incorporateSuggestion: AI response received', {
             success: !!aiResponse,
@@ -17021,6 +17078,8 @@ Please incorporate this suggestion into the section content, preserving existing
             return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
         }
 
+        timer.step('Parse response');
+        
         // Validate response structure
         if (!result.modifiedSectionContent) {
             console.error('[DEBUG] incorporateSuggestion: Invalid result structure:', result);
