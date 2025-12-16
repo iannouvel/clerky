@@ -2852,38 +2852,39 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
 
                 tbody.innerHTML = data.timings.map((t, idx) => {
-                const durationColor = t.duration > 10000 ? '#dc3545' :
-                                     t.duration > 3000 ? '#ff9800' : '#28a745';
-                const statusColor = t.status >= 400 ? '#dc3545' : '#28a745';
-                const time = new Date(t.requestTime).toLocaleTimeString();
-                const shortEndpoint = t.endpoint.length > 50 ? t.endpoint.substring(0, 47) + '...' : t.endpoint;
-                const hasSteps = t.steps && t.steps.length > 0;
-                const expandIcon = hasSteps ? '<span class="expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
-                
-                // Create steps row HTML if steps exist
-                const stepsRowHtml = hasSteps ? `
-                    <tr id="steps-row-${idx}" class="steps-row" style="display:none;background:#f8f9fa;">
-                        <td colspan="5" style="padding:8px 8px 8px 30px;">
-                            <div style="font-size:12px;color:#666;">
-                                ${t.steps.map(s => {
-                                    const stepColor = s.duration > 5000 ? '#dc3545' : s.duration > 1000 ? '#ff9800' : '#28a745';
-                                    return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
-                                        <span>${s.name}</span>
-                                        <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
-                                    </div>`;
-                                }).join('')}
-                            </div>
-                        </td>
-                    </tr>` : '';
+                    const durationColor = t.duration > 10000 ? '#dc3545' :
+                                         t.duration > 3000 ? '#ff9800' : '#28a745';
+                    const statusColor = t.status >= 400 ? '#dc3545' : '#28a745';
+                    const time = new Date(t.requestTime).toLocaleTimeString();
+                    const shortEndpoint = t.endpoint.length > 50 ? t.endpoint.substring(0, 47) + '...' : t.endpoint;
+                    const hasSteps = t.steps && t.steps.length > 0;
+                    const expandIcon = hasSteps ? '<span class="expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
+                    
+                    // Create steps row HTML if steps exist
+                    const stepsRowHtml = hasSteps ? `
+                        <tr id="steps-row-${idx}" class="steps-row" style="display:none;background:#f8f9fa;">
+                            <td colspan="5" style="padding:8px 8px 8px 30px;">
+                                <div style="font-size:12px;color:#666;">
+                                    ${t.steps.map(s => {
+                                        const stepColor = s.duration > 5000 ? '#dc3545' : s.duration > 1000 ? '#ff9800' : '#28a745';
+                                        return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
+                                            <span>${s.name}</span>
+                                            <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </td>
+                        </tr>` : '';
 
-                return `<tr style="border-bottom:1px solid #eee;cursor:${hasSteps ? 'pointer' : 'default'};" onclick="${hasSteps ? `toggleStepsRow(${idx})` : ''}">
-                    <td style="padding:6px 8px;white-space:nowrap;">${expandIcon}${time}</td>
-                    <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${t.method}</code></td>
-                    <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${t.endpoint}">${shortEndpoint}</td>
-                    <td style="padding:6px 8px;text-align:center;color:${statusColor};font-weight:bold;">${t.status}</td>
-                    <td style="padding:6px 8px;text-align:right;font-weight:bold;color:${durationColor};">${t.duration.toLocaleString()}ms${hasSteps ? ' 📊' : ''}</td>
-                </tr>${stepsRowHtml}`;
-            }).join('');
+                    return `<tr style="border-bottom:1px solid #eee;cursor:${hasSteps ? 'pointer' : 'default'};" onclick="${hasSteps ? `toggleStepsRow(${idx})` : ''}">
+                        <td style="padding:6px 8px;white-space:nowrap;">${expandIcon}${time}</td>
+                        <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${t.method}</code></td>
+                        <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${t.endpoint}">${shortEndpoint}</td>
+                        <td style="padding:6px 8px;text-align:center;color:${statusColor};font-weight:bold;">${t.status}</td>
+                        <td style="padding:6px 8px;text-align:right;font-weight:bold;color:${durationColor};">${t.duration.toLocaleString()}ms${hasSteps ? ' 📊' : ''}</td>
+                    </tr>${stepsRowHtml}`;
+                }).join('');
+            }
         }
         
         // Toggle steps row visibility
