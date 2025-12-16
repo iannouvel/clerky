@@ -811,28 +811,24 @@ if (!githubToken) {
 
 // Update the token validation function
 function validateGitHubToken() {
-    console.log('[DEBUG] validateGitHubToken: Starting GitHub token validation...');
+    debugLog('[DEBUG] validateGitHubToken: Starting GitHub token validation...');
     
     if (!githubToken) {
         console.error('[ERROR] validateGitHubToken: GITHUB_TOKEN is not set!');
         process.exit(1);
     }
     
-    console.log('[DEBUG] validateGitHubToken: Token exists, length:', githubToken.length);
-    
     // Clean the token
     let cleanToken = githubToken.trim().replace(/\n/g, '');
-    console.log('[DEBUG] validateGitHubToken: Token after cleaning, length:', cleanToken.length);
     
     // Remove Bearer prefix if it exists
     if (cleanToken.startsWith('Bearer ')) {
-        console.log('[DEBUG] validateGitHubToken: Removing Bearer prefix');
         cleanToken = cleanToken.substring(7);
     }
     
     // Update the global token
     githubToken = cleanToken;
-    console.log('[DEBUG] validateGitHubToken: Token validation complete, final length:', githubToken.length);
+    debugLog('[DEBUG] validateGitHubToken: Token validation complete');
 }
 
 // Call validation on startup
@@ -1350,7 +1346,7 @@ ${sourceText}
 
         // Check if AI explicitly said no match was found
         if (quote.toUpperCase() === 'NO_MATCH' || quote.toUpperCase().includes('NO_MATCH')) {
-            console.log('[QUOTE_FINDER] AI reported no matching quote found', { guidelineId });
+            debugLog('[QUOTE_FINDER] AI reported no matching quote found', { guidelineId });
             const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
             if (heuristic) {
                 console.log('[QUOTE_FINDER] Using heuristic extracted quote after NO_MATCH', {
@@ -1370,7 +1366,7 @@ ${sourceText}
             });
             const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
             if (heuristic) {
-                console.log('[QUOTE_FINDER] Using heuristic extracted quote after short quote', {
+                debugLog('[QUOTE_FINDER] Using heuristic extracted quote after short quote', {
                     guidelineId,
                     quoteSample: heuristic.substring(0, 80)
                 });
@@ -1418,7 +1414,7 @@ ${sourceText}
             const normalizedQuote = normalizeWhitespace(lowerQuote);
             
             if (normalizedSource.includes(normalizedQuote)) {
-                console.log('[QUOTE_FINDER] Quote found after whitespace normalization', {
+                debugLog('[QUOTE_FINDER] Quote found after whitespace normalization', {
                     guidelineId,
                     original: quote.substring(0, 50),
                     normalizedQuote: normalizedQuote.substring(0, 50)
@@ -1443,7 +1439,7 @@ ${sourceText}
             }
             const heuristic = heuristicExtractQuoteFromGuidelineText(sourceText, semanticStatement);
             if (heuristic) {
-                console.log('[QUOTE_FINDER] Using heuristic extracted quote after mismatch', {
+                debugLog('[QUOTE_FINDER] Using heuristic extracted quote after mismatch', {
                     guidelineId,
                     quoteSample: heuristic.substring(0, 80)
                 });
@@ -1462,7 +1458,7 @@ ${sourceText}
             quote = snapped;
         }
 
-        console.log('[QUOTE_FINDER] Successfully found verbatim quote', {
+        debugLog('[QUOTE_FINDER] Successfully found verbatim quote', {
             guidelineId,
             quoteSample: quote.substring(0, 80)
         });
@@ -2034,7 +2030,7 @@ async function uploadContentToStorage(content, guidelineId, type = 'content') {
         
         // Get the public URL
         const publicUrl = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
-        console.log(`[STORAGE] Successfully uploaded ${type} to: ${publicUrl}`);
+        debugLog(`[STORAGE] Successfully uploaded ${type}`);
         
         return publicUrl;
     } catch (error) {
@@ -2081,23 +2077,18 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
         const summarySize = summary ? Buffer.byteLength(summary, 'utf8') : 0;
         const totalSize = contentSize + condensedSize + summarySize;
         
-        // Debug logging
-        console.log(`[STORAGE] prepareContentForFirestore called for ${guidelineId}`);
-        console.log(`[STORAGE] Content size: ${contentSize} bytes`);
-        console.log(`[STORAGE] Condensed size: ${condensedSize} bytes`);
-        console.log(`[STORAGE] Summary size: ${summarySize} bytes`);
-        console.log(`[STORAGE] TOTAL size: ${totalSize} bytes (limit: 900KB = ${900 * 1024} bytes)`);
+        // Debug logging - consolidated to reduce noise
+        debugLog(`[STORAGE] prepareContentForFirestore: ${guidelineId}, total: ${totalSize} bytes`);
         
         // If total size exceeds 900KB (leaving 124KB for metadata), move largest fields to Storage
         // Firestore limit is 1MB (1,048,576 bytes) total for the entire document
         const SAFE_TOTAL_LIMIT = 900 * 1024; // 900KB to leave room for metadata
         
         if (totalSize > SAFE_TOTAL_LIMIT) {
-            console.log(`[STORAGE] Total document size (${totalSize} bytes) exceeds safe limit (${SAFE_TOTAL_LIMIT} bytes)`);
+            debugLog(`[STORAGE] Moving large content to Storage for ${guidelineId}`);
             
             // Move content to Storage if it exists and is significant
             if (content && contentSize > 100 * 1024) { // >100KB
-                console.log(`[STORAGE] Moving content (${contentSize} bytes) to Storage...`);
                 result.contentStorageUrl = await uploadContentToStorage(content, guidelineId, 'content');
                 result.content = null;
                 result.contentInStorage = true;
@@ -2105,7 +2096,6 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
             
             // Move condensed to Storage if it exists and is significant
             if (condensed && condensedSize > 100 * 1024) { // >100KB
-                console.log(`[STORAGE] Moving condensed (${condensedSize} bytes) to Storage...`);
                 result.condensedStorageUrl = await uploadContentToStorage(condensed, guidelineId, 'condensed');
                 result.condensed = null;
             }
@@ -2115,15 +2105,12 @@ async function prepareContentForFirestore(content, condensed, summary, guideline
                                   (result.condensed ? condensedSize : 0) + 
                                   summarySize;
             if (remainingSize > SAFE_TOTAL_LIMIT && summary) {
-                console.log(`[STORAGE] Moving summary (${summarySize} bytes) to Storage...`);
                 result.summaryStorageUrl = await uploadContentToStorage(summary, guidelineId, 'summary');
                 result.summary = null;
             }
-        } else {
-            console.log(`[STORAGE] Total size OK, storing all fields in Firestore`);
         }
         
-        console.log(`[STORAGE] Preparation complete. Using Storage: ${result.contentInStorage}`);
+        debugLog(`[STORAGE] Preparation complete for ${guidelineId}, using Storage: ${result.contentInStorage}`);
         return result;
     } catch (error) {
         console.error(`[STORAGE] Error preparing content for Firestore:`, error.message);
@@ -2242,14 +2229,14 @@ try {
   // process.env.FIRESTORE_EMULATOR_HOST = 'no-grpc-force-rest.dummy';
   
   // Process the private key correctly with better validation
-  console.log('[DEBUG] Firebase: Processing private key...');
+  debugLog('[DEBUG] Firebase: Processing private key...');
   let privateKey;
   if (process.env.FIREBASE_PRIVATE_KEY_BASE64) {
     // Handle base64 encoded private key (preferred method for environment variables)
-    console.log('[DEBUG] Firebase: Using base64 encoded private key');
+    debugLog('[DEBUG] Firebase: Using base64 encoded private key');
     try {
       privateKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY_BASE64, 'base64').toString('utf8');
-      console.log('[DEBUG] Firebase: Successfully decoded base64 private key');
+      debugLog('[DEBUG] Firebase: Successfully decoded base64 private key');
     } catch (decodeError) {
       throw new Error(`Failed to decode base64 private key: ${decodeError.message}`);
     }
@@ -2309,13 +2296,13 @@ try {
   }
   
   // Test the private key before using it
-  console.log('[DEBUG] Firebase: Testing private key validity...');
+  debugLog('[DEBUG] Firebase: Testing private key validity...');
   try {
     const testMessage = 'test';
     const sign = crypto.createSign('RSA-SHA256');
     sign.update(testMessage);
     sign.sign(privateKey); // This will throw if the key is invalid
-    console.log('[DEBUG] Firebase: Private key validation successful');
+    debugLog('[DEBUG] Firebase: Private key validation successful');
   } catch (keyError) {
     console.error('[ERROR] Firebase: Private key validation failed:', keyError.message);
     throw new Error(`Invalid private key format: ${keyError.message}`);
@@ -2333,23 +2320,23 @@ try {
     throw new Error('Missing required Firebase configuration fields');
   }
   
-  console.log('[DEBUG] Firebase: Initializing Firebase Admin SDK...');
+  debugLog('[DEBUG] Firebase: Initializing Firebase Admin SDK...');
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     storageBucket: 'clerky-b3be8.firebasestorage.app'
   });
   
-  console.log('[DEBUG] Firebase: Firebase Admin SDK initialized successfully');
+  debugLog('[DEBUG] Firebase: Firebase Admin SDK initialized successfully');
   
   // Initialize Firestore with additional error handling
-  console.log('[DEBUG] Firebase: Initializing Firestore...');
+  debugLog('[DEBUG] Firebase: Initializing Firestore...');
   db = admin.firestore();
   db.settings({
     ignoreUndefinedProperties: true,
     preferRest: true // Prefer REST API over gRPC
   });
   
-  console.log('[DEBUG] Firebase: Firestore instance created with REST API configuration');
+  debugLog('[DEBUG] Firebase: Firestore instance created with REST API configuration');
   
 } catch (error) {
   console.error('[ERROR] Firebase: Error initializing Firebase Admin SDK:', {
@@ -2366,8 +2353,8 @@ try {
       timestamp: new Date().toISOString()
     }
   });
-  console.log('[DEBUG] Firebase: Continuing without Firebase Firestore due to initialization error');
-  console.log('[DEBUG] Firebase: The application will work with limited functionality (no guideline persistence)');
+  debugLog('[DEBUG] Firebase: Continuing without Firebase Firestore due to initialization error');
+  debugLog('[DEBUG] Firebase: The application will work with limited functionality (no guideline persistence)');
   
   // Set db to null to indicate Firestore is not available
   db = null;
@@ -2404,7 +2391,7 @@ async function getUserAIPreference(userId) {
         }
     }
 
-    console.log(`Attempting to get AI preference for user: ${userId}`);
+    debugLog(`Attempting to get AI preference for user: ${userId}`);
     
     try {
         // Try Firestore first if available
@@ -2437,7 +2424,7 @@ async function getUserAIPreference(userId) {
         try {
             if (fs.existsSync(userPrefsFilePath)) {
                 const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
-                console.log('User preference file exists:', userData);
+                debugLog('User preference file exists');
                 if (userData && userData.aiProvider) {
                     // Cache the preference
                     userPreferencesCache.set(userId, {
@@ -2503,7 +2490,7 @@ async function updateUserAIPreference(userId, provider) {
                 updatedAt: new Date().toISOString()
             }));
             
-            console.log(`Successfully updated AI preference in local file for user: ${userId}`);
+            debugLog(`Successfully updated AI preference in local file for user: ${userId}`);
             return true;
         } catch (fileError) {
             console.error('Failed to update user preference file:', fileError);
@@ -2542,7 +2529,7 @@ async function getUserModelPreferences(userId) {
         }
     }
 
-    console.log(`Attempting to get model preferences for user: ${userId}`);
+    debugLog(`Attempting to get model preferences for user: ${userId}`);
     
     try {
         // Try Firestore first if available
@@ -2575,7 +2562,7 @@ async function getUserModelPreferences(userId) {
         try {
             if (fs.existsSync(userPrefsFilePath)) {
                 const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
-                console.log('User preference file exists:', userData);
+                debugLog('User preference file exists');
                 if (userData && userData.modelPreferences && Array.isArray(userData.modelPreferences)) {
                     // Cache the preference
                     userModelPreferencesCache.set(userId, {
@@ -2631,7 +2618,7 @@ async function updateUserModelPreferences(userId, modelOrder) {
                 };
                 await db.collection('userPreferences').doc(userId).set(updateData);
                 
-                console.log(`Successfully updated model preferences in Firestore for user: ${userId}`);
+                debugLog(`Successfully updated model preferences in Firestore for user: ${userId}`);
                 return true;
             } catch (firestoreError) {
                 console.error('Firestore error in updateUserModelPreferences, falling back to file storage:', firestoreError);
@@ -2729,7 +2716,7 @@ async function getUserHospitalTrust(userId) {
         const cachedData = userHospitalTrustCache.get(userId);
         // Check if the cached data is still valid
         if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
-            console.log(`Using cached hospital trust for user ${userId}: ${cachedData.hospitalTrust}`);
+            debugLog(`Using cached hospital trust for user ${userId}: ${cachedData.hospitalTrust}`);
             return cachedData.hospitalTrust;
         } else {
             // Cached data is expired, remove it
@@ -2737,7 +2724,7 @@ async function getUserHospitalTrust(userId) {
         }
     }
 
-    console.log(`Attempting to get hospital trust preference for user: ${userId}`);
+    debugLog(`Attempting to get hospital trust preference for user: ${userId}`);
     
     try {
         // Try Firestore first if available
@@ -2770,7 +2757,7 @@ async function getUserHospitalTrust(userId) {
         try {
             if (fs.existsSync(userPrefsFilePath)) {
                 const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
-                console.log('User preference file exists:', userData);
+                debugLog('User preference file exists');
                 if (userData && userData.hospitalTrust) {
                     // Cache the preference
                     userHospitalTrustCache.set(userId, {
@@ -2841,7 +2828,7 @@ async function updateUserHospitalTrust(userId, hospitalTrust) {
                 updatedAt: new Date().toISOString()
             }));
             
-            console.log(`Successfully updated hospital trust preference in local file for user: ${userId}`);
+            debugLog(`Successfully updated hospital trust preference in local file for user: ${userId}`);
             return true;
         } catch (fileError) {
             console.error('Failed to update user preference file:', fileError);
@@ -2860,7 +2847,7 @@ async function getUserGuidelineScope(userId) {
         const cachedData = userGuidelineScopeCache.get(userId);
         // Check if the cached data is still valid
         if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
-            console.log(`Using cached guideline scope for user ${userId}:`, cachedData.guidelineScope);
+            debugLog(`Using cached guideline scope for user ${userId}:`, cachedData.guidelineScope);
             return cachedData.guidelineScope;
         } else {
             // Cached data is expired, remove it
@@ -2868,7 +2855,7 @@ async function getUserGuidelineScope(userId) {
         }
     }
 
-    console.log(`Attempting to get guideline scope preference for user: ${userId}`);
+    debugLog(`Attempting to get guideline scope preference for user: ${userId}`);
     
     try {
         // Try Firestore first if available
@@ -2901,7 +2888,7 @@ async function getUserGuidelineScope(userId) {
         try {
             if (fs.existsSync(userPrefsFilePath)) {
                 const userData = JSON.parse(fs.readFileSync(userPrefsFilePath, 'utf8'));
-                console.log('User preference file exists:', userData);
+                debugLog('User preference file exists');
                 if (userData && userData.guidelineScope) {
                     // Cache the preference
                     userGuidelineScopeCache.set(userId, {
@@ -3040,7 +3027,9 @@ function formatMessagesForProvider(messages, provider) {
 }
 // Function to send prompts to AI services
 // timeoutMs controls the per-request timeout to the upstream AI provider
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000) {
+// skipUserPreference: when true, use the explicitly passed model without overriding with user preferences
+//                     (used for chunk distribution where specific providers are assigned)
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
   let preferredProvider = 'DeepSeek'; // Default fallback
   
@@ -3060,17 +3049,19 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       preferredProvider = 'DeepSeek'; // Default to DeepSeek if unknown model
     }
     
-    console.log('[DEBUG] sendToAI initial configuration:', {
+    debugLog('[DEBUG] sendToAI initial configuration:', {
       promptType: typeof prompt,
       isArray: Array.isArray(prompt),
       requestedModel: model,
       initialProvider: preferredProvider,
       hasSystemPrompt: !!systemPrompt,
-      userId: userId || 'none'
+      userId: userId || 'none',
+      skipUserPreference
     });
     
-    // Override with userId preference if provided
-    if (userId) {
+    // Override with userId preference if provided, UNLESS skipUserPreference is true
+    // skipUserPreference is used for chunk distribution where we explicitly want to use different providers
+    if (userId && !skipUserPreference) {
       try {
         // Use the ordered model preferences (which will fetch if needed)
         const userModelOrder = await getUserModelPreferences(userId);
@@ -3080,7 +3071,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           const firstPreferredProvider = userModelOrder[0];
           
           if (firstPreferredProvider !== preferredProvider) {
-            console.log('[DEBUG] Overriding provider based on user model preferences:', {
+            debugLog('[DEBUG] Overriding provider based on user model preferences:', {
               requestedModel: model,
               initialProvider: preferredProvider,
               firstPreferredProvider,
@@ -3093,7 +3084,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === preferredProvider);
             if (providerConfig) {
               model = providerConfig.model;
-              console.log('[DEBUG] Updated model to match preferred provider:', model);
+              debugLog('[DEBUG] Updated model to match preferred provider:', model);
             }
           }
         }
@@ -3104,6 +3095,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           usingModelBasedProvider: true
         });
       }
+    } else if (skipUserPreference) {
+      debugLog('[DEBUG] Skipping user preference override - using explicit provider:', preferredProvider);
     }
     
     // Check if we have the API key for the preferred provider
@@ -3113,7 +3106,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     const hasMistralKey = !!process.env.MISTRAL_API_KEY;
     const hasGeminiKey = !!process.env.GOOGLE_AI_API_KEY;
     
-    console.log('[DEBUG] API key availability:', {
+    debugLog('[DEBUG] API key availability:', {
       preferredProvider,
       requestedModel: model,
       hasOpenAIKey,
@@ -3149,7 +3142,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           const userModelOrder = await getUserModelPreferences(userId);
           if (userModelOrder && userModelOrder.length > 0) {
             fallbackOrder = userModelOrder;
-            console.log('[DEBUG] Using user preference order for fallback:', fallbackOrder);
+            debugLog('[DEBUG] Using user preference order for fallback:', fallbackOrder);
           }
         } catch (error) {
           console.warn('[DEBUG] Error getting user model preferences for fallback, using cost order:', error);
@@ -3602,7 +3595,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
     // Set default AI provider to the cheapest available option
     const defaultProvider = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
     
-    console.log('[DEBUG] routeToAI called with:', {
+    debugLog('[DEBUG] routeToAI called with:', {
       promptType: typeof prompt,
       isObject: typeof prompt === 'object',
       hasMessages: prompt?.messages ? 'yes' : 'no',
@@ -3617,13 +3610,13 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
         const userPreference = await getUserAIPreference(userId);
         if (userPreference) {
           provider = userPreference;
-          console.log('[DEBUG] User AI preference retrieved:', {
+          debugLog('[DEBUG] User AI preference retrieved:', {
             userId,
             provider,
             defaultProvider
           });
         } else {
-          console.log('[DEBUG] No user preference found, using cheapest provider:', {
+          debugLog('[DEBUG] No user preference found, using cheapest provider:', {
             userId,
             provider: defaultProvider
           });
@@ -3637,12 +3630,12 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
         // Keep using defaultProvider (DeepSeek)
       }
     } else if (preferredProvider) {
-      console.log('[DEBUG] Using specified AI provider:', {
+      debugLog('[DEBUG] Using EXPLICIT provider for chunk distribution (will skip user preference):', {
         preferredProvider,
         provider
       });
     } else {
-      console.log('[DEBUG] No user ID provided, using cheapest provider:', {
+      debugLog('[DEBUG] No user ID provided, using cheapest provider:', {
         provider: defaultProvider
       });
     }
@@ -3668,9 +3661,14 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
       default:
         model = 'deepseek-chat';
     }
-    console.log('[DEBUG] Selected AI configuration:', {
+    // If preferredProvider was explicitly passed, tell sendToAI to skip user preference override
+    // This is critical for chunk distribution to work - each chunk should use its assigned provider
+    const skipUserPreference = !!preferredProvider;
+    
+    debugLog('[DEBUG] Selected AI configuration:', {
       provider,
       model,
+      skipUserPreference,
       hasOpenAIKey: !!process.env.OPENAI_API_KEY,
       hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY,
       hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
@@ -3679,17 +3677,18 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
     });
     
     // Handle both string prompts and message objects
+    
     let result;
     if (typeof prompt === 'object' && prompt.messages) {
       // If prompt is a message object, use it directly with optional temperature
       const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
-      result = await sendToAI(prompt.messages, model, null, userId, temperature);
+      result = await sendToAI(prompt.messages, model, null, userId, temperature, 120000, skipUserPreference);
     } else {
       // If prompt is a string, use it as a user message
-      result = await sendToAI(prompt, model, null, userId);
+      result = await sendToAI(prompt, model, null, userId, 0.7, 120000, skipUserPreference);
     }
     
-    console.log('[DEBUG] AI service response:', JSON.stringify({
+    debugLog('[DEBUG] AI service response:', JSON.stringify({
       success: !!result,
       hasContent: !!result?.content,
       contentLength: result?.content?.length,
@@ -3790,7 +3789,7 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
     const response = await routeToAI(prompt, req.user.uid);
     
     // Log the response structure for debugging
-    console.log('[DEBUG] generateFakeClinicalInteraction: AI response structure:', {
+    debugLog('[DEBUG] generateFakeClinicalInteraction: AI response structure:', {
       hasResponse: !!response,
       responseKeys: response ? Object.keys(response) : 'no response',
       hasContent: !!response?.content,
@@ -3801,7 +3800,7 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
     // Prepare the response to send to client
     const clientResponse = { success: true, response };
     
-    console.log('[DEBUG] generateFakeClinicalInteraction: Client response structure:', {
+    debugLog('[DEBUG] generateFakeClinicalInteraction: Client response structure:', {
       success: clientResponse.success,
       hasResponse: !!clientResponse.response,
       hasResponseContent: !!clientResponse.response?.content,
@@ -4299,7 +4298,7 @@ app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => 
 
 // Function to check specific GitHub permissions
 async function checkGitHubPermissions() {
-    console.log('[DEBUG] checkGitHubPermissions: Starting GitHub permissions check...');
+    debugLog('[DEBUG] checkGitHubPermissions: Starting GitHub permissions check...');
     
     try {
         const results = {
@@ -4310,7 +4309,6 @@ async function checkGitHubPermissions() {
             details: {}
         };
 
-        console.log('[DEBUG] checkGitHubPermissions: Testing repository access...');
         // Test repository access
         try {
             const repoResponse = await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}`, {
@@ -4322,13 +4320,10 @@ async function checkGitHubPermissions() {
             });
             results.repository = true;
             results.details.repository = repoResponse.data.permissions;
-            console.log('[DEBUG] checkGitHubPermissions: Repository access ✅');
         } catch (error) {
             results.details.repository = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
-            console.log('[DEBUG] checkGitHubPermissions: Repository access ❌', results.details.repository);
         }
 
-        console.log('[DEBUG] checkGitHubPermissions: Testing contents access...');
         // Test contents access (try to list contents)
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/contents`, {
@@ -4339,13 +4334,10 @@ async function checkGitHubPermissions() {
                 timeout: 5000
             });
             results.contents = true;
-            console.log('[DEBUG] checkGitHubPermissions: Contents access ✅');
         } catch (error) {
             results.details.contents = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
-            console.log('[DEBUG] checkGitHubPermissions: Contents access ❌', results.details.contents);
         }
 
-        console.log('[DEBUG] checkGitHubPermissions: Testing workflows access...');
         // Test workflows access
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows`, {
@@ -4356,13 +4348,10 @@ async function checkGitHubPermissions() {
                 timeout: 5000
             });
             results.workflows = true;
-            console.log('[DEBUG] checkGitHubPermissions: Workflows access ✅');
         } catch (error) {
             results.details.workflows = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
-            console.log('[DEBUG] checkGitHubPermissions: Workflows access ❌', results.details.workflows);
         }
 
-        console.log('[DEBUG] checkGitHubPermissions: Testing actions access...');
         // Test actions access
         try {
             await axios.get(`https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/runs`, {
@@ -4373,13 +4362,11 @@ async function checkGitHubPermissions() {
                 timeout: 5000
             });
             results.actions = true;
-            console.log('[DEBUG] checkGitHubPermissions: Actions access ✅');
         } catch (error) {
             results.details.actions = `Error: ${error.response?.status} - ${error.response?.data?.message}`;
-            console.log('[DEBUG] checkGitHubPermissions: Actions access ❌', results.details.actions);
         }
 
-        console.log('[DEBUG] checkGitHubPermissions: Permissions check complete, results:', {
+        debugLog('[DEBUG] checkGitHubPermissions: Permissions check complete, results:', {
             allPermissionsGranted: Object.values(results).slice(0, 4).every(v => v),
             permissions: {
                 repository: results.repository ? '✅' : '❌',
@@ -4398,15 +4385,11 @@ async function checkGitHubPermissions() {
 
 // Function to test GitHub token permissions
 async function testGitHubAccess() {
-    console.log('[DEBUG] testGitHubAccess: Starting GitHub access test...');
-    console.log('[DEBUG] testGitHubAccess: Testing repository:', `${githubOwner}/${githubRepo}`);
-    console.log('[DEBUG] testGitHubAccess: Token length:', githubToken ? githubToken.length : 'undefined');
+    debugLog('[DEBUG] testGitHubAccess: Starting GitHub access test...');
     
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}`;
-        console.log('[DEBUG] testGitHubAccess: Making request to:', url);
         
-        const startTime = Date.now();
         const response = await axios.get(url, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json',
@@ -4415,18 +4398,9 @@ async function testGitHubAccess() {
             timeout: 8000 // 8 second timeout
         });
         
-        const duration = Date.now() - startTime;
-        console.log('[DEBUG] testGitHubAccess: Request completed successfully in', duration, 'ms');
-        console.log('[DEBUG] testGitHubAccess: Repository accessible, status:', response.status);
         return true;
     } catch (error) {
-        console.error('[ERROR] testGitHubAccess: GitHub access test failed:', {
-            status: error.response?.status,
-            message: error.response?.data?.message,
-            documentation_url: error.response?.data?.documentation_url,
-            code: error.code,
-            timeout: error.code === 'ECONNABORTED'
-        });
+        console.error('[ERROR] testGitHubAccess: GitHub access test failed:', error.response?.data?.message || error.code);
         return false;
     }
 }
@@ -4440,8 +4414,8 @@ async function saveToGitHub(content, type) {
     const jsonFilename = `${timestamp}-${type}.json`;
     const jsonPath = `logs/ai-interactions/${jsonFilename}`;
     
-    // Debug the input content
-    console.log(`saveToGitHub called with type: ${type}`, {
+    // Debug the input content (only when DEBUG_LOGGING is enabled)
+    debugLog(`saveToGitHub called with type: ${type}`, {
         contentKeys: Object.keys(content),
         hasTextContent: 'textContent' in content,
         hasAiProvider: 'ai_provider' in content,
@@ -4476,7 +4450,7 @@ async function saveToGitHub(content, type) {
         branch: githubBranch
     };
     
-    console.log('Creating optimised log summary:', {
+    debugLog('Creating optimised log summary:', {
         type: summary.type,
         promptLength: summary.prompt_length,
         responseLength: summary.response_length,
@@ -4486,12 +4460,12 @@ async function saveToGitHub(content, type) {
     // First, try saving to GitHub
     while (attempt < MAX_RETRIES && !success) {
         try {
-            console.log(`saveToGitHub attempt ${attempt + 1}/${MAX_RETRIES} for ${type}...`);
+            debugLog(`saveToGitHub attempt ${attempt + 1}/${MAX_RETRIES} for ${type}...`);
             
             // Add delay between retries (except for first attempt)
             if (attempt > 0) {
                 const delayMs = Math.min(1000 * Math.pow(2, attempt - 1), 5000); // Exponential backoff, max 5s
-                console.log(`Waiting ${delayMs}ms before retry...`);
+                debugLog(`Waiting ${delayMs}ms before retry...`);
                 await new Promise(resolve => setTimeout(resolve, delayMs));
             }
             
@@ -4501,10 +4475,10 @@ async function saveToGitHub(content, type) {
             }
             
             // OPTIMISATION: Skip .txt files, only save JSON to reduce GitHub storage by 50%
-            console.log('Skipping .txt file creation to reduce GitHub storage load');
+            // (no log needed - this is standard behaviour now)
 
             const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
-            console.log(`Attempting to save JSON file to GitHub: ${jsonPath}`);
+            debugLog(`Attempting to save JSON file to GitHub: ${jsonPath}`);
             const response = await axios.put(jsonUrl, jsonBody, {
                 headers: {
                     'Accept': 'application/vnd.github.v3+json',
@@ -4515,16 +4489,14 @@ async function saveToGitHub(content, type) {
             });
 
             success = true;
-            console.log(`Successfully saved ${type} to GitHub: ${jsonPath}`);
-            console.log(`GitHub save completed after ${attempt + 1} attempt(s)`);
+            debugLog(`GitHub save completed: ${type} after ${attempt + 1} attempt(s)`);
         } catch (error) {
             if (error.response?.status === 409) {
-                console.log('Conflict detected, fetching latest SHA and retrying...');
+                debugLog('Conflict detected, fetching latest SHA and retrying...');
                 try {
                     const fileSha = await getFileSha(jsonPath);
                     if (fileSha) {
                         jsonBody.sha = fileSha;
-                        console.log(`Updated JSON body with SHA: ${fileSha.substring(0, 8)}...`);
                         // Don't increment attempt counter for conflict resolution retry
                         // The attempt++ at the end of the loop will still happen, so we decrement here
                         attempt--;
@@ -4532,11 +4504,7 @@ async function saveToGitHub(content, type) {
                         console.error('Could not retrieve SHA for conflict resolution');
                     }
                 } catch (shaError) {
-                    console.error('Error getting file SHA for conflict resolution:', {
-                        message: shaError.message,
-                        status: shaError.response?.status,
-                        errorType: shaError.constructor.name
-                    });
+                    console.error('Error getting file SHA for conflict resolution:', shaError.message);
                 }
             } else {
                 // Properly stringify error information for logging
@@ -4557,23 +4525,21 @@ async function saveToGitHub(content, type) {
                 // On the last retry, try writing to a local file as fallback
                 if (attempt === MAX_RETRIES - 1) {
                     try {
-                        console.log('Trying local file fallback...');
                         // Create logs directory if it doesn't exist
                         const localLogsDir = './logs/local-ai-interactions';
                         if (!fs.existsSync(localLogsDir)) {
                             fs.mkdirSync(localLogsDir, { recursive: true });
-                            console.log(`Created local logs directory: ${localLogsDir}`);
                         }
                         
                         // OPTIMISATION: Write only optimised JSON file locally
                         const localJsonPath = `${localLogsDir}/${timestamp}-${type}.json`;
                         fs.writeFileSync(localJsonPath, JSON.stringify(minimalContent, null, 2));
-                        console.log(`Saved optimised log locally to ${localJsonPath}`);
+                        debugLog(`Saved log locally: ${localJsonPath}`);
                         
                         success = true; // Consider this a success since we saved it locally
                         break;
                     } catch (localError) {
-                        console.error('Failed to save logs locally:', localError);
+                        console.error('Failed to save logs locally:', localError.message);
                     }
                 }
             }
@@ -4602,7 +4568,7 @@ async function logAIInteraction(prompt, response, endpoint) {
                       (response && response.critical);
     
     if (!shouldLog) {
-      console.log(`Skipping log for non-critical endpoint: ${endpoint}`);
+      // Skipping non-critical endpoint logging to reduce noise
       return true;
     }
     
@@ -4629,12 +4595,12 @@ async function logAIInteraction(prompt, response, endpoint) {
     let ai_model = 'deepseek-chat'; // Default model
     let token_usage = null; // Initialize token usage
     
-    // Print a deep inspection of the response object for debugging
-    console.log('Full response structure:', JSON.stringify(response, null, 2));
+    // Print a deep inspection of the response object for debugging (only when DEBUG_LOGGING is enabled)
+    debugLog('Full response structure:', JSON.stringify(response, null, 2));
     
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
-      console.log('Response object structure:', JSON.stringify({
+      debugLog('Response object structure:', JSON.stringify({
         hasContent: 'content' in response,
         hasResponse: 'response' in response,
         hasAIProvider: 'ai_provider' in response,
@@ -4645,10 +4611,8 @@ async function logAIInteraction(prompt, response, endpoint) {
       // Extract token usage if available
       if (response.token_usage) {
         token_usage = response.token_usage;
-        console.log('Logging token usage:', token_usage);
       } else if (response.response && response.response.token_usage) {
         token_usage = response.response.token_usage;
-        console.log('Logging nested token usage:', token_usage);
       }
       
       // If response has ai_provider and ai_model directly
@@ -4724,7 +4688,7 @@ async function logAIInteraction(prompt, response, endpoint) {
     
     // Create log entry with AI provider info
     const ai_info = `AI: ${ai_provider} (${ai_model})`;
-    console.log('Logging AI interaction:', JSON.stringify({ endpoint, ai_info }, null, 2));
+    debugLog('Logging AI interaction:', JSON.stringify({ endpoint, ai_info }, null, 2));
     
     // Prepare content for text files
     let textContent = '';
@@ -4745,8 +4709,8 @@ async function logAIInteraction(prompt, response, endpoint) {
       }
     }
     
-    // Debug the content we're about to save
-    console.log(`Prepared log content for ${endpoint}:`, {
+    // Debug the content we're about to save (only when DEBUG_LOGGING is enabled)
+    debugLog(`Prepared log content for ${endpoint}:`, {
       contentLength: textContent.length,
       ai_provider,
       ai_model,
@@ -4769,7 +4733,7 @@ async function logAIInteraction(prompt, response, endpoint) {
         critical: endpoint.includes('error') || endpoint.includes('failure') || (response && response.error)
       }, endpoint.includes('submit') ? 'submission' : 'reply');
       
-      console.log(`Successfully logged AI interaction for endpoint: ${endpoint}`);
+      debugLog(`Successfully logged AI interaction for endpoint: ${endpoint}`);
       return true;
     } catch (saveError) {
       console.error('Error in saveToGitHub during logAIInteraction:', {
@@ -5112,7 +5076,7 @@ function mergeChunkResults(chunkResults) {
     });
     
     // Log the re-categorization for debugging
-    console.log('[DEBUG] Re-categorized guidelines based on scores:', {
+    debugLog('[DEBUG] Re-categorized guidelines based on scores:', {
         mostRelevant: merged.mostRelevant.length,
         potentiallyRelevant: merged.potentiallyRelevant.length,
         lessRelevant: merged.lessRelevant.length,
@@ -5138,12 +5102,12 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         const jsonMatch = cleanContent.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/i);
         if (jsonMatch) {
             cleanContent = jsonMatch[1];
-            console.log('[DEBUG] Extracted JSON from markdown code block');
+            debugLog('[DEBUG] Extracted JSON from markdown code block');
         }
         
         // Try to parse as JSON first
         const parsed = JSON.parse(cleanContent);
-        console.log('[DEBUG] JSON parsing successful');
+        debugLog('[DEBUG] JSON parsing successful');
         
         // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
         const cleanedCategories = {};
@@ -5162,7 +5126,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 if (bestMatch.rating > 0.7) { 
                     const guideline = originalChunk.find(g => g.title === bestMatch.target);
                     if (guideline) {
-                        console.log(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                        debugLog(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
                         
                         // Return the matched guideline with preserved fields and relevance
                         return {
@@ -5173,7 +5137,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 }
                 
                 // If no match found, return the item with a warning
-                console.log(`[DEBUG] Could not match AI guideline to original: "${item.title}"`);
+                debugLog(`[DEBUG] Could not match AI guideline to original: "${item.title}"`);
                 return {
                     id: item.id || 'unknown-id',
                     title: item.title,
@@ -5182,11 +5146,11 @@ function parseChunkResponse(responseContent, originalChunk = []) {
             });
         });
         
-        console.log('[DEBUG] JSON parsing completed successfully');
+        debugLog('[DEBUG] JSON parsing completed successfully');
         
         return { success: true, categories: cleanedCategories };
     } catch (jsonError) {
-        console.log('[DEBUG] JSON parsing failed:', {
+        debugLog('[DEBUG] JSON parsing failed:', {
             error: jsonError.message,
             responsePreview: responseContent.substring(0, 200) + '...',
             responseLength: responseContent.length
@@ -5204,7 +5168,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         let currentCategory = null;
         let parsedCount = 0;
         
-        console.log('[DEBUG] Attempting text parsing on', lines.length, 'lines with', originalChunk.length, 'original guidelines');
+        debugLog('[DEBUG] Attempting text parsing on', lines.length, 'lines with', originalChunk.length, 'original guidelines');
         
         for (const line of lines) {
             const trimmed = line.trim();
@@ -5213,16 +5177,12 @@ function parseChunkResponse(responseContent, originalChunk = []) {
             // Check for category headers
             if (trimmed.toLowerCase().includes('most relevant') || trimmed.includes('mostRelevant')) {
                 currentCategory = 'mostRelevant';
-                console.log('[DEBUG] Found category: mostRelevant');
             } else if (trimmed.toLowerCase().includes('potentially relevant') || trimmed.includes('potentiallyRelevant')) {
                 currentCategory = 'potentiallyRelevant';
-                console.log('[DEBUG] Found category: potentiallyRelevant');
             } else if (trimmed.toLowerCase().includes('less relevant') || trimmed.includes('lessRelevant')) {
                 currentCategory = 'lessRelevant';
-                console.log('[DEBUG] Found category: lessRelevant');
             } else if (trimmed.toLowerCase().includes('not relevant') || trimmed.includes('notRelevant')) {
                 currentCategory = 'notRelevant';
-                console.log('[DEBUG] Found category: notRelevant');
             }
             
             if (currentCategory) {
@@ -5237,7 +5197,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 // Use a threshold to ensure the match is good enough
                 if (bestMatch.rating > 0.7) { 
                     guideline = originalChunk.find(g => g.title === bestMatch.target);
-                    console.log(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                    debugLog(`[DEBUG] Found guideline by fuzzy title match: "${potentialTitle}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
                 }
                 
                 // Extract relevance score
@@ -5262,7 +5222,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
             }
         }
         
-        console.log('[DEBUG] Text parsing completed:', {
+        debugLog('[DEBUG] Text parsing completed:', {
             totalParsed: parsedCount,
             totalOriginal: originalChunk.length,
             categoryCounts: Object.keys(categories).map(cat => `${cat}: ${categories[cat].length}`).join(', ')
@@ -9521,7 +9481,7 @@ app.post('/generateClinicalNote', authenticateUser, async (req, res) => {
 
 // Endpoint to get full guideline content
 app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
-    console.log('[DEBUG] /getGuidelineContent called with body:', {
+    debugLog('[DEBUG] /getGuidelineContent called with body:', {
         filename: req.body.filename,
         userId: req.user.uid
     });
@@ -9529,34 +9489,34 @@ app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
     try {
         const { filename } = req.body;
         if (!filename) {
-            console.log('[DEBUG] Missing filename in request');
+            debugLog('[DEBUG] Missing filename in request');
             return res.status(400).json({ success: false, message: 'Filename is required' });
         }
 
         // Get the file path for the guideline - use the filename as is
         const filePath = `guidance/condensed/${filename}`;
-        console.log('[DEBUG] Looking for guideline at path:', filePath);
+        debugLog('[DEBUG] Looking for guideline at path:', filePath);
         
         // Verify the file exists
-        console.log('[DEBUG] Checking if file exists...');
+        debugLog('[DEBUG] Checking if file exists...');
         const fileExists = await checkFolderExists(filePath);
         if (!fileExists) {
-            console.log('[DEBUG] File not found at path:', filePath);
+            debugLog('[DEBUG] File not found at path:', filePath);
             return res.status(404).json({ success: false, message: 'Guideline not found' });
         }
-        console.log('[DEBUG] File exists, proceeding to read contents');
+        debugLog('[DEBUG] File exists, proceeding to read contents');
 
         // Get the file contents
-        console.log('[DEBUG] Attempting to read file contents...');
+        debugLog('[DEBUG] Attempting to read file contents...');
         const content = await getFileContents(filePath);
         if (!content) {
-            console.log('[DEBUG] Failed to read file contents');
+            debugLog('[DEBUG] Failed to read file contents');
             return res.status(404).json({ success: false, message: 'Could not read guideline content' });
         }
-        console.log('[DEBUG] Successfully read file contents, length:', content.length);
+        debugLog('[DEBUG] Successfully read file contents, length:', content.length);
 
         res.json({ success: true, content });
-        console.log('[DEBUG] Successfully sent guideline content response');
+        debugLog('[DEBUG] Successfully sent guideline content response');
     } catch (error) {
         console.error('[DEBUG] Error in getGuidelineContent:', {
             error: error.message,
@@ -9569,7 +9529,7 @@ app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
 
 // Endpoint to get recommendations based on guideline analysis
 app.post('/getRecommendations', authenticateUser, async (req, res) => {
-    console.log('[DEBUG] /getRecommendations called with body:', {
+    debugLog('[DEBUG] /getRecommendations called with body:', {
         noteLength: req.body.note?.length,
         guidelineLength: req.body.guideline?.length,
         promptType: req.body.promptType,
@@ -9579,7 +9539,7 @@ app.post('/getRecommendations', authenticateUser, async (req, res) => {
     try {
         const { note, guideline, promptType } = req.body;
         if (!note || !guideline || !promptType) {
-            console.log('[DEBUG] Missing required fields:', {
+            debugLog('[DEBUG] Missing required fields:', {
                 hasNote: !!note,
                 hasGuideline: !!guideline,
                 hasPromptType: !!promptType
@@ -9592,35 +9552,35 @@ app.post('/getRecommendations', authenticateUser, async (req, res) => {
 
         // Get the user's AI preference
         const userId = req.user.uid;
-        console.log('[DEBUG] Getting AI recommendations for user:', userId);
+        debugLog('[DEBUG] Getting AI recommendations for user:', userId);
         
         // Prepare the prompt
         const prompt = `Note: ${note}\n\nGuideline: ${guideline}`;
-        console.log('[DEBUG] Sending prompt to AI, length:', prompt.length);
+        debugLog('[DEBUG] Sending prompt to AI, length:', prompt.length);
 
         const aiResult = await routeToAI(prompt, userId);
-        console.log('[DEBUG] Received AI response:', {
+        debugLog('[DEBUG] Received AI response:', {
             success: aiResult.success,
             provider: aiResult.provider,
             contentLength: aiResult.content?.length
         });
 
         if (!aiResult.success) {
-            console.log('[DEBUG] AI request failed:', aiResult.message);
+            debugLog('[DEBUG] AI request failed:', aiResult.message);
             throw new Error(aiResult.message || 'Failed to get AI recommendations');
         }
 
         // Log the interaction
-        console.log('[DEBUG] Logging AI interaction...');
+        debugLog('[DEBUG] Logging AI interaction...');
         await logAIInteraction(prompt, aiResult.content, 'getRecommendations');
-        console.log('[DEBUG] Successfully logged AI interaction');
+        debugLog('[DEBUG] Successfully logged AI interaction');
 
         res.json({ 
             success: true, 
             recommendations: aiResult.content,
             aiProvider: aiResult.provider
         });
-        console.log('[DEBUG] Successfully sent recommendations response');
+        debugLog('[DEBUG] Successfully sent recommendations response');
     } catch (error) {
         console.error('[DEBUG] Error in getRecommendations:', {
             error: error.message,
@@ -9927,7 +9887,7 @@ async function getCachedGuidelines() {
         return guidelinesCache.data;
     }
     
-    console.log('[CACHE] Cache miss or expired, fetching from Firestore...');
+    debugLog('[CACHE] Cache miss or expired, fetching from Firestore...');
     const guidelines = await getAllGuidelines();
     guidelinesCache.data = guidelines;
     guidelinesCache.timestamp = now;
@@ -9944,15 +9904,15 @@ function invalidateGuidelinesCache() {
 
 async function getAllGuidelines() {
   try {
-    // console.log('[DEBUG] getAllGuidelines function called');
+    // debugLog('[DEBUG] getAllGuidelines function called');
     
     // Check if database is available
     if (!db) {
-      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      debugLog('[DEBUG] Firestore database not available, returning empty guidelines');
       return [];
     }
 
-    console.log('[DEBUG] Fetching guidelines collections from Firestore');
+    debugLog('[DEBUG] Fetching guidelines collections from Firestore');
     
     // Add timeout and better error handling for Firestore queries
     const timeout = new Promise((_, reject) => 
@@ -9973,7 +9933,7 @@ async function getAllGuidelines() {
       timeout
     ]);
 
-    // console.log('[DEBUG] Collection sizes:', {
+    // debugLog('[DEBUG] Collection sizes:', {
     //   guidelines: guidelines.size,
     //   summaries: summaries.size,
     //   keywords: keywords.size,
@@ -10018,7 +9978,7 @@ async function getAllGuidelines() {
     });
 
     const result = Array.from(guidelineMap.values());
-    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    debugLog('[DEBUG] Returning', result.length, 'guidelines');
     return result;
   } catch (error) {
     console.error('[ERROR] Error in getAllGuidelines function:', {
@@ -10031,7 +9991,7 @@ async function getAllGuidelines() {
     // If it's a crypto/auth error, return empty array to allow app to function
     if (error.message.includes('DECODER routines') || 
         error.message.includes('timeout')) {
-      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      debugLog('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
       return [];
     }
     
@@ -10048,11 +10008,11 @@ app.post('/syncGuidelines', authenticateUser, async (req, res) => {
       return res.status(403).json({ error: 'Unauthorized' });
     }
 
-    console.log('[DEBUG] Admin user authorized for sync:', req.user.email);
+    debugLog('[DEBUG] Admin user authorized for sync:', req.user.email);
 
     // Get all guidelines from GitHub
     const guidelines = await getGuidelinesList();
-        console.log('[DEBUG] Found guidelines in GitHub:', guidelines.length);
+        debugLog('[DEBUG] Found guidelines in GitHub:', guidelines.length);
     
     // Process each guideline
     for (const guideline of guidelines) {
@@ -10282,7 +10242,7 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
         }
       } catch (parseError) {
         console.error('[DEBUG] Failed to parse AI response as JSON:', parseError);
-        console.log('[DEBUG] AI response was:', result.content);
+        debugLog('[DEBUG] AI response was:', result.content);
       }
     }
     
@@ -10421,7 +10381,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
       return res.status(403).json({ error: 'Unauthorized' });
     }
 
-    console.log('[DEBUG] Admin user authorized for metadata sync:', req.user.email);
+    debugLog('[DEBUG] Admin user authorized for metadata sync:', req.user.email);
 
     // Get all guidelines from GitHub
     const guidelinesString = await getGuidelinesList();
@@ -10429,7 +10389,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
     const results = [];
 
     if (!guidelines || guidelines.length === 0) {
-        console.log('[DEBUG] getGuidelinesList returned no guidelines (or the list was empty). Nothing to sync.');
+        debugLog('[DEBUG] getGuidelinesList returned no guidelines (or the list was empty). Nothing to sync.');
         return res.json({ success: true, message: 'No new guidelines to sync from GitHub list.', results });
     }
 
@@ -11757,7 +11717,7 @@ app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
 // Endpoint to get guidelines list from GitHub
 app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     try {
-        // console.log('[DEBUG] getGuidelinesList endpoint called');
+        // debugLog('[DEBUG] getGuidelinesList endpoint called');
         const guidelinesString = await getGuidelinesList();
         res.send(guidelinesString);
     } catch (error) {
@@ -12515,7 +12475,7 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
 // Endpoint to update existing guidelines with auditable elements
 app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req, res) => {
   try {
-    console.log('[DEBUG] updateGuidelinesWithAuditableElements endpoint called');
+    debugLog('[DEBUG] updateGuidelinesWithAuditableElements endpoint called');
     
     if (!db) {
       return res.status(500).json({ 
@@ -14381,7 +14341,7 @@ app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
     try {
         // Check if Firestore is initialized
         if (!db) {
-            console.log('[DEBUG] Firestore not initialized, returning empty guidelines with warning');
+            debugLog('[DEBUG] Firestore not initialized, returning empty guidelines with warning');
             return res.json({ 
                 success: true, 
                 guidelines: [],
@@ -14640,7 +14600,7 @@ ${trimmedText}`;
             { role: 'user', content: userPrompt }
         ];
         
-        console.log('[DEBUG] detectInputType: Sending to LLM', {
+        debugLog('[DEBUG] detectInputType: Sending to LLM', {
             userId,
             textLength: trimmedText.length,
             textPreview: trimmedText.substring(0, 100)
@@ -14674,7 +14634,7 @@ ${trimmedText}`;
         // Default to note if unclear
         const detectedType = isQuestion ? 'question' : 'note';
         
-        console.log('[DEBUG] detectInputType: Result', {
+        debugLog('[DEBUG] detectInputType: Result', {
             userId,
             detectedType,
             aiResponse: responseText
@@ -15053,7 +15013,7 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
             return res.status(403).json({ error: 'Unauthorized' });
         }
 
-        console.log('[DEBUG] Admin user authorized for deletion:', req.user.email);
+        debugLog('[DEBUG] Admin user authorized for deletion:', req.user.email);
 
         // Get all summaries
         const summariesSnapshot = await db.collection('guidelineSummaries').get();
@@ -15066,7 +15026,7 @@ app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
         });
         await batch.commit();
 
-        console.log('[DEBUG] Successfully deleted all summaries');
+        debugLog('[DEBUG] Successfully deleted all summaries');
         res.json({ 
             success: true, 
             message: 'All summaries deleted successfully',
@@ -15086,7 +15046,7 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
             return res.status(403).json({ error: 'Unauthorized' });
         }
 
-        console.log('[DEBUG] Admin user authorized for deletion:', req.user.email);
+        debugLog('[DEBUG] Admin user authorized for deletion:', req.user.email);
 
         // Collections to delete
         const collections = [
@@ -15116,7 +15076,7 @@ app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
             console.log(`[DEBUG] Successfully deleted ${snapshot.size} documents from ${collection}`);
         }
 
-        console.log('[DEBUG] Successfully deleted all guideline data');
+        debugLog('[DEBUG] Successfully deleted all guideline data');
         res.json({ 
             success: true, 
             message: 'All guideline data deleted successfully',
@@ -15551,7 +15511,7 @@ async function generateGuidelineId(organisation, yearProduced, title) {
 // Function to check and migrate guideline IDs
 async function checkAndMigrateGuidelineIds() {
   try {
-    console.log('[DEBUG] Starting guideline ID check and migration process');
+    debugLog('[DEBUG] Starting guideline ID check and migration process');
     
     // Get all guidelines
     const guidelinesSnapshot = await db.collection('guidelines').get();
@@ -15643,14 +15603,14 @@ async function checkAndMigrateGuidelineIds() {
 
     // Only commit if there are changes
     if (hasChanges) {
-      console.log('[DEBUG] Committing changes to Firestore...');
+      debugLog('[DEBUG] Committing changes to Firestore...');
       await batch.commit();
-      console.log('[DEBUG] Changes committed successfully');
+      debugLog('[DEBUG] Changes committed successfully');
     } else {
-      console.log('[DEBUG] No changes needed, skipping commit');
+      debugLog('[DEBUG] No changes needed, skipping commit');
     }
 
-    console.log('[DEBUG] Migration process completed', results);
+    debugLog('[DEBUG] Migration process completed', results);
     return results;
   } catch (error) {
     console.error('[ERROR] Error in checkAndMigrateGuidelineIds:', {
@@ -15670,7 +15630,7 @@ app.post('/migrateGuidelineIds', authenticateUser, async (req, res) => {
       return res.status(403).json({ error: 'Unauthorized' });
     }
 
-    console.log('[DEBUG] Admin user authorized for migration:', req.user.email);
+    debugLog('[DEBUG] Admin user authorized for migration:', req.user.email);
     const results = await checkAndMigrateGuidelineIds();
     res.json({ success: true, results });
   } catch (error) {
@@ -15682,11 +15642,11 @@ app.post('/migrateGuidelineIds', authenticateUser, async (req, res) => {
 // Modify getAllGuidelines to check for IDs during load
 async function getAllGuidelines() {
   try {
-    // console.log('[DEBUG] getAllGuidelines function called');
+    // debugLog('[DEBUG] getAllGuidelines function called');
     
     // Check if database is available
     if (!db) {
-      console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+      debugLog('[DEBUG] Firestore database not available, returning empty guidelines');
       return [];
     }
 
@@ -15694,7 +15654,7 @@ async function getAllGuidelines() {
     // Migrations should be run via admin endpoint or background job, not on every request
     // See /migrate-guideline-ids endpoint for manual migration trigger
 
-    console.log('[DEBUG] Fetching guidelines from single collection');
+    debugLog('[DEBUG] Fetching guidelines from single collection');
     
     // Add timeout and better error handling for Firestore queries
     const timeout = new Promise((_, reject) => 
@@ -15707,7 +15667,7 @@ async function getAllGuidelines() {
       timeout
     ]);
 
-    console.log('[DEBUG] Guidelines collection size:', guidelines.size);
+    debugLog('[DEBUG] Guidelines collection size:', guidelines.size);
 
     const result = [];
     
@@ -15732,7 +15692,7 @@ async function getAllGuidelines() {
         condensed: data.condensed || condensedFromCollection || null // Prefer document field, fallback to collection
       });
     });
-    console.log('[DEBUG] Returning', result.length, 'guidelines');
+    debugLog('[DEBUG] Returning', result.length, 'guidelines');
     return result;
   } catch (error) {
     console.error('[ERROR] Error in getAllGuidelines function:', {
@@ -15745,7 +15705,7 @@ async function getAllGuidelines() {
     // If it's a crypto/auth error, return empty array to allow app to function
     if (error.message.includes('DECODER routines') || 
         error.message.includes('timeout')) {
-      console.log('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
+      debugLog('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
       return [];
     }
     
@@ -15985,14 +15945,14 @@ app.post('/clearDisplayNames', authenticateUser, async (req, res) => {
 // Update getAllGuidelines to use document IDs
 async function getAllGuidelines() {
     try {
-        // console.log('[DEBUG] getAllGuidelines function called');
+        // debugLog('[DEBUG] getAllGuidelines function called');
         
         if (!db) {
-            console.log('[DEBUG] Firestore database not available, returning empty guidelines');
+            debugLog('[DEBUG] Firestore database not available, returning empty guidelines');
             return [];
         }
 
-        console.log('[DEBUG] Fetching guidelines collections from Firestore');
+        debugLog('[DEBUG] Fetching guidelines collections from Firestore');
         
         const timeout = new Promise((_, reject) => 
             setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
@@ -16012,7 +15972,7 @@ async function getAllGuidelines() {
             timeout
         ]);
 
-        // console.log('[DEBUG] Collection sizes:', {
+        // debugLog('[DEBUG] Collection sizes:', {
         //     guidelines: guidelines.size,
         //     summaries: summaries.size,
         //     keywords: keywords.size,
@@ -16078,23 +16038,23 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
     req.stepTimer = timer;
     
     try {
-        console.log('[DEBUG] dynamicAdvice endpoint called');
+        debugLog('[DEBUG] dynamicAdvice endpoint called');
         const { transcript, analysis, guidelineId, guidelineTitle } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!transcript) {
-            console.log('[DEBUG] dynamicAdvice: Missing transcript');
+            debugLog('[DEBUG] dynamicAdvice: Missing transcript');
             return res.status(400).json({ success: false, error: 'Transcript is required' });
         }
         
         if (!analysis) {
-            console.log('[DEBUG] dynamicAdvice: Missing analysis');
+            debugLog('[DEBUG] dynamicAdvice: Missing analysis');
             return res.status(400).json({ success: false, error: 'Analysis is required' });
         }
         timer.step('Validation');
 
-        console.log('[DEBUG] dynamicAdvice request data:', {
+        debugLog('[DEBUG] dynamicAdvice request data:', {
             userId,
             transcriptLength: transcript.length,
             analysisLength: analysis.length,
@@ -16303,7 +16263,7 @@ IMPORTANT:
 - Prioritise accuracy over quantity - better to have fewer suggestions with accurate quotes than many with fabricated ones
 - The context field should be informative and educational - avoid meta-commentary about the guideline itself`;
 
-        console.log('[DEBUG] dynamicAdvice: Sending to AI', {
+        debugLog('[DEBUG] dynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length,
             guidelineContentLength: guidelineContent.length,
@@ -16333,7 +16293,7 @@ IMPORTANT:
             );
             
             if (isContextLengthError && (semanticallyCompressedContent || guidelineContent.length > 20000)) {
-                console.log('[DEBUG] dynamicAdvice: Context length exceeded, attempting fallback with compressed content');
+                debugLog('[DEBUG] dynamicAdvice: Context length exceeded, attempting fallback with compressed content');
                 
                 // Determine fallback content - use semantically compressed if available, otherwise truncate
                 let fallbackContent = '';
@@ -16399,7 +16359,7 @@ IMPORTANT:
                     { role: 'user', content: fallbackUserPrompt }
                 ];
                 
-                console.log('[DEBUG] dynamicAdvice: Retrying with fallback content', {
+                debugLog('[DEBUG] dynamicAdvice: Retrying with fallback content', {
                     fallbackUserPromptLength: fallbackUserPrompt.length,
                     fallbackContentLength: fallbackContent.length
                 });
@@ -16413,10 +16373,10 @@ IMPORTANT:
         }
         
         if (usedFallback) {
-            console.log('[DEBUG] dynamicAdvice: Successfully completed with fallback content');
+            debugLog('[DEBUG] dynamicAdvice: Successfully completed with fallback content');
         }
         
-        console.log('[DEBUG] dynamicAdvice: AI response received', {
+        debugLog('[DEBUG] dynamicAdvice: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length,
@@ -16435,12 +16395,12 @@ IMPORTANT:
             // First, try to parse the response directly as JSON
             const parsedResponse = JSON.parse(aiResponse.content);
             suggestions = parsedResponse.suggestions || [];
-            console.log('[DEBUG] dynamicAdvice: Parsed suggestions directly:', {
+            debugLog('[DEBUG] dynamicAdvice: Parsed suggestions directly:', {
                 count: suggestions.length,
                 categories: suggestions.map(s => s.category)
             });
         } catch (parseError) {
-            console.log('[DEBUG] dynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
+            debugLog('[DEBUG] dynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
                 error: parseError.message,
                 rawContentPreview: aiResponse.content.substring(0, 200)
             });
@@ -16453,20 +16413,20 @@ IMPORTANT:
                 const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
                 if (jsonMatch) {
                     jsonContent = jsonMatch[1];
-                    console.log('[DEBUG] dynamicAdvice: Extracted JSON from markdown code blocks');
+                    debugLog('[DEBUG] dynamicAdvice: Extracted JSON from markdown code blocks');
                 } else {
                     // Look for JSON object without code blocks
                     const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
                     if (objectMatch) {
                         jsonContent = objectMatch[1];
-                        console.log('[DEBUG] dynamicAdvice: Extracted JSON object from text');
+                        debugLog('[DEBUG] dynamicAdvice: Extracted JSON object from text');
                     }
                 }
                 
                 // Clean up any extra text before/after JSON
                 jsonContent = jsonContent.trim();
                 
-                console.log('[DEBUG] dynamicAdvice: Attempting to parse extracted JSON:', {
+                debugLog('[DEBUG] dynamicAdvice: Attempting to parse extracted JSON:', {
                     extractedLength: jsonContent.length,
                     extractedPreview: jsonContent.substring(0, 200)
                 });
@@ -16474,7 +16434,7 @@ IMPORTANT:
                 const parsedResponse = JSON.parse(jsonContent);
                 suggestions = parsedResponse.suggestions || [];
                 
-                console.log('[DEBUG] dynamicAdvice: Successfully parsed extracted JSON:', {
+                debugLog('[DEBUG] dynamicAdvice: Successfully parsed extracted JSON:', {
                     count: suggestions.length,
                     categories: suggestions.map(s => s.category)
                 });
@@ -16495,7 +16455,7 @@ IMPORTANT:
                     priority: 'medium',
                     guidelineReference: guidelineTitle || guidelineId || 'Guideline analysis'
                 }];
-                console.log('[DEBUG] dynamicAdvice: Using final fallback suggestion format');
+                debugLog('[DEBUG] dynamicAdvice: Using final fallback suggestion format');
                 
                 // Log the full raw content for debugging
                 console.error('[DEBUG] dynamicAdvice: Full raw AI response for debugging:', aiResponse.content);
@@ -16523,7 +16483,7 @@ IMPORTANT:
                 createdAt: admin.firestore.FieldValue.serverTimestamp(),
                 status: 'pending'
             });
-            console.log('[DEBUG] dynamicAdvice: Stored suggestions in database with sessionId:', sessionId);
+            debugLog('[DEBUG] dynamicAdvice: Stored suggestions in database with sessionId:', sessionId);
         } catch (dbError) {
             console.error('[DEBUG] dynamicAdvice: Database storage error:', dbError.message);
             // Continue without failing the request
@@ -16553,7 +16513,7 @@ IMPORTANT:
                 },
                 'dynamicAdvice'
             ).then(() => {
-                console.log('[DEBUG] dynamicAdvice: AI interaction logged successfully');
+                debugLog('[DEBUG] dynamicAdvice: AI interaction logged successfully');
             }).catch((logError) => {
                 console.error('[DEBUG] dynamicAdvice: Error logging AI interaction:', logError.message);
             });
@@ -16561,7 +16521,7 @@ IMPORTANT:
             console.error('[DEBUG] dynamicAdvice: Error logging AI interaction:', logError.message);
         }
 
-        console.log('[DEBUG] dynamicAdvice: Returning response', {
+        debugLog('[DEBUG] dynamicAdvice: Returning response', {
             sessionId,
             suggestionsCount: suggestions.length,
             guidelineTitle: resolvedGuidelineTitle,
@@ -16600,23 +16560,23 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
     req.stepTimer = timer;
     
     try {
-        console.log('[DEBUG] determineInsertionPoint endpoint called');
+        debugLog('[DEBUG] determineInsertionPoint endpoint called');
         const { suggestion, clinicalNote } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!suggestion || !suggestion.suggestedText) {
-            console.log('[DEBUG] determineInsertionPoint: Missing suggestion text');
+            debugLog('[DEBUG] determineInsertionPoint: Missing suggestion text');
             return res.status(400).json({ success: false, error: 'Suggestion text is required' });
         }
         
         if (!clinicalNote) {
-            console.log('[DEBUG] determineInsertionPoint: Missing clinical note');
+            debugLog('[DEBUG] determineInsertionPoint: Missing clinical note');
             return res.status(400).json({ success: false, error: 'Clinical note is required' });
         }
         timer.step('Validation');
 
-        console.log('[DEBUG] determineInsertionPoint request data:', {
+        debugLog('[DEBUG] determineInsertionPoint request data:', {
             userId,
             suggestionTextLength: suggestion.suggestedText.length,
             clinicalNoteLength: clinicalNote.length
@@ -16671,7 +16631,7 @@ Context: ${suggestion.context || 'No additional context'}
 
 Please analyse the clinical note structure and determine the optimal insertion point for this new text.`;
 
-        console.log('[DEBUG] determineInsertionPoint: Sending to AI');
+        debugLog('[DEBUG] determineInsertionPoint: Sending to AI');
         timer.step('Build prompts');
 
         // Send to AI
@@ -16683,7 +16643,7 @@ Please analyse the clinical note structure and determine the optimal insertion p
         const aiResponse = await routeToAI({ messages }, userId);
         timer.step('AI API call');
         
-        console.log('[DEBUG] determineInsertionPoint: AI response received', {
+        debugLog('[DEBUG] determineInsertionPoint: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length
@@ -16698,7 +16658,7 @@ Please analyse the clinical note structure and determine the optimal insertion p
         let insertionPoint;
         try {
             insertionPoint = JSON.parse(aiResponse.content);
-            console.log('[DEBUG] determineInsertionPoint: Parsed insertion point:', insertionPoint);
+            debugLog('[DEBUG] determineInsertionPoint: Parsed insertion point:', insertionPoint);
         } catch (parseError) {
             console.error('[DEBUG] determineInsertionPoint: Failed to parse AI response:', parseError);
             console.error('[DEBUG] determineInsertionPoint: Raw AI response:', aiResponse.content);
@@ -16753,8 +16713,8 @@ app.options('/api/pdf/:guidelineId', (req, res) => {
 // New endpoint for PDF.js viewer - serves PDF with proper headers
 app.get('/api/pdf/:guidelineId', async (req, res) => {
     try {
-        console.log('[DEBUG] /api/pdf endpoint called for guideline:', req.params.guidelineId);
-        console.log('[DEBUG] /api/pdf request details:', {
+        debugLog('[DEBUG] /api/pdf endpoint called for guideline:', req.params.guidelineId);
+        debugLog('[DEBUG] /api/pdf request details:', {
             hasQueryToken: !!req.query.token,
             hasAuthHeader: !!req.headers.authorization,
             origin: req.headers.origin
@@ -16763,7 +16723,7 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         const { guidelineId } = req.params;
         
         if (!guidelineId) {
-            console.log('[DEBUG] /api/pdf: No guideline ID provided');
+            debugLog('[DEBUG] /api/pdf: No guideline ID provided');
             return res.status(400).json({ success: false, error: 'Guideline ID is required' });
         }
 
@@ -16771,33 +16731,33 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
         let idToken = req.query.token || req.headers.authorization?.replace('Bearer ', '');
         
         if (!idToken) {
-            console.log('[DEBUG] api/pdf: No token provided in query or header');
+            debugLog('[DEBUG] api/pdf: No token provided in query or header');
             return res.status(401).json({ success: false, error: 'Authentication required' });
         }
 
         // Verify Firebase token
         try {
             const decodedToken = await admin.auth().verifyIdToken(idToken);
-            console.log('[DEBUG] api/pdf: User authenticated:', decodedToken.uid);
+            debugLog('[DEBUG] api/pdf: User authenticated:', decodedToken.uid);
         } catch (authError) {
             console.error('[DEBUG] api/pdf: Authentication failed:', authError.message);
             return res.status(401).json({ success: false, error: 'Invalid authentication token' });
         }
 
-        console.log('[DEBUG] api/pdf: Looking up guideline:', guidelineId);
+        debugLog('[DEBUG] api/pdf: Looking up guideline:', guidelineId);
 
         // Look up guideline metadata to get filename
         const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
         
         if (!guidelineDoc.exists) {
-            console.log('[DEBUG] api/pdf: Guideline not found in Firestore:', guidelineId);
+            debugLog('[DEBUG] api/pdf: Guideline not found in Firestore:', guidelineId);
             return res.status(404).json({ success: false, error: 'Guideline not found' });
         }
 
         const guidelineData = guidelineDoc.data();
         const filename = guidelineData.filename || guidelineData.originalFilename;
         
-        console.log('[DEBUG] api/pdf: Guideline data retrieved:', {
+        debugLog('[DEBUG] api/pdf: Guideline data retrieved:', {
             guidelineId,
             hasFilename: !!guidelineData.filename,
             hasOriginalFilename: !!guidelineData.originalFilename,
@@ -16813,7 +16773,7 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
             return res.status(404).json({ success: false, error: 'PDF filename not found' });
         }
 
-        console.log('[DEBUG] api/pdf: Fetching PDF from Firebase Storage:', filename);
+        debugLog('[DEBUG] api/pdf: Fetching PDF from Firebase Storage:', filename);
 
         // Fetch from Firebase Storage
         const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
@@ -16843,9 +16803,9 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
             });
         }
 
-        console.log('[DEBUG] api/pdf: Downloading PDF from Firebase Storage');
+        debugLog('[DEBUG] api/pdf: Downloading PDF from Firebase Storage');
         const [buffer] = await file.download();
-        console.log('[DEBUG] api/pdf: PDF downloaded, size:', buffer.length, 'bytes');
+        debugLog('[DEBUG] api/pdf: PDF downloaded, size:', buffer.length, 'bytes');
 
         // Set appropriate headers for PDF.js viewer
         res.setHeader('Content-Type', 'application/pdf');
@@ -17078,13 +17038,13 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'Guideline ID is required' });
         }
 
-        console.log('[DEBUG] getGuidelinePDF: Looking up guideline:', guidelineId);
+        debugLog('[DEBUG] getGuidelinePDF: Looking up guideline:', guidelineId);
 
         // Look up guideline metadata to get filename
         const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
         
         if (!guidelineDoc.exists) {
-            console.log('[DEBUG] getGuidelinePDF: Guideline not found:', guidelineId);
+            debugLog('[DEBUG] getGuidelinePDF: Guideline not found:', guidelineId);
             return res.status(404).json({ success: false, error: 'Guideline not found' });
         }
 
@@ -17092,11 +17052,11 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
         const filename = guidelineData.filename || guidelineData.originalFilename;
         
         if (!filename) {
-            console.log('[DEBUG] getGuidelinePDF: No filename found for guideline:', guidelineId);
+            debugLog('[DEBUG] getGuidelinePDF: No filename found for guideline:', guidelineId);
             return res.status(404).json({ success: false, error: 'PDF filename not found' });
         }
 
-        console.log('[DEBUG] getGuidelinePDF: Fetching PDF from Firebase Storage:', filename);
+        debugLog('[DEBUG] getGuidelinePDF: Fetching PDF from Firebase Storage:', filename);
 
         // Fetch from Firebase Storage
         const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
@@ -17104,13 +17064,13 @@ app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
         
         const [exists] = await file.exists();
         if (!exists) {
-            console.log('[DEBUG] getGuidelinePDF: PDF not found in Firebase Storage:', filename);
+            debugLog('[DEBUG] getGuidelinePDF: PDF not found in Firebase Storage:', filename);
             return res.status(404).json({ success: false, error: 'PDF file not found in storage' });
         }
 
-        console.log('[DEBUG] getGuidelinePDF: Downloading PDF from Firebase Storage');
+        debugLog('[DEBUG] getGuidelinePDF: Downloading PDF from Firebase Storage');
         const [buffer] = await file.download();
-        console.log('[DEBUG] getGuidelinePDF: PDF downloaded, size:', buffer.length, 'bytes');
+        debugLog('[DEBUG] getGuidelinePDF: PDF downloaded, size:', buffer.length, 'bytes');
 
         // Set appropriate headers for PDF and CORS
         res.setHeader('Content-Type', 'application/pdf');
@@ -17140,28 +17100,28 @@ app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
     req.stepTimer = timer;
     
     try {
-        console.log('[DEBUG] incorporateSuggestion endpoint called');
+        debugLog('[DEBUG] incorporateSuggestion endpoint called');
         const { sectionName, subsectionName, currentSectionContent, suggestionText, originalText } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!sectionName) {
-            console.log('[DEBUG] incorporateSuggestion: Missing section name');
+            debugLog('[DEBUG] incorporateSuggestion: Missing section name');
             return res.status(400).json({ success: false, error: 'Section name is required' });
         }
         
         if (!currentSectionContent) {
-            console.log('[DEBUG] incorporateSuggestion: Missing section content');
+            debugLog('[DEBUG] incorporateSuggestion: Missing section content');
             return res.status(400).json({ success: false, error: 'Section content is required' });
         }
         
         if (!suggestionText) {
-            console.log('[DEBUG] incorporateSuggestion: Missing suggestion text');
+            debugLog('[DEBUG] incorporateSuggestion: Missing suggestion text');
             return res.status(400).json({ success: false, error: 'Suggestion text is required' });
         }
         timer.step('Validation');
 
-        console.log('[DEBUG] incorporateSuggestion request data:', {
+        debugLog('[DEBUG] incorporateSuggestion request data:', {
             userId,
             sectionName,
             subsectionName: subsectionName || 'none',
@@ -17240,7 +17200,7 @@ ${originalText}
 
 Please incorporate this suggestion into the section content, preserving existing formatting and inserting the suggestion text exactly as provided.`;
 
-        console.log('[DEBUG] incorporateSuggestion: Sending to AI');
+        debugLog('[DEBUG] incorporateSuggestion: Sending to AI');
         timer.step('Build prompts');
 
         // Send to AI
@@ -17252,7 +17212,7 @@ Please incorporate this suggestion into the section content, preserving existing
         const aiResponse = await routeToAI({ messages }, userId);
         timer.step('AI API call');
         
-        console.log('[DEBUG] incorporateSuggestion: AI response received', {
+        debugLog('[DEBUG] incorporateSuggestion: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length
@@ -17267,7 +17227,7 @@ Please incorporate this suggestion into the section content, preserving existing
         let result;
         try {
             result = JSON.parse(aiResponse.content);
-            console.log('[DEBUG] incorporateSuggestion: Parsed result:', {
+            debugLog('[DEBUG] incorporateSuggestion: Parsed result:', {
                 hasModifiedContent: !!result.modifiedSectionContent,
                 insertionLocation: result.insertionLocation
             });
@@ -17303,22 +17263,22 @@ Please incorporate this suggestion into the section content, preserving existing
 // Multi-Guideline Dynamic Advice API endpoint - processes multiple guidelines and combines suggestions
 app.post('/multiGuidelineDynamicAdvice', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] multiGuidelineDynamicAdvice endpoint called');
+        debugLog('[DEBUG] multiGuidelineDynamicAdvice endpoint called');
         const { transcript, guidelineAnalyses } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!transcript) {
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Missing transcript');
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Missing transcript');
             return res.status(400).json({ success: false, error: 'Transcript is required' });
         }
         
         if (!guidelineAnalyses || !Array.isArray(guidelineAnalyses) || guidelineAnalyses.length === 0) {
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Missing or invalid guideline analyses');
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Missing or invalid guideline analyses');
             return res.status(400).json({ success: false, error: 'Guideline analyses array is required' });
         }
 
-        console.log('[DEBUG] multiGuidelineDynamicAdvice request data:', {
+        debugLog('[DEBUG] multiGuidelineDynamicAdvice request data:', {
             userId,
             transcriptLength: transcript.length,
             guidelinesCount: guidelineAnalyses.length,
@@ -17461,7 +17421,7 @@ ${feedbackSummariesText}
 
 Please extract and consolidate actionable suggestions from these multiple guideline analyses. Create combined suggestions when multiple guidelines recommend similar interventions, and prioritize suggestions based on clinical importance and consensus across guidelines. For each suggestion, include detailed context with relevant quoted text from the supporting guidelines.`;
 
-        console.log('[DEBUG] multiGuidelineDynamicAdvice: Sending to AI', {
+        debugLog('[DEBUG] multiGuidelineDynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length,
             guidelinesCount: guidelineAnalyses.length
@@ -17487,7 +17447,7 @@ Please extract and consolidate actionable suggestions from these multiple guidel
             );
             
             if (isContextLengthError) {
-                console.log('[DEBUG] multiGuidelineDynamicAdvice: Context length exceeded, attempting fallback with truncated analyses');
+                debugLog('[DEBUG] multiGuidelineDynamicAdvice: Context length exceeded, attempting fallback with truncated analyses');
                 
                 // Truncate each analysis to reduce total size
                 const MAX_ANALYSIS_LENGTH_PER_GUIDELINE = 5000;
@@ -17516,7 +17476,7 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                     { role: 'user', content: fallbackUserPrompt }
                 ];
                 
-                console.log('[DEBUG] multiGuidelineDynamicAdvice: Retrying with truncated analyses', {
+                debugLog('[DEBUG] multiGuidelineDynamicAdvice: Retrying with truncated analyses', {
                     fallbackUserPromptLength: fallbackUserPrompt.length,
                     originalUserPromptLength: userPrompt.length
                 });
@@ -17530,10 +17490,10 @@ Please extract and consolidate actionable suggestions from these multiple guidel
         }
         
         if (usedFallback) {
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Successfully completed with fallback truncated content');
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Successfully completed with fallback truncated content');
         }
         
-        console.log('[DEBUG] multiGuidelineDynamicAdvice: AI response received', {
+        debugLog('[DEBUG] multiGuidelineDynamicAdvice: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length,
@@ -17554,12 +17514,12 @@ Please extract and consolidate actionable suggestions from these multiple guidel
             combinedSuggestions = parsedResponse.combinedSuggestions || [];
             guidelinesSummary = parsedResponse.guidelinesSummary || [];
             
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Parsed suggestions directly:', {
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Parsed suggestions directly:', {
                 suggestionsCount: combinedSuggestions.length,
                 guidelinesSummaryCount: guidelinesSummary.length
             });
         } catch (parseError) {
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Direct JSON parse failed, trying to extract from markdown:', {
                 error: parseError.message,
                 rawContentPreview: aiResponse.content.substring(0, 200)
             });
@@ -17572,20 +17532,20 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                 const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
                 if (jsonMatch) {
                     jsonContent = jsonMatch[1];
-                    console.log('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON from markdown code blocks');
+                    debugLog('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON from markdown code blocks');
                 } else {
                     // Look for JSON object without code blocks
                     const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
                     if (objectMatch) {
                         jsonContent = objectMatch[1];
-                        console.log('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON object from text');
+                        debugLog('[DEBUG] multiGuidelineDynamicAdvice: Extracted JSON object from text');
                     }
                 }
                 
                 // Clean up any extra text before/after JSON
                 jsonContent = jsonContent.trim();
                 
-                console.log('[DEBUG] multiGuidelineDynamicAdvice: Attempting to parse extracted JSON:', {
+                debugLog('[DEBUG] multiGuidelineDynamicAdvice: Attempting to parse extracted JSON:', {
                     extractedLength: jsonContent.length,
                     extractedPreview: jsonContent.substring(0, 200)
                 });
@@ -17594,7 +17554,7 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                 combinedSuggestions = parsedResponse.combinedSuggestions || [];
                 guidelinesSummary = parsedResponse.guidelinesSummary || [];
                 
-                console.log('[DEBUG] multiGuidelineDynamicAdvice: Successfully parsed extracted JSON:', {
+                debugLog('[DEBUG] multiGuidelineDynamicAdvice: Successfully parsed extracted JSON:', {
                     suggestionsCount: combinedSuggestions.length,
                     guidelinesSummaryCount: guidelinesSummary.length
                 });
@@ -17623,7 +17583,7 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                     relevanceScore: 'unknown'
                 }));
                 
-                console.log('[DEBUG] multiGuidelineDynamicAdvice: Using final fallback suggestion format');
+                debugLog('[DEBUG] multiGuidelineDynamicAdvice: Using final fallback suggestion format');
                 
                 // Log the full raw content for debugging
                 console.error('[DEBUG] multiGuidelineDynamicAdvice: Full raw AI response for debugging:', aiResponse.content);
@@ -17658,7 +17618,7 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                 status: 'pending',
                 type: 'multi-guideline'
             });
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: Stored combined suggestions in database with sessionId:', sessionId);
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: Stored combined suggestions in database with sessionId:', sessionId);
         } catch (dbError) {
             console.error('[DEBUG] multiGuidelineDynamicAdvice: Database storage error:', dbError.message);
             // Continue without failing the request
@@ -17686,12 +17646,12 @@ Please extract and consolidate actionable suggestions from these multiple guidel
                 },
                 'multiGuidelineDynamicAdvice'
             );
-            console.log('[DEBUG] multiGuidelineDynamicAdvice: AI interaction logged successfully');
+            debugLog('[DEBUG] multiGuidelineDynamicAdvice: AI interaction logged successfully');
         } catch (logError) {
             console.error('[DEBUG] multiGuidelineDynamicAdvice: Error logging AI interaction:', logError.message);
         }
 
-        console.log('[DEBUG] multiGuidelineDynamicAdvice: Returning response', {
+        debugLog('[DEBUG] multiGuidelineDynamicAdvice: Returning response', {
             sessionId,
             combinedSuggestionsCount: combinedSuggestions.length,
             guidelinesSummaryCount: guidelinesSummary.length,
@@ -17723,22 +17683,22 @@ Please extract and consolidate actionable suggestions from these multiple guidel
 // Apply Dynamic Advice API endpoint - applies user decisions to transcript
 app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] applyDynamicAdvice endpoint called');
+        debugLog('[DEBUG] applyDynamicAdvice endpoint called');
         const { sessionId, decisions } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!sessionId) {
-            console.log('[DEBUG] applyDynamicAdvice: Missing sessionId');
+            debugLog('[DEBUG] applyDynamicAdvice: Missing sessionId');
             return res.status(400).json({ success: false, error: 'Session ID is required' });
         }
         
         if (!decisions || typeof decisions !== 'object') {
-            console.log('[DEBUG] applyDynamicAdvice: Invalid decisions format');
+            debugLog('[DEBUG] applyDynamicAdvice: Invalid decisions format');
             return res.status(400).json({ success: false, error: 'Decisions object is required' });
         }
 
-        console.log('[DEBUG] applyDynamicAdvice request data:', {
+        debugLog('[DEBUG] applyDynamicAdvice request data:', {
             userId,
             sessionId,
             decisionsCount: Object.keys(decisions).length,
@@ -17756,21 +17716,21 @@ app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
             const doc = await docRef.get();
             
             if (!doc.exists) {
-                console.log('[DEBUG] applyDynamicAdvice: Session not found in database:', sessionId);
+                debugLog('[DEBUG] applyDynamicAdvice: Session not found in database:', sessionId);
                 return res.status(404).json({ success: false, error: 'Session not found' });
             }
             
             storedData = doc.data();
             
             if (storedData.userId !== userId) {
-                console.log('[DEBUG] applyDynamicAdvice: User mismatch', {
+                debugLog('[DEBUG] applyDynamicAdvice: User mismatch', {
                     storedUserId: storedData.userId,
                     requestUserId: userId
                 });
                 return res.status(403).json({ success: false, error: 'Unauthorized access to session' });
             }
             
-            console.log('[DEBUG] applyDynamicAdvice: Retrieved stored data', {
+            debugLog('[DEBUG] applyDynamicAdvice: Retrieved stored data', {
                 suggestionsCount: storedData.suggestions?.length,
                 transcript: storedData.transcript?.substring(0, 100) + '...',
                 guidelineTitle: storedData.guidelineTitle
@@ -17813,11 +17773,11 @@ Important guidelines:
         suggestions.forEach(suggestion => {
             const decision = decisions[suggestion.id];
             if (!decision) {
-                console.log('[DEBUG] applyDynamicAdvice: No decision for suggestion:', suggestion.id);
+                debugLog('[DEBUG] applyDynamicAdvice: No decision for suggestion:', suggestion.id);
                 return;
             }
 
-            console.log('[DEBUG] applyDynamicAdvice: Processing decision', {
+            debugLog('[DEBUG] applyDynamicAdvice: Processing decision', {
                 suggestionId: suggestion.id,
                 action: decision.action,
                 originalText: suggestion.originalText?.substring(0, 50),
@@ -17838,11 +17798,11 @@ Important guidelines:
                     rejectedChanges.push(suggestion);
                     break;
                 default:
-                    console.log('[DEBUG] applyDynamicAdvice: Unknown action:', decision.action);
+                    debugLog('[DEBUG] applyDynamicAdvice: Unknown action:', decision.action);
             }
         });
 
-        console.log('[DEBUG] applyDynamicAdvice: Decision summary', {
+        debugLog('[DEBUG] applyDynamicAdvice: Decision summary', {
             accepted: acceptedChanges.length,
             modified: modifiedChanges.length,
             rejected: rejectedChanges.length
@@ -17865,7 +17825,7 @@ ${changeInstructions}
 
 Return the updated transcript with these changes applied.`;
 
-        console.log('[DEBUG] applyDynamicAdvice: Sending to AI', {
+        debugLog('[DEBUG] applyDynamicAdvice: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length,
             changesCount: acceptedChanges.length + modifiedChanges.length
@@ -17879,7 +17839,7 @@ Return the updated transcript with these changes applied.`;
 
         const aiResponse = await routeToAI({ messages }, userId);
         
-        console.log('[DEBUG] applyDynamicAdvice: AI response received', {
+        debugLog('[DEBUG] applyDynamicAdvice: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length,
@@ -17905,7 +17865,7 @@ Return the updated transcript with these changes applied.`;
                     rejected: rejectedChanges.length
                 }
             });
-            console.log('[DEBUG] applyDynamicAdvice: Updated database with final results');
+            debugLog('[DEBUG] applyDynamicAdvice: Updated database with final results');
         } catch (dbError) {
             console.error('[DEBUG] applyDynamicAdvice: Database update error:', dbError.message);
         }
@@ -17935,12 +17895,12 @@ Return the updated transcript with these changes applied.`;
                 },
                 'applyDynamicAdvice'
             );
-            console.log('[DEBUG] applyDynamicAdvice: AI interaction logged successfully');
+            debugLog('[DEBUG] applyDynamicAdvice: AI interaction logged successfully');
         } catch (logError) {
             console.error('[DEBUG] applyDynamicAdvice: Error logging AI interaction:', logError.message);
         }
 
-        console.log('[DEBUG] applyDynamicAdvice: Returning response', {
+        debugLog('[DEBUG] applyDynamicAdvice: Returning response', {
             sessionId,
             originalLength: transcript.length,
             updatedLength: aiResponse.content.length,
@@ -18448,7 +18408,7 @@ app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
             }
         }
 
-        console.log('[DEBUG] askGuidelinesQuestion: Retrieved guidelines with content:', {
+        debugLog('[DEBUG] askGuidelinesQuestion: Retrieved guidelines with content:', {
             count: guidelinesWithContent.length,
             withContent: guidelinesWithContent.filter(g => g.content || g.condensed || g.semanticallyCompressed).length,
             withCompressed: guidelinesWithContent.filter(g => g.semanticallyCompressed).length
@@ -18566,7 +18526,7 @@ ${guidelinesText}
 
 Please answer this question using the guidelines above. Remember to tag each piece of specific advice with the GuidelineID it came from.`;
 
-        console.log('[DEBUG] askGuidelinesQuestion: Sending to AI', {
+        debugLog('[DEBUG] askGuidelinesQuestion: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length,
             guidelinesCount: guidelinesWithContent.length
@@ -18580,7 +18540,7 @@ Please answer this question using the guidelines above. Remember to tag each pie
 
         let aiResponse = await routeToAI({ messages }, userId);
         
-        console.log('[DEBUG] askGuidelinesQuestion: AI response received', {
+        debugLog('[DEBUG] askGuidelinesQuestion: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length,
@@ -18876,22 +18836,22 @@ Please answer this question using the guidelines above. Remember to tag each pie
 // New endpoint to score compliance of clinical notes against guidelines
 app.post('/scoreCompliance', authenticateUser, async (req, res) => {
     try {
-        console.log('[DEBUG] scoreCompliance endpoint called');
+        debugLog('[DEBUG] scoreCompliance endpoint called');
         const { originalTranscript, recommendedChanges, guidelineId, guidelineTitle } = req.body;
         const userId = req.user.uid;
         
         // Validate required fields
         if (!originalTranscript) {
-            console.log('[DEBUG] scoreCompliance: Missing original transcript');
+            debugLog('[DEBUG] scoreCompliance: Missing original transcript');
             return res.status(400).json({ success: false, error: 'Original transcript is required' });
         }
         
         if (!recommendedChanges) {
-            console.log('[DEBUG] scoreCompliance: Missing recommended changes');
+            debugLog('[DEBUG] scoreCompliance: Missing recommended changes');
             return res.status(400).json({ success: false, error: 'Recommended changes are required' });
         }
 
-        console.log('[DEBUG] scoreCompliance request data:', {
+        debugLog('[DEBUG] scoreCompliance request data:', {
             userId,
             transcriptLength: originalTranscript.length,
             changesLength: recommendedChanges.length,
@@ -18903,10 +18863,10 @@ app.post('/scoreCompliance', authenticateUser, async (req, res) => {
         let guidelineContent = '';
         if (guidelineId) {
             try {
-                console.log('[DEBUG] scoreCompliance: Fetching guideline content for ID:', guidelineId);
+                debugLog('[DEBUG] scoreCompliance: Fetching guideline content for ID:', guidelineId);
                 const guideline = await getGuideline(guidelineId);
                 guidelineContent = guideline.content || guideline.condensed || '';
-                console.log('[DEBUG] scoreCompliance: Retrieved guideline content length:', guidelineContent.length);
+                debugLog('[DEBUG] scoreCompliance: Retrieved guideline content length:', guidelineContent.length);
             } catch (guidelineError) {
                 console.warn('[DEBUG] scoreCompliance: Could not fetch guideline content:', guidelineError.message);
             }
@@ -18988,7 +18948,7 @@ ${guidelineContent ? `\nFull Guideline Content:\n${guidelineContent}` : ''}
 
 Please assess the compliance of the original clinical note against this guideline and provide a comprehensive scoring analysis as specified.`;
 
-        console.log('[DEBUG] scoreCompliance: Sending to AI', {
+        debugLog('[DEBUG] scoreCompliance: Sending to AI', {
             systemPromptLength: systemPrompt.length,
             userPromptLength: userPrompt.length
         });
@@ -19001,7 +18961,7 @@ Please assess the compliance of the original clinical note against this guidelin
 
         const aiResponse = await routeToAI({ messages }, userId);
         
-        console.log('[DEBUG] scoreCompliance: AI response received', {
+        debugLog('[DEBUG] scoreCompliance: AI response received', {
             success: !!aiResponse,
             hasContent: !!aiResponse?.content,
             contentLength: aiResponse?.content?.length,
@@ -19018,12 +18978,12 @@ Please assess the compliance of the original clinical note against this guidelin
         try {
             // First, try to parse the response directly as JSON
             scoringResult = JSON.parse(aiResponse.content);
-            console.log('[DEBUG] scoreCompliance: Parsed scoring result directly:', {
+            debugLog('[DEBUG] scoreCompliance: Parsed scoring result directly:', {
                 overallScore: scoringResult.overallScore,
                 category: scoringResult.category
             });
         } catch (parseError) {
-            console.log('[DEBUG] scoreCompliance: Direct JSON parse failed, trying to extract from markdown:', {
+            debugLog('[DEBUG] scoreCompliance: Direct JSON parse failed, trying to extract from markdown:', {
                 error: parseError.message,
                 rawContentPreview: aiResponse.content.substring(0, 200)
             });
@@ -19036,27 +18996,27 @@ Please assess the compliance of the original clinical note against this guidelin
                 const jsonMatch = jsonContent.match(/```(?:json)?\s*(\{[\s\S]*\})\s*```/);
                 if (jsonMatch) {
                     jsonContent = jsonMatch[1];
-                    console.log('[DEBUG] scoreCompliance: Extracted JSON from markdown code blocks');
+                    debugLog('[DEBUG] scoreCompliance: Extracted JSON from markdown code blocks');
                 } else {
                     // Look for JSON object without code blocks
                     const objectMatch = jsonContent.match(/(\{[\s\S]*\})/);
                     if (objectMatch) {
                         jsonContent = objectMatch[1];
-                        console.log('[DEBUG] scoreCompliance: Extracted JSON object from text');
+                        debugLog('[DEBUG] scoreCompliance: Extracted JSON object from text');
                     }
                 }
                 
                 // Clean up any extra text before/after JSON
                 jsonContent = jsonContent.trim();
                 
-                console.log('[DEBUG] scoreCompliance: Attempting to parse extracted JSON:', {
+                debugLog('[DEBUG] scoreCompliance: Attempting to parse extracted JSON:', {
                     extractedLength: jsonContent.length,
                     extractedPreview: jsonContent.substring(0, 200)
                 });
                 
                 scoringResult = JSON.parse(jsonContent);
                 
-                console.log('[DEBUG] scoreCompliance: Successfully parsed extracted JSON:', {
+                debugLog('[DEBUG] scoreCompliance: Successfully parsed extracted JSON:', {
                     overallScore: scoringResult.overallScore,
                     category: scoringResult.category
                 });
@@ -19085,7 +19045,7 @@ Please assess the compliance of the original clinical note against this guidelin
                     },
                     complianceInsights: 'There was an issue processing the compliance assessment. Please try again.'
                 };
-                console.log('[DEBUG] scoreCompliance: Using fallback scoring result');
+                debugLog('[DEBUG] scoreCompliance: Using fallback scoring result');
                 
                 // Log the full raw content for debugging
                 console.error('[DEBUG] scoreCompliance: Full raw AI response for debugging:', aiResponse.content);
@@ -19108,7 +19068,7 @@ Please assess the compliance of the original clinical note against this guidelin
                 scoringResult,
                 createdAt: admin.firestore.FieldValue.serverTimestamp()
             });
-            console.log('[DEBUG] scoreCompliance: Stored scoring result in database with sessionId:', sessionId);
+            debugLog('[DEBUG] scoreCompliance: Stored scoring result in database with sessionId:', sessionId);
         } catch (dbError) {
             console.error('[DEBUG] scoreCompliance: Database storage error:', dbError.message);
             // Continue without failing the request
@@ -19137,12 +19097,12 @@ Please assess the compliance of the original clinical note against this guidelin
                 },
                 'scoreCompliance'
             );
-            console.log('[DEBUG] scoreCompliance: AI interaction logged successfully');
+            debugLog('[DEBUG] scoreCompliance: AI interaction logged successfully');
         } catch (logError) {
             console.error('[DEBUG] scoreCompliance: Error logging AI interaction:', logError.message);
         }
 
-        console.log('[DEBUG] scoreCompliance: Returning response', {
+        debugLog('[DEBUG] scoreCompliance: Returning response', {
             sessionId,
             overallScore: scoringResult.overallScore,
             category: scoringResult.category,
