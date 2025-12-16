@@ -1339,14 +1339,29 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         <div class="guideline-selection-interface">
             <div class="selection-header">
                 <h2>📋 Select Guidelines for Guideline Suggestions</h2>
-                <p>Check which guidelines to generate suggestions for. Most relevant guidelines are pre-selected.</p>
+                <p>Check which guidelines to generate suggestions for. Only essential guidelines (95%+) are pre-selected.</p>
             </div>
     `;
 
-    // Add Most Relevant Guidelines (auto-checked)
+    // Split mostRelevant into Essential (95%+) and remaining Most Relevant
+    const essentialGuidelines = [];
+    const remainingMostRelevant = [];
+    
     if (categories.mostRelevant && categories.mostRelevant.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
-        categories.mostRelevant.forEach((g, index) => {
+        categories.mostRelevant.forEach(g => {
+            const score = extractRelevanceScoreLocal(g.relevance);
+            if (score >= 0.95) {
+                essentialGuidelines.push(g);
+            } else {
+                remainingMostRelevant.push(g);
+            }
+        });
+    }
+
+    // Add Essential Guidelines (95%+ relevance, auto-checked)
+    if (essentialGuidelines.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
+        essentialGuidelines.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
@@ -1361,8 +1376,42 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <input type="checkbox" 
                                class="guideline-checkbox" 
                                data-guideline-id="${g.id}" 
-                               data-category="mostRelevant"
+                               data-category="essential"
                                checked="checked">
+                        <span class="checkmark"></span>
+                        <div class="guideline-info">
+                            <div class="guideline-content">
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
+                                ${pdfLinkHtml}
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            `;
+        });
+        htmlContent += '</div></div>';
+    }
+
+    // Add Most Relevant Guidelines (below 95%, NOT auto-checked to reduce clutter)
+    if (remainingMostRelevant.length > 0) {
+        htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
+        remainingMostRelevant.forEach((g, index) => {
+            const pdfLink = createPdfDownloadLink(g);
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Always include PDF link placeholder to maintain grid structure
+            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
+            
+            htmlContent += `
+                <div class="guideline-item">
+                    <label class="guideline-checkbox-label">
+                        <input type="checkbox" 
+                               class="guideline-checkbox" 
+                               data-guideline-id="${g.id}" 
+                               data-category="mostRelevant">
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
