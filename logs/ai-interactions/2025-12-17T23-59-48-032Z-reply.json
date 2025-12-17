@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-59-48-032Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4023,
+  "response_length": 1446,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1014,\"transcriptPreview\":\"28yo, G1P0, 40+2, BMI 24, Rh+ve\\n\\nIssues:\\nTerm PROM at 07:30 today (clear fluid, large gush)\\nNo contractions at present\\n\\nBackgro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20003-first-trimester-dating-uss-protocol-pdf\\\", \\\"title\\\": \\\"CG20003 First Trimester Dating USS Protocol\\\", \\\"relevanc...",
+  "full_data": null
+}
