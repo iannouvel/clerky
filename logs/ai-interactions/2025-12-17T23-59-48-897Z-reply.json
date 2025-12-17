@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-59-48-897Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4096,
+  "response_length": 1528,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":1014,\"transcriptPreview\":\"28yo, G1P0, 40+2, BMI 24, Rh+ve\\n\\nIssues:\\nTerm PROM at 07:30 today (clear fluid, large gush)\\nNo contractions at present\\n\\nBackgro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"pre-labour-srom-at-term-guideline-pdf\\\", \\\"title\\\": \\\"Pre-labour SROM at term guideline\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n   ...",
+  "full_data": null
+}
