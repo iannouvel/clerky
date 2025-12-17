@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-54-38-243Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1456,
+  "response_length": 160,
+  "prompt_preview": "{\"transcript\":\"28yo, G2P1, 6/12 postpartum, breastfeeding\\n\\nPresenting Complaint:\\nPainful, swollen, erythematous left breast for 5/7, feverish for 2/7, now with pointing area and purulent discharge\\...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 132,\n  \"mostRelevantCount\": 8,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 13,\n  \"notRelevantCount\": 103\n}...",
+  "full_data": null
+}
