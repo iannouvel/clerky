@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-41-13-282Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 3561,
+  "response_length": 1466,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":56,\"transcriptPreview\":\"What are the responsibilities of the on call consultant?...\",\"chunkGuidelines\":[\"cg17003-nipe-guideline-pdf: CG17003 NIPE guideline\",\"c...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp001-management-of-confirmed-ectopic-pregnancy-pdf\\\", \\\"title\\\": \\\"GP001 - Management of Confirmed Ectopic Pregnancy\\\", ...",
+  "full_data": null
+}
