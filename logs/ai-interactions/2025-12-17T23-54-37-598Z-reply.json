@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-54-37-598Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5328,
+  "response_length": 8321,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1340,\"transcriptPreview\":\"28yo, G2P1, 6/12 postpartum, breastfeeding\\n\\nPresenting Complaint:\\nPainful, swollen, erythematous left breast for 5/7, feverish for...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2016 -  ...",
+  "full_data": null
+}
