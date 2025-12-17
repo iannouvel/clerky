@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T00-11-36-742Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1515,
+  "response_length": 159,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 32+3, BMI 24, Rh+ve\\n\\nIssues:\\nFetal growth restriction (FGR) with estimated fetal weight (EFW) <3rd centile on serial USS\\nReduced fetal movements (RFM) reported today\\n\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 79,\n  \"mostRelevantCount\": 15,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 16,\n  \"notRelevantCount\": 40\n}...",
+  "full_data": null
+}
