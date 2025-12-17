@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-30-19-379Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1734,
+  "response_length": 159,
+  "prompt_preview": "{\"transcript\":\"28yo, G0, BMI 31\\n\\nPresenting Complaint:\\nPresenting for pre-conception counselling regarding previous myomectomy scar\\n\\nKey Clinical Issue:\\nPlans for pregnancy. Concern regarding ri...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 78,\n  \"mostRelevantCount\": 12,\n  \"potentiallyRelevantCount\": 9,\n  \"lessRelevantCount\": 23,\n  \"notRelevantCount\": 34\n}...",
+  "full_data": null
+}
