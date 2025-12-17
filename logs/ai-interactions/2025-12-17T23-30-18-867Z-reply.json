@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-17T23-30-18-867Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5325,
+  "response_length": 7971,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1624,\"transcriptPreview\":\"28yo, G0, BMI 31\\n\\nPresenting Complaint:\\nPresenting for pre-conception counselling regarding previous myomectomy scar\\n\\nKey Clinic...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2018 - Jaunia...",
+  "full_data": null
+}
