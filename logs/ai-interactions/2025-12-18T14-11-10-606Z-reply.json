@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T14-11-10-606Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2833,
+  "response_length": 159,
+  "prompt_preview": "{\"transcript\":\"28yo, P1 - SVD 2017, 29+1, BMI 33, Rh+ve\\n\\nBooked under MSH\\n\\nIssues:\\n\\nAttended triage with abdominal pain\\n\\nAlso having planned follow-up today for anaemia (Hb 103, MCV 91.6) and ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 78,\n  \"mostRelevantCount\": 16,\n  \"potentiallyRelevantCount\": 22,\n  \"lessRelevantCount\": 38,\n  \"notRelevantCount\": 2\n}...",
+  "full_data": null
+}
