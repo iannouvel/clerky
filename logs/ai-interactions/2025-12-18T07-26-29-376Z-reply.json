@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-26-29-376Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3883,
+  "response_length": 571,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1766,\"transcriptPreview\":\"32yo, G2P1 (prev LSCS for breech), 39+2, BMI 29, Rh+ve\\n\\nIssues:\\nPatient requesting Trial of Labour After Caesarean (TOLAC) followi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"mp034-vaginal-birth-after-caesarean-section-vbac-pdf\\\",\\n      \\\"title\\\": \\\"Vaginal Birth after Caesarea...",
+  "full_data": null
+}
