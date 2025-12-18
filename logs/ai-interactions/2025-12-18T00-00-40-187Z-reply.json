@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T00-00-40-187Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5330,
+  "response_length": 8329,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1014,\"transcriptPreview\":\"28yo, G1P0, 40+2, BMI 24, Rh+ve\\n\\nIssues:\\nTerm PROM at 07:30 today (clear fluid, large gush)\\nNo contractions at present\\n\\nBackgro...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2019-thomson-pprom-from-24-weeks-pdf\\\",\\n      \\\"title\\\": \\\"Care of Women Presenting with Suspected...",
+  "full_data": null
+}
