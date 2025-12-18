@@ -3657,7 +3657,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
         model = 'mistral-large-latest';
         break;
       case 'Gemini':
-        model = 'gemini-1.5-flash';
+        model = 'gemini-2.5-flash';
         break;
       default:
         model = 'deepseek-chat';
@@ -14613,7 +14613,7 @@ ${trimmedText}`;
                      preferredProvider === 'OpenAI' ? 'gpt-3.5-turbo' :
                      preferredProvider === 'Anthropic' ? 'claude-3-sonnet' :
                      preferredProvider === 'Mistral' ? 'mistral-large' :
-                     preferredProvider === 'Gemini' ? 'gemini-1.5-flash' : 'deepseek-chat';
+                     preferredProvider === 'Gemini' ? 'gemini-2.5-flash' : 'deepseek-chat';
         
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
         // Use a shorter timeout for fast UX when just detecting type
