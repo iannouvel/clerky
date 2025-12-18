@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-27-26-672Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1879,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"32yo, G2P1 (prev LSCS for breech), 39+2, BMI 29, Rh+ve\\n\\nIssues:\\nPatient requesting Trial of Labour After Caesarean (TOLAC) following previous LSCS.\\nAwareness of risks and benefits d...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 195,\n  \"mostRelevantCount\": 32,\n  \"potentiallyRelevantCount\": 22,\n  \"lessRelevantCount\": 44,\n  \"notRelevantCount\": 97\n}...",
+  "full_data": null
+}
