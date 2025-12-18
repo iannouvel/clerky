@@ -134,7 +134,7 @@ async function scrapeRCOGGuidelines() {
             });
         }
         
-        console.log(`[SCRAPING] Found ${guidelines.length} RCOG guidelines`);
+        debugLog(`[SCRAPING] Found ${guidelines.length} RCOG guidelines`);
     } catch (error) {
         console.error('[SCRAPING] Error scraping RCOG:', error.message);
     }
@@ -272,7 +272,7 @@ async function scrapeNICEGuidelines() {
         }
     }
     
-    console.log(`[SCRAPING] Found ${guidelines.length} NICE guidelines`);
+    debugLog(`[SCRAPING] Found ${guidelines.length} NICE guidelines`);
     return guidelines;
 }
 
@@ -932,7 +932,7 @@ async function fetchCondensedFile(guidelineFilename) {
             const condensedText = data.condensed || data.content;
             
             if (condensedText) {
-                console.log(`[FETCH_CONDENSED] Successfully fetched from Firestore (${condensedText.length} chars)`);
+                debugLog(`[FETCH_CONDENSED] Successfully fetched from Firestore (${condensedText.length} chars)`);
                 return condensedText;
             }
         }
@@ -957,7 +957,7 @@ async function fetchCondensedFile(guidelineFilename) {
 // Function to extract text from PDF buffer
 async function extractTextFromPDF(pdfBuffer) {
     try {
-        console.log(`[PDF_EXTRACT] Starting PDF text extraction, buffer size: ${pdfBuffer.length}`);
+        debugLog(`[PDF_EXTRACT] Starting PDF text extraction, buffer size: ${pdfBuffer.length}`);
         const data = await PDFParser(pdfBuffer);
         const extractedText = data.text;
         
@@ -986,7 +986,7 @@ async function extractTextFromPDF(pdfBuffer) {
 // Function to fetch PDF from GitHub and extract text
 async function fetchAndExtractPDFText(pdfFileName) {
     try {
-        console.log(`[FETCH_PDF] Fetching PDF from Firebase Storage: ${pdfFileName}`);
+        debugLog(`[FETCH_PDF] Fetching PDF from Firebase Storage: ${pdfFileName}`);
         
         const bucket = admin.storage().bucket('clerky-b3be8.firebasestorage.app');
         const file = bucket.file(`pdfs/${pdfFileName}`);
@@ -998,7 +998,7 @@ async function fetchAndExtractPDFText(pdfFileName) {
         
         console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
         const [buffer] = await file.download();
-        console.log(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
+        debugLog(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
         
         // Extract text from PDF
         const extractedText = await extractTextFromPDF(buffer);
@@ -1033,7 +1033,7 @@ ${fullText}`;
         
         if (aiResult && aiResult.content) {
             const condensedText = aiResult.content.trim();
-            console.log(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters`);
+            debugLog(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters`);
             return condensedText;
         } else {
             console.warn(`[CONDENSE] AI did not return condensed text`);
@@ -1495,7 +1495,7 @@ ${text.substring(0, 8000)}`; // Limit input to avoid token limits
         
         if (aiResult && aiResult.content) {
             const summary = aiResult.content.trim();
-            console.log(`[SUMMARY] Successfully generated summary: ${summary.length} characters`);
+            debugLog(`[SUMMARY] Successfully generated summary: ${summary.length} characters`);
             return summary;
         } else {
             console.warn(`[SUMMARY] AI did not return summary`);
@@ -1511,7 +1511,7 @@ ${text.substring(0, 8000)}`; // Limit input to avoid token limits
 // Function to extract significant terms from content using AI
 async function extractSignificantTerms(text, userId = null) {
     try {
-        console.log(`[TERMS] Starting term extraction, input length: ${text.length}`);
+        debugLog(`[TERMS] Starting term extraction, input length: ${text.length}`);
         
         const prompt = `Extract the most significant medical terms, conditions, procedures, and medications from this clinical guideline. Return them as a JSON array of objects with "term" and "category" fields. Categories should be: condition, procedure, medication, test, or general.
 
@@ -1534,7 +1534,7 @@ ${text.substring(0, 6000)}`;
                 const jsonMatch = aiResult.content.match(/\[[\s\S]*\]/);
                 if (jsonMatch) {
                     const terms = JSON.parse(jsonMatch[0]);
-                    console.log(`[TERMS] Successfully extracted ${terms.length} terms`);
+                    debugLog(`[TERMS] Successfully extracted ${terms.length} terms`);
                     return terms;
                 }
             } catch (parseError) {
@@ -1578,7 +1578,7 @@ ${text.substring(0, 6000)}`;
                 const jsonMatch = aiResult.content.match(/\[[\s\S]*\]/);
                 if (jsonMatch) {
                     const elements = JSON.parse(jsonMatch[0]);
-                    console.log(`[AUDITABLE] Successfully extracted ${elements.length} auditable elements`);
+                    debugLog(`[AUDITABLE] Successfully extracted ${elements.length} auditable elements`);
                     return elements;
                 }
             } catch (parseError) {
@@ -1635,7 +1635,7 @@ async function processJobQueue() {
     if (isProcessingQueue) return;
     isProcessingQueue = true;
     
-    console.log(`[JOB_QUEUE] Starting queue processor, ${jobQueue.length} jobs pending`);
+    debugLog(`[JOB_QUEUE] Starting queue processor, ${jobQueue.length} jobs pending`);
     
     while (jobQueue.length > 0) {
         // Wait if we're at max concurrent jobs
@@ -1671,7 +1671,7 @@ async function processJobQueue() {
 
 // Process individual job
 async function processJob(job) {
-    console.log(`[JOB_QUEUE] Processing job: ${job.id}, type: ${job.type}`);
+    debugLog(`[JOB_QUEUE] Processing job: ${job.id}, type: ${job.type}`);
     
     try {
         job.attempts++;
@@ -1723,7 +1723,7 @@ async function processJob(job) {
         
         // Retry if not at max attempts
         if (job.attempts < job.maxAttempts) {
-            console.log(`[JOB_QUEUE] Retrying job ${job.id}, attempt ${job.attempts}/${job.maxAttempts}`);
+            debugLog(`[JOB_QUEUE] Retrying job ${job.id}, attempt ${job.attempts}/${job.maxAttempts}`);
             job.status = 'pending';
             jobQueue.push(job); // Re-queue
         } else {
@@ -1869,7 +1869,7 @@ async function jobGenerateDisplayName(job, guidelineData) {
         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
     });
     
-    console.log(`[JOB_DISPLAY_NAME] Updated displayName for ${job.guidelineId}: "${displayName}"`);
+    debugLog(`[JOB_DISPLAY_NAME] Updated displayName for ${job.guidelineId}: "${displayName}"`);
     return { displayName: displayName };
 }
 
@@ -1908,7 +1908,7 @@ async function checkAndMarkProcessingComplete(guidelineId) {
 // Routine background scanner for incomplete guidelines
 async function scanAndProcessIncompleteGuidelines() {
     try {
-        console.log('[BACKGROUND_SCAN] Starting scan for incomplete guidelines...');
+        debugLog('[BACKGROUND_SCAN] Starting scan for incomplete guidelines...');
         
         const snapshot = await db.collection('guidelines').get();
         let incomplete_count = 0;
@@ -1962,7 +1962,7 @@ async function scanAndProcessIncompleteGuidelines() {
                 
                 // Limit batch size to avoid overwhelming system
                 if (incomplete_count >= 20) {
-                    console.log('[BACKGROUND_SCAN] Reached batch limit (20), will continue in next scan');
+                    debugLog('[BACKGROUND_SCAN] Reached batch limit (20), will continue in next scan');
                     break;
                 }
             }
@@ -1990,7 +1990,7 @@ function startBackgroundScanner() {
         scanAndProcessIncompleteGuidelines();
     }, 10 * 60 * 1000); // 10 minutes
     
-    console.log('[BACKGROUND_SCAN] Scanner scheduled: runs every 10 minutes');
+    debugLog('[BACKGROUND_SCAN] Scanner scheduled: runs every 10 minutes');
 }
 
 // ============================================================================
@@ -2148,7 +2148,7 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
                 }
                 
                 if (pdfFileName) {
-                    console.log(`[CONTENT_GEN] Attempting to extract text from PDF: ${pdfFileName}`);
+                    debugLog(`[CONTENT_GEN] Attempting to extract text from PDF: ${pdfFileName}`);
                     const extractedContent = await fetchAndExtractPDFText(pdfFileName);
                     
                     if (extractedContent && extractedContent.trim().length > 0) {
@@ -2156,13 +2156,13 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
                         console.log(`[CONTENT_GEN] Successfully extracted content for ${guidelineId}: ${extractedContent.length} chars`);
                         updated = true;
                     } else {
-                        console.log(`[CONTENT_GEN] PDF extraction returned empty content for ${guidelineId}`);
+                        debugLog(`[CONTENT_GEN] PDF extraction returned empty content for ${guidelineId}`);
                     }
                 } else {
                     console.log(`[CONTENT_GEN] Could not determine PDF filename for ${guidelineId}`);
                 }
             } catch (pdfError) {
-                console.log(`[CONTENT_GEN] PDF extraction failed for ${guidelineId}: ${pdfError.message}`);
+                debugLog(`[CONTENT_GEN] PDF extraction failed for ${guidelineId}: ${pdfError.message}`);
             }
         }
         
@@ -2189,7 +2189,7 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
                         // Also save to main document for easier access
                         updates.condensed = condensedText;
                         
-                        console.log(`[CONTENT_GEN] Generated condensed text for ${guidelineId}: ${condensedText.length} chars`);
+                        debugLog(`[CONTENT_GEN] Generated condensed text for ${guidelineId}: ${condensedText.length} chars`);
                         updated = true;
                     }
                 } catch (error) {
@@ -2206,7 +2206,7 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
             updates.generationDate = new Date().toISOString();
             
             await guidelineRef.set(updates, { merge: true });
-            console.log(`[CONTENT_GEN] Updated guideline ${guidelineId} with generated content`);
+            debugLog(`[CONTENT_GEN] Updated guideline ${guidelineId} with generated content`);
         }
         
         return updated;
@@ -3352,10 +3352,11 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         tokenUsage.estimated_cost_usd = totalCost;
       }
     } else if (preferredProvider === 'Gemini') {
-      // Gemini requires a different message format
+      // Gemini messages are already formatted by formatMessagesForProvider with parts: [{text}]
+      // Just need to adjust roles: Gemini uses 'user' and 'model' (not 'assistant')
       const geminiMessages = formattedMessages.map(msg => ({
         role: msg.role === 'user' ? 'user' : 'model',
-        parts: [{ text: msg.content }]
+        parts: msg.parts || [{ text: msg.content || '' }]
       }));
       
       const response = await axios.post(
@@ -3514,10 +3515,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               timeout: 120000 // 120 second timeout for fallback AI generation
             });
           } else if (nextProvider.name === 'Gemini') {
-            // Gemini requires a different message format
+            // Gemini messages - handle both formatted (parts) and unformatted (content) messages
             const geminiMessages = formattedMessages.map(msg => ({
               role: msg.role === 'user' ? 'user' : 'model',
-              parts: [{ text: msg.content }]
+              parts: msg.parts || [{ text: msg.content || '' }]
             }));
             
             response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${nextProvider.model}:generateContent`, {
@@ -5573,7 +5574,7 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
         let githubGuidelines = [];
         try {
             githubGuidelines = await getGuidelinesList();
-            console.log(`[DUPLICATE_CHECK] Retrieved ${githubGuidelines.length} guidelines from GitHub for validation`);
+            debugLog(`[DUPLICATE_CHECK] Retrieved ${githubGuidelines.length} guidelines from GitHub for validation`);
         } catch (githubError) {
             console.warn(`[DUPLICATE_CHECK] Could not retrieve GitHub guidelines list: ${githubError.message}`);
             // Continue without GitHub validation if it fails
@@ -5614,9 +5615,9 @@ app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
                                         filename: filename,
                                         hash: hash
                                     });
-                                    console.log(`[DUPLICATE_CHECK] Stale record found for hash: ${hash.substring(0, 16)}... (missing file: ${filename})`);
+                                    debugLog(`[DUPLICATE_CHECK] Stale record found for hash: ${hash.substring(0, 16)}...`);
                                 } else {
-                                    console.log(`[DUPLICATE_CHECK] Skipping recent upload (within grace period): ${filename}`);
+                                    debugLog(`[DUPLICATE_CHECK] Skipping recent upload (within grace period): ${filename}`);
                                 }
                             }
                         } else {
@@ -6201,7 +6202,7 @@ async function appendExclusionEntry(entry) {
 // DEPRECATED: Now fetches from Firestore instead of GitHub
 async function getFileContents(fileName) {
     try {
-        console.log(`[FETCH_CONTENT] Fetching content from Firestore for: ${fileName}`);
+        debugLog(`[FETCH_CONTENT] Fetching content from Firestore for: ${fileName}`);
         
         // Extract the filename from the path and generate guideline ID
         const fileNameOnly = fileName.split('/').pop();
