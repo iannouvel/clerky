@@ -5360,16 +5360,29 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     console.log(`[CHUNK DISTRIBUTION] Using ${availableProviders.length} providers for ${chunks.length} chunks: ${availableProviders.join(', ')}`);
     
     // Process all chunks concurrently, distributing across providers
+    // Track timing for each model to identify slow providers
+    const chunkTimings = [];
+    
     const chunkPromises = chunks.map(async (chunk, index) => {
         // Round-robin distribution across available providers
         const providerIndex = index % availableProviders.length;
         const provider = availableProviders[providerIndex] || null;
+        const chunkStartTime = Date.now();
         
         try {
             console.log(`[DEBUG] Processing chunk ${index + 1}/${chunks.length} with ${chunk.length} guidelines via ${provider || 'default'}`);
             
             const prompt = createPromptForChunk(transcript, chunk);
             const aiResponse = await routeToAI(prompt, userId, provider);
+            
+            const chunkDuration = Date.now() - chunkStartTime;
+            chunkTimings.push({ 
+                chunk: index + 1, 
+                provider: provider || 'default', 
+                duration: chunkDuration,
+                status: 'OK',
+                guidelinesCount: chunk.length
+            });
             
             // Extract content from the response
             const responseContent = aiResponse && typeof aiResponse === 'object' 
@@ -5381,12 +5394,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             }
             
             // Log each chunk's AI response for debugging
-            console.log(`[DEBUG] Chunk ${index + 1} (${provider || 'default'}) AI Response:`, JSON.stringify({
-                provider: provider || 'default',
-                responseType: typeof responseContent,
-                responseLength: responseContent.length,
-                responsePreview: responseContent.substring(0, 500) + (responseContent.length > 500 ? '...' : '')
-            }, null, 2));
+            console.log(`[DEBUG] Chunk ${index + 1} (${provider || 'default'}) completed in ${chunkDuration}ms`);
             
             // Log the interaction for this chunk (fire-and-forget so it doesn't slow the endpoint)
             try {
@@ -5396,7 +5404,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                     transcriptPreview: transcript.substring(0, 500) + '...',
                     chunkGuidelines: chunk.map(g => `${g.id}: ${g.title}`),
                     chunkIndex: index + 1,
-                    totalChunks: chunks.length
+                    totalChunks: chunks.length,
+                    duration: chunkDuration
                 }, {
                     success: true,
                     aiResponse: responseContent,
@@ -5418,7 +5427,16 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             
             return parseResult;
         } catch (error) {
-            console.error(`[ERROR] Error processing chunk ${index + 1}:`, error);
+            const chunkDuration = Date.now() - chunkStartTime;
+            chunkTimings.push({ 
+                chunk: index + 1, 
+                provider: provider || 'default', 
+                duration: chunkDuration,
+                status: 'FAIL',
+                error: error.message,
+                guidelinesCount: chunk.length
+            });
+            console.error(`[ERROR] Error processing chunk ${index + 1} after ${chunkDuration}ms:`, error);
             return { 
                 success: false, 
                 error: error.message,
@@ -5439,7 +5457,46 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         .filter(result => result.status === 'rejected' || !result.value.success)
         .length;
     
+    // Aggregate model timing stats
+    const modelStats = {};
+    chunkTimings.forEach(ct => {
+        if (!modelStats[ct.provider]) {
+            modelStats[ct.provider] = { 
+                count: 0, 
+                totalDuration: 0, 
+                minDuration: Infinity, 
+                maxDuration: 0,
+                failures: 0 
+            };
+        }
+        const stats = modelStats[ct.provider];
+        stats.count++;
+        stats.totalDuration += ct.duration;
+        stats.minDuration = Math.min(stats.minDuration, ct.duration);
+        stats.maxDuration = Math.max(stats.maxDuration, ct.duration);
+        if (ct.status === 'FAIL') stats.failures++;
+    });
+    
+    // Convert to array and calculate averages
+    const modelTimingSummary = Object.entries(modelStats).map(([provider, stats]) => ({
+        provider,
+        count: stats.count,
+        avgDuration: Math.round(stats.totalDuration / stats.count),
+        minDuration: stats.minDuration === Infinity ? 0 : stats.minDuration,
+        maxDuration: stats.maxDuration,
+        failures: stats.failures
+    })).sort((a, b) => b.avgDuration - a.avgDuration); // Slowest first
+    
+    // Add model timing as steps for the endpoint performance monitor
+    chunkTimings.sort((a, b) => b.duration - a.duration).forEach(ct => {
+        timer.step(`${ct.provider} chunk ${ct.chunk} (${ct.status})`);
+        // Override the duration for this step with actual chunk duration
+        const lastStep = timer.steps[timer.steps.length - 1];
+        if (lastStep) lastStep.duration = ct.duration;
+    });
+    
     console.log(`[DEBUG] Processed ${successfulResults.length}/${chunks.length} chunks successfully`);
+    console.log(`[CHUNK TIMING] Model performance:`, modelTimingSummary);
     timer.step(`Process ${chunks.length} AI chunks`);
     
     if (successfulResults.length === 0) {
@@ -5475,7 +5532,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         success: true, 
         categories: mergedCategories,
         chunksProcessed: successfulResults.length,
-        totalChunks: chunks.length
+        totalChunks: chunks.length,
+        modelTiming: modelTimingSummary,
+        chunkTimings: chunkTimings.sort((a, b) => b.duration - a.duration) // Slowest first
     });
     
   } catch (error) {
