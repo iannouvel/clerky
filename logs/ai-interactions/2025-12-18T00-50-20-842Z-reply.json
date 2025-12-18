@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T00-50-20-842Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1675,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"32yo, G3P2 (prev SVD, prev LSCS for FTP - 4.5kg baby), 38+2, BMI 34, Rh+ve\\n\\nIssues:\\nSuspected Large for Gestational Age (LGA) fetus\\nPrevious LSCS for failure to progress (FTP) with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 136,\n  \"mostRelevantCount\": 19,\n  \"potentiallyRelevantCount\": 13,\n  \"lessRelevantCount\": 22,\n  \"notRelevantCount\": 82\n}...",
+  "full_data": null
+}
