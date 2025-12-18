@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-02-02-544Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4095,
+  "response_length": 7127,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":1104,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"pid-proforma-june-2011v2-pdf\\\",\\n      \\\"title\\\": \\\"PID Proforma - June 2011v2\\\",\\n      \\\"relevance\\\": ...",
+  "full_data": null
+}
