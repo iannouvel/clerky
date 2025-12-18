@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-02-44-279Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1215,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with 2nd degree tear, uneventful antenatal course\\nDischa...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 222,\n  \"mostRelevantCount\": 18,\n  \"potentiallyRelevantCount\": 21,\n  \"lessRelevantCount\": 32,\n  \"notRelevantCount\": 151\n}...",
+  "full_data": null
+}
