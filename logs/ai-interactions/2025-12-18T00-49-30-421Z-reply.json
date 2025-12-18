@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T00-49-30-421Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4019,
+  "response_length": 4867,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1568,\"transcriptPreview\":\"32yo, G3P2 (prev SVD, prev LSCS for FTP - 4.5kg baby), 38+2, BMI 34, Rh+ve\\n\\nIssues:\\nSuspected Large for Gestational Age (LGA) fetu...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gp001-management-of-confirmed-ectopic-pregnancy-pdf\\\", \\\"title\\\": \\\"GP001 - Management of Confirmed Ectopic Pregnancy\\\", ...",
+  "full_data": null
+}
