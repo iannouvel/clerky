@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-27-26-062Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5324,
+  "response_length": 7190,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1766,\"transcriptPreview\":\"32yo, G2P1 (prev LSCS for breech), 39+2, BMI 29, Rh+ve\\n\\nIssues:\\nPatient requesting Trial of Labour After Caesarean (TOLAC) followi...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2017-management-of-breech-presentation-pdf\\\", \\\"title\\\": \\\"BJOG - 2017 - Management of Breech Presentation\\\", \\\"rele...",
+  "full_data": null
+}
