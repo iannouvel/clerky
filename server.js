@@ -312,10 +312,10 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'Gemini',
-    model: 'gemini-1.5-pro-latest',
-    costPer1kTokens: 0.0025, // $0.0025 per 1k tokens
+    model: 'gemini-1.5-flash',
+    costPer1kTokens: 0.0001, // $0.0001 per 1k tokens (flash is cheaper)
     priority: 5,
-    description: 'Google\'s offering, good for specific use cases'
+    description: 'Google\'s offering, fast and cost-effective'
   }
 ];
 
@@ -3657,7 +3657,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
         model = 'mistral-large-latest';
         break;
       case 'Gemini':
-        model = 'gemini-1.5-pro';
+        model = 'gemini-1.5-flash';
         break;
       default:
         model = 'deepseek-chat';
@@ -14613,7 +14613,7 @@ ${trimmedText}`;
                      preferredProvider === 'OpenAI' ? 'gpt-3.5-turbo' :
                      preferredProvider === 'Anthropic' ? 'claude-3-sonnet' :
                      preferredProvider === 'Mistral' ? 'mistral-large' :
-                     preferredProvider === 'Gemini' ? 'gemini-1.5-pro' : 'deepseek-chat';
+                     preferredProvider === 'Gemini' ? 'gemini-1.5-flash' : 'deepseek-chat';
         
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
         // Use a shorter timeout for fast UX when just detecting type
