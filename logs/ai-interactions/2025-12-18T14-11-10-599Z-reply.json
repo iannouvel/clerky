@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T14-11-10-599Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 1398,
+  "response_length": 3267,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/2\",\"transcriptLength\":2663,\"transcriptPreview\":\"28yo, P1 - SVD 2017, 29+1, BMI 33, Rh+ve\\n\\nBooked under MSH\\n\\nIssues:\\n\\nAttended triage with abdominal pain\\n\\nAlso having planned...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"018-sop-pdf\\\", \\\"title\\\": \\\"018 SOP\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"018-2-pdf\\\", \\\"title\\\": \\\"018 (2)\\\", \\\"r...",
+  "full_data": null
+}
