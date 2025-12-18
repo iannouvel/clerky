@@ -312,8 +312,8 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'Gemini',
-    model: 'gemini-1.5-flash',
-    costPer1kTokens: 0.0001, // $0.0001 per 1k tokens (flash is cheaper)
+    model: 'gemini-2.5-flash',
+    costPer1kTokens: 0.0001, // $0.0001 per 1k tokens
     priority: 5,
     description: 'Google\'s offering, fast and cost-effective'
   }
