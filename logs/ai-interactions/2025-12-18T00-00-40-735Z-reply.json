@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T00-00-40-735Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1118,
+  "response_length": 159,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 40+2, BMI 24, Rh+ve\\n\\nIssues:\\nTerm PROM at 07:30 today (clear fluid, large gush)\\nNo contractions at present\\n\\nBackground:\\nUncomplicated pregnancy, low risk primigravida...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 96,\n  \"mostRelevantCount\": 13,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 17,\n  \"notRelevantCount\": 58\n}...",
+  "full_data": null
+}
