@@ -3651,7 +3651,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
         model = 'deepseek-chat';
         break;
       case 'Anthropic':
-        model = 'claude-3-sonnet-20240229';
+        model = 'claude-3-haiku-20240307';
         break;
       case 'Mistral':
         model = 'mistral-large-latest';
