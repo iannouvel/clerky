@@ -9909,7 +9909,7 @@ const AVAILABLE_MODELS = [
     { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral' },
     { name: 'Anthropic', model: 'claude-3-sonnet-20240229', displayName: 'Claude' },
     { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'OpenAI' },
-    { name: 'Gemini', model: 'gemini-1.5-pro-latest', displayName: 'Gemini' }
+    { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini' }
 ];
 
 // ---- Chunk distribution provider preferences ----
