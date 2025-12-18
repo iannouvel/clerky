@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-01-46-456Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4022,
+  "response_length": 7000,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1104,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"cg22005-management-of-weight-loss-in-neonates-pdf\\\",\\n      \\\"title\\\": \\\"CG22005 Management of Weight Loss in Neo...",
+  "full_data": null
+}
