@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-01-34-529Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4396,
+  "response_length": 2117,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1104,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-blood-transfusion-in-obstetrics-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Blood transfusion in Obstetrics\\\", \\\"relevance\\\":...",
+  "full_data": null
+}
