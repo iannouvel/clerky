@@ -9907,7 +9907,7 @@ async function clearHospitalTrustSelection() {
 const AVAILABLE_MODELS = [
     { name: 'DeepSeek', model: 'deepseek-chat', displayName: 'DeepSeek' },
     { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral' },
-    { name: 'Anthropic', model: 'claude-3-sonnet-20240229', displayName: 'Claude' },
+    { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude' },
     { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'OpenAI' },
     { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini' }
 ];

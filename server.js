@@ -298,10 +298,10 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'Anthropic',
-    model: 'claude-3-sonnet-20240229',
-    costPer1kTokens: 0.003, // $0.003 per 1k tokens
+    model: 'claude-3-haiku-20240307',
+    costPer1kTokens: 0.00025, // $0.25 per 1M input tokens
     priority: 3,
-    description: 'High quality, moderate cost'
+    description: 'Fast and cost-effective'
   },
   {
     name: 'OpenAI',
