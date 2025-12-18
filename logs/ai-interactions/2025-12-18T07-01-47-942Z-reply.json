@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-01-47-942Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3888,
+  "response_length": 522,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1104,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"mp045-pyrexia-in-labour-sepsis-pdf\\\",\\n      \\\"title\\\": \\\"MP045 Pyrexia in Labour & Sepsis\\\",\\n      \\\"r...",
+  "full_data": null
+}
