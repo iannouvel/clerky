@@ -9072,6 +9072,122 @@ app.get('/health', (req, res) => {
     });
 });
 
+// Test all 5 AI models with minimal tokens (health check)
+// Cost: < $0.0001 total (fraction of a cent)
+app.get('/testModelHealth', authenticateUser, async (req, res) => {
+    const MODELS = [
+        { name: 'DeepSeek', model: 'deepseek-chat', endpoint: 'https://api.deepseek.com/v1/chat/completions', keyEnv: 'DEEPSEEK_API_KEY' },
+        { name: 'Mistral', model: 'mistral-large-latest', endpoint: 'https://api.mistral.ai/v1/chat/completions', keyEnv: 'MISTRAL_API_KEY' },
+        { name: 'Anthropic', model: 'claude-3-haiku-20240307', endpoint: 'https://api.anthropic.com/v1/messages', keyEnv: 'ANTHROPIC_API_KEY' },
+        { name: 'OpenAI', model: 'gpt-3.5-turbo', endpoint: 'https://api.openai.com/v1/chat/completions', keyEnv: 'OPENAI_API_KEY' },
+        { name: 'Gemini', model: 'gemini-2.5-flash', endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent', keyEnv: 'GOOGLE_AI_API_KEY' }
+    ];
+
+    const MINIMAL_PROMPT = 'Say OK';
+
+    async function testModel(modelConfig) {
+        const { name, model, endpoint, keyEnv } = modelConfig;
+        const apiKey = process.env[keyEnv];
+
+        if (!apiKey) {
+            return { name, status: 'SKIP', message: `No ${keyEnv} configured`, ms: 0 };
+        }
+
+        const startTime = Date.now();
+
+        try {
+            let response;
+
+            if (name === 'Anthropic') {
+                response = await axios.post(endpoint, {
+                    model,
+                    messages: [{ role: 'user', content: MINIMAL_PROMPT }],
+                    max_tokens: 10
+                }, {
+                    headers: {
+                        'x-api-key': apiKey,
+                        'Content-Type': 'application/json',
+                        'anthropic-version': '2023-06-01'
+                    },
+                    timeout: 15000
+                });
+            } else if (name === 'Gemini') {
+                const url = `${endpoint}?key=${apiKey}`;
+                response = await axios.post(url, {
+                    contents: [{ parts: [{ text: MINIMAL_PROMPT }] }],
+                    generationConfig: { maxOutputTokens: 10 }
+                }, {
+                    headers: { 'Content-Type': 'application/json' },
+                    timeout: 15000
+                });
+            } else {
+                // OpenAI, DeepSeek, Mistral all use the same format
+                response = await axios.post(endpoint, {
+                    model,
+                    messages: [{ role: 'user', content: MINIMAL_PROMPT }],
+                    max_tokens: 10
+                }, {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`,
+                        'Content-Type': 'application/json'
+                    },
+                    timeout: 15000
+                });
+            }
+
+            const ms = Date.now() - startTime;
+
+            // Extract response content
+            let content = '';
+            if (name === 'Anthropic') {
+                content = response.data?.content?.[0]?.text || '';
+            } else if (name === 'Gemini') {
+                content = response.data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+            } else {
+                content = response.data?.choices?.[0]?.message?.content || '';
+            }
+
+            return { name, status: 'OK', message: content.trim().substring(0, 30), ms };
+
+        } catch (error) {
+            const ms = Date.now() - startTime;
+            const errMsg = error.response?.data?.error?.message || error.response?.data?.message || error.message;
+            return { name, status: 'FAIL', message: (errMsg || 'Unknown error').substring(0, 80), ms };
+        }
+    }
+
+    try {
+        console.log(`[MODEL_HEALTH] User ${req.user.uid} requested model health check`);
+
+        // Test all models in parallel
+        const results = await Promise.all(MODELS.map(testModel));
+
+        const passCount = results.filter(r => r.status === 'OK').length;
+        const failCount = results.filter(r => r.status === 'FAIL').length;
+        const skipCount = results.filter(r => r.status === 'SKIP').length;
+
+        console.log(`[MODEL_HEALTH] Results: ${passCount} OK, ${failCount} FAIL, ${skipCount} SKIP`);
+
+        res.json({
+            success: true,
+            timestamp: new Date().toISOString(),
+            results,
+            summary: {
+                passed: passCount,
+                failed: failCount,
+                skipped: skipCount,
+                total: MODELS.length
+            }
+        });
+    } catch (error) {
+        console.error('[MODEL_HEALTH] Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error running model health check: ' + error.message
+        });
+    }
+});
+
 // Add endpoint to view AI usage statistics
 app.get('/api-usage-stats', authenticateUser, async (req, res) => {
   try {

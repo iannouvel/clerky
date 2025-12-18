@@ -325,6 +325,27 @@
         </div>
         <div class="tab-content" id="maintenanceContent" style="display:none;padding:12px">
             <div class="tools-section">
+                <h4>AI Model Health Check</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">Test all 5 AI models used for chunk distribution. Cost: &lt; $0.0001 (fraction of a cent).</p>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;">
+                    <button id="testModelHealthBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;">🔍 Test All Models</button>
+                    <span id="modelHealthSummary" style="font-size:13px;color:#666;"></span>
+                </div>
+                <div id="modelHealthResults" style="display:none;border:1px solid #e5e7eb;border-radius:6px;background:#fff;overflow:hidden;">
+                    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                        <thead style="background:#f8f9fa;">
+                            <tr>
+                                <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;width:30px;">Status</th>
+                                <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Model</th>
+                                <th style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;">Response Time</th>
+                                <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Response</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modelHealthTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tools-section" style="margin-top:20px;">
                 <h4>Maintenance</h4>
                 <div class="tools-grid">
                     <button id="repairContentBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔧 Repair Content Issues</button>
