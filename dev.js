@@ -2902,21 +2902,100 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (data.aggregatedEndpoints.length === 0) {
                     summaryTbody.innerHTML = '<tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">No timing data available yet</td></tr>';
                 } else {
-                    summaryTbody.innerHTML = data.aggregatedEndpoints.map(e => {
+                    // Aggregate model timing data for chunk-based endpoints
+                    const endpointModelStats = {};
+                    data.timings.forEach(t => {
+                        if (t.steps && t.steps.length > 0) {
+                            const key = `${t.method} ${t.endpoint}`;
+                            if (!endpointModelStats[key]) {
+                                endpointModelStats[key] = {};
+                            }
+                            t.steps.forEach(s => {
+                                // Check if this is a chunk step (contains provider name and 'chunk')
+                                const isChunkStep = s.name.includes('chunk') && 
+                                    (s.name.includes('DeepSeek') || s.name.includes('Mistral') || 
+                                     s.name.includes('Anthropic') || s.name.includes('OpenAI') || s.name.includes('Gemini'));
+                                if (isChunkStep) {
+                                    const provider = s.name.split(' ')[0];
+                                    if (!endpointModelStats[key][provider]) {
+                                        endpointModelStats[key][provider] = { count: 0, totalDuration: 0, maxDuration: 0 };
+                                    }
+                                    endpointModelStats[key][provider].count++;
+                                    endpointModelStats[key][provider].totalDuration += s.duration;
+                                    endpointModelStats[key][provider].maxDuration = Math.max(endpointModelStats[key][provider].maxDuration, s.duration);
+                                }
+                            });
+                        }
+                    });
+
+                    summaryTbody.innerHTML = data.aggregatedEndpoints.map((e, idx) => {
                         const avgColor = e.avgDuration > 10000 ? '#dc3545' : e.avgDuration > 3000 ? '#ff9800' : '#28a745';
                         const shortEndpoint = e.endpoint.length > 60 ? e.endpoint.substring(0, 57) + '...' : e.endpoint;
-                        return `<tr style="border-bottom:1px solid #eee;">
+                        const key = `${e.method} ${e.endpoint}`;
+                        const modelStats = endpointModelStats[key];
+                        const hasModelStats = modelStats && Object.keys(modelStats).length > 0;
+                        const expandIcon = hasModelStats ? '<span class="summary-expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
+                        
+                        // Build model summary row if applicable
+                        let modelRowHtml = '';
+                        if (hasModelStats) {
+                            const modelSummary = Object.entries(modelStats)
+                                .map(([provider, stats]) => ({
+                                    provider,
+                                    count: stats.count,
+                                    avgDuration: Math.round(stats.totalDuration / stats.count),
+                                    maxDuration: stats.maxDuration
+                                }))
+                                .sort((a, b) => b.avgDuration - a.avgDuration);
+                            
+                            modelRowHtml = `
+                                <tr id="summary-model-row-${idx}" class="summary-model-row" style="display:none;background:#f0f7ff;">
+                                    <td colspan="7" style="padding:12px 8px 12px 30px;">
+                                        <div style="padding:8px;background:#e8f4fd;border-radius:4px;border:1px solid #bee5eb;">
+                                            <strong style="color:#0c5460;">🤖 Model Performance (${e.count} request${e.count > 1 ? 's' : ''})</strong>
+                                            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:8px;margin-top:8px;">
+                                                ${modelSummary.map(m => {
+                                                    const mAvgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
+                                                    return `<div style="background:#fff;padding:8px;border-radius:4px;text-align:center;border:1px solid #dee2e6;">
+                                                        <div style="font-weight:bold;font-size:12px;color:#333;">${m.provider}</div>
+                                                        <div style="color:${mAvgColor};font-weight:bold;font-size:14px;">${(m.avgDuration/1000).toFixed(1)}s avg</div>
+                                                        <div style="font-size:10px;color:#666;">${m.count} chunk${m.count>1?'s':''} · max ${(m.maxDuration/1000).toFixed(1)}s</div>
+                                                    </div>`;
+                                                }).join('')}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>`;
+                        }
+                        
+                        return `<tr style="border-bottom:1px solid #eee;cursor:${hasModelStats ? 'pointer' : 'default'};" onclick="${hasModelStats ? `toggleSummaryModelRow(${idx})` : ''}">
                             <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${e.method}</code></td>
-                            <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${e.endpoint}">${shortEndpoint}</td>
+                            <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${e.endpoint}">${expandIcon}${shortEndpoint}${hasModelStats ? ' 🤖' : ''}</td>
                             <td style="padding:6px 8px;text-align:center;">${e.count}</td>
                             <td style="padding:6px 8px;text-align:right;font-weight:bold;color:${avgColor};">${e.avgDuration.toLocaleString()}ms</td>
                             <td style="padding:6px 8px;text-align:right;color:#666;">${e.minDuration.toLocaleString()}ms</td>
                             <td style="padding:6px 8px;text-align:right;color:#666;">${e.maxDuration.toLocaleString()}ms</td>
                             <td style="padding:6px 8px;text-align:center;color:${e.errorCount > 0 ? '#dc3545' : '#28a745'};">${e.errorCount}${e.errorRate > 0 ? ` (${e.errorRate}%)` : ''}</td>
-                        </tr>`;
+                        </tr>${modelRowHtml}`;
                     }).join('');
                 }
             }
+            
+            // Toggle summary model row visibility
+            window.toggleSummaryModelRow = function(idx) {
+                const modelRow = document.getElementById(`summary-model-row-${idx}`);
+                if (modelRow) {
+                    const isHidden = modelRow.style.display === 'none';
+                    modelRow.style.display = isHidden ? 'table-row' : 'none';
+                    
+                    // Update expand icon
+                    const mainRow = modelRow.previousElementSibling;
+                    const expandIcon = mainRow?.querySelector('.summary-expand-icon');
+                    if (expandIcon) {
+                        expandIcon.textContent = isHidden ? '▼' : '▶';
+                    }
+                }
+            };
 
             // Render Detail View (Recent Requests)
             if (tbody) {
@@ -2935,17 +3014,76 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const expandIcon = hasSteps ? '<span class="expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
                     
                     // Create steps row HTML if steps exist
+                    // Check if this is a chunk distribution request (has model steps)
+                    const chunkSteps = hasSteps ? t.steps.filter(s => s.name.includes('chunk') && (s.name.includes('DeepSeek') || s.name.includes('Mistral') || s.name.includes('Anthropic') || s.name.includes('OpenAI') || s.name.includes('Gemini'))) : [];
+                    const otherSteps = hasSteps ? t.steps.filter(s => !chunkSteps.includes(s)) : [];
+                    const hasChunkSteps = chunkSteps.length > 0;
+                    
+                    // Aggregate model stats from chunk steps
+                    let modelSummaryHtml = '';
+                    if (hasChunkSteps) {
+                        const modelStats = {};
+                        chunkSteps.forEach(s => {
+                            const provider = s.name.split(' ')[0]; // Extract provider name
+                            if (!modelStats[provider]) {
+                                modelStats[provider] = { count: 0, totalDuration: 0, maxDuration: 0 };
+                            }
+                            modelStats[provider].count++;
+                            modelStats[provider].totalDuration += s.duration;
+                            modelStats[provider].maxDuration = Math.max(modelStats[provider].maxDuration, s.duration);
+                        });
+                        
+                        const modelSummary = Object.entries(modelStats)
+                            .map(([provider, stats]) => ({
+                                provider,
+                                count: stats.count,
+                                avgDuration: Math.round(stats.totalDuration / stats.count),
+                                maxDuration: stats.maxDuration
+                            }))
+                            .sort((a, b) => b.avgDuration - a.avgDuration);
+                        
+                        modelSummaryHtml = `
+                            <div style="margin-bottom:10px;padding:8px;background:#e8f4fd;border-radius:4px;border:1px solid #bee5eb;">
+                                <strong style="color:#0c5460;">🤖 Model Performance Summary</strong>
+                                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:8px;margin-top:6px;">
+                                    ${modelSummary.map(m => {
+                                        const avgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
+                                        return `<div style="background:#fff;padding:6px;border-radius:4px;text-align:center;">
+                                            <div style="font-weight:bold;font-size:11px;">${m.provider}</div>
+                                            <div style="color:${avgColor};font-weight:bold;">${(m.avgDuration/1000).toFixed(1)}s avg</div>
+                                            <div style="font-size:10px;color:#666;">${m.count} chunk${m.count>1?'s':''} · max ${(m.maxDuration/1000).toFixed(1)}s</div>
+                                        </div>`;
+                                    }).join('')}
+                                </div>
+                            </div>`;
+                    }
+                    
                     const stepsRowHtml = hasSteps ? `
                         <tr id="steps-row-${idx}" class="steps-row" style="display:none;background:#f8f9fa;">
                             <td colspan="5" style="padding:8px 8px 8px 30px;">
                                 <div style="font-size:12px;color:#666;">
-                                    ${t.steps.map(s => {
+                                    ${modelSummaryHtml}
+                                    ${otherSteps.map(s => {
                                         const stepColor = s.duration > 5000 ? '#dc3545' : s.duration > 1000 ? '#ff9800' : '#28a745';
                                         return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
                                             <span>${s.name}</span>
                                             <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
                                         </div>`;
                                     }).join('')}
+                                    ${hasChunkSteps ? `
+                                        <details style="margin-top:8px;">
+                                            <summary style="cursor:pointer;color:#007bff;font-size:11px;">Show ${chunkSteps.length} individual chunk timings...</summary>
+                                            <div style="margin-top:4px;">
+                                                ${chunkSteps.map(s => {
+                                                    const stepColor = s.duration > 30000 ? '#dc3545' : s.duration > 15000 ? '#ff9800' : '#28a745';
+                                                    return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
+                                                        <span>${s.name}</span>
+                                                        <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
+                                                    </div>`;
+                                                }).join('')}
+                                            </div>
+                                        </details>
+                                    ` : ''}
                                 </div>
                             </td>
                         </tr>` : '';
