@@ -1553,6 +1553,80 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle AI Model Health Check button
+        const testModelHealthBtn = document.getElementById('testModelHealthBtn');
+        if (testModelHealthBtn) {
+            testModelHealthBtn.addEventListener('click', async () => {
+                const resultsDiv = document.getElementById('modelHealthResults');
+                const tableBody = document.getElementById('modelHealthTableBody');
+                const summarySpan = document.getElementById('modelHealthSummary');
+                
+                try {
+                    // Update button state
+                    const originalText = testModelHealthBtn.textContent;
+                    testModelHealthBtn.textContent = '🔄 Testing...';
+                    testModelHealthBtn.disabled = true;
+                    summarySpan.textContent = 'Testing all models...';
+                    resultsDiv.style.display = 'none';
+                    
+                    // Get auth token
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to test models');
+                        return;
+                    }
+                    
+                    const token = await user.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/testModelHealth`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (!data.success) {
+                        throw new Error(data.message || 'Failed to test models');
+                    }
+                    
+                    // Display results
+                    tableBody.innerHTML = '';
+                    
+                    data.results.forEach(result => {
+                        const row = document.createElement('tr');
+                        const statusIcon = result.status === 'OK' ? '✅' : result.status === 'SKIP' ? '⏭️' : '❌';
+                        const statusColor = result.status === 'OK' ? '#28a745' : result.status === 'SKIP' ? '#ffc107' : '#dc3545';
+                        
+                        row.innerHTML = `
+                            <td style="padding:10px;text-align:center;font-size:16px;border-bottom:1px solid #eee;">${statusIcon}</td>
+                            <td style="padding:10px;border-bottom:1px solid #eee;font-weight:500;">${result.name}</td>
+                            <td style="padding:10px;text-align:right;border-bottom:1px solid #eee;color:#666;">${result.ms}ms</td>
+                            <td style="padding:10px;border-bottom:1px solid #eee;color:${statusColor};font-size:12px;">${result.message}</td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+                    
+                    resultsDiv.style.display = 'block';
+                    
+                    // Update summary
+                    const { passed, failed, skipped } = data.summary;
+                    summarySpan.innerHTML = `<span style="color:#28a745;">${passed} passed</span>, <span style="color:#dc3545;">${failed} failed</span>, <span style="color:#ffc107;">${skipped} skipped</span>`;
+                    
+                    console.log('[MODEL_HEALTH] Test completed:', data.summary);
+                    
+                } catch (error) {
+                    console.error('Error testing model health:', error);
+                    summarySpan.textContent = 'Error: ' + error.message;
+                    summarySpan.style.color = '#dc3545';
+                } finally {
+                    testModelHealthBtn.textContent = '🔍 Test All Models';
+                    testModelHealthBtn.disabled = false;
+                }
+            });
+        }
+
         // Handle content repair button
         const repairContentBtn = document.getElementById('repairContentBtn');
         if (repairContentBtn) {
