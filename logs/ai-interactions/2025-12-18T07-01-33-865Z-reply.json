@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-18T07-01-33-865Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1413,
+  "response_length": 1923,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1104,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n27yo, G2P1 (SVD), 2/7 postnatal\\n\\nIssues:\\nPuerperal pyrexia\\n\\nBackground:\\nDelivered 2/7 ago, SVD with ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"uhsx-obstetric-vte-guideline-pdf\\\",\\n      \\\"title\\\": \\\"UHSx Obstetric VTE guideline\\\",\\n      \\\"relevance\\\": \\\"0...",
+  "full_data": null
+}
