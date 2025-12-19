@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-55-26-310Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5286,
+  "response_length": 2391,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1000,\"transcriptPreview\":\"31yo, G2P1 (1x LSCS)\\n\\nIssues:\\nPositive pregnancy test, no definitive pregnancy location on USS, ongoing vaginal bleeding\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2016 - Diagnosis and Ma...",
+  "full_data": null
+}
