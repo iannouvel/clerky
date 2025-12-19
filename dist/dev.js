@@ -3139,6 +3139,393 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // ============================================
+        // MODELS TAB HANDLERS
+        // ============================================
+        
+        // Store model registry data and test results
+        let modelRegistry = {};
+        let modelTestResults = {};
+        let usageChart = null;
+        
+        // Fetch and display model registry
+        async function fetchModelRegistry() {
+            const tbody = document.getElementById('modelRegistryTableBody');
+            const summary = document.getElementById('modelRegistrySummary');
+            
+            if (!tbody) return;
+            
+            try {
+                summary.textContent = 'Loading registry...';
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    summary.textContent = 'Please log in';
+                    return;
+                }
+                
+                const token = await user.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getModelRegistry`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.message || 'Failed to fetch registry');
+                }
+                
+                modelRegistry = data.registry;
+                
+                // Render the table
+                let totalModels = 0;
+                let availableProviders = 0;
+                let html = '';
+                
+                for (const [providerName, providerData] of Object.entries(modelRegistry)) {
+                    if (providerData.hasApiKey) availableProviders++;
+                    
+                    providerData.models.forEach((model, idx) => {
+                        totalModels++;
+                        const testResult = modelTestResults[`${providerName}/${model.model}`];
+                        const statusIcon = testResult ? 
+                            (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
+                            (providerData.hasApiKey ? '⚪' : '🔒');
+                        const statusText = testResult ? 
+                            `${testResult.status} (${testResult.ms}ms)` : 
+                            (providerData.hasApiKey ? 'Not tested' : 'No API key');
+                        
+                        html += `<tr style="border-bottom:1px solid #eee;${!providerData.hasApiKey ? 'opacity:0.6;' : ''}">
+                            <td style="padding:8px;font-weight:${idx === 0 ? 'bold' : 'normal'};">${idx === 0 ? providerName : ''}</td>
+                            <td style="padding:8px;">
+                                <div style="font-weight:500;">${model.displayName}</div>
+                                <div style="font-size:11px;color:#666;">${model.model}</div>
+                            </td>
+                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kInput.toFixed(5)}/1k</td>
+                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kOutput.toFixed(5)}/1k</td>
+                            <td style="padding:8px;text-align:center;" title="${statusText}">${statusIcon}</td>
+                            <td style="padding:8px;text-align:center;">
+                                <button class="dev-btn" style="padding:4px 8px;font-size:11px;" 
+                                    onclick="testSingleModel('${providerName}', '${model.model}')"
+                                    ${!providerData.hasApiKey ? 'disabled' : ''}>
+                                    Test
+                                </button>
+                            </td>
+                        </tr>`;
+                    });
+                }
+                
+                tbody.innerHTML = html || '<tr><td colspan="6" style="padding:20px;text-align:center;">No models found</td></tr>';
+                summary.textContent = `${totalModels} models across ${Object.keys(modelRegistry).length} providers (${availableProviders} with API keys)`;
+                
+            } catch (error) {
+                console.error('Error fetching model registry:', error);
+                summary.textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        // Test a single model
+        window.testSingleModel = async function(provider, model) {
+            const key = `${provider}/${model}`;
+            
+            try {
+                const user = auth.currentUser;
+                if (!user) return;
+                
+                const token = await user.getIdToken();
+                const response = await fetch(`${SERVER_URL}/testModel`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ provider, model })
+                });
+                
+                const data = await response.json();
+                modelTestResults[key] = data;
+                
+                // Refresh the display
+                fetchModelRegistry();
+                
+            } catch (error) {
+                console.error('Error testing model:', error);
+                modelTestResults[key] = { status: 'FAIL', message: error.message, ms: 0 };
+                fetchModelRegistry();
+            }
+        };
+        
+        // Test all models
+        async function testAllModels() {
+            const summary = document.getElementById('modelRegistrySummary');
+            const btn = document.getElementById('testAllModelsBtn');
+            
+            if (!btn) return;
+            
+            try {
+                const originalText = btn.textContent;
+                btn.textContent = '🔄 Testing...';
+                btn.disabled = true;
+                summary.textContent = 'Testing all models...';
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    summary.textContent = 'Please log in';
+                    return;
+                }
+                
+                const token = await user.getIdToken();
+                
+                // Collect all models to test
+                const modelsToTest = [];
+                for (const [providerName, providerData] of Object.entries(modelRegistry)) {
+                    if (providerData.hasApiKey) {
+                        providerData.models.forEach(model => {
+                            modelsToTest.push({ provider: providerName, model: model.model });
+                        });
+                    }
+                }
+                
+                // Test in parallel (with some concurrency limit)
+                let completed = 0;
+                const results = await Promise.all(modelsToTest.map(async ({ provider, model }) => {
+                    try {
+                        const response = await fetch(`${SERVER_URL}/testModel`, {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${token}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ provider, model })
+                        });
+                        const data = await response.json();
+                        completed++;
+                        summary.textContent = `Testing... ${completed}/${modelsToTest.length}`;
+                        return { key: `${provider}/${model}`, ...data };
+                    } catch (err) {
+                        return { key: `${provider}/${model}`, status: 'FAIL', message: err.message, ms: 0 };
+                    }
+                }));
+                
+                // Store results
+                results.forEach(r => {
+                    modelTestResults[r.key] = r;
+                });
+                
+                const passed = results.filter(r => r.status === 'OK').length;
+                const failed = results.filter(r => r.status === 'FAIL').length;
+                summary.innerHTML = `<span style="color:#28a745;">${passed} passed</span>, <span style="color:#dc3545;">${failed} failed</span>`;
+                
+                // Refresh display
+                fetchModelRegistry();
+                
+            } catch (error) {
+                console.error('Error testing all models:', error);
+                summary.textContent = 'Error: ' + error.message;
+            } finally {
+                const btn = document.getElementById('testAllModelsBtn');
+                if (btn) {
+                    btn.textContent = '🔍 Test All Models';
+                    btn.disabled = false;
+                }
+            }
+        }
+        
+        // Fetch and display usage analytics
+        async function fetchUsageAnalytics() {
+            const summary = document.getElementById('analyticsSummary');
+            const timeRange = document.getElementById('analyticsTimeRange')?.value || '24h';
+            
+            try {
+                summary.textContent = 'Loading analytics...';
+                
+                const user = auth.currentUser;
+                if (!user) {
+                    summary.textContent = 'Please log in';
+                    return;
+                }
+                
+                const token = await user.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getAIUsageStats?timeRange=${timeRange}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.message || 'Failed to fetch analytics');
+                }
+                
+                // Update summary stats
+                document.getElementById('statTotalRequests').textContent = data.aggregated.totalRequests.toLocaleString();
+                document.getElementById('statTotalTokens').textContent = data.aggregated.totalTokens.toLocaleString();
+                document.getElementById('statTotalCost').textContent = `$${data.aggregated.totalCost.toFixed(4)}`;
+                document.getElementById('statAvgLatency').textContent = `${data.aggregated.avgLatency}ms`;
+                
+                // Update provider breakdown
+                const providerContainer = document.getElementById('providerBreakdownContainer');
+                if (providerContainer && data.aggregated.byProvider) {
+                    const providers = Object.entries(data.aggregated.byProvider);
+                    if (providers.length > 0) {
+                        providerContainer.innerHTML = providers.map(([name, stats]) => {
+                            const costColor = stats.cost > 0.1 ? '#dc3545' : stats.cost > 0.01 ? '#ff9800' : '#28a745';
+                            return `<div style="background:#f8f9fa;padding:12px;border-radius:6px;text-align:center;">
+                                <div style="font-weight:bold;margin-bottom:5px;">${name}</div>
+                                <div style="font-size:20px;color:#007bff;">${stats.requests}</div>
+                                <div style="font-size:11px;color:#666;">requests</div>
+                                <div style="font-size:12px;color:${costColor};margin-top:5px;">$${stats.cost.toFixed(4)}</div>
+                                <div style="font-size:11px;color:#666;">${stats.avgLatency}ms avg</div>
+                            </div>`;
+                        }).join('');
+                    } else {
+                        providerContainer.innerHTML = '<div style="padding:15px;text-align:center;color:#666;">No usage data in this period</div>';
+                    }
+                }
+                
+                // Update time series chart
+                if (data.timeSeries && data.timeSeries.length > 0) {
+                    updateUsageChart(data.timeSeries);
+                }
+                
+                // Update recent logs table
+                const logsBody = document.getElementById('recentLogsTableBody');
+                if (logsBody && data.recentLogs) {
+                    if (data.recentLogs.length > 0) {
+                        logsBody.innerHTML = data.recentLogs.map(log => {
+                            const time = new Date(log.timestamp).toLocaleString();
+                            const statusIcon = log.success ? '✅' : '❌';
+                            const latencyColor = log.latencyMs > 10000 ? '#dc3545' : log.latencyMs > 3000 ? '#ff9800' : '#28a745';
+                            return `<tr style="border-bottom:1px solid #eee;">
+                                <td style="padding:6px;font-size:11px;">${time}</td>
+                                <td style="padding:6px;">${log.provider || '-'}</td>
+                                <td style="padding:6px;font-size:11px;">${log.model || '-'}</td>
+                                <td style="padding:6px;text-align:right;">${(log.totalTokens || 0).toLocaleString()}</td>
+                                <td style="padding:6px;text-align:right;">$${(log.estimatedCostUsd || 0).toFixed(5)}</td>
+                                <td style="padding:6px;text-align:right;color:${latencyColor};">${log.latencyMs || 0}ms</td>
+                                <td style="padding:6px;text-align:center;">${statusIcon}</td>
+                            </tr>`;
+                        }).join('');
+                    } else {
+                        logsBody.innerHTML = '<tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">No logs in this period</td></tr>';
+                    }
+                }
+                
+                summary.textContent = `${data.totalLogsInRange} interactions in ${timeRange}`;
+                
+            } catch (error) {
+                console.error('Error fetching usage analytics:', error);
+                summary.textContent = 'Error: ' + error.message;
+            }
+        }
+        
+        // Update the usage chart
+        function updateUsageChart(timeSeries) {
+            const ctx = document.getElementById('usageChart');
+            if (!ctx) return;
+            
+            // Destroy existing chart if any
+            if (usageChart) {
+                usageChart.destroy();
+            }
+            
+            const labels = timeSeries.map(d => {
+                const date = new Date(d.hour);
+                return date.toLocaleString('en-GB', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+            });
+            
+            usageChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: 'Requests',
+                            data: timeSeries.map(d => d.requests),
+                            borderColor: '#007bff',
+                            backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Cost ($)',
+                            data: timeSeries.map(d => d.cost),
+                            borderColor: '#dc3545',
+                            backgroundColor: 'rgba(220, 53, 69, 0.1)',
+                            fill: false,
+                            tension: 0.3,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            grid: { display: false }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'Requests' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: 'Cost ($)' },
+                            grid: { drawOnChartArea: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' }
+                    }
+                }
+            });
+        }
+        
+        // Event listeners for Models tab
+        const refreshModelRegistryBtn = document.getElementById('refreshModelRegistryBtn');
+        if (refreshModelRegistryBtn) {
+            refreshModelRegistryBtn.addEventListener('click', fetchModelRegistry);
+        }
+        
+        const testAllModelsBtn = document.getElementById('testAllModelsBtn');
+        if (testAllModelsBtn) {
+            testAllModelsBtn.addEventListener('click', async () => {
+                // First ensure registry is loaded
+                if (Object.keys(modelRegistry).length === 0) {
+                    await fetchModelRegistry();
+                }
+                await testAllModels();
+            });
+        }
+        
+        const refreshAnalyticsBtn = document.getElementById('refreshAnalyticsBtn');
+        if (refreshAnalyticsBtn) {
+            refreshAnalyticsBtn.addEventListener('click', fetchUsageAnalytics);
+        }
+        
+        const analyticsTimeRange = document.getElementById('analyticsTimeRange');
+        if (analyticsTimeRange) {
+            analyticsTimeRange.addEventListener('change', fetchUsageAnalytics);
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);

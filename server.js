@@ -279,6 +279,56 @@ async function scrapeNICEGuidelines() {
 // ============================================================================
 // AI PROVIDER COST-EFFECTIVE ITERATION SYSTEM
 // ============================================================================
+
+// Comprehensive AI Model Registry - all available models per provider with accurate pricing
+// Pricing is per 1k tokens (input/output separated for accuracy)
+const AI_MODEL_REGISTRY = {
+  OpenAI: {
+    keyEnv: 'OPENAI_API_KEY',
+    endpoint: 'https://api.openai.com/v1/chat/completions',
+    models: [
+      { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Most capable OpenAI model' },
+      { model: 'gpt-4o-mini', displayName: 'GPT-4o Mini', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and affordable' },
+      { model: 'gpt-4-turbo', displayName: 'GPT-4 Turbo', costPer1kInput: 0.01, costPer1kOutput: 0.03, description: 'Previous flagship model' },
+      { model: 'gpt-3.5-turbo', displayName: 'GPT-3.5 Turbo', costPer1kInput: 0.0005, costPer1kOutput: 0.0015, description: 'Legacy fast model' }
+    ]
+  },
+  Anthropic: {
+    keyEnv: 'ANTHROPIC_API_KEY',
+    endpoint: 'https://api.anthropic.com/v1/messages',
+    models: [
+      { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Latest Claude model' },
+      { model: 'claude-3-5-sonnet-20241022', displayName: 'Claude 3.5 Sonnet', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Excellent reasoning' },
+      { model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku', costPer1kInput: 0.00025, costPer1kOutput: 0.00125, description: 'Fast and cost-effective' }
+    ]
+  },
+  DeepSeek: {
+    keyEnv: 'DEEPSEEK_API_KEY',
+    endpoint: 'https://api.deepseek.com/v1/chat/completions',
+    models: [
+      { model: 'deepseek-chat', displayName: 'DeepSeek Chat', costPer1kInput: 0.00014, costPer1kOutput: 0.00028, description: 'Very cost-effective' },
+      { model: 'deepseek-reasoner', displayName: 'DeepSeek Reasoner', costPer1kInput: 0.00055, costPer1kOutput: 0.00219, description: 'Advanced reasoning (R1)' }
+    ]
+  },
+  Mistral: {
+    keyEnv: 'MISTRAL_API_KEY',
+    endpoint: 'https://api.mistral.ai/v1/chat/completions',
+    models: [
+      { model: 'mistral-large-latest', displayName: 'Mistral Large', costPer1kInput: 0.002, costPer1kOutput: 0.006, description: 'Most capable Mistral' },
+      { model: 'mistral-small-latest', displayName: 'Mistral Small', costPer1kInput: 0.0002, costPer1kOutput: 0.0006, description: 'Fast and affordable' }
+    ]
+  },
+  Gemini: {
+    keyEnv: 'GOOGLE_AI_API_KEY',
+    endpoint: 'https://generativelanguage.googleapis.com/v1beta/models',
+    models: [
+      { model: 'gemini-2.5-flash', displayName: 'Gemini 2.5 Flash', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and cost-effective' },
+      { model: 'gemini-2.5-pro', displayName: 'Gemini 2.5 Pro', costPer1kInput: 0.00125, costPer1kOutput: 0.005, description: 'Most capable Gemini' },
+      { model: 'gemini-2.0-flash', displayName: 'Gemini 2.0 Flash', costPer1kInput: 0.0001, costPer1kOutput: 0.0004, description: 'Previous generation flash' }
+    ]
+  }
+};
+
 // Provider preference array ordered by cost (cheapest first, most expensive last)
 // This ensures we try the most cost-effective providers before falling back to expensive ones
 const AI_PROVIDER_PREFERENCE = [
@@ -3032,6 +3082,7 @@ function formatMessagesForProvider(messages, provider) {
 async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
   let preferredProvider = 'DeepSeek'; // Default fallback
+  const sendToAIStartTime = Date.now(); // Track start time for Firestore logging
   
   try {
     // Determine the provider based on the model, but don't override the model
@@ -3403,6 +3454,29 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       }
     }
 
+    // Log to Firestore for analytics (fire-and-forget, non-blocking)
+    const latencyMs = Date.now() - sendToAIStartTime;
+    if (db) {
+      db.collection('aiInteractions').add({
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        userId: userId || 'anonymous',
+        provider: preferredProvider,
+        model: model,
+        endpoint: 'sendToAI',
+        promptTokens: tokenUsage?.prompt_tokens || 0,
+        completionTokens: tokenUsage?.completion_tokens || 0,
+        totalTokens: tokenUsage?.total_tokens || 0,
+        latencyMs: latencyMs,
+        estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
+        success: true,
+        errorMessage: null,
+        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
+        responseLength: content?.length || 0
+      }).catch(logErr => {
+        console.error('[AI_LOG] Failed to log to Firestore:', logErr.message);
+      });
+    }
+
     // Return both the response content and AI provider information
     return {
       content: content,
@@ -3569,6 +3643,31 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             }
             
             console.log(`[DEBUG] Successfully fell back to ${nextProvider.name}`);
+            
+            // Log fallback success to Firestore
+            const fallbackLatencyMs = Date.now() - sendToAIStartTime;
+            if (db) {
+              db.collection('aiInteractions').add({
+                timestamp: admin.firestore.FieldValue.serverTimestamp(),
+                userId: userId || 'anonymous',
+                provider: nextProvider.name,
+                model: nextProvider.model,
+                endpoint: 'sendToAI-fallback',
+                promptTokens: tokenUsage?.prompt_tokens || 0,
+                completionTokens: tokenUsage?.completion_tokens || 0,
+                totalTokens: tokenUsage?.total_tokens || 0,
+                latencyMs: fallbackLatencyMs,
+                estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
+                success: true,
+                errorMessage: null,
+                promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
+                responseLength: content?.length || 0,
+                fallbackFrom: preferredProvider
+              }).catch(logErr => {
+                console.error('[AI_LOG] Failed to log fallback to Firestore:', logErr.message);
+              });
+            }
+            
             return {
               content: content,
               ai_provider: nextProvider.name,
@@ -3584,6 +3683,29 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       } else {
         console.error('[DEBUG] No available providers for fallback');
       }
+    }
+    
+    // Log failure to Firestore
+    const failureLatencyMs = Date.now() - sendToAIStartTime;
+    if (db) {
+      db.collection('aiInteractions').add({
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        userId: userId || 'anonymous',
+        provider: preferredProvider,
+        model: model,
+        endpoint: 'sendToAI',
+        promptTokens: 0,
+        completionTokens: 0,
+        totalTokens: 0,
+        latencyMs: failureLatencyMs,
+        estimatedCostUsd: 0,
+        success: false,
+        errorMessage: (error.response?.data?.error?.message || error.message || 'Unknown error').substring(0, 500),
+        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
+        responseLength: 0
+      }).catch(logErr => {
+        console.error('[AI_LOG] Failed to log error to Firestore:', logErr.message);
+      });
     }
     
     throw new Error(`AI request failed: ${error.response?.data?.error?.message || error.message}`);
@@ -9243,6 +9365,313 @@ app.get('/testModelHealth', authenticateUser, async (req, res) => {
         res.status(500).json({
             success: false,
             message: 'Error running model health check: ' + error.message
+        });
+    }
+});
+
+// Get the full model registry with API key availability
+app.get('/getModelRegistry', authenticateUser, async (req, res) => {
+    try {
+        const registry = {};
+        
+        for (const [providerName, providerData] of Object.entries(AI_MODEL_REGISTRY)) {
+            const hasApiKey = !!process.env[providerData.keyEnv];
+            registry[providerName] = {
+                hasApiKey,
+                endpoint: providerData.endpoint,
+                models: providerData.models.map(m => ({
+                    ...m,
+                    available: hasApiKey
+                }))
+            };
+        }
+        
+        res.json({
+            success: true,
+            registry,
+            timestamp: new Date().toISOString()
+        });
+    } catch (error) {
+        console.error('[MODEL_REGISTRY] Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching model registry: ' + error.message
+        });
+    }
+});
+
+// Test a single model with minimal tokens
+app.post('/testModel', authenticateUser, async (req, res) => {
+    const { provider, model } = req.body;
+    
+    if (!provider || !model) {
+        return res.status(400).json({
+            success: false,
+            message: 'Provider and model are required'
+        });
+    }
+    
+    const providerData = AI_MODEL_REGISTRY[provider];
+    if (!providerData) {
+        return res.status(400).json({
+            success: false,
+            message: `Unknown provider: ${provider}`
+        });
+    }
+    
+    const modelData = providerData.models.find(m => m.model === model);
+    if (!modelData) {
+        return res.status(400).json({
+            success: false,
+            message: `Unknown model: ${model} for provider ${provider}`
+        });
+    }
+    
+    const apiKey = process.env[providerData.keyEnv];
+    if (!apiKey) {
+        return res.json({
+            success: true,
+            provider,
+            model,
+            status: 'SKIP',
+            message: `No ${providerData.keyEnv} configured`,
+            ms: 0
+        });
+    }
+    
+    const MINIMAL_PROMPT = 'Say OK';
+    const startTime = Date.now();
+    
+    try {
+        let response;
+        let endpoint = providerData.endpoint;
+        
+        if (provider === 'Anthropic') {
+            response = await axios.post(endpoint, {
+                model,
+                messages: [{ role: 'user', content: MINIMAL_PROMPT }],
+                max_tokens: 10
+            }, {
+                headers: {
+                    'x-api-key': apiKey,
+                    'Content-Type': 'application/json',
+                    'anthropic-version': '2023-06-01'
+                },
+                timeout: 30000
+            });
+        } else if (provider === 'Gemini') {
+            const url = `${endpoint}/${model}:generateContent?key=${apiKey}`;
+            response = await axios.post(url, {
+                contents: [{ parts: [{ text: MINIMAL_PROMPT }] }],
+                generationConfig: { maxOutputTokens: 10 }
+            }, {
+                headers: { 'Content-Type': 'application/json' },
+                timeout: 30000
+            });
+        } else {
+            // OpenAI, DeepSeek, Mistral all use the same format
+            response = await axios.post(endpoint, {
+                model,
+                messages: [{ role: 'user', content: MINIMAL_PROMPT }],
+                max_tokens: 10
+            }, {
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                },
+                timeout: 30000
+            });
+        }
+        
+        const ms = Date.now() - startTime;
+        
+        // Extract response content
+        let content = '';
+        if (provider === 'Anthropic') {
+            content = response.data?.content?.[0]?.text || '';
+        } else if (provider === 'Gemini') {
+            content = response.data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+        } else {
+            content = response.data?.choices?.[0]?.message?.content || '';
+        }
+        
+        console.log(`[TEST_MODEL] ${provider}/${model} OK in ${ms}ms`);
+        
+        res.json({
+            success: true,
+            provider,
+            model,
+            status: 'OK',
+            message: content.trim().substring(0, 50),
+            ms
+        });
+        
+    } catch (error) {
+        const ms = Date.now() - startTime;
+        const errMsg = error.response?.data?.error?.message || error.response?.data?.message || error.message;
+        
+        console.error(`[TEST_MODEL] ${provider}/${model} FAIL after ${ms}ms:`, errMsg);
+        
+        res.json({
+            success: true,
+            provider,
+            model,
+            status: 'FAIL',
+            message: (errMsg || 'Unknown error').substring(0, 100),
+            ms
+        });
+    }
+});
+
+// Get AI usage statistics from Firestore
+app.get('/getAIUsageStats', authenticateUser, async (req, res) => {
+    try {
+        const { timeRange = '24h', provider, model } = req.query;
+        
+        // Calculate start date based on time range
+        const now = new Date();
+        let startDate;
+        switch (timeRange) {
+            case '7d':
+                startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                break;
+            case '30d':
+                startDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+                break;
+            case '24h':
+            default:
+                startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+        }
+        
+        // Build Firestore query
+        let query = db.collection('aiInteractions')
+            .where('timestamp', '>=', startDate)
+            .orderBy('timestamp', 'desc')
+            .limit(500);
+        
+        const snapshot = await query.get();
+        
+        const interactions = [];
+        const aggregated = {
+            totalRequests: 0,
+            totalTokens: 0,
+            totalCost: 0,
+            avgLatency: 0,
+            byProvider: {},
+            byModel: {},
+            byHour: {}
+        };
+        
+        let totalLatency = 0;
+        
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            
+            // Apply filters if provided
+            if (provider && data.provider !== provider) return;
+            if (model && data.model !== model) return;
+            
+            interactions.push({
+                id: doc.id,
+                ...data,
+                timestamp: data.timestamp?.toDate?.() || data.timestamp
+            });
+            
+            // Aggregate stats
+            aggregated.totalRequests++;
+            aggregated.totalTokens += data.totalTokens || 0;
+            aggregated.totalCost += data.estimatedCostUsd || 0;
+            totalLatency += data.latencyMs || 0;
+            
+            // By provider
+            if (!aggregated.byProvider[data.provider]) {
+                aggregated.byProvider[data.provider] = {
+                    requests: 0,
+                    tokens: 0,
+                    cost: 0,
+                    avgLatency: 0,
+                    totalLatency: 0
+                };
+            }
+            aggregated.byProvider[data.provider].requests++;
+            aggregated.byProvider[data.provider].tokens += data.totalTokens || 0;
+            aggregated.byProvider[data.provider].cost += data.estimatedCostUsd || 0;
+            aggregated.byProvider[data.provider].totalLatency += data.latencyMs || 0;
+            
+            // By model
+            const modelKey = `${data.provider}/${data.model}`;
+            if (!aggregated.byModel[modelKey]) {
+                aggregated.byModel[modelKey] = {
+                    provider: data.provider,
+                    model: data.model,
+                    requests: 0,
+                    tokens: 0,
+                    cost: 0,
+                    avgLatency: 0,
+                    totalLatency: 0
+                };
+            }
+            aggregated.byModel[modelKey].requests++;
+            aggregated.byModel[modelKey].tokens += data.totalTokens || 0;
+            aggregated.byModel[modelKey].cost += data.estimatedCostUsd || 0;
+            aggregated.byModel[modelKey].totalLatency += data.latencyMs || 0;
+            
+            // By hour (for time series)
+            const hour = data.timestamp?.toDate?.() || new Date(data.timestamp);
+            if (hour instanceof Date && !isNaN(hour)) {
+                const hourKey = hour.toISOString().substring(0, 13) + ':00:00Z';
+                if (!aggregated.byHour[hourKey]) {
+                    aggregated.byHour[hourKey] = { requests: 0, tokens: 0, cost: 0 };
+                }
+                aggregated.byHour[hourKey].requests++;
+                aggregated.byHour[hourKey].tokens += data.totalTokens || 0;
+                aggregated.byHour[hourKey].cost += data.estimatedCostUsd || 0;
+            }
+        });
+        
+        // Calculate averages
+        if (aggregated.totalRequests > 0) {
+            aggregated.avgLatency = Math.round(totalLatency / aggregated.totalRequests);
+        }
+        
+        for (const p of Object.values(aggregated.byProvider)) {
+            if (p.requests > 0) {
+                p.avgLatency = Math.round(p.totalLatency / p.requests);
+            }
+            delete p.totalLatency;
+        }
+        
+        for (const m of Object.values(aggregated.byModel)) {
+            if (m.requests > 0) {
+                m.avgLatency = Math.round(m.totalLatency / m.requests);
+            }
+            delete m.totalLatency;
+        }
+        
+        // Convert byHour to sorted array for charting
+        const timeSeries = Object.entries(aggregated.byHour)
+            .map(([hour, data]) => ({ hour, ...data }))
+            .sort((a, b) => a.hour.localeCompare(b.hour));
+        
+        res.json({
+            success: true,
+            timeRange,
+            startDate: startDate.toISOString(),
+            endDate: now.toISOString(),
+            aggregated: {
+                ...aggregated,
+                byHour: undefined // Remove from main object, use timeSeries instead
+            },
+            timeSeries,
+            recentLogs: interactions.slice(0, 100), // Return most recent 100
+            totalLogsInRange: interactions.length
+        });
+        
+    } catch (error) {
+        console.error('[AI_USAGE_STATS] Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching AI usage stats: ' + error.message
         });
     }
 });

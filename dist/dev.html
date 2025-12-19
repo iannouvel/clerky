@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Chart.js for analytics visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <!-- Remove old Firebase SDK -->
     <style>
         /* Add local styles to fix the tab positioning */
@@ -305,6 +307,7 @@
             <button class="nav-btn" data-content="logsContent">Logs</button>
             <button class="nav-btn" data-content="costContent">Cost</button>
             <button class="nav-btn" data-content="apiContent">API</button>
+            <button class="nav-btn" data-content="modelsContent">Models</button>
             <button class="nav-btn" data-content="maintenanceContent">Maintenance</button>
             <button class="nav-btn" data-content="discoveryContent">Discovery</button>
             <button class="nav-btn" data-content="dangerContent">Danger</button>
@@ -320,6 +323,109 @@
                     <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
                     <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
                     <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="modelsContent" style="display:none;padding:12px">
+            <!-- Model Registry Section -->
+            <div class="tools-section">
+                <h4>AI Model Registry</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">Test and monitor all available AI models across providers. Working models can be used in user preferences.</p>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:15px;flex-wrap:wrap;">
+                    <button id="testAllModelsBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;">🔍 Test All Models</button>
+                    <button id="refreshModelRegistryBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">🔄 Refresh Registry</button>
+                    <span id="modelRegistrySummary" style="font-size:13px;color:#666;"></span>
+                </div>
+                <div id="modelRegistryContainer" style="max-height:400px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
+                    <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                        <thead style="position:sticky;top:0;background:#f8f9fa;">
+                            <tr>
+                                <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Provider</th>
+                                <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Model</th>
+                                <th style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;">Cost (Input)</th>
+                                <th style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;">Cost (Output)</th>
+                                <th style="padding:10px;text-align:center;border-bottom:2px solid #dee2e6;">Status</th>
+                                <th style="padding:10px;text-align:center;border-bottom:2px solid #dee2e6;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modelRegistryTableBody">
+                            <tr><td colspan="6" style="padding:20px;text-align:center;color:#666;">Click "Refresh Registry" to load models</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Usage Analytics Section -->
+            <div class="tools-section" style="margin-top:25px;">
+                <h4>Usage Analytics</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">View AI usage statistics from Firestore. Data updates as Clerky uses AI models.</p>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:15px;flex-wrap:wrap;">
+                    <select id="analyticsTimeRange" style="padding:6px 12px;border:1px solid #ddd;border-radius:4px;font-family:'Inter',sans-serif;">
+                        <option value="24h">Last 24 Hours</option>
+                        <option value="7d">Last 7 Days</option>
+                        <option value="30d">Last 30 Days</option>
+                    </select>
+                    <button id="refreshAnalyticsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">📊 Refresh Analytics</button>
+                    <span id="analyticsSummary" style="font-size:13px;color:#666;"></span>
+                </div>
+                
+                <!-- Summary Stats Cards -->
+                <div id="analyticsStatsCards" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));gap:12px;margin-bottom:20px;">
+                    <div class="stat-box" style="background:#f8f9fa;padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:#666;text-transform:uppercase;">Total Requests</div>
+                        <div id="statTotalRequests" style="font-size:24px;font-weight:bold;color:#007bff;">-</div>
+                    </div>
+                    <div class="stat-box" style="background:#f8f9fa;padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:#666;text-transform:uppercase;">Total Tokens</div>
+                        <div id="statTotalTokens" style="font-size:24px;font-weight:bold;color:#28a745;">-</div>
+                    </div>
+                    <div class="stat-box" style="background:#f8f9fa;padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:#666;text-transform:uppercase;">Total Cost</div>
+                        <div id="statTotalCost" style="font-size:24px;font-weight:bold;color:#dc3545;">-</div>
+                    </div>
+                    <div class="stat-box" style="background:#f8f9fa;padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Latency</div>
+                        <div id="statAvgLatency" style="font-size:24px;font-weight:bold;color:#ff9800;">-</div>
+                    </div>
+                </div>
+                
+                <!-- Provider Breakdown -->
+                <div id="providerBreakdown" style="margin-bottom:20px;">
+                    <h5 style="margin:0 0 10px 0;font-size:14px;color:#333;">Usage by Provider</h5>
+                    <div id="providerBreakdownContainer" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:10px;">
+                        <div style="padding:15px;text-align:center;color:#666;background:#f8f9fa;border-radius:6px;">No data yet</div>
+                    </div>
+                </div>
+                
+                <!-- Time Series Chart -->
+                <div id="usageChartSection" style="margin-bottom:20px;">
+                    <h5 style="margin:0 0 10px 0;font-size:14px;color:#333;">Usage Over Time</h5>
+                    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;padding:15px;height:250px;">
+                        <canvas id="usageChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- Recent Logs Table -->
+                <div id="recentLogsSection">
+                    <h5 style="margin:0 0 10px 0;font-size:14px;color:#333;">Recent AI Interactions</h5>
+                    <div style="max-height:300px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
+                        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                            <thead style="position:sticky;top:0;background:#f8f9fa;">
+                                <tr>
+                                    <th style="padding:8px;text-align:left;border-bottom:2px solid #dee2e6;">Time</th>
+                                    <th style="padding:8px;text-align:left;border-bottom:2px solid #dee2e6;">Provider</th>
+                                    <th style="padding:8px;text-align:left;border-bottom:2px solid #dee2e6;">Model</th>
+                                    <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Tokens</th>
+                                    <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Cost</th>
+                                    <th style="padding:8px;text-align:right;border-bottom:2px solid #dee2e6;">Latency</th>
+                                    <th style="padding:8px;text-align:center;border-bottom:2px solid #dee2e6;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentLogsTableBody">
+                                <tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">Click "Refresh Analytics" to load data</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
