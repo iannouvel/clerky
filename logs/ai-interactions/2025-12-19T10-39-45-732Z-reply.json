@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-39-45-732Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5290,
+  "response_length": 7426,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1038,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n42yo, G3P1 (1x SVD), 35+2, BMI 31, Rh+ve\\n\\nIssues:\\nPolyhydramnios diagnosed at 33+5 weeks, worsening ove...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-management-of-monochorionic-twin-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2016 -  Management of Mono...",
+  "full_data": null
+}
