@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-50-22-705Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 863,
+  "response_length": 157,
+  "prompt_preview": "{\"transcript\":\"Obstetric Clinical Note\\n\\n28yo, G2P1 (prev LSCS), 12+2, BMI 24, Rh+ve\\n\\nIssues:\\nThreatened miscarriage with vaginal bleeding and cramping\\n\\nBackground:\\nBooked for antenatal care at...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 28,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 3,\n  \"lessRelevantCount\": 9,\n  \"notRelevantCount\": 11\n}...",
+  "full_data": null
+}
