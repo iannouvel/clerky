@@ -5598,6 +5598,7 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     if (process.env.ANTHROPIC_API_KEY) envAvailableProviders.push('Anthropic');
     if (process.env.OPENAI_API_KEY) envAvailableProviders.push('OpenAI');
     if (process.env.GOOGLE_AI_API_KEY) envAvailableProviders.push('Gemini'); // Note: env var is GOOGLE_AI_API_KEY, provider name is Gemini
+    if (process.env.GROQ_API_KEY) envAvailableProviders.push('Groq');
     
     let availableProviders = envAvailableProviders.filter(p => enabledChunkProviders.includes(p));
     if (availableProviders.length === 0) {
