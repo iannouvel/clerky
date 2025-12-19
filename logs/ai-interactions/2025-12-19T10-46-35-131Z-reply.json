@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-46-35-131Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5273,
+  "response_length": 2230,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1061,\"transcriptPreview\":\"28yo, G3P2 (prev 2x SVD), 31+2, BMI 24, Rh+ve\\nIssues: Vasa praevia diagnosed at 29 weeks USS, placenta praevia type 4, concerns rega...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta\\\", \\\"title\\\": \\\"BJOG - 2018 - Jauniaux - Placenta Praev...",
+  "full_data": null
+}
