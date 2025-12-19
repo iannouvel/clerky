@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-36-18-308Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1374,
+  "response_length": 158,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P1, 6/52 post SVD\\n\\nPresenting Complaint:\\nPersistent heavy vaginal bleeding (PPH at delivery) and offensive discharge for 1/12\\n\\nKey Clinical Issue:\\nSuspected retained produ...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 96,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 17,\n  \"notRelevantCount\": 63\n}...",
+  "full_data": null
+}
