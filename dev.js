@@ -1635,9 +1635,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                     return;
                 }
                 
+                // Update button state - declare outside try block for finally access
+                const originalText = repairContentBtn.textContent;
+                
                 try {
-                    // Update button state
-                    const originalText = repairContentBtn.textContent;
                     repairContentBtn.textContent = '🔄 Repairing...';
                     repairContentBtn.disabled = true;
                     
@@ -1655,13 +1656,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     console.log('Starting content repair process...');
                     
-                    // Call the existing migrateNullMetadata endpoint
-                    const response = await fetch(`${SERVER_URL}/migrateNullMetadata`, {
+                    // Call the repairGuidelineContent endpoint
+                    const response = await fetch(`${SERVER_URL}/repairGuidelineContent`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${token}`
-                        }
+                        },
+                        body: JSON.stringify({
+                            batchSize: 5,
+                            forceRegenerate: false
+                        })
                     });
                     
                     if (!response.ok) {
@@ -1676,26 +1681,30 @@ document.addEventListener('DOMContentLoaded', async function() {
                         
                         let message = `🎉 Content Repair Complete!\n\n`;
                         message += `📊 Results:\n`;
-                        message += `• Total guidelines processed: ${result.results.total}\n`;
-                        message += `• Guidelines updated: ${result.results.updated}\n`;
-                        message += `• Migration errors: ${result.results.errors}\n\n`;
+                        message += `• Total needing repair: ${result.total}\n`;
+                        message += `• Processed this batch: ${result.processed}\n`;
+                        message += `• Succeeded: ${result.succeeded}\n`;
+                        message += `• Failed: ${result.failed}\n`;
+                        message += `• Remaining: ${result.remaining}\n\n`;
                         
-                        if (result.results.details && result.results.details.length > 0) {
-                            message += `🔧 Updated Guidelines (first 10):\n`;
-                            result.results.details.slice(0, 10).forEach(detail => {
-                                if (detail.updates) {
-                                    const updatedFields = Object.keys(detail.updates).join(', ');
-                                    message += `• ${detail.id}: ${updatedFields}\n`;
-                                }
+                        if (result.results && result.results.length > 0) {
+                            message += `🔧 Processed Guidelines (first 10):\n`;
+                            result.results.slice(0, 10).forEach(item => {
+                                const status = item.success ? '✓' : '✗';
+                                message += `• ${status} ${item.guideline}: ${item.message}\n`;
                             });
-                            if (result.results.details.length > 10) {
-                                message += `• ... and ${result.results.details.length - 10} more\n`;
+                            if (result.results.length > 10) {
+                                message += `• ... and ${result.results.length - 10} more\n`;
                             }
+                        }
+                        
+                        if (result.remaining > 0) {
+                            message += `\n⚠️ ${result.remaining} guidelines still need repair. Click again to process more.`;
                         }
                         
                         // Show success message and detailed logs
                         alert(message);
-                        console.log('📊 [CONTENT_REPAIR] Detailed results:', result.results);
+                        console.log('📊 [CONTENT_REPAIR] Detailed results:', result);
                     } else {
                         throw new Error(result.error || 'Content repair failed');
                     }
