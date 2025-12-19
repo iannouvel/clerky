@@ -10032,7 +10032,7 @@ async function fetchUserModelPreferences() {
         const user = auth.currentUser;
         if (!user) {
             console.log('[MODEL PREF] No authenticated user, using default order');
-            return AVAILABLE_MODELS.map(m => m.name);
+            return AVAILABLE_MODELS.map(m => m.model);
         }
 
         const token = await user.getIdToken();
@@ -10046,27 +10046,27 @@ async function fetchUserModelPreferences() {
 
         if (!response.ok) {
             console.warn('[MODEL PREF] Failed to fetch preferences, using default order');
-            return AVAILABLE_MODELS.map(m => m.name);
+            return AVAILABLE_MODELS.map(m => m.model);
         }
 
         const data = await response.json();
         if (data && data.success && Array.isArray(data.modelOrder)) {
             console.log('[MODEL PREF] Loaded model preferences:', data.modelOrder);
-            // Validate that all models are present
-            const validOrder = data.modelOrder.filter(name => 
-                AVAILABLE_MODELS.some(m => m.name === name)
+            // Validate that all models are present (use model id as unique key)
+            const validOrder = data.modelOrder.filter(modelId =>
+                AVAILABLE_MODELS.some(m => m.model === modelId)
             );
             // Add any missing models to the end
             const missingModels = AVAILABLE_MODELS
-                .map(m => m.name)
-                .filter(name => !validOrder.includes(name));
+                .map(m => m.model)
+                .filter(modelId => !validOrder.includes(modelId));
             return [...validOrder, ...missingModels];
         }
 
-        return AVAILABLE_MODELS.map(m => m.name);
+        return AVAILABLE_MODELS.map(m => m.model);
     } catch (error) {
         console.error('[MODEL PREF] Error fetching model preferences, using default order:', error);
-        return AVAILABLE_MODELS.map(m => m.name);
+        return AVAILABLE_MODELS.map(m => m.model);
     }
 }
 
@@ -10116,14 +10116,14 @@ function renderModelPreferencesList(modelOrder) {
     listContainer.innerHTML = '';
     draggedModelElement = null;
 
-    modelOrder.forEach((modelName, index) => {
-        const model = AVAILABLE_MODELS.find(m => m.name === modelName);
+    modelOrder.forEach((modelId, index) => {
+        const model = AVAILABLE_MODELS.find(m => m.model === modelId);
         if (!model) return;
 
         const item = document.createElement('div');
         item.className = 'model-preference-item';
         item.draggable = true;
-        item.dataset.modelName = modelName;
+        item.dataset.modelName = modelId;
         
         item.innerHTML = `
             <div class="model-preference-number">${index + 1}</div>
@@ -10461,8 +10461,8 @@ async function showPreferencesModal() {
                 // Update main panel display with new preferred model
                 const modelDisplay = document.getElementById('mainModelDisplay');
                 if (modelDisplay && modelOrder.length > 0) {
-                    const firstModel = modelOrder[0];
-                    const model = AVAILABLE_MODELS.find(m => m.name === firstModel);
+                    const firstModelId = modelOrder[0];
+                    const model = AVAILABLE_MODELS.find(m => m.model === firstModelId);
                     if (model) {
                         modelDisplay.textContent = model.displayName;
                     } else {
@@ -10696,12 +10696,12 @@ async function loadAndDisplayUserPreferences() {
     try {
         const modelOrder = await fetchUserModelPreferences();
         if (modelOrder && modelOrder.length > 0) {
-            const firstModel = modelOrder[0];
-            const model = AVAILABLE_MODELS.find(m => m.name === firstModel);
+            const firstModelId = modelOrder[0];
+            const model = AVAILABLE_MODELS.find(m => m.model === firstModelId);
             if (model) {
                 modelDisplay.textContent = model.displayName;
             } else {
-                modelDisplay.textContent = firstModel;
+                modelDisplay.textContent = firstModelId;
             }
         } else {
             // Default to first model in AVAILABLE_MODELS
