@@ -1051,7 +1051,7 @@ async function extractTextFromPDF(pdfBuffer) {
     }
 }
 
-// Function to fetch PDF from GitHub and extract text
+// Function to fetch PDF from Firebase Storage (with GitHub fallback + upload)
 async function fetchAndExtractPDFText(pdfFileName) {
     try {
         debugLog(`[FETCH_PDF] Fetching PDF from Firebase Storage: ${pdfFileName}`);
@@ -1060,13 +1060,59 @@ async function fetchAndExtractPDFText(pdfFileName) {
         const file = bucket.file(`pdfs/${pdfFileName}`);
         
         const [exists] = await file.exists();
-        if (!exists) {
-            throw new Error(`PDF not found in Firebase Storage: ${pdfFileName}`);
-        }
         
-        console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
-        const [buffer] = await file.download();
-        debugLog(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
+        let buffer;
+        
+        if (!exists) {
+            // PDF not in Firebase Storage - try to fetch from GitHub and upload
+            console.log(`[FETCH_PDF] PDF not found in Firebase Storage, attempting GitHub fallback: ${pdfFileName}`);
+            
+            const githubUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodeURIComponent(pdfFileName)}`;
+            console.log(`[FETCH_PDF] Fetching from GitHub: ${githubUrl}`);
+            
+            try {
+                const response = await axios.get(githubUrl, {
+                    responseType: 'arraybuffer',
+                    timeout: 30000,
+                    headers: {
+                        'User-Agent': 'Clerky-Server/1.0'
+                    }
+                });
+                
+                if (response.status !== 200) {
+                    throw new Error(`GitHub returned status ${response.status}`);
+                }
+                
+                buffer = Buffer.from(response.data);
+                console.log(`[FETCH_PDF] Downloaded from GitHub, size: ${buffer.length} bytes`);
+                
+                // Upload to Firebase Storage for future use
+                console.log(`[FETCH_PDF] Uploading to Firebase Storage for future use...`);
+                try {
+                    await file.save(buffer, {
+                        metadata: {
+                            contentType: 'application/pdf',
+                            metadata: {
+                                uploadedFrom: 'github-fallback',
+                                uploadedAt: new Date().toISOString()
+                            }
+                        }
+                    });
+                    console.log(`[FETCH_PDF] Successfully uploaded ${pdfFileName} to Firebase Storage`);
+                } catch (uploadError) {
+                    console.error(`[FETCH_PDF] Failed to upload to Firebase Storage (will continue with extraction):`, uploadError.message);
+                    // Continue anyway - we have the buffer
+                }
+                
+            } catch (githubError) {
+                console.error(`[FETCH_PDF] GitHub fallback failed:`, githubError.message);
+                throw new Error(`PDF not found in Firebase Storage and GitHub fallback failed: ${pdfFileName}`);
+            }
+        } else {
+            console.log(`[FETCH_PDF] Found PDF in Firebase Storage: ${pdfFileName}`);
+            [buffer] = await file.download();
+            debugLog(`[FETCH_PDF] Downloaded from Firebase Storage, size: ${buffer.length} bytes`);
+        }
         
         // Extract text from PDF
         const extractedText = await extractTextFromPDF(buffer);
