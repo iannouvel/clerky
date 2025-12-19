@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-57-11-708Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1079,
+  "response_length": 159,
+  "prompt_preview": "{\"transcript\":\"Obstetric Clinical Note\\n\\n28yo, G2P1, 1/52 postnatal, BMI 28, Rh+ve\\n\\nIssues:\\nConcerns regarding new-onset hypertension and headaches at 1/52 postpartum\\n\\nBackground:\\nUncomplicated...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 55,\n  \"mostRelevantCount\": 14,\n  \"potentiallyRelevantCount\": 17,\n  \"lessRelevantCount\": 20,\n  \"notRelevantCount\": 4\n}...",
+  "full_data": null
+}
