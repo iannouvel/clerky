@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-35-17-938Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2247,
+  "response_length": 3169,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":1268,\"transcriptPreview\":\"28yo, G1P1, 6/52 post SVD\\n\\nPresenting Complaint:\\nPersistent heavy vaginal bleeding (PPH at delivery) and offensive discharge for 1...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2023-hypertension-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2023 - Hypertension In Pregnancy\\\",\\n      ...",
+  "full_data": null
+}
