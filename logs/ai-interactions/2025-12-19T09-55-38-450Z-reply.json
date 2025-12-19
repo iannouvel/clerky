@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-55-38-450Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1104,
+  "response_length": 157,
+  "prompt_preview": "{\"transcript\":\"31yo, G2P1 (1x LSCS)\\n\\nIssues:\\nPositive pregnancy test, no definitive pregnancy location on USS, ongoing vaginal bleeding\\n\\nBackground:\\nLast menstrual period 6/52 ago\\nSexually acti...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 28,\n  \"mostRelevantCount\": 2,\n  \"potentiallyRelevantCount\": 6,\n  \"lessRelevantCount\": 12,\n  \"notRelevantCount\": 8\n}...",
+  "full_data": null
+}
