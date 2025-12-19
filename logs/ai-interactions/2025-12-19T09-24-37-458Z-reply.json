@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-24-37-458Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 1369,
+  "response_length": 3131,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/2\",\"transcriptLength\":1261,\"transcriptPreview\":\"28yo, G1P0, 8+5, BMI 24, Rh+ve\\n\\nIssues:\\nNausea and vomiting of pregnancy (NVP) - unable to tolerate oral intake for 48 hours, no o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"041-pdf\\\", \\\"title\\\": \\\"041\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"041sop-pdf\\\", \\\"title\\\": \\\"041SOP\\\", \\\"...",
+  "full_data": null
+}
