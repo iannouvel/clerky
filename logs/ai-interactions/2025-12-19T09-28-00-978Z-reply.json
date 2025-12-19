@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-28-00-978Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5280,
+  "response_length": 7124,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":982,\"transcriptPreview\":\"28yo, G3P2 (2x prev LSCS), 34+2, BMI 31\\n\\nKey Issue:\\nPlacenta praevia major with high suspicion of placenta increta on imaging\\n\\nBa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta-pdf\\\", \\\"title\\\": \\\"BJOG - 2018 - Jauniaux - Placenta Praevia an...",
+  "full_data": null
+}
