@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-57-08-422Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4099,
+  "response_length": 489,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":968,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1, 1/52 postnatal, BMI 28, Rh+ve\\n\\nIssues:\\nConcerns regarding new-onset hypertension and headach...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2021-postnatal-care-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2021 - Postnatal Care\\\",\\n      \\\"relevance\\\"...",
+  "full_data": null
+}
