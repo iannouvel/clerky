@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-50-16-700Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2252,
+  "response_length": 3310,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":758,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1 (prev LSCS), 12+2, BMI 24, Rh+ve\\n\\nIssues:\\nThreatened miscarriage with vaginal bleeding and cr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2023-ectopic-pdf\\\",\\n      \\\"title\\\": \\\"NICE Guidance - 2023 - Ectopic\\\",\\n      \\\"relevance\\\": \\\"0.9\\\"\\n   ...",
+  "full_data": null
+}
