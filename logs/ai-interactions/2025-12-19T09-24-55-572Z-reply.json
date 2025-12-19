@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-24-55-572Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1364,
+  "response_length": 157,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 8+5, BMI 24, Rh+ve\\n\\nIssues:\\nNausea and vomiting of pregnancy (NVP) - unable to tolerate oral intake for 48 hours, no oral medications kept down.\\n\\nBackground:\\nBooked at...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 78,\n  \"mostRelevantCount\": 6,\n  \"potentiallyRelevantCount\": 8,\n  \"lessRelevantCount\": 9,\n  \"notRelevantCount\": 55\n}...",
+  "full_data": null
+}
