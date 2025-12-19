@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-39-27-012Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2251,
+  "response_length": 2747,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":1038,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n42yo, G3P1 (1x SVD), 35+2, BMI 31, Rh+ve\\n\\nIssues:\\nPolyhydramnios diagnosed at 33+5 weeks, worsening ove...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-guidance-2022-preterm-labour-and-birth-pdf\\\", \\\"title\\\": \\\"NICE Guidance - 2022 - Preterm Labour and Birth\\\", \\...",
+  "full_data": null
+}
