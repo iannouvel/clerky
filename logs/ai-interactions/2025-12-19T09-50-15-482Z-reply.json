@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-50-15-482Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5290,
+  "response_length": 2128,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":758,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1 (prev LSCS), 12+2, BMI 24, Rh+ve\\n\\nIssues:\\nThreatened miscarriage with vaginal bleeding and cr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bashh-2012-bacterial-vaginosis-pdf\\\",\\n      \\\"title\\\": \\\"BASHH - 2012 - Bacterial Vaginosis\\\",\\n      \\\"relevanc...",
+  "full_data": null
+}
