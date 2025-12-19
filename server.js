@@ -3542,29 +3542,6 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       });
     }
 
-    // Log to Firestore for analytics (fire-and-forget, non-blocking)
-    const latencyMs = Date.now() - sendToAIStartTime;
-    if (db) {
-      db.collection('aiInteractions').add({
-        timestamp: admin.firestore.FieldValue.serverTimestamp(),
-        userId: userId || 'anonymous',
-        provider: preferredProvider,
-        model: model,
-        endpoint: 'sendToAI',
-        promptTokens: tokenUsage?.prompt_tokens || 0,
-        completionTokens: tokenUsage?.completion_tokens || 0,
-        totalTokens: tokenUsage?.total_tokens || 0,
-        latencyMs: latencyMs,
-        estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
-        success: true,
-        errorMessage: null,
-        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
-        responseLength: content?.length || 0
-      }).catch(logErr => {
-        console.error('[AI_LOG] Failed to log to Firestore:', logErr.message);
-      });
-    }
-
     // Return both the response content and AI provider information
     return {
       content: content,
