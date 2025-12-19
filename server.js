@@ -326,6 +326,17 @@ const AI_MODEL_REGISTRY = {
       { model: 'gemini-2.5-pro', displayName: 'Gemini 2.5 Pro', costPer1kInput: 0.00125, costPer1kOutput: 0.005, description: 'Most capable Gemini' },
       { model: 'gemini-2.0-flash', displayName: 'Gemini 2.0 Flash', costPer1kInput: 0.0001, costPer1kOutput: 0.0004, description: 'Previous generation flash' }
     ]
+  },
+  Groq: {
+    keyEnv: 'GROQ_API_KEY',
+    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+    models: [
+      { model: 'openai/gpt-oss-120b', displayName: 'GPT OSS 120B', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Open-source GPT 120B on Groq' },
+      { model: 'openai/gpt-oss-20b', displayName: 'GPT OSS 20B', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Open-source GPT 20B on Groq' },
+      { model: 'moonshotai/kimi-k2-instruct', displayName: 'Kimi K2', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Kimi K2 instruction model' },
+      { model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Llama 4 Scout', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Llama 4 Scout 17B' },
+      { model: 'llama-3.3-70b-versatile', displayName: 'Llama 3.3 70B', costPer1kInput: 0.00059, costPer1kOutput: 0.00079, description: 'Llama 3.3 70B versatile' }
+    ]
   }
 };
 
@@ -366,6 +377,13 @@ const AI_PROVIDER_PREFERENCE = [
     costPer1kTokens: 0.0001, // $0.0001 per 1k tokens
     priority: 5,
     description: 'Google\'s offering, fast and cost-effective'
+  },
+  {
+    name: 'Groq',
+    model: 'llama-3.3-70b-versatile',
+    costPer1kTokens: 0.00069, // Average of input/output pricing
+    priority: 6,
+    description: 'Ultra-fast inference on Groq LPU'
   }
 ];
 
@@ -3071,6 +3089,12 @@ function formatMessagesForProvider(messages, provider) {
                 role: msg.role === 'system' ? 'user' : msg.role,
                 parts: [{ text: msg.content }]
             }));
+        case 'Groq':
+            // Groq uses OpenAI-compatible format
+            return messages.map(msg => ({
+                role: msg.role,
+                content: msg.content
+            }));
         default:
             throw new Error(`Unsupported AI provider: ${provider}`);
     }
@@ -3094,8 +3118,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       preferredProvider = 'Mistral';
     } else if (model.includes('gemini')) {
       preferredProvider = 'Gemini';
-    } else if (model.includes('gpt')) {
+    } else if (model.includes('gpt') && !model.includes('gpt-oss')) {
       preferredProvider = 'OpenAI';
+    } else if (model.includes('groq') || model.includes('llama-3.3') || model.includes('llama-4') || model.includes('gpt-oss') || model.includes('kimi-k2')) {
+      preferredProvider = 'Groq';
     } else {
       preferredProvider = 'DeepSeek'; // Default to DeepSeek if unknown model
     }
@@ -3156,6 +3182,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     const hasAnthropicKey = !!process.env.ANTHROPIC_API_KEY;
     const hasMistralKey = !!process.env.MISTRAL_API_KEY;
     const hasGeminiKey = !!process.env.GOOGLE_AI_API_KEY;
+    const hasGroqKey = !!process.env.GROQ_API_KEY;
     
     debugLog('[DEBUG] API key availability:', {
       preferredProvider,
@@ -3164,7 +3191,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       hasDeepSeekKey,
       hasAnthropicKey,
       hasMistralKey,
-      hasGeminiKey
+      hasGeminiKey,
+      hasGroqKey
     });
     
     // ============================================================================
@@ -3177,7 +3205,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       hasDeepSeekKey,
       hasAnthropicKey,
       hasMistralKey,
-      hasGeminiKey
+      hasGeminiKey,
+      hasGroqKey
     };
     
     // Check if current preferred provider has API key
@@ -3452,6 +3481,65 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         
         tokenUsage.estimated_cost_usd = totalCost;
       }
+    } else if (preferredProvider === 'Groq') {
+      // Groq uses OpenAI-compatible API format
+      const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+        model: model,
+        messages: formattedMessages,
+        temperature: temperature,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        timeout: timeoutMs
+      });
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - Groq pricing (Llama 3.3 70B)
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.00059;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.00079;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`Groq API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    }
+
+    // Log to Firestore for analytics (fire-and-forget, non-blocking)
+    const latencyMs = Date.now() - sendToAIStartTime;
+    if (db) {
+      db.collection('aiInteractions').add({
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        userId: userId || 'anonymous',
+        provider: preferredProvider,
+        model: model,
+        endpoint: 'sendToAI',
+        promptTokens: tokenUsage?.prompt_tokens || 0,
+        completionTokens: tokenUsage?.completion_tokens || 0,
+        totalTokens: tokenUsage?.total_tokens || 0,
+        latencyMs: latencyMs,
+        estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
+        success: true,
+        errorMessage: null,
+        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
+        responseLength: content?.length || 0
+      }).catch(logErr => {
+        console.error('[AI_LOG] Failed to log to Firestore:', logErr.message);
+      });
     }
 
     // Log to Firestore for analytics (fire-and-forget, non-blocking)
@@ -3607,6 +3695,20 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
               },
               params: {
                 key: process.env.GOOGLE_AI_API_KEY
+              },
+              timeout: 120000 // 120 second timeout for fallback AI generation
+            });
+          } else if (nextProvider.name === 'Groq') {
+            // Groq uses OpenAI-compatible format
+            response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+              model: nextProvider.model,
+              messages: formattedMessages,
+              temperature: temperature,
+              max_tokens: 4000
+            }, {
+              headers: {
+                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+                'Content-Type': 'application/json'
               },
               timeout: 120000 // 120 second timeout for fallback AI generation
             });
@@ -3781,6 +3883,9 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
       case 'Gemini':
         model = 'gemini-2.5-flash';
         break;
+      case 'Groq':
+        model = 'llama-3.3-70b-versatile';
+        break;
       default:
         model = 'deepseek-chat';
     }
@@ -3796,7 +3901,8 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
       hasDeepSeekKey: !!process.env.DEEPSEEK_API_KEY,
       hasAnthropicKey: !!process.env.ANTHROPIC_API_KEY,
       hasMistralKey: !!process.env.MISTRAL_API_KEY,
-      hasGeminiKey: !!process.env.GOOGLE_AI_API_KEY
+      hasGeminiKey: !!process.env.GOOGLE_AI_API_KEY,
+      hasGroqKey: !!process.env.GROQ_API_KEY
     });
     
     // Handle both string prompts and message objects
