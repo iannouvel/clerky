@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-46-34-728Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4083,
+  "response_length": 1832,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":1061,\"transcriptPreview\":\"28yo, G3P2 (prev 2x SVD), 31+2, BMI 24, Rh+ve\\nIssues: Vasa praevia diagnosed at 29 weeks USS, placenta praevia type 4, concerns rega...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2011-aph-pdf\\\", \\\"title\\\": \\\"GTG 2011 - APH\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"gtg-2015-reduced-fetal-...",
+  "full_data": null
+}
