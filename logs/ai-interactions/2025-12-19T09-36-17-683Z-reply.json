@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-36-17-683Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5286,
+  "response_length": 7128,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1268,\"transcriptPreview\":\"28yo, G1P1, 6/52 post SVD\\n\\nPresenting Complaint:\\nPersistent heavy vaginal bleeding (PPH at delivery) and offensive discharge for 1...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"BJOG - 2016 - Prevention and Management...",
+  "full_data": null
+}
