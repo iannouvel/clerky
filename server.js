@@ -383,7 +383,35 @@ const AI_PROVIDER_PREFERENCE = [
     model: 'llama-3.3-70b-versatile',
     costPer1kTokens: 0.00069, // Average of input/output pricing
     priority: 6,
-    description: 'Ultra-fast inference on Groq LPU'
+    description: 'Ultra-fast inference on Groq LPU - Llama 3.3 70B'
+  },
+  {
+    name: 'Groq',
+    model: 'openai/gpt-oss-120b',
+    costPer1kTokens: 0.0,
+    priority: 7,
+    description: 'Open-source GPT 120B on Groq'
+  },
+  {
+    name: 'Groq',
+    model: 'openai/gpt-oss-20b',
+    costPer1kTokens: 0.0,
+    priority: 8,
+    description: 'Open-source GPT 20B on Groq'
+  },
+  {
+    name: 'Groq',
+    model: 'moonshotai/kimi-k2-instruct',
+    costPer1kTokens: 0.0,
+    priority: 9,
+    description: 'Kimi K2 instruction model on Groq'
+  },
+  {
+    name: 'Groq',
+    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+    costPer1kTokens: 0.0,
+    priority: 10,
+    description: 'Llama 4 Scout 17B on Groq'
   }
 ];
 
@@ -2690,19 +2718,19 @@ async function getUserModelPreferences(userId) {
             console.error('Error reading user preference file:', error);
         }
         
-        // Default to cost-ordered list if no preference found
-        const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
-        
+        // Default to cost-ordered list if no preference found (use model ID as unique key)
+        const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.model);
+
         // Cache the default preference
         userModelPreferencesCache.set(userId, {
             modelOrder: defaultOrder,
             timestamp: Date.now()
         });
-        
+
         return defaultOrder;
     } catch (error) {
         console.error('Critical error in getUserModelPreferences:', error);
-        return AI_PROVIDER_PREFERENCE.map(p => p.name); // Default to cost-ordered list on error
+        return AI_PROVIDER_PREFERENCE.map(p => p.model); // Default to cost-ordered list on error
     }
 }
 
@@ -3187,28 +3215,28 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     if (userId && !skipUserPreference) {
       try {
         // Use the ordered model preferences (which will fetch if needed)
+        // Note: userModelOrder now contains model IDs like 'deepseek-chat', 'llama-3.3-70b-versatile'
         const userModelOrder = await getUserModelPreferences(userId);
         
         if (userModelOrder && userModelOrder.length > 0) {
-          // Use the first model in the user's preference order
-          const firstPreferredProvider = userModelOrder[0];
+          // Use the first model in the user's preference order (this is now a model ID)
+          const firstPreferredModelId = userModelOrder[0];
           
-          if (firstPreferredProvider !== preferredProvider) {
+          // Look up the provider config by model ID
+          const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === firstPreferredModelId);
+          
+          if (providerConfig && providerConfig.name !== preferredProvider) {
             debugLog('[DEBUG] Overriding provider based on user model preferences:', {
               requestedModel: model,
               initialProvider: preferredProvider,
-              firstPreferredProvider,
+              firstPreferredModelId,
+              newProvider: providerConfig.name,
               fullOrder: userModelOrder,
               userId
             });
-            preferredProvider = firstPreferredProvider;
-            
-            // Update the model to match the preferred provider
-            const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === preferredProvider);
-            if (providerConfig) {
-              model = providerConfig.model;
-              debugLog('[DEBUG] Updated model to match preferred provider:', model);
-            }
+            preferredProvider = providerConfig.name;
+            model = providerConfig.model;
+            debugLog('[DEBUG] Updated model to match preferred provider:', model);
           }
         }
       } catch (error) {
@@ -3262,45 +3290,42 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       console.log(`[DEBUG] No API key for ${preferredProvider}, searching for next available provider...`);
       
       // Try to use user's preference order for fallback, otherwise use cost order
-      let fallbackOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
+      // Note: userModelOrder now contains model IDs like 'deepseek-chat', 'llama-3.3-70b-versatile'
+      let fallbackModelOrder = AI_PROVIDER_PREFERENCE.map(p => p.model);
       if (userId) {
         try {
           const userModelOrder = await getUserModelPreferences(userId);
           if (userModelOrder && userModelOrder.length > 0) {
-            fallbackOrder = userModelOrder;
-            debugLog('[DEBUG] Using user preference order for fallback:', fallbackOrder);
+            fallbackModelOrder = userModelOrder;
+            debugLog('[DEBUG] Using user preference order for fallback:', fallbackModelOrder);
           }
         } catch (error) {
           console.warn('[DEBUG] Error getting user model preferences for fallback, using cost order:', error);
         }
       }
       
-      // Find next available provider in the fallback order
+      // Find next available provider in the fallback order (by model ID)
       let nextProvider = null;
-      const currentIndex = fallbackOrder.indexOf(preferredProvider);
+      const currentIndex = fallbackModelOrder.indexOf(model);
       
       // Start from the next provider after current
-      for (let i = currentIndex + 1; i < fallbackOrder.length; i++) {
-        const providerName = fallbackOrder[i];
-        if (availableKeys[`has${providerName}Key`]) {
-          const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === providerName);
-          if (providerConfig) {
-            nextProvider = providerConfig;
-            break;
-          }
+      for (let i = currentIndex + 1; i < fallbackModelOrder.length; i++) {
+        const modelId = fallbackModelOrder[i];
+        const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === modelId);
+        if (providerConfig && availableKeys[`has${providerConfig.name}Key`]) {
+          nextProvider = providerConfig;
+          break;
         }
       }
       
       // If no next provider available, try from the beginning
       if (!nextProvider) {
         for (let i = 0; i < currentIndex; i++) {
-          const providerName = fallbackOrder[i];
-          if (availableKeys[`has${providerName}Key`]) {
-            const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.name === providerName);
-            if (providerConfig) {
-              nextProvider = providerConfig;
-              break;
-            }
+          const modelId = fallbackModelOrder[i];
+          const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === modelId);
+          if (providerConfig && availableKeys[`has${providerConfig.name}Key`]) {
+            nextProvider = providerConfig;
+            break;
           }
         }
       }
@@ -7005,8 +7030,8 @@ app.get('/getModelPreferences', authenticateUser, async (req, res) => {
     return res.json({ success: true, modelOrder });
   } catch (error) {
     console.error('Error getting model preferences:', error);
-    // Return default order on error
-    const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.name);
+    // Return default order on error (use model ID as unique key)
+    const defaultOrder = AI_PROVIDER_PREFERENCE.map(p => p.model);
     return res.json({ success: true, modelOrder: defaultOrder });
   }
 });
@@ -7024,21 +7049,21 @@ app.post('/updateModelPreferences', authenticateUser, async (req, res) => {
       });
     }
     
-    // Validate that all models in the order are valid
-    const validModels = AI_PROVIDER_PREFERENCE.map(p => p.name);
-    const invalidModels = modelOrder.filter(name => !validModels.includes(name));
+    // Validate that all models in the order are valid (use model ID as unique key)
+    const validModelIds = AI_PROVIDER_PREFERENCE.map(p => p.model);
+    const invalidModels = modelOrder.filter(modelId => !validModelIds.includes(modelId));
     if (invalidModels.length > 0) {
-      return res.status(400).json({ 
-        success: false, 
-        message: `Invalid models: ${invalidModels.join(', ')}` 
+      return res.status(400).json({
+        success: false,
+        message: `Invalid models: ${invalidModels.join(', ')}`
       });
     }
-    
+
     // Ensure all models are present (add missing ones to the end)
     const allModels = [...modelOrder];
-    validModels.forEach(model => {
-      if (!allModels.includes(model)) {
-        allModels.push(model);
+    validModelIds.forEach(modelId => {
+      if (!allModels.includes(modelId)) {
+        allModels.push(modelId);
       }
     });
     

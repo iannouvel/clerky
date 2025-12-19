@@ -6227,8 +6227,89 @@ function cleanQuoteForSearch(quote) {
     return cleaned;
 }
 
+// Helper function to extract key medical terms for fallback search
+function extractKeyTermsForSearch(context, suggestedText) {
+    if (!context && !suggestedText) return null;
+    
+    const combinedText = (context || '') + ' ' + (suggestedText || '');
+    
+    // Medical terms that are likely to be unique and searchable in guidelines
+    // Priority: specific clinical terms > general medical terms
+    const medicalPatterns = [
+        // Specific measurements and thresholds (very searchable)
+        /\d+(?:\.\d+)?\s*(?:weeks?|wk|w)\b/gi,  // gestational ages like "28 weeks"
+        /\d+(?:\.\d+)?\s*(?:ml|mg|mcg|g|kg|mmol|mm|cm)\b/gi,  // measurements
+        /\d+(?:st|nd|rd|th)\s*(?:centile|percentile)/gi,  // percentiles
+        /(?:>|<|≥|≤)\s*\d+/g,  // thresholds
+        
+        // Clinical conditions (highly specific)
+        /(?:vasa\s+)?praevia/gi,
+        /placenta\s+(?:praevia|accreta|percreta)/gi,
+        /(?:fetal|foetal)\s+(?:growth\s+)?restriction/gi,
+        /intrauterine\s+growth\s+restriction/gi,
+        /pre[\-\s]?eclampsia/gi,
+        /gestational\s+diabetes/gi,
+        /post[\-\s]?partum\s+haemorrhage/gi,
+        /caesarean\s+(?:section|delivery)/gi,
+        
+        // Procedures and investigations
+        /ultrasound|USS|scan/gi,
+        /amniocentesis/gi,
+        /cordocentesis/gi,
+        /doppler/gi,
+        /antenatal\s+steroids?/gi,
+        /corticosteroids?/gi,
+        
+        // Timing terms
+        /(?:first|second|third)\s+trimester/gi,
+        /elective\s+delivery/gi,
+        /planned\s+delivery/gi,
+        /timing\s+of\s+delivery/gi
+    ];
+    
+    let foundTerms = [];
+    
+    for (const pattern of medicalPatterns) {
+        const matches = combinedText.match(pattern);
+        if (matches) {
+            foundTerms.push(...matches.map(m => m.trim().toLowerCase()));
+        }
+    }
+    
+    // Deduplicate and take most specific terms (longer = more specific)
+    foundTerms = [...new Set(foundTerms)].sort((a, b) => b.length - a.length);
+    
+    if (foundTerms.length === 0) {
+        // Fallback: extract words with 6+ characters that are likely medical terms
+        const words = combinedText.split(/\s+/).filter(w => 
+            w.length >= 6 && 
+            !/^(should|would|could|because|however|therefore|important|emphasizes?)$/i.test(w)
+        );
+        // Take first 3-4 significant words
+        const significantWords = words.slice(0, 4).map(w => w.toLowerCase().replace(/[^a-z]/g, ''));
+        if (significantWords.length >= 2) {
+            foundTerms = significantWords;
+        }
+    }
+    
+    if (foundTerms.length === 0) {
+        return null;
+    }
+    
+    // Build search phrase from top terms (up to 6 words for better matching)
+    const searchPhrase = foundTerms.slice(0, 6).join(' ');
+    
+    console.log('[DEBUG] extractKeyTermsForSearch: Generated fallback search phrase', {
+        termsFound: foundTerms.length,
+        searchPhrase: searchPhrase,
+        preview: searchPhrase.substring(0, 80)
+    });
+    
+    return searchPhrase;
+}
+
 // Helper function to create guideline viewer link
-function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context, hasVerbatimQuote) {
+function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context, hasVerbatimQuote, suggestedText) {
     if (!guidelineId && !guidelineFilename) {
         return '<em>Guideline reference not available</em>';
     }
@@ -6237,6 +6318,8 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     
     // Extract search text from context ONLY if hasVerbatimQuote is explicitly true
     let searchText = null;
+    let searchType = null;  // Track whether this is 'verbatim' or 'fallback' search
+    
     if (context && hasVerbatimQuote === true) {
         const decodedContext = unescapeHtml(context);
 
@@ -6252,6 +6335,7 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
                 const cleanedContext = cleanQuoteForSearch(rawContext);
                 if (cleanedContext && cleanedContext.length >= 10) {
                     searchText = cleanedContext;
+                    searchType = 'verbatim';
                     console.log('[DEBUG] createGuidelineViewerLink: Using full context as fallback search text', {
                         length: searchText.length,
                         preview: searchText.substring(0, 80) + '...'
@@ -6268,10 +6352,25 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
                 });
             }
         } else {
+            searchType = 'verbatim';
             console.log('[DEBUG] Extracted search text for PDF.js viewer from quoted context:', searchText.substring(0, 80) + '...');
         }
-    } else if (hasVerbatimQuote === false) {
-        console.log('[DEBUG] hasVerbatimQuote is false - opening PDF to first page without search');
+    } else if (hasVerbatimQuote === false || !hasVerbatimQuote) {
+        // NEW: When no verbatim quote, try to extract key medical terms for a keyword-based search
+        console.log('[DEBUG] hasVerbatimQuote is false/undefined - attempting fallback keyword search');
+        
+        const decodedContext = context ? unescapeHtml(context) : null;
+        searchText = extractKeyTermsForSearch(decodedContext, suggestedText);
+        
+        if (searchText) {
+            searchType = 'fallback';
+            console.log('[DEBUG] createGuidelineViewerLink: Using keyword fallback search', {
+                searchText: searchText,
+                source: 'context + suggestedText'
+            });
+        } else {
+            console.log('[DEBUG] createGuidelineViewerLink: No fallback search terms found - opening PDF to first page');
+        }
     }
     
     // Store search text and guideline ID for auth handler to use
@@ -6745,7 +6844,8 @@ async function showCurrentSuggestion() {
     }
 
     // Create guideline link with context for quote extraction
-    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote);
+    // Pass suggestedText for fallback keyword search when no verbatim quote is available
+    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText);
 
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
@@ -14188,7 +14288,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                         
                         <div class="guideline-link-section" style="margin-top: 10px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;">
                             <label style="font-weight: bold;">Guideline:</label>
-                            ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename, suggestion.context)}
+                            ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename, suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText)}
                         </div>
                     </div>
                     
