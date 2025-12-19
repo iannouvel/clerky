@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-56-58-146Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2250,
+  "response_length": 3167,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":968,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1, 1/52 postnatal, BMI 28, Rh+ve\\n\\nIssues:\\nConcerns regarding new-onset hypertension and headach...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2023-hypertension-in-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2023 - Hypertension In Pregnancy\\\",\\n      ...",
+  "full_data": null
+}
