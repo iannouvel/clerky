@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-55-38-440Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4097,
+  "response_length": 524,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":1000,\"transcriptPreview\":\"31yo, G2P1 (1x LSCS)\\n\\nIssues:\\nPositive pregnancy test, no definitive pregnancy location on USS, ongoing vaginal bleeding\\n\\nBackgr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nhs-2023-saving-babies-lives-care-bundle-v3-pdf\\\",\\n      \\\"title\\\": \\\"NHS - 2023 - Saving Babies Lives ...",
+  "full_data": null
+}
