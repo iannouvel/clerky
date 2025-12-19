@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-50-22-696Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4100,
+  "response_length": 520,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":758,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1 (prev LSCS), 12+2, BMI 24, Rh+ve\\n\\nIssues:\\nThreatened miscarriage with vaginal bleeding and cr...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\",\\n      \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\",\\n      \\\"relevance\\\"...",
+  "full_data": null
+}
