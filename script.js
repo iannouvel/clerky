@@ -9909,7 +9909,12 @@ const AVAILABLE_MODELS = [
     { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral' },
     { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude' },
     { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'OpenAI' },
-    { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini' }
+    { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini' },
+    { name: 'Groq', model: 'llama-3.3-70b-versatile', displayName: 'Groq (Llama 3.3 70B)' },
+    { name: 'Groq', model: 'openai/gpt-oss-120b', displayName: 'Groq (GPT OSS 120B)' },
+    { name: 'Groq', model: 'openai/gpt-oss-20b', displayName: 'Groq (GPT OSS 20B)' },
+    { name: 'Groq', model: 'moonshotai/kimi-k2-instruct', displayName: 'Groq (Kimi K2)' },
+    { name: 'Groq', model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Groq (Llama 4 Scout)' }
 ];
 
 // ---- Chunk distribution provider preferences ----
