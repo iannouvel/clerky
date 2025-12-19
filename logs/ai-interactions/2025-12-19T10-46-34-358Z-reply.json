@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-46-34-358Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2235,
+  "response_length": 2751,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":1061,\"transcriptPreview\":\"28yo, G3P2 (prev 2x SVD), 31+2, BMI 24, Rh+ve\\nIssues: Vasa praevia diagnosed at 29 weeks USS, placenta praevia type 4, concerns rega...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-caesarean-birth-pdf\\\", \\\"title\\\": \\\"NICE 2025 - Caesarean Birth\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"i...",
+  "full_data": null
+}
