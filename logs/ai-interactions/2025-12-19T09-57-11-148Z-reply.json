@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T09-57-11-148Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5289,
+  "response_length": 8074,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":968,\"transcriptPreview\":\"Obstetric Clinical Note\\n\\n28yo, G2P1, 1/52 postnatal, BMI 28, Rh+ve\\n\\nIssues:\\nConcerns regarding new-onset hypertension and headach...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"{\\n  \\\"mostRelevant\\\": [\\n    {\\n      \\\"id\\\": \\\"bjog-2016-diagnosis-and-management-of-ectopic-pregnancy-pdf\\\",\\n      \\\"title\\\": \\\"BJOG - 2016 - Diagnosis and Ma...",
+  "full_data": null
+}
