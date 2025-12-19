@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-39-46-419Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1144,
+  "response_length": 158,
+  "prompt_preview": "{\"transcript\":\"Obstetric Clinical Note\\n\\n42yo, G3P1 (1x SVD), 35+2, BMI 31, Rh+ve\\n\\nIssues:\\nPolyhydramnios diagnosed at 33+5 weeks, worsening over last 2 weeks\\n\\nBackground:\\nFetus testing Rh+ve\\n...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 52,\n  \"mostRelevantCount\": 5,\n  \"potentiallyRelevantCount\": 7,\n  \"lessRelevantCount\": 29,\n  \"notRelevantCount\": 11\n}...",
+  "full_data": null
+}
