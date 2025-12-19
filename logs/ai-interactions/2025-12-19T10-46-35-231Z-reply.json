@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-19T10-46-35-231Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1141,
+  "response_length": 158,
+  "prompt_preview": "{\"transcript\":\"28yo, G3P2 (prev 2x SVD), 31+2, BMI 24, Rh+ve\\nIssues: Vasa praevia diagnosed at 29 weeks USS, placenta praevia type 4, concerns regarding significant bleeding risk with labour or membr...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 40,\n  \"mostRelevantCount\": 12,\n  \"potentiallyRelevantCount\": 6,\n  \"lessRelevantCount\": 8,\n  \"notRelevantCount\": 14\n}...",
+  "full_data": null
+}
