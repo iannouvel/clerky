@@ -29,6 +29,121 @@ if (document.readyState === 'loading') {
     loadVersionNumber();
 }
 
+// ===== Server Warmup Detection =====
+// Track server readiness state for cold start detection
+window.serverReady = false;
+window.serverStatusCheckInterval = null;
+
+// Check if server is ready (guidelines cache populated)
+async function checkServerStatus() {
+    try {
+        const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+        const response = await fetch(`${serverUrl}/serverStatus`, {
+            method: 'GET',
+            headers: { 'Accept': 'application/json' }
+        });
+        
+        if (!response.ok) {
+            console.warn('[SERVER_STATUS] Server status check failed:', response.status);
+            return false;
+        }
+        
+        const data = await response.json();
+        console.log('[SERVER_STATUS]', data);
+        return data.ready === true;
+    } catch (error) {
+        console.warn('[SERVER_STATUS] Error checking server status:', error.message);
+        return false;
+    }
+}
+
+// Update UI based on server readiness
+function updateServerStatusUI(isReady) {
+    const analyseBtn = document.getElementById('analyseBtn');
+    const statusMessage = document.getElementById('serverStatusMessage');
+    
+    window.serverReady = isReady;
+    
+    if (!isReady) {
+        // Server is warming up - disable analyse button
+        if (analyseBtn) {
+            analyseBtn.classList.add('warming-up');
+            analyseBtn.title = 'Server is warming up, please wait...';
+        }
+        if (statusMessage) {
+            statusMessage.style.display = 'flex';
+            statusMessage.innerHTML = '<span class="spinner-icon spinning">⟳</span> Server warming up...';
+        }
+    } else {
+        // Server is ready - enable analyse button
+        if (analyseBtn) {
+            analyseBtn.classList.remove('warming-up');
+            analyseBtn.title = 'Analyse';
+        }
+        if (statusMessage) {
+            statusMessage.style.display = 'none';
+            statusMessage.innerHTML = '';
+        }
+        
+        // Clear polling interval
+        if (window.serverStatusCheckInterval) {
+            clearInterval(window.serverStatusCheckInterval);
+            window.serverStatusCheckInterval = null;
+        }
+    }
+}
+
+// Start polling for server status until ready
+async function startServerStatusPolling() {
+    // Initial check
+    const isReady = await checkServerStatus();
+    updateServerStatusUI(isReady);
+    
+    if (isReady) {
+        console.log('[SERVER_STATUS] Server is ready on first check');
+        return;
+    }
+    
+    console.log('[SERVER_STATUS] Server not ready, starting polling...');
+    
+    // Poll every 3 seconds until ready
+    window.serverStatusCheckInterval = setInterval(async () => {
+        const ready = await checkServerStatus();
+        updateServerStatusUI(ready);
+        
+        if (ready) {
+            console.log('[SERVER_STATUS] Server is now ready');
+        }
+    }, 3000);
+    
+    // Stop polling after 2 minutes (fail-safe)
+    setTimeout(() => {
+        if (window.serverStatusCheckInterval) {
+            clearInterval(window.serverStatusCheckInterval);
+            window.serverStatusCheckInterval = null;
+            // Assume ready after timeout to avoid blocking user indefinitely
+            window.serverReady = true;
+            const statusMessage = document.getElementById('serverStatusMessage');
+            if (statusMessage) {
+                statusMessage.style.display = 'none';
+            }
+            const analyseBtn = document.getElementById('analyseBtn');
+            if (analyseBtn) {
+                analyseBtn.classList.remove('warming-up');
+                analyseBtn.title = 'Analyse';
+            }
+            console.log('[SERVER_STATUS] Polling timeout - assuming ready');
+        }
+    }, 120000);
+}
+
+// Start server status check when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startServerStatusPolling);
+} else {
+    startServerStatusPolling();
+}
+
 // ===== Shared AI Model Preference Helpers =====
 
 // Fetch the user's current AI provider preference from the server.
@@ -1215,6 +1330,12 @@ function updateAnalyseAndResetButtons(hasContent) {
     // Analyse button only appears when there is content
     if (analyseBtn) {
         analyseBtn.style.display = hasContent ? 'flex' : 'none';
+        
+        // If server is not ready, keep warming-up state even when button is visible
+        if (hasContent && !window.serverReady) {
+            analyseBtn.classList.add('warming-up');
+            analyseBtn.title = 'Server is warming up, please wait...';
+        }
     }
 
     // Reset button should remain visible at all times in the fixed bar
@@ -9353,6 +9474,13 @@ document.addEventListener('DOMContentLoaded', () => {
             analyseBtn.dataset.listenerAttached = 'true';
             
             analyseBtn.addEventListener('click', async () => {
+                // Check if server is still warming up
+                if (!window.serverReady) {
+                    console.log('[DEBUG] Analyse button clicked but server is still warming up');
+                    alert('Server is still warming up. Please wait a moment and try again.');
+                    return;
+                }
+                
                 // Check if we're in stop mode
                 if (window.isAnalysisRunning && window.analysisAbortController) {
                     console.log('[DEBUG] Stop button clicked - cancelling analysis');
