@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T08-52-48-670Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4092,
+  "response_length": 5602,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":1309,\"transcriptPreview\":\"32yo, G3P2 (1x classical CS for FTP, 1x SVD), 24+2, BMI 29, Rh+ve\\n\\nIssues:\\nConcerns regarding previous classical CS and potential ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-birth-after-previous-cs-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Birth After Previous CS\\\", \\\"relevance\\\": \\\"0.95...",
+  "full_data": null
+}
