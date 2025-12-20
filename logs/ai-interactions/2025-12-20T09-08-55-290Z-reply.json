@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T09-08-55-290Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5276,
+  "response_length": 7717,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1055,\"transcriptPreview\":\"25yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Abnormal CTG, reduced fetal movement reported by patient\\nBackground: Induced at 41 weeks du...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2017-prevention-of-early-onset-neonatal-group-b-streptococcal-disease-pdf\\\", \\\"title\\\": \\\"BJOG - 2017 - Pre...",
+  "full_data": null
+}
