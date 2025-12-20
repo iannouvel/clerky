@@ -1,0 +1,25 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T09-04-28-997Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 2514,
+  "response_length": 65,
+  "prompt_preview": "{\"transcript\":\"28yo, G3P2 (1x SVD, 1x LSCS for FTP), 31+2, BMI 29, Rh+ve\\n\\nIssues:\\nAntenatal diagnosis of placenta percreta with bladder invasion\\nPrevious LSCS and possible placenta accreta in prev...",
+  "response_preview": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}...",
+  "full_data": {
+    "prompt": {
+      "transcript": "28yo, G3P2 (1x SVD, 1x LSCS for FTP), 31+2, BMI 29, Rh+ve\n\nIssues:\nAntenatal diagnosis of placenta percreta with bladder invasion\nPrevious LSCS and possible placenta accreta in previous pregnancy\nHigh risk of major haemorrhage and need for multidisciplinary management\n\nBackground:\nPlacenta percreta diagnosed on USS at 20 weeks, confirmed on MRI\nPrevious pregnancy complicated by placenta accreta, requiring PPH management and blood transfusion\nG&S tests normal, FBC and coagulation profile within normal limits\nMultidisciplinary team (MDT) discussion and planning with obstetrics, anaesthetics, and urology\n\nAssessment:\nHigh risk of severe haemorrhage at delivery, requiring careful planning and management\nNeed for level 3 maternity unit with available blood products and surgical expertise\n\nPlan:\nElective LSCS and possible hysterectomy at 34-35 weeks, depending on fetal and maternal condition\nIntraoperative cell salvage and blood transfusion to be available\nUrology input and possible cystoscopy for bladder repair\nPostnatal care to include monitoring for haemorrhage and infection, and thromboprophylaxis\nRegular MDT meetings to review and update management plan\n\nDiscussion:\nPatient counselled regarding risks and management options, including possible hysterectomy\nPatient to be aware of signs of haemorrhage and infection, and to seek immediate medical attention if concerned\nConsideration for postnatal contraception and family planning options to be discussed post-delivery\n\nExam:\nBP: 120/80 mmHg, HR: 90 bpm, Temp: 36.5°C, SpO2: 98% RA\nAbdomen soft, non-tender, no palpable masses\nFetal movement and heart rate normal\n\nInvestigations:\nUSS: Placenta percreta with bladder invasion, fetal growth restriction (FGR) noted\nMRI: Confirmed placenta percreta with bladder invasion, no other abnormalities seen\nFBC: Hb 105 g/L, MCV 85 fL, Platelets 250 x10⁹/L\nCoagulation profile: Normal INR and APTT\n\nRECOMMENDATION:\nImmediate Management:\nAdmit to level 3 maternity unit for close monitoring and management\nCorticosteroids for fetal lung maturation, if delivery prior to 34 weeks\nRegular USS and monitoring for signs of haemorrhage and fetal distress\n\nMonitoring & Follow-Up:\nRegular MDT meetings to review and update management plan\nUSS and FBC monitoring, with consideration for delivery if signs of haemorrhage or fetal distress\nPostnatal care to include monitoring for haemorrhage and infection, and thromboprophylaxis",
+      "guidelinesCount": 0
+    },
+    "response": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}",
+    "endpoint": "findRelevantGuidelines",
+    "timestamp": "2025-12-20T09-04-28",
+    "ai_provider": "DeepSeek",
+    "ai_model": "deepseek-chat",
+    "token_usage": null,
+    "critical": "All chunks failed to process"
+  }
+}
