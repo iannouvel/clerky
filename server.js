@@ -9439,6 +9439,18 @@ app.get('/health', (req, res) => {
     });
 });
 
+// Server status endpoint for cold start detection
+// Returns whether the guidelines cache is ready (for client warmup indicators)
+app.get('/serverStatus', (req, res) => {
+    res.status(200).json({
+        ready: guidelinesCacheReady,
+        uptime: Math.round(process.uptime()),
+        cachePopulated: guidelinesCache.data !== null,
+        guidelinesCount: guidelinesCache.data?.length || 0,
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Test all 5 AI models with minimal tokens (health check)
 // Cost: < $0.0001 total (fraction of a cent)
 app.get('/testModelHealth', authenticateUser, async (req, res) => {
@@ -10783,6 +10795,9 @@ const guidelinesCache = {
     TTL: 5 * 60 * 1000 // 5 minutes
 };
 
+// Track if guidelines cache has been populated (for cold start detection)
+let guidelinesCacheReady = false;
+
 // Get guidelines from cache or fetch from Firestore
 async function getCachedGuidelines() {
     const now = Date.now();
@@ -10796,7 +10811,8 @@ async function getCachedGuidelines() {
     const guidelines = await getAllGuidelines();
     guidelinesCache.data = guidelines;
     guidelinesCache.timestamp = now;
-    console.log('[CACHE] Guidelines cached:', guidelines.length, 'guidelines');
+    guidelinesCacheReady = guidelines.length > 0; // Mark cache as ready when populated
+    console.log('[CACHE] Guidelines cached:', guidelines.length, 'guidelines, cacheReady:', guidelinesCacheReady);
     return guidelines;
 }
 
@@ -10804,6 +10820,7 @@ async function getCachedGuidelines() {
 function invalidateGuidelinesCache() {
     guidelinesCache.data = null;
     guidelinesCache.timestamp = null;
+    guidelinesCacheReady = false; // Reset ready flag when cache is invalidated
     console.log('[CACHE] Guidelines cache invalidated');
 }
 

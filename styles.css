@@ -3487,6 +3487,25 @@ html, body {
     cursor: not-allowed;
 }
 
+/* Warming up state - server cold start */
+.summary-analyse-btn.warming-up {
+    opacity: 0.6;
+    cursor: wait;
+    background: #888;
+    box-shadow: none;
+}
+
+.summary-analyse-btn.warming-up:hover {
+    background: #888;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Spinning animation for warming up spinner */
+.spinner-icon.spinning {
+    animation: spin 1s linear infinite;
+}
+
 /* Spinner icon animation */
 .spinner-icon {
     display: inline-block;
