@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T08-52-46-477Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5282,
+  "response_length": 2143,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1309,\"transcriptPreview\":\"32yo, G3P2 (1x classical CS for FTP, 1x SVD), 24+2, BMI 29, Rh+ve\\n\\nIssues:\\nConcerns regarding previous classical CS and potential ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta-pdf\\\", \\\"title\\\": \\\"BJOG - 2018 - Jauniaux - Placenta P...",
+  "full_data": null
+}
