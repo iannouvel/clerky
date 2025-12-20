@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T08-52-45-672Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2244,
+  "response_length": 2747,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":1309,\"transcriptPreview\":\"32yo, G3P2 (1x classical CS for FTP, 1x SVD), 24+2, BMI 29, Rh+ve\\n\\nIssues:\\nConcerns regarding previous classical CS and potential ...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-caesarean-birth-pdf\\\", \\\"title\\\": \\\"NICE 2025 - Caesarean Birth\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\":...",
+  "full_data": null
+}
