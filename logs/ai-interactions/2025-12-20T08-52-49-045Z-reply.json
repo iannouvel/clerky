@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T08-52-49-045Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1409,
+  "response_length": 157,
+  "prompt_preview": "{\"transcript\":\"32yo, G3P2 (1x classical CS for FTP, 1x SVD), 24+2, BMI 29, Rh+ve\\n\\nIssues:\\nConcerns regarding previous classical CS and potential implications for current pregnancy\\nPatient enquirin...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 65,\n  \"mostRelevantCount\": 9,\n  \"potentiallyRelevantCount\": 3,\n  \"lessRelevantCount\": 8,\n  \"notRelevantCount\": 45\n}...",
+  "full_data": null
+}
