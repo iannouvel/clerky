@@ -199,6 +199,198 @@
             font-family: 'Inter', sans-serif;
         }
         
+        /* AI Logs styles */
+        .logs-container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 180px);
+            gap: 12px;
+        }
+        
+        .logs-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .logs-filters select,
+        .logs-filters input {
+            padding: 6px 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+        }
+        
+        .logs-filters select {
+            min-width: 120px;
+        }
+        
+        .logs-filters input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .logs-filters button {
+            padding: 6px 14px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+        }
+        
+        .logs-filters button:hover {
+            background: var(--primary-hover);
+        }
+        
+        .logs-table-container {
+            flex: 1;
+            min-height: 200px;
+            max-height: 40%;
+            overflow: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: white;
+        }
+        
+        .logs-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        
+        .logs-table th,
+        .logs-table td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .logs-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .logs-table tr:hover {
+            background: #f0f7ff;
+            cursor: pointer;
+        }
+        
+        .logs-table tr.selected {
+            background: #e3f2fd;
+        }
+        
+        .logs-table .status-success {
+            color: #28a745;
+        }
+        
+        .logs-table .status-error {
+            color: #dc3545;
+        }
+        
+        .logs-detail-container {
+            flex: 1;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .logs-detail-header {
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        
+        .logs-detail-content {
+            flex: 1;
+            overflow: auto;
+            padding: 15px;
+        }
+        
+        .logs-detail-section {
+            margin-bottom: 15px;
+        }
+        
+        .logs-detail-section h4 {
+            margin: 0 0 8px 0;
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        .logs-detail-section pre {
+            margin: 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+            max-height: 300px;
+            overflow: auto;
+        }
+        
+        .logs-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .logs-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .logs-meta .label {
+            color: #666;
+        }
+        
+        .logs-status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .logs-status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .logs-status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .logs-empty {
+            padding: 40px;
+            text-align: center;
+            color: #666;
+        }
+        
         .cost-card {
             background: white;
             border-radius: 8px;
@@ -577,13 +769,60 @@
             </div>
         </div>
         <div class="tab-content" id="logsContent" style="display:none;padding:12px">
-            <div class="cost-navigation">
-                <button id="mostRecentBtn">Most Recent</button>
-                <button id="refreshBtn">Refresh</button>
-                <button id="earlierBtn">Earlier</button>
-                <button id="laterBtn">Later</button>
+            <div class="logs-container">
+                <!-- Filters Row -->
+                <div class="logs-filters">
+                    <button id="refreshLogsBtn">🔄 Refresh</button>
+                    <select id="logsTimeRange">
+                        <option value="15m">Last 15 min</option>
+                        <option value="1h" selected>Last 1 hour</option>
+                        <option value="6h">Last 6 hours</option>
+                        <option value="24h">Last 24 hours</option>
+                        <option value="7d">Last 7 days</option>
+                    </select>
+                    <select id="logsEndpointFilter">
+                        <option value="all">All Endpoints</option>
+                    </select>
+                    <select id="logsProviderFilter">
+                        <option value="all">All Providers</option>
+                    </select>
+                    <select id="logsStatusFilter">
+                        <option value="all">All Status</option>
+                        <option value="true">Success Only</option>
+                        <option value="false">Errors Only</option>
+                    </select>
+                    <input type="text" id="logsSearchInput" placeholder="Search prompts/responses...">
+                </div>
+                
+                <!-- Logs Table -->
+                <div class="logs-table-container">
+                    <table class="logs-table">
+                        <thead>
+                            <tr>
+                                <th style="width:100px">Time</th>
+                                <th style="width:160px">Endpoint</th>
+                                <th style="width:100px">Provider</th>
+                                <th style="width:80px">Tokens</th>
+                                <th style="width:70px">Latency</th>
+                                <th style="width:60px">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="logsTableBody">
+                            <tr><td colspan="6" class="logs-empty">Click Refresh to load logs</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Detail Panel -->
+                <div class="logs-detail-container">
+                    <div class="logs-detail-header">
+                        <span id="logsDetailTitle">Select a log entry to view details</span>
+                    </div>
+                    <div class="logs-detail-content" id="logsDetailContent">
+                        <div class="logs-empty">Click on a row in the table above to view the full prompt and response.</div>
+                    </div>
+                </div>
             </div>
-            <div id="logDisplay" class="cost-display"></div>
         </div>
         <div class="tab-content" id="costContent" style="display:none;padding:12px">
             <div class="cost-navigation">

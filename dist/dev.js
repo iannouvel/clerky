@@ -694,6 +694,237 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
+        // ===============================================
+        // NEW LOGS FUNCTIONALITY (Firestore-based)
+        // ===============================================
+        
+        let recentLogs = []; // Store fetched logs
+        let selectedLogId = null; // Currently selected log ID
+        
+        // Fetch recent AI logs from Firestore via the new endpoint
+        async function fetchRecentLogs() {
+            const tableBody = document.getElementById('logsTableBody');
+            const detailContent = document.getElementById('logsDetailContent');
+            const detailTitle = document.getElementById('logsDetailTitle');
+            
+            if (!tableBody) return;
+            
+            tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Loading logs...</td></tr>';
+            
+            try {
+                const user = auth.currentUser;
+                if (!user) {
+                    tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Please log in to view logs</td></tr>';
+                    return;
+                }
+                
+                const token = await user.getIdToken();
+                
+                // Get filter values
+                const timeRange = document.getElementById('logsTimeRange')?.value || '1h';
+                const endpoint = document.getElementById('logsEndpointFilter')?.value || 'all';
+                const provider = document.getElementById('logsProviderFilter')?.value || 'all';
+                const successOnly = document.getElementById('logsStatusFilter')?.value || 'all';
+                const search = document.getElementById('logsSearchInput')?.value || '';
+                
+                const params = new URLSearchParams({
+                    limit: 100,
+                    timeRange,
+                    ...(endpoint !== 'all' && { endpoint }),
+                    ...(provider !== 'all' && { provider }),
+                    ...(successOnly !== 'all' && { successOnly }),
+                    ...(search && { search })
+                });
+                
+                const response = await fetch(`${SERVER_URL}/getRecentAILogs?${params}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.message || 'Failed to fetch logs');
+                }
+                
+                recentLogs = data.logs || [];
+                
+                // Update filter dropdowns with available options
+                updateLogsFilterDropdowns(data.filters);
+                
+                // Render the table
+                renderLogsTable();
+                
+                // Clear detail panel
+                selectedLogId = null;
+                if (detailTitle) detailTitle.textContent = 'Select a log entry to view details';
+                if (detailContent) detailContent.innerHTML = '<div class="logs-empty">Click on a row in the table above to view the full prompt and response.</div>';
+                
+            } catch (error) {
+                console.error('Error fetching recent logs:', error);
+                tableBody.innerHTML = `<tr><td colspan="6" class="logs-empty">Error: ${error.message}</td></tr>`;
+            }
+        }
+        
+        // Update filter dropdowns with available values
+        function updateLogsFilterDropdowns(filters) {
+            const endpointSelect = document.getElementById('logsEndpointFilter');
+            const providerSelect = document.getElementById('logsProviderFilter');
+            
+            if (endpointSelect && filters?.endpoints) {
+                const currentValue = endpointSelect.value;
+                endpointSelect.innerHTML = '<option value="all">All Endpoints</option>';
+                filters.endpoints.forEach(ep => {
+                    const opt = document.createElement('option');
+                    opt.value = ep;
+                    opt.textContent = ep;
+                    endpointSelect.appendChild(opt);
+                });
+                endpointSelect.value = currentValue || 'all';
+            }
+            
+            if (providerSelect && filters?.providers) {
+                const currentValue = providerSelect.value;
+                providerSelect.innerHTML = '<option value="all">All Providers</option>';
+                filters.providers.forEach(prov => {
+                    const opt = document.createElement('option');
+                    opt.value = prov;
+                    opt.textContent = prov;
+                    providerSelect.appendChild(opt);
+                });
+                providerSelect.value = currentValue || 'all';
+            }
+        }
+        
+        // Render the logs table
+        function renderLogsTable() {
+            const tableBody = document.getElementById('logsTableBody');
+            if (!tableBody) return;
+            
+            if (recentLogs.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">No logs found for the selected filters</td></tr>';
+                return;
+            }
+            
+            tableBody.innerHTML = recentLogs.map(log => {
+                const time = log.timestamp ? new Date(log.timestamp).toLocaleTimeString() : 'N/A';
+                const statusClass = log.success ? 'status-success' : 'status-error';
+                const statusIcon = log.success ? '✓' : '✗';
+                
+                return `
+                    <tr data-log-id="${log.id}" class="${log.id === selectedLogId ? 'selected' : ''}">
+                        <td>${time}</td>
+                        <td title="${log.endpoint || ''}">${(log.endpoint || 'N/A').substring(0, 25)}${(log.endpoint?.length || 0) > 25 ? '...' : ''}</td>
+                        <td>${log.provider || 'N/A'}</td>
+                        <td>${log.totalTokens || 0}</td>
+                        <td>${log.latencyMs ? log.latencyMs + 'ms' : 'N/A'}</td>
+                        <td class="${statusClass}">${statusIcon}</td>
+                    </tr>
+                `;
+            }).join('');
+            
+            // Add click handlers to rows
+            tableBody.querySelectorAll('tr[data-log-id]').forEach(row => {
+                row.addEventListener('click', () => {
+                    const logId = row.getAttribute('data-log-id');
+                    selectLogEntry(logId);
+                    
+                    // Update row selection visuals
+                    tableBody.querySelectorAll('tr').forEach(r => r.classList.remove('selected'));
+                    row.classList.add('selected');
+                });
+            });
+        }
+        
+        // Show details for a selected log entry
+        function selectLogEntry(logId) {
+            const log = recentLogs.find(l => l.id === logId);
+            if (!log) return;
+            
+            selectedLogId = logId;
+            
+            const detailTitle = document.getElementById('logsDetailTitle');
+            const detailContent = document.getElementById('logsDetailContent');
+            
+            if (detailTitle) {
+                const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
+                detailTitle.textContent = `${log.endpoint || 'Unknown'} - ${time}`;
+            }
+            
+            if (detailContent) {
+                const statusClass = log.success ? 'success' : 'error';
+                const statusText = log.success ? 'Success' : (log.errorMessage || 'Error');
+                
+                detailContent.innerHTML = `
+                    <div class="logs-meta">
+                        <span><span class="label">Provider:</span> ${log.provider || 'N/A'}</span>
+                        <span><span class="label">Model:</span> ${log.model || 'N/A'}</span>
+                        <span><span class="label">Tokens:</span> ${log.promptTokens || 0} in / ${log.completionTokens || 0} out (${log.totalTokens || 0} total)</span>
+                        <span><span class="label">Latency:</span> ${log.latencyMs ? log.latencyMs + 'ms' : 'N/A'}</span>
+                        <span><span class="label">Cost:</span> $${(log.estimatedCostUsd || 0).toFixed(6)}</span>
+                        <span><span class="logs-status ${statusClass}">${statusText}</span></span>
+                        ${log.fallbackFrom ? `<span><span class="label">Fallback from:</span> ${log.fallbackFrom}</span>` : ''}
+                    </div>
+                    
+                    <div class="logs-detail-section">
+                        <h4>Prompt (${log.promptLength || 0} chars)</h4>
+                        <pre>${escapeHtml(log.fullPrompt || 'No prompt content available')}</pre>
+                    </div>
+                    
+                    <div class="logs-detail-section">
+                        <h4>Response (${log.responseLength || 0} chars)</h4>
+                        <pre>${escapeHtml(log.fullResponse || (log.success ? 'No response content available' : log.errorMessage || 'Error - no response'))}</pre>
+                    </div>
+                `;
+            }
+        }
+        
+        // Helper to escape HTML
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Set up logs UI event listeners
+        function initLogsUI() {
+            const refreshBtn = document.getElementById('refreshLogsBtn');
+            const timeRangeSelect = document.getElementById('logsTimeRange');
+            const endpointFilter = document.getElementById('logsEndpointFilter');
+            const providerFilter = document.getElementById('logsProviderFilter');
+            const statusFilter = document.getElementById('logsStatusFilter');
+            const searchInput = document.getElementById('logsSearchInput');
+            
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', fetchRecentLogs);
+            }
+            
+            // Auto-refresh on filter changes
+            [timeRangeSelect, endpointFilter, providerFilter, statusFilter].forEach(el => {
+                if (el) {
+                    el.addEventListener('change', fetchRecentLogs);
+                }
+            });
+            
+            // Debounced search
+            let searchTimeout;
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(fetchRecentLogs, 500);
+                });
+            }
+        }
+        
+        // Initialize logs UI when DOM is ready
+        initLogsUI();
+
         // ---- Guideline Discovery Client Logic ----
         
         // URL domain validation for client-side safety check
@@ -1270,9 +1501,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                         fetchApiCosts();
                     }
                     
-                    // If it's the logs tab, fetch logs
+                    // If it's the logs tab, fetch logs from Firestore
                     if (contentId === 'logsContent') {
-                        fetchLogs();
+                        fetchRecentLogs();
                     }
                 }
             });

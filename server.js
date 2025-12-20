@@ -3593,6 +3593,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Log to Firestore for analytics (fire-and-forget, non-blocking)
     const latencyMs = Date.now() - sendToAIStartTime;
     if (db) {
+      // Prepare prompt string for storage (truncate if very large to stay within Firestore limits)
+      const promptStr = typeof prompt === 'string' ? prompt : JSON.stringify(prompt);
+      const MAX_CONTENT_LENGTH = 50000; // 50KB limit per field to be safe
+      
       db.collection('aiInteractions').add({
         timestamp: admin.firestore.FieldValue.serverTimestamp(),
         userId: userId || 'anonymous',
@@ -3606,8 +3610,15 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
         success: true,
         errorMessage: null,
-        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
-        responseLength: content?.length || 0
+        promptLength: promptStr.length,
+        responseLength: content?.length || 0,
+        // Full content for debugging (truncated if too large)
+        fullPrompt: promptStr.length > MAX_CONTENT_LENGTH 
+          ? promptStr.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED - original length: ' + promptStr.length + ']'
+          : promptStr,
+        fullResponse: (content?.length || 0) > MAX_CONTENT_LENGTH
+          ? content.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED - original length: ' + content.length + ']'
+          : (content || '')
       }).catch(logErr => {
         console.error('[AI_LOG] Failed to log to Firestore:', logErr.message);
       });
@@ -3797,6 +3808,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             // Log fallback success to Firestore
             const fallbackLatencyMs = Date.now() - sendToAIStartTime;
             if (db) {
+              // Prepare prompt string for storage (truncate if very large)
+              const fallbackPromptStr = typeof prompt === 'string' ? prompt : JSON.stringify(prompt);
+              const FB_MAX_CONTENT_LENGTH = 50000;
+              
               db.collection('aiInteractions').add({
                 timestamp: admin.firestore.FieldValue.serverTimestamp(),
                 userId: userId || 'anonymous',
@@ -3810,9 +3825,16 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
                 estimatedCostUsd: tokenUsage?.estimated_cost_usd || 0,
                 success: true,
                 errorMessage: null,
-                promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
+                promptLength: fallbackPromptStr.length,
                 responseLength: content?.length || 0,
-                fallbackFrom: preferredProvider
+                fallbackFrom: preferredProvider,
+                // Full content for debugging (truncated if too large)
+                fullPrompt: fallbackPromptStr.length > FB_MAX_CONTENT_LENGTH 
+                  ? fallbackPromptStr.substring(0, FB_MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED - original length: ' + fallbackPromptStr.length + ']'
+                  : fallbackPromptStr,
+                fullResponse: (content?.length || 0) > FB_MAX_CONTENT_LENGTH
+                  ? content.substring(0, FB_MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED - original length: ' + content.length + ']'
+                  : (content || '')
               }).catch(logErr => {
                 console.error('[AI_LOG] Failed to log fallback to Firestore:', logErr.message);
               });
@@ -3838,6 +3860,10 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     // Log failure to Firestore
     const failureLatencyMs = Date.now() - sendToAIStartTime;
     if (db) {
+      // Prepare prompt string for storage (truncate if very large)
+      const failPromptStr = typeof prompt === 'string' ? prompt : JSON.stringify(prompt);
+      const FAIL_MAX_CONTENT_LENGTH = 50000;
+      
       db.collection('aiInteractions').add({
         timestamp: admin.firestore.FieldValue.serverTimestamp(),
         userId: userId || 'anonymous',
@@ -3851,8 +3877,13 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         estimatedCostUsd: 0,
         success: false,
         errorMessage: (error.response?.data?.error?.message || error.message || 'Unknown error').substring(0, 500),
-        promptLength: typeof prompt === 'string' ? prompt.length : JSON.stringify(prompt).length,
-        responseLength: 0
+        promptLength: failPromptStr.length,
+        responseLength: 0,
+        // Full prompt for debugging failed requests (truncated if too large)
+        fullPrompt: failPromptStr.length > FAIL_MAX_CONTENT_LENGTH 
+          ? failPromptStr.substring(0, FAIL_MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED - original length: ' + failPromptStr.length + ']'
+          : failPromptStr,
+        fullResponse: null
       }).catch(logErr => {
         console.error('[AI_LOG] Failed to log error to Firestore:', logErr.message);
       });
@@ -9828,6 +9859,119 @@ app.get('/getAIUsageStats', authenticateUser, async (req, res) => {
         res.status(500).json({
             success: false,
             message: 'Error fetching AI usage stats: ' + error.message
+        });
+    }
+});
+
+// Get recent AI logs with full prompt/response content for debugging
+app.get('/getRecentAILogs', authenticateUser, async (req, res) => {
+    try {
+        const { 
+            limit = 50, 
+            timeRange = '1h', 
+            endpoint = null,
+            provider = null,
+            successOnly = null,
+            search = null
+        } = req.query;
+        
+        // Calculate start date based on time range
+        const now = new Date();
+        let startDate;
+        switch (timeRange) {
+            case '15m':
+                startDate = new Date(now.getTime() - 15 * 60 * 1000);
+                break;
+            case '1h':
+                startDate = new Date(now.getTime() - 60 * 60 * 1000);
+                break;
+            case '6h':
+                startDate = new Date(now.getTime() - 6 * 60 * 60 * 1000);
+                break;
+            case '24h':
+                startDate = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                break;
+            case '7d':
+                startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+                break;
+            default:
+                startDate = new Date(now.getTime() - 60 * 60 * 1000); // Default 1 hour
+        }
+        
+        // Build Firestore query
+        let query = db.collection('aiInteractions')
+            .where('timestamp', '>=', startDate)
+            .orderBy('timestamp', 'desc')
+            .limit(parseInt(limit, 10) || 50);
+        
+        const snapshot = await query.get();
+        
+        const logs = [];
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            
+            // Apply endpoint filter if provided
+            if (endpoint && endpoint !== 'all' && data.endpoint !== endpoint) return;
+            
+            // Apply provider filter if provided
+            if (provider && provider !== 'all' && data.provider !== provider) return;
+            
+            // Apply success filter if provided
+            if (successOnly === 'true' && !data.success) return;
+            if (successOnly === 'false' && data.success) return;
+            
+            // Apply search filter if provided (search in prompt and response)
+            if (search && search.trim()) {
+                const searchLower = search.toLowerCase();
+                const promptMatch = data.fullPrompt?.toLowerCase().includes(searchLower);
+                const responseMatch = data.fullResponse?.toLowerCase().includes(searchLower);
+                const endpointMatch = data.endpoint?.toLowerCase().includes(searchLower);
+                if (!promptMatch && !responseMatch && !endpointMatch) return;
+            }
+            
+            logs.push({
+                id: doc.id,
+                timestamp: data.timestamp?.toDate?.()?.toISOString() || data.timestamp,
+                provider: data.provider,
+                model: data.model,
+                endpoint: data.endpoint,
+                success: data.success,
+                errorMessage: data.errorMessage,
+                promptTokens: data.promptTokens || 0,
+                completionTokens: data.completionTokens || 0,
+                totalTokens: data.totalTokens || 0,
+                latencyMs: data.latencyMs || 0,
+                estimatedCostUsd: data.estimatedCostUsd || 0,
+                promptLength: data.promptLength || 0,
+                responseLength: data.responseLength || 0,
+                fullPrompt: data.fullPrompt || null,
+                fullResponse: data.fullResponse || null,
+                fallbackFrom: data.fallbackFrom || null
+            });
+        });
+        
+        // Get unique endpoints and providers for filter dropdowns
+        const uniqueEndpoints = [...new Set(logs.map(l => l.endpoint).filter(Boolean))].sort();
+        const uniqueProviders = [...new Set(logs.map(l => l.provider).filter(Boolean))].sort();
+        
+        res.json({
+            success: true,
+            logs,
+            totalCount: logs.length,
+            timeRange,
+            startDate: startDate.toISOString(),
+            endDate: now.toISOString(),
+            filters: {
+                endpoints: uniqueEndpoints,
+                providers: uniqueProviders
+            }
+        });
+        
+    } catch (error) {
+        console.error('[GET_RECENT_AI_LOGS] Error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error fetching recent AI logs: ' + error.message
         });
     }
 });
