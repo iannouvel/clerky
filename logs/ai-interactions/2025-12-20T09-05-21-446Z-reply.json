@@ -1,0 +1,25 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T09-05-21-446Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1496,
+  "response_length": 65,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 24+2, BMI 25, Rh+ve\\nMonochorionic diamniotic twin pregnancy, conceived naturally\\nIssues:\\nConcerns regarding growth restriction and potential complications in monochorioni...",
+  "response_preview": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}...",
+  "full_data": {
+    "prompt": {
+      "transcript": "28yo, G1P0, 24+2, BMI 25, Rh+ve\nMonochorionic diamniotic twin pregnancy, conceived naturally\nIssues:\nConcerns regarding growth restriction and potential complications in monochorionic twins\nPrevious ultrasound scans showed discordant growth\n\nBackground:\nFetus 1 estimated weight 630g, Fetus 2 estimated weight 550g, abdominal circumference difference of 12mm\nUmbilical artery Doppler and middle cerebral artery Doppler within normal limits for both fetuses\nPrevious scan on 20th April showed Fetus 1 estimated weight 500g, Fetus 2 estimated weight 420g\nG&S tests from 10th May pending\n\nAssessment:\nDiscordant growth noted, Fetus 2 is smaller, however, umbilical artery Doppler and middle cerebral artery Doppler are within normal limits\nRisk of twin-to-twin transfusion syndrome (TTTS) needs to be monitored closely\n\nDiscussion:\nHigh-risk obstetric consultant review recommended due to monochorionic diamniotic twin pregnancy\nWeekly ultrasound scans to monitor growth and umbilical artery Doppler\nNeed to counsel patient regarding potential complications, including TTTS and selective fetal growth restriction\n\nPlan:\nWeekly ultrasound scans to monitor growth and umbilical artery Doppler\nCMW to check results at next ANC appt\nReassure patient regarding close monitoring and potential interventions if needed\nPlease consider referral to fetal medicine unit for further assessment and management\nTelephone ANC in 1/52 if still pregnant",
+      "guidelinesCount": 0
+    },
+    "response": "{\n  \"success\": false,\n  \"error\": \"All chunks failed to process\"\n}",
+    "endpoint": "findRelevantGuidelines",
+    "timestamp": "2025-12-20T09-05-21",
+    "ai_provider": "DeepSeek",
+    "ai_model": "deepseek-chat",
+    "token_usage": null,
+    "critical": "All chunks failed to process"
+  }
+}
