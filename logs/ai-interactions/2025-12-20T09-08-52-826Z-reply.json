@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-20T09-08-52-826Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4086,
+  "response_length": 5529,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":1055,\"transcriptPreview\":\"25yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Abnormal CTG, reduced fetal movement reported by patient\\nBackground: Induced at 41 weeks du...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-reduced-fetal-movements-pdf\\\", \\\"title\\\": \\\"Reduced Fetal Movements\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {...",
+  "full_data": null
+}
