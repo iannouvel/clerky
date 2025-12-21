@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-21T18-05-40-468Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5283,
+  "response_length": 6957,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/3\",\"transcriptLength\":1264,\"transcriptPreview\":\"25yo, G2P1 (prev SVD), 2 days postpartum\\n\\nIssues:\\nConcerns regarding perineal trauma and wound infection\\nPatient reporting increa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"BJOG - 2016 - Prevention and Manag...",
+  "full_data": null
+}
