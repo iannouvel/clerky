@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-21T18-05-35-696Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 2245,
+  "response_length": 2751,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/3\",\"transcriptLength\":1264,\"transcriptPreview\":\"25yo, G2P1 (prev SVD), 2 days postpartum\\n\\nIssues:\\nConcerns regarding perineal trauma and wound infection\\nPatient reporting increa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2025-intrapartum-care-pdf\\\", \\\"title\\\": \\\"NICE - 2025 - Intrapartum Care\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n    ...",
+  "full_data": null
+}
