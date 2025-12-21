@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-21T18-05-38-933Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 4093,
+  "response_length": 5712,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/3\",\"transcriptLength\":1264,\"transcriptPreview\":\"25yo, G2P1 (prev SVD), 2 days postpartum\\n\\nIssues:\\nConcerns regarding perineal trauma and wound infection\\nPatient reporting increa...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-oasi-pdf\\\", \\\"title\\\": \\\"GTG 2015 - OASI\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\": \\\"gtg-2011-aph-pdf\\...",
+  "full_data": null
+}
