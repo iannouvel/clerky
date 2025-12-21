@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-21T18-05-41-191Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1365,
+  "response_length": 158,
+  "prompt_preview": "{\"transcript\":\"25yo, G2P1 (prev SVD), 2 days postpartum\\n\\nIssues:\\nConcerns regarding perineal trauma and wound infection\\nPatient reporting increasing perineal pain and discomfort\\n\\nBackground:\\nSp...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 93,\n  \"mostRelevantCount\": 6,\n  \"potentiallyRelevantCount\": 4,\n  \"lessRelevantCount\": 10,\n  \"notRelevantCount\": 73\n}...",
+  "full_data": null
+}
