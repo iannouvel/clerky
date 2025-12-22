@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T21-35-59-260Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1421,
+  "response_length": 1780,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1511,\"transcriptPreview\":\"28yo, G3P2 (prev SVD), 24+2, BMI 25, Rh+ve\\nIssues: History of SLE with lupus nephritis, on immunosuppression, concerns regarding dis...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-sga-fgr-guideline-pdf\\\", \\\"title\\\": \\\"UHSx SGA & FGR guideline\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n    {\\\"id\\\": \\\"uhs...",
+  "full_data": null
+}
