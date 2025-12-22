@@ -1861,90 +1861,121 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Handle content repair button
         const repairContentBtn = document.getElementById('repairContentBtn');
         if (repairContentBtn) {
+            let isContentRepairRunning = false;
+            let cancelContentRepair = false;
+
             repairContentBtn.addEventListener('click', async () => {
-                if (!confirm('Are you sure you want to repair content issues? This will check all guidelines for missing content/condensed text and attempt to generate them from PDFs. This may take several minutes.')) {
+                // If already running, treat click as "stop"
+                if (isContentRepairRunning) {
+                    cancelContentRepair = true;
+                    repairContentBtn.textContent = '⏳ Stopping...';
+                    repairContentBtn.disabled = true;
+                    console.log('🛑 [CONTENT_REPAIR] Stop requested by user');
                     return;
                 }
-                
-                // Update button state - declare outside try block for finally access
+
+                if (!confirm('Are you sure you want to repair content issues?\n\nThis will keep processing batches until no more guidelines need repair (can take a long time).\n\nYou can click the button again to stop.')) {
+                    return;
+                }
+
                 const originalText = repairContentBtn.textContent;
-                
+                const BATCH_SIZE = 5; // Keep small to avoid request timeouts (server processes sequentially)
+                const FORCE_REGENERATE = false;
+
+                isContentRepairRunning = true;
+                cancelContentRepair = false;
+                repairContentBtn.textContent = '🛑 Stop Repair';
+                repairContentBtn.disabled = false; // allow stop clicks
+
                 try {
-                    repairContentBtn.textContent = '🔄 Repairing...';
-                    repairContentBtn.disabled = true;
-                    
-                    console.log('🔧 [CONTENT_REPAIR] Starting comprehensive content repair process...');
-                    
-                    // Get the current user
+                    console.log('🔧 [CONTENT_REPAIR] Starting continuous content repair process...');
+
                     const user = auth.currentUser;
                     if (!user) {
                         alert('You must be logged in to repair content');
                         return;
                     }
-                    
-                    // Get Firebase token
+
                     const token = await user.getIdToken();
-                    
-                    console.log('Starting content repair process...');
-                    
-                    // Call the repairGuidelineContent endpoint
-                    const response = await fetch(`${SERVER_URL}/repairGuidelineContent`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({
-                            batchSize: 5,
-                            forceRegenerate: false
-                        })
-                    });
-                    
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        throw new Error(`Server error: ${response.status} - ${errorText}`);
-                    }
-                    
-                    const result = await response.json();
-                    
-                    if (result.success) {
-                        console.log('✅ [CONTENT_REPAIR] Content repair completed successfully!', result);
-                        
-                        let message = `🎉 Content Repair Complete!\n\n`;
-                        message += `📊 Results:\n`;
-                        message += `• Total needing repair: ${result.total}\n`;
-                        message += `• Processed this batch: ${result.processed}\n`;
-                        message += `• Succeeded: ${result.succeeded}\n`;
-                        message += `• Failed: ${result.failed}\n`;
-                        message += `• Remaining: ${result.remaining}\n\n`;
-                        
-                        if (result.results && result.results.length > 0) {
-                            message += `🔧 Processed Guidelines (first 10):\n`;
-                            result.results.slice(0, 10).forEach(item => {
-                                const status = item.success ? '✓' : '✗';
-                                message += `• ${status} ${item.guideline}: ${item.message}\n`;
-                            });
-                            if (result.results.length > 10) {
-                                message += `• ... and ${result.results.length - 10} more\n`;
-                            }
+
+                    let totalProcessed = 0;
+                    let totalSucceeded = 0;
+                    let totalFailed = 0;
+                    let batches = 0;
+                    let lastResult = null;
+
+                    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+                    while (!cancelContentRepair) {
+                        batches++;
+                        console.log(`🔄 [CONTENT_REPAIR] Batch ${batches} starting (batchSize=${BATCH_SIZE})...`);
+
+                        const response = await fetch(`${SERVER_URL}/repairGuidelineContent`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            body: JSON.stringify({
+                                batchSize: BATCH_SIZE,
+                                forceRegenerate: FORCE_REGENERATE
+                            })
+                        });
+
+                        if (!response.ok) {
+                            const errorText = await response.text();
+                            throw new Error(`Server error: ${response.status} - ${errorText}`);
                         }
-                        
-                        if (result.remaining > 0) {
-                            message += `\n⚠️ ${result.remaining} guidelines still need repair. Click again to process more.`;
+
+                        const result = await response.json();
+                        lastResult = result;
+
+                        if (!result.success) {
+                            throw new Error(result.error || 'Content repair failed');
                         }
-                        
-                        // Show success message and detailed logs
-                        alert(message);
-                        console.log('📊 [CONTENT_REPAIR] Detailed results:', result);
-                    } else {
-                        throw new Error(result.error || 'Content repair failed');
+
+                        const processed = Number(result.processed || 0);
+                        const succeeded = Number(result.succeeded || 0);
+                        const failed = Number(result.failed || 0);
+                        const remaining = typeof result.remaining === 'number' ? result.remaining : null;
+
+                        totalProcessed += processed;
+                        totalSucceeded += succeeded;
+                        totalFailed += failed;
+
+                        console.log(`✅ [CONTENT_REPAIR] Batch ${batches} complete: processed=${processed}, succeeded=${succeeded}, failed=${failed}, remaining=${remaining}`);
+                        console.log(`📈 [CONTENT_REPAIR] Totals so far: processed=${totalProcessed}, succeeded=${totalSucceeded}, failed=${totalFailed}`);
+
+                        // Stop when there is nothing left to do
+                        if (processed === 0 || remaining === 0) {
+                            break;
+                        }
+
+                        // Small delay to avoid hammering the server
+                        await sleep(500);
                     }
-                    
+
+                    const wasCancelled = cancelContentRepair;
+                    const totalNeedingRepair = lastResult && typeof lastResult.total === 'number' ? lastResult.total : null;
+                    const remainingFinal = lastResult && typeof lastResult.remaining === 'number' ? lastResult.remaining : null;
+
+                    let message = wasCancelled ? `🛑 Content Repair Stopped\n\n` : `🎉 Content Repair Complete!\n\n`;
+                    message += `📊 Totals:\n`;
+                    if (totalNeedingRepair !== null) message += `• Total needing repair (at start of last batch): ${totalNeedingRepair}\n`;
+                    message += `• Total processed: ${totalProcessed}\n`;
+                    message += `• Total succeeded: ${totalSucceeded}\n`;
+                    message += `• Total failed: ${totalFailed}\n`;
+                    if (remainingFinal !== null) message += `• Remaining: ${remainingFinal}\n`;
+
+                    alert(message);
+                    console.log('📊 [CONTENT_REPAIR] Finished:', { totalProcessed, totalSucceeded, totalFailed, remainingFinal, wasCancelled });
+
                 } catch (error) {
                     console.error('Error repairing content:', error);
                     alert(`❌ Content repair failed: ${error.message}`);
                 } finally {
-                    // Reset button state
+                    isContentRepairRunning = false;
+                    cancelContentRepair = false;
                     repairContentBtn.textContent = originalText;
                     repairContentBtn.disabled = false;
                 }
