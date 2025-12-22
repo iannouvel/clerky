@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T17-50-37-849Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1480,
+  "response_length": 161,
+  "prompt_preview": "{\"transcript\":\"32yo, G3P2, 31+2, BMI 25, Rh+ve\\nIssues: Symphysis pubis dysfunction (SPD) causing significant pain and mobility issues\\nPrevious obstetric history: 2x SVD, no previous complications\\nC...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 284,\n  \"mostRelevantCount\": 7,\n  \"potentiallyRelevantCount\": 13,\n  \"lessRelevantCount\": 25,\n  \"notRelevantCount\": 239\n}...",
+  "full_data": null
+}
