@@ -81,8 +81,10 @@ async function upsertDocuments(documents) {
             }
         }));
 
-        // Batch upsert (Pinecone recommends batches of 100)
-        const BATCH_SIZE = 100;
+        // Batch upsert
+        // Pinecone integrated-embedding upsert has a hard max batch size of 96 records per request.
+        // (We saw: "INVALID_ARGUMENT ... Batch size exceeds 96")
+        const BATCH_SIZE = 96;
         let totalUpserted = 0;
 
         for (let i = 0; i < records.length; i += BATCH_SIZE) {
