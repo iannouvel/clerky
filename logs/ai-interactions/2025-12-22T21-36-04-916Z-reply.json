@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T21-36-04-916Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1610,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G3P2 (prev SVD), 24+2, BMI 25, Rh+ve\\nIssues: History of SLE with lupus nephritis, on immunosuppression, concerns regarding disease flare and fetal well-being\\nPrevious pregnancie...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 258,\n  \"mostRelevantCount\": 24,\n  \"potentiallyRelevantCount\": 15,\n  \"lessRelevantCount\": 32,\n  \"notRelevantCount\": 187\n}...",
+  "full_data": null
+}
