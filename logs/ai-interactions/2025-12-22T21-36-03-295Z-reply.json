@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T21-36-03-295Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4404,
+  "response_length": 6039,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1511,\"transcriptPreview\":\"28yo, G3P2 (prev SVD), 24+2, BMI 25, Rh+ve\\nIssues: History of SLE with lupus nephritis, on immunosuppression, concerns regarding dis...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2014-red-cell-antibodies-during-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2014 - Red Cell Antibodies during Pregnanc...",
+  "full_data": null
+}
