@@ -1,8 +1,8 @@
 /**
  * RAG Ingestion Module
  * 
- * Processes guideline documents from /guidance/ folder,
- * chunks them appropriately, and uploads to Pinecone vector database.
+ * Processes guideline content from Firestore and uploads to Pinecone vector database.
+ * Uses the FULL guideline content for semantic search - not summaries or condensed versions.
  */
 
 const fs = require('fs');
@@ -10,9 +10,8 @@ const path = require('path');
 const { upsertDocuments, deleteGuidelineChunks, getIndexStats } = require('./vector-db');
 
 // Configuration
-const CHUNK_SIZE = 1000; // Characters per chunk (Pinecone llama-text-embed-v2 supports 2048 tokens)
-const CHUNK_OVERLAP = 200; // Overlap between chunks for context continuity
-const GUIDANCE_FOLDERS = ['condensed', 'summary', 'significant_terms'];
+const CHUNK_SIZE = 1500; // Characters per chunk (optimized for medical content)
+const CHUNK_OVERLAP = 300; // Overlap between chunks for context continuity
 
 /**
  * Split text into overlapping chunks
@@ -309,11 +308,179 @@ async function getIngestionStatus() {
     };
 }
 
+/**
+ * Process a single guideline from Firestore data
+ * Uses the FULL content field - not summaries or condensed versions
+ * 
+ * @param {Object} guideline - Guideline document from Firestore
+ * @returns {Array} - Array of document chunks ready for upsert
+ */
+function processFirestoreGuideline(guideline) {
+    try {
+        const guidelineId = guideline.id;
+        
+        // Use FULL content - this is the verbatim guideline text
+        const content = guideline.content;
+        
+        if (!content || content.trim().length === 0) {
+            console.warn(`[RAG-INGESTION] No content for guideline: ${guidelineId}`);
+            return [];
+        }
+
+        // Extract metadata from guideline
+        const title = guideline.humanFriendlyName || guideline.title || guideline.filename || guidelineId;
+        const organisation = guideline.organisation || extractOrganisationFromTitle(title);
+        
+        // Chunk the FULL content
+        const chunks = chunkText(content);
+        
+        if (chunks.length === 0) {
+            return [];
+        }
+
+        console.log(`[RAG-INGESTION] Chunked "${title}" into ${chunks.length} chunks (${content.length} chars)`);
+
+        // Create documents for each chunk
+        return chunks.map((chunkContent, index) => ({
+            id: generateChunkId(guidelineId, index),
+            text: chunkContent,
+            metadata: {
+                guidelineId,
+                title,
+                organisation,
+                scope: guideline.scope || 'national',
+                hospitalTrust: guideline.hospitalTrust || null,
+                chunkIndex: index,
+                totalChunks: chunks.length
+            }
+        }));
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Error processing guideline ${guideline.id}:`, error.message);
+        return [];
+    }
+}
+
+/**
+ * Extract organisation from guideline title
+ */
+function extractOrganisationFromTitle(title) {
+    const orgPatterns = [
+        { regex: /^(NICE|RCOG|BASHH|FSRH|BMS|BSH|BHIVA|BAPM|BJOG|ESHRE|FIGO|WHO|NHS)\b/i, group: 1 },
+        { regex: /\b(NICE|RCOG|BASHH|FSRH)\b/i, group: 1 },
+        { regex: /^(GTG|Green-top)/i, org: 'RCOG' },
+        { regex: /^(CG|NG|QS|PH)\d/i, org: 'NICE' },
+        { regex: /^(MP|GP|SP|P\d)/i, org: 'UHSussex' },
+        { regex: /UHSussex|UHSx/i, org: 'UHSussex' }
+    ];
+
+    for (const pattern of orgPatterns) {
+        const match = title.match(pattern.regex);
+        if (match) {
+            return pattern.org || match[pattern.group].toUpperCase();
+        }
+    }
+    
+    return 'Unknown';
+}
+
+/**
+ * Ingest all guidelines from Firestore
+ * Uses the FULL content field for each guideline
+ * 
+ * @param {Object} db - Firestore database instance
+ * @param {Object} options - Processing options
+ * @returns {Promise<Object>} - Processing results
+ */
+async function ingestFromFirestore(db, options = {}) {
+    const { dryRun = false, batchSize = 100, limit = null } = options;
+    
+    const results = {
+        totalGuidelines: 0,
+        guidelinesWithContent: 0,
+        guidelinesWithoutContent: 0,
+        totalChunks: 0,
+        processedGuidelines: 0,
+        skipped: [],
+        errors: []
+    };
+
+    console.log(`[RAG-INGESTION] Starting Firestore ingestion...`);
+    console.log(`[RAG-INGESTION] Dry run: ${dryRun}`);
+    
+    try {
+        // Get all guidelines from Firestore
+        let query = db.collection('guidelines');
+        if (limit) {
+            query = query.limit(limit);
+        }
+        
+        const snapshot = await query.get();
+        results.totalGuidelines = snapshot.size;
+        
+        console.log(`[RAG-INGESTION] Found ${results.totalGuidelines} guidelines in Firestore`);
+
+        // Collect all documents
+        const allDocuments = [];
+        
+        for (const doc of snapshot.docs) {
+            const guideline = { id: doc.id, ...doc.data() };
+            
+            // Check if guideline has content
+            if (!guideline.content || guideline.content.trim().length === 0) {
+                results.guidelinesWithoutContent++;
+                results.skipped.push({
+                    id: guideline.id,
+                    title: guideline.title || guideline.humanFriendlyName,
+                    reason: 'No content'
+                });
+                continue;
+            }
+            
+            results.guidelinesWithContent++;
+            
+            // Process the guideline
+            const chunks = processFirestoreGuideline(guideline);
+            
+            if (chunks.length > 0) {
+                allDocuments.push(...chunks);
+                results.processedGuidelines++;
+            }
+        }
+
+        results.totalChunks = allDocuments.length;
+        console.log(`[RAG-INGESTION] Prepared ${results.totalChunks} chunks from ${results.processedGuidelines} guidelines`);
+        console.log(`[RAG-INGESTION] Skipped ${results.guidelinesWithoutContent} guidelines without content`);
+
+        // Upload to Pinecone (unless dry run)
+        if (!dryRun && allDocuments.length > 0) {
+            console.log(`[RAG-INGESTION] Uploading to Pinecone...`);
+            
+            try {
+                const upsertResult = await upsertDocuments(allDocuments);
+                results.uploaded = upsertResult.upsertedCount;
+                console.log(`[RAG-INGESTION] Upload complete: ${results.uploaded} chunks`);
+            } catch (error) {
+                console.error(`[RAG-INGESTION] Upload failed:`, error.message);
+                results.errors.push(error.message);
+            }
+        }
+
+        return results;
+        
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Firestore ingestion failed:`, error.message);
+        results.errors.push(error.message);
+        return results;
+    }
+}
+
 module.exports = {
     chunkText,
     extractMetadata,
     processGuidelineFile,
     processAllGuidelines,
+    processFirestoreGuideline,
+    ingestFromFirestore,
     reingestGuideline,
     getIngestionStatus,
     CHUNK_SIZE,

@@ -15878,32 +15878,29 @@ app.get('/getRAGStatus', authenticateUser, async (req, res) => {
 app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
     try {
         const userId = req.user.uid;
-        const { dryRun = false, folders } = req.body;
-        
+        const { dryRun = false, limit = null } = req.body;
+
         // Check if user is admin (you may want to add proper admin check)
         console.log(`[RAG-INGESTION] Ingestion requested by user: ${userId}`);
-        
-        // Get the project root directory
-        const baseDir = path.join(__dirname);
-        
-        console.log(`[RAG-INGESTION] Starting ingestion from: ${baseDir}`);
-        console.log(`[RAG-INGESTION] Dry run: ${dryRun}`);
-        
-        const results = await ragIngestion.processAllGuidelines(baseDir, {
+        console.log(`[RAG-INGESTION] Dry run: ${dryRun}, Limit: ${limit || 'none'}`);
+
+        // Use Firestore-based ingestion (ingests FULL guideline content)
+        const results = await ragIngestion.ingestFromFirestore(db, {
             dryRun,
-            folders: folders || ['condensed', 'summary', 'significant_terms']
+            limit
         });
-        
-        res.json({ 
-            success: true, 
+
+        res.json({
+            success: true,
             message: dryRun ? 'Dry run complete' : 'Ingestion complete',
+            source: 'firestore',
             results
         });
     } catch (error) {
         console.error('[ERROR] Ingestion failed:', error);
-        res.status(500).json({ 
-            success: false, 
-            error: error.message 
+        res.status(500).json({
+            success: false,
+            error: error.message
         });
     }
 });
