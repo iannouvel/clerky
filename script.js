@@ -10254,6 +10254,151 @@ function getSelectedChunkDistributionProviders() {
     return inputs.filter(i => i.checked).map(i => i.dataset.provider).filter(Boolean);
 }
 
+// ---- RAG Search Preferences ----
+
+// Fetch user's RAG search preference from backend
+async function fetchRAGPreference() {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getUserRAGPreference`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log('[RAG PREF] Loaded RAG preference:', data);
+            return data;
+        }
+
+        console.log('[RAG PREF] No RAG preference found, using defaults');
+        return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
+    } catch (error) {
+        console.error('[RAG PREF] Error fetching RAG preference:', error);
+        return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
+    }
+}
+
+// Save user's RAG search preference to backend
+async function saveRAGPreference(useRAGSearch, ragReranking) {
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[RAG PREF] No user, cannot save RAG preference');
+            return false;
+        }
+
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateUserRAGPreference`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                useRAGSearch,
+                ragReranking,
+                ragTopK: 20
+            })
+        });
+
+        if (response.ok) {
+            console.log('[RAG PREF] Saved RAG preference:', { useRAGSearch, ragReranking });
+            return true;
+        } else {
+            console.error('[RAG PREF] Failed to save RAG preference');
+            return false;
+        }
+    } catch (error) {
+        console.error('[RAG PREF] Error saving RAG preference:', error);
+        return false;
+    }
+}
+
+// Render RAG preference UI
+function renderRAGPreferences(ragData) {
+    const useRAGCheckbox = document.getElementById('useRAGSearch');
+    const ragRerankingCheckbox = document.getElementById('ragReranking');
+    const ragSubOptions = document.getElementById('ragSubOptions');
+    const ragStatus = document.getElementById('ragStatus');
+    const ragInfo = document.getElementById('ragInfo');
+    const ragInfoText = document.getElementById('ragInfoText');
+
+    if (!useRAGCheckbox) return;
+
+    // Set checkbox states
+    useRAGCheckbox.checked = ragData.useRAGSearch || false;
+    if (ragRerankingCheckbox) {
+        ragRerankingCheckbox.checked = ragData.ragReranking !== false;
+    }
+
+    // Show/hide sub-options based on RAG enabled state
+    if (ragSubOptions) {
+        ragSubOptions.classList.toggle('hidden', !ragData.useRAGSearch);
+    }
+
+    // Update status display
+    if (ragStatus) {
+        if (ragData.useRAGSearch) {
+            ragStatus.textContent = 'Enabled';
+            ragStatus.className = 'rag-status enabled';
+        } else {
+            ragStatus.textContent = 'Disabled (using traditional AI search)';
+            ragStatus.className = 'rag-status disabled';
+        }
+    }
+
+    // Update vector DB info
+    if (ragInfo && ragInfoText) {
+        if (ragData.vectorDBAvailable) {
+            const recordCount = ragData.vectorDBRecords || 0;
+            if (recordCount > 0) {
+                ragInfoText.textContent = `Vector database ready: ${recordCount.toLocaleString()} guideline chunks indexed`;
+                ragInfo.className = 'rag-info success';
+            } else {
+                ragInfoText.textContent = 'Vector database connected but empty. Guidelines need to be ingested.';
+                ragInfo.className = 'rag-info warning';
+            }
+        } else {
+            ragInfoText.textContent = 'Vector database not configured. RAG search unavailable.';
+            ragInfo.className = 'rag-info error';
+            // Disable the toggle if vector DB is not available
+            useRAGCheckbox.disabled = true;
+        }
+    }
+
+    // Set up event listeners
+    useRAGCheckbox.addEventListener('change', () => {
+        const isEnabled = useRAGCheckbox.checked;
+        if (ragSubOptions) {
+            ragSubOptions.classList.toggle('hidden', !isEnabled);
+        }
+        if (ragStatus) {
+            ragStatus.textContent = isEnabled ? 'Enabled' : 'Disabled (using traditional AI search)';
+            ragStatus.className = isEnabled ? 'rag-status enabled' : 'rag-status disabled';
+        }
+    });
+}
+
+// Get current RAG preference values from UI
+function getRAGPreferenceFromUI() {
+    const useRAGCheckbox = document.getElementById('useRAGSearch');
+    const ragRerankingCheckbox = document.getElementById('ragReranking');
+
+    return {
+        useRAGSearch: useRAGCheckbox?.checked || false,
+        ragReranking: ragRerankingCheckbox?.checked !== false
+    };
+}
+
 // Fetch user's model preference order from backend
 async function fetchUserModelPreferences() {
     try {
@@ -10529,7 +10674,16 @@ async function showPreferencesModal() {
         console.error('[ERROR] Failed to load chunk distribution provider preferences:', error);
         renderChunkDistributionProvidersList(AVAILABLE_MODELS.map(m => m.name));
     }
-    
+
+    // Load and display RAG search preferences
+    try {
+        const ragData = await fetchRAGPreference();
+        renderRAGPreferences(ragData);
+    } catch (error) {
+        console.error('[ERROR] Failed to load RAG preferences:', error);
+        renderRAGPreferences({ useRAGSearch: false, ragReranking: true, vectorDBAvailable: false });
+    }
+
     // Set up event handlers
     const handleChangeTrustClick = async () => {
         console.log('[DEBUG] Change Trust clicked in preferences');
@@ -10711,6 +10865,15 @@ async function showPreferencesModal() {
             }
         } else {
             console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
+        }
+        
+        // Save RAG search preferences
+        const ragPrefs = getRAGPreferenceFromUI();
+        const savedRAG = await saveRAGPreference(ragPrefs.useRAGSearch, ragPrefs.ragReranking);
+        if (savedRAG) {
+            console.log('[RAG PREF] Saved RAG preferences:', ragPrefs);
+        } else {
+            console.warn('[RAG PREF] Failed to save RAG preferences');
         }
         
         // Close modal

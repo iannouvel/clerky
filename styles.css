@@ -4894,6 +4894,163 @@ html, body {
     cursor: grabbing;
 }
 
+/* RAG Search Preferences */
+.rag-preferences-container {
+    margin-top: 15px;
+}
+
+.rag-toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.rag-toggle-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rag-toggle-label strong {
+    color: #2D3436;
+    font-size: 1rem;
+}
+
+.rag-status {
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.rag-status.enabled {
+    color: #00B894;
+}
+
+.rag-status.disabled {
+    color: #e74c3c;
+}
+
+.rag-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.rag-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.rag-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 28px;
+}
+
+.rag-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rag-toggle-switch input:checked + .rag-slider {
+    background-color: #00B894;
+}
+
+.rag-toggle-switch input:checked + .rag-slider:before {
+    transform: translateX(24px);
+}
+
+.rag-toggle-switch.small {
+    width: 40px;
+    height: 22px;
+}
+
+.rag-toggle-switch.small .rag-slider:before {
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+}
+
+.rag-toggle-switch.small input:checked + .rag-slider:before {
+    transform: translateX(18px);
+}
+
+.rag-sub-options {
+    margin-top: 12px;
+    margin-left: 67px;
+    padding: 12px;
+    background-color: #f0f8f2;
+    border: 1px solid #00B894;
+    border-radius: 6px;
+}
+
+.rag-sub-options.hidden {
+    display: none;
+}
+
+.rag-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rag-option-label {
+    font-size: 0.9rem;
+    color: #2D3436;
+}
+
+.rag-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    background-color: #e8f4f8;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #495057;
+}
+
+.rag-info-icon {
+    flex-shrink: 0;
+}
+
+.rag-info.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.rag-info.warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+}
+
+.rag-info.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
 .preferences-modal-footer {
     padding: 20px;
     border-top: 1px solid #e0e0e0;

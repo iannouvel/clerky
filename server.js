@@ -15,6 +15,12 @@ const PDFParser = require('pdf-parse');
 const cheerio = require('cheerio');
 
 // ============================================================================
+// RAG / VECTOR DATABASE MODULES
+// ============================================================================
+const vectorDB = require('./modules/vector-db');
+const ragIngestion = require('./modules/rag-ingestion');
+
+// ============================================================================
 // GUIDELINE DISCOVERY HELPERS
 // ============================================================================
 
@@ -2982,6 +2988,109 @@ async function updateUserHospitalTrust(userId, hospitalTrust) {
     }
 }
 
+// ============================================================================
+// RAG SEARCH PREFERENCES
+// ============================================================================
+
+// Cache for RAG preferences
+const userRAGPreferenceCache = new Map();
+
+// Get user's RAG search preference
+async function getUserRAGPreference(userId) {
+    // Check cache first
+    if (userRAGPreferenceCache.has(userId)) {
+        const cachedData = userRAGPreferenceCache.get(userId);
+        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
+            debugLog(`Using cached RAG preference for user ${userId}:`, cachedData.preferences);
+            return cachedData.preferences;
+        } else {
+            userRAGPreferenceCache.delete(userId);
+        }
+    }
+
+    // Default preferences (RAG disabled by default for safe rollout)
+    const defaultPreferences = {
+        useRAGSearch: false,
+        ragReranking: true,
+        ragTopK: 20
+    };
+
+    try {
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                
+                if (userPrefsDoc.exists) {
+                    const data = userPrefsDoc.data();
+                    
+                    const preferences = {
+                        useRAGSearch: data.useRAGSearch ?? defaultPreferences.useRAGSearch,
+                        ragReranking: data.ragReranking ?? defaultPreferences.ragReranking,
+                        ragTopK: data.ragTopK ?? defaultPreferences.ragTopK
+                    };
+                    
+                    // Cache the preference
+                    userRAGPreferenceCache.set(userId, {
+                        preferences,
+                        timestamp: Date.now()
+                    });
+                    
+                    return preferences;
+                }
+            } catch (firestoreError) {
+                console.error('Firestore error in getUserRAGPreference:', firestoreError);
+            }
+        }
+        
+        // Return defaults
+        userRAGPreferenceCache.set(userId, {
+            preferences: defaultPreferences,
+            timestamp: Date.now()
+        });
+        return defaultPreferences;
+    } catch (error) {
+        console.error('Critical error in getUserRAGPreference:', error);
+        return defaultPreferences;
+    }
+}
+
+// Update user's RAG search preference
+async function updateUserRAGPreference(userId, preferences) {
+    console.log(`Updating RAG preference for user ${userId}:`, preferences);
+    
+    // Update cache immediately
+    userRAGPreferenceCache.set(userId, {
+        preferences,
+        timestamp: Date.now()
+    });
+    
+    try {
+        if (db) {
+            try {
+                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+                const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
+                
+                await db.collection('userPreferences').doc(userId).set({
+                    ...existingData,
+                    useRAGSearch: preferences.useRAGSearch,
+                    ragReranking: preferences.ragReranking,
+                    ragTopK: preferences.ragTopK,
+                    updatedAt: admin.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                
+                console.log(`Successfully updated RAG preference in Firestore for user: ${userId}`);
+                return true;
+            } catch (firestoreError) {
+                console.error('Firestore error in updateUserRAGPreference:', firestoreError);
+            }
+        }
+        return false;
+    } catch (error) {
+        console.error('Error in updateUserRAGPreference:', error);
+        return false;
+    }
+}
+
 // Get user's guideline scope preference
 async function getUserGuidelineScope(userId) {
     // Check if we have a cached preference for this user
@@ -5539,6 +5648,185 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         return { success: true, categories };
     }
 }
+
+// ============================================================================
+// RAG-BASED GUIDELINE SEARCH (Vector Similarity)
+// ============================================================================
+
+/**
+ * Find relevant guidelines using RAG (vector similarity search)
+ * Much faster than traditional AI chunking approach
+ */
+async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
+    const { scope, hospitalTrust, ragPrefs } = options;
+    const timer = new StepTimer('/findRelevantGuidelines (RAG)');
+    
+    try {
+        // Check if vector DB is available
+        if (!vectorDB.isVectorDBAvailable()) {
+            throw new Error('Vector database not configured');
+        }
+        
+        timer.step('Check vector DB');
+        
+        // Build metadata filter based on scope
+        let filter = null;
+        if (scope === 'local' && hospitalTrust) {
+            filter = { organisation: { $eq: hospitalTrust } };
+        }
+        // For national/both scopes, we don't filter (get all and let reranking handle relevance)
+        
+        // Query vector database
+        const queryResult = await vectorDB.queryDocuments(transcript, {
+            topK: ragPrefs.ragTopK || 20,
+            filter
+        });
+        
+        timer.step('Vector search');
+        
+        if (!queryResult.success || queryResult.matches.length === 0) {
+            console.log('[RAG] No matches found, falling back to empty result');
+            return {
+                success: true,
+                categories: {
+                    mostRelevant: [],
+                    potentiallyRelevant: [],
+                    lessRelevant: [],
+                    notRelevant: []
+                },
+                searchMode: 'rag',
+                timing: timer.getSummary(),
+                queryTimeMs: queryResult.queryTimeMs || 0
+            };
+        }
+        
+        // Categorise results by similarity score
+        let categories = vectorDB.categoriseByScore(queryResult.matches);
+        timer.step('Categorise results');
+        
+        // Optional: AI reranking for better accuracy (single AI call on top candidates)
+        if (ragPrefs.ragReranking && categories.mostRelevant.length > 0) {
+            try {
+                categories = await rerankWithAI(transcript, categories, userId);
+                timer.step('AI reranking');
+            } catch (rerankError) {
+                console.warn('[RAG] Reranking failed, using vector scores:', rerankError.message);
+            }
+        }
+        
+        console.log(`[RAG] Search complete: ${categories.mostRelevant.length} most relevant, ${categories.potentiallyRelevant.length} potentially relevant`);
+        
+        return {
+            success: true,
+            categories,
+            searchMode: 'rag',
+            timing: timer.getSummary(),
+            queryTimeMs: queryResult.queryTimeMs
+        };
+        
+    } catch (error) {
+        console.error('[RAG] Search failed:', error.message);
+        throw error;
+    }
+}
+
+/**
+ * Rerank top candidates using a single AI call
+ * Much cheaper than processing all guidelines through AI
+ */
+async function rerankWithAI(transcript, categories, userId) {
+    const allCandidates = [
+        ...categories.mostRelevant,
+        ...categories.potentiallyRelevant,
+        ...categories.lessRelevant.slice(0, 5) // Include a few less relevant for comparison
+    ];
+    
+    if (allCandidates.length === 0) {
+        return categories;
+    }
+    
+    const candidateList = allCandidates.map((g, i) => 
+        `${i + 1}. [${g.id}] ${g.title} (${g.organisation || 'Unknown'})\n   Preview: ${(g.snippet || '').substring(0, 200)}...`
+    ).join('\n\n');
+    
+    const prompt = `You are a clinical guideline relevance assessor. Given a clinical transcript and a list of candidate guidelines, categorise each guideline by relevance.
+
+CLINICAL TRANSCRIPT:
+${transcript.substring(0, 2000)}
+
+CANDIDATE GUIDELINES:
+${candidateList}
+
+Categorise each guideline number into one of these categories:
+- MOST_RELEVANT: Directly applicable to the clinical scenario
+- POTENTIALLY_RELEVANT: May be useful but not directly applicable
+- LESS_RELEVANT: Tangentially related
+- NOT_RELEVANT: Not applicable
+
+Response format (just the numbers, comma-separated):
+MOST_RELEVANT: 1, 3, 5
+POTENTIALLY_RELEVANT: 2, 7
+LESS_RELEVANT: 4
+NOT_RELEVANT: 6, 8`;
+
+    try {
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
+        
+        if (aiResponse && aiResponse.content) {
+            // Parse the response
+            const responseText = aiResponse.content;
+            const rerankCategories = {
+                mostRelevant: [],
+                potentiallyRelevant: [],
+                lessRelevant: [],
+                notRelevant: []
+            };
+            
+            // Extract numbers from each category
+            const mostMatch = responseText.match(/MOST_RELEVANT:\s*([\d,\s]+)/i);
+            const potMatch = responseText.match(/POTENTIALLY_RELEVANT:\s*([\d,\s]+)/i);
+            const lessMatch = responseText.match(/LESS_RELEVANT:\s*([\d,\s]+)/i);
+            const notMatch = responseText.match(/NOT_RELEVANT:\s*([\d,\s]+)/i);
+            
+            const parseNumbers = (match) => {
+                if (!match) return [];
+                return match[1].split(',').map(n => parseInt(n.trim())).filter(n => !isNaN(n) && n > 0);
+            };
+            
+            const mostNums = parseNumbers(mostMatch);
+            const potNums = parseNumbers(potMatch);
+            const lessNums = parseNumbers(lessMatch);
+            const notNums = parseNumbers(notMatch);
+            
+            // Map numbers back to guidelines
+            mostNums.forEach(n => {
+                if (allCandidates[n - 1]) rerankCategories.mostRelevant.push(allCandidates[n - 1]);
+            });
+            potNums.forEach(n => {
+                if (allCandidates[n - 1]) rerankCategories.potentiallyRelevant.push(allCandidates[n - 1]);
+            });
+            lessNums.forEach(n => {
+                if (allCandidates[n - 1]) rerankCategories.lessRelevant.push(allCandidates[n - 1]);
+            });
+            notNums.forEach(n => {
+                if (allCandidates[n - 1]) rerankCategories.notRelevant.push(allCandidates[n - 1]);
+            });
+            
+            console.log('[RAG] Reranking complete:', {
+                mostRelevant: rerankCategories.mostRelevant.length,
+                potentiallyRelevant: rerankCategories.potentiallyRelevant.length
+            });
+            
+            return rerankCategories;
+        }
+    } catch (error) {
+        console.warn('[RAG] AI reranking failed:', error.message);
+    }
+    
+    // Return original categories if reranking fails
+    return categories;
+}
+
 // Main findRelevantGuidelines endpoint with concurrent chunking
 app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
   // Initialize step timer for profiling
@@ -5549,6 +5837,29 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     const { transcript, guidelinesPayload, anonymisationInfo, scope, hospitalTrust } = req.body;
     const userId = req.user.uid;
     timer.step('Parse request');
+    
+    // Check if user has RAG search enabled
+    const ragPrefs = await getUserRAGPreference(userId);
+    timer.step('Check RAG preference');
+    
+    // If RAG is enabled and vector DB is available, use RAG search
+    if (ragPrefs.useRAGSearch && vectorDB.isVectorDBAvailable()) {
+        console.log(`[RAG] User ${userId} has RAG enabled, using vector search`);
+        try {
+            const ragResult = await findRelevantGuidelinesRAG(transcript, userId, {
+                scope,
+                hospitalTrust,
+                ragPrefs
+            });
+            return res.json(ragResult);
+        } catch (ragError) {
+            console.error('[RAG] RAG search failed, falling back to traditional:', ragError.message);
+            // Fall through to traditional search
+        }
+    }
+    
+    // Traditional AI-based search (existing logic)
+    console.log(`[TRADITIONAL] Using AI chunk processing for user ${userId}`);
     
     // Handle optimized guidelines payload
     let guidelines = [];
@@ -15472,6 +15783,151 @@ app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
         });
     } catch (error) {
         console.error('[ERROR] Failed to get user guideline scope:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// ============================================================================
+// RAG SEARCH PREFERENCE ENDPOINTS
+// ============================================================================
+
+// Endpoint to get user's RAG search preference
+app.get('/getUserRAGPreference', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const ragPreference = await getUserRAGPreference(userId);
+        
+        // Also include vector DB status
+        const vectorDBStats = await vectorDB.getIndexStats();
+        
+        res.json({ 
+            success: true, 
+            ...ragPreference,
+            vectorDBAvailable: vectorDBStats.available,
+            vectorDBRecords: vectorDBStats.totalRecords || 0
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get user RAG preference:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to update user's RAG search preference
+app.post('/updateUserRAGPreference', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { useRAGSearch, ragReranking, ragTopK } = req.body;
+        
+        const preferences = {
+            useRAGSearch: useRAGSearch ?? false,
+            ragReranking: ragReranking ?? true,
+            ragTopK: ragTopK ?? 20
+        };
+        
+        const success = await updateUserRAGPreference(userId, preferences);
+        
+        if (success) {
+            res.json({ 
+                success: true, 
+                message: 'RAG preference updated successfully',
+                ...preferences
+            });
+        } else {
+            res.status(500).json({ 
+                success: false, 
+                error: 'Failed to update RAG preference' 
+            });
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to update user RAG preference:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// ============================================================================
+// RAG INGESTION ENDPOINTS (Admin Only)
+// ============================================================================
+
+// Endpoint to get RAG ingestion status
+app.get('/getRAGStatus', authenticateUser, async (req, res) => {
+    try {
+        const status = await ragIngestion.getIngestionStatus();
+        res.json({ 
+            success: true, 
+            ...status
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to get RAG status:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to trigger RAG ingestion (admin only)
+app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { dryRun = false, folders } = req.body;
+        
+        // Check if user is admin (you may want to add proper admin check)
+        console.log(`[RAG-INGESTION] Ingestion requested by user: ${userId}`);
+        
+        // Get the project root directory
+        const baseDir = path.join(__dirname);
+        
+        console.log(`[RAG-INGESTION] Starting ingestion from: ${baseDir}`);
+        console.log(`[RAG-INGESTION] Dry run: ${dryRun}`);
+        
+        const results = await ragIngestion.processAllGuidelines(baseDir, {
+            dryRun,
+            folders: folders || ['condensed', 'summary', 'significant_terms']
+        });
+        
+        res.json({ 
+            success: true, 
+            message: dryRun ? 'Dry run complete' : 'Ingestion complete',
+            results
+        });
+    } catch (error) {
+        console.error('[ERROR] Ingestion failed:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
+// Endpoint to re-ingest a specific guideline
+app.post('/reingestGuideline', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId, content, metadata } = req.body;
+        
+        if (!guidelineId || !content) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId and content are required'
+            });
+        }
+        
+        const result = await ragIngestion.reingestGuideline(guidelineId, content, metadata || {});
+        
+        res.json({ 
+            success: result.success,
+            ...result
+        });
+    } catch (error) {
+        console.error('[ERROR] Re-ingestion failed:', error);
         res.status(500).json({ 
             success: false, 
             error: error.message 
