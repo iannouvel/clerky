@@ -114,16 +114,38 @@ async function upsertDocuments(documents) {
     }
 
     try {
-        // Pinecone with integrated embedding expects records with 'text' field
-        // The embedding model (llama-text-embed-v2) will automatically generate vectors
-        const records = documents.map(doc => ({
-            id: doc.id,
-            text: doc.text,  // Pinecone will embed this automatically
-            metadata: {
-                ...doc.metadata,
-                text_preview: doc.text.substring(0, 500) // Store preview for display
+        // Pinecone integrated-embedding upsert expects "records" whose fields are primitives
+        // (string/number/boolean or list of strings). It does NOT accept nested objects like
+        // { metadata: { ... } }.
+        //
+        // So we FLATTEN metadata keys into top-level fields.
+        const records = documents.map(doc => {
+            const safeMeta = {};
+            const meta = doc.metadata || {};
+
+            for (const [k, v] of Object.entries(meta)) {
+                if (v === null || v === undefined) continue;
+                if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
+                    safeMeta[k] = v;
+                    continue;
+                }
+                if (Array.isArray(v)) {
+                    // Pinecone integrated embedding supports list of strings
+                    const stringsOnly = v.filter(x => typeof x === 'string');
+                    if (stringsOnly.length > 0) safeMeta[k] = stringsOnly;
+                    continue;
+                }
+                // Fallback: stringify anything else to keep it searchable/debuggable
+                safeMeta[k] = String(v);
             }
-        }));
+
+            return {
+                id: doc.id,
+                text: doc.text, // Pinecone will embed this automatically
+                ...safeMeta,
+                text_preview: (doc.text || '').substring(0, 500)
+            };
+        });
 
         // Batch upsert
         // Pinecone integrated-embedding upsert has a hard max batch size of 96 records per request.
