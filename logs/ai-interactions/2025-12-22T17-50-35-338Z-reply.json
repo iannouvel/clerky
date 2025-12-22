@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T17-50-35-338Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4224,
+  "response_length": 5608,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":1379,\"transcriptPreview\":\"32yo, G3P2, 31+2, BMI 25, Rh+ve\\nIssues: Symphysis pubis dysfunction (SPD) causing significant pain and mobility issues\\nPrevious obs...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-antenatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Antenatal Care\\\", \\\"relevance\\\": \\\"0.9\\\"},\\n    {\\\"id\\\": ...",
+  "full_data": null
+}
