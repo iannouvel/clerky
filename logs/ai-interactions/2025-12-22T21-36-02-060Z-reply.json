@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T21-36-02-060Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3945,
+  "response_length": 5400,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":1511,\"transcriptPreview\":\"28yo, G3P2 (prev SVD), 24+2, BMI 25, Rh+ve\\nIssues: History of SLE with lupus nephritis, on immunosuppression, concerns regarding dis...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1198-management-of-hypertensive-disorders-of-pregnancy-pdf\\\", \\\"title\\\": \\\"CG1198 Management of Hypertensive disor...",
+  "full_data": null
+}
