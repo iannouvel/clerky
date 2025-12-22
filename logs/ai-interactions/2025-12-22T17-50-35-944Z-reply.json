@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-22T17-50-35-944Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4406,
+  "response_length": 6297,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1379,\"transcriptPreview\":\"32yo, G3P2, 31+2, BMI 25, Rh+ve\\nIssues: Symphysis pubis dysfunction (SPD) causing significant pain and mobility issues\\nPrevious obs...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2012-initial-mx-of-chronic-pelvic-pain-pdf\\\", \\\"title\\\": \\\"GTG 2012 - Initial Mx of Chronic Pelvic Pain\\\", \\...",
+  "full_data": null
+}
