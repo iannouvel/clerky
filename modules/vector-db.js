@@ -16,6 +16,50 @@ const PINECONE_HOST = process.env.PINECONE_HOST;
 let pineconeClient = null;
 let pineconeIndex = null;
 
+function stringifyError(err) {
+    try {
+        if (!err) return 'Unknown error';
+        if (typeof err === 'string') return err;
+        if (err instanceof Error) {
+            // Some SDK errors have empty message but useful attached fields
+            const base = err.message && err.message.trim().length > 0 ? err.message : null;
+            const extra = {};
+            for (const k of ['name', 'code', 'status', 'statusCode', 'cause', 'error', 'errors', 'details', 'body', 'response']) {
+                if (err[k] !== undefined) extra[k] = err[k];
+            }
+            const extraStr = Object.keys(extra).length > 0 ? ` | extra=${safeJson(extra)}` : '';
+            return `${base || err.toString()}${extraStr}`;
+        }
+        return safeJson(err);
+    } catch (_) {
+        return 'Unknown error (failed to stringify)';
+    }
+}
+
+function safeJson(obj) {
+    try {
+        return JSON.stringify(obj, getCircularReplacer(), 2);
+    } catch (_) {
+        try {
+            // Last resort: include enumerable props only
+            return JSON.stringify(Object.assign({}, obj), null, 2);
+        } catch (__) {
+            return '[unserializable]';
+        }
+    }
+}
+
+function getCircularReplacer() {
+    const seen = new WeakSet();
+    return (key, value) => {
+        if (typeof value === 'object' && value !== null) {
+            if (seen.has(value)) return '[circular]';
+            seen.add(value);
+        }
+        return value;
+    };
+}
+
 /**
  * Initialize Pinecone client and index
  */
@@ -100,8 +144,9 @@ async function upsertDocuments(documents) {
         console.log(`[VECTOR-DB] Successfully upserted ${totalUpserted} documents`);
         return { success: true, upsertedCount: totalUpserted };
     } catch (error) {
-        console.error('[VECTOR-DB] Upsert failed:', error.message);
-        throw error;
+        const details = stringifyError(error);
+        console.error('[VECTOR-DB] Upsert failed:', details);
+        throw new Error(details);
     }
 }
 
@@ -171,8 +216,9 @@ async function queryDocuments(queryText, options = {}) {
             queryTimeMs: queryTime
         };
     } catch (error) {
-        console.error('[VECTOR-DB] Query failed:', error.message);
-        throw error;
+        const details = stringifyError(error);
+        console.error('[VECTOR-DB] Query failed:', details);
+        throw new Error(details);
     }
 }
 
@@ -192,8 +238,9 @@ async function deleteDocuments(ids) {
         console.log(`[VECTOR-DB] Deleted ${ids.length} documents`);
         return { success: true, deletedCount: ids.length };
     } catch (error) {
-        console.error('[VECTOR-DB] Delete failed:', error.message);
-        throw error;
+        const details = stringifyError(error);
+        console.error('[VECTOR-DB] Delete failed:', details);
+        throw new Error(details);
     }
 }
 
@@ -216,8 +263,9 @@ async function deleteGuidelineChunks(guidelineId) {
         console.log(`[VECTOR-DB] Deleted all chunks for guideline: ${guidelineId}`);
         return { success: true };
     } catch (error) {
-        console.error('[VECTOR-DB] Delete guideline chunks failed:', error.message);
-        throw error;
+        const details = stringifyError(error);
+        console.error('[VECTOR-DB] Delete guideline chunks failed:', details);
+        throw new Error(details);
     }
 }
 
@@ -239,7 +287,8 @@ async function getIndexStats() {
             namespaces: stats.namespaces
         };
     } catch (error) {
-        console.error('[VECTOR-DB] Failed to get stats:', error.message);
+        const details = stringifyError(error);
+        console.error('[VECTOR-DB] Failed to get stats:', details);
         return { available: false, error: error.message };
     }
 }
