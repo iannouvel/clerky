@@ -392,12 +392,23 @@ function extractOrganisationFromTitle(title) {
  * @returns {Promise<Object>} - Processing results
  */
 async function ingestFromFirestore(db, options = {}) {
-    const { dryRun = false, batchSize = 100, limit = null } = options;
+    const {
+        dryRun = false,
+        batchSize = 250,
+        limit = null,
+        /**
+         * Optional: async (guideline) => string | null
+         * Use this to fetch full guideline content from Storage when Firestore content is null.
+         */
+        fetchContent = null
+    } = options;
     
     const results = {
         totalGuidelines: 0,
         guidelinesWithContent: 0,
         guidelinesWithoutContent: 0,
+        contentFromFirestore: 0,
+        contentFromStorage: 0,
         totalChunks: 0,
         processedGuidelines: 0,
         skipped: [],
@@ -419,50 +430,87 @@ async function ingestFromFirestore(db, options = {}) {
         
         console.log(`[RAG-INGESTION] Found ${results.totalGuidelines} guidelines in Firestore`);
 
-        // Collect all documents
-        const allDocuments = [];
+        // Upload in streaming batches to avoid huge memory usage
+        let pendingDocuments = [];
+        let uploadedCount = 0;
+
+        async function flushPending() {
+            if (dryRun) {
+                pendingDocuments = [];
+                return;
+            }
+            if (pendingDocuments.length === 0) return;
+
+            const docsToUpload = pendingDocuments;
+            pendingDocuments = [];
+
+            const upsertResult = await upsertDocuments(docsToUpload);
+            uploadedCount += upsertResult.upsertedCount || 0;
+            results.uploaded = uploadedCount;
+        }
         
         for (const doc of snapshot.docs) {
             const guideline = { id: doc.id, ...doc.data() };
             
-            // Check if guideline has content
-            if (!guideline.content || guideline.content.trim().length === 0) {
+            // Resolve FULL content
+            let resolvedContent = guideline.content;
+            let resolvedFrom = 'firestore';
+            if (!resolvedContent || resolvedContent.trim().length === 0) {
+                if (typeof fetchContent === 'function') {
+                    try {
+                        resolvedContent = await fetchContent(guideline);
+                        resolvedFrom = 'storage';
+                    } catch (error) {
+                        results.errors.push(`Failed to fetch content for ${guideline.id}: ${error.message}`);
+                    }
+                }
+            }
+
+            if (!resolvedContent || resolvedContent.trim().length === 0) {
                 results.guidelinesWithoutContent++;
                 results.skipped.push({
                     id: guideline.id,
                     title: guideline.title || guideline.humanFriendlyName,
-                    reason: 'No content'
+                    reason: 'No content (Firestore/Storage)'
                 });
                 continue;
             }
-            
+
             results.guidelinesWithContent++;
+            if (resolvedFrom === 'storage') results.contentFromStorage++;
+            else results.contentFromFirestore++;
             
             // Process the guideline
-            const chunks = processFirestoreGuideline(guideline);
+            const chunks = processFirestoreGuideline({ ...guideline, content: resolvedContent });
             
             if (chunks.length > 0) {
-                allDocuments.push(...chunks);
                 results.processedGuidelines++;
+                results.totalChunks += chunks.length;
+                pendingDocuments.push(...chunks);
+
+                // Flush by doc count, not guideline count
+                if (pendingDocuments.length >= batchSize) {
+                    try {
+                        await flushPending();
+                    } catch (error) {
+                        results.errors.push(`Upsert failed: ${error.message}`);
+                    }
+                }
             }
         }
 
-        results.totalChunks = allDocuments.length;
         console.log(`[RAG-INGESTION] Prepared ${results.totalChunks} chunks from ${results.processedGuidelines} guidelines`);
         console.log(`[RAG-INGESTION] Skipped ${results.guidelinesWithoutContent} guidelines without content`);
 
-        // Upload to Pinecone (unless dry run)
-        if (!dryRun && allDocuments.length > 0) {
-            console.log(`[RAG-INGESTION] Uploading to Pinecone...`);
-            
-            try {
-                const upsertResult = await upsertDocuments(allDocuments);
-                results.uploaded = upsertResult.upsertedCount;
-                console.log(`[RAG-INGESTION] Upload complete: ${results.uploaded} chunks`);
-            } catch (error) {
-                console.error(`[RAG-INGESTION] Upload failed:`, error.message);
-                results.errors.push(error.message);
-            }
+        // Final flush
+        try {
+            await flushPending();
+        } catch (error) {
+            results.errors.push(`Final upsert failed: ${error.message}`);
+        }
+
+        if (!dryRun) {
+            console.log(`[RAG-INGESTION] Upload complete: ${results.uploaded || 0} chunks`);
         }
 
         return results;

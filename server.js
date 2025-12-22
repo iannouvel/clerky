@@ -15878,16 +15878,63 @@ app.get('/getRAGStatus', authenticateUser, async (req, res) => {
 app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
     try {
         const userId = req.user.uid;
-        const { dryRun = false, limit = null } = req.body;
+        const { dryRun = false, limit = null, batchSize = 250 } = req.body;
 
         // Check if user is admin (you may want to add proper admin check)
         console.log(`[RAG-INGESTION] Ingestion requested by user: ${userId}`);
-        console.log(`[RAG-INGESTION] Dry run: ${dryRun}, Limit: ${limit || 'none'}`);
+        console.log(`[RAG-INGESTION] Dry run: ${dryRun}, Limit: ${limit || 'none'}, BatchSize: ${batchSize}`);
 
         // Use Firestore-based ingestion (ingests FULL guideline content)
+        const STORAGE_BUCKET = 'clerky-b3be8.firebasestorage.app';
+
+        const getStorageObjectPathFromUrl = (url) => {
+            try {
+                if (!url || typeof url !== 'string') return null;
+                if (url.startsWith('gs://')) {
+                    // gs://<bucket>/<path>
+                    return url.replace(/^gs:\/\/[^/]+\//, '');
+                }
+                const parsed = new URL(url);
+                const match = parsed.pathname.match(/\/o\/(.+)$/);
+                if (match && match[1]) {
+                    return decodeURIComponent(match[1]);
+                }
+            } catch (e) {
+                return null;
+            }
+            return null;
+        };
+
+        const fetchGuidelineContentFromStorage = async (guideline) => {
+            try {
+                // Only attempt Storage fetch if this guideline indicates content is stored externally
+                const hasStorageFlag = !!(guideline.contentInStorage || guideline.contentStorageUrl);
+                if (!hasStorageFlag) return null;
+
+                const bucket = admin.storage().bucket(STORAGE_BUCKET);
+
+                const objectPath =
+                    getStorageObjectPathFromUrl(guideline.contentStorageUrl) ||
+                    `guideline-content/${guideline.id}/content.txt`;
+
+                const file = bucket.file(objectPath);
+                const [exists] = await file.exists();
+                if (!exists) return null;
+
+                const [buf] = await file.download();
+                const text = buf.toString('utf8');
+                return text && text.trim().length > 0 ? text : null;
+            } catch (error) {
+                console.warn(`[RAG-INGESTION] Storage fetch failed for ${guideline.id}: ${error.message}`);
+                return null;
+            }
+        };
+
         const results = await ragIngestion.ingestFromFirestore(db, {
             dryRun,
-            limit
+            limit,
+            batchSize,
+            fetchContent: fetchGuidelineContentFromStorage
         });
 
         res.json({
