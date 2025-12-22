@@ -15907,10 +15907,6 @@ app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
 
         const fetchGuidelineContentFromStorage = async (guideline) => {
             try {
-                // Only attempt Storage fetch if this guideline indicates content is stored externally
-                const hasStorageFlag = !!(guideline.contentInStorage || guideline.contentStorageUrl);
-                if (!hasStorageFlag) return null;
-
                 const bucket = admin.storage().bucket(STORAGE_BUCKET);
 
                 const objectPath =
