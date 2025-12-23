@@ -940,25 +940,22 @@ validateGitHubToken();
 async function getFileSha(filePath) {
     try {
         const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
-        
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
             'Authorization': `token ${githubToken}`
         };
-        
         const response = await axios.get(url, { headers });
         return response.data.sha;
     } catch (error) {
-        console.error('Error details:', {
-            status: error.response?.status,
-            statusText: error.response?.statusText,
-            message: error.response?.data?.message,
-            documentation_url: error.response?.data?.documentation_url
-        });
         if (error.response?.status === 404) {
-            //console.log('File does not exist yet, will create new file');
+            // Expected case - file doesn't exist yet, this is not an error
             return null;
         }
+        // Only log unexpected errors (not 404s)
+        console.error('Error fetching file SHA:', {
+            status: error.response?.status,
+            message: error.response?.data?.message
+        });
         throw new Error(`Failed to fetch file SHA: ${error.response?.data?.message || error.message}`);
     }
 }
@@ -4828,7 +4825,8 @@ async function saveToGitHub(content, type) {
     let attempt = 0;
     let success = false;
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const jsonFilename = `${timestamp}-${type}.json`;
+    const uniqueId = Math.random().toString(36).substring(2, 8); // 6-char random suffix to prevent collisions
+    const jsonFilename = `${timestamp}-${uniqueId}-${type}.json`;
     const jsonPath = `logs/ai-interactions/${jsonFilename}`;
     
     // Debug the input content (only when DEBUG_LOGGING is enabled)
@@ -4918,10 +4916,11 @@ async function saveToGitHub(content, type) {
                         // The attempt++ at the end of the loop will still happen, so we decrement here
                         attempt--;
                     } else {
-                        console.error('Could not retrieve SHA for conflict resolution');
+                        // File not found after 409 conflict - likely a race condition, will retry
+                        console.warn('[GITHUB] Conflict detected but file not found - will retry');
                     }
                 } catch (shaError) {
-                    console.error('Error getting file SHA for conflict resolution:', shaError.message);
+                    console.warn('[GITHUB] Error getting file SHA for conflict resolution:', shaError.message);
                 }
             } else {
                 // Properly stringify error information for logging
