@@ -357,6 +357,7 @@ function categoriseByScore(matches) {
             title: match.metadata.title,
             organisation: match.metadata.organisation,
             relevanceScore: match.score,
+            relevance: match.score, // Also include 'relevance' for frontend compatibility
             snippet: match.metadata.textPreview
         };
 
@@ -384,3 +385,4 @@ module.exports = {
     getIndexStats,
     categoriseByScore
 };
+
