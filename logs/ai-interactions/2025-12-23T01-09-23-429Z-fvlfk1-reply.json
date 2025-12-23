@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-23T01-09-23-429Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5338,
+  "response_length": 7199,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2018-jauniaux-placenta-praevia-and-placenta-accreta-pdf\\\", \\\"title\\\": \\\"BJOG - 2018 - Jauniaux - Placenta P...",
+  "full_data": null
+}
