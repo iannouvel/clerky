@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-23T01-09-20-824Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4104,
+  "response_length": 5612,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-cord-prolapse-protocol-pdf\\\", \\\"title\\\": \\\"UHSx Cord Prolapse Protocol\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\...",
+  "full_data": null
+}
