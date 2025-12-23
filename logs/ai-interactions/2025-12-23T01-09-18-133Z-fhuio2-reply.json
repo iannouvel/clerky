@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-23T01-09-18-133Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1422,
+  "response_length": 2006,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":950,\"transcriptPreview\":\"28yo, G1P0, 32+4, BMI 24, Rh+ve\\n\\nIssues:\\nTV USS finding of vasa previa at 32-week growth scan\\n\\nBackground:\\nUncomplicated pregnan...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-retained-placenta-protocol-pdf\\\", \\\"title\\\": \\\"UHSx Retained Placenta protocol\\\", \\\"relevance\\\": \\\"0.80\\\"},...",
+  "full_data": null
+}
