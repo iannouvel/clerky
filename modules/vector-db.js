@@ -216,21 +216,46 @@ async function queryDocuments(queryText, options = {}) {
         });
 
         const queryTime = Date.now() - startTime;
-        console.log(`[VECTOR-DB] Query completed in ${queryTime}ms, found ${results.result?.hits?.length || 0} results`);
+        const hits = results.result?.hits || [];
+        console.log(`[VECTOR-DB] Query completed in ${queryTime}ms, found ${hits.length} results`);
+        
+        // Debug: Log first hit structure to understand Pinecone response format
+        if (hits.length > 0) {
+            const sampleHit = hits[0];
+            console.log('[VECTOR-DB] Sample hit structure:', JSON.stringify({
+                keys: Object.keys(sampleHit),
+                _id: sampleHit._id,
+                _score: sampleHit._score,
+                guidelineId: sampleHit.guidelineId,
+                title: sampleHit.title,
+                fields: sampleHit.fields ? Object.keys(sampleHit.fields) : 'no fields property'
+            }));
+        }
 
         // Transform results to consistent format
-        const matches = (results.result?.hits || []).map(hit => ({
-            id: hit._id,
-            score: hit._score,
-            metadata: {
-                guidelineId: hit.guidelineId,
-                title: hit.title,
-                organisation: hit.organisation,
-                chunkIndex: hit.chunkIndex,
-                totalChunks: hit.totalChunks,
-                textPreview: hit.text_preview
-            }
-        }));
+        // Note: Pinecone searchRecords may return fields at top level or nested in 'fields' property
+        const matches = hits.map(hit => {
+            // Try both top-level and nested fields locations
+            const guidelineId = hit.guidelineId || hit.fields?.guidelineId;
+            const title = hit.title || hit.fields?.title;
+            const organisation = hit.organisation || hit.fields?.organisation;
+            const chunkIndex = hit.chunkIndex || hit.fields?.chunkIndex;
+            const totalChunks = hit.totalChunks || hit.fields?.totalChunks;
+            const textPreview = hit.text_preview || hit.fields?.text_preview;
+            
+            return {
+                id: hit._id,
+                score: hit._score,
+                metadata: {
+                    guidelineId,
+                    title,
+                    organisation,
+                    chunkIndex,
+                    totalChunks,
+                    textPreview
+                }
+            };
+        });
 
         return {
             success: true,
