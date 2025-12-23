@@ -9737,12 +9737,30 @@ app.listen(PORT, () => {
             // Start background scanner for incomplete guidelines
             startBackgroundScanner();
             
+            // Warm the guidelines cache proactively
+            console.log('[WARMUP] Starting proactive guidelines cache warmup...');
+            try {
+                const guidelines = await getCachedGuidelines();
+                console.log(`[WARMUP] Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+            } catch (warmupError) {
+                console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
+            }
+            
         } catch (error) {
             console.error('Background GitHub checks failed:', error.message);
             console.log('Server will continue to operate with limited GitHub functionality');
             
             // Still start background scanner even if GitHub checks fail
             startBackgroundScanner();
+            
+            // Still try to warm the cache even if GitHub checks failed
+            console.log('[WARMUP] Starting proactive guidelines cache warmup (after GitHub check failure)...');
+            try {
+                const guidelines = await getCachedGuidelines();
+                console.log(`[WARMUP] Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+            } catch (warmupError) {
+                console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
+            }
         }
     });
 });
