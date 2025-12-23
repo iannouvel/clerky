@@ -479,6 +479,14 @@ class StepTimer {
     getTotalTime() {
         return Date.now() - this.startTime;
     }
+    
+    getSummary() {
+        return {
+            endpoint: this.endpoint,
+            totalTimeMs: this.getTotalTime(),
+            steps: this.steps
+        };
+    }
 }
 
 // Debug logging helper - only logs when DEBUG_LOGGING env var is set
@@ -5724,7 +5732,7 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         };
         
     } catch (error) {
-        console.error('[RAG] Search failed:', error.message);
+        console.error('[RAG] Search failed:', error.message || error.toString(), error.stack ? error.stack.split('\n').slice(0, 3).join(' | ') : '');
         throw error;
     }
 }
