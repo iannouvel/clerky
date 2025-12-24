@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-38-56-004Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1361,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G3P1 (prev SVD), 26+2, BMI 25, Rh+ve\\nIssues: \\nConcerns regarding fibroids and potential impact on pregnancy, previous SVD with retained placenta, patient reports mild pelvic pre...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 225,\n  \"mostRelevantCount\": 26,\n  \"potentiallyRelevantCount\": 13,\n  \"lessRelevantCount\": 33,\n  \"notRelevantCount\": 153\n}...",
+  "full_data": null
+}
