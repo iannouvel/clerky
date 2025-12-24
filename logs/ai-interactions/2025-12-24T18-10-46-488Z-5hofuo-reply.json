@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T18-10-46-488Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1418,
+  "response_length": 1643,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1578,\"transcriptPreview\":\"28yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Intrapartum fetal heart rate concerns with variable decelerations\\nBackground: Spontaneous o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-perineal-trauma-repair-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Perineal Trauma & Repair Guideline\\\", \\\"relevance...",
+  "full_data": null
+}
