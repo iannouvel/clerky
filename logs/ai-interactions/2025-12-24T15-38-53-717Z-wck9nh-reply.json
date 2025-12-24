@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-38-53-717Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-5",
+  "token_usage": null,
+  "prompt_length": 3895,
+  "response_length": 5756,
+  "prompt_preview": "{\"prompt\":\"Chunk 5/8\",\"transcriptLength\":1270,\"transcriptPreview\":\"28yo, G3P1 (prev SVD), 26+2, BMI 25, Rh+ve\\nIssues: \\nConcerns regarding fibroids and potential impact on pregnancy, previous SVD wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"mp001-provision-and-schedules-of-antenatal-care-pdf\\\", \\\"title\\\": \\\"MP001 Provision and Schedules of Antenatal Care\\...",
+  "full_data": null
+}
