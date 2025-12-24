@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-53-31-889Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1420,
+  "response_length": 1637,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1504,\"transcriptPreview\":\"25yo, G3P2, 28+2, BMI 24, Rh+ve, Hepatitis C Ab+ve\\nIssues: Concerns regarding vertical transmission of Hepatitis C to baby and poten...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [],\\n  \\\"potentiallyRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-perinatal-mental-health-guideline-pdf\\\", \\\"title\\\": \\\"UHSx Perinatal Mental...",
+  "full_data": null
+}
