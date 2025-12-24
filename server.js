@@ -12414,6 +12414,14 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
     const guidelinesSnapshot = await db.collection('guidelines').get();
     const guidelinesNeedingRepair = [];
 
+    // Helper function to check if a name is "poor quality" (just numbers, codes, etc.)
+    const isPoorQualityName = (name) => {
+      if (!name || name.length < 5) return true;
+      // Check if it's mostly numbers/codes like "024", "025-1", etc.
+      const alphaCount = (name.match(/[a-zA-Z]/g) || []).length;
+      return alphaCount < 3; // Less than 3 letters = poor quality
+    };
+
     guidelinesSnapshot.forEach(doc => {
       const data = doc.data();
       const hasContent = data.content && data.content.trim().length > 0;
@@ -12422,7 +12430,8 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
           data.humanFriendlyName !== 'N/A' && 
           data.humanFriendlyName !== 'Not available' &&
           data.humanFriendlyName !== 'Unknown' &&
-          data.humanFriendlyName.length > 2;
+          data.humanFriendlyName.length > 2 &&
+          !isPoorQualityName(data.humanFriendlyName); // Also check quality
       
       if (forceRegenerate || !hasContent || !hasCondensed || !hasValidHumanFriendlyName) {
         guidelinesNeedingRepair.push({
