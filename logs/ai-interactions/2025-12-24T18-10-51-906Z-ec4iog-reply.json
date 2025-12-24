@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T18-10-51-906Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines",
+  "token_usage": null,
+  "prompt_length": 1667,
+  "response_length": 162,
+  "prompt_preview": "{\"transcript\":\"28yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Intrapartum fetal heart rate concerns with variable decelerations\\nBackground: Spontaneous onset of labour, membranes intact, cervix 4cm dilated...",
+  "response_preview": "{\n  \"success\": true,\n  \"categoriesFound\": 191,\n  \"mostRelevantCount\": 26,\n  \"potentiallyRelevantCount\": 18,\n  \"lessRelevantCount\": 29,\n  \"notRelevantCount\": 118\n}...",
+  "full_data": null
+}
