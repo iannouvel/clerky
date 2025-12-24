@@ -12552,13 +12552,21 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
         if (guideline.missingHumanFriendlyName) {
           let humanFriendlyName = null;
           
+          // Helper function to check if a name is "poor quality" (just numbers, codes, etc.)
+          const isPoorQualityName = (name) => {
+            if (!name || name.length < 5) return true;
+            // Check if it's mostly numbers/codes like "024", "025-1", etc.
+            const alphaCount = (name.match(/[a-zA-Z]/g) || []).length;
+            return alphaCount < 3; // Less than 3 letters = poor quality
+          };
+          
           // Strategy 1: Use title if available and clean it
           if (data.title && data.title.length > 2) {
             humanFriendlyName = cleanHumanFriendlyName(data.title);
           }
           
           // Strategy 2: Use filename if title is not good enough
-          if (!humanFriendlyName || humanFriendlyName.length < 3) {
+          if (isPoorQualityName(humanFriendlyName)) {
             if (data.filename) {
               humanFriendlyName = cleanHumanFriendlyName(data.filename.replace(/\.pdf$/i, ''));
             } else if (data.originalFilename) {
@@ -12566,8 +12574,40 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
             }
           }
           
-          // Strategy 3: Fallback to document ID if nothing else works
-          if (!humanFriendlyName || humanFriendlyName.length < 3) {
+          // Strategy 3: Use AI to extract from content if we still have a poor quality name
+          if (isPoorQualityName(humanFriendlyName) && (content || data.content)) {
+            try {
+              console.log(`[CONTENT_REPAIR] Using AI to extract humanFriendlyName for ${guideline.id}...`);
+              const textForExtraction = (content || data.content).substring(0, 3000); // First 3000 chars
+              
+              const promptConfig = prompts['extractHumanFriendlyName'];
+              if (promptConfig) {
+                const extractionPrompt = promptConfig.prompt.replace('{{text}}', textForExtraction);
+                const messages = [
+                  { role: 'system', content: promptConfig.system_prompt },
+                  { role: 'user', content: extractionPrompt }
+                ];
+                
+                const aiResult = await sendToAI(messages, 'deepseek-chat', null, null);
+                if (aiResult && aiResult.content) {
+                  const extractedName = aiResult.content.trim()
+                    .replace(/^["']|["']$/g, '') // Remove quotes
+                    .replace(/\n.*/g, '') // Take only first line
+                    .substring(0, 100); // Limit length
+                  
+                  if (!isPoorQualityName(extractedName)) {
+                    humanFriendlyName = extractedName;
+                    console.log(`[CONTENT_REPAIR] ✓ AI extracted humanFriendlyName: "${humanFriendlyName}"`);
+                  }
+                }
+              }
+            } catch (aiError) {
+              console.error(`[CONTENT_REPAIR] AI extraction failed for ${guideline.id}:`, aiError.message);
+            }
+          }
+          
+          // Strategy 4: Fallback to document ID if nothing else works
+          if (isPoorQualityName(humanFriendlyName)) {
             humanFriendlyName = guideline.id.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '');
             humanFriendlyName = humanFriendlyName.split(' ').map(word => 
               word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
