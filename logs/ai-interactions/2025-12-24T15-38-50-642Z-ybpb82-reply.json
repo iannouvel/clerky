@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-38-50-642Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-8",
+  "token_usage": null,
+  "prompt_length": 1420,
+  "response_length": 1639,
+  "prompt_preview": "{\"prompt\":\"Chunk 8/8\",\"transcriptLength\":1270,\"transcriptPreview\":\"28yo, G3P1 (prev SVD), 26+2, BMI 25, Rh+ve\\nIssues: \\nConcerns regarding fibroids and potential impact on pregnancy, previous SVD wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhsx-retained-placenta-protocol-pdf\\\", \\\"title\\\": \\\"UHSx Retained Placenta protocol\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n  ...",
+  "full_data": null
+}
