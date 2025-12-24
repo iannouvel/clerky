@@ -12418,13 +12418,19 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
       const data = doc.data();
       const hasContent = data.content && data.content.trim().length > 0;
       const hasCondensed = data.condensed && data.condensed.trim().length > 0;
+      const hasValidHumanFriendlyName = data.humanFriendlyName && 
+          data.humanFriendlyName !== 'N/A' && 
+          data.humanFriendlyName !== 'Not available' &&
+          data.humanFriendlyName !== 'Unknown' &&
+          data.humanFriendlyName.length > 2;
       
-      if (forceRegenerate || !hasContent || !hasCondensed) {
+      if (forceRegenerate || !hasContent || !hasCondensed || !hasValidHumanFriendlyName) {
         guidelinesNeedingRepair.push({
           id: doc.id,
           data: data,
           missingContent: !hasContent,
-          missingCondensed: !hasCondensed
+          missingCondensed: !hasCondensed,
+          missingHumanFriendlyName: !hasValidHumanFriendlyName
         });
       }
     });
@@ -12540,6 +12546,39 @@ app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
           console.log(`[CONTENT_REPAIR] Condensed missing, using existing content`);
           updates.condensed = content;
           updated = true;
+        }
+
+        // Generate humanFriendlyName if missing or invalid
+        if (guideline.missingHumanFriendlyName) {
+          let humanFriendlyName = null;
+          
+          // Strategy 1: Use title if available and clean it
+          if (data.title && data.title.length > 2) {
+            humanFriendlyName = cleanHumanFriendlyName(data.title);
+          }
+          
+          // Strategy 2: Use filename if title is not good enough
+          if (!humanFriendlyName || humanFriendlyName.length < 3) {
+            if (data.filename) {
+              humanFriendlyName = cleanHumanFriendlyName(data.filename.replace(/\.pdf$/i, ''));
+            } else if (data.originalFilename) {
+              humanFriendlyName = cleanHumanFriendlyName(data.originalFilename.replace(/\.pdf$/i, ''));
+            }
+          }
+          
+          // Strategy 3: Fallback to document ID if nothing else works
+          if (!humanFriendlyName || humanFriendlyName.length < 3) {
+            humanFriendlyName = guideline.id.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '');
+            humanFriendlyName = humanFriendlyName.split(' ').map(word => 
+              word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+            ).join(' ');
+          }
+          
+          if (humanFriendlyName && humanFriendlyName.length > 2) {
+            updates.humanFriendlyName = humanFriendlyName;
+            updated = true;
+            console.log(`[CONTENT_REPAIR] ✓ Generated humanFriendlyName: "${humanFriendlyName}"`);
+          }
         }
 
         // Update Firestore if any changes were made
