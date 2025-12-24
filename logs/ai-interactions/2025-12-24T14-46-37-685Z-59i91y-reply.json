@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T14-46-37-685Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-6",
+  "token_usage": null,
+  "prompt_length": 4221,
+  "response_length": 6122,
+  "prompt_preview": "{\"prompt\":\"Chunk 6/8\",\"transcriptLength\":787,\"transcriptPreview\":\"30yo, G3P2 (2x SVD), 38+2, BMI 25, Rh+ve\\nIssues: Retained placenta, ongoing postpartum haemorrhage (PPH) \\nBackground: Spontaneous va...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"nice-2021-postnatal-care-pdf\\\", \\\"title\\\": \\\"NICE - 2021 - Postnatal Care\\\", \\\"relevance\\\": \\\"0.95\\\"},\\n    {\\\"id\\\":...",
+  "full_data": null
+}
