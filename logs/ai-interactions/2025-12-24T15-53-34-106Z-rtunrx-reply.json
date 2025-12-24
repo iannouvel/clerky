@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-53-34-106Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3944,
+  "response_length": 4028,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":1504,\"transcriptPreview\":\"25yo, G3P2, 28+2, BMI 24, Rh+ve, Hepatitis C Ab+ve\\nIssues: Concerns regarding vertical transmission of Hepatitis C to baby and poten...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1103\\\", \\\"title\\\": \\\"CG1103 Antenatal Care & Patient Info\\\", \\\"relevance\\\": \\\"0.90\\\"},\\n    {\\\"id\\\": \\\"cg1105\\\", \\...",
+  "full_data": null
+}
