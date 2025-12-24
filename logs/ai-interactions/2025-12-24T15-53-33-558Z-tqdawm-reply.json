@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-53-33-558Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-4",
+  "token_usage": null,
+  "prompt_length": 4403,
+  "response_length": 2237,
+  "prompt_preview": "{\"prompt\":\"Chunk 4/8\",\"transcriptLength\":1504,\"transcriptPreview\":\"25yo, G3P2, 28+2, BMI 24, Rh+ve, Hepatitis C Ab+ve\\nIssues: Concerns regarding vertical transmission of Hepatitis C to baby and poten...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"gtg-2015-management-of-vte-in-pregnancy-pdf\\\", \\\"title\\\": \\\"GTG 2015 - Management of VTE in pregnancy\\\", \\\"relev...",
+  "full_data": null
+}
