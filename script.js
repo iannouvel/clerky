@@ -1425,6 +1425,20 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
+    // Helper function to create a link to open guideline in PDF viewer
+    function createGuidelineViewerLink(guidelineId) {
+        if (!guidelineId) return '';
+        
+        // Create link data for the prepareViewerAuth function
+        const linkData = JSON.stringify({ guidelineId: guidelineId, searchText: '' });
+        
+        return `<a href="#" 
+                   onclick="window.prepareViewerAuth(event, this); return false;" 
+                   data-link-data='${linkData.replace(/'/g, "&#39;")}' 
+                   title="Open guideline in viewer" 
+                   class="guideline-viewer-link">🔗</a>`;
+    }
+
     // Helper function to format relevance score
     function formatRelevanceScore(relevanceValue) {
         console.log('[DEBUG] formatRelevanceScore called with:', {
@@ -1484,6 +1498,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
         essentialGuidelines.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
+            const viewerLink = createGuidelineViewerLink(g.id);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
@@ -1503,6 +1518,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                ${viewerLink}
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1519,6 +1535,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         remainingMostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
+            const viewerLink = createGuidelineViewerLink(g.id);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
@@ -1537,6 +1554,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                ${viewerLink}
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1553,6 +1571,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
+            const viewerLink = createGuidelineViewerLink(g.id);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
@@ -1571,6 +1590,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                ${viewerLink}
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1587,6 +1607,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
+            const viewerLink = createGuidelineViewerLink(g.id);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
@@ -1605,6 +1626,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                ${viewerLink}
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1621,6 +1643,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
+            const viewerLink = createGuidelineViewerLink(g.id);
             // Use displayName from database, fallback to humanFriendlyName, then title
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
@@ -1639,6 +1662,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                ${viewerLink}
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1800,6 +1824,30 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             width: 0;
             min-width: 0;
             flex-shrink: 0;
+        }
+        
+        .guideline-selection-interface .guideline-viewer-link {
+            text-decoration: none !important;
+            color: #0066cc !important;
+            font-size: 1.1em;
+            background: none !important;
+            padding: 0 2px !important;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            display: inline-block !important;
+            width: auto !important;
+            height: auto !important;
+            flex-shrink: 0;
+            white-space: nowrap;
+            min-width: 0;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+        
+        .guideline-selection-interface .guideline-viewer-link:hover {
+            opacity: 0.7;
         }
         
         .selection-info {
