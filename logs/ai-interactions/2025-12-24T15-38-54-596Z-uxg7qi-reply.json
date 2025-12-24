@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-38-54-596Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3944,
+  "response_length": 5730,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":1270,\"transcriptPreview\":\"28yo, G3P1 (prev SVD), 26+2, BMI 25, Rh+ve\\nIssues: \\nConcerns regarding fibroids and potential impact on pregnancy, previous SVD wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1103-antenatal-care-patient-info-pdf\\\", \\\"title\\\": \\\"CG1103 Antenatal Care & Patient Info\\\", \\\"relevance\\\": \\\"0.95...",
+  "full_data": null
+}
