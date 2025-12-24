@@ -1518,8 +1518,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                ${viewerLink}
+                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1554,8 +1553,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                ${viewerLink}
+                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1590,8 +1588,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                ${viewerLink}
+                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1626,8 +1623,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                ${viewerLink}
+                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1662,8 +1658,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                ${viewerLink}
+                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1763,6 +1758,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             overflow: hidden;
         }
         
+        .guideline-title-wrapper {
+            display: inline;
+            min-width: 0;
+        }
+        
         .guideline-title {
             font-weight: 500;
             color: #2c3e50;
@@ -1833,7 +1833,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             font-size: 1.1em;
             background: none !important;
             padding: 0 2px !important;
-            margin: 0 !important;
+            margin: 0 0 0 6px !important;
             border: none !important;
             box-shadow: none !important;
             border-radius: 0 !important;
