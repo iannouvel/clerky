@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-38-51-558Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-7",
+  "token_usage": null,
+  "prompt_length": 4102,
+  "response_length": 1977,
+  "prompt_preview": "{\"prompt\":\"Chunk 7/8\",\"transcriptLength\":1270,\"transcriptPreview\":\"28yo, G3P1 (prev SVD), 26+2, BMI 25, Rh+ve\\nIssues: \\nConcerns regarding fibroids and potential impact on pregnancy, previous SVD wit...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"uhs-anaemia-in-pregnancy-guideline-pdf\\\", \\\"title\\\": \\\"UHS Anaemia in pregnancy guideline\\\", \\\"relevance\\\": \\\"0.9\\\"}...",
+  "full_data": null
+}
