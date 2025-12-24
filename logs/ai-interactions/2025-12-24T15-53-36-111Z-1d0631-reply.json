@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-53-36-111Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-3",
+  "token_usage": null,
+  "prompt_length": 4029,
+  "response_length": 5936,
+  "prompt_preview": "{\"prompt\":\"Chunk 3/8\",\"transcriptLength\":1504,\"transcriptPreview\":\"25yo, G3P2, 28+2, BMI 24, Rh+ve, Hepatitis C Ab+ve\\nIssues: Concerns regarding vertical transmission of Hepatitis C to baby and poten...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg20013-preterm-birth-risk-pathway-pdf\\\", \\\"title\\\": \\\"CG20013 Preterm birth risk pathway\\\", \\\"relevance\\\": \\\"0....",
+  "full_data": null
+}
