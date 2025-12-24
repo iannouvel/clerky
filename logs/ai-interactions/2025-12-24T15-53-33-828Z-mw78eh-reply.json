@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T15-53-33-828Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5336,
+  "response_length": 2076,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1504,\"transcriptPreview\":\"25yo, G3P2, 28+2, BMI 24, Rh+ve, Hepatitis C Ab+ve\\nIssues: Concerns regarding vertical transmission of Hepatitis C to baby and poten...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2017-prevention-of-early-onset-neonatal-group-b-streptococcal-disease-pdf\\\", \\\"title\\\": \\\"Prevention of Ear...",
+  "full_data": null
+}
