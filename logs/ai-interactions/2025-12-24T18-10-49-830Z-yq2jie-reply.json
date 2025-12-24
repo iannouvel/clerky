@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T18-10-49-830Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-2",
+  "token_usage": null,
+  "prompt_length": 3942,
+  "response_length": 5845,
+  "prompt_preview": "{\"prompt\":\"Chunk 2/8\",\"transcriptLength\":1578,\"transcriptPreview\":\"28yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Intrapartum fetal heart rate concerns with variable decelerations\\nBackground: Spontaneous o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"cg1130-assisted-vaginal-birth-guideline-pdf\\\", \\\"title\\\": \\\"CG1130 Assisted Vaginal Birth Guideline\\\", \\\"relevance\\\"...",
+  "full_data": null
+}
