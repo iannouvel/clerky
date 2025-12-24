@@ -1,0 +1,13 @@
+{
+  "type": "reply",
+  "timestamp": "2025-12-24T18-10-51-327Z",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "endpoint": "findRelevantGuidelines-chunk-1",
+  "token_usage": null,
+  "prompt_length": 5334,
+  "response_length": 6965,
+  "prompt_preview": "{\"prompt\":\"Chunk 1/8\",\"transcriptLength\":1578,\"transcriptPreview\":\"28yo, G1P0, 41+2, BMI 25, Rh+ve\\nIssues: Intrapartum fetal heart rate concerns with variable decelerations\\nBackground: Spontaneous o...",
+  "response_preview": "{\n  \"success\": true,\n  \"aiResponse\": \"```json\\n{\\n  \\\"mostRelevant\\\": [\\n    {\\\"id\\\": \\\"bjog-2016-prevention-and-management-of-postpartum-haemorrhage-pdf\\\", \\\"title\\\": \\\"BJOG - 2016 - Prevention and M...",
+  "full_data": null
+}
