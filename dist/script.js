@@ -1432,11 +1432,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         // Create link data for the prepareViewerAuth function
         const linkData = JSON.stringify({ guidelineId: guidelineId, searchText: '' });
         
+        // Wrap emoji in span to prevent content sanitization from stripping it
         return `<a href="#" 
                    onclick="window.prepareViewerAuth(event, this); return false;" 
                    data-link-data='${linkData.replace(/'/g, "&#39;")}' 
                    title="Open guideline in viewer" 
-                   class="guideline-viewer-link">🔗</a>`;
+                   class="guideline-viewer-link"><span class="link-icon">&#128279;</span></a>`;
     }
 
     // Helper function to format relevance score
@@ -1848,6 +1849,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .guideline-selection-interface .guideline-viewer-link:hover {
             opacity: 0.7;
+        }
+        
+        .guideline-selection-interface .guideline-viewer-link .link-icon {
+            display: inline;
+            font-size: 1em;
         }
         
         .selection-info {
