@@ -2926,6 +2926,77 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle Ingest to Pinecone button
+        const ingestToPineconeBtn = document.getElementById('ingestToPineconeBtn');
+        
+        if (ingestToPineconeBtn) {
+            ingestToPineconeBtn.addEventListener('click', async function() {
+                if (!confirm('This will re-ingest all guidelines to Pinecone vector database.\n\nThis updates the search index with current humanFriendlyName values.\n\nThis may take several minutes. Continue?')) {
+                    return;
+                }
+
+                ingestToPineconeBtn.disabled = true;
+                const originalText = ingestToPineconeBtn.textContent;
+                ingestToPineconeBtn.textContent = '⏳ Ingesting...';
+                
+                const maintenanceStatus = document.getElementById('maintenanceStatus');
+                if (maintenanceStatus) {
+                    maintenanceStatus.style.display = 'block';
+                    maintenanceStatus.textContent = 'Starting Pinecone ingestion...';
+                    maintenanceStatus.style.backgroundColor = '#fff3cd';
+                    maintenanceStatus.style.border = '1px solid #ffc107';
+                    maintenanceStatus.style.color = '#856404';
+                }
+
+                try {
+                    const user = auth.currentUser;
+                    if (!user) {
+                        throw new Error('Please sign in first');
+                    }
+                    const token = await user.getIdToken();
+
+                    const response = await fetch(`${SERVER_URL}/ingestGuidelines`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ dryRun: false })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        if (maintenanceStatus) {
+                            maintenanceStatus.innerHTML = `
+                                <strong style="color: #28a745;">✓ Ingestion Complete!</strong><br>
+                                Processed: ${result.processedGuidelines || 0} guidelines<br>
+                                Chunks uploaded: ${result.uploaded || result.totalChunks || 0}<br>
+                                ${result.guidelinesWithoutContent ? `Skipped (no content): ${result.guidelinesWithoutContent}` : ''}
+                            `;
+                            maintenanceStatus.style.backgroundColor = '#d4edda';
+                            maintenanceStatus.style.border = '1px solid #c3e6cb';
+                            maintenanceStatus.style.color = '#155724';
+                        }
+                        console.log('[PINECONE_INGEST] Ingestion complete:', result);
+                    } else {
+                        throw new Error(result.error || 'Ingestion failed');
+                    }
+                } catch (error) {
+                    console.error('Error ingesting to Pinecone:', error);
+                    if (maintenanceStatus) {
+                        maintenanceStatus.innerHTML = `<strong style="color: #dc3545;">✗ Error:</strong> ${error.message}`;
+                        maintenanceStatus.style.backgroundColor = '#f8d7da';
+                        maintenanceStatus.style.border = '1px solid #f5c6cb';
+                        maintenanceStatus.style.color = '#721c24';
+                    }
+                } finally {
+                    ingestToPineconeBtn.disabled = false;
+                    ingestToPineconeBtn.textContent = originalText;
+                }
+            });
+        }
+
         // Re-extract PDF content handlers
         const reextractGuidelineSelect = document.getElementById('reextractGuidelineSelect');
         const reextractSingleBtn = document.getElementById('reextractSingleBtn');
