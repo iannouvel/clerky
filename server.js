@@ -5711,6 +5711,10 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         let categories = vectorDB.categoriseByScore(queryResult.matches);
         timer.step('Categorise results');
         
+        // Enrich results with Firestore data for proper display names
+        categories = await enrichWithFirestoreData(categories);
+        timer.step('Enrich with Firestore');
+        
         // Optional: AI reranking for better accuracy (single AI call on top candidates)
         if (ragPrefs.ragReranking && categories.mostRelevant.length > 0) {
             try {
@@ -5734,6 +5738,93 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
     } catch (error) {
         console.error('[RAG] Search failed:', error.message || error.toString(), error.stack ? error.stack.split('\n').slice(0, 3).join(' | ') : '');
         throw error;
+    }
+}
+
+/**
+ * Enrich Pinecone results with Firestore data for proper display names
+ * This ensures correct humanFriendlyName and organisation even if Pinecone data is stale
+ */
+async function enrichWithFirestoreData(categories) {
+    try {
+        // Collect all unique guideline IDs from all categories
+        const allGuidelines = [
+            ...categories.mostRelevant,
+            ...categories.potentiallyRelevant,
+            ...categories.lessRelevant,
+            ...categories.notRelevant
+        ];
+        
+        if (allGuidelines.length === 0) {
+            return categories;
+        }
+        
+        // Get unique IDs - handle both "070" and "070-pdf" formats
+        const guidelineIds = [...new Set(allGuidelines.map(g => g.id))];
+        
+        // Batch fetch from Firestore (max 30 at a time due to Firestore limits)
+        const firestoreData = {};
+        for (let i = 0; i < guidelineIds.length; i += 30) {
+            const batch = guidelineIds.slice(i, i + 30);
+            
+            for (const id of batch) {
+                try {
+                    // Try exact match first
+                    let docRef = admin.firestore().collection('guidelines').doc(id);
+                    let doc = await docRef.get();
+                    
+                    // If not found, try with "-pdf" suffix (Pinecone may have old IDs)
+                    if (!doc.exists && !id.endsWith('-pdf')) {
+                        docRef = admin.firestore().collection('guidelines').doc(id + '-pdf');
+                        doc = await docRef.get();
+                    }
+                    
+                    // If still not found, try without "-pdf" suffix
+                    if (!doc.exists && id.endsWith('-pdf')) {
+                        docRef = admin.firestore().collection('guidelines').doc(id.replace(/-pdf$/, ''));
+                        doc = await docRef.get();
+                    }
+                    
+                    if (doc.exists) {
+                        const data = doc.data();
+                        firestoreData[id] = {
+                            humanFriendlyName: data.humanFriendlyName || data.displayName || data.title,
+                            displayName: data.displayName || data.humanFriendlyName || data.title,
+                            organisation: data.organisation || data.organization,
+                            title: data.title
+                        };
+                    }
+                } catch (err) {
+                    console.warn(`[RAG] Failed to fetch Firestore data for ${id}:`, err.message);
+                }
+            }
+        }
+        
+        // Enrich each guideline with Firestore data
+        const enrichGuideline = (g) => {
+            const fsData = firestoreData[g.id];
+            if (fsData) {
+                return {
+                    ...g,
+                    humanFriendlyName: fsData.humanFriendlyName || g.humanFriendlyName || g.title,
+                    displayName: fsData.displayName || g.displayName || fsData.humanFriendlyName || g.title,
+                    organisation: fsData.organisation || g.organisation || 'Unknown',
+                    title: fsData.title || g.title
+                };
+            }
+            return g;
+        };
+        
+        return {
+            mostRelevant: categories.mostRelevant.map(enrichGuideline),
+            potentiallyRelevant: categories.potentiallyRelevant.map(enrichGuideline),
+            lessRelevant: categories.lessRelevant.map(enrichGuideline),
+            notRelevant: categories.notRelevant.map(enrichGuideline)
+        };
+        
+    } catch (error) {
+        console.error('[RAG] Error enriching with Firestore data:', error.message);
+        return categories; // Return original on error
     }
 }
 
