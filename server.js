@@ -5788,10 +5788,8 @@ async function enrichWithFirestoreData(categories) {
                     if (doc.exists) {
                         const data = doc.data();
                         firestoreData[id] = {
-                            humanFriendlyName: data.humanFriendlyName || data.displayName || data.title,
-                            displayName: data.displayName || data.humanFriendlyName || data.title,
-                            organisation: data.organisation || data.organization,
-                            title: data.title
+                            humanFriendlyName: data.humanFriendlyName,
+                            organisation: data.organisation || data.organization
                         };
                     }
                 } catch (err) {
@@ -5800,16 +5798,14 @@ async function enrichWithFirestoreData(categories) {
             }
         }
         
-        // Enrich each guideline with Firestore data
+        // Enrich each guideline with Firestore data - use humanFriendlyName as the display title
         const enrichGuideline = (g) => {
             const fsData = firestoreData[g.id];
-            if (fsData) {
+            if (fsData && fsData.humanFriendlyName) {
                 return {
                     ...g,
-                    humanFriendlyName: fsData.humanFriendlyName || g.humanFriendlyName || g.title,
-                    displayName: fsData.displayName || g.displayName || fsData.humanFriendlyName || g.title,
-                    organisation: fsData.organisation || g.organisation || 'Unknown',
-                    title: fsData.title || g.title
+                    humanFriendlyName: fsData.humanFriendlyName,
+                    organisation: fsData.organisation || g.organisation || 'Unknown'
                 };
             }
             return g;
