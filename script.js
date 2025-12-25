@@ -1235,7 +1235,7 @@ function displayRelevantGuidelines(categories) {
             // console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
         } else {
             // No reliable download information available - don't show a link
-            const displayTitle = guidelineToUse.displayName || guidelineToUse.humanFriendlyName || guidelineToUse.title || guidelineToUse.id;
+            const displayTitle = guidelineToUse.humanFriendlyName || guidelineToUse.title || guidelineToUse.id;
             console.warn('[PDF-LINK] Missing PDF download link for guideline:', {
                 id: guideline.id,
                 title: displayTitle,
@@ -1265,9 +1265,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -1279,9 +1278,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -1293,9 +1291,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -1307,9 +1304,8 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
@@ -1500,9 +1496,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         essentialGuidelines.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             const viewerLink = createGuidelineViewerLink(g.id);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -1536,9 +1531,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         remainingMostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             const viewerLink = createGuidelineViewerLink(g.id);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -1571,9 +1565,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             const viewerLink = createGuidelineViewerLink(g.id);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -1606,9 +1599,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             const viewerLink = createGuidelineViewerLink(g.id);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -1641,9 +1633,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
             const viewerLink = createGuidelineViewerLink(g.id);
-            // Use displayName from database, fallback to humanFriendlyName, then title
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use humanFriendlyName from server enrichment, fallback to title
+            const displayTitle = g.humanFriendlyName || g.title;
             const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -13581,9 +13572,9 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             
             <div class="guidelines-selection-list">
                 ${mostRelevantGuidelines.map((guideline, index) => {
-                    const guidelineData = window.globalGuidelines[guideline.id];
-                    const displayTitle = guidelineData?.displayName || guideline.displayName || guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
-                    const organization = guidelineData?.organisation || 'Unknown';
+                    // Use humanFriendlyName from server enrichment
+                    const displayTitle = guideline.humanFriendlyName || guideline.title || guideline.id;
+                    const organization = guideline.organisation || 'Unknown';
                     const relevanceScore = guideline.relevance || 'N/A';
                     
                     return `
