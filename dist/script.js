@@ -1567,7 +1567,19 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const viewerLink = createGuidelineViewerLink(g.id);
             // Use humanFriendlyName from server enrichment, fallback to title
             const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            // Log warning for guidelines with unknown organisation - helps debug filtering issues
+            if (!g.organisation) {
+                console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
+                    id: g.id,
+                    title: displayTitle,
+                    scope: g.scope || 'undefined',
+                    hospitalTrust: g.hospitalTrust || 'undefined',
+                    relevance: g.relevance
+                });
+            }
+            
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : ' - Unknown';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1601,7 +1613,19 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const viewerLink = createGuidelineViewerLink(g.id);
             // Use humanFriendlyName from server enrichment, fallback to title
             const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            
+            // Log warning for guidelines with unknown organisation - helps debug filtering issues
+            if (!g.organisation) {
+                console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
+                    id: g.id,
+                    title: displayTitle,
+                    scope: g.scope || 'undefined',
+                    hospitalTrust: g.hospitalTrust || 'undefined',
+                    relevance: g.relevance
+                });
+            }
+            
+            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : ' - Unknown';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -11656,6 +11680,8 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
         
         filtered = guidelines.filter(g => {
             const guidelineScope = g.scope;
+            const orgUpper = (g.organisation || '').toUpperCase().trim();
+            const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.includes(orgUpper);
             
             // If guideline has a hospitalTrust set to a different trust, always exclude it
             if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
@@ -11663,8 +11689,18 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
                 return false;
             }
             
-            // Explicitly marked as national
+            // Explicitly marked as national - verify it has a recognized org
             if (guidelineScope === 'national') {
+                if (hasRecognizedOrg) {
+                    return true;
+                }
+                // If marked as national but no recognized org, check if it matches user's trust
+                if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
+                    return true;
+                }
+                // Log warning for unrecognized "national" guidelines
+                console.warn(`[SCOPE_FILTER] WARNING: Guideline marked as 'national' but has unknown org: ${g.id || g.title} (org: ${g.organisation || 'Unknown'})`);
+                // Still include it but log the warning - might need metadata fix
                 return true;
             }
             
@@ -11675,10 +11711,8 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
             
             // If scope is not set, check if it has a recognized national organization
             if (!guidelineScope) {
-                const orgUpper = (g.organisation || '').toUpperCase().trim();
-                
                 // If it's from a recognized national organization, include it
-                if (KNOWN_NATIONAL_ORGS.includes(orgUpper)) {
+                if (hasRecognizedOrg) {
                     return true;
                 }
                 
