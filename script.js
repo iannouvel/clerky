@@ -3046,7 +3046,9 @@ async function loadGuidelinesFromFirestore() {
                         condensed: g.condensed,
                         organisation: g.organisation,
                         downloadUrl: g.downloadUrl,
-                        originalFilename: g.originalFilename
+                        originalFilename: g.originalFilename,
+                        hospitalTrust: g.hospitalTrust,
+                        scope: g.scope
                     };
                     return acc;
                 }, {});
@@ -3130,7 +3132,9 @@ async function loadGuidelinesFromFirestore() {
                 condensed: g.condensed,
                 organisation: g.organisation,
                 downloadUrl: g.downloadUrl,
-                originalFilename: g.originalFilename
+                originalFilename: g.originalFilename,
+                hospitalTrust: g.hospitalTrust,
+                scope: g.scope
             };
             return acc;
         }, {});
@@ -11681,7 +11685,8 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
         filtered = guidelines.filter(g => {
             const guidelineScope = g.scope;
             const orgUpper = (g.organisation || '').toUpperCase().trim();
-            const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.includes(orgUpper);
+            // Use substring matching - check if org contains any known national org abbreviation
+            const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.some(org => orgUpper.includes(org));
             
             // If guideline has a hospitalTrust set to a different trust, always exclude it
             if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
@@ -13181,6 +13186,44 @@ function abbreviateOrganization(orgName) {
         'RCM': 'RCM',
         'Royal College of Nursing': 'RCN',
         'RCN': 'RCN',
+        'Scottish Intercollegiate Guidelines Network': 'SIGN',
+        'SIGN': 'SIGN',
+        
+        // UK Specialist Societies
+        'British Association for Sexual Health and HIV': 'BASHH',
+        'BASHH': 'BASHH',
+        'Faculty of Sexual and Reproductive Healthcare': 'FSRH',
+        'Faculty of Sexual & Reproductive Healthcare': 'FSRH',
+        'FSRH': 'FSRH',
+        'British HIV Association': 'BHIVA',
+        'BHIVA': 'BHIVA',
+        'British Association of Perinatal Medicine': 'BAPM',
+        'BAPM': 'BAPM',
+        'British Society for Haematology': 'BSH',
+        'BSH': 'BSH',
+        'British Journal of Obstetrics and Gynaecology': 'BJOG',
+        'BJOG': 'BJOG',
+        'British Menopause Society': 'BMS',
+        'BMS': 'BMS',
+        'British Society for Gynaecological Endoscopy': 'BSGE',
+        'BSGE': 'BSGE',
+        'British Society of Urogynaecology': 'BSUG',
+        'BSUG': 'BSUG',
+        'British Gynaecological Cancer Society': 'BGCS',
+        'British Gynaecological Cancer Society (BGCS)': 'BGCS',
+        'BGCS': 'BGCS',
+        'British Society for Colposcopy and Cervical Pathology': 'BSCCP',
+        'BSCCP': 'BSCCP',
+        'British Fertility Society': 'BFS',
+        'BFS': 'BFS',
+        'British Maternal and Fetal Medicine Society': 'BMFMS',
+        'British Maternal & Fetal Medicine Society': 'BMFMS',
+        'BMFMS': 'BMFMS',
+        'British Society for Paediatric and Adolescent Gynaecology': 'BritSPAG',
+        'BritSPAG': 'BritSPAG',
+        'UK National Screening Committee': 'UK NSC',
+        'UK NSC': 'UK NSC',
+        'NHS England': 'NHS England',
         
         // US Organizations
         'American College of Obstetricians and Gynecologists': 'ACOG',
