@@ -11651,14 +11651,48 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
         console.log('[DEBUG] Filtered to local guidelines for', hospitalTrust, ':', filtered.length);
     } else if (scope === 'both') {
         // National guidelines + local guidelines for user's trust
+        // IMPORTANT: More defensive filtering to prevent guidelines from other trusts slipping through
+        const KNOWN_NATIONAL_ORGS = ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG', 'ACOG', 'SOGC', 'FIGO', 'ESHRE', 'BMS', 'BSGE', 'BSUG', 'BGCS', 'BSCCP', 'BFS', 'BMFMS', 'BRITSPAG', 'UK NSC', 'NHS ENGLAND'];
+        
         filtered = guidelines.filter(g => {
-            const guidelineScope = g.scope || 'national';
+            const guidelineScope = g.scope;
+            
+            // If guideline has a hospitalTrust set to a different trust, always exclude it
+            if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
+                console.log(`[DEBUG] Excluding guideline from different trust: ${g.id || g.title} (trust: ${g.hospitalTrust})`);
+                return false;
+            }
+            
+            // Explicitly marked as national
             if (guidelineScope === 'national') {
                 return true;
             }
+            
+            // Explicitly marked as local for user's trust
             if (guidelineScope === 'local' && hospitalTrust && g.hospitalTrust === hospitalTrust) {
                 return true;
             }
+            
+            // If scope is not set, check if it has a recognized national organization
+            if (!guidelineScope) {
+                const orgUpper = (g.organisation || '').toUpperCase().trim();
+                
+                // If it's from a recognized national organization, include it
+                if (KNOWN_NATIONAL_ORGS.includes(orgUpper)) {
+                    return true;
+                }
+                
+                // If no recognized org AND matches user's trust, include it
+                if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
+                    return true;
+                }
+                
+                // If no scope, no recognized org, and no matching trust, this is likely
+                // a local guideline that wasn't properly tagged - exclude it
+                console.log(`[DEBUG] Excluding untagged guideline (no scope, no recognized org): ${g.id || g.title} (org: ${g.organisation || 'Unknown'})`);
+                return false;
+            }
+            
             return false;
         });
         console.log('[DEBUG] Filtered to both guidelines:', filtered.length);
