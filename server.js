@@ -6017,7 +6017,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
           const guidelineScope = g.scope;
           const detectedOrg = detectGuidelineOrganization(g);
           const orgUpper = (detectedOrg || '').toUpperCase().trim();
-          const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.includes(orgUpper);
+          // Use substring matching - check if org contains any known national org abbreviation
+          const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.some(org => orgUpper.includes(org));
           
           // If guideline has a hospitalTrust set to a different trust, always exclude it
           if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
