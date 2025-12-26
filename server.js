@@ -6015,6 +6015,9 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         
         guidelines = guidelines.filter(g => {
           const guidelineScope = g.scope;
+          const detectedOrg = detectGuidelineOrganization(g);
+          const orgUpper = (detectedOrg || '').toUpperCase().trim();
+          const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.includes(orgUpper);
           
           // If guideline has a hospitalTrust set to a different trust, always exclude it
           if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
@@ -6022,8 +6025,18 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             return false;
           }
           
-          // Explicitly marked as national
+          // Explicitly marked as national - verify it has a recognized org
           if (guidelineScope === 'national') {
+            if (hasRecognizedOrg) {
+              return true;
+            }
+            // If marked as national but no recognized org, check if it matches user's trust
+            if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
+              return true;
+            }
+            // Log warning for unrecognized "national" guidelines
+            console.warn(`[SCOPE_FILTER] WARNING: Guideline marked as 'national' but has unknown org: ${g.id || g.title} (org: ${detectedOrg || 'Unknown'})`);
+            // Still include it but log the warning - might need metadata fix
             return true;
           }
           
@@ -6034,11 +6047,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
           
           // If scope is not set, check if it has a recognized national organization
           if (!guidelineScope) {
-            const detectedOrg = detectGuidelineOrganization(g);
-            const orgUpper = (detectedOrg || '').toUpperCase().trim();
-            
             // If it's from a recognized national organization, include it
-            if (KNOWN_NATIONAL_ORGS.includes(orgUpper)) {
+            if (hasRecognizedOrg) {
               return true;
             }
             
