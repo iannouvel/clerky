@@ -1150,9 +1150,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1166,9 +1166,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1182,9 +1182,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1198,9 +1198,9 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1236,6 +1236,42 @@ function updateAnalyseAndResetButtons(hasContent) {
 
 // Expose helper globally so inline scripts (e.g. TipTap initialiser in index.html) can use it
 window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
+
+// Helper function to get a clean display title for a guideline
+function getCleanDisplayTitle(g, guidelineData) {
+    // Get the best available title, preferring humanFriendlyName over title
+    let rawTitle = guidelineData?.displayName || 
+                   g.displayName || 
+                   guidelineData?.humanFriendlyName || 
+                   g.humanFriendlyName || 
+                   guidelineData?.title || 
+                   g.title || 
+                   g.id;
+    
+    // Strip "Unknown" from the title if it appears
+    if (rawTitle && typeof rawTitle === 'string') {
+        rawTitle = rawTitle.replace(/\s*-\s*Unknown\s*/gi, '').replace(/\s*Unknown\s*/gi, '').trim();
+    }
+    
+    // If title is just an ID (like "052" or "052-pdf"), try to construct a better name
+    if (rawTitle && (rawTitle.match(/^[\d-]+(\.pdf)?$/i) || rawTitle.length < 5)) {
+        // Try to get a better name from humanFriendlyName or construct from ID
+        const betterName = guidelineData?.humanFriendlyName || 
+                          g.humanFriendlyName || 
+                          guidelineData?.title || 
+                          g.title;
+        
+        if (betterName && betterName !== rawTitle && !betterName.includes('Unknown')) {
+            rawTitle = betterName;
+        } else {
+            // Construct a name from the ID (e.g., "052-pdf" -> "Guideline 052")
+            const idPart = g.id.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '').trim();
+            rawTitle = `Guideline ${idPart}`;
+        }
+    }
+    
+    return rawTitle || g.id;
+}
 
 // New function to create guideline selection interface with checkboxes
 function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
@@ -1371,9 +1407,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
         essentialGuidelines.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1408,9 +1444,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         remainingMostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1444,9 +1480,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1495,9 +1531,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -1531,9 +1567,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use displayName from database, fallback to humanFriendlyName, then title
+            // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // Use organisation if available, otherwise fall back to hospitalTrust
             const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
@@ -4006,6 +4042,28 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 .map(g => {
                     // Enrich with local cached data (has hospitalTrust, organisation, etc.)
                     const localData = window.globalGuidelines?.[g.id] || {};
+                    
+                    // Detailed logging for debugging "Unknown" issues
+                    const hasUnknown = (g.title && g.title.includes('Unknown')) || 
+                                      (g.humanFriendlyName && g.humanFriendlyName.includes('Unknown')) ||
+                                      (localData.title && localData.title.includes('Unknown')) ||
+                                      (localData.humanFriendlyName && localData.humanFriendlyName.includes('Unknown'));
+                    
+                    if (hasUnknown || !g.organisation && !localData.organisation) {
+                        console.log(`[DEBUG] Guideline data for ${g.id}:`, {
+                            id: g.id,
+                            server_title: g.title,
+                            server_humanFriendlyName: g.humanFriendlyName,
+                            server_organisation: g.organisation,
+                            server_hospitalTrust: g.hospitalTrust,
+                            local_title: localData.title,
+                            local_humanFriendlyName: localData.humanFriendlyName,
+                            local_organisation: localData.organisation,
+                            local_hospitalTrust: localData.hospitalTrust,
+                            local_displayName: localData.displayName
+                        });
+                    }
+                    
                     return {
                         ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
                         ...g,          // Server response data (has relevance score)
