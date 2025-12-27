@@ -1579,7 +1579,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                 });
             }
             
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : ' - Unknown';
+            // Fall back to hospitalTrust if organisation is missing
+            const org = g.organisation || g.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1625,7 +1627,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                 });
             }
             
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : ' - Unknown';
+            // Fall back to hospitalTrust if organisation is missing
+            const org = g.organisation || g.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -11680,7 +11684,32 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
     } else if (scope === 'both') {
         // National guidelines + local guidelines for user's trust
         // IMPORTANT: More defensive filtering to prevent guidelines from other trusts slipping through
-        const KNOWN_NATIONAL_ORGS = ['RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG', 'ACOG', 'SOGC', 'FIGO', 'ESHRE', 'BMS', 'BSGE', 'BSUG', 'BGCS', 'BSCCP', 'BFS', 'BMFMS', 'BRITSPAG', 'UK NSC', 'NHS ENGLAND'];
+        const KNOWN_NATIONAL_ORGS = [
+            // Abbreviations
+            'RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG', 
+            'ACOG', 'SOGC', 'FIGO', 'ESHRE', 'BMS', 'BSGE', 'BSUG', 'BGCS', 'BSCCP', 'BFS', 
+            'BMFMS', 'BRITSPAG', 'UK NSC', 'NHS ENGLAND', 'NHS',
+            // Full names (uppercase for matching)
+            'ROYAL COLLEGE OF OBSTETRICIANS AND GYNAECOLOGISTS',
+            'ROYAL COLLEGE OF OBSTETRICIANS & GYNAECOLOGISTS',
+            'NATIONAL INSTITUTE FOR HEALTH AND CARE EXCELLENCE',
+            'NATIONAL INSTITUTE FOR HEALTH AND CLINICAL EXCELLENCE',
+            'BRITISH SOCIETY FOR HAEMATOLOGY',
+            'BRITISH ASSOCIATION FOR SEXUAL HEALTH AND HIV',
+            'FACULTY OF SEXUAL AND REPRODUCTIVE HEALTHCARE',
+            'BRITISH HIV ASSOCIATION',
+            'BRITISH ASSOCIATION OF PERINATAL MEDICINE',
+            'BRITISH MENOPAUSE SOCIETY',
+            'BRITISH SOCIETY FOR GYNAECOLOGICAL ENDOSCOPY',
+            'BRITISH SOCIETY OF UROGYNAECOLOGY',
+            'BRITISH GYNAECOLOGICAL CANCER SOCIETY',
+            'BRITISH SOCIETY FOR COLPOSCOPY AND CERVICAL PATHOLOGY',
+            'BRITISH FERTILITY SOCIETY',
+            'BRITISH MATERNAL AND FETAL MEDICINE SOCIETY',
+            'WORLD HEALTH ORGANIZATION',
+            'WORLD HEALTH ORGANISATION',
+            'SCOTTISH INTERCOLLEGIATE GUIDELINES NETWORK'
+        ];
         
         filtered = guidelines.filter(g => {
             const guidelineScope = g.scope;
@@ -13250,10 +13279,11 @@ function abbreviateOrganization(orgName) {
         'FIGO': 'FIGO',
         
         // Hospital Trusts and Local Organizations
-        'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
-        'University Hospitals Sussex': 'University Hospitals Sussex',
-        'Sussex University Hospitals': 'University Hospitals Sussex',
-        'University Hospital Sussex': 'University Hospitals Sussex',
+        'University Hospitals Sussex NHS Foundation Trust': 'UHSussex',
+        'University Hospitals Sussex': 'UHSussex',
+        'Sussex University Hospitals': 'UHSussex',
+        'University Hospital Sussex': 'UHSussex',
+        'UHSussex': 'UHSussex',
         'Brighton and Sussex University Hospitals': 'Brighton & Sussex UH',
         'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
         'NHS Foundation Trust': 'NHS Trust',
