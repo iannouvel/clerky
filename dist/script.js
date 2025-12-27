@@ -1690,9 +1690,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     }
 
     htmlContent += `
-            <div class="selection-info">
-                <p><strong>How it works:</strong> Selected guidelines will be processed one-by-one. After each guideline is processed and changes are incorporated into your transcript, the system will move to the next selected guideline.</p>
-            </div>
         </div>
         
         <style>
@@ -4158,12 +4155,30 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             sampleRelevanceType: data.categories.mostRelevant?.[0] ? typeof data.categories.mostRelevant[0].relevance : 'no most relevant'
         });
 
+        // Enrich server response with local cached data (ensures hospitalTrust and organisation are available)
+        // Server cache may not have latest metadata, but client's IndexedDB cache does
+        const enrichedCategories = {};
+        for (const [category, guidelines] of Object.entries(data.categories)) {
+            enrichedCategories[category] = (guidelines || []).map(g => {
+                const localData = window.globalGuidelines?.[g.id] || {};
+                return {
+                    ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
+                    ...g,          // Server response data (has relevance score)
+                    // Ensure key fields are preserved from local cache if missing in server response
+                    hospitalTrust: g.hospitalTrust || localData.hospitalTrust,
+                    organisation: g.organisation || localData.organisation,
+                    humanFriendlyName: g.humanFriendlyName || localData.humanFriendlyName || g.title
+                };
+            });
+        }
+        console.log('[DEBUG] Enriched categories with local cache data');
+
         // Update progress with completion
         const completionMessage = 'Analysis complete – categorising relevant guidelines...';
         updateUser(completionMessage, true);
 
         // Process and display the results with the new selection interface
-        createGuidelineSelectionInterface(data.categories, window.relevantGuidelines);
+        createGuidelineSelectionInterface(enrichedCategories, window.relevantGuidelines);
 
         // Add final summary via status message
         const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
