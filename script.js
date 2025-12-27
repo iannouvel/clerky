@@ -29,121 +29,6 @@ if (document.readyState === 'loading') {
     loadVersionNumber();
 }
 
-// ===== Server Warmup Detection =====
-// Track server readiness state for cold start detection
-window.serverReady = false;
-window.serverStatusCheckInterval = null;
-
-// Check if server is ready (guidelines cache populated)
-async function checkServerStatus() {
-    try {
-        const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
-        const response = await fetch(`${serverUrl}/serverStatus`, {
-            method: 'GET',
-            headers: { 'Accept': 'application/json' }
-        });
-        
-        if (!response.ok) {
-            console.warn('[SERVER_STATUS] Server status check failed:', response.status);
-            return false;
-        }
-        
-        const data = await response.json();
-        console.log('[SERVER_STATUS]', data);
-        return data.ready === true;
-    } catch (error) {
-        console.warn('[SERVER_STATUS] Error checking server status:', error.message);
-        return false;
-    }
-}
-
-// Update UI based on server readiness
-function updateServerStatusUI(isReady) {
-    const analyseBtn = document.getElementById('analyseBtn');
-    const statusMessage = document.getElementById('serverStatusMessage');
-    
-    window.serverReady = isReady;
-    
-    if (!isReady) {
-        // Server is warming up - disable analyse button
-        if (analyseBtn) {
-            analyseBtn.classList.add('warming-up');
-            analyseBtn.title = 'Server is warming up, please wait...';
-        }
-        if (statusMessage) {
-            statusMessage.style.display = 'flex';
-            statusMessage.innerHTML = '<span class="spinner-icon spinning">⟳</span> Server warming up...';
-        }
-    } else {
-        // Server is ready - enable analyse button
-        if (analyseBtn) {
-            analyseBtn.classList.remove('warming-up');
-            analyseBtn.title = 'Analyse';
-        }
-        if (statusMessage) {
-            statusMessage.style.display = 'none';
-            statusMessage.innerHTML = '';
-        }
-        
-        // Clear polling interval
-        if (window.serverStatusCheckInterval) {
-            clearInterval(window.serverStatusCheckInterval);
-            window.serverStatusCheckInterval = null;
-        }
-    }
-}
-
-// Start polling for server status until ready
-async function startServerStatusPolling() {
-    // Initial check
-    const isReady = await checkServerStatus();
-    updateServerStatusUI(isReady);
-    
-    if (isReady) {
-        console.log('[SERVER_STATUS] Server is ready on first check');
-        return;
-    }
-    
-    console.log('[SERVER_STATUS] Server not ready, starting polling...');
-    
-    // Poll every 3 seconds until ready
-    window.serverStatusCheckInterval = setInterval(async () => {
-        const ready = await checkServerStatus();
-        updateServerStatusUI(ready);
-        
-        if (ready) {
-            console.log('[SERVER_STATUS] Server is now ready');
-        }
-    }, 3000);
-    
-    // Stop polling after 2 minutes (fail-safe)
-    setTimeout(() => {
-        if (window.serverStatusCheckInterval) {
-            clearInterval(window.serverStatusCheckInterval);
-            window.serverStatusCheckInterval = null;
-            // Assume ready after timeout to avoid blocking user indefinitely
-            window.serverReady = true;
-            const statusMessage = document.getElementById('serverStatusMessage');
-            if (statusMessage) {
-                statusMessage.style.display = 'none';
-            }
-            const analyseBtn = document.getElementById('analyseBtn');
-            if (analyseBtn) {
-                analyseBtn.classList.remove('warming-up');
-                analyseBtn.title = 'Analyse';
-            }
-            console.log('[SERVER_STATUS] Polling timeout - assuming ready');
-        }
-    }, 120000);
-}
-
-// Start server status check when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', startServerStatusPolling);
-} else {
-    startServerStatusPolling();
-}
-
 // ===== Shared AI Model Preference Helpers =====
 
 // Fetch the user's current AI provider preference from the server.
@@ -1235,7 +1120,7 @@ function displayRelevantGuidelines(categories) {
             // console.log('[DEBUG] Constructed downloadUrl from originalFilename:', downloadUrl);
         } else {
             // No reliable download information available - don't show a link
-            const displayTitle = guidelineToUse.humanFriendlyName || guidelineToUse.title || guidelineToUse.id;
+            const displayTitle = guidelineToUse.displayName || guidelineToUse.humanFriendlyName || guidelineToUse.title || guidelineToUse.id;
             console.warn('[PDF-LINK] Missing PDF download link for guideline:', {
                 id: guideline.id,
                 title: displayTitle,
@@ -1265,9 +1150,12 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Most Relevant Guidelines</h2><ul>';
         categories.mostRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -1278,9 +1166,12 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Potentially Relevant Guidelines</h2><ul>';
         categories.potentiallyRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -1291,9 +1182,12 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Less Relevant Guidelines</h2><ul>';
         categories.lessRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -1304,9 +1198,12 @@ function displayRelevantGuidelines(categories) {
         htmlContent += '<h2>Not Relevant Guidelines</h2><ul>';
         categories.notRelevant.forEach(g => {
             const pdfLink = createPdfDownloadLink(g);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             htmlContent += `<li>${displayTitle}${orgDisplay} (${g.relevance}) ${pdfLink}</li>`;
         });
         htmlContent += '</ul>';
@@ -1326,12 +1223,6 @@ function updateAnalyseAndResetButtons(hasContent) {
     // Analyse button only appears when there is content
     if (analyseBtn) {
         analyseBtn.style.display = hasContent ? 'flex' : 'none';
-        
-        // If server is not ready, keep warming-up state even when button is visible
-        if (hasContent && !window.serverReady) {
-            analyseBtn.classList.add('warming-up');
-            analyseBtn.title = 'Server is warming up, please wait...';
-        }
     }
 
     // Reset button should remain visible at all times in the fixed bar
@@ -1421,21 +1312,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
-    // Helper function to create a link to open guideline in PDF viewer
-    function createGuidelineViewerLink(guidelineId) {
-        if (!guidelineId) return '';
-        
-        // Create link data for the prepareViewerAuth function
-        const linkData = JSON.stringify({ guidelineId: guidelineId, searchText: '' });
-        
-        // Wrap emoji in span to prevent content sanitization from stripping it
-        return `<a href="#" 
-                   onclick="window.prepareViewerAuth(event, this); return false;" 
-                   data-link-data='${linkData.replace(/'/g, "&#39;")}' 
-                   title="Open guideline in viewer" 
-                   class="guideline-viewer-link"><span class="link-icon">&#128279;</span></a>`;
-    }
-
     // Helper function to format relevance score
     function formatRelevanceScore(relevanceValue) {
         console.log('[DEBUG] formatRelevanceScore called with:', {
@@ -1495,10 +1371,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
         essentialGuidelines.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const viewerLink = createGuidelineViewerLink(g.id);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1513,7 +1391,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1530,10 +1408,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         remainingMostRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const viewerLink = createGuidelineViewerLink(g.id);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1547,7 +1427,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1564,24 +1444,27 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const viewerLink = createGuidelineViewerLink(g.id);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             
-            // Log warning for guidelines with unknown organisation - helps debug filtering issues
-            if (!g.organisation) {
+            // Log warning if we can't find organisation or hospitalTrust
+            if (!org) {
                 console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
                     id: g.id,
                     title: displayTitle,
-                    scope: g.scope || 'undefined',
-                    hospitalTrust: g.hospitalTrust || 'undefined',
+                    g_organisation: g.organisation,
+                    g_hospitalTrust: g.hospitalTrust,
+                    localData_organisation: guidelineData?.organisation,
+                    localData_hospitalTrust: guidelineData?.hospitalTrust,
+                    scope: g.scope,
                     relevance: g.relevance
                 });
             }
             
-            // Fall back to hospitalTrust if organisation is missing
-            const org = g.organisation || g.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1595,7 +1478,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1612,23 +1495,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const viewerLink = createGuidelineViewerLink(g.id);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            
-            // Log warning for guidelines with unknown organisation - helps debug filtering issues
-            if (!g.organisation) {
-                console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
-                    id: g.id,
-                    title: displayTitle,
-                    scope: g.scope || 'undefined',
-                    hospitalTrust: g.hospitalTrust || 'undefined',
-                    relevance: g.relevance
-                });
-            }
-            
-            // Fall back to hospitalTrust if organisation is missing
-            const org = g.organisation || g.hospitalTrust || null;
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
             const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -1643,7 +1514,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1660,10 +1531,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
             const pdfLink = createPdfDownloadLink(g);
-            const viewerLink = createGuidelineViewerLink(g.id);
-            // Use humanFriendlyName from server enrichment, fallback to title
-            const displayTitle = g.humanFriendlyName || g.title;
-            const orgDisplay = g.organisation ? ` - ${abbreviateOrganization(g.organisation)}` : '';
+            // Use displayName from database, fallback to humanFriendlyName, then title
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = guidelineData?.displayName || g.displayName || guidelineData?.humanFriendlyName || g.humanFriendlyName || g.title;
+            // Use organisation if available, otherwise fall back to hospitalTrust
+            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1677,7 +1550,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
-                                <span class="guideline-title-wrapper"><span class="guideline-title">${displayTitle}${orgDisplay}</span>${viewerLink}</span>
+                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
                                 <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
@@ -1690,6 +1563,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     }
 
     htmlContent += `
+            <div class="selection-info">
+                <p><strong>How it works:</strong> Selected guidelines will be processed one-by-one. After each guideline is processed and changes are incorporated into your transcript, the system will move to the next selected guideline.</p>
+            </div>
         </div>
         
         <style>
@@ -1774,11 +1650,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             overflow: hidden;
         }
         
-        .guideline-title-wrapper {
-            display: inline;
-            min-width: 0;
-        }
-        
         .guideline-title {
             font-weight: 500;
             color: #2c3e50;
@@ -1841,35 +1712,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             width: 0;
             min-width: 0;
             flex-shrink: 0;
-        }
-        
-        .guideline-selection-interface .guideline-viewer-link {
-            text-decoration: none !important;
-            color: #0066cc !important;
-            font-size: 1.1em;
-            background: none !important;
-            padding: 0 2px !important;
-            margin: 0 0 0 6px !important;
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            display: inline-block !important;
-            width: auto !important;
-            height: auto !important;
-            flex-shrink: 0;
-            white-space: nowrap;
-            min-width: 0;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-        }
-        
-        .guideline-selection-interface .guideline-viewer-link:hover {
-            opacity: 0.7;
-        }
-        
-        .guideline-selection-interface .guideline-viewer-link .link-icon {
-            display: inline;
-            font-size: 1em;
         }
         
         .selection-info {
@@ -3047,9 +2889,7 @@ async function loadGuidelinesFromFirestore() {
                         condensed: g.condensed,
                         organisation: g.organisation,
                         downloadUrl: g.downloadUrl,
-                        originalFilename: g.originalFilename,
-                        hospitalTrust: g.hospitalTrust,
-                        scope: g.scope
+                        originalFilename: g.originalFilename
                     };
                     return acc;
                 }, {});
@@ -3133,9 +2973,7 @@ async function loadGuidelinesFromFirestore() {
                 condensed: g.condensed,
                 organisation: g.organisation,
                 downloadUrl: g.downloadUrl,
-                originalFilename: g.originalFilename,
-                hospitalTrust: g.hospitalTrust,
-                scope: g.scope
+                originalFilename: g.originalFilename
             };
             return acc;
         }, {});
@@ -4034,22 +3872,27 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
         
-        // No pre-filtering - RAG search is fast enough to search all guidelines
-        // Filtering will happen after server returns results, based on user's scope/hospitalTrust prefs
-        console.log('[DEBUG] Loaded guidelines for server request:', { 
-            totalGuidelines: guidelines.length,
-            scope, 
-            hospitalTrust,
-            note: 'No pre-filtering - will filter results after server response'
-        });
-        
-        // Add scope info via status message
-        const scopeInfo = scope === 'national' 
-            ? `Searching guidelines (national only)...`
-            : scope === 'local'
-            ? `Searching guidelines for ${hospitalTrust}...`
-            : `Searching all guidelines (will filter to National + ${hospitalTrust})...`;
-        updateUser(scopeInfo, true);
+        // Filter guidelines by scope if specified
+        if (scope) {
+            console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
+            guidelines = filterGuidelinesByScope(guidelines, scope, hospitalTrust);
+            console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
+            
+            if (guidelines.length === 0) {
+                const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+                updateUser(noGuidelinesMsg, false);
+                alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
+                return;
+            }
+            
+            // Add scope info via status message
+            const scopeInfo = scope === 'national' 
+                ? `Searching ${guidelines.length} national guidelines...`
+                : scope === 'local'
+                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
+                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
+            updateUser(scopeInfo, true);
+        }
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
             sampleGuideline: guidelines[0],
@@ -4161,7 +4004,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             
             filteredCategories[category] = (guidelines || [])
                 .map(g => {
-                    // Enrich with local cached data
+                    // Enrich with local cached data (has hospitalTrust, organisation, etc.)
                     const localData = window.globalGuidelines?.[g.id] || {};
                     return {
                         ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
@@ -9591,13 +9434,6 @@ document.addEventListener('DOMContentLoaded', () => {
             analyseBtn.dataset.listenerAttached = 'true';
             
             analyseBtn.addEventListener('click', async () => {
-                // Check if server is still warming up
-                if (!window.serverReady) {
-                    console.log('[DEBUG] Analyse button clicked but server is still warming up');
-                    alert('Server is still warming up. Please wait a moment and try again.');
-                    return;
-                }
-                
                 // Check if we're in stop mode
                 if (window.isAnalysisRunning && window.analysisAbortController) {
                     console.log('[DEBUG] Stop button clicked - cancelling analysis');
@@ -10371,151 +10207,6 @@ function getSelectedChunkDistributionProviders() {
     return inputs.filter(i => i.checked).map(i => i.dataset.provider).filter(Boolean);
 }
 
-// ---- RAG Search Preferences ----
-
-// Fetch user's RAG search preference from backend
-async function fetchRAGPreference() {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
-        }
-
-        const token = await user.getIdToken();
-        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getUserRAGPreference`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log('[RAG PREF] Loaded RAG preference:', data);
-            return data;
-        }
-
-        console.log('[RAG PREF] No RAG preference found, using defaults');
-        return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
-    } catch (error) {
-        console.error('[RAG PREF] Error fetching RAG preference:', error);
-        return { useRAGSearch: false, ragReranking: true, ragTopK: 20 };
-    }
-}
-
-// Save user's RAG search preference to backend
-async function saveRAGPreference(useRAGSearch, ragReranking) {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            console.error('[RAG PREF] No user, cannot save RAG preference');
-            return false;
-        }
-
-        const token = await user.getIdToken();
-        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateUserRAGPreference`, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                useRAGSearch,
-                ragReranking,
-                ragTopK: 20
-            })
-        });
-
-        if (response.ok) {
-            console.log('[RAG PREF] Saved RAG preference:', { useRAGSearch, ragReranking });
-            return true;
-        } else {
-            console.error('[RAG PREF] Failed to save RAG preference');
-            return false;
-        }
-    } catch (error) {
-        console.error('[RAG PREF] Error saving RAG preference:', error);
-        return false;
-    }
-}
-
-// Render RAG preference UI
-function renderRAGPreferences(ragData) {
-    const useRAGCheckbox = document.getElementById('useRAGSearch');
-    const ragRerankingCheckbox = document.getElementById('ragReranking');
-    const ragSubOptions = document.getElementById('ragSubOptions');
-    const ragStatus = document.getElementById('ragStatus');
-    const ragInfo = document.getElementById('ragInfo');
-    const ragInfoText = document.getElementById('ragInfoText');
-
-    if (!useRAGCheckbox) return;
-
-    // Set checkbox states
-    useRAGCheckbox.checked = ragData.useRAGSearch || false;
-    if (ragRerankingCheckbox) {
-        ragRerankingCheckbox.checked = ragData.ragReranking !== false;
-    }
-
-    // Show/hide sub-options based on RAG enabled state
-    if (ragSubOptions) {
-        ragSubOptions.classList.toggle('hidden', !ragData.useRAGSearch);
-    }
-
-    // Update status display
-    if (ragStatus) {
-        if (ragData.useRAGSearch) {
-            ragStatus.textContent = 'Enabled';
-            ragStatus.className = 'rag-status enabled';
-        } else {
-            ragStatus.textContent = 'Disabled (using traditional AI search)';
-            ragStatus.className = 'rag-status disabled';
-        }
-    }
-
-    // Update vector DB info
-    if (ragInfo && ragInfoText) {
-        if (ragData.vectorDBAvailable) {
-            const recordCount = ragData.vectorDBRecords || 0;
-            if (recordCount > 0) {
-                ragInfoText.textContent = `Vector database ready: ${recordCount.toLocaleString()} guideline chunks indexed`;
-                ragInfo.className = 'rag-info success';
-            } else {
-                ragInfoText.textContent = 'Vector database connected but empty. Guidelines need to be ingested.';
-                ragInfo.className = 'rag-info warning';
-            }
-        } else {
-            ragInfoText.textContent = 'Vector database not configured. RAG search unavailable.';
-            ragInfo.className = 'rag-info error';
-            // Disable the toggle if vector DB is not available
-            useRAGCheckbox.disabled = true;
-        }
-    }
-
-    // Set up event listeners
-    useRAGCheckbox.addEventListener('change', () => {
-        const isEnabled = useRAGCheckbox.checked;
-        if (ragSubOptions) {
-            ragSubOptions.classList.toggle('hidden', !isEnabled);
-        }
-        if (ragStatus) {
-            ragStatus.textContent = isEnabled ? 'Enabled' : 'Disabled (using traditional AI search)';
-            ragStatus.className = isEnabled ? 'rag-status enabled' : 'rag-status disabled';
-        }
-    });
-}
-
-// Get current RAG preference values from UI
-function getRAGPreferenceFromUI() {
-    const useRAGCheckbox = document.getElementById('useRAGSearch');
-    const ragRerankingCheckbox = document.getElementById('ragReranking');
-
-    return {
-        useRAGSearch: useRAGCheckbox?.checked || false,
-        ragReranking: ragRerankingCheckbox?.checked !== false
-    };
-}
-
 // Fetch user's model preference order from backend
 async function fetchUserModelPreferences() {
     try {
@@ -10791,16 +10482,7 @@ async function showPreferencesModal() {
         console.error('[ERROR] Failed to load chunk distribution provider preferences:', error);
         renderChunkDistributionProvidersList(AVAILABLE_MODELS.map(m => m.name));
     }
-
-    // Load and display RAG search preferences
-    try {
-        const ragData = await fetchRAGPreference();
-        renderRAGPreferences(ragData);
-    } catch (error) {
-        console.error('[ERROR] Failed to load RAG preferences:', error);
-        renderRAGPreferences({ useRAGSearch: false, ragReranking: true, vectorDBAvailable: false });
-    }
-
+    
     // Set up event handlers
     const handleChangeTrustClick = async () => {
         console.log('[DEBUG] Change Trust clicked in preferences');
@@ -10982,15 +10664,6 @@ async function showPreferencesModal() {
             }
         } else {
             console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
-        }
-        
-        // Save RAG search preferences
-        const ragPrefs = getRAGPreferenceFromUI();
-        const savedRAG = await saveRAGPreference(ragPrefs.useRAGSearch, ragPrefs.ragReranking);
-        if (savedRAG) {
-            console.log('[RAG PREF] Saved RAG preferences:', ragPrefs);
-        } else {
-            console.warn('[RAG PREF] Failed to save RAG preferences');
         }
         
         // Close modal
@@ -11723,84 +11396,14 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
         console.log('[DEBUG] Filtered to local guidelines for', hospitalTrust, ':', filtered.length);
     } else if (scope === 'both') {
         // National guidelines + local guidelines for user's trust
-        // IMPORTANT: More defensive filtering to prevent guidelines from other trusts slipping through
-        const KNOWN_NATIONAL_ORGS = [
-            // Abbreviations
-            'RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG', 
-            'ACOG', 'SOGC', 'FIGO', 'ESHRE', 'BMS', 'BSGE', 'BSUG', 'BGCS', 'BSCCP', 'BFS', 
-            'BMFMS', 'BRITSPAG', 'UK NSC', 'NHS ENGLAND', 'NHS',
-            // Full names (uppercase for matching)
-            'ROYAL COLLEGE OF OBSTETRICIANS AND GYNAECOLOGISTS',
-            'ROYAL COLLEGE OF OBSTETRICIANS & GYNAECOLOGISTS',
-            'NATIONAL INSTITUTE FOR HEALTH AND CARE EXCELLENCE',
-            'NATIONAL INSTITUTE FOR HEALTH AND CLINICAL EXCELLENCE',
-            'BRITISH SOCIETY FOR HAEMATOLOGY',
-            'BRITISH ASSOCIATION FOR SEXUAL HEALTH AND HIV',
-            'FACULTY OF SEXUAL AND REPRODUCTIVE HEALTHCARE',
-            'BRITISH HIV ASSOCIATION',
-            'BRITISH ASSOCIATION OF PERINATAL MEDICINE',
-            'BRITISH MENOPAUSE SOCIETY',
-            'BRITISH SOCIETY FOR GYNAECOLOGICAL ENDOSCOPY',
-            'BRITISH SOCIETY OF UROGYNAECOLOGY',
-            'BRITISH GYNAECOLOGICAL CANCER SOCIETY',
-            'BRITISH SOCIETY FOR COLPOSCOPY AND CERVICAL PATHOLOGY',
-            'BRITISH FERTILITY SOCIETY',
-            'BRITISH MATERNAL AND FETAL MEDICINE SOCIETY',
-            'WORLD HEALTH ORGANIZATION',
-            'WORLD HEALTH ORGANISATION',
-            'SCOTTISH INTERCOLLEGIATE GUIDELINES NETWORK'
-        ];
-        
         filtered = guidelines.filter(g => {
-            const guidelineScope = g.scope;
-            const orgUpper = (g.organisation || '').toUpperCase().trim();
-            // Use substring matching - check if org contains any known national org abbreviation
-            const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.some(org => orgUpper.includes(org));
-            
-            // If guideline has a hospitalTrust set to a different trust, always exclude it
-            if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
-                console.log(`[DEBUG] Excluding guideline from different trust: ${g.id || g.title} (trust: ${g.hospitalTrust})`);
-                return false;
-            }
-            
-            // Explicitly marked as national - verify it has a recognized org
+            const guidelineScope = g.scope || 'national';
             if (guidelineScope === 'national') {
-                if (hasRecognizedOrg) {
-                    return true;
-                }
-                // If marked as national but no recognized org, check if it matches user's trust
-                if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
-                    return true;
-                }
-                // Log warning for unrecognized "national" guidelines
-                console.warn(`[SCOPE_FILTER] WARNING: Guideline marked as 'national' but has unknown org: ${g.id || g.title} (org: ${g.organisation || 'Unknown'})`);
-                // Still include it but log the warning - might need metadata fix
                 return true;
             }
-            
-            // Explicitly marked as local for user's trust
             if (guidelineScope === 'local' && hospitalTrust && g.hospitalTrust === hospitalTrust) {
                 return true;
             }
-            
-            // If scope is not set, check if it has a recognized national organization
-            if (!guidelineScope) {
-                // If it's from a recognized national organization, include it
-                if (hasRecognizedOrg) {
-                    return true;
-                }
-                
-                // If no recognized org AND matches user's trust, include it
-                if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
-                    return true;
-                }
-                
-                // If no scope, no recognized org, and no matching trust, this is likely
-                // a local guideline that wasn't properly tagged - exclude it
-                console.log(`[DEBUG] Excluding untagged guideline (no scope, no recognized org): ${g.id || g.title} (org: ${g.organisation || 'Unknown'})`);
-                return false;
-            }
-            
             return false;
         });
         console.log('[DEBUG] Filtered to both guidelines:', filtered.length);
@@ -13255,44 +12858,6 @@ function abbreviateOrganization(orgName) {
         'RCM': 'RCM',
         'Royal College of Nursing': 'RCN',
         'RCN': 'RCN',
-        'Scottish Intercollegiate Guidelines Network': 'SIGN',
-        'SIGN': 'SIGN',
-        
-        // UK Specialist Societies
-        'British Association for Sexual Health and HIV': 'BASHH',
-        'BASHH': 'BASHH',
-        'Faculty of Sexual and Reproductive Healthcare': 'FSRH',
-        'Faculty of Sexual & Reproductive Healthcare': 'FSRH',
-        'FSRH': 'FSRH',
-        'British HIV Association': 'BHIVA',
-        'BHIVA': 'BHIVA',
-        'British Association of Perinatal Medicine': 'BAPM',
-        'BAPM': 'BAPM',
-        'British Society for Haematology': 'BSH',
-        'BSH': 'BSH',
-        'British Journal of Obstetrics and Gynaecology': 'BJOG',
-        'BJOG': 'BJOG',
-        'British Menopause Society': 'BMS',
-        'BMS': 'BMS',
-        'British Society for Gynaecological Endoscopy': 'BSGE',
-        'BSGE': 'BSGE',
-        'British Society of Urogynaecology': 'BSUG',
-        'BSUG': 'BSUG',
-        'British Gynaecological Cancer Society': 'BGCS',
-        'British Gynaecological Cancer Society (BGCS)': 'BGCS',
-        'BGCS': 'BGCS',
-        'British Society for Colposcopy and Cervical Pathology': 'BSCCP',
-        'BSCCP': 'BSCCP',
-        'British Fertility Society': 'BFS',
-        'BFS': 'BFS',
-        'British Maternal and Fetal Medicine Society': 'BMFMS',
-        'British Maternal & Fetal Medicine Society': 'BMFMS',
-        'BMFMS': 'BMFMS',
-        'British Society for Paediatric and Adolescent Gynaecology': 'BritSPAG',
-        'BritSPAG': 'BritSPAG',
-        'UK National Screening Committee': 'UK NSC',
-        'UK NSC': 'UK NSC',
-        'NHS England': 'NHS England',
         
         // US Organizations
         'American College of Obstetricians and Gynecologists': 'ACOG',
@@ -13319,11 +12884,10 @@ function abbreviateOrganization(orgName) {
         'FIGO': 'FIGO',
         
         // Hospital Trusts and Local Organizations
-        'University Hospitals Sussex NHS Foundation Trust': 'UHSussex',
-        'University Hospitals Sussex': 'UHSussex',
-        'Sussex University Hospitals': 'UHSussex',
-        'University Hospital Sussex': 'UHSussex',
-        'UHSussex': 'UHSussex',
+        'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
+        'University Hospitals Sussex': 'University Hospitals Sussex',
+        'Sussex University Hospitals': 'University Hospitals Sussex',
+        'University Hospital Sussex': 'University Hospitals Sussex',
         'Brighton and Sussex University Hospitals': 'Brighton & Sussex UH',
         'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
         'NHS Foundation Trust': 'NHS Trust',
@@ -13753,9 +13317,9 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             
             <div class="guidelines-selection-list">
                 ${mostRelevantGuidelines.map((guideline, index) => {
-                    // Use humanFriendlyName from server enrichment
-                    const displayTitle = guideline.humanFriendlyName || guideline.title || guideline.id;
-                    const organization = guideline.organisation || 'Unknown';
+                    const guidelineData = window.globalGuidelines[guideline.id];
+                    const displayTitle = guidelineData?.displayName || guideline.displayName || guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
+                    const organization = guidelineData?.organisation || 'Unknown';
                     const relevanceScore = guideline.relevance || 'N/A';
                     
                     return `
@@ -16283,25 +15847,28 @@ async function askGuidelinesQuestion() {
         // Get guidelines and summaries from Firestore (reuse existing logic)
         let guidelines = await loadGuidelinesFromFirestore();
         
-        // No pre-filtering - RAG search is fast enough to search all guidelines
-        // Filtering will happen after server returns results, based on user's scope/hospitalTrust prefs
-        console.log('[DEBUG] Loaded guidelines for server request:', { 
-            totalGuidelines: guidelines.length,
-            scope: scopeSelection.scope, 
-            hospitalTrust: scopeSelection.hospitalTrust,
-            note: 'No pre-filtering - will filter results after server response'
-        });
+        // Filter guidelines by scope
+        console.log('[DEBUG] Filtering guidelines by scope:', { scope: scopeSelection.scope, hospitalTrust: scopeSelection.hospitalTrust, beforeFilter: guidelines.length });
+        guidelines = filterGuidelinesByScope(guidelines, scopeSelection.scope, scopeSelection.hospitalTrust);
+        console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
+        
+        if (guidelines.length === 0) {
+            const noGuidelinesMsg = 'No guidelines found for the selected scope.';
+            updateUser(noGuidelinesMsg, false);
+            alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
+            return;
+        }
         
         // Add scope info via status bar
         const scopeInfo = scopeSelection.scope === 'national' 
-            ? `Searching guidelines (national only)...`
+            ? `Searching ${guidelines.length} national guidelines...`
             : scopeSelection.scope === 'local'
-            ? `Searching guidelines for ${scopeSelection.hospitalTrust}...`
-            : `Searching all guidelines (will filter to National + ${scopeSelection.hospitalTrust})...`;
+            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
+            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
         updateUser(scopeInfo, true);
         
         // Format guidelines for relevancy matching
-        updateUser(`Analysing your question against guidelines...`, true);
+        updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
 
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
@@ -16367,8 +15934,7 @@ async function askGuidelinesQuestion() {
 
         updateUser('Guidelines found. Preparing detailed answer...', true);
 
-        // Filter server results by user's scope/hospitalTrust preferences
-        // This is the ONLY place filtering happens - simple and easy to debug
+        // Automatically select the top 3 most relevant guidelines
         const allGuidelines = [];
         
         // Properly handle categories as an object (not array)
@@ -16376,39 +15942,12 @@ async function askGuidelinesQuestion() {
         categoryKeys.forEach(categoryKey => {
             if (data.categories[categoryKey] && Array.isArray(data.categories[categoryKey])) {
                 data.categories[categoryKey].forEach(guideline => {
-                    // Enrich with local cached data
-                    const localData = window.globalGuidelines?.[guideline.id] || {};
-                    const enrichedGuideline = {
-                        ...localData,
+                    allGuidelines.push({
                         ...guideline,
-                        hospitalTrust: guideline.hospitalTrust || localData.hospitalTrust,
-                        organisation: guideline.organisation || localData.organisation,
                         relevanceScore: extractRelevanceScore(guideline.relevance)
-                    };
-                    
-                    // Filter based on user's scope/hospitalTrust preferences
-                    const userScope = scopeSelection.scope;
-                    const userTrust = scopeSelection.hospitalTrust;
-                    
-                    let include = true;
-                    if (userScope === 'national') {
-                        include = !enrichedGuideline.hospitalTrust;
-                    } else if (userScope === 'local') {
-                        include = enrichedGuideline.hospitalTrust === userTrust;
-                    } else if (userScope === 'both') {
-                        include = !enrichedGuideline.hospitalTrust || enrichedGuideline.hospitalTrust === userTrust;
-                    }
-                    
-                    if (include) {
-                        allGuidelines.push(enrichedGuideline);
-                    }
+                    });
                 });
             }
-        });
-        
-        console.log('[DEBUG] askGuidelinesQuestion: Filtered guidelines by user prefs:', {
-            scope: scopeSelection.scope,
-            hospitalTrust: scopeSelection.hospitalTrust
         });
 
         // Sort by relevance score and take top 3
