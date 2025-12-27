@@ -4034,27 +4034,22 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
         
-        // Filter guidelines by scope if specified
-        if (scope) {
-            console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
-            guidelines = filterGuidelinesByScope(guidelines, scope, hospitalTrust);
-            console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
-            
-            if (guidelines.length === 0) {
-                const noGuidelinesMsg = 'No guidelines found for the selected scope.';
-                updateUser(noGuidelinesMsg, false);
-                alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
-                return;
-            }
-            
-            // Add scope info via status message
-            const scopeInfo = scope === 'national' 
-                ? `Searching ${guidelines.length} national guidelines...`
-                : scope === 'local'
-                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
-                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
-            updateUser(scopeInfo, true);
-        }
+        // No pre-filtering - RAG search is fast enough to search all guidelines
+        // Filtering will happen after server returns results, based on user's scope/hospitalTrust prefs
+        console.log('[DEBUG] Loaded guidelines for server request:', { 
+            totalGuidelines: guidelines.length,
+            scope, 
+            hospitalTrust,
+            note: 'No pre-filtering - will filter results after server response'
+        });
+        
+        // Add scope info via status message
+        const scopeInfo = scope === 'national' 
+            ? `Searching guidelines (national only)...`
+            : scope === 'local'
+            ? `Searching guidelines for ${hospitalTrust}...`
+            : `Searching all guidelines (will filter to National + ${hospitalTrust})...`;
+        updateUser(scopeInfo, true);
         
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
             sampleGuideline: guidelines[0],
@@ -4155,37 +4150,67 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             sampleRelevanceType: data.categories.mostRelevant?.[0] ? typeof data.categories.mostRelevant[0].relevance : 'no most relevant'
         });
 
-        // Enrich server response with local cached data (ensures hospitalTrust and organisation are available)
-        // Server cache may not have latest metadata, but client's IndexedDB cache does
-        const enrichedCategories = {};
+        // Enrich server response with local cached data AND filter by user's scope/hospitalTrust prefs
+        // This is the ONLY place filtering happens - simple and easy to debug
+        const filteredCategories = {};
+        let totalBeforeFilter = 0;
+        let totalAfterFilter = 0;
+        
         for (const [category, guidelines] of Object.entries(data.categories)) {
-            enrichedCategories[category] = (guidelines || []).map(g => {
-                const localData = window.globalGuidelines?.[g.id] || {};
-                return {
-                    ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
-                    ...g,          // Server response data (has relevance score)
-                    // Ensure key fields are preserved from local cache if missing in server response
-                    hospitalTrust: g.hospitalTrust || localData.hospitalTrust,
-                    organisation: g.organisation || localData.organisation,
-                    humanFriendlyName: g.humanFriendlyName || localData.humanFriendlyName || g.title
-                };
-            });
+            totalBeforeFilter += (guidelines || []).length;
+            
+            filteredCategories[category] = (guidelines || [])
+                .map(g => {
+                    // Enrich with local cached data
+                    const localData = window.globalGuidelines?.[g.id] || {};
+                    return {
+                        ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
+                        ...g,          // Server response data (has relevance score)
+                        hospitalTrust: g.hospitalTrust || localData.hospitalTrust,
+                        organisation: g.organisation || localData.organisation,
+                        humanFriendlyName: g.humanFriendlyName || localData.humanFriendlyName || g.title
+                    };
+                })
+                .filter(g => {
+                    // Filter based on user's scope/hospitalTrust preferences
+                    if (!scope || scope === 'national') {
+                        // National only - exclude guidelines with hospitalTrust set
+                        return !g.hospitalTrust;
+                    } else if (scope === 'local') {
+                        // Local only - must match user's hospitalTrust
+                        return g.hospitalTrust === hospitalTrust;
+                    } else if (scope === 'both') {
+                        // National + user's trust - include if no hospitalTrust OR matches user's trust
+                        if (!g.hospitalTrust) return true; // National guideline
+                        return g.hospitalTrust === hospitalTrust; // Matches user's trust
+                    }
+                    return true; // Default: include
+                });
+            
+            totalAfterFilter += filteredCategories[category].length;
         }
-        console.log('[DEBUG] Enriched categories with local cache data');
+        
+        console.log('[DEBUG] Filtered server results by user prefs:', {
+            scope,
+            hospitalTrust,
+            totalBeforeFilter,
+            totalAfterFilter,
+            filtered: totalBeforeFilter - totalAfterFilter
+        });
 
         // Update progress with completion
         const completionMessage = 'Analysis complete – categorising relevant guidelines...';
         updateUser(completionMessage, true);
 
         // Process and display the results with the new selection interface
-        createGuidelineSelectionInterface(enrichedCategories, window.relevantGuidelines);
+        createGuidelineSelectionInterface(filteredCategories, window.relevantGuidelines);
 
         // Add final summary via status message
-        const totalRelevant = (data.categories.mostRelevant?.length || 0) + 
-                            (data.categories.potentiallyRelevant?.length || 0) + 
-                            (data.categories.lessRelevant?.length || 0);
+        const totalRelevant = (filteredCategories.mostRelevant?.length || 0) + 
+                            (filteredCategories.potentiallyRelevant?.length || 0) + 
+                            (filteredCategories.lessRelevant?.length || 0);
         
-        const summaryMessage = `Found ${totalRelevant} relevant guidelines out of ${guidelinesList.length}. Most: ${data.categories.mostRelevant?.length || 0}, potentially: ${data.categories.potentiallyRelevant?.length || 0}, less relevant: ${data.categories.lessRelevant?.length || 0}.`;
+        const summaryMessage = `Found ${totalRelevant} relevant guidelines. Most: ${filteredCategories.mostRelevant?.length || 0}, potentially: ${filteredCategories.potentiallyRelevant?.length || 0}, less relevant: ${filteredCategories.lessRelevant?.length || 0}.`;
         
         updateUser(summaryMessage, false);
     } catch (error) {
@@ -16258,28 +16283,25 @@ async function askGuidelinesQuestion() {
         // Get guidelines and summaries from Firestore (reuse existing logic)
         let guidelines = await loadGuidelinesFromFirestore();
         
-        // Filter guidelines by scope
-        console.log('[DEBUG] Filtering guidelines by scope:', { scope: scopeSelection.scope, hospitalTrust: scopeSelection.hospitalTrust, beforeFilter: guidelines.length });
-        guidelines = filterGuidelinesByScope(guidelines, scopeSelection.scope, scopeSelection.hospitalTrust);
-        console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
-        
-        if (guidelines.length === 0) {
-            const noGuidelinesMsg = 'No guidelines found for the selected scope.';
-            updateUser(noGuidelinesMsg, false);
-            alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
-            return;
-        }
+        // No pre-filtering - RAG search is fast enough to search all guidelines
+        // Filtering will happen after server returns results, based on user's scope/hospitalTrust prefs
+        console.log('[DEBUG] Loaded guidelines for server request:', { 
+            totalGuidelines: guidelines.length,
+            scope: scopeSelection.scope, 
+            hospitalTrust: scopeSelection.hospitalTrust,
+            note: 'No pre-filtering - will filter results after server response'
+        });
         
         // Add scope info via status bar
         const scopeInfo = scopeSelection.scope === 'national' 
-            ? `Searching ${guidelines.length} national guidelines...`
+            ? `Searching guidelines (national only)...`
             : scopeSelection.scope === 'local'
-            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
-            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
+            ? `Searching guidelines for ${scopeSelection.hospitalTrust}...`
+            : `Searching all guidelines (will filter to National + ${scopeSelection.hospitalTrust})...`;
         updateUser(scopeInfo, true);
         
         // Format guidelines for relevancy matching
-        updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
+        updateUser(`Analysing your question against guidelines...`, true);
 
         const guidelinesList = guidelines.map(g => ({
             id: g.id,
@@ -16345,7 +16367,8 @@ async function askGuidelinesQuestion() {
 
         updateUser('Guidelines found. Preparing detailed answer...', true);
 
-        // Automatically select the top 3 most relevant guidelines
+        // Filter server results by user's scope/hospitalTrust preferences
+        // This is the ONLY place filtering happens - simple and easy to debug
         const allGuidelines = [];
         
         // Properly handle categories as an object (not array)
@@ -16353,12 +16376,39 @@ async function askGuidelinesQuestion() {
         categoryKeys.forEach(categoryKey => {
             if (data.categories[categoryKey] && Array.isArray(data.categories[categoryKey])) {
                 data.categories[categoryKey].forEach(guideline => {
-                    allGuidelines.push({
+                    // Enrich with local cached data
+                    const localData = window.globalGuidelines?.[guideline.id] || {};
+                    const enrichedGuideline = {
+                        ...localData,
                         ...guideline,
+                        hospitalTrust: guideline.hospitalTrust || localData.hospitalTrust,
+                        organisation: guideline.organisation || localData.organisation,
                         relevanceScore: extractRelevanceScore(guideline.relevance)
-                    });
+                    };
+                    
+                    // Filter based on user's scope/hospitalTrust preferences
+                    const userScope = scopeSelection.scope;
+                    const userTrust = scopeSelection.hospitalTrust;
+                    
+                    let include = true;
+                    if (userScope === 'national') {
+                        include = !enrichedGuideline.hospitalTrust;
+                    } else if (userScope === 'local') {
+                        include = enrichedGuideline.hospitalTrust === userTrust;
+                    } else if (userScope === 'both') {
+                        include = !enrichedGuideline.hospitalTrust || enrichedGuideline.hospitalTrust === userTrust;
+                    }
+                    
+                    if (include) {
+                        allGuidelines.push(enrichedGuideline);
+                    }
                 });
             }
+        });
+        
+        console.log('[DEBUG] askGuidelinesQuestion: Filtered guidelines by user prefs:', {
+            scope: scopeSelection.scope,
+            hospitalTrust: scopeSelection.hospitalTrust
         });
 
         // Sort by relevance score and take top 3
