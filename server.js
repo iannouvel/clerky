@@ -5987,114 +5987,14 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     }
     timer.step('Load guidelines');
     
-    // Apply scope filtering if specified
-    if (scope) {
-      console.log('[SCOPE_FILTER] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
-      
-      if (scope === 'national') {
-        // Only national guidelines
-        guidelines = guidelines.filter(g => {
-          const guidelineScope = g.scope || 'national';
-          return guidelineScope === 'national';
-        });
-      } else if (scope === 'local') {
-        // Only local guidelines for the specified trust
-        if (hospitalTrust) {
-          guidelines = guidelines.filter(g => {
-            const guidelineScope = g.scope || 'national';
-            return guidelineScope === 'local' && g.hospitalTrust === hospitalTrust;
-          });
-        } else {
-          console.log('[SCOPE_FILTER] No hospital trust specified for local scope, returning no guidelines');
-          guidelines = [];
-        }
-      } else if (scope === 'both') {
-        // National guidelines + local guidelines for specified trust
-        // IMPORTANT: More defensive filtering to prevent guidelines from other trusts slipping through
-        const KNOWN_NATIONAL_ORGS = [
-            // Abbreviations
-            'RCOG', 'NICE', 'SIGN', 'BASHH', 'FSRH', 'WHO', 'BHIVA', 'BAPM', 'BSH', 'BJOG', 
-            'ACOG', 'SOGC', 'FIGO', 'ESHRE', 'BMS', 'BSGE', 'BSUG', 'BGCS', 'BSCCP', 'BFS', 
-            'BMFMS', 'BRITSPAG', 'UK NSC', 'NHS ENGLAND', 'NHS',
-            // Full names (uppercase for matching)
-            'ROYAL COLLEGE OF OBSTETRICIANS AND GYNAECOLOGISTS',
-            'ROYAL COLLEGE OF OBSTETRICIANS & GYNAECOLOGISTS',
-            'NATIONAL INSTITUTE FOR HEALTH AND CARE EXCELLENCE',
-            'NATIONAL INSTITUTE FOR HEALTH AND CLINICAL EXCELLENCE',
-            'BRITISH SOCIETY FOR HAEMATOLOGY',
-            'BRITISH ASSOCIATION FOR SEXUAL HEALTH AND HIV',
-            'FACULTY OF SEXUAL AND REPRODUCTIVE HEALTHCARE',
-            'BRITISH HIV ASSOCIATION',
-            'BRITISH ASSOCIATION OF PERINATAL MEDICINE',
-            'BRITISH MENOPAUSE SOCIETY',
-            'BRITISH SOCIETY FOR GYNAECOLOGICAL ENDOSCOPY',
-            'BRITISH SOCIETY OF UROGYNAECOLOGY',
-            'BRITISH GYNAECOLOGICAL CANCER SOCIETY',
-            'BRITISH SOCIETY FOR COLPOSCOPY AND CERVICAL PATHOLOGY',
-            'BRITISH FERTILITY SOCIETY',
-            'BRITISH MATERNAL AND FETAL MEDICINE SOCIETY',
-            'WORLD HEALTH ORGANIZATION',
-            'WORLD HEALTH ORGANISATION',
-            'SCOTTISH INTERCOLLEGIATE GUIDELINES NETWORK'
-        ];
-        
-        guidelines = guidelines.filter(g => {
-          const guidelineScope = g.scope;
-          const detectedOrg = detectGuidelineOrganization(g);
-          const orgUpper = (detectedOrg || '').toUpperCase().trim();
-          // Use substring matching - check if org contains any known national org abbreviation
-          const hasRecognizedOrg = KNOWN_NATIONAL_ORGS.some(org => orgUpper.includes(org));
-          
-          // If guideline has a hospitalTrust set to a different trust, always exclude it
-          if (g.hospitalTrust && hospitalTrust && g.hospitalTrust !== hospitalTrust) {
-            console.log(`[SCOPE_FILTER] Excluding guideline from different trust: ${g.id || g.title} (trust: ${g.hospitalTrust})`);
-            return false;
-          }
-          
-          // Explicitly marked as national - verify it has a recognized org
-          if (guidelineScope === 'national') {
-            if (hasRecognizedOrg) {
-              return true;
-            }
-            // If marked as national but no recognized org, check if it matches user's trust
-            if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
-              return true;
-            }
-            // Log warning for unrecognized "national" guidelines
-            console.warn(`[SCOPE_FILTER] WARNING: Guideline marked as 'national' but has unknown org: ${g.id || g.title} (org: ${detectedOrg || 'Unknown'})`);
-            // Still include it but log the warning - might need metadata fix
-            return true;
-          }
-          
-          // Explicitly marked as local for user's trust
-          if (guidelineScope === 'local' && hospitalTrust && g.hospitalTrust === hospitalTrust) {
-            return true;
-          }
-          
-          // If scope is not set, check if it has a recognized national organization
-          if (!guidelineScope) {
-            // If it's from a recognized national organization, include it
-            if (hasRecognizedOrg) {
-              return true;
-            }
-            
-            // If no recognized org AND matches user's trust, include it
-            if (hospitalTrust && g.hospitalTrust === hospitalTrust) {
-              return true;
-            }
-            
-            // If no scope, no recognized org, and no matching trust, this is likely
-            // a local guideline that wasn't properly tagged - exclude it
-            console.log(`[SCOPE_FILTER] Excluding untagged guideline (no scope, no recognized org): ${g.id || g.title} (org: ${detectedOrg || 'Unknown'})`);
-            return false;
-          }
-          
-          return false;
-        });
-      }
-      
-      console.log('[SCOPE_FILTER] After filtering:', guidelines.length, 'guidelines');
-    }
+    // NOTE: Server-side scope filtering has been removed for simplicity
+    // The client now filters results AFTER receiving the server response
+    // This is faster (RAG search is quick) and more reliable (uses client's fresh Firestore data)
+    console.log('[SCOPE] Server processing all guidelines - client will filter by scope/hospitalTrust:', {
+      scope,
+      hospitalTrust,
+      totalGuidelines: guidelines.length
+    });
     timer.step('Apply filters');
     
     // Log anonymisation information if provided
