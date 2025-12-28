@@ -245,17 +245,13 @@ async function queryDocuments(queryText, options = {}) {
         const hits = results.result?.hits || [];
         console.log(`[VECTOR-DB] Query completed in ${queryTime}ms, found ${hits.length} results`);
         
-        // Debug: Log first hit structure to understand Pinecone response format
+        // Debug: Log first few hit scores to understand Pinecone response
         if (hits.length > 0) {
-            const sampleHit = hits[0];
-            console.log('[VECTOR-DB] Sample hit structure:', JSON.stringify({
-                keys: Object.keys(sampleHit),
-                _id: sampleHit._id,
-                _score: sampleHit._score,
-                guidelineId: sampleHit.guidelineId,
-                title: sampleHit.title,
-                fields: sampleHit.fields ? Object.keys(sampleHit.fields) : 'no fields property'
+            const topScores = hits.slice(0, 5).map(h => ({
+                score: h._score,
+                title: (h.title || h.fields?.title || 'unknown').substring(0, 40)
             }));
+            console.log(`[VECTOR-DB] Top 5 scores: ${JSON.stringify(topScores)}`);
         }
 
         // Transform results to consistent format
@@ -390,10 +386,11 @@ function categoriseByScore(matches) {
     uniqueMatches.sort((a, b) => b.score - a.score);
 
     // Categorise based on similarity score thresholds
-    // These thresholds may need tuning based on testing
-    const MOST_RELEVANT_THRESHOLD = 0.75;
-    const POTENTIALLY_RELEVANT_THRESHOLD = 0.60;
-    const LESS_RELEVANT_THRESHOLD = 0.45;
+    // Tuned for Pinecone integrated embeddings (llama-text-embed-v2)
+    // These embeddings tend to produce lower scores than traditional models
+    const MOST_RELEVANT_THRESHOLD = 0.50;
+    const POTENTIALLY_RELEVANT_THRESHOLD = 0.35;
+    const LESS_RELEVANT_THRESHOLD = 0.20;
 
     const categories = {
         mostRelevant: [],
