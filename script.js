@@ -1320,19 +1320,12 @@ function getCleanDisplayTitle(g, guidelineData) {
 }
 
 // New function to create guideline selection interface with checkboxes
+// Displays a flat list sorted by similarity score (highest first), with only top guideline pre-selected
 function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     console.log('[DEBUG] createGuidelineSelectionInterface called with:', {
         categories: categories,
         allRelevantGuidelinesLength: allRelevantGuidelines?.length || 0
     });
-
-    // Store ALL relevant guidelines (exclude notRelevant) globally
-    const allRelevantGuidelinesArray = [
-        ...(categories.mostRelevant || []).map(g => ({...g, category: 'mostRelevant'})),
-        ...(categories.potentiallyRelevant || []).map(g => ({...g, category: 'potentiallyRelevant'})),
-        ...(categories.lessRelevant || []).map(g => ({...g, category: 'lessRelevant'}))
-        // Exclude notRelevant as they're truly not applicable for checking
-    ];
 
     // Helper function to extract numeric relevance score (redefined for scope)
     function extractRelevanceScoreLocal(relevanceText) {
@@ -1356,25 +1349,37 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return 0.5; // Default fallback
     }
 
-    window.relevantGuidelines = allRelevantGuidelinesArray.map(g => ({
+    // Combine ALL guidelines from all categories into a single flat array
+    const allGuidelinesFlat = [
+        ...(categories.mostRelevant || []),
+        ...(categories.potentiallyRelevant || []),
+        ...(categories.lessRelevant || []),
+        ...(categories.notRelevant || [])
+    ];
+
+    // Sort by relevance score descending (highest first)
+    allGuidelinesFlat.sort((a, b) => {
+        const scoreA = extractRelevanceScoreLocal(a.relevance);
+        const scoreB = extractRelevanceScoreLocal(b.relevance);
+        return scoreB - scoreA;
+    });
+
+    // Store all guidelines globally for processing
+    window.relevantGuidelines = allGuidelinesFlat.map(g => ({
         id: g.id, // Use clean document ID only
         title: g.title,
         filename: g.filename || g.title, // Keep both for compatibility
         originalFilename: g.originalFilename || g.title, // Preserve original filename if available
         downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
         relevance: extractRelevanceScoreLocal(g.relevance), // Convert to numeric score
-        category: g.category,
         originalRelevance: g.relevance, // Keep original for display purposes
         organisation: g.organisation // Preserve organisation for display
     }));
 
-    console.log('[DEBUG] Set window.relevantGuidelines:', {
+    console.log('[DEBUG] Set window.relevantGuidelines (flat list):', {
         total: window.relevantGuidelines.length,
-        byCategory: {
-            mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
-            potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
-            lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
-        }
+        topScore: window.relevantGuidelines[0]?.relevance,
+        bottomScore: window.relevantGuidelines[window.relevantGuidelines.length - 1]?.relevance
     });
 
     // Helper function to create PDF viewer link
@@ -1449,111 +1454,22 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return '50%';
     }
 
-    // Create the new guideline selection interface
+    // Create the new guideline selection interface - flat list sorted by similarity score
     let htmlContent = `
         <div class="guideline-selection-interface">
             <div class="selection-header">
                 <h2>📋 Select Guidelines for Guideline Suggestions</h2>
-                <p>Check which guidelines to generate suggestions for. Only essential guidelines (95%+) are pre-selected.</p>
+                <p>Select guidelines to check against. The most similar guideline is pre-selected.</p>
             </div>
     `;
 
-    // Split mostRelevant into Essential (95%+) and remaining Most Relevant
-    const essentialGuidelines = [];
-    const remainingMostRelevant = [];
-    
-    if (categories.mostRelevant && categories.mostRelevant.length > 0) {
-        categories.mostRelevant.forEach(g => {
-            const score = extractRelevanceScoreLocal(g.relevance);
-            if (score >= 0.95) {
-                essentialGuidelines.push(g);
-            } else {
-                remainingMostRelevant.push(g);
-            }
-        });
-    }
-
-    // Add Essential Guidelines (95%+ relevance, auto-checked)
-    if (essentialGuidelines.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
-        essentialGuidelines.forEach((g, index) => {
+    // Display all guidelines in a single flat list, sorted by score (already sorted above)
+    if (allGuidelinesFlat.length > 0) {
+        htmlContent += '<div class="guidelines-list">';
+        allGuidelinesFlat.forEach((g, index) => {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            
-            // *** DEBUG: Log cache lookup for each guideline ***
-            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
-            console.log(`[DISPLAY DEBUG] Processing Essential guideline: ${g.id}`);
-            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
-            if (guidelineData) {
-                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
-            }
-            
-            const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
-            // Otherwise, add organisation/hospitalTrust
-            const hasDisplayName = g.displayName || guidelineData?.displayName;
-            let orgDisplay = '';
-            if (!hasDisplayName) {
-                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
-            }
-            
-            // Debug logging for displayName issues
-            if (!hasDisplayName && (g.id.includes('transfusion') || g.id.includes('red-cell'))) {
-                console.log('[DEBUG] displayName check for', g.id, {
-                    g_displayName: g.displayName,
-                    guidelineData_displayName: guidelineData?.displayName,
-                    g_humanFriendlyName: g.humanFriendlyName,
-                    guidelineData_humanFriendlyName: guidelineData?.humanFriendlyName,
-                    displayTitle: displayTitle
-                });
-            }
-            // Always include PDF link placeholder to maintain grid structure
-            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
-            
-            htmlContent += `
-                <div class="guideline-item">
-                    <label class="guideline-checkbox-label">
-                        <input type="checkbox" 
-                               class="guideline-checkbox" 
-                               data-guideline-id="${g.id}" 
-                               data-category="essential"
-                               checked="checked">
-                        <span class="checkmark"></span>
-                        <div class="guideline-info">
-                            <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLinkHtml}
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            `;
-        });
-        htmlContent += '</div></div>';
-    }
-
-    // Add Most Relevant Guidelines (below 95%, NOT auto-checked to reduce clutter)
-    if (remainingMostRelevant.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
-        remainingMostRelevant.forEach((g, index) => {
-            const pdfLink = createPdfViewerLink(g);
-            // Use clean display title helper
-            const guidelineData = window.globalGuidelines?.[g.id];
-            
-            // *** DEBUG: Log cache lookup for each guideline ***
-            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
-            console.log(`[DISPLAY DEBUG] Processing Most Relevant guideline: ${g.id}`);
-            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
-            if (guidelineData) {
-                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
-            }
             
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
@@ -1566,13 +1482,16 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
+            // Only pre-check the first (highest-scoring) guideline
+            const isChecked = index === 0 ? 'checked="checked"' : '';
+            
             htmlContent += `
                 <div class="guideline-item">
                     <label class="guideline-checkbox-label">
                         <input type="checkbox" 
                                class="guideline-checkbox" 
                                data-guideline-id="${g.id}" 
-                               data-category="mostRelevant">
+                               ${isChecked}>
                         <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
@@ -1585,163 +1504,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                 </div>
             `;
         });
-        htmlContent += '</div></div>';
-    }
-
-    // Add Potentially Relevant Guidelines (not checked)
-    if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
-        categories.potentiallyRelevant.forEach((g, index) => {
-            const pdfLink = createPdfViewerLink(g);
-            // Use clean display title helper
-            const guidelineData = window.globalGuidelines?.[g.id];
-            
-            // *** DEBUG: Log cache lookup for each guideline ***
-            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
-            console.log(`[DISPLAY DEBUG] Processing Potentially Relevant guideline: ${g.id}`);
-            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
-            if (guidelineData) {
-                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
-            }
-            
-            const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
-            const hasDisplayName = guidelineData?.displayName || g.displayName;
-            let orgDisplay = '';
-            if (!hasDisplayName) {
-                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
-                // Log warning if we can't find organisation or hospitalTrust
-                if (!org) {
-                    console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
-                        id: g.id,
-                        title: displayTitle,
-                        g_organisation: g.organisation,
-                        g_hospitalTrust: g.hospitalTrust,
-                        localData_organisation: guidelineData?.organisation,
-                        localData_hospitalTrust: guidelineData?.hospitalTrust,
-                        scope: g.scope,
-                        relevance: g.relevance
-                    });
-                }
-            }
-            
-            // Always include PDF link placeholder to maintain grid structure
-            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
-            
-            htmlContent += `
-                <div class="guideline-item">
-                    <label class="guideline-checkbox-label">
-                        <input type="checkbox" 
-                               class="guideline-checkbox" 
-                               data-guideline-id="${g.id}" 
-                               data-category="potentiallyRelevant">
-                        <span class="checkmark"></span>
-                        <div class="guideline-info">
-                            <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLinkHtml}
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            `;
-        });
-        htmlContent += '</div></div>';
-    }
-
-    // Add Less Relevant Guidelines (not checked)
-    if (categories.lessRelevant && categories.lessRelevant.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
-        categories.lessRelevant.forEach((g, index) => {
-            const pdfLink = createPdfViewerLink(g);
-            // Use clean display title helper
-            const guidelineData = window.globalGuidelines?.[g.id];
-            
-            // *** DEBUG: Log cache lookup for each guideline ***
-            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
-            console.log(`[DISPLAY DEBUG] Processing Less Relevant guideline: ${g.id}`);
-            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
-            if (guidelineData) {
-                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
-                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
-            }
-            
-            const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
-            const hasDisplayName = guidelineData?.displayName || g.displayName;
-            let orgDisplay = '';
-            if (!hasDisplayName) {
-                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
-            }
-            // Always include PDF link placeholder to maintain grid structure
-            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
-            
-            htmlContent += `
-                <div class="guideline-item">
-                    <label class="guideline-checkbox-label">
-                        <input type="checkbox" 
-                               class="guideline-checkbox" 
-                               data-guideline-id="${g.id}" 
-                               data-category="lessRelevant">
-                        <span class="checkmark"></span>
-                        <div class="guideline-info">
-                            <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLinkHtml}
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            `;
-        });
-        htmlContent += '</div></div>';
-    }
-
-    // Add Not Relevant Guidelines (for completeness, not checked)
-    if (categories.notRelevant && categories.notRelevant.length > 0) {
-        htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
-        categories.notRelevant.forEach((g, index) => {
-            const pdfLink = createPdfViewerLink(g);
-            // Use clean display title helper
-            const guidelineData = window.globalGuidelines?.[g.id];
-            const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
-            const hasDisplayName = guidelineData?.displayName || g.displayName;
-            let orgDisplay = '';
-            if (!hasDisplayName) {
-                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
-            }
-            // Always include PDF link placeholder to maintain grid structure
-            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
-            
-            htmlContent += `
-                <div class="guideline-item">
-                    <label class="guideline-checkbox-label">
-                        <input type="checkbox" 
-                               class="guideline-checkbox" 
-                               data-guideline-id="${g.id}" 
-                               data-category="notRelevant">
-                        <span class="checkmark"></span>
-                        <div class="guideline-info">
-                            <div class="guideline-content">
-                                <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
-                                ${pdfLinkHtml}
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            `;
-        });
-        htmlContent += '</div></div>';
+        htmlContent += '</div>';
     }
 
     htmlContent += `
