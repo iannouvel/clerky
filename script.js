@@ -10260,6 +10260,10 @@ async function saveHospitalTrustSelection() {
                 await window.loadGuidelinesFromFirestore();
             }
             
+            // Refresh sidebar displays to show the new trust
+            await loadAndDisplayUserPreferences();
+            await loadAndDisplayUserSettings();
+            
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
             
@@ -10317,6 +10321,10 @@ async function clearHospitalTrustSelection() {
             if (window.loadGuidelinesFromFirestore) {
                 await window.loadGuidelinesFromFirestore();
             }
+            
+            // Refresh sidebar displays to show cleared trust
+            await loadAndDisplayUserPreferences();
+            await loadAndDisplayUserSettings();
             
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
