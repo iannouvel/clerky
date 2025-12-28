@@ -2052,6 +2052,30 @@ async function checkAndMarkProcessingComplete(guidelineId) {
                 processingCompletedAt: admin.firestore.FieldValue.serverTimestamp(),
                 lastUpdated: admin.firestore.FieldValue.serverTimestamp()
             });
+            
+            // Automatically trigger vector DB ingestion for RAG
+            if (data.content) {
+                try {
+                    console.log(`[PROCESSING_COMPLETE] Triggering vector DB ingestion for: ${guidelineId}`);
+                    const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
+                        title: data.title || data.displayName || guidelineId,
+                        organisation: data.organisation || 'Unknown'
+                    });
+                    if (ingestionResult.success) {
+                        console.log(`[PROCESSING_COMPLETE] Vector DB ingestion successful: ${ingestionResult.chunksUpserted} chunks`);
+                        await guidelineRef.update({
+                            vectorDbIngested: true,
+                            vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+                        });
+                    } else {
+                        console.warn(`[PROCESSING_COMPLETE] Vector DB ingestion failed: ${ingestionResult.error}`);
+                    }
+                } catch (ingestionError) {
+                    console.error(`[PROCESSING_COMPLETE] Vector DB ingestion error:`, ingestionError.message);
+                }
+            } else {
+                console.warn(`[PROCESSING_COMPLETE] No content available for vector DB ingestion: ${guidelineId}`);
+            }
         }
     } catch (error) {
         console.error(`[CHECK_COMPLETE] Error checking completion status:`, error);

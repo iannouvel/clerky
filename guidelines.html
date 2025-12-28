@@ -748,7 +748,7 @@
                     
                     <button type="submit" class="upload-btn">
                         <span id="uploadSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                        <span id="uploadText">Upload to GitHub</span>
+                        <span id="uploadText">Upload Guideline</span>
                     </button>
                 </form>
             </div>
@@ -879,6 +879,87 @@
         </div>
     </div>
 
+    <!-- Processing Status Modal -->
+    <div id="processingModal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 500px;">
+            <h3 style="margin-top: 0; margin-bottom: 20px;">📤 Processing Guideline</h3>
+            <div id="processingFileName" style="font-weight: bold; margin-bottom: 15px; color: #0066cc;"></div>
+            
+            <div class="processing-steps">
+                <div class="processing-step" id="step-upload">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Uploading PDF</span>
+                </div>
+                <div class="processing-step" id="step-content">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Extracting content</span>
+                </div>
+                <div class="processing-step" id="step-condensed">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Generating condensed version</span>
+                </div>
+                <div class="processing-step" id="step-summary">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Generating summary</span>
+                </div>
+                <div class="processing-step" id="step-terms">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Extracting keywords</span>
+                </div>
+                <div class="processing-step" id="step-auditable">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Extracting auditable elements</span>
+                </div>
+                <div class="processing-step" id="step-vector">
+                    <span class="step-icon">⏳</span>
+                    <span class="step-text">Indexing for search (RAG)</span>
+                </div>
+            </div>
+            
+            <div id="processingMessage" style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 4px; display: none;"></div>
+            
+            <div class="modal-footer" style="margin-top: 20px;">
+                <button id="closeProcessingBtn" class="action-btn" style="background: #6c757d; color: white; border: none; display: none;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        .processing-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .processing-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .processing-step.completed {
+            background: #d4edda;
+        }
+        .processing-step.in-progress {
+            background: #fff3cd;
+        }
+        .processing-step.error {
+            background: #f8d7da;
+        }
+        .step-icon {
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+        }
+        .step-text {
+            flex: 1;
+        }
+    </style>
+
     <button onclick="window.location.href='index.html'" class="back-btn">Back to Main</button>
 
     <!-- Include the Firebase initialization script -->
@@ -930,6 +1011,131 @@
             auth.onAuthStateChanged(async (user) => {
                 if (user) {
                     await loadUserPreferences();
+                }
+            });
+            
+            // Processing status tracking
+            let processingGuidelineIds = [];
+            let processingPollInterval = null;
+            
+            // Update processing step UI
+            function updateProcessingStep(stepId, status) {
+                const step = document.getElementById(stepId);
+                if (!step) return;
+                
+                const icon = step.querySelector('.step-icon');
+                step.classList.remove('completed', 'in-progress', 'error');
+                
+                if (status === 'completed') {
+                    step.classList.add('completed');
+                    icon.textContent = '✓';
+                } else if (status === 'in-progress') {
+                    step.classList.add('in-progress');
+                    icon.textContent = '⏳';
+                } else if (status === 'error') {
+                    step.classList.add('error');
+                    icon.textContent = '✗';
+                } else {
+                    icon.textContent = '○';
+                }
+            }
+            
+            // Reset all processing steps
+            function resetProcessingSteps() {
+                ['step-upload', 'step-content', 'step-condensed', 'step-summary', 'step-terms', 'step-auditable', 'step-vector'].forEach(stepId => {
+                    updateProcessingStep(stepId, 'pending');
+                });
+                document.getElementById('processingMessage').style.display = 'none';
+                document.getElementById('closeProcessingBtn').style.display = 'none';
+            }
+            
+            // Show processing modal
+            function showProcessingModal(fileName) {
+                resetProcessingSteps();
+                document.getElementById('processingFileName').textContent = fileName;
+                document.getElementById('processingModal').style.display = 'flex';
+                updateProcessingStep('step-upload', 'in-progress');
+            }
+            
+            // Poll processing status
+            async function pollProcessingStatus(guidelineId, token) {
+                try {
+                    const response = await fetch(`https://clerky-uzni.onrender.com/getProcessingStatus?guidelineId=${guidelineId}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        const status = result.processingStatus || {};
+                        
+                        // Update each step based on status
+                        updateProcessingStep('step-upload', 'completed');
+                        updateProcessingStep('step-content', status.contentExtracted ? 'completed' : 'in-progress');
+                        
+                        if (status.contentExtracted) {
+                            updateProcessingStep('step-condensed', status.condensedGenerated ? 'completed' : 'in-progress');
+                        }
+                        if (status.condensedGenerated) {
+                            updateProcessingStep('step-summary', status.summaryGenerated ? 'completed' : 'in-progress');
+                        }
+                        if (status.summaryGenerated) {
+                            updateProcessingStep('step-terms', status.termsExtracted ? 'completed' : 'in-progress');
+                        }
+                        if (status.termsExtracted) {
+                            updateProcessingStep('step-auditable', status.auditableExtracted ? 'completed' : 'in-progress');
+                        }
+                        if (status.auditableExtracted) {
+                            updateProcessingStep('step-vector', result.allComplete ? 'completed' : 'in-progress');
+                        }
+                        
+                        // Check for errors
+                        const errors = result.processingErrors || {};
+                        if (errors.contentExtraction) updateProcessingStep('step-content', 'error');
+                        if (errors.condensedGeneration) updateProcessingStep('step-condensed', 'error');
+                        if (errors.summaryGeneration) updateProcessingStep('step-summary', 'error');
+                        if (errors.termsExtraction) updateProcessingStep('step-terms', 'error');
+                        if (errors.auditableExtraction) updateProcessingStep('step-auditable', 'error');
+                        
+                        // Check if all complete
+                        if (result.allComplete) {
+                            clearInterval(processingPollInterval);
+                            processingPollInterval = null;
+                            
+                            const msgEl = document.getElementById('processingMessage');
+                            msgEl.innerHTML = '<strong style="color: #28a745;">✓ Processing complete!</strong><br>The guideline is now fully indexed and ready for use.';
+                            msgEl.style.display = 'block';
+                            document.getElementById('closeProcessingBtn').style.display = 'inline-block';
+                            
+                            // Reload guidelines list
+                            loadGuidelines();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error polling processing status:', error);
+                }
+            }
+            
+            // Start polling for processing status
+            function startProcessingPoll(guidelineId, token) {
+                // Poll every 3 seconds
+                processingPollInterval = setInterval(() => {
+                    pollProcessingStatus(guidelineId, token);
+                }, 3000);
+                
+                // Initial poll
+                pollProcessingStatus(guidelineId, token);
+            }
+            
+            // Close processing modal handler
+            document.getElementById('closeProcessingBtn').addEventListener('click', () => {
+                document.getElementById('processingModal').style.display = 'none';
+                if (processingPollInterval) {
+                    clearInterval(processingPollInterval);
+                    processingPollInterval = null;
                 }
             });
 
@@ -1666,6 +1872,8 @@
                         hospitalTrust
                     });
                     
+                    const uploadedGuidelineIds = [];
+                    
                     for (const file of filesToUpload) {
                         try {
                             const formData = new FormData();
@@ -1678,13 +1886,13 @@
                                 if (!hospitalTrust) {
                                     alert('Please select a hospital trust for local guidelines.');
                                     uploadSpinner.style.display = 'none';
-                                    uploadText.textContent = 'Upload to GitHub';
+                                    uploadText.textContent = 'Upload Guideline';
                                     return;
                                 }
                                 formData.append('hospitalTrust', hospitalTrust);
                             }
                             
-                            const response = await fetch('https://clerky-uzni.onrender.com/uploadGuideline', {
+                            const response = await fetch('https://clerky-uzni.onrender.com/uploadGuidelinePDF', {
                                 method: 'POST',
                                 headers: {
                                     'Authorization': `Bearer ${token}`
@@ -1696,9 +1904,16 @@
                             
                             if (response.ok && result.success) {
                                 successCount++;
+                                // Track the guidelineId for processing status
+                                if (result.guidelineId) {
+                                    uploadedGuidelineIds.push({
+                                        id: result.guidelineId,
+                                        fileName: file.name
+                                    });
+                                }
                             } else {
                                 failCount++;
-                                console.error(`Failed to upload ${file.name}:`, result.message);
+                                console.error(`Failed to upload ${file.name}:`, result.message || result.error);
                             }
                         } catch (error) {
                             failCount++;
@@ -1706,21 +1921,29 @@
                         }
                     }
                     
-                    // Show results
-                    let message = `Upload complete!\n\n`;
-                    if (successCount > 0) message += `✓ ${successCount} file(s) uploaded successfully\n`;
-                    if (failCount > 0) message += `✗ ${failCount} file(s) failed to upload`;
-                    alert(message);
-                    
-                    // Reset form if all files were uploaded successfully
-                    if (failCount === 0) {
+                    // Reset form if files were uploaded
+                    if (successCount > 0) {
                         selectedFiles = [];
                         window.selectedFiles = selectedFiles;
                         fileInput.value = '';
                         updateFileList();
+                    }
+                    
+                    // Show processing modal for the first uploaded guideline
+                    // (for multiple files, we track the first one)
+                    if (uploadedGuidelineIds.length > 0) {
+                        const firstUpload = uploadedGuidelineIds[0];
+                        showProcessingModal(firstUpload.fileName);
+                        startProcessingPoll(firstUpload.id, token);
                         
-                        // Reload guidelines
-                        loadGuidelines();
+                        // If multiple files, show a note
+                        if (uploadedGuidelineIds.length > 1) {
+                            const msgEl = document.getElementById('processingMessage');
+                            msgEl.innerHTML = `<em>Tracking progress for ${firstUpload.fileName}. ${uploadedGuidelineIds.length - 1} other file(s) are also being processed in the background.</em>`;
+                            msgEl.style.display = 'block';
+                        }
+                    } else if (failCount > 0) {
+                        alert(`Upload failed!\n\n✗ ${failCount} file(s) failed to upload`);
                     }
                     
                 } catch (error) {
@@ -1728,7 +1951,7 @@
                     alert('Error uploading files: ' + error.message);
                 } finally {
                     uploadSpinner.style.display = 'none';
-                    uploadText.textContent = 'Upload to GitHub';
+                    uploadText.textContent = 'Upload Guideline';
                 }
             });
 
