@@ -16207,7 +16207,7 @@ app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
             success: true,
             message: dryRun ? 'Dry run complete' : 'Ingestion complete',
             source: 'firestore',
-            results
+            ...results  // Spread results at top level for client compatibility
         });
     } catch (error) {
         console.error('[ERROR] Ingestion failed:', error);

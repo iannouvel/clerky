@@ -151,20 +151,46 @@ async function upsertDocuments(documents) {
         // Pinecone integrated-embedding upsert has a hard max batch size of 96 records per request.
         // (We saw: "INVALID_ARGUMENT ... Batch size exceeds 96")
         const BATCH_SIZE = 96;
+        const MAX_RETRIES = 3;
+        const RETRY_DELAY_MS = 2000;
         let totalUpserted = 0;
+        let failedBatches = 0;
 
         for (let i = 0; i < records.length; i += BATCH_SIZE) {
             const batch = records.slice(i, i + BATCH_SIZE);
+            const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+            let success = false;
             
-            // Use the inference namespace for integrated embedding
-            await index.upsertRecords(batch);
+            // Retry logic for each batch
+            for (let attempt = 1; attempt <= MAX_RETRIES && !success; attempt++) {
+                try {
+                    // Use the inference namespace for integrated embedding
+                    await index.upsertRecords(batch);
+                    
+                    totalUpserted += batch.length;
+                    console.log(`[VECTOR-DB] Upserted batch ${batchNum}: ${totalUpserted}/${records.length} records`);
+                    success = true;
+                } catch (batchError) {
+                    const errorDetails = stringifyError(batchError);
+                    console.warn(`[VECTOR-DB] Batch ${batchNum} attempt ${attempt}/${MAX_RETRIES} failed: ${errorDetails}`);
+                    
+                    if (attempt < MAX_RETRIES) {
+                        // Wait before retrying (exponential backoff)
+                        const delay = RETRY_DELAY_MS * Math.pow(2, attempt - 1);
+                        console.log(`[VECTOR-DB] Retrying batch ${batchNum} in ${delay}ms...`);
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                    }
+                }
+            }
             
-            totalUpserted += batch.length;
-            console.log(`[VECTOR-DB] Upserted batch ${Math.floor(i / BATCH_SIZE) + 1}: ${totalUpserted}/${records.length} records`);
+            if (!success) {
+                failedBatches++;
+                console.error(`[VECTOR-DB] Batch ${batchNum} failed after ${MAX_RETRIES} attempts, skipping ${batch.length} records`);
+            }
         }
 
-        console.log(`[VECTOR-DB] Successfully upserted ${totalUpserted} documents`);
-        return { success: true, upsertedCount: totalUpserted };
+        console.log(`[VECTOR-DB] Upsert complete: ${totalUpserted} documents uploaded, ${failedBatches} batches failed`);
+        return { success: true, upsertedCount: totalUpserted, failedBatches };
     } catch (error) {
         const details = stringifyError(error);
         console.error('[VECTOR-DB] Upsert failed:', details);
@@ -410,4 +436,5 @@ module.exports = {
     getIndexStats,
     categoriseByScore
 };
+
 
