@@ -9782,7 +9782,18 @@ app.listen(PORT, () => {
             console.log('[WARMUP] Starting proactive guidelines cache warmup...');
             try {
                 const guidelines = await getCachedGuidelines();
-                console.log(`[WARMUP] Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+                if (guidelines.length > 0) {
+                    console.log(`[WARMUP] ✓ Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+                } else {
+                    console.error('[WARMUP] ✗ WARNING: Cache warmup returned 0 guidelines! Server may not function correctly.');
+                    console.error('[WARMUP] This usually indicates a Firestore connectivity issue. Retrying in 30 seconds...');
+                    // Schedule a retry after 30 seconds
+                    setTimeout(async () => {
+                        console.log('[WARMUP] Retrying cache warmup...');
+                        const retryGuidelines = await getCachedGuidelines();
+                        console.log(`[WARMUP] Retry result: ${retryGuidelines.length} guidelines`);
+                    }, 30000);
+                }
             } catch (warmupError) {
                 console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
             }
@@ -9798,7 +9809,11 @@ app.listen(PORT, () => {
             console.log('[WARMUP] Starting proactive guidelines cache warmup (after GitHub check failure)...');
             try {
                 const guidelines = await getCachedGuidelines();
-                console.log(`[WARMUP] Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+                if (guidelines.length > 0) {
+                    console.log(`[WARMUP] ✓ Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+                } else {
+                    console.error('[WARMUP] ✗ WARNING: Cache warmup returned 0 guidelines!');
+                }
             } catch (warmupError) {
                 console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
             }
@@ -11176,21 +11191,61 @@ const guidelinesCache = {
 let guidelinesCacheReady = false;
 
 // Get guidelines from cache or fetch from Firestore
+// ROBUST: Never caches empty results, retries on failure, returns stale cache if refresh fails
 async function getCachedGuidelines() {
     const now = Date.now();
-    if (guidelinesCache.data && guidelinesCache.timestamp && 
-        (now - guidelinesCache.timestamp) < guidelinesCache.TTL) {
+    const cacheValid = guidelinesCache.data && guidelinesCache.timestamp && 
+        (now - guidelinesCache.timestamp) < guidelinesCache.TTL;
+    
+    // Return valid cache immediately
+    if (cacheValid && guidelinesCache.data.length > 0) {
         console.log('[CACHE] Returning cached guidelines:', guidelinesCache.data.length, 'guidelines');
         return guidelinesCache.data;
     }
     
-    debugLog('[CACHE] Cache miss or expired, fetching from Firestore...');
-    const guidelines = await getAllGuidelines();
-    guidelinesCache.data = guidelines;
-    guidelinesCache.timestamp = now;
-    guidelinesCacheReady = guidelines.length > 0; // Mark cache as ready when populated
-    console.log('[CACHE] Guidelines cached:', guidelines.length, 'guidelines, cacheReady:', guidelinesCacheReady);
-    return guidelines;
+    debugLog('[CACHE] Cache miss, expired, or empty - fetching from Firestore...');
+    
+    // Try to fetch with retries
+    const maxRetries = 3;
+    let lastError = null;
+    
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+            const guidelines = await getAllGuidelines();
+            
+            // CRITICAL: Only cache if we actually got guidelines
+            if (guidelines && guidelines.length > 0) {
+                guidelinesCache.data = guidelines;
+                guidelinesCache.timestamp = now;
+                guidelinesCacheReady = true;
+                console.log('[CACHE] Guidelines cached successfully:', guidelines.length, 'guidelines (attempt', attempt + ')');
+                return guidelines;
+            } else {
+                console.warn('[CACHE] Attempt', attempt, '- getAllGuidelines returned 0 guidelines, NOT caching');
+                lastError = new Error('No guidelines returned from Firestore');
+            }
+        } catch (error) {
+            console.error('[CACHE] Attempt', attempt, 'failed:', error.message);
+            lastError = error;
+            
+            // Wait before retry (exponential backoff: 1s, 2s, 4s)
+            if (attempt < maxRetries) {
+                const delay = Math.pow(2, attempt - 1) * 1000;
+                console.log('[CACHE] Retrying in', delay, 'ms...');
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
+    }
+    
+    // All retries failed - return stale cache if available (better than nothing)
+    if (guidelinesCache.data && guidelinesCache.data.length > 0) {
+        console.warn('[CACHE] All retries failed, returning STALE cache:', guidelinesCache.data.length, 'guidelines');
+        return guidelinesCache.data;
+    }
+    
+    // No cache available at all - return empty array (but don't cache it!)
+    console.error('[CACHE] All retries failed and no stale cache available. Returning empty array.');
+    return [];
 }
 
 // Function to invalidate guidelines cache (call after updates)
