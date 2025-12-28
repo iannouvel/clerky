@@ -1393,7 +1393,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         };
 
         // Create a simple, direct link with text (emojis get stripped by DOM processing)
-        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 8px;">[PDF]</a>`;
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 6px !important;">[PDF]</a>`;
     }
 
     // Helper function to format relevance score
@@ -1463,7 +1463,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <input type="checkbox" 
                                class="guideline-checkbox" 
                                data-guideline-id="${g.id}" 
-                               style="margin-right: 20px;"
+                               style="margin-right: 4px;"
                                ${isChecked}>
                         <div class="guideline-info">
                             <div class="guideline-content">
@@ -1550,7 +1550,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .guideline-checkbox {
-            margin-right: 20px !important;
+            margin-right: 4px !important;
             width: 18px;
             height: 18px;
             cursor: pointer;
@@ -1561,7 +1561,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             flex: 1;
             min-width: 0;
             overflow: hidden;
-            margin-left: 12px !important;
+            margin-left: 4px !important;
         }
         
         .guideline-title {
@@ -13445,12 +13445,12 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             width: 18px;
             height: 18px;
             cursor: pointer;
-            margin-right: 20px !important;
+            margin-right: 4px !important;
         }
         
         .guideline-info {
             flex: 1;
-            margin-left: 12px !important;
+            margin-left: 4px !important;
         }
         
         .guideline-content {
