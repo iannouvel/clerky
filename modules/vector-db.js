@@ -252,6 +252,22 @@ async function queryDocuments(queryText, options = {}) {
                 title: (h.title || h.fields?.title || 'unknown').substring(0, 40)
             }));
             console.log(`[VECTOR-DB] Top 5 scores: ${JSON.stringify(topScores)}`);
+            
+            // Also log lowest score to understand range
+            const lowestHit = hits[hits.length - 1];
+            console.log(`[VECTOR-DB] Lowest score (#${hits.length}): ${lowestHit._score?.toFixed(3)} - ${(lowestHit.title || lowestHit.fields?.title || 'unknown').substring(0, 40)}`);
+            
+            // Check for asthma in results
+            const asthmaHits = hits.filter(h => {
+                const title = (h.title || h.fields?.title || '').toLowerCase();
+                const guidelineId = (h.guidelineId || h.fields?.guidelineId || '').toLowerCase();
+                return title.includes('asthma') || guidelineId.includes('asthma');
+            });
+            if (asthmaHits.length > 0) {
+                console.log(`[VECTOR-DB] ✓ Found ${asthmaHits.length} asthma hit(s): ${asthmaHits.map(h => `${h._score?.toFixed(3)}`).join(', ')}`);
+            } else {
+                console.log(`[VECTOR-DB] ✗ No asthma hits in top ${hits.length} results`);
+            }
         }
 
         // Transform results to consistent format

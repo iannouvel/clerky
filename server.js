@@ -2177,8 +2177,9 @@ async function scanForMissingVectorDbIngestion() {
                 console.log(`[VECTOR_SCAN] Found processed guideline needing ingestion: ${guidelineId}`);
                 
                 try {
+                    // Prefer humanFriendlyName as it's the most accurate human-readable title
                     const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
-                        title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                        title: data.humanFriendlyName || data.displayName || data.title || guidelineId,
                         organisation: data.organisation || 'Unknown'
                     });
                     
@@ -5771,8 +5772,9 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         // For national/both scopes, we don't filter (get all and let reranking handle relevance)
         
         // Query vector database
+        // Increased default topK to 50 for better coverage of diverse guidelines
         const queryResult = await vectorDB.queryDocuments(transcript, {
-            topK: ragPrefs.ragTopK || 20,
+            topK: ragPrefs.ragTopK || 50,
             filter
         });
         
@@ -8752,8 +8754,9 @@ async function processGuidelineMetadataFields(doc, fieldsToProcess, userId) {
             // Check if guideline has content but hasn't been ingested to vector DB
             if (data.content && !data.vectorDbIngested) {
                 console.log(`[METADATA_COMPLETION] Triggering vector DB ingestion for: ${guidelineId}`);
+                // Prefer humanFriendlyName as it's the most accurate human-readable title
                 const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
-                    title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                    title: data.humanFriendlyName || data.displayName || data.title || guidelineId,
                     organisation: data.organisation || 'Unknown'
                 });
                 
@@ -16346,9 +16349,10 @@ app.post('/reingestGuideline', authenticateUser, async (req, res) => {
             resolvedContent = data.content;
             
             // Also use Firestore metadata if not provided
+            // Prefer humanFriendlyName as it's the most accurate human-readable title
             if (!metadata) {
                 resolvedMetadata = {
-                    title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                    title: data.humanFriendlyName || data.displayName || data.title || guidelineId,
                     organisation: data.organisation || 'Unknown'
                 };
             }
