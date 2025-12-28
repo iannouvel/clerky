@@ -17466,6 +17466,100 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
   }
 });
 
+// Endpoint to regenerate displayName fields using simple formula: humanFriendlyName + organisation (if national) OR humanFriendlyName + hospitalTrust (if local)
+app.post('/regenerateDisplayNames', authenticateUser, async (req, res) => {
+  try {
+    const { force } = req.body;
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const results = [];
+    let updatedCount = 0;
+    let batch = db.batch();
+    let batchCount = 0;
+    const BATCH_SIZE = 500;
+    
+    console.log(`[REGENERATE_DISPLAY_NAMES] Processing ${guidelinesSnapshot.size} guidelines...`);
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      
+      // Skip if displayName already exists (unless force flag is set)
+      if (data.displayName && !force) {
+        continue;
+      }
+      
+      const humanFriendlyName = data.humanFriendlyName || data.title || data.filename;
+      if (!humanFriendlyName) {
+        results.push({
+          guidelineId: doc.id,
+          success: false,
+          error: 'No humanFriendlyName found'
+        });
+        continue;
+      }
+      
+      // Determine scope (default to 'national' if not set)
+      const scope = data.scope || 'national';
+      
+      // Build displayName: humanFriendlyName + organisation (if national) OR humanFriendlyName + hospitalTrust (if local)
+      let displayName = humanFriendlyName;
+      
+      if (scope === 'local' && data.hospitalTrust) {
+        displayName = `${humanFriendlyName} - ${data.hospitalTrust}`;
+      } else if (scope === 'national' && data.organisation) {
+        displayName = `${humanFriendlyName} - ${data.organisation}`;
+      } else if (data.organisation) {
+        // Fallback: use organisation if available
+        displayName = `${humanFriendlyName} - ${data.organisation}`;
+      } else if (data.hospitalTrust) {
+        // Fallback: use hospitalTrust if available
+        displayName = `${humanFriendlyName} - ${data.hospitalTrust}`;
+      }
+      
+      const guidelineRef = db.collection('guidelines').doc(doc.id);
+      batch.update(guidelineRef, {
+        displayName: displayName,
+        updatedAt: admin.firestore.FieldValue.serverTimestamp()
+      });
+      
+      batchCount++;
+      updatedCount++;
+      
+      results.push({
+        guidelineId: doc.id,
+        success: true,
+        oldDisplayName: data.displayName || 'none',
+        newDisplayName: displayName
+      });
+      
+      // Commit batch when it reaches the limit
+      if (batchCount >= BATCH_SIZE) {
+        await batch.commit();
+        console.log(`[REGENERATE_DISPLAY_NAMES] Committed batch of ${batchCount} updates (${updatedCount}/${guidelinesSnapshot.size} total)`);
+        batch = db.batch();
+        batchCount = 0;
+      }
+    }
+    
+    // Commit remaining updates
+    if (batchCount > 0) {
+      await batch.commit();
+      console.log(`[REGENERATE_DISPLAY_NAMES] Committed final batch of ${batchCount} updates`);
+    }
+    
+    console.log(`[REGENERATE_DISPLAY_NAMES] Successfully updated ${updatedCount} guidelines`);
+    
+    res.json({
+      success: true,
+      updated: updatedCount,
+      total: guidelinesSnapshot.size,
+      results: results
+    });
+  } catch (error) {
+    console.error('[REGENERATE_DISPLAY_NAMES] Error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Endpoint to clear all displayName fields
 app.post('/clearDisplayNames', authenticateUser, async (req, res) => {
   try {

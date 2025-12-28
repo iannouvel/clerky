@@ -1239,16 +1239,22 @@ window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 
 // Helper function to get a clean display title for a guideline
 function getCleanDisplayTitle(g, guidelineData) {
-    // Get the best available title, preferring humanFriendlyName over title
-    let rawTitle = guidelineData?.displayName || 
-                   g.displayName || 
-                   guidelineData?.humanFriendlyName || 
+    // If displayName exists, use it directly (it should already be in the correct format: humanFriendlyName + organisation/hospitalTrust)
+    if (guidelineData?.displayName) {
+        return guidelineData.displayName;
+    }
+    if (g.displayName) {
+        return g.displayName;
+    }
+    
+    // Fallback: Get the best available title, preferring humanFriendlyName over title
+    let rawTitle = guidelineData?.humanFriendlyName || 
                    g.humanFriendlyName || 
                    guidelineData?.title || 
                    g.title || 
                    g.id;
     
-    // Strip ALL scope/trust/Unknown patterns from the title
+    // Strip ALL scope/trust/Unknown patterns from the title (only if displayName doesn't exist)
     if (rawTitle && typeof rawTitle === 'string') {
         // Remove patterns like " - Local - UHSussex - Unknown"
         rawTitle = rawTitle.replace(/\s*-\s*Local\s*-\s*[^-]+\s*-\s*Unknown\s*/gi, '');
@@ -1374,7 +1380,23 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             searchText: null // No search text for selection interface
         };
 
-        // Create viewer link with just the icon
+        // Create viewer link using createGuidelineViewerLink, then extract just the link with icon
+        const viewerLink = createGuidelineViewerLink(
+            guidelineId,
+            guidelineTitle,
+            guidelineFilename,
+            null, // no context
+            false, // no verbatim quote
+            null // no suggested text
+        );
+        
+        // Extract the link HTML and replace the text with just the icon
+        if (viewerLink && viewerLink.includes('data-link-data')) {
+            // The viewerLink includes text like "📄 Title", we want just "🔗"
+            return viewerLink.replace(/📄\s*[^<]*/, '🔗');
+        }
+        
+        // Fallback: create simple link with icon
         return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link pdf-viewer-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer;">🔗</a>`;
     }
 
@@ -1440,9 +1462,14 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // Use organisation if available, otherwise fall back to hospitalTrust
-            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
+            // Otherwise, add organisation/hospitalTrust
+            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            let orgDisplay = '';
+            if (!hasDisplayName) {
+                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            }
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1477,9 +1504,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // Use organisation if available, otherwise fall back to hospitalTrust
-            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
+            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            let orgDisplay = '';
+            if (!hasDisplayName) {
+                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            }
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1513,22 +1544,25 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // Use organisation if available, otherwise fall back to hospitalTrust
-            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
-            
-            // Log warning if we can't find organisation or hospitalTrust
-            if (!org) {
-                console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
-                    id: g.id,
-                    title: displayTitle,
-                    g_organisation: g.organisation,
-                    g_hospitalTrust: g.hospitalTrust,
-                    localData_organisation: guidelineData?.organisation,
-                    localData_hospitalTrust: guidelineData?.hospitalTrust,
-                    scope: g.scope,
-                    relevance: g.relevance
-                });
+            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
+            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            let orgDisplay = '';
+            if (!hasDisplayName) {
+                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+                // Log warning if we can't find organisation or hospitalTrust
+                if (!org) {
+                    console.warn(`[GUIDELINE_WARNING] Guideline displayed with unknown organisation:`, {
+                        id: g.id,
+                        title: displayTitle,
+                        g_organisation: g.organisation,
+                        g_hospitalTrust: g.hospitalTrust,
+                        localData_organisation: guidelineData?.organisation,
+                        localData_hospitalTrust: guidelineData?.hospitalTrust,
+                        scope: g.scope,
+                        relevance: g.relevance
+                    });
+                }
             }
             
             // Always include PDF link placeholder to maintain grid structure
@@ -1564,9 +1598,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // Use organisation if available, otherwise fall back to hospitalTrust
-            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
+            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            let orgDisplay = '';
+            if (!hasDisplayName) {
+                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            }
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             
@@ -1600,9 +1638,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
-            // Use organisation if available, otherwise fall back to hospitalTrust
-            const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
-            const orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
+            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            let orgDisplay = '';
+            if (!hasDisplayName) {
+                const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
+                orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            }
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
             

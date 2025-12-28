@@ -2161,6 +2161,69 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle regenerate display names button (simple formula)
+        const regenerateDisplayNamesBtn = document.getElementById('regenerateDisplayNamesBtn');
+        if (regenerateDisplayNamesBtn) {
+            regenerateDisplayNamesBtn.addEventListener('click', async () => {
+                if (!confirm('Regenerate displayName fields for all guidelines using simple formula?\n\nFormula:\n- If national: humanFriendlyName + organisation\n- If local: humanFriendlyName + hospitalTrust\n\nThis will update all guidelines. Continue?')) {
+                    return;
+                }
+                
+                const originalText = regenerateDisplayNamesBtn.textContent;
+                
+                try {
+                    regenerateDisplayNamesBtn.textContent = '⏳ Regenerating...';
+                    regenerateDisplayNamesBtn.disabled = true;
+                    
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = 'Regenerating displayName fields using simple formula...';
+                    
+                    console.log('🔄 [REGENERATE_DISPLAY_NAMES] Starting displayName regeneration with simple formula...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/regenerateDisplayNames`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ force: true })
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log('✅ [REGENERATE_DISPLAY_NAMES] Regeneration completed:', result);
+                    
+                    statusDiv.style.display = 'block';
+                    statusDiv.innerHTML = `
+                        <strong>✅ Success!</strong><br>
+                        Updated ${result.updated} out of ${result.total} guidelines<br>
+                        <small style="color:#666">Check console for detailed results</small>
+                    `;
+                    statusDiv.style.backgroundColor = '#d4edda';
+                    statusDiv.style.border = '1px solid #c3e6cb';
+                    statusDiv.style.color = '#155724';
+                } catch (error) {
+                    console.error('❌ [REGENERATE_DISPLAY_NAMES] Error:', error);
+                    const statusDiv = document.getElementById('maintenanceStatus');
+                    statusDiv.style.display = 'block';
+                    statusDiv.textContent = `Error: ${error.message}`;
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                    statusDiv.style.border = '1px solid #f5c6cb';
+                    statusDiv.style.color = '#721c24';
+                    alert('Error regenerating display names: ' + error.message);
+                } finally {
+                    regenerateDisplayNamesBtn.textContent = originalText;
+                    regenerateDisplayNamesBtn.disabled = false;
+                }
+            });
+        }
+
         // Handle clear display names button
         const clearDisplayNamesBtn = document.getElementById('clearDisplayNamesBtn');
         if (clearDisplayNamesBtn) {
