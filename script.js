@@ -1393,7 +1393,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         };
 
         // Create a simple, direct link with text (emojis get stripped by DOM processing)
-        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: underline; cursor: pointer; color: #007bff; font-size: 0.9em;">[PDF]</a>`;
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 8px;">[PDF]</a>`;
     }
 
     // Helper function to format relevance score
@@ -1550,7 +1550,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .guideline-checkbox {
-            margin-right: 12px;
+            margin-right: 16px;
             width: 18px;
             height: 18px;
             cursor: pointer;
@@ -1576,10 +1576,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .guideline-content {
-            display: grid;
-            grid-template-columns: 1fr min-content;
+            display: flex;
+            flex-wrap: wrap;
             align-items: baseline;
-            gap: 10px;
+            gap: 0;
             min-width: 0;
             width: 100%;
             max-width: 100%;
