@@ -3332,6 +3332,15 @@ html, body {
     font-size: inherit !important;
 }
 
+/* Restore spacing for guideline selection interface */
+#summary1 .guideline-info {
+    margin-left: 8px !important;
+}
+
+#summary1 .guideline-pdf-link {
+    margin-left: 10px !important;
+}
+
 /* Restore minimal necessary spacing for readability */
 #summary1 p {
     margin-bottom: 4px !important;
