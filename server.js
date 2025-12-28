@@ -11201,6 +11201,43 @@ function invalidateGuidelinesCache() {
     console.log('[CACHE] Guidelines cache invalidated');
 }
 
+// Admin endpoint to invalidate and refresh the server-side guidelines cache
+app.post('/invalidateGuidelinesCache', authenticateUser, async (req, res) => {
+    try {
+        // Check if user is admin
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) {
+            return res.status(403).json({ error: 'Unauthorized - admin access required' });
+        }
+
+        console.log('[CACHE] Admin requested cache invalidation:', req.user.email);
+        
+        // Invalidate the cache
+        invalidateGuidelinesCache();
+        
+        // Optionally re-warm the cache
+        const rewarm = req.body.rewarm !== false; // Default to true
+        let guidelinesCount = 0;
+        
+        if (rewarm) {
+            console.log('[CACHE] Re-warming guidelines cache...');
+            const guidelines = await getCachedGuidelines(); // This will refetch from Firestore
+            guidelinesCount = guidelines.length;
+            console.log('[CACHE] Cache re-warmed with', guidelinesCount, 'guidelines');
+        }
+        
+        res.json({
+            success: true,
+            message: 'Guidelines cache invalidated successfully',
+            rewarmed: rewarm,
+            guidelinesCount: guidelinesCount
+        });
+    } catch (error) {
+        console.error('[ERROR] Failed to invalidate cache:', error);
+        res.status(500).json({ error: 'Failed to invalidate cache', details: error.message });
+    }
+});
+
 async function getAllGuidelines() {
   try {
     // debugLog('[DEBUG] getAllGuidelines function called');
