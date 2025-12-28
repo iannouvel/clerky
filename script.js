@@ -1248,9 +1248,22 @@ function getCleanDisplayTitle(g, guidelineData) {
                    g.title || 
                    g.id;
     
-    // Strip "Unknown" from the title if it appears
+    // Strip ALL scope/trust/Unknown patterns from the title
     if (rawTitle && typeof rawTitle === 'string') {
-        rawTitle = rawTitle.replace(/\s*-\s*Unknown\s*/gi, '').replace(/\s*Unknown\s*/gi, '').trim();
+        // Remove patterns like " - Local - UHSussex - Unknown"
+        rawTitle = rawTitle.replace(/\s*-\s*Local\s*-\s*[^-]+\s*-\s*Unknown\s*/gi, '');
+        // Remove patterns like " - National - Unknown"
+        rawTitle = rawTitle.replace(/\s*-\s*National\s*-\s*Unknown\s*/gi, '');
+        // Remove patterns like " - Local - [trust name]"
+        rawTitle = rawTitle.replace(/\s*-\s*Local\s*-\s*[^-]+\s*/gi, '');
+        // Remove patterns like " - National - [org name]"
+        rawTitle = rawTitle.replace(/\s*-\s*National\s*-\s*[^-]+\s*/gi, '');
+        // Remove any remaining " - Unknown"
+        rawTitle = rawTitle.replace(/\s*-\s*Unknown\s*/gi, '');
+        // Remove any standalone "Unknown" (not part of a word)
+        rawTitle = rawTitle.replace(/\bUnknown\b/gi, '').trim();
+        // Clean up any double spaces or trailing dashes
+        rawTitle = rawTitle.replace(/\s+/g, ' ').replace(/\s*-\s*$/, '').trim();
     }
     
     // If title is just an ID (like "052" or "052-pdf"), try to construct a better name
@@ -1263,6 +1276,14 @@ function getCleanDisplayTitle(g, guidelineData) {
         
         if (betterName && betterName !== rawTitle && !betterName.includes('Unknown')) {
             rawTitle = betterName;
+            // Strip patterns again from the better name
+            rawTitle = rawTitle.replace(/\s*-\s*Local\s*-\s*[^-]+\s*-\s*Unknown\s*/gi, '');
+            rawTitle = rawTitle.replace(/\s*-\s*National\s*-\s*Unknown\s*/gi, '');
+            rawTitle = rawTitle.replace(/\s*-\s*Local\s*-\s*[^-]+\s*/gi, '');
+            rawTitle = rawTitle.replace(/\s*-\s*National\s*-\s*[^-]+\s*/gi, '');
+            rawTitle = rawTitle.replace(/\s*-\s*Unknown\s*/gi, '');
+            rawTitle = rawTitle.replace(/\bUnknown\b/gi, '').trim();
+            rawTitle = rawTitle.replace(/\s+/g, ' ').replace(/\s*-\s*$/, '').trim();
         } else {
             // Construct a name from the ID (e.g., "052-pdf" -> "Guideline 052")
             const idPart = g.id.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '').trim();
@@ -1331,21 +1352,30 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
     });
 
-    // Helper function to create PDF download link
-    function createPdfDownloadLink(guideline) {
-        if (!guideline) return '';
+    // Helper function to create PDF viewer link
+    function createPdfViewerLink(guideline) {
+        if (!guideline) return '<span class="pdf-download-link-placeholder"></span>';
 
-        let downloadUrl;
-        if (guideline.downloadUrl) {
-            downloadUrl = guideline.downloadUrl;
-        } else if (guideline.originalFilename) {
-            const encodedFilename = encodeURIComponent(guideline.originalFilename);
-            downloadUrl = `https://github.com/iannouvel/clerky/raw/main/guidance/${encodedFilename}`;
-        } else {
-            return '';
-        }
-        
-        return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
+        // Get full guideline data from globalGuidelines if available
+        const fullGuidelineData = window.globalGuidelines?.[guideline.id];
+        const guidelineToUse = fullGuidelineData || guideline;
+
+        // Get guideline ID for viewer link
+        const guidelineId = guideline.id;
+        const guidelineTitle = guidelineToUse.humanFriendlyName || 
+                              guidelineToUse.displayName || 
+                              guidelineToUse.title || 
+                              guideline.id;
+        const guidelineFilename = guidelineToUse.filename || guidelineToUse.originalFilename || null;
+
+        // Create link data for viewer (no context/verbatim quote for selection interface)
+        const linkData = {
+            guidelineId: guidelineId,
+            searchText: null // No search text for selection interface
+        };
+
+        // Create viewer link with just the icon
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link pdf-viewer-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer;">🔗</a>`;
     }
 
     // Helper function to format relevance score
@@ -1406,7 +1436,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     if (essentialGuidelines.length > 0) {
         htmlContent += '<div class="guideline-category"><h3>⭐ Essential Guidelines</h3><div class="guidelines-list">';
         essentialGuidelines.forEach((g, index) => {
-            const pdfLink = createPdfDownloadLink(g);
+            const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
@@ -1443,7 +1473,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     if (remainingMostRelevant.length > 0) {
         htmlContent += '<div class="guideline-category"><h3>🎯 Most Relevant Guidelines</h3><div class="guidelines-list">';
         remainingMostRelevant.forEach((g, index) => {
-            const pdfLink = createPdfDownloadLink(g);
+            const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
@@ -1479,7 +1509,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     if (categories.potentiallyRelevant && categories.potentiallyRelevant.length > 0) {
         htmlContent += '<div class="guideline-category"><h3>⚠️ Potentially Relevant Guidelines</h3><div class="guidelines-list">';
         categories.potentiallyRelevant.forEach((g, index) => {
-            const pdfLink = createPdfDownloadLink(g);
+            const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
@@ -1530,7 +1560,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     if (categories.lessRelevant && categories.lessRelevant.length > 0) {
         htmlContent += '<div class="guideline-category"><h3>📉 Less Relevant Guidelines</h3><div class="guidelines-list">';
         categories.lessRelevant.forEach((g, index) => {
-            const pdfLink = createPdfDownloadLink(g);
+            const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
@@ -1566,7 +1596,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     if (categories.notRelevant && categories.notRelevant.length > 0) {
         htmlContent += '<div class="guideline-category"><h3>❌ Not Relevant Guidelines</h3><div class="guidelines-list">';
         categories.notRelevant.forEach((g, index) => {
-            const pdfLink = createPdfDownloadLink(g);
+            const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
