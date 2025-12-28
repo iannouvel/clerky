@@ -3060,6 +3060,103 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Reingest single guideline to Pinecone handlers
+        const reingestGuidelineSelect = document.getElementById('reingestGuidelineSelect');
+        const reingestSingleBtn = document.getElementById('reingestSingleBtn');
+        const reingestStatus = document.getElementById('reingestStatus');
+
+        // Populate reingest select from getAllGuidelines
+        async function loadGuidelinesForReingest() {
+            try {
+                const token = await auth.currentUser?.getIdToken();
+                if (!token) return;
+
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                    if (reingestGuidelineSelect) {
+                        reingestGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
+                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
+                        guidelines.forEach(g => {
+                            const option = document.createElement('option');
+                            option.value = g.id;
+                            const hasContent = g.content && g.content.length > 0;
+                            const isIngested = g.vectorDbIngested;
+                            const status = isIngested ? '✅' : (hasContent ? '⏳' : '❌');
+                            option.textContent = `${status} ${g.title || g.humanFriendlyName || g.id}`;
+                            reingestGuidelineSelect.appendChild(option);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading guidelines for reingest:', error);
+            }
+        }
+
+        // Load guidelines when auth state changes
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                await loadGuidelinesForReingest();
+            }
+        });
+
+        // Reingest single guideline button handler
+        if (reingestSingleBtn) {
+            reingestSingleBtn.addEventListener('click', async () => {
+                const selectedId = reingestGuidelineSelect?.value;
+                if (!selectedId) {
+                    alert('Please select a guideline first');
+                    return;
+                }
+
+                try {
+                    reingestSingleBtn.disabled = true;
+                    const originalText = reingestSingleBtn.textContent;
+                    reingestSingleBtn.textContent = '⏳ Reingesting...';
+
+                    if (reingestStatus) {
+                        reingestStatus.style.display = 'block';
+                        reingestStatus.innerHTML = `<strong>Reingesting:</strong> ${selectedId}...`;
+                    }
+
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/reingestGuideline`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ guidelineId: selectedId })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        reingestStatus.innerHTML = `<span style="color:green;">✅ <strong>${selectedId}</strong> reingested successfully!</span><br>
+                            Chunks: ${result.chunksUpserted || 0}`;
+                        // Refresh the list to show updated status
+                        await loadGuidelinesForReingest();
+                    } else {
+                        reingestStatus.innerHTML = `<span style="color:red;">❌ <strong>${selectedId}</strong>: ${result.error || 'Unknown error'}</span>`;
+                    }
+
+                    reingestSingleBtn.textContent = originalText;
+                    reingestSingleBtn.disabled = false;
+                } catch (error) {
+                    console.error('Error reingesting guideline:', error);
+                    if (reingestStatus) {
+                        reingestStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+                    }
+                    reingestSingleBtn.textContent = '🔍 Reingest to Pinecone';
+                    reingestSingleBtn.disabled = false;
+                }
+            });
+        }
+
         // Re-extract PDF content handlers
         const reextractGuidelineSelect = document.getElementById('reextractGuidelineSelect');
         const reextractSingleBtn = document.getElementById('reextractSingleBtn');
