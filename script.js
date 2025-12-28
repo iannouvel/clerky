@@ -1393,7 +1393,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         };
 
         // Create a simple, direct link with text (emojis get stripped by DOM processing)
-        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 10px !important;">[PDF]</a>`;
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 10px !important; display: inline-block; width: auto; flex-shrink: 0;">[PDF]</a>`;
     }
 
     // Helper function to format relevance score
