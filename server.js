@@ -2147,8 +2147,71 @@ async function scanAndProcessIncompleteGuidelines() {
         
         console.log(`[BACKGROUND_SCAN] Scan complete: ${incomplete_count} queued, ${already_processing} already processing`);
         
+        // Also scan for processed guidelines that need vector DB ingestion
+        await scanForMissingVectorDbIngestion();
+        
     } catch (error) {
         console.error('[BACKGROUND_SCAN] Error during scan:', error);
+    }
+}
+
+// Scan for processed guidelines that haven't been ingested to vector DB
+async function scanForMissingVectorDbIngestion() {
+    try {
+        debugLog('[VECTOR_SCAN] Scanning for guidelines needing vector DB ingestion...');
+        
+        const snapshot = await db.collection('guidelines').get();
+        let ingested_count = 0;
+        
+        for (const doc of snapshot.docs) {
+            const data = doc.data();
+            const guidelineId = doc.id;
+            
+            // Skip if already ingested or currently processing
+            if (data.vectorDbIngested || data.processing) {
+                continue;
+            }
+            
+            // Check if guideline has content and is processed
+            if (data.content && data.content.trim().length > 0 && data.processed) {
+                console.log(`[VECTOR_SCAN] Found processed guideline needing ingestion: ${guidelineId}`);
+                
+                try {
+                    const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
+                        title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                        organisation: data.organisation || 'Unknown'
+                    });
+                    
+                    if (ingestionResult.success) {
+                        await doc.ref.update({
+                            vectorDbIngested: true,
+                            vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+                        });
+                        console.log(`[VECTOR_SCAN] Ingested ${guidelineId}: ${ingestionResult.chunksUpserted} chunks`);
+                        ingested_count++;
+                    } else {
+                        console.warn(`[VECTOR_SCAN] Failed to ingest ${guidelineId}: ${ingestionResult.error}`);
+                    }
+                } catch (ingestionError) {
+                    console.error(`[VECTOR_SCAN] Error ingesting ${guidelineId}:`, ingestionError.message);
+                }
+                
+                // Limit batch size to avoid overwhelming the system
+                if (ingested_count >= 5) {
+                    debugLog('[VECTOR_SCAN] Reached batch limit (5), will continue in next scan');
+                    break;
+                }
+            }
+        }
+        
+        if (ingested_count > 0) {
+            console.log(`[VECTOR_SCAN] Ingested ${ingested_count} guidelines to vector DB`);
+        } else {
+            debugLog('[VECTOR_SCAN] No guidelines needing ingestion found');
+        }
+        
+    } catch (error) {
+        console.error('[VECTOR_SCAN] Error during scan:', error);
     }
 }
 
@@ -8654,7 +8717,8 @@ async function processGuidelineMetadataFields(doc, fieldsToProcess, userId) {
     const results = {
         guidelineId,
         fieldResults: [],
-        totalUpdated: 0
+        totalUpdated: 0,
+        vectorDbIngested: false
     };
     
     for (const fieldName of fieldsToProcess) {
@@ -8674,6 +8738,38 @@ async function processGuidelineMetadataFields(doc, fieldsToProcess, userId) {
                 status: 'error',
                 error: error.message
             });
+        }
+    }
+    
+    // After processing, check if we should trigger vector DB ingestion
+    // This catches guidelines that were completed by metadata completion instead of job queue
+    if (results.totalUpdated > 0) {
+        try {
+            // Re-fetch the document to get the latest data
+            const freshDoc = await db.collection('guidelines').doc(guidelineId).get();
+            const data = freshDoc.data();
+            
+            // Check if guideline has content but hasn't been ingested to vector DB
+            if (data.content && !data.vectorDbIngested) {
+                console.log(`[METADATA_COMPLETION] Triggering vector DB ingestion for: ${guidelineId}`);
+                const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
+                    title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                    organisation: data.organisation || 'Unknown'
+                });
+                
+                if (ingestionResult.success) {
+                    console.log(`[METADATA_COMPLETION] Vector DB ingestion successful: ${ingestionResult.chunksUpserted} chunks`);
+                    await freshDoc.ref.update({
+                        vectorDbIngested: true,
+                        vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+                    });
+                    results.vectorDbIngested = true;
+                } else {
+                    console.warn(`[METADATA_COMPLETION] Vector DB ingestion failed: ${ingestionResult.error}`);
+                }
+            }
+        } catch (ingestionError) {
+            console.error(`[METADATA_COMPLETION] Vector DB ingestion error for ${guidelineId}:`, ingestionError.message);
         }
     }
     
@@ -16219,18 +16315,81 @@ app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
 });
 
 // Endpoint to re-ingest a specific guideline
+// Can provide content directly, or omit it to fetch from Firestore/Storage
 app.post('/reingestGuideline', authenticateUser, async (req, res) => {
     try {
         const { guidelineId, content, metadata } = req.body;
         
-        if (!guidelineId || !content) {
+        if (!guidelineId) {
             return res.status(400).json({
                 success: false,
-                error: 'guidelineId and content are required'
+                error: 'guidelineId is required'
             });
         }
         
-        const result = await ragIngestion.reingestGuideline(guidelineId, content, metadata || {});
+        let resolvedContent = content;
+        let resolvedMetadata = metadata || {};
+        
+        // If no content provided, fetch from Firestore
+        if (!resolvedContent) {
+            console.log(`[REINGEST] Fetching content from Firestore for: ${guidelineId}`);
+            const doc = await db.collection('guidelines').doc(guidelineId).get();
+            
+            if (!doc.exists) {
+                return res.status(404).json({
+                    success: false,
+                    error: `Guideline ${guidelineId} not found in Firestore`
+                });
+            }
+            
+            const data = doc.data();
+            resolvedContent = data.content;
+            
+            // Also use Firestore metadata if not provided
+            if (!metadata) {
+                resolvedMetadata = {
+                    title: data.title || data.displayName || data.humanFriendlyName || guidelineId,
+                    organisation: data.organisation || 'Unknown'
+                };
+            }
+            
+            // If still no content, try to extract from Storage
+            if (!resolvedContent && data.downloadUrl) {
+                console.log(`[REINGEST] No content in Firestore, trying Storage...`);
+                try {
+                    const extractedContent = await extractContentFromUrl(data.downloadUrl);
+                    if (extractedContent && extractedContent.trim().length > 0) {
+                        resolvedContent = extractedContent;
+                        console.log(`[REINGEST] Extracted ${resolvedContent.length} chars from Storage`);
+                    }
+                } catch (extractError) {
+                    console.error(`[REINGEST] Failed to extract from Storage:`, extractError.message);
+                }
+            }
+            
+            if (!resolvedContent || resolvedContent.trim().length === 0) {
+                return res.status(400).json({
+                    success: false,
+                    error: `No content available for ${guidelineId} in Firestore or Storage`
+                });
+            }
+        }
+        
+        console.log(`[REINGEST] Ingesting ${guidelineId} with ${resolvedContent.length} chars`);
+        const result = await ragIngestion.reingestGuideline(guidelineId, resolvedContent, resolvedMetadata);
+        
+        // Update vectorDbIngested flag if successful
+        if (result.success) {
+            try {
+                await db.collection('guidelines').doc(guidelineId).update({
+                    vectorDbIngested: true,
+                    vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+                });
+                console.log(`[REINGEST] Updated vectorDbIngested flag for: ${guidelineId}`);
+            } catch (updateError) {
+                console.warn(`[REINGEST] Failed to update vectorDbIngested flag:`, updateError.message);
+            }
+        }
         
         res.json({ 
             success: result.success,
