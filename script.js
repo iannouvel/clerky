@@ -10924,6 +10924,10 @@ async function showPreferencesModal() {
                 console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
             }
             
+            // Refresh sidebar displays to show the new preferences
+            await loadAndDisplayUserPreferences();
+            await loadAndDisplayUserSettings();
+            
             // Restore button state
             setButtonLoading(preferencesSaveBtn, false, 'Save Preferences');
             
