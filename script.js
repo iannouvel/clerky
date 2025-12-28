@@ -1239,14 +1239,30 @@ window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 
 // Helper function to get a clean display title for a guideline
 function getCleanDisplayTitle(g, guidelineData) {
+    const gId = g?.id || 'unknown';
+    
+    // *** DEBUG: Log input parameters ***
+    console.log(`[DISPLAY DEBUG] getCleanDisplayTitle for: ${gId}`, {
+        g_displayName: g?.displayName,
+        guidelineData_displayName: guidelineData?.displayName,
+        g_humanFriendlyName: g?.humanFriendlyName,
+        guidelineData_humanFriendlyName: guidelineData?.humanFriendlyName,
+        g_title: g?.title,
+        guidelineData_title: guidelineData?.title
+    });
+    
     // If displayName exists, use it directly (it should already be in the correct format: humanFriendlyName + organisation/hospitalTrust)
     // Check g.displayName first since g is the enriched object that should have displayName from localData
     if (g?.displayName) {
+        console.log(`[DISPLAY DEBUG] → Using g.displayName: "${g.displayName}"`);
         return g.displayName;
     }
     if (guidelineData?.displayName) {
+        console.log(`[DISPLAY DEBUG] → Using guidelineData.displayName: "${guidelineData.displayName}"`);
         return guidelineData.displayName;
     }
+    
+    console.log(`[DISPLAY DEBUG] → No displayName found, using fallback chain`);
     
     // Fallback: Get the best available title, preferring humanFriendlyName over title
     let rawTitle = guidelineData?.humanFriendlyName || 
@@ -1298,7 +1314,9 @@ function getCleanDisplayTitle(g, guidelineData) {
         }
     }
     
-    return rawTitle || g.id;
+    const finalResult = rawTitle || g.id;
+    console.log(`[DISPLAY DEBUG] → Final result for ${gId}: "${finalResult}"`);
+    return finalResult;
 }
 
 // New function to create guideline selection interface with checkboxes
@@ -1462,6 +1480,17 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
+            
+            // *** DEBUG: Log cache lookup for each guideline ***
+            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
+            console.log(`[DISPLAY DEBUG] Processing Essential guideline: ${g.id}`);
+            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
+            if (guidelineData) {
+                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
+            }
+            
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             // Otherwise, add organisation/hospitalTrust
@@ -1515,6 +1544,17 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
+            
+            // *** DEBUG: Log cache lookup for each guideline ***
+            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
+            console.log(`[DISPLAY DEBUG] Processing Most Relevant guideline: ${g.id}`);
+            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
+            if (guidelineData) {
+                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
+            }
+            
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             const hasDisplayName = guidelineData?.displayName || g.displayName;
@@ -1555,6 +1595,17 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
+            
+            // *** DEBUG: Log cache lookup for each guideline ***
+            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
+            console.log(`[DISPLAY DEBUG] Processing Potentially Relevant guideline: ${g.id}`);
+            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
+            if (guidelineData) {
+                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
+            }
+            
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             const hasDisplayName = guidelineData?.displayName || g.displayName;
@@ -1609,6 +1660,17 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
+            
+            // *** DEBUG: Log cache lookup for each guideline ***
+            console.log(`[DISPLAY DEBUG] ─────────────────────────────────────`);
+            console.log(`[DISPLAY DEBUG] Processing Less Relevant guideline: ${g.id}`);
+            console.log(`[DISPLAY DEBUG] - Cache lookup exists: ${!!guidelineData}`);
+            if (guidelineData) {
+                console.log(`[DISPLAY DEBUG] - Cache displayName: "${guidelineData.displayName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache humanFriendlyName: "${guidelineData.humanFriendlyName}"`);
+                console.log(`[DISPLAY DEBUG] - Cache title: "${guidelineData.title}"`);
+            }
+            
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             const hasDisplayName = guidelineData?.displayName || g.displayName;
@@ -4112,6 +4174,17 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             sampleRelevanceValue: data.categories.mostRelevant?.[0] ? data.categories.mostRelevant[0].relevance : 'no most relevant',
             sampleRelevanceType: data.categories.mostRelevant?.[0] ? typeof data.categories.mostRelevant[0].relevance : 'no most relevant'
         });
+
+        // *** DEBUG: Log all guideline IDs returned from server ***
+        const allServerGuidelineIds = [
+            ...(data.categories.mostRelevant || []).map(g => g.id),
+            ...(data.categories.potentiallyRelevant || []).map(g => g.id),
+            ...(data.categories.lessRelevant || []).map(g => g.id)
+        ];
+        console.log('[DISPLAY DEBUG] ═══════════════════════════════════════════════════');
+        console.log('[DISPLAY DEBUG] Server returned guideline IDs:', allServerGuidelineIds);
+        console.log('[DISPLAY DEBUG] Total IDs:', allServerGuidelineIds.length);
+        console.log('[DISPLAY DEBUG] ═══════════════════════════════════════════════════');
 
         // Enrich server response with local cached data AND filter by user's scope/hospitalTrust prefs
         // This is the ONLY place filtering happens - simple and easy to debug
