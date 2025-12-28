@@ -5552,19 +5552,18 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                     if (guideline) {
                         debugLog(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
                         
-                        // Return the matched guideline with preserved fields and relevance
+                        // Only return id and relevance - client has all other data cached
                         return {
-                            ...guideline, // Preserve all original fields including downloadUrl
-                            relevance: item.relevance || '0.5' // Use item's relevance or default
+                            id: guideline.id,
+                            relevance: item.relevance || '0.5'
                         };
                     }
                 }
                 
-                // If no match found, return the item with a warning
+                // If no match found, return minimal object with just id and relevance
                 debugLog(`[DEBUG] Could not match AI guideline to original: "${item.title}"`);
                 return {
                     id: item.id || 'unknown-id',
-                    title: item.title,
                     relevance: item.relevance || '0.0'
                 };
             });
@@ -5631,10 +5630,11 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 }
                 
                 // Add to category if we found a match
+                // Only return id and relevance - client has all other data cached
                 if (guideline) {
                     categories[currentCategory].push({
-                        ...guideline, // Preserve all original fields including downloadUrl
-                        relevance: relevance // Override with extracted relevance
+                        id: guideline.id,
+                        relevance: relevance
                     });
                     
                     parsedCount++;
@@ -5711,9 +5711,8 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         let categories = vectorDB.categoriseByScore(queryResult.matches);
         timer.step('Categorise results');
         
-        // Enrich results with Firestore data for proper display names
-        categories = await enrichWithFirestoreData(categories);
-        timer.step('Enrich with Firestore');
+        // No server-side enrichment needed - client has all Firestore data cached
+        // Server only returns {id, relevance} for each guideline
         
         // Optional: AI reranking for better accuracy (single AI call on top candidates)
         if (ragPrefs.ragReranking && categories.mostRelevant.length > 0) {
@@ -5798,25 +5797,9 @@ async function enrichWithFirestoreData(categories) {
             }
         }
         
-        // Enrich each guideline with Firestore data - use humanFriendlyName as the display title
-        const enrichGuideline = (g) => {
-            const fsData = firestoreData[g.id];
-            if (fsData && fsData.humanFriendlyName) {
-                return {
-                    ...g,
-                    humanFriendlyName: fsData.humanFriendlyName,
-                    organisation: fsData.organisation || g.organisation || 'Unknown'
-                };
-            }
-            return g;
-        };
-        
-        return {
-            mostRelevant: categories.mostRelevant.map(enrichGuideline),
-            potentiallyRelevant: categories.potentiallyRelevant.map(enrichGuideline),
-            lessRelevant: categories.lessRelevant.map(enrichGuideline),
-            notRelevant: categories.notRelevant.map(enrichGuideline)
-        };
+        // No need to enrich - client has all Firestore data cached
+        // Just return the categories as-is (id + relevance only)
+        return categories;
         
     } catch (error) {
         console.error('[RAG] Error enriching with Firestore data:', error.message);
