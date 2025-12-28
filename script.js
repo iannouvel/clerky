@@ -1633,6 +1633,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     
     // Show the selection buttons in the button container
     showSelectionButtons();
+    
+    // Apply spacing styles via JavaScript (CSS gets overridden by #summary1 * reset)
+    setTimeout(() => {
+        document.querySelectorAll('.guideline-checkbox').forEach(el => el.style.cssText += 'margin-right: 4px !important;');
+        document.querySelectorAll('.guideline-info').forEach(el => el.style.cssText += 'margin-left: 4px !important;');
+        document.querySelectorAll('.guideline-pdf-link').forEach(el => el.style.setProperty('margin-left', '10px', 'important'));
+    }, 50);
 }
 
 // Function to update the process button text based on selected guideline count
