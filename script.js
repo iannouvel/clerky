@@ -3071,7 +3071,9 @@ async function loadGuidelinesFromFirestore() {
                         condensed: g.condensed,
                         organisation: g.organisation,
                         downloadUrl: g.downloadUrl,
-                        originalFilename: g.originalFilename
+                        originalFilename: g.originalFilename,
+                        hospitalTrust: g.hospitalTrust || null,  // CRITICAL for filtering
+                        scope: g.scope || null  // CRITICAL for filtering
                     };
                     return acc;
                 }, {});
@@ -3155,7 +3157,9 @@ async function loadGuidelinesFromFirestore() {
                 condensed: g.condensed,
                 organisation: g.organisation,
                 downloadUrl: g.downloadUrl,
-                originalFilename: g.originalFilename
+                originalFilename: g.originalFilename,
+                hospitalTrust: g.hospitalTrust || null,  // CRITICAL for filtering
+                scope: g.scope || null  // CRITICAL for filtering
             };
             return acc;
         }, {});
