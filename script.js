@@ -1561,6 +1561,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             flex: 1;
             min-width: 0;
             overflow: hidden;
+            margin-left: 12px !important;
         }
         
         .guideline-title {
@@ -13449,6 +13450,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         
         .guideline-info {
             flex: 1;
+            margin-left: 12px !important;
         }
         
         .guideline-content {
