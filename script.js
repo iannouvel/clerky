@@ -10056,6 +10056,26 @@ window.switchChat = switchChat;
 window.deleteChat = deleteChat;
 window.startNewChat = startNewChat;
 
+// Button Loading State Helper Functions
+function setButtonLoading(button, isLoading, originalText = null) {
+    if (!button) return;
+    
+    if (isLoading) {
+        // Store original text if not already stored
+        if (!button.dataset.originalText) {
+            button.dataset.originalText = button.innerHTML;
+        }
+        button.disabled = true;
+        button.innerHTML = '<span class="spinner-inline"></span> Saving...';
+        button.classList.add('loading');
+    } else {
+        button.disabled = false;
+        button.innerHTML = originalText || button.dataset.originalText || 'Save';
+        button.classList.remove('loading');
+        delete button.dataset.originalText;
+    }
+}
+
 // Hospital Trust Management Functions
 async function showHospitalTrustModal() {
     console.log('[DEBUG] Showing hospital trust modal');
@@ -10220,6 +10240,7 @@ async function saveHospitalTrustSelection() {
     
     const trustSelect = document.getElementById('trustSelect');
     const currentTrustDisplay = document.getElementById('currentTrustDisplay');
+    const saveTrustBtn = document.getElementById('saveTrustBtn');
     
     if (!trustSelect || !trustSelect.value) {
         alert('Please select a hospital trust');
@@ -10227,6 +10248,9 @@ async function saveHospitalTrustSelection() {
     }
     
     const selectedTrust = trustSelect.value;
+    
+    // Show loading state on button
+    setButtonLoading(saveTrustBtn, true);
     
     try {
         const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
@@ -10264,6 +10288,9 @@ async function saveHospitalTrustSelection() {
             await loadAndDisplayUserPreferences();
             await loadAndDisplayUserSettings();
             
+            // Restore button state
+            setButtonLoading(saveTrustBtn, false, 'Save Selection');
+            
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
             
@@ -10277,6 +10304,8 @@ async function saveHospitalTrustSelection() {
         }
     } catch (error) {
         console.error('[ERROR] Failed to save hospital trust:', error);
+        // Restore button state on error
+        setButtonLoading(saveTrustBtn, false, 'Save Selection');
         alert('Failed to save hospital trust selection. Please try again.');
     }
 }
@@ -10286,10 +10315,14 @@ async function clearHospitalTrustSelection() {
     
     const currentTrustDisplay = document.getElementById('currentTrustDisplay');
     const trustSelect = document.getElementById('trustSelect');
+    const clearTrustBtn = document.getElementById('clearTrustBtn');
     
     if (!confirm('Are you sure you want to clear your hospital trust selection?')) {
         return;
     }
+    
+    // Show loading state on button
+    setButtonLoading(clearTrustBtn, true);
     
     try {
         const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
@@ -10326,6 +10359,9 @@ async function clearHospitalTrustSelection() {
             await loadAndDisplayUserPreferences();
             await loadAndDisplayUserSettings();
             
+            // Restore button state
+            setButtonLoading(clearTrustBtn, false, 'Clear Selection');
+            
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
             
@@ -10339,6 +10375,8 @@ async function clearHospitalTrustSelection() {
         }
     } catch (error) {
         console.error('[ERROR] Failed to clear hospital trust:', error);
+        // Restore button state on error
+        setButtonLoading(clearTrustBtn, false, 'Clear Selection');
         alert('Failed to clear hospital trust selection. Please try again.');
     }
 }
@@ -10839,63 +10877,76 @@ async function showPreferencesModal() {
     const handleSaveClick = async () => {
         console.log('[DEBUG] Save Preferences clicked');
         
-        // Save guideline scope selection if one was selected
-        if (selectedScope) {
-            const scopeSelection = {
-                scope: selectedScope,
-                hospitalTrust: (selectedScope === 'local' || selectedScope === 'both') ? currentTrust : null
-            };
-            await saveGuidelineScopeSelection(scopeSelection);
-            console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
-        }
+        // Show loading state on button
+        setButtonLoading(preferencesSaveBtn, true);
         
-        // Save model preferences
-        const modelOrder = getCurrentModelOrder();
-        if (modelOrder.length > 0) {
-            const saved = await saveUserModelPreferences(modelOrder);
-            if (saved) {
-                console.log('[DEBUG] Saved model preferences:', modelOrder);
-                // Update main panel display with new preferred model
-                const modelDisplay = document.getElementById('mainModelDisplay');
-                if (modelDisplay && modelOrder.length > 0) {
-                    const firstModelId = modelOrder[0];
-                    const model = AVAILABLE_MODELS.find(m => m.model === firstModelId);
-                    if (model) {
-                        modelDisplay.textContent = model.displayName;
-                    } else {
-                        modelDisplay.textContent = firstModel;
+        try {
+            // Save guideline scope selection if one was selected
+            if (selectedScope) {
+                const scopeSelection = {
+                    scope: selectedScope,
+                    hospitalTrust: (selectedScope === 'local' || selectedScope === 'both') ? currentTrust : null
+                };
+                await saveGuidelineScopeSelection(scopeSelection);
+                console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
+            }
+            
+            // Save model preferences
+            const modelOrder = getCurrentModelOrder();
+            if (modelOrder.length > 0) {
+                const saved = await saveUserModelPreferences(modelOrder);
+                if (saved) {
+                    console.log('[DEBUG] Saved model preferences:', modelOrder);
+                    // Update main panel display with new preferred model
+                    const modelDisplay = document.getElementById('mainModelDisplay');
+                    if (modelDisplay && modelOrder.length > 0) {
+                        const firstModelId = modelOrder[0];
+                        const model = AVAILABLE_MODELS.find(m => m.model === firstModelId);
+                        if (model) {
+                            modelDisplay.textContent = model.displayName;
+                        } else {
+                            modelDisplay.textContent = firstModel;
+                        }
                     }
+                } else {
+                    console.warn('[DEBUG] Failed to save model preferences');
+                }
+            }
+            
+            // Save chunk distribution provider preferences
+            const chunkProviders = getSelectedChunkDistributionProviders();
+            if (chunkProviders.length > 0) {
+                const savedChunkProviders = await saveChunkDistributionProviders(chunkProviders);
+                if (!savedChunkProviders) {
+                    console.warn('[CHUNK PREF] Failed to save chunk distribution providers');
                 }
             } else {
-                console.warn('[DEBUG] Failed to save model preferences');
+                console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
             }
+            
+            // Restore button state
+            setButtonLoading(preferencesSaveBtn, false, 'Save Preferences');
+            
+            // Close modal
+            modal.classList.add('hidden');
+            
+            // Remove event listeners
+            preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
+            preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
+            preferencesClearTrustBtn.removeEventListener('click', handleClearTrustClick);
+            preferencesNationalBtn.removeEventListener('click', handleNationalClick);
+            preferencesLocalBtn.removeEventListener('click', handleLocalClick);
+            preferencesBothBtn.removeEventListener('click', handleBothClick);
+            preferencesSaveBtn.removeEventListener('click', handleSaveClick);
+            closeBtn.removeEventListener('click', handleCloseClick);
+            
+            alert('Preferences saved successfully!');
+        } catch (error) {
+            console.error('[ERROR] Failed to save preferences:', error);
+            // Restore button state on error
+            setButtonLoading(preferencesSaveBtn, false, 'Save Preferences');
+            alert('Failed to save preferences. Please try again.');
         }
-        
-        // Save chunk distribution provider preferences
-        const chunkProviders = getSelectedChunkDistributionProviders();
-        if (chunkProviders.length > 0) {
-            const savedChunkProviders = await saveChunkDistributionProviders(chunkProviders);
-            if (!savedChunkProviders) {
-                console.warn('[CHUNK PREF] Failed to save chunk distribution providers');
-            }
-        } else {
-            console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
-        }
-        
-        // Close modal
-        modal.classList.add('hidden');
-        
-        // Remove event listeners
-        preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
-        preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
-        preferencesClearTrustBtn.removeEventListener('click', handleClearTrustClick);
-        preferencesNationalBtn.removeEventListener('click', handleNationalClick);
-        preferencesLocalBtn.removeEventListener('click', handleLocalClick);
-        preferencesBothBtn.removeEventListener('click', handleBothClick);
-        preferencesSaveBtn.removeEventListener('click', handleSaveClick);
-        closeBtn.removeEventListener('click', handleCloseClick);
-        
-        alert('Preferences saved successfully!');
     };
     
     const handleCloseClick = () => {

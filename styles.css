@@ -1407,6 +1407,31 @@ body {
     vertical-align: middle;
 }
 
+/* Inline spinner for buttons */
+.spinner-inline {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/* Button loading state */
+button.loading {
+    opacity: 0.8;
+    cursor: wait;
+}
+
+/* Dark spinner for light buttons */
+.clear-trust-btn .spinner-inline {
+    border-color: rgba(0, 0, 0, 0.2);
+    border-top-color: #2D3436;
+}
+
 .record-symbol {
     height: 10px;
     width: 10px;
