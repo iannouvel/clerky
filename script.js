@@ -1240,11 +1240,12 @@ window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 // Helper function to get a clean display title for a guideline
 function getCleanDisplayTitle(g, guidelineData) {
     // If displayName exists, use it directly (it should already be in the correct format: humanFriendlyName + organisation/hospitalTrust)
+    // Check g.displayName first since g is the enriched object that should have displayName from localData
+    if (g?.displayName) {
+        return g.displayName;
+    }
     if (guidelineData?.displayName) {
         return guidelineData.displayName;
-    }
-    if (g.displayName) {
-        return g.displayName;
     }
     
     // Fallback: Get the best available title, preferring humanFriendlyName over title
@@ -1464,11 +1465,22 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             // Otherwise, add organisation/hospitalTrust
-            const hasDisplayName = guidelineData?.displayName || g.displayName;
+            const hasDisplayName = g.displayName || guidelineData?.displayName;
             let orgDisplay = '';
             if (!hasDisplayName) {
                 const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
                 orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
+            }
+            
+            // Debug logging for displayName issues
+            if (!hasDisplayName && (g.id.includes('transfusion') || g.id.includes('red-cell'))) {
+                console.log('[DEBUG] displayName check for', g.id, {
+                    g_displayName: g.displayName,
+                    guidelineData_displayName: guidelineData?.displayName,
+                    g_humanFriendlyName: g.humanFriendlyName,
+                    guidelineData_humanFriendlyName: guidelineData?.humanFriendlyName,
+                    displayTitle: displayTitle
+                });
             }
             // Always include PDF link placeholder to maintain grid structure
             const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
@@ -4112,36 +4124,24 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             
             filteredCategories[category] = (guidelines || [])
                 .map(g => {
-                    // Enrich with local cached data (has hospitalTrust, organisation, etc.)
-                    const localData = window.globalGuidelines?.[g.id] || {};
+                    // Server only sends {id, relevance} - look up full data from client cache
+                    const fullGuidelineData = window.globalGuidelines?.[g.id];
                     
-                    // Detailed logging for debugging "Unknown" issues
-                    const hasUnknown = (g.title && g.title.includes('Unknown')) || 
-                                      (g.humanFriendlyName && g.humanFriendlyName.includes('Unknown')) ||
-                                      (localData.title && localData.title.includes('Unknown')) ||
-                                      (localData.humanFriendlyName && localData.humanFriendlyName.includes('Unknown'));
-                    
-                    if (hasUnknown || !g.organisation && !localData.organisation) {
-                        console.log(`[DEBUG] Guideline data for ${g.id}:`, {
+                    if (!fullGuidelineData) {
+                        console.warn(`[DEBUG] No cached data found for guideline ${g.id}`);
+                        // Fallback: return minimal object with just id and relevance
+                        return {
                             id: g.id,
-                            server_title: g.title,
-                            server_humanFriendlyName: g.humanFriendlyName,
-                            server_organisation: g.organisation,
-                            server_hospitalTrust: g.hospitalTrust,
-                            local_title: localData.title,
-                            local_humanFriendlyName: localData.humanFriendlyName,
-                            local_organisation: localData.organisation,
-                            local_hospitalTrust: localData.hospitalTrust,
-                            local_displayName: localData.displayName
-                        });
+                            relevance: g.relevance,
+                            title: g.id,
+                            displayName: null
+                        };
                     }
                     
+                    // Combine: full cached data + relevance score from server
                     return {
-                        ...localData,  // Local cached data (has hospitalTrust, organisation, etc.)
-                        ...g,          // Server response data (has relevance score)
-                        hospitalTrust: g.hospitalTrust || localData.hospitalTrust,
-                        organisation: g.organisation || localData.organisation,
-                        humanFriendlyName: g.humanFriendlyName || localData.humanFriendlyName || g.title
+                        ...fullGuidelineData,  // All Firestore fields (displayName, hospitalTrust, organisation, etc.)
+                        relevance: g.relevance // Relevance score from server
                     };
                 })
                 .filter(g => {
