@@ -10066,6 +10066,7 @@ async function showHospitalTrustModal() {
     const saveTrustBtn = document.getElementById('saveTrustBtn');
     const clearTrustBtn = document.getElementById('clearTrustBtn');
     const trustSearchInput = document.getElementById('trustSearchInput');
+    const closeBtn = document.getElementById('closeHospitalTrustModal');
     
     if (!modal) {
         console.error('[ERROR] Hospital trust modal not found');
@@ -10120,10 +10121,27 @@ async function showHospitalTrustModal() {
         };
     }
     
+    // Close button handler
+    if (closeBtn) {
+        closeBtn.onclick = async () => {
+            modal.classList.add('hidden');
+            // Reopen preferences modal if we came from there
+            if (window.openedTrustModalFromPreferences) {
+                window.openedTrustModalFromPreferences = false;
+                await showPreferencesModal();
+            }
+        };
+    }
+    
     // Close modal when clicking outside
-    modal.onclick = (event) => {
+    modal.onclick = async (event) => {
         if (event.target === modal) {
             modal.classList.add('hidden');
+            // Reopen preferences modal if we came from there
+            if (window.openedTrustModalFromPreferences) {
+                window.openedTrustModalFromPreferences = false;
+                await showPreferencesModal();
+            }
         }
     };
 }
@@ -10244,6 +10262,12 @@ async function saveHospitalTrustSelection() {
             
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
+            
+            // Reopen preferences modal if we came from there
+            if (window.openedTrustModalFromPreferences) {
+                window.openedTrustModalFromPreferences = false;
+                await showPreferencesModal();
+            }
         } else {
             throw new Error(result.error || 'Failed to update hospital trust');
         }
@@ -10296,6 +10320,12 @@ async function clearHospitalTrustSelection() {
             
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
+            
+            // Reopen preferences modal if we came from there
+            if (window.openedTrustModalFromPreferences) {
+                window.openedTrustModalFromPreferences = false;
+                await showPreferencesModal();
+            }
         } else {
             throw new Error(result.error || 'Failed to clear hospital trust');
         }
@@ -10709,65 +10739,21 @@ async function showPreferencesModal() {
     const handleChangeTrustClick = async () => {
         console.log('[DEBUG] Change Trust clicked in preferences');
         modal.classList.add('hidden');
+        // Set flag so hospital trust modal knows to reopen preferences when done
+        window.openedTrustModalFromPreferences = true;
         await showHospitalTrustModal();
-        
-        // Reload current trust after selection
-        try {
-            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
-                }
-            });
-            const result = await response.json();
-            if (result.success && result.hospitalTrust) {
-                currentTrust = result.hospitalTrust;
-                // Update selectedScope if it was local/both to use new trust
-                if (selectedScope === 'local' || selectedScope === 'both') {
-                    // Keep the same scope but update trust reference
-                    preferencesScopeDisplay.textContent = selectedScope === 'local' 
-                        ? `Local Guidelines (${currentTrust})`
-                        : `Both (National + ${currentTrust})`;
-                }
-            }
-        } catch (error) {
-            console.error('[ERROR] Failed to reload trust:', error);
-        }
-        
-        // Reload preferences modal after trust selection
-        await showPreferencesModal();
+        // Note: showHospitalTrustModal returns immediately after showing modal,
+        // preferences modal will be reopened by the trust modal's save/clear/close handlers
     };
     
     const handleSelectTrustClick = async () => {
         console.log('[DEBUG] Select Trust clicked in preferences');
         modal.classList.add('hidden');
+        // Set flag so hospital trust modal knows to reopen preferences when done
+        window.openedTrustModalFromPreferences = true;
         await showHospitalTrustModal();
-        
-        // Reload current trust after selection
-        try {
-            const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
-                }
-            });
-            const result = await response.json();
-            if (result.success && result.hospitalTrust) {
-                currentTrust = result.hospitalTrust;
-                // Update selectedScope if it was local/both to use new trust
-                if (selectedScope === 'local' || selectedScope === 'both') {
-                    // Keep the same scope but update trust reference
-                    preferencesScopeDisplay.textContent = selectedScope === 'local' 
-                        ? `Local Guidelines (${currentTrust})`
-                        : `Both (National + ${currentTrust})`;
-                }
-            }
-        } catch (error) {
-            console.error('[ERROR] Failed to reload trust:', error);
-        }
-        
-        // Reload preferences modal after trust selection
-        await showPreferencesModal();
+        // Note: showHospitalTrustModal returns immediately after showing modal,
+        // preferences modal will be reopened by the trust modal's save/clear/close handlers
     };
     
     const handleClearTrustClick = async () => {
