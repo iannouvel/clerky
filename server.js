@@ -2617,6 +2617,110 @@ if (!fs.existsSync(userPrefsDir)) {
 const userPreferencesCache = new Map();
 const USER_PREFERENCE_CACHE_TTL = 15 * 60 * 1000; // 15 minutes in milliseconds
 
+// Hospital trust mapping cache (full name -> short name)
+let hospitalTrustMappingsCache = null;
+let hospitalTrustMappingsCacheTimestamp = 0;
+const HOSPITAL_TRUST_CACHE_TTL = 60 * 60 * 1000; // 1 hour cache
+
+/**
+ * Load hospital trust mappings from Firestore with caching
+ * @returns {Promise<Map<string, string>>} Map of full name to short name
+ */
+async function loadHospitalTrustMappings() {
+    // Return cached data if still valid
+    if (hospitalTrustMappingsCache && (Date.now() - hospitalTrustMappingsCacheTimestamp < HOSPITAL_TRUST_CACHE_TTL)) {
+        return hospitalTrustMappingsCache;
+    }
+    
+    if (!db) {
+        console.log('[HOSPITAL_TRUST] Firestore not available, returning empty mappings');
+        return new Map();
+    }
+    
+    try {
+        console.log('[HOSPITAL_TRUST] Loading hospital trust mappings from Firestore...');
+        const snapshot = await db.collection('hospitalTrustMappings').get();
+        
+        const mappings = new Map();
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.fullName && data.shortName) {
+                mappings.set(data.fullName, data.shortName);
+            }
+        });
+        
+        // Update cache
+        hospitalTrustMappingsCache = mappings;
+        hospitalTrustMappingsCacheTimestamp = Date.now();
+        
+        console.log(`[HOSPITAL_TRUST] Loaded ${mappings.size} trust mappings`);
+        return mappings;
+    } catch (error) {
+        console.error('[HOSPITAL_TRUST] Error loading mappings:', error);
+        return hospitalTrustMappingsCache || new Map();
+    }
+}
+
+/**
+ * Get the short/abbreviated name for a hospital trust
+ * @param {string} fullName - The full hospital trust name
+ * @returns {Promise<string>} The short name or a generated fallback
+ */
+async function getShortHospitalTrust(fullName) {
+    if (!fullName || typeof fullName !== 'string') {
+        return null;
+    }
+    
+    const mappings = await loadHospitalTrustMappings();
+    
+    // Check for exact match first
+    if (mappings.has(fullName)) {
+        return mappings.get(fullName);
+    }
+    
+    // Try case-insensitive match
+    for (const [key, value] of mappings) {
+        if (key.toLowerCase() === fullName.toLowerCase()) {
+            return value;
+        }
+    }
+    
+    // Fallback: generate an acronym from the trust name
+    console.log(`[HOSPITAL_TRUST] No mapping found for "${fullName}", generating acronym`);
+    return generateTrustAcronym(fullName);
+}
+
+/**
+ * Generate an acronym from a trust name as a fallback
+ * @param {string} trustName - The full trust name
+ * @returns {string} Generated acronym
+ */
+function generateTrustAcronym(trustName) {
+    if (!trustName) return '';
+    
+    // Remove common suffixes
+    let cleanName = trustName
+        .replace(/\s+NHS\s+(Foundation\s+)?Trust$/i, '')
+        .replace(/\s+University\s+Health\s+Board$/i, '')
+        .replace(/\s+Health\s+Board$/i, '')
+        .replace(/\s+Healthcare\s+NHS\s+Trust$/i, '')
+        .trim();
+    
+    // If the name is already short (e.g., "Imperial"), return it as-is
+    if (cleanName.split(/\s+/).length <= 2 && cleanName.length <= 15) {
+        return cleanName;
+    }
+    
+    // Generate acronym from capitalised words
+    const words = cleanName.split(/\s+/);
+    const acronym = words
+        .filter(word => word.length > 2 || /^(of|and|the)$/i.test(word) === false)
+        .map(word => word.charAt(0).toUpperCase())
+        .join('');
+    
+    return acronym || cleanName.substring(0, 10);
+}
+
 // Update the getUserAIPreference function to use the cache and the correct db variable
 async function getUserAIPreference(userId) {
     // Check if we have a cached preference for this user
@@ -8322,9 +8426,15 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       return null;
     }
     
-    // Get scope and hospitalTrust for formatting
+    // Get scope and shortHospitalTrust for formatting
     const scope = guidelineData.scope || 'national';
     const hospitalTrust = guidelineData.hospitalTrust || '';
+    
+    // Get shortHospitalTrust - use existing field or look it up
+    let shortHospitalTrust = guidelineData.shortHospitalTrust || '';
+    if (!shortHospitalTrust && hospitalTrust) {
+      shortHospitalTrust = await getShortHospitalTrust(hospitalTrust);
+    }
     
     // Get the prompt config
     const promptConfig = global.prompts?.['extractDisplayName'] || require('./prompts.json')['extractDisplayName'];
@@ -8333,11 +8443,11 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       return null;
     }
     
-    // Prepare the prompt with title, scope, trust, and content
+    // Prepare the prompt with title, scope, shortHospitalTrust, and content
     const prompt = promptConfig.prompt
       .replace('{{title}}', title)
       .replace('{{scope}}', scope)
-      .replace('{{hospitalTrust}}', hospitalTrust || 'Not specified')
+      .replace('{{shortHospitalTrust}}', shortHospitalTrust || 'Not specified')
       .replace('{{text}}', (contentForAnalysis || '').substring(0, 2000));
     
     const messages = [
@@ -8351,7 +8461,7 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
       const displayName = aiResult.content.trim();
       // Clean up any extra formatting the AI might add
       const cleaned = displayName.replace(/^["']|["']$/g, '').trim();
-      console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}", scope: "${scope}", trust: "${hospitalTrust}"`);
+      console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}", scope: "${scope}", shortTrust: "${shortHospitalTrust}"`);
       return cleaned;
     }
     
@@ -11239,9 +11349,17 @@ async function storeGuideline(guidelineData) {
         const guidelineRef = db.collection('guidelines').doc(docId);
         const existingDoc = await guidelineRef.get();
         
+        // Look up short hospital trust name if hospitalTrust is provided
+        let shortHospitalTrust = null;
+        if (guidelineData.hospitalTrust) {
+            shortHospitalTrust = await getShortHospitalTrust(guidelineData.hospitalTrust);
+            console.log(`[DEBUG] Mapped hospitalTrust "${guidelineData.hospitalTrust}" -> shortHospitalTrust "${shortHospitalTrust}"`);
+        }
+        
         const guidelineDoc = {
             ...guidelineData,
             downloadUrl, // Add the download URL
+            shortHospitalTrust: shortHospitalTrust, // Add abbreviated trust name
             fileHash: guidelineData.fileHash || (existingDoc.exists ? existingDoc.data().fileHash : null), // Preserve existing hash or add new one
             createdAt: existingDoc.exists ? existingDoc.data().createdAt : admin.firestore.FieldValue.serverTimestamp(),
             updatedAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -17724,6 +17842,117 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
     });
   } catch (error) {
     console.error('[POPULATE_DISPLAY_NAMES] Error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Endpoint to migrate shortHospitalTrust and regenerate displayNames for local guidelines
+app.post('/migrateShortHospitalTrust', authenticateUser, async (req, res) => {
+  try {
+    const { regenerateDisplay = true, force = false } = req.body;
+    
+    console.log(`[MIGRATE_SHORT_TRUST] Starting migration. regenerateDisplay=${regenerateDisplay}, force=${force}`);
+    
+    // Query guidelines with hospitalTrust set
+    const guidelinesSnapshot = await db.collection('guidelines')
+      .where('hospitalTrust', '!=', null)
+      .get();
+    
+    console.log(`[MIGRATE_SHORT_TRUST] Found ${guidelinesSnapshot.size} guidelines with hospitalTrust`);
+    
+    const results = {
+      updated: 0,
+      skipped: 0,
+      errors: 0,
+      details: []
+    };
+    
+    const BATCH_SIZE = 500;
+    let batch = db.batch();
+    let batchCount = 0;
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      
+      // Skip if already has shortHospitalTrust (unless force)
+      if (data.shortHospitalTrust && !force) {
+        results.skipped++;
+        continue;
+      }
+      
+      try {
+        // Get short hospital trust name
+        const shortHospitalTrust = await getShortHospitalTrust(data.hospitalTrust);
+        
+        if (!shortHospitalTrust) {
+          results.errors++;
+          results.details.push({
+            id: doc.id,
+            error: 'Could not generate short trust name',
+            hospitalTrust: data.hospitalTrust
+          });
+          continue;
+        }
+        
+        const updates = {
+          shortHospitalTrust: shortHospitalTrust,
+          updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        };
+        
+        // Optionally regenerate displayName
+        if (regenerateDisplay) {
+          const userId = req.user.uid;
+          // Create updated data object for AI generation
+          const updatedData = { ...data, shortHospitalTrust };
+          const displayName = await generateDisplayNameWithAI(updatedData, userId);
+          if (displayName) {
+            updates.displayName = displayName;
+          }
+        }
+        
+        batch.update(doc.ref, updates);
+        batchCount++;
+        results.updated++;
+        
+        results.details.push({
+          id: doc.id,
+          hospitalTrust: data.hospitalTrust,
+          shortHospitalTrust: shortHospitalTrust,
+          displayName: updates.displayName || '(not updated)'
+        });
+        
+        // Commit batch when full
+        if (batchCount >= BATCH_SIZE) {
+          await batch.commit();
+          console.log(`[MIGRATE_SHORT_TRUST] Committed batch of ${batchCount} updates`);
+          batch = db.batch();
+          batchCount = 0;
+        }
+      } catch (error) {
+        results.errors++;
+        results.details.push({
+          id: doc.id,
+          error: error.message,
+          hospitalTrust: data.hospitalTrust
+        });
+      }
+    }
+    
+    // Commit remaining updates
+    if (batchCount > 0) {
+      await batch.commit();
+      console.log(`[MIGRATE_SHORT_TRUST] Committed final batch of ${batchCount} updates`);
+    }
+    
+    console.log(`[MIGRATE_SHORT_TRUST] Migration complete. Updated: ${results.updated}, Skipped: ${results.skipped}, Errors: ${results.errors}`);
+    
+    res.json({
+      success: true,
+      message: `Migration complete. Updated ${results.updated} guidelines.`,
+      ...results
+    });
+  } catch (error) {
+    console.error('[MIGRATE_SHORT_TRUST] Error:', error);
     res.status(500).json({ error: error.message });
   }
 });
