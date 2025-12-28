@@ -4218,19 +4218,34 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                     };
                 })
                 .filter(g => {
-                    // Filter based on user's scope/hospitalTrust preferences
-                    if (!scope || scope === 'national') {
-                        // National only - exclude guidelines with hospitalTrust set
-                        return !g.hospitalTrust;
-                    } else if (scope === 'local') {
-                        // Local only - must match user's hospitalTrust
-                        return g.hospitalTrust === hospitalTrust;
-                    } else if (scope === 'both') {
-                        // National + user's trust - include if no hospitalTrust OR matches user's trust
-                        if (!g.hospitalTrust) return true; // National guideline
-                        return g.hospitalTrust === hospitalTrust; // Matches user's trust
-                    }
-                    return true; // Default: include
+                    // *** DEBUG: Log hospitalTrust value for each guideline being filtered ***
+                    const gHospitalTrust = g.hospitalTrust;
+                    const shouldInclude = (() => {
+                        // Filter based on user's scope/hospitalTrust preferences
+                        if (!scope || scope === 'national') {
+                            // National only - exclude guidelines with hospitalTrust set
+                            return !gHospitalTrust;
+                        } else if (scope === 'local') {
+                            // Local only - must match user's hospitalTrust
+                            return gHospitalTrust === hospitalTrust;
+                        } else if (scope === 'both') {
+                            // National + user's trust - include if no hospitalTrust OR matches user's trust
+                            if (!gHospitalTrust) return true; // National guideline
+                            return gHospitalTrust === hospitalTrust; // Matches user's trust
+                        }
+                        return true; // Default: include
+                    })();
+                    
+                    // Log filtering decision for each guideline
+                    console.log(`[FILTER DEBUG] ${g.id}:`, {
+                        hospitalTrust: gHospitalTrust,
+                        userTrust: hospitalTrust,
+                        scope: scope,
+                        matches: gHospitalTrust === hospitalTrust,
+                        included: shouldInclude
+                    });
+                    
+                    return shouldInclude;
                 });
             
             totalAfterFilter += filteredCategories[category].length;
