@@ -1496,7 +1496,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span class="relevance">${formatRelevanceScore(g.relevance)}</span>
                                 ${pdfLinkHtml}
                             </div>
                         </div>
@@ -1606,25 +1605,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .guideline-content {
             display: grid;
-            grid-template-columns: 1fr auto min-content;
+            grid-template-columns: 1fr min-content;
             align-items: baseline;
             gap: 10px;
             min-width: 0;
             width: 100%;
             max-width: 100%;
-        }
-        
-        .relevance {
-            color: #28a745;
-            font-weight: 500;
-            white-space: nowrap;
-            font-size: 0.9em;
-            margin-top: 0;
-            margin-bottom: 0;
-            padding: 0;
-            line-height: 1.3;
-            flex-shrink: 0;
-            vertical-align: baseline;
         }
         
         .guideline-selection-interface .pdf-download-link {
