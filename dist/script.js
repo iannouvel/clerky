@@ -1745,9 +1745,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     }
 
     htmlContent += `
-            <div class="selection-info">
-                <p><strong>How it works:</strong> Selected guidelines will be processed one-by-one. After each guideline is processed and changes are incorporated into your transcript, the system will move to the next selected guideline.</p>
-            </div>
         </div>
         
         <style>
