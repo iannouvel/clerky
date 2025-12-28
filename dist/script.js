@@ -1384,44 +1384,16 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Helper function to create PDF viewer link
     function createPdfViewerLink(guideline) {
-        if (!guideline) return '<span class="pdf-download-link-placeholder"></span>';
-
-        // Get full guideline data from globalGuidelines if available
-        const fullGuidelineData = window.globalGuidelines?.[guideline.id];
-        const guidelineToUse = fullGuidelineData || guideline;
-
-        // Get guideline ID for viewer link
-        const guidelineId = guideline.id;
-        const guidelineTitle = guidelineToUse.humanFriendlyName || 
-                              guidelineToUse.displayName || 
-                              guidelineToUse.title || 
-                              guideline.id;
-        const guidelineFilename = guidelineToUse.filename || guidelineToUse.originalFilename || null;
+        if (!guideline || !guideline.id) return '';
 
         // Create link data for viewer (no context/verbatim quote for selection interface)
         const linkData = {
-            guidelineId: guidelineId,
+            guidelineId: guideline.id,
             searchText: null // No search text for selection interface
         };
 
-        // Create viewer link using createGuidelineViewerLink, then extract just the link with icon
-        const viewerLink = createGuidelineViewerLink(
-            guidelineId,
-            guidelineTitle,
-            guidelineFilename,
-            null, // no context
-            false, // no verbatim quote
-            null // no suggested text
-        );
-        
-        // Extract the link HTML and replace the text with just the icon
-        if (viewerLink && viewerLink.includes('data-link-data')) {
-            // The viewerLink includes text like "📄 Title", we want just "🔗"
-            return viewerLink.replace(/📄\s*[^<]*/, '🔗');
-        }
-        
-        // Fallback: create simple link with icon
-        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link pdf-viewer-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer;">🔗</a>`;
+        // Create a simple, direct link with the 🔗 icon
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; font-size: 1.1em;">🔗</a>`;
     }
 
     // Helper function to format relevance score
@@ -1479,8 +1451,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                 const org = g.organisation || g.hospitalTrust || guidelineData?.organisation || guidelineData?.hospitalTrust || null;
                 orgDisplay = org ? ` - ${abbreviateOrganization(org)}` : '';
             }
-            // Always include PDF link placeholder to maintain grid structure
-            const pdfLinkHtml = pdfLink || '<span class="pdf-download-link-placeholder"></span>';
+            // Include PDF link if available
+            const pdfLinkHtml = pdfLink || '';
             
             // Only pre-check the first (highest-scoring) guideline
             const isChecked = index === 0 ? 'checked="checked"' : '';
