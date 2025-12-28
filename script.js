@@ -1463,8 +1463,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <input type="checkbox" 
                                class="guideline-checkbox" 
                                data-guideline-id="${g.id}" 
+                               style="margin-right: 12px;"
                                ${isChecked}>
-                        <span class="checkmark"></span>
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
@@ -1550,7 +1550,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .guideline-checkbox {
-            margin-right: 16px;
+            margin-right: 12px !important;
             width: 18px;
             height: 18px;
             cursor: pointer;
