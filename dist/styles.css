@@ -4311,6 +4311,7 @@ html, body {
     padding: 20px;
     overflow-y: auto;
     flex: 1;
+    min-height: 0;
 }
 
 .hospital-trust-info {
@@ -4389,6 +4390,9 @@ html, body {
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+    flex-shrink: 0;
 }
 
 .save-trust-btn,
