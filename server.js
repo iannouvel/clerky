@@ -8472,6 +8472,39 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
   }
 }
 
+/**
+ * Generate a simple displayName using the formula:
+ * - Local guidelines: humanFriendlyName - shortHospitalTrust
+ * - National guidelines: humanFriendlyName - organisation
+ * @param {Object} guidelineData - The guideline data object
+ * @returns {string} The formatted displayName
+ */
+function generateSimpleDisplayName(guidelineData) {
+  const name = guidelineData.humanFriendlyName || guidelineData.title || guidelineData.filename || '';
+  
+  if (!name) {
+    return null;
+  }
+  
+  const scope = guidelineData.scope || 'national';
+  
+  if (scope === 'local') {
+    // Local: humanFriendlyName - shortHospitalTrust
+    const shortTrust = guidelineData.shortHospitalTrust || '';
+    if (shortTrust) {
+      return `${name} - ${shortTrust}`;
+    }
+    return name;
+  } else {
+    // National: humanFriendlyName - organisation
+    const org = guidelineData.organisation || '';
+    if (org) {
+      return `${name} - ${org}`;
+    }
+    return name;
+  }
+}
+
 // Fallback rule-based display name generation (kept for backward compatibility)
 function generateDisplayName(rawName) {
   if (!rawName || typeof rawName !== 'string') {
@@ -11356,10 +11389,16 @@ async function storeGuideline(guidelineData) {
             console.log(`[DEBUG] Mapped hospitalTrust "${guidelineData.hospitalTrust}" -> shortHospitalTrust "${shortHospitalTrust}"`);
         }
         
+        // Generate displayName using simple formula: humanFriendlyName - shortHospitalTrust/organisation
+        const dataWithShortTrust = { ...guidelineData, shortHospitalTrust };
+        const displayName = generateSimpleDisplayName(dataWithShortTrust);
+        console.log(`[DEBUG] Generated displayName: "${displayName}"`);
+        
         const guidelineDoc = {
             ...guidelineData,
             downloadUrl, // Add the download URL
             shortHospitalTrust: shortHospitalTrust, // Add abbreviated trust name
+            displayName: displayName, // Use simple formula for displayName
             fileHash: guidelineData.fileHash || (existingDoc.exists ? existingDoc.data().fileHash : null), // Preserve existing hash or add new one
             createdAt: existingDoc.exists ? existingDoc.data().createdAt : admin.firestore.FieldValue.serverTimestamp(),
             updatedAt: admin.firestore.FieldValue.serverTimestamp(),
@@ -18055,19 +18094,17 @@ app.post('/seedHospitalTrustMappings', authenticateUser, async (req, res) => {
   }
 });
 
-// Endpoint to migrate shortHospitalTrust and regenerate displayNames for local guidelines
+// Endpoint to migrate shortHospitalTrust and regenerate displayNames for ALL guidelines
 app.post('/migrateShortHospitalTrust', authenticateUser, async (req, res) => {
   try {
     const { regenerateDisplay = true, force = false } = req.body;
     
     console.log(`[MIGRATE_SHORT_TRUST] Starting migration. regenerateDisplay=${regenerateDisplay}, force=${force}`);
     
-    // Query guidelines with hospitalTrust set
-    const guidelinesSnapshot = await db.collection('guidelines')
-      .where('hospitalTrust', '!=', null)
-      .get();
+    // Query ALL guidelines to update displayNames
+    const guidelinesSnapshot = await db.collection('guidelines').get();
     
-    console.log(`[MIGRATE_SHORT_TRUST] Found ${guidelinesSnapshot.size} guidelines with hospitalTrust`);
+    console.log(`[MIGRATE_SHORT_TRUST] Found ${guidelinesSnapshot.size} total guidelines`);
     
     const results = {
       updated: 0,
@@ -18083,40 +18120,31 @@ app.post('/migrateShortHospitalTrust', authenticateUser, async (req, res) => {
     for (const doc of guidelinesSnapshot.docs) {
       const data = doc.data();
       
-      // Skip if already has shortHospitalTrust (unless force)
-      if (data.shortHospitalTrust && !force) {
-        results.skipped++;
-        continue;
-      }
-      
       try {
-        // Get short hospital trust name
-        const shortHospitalTrust = await getShortHospitalTrust(data.hospitalTrust);
-        
-        if (!shortHospitalTrust) {
-          results.errors++;
-          results.details.push({
-            id: doc.id,
-            error: 'Could not generate short trust name',
-            hospitalTrust: data.hospitalTrust
-          });
-          continue;
-        }
-        
         const updates = {
-          shortHospitalTrust: shortHospitalTrust,
           updatedAt: admin.firestore.FieldValue.serverTimestamp()
         };
         
-        // Optionally regenerate displayName
+        // For local guidelines, get/update shortHospitalTrust
+        if (data.scope === 'local' && data.hospitalTrust) {
+          const shortHospitalTrust = data.shortHospitalTrust || await getShortHospitalTrust(data.hospitalTrust);
+          if (shortHospitalTrust && shortHospitalTrust !== data.shortHospitalTrust) {
+            updates.shortHospitalTrust = shortHospitalTrust;
+          }
+        }
+        
+        // Generate displayName using simple formula
         if (regenerateDisplay) {
-          const userId = req.user.uid;
-          // Create updated data object for AI generation
-          const updatedData = { ...data, shortHospitalTrust };
-          const displayName = await generateDisplayNameWithAI(updatedData, userId);
-          if (displayName) {
+          const displayName = generateSimpleDisplayName(data);
+          if (displayName && displayName !== data.displayName) {
             updates.displayName = displayName;
           }
+        }
+        
+        // Skip if no meaningful updates
+        if (Object.keys(updates).length <= 1) { // Only updatedAt
+          results.skipped++;
+          continue;
         }
         
         batch.update(doc.ref, updates);
@@ -18125,9 +18153,8 @@ app.post('/migrateShortHospitalTrust', authenticateUser, async (req, res) => {
         
         results.details.push({
           id: doc.id,
-          hospitalTrust: data.hospitalTrust,
-          shortHospitalTrust: shortHospitalTrust,
-          displayName: updates.displayName || '(not updated)'
+          scope: data.scope,
+          displayName: updates.displayName || data.displayName
         });
         
         // Commit batch when full
