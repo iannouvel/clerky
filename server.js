@@ -11815,39 +11815,53 @@ ${content}`;
   }
 }
 
-// Step 2: Convert practice points list into structured JSON array
-async function structurePracticePoints(practicePointsList, guidelineContent, userId = null) {
-  console.log('[AUDITABLE] Step 2: Structuring practice points into JSON...');
+// Step 2a: Parse the numbered list from Step 1 into individual practice points
+function parsePracticePointsList(listText) {
+  const practicePoints = [];
   
-  const prompt = `You have identified these practice points from a clinical guideline:
+  // Split by lines and look for numbered items
+  const lines = listText.split('\n');
+  
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // Match numbered items like "1. FBC at booking" or "42. Yellow card reporting"
+    const match = trimmed.match(/^\d+\.\s+(.+)$/);
+    if (match) {
+      practicePoints.push(match[1].trim());
+    }
+  }
+  
+  console.log(`[AUDITABLE] Parsed ${practicePoints.length} practice points from list`);
+  return practicePoints;
+}
 
-${practicePointsList}
+// Step 2b: Expand a single practice point into structured JSON
+async function expandSinglePracticePoint(practicePoint, guidelineContent, index, total, userId = null) {
+  const prompt = `Given this practice point from a clinical guideline:
 
-Now, for EACH individual practice point listed above (including all sub-items), create a structured JSON object.
+"${practicePoint}"
 
-The original guideline content is:
-${guidelineContent}
+And the full guideline content below, create a structured JSON object for this practice point.
 
-Return a JSON array where each element has:
+Return a JSON object with these fields:
 {
   "name": "Brief descriptive title (5-10 words)",
   "description": "Detailed context covering who this applies to, what the recommendation is, when/where it applies, why it matters clinically, and how to implement it. Write 2-4 sentences.",
-  "verbatimQuote": "The EXACT text copied word-for-word from the guideline. This will be used for PDF highlighting so it must match exactly.",
+  "verbatimQuote": "The EXACT text copied word-for-word from the guideline that supports this practice point. This will be used for PDF highlighting so it must match exactly.",
   "significance": "high or medium or low"
 }
 
-IMPORTANT:
-- Create a SEPARATE element for EACH practice point and sub-item from the list
-- If the list shows "FBC at booking" and "FBC at 28 weeks" as separate items, create 2 separate elements
-- Find the EXACT verbatim quote from the guideline for each element
-- Return ONLY the JSON array, no other text`;
+IMPORTANT: The verbatimQuote MUST be copied exactly from the guideline - do not paraphrase or modify it.
+
+Guideline content:
+${guidelineContent}`;
 
   try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array. Each item in the input list (including sub-items) should become a separate element in your output. Start with [ and end with ].' 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance fields. Start with { and end with }.' 
         },
         { 
           role: 'user', 
@@ -11870,37 +11884,74 @@ IMPORTANT:
         cleanedContent = cleanedContent.replace(/\s*```$/, '');
       }
       
-      // Try to parse JSON
+      // Try to parse JSON object
       try {
         const parsed = JSON.parse(cleanedContent);
-        if (Array.isArray(parsed)) {
-          console.log(`[AUDITABLE] Step 2 complete: Structured ${parsed.length} elements`);
+        if (parsed && typeof parsed === 'object' && parsed.name) {
+          console.log(`[AUDITABLE] Step 2 [${index + 1}/${total}]: Expanded "${practicePoint.substring(0, 40)}..."`);
           return parsed;
         }
       } catch (parseError) {
-        // Try to extract JSON array from response
-        const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
+        // Try to extract JSON object from response
+        const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
         if (jsonMatch) {
           try {
             const extracted = JSON.parse(jsonMatch[0]);
-            if (Array.isArray(extracted)) {
-              console.log(`[AUDITABLE] Step 2 complete: Structured ${extracted.length} elements (extracted)`);
+            if (extracted && typeof extracted === 'object' && extracted.name) {
+              console.log(`[AUDITABLE] Step 2 [${index + 1}/${total}]: Expanded "${practicePoint.substring(0, 40)}..." (extracted)`);
               return extracted;
             }
           } catch (e) {
-            console.error('[AUDITABLE] Step 2: Failed to parse extracted JSON array');
+            console.error(`[AUDITABLE] Step 2 [${index + 1}/${total}]: Failed to parse extracted JSON for "${practicePoint.substring(0, 40)}..."`);
           }
         }
-        console.error('[AUDITABLE] Step 2: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE] Step 2 response preview:', cleanedContent.substring(0, 500));
+        console.error(`[AUDITABLE] Step 2 [${index + 1}/${total}]: Could not parse JSON for "${practicePoint.substring(0, 40)}..."`);
       }
     }
     
-    return [];
+    return null;
   } catch (error) {
-    console.error(`[AUDITABLE] Step 2 error: ${error.message}`);
+    console.error(`[AUDITABLE] Step 2 [${index + 1}/${total}] error for "${practicePoint.substring(0, 40)}...": ${error.message}`);
+    return null;
+  }
+}
+
+// Step 2: Process each practice point individually (sequential to avoid rate limits)
+async function structurePracticePoints(practicePointsList, guidelineContent, userId = null) {
+  console.log('[AUDITABLE] Step 2: Structuring practice points into JSON (individual calls)...');
+  
+  // Parse the numbered list into individual practice points
+  const practicePoints = parsePracticePointsList(practicePointsList);
+  
+  if (practicePoints.length === 0) {
+    console.error('[AUDITABLE] Step 2: No practice points parsed from list');
     return [];
   }
+  
+  const auditableElements = [];
+  
+  // Process each practice point sequentially
+  for (let i = 0; i < practicePoints.length; i++) {
+    const element = await expandSinglePracticePoint(
+      practicePoints[i], 
+      guidelineContent, 
+      i, 
+      practicePoints.length, 
+      userId
+    );
+    
+    if (element) {
+      auditableElements.push(element);
+    }
+    
+    // Small delay between calls to avoid rate limiting (100ms)
+    if (i < practicePoints.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+  }
+  
+  console.log(`[AUDITABLE] Step 2 complete: Structured ${auditableElements.length}/${practicePoints.length} elements`);
+  return auditableElements;
 }
 
 // Function to extract auditable elements from guideline content using AI (two-step approach)
