@@ -11731,10 +11731,25 @@ async function extractAuditableElements(content, userId = null) {
     const prompt = `You are a clinical guideline auditor. Extract ALL individual clinical practice points from this guideline.
 
 CRITICAL REQUIREMENTS:
-1. Extract EVERY distinct clinical recommendation, threshold, screening requirement, timing, dosage, and action as a SEPARATE element
-2. Be GRANULAR - do NOT consolidate related points. Each specific threshold, each specific action, each specific timing should be its own element
-3. Each element MUST include a VERBATIM QUOTE copied exactly from the guideline text
-4. Order elements by clinical significance (high, medium, low)
+1. Extract EVERY distinct practice point as a SEPARATE element - do NOT consolidate
+2. Each element MUST include a VERBATIM QUOTE copied exactly from the guideline text
+3. Be EXHAUSTIVE - ensure you capture ALL of the following categories:
+
+CATEGORIES TO EXTRACT (check each one):
+□ SCREENING requirements (what tests, when, for whom)
+□ DIAGNOSTIC THRESHOLDS (specific values that define conditions)
+□ TREATMENT THRESHOLDS (when to start/change treatment)
+□ DOSAGES (specific amounts, frequencies)
+□ MAXIMUM LIMITS (max doses, max frequencies)
+□ TIMING requirements (how often, when to repeat, intervals)
+□ FOLLOW-UP requirements (when to recheck, what to monitor)
+□ SAFETY RESTRICTIONS (what NOT to do, contraindications, trimester restrictions)
+□ ESCALATION PATHWAYS (when to refer, when to investigate further)
+□ LOCATION/SETTING requirements (where care should be delivered)
+□ PRE-PROCEDURE requirements (checks before procedures)
+□ POST-PROCEDURE requirements (observations, monitoring after)
+□ SPECIAL POPULATIONS (different rules for specific patient groups)
+□ DOCUMENTATION requirements (consent, forms, prescriptions)
 
 OUTPUT FORMAT:
 Return a JSON array. Each object has these fields ONLY:
@@ -11778,16 +11793,24 @@ EXAMPLES OF GOOD DESCRIPTIONS:
 Guideline content:
 ${content}
 
-Extract ALL practice points. Remember:
-- Be granular: each threshold, each timing, each specific action = separate element
-- Include the EXACT verbatim quote that can be matched in the PDF
-- Write comprehensive descriptions covering WHO, WHAT, WHERE, WHEN, WHY, and HOW`;
+Extract ALL practice points. Be EXHAUSTIVE - review each category listed above and ensure nothing is missed:
+- Every SCREENING requirement
+- Every DIAGNOSTIC and TREATMENT THRESHOLD  
+- Every DOSAGE and MAXIMUM LIMIT
+- Every TIMING and FOLLOW-UP requirement
+- Every SAFETY RESTRICTION and CONTRAINDICATION
+- Every ESCALATION PATHWAY
+- Every LOCATION/SETTING requirement
+- Every PRE/POST-PROCEDURE requirement
+- Every SPECIAL POPULATION consideration
+
+Include the EXACT verbatim quote for each. Write comprehensive descriptions covering WHO, WHAT, WHERE, WHEN, WHY, and HOW.`;
 
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Extract EVERY individual practice point as a separate element. Be granular - each threshold, timing, action is separate. Each element needs: name, description (comprehensive with WHO/WHAT/WHERE/WHEN/WHY/HOW), verbatimQuote, significance.' 
+          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Be EXHAUSTIVE: extract every screening requirement, every threshold, every dosage, every timing, every safety restriction, every follow-up requirement, every escalation pathway. Each element needs: name, description (WHO/WHAT/WHERE/WHEN/WHY/HOW), verbatimQuote, significance.' 
         },
         { 
           role: 'user', 
