@@ -11863,7 +11863,7 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Extract auditable elements in JSON format only. Always include verbatim quotes from the source guideline.' 
+          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown formatting. Start your response with [ and end with ]. Always include verbatim quotes from the source guideline in each element.' 
         },
         { 
           role: 'user', 
@@ -11888,14 +11888,50 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
           cleanedContent = cleanedContent.replace(/\s*```$/, '');
         }
         
-        // Try to parse the cleaned response as JSON
-        const parsed = JSON.parse(cleanedContent);
-        if (Array.isArray(parsed)) {
-          console.log(`[AUDITABLE] Successfully extracted ${parsed.length} auditable elements`);
-          return parsed;
-        } else if (parsed.auditableElements && Array.isArray(parsed.auditableElements)) {
-          console.log(`[AUDITABLE] Successfully extracted ${parsed.auditableElements.length} auditable elements`);
-          return parsed.auditableElements;
+        // Try to parse the cleaned response as JSON directly
+        try {
+          const parsed = JSON.parse(cleanedContent);
+          if (Array.isArray(parsed)) {
+            console.log(`[AUDITABLE] Successfully extracted ${parsed.length} auditable elements`);
+            return parsed;
+          } else if (parsed.auditableElements && Array.isArray(parsed.auditableElements)) {
+            console.log(`[AUDITABLE] Successfully extracted ${parsed.auditableElements.length} auditable elements`);
+            return parsed.auditableElements;
+          }
+        } catch (directParseError) {
+          // If direct parse fails, try to extract JSON array from the response
+          console.log('[AUDITABLE] Direct JSON parse failed, attempting to extract JSON from response...');
+          
+          // Try to find a JSON array in the response (handles cases where AI adds prose around JSON)
+          const jsonArrayMatch = cleanedContent.match(/\[[\s\S]*\]/);
+          if (jsonArrayMatch) {
+            try {
+              const extracted = JSON.parse(jsonArrayMatch[0]);
+              if (Array.isArray(extracted)) {
+                console.log(`[AUDITABLE] Successfully extracted ${extracted.length} auditable elements from embedded JSON`);
+                return extracted;
+              }
+            } catch (extractError) {
+              console.error('[AUDITABLE] Failed to parse extracted JSON array:', extractError);
+            }
+          }
+          
+          // Try to find a JSON object with auditableElements property
+          const jsonObjectMatch = cleanedContent.match(/\{[\s\S]*"auditableElements"[\s\S]*\}/);
+          if (jsonObjectMatch) {
+            try {
+              const extracted = JSON.parse(jsonObjectMatch[0]);
+              if (extracted.auditableElements && Array.isArray(extracted.auditableElements)) {
+                console.log(`[AUDITABLE] Successfully extracted ${extracted.auditableElements.length} auditable elements from embedded object`);
+                return extracted.auditableElements;
+              }
+            } catch (extractError) {
+              console.error('[AUDITABLE] Failed to parse extracted JSON object:', extractError);
+            }
+          }
+          
+          console.error('[AUDITABLE] Could not extract valid JSON from AI response');
+          console.error('[AUDITABLE] Response preview:', result.content.substring(0, 500));
         }
       } catch (parseError) {
         console.error('[AUDITABLE] Failed to parse AI response as JSON:', parseError);
