@@ -11816,6 +11816,12 @@ For each practice point, include:
     }, userId);
 
     if (result && result.content) {
+      // Log response details for debugging
+      console.log(`[AUDITABLE] AI response received, length: ${result.content.length} chars`);
+      if (result.content.length < 500) {
+        console.log(`[AUDITABLE] Short response content: ${result.content}`);
+      }
+      
       try {
         // Clean the response - remove markdown code blocks if present
         let cleanedContent = result.content.trim();
@@ -11874,12 +11880,14 @@ For each practice point, include:
           }
           
           console.error('[AUDITABLE] Could not extract valid JSON from AI response');
-          console.error('[AUDITABLE] Response preview:', result.content.substring(0, 500));
+          console.error('[AUDITABLE] Response preview:', cleanedContent.substring(0, 1000));
         }
       } catch (parseError) {
         console.error('[AUDITABLE] Failed to parse AI response as JSON:', parseError);
-        debugLog('[AUDITABLE] AI response was:', result.content);
+        console.error('[AUDITABLE] AI response was:', result.content.substring(0, 1000));
       }
+    } else {
+      console.error('[AUDITABLE] No content in AI response. Result:', JSON.stringify(result).substring(0, 500));
     }
     
     // Fallback to empty array if AI extraction fails
