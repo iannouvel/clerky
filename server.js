@@ -11735,50 +11735,43 @@ CRITICAL REQUIREMENTS:
 2. Be GRANULAR - do NOT consolidate related points. Each specific threshold, each specific action, each specific timing should be its own element
 3. Each element MUST include a VERBATIM QUOTE copied exactly from the guideline text
 4. Order elements by clinical significance (high, medium, low)
-5. Aim for 20-40+ elements for a typical guideline - if you find fewer than 15, you are likely consolidating too much
 
 OUTPUT FORMAT:
 Return a JSON array. Each object has these fields ONLY:
 {
-  "name": "Brief title of the practice point (e.g., 'FBC screening at 28 weeks')",
-  "description": "Plain-language description of the practice point including: what the recommendation is, who it applies to, when it applies, what triggers it, what the specific thresholds/values are, and what action should be taken. Write this as a complete, readable paragraph.",
+  "name": "Brief title of the practice point",
+  "description": "Comprehensive description covering WHO this applies to, WHAT the recommendation is, WHERE it applies (setting/location), WHEN it applies (timing/triggers/thresholds), WHY it matters (clinical rationale), and HOW to implement it. Write 3-5 sentences minimum.",
   "verbatimQuote": "The EXACT text copied word-for-word from the guideline. This will be used to highlight the text in the PDF, so it must match exactly.",
   "significance": "high|medium|low"
 }
 
-EXAMPLES:
+EXAMPLES OF GOOD DESCRIPTIONS:
+
 {
   "name": "FBC screening at booking",
-  "description": "All pregnant women should be offered a Full Blood Count (FBC) at their booking appointment to screen for anaemia. This is a routine screening test that applies to all pregnant women regardless of symptoms or risk factors.",
+  "description": "WHO: All pregnant women attending their first antenatal appointment. WHAT: A Full Blood Count (FBC) should be offered to screen for anaemia. WHERE: This applies in all antenatal care settings including hospital clinics and community midwifery. WHEN: At the booking appointment, which typically occurs between 8-12 weeks gestation. WHY: Early detection of anaemia allows timely intervention to prevent complications such as preterm birth, low birth weight, and maternal fatigue. HOW: The midwife or healthcare provider should arrange the blood test and ensure results are reviewed before the next appointment.",
   "verbatimQuote": "All women will be offered a Full Blood Count (FBC) to screen for anaemia at booking and at 28 weeks.",
   "significance": "high"
 }
 
 {
-  "name": "Anaemia threshold in second trimester",
-  "description": "In the second and third trimesters of pregnancy, anaemia is defined as a haemoglobin concentration below 105 g/L. This threshold is lower than the first trimester threshold due to physiological haemodilution. Women with Hb below this level should be started on oral iron supplementation.",
-  "verbatimQuote": "2nd and 3rd trimester – Hb <105g/l",
+  "name": "Ferritin threshold for considering iron treatment",
+  "description": "WHO: Pregnant women who have had their serum ferritin level tested. WHAT: Treatment with oral iron should be considered when ferritin falls below 30 micrograms/L. WHERE: This applies to all antenatal care settings where blood results are reviewed. WHEN: This threshold indicates early iron depletion before frank deficiency develops; ferritin below 15 micrograms/L confirms established deficiency. WHY: Starting treatment at 30 micrograms/L allows iron stores to be replenished before they become critically depleted, which would require IV iron therapy. HOW: Prescribe elemental iron 40-80mg daily and arrange follow-up FBC in 2-4 weeks to assess response.",
+  "verbatimQuote": "Treatment with iron should be considered when levels fall below 30 micrograms/L",
   "significance": "high"
 }
 
 {
-  "name": "Oral iron dosage",
-  "description": "When treating iron deficiency anaemia in pregnancy, the recommended dose of elemental oral iron is 40-80mg per day. Higher doses do not increase effectiveness but lead to worse side effects and risk non-compliance. This applies to all pregnant women being treated for iron deficiency anaemia.",
-  "verbatimQuote": "Dose of elemental oral iron 40-80mg per day increased dose does not increase the effect but leads to worsened side effect risking non-compliance",
-  "significance": "medium"
-}
-
-{
-  "name": "IV iron not in first trimester",
-  "description": "Iron infusions should not be given in the first trimester of pregnancy. They may only be given in the second and third trimesters if the clinical benefit outweighs the potential risks. This restriction applies to all pregnant women regardless of the severity of their anaemia.",
-  "verbatimQuote": "Iron infusion should not be given in the 1st Trimester and only in the 2nd and 3rd trimester if the benefit outweighs the risks",
-  "significance": "high"
-}
-
-{
-  "name": "Deliver on Consultant Unit if Hb below 100",
-  "description": "If a woman's haemoglobin is below 100 g/L at the onset of labour, she should deliver on the Consultant Unit rather than a midwife-led unit. This is due to the increased risk of postpartum haemorrhage and the woman's lower iron stores for coping with blood loss.",
+  "name": "Deliver on Consultant Unit if Hb below 100 in labour",
+  "description": "WHO: Women in labour whose most recent haemoglobin is below 100 g/L. WHAT: The woman should deliver on the Consultant-led Unit rather than a midwife-led unit or birth centre. WHERE: This decision affects birth location - transfer to the Consultant Unit is required. WHEN: At the onset of labour when the woman presents to maternity services. WHY: Women with anaemia have reduced physiological reserve to cope with blood loss during delivery. They are at increased risk of requiring blood transfusion if they experience postpartum haemorrhage, and the Consultant Unit has immediate access to blood products and senior medical staff. HOW: Check the most recent Hb result, inform the woman of the recommendation, and arrange transfer or admission to the Consultant Unit with active management of the third stage planned.",
   "verbatimQuote": "If Hb <100g/l at time of onset of labour Deliver on the Consultant Unit",
+  "significance": "high"
+}
+
+{
+  "name": "Post-infusion observation period",
+  "description": "WHO: Any patient receiving an intravenous iron infusion. WHAT: The patient must be observed for adverse effects including anaphylaxis. WHERE: This applies in the clinical area where the infusion is administered (Day Assessment Unit or equivalent). WHEN: For a minimum of 30 minutes after the end of the infusion. WHY: Intravenous iron carries a risk of hypersensitivity reactions including anaphylaxis, which typically occurs within 30 minutes of administration. Immediate recognition and treatment of reactions is essential for patient safety. HOW: The patient should remain in the clinical area with staff checking for symptoms such as rash, breathlessness, chest tightness, or hypotension. Resuscitation equipment must be immediately available.",
+  "verbatimQuote": "Patients must be observed for adverse effects for a minimum of 30 minutes after the end of each infusion.",
   "significance": "high"
 }
 
@@ -11788,14 +11781,13 @@ ${content}
 Extract ALL practice points. Remember:
 - Be granular: each threshold, each timing, each specific action = separate element
 - Include the EXACT verbatim quote that can be matched in the PDF
-- Write clear, complete descriptions in plain language
-- Aim for 20-40+ elements for a comprehensive guideline`;
+- Write comprehensive descriptions covering WHO, WHAT, WHERE, WHEN, WHY, and HOW`;
 
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Extract EVERY individual practice point as a separate element. Be granular - aim for 20-40+ elements per guideline. Each element needs: name, description, verbatimQuote, significance.' 
+          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Extract EVERY individual practice point as a separate element. Be granular - each threshold, timing, action is separate. Each element needs: name, description (comprehensive with WHO/WHAT/WHERE/WHEN/WHY/HOW), verbatimQuote, significance.' 
         },
         { 
           role: 'user', 
