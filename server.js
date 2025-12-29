@@ -11728,28 +11728,28 @@ async function extractAuditableElements(content, userId = null) {
       }
     }
     
-    const prompt = `You are a clinical guideline auditor. Extract ALL individual clinical practice points from this guideline.
+    const prompt = `You are a clinical guideline auditor. Extract ALL clinical practice points from this guideline.
 
-CRITICAL REQUIREMENTS:
-1. Extract EVERY distinct practice point as a SEPARATE element - do NOT consolidate
-2. Each element MUST include a VERBATIM QUOTE copied exactly from the guideline text
-3. Be EXHAUSTIVE - ensure you capture ALL of the following categories:
+CRITICAL: READ THE ENTIRE GUIDELINE FROM START TO FINISH
+Go through EVERY section, EVERY paragraph, EVERY table, EVERY appendix. Do not stop early.
 
-CATEGORIES TO EXTRACT (check each one):
-□ SCREENING requirements (what tests, when, for whom)
-□ DIAGNOSTIC THRESHOLDS (specific values that define conditions)
-□ TREATMENT THRESHOLDS (when to start/change treatment)
-□ DOSAGES (specific amounts, frequencies)
-□ MAXIMUM LIMITS (max doses, max frequencies)
-□ TIMING requirements (how often, when to repeat, intervals)
-□ FOLLOW-UP requirements (when to recheck, what to monitor)
-□ SAFETY RESTRICTIONS (what NOT to do, contraindications, trimester restrictions)
-□ ESCALATION PATHWAYS (when to refer, when to investigate further)
-□ LOCATION/SETTING requirements (where care should be delivered)
-□ PRE-PROCEDURE requirements (checks before procedures)
-□ POST-PROCEDURE requirements (observations, monitoring after)
-□ SPECIAL POPULATIONS (different rules for specific patient groups)
-□ DOCUMENTATION requirements (consent, forms, prescriptions)
+COMPLETENESS CHECKLIST - Extract practice points for ALL of these:
+□ SCREENING: What tests? When? For whom? At what gestations/timepoints?
+□ DIAGNOSTIC THRESHOLDS: Every specific value that defines a condition (Hb levels, ferritin levels, etc.)
+□ TREATMENT THRESHOLDS: Every trigger for starting/changing treatment at each timepoint
+□ DOSAGES: Every dose mentioned (oral iron doses, IV iron doses, folic acid doses, etc.)
+□ MAXIMUM LIMITS: Max single doses, max cumulative doses, weight-based limits
+□ TIMING: When to repeat tests, intervals between doses, how long to continue treatment
+□ FOLLOW-UP: When to recheck bloods, when to see GP, duration of treatment
+□ SAFETY RESTRICTIONS: Trimester restrictions, contraindications, allergy checks, what NOT to do
+□ ESCALATION: When to refer to consultant, when to refer to other specialties, red flag pathways
+□ LOCATION/SETTING: Where to deliver, where to administer treatments
+□ INTRAPARTUM: What to do during labour for anaemic women
+□ POSTPARTUM: Specific postpartum requirements, blood loss thresholds, when to check FBC
+□ PRE-PROCEDURE: Checks before iron infusion, prescription requirements, timing of blood tests
+□ POST-PROCEDURE: Observation periods, discharge timing, monitoring during/after infusion
+□ SPECIAL POPULATIONS: Different rules by weight, skin tone considerations, haemoglobinopathies
+□ ADMINISTRATIVE: Forms, pharmacy timings, documentation requirements
 
 OUTPUT FORMAT:
 Return a JSON array. Each object has these fields ONLY:
@@ -11760,32 +11760,32 @@ Return a JSON array. Each object has these fields ONLY:
   "significance": "high|medium|low"
 }
 
-EXAMPLES OF GOOD DESCRIPTIONS:
+EXAMPLES OF GOOD PRACTICE POINTS:
 
 {
   "name": "FBC screening at booking",
-  "description": "WHO: All pregnant women attending their first antenatal appointment. WHAT: A Full Blood Count (FBC) should be offered to screen for anaemia. WHERE: This applies in all antenatal care settings including hospital clinics and community midwifery. WHEN: At the booking appointment, which typically occurs between 8-12 weeks gestation. WHY: Early detection of anaemia allows timely intervention to prevent complications such as preterm birth, low birth weight, and maternal fatigue. HOW: The midwife or healthcare provider should arrange the blood test and ensure results are reviewed before the next appointment.",
+  "description": "All pregnant women should be offered a Full Blood Count at their booking appointment to screen for anaemia. Early detection allows timely intervention to prevent complications such as preterm birth, low birth weight, and maternal fatigue. Results should be reviewed before the next antenatal appointment.",
   "verbatimQuote": "All women will be offered a Full Blood Count (FBC) to screen for anaemia at booking and at 28 weeks.",
   "significance": "high"
 }
 
 {
   "name": "Ferritin threshold for considering iron treatment",
-  "description": "WHO: Pregnant women who have had their serum ferritin level tested. WHAT: Treatment with oral iron should be considered when ferritin falls below 30 micrograms/L. WHERE: This applies to all antenatal care settings where blood results are reviewed. WHEN: This threshold indicates early iron depletion before frank deficiency develops; ferritin below 15 micrograms/L confirms established deficiency. WHY: Starting treatment at 30 micrograms/L allows iron stores to be replenished before they become critically depleted, which would require IV iron therapy. HOW: Prescribe elemental iron 40-80mg daily and arrange follow-up FBC in 2-4 weeks to assess response.",
+  "description": "Treatment with oral iron should be considered when serum ferritin falls below 30 micrograms/L, as this indicates early iron depletion before frank deficiency develops. Starting treatment at this threshold allows iron stores to be replenished before they become critically depleted, which would require IV iron therapy. Ferritin below 15 micrograms/L confirms established iron deficiency.",
   "verbatimQuote": "Treatment with iron should be considered when levels fall below 30 micrograms/L",
   "significance": "high"
 }
 
 {
   "name": "Deliver on Consultant Unit if Hb below 100 in labour",
-  "description": "WHO: Women in labour whose most recent haemoglobin is below 100 g/L. WHAT: The woman should deliver on the Consultant-led Unit rather than a midwife-led unit or birth centre. WHERE: This decision affects birth location - transfer to the Consultant Unit is required. WHEN: At the onset of labour when the woman presents to maternity services. WHY: Women with anaemia have reduced physiological reserve to cope with blood loss during delivery. They are at increased risk of requiring blood transfusion if they experience postpartum haemorrhage, and the Consultant Unit has immediate access to blood products and senior medical staff. HOW: Check the most recent Hb result, inform the woman of the recommendation, and arrange transfer or admission to the Consultant Unit with active management of the third stage planned.",
+  "description": "Women in labour with haemoglobin below 100 g/L should deliver on the Consultant-led Unit rather than a midwife-led unit or birth centre. This is because anaemic women have reduced physiological reserve to cope with blood loss and are at increased risk of requiring transfusion if postpartum haemorrhage occurs. The Consultant Unit has immediate access to blood products and senior medical staff. Active management of the third stage should be planned.",
   "verbatimQuote": "If Hb <100g/l at time of onset of labour Deliver on the Consultant Unit",
   "significance": "high"
 }
 
 {
   "name": "Post-infusion observation period",
-  "description": "WHO: Any patient receiving an intravenous iron infusion. WHAT: The patient must be observed for adverse effects including anaphylaxis. WHERE: This applies in the clinical area where the infusion is administered (Day Assessment Unit or equivalent). WHEN: For a minimum of 30 minutes after the end of the infusion. WHY: Intravenous iron carries a risk of hypersensitivity reactions including anaphylaxis, which typically occurs within 30 minutes of administration. Immediate recognition and treatment of reactions is essential for patient safety. HOW: The patient should remain in the clinical area with staff checking for symptoms such as rash, breathlessness, chest tightness, or hypotension. Resuscitation equipment must be immediately available.",
+  "description": "Patients receiving intravenous iron infusion must be observed for adverse effects for a minimum of 30 minutes after the infusion ends. This is because IV iron carries a risk of hypersensitivity reactions including anaphylaxis, which typically occurs within this timeframe. Staff should monitor for symptoms such as rash, breathlessness, chest tightness, or hypotension, and resuscitation equipment must be immediately available.",
   "verbatimQuote": "Patients must be observed for adverse effects for a minimum of 30 minutes after the end of each infusion.",
   "significance": "high"
 }
@@ -11793,24 +11793,20 @@ EXAMPLES OF GOOD DESCRIPTIONS:
 Guideline content:
 ${content}
 
-Extract ALL practice points. Be EXHAUSTIVE - review each category listed above and ensure nothing is missed:
-- Every SCREENING requirement
-- Every DIAGNOSTIC and TREATMENT THRESHOLD  
-- Every DOSAGE and MAXIMUM LIMIT
-- Every TIMING and FOLLOW-UP requirement
-- Every SAFETY RESTRICTION and CONTRAINDICATION
-- Every ESCALATION PATHWAY
-- Every LOCATION/SETTING requirement
-- Every PRE/POST-PROCEDURE requirement
-- Every SPECIAL POPULATION consideration
+INSTRUCTIONS:
+1. Read the ENTIRE guideline from beginning to end - do not stop early
+2. For each section, extract all practice points including those from tables, appendices, and SOPs
+3. Guidelines typically contain 30-50+ practice points - ensure comprehensive coverage
 
-Include the EXACT verbatim quote for each. Write comprehensive descriptions covering WHO, WHAT, WHERE, WHEN, WHY, and HOW.`;
+For each practice point, include:
+- A verbatim quote copied exactly from the guideline (this will be used for PDF highlighting, so accuracy is essential)
+- A description with pertinent contextual details covering, as applicable: who it applies to, what the recommendation is, where/when it applies, why it matters, and how to implement it`;
 
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Be EXHAUSTIVE: extract every screening requirement, every threshold, every dosage, every timing, every safety restriction, every follow-up requirement, every escalation pathway. Each element needs: name, description (WHO/WHAT/WHERE/WHEN/WHY/HOW), verbatimQuote, significance.' 
+          content: 'You are a clinical guideline auditor. Respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Read the entire guideline including all sections, tables, and appendices. Extract all practice points comprehensively - guidelines typically contain 30-50+ auditable elements covering screening, thresholds, dosages, limits, timing, safety restrictions, escalation pathways, location requirements, and procedural requirements. Each element needs: name, description (with relevant context), verbatimQuote (exact text for PDF highlighting), significance.' 
         },
         { 
           role: 'user', 
