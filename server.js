@@ -11714,20 +11714,78 @@ function extractKeywords(text) {
 async function identifyPracticePoints(content, userId = null) {
   console.log('[AUDITABLE] Step 1: Identifying practice points...');
   
-  const prompt = `List every distinct clinical practice point from this guideline. Include:
-- Every screening requirement and timing
-- Every threshold (Hb levels, ferritin levels at each value mentioned)
-- Every dosage and maximum limit
-- Every timing requirement and follow-up interval
-- Every safety restriction and contraindication
-- Every escalation pathway and referral trigger
-- Every procedural requirement (pre-procedure, during, post-procedure)
-- Every special population consideration
-- Every administrative requirement
+  const prompt = `Read this clinical guideline completely and list EVERY distinct practice point.
 
-Return a simple numbered list. Be exhaustive - read every section including tables, appendices, and SOPs.
+GO THROUGH EACH SECTION and extract:
 
-Guideline content:
+SCREENING:
+- When to do FBC (booking, 28 weeks, 36-37 weeks for MLU, after symptoms)
+- When to check ferritin
+- When to recheck bloods after treatment
+
+THRESHOLDS (list each one separately):
+- Hb threshold for 1st trimester
+- Hb threshold for 2nd/3rd trimester  
+- Hb threshold postnatal
+- Ferritin threshold for depletion (<15)
+- Ferritin threshold for treatment (<30)
+- MCV threshold
+- Hb threshold for consultant delivery (<100)
+- Hb threshold for transfusion consideration (<70)
+- Blood loss threshold for postpartum FBC (>500ml)
+
+DOSAGES:
+- Oral iron dose
+- IV iron max single dose
+- IV iron max per kg dose
+- IV iron cumulative dose by weight
+- Folic acid doses (standard and high-risk)
+
+TIMING:
+- When to repeat FBC after oral iron
+- When to investigate if no response
+- How long to continue iron postpartum
+- Interval between IV iron doses
+- Duration of IV infusion
+- Observation period after infusion
+- When to discharge after infusion
+- When to prescribe IV iron to pharmacy
+- When blood tests needed before IV iron
+
+SAFETY/RESTRICTIONS:
+- First trimester IV iron restriction
+- Allergy checks before IV iron
+- Conditions increasing reaction risk
+- What to do if reaction occurs
+- Phlebitis monitoring
+- Who should NOT have IV iron
+
+ESCALATION:
+- When to refer to consultant
+- When to refer to other specialties
+- Two-week-wait cancer pathway triggers
+
+LOCATION:
+- Where to deliver if Hb <100
+- Where IV iron is administered
+
+SPECIAL POPULATIONS:
+- Overweight patients - use ideal body weight
+- Haemoglobinopathy patients - check ferritin
+- Darker skin tones - pallor assessment
+- Patients <35kg - max cumulative dose
+
+ADMINISTRATIVE:
+- Patient information requirements
+- Prescription form requirements
+- Pharmacy notification timing
+- Observations before/during/after infusion
+- Documentation requirements
+- Yellow card reporting
+
+List each as a separate numbered item. Aim for 40-60 practice points minimum.
+
+Guideline:
 ${content}`;
 
   try {
@@ -11735,7 +11793,7 @@ ${content}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. List ALL practice points as a numbered list. Be exhaustive - guidelines typically contain 40-60 distinct practice points. Include every threshold, every timing, every dosage, every restriction.' 
+          content: 'You are a clinical guideline auditor creating an exhaustive list of practice points. Return a numbered list with 40-60+ items. Each distinct threshold, timing, dose, or requirement should be its own item. Do not consolidate - if there are 3 different Hb thresholds, list all 3 separately.' 
         },
         { 
           role: 'user', 
