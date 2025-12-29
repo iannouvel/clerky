@@ -11728,142 +11728,74 @@ async function extractAuditableElements(content, userId = null) {
       }
     }
     
-    const prompt = `You are a clinical guideline auditor. Your task is to extract clinically relevant auditable elements from this guideline with detailed variation points, thresholds, and VERBATIM quotes from the source.
+    const prompt = `You are a clinical guideline auditor. Extract ALL individual clinical practice points from this guideline.
 
 CRITICAL REQUIREMENTS:
-1. Parse the guideline carefully to identify ALL clinically relevant advice
-2. Order elements by clinical significance (most significant first)
-3. No upper limit on number of elements
-4. Each element MUST include a VERBATIM QUOTE from the guideline text - this is essential for matching and highlighting
-5. Each element must describe:
-   - Input variables/conditions that determine the advice
-   - The derived clinical advice/action
-   - Clinical context and reasoning
-   - Specific thresholds that change recommendations
-   - Variation points where subtle changes should alter guidance
-   - Plain-language applicability context (who should receive this advice)
-   - Plain-language exclusion context (who should NOT receive this advice)
+1. Extract EVERY distinct clinical recommendation, threshold, screening requirement, timing, dosage, and action as a SEPARATE element
+2. Be GRANULAR - do NOT consolidate related points. Each specific threshold, each specific action, each specific timing should be its own element
+3. Each element MUST include a VERBATIM QUOTE copied exactly from the guideline text
+4. Order elements by clinical significance (high, medium, low)
+5. Aim for 20-40+ elements for a typical guideline - if you find fewer than 15, you are likely consolidating too much
 
 OUTPUT FORMAT:
-Return a JSON array of objects, each with:
+Return a JSON array. Each object has these fields ONLY:
 {
-  "type": "clinical_advice",
-  "elementId": "unique-id-format",
-  "name": "Brief description of the clinical decision point",
-  "element": "Detailed description including input variables and derived advice",
-  "significance": "high|medium|low",
-  "verbatimQuote": "The EXACT text copied directly from the guideline that this element is derived from. Must be word-for-word from the source.",
-  "applicabilityContext": "Plain-language description of who should receive this advice and in what circumstances. E.g., 'This advice applies to pregnant patients in their third trimester (28+ weeks) who report reduced fetal movements.'",
-  "exclusionContext": "Plain-language description of when this advice should NOT be given. E.g., 'This advice does not apply to patients before 26 weeks gestation or those already under continuous monitoring.'",
-  "inputVariables": [
-    {
-      "name": "variable_name",
-      "type": "numeric|boolean|categorical|text",
-      "description": "What this variable represents",
-      "required": true|false,
-      "threshold": "e.g., >=26 weeks, >100 mmHg, etc.",
-      "thresholdDescription": "What happens at this threshold",
-      "variationPoints": ["point1", "point2"]
-    }
-  ],
-  "derivedAdvice": "The specific clinical action/advice",
-  "expectedGuidance": "Exact guidance text or acceptable variations",
-  "variationPoints": [
-    {
-      "parameter": "variable_name",
-      "description": "What changes at this point",
-      "belowThreshold": "Guidance when below threshold",
-      "atThreshold": "Guidance at threshold",
-      "aboveThreshold": "Guidance when above threshold"
-    }
-  ],
-  "thresholds": [
-    {
-      "variable": "variable_name",
-      "thresholdValue": "26+0 weeks",
-      "comparison": ">=",
-      "impact": "Changes recommendation from X to Y"
-    }
-  ],
-  "clinicalContext": {
-    "requiredFactors": ["factor1", "factor2"],
-    "contraindications": ["condition1", "condition2"],
-    "patientDemographics": "Any relevant demographic requirements"
-  },
-  "guidelineSection": "Section reference if available"
+  "name": "Brief title of the practice point (e.g., 'FBC screening at 28 weeks')",
+  "description": "Plain-language description of the practice point including: what the recommendation is, who it applies to, when it applies, what triggers it, what the specific thresholds/values are, and what action should be taken. Write this as a complete, readable paragraph.",
+  "verbatimQuote": "The EXACT text copied word-for-word from the guideline. This will be used to highlight the text in the PDF, so it must match exactly.",
+  "significance": "high|medium|low"
 }
 
-EXAMPLE:
+EXAMPLES:
 {
-  "type": "clinical_advice",
-  "elementId": "rfm-ctg-26weeks",
-  "name": "CTG monitoring for reduced fetal movements at 26+ weeks",
-  "element": "If patient reports reduced fetal movements at 26+0 weeks or later, perform computerized CTG within 2 hours. Input variables: gestational age (≥26+0 weeks), patient report of reduced movements, absence of other risk factors. Derived advice: Immediate CTG monitoring within 2 hours of report.",
-  "significance": "high",
-  "verbatimQuote": "Women presenting with reduced fetal movements at or after 26+0 weeks of gestation should have computerised CTG performed within 2 hours of presentation.",
-  "applicabilityContext": "This advice applies to pregnant patients at 26 weeks gestation or later who present with a complaint of reduced or decreased fetal movements. The patient must be aware of and reporting on their baby's movement patterns.",
-  "exclusionContext": "This advice does not apply to patients before 26 weeks gestation, patients who have not noticed any change in fetal movements, or patients already under continuous CTG monitoring for other indications.",
-  "inputVariables": [
-    {
-      "name": "gestational_age",
-      "type": "numeric",
-      "description": "Gestational age in weeks",
-      "required": true,
-      "threshold": ">=26+0 weeks",
-      "thresholdDescription": "Guidance applies from 26+0 weeks gestation",
-      "variationPoints": ["<26 weeks: different guidance", ">=26 weeks: CTG required"]
-    },
-    {
-      "name": "fetal_movement_report",
-      "type": "boolean",
-      "description": "Patient reports reduced fetal movements",
-      "required": true,
-      "threshold": null,
-      "thresholdDescription": "Must be reported by patient",
-      "variationPoints": ["Reported: triggers action", "Not reported: no action"]
-    }
-  ],
-  "derivedAdvice": "Perform computerized CTG within 2 hours",
-  "expectedGuidance": "Immediate CTG monitoring within 2 hours of report of reduced movements",
-  "variationPoints": [
-    {
-      "parameter": "gestational_age",
-      "description": "Age threshold for CTG requirement",
-      "belowThreshold": "Different guidance for earlier gestation",
-      "atThreshold": "CTG monitoring required",
-      "aboveThreshold": "CTG monitoring required"
-    }
-  ],
-  "thresholds": [
-    {
-      "variable": "gestational_age",
-      "thresholdValue": "26+0 weeks",
-      "comparison": ">=",
-      "impact": "Triggers CTG monitoring requirement"
-    }
-  ],
-  "clinicalContext": {
-    "requiredFactors": ["reduced fetal movement report", "gestational age >=26 weeks"],
-    "contraindications": [],
-    "patientDemographics": "All pregnant patients"
-  },
-  "guidelineSection": "Antenatal Care - Fetal Movement Monitoring"
+  "name": "FBC screening at booking",
+  "description": "All pregnant women should be offered a Full Blood Count (FBC) at their booking appointment to screen for anaemia. This is a routine screening test that applies to all pregnant women regardless of symptoms or risk factors.",
+  "verbatimQuote": "All women will be offered a Full Blood Count (FBC) to screen for anaemia at booking and at 28 weeks.",
+  "significance": "high"
+}
+
+{
+  "name": "Anaemia threshold in second trimester",
+  "description": "In the second and third trimesters of pregnancy, anaemia is defined as a haemoglobin concentration below 105 g/L. This threshold is lower than the first trimester threshold due to physiological haemodilution. Women with Hb below this level should be started on oral iron supplementation.",
+  "verbatimQuote": "2nd and 3rd trimester – Hb <105g/l",
+  "significance": "high"
+}
+
+{
+  "name": "Oral iron dosage",
+  "description": "When treating iron deficiency anaemia in pregnancy, the recommended dose of elemental oral iron is 40-80mg per day. Higher doses do not increase effectiveness but lead to worse side effects and risk non-compliance. This applies to all pregnant women being treated for iron deficiency anaemia.",
+  "verbatimQuote": "Dose of elemental oral iron 40-80mg per day increased dose does not increase the effect but leads to worsened side effect risking non-compliance",
+  "significance": "medium"
+}
+
+{
+  "name": "IV iron not in first trimester",
+  "description": "Iron infusions should not be given in the first trimester of pregnancy. They may only be given in the second and third trimesters if the clinical benefit outweighs the potential risks. This restriction applies to all pregnant women regardless of the severity of their anaemia.",
+  "verbatimQuote": "Iron infusion should not be given in the 1st Trimester and only in the 2nd and 3rd trimester if the benefit outweighs the risks",
+  "significance": "high"
+}
+
+{
+  "name": "Deliver on Consultant Unit if Hb below 100",
+  "description": "If a woman's haemoglobin is below 100 g/L at the onset of labour, she should deliver on the Consultant Unit rather than a midwife-led unit. This is due to the increased risk of postpartum haemorrhage and the woman's lower iron stores for coping with blood loss.",
+  "verbatimQuote": "If Hb <100g/l at time of onset of labour Deliver on the Consultant Unit",
+  "significance": "high"
 }
 
 Guideline content:
 ${content}
 
-Extract ALL clinically relevant auditable elements, ordered by significance. Focus on actionable clinical decisions that can be audited for accuracy. For each element:
-1. Include a VERBATIM QUOTE from the guideline text (exact wording)
-2. Provide clear applicabilityContext explaining who should receive this advice
-3. Provide clear exclusionContext explaining who should NOT receive this advice
-4. Identify ALL thresholds, variation points, and input variable specifications`;
+Extract ALL practice points. Remember:
+- Be granular: each threshold, each timing, each specific action = separate element
+- Include the EXACT verbatim quote that can be matched in the PDF
+- Write clear, complete descriptions in plain language
+- Aim for 20-40+ elements for a comprehensive guideline`;
 
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown formatting. Start your response with [ and end with ]. Always include verbatim quotes from the source guideline in each element.' 
+          content: 'You are a clinical guideline auditor. You MUST respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Extract EVERY individual practice point as a separate element. Be granular - aim for 20-40+ elements per guideline. Each element needs: name, description, verbatimQuote, significance.' 
         },
         { 
           role: 'user', 
