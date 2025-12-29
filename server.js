@@ -11803,65 +11803,51 @@ ${content}`;
     }, userId);
 
     if (result && result.content) {
-      // Log the raw response for debugging
-      console.log(`[AUDITABLE] Step 1 raw response length: ${result.content.length} chars`);
-      console.log(`[AUDITABLE] Step 1 response preview: ${result.content.substring(0, 500)}`);
-      
-      // Parse numbered list into array
-      const lines = result.content.split('\n');
-      const practicePoints = [];
-      
-      for (const line of lines) {
-        // Match numbered items like "1. ", "1) ", "- ", "* ", "**1.**" etc.
-        const match = line.match(/^\*?\*?[\d]+[.\)]\*?\*?\s*(.+)/) || 
-                      line.match(/^[-•*]\s*(.+)/) ||
-                      line.match(/^\s*[\d]+[.\)]\s*(.+)/);
-        if (match && match[1] && match[1].trim().length > 10) {
-          practicePoints.push(match[1].trim());
-        }
-      }
-      
-      console.log(`[AUDITABLE] Step 1 complete: Found ${practicePoints.length} practice points`);
-      
-      // If we got very few points, log for debugging
-      if (practicePoints.length < 20) {
-        console.warn(`[AUDITABLE] Step 1 returned fewer points than expected. First 3 lines: ${lines.slice(0, 3).join(' | ')}`);
-      }
-      
-      return practicePoints;
+      console.log(`[AUDITABLE] Step 1 complete: Got practice points list (${result.content.length} chars)`);
+      return result.content; // Return the raw list for Step 2 to process
     }
     
     console.error('[AUDITABLE] Step 1 failed: No content in AI response');
-    return [];
+    return null;
   } catch (error) {
     console.error('[AUDITABLE] Step 1 error:', error.message);
-    return [];
+    return null;
   }
 }
 
-// Step 2: Expand a single practice point into structured format
-async function expandPracticePoint(practicePoint, guidelineContent, userId = null) {
-  const prompt = `Given this practice point: "${practicePoint}"
+// Step 2: Convert practice points list into structured JSON array
+async function structurePracticePoints(practicePointsList, guidelineContent, userId = null) {
+  console.log('[AUDITABLE] Step 2: Structuring practice points into JSON...');
+  
+  const prompt = `You have identified these practice points from a clinical guideline:
 
-And this guideline content:
+${practicePointsList}
+
+Now, for EACH individual practice point listed above (including all sub-items), create a structured JSON object.
+
+The original guideline content is:
 ${guidelineContent}
 
-Return a JSON object with:
+Return a JSON array where each element has:
 {
   "name": "Brief descriptive title (5-10 words)",
   "description": "Detailed context covering who this applies to, what the recommendation is, when/where it applies, why it matters clinically, and how to implement it. Write 2-4 sentences.",
-  "verbatimQuote": "The EXACT text copied word-for-word from the guideline that supports this practice point. This will be used for PDF highlighting so it must match exactly.",
+  "verbatimQuote": "The EXACT text copied word-for-word from the guideline. This will be used for PDF highlighting so it must match exactly.",
   "significance": "high or medium or low"
 }
 
-Return ONLY the JSON object, no other text.`;
+IMPORTANT:
+- Create a SEPARATE element for EACH practice point and sub-item from the list
+- If the list shows "FBC at booking" and "FBC at 28 weeks" as separate items, create 2 separate elements
+- Find the EXACT verbatim quote from the guideline for each element
+- Return ONLY the JSON array, no other text`;
 
   try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance. No other text.' 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array. Each item in the input list (including sub-items) should become a separate element in your output. Start with [ and end with ].' 
         },
         { 
           role: 'user', 
@@ -11887,29 +11873,33 @@ Return ONLY the JSON object, no other text.`;
       // Try to parse JSON
       try {
         const parsed = JSON.parse(cleanedContent);
-        if (parsed.name && parsed.verbatimQuote) {
+        if (Array.isArray(parsed)) {
+          console.log(`[AUDITABLE] Step 2 complete: Structured ${parsed.length} elements`);
           return parsed;
         }
       } catch (parseError) {
-        // Try to extract JSON object from response
-        const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
+        // Try to extract JSON array from response
+        const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
         if (jsonMatch) {
           try {
             const extracted = JSON.parse(jsonMatch[0]);
-            if (extracted.name && extracted.verbatimQuote) {
+            if (Array.isArray(extracted)) {
+              console.log(`[AUDITABLE] Step 2 complete: Structured ${extracted.length} elements (extracted)`);
               return extracted;
             }
           } catch (e) {
-            // Fall through to return null
+            console.error('[AUDITABLE] Step 2: Failed to parse extracted JSON array');
           }
         }
+        console.error('[AUDITABLE] Step 2: Could not parse AI response as JSON array');
+        console.error('[AUDITABLE] Step 2 response preview:', cleanedContent.substring(0, 500));
       }
     }
     
-    return null;
+    return [];
   } catch (error) {
-    console.error(`[AUDITABLE] Failed to expand practice point: ${error.message}`);
-    return null;
+    console.error(`[AUDITABLE] Step 2 error: ${error.message}`);
+    return [];
   }
 }
 
@@ -11922,33 +11912,18 @@ async function extractAuditableElements(content, userId = null) {
   try {
     console.log('[AUDITABLE] Starting two-step extraction process...');
     
-    // Step 1: Identify all practice points
-    const practicePoints = await identifyPracticePoints(content, userId);
+    // Step 1: Identify all practice points (returns grouped list as text)
+    const practicePointsList = await identifyPracticePoints(content, userId);
     
-    if (!practicePoints || practicePoints.length === 0) {
-      console.error('[AUDITABLE] Step 1 failed to identify any practice points');
+    if (!practicePointsList) {
+      console.error('[AUDITABLE] Step 1 failed to identify practice points');
       return [];
     }
     
-    // Step 2: Expand each practice point sequentially
-    console.log(`[AUDITABLE] Step 2: Expanding ${practicePoints.length} practice points...`);
-    const auditableElements = [];
+    // Step 2: Structure the practice points into JSON array
+    const auditableElements = await structurePracticePoints(practicePointsList, content, userId);
     
-    for (let i = 0; i < practicePoints.length; i++) {
-      const point = practicePoints[i];
-      const pointSummary = point.substring(0, 50) + (point.length > 50 ? '...' : '');
-      console.log(`[AUDITABLE] Step 2: Expanding point ${i + 1}/${practicePoints.length}: ${pointSummary}`);
-      
-      const expanded = await expandPracticePoint(point, content, userId);
-      
-      if (expanded && expanded.name && expanded.verbatimQuote) {
-        auditableElements.push(expanded);
-      } else {
-        console.warn(`[AUDITABLE] Failed to expand point ${i + 1}: ${pointSummary}`);
-      }
-    }
-    
-    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length} auditable elements from ${practicePoints.length} practice points`);
+    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length} auditable elements`);
     return auditableElements;
     
   } catch (error) {
