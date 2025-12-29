@@ -11710,103 +11710,32 @@ function extractKeywords(text) {
     .map(([word]) => word);
 }
 
-// Function to extract auditable elements from guideline content using AI
-async function extractAuditableElements(content, userId = null) {
-  if (!content || typeof content !== 'string') {
-    return [];
-  }
+// Step 1: Identify all practice points from guideline (simple list)
+async function identifyPracticePoints(content, userId = null) {
+  console.log('[AUDITABLE] Step 1: Identifying practice points...');
   
-  try {
-    // Get user's preferred AI provider
-    let aiProvider = 'DeepSeek'; // Default
-    if (userId) {
-      try {
-        aiProvider = await getUserAIPreference(userId);
-        console.log(`[AUDITABLE] Using user ${userId}'s preferred AI provider: ${aiProvider}`);
-      } catch (prefError) {
-        console.warn(`[AUDITABLE] Could not get user preference, using default: ${aiProvider}`);
-      }
-    }
-    
-    const prompt = `You are a clinical guideline auditor. Extract ALL clinical practice points from this guideline.
+  const prompt = `List every distinct clinical practice point from this guideline. Include:
+- Every screening requirement and timing
+- Every threshold (Hb levels, ferritin levels at each value mentioned)
+- Every dosage and maximum limit
+- Every timing requirement and follow-up interval
+- Every safety restriction and contraindication
+- Every escalation pathway and referral trigger
+- Every procedural requirement (pre-procedure, during, post-procedure)
+- Every special population consideration
+- Every administrative requirement
 
-CRITICAL: READ THE ENTIRE GUIDELINE FROM START TO FINISH
-Go through EVERY section, EVERY paragraph, EVERY table, EVERY appendix. Do not stop early.
-
-COMPLETENESS CHECKLIST - Extract practice points for ALL of these:
-□ SCREENING: What tests? When? For whom? At what gestations/timepoints?
-□ DIAGNOSTIC THRESHOLDS: Every specific value that defines a condition (Hb levels, ferritin levels, etc.)
-□ TREATMENT THRESHOLDS: Every trigger for starting/changing treatment at each timepoint
-□ DOSAGES: Every dose mentioned (oral iron doses, IV iron doses, folic acid doses, etc.)
-□ MAXIMUM LIMITS: Max single doses, max cumulative doses, weight-based limits
-□ TIMING: When to repeat tests, intervals between doses, how long to continue treatment
-□ FOLLOW-UP: When to recheck bloods, when to see GP, duration of treatment
-□ SAFETY RESTRICTIONS: Trimester restrictions, contraindications, allergy checks, what NOT to do
-□ ESCALATION: When to refer to consultant, when to refer to other specialties, red flag pathways
-□ LOCATION/SETTING: Where to deliver, where to administer treatments
-□ INTRAPARTUM: What to do during labour for anaemic women
-□ POSTPARTUM: Specific postpartum requirements, blood loss thresholds, when to check FBC
-□ PRE-PROCEDURE: Checks before iron infusion, prescription requirements, timing of blood tests
-□ POST-PROCEDURE: Observation periods, discharge timing, monitoring during/after infusion
-□ SPECIAL POPULATIONS: Different rules by weight, skin tone considerations, haemoglobinopathies
-□ ADMINISTRATIVE: Forms, pharmacy timings, documentation requirements
-
-OUTPUT FORMAT:
-Return a JSON array. Each object has these fields ONLY:
-{
-  "name": "Brief title of the practice point",
-  "description": "Comprehensive description covering WHO this applies to, WHAT the recommendation is, WHERE it applies (setting/location), WHEN it applies (timing/triggers/thresholds), WHY it matters (clinical rationale), and HOW to implement it. Write 3-5 sentences minimum.",
-  "verbatimQuote": "The EXACT text copied word-for-word from the guideline. This will be used to highlight the text in the PDF, so it must match exactly.",
-  "significance": "high|medium|low"
-}
-
-EXAMPLES OF GOOD PRACTICE POINTS:
-
-{
-  "name": "FBC screening at booking",
-  "description": "All pregnant women should be offered a Full Blood Count at their booking appointment to screen for anaemia. Early detection allows timely intervention to prevent complications such as preterm birth, low birth weight, and maternal fatigue. Results should be reviewed before the next antenatal appointment.",
-  "verbatimQuote": "All women will be offered a Full Blood Count (FBC) to screen for anaemia at booking and at 28 weeks.",
-  "significance": "high"
-}
-
-{
-  "name": "Ferritin threshold for considering iron treatment",
-  "description": "Treatment with oral iron should be considered when serum ferritin falls below 30 micrograms/L, as this indicates early iron depletion before frank deficiency develops. Starting treatment at this threshold allows iron stores to be replenished before they become critically depleted, which would require IV iron therapy. Ferritin below 15 micrograms/L confirms established iron deficiency.",
-  "verbatimQuote": "Treatment with iron should be considered when levels fall below 30 micrograms/L",
-  "significance": "high"
-}
-
-{
-  "name": "Deliver on Consultant Unit if Hb below 100 in labour",
-  "description": "Women in labour with haemoglobin below 100 g/L should deliver on the Consultant-led Unit rather than a midwife-led unit or birth centre. This is because anaemic women have reduced physiological reserve to cope with blood loss and are at increased risk of requiring transfusion if postpartum haemorrhage occurs. The Consultant Unit has immediate access to blood products and senior medical staff. Active management of the third stage should be planned.",
-  "verbatimQuote": "If Hb <100g/l at time of onset of labour Deliver on the Consultant Unit",
-  "significance": "high"
-}
-
-{
-  "name": "Post-infusion observation period",
-  "description": "Patients receiving intravenous iron infusion must be observed for adverse effects for a minimum of 30 minutes after the infusion ends. This is because IV iron carries a risk of hypersensitivity reactions including anaphylaxis, which typically occurs within this timeframe. Staff should monitor for symptoms such as rash, breathlessness, chest tightness, or hypotension, and resuscitation equipment must be immediately available.",
-  "verbatimQuote": "Patients must be observed for adverse effects for a minimum of 30 minutes after the end of each infusion.",
-  "significance": "high"
-}
+Return a simple numbered list. Be exhaustive - read every section including tables, appendices, and SOPs.
 
 Guideline content:
-${content}
+${content}`;
 
-INSTRUCTIONS:
-1. Read the ENTIRE guideline from beginning to end - do not stop early
-2. For each section, extract all practice points including those from tables, appendices, and SOPs
-3. Guidelines typically contain 30-50+ practice points - ensure comprehensive coverage
-
-For each practice point, include:
-- A verbatim quote copied exactly from the guideline (this will be used for PDF highlighting, so accuracy is essential)
-- A description with pertinent contextual details covering, as applicable: who it applies to, what the recommendation is, where/when it applies, why it matters, and how to implement it`;
-
+  try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Respond with ONLY a valid JSON array - no introductory text, no explanations, no markdown. Start with [ and end with ]. Read the entire guideline including all sections, tables, and appendices. Extract all practice points comprehensively - guidelines typically contain 30-50+ auditable elements covering screening, thresholds, dosages, limits, timing, safety restrictions, escalation pathways, location requirements, and procedural requirements. Each element needs: name, description (with relevant context), verbatimQuote (exact text for PDF highlighting), significance.' 
+          content: 'You are a clinical guideline auditor. List ALL practice points as a numbered list. Be exhaustive - guidelines typically contain 40-60 distinct practice points. Include every threshold, every timing, every dosage, every restriction.' 
         },
         { 
           role: 'user', 
@@ -11816,82 +11745,141 @@ For each practice point, include:
     }, userId);
 
     if (result && result.content) {
-      // Log response details for debugging
-      console.log(`[AUDITABLE] AI response received, length: ${result.content.length} chars`);
-      if (result.content.length < 500) {
-        console.log(`[AUDITABLE] Short response content: ${result.content}`);
+      // Parse numbered list into array
+      const lines = result.content.split('\n');
+      const practicePoints = [];
+      
+      for (const line of lines) {
+        // Match numbered items like "1. ", "1) ", "- ", etc.
+        const match = line.match(/^[\d]+[.\)]\s*(.+)/) || line.match(/^[-•]\s*(.+)/);
+        if (match && match[1] && match[1].trim().length > 10) {
+          practicePoints.push(match[1].trim());
+        }
       }
       
-      try {
-        // Clean the response - remove markdown code blocks if present
-        let cleanedContent = result.content.trim();
-        
-        // Remove ```json and ``` markers if present
-        if (cleanedContent.startsWith('```json')) {
-          cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-        }
-        if (cleanedContent.startsWith('```')) {
-          cleanedContent = cleanedContent.replace(/^```\s*/, '');
-        }
-        if (cleanedContent.endsWith('```')) {
-          cleanedContent = cleanedContent.replace(/\s*```$/, '');
-        }
-        
-        // Try to parse the cleaned response as JSON directly
-        try {
-          const parsed = JSON.parse(cleanedContent);
-          if (Array.isArray(parsed)) {
-            console.log(`[AUDITABLE] Successfully extracted ${parsed.length} auditable elements`);
-            return parsed;
-          } else if (parsed.auditableElements && Array.isArray(parsed.auditableElements)) {
-            console.log(`[AUDITABLE] Successfully extracted ${parsed.auditableElements.length} auditable elements`);
-            return parsed.auditableElements;
-          }
-        } catch (directParseError) {
-          // If direct parse fails, try to extract JSON array from the response
-          console.log('[AUDITABLE] Direct JSON parse failed, attempting to extract JSON from response...');
-          
-          // Try to find a JSON array in the response (handles cases where AI adds prose around JSON)
-          const jsonArrayMatch = cleanedContent.match(/\[[\s\S]*\]/);
-          if (jsonArrayMatch) {
-            try {
-              const extracted = JSON.parse(jsonArrayMatch[0]);
-              if (Array.isArray(extracted)) {
-                console.log(`[AUDITABLE] Successfully extracted ${extracted.length} auditable elements from embedded JSON`);
-                return extracted;
-              }
-            } catch (extractError) {
-              console.error('[AUDITABLE] Failed to parse extracted JSON array:', extractError);
-            }
-          }
-          
-          // Try to find a JSON object with auditableElements property
-          const jsonObjectMatch = cleanedContent.match(/\{[\s\S]*"auditableElements"[\s\S]*\}/);
-          if (jsonObjectMatch) {
-            try {
-              const extracted = JSON.parse(jsonObjectMatch[0]);
-              if (extracted.auditableElements && Array.isArray(extracted.auditableElements)) {
-                console.log(`[AUDITABLE] Successfully extracted ${extracted.auditableElements.length} auditable elements from embedded object`);
-                return extracted.auditableElements;
-              }
-            } catch (extractError) {
-              console.error('[AUDITABLE] Failed to parse extracted JSON object:', extractError);
-            }
-          }
-          
-          console.error('[AUDITABLE] Could not extract valid JSON from AI response');
-          console.error('[AUDITABLE] Response preview:', cleanedContent.substring(0, 1000));
-        }
-      } catch (parseError) {
-        console.error('[AUDITABLE] Failed to parse AI response as JSON:', parseError);
-        console.error('[AUDITABLE] AI response was:', result.content.substring(0, 1000));
-      }
-    } else {
-      console.error('[AUDITABLE] No content in AI response. Result:', JSON.stringify(result).substring(0, 500));
+      console.log(`[AUDITABLE] Step 1 complete: Found ${practicePoints.length} practice points`);
+      return practicePoints;
     }
     
-    // Fallback to empty array if AI extraction fails
+    console.error('[AUDITABLE] Step 1 failed: No content in AI response');
     return [];
+  } catch (error) {
+    console.error('[AUDITABLE] Step 1 error:', error.message);
+    return [];
+  }
+}
+
+// Step 2: Expand a single practice point into structured format
+async function expandPracticePoint(practicePoint, guidelineContent, userId = null) {
+  const prompt = `Given this practice point: "${practicePoint}"
+
+And this guideline content:
+${guidelineContent}
+
+Return a JSON object with:
+{
+  "name": "Brief descriptive title (5-10 words)",
+  "description": "Detailed context covering who this applies to, what the recommendation is, when/where it applies, why it matters clinically, and how to implement it. Write 2-4 sentences.",
+  "verbatimQuote": "The EXACT text copied word-for-word from the guideline that supports this practice point. This will be used for PDF highlighting so it must match exactly.",
+  "significance": "high or medium or low"
+}
+
+Return ONLY the JSON object, no other text.`;
+
+  try {
+    const result = await routeToAI({ 
+      messages: [
+        { 
+          role: 'system', 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance. No other text.' 
+        },
+        { 
+          role: 'user', 
+          content: prompt 
+        }
+      ]
+    }, userId);
+
+    if (result && result.content) {
+      let cleanedContent = result.content.trim();
+      
+      // Remove markdown code blocks if present
+      if (cleanedContent.startsWith('```json')) {
+        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
+      }
+      if (cleanedContent.startsWith('```')) {
+        cleanedContent = cleanedContent.replace(/^```\s*/, '');
+      }
+      if (cleanedContent.endsWith('```')) {
+        cleanedContent = cleanedContent.replace(/\s*```$/, '');
+      }
+      
+      // Try to parse JSON
+      try {
+        const parsed = JSON.parse(cleanedContent);
+        if (parsed.name && parsed.verbatimQuote) {
+          return parsed;
+        }
+      } catch (parseError) {
+        // Try to extract JSON object from response
+        const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+          try {
+            const extracted = JSON.parse(jsonMatch[0]);
+            if (extracted.name && extracted.verbatimQuote) {
+              return extracted;
+            }
+          } catch (e) {
+            // Fall through to return null
+          }
+        }
+      }
+    }
+    
+    return null;
+  } catch (error) {
+    console.error(`[AUDITABLE] Failed to expand practice point: ${error.message}`);
+    return null;
+  }
+}
+
+// Function to extract auditable elements from guideline content using AI (two-step approach)
+async function extractAuditableElements(content, userId = null) {
+  if (!content || typeof content !== 'string') {
+    return [];
+  }
+  
+  try {
+    console.log('[AUDITABLE] Starting two-step extraction process...');
+    
+    // Step 1: Identify all practice points
+    const practicePoints = await identifyPracticePoints(content, userId);
+    
+    if (!practicePoints || practicePoints.length === 0) {
+      console.error('[AUDITABLE] Step 1 failed to identify any practice points');
+      return [];
+    }
+    
+    // Step 2: Expand each practice point sequentially
+    console.log(`[AUDITABLE] Step 2: Expanding ${practicePoints.length} practice points...`);
+    const auditableElements = [];
+    
+    for (let i = 0; i < practicePoints.length; i++) {
+      const point = practicePoints[i];
+      const pointSummary = point.substring(0, 50) + (point.length > 50 ? '...' : '');
+      console.log(`[AUDITABLE] Step 2: Expanding point ${i + 1}/${practicePoints.length}: ${pointSummary}`);
+      
+      const expanded = await expandPracticePoint(point, content, userId);
+      
+      if (expanded && expanded.name && expanded.verbatimQuote) {
+        auditableElements.push(expanded);
+      } else {
+        console.warn(`[AUDITABLE] Failed to expand point ${i + 1}: ${pointSummary}`);
+      }
+    }
+    
+    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length} auditable elements from ${practicePoints.length} practice points`);
+    return auditableElements;
     
   } catch (error) {
     console.error('[AUDITABLE] Error extracting auditable elements with AI:', error);
