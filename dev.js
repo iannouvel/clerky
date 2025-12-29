@@ -3331,6 +3331,186 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
 
         // ============================================
+        // REGENERATE AUDITABLE ELEMENTS
+        // ============================================
+        const auditableGuidelineSelect = document.getElementById('auditableGuidelineSelect');
+        const regenerateAuditableSingleBtn = document.getElementById('regenerateAuditableSingleBtn');
+        const regenerateAuditableAllBtn = document.getElementById('regenerateAuditableAllBtn');
+        const auditableStatus = document.getElementById('auditableStatus');
+        
+        // Load guidelines into the auditable elements select dropdown
+        async function loadGuidelinesForAuditable() {
+            try {
+                const token = await auth.currentUser?.getIdToken();
+                if (!token) return;
+                
+                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                    if (auditableGuidelineSelect) {
+                        auditableGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
+                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
+                        guidelines.forEach(g => {
+                            const option = document.createElement('option');
+                            option.value = g.id;
+                            const elementCount = g.auditableElements?.length || 0;
+                            option.textContent = `${g.title || g.id} (${elementCount} elements)`;
+                            auditableGuidelineSelect.appendChild(option);
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading guidelines for auditable elements:', error);
+            }
+        }
+        
+        // Load guidelines when maintenance tab becomes active
+        document.querySelector('[data-content="maintenanceContent"]')?.addEventListener('click', () => {
+            loadGuidelinesForAuditable();
+        });
+        
+        // Regenerate auditable elements for single guideline
+        if (regenerateAuditableSingleBtn) {
+            regenerateAuditableSingleBtn.addEventListener('click', async () => {
+                const selectedId = auditableGuidelineSelect?.value;
+                if (!selectedId) {
+                    alert('Please select a guideline first');
+                    return;
+                }
+                
+                try {
+                    regenerateAuditableSingleBtn.disabled = true;
+                    const originalText = regenerateAuditableSingleBtn.textContent;
+                    regenerateAuditableSingleBtn.textContent = '🔄 Regenerating...';
+                    
+                    if (auditableStatus) {
+                        auditableStatus.style.display = 'block';
+                        auditableStatus.innerHTML = `<strong>Processing:</strong> ${selectedId}...<br><em>This may take a minute as AI extracts auditable elements with verbatim quotes.</em>`;
+                    }
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ guidelineId: selectedId })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success && result.results?.length > 0) {
+                        const r = result.results[0];
+                        if (r.success) {
+                            auditableStatus.innerHTML = `<span style="color:green;">✅ <strong>${r.guidelineId}</strong></span><br>
+                                ${r.message}<br>
+                                Elements extracted: <strong>${r.count}</strong>`;
+                        } else {
+                            auditableStatus.innerHTML = `<span style="color:red;">❌ <strong>${r.guidelineId}</strong>: ${r.error || r.message}</span>`;
+                        }
+                    } else {
+                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    }
+                    
+                    // Reload the dropdown to show updated element count
+                    await loadGuidelinesForAuditable();
+                    
+                    regenerateAuditableSingleBtn.textContent = originalText;
+                    regenerateAuditableSingleBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error('Error regenerating auditable elements:', error);
+                    if (auditableStatus) {
+                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+                    }
+                    regenerateAuditableSingleBtn.textContent = '🔄 Regenerate Selected';
+                    regenerateAuditableSingleBtn.disabled = false;
+                }
+            });
+        }
+        
+        // Regenerate auditable elements for ALL guidelines
+        if (regenerateAuditableAllBtn) {
+            regenerateAuditableAllBtn.addEventListener('click', async () => {
+                if (!confirm('This will regenerate auditable elements for ALL guidelines.\n\nThis operation:\n- Uses AI to extract clinical recommendations\n- May take several minutes\n- Will overwrite existing auditable elements\n\nContinue?')) {
+                    return;
+                }
+                
+                try {
+                    regenerateAuditableAllBtn.disabled = true;
+                    const originalText = regenerateAuditableAllBtn.textContent;
+                    regenerateAuditableAllBtn.textContent = '🔄 Processing...';
+                    
+                    if (auditableStatus) {
+                        auditableStatus.style.display = 'block';
+                        auditableStatus.innerHTML = '<strong>Processing all guidelines...</strong><br><em>This may take several minutes. Please wait.</em>';
+                    }
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ processAll: true })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        const successful = result.results?.filter(r => r.success) || [];
+                        const failed = result.results?.filter(r => !r.success) || [];
+                        
+                        let html = `<strong>Completed:</strong> ${successful.length} success, ${failed.length} failed<br>
+                            Total elements extracted: ${result.totalElements || successful.reduce((sum, r) => sum + (r.count || 0), 0)}<br><br>`;
+                        
+                        // Show successes
+                        if (successful.length > 0) {
+                            html += '<details><summary style="cursor:pointer;color:green;">✅ Successful (' + successful.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                            successful.forEach(r => {
+                                html += `<li>${r.guidelineId}: ${r.count} elements</li>`;
+                            });
+                            html += '</ul></details>';
+                        }
+                        
+                        // Show failures
+                        if (failed.length > 0) {
+                            html += '<details open><summary style="cursor:pointer;color:red;">❌ Failed (' + failed.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                            failed.forEach(r => {
+                                html += `<li>${r.guidelineId}: ${r.error || r.message}</li>`;
+                            });
+                            html += '</ul></details>';
+                        }
+                        
+                        auditableStatus.innerHTML = html;
+                    } else {
+                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    }
+                    
+                    // Reload the dropdown to show updated element counts
+                    await loadGuidelinesForAuditable();
+                    
+                    regenerateAuditableAllBtn.textContent = originalText;
+                    regenerateAuditableAllBtn.disabled = false;
+                    
+                } catch (error) {
+                    console.error('Error regenerating all auditable elements:', error);
+                    if (auditableStatus) {
+                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+                    }
+                    regenerateAuditableAllBtn.textContent = '🔄 Regenerate ALL Guidelines';
+                    regenerateAuditableAllBtn.disabled = false;
+                }
+            });
+        }
+
+        // ============================================
         // ENDPOINT PERFORMANCE MONITOR
         // ============================================
         let autoRefreshTimingsInterval = null;

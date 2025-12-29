@@ -1705,49 +1705,6 @@ ${text.substring(0, 6000)}`;
     }
 }
 
-// Function to extract auditable elements from content using AI
-async function extractAuditableElements(text, userId = null) {
-    try {
-        console.log(`[AUDITABLE] Starting auditable element extraction, input length: ${text.length}`);
-        
-        const prompt = `Extract key clinical recommendations and auditable elements from this guideline. Focus on specific clinical actions, thresholds, timeframes, and measurable outcomes. Return as a JSON array of objects with "element", "description", and "measurable" (boolean) fields.
-
-Clinical guideline text:
-${text.substring(0, 6000)}`;
-
-        const messages = [
-            { 
-                role: 'system', 
-                content: 'You are a clinical audit expert. Extract measurable clinical recommendations and key decision points. Return only valid JSON.' 
-            },
-            { role: 'user', content: prompt }
-        ];
-        
-        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
-        
-        if (aiResult && aiResult.content) {
-            // Try to parse JSON from response
-            try {
-                const jsonMatch = aiResult.content.match(/\[[\s\S]*\]/);
-                if (jsonMatch) {
-                    const elements = JSON.parse(jsonMatch[0]);
-                    debugLog(`[AUDITABLE] Successfully extracted ${elements.length} auditable elements`);
-                    return elements;
-                }
-            } catch (parseError) {
-                console.warn(`[AUDITABLE] Failed to parse JSON, returning empty array`);
-            }
-            return [];
-        } else {
-            console.warn(`[AUDITABLE] AI did not return auditable elements`);
-            return [];
-        }
-        
-    } catch (error) {
-        console.error(`[AUDITABLE] Error extracting auditable elements:`, error);
-        return [];
-    }
-}
 
 // ============================================================================
 // BACKGROUND JOB QUEUE SYSTEM
@@ -1979,10 +1936,13 @@ async function jobExtractTerms(job, guidelineData) {
 }
 
 async function jobExtractAuditable(job, guidelineData) {
-    const content = guidelineData.condensed || guidelineData.content;
+    // Prefer original content over condensed for verbatim quote matching
+    const content = guidelineData.content || guidelineData.condensed;
     if (!content) throw new Error('No content to extract auditable elements from');
     
-    const elements = await extractAuditableElements(content, 'system');
+    // Use the uploader's AI preference
+    const userId = guidelineData.uploadedBy || null;
+    const elements = await extractAuditableElements(content, userId);
     
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
     await guidelineRef.update({
@@ -11751,24 +11711,38 @@ function extractKeywords(text) {
 }
 
 // Function to extract auditable elements from guideline content using AI
-async function extractAuditableElements(content, aiProvider = 'DeepSeek') {
+async function extractAuditableElements(content, userId = null) {
   if (!content || typeof content !== 'string') {
     return [];
   }
   
   try {
-    const prompt = `You are a clinical guideline auditor. Your task is to extract clinically relevant auditable elements from this guideline with detailed variation points and thresholds.
+    // Get user's preferred AI provider
+    let aiProvider = 'DeepSeek'; // Default
+    if (userId) {
+      try {
+        aiProvider = await getUserAIPreference(userId);
+        console.log(`[AUDITABLE] Using user ${userId}'s preferred AI provider: ${aiProvider}`);
+      } catch (prefError) {
+        console.warn(`[AUDITABLE] Could not get user preference, using default: ${aiProvider}`);
+      }
+    }
+    
+    const prompt = `You are a clinical guideline auditor. Your task is to extract clinically relevant auditable elements from this guideline with detailed variation points, thresholds, and VERBATIM quotes from the source.
 
 CRITICAL REQUIREMENTS:
 1. Parse the guideline carefully to identify ALL clinically relevant advice
 2. Order elements by clinical significance (most significant first)
 3. No upper limit on number of elements
-4. Each element must describe:
+4. Each element MUST include a VERBATIM QUOTE from the guideline text - this is essential for matching and highlighting
+5. Each element must describe:
    - Input variables/conditions that determine the advice
    - The derived clinical advice/action
    - Clinical context and reasoning
    - Specific thresholds that change recommendations
    - Variation points where subtle changes should alter guidance
+   - Plain-language applicability context (who should receive this advice)
+   - Plain-language exclusion context (who should NOT receive this advice)
 
 OUTPUT FORMAT:
 Return a JSON array of objects, each with:
@@ -11778,6 +11752,9 @@ Return a JSON array of objects, each with:
   "name": "Brief description of the clinical decision point",
   "element": "Detailed description including input variables and derived advice",
   "significance": "high|medium|low",
+  "verbatimQuote": "The EXACT text copied directly from the guideline that this element is derived from. Must be word-for-word from the source.",
+  "applicabilityContext": "Plain-language description of who should receive this advice and in what circumstances. E.g., 'This advice applies to pregnant patients in their third trimester (28+ weeks) who report reduced fetal movements.'",
+  "exclusionContext": "Plain-language description of when this advice should NOT be given. E.g., 'This advice does not apply to patients before 26 weeks gestation or those already under continuous monitoring.'",
   "inputVariables": [
     {
       "name": "variable_name",
@@ -11823,6 +11800,9 @@ EXAMPLE:
   "name": "CTG monitoring for reduced fetal movements at 26+ weeks",
   "element": "If patient reports reduced fetal movements at 26+0 weeks or later, perform computerized CTG within 2 hours. Input variables: gestational age (≥26+0 weeks), patient report of reduced movements, absence of other risk factors. Derived advice: Immediate CTG monitoring within 2 hours of report.",
   "significance": "high",
+  "verbatimQuote": "Women presenting with reduced fetal movements at or after 26+0 weeks of gestation should have computerised CTG performed within 2 hours of presentation.",
+  "applicabilityContext": "This advice applies to pregnant patients at 26 weeks gestation or later who present with a complaint of reduced or decreased fetal movements. The patient must be aware of and reporting on their baby's movement patterns.",
+  "exclusionContext": "This advice does not apply to patients before 26 weeks gestation, patients who have not noticed any change in fetal movements, or patients already under continuous CTG monitoring for other indications.",
   "inputVariables": [
     {
       "name": "gestational_age",
@@ -11873,20 +11853,24 @@ EXAMPLE:
 Guideline content:
 ${content}
 
-Extract ALL clinically relevant auditable elements, ordered by significance. Focus on actionable clinical decisions that can be audited for accuracy. For each element, identify ALL thresholds, variation points, and input variable specifications.`;
+Extract ALL clinically relevant auditable elements, ordered by significance. Focus on actionable clinical decisions that can be audited for accuracy. For each element:
+1. Include a VERBATIM QUOTE from the guideline text (exact wording)
+2. Provide clear applicabilityContext explaining who should receive this advice
+3. Provide clear exclusionContext explaining who should NOT receive this advice
+4. Identify ALL thresholds, variation points, and input variable specifications`;
 
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Extract auditable elements in JSON format only.' 
+          content: 'You are a clinical guideline auditor. Extract auditable elements in JSON format only. Always include verbatim quotes from the source guideline.' 
         },
         { 
           role: 'user', 
           content: prompt 
         }
       ]
-    }, null, aiProvider);
+    }, userId);
 
     if (result && result.content) {
       try {
@@ -11907,13 +11891,15 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
         // Try to parse the cleaned response as JSON
         const parsed = JSON.parse(cleanedContent);
         if (Array.isArray(parsed)) {
+          console.log(`[AUDITABLE] Successfully extracted ${parsed.length} auditable elements`);
           return parsed;
         } else if (parsed.auditableElements && Array.isArray(parsed.auditableElements)) {
+          console.log(`[AUDITABLE] Successfully extracted ${parsed.auditableElements.length} auditable elements`);
           return parsed.auditableElements;
         }
       } catch (parseError) {
-        console.error('[DEBUG] Failed to parse AI response as JSON:', parseError);
-        debugLog('[DEBUG] AI response was:', result.content);
+        console.error('[AUDITABLE] Failed to parse AI response as JSON:', parseError);
+        debugLog('[AUDITABLE] AI response was:', result.content);
       }
     }
     
@@ -11921,7 +11907,7 @@ Extract ALL clinically relevant auditable elements, ordered by significance. Foc
     return [];
     
   } catch (error) {
-    console.error('[DEBUG] Error extracting auditable elements with AI:', error);
+    console.error('[AUDITABLE] Error extracting auditable elements with AI:', error);
     return [];
   }
 }
@@ -14243,9 +14229,9 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
       });
     }
 
-    // Get AI provider from request (default to DeepSeek if not specified)
-    const { guidelineId, aiProvider = 'DeepSeek' } = req.body;
-    console.log(`[DEBUG] Using AI provider: ${aiProvider} for guideline: ${guidelineId}`);
+    // Get guidelineId from request (AI provider is determined from user preferences)
+    const { guidelineId } = req.body;
+    console.log(`[DEBUG] Extracting auditable elements for guideline: ${guidelineId}, user: ${req.user.uid}`);
     
     // If specific guidelineId is provided, update only that one
     if (guidelineId) {
@@ -14275,7 +14261,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           });
         }
         
-        // Extract auditable elements from content
+        // Extract auditable elements from original content (prefer content over condensed for verbatim quotes)
         const content = guideline.content || guideline.condensed;
         if (!content) {
           return res.status(400).json({ 
@@ -14284,7 +14270,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           });
         }
         
-        const auditableElements = await extractAuditableElements(content, aiProvider);
+        const auditableElements = await extractAuditableElements(content, req.user.uid);
         
         // Update the guideline
         await guidelineRef.update({
@@ -14333,7 +14319,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           continue;
         }
         
-        // Extract auditable elements from content
+        // Extract auditable elements from original content (prefer content over condensed for verbatim quotes)
         const content = guideline.content || guideline.condensed;
         if (!content) {
           results.push({ 
@@ -14344,7 +14330,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           continue;
         }
         
-        const auditableElements = await extractAuditableElements(content, aiProvider);
+        const auditableElements = await extractAuditableElements(content, req.user.uid);
         
         // Update the guideline
         await db.collection('guidelines').doc(guidelineId).update({
@@ -14381,6 +14367,155 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
     
   } catch (error) {
     console.error('[ERROR] Failed to update guidelines with auditable elements:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: error.message 
+    });
+  }
+});
+
+// Endpoint to REGENERATE auditable elements (forces regeneration even if elements exist)
+app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
+  try {
+    console.log('[REGEN-AUDITABLE] Regenerate auditable elements endpoint called');
+    
+    if (!db) {
+      return res.status(500).json({ 
+        success: false, 
+        error: 'Firestore not available' 
+      });
+    }
+
+    const { guidelineId, processAll } = req.body;
+    const userId = req.user.uid;
+    
+    console.log(`[REGEN-AUDITABLE] User: ${userId}, GuidelineId: ${guidelineId || 'ALL'}`);
+    
+    // If specific guidelineId is provided, regenerate only that one
+    if (guidelineId && !processAll) {
+      try {
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const guidelineDoc = await guidelineRef.get();
+        
+        if (!guidelineDoc.exists) {
+          return res.status(404).json({ 
+            success: false, 
+            error: 'Guideline not found' 
+          });
+        }
+        
+        const guideline = guidelineDoc.data();
+        
+        // Use original content (prefer content over condensed for verbatim quotes)
+        const content = guideline.content || guideline.condensed;
+        if (!content) {
+          return res.status(400).json({ 
+            success: false, 
+            error: 'No content available for extraction' 
+          });
+        }
+        
+        console.log(`[REGEN-AUDITABLE] Extracting elements for ${guidelineId}, content length: ${content.length}`);
+        
+        const auditableElements = await extractAuditableElements(content, userId);
+        
+        // Update the guideline (overwrite existing elements)
+        await guidelineRef.update({
+          auditableElements: auditableElements,
+          auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+          auditableElementsRegeneratedBy: userId,
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        console.log(`[REGEN-AUDITABLE] Updated ${guidelineId} with ${auditableElements.length} auditable elements`);
+        
+        return res.json({ 
+          success: true, 
+          results: [{ 
+            guidelineId, 
+            success: true, 
+            message: 'Regenerated auditable elements',
+            count: auditableElements.length 
+          }],
+          totalElements: auditableElements.length
+        });
+        
+      } catch (error) {
+        console.error(`[REGEN-AUDITABLE] Error regenerating elements for ${guidelineId}:`, error);
+        return res.status(500).json({ 
+          success: false, 
+          error: error.message 
+        });
+      }
+    }
+    
+    // Otherwise, process all guidelines
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const results = [];
+    let totalElements = 0;
+    
+    console.log(`[REGEN-AUDITABLE] Processing ${guidelinesSnapshot.docs.length} guidelines`);
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      try {
+        const guideline = doc.data();
+        const docGuidelineId = doc.id;
+        
+        // Use original content (prefer content over condensed for verbatim quotes)
+        const content = guideline.content || guideline.condensed;
+        if (!content) {
+          results.push({ 
+            guidelineId: docGuidelineId, 
+            success: false, 
+            message: 'No content available for extraction' 
+          });
+          continue;
+        }
+        
+        console.log(`[REGEN-AUDITABLE] Processing ${docGuidelineId}...`);
+        
+        const auditableElements = await extractAuditableElements(content, userId);
+        
+        // Update the guideline (overwrite existing elements)
+        await db.collection('guidelines').doc(docGuidelineId).update({
+          auditableElements: auditableElements,
+          auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+          auditableElementsRegeneratedBy: userId,
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        
+        totalElements += auditableElements.length;
+        
+        results.push({ 
+          guidelineId: docGuidelineId, 
+          success: true, 
+          message: 'Regenerated auditable elements',
+          count: auditableElements.length 
+        });
+        
+        console.log(`[REGEN-AUDITABLE] Updated ${docGuidelineId} with ${auditableElements.length} auditable elements`);
+        
+      } catch (error) {
+        console.error(`[REGEN-AUDITABLE] Error regenerating elements for ${doc.id}:`, error);
+        results.push({ 
+          guidelineId: doc.id, 
+          success: false, 
+          error: error.message 
+        });
+      }
+    }
+    
+    res.json({ 
+      success: true, 
+      results,
+      totalProcessed: results.length,
+      successful: results.filter(r => r.success).length,
+      failed: results.filter(r => !r.success).length,
+      totalElements
+    });
+    
+  } catch (error) {
+    console.error('[ERROR] Failed to regenerate auditable elements:', error);
     res.status(500).json({ 
       success: false, 
       error: error.message 
