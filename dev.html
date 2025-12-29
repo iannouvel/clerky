@@ -685,6 +685,18 @@
                 <div id="fixNationsStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:14px;color:#6c757d;"></div>
             </div>
             <div class="tools-section" style="margin-top:20px;">
+                <h4>Regenerate Auditable Elements</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">Regenerate auditable elements for guidelines using AI. This extracts clinical recommendations with verbatim quotes, applicability context, and exclusion criteria. Uses your preferred AI provider.</p>
+                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                    <select id="auditableGuidelineSelect" style="padding:8px 12px;border:1px solid #ddd;border-radius:4px;min-width:300px;font-family:'Inter',sans-serif;font-size:13px;">
+                        <option value="">-- Select a guideline --</option>
+                    </select>
+                    <button id="regenerateAuditableSingleBtn" class="dev-btn" style="background-color:#9b59b6;color:#fff;border-color:#9b59b6;">🔄 Regenerate Selected</button>
+                    <button id="regenerateAuditableAllBtn" class="dev-btn" style="background-color:#e74c3c;color:#fff;border-color:#e74c3c;">🔄 Regenerate ALL Guidelines</button>
+                </div>
+                <div id="auditableStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:13px;"></div>
+            </div>
+            <div class="tools-section" style="margin-top:20px;">
                 <h4>Endpoint Performance Monitor</h4>
                 <p style="color:#666;font-size:13px;margin-bottom:10px;">
                     View API endpoint performance stats. Data shows the last 500 requests.
