@@ -11803,19 +11803,31 @@ ${content}`;
     }, userId);
 
     if (result && result.content) {
+      // Log the raw response for debugging
+      console.log(`[AUDITABLE] Step 1 raw response length: ${result.content.length} chars`);
+      console.log(`[AUDITABLE] Step 1 response preview: ${result.content.substring(0, 500)}`);
+      
       // Parse numbered list into array
       const lines = result.content.split('\n');
       const practicePoints = [];
       
       for (const line of lines) {
-        // Match numbered items like "1. ", "1) ", "- ", etc.
-        const match = line.match(/^[\d]+[.\)]\s*(.+)/) || line.match(/^[-•]\s*(.+)/);
+        // Match numbered items like "1. ", "1) ", "- ", "* ", "**1.**" etc.
+        const match = line.match(/^\*?\*?[\d]+[.\)]\*?\*?\s*(.+)/) || 
+                      line.match(/^[-•*]\s*(.+)/) ||
+                      line.match(/^\s*[\d]+[.\)]\s*(.+)/);
         if (match && match[1] && match[1].trim().length > 10) {
           practicePoints.push(match[1].trim());
         }
       }
       
       console.log(`[AUDITABLE] Step 1 complete: Found ${practicePoints.length} practice points`);
+      
+      // If we got very few points, log for debugging
+      if (practicePoints.length < 20) {
+        console.warn(`[AUDITABLE] Step 1 returned fewer points than expected. First 3 lines: ${lines.slice(0, 3).join(' | ')}`);
+      }
+      
       return practicePoints;
     }
     
