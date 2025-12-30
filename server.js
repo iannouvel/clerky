@@ -19392,22 +19392,34 @@ ${clinicalNote}
 PRACTICE POINTS FROM GUIDELINE:
 ${practicePointsList}
 
-STEP 1 - FIRST, carefully read the clinical note and extract:
-- What TREATMENTS are already in place or planned? (e.g., "Ferrous sulfate 200mg BD" means patient is ON iron therapy)
-- What INVESTIGATIONS are already planned? (e.g., "repeat Hb in 4/52" means FBC follow-up is planned)
-- What REFERRALS or follow-ups are arranged?
+STEP 1 - FIRST, extract from the clinical note's Plan section:
+Read the Plan WORD BY WORD and list every treatment, investigation, and follow-up mentioned:
 
-STEP 2 - For each practice point, ask:
-1. Is this treatment/investigation ALREADY BEING DONE? If yes → add to "alignedWithGuideline"
-2. Is the DOSE/TIMING/FREQUENCY different from guideline? If yes → suggest specific adjustment
-3. Is something genuinely MISSING from the plan? If yes → suggest it
-4. Does the patient meet the CRITERIA for this practice point? If no → exclude it
+Example extraction from: "Plan: Increase Ferrous sulfate to 200mg TDS, add vitamin C 100mg BD, repeat Hb in 4/52, ANC appt in 2/52"
+- TREATMENT: Ferrous sulfate 200mg TDS (patient IS ON oral iron therapy)
+- SUPPLEMENT: Vitamin C 100mg BD (absorption enhancement IS planned)
+- INVESTIGATION: Repeat Hb in 4/52 (blood test IS planned in 4 weeks)
+- FOLLOW-UP: ANC appointment in 2/52 (review IS scheduled)
 
-CRITICAL - DO NOT SUGGEST:
-- Starting a treatment the patient is ALREADY ON (e.g., don't say "consider iron therapy" if patient is on Ferrous sulfate)
-- Doing an investigation that is ALREADY PLANNED (e.g., don't say "check Hb" if "repeat Hb in 4/52" is in plan)
-- Practice points for conditions the patient DOES NOT HAVE (e.g., haemoglobinopathy advice for patient without haemoglobinopathy)
-- Vague actions like "consider treatment" when you should specify WHAT to consider
+STEP 2 - For each practice point, check against your extraction:
+- Practice point about "oral iron therapy" → CHECK: Is patient on oral iron? YES (Ferrous sulfate) → ALREADY ADDRESSED
+- Practice point about "repeat FBC" → CHECK: Is repeat Hb planned? YES (in 4/52) → ALREADY ADDRESSED
+- Practice point about "delivery location for Hb <100" → CHECK: Is this mentioned? NO → THIS IS A GAP
+
+STEP 3 - Only suggest genuine GAPS or DISCREPANCIES:
+- GAP: Something the guideline recommends that is NOT in the plan at all
+- DISCREPANCY: Something in the plan that DIFFERS from guideline (wrong dose, wrong timing)
+
+CRITICAL - DO NOT SUGGEST if:
+1. The plan ALREADY includes the action (even phrased differently):
+   - "repeat Hb in 4/52" = Hb monitoring IS planned → don't suggest "monitor Hb closely"
+   - "Ferrous sulfate 200mg TDS" = oral iron IS being given → don't suggest "consider iron therapy"
+   - "ANC appt in 2/52" = follow-up IS arranged → don't suggest "arrange follow-up"
+
+2. Your suggestion is VAGUE - these are USELESS:
+   - "Monitor Hb levels closely" ← HOW? WHEN? This adds nothing
+   - "Consider iron treatment" ← Patient is already on iron!
+   - "Manage anaemia appropriately" ← Meaningless
 
 EXCLUSION RULES - Do NOT include a practice point if:
 1. The patient does NOT have the required condition (e.g., haemoglobinopathy, diabetes)
@@ -19416,40 +19428,63 @@ EXCLUSION RULES - Do NOT include a practice point if:
 4. The plan ALREADY addresses this practice point (even if slightly differently)
 5. The patient has contraindications mentioned in the note
 
-WHAT TO SUGGEST (only genuine discrepancies):
-- DOSE ADJUSTMENTS: "Plan says Ferrous sulfate 200mg TDS (195mg elemental iron) but guideline recommends 40-80mg/day. Consider reducing dose."
-- TIMING ISSUES: "Plan says repeat Hb in 4/52 but guideline suggests 2-4 weeks for response assessment."
-- MISSING ELEMENTS: "Plan does not mention delivery location. With Hb <100g/L, guideline recommends Consultant Unit delivery."
-- THRESHOLD CHECKS: "Current Hb is 98 g/L. Guideline threshold for 3rd trimester is <105g/L - patient meets criteria."
+ONLY SUGGEST these types of genuine issues:
 
-EXAMPLES OF BAD actionNeeded (DO NOT USE):
-- "Consider iron therapy" ← Patient is ALREADY on iron, so this is wrong
-- "Monitor anaemia" ← Too vague, specify what to monitor and when
-- "Follow guideline" ← Useless, specify what the guideline says
-- "Treat iron deficiency" ← Patient is already being treated
+1. DOSE DISCREPANCY (plan has different dose than guideline):
+   - "Plan: Ferrous sulfate 200mg TDS (195mg elemental iron). Guideline: 40-80mg elemental iron/day. Consider if higher dose is needed or if it may increase side effects."
+
+2. TIMING DISCREPANCY (plan has different timing than guideline):
+   - "Plan: repeat Hb in 4/52. Guideline: recheck in 2-4 weeks. 4 weeks is within range but consider earlier if symptoms worsen."
+
+3. GENUINELY MISSING ELEMENT (not mentioned at all in plan):
+   - "Plan does not mention delivery location. Guideline: With Hb <100g/L at onset of labour, deliver on Consultant Unit with active 3rd stage."
+   - "Plan does not mention what to do if oral iron fails. Guideline: Consider IV iron if no response after 2 weeks."
+
+DO NOT SUGGEST (these are WRONG or USELESS):
+
+❌ "Monitor Hb levels closely" 
+   → WRONG: Plan already says "repeat Hb in 4/52" - monitoring IS planned!
+
+❌ "Consider iron therapy"
+   → WRONG: Patient is on Ferrous sulfate - iron therapy IS happening!
+
+❌ "Ensure adequate iron intake"
+   → WRONG: Already on oral iron AND vitamin C!
+
+❌ "Follow guideline recommendations"
+   → USELESS: Says nothing specific
+
+❌ "Manage according to protocol"
+   → USELESS: Not actionable
 
 Return a JSON object with this structure:
 {
   "patientProfile": {
     "conditions": ["iron deficiency anaemia"],
     "gestationalAge": "32+4 weeks",
-    "currentPlan": ["Increase Ferrous sulfate to 200mg TDS", "repeat Hb in 4/52"],
     "relevantTestResults": ["Hb 98 g/L", "Ferritin 15 μg/L"]
   },
+  "planExtraction": {
+    "treatments": ["Ferrous sulfate 200mg TDS", "Vitamin C 100mg BD"],
+    "investigations": ["repeat Hb in 4/52"],
+    "referrals": ["consider anaemia clinic if inadequate response"],
+    "followUp": ["ANC appt in 2/52"]
+  },
+  "alignedWithGuideline": [
+    "Oral iron therapy: Patient on Ferrous sulfate - guideline recommends oral iron for Hb <105 in 3rd trimester ✓",
+    "FBC follow-up: Repeat Hb in 4/52 planned - guideline says recheck in 2-4 weeks ✓"
+  ],
   "relevantPracticePoints": [
     {
       "index": 1,
       "name": "Practice point name",
-      "discrepancyType": "missing|incorrect|suboptimal",
-      "currentPlanSays": "What the note's plan currently states (or 'Not addressed')",
-      "guidelineRecommends": "What the guideline specifically recommends",
-      "actionNeeded": "Specific adjustment needed with values/timings from guideline",
+      "discrepancyType": "missing|discrepancy",
+      "currentPlanSays": "Exactly what the plan says, or 'Not mentioned in plan'",
+      "guidelineRecommends": "The specific guideline recommendation with values",
+      "actionNeeded": "Specific, actionable adjustment with doses/timings",
       "priority": "high|medium|low",
       "verbatimQuote": "The exact quote from the guideline"
     }
-  ],
-  "alignedWithGuideline": [
-    "Practice point X is correctly addressed in the plan"
   ],
   "notApplicableReasons": {
     "2": "Patient does not have haemoglobinopathy",
