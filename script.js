@@ -5569,6 +5569,115 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
     }
 }
 
+// ===== Practice Point-Based Suggestions (Fast Path) =====
+
+// Function to get practice point suggestions using pre-extracted auditable elements
+async function getPracticePointSuggestions(transcript, guidelineId) {
+    console.log('[PRACTICE-POINTS] Getting suggestions for guideline:', guidelineId);
+    
+    try {
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        const idToken = await user.getIdToken();
+        
+        updateUser(`Analysing practice points...`, true);
+        
+        const response = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                transcript,
+                guidelineId
+            })
+        });
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error('[PRACTICE-POINTS] API error:', errorText);
+            throw new Error(`API error: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        console.log('[PRACTICE-POINTS] Result:', {
+            success: result.success,
+            totalPracticePoints: result.totalPracticePoints,
+            relevantPracticePoints: result.relevantPracticePoints,
+            suggestionsCount: result.suggestions?.length
+        });
+        
+        if (!result.success) {
+            throw new Error(result.error || 'Failed to get practice point suggestions');
+        }
+        
+        updateUser(`Found ${result.relevantPracticePoints} relevant practice points`, false);
+        return result;
+        
+    } catch (error) {
+        console.error('[PRACTICE-POINTS] Error:', error);
+        updateUser(`Error: ${error.message}`, false);
+        throw error;
+    }
+}
+
+// Display practice point suggestions using the existing one-at-a-time UI
+async function displayPracticePointSuggestions(result) {
+    console.log('[PRACTICE-POINTS] Displaying suggestions:', result.suggestions?.length);
+    
+    if (!result.suggestions || result.suggestions.length === 0) {
+        const message = result.message || 'No relevant practice points found for this clinical note.';
+        updateUser(message, false);
+        
+        const noSuggestionsHtml = `
+            <div class="dynamic-advice-container">
+                <h3>✅ Guideline Review Complete</h3>
+                <p><strong>Guideline:</strong> ${result.guidelineTitle}</p>
+                <p><strong>Practice points analysed:</strong> ${result.totalPracticePoints}</p>
+                <p><strong>Relevant to this patient:</strong> 0</p>
+                <p style="color: #16a34a;">No additional recommendations needed based on this guideline.</p>
+            </div>
+        `;
+        appendToOutputField(noSuggestionsHtml, true);
+        return;
+    }
+    
+    // Convert practice points to suggestion format for existing UI
+    const suggestions = result.suggestions.map((point, index) => ({
+        id: `pp-${result.guidelineId}-${point.id || index + 1}`,
+        originalId: point.id || index + 1,
+        originalText: null, // Practice points are additions, not modifications
+        suggestedText: point.actionNeeded || point.name,
+        context: `**${point.name}**\n\n${point.description}\n\n**Why relevant:** ${point.relevanceReason}`,
+        category: 'addition',
+        priority: point.priority || point.significance || 'medium',
+        guidelineReference: point.name,
+        hasVerbatimQuote: !!(point.verbatimQuote && point.verbatimQuote.length > 10),
+        verbatimQuote: point.verbatimQuote,
+        guidelineId: result.guidelineId,
+        guidelineTitle: result.guidelineTitle
+    }));
+    
+    // Store session data
+    currentAdviceSession = `pp-${result.guidelineId}-${Date.now()}`;
+    currentSuggestions = suggestions;
+    userDecisions = {};
+    
+    window.currentGuidelineId = result.guidelineId;
+    window.currentGuidelineTitle = result.guidelineTitle;
+    
+    // Display using existing one-at-a-time UI
+    await displayInteractiveSuggestions(
+        suggestions, 
+        result.guidelineTitle, 
+        result.guidelineId, 
+        result.guidelineFilename
+    );
+}
+
 // ===== One-at-a-Time Guideline Suggestions Workflow =====
 
 // Global state for guideline suggestions review  
@@ -13858,34 +13967,38 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const analyzeMessage = `Analysing against: ${displayName}`;
     updateUser(analyzeMessage, true);
 
-    // Directly generate guideline suggestions for this guideline without server analysis
-    // Store the latest analysis for potential guideline suggestions
+    // Use practice point-based suggestions (fast path using pre-extracted auditable elements)
     window.latestAnalysis = {
         transcript: transcript,
-        analysis: null, // No separate analysis step
+        analysis: null,
         guidelineId: guidelineId,
         guidelineTitle: displayName
     };
 
     try {
-        // For sequential processing, use existing analysis if available, otherwise create a basic one
-        let analysisToUse = window.latestAnalysis?.analysis;
-        if (!analysisToUse) {
-            // Create a basic analysis description for this guideline
-            analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${displayName}. ` +
-                           `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
-        }
+        // Get and display practice point suggestions
+        const result = await getPracticePointSuggestions(transcript, guidelineId);
+        await displayPracticePointSuggestions(result);
+    } catch (practicePointError) {
+        console.error(`[DEBUG] Error with practice point suggestions for ${guidelineId}:`, practicePointError);
         
-        await dynamicAdvice(
-            transcript,
-            analysisToUse,
-            guidelineId,
-            displayName
-        );
-    } catch (dynamicError) {
-        console.error(`[DEBUG] Error generating guideline suggestions for ${guidelineId}:`, dynamicError);
-        const dynamicErrorMessage = `⚠️ **Note:** Guideline suggestions generation failed for this guideline: ${dynamicError.message}\n\n`;
-        appendToOutputField(dynamicErrorMessage, true);
+        // Fallback to original dynamicAdvice method if practice points fail
+        console.log(`[DEBUG] Falling back to dynamicAdvice for ${guidelineId}`);
+        try {
+            const analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${displayName}. ` +
+                               `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
+            
+            await dynamicAdvice(
+                transcript,
+                analysisToUse,
+                guidelineId,
+                displayName
+            );
+        } catch (dynamicError) {
+            console.error(`[DEBUG] Fallback also failed for ${guidelineId}:`, dynamicError);
+            const errorMessage = `⚠️ **Note:** Guideline suggestions generation failed for this guideline: ${dynamicError.message}\n\n`;
+            appendToOutputField(errorMessage, true);
+        }
     }
 
     console.log(`[DEBUG] Successfully processed guideline: ${guidelineId}`);
