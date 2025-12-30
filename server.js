@@ -19375,54 +19375,184 @@ IMPORTANT:
     }
 });
 
-// Helper function to build the practice point suggestion prompt
-function buildPracticePointPrompt(clinicalNote, auditableElements) {
-    // Format practice points for the prompt (compact format to save tokens)
-    const practicePointsList = auditableElements.map((elem, index) => {
-        return `${index + 1}. [${elem.significance?.toUpperCase() || 'MEDIUM'}] ${elem.name}
-   Description: ${elem.description}
-   Quote: "${elem.verbatimQuote}"`;
+// Helper to format practice points for prompts
+function formatPracticePointsForPrompt(points) {
+    return points.map((elem, index) => {
+        const idx = elem.originalIndex !== undefined ? elem.originalIndex : index + 1;
+        return `${idx}. ${elem.name}\n   ${elem.description}\n   Quote: "${elem.verbatimQuote}"`;
     }).join('\n\n');
+}
 
-    return `You are reviewing a clinical note to check if the management plan aligns with guideline recommendations.
-
-CLINICAL NOTE:
+// Step 1: Filter practice points by relevance to patient context
+async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
+    console.log(`[PRACTICE-POINTS] Step 1: Filtering ${allPoints.length} points for relevance...`);
+    
+    const pointsList = formatPracticePointsForPrompt(allPoints.map((p, i) => ({ ...p, originalIndex: i + 1 })));
+    
+    const messages = [
+        {
+            role: 'system',
+            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+        },
+        {
+            role: 'user',
+            content: `This is a clinical note written by a medical professional:
 ${clinicalNote}
 
-PRACTICE POINTS FROM GUIDELINE:
-${practicePointsList}
+These are clinical practice points that may be relevant:
+${pointsList}
 
-Read the clinical note carefully. The plan already includes treatments, investigations, and follow-ups. Your job is to find genuine gaps or errors - not to repeat what's already being done.
+Determine if each practice point is relevant to this patient's clinical context.
 
-For example, if the plan says "repeat Hb in 4/52", don't suggest "monitor Hb levels" - that's already covered. If the plan says the patient is on "Ferrous sulfate 200mg TDS", don't suggest "consider iron therapy" - they're already on iron.
-
-Only flag things that are:
-1. Genuinely missing from the plan (e.g., no mention of where to deliver if Hb remains low)
-2. Different from the guideline in a meaningful way (e.g., dose too high, timing too long)
-3. Applicable to THIS patient (don't suggest haemoglobinopathy advice if patient doesn't have one)
-
-Your suggestions must be specific and actionable. Vague advice like "monitor closely" or "manage appropriately" is useless - say exactly what should be done differently and why.
+A practice point is IRRELEVANT if:
+- It applies to a different stage (e.g., postnatal advice for a pregnant patient)
+- It requires a condition the patient doesn't have (e.g., haemoglobinopathy)
+- It applies to a different gestational age (e.g., first trimester for third trimester patient)
 
 Return JSON:
 {
-  "alignedWithGuideline": [
-    "Brief note of what the plan already does correctly"
-  ],
-  "relevantPracticePoints": [
-    {
-      "index": 1,
-      "name": "Practice point name",
-      "currentPlanSays": "What the plan currently says about this (or 'Not mentioned')",
-      "guidelineRecommends": "What the guideline says",
-      "actionNeeded": "Specific action with values/timings - not vague advice",
-      "priority": "high|medium|low",
-      "verbatimQuote": "Exact quote from guideline for highlighting"
-    }
-  ],
-  "notApplicableReasons": {
-    "2": "Why this practice point doesn't apply to this patient"
+  "relevant": [1, 3, 6],
+  "irrelevant": {
+    "4": "Patient does not have haemoglobinopathy",
+    "7": "Applies to postnatal period only"
   }
-}`;
+}`
+        }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[PRACTICE-POINTS] Step 1: No AI response');
+        return { relevant: allPoints.map((_, i) => i + 1), irrelevant: {} };
+    }
+    
+    try {
+        let parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        console.log(`[PRACTICE-POINTS] Step 1 complete: ${parsed.relevant?.length || 0} relevant, ${Object.keys(parsed.irrelevant || {}).length} irrelevant`);
+        return parsed;
+    } catch (e) {
+        console.error('[PRACTICE-POINTS] Step 1: Failed to parse response:', e.message);
+        return { relevant: allPoints.map((_, i) => i + 1), irrelevant: {} };
+    }
+}
+
+// Step 2: Filter relevant practice points by importance
+async function filterImportantPracticePoints(clinicalNote, relevantPoints, userId) {
+    console.log(`[PRACTICE-POINTS] Step 2: Filtering ${relevantPoints.length} points for importance...`);
+    
+    if (relevantPoints.length === 0) {
+        return { important: [], unimportant: {} };
+    }
+    
+    const pointsList = formatPracticePointsForPrompt(relevantPoints);
+    
+    const messages = [
+        {
+            role: 'system',
+            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+        },
+        {
+            role: 'user',
+            content: `This is a clinical note written by a medical professional:
+${clinicalNote}
+
+These are clinical practice points relevant to this patient:
+${pointsList}
+
+Determine if each practice point is likely to have significant impact on this patient's care.
+
+A practice point is UNIMPORTANT if:
+- It's a minor administrative detail
+- It has low clinical impact for this specific case
+- It's informational rather than actionable
+
+Return JSON:
+{
+  "important": [1, 6, 10],
+  "unimportant": {
+    "3": "Minor administrative point",
+    "5": "Low clinical impact for this case"
+  }
+}`
+        }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[PRACTICE-POINTS] Step 2: No AI response');
+        return { important: relevantPoints.map(p => p.originalIndex), unimportant: {} };
+    }
+    
+    try {
+        let parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        console.log(`[PRACTICE-POINTS] Step 2 complete: ${parsed.important?.length || 0} important, ${Object.keys(parsed.unimportant || {}).length} unimportant`);
+        return parsed;
+    } catch (e) {
+        console.error('[PRACTICE-POINTS] Step 2: Failed to parse response:', e.message);
+        return { important: relevantPoints.map(p => p.originalIndex), unimportant: {} };
+    }
+}
+
+// Step 3: Check compliance and generate suggestions for non-compliant points
+async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) {
+    console.log(`[PRACTICE-POINTS] Step 3: Checking compliance for ${importantPoints.length} points...`);
+    
+    if (importantPoints.length === 0) {
+        return { compliant: [], nonCompliant: [] };
+    }
+    
+    const pointsList = formatPracticePointsForPrompt(importantPoints);
+    
+    const messages = [
+        {
+            role: 'system',
+            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+        },
+        {
+            role: 'user',
+            content: `This is a clinical note written by a medical professional:
+${clinicalNote}
+
+These are important clinical practice points for this patient:
+${pointsList}
+
+For each practice point, determine if the clinical note is COMPLIANT (the plan already addresses this) or NON-COMPLIANT (the plan is missing this or doing it differently).
+
+For NON-COMPLIANT points, provide a specific, actionable suggestion.
+
+Return JSON:
+{
+  "compliant": [1, 6],
+  "nonCompliant": [
+    {
+      "index": 10,
+      "name": "Practice point name",
+      "issue": "What is missing or incorrect in the plan",
+      "suggestion": "Specific action to take - with values and timings",
+      "verbatimQuote": "Exact quote from the practice point for highlighting"
+    }
+  ]
+}`
+        }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[PRACTICE-POINTS] Step 3: No AI response');
+        return { compliant: [], nonCompliant: [] };
+    }
+    
+    try {
+        let parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        console.log(`[PRACTICE-POINTS] Step 3 complete: ${parsed.compliant?.length || 0} compliant, ${parsed.nonCompliant?.length || 0} non-compliant`);
+        return parsed;
+    } catch (e) {
+        console.error('[PRACTICE-POINTS] Step 3: Failed to parse response:', e.message);
+        return { compliant: [], nonCompliant: [] };
+    }
 }
 
 // Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
@@ -19475,71 +19605,60 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         
         console.log(`[PRACTICE-POINTS] Found ${auditableElements.length} auditable elements`);
         
-        // Build prompt and send to AI
-        const prompt = buildPracticePointPrompt(transcript, auditableElements);
+        // Add original index to each element for tracking
+        const indexedElements = auditableElements.map((elem, i) => ({ ...elem, originalIndex: i + 1 }));
         
-        const messages = [
-            {
-                role: 'system',
-                content: 'You are a clinical guideline advisor. Return ONLY valid JSON - no markdown, no explanations. Start with { and end with }. Identify which practice points from the guideline are relevant to the specific patient case.'
-            },
-            {
-                role: 'user',
-                content: prompt
-            }
-        ];
+        // Step 1: Filter by relevance
+        const step1Result = await filterRelevantPracticePoints(transcript, indexedElements, userId);
+        timer.step('Step 1: Relevance filter');
         
-        timer.step('Build prompt');
+        const relevantIndices = step1Result.relevant || [];
+        const relevantPoints = indexedElements.filter(elem => relevantIndices.includes(elem.originalIndex));
         
-        const aiResult = await routeToAI({ messages }, userId);
-        
-        timer.step('AI processing');
-        
-        if (!aiResult || !aiResult.content) {
-            console.error('[PRACTICE-POINTS] No AI response received');
-            return res.status(500).json({ success: false, error: 'No response from AI' });
+        if (relevantPoints.length === 0) {
+            console.log('[PRACTICE-POINTS] No relevant practice points found');
+            return res.json({
+                success: true,
+                suggestions: [],
+                guidelineTitle,
+                guidelineId,
+                guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
+                totalPracticePoints: auditableElements.length,
+                relevantPracticePoints: 0,
+                irrelevantReasons: step1Result.irrelevant || {},
+                message: 'No practice points are relevant to this patient context.'
+            });
         }
         
-        // Parse AI response
-        let parsedResult;
-        let cleanedContent = aiResult.content.trim();
+        // Step 2: Filter by importance
+        const step2Result = await filterImportantPracticePoints(transcript, relevantPoints, userId);
+        timer.step('Step 2: Importance filter');
         
-        // Remove markdown code blocks if present
-        if (cleanedContent.startsWith('```json')) {
-            cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-        }
-        if (cleanedContent.startsWith('```')) {
-            cleanedContent = cleanedContent.replace(/^```\s*/, '');
-        }
-        if (cleanedContent.endsWith('```')) {
-            cleanedContent = cleanedContent.replace(/\s*```$/, '');
-        }
+        const importantIndices = step2Result.important || [];
+        const importantPoints = relevantPoints.filter(elem => importantIndices.includes(elem.originalIndex));
         
-        try {
-            parsedResult = JSON.parse(cleanedContent);
-        } catch (parseError) {
-            // Try to extract JSON object from response
-            const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-                try {
-                    parsedResult = JSON.parse(jsonMatch[0]);
-                } catch (e) {
-                    console.error('[PRACTICE-POINTS] Failed to parse extracted JSON:', e.message);
-                    return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
-                }
-            } else {
-                console.error('[PRACTICE-POINTS] Could not extract JSON from response');
-                return res.status(500).json({ success: false, error: 'Invalid AI response format' });
-            }
+        if (importantPoints.length === 0) {
+            console.log('[PRACTICE-POINTS] No important practice points found');
+            return res.json({
+                success: true,
+                suggestions: [],
+                guidelineTitle,
+                guidelineId,
+                guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
+                totalPracticePoints: auditableElements.length,
+                relevantPracticePoints: relevantPoints.length,
+                importantPracticePoints: 0,
+                message: 'All relevant practice points are already addressed or have low impact.'
+            });
         }
         
-        timer.step('Parse response');
+        // Step 3: Check compliance and generate suggestions
+        const step3Result = await checkComplianceAndSuggest(transcript, importantPoints, userId);
+        timer.step('Step 3: Compliance check');
         
-        // Format the suggestions with full practice point data
-        const suggestions = (parsedResult.relevantPracticePoints || []).map(point => {
-            // Find the original practice point to get full data
-            const originalIndex = point.index - 1;
-            const originalElement = auditableElements[originalIndex] || {};
+        // Format suggestions from non-compliant points
+        const suggestions = (step3Result.nonCompliant || []).map(point => {
+            const originalElement = auditableElements[point.index - 1] || {};
             
             return {
                 id: point.index,
@@ -19547,14 +19666,14 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
                 description: originalElement.description || '',
                 verbatimQuote: point.verbatimQuote || originalElement.verbatimQuote || '',
                 significance: originalElement.significance || 'medium',
-                relevanceReason: point.relevanceReason || '',
-                priority: point.priority || 'medium',
-                actionNeeded: point.actionNeeded || '',
+                issue: point.issue || '',
+                suggestion: point.suggestion || '',
+                priority: 'high',
                 applicable: true
             };
         });
         
-        console.log(`[PRACTICE-POINTS] Returning ${suggestions.length} relevant suggestions out of ${auditableElements.length} total`);
+        console.log(`[PRACTICE-POINTS] 3-step complete: ${auditableElements.length} total → ${relevantPoints.length} relevant → ${importantPoints.length} important → ${suggestions.length} suggestions`);
         
         timer.step('Format response');
         console.log('[PRACTICE-POINTS] Timing:', JSON.stringify(timer.getSummary()));
@@ -19566,10 +19685,12 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             guidelineId,
             guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
             totalPracticePoints: auditableElements.length,
-            relevantPracticePoints: suggestions.length,
-            notApplicableReasons: parsedResult.notApplicableReasons || {},
-            aiProvider: aiResult.ai_provider,
-            aiModel: aiResult.ai_model
+            relevantPracticePoints: relevantPoints.length,
+            importantPracticePoints: importantPoints.length,
+            compliantCount: (step3Result.compliant || []).length,
+            nonCompliantCount: suggestions.length,
+            irrelevantReasons: step1Result.irrelevant || {},
+            unimportantReasons: step2Result.unimportant || {}
         });
         
     } catch (error) {
