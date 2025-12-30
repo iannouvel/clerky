@@ -19392,36 +19392,56 @@ ${clinicalNote}
 PRACTICE POINTS FROM GUIDELINE:
 ${practicePointsList}
 
+CRITICAL EXCLUSION RULES - A practice point is NOT applicable if:
+1. It requires a CONDITION the patient does NOT have (e.g., haemoglobinopathy, diabetes, multiple pregnancy)
+2. It applies to a GESTATIONAL AGE different from the patient's current gestation
+3. It applies to a POPULATION the patient is NOT part of (e.g., postnatal when patient is antenatal)
+4. The action has ALREADY BEEN COMPLETED as documented in the note
+5. The patient has CONTRAINDICATIONS mentioned in the note
+6. It requires a SYMPTOM or TEST RESULT the patient does NOT have
+
+INCLUSION RULES - A practice point IS applicable if:
+1. The patient HAS the condition, symptom, or test result the practice point addresses
+2. The gestational age matches the practice point's timing criteria
+3. The action would ADD VALUE to the patient's current care plan
+4. The practice point addresses something MISSING from the current management
+
 INSTRUCTIONS:
-1. Read the clinical note carefully to understand the patient's situation, symptoms, and current management
-2. For each practice point, assess if it is APPLICABLE to this specific patient
-3. Consider: gestational age, symptoms, test results, current treatments mentioned
-4. Only include practice points that are clinically relevant to THIS patient
-5. Rank by clinical importance: what actions would most improve patient care?
+1. First, identify what conditions, symptoms, and test results THIS patient actually has
+2. For EACH practice point, check: does this patient meet the criteria for this recommendation?
+3. EXCLUDE any practice point where the patient lacks a required condition or characteristic
+4. Only INCLUDE practice points that genuinely apply to THIS patient's documented situation
+5. Rank included points by clinical priority
 
 Return a JSON object with this structure:
 {
+  "patientProfile": {
+    "conditions": ["iron deficiency anaemia"],
+    "gestationalAge": "32+4 weeks",
+    "currentTreatments": ["Ferrous sulfate 200mg BD"],
+    "relevantTestResults": ["Hb 98 g/L", "Ferritin 15 μg/L"]
+  },
   "relevantPracticePoints": [
     {
       "index": 1,
       "name": "Practice point name",
-      "relevanceReason": "Why this applies to this specific patient",
+      "relevanceReason": "Specific reason why this applies - patient has X condition/symptom",
       "priority": "high|medium|low",
       "actionNeeded": "What specific action should be taken for this patient",
       "verbatimQuote": "The exact quote from the guideline"
     }
   ],
   "notApplicableReasons": {
-    "2": "Patient is not in first trimester",
+    "2": "Patient does not have haemoglobinopathy - this practice point is only for patients with known haemoglobinopathies",
     "5": "Already on oral iron as mentioned in note"
   }
 }
 
 CRITICAL:
-- Only include practice points that are genuinely applicable to this patient
-- Order by clinical priority (most important first)
-- Be specific about WHY each point applies to THIS patient
-- Include the verbatimQuote exactly as provided for PDF highlighting`;
+- Do NOT suggest practice points for conditions the patient does not have
+- A practice point that says "for patients with X" should ONLY be included if the patient HAS X
+- When in doubt about whether a condition applies, EXCLUDE the practice point
+- Be STRICT about relevance - irrelevant suggestions undermine clinical trust`;
 }
 
 // Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
