@@ -19384,7 +19384,7 @@ function buildPracticePointPrompt(clinicalNote, auditableElements) {
    Quote: "${elem.verbatimQuote}"`;
     }).join('\n\n');
 
-    return `You are a clinical guideline auditor. Your task is to VALIDATE the clinical note's management plan against guideline practice points.
+    return `You are reviewing a clinical note to check if the management plan aligns with guideline recommendations.
 
 CLINICAL NOTE:
 ${clinicalNote}
@@ -19392,111 +19392,37 @@ ${clinicalNote}
 PRACTICE POINTS FROM GUIDELINE:
 ${practicePointsList}
 
-STEP 1 - FIRST, extract from the clinical note's Plan section:
-Read the Plan WORD BY WORD and list every treatment, investigation, and follow-up mentioned:
+Read the clinical note carefully. The plan already includes treatments, investigations, and follow-ups. Your job is to find genuine gaps or errors - not to repeat what's already being done.
 
-Example extraction from: "Plan: Increase Ferrous sulfate to 200mg TDS, add vitamin C 100mg BD, repeat Hb in 4/52, ANC appt in 2/52"
-- TREATMENT: Ferrous sulfate 200mg TDS (patient IS ON oral iron therapy)
-- SUPPLEMENT: Vitamin C 100mg BD (absorption enhancement IS planned)
-- INVESTIGATION: Repeat Hb in 4/52 (blood test IS planned in 4 weeks)
-- FOLLOW-UP: ANC appointment in 2/52 (review IS scheduled)
+For example, if the plan says "repeat Hb in 4/52", don't suggest "monitor Hb levels" - that's already covered. If the plan says the patient is on "Ferrous sulfate 200mg TDS", don't suggest "consider iron therapy" - they're already on iron.
 
-STEP 2 - For each practice point, check against your extraction:
-- Practice point about "oral iron therapy" → CHECK: Is patient on oral iron? YES (Ferrous sulfate) → ALREADY ADDRESSED
-- Practice point about "repeat FBC" → CHECK: Is repeat Hb planned? YES (in 4/52) → ALREADY ADDRESSED
-- Practice point about "delivery location for Hb <100" → CHECK: Is this mentioned? NO → THIS IS A GAP
+Only flag things that are:
+1. Genuinely missing from the plan (e.g., no mention of where to deliver if Hb remains low)
+2. Different from the guideline in a meaningful way (e.g., dose too high, timing too long)
+3. Applicable to THIS patient (don't suggest haemoglobinopathy advice if patient doesn't have one)
 
-STEP 3 - Only suggest genuine GAPS or DISCREPANCIES:
-- GAP: Something the guideline recommends that is NOT in the plan at all
-- DISCREPANCY: Something in the plan that DIFFERS from guideline (wrong dose, wrong timing)
+Your suggestions must be specific and actionable. Vague advice like "monitor closely" or "manage appropriately" is useless - say exactly what should be done differently and why.
 
-CRITICAL - DO NOT SUGGEST if:
-1. The plan ALREADY includes the action (even phrased differently):
-   - "repeat Hb in 4/52" = Hb monitoring IS planned → don't suggest "monitor Hb closely"
-   - "Ferrous sulfate 200mg TDS" = oral iron IS being given → don't suggest "consider iron therapy"
-   - "ANC appt in 2/52" = follow-up IS arranged → don't suggest "arrange follow-up"
-
-2. Your suggestion is VAGUE - these are USELESS:
-   - "Monitor Hb levels closely" ← HOW? WHEN? This adds nothing
-   - "Consider iron treatment" ← Patient is already on iron!
-   - "Manage anaemia appropriately" ← Meaningless
-
-EXCLUSION RULES - Do NOT include a practice point if:
-1. The patient does NOT have the required condition (e.g., haemoglobinopathy, diabetes)
-2. The gestational age doesn't match the practice point's criteria
-3. It applies to a different population (e.g., postnatal when patient is antenatal)
-4. The plan ALREADY addresses this practice point (even if slightly differently)
-5. The patient has contraindications mentioned in the note
-
-ONLY SUGGEST these types of genuine issues:
-
-1. DOSE DISCREPANCY (plan has different dose than guideline):
-   - "Plan: Ferrous sulfate 200mg TDS (195mg elemental iron). Guideline: 40-80mg elemental iron/day. Consider if higher dose is needed or if it may increase side effects."
-
-2. TIMING DISCREPANCY (plan has different timing than guideline):
-   - "Plan: repeat Hb in 4/52. Guideline: recheck in 2-4 weeks. 4 weeks is within range but consider earlier if symptoms worsen."
-
-3. GENUINELY MISSING ELEMENT (not mentioned at all in plan):
-   - "Plan does not mention delivery location. Guideline: With Hb <100g/L at onset of labour, deliver on Consultant Unit with active 3rd stage."
-   - "Plan does not mention what to do if oral iron fails. Guideline: Consider IV iron if no response after 2 weeks."
-
-DO NOT SUGGEST (these are WRONG or USELESS):
-
-❌ "Monitor Hb levels closely" 
-   → WRONG: Plan already says "repeat Hb in 4/52" - monitoring IS planned!
-
-❌ "Consider iron therapy"
-   → WRONG: Patient is on Ferrous sulfate - iron therapy IS happening!
-
-❌ "Ensure adequate iron intake"
-   → WRONG: Already on oral iron AND vitamin C!
-
-❌ "Follow guideline recommendations"
-   → USELESS: Says nothing specific
-
-❌ "Manage according to protocol"
-   → USELESS: Not actionable
-
-Return a JSON object with this structure:
+Return JSON:
 {
-  "patientProfile": {
-    "conditions": ["iron deficiency anaemia"],
-    "gestationalAge": "32+4 weeks",
-    "relevantTestResults": ["Hb 98 g/L", "Ferritin 15 μg/L"]
-  },
-  "planExtraction": {
-    "treatments": ["Ferrous sulfate 200mg TDS", "Vitamin C 100mg BD"],
-    "investigations": ["repeat Hb in 4/52"],
-    "referrals": ["consider anaemia clinic if inadequate response"],
-    "followUp": ["ANC appt in 2/52"]
-  },
   "alignedWithGuideline": [
-    "Oral iron therapy: Patient on Ferrous sulfate - guideline recommends oral iron for Hb <105 in 3rd trimester ✓",
-    "FBC follow-up: Repeat Hb in 4/52 planned - guideline says recheck in 2-4 weeks ✓"
+    "Brief note of what the plan already does correctly"
   ],
   "relevantPracticePoints": [
     {
       "index": 1,
       "name": "Practice point name",
-      "discrepancyType": "missing|discrepancy",
-      "currentPlanSays": "Exactly what the plan says, or 'Not mentioned in plan'",
-      "guidelineRecommends": "The specific guideline recommendation with values",
-      "actionNeeded": "Specific, actionable adjustment with doses/timings",
+      "currentPlanSays": "What the plan currently says about this (or 'Not mentioned')",
+      "guidelineRecommends": "What the guideline says",
+      "actionNeeded": "Specific action with values/timings - not vague advice",
       "priority": "high|medium|low",
-      "verbatimQuote": "The exact quote from the guideline"
+      "verbatimQuote": "Exact quote from guideline for highlighting"
     }
   ],
   "notApplicableReasons": {
-    "2": "Patient does not have haemoglobinopathy",
-    "5": "Applies to postnatal period only"
+    "2": "Why this practice point doesn't apply to this patient"
   }
-}
-
-CRITICAL:
-- Focus on DISCREPANCIES between plan and guideline, not just what's missing
-- If the plan already correctly addresses a practice point, list it in "alignedWithGuideline"
-- Be SPECIFIC with doses, timings, and thresholds - vague suggestions are unhelpful
-- Do NOT suggest practice points for conditions the patient does not have`;
+}`;
 }
 
 // Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
