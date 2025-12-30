@@ -5861,18 +5861,15 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         
         timer.step('Check vector DB');
         
-        // Build metadata filter based on scope
-        let filter = null;
-        if (scope === 'local' && hospitalTrust) {
-            filter = { organisation: { $eq: hospitalTrust } };
-        }
-        // For national/both scopes, we don't filter (get all and let reranking handle relevance)
+        // No server-side scope filtering - return all relevant guidelines
+        // Client will filter based on user's scope preferences
+        // This ensures RAG search finds the best semantic matches regardless of scope
         
         // Query vector database
         // Increased default topK to 50 for better coverage of diverse guidelines
         const queryResult = await vectorDB.queryDocuments(transcript, {
-            topK: ragPrefs.ragTopK || 50,
-            filter
+            topK: ragPrefs.ragTopK || 50
+            // No filter - client handles scope filtering
         });
         
         timer.step('Vector search');
