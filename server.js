@@ -19576,7 +19576,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         console.log(`[PRACTICE-POINTS] Returning ${suggestions.length} relevant suggestions out of ${auditableElements.length} total`);
         
         timer.step('Format response');
-        timer.logSummary();
+        console.log('[PRACTICE-POINTS] Timing:', JSON.stringify(timer.getSummary()));
         
         res.json({
             success: true,
