@@ -5629,16 +5629,28 @@ async function displayPracticePointSuggestions(result) {
     console.log('[PRACTICE-POINTS] Displaying suggestions:', result.suggestions?.length);
     
     if (!result.suggestions || result.suggestions.length === 0) {
-        const message = result.message || 'No relevant practice points found for this clinical note.';
+        const message = result.message || 'Plan aligns with guideline recommendations.';
         updateUser(message, false);
+        
+        // Build aligned items list if available
+        let alignedHtml = '';
+        if (result.alignedWithGuideline && result.alignedWithGuideline.length > 0) {
+            alignedHtml = `
+                <p><strong>Correctly addressed:</strong></p>
+                <ul style="margin: 5px 0 15px 20px; color: #16a34a;">
+                    ${result.alignedWithGuideline.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            `;
+        }
         
         const noSuggestionsHtml = `
             <div class="dynamic-advice-container">
                 <h3>✅ Guideline Review Complete</h3>
                 <p><strong>Guideline:</strong> ${result.guidelineTitle}</p>
                 <p><strong>Practice points analysed:</strong> ${result.totalPracticePoints}</p>
-                <p><strong>Relevant to this patient:</strong> 0</p>
-                <p style="color: #16a34a;">No additional recommendations needed based on this guideline.</p>
+                <p><strong>Discrepancies found:</strong> 0</p>
+                ${alignedHtml}
+                <p style="color: #16a34a; font-weight: bold;">Plan aligns with guideline recommendations.</p>
             </div>
         `;
         appendToOutputField(noSuggestionsHtml, true);
@@ -5646,20 +5658,52 @@ async function displayPracticePointSuggestions(result) {
     }
     
     // Convert practice points to suggestion format for existing UI
-    const suggestions = result.suggestions.map((point, index) => ({
-        id: `pp-${result.guidelineId}-${point.id || index + 1}`,
-        originalId: point.id || index + 1,
-        originalText: null, // Practice points are additions, not modifications
-        suggestedText: point.actionNeeded || point.name,
-        context: `**${point.name}**\n\n${point.description}\n\n**Why relevant:** ${point.relevanceReason}`,
-        category: 'addition',
-        priority: point.priority || point.significance || 'medium',
-        guidelineReference: point.name,
-        hasVerbatimQuote: !!(point.verbatimQuote && point.verbatimQuote.length > 10),
-        verbatimQuote: point.verbatimQuote,
-        guidelineId: result.guidelineId,
-        guidelineTitle: result.guidelineTitle
-    }));
+    const suggestions = result.suggestions.map((point, index) => {
+        // Build context based on new discrepancy-focused format
+        let contextParts = [];
+        contextParts.push(`**${point.name}**`);
+        
+        if (point.discrepancyType) {
+            const typeLabel = point.discrepancyType === 'missing' ? '🔴 Missing' : 
+                              point.discrepancyType === 'incorrect' ? '⚠️ Incorrect' : 
+                              '🟡 Suboptimal';
+            contextParts.push(`\n\n**Issue:** ${typeLabel}`);
+        }
+        
+        if (point.currentPlanSays && point.currentPlanSays !== 'Not addressed') {
+            contextParts.push(`\n\n**Current plan:** ${point.currentPlanSays}`);
+        }
+        
+        if (point.guidelineRecommends) {
+            contextParts.push(`\n\n**Guideline recommends:** ${point.guidelineRecommends}`);
+        }
+        
+        // Fallback to old format if new fields not present
+        if (point.relevanceReason && !point.guidelineRecommends) {
+            contextParts.push(`\n\n**Why relevant:** ${point.relevanceReason}`);
+        }
+        if (point.description && !point.guidelineRecommends) {
+            contextParts.push(`\n\n${point.description}`);
+        }
+        
+        // Determine category based on discrepancy type
+        const category = point.discrepancyType === 'missing' ? 'addition' : 'modification';
+        
+        return {
+            id: `pp-${result.guidelineId}-${point.id || index + 1}`,
+            originalId: point.id || index + 1,
+            originalText: point.currentPlanSays && point.currentPlanSays !== 'Not addressed' ? point.currentPlanSays : null,
+            suggestedText: point.actionNeeded || point.name,
+            context: contextParts.join(''),
+            category: category,
+            priority: point.priority || point.significance || 'medium',
+            guidelineReference: point.name,
+            hasVerbatimQuote: !!(point.verbatimQuote && point.verbatimQuote.length > 10),
+            verbatimQuote: point.verbatimQuote,
+            guidelineId: result.guidelineId,
+            guidelineTitle: result.guidelineTitle
+        };
+    });
     
     // Store session data
     currentAdviceSession = `pp-${result.guidelineId}-${Date.now()}`;

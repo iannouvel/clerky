@@ -19384,7 +19384,7 @@ function buildPracticePointPrompt(clinicalNote, auditableElements) {
    Quote: "${elem.verbatimQuote}"`;
     }).join('\n\n');
 
-    return `You are a clinical guideline advisor. Analyse the clinical note and identify which practice points are relevant to this specific patient case.
+    return `You are a clinical guideline auditor. Your task is to VALIDATE the clinical note's management plan against guideline practice points.
 
 CLINICAL NOTE:
 ${clinicalNote}
@@ -19392,56 +19392,72 @@ ${clinicalNote}
 PRACTICE POINTS FROM GUIDELINE:
 ${practicePointsList}
 
-CRITICAL EXCLUSION RULES - A practice point is NOT applicable if:
-1. It requires a CONDITION the patient does NOT have (e.g., haemoglobinopathy, diabetes, multiple pregnancy)
+YOUR TASK:
+Compare the EXISTING management plan in the clinical note against each relevant practice point. For each applicable practice point, determine:
+1. Is the current plan ALIGNED with the guideline? If yes, no suggestion needed.
+2. Is there a DISCREPANCY between what the plan says and what the guideline recommends?
+3. Is something MISSING that the guideline says should be done?
+4. Is something INCORRECT (wrong dose, wrong timing, wrong threshold)?
+
+EXCLUSION RULES - Do NOT include a practice point if:
+1. It requires a CONDITION the patient does NOT have (e.g., haemoglobinopathy, diabetes)
 2. It applies to a GESTATIONAL AGE different from the patient's current gestation
-3. It applies to a POPULATION the patient is NOT part of (e.g., postnatal when patient is antenatal)
-4. The action has ALREADY BEEN COMPLETED as documented in the note
+3. It applies to a POPULATION the patient is NOT part of (e.g., postnatal when antenatal)
+4. The current plan ALREADY CORRECTLY addresses this practice point
 5. The patient has CONTRAINDICATIONS mentioned in the note
 6. It requires a SYMPTOM or TEST RESULT the patient does NOT have
 
-INCLUSION RULES - A practice point IS applicable if:
-1. The patient HAS the condition, symptom, or test result the practice point addresses
-2. The gestational age matches the practice point's timing criteria
-3. The action would ADD VALUE to the patient's current care plan
-4. The practice point addresses something MISSING from the current management
+WHAT TO SUGGEST:
+- Only suggest practice points where the current plan DIFFERS from guideline recommendations
+- Be SPECIFIC about the discrepancy: "Plan says X, but guideline recommends Y"
+- Include specific values: doses, timings, thresholds from the guideline
+- Explain WHY the adjustment matters clinically
 
-INSTRUCTIONS:
-1. First, identify what conditions, symptoms, and test results THIS patient actually has
-2. For EACH practice point, check: does this patient meet the criteria for this recommendation?
-3. EXCLUDE any practice point where the patient lacks a required condition or characteristic
-4. Only INCLUDE practice points that genuinely apply to THIS patient's documented situation
-5. Rank included points by clinical priority
+EXAMPLES OF GOOD actionNeeded:
+- "Plan proposes repeat Hb in 4 weeks - guideline suggests 2-4 weeks. Consider earlier recheck given Hb of 98 g/L."
+- "Current dose is Ferrous sulfate 200mg TDS (195mg elemental iron). Guideline recommends 40-80mg elemental iron/day. Higher doses may increase side effects without improving absorption."
+- "Plan does not mention delivery location. With Hb <100g/L, guideline recommends delivery on Consultant Unit with active 3rd stage."
+
+EXAMPLES OF BAD actionNeeded (too vague - DO NOT USE):
+- "Monitor anaemia according to guideline"
+- "Follow guideline recommendations"
+- "Consider iron therapy"
+- "Manage as per protocol"
 
 Return a JSON object with this structure:
 {
   "patientProfile": {
     "conditions": ["iron deficiency anaemia"],
     "gestationalAge": "32+4 weeks",
-    "currentTreatments": ["Ferrous sulfate 200mg BD"],
+    "currentPlan": ["Increase Ferrous sulfate to 200mg TDS", "repeat Hb in 4/52"],
     "relevantTestResults": ["Hb 98 g/L", "Ferritin 15 μg/L"]
   },
   "relevantPracticePoints": [
     {
       "index": 1,
       "name": "Practice point name",
-      "relevanceReason": "Specific reason why this applies - patient has X condition/symptom",
+      "discrepancyType": "missing|incorrect|suboptimal",
+      "currentPlanSays": "What the note's plan currently states (or 'Not addressed')",
+      "guidelineRecommends": "What the guideline specifically recommends",
+      "actionNeeded": "Specific adjustment needed with values/timings from guideline",
       "priority": "high|medium|low",
-      "actionNeeded": "What specific action should be taken for this patient",
       "verbatimQuote": "The exact quote from the guideline"
     }
   ],
+  "alignedWithGuideline": [
+    "Practice point X is correctly addressed in the plan"
+  ],
   "notApplicableReasons": {
-    "2": "Patient does not have haemoglobinopathy - this practice point is only for patients with known haemoglobinopathies",
-    "5": "Already on oral iron as mentioned in note"
+    "2": "Patient does not have haemoglobinopathy",
+    "5": "Applies to postnatal period only"
   }
 }
 
 CRITICAL:
-- Do NOT suggest practice points for conditions the patient does not have
-- A practice point that says "for patients with X" should ONLY be included if the patient HAS X
-- When in doubt about whether a condition applies, EXCLUDE the practice point
-- Be STRICT about relevance - irrelevant suggestions undermine clinical trust`;
+- Focus on DISCREPANCIES between plan and guideline, not just what's missing
+- If the plan already correctly addresses a practice point, list it in "alignedWithGuideline"
+- Be SPECIFIC with doses, timings, and thresholds - vague suggestions are unhelpful
+- Do NOT suggest practice points for conditions the patient does not have`;
 }
 
 // Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
