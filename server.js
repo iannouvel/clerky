@@ -11930,7 +11930,7 @@ And the full guideline content below, create a structured JSON object for this p
 Return a JSON object with these fields:
 {
   "name": "Brief descriptive title (5-10 words)",
-  "description": "Detailed context covering who this applies to, what the recommendation is, when/where it applies, why it matters clinically, and how to implement it. Write 2-4 sentences.",
+  "description": "Explain this practice point as if to a curious patient. What does this mean? What is the test/treatment/action? Why is it done? What happens if this threshold is met or not met? What is the actual treatment (e.g., if ferritin is low, the treatment is iron therapy - oral or IV). Be specific and educational. Write 3-5 sentences.",
   "verbatimQuote": "The SPECIFIC sentence or phrase from the guideline that DIRECTLY states this practice point",
   "significance": "high or medium or low"
 }
@@ -11950,7 +11950,7 @@ ${guidelineContent}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance fields. Start with { and end with }. For verbatimQuote, find the SPECIFIC short quote (ideally 1 sentence) that DIRECTLY states this exact practice point - this quote will be used to highlight the correct part of the document.' 
+          content: 'You are a clinical educator explaining guidelines to healthcare professionals. Return ONLY a valid JSON object. For description, explain the practice point as if to a curious patient - what it means, what the actual treatment/action is, and why it matters. For verbatimQuote, find the SPECIFIC short quote that DIRECTLY states this exact practice point.' 
         },
         { 
           role: 'user', 
@@ -12025,18 +12025,18 @@ YOUR TASK:
 1. Check if the verbatimQuote is CORRECT and SPECIFIC to this practice point
 2. The verbatimQuote should be SHORT (ideally 1 sentence) and DIRECTLY match text in the guideline
 3. If the verbatimQuote is wrong, too broad, or doesn't exist in the guideline, find the correct quote
-4. Check the name and description are accurate and clear
+4. Check the description explains this as if to a curious patient - including what the actual treatment/action is (e.g., if about a threshold, what happens when it's met? what is the treatment?)
 5. Verify the significance rating is appropriate
 
 Return a refined JSON object with the same fields: name, description, verbatimQuote, significance.
-If everything is correct, return the element unchanged.`;
+If everything is correct, return the element unchanged. If the description doesn't explain the actual treatment/action, improve it.`;
 
   try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor reviewing an extracted element. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance fields. Start with { and end with }. Ensure verbatimQuote is a SPECIFIC short quote that exists verbatim in the guideline.' 
+          content: 'You are a clinical educator reviewing an extracted element. Return ONLY a valid JSON object. Ensure verbatimQuote is a SPECIFIC short quote from the guideline. Ensure description explains what the treatment/action is - not just when it applies, but what you actually DO about it.' 
         },
         { 
           role: 'user', 
