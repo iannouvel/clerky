@@ -19392,37 +19392,41 @@ ${clinicalNote}
 PRACTICE POINTS FROM GUIDELINE:
 ${practicePointsList}
 
-YOUR TASK:
-Compare the EXISTING management plan in the clinical note against each relevant practice point. For each applicable practice point, determine:
-1. Is the current plan ALIGNED with the guideline? If yes, no suggestion needed.
-2. Is there a DISCREPANCY between what the plan says and what the guideline recommends?
-3. Is something MISSING that the guideline says should be done?
-4. Is something INCORRECT (wrong dose, wrong timing, wrong threshold)?
+STEP 1 - FIRST, carefully read the clinical note and extract:
+- What TREATMENTS are already in place or planned? (e.g., "Ferrous sulfate 200mg BD" means patient is ON iron therapy)
+- What INVESTIGATIONS are already planned? (e.g., "repeat Hb in 4/52" means FBC follow-up is planned)
+- What REFERRALS or follow-ups are arranged?
+
+STEP 2 - For each practice point, ask:
+1. Is this treatment/investigation ALREADY BEING DONE? If yes → add to "alignedWithGuideline"
+2. Is the DOSE/TIMING/FREQUENCY different from guideline? If yes → suggest specific adjustment
+3. Is something genuinely MISSING from the plan? If yes → suggest it
+4. Does the patient meet the CRITERIA for this practice point? If no → exclude it
+
+CRITICAL - DO NOT SUGGEST:
+- Starting a treatment the patient is ALREADY ON (e.g., don't say "consider iron therapy" if patient is on Ferrous sulfate)
+- Doing an investigation that is ALREADY PLANNED (e.g., don't say "check Hb" if "repeat Hb in 4/52" is in plan)
+- Practice points for conditions the patient DOES NOT HAVE (e.g., haemoglobinopathy advice for patient without haemoglobinopathy)
+- Vague actions like "consider treatment" when you should specify WHAT to consider
 
 EXCLUSION RULES - Do NOT include a practice point if:
-1. It requires a CONDITION the patient does NOT have (e.g., haemoglobinopathy, diabetes)
-2. It applies to a GESTATIONAL AGE different from the patient's current gestation
-3. It applies to a POPULATION the patient is NOT part of (e.g., postnatal when antenatal)
-4. The current plan ALREADY CORRECTLY addresses this practice point
-5. The patient has CONTRAINDICATIONS mentioned in the note
-6. It requires a SYMPTOM or TEST RESULT the patient does NOT have
+1. The patient does NOT have the required condition (e.g., haemoglobinopathy, diabetes)
+2. The gestational age doesn't match the practice point's criteria
+3. It applies to a different population (e.g., postnatal when patient is antenatal)
+4. The plan ALREADY addresses this practice point (even if slightly differently)
+5. The patient has contraindications mentioned in the note
 
-WHAT TO SUGGEST:
-- Only suggest practice points where the current plan DIFFERS from guideline recommendations
-- Be SPECIFIC about the discrepancy: "Plan says X, but guideline recommends Y"
-- Include specific values: doses, timings, thresholds from the guideline
-- Explain WHY the adjustment matters clinically
+WHAT TO SUGGEST (only genuine discrepancies):
+- DOSE ADJUSTMENTS: "Plan says Ferrous sulfate 200mg TDS (195mg elemental iron) but guideline recommends 40-80mg/day. Consider reducing dose."
+- TIMING ISSUES: "Plan says repeat Hb in 4/52 but guideline suggests 2-4 weeks for response assessment."
+- MISSING ELEMENTS: "Plan does not mention delivery location. With Hb <100g/L, guideline recommends Consultant Unit delivery."
+- THRESHOLD CHECKS: "Current Hb is 98 g/L. Guideline threshold for 3rd trimester is <105g/L - patient meets criteria."
 
-EXAMPLES OF GOOD actionNeeded:
-- "Plan proposes repeat Hb in 4 weeks - guideline suggests 2-4 weeks. Consider earlier recheck given Hb of 98 g/L."
-- "Current dose is Ferrous sulfate 200mg TDS (195mg elemental iron). Guideline recommends 40-80mg elemental iron/day. Higher doses may increase side effects without improving absorption."
-- "Plan does not mention delivery location. With Hb <100g/L, guideline recommends delivery on Consultant Unit with active 3rd stage."
-
-EXAMPLES OF BAD actionNeeded (too vague - DO NOT USE):
-- "Monitor anaemia according to guideline"
-- "Follow guideline recommendations"
-- "Consider iron therapy"
-- "Manage as per protocol"
+EXAMPLES OF BAD actionNeeded (DO NOT USE):
+- "Consider iron therapy" ← Patient is ALREADY on iron, so this is wrong
+- "Monitor anaemia" ← Too vague, specify what to monitor and when
+- "Follow guideline" ← Useless, specify what the guideline says
+- "Treat iron deficiency" ← Patient is already being treated
 
 Return a JSON object with this structure:
 {
