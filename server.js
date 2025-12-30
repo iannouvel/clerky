@@ -11807,7 +11807,7 @@ ${content}`;
 
 // Step 2b: Expand a single practice point into structured JSON
 async function expandSinglePracticePoint(practicePoint, guidelineContent, index, total, userId = null) {
-  const prompt = `Given this practice point from a clinical guideline:
+  const prompt = `Given this SPECIFIC practice point from a clinical guideline:
 
 "${practicePoint}"
 
@@ -11817,11 +11817,19 @@ Return a JSON object with these fields:
 {
   "name": "Brief descriptive title (5-10 words)",
   "description": "Detailed context covering who this applies to, what the recommendation is, when/where it applies, why it matters clinically, and how to implement it. Write 2-4 sentences.",
-  "verbatimQuote": "The EXACT text copied word-for-word from the guideline that supports this practice point. This will be used for PDF highlighting so it must match exactly.",
+  "verbatimQuote": "The SPECIFIC sentence or phrase from the guideline that DIRECTLY states this practice point",
   "significance": "high or medium or low"
 }
 
-IMPORTANT: The verbatimQuote MUST be copied exactly from the guideline - do not paraphrase or modify it.
+CRITICAL INSTRUCTIONS FOR verbatimQuote:
+1. Find the SPECIFIC sentence or phrase that DIRECTLY corresponds to THIS practice point
+2. Do NOT use a general quote that covers multiple topics - find the PRECISE text for THIS specific point
+3. The quote should be SHORT and FOCUSED (ideally 1-2 sentences) - not a long paragraph
+4. Copy the text EXACTLY as written - character for character - this will be used for PDF text highlighting
+5. If the practice point mentions a specific threshold (e.g., "<100g/L"), the quote MUST contain that exact threshold
+6. If the practice point is about timing (e.g., "at booking"), the quote MUST mention that specific timing
+
+Example: If the practice point is "FBC at 28 weeks", find the quote that specifically mentions "28 weeks" - not a general FBC quote.
 
 Guideline content:
 ${guidelineContent}`;
@@ -11831,7 +11839,7 @@ ${guidelineContent}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance fields. Start with { and end with }.' 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON object with name, description, verbatimQuote, and significance fields. Start with { and end with }. For verbatimQuote, find the SPECIFIC short quote (1-2 sentences max) that DIRECTLY states this exact practice point - do not use broad quotes covering multiple topics.' 
         },
         { 
           role: 'user', 
