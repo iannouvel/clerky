@@ -5627,19 +5627,28 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
 // Display practice point suggestions using the existing one-at-a-time UI
 async function displayPracticePointSuggestions(result) {
     console.log('[PRACTICE-POINTS] Displaying suggestions:', result.suggestions?.length);
+    console.log('[PRACTICE-POINTS] 3-step summary:', {
+        total: result.totalPracticePoints,
+        relevant: result.relevantPracticePoints,
+        important: result.importantPracticePoints,
+        compliant: result.compliantCount,
+        nonCompliant: result.nonCompliantCount
+    });
     
     if (!result.suggestions || result.suggestions.length === 0) {
         const message = result.message || 'Plan aligns with guideline recommendations.';
         updateUser(message, false);
         
-        // Build aligned items list if available
-        let alignedHtml = '';
-        if (result.alignedWithGuideline && result.alignedWithGuideline.length > 0) {
-            alignedHtml = `
-                <p><strong>Correctly addressed:</strong></p>
-                <ul style="margin: 5px 0 15px 20px; color: #16a34a;">
-                    ${result.alignedWithGuideline.map(item => `<li>${item}</li>`).join('')}
-                </ul>
+        // Build summary of what was filtered
+        let filterSummary = '';
+        if (result.totalPracticePoints > 0) {
+            filterSummary = `
+                <p style="font-size: 0.9em; color: #666;">
+                    <strong>Analysis:</strong> ${result.totalPracticePoints} practice points 
+                    → ${result.relevantPracticePoints || 0} relevant 
+                    → ${result.importantPracticePoints || 0} important 
+                    → ${result.compliantCount || 0} compliant
+                </p>
             `;
         }
         
@@ -5647,9 +5656,7 @@ async function displayPracticePointSuggestions(result) {
             <div class="dynamic-advice-container">
                 <h3>✅ Guideline Review Complete</h3>
                 <p><strong>Guideline:</strong> ${result.guidelineTitle}</p>
-                <p><strong>Practice points analysed:</strong> ${result.totalPracticePoints}</p>
-                <p><strong>Discrepancies found:</strong> 0</p>
-                ${alignedHtml}
+                ${filterSummary}
                 <p style="color: #16a34a; font-weight: bold;">Plan aligns with guideline recommendations.</p>
             </div>
         `;
@@ -5657,46 +5664,28 @@ async function displayPracticePointSuggestions(result) {
         return;
     }
     
-    // Convert practice points to suggestion format for existing UI
+    // Convert 3-step results to suggestion format for existing UI
     const suggestions = result.suggestions.map((point, index) => {
-        // Build context based on new discrepancy-focused format
+        // Build context based on new 3-step format
         let contextParts = [];
         contextParts.push(`**${point.name}**`);
         
-        if (point.discrepancyType) {
-            const typeLabel = point.discrepancyType === 'missing' ? '🔴 Missing' : 
-                              point.discrepancyType === 'incorrect' ? '⚠️ Incorrect' : 
-                              '🟡 Suboptimal';
-            contextParts.push(`\n\n**Issue:** ${typeLabel}`);
+        if (point.issue) {
+            contextParts.push(`\n\n**Issue:** ${point.issue}`);
         }
         
-        if (point.currentPlanSays && point.currentPlanSays !== 'Not addressed') {
-            contextParts.push(`\n\n**Current plan:** ${point.currentPlanSays}`);
-        }
-        
-        if (point.guidelineRecommends) {
-            contextParts.push(`\n\n**Guideline recommends:** ${point.guidelineRecommends}`);
-        }
-        
-        // Fallback to old format if new fields not present
-        if (point.relevanceReason && !point.guidelineRecommends) {
-            contextParts.push(`\n\n**Why relevant:** ${point.relevanceReason}`);
-        }
-        if (point.description && !point.guidelineRecommends) {
+        if (point.description) {
             contextParts.push(`\n\n${point.description}`);
         }
-        
-        // Determine category based on discrepancy type
-        const category = point.discrepancyType === 'missing' ? 'addition' : 'modification';
         
         return {
             id: `pp-${result.guidelineId}-${point.id || index + 1}`,
             originalId: point.id || index + 1,
-            originalText: point.currentPlanSays && point.currentPlanSays !== 'Not addressed' ? point.currentPlanSays : null,
-            suggestedText: point.actionNeeded || point.name,
+            originalText: null,
+            suggestedText: point.suggestion || point.name,
             context: contextParts.join(''),
-            category: category,
-            priority: point.priority || point.significance || 'medium',
+            category: 'addition',
+            priority: point.priority || point.significance || 'high',
             guidelineReference: point.name,
             hasVerbatimQuote: !!(point.verbatimQuote && point.verbatimQuote.length > 10),
             verbatimQuote: point.verbatimQuote,
