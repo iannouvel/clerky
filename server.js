@@ -11710,80 +11710,33 @@ function extractKeywords(text) {
     .map(([word]) => word);
 }
 
-// Step 1: Identify all practice points from guideline (simple list)
+// Step 1: Identify all practice points from guideline (returns JSON array)
 async function identifyPracticePoints(content, userId = null) {
   console.log('[AUDITABLE] Step 1: Identifying practice points...');
   
-  const prompt = `Read this clinical guideline completely and list EVERY distinct practice point.
+  const prompt = `Read this clinical guideline completely and extract EVERY distinct practice point.
 
-GO THROUGH EACH SECTION and extract:
+GO THROUGH EACH SECTION and extract practice points covering:
 
-SCREENING:
-- When to do FBC (booking, 28 weeks, 36-37 weeks for MLU, after symptoms)
-- When to check ferritin
-- When to recheck bloods after treatment
+SCREENING: When to do FBC (booking, 28 weeks, 36-37 weeks for MLU, after symptoms), when to check ferritin, when to recheck bloods after treatment
 
-THRESHOLDS (list each one separately):
-- Hb threshold for 1st trimester
-- Hb threshold for 2nd/3rd trimester  
-- Hb threshold postnatal
-- Ferritin threshold for depletion (<15)
-- Ferritin threshold for treatment (<30)
-- MCV threshold
-- Hb threshold for consultant delivery (<100)
-- Hb threshold for transfusion consideration (<70)
-- Blood loss threshold for postpartum FBC (>500ml)
+THRESHOLDS (each one separately): Hb thresholds for each trimester and postnatal, ferritin thresholds for depletion and treatment, MCV threshold, Hb threshold for consultant delivery, Hb threshold for transfusion consideration, blood loss threshold for postpartum FBC
 
-DOSAGES:
-- Oral iron dose
-- IV iron max single dose
-- IV iron max per kg dose
-- IV iron cumulative dose by weight
-- Folic acid doses (standard and high-risk)
+DOSAGES: Oral iron dose, IV iron max single dose, IV iron max per kg dose, IV iron cumulative dose by weight, folic acid doses (standard and high-risk)
 
-TIMING:
-- When to repeat FBC after oral iron
-- When to investigate if no response
-- How long to continue iron postpartum
-- Interval between IV iron doses
-- Duration of IV infusion
-- Observation period after infusion
-- When to discharge after infusion
-- When to prescribe IV iron to pharmacy
-- When blood tests needed before IV iron
+TIMING: When to repeat FBC after oral iron, when to investigate if no response, how long to continue iron postpartum, interval between IV iron doses, duration of IV infusion, observation period after infusion, when to discharge after infusion, when to prescribe IV iron to pharmacy, when blood tests needed before IV iron
 
-SAFETY/RESTRICTIONS:
-- First trimester IV iron restriction
-- Allergy checks before IV iron
-- Conditions increasing reaction risk
-- What to do if reaction occurs
-- Phlebitis monitoring
-- Who should NOT have IV iron
+SAFETY/RESTRICTIONS: First trimester IV iron restriction, allergy checks before IV iron, conditions increasing reaction risk, what to do if reaction occurs, phlebitis monitoring, who should NOT have IV iron
 
-ESCALATION:
-- When to refer to consultant
-- When to refer to other specialties
-- Two-week-wait cancer pathway triggers
+ESCALATION: When to refer to consultant, when to refer to other specialties, two-week-wait cancer pathway triggers
 
-LOCATION:
-- Where to deliver if Hb <100
-- Where IV iron is administered
+LOCATION: Where to deliver if Hb <100, where IV iron is administered
 
-SPECIAL POPULATIONS:
-- Overweight patients - use ideal body weight
-- Haemoglobinopathy patients - check ferritin
-- Darker skin tones - pallor assessment
-- Patients <35kg - max cumulative dose
+SPECIAL POPULATIONS: Overweight patients - use ideal body weight, haemoglobinopathy patients - check ferritin, darker skin tones - pallor assessment, patients <35kg - max cumulative dose
 
-ADMINISTRATIVE:
-- Patient information requirements
-- Prescription form requirements
-- Pharmacy notification timing
-- Observations before/during/after infusion
-- Documentation requirements
-- Yellow card reporting
+ADMINISTRATIVE: Patient information requirements, prescription form requirements, pharmacy notification timing, observations before/during/after infusion, documentation requirements, yellow card reporting
 
-List each as a separate numbered item. Aim for 40-60 practice points minimum.
+Return a JSON array of strings. Each string should be a concise practice point (e.g., "FBC at booking for all pregnant women", "Hb threshold for 1st trimester is <100g/L"). Aim for 40-60 practice points.
 
 Guideline:
 ${content}`;
@@ -11793,7 +11746,7 @@ ${content}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor creating an exhaustive list of practice points. Return a numbered list with 40-60+ items. Each distinct threshold, timing, dose, or requirement should be its own item. Do not consolidate - if there are 3 different Hb thresholds, list all 3 separately.' 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of strings - no other text. Each string is a distinct practice point. Start with [ and end with ]. Aim for 40-60+ items. Do not consolidate - if there are 3 different Hb thresholds, include all 3 as separate strings.' 
         },
         { 
           role: 'user', 
@@ -11803,36 +11756,53 @@ ${content}`;
     }, userId);
 
     if (result && result.content) {
-      console.log(`[AUDITABLE] Step 1 complete: Got practice points list (${result.content.length} chars)`);
-      return result.content; // Return the raw list for Step 2 to process
+      console.log(`[AUDITABLE] Step 1: Got response (${result.content.length} chars)`);
+      
+      // Parse the JSON array
+      let cleanedContent = result.content.trim();
+      
+      // Remove markdown code blocks if present
+      if (cleanedContent.startsWith('```json')) {
+        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
+      }
+      if (cleanedContent.startsWith('```')) {
+        cleanedContent = cleanedContent.replace(/^```\s*/, '');
+      }
+      if (cleanedContent.endsWith('```')) {
+        cleanedContent = cleanedContent.replace(/\s*```$/, '');
+      }
+      
+      try {
+        const parsed = JSON.parse(cleanedContent);
+        if (Array.isArray(parsed)) {
+          console.log(`[AUDITABLE] Step 1 complete: Identified ${parsed.length} practice points`);
+          return parsed;
+        }
+      } catch (parseError) {
+        // Try to extract JSON array from response
+        const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
+        if (jsonMatch) {
+          try {
+            const extracted = JSON.parse(jsonMatch[0]);
+            if (Array.isArray(extracted)) {
+              console.log(`[AUDITABLE] Step 1 complete: Identified ${extracted.length} practice points (extracted)`);
+              return extracted;
+            }
+          } catch (e) {
+            console.error('[AUDITABLE] Step 1: Failed to parse extracted JSON array');
+          }
+        }
+        console.error('[AUDITABLE] Step 1: Could not parse AI response as JSON array');
+        console.error('[AUDITABLE] Step 1 response preview:', cleanedContent.substring(0, 500));
+      }
     }
     
-    console.error('[AUDITABLE] Step 1 failed: No content in AI response');
+    console.error('[AUDITABLE] Step 1 failed: No valid content in AI response');
     return null;
   } catch (error) {
     console.error('[AUDITABLE] Step 1 error:', error.message);
     return null;
   }
-}
-
-// Step 2a: Parse the numbered list from Step 1 into individual practice points
-function parsePracticePointsList(listText) {
-  const practicePoints = [];
-  
-  // Split by lines and look for numbered items
-  const lines = listText.split('\n');
-  
-  for (const line of lines) {
-    const trimmed = line.trim();
-    // Match numbered items like "1. FBC at booking" or "42. Yellow card reporting"
-    const match = trimmed.match(/^\d+\.\s+(.+)$/);
-    if (match) {
-      practicePoints.push(match[1].trim());
-    }
-  }
-  
-  console.log(`[AUDITABLE] Parsed ${practicePoints.length} practice points from list`);
-  return practicePoints;
 }
 
 // Step 2b: Expand a single practice point into structured JSON
@@ -11917,16 +11887,16 @@ ${guidelineContent}`;
 }
 
 // Step 2: Process each practice point individually (sequential to avoid rate limits)
-async function structurePracticePoints(practicePointsList, guidelineContent, userId = null) {
+async function structurePracticePoints(practicePointsArray, guidelineContent, userId = null) {
   console.log('[AUDITABLE] Step 2: Structuring practice points into JSON (individual calls)...');
   
-  // Parse the numbered list into individual practice points
-  const practicePoints = parsePracticePointsList(practicePointsList);
-  
-  if (practicePoints.length === 0) {
-    console.error('[AUDITABLE] Step 2: No practice points parsed from list');
+  // practicePointsArray is already a JSON array from Step 1
+  if (!Array.isArray(practicePointsArray) || practicePointsArray.length === 0) {
+    console.error('[AUDITABLE] Step 2: No practice points to process');
     return [];
   }
+  
+  const practicePoints = practicePointsArray;
   
   const auditableElements = [];
   
