@@ -19378,6 +19378,208 @@ IMPORTANT:
     }
 });
 
+// Helper function to build the practice point suggestion prompt
+function buildPracticePointPrompt(clinicalNote, auditableElements) {
+    // Format practice points for the prompt (compact format to save tokens)
+    const practicePointsList = auditableElements.map((elem, index) => {
+        return `${index + 1}. [${elem.significance?.toUpperCase() || 'MEDIUM'}] ${elem.name}
+   Description: ${elem.description}
+   Quote: "${elem.verbatimQuote}"`;
+    }).join('\n\n');
+
+    return `You are a clinical guideline advisor. Analyse the clinical note and identify which practice points are relevant to this specific patient case.
+
+CLINICAL NOTE:
+${clinicalNote}
+
+PRACTICE POINTS FROM GUIDELINE:
+${practicePointsList}
+
+INSTRUCTIONS:
+1. Read the clinical note carefully to understand the patient's situation, symptoms, and current management
+2. For each practice point, assess if it is APPLICABLE to this specific patient
+3. Consider: gestational age, symptoms, test results, current treatments mentioned
+4. Only include practice points that are clinically relevant to THIS patient
+5. Rank by clinical importance: what actions would most improve patient care?
+
+Return a JSON object with this structure:
+{
+  "relevantPracticePoints": [
+    {
+      "index": 1,
+      "name": "Practice point name",
+      "relevanceReason": "Why this applies to this specific patient",
+      "priority": "high|medium|low",
+      "actionNeeded": "What specific action should be taken for this patient",
+      "verbatimQuote": "The exact quote from the guideline"
+    }
+  ],
+  "notApplicableReasons": {
+    "2": "Patient is not in first trimester",
+    "5": "Already on oral iron as mentioned in note"
+  }
+}
+
+CRITICAL:
+- Only include practice points that are genuinely applicable to this patient
+- Order by clinical priority (most important first)
+- Be specific about WHY each point applies to THIS patient
+- Include the verbatimQuote exactly as provided for PDF highlighting`;
+}
+
+// Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
+app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
+    const timer = new StepTimer('/getPracticePointSuggestions');
+    req.stepTimer = timer;
+    
+    try {
+        console.log('[PRACTICE-POINTS] Endpoint called');
+        const { transcript, guidelineId } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate required fields
+        if (!transcript) {
+            return res.status(400).json({ success: false, error: 'Clinical note (transcript) is required' });
+        }
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+        timer.step('Validation');
+        
+        console.log(`[PRACTICE-POINTS] Processing for guideline: ${guidelineId}, note length: ${transcript.length}`);
+        
+        // Fetch guideline with auditable elements from Firestore
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({ success: false, error: `Guideline not found: ${guidelineId}` });
+        }
+        
+        const guidelineData = guidelineDoc.data();
+        const auditableElements = guidelineData.auditableElements || [];
+        const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.displayName || guidelineId;
+        
+        timer.step('Fetch guideline');
+        
+        if (auditableElements.length === 0) {
+            console.warn(`[PRACTICE-POINTS] No auditable elements found for guideline: ${guidelineId}`);
+            return res.json({
+                success: true,
+                suggestions: [],
+                guidelineTitle,
+                guidelineId,
+                totalPracticePoints: 0,
+                relevantPracticePoints: 0,
+                message: 'No practice points available for this guideline. Consider regenerating auditable elements.'
+            });
+        }
+        
+        console.log(`[PRACTICE-POINTS] Found ${auditableElements.length} auditable elements`);
+        
+        // Build prompt and send to AI
+        const prompt = buildPracticePointPrompt(transcript, auditableElements);
+        
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a clinical guideline advisor. Return ONLY valid JSON - no markdown, no explanations. Start with { and end with }. Identify which practice points from the guideline are relevant to the specific patient case.'
+            },
+            {
+                role: 'user',
+                content: prompt
+            }
+        ];
+        
+        timer.step('Build prompt');
+        
+        const aiResult = await routeToAI({ messages }, userId);
+        
+        timer.step('AI processing');
+        
+        if (!aiResult || !aiResult.content) {
+            console.error('[PRACTICE-POINTS] No AI response received');
+            return res.status(500).json({ success: false, error: 'No response from AI' });
+        }
+        
+        // Parse AI response
+        let parsedResult;
+        let cleanedContent = aiResult.content.trim();
+        
+        // Remove markdown code blocks if present
+        if (cleanedContent.startsWith('```json')) {
+            cleanedContent = cleanedContent.replace(/^```json\s*/, '');
+        }
+        if (cleanedContent.startsWith('```')) {
+            cleanedContent = cleanedContent.replace(/^```\s*/, '');
+        }
+        if (cleanedContent.endsWith('```')) {
+            cleanedContent = cleanedContent.replace(/\s*```$/, '');
+        }
+        
+        try {
+            parsedResult = JSON.parse(cleanedContent);
+        } catch (parseError) {
+            // Try to extract JSON object from response
+            const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+                try {
+                    parsedResult = JSON.parse(jsonMatch[0]);
+                } catch (e) {
+                    console.error('[PRACTICE-POINTS] Failed to parse extracted JSON:', e.message);
+                    return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
+                }
+            } else {
+                console.error('[PRACTICE-POINTS] Could not extract JSON from response');
+                return res.status(500).json({ success: false, error: 'Invalid AI response format' });
+            }
+        }
+        
+        timer.step('Parse response');
+        
+        // Format the suggestions with full practice point data
+        const suggestions = (parsedResult.relevantPracticePoints || []).map(point => {
+            // Find the original practice point to get full data
+            const originalIndex = point.index - 1;
+            const originalElement = auditableElements[originalIndex] || {};
+            
+            return {
+                id: point.index,
+                name: point.name || originalElement.name,
+                description: originalElement.description || '',
+                verbatimQuote: point.verbatimQuote || originalElement.verbatimQuote || '',
+                significance: originalElement.significance || 'medium',
+                relevanceReason: point.relevanceReason || '',
+                priority: point.priority || 'medium',
+                actionNeeded: point.actionNeeded || '',
+                applicable: true
+            };
+        });
+        
+        console.log(`[PRACTICE-POINTS] Returning ${suggestions.length} relevant suggestions out of ${auditableElements.length} total`);
+        
+        timer.step('Format response');
+        timer.logSummary();
+        
+        res.json({
+            success: true,
+            suggestions,
+            guidelineTitle,
+            guidelineId,
+            guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
+            totalPracticePoints: auditableElements.length,
+            relevantPracticePoints: suggestions.length,
+            notApplicableReasons: parsedResult.notApplicableReasons || {},
+            aiProvider: aiResult.ai_provider,
+            aiModel: aiResult.ai_model
+        });
+        
+    } catch (error) {
+        console.error('[PRACTICE-POINTS] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Determine Insertion Point API endpoint - finds optimal location in clinical note for new text
 app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
     // Initialize step timer for profiling
