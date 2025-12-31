@@ -1714,6 +1714,16 @@ const jobQueue = [];
 const processingJobs = new Set();
 const MAX_CONCURRENT_JOBS = 3;
 let isProcessingQueue = false;
+let cancelJobQueue = false; // Flag to stop processing
+
+// Cancel all pending jobs in the queue
+function clearJobQueue() {
+    const count = jobQueue.length;
+    jobQueue.length = 0; // Clear the array
+    cancelJobQueue = true;
+    console.log(`[JOB_QUEUE] Cleared ${count} pending jobs`);
+    return count;
+}
 
 // Add job to queue
 function queueJob(jobType, guidelineId, data = {}) {
@@ -14822,6 +14832,23 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       success: false, 
       error: error.message 
     });
+  }
+});
+
+// Cancel pending background jobs
+app.post('/cancelBackgroundJobs', authenticateUser, async (req, res) => {
+  try {
+    console.log('[CANCEL-JOBS] Cancel request received');
+    const cleared = clearJobQueue();
+    res.json({
+      success: true,
+      message: `Cancelled ${cleared} pending jobs`,
+      clearedCount: cleared,
+      note: 'Jobs currently processing will complete, but no new jobs will start.'
+    });
+  } catch (error) {
+    console.error('[CANCEL-JOBS] Error:', error);
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
