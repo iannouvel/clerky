@@ -12173,9 +12173,7 @@ async function extractAuditableElements(content, userId = null) {
   }
   
   try {
-    // COST-SAVING MODE: Using 2-step extraction (Steps 2 & 4 commented out to reduce cost by ~50%)
-    // To re-enable 4-step extraction, uncomment the Step 2 and Step 4 sections below
-    console.log('[AUDITABLE] Starting 2-step extraction process (cost-saving mode)...');
+    console.log('[AUDITABLE] Starting 4-step extraction process...');
     
     // Step 1: Identify all practice points (1st preference LLM)
     const rawPracticePoints = await identifyPracticePoints(content, userId);
@@ -12185,9 +12183,6 @@ async function extractAuditableElements(content, userId = null) {
       return [];
     }
     
-    // STEP 2 COMMENTED OUT FOR COST SAVINGS
-    // Uncomment this section to enable double-checking of practice points
-    /*
     // Step 2: Review practice points (2nd preference LLM)
     const refinedPracticePoints = await reviewPracticePoints(rawPracticePoints, content, userId);
     
@@ -12195,13 +12190,8 @@ async function extractAuditableElements(content, userId = null) {
       console.error('[AUDITABLE] Step 2 failed to refine practice points');
       return [];
     }
-    */
     
-    // Use raw practice points directly (skipping Step 2 refinement)
-    const refinedPracticePoints = rawPracticePoints;
-    console.log(`[AUDITABLE] Skipping Step 2 (cost-saving mode), using ${refinedPracticePoints.length} raw practice points`);
-    
-    // Step 3: For each practice point, expand to structured format
+    // Step 3 & 4: For each practice point, expand then review
     const auditableElements = [];
     const total = refinedPracticePoints.length;
     
@@ -12212,19 +12202,12 @@ async function extractAuditableElements(content, userId = null) {
       const expanded = await expandSinglePracticePoint(practicePoint, content, i, total, userId);
       
       if (expanded) {
-        // STEP 4 COMMENTED OUT FOR COST SAVINGS
-        // Uncomment this section to enable double-checking of expanded elements
-        /*
         // Step 4: Review expansion (2nd preference LLM)
         const reviewed = await reviewExpandedElement(expanded, practicePoint, content, i, total, userId);
         
         if (reviewed) {
           auditableElements.push(reviewed);
         }
-        */
-        
-        // Use expanded element directly (skipping Step 4 review)
-        auditableElements.push(expanded);
       }
       
       // Small delay between iterations to avoid rate limiting (100ms)
@@ -12233,7 +12216,7 @@ async function extractAuditableElements(content, userId = null) {
       }
     }
     
-    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length}/${total} auditable elements (2-step mode)`);
+    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length}/${total} auditable elements`);
     return auditableElements;
     
   } catch (error) {
@@ -16730,9 +16713,16 @@ app.get('/getUserHospitalTrust', authenticateUser, async (req, res) => {
         const userId = req.user.uid;
         const hospitalTrust = await getUserHospitalTrust(userId);
         
+        // Get the short name from the mappings database
+        let shortName = null;
+        if (hospitalTrust) {
+            shortName = await getShortHospitalTrust(hospitalTrust);
+        }
+        
         res.json({ 
             success: true, 
-            hospitalTrust: hospitalTrust 
+            hospitalTrust: hospitalTrust,
+            shortName: shortName
         });
     } catch (error) {
         console.error('[ERROR] Failed to get user hospital trust:', error);
