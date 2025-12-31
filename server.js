@@ -14809,7 +14809,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
     res.json({ 
       success: true, 
       message: `Queued ${guidelinesNeedingUpdate.length} guidelines for background processing`,
-      jobId: jobId,
+      batchId: batchId,
       queued: guidelinesNeedingUpdate.length,
       skippedRecent: skippedRecent.length,
       skippedNoContent: skippedNoContent.length,
