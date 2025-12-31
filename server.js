@@ -19577,12 +19577,11 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
             role: 'system',
             content: `You are a clinical compliance checker. Return ONLY valid JSON - no markdown, no explanations.
 
-CRITICAL: Before checking compliance, you MUST identify ALL existing treatments, medications, and actions in the clinical note. Recognise that the same treatment may be described differently:
-- "Ferrous sulfate", "Ferrous fumarate", "Ferrous gluconate", "Sytron" = "iron treatment" = "oral iron" = "iron supplementation"
-- "Repeat Hb in 4/52" = "monitoring" = "follow-up blood tests"
-- "ANC appointment" = "antenatal clinic review" = "follow-up"
-
-A practice point is COMPLIANT if the clinical note ALREADY includes the recommended action, even if worded differently.`
+CRITICAL PRINCIPLES:
+1. Before checking compliance, identify ALL existing treatments, medications, investigations, referrals, and planned actions in the clinical note.
+2. Use your medical knowledge to recognise EQUIVALENT treatments and actions - the same clinical intervention may be described using different terminology (brand names vs generic names, abbreviations vs full names, specific drugs vs drug classes).
+3. A practice point is COMPLIANT if the clinical note ALREADY addresses the underlying clinical intent, even if the exact wording differs.
+4. Only mark as NON-COMPLIANT if the action is genuinely absent or the current plan contradicts the guidance.`
         },
         {
             role: 'user',
@@ -19592,15 +19591,15 @@ ${clinicalNote}
 PRACTICE POINTS TO CHECK:
 ${pointsList}
 
-STEP 1: First, identify ALL existing treatments, medications, investigations, and planned actions in the clinical note above.
+For each practice point, determine if the clinical note is COMPLIANT or NON-COMPLIANT.
 
-STEP 2: For each practice point, determine if the clinical note is COMPLIANT (already addresses this with an equivalent action) or NON-COMPLIANT (genuinely missing or doing it differently).
+COMPLIANCE RULES:
+- If a specific medication is already prescribed that achieves the same therapeutic goal, mark as COMPLIANT
+- If monitoring/follow-up is already planned that addresses the same clinical need, mark as COMPLIANT
+- If a referral or consultation is already arranged that covers the recommendation, mark as COMPLIANT
+- If the clinical note explicitly states something that fulfils the practice point's intent, mark as COMPLIANT
 
-IMPORTANT: Mark as COMPLIANT if the note already includes an equivalent treatment/action, even if described differently. For example:
-- If the plan includes "Ferrous sulfate 200mg BD", then "consider iron treatment" is COMPLIANT
-- If the plan includes "repeat Hb in 4/52", then "repeat FBC" is COMPLIANT
-
-Only mark as NON-COMPLIANT if the action is genuinely missing or the current plan contradicts the guidance.
+Only mark as NON-COMPLIANT when the recommended action is genuinely missing and would add clinical value beyond what is already planned.
 
 Return JSON:
 {
@@ -19609,8 +19608,8 @@ Return JSON:
     {
       "index": 10,
       "name": "Practice point name",
-      "issue": "What is specifically missing (not already covered by existing treatments)",
-      "suggestion": "Specific additional action needed - not duplicating existing treatment",
+      "issue": "What is specifically missing that is not already addressed by existing treatments or plans",
+      "suggestion": "Specific additional action that would add value beyond current management",
       "verbatimQuote": "Exact quote from the practice point for highlighting"
     }
   ]
