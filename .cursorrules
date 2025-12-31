@@ -227,6 +227,15 @@ When deployment issues occur or the user asks to check deployment status:
 5. Push to trigger new deployment
 6. Monitor logs again to verify successful deployment
 
+## Browser Testing Rules
+
+### NEVER Test in Browser After Making Changes
+- **DO NOT** use browser tools to test changes after implementing a feature
+- The production site (clerkyai.health) requires authentication and deployment
+- Changes only take effect after being pushed to Git and deployed to Render
+- Browser testing will always fail because local changes are not reflected on the live site
+- Simply inform the user that changes are ready and ask if they want to commit/deploy
+
 ## Best Practices
 
 1. Always inform the user what files will be committed before committing

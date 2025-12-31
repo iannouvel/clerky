@@ -10978,7 +10978,8 @@ async function loadAndDisplayUserPreferences() {
             
             const result = await response.json();
             if (result.success && result.hospitalTrust) {
-                trustDisplay.textContent = abbreviateHospitalTrust(result.hospitalTrust);
+                // Use the short name from the database if available, otherwise fall back to client-side abbreviation
+                trustDisplay.textContent = result.shortName || abbreviateHospitalTrust(result.hospitalTrust);
             } else {
                 trustDisplay.textContent = 'Not set';
             }
