@@ -10903,6 +10903,10 @@ async function loadGuidelineScopeSelection() {
         const result = await response.json();
         if (result.success && result.guidelineScope) {
             console.log('[DEBUG] Loaded guideline scope selection from Firestore:', result.guidelineScope);
+            // Include the short trust name from the server response
+            if (result.shortTrustName) {
+                result.guidelineScope.shortTrustName = result.shortTrustName;
+            }
             return result.guidelineScope;
         } else {
             console.log('[DEBUG] No guideline scope preference found');
@@ -10996,7 +11000,8 @@ async function loadAndDisplayUserPreferences() {
         const savedScope = await loadGuidelineScopeSelection();
         if (savedScope) {
             let scopeText = '';
-            const trustAbbrev = savedScope.hospitalTrust ? abbreviateHospitalTrust(savedScope.hospitalTrust) : '';
+            // Use short name from database if available, otherwise fall back to client-side abbreviation
+            const trustAbbrev = savedScope.shortTrustName || (savedScope.hospitalTrust ? abbreviateHospitalTrust(savedScope.hospitalTrust) : '');
             if (savedScope.scope === 'national') {
                 scopeText = 'National';
             } else if (savedScope.scope === 'local') {
@@ -11124,12 +11129,14 @@ async function loadAndDisplayUserSettings() {
         const savedScope = await loadGuidelineScopeSelection();
         if (savedScope) {
             let scopeText = '';
+            // Use short name from database if available, otherwise use full trust name
+            const trustName = savedScope.shortTrustName || savedScope.hospitalTrust || 'Trust';
             if (savedScope.scope === 'national') {
                 scopeText = 'National Guidelines';
             } else if (savedScope.scope === 'local') {
-                scopeText = `Local Guidelines (${savedScope.hospitalTrust || 'Trust'})`;
+                scopeText = `Local Guidelines (${trustName})`;
             } else if (savedScope.scope === 'both') {
-                scopeText = `Both (National + ${savedScope.hospitalTrust || 'Trust'})`;
+                scopeText = `Both (National + ${trustName})`;
             }
             scopeDisplay.textContent = scopeText;
         } else {

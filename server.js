@@ -16774,9 +16774,16 @@ app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
         const userId = req.user.uid;
         const guidelineScope = await getUserGuidelineScope(userId);
         
+        // Get the short name from the mappings database if there's a hospital trust
+        let shortTrustName = null;
+        if (guidelineScope && guidelineScope.hospitalTrust) {
+            shortTrustName = await getShortHospitalTrust(guidelineScope.hospitalTrust);
+        }
+        
         res.json({ 
             success: true, 
-            guidelineScope: guidelineScope 
+            guidelineScope: guidelineScope,
+            shortTrustName: shortTrustName
         });
     } catch (error) {
         console.error('[ERROR] Failed to get user guideline scope:', error);
