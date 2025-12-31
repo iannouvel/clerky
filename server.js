@@ -19459,43 +19459,26 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
     const messages = [
         {
             role: 'system',
-            content: `You are a clinical relevance filter. Return ONLY valid JSON - no markdown, no explanations.
-
-Your job is to be STRICT about filtering out practice points that don't apply to this specific patient's current situation. Pay close attention to:
-- Phase of care (antenatal vs intrapartum vs postpartum)
-- Gestational age
-- Conditions the patient actually has vs doesn't have`
+            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
         },
         {
             role: 'user',
             content: `CLINICAL NOTE:
 ${clinicalNote}
 
-PRACTICE POINTS TO ASSESS:
+PRACTICE POINTS:
 ${pointsList}
 
-TASK: Determine which practice points are relevant to THIS SPECIFIC patient right now.
+For each practice point, ask yourself: "Does this practice point apply to this patient in their current situation?"
 
-FIRST, identify from the clinical note:
-- Is the patient pregnant or postpartum/postnatal?
-- What is the gestational age (if pregnant)?
-- What conditions does the patient have?
-- What phase of care is this (antenatal booking, routine antenatal, labour, immediate postpartum, later postnatal)?
-
-THEN, mark each practice point as IRRELEVANT if:
-- It applies to a DIFFERENT phase of care (e.g., postpartum/postnatal advice when patient is still pregnant, or intrapartum advice when patient is not in labour)
-- It requires a condition the patient does NOT have (e.g., haemoglobinopathy, diabetes, hypertension)
-- It applies to a different gestational age range (e.g., first trimester guidance for a third trimester patient)
-- It describes actions that only occur AFTER an event that hasn't happened yet (e.g., "after delivery" when patient hasn't delivered)
-
-Be STRICT - if a practice point says "postpartum" or "after delivery" or "following birth", it is IRRELEVANT to a pregnant patient.
+If no (e.g., it's about a different phase of care, a condition they don't have, or circumstances that don't match), mark it as irrelevant.
 
 Return JSON:
 {
   "relevant": [1, 3, 6],
   "irrelevant": {
-    "4": "Patient does not have haemoglobinopathy",
-    "7": "Applies to postnatal period - patient is still pregnant at 32+4"
+    "4": "brief reason",
+    "7": "brief reason"
   }
 }`
         }
@@ -19589,31 +19572,21 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
     const messages = [
         {
             role: 'system',
-            content: `You are a clinical compliance checker. Return ONLY valid JSON - no markdown, no explanations.
-
-CRITICAL PRINCIPLES:
-1. Before checking compliance, identify ALL existing treatments, medications, investigations, referrals, and planned actions in the clinical note.
-2. Use your medical knowledge to recognise EQUIVALENT treatments and actions - the same clinical intervention may be described using different terminology (brand names vs generic names, abbreviations vs full names, specific drugs vs drug classes).
-3. A practice point is COMPLIANT if the clinical note ALREADY addresses the underlying clinical intent, even if the exact wording differs.
-4. Only mark as NON-COMPLIANT if the action is genuinely absent or the current plan contradicts the guidance.`
+            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
         },
         {
             role: 'user',
             content: `CLINICAL NOTE:
 ${clinicalNote}
 
-PRACTICE POINTS TO CHECK:
+PRACTICE POINTS:
 ${pointsList}
 
-For each practice point, determine if the clinical note is COMPLIANT or NON-COMPLIANT.
+For each practice point, ask yourself: "Is this clinical note essentially compliant with this practice point?"
 
-COMPLIANCE RULES:
-- If a specific medication is already prescribed that achieves the same therapeutic goal, mark as COMPLIANT
-- If monitoring/follow-up is already planned that addresses the same clinical need, mark as COMPLIANT
-- If a referral or consultation is already arranged that covers the recommendation, mark as COMPLIANT
-- If the clinical note explicitly states something that fulfils the practice point's intent, mark as COMPLIANT
+Consider the clinical intent, not just exact wording. If the note already addresses what the practice point recommends (even using different terminology), it's compliant.
 
-Only mark as NON-COMPLIANT when the recommended action is genuinely missing and would add clinical value beyond what is already planned.
+Only mark as non-compliant if something genuinely valuable is missing.
 
 Return JSON:
 {
@@ -19622,9 +19595,9 @@ Return JSON:
     {
       "index": 10,
       "name": "Practice point name",
-      "issue": "What is specifically missing that is not already addressed by existing treatments or plans",
-      "suggestion": "Specific additional action that would add value beyond current management",
-      "verbatimQuote": "Exact quote from the practice point for highlighting"
+      "issue": "What is genuinely missing",
+      "suggestion": "What additional action would add value",
+      "verbatimQuote": "Quote from practice point"
     }
   ]
 }`
