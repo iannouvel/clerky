@@ -19459,29 +19459,43 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
     const messages = [
         {
             role: 'system',
-            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+            content: `You are a clinical relevance filter. Return ONLY valid JSON - no markdown, no explanations.
+
+Your job is to be STRICT about filtering out practice points that don't apply to this specific patient's current situation. Pay close attention to:
+- Phase of care (antenatal vs intrapartum vs postpartum)
+- Gestational age
+- Conditions the patient actually has vs doesn't have`
         },
         {
             role: 'user',
-            content: `This is a clinical note written by a medical professional:
+            content: `CLINICAL NOTE:
 ${clinicalNote}
 
-These are clinical practice points that may be relevant:
+PRACTICE POINTS TO ASSESS:
 ${pointsList}
 
-Determine if each practice point is relevant to this patient's clinical context.
+TASK: Determine which practice points are relevant to THIS SPECIFIC patient right now.
 
-A practice point is IRRELEVANT if:
-- It applies to a different stage (e.g., postnatal advice for a pregnant patient)
-- It requires a condition the patient doesn't have (e.g., haemoglobinopathy)
-- It applies to a different gestational age (e.g., first trimester for third trimester patient)
+FIRST, identify from the clinical note:
+- Is the patient pregnant or postpartum/postnatal?
+- What is the gestational age (if pregnant)?
+- What conditions does the patient have?
+- What phase of care is this (antenatal booking, routine antenatal, labour, immediate postpartum, later postnatal)?
+
+THEN, mark each practice point as IRRELEVANT if:
+- It applies to a DIFFERENT phase of care (e.g., postpartum/postnatal advice when patient is still pregnant, or intrapartum advice when patient is not in labour)
+- It requires a condition the patient does NOT have (e.g., haemoglobinopathy, diabetes, hypertension)
+- It applies to a different gestational age range (e.g., first trimester guidance for a third trimester patient)
+- It describes actions that only occur AFTER an event that hasn't happened yet (e.g., "after delivery" when patient hasn't delivered)
+
+Be STRICT - if a practice point says "postpartum" or "after delivery" or "following birth", it is IRRELEVANT to a pregnant patient.
 
 Return JSON:
 {
   "relevant": [1, 3, 6],
   "irrelevant": {
     "4": "Patient does not have haemoglobinopathy",
-    "7": "Applies to postnatal period only"
+    "7": "Applies to postnatal period - patient is still pregnant at 32+4"
   }
 }`
         }
