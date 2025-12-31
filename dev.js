@@ -3464,31 +3464,43 @@ document.addEventListener('DOMContentLoaded', async function() {
                     const result = await response.json();
                     
                     if (result.success) {
-                        const successful = result.results?.filter(r => r.success) || [];
-                        const failed = result.results?.filter(r => !r.success) || [];
-                        
-                        let html = `<strong>Completed:</strong> ${successful.length} success, ${failed.length} failed<br>
-                            Total elements extracted: ${result.totalElements || successful.reduce((sum, r) => sum + (r.count || 0), 0)}<br><br>`;
-                        
-                        // Show successes
-                        if (successful.length > 0) {
-                            html += '<details><summary style="cursor:pointer;color:green;">✅ Successful (' + successful.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
-                            successful.forEach(r => {
-                                html += `<li>${r.guidelineId}: ${r.count} elements</li>`;
-                            });
-                            html += '</ul></details>';
+                        // Handle new async queued response format
+                        if (result.queued !== undefined) {
+                            let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
+                            html += `<strong>Queued for processing:</strong> ${result.queued} guidelines<br>`;
+                            html += `<strong>Skipped (recent):</strong> ${result.skippedRecent} (regenerated in last 7 days)<br>`;
+                            html += `<strong>Skipped (no content):</strong> ${result.skippedNoContent}<br><br>`;
+                            html += `<em>${result.note}</em><br><br>`;
+                            html += `<strong>Batch ID:</strong> <code>${result.batchId}</code>`;
+                            auditableStatus.innerHTML = html;
+                        } else {
+                            // Handle old synchronous results format
+                            const successful = result.results?.filter(r => r.success) || [];
+                            const failed = result.results?.filter(r => !r.success) || [];
+                            
+                            let html = `<strong>Completed:</strong> ${successful.length} success, ${failed.length} failed<br>
+                                Total elements extracted: ${result.totalElements || successful.reduce((sum, r) => sum + (r.count || 0), 0)}<br><br>`;
+                            
+                            // Show successes
+                            if (successful.length > 0) {
+                                html += '<details><summary style="cursor:pointer;color:green;">✅ Successful (' + successful.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                                successful.forEach(r => {
+                                    html += `<li>${r.guidelineId}: ${r.count} elements</li>`;
+                                });
+                                html += '</ul></details>';
+                            }
+                            
+                            // Show failures
+                            if (failed.length > 0) {
+                                html += '<details open><summary style="cursor:pointer;color:red;">❌ Failed (' + failed.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
+                                failed.forEach(r => {
+                                    html += `<li>${r.guidelineId}: ${r.error || r.message}</li>`;
+                                });
+                                html += '</ul></details>';
+                            }
+                            
+                            auditableStatus.innerHTML = html;
                         }
-                        
-                        // Show failures
-                        if (failed.length > 0) {
-                            html += '<details open><summary style="cursor:pointer;color:red;">❌ Failed (' + failed.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
-                            failed.forEach(r => {
-                                html += `<li>${r.guidelineId}: ${r.error || r.message}</li>`;
-                            });
-                            html += '</ul></details>';
-                        }
-                        
-                        auditableStatus.innerHTML = html;
                     } else {
                         auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
                     }
