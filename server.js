@@ -19575,19 +19575,32 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
     const messages = [
         {
             role: 'system',
-            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+            content: `You are a clinical compliance checker. Return ONLY valid JSON - no markdown, no explanations.
+
+CRITICAL: Before checking compliance, you MUST identify ALL existing treatments, medications, and actions in the clinical note. Recognise that the same treatment may be described differently:
+- "Ferrous sulfate", "Ferrous fumarate", "Ferrous gluconate", "Sytron" = "iron treatment" = "oral iron" = "iron supplementation"
+- "Repeat Hb in 4/52" = "monitoring" = "follow-up blood tests"
+- "ANC appointment" = "antenatal clinic review" = "follow-up"
+
+A practice point is COMPLIANT if the clinical note ALREADY includes the recommended action, even if worded differently.`
         },
         {
             role: 'user',
-            content: `This is a clinical note written by a medical professional:
+            content: `CLINICAL NOTE:
 ${clinicalNote}
 
-These are important clinical practice points for this patient:
+PRACTICE POINTS TO CHECK:
 ${pointsList}
 
-For each practice point, determine if the clinical note is COMPLIANT (the plan already addresses this) or NON-COMPLIANT (the plan is missing this or doing it differently).
+STEP 1: First, identify ALL existing treatments, medications, investigations, and planned actions in the clinical note above.
 
-For NON-COMPLIANT points, provide a specific, actionable suggestion.
+STEP 2: For each practice point, determine if the clinical note is COMPLIANT (already addresses this with an equivalent action) or NON-COMPLIANT (genuinely missing or doing it differently).
+
+IMPORTANT: Mark as COMPLIANT if the note already includes an equivalent treatment/action, even if described differently. For example:
+- If the plan includes "Ferrous sulfate 200mg BD", then "consider iron treatment" is COMPLIANT
+- If the plan includes "repeat Hb in 4/52", then "repeat FBC" is COMPLIANT
+
+Only mark as NON-COMPLIANT if the action is genuinely missing or the current plan contradicts the guidance.
 
 Return JSON:
 {
@@ -19596,8 +19609,8 @@ Return JSON:
     {
       "index": 10,
       "name": "Practice point name",
-      "issue": "What is missing or incorrect in the plan",
-      "suggestion": "Specific action to take - with values and timings",
+      "issue": "What is specifically missing (not already covered by existing treatments)",
+      "suggestion": "Specific additional action needed - not duplicating existing treatment",
       "verbatimQuote": "Exact quote from the practice point for highlighting"
     }
   ]
