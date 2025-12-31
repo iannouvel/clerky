@@ -11967,7 +11967,7 @@ And the full guideline content below, create a structured JSON object for this p
 Return a JSON object with these fields:
 {
   "name": "Brief descriptive title (5-10 words)",
-  "description": "Explain this practice point as if to a curious patient. What does this mean? What is the test/treatment/action? Why is it done? What happens if this threshold is met or not met? What is the actual treatment (e.g., if ferritin is low, the treatment is iron therapy - oral or IV). Be specific and educational. Write 3-5 sentences.",
+  "description": "Describe the CONTEXT and APPLICABILITY of this practice point for an LLM to understand. Include: (1) WHO this applies to - patient criteria, conditions, gestational age, risk factors; (2) WHEN this applies - timing, circumstances, triggers; (3) WHEN this does NOT apply - exclusion criteria, contraindications, exceptions; (4) WHAT the action/treatment is and any thresholds or values involved. Be precise and structured. Write 3-5 sentences.",
   "verbatimQuote": "The SPECIFIC sentence or phrase from the guideline that DIRECTLY states this practice point",
   "significance": "high or medium or low"
 }
@@ -11987,7 +11987,7 @@ ${guidelineContent}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical educator explaining guidelines to healthcare professionals. Return ONLY a valid JSON object. For description, explain the practice point as if to a curious patient - what it means, what the actual treatment/action is, and why it matters. For verbatimQuote, find the SPECIFIC short quote that DIRECTLY states this exact practice point.' 
+          content: 'You are a clinical guideline analyst preparing structured data for an LLM-based clinical decision support system. Return ONLY a valid JSON object. For description, focus on CONTEXT and APPLICABILITY - who this applies to, when it applies, when it does NOT apply, and what the action is. This helps an LLM determine if this practice point is relevant to a specific patient. For verbatimQuote, find the SPECIFIC short quote that DIRECTLY states this exact practice point.' 
         },
         { 
           role: 'user', 
@@ -12062,18 +12062,18 @@ YOUR TASK:
 1. Check if the verbatimQuote is CORRECT and SPECIFIC to this practice point
 2. The verbatimQuote should be SHORT (ideally 1 sentence) and DIRECTLY match text in the guideline
 3. If the verbatimQuote is wrong, too broad, or doesn't exist in the guideline, find the correct quote
-4. Check the description explains this as if to a curious patient - including what the actual treatment/action is (e.g., if about a threshold, what happens when it's met? what is the treatment?)
+4. Check the description focuses on CONTEXT and APPLICABILITY for an LLM: WHO this applies to (patient criteria), WHEN it applies, WHEN it does NOT apply (exclusions/contraindications), and WHAT the action/treatment is
 5. Verify the significance rating is appropriate
 
 Return a refined JSON object with the same fields: name, description, verbatimQuote, significance.
-If everything is correct, return the element unchanged. If the description doesn't explain the actual treatment/action, improve it.`;
+If everything is correct, return the element unchanged. If the description is missing applicability context (who/when/exclusions), improve it.`;
 
   try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical educator reviewing an extracted element. Return ONLY a valid JSON object. Ensure verbatimQuote is a SPECIFIC short quote from the guideline. Ensure description explains what the treatment/action is - not just when it applies, but what you actually DO about it.' 
+          content: 'You are a clinical guideline analyst reviewing an extracted element for an LLM-based decision support system. Return ONLY a valid JSON object. Ensure verbatimQuote is a SPECIFIC short quote from the guideline. Ensure description focuses on CONTEXT and APPLICABILITY - who it applies to, when it applies, when it does NOT apply, and what the action is. This helps an LLM determine relevance to a specific patient.' 
         },
         { 
           role: 'user', 
