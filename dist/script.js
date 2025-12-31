@@ -5643,24 +5643,39 @@ async function displayPracticePointSuggestions(result) {
         let filterSummary = '';
         if (result.totalPracticePoints > 0) {
             filterSummary = `
-                <p style="font-size: 0.9em; color: #666;">
-                    <strong>Analysis:</strong> ${result.totalPracticePoints} practice points 
-                    → ${result.relevantPracticePoints || 0} relevant 
-                    → ${result.importantPracticePoints || 0} important 
-                    → ${result.compliantCount || 0} compliant
-                </p>
+                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin: 15px 0;">
+                    <p style="margin: 0 0 10px 0; font-size: 0.95em; color: #166534; font-weight: 600;">📊 Analysis Summary</p>
+                    <p style="margin: 0; font-size: 0.9em; color: #15803d;">
+                        ${result.totalPracticePoints} practice points analysed
+                        → ${result.relevantPracticePoints || 0} relevant to this patient
+                        → ${result.importantPracticePoints || 0} clinically important
+                        → <strong>${result.compliantCount || 0} compliant</strong>
+                    </p>
+                </div>
             `;
         }
         
-        const noSuggestionsHtml = `
-            <div class="dynamic-advice-container">
-                <h3>✅ Guideline Review Complete</h3>
-                <p><strong>Guideline:</strong> ${result.guidelineTitle}</p>
-                ${filterSummary}
-                <p style="color: #16a34a; font-weight: bold;">Plan aligns with guideline recommendations.</p>
+        // Show the same interactive interface structure with compliant message
+        const compliantHtml = `
+            <div class="dynamic-advice-container" id="suggestion-review-current">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 15px 0;">
+                    <h3 style="color: #16a34a; margin: 0;">✅ Guideline Review Complete</h3>
+                    <p style="margin: 0; font-size: 13px; color: #666; text-align: right;"><em>Guideline: ${result.guidelineTitle || 'Unknown'}</em></p>
+                </div>
+                <div class="suggestion-current" style="background: #f0fdf4; border: 2px solid #16a34a; padding: 20px; margin: 10px 0; border-radius: 6px;">
+                    <div style="text-align: center; padding: 20px 0;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">🎉</div>
+                        <h4 style="color: #16a34a; margin: 0 0 10px 0; font-size: 1.3em;">Care is Compliant</h4>
+                        <p style="color: #166534; margin: 0; font-size: 1em;">
+                            The clinical note aligns with all relevant guideline recommendations.
+                        </p>
+                    </div>
+                    ${filterSummary}
+                </div>
+                <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">No suggestions required</div>
             </div>
         `;
-        appendToOutputField(noSuggestionsHtml, true);
+        appendToSummary1(compliantHtml, true);
         return;
     }
     
