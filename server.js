@@ -1816,6 +1816,9 @@ async function processJob(job) {
             case 'generate_display_name':
                 result = await jobGenerateDisplayName(job, guidelineData);
                 break;
+            case 'regenerate_auditable':
+                result = await jobRegenerateAuditable(job, guidelineData);
+                break;
             default:
                 throw new Error(`Unknown job type: ${job.type}`);
         }
@@ -1984,6 +1987,30 @@ async function jobGenerateDisplayName(job, guidelineData) {
     
     debugLog(`[JOB_DISPLAY_NAME] Updated displayName for ${job.guidelineId}: "${displayName}"`);
     return { displayName: displayName };
+}
+
+// Regenerate auditable elements for a guideline (used in batch regeneration)
+async function jobRegenerateAuditable(job, guidelineData) {
+    const content = job.data?.content || guidelineData.content || guidelineData.condensed;
+    if (!content) throw new Error('No content to extract auditable elements from');
+    
+    const userId = job.data?.userId || guidelineData.uploadedBy || null;
+    const batchInfo = job.data?.batchId ? ` [${job.data.index}/${job.data.total}]` : '';
+    
+    console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Processing ${job.guidelineId}...`);
+    
+    const elements = await extractAuditableElements(content, userId);
+    
+    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+    await guidelineRef.update({
+        auditableElements: elements,
+        auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+        auditableElementsRegeneratedBy: userId,
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+    });
+    
+    console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Completed ${job.guidelineId}: ${elements.length} elements`);
+    return { elementsCount: elements.length };
 }
 
 // Check if all processing steps are complete and update flag
@@ -14725,69 +14752,68 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       }
     }
     
-    // Otherwise, process all guidelines
+    // Otherwise, process guidelines that need updating
     const guidelinesSnapshot = await db.collection('guidelines').get();
-    const results = [];
-    let totalElements = 0;
     
-    console.log(`[REGEN-AUDITABLE] Processing ${guidelinesSnapshot.docs.length} guidelines`);
+    // Filter to only guidelines needing regeneration
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const guidelinesNeedingUpdate = [];
+    const skippedRecent = [];
+    const skippedNoContent = [];
     
     for (const doc of guidelinesSnapshot.docs) {
-      try {
-        const guideline = doc.data();
-        const docGuidelineId = doc.id;
-        
-        // Use original content (prefer content over condensed for verbatim quotes)
-        const content = guideline.content || guideline.condensed;
-        if (!content) {
-          results.push({ 
-            guidelineId: docGuidelineId, 
-            success: false, 
-            message: 'No content available for extraction' 
-          });
-          continue;
-        }
-        
-        console.log(`[REGEN-AUDITABLE] Processing ${docGuidelineId}...`);
-        
-        const auditableElements = await extractAuditableElements(content, userId);
-        
-        // Update the guideline (overwrite existing elements)
-        await db.collection('guidelines').doc(docGuidelineId).update({
-          auditableElements: auditableElements,
-          auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
-          auditableElementsRegeneratedBy: userId,
-          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
-        });
-        
-        totalElements += auditableElements.length;
-        
-        results.push({ 
-          guidelineId: docGuidelineId, 
-          success: true, 
-          message: 'Regenerated auditable elements',
-          count: auditableElements.length 
-        });
-        
-        console.log(`[REGEN-AUDITABLE] Updated ${docGuidelineId} with ${auditableElements.length} auditable elements`);
-        
-      } catch (error) {
-        console.error(`[REGEN-AUDITABLE] Error regenerating elements for ${doc.id}:`, error);
-        results.push({ 
-          guidelineId: doc.id, 
-          success: false, 
-          error: error.message 
-        });
+      const guideline = doc.data();
+      const content = guideline.content || guideline.condensed;
+      
+      if (!content) {
+        skippedNoContent.push(doc.id);
+        continue;
       }
+      
+      // Check if recently regenerated
+      const regeneratedAt = guideline.auditableElementsRegeneratedAt?.toDate?.() || null;
+      if (regeneratedAt && regeneratedAt > sevenDaysAgo) {
+        skippedRecent.push(doc.id);
+        continue;
+      }
+      
+      guidelinesNeedingUpdate.push({ id: doc.id, content });
+    }
+    
+    console.log(`[REGEN-AUDITABLE] Found ${guidelinesNeedingUpdate.length} guidelines needing update (skipped ${skippedRecent.length} recent, ${skippedNoContent.length} no content)`);
+    
+    if (guidelinesNeedingUpdate.length === 0) {
+      return res.json({
+        success: true,
+        message: 'All guidelines have been regenerated within the last 7 days',
+        skippedRecent: skippedRecent.length,
+        skippedNoContent: skippedNoContent.length,
+        totalProcessed: 0
+      });
+    }
+    
+    // Queue them as background jobs and return immediately
+    const batchId = `regen-all-${Date.now()}`;
+    
+    for (let i = 0; i < guidelinesNeedingUpdate.length; i++) {
+      const g = guidelinesNeedingUpdate[i];
+      queueJob('regenerate_auditable', g.id, {
+        content: g.content,
+        userId: userId,
+        batchId: batchId,
+        index: i + 1,
+        total: guidelinesNeedingUpdate.length
+      });
     }
     
     res.json({ 
       success: true, 
-      results,
-      totalProcessed: results.length,
-      successful: results.filter(r => r.success).length,
-      failed: results.filter(r => !r.success).length,
-      totalElements
+      message: `Queued ${guidelinesNeedingUpdate.length} guidelines for background processing`,
+      jobId: jobId,
+      queued: guidelinesNeedingUpdate.length,
+      skippedRecent: skippedRecent.length,
+      skippedNoContent: skippedNoContent.length,
+      note: 'Check server logs for progress. Guidelines updated in the last 7 days are skipped.'
     });
     
   } catch (error) {
