@@ -957,6 +957,76 @@ document.addEventListener('DOMContentLoaded', async function() {
                     searchTimeout = setTimeout(fetchRecentLogs, 500);
                 });
             }
+            
+            // Copy All button
+            const copyAllBtn = document.getElementById('copyAllLogsBtn');
+            if (copyAllBtn) {
+                copyAllBtn.addEventListener('click', copyAllLogs);
+            }
+        }
+        
+        // Copy all logs to clipboard as formatted text
+        async function copyAllLogs() {
+            if (!recentLogs || recentLogs.length === 0) {
+                alert('No logs to copy. Click Refresh to load logs first.');
+                return;
+            }
+            
+            const formattedLogs = recentLogs.map((log, idx) => {
+                const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
+                const divider = '='.repeat(80);
+                
+                // Parse prompt content if it's JSON
+                let promptText = log.fullPrompt || 'No prompt content';
+                try {
+                    const parsed = JSON.parse(promptText);
+                    if (Array.isArray(parsed)) {
+                        promptText = parsed.map(msg => {
+                            const role = (msg.role || 'unknown').toUpperCase();
+                            return `[${role}]\n${msg.content || ''}`;
+                        }).join('\n\n');
+                    }
+                } catch (e) {
+                    // Keep as-is if not valid JSON
+                }
+                
+                // Response text
+                let responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
+                
+                return `${divider}
+LOG ${idx + 1} of ${recentLogs.length}
+${divider}
+Time: ${time}
+Endpoint: ${log.endpoint || 'Unknown'}
+Provider: ${log.provider || 'N/A'}
+Model: ${log.model || 'N/A'}
+Tokens: ${log.promptTokens || 0} in / ${log.completionTokens || 0} out (${log.totalTokens || 0} total)
+Latency: ${log.latencyMs ? log.latencyMs + 'ms' : 'N/A'}
+Cost: $${(log.estimatedCostUsd || 0).toFixed(6)}
+Status: ${log.success ? 'Success' : 'Error'}
+
+--- PROMPT ---
+${promptText}
+
+--- RESPONSE ---
+${responseText}
+`;
+            }).join('\n\n');
+            
+            try {
+                await navigator.clipboard.writeText(formattedLogs);
+                const copyBtn = document.getElementById('copyAllLogsBtn');
+                if (copyBtn) {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = '✅ Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                }
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard. Please try again.');
+            }
         }
         
         // Initialize logs UI when DOM is ready
