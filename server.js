@@ -2093,8 +2093,8 @@ async function jobExtractTerms(job, guidelineData) {
 }
 
 async function jobExtractAuditable(job, guidelineData) {
-    // Prefer original content over condensed for verbatim quote matching
-    const content = guidelineData.content || guidelineData.condensed;
+    // Prefer condensed content for efficiency (no verbatim quotes needed)
+    const content = guidelineData.condensed || guidelineData.content;
     if (!content) throw new Error('No content to extract auditable elements from');
     
     // Use the uploader's AI preference
@@ -2147,7 +2147,8 @@ async function jobGenerateDisplayName(job, guidelineData) {
 
 // Regenerate auditable elements for a guideline (used in batch regeneration)
 async function jobRegenerateAuditable(job, guidelineData) {
-    const content = job.data?.content || guidelineData.content || guidelineData.condensed;
+    // Prefer condensed content for efficiency (no verbatim quotes needed)
+    const content = guidelineData.condensed || guidelineData.content || job.data?.content;
     if (!content) throw new Error('No content to extract auditable elements from');
     
     const userId = job.data?.userId || guidelineData.uploadedBy || null;
@@ -12225,35 +12226,72 @@ function extractKeywords(text) {
     .map(([word]) => word);
 }
 
-// Step 1: Identify all practice points from guideline (returns JSON array)
-async function identifyPracticePoints(content, userId = null) {
-  console.log('[AUDITABLE] Step 1: Identifying practice points...');
+// ============================================================================
+// OPTIMISED AUDITABLE ELEMENT EXTRACTION (2-step process)
+// Replaces previous 4-step process for ~95% reduction in API calls and tokens
+// ============================================================================
+
+// Helper to clean markdown code blocks from AI responses
+function cleanJsonResponse(content) {
+  let cleaned = content.trim();
+  if (cleaned.startsWith('```json')) {
+    cleaned = cleaned.replace(/^```json\s*/, '');
+  }
+  if (cleaned.startsWith('```')) {
+    cleaned = cleaned.replace(/^```\s*/, '');
+  }
+  if (cleaned.endsWith('```')) {
+    cleaned = cleaned.replace(/\s*```$/, '');
+  }
+  return cleaned;
+}
+
+// Step 1: Identify and structure all practice points in a single call
+// Uses condensed content for efficiency - no verbatim quotes needed
+async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null) {
+  console.log('[AUDITABLE-OPT] Step 1: Identifying and structuring practice points...');
   
-  const prompt = `Read this clinical guideline completely and extract EVERY distinct practice point.
+  const summaryContext = guidelineSummary ? `\nGUIDELINE SUMMARY: ${guidelineSummary}\n` : '';
+  
+  const prompt = `Analyse this clinical guideline and extract ALL distinct practice points as structured JSON.
+${summaryContext}
+For EACH practice point, create an object with:
+- "name": Brief descriptive title (5-10 words)
+- "description": STRUCTURED APPLICABILITY CRITERIA with these sections:
+  • APPLIES TO: [specific patient population, phase of care, conditions]
+  • NOT APPLICABLE: [when this does NOT apply - exclusions, contraindications]
+  • ACTION: [what treatment/investigation/referral is recommended]
+  • THRESHOLDS: [any specific values, doses, or timing]
+- "significance": "high" or "medium" or "low"
 
-GO THROUGH EACH SECTION and extract practice points covering:
+CATEGORIES TO COVER (extract ALL that apply):
+- SCREENING: When to perform tests, what triggers investigations
+- THRESHOLDS: All numeric values (Hb levels, ferritin, doses, timing)
+- DOSAGES: Medication doses, maximum doses, weight-based calculations
+- TIMING: When to repeat tests, duration of treatment, intervals
+- SAFETY: Restrictions, contraindications, allergy checks, monitoring
+- ESCALATION: When to refer, specialist involvement triggers
+- LOCATION: Where care should be delivered
+- SPECIAL POPULATIONS: Different rules for specific patient groups
+- ADMINISTRATIVE: Documentation, consent, reporting requirements
 
-SCREENING: When to do FBC (booking, 28 weeks, 36-37 weeks for MLU, after symptoms), when to check ferritin, when to recheck bloods after treatment
+Return a JSON array of objects. Aim for 30-60 practice points.
 
-THRESHOLDS (each one separately): Hb thresholds for each trimester and postnatal, ferritin thresholds for depletion and treatment, MCV threshold, Hb threshold for consultant delivery, Hb threshold for transfusion consideration, blood loss threshold for postpartum FBC
+EXAMPLE OUTPUT FORMAT:
+[
+  {
+    "name": "First Trimester Anaemia Threshold",
+    "description": "APPLIES TO: Pregnant women in first trimester (weeks 1-12). NOT APPLICABLE: Second/third trimester or postpartum. ACTION: Diagnose anaemia and initiate treatment. THRESHOLDS: Hb <110g/L.",
+    "significance": "high"
+  },
+  {
+    "name": "Oral Iron Standard Dose",
+    "description": "APPLIES TO: All pregnant women with iron deficiency anaemia. NOT APPLICABLE: Women with IV iron indication or intolerance. ACTION: Prescribe oral iron supplementation. THRESHOLDS: 40-80mg elemental iron daily.",
+    "significance": "high"
+  }
+]
 
-DOSAGES: Oral iron dose, IV iron max single dose, IV iron max per kg dose, IV iron cumulative dose by weight, folic acid doses (standard and high-risk)
-
-TIMING: When to repeat FBC after oral iron, when to investigate if no response, how long to continue iron postpartum, interval between IV iron doses, duration of IV infusion, observation period after infusion, when to discharge after infusion, when to prescribe IV iron to pharmacy, when blood tests needed before IV iron
-
-SAFETY/RESTRICTIONS: First trimester IV iron restriction, allergy checks before IV iron, conditions increasing reaction risk, what to do if reaction occurs, phlebitis monitoring, who should NOT have IV iron
-
-ESCALATION: When to refer to consultant, when to refer to other specialties, two-week-wait cancer pathway triggers
-
-LOCATION: Where to deliver if Hb <100, where IV iron is administered
-
-SPECIAL POPULATIONS: Overweight patients - use ideal body weight, haemoglobinopathy patients - check ferritin, darker skin tones - pallor assessment, patients <35kg - max cumulative dose
-
-ADMINISTRATIVE: Patient information requirements, prescription form requirements, pharmacy notification timing, observations before/during/after infusion, documentation requirements, yellow card reporting
-
-Return a JSON array of strings. Each string should be a concise practice point (e.g., "FBC at booking for all pregnant women", "Hb threshold for 1st trimester is <100g/L"). Aim for 40-60 practice points.
-
-Guideline:
+GUIDELINE CONTENT:
 ${content}`;
 
   try {
@@ -12261,7 +12299,7 @@ ${content}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of strings - no other text. Each string is a distinct practice point. Start with [ and end with ]. Aim for 40-60+ items. Do not consolidate - if there are 3 different Hb thresholds, include all 3 as separate strings.' 
+          content: 'You are a clinical guideline auditor. Extract practice points as a JSON array. Each object must have: name (string), description (structured applicability criteria), significance (high/medium/low). Return ONLY valid JSON - no other text. Be comprehensive - include ALL distinct practice points.' 
         },
         { 
           role: 'user', 
@@ -12271,27 +12309,26 @@ ${content}`;
     }, userId);
 
     if (result && result.content) {
-      console.log(`[AUDITABLE] Step 1: Got response (${result.content.length} chars)`);
+      console.log(`[AUDITABLE-OPT] Step 1: Got response (${result.content.length} chars)`);
       
-      // Parse the JSON array
-      let cleanedContent = result.content.trim();
-      
-      // Remove markdown code blocks if present
-      if (cleanedContent.startsWith('```json')) {
-        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-      }
-      if (cleanedContent.startsWith('```')) {
-        cleanedContent = cleanedContent.replace(/^```\s*/, '');
-      }
-      if (cleanedContent.endsWith('```')) {
-        cleanedContent = cleanedContent.replace(/\s*```$/, '');
-      }
+      const cleanedContent = cleanJsonResponse(result.content);
       
       try {
         const parsed = JSON.parse(cleanedContent);
         if (Array.isArray(parsed)) {
-          console.log(`[AUDITABLE] Step 1 complete: Identified ${parsed.length} practice points`);
-          return parsed;
+          // Validate and filter valid elements
+          const validElements = parsed.filter(elem => 
+            elem && typeof elem === 'object' && 
+            elem.name && typeof elem.name === 'string' &&
+            elem.description && typeof elem.description === 'string'
+          ).map(elem => ({
+            name: elem.name,
+            description: elem.description,
+            significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+          }));
+          
+          console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points`);
+          return validElements;
         }
       } catch (parseError) {
         // Try to extract JSON array from response
@@ -12300,152 +12337,90 @@ ${content}`;
           try {
             const extracted = JSON.parse(jsonMatch[0]);
             if (Array.isArray(extracted)) {
-              console.log(`[AUDITABLE] Step 1 complete: Identified ${extracted.length} practice points (extracted)`);
-              return extracted;
+              const validElements = extracted.filter(elem => 
+                elem && typeof elem === 'object' && 
+                elem.name && typeof elem.name === 'string' &&
+                elem.description && typeof elem.description === 'string'
+              ).map(elem => ({
+                name: elem.name,
+                description: elem.description,
+                significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+              }));
+              
+              console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points (from extracted JSON)`);
+              return validElements;
             }
           } catch (e) {
-            console.error('[AUDITABLE] Step 1: Failed to parse extracted JSON array');
+            console.error('[AUDITABLE-OPT] Step 1: Failed to parse extracted JSON array');
           }
         }
-        console.error('[AUDITABLE] Step 1: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE] Step 1 response preview:', cleanedContent.substring(0, 500));
+        console.error('[AUDITABLE-OPT] Step 1: Could not parse AI response as JSON array');
+        console.error('[AUDITABLE-OPT] Step 1 response preview:', cleanedContent.substring(0, 500));
       }
     }
     
-    console.error('[AUDITABLE] Step 1 failed: No valid content in AI response');
+    console.error('[AUDITABLE-OPT] Step 1 failed: No valid content in AI response');
     return null;
   } catch (error) {
-    console.error('[AUDITABLE] Step 1 error:', error.message);
+    console.error('[AUDITABLE-OPT] Step 1 error:', error.message);
     return null;
   }
 }
 
-// Step 2: Review and refine practice points with 2nd preference LLM
-async function reviewPracticePoints(practicePointsArray, guidelineContent, userId = null) {
-  const secondLLM = await getSecondPreferenceLLM(userId);
-  console.log(`[AUDITABLE] Step 2: Reviewing practice points (2nd LLM: ${secondLLM})...`);
+// Step 2: Batch expand practice points for additional detail (optional, for large guidelines)
+// Processes multiple practice points per API call for efficiency
+async function batchExpandPracticePoints(practicePoints, content, userId = null, batchSize = 15) {
+  if (!practicePoints || practicePoints.length === 0) return [];
   
-  const prompt = `You are reviewing a list of clinical practice points extracted from a guideline.
+  // If we already have well-structured points, no need to expand
+  const needsExpansion = practicePoints.some(p => 
+    !p.description || 
+    p.description.length < 50 || 
+    !p.description.includes('APPLIES TO')
+  );
+  
+  if (!needsExpansion) {
+    console.log('[AUDITABLE-OPT] Step 2: Skipping expansion - points already well-structured');
+    return practicePoints;
+  }
+  
+  console.log(`[AUDITABLE-OPT] Step 2: Batch expanding ${practicePoints.length} practice points...`);
+  
+  const expandedElements = [];
+  const batches = [];
+  
+  // Split into batches
+  for (let i = 0; i < practicePoints.length; i += batchSize) {
+    batches.push(practicePoints.slice(i, i + batchSize));
+  }
+  
+  console.log(`[AUDITABLE-OPT] Step 2: Processing ${batches.length} batches of up to ${batchSize} points each`);
+  
+  for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
+    const batch = batches[batchIndex];
+    
+    const prompt = `Expand these practice points with more detailed applicability criteria.
 
-ORIGINAL PRACTICE POINTS:
-${JSON.stringify(practicePointsArray, null, 2)}
+PRACTICE POINTS TO EXPAND:
+${JSON.stringify(batch, null, 2)}
 
-ORIGINAL GUIDELINE CONTENT:
-${guidelineContent}
+For EACH practice point, ensure the description includes:
+• APPLIES TO: [specific patient population, phase of care, gestational age if relevant]
+• NOT APPLICABLE: [when this does NOT apply - exclusions, different phases of care]
+• ACTION: [what treatment/investigation/referral is recommended]
+• THRESHOLDS: [any specific values, doses, or timing if applicable]
 
-YOUR TASK:
-1. Review the list for completeness - ADD any significant practice points that were missed
-2. REMOVE any duplicates or points that are too similar
-3. REFINE the wording of any unclear or poorly worded points
-4. Ensure each point is specific and distinct (not overly broad)
+GUIDELINE CONTEXT:
+${content.substring(0, 10000)}${content.length > 10000 ? '\n...[truncated]...' : ''}
 
-Return a refined JSON array of strings. Each string should be a concise, clear practice point.
-Aim for 40-60 practice points that comprehensively cover the guideline.`;
+Return a JSON array with the same number of objects, each with: name, description (expanded), significance.`;
 
   try {
     const result = await routeToAI({ 
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor reviewing extracted practice points. Return ONLY a valid JSON array of strings - no other text. Add missing points, remove duplicates, refine wording. Start with [ and end with ].' 
-        },
-        { 
-          role: 'user', 
-          content: prompt 
-        }
-      ]
-    }, null, secondLLM); // Use 2nd preference LLM explicitly
-
-    if (result && result.content) {
-      let cleanedContent = result.content.trim();
-      
-      // Remove markdown code blocks if present
-      if (cleanedContent.startsWith('```json')) {
-        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-      }
-      if (cleanedContent.startsWith('```')) {
-        cleanedContent = cleanedContent.replace(/^```\s*/, '');
-      }
-      if (cleanedContent.endsWith('```')) {
-        cleanedContent = cleanedContent.replace(/\s*```$/, '');
-      }
-      
-      try {
-        const parsed = JSON.parse(cleanedContent);
-        if (Array.isArray(parsed)) {
-          console.log(`[AUDITABLE] Step 2 complete: Refined to ${parsed.length} practice points (was ${practicePointsArray.length})`);
-          return parsed;
-        }
-      } catch (parseError) {
-        // Try to extract JSON array from response
-        const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
-          try {
-            const extracted = JSON.parse(jsonMatch[0]);
-            if (Array.isArray(extracted)) {
-              console.log(`[AUDITABLE] Step 2 complete: Refined to ${extracted.length} practice points (was ${practicePointsArray.length}) (extracted)`);
-              return extracted;
-            }
-          } catch (e) {
-            console.error('[AUDITABLE] Step 2: Failed to parse extracted JSON array');
-          }
-        }
-        console.error('[AUDITABLE] Step 2: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE] Step 2 response preview:', cleanedContent.substring(0, 500));
-      }
-    }
-    
-    // If review fails, return original array
-    console.warn('[AUDITABLE] Step 2 failed, using original practice points');
-    return practicePointsArray;
-  } catch (error) {
-    console.error('[AUDITABLE] Step 2 error:', error.message);
-    return practicePointsArray; // Return original on error
-  }
-}
-
-// Step 3: Expand a single practice point into structured JSON
-async function expandSinglePracticePoint(practicePoint, guidelineContent, index, total, userId = null, guidelineSummary = null) {
-  const summaryContext = guidelineSummary ? `\nGUIDELINE CONTEXT: ${guidelineSummary}\n` : '';
-  
-  const prompt = `Given this SPECIFIC practice point from a clinical guideline:
-
-"${practicePoint}"
-${summaryContext}
-And the full guideline content below, create a structured JSON object for this practice point.
-
-Return a JSON object with these fields:
-{
-  "name": "Brief descriptive title (5-10 words)",
-  "description": "STRUCTURED APPLICABILITY CRITERIA - must include ALL of these:\n• APPLIES TO: [specific patient population, phase of care (antenatal/intrapartum/postpartum), gestational age range, conditions]\n• NOT APPLICABLE: [when this does NOT apply - different phase of care, exclusions, contraindications]\n• ACTION: [what treatment/investigation/referral is recommended]\n• THRESHOLDS: [any specific values, doses, or timing if applicable]",
-  "verbatimQuote": "The SPECIFIC sentence or phrase from the guideline that DIRECTLY states this practice point",
-  "significance": "high or medium or low"
-}
-
-CRITICAL: The description field must be written as STRUCTURED APPLICABILITY CRITERIA, not as patient education. 
-
-Example of GOOD description:
-"APPLIES TO: Postpartum/postnatal women only (after delivery). NOT APPLICABLE: During pregnancy (antenatal period). ACTION: Continue iron supplements for 3-6 months after birth to replenish iron stores. THRESHOLDS: None specified."
-
-Example of BAD description (DO NOT write like this):
-"This practice point involves continuing iron supplements for 3-6 months after giving birth to help replenish iron stores and prevent anemia. It's essential for women who have experienced blood loss..."
-
-CRITICAL INSTRUCTIONS FOR verbatimQuote:
-1. Find the SPECIFIC sentence or phrase that DIRECTLY corresponds to THIS practice point
-2. Do NOT use a general quote that covers multiple topics - find the PRECISE text for THIS specific point
-3. The quote should be SHORT and FOCUSED (ideally 1 sentence) - not a long paragraph
-4. Copy the text EXACTLY as written - character for character
-5. The quote will be used to find the text when the practice point is queried, it needs to highlight the correct part of the document
-
-Guideline content:
-${guidelineContent}`;
-
-  try {
-    const result = await routeToAI({ 
-      messages: [
-        { 
-          role: 'system', 
-          content: 'You are a clinical guideline analyst. Return ONLY valid JSON. The description field MUST be structured applicability criteria with explicit APPLIES TO, NOT APPLICABLE, ACTION, and THRESHOLDS sections. This will be used by an LLM to determine if the practice point applies to a specific patient - be explicit about phase of care (antenatal vs postpartum), gestational age ranges, and exclusion criteria.' 
+            content: 'You are a clinical guideline analyst. Expand the given practice points with detailed applicability criteria. Return ONLY a valid JSON array. Each object must have: name, description (with APPLIES TO/NOT APPLICABLE/ACTION/THRESHOLDS sections), significance.' 
         },
         { 
           role: 'user', 
@@ -12455,176 +12430,57 @@ ${guidelineContent}`;
     }, userId);
 
     if (result && result.content) {
-      let cleanedContent = result.content.trim();
-      
-      // Remove markdown code blocks if present
-      if (cleanedContent.startsWith('```json')) {
-        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-      }
-      if (cleanedContent.startsWith('```')) {
-        cleanedContent = cleanedContent.replace(/^```\s*/, '');
-      }
-      if (cleanedContent.endsWith('```')) {
-        cleanedContent = cleanedContent.replace(/\s*```$/, '');
-      }
-      
-      // Try to parse JSON object
-      try {
-        const parsed = JSON.parse(cleanedContent);
-        if (parsed && typeof parsed === 'object' && parsed.name) {
-          console.log(`[AUDITABLE] Step 3 [${index + 1}/${total}]: Expanded "${practicePoint.substring(0, 40)}..."`);
-          return parsed;
+        const cleanedContent = cleanJsonResponse(result.content);
+        
+        try {
+          let parsed = JSON.parse(cleanedContent);
+          if (!Array.isArray(parsed)) {
+            const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
+        if (jsonMatch) {
+              parsed = JSON.parse(jsonMatch[0]);
+            }
+          }
+          
+          if (Array.isArray(parsed)) {
+            const validElements = parsed.filter(elem => 
+              elem && typeof elem === 'object' && 
+              elem.name && typeof elem.name === 'string'
+            ).map(elem => ({
+              name: elem.name,
+              description: elem.description || '',
+              significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+            }));
+            
+            expandedElements.push(...validElements);
+            console.log(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Expanded ${validElements.length} points`);
         }
       } catch (parseError) {
-        // Try to extract JSON object from response
-        const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          try {
-            const extracted = JSON.parse(jsonMatch[0]);
-            if (extracted && typeof extracted === 'object' && extracted.name) {
-              console.log(`[AUDITABLE] Step 3 [${index + 1}/${total}]: Expanded "${practicePoint.substring(0, 40)}..." (extracted)`);
-              return extracted;
-            }
-          } catch (e) {
-            console.error(`[AUDITABLE] Step 3 [${index + 1}/${total}]: Failed to parse extracted JSON for "${practicePoint.substring(0, 40)}..."`);
-          }
+          // If parsing fails, use original batch
+          console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse error, using original points`);
+          expandedElements.push(...batch);
         }
-        console.error(`[AUDITABLE] Step 3 [${index + 1}/${total}]: Could not parse JSON for "${practicePoint.substring(0, 40)}..."`);
-      }
-    }
-    
-    return null;
-  } catch (error) {
-    console.error(`[AUDITABLE] Step 3 [${index + 1}/${total}] error for "${practicePoint.substring(0, 40)}...": ${error.message}`);
-    return null;
-  }
-}
-
-// Step 4: Review and refine expanded element with 2nd preference LLM
-async function reviewExpandedElement(element, practicePoint, guidelineContent, index, total, userId = null) {
-  if (!element) return null;
-  
-  const secondLLM = await getSecondPreferenceLLM(userId);
-  
-  const prompt = `You are reviewing an extracted practice point from a clinical guideline.
-
-ORIGINAL PRACTICE POINT: "${practicePoint}"
-
-EXTRACTED ELEMENT:
-${JSON.stringify(element, null, 2)}
-
-ORIGINAL GUIDELINE CONTENT:
-${guidelineContent}
-
-YOUR TASK:
-1. Check if the verbatimQuote is CORRECT and SPECIFIC to this practice point
-2. The verbatimQuote should be SHORT (ideally 1 sentence) and DIRECTLY match text in the guideline
-3. If the verbatimQuote is wrong, too broad, or doesn't exist in the guideline, find the correct quote
-4. Check the description focuses on CONTEXT and APPLICABILITY for an LLM: WHO this applies to (patient criteria), WHEN it applies, WHEN it does NOT apply (exclusions/contraindications), and WHAT the action/treatment is
-5. Verify the significance rating is appropriate
-
-Return a refined JSON object with the same fields: name, description, verbatimQuote, significance.
-If everything is correct, return the element unchanged. If the description is missing applicability context (who/when/exclusions), improve it.`;
-
-  try {
-    const result = await routeToAI({ 
-      messages: [
-        { 
-          role: 'system', 
-          content: 'You are a clinical guideline analyst reviewing an extracted element for an LLM-based decision support system. Return ONLY a valid JSON object. Ensure verbatimQuote is a SPECIFIC short quote from the guideline. Ensure description focuses on CONTEXT and APPLICABILITY - who it applies to, when it applies, when it does NOT apply, and what the action is. This helps an LLM determine relevance to a specific patient.' 
-        },
-        { 
-          role: 'user', 
-          content: prompt 
-        }
-      ]
-    }, null, secondLLM); // Use 2nd preference LLM explicitly
-
-    if (result && result.content) {
-      let cleanedContent = result.content.trim();
-      
-      // Remove markdown code blocks if present
-      if (cleanedContent.startsWith('```json')) {
-        cleanedContent = cleanedContent.replace(/^```json\s*/, '');
-      }
-      if (cleanedContent.startsWith('```')) {
-        cleanedContent = cleanedContent.replace(/^```\s*/, '');
-      }
-      if (cleanedContent.endsWith('```')) {
-        cleanedContent = cleanedContent.replace(/\s*```$/, '');
+      } else {
+        // If no result, use original batch
+        expandedElements.push(...batch);
       }
       
-      try {
-        const parsed = JSON.parse(cleanedContent);
-        if (parsed && typeof parsed === 'object' && parsed.name) {
-          console.log(`[AUDITABLE] Step 4 [${index + 1}/${total}]: Reviewed "${practicePoint.substring(0, 40)}..."`);
-          return parsed;
-        }
-      } catch (parseError) {
-        // Try to extract JSON object from response
-        const jsonMatch = cleanedContent.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          try {
-            const extracted = JSON.parse(jsonMatch[0]);
-            if (extracted && typeof extracted === 'object' && extracted.name) {
-              console.log(`[AUDITABLE] Step 4 [${index + 1}/${total}]: Reviewed "${practicePoint.substring(0, 40)}..." (extracted)`);
-              return extracted;
-            }
-          } catch (e) {
-            console.error(`[AUDITABLE] Step 4 [${index + 1}/${total}]: Failed to parse extracted JSON`);
-          }
-        }
-        console.error(`[AUDITABLE] Step 4 [${index + 1}/${total}]: Could not parse JSON, using original element`);
+      // Small delay between batches to avoid rate limiting
+      if (batchIndex < batches.length - 1) {
+        await new Promise(resolve => setTimeout(resolve, 200));
       }
-    }
-    
-    // If review fails, return original element
-    return element;
   } catch (error) {
-    console.error(`[AUDITABLE] Step 4 [${index + 1}/${total}] error: ${error.message}`);
-    return element; // Return original on error
-  }
-}
-
-// Legacy function - Process each practice point individually (sequential to avoid rate limits)
-async function structurePracticePoints(practicePointsArray, guidelineContent, userId = null) {
-  console.log('[AUDITABLE] Step 2: Structuring practice points into JSON (individual calls)...');
-  
-  // practicePointsArray is already a JSON array from Step 1
-  if (!Array.isArray(practicePointsArray) || practicePointsArray.length === 0) {
-    console.error('[AUDITABLE] Step 2: No practice points to process');
-    return [];
-  }
-  
-  const practicePoints = practicePointsArray;
-  
-  const auditableElements = [];
-  
-  // Process each practice point sequentially
-  for (let i = 0; i < practicePoints.length; i++) {
-    const element = await expandSinglePracticePoint(
-      practicePoints[i], 
-      guidelineContent, 
-      i, 
-      practicePoints.length, 
-      userId
-    );
-    
-    if (element) {
-      auditableElements.push(element);
-    }
-    
-    // Small delay between calls to avoid rate limiting (100ms)
-    if (i < practicePoints.length - 1) {
-      await new Promise(resolve => setTimeout(resolve, 100));
+      console.error(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}] error:`, error.message);
+      // Use original batch on error
+      expandedElements.push(...batch);
     }
   }
   
-  console.log(`[AUDITABLE] Step 2 complete: Structured ${auditableElements.length}/${practicePoints.length} elements`);
-  return auditableElements;
+  console.log(`[AUDITABLE-OPT] Step 2 complete: ${expandedElements.length} expanded elements`);
+  return expandedElements;
 }
 
-// Function to extract auditable elements from guideline content using AI (four-step approach)
+// Main extraction function - optimised 2-step process
+// Uses condensed content and batch processing for ~95% reduction in API calls
 async function extractAuditableElements(content, userId = null, guidelineSummary = null) {
   if (!content || typeof content !== 'string') {
     return [];
@@ -12632,54 +12488,25 @@ async function extractAuditableElements(content, userId = null, guidelineSummary
   
   try {
     const summaryInfo = guidelineSummary ? ` (with summary context)` : '';
-    console.log(`[AUDITABLE] Starting 4-step extraction process${summaryInfo}...`);
+    console.log(`[AUDITABLE-OPT] Starting optimised 2-step extraction${summaryInfo}...`);
+    console.log(`[AUDITABLE-OPT] Content length: ${content.length} chars`);
     
-    // Step 1: Identify all practice points (1st preference LLM)
-    const rawPracticePoints = await identifyPracticePoints(content, userId);
+    // Step 1: Identify and structure all practice points in one call
+    const practicePoints = await identifyAndStructurePracticePoints(content, userId, guidelineSummary);
     
-    if (!rawPracticePoints || rawPracticePoints.length === 0) {
-      console.error('[AUDITABLE] Step 1 failed to identify practice points');
+    if (!practicePoints || practicePoints.length === 0) {
+      console.error('[AUDITABLE-OPT] Step 1 failed to identify practice points');
       return [];
     }
     
-    // Step 2: Review practice points (2nd preference LLM)
-    const refinedPracticePoints = await reviewPracticePoints(rawPracticePoints, content, userId);
+    // Step 2: Batch expand if needed (optional - only if descriptions need improvement)
+    const auditableElements = await batchExpandPracticePoints(practicePoints, content, userId);
     
-    if (!refinedPracticePoints || refinedPracticePoints.length === 0) {
-      console.error('[AUDITABLE] Step 2 failed to refine practice points');
-      return [];
-    }
-    
-    // Step 3 & 4: For each practice point, expand then review
-    const auditableElements = [];
-    const total = refinedPracticePoints.length;
-    
-    for (let i = 0; i < total; i++) {
-      const practicePoint = refinedPracticePoints[i];
-      
-      // Step 3: Expand practice point (1st preference LLM) - pass summary for context
-      const expanded = await expandSinglePracticePoint(practicePoint, content, i, total, userId, guidelineSummary);
-      
-      if (expanded) {
-        // Step 4: Review expansion (2nd preference LLM)
-        const reviewed = await reviewExpandedElement(expanded, practicePoint, content, i, total, userId);
-        
-        if (reviewed) {
-          auditableElements.push(reviewed);
-        }
-      }
-      
-      // Small delay between iterations to avoid rate limiting (100ms)
-      if (i < total - 1) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-      }
-    }
-    
-    console.log(`[AUDITABLE] Extraction complete: ${auditableElements.length}/${total} auditable elements`);
+    console.log(`[AUDITABLE-OPT] Extraction complete: ${auditableElements.length} auditable elements`);
     return auditableElements;
     
   } catch (error) {
-    console.error('[AUDITABLE] Error extracting auditable elements with AI:', error);
+    console.error('[AUDITABLE-OPT] Error extracting auditable elements:', error);
     return [];
   }
 }
@@ -15074,8 +14901,8 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           });
         }
         
-        // Extract auditable elements from original content (prefer content over condensed for verbatim quotes)
-        const content = guideline.content || guideline.condensed;
+        // Prefer condensed content for efficiency (no verbatim quotes needed)
+        const content = guideline.condensed || guideline.content;
         if (!content) {
           return res.status(400).json({ 
             success: false, 
@@ -15132,8 +14959,8 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
           continue;
         }
         
-        // Extract auditable elements from original content (prefer content over condensed for verbatim quotes)
-        const content = guideline.content || guideline.condensed;
+        // Prefer condensed content for efficiency (no verbatim quotes needed)
+        const content = guideline.condensed || guideline.content;
         if (!content) {
           results.push({ 
             guidelineId, 
@@ -15219,8 +15046,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
         
         const guideline = guidelineDoc.data();
         
-        // Use original content (prefer content over condensed for verbatim quotes)
-        const content = guideline.content || guideline.condensed;
+        // Prefer condensed content for efficiency (no verbatim quotes needed)
+        const content = guideline.condensed || guideline.content;
         if (!content) {
           return res.status(400).json({ 
             success: false, 
@@ -15276,7 +15103,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
     
     for (const doc of guidelinesSnapshot.docs) {
       const guideline = doc.data();
-      const content = guideline.content || guideline.condensed;
+      // Prefer condensed content for efficiency (no verbatim quotes needed)
+      const content = guideline.condensed || guideline.content;
       
       if (!content) {
         skippedNoContent.push(doc.id);
@@ -19949,7 +19777,9 @@ IMPORTANT:
 function formatPracticePointsForPrompt(points) {
     return points.map((elem, index) => {
         const idx = elem.originalIndex !== undefined ? elem.originalIndex : index + 1;
-        return `${idx}. ${elem.name}\n   ${elem.description}\n   Quote: "${elem.verbatimQuote}"`;
+        // Handle missing verbatimQuote gracefully (optimised extraction doesn't include quotes)
+        const quoteSection = elem.verbatimQuote ? `\n   Quote: "${elem.verbatimQuote}"` : '';
+        return `${idx}. ${elem.name}\n   ${elem.description}${quoteSection}`;
     }).join('\n\n');
 }
 
