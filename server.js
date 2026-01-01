@@ -14988,9 +14988,12 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
           });
         }
         
+        // Pass summary for context if available
+        const summary = guideline.summary || guideline.humanFriendlyTitle || null;
+        
         console.log(`[REGEN-AUDITABLE] Extracting elements for ${guidelineId}, content length: ${content.length}`);
         
-        const auditableElements = await extractAuditableElements(content, userId);
+        const auditableElements = await extractAuditableElements(content, userId, summary);
         
         // Update the guideline (overwrite existing elements)
         await guidelineRef.update({
