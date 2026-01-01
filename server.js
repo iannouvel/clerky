@@ -4480,28 +4480,41 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
     }
     
     // Determine the appropriate model based on the provider
+    // First, check if 'provider' is actually a model ID from AI_PROVIDER_PREFERENCE
     let model;
-    switch (provider) {
-      case 'OpenAI':
-        model = 'gpt-3.5-turbo';
-        break;
-      case 'DeepSeek':
-        model = 'deepseek-chat';
-        break;
-      case 'Anthropic':
-        model = 'claude-3-haiku-20240307';
-        break;
-      case 'Mistral':
-        model = 'mistral-large-latest';
-        break;
-      case 'Gemini':
-        model = 'gemini-2.5-flash';
-        break;
-      case 'Groq':
-        model = 'llama-3.3-70b-versatile';
-        break;
-      default:
-        model = 'deepseek-chat';
+    const modelConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === provider);
+    if (modelConfig) {
+      // The 'provider' parameter is actually a model ID - use it directly
+      model = provider;
+      provider = modelConfig.name; // Update provider to the actual provider name for logging
+      debugLog('[DEBUG] Using model ID directly:', { model, provider });
+    } else {
+      // Legacy provider name - map to default model
+      switch (provider) {
+        case 'OpenAI':
+          model = 'gpt-3.5-turbo';
+          break;
+        case 'DeepSeek':
+          model = 'deepseek-chat';
+          break;
+        case 'Anthropic':
+          model = 'claude-3-haiku-20240307';
+          break;
+        case 'Mistral':
+          model = 'mistral-large-latest';
+          break;
+        case 'Gemini':
+          model = 'gemini-2.5-flash';
+          break;
+        case 'Groq':
+          model = 'llama-3.3-70b-versatile';
+          break;
+        case 'Grok':
+          model = 'grok-4-1-fast-reasoning';
+          break;
+        default:
+          model = 'deepseek-chat';
+      }
     }
     // If preferredProvider was explicitly passed, tell sendToAI to skip user preference override
     // This is critical for chunk distribution to work - each chunk should use its assigned provider
