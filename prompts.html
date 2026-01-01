@@ -234,41 +234,47 @@
 
             async function loadPrompts() {
                 try {
-                    console.log('Loading prompts from GitHub...');
-                    // Load directly from GitHub raw content
-                    const response = await fetch('https://raw.githubusercontent.com/iannouvel/clerky/main/prompts.json');
-                    if (!response.ok) {
-                        console.log('GitHub fetch failed, trying local file...');
-                        // If GitHub fails, try local file
-                        const localResponse = await fetch('prompts.json');
-                        if (!localResponse.ok) {
-                            throw new Error(`HTTP error! status: ${localResponse.status}`);
-                        }
-                        defaultPrompts = await localResponse.json();
-                    } else {
-                        defaultPrompts = await response.json();
+                    console.log('Loading prompts from server...');
+                    
+                    // Get auth token
+                    const user = auth.currentUser;
+                    const headers = {};
+                    if (user) {
+                        const token = await user.getIdToken();
+                        headers['Authorization'] = `Bearer ${token}`;
                     }
                     
-                    console.log('Loaded prompts:', defaultPrompts);
+                    // Load from server (tries Firestore first, then falls back to prompts.json)
+                    const response = await fetch('https://clerky-uzni.onrender.com/getPrompts', { headers });
                     
-                    // Always use loaded prompts as the source of truth
-                    currentPrompts = defaultPrompts;
+                    if (!response.ok) {
+                        throw new Error(`Server error: ${response.status}`);
+                    }
                     
-                    // Update localStorage with latest prompts
-                    localStorage.setItem('prompts', JSON.stringify(currentPrompts));
-                    
-                    console.log('Updated prompts:', currentPrompts);
-                    setupPromptSelector();
+                    const result = await response.json();
+                    if (result.success && result.prompts) {
+                        defaultPrompts = result.prompts;
+                        currentPrompts = result.prompts;
+                        console.log(`Loaded prompts from ${result.source}:`, currentPrompts);
+                        setupPromptSelector();
+                    } else {
+                        throw new Error(result.message || 'Failed to load prompts');
+                    }
                 } catch (error) {
                     console.error('Error loading prompts:', error);
                     showStatus('Error loading prompts: ' + error.message, 'error');
                     
-                    // As a last resort, try to load from localStorage
-                    const savedPrompts = localStorage.getItem('prompts');
-                    if (savedPrompts) {
-                        console.log('Loading from localStorage as fallback');
-                        currentPrompts = JSON.parse(savedPrompts);
-                        setupPromptSelector();
+                    // Fallback to local file
+                    try {
+                        console.log('Trying local prompts.json as fallback...');
+                        const localResponse = await fetch('prompts.json');
+                        if (localResponse.ok) {
+                            defaultPrompts = await localResponse.json();
+                            currentPrompts = defaultPrompts;
+                            setupPromptSelector();
+                        }
+                    } catch (fallbackError) {
+                        console.error('Fallback also failed:', fallbackError);
                     }
                 }
             }
@@ -324,7 +330,7 @@
 
             async function sendUpdatedPromptsToServer(updatedPrompts) {
                 try {
-                    console.log('Sending updated prompts to server:', updatedPrompts);
+                    console.log('Saving prompts to Firestore...');
 
                     // Create FormData object
                     const formData = new FormData();
@@ -335,9 +341,7 @@
                     if (!user) {
                         throw new Error('Please sign in first');
                     }
-                    console.log('User is signed in:', user.email);
                     const token = await user.getIdToken();
-                    console.log('Retrieved ID token');
 
                     const response = await fetch('https://clerky-uzni.onrender.com/updatePrompts', {
                         method: 'POST',
@@ -351,15 +355,15 @@
                     console.log('Server response:', result);
 
                     if (result.success) {
-                        showStatus('Prompts updated successfully on server!', 'success');
-                        // Reload prompts from GitHub to ensure we have the latest version
-                        await loadPrompts();
+                        showStatus('Prompts saved to Firestore successfully!', 'success');
+                        // Update our local reference
+                        defaultPrompts = { ...updatedPrompts };
                     } else {
-                        showStatus('Failed to update prompts on server: ' + result.message, 'error');
+                        showStatus('Failed to save prompts: ' + result.message, 'error');
                     }
                 } catch (error) {
-                    console.error('Error sending updated prompts to server:', error);
-                    showStatus('Error updating prompts on server', 'error');
+                    console.error('Error saving prompts:', error);
+                    showStatus('Error saving prompts: ' + error.message, 'error');
                 }
             }
 
