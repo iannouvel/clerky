@@ -873,12 +873,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     
                     <div class="logs-detail-section">
                         <h4>Prompt (${log.promptLength || 0} chars)</h4>
-                        <pre>${escapeHtml(log.fullPrompt || 'No prompt content available')}</pre>
+                        <div class="logs-formatted-content">${formatLogContent(log.fullPrompt, 'prompt')}</div>
                     </div>
                     
                     <div class="logs-detail-section">
                         <h4>Response (${log.responseLength || 0} chars)</h4>
-                        <pre>${escapeHtml(log.fullResponse || (log.success ? 'No response content available' : log.errorMessage || 'Error - no response'))}</pre>
+                        <div class="logs-formatted-content">${formatLogContent(log.fullResponse || (log.success ? '' : log.errorMessage), 'response')}</div>
                     </div>
                 `;
             }
@@ -890,6 +890,43 @@ document.addEventListener('DOMContentLoaded', async function() {
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+        
+        // Format log content for display (handles JSON messages and plain text)
+        function formatLogContent(text, type = 'prompt') {
+            if (!text) return '<span style="color:#999;font-style:italic;">No content available</span>';
+            
+            try {
+                // Try to parse as JSON (OpenAI message format)
+                const parsed = JSON.parse(text);
+                
+                if (Array.isArray(parsed)) {
+                    // Array of messages (e.g., [{"role":"user","content":"..."}])
+                    return parsed.map((msg, idx) => {
+                        const role = msg.role || 'unknown';
+                        const content = msg.content || '';
+                        const roleColor = role === 'system' ? '#6c757d' : role === 'user' ? '#007bff' : role === 'assistant' ? '#28a745' : '#333';
+                        const roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
+                        
+                        return `<div style="margin-bottom:${idx < parsed.length - 1 ? '16px' : '0'};">
+                            <div style="font-weight:600;color:${roleColor};margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">${escapeHtml(roleLabel)}</div>
+                            <div style="white-space:pre-wrap;line-height:1.6;color:#333;">${escapeHtml(content)}</div>
+                        </div>`;
+                    }).join('');
+                } else if (typeof parsed === 'object') {
+                    // Single message object
+                    if (parsed.content) {
+                        return `<div style="white-space:pre-wrap;line-height:1.6;color:#333;">${escapeHtml(parsed.content)}</div>`;
+                    }
+                    // Generic object - pretty print
+                    return `<div style="white-space:pre-wrap;line-height:1.5;color:#333;">${escapeHtml(JSON.stringify(parsed, null, 2))}</div>`;
+                }
+            } catch (e) {
+                // Not valid JSON - treat as plain text
+            }
+            
+            // Plain text - just format with proper line breaks
+            return `<div style="white-space:pre-wrap;line-height:1.6;color:#333;">${escapeHtml(text)}</div>`;
         }
         
         // Set up logs UI event listeners
@@ -4218,6 +4255,478 @@ document.addEventListener('DOMContentLoaded', async function() {
         const analyticsTimeRange = document.getElementById('analyticsTimeRange');
         if (analyticsTimeRange) {
             analyticsTimeRange.addEventListener('change', fetchUsageAnalytics);
+        }
+
+        // ============================================
+        // TRANSCRIPTS MANAGEMENT PANEL
+        // ============================================
+        
+        // Store loaded conditions
+        let loadedConditions = {};
+        let currentEditingConditionId = null;
+        
+        // Load conditions button
+        const loadTranscriptsBtn = document.getElementById('loadTranscriptsBtn');
+        if (loadTranscriptsBtn) {
+            loadTranscriptsBtn.addEventListener('click', loadAllConditions);
+        }
+        
+        // Add condition button
+        const addConditionBtn = document.getElementById('addConditionBtn');
+        if (addConditionBtn) {
+            addConditionBtn.addEventListener('click', addNewCondition);
+        }
+        
+        // Filter and search handlers
+        const transcriptCategoryFilter = document.getElementById('transcriptCategoryFilter');
+        const transcriptStatusFilter = document.getElementById('transcriptStatusFilter');
+        const transcriptSearchInput = document.getElementById('transcriptSearchInput');
+        
+        if (transcriptCategoryFilter) {
+            transcriptCategoryFilter.addEventListener('change', filterAndRenderConditions);
+        }
+        if (transcriptStatusFilter) {
+            transcriptStatusFilter.addEventListener('change', filterAndRenderConditions);
+        }
+        if (transcriptSearchInput) {
+            transcriptSearchInput.addEventListener('input', debounce(filterAndRenderConditions, 300));
+        }
+        
+        // Modal handlers
+        const closeTranscriptEditorBtn = document.getElementById('closeTranscriptEditorBtn');
+        if (closeTranscriptEditorBtn) {
+            closeTranscriptEditorBtn.addEventListener('click', closeTranscriptEditor);
+        }
+        
+        const saveTranscriptBtn = document.getElementById('saveTranscriptBtn');
+        if (saveTranscriptBtn) {
+            saveTranscriptBtn.addEventListener('click', saveCurrentTranscript);
+        }
+        
+        const clearTranscriptBtn = document.getElementById('clearTranscriptBtn');
+        if (clearTranscriptBtn) {
+            clearTranscriptBtn.addEventListener('click', clearCurrentTranscript);
+        }
+        
+        const generateTranscriptBtn = document.getElementById('generateTranscriptBtn');
+        if (generateTranscriptBtn) {
+            generateTranscriptBtn.addEventListener('click', generateTranscriptWithAI);
+        }
+        
+        // Close modal when clicking backdrop
+        const transcriptEditorModal = document.getElementById('transcriptEditorModal');
+        if (transcriptEditorModal) {
+            transcriptEditorModal.addEventListener('click', (e) => {
+                if (e.target === transcriptEditorModal) {
+                    closeTranscriptEditor();
+                }
+            });
+        }
+        
+        // Simple debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        
+        // Load all conditions from server
+        async function loadAllConditions() {
+            const tableBody = document.getElementById('transcriptsTableBody');
+            const summary = document.getElementById('transcriptsSummary');
+            const btn = document.getElementById('loadTranscriptsBtn');
+            
+            try {
+                btn.disabled = true;
+                btn.textContent = '⏳ Loading...';
+                tableBody.innerHTML = '<tr><td colspan="5" style="padding:30px;text-align:center;color:#666;">Loading conditions...</td></tr>';
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/clinicalConditions`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                if (!data.success) {
+                    throw new Error(data.error || 'Failed to load conditions');
+                }
+                
+                // Store conditions in flat structure for easier filtering
+                loadedConditions = {};
+                for (const [category, conditions] of Object.entries(data.conditions)) {
+                    for (const [name, conditionData] of Object.entries(conditions)) {
+                        loadedConditions[conditionData.id] = {
+                            ...conditionData,
+                            category: category
+                        };
+                    }
+                }
+                
+                const totalConditions = Object.keys(loadedConditions).length;
+                const withTranscripts = Object.values(loadedConditions).filter(c => c.hasTranscript).length;
+                summary.textContent = `${totalConditions} conditions (${withTranscripts} with transcripts)`;
+                
+                filterAndRenderConditions();
+                
+            } catch (error) {
+                console.error('[TRANSCRIPTS] Error loading conditions:', error);
+                tableBody.innerHTML = `<tr><td colspan="5" style="padding:30px;text-align:center;color:#dc3545;">Error: ${error.message}</td></tr>`;
+                summary.textContent = 'Error loading conditions';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🔄 Load Conditions';
+            }
+        }
+        
+        // Filter and render conditions based on current filters
+        function filterAndRenderConditions() {
+            const tableBody = document.getElementById('transcriptsTableBody');
+            const categoryFilter = document.getElementById('transcriptCategoryFilter').value;
+            const statusFilter = document.getElementById('transcriptStatusFilter').value;
+            const searchTerm = document.getElementById('transcriptSearchInput').value.toLowerCase().trim();
+            
+            // Filter conditions
+            let filteredConditions = Object.values(loadedConditions);
+            
+            if (categoryFilter !== 'all') {
+                filteredConditions = filteredConditions.filter(c => c.category === categoryFilter);
+            }
+            
+            if (statusFilter === 'has-transcript') {
+                filteredConditions = filteredConditions.filter(c => c.hasTranscript);
+            } else if (statusFilter === 'no-transcript') {
+                filteredConditions = filteredConditions.filter(c => !c.hasTranscript);
+            }
+            
+            if (searchTerm) {
+                filteredConditions = filteredConditions.filter(c => 
+                    c.name.toLowerCase().includes(searchTerm) ||
+                    c.id.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            // Sort by category then name
+            filteredConditions.sort((a, b) => {
+                if (a.category !== b.category) {
+                    return a.category.localeCompare(b.category);
+                }
+                return a.name.localeCompare(b.name);
+            });
+            
+            // Render table
+            if (filteredConditions.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="5" style="padding:30px;text-align:center;color:#666;">No conditions match your filters</td></tr>';
+                return;
+            }
+            
+            tableBody.innerHTML = filteredConditions.map(condition => {
+                const categoryBadge = condition.category === 'obstetrics' 
+                    ? '<span style="background:#e3f2fd;color:#1976d2;padding:2px 8px;border-radius:12px;font-size:11px;">Obstetrics</span>'
+                    : '<span style="background:#fce4ec;color:#c2185b;padding:2px 8px;border-radius:12px;font-size:11px;">Gynaecology</span>';
+                
+                const transcriptBadge = condition.hasTranscript
+                    ? '<span style="background:#d4edda;color:#155724;padding:2px 8px;border-radius:12px;font-size:11px;">✓ Yes</span>'
+                    : '<span style="background:#f8f9fa;color:#6c757d;padding:2px 8px;border-radius:12px;font-size:11px;">✗ No</span>';
+                
+                const preview = condition.transcript 
+                    ? condition.transcript.substring(0, 80).replace(/</g, '&lt;').replace(/>/g, '&gt;') + '...'
+                    : '<span style="color:#999;font-style:italic;">No transcript</span>';
+                
+                return `<tr style="border-bottom:1px solid #eee;">
+                    <td style="padding:10px;font-weight:500;">${condition.name}</td>
+                    <td style="padding:10px;">${categoryBadge}</td>
+                    <td style="padding:10px;text-align:center;">${transcriptBadge}</td>
+                    <td style="padding:10px;font-size:11px;color:#666;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${preview}</td>
+                    <td style="padding:10px;text-align:center;">
+                        <button class="dev-btn edit-transcript-btn" data-condition-id="${condition.id}" style="padding:4px 8px;font-size:11px;margin-right:4px;">✏️ Edit</button>
+                        <button class="dev-btn delete-condition-btn" data-condition-id="${condition.id}" data-condition-name="${condition.name}" style="padding:4px 8px;font-size:11px;background:#dc3545;color:#fff;border-color:#dc3545;">🗑️</button>
+                    </td>
+                </tr>`;
+            }).join('');
+            
+            // Attach event listeners to buttons
+            document.querySelectorAll('.edit-transcript-btn').forEach(btn => {
+                btn.addEventListener('click', () => openTranscriptEditor(btn.dataset.conditionId));
+            });
+            
+            document.querySelectorAll('.delete-condition-btn').forEach(btn => {
+                btn.addEventListener('click', () => deleteCondition(btn.dataset.conditionId, btn.dataset.conditionName));
+            });
+        }
+        
+        // Add new condition
+        async function addNewCondition() {
+            const nameInput = document.getElementById('newConditionName');
+            const categorySelect = document.getElementById('newConditionCategory');
+            const statusDiv = document.getElementById('addConditionStatus');
+            const btn = document.getElementById('addConditionBtn');
+            
+            const name = nameInput.value.trim();
+            const category = categorySelect.value;
+            
+            if (!name) {
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#dc3545';
+                statusDiv.textContent = 'Please enter a condition name';
+                return;
+            }
+            
+            try {
+                btn.disabled = true;
+                btn.textContent = '⏳ Adding...';
+                statusDiv.style.display = 'none';
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/addClinicalCondition`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, category })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#28a745';
+                statusDiv.textContent = `✅ Added "${name}" successfully!`;
+                
+                // Clear the input
+                nameInput.value = '';
+                
+                // Reload the conditions list
+                await loadAllConditions();
+                
+            } catch (error) {
+                console.error('[TRANSCRIPTS] Error adding condition:', error);
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#dc3545';
+                statusDiv.textContent = `❌ Error: ${error.message}`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '➕ Add';
+            }
+        }
+        
+        // Delete condition
+        async function deleteCondition(conditionId, conditionName) {
+            if (!confirm(`Are you sure you want to delete "${conditionName}"?\n\nThis will also delete any associated transcript. This action cannot be undone.`)) {
+                return;
+            }
+            
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/deleteClinicalCondition/${encodeURIComponent(conditionId)}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                alert(`✅ Deleted "${conditionName}" successfully!`);
+                
+                // Reload the conditions list
+                await loadAllConditions();
+                
+            } catch (error) {
+                console.error('[TRANSCRIPTS] Error deleting condition:', error);
+                alert(`❌ Error deleting condition: ${error.message}`);
+            }
+        }
+        
+        // Open transcript editor modal
+        async function openTranscriptEditor(conditionId) {
+            const modal = document.getElementById('transcriptEditorModal');
+            const titleEl = document.getElementById('transcriptEditorTitle');
+            const conditionIdInput = document.getElementById('transcriptEditorConditionId');
+            const contentTextarea = document.getElementById('transcriptEditorContent');
+            const statusDiv = document.getElementById('transcriptEditorStatus');
+            
+            currentEditingConditionId = conditionId;
+            
+            // Get condition data
+            const condition = loadedConditions[conditionId];
+            if (!condition) {
+                alert('Condition not found');
+                return;
+            }
+            
+            titleEl.textContent = `Edit Transcript: ${condition.name}`;
+            conditionIdInput.value = conditionId;
+            contentTextarea.value = condition.transcript || '';
+            statusDiv.style.display = 'none';
+            
+            modal.style.display = 'flex';
+        }
+        
+        // Close transcript editor modal
+        function closeTranscriptEditor() {
+            const modal = document.getElementById('transcriptEditorModal');
+            modal.style.display = 'none';
+            currentEditingConditionId = null;
+        }
+        
+        // Save current transcript
+        async function saveCurrentTranscript() {
+            if (!currentEditingConditionId) return;
+            
+            const contentTextarea = document.getElementById('transcriptEditorContent');
+            const statusDiv = document.getElementById('transcriptEditorStatus');
+            const btn = document.getElementById('saveTranscriptBtn');
+            
+            const transcript = contentTextarea.value.trim();
+            
+            try {
+                btn.disabled = true;
+                btn.textContent = '⏳ Saving...';
+                statusDiv.style.display = 'none';
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/saveTranscript/${encodeURIComponent(currentEditingConditionId)}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ transcript: transcript || null })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#28a745';
+                statusDiv.textContent = '✅ Transcript saved successfully!';
+                
+                // Update the local cache
+                if (loadedConditions[currentEditingConditionId]) {
+                    loadedConditions[currentEditingConditionId].transcript = transcript || null;
+                    loadedConditions[currentEditingConditionId].hasTranscript = !!transcript;
+                }
+                
+                // Re-render the table
+                filterAndRenderConditions();
+                
+                // Close modal after a short delay
+                setTimeout(() => closeTranscriptEditor(), 1000);
+                
+            } catch (error) {
+                console.error('[TRANSCRIPTS] Error saving transcript:', error);
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#dc3545';
+                statusDiv.textContent = `❌ Error: ${error.message}`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '💾 Save Transcript';
+            }
+        }
+        
+        // Clear current transcript
+        async function clearCurrentTranscript() {
+            if (!currentEditingConditionId) return;
+            
+            const condition = loadedConditions[currentEditingConditionId];
+            if (!confirm(`Are you sure you want to clear the transcript for "${condition?.name}"?`)) {
+                return;
+            }
+            
+            const contentTextarea = document.getElementById('transcriptEditorContent');
+            contentTextarea.value = '';
+            await saveCurrentTranscript();
+        }
+        
+        // Generate transcript with AI
+        async function generateTranscriptWithAI() {
+            if (!currentEditingConditionId) return;
+            
+            const contentTextarea = document.getElementById('transcriptEditorContent');
+            const statusDiv = document.getElementById('transcriptEditorStatus');
+            const btn = document.getElementById('generateTranscriptBtn');
+            
+            const condition = loadedConditions[currentEditingConditionId];
+            
+            if (contentTextarea.value.trim() && !confirm('This will replace the current transcript content. Continue?')) {
+                return;
+            }
+            
+            try {
+                btn.disabled = true;
+                btn.textContent = '⏳ Generating...';
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#17a2b8';
+                statusDiv.textContent = `🤖 Generating transcript for "${condition?.name}" using AI...`;
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/generateTranscript/${encodeURIComponent(currentEditingConditionId)}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ forceRegenerate: true })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.error || `Server error: ${response.status}`);
+                }
+                
+                if (data.transcript) {
+                    contentTextarea.value = data.transcript;
+                    
+                    // Update the local cache
+                    if (loadedConditions[currentEditingConditionId]) {
+                        loadedConditions[currentEditingConditionId].transcript = data.transcript;
+                        loadedConditions[currentEditingConditionId].hasTranscript = true;
+                    }
+                    
+                    // Re-render the table
+                    filterAndRenderConditions();
+                }
+                
+                statusDiv.style.color = '#28a745';
+                statusDiv.textContent = '✅ Transcript generated and saved successfully!';
+                
+            } catch (error) {
+                console.error('[TRANSCRIPTS] Error generating transcript:', error);
+                statusDiv.style.display = 'block';
+                statusDiv.style.color = '#dc3545';
+                statusDiv.textContent = `❌ Error: ${error.message}`;
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🤖 Generate with AI';
+            }
         }
 
     } catch (error) {
