@@ -1435,7 +1435,7 @@
                     // Get guideline name (handle both string and object format)
                     let guidelineName = typeof guideline === 'string' ? 
                         guideline.replace(/\.(txt|pdf)$/i, '') : 
-                        (guideline.humanFriendlyName || guideline.title || guideline.name || '');
+                        (guideline.displayName || guideline.humanFriendlyName || guideline.title || guideline.name || '');
                     
                     // Create styled components for the title
                     const nameSpan = document.createElement('span');

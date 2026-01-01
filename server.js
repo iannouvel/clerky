@@ -21934,7 +21934,7 @@ Always base your answers on the provided guidelines.`;
         // Create user prompt with question and guidelines
         const guidelinesText = guidelinesWithContent.map(guideline => {
             // Include the guideline ID explicitly so the AI can tag advice with it
-            let guidelineText = `**${guideline.title || guideline.id}**`;
+            let guidelineText = `**${guideline.displayName || guideline.humanFriendlyName || guideline.title || guideline.id}**`;
             guidelineText += `\n[GuidelineID: ${guideline.id}]`;  // AI will use this in [GuidelineID: xxx] tags
             if (guideline.organisation) {
                 guidelineText += ` (${guideline.organisation})`;
