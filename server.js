@@ -20089,13 +20089,13 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
 async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null) {
     console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" for patient...`);
     
-    // Load interpretation hints if guidelineId is provided
+    // Load accumulated learning if guidelineId is provided
     let hintsText = '';
     if (guidelineId) {
-        const hints = await loadGuidelineHints(guidelineId);
-        if (hints && hints.hints && hints.hints.length > 0) {
-            hintsText = formatHintsForPrompt(hints);
-            console.log(`[SEMANTIC-ANALYSIS] Loaded ${hints.hints.length} interpretation hints for this guideline`);
+        const learning = await loadGuidelineLearning(guidelineId);
+        if (learning && learning.learningText) {
+            hintsText = formatLearningForPrompt(learning);
+            console.log(`[SEMANTIC-ANALYSIS] Loaded accumulated learning for this guideline (version ${learning.version})`);
         }
     }
     
@@ -20375,11 +20375,14 @@ async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, us
         return null;
     }
     
-    const systemPrompt = `You are an expert at analyzing AI performance on clinical guidelines. Your task is to extract SPECIFIC, ACTIONABLE lessons from evaluation feedback that will help future AI attempts avoid the same mistakes.
+    const systemPrompt = `You are an expert at analysing AI performance on clinical guidelines. Your task is to write a concise prose summary of the lessons learned from this evaluation that will help future AI attempts avoid the same mistakes.
 
-Focus on patterns that are GUIDELINE-SPECIFIC, not generic advice. Be concise but specific.
+Write 1-3 short paragraphs that capture:
+- What patterns the AI missed or got wrong
+- Specific guidance for correctly interpreting this guideline
+- Clinical equivalences or nuances that should be recognised
 
-Return ONLY valid JSON - no markdown, no explanations.`;
+Focus on GUIDELINE-SPECIFIC insights, not generic advice. Write in clear, direct prose - no bullet points, no numbered lists, no JSON. The text should read naturally and be immediately usable as guidance.`;
 
     const userPrompt = `GUIDELINE: ${guidelineTitle}
 
@@ -20391,24 +20394,7 @@ EVALUATION RESULTS:
 AI'S SUGGESTIONS THAT WERE EVALUATED:
 ${JSON.stringify(suggestions, null, 2)}
 
-Based on this evaluation, extract specific lessons learned. For each lesson, explain:
-1. What the AI got wrong or missed
-2. Why this might have happened
-3. What future AIs should do differently
-
-Return JSON:
-{
-  "lessons": [
-    {
-      "type": "missed" | "incorrect" | "redundant",
-      "issue": "Brief description of what went wrong",
-      "hint": "Specific advice for future attempts, e.g., 'When analyzing this guideline, remember that X covers Y' or 'Do not suggest Z when the plan already includes W'"
-    }
-  ],
-  "summary": "One sentence summary of the key learning for this guideline"
-}
-
-Only include lessons that are SPECIFIC to this guideline, not generic advice.`;
+Based on this evaluation, write a concise prose summary (1-3 paragraphs) of the key lessons learned. Focus on specific, actionable guidance that will help future AI attempts correctly analyse this guideline. Do not use bullet points or numbered lists - write in natural prose.`;
 
     const messages = [
         { role: 'system', content: systemPrompt },
@@ -20422,122 +20408,166 @@ Only include lessons that are SPECIFIC to this guideline, not generic advice.`;
         return null;
     }
     
-    try {
-        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const parsed = JSON.parse(cleanedContent);
-        console.log(`[EVOLVE-LESSONS] Extracted ${parsed.lessons?.length || 0} lessons`);
-        return parsed;
-    } catch (e) {
-        console.error('[EVOLVE-LESSONS] Failed to parse lessons:', e.message);
-        return null;
-    }
+    // Return the prose text directly (no JSON parsing needed)
+    const learningText = result.content.trim();
+    console.log(`[EVOLVE-LESSONS] Extracted learning (${learningText.length} chars)`);
+    return { learningText };
 }
 
-// Merge new lessons with existing hints and store in Firestore
-async function storeGuidelineHints(guidelineId, newLessons) {
-    if (!newLessons || !newLessons.lessons || newLessons.lessons.length === 0) {
+// Fold new learning into existing learning using LLM
+async function foldLearningWithLLM(existingLearning, newLearning, guidelineTitle, userId) {
+    console.log(`[EVOLVE-FOLD] Folding new learning into existing for "${guidelineTitle}"...`);
+    
+    const systemPrompt = `You are an expert at synthesising clinical guideline knowledge. Your task is to merge new learning insights with existing accumulated knowledge, creating a single coherent document.
+
+Guidelines for folding:
+- Preserve all existing insights that remain valid and useful
+- Incorporate new learning without duplicating existing content
+- If new learning contradicts or supersedes existing content, update accordingly
+- Keep the result concise: 2-3 paragraphs maximum
+- Prioritise the most actionable and specific guidance
+- Write in clear, direct prose - no bullet points, no numbered lists
+- Focus on guideline-specific patterns and clinical nuances`;
+
+    const userPrompt = `GUIDELINE: ${guidelineTitle}
+
+EXISTING ACCUMULATED LEARNING:
+${existingLearning}
+
+NEW LEARNING TO INCORPORATE:
+${newLearning}
+
+Synthesise these into a single, coherent document (2-3 paragraphs) that captures all the important insights. Eliminate redundancy while preserving all unique guidance. Write in natural prose.`;
+
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[EVOLVE-FOLD] No AI response, keeping new learning only');
+        return newLearning;
+    }
+    
+    const foldedText = result.content.trim();
+    console.log(`[EVOLVE-FOLD] Folded learning (${foldedText.length} chars)`);
+    return foldedText;
+}
+
+// Store guideline learning - folds new learning into existing using LLM
+async function storeGuidelineLearning(guidelineId, newLessons, guidelineTitle, userId) {
+    if (!newLessons || !newLessons.learningText) {
         return;
     }
     
-    console.log(`[EVOLVE-HINTS] Storing ${newLessons.lessons.length} new hints for guideline ${guidelineId}`);
+    const newLearningText = newLessons.learningText;
+    console.log(`[EVOLVE-LEARNING] Storing new learning for guideline ${guidelineId} (${newLearningText.length} chars)`);
     
     try {
-        const hintsRef = db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints');
-        const hintsDoc = await hintsRef.get();
+        const learningRef = db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints');
+        const learningDoc = await learningRef.get();
         
-        let existingHints = [];
-        if (hintsDoc.exists) {
-            existingHints = hintsDoc.data()?.hints || [];
+        let finalLearningText;
+        let newVersion = 1;
+        
+        if (learningDoc.exists) {
+            const existingData = learningDoc.data();
+            const existingLearning = existingData?.learningText || '';
+            newVersion = (existingData?.version || 0) + 1;
+            
+            if (existingLearning) {
+                // Fold new learning into existing using LLM
+                finalLearningText = await foldLearningWithLLM(existingLearning, newLearningText, guidelineTitle, userId);
+                console.log(`[EVOLVE-LEARNING] Folded learning for ${guidelineTitle} (version ${newVersion})`);
+            } else {
+                finalLearningText = newLearningText;
+            }
+        } else {
+            finalLearningText = newLearningText;
         }
         
-        // Merge new lessons, avoiding duplicates (simple text comparison)
-        const existingHintTexts = new Set(existingHints.map(h => h.hint.toLowerCase().trim()));
-        const newHints = newLessons.lessons.filter(lesson => 
-            !existingHintTexts.has(lesson.hint.toLowerCase().trim())
-        ).map(lesson => ({
-            type: lesson.type,
-            issue: lesson.issue,
-            hint: lesson.hint,
-            addedAt: new Date().toISOString()
-        }));
-        
-        if (newHints.length === 0) {
-            console.log('[EVOLVE-HINTS] All lessons already exist, skipping');
-            return;
-        }
-        
-        const mergedHints = [...existingHints, ...newHints];
-        
-        // Keep only the most recent 10 hints to avoid prompt bloat
-        const trimmedHints = mergedHints.slice(-10);
-        
-        await hintsRef.set({
-            hints: trimmedHints,
+        await learningRef.set({
+            learningText: finalLearningText,
             lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
-            summary: newLessons.summary || null
-        }, { merge: true });
+            version: newVersion
+        });
         
-        console.log(`[EVOLVE-HINTS] Stored ${newHints.length} new hints (total: ${trimmedHints.length})`);
+        console.log(`[EVOLVE-LEARNING] Stored learning (version ${newVersion}, ${finalLearningText.length} chars)`);
         
     } catch (error) {
-        console.error('[EVOLVE-HINTS] Error storing hints:', error);
+        console.error('[EVOLVE-LEARNING] Error storing learning:', error);
     }
 }
 
 // Load interpretation hints for a guideline
-async function loadGuidelineHints(guidelineId) {
+// Load guideline learning (prose format)
+async function loadGuidelineLearning(guidelineId) {
     try {
-        const hintsDoc = await db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints').get();
+        const learningDoc = await db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints').get();
         
-        if (!hintsDoc.exists) {
+        if (!learningDoc.exists) {
             return null;
         }
         
-        const data = hintsDoc.data();
-        return {
-            hints: data.hints || [],
-            summary: data.summary || null
-        };
+        const data = learningDoc.data();
+        
+        // Handle new prose format
+        if (data.learningText) {
+            return {
+                learningText: data.learningText,
+                version: data.version || 1
+            };
+        }
+        
+        // Backwards compatibility: convert old hints array to prose if present
+        if (data.hints && data.hints.length > 0) {
+            const legacyText = data.hints.map(h => h.hint).join(' ');
+            return {
+                learningText: legacyText,
+                version: 0  // Indicates legacy format
+            };
+        }
+        
+        return null;
     } catch (error) {
-        console.error(`[EVOLVE-HINTS] Error loading hints for ${guidelineId}:`, error);
+        console.error(`[EVOLVE-LEARNING] Error loading learning for ${guidelineId}:`, error);
         return null;
     }
 }
 
-// Format hints for inclusion in prompts
-function formatHintsForPrompt(hints) {
-    if (!hints || !hints.hints || hints.hints.length === 0) {
+// Alias for backwards compatibility
+const loadGuidelineHints = loadGuidelineLearning;
+
+// Format learning for inclusion in prompts
+function formatLearningForPrompt(learning) {
+    if (!learning || !learning.learningText) {
         return '';
     }
     
-    let formatted = '\n\nIMPORTANT - LESSONS FROM PREVIOUS ATTEMPTS:\n';
-    formatted += 'Previous AI attempts to analyze this guideline have made the following mistakes. Learn from them:\n\n';
-    
-    hints.hints.forEach((hint, idx) => {
-        const typeLabel = hint.type === 'missed' ? '⚠️ OFTEN MISSED' : 
-                         hint.type === 'incorrect' ? '❌ COMMON ERROR' : 
-                         '🔄 REDUNDANCY TRAP';
-        formatted += `${idx + 1}. ${typeLabel}: ${hint.hint}\n`;
-    });
-    
-    if (hints.summary) {
-        formatted += `\nKEY LEARNING: ${hints.summary}\n`;
-    }
+    let formatted = '\n\nIMPORTANT - ACCUMULATED LEARNING FROM PREVIOUS ATTEMPTS:\n';
+    formatted += 'The following insights have been learned from previous AI attempts to analyse this guideline. Apply these lessons:\n\n';
+    formatted += learning.learningText;
+    formatted += '\n';
     
     return formatted;
 }
+
+// Alias for backwards compatibility
+const formatHintsForPrompt = formatLearningForPrompt;
 
 // Refine suggestions using a different LLM - takes previous output + evaluation and improves
 async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
     console.log(`[EVOLVE-REFINE] Refining suggestions with ${targetProvider}...`);
     
-    // Load interpretation hints if guidelineId is provided
+    // Load accumulated learning if guidelineId is provided
     let hintsText = '';
     if (guidelineId) {
-        const hints = await loadGuidelineHints(guidelineId);
-        if (hints && hints.hints && hints.hints.length > 0) {
-            hintsText = formatHintsForPrompt(hints);
-            console.log(`[EVOLVE-REFINE] Loaded ${hints.hints.length} interpretation hints for ${targetProvider}`);
+        const learning = await loadGuidelineLearning(guidelineId);
+        if (learning && learning.learningText) {
+            hintsText = formatLearningForPrompt(learning);
+            console.log(`[EVOLVE-REFINE] Loaded accumulated learning for ${targetProvider} (version ${learning.version})`);
         }
     }
     
@@ -20761,9 +20791,9 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
             // Extract and store lessons learned for this guideline
             try {
                 const lessons = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
-                if (lessons && lessons.lessons && lessons.lessons.length > 0) {
-                    await storeGuidelineHints(scenarioGuidelineId, lessons);
-                    console.log(`[EVOLVE] Stored ${lessons.lessons.length} lessons for ${guidelineTitle}`);
+                if (lessons && lessons.learningText) {
+                    await storeGuidelineLearning(scenarioGuidelineId, lessons, guidelineTitle, userId);
+                    console.log(`[EVOLVE] Stored learning for ${guidelineTitle}`);
                 }
             } catch (lessonError) {
                 console.error('[EVOLVE] Error extracting/storing lessons:', lessonError.message);
@@ -20987,15 +21017,15 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 
                 timer.step(`Scenario ${scenarioIdx + 1} ${displayName} evaluation`);
                 
-                // Extract lessons learned and store as hints after EACH LLM iteration
+                // Extract lessons learned and store after EACH LLM iteration
                 // This allows subsequent LLMs to benefit from accumulated learning within the same run
                 if (!evaluation.error && (evaluation.missedRecommendations?.length > 0 || 
                     evaluation.suggestionEvaluations?.some(s => s.assessment === 'incorrect' || s.assessment === 'redundant'))) {
                     try {
                         const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
-                        if (lessons && lessons.lessons && lessons.lessons.length > 0) {
-                            await storeGuidelineHints(scenarioGuidelineId, lessons);
-                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons from ${displayName} for ${guidelineTitle}`);
+                        if (lessons && lessons.learningText) {
+                            await storeGuidelineLearning(scenarioGuidelineId, lessons, guidelineTitle, userId);
+                            console.log(`[EVOLVE-SEQ] Stored learning from ${displayName} for ${guidelineTitle}`);
                         }
                     } catch (lessonError) {
                         console.error(`[EVOLVE-SEQ] Error extracting/storing lessons from ${displayName}:`, lessonError.message);
@@ -21053,13 +21083,13 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
 async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
     console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" with ${targetProvider}...`);
     
-    // Load interpretation hints if guidelineId is provided
+    // Load accumulated learning if guidelineId is provided
     let hintsText = '';
     if (guidelineId) {
-        const hints = await loadGuidelineHints(guidelineId);
-        if (hints && hints.hints && hints.hints.length > 0) {
-            hintsText = formatHintsForPrompt(hints);
-            console.log(`[SEMANTIC-ANALYSIS] Loaded ${hints.hints.length} interpretation hints for ${targetProvider}`);
+        const learning = await loadGuidelineLearning(guidelineId);
+        if (learning && learning.learningText) {
+            hintsText = formatLearningForPrompt(learning);
+            console.log(`[SEMANTIC-ANALYSIS] Loaded accumulated learning for ${targetProvider} (version ${learning.version})`);
         }
     }
     
