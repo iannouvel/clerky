@@ -87,5 +87,17 @@
   "analyzeClinicalNote": {
     "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
     "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\n{{text}}\n\nGuideline:\n[ID] {{id}}\nTitle: {{title}}\nContent: {{content}}"
+  },
+  "filterRelevantPracticePoints": {
+    "title": "Filter Relevant Practice Points",
+    "description": "Used to filter practice points by relevance to a patient's clinical context",
+    "system_prompt": "You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.",
+    "prompt": "CLINICAL NOTE:\n{{clinicalNote}}\n\nPRACTICE POINTS:\n{{pointsList}}\n\nFor each practice point, ask yourself: \"Does this practice point apply to this patient in their current situation?\"\n\nIf no (e.g., it's about a different phase of care, a condition they don't have, or circumstances that don't match), mark it as irrelevant.\n\nReturn JSON:\n{\n  \"relevant\": [1, 3, 6],\n  \"irrelevant\": {\n    \"4\": \"brief reason\",\n    \"7\": \"brief reason\"\n  }\n}"
+  },
+  "checkPracticePointCompliance": {
+    "title": "Check Practice Point Compliance",
+    "description": "Used to check if a clinical note is compliant with relevant practice points",
+    "system_prompt": "You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.",
+    "prompt": "CLINICAL NOTE:\n{{clinicalNote}}\n\nPRACTICE POINTS:\n{{pointsList}}\n\nFor each practice point, ask yourself: \"Is this clinical note essentially compliant with this practice point?\"\n\nConsider the clinical intent, not just exact wording. If the note already addresses what the practice point recommends (even using different terminology), it's compliant.\n\nOnly mark as non-compliant if something genuinely valuable is missing.\n\nReturn JSON:\n{\n  \"compliant\": [1, 6],\n  \"nonCompliant\": [\n    {\n      \"index\": 10,\n      \"name\": \"Practice point name\",\n      \"issue\": \"What is genuinely missing\",\n      \"suggestion\": \"What additional action would add value\",\n      \"verbatimQuote\": \"Quote from practice point\"\n    }\n  ]\n}"
   }
 }
