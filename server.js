@@ -20344,17 +20344,28 @@ function formatHintsForPrompt(hints) {
 }
 
 // Refine suggestions using a different LLM - takes previous output + evaluation and improves
-async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider) {
+async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
     console.log(`[EVOLVE-REFINE] Refining suggestions with ${targetProvider}...`);
     
+    // Load interpretation hints if guidelineId is provided
+    let hintsText = '';
+    if (guidelineId) {
+        const hints = await loadGuidelineHints(guidelineId);
+        if (hints && hints.hints && hints.hints.length > 0) {
+            hintsText = formatHintsForPrompt(hints);
+            console.log(`[EVOLVE-REFINE] Loaded ${hints.hints.length} interpretation hints for ${targetProvider}`);
+        }
+    }
+    
     const systemPrompt = `You are a clinical advisor reviewing and improving upon another AI's suggestions. 
-Your task is to analyze the previous AI's output and evaluation feedback, then provide IMPROVED suggestions.
+Your task is to analyze the previous AI's output, evaluation feedback, AND any lessons learned from previous attempts, then provide IMPROVED suggestions.
 
 Key goals:
 1. Address any recommendations that were MISSED by the previous AI
 2. Fix any INCORRECT or REDUNDANT suggestions
 3. Keep suggestions that were CORRECT
 4. Ensure clinical equivalence is properly recognized (e.g., 'FBC in labour' covers anaemia monitoring)
+5. LEARN FROM PAST MISTAKES - if hints are provided, they represent hard-won lessons from previous AI attempts
 
 Return ONLY valid JSON - no markdown, no explanations.`;
 
@@ -20375,11 +20386,13 @@ EVALUATION OF PREVIOUS AI'S OUTPUT:
 - Missed Recommendations: ${JSON.stringify(previousEvaluation.missedRecommendations || [], null, 2)}
 - Suggestion Evaluations: ${JSON.stringify(previousEvaluation.suggestionEvaluations || [], null, 2)}
 - Overall Assessment: ${previousEvaluation.overallAssessment || 'None provided'}
+${hintsText}
 
-Based on the evaluation feedback, provide IMPROVED suggestions. 
+Based on the evaluation feedback${hintsText ? ' and lessons learned from previous attempts' : ''}, provide IMPROVED suggestions. 
 - ADD any recommendations that were missed
 - REMOVE or FIX any suggestions marked as incorrect or redundant
 - KEEP suggestions that were marked as correct
+- PAY SPECIAL ATTENTION to any lessons/hints provided - these are patterns of mistakes to avoid
 
 Return JSON in this exact format:
 {
@@ -20728,7 +20741,7 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                             scenarioGuidelineId  // Pass guidelineId to load hints
                         );
                     } else {
-                        // Subsequent LLMs: refine based on previous output + evaluation
+                        // Subsequent LLMs: refine based on previous output + evaluation + accumulated hints
                         analysisResult = await refineSuggestions(
                             currentSuggestions,
                             currentEvaluation,
@@ -20736,7 +20749,8 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                             guidelineContent,
                             guidelineTitle,
                             userId,
-                            provider
+                            provider,
+                            scenarioGuidelineId  // Pass guidelineId to load accumulated hints
                         );
                     }
                 } catch (llmError) {
@@ -20780,19 +20794,20 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 
                 timer.step(`Scenario ${scenarioIdx + 1} ${provider} evaluation`);
                 
-                // On the final LLM iteration, extract lessons learned and store as hints
-                const isLastLLM = llmIdx === SEQUENTIAL_LLM_CHAIN.length - 1;
-                if (isLastLLM && !evaluation.error) {
+                // Extract lessons learned and store as hints after EACH LLM iteration
+                // This allows subsequent LLMs to benefit from accumulated learning within the same run
+                if (!evaluation.error && (evaluation.missedRecommendations?.length > 0 || 
+                    evaluation.suggestionEvaluations?.some(s => s.assessment === 'incorrect' || s.assessment === 'redundant'))) {
                     try {
                         const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
                         if (lessons && lessons.lessons && lessons.lessons.length > 0) {
                             await storeGuidelineHints(scenarioGuidelineId, lessons);
-                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons for ${guidelineTitle}`);
+                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons from ${provider} for ${guidelineTitle}`);
                         }
                     } catch (lessonError) {
-                        console.error('[EVOLVE-SEQ] Error extracting/storing lessons:', lessonError.message);
+                        console.error(`[EVOLVE-SEQ] Error extracting/storing lessons from ${provider}:`, lessonError.message);
                     }
-                    timer.step(`Scenario ${scenarioIdx + 1} lessons extracted`);
+                    timer.step(`Scenario ${scenarioIdx + 1} ${provider} lessons extracted`);
                 }
                 
                 iterations.push({
