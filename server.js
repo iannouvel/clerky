@@ -4940,6 +4940,256 @@ app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => 
     }
 });
 
+// ============================================
+// INDIVIDUAL CONDITION/TRANSCRIPT MANAGEMENT
+// ============================================
+
+// Endpoint to add a single clinical condition (without affecting others)
+app.post('/addClinicalCondition', authenticateUser, async (req, res) => {
+    try {
+        const { name, category, transcript } = req.body;
+        
+        if (!name || !category) {
+            return res.status(400).json({
+                success: false,
+                error: 'Name and category are required'
+            });
+        }
+        
+        // Validate category
+        const validCategories = ['obstetrics', 'gynaecology', 'gynecology'];
+        if (!validCategories.includes(category.toLowerCase())) {
+            return res.status(400).json({
+                success: false,
+                error: 'Invalid category. Must be "obstetrics" or "gynaecology"'
+            });
+        }
+        
+        // Normalise category
+        let normalizedCategory = category.toLowerCase();
+        if (normalizedCategory === 'gynecology') {
+            normalizedCategory = 'gynaecology';
+        }
+        
+        console.log('[ADD-CONDITION] Adding new clinical condition:', {
+            name,
+            category: normalizedCategory,
+            hasTranscript: !!transcript
+        });
+        
+        // Generate document ID
+        const docId = `${normalizedCategory}-${name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(docId);
+        
+        // Check if condition already exists
+        const existingDoc = await conditionRef.get();
+        if (existingDoc.exists) {
+            return res.status(409).json({
+                success: false,
+                error: 'A condition with this name already exists in this category',
+                existingId: docId
+            });
+        }
+        
+        // Create the condition document
+        const conditionData = {
+            name: name,
+            category: normalizedCategory,
+            transcript: transcript || null,
+            lastGenerated: transcript ? admin.firestore.FieldValue.serverTimestamp() : null,
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            version: 1
+        };
+        
+        await conditionRef.set(conditionData);
+        
+        console.log('[ADD-CONDITION] Successfully added condition:', docId);
+        
+        res.json({
+            success: true,
+            message: 'Clinical condition added successfully',
+            condition: {
+                id: docId,
+                name: name,
+                category: normalizedCategory,
+                hasTranscript: !!transcript
+            }
+        });
+        
+    } catch (error) {
+        console.error('[ADD-CONDITION] Error adding clinical condition:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to add clinical condition',
+            details: error.message
+        });
+    }
+});
+
+// Endpoint to delete a clinical condition
+app.delete('/deleteClinicalCondition/:conditionId', authenticateUser, async (req, res) => {
+    try {
+        const { conditionId } = req.params;
+        
+        console.log('[DELETE-CONDITION] Deleting clinical condition:', conditionId);
+        
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+        const conditionDoc = await conditionRef.get();
+        
+        if (!conditionDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Clinical condition not found',
+                conditionId
+            });
+        }
+        
+        const conditionData = conditionDoc.data();
+        
+        // Delete the document
+        await conditionRef.delete();
+        
+        console.log('[DELETE-CONDITION] Successfully deleted condition:', {
+            conditionId,
+            name: conditionData.name,
+            hadTranscript: !!conditionData.transcript
+        });
+        
+        res.json({
+            success: true,
+            message: 'Clinical condition deleted successfully',
+            deleted: {
+                id: conditionId,
+                name: conditionData.name,
+                category: conditionData.category,
+                hadTranscript: !!conditionData.transcript
+            }
+        });
+        
+    } catch (error) {
+        console.error('[DELETE-CONDITION] Error deleting clinical condition:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to delete clinical condition',
+            details: error.message
+        });
+    }
+});
+
+// Endpoint to update/save a transcript for a condition
+app.put('/saveTranscript/:conditionId', authenticateUser, async (req, res) => {
+    try {
+        const { conditionId } = req.params;
+        const { transcript } = req.body;
+        
+        console.log('[SAVE-TRANSCRIPT] Saving transcript for condition:', {
+            conditionId,
+            transcriptLength: transcript ? transcript.length : 0,
+            clearingTranscript: transcript === null || transcript === ''
+        });
+        
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+        const conditionDoc = await conditionRef.get();
+        
+        if (!conditionDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Clinical condition not found',
+                conditionId
+            });
+        }
+        
+        // Update the transcript
+        const updateData = {
+            transcript: transcript || null,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            version: admin.firestore.FieldValue.increment(1)
+        };
+        
+        // Only set lastGenerated if we're adding/updating a transcript
+        if (transcript) {
+            updateData.lastGenerated = admin.firestore.FieldValue.serverTimestamp();
+        }
+        
+        await conditionRef.update(updateData);
+        
+        const conditionData = conditionDoc.data();
+        
+        console.log('[SAVE-TRANSCRIPT] Successfully saved transcript:', {
+            conditionId,
+            name: conditionData.name,
+            transcriptLength: transcript ? transcript.length : 0
+        });
+        
+        res.json({
+            success: true,
+            message: transcript ? 'Transcript saved successfully' : 'Transcript cleared successfully',
+            condition: {
+                id: conditionId,
+                name: conditionData.name,
+                category: conditionData.category,
+                hasTranscript: !!transcript
+            }
+        });
+        
+    } catch (error) {
+        console.error('[SAVE-TRANSCRIPT] Error saving transcript:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to save transcript',
+            details: error.message
+        });
+    }
+});
+
+// Endpoint to get a single condition with its transcript
+app.get('/clinicalCondition/:conditionId', authenticateUser, async (req, res) => {
+    try {
+        const { conditionId } = req.params;
+        
+        console.log('[GET-CONDITION] Fetching condition:', conditionId);
+        
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+        const conditionDoc = await conditionRef.get();
+        
+        if (!conditionDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Clinical condition not found',
+                conditionId
+            });
+        }
+        
+        const data = conditionDoc.data();
+        
+        res.json({
+            success: true,
+            condition: {
+                id: conditionDoc.id,
+                name: data.name,
+                category: data.category,
+                transcript: data.transcript || null,
+                hasTranscript: !!data.transcript,
+                lastGenerated: data.lastGenerated || null,
+                metadata: {
+                    createdAt: data.createdAt,
+                    updatedAt: data.updatedAt,
+                    version: data.version || 1
+                }
+            }
+        });
+        
+    } catch (error) {
+        console.error('[GET-CONDITION] Error fetching condition:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to fetch clinical condition',
+            details: error.message
+        });
+    }
+});
+
 // Function to check specific GitHub permissions
 async function checkGitHubPermissions() {
     debugLog('[DEBUG] checkGitHubPermissions: Starting GitHub permissions check...');
@@ -19456,31 +19706,22 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
     
     const pointsList = formatPracticePointsForPrompt(allPoints.map((p, i) => ({ ...p, originalIndex: i + 1 })));
     
+    // Load prompt from prompts.json
+    const promptConfig = global.prompts?.['filterRelevantPracticePoints'] || require('./prompts.json')['filterRelevantPracticePoints'];
+    const systemPrompt = promptConfig?.system_prompt || 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.';
+    const userPrompt = promptConfig?.prompt
+        ?.replace('{{clinicalNote}}', clinicalNote)
+        ?.replace('{{pointsList}}', pointsList) 
+        || `CLINICAL NOTE:\n${clinicalNote}\n\nPRACTICE POINTS:\n${pointsList}\n\nFor each practice point, ask yourself: "Does this practice point apply to this patient in their current situation?"\n\nIf no (e.g., it's about a different phase of care, a condition they don't have, or circumstances that don't match), mark it as irrelevant.\n\nReturn JSON:\n{\n  "relevant": [1, 3, 6],\n  "irrelevant": {\n    "4": "brief reason",\n    "7": "brief reason"\n  }\n}`;
+    
     const messages = [
         {
             role: 'system',
-            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+            content: systemPrompt
         },
         {
             role: 'user',
-            content: `CLINICAL NOTE:
-${clinicalNote}
-
-PRACTICE POINTS:
-${pointsList}
-
-For each practice point, ask yourself: "Does this practice point apply to this patient in their current situation?"
-
-If no (e.g., it's about a different phase of care, a condition they don't have, or circumstances that don't match), mark it as irrelevant.
-
-Return JSON:
-{
-  "relevant": [1, 3, 6],
-  "irrelevant": {
-    "4": "brief reason",
-    "7": "brief reason"
-  }
-}`
+            content: userPrompt
         }
     ];
     
@@ -19569,38 +19810,22 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
     
     const pointsList = formatPracticePointsForPrompt(importantPoints);
     
+    // Load prompt from prompts.json
+    const promptConfig = global.prompts?.['checkPracticePointCompliance'] || require('./prompts.json')['checkPracticePointCompliance'];
+    const systemPrompt = promptConfig?.system_prompt || 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.';
+    const userPrompt = promptConfig?.prompt
+        ?.replace('{{clinicalNote}}', clinicalNote)
+        ?.replace('{{pointsList}}', pointsList)
+        || `CLINICAL NOTE:\n${clinicalNote}\n\nPRACTICE POINTS:\n${pointsList}\n\nFor each practice point, ask yourself: "Is this clinical note essentially compliant with this practice point?"\n\nConsider the clinical intent, not just exact wording. If the note already addresses what the practice point recommends (even using different terminology), it's compliant.\n\nOnly mark as non-compliant if something genuinely valuable is missing.\n\nReturn JSON:\n{\n  "compliant": [1, 6],\n  "nonCompliant": [\n    {\n      "index": 10,\n      "name": "Practice point name",\n      "issue": "What is genuinely missing",\n      "suggestion": "What additional action would add value",\n      "verbatimQuote": "Quote from practice point"\n    }\n  ]\n}`;
+    
     const messages = [
         {
             role: 'system',
-            content: 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.'
+            content: systemPrompt
         },
         {
             role: 'user',
-            content: `CLINICAL NOTE:
-${clinicalNote}
-
-PRACTICE POINTS:
-${pointsList}
-
-For each practice point, ask yourself: "Is this clinical note essentially compliant with this practice point?"
-
-Consider the clinical intent, not just exact wording. If the note already addresses what the practice point recommends (even using different terminology), it's compliant.
-
-Only mark as non-compliant if something genuinely valuable is missing.
-
-Return JSON:
-{
-  "compliant": [1, 6],
-  "nonCompliant": [
-    {
-      "index": 10,
-      "name": "Practice point name",
-      "issue": "What is genuinely missing",
-      "suggestion": "What additional action would add value",
-      "verbatimQuote": "Quote from practice point"
-    }
-  ]
-}`
+            content: userPrompt
         }
     ];
     
