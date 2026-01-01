@@ -5262,14 +5262,16 @@ ${responseText}
                     prompts.analyzeGuidelineForPatient.prompt = improvements.newPrompt;
                 }
                 
-                // Save updated prompts
+                // Save updated prompts - use FormData to match prompts.html format
+                const formData = new FormData();
+                formData.append('updatedPrompts', JSON.stringify(prompts));
+                
                 const saveResponse = await fetch(`${SERVER_URL}/updatePrompts`, {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
+                        'Authorization': `Bearer ${token}`
                     },
-                    body: JSON.stringify({ updatedPrompts: prompts })
+                    body: formData
                 });
                 
                 if (!saveResponse.ok) {
