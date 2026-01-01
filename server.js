@@ -19949,6 +19949,318 @@ If the clinical note already addresses all relevant recommendations from this gu
     }
 }
 
+// ===== PROMPT EVOLUTION SYSTEM =====
+
+// Evaluate AI suggestions against the full guideline for completeness and accuracy
+async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitle, suggestions, alreadyCompliant, userId) {
+    console.log(`[EVOLVE] Evaluating suggestions for "${guidelineTitle}"...`);
+    
+    // Load prompt from prompts.json or Firestore cache
+    const promptConfig = global.prompts?.['evaluateSuggestions'] || require('./prompts.json')['evaluateSuggestions'];
+    
+    const systemPrompt = promptConfig?.system_prompt || 
+        `You are a clinical guideline expert evaluating AI-generated suggestions. Your task is to assess completeness (did the AI miss important recommendations?) and accuracy (are the suggestions correct and non-redundant?). Be rigorous but fair. Return ONLY valid JSON.`;
+    
+    const suggestionsText = suggestions.length > 0 
+        ? JSON.stringify(suggestions, null, 2) 
+        : 'No suggestions generated';
+    
+    const compliantText = alreadyCompliant && alreadyCompliant.length > 0 
+        ? JSON.stringify(alreadyCompliant, null, 2) 
+        : 'None identified';
+    
+    const userPrompt = (promptConfig?.prompt || 
+        `CLINICAL NOTE:\n{{clinicalNote}}\n\nGUIDELINE TITLE: {{guidelineTitle}}\n\nFULL GUIDELINE CONTENT:\n{{guidelineContent}}\n\nAI-GENERATED SUGGESTIONS:\n{{suggestions}}\n\nAI-IDENTIFIED AS ALREADY COMPLIANT:\n{{alreadyCompliant}}\n\nEvaluate the AI's output...`)
+        .replace('{{clinicalNote}}', clinicalNote)
+        .replace('{{guidelineTitle}}', guidelineTitle)
+        .replace('{{guidelineContent}}', guidelineContent)
+        .replace('{{suggestions}}', suggestionsText)
+        .replace('{{alreadyCompliant}}', compliantText);
+    
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[EVOLVE] No AI response for evaluation');
+        return { 
+            completenessScore: 0, 
+            accuracyScore: 0, 
+            missedRecommendations: [], 
+            suggestionEvaluations: [],
+            error: 'No response from evaluator'
+        };
+    }
+    
+    try {
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        
+        console.log(`[EVOLVE] Evaluation complete: completeness=${parsed.completenessScore}, accuracy=${parsed.accuracyScore}`);
+        
+        return parsed;
+    } catch (e) {
+        console.error('[EVOLVE] Failed to parse evaluation response:', e.message);
+        return { 
+            completenessScore: 0, 
+            accuracyScore: 0, 
+            missedRecommendations: [], 
+            suggestionEvaluations: [],
+            error: 'Failed to parse evaluation',
+            rawResponse: result.content.substring(0, 500)
+        };
+    }
+}
+
+// Generate prompt improvement suggestions based on evaluation results
+async function generatePromptImprovements(currentPrompt, evaluationResults, avgCompleteness, avgAccuracy, avgLatency, userId) {
+    console.log(`[EVOLVE] Generating prompt improvements based on ${evaluationResults.length} evaluations...`);
+    
+    // Load prompt from prompts.json or Firestore cache
+    const promptConfig = global.prompts?.['generatePromptImprovements'] || require('./prompts.json')['generatePromptImprovements'];
+    
+    const systemPrompt = promptConfig?.system_prompt || 
+        `You are an expert at prompt engineering for clinical AI systems. Your task is to analyze patterns in AI failures across multiple test scenarios and suggest specific, actionable improvements to the prompts. Focus on GENERALIZABLE changes that will improve performance across diverse scenarios - avoid overfitting to specific cases. Return ONLY valid JSON.`;
+    
+    // Identify common failure patterns
+    const failurePatterns = [];
+    const incorrectSuggestions = [];
+    const redundantSuggestions = [];
+    const missedItems = [];
+    
+    evaluationResults.forEach((eval, idx) => {
+        if (eval.missedRecommendations && eval.missedRecommendations.length > 0) {
+            missedItems.push(...eval.missedRecommendations.map(m => ({ scenario: idx + 1, ...m })));
+        }
+        if (eval.suggestionEvaluations) {
+            eval.suggestionEvaluations.forEach(se => {
+                if (se.verdict === 'incorrect') {
+                    incorrectSuggestions.push({ scenario: idx + 1, ...se });
+                } else if (se.verdict === 'redundant') {
+                    redundantSuggestions.push({ scenario: idx + 1, ...se });
+                }
+            });
+        }
+    });
+    
+    if (missedItems.length > 0) {
+        failurePatterns.push(`Missed ${missedItems.length} recommendations across scenarios`);
+    }
+    if (incorrectSuggestions.length > 0) {
+        failurePatterns.push(`Made ${incorrectSuggestions.length} incorrect suggestions`);
+    }
+    if (redundantSuggestions.length > 0) {
+        failurePatterns.push(`Made ${redundantSuggestions.length} redundant suggestions`);
+    }
+    
+    const evaluationSummary = evaluationResults.map((eval, idx) => ({
+        scenario: idx + 1,
+        completeness: eval.completenessScore,
+        accuracy: eval.accuracyScore,
+        missedCount: eval.missedRecommendations?.length || 0,
+        incorrectCount: eval.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0,
+        redundantCount: eval.suggestionEvaluations?.filter(s => s.verdict === 'redundant').length || 0,
+        assessment: eval.overallAssessment
+    }));
+    
+    const userPrompt = (promptConfig?.prompt || 
+        `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS ACROSS {{scenarioCount}} SCENARIOS:\n{{evaluationResults}}\n\nAGGREGATED METRICS:\n- Average Completeness: {{avgCompleteness}}\n- Average Accuracy: {{avgAccuracy}}\n- Average Latency: {{avgLatency}}ms\n\nCOMMON FAILURE PATTERNS:\n{{failurePatterns}}\n\nAnalyze the evaluation results...`)
+        .replace('{{currentPrompt}}', JSON.stringify(currentPrompt, null, 2))
+        .replace('{{scenarioCount}}', evaluationResults.length.toString())
+        .replace('{{evaluationResults}}', JSON.stringify(evaluationSummary, null, 2))
+        .replace('{{avgCompleteness}}', (avgCompleteness * 100).toFixed(1) + '%')
+        .replace('{{avgAccuracy}}', (avgAccuracy * 100).toFixed(1) + '%')
+        .replace('{{avgLatency}}', avgLatency.toFixed(0))
+        .replace('{{failurePatterns}}', failurePatterns.length > 0 ? failurePatterns.join('\n') : 'No significant patterns identified');
+    
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[EVOLVE] No AI response for prompt improvements');
+        return { 
+            analysis: { keyPatterns: [], rootCauses: [] },
+            suggestedChanges: [],
+            error: 'No response from improvement generator'
+        };
+    }
+    
+    try {
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        
+        console.log(`[EVOLVE] Generated ${parsed.suggestedChanges?.length || 0} suggested changes`);
+        
+        return parsed;
+    } catch (e) {
+        console.error('[EVOLVE] Failed to parse improvement response:', e.message);
+        return { 
+            analysis: { keyPatterns: [], rootCauses: [] },
+            suggestedChanges: [],
+            error: 'Failed to parse improvements',
+            rawResponse: result.content.substring(0, 500)
+        };
+    }
+}
+
+// Prompt Evolution Endpoint - runs analysis, evaluates results, and suggests improvements
+app.post('/evolvePrompts', authenticateUser, async (req, res) => {
+    const timer = new StepTimer('/evolvePrompts');
+    req.stepTimer = timer;
+    
+    try {
+        console.log('[EVOLVE] Evolution cycle started');
+        const { scenarios, guidelineId } = req.body;
+        const userId = req.user.uid;
+        
+        // Validate inputs
+        if (!scenarios || !Array.isArray(scenarios) || scenarios.length === 0) {
+            return res.status(400).json({ success: false, error: 'At least one scenario is required' });
+        }
+        
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        }
+        
+        timer.step('Validation');
+        
+        // Fetch guideline data
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        
+        if (!guidelineDoc.exists) {
+            return res.status(404).json({ success: false, error: `Guideline not found: ${guidelineId}` });
+        }
+        
+        const guidelineData = guidelineDoc.data();
+        const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineId;
+        
+        // Get guideline content
+        let guidelineContent = guidelineData.condensed || guidelineData.content;
+        
+        if (!guidelineContent) {
+            const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
+            if (condensedDoc.exists) {
+                guidelineContent = condensedDoc.data()?.condensed;
+            }
+        }
+        
+        if (!guidelineContent) {
+            const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
+            if (fullContentDoc.exists) {
+                guidelineContent = fullContentDoc.data()?.content;
+            }
+        }
+        
+        if (!guidelineContent) {
+            return res.status(400).json({ success: false, error: 'No guideline content available' });
+        }
+        
+        timer.step('Fetch guideline');
+        
+        // Get current prompt
+        const currentPrompt = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
+        
+        // Process each scenario
+        const scenarioResults = [];
+        let totalLatency = 0;
+        
+        for (let i = 0; i < scenarios.length; i++) {
+            const scenario = scenarios[i];
+            console.log(`[EVOLVE] Processing scenario ${i + 1}/${scenarios.length}: ${scenario.name || 'Unnamed'}`);
+            
+            const startTime = Date.now();
+            
+            // Run the analysis
+            const analysisResult = await analyzeGuidelineForPatient(
+                scenario.clinicalNote,
+                guidelineContent,
+                guidelineTitle,
+                userId
+            );
+            
+            const analysisLatency = Date.now() - startTime;
+            totalLatency += analysisLatency;
+            
+            timer.step(`Scenario ${i + 1} analysis`);
+            
+            // Evaluate the results
+            const evaluation = await evaluateSuggestions(
+                scenario.clinicalNote,
+                guidelineContent,
+                guidelineTitle,
+                analysisResult.suggestions || [],
+                analysisResult.alreadyCompliant || [],
+                userId
+            );
+            
+            timer.step(`Scenario ${i + 1} evaluation`);
+            
+            scenarioResults.push({
+                scenarioName: scenario.name || `Scenario ${i + 1}`,
+                clinicalNote: scenario.clinicalNote.substring(0, 200) + '...', // Truncate for response
+                analysisResult: {
+                    suggestionsCount: analysisResult.suggestions?.length || 0,
+                    alreadyCompliantCount: analysisResult.alreadyCompliant?.length || 0,
+                    patientContext: analysisResult.patientContext,
+                    suggestions: analysisResult.suggestions
+                },
+                evaluation,
+                latencyMs: analysisLatency
+            });
+        }
+        
+        // Calculate aggregated metrics
+        const avgCompleteness = scenarioResults.reduce((sum, r) => sum + (r.evaluation.completenessScore || 0), 0) / scenarioResults.length;
+        const avgAccuracy = scenarioResults.reduce((sum, r) => sum + (r.evaluation.accuracyScore || 0), 0) / scenarioResults.length;
+        const avgLatency = totalLatency / scenarioResults.length;
+        
+        timer.step('Aggregate metrics');
+        
+        // Generate prompt improvements
+        const evaluations = scenarioResults.map(r => r.evaluation);
+        const improvements = await generatePromptImprovements(
+            currentPrompt,
+            evaluations,
+            avgCompleteness,
+            avgAccuracy,
+            avgLatency,
+            userId
+        );
+        
+        timer.step('Generate improvements');
+        
+        console.log(`[EVOLVE] Evolution cycle complete. Avg completeness: ${(avgCompleteness * 100).toFixed(1)}%, Avg accuracy: ${(avgAccuracy * 100).toFixed(1)}%`);
+        console.log('[EVOLVE] Timing:', JSON.stringify(timer.getSummary()));
+        
+        res.json({
+            success: true,
+            guidelineId,
+            guidelineTitle,
+            scenarioResults,
+            aggregatedMetrics: {
+                averageCompleteness: avgCompleteness,
+                averageAccuracy: avgAccuracy,
+                averageLatencyMs: avgLatency,
+                totalScenarios: scenarios.length
+            },
+            currentPrompt,
+            suggestedImprovements: improvements,
+            timing: timer.getSummary()
+        });
+        
+    } catch (error) {
+        console.error('[EVOLVE] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Practice Point Suggestions API endpoint - NEW SEMANTIC APPROACH
 // Instead of using pre-extracted auditable elements, we pass the full guideline content
 // directly to the LLM for semantic analysis against the clinical note
