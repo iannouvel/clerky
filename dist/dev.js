@@ -4803,8 +4803,10 @@ ${responseText}
         
         // Store evolution results for later use
         let currentEvolutionResults = null;
+        // Store loaded conditions for transcript generation
+        let evolveConditionsCache = null;
         
-        // Load scenarios for evolution
+        // Load scenarios for evolution - uses same source as index.html clinical dropdown
         async function loadEvolveScenarios() {
             const select = document.getElementById('evolveScenarioSelect');
             const status = document.getElementById('evolveStatus');
@@ -4823,29 +4825,38 @@ ${responseText}
                 
                 const data = await response.json();
                 const conditionsByCategory = data.conditions || {};
+                evolveConditionsCache = conditionsByCategory;
                 
                 select.innerHTML = '';
                 
-                // Flatten the conditions from category structure and filter to only those with transcripts
+                // Only show obstetrics category (same as index.html)
+                const obstetrics = conditionsByCategory.obstetrics || {};
+                let totalConditions = 0;
                 let conditionsWithTranscripts = 0;
-                Object.entries(conditionsByCategory).forEach(([category, conditionsInCategory]) => {
-                    Object.entries(conditionsInCategory).forEach(([name, condition]) => {
-                        if (condition.transcript) {
-                            const option = document.createElement('option');
-                            option.value = condition.id || name;
-                            option.textContent = `${condition.name || name} (${category})`;
-                            option.dataset.transcript = condition.transcript;
-                            select.appendChild(option);
-                            conditionsWithTranscripts++;
-                        }
-                    });
+                
+                Object.entries(obstetrics).forEach(([name, condition]) => {
+                    totalConditions++;
+                    const option = document.createElement('option');
+                    option.value = condition.id || name;
+                    option.dataset.name = condition.name || name;
+                    
+                    if (condition.transcript) {
+                        option.textContent = `✓ ${condition.name || name}`;
+                        option.dataset.transcript = condition.transcript;
+                        option.dataset.hasTranscript = 'true';
+                        conditionsWithTranscripts++;
+                    } else {
+                        option.textContent = `○ ${condition.name || name} (no transcript)`;
+                        option.dataset.hasTranscript = 'false';
+                    }
+                    select.appendChild(option);
                 });
                 
-                if (conditionsWithTranscripts === 0) {
-                    select.innerHTML = '<option value="">No scenarios with transcripts available</option>';
-                    status.textContent = 'No scenarios available. Generate transcripts in the Transcripts tab first.';
+                if (totalConditions === 0) {
+                    select.innerHTML = '<option value="">No obstetrics scenarios available</option>';
+                    status.textContent = 'No scenarios available.';
                 } else {
-                    status.textContent = `Loaded ${conditionsWithTranscripts} scenarios with transcripts`;
+                    status.textContent = `Loaded ${totalConditions} scenarios (${conditionsWithTranscripts} with transcripts)`;
                 }
                 
             } catch (error) {
@@ -4855,47 +4866,71 @@ ${responseText}
             }
         }
         
-        // Load guidelines for evolution
-        async function loadEvolveGuidelines() {
-            const select = document.getElementById('evolveGuidelineSelect');
+        // Generate transcript for a condition if missing
+        async function generateTranscriptForCondition(conditionId, conditionName) {
+            console.log(`[EVOLVE] Generating transcript for ${conditionName}...`);
             
-            if (!select) return;
+            const token = await auth.currentUser.getIdToken();
+            const response = await fetch(`${SERVER_URL}/generateTranscript/${encodeURIComponent(conditionId)}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ forceRegenerate: false })
+            });
             
-            try {
-                const token = await auth.currentUser.getIdToken();
-                const response = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                });
-                
-                if (!response.ok) throw new Error('Failed to load guidelines');
-                
-                const data = await response.json();
-                const guidelines = data.guidelines || [];
-                
-                select.innerHTML = '<option value="">Select a guideline...</option>';
-                
-                // Filter to only guidelines with content
-                const guidelinesWithContent = guidelines.filter(g => g.hasContent);
-                
-                guidelinesWithContent.forEach(g => {
-                    const option = document.createElement('option');
-                    option.value = g.id;
-                    option.textContent = g.displayName || g.humanFriendlyTitle || g.title || g.id;
-                    select.appendChild(option);
-                });
-                
-                console.log(`[EVOLVE] Loaded ${guidelinesWithContent.length} guidelines with content`);
-                
-            } catch (error) {
-                console.error('[EVOLVE] Error loading guidelines:', error);
-                select.innerHTML = '<option value="">Error loading guidelines</option>';
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Failed to generate transcript');
             }
+            
+            const result = await response.json();
+            return result.transcript;
         }
         
-        // Run evolution cycle
+        // Find most relevant guideline for a clinical note
+        async function findRelevantGuidelineForNote(clinicalNote) {
+            console.log('[EVOLVE] Finding relevant guidelines...');
+            
+            const token = await auth.currentUser.getIdToken();
+            const response = await fetch(`${SERVER_URL}/findRelevantGuidelines`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    transcript: clinicalNote,
+                    scope: 'all',
+                    hospitalTrust: null
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error('Failed to find relevant guidelines');
+            }
+            
+            const data = await response.json();
+            
+            // Get the most relevant guideline
+            const mostRelevant = data.categories?.mostRelevant || [];
+            if (mostRelevant.length > 0) {
+                return mostRelevant[0]; // Return the top guideline
+            }
+            
+            // Fall back to potentially relevant
+            const potentiallyRelevant = data.categories?.potentiallyRelevant || [];
+            if (potentiallyRelevant.length > 0) {
+                return potentiallyRelevant[0];
+            }
+            
+            return null;
+        }
+        
+        // Run evolution cycle - now auto-finds guidelines
         async function runEvolutionCycle() {
             const scenarioSelect = document.getElementById('evolveScenarioSelect');
-            const guidelineSelect = document.getElementById('evolveGuidelineSelect');
             const status = document.getElementById('evolveStatus');
             const progressSection = document.getElementById('evolveProgressSection');
             const progressText = document.getElementById('evolveProgressText');
@@ -4911,34 +4946,94 @@ ${responseText}
                 return;
             }
             
-            const guidelineId = guidelineSelect.value;
-            if (!guidelineId) {
-                alert('Please select a guideline');
-                return;
-            }
-            
-            // Build scenarios array
-            const scenarios = selectedOptions.map(opt => ({
-                name: opt.textContent,
-                clinicalNote: opt.dataset.transcript
-            }));
-            
             try {
                 runBtn.disabled = true;
                 progressSection.style.display = 'block';
                 resultsSection.style.display = 'none';
-                progressText.textContent = `Processing ${scenarios.length} scenarios...`;
-                progressBar.style.width = '10%';
-                progressPercent.textContent = '10%';
                 
                 const token = await auth.currentUser.getIdToken();
+                const scenarios = [];
+                
+                // Step 1: Prepare scenarios (generate transcripts if needed)
+                for (let i = 0; i < selectedOptions.length; i++) {
+                    const opt = selectedOptions[i];
+                    const progress = Math.round((i / selectedOptions.length) * 30);
+                    progressBar.style.width = `${progress}%`;
+                    progressPercent.textContent = `${progress}%`;
+                    
+                    let transcript = opt.dataset.transcript;
+                    
+                    if (!transcript || opt.dataset.hasTranscript === 'false') {
+                        progressText.textContent = `Generating transcript for ${opt.dataset.name}...`;
+                        try {
+                            transcript = await generateTranscriptForCondition(opt.value, opt.dataset.name);
+                            // Update the option with the new transcript
+                            opt.dataset.transcript = transcript;
+                            opt.dataset.hasTranscript = 'true';
+                            opt.textContent = `✓ ${opt.dataset.name}`;
+                        } catch (err) {
+                            console.error(`[EVOLVE] Failed to generate transcript for ${opt.dataset.name}:`, err);
+                            status.textContent = `Warning: Could not generate transcript for ${opt.dataset.name}`;
+                            continue;
+                        }
+                    }
+                    
+                    scenarios.push({
+                        id: opt.value,
+                        name: opt.dataset.name,
+                        clinicalNote: transcript
+                    });
+                }
+                
+                if (scenarios.length === 0) {
+                    throw new Error('No valid scenarios to process');
+                }
+                
+                // Step 2: Find relevant guidelines for each scenario
+                progressText.textContent = `Finding relevant guidelines for ${scenarios.length} scenarios...`;
+                progressBar.style.width = '40%';
+                progressPercent.textContent = '40%';
+                
+                const scenariosWithGuidelines = [];
+                for (let i = 0; i < scenarios.length; i++) {
+                    const scenario = scenarios[i];
+                    const progress = 40 + Math.round((i / scenarios.length) * 20);
+                    progressBar.style.width = `${progress}%`;
+                    progressPercent.textContent = `${progress}%`;
+                    progressText.textContent = `Finding guidelines for ${scenario.name}...`;
+                    
+                    try {
+                        const relevantGuideline = await findRelevantGuidelineForNote(scenario.clinicalNote);
+                        if (relevantGuideline) {
+                            scenariosWithGuidelines.push({
+                                ...scenario,
+                                guidelineId: relevantGuideline.id,
+                                guidelineTitle: relevantGuideline.title || relevantGuideline.displayName
+                            });
+                        } else {
+                            console.warn(`[EVOLVE] No relevant guideline found for ${scenario.name}`);
+                        }
+                    } catch (err) {
+                        console.error(`[EVOLVE] Error finding guidelines for ${scenario.name}:`, err);
+                    }
+                }
+                
+                if (scenariosWithGuidelines.length === 0) {
+                    throw new Error('Could not find relevant guidelines for any scenario');
+                }
+                
+                // Step 3: Run evolution
+                progressText.textContent = `Processing ${scenariosWithGuidelines.length} scenarios...`;
+                progressBar.style.width = '60%';
+                progressPercent.textContent = '60%';
+                
                 const response = await fetch(`${SERVER_URL}/evolvePrompts`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${token}`,
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ scenarios, guidelineId })
+                    body: JSON.stringify({ scenariosWithGuidelines })
                 });
                 
                 progressBar.style.width = '90%';
@@ -4990,11 +5085,11 @@ ${responseText}
             let scenarioHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
             scenarioHtml += '<thead style="background:#f8f9fa;"><tr>';
             scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Scenario</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Completeness</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Accuracy</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Suggestions</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Matched Guideline</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Comp.</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Acc.</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Sugg.</th>';
             scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Latency</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Assessment</th>';
             scenarioHtml += '</tr></thead><tbody>';
             
             (result.scenarioResults || []).forEach(sr => {
@@ -5003,14 +5098,25 @@ ${responseText}
                 const completenessColor = completeness >= 80 ? '#28a745' : completeness >= 60 ? '#ff9800' : '#dc3545';
                 const accuracyColor = accuracy >= 80 ? '#28a745' : accuracy >= 60 ? '#ff9800' : '#dc3545';
                 
+                // Truncate guideline title for display
+                const guidelineTitle = sr.guidelineTitle || sr.guidelineId || '-';
+                const truncatedGuideline = guidelineTitle.length > 40 
+                    ? guidelineTitle.substring(0, 37) + '...' 
+                    : guidelineTitle;
+                
                 scenarioHtml += '<tr>';
                 scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;">${sr.scenarioName}</td>`;
+                scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;font-size:12px;color:#555;" title="${guidelineTitle}">${truncatedGuideline}</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${completenessColor};font-weight:bold;">${completeness}%</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${accuracyColor};font-weight:bold;">${accuracy}%</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.analysisResult?.suggestionsCount || 0}</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.latencyMs || 0}ms</td>`;
-                scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;font-size:12px;color:#666;">${sr.evaluation?.overallAssessment || '-'}</td>`;
                 scenarioHtml += '</tr>';
+                
+                // Add assessment row if present
+                if (sr.evaluation?.overallAssessment) {
+                    scenarioHtml += `<tr><td colspan="6" style="padding:6px 10px 10px 20px;border-bottom:1px solid #dee2e6;font-size:12px;color:#666;background:#fafafa;">📝 ${sr.evaluation.overallAssessment}</td></tr>`;
+                }
             });
             
             scenarioHtml += '</tbody></table>';
@@ -5215,7 +5321,6 @@ ${responseText}
         // Initialize evolution tab when it becomes visible
         function initEvolveTab() {
             loadEvolveScenarios();
-            loadEvolveGuidelines();
         }
         
         // Set up evolution button handlers

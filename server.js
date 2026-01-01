@@ -20152,69 +20152,91 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
 }
 
 // Prompt Evolution Endpoint - runs analysis, evaluates results, and suggests improvements
+// Now supports scenarios with individual guidelines (auto-matched) or a single shared guideline
 app.post('/evolvePrompts', authenticateUser, async (req, res) => {
     const timer = new StepTimer('/evolvePrompts');
     req.stepTimer = timer;
     
     try {
         console.log('[EVOLVE] Evolution cycle started');
-        const { scenarios, guidelineId } = req.body;
+        const { scenarios, scenariosWithGuidelines, guidelineId } = req.body;
         const userId = req.user.uid;
         
-        // Validate inputs
-        if (!scenarios || !Array.isArray(scenarios) || scenarios.length === 0) {
-            return res.status(400).json({ success: false, error: 'At least one scenario is required' });
-        }
+        // Support both old format (scenarios + guidelineId) and new format (scenariosWithGuidelines)
+        let processableScenarios = [];
         
-        if (!guidelineId) {
-            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
+        if (scenariosWithGuidelines && Array.isArray(scenariosWithGuidelines) && scenariosWithGuidelines.length > 0) {
+            // New format: each scenario has its own guideline
+            processableScenarios = scenariosWithGuidelines;
+        } else if (scenarios && Array.isArray(scenarios) && scenarios.length > 0 && guidelineId) {
+            // Old format: all scenarios share one guideline
+            processableScenarios = scenarios.map(s => ({ ...s, guidelineId }));
+        } else {
+            return res.status(400).json({ success: false, error: 'Either scenariosWithGuidelines or (scenarios + guidelineId) is required' });
         }
         
         timer.step('Validation');
         
-        // Fetch guideline data
-        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
-        
-        if (!guidelineDoc.exists) {
-            return res.status(404).json({ success: false, error: `Guideline not found: ${guidelineId}` });
-        }
-        
-        const guidelineData = guidelineDoc.data();
-        const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineId;
-        
-        // Get guideline content
-        let guidelineContent = guidelineData.condensed || guidelineData.content;
-        
-        if (!guidelineContent) {
-            const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
-            if (condensedDoc.exists) {
-                guidelineContent = condensedDoc.data()?.condensed;
-            }
-        }
-        
-        if (!guidelineContent) {
-            const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
-            if (fullContentDoc.exists) {
-                guidelineContent = fullContentDoc.data()?.content;
-            }
-        }
-        
-        if (!guidelineContent) {
-            return res.status(400).json({ success: false, error: 'No guideline content available' });
-        }
-        
-        timer.step('Fetch guideline');
-        
         // Get current prompt
         const currentPrompt = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
         
-        // Process each scenario
+        // Process each scenario with its guideline
         const scenarioResults = [];
         let totalLatency = 0;
         
-        for (let i = 0; i < scenarios.length; i++) {
-            const scenario = scenarios[i];
-            console.log(`[EVOLVE] Processing scenario ${i + 1}/${scenarios.length}: ${scenario.name || 'Unnamed'}`);
+        // Cache for guideline content to avoid re-fetching
+        const guidelineCache = {};
+        
+        for (let i = 0; i < processableScenarios.length; i++) {
+            const scenario = processableScenarios[i];
+            const scenarioGuidelineId = scenario.guidelineId;
+            
+            console.log(`[EVOLVE] Processing scenario ${i + 1}/${processableScenarios.length}: ${scenario.name || 'Unnamed'} with guideline ${scenarioGuidelineId}`);
+            
+            // Fetch guideline content (with caching)
+            let guidelineContent, guidelineTitle;
+            
+            if (guidelineCache[scenarioGuidelineId]) {
+                guidelineContent = guidelineCache[scenarioGuidelineId].content;
+                guidelineTitle = guidelineCache[scenarioGuidelineId].title;
+            } else {
+                const guidelineDoc = await db.collection('guidelines').doc(scenarioGuidelineId).get();
+                
+                if (!guidelineDoc.exists) {
+                    console.warn(`[EVOLVE] Guideline not found: ${scenarioGuidelineId}, skipping scenario`);
+                    continue;
+                }
+                
+                const guidelineData = guidelineDoc.data();
+                guidelineTitle = scenario.guidelineTitle || guidelineData.humanFriendlyTitle || guidelineData.title || scenarioGuidelineId;
+                
+                // Get guideline content
+                guidelineContent = guidelineData.condensed || guidelineData.content;
+                
+                if (!guidelineContent) {
+                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) {
+                        guidelineContent = condensedDoc.data()?.condensed;
+                    }
+                }
+                
+                if (!guidelineContent) {
+                    const fullContentDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('full').get();
+                    if (fullContentDoc.exists) {
+                        guidelineContent = fullContentDoc.data()?.content;
+                    }
+                }
+                
+                if (!guidelineContent) {
+                    console.warn(`[EVOLVE] No content for guideline: ${scenarioGuidelineId}, skipping scenario`);
+                    continue;
+                }
+                
+                // Cache it
+                guidelineCache[scenarioGuidelineId] = { content: guidelineContent, title: guidelineTitle };
+            }
+            
+            timer.step(`Scenario ${i + 1} fetch guideline`);
             
             const startTime = Date.now();
             
@@ -20245,6 +20267,8 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
             
             scenarioResults.push({
                 scenarioName: scenario.name || `Scenario ${i + 1}`,
+                guidelineId: scenarioGuidelineId,
+                guidelineTitle: guidelineTitle,
                 clinicalNote: scenario.clinicalNote.substring(0, 200) + '...', // Truncate for response
                 analysisResult: {
                     suggestionsCount: analysisResult.suggestions?.length || 0,
@@ -20255,6 +20279,10 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
                 evaluation,
                 latencyMs: analysisLatency
             });
+        }
+        
+        if (scenarioResults.length === 0) {
+            return res.status(400).json({ success: false, error: 'No scenarios could be processed' });
         }
         
         // Calculate aggregated metrics
@@ -20277,19 +20305,17 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
         
         timer.step('Generate improvements');
         
-        console.log(`[EVOLVE] Evolution cycle complete. Avg completeness: ${(avgCompleteness * 100).toFixed(1)}%, Avg accuracy: ${(avgAccuracy * 100).toFixed(1)}%`);
+        console.log(`[EVOLVE] Evolution cycle complete. ${scenarioResults.length} scenarios processed. Avg completeness: ${(avgCompleteness * 100).toFixed(1)}%, Avg accuracy: ${(avgAccuracy * 100).toFixed(1)}%`);
         console.log('[EVOLVE] Timing:', JSON.stringify(timer.getSummary()));
         
         res.json({
             success: true,
-            guidelineId,
-            guidelineTitle,
             scenarioResults,
             aggregatedMetrics: {
                 averageCompleteness: avgCompleteness,
                 averageAccuracy: avgAccuracy,
                 averageLatencyMs: avgLatency,
-                totalScenarios: scenarios.length
+                totalScenarios: scenarioResults.length
             },
             currentPrompt,
             suggestedImprovements: improvements,
