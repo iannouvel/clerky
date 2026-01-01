@@ -12265,6 +12265,35 @@ function cleanJsonResponse(content) {
   return cleaned.trim();
 }
 
+// Advanced JSON repair helper for LLM responses
+function repairJson(jsonString) {
+  let repaired = jsonString.trim();
+  
+  // Handle cut-off JSON (missing closing brackets)
+  const openBrackets = (repaired.match(/\[/g) || []).length;
+  const closeBrackets = (repaired.match(/\]/g) || []).length;
+  const openBraces = (repaired.match(/\{/g) || []).length;
+  const closeBraces = (repaired.match(/\}/g) || []).length;
+  
+  // If it's an array that's cut off
+  if (openBrackets > closeBrackets) {
+    // If it ends mid-object, close the object first
+    if (openBraces > closeBraces) {
+      repaired += '"}'; // Assume it was mid-string
+    }
+    repaired += ']'.repeat(openBrackets - closeBrackets);
+  }
+  
+  // Remove trailing commas before closing brackets/braces
+  repaired = repaired.replace(/,\s*([\]\}])/g, '$1');
+  
+  // Handle unescaped newlines within strings
+  // This is tricky, but we can try to replace newlines that aren't followed by a key or structural char
+  // Actually, a simpler way is to just let JSON.parse fail and then try a more aggressive approach if needed
+  
+  return repaired;
+}
+
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
 async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null) {
@@ -12274,41 +12303,18 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
   
   const prompt = `Analyse this clinical guideline and extract ALL distinct practice points as structured JSON.
 ${summaryContext}
-For EACH practice point, create an object with:
-- "name": Brief descriptive title (5-10 words)
-- "description": STRUCTURED APPLICABILITY CRITERIA with these sections:
-  • APPLIES TO: [specific patient population, phase of care, conditions]
-  • NOT APPLICABLE: [when this does NOT apply - exclusions, contraindications]
-  • ACTION: [what treatment/investigation/referral is recommended]
-  • THRESHOLDS: [any specific values, doses, or timing]
-- "significance": "high" or "medium" or "low"
+CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown.
+Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
+{
+  "name": "Brief descriptive title (5-10 words)",
+  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [population] • NOT APPLICABLE: [exclusions] • ACTION: [recommendation] • THRESHOLDS: [values]",
+  "significance": "high" or "medium" or "low"
+}
 
-CATEGORIES TO COVER (extract ALL that apply):
-- SCREENING: When to perform tests, what triggers investigations
-- THRESHOLDS: All numeric values (Hb levels, ferritin, doses, timing)
-- DOSAGES: Medication doses, maximum doses, weight-based calculations
-- TIMING: When to repeat tests, duration of treatment, intervals
-- SAFETY: Restrictions, contraindications, allergy checks, monitoring
-- ESCALATION: When to refer, specialist involvement triggers
-- LOCATION: Where care should be delivered
-- SPECIAL POPULATIONS: Different rules for specific patient groups
-- ADMINISTRATIVE: Documentation, consent, reporting requirements
+CATEGORIES TO COVER:
+- SCREENING, THRESHOLDS, DOSAGES, TIMING, SAFETY, ESCALATION, LOCATION, SPECIAL POPULATIONS, ADMINISTRATIVE.
 
 Return a JSON array of objects. Aim for 30-60 practice points.
-
-EXAMPLE OUTPUT FORMAT:
-[
-  {
-    "name": "First Trimester Anaemia Threshold",
-    "description": "APPLIES TO: Pregnant women in first trimester (weeks 1-12). NOT APPLICABLE: Second/third trimester or postpartum. ACTION: Diagnose anaemia and initiate treatment. THRESHOLDS: Hb <110g/L.",
-    "significance": "high"
-  },
-  {
-    "name": "Oral Iron Standard Dose",
-    "description": "APPLIES TO: All pregnant women with iron deficiency anaemia. NOT APPLICABLE: Women with IV iron indication or intolerance. ACTION: Prescribe oral iron supplementation. THRESHOLDS: 40-80mg elemental iron daily.",
-    "significance": "high"
-  }
-]
 
 GUIDELINE CONTENT:
 ${content}`;
@@ -12318,7 +12324,7 @@ ${content}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline auditor. Extract practice points as a JSON array. Each object must have: name (string), description (structured applicability criteria), significance (high/medium/low). Return ONLY valid JSON - no other text. Be comprehensive - include ALL distinct practice points.' 
+          content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of objects. No other text. Each object: {name, description, significance}.' 
         },
         { 
           role: 'user', 
@@ -12333,7 +12339,17 @@ ${content}`;
       const cleanedContent = cleanJsonResponse(result.content);
       
       try {
-        const parsed = JSON.parse(cleanedContent);
+        // Try direct parse first
+        let parsed;
+        try {
+          parsed = JSON.parse(cleanedContent);
+        } catch (e) {
+          // If direct parse fails, try repair
+          console.warn('[AUDITABLE-OPT] Step 1: Initial parse failed, attempting repair...');
+          const repaired = repairJson(cleanedContent);
+          parsed = JSON.parse(repaired);
+        }
+
         if (Array.isArray(parsed)) {
           // Validate and filter valid elements
           const validElements = parsed.filter(elem => 
@@ -12351,13 +12367,14 @@ ${content}`;
           return validElements;
         }
       } catch (parseError) {
-        console.warn('[AUDITABLE-OPT] Step 1: Failed to parse initial cleaned content, trying regex extraction...');
+        console.warn('[AUDITABLE-OPT] Step 1: Failed to parse initial or repaired content, trying regex extraction...');
         
         // Try to extract JSON array from response using a more aggressive regex
+        // This looks for anything between the first [ and the last ]
         const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
         if (jsonArrayMatch) {
           try {
-            const extracted = JSON.parse(jsonArrayMatch[0]);
+            const extracted = JSON.parse(repairJson(jsonArrayMatch[0]));
             if (Array.isArray(extracted)) {
               const validElements = extracted.filter(elem => 
                 elem && typeof elem === 'object' && 
@@ -12379,8 +12396,8 @@ ${content}`;
         }
         
         console.error('[AUDITABLE-OPT] Step 1: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE-OPT] RAW RESPONSE START:', result.content.substring(0, 200).replace(/\n/g, ' '));
-        console.error('[AUDITABLE-OPT] CLEANED CONTENT START:', cleanedContent.substring(0, 200).replace(/\n/g, ' '));
+        console.error('[AUDITABLE-OPT] RAW RESPONSE (first 500):', result.content.substring(0, 500).replace(/\n/g, ' '));
+        console.error('[AUDITABLE-OPT] CLEANED CONTENT (first 500):', cleanedContent.substring(0, 500).replace(/\n/g, ' '));
       }
     }
     
@@ -12458,11 +12475,19 @@ Return a JSON array with the same number of objects, each with: name, descriptio
         const cleanedContent = cleanJsonResponse(result.content);
         
         try {
-          let parsed = JSON.parse(cleanedContent);
+          let parsed;
+          try {
+            parsed = JSON.parse(cleanedContent);
+          } catch (e) {
+            console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse failed, attempting repair...`);
+            const repaired = repairJson(cleanedContent);
+            parsed = JSON.parse(repaired);
+          }
+
           if (!Array.isArray(parsed)) {
             const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
             if (jsonArrayMatch) {
-              parsed = JSON.parse(jsonArrayMatch[0]);
+              parsed = JSON.parse(repairJson(jsonArrayMatch[0]));
             }
           }
           
@@ -12484,8 +12509,8 @@ Return a JSON array with the same number of objects, each with: name, descriptio
             throw new Error('Parsed result is not an array');
           }
         } catch (parseError) {
-          console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse error, using original points`);
-          console.warn(`[AUDITABLE-OPT] RAW RESPONSE START: ${result.content.substring(0, 100).replace(/\n/g, ' ')}`);
+          console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Final parse error, using original points`);
+          console.warn(`[AUDITABLE-OPT] RAW RESPONSE (first 200): ${result.content.substring(0, 200).replace(/\n/g, ' ')}`);
           expandedElements.push(...batch);
         }
       } else {
