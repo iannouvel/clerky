@@ -20163,6 +20163,103 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
     }
 }
 
+// Refine suggestions using a different LLM - takes previous output + evaluation and improves
+async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider) {
+    console.log(`[EVOLVE-REFINE] Refining suggestions with ${targetProvider}...`);
+    
+    const systemPrompt = `You are a clinical advisor reviewing and improving upon another AI's suggestions. 
+Your task is to analyze the previous AI's output and evaluation feedback, then provide IMPROVED suggestions.
+
+Key goals:
+1. Address any recommendations that were MISSED by the previous AI
+2. Fix any INCORRECT or REDUNDANT suggestions
+3. Keep suggestions that were CORRECT
+4. Ensure clinical equivalence is properly recognized (e.g., 'FBC in labour' covers anaemia monitoring)
+
+Return ONLY valid JSON - no markdown, no explanations.`;
+
+    const userPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+GUIDELINE TITLE: ${guidelineTitle}
+
+GUIDELINE CONTENT:
+${guidelineContent}
+
+PREVIOUS AI'S SUGGESTIONS:
+${JSON.stringify(previousSuggestions, null, 2)}
+
+EVALUATION OF PREVIOUS AI'S OUTPUT:
+- Completeness Score: ${(previousEvaluation.completenessScore || 0) * 100}%
+- Accuracy Score: ${(previousEvaluation.accuracyScore || 0) * 100}%
+- Missed Recommendations: ${JSON.stringify(previousEvaluation.missedRecommendations || [], null, 2)}
+- Suggestion Evaluations: ${JSON.stringify(previousEvaluation.suggestionEvaluations || [], null, 2)}
+- Overall Assessment: ${previousEvaluation.overallAssessment || 'None provided'}
+
+Based on the evaluation feedback, provide IMPROVED suggestions. 
+- ADD any recommendations that were missed
+- REMOVE or FIX any suggestions marked as incorrect or redundant
+- KEEP suggestions that were marked as correct
+
+Return JSON in this exact format:
+{
+  "patientContext": {
+    "phaseOfCare": "e.g., Antenatal - 32+2 weeks gestation",
+    "keyConditions": ["condition1", "condition2"],
+    "existingPlan": ["planned action 1", "planned action 2"]
+  },
+  "suggestions": [
+    {
+      "name": "Brief name of recommendation",
+      "issue": "What is GENUINELY missing",
+      "suggestion": "Specific action to take",
+      "verbatimQuote": "Exact quote from the guideline",
+      "priority": "high or medium or low"
+    }
+  ],
+  "alreadyCompliant": [
+    "Guideline recommendation → covered by [specific plan item]"
+  ],
+  "refinementNotes": "Brief explanation of what you changed from the previous output"
+}`;
+
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    // Force routing to the target provider
+    const result = await routeToAI({ messages }, userId, targetProvider);
+    
+    if (!result || !result.content) {
+        console.error(`[EVOLVE-REFINE] No response from ${targetProvider}`);
+        return { 
+            patientContext: {}, 
+            suggestions: previousSuggestions, 
+            alreadyCompliant: [],
+            refinementNotes: `No response from ${targetProvider}, keeping previous suggestions`
+        };
+    }
+    
+    try {
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        console.log(`[EVOLVE-REFINE] ${targetProvider} returned ${parsed.suggestions?.length || 0} suggestions`);
+        return parsed;
+    } catch (e) {
+        console.error(`[EVOLVE-REFINE] Failed to parse ${targetProvider} response:`, e.message);
+        return { 
+            patientContext: {}, 
+            suggestions: previousSuggestions, 
+            alreadyCompliant: [],
+            refinementNotes: `Failed to parse ${targetProvider} response, keeping previous suggestions`
+        };
+    }
+}
+
+// Fixed list of LLMs for sequential processing
+const SEQUENTIAL_LLM_CHAIN = ['DeepSeek', 'OpenAI', 'Anthropic', 'Mistral', 'Gemini'];
+
 // Prompt Evolution Endpoint - runs analysis, evaluates results, and suggests improvements
 // Now supports scenarios with individual guidelines (auto-matched) or a single shared guideline
 app.post('/evolvePrompts', authenticateUser, async (req, res) => {
@@ -20339,6 +20436,287 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// Sequential LLM Evolution Endpoint - runs through multiple LLMs, each improving on the previous
+app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
+    const timer = new StepTimer('/evolvePromptsSequential');
+    req.stepTimer = timer;
+    
+    try {
+        console.log('[EVOLVE-SEQ] Sequential evolution started');
+        const { scenariosWithGuidelines } = req.body;
+        const userId = req.user.uid;
+        
+        if (!scenariosWithGuidelines || !Array.isArray(scenariosWithGuidelines) || scenariosWithGuidelines.length === 0) {
+            return res.status(400).json({ success: false, error: 'scenariosWithGuidelines is required' });
+        }
+        
+        timer.step('Validation');
+        
+        // Results structure: for each scenario, track results across all LLMs
+        const allResults = [];
+        
+        // Cache for guideline content
+        const guidelineCache = {};
+        
+        for (let scenarioIdx = 0; scenarioIdx < scenariosWithGuidelines.length; scenarioIdx++) {
+            const scenario = scenariosWithGuidelines[scenarioIdx];
+            const scenarioGuidelineId = scenario.guidelineId;
+            
+            console.log(`[EVOLVE-SEQ] Processing scenario ${scenarioIdx + 1}/${scenariosWithGuidelines.length}: ${scenario.name}`);
+            
+            // Fetch guideline content (with caching)
+            let guidelineContent, guidelineTitle;
+            
+            if (guidelineCache[scenarioGuidelineId]) {
+                guidelineContent = guidelineCache[scenarioGuidelineId].content;
+                guidelineTitle = guidelineCache[scenarioGuidelineId].title;
+            } else {
+                const guidelineDoc = await db.collection('guidelines').doc(scenarioGuidelineId).get();
+                
+                if (!guidelineDoc.exists) {
+                    console.warn(`[EVOLVE-SEQ] Guideline not found: ${scenarioGuidelineId}, skipping scenario`);
+                    continue;
+                }
+                
+                const guidelineData = guidelineDoc.data();
+                guidelineTitle = scenario.guidelineTitle || guidelineData.humanFriendlyTitle || guidelineData.title || scenarioGuidelineId;
+                
+                guidelineContent = guidelineData.condensed || guidelineData.content;
+                
+                if (!guidelineContent) {
+                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) {
+                        guidelineContent = condensedDoc.data()?.condensed;
+                    }
+                }
+                
+                if (!guidelineContent) {
+                    const fullContentDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('full').get();
+                    if (fullContentDoc.exists) {
+                        guidelineContent = fullContentDoc.data()?.content;
+                    }
+                }
+                
+                if (!guidelineContent) {
+                    console.warn(`[EVOLVE-SEQ] No content for guideline: ${scenarioGuidelineId}, skipping scenario`);
+                    continue;
+                }
+                
+                guidelineCache[scenarioGuidelineId] = { content: guidelineContent, title: guidelineTitle };
+            }
+            
+            timer.step(`Scenario ${scenarioIdx + 1} fetch guideline`);
+            
+            // Track iterations for this scenario
+            const iterations = [];
+            let currentSuggestions = null;
+            let currentEvaluation = null;
+            
+            // Run through each LLM in the chain
+            for (let llmIdx = 0; llmIdx < SEQUENTIAL_LLM_CHAIN.length; llmIdx++) {
+                const provider = SEQUENTIAL_LLM_CHAIN[llmIdx];
+                console.log(`[EVOLVE-SEQ] Scenario ${scenarioIdx + 1}, LLM ${llmIdx + 1}/${SEQUENTIAL_LLM_CHAIN.length}: ${provider}`);
+                
+                const startTime = Date.now();
+                let analysisResult;
+                
+                try {
+                    if (llmIdx === 0) {
+                        // First LLM: generate initial suggestions using analyzeGuidelineForPatient
+                        // Force routing to this provider by temporarily overriding
+                        analysisResult = await analyzeGuidelineForPatientWithProvider(
+                            scenario.clinicalNote,
+                            guidelineContent,
+                            guidelineTitle,
+                            userId,
+                            provider
+                        );
+                    } else {
+                        // Subsequent LLMs: refine based on previous output + evaluation
+                        analysisResult = await refineSuggestions(
+                            currentSuggestions,
+                            currentEvaluation,
+                            scenario.clinicalNote,
+                            guidelineContent,
+                            guidelineTitle,
+                            userId,
+                            provider
+                        );
+                    }
+                } catch (llmError) {
+                    console.error(`[EVOLVE-SEQ] Error with ${provider}:`, llmError.message);
+                    analysisResult = {
+                        patientContext: {},
+                        suggestions: currentSuggestions || [],
+                        alreadyCompliant: [],
+                        error: llmError.message
+                    };
+                }
+                
+                const analysisLatency = Date.now() - startTime;
+                currentSuggestions = analysisResult.suggestions || [];
+                
+                timer.step(`Scenario ${scenarioIdx + 1} ${provider} analysis`);
+                
+                // Evaluate the results
+                let evaluation;
+                try {
+                    evaluation = await evaluateSuggestions(
+                        scenario.clinicalNote,
+                        guidelineContent,
+                        guidelineTitle,
+                        currentSuggestions,
+                        analysisResult.alreadyCompliant || [],
+                        userId
+                    );
+                } catch (evalError) {
+                    console.error(`[EVOLVE-SEQ] Evaluation error:`, evalError.message);
+                    evaluation = {
+                        completenessScore: 0,
+                        accuracyScore: 0,
+                        missedRecommendations: [],
+                        suggestionEvaluations: [],
+                        error: evalError.message
+                    };
+                }
+                
+                currentEvaluation = evaluation;
+                
+                timer.step(`Scenario ${scenarioIdx + 1} ${provider} evaluation`);
+                
+                iterations.push({
+                    provider,
+                    suggestionsCount: currentSuggestions.length,
+                    completenessScore: evaluation.completenessScore || 0,
+                    accuracyScore: evaluation.accuracyScore || 0,
+                    latencyMs: analysisLatency,
+                    overallAssessment: evaluation.overallAssessment,
+                    suggestions: currentSuggestions,
+                    refinementNotes: analysisResult.refinementNotes,
+                    error: analysisResult.error || evaluation.error
+                });
+            }
+            
+            allResults.push({
+                scenarioName: scenario.name,
+                guidelineId: scenarioGuidelineId,
+                guidelineTitle,
+                iterations
+            });
+        }
+        
+        if (allResults.length === 0) {
+            return res.status(400).json({ success: false, error: 'No scenarios could be processed' });
+        }
+        
+        timer.step('All scenarios complete');
+        
+        console.log(`[EVOLVE-SEQ] Sequential evolution complete. ${allResults.length} scenarios processed through ${SEQUENTIAL_LLM_CHAIN.length} LLMs.`);
+        console.log('[EVOLVE-SEQ] Timing:', JSON.stringify(timer.getSummary()));
+        
+        res.json({
+            success: true,
+            llmChain: SEQUENTIAL_LLM_CHAIN,
+            scenarioResults: allResults,
+            timing: timer.getSummary()
+        });
+        
+    } catch (error) {
+        console.error('[EVOLVE-SEQ] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Helper function to run analyzeGuidelineForPatient with a specific provider
+async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider) {
+    console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" with ${targetProvider}...`);
+    
+    // Load prompt from prompts.json or Firestore cache
+    const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
+    
+    // Ensure prompts are strings (Firestore might return objects)
+    const rawSystemPrompt = promptConfig?.system_prompt;
+    const rawUserPrompt = promptConfig?.prompt;
+    
+    const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) || 
+        `You are a clinical advisor. Read the clinical note carefully to understand the patient's current phase of care, existing plan, and clinical context. Then read the guideline and identify ONLY recommendations that:
+1. Apply to this patient RIGHT NOW (not future phases of care)
+2. Are NOT already addressed in the clinical note
+3. Would add genuine clinical value
+
+Return ONLY valid JSON - no markdown, no explanations.`;
+    
+    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
+        `CLINICAL NOTE:
+{{clinicalNote}}
+
+GUIDELINE TITLE: {{guidelineTitle}}
+
+GUIDELINE CONTENT:
+{{guidelineContent}}
+
+Read the clinical note to understand:
+- The patient's current phase of care (e.g., pregnant at X weeks, postpartum, etc.)
+- What has already been done or planned
+- The patient's specific conditions and circumstances
+
+Then read the guideline and identify any recommendations that:
+1. Apply specifically to THIS patient in their CURRENT situation
+2. Are NOT already addressed or planned in the clinical note
+3. Would genuinely improve this patient's care
+
+Be conservative - only suggest things that are clearly applicable and clearly missing.
+
+Return JSON:
+{
+  "patientContext": {
+    "phaseOfCare": "e.g., Antenatal - 16+2 weeks gestation",
+    "keyConditions": ["condition1", "condition2"],
+    "existingPlan": ["planned action 1", "planned action 2"]
+  },
+  "suggestions": [
+    {
+      "name": "Brief name of recommendation",
+      "issue": "What is missing from the current plan",
+      "suggestion": "Specific action to take",
+      "verbatimQuote": "Exact quote from the guideline supporting this",
+      "priority": "high or medium or low"
+    }
+  ],
+  "alreadyCompliant": [
+    "Brief description of guideline recommendation already addressed in the note"
+  ]
+}
+
+If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`)
+        .replace('{{clinicalNote}}', clinicalNote)
+        .replace('{{guidelineTitle}}', guidelineTitle)
+        .replace('{{guidelineContent}}', guidelineContent);
+    
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    // Force routing to the target provider
+    const result = await routeToAI({ messages }, userId, targetProvider);
+    
+    if (!result || !result.content) {
+        console.error(`[SEMANTIC-ANALYSIS] No response from ${targetProvider}`);
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+    
+    try {
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        console.log(`[SEMANTIC-ANALYSIS] ${targetProvider} returned ${parsed.suggestions?.length || 0} suggestions`);
+        return parsed;
+    } catch (e) {
+        console.error(`[SEMANTIC-ANALYSIS] Failed to parse ${targetProvider} response:`, e.message);
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+}
 
 // Practice Point Suggestions API endpoint - NEW SEMANTIC APPROACH
 // Instead of using pre-extracted auditable elements, we pass the full guideline content

@@ -5320,6 +5320,282 @@ ${responseText}
             }
         }
         
+        // Select 3 random scenarios with transcripts
+        function selectRandomScenarios() {
+            const select = document.getElementById('evolveScenarioSelect');
+            if (!select) return;
+            
+            // Get all options with transcripts
+            const optionsWithTranscripts = Array.from(select.options).filter(opt => 
+                opt.dataset.hasTranscript === 'true'
+            );
+            
+            if (optionsWithTranscripts.length === 0) {
+                alert('No scenarios with transcripts available');
+                return;
+            }
+            
+            // Deselect all first
+            Array.from(select.options).forEach(opt => opt.selected = false);
+            
+            // Shuffle and pick 3 (or fewer if not enough)
+            const shuffled = optionsWithTranscripts.sort(() => Math.random() - 0.5);
+            const toSelect = shuffled.slice(0, Math.min(3, shuffled.length));
+            
+            toSelect.forEach(opt => opt.selected = true);
+            
+            const status = document.getElementById('evolveStatus');
+            if (status) {
+                status.textContent = `Selected ${toSelect.length} random scenarios`;
+            }
+        }
+        
+        // Store sequential evolution results
+        let sequentialEvolutionResults = null;
+        
+        // Run sequential evolution through all LLMs
+        async function runSequentialEvolution() {
+            const scenarioSelect = document.getElementById('evolveScenarioSelect');
+            const status = document.getElementById('evolveStatus');
+            const progressSection = document.getElementById('evolveProgressSection');
+            const progressText = document.getElementById('evolveProgressText');
+            const progressPercent = document.getElementById('evolveProgressPercent');
+            const progressBar = document.getElementById('evolveProgressBar');
+            const resultsSection = document.getElementById('evolveResultsSection');
+            const runBtn = document.getElementById('runSequentialBtn');
+            
+            // Get selected scenarios
+            const selectedOptions = Array.from(scenarioSelect.selectedOptions);
+            if (selectedOptions.length === 0) {
+                alert('Please select at least one scenario');
+                return;
+            }
+            
+            try {
+                runBtn.disabled = true;
+                progressSection.style.display = 'block';
+                resultsSection.style.display = 'none';
+                
+                const token = await auth.currentUser.getIdToken();
+                const scenarios = [];
+                
+                // Step 1: Prepare scenarios (generate transcripts if needed)
+                for (let i = 0; i < selectedOptions.length; i++) {
+                    const opt = selectedOptions[i];
+                    const progress = Math.round((i / selectedOptions.length) * 20);
+                    progressBar.style.width = `${progress}%`;
+                    progressPercent.textContent = `${progress}%`;
+                    
+                    let transcript = opt.dataset.transcript;
+                    
+                    if (!transcript || opt.dataset.hasTranscript === 'false') {
+                        progressText.textContent = `Generating transcript for ${opt.dataset.name}...`;
+                        try {
+                            transcript = await generateTranscriptForCondition(opt.value, opt.dataset.name);
+                            opt.dataset.transcript = transcript;
+                            opt.dataset.hasTranscript = 'true';
+                            opt.textContent = `✓ ${opt.dataset.name}`;
+                        } catch (err) {
+                            console.error(`[EVOLVE-SEQ] Failed to generate transcript for ${opt.dataset.name}:`, err);
+                            continue;
+                        }
+                    }
+                    
+                    scenarios.push({
+                        id: opt.value,
+                        name: opt.dataset.name,
+                        clinicalNote: transcript
+                    });
+                }
+                
+                if (scenarios.length === 0) {
+                    throw new Error('No valid scenarios to process');
+                }
+                
+                // Step 2: Find relevant guidelines for each scenario
+                progressText.textContent = `Finding relevant guidelines for ${scenarios.length} scenarios...`;
+                progressBar.style.width = '30%';
+                progressPercent.textContent = '30%';
+                
+                const scenariosWithGuidelines = [];
+                for (let i = 0; i < scenarios.length; i++) {
+                    const scenario = scenarios[i];
+                    const progress = 30 + Math.round((i / scenarios.length) * 10);
+                    progressBar.style.width = `${progress}%`;
+                    progressPercent.textContent = `${progress}%`;
+                    progressText.textContent = `Finding guidelines for ${scenario.name}...`;
+                    
+                    try {
+                        const relevantGuideline = await findRelevantGuidelineForNote(scenario.clinicalNote);
+                        if (relevantGuideline) {
+                            scenariosWithGuidelines.push({
+                                ...scenario,
+                                guidelineId: relevantGuideline.id,
+                                guidelineTitle: relevantGuideline.title || relevantGuideline.displayName
+                            });
+                        }
+                    } catch (err) {
+                        console.error(`[EVOLVE-SEQ] Error finding guidelines for ${scenario.name}:`, err);
+                    }
+                }
+                
+                if (scenariosWithGuidelines.length === 0) {
+                    throw new Error('Could not find relevant guidelines for any scenario');
+                }
+                
+                // Step 3: Run sequential evolution
+                progressText.textContent = `Running sequential LLM chain (5 LLMs × ${scenariosWithGuidelines.length} scenarios)...`;
+                progressBar.style.width = '45%';
+                progressPercent.textContent = '45%';
+                
+                const response = await fetch(`${SERVER_URL}/evolvePromptsSequential`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ scenariosWithGuidelines })
+                });
+                
+                progressBar.style.width = '95%';
+                progressPercent.textContent = '95%';
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `Server error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                sequentialEvolutionResults = result;
+                
+                progressBar.style.width = '100%';
+                progressPercent.textContent = '100%';
+                progressText.textContent = 'Complete!';
+                
+                // Display results
+                displaySequentialResults(result);
+                
+                status.textContent = 'Sequential evolution complete';
+                
+            } catch (error) {
+                console.error('[EVOLVE-SEQ] Error:', error);
+                status.textContent = `Error: ${error.message}`;
+                progressText.textContent = `Error: ${error.message}`;
+            } finally {
+                runBtn.disabled = false;
+            }
+        }
+        
+        // Display sequential evolution results with comparison table
+        function displaySequentialResults(result) {
+            const resultsSection = document.getElementById('evolveResultsSection');
+            const scenarioResultsDiv = document.getElementById('evolveScenarioResults');
+            
+            // Hide the standard metrics section for sequential results
+            const metricsRow = document.querySelector('#evolveResultsSection > div:first-child');
+            if (metricsRow) {
+                metricsRow.style.display = 'none';
+            }
+            
+            // Build the comparison table
+            const llmChain = result.llmChain || ['DeepSeek', 'OpenAI', 'Anthropic', 'Mistral', 'Gemini'];
+            
+            let html = '<h5 style="margin-bottom:15px;">Sequential LLM Refinement Results</h5>';
+            html += '<p style="font-size:12px;color:#666;margin-bottom:15px;">Each LLM sees the previous LLM\'s output + evaluation and attempts to improve it. Comp = Completeness, Acc = Accuracy.</p>';
+            
+            html += '<table style="width:100%;border-collapse:collapse;font-size:12px;">';
+            html += '<thead style="background:#f8f9fa;"><tr>';
+            html += '<th style="padding:8px;text-align:left;border:1px solid #dee2e6;">Scenario</th>';
+            
+            llmChain.forEach(llm => {
+                html += `<th style="padding:8px;text-align:center;border:1px solid #dee2e6;">${llm}</th>`;
+            });
+            html += '</tr></thead><tbody>';
+            
+            (result.scenarioResults || []).forEach(sr => {
+                html += '<tr>';
+                html += `<td style="padding:8px;border:1px solid #dee2e6;font-weight:500;">${sr.scenarioName}<br><span style="font-size:10px;color:#888;">${sr.guidelineTitle?.substring(0, 30) || ''}...</span></td>`;
+                
+                let prevComp = null, prevAcc = null;
+                
+                (sr.iterations || []).forEach((iter, idx) => {
+                    const comp = Math.round((iter.completenessScore || 0) * 100);
+                    const acc = Math.round((iter.accuracyScore || 0) * 100);
+                    
+                    // Determine trend arrows
+                    let compTrend = '', accTrend = '';
+                    if (prevComp !== null) {
+                        if (comp > prevComp) compTrend = '<span style="color:#28a745;">↑</span>';
+                        else if (comp < prevComp) compTrend = '<span style="color:#dc3545;">↓</span>';
+                        else compTrend = '<span style="color:#666;">→</span>';
+                    }
+                    if (prevAcc !== null) {
+                        if (acc > prevAcc) accTrend = '<span style="color:#28a745;">↑</span>';
+                        else if (acc < prevAcc) accTrend = '<span style="color:#dc3545;">↓</span>';
+                        else accTrend = '<span style="color:#666;">→</span>';
+                    }
+                    
+                    const compColor = comp >= 80 ? '#28a745' : comp >= 60 ? '#ff9800' : '#dc3545';
+                    const accColor = acc >= 80 ? '#28a745' : acc >= 60 ? '#ff9800' : '#dc3545';
+                    
+                    html += `<td style="padding:8px;text-align:center;border:1px solid #dee2e6;">`;
+                    html += `<span style="color:${compColor};font-weight:bold;">${comp}%</span>${compTrend} / `;
+                    html += `<span style="color:${accColor};font-weight:bold;">${acc}%</span>${accTrend}`;
+                    html += `<br><span style="font-size:10px;color:#888;">${iter.latencyMs}ms</span>`;
+                    if (iter.error) {
+                        html += `<br><span style="font-size:10px;color:#dc3545;">⚠ Error</span>`;
+                    }
+                    html += '</td>';
+                    
+                    prevComp = comp;
+                    prevAcc = acc;
+                });
+                
+                html += '</tr>';
+            });
+            
+            html += '</tbody></table>';
+            
+            // Add summary
+            html += '<div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;">';
+            html += '<h5 style="margin-bottom:10px;">Summary</h5>';
+            
+            // Calculate average improvement from first to last LLM
+            let totalCompImprovement = 0, totalAccImprovement = 0, count = 0;
+            (result.scenarioResults || []).forEach(sr => {
+                if (sr.iterations && sr.iterations.length >= 2) {
+                    const first = sr.iterations[0];
+                    const last = sr.iterations[sr.iterations.length - 1];
+                    totalCompImprovement += (last.completenessScore || 0) - (first.completenessScore || 0);
+                    totalAccImprovement += (last.accuracyScore || 0) - (first.accuracyScore || 0);
+                    count++;
+                }
+            });
+            
+            if (count > 0) {
+                const avgCompImprovement = (totalCompImprovement / count) * 100;
+                const avgAccImprovement = (totalAccImprovement / count) * 100;
+                
+                html += `<p style="font-size:13px;">Average improvement from ${llmChain[0]} to ${llmChain[llmChain.length - 1]}:</p>`;
+                html += `<p style="font-size:13px;">`;
+                html += `Completeness: <strong style="color:${avgCompImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgCompImprovement >= 0 ? '+' : ''}${avgCompImprovement.toFixed(1)}%</strong> | `;
+                html += `Accuracy: <strong style="color:${avgAccImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgAccImprovement >= 0 ? '+' : ''}${avgAccImprovement.toFixed(1)}%</strong>`;
+                html += '</p>';
+            }
+            
+            html += '</div>';
+            
+            scenarioResultsDiv.innerHTML = html;
+            
+            // Hide the suggested improvements section for sequential mode
+            const suggestedChangesSection = document.getElementById('evolveImprovementsSection');
+            if (suggestedChangesSection) {
+                suggestedChangesSection.parentElement.style.display = 'none';
+            }
+            
+            resultsSection.style.display = 'block';
+        }
+        
         // Initialize evolution tab when it becomes visible
         function initEvolveTab() {
             loadEvolveScenarios();
@@ -5329,6 +5605,16 @@ ${responseText}
         const runEvolutionBtn = document.getElementById('runEvolutionBtn');
         if (runEvolutionBtn) {
             runEvolutionBtn.addEventListener('click', runEvolutionCycle);
+        }
+        
+        const randomScenariosBtn = document.getElementById('randomScenariosBtn');
+        if (randomScenariosBtn) {
+            randomScenariosBtn.addEventListener('click', selectRandomScenarios);
+        }
+        
+        const runSequentialBtn = document.getElementById('runSequentialBtn');
+        if (runSequentialBtn) {
+            runSequentialBtn.addEventListener('click', runSequentialEvolution);
         }
         
         const loadEvolveScenariosBtn = document.getElementById('loadEvolveScenariosBtn');
