@@ -4799,6 +4799,448 @@ ${responseText}
             }
         }
 
+        // ===== PROMPT EVOLUTION SYSTEM =====
+        
+        // Store evolution results for later use
+        let currentEvolutionResults = null;
+        
+        // Load scenarios for evolution
+        async function loadEvolveScenarios() {
+            const select = document.getElementById('evolveScenarioSelect');
+            const status = document.getElementById('evolveStatus');
+            
+            if (!select) return;
+            
+            try {
+                status.textContent = 'Loading scenarios...';
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getClinicalConditions`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (!response.ok) throw new Error('Failed to load conditions');
+                
+                const data = await response.json();
+                const conditions = data.conditions || {};
+                
+                select.innerHTML = '';
+                
+                // Filter to only conditions with transcripts
+                let conditionsWithTranscripts = 0;
+                Object.entries(conditions).forEach(([id, condition]) => {
+                    if (condition.transcript) {
+                        const option = document.createElement('option');
+                        option.value = id;
+                        option.textContent = condition.name || id;
+                        option.dataset.transcript = condition.transcript;
+                        select.appendChild(option);
+                        conditionsWithTranscripts++;
+                    }
+                });
+                
+                if (conditionsWithTranscripts === 0) {
+                    select.innerHTML = '<option value="">No scenarios with transcripts available</option>';
+                    status.textContent = 'No scenarios available. Generate transcripts in the Transcripts tab first.';
+                } else {
+                    status.textContent = `Loaded ${conditionsWithTranscripts} scenarios with transcripts`;
+                }
+                
+            } catch (error) {
+                console.error('[EVOLVE] Error loading scenarios:', error);
+                status.textContent = `Error: ${error.message}`;
+                select.innerHTML = '<option value="">Error loading scenarios</option>';
+            }
+        }
+        
+        // Load guidelines for evolution
+        async function loadEvolveGuidelines() {
+            const select = document.getElementById('evolveGuidelineSelect');
+            
+            if (!select) return;
+            
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getGuidelinesList`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (!response.ok) throw new Error('Failed to load guidelines');
+                
+                const data = await response.json();
+                const guidelines = data.guidelines || [];
+                
+                select.innerHTML = '<option value="">Select a guideline...</option>';
+                
+                guidelines.forEach(g => {
+                    const option = document.createElement('option');
+                    option.value = g.id;
+                    option.textContent = g.displayName || g.humanFriendlyTitle || g.title || g.id;
+                    select.appendChild(option);
+                });
+                
+            } catch (error) {
+                console.error('[EVOLVE] Error loading guidelines:', error);
+                select.innerHTML = '<option value="">Error loading guidelines</option>';
+            }
+        }
+        
+        // Run evolution cycle
+        async function runEvolutionCycle() {
+            const scenarioSelect = document.getElementById('evolveScenarioSelect');
+            const guidelineSelect = document.getElementById('evolveGuidelineSelect');
+            const status = document.getElementById('evolveStatus');
+            const progressSection = document.getElementById('evolveProgressSection');
+            const progressText = document.getElementById('evolveProgressText');
+            const progressPercent = document.getElementById('evolveProgressPercent');
+            const progressBar = document.getElementById('evolveProgressBar');
+            const resultsSection = document.getElementById('evolveResultsSection');
+            const runBtn = document.getElementById('runEvolutionBtn');
+            
+            // Get selected scenarios
+            const selectedOptions = Array.from(scenarioSelect.selectedOptions);
+            if (selectedOptions.length === 0) {
+                alert('Please select at least one scenario');
+                return;
+            }
+            
+            const guidelineId = guidelineSelect.value;
+            if (!guidelineId) {
+                alert('Please select a guideline');
+                return;
+            }
+            
+            // Build scenarios array
+            const scenarios = selectedOptions.map(opt => ({
+                name: opt.textContent,
+                clinicalNote: opt.dataset.transcript
+            }));
+            
+            try {
+                runBtn.disabled = true;
+                progressSection.style.display = 'block';
+                resultsSection.style.display = 'none';
+                progressText.textContent = `Processing ${scenarios.length} scenarios...`;
+                progressBar.style.width = '10%';
+                progressPercent.textContent = '10%';
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/evolvePrompts`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ scenarios, guidelineId })
+                });
+                
+                progressBar.style.width = '90%';
+                progressPercent.textContent = '90%';
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `Server error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                currentEvolutionResults = result;
+                
+                progressBar.style.width = '100%';
+                progressPercent.textContent = '100%';
+                progressText.textContent = 'Complete!';
+                
+                // Display results
+                displayEvolutionResults(result);
+                
+                status.textContent = 'Evolution cycle complete';
+                
+            } catch (error) {
+                console.error('[EVOLVE] Error:', error);
+                status.textContent = `Error: ${error.message}`;
+                progressText.textContent = `Error: ${error.message}`;
+            } finally {
+                runBtn.disabled = false;
+            }
+        }
+        
+        // Display evolution results
+        function displayEvolutionResults(result) {
+            const resultsSection = document.getElementById('evolveResultsSection');
+            
+            // Update metrics
+            const metrics = result.aggregatedMetrics || {};
+            document.getElementById('evolveMetricCompleteness').textContent = 
+                ((metrics.averageCompleteness || 0) * 100).toFixed(1) + '%';
+            document.getElementById('evolveMetricAccuracy').textContent = 
+                ((metrics.averageAccuracy || 0) * 100).toFixed(1) + '%';
+            document.getElementById('evolveMetricLatency').textContent = 
+                (metrics.averageLatencyMs || 0).toFixed(0) + 'ms';
+            document.getElementById('evolveMetricScenarios').textContent = 
+                metrics.totalScenarios || 0;
+            
+            // Display per-scenario results
+            const scenarioResultsDiv = document.getElementById('evolveScenarioResults');
+            let scenarioHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
+            scenarioHtml += '<thead style="background:#f8f9fa;"><tr>';
+            scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Scenario</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Completeness</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Accuracy</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Suggestions</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Latency</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Assessment</th>';
+            scenarioHtml += '</tr></thead><tbody>';
+            
+            (result.scenarioResults || []).forEach(sr => {
+                const completeness = ((sr.evaluation?.completenessScore || 0) * 100).toFixed(0);
+                const accuracy = ((sr.evaluation?.accuracyScore || 0) * 100).toFixed(0);
+                const completenessColor = completeness >= 80 ? '#28a745' : completeness >= 60 ? '#ff9800' : '#dc3545';
+                const accuracyColor = accuracy >= 80 ? '#28a745' : accuracy >= 60 ? '#ff9800' : '#dc3545';
+                
+                scenarioHtml += '<tr>';
+                scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;">${sr.scenarioName}</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${completenessColor};font-weight:bold;">${completeness}%</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${accuracyColor};font-weight:bold;">${accuracy}%</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.analysisResult?.suggestionsCount || 0}</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.latencyMs || 0}ms</td>`;
+                scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;font-size:12px;color:#666;">${sr.evaluation?.overallAssessment || '-'}</td>`;
+                scenarioHtml += '</tr>';
+            });
+            
+            scenarioHtml += '</tbody></table>';
+            scenarioResultsDiv.innerHTML = scenarioHtml;
+            
+            // Display suggested improvements
+            const improvementsDiv = document.getElementById('evolveImprovementsSection');
+            const improvements = result.suggestedImprovements || {};
+            
+            let improvementsHtml = '';
+            
+            if (improvements.error) {
+                improvementsHtml = `<div style="color:#dc3545;">Error generating improvements: ${improvements.error}</div>`;
+            } else {
+                // Analysis section
+                if (improvements.analysis) {
+                    improvementsHtml += '<div style="margin-bottom:15px;">';
+                    improvementsHtml += '<h6 style="margin-bottom:8px;">Analysis</h6>';
+                    
+                    if (improvements.analysis.keyPatterns?.length > 0) {
+                        improvementsHtml += '<div style="margin-bottom:8px;"><strong>Key Patterns:</strong></div>';
+                        improvementsHtml += '<ul style="margin:0 0 10px 20px;">';
+                        improvements.analysis.keyPatterns.forEach(p => {
+                            improvementsHtml += `<li>${p}</li>`;
+                        });
+                        improvementsHtml += '</ul>';
+                    }
+                    
+                    if (improvements.analysis.rootCauses?.length > 0) {
+                        improvementsHtml += '<div style="margin-bottom:8px;"><strong>Root Causes:</strong></div>';
+                        improvementsHtml += '<ul style="margin:0 0 10px 20px;">';
+                        improvements.analysis.rootCauses.forEach(c => {
+                            improvementsHtml += `<li>${c}</li>`;
+                        });
+                        improvementsHtml += '</ul>';
+                    }
+                    
+                    improvementsHtml += '</div>';
+                }
+                
+                // Suggested changes
+                if (improvements.suggestedChanges?.length > 0) {
+                    improvementsHtml += '<div style="margin-bottom:15px;">';
+                    improvementsHtml += '<h6 style="margin-bottom:8px;">Suggested Changes</h6>';
+                    
+                    improvements.suggestedChanges.forEach((change, idx) => {
+                        improvementsHtml += `<div style="background:#f8f9fa;padding:10px;border-radius:4px;margin-bottom:10px;">`;
+                        improvementsHtml += `<div><strong>Change ${idx + 1}:</strong> ${change.changeType} in ${change.section}</div>`;
+                        improvementsHtml += `<div style="font-size:12px;color:#666;margin-top:4px;">${change.rationale}</div>`;
+                        improvementsHtml += `<div style="font-size:12px;color:#007bff;margin-top:4px;">Expected impact: ${change.expectedImpact}</div>`;
+                        improvementsHtml += '</div>';
+                    });
+                    
+                    improvementsHtml += '</div>';
+                }
+                
+                // New prompt preview
+                if (improvements.newPrompt || improvements.newSystemPrompt) {
+                    improvementsHtml += '<div style="margin-bottom:15px;">';
+                    improvementsHtml += '<h6 style="margin-bottom:8px;">New Prompt (Click "Copy New Prompt" to copy)</h6>';
+                    improvementsHtml += '<div style="background:#1e1e1e;color:#d4d4d4;padding:10px;border-radius:4px;font-family:monospace;font-size:11px;max-height:200px;overflow:auto;white-space:pre-wrap;">';
+                    
+                    if (improvements.newSystemPrompt) {
+                        improvementsHtml += `<span style="color:#569cd6;">// System Prompt:</span>\n${improvements.newSystemPrompt}\n\n`;
+                    }
+                    if (improvements.newPrompt) {
+                        improvementsHtml += `<span style="color:#569cd6;">// User Prompt:</span>\n${improvements.newPrompt}`;
+                    }
+                    
+                    improvementsHtml += '</div></div>';
+                }
+                
+                // Expected improvement
+                if (improvements.expectedImprovement) {
+                    improvementsHtml += '<div style="background:#d4edda;padding:10px;border-radius:4px;">';
+                    improvementsHtml += '<strong>Expected Improvement:</strong> ';
+                    improvementsHtml += `Completeness: ${improvements.expectedImprovement.completeness || 'N/A'}, `;
+                    improvementsHtml += `Accuracy: ${improvements.expectedImprovement.accuracy || 'N/A'}`;
+                    if (improvements.expectedImprovement.tradeoffs) {
+                        improvementsHtml += `<div style="font-size:12px;margin-top:4px;">Tradeoffs: ${improvements.expectedImprovement.tradeoffs}</div>`;
+                    }
+                    improvementsHtml += '</div>';
+                }
+            }
+            
+            if (!improvementsHtml) {
+                improvementsHtml = '<div style="color:#666;">No improvements suggested. The current prompt may already be optimal for these scenarios.</div>';
+            }
+            
+            improvementsDiv.innerHTML = improvementsHtml;
+            
+            // Enable apply button if we have new prompts
+            const applyBtn = document.getElementById('applyEvolutionBtn');
+            applyBtn.disabled = !(improvements.newPrompt || improvements.newSystemPrompt);
+            
+            resultsSection.style.display = 'block';
+        }
+        
+        // Apply evolution changes
+        async function applyEvolutionChanges() {
+            if (!currentEvolutionResults?.suggestedImprovements) {
+                alert('No improvements to apply');
+                return;
+            }
+            
+            const improvements = currentEvolutionResults.suggestedImprovements;
+            const status = document.getElementById('evolveApplyStatus');
+            const applyBtn = document.getElementById('applyEvolutionBtn');
+            
+            if (!improvements.newPrompt && !improvements.newSystemPrompt) {
+                alert('No new prompt generated');
+                return;
+            }
+            
+            if (!confirm('This will update the analyzeGuidelineForPatient prompt. Continue?')) {
+                return;
+            }
+            
+            try {
+                applyBtn.disabled = true;
+                status.textContent = 'Saving changes...';
+                
+                // Load current prompts
+                const token = await auth.currentUser.getIdToken();
+                const getResponse = await fetch(`${SERVER_URL}/getPrompts`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                
+                if (!getResponse.ok) throw new Error('Failed to load current prompts');
+                
+                const promptsData = await getResponse.json();
+                const prompts = promptsData.prompts || {};
+                
+                // Update the analyzeGuidelineForPatient prompt
+                if (!prompts.analyzeGuidelineForPatient) {
+                    prompts.analyzeGuidelineForPatient = {};
+                }
+                
+                if (improvements.newSystemPrompt) {
+                    prompts.analyzeGuidelineForPatient.system_prompt = improvements.newSystemPrompt;
+                }
+                if (improvements.newPrompt) {
+                    prompts.analyzeGuidelineForPatient.prompt = improvements.newPrompt;
+                }
+                
+                // Save updated prompts
+                const saveResponse = await fetch(`${SERVER_URL}/updatePrompts`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ updatedPrompts: prompts })
+                });
+                
+                if (!saveResponse.ok) {
+                    const errorData = await saveResponse.json();
+                    throw new Error(errorData.message || 'Failed to save prompts');
+                }
+                
+                status.textContent = '✅ Prompt updated successfully!';
+                status.style.color = '#28a745';
+                
+            } catch (error) {
+                console.error('[EVOLVE] Error applying changes:', error);
+                status.textContent = `❌ Error: ${error.message}`;
+                status.style.color = '#dc3545';
+            } finally {
+                applyBtn.disabled = false;
+            }
+        }
+        
+        // Copy new prompt to clipboard
+        function copyEvolutionPrompt() {
+            if (!currentEvolutionResults?.suggestedImprovements) {
+                alert('No improvements to copy');
+                return;
+            }
+            
+            const improvements = currentEvolutionResults.suggestedImprovements;
+            let promptText = '';
+            
+            if (improvements.newSystemPrompt) {
+                promptText += '// System Prompt:\n' + improvements.newSystemPrompt + '\n\n';
+            }
+            if (improvements.newPrompt) {
+                promptText += '// User Prompt:\n' + improvements.newPrompt;
+            }
+            
+            if (promptText) {
+                navigator.clipboard.writeText(promptText).then(() => {
+                    document.getElementById('evolveApplyStatus').textContent = '📋 Copied to clipboard!';
+                }).catch(err => {
+                    console.error('Failed to copy:', err);
+                    alert('Failed to copy to clipboard');
+                });
+            } else {
+                alert('No new prompt to copy');
+            }
+        }
+        
+        // Initialize evolution tab when it becomes visible
+        function initEvolveTab() {
+            loadEvolveScenarios();
+            loadEvolveGuidelines();
+        }
+        
+        // Set up evolution button handlers
+        const runEvolutionBtn = document.getElementById('runEvolutionBtn');
+        if (runEvolutionBtn) {
+            runEvolutionBtn.addEventListener('click', runEvolutionCycle);
+        }
+        
+        const loadEvolveScenariosBtn = document.getElementById('loadEvolveScenariosBtn');
+        if (loadEvolveScenariosBtn) {
+            loadEvolveScenariosBtn.addEventListener('click', loadEvolveScenarios);
+        }
+        
+        const applyEvolutionBtn = document.getElementById('applyEvolutionBtn');
+        if (applyEvolutionBtn) {
+            applyEvolutionBtn.addEventListener('click', applyEvolutionChanges);
+        }
+        
+        const copyEvolutionBtn = document.getElementById('copyEvolutionBtn');
+        if (copyEvolutionBtn) {
+            copyEvolutionBtn.addEventListener('click', copyEvolutionPrompt);
+        }
+        
+        // Hook into tab switching to initialize evolution tab
+        const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');
+        if (evolveNavBtn) {
+            evolveNavBtn.addEventListener('click', () => {
+                // Small delay to let the tab become visible
+                setTimeout(initEvolveTab, 100);
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
