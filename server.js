@@ -20990,7 +20990,7 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 
                 currentEvaluation = evaluation;
                 
-                timer.step(`Scenario ${scenarioIdx + 1} ${provider} evaluation`);
+                timer.step(`Scenario ${scenarioIdx + 1} ${displayName} evaluation`);
                 
                 // Extract lessons learned and store as hints after EACH LLM iteration
                 // This allows subsequent LLMs to benefit from accumulated learning within the same run
@@ -21000,16 +21000,17 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                         const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
                         if (lessons && lessons.lessons && lessons.lessons.length > 0) {
                             await storeGuidelineHints(scenarioGuidelineId, lessons);
-                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons from ${provider} for ${guidelineTitle}`);
+                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons from ${displayName} for ${guidelineTitle}`);
                         }
                     } catch (lessonError) {
-                        console.error(`[EVOLVE-SEQ] Error extracting/storing lessons from ${provider}:`, lessonError.message);
+                        console.error(`[EVOLVE-SEQ] Error extracting/storing lessons from ${displayName}:`, lessonError.message);
                     }
-                    timer.step(`Scenario ${scenarioIdx + 1} ${provider} lessons extracted`);
+                    timer.step(`Scenario ${scenarioIdx + 1} ${displayName} lessons extracted`);
                 }
                 
                 iterations.push({
-                    provider,
+                    provider: displayName,  // Use display name for frontend
+                    modelId: modelId,        // Include model ID for reference
                     suggestionsCount: currentSuggestions.length,
                     completenessScore: evaluation.completenessScore || 0,
                     accuracyScore: evaluation.accuracyScore || 0,
@@ -21040,7 +21041,8 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
         
         res.json({
             success: true,
-            llmChain: SEQUENTIAL_LLM_CHAIN,
+            llmProviders: SEQUENTIAL_LLM_CHAIN.map(c => c.displayName),  // Array of display names for table headers
+            llmChain: SEQUENTIAL_LLM_CHAIN,  // Full chain config for reference
             scenarioResults: allResults,
             timing: timer.getSummary()
         });
