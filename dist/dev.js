@@ -3575,7 +3575,6 @@ ${responseText}
                         if (result.queued !== undefined) {
                             let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
                             html += `<strong>Queued for processing:</strong> ${result.queued} guidelines<br>`;
-                            html += `<strong>Skipped (recent):</strong> ${result.skippedRecent} (regenerated in last 7 days)<br>`;
                             html += `<strong>Skipped (no content):</strong> ${result.skippedNoContent}<br><br>`;
                             html += `<em>${result.note}</em><br><br>`;
                             html += `<strong>Batch ID:</strong> <code>${result.batchId}</code>`;

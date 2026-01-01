@@ -15099,13 +15099,10 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       }
     }
     
-    // Otherwise, process guidelines that need updating
+    // Otherwise, process all guidelines
     const guidelinesSnapshot = await db.collection('guidelines').get();
     
-    // Filter to only guidelines needing regeneration
-    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
     const guidelinesNeedingUpdate = [];
-    const skippedRecent = [];
     const skippedNoContent = [];
     
     for (const doc of guidelinesSnapshot.docs) {
@@ -15118,23 +15115,15 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
         continue;
       }
       
-      // Check if recently regenerated
-      const regeneratedAt = guideline.auditableElementsRegeneratedAt?.toDate?.() || null;
-      if (regeneratedAt && regeneratedAt > sevenDaysAgo) {
-        skippedRecent.push(doc.id);
-        continue;
-      }
-      
       guidelinesNeedingUpdate.push({ id: doc.id, content });
     }
     
-    console.log(`[REGEN-AUDITABLE] Found ${guidelinesNeedingUpdate.length} guidelines needing update (skipped ${skippedRecent.length} recent, ${skippedNoContent.length} no content)`);
+    console.log(`[REGEN-AUDITABLE] Processing ALL ${guidelinesNeedingUpdate.length} guidelines (skipped ${skippedNoContent.length} no content)`);
     
     if (guidelinesNeedingUpdate.length === 0) {
       return res.json({
         success: true,
-        message: 'All guidelines have been regenerated within the last 7 days',
-        skippedRecent: skippedRecent.length,
+        message: 'No guidelines found to process',
         skippedNoContent: skippedNoContent.length,
         totalProcessed: 0
       });
@@ -15159,9 +15148,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       message: `Queued ${guidelinesNeedingUpdate.length} guidelines for background processing`,
       batchId: batchId,
       queued: guidelinesNeedingUpdate.length,
-      skippedRecent: skippedRecent.length,
       skippedNoContent: skippedNoContent.length,
-      note: 'Check server logs for progress. Guidelines updated in the last 7 days are skipped.'
+      note: 'Check server logs for progress.'
     });
     
   } catch (error) {
