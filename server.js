@@ -408,6 +408,13 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'Gemini',
+    model: 'gemini-3-flash-preview',
+    costPer1kTokens: 0.00175, // Average of input/output
+    priority: 5.5,
+    description: 'Latest fast model with advanced reasoning (Preview)'
+  },
+  {
+    name: 'Gemini',
     model: 'gemini-2.5-flash',
     costPer1kTokens: 0.000375, // Average of input/output
     priority: 6,
