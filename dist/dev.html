@@ -489,6 +489,11 @@
             100% { transform: rotate(360deg); }
         }
         
+        /* Sortable table headers */
+        th[onclick]:hover {
+            background-color: #e9ecef;
+        }
+        
         .version-number {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.85rem;
@@ -549,8 +554,8 @@
                             <tr>
                                 <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Provider</th>
                                 <th style="padding:10px;text-align:left;border-bottom:2px solid #dee2e6;">Model</th>
-                                <th style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;">Cost (Input)</th>
-                                <th style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;">Cost (Output)</th>
+                                <th id="costInputHeader" style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;cursor:pointer;user-select:none;" onclick="sortModelRegistry('costInput')">Cost (Input) <span id="costInputSortIcon">⇅</span></th>
+                                <th id="costOutputHeader" style="padding:10px;text-align:right;border-bottom:2px solid #dee2e6;cursor:pointer;user-select:none;" onclick="sortModelRegistry('costOutput')">Cost (Output) <span id="costOutputSortIcon">⇅</span></th>
                                 <th style="padding:10px;text-align:center;border-bottom:2px solid #dee2e6;">Status</th>
                                 <th style="padding:10px;text-align:center;border-bottom:2px solid #dee2e6;">Action</th>
                             </tr>
