@@ -19901,8 +19901,19 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
 }
 
 // NEW SEMANTIC APPROACH: Analyze guideline content directly for patient-specific suggestions
-async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId) {
+// Now accepts optional guidelineId to load interpretation hints from previous attempts
+async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null) {
     console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" for patient...`);
+    
+    // Load interpretation hints if guidelineId is provided
+    let hintsText = '';
+    if (guidelineId) {
+        const hints = await loadGuidelineHints(guidelineId);
+        if (hints && hints.hints && hints.hints.length > 0) {
+            hintsText = formatHintsForPrompt(hints);
+            console.log(`[SEMANTIC-ANALYSIS] Loaded ${hints.hints.length} interpretation hints for this guideline`);
+        }
+    }
     
     // Load prompt from prompts.json or Firestore cache
     const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
@@ -19919,7 +19930,7 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 
 Return ONLY valid JSON - no markdown, no explanations.`;
     
-    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
+    const baseUserPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
         `CLINICAL NOTE:
 {{clinicalNote}}
 
@@ -19961,7 +19972,10 @@ Return JSON:
   ]
 }
 
-If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`)
+If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`);
+    
+    // Insert hints before the JSON return format section
+    const userPrompt = (baseUserPrompt + hintsText)
         .replace('{{clinicalNote}}', clinicalNote)
         .replace('{{guidelineTitle}}', guidelineTitle)
         .replace('{{guidelineContent}}', guidelineContent);
@@ -20163,6 +20177,172 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
     }
 }
 
+// Extract lessons learned from evaluation to create guideline-specific interpretation hints
+async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, userId) {
+    console.log(`[EVOLVE-LESSONS] Extracting lessons for "${guidelineTitle}"...`);
+    
+    // Only extract lessons if there were issues
+    const missedCount = evaluation.missedRecommendations?.length || 0;
+    const incorrectCount = evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0;
+    const redundantCount = evaluation.suggestionEvaluations?.filter(s => s.verdict === 'redundant').length || 0;
+    
+    if (missedCount === 0 && incorrectCount === 0 && redundantCount === 0) {
+        console.log('[EVOLVE-LESSONS] No issues found, skipping lesson extraction');
+        return null;
+    }
+    
+    const systemPrompt = `You are an expert at analyzing AI performance on clinical guidelines. Your task is to extract SPECIFIC, ACTIONABLE lessons from evaluation feedback that will help future AI attempts avoid the same mistakes.
+
+Focus on patterns that are GUIDELINE-SPECIFIC, not generic advice. Be concise but specific.
+
+Return ONLY valid JSON - no markdown, no explanations.`;
+
+    const userPrompt = `GUIDELINE: ${guidelineTitle}
+
+EVALUATION RESULTS:
+- Missed Recommendations: ${JSON.stringify(evaluation.missedRecommendations || [], null, 2)}
+- Suggestion Evaluations: ${JSON.stringify(evaluation.suggestionEvaluations || [], null, 2)}
+- Overall Assessment: ${evaluation.overallAssessment || 'None'}
+
+AI'S SUGGESTIONS THAT WERE EVALUATED:
+${JSON.stringify(suggestions, null, 2)}
+
+Based on this evaluation, extract specific lessons learned. For each lesson, explain:
+1. What the AI got wrong or missed
+2. Why this might have happened
+3. What future AIs should do differently
+
+Return JSON:
+{
+  "lessons": [
+    {
+      "type": "missed" | "incorrect" | "redundant",
+      "issue": "Brief description of what went wrong",
+      "hint": "Specific advice for future attempts, e.g., 'When analyzing this guideline, remember that X covers Y' or 'Do not suggest Z when the plan already includes W'"
+    }
+  ],
+  "summary": "One sentence summary of the key learning for this guideline"
+}
+
+Only include lessons that are SPECIFIC to this guideline, not generic advice.`;
+
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[EVOLVE-LESSONS] No AI response');
+        return null;
+    }
+    
+    try {
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        console.log(`[EVOLVE-LESSONS] Extracted ${parsed.lessons?.length || 0} lessons`);
+        return parsed;
+    } catch (e) {
+        console.error('[EVOLVE-LESSONS] Failed to parse lessons:', e.message);
+        return null;
+    }
+}
+
+// Merge new lessons with existing hints and store in Firestore
+async function storeGuidelineHints(guidelineId, newLessons) {
+    if (!newLessons || !newLessons.lessons || newLessons.lessons.length === 0) {
+        return;
+    }
+    
+    console.log(`[EVOLVE-HINTS] Storing ${newLessons.lessons.length} new hints for guideline ${guidelineId}`);
+    
+    try {
+        const hintsRef = db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints');
+        const hintsDoc = await hintsRef.get();
+        
+        let existingHints = [];
+        if (hintsDoc.exists) {
+            existingHints = hintsDoc.data()?.hints || [];
+        }
+        
+        // Merge new lessons, avoiding duplicates (simple text comparison)
+        const existingHintTexts = new Set(existingHints.map(h => h.hint.toLowerCase().trim()));
+        const newHints = newLessons.lessons.filter(lesson => 
+            !existingHintTexts.has(lesson.hint.toLowerCase().trim())
+        ).map(lesson => ({
+            type: lesson.type,
+            issue: lesson.issue,
+            hint: lesson.hint,
+            addedAt: new Date().toISOString()
+        }));
+        
+        if (newHints.length === 0) {
+            console.log('[EVOLVE-HINTS] All lessons already exist, skipping');
+            return;
+        }
+        
+        const mergedHints = [...existingHints, ...newHints];
+        
+        // Keep only the most recent 10 hints to avoid prompt bloat
+        const trimmedHints = mergedHints.slice(-10);
+        
+        await hintsRef.set({
+            hints: trimmedHints,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+            summary: newLessons.summary || null
+        }, { merge: true });
+        
+        console.log(`[EVOLVE-HINTS] Stored ${newHints.length} new hints (total: ${trimmedHints.length})`);
+        
+    } catch (error) {
+        console.error('[EVOLVE-HINTS] Error storing hints:', error);
+    }
+}
+
+// Load interpretation hints for a guideline
+async function loadGuidelineHints(guidelineId) {
+    try {
+        const hintsDoc = await db.collection('guidelines').doc(guidelineId).collection('metadata').doc('interpretationHints').get();
+        
+        if (!hintsDoc.exists) {
+            return null;
+        }
+        
+        const data = hintsDoc.data();
+        return {
+            hints: data.hints || [],
+            summary: data.summary || null
+        };
+    } catch (error) {
+        console.error(`[EVOLVE-HINTS] Error loading hints for ${guidelineId}:`, error);
+        return null;
+    }
+}
+
+// Format hints for inclusion in prompts
+function formatHintsForPrompt(hints) {
+    if (!hints || !hints.hints || hints.hints.length === 0) {
+        return '';
+    }
+    
+    let formatted = '\n\nIMPORTANT - LESSONS FROM PREVIOUS ATTEMPTS:\n';
+    formatted += 'Previous AI attempts to analyze this guideline have made the following mistakes. Learn from them:\n\n';
+    
+    hints.hints.forEach((hint, idx) => {
+        const typeLabel = hint.type === 'missed' ? '⚠️ OFTEN MISSED' : 
+                         hint.type === 'incorrect' ? '❌ COMMON ERROR' : 
+                         '🔄 REDUNDANCY TRAP';
+        formatted += `${idx + 1}. ${typeLabel}: ${hint.hint}\n`;
+    });
+    
+    if (hints.summary) {
+        formatted += `\nKEY LEARNING: ${hints.summary}\n`;
+    }
+    
+    return formatted;
+}
+
 // Refine suggestions using a different LLM - takes previous output + evaluation and improves
 async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider) {
     console.log(`[EVOLVE-REFINE] Refining suggestions with ${targetProvider}...`);
@@ -20349,12 +20529,13 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
             
             const startTime = Date.now();
             
-            // Run the analysis
+            // Run the analysis - pass guidelineId to load interpretation hints
             const analysisResult = await analyzeGuidelineForPatient(
                 scenario.clinicalNote,
                 guidelineContent,
                 guidelineTitle,
-                userId
+                userId,
+                scenarioGuidelineId  // Pass guidelineId to load hints
             );
             
             const analysisLatency = Date.now() - startTime;
@@ -20373,6 +20554,19 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
             );
             
             timer.step(`Scenario ${i + 1} evaluation`);
+            
+            // Extract and store lessons learned for this guideline
+            try {
+                const lessons = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
+                if (lessons && lessons.lessons && lessons.lessons.length > 0) {
+                    await storeGuidelineHints(scenarioGuidelineId, lessons);
+                    console.log(`[EVOLVE] Stored ${lessons.lessons.length} lessons for ${guidelineTitle}`);
+                }
+            } catch (lessonError) {
+                console.error('[EVOLVE] Error extracting/storing lessons:', lessonError.message);
+            }
+            
+            timer.step(`Scenario ${i + 1} lessons`);
             
             scenarioResults.push({
                 scenarioName: scenario.name || `Scenario ${i + 1}`,
@@ -20524,13 +20718,14 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 try {
                     if (llmIdx === 0) {
                         // First LLM: generate initial suggestions using analyzeGuidelineForPatient
-                        // Force routing to this provider by temporarily overriding
+                        // Pass guidelineId to load any existing interpretation hints
                         analysisResult = await analyzeGuidelineForPatientWithProvider(
                             scenario.clinicalNote,
                             guidelineContent,
                             guidelineTitle,
                             userId,
-                            provider
+                            provider,
+                            scenarioGuidelineId  // Pass guidelineId to load hints
                         );
                     } else {
                         // Subsequent LLMs: refine based on previous output + evaluation
@@ -20585,6 +20780,21 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 
                 timer.step(`Scenario ${scenarioIdx + 1} ${provider} evaluation`);
                 
+                // On the final LLM iteration, extract lessons learned and store as hints
+                const isLastLLM = llmIdx === SEQUENTIAL_LLM_CHAIN.length - 1;
+                if (isLastLLM && !evaluation.error) {
+                    try {
+                        const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
+                        if (lessons && lessons.lessons && lessons.lessons.length > 0) {
+                            await storeGuidelineHints(scenarioGuidelineId, lessons);
+                            console.log(`[EVOLVE-SEQ] Stored ${lessons.lessons.length} lessons for ${guidelineTitle}`);
+                        }
+                    } catch (lessonError) {
+                        console.error('[EVOLVE-SEQ] Error extracting/storing lessons:', lessonError.message);
+                    }
+                    timer.step(`Scenario ${scenarioIdx + 1} lessons extracted`);
+                }
+                
                 iterations.push({
                     provider,
                     suggestionsCount: currentSuggestions.length,
@@ -20629,8 +20839,19 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
 });
 
 // Helper function to run analyzeGuidelineForPatient with a specific provider
-async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider) {
+// Now accepts optional guidelineId to load interpretation hints
+async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
     console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" with ${targetProvider}...`);
+    
+    // Load interpretation hints if guidelineId is provided
+    let hintsText = '';
+    if (guidelineId) {
+        const hints = await loadGuidelineHints(guidelineId);
+        if (hints && hints.hints && hints.hints.length > 0) {
+            hintsText = formatHintsForPrompt(hints);
+            console.log(`[SEMANTIC-ANALYSIS] Loaded ${hints.hints.length} interpretation hints for ${targetProvider}`);
+        }
+    }
     
     // Load prompt from prompts.json or Firestore cache
     const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
@@ -20647,7 +20868,7 @@ async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineCon
 
 Return ONLY valid JSON - no markdown, no explanations.`;
     
-    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
+    const baseUserPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
         `CLINICAL NOTE:
 {{clinicalNote}}
 
@@ -20689,7 +20910,10 @@ Return JSON:
   ]
 }
 
-If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`)
+If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`);
+    
+    // Insert hints after the prompt
+    const userPrompt = (baseUserPrompt + hintsText)
         .replace('{{clinicalNote}}', clinicalNote)
         .replace('{{guidelineTitle}}', guidelineTitle)
         .replace('{{guidelineContent}}', guidelineContent);
@@ -20791,7 +21015,8 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         console.log(`[SEMANTIC-SUGGESTIONS] Guideline content length: ${guidelineContent.length} characters`);
         
         // Perform semantic analysis - single LLM call to analyze guideline against clinical note
-        const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId);
+        // Pass guidelineId to load any interpretation hints from previous attempts
+        const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId, guidelineId);
         timer.step('Semantic analysis');
         
         // Format suggestions for the frontend
