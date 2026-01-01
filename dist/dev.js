@@ -4815,28 +4815,30 @@ ${responseText}
                 status.textContent = 'Loading scenarios...';
                 
                 const token = await auth.currentUser.getIdToken();
-                const response = await fetch(`${SERVER_URL}/getClinicalConditions`, {
+                const response = await fetch(`${SERVER_URL}/clinicalConditions`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 
                 if (!response.ok) throw new Error('Failed to load conditions');
                 
                 const data = await response.json();
-                const conditions = data.conditions || {};
+                const conditionsByCategory = data.conditions || {};
                 
                 select.innerHTML = '';
                 
-                // Filter to only conditions with transcripts
+                // Flatten the conditions from category structure and filter to only those with transcripts
                 let conditionsWithTranscripts = 0;
-                Object.entries(conditions).forEach(([id, condition]) => {
-                    if (condition.transcript) {
-                        const option = document.createElement('option');
-                        option.value = id;
-                        option.textContent = condition.name || id;
-                        option.dataset.transcript = condition.transcript;
-                        select.appendChild(option);
-                        conditionsWithTranscripts++;
-                    }
+                Object.entries(conditionsByCategory).forEach(([category, conditionsInCategory]) => {
+                    Object.entries(conditionsInCategory).forEach(([name, condition]) => {
+                        if (condition.transcript) {
+                            const option = document.createElement('option');
+                            option.value = condition.id || name;
+                            option.textContent = `${condition.name || name} (${category})`;
+                            option.dataset.transcript = condition.transcript;
+                            select.appendChild(option);
+                            conditionsWithTranscripts++;
+                        }
+                    });
                 });
                 
                 if (conditionsWithTranscripts === 0) {
@@ -4861,7 +4863,7 @@ ${responseText}
             
             try {
                 const token = await auth.currentUser.getIdToken();
-                const response = await fetch(`${SERVER_URL}/getGuidelinesList`, {
+                const response = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 
@@ -4872,12 +4874,17 @@ ${responseText}
                 
                 select.innerHTML = '<option value="">Select a guideline...</option>';
                 
-                guidelines.forEach(g => {
+                // Filter to only guidelines with content
+                const guidelinesWithContent = guidelines.filter(g => g.hasContent);
+                
+                guidelinesWithContent.forEach(g => {
                     const option = document.createElement('option');
                     option.value = g.id;
                     option.textContent = g.displayName || g.humanFriendlyTitle || g.title || g.id;
                     select.appendChild(option);
                 });
+                
+                console.log(`[EVOLVE] Loaded ${guidelinesWithContent.length} guidelines with content`);
                 
             } catch (error) {
                 console.error('[EVOLVE] Error loading guidelines:', error);
