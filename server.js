@@ -293,9 +293,13 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'OPENAI_API_KEY',
     endpoint: 'https://api.openai.com/v1/chat/completions',
     models: [
-      { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Most capable OpenAI model' },
+      { model: 'gpt-5.2', displayName: 'GPT-5.2', costPer1kInput: 0.005, costPer1kOutput: 0.02, description: 'Best for coding and agentic tasks' },
+      { model: 'gpt-5.2-pro', displayName: 'GPT-5.2 Pro', costPer1kInput: 0.01, costPer1kOutput: 0.04, description: 'Premium version with enhanced reasoning' },
+      { model: 'gpt-5-mini', displayName: 'GPT-5 Mini', costPer1kInput: 0.001, costPer1kOutput: 0.004, description: 'Fast and cost-efficient GPT-5' },
+      { model: 'gpt-5-nano', displayName: 'GPT-5 Nano', costPer1kInput: 0.0005, costPer1kOutput: 0.002, description: 'Fastest, most cost-efficient GPT-5' },
+      { model: 'gpt-4.1', displayName: 'GPT-4.1', costPer1kInput: 0.003, costPer1kOutput: 0.012, description: 'Smartest non-reasoning model' },
+      { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Previous flagship model' },
       { model: 'gpt-4o-mini', displayName: 'GPT-4o Mini', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and affordable' },
-      { model: 'gpt-4-turbo', displayName: 'GPT-4 Turbo', costPer1kInput: 0.01, costPer1kOutput: 0.03, description: 'Previous flagship model' },
       { model: 'gpt-3.5-turbo', displayName: 'GPT-3.5 Turbo', costPer1kInput: 0.0005, costPer1kOutput: 0.0015, description: 'Legacy fast model' }
     ]
   },
@@ -303,7 +307,10 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'ANTHROPIC_API_KEY',
     endpoint: 'https://api.anthropic.com/v1/messages',
     models: [
-      { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Latest Claude model' },
+      { model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5', costPer1kInput: 0.005, costPer1kOutput: 0.025, description: 'Most intelligent model' },
+      { model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Balanced performance for coding and agents' },
+      { model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5', costPer1kInput: 0.001, costPer1kOutput: 0.005, description: 'Fastest with near-frontier intelligence' },
+      { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Previous generation Sonnet' },
       { model: 'claude-3-5-sonnet-20241022', displayName: 'Claude 3.5 Sonnet', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Excellent reasoning' },
       { model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku', costPer1kInput: 0.00025, costPer1kOutput: 0.00125, description: 'Fast and cost-effective' }
     ]
@@ -337,11 +344,28 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'GROQ_API_KEY',
     endpoint: 'https://api.groq.com/openai/v1/chat/completions',
     models: [
-      { model: 'openai/gpt-oss-120b', displayName: 'GPT OSS 120B', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Open-source GPT 120B on Groq' },
-      { model: 'openai/gpt-oss-20b', displayName: 'GPT OSS 20B', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Open-source GPT 20B on Groq' },
+      { model: 'groq/compound', displayName: 'Groq Compound', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Agentic system with web search and code execution' },
+      { model: 'groq/compound-mini', displayName: 'Groq Compound Mini', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Lightweight agentic system' },
+      { model: 'llama-3.1-8b-instant', displayName: 'Llama 3.1 8B', costPer1kInput: 0.00005, costPer1kOutput: 0.00008, description: 'Ultra-fast 560 T/s' },
+      { model: 'llama-3.3-70b-versatile', displayName: 'Llama 3.3 70B', costPer1kInput: 0.00059, costPer1kOutput: 0.00079, description: 'Llama 3.3 70B versatile' },
+      { model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Llama 4 Scout', costPer1kInput: 0.00011, costPer1kOutput: 0.00034, description: 'Llama 4 Scout 17B 750 T/s' },
+      { model: 'meta-llama/llama-4-maverick-17b-128e-instruct', displayName: 'Llama 4 Maverick', costPer1kInput: 0.0002, costPer1kOutput: 0.0006, description: 'Llama 4 Maverick 600 T/s' },
+      { model: 'openai/gpt-oss-120b', displayName: 'GPT OSS 120B', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Open-source GPT 120B on Groq' },
+      { model: 'openai/gpt-oss-20b', displayName: 'GPT OSS 20B', costPer1kInput: 0.000075, costPer1kOutput: 0.0003, description: 'Open-source GPT 20B on Groq' },
       { model: 'moonshotai/kimi-k2-instruct', displayName: 'Kimi K2', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Kimi K2 instruction model' },
-      { model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Llama 4 Scout', costPer1kInput: 0.0, costPer1kOutput: 0.0, description: 'Llama 4 Scout 17B' },
-      { model: 'llama-3.3-70b-versatile', displayName: 'Llama 3.3 70B', costPer1kInput: 0.00059, costPer1kOutput: 0.00079, description: 'Llama 3.3 70B versatile' }
+      { model: 'moonshotai/kimi-k2-instruct-0905', displayName: 'Kimi K2 (New)', costPer1kInput: 0.001, costPer1kOutput: 0.003, description: 'Kimi K2 262K context' },
+      { model: 'qwen/qwen3-32b', displayName: 'Qwen3 32B', costPer1kInput: 0.00029, costPer1kOutput: 0.00059, description: 'Alibaba Qwen3 32B' }
+    ]
+  },
+  Grok: {
+    keyEnv: 'GROK_API_KEY',
+    endpoint: 'https://api.x.ai/v1/chat/completions',
+    models: [
+      { model: 'grok-4-1-fast-reasoning', displayName: 'Grok 4.1 Fast', costPer1kInput: 0.0002, costPer1kOutput: 0.0005, description: 'Frontier multimodal, 2M context' },
+      { model: 'grok-4-1-fast-non-reasoning', displayName: 'Grok 4.1 Fast (Non-Reasoning)', costPer1kInput: 0.0002, costPer1kOutput: 0.0005, description: 'Fast non-reasoning, 2M context' },
+      { model: 'grok-4-fast-reasoning', displayName: 'Grok 4 Fast', costPer1kInput: 0.0002, costPer1kOutput: 0.0005, description: 'Fast reasoning, 2M context' },
+      { model: 'grok-4-fast-non-reasoning', displayName: 'Grok 4 Fast (Non-Reasoning)', costPer1kInput: 0.0002, costPer1kOutput: 0.0005, description: 'Fast non-reasoning, 2M context' },
+      { model: 'grok-4-0709', displayName: 'Grok 4 (Flagship)', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Flagship Grok 4 model' }
     ]
   }
 };
@@ -349,75 +373,213 @@ const AI_MODEL_REGISTRY = {
 // Provider preference array ordered by cost (cheapest first, most expensive last)
 // This ensures we try the most cost-effective providers before falling back to expensive ones
 const AI_PROVIDER_PREFERENCE = [
+  // Tier 1: Free/Ultra-cheap models
   {
-    name: 'DeepSeek',
-    model: 'deepseek-chat',
-    costPer1kTokens: 0.0005, // $0.0005 per 1k tokens (cheapest)
+    name: 'Groq',
+    model: 'groq/compound',
+    costPer1kTokens: 0.0,
     priority: 1,
-    description: 'Most cost-effective option'
+    description: 'Agentic system with web search and code execution'
   },
   {
-    name: 'Mistral',
-    model: 'mistral-large-latest',
-    costPer1kTokens: 0.001, // $0.001 per 1k tokens
+    name: 'Groq',
+    model: 'groq/compound-mini',
+    costPer1kTokens: 0.0,
     priority: 2,
-    description: 'Good balance of cost and quality'
-  },
-  {
-    name: 'Anthropic',
-    model: 'claude-3-haiku-20240307',
-    costPer1kTokens: 0.00025, // $0.25 per 1M input tokens
-    priority: 3,
-    description: 'Fast and cost-effective'
-  },
-  {
-    name: 'OpenAI',
-    model: 'gpt-3.5-turbo',
-    costPer1kTokens: 0.0015, // $0.0015 per 1k tokens
-    priority: 4,
-    description: 'Reliable but can hit quota limits'
-  },
-  {
-    name: 'Gemini',
-    model: 'gemini-2.5-flash',
-    costPer1kTokens: 0.0001, // $0.0001 per 1k tokens
-    priority: 5,
-    description: 'Google\'s offering, fast and cost-effective'
-  },
-  {
-    name: 'Groq',
-    model: 'llama-3.3-70b-versatile',
-    costPer1kTokens: 0.00069, // Average of input/output pricing
-    priority: 6,
-    description: 'Ultra-fast inference on Groq LPU - Llama 3.3 70B'
-  },
-  {
-    name: 'Groq',
-    model: 'openai/gpt-oss-120b',
-    costPer1kTokens: 0.0,
-    priority: 7,
-    description: 'Open-source GPT 120B on Groq'
-  },
-  {
-    name: 'Groq',
-    model: 'openai/gpt-oss-20b',
-    costPer1kTokens: 0.0,
-    priority: 8,
-    description: 'Open-source GPT 20B on Groq'
+    description: 'Lightweight agentic system'
   },
   {
     name: 'Groq',
     model: 'moonshotai/kimi-k2-instruct',
     costPer1kTokens: 0.0,
-    priority: 9,
+    priority: 3,
     description: 'Kimi K2 instruction model on Groq'
+  },
+  // Tier 2: Very cheap models
+  {
+    name: 'DeepSeek',
+    model: 'deepseek-chat',
+    costPer1kTokens: 0.00021, // Average of input/output
+    priority: 4,
+    description: 'Most cost-effective option'
+  },
+  {
+    name: 'Groq',
+    model: 'llama-3.1-8b-instant',
+    costPer1kTokens: 0.000065, // Ultra-fast 560 T/s
+    priority: 5,
+    description: 'Ultra-fast Llama 3.1 8B on Groq'
+  },
+  {
+    name: 'Gemini',
+    model: 'gemini-2.5-flash',
+    costPer1kTokens: 0.000375, // Average of input/output
+    priority: 6,
+    description: 'Google\'s fast and cost-effective model'
+  },
+  {
+    name: 'Groq',
+    model: 'openai/gpt-oss-20b',
+    costPer1kTokens: 0.000188, // Average of input/output
+    priority: 7,
+    description: 'Open-source GPT 20B on Groq'
   },
   {
     name: 'Groq',
     model: 'meta-llama/llama-4-scout-17b-16e-instruct',
-    costPer1kTokens: 0.0,
+    costPer1kTokens: 0.000225, // Average of input/output
+    priority: 8,
+    description: 'Llama 4 Scout 17B on Groq - 750 T/s'
+  },
+  {
+    name: 'Grok',
+    model: 'grok-4-1-fast-reasoning',
+    costPer1kTokens: 0.00035, // Average of input/output
+    priority: 9,
+    description: 'xAI Grok 4.1 Fast - 2M context'
+  },
+  {
+    name: 'Grok',
+    model: 'grok-4-1-fast-non-reasoning',
+    costPer1kTokens: 0.00035,
     priority: 10,
-    description: 'Llama 4 Scout 17B on Groq'
+    description: 'xAI Grok 4.1 Fast (Non-Reasoning)'
+  },
+  {
+    name: 'Groq',
+    model: 'openai/gpt-oss-120b',
+    costPer1kTokens: 0.000375, // Average of input/output
+    priority: 11,
+    description: 'Open-source GPT 120B on Groq'
+  },
+  {
+    name: 'Mistral',
+    model: 'mistral-large-latest',
+    costPer1kTokens: 0.004, // Average of input/output
+    priority: 12,
+    description: 'Good balance of cost and quality'
+  },
+  {
+    name: 'Groq',
+    model: 'meta-llama/llama-4-maverick-17b-128e-instruct',
+    costPer1kTokens: 0.0004, // Average of input/output
+    priority: 13,
+    description: 'Llama 4 Maverick on Groq - 600 T/s'
+  },
+  {
+    name: 'Groq',
+    model: 'qwen/qwen3-32b',
+    costPer1kTokens: 0.00044, // Average of input/output
+    priority: 14,
+    description: 'Alibaba Qwen3 32B on Groq'
+  },
+  // Tier 3: Mid-range models
+  {
+    name: 'OpenAI',
+    model: 'gpt-5-nano',
+    costPer1kTokens: 0.00125, // Average of input/output
+    priority: 15,
+    description: 'Fastest, most cost-efficient GPT-5'
+  },
+  {
+    name: 'Groq',
+    model: 'llama-3.3-70b-versatile',
+    costPer1kTokens: 0.00069, // Average of input/output
+    priority: 16,
+    description: 'Ultra-fast inference on Groq LPU - Llama 3.3 70B'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-3-haiku-20240307',
+    costPer1kTokens: 0.00075, // Average of input/output
+    priority: 17,
+    description: 'Fast and cost-effective Claude'
+  },
+  {
+    name: 'Groq',
+    model: 'moonshotai/kimi-k2-instruct-0905',
+    costPer1kTokens: 0.002, // Average of input/output
+    priority: 18,
+    description: 'Kimi K2 with 262K context'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-5-mini',
+    costPer1kTokens: 0.0025, // Average of input/output
+    priority: 19,
+    description: 'Fast and cost-efficient GPT-5'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-haiku-4-5',
+    costPer1kTokens: 0.003, // Average of input/output
+    priority: 20,
+    description: 'Fastest Claude 4.5 with near-frontier intelligence'
+  },
+  // Tier 4: High-quality models
+  {
+    name: 'OpenAI',
+    model: 'gpt-4.1',
+    costPer1kTokens: 0.0075, // Average of input/output
+    priority: 21,
+    description: 'Smartest non-reasoning model'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-sonnet-4-5',
+    costPer1kTokens: 0.009, // Average of input/output
+    priority: 22,
+    description: 'Balanced Claude 4.5 for coding and agents'
+  },
+  {
+    name: 'Grok',
+    model: 'grok-4-0709',
+    costPer1kTokens: 0.009, // Average of input/output
+    priority: 23,
+    description: 'Flagship Grok 4 model'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-5.2',
+    costPer1kTokens: 0.0125, // Average of input/output
+    priority: 24,
+    description: 'Best for coding and agentic tasks'
+  },
+  {
+    name: 'Anthropic',
+    model: 'claude-opus-4-5',
+    costPer1kTokens: 0.015, // Average of input/output
+    priority: 25,
+    description: 'Most intelligent Claude model'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-5.2-pro',
+    costPer1kTokens: 0.025, // Average of input/output
+    priority: 26,
+    description: 'Premium GPT-5.2 with enhanced reasoning'
+  },
+  // Legacy models (kept for compatibility)
+  {
+    name: 'OpenAI',
+    model: 'gpt-4o',
+    costPer1kTokens: 0.00625, // Average of input/output
+    priority: 27,
+    description: 'Previous flagship OpenAI model'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-4o-mini',
+    costPer1kTokens: 0.000375, // Average of input/output
+    priority: 28,
+    description: 'Fast and affordable GPT-4o'
+  },
+  {
+    name: 'OpenAI',
+    model: 'gpt-3.5-turbo',
+    costPer1kTokens: 0.001, // Average of input/output
+    priority: 29,
+    description: 'Legacy fast model'
   }
 ];
 
@@ -2945,10 +3107,11 @@ function getProviderFromModel(modelId) {
     
     // Fallback mappings for common models
     if (modelId.includes('deepseek')) return 'DeepSeek';
-    if (modelId.includes('gpt')) return 'OpenAI';
+    if (modelId.startsWith('grok-')) return 'Grok'; // xAI Grok
+    if (modelId.includes('gpt') && !modelId.includes('gpt-oss')) return 'OpenAI';
     if (modelId.includes('claude')) return 'Anthropic';
     if (modelId.includes('gemini')) return 'Gemini';
-    if (modelId.includes('llama')) return 'Groq';
+    if (modelId.includes('llama') || modelId.includes('gpt-oss') || modelId.includes('qwen') || modelId.includes('kimi')) return 'Groq';
     if (modelId.includes('mistral')) return 'Mistral';
     
     return 'DeepSeek'; // Default fallback
@@ -3532,9 +3695,11 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       preferredProvider = 'Mistral';
     } else if (model.includes('gemini')) {
       preferredProvider = 'Gemini';
+    } else if (model.startsWith('grok-')) {
+      preferredProvider = 'Grok'; // xAI Grok models
     } else if (model.includes('gpt') && !model.includes('gpt-oss')) {
       preferredProvider = 'OpenAI';
-    } else if (model.includes('groq') || model.includes('llama-3.3') || model.includes('llama-4') || model.includes('gpt-oss') || model.includes('kimi-k2')) {
+    } else if (model.includes('groq/') || model.includes('llama-3') || model.includes('llama-4') || model.includes('gpt-oss') || model.includes('kimi-k2') || model.includes('qwen')) {
       preferredProvider = 'Groq';
     } else {
       preferredProvider = 'DeepSeek'; // Default to DeepSeek if unknown model
@@ -3597,6 +3762,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
     const hasMistralKey = !!process.env.MISTRAL_API_KEY;
     const hasGeminiKey = !!process.env.GOOGLE_AI_API_KEY;
     const hasGroqKey = !!process.env.GROQ_API_KEY;
+    const hasGrokKey = !!process.env.GROK_API_KEY;
     
     debugLog('[DEBUG] API key availability:', {
       preferredProvider,
@@ -3606,7 +3772,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       hasAnthropicKey,
       hasMistralKey,
       hasGeminiKey,
-      hasGroqKey
+      hasGroqKey,
+      hasGrokKey
     });
     
     // ============================================================================
@@ -3620,7 +3787,8 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       hasAnthropicKey,
       hasMistralKey,
       hasGeminiKey,
-      hasGroqKey
+      hasGroqKey,
+      hasGrokKey
     };
     
     // Check if current preferred provider has API key
@@ -3924,6 +4092,42 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         const totalCost = inputCost + outputCost;
         
         console.log(`Groq API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
+        console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
+        
+        tokenUsage.estimated_cost_usd = totalCost;
+      }
+    } else if (preferredProvider === 'Grok') {
+      // xAI Grok uses OpenAI-compatible API format
+      const response = await axios.post('https://api.x.ai/v1/chat/completions', {
+        model: model,
+        messages: formattedMessages,
+        temperature: temperature,
+        max_tokens: 4000
+      }, {
+        headers: {
+          'Authorization': `Bearer ${process.env.GROK_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        timeout: timeoutMs
+      });
+      
+      responseData = response.data;
+      content = responseData.choices[0].message.content;
+      
+      // Extract token usage information for cost calculation
+      if (responseData.usage) {
+        tokenUsage = {
+          prompt_tokens: responseData.usage.prompt_tokens,
+          completion_tokens: responseData.usage.completion_tokens,
+          total_tokens: responseData.usage.total_tokens
+        };
+        
+        // Calculate approximate cost - xAI Grok pricing (Grok 4 Fast)
+        const inputCost = (tokenUsage.prompt_tokens / 1000) * 0.0002;
+        const outputCost = (tokenUsage.completion_tokens / 1000) * 0.0005;
+        const totalCost = inputCost + outputCost;
+        
+        console.log(`Grok (xAI) API Call Cost Estimate: $${totalCost.toFixed(6)} (Input: $${inputCost.toFixed(6)}, Output: $${outputCost.toFixed(6)})`);
         console.log(`Token Usage: ${tokenUsage.prompt_tokens} prompt tokens, ${tokenUsage.completion_tokens} completion tokens, ${tokenUsage.total_tokens} total tokens`);
         
         tokenUsage.estimated_cost_usd = totalCost;
