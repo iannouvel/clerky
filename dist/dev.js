@@ -5443,8 +5443,8 @@ ${responseText}
                     throw new Error('Could not find relevant guidelines for any scenario');
                 }
                 
-                // Step 3: Run sequential evolution
-                progressText.textContent = `Running sequential LLM chain (5 LLMs × ${scenariosWithGuidelines.length} scenarios)...`;
+                // Step 3: Run sequential evolution (all available models)
+                progressText.textContent = `Running sequential LLM chain (all models × ${scenariosWithGuidelines.length} scenarios)...`;
                 progressBar.style.width = '45%';
                 progressPercent.textContent = '45%';
                 
@@ -5498,9 +5498,11 @@ ${responseText}
             }
             
             // Use llmProviders for display (array of display names) or fallback
-            const llmProviders = result.llmProviders || (result.llmChain || []).map(c => 
-                typeof c === 'string' ? c : (c.displayName || c.model || 'Unknown')
+            // Handle null/undefined values in the array
+            const rawProviders = result.llmProviders || (result.llmChain || []).map(c => 
+                typeof c === 'string' ? c : (c?.displayName || c?.model || 'Unknown')
             );
+            const llmProviders = rawProviders.map((p, i) => p || `Model ${i + 1}`);
             const numModels = llmProviders.length;
             
             let html = '<h5 style="margin-bottom:15px;">Sequential LLM Refinement Results</h5>';
@@ -5579,11 +5581,11 @@ ${responseText}
                     count++;
                     
                     // Track best performing model
-                    sr.iterations.forEach(iter => {
+                    sr.iterations.forEach((iter, iterIdx) => {
                         const score = (iter.completenessScore || 0) + (iter.accuracyScore || 0);
                         if (score > bestScore) {
                             bestScore = score;
-                            bestModel = iter.provider || iter.modelId;
+                            bestModel = iter.provider || iter.modelId || llmProviders[iterIdx] || `Model ${iterIdx + 1}`;
                         }
                     });
                 }
