@@ -848,15 +848,17 @@
                 
                 <!-- Results Section -->
                 <div id="evolveResultsSection" style="display:none;">
-                    <!-- Aggregated Metrics -->
-                    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:20px;">
+                    <!-- Aggregated Metrics - Primary Row -->
+                    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:12px;">
                         <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
-                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Completeness</div>
-                            <div id="evolveMetricCompleteness" style="font-size:24px;font-weight:bold;color:#28a745;">-</div>
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Recall</div>
+                            <div id="evolveMetricRecall" style="font-size:24px;font-weight:bold;color:#28a745;">-</div>
+                            <div style="font-size:10px;color:#888;">Coverage of applicable recommendations</div>
                         </div>
                         <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
-                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Accuracy</div>
-                            <div id="evolveMetricAccuracy" style="font-size:24px;font-weight:bold;color:#007bff;">-</div>
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Precision</div>
+                            <div id="evolveMetricPrecision" style="font-size:24px;font-weight:bold;color:#007bff;">-</div>
+                            <div style="font-size:10px;color:#888;">Appropriateness of suggestions</div>
                         </div>
                         <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
                             <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Latency</div>
@@ -865,6 +867,24 @@
                         <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
                             <div style="font-size:11px;color:#666;text-transform:uppercase;">Scenarios</div>
                             <div id="evolveMetricScenarios" style="font-size:24px;font-weight:bold;color:#6c757d;">-</div>
+                        </div>
+                    </div>
+                    <!-- Aggregated Metrics - Breakdown Row -->
+                    <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:20px;">
+                        <div class="stat-box" style="background:#fff8e6;padding:12px;border-radius:6px;text-align:center;border:1px solid #ffd966;">
+                            <div style="font-size:10px;color:#997a00;text-transform:uppercase;">Redundancy Rate</div>
+                            <div id="evolveMetricRedundancy" style="font-size:18px;font-weight:bold;color:#cc8400;">-</div>
+                            <div style="font-size:9px;color:#997a00;">Lower is better</div>
+                        </div>
+                        <div class="stat-box" style="background:#ffe6e6;padding:12px;border-radius:6px;text-align:center;border:1px solid #ff9999;">
+                            <div style="font-size:10px;color:#993333;text-transform:uppercase;">False Negative Rate</div>
+                            <div id="evolveMetricFalseNegative" style="font-size:18px;font-weight:bold;color:#cc3333;">-</div>
+                            <div style="font-size:9px;color:#993333;">Lower is better</div>
+                        </div>
+                        <div class="stat-box" style="background:#e6ffe6;padding:12px;border-radius:6px;text-align:center;border:1px solid #66cc66;">
+                            <div style="font-size:10px;color:#336633;text-transform:uppercase;">Applicability Rate</div>
+                            <div id="evolveMetricApplicability" style="font-size:18px;font-weight:bold;color:#339933;">-</div>
+                            <div style="font-size:9px;color:#336633;">Higher is better</div>
                         </div>
                     </div>
                     
