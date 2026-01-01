@@ -293,9 +293,6 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'OPENAI_API_KEY',
     endpoint: 'https://api.openai.com/v1/chat/completions',
     models: [
-      { model: 'o1', displayName: 'o1', costPer1kInput: 0.015, costPer1kOutput: 0.06, description: 'Advanced reasoning model' },
-      { model: 'o1-mini', displayName: 'o1 Mini', costPer1kInput: 0.003, costPer1kOutput: 0.012, description: 'Fast reasoning model' },
-      { model: 'o3-mini', displayName: 'o3 Mini', costPer1kInput: 0.00115, costPer1kOutput: 0.0044, description: 'Latest reasoning model' },
       { model: 'gpt-4.1', displayName: 'GPT-4.1', costPer1kInput: 0.003, costPer1kOutput: 0.012, description: 'Smartest non-reasoning model' },
       { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Flagship multimodal model' },
       { model: 'gpt-4o-mini', displayName: 'GPT-4o Mini', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and affordable' },
@@ -473,13 +470,6 @@ const AI_PROVIDER_PREFERENCE = [
   },
   // Tier 3: Mid-range models
   {
-    name: 'OpenAI',
-    model: 'o3-mini',
-    costPer1kTokens: 0.00278, // Average of input/output
-    priority: 15,
-    description: 'Latest reasoning model'
-  },
-  {
     name: 'Groq',
     model: 'llama-3.3-70b-versatile',
     costPer1kTokens: 0.00069, // Average of input/output
@@ -499,13 +489,6 @@ const AI_PROVIDER_PREFERENCE = [
     costPer1kTokens: 0.002, // Average of input/output
     priority: 18,
     description: 'Kimi K2 with 262K context'
-  },
-  {
-    name: 'OpenAI',
-    model: 'o1-mini',
-    costPer1kTokens: 0.0075, // Average of input/output
-    priority: 19,
-    description: 'Fast reasoning model'
   },
   {
     name: 'Anthropic',
@@ -535,13 +518,6 @@ const AI_PROVIDER_PREFERENCE = [
     costPer1kTokens: 0.009, // Average of input/output
     priority: 23,
     description: 'Flagship Grok 4 model'
-  },
-  {
-    name: 'OpenAI',
-    model: 'o1',
-    costPer1kTokens: 0.0375, // Average of input/output
-    priority: 24,
-    description: 'Advanced reasoning model'
   },
   {
     name: 'Anthropic',
