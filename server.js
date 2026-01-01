@@ -1955,7 +1955,9 @@ async function jobExtractAuditable(job, guidelineData) {
     
     // Use the uploader's AI preference
     const userId = guidelineData.uploadedBy || null;
-    const elements = await extractAuditableElements(content, userId);
+    // Pass summary for context if available
+    const summary = guidelineData.summary || guidelineData.humanFriendlyTitle || null;
+    const elements = await extractAuditableElements(content, userId, summary);
     
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
     await guidelineRef.update({
@@ -2006,10 +2008,12 @@ async function jobRegenerateAuditable(job, guidelineData) {
     
     const userId = job.data?.userId || guidelineData.uploadedBy || null;
     const batchInfo = job.data?.batchId ? ` [${job.data.index}/${job.data.total}]` : '';
+    // Pass summary for context if available
+    const summary = guidelineData.summary || guidelineData.humanFriendlyTitle || null;
     
     console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Processing ${job.guidelineId}...`);
     
-    const elements = await extractAuditableElements(content, userId);
+    const elements = await extractAuditableElements(content, userId, summary);
     
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
     await guidelineRef.update({
@@ -12202,20 +12206,30 @@ Aim for 40-60 practice points that comprehensively cover the guideline.`;
 }
 
 // Step 3: Expand a single practice point into structured JSON
-async function expandSinglePracticePoint(practicePoint, guidelineContent, index, total, userId = null) {
+async function expandSinglePracticePoint(practicePoint, guidelineContent, index, total, userId = null, guidelineSummary = null) {
+  const summaryContext = guidelineSummary ? `\nGUIDELINE CONTEXT: ${guidelineSummary}\n` : '';
+  
   const prompt = `Given this SPECIFIC practice point from a clinical guideline:
 
 "${practicePoint}"
-
+${summaryContext}
 And the full guideline content below, create a structured JSON object for this practice point.
 
 Return a JSON object with these fields:
 {
   "name": "Brief descriptive title (5-10 words)",
-  "description": "Describe the CONTEXT and APPLICABILITY of this practice point for an LLM to understand. Include: (1) WHO this applies to - patient criteria, conditions, gestational age, risk factors; (2) WHEN this applies - timing, circumstances, triggers; (3) WHEN this does NOT apply - exclusion criteria, contraindications, exceptions; (4) WHAT the action/treatment is and any thresholds or values involved. Be precise and structured. Write 3-5 sentences.",
+  "description": "STRUCTURED APPLICABILITY CRITERIA - must include ALL of these:\n• APPLIES TO: [specific patient population, phase of care (antenatal/intrapartum/postpartum), gestational age range, conditions]\n• NOT APPLICABLE: [when this does NOT apply - different phase of care, exclusions, contraindications]\n• ACTION: [what treatment/investigation/referral is recommended]\n• THRESHOLDS: [any specific values, doses, or timing if applicable]",
   "verbatimQuote": "The SPECIFIC sentence or phrase from the guideline that DIRECTLY states this practice point",
   "significance": "high or medium or low"
 }
+
+CRITICAL: The description field must be written as STRUCTURED APPLICABILITY CRITERIA, not as patient education. 
+
+Example of GOOD description:
+"APPLIES TO: Postpartum/postnatal women only (after delivery). NOT APPLICABLE: During pregnancy (antenatal period). ACTION: Continue iron supplements for 3-6 months after birth to replenish iron stores. THRESHOLDS: None specified."
+
+Example of BAD description (DO NOT write like this):
+"This practice point involves continuing iron supplements for 3-6 months after giving birth to help replenish iron stores and prevent anemia. It's essential for women who have experienced blood loss..."
 
 CRITICAL INSTRUCTIONS FOR verbatimQuote:
 1. Find the SPECIFIC sentence or phrase that DIRECTLY corresponds to THIS practice point
@@ -12232,7 +12246,7 @@ ${guidelineContent}`;
       messages: [
         { 
           role: 'system', 
-          content: 'You are a clinical guideline analyst preparing structured data for an LLM-based clinical decision support system. Return ONLY a valid JSON object. For description, focus on CONTEXT and APPLICABILITY - who this applies to, when it applies, when it does NOT apply, and what the action is. This helps an LLM determine if this practice point is relevant to a specific patient. For verbatimQuote, find the SPECIFIC short quote that DIRECTLY states this exact practice point.' 
+          content: 'You are a clinical guideline analyst. Return ONLY valid JSON. The description field MUST be structured applicability criteria with explicit APPLIES TO, NOT APPLICABLE, ACTION, and THRESHOLDS sections. This will be used by an LLM to determine if the practice point applies to a specific patient - be explicit about phase of care (antenatal vs postpartum), gestational age ranges, and exclusion criteria.' 
         },
         { 
           role: 'user', 
@@ -12411,14 +12425,15 @@ async function structurePracticePoints(practicePointsArray, guidelineContent, us
   return auditableElements;
 }
 
-// Function to extract auditable elements from guideline content using AI (two-step approach)
-async function extractAuditableElements(content, userId = null) {
+// Function to extract auditable elements from guideline content using AI (four-step approach)
+async function extractAuditableElements(content, userId = null, guidelineSummary = null) {
   if (!content || typeof content !== 'string') {
     return [];
   }
   
   try {
-    console.log('[AUDITABLE] Starting 4-step extraction process...');
+    const summaryInfo = guidelineSummary ? ` (with summary context)` : '';
+    console.log(`[AUDITABLE] Starting 4-step extraction process${summaryInfo}...`);
     
     // Step 1: Identify all practice points (1st preference LLM)
     const rawPracticePoints = await identifyPracticePoints(content, userId);
@@ -12443,8 +12458,8 @@ async function extractAuditableElements(content, userId = null) {
     for (let i = 0; i < total; i++) {
       const practicePoint = refinedPracticePoints[i];
       
-      // Step 3: Expand practice point (1st preference LLM)
-      const expanded = await expandSinglePracticePoint(practicePoint, content, i, total, userId);
+      // Step 3: Expand practice point (1st preference LLM) - pass summary for context
+      const expanded = await expandSinglePracticePoint(practicePoint, content, i, total, userId, guidelineSummary);
       
       if (expanded) {
         // Step 4: Review expansion (2nd preference LLM)
