@@ -20194,7 +20194,7 @@ If the clinical note already addresses all relevant recommendations from this gu
 
 // ===== PROMPT EVOLUTION SYSTEM =====
 
-// Evaluate AI suggestions against the full guideline for completeness and accuracy
+// Evaluate AI suggestions against the full guideline for recall and precision
 async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitle, suggestions, alreadyCompliant, userId) {
     console.log(`[EVOLVE] Evaluating suggestions for "${guidelineTitle}"...`);
     
@@ -20206,7 +20206,7 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
     const rawUserPrompt = promptConfig?.prompt;
     
     const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) || 
-        `You are a clinical guideline expert evaluating AI-generated suggestions. Your task is to assess completeness (did the AI miss important recommendations?) and accuracy (are the suggestions correct and non-redundant?). Be rigorous but fair. Return ONLY valid JSON.`;
+        `You are a clinical guideline expert evaluating AI-generated suggestions. Your task is to assess RECALL (did the AI surface all applicable recommendations?) and PRECISION (are the suggestions clinically appropriate and non-redundant?). Be rigorous but fair. Return ONLY valid JSON.`;
     
     const suggestionsText = suggestions.length > 0 
         ? JSON.stringify(suggestions, null, 2) 
@@ -20234,10 +20234,15 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
     if (!result || !result.content) {
         console.error('[EVOLVE] No AI response for evaluation');
         return { 
+            recallScore: 0,
+            precisionScore: 0,
+            // Backward compatibility
             completenessScore: 0, 
             accuracyScore: 0, 
+            counts: { suggestionsTotal: 0, correct: 0, incorrect: 0, redundant: 0, missed: 0, falseNegatives: 0 },
             missedRecommendations: [], 
             suggestionEvaluations: [],
+            falseNegatives: [],
             error: 'No response from evaluator'
         };
     }
@@ -20246,16 +20251,56 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
         let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
         const parsed = JSON.parse(cleanedContent);
         
-        console.log(`[EVOLVE] Evaluation complete: completeness=${parsed.completenessScore}, accuracy=${parsed.accuracyScore}`);
+        // Calculate counts from evaluations if not provided
+        const counts = parsed.counts || {
+            suggestionsTotal: parsed.suggestionEvaluations?.length || 0,
+            correct: parsed.suggestionEvaluations?.filter(e => e.verdict === 'correct').length || 0,
+            incorrect: parsed.suggestionEvaluations?.filter(e => e.verdict === 'incorrect').length || 0,
+            redundant: parsed.suggestionEvaluations?.filter(e => e.verdict === 'redundant').length || 0,
+            missed: parsed.missedRecommendations?.length || 0,
+            falseNegatives: parsed.falseNegatives?.length || 0
+        };
         
-        return parsed;
+        // Calculate derived rates
+        const suggestionsTotal = counts.suggestionsTotal || 1; // Avoid division by zero
+        const redundancyRate = counts.redundant / suggestionsTotal;
+        const applicabilityRate = counts.correct / suggestionsTotal;
+        const falseNegativeRate = counts.falseNegatives / Math.max(1, counts.correct + counts.falseNegatives);
+        
+        // Support both new (recallScore/precisionScore) and old (completenessScore/accuracyScore) field names
+        const recallScore = parsed.recallScore ?? parsed.completenessScore ?? 0;
+        const precisionScore = parsed.precisionScore ?? parsed.accuracyScore ?? 0;
+        
+        console.log(`[EVOLVE] Evaluation complete: recall=${recallScore}, precision=${precisionScore}, redundancyRate=${redundancyRate.toFixed(2)}`);
+        
+        return {
+            ...parsed,
+            // New terminology
+            recallScore,
+            precisionScore,
+            counts,
+            redundancyRate,
+            applicabilityRate,
+            falseNegativeRate,
+            // Backward compatibility
+            completenessScore: recallScore,
+            accuracyScore: precisionScore
+        };
     } catch (e) {
         console.error('[EVOLVE] Failed to parse evaluation response:', e.message);
         return { 
+            recallScore: 0,
+            precisionScore: 0,
+            // Backward compatibility
             completenessScore: 0, 
             accuracyScore: 0, 
+            counts: { suggestionsTotal: 0, correct: 0, incorrect: 0, redundant: 0, missed: 0, falseNegatives: 0 },
+            redundancyRate: 0,
+            applicabilityRate: 0,
+            falseNegativeRate: 0,
             missedRecommendations: [], 
             suggestionEvaluations: [],
+            falseNegatives: [],
             error: 'Failed to parse evaluation',
             rawResponse: result.content.substring(0, 500)
         };
@@ -20263,7 +20308,8 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
 }
 
 // Generate prompt improvement suggestions based on evaluation results
-async function generatePromptImprovements(currentPrompt, evaluationResults, avgCompleteness, avgAccuracy, avgLatency, userId) {
+// Supports new metrics (avgRecall, avgPrecision) with backward compatibility for old names
+async function generatePromptImprovements(currentPrompt, evaluationResults, avgRecall, avgPrecision, avgLatency, userId, additionalMetrics = {}) {
     console.log(`[EVOLVE] Generating prompt improvements based on ${evaluationResults.length} evaluations...`);
     
     // Load prompt from prompts.json or Firestore cache
@@ -20298,33 +20344,45 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
     });
     
     if (missedItems.length > 0) {
-        failurePatterns.push(`Missed ${missedItems.length} recommendations across scenarios`);
+        failurePatterns.push(`Missed ${missedItems.length} recommendations across scenarios (low recall)`);
     }
     if (incorrectSuggestions.length > 0) {
-        failurePatterns.push(`Made ${incorrectSuggestions.length} incorrect suggestions`);
+        failurePatterns.push(`Made ${incorrectSuggestions.length} incorrect suggestions (precision issue - applicability)`);
     }
     if (redundantSuggestions.length > 0) {
-        failurePatterns.push(`Made ${redundantSuggestions.length} redundant suggestions`);
+        failurePatterns.push(`Made ${redundantSuggestions.length} redundant suggestions (precision issue - redundancy)`);
     }
     
     const evaluationSummary = evaluationResults.map((eval, idx) => ({
         scenario: idx + 1,
-        completeness: eval.completenessScore,
-        accuracy: eval.accuracyScore,
+        recall: eval.recallScore ?? eval.completenessScore,
+        precision: eval.precisionScore ?? eval.accuracyScore,
+        redundancyRate: eval.redundancyRate ?? 0,
+        falseNegativeRate: eval.falseNegativeRate ?? 0,
         missedCount: eval.missedRecommendations?.length || 0,
         incorrectCount: eval.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0,
         redundantCount: eval.suggestionEvaluations?.filter(s => s.verdict === 'redundant').length || 0,
         assessment: eval.overallAssessment
     }));
     
+    // Calculate average rates
+    const avgRedundancyRate = additionalMetrics.avgRedundancyRate ?? 
+        (evaluationResults.reduce((sum, e) => sum + (e.redundancyRate || 0), 0) / evaluationResults.length);
+    const avgFalseNegativeRate = additionalMetrics.avgFalseNegativeRate ?? 
+        (evaluationResults.reduce((sum, e) => sum + (e.falseNegativeRate || 0), 0) / evaluationResults.length);
+    
     const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
-        `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS ACROSS {{scenarioCount}} SCENARIOS:\n{{evaluationResults}}\n\nAGGREGATED METRICS:\n- Average Completeness: {{avgCompleteness}}\n- Average Accuracy: {{avgAccuracy}}\n- Average Latency: {{avgLatency}}ms\n\nCOMMON FAILURE PATTERNS:\n{{failurePatterns}}\n\nAnalyze the evaluation results...`)
+        `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS ACROSS {{scenarioCount}} SCENARIOS:\n{{evaluationResults}}\n\nAGGREGATED METRICS:\n- Average Recall: {{avgRecall}}\n- Average Precision: {{avgPrecision}}\n- Average Latency: {{avgLatency}}ms\n- Average Redundancy Rate: {{avgRedundancyRate}}\n- Average False Negative Rate: {{avgFalseNegativeRate}}\n\nCOMMON FAILURE PATTERNS:\n{{failurePatterns}}\n\nAnalyze the evaluation results...`)
         .replace('{{currentPrompt}}', JSON.stringify(currentPrompt, null, 2))
         .replace('{{scenarioCount}}', evaluationResults.length.toString())
         .replace('{{evaluationResults}}', JSON.stringify(evaluationSummary, null, 2))
-        .replace('{{avgCompleteness}}', (avgCompleteness * 100).toFixed(1) + '%')
-        .replace('{{avgAccuracy}}', (avgAccuracy * 100).toFixed(1) + '%')
+        .replace('{{avgRecall}}', (avgRecall * 100).toFixed(1) + '%')
+        .replace('{{avgPrecision}}', (avgPrecision * 100).toFixed(1) + '%')
+        .replace('{{avgCompleteness}}', (avgRecall * 100).toFixed(1) + '%')  // Backward compatibility
+        .replace('{{avgAccuracy}}', (avgPrecision * 100).toFixed(1) + '%')   // Backward compatibility
         .replace('{{avgLatency}}', avgLatency.toFixed(0))
+        .replace('{{avgRedundancyRate}}', (avgRedundancyRate * 100).toFixed(1) + '%')
+        .replace('{{avgFalseNegativeRate}}', (avgFalseNegativeRate * 100).toFixed(1) + '%')
         .replace('{{failurePatterns}}', failurePatterns.length > 0 ? failurePatterns.join('\n') : 'No significant patterns identified');
     
     const messages = [
@@ -20821,37 +20879,50 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'No scenarios could be processed' });
         }
         
-        // Calculate aggregated metrics
-        const avgCompleteness = scenarioResults.reduce((sum, r) => sum + (r.evaluation.completenessScore || 0), 0) / scenarioResults.length;
-        const avgAccuracy = scenarioResults.reduce((sum, r) => sum + (r.evaluation.accuracyScore || 0), 0) / scenarioResults.length;
+        // Calculate aggregated metrics using new terminology
+        const avgRecall = scenarioResults.reduce((sum, r) => sum + (r.evaluation.recallScore ?? r.evaluation.completenessScore ?? 0), 0) / scenarioResults.length;
+        const avgPrecision = scenarioResults.reduce((sum, r) => sum + (r.evaluation.precisionScore ?? r.evaluation.accuracyScore ?? 0), 0) / scenarioResults.length;
         const avgLatency = totalLatency / scenarioResults.length;
+        
+        // Calculate additional breakdown metrics
+        const avgRedundancyRate = scenarioResults.reduce((sum, r) => sum + (r.evaluation.redundancyRate || 0), 0) / scenarioResults.length;
+        const avgFalseNegativeRate = scenarioResults.reduce((sum, r) => sum + (r.evaluation.falseNegativeRate || 0), 0) / scenarioResults.length;
+        const avgApplicabilityRate = scenarioResults.reduce((sum, r) => sum + (r.evaluation.applicabilityRate || 0), 0) / scenarioResults.length;
         
         timer.step('Aggregate metrics');
         
-        // Generate prompt improvements
+        // Generate prompt improvements with new metrics
         const evaluations = scenarioResults.map(r => r.evaluation);
         const improvements = await generatePromptImprovements(
             currentPrompt,
             evaluations,
-            avgCompleteness,
-            avgAccuracy,
+            avgRecall,
+            avgPrecision,
             avgLatency,
-            userId
+            userId,
+            { avgRedundancyRate, avgFalseNegativeRate }
         );
         
         timer.step('Generate improvements');
         
-        console.log(`[EVOLVE] Evolution cycle complete. ${scenarioResults.length} scenarios processed. Avg completeness: ${(avgCompleteness * 100).toFixed(1)}%, Avg accuracy: ${(avgAccuracy * 100).toFixed(1)}%`);
+        console.log(`[EVOLVE] Evolution cycle complete. ${scenarioResults.length} scenarios processed. Avg recall: ${(avgRecall * 100).toFixed(1)}%, Avg precision: ${(avgPrecision * 100).toFixed(1)}%, Redundancy: ${(avgRedundancyRate * 100).toFixed(1)}%`);
         console.log('[EVOLVE] Timing:', JSON.stringify(timer.getSummary()));
         
         res.json({
             success: true,
             scenarioResults,
             aggregatedMetrics: {
-                averageCompleteness: avgCompleteness,
-                averageAccuracy: avgAccuracy,
+                // New terminology
+                averageRecall: avgRecall,
+                averagePrecision: avgPrecision,
+                averageRedundancyRate: avgRedundancyRate,
+                averageFalseNegativeRate: avgFalseNegativeRate,
+                averageApplicabilityRate: avgApplicabilityRate,
                 averageLatencyMs: avgLatency,
-                totalScenarios: scenarioResults.length
+                totalScenarios: scenarioResults.length,
+                // Backward compatibility
+                averageCompleteness: avgRecall,
+                averageAccuracy: avgPrecision
             },
             currentPrompt,
             suggestedImprovements: improvements,
@@ -21005,8 +21076,13 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 } catch (evalError) {
                     console.error(`[EVOLVE-SEQ] Evaluation error:`, evalError.message);
                     evaluation = {
+                        recallScore: 0,
+                        precisionScore: 0,
                         completenessScore: 0,
                         accuracyScore: 0,
+                        counts: { suggestionsTotal: 0, correct: 0, incorrect: 0, redundant: 0, missed: 0, falseNegatives: 0 },
+                        redundancyRate: 0,
+                        falseNegativeRate: 0,
                         missedRecommendations: [],
                         suggestionEvaluations: [],
                         error: evalError.message
@@ -21037,8 +21113,14 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                     provider: displayName,  // Use display name for frontend
                     modelId: modelId,        // Include model ID for reference
                     suggestionsCount: currentSuggestions.length,
-                    completenessScore: evaluation.completenessScore || 0,
-                    accuracyScore: evaluation.accuracyScore || 0,
+                    // New terminology
+                    recallScore: evaluation.recallScore ?? evaluation.completenessScore ?? 0,
+                    precisionScore: evaluation.precisionScore ?? evaluation.accuracyScore ?? 0,
+                    redundancyRate: evaluation.redundancyRate || 0,
+                    falseNegativeRate: evaluation.falseNegativeRate || 0,
+                    // Backward compatibility
+                    completenessScore: evaluation.recallScore ?? evaluation.completenessScore ?? 0,
+                    accuracyScore: evaluation.precisionScore ?? evaluation.accuracyScore ?? 0,
                     latencyMs: analysisLatency,
                     overallAssessment: evaluation.overallAssessment,
                     suggestions: currentSuggestions,
