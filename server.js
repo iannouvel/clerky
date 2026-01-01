@@ -7689,16 +7689,13 @@ app.post('/crossCheck', authenticateUser, async (req, res) => {
     }
 });
 
-// Update the /updatePrompts endpoint to handle FormData
+// Update the /updatePrompts endpoint to save to Firestore
 app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
     // Add CORS headers
     res.header('Access-Control-Allow-Origin', req.headers.origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
-
-    //console.log('Received request to update prompts');
-    //console.log('Request body:', req.body);
 
     const updatedPrompts = req.body.updatedPrompts;
 
@@ -7708,28 +7705,29 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
     }
 
     try {
-        // Convert updated prompts to JSON string
-        const newPromptsContent = JSON.stringify(JSON.parse(updatedPrompts), null, 2);
-        //console.log('New prompts content:', newPromptsContent);
-
-        // Get the current file's SHA (null if file doesn't exist)
-        const fileSha = await getFileSha('prompts.json');
-        ///console.log('Current file SHA:', fileSha);
-
-        // Update prompts.json on GitHub
-        const commitResult = await updateHtmlFileOnGitHub('prompts.json', newPromptsContent, fileSha);
-        //console.log('GitHub commit result:', commitResult);
+        const promptsData = JSON.parse(updatedPrompts);
+        
+        // Save to Firestore - store all prompts in a single document
+        await db.collection('settings').doc('prompts').set({
+            prompts: promptsData,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedBy: req.user.uid
+        });
+        
+        // Update global prompts cache
+        global.prompts = promptsData;
+        
+        console.log('[PROMPTS] Saved prompts to Firestore');
 
         res.json({
             success: true,
-            message: 'Prompts updated successfully',
-            commit: commitResult
+            message: 'Prompts saved to Firestore successfully'
         });
     } catch (error) {
-        console.error('Error updating prompts.json:', error);
+        console.error('Error saving prompts to Firestore:', error);
         res.status(500).json({
             success: false,
-            message: error.message || 'Failed to update prompts'
+            message: error.message || 'Failed to save prompts'
         });
     }
 });
@@ -7998,42 +7996,39 @@ app.post('/updateChunkDistributionProviders', authenticateUser, async (req, res)
   }
 });
 
-// Add new endpoint to get prompts data
-app.get('/getPrompts', (req, res) => {
+// Add new endpoint to get prompts data - tries Firestore first, falls back to prompts.json
+app.get('/getPrompts', async (req, res) => {
   try {
-    // Check if prompts.json exists
+    // First try to load from Firestore
+    const firestoreDoc = await db.collection('settings').doc('prompts').get();
+    
+    if (firestoreDoc.exists && firestoreDoc.data().prompts) {
+      const prompts = firestoreDoc.data().prompts;
+      console.log('[PROMPTS] Loaded prompts from Firestore');
+      global.prompts = prompts;
+      return res.json({ success: true, prompts, source: 'firestore' });
+    }
+    
+    // Fall back to prompts.json
+    console.log('[PROMPTS] No Firestore prompts found, falling back to prompts.json');
     const promptsPath = path.join(__dirname, 'prompts.json');
     let prompts;
     
     if (fs.existsSync(promptsPath)) {
       try {
+        // Clear require cache to get fresh version
+        delete require.cache[require.resolve('./prompts.json')];
         prompts = require('./prompts.json');
       } catch (readError) {
-        console.error('Error reading prompts.json, creating default:', readError);
-        // Create default prompts if file exists but can't be read
+        console.error('Error reading prompts.json:', readError);
         prompts = createDefaultPrompts();
-        // Save default prompts
-        try {
-          fs.writeFileSync(promptsPath, JSON.stringify(prompts, null, 2));
-          console.log('Created default prompts.json');
-        } catch (writeError) {
-          console.error('Failed to write default prompts.json:', writeError);
-        }
       }
     } else {
-      // Create default prompts if file doesn't exist
-      console.log('prompts.json not found, creating default');
       prompts = createDefaultPrompts();
-      // Save default prompts
-      try {
-        fs.writeFileSync(promptsPath, JSON.stringify(prompts, null, 2));
-        console.log('Created default prompts.json');
-      } catch (writeError) {
-        console.error('Failed to write default prompts.json:', writeError);
-      }
     }
     
-    res.json({ success: true, prompts });
+    global.prompts = prompts;
+    res.json({ success: true, prompts, source: 'file' });
   } catch (error) {
     console.error('Error loading prompts:', error);
     res.status(500).json({ 
