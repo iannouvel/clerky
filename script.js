@@ -10289,16 +10289,13 @@ const AVAILABLE_MODELS = [
     { name: 'Groq', model: 'meta-llama/llama-4-maverick-17b-128e-instruct', displayName: 'Groq (Llama 4 Maverick)' },
     { name: 'Groq', model: 'qwen/qwen3-32b', displayName: 'Groq (Qwen3 32B)' },
     // Mid-range models
-    { name: 'OpenAI', model: 'o3-mini', displayName: 'o3 Mini' },
     { name: 'Groq', model: 'llama-3.3-70b-versatile', displayName: 'Groq (Llama 3.3 70B)' },
     { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku' },
     { name: 'Groq', model: 'moonshotai/kimi-k2-instruct-0905', displayName: 'Groq (Kimi K2 262K)' },
-    { name: 'OpenAI', model: 'o1-mini', displayName: 'o1 Mini' },
     { name: 'Anthropic', model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
     // High-quality models
     { name: 'OpenAI', model: 'gpt-4.1', displayName: 'GPT-4.1' },
     { name: 'Anthropic', model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
-    { name: 'OpenAI', model: 'o1', displayName: 'o1' },
     { name: 'Anthropic', model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5' },
     // Legacy models
     { name: 'OpenAI', model: 'gpt-4o', displayName: 'GPT-4o' },
