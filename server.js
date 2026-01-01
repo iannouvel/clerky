@@ -20645,8 +20645,14 @@ Return JSON in this exact format:
     }
 }
 
-// Fixed list of LLMs for sequential processing
-const SEQUENTIAL_LLM_CHAIN = ['DeepSeek', 'OpenAI', 'Anthropic', 'Mistral', 'Gemini'];
+// Build sequential LLM chain from all available models in AI_PROVIDER_PREFERENCE
+// Each entry contains { model, displayName, provider, cost } for precise model-level control
+const SEQUENTIAL_LLM_CHAIN = AI_PROVIDER_PREFERENCE.map(p => ({
+    model: p.model,
+    displayName: `${p.name} (${p.model})`,
+    provider: p.name,
+    cost: p.costPer1kTokens
+}));
 
 // Prompt Evolution Endpoint - runs analysis, evaluates results, and suggests improvements
 // Now supports scenarios with individual guidelines (auto-matched) or a single shared guideline
