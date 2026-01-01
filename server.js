@@ -19907,7 +19907,11 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
     // Load prompt from prompts.json or Firestore cache
     const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
     
-    const systemPrompt = promptConfig?.system_prompt || 
+    // Ensure prompts are strings (Firestore might return objects)
+    const rawSystemPrompt = promptConfig?.system_prompt;
+    const rawUserPrompt = promptConfig?.prompt;
+    
+    const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) || 
         `You are a clinical advisor. Read the clinical note carefully to understand the patient's current phase of care, existing plan, and clinical context. Then read the guideline and identify ONLY recommendations that:
 1. Apply to this patient RIGHT NOW (not future phases of care)
 2. Are NOT already addressed in the clinical note
@@ -19915,7 +19919,7 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 
 Return ONLY valid JSON - no markdown, no explanations.`;
     
-    const userPrompt = (promptConfig?.prompt || 
+    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
         `CLINICAL NOTE:
 {{clinicalNote}}
 
@@ -19999,7 +20003,11 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
     // Load prompt from prompts.json or Firestore cache
     const promptConfig = global.prompts?.['evaluateSuggestions'] || require('./prompts.json')['evaluateSuggestions'];
     
-    const systemPrompt = promptConfig?.system_prompt || 
+    // Ensure prompts are strings (Firestore might return objects)
+    const rawSystemPrompt = promptConfig?.system_prompt;
+    const rawUserPrompt = promptConfig?.prompt;
+    
+    const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) || 
         `You are a clinical guideline expert evaluating AI-generated suggestions. Your task is to assess completeness (did the AI miss important recommendations?) and accuracy (are the suggestions correct and non-redundant?). Be rigorous but fair. Return ONLY valid JSON.`;
     
     const suggestionsText = suggestions.length > 0 
@@ -20010,7 +20018,7 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
         ? JSON.stringify(alreadyCompliant, null, 2) 
         : 'None identified';
     
-    const userPrompt = (promptConfig?.prompt || 
+    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
         `CLINICAL NOTE:\n{{clinicalNote}}\n\nGUIDELINE TITLE: {{guidelineTitle}}\n\nFULL GUIDELINE CONTENT:\n{{guidelineContent}}\n\nAI-GENERATED SUGGESTIONS:\n{{suggestions}}\n\nAI-IDENTIFIED AS ALREADY COMPLIANT:\n{{alreadyCompliant}}\n\nEvaluate the AI's output...`)
         .replace('{{clinicalNote}}', clinicalNote)
         .replace('{{guidelineTitle}}', guidelineTitle)
@@ -20063,7 +20071,11 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
     // Load prompt from prompts.json or Firestore cache
     const promptConfig = global.prompts?.['generatePromptImprovements'] || require('./prompts.json')['generatePromptImprovements'];
     
-    const systemPrompt = promptConfig?.system_prompt || 
+    // Ensure prompts are strings (Firestore might return objects)
+    const rawSystemPrompt = promptConfig?.system_prompt;
+    const rawUserPrompt = promptConfig?.prompt;
+    
+    const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) || 
         `You are an expert at prompt engineering for clinical AI systems. Your task is to analyze patterns in AI failures across multiple test scenarios and suggest specific, actionable improvements to the prompts. Focus on GENERALIZABLE changes that will improve performance across diverse scenarios - avoid overfitting to specific cases. Return ONLY valid JSON.`;
     
     // Identify common failure patterns
@@ -20107,7 +20119,7 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgC
         assessment: eval.overallAssessment
     }));
     
-    const userPrompt = (promptConfig?.prompt || 
+    const userPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) || 
         `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS ACROSS {{scenarioCount}} SCENARIOS:\n{{evaluationResults}}\n\nAGGREGATED METRICS:\n- Average Completeness: {{avgCompleteness}}\n- Average Accuracy: {{avgAccuracy}}\n- Average Latency: {{avgLatency}}ms\n\nCOMMON FAILURE PATTERNS:\n{{failurePatterns}}\n\nAnalyze the evaluation results...`)
         .replace('{{currentPrompt}}', JSON.stringify(currentPrompt, null, 2))
         .replace('{{scenarioCount}}', evaluationResults.length.toString())
