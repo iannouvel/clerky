@@ -19859,13 +19859,105 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
     }
 }
 
-// Practice Point Suggestions API endpoint - uses pre-extracted auditable elements for fast, relevant suggestions
+// NEW SEMANTIC APPROACH: Analyze guideline content directly for patient-specific suggestions
+async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId) {
+    console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" for patient...`);
+    
+    // Load prompt from prompts.json or Firestore cache
+    const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
+    
+    const systemPrompt = promptConfig?.system_prompt || 
+        `You are a clinical advisor. Read the clinical note carefully to understand the patient's current phase of care, existing plan, and clinical context. Then read the guideline and identify ONLY recommendations that:
+1. Apply to this patient RIGHT NOW (not future phases of care)
+2. Are NOT already addressed in the clinical note
+3. Would add genuine clinical value
+
+Return ONLY valid JSON - no markdown, no explanations.`;
+    
+    const userPrompt = (promptConfig?.prompt || 
+        `CLINICAL NOTE:
+{{clinicalNote}}
+
+GUIDELINE TITLE: {{guidelineTitle}}
+
+GUIDELINE CONTENT:
+{{guidelineContent}}
+
+Read the clinical note to understand:
+- The patient's current phase of care (e.g., pregnant at X weeks, postpartum, etc.)
+- What has already been done or planned
+- The patient's specific conditions and circumstances
+
+Then read the guideline and identify any recommendations that:
+1. Apply specifically to THIS patient in their CURRENT situation
+2. Are NOT already addressed or planned in the clinical note
+3. Would genuinely improve this patient's care
+
+Be conservative - only suggest things that are clearly applicable and clearly missing.
+
+Return JSON:
+{
+  "patientContext": {
+    "phaseOfCare": "e.g., Antenatal - 16+2 weeks gestation",
+    "keyConditions": ["condition1", "condition2"],
+    "existingPlan": ["planned action 1", "planned action 2"]
+  },
+  "suggestions": [
+    {
+      "name": "Brief name of recommendation",
+      "issue": "What is missing from the current plan",
+      "suggestion": "Specific action to take",
+      "verbatimQuote": "Exact quote from the guideline supporting this",
+      "priority": "high or medium or low"
+    }
+  ],
+  "alreadyCompliant": [
+    "Brief description of guideline recommendation already addressed in the note"
+  ]
+}
+
+If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`)
+        .replace('{{clinicalNote}}', clinicalNote)
+        .replace('{{guidelineTitle}}', guidelineTitle)
+        .replace('{{guidelineContent}}', guidelineContent);
+    
+    const messages = [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ];
+    
+    const result = await routeToAI({ messages }, userId);
+    
+    if (!result || !result.content) {
+        console.error('[SEMANTIC-ANALYSIS] No AI response');
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+    
+    try {
+        // Clean up the response - remove markdown code blocks if present
+        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        
+        console.log(`[SEMANTIC-ANALYSIS] Complete: ${parsed.suggestions?.length || 0} suggestions, ${parsed.alreadyCompliant?.length || 0} already compliant`);
+        console.log(`[SEMANTIC-ANALYSIS] Patient context: ${parsed.patientContext?.phaseOfCare || 'unknown'}`);
+        
+        return parsed;
+    } catch (e) {
+        console.error('[SEMANTIC-ANALYSIS] Failed to parse response:', e.message);
+        console.error('[SEMANTIC-ANALYSIS] Raw response:', result.content.substring(0, 500));
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+}
+
+// Practice Point Suggestions API endpoint - NEW SEMANTIC APPROACH
+// Instead of using pre-extracted auditable elements, we pass the full guideline content
+// directly to the LLM for semantic analysis against the clinical note
 app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
     const timer = new StepTimer('/getPracticePointSuggestions');
     req.stepTimer = timer;
     
     try {
-        console.log('[PRACTICE-POINTS] Endpoint called');
+        console.log('[SEMANTIC-SUGGESTIONS] Endpoint called - using semantic guideline analysis');
         const { transcript, guidelineId } = req.body;
         const userId = req.user.uid;
         
@@ -19879,9 +19971,9 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         }
         timer.step('Validation');
         
-        console.log(`[PRACTICE-POINTS] Processing for guideline: ${guidelineId}, note length: ${transcript.length}`);
+        console.log(`[SEMANTIC-SUGGESTIONS] Processing for guideline: ${guidelineId}, note length: ${transcript.length}`);
         
-        // Fetch guideline with auditable elements from Firestore
+        // Fetch guideline from Firestore
         const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
         
         if (!guidelineDoc.exists) {
@@ -19889,98 +19981,68 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         }
         
         const guidelineData = guidelineDoc.data();
-        const auditableElements = guidelineData.auditableElements || [];
         const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.displayName || guidelineId;
         
-        timer.step('Fetch guideline');
+        timer.step('Fetch guideline metadata');
         
-        if (auditableElements.length === 0) {
-            console.warn(`[PRACTICE-POINTS] No auditable elements found for guideline: ${guidelineId}`);
-            return res.json({
-                success: true,
-                suggestions: [],
-                guidelineTitle,
-                guidelineId,
-                totalPracticePoints: 0,
-                relevantPracticePoints: 0,
-                message: 'No practice points available for this guideline. Consider regenerating auditable elements.'
-            });
+        // Get guideline content - prefer condensed version for better performance
+        // Also fetch from condensed subcollection if needed
+        let guidelineContent = guidelineData.condensed || guidelineData.content;
+        
+        if (!guidelineContent) {
+            // Try to fetch condensed content from subcollection
+            const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
+            if (condensedDoc.exists) {
+                guidelineContent = condensedDoc.data()?.condensed;
+            }
         }
         
-        console.log(`[PRACTICE-POINTS] Found ${auditableElements.length} auditable elements`);
-        
-        // Add original index to each element for tracking
-        const indexedElements = auditableElements.map((elem, i) => ({ ...elem, originalIndex: i + 1 }));
-        
-        // Step 1: Filter by relevance
-        const step1Result = await filterRelevantPracticePoints(transcript, indexedElements, userId);
-        timer.step('Step 1: Relevance filter');
-        
-        const relevantIndices = step1Result.relevant || [];
-        const relevantPoints = indexedElements.filter(elem => relevantIndices.includes(elem.originalIndex));
-        
-        if (relevantPoints.length === 0) {
-            console.log('[PRACTICE-POINTS] No relevant practice points found');
-            return res.json({
-                success: true,
-                suggestions: [],
-                guidelineTitle,
-                guidelineId,
-                guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
-                totalPracticePoints: auditableElements.length,
-                relevantPracticePoints: 0,
-                irrelevantReasons: step1Result.irrelevant || {},
-                message: 'No practice points are relevant to this patient context.'
-            });
+        if (!guidelineContent) {
+            // Last resort: try to get full content from subcollection
+            const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
+            if (fullContentDoc.exists) {
+                guidelineContent = fullContentDoc.data()?.content;
+            }
         }
         
-        // Step 2: Filter by importance
-        const step2Result = await filterImportantPracticePoints(transcript, relevantPoints, userId);
-        timer.step('Step 2: Importance filter');
+        timer.step('Fetch guideline content');
         
-        const importantIndices = step2Result.important || [];
-        const importantPoints = relevantPoints.filter(elem => importantIndices.includes(elem.originalIndex));
-        
-        if (importantPoints.length === 0) {
-            console.log('[PRACTICE-POINTS] No important practice points found');
+        if (!guidelineContent) {
+            console.warn(`[SEMANTIC-SUGGESTIONS] No content found for guideline: ${guidelineId}`);
             return res.json({
                 success: true,
                 suggestions: [],
                 guidelineTitle,
                 guidelineId,
                 guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
-                totalPracticePoints: auditableElements.length,
-                relevantPracticePoints: relevantPoints.length,
-                importantPracticePoints: 0,
-                message: 'All relevant practice points are already addressed or have low impact.'
+                message: 'No guideline content available. Please ensure the guideline has been processed.'
             });
         }
         
-        // Step 3: Check compliance and generate suggestions
-        const step3Result = await checkComplianceAndSuggest(transcript, importantPoints, userId);
-        timer.step('Step 3: Compliance check');
+        console.log(`[SEMANTIC-SUGGESTIONS] Guideline content length: ${guidelineContent.length} characters`);
         
-        // Format suggestions from non-compliant points
-        const suggestions = (step3Result.nonCompliant || []).map(point => {
-            const originalElement = auditableElements[point.index - 1] || {};
-            
-            return {
-                id: point.index,
-                name: point.name || originalElement.name,
-                description: originalElement.description || '',
-                verbatimQuote: point.verbatimQuote || originalElement.verbatimQuote || '',
-                significance: originalElement.significance || 'medium',
-                issue: point.issue || '',
-                suggestion: point.suggestion || '',
-                priority: 'high',
-                applicable: true
-            };
-        });
+        // Perform semantic analysis - single LLM call to analyze guideline against clinical note
+        const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId);
+        timer.step('Semantic analysis');
         
-        console.log(`[PRACTICE-POINTS] 3-step complete: ${auditableElements.length} total → ${relevantPoints.length} relevant → ${importantPoints.length} important → ${suggestions.length} suggestions`);
+        // Format suggestions for the frontend
+        const suggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
+            id: index + 1,
+            name: suggestion.name,
+            description: suggestion.issue || '',
+            verbatimQuote: suggestion.verbatimQuote || '',
+            significance: suggestion.priority || 'medium',
+            issue: suggestion.issue || '',
+            suggestion: suggestion.suggestion || '',
+            priority: suggestion.priority || 'medium',
+            applicable: true
+        }));
+        
+        console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${suggestions.length} suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
+        console.log(`[SEMANTIC-SUGGESTIONS] Patient context: ${JSON.stringify(analysisResult.patientContext || {})}`);
         
         timer.step('Format response');
-        console.log('[PRACTICE-POINTS] Timing:', JSON.stringify(timer.getSummary()));
+        console.log('[SEMANTIC-SUGGESTIONS] Timing:', JSON.stringify(timer.getSummary()));
         
         res.json({
             success: true,
@@ -19988,13 +20050,11 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             guidelineTitle,
             guidelineId,
             guidelineFilename: guidelineData.filename || guidelineData.originalFilename,
-            totalPracticePoints: auditableElements.length,
-            relevantPracticePoints: relevantPoints.length,
-            importantPracticePoints: importantPoints.length,
-            compliantCount: (step3Result.compliant || []).length,
-            nonCompliantCount: suggestions.length,
-            irrelevantReasons: step1Result.irrelevant || {},
-            unimportantReasons: step2Result.unimportant || {}
+            patientContext: analysisResult.patientContext || {},
+            alreadyCompliant: analysisResult.alreadyCompliant || [],
+            suggestionsCount: suggestions.length,
+            compliantCount: (analysisResult.alreadyCompliant || []).length,
+            approach: 'semantic' // Flag to indicate new approach is being used
         });
         
     } catch (error) {
