@@ -1,0 +1,13 @@
+{
+  "year": 2026,
+  "month": "01",
+  "providers": {
+    "DeepSeek": {
+      "total_tokens": 0,
+      "total_cost_usd": 0,
+      "days": 1
+    }
+  },
+  "total_tokens": 0,
+  "total_cost_usd": 0
+}
