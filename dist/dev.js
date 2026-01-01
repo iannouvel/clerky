@@ -5497,24 +5497,33 @@ ${responseText}
                 metricsRow.style.display = 'none';
             }
             
-            // Build the comparison table
-            const llmChain = result.llmChain || ['DeepSeek', 'OpenAI', 'Anthropic', 'Mistral', 'Gemini'];
+            // Use llmProviders for display (array of display names) or fallback
+            const llmProviders = result.llmProviders || (result.llmChain || []).map(c => 
+                typeof c === 'string' ? c : (c.displayName || c.model || 'Unknown')
+            );
+            const numModels = llmProviders.length;
             
             let html = '<h5 style="margin-bottom:15px;">Sequential LLM Refinement Results</h5>';
-            html += '<p style="font-size:12px;color:#666;margin-bottom:15px;">Each LLM sees the previous LLM\'s output + evaluation and attempts to improve it. Comp = Completeness, Acc = Accuracy.</p>';
+            html += `<p style="font-size:12px;color:#666;margin-bottom:15px;">Testing ${numModels} models. Each LLM sees the previous LLM's output + evaluation. Comp = Completeness, Acc = Accuracy. Scroll horizontally to see all models.</p>`;
             
-            html += '<table style="width:100%;border-collapse:collapse;font-size:12px;">';
-            html += '<thead style="background:#f8f9fa;"><tr>';
-            html += '<th style="padding:8px;text-align:left;border:1px solid #dee2e6;">Scenario</th>';
+            // Wrap table in scrollable container for many models
+            html += '<div style="overflow-x:auto;max-width:100%;border:1px solid #dee2e6;border-radius:4px;">';
+            html += '<table style="border-collapse:collapse;font-size:11px;white-space:nowrap;">';
+            html += '<thead style="background:#f8f9fa;position:sticky;top:0;"><tr>';
+            html += '<th style="padding:6px 10px;text-align:left;border:1px solid #dee2e6;position:sticky;left:0;background:#f8f9fa;z-index:2;">Scenario</th>';
             
-            llmChain.forEach(llm => {
-                html += `<th style="padding:8px;text-align:center;border:1px solid #dee2e6;">${llm}</th>`;
+            llmProviders.forEach((llm, idx) => {
+                // Shorten display name for header (take first part before parenthesis or use model ID)
+                const shortName = typeof llm === 'string' ? 
+                    (llm.includes('(') ? llm.split('(')[0].trim() : llm.substring(0, 15)) : 
+                    String(llm).substring(0, 15);
+                html += `<th style="padding:6px 8px;text-align:center;border:1px solid #dee2e6;min-width:70px;" title="${llm}">${idx + 1}. ${shortName}</th>`;
             });
             html += '</tr></thead><tbody>';
             
             (result.scenarioResults || []).forEach(sr => {
                 html += '<tr>';
-                html += `<td style="padding:8px;border:1px solid #dee2e6;font-weight:500;">${sr.scenarioName}<br><span style="font-size:10px;color:#888;">${sr.guidelineTitle?.substring(0, 30) || ''}...</span></td>`;
+                html += `<td style="padding:6px 10px;border:1px solid #dee2e6;font-weight:500;position:sticky;left:0;background:#fff;z-index:1;">${sr.scenarioName}<br><span style="font-size:9px;color:#888;">${sr.guidelineTitle?.substring(0, 25) || ''}...</span></td>`;
                 
                 let prevComp = null, prevAcc = null;
                 
@@ -5522,28 +5531,25 @@ ${responseText}
                     const comp = Math.round((iter.completenessScore || 0) * 100);
                     const acc = Math.round((iter.accuracyScore || 0) * 100);
                     
-                    // Determine trend arrows
-                    let compTrend = '', accTrend = '';
-                    if (prevComp !== null) {
-                        if (comp > prevComp) compTrend = '<span style="color:#28a745;">↑</span>';
-                        else if (comp < prevComp) compTrend = '<span style="color:#dc3545;">↓</span>';
-                        else compTrend = '<span style="color:#666;">→</span>';
-                    }
-                    if (prevAcc !== null) {
-                        if (acc > prevAcc) accTrend = '<span style="color:#28a745;">↑</span>';
-                        else if (acc < prevAcc) accTrend = '<span style="color:#dc3545;">↓</span>';
-                        else accTrend = '<span style="color:#666;">→</span>';
+                    // Determine trend arrows (compact)
+                    let trend = '';
+                    if (prevComp !== null && prevAcc !== null) {
+                        const improving = (comp > prevComp || acc > prevAcc) && comp >= prevComp && acc >= prevAcc;
+                        const declining = (comp < prevComp || acc < prevAcc) && comp <= prevComp && acc <= prevAcc;
+                        if (improving) trend = '<span style="color:#28a745;">↑</span>';
+                        else if (declining) trend = '<span style="color:#dc3545;">↓</span>';
+                        else trend = '<span style="color:#888;">~</span>';
                     }
                     
-                    const compColor = comp >= 80 ? '#28a745' : comp >= 60 ? '#ff9800' : '#dc3545';
-                    const accColor = acc >= 80 ? '#28a745' : acc >= 60 ? '#ff9800' : '#dc3545';
+                    // Colour based on combined score
+                    const avgScore = (comp + acc) / 2;
+                    const bgColor = avgScore >= 80 ? '#d4edda' : avgScore >= 60 ? '#fff3cd' : '#f8d7da';
                     
-                    html += `<td style="padding:8px;text-align:center;border:1px solid #dee2e6;">`;
-                    html += `<span style="color:${compColor};font-weight:bold;">${comp}%</span>${compTrend} / `;
-                    html += `<span style="color:${accColor};font-weight:bold;">${acc}%</span>${accTrend}`;
-                    html += `<br><span style="font-size:10px;color:#888;">${iter.latencyMs}ms</span>`;
+                    html += `<td style="padding:4px 6px;text-align:center;border:1px solid #dee2e6;background:${bgColor};">`;
+                    html += `<strong>${comp}/${acc}</strong>${trend}`;
+                    html += `<br><span style="font-size:9px;color:#666;">${Math.round(iter.latencyMs / 1000)}s</span>`;
                     if (iter.error) {
-                        html += `<br><span style="font-size:10px;color:#dc3545;">⚠ Error</span>`;
+                        html += `<br><span style="font-size:9px;color:#dc3545;">⚠</span>`;
                     }
                     html += '</td>';
                     
@@ -5554,7 +5560,7 @@ ${responseText}
                 html += '</tr>';
             });
             
-            html += '</tbody></table>';
+            html += '</tbody></table></div>';  // Close scrollable container
             
             // Add summary
             html += '<div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;">';
@@ -5562,6 +5568,8 @@ ${responseText}
             
             // Calculate average improvement from first to last LLM
             let totalCompImprovement = 0, totalAccImprovement = 0, count = 0;
+            let bestModel = null, bestScore = 0;
+            
             (result.scenarioResults || []).forEach(sr => {
                 if (sr.iterations && sr.iterations.length >= 2) {
                     const first = sr.iterations[0];
@@ -5569,14 +5577,28 @@ ${responseText}
                     totalCompImprovement += (last.completenessScore || 0) - (first.completenessScore || 0);
                     totalAccImprovement += (last.accuracyScore || 0) - (first.accuracyScore || 0);
                     count++;
+                    
+                    // Track best performing model
+                    sr.iterations.forEach(iter => {
+                        const score = (iter.completenessScore || 0) + (iter.accuracyScore || 0);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestModel = iter.provider || iter.modelId;
+                        }
+                    });
                 }
             });
+            
+            const firstModel = llmProviders[0] || 'First';
+            const lastModel = llmProviders[llmProviders.length - 1] || 'Last';
             
             if (count > 0) {
                 const avgCompImprovement = (totalCompImprovement / count) * 100;
                 const avgAccImprovement = (totalAccImprovement / count) * 100;
                 
-                html += `<p style="font-size:13px;">Average improvement from ${llmChain[0]} to ${llmChain[llmChain.length - 1]}:</p>`;
+                html += `<p style="font-size:13px;"><strong>Models tested:</strong> ${numModels}</p>`;
+                html += `<p style="font-size:13px;"><strong>Best performer:</strong> ${bestModel} (${Math.round(bestScore * 50)}% avg)</p>`;
+                html += `<p style="font-size:13px;">Average improvement from first to last:</p>`;
                 html += `<p style="font-size:13px;">`;
                 html += `Completeness: <strong style="color:${avgCompImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgCompImprovement >= 0 ? '+' : ''}${avgCompImprovement.toFixed(1)}%</strong> | `;
                 html += `Accuracy: <strong style="color:${avgAccImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgAccImprovement >= 0 ? '+' : ''}${avgAccImprovement.toFixed(1)}%</strong>`;
