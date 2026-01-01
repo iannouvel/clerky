@@ -12238,19 +12238,31 @@ function extractKeywords(text) {
 // Replaces previous 4-step process for ~95% reduction in API calls and tokens
 // ============================================================================
 
-// Helper to clean markdown code blocks from AI responses
+// Helper to clean markdown code blocks from AI responses and extract JSON
 function cleanJsonResponse(content) {
+  if (!content || typeof content !== 'string') return '';
+  
   let cleaned = content.trim();
-  if (cleaned.startsWith('```json')) {
-    cleaned = cleaned.replace(/^```json\s*/, '');
+  
+  // 1. Remove markdown code blocks (e.g., ```json ... ```)
+  const jsonBlockRegex = /```(?:json)?\s*([\s\S]*?)\s*```/;
+  const match = cleaned.match(jsonBlockRegex);
+  if (match && match[1]) {
+    cleaned = match[1].trim();
   }
-  if (cleaned.startsWith('```')) {
-    cleaned = cleaned.replace(/^```\s*/, '');
+  
+  // 2. If it still doesn't look like JSON (doesn't start with [ or {), try finding the first [ or {
+  if (!cleaned.startsWith('[') && !cleaned.startsWith('{')) {
+    const firstBracket = cleaned.search(/[\[\{]/);
+    if (firstBracket !== -1) {
+      const lastBracket = Math.max(cleaned.lastIndexOf(']'), cleaned.lastIndexOf('}'));
+      if (lastBracket !== -1 && lastBracket > firstBracket) {
+        cleaned = cleaned.substring(firstBracket, lastBracket + 1);
+      }
+    }
   }
-  if (cleaned.endsWith('```')) {
-    cleaned = cleaned.replace(/\s*```$/, '');
-  }
-  return cleaned;
+  
+  return cleaned.trim();
 }
 
 // Step 1: Identify and structure all practice points in a single call
@@ -12326,43 +12338,49 @@ ${content}`;
           // Validate and filter valid elements
           const validElements = parsed.filter(elem => 
             elem && typeof elem === 'object' && 
-            elem.name && typeof elem.name === 'string' &&
-            elem.description && typeof elem.description === 'string'
+            (elem.name || elem.title) // Handle common variations
           ).map(elem => ({
-            name: elem.name,
-            description: elem.description,
-            significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+            name: elem.name || elem.title,
+            description: elem.description || elem.text || elem.criteria || '',
+            significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase()) 
+              ? String(elem.significance).toLowerCase() 
+              : 'medium'
           }));
           
           console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points`);
           return validElements;
         }
       } catch (parseError) {
-        // Try to extract JSON array from response
-        const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
+        console.warn('[AUDITABLE-OPT] Step 1: Failed to parse initial cleaned content, trying regex extraction...');
+        
+        // Try to extract JSON array from response using a more aggressive regex
+        const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
+        if (jsonArrayMatch) {
           try {
-            const extracted = JSON.parse(jsonMatch[0]);
+            const extracted = JSON.parse(jsonArrayMatch[0]);
             if (Array.isArray(extracted)) {
               const validElements = extracted.filter(elem => 
                 elem && typeof elem === 'object' && 
-                elem.name && typeof elem.name === 'string' &&
-                elem.description && typeof elem.description === 'string'
+                (elem.name || elem.title)
               ).map(elem => ({
-                name: elem.name,
-                description: elem.description,
-                significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+                name: elem.name || elem.title,
+                description: elem.description || elem.text || elem.criteria || '',
+                significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase()) 
+                  ? String(elem.significance).toLowerCase() 
+                  : 'medium'
               }));
               
-              console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points (from extracted JSON)`);
+              console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points (from regex match)`);
               return validElements;
             }
           } catch (e) {
-            console.error('[AUDITABLE-OPT] Step 1: Failed to parse extracted JSON array');
+            console.error('[AUDITABLE-OPT] Step 1: Failed to parse regex-extracted JSON array');
           }
         }
+        
         console.error('[AUDITABLE-OPT] Step 1: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE-OPT] Step 1 response preview:', cleanedContent.substring(0, 500));
+        console.error('[AUDITABLE-OPT] RAW RESPONSE START:', result.content.substring(0, 200).replace(/\n/g, ' '));
+        console.error('[AUDITABLE-OPT] CLEANED CONTENT START:', cleanedContent.substring(0, 200).replace(/\n/g, ' '));
       }
     }
     
@@ -12422,48 +12440,52 @@ ${content.substring(0, 10000)}${content.length > 10000 ? '\n...[truncated]...' :
 
 Return a JSON array with the same number of objects, each with: name, description (expanded), significance.`;
 
-  try {
-    const result = await routeToAI({ 
-      messages: [
-        { 
-          role: 'system', 
+    try {
+      const result = await routeToAI({ 
+        messages: [
+          { 
+            role: 'system', 
             content: 'You are a clinical guideline analyst. Expand the given practice points with detailed applicability criteria. Return ONLY a valid JSON array. Each object must have: name, description (with APPLIES TO/NOT APPLICABLE/ACTION/THRESHOLDS sections), significance.' 
-        },
-        { 
-          role: 'user', 
-          content: prompt 
-        }
-      ]
-    }, userId);
+          },
+          { 
+            role: 'user', 
+            content: prompt 
+          }
+        ]
+      }, userId);
 
-    if (result && result.content) {
+      if (result && result.content) {
         const cleanedContent = cleanJsonResponse(result.content);
         
         try {
           let parsed = JSON.parse(cleanedContent);
           if (!Array.isArray(parsed)) {
-            const jsonMatch = cleanedContent.match(/\[[\s\S]*\]/);
-        if (jsonMatch) {
-              parsed = JSON.parse(jsonMatch[0]);
+            const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
+            if (jsonArrayMatch) {
+              parsed = JSON.parse(jsonArrayMatch[0]);
             }
           }
           
           if (Array.isArray(parsed)) {
             const validElements = parsed.filter(elem => 
               elem && typeof elem === 'object' && 
-              elem.name && typeof elem.name === 'string'
+              (elem.name || elem.title)
             ).map(elem => ({
-              name: elem.name,
-              description: elem.description || '',
-              significance: ['high', 'medium', 'low'].includes(elem.significance) ? elem.significance : 'medium'
+              name: elem.name || elem.title,
+              description: elem.description || elem.text || elem.criteria || '',
+              significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase()) 
+                ? String(elem.significance).toLowerCase() 
+                : 'medium'
             }));
             
             expandedElements.push(...validElements);
             console.log(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Expanded ${validElements.length} points`);
-        }
-      } catch (parseError) {
-          // If parsing fails, use original batch
+          } else {
+            throw new Error('Parsed result is not an array');
+          }
+        } catch (parseError) {
           console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse error, using original points`);
+          console.warn(`[AUDITABLE-OPT] RAW RESPONSE START: ${result.content.substring(0, 100).replace(/\n/g, ' ')}`);
           expandedElements.push(...batch);
         }
       } else {
