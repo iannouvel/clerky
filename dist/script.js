@@ -10274,7 +10274,7 @@ const AVAILABLE_MODELS = [
     // Very cheap tier
     { name: 'DeepSeek', model: 'deepseek-chat', displayName: 'DeepSeek' },
     { name: 'Groq', model: 'llama-3.1-8b-instant', displayName: 'Groq (Llama 3.1 8B Fast)' },
-    { name: 'Gemini', model: 'gemini-3.0-flash', displayName: 'Gemini 3 Flash' },
+    { name: 'Gemini', model: 'gemini-3-flash-preview', displayName: 'Gemini 3 Flash' },
     { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini 2.5 Flash' },
     { name: 'Groq', model: 'openai/gpt-oss-20b', displayName: 'Groq (GPT OSS 20B)' },
     { name: 'Groq', model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Groq (Llama 4 Scout)' },
