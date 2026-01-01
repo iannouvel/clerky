@@ -293,12 +293,11 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'OPENAI_API_KEY',
     endpoint: 'https://api.openai.com/v1/chat/completions',
     models: [
-      { model: 'gpt-5.2', displayName: 'GPT-5.2', costPer1kInput: 0.005, costPer1kOutput: 0.02, description: 'Best for coding and agentic tasks' },
-      { model: 'gpt-5.2-pro', displayName: 'GPT-5.2 Pro', costPer1kInput: 0.01, costPer1kOutput: 0.04, description: 'Premium version with enhanced reasoning' },
-      { model: 'gpt-5-mini', displayName: 'GPT-5 Mini', costPer1kInput: 0.001, costPer1kOutput: 0.004, description: 'Fast and cost-efficient GPT-5' },
-      { model: 'gpt-5-nano', displayName: 'GPT-5 Nano', costPer1kInput: 0.0005, costPer1kOutput: 0.002, description: 'Fastest, most cost-efficient GPT-5' },
+      { model: 'o1', displayName: 'o1', costPer1kInput: 0.015, costPer1kOutput: 0.06, description: 'Advanced reasoning model' },
+      { model: 'o1-mini', displayName: 'o1 Mini', costPer1kInput: 0.003, costPer1kOutput: 0.012, description: 'Fast reasoning model' },
+      { model: 'o3-mini', displayName: 'o3 Mini', costPer1kInput: 0.00115, costPer1kOutput: 0.0044, description: 'Latest reasoning model' },
       { model: 'gpt-4.1', displayName: 'GPT-4.1', costPer1kInput: 0.003, costPer1kOutput: 0.012, description: 'Smartest non-reasoning model' },
-      { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Previous flagship model' },
+      { model: 'gpt-4o', displayName: 'GPT-4o', costPer1kInput: 0.0025, costPer1kOutput: 0.01, description: 'Flagship multimodal model' },
       { model: 'gpt-4o-mini', displayName: 'GPT-4o Mini', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and affordable' },
       { model: 'gpt-3.5-turbo', displayName: 'GPT-3.5 Turbo', costPer1kInput: 0.0005, costPer1kOutput: 0.0015, description: 'Legacy fast model' }
     ]
@@ -311,7 +310,6 @@ const AI_MODEL_REGISTRY = {
       { model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Balanced performance for coding and agents' },
       { model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5', costPer1kInput: 0.001, costPer1kOutput: 0.005, description: 'Fastest with near-frontier intelligence' },
       { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Previous generation Sonnet' },
-      { model: 'claude-3-5-sonnet-20241022', displayName: 'Claude 3.5 Sonnet', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Excellent reasoning' },
       { model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku', costPer1kInput: 0.00025, costPer1kOutput: 0.00125, description: 'Fast and cost-effective' }
     ]
   },
@@ -476,10 +474,10 @@ const AI_PROVIDER_PREFERENCE = [
   // Tier 3: Mid-range models
   {
     name: 'OpenAI',
-    model: 'gpt-5-nano',
-    costPer1kTokens: 0.00125, // Average of input/output
+    model: 'o3-mini',
+    costPer1kTokens: 0.00278, // Average of input/output
     priority: 15,
-    description: 'Fastest, most cost-efficient GPT-5'
+    description: 'Latest reasoning model'
   },
   {
     name: 'Groq',
@@ -504,10 +502,10 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'OpenAI',
-    model: 'gpt-5-mini',
-    costPer1kTokens: 0.0025, // Average of input/output
+    model: 'o1-mini',
+    costPer1kTokens: 0.0075, // Average of input/output
     priority: 19,
-    description: 'Fast and cost-efficient GPT-5'
+    description: 'Fast reasoning model'
   },
   {
     name: 'Anthropic',
@@ -540,10 +538,10 @@ const AI_PROVIDER_PREFERENCE = [
   },
   {
     name: 'OpenAI',
-    model: 'gpt-5.2',
-    costPer1kTokens: 0.0125, // Average of input/output
+    model: 'o1',
+    costPer1kTokens: 0.0375, // Average of input/output
     priority: 24,
-    description: 'Best for coding and agentic tasks'
+    description: 'Advanced reasoning model'
   },
   {
     name: 'Anthropic',
@@ -551,13 +549,6 @@ const AI_PROVIDER_PREFERENCE = [
     costPer1kTokens: 0.015, // Average of input/output
     priority: 25,
     description: 'Most intelligent Claude model'
-  },
-  {
-    name: 'OpenAI',
-    model: 'gpt-5.2-pro',
-    costPer1kTokens: 0.025, // Average of input/output
-    priority: 26,
-    description: 'Premium GPT-5.2 with enhanced reasoning'
   },
   // Legacy models (kept for compatibility)
   {
@@ -20926,8 +20917,10 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
             
             // Run through each LLM in the chain
             for (let llmIdx = 0; llmIdx < SEQUENTIAL_LLM_CHAIN.length; llmIdx++) {
-                const provider = SEQUENTIAL_LLM_CHAIN[llmIdx];
-                console.log(`[EVOLVE-SEQ] Scenario ${scenarioIdx + 1}, LLM ${llmIdx + 1}/${SEQUENTIAL_LLM_CHAIN.length}: ${provider}`);
+                const llmConfig = SEQUENTIAL_LLM_CHAIN[llmIdx];
+                const modelId = llmConfig.model;
+                const displayName = llmConfig.displayName;
+                console.log(`[EVOLVE-SEQ] Scenario ${scenarioIdx + 1}, LLM ${llmIdx + 1}/${SEQUENTIAL_LLM_CHAIN.length}: ${displayName}`);
                 
                 const startTime = Date.now();
                 let analysisResult;
@@ -20936,12 +20929,13 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                     if (llmIdx === 0) {
                         // First LLM: generate initial suggestions using analyzeGuidelineForPatient
                         // Pass guidelineId to load any existing interpretation hints
+                        // Pass model ID to routeToAI (it will detect it's a model ID and use it directly)
                         analysisResult = await analyzeGuidelineForPatientWithProvider(
                             scenario.clinicalNote,
                             guidelineContent,
                             guidelineTitle,
                             userId,
-                            provider,
+                            modelId,  // Pass model ID instead of provider name
                             scenarioGuidelineId  // Pass guidelineId to load hints
                         );
                     } else {
@@ -20953,12 +20947,12 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                             guidelineContent,
                             guidelineTitle,
                             userId,
-                            provider,
+                            modelId,  // Pass model ID instead of provider name
                             scenarioGuidelineId  // Pass guidelineId to load accumulated hints
                         );
                     }
                 } catch (llmError) {
-                    console.error(`[EVOLVE-SEQ] Error with ${provider}:`, llmError.message);
+                    console.error(`[EVOLVE-SEQ] Error with ${displayName}:`, llmError.message);
                     analysisResult = {
                         patientContext: {},
                         suggestions: currentSuggestions || [],
@@ -20970,7 +20964,7 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 const analysisLatency = Date.now() - startTime;
                 currentSuggestions = analysisResult.suggestions || [];
                 
-                timer.step(`Scenario ${scenarioIdx + 1} ${provider} analysis`);
+                timer.step(`Scenario ${scenarioIdx + 1} ${displayName} analysis`);
                 
                 // Evaluate the results
                 let evaluation;
