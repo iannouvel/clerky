@@ -3670,12 +3670,13 @@ function formatMessagesForProvider(messages, provider) {
 // timeoutMs controls the per-request timeout to the upstream AI provider
 // skipUserPreference: when true, use the explicitly passed model without overriding with user preferences
 //                     (used for chunk distribution where specific providers are assigned)
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false) {
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false, maxTokens = 4000) {
   // Initialize preferredProvider at the very beginning to ensure it's always defined
   let preferredProvider = 'DeepSeek'; // Default fallback
   const sendToAIStartTime = Date.now(); // Track start time for Firestore logging
   
   try {
+    // ... [existing provider determination logic] ...
     // Determine the provider based on the model, but don't override the model
     if (model.includes('deepseek')) {
       preferredProvider = 'DeepSeek';
@@ -3862,7 +3863,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         temperature: temperature,
-        max_tokens: 4000
+        max_tokens: maxTokens
       }, {
         headers: {
           'Content-Type': 'application/json',
@@ -3898,7 +3899,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         temperature: temperature,
-        max_tokens: 4000
+        max_tokens: maxTokens
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
@@ -3933,7 +3934,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
       const response = await axios.post('https://api.anthropic.com/v1/messages', {
         model: model,
         messages: formattedMessages,
-        max_tokens: 4000,
+        max_tokens: maxTokens,
         temperature: temperature
       }, {
         headers: {
@@ -3970,7 +3971,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         temperature: temperature,
-        max_tokens: 4000
+        max_tokens: maxTokens
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`,
@@ -4014,7 +4015,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
           contents: geminiMessages,
           generationConfig: {
             temperature: temperature,
-            maxOutputTokens: 4000
+            maxOutputTokens: maxTokens
           }
         },
         {
@@ -4056,7 +4057,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         temperature: temperature,
-        max_tokens: 4000
+        max_tokens: maxTokens
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
@@ -4092,7 +4093,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         model: model,
         messages: formattedMessages,
         temperature: temperature,
-        max_tokens: 4000
+        max_tokens: maxTokens
       }, {
         headers: {
           'Authorization': `Bearer ${process.env.GROK_API_KEY}`,
@@ -4428,7 +4429,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 }
 
 // Update the route function to use the new sendToAI
-async function routeToAI(prompt, userId = null, preferredProvider = null) {
+async function routeToAI(prompt, userId = null, preferredProvider = null, maxTokens = 4000) {
   try {
     // Set default AI provider to the cheapest available option
     const defaultProvider = AI_PROVIDER_PREFERENCE[0].name; // DeepSeek (cheapest)
@@ -4437,7 +4438,8 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
       promptType: typeof prompt,
       isObject: typeof prompt === 'object',
       hasMessages: prompt?.messages ? 'yes' : 'no',
-      userId: userId || 'none'
+      userId: userId || 'none',
+      maxTokens
     });
     
     // Use preferred provider if specified, otherwise use cheapest provider as default
@@ -4537,10 +4539,10 @@ async function routeToAI(prompt, userId = null, preferredProvider = null) {
     if (typeof prompt === 'object' && prompt.messages) {
       // If prompt is a message object, use it directly with optional temperature
       const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
-      result = await sendToAI(prompt.messages, model, null, userId, temperature, 120000, skipUserPreference);
+      result = await sendToAI(prompt.messages, model, null, userId, temperature, 120000, skipUserPreference, maxTokens);
     } else {
       // If prompt is a string, use it as a user message
-      result = await sendToAI(prompt, model, null, userId, 0.7, 120000, skipUserPreference);
+      result = await sendToAI(prompt, model, null, userId, 0.7, 120000, skipUserPreference, maxTokens);
     }
     
     debugLog('[DEBUG] AI service response:', JSON.stringify({
@@ -12239,16 +12241,23 @@ function extractKeywords(text) {
 // ============================================================================
 
 // Helper to clean markdown code blocks from AI responses and extract JSON
+// Helper to clean markdown code blocks from AI responses and extract JSON
 function cleanJsonResponse(content) {
   if (!content || typeof content !== 'string') return '';
   
   let cleaned = content.trim();
   
   // 1. Remove markdown code blocks (e.g., ```json ... ```)
-  const jsonBlockRegex = /```(?:json)?\s*([\s\S]*?)\s*```/;
-  const match = cleaned.match(jsonBlockRegex);
-  if (match && match[1]) {
-    cleaned = match[1].trim();
+  // Try to find the LAST json block if multiple exist, as it's often the most complete
+  const jsonBlockRegex = /```(?:json)?\s*([\s\S]*?)\s*```/g;
+  let match;
+  let lastMatch = null;
+  while ((match = jsonBlockRegex.exec(cleaned)) !== null) {
+    lastMatch = match[1];
+  }
+  
+  if (lastMatch) {
+    cleaned = lastMatch.trim();
   }
   
   // 2. If it still doesn't look like JSON (doesn't start with [ or {), try finding the first [ or {
@@ -12267,9 +12276,22 @@ function cleanJsonResponse(content) {
 
 // Advanced JSON repair helper for LLM responses
 function repairJson(jsonString) {
+  if (!jsonString) return '';
   let repaired = jsonString.trim();
   
-  // Handle cut-off JSON (missing closing brackets)
+  // Remove potential leading/trailing non-JSON text that might have survived cleanJsonResponse
+  const firstBracket = repaired.search(/[\[\{]/);
+  const lastBracket = Math.max(repaired.lastIndexOf(']'), repaired.lastIndexOf('}'));
+  if (firstBracket !== -1 && lastBracket !== -1 && lastBracket > firstBracket) {
+    repaired = repaired.substring(firstBracket, lastBracket + 1);
+  }
+
+  // Handle common LLM JSON errors:
+  
+  // 1. Handle trailing commas (very common)
+  repaired = repaired.replace(/,\s*([\]\}])/g, '$1');
+  
+  // 2. Handle cut-off JSON (missing closing brackets)
   const openBrackets = (repaired.match(/\[/g) || []).length;
   const closeBrackets = (repaired.match(/\]/g) || []).length;
   const openBraces = (repaired.match(/\{/g) || []).length;
@@ -12277,19 +12299,24 @@ function repairJson(jsonString) {
   
   // If it's an array that's cut off
   if (openBrackets > closeBrackets) {
-    // If it ends mid-object, close the object first
+    // If we're inside an object that's also cut off
     if (openBraces > closeBraces) {
-      repaired += '"}'; // Assume it was mid-string
+      // Try to close the current string if it's open (odd number of quotes)
+      const quoteCount = (repaired.match(/"/g) || []).length;
+      if (quoteCount % 2 !== 0) {
+        repaired += '"';
+      }
+      repaired += '}'.repeat(openBraces - closeBraces);
     }
     repaired += ']'.repeat(openBrackets - closeBrackets);
+  } else if (openBraces > closeBraces) {
+    // If it's just an object that's cut off
+    const quoteCount = (repaired.match(/"/g) || []).length;
+    if (quoteCount % 2 !== 0) {
+      repaired += '"';
+    }
+    repaired += '}'.repeat(openBraces - closeBraces);
   }
-  
-  // Remove trailing commas before closing brackets/braces
-  repaired = repaired.replace(/,\s*([\]\}])/g, '$1');
-  
-  // Handle unescaped newlines within strings
-  // This is tricky, but we can try to replace newlines that aren't followed by a key or structural char
-  // Actually, a simpler way is to just let JSON.parse fail and then try a more aggressive approach if needed
   
   return repaired;
 }
@@ -12303,7 +12330,7 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
   
   const prompt = `Analyse this clinical guideline and extract ALL distinct practice points as structured JSON.
 ${summaryContext}
-CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown.
+CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
   "name": "Brief descriptive title (5-10 words)",
@@ -12331,7 +12358,7 @@ ${content}`;
           content: prompt 
         }
       ]
-    }, userId);
+    }, userId, null, 8000); // Higher max tokens for extraction
 
     if (result && result.content) {
       console.log(`[AUDITABLE-OPT] Step 1: Got response (${result.content.length} chars)`);
@@ -12396,15 +12423,16 @@ ${content}`;
         }
         
         console.error('[AUDITABLE-OPT] Step 1: Could not parse AI response as JSON array');
-        console.error('[AUDITABLE-OPT] RAW RESPONSE (first 500):', result.content.substring(0, 500).replace(/\n/g, ' '));
-        console.error('[AUDITABLE-OPT] CLEANED CONTENT (first 500):', cleanedContent.substring(0, 500).replace(/\n/g, ' '));
+        // CRITICAL: Use template literals for logging to ensure content is included in Winston logs
+        console.error(`[AUDITABLE-OPT] RAW RESPONSE (first 500): ${result.content.substring(0, 500).replace(/\n/g, ' ')}`);
+        console.error(`[AUDITABLE-OPT] CLEANED CONTENT (first 500): ${cleanedContent.substring(0, 500).replace(/\n/g, ' ')}`);
       }
     }
     
     console.error('[AUDITABLE-OPT] Step 1 failed: No valid content in AI response');
     return null;
   } catch (error) {
-    console.error('[AUDITABLE-OPT] Step 1 error:', error.message);
+    console.error(`[AUDITABLE-OPT] Step 1 error: ${error.message}`);
     return null;
   }
 }
@@ -12469,7 +12497,7 @@ Return a JSON array with the same number of objects, each with: name, descriptio
             content: prompt 
           }
         ]
-      }, userId);
+      }, userId, null, 8000); // Higher max tokens for expansion
 
       if (result && result.content) {
         const cleanedContent = cleanJsonResponse(result.content);
