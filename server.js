@@ -330,7 +330,7 @@ const AI_MODEL_REGISTRY = {
     keyEnv: 'GOOGLE_AI_API_KEY',
     endpoint: 'https://generativelanguage.googleapis.com/v1beta/models',
     models: [
-      { model: 'gemini-3.0-flash', displayName: 'Gemini 3 Flash', costPer1kInput: 0.0005, costPer1kOutput: 0.003, description: 'Latest fast model with advanced reasoning' },
+      { model: 'gemini-3-flash-preview', displayName: 'Gemini 3 Flash', costPer1kInput: 0.0005, costPer1kOutput: 0.003, description: 'Latest fast model with advanced reasoning (Preview)' },
       { model: 'gemini-2.5-flash', displayName: 'Gemini 2.5 Flash', costPer1kInput: 0.00015, costPer1kOutput: 0.0006, description: 'Fast and cost-effective' },
       { model: 'gemini-2.5-pro', displayName: 'Gemini 2.5 Pro', costPer1kInput: 0.00125, costPer1kOutput: 0.005, description: 'Most capable Gemini' },
       { model: 'gemini-2.0-flash', displayName: 'Gemini 2.0 Flash', costPer1kInput: 0.0001, costPer1kOutput: 0.0004, description: 'Previous generation flash' }
