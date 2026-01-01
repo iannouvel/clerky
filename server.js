@@ -441,6 +441,20 @@ const AI_PROVIDER_PREFERENCE = [
     description: 'xAI Grok 4.1 Fast (Non-Reasoning)'
   },
   {
+    name: 'Grok',
+    model: 'grok-4-fast-reasoning',
+    costPer1kTokens: 0.00035,
+    priority: 10.1,
+    description: 'xAI Grok 4 Fast - 2M context'
+  },
+  {
+    name: 'Grok',
+    model: 'grok-4-fast-non-reasoning',
+    costPer1kTokens: 0.00035,
+    priority: 10.2,
+    description: 'xAI Grok 4 Fast (Non-Reasoning)'
+  },
+  {
     name: 'Groq',
     model: 'openai/gpt-oss-120b',
     costPer1kTokens: 0.000375, // Average of input/output
