@@ -5069,34 +5069,51 @@ ${responseText}
         function displayEvolutionResults(result) {
             const resultsSection = document.getElementById('evolveResultsSection');
             
-            // Update metrics
+            // Update metrics using new terminology with fallback for backward compatibility
             const metrics = result.aggregatedMetrics || {};
-            document.getElementById('evolveMetricCompleteness').textContent = 
-                ((metrics.averageCompleteness || 0) * 100).toFixed(1) + '%';
-            document.getElementById('evolveMetricAccuracy').textContent = 
-                ((metrics.averageAccuracy || 0) * 100).toFixed(1) + '%';
+            
+            // Primary metrics (Recall and Precision)
+            const avgRecall = metrics.averageRecall ?? metrics.averageCompleteness ?? 0;
+            const avgPrecision = metrics.averagePrecision ?? metrics.averageAccuracy ?? 0;
+            
+            document.getElementById('evolveMetricRecall').textContent = 
+                (avgRecall * 100).toFixed(1) + '%';
+            document.getElementById('evolveMetricPrecision').textContent = 
+                (avgPrecision * 100).toFixed(1) + '%';
             document.getElementById('evolveMetricLatency').textContent = 
                 (metrics.averageLatencyMs || 0).toFixed(0) + 'ms';
             document.getElementById('evolveMetricScenarios').textContent = 
                 metrics.totalScenarios || 0;
             
-            // Display per-scenario results
+            // Breakdown metrics
+            document.getElementById('evolveMetricRedundancy').textContent = 
+                ((metrics.averageRedundancyRate || 0) * 100).toFixed(1) + '%';
+            document.getElementById('evolveMetricFalseNegative').textContent = 
+                ((metrics.averageFalseNegativeRate || 0) * 100).toFixed(1) + '%';
+            document.getElementById('evolveMetricApplicability').textContent = 
+                ((metrics.averageApplicabilityRate || 0) * 100).toFixed(1) + '%';
+            
+            // Display per-scenario results with new terminology
             const scenarioResultsDiv = document.getElementById('evolveScenarioResults');
             let scenarioHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
             scenarioHtml += '<thead style="background:#f8f9fa;"><tr>';
             scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Scenario</th>';
             scenarioHtml += '<th style="padding:10px;text-align:left;border-bottom:1px solid #dee2e6;">Matched Guideline</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Comp.</th>';
-            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Acc.</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Recall</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Prec.</th>';
+            scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Redund.</th>';
             scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Sugg.</th>';
             scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Latency</th>';
             scenarioHtml += '</tr></thead><tbody>';
             
             (result.scenarioResults || []).forEach(sr => {
-                const completeness = ((sr.evaluation?.completenessScore || 0) * 100).toFixed(0);
-                const accuracy = ((sr.evaluation?.accuracyScore || 0) * 100).toFixed(0);
-                const completenessColor = completeness >= 80 ? '#28a745' : completeness >= 60 ? '#ff9800' : '#dc3545';
-                const accuracyColor = accuracy >= 80 ? '#28a745' : accuracy >= 60 ? '#ff9800' : '#dc3545';
+                // Use new terminology with fallback
+                const recall = ((sr.evaluation?.recallScore ?? sr.evaluation?.completenessScore ?? 0) * 100).toFixed(0);
+                const precision = ((sr.evaluation?.precisionScore ?? sr.evaluation?.accuracyScore ?? 0) * 100).toFixed(0);
+                const redundancy = ((sr.evaluation?.redundancyRate ?? 0) * 100).toFixed(0);
+                const recallColor = recall >= 80 ? '#28a745' : recall >= 60 ? '#ff9800' : '#dc3545';
+                const precisionColor = precision >= 80 ? '#28a745' : precision >= 60 ? '#ff9800' : '#dc3545';
+                const redundancyColor = redundancy <= 20 ? '#28a745' : redundancy <= 40 ? '#ff9800' : '#dc3545';
                 
                 // Truncate guideline title for display
                 const guidelineTitle = sr.guidelineTitle || sr.guidelineId || '-';
@@ -5107,8 +5124,9 @@ ${responseText}
                 scenarioHtml += '<tr>';
                 scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;">${sr.scenarioName}</td>`;
                 scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;font-size:12px;color:#555;" title="${guidelineTitle}">${truncatedGuideline}</td>`;
-                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${completenessColor};font-weight:bold;">${completeness}%</td>`;
-                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${accuracyColor};font-weight:bold;">${accuracy}%</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${recallColor};font-weight:bold;">${recall}%</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${precisionColor};font-weight:bold;">${precision}%</td>`;
+                scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;color:${redundancyColor};font-size:11px;">${redundancy}%</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.analysisResult?.suggestionsCount || 0}</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.latencyMs || 0}ms</td>`;
                 scenarioHtml += '</tr>';
@@ -5189,12 +5207,15 @@ ${responseText}
                     improvementsHtml += '</div></div>';
                 }
                 
-                // Expected improvement
+                // Expected improvement (use new terminology with fallback)
                 if (improvements.expectedImprovement) {
                     improvementsHtml += '<div style="background:#d4edda;padding:10px;border-radius:4px;">';
                     improvementsHtml += '<strong>Expected Improvement:</strong> ';
-                    improvementsHtml += `Completeness: ${improvements.expectedImprovement.completeness || 'N/A'}, `;
-                    improvementsHtml += `Accuracy: ${improvements.expectedImprovement.accuracy || 'N/A'}`;
+                    // Support both new (recall/precision) and old (completeness/accuracy) field names
+                    const recallImprovement = improvements.expectedImprovement.recall || improvements.expectedImprovement.completeness || 'N/A';
+                    const precisionImprovement = improvements.expectedImprovement.precision || improvements.expectedImprovement.accuracy || 'N/A';
+                    improvementsHtml += `Recall: ${recallImprovement}, `;
+                    improvementsHtml += `Precision: ${precisionImprovement}`;
                     if (improvements.expectedImprovement.tradeoffs) {
                         improvementsHtml += `<div style="font-size:12px;margin-top:4px;">Tradeoffs: ${improvements.expectedImprovement.tradeoffs}</div>`;
                     }
@@ -5506,7 +5527,7 @@ ${responseText}
             const numModels = llmProviders.length;
             
             let html = '<h5 style="margin-bottom:15px;">Sequential LLM Refinement Results</h5>';
-            html += `<p style="font-size:12px;color:#666;margin-bottom:15px;">Testing ${numModels} models. Each LLM sees the previous LLM's output + evaluation. Comp = Completeness, Acc = Accuracy. Scroll horizontally to see all models.</p>`;
+            html += `<p style="font-size:12px;color:#666;margin-bottom:15px;">Testing ${numModels} models. Each LLM sees the previous LLM's output + evaluation. R = Recall, P = Precision. Scroll horizontally to see all models.</p>`;
             
             // Wrap table in scrollable container for many models
             html += '<div style="overflow-x:auto;max-width:100%;border:1px solid #dee2e6;border-radius:4px;">';
@@ -5527,36 +5548,37 @@ ${responseText}
                 html += '<tr>';
                 html += `<td style="padding:6px 10px;border:1px solid #dee2e6;font-weight:500;position:sticky;left:0;background:#fff;z-index:1;">${sr.scenarioName}<br><span style="font-size:9px;color:#888;">${sr.guidelineTitle?.substring(0, 25) || ''}...</span></td>`;
                 
-                let prevComp = null, prevAcc = null;
+                let prevRecall = null, prevPrecision = null;
                 
                 (sr.iterations || []).forEach((iter, idx) => {
-                    const comp = Math.round((iter.completenessScore || 0) * 100);
-                    const acc = Math.round((iter.accuracyScore || 0) * 100);
+                    // Use new terminology with fallback
+                    const recall = Math.round((iter.recallScore ?? iter.completenessScore ?? 0) * 100);
+                    const precision = Math.round((iter.precisionScore ?? iter.accuracyScore ?? 0) * 100);
                     
                     // Determine trend arrows (compact)
                     let trend = '';
-                    if (prevComp !== null && prevAcc !== null) {
-                        const improving = (comp > prevComp || acc > prevAcc) && comp >= prevComp && acc >= prevAcc;
-                        const declining = (comp < prevComp || acc < prevAcc) && comp <= prevComp && acc <= prevAcc;
+                    if (prevRecall !== null && prevPrecision !== null) {
+                        const improving = (recall > prevRecall || precision > prevPrecision) && recall >= prevRecall && precision >= prevPrecision;
+                        const declining = (recall < prevRecall || precision < prevPrecision) && recall <= prevRecall && precision <= prevPrecision;
                         if (improving) trend = '<span style="color:#28a745;">↑</span>';
                         else if (declining) trend = '<span style="color:#dc3545;">↓</span>';
                         else trend = '<span style="color:#888;">~</span>';
                     }
                     
                     // Colour based on combined score
-                    const avgScore = (comp + acc) / 2;
+                    const avgScore = (recall + precision) / 2;
                     const bgColor = avgScore >= 80 ? '#d4edda' : avgScore >= 60 ? '#fff3cd' : '#f8d7da';
                     
                     html += `<td style="padding:4px 6px;text-align:center;border:1px solid #dee2e6;background:${bgColor};">`;
-                    html += `<strong>${comp}/${acc}</strong>${trend}`;
+                    html += `<strong>${recall}/${precision}</strong>${trend}`;
                     html += `<br><span style="font-size:9px;color:#666;">${Math.round(iter.latencyMs / 1000)}s</span>`;
                     if (iter.error) {
                         html += `<br><span style="font-size:9px;color:#dc3545;">⚠</span>`;
                     }
                     html += '</td>';
                     
-                    prevComp = comp;
-                    prevAcc = acc;
+                    prevRecall = recall;
+                    prevPrecision = precision;
                 });
                 
                 html += '</tr>';
@@ -5568,21 +5590,29 @@ ${responseText}
             html += '<div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;">';
             html += '<h5 style="margin-bottom:10px;">Summary</h5>';
             
-            // Calculate average improvement from first to last LLM
-            let totalCompImprovement = 0, totalAccImprovement = 0, count = 0;
+            // Calculate average improvement from first to last LLM (using new terminology)
+            let totalRecallImprovement = 0, totalPrecisionImprovement = 0, count = 0;
             let bestModel = null, bestScore = 0;
             
             (result.scenarioResults || []).forEach(sr => {
                 if (sr.iterations && sr.iterations.length >= 2) {
                     const first = sr.iterations[0];
                     const last = sr.iterations[sr.iterations.length - 1];
-                    totalCompImprovement += (last.completenessScore || 0) - (first.completenessScore || 0);
-                    totalAccImprovement += (last.accuracyScore || 0) - (first.accuracyScore || 0);
+                    // Use new terminology with fallback
+                    const firstRecall = first.recallScore ?? first.completenessScore ?? 0;
+                    const lastRecall = last.recallScore ?? last.completenessScore ?? 0;
+                    const firstPrecision = first.precisionScore ?? first.accuracyScore ?? 0;
+                    const lastPrecision = last.precisionScore ?? last.accuracyScore ?? 0;
+                    
+                    totalRecallImprovement += lastRecall - firstRecall;
+                    totalPrecisionImprovement += lastPrecision - firstPrecision;
                     count++;
                     
                     // Track best performing model
                     sr.iterations.forEach((iter, iterIdx) => {
-                        const score = (iter.completenessScore || 0) + (iter.accuracyScore || 0);
+                        const recall = iter.recallScore ?? iter.completenessScore ?? 0;
+                        const precision = iter.precisionScore ?? iter.accuracyScore ?? 0;
+                        const score = recall + precision;
                         if (score > bestScore) {
                             bestScore = score;
                             bestModel = iter.provider || iter.modelId || llmProviders[iterIdx] || `Model ${iterIdx + 1}`;
@@ -5595,15 +5625,15 @@ ${responseText}
             const lastModel = llmProviders[llmProviders.length - 1] || 'Last';
             
             if (count > 0) {
-                const avgCompImprovement = (totalCompImprovement / count) * 100;
-                const avgAccImprovement = (totalAccImprovement / count) * 100;
+                const avgRecallImprovement = (totalRecallImprovement / count) * 100;
+                const avgPrecisionImprovement = (totalPrecisionImprovement / count) * 100;
                 
                 html += `<p style="font-size:13px;"><strong>Models tested:</strong> ${numModels}</p>`;
                 html += `<p style="font-size:13px;"><strong>Best performer:</strong> ${bestModel} (${Math.round(bestScore * 50)}% avg)</p>`;
                 html += `<p style="font-size:13px;">Average improvement from first to last:</p>`;
                 html += `<p style="font-size:13px;">`;
-                html += `Completeness: <strong style="color:${avgCompImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgCompImprovement >= 0 ? '+' : ''}${avgCompImprovement.toFixed(1)}%</strong> | `;
-                html += `Accuracy: <strong style="color:${avgAccImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgAccImprovement >= 0 ? '+' : ''}${avgAccImprovement.toFixed(1)}%</strong>`;
+                html += `Recall: <strong style="color:${avgRecallImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgRecallImprovement >= 0 ? '+' : ''}${avgRecallImprovement.toFixed(1)}%</strong> | `;
+                html += `Precision: <strong style="color:${avgPrecisionImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgPrecisionImprovement >= 0 ? '+' : ''}${avgPrecisionImprovement.toFixed(1)}%</strong>`;
                 html += '</p>';
             }
             
