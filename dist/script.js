@@ -10267,16 +10267,44 @@ async function clearHospitalTrustSelection() {
 // Preferences Modal Functions
 // Available AI models with their display names and model identifiers
 const AVAILABLE_MODELS = [
-    { name: 'DeepSeek', model: 'deepseek-chat', displayName: 'DeepSeek' },
-    { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral' },
-    { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude' },
-    { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'OpenAI' },
-    { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini' },
-    { name: 'Groq', model: 'llama-3.3-70b-versatile', displayName: 'Groq (Llama 3.3 70B)' },
-    { name: 'Groq', model: 'openai/gpt-oss-120b', displayName: 'Groq (GPT OSS 120B)' },
-    { name: 'Groq', model: 'openai/gpt-oss-20b', displayName: 'Groq (GPT OSS 20B)' },
+    // Free/Ultra-cheap tier (Groq agentic)
+    { name: 'Groq', model: 'groq/compound', displayName: 'Groq Compound (Agentic)' },
+    { name: 'Groq', model: 'groq/compound-mini', displayName: 'Groq Compound Mini' },
     { name: 'Groq', model: 'moonshotai/kimi-k2-instruct', displayName: 'Groq (Kimi K2)' },
-    { name: 'Groq', model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Groq (Llama 4 Scout)' }
+    // Very cheap tier
+    { name: 'DeepSeek', model: 'deepseek-chat', displayName: 'DeepSeek' },
+    { name: 'Groq', model: 'llama-3.1-8b-instant', displayName: 'Groq (Llama 3.1 8B Fast)' },
+    { name: 'Gemini', model: 'gemini-2.5-flash', displayName: 'Gemini 2.5 Flash' },
+    { name: 'Groq', model: 'openai/gpt-oss-20b', displayName: 'Groq (GPT OSS 20B)' },
+    { name: 'Groq', model: 'meta-llama/llama-4-scout-17b-16e-instruct', displayName: 'Groq (Llama 4 Scout)' },
+    // xAI Grok models
+    { name: 'Grok', model: 'grok-4-1-fast-reasoning', displayName: 'Grok 4.1 Fast' },
+    { name: 'Grok', model: 'grok-4-1-fast-non-reasoning', displayName: 'Grok 4.1 Fast (Non-Reasoning)' },
+    { name: 'Grok', model: 'grok-4-fast-reasoning', displayName: 'Grok 4 Fast' },
+    { name: 'Grok', model: 'grok-4-fast-non-reasoning', displayName: 'Grok 4 Fast (Non-Reasoning)' },
+    { name: 'Grok', model: 'grok-4-0709', displayName: 'Grok 4 (Flagship)' },
+    // More Groq models
+    { name: 'Groq', model: 'openai/gpt-oss-120b', displayName: 'Groq (GPT OSS 120B)' },
+    { name: 'Mistral', model: 'mistral-large-latest', displayName: 'Mistral Large' },
+    { name: 'Groq', model: 'meta-llama/llama-4-maverick-17b-128e-instruct', displayName: 'Groq (Llama 4 Maverick)' },
+    { name: 'Groq', model: 'qwen/qwen3-32b', displayName: 'Groq (Qwen3 32B)' },
+    // Mid-range models
+    { name: 'OpenAI', model: 'gpt-5-nano', displayName: 'GPT-5 Nano' },
+    { name: 'Groq', model: 'llama-3.3-70b-versatile', displayName: 'Groq (Llama 3.3 70B)' },
+    { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku' },
+    { name: 'Groq', model: 'moonshotai/kimi-k2-instruct-0905', displayName: 'Groq (Kimi K2 262K)' },
+    { name: 'OpenAI', model: 'gpt-5-mini', displayName: 'GPT-5 Mini' },
+    { name: 'Anthropic', model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
+    // High-quality models
+    { name: 'OpenAI', model: 'gpt-4.1', displayName: 'GPT-4.1' },
+    { name: 'Anthropic', model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
+    { name: 'OpenAI', model: 'gpt-5.2', displayName: 'GPT-5.2' },
+    { name: 'Anthropic', model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5' },
+    { name: 'OpenAI', model: 'gpt-5.2-pro', displayName: 'GPT-5.2 Pro' },
+    // Legacy models
+    { name: 'OpenAI', model: 'gpt-4o', displayName: 'GPT-4o' },
+    { name: 'OpenAI', model: 'gpt-4o-mini', displayName: 'GPT-4o Mini' },
+    { name: 'OpenAI', model: 'gpt-3.5-turbo', displayName: 'GPT-3.5 Turbo (Legacy)' }
 ];
 
 // ---- Chunk distribution provider preferences ----
