@@ -516,6 +516,7 @@
             <button class="nav-btn" data-content="maintenanceContent">Maintenance</button>
             <button class="nav-btn" data-content="discoveryContent">Discovery</button>
             <button class="nav-btn" data-content="transcriptsContent">Transcripts</button>
+            <button class="nav-btn" data-content="evolveContent">Evolve</button>
             <button class="nav-btn" data-content="dangerContent">Danger</button>
         </div>
         <div class="top-bar-right"></div>
@@ -797,6 +798,106 @@
                 <iframe id="guidelinePreview" class="content-frame" src="about:blank"></iframe>
             </div>
         </div>
+        
+        <!-- Prompt Evolution Tab -->
+        <div class="tab-content" id="evolveContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Prompt Evolution System</h4>
+                <p style="color:#666;font-size:13px;margin-bottom:15px;">
+                    Run test scenarios through the Analyse workflow, evaluate results against guidelines, and generate prompt improvements.
+                    Using multiple scenarios helps ensure changes are generalizable rather than overfitting to specific cases.
+                </p>
+                
+                <!-- Configuration Section -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+                    <div>
+                        <label style="display:block;font-weight:600;margin-bottom:8px;">Select Clinical Scenarios (3 recommended)</label>
+                        <select id="evolveScenarioSelect" multiple size="6" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-family:'Inter',sans-serif;">
+                            <option value="">Loading scenarios...</option>
+                        </select>
+                        <div style="font-size:12px;color:#666;margin-top:4px;">Hold Ctrl/Cmd to select multiple scenarios</div>
+                    </div>
+                    <div>
+                        <label style="display:block;font-weight:600;margin-bottom:8px;">Select Target Guideline</label>
+                        <select id="evolveGuidelineSelect" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:4px;font-family:'Inter',sans-serif;">
+                            <option value="">Loading guidelines...</option>
+                        </select>
+                        <div style="font-size:12px;color:#666;margin-top:4px;">The guideline to test and evolve prompts against</div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:20px;">
+                    <button id="runEvolutionBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;padding:10px 20px;">
+                        🧬 Run Evolution Cycle
+                    </button>
+                    <button id="loadEvolveScenariosBtn" class="dev-btn">🔄 Refresh Scenarios</button>
+                    <span id="evolveStatus" style="font-size:13px;color:#666;"></span>
+                </div>
+                
+                <!-- Progress Section -->
+                <div id="evolveProgressSection" style="display:none;margin-bottom:20px;padding:15px;background:#f8f9fa;border-radius:6px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <span id="evolveProgressText" style="font-weight:600;">Processing...</span>
+                        <span id="evolveProgressPercent">0%</span>
+                    </div>
+                    <div style="height:8px;background:#e0e0e0;border-radius:4px;overflow:hidden;">
+                        <div id="evolveProgressBar" style="height:100%;width:0%;background:#007bff;transition:width 0.3s;"></div>
+                    </div>
+                </div>
+                
+                <!-- Results Section -->
+                <div id="evolveResultsSection" style="display:none;">
+                    <!-- Aggregated Metrics -->
+                    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:20px;">
+                        <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Completeness</div>
+                            <div id="evolveMetricCompleteness" style="font-size:24px;font-weight:bold;color:#28a745;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Accuracy</div>
+                            <div id="evolveMetricAccuracy" style="font-size:24px;font-weight:bold;color:#007bff;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Avg Latency</div>
+                            <div id="evolveMetricLatency" style="font-size:24px;font-weight:bold;color:#ff9800;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:#f8f9fa;padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:#666;text-transform:uppercase;">Scenarios</div>
+                            <div id="evolveMetricScenarios" style="font-size:24px;font-weight:bold;color:#6c757d;">-</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Per-Scenario Results -->
+                    <div style="margin-bottom:20px;">
+                        <h5 style="margin-bottom:10px;">Per-Scenario Results</h5>
+                        <div id="evolveScenarioResults" style="max-height:300px;overflow-y:auto;border:1px solid #e5e7eb;border-radius:6px;background:#fff;">
+                            <!-- Scenario results will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Suggested Improvements -->
+                    <div style="margin-bottom:20px;">
+                        <h5 style="margin-bottom:10px;">Suggested Prompt Improvements</h5>
+                        <div id="evolveImprovementsSection" style="border:1px solid #e5e7eb;border-radius:6px;background:#fff;padding:15px;">
+                            <!-- Improvements will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Apply Changes Button -->
+                    <div style="display:flex;gap:10px;align-items:center;">
+                        <button id="applyEvolutionBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;" disabled>
+                            ✅ Apply Suggested Changes
+                        </button>
+                        <button id="copyEvolutionBtn" class="dev-btn" style="padding:10px 20px;">
+                            📋 Copy New Prompt
+                        </button>
+                        <span id="evolveApplyStatus" style="font-size:13px;color:#666;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="tab-content" id="dangerContent" style="display:none;padding:12px">
             <div class="tools-section danger-zone">
                 <h4>Danger Zone</h4>
