@@ -3949,6 +3949,152 @@ ${responseText}
         let modelTestResults = {};
         let usageChart = null;
         
+        // Sorting state for model registry
+        let modelRegistrySort = { column: null, direction: 'asc' };
+        
+        // Sort model registry and re-render
+        window.sortModelRegistry = function(column) {
+            // Toggle direction if same column, otherwise default to ascending
+            if (modelRegistrySort.column === column) {
+                modelRegistrySort.direction = modelRegistrySort.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                modelRegistrySort.column = column;
+                modelRegistrySort.direction = 'asc';
+            }
+            
+            // Update sort icons
+            const costInputIcon = document.getElementById('costInputSortIcon');
+            const costOutputIcon = document.getElementById('costOutputSortIcon');
+            
+            if (costInputIcon) {
+                costInputIcon.textContent = column === 'costInput' 
+                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                    : '⇅';
+            }
+            if (costOutputIcon) {
+                costOutputIcon.textContent = column === 'costOutput' 
+                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                    : '⇅';
+            }
+            
+            // Re-render the table
+            renderModelRegistryTable();
+        };
+        
+        // Render model registry table (separate from fetch for re-sorting)
+        function renderModelRegistryTable() {
+            const tbody = document.getElementById('modelRegistryTableBody');
+            const summary = document.getElementById('modelRegistrySummary');
+            
+            if (!tbody || Object.keys(modelRegistry).length === 0) return;
+            
+            // Flatten all models with their provider info
+            let allModels = [];
+            for (const [providerName, providerData] of Object.entries(modelRegistry)) {
+                providerData.models.forEach(model => {
+                    allModels.push({
+                        providerName,
+                        hasApiKey: providerData.hasApiKey,
+                        ...model
+                    });
+                });
+            }
+            
+            // Sort if a column is selected
+            if (modelRegistrySort.column) {
+                allModels.sort((a, b) => {
+                    let valueA, valueB;
+                    if (modelRegistrySort.column === 'costInput') {
+                        valueA = a.costPer1kInput;
+                        valueB = b.costPer1kInput;
+                    } else if (modelRegistrySort.column === 'costOutput') {
+                        valueA = a.costPer1kOutput;
+                        valueB = b.costPer1kOutput;
+                    }
+                    
+                    const multiplier = modelRegistrySort.direction === 'asc' ? 1 : -1;
+                    return (valueA - valueB) * multiplier;
+                });
+            }
+            
+            // Render the table
+            let totalModels = allModels.length;
+            let availableProviders = new Set();
+            let html = '';
+            
+            // When sorted, show provider for each row; when unsorted, group by provider
+            const isSorted = modelRegistrySort.column !== null;
+            
+            if (isSorted) {
+                // Sorted view: show provider for each model
+                allModels.forEach(model => {
+                    if (model.hasApiKey) availableProviders.add(model.providerName);
+                    
+                    const testResult = modelTestResults[`${model.providerName}/${model.model}`];
+                    const statusIcon = testResult ? 
+                        (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
+                        (model.hasApiKey ? '⚪' : '🔒');
+                    const statusText = testResult ? 
+                        `${testResult.status} (${testResult.ms}ms)` : 
+                        (model.hasApiKey ? 'Not tested' : 'No API key');
+                    
+                    html += `<tr style="border-bottom:1px solid #eee;${!model.hasApiKey ? 'opacity:0.6;' : ''}">
+                        <td style="padding:8px;font-weight:500;">${model.providerName}</td>
+                        <td style="padding:8px;">
+                            <div style="font-weight:500;">${model.displayName}</div>
+                            <div style="font-size:11px;color:#666;">${model.model}</div>
+                        </td>
+                        <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kInput.toFixed(5)}/1k</td>
+                        <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kOutput.toFixed(5)}/1k</td>
+                        <td style="padding:8px;text-align:center;" title="${statusText}">${statusIcon}</td>
+                        <td style="padding:8px;text-align:center;">
+                            <button class="dev-btn" style="padding:4px 8px;font-size:11px;" 
+                                onclick="testSingleModel('${model.providerName}', '${model.model}')"
+                                ${!model.hasApiKey ? 'disabled' : ''}>
+                                Test
+                            </button>
+                        </td>
+                    </tr>`;
+                });
+            } else {
+                // Default grouped view by provider
+                for (const [providerName, providerData] of Object.entries(modelRegistry)) {
+                    if (providerData.hasApiKey) availableProviders.add(providerName);
+                    
+                    providerData.models.forEach((model, idx) => {
+                        const testResult = modelTestResults[`${providerName}/${model.model}`];
+                        const statusIcon = testResult ? 
+                            (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
+                            (providerData.hasApiKey ? '⚪' : '🔒');
+                        const statusText = testResult ? 
+                            `${testResult.status} (${testResult.ms}ms)` : 
+                            (providerData.hasApiKey ? 'Not tested' : 'No API key');
+                        
+                        html += `<tr style="border-bottom:1px solid #eee;${!providerData.hasApiKey ? 'opacity:0.6;' : ''}">
+                            <td style="padding:8px;font-weight:${idx === 0 ? 'bold' : 'normal'};">${idx === 0 ? providerName : ''}</td>
+                            <td style="padding:8px;">
+                                <div style="font-weight:500;">${model.displayName}</div>
+                                <div style="font-size:11px;color:#666;">${model.model}</div>
+                            </td>
+                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kInput.toFixed(5)}/1k</td>
+                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kOutput.toFixed(5)}/1k</td>
+                            <td style="padding:8px;text-align:center;" title="${statusText}">${statusIcon}</td>
+                            <td style="padding:8px;text-align:center;">
+                                <button class="dev-btn" style="padding:4px 8px;font-size:11px;" 
+                                    onclick="testSingleModel('${providerName}', '${model.model}')"
+                                    ${!providerData.hasApiKey ? 'disabled' : ''}>
+                                    Test
+                                </button>
+                            </td>
+                        </tr>`;
+                    });
+                }
+            }
+            
+            tbody.innerHTML = html || '<tr><td colspan="6" style="padding:20px;text-align:center;">No models found</td></tr>';
+            summary.textContent = `${totalModels} models across ${Object.keys(modelRegistry).length} providers (${availableProviders.size} with API keys)`;
+        }
+        
         // Fetch and display model registry
         async function fetchModelRegistry() {
             const tbody = document.getElementById('modelRegistryTableBody');
@@ -3982,46 +4128,22 @@ ${responseText}
                 
                 modelRegistry = data.registry;
                 
-                // Render the table
-                let totalModels = 0;
-                let availableProviders = 0;
-                let html = '';
-                
-                for (const [providerName, providerData] of Object.entries(modelRegistry)) {
-                    if (providerData.hasApiKey) availableProviders++;
-                    
-                    providerData.models.forEach((model, idx) => {
-                        totalModels++;
-                        const testResult = modelTestResults[`${providerName}/${model.model}`];
-                        const statusIcon = testResult ? 
-                            (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
-                            (providerData.hasApiKey ? '⚪' : '🔒');
-                        const statusText = testResult ? 
-                            `${testResult.status} (${testResult.ms}ms)` : 
-                            (providerData.hasApiKey ? 'Not tested' : 'No API key');
-                        
-                        html += `<tr style="border-bottom:1px solid #eee;${!providerData.hasApiKey ? 'opacity:0.6;' : ''}">
-                            <td style="padding:8px;font-weight:${idx === 0 ? 'bold' : 'normal'};">${idx === 0 ? providerName : ''}</td>
-                            <td style="padding:8px;">
-                                <div style="font-weight:500;">${model.displayName}</div>
-                                <div style="font-size:11px;color:#666;">${model.model}</div>
-                            </td>
-                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kInput.toFixed(5)}/1k</td>
-                            <td style="padding:8px;text-align:right;font-family:monospace;">$${model.costPer1kOutput.toFixed(5)}/1k</td>
-                            <td style="padding:8px;text-align:center;" title="${statusText}">${statusIcon}</td>
-                            <td style="padding:8px;text-align:center;">
-                                <button class="dev-btn" style="padding:4px 8px;font-size:11px;" 
-                                    onclick="testSingleModel('${providerName}', '${model.model}')"
-                                    ${!providerData.hasApiKey ? 'disabled' : ''}>
-                                    Test
-                                </button>
-                            </td>
-                        </tr>`;
-                    });
+                // Reset sort icons when refreshing data
+                const costInputIcon = document.getElementById('costInputSortIcon');
+                const costOutputIcon = document.getElementById('costOutputSortIcon');
+                if (costInputIcon) {
+                    costInputIcon.textContent = modelRegistrySort.column === 'costInput' 
+                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                        : '⇅';
+                }
+                if (costOutputIcon) {
+                    costOutputIcon.textContent = modelRegistrySort.column === 'costOutput' 
+                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                        : '⇅';
                 }
                 
-                tbody.innerHTML = html || '<tr><td colspan="6" style="padding:20px;text-align:center;">No models found</td></tr>';
-                summary.textContent = `${totalModels} models across ${Object.keys(modelRegistry).length} providers (${availableProviders} with API keys)`;
+                // Render the table using shared function
+                renderModelRegistryTable();
                 
             } catch (error) {
                 console.error('Error fetching model registry:', error);
