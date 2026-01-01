@@ -14047,6 +14047,47 @@ app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
     }
 });
 
+// Endpoint to get guidelines with metadata from Firestore (for dropdowns, etc.)
+app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
+    try {
+        console.log('[GUIDELINES_METADATA] Fetching guidelines metadata from Firestore');
+        
+        const snapshot = await db.collection('guidelines').get();
+        const guidelines = [];
+        
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            guidelines.push({
+                id: doc.id,
+                displayName: data.displayName || data.humanFriendlyTitle || data.title || doc.id,
+                humanFriendlyTitle: data.humanFriendlyTitle,
+                title: data.title,
+                filename: data.filename || data.originalFilename,
+                summary: data.summary,
+                hasContent: !!(data.content || data.condensed),
+                hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0)
+            });
+        });
+        
+        // Sort by displayName
+        guidelines.sort((a, b) => (a.displayName || '').localeCompare(b.displayName || ''));
+        
+        console.log(`[GUIDELINES_METADATA] Found ${guidelines.length} guidelines`);
+        
+        res.json({
+            success: true,
+            guidelines,
+            count: guidelines.length
+        });
+    } catch (error) {
+        console.error('[GUIDELINES_METADATA] Error:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: error.message 
+        });
+    }
+});
+
 // ---- Per-user guideline preferences (Firestore) ----
 function sanitizeIdForDoc(str) {
     return (str || '')
