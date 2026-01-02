@@ -12330,20 +12330,25 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
   
   const summaryContext = guidelineSummary ? `\nGUIDELINE SUMMARY: ${guidelineSummary}\n` : '';
   
-  const prompt = `Analyse this clinical guideline and extract ALL distinct practice points as structured JSON.
+  const prompt = `Analyse this clinical guideline and extract the distinct practice points as structured JSON.
 ${summaryContext}
 CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
   "name": "Brief descriptive title (5-10 words)",
-  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [population] • NOT APPLICABLE: [exclusions] • ACTION: [recommendation] • THRESHOLDS: [values]",
+  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [population] • NOT APPLICABLE: [exclusions] • ACTION: [recommendation/algorithm step] • THRESHOLDS: [values/timing]",
   "significance": "high" or "medium" or "low"
 }
+
+STRATEGY FOR CONCISENESS:
+- Group related algorithmic or conditional logic into a single practice point (e.g., "If A then B, otherwise C" should be one point, not two).
+- Focus on actionable clinical recommendations rather than background information.
+- Combine points that share the same population and action but have different sub-thresholds.
 
 CATEGORIES TO COVER:
 - SCREENING, THRESHOLDS, DOSAGES, TIMING, SAFETY, ESCALATION, LOCATION, SPECIAL POPULATIONS, ADMINISTRATIVE.
 
-Return a JSON array of objects. Aim for 30-60 practice points.
+Return a JSON array of objects.
 
 GUIDELINE CONTENT:
 ${content}`;
@@ -15166,13 +15171,13 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       });
     }
 
-    const { guidelineId, processAll } = req.body;
+    const { guidelineId, guidelineIds, processAll } = req.body;
     const userId = req.user.uid;
     
-    console.log(`[REGEN-AUDITABLE] User: ${userId}, GuidelineId: ${guidelineId || 'ALL'}`);
+    console.log(`[REGEN-AUDITABLE] User: ${userId}, GuidelineId: ${guidelineId || 'none'}, GuidelineIds: ${guidelineIds?.length || 0}, ProcessAll: ${processAll}`);
     
-    // If specific guidelineId is provided, regenerate only that one
-    if (guidelineId && !processAll) {
+    // If specific guidelineId is provided (legacy support)
+    if (guidelineId && !processAll && !guidelineIds) {
       try {
         const guidelineRef = db.collection('guidelines').doc(guidelineId);
         const guidelineDoc = await guidelineRef.get();
@@ -15232,56 +15237,68 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
       }
     }
     
-    // Otherwise, process all guidelines
-    const guidelinesSnapshot = await db.collection('guidelines').get();
+    // Otherwise, process multiple guidelines (either all or a filtered list)
+    let guidelinesToQueue = [];
+    let skippedNoContentCount = 0;
     
-    const guidelinesNeedingUpdate = [];
-    const skippedNoContent = [];
-    
-    for (const doc of guidelinesSnapshot.docs) {
-      const guideline = doc.data();
-      // Prefer condensed content for efficiency (no verbatim quotes needed)
-      const content = guideline.condensed || guideline.content;
-      
-      if (!content) {
-        skippedNoContent.push(doc.id);
-        continue;
+    if (processAll) {
+      const guidelinesSnapshot = await db.collection('guidelines').get();
+      for (const doc of guidelinesSnapshot.docs) {
+        const guideline = doc.data();
+        const content = guideline.condensed || guideline.content;
+        if (!content) {
+          skippedNoContentCount++;
+          continue;
+        }
+        guidelinesToQueue.push({ id: doc.id, content });
       }
-      
-      guidelinesNeedingUpdate.push({ id: doc.id, content });
+    } else if (Array.isArray(guidelineIds) && guidelineIds.length > 0) {
+      // Process specific IDs from a filtered list
+      for (const id of guidelineIds) {
+        const doc = await db.collection('guidelines').doc(id).get();
+        if (doc.exists) {
+          const guideline = doc.data();
+          const content = guideline.condensed || guideline.content;
+          if (content) {
+            guidelinesToQueue.push({ id: doc.id, content });
+          } else {
+            skippedNoContentCount++;
+          }
+        }
+      }
     }
     
-    console.log(`[REGEN-AUDITABLE] Processing ALL ${guidelinesNeedingUpdate.length} guidelines (skipped ${skippedNoContent.length} no content)`);
+    console.log(`[REGEN-AUDITABLE] Queueing ${guidelinesToQueue.length} guidelines (skipped ${skippedNoContentCount} no content)`);
     
-    if (guidelinesNeedingUpdate.length === 0) {
+    if (guidelinesToQueue.length === 0) {
       return res.json({
         success: true,
         message: 'No guidelines found to process',
-        skippedNoContent: skippedNoContent.length,
+        skippedNoContent: skippedNoContentCount,
         totalProcessed: 0
       });
     }
     
     // Queue them as background jobs and return immediately
-    const batchId = `regen-all-${Date.now()}`;
+    const batchId = `regen-${processAll ? 'all' : 'selected'}-${Date.now()}`;
     
-    for (let i = 0; i < guidelinesNeedingUpdate.length; i++) {
-      const g = guidelinesNeedingUpdate[i];
+    for (let i = 0; i < guidelinesToQueue.length; i++) {
+      const g = guidelinesToQueue[i];
       queueJob('regenerate_auditable', g.id, {
         content: g.content,
         userId: userId,
         batchId: batchId,
         index: i + 1,
-        total: guidelinesNeedingUpdate.length
+        total: guidelinesToQueue.length
       });
     }
     
     res.json({ 
       success: true, 
-      message: `Queued ${guidelinesNeedingUpdate.length} guidelines for background processing`,
+      message: `Queued ${guidelinesToQueue.length} guidelines for background processing`,
       batchId: batchId,
-      queued: guidelinesNeedingUpdate.length,
-      skippedNoContent: skippedNoContent.length,
+      queued: guidelinesToQueue.length,
+      skippedNoContent: skippedNoContentCount,
       note: 'Check server logs for progress.'
     });
     

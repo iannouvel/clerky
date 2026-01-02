@@ -3484,12 +3484,28 @@ ${responseText}
         // ============================================
         const auditableGuidelineSelect = document.getElementById('auditableGuidelineSelect');
         const regenerateAuditableSingleBtn = document.getElementById('regenerateAuditableSingleBtn');
-        const regenerateAuditableAllBtn = document.getElementById('regenerateAuditableAllBtn');
         const auditableStatus = document.getElementById('auditableStatus');
         
-        // Load guidelines into the auditable elements select dropdown
-        async function loadGuidelinesForAuditable() {
+        // --- NEW BATCH REGEN LOGIC ---
+        const batchRegenSearch = document.getElementById('batchRegenSearch');
+        const batchRegenOrgFilter = document.getElementById('batchRegenOrgFilter');
+        const batchRegenYearFilter = document.getElementById('batchRegenYearFilter');
+        const batchRegenLoadBtn = document.getElementById('batchRegenLoadBtn');
+        const batchRegenTableBody = document.getElementById('batchRegenTableBody');
+        const batchRegenSelectAll = document.getElementById('batchRegenSelectAll');
+        const batchRegenSelectedCount = document.getElementById('batchRegenSelectedCount');
+        const batchRegenTotalInfo = document.getElementById('batchRegenTotalInfo');
+        const regenerateAuditableFilteredBtn = document.getElementById('regenerateAuditableFilteredBtn');
+        const regenerateAuditableAllBtn = document.getElementById('regenerateAuditableAllBtn');
+
+        let allGuidelinesForBatch = [];
+        let filteredGuidelines = [];
+
+        async function loadGuidelinesForBatchRegen() {
             try {
+                if (batchRegenLoadBtn) batchRegenLoadBtn.disabled = true;
+                if (batchRegenTableBody) batchRegenTableBody.innerHTML = '<tr><td colspan="4" style="padding:20px; text-align:center;">⌛ Loading guidelines...</td></tr>';
+                
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
                 
@@ -3499,176 +3515,216 @@ ${responseText}
                 
                 if (response.ok) {
                     const data = await response.json();
-                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
-                    if (auditableGuidelineSelect) {
-                        auditableGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
-                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
-                        guidelines.forEach(g => {
-                            const option = document.createElement('option');
-                            option.value = g.id;
-                            const elementCount = g.auditableElements?.length || 0;
-                            option.textContent = `${g.title || g.id} (${elementCount} elements)`;
-                            auditableGuidelineSelect.appendChild(option);
+                    allGuidelinesForBatch = Array.isArray(data) ? data : (data.guidelines || []);
+                    
+                    // Populate filters
+                    const orgs = new Set();
+                    const years = new Set();
+                    allGuidelinesForBatch.forEach(g => {
+                        if (g.organisation) orgs.add(g.organisation);
+                        if (g.yearProduced) years.add(g.yearProduced);
+                    });
+
+                    if (batchRegenOrgFilter) {
+                        const currentOrg = batchRegenOrgFilter.value;
+                        batchRegenOrgFilter.innerHTML = '<option value="">All Organisations</option>';
+                        Array.from(orgs).sort().forEach(org => {
+                            const opt = document.createElement('option');
+                            opt.value = org;
+                            opt.textContent = org;
+                            batchRegenOrgFilter.appendChild(opt);
                         });
+                        batchRegenOrgFilter.value = currentOrg;
                     }
+
+                    if (batchRegenYearFilter) {
+                        const currentYear = batchRegenYearFilter.value;
+                        batchRegenYearFilter.innerHTML = '<option value="">All Years</option>';
+                        Array.from(years).sort((a,b) => b-a).forEach(year => {
+                            const opt = document.createElement('option');
+                            opt.value = year;
+                            opt.textContent = year;
+                            batchRegenYearFilter.appendChild(opt);
+                        });
+                        batchRegenYearFilter.value = currentYear;
+                    }
+
+                    applyBatchRegenFilters();
                 }
             } catch (error) {
-                console.error('Error loading guidelines for auditable elements:', error);
+                console.error('Error loading guidelines for batch regen:', error);
+                if (batchRegenTableBody) batchRegenTableBody.innerHTML = `<tr><td colspan="4" style="padding:20px; text-align:center; color:red;">❌ Failed to load: ${error.message}</td></tr>`;
+            } finally {
+                if (batchRegenLoadBtn) batchRegenLoadBtn.disabled = false;
             }
         }
-        
-        // Load guidelines when maintenance tab becomes active
-        document.querySelector('[data-content="maintenanceContent"]')?.addEventListener('click', () => {
-            loadGuidelinesForAuditable();
-        });
-        
-        // Regenerate auditable elements for single guideline
-        if (regenerateAuditableSingleBtn) {
-            regenerateAuditableSingleBtn.addEventListener('click', async () => {
-                const selectedId = auditableGuidelineSelect?.value;
-                if (!selectedId) {
-                    alert('Please select a guideline first');
-                    return;
-                }
+
+        function applyBatchRegenFilters() {
+            const search = batchRegenSearch?.value.toLowerCase() || '';
+            const org = batchRegenOrgFilter?.value || '';
+            const year = batchRegenYearFilter?.value || '';
+
+            filteredGuidelines = allGuidelinesForBatch.filter(g => {
+                const matchesSearch = !search || 
+                    (g.title && g.title.toLowerCase().includes(search)) || 
+                    (g.id && g.id.toLowerCase().includes(search)) ||
+                    (g.humanFriendlyName && g.humanFriendlyName.toLowerCase().includes(search));
+                const matchesOrg = !org || g.organisation === org;
+                const matchesYear = !year || String(g.yearProduced) === String(year);
+                return matchesSearch && matchesOrg && matchesYear;
+            });
+
+            renderBatchRegenTable();
+        }
+
+        function renderBatchRegenTable() {
+            if (!batchRegenTableBody) return;
+            
+            if (filteredGuidelines.length === 0) {
+                batchRegenTableBody.innerHTML = '<tr><td colspan="4" style="padding:20px; text-align:center; color:#666;">No guidelines match your filters</td></tr>';
+                if (batchRegenTotalInfo) batchRegenTotalInfo.textContent = `Showing 0 of ${allGuidelinesForBatch.length}`;
+                return;
+            }
+
+            batchRegenTableBody.innerHTML = '';
+            filteredGuidelines.forEach(g => {
+                const tr = document.createElement('tr');
+                tr.style.borderBottom = '1px solid #eee';
                 
-                try {
-                    regenerateAuditableSingleBtn.disabled = true;
-                    const originalText = regenerateAuditableSingleBtn.textContent;
-                    regenerateAuditableSingleBtn.textContent = '🔄 Regenerating...';
-                    
-                    if (auditableStatus) {
-                        auditableStatus.style.display = 'block';
-                        auditableStatus.innerHTML = `<strong>Processing:</strong> ${selectedId}...<br><em>This may take a minute as AI extracts auditable elements with verbatim quotes.</em>`;
+                const elementsCount = g.auditableElements?.length || 0;
+                const statusColor = elementsCount > 0 ? '#28a745' : '#6c757d';
+                
+                tr.innerHTML = `
+                    <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
+                    <td style="padding:8px;">
+                        <div style="font-weight:500;">${g.title || g.id}</div>
+                        <div style="font-size:10px; color:#888;">${g.id} • <span style="color:${statusColor}">${elementsCount} elements</span></div>
+                    </td>
+                    <td style="padding:8px; color:#666;">${g.organisation || '-'}</td>
+                    <td style="padding:8px; text-align:center; color:#666;">${g.yearProduced || '-'}</td>
+                `;
+                
+                // Allow clicking the row to toggle checkbox
+                tr.addEventListener('click', (e) => {
+                    if (e.target.type !== 'checkbox') {
+                        const cb = tr.querySelector('.batch-regen-cb');
+                        cb.checked = !cb.checked;
+                        updateBatchSelectedCount();
                     }
-                    
-                    const token = await auth.currentUser.getIdToken();
-                    const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
-                        method: 'POST',
-                        headers: {
-                            'Authorization': `Bearer ${token}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ guidelineId: selectedId })
-                    });
-                    
-                    const result = await response.json();
-                    
-                    if (result.success && result.results?.length > 0) {
-                        const r = result.results[0];
-                        if (r.success) {
-                            auditableStatus.innerHTML = `<span style="color:green;">✅ <strong>${r.guidelineId}</strong></span><br>
-                                ${r.message}<br>
-                                Elements extracted: <strong>${r.count}</strong>`;
-                        } else {
-                            auditableStatus.innerHTML = `<span style="color:red;">❌ <strong>${r.guidelineId}</strong>: ${r.error || r.message}</span>`;
-                        }
-                    } else {
-                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
-                    }
-                    
-                    // Reload the dropdown to show updated element count
-                    await loadGuidelinesForAuditable();
-                    
-                    regenerateAuditableSingleBtn.textContent = originalText;
-                    regenerateAuditableSingleBtn.disabled = false;
-                    
-                } catch (error) {
-                    console.error('Error regenerating auditable elements:', error);
-                    if (auditableStatus) {
-                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
-                    }
-                    regenerateAuditableSingleBtn.textContent = '🔄 Regenerate Selected';
-                    regenerateAuditableSingleBtn.disabled = false;
-                }
+                });
+                
+                batchRegenTableBody.appendChild(tr);
+            });
+
+            if (batchRegenTotalInfo) batchRegenTotalInfo.textContent = `Showing ${filteredGuidelines.length} of ${allGuidelinesForBatch.length}`;
+            
+            // Re-add checkbox listeners
+            document.querySelectorAll('.batch-regen-cb').forEach(cb => {
+                cb.addEventListener('change', updateBatchSelectedCount);
+            });
+            
+            updateBatchSelectedCount();
+        }
+
+        function updateBatchSelectedCount() {
+            const count = document.querySelectorAll('.batch-regen-cb:checked').length;
+            if (batchRegenSelectedCount) batchRegenSelectedCount.textContent = count;
+            if (batchRegenSelectAll) {
+                const totalVisible = document.querySelectorAll('.batch-regen-cb').length;
+                batchRegenSelectAll.checked = totalVisible > 0 && count === totalVisible;
+            }
+        }
+
+        // Event Listeners
+        if (batchRegenLoadBtn) batchRegenLoadBtn.addEventListener('click', loadGuidelinesForBatchRegen);
+        if (batchRegenSearch) batchRegenSearch.addEventListener('input', applyBatchRegenFilters);
+        if (batchRegenOrgFilter) batchRegenOrgFilter.addEventListener('change', applyBatchRegenFilters);
+        if (batchRegenYearFilter) batchRegenYearFilter.addEventListener('change', applyBatchRegenFilters);
+        
+        if (batchRegenSelectAll) {
+            batchRegenSelectAll.addEventListener('change', () => {
+                const checked = batchRegenSelectAll.checked;
+                document.querySelectorAll('.batch-regen-cb').forEach(cb => {
+                    cb.checked = checked;
+                });
+                updateBatchSelectedCount();
             });
         }
-        
-        // Regenerate auditable elements for ALL guidelines
+
+        if (regenerateAuditableFilteredBtn) {
+            regenerateAuditableFilteredBtn.addEventListener('click', async () => {
+                const selectedIds = Array.from(document.querySelectorAll('.batch-regen-cb:checked'))
+                    .map(cb => cb.getAttribute('data-id'));
+                
+                if (selectedIds.length === 0) {
+                    alert('Please select at least one guideline from the table');
+                    return;
+                }
+
+                if (!confirm(`Regenerate auditable elements for ${selectedIds.length} selected guidelines?\n\nThis will overwrite existing elements.`)) {
+                    return;
+                }
+
+                await runRegeneration({ guidelineIds: selectedIds });
+            });
+        }
+
         if (regenerateAuditableAllBtn) {
             regenerateAuditableAllBtn.addEventListener('click', async () => {
-                if (!confirm('This will regenerate auditable elements for ALL guidelines.\n\nThis operation:\n- Uses AI to extract clinical recommendations\n- May take several minutes\n- Will overwrite existing auditable elements\n\nContinue?')) {
+                if (!confirm('Regenerate auditable elements for ALL guidelines?\n\nThis will overwrite existing elements.')) {
                     return;
                 }
-                
-                try {
-                    regenerateAuditableAllBtn.disabled = true;
-                    const originalText = regenerateAuditableAllBtn.textContent;
-                    regenerateAuditableAllBtn.textContent = '🔄 Processing...';
-                    
-                    if (auditableStatus) {
-                        auditableStatus.style.display = 'block';
-                        auditableStatus.innerHTML = '<strong>Processing all guidelines...</strong><br><em>This may take several minutes. Please wait.</em>';
-                    }
-                    
-                    const token = await auth.currentUser.getIdToken();
-                    const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
-                        method: 'POST',
-                        headers: {
-                            'Authorization': `Bearer ${token}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ processAll: true })
-                    });
-                    
-                    const result = await response.json();
-                    
-                    if (result.success) {
-                        // Handle new async queued response format
-                        if (result.queued !== undefined) {
-                            let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
-                            html += `<strong>Queued for processing:</strong> ${result.queued} guidelines<br>`;
-                            html += `<strong>Skipped (no content):</strong> ${result.skippedNoContent}<br><br>`;
-                            html += `<em>${result.note}</em><br><br>`;
-                            html += `<strong>Batch ID:</strong> <code>${result.batchId}</code>`;
-                            auditableStatus.innerHTML = html;
-                        } else {
-                            // Handle old synchronous results format
-                            const successful = result.results?.filter(r => r.success) || [];
-                            const failed = result.results?.filter(r => !r.success) || [];
-                            
-                            let html = `<strong>Completed:</strong> ${successful.length} success, ${failed.length} failed<br>
-                                Total elements extracted: ${result.totalElements || successful.reduce((sum, r) => sum + (r.count || 0), 0)}<br><br>`;
-                            
-                            // Show successes
-                            if (successful.length > 0) {
-                                html += '<details><summary style="cursor:pointer;color:green;">✅ Successful (' + successful.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
-                                successful.forEach(r => {
-                                    html += `<li>${r.guidelineId}: ${r.count} elements</li>`;
-                                });
-                                html += '</ul></details>';
-                            }
-                            
-                            // Show failures
-                            if (failed.length > 0) {
-                                html += '<details open><summary style="cursor:pointer;color:red;">❌ Failed (' + failed.length + ')</summary><ul style="max-height:200px;overflow:auto;">';
-                                failed.forEach(r => {
-                                    html += `<li>${r.guidelineId}: ${r.error || r.message}</li>`;
-                                });
-                                html += '</ul></details>';
-                            }
-                            
-                            auditableStatus.innerHTML = html;
-                        }
-                    } else {
-                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
-                    }
-                    
-                    // Reload the dropdown to show updated element counts
-                    await loadGuidelinesForAuditable();
-                    
-                    regenerateAuditableAllBtn.textContent = originalText;
-                    regenerateAuditableAllBtn.disabled = false;
-                    
-                } catch (error) {
-                    console.error('Error regenerating all auditable elements:', error);
-                    if (auditableStatus) {
-                        auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
-                    }
-                    regenerateAuditableAllBtn.textContent = '🔄 Regenerate ALL Guidelines';
-                    regenerateAuditableAllBtn.disabled = false;
-                }
+                await runRegeneration({ processAll: true });
             });
         }
+
+        async function runRegeneration(body) {
+            try {
+                if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = true;
+                if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = true;
+                
+                if (auditableStatus) {
+                    auditableStatus.style.display = 'block';
+                    auditableStatus.innerHTML = '<strong>Queueing guidelines for processing...</strong>';
+                }
+                
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
+                    html += `<strong>Queued:</strong> ${result.queued} guidelines<br>`;
+                    html += `<strong>Skipped (no content):</strong> ${result.skippedNoContent}<br><br>`;
+                    html += `<em>Check server logs for progress.</em><br>`;
+                    html += `<strong>Batch ID:</strong> <code>${result.batchId}</code>`;
+                    auditableStatus.innerHTML = html;
+                } else {
+                    auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                }
+            } catch (error) {
+                console.error('Error queueing regeneration:', error);
+                if (auditableStatus) auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
+            } finally {
+                if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = false;
+                if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = false;
+            }
+        }
+
+        // Load when maintenance tab becomes active
+        document.querySelector('[data-content="maintenanceContent"]')?.addEventListener('click', () => {
+            if (allGuidelinesForBatch.length === 0) {
+                loadGuidelinesForBatchRegen();
+            }
+        });
 
         // ============================================
         // ENDPOINT PERFORMANCE MONITOR

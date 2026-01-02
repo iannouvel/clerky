@@ -707,14 +707,41 @@
             </div>
             <div class="tools-section" style="margin-top:20px;">
                 <h4>Regenerate Auditable Elements</h4>
-                <p style="color:#666;font-size:13px;margin-bottom:10px;">Regenerate auditable elements for guidelines using AI. This extracts clinical recommendations with verbatim quotes, applicability context, and exclusion criteria. Uses your preferred AI provider.</p>
-                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-                    <select id="auditableGuidelineSelect" style="padding:8px 12px;border:1px solid #ddd;border-radius:4px;min-width:300px;font-family:'Inter',sans-serif;font-size:13px;">
-                        <option value="">-- Select a guideline --</option>
-                    </select>
-                    <button id="regenerateAuditableSingleBtn" class="dev-btn" style="background-color:#9b59b6;color:#fff;border-color:#9b59b6;">🔄 Regenerate Selected</button>
-                    <button id="regenerateAuditableAllBtn" class="dev-btn" style="background-color:#e74c3c;color:#fff;border-color:#e74c3c;">🔄 Regenerate ALL Guidelines</button>
+                <p style="color:#666;font-size:13px;margin-bottom:10px;">Regenerate auditable elements for guidelines using AI. Now supports filtering and batch selection. Focuses on actionable practice points with algorithmic logic.</p>
+                
+                <div style="margin-bottom:15px; padding:15px; background:#f0f2f5; border-radius:8px; border:1px solid #e5e7eb;">
+                    <div style="display:flex; gap:15px; align-items:center; flex-wrap:wrap; margin-bottom:10px;">
+                        <input type="text" id="batchRegenSearch" placeholder="Search title or ID..." style="padding:8px 12px; border:1px solid #ddd; border-radius:4px; flex:1; min-width:200px; font-size:13px;" />
+                        <select id="batchRegenOrgFilter" style="padding:8px 12px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
+                            <option value="">All Organisations</option>
+                        </select>
+                        <select id="batchRegenYearFilter" style="padding:8px 12px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
+                            <option value="">All Years</option>
+                        </select>
+                        <button id="batchRegenLoadBtn" class="dev-btn" style="background-color:#007bff; color:#fff; border-color:#007bff;">📋 Refresh List</button>
+                    </div>
+                    <div id="batchRegenTableContainer" style="max-height:300px; overflow-y:auto; border:1px solid #ddd; border-radius:4px; background:#fff; margin-bottom:10px;">
+                        <table style="width:100%; border-collapse:collapse; font-size:12px;">
+                            <thead style="position:sticky; top:0; background:#f8f9fa; border-bottom:1px solid #ddd; z-index:10;">
+                                <tr>
+                                    <th style="padding:8px; text-align:center; width:40px;"><input type="checkbox" id="batchRegenSelectAll" /></th>
+                                    <th style="padding:8px; text-align:left;">Title</th>
+                                    <th style="padding:8px; text-align:left; width:120px;">Org</th>
+                                    <th style="padding:8px; text-align:center; width:60px;">Year</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batchRegenTableBody">
+                                <tr><td colspan="4" style="padding:20px; text-align:center; color:#666;">Click "Refresh List" to load guidelines</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                        <button id="regenerateAuditableFilteredBtn" class="dev-btn" style="background-color:#9b59b6; color:#fff; border-color:#9b59b6;">🔄 Regenerate Selected (<span id="batchRegenSelectedCount">0</span>)</button>
+                        <button id="regenerateAuditableAllBtn" class="dev-btn" style="background-color:#e74c3c; color:#fff; border-color:#e74c3c;">🔄 Regenerate ALL Guidelines</button>
+                        <span id="batchRegenTotalInfo" style="font-size:12px; color:#666; margin-left:auto;"></span>
+                    </div>
                 </div>
+                
                 <div id="auditableStatus" style="margin-top:10px;padding:10px;background:#f8f9fa;border-radius:4px;display:none;font-size:13px;"></div>
             </div>
             <div class="tools-section" style="margin-top:20px;">
