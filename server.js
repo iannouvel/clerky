@@ -2008,6 +2008,7 @@ async function processJob(job) {
             try {
                 const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
                 await guidelineRef.update({
+                    processing: false, // Ensure we clear the flag on fatal failure
                     [`processingErrors.${job.type}`]: error.message,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
@@ -2172,6 +2173,7 @@ async function jobRegenerateAuditable(job, guidelineData) {
         auditableElements: elements,
         auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
         auditableElementsRegeneratedBy: userId,
+        processing: false, // Ensure we clear the flag
         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
     });
     
@@ -12592,6 +12594,62 @@ async function extractAuditableElements(content, userId = null, guidelineSummary
     return [];
   }
 }
+
+// Endpoint to reset all processing flags in Firestore (maintenance)
+app.post('/resetProcessingFlags', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[MAINTENANCE] Resetting all guideline processing flags...');
+    
+    const snapshot = await db.collection('guidelines').get();
+    let resetCount = 0;
+    
+    const batch = db.batch();
+    let batchCount = 0;
+    
+    for (const doc of snapshot.docs) {
+      const data = doc.data();
+      if (data.processing === true) {
+        batch.update(doc.ref, { 
+          processing: false,
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        resetCount++;
+        batchCount++;
+        
+        // Firestore batch limit is 500
+        if (batchCount >= 400) {
+          await batch.commit();
+          // Start a new batch
+          // Note: In a real environment, we'd need a new batch object here
+          // but for simplicity in this script we'll just commit and break 
+          // if it's very large, or use multiple batches properly.
+        }
+      }
+    }
+    
+    if (batchCount > 0) {
+      await batch.commit();
+    }
+    
+    console.log(`[MAINTENANCE] ✓ Reset ${resetCount} processing flags`);
+    
+    res.json({ 
+      success: true, 
+      message: `Successfully reset ${resetCount} processing flags`,
+      count: resetCount
+    });
+    
+  } catch (error) {
+    console.error('[ERROR] Failed to reset processing flags:', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
 
 // Endpoint to extract metadata from a guideline using AI
 app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {

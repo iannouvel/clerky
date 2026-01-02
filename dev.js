@@ -2089,6 +2089,48 @@ ${responseText}
             });
         }
 
+        // Handle reset processing flags button
+        const resetProcessingBtn = document.getElementById('resetProcessingBtn');
+        if (resetProcessingBtn) {
+            resetProcessingBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to reset all processing flags? This will clear the "processing" status from all guidelines in Firestore, allowing the background scanner to pick them up again.')) {
+                    return;
+                }
+                
+                try {
+                    resetProcessingBtn.textContent = '🔄 Resetting...';
+                    resetProcessingBtn.disabled = true;
+                    
+                    console.log('🧹 [RESET_FLAGS] Requesting reset of all processing flags...');
+                    
+                    const token = await auth.currentUser.getIdToken();
+                    const response = await fetch(`${SERVER_URL}/resetProcessingFlags`, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
+                    }
+                    
+                    const result = await response.json();
+                    alert(result.message || `Successfully reset flags`);
+                    console.log('✅ [RESET_FLAGS] Done:', result);
+                    
+                } catch (error) {
+                    console.error('Error resetting processing flags:', error);
+                    alert(`❌ Reset failed: ${error.message}`);
+                } finally {
+                    resetProcessingBtn.textContent = '🧹 Reset Processing Flags';
+                    resetProcessingBtn.disabled = false;
+                }
+            });
+        }
+
 
 
         // Handle database migration button
