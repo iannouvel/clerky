@@ -4675,7 +4675,7 @@ app.post('/generateFakeClinicalInteraction', authenticateUser, [
         }, {
             success: true,
             response
-        }, 'generateFakeClinicalInteraction');
+        }, 'generateFakeClinicalInteraction', req.user.uid);
     } catch (logError) {
         console.error('Error logging interaction:', logError);
     }
@@ -4724,7 +4724,7 @@ app.post('/newActionEndpoint', authenticateUser, async (req, res) => {
             }, {
                 success: true,
                 response
-            }, 'newActionEndpoint');
+            }, 'newActionEndpoint', req.user.uid);
         } catch (logError) {
             console.error('Error logging interaction:', logError);
         }
@@ -5514,164 +5514,15 @@ async function testGitHubAccess() {
     }
 }
 
-// Update the saveToGitHub function with proper content handling and local fallback
-async function saveToGitHub(content, type) {
-    const MAX_RETRIES = 3;
-    let attempt = 0;
-    let success = false;
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const uniqueId = Math.random().toString(36).substring(2, 8); // 6-char random suffix to prevent collisions
-    const jsonFilename = `${timestamp}-${uniqueId}-${type}.json`;
-    const jsonPath = `logs/ai-interactions/${jsonFilename}`;
-    
-    // Debug the input content (only when DEBUG_LOGGING is enabled)
-    debugLog(`saveToGitHub called with type: ${type}`, {
-        contentKeys: Object.keys(content),
-        hasTextContent: 'textContent' in content,
-        hasAiProvider: 'ai_provider' in content,
-        githubTokenLength: githubToken ? githubToken.length : 0
-    });
-    
-    // OPTIMISATION: Create minimal log content instead of full text (MOVED BEFORE USE TO FIX TDZ ERROR)
-    const summary = {
-        type: type,
-        timestamp: timestamp,
-        ai_provider: content.ai_provider || 'unknown',
-        ai_model: content.ai_model || 'unknown',
-        endpoint: content.endpoint || 'unknown',
-        token_usage: content.token_usage || null,
-        prompt_length: content.prompt ? (typeof content.prompt === 'string' ? content.prompt.length : JSON.stringify(content.prompt).length) : 0,
-        response_length: content.response ? (typeof content.response === 'string' ? content.response.length : JSON.stringify(content.response).length) : 0,
-        // Store only first 200 chars of prompt/response for debugging
-        prompt_preview: content.prompt ? (typeof content.prompt === 'string' ? content.prompt.substring(0, 200) : JSON.stringify(content.prompt).substring(0, 200)) + '...' : null,
-        response_preview: content.response ? (typeof content.response === 'string' ? content.response.substring(0, 200) : JSON.stringify(content.response).substring(0, 200)) + '...' : null
-    };
-    
-    // OPTIMISATION: Use minimal content instead of full interaction data
-    const minimalContent = {
-        ...summary,
-        // Only include full data for critical failures or important interactions
-        full_data: type.includes('error') || content.critical ? content : null
-    };
-    
-    const jsonBody = {
-        message: `Add ${type} summary: ${timestamp}`,
-        content: Buffer.from(JSON.stringify(minimalContent, null, 2)).toString('base64'),
-        branch: githubBranch
-    };
-    
-    debugLog('Creating optimised log summary:', {
-        type: summary.type,
-        promptLength: summary.prompt_length,
-        responseLength: summary.response_length,
-        tokenUsage: summary.token_usage
-    });
-
-    // First, try saving to GitHub
-    while (attempt < MAX_RETRIES && !success) {
-        try {
-            debugLog(`saveToGitHub attempt ${attempt + 1}/${MAX_RETRIES} for ${type}...`);
-            
-            // Add delay between retries (except for first attempt)
-            if (attempt > 0) {
-                const delayMs = Math.min(1000 * Math.pow(2, attempt - 1), 5000); // Exponential backoff, max 5s
-                debugLog(`Waiting ${delayMs}ms before retry...`);
-                await new Promise(resolve => setTimeout(resolve, delayMs));
-            }
-            
-            if (!githubToken) {
-                console.error('GitHub token is missing, falling back to local save');
-                break;
-            }
-            
-            // OPTIMISATION: Skip .txt files, only save JSON to reduce GitHub storage by 50%
-            // (no log needed - this is standard behaviour now)
-
-            const jsonUrl = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${jsonPath}`;
-            debugLog(`Attempting to save JSON file to GitHub: ${jsonPath}`);
-            const response = await axios.put(jsonUrl, jsonBody, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'Authorization': `token ${githubToken}`
-                },
-                timeout: 30000, // 30 second timeout
-                maxRetries: 0 // Disable axios retries, we handle our own
-            });
-
-            success = true;
-            debugLog(`GitHub save completed: ${type} after ${attempt + 1} attempt(s)`);
-        } catch (error) {
-            if (error.response?.status === 409) {
-                debugLog('Conflict detected, fetching latest SHA and retrying...');
-                try {
-                    const fileSha = await getFileSha(jsonPath);
-                    if (fileSha) {
-                        jsonBody.sha = fileSha;
-                        // Don't increment attempt counter for conflict resolution retry
-                        // The attempt++ at the end of the loop will still happen, so we decrement here
-                        attempt--;
-                    } else {
-                        // File not found after 409 conflict - likely a race condition, will retry
-                        console.warn('[GITHUB] Conflict detected but file not found - will retry');
-                    }
-                } catch (shaError) {
-                    console.warn('[GITHUB] Error getting file SHA for conflict resolution:', shaError.message);
-                }
-            } else {
-                // Properly stringify error information for logging
-                const errorInfo = {
-                    status: error.response?.status || 'No status',
-                    message: error.response?.data?.message || error.message || 'No message',
-                    documentation_url: error.response?.data?.documentation_url || 'No URL',
-                    requestUrl: error.config?.url || 'No URL',
-                    errorType: error.constructor.name,
-                    stack: error.stack ? error.stack.split('\n').slice(0, 3).join('\n') : 'No stack',
-                    requestHeaders: error.config?.headers ? 
-                        { ...error.config.headers, Authorization: 'token [REDACTED]' } : 
-                        'No headers'
-                };
-                
-                console.error(`Error saving ${type} to GitHub (attempt ${attempt + 1}/${MAX_RETRIES}):`, JSON.stringify(errorInfo, null, 2));
-                
-                // On the last retry, try writing to a local file as fallback
-                if (attempt === MAX_RETRIES - 1) {
-                    try {
-                        // Create logs directory if it doesn't exist
-                        const localLogsDir = './logs/local-ai-interactions';
-                        if (!fs.existsSync(localLogsDir)) {
-                            fs.mkdirSync(localLogsDir, { recursive: true });
-                        }
-                        
-                        // OPTIMISATION: Write only optimised JSON file locally
-                        const localJsonPath = `${localLogsDir}/${timestamp}-${type}.json`;
-                        fs.writeFileSync(localJsonPath, JSON.stringify(minimalContent, null, 2));
-                        debugLog(`Saved log locally: ${localJsonPath}`);
-                        
-                        success = true; // Consider this a success since we saved it locally
-                        break;
-                    } catch (localError) {
-                        console.error('Failed to save logs locally:', localError.message);
-                    }
-                }
-            }
-        }
-        attempt++;
-    }
-
-    // If GitHub and local file save both failed, throw an error
-    if (!success) {
-        throw new Error(`Failed to save ${type} after ${MAX_RETRIES} attempts.`);
-    }
-    
-    return success;
-}
+// saveToGitHub has been replaced by Firestore logging in logAIInteraction
 // Fix the AI info extraction in logAIInteraction
-async function logAIInteraction(prompt, response, endpoint) {
+// Modified logAIInteraction to log to Firestore instead of GitHub
+async function logAIInteraction(prompt, response, endpoint, userId = null) {
   try {
-    // OPTIMISATION: Only log important interactions to reduce GitHub load
+    // OPTIMISATION: Only log important interactions to reduce noise
     const importantEndpoints = [
       'submit', 'reply', 'findRelevantGuidelines', 'checkAgainstGuidelines', 
-      'generateClinicalNote', 'error', 'failure'
+      'generateClinicalNote', 'error', 'failure', 'handleAction', 'handleIssues'
     ];
     
     const shouldLog = importantEndpoints.some(important => endpoint.includes(important)) || 
@@ -5683,16 +5534,8 @@ async function logAIInteraction(prompt, response, endpoint) {
       return true;
     }
     
-    // Log the raw inputs for debugging (only when DEBUG_LOGGING is enabled)
-    debugLog('logAIInteraction called with:', JSON.stringify({
-      promptType: typeof prompt,
-      responseType: typeof response,
-      endpoint,
-      responseKeys: response ? Object.keys(response) : 'no response'
-    }, null, 2));
-    
-    // Get current timestamp in ISO format for filenames
-    const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
+    // Get current timestamp
+    const timestamp = new Date().toISOString();
     
     // Clean prompt for logging
     let cleanedPrompt = prompt;
@@ -5706,19 +5549,8 @@ async function logAIInteraction(prompt, response, endpoint) {
     let ai_model = 'deepseek-chat'; // Default model
     let token_usage = null; // Initialize token usage
     
-    // Print a deep inspection of the response object for debugging (only when DEBUG_LOGGING is enabled)
-    debugLog('Full response structure:', JSON.stringify(response, null, 2));
-    
     // Extract AI information if it exists in the response
     if (response && typeof response === 'object') {
-      debugLog('Response object structure:', JSON.stringify({
-        hasContent: 'content' in response,
-        hasResponse: 'response' in response,
-        hasAIProvider: 'ai_provider' in response,
-        hasTokenUsage: 'token_usage' in response,
-        hasNestedAIProvider: response.response && typeof response.response === 'object' && 'ai_provider' in response.response
-      }, null, 2));
-      
       // Extract token usage if available
       if (response.token_usage) {
         token_usage = response.token_usage;
@@ -5740,39 +5572,25 @@ async function logAIInteraction(prompt, response, endpoint) {
       }
       
       // Extract the actual content from the response structure
-      // Handle endpoint-specific response formats
       if (endpoint === 'handleGuidelines' || endpoint === 'handleIssues') {
-        // For these endpoints, the actual content is likely in response.response
         if (response.success === true && response.response) {
-          // response.response could be a string or array of strings
           if (typeof response.response === 'string') {
             cleanedResponse = response.response;
           } else if (Array.isArray(response.response)) {
             cleanedResponse = response.response.join('\n');
           } else if (typeof response.response === 'object') {
-            // If it's an object, we may need to extract specific fields or stringify it
             if ('content' in response.response) {
               cleanedResponse = response.response.content;
             } else if ('text' in response.response) {
               cleanedResponse = response.response.text;
             } else if ('message' in response.response) {
               cleanedResponse = response.response.message;
-            } else if ('guidelines' in response.response) {
-              cleanedResponse = Array.isArray(response.response.guidelines) 
-                ? response.response.guidelines.join('\n')
-                : response.response.guidelines;
-            } else if ('issues' in response.response) {
-              cleanedResponse = Array.isArray(response.response.issues) 
-                ? response.response.issues.join('\n')
-                : response.response.issues;
             } else {
-              // If we can't identify a specific field, stringify the whole object
               cleanedResponse = JSON.stringify(response.response, null, 2);
             }
           }
         }
       } else {
-        // For other endpoints, try standard content extraction
         if (response.content) {
           cleanedResponse = response.content;
         } else if (response.response && typeof response.response === 'string') {
@@ -5781,134 +5599,80 @@ async function logAIInteraction(prompt, response, endpoint) {
           cleanedResponse = response.response.content;
         } else if (response.text) {
           cleanedResponse = response.text;
-        } else if (response.response && response.response.text) {
-          cleanedResponse = response.response.text;
         } else if (typeof response === 'string') {
           cleanedResponse = response;
         } else if (typeof response === 'object') {
-          // Last resort - stringify the whole object
           cleanedResponse = JSON.stringify(response, null, 2);
         }
       }
     }
     
-    // Ensure cleanedResponse is not empty
     if (!cleanedResponse || cleanedResponse.trim() === '') {
       cleanedResponse = '[Empty response or response extraction failed]';
     }
     
-    // Create log entry with AI provider info
-    const ai_info = `AI: ${ai_provider} (${ai_model})`;
-    debugLog('Logging AI interaction:', JSON.stringify({ endpoint, ai_info }, null, 2));
+    // Prepare data for Firestore
+    const isError = endpoint.includes('error') || endpoint.includes('failure') || (response && response.error);
     
-    // Prepare content for text files
-    let textContent = '';
-    
-    // If it's a submission/prompt, format it differently
-    if (endpoint.includes('submit') || endpoint === 'generateClinicalNote' || endpoint === 'generateSummary') {
-      textContent = `${ai_info}\n\n${cleanedPrompt}`;
-    } else {
-      // For replies, format as Q&A
-      textContent = `${ai_info}\n\nQ: ${cleanedPrompt}\n\nA: ${cleanedResponse}`;
-      
-      // Add token usage information if available
-      if (token_usage) {
-        const { prompt_tokens, completion_tokens, total_tokens, estimated_cost_usd } = token_usage;
-        const cost = estimated_cost_usd ? `$${estimated_cost_usd.toFixed(6)}` : 'Not available';
+    // Save to Firestore if available
+    if (db) {
+      try {
+        const MAX_CONTENT_LENGTH = 50000;
+        await db.collection('aiInteractions').add({
+          timestamp: admin.firestore.FieldValue.serverTimestamp(),
+          userId: userId || 'system',
+          endpoint: endpoint,
+          provider: ai_provider,
+          model: ai_model,
+          success: !isError,
+          promptLength: cleanedPrompt.length,
+          responseLength: cleanedResponse.length,
+          fullPrompt: cleanedPrompt.length > MAX_CONTENT_LENGTH 
+            ? cleanedPrompt.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED]' 
+            : cleanedPrompt,
+          fullResponse: cleanedResponse.length > MAX_CONTENT_LENGTH 
+            ? cleanedResponse.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED]' 
+            : cleanedResponse,
+          tokenUsage: token_usage,
+          critical: isError
+        });
         
-        textContent += `\n\n--- Token Usage Report ---\nPrompt tokens: ${prompt_tokens || 'N/A'}\nCompletion tokens: ${completion_tokens || 'N/A'}\nTotal tokens: ${total_tokens || 'N/A'}\nEstimated cost: ${cost}`;
+        debugLog(`Successfully logged AI interaction to Firestore for endpoint: ${endpoint}`);
+        return true;
+      } catch (firestoreError) {
+        console.error('Error saving to Firestore in logAIInteraction:', firestoreError);
       }
     }
     
-    // Debug the content we're about to save (only when DEBUG_LOGGING is enabled)
-    debugLog(`Prepared log content for ${endpoint}:`, {
-      contentLength: textContent.length,
-      ai_provider,
-      ai_model,
-      hasTokenUsage: !!token_usage,
-      hasGithubToken: !!process.env.GITHUB_TOKEN,
-      extractedResponse: cleanedResponse.substring(0, 100) + (cleanedResponse.length > 100 ? '...' : '')
-    });
-    
-    // Save to GitHub repository
+    // Fallback: emergency local save
     try {
-      await saveToGitHub({
-        prompt: prompt,
-        response: cleanedResponse,
-        endpoint: endpoint,
-        timestamp: timestamp,
-        ai_provider: ai_provider,
-        ai_model: ai_model,
-        token_usage: token_usage,
-        // Mark as critical if it's an error or failure
-        critical: endpoint.includes('error') || endpoint.includes('failure') || (response && response.error)
-      }, endpoint.includes('submit') ? 'submission' : 'reply');
-      
-      debugLog(`Successfully logged AI interaction for endpoint: ${endpoint}`);
-      return true;
-    } catch (saveError) {
-      console.error('Error in saveToGitHub during logAIInteraction:', {
-        message: saveError.message,
-        errorType: saveError.constructor.name,
-        stack: saveError.stack ? saveError.stack.split('\n').slice(0, 5).join('\n') : 'No stack',
-        endpoint,
-        timestamp,
-        response: saveError.response ? {
-          status: saveError.response.status,
-          statusText: saveError.response.statusText,
-          data: JSON.stringify(saveError.response.data).substring(0, 500)
-        } : 'No response data'
-      });
-      
-      // Try a direct local save as last resort
-      try {
-        console.log('Attempting emergency local save...');
-        const localLogsDir = './logs/emergency-logs';
-        if (!fs.existsSync(localLogsDir)) {
-          fs.mkdirSync(localLogsDir, { recursive: true });
-          console.log(`Created emergency logs directory: ${localLogsDir}`);
-        }
-        
-        const emergencyLogPath = `${localLogsDir}/${timestamp}-${endpoint}-emergency.txt`;
-        fs.writeFileSync(emergencyLogPath, textContent);
-        console.log(`Saved emergency log to: ${emergencyLogPath}`);
-        
-        const emergencyJsonPath = `${localLogsDir}/${timestamp}-${endpoint}-emergency.json`;
-        fs.writeFileSync(emergencyJsonPath, JSON.stringify({
-          prompt,
-          response: cleanedResponse,
-          endpoint,
-          ai_provider,
-          ai_model,
-          token_usage
-        }, null, 2));
-        console.log(`Saved emergency JSON to: ${emergencyJsonPath}`);
-        
-        return true;
-      } catch (emergencyError) {
-        console.error('Failed to save emergency logs:', emergencyError);
-        
-        // Last resort: dump to console
-        console.log('EMERGENCY LOG DUMP:');
-        console.log('-------------------');
-        console.log(textContent);
-        console.log('-------------------');
-        
-        return false;
+      const localLogsDir = './logs/emergency-logs';
+      if (!fs.existsSync(localLogsDir)) {
+        fs.mkdirSync(localLogsDir, { recursive: true });
       }
+      
+      const fileTimestamp = timestamp.replace(/[:.]/g, '-');
+      const emergencyLogPath = `${localLogsDir}/${fileTimestamp}-${endpoint}-emergency.json`;
+      
+      fs.writeFileSync(emergencyLogPath, JSON.stringify({
+        timestamp,
+        userId: userId || 'system',
+        endpoint,
+        prompt: cleanedPrompt,
+        response: cleanedResponse,
+        ai_provider,
+        ai_model,
+        token_usage,
+        isError
+      }, null, 2));
+      
+      return true;
+    } catch (emergencyError) {
+      console.error('Failed to save emergency logs:', emergencyError);
+      return false;
     }
   } catch (error) {
     console.error('Unexpected error in logAIInteraction:', error);
-    // Dump content to console as absolute last resort
-    try {
-      console.log('CRITICAL ERROR LOG DUMP:');
-      console.log('------------------------');
-      console.log(`PROMPT: ${typeof prompt === 'object' ? JSON.stringify(prompt) : prompt}`);
-      console.log(`RESPONSE: ${typeof response === 'object' ? JSON.stringify(response) : response}`);
-      console.log('------------------------');
-    } catch (e) {
-      console.error('Failed even to dump log to console:', e);
-    }
     return false;
   }
 }
@@ -5955,7 +5719,7 @@ app.post('/handleIssues', authenticateUser, async (req, res) => {
             }, {
                 success: true,
                 response: aiResponse
-            }, 'handleIssues');
+            }, 'handleIssues', req.user.uid);
         } catch (logError) {
             console.error('Error logging interaction:', logError);
         }
@@ -6046,7 +5810,7 @@ app.post('/SendToAI', authenticateUser, async (req, res) => {
         }, {
             success: true,
             generatedHtml: htmlContent.substring(0, 500) + '...' // Log first 500 chars only
-        }, 'SendToAI');
+        }, 'SendToAI', req.user.uid);
 
         if (isValidHTML(htmlContent)) {
             const fileSha = await getFileSha(filePath);
