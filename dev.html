@@ -718,6 +718,13 @@
                         <select id="batchRegenYearFilter" style="padding:8px 12px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
                             <option value="">All Years</option>
                         </select>
+                        <select id="batchRegenDateFilter" style="padding:8px 12px; border:1px solid #ddd; border-radius:4px; font-size:13px;">
+                            <option value="">Any Date Extracted</option>
+                            <option value="never">Never Extracted</option>
+                            <option value="today">Today</option>
+                            <option value="week">Last 7 Days</option>
+                            <option value="month">Last 30 Days</option>
+                        </select>
                         <button id="batchRegenLoadBtn" class="dev-btn" style="background-color:#007bff; color:#fff; border-color:#007bff;">📋 Refresh List</button>
                     </div>
                     <div id="batchRegenTableContainer" style="max-height:300px; overflow-y:auto; border:1px solid #ddd; border-radius:4px; background:#fff; margin-bottom:10px;">
@@ -728,6 +735,7 @@
                                     <th style="padding:8px; text-align:left;">Title</th>
                                     <th style="padding:8px; text-align:left; width:120px;">Org</th>
                                     <th style="padding:8px; text-align:center; width:60px;">Year</th>
+                                    <th style="padding:8px; text-align:left; width:130px;">Date Extracted</th>
                                 </tr>
                             </thead>
                             <tbody id="batchRegenTableBody">
