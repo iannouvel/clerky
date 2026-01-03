@@ -3490,6 +3490,7 @@ ${responseText}
         const batchRegenSearch = document.getElementById('batchRegenSearch');
         const batchRegenOrgFilter = document.getElementById('batchRegenOrgFilter');
         const batchRegenYearFilter = document.getElementById('batchRegenYearFilter');
+        const batchRegenDateFilter = document.getElementById('batchRegenDateFilter');
         const batchRegenLoadBtn = document.getElementById('batchRegenLoadBtn');
         const batchRegenTableBody = document.getElementById('batchRegenTableBody');
         const batchRegenSelectAll = document.getElementById('batchRegenSelectAll');
@@ -3563,6 +3564,12 @@ ${responseText}
             const search = batchRegenSearch?.value.toLowerCase() || '';
             const org = batchRegenOrgFilter?.value || '';
             const year = batchRegenYearFilter?.value || '';
+            const dateFilter = batchRegenDateFilter?.value || '';
+
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            const lastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+            const lastMonth = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 
             filteredGuidelines = allGuidelinesForBatch.filter(g => {
                 const matchesSearch = !search || 
@@ -3571,7 +3578,25 @@ ${responseText}
                     (g.humanFriendlyName && g.humanFriendlyName.toLowerCase().includes(search));
                 const matchesOrg = !org || g.organisation === org;
                 const matchesYear = !year || String(g.yearProduced) === String(year);
-                return matchesSearch && matchesOrg && matchesYear;
+                
+                let matchesDate = true;
+                if (dateFilter) {
+                    const extractedAt = g.auditableElementsRegeneratedAt;
+                    // Handle Firestore Timestamp or ISO string
+                    const date = extractedAt ? (extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt)) : null;
+                    
+                    if (dateFilter === 'never') {
+                        matchesDate = !date;
+                    } else if (dateFilter === 'today') {
+                        matchesDate = date && date >= today;
+                    } else if (dateFilter === 'week') {
+                        matchesDate = date && date >= lastWeek;
+                    } else if (dateFilter === 'month') {
+                        matchesDate = date && date >= lastMonth;
+                    }
+                }
+
+                return matchesSearch && matchesOrg && matchesYear && matchesDate;
             });
 
             renderBatchRegenTable();
@@ -3594,6 +3619,13 @@ ${responseText}
                 const elementsCount = g.auditableElements?.length || 0;
                 const statusColor = elementsCount > 0 ? '#28a745' : '#6c757d';
                 
+                const extractedAt = g.auditableElementsRegeneratedAt;
+                let dateStr = '-';
+                if (extractedAt) {
+                    const date = extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt);
+                    dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }
+                
                 tr.innerHTML = `
                     <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
                     <td style="padding:8px;">
@@ -3602,6 +3634,7 @@ ${responseText}
                     </td>
                     <td style="padding:8px; color:#666;">${g.organisation || '-'}</td>
                     <td style="padding:8px; text-align:center; color:#666;">${g.yearProduced || '-'}</td>
+                    <td style="padding:8px; color:#666;">${dateStr}</td>
                 `;
                 
                 // Allow clicking the row to toggle checkbox
@@ -3640,6 +3673,7 @@ ${responseText}
         if (batchRegenSearch) batchRegenSearch.addEventListener('input', applyBatchRegenFilters);
         if (batchRegenOrgFilter) batchRegenOrgFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenYearFilter) batchRegenYearFilter.addEventListener('change', applyBatchRegenFilters);
+        if (batchRegenDateFilter) batchRegenDateFilter.addEventListener('change', applyBatchRegenFilters);
         
         if (batchRegenSelectAll) {
             batchRegenSelectAll.addEventListener('change', () => {
