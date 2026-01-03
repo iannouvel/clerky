@@ -5984,41 +5984,71 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         const parsed = JSON.parse(cleanContent);
         debugLog('[DEBUG] JSON parsing successful');
         
-        // Ensure all guidelines have proper IDs (use document ID, not guidelineId)
-        const cleanedCategories = {};
+        // Some providers return a wrapper object like:
+        // { categories: { mostRelevant: [...] }, categoriesFound: 40, ... }
+        // Normalise to the actual category map.
+        const categoryRoot = (parsed && typeof parsed === 'object' && parsed.categories && typeof parsed.categories === 'object')
+            ? parsed.categories
+            : parsed;
+
+        // Ensure all guidelines have proper IDs (prefer id-based matching; fall back to fuzzy title match)
+        const cleanedCategories = {
+            mostRelevant: [],
+            potentiallyRelevant: [],
+            lessRelevant: [],
+            notRelevant: []
+        };
+
+        const byId = new Map(originalChunk.map(g => [g.id, g]));
         const originalTitles = originalChunk.map(g => g.title);
 
-        Object.keys(parsed).forEach(category => {
-            cleanedCategories[category] = (parsed[category] || []).map(item => {
-                if (!item.title) {
-                    return { id: 'unknown-no-title', title: 'Unknown Title', relevance: item.relevance || '0.0' };
-                }
-                
-                // Find the best match for the AI-returned title in our original list
-                const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
+        const normaliseItem = (item) => {
+            if (!item) return null;
+            if (typeof item === 'string') {
+                // If a provider returns IDs as strings
+                return { id: item, relevance: '0.5' };
+            }
+            if (typeof item !== 'object') return null;
+            return {
+                id: item.id,
+                title: item.title,
+                relevance: item.relevance
+            };
+        };
 
-                // Use a threshold to ensure the match is good enough
-                if (bestMatch.rating > 0.7) { 
-                    const guideline = originalChunk.find(g => g.title === bestMatch.target);
-                    if (guideline) {
-                        debugLog(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
-                        
-                        // Only return id and relevance - client has all other data cached
-                        return {
-                            id: guideline.id,
-                            relevance: item.relevance || '0.5'
-                        };
-                    }
+        const extractCategoryArray = (root, key) => {
+            const v = root ? root[key] : null;
+            return Array.isArray(v) ? v : [];
+        };
+
+        for (const category of Object.keys(cleanedCategories)) {
+            const arr = extractCategoryArray(categoryRoot, category);
+            cleanedCategories[category] = arr.map(raw => {
+                const item = normaliseItem(raw) || {};
+                const relevance = item.relevance || '0.5';
+
+                // Fast path: match by id
+                if (item.id && byId.has(item.id)) {
+                    return { id: item.id, relevance };
                 }
-                
-                // If no match found, return minimal object with just id and relevance
-                debugLog(`[DEBUG] Could not match AI guideline to original: "${item.title}"`);
-                return {
-                    id: item.id || 'unknown-id',
-                    relevance: item.relevance || '0.0'
-                };
+
+                // Slow path: fuzzy match by title (older response format)
+                if (item.title) {
+                    const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
+                    if (bestMatch.rating > 0.7) {
+                        const guideline = originalChunk.find(g => g.title === bestMatch.target);
+                        if (guideline) {
+                            debugLog(`[DEBUG] Found guideline by fuzzy title match: "${item.title}" -> ${guideline.id} (Rating: ${bestMatch.rating.toFixed(2)})`);
+                            return { id: guideline.id, relevance };
+                        }
+                    }
+                    debugLog(`[DEBUG] Could not match AI guideline to original (title): "${item.title}"`);
+                }
+
+                // Last resort: return whatever id we got (client may still recognise it)
+                return { id: item.id || 'unknown-id', relevance: item.relevance || '0.0' };
             });
-        });
+        }
         
         debugLog('[DEBUG] JSON parsing completed successfully');
         
@@ -6047,6 +6077,11 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         for (const line of lines) {
             const trimmed = line.trim();
             if (!trimmed) continue;
+
+            // If the model returned JSON-ish text and we got here, avoid spamming logs for JSON property lines.
+            if (/^[\{\}\[\],]/.test(trimmed) || /^"\w+"\s*:/.test(trimmed)) {
+                continue;
+            }
             
             // Check for category headers
             if (trimmed.toLowerCase().includes('most relevant') || trimmed.includes('mostRelevant')) {
@@ -6369,7 +6404,8 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
     timer.step('Check RAG preference');
     
     // If RAG is enabled and vector DB is available, use RAG search
-    if (ragPrefs.useRAGSearch && vectorDB.isVectorDBAvailable()) {
+    const vectorAvailable = vectorDB.isVectorDBAvailable();
+    if (ragPrefs.useRAGSearch && vectorAvailable) {
         console.log(`[RAG] User ${userId} has RAG enabled, using vector search`);
         try {
             const ragResult = await findRelevantGuidelinesRAG(transcript, userId, {
@@ -6382,6 +6418,13 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
             console.error('[RAG] RAG search failed, falling back to traditional:', ragError.message);
             // Fall through to traditional search
         }
+    } else {
+        console.log('[RAG] Not using RAG for this request:', {
+            useRAGSearch: !!ragPrefs.useRAGSearch,
+            vectorAvailable,
+            hasPineconeApiKey: !!process.env.PINECONE_API_KEY,
+            pineconeIndexName: process.env.PINECONE_INDEX_NAME || 'clerky-guidelines'
+        });
     }
     
     // Traditional AI-based search (existing logic)

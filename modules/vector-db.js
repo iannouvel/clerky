@@ -364,7 +364,14 @@ async function getIndexStats() {
     }
 
     try {
-        const stats = await index.describeIndexStats();
+        // Avoid hanging requests (e.g. network issues / Pinecone partial outages).
+        // We can't reliably cancel the underlying SDK request, but we can bound how long
+        // callers (e.g. preferences UI) wait for a response.
+        const TIMEOUT_MS = 2000;
+        const stats = await Promise.race([
+            index.describeIndexStats(),
+            new Promise((_, reject) => setTimeout(() => reject(new Error(`describeIndexStats timeout after ${TIMEOUT_MS}ms`)), TIMEOUT_MS))
+        ]);
         return {
             available: true,
             totalRecords: stats.totalRecordCount || 0,
