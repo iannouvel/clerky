@@ -35,15 +35,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         const buttons = document.querySelectorAll('.nav-btn');
         const contents = document.querySelectorAll('.tab-content');
-        const modelToggle = document.getElementById('modelToggle');
-
-        // Helper to update the local toggle UI from the currentModel value
-        function applyModelToToggle() {
-            if (!modelToggle) return;
-            const modelName = currentModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-            modelToggle.textContent = `AI: ${currentModel} (${modelName})`;
-            modelToggle.classList.toggle('active', currentModel === 'DeepSeek');
-        }
 
         // If the user is logged in, fetch their saved AI preference so dev tools
         // and the main app share the same provider and default to DeepSeek if unset
@@ -70,9 +61,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             }
         }
 
-        // Apply initial state to the toggle
-        applyModelToToggle();
-        
         let currentLogIndex = 0;
         let logs = [];
         let allLogFiles = []; // Store all log files metadata without content
@@ -297,88 +285,6 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        // Function to update the AI model
-        async function updateAIModel() {
-            const newModel = currentModel === 'OpenAI' ? 'DeepSeek' : 'OpenAI';
-            
-            // Disable the button and show loading state
-            modelToggle.disabled = true;
-            const originalText = modelToggle.textContent;
-            modelToggle.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">&#x21BB;</span> Switching...';
-            
-            try {
-                console.log(`Attempting to switch to ${newModel}`);
-                
-                // Check if user is logged in
-                const user = auth.currentUser;
-                if (!user) {
-                    console.log('User not logged in, redirecting to login page...');
-                    // If not logged in, redirect to login page
-                    // Use sessionStorage so redirect intent is scoped to this tab only
-                    sessionStorage.setItem('returnToPage', 'dev.html');
-                    sessionStorage.setItem('returnAfterLogin', '1');
-                    window.location.href = 'index.html';
-                    return;
-                }
-
-                console.log('User logged in:', user.email);
-
-                // Get the current Firebase token
-                const firebaseToken = await user.getIdToken();
-                if (!firebaseToken) {
-                    throw new Error('Failed to get authentication token');
-                }
-
-                console.log('Sending request to update AI preference...');
-                const response = await fetch(`${SERVER_URL}/updateAIPreference`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${firebaseToken}`
-                    },
-                    body: JSON.stringify({ provider: newModel })
-                });
-
-                const responseData = await response.json();
-                console.log('Server response:', responseData);
-
-                if (response.ok || response.status === 202) {
-                    currentModel = newModel;
-                    const modelName = newModel === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat';
-                    modelToggle.textContent = `AI: ${newModel} (${modelName})`;
-                    modelToggle.classList.toggle('active', newModel === 'DeepSeek');
-                    console.log(`Successfully switched to ${newModel}`);
-                    
-                    // Show warning if preference might not persist
-                    if (responseData.warning) {
-                        console.warn('Warning from server:', responseData.warning);
-                    }
-                } else {
-                    console.error('Failed to update AI model:', responseData);
-                    
-                    // If token is invalid, show login prompt
-                    if (response.status === 401) {
-                        console.log('Authentication failed, showing login prompt...');
-                        showLoginPrompt();
-                    }
-                }
-            } catch (error) {
-                console.error('Error updating AI model:', error);
-                
-                // If no token or expired token, show login prompt
-                if (error.message.includes('token') || error.message.includes('session')) {
-                    console.log('Authentication error, showing login prompt...');
-                    showLoginPrompt();
-                }
-            } finally {
-                // Always restore button state
-                if (modelToggle.textContent.includes('Switching')) {
-                    modelToggle.textContent = originalText;
-                }
-                modelToggle.disabled = false;
-            }
-        }
-
         // Function to show login prompt
         function showLoginPrompt() {
             console.log('Showing login prompt');
@@ -415,18 +321,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (status) status.textContent = 'Please sign in to scan for new guidance.';
         }
         
-        // Add click event listener for model toggle
-        if (modelToggle) {
-            modelToggle.addEventListener('click', updateAIModel);
-        }
-
         // Check authentication state on page load
         onAuthStateChanged(auth, (user) => {
             console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
             if (user) {
                 // User is signed in
                 console.log('User is signed in:', user.email);
-                modelToggle.disabled = false;
                 // Enable discovery scan
                 const scanBtnEl = document.getElementById('scanGuidanceBtn');
                 if (scanBtnEl) scanBtnEl.disabled = false;

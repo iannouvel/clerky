@@ -52,28 +52,6 @@
             align-items: center;
         }
 
-        .model-toggle {
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            margin-right: 20px;
-        }
-
-        .model-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .model-toggle.active {
-            background: rgba(255, 255, 255, 0.4);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
         .nav-btn {
             padding: 6px 12px;
             background: rgba(255, 255, 255, 0.2);
@@ -512,7 +490,6 @@
             <span class="version-number">v<span id="appVersion">loading...</span></span>
         </div>
         <div class="top-bar-center">
-            <button class="model-toggle" id="modelToggle">AI: OpenAI</button>
             <button class="nav-btn" data-content="algosContent">Algos</button>
             <button class="nav-btn" data-content="logsContent">Logs</button>
             <button class="nav-btn" data-content="costContent">Cost</button>

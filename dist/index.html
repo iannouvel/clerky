@@ -76,46 +76,6 @@
             min-height: 200px;
         }
 
-        /* Add styles for model toggle */
-        .model-toggle {
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            margin-left: 15px;
-        }
-
-        .model-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .model-toggle.active {
-            background: rgba(255, 255, 255, 0.4);
-            border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* Add spinner animation for model toggle */
-        .model-toggle .spinner {
-            display: inline-block;
-            animation: spin 1s linear infinite;
-            margin-right: 5px;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .model-toggle:disabled {
-            opacity: 0.7;
-            cursor: wait;
-        }
-        
         .version-number {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.85rem;
