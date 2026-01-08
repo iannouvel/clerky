@@ -4115,8 +4115,8 @@ html, body {
     display: block !important;
     visibility: visible !important;
     /* Ensure caret (text cursor) stays visible on the white editor background */
-    caret-color: #111;
-    color: #111;
+    caret-color: #111 !important;
+    color: #111 !important;
 }
 .tiptap-editor {
     min-height: 150px;
@@ -4126,7 +4126,8 @@ html, body {
     font-family: inherit;
     font-size: 14px;
     line-height: 1.5;
-    background-color: #fff;
+    /* Slight off-white so a white system I‑beam cursor remains visible */
+    background-color: #f7f8fa;
     overflow-y: auto;
     flex: 1;
     position: relative;
