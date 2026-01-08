@@ -1670,6 +1670,23 @@ function updateUser(message, isLoading = false) {
         return;
     }
 
+    // Avoid duplicate "Finding relevant guidelines..." indicators in the fixed button row:
+    // the Analyse button already shows this progress state with a spinner/text.
+    if (message && isLoading && /finding\s+relevant\s+guidelines/i.test(message)) {
+        const analyseSpinner = document.getElementById('analyseSpinner');
+        const analyseSpinnerVisible = !!(
+            analyseSpinner &&
+            window.getComputedStyle(analyseSpinner).display !== 'none'
+        );
+
+        if (analyseSpinnerVisible) {
+            // Ensure we don't leave stale status text visible.
+            statusEl.style.display = 'none';
+            statusEl.textContent = '';
+            return;
+        }
+    }
+
     if (message) {
         // When loading, show spinner + message; otherwise just text
         if (isLoading) {
