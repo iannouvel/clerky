@@ -2132,14 +2132,40 @@ async function jobGenerateDisplayName(job, guidelineData) {
         throw new Error('No content available yet for displayName generation');
     }
     
+    function isSuspiciousDisplayName(value) {
+        if (!value || typeof value !== 'string') return true;
+        if (value.length < 3) return true;
+        if (value.length > 220) return true;
+        if (/[<>]/.test(value)) return true;
+        if (value.includes('```')) return true;
+        if (value.includes('**')) return true;
+        if (value.includes('•')) return true;
+        const lower = value.toLowerCase();
+        if (lower.includes('reasoning summary')) return true;
+        if (lower.includes('final display name')) return true;
+        return false;
+    }
+
     // Use system user ID for background jobs
     const userId = 'system';
-    const displayName = await generateDisplayNameWithAI(guidelineData, userId);
-    
+    let displayName = await generateDisplayNameWithAI(guidelineData, userId);
+
     if (!displayName) {
-        // If AI generation fails, keep the existing rule-based one
-        console.log(`[JOB_DISPLAY_NAME] AI generation failed for ${job.guidelineId}, keeping existing displayName`);
-        return { skipped: true, reason: 'AI generation failed' };
+        // If AI generation fails, fall back to deterministic formatting.
+        // IMPORTANT: if the existing displayName is already "poisoned", we must overwrite it.
+        const existing = guidelineData.displayName || null;
+        if (existing && !isSuspiciousDisplayName(existing)) {
+            console.log(`[JOB_DISPLAY_NAME] AI generation failed for ${job.guidelineId}, keeping existing displayName`);
+            return { skipped: true, reason: 'AI generation failed; existing displayName looks valid' };
+        }
+
+        displayName = generateSimpleDisplayName(guidelineData) || generateDisplayName(guidelineData.humanFriendlyName || guidelineData.title || guidelineData.filename || job.guidelineId);
+        if (!displayName || isSuspiciousDisplayName(displayName)) {
+            console.log(`[JOB_DISPLAY_NAME] Could not generate a safe fallback displayName for ${job.guidelineId}`);
+            return { skipped: true, reason: 'No valid displayName could be generated' };
+        }
+
+        console.log(`[JOB_DISPLAY_NAME] Using fallback displayName for ${job.guidelineId}: "${displayName}"`);
     }
     
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
@@ -8800,9 +8826,64 @@ async function generateDisplayNameWithAI(guidelineData, userId) {
     const aiResult = await routeToAI({ messages }, userId);
     
     if (aiResult && aiResult.content) {
-      const displayName = aiResult.content.trim();
-      // Clean up any extra formatting the AI might add
-      const cleaned = displayName.replace(/^["']|["']$/g, '').trim();
+      // Parse and validate model output before persisting (models sometimes include reasoning/markdown)
+      const raw = String(aiResult.content || '').trim();
+
+      function normaliseOneLine(value) {
+        if (!value || typeof value !== 'string') return null;
+        return value.replace(/\r/g, '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+      }
+
+      function extractCandidateDisplayName(text) {
+        if (!text || typeof text !== 'string') return null;
+
+        // Prefer the last fenced code block content if present
+        const fenceMatches = [...text.matchAll(/```[\s\S]*?\n([\s\S]*?)```/g)];
+        if (fenceMatches.length > 0) {
+          const lastBlock = fenceMatches[fenceMatches.length - 1][1] || '';
+          const firstLine = lastBlock.split('\n').map(l => l.trim()).filter(Boolean)[0];
+          if (firstLine) return firstLine;
+        }
+
+        // Look for an explicit "Final Display Name" section
+        const finalLabel = text.match(/final\s+display\s+name[:\s]*([\s\S]*)/i);
+        if (finalLabel && finalLabel[1]) {
+          const maybeLine = finalLabel[1].split('\n').map(l => l.trim()).filter(Boolean)[0];
+          if (maybeLine) return maybeLine;
+        }
+
+        // Otherwise take the first non-empty line
+        const first = text.split('\n').map(l => l.trim()).filter(Boolean)[0];
+        return first || null;
+      }
+
+      function isSuspiciousDisplayName(value) {
+        if (!value || typeof value !== 'string') return true;
+        if (value.length < 3) return true;
+        if (value.length > 220) return true;
+        if (/[<>]/.test(value)) return true;
+        if (value.includes('```')) return true;
+        if (value.includes('**')) return true;
+        if (value.includes('•')) return true;
+        const lower = value.toLowerCase();
+        if (lower.includes('reasoning summary')) return true;
+        if (lower.includes('final display name')) return true;
+        return false;
+      }
+
+      const extracted = extractCandidateDisplayName(raw);
+      const cleaned = normaliseOneLine(extracted)
+        ?.replace(/^["']|["']$/g, '')
+        .trim();
+
+      if (!cleaned || isSuspiciousDisplayName(cleaned)) {
+        console.warn(`[DISPLAY_NAME_AI] Ignoring invalid/suspicious model output for title "${title}"`, {
+          extracted: extracted ? extracted.substring(0, 200) : null,
+          cleaned: cleaned ? cleaned.substring(0, 200) : null
+        });
+        return null;
+      }
+
       console.log(`[DISPLAY_NAME_AI] Generated: "${cleaned}" from title: "${title}", scope: "${scope}", shortTrust: "${shortHospitalTrust}"`);
       return cleaned;
     }
@@ -18657,13 +18738,27 @@ app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
     // This returns immediately and processes in the background to avoid timeouts
     const guidelinesSnapshot = await db.collection('guidelines').get();
     const guidelinesToProcess = [];
+
+    function isSuspiciousDisplayName(value) {
+      if (!value || typeof value !== 'string') return true;
+      if (value.length < 3) return true;
+      if (value.length > 220) return true;
+      if (/[<>]/.test(value)) return true;
+      if (value.includes('```')) return true;
+      if (value.includes('**')) return true;
+      if (value.includes('•')) return true;
+      const lower = value.toLowerCase();
+      if (lower.includes('reasoning summary')) return true;
+      if (lower.includes('final display name')) return true;
+      return false;
+    }
     
     // Filter guidelines that need processing
     for (const doc of guidelinesSnapshot.docs) {
       const data = doc.data();
       
-      // Skip if displayName already exists (unless force flag is set)
-      if (data.displayName && !req.body.force) {
+      // Skip if displayName already exists AND looks valid (unless force flag is set)
+      if (data.displayName && !req.body.force && !isSuspiciousDisplayName(data.displayName)) {
         continue;
       }
       

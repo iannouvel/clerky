@@ -1250,26 +1250,58 @@ function getCleanDisplayTitle(g, guidelineData) {
         g_title: g?.title,
         guidelineData_title: guidelineData?.title
     });
+
+    // Guardrail: Never trust displayName if it looks like an AI reasoning dump / markdown block
+    function normaliseGuidelineDisplayName(value) {
+        if (!value || typeof value !== 'string') return null;
+        return value.replace(/\s+/g, ' ').trim();
+    }
+
+    function isSafeGuidelineDisplayName(value) {
+        if (!value || typeof value !== 'string') return false;
+
+        // Hard limits to prevent rendering “garbage” blobs
+        if (value.length > 220) return false;
+        if (/[<>]/.test(value)) return false; // avoid accidental HTML-ish content
+        if (/[\r\n]/.test(value)) return false;
+
+        const lower = value.toLowerCase();
+        if (lower.includes('reasoning summary')) return false;
+        if (lower.includes('final display name')) return false;
+        if (value.includes('```')) return false;
+        if (value.includes('**')) return false;
+        if (value.includes('•')) return false;
+
+        return true;
+    }
     
     // If displayName exists, use it directly (it should already be in the correct format: humanFriendlyName + organisation/hospitalTrust)
     // Check g.displayName first since g is the enriched object that should have displayName from localData
     if (g?.displayName) {
-        console.log(`[DISPLAY DEBUG] → Using g.displayName: "${g.displayName}"`);
-        return g.displayName;
+        const candidate = normaliseGuidelineDisplayName(g.displayName);
+        if (candidate && isSafeGuidelineDisplayName(candidate)) {
+            console.log(`[DISPLAY DEBUG] → Using g.displayName: "${candidate}"`);
+            return candidate;
+        }
+        console.warn(`[DISPLAY DEBUG] → Ignoring suspicious g.displayName for ${gId}`);
     }
     if (guidelineData?.displayName) {
-        console.log(`[DISPLAY DEBUG] → Using guidelineData.displayName: "${guidelineData.displayName}"`);
-        return guidelineData.displayName;
+        const candidate = normaliseGuidelineDisplayName(guidelineData.displayName);
+        if (candidate && isSafeGuidelineDisplayName(candidate)) {
+            console.log(`[DISPLAY DEBUG] → Using guidelineData.displayName: "${candidate}"`);
+            return candidate;
+        }
+        console.warn(`[DISPLAY DEBUG] → Ignoring suspicious guidelineData.displayName for ${gId}`);
     }
     
     console.log(`[DISPLAY DEBUG] → No displayName found, using fallback chain`);
     
     // Fallback: Get the best available title, preferring humanFriendlyName over title
     let rawTitle = guidelineData?.humanFriendlyName || 
-                   g.humanFriendlyName || 
+                   g?.humanFriendlyName || 
                    guidelineData?.title || 
-                   g.title || 
-                   g.id;
+                   g?.title || 
+                   g?.id;
     
     // Strip ALL scope/trust/Unknown patterns from the title (only if displayName doesn't exist)
     if (rawTitle && typeof rawTitle === 'string') {
@@ -1293,9 +1325,9 @@ function getCleanDisplayTitle(g, guidelineData) {
     if (rawTitle && (rawTitle.match(/^[\d-]+(\.pdf)?$/i) || rawTitle.length < 5)) {
         // Try to get a better name from humanFriendlyName or construct from ID
         const betterName = guidelineData?.humanFriendlyName || 
-                          g.humanFriendlyName || 
+                          g?.humanFriendlyName || 
                           guidelineData?.title || 
-                          g.title;
+                          g?.title;
         
         if (betterName && betterName !== rawTitle && !betterName.includes('Unknown')) {
             rawTitle = betterName;
@@ -1309,12 +1341,12 @@ function getCleanDisplayTitle(g, guidelineData) {
             rawTitle = rawTitle.replace(/\s+/g, ' ').replace(/\s*-\s*$/, '').trim();
         } else {
             // Construct a name from the ID (e.g., "052-pdf" -> "Guideline 052")
-            const idPart = g.id.replace(/[-_]/g, ' ').replace(/\.pdf$/i, '').trim();
+            const idPart = (g?.id || '').replace(/[-_]/g, ' ').replace(/\.pdf$/i, '').trim();
             rawTitle = `Guideline ${idPart}`;
         }
     }
     
-    const finalResult = rawTitle || g.id;
+    const finalResult = rawTitle || g?.id;
     console.log(`[DISPLAY DEBUG] → Final result for ${gId}: "${finalResult}"`);
     return finalResult;
 }
@@ -14150,16 +14182,9 @@ function getGuidelineDisplayName(guidelineId, guideline = null, guidelineData = 
         guidelineData = window.globalGuidelines?.[guidelineId];
     }
     
-    // Use the same fallback chain as the selection interface
-    return guidelineData?.displayName || 
-           guideline?.displayName || 
-           guidelineData?.humanFriendlyName || 
-           guideline?.humanFriendlyName || 
-           guidelineData?.humanFriendlyTitle || 
-           guideline?.humanFriendlyTitle ||
-           guideline?.title || 
-           guidelineData?.title || 
-           guidelineId;
+    // Use the SAME logic as the selection interface (including safety guardrails)
+    const safeGuideline = guideline || { id: guidelineId };
+    return getCleanDisplayTitle(safeGuideline, guidelineData) || guidelineId;
 }
 
 // Function to process a single guideline (extracted from existing checkAgainstGuidelines logic)
