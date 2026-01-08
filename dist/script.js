@@ -5729,17 +5729,46 @@ async function displayPracticePointSuggestions(result) {
     }
     
     // Convert 3-step results to suggestion format for existing UI
+    // Defensive cleanup: model outputs can sometimes contain adjacent duplicated phrases.
+    function dedupeAdjacentRepeatText(value) {
+        if (value === null || value === undefined) return '';
+        let s = String(value).replace(/\s+/g, ' ').trim();
+        if (!s) return '';
+
+        const fullRepeat = s.match(/^(.+?)(?:\s+\1)+$/);
+        if (fullRepeat && fullRepeat[1]) {
+            s = fullRepeat[1].trim();
+        }
+
+        let words = s.split(' ');
+        let changed = true;
+        while (changed) {
+            changed = false;
+            for (let len = Math.floor(words.length / 2); len >= 3; len--) {
+                const a = words.slice(words.length - 2 * len, words.length - len).join(' ');
+                const b = words.slice(words.length - len).join(' ');
+                if (a && a === b) {
+                    words = words.slice(0, words.length - len);
+                    changed = true;
+                    break;
+                }
+            }
+        }
+
+        return words.join(' ').trim();
+    }
+
     const suggestions = result.suggestions.map((point, index) => {
         // Build context based on new 3-step format
         let contextParts = [];
         contextParts.push(`**${point.name}**`);
         
         if (point.issue) {
-            contextParts.push(`\n\n**Issue:** ${point.issue}`);
+            contextParts.push(`\n\n**Issue:** ${dedupeAdjacentRepeatText(point.issue)}`);
         }
         
         if (point.description) {
-            contextParts.push(`\n\n${point.description}`);
+            contextParts.push(`\n\n${dedupeAdjacentRepeatText(point.description)}`);
         }
         
         return {

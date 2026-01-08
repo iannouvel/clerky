@@ -21281,15 +21281,49 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId, guidelineId);
         timer.step('Semantic analysis');
         
+        // Defensive cleanup: LLMs sometimes repeat "issue"/"suggestion" text verbatim.
+        // This prevents duplicated phrases like: "No documentation ... No documentation ..."
+        function dedupeAdjacentRepeatText(value) {
+            if (value === null || value === undefined) return '';
+            let s = String(value).replace(/\s+/g, ' ').trim();
+            if (!s) return '';
+
+            // If the entire string is repeated 2+ times, collapse to one copy.
+            // e.g. "X X" or "X   X" -> "X"
+            const fullRepeat = s.match(/^(.+?)(?:\s+\1)+$/);
+            if (fullRepeat && fullRepeat[1]) {
+                s = fullRepeat[1].trim();
+            }
+
+            // If the tail repeats (common LLM glitch), remove repeated tail blocks.
+            // Require >=3 words to avoid accidentally collapsing legitimate short repeats.
+            let words = s.split(' ');
+            let changed = true;
+            while (changed) {
+                changed = false;
+                for (let len = Math.floor(words.length / 2); len >= 3; len--) {
+                    const a = words.slice(words.length - 2 * len, words.length - len).join(' ');
+                    const b = words.slice(words.length - len).join(' ');
+                    if (a && a === b) {
+                        words = words.slice(0, words.length - len);
+                        changed = true;
+                        break;
+                    }
+                }
+            }
+
+            return words.join(' ').trim();
+        }
+
         // Format suggestions for the frontend
         const suggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
             id: index + 1,
             name: suggestion.name,
-            description: suggestion.issue || '',
+            description: dedupeAdjacentRepeatText(suggestion.issue || ''),
             verbatimQuote: suggestion.verbatimQuote || '',
             significance: suggestion.priority || 'medium',
-            issue: suggestion.issue || '',
-            suggestion: suggestion.suggestion || '',
+            issue: dedupeAdjacentRepeatText(suggestion.issue || ''),
+            suggestion: dedupeAdjacentRepeatText(suggestion.suggestion || ''),
             priority: suggestion.priority || 'medium',
             applicable: true
         }));
