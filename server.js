@@ -4864,9 +4864,9 @@ app.post('/generateTranscript/:conditionId', authenticateUser, async (req, res) 
         // Generate new transcript using AI
         console.log('[GENERATE-TRANSCRIPT] Generating new transcript...');
         
-        // Load the test transcript prompt
-        const testPrompt = createDefaultPrompts().testTranscript.prompt;
-        const fullPrompt = testPrompt + conditionData.name;
+        // Load the (editable) test transcript prompt (Firestore/global cache first, then prompts.json)
+        const testPrompt = await getPromptText('testTranscript');
+        const fullPrompt = `${testPrompt}${conditionData.name}`;
         
         console.log('[GENERATE-TRANSCRIPT] Calling AI with prompt for condition:', conditionData.name);
         
@@ -5002,8 +5002,8 @@ async function processBatchGeneration(conditions, userId, maxConcurrent = 3, for
         skipped: []
     };
     
-    // Load the test transcript prompt once
-    const testPrompt = createDefaultPrompts().testTranscript.prompt;
+    // Load the (editable) test transcript prompt once (Firestore/global cache first, then prompts.json)
+    const testPrompt = await getPromptText('testTranscript');
     
     // Process conditions in chunks to limit concurrent AI calls
     for (let i = 0; i < conditions.length; i += maxConcurrent) {
@@ -5154,6 +5154,54 @@ app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => 
         });
     }
 });
+
+/**
+ * Returns the prompt text for the given key.
+ * Priority:
+ * 1) `global.prompts` (server-side cache)
+ * 2) Firestore `settings/prompts`
+ * 3) `./prompts.json`
+ */
+async function getPromptText(promptKey) {
+  // 1) Global cache (populated by /getPrompts or other code paths)
+  let loadedPrompts = global.prompts;
+
+  // 2) Firestore (only if not already cached)
+  if (!loadedPrompts) {
+    try {
+      const firestoreDoc = await db.collection('settings').doc('prompts').get();
+      if (firestoreDoc.exists && firestoreDoc.data()?.prompts) {
+        loadedPrompts = firestoreDoc.data().prompts;
+        global.prompts = loadedPrompts;
+        console.log('[PROMPTS] Loaded prompts from Firestore (for promptKey):', promptKey);
+      }
+    } catch (error) {
+      console.warn('[PROMPTS] Failed to load prompts from Firestore, falling back to prompts.json:', error.message);
+    }
+  }
+
+  // 3) prompts.json fallback
+  if (!loadedPrompts) {
+    try {
+      // Clear require cache to get fresh version (in case it changed)
+      delete require.cache[require.resolve('./prompts.json')];
+      loadedPrompts = require('./prompts.json');
+      global.prompts = loadedPrompts;
+      console.log('[PROMPTS] Loaded prompts from prompts.json (for promptKey):', promptKey);
+    } catch (error) {
+      console.error('[PROMPTS] Failed to load prompts.json:', error.message);
+    }
+  }
+
+  const promptConfig = loadedPrompts?.[promptKey];
+  const promptText = promptConfig?.prompt;
+
+  if (!promptText || typeof promptText !== 'string') {
+    throw new Error(`Prompt '${promptKey}' not found in prompts configuration`);
+  }
+
+  return promptText;
+}
 
 // ============================================
 // INDIVIDUAL CONDITION/TRANSCRIPT MANAGEMENT
