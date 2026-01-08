@@ -1720,15 +1720,15 @@ function showSelectionButtons() {
     buttonsGroup.style.display = 'flex'; // Force display
     buttonsGroup.style.visibility = 'visible'; // Force visibility
     buttonsGroup.innerHTML = `
+        <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)" title="Process selected guidelines">
+            <span class="btn-icon">🚀</span>
+            <span class="btn-text">Process Selected Guidelines</span>
+        </button>
         <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)" title="Select all guidelines">
             ✅ Select All
         </button>
         <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)" title="Deselect all guidelines">
             ❌ Deselect All
-        </button>
-        <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)" title="Process selected guidelines">
-            <span class="btn-icon">🚀</span>
-            <span class="btn-text">Process Selected Guidelines</span>
         </button>
     `;
     
@@ -10734,14 +10734,10 @@ async function showPreferencesModal() {
         preferencesBothBtn.classList.remove('selected');
     }
     
-    // Update button states based on trust selection
-    if (!currentTrust) {
-        preferencesLocalBtn.disabled = true;
-        preferencesBothBtn.disabled = true;
-    } else {
-        preferencesLocalBtn.disabled = false;
-        preferencesBothBtn.disabled = false;
-    }
+    // Keep Local/Both clickable even if no trust is set; handlers will prompt the user to select a trust.
+    // Disabling these buttons caused confusing "stop" cursor and made it feel broken.
+    if (preferencesLocalBtn) preferencesLocalBtn.disabled = false;
+    if (preferencesBothBtn) preferencesBothBtn.disabled = false;
     
     // Load and display model preferences
     try {
