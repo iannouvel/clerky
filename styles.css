@@ -3141,10 +3141,14 @@ html, body {
 
 /* Fix button text color on white background */
 .floating-input-buttons .nav-btn {
-    color: #2c3e50;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: #019874;
+    border: none;
     text-shadow: none;
+}
+
+.floating-input-buttons .nav-btn:hover:not(:disabled) {
+    background: #017a5e;
 }
 
 .floating-input-buttons-top {
@@ -3492,6 +3496,30 @@ html, body {
     flex-grow: 0;
 }
 
+/* Unify ALL fixedButtonRow buttons to match the left-panel dark green */
+.fixed-button-row button {
+    background: #019874;
+    color: #fff;
+    border: none;
+    text-shadow: none;
+    box-shadow: 0 2px 6px rgba(1, 152, 116, 0.25);
+}
+
+.fixed-button-row button:hover:not(:disabled) {
+    background: #017a5e;
+}
+
+.fixed-button-row button:active:not(:disabled) {
+    background: #016a52;
+}
+
+.fixed-button-row button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
 /* Analyse button styling - always visible */
 .summary-analyse-btn {
     display: flex;
@@ -3526,7 +3554,7 @@ html, body {
 .summary-analyse-btn.warming-up {
     opacity: 0.6;
     cursor: wait;
-    background: #888;
+    background: #019874;
     box-shadow: none;
 }
 
