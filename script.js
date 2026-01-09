@@ -5763,12 +5763,17 @@ async function displayPracticePointSuggestions(result) {
         let contextParts = [];
         contextParts.push(`**${point.name}**`);
         
-        if (point.issue) {
-            contextParts.push(`\n\n**Issue:** ${dedupeAdjacentRepeatText(point.issue)}`);
+        const issueText = point.issue ? dedupeAdjacentRepeatText(point.issue) : '';
+        const descriptionText = point.description ? dedupeAdjacentRepeatText(point.description) : '';
+
+        if (issueText) {
+            contextParts.push(`\n\n**Issue:** ${issueText}`);
         }
-        
-        if (point.description) {
-            contextParts.push(`\n\n${dedupeAdjacentRepeatText(point.description)}`);
+
+        // Avoid displaying duplicated context when upstream fields mirror each other.
+        // This commonly happens when an API maps `description` from the same source as `issue`.
+        if (descriptionText && (!issueText || descriptionText !== issueText)) {
+            contextParts.push(`\n\n${descriptionText}`);
         }
         
         return {
