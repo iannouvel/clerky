@@ -14438,8 +14438,10 @@ async function runParallelAnalysis(guidelines) {
     const results = await Promise.all(analysisPromises);
 
     // Filter and Sort Results
+    // Note: `r.suggestions` is the full result object from getPracticePointSuggestions
+    // which has a `suggestions` array property inside it
     const successfulResults = results
-        .filter(r => r.status === 'fulfilled' && r.suggestions && r.suggestions.length > 0);
+        .filter(r => r.status === 'fulfilled' && r.suggestions && r.suggestions.suggestions && r.suggestions.suggestions.length > 0);
 
     // Sort by relevance (descending) or original order if relevance is equal
     successfulResults.sort((a, b) => b.relevance - a.relevance || a.originalIndex - b.originalIndex);
@@ -14481,7 +14483,9 @@ async function runParallelAnalysis(guidelines) {
             // Since displayPracticePointSuggestions writes to global 'summary1', we'll simulate it or refactor.
             // For now, simpler: we'll render the suggestions manually here reusing the style classes.
 
-            const suggestionsHtml = result.suggestions.map(suggestion => `
+            // result.suggestions is the full API response object, which has a .suggestions array
+            const suggestionsArray = result.suggestions.suggestions || [];
+            const suggestionsHtml = suggestionsArray.map(suggestion => `
                 <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                     <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                         <span class="badge ${suggestion.type === 'critical' ? 'badge-danger' :
