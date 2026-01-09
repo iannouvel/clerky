@@ -21319,7 +21319,9 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         const suggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
             id: index + 1,
             name: suggestion.name,
-            description: dedupeAdjacentRepeatText(suggestion.issue || ''),
+            // IMPORTANT: Frontend builds "Why" as Issue + description; if description mirrors issue,
+            // it will appear duplicated. Prefer "notCoveredBy" for extra context when available.
+            description: dedupeAdjacentRepeatText(suggestion.notCoveredBy || suggestion.description || ''),
             verbatimQuote: suggestion.verbatimQuote || '',
             significance: suggestion.priority || 'medium',
             issue: dedupeAdjacentRepeatText(suggestion.issue || ''),
