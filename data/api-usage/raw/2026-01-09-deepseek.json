@@ -1,0 +1,13 @@
+{
+  "date": "2026-01-09",
+  "provider": "DeepSeek",
+  "total_tokens": 0,
+  "total_cost_usd": 0,
+  "models": {
+    "deepseek-chat": {
+      "tokens": 0,
+      "cost_usd": 0
+    }
+  },
+  "note": "DeepSeek usage data is not available through API. This is a placeholder."
+}
