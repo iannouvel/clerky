@@ -6112,3 +6112,28 @@ body {
         font-size: 13px;
     }
 }
+
+/* Update clerking buttons to match preferences buttons */
+#clerkingButtonsGroup .nav-btn {
+    background-color: #019874;
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+#clerkingButtonsGroup .nav-btn:hover:not(:disabled) {
+    background-color: #017a5e;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+}
+
+#clerkingButtonsGroup .nav-btn:active:not(:disabled) {
+    transform: translateY(0);
+    background-color: #016a52;
+}
+
+#clerkingButtonsGroup .nav-btn:disabled {
+    background-color: rgba(1, 152, 116, 0.5);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
