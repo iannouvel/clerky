@@ -13856,8 +13856,8 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         
         <style>
         .guideline-selection-container {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
@@ -13866,13 +13866,13 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         
         .selection-header h3 {
             margin: 0 0 10px 0;
-            color: #2c3e50;
+            color: var(--text-primary);
             font-size: 1.2em;
         }
         
         .selection-header p {
             margin: 0 0 15px 0;
-            color: #6c757d;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
         
@@ -13894,14 +13894,14 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             padding: 8px 16px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            background: white;
+            background: var(--bg-secondary);
             cursor: pointer;
             font-size: 0.9em;
             transition: all 0.2s;
         }
         
         .selection-btn:hover {
-            background: #f8f9fa;
+            background: var(--bg-tertiary);
             border-color: #007bff;
         }
         
@@ -13910,7 +13910,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             overflow-y: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
-            background: white;
+            background: var(--bg-secondary);
             margin: 15px 0;
         }
         
@@ -13923,7 +13923,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         }
         
         .guideline-selection-item:hover {
-            background: #f8f9fa;
+            background: var(--bg-tertiary);
         }
         
         .guideline-selection-item:last-child {
@@ -13956,7 +13956,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         
         .guideline-title {
             font-weight: 500;
-            color: #2c3e50;
+            color: var(--text-primary);
             line-height: 1.3;
             flex: 1;
             min-width: 0;
@@ -13964,7 +13964,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         
         .organization {
             font-weight: 500;
-            color: #6c757d;
+            color: var(--text-secondary);
             font-size: 0.9em;
             white-space: nowrap;
         }
@@ -13990,7 +13990,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
         }
         
         .pdf-link:hover {
-            background: #f8f9fa;
+            background: var(--bg-tertiary);
             text-decoration: none;
         }
         
