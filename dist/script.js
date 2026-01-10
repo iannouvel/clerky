@@ -150,19 +150,19 @@ function initializeMobileSettingsOverlay() {
 function detectMobile() {
     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     const isMobileWidth = viewportWidth <= 768;
-    
+
     // User agent detection for additional mobile device detection
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
     const isMobileUA = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
-    
+
     const wasMobile = window.isMobile;
     window.isMobile = isMobileWidth || (isMobileUA && viewportWidth <= 1024);
-    
+
     // If mobile state changed, update layout
     if (wasMobile !== window.isMobile) {
         applyMobileLayout();
     }
-    
+
     return window.isMobile;
 }
 
@@ -173,7 +173,7 @@ function applyMobileLayout() {
     const chatbotLayout = document.getElementById('chatbotLayout');
     const mobileToggleContainer = document.getElementById('mobileViewToggle');
     const mobileSettingsToggleBtn = document.getElementById('mobileSettingsToggleBtn');
-    
+
     // If mainContent doesn't exist yet, try again after a short delay
     if (!mainContent) {
         // Retry after a short delay if elements aren't ready
@@ -184,12 +184,12 @@ function applyMobileLayout() {
         }, 100);
         return;
     }
-    
+
     if (window.isMobile) {
         body.classList.add('mobile-mode');
         mainContent.classList.add('mobile-mode');
         initializeMobileSettingsOverlay();
-        
+
         // Hide mobile toggle buttons (not needed with chatbot layout)
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
@@ -206,7 +206,7 @@ function applyMobileLayout() {
 
         body.classList.remove('mobile-mode');
         mainContent.classList.remove('mobile-mode');
-        
+
         // Hide mobile toggle buttons
         if (mobileToggleContainer) {
             mobileToggleContainer.classList.add('hidden');
@@ -221,15 +221,15 @@ function applyMobileLayout() {
 // Switch between userInput and summary1 views on mobile
 function switchMobileView(view) {
     if (!window.isMobile) return;
-    
+
     const userInputCol = document.querySelector('.user-input-col');
     const summaryCol = document.querySelector('.summary-col');
     const userInputBtn = document.getElementById('mobileViewUserInputBtn');
     const summaryBtn = document.getElementById('mobileViewSummaryBtn');
-    
+
     window.mobileView = view;
     sessionStorage.setItem('mobileView', view);
-    
+
     if (view === 'userInput') {
         if (userInputCol) {
             userInputCol.style.display = 'flex';
@@ -269,7 +269,7 @@ function switchMobileView(view) {
 // Initialize mobile detection on page load and resize
 function initializeMobileDetection() {
     detectMobile();
-    
+
     // Listen for window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
@@ -278,15 +278,15 @@ function initializeMobileDetection() {
             detectMobile();
         }, 150);
     });
-    
+
     // Set up mobile view toggle buttons
     const userInputBtn = document.getElementById('mobileViewUserInputBtn');
     const summaryBtn = document.getElementById('mobileViewSummaryBtn');
-    
+
     if (userInputBtn) {
         userInputBtn.addEventListener('click', () => switchMobileView('userInput'));
     }
-    
+
     if (summaryBtn) {
         summaryBtn.addEventListener('click', () => switchMobileView('summary1'));
     }
@@ -311,7 +311,7 @@ async function checkDisclaimerAcceptance() {
         console.log('[DEBUG] Checking disclaimer acceptance for user:', user.uid);
         const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
         const disclaimerDoc = await getDoc(disclaimerRef);
-        
+
         if (!disclaimerDoc.exists()) {
             console.log('[DEBUG] No disclaimer acceptance found, redirecting to disclaimer page');
             window.location.href = 'disclaimer.html';
@@ -323,13 +323,13 @@ async function checkDisclaimerAcceptance() {
         const acceptanceTime = acceptanceData.acceptanceTime.toDate();
         const today = new Date();
         const isToday = acceptanceTime.toDateString() === today.toDateString();
-        
+
         console.log('[DEBUG] Disclaimer acceptance check:', {
             acceptanceTime: acceptanceTime.toDateString(),
             today: today.toDateString(),
             isToday: isToday
         });
-        
+
         if (!isToday) {
             console.log('[DEBUG] Disclaimer not accepted today, redirecting to disclaimer page');
             window.location.href = 'disclaimer.html';
@@ -351,19 +351,19 @@ async function showPIIReviewInterface(originalText, piiAnalysis) {
     return new Promise((resolve) => {
         // Get consolidated PII matches
         const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
-        
+
         // Add replacement property to each match
         consolidatedMatches.forEach(match => {
             match.replacement = match.replacement || 'redacted';
         });
-        
+
         // If there are no matches to review, return success immediately
         if (consolidatedMatches.length === 0) {
             console.log('[PII REVIEW] No PII matches to review, skipping interface');
-            resolve({ 
-                approved: true, 
-                anonymisedText: originalText, 
-                replacementsCount: 0 
+            resolve({
+                approved: true,
+                anonymisedText: originalText,
+                replacementsCount: 0
             });
             return;
         }
@@ -381,7 +381,7 @@ window.currentPIIReview = null;
 // New function to handle PII review in Summary column - ONE AT A TIME
 function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve) {
     console.log('[PII REVIEW] Starting one-at-a-time review with', consolidatedMatches.length, 'matches');
-    
+
     // Store the review data globally
     window.currentPIIReview = {
         originalText,
@@ -468,7 +468,7 @@ function showCurrentPIIMatch() {
         appendToSummary1(reviewHtml, true);
         // Note: updateSummaryCriticalStatus will be called by appendToSummary1
     }
-    
+
     // Show PII buttons in fixedButtonRow
     const piiActionsGroup = document.getElementById('piiActionsGroup');
     const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
@@ -479,10 +479,10 @@ function showCurrentPIIMatch() {
         piiActionsGroup.style.display = 'flex';
         if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
         if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
-        
+
         // Update Previous button visibility
         if (piiPrevBtn) {
-             piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+            piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
         }
     }
 }
@@ -491,12 +491,12 @@ function showCurrentPIIMatch() {
 window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts = 10) {
     const summary1 = document.getElementById('summary1');
     const reviewContainer = document.getElementById('pii-review-current');
-    
+
     if (!summary1) {
         console.warn('[PII REVIEW] Cannot scroll: summary1 not found');
         return;
     }
-    
+
     if (!reviewContainer) {
         if (maxAttempts > 0) {
             // Retry after a short delay if container isn't ready yet (e.g., still streaming)
@@ -506,7 +506,7 @@ window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts 
         console.warn('[PII REVIEW] Cannot scroll: review container not found after retries');
         return;
     }
-    
+
     // Find the navigation buttons container
     const buttonsContainer = reviewContainer.querySelector('.pii-navigation');
     if (!buttonsContainer) {
@@ -518,17 +518,17 @@ window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts 
         console.warn('[PII REVIEW] Buttons container not found after retries');
         return;
     }
-    
+
     // Wait for buttons to be fully rendered (have dimensions)
     const buttonsRect = buttonsContainer.getBoundingClientRect();
     if (buttonsRect.height === 0 && maxAttempts > 0) {
         setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
         return;
     }
-    
+
     // Calculate scroll position to show buttons
     const summaryRect = summary1.getBoundingClientRect();
-    
+
     // Check if buttons are below the visible area
     if (buttonsRect.bottom > summaryRect.bottom) {
         // Calculate how much to scroll
@@ -546,12 +546,12 @@ window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts 
 }
 
 // Handle user decision on current PII match
-window.handlePIIDecision = function(action) {
+window.handlePIIDecision = function (action) {
     const review = window.currentPIIReview;
     if (!review) return;
 
     const currentMatch = review.consolidatedMatches[review.currentIndex];
-    
+
     // If action is from button click, use it; otherwise get from radio
     let finalAction = action;
     if (action === 'replace' || action === 'keep' || action === 'skip') {
@@ -575,13 +575,13 @@ window.handlePIIDecision = function(action) {
 
     // Move to next match
     review.currentIndex++;
-    
+
     // Show next match or complete
     showCurrentPIIMatch();
 };
 
 // Navigate between PII matches
-window.navigatePIIReview = function(direction) {
+window.navigatePIIReview = function (direction) {
     const review = window.currentPIIReview;
     if (!review) return;
 
@@ -620,7 +620,7 @@ function completePIIReview() {
         if (action === 'replace') {
             const replacement = match.replacement || 'redacted';
             anonymisedText = anonymisedText.replace(
-                new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 
+                new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
                 replacement
             );
             replacements.push({
@@ -630,12 +630,12 @@ function completePIIReview() {
             replacementsCount++;
         }
     });
-    
+
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
     }
-    
+
     // Summarise outcome via status message instead of summary1 content
     const keptOriginal = review.decisions.length - replacementsCount;
     updateUser(
@@ -652,7 +652,7 @@ function completePIIReview() {
 
     // Clean up
     window.currentPIIReview = null;
-    
+
     // Hide PII buttons
     const piiActionsGroup = document.getElementById('piiActionsGroup');
     if (piiActionsGroup) {
@@ -661,7 +661,7 @@ function completePIIReview() {
 }
 
 // Cancel the entire PII review
-window.cancelPIIReview = function() {
+window.cancelPIIReview = function () {
     const review = window.currentPIIReview;
     if (!review) return;
 
@@ -669,12 +669,12 @@ window.cancelPIIReview = function() {
 
     // Clear highlighting
     clearHighlightInEditor();
-    
+
     const reviewContainer = document.getElementById('pii-review-current');
     if (reviewContainer) {
         reviewContainer.remove();
     }
-    
+
     // Inform user via status message
     updateUser('Privacy review cancelled – original text will be used without anonymisation.', false);
 
@@ -736,7 +736,7 @@ function unescapeHtml(text) {
 function applyColoredReplacements(anonymisedText, replacements) {
     // The anonymisedText already has replacements applied, so we need to color the replacement text
     let html = escapeHtml(anonymisedText);
-    
+
     // Color each replacement text (not the original text)
     replacements.forEach(({ findText, replacementText }) => {
         const escapedReplacement = escapeHtml(replacementText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -744,10 +744,10 @@ function applyColoredReplacements(anonymisedText, replacements) {
         const coloredReplacement = `<span style="color: #D97706; font-weight: bold;">${escapeHtml(replacementText)}</span>`;
         html = html.replace(regex, coloredReplacement);
     });
-    
+
     // Convert newlines to <br> for HTML display
     html = html.replace(/\n/g, '<br>');
-    
+
     return `<p>${html}</p>`;
 }
 
@@ -772,7 +772,7 @@ function highlightTextInEditor(text, color = '#3B82F6') {
 
         // Get the current content
         const content = editor.getText();
-        
+
         // Find the text position
         const startPos = content.toLowerCase().indexOf(text.toLowerCase());
         if (startPos === -1) {
@@ -784,10 +784,10 @@ function highlightTextInEditor(text, color = '#3B82F6') {
 
         // Select the text range
         editor.commands.setTextSelection({ from: startPos + 1, to: endPos + 1 });
-        
+
         // Apply the color
         editor.commands.setColor(color);
-        
+
         // Deselect to show the highlighting
         editor.commands.setTextSelection(endPos + 1);
 
@@ -811,7 +811,7 @@ function clearHighlightInEditor() {
     try {
         // Get the current JSON content to preserve structure
         const json = editor.getJSON();
-        
+
         // Recursively remove blue color marks
         const removeBlueHighlight = (node) => {
             if (node.marks) {
@@ -833,7 +833,7 @@ function clearHighlightInEditor() {
 
         // Update the editor content
         editor.commands.setContent(json);
-        
+
         console.log('[HIGHLIGHT] Cleared blue highlighting');
     } catch (error) {
         console.error('[HIGHLIGHT] Error clearing highlights:', error);
@@ -873,7 +873,7 @@ function scrollTextIntoView(text) {
 
         let node;
         let foundNode = null;
-        
+
         // Find the text node containing our text
         while (node = walker.nextNode()) {
             if (node.textContent.toLowerCase().includes(text.toLowerCase())) {
@@ -887,12 +887,12 @@ function scrollTextIntoView(text) {
             const parentElement = foundNode.parentElement;
             if (parentElement) {
                 // Scroll with some padding
-                parentElement.scrollIntoView({ 
-                    behavior: 'smooth', 
+                parentElement.scrollIntoView({
+                    behavior: 'smooth',
                     block: 'center',
                     inline: 'nearest'
                 });
-                
+
                 console.log('[SCROLL] Scrolled text into view:', text.substring(0, 50));
                 return true;
             }
@@ -917,15 +917,15 @@ function getUserInputContent() {
 
 function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null, isHtml = false) {
     const editor = window.editors?.userInput;
-    
+
     if (!editor || !editor.commands) {
         console.error('[PROGRAMMATIC] TipTap editor not ready');
         return;
     }
-    
+
     // Safe content handling for logging
     const safeContent = typeof content === 'string' ? content : (content?.toString() ?? '');
-    
+
     // Log every programmatic change to console
     if (isProgrammatic) {
         console.log('═══════════════════════════════════════════════');
@@ -934,13 +934,13 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
         console.log('Length:', safeContent.length, 'characters');
         console.log('Preview:', safeContent.substring(0, 150) + (safeContent.length > 150 ? '...' : ''));
         console.log('═══════════════════════════════════════════════');
-        
+
         // Store the state BEFORE the change (for undo)
         const stateBeforeChange = editor.getJSON();
-        
+
         // Only apply amber color for PII and Guideline Suggestions changes
         const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
-        
+
         if (isHtml) {
             // Directly set HTML content
             editor.commands.setContent(safeContent);
@@ -954,7 +954,7 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
                 // Color the entire content (for wholesale replacements like AI generation)
                 editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
             }
-            
+
             window.hasColoredChanges = true;
             updateClearFormattingButton();
         } else {
@@ -962,7 +962,7 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
             // First, normalize multiple consecutive blank lines into single blank lines
             const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-            
+
             // Split by double newlines (paragraph breaks) and single newlines (line breaks)
             const paragraphs = normalizedContent.split('\n\n');
             const htmlContent = paragraphs
@@ -975,7 +975,7 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
                 .join('');
             editor.commands.setContent(htmlContent);
         }
-        
+
         // Store change in history AFTER applying the change
         // Store stateBeforeChange for undo, and we'll use the current state for redo
         window.programmaticChangeHistory.push({
@@ -986,7 +986,7 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             editorStateBefore: stateBeforeChange // State BEFORE the change (for undo)
         });
         window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
-        
+
         // Update undo/redo button states
         updateUndoRedoButtons();
     } else {
@@ -997,7 +997,7 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
             // First, normalize multiple consecutive blank lines into single blank lines
             const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-            
+
             // Split by double newlines (paragraph breaks) and single newlines (line breaks)
             const paragraphs = normalizedContent.split('\n\n');
             const htmlContent = paragraphs
@@ -1011,11 +1011,11 @@ function setUserInputContent(content, isProgrammatic = false, changeType = 'Cont
             editor.commands.setContent(htmlContent);
         }
     }
-    
+
     // Manually update Analyse/Reset button visibility after programmatic content changes
     const hasContent = safeContent.trim().length > 0;
     updateAnalyseAndResetButtons(hasContent);
-    
+
     // Update button visibility after content is set (with small delay to ensure TipTap has processed)
     setTimeout(() => {
         updateChatbotButtonVisibility();
@@ -1042,28 +1042,28 @@ function displayRelevantGuidelines(categories) {
         if (typeof relevanceText === 'number') {
             return relevanceText; // Already numeric
         }
-        
+
         // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
         const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
         if (match) {
             return parseFloat(match[1] || match[2]);
         }
-        
+
         // Fallback based on text description
         const text = relevanceText.toLowerCase();
         if (text.includes('high') || text.includes('most')) return 0.9;
         if (text.includes('medium') || text.includes('potentially')) return 0.65;
         if (text.includes('low') || text.includes('less')) return 0.35;
         if (text.includes('not') || text.includes('irrelevant')) return 0.1;
-        
+
         return 0.5; // Default fallback
     }
 
     // Store ALL relevant guidelines (exclude notRelevant) globally
     const allRelevantGuidelines = [
-        ...(categories.mostRelevant || []).map(g => ({...g, category: 'mostRelevant'})),
-        ...(categories.potentiallyRelevant || []).map(g => ({...g, category: 'potentiallyRelevant'})),
-        ...(categories.lessRelevant || []).map(g => ({...g, category: 'lessRelevant'}))
+        ...(categories.mostRelevant || []).map(g => ({ ...g, category: 'mostRelevant' })),
+        ...(categories.potentiallyRelevant || []).map(g => ({ ...g, category: 'potentiallyRelevant' })),
+        ...(categories.lessRelevant || []).map(g => ({ ...g, category: 'lessRelevant' }))
         // Exclude notRelevant as they're truly not applicable for checking
     ];
 
@@ -1132,13 +1132,13 @@ function displayRelevantGuidelines(categories) {
             });
             return '';
         }
-        
+
         // console.log('[DEBUG] Created PDF download link:', {
         //     guidelineId: guideline.id,
         //     guidelineTitle: guideline.title,
         //     downloadUrl: downloadUrl
         // });
-        
+
         return `<a href="${downloadUrl}" target="_blank" title="Download PDF" class="pdf-download-link">📄</a>`;
     }
 
@@ -1240,7 +1240,7 @@ window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 // Helper function to get a clean display title for a guideline
 function getCleanDisplayTitle(g, guidelineData) {
     const gId = g?.id || 'unknown';
-    
+
     // *** DEBUG: Log input parameters ***
     console.log(`[DISPLAY DEBUG] getCleanDisplayTitle for: ${gId}`, {
         g_displayName: g?.displayName,
@@ -1274,7 +1274,7 @@ function getCleanDisplayTitle(g, guidelineData) {
 
         return true;
     }
-    
+
     // If displayName exists, use it directly (it should already be in the correct format: humanFriendlyName + organisation/hospitalTrust)
     // Check g.displayName first since g is the enriched object that should have displayName from localData
     if (g?.displayName) {
@@ -1293,16 +1293,16 @@ function getCleanDisplayTitle(g, guidelineData) {
         }
         console.warn(`[DISPLAY DEBUG] → Ignoring suspicious guidelineData.displayName for ${gId}`);
     }
-    
+
     console.log(`[DISPLAY DEBUG] → No displayName found, using fallback chain`);
-    
+
     // Fallback: Get the best available title, preferring humanFriendlyName over title
-    let rawTitle = guidelineData?.humanFriendlyName || 
-                   g?.humanFriendlyName || 
-                   guidelineData?.title || 
-                   g?.title || 
-                   g?.id;
-    
+    let rawTitle = guidelineData?.humanFriendlyName ||
+        g?.humanFriendlyName ||
+        guidelineData?.title ||
+        g?.title ||
+        g?.id;
+
     // Strip ALL scope/trust/Unknown patterns from the title (only if displayName doesn't exist)
     if (rawTitle && typeof rawTitle === 'string') {
         // Remove patterns like " - Local - UHSussex - Unknown"
@@ -1320,15 +1320,15 @@ function getCleanDisplayTitle(g, guidelineData) {
         // Clean up any double spaces or trailing dashes
         rawTitle = rawTitle.replace(/\s+/g, ' ').replace(/\s*-\s*$/, '').trim();
     }
-    
+
     // If title is just an ID (like "052" or "052-pdf"), try to construct a better name
     if (rawTitle && (rawTitle.match(/^[\d-]+(\.pdf)?$/i) || rawTitle.length < 5)) {
         // Try to get a better name from humanFriendlyName or construct from ID
-        const betterName = guidelineData?.humanFriendlyName || 
-                          g?.humanFriendlyName || 
-                          guidelineData?.title || 
-                          g?.title;
-        
+        const betterName = guidelineData?.humanFriendlyName ||
+            g?.humanFriendlyName ||
+            guidelineData?.title ||
+            g?.title;
+
         if (betterName && betterName !== rawTitle && !betterName.includes('Unknown')) {
             rawTitle = betterName;
             // Strip patterns again from the better name
@@ -1345,7 +1345,7 @@ function getCleanDisplayTitle(g, guidelineData) {
             rawTitle = `Guideline ${idPart}`;
         }
     }
-    
+
     const finalResult = rawTitle || g?.id;
     console.log(`[DISPLAY DEBUG] → Final result for ${gId}: "${finalResult}"`);
     return finalResult;
@@ -1364,20 +1364,20 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         if (typeof relevanceText === 'number') {
             return relevanceText; // Already numeric
         }
-        
+
         // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
         const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
         if (match) {
             return parseFloat(match[1] || match[2]);
         }
-        
+
         // Fallback based on text description
         const text = relevanceText.toLowerCase();
         if (text.includes('high') || text.includes('most')) return 0.9;
         if (text.includes('medium') || text.includes('potentially')) return 0.65;
         if (text.includes('low') || text.includes('less')) return 0.35;
         if (text.includes('not') || text.includes('irrelevant')) return 0.1;
-        
+
         return 0.5; // Default fallback
     }
 
@@ -1434,13 +1434,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             value: relevanceValue,
             type: typeof relevanceValue
         });
-        
+
         // If it's already a number, format it nicely
         if (typeof relevanceValue === 'number') {
             const percentage = Math.round(relevanceValue * 100);
             return `${percentage}%`;
         }
-        
+
         // If it's a string, extract numeric score
         if (typeof relevanceValue === 'string') {
             const numericScore = extractRelevanceScoreLocal(relevanceValue);
@@ -1452,7 +1452,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             });
             return `${percentage}%`;
         }
-        
+
         // Fallback for unexpected types
         console.warn('[DEBUG] Unexpected relevance value type:', typeof relevanceValue, relevanceValue);
         return '50%';
@@ -1474,7 +1474,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const pdfLink = createPdfViewerLink(g);
             // Use clean display title helper
             const guidelineData = window.globalGuidelines?.[g.id];
-            
+
             const displayTitle = getCleanDisplayTitle(g, guidelineData);
             // If displayName exists, it already includes organisation/hospitalTrust, so don't add it again
             const hasDisplayName = guidelineData?.displayName || g.displayName;
@@ -1485,10 +1485,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             }
             // Include PDF link if available
             const pdfLinkHtml = pdfLink || '';
-            
-            // Only pre-check the first (highest-scoring) guideline
-            const isChecked = index === 0 ? 'checked="checked"' : '';
-            
+
+            // Pre-check all relevant guidelines for parallel analysis
+            const isChecked = 'checked="checked"';
+
             htmlContent += `
                 <div class="guideline-item">
                     <label class="guideline-checkbox-label">
@@ -1662,10 +1662,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Append the generated HTML to the summary view - PERMANENT so it stays visible
     appendToSummary1(htmlContent, false, false); // Permanent - stays until user processes guidelines
-    
+
     // Show the selection buttons in the button container
     showSelectionButtons();
-    
+
     // Apply spacing styles via JavaScript (CSS gets overridden by #summary1 * reset)
     setTimeout(() => {
         document.querySelectorAll('.guideline-checkbox').forEach(el => el.style.cssText += 'margin-right: 4px !important;');
@@ -1679,15 +1679,15 @@ function updateProcessButtonText() {
     const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
     const count = checkedCheckboxes.length;
     const processBtn = document.querySelector('.process-selected-btn');
-    
+
     if (processBtn) {
         const btnText = processBtn.querySelector('.btn-text');
         const isSingular = count === 1;
-        
+
         if (btnText) {
             btnText.textContent = isSingular ? 'Process Selected Guideline' : 'Process Selected Guidelines';
         }
-        
+
         // Update title attribute as well
         processBtn.title = isSingular ? 'Process selected guideline' : 'Process selected guidelines';
     }
@@ -1696,7 +1696,7 @@ function updateProcessButtonText() {
 // Function to show update messages to the user in the fixed button row
 function updateUser(message, isLoading = false) {
     const statusEl = document.getElementById('serverStatusMessage');
-    
+
     if (!statusEl) {
         console.warn('[STATUS] serverStatusMessage element not found');
         return;
@@ -1754,14 +1754,14 @@ function showSelectionButtons() {
         console.warn('[DEBUG] Fixed button row not found');
         return;
     }
-    
+
     // Remove existing buttons if any (cleanup first)
     const existingGroup = document.getElementById('selectionButtonsGroup');
     if (existingGroup) {
         console.log('[DEBUG] Removing existing selection buttons before adding new ones');
         existingGroup.remove();
     }
-    
+
     // Create the buttons group
     const buttonsGroup = document.createElement('div');
     buttonsGroup.id = 'selectionButtonsGroup';
@@ -1780,7 +1780,7 @@ function showSelectionButtons() {
             ❌ Deselect All
         </button>
     `;
-    
+
     // Insert after Analyse button (before clerking buttons)
     const analyseBtn = document.getElementById('analyseBtn');
     if (analyseBtn && analyseBtn.nextSibling) {
@@ -1788,26 +1788,26 @@ function showSelectionButtons() {
     } else {
         buttonContainer.appendChild(buttonsGroup);
     }
-    
+
     // Update button text based on initial selection count
     updateProcessButtonText();
-    
+
     // Use event delegation on document to handle checkbox changes (works for dynamically created checkboxes)
     // Remove any existing listener first to avoid duplicates
     if (window.guidelineCheckboxChangeHandler) {
         document.removeEventListener('change', window.guidelineCheckboxChangeHandler);
     }
-    
+
     // Create and store the handler function
-    window.guidelineCheckboxChangeHandler = function(event) {
+    window.guidelineCheckboxChangeHandler = function (event) {
         if (event.target && event.target.classList.contains('guideline-checkbox')) {
             updateProcessButtonText();
         }
     };
-    
+
     // Add event listener using delegation
     document.addEventListener('change', window.guidelineCheckboxChangeHandler);
-    
+
     console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
 }
 
@@ -1823,7 +1823,7 @@ function hideSelectionButtons() {
 // Global reset handler - clears input, summary, and action UIs when idle
 function handleGlobalReset() {
     console.log('[DEBUG] Reset button clicked');
-    
+
     // Stop any active analysis/workflow
     if (window.analysisAbortController) {
         console.log('[DEBUG] Aborting active analysis');
@@ -1835,13 +1835,13 @@ function handleGlobalReset() {
         // No args → reset to default idle state ('Analyse', no spinner)
         updateAnalyseButtonProgress();
     }
-    
+
     // Clear user input (TipTap editor)
     const editor = window.editors?.userInput;
     if (editor) {
         editor.commands.setContent('');
     }
-    
+
     // Clear summary content (except loading spinner)
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
@@ -1852,13 +1852,13 @@ function handleGlobalReset() {
             }
         });
     }
-    
+
     // Remove any injected clinical issues panel
     const clinicalPanel = document.getElementById('clinicalIssuesPanel');
     if (clinicalPanel && clinicalPanel.parentNode) {
         clinicalPanel.parentNode.removeChild(clinicalPanel);
     }
-    
+
     // Hide any clerking or guideline selection buttons
     const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
     if (clerkingButtonsGroup) {
@@ -1909,13 +1909,13 @@ function handleGlobalReset() {
             input.selectedIndex = 0;
         }
     });
-    
+
     // Clear transient messages and hide summary section if now empty
     if (typeof removeTransientMessages === 'function') {
         removeTransientMessages();
     }
     updateSummaryVisibility();
-    
+
     // Reset processing flags and sequential state after UI has been cleared
     window.workflowInProgress = false;
     window.sequentialProcessingActive = false;
@@ -1926,7 +1926,7 @@ function handleGlobalReset() {
     // Update analyse/reset button state based on cleared content
     const hasContent = !!window.editors?.userInput?.getText()?.trim().length;
     updateAnalyseAndResetButtons(hasContent);
-    
+
     console.log('[DEBUG] Global reset completed');
 }
 
@@ -1949,7 +1949,7 @@ let guidanceDataLoaded = false;
 // Clinical data storage
 let clinicalIssues = {
     obstetrics: [],
-                gynaecology: []
+    gynaecology: []
 };
 let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
@@ -1987,13 +1987,13 @@ function initializeMarked() {
         console.log('Creating marked script element...');
         const markedScript = document.createElement('script');
         markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-        markedScript.onload = function() {
+        markedScript.onload = function () {
             console.log('Marked script loaded successfully');
             window.marked = marked;
             console.log('Marked library initialized');
             resolve();
         };
-        markedScript.onerror = function(error) {
+        markedScript.onerror = function (error) {
             console.error('Error loading marked library:', error);
             reject(error);
         };
@@ -2003,7 +2003,7 @@ function initializeMarked() {
 }
 
 // Make loadClinicalIssues available globally
-window.loadClinicalIssues = async function() {
+window.loadClinicalIssues = async function () {
     console.log('Starting loadClinicalIssues...');
     if (clinicalIssuesLoaded) {
         console.log('Clinical issues already loaded');
@@ -2059,18 +2059,18 @@ function showMainContent() {
 // Helper to sync guidelines in batches to avoid timeout
 async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) {
     console.log(`[BATCH_SYNC] Starting batch sync with batchSize=${batchSize}, maxBatches=${maxBatches}`);
-    
+
     let totalProcessed = 0;
     let totalSucceeded = 0;
     let totalFailed = 0;
     let batchCount = 0;
     let remaining = 1; // Start with 1 to enter the loop
-    
+
     try {
         while (remaining > 0 && batchCount < maxBatches) {
             batchCount++;
             console.log(`[BATCH_SYNC] Starting batch ${batchCount}...`);
-            
+
             const response = await fetch(`${window.SERVER_URL}/syncGuidelinesBatch`, {
                 method: 'POST',
                 headers: {
@@ -2079,35 +2079,35 @@ async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) 
                 },
                 body: JSON.stringify({ batchSize })
             });
-            
+
             if (!response.ok) {
                 console.error(`[BATCH_SYNC] Batch ${batchCount} failed with status ${response.status}`);
                 break;
             }
-            
+
             const result = await response.json();
             console.log(`[BATCH_SYNC] Batch ${batchCount} result:`, result);
-            
+
             totalProcessed += result.processed || 0;
             totalSucceeded += result.succeeded || 0;
             totalFailed += result.failed || 0;
             remaining = result.remaining || 0;
-            
+
             console.log(`[BATCH_SYNC] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
-            
+
             // If no more remaining, we're done
             if (remaining === 0) {
                 console.log('[BATCH_SYNC] All guidelines synced!');
                 break;
             }
-            
+
             // Small delay between batches to avoid overwhelming the server
             if (remaining > 0) {
                 console.log(`[BATCH_SYNC] Waiting 2 seconds before next batch...`);
                 await new Promise(resolve => setTimeout(resolve, 2000));
             }
         }
-        
+
         return {
             success: true,
             totalProcessed,
@@ -2116,7 +2116,7 @@ async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) 
             batchesRun: batchCount,
             remaining
         };
-        
+
     } catch (error) {
         console.error('[BATCH_SYNC] Error during batch sync:', error);
         return {
@@ -2132,18 +2132,18 @@ async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) 
 // Helper to repair content for guidelines with missing content/condensed
 async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
     console.log(`[CONTENT_REPAIR] Starting content repair with batchSize=${batchSize}, maxBatches=${maxBatches}`);
-    
+
     let totalProcessed = 0;
     let totalSucceeded = 0;
     let totalFailed = 0;
     let batchCount = 0;
     let remaining = 1; // Start with 1 to enter the loop
-    
+
     try {
         while (remaining > 0 && batchCount < maxBatches) {
             batchCount++;
             console.log(`[CONTENT_REPAIR] Starting batch ${batchCount}...`);
-            
+
             const response = await fetch(`${window.SERVER_URL}/repairGuidelineContent`, {
                 method: 'POST',
                 headers: {
@@ -2152,35 +2152,35 @@ async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
                 },
                 body: JSON.stringify({ batchSize })
             });
-            
+
             if (!response.ok) {
                 console.error(`[CONTENT_REPAIR] Batch ${batchCount} failed with status ${response.status}`);
                 break;
             }
-            
+
             const result = await response.json();
             console.log(`[CONTENT_REPAIR] Batch ${batchCount} result:`, result);
-            
+
             totalProcessed += result.processed || 0;
             totalSucceeded += result.succeeded || 0;
             totalFailed += result.failed || 0;
             remaining = result.remaining || 0;
-            
+
             console.log(`[CONTENT_REPAIR] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
-            
+
             // If no more remaining, we're done
             if (remaining === 0) {
                 console.log('[CONTENT_REPAIR] All guidelines repaired!');
                 break;
             }
-            
+
             // Small delay between batches to avoid overwhelming the server
             if (remaining > 0) {
                 console.log(`[CONTENT_REPAIR] Waiting 3 seconds before next batch...`);
                 await new Promise(resolve => setTimeout(resolve, 3000));
             }
         }
-        
+
         return {
             success: true,
             totalProcessed,
@@ -2189,7 +2189,7 @@ async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
             batchesRun: batchCount,
             remaining
         };
-        
+
     } catch (error) {
         console.error('[CONTENT_REPAIR] Error during content repair:', error);
         return {
@@ -2203,16 +2203,16 @@ async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
 }
 
 // Make repair function available globally for console use
-window.repairGuidelineContent = async function() {
+window.repairGuidelineContent = async function () {
     const user = auth.currentUser;
     if (!user) {
         console.error('[CONTENT_REPAIR] User not authenticated');
         return;
     }
-    
+
     const idToken = await user.getIdToken();
     const result = await repairGuidelineContent(idToken, 3, 20); // 3 at a time, max 20 batches
-    
+
     if (result.success) {
         console.log('[CONTENT_REPAIR] ✅ Repair completed:', result);
         // Reload guidelines after repair
@@ -2221,15 +2221,15 @@ window.repairGuidelineContent = async function() {
     } else {
         console.error('[CONTENT_REPAIR] ❌ Repair failed:', result);
     }
-    
+
     return result;
 };
 
 // Helper function to find missing guidelines between GitHub and Firestore
-window.findMissingGuidelines = async function() {
+window.findMissingGuidelines = async function () {
     try {
         console.log('[MISSING_GUIDELINES] Comparing GitHub and Firestore...');
-        
+
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
@@ -2251,7 +2251,7 @@ window.findMissingGuidelines = async function() {
 
         const guidelinesString = await response.text();
         const githubGuidelines = guidelinesString.split('\n').filter(line => line.trim());
-        
+
         // Get Firestore guidelines
         console.log('[MISSING_GUIDELINES] Fetching Firestore guidelines...');
         const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
@@ -2260,14 +2260,14 @@ window.findMissingGuidelines = async function() {
         firestoreSnapshot.forEach(doc => {
             firestoreIds.add(doc.id);
         });
-        
+
         console.log('[MISSING_GUIDELINES] GitHub count:', githubGuidelines.length);
         console.log('[MISSING_GUIDELINES] Firestore count:', firestoreIds.size);
-        
+
         // First, detect duplicates in GitHub (different filenames that generate the same ID)
         const githubIdMap = new Map(); // Map of ID -> array of filenames
         const duplicates = [];
-        
+
         for (const githubName of githubGuidelines) {
             // Match server.js generateCleanDocId() logic exactly:
             const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
@@ -2277,30 +2277,30 @@ window.findMissingGuidelines = async function() {
                 .replace(/\s+/g, '-')
                 .replace(/-+/g, '-')
                 .replace(/^-|-$/g, '');
-            
+
             const extension = githubName.match(/\.[^/.]+$/)?.[0];
             if (extension && extension.toLowerCase() === '.pdf') {
                 slug = `${slug}-pdf`;
             }
-            
+
             if (!githubIdMap.has(slug)) {
                 githubIdMap.set(slug, []);
             }
             githubIdMap.get(slug).push(githubName);
         }
-        
+
         // Find duplicates
         for (const [id, filenames] of githubIdMap.entries()) {
             if (filenames.length > 1) {
                 duplicates.push({ id, filenames, count: filenames.length });
             }
         }
-        
+
         if (duplicates.length > 0) {
             console.log(`[MISSING_GUIDELINES] ⚠️ Found ${duplicates.length} duplicate IDs in GitHub:`);
             console.table(duplicates);
         }
-        
+
         // Find missing guidelines
         // Use the same ID generation logic as server.js generateCleanDocId()
         const missing = [];
@@ -2308,7 +2308,7 @@ window.findMissingGuidelines = async function() {
             // Match server.js generateCleanDocId() logic exactly:
             // 1. Remove file extension
             const withoutExtension = githubName.replace(/\.[^/.]+$/, '');
-            
+
             // 2. Convert to slug: lowercase, replace special chars with hyphens
             let slug = withoutExtension
                 .toLowerCase()
@@ -2316,15 +2316,15 @@ window.findMissingGuidelines = async function() {
                 .replace(/\s+/g, '-') // Replace spaces with hyphens
                 .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
                 .replace(/^-|-$/g, ''); // Remove leading/trailing hyphens
-            
+
             // 3. Add file extension back if it was a PDF
             const extension = githubName.match(/\.[^/.]+$/)?.[0];
             if (extension && extension.toLowerCase() === '.pdf') {
                 slug = `${slug}-pdf`;
             }
-            
+
             const cleanId = slug;
-            
+
             if (!firestoreIds.has(cleanId)) {
                 missing.push({
                     filename: githubName,
@@ -2332,10 +2332,10 @@ window.findMissingGuidelines = async function() {
                 });
             }
         }
-        
+
         console.log('[MISSING_GUIDELINES] 📋 Missing guidelines:', missing.length);
         console.table(missing);
-        
+
         // Also log in a copyable format
         if (missing.length > 0) {
             console.log('\n[MISSING_GUIDELINES] ===== COPYABLE FORMAT =====');
@@ -2347,7 +2347,7 @@ window.findMissingGuidelines = async function() {
         } else {
             console.log('[MISSING_GUIDELINES] ✅ No missing guidelines - GitHub and Firestore are in sync!');
         }
-        
+
         // Return in multiple formats for easy access
         const result = {
             count: missing.length,
@@ -2355,7 +2355,7 @@ window.findMissingGuidelines = async function() {
             duplicates: duplicates,
             duplicateCount: duplicates.length,
             // String format for easy copying
-            summary: missing.length > 0 
+            summary: missing.length > 0
                 ? missing.map((item, i) => `${i + 1}. ${item.filename} (ID: ${item.expectedId})`).join('\n')
                 : 'No missing guidelines',
             // Array of just filenames
@@ -2363,13 +2363,13 @@ window.findMissingGuidelines = async function() {
             // Array of just IDs
             ids: missing.map(item => item.expectedId),
             // Explanation of the discrepancy
-            explanation: duplicates.length > 0 
+            explanation: duplicates.length > 0
                 ? `GitHub has ${githubGuidelines.length} files but ${githubIdMap.size} unique IDs. ${duplicates.length} duplicate ID(s) account for the difference.`
                 : 'GitHub and Firestore counts match.'
         };
-        
+
         console.log('[MISSING_GUIDELINES] Result object:', result);
-        
+
         return result;
     } catch (error) {
         console.error('[MISSING_GUIDELINES] Error:', error);
@@ -2378,27 +2378,27 @@ window.findMissingGuidelines = async function() {
 };
 
 // Helper function to compare duplicate files and recommend which to keep
-window.compareDuplicates = async function(duplicateId) {
+window.compareDuplicates = async function (duplicateId) {
     try {
         console.log('[COMPARE_DUPLICATES] Analyzing duplicate files for ID:', duplicateId);
-        
+
         const user = window.auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
         const idToken = await user.getIdToken();
-        
+
         // First, find the duplicates
         const result = await findMissingGuidelines();
         const duplicate = result.duplicates.find(d => d.id === duplicateId);
-        
+
         if (!duplicate) {
             console.error('[COMPARE_DUPLICATES] No duplicate found with ID:', duplicateId);
             return null;
         }
-        
+
         console.log('[COMPARE_DUPLICATES] Found duplicate:', duplicate);
-        
+
         // Get file info from GitHub for each duplicate
         const fileInfoPromises = duplicate.filenames.map(async (filename) => {
             try {
@@ -2410,11 +2410,11 @@ window.compareDuplicates = async function(duplicateId) {
                         }
                     }
                 );
-                
+
                 if (!response.ok) {
                     return { filename, error: 'Failed to fetch' };
                 }
-                
+
                 const data = await response.json();
                 return {
                     filename: filename,
@@ -2426,14 +2426,14 @@ window.compareDuplicates = async function(duplicateId) {
                 return { filename, error: error.message };
             }
         });
-        
+
         const fileInfos = await Promise.all(fileInfoPromises);
-        
+
         // Check which one is in Firestore
         const guidelinesCol = window.firestoreCollection(window.db, 'guidelines');
         const firestoreSnapshot = await window.firestoreGetDocs(guidelinesCol);
         let firestoreMatch = null;
-        
+
         firestoreSnapshot.forEach(doc => {
             if (doc.id === duplicateId) {
                 firestoreMatch = {
@@ -2445,11 +2445,11 @@ window.compareDuplicates = async function(duplicateId) {
                 };
             }
         });
-        
+
         console.log('[COMPARE_DUPLICATES] Firestore document:', firestoreMatch);
         console.log('[COMPARE_DUPLICATES] File information:');
         console.table(fileInfos);
-        
+
         // Make recommendation
         let recommendation = {
             duplicateId: duplicateId,
@@ -2458,10 +2458,10 @@ window.compareDuplicates = async function(duplicateId) {
             recommendation: null,
             reasoning: []
         };
-        
+
         // Determine which file to keep
         const validFiles = fileInfos.filter(f => !f.error);
-        
+
         if (validFiles.length === 0) {
             recommendation.recommendation = 'Cannot determine - no file info available';
         } else if (validFiles.length === 1) {
@@ -2470,16 +2470,16 @@ window.compareDuplicates = async function(duplicateId) {
         } else {
             // Compare file sizes - larger is usually better (more complete)
             const largestFile = validFiles.reduce((max, f) => f.size > max.size ? f : max);
-            
+
             // Check if one matches Firestore
             let firestoreFile = null;
             if (firestoreMatch) {
-                firestoreFile = validFiles.find(f => 
-                    f.filename === firestoreMatch.filename || 
+                firestoreFile = validFiles.find(f =>
+                    f.filename === firestoreMatch.filename ||
                     f.filename === firestoreMatch.originalFilename
                 );
             }
-            
+
             if (firestoreFile) {
                 recommendation.recommendation = `Keep: ${firestoreFile.filename}`;
                 recommendation.reasoning.push('This file is currently stored in Firestore');
@@ -2490,7 +2490,7 @@ window.compareDuplicates = async function(duplicateId) {
                 recommendation.toDelete = validFiles.filter(f => f.filename !== largestFile.filename).map(f => f.filename);
             }
         }
-        
+
         console.log('\n[COMPARE_DUPLICATES] ===== RECOMMENDATION =====');
         console.log('Duplicate ID:', duplicateId);
         console.log('Files:', duplicate.filenames);
@@ -2502,7 +2502,7 @@ window.compareDuplicates = async function(duplicateId) {
         console.log('');
         console.log('Reasoning:', recommendation.reasoning.join('; '));
         console.log('[COMPARE_DUPLICATES] ==============================\n');
-        
+
         return recommendation;
     } catch (error) {
         console.error('[COMPARE_DUPLICATES] Error:', error);
@@ -2514,7 +2514,7 @@ window.compareDuplicates = async function(duplicateId) {
 async function getGitHubGuidelinesCount() {
     try {
         console.log('[DEBUG] Getting GitHub guidelines count...');
-        
+
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
@@ -2552,10 +2552,10 @@ function checkMetadataCompleteness(guideline) {
         'summary',
         'keywords'
     ];
-    
+
     const missingFields = [];
     const incompleteFields = [];
-    
+
     essentialFields.forEach(field => {
         const value = guideline[field];
         if (!value || value === 'N/A' || value === 'Not available' || value === '' || value === null || value === undefined) {
@@ -2566,7 +2566,7 @@ function checkMetadataCompleteness(guideline) {
             incompleteFields.push(field);
         }
     });
-    
+
     return {
         isComplete: missingFields.length === 0 && incompleteFields.length === 0,
         missingFields,
@@ -2577,20 +2577,20 @@ function checkMetadataCompleteness(guideline) {
 
 // Function to automatically enhance metadata for guidelines with gaps
 async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
-    const { 
-        maxConcurrent = 3, 
-        minCompleteness = 70, 
+    const {
+        maxConcurrent = 3,
+        minCompleteness = 70,
         dryRun = false,
-        onProgress = null 
+        onProgress = null
     } = options;
-    
+
     // Blacklist of guidelines with known content extraction issues
     const PROBLEMATIC_GUIDELINES = [
         'piis0002937822004781-pdf',  // PDF extraction fails - corrupted or protected PDF
         'PIIS0002937822004781',      // Alternative ID format
         // Add more problematic guidelines here as discovered
     ];
-    
+
     // Prevent multiple concurrent enhancement runs in the same session
     if (window.enhancementInProgress) {
         console.log('[METADATA] Enhancement already in progress, skipping...');
@@ -2601,25 +2601,25 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
             enhanced: 0
         };
     }
-    
+
     window.enhancementInProgress = true;
-    
+
     try {
         console.log('[METADATA] Starting automatic metadata enhancement...');
-        
+
         // Identify guidelines that need enhancement
         const guidelinesNeedingEnhancement = guidelines.filter(guideline => {
             // Skip blacklisted guidelines
-            if (PROBLEMATIC_GUIDELINES.includes(guideline.id) || 
+            if (PROBLEMATIC_GUIDELINES.includes(guideline.id) ||
                 PROBLEMATIC_GUIDELINES.includes(guideline.title) ||
                 PROBLEMATIC_GUIDELINES.includes(guideline.filename) ||
                 PROBLEMATIC_GUIDELINES.includes(guideline.originalFilename)) {
                 console.log(`[METADATA] Skipping blacklisted guideline: ${guideline.title || guideline.id}`);
                 return false;
             }
-            
+
             const completeness = checkMetadataCompleteness(guideline);
-            
+
             // Skip if already processed recently (using multiple fields for tracking)
             const lastEnhanced = guideline.lastMetadataEnhancement || guideline.lastUpdated || guideline.dateAdded;
             if (lastEnhanced) {
@@ -2629,16 +2629,16 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                     return false;
                 }
             }
-            
+
             // Also skip if completeness is already good enough
             if (completeness.completenessScore >= minCompleteness) {
                 console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - already complete (${completeness.completenessScore.toFixed(1)}%)`);
                 return false;
             }
-            
+
             return true;
         });
-        
+
         if (guidelinesNeedingEnhancement.length === 0) {
             console.log('[METADATA] All guidelines have complete metadata');
             return {
@@ -2648,9 +2648,9 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                 enhanced: 0
             };
         }
-        
+
         console.log(`[METADATA] Found ${guidelinesNeedingEnhancement.length} guidelines needing enhancement`);
-        
+
         if (dryRun) {
             const report = guidelinesNeedingEnhancement.map(g => {
                 const completeness = checkMetadataCompleteness(g);
@@ -2662,7 +2662,7 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                     incompleteFields: completeness.incompleteFields
                 };
             });
-            
+
             console.log('[METADATA] Dry run report:', report);
             return {
                 success: true,
@@ -2670,19 +2670,19 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                 dryRunReport: report
             };
         }
-        
+
         let processed = 0;
         let enhanced = 0;
         const errors = [];
-        
+
         // Process guidelines in batches to avoid overwhelming the server
         for (let i = 0; i < guidelinesNeedingEnhancement.length; i += maxConcurrent) {
             const batch = guidelinesNeedingEnhancement.slice(i, i + maxConcurrent);
-            
+
             const batchPromises = batch.map(async (guideline) => {
                 try {
                     console.log(`[METADATA] Enhancing metadata for: ${guideline.title || guideline.id}`);
-                    
+
                     if (onProgress) {
                         onProgress({
                             current: processed + 1,
@@ -2690,46 +2690,46 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
                             guideline: guideline.title || guideline.id
                         });
                     }
-                    
+
                     // Check what fields are missing
                     const completeness = checkMetadataCompleteness(guideline);
                     const fieldsToEnhance = [...completeness.missingFields, ...completeness.incompleteFields];
-                    
+
                     // Call the enhancement function
                     await enhanceGuidelineMetadata(guideline.id, fieldsToEnhance);
                     enhanced++;
-                    
+
                     console.log(`[METADATA] Successfully enhanced: ${guideline.title || guideline.id}`);
-                    
-                                 } catch (error) {
-                     console.error(`[METADATA] Error enhancing ${guideline.title || guideline.id}:`, error);
-                     
-                     // Check if it's a "no content" error and handle gracefully
-                     if (error.message && error.message.includes('No content available for AI analysis')) {
-                         console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - no content available for analysis`);
-                     } else {
-                         errors.push({
-                             guidelineId: guideline.id,
-                             title: guideline.title,
-                             error: error.message
-                         });
-                     }
-                 }
-                
+
+                } catch (error) {
+                    console.error(`[METADATA] Error enhancing ${guideline.title || guideline.id}:`, error);
+
+                    // Check if it's a "no content" error and handle gracefully
+                    if (error.message && error.message.includes('No content available for AI analysis')) {
+                        console.log(`[METADATA] Skipping ${guideline.title || guideline.id} - no content available for analysis`);
+                    } else {
+                        errors.push({
+                            guidelineId: guideline.id,
+                            title: guideline.title,
+                            error: error.message
+                        });
+                    }
+                }
+
                 processed++;
             });
-            
+
             // Wait for batch to complete
             await Promise.all(batchPromises);
-            
+
             // Small delay between batches to avoid rate limiting
             if (i + maxConcurrent < guidelinesNeedingEnhancement.length) {
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
-        
+
         console.log(`[METADATA] Enhancement complete: ${enhanced}/${processed} guidelines enhanced`);
-        
+
         return {
             success: true,
             message: `Enhanced ${enhanced} out of ${processed} guidelines`,
@@ -2737,7 +2737,7 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
             enhanced,
             errors: errors.length > 0 ? errors : undefined
         };
-        
+
     } catch (error) {
         console.error('[METADATA] Error in auto enhancement:', error);
         return {
@@ -2754,15 +2754,15 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
 async function fetchContentFromStorage(storageUrl) {
     try {
         if (!storageUrl) return null;
-        
+
         console.log('[STORAGE] Fetching content from:', storageUrl);
         const response = await fetch(storageUrl);
-        
+
         if (!response.ok) {
             console.error('[STORAGE] Failed to fetch from Storage:', response.status);
             return null;
         }
-        
+
         const content = await response.text();
         console.log('[STORAGE] Successfully fetched content:', content.length, 'characters');
         return content;
@@ -2779,7 +2779,7 @@ async function getGuidelineContent(guideline) {
         condensed: guideline.condensed,
         summary: guideline.summary
     };
-    
+
     // Fetch from Storage if content is stored there
     if (guideline.contentInStorage || guideline.contentStorageUrl) {
         if (guideline.contentStorageUrl && !guideline.content) {
@@ -2792,7 +2792,7 @@ async function getGuidelineContent(guideline) {
             result.summary = await fetchContentFromStorage(guideline.summaryStorageUrl);
         }
     }
-    
+
     return result;
 }
 
@@ -2803,28 +2803,28 @@ async function loadGuidelinesFromFirestore() {
     // Prevent multiple simultaneous guideline loads
     if (window.guidelinesLoading || window.guidelinesLoaded) {
         console.log('[DEBUG] ⏭️ Guidelines loading already in progress or completed, skipping...');
-        
+
         // Return cached guidelines if available
         if (window.guidelines && window.guidelines.length > 0) {
             console.log('[DEBUG] Returning cached guidelines:', window.guidelines.length);
             return window.guidelines;
         }
-        
+
         // If we don't have cached guidelines but think they're loaded, reset the flag
         console.log('[DEBUG] Guidelines marked as loaded but cache is empty, resetting...');
         window.guidelinesLoaded = false;
         window.guidelinesLoading = false;
     }
-    
+
     window.guidelinesLoading = true;
-    
+
     try {
         // Try to get from IndexedDB cache first
         if (window.cacheManager) {
             const cachedGuidelines = await window.cacheManager.getGuidelines();
             if (cachedGuidelines && cachedGuidelines.length > 0) {
                 console.log('[DEBUG] ⚡ Loaded guidelines from IndexedDB cache:', cachedGuidelines.length);
-                
+
                 // Store in global variables
                 window.guidelinesList = cachedGuidelines.map(g => ({
                     id: g.id,
@@ -2858,9 +2858,9 @@ async function loadGuidelinesFromFirestore() {
                 return cachedGuidelines;
             }
         }
-        
+
         console.log('[DEBUG] Loading guidelines from Firestore...');
-        
+
         // Get user ID token - only refresh if expired (not forcing refresh for better performance)
         const user = auth.currentUser;
         if (!user) {
@@ -2888,7 +2888,7 @@ async function loadGuidelinesFromFirestore() {
         const guidelines = result.guidelines;
         const firestoreCount = guidelines.length;
         console.log('[DEBUG] Loaded guidelines from Firestore:', firestoreCount);
-        
+
         // Save to IndexedDB cache in background
         if (window.cacheManager) {
             window.cacheManager.saveGuidelines(guidelines).catch(err => {
@@ -2900,7 +2900,7 @@ async function loadGuidelinesFromFirestore() {
 
         // Check content status - reduced logging for cleaner startup
         const contentStatus = checkContentStatus(guidelines);
-        
+
         // Only log if there are significant content issues
         if (contentStatus.stats.nullContent > 0 || contentStatus.stats.nullCondensed > 0) {
             console.log('[CONTENT_STATUS] Missing content detected:', {
@@ -2941,9 +2941,9 @@ async function loadGuidelinesFromFirestore() {
 
         console.log('[DEBUG] Guidelines loaded and stored in global variables');
         window.guidelinesLoaded = true;
-        
+
         // Firestore listener setup moved to background - see setupGuidelinesListenerInBackground()
-        
+
         return guidelines;
     } catch (error) {
         console.error('[DEBUG] Error loading guidelines from Firestore:', error);
@@ -2956,21 +2956,21 @@ async function loadGuidelinesFromFirestore() {
 // Function to set up Firestore listener for guideline changes
 function setupGuidelinesListener() {
     console.log('[FIRESTORE_LISTENER] Setting up guidelines change listener...');
-    
+
     // Track the previous count to detect changes
     let previousGuidelineCount = 0;
     let isInitialLoad = true;
-    
+
     try {
         // Listen for changes to the guidelines collection using v9 syntax
         window.guidelinesListener = onSnapshot(collection(db, 'guidelines'), async (snapshot) => {
             const currentCount = snapshot.size;
-            
+
             // Get changed documents
             const changes = snapshot.docChanges();
             const addedDocs = changes.filter(change => change.type === 'added');
             const modifiedDocs = changes.filter(change => change.type === 'modified');
-            
+
             // Check if this is the initial load
             if (isInitialLoad) {
                 console.log(`[FIRESTORE_LISTENER] Initial load detected - ${currentCount} guidelines in collection`);
@@ -2978,25 +2978,25 @@ function setupGuidelinesListener() {
                 isInitialLoad = false;
                 return; // Skip processing on initial load
             }
-            
+
             // Only log and process if there are actual changes
             if (addedDocs.length > 0 || modifiedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] Guidelines collection changed - Count: ${currentCount} (previous: ${previousGuidelineCount})`);
             }
-            
+
             // Check if count has changed (new guidelines added or removed)
             const countChanged = currentCount !== previousGuidelineCount;
-            
+
             if (addedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] ${addedDocs.length} new guidelines detected`);
-                
+
                 // Process new guidelines for content
                 for (const change of addedDocs) {
                     const guidelineData = change.doc.data();
                     const guidelineId = change.doc.id;
-                    
+
                     console.log(`[FIRESTORE_LISTENER] Processing new guideline: ${guidelineData.title || guidelineId}`);
-                    
+
                     // Trigger content processing if needed
                     if (!guidelineData.content || !guidelineData.condensed) {
                         console.log(`[FIRESTORE_LISTENER] Triggering content processing for: ${guidelineId}`);
@@ -3004,22 +3004,22 @@ function setupGuidelinesListener() {
                     }
                 }
             }
-            
+
             // When guideline count changes, trigger comprehensive metadata completion
             if (countChanged && previousGuidelineCount > 0) {
                 console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
-                
+
                 // NOTE: Automatic metadata completion disabled to prevent server memory crashes
                 // The batch sync endpoint handles metadata extraction inline
                 // await triggerMetadataCompletionForAll();
-                
+
                 // Invalidate cache when changes detected
                 if (window.cacheManager) {
                     window.cacheManager.clearGuidelinesCache().catch(err => {
                         console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
                     });
                 }
-                
+
                 // Refresh guidelines data after processing
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
@@ -3033,31 +3033,31 @@ function setupGuidelinesListener() {
                         console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
                     });
                 }
-                
+
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
                     loadGuidelinesFromFirestore();
                 }, 2000);
             }
-            
+
             // Update the previous count for next comparison
             previousGuidelineCount = currentCount;
-            
+
             if (modifiedDocs.length > 0) {
                 console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
-                
+
                 // Invalidate cache when guidelines are modified
                 if (window.cacheManager) {
                     window.cacheManager.clearGuidelinesCache().catch(err => {
                         console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
                     });
                 }
-                
+
                 // Update global variables with modified data
                 modifiedDocs.forEach(change => {
                     const guidelineData = change.doc.data();
                     const guidelineId = change.doc.id;
-                    
+
                     if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
                         window.globalGuidelines[guidelineId] = {
                             ...window.globalGuidelines[guidelineId],
@@ -3066,7 +3066,7 @@ function setupGuidelinesListener() {
                         console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
                     }
                 });
-                
+
                 // Reload guidelines to get fresh data
                 setTimeout(() => {
                     window.guidelinesLoading = false; // Reset flag to allow reload
@@ -3076,9 +3076,9 @@ function setupGuidelinesListener() {
         }, (error) => {
             console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
         });
-        
+
         console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
-        
+
     } catch (error) {
         console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
     }
@@ -3088,15 +3088,15 @@ function setupGuidelinesListener() {
 async function processGuidelineContent(guidelineId) {
     try {
         console.log(`[CONTENT_PROCESSOR] Processing content for: ${guidelineId}`);
-        
+
         const user = auth.currentUser;
         if (!user) {
             console.error('[CONTENT_PROCESSOR] User not authenticated');
             return;
         }
-        
+
         const idToken = await user.getIdToken();
-        
+
         const response = await fetch(`${window.SERVER_URL}/processGuidelineContent`, {
             method: 'POST',
             headers: {
@@ -3105,7 +3105,7 @@ async function processGuidelineContent(guidelineId) {
             },
             body: JSON.stringify({ guidelineId })
         });
-        
+
         if (response.ok) {
             const result = await response.json();
             console.log(`[CONTENT_PROCESSOR] Content processing result:`, result);
@@ -3124,21 +3124,21 @@ async function syncGuidelinesInBackground() {
     try {
         const user = auth.currentUser;
         if (!user) return;
-        
+
         const idToken = await user.getIdToken();
         const currentCount = window.guidelinesList ? window.guidelinesList.length : 0;
-        
+
         // Check if we need to sync more guidelines from GitHub
         const githubCount = await getGitHubGuidelinesCount();
         if (githubCount !== null && githubCount > currentCount) {
             console.log(`[BACKGROUND_SYNC] GitHub has ${githubCount} guidelines but Firestore only has ${currentCount}. Syncing...`);
-            
+
             // Use batch sync to avoid timeouts
             const syncResult = await syncGuidelinesInBatches(idToken, 3); // Process 3 at a time
-            
+
             if (syncResult.success) {
                 console.log('[BACKGROUND_SYNC] Sync completed successfully:', syncResult);
-                
+
                 // Reload guidelines after sync
                 window.guidelinesLoading = false; // Reset flag
                 await loadGuidelinesFromFirestore();
@@ -3185,7 +3185,7 @@ function getCachedGuidelines() {
             localStorage.setItem(CACHE_VERSION_KEY, CACHE_VERSION);
             return [];
         }
-        
+
         const cached = localStorage.getItem(GUIDELINES_CACHE_KEY);
         return cached ? JSON.parse(cached) : [];
     } catch (error) {
@@ -3221,17 +3221,17 @@ function getOptimizedGuidelinesPayload(currentGuidelines, cachedGuidelines) {
         hasFullCache: cachedGuidelines.length > 0,
         totalCount: currentGuidelines.length
     };
-    
+
     // Create maps for faster lookup
     const cachedMap = new Map();
     cachedGuidelines.forEach(g => {
         cachedMap.set(g.id, g);
     });
-    
+
     // Compare current guidelines with cached ones
     currentGuidelines.forEach(guideline => {
         const cached = cachedMap.get(guideline.id);
-        
+
         if (!cached) {
             // New guideline
             payload.newGuidelines.push(guideline);
@@ -3239,17 +3239,17 @@ function getOptimizedGuidelinesPayload(currentGuidelines, cachedGuidelines) {
             // Check if guideline has been updated (simple hash comparison)
             const currentHash = generateGuidelineHash(guideline);
             const cachedHash = generateGuidelineHash(cached);
-            
+
             if (currentHash !== cachedHash) {
                 // Updated guideline
                 payload.updatedGuidelines.push(guideline);
             }
         }
     });
-    
+
     // Update cache with current guidelines
     setCachedGuidelines(currentGuidelines);
-    
+
     return payload;
 }
 
@@ -3288,17 +3288,17 @@ window.clinicalNoteHistoryIndex = -1;
 function pushToHistory(text) {
     // Remove any future history if we're not at the end
     window.clinicalNoteHistory = window.clinicalNoteHistory.slice(0, window.clinicalNoteHistoryIndex + 1);
-    
+
     // Add new state
     window.clinicalNoteHistory.push(text);
     window.clinicalNoteHistoryIndex = window.clinicalNoteHistory.length - 1;
-    
+
     // Limit history to 50 entries to prevent memory issues
     if (window.clinicalNoteHistory.length > 50) {
         window.clinicalNoteHistory.shift();
         window.clinicalNoteHistoryIndex--;
     }
-    
+
     updateUndoRedoButtons();
 }
 
@@ -3306,13 +3306,13 @@ function pushToHistory(text) {
 function undo() {
     const editor = window.editors?.userInput;
     if (!editor) return;
-    
+
     if (window.currentChangeIndex > 0 && window.programmaticChangeHistory.length > 0) {
         const currentChange = window.programmaticChangeHistory[window.currentChangeIndex];
         // Use editorStateBefore to go back to the state before this change
-        const stateToRestore = currentChange.editorStateBefore || 
-                              (window.currentChangeIndex > 0 ? window.programmaticChangeHistory[window.currentChangeIndex - 1].editorState : null);
-        
+        const stateToRestore = currentChange.editorStateBefore ||
+            (window.currentChangeIndex > 0 ? window.programmaticChangeHistory[window.currentChangeIndex - 1].editorState : null);
+
         if (stateToRestore) {
             window.currentChangeIndex--;
             console.log('[UNDO] Reverting to before change:', currentChange.type);
@@ -3347,7 +3347,7 @@ function undo() {
 function redo() {
     const editor = window.editors?.userInput;
     if (!editor) return;
-    
+
     if (window.currentChangeIndex < window.programmaticChangeHistory.length - 1) {
         window.currentChangeIndex++;
         const change = window.programmaticChangeHistory[window.currentChangeIndex];
@@ -3367,10 +3367,10 @@ function updateUndoRedoButtons() {
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
     const editor = window.editors?.userInput;
-    
+
     // Check if we have programmatic changes to track
     const hasProgrammaticHistory = window.programmaticChangeHistory && window.programmaticChangeHistory.length > 0;
-    
+
     if (hasProgrammaticHistory) {
         // Use programmatic change history for button states
         if (undoBtn) {
@@ -3409,19 +3409,19 @@ function initializeTipTapIntegration() {
         console.log('[TIPTAP] Integration already initialized, skipping');
         return;
     }
-    
+
     const editor = window.editors?.userInput;
     if (!editor) {
         console.warn('[TIPTAP] Editor not ready, waiting for tiptapReady event');
         return;
     }
-    
+
     console.log('[TIPTAP] Initializing integration');
     window.tiptapIntegrationInitialized = true;
-    
+
     // Initialize history with empty content
     pushToHistory('');
-    
+
     // Listen for content updates
     editor.on('update', () => {
         const content = editor.getText();
@@ -3429,17 +3429,17 @@ function initializeTipTapIntegration() {
             pushToHistory(content);
         }
     });
-    
+
     // Update undo/redo button states based on TipTap history
     editor.on('transaction', () => {
         updateUndoRedoButtons();
     });
-    
+
     // Wire up undo/redo buttons
     const undoBtn = document.getElementById('undoBtn');
     const redoBtn = document.getElementById('redoBtn');
     const clearFormattingBtn = document.getElementById('clearFormattingBtn');
-    
+
     if (undoBtn) {
         undoBtn.addEventListener('click', undo);
     }
@@ -3457,11 +3457,11 @@ function initializeTipTapIntegration() {
             updateClearFormattingButton();
         });
     }
-    
+
     console.log('[TIPTAP] Integration complete');
-    
+
     // Add a function to clear the editor
-    window.clearEditor = function() {
+    window.clearEditor = function () {
         const editor = window.editors?.userInput;
         if (editor && editor.commands) {
             editor.commands.clearContent();
@@ -3469,17 +3469,17 @@ function initializeTipTapIntegration() {
             console.log('[TIPTAP] Editor cleared');
         }
     };
-    
+
     // Nuclear option - force editor to be editable by any means necessary
-    window.nuclearFixEditor = function() {
+    window.nuclearFixEditor = function () {
         console.log('[NUCLEAR] Applying nuclear fix...');
         const editor = window.editors?.userInput;
         const pm = document.querySelector('#userInput .ProseMirror');
-        
+
         if (pm) {
             // Remove all existing styles that might block
             pm.style.cssText = '';
-            
+
             // Apply new styles
             pm.setAttribute('contenteditable', 'true');
             pm.setAttribute('tabindex', '0');
@@ -3492,10 +3492,10 @@ function initializeTipTapIntegration() {
             pm.style.position = 'relative';
             pm.style.zIndex = '1000';
             pm.style.background = 'white';
-            
+
             // Focus it
             pm.focus();
-            
+
             // Try to place cursor at the end
             const range = document.createRange();
             const sel = window.getSelection();
@@ -3505,7 +3505,7 @@ function initializeTipTapIntegration() {
                 sel.removeAllRanges();
                 sel.addRange(range);
             }
-            
+
             console.log('[NUCLEAR] Nuclear fix applied - try typing now');
         }
     };
@@ -3518,12 +3518,12 @@ function updateChatbotButtonVisibility() {
     const editor = window.editors?.userInput;
     const analyseBtn = document.getElementById('analyseBtn');
     const summarySection = document.getElementById('summarySection');
-    
+
     if (!editor || !summarySection) return;
-    
+
     const content = editor.getText().trim();
     const hasContent = content.length > 0;
-    
+
     // The analyse button visibility is controlled by the summarySection visibility
     // Just ensure the button is enabled when content exists
     if (analyseBtn && hasContent) {
@@ -3537,17 +3537,17 @@ function updateSummaryVisibility() {
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
     const clinicalPanel = document.getElementById('clinicalIssuesPanel');
-    
+
     if (!summarySection || !summary1) return;
-    
+
     // Check if loading spinner is visible
     const isLoading = loadingSpinner && !loadingSpinner.classList.contains('hidden');
-    
+
     // Check if summary has actual *visible* content (excluding loading spinner)
     const contentElements = Array.from(summary1.children).filter(
         child => child.id !== 'summaryLoadingSpinner'
     );
-    
+
     const hasVisibleContent = contentElements.some(child => {
         const style = window.getComputedStyle(child);
         const text = child.textContent ? child.textContent.trim() : '';
@@ -3558,18 +3558,18 @@ function updateSummaryVisibility() {
             text.length > 0
         );
     });
-    
+
     // Explicit decision UIs that should always be visible in summary1
     const hasPIIReview = !!document.getElementById('pii-review-current');
     const hasSuggestionReview = !!document.getElementById('suggestion-review-current');
     const hasSuggestionList = !!summary1.querySelector('.dynamic-advice-container');
     const hasGuidelineSelection = !!summary1.querySelector('.guideline-selection-interface');
-    
+
     const hasDecisionUI = hasPIIReview || hasSuggestionReview || hasSuggestionList || hasGuidelineSelection;
-    
+
     // Treat visible clinical issues panel as content so the section stays open
     const hasClinicalPanel = clinicalPanel && !clinicalPanel.classList.contains('hidden');
-    
+
     // Show summary if loading, has visible content, or has any decision UI
     if (isLoading || hasVisibleContent || hasClinicalPanel || hasDecisionUI) {
         summarySection.classList.remove('hidden');
@@ -3582,16 +3582,16 @@ function updateSummaryVisibility() {
 window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
     const summarySection = document.getElementById('summarySection');
     const summary1 = document.getElementById('summary1');
-    
+
     if (!summarySection || !summary1) return;
-    
+
     // Check for any interactive elements
     const hasInteractive = summary1.querySelector('button, input, select, textarea, [onclick]');
-    
+
     if (hasInteractive) {
         summarySection.classList.add('critical');
         console.log('[SUMMARY] Critical mode activated - interactive content detected');
-        
+
         // Auto-scroll to the most relevant interactive UI after layout settles.
         // Prefer PII review (if present), otherwise scroll to the Test/clerking selector panel,
         // otherwise fall back to the first interactive element.
@@ -3601,7 +3601,7 @@ window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
                 scrollToPIIReviewButtons();
                 return;
             }
-            
+
             const clinicalPanel = document.getElementById('clinicalIssuesPanel');
             if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
                 clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -3609,7 +3609,7 @@ window.updateSummaryCriticalStatus = function updateSummaryCriticalStatus() {
                 if (dropdown && typeof dropdown.focus === 'function') dropdown.focus();
                 return;
             }
-            
+
             const firstInteractive = summary1.querySelector('button, input, select, textarea, [onclick]');
             if (firstInteractive && typeof firstInteractive.scrollIntoView === 'function') {
                 firstInteractive.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -3626,27 +3626,27 @@ function showSummaryLoading() {
     const summarySection = document.getElementById('summarySection');
     const summary1 = document.getElementById('summary1');
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
-    
+
     if (!summary1 || !loadingSpinner) return;
-    
+
     // Determine if there's already real content/decision UI in summary1
     const hasRealContent =
         summary1.textContent.trim().length > 0 ||
         Array.from(summary1.children).some(child => child.id !== 'summaryLoadingSpinner');
-    
+
     const sectionVisible = summarySection && !summarySection.classList.contains('hidden');
-    
+
     // If there's no existing content and the section is hidden, avoid popping up
     // an empty summary panel with just \"Processing...\" – use serverStatusMessage instead.
     if (!sectionVisible && !hasRealContent) {
         return;
     }
-    
+
     if (summarySection) {
-    summarySection.classList.remove('hidden');
-    summarySection.classList.add('loading');
+        summarySection.classList.remove('hidden');
+        summarySection.classList.add('loading');
     }
-    
+
     // Show loading spinner over existing content/decision UI
     loadingSpinner.classList.remove('hidden');
 }
@@ -3655,15 +3655,15 @@ function showSummaryLoading() {
 function hideSummaryLoading() {
     const loadingSpinner = document.getElementById('summaryLoadingSpinner');
     const summarySection = document.getElementById('summarySection');
-    
+
     if (loadingSpinner) {
         loadingSpinner.classList.add('hidden');
     }
-    
+
     if (summarySection) {
         summarySection.classList.remove('loading');
     }
-    
+
     // Update visibility after hiding spinner
     updateSummaryVisibility();
 }
@@ -3675,32 +3675,32 @@ function initializeChatbotUX() {
         console.warn('[CHATBOT] Editor not ready, waiting for tiptapReady event');
         return;
     }
-    
+
     console.log('[CHATBOT] Initializing chatbot UX');
-    
+
     // Listen for content updates to show/hide buttons
     editor.on('update', () => {
         updateChatbotButtonVisibility();
     });
-    
+
     // Hide record button when editor is focused (user is typing)
     const recordBtn = document.getElementById('recordBtn');
     if (recordBtn) {
         editor.on('focus', () => {
             recordBtn.classList.add('hidden-while-typing');
         });
-        
+
         editor.on('blur', () => {
             recordBtn.classList.remove('hidden-while-typing');
         });
     }
-    
+
     // Initial button visibility check
     updateChatbotButtonVisibility();
-    
+
     // Initial summary visibility check
     updateSummaryVisibility();
-    
+
     console.log('[CHATBOT] Chatbot UX initialized');
 }
 
@@ -3711,9 +3711,9 @@ window.addEventListener('tiptapReady', () => {
 });
 
 // Also try to initialize if TipTap is already loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     setTimeout(initializeTipTapIntegration, 500);
-    
+
     // Additional fix - ensure editor is editable after everything loads
     setTimeout(() => {
         const editor = window.editors?.userInput;
@@ -3744,7 +3744,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function findRelevantGuidelines(suppressHeader = false, scope = null, hospitalTrust = null) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
-    
+
     try {
         const transcript = getUserInputContent();
         if (!transcript) {
@@ -3778,10 +3778,10 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
                 if (piiAnalysis.containsPII) {
                     console.log('[ANONYMISER] PII detected, showing review interface...');
-                    
+
                     // Show PII review interface
                     const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
-                    
+
                     if (reviewResult.approved) {
                         // Use the user-approved anonymised text
                         anonymisedTranscript = reviewResult.anonymisedText;
@@ -3795,7 +3795,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                         };
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
-                        
+
                         // Surface outcome via status message (decision itself happens in the PII UI)
                         const redactedCount = reviewResult.replacementsCount;
                         const itemLabel = redactedCount === 1 ? 'item' : 'items';
@@ -3832,36 +3832,36 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
-        
+
         // Filter guidelines by scope if specified
         if (scope) {
             console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, beforeFilter: guidelines.length });
             guidelines = filterGuidelinesByScope(guidelines, scope, hospitalTrust);
             console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
-            
+
             if (guidelines.length === 0) {
                 const noGuidelinesMsg = 'No guidelines found for the selected scope.';
                 updateUser(noGuidelinesMsg, false);
                 alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
                 return;
             }
-            
+
             // Add scope info via status message
-            const scopeInfo = scope === 'national' 
+            const scopeInfo = scope === 'national'
                 ? `Searching ${guidelines.length} national guidelines...`
                 : scope === 'local'
-                ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
-                : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
+                    ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
+                    : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
             updateUser(scopeInfo, true);
         }
-        
+
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
             sampleGuideline: guidelines[0],
             allKeys: guidelines[0] ? Object.keys(guidelines[0]) : 'no guidelines',
             hasDownloadUrl: !!(guidelines[0] && guidelines[0].downloadUrl),
             downloadUrlValue: guidelines[0] ? guidelines[0].downloadUrl : 'no guideline'
         });
-        
+
         // Format guidelines with comprehensive information for better relevancy matching
         // PRESERVE downloadUrl and other important fields for the server
         const guidelinesList = guidelines.map(g => ({
@@ -3875,7 +3875,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             filename: g.filename, // Important: preserve filename
             organisation: g.organisation // Important: preserve organisation for display
         }));
-        
+
         console.log('[DEBUG] Sample guideline being sent to server:', {
             sampleGuideline: guidelinesList[0],
             allKeys: guidelinesList[0] ? Object.keys(guidelinesList[0]) : 'no guidelines',
@@ -3905,7 +3905,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         if (window.analysisAbortController?.signal.aborted) {
             throw new Error('Analysis cancelled');
         }
-        
+
         updateUser('Finding relevant guidelines...', true);
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
@@ -3940,7 +3940,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             updateUser('Error finding guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
-        
+
         updateUser('Guidelines found', false);
 
         console.log('[DEBUG] Server response categories structure:', {
@@ -3970,15 +3970,15 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         const filteredCategories = {};
         let totalBeforeFilter = 0;
         let totalAfterFilter = 0;
-        
+
         for (const [category, guidelines] of Object.entries(data.categories)) {
             totalBeforeFilter += (guidelines || []).length;
-            
+
             filteredCategories[category] = (guidelines || [])
                 .map(g => {
                     // Server only sends {id, relevance} - look up full data from client cache
                     const fullGuidelineData = window.globalGuidelines?.[g.id];
-                    
+
                     if (!fullGuidelineData) {
                         console.warn(`[DEBUG] No cached data found for guideline ${g.id}`);
                         // Fallback: return minimal object with just id and relevance
@@ -3989,7 +3989,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                             displayName: null
                         };
                     }
-                    
+
                     // Combine: full cached data + relevance score from server
                     return {
                         ...fullGuidelineData,  // All Firestore fields (displayName, hospitalTrust, organisation, etc.)
@@ -4014,7 +4014,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                         }
                         return true; // Default: include
                     })();
-                    
+
                     // Log filtering decision for each guideline
                     console.log(`[FILTER DEBUG] ${g.id}:`, {
                         hospitalTrust: gHospitalTrust,
@@ -4023,13 +4023,13 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                         matches: gHospitalTrust === hospitalTrust,
                         included: shouldInclude
                     });
-                    
+
                     return shouldInclude;
                 });
-            
+
             totalAfterFilter += filteredCategories[category].length;
         }
-        
+
         console.log('[DEBUG] Filtered server results by user prefs:', {
             scope,
             hospitalTrust,
@@ -4046,23 +4046,23 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         createGuidelineSelectionInterface(filteredCategories, window.relevantGuidelines);
 
         // Add final summary via status message
-        const totalRelevant = (filteredCategories.mostRelevant?.length || 0) + 
-                            (filteredCategories.potentiallyRelevant?.length || 0) + 
-                            (filteredCategories.lessRelevant?.length || 0);
-        
+        const totalRelevant = (filteredCategories.mostRelevant?.length || 0) +
+            (filteredCategories.potentiallyRelevant?.length || 0) +
+            (filteredCategories.lessRelevant?.length || 0);
+
         const summaryMessage = `Found ${totalRelevant} relevant guidelines. Most: ${filteredCategories.mostRelevant?.length || 0}, potentially: ${filteredCategories.potentiallyRelevant?.length || 0}, less relevant: ${filteredCategories.lessRelevant?.length || 0}.`;
-        
+
         updateUser(summaryMessage, false);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
             stack: error.stack
         });
-        
+
         // Display error via status message (alert also shown below)
         const errorMessage = `Error finding relevant guidelines: ${error.message}`;
         updateUser(errorMessage, false);
-        
+
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
         // Reset button state
@@ -4086,7 +4086,7 @@ async function generateClinicalNote() {
         // Get the transcript content from userInput field
         const userInputValue = getUserInputContent();
         let transcript = userInputValue;
-        
+
         console.log('[DEBUG] Getting transcript from userInput:', {
             userInputLength: userInputValue?.length,
             userInputPreview: userInputValue?.substring(0, 100) + '...'
@@ -4111,10 +4111,10 @@ async function generateClinicalNote() {
 
                 if (piiAnalysis.containsPII) {
                     console.log('[ANONYMISER] PII detected, showing review interface...');
-                    
+
                     // Show PII review interface
                     const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
-                    
+
                     if (reviewResult.approved) {
                         // Use the user-approved anonymised text
                         anonymisedTranscript = reviewResult.anonymisedText;
@@ -4128,7 +4128,7 @@ async function generateClinicalNote() {
                         };
 
                         console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
-                        
+
                         // Surface outcome via status message (decision itself happens in the PII UI)
                         const redactedCount = reviewResult.replacementsCount;
                         const itemLabel = redactedCount === 1 ? 'item' : 'items';
@@ -4176,7 +4176,7 @@ async function generateClinicalNote() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${idToken}`
             },
-            body: JSON.stringify({ 
+            body: JSON.stringify({
                 transcript: anonymisedTranscript, // Use anonymised transcript
                 anonymisationInfo: anonymisationInfo // Include anonymisation metadata
             })
@@ -4242,19 +4242,19 @@ function removeTransientMessages() {
 
     const transientElements = summary1.querySelectorAll('[data-transient="true"]');
     console.log(`[DEBUG] Found ${transientElements.length} transient messages to remove`);
-    
+
     transientElements.forEach((element, index) => {
         // Fade out animation
         element.style.transition = 'opacity 0.3s ease-out, max-height 0.3s ease-out';
         element.style.opacity = '0';
         element.style.maxHeight = '0';
         element.style.overflow = 'hidden';
-        
+
         // Remove after animation completes
         setTimeout(() => {
             element.remove();
             console.log(`[DEBUG] Removed transient message ${index + 1}`);
-            
+
             // After the last element is removed, re-evaluate visibility
             if (index === transientElements.length - 1) {
                 setTimeout(() => {
@@ -4274,14 +4274,14 @@ function updateAnalyseButtonProgress(stepText = null, isActive = false) {
     const analyseSpinner = document.getElementById('analyseSpinner');
     const btnIcon = analyseBtn?.querySelector('.btn-icon');
     const btnText = analyseBtn?.querySelector('.btn-text');
-    
+
     if (!analyseBtn) {
         console.warn('[PROGRESS] Analyse button not found');
         return;
     }
-    
+
     console.log('[PROGRESS] Updating analyse button:', { stepText, isActive });
-    
+
     if (isActive && stepText) {
         // Show progress with spinner
         if (analyseSpinner) analyseSpinner.style.display = 'inline-block';
@@ -4294,7 +4294,7 @@ function updateAnalyseButtonProgress(stepText = null, isActive = false) {
         if (btnIcon) btnIcon.style.display = 'inline';
         if (btnText) btnText.textContent = stepText;
         analyseBtn.disabled = false;
-        
+
         // Reset after 2 seconds
         setTimeout(() => {
             if (btnIcon) btnIcon.style.display = 'inline';
@@ -4320,7 +4320,7 @@ const streamingEngine = {
     isPaused: false,
     currentStreamController: null,
     charDelay: 10, // milliseconds per character (very fast streaming)
-    
+
     // Add content to the streaming queue
     enqueue(contentWrapper, shouldPause, onComplete, options = {}) {
         console.log('[STREAMING] Enqueuing content for streaming', {
@@ -4328,20 +4328,20 @@ const streamingEngine = {
             queueLength: this.queue.length,
             options
         });
-        
+
         this.queue.push({
             wrapper: contentWrapper,
             shouldPause,
             onComplete,
             options
         });
-        
+
         // Start processing if not already streaming
         if (!this.isStreaming) {
             this.processQueue();
         }
     },
-    
+
     // Process the streaming queue
     async processQueue() {
         if (this.queue.length === 0) {
@@ -4349,21 +4349,21 @@ const streamingEngine = {
             console.log('[STREAMING] Queue empty, streaming stopped');
             return;
         }
-        
+
         if (this.isPaused) {
             console.log('[STREAMING] Streaming paused, waiting for resume');
             return;
         }
-        
+
         this.isStreaming = true;
         const item = this.queue.shift();
-        
+
         console.log('[STREAMING] Processing queue item', {
             shouldPause: item.shouldPause,
             remainingInQueue: this.queue.length,
             action: item.options?.action || 'streamIn'
         });
-        
+
         if (item.options?.action === 'unstream') {
             await this.unstreamElement(item.wrapper, item.onComplete);
         } else if (item.options?.action === 'wait') {
@@ -4373,7 +4373,7 @@ const streamingEngine = {
             await this.streamElement(item.wrapper, item.shouldPause, item.options);
             if (item.onComplete) item.onComplete();
         }
-        
+
         // Continue with next item unless paused
         if (!this.isPaused) {
             this.processQueue();
@@ -4383,7 +4383,7 @@ const streamingEngine = {
     // Stream removal of an element's content (reverse typing)
     async unstreamElement(wrapper, onComplete) {
         console.log('[STREAMING] ◄◄◄ Starting unstream of element');
-        
+
         if (!wrapper || !wrapper.parentNode) {
             console.log('[STREAMING] Wrapper missing, skipping unstream');
             if (onComplete) onComplete();
@@ -4392,47 +4392,47 @@ const streamingEngine = {
 
         // Get text content to unstream
         const textContent = wrapper.textContent || '';
-        
+
         // Create streaming container
         const streamContainer = document.createElement('div');
         streamContainer.className = 'streaming-container';
         streamContainer.style.display = 'inline';
-        
+
         // Create cursor
         const cursor = document.createElement('span');
         cursor.className = 'streaming-cursor';
         cursor.textContent = '▋';
-        
+
         // Replace content with streaming setup
         wrapper.innerHTML = '';
         wrapper.appendChild(streamContainer);
         wrapper.appendChild(cursor);
-        
+
         let currentText = textContent;
         streamContainer.textContent = currentText;
-        
+
         // Unstream character by character
         while (currentText.length > 0) {
             if (this.isPaused) {
                 wrapper.remove();
                 break;
             }
-            
+
             currentText = currentText.slice(0, -1);
             streamContainer.textContent = currentText;
-            
+
             await this.delay(this.charDelay);
         }
-        
+
         // Clean up
         cursor.remove();
         wrapper.remove();
-        
+
         console.log('[STREAMING] Unstream complete');
-        
+
         if (onComplete) onComplete();
     },
-    
+
     // Stream a single element's content
     async streamElement(wrapper, shouldPauseAfter, options = {}) {
         console.log('[STREAMING] ►►► Starting stream of element', {
@@ -4440,55 +4440,55 @@ const streamingEngine = {
             timestamp: new Date().toISOString(),
             forceStream: options?.forceStream
         });
-        
+
         // Show the wrapper immediately
         wrapper.style.display = ''; // Restore default display (block)
         wrapper.style.opacity = '1';
         console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
-        
+
         // Extract all text content and HTML structure
         const originalHTML = wrapper.innerHTML;
         const textContent = wrapper.textContent || '';
-        
+
         // Check for interactive elements first
         const interactiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
         const hasInteractiveElements = interactiveElements.length > 0;
-        
+
         console.log('[STREAMING] Content analysis:', {
             textLength: textContent.length,
             hasInteractive: hasInteractiveElements,
             interactiveCount: interactiveElements.length,
             textPreview: textContent.substring(0, 200) + '...'
         });
-        
+
         // OPTIMIZATION: Only stream short content character-by-character
         // For long content (>200 chars), show instantly to avoid delays
         const MAX_STREAM_LENGTH = 200;
         const shouldStreamFully = options.forceStream || (textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20);
-        
+
         console.log('[STREAMING] Streaming decision:', {
             textLength: textContent.length,
             maxStreamLength: MAX_STREAM_LENGTH,
             shouldStreamFully,
             willShowInstantly: !options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)
         });
-        
+
         if (!options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)) {
             console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
                 reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
                 length: textContent.length
             });
-            
+
             // Show interactive elements if present
             if (hasInteractiveElements && shouldPauseAfter) {
                 console.log('[STREAMING] Has interactive elements, setting up pause...');
                 // Small delay for visual effect
                 await this.delay(100);
-                
+
                 const firstInteractive = interactiveElements[0];
                 console.log('[STREAMING] Adding highlight to first interactive:', firstInteractive.tagName);
                 firstInteractive.classList.add('streaming-paused-interactive');
-                
+
                 // Scroll to show the first interactive element (the buttons/controls)
                 const summary1 = document.getElementById('summary1');
                 if (summary1 && firstInteractive) {
@@ -4501,14 +4501,14 @@ const streamingEngine = {
                         console.log('[STREAMING] Scrolled to show interactive element');
                     });
                 }
-                
+
                 // Pause streaming
                 this.isPaused = true;
                 console.log('[STREAMING] isPaused set to TRUE');
-                
+
                 // Set up auto-resume
                 this.setupAutoResume(firstInteractive, interactiveElements);
-                
+
                 console.log('[STREAMING] ⏸️  PAUSED at interactive element (instant display mode)');
             } else {
                 console.log('[STREAMING] No interactive pause needed');
@@ -4516,77 +4516,77 @@ const streamingEngine = {
             console.log('[STREAMING] ✓✓ Instant display complete, returning');
             return;
         }
-        
+
         // Stream short content with animation
         console.log('[STREAMING] Starting character-by-character streaming');
-        
+
         // Hide interactive elements initially
         interactiveElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transition = 'opacity 0.3s ease-in';
         });
-        
+
         // Create a streaming container
         const streamContainer = document.createElement('div');
         streamContainer.className = 'streaming-container';
         streamContainer.style.display = 'inline';
-        
+
         // Create cursor
         const cursor = document.createElement('span');
         cursor.className = 'streaming-cursor';
         cursor.textContent = '▋';
-        
+
         // Clear wrapper and add streaming elements
         wrapper.innerHTML = '';
         wrapper.appendChild(streamContainer);
         wrapper.appendChild(cursor);
-        
+
         // Stream the text content character by character
         let displayedText = '';
-        
+
         for (let i = 0; i < textContent.length; i++) {
             if (this.isPaused) {
                 // If paused, show remaining text instantly
                 displayedText = textContent;
                 break;
             }
-            
+
             displayedText += textContent[i];
             streamContainer.textContent = displayedText;
-            
+
             // Smooth scroll to keep cursor visible
             this.scrollToKeepVisible(cursor);
-            
+
             await this.delay(this.charDelay);
         }
-        
+
         // Remove cursor
         cursor.remove();
-        
+
         // Restore original HTML to preserve formatting and structure
         wrapper.innerHTML = originalHTML;
-        
+
         console.log('[STREAMING] Character streaming complete');
-        
+
         console.log('[STREAMING] Text streaming complete, showing interactive elements');
-        
+
         // Show interactive elements with fade-in
         if (hasInteractiveElements) {
             await this.delay(100); // Small delay before showing interactive elements
-            
+
             const updatedInteractiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
             updatedInteractiveElements.forEach(el => {
                 el.style.opacity = '1';
             });
-            
+
             if (shouldPauseAfter) {
                 console.log('[STREAMING] Interactive elements present, pausing for user interaction');
-                
+
                 // Highlight the first interactive element
                 if (updatedInteractiveElements.length > 0) {
                     const firstInteractive = updatedInteractiveElements[0];
                     firstInteractive.classList.add('streaming-paused-interactive');
-                    
+
                     // Scroll to show the interactive element
                     const summary1 = document.getElementById('summary1');
                     if (summary1 && firstInteractive) {
@@ -4599,30 +4599,30 @@ const streamingEngine = {
                             console.log('[STREAMING] Scrolled to show interactive element after streaming');
                         });
                     }
-                    
+
                     // Pause streaming
                     this.isPaused = true;
-                    
+
                     // Set up auto-resume on any interaction
                     this.setupAutoResume(firstInteractive, updatedInteractiveElements);
                 }
             }
         }
-        
+
         console.log('[STREAMING] ✓✓✓ Element streaming FULLY COMPLETE');
     },
-    
+
     // Check if an element is interactive (requires user decision)
     isInteractiveElement(element) {
         const tagName = element.tagName.toLowerCase();
-        
+
         // Check for interactive tags
         if (['button', 'select', 'input', 'textarea'].includes(tagName)) {
             return true;
         }
-        
+
         // Check for elements with click handlers or certain classes
-        if (element.onclick || 
+        if (element.onclick ||
             element.getAttribute('onclick') ||
             element.classList.contains('btn') ||
             element.classList.contains('button') ||
@@ -4630,72 +4630,72 @@ const streamingEngine = {
             element.querySelector('button, select, input')) {
             return true;
         }
-        
+
         return false;
     },
-    
+
     // Set up automatic resume when user interacts with any interactive element
     setupAutoResume(highlightedElement, allInteractiveElements) {
         const resumeHandler = (event) => {
             console.log('[STREAMING] User interaction detected, resuming stream');
-            
+
             // Remove highlight from all elements
             allInteractiveElements.forEach(el => {
                 el.classList.remove('streaming-paused-interactive');
             });
-            
+
             // Resume streaming
             this.resume();
-            
+
             // Remove listeners from all elements
             allInteractiveElements.forEach(el => {
                 el.removeEventListener('click', resumeHandler);
                 el.removeEventListener('change', resumeHandler);
             });
         };
-        
+
         // Add listeners to all interactive elements
         allInteractiveElements.forEach(el => {
             el.addEventListener('click', resumeHandler, { once: true });
             el.addEventListener('change', resumeHandler, { once: true });
         });
     },
-    
+
     // Scroll to keep the streaming cursor visible
     scrollToKeepVisible(cursor) {
         const summary1 = document.getElementById('summary1');
         if (!summary1 || !cursor.parentNode) return;
-        
+
         const cursorRect = cursor.getBoundingClientRect();
         const containerRect = summary1.getBoundingClientRect();
-        
+
         // Check if cursor is below viewport
         if (cursorRect.bottom > containerRect.bottom - 50) {
             const scrollAmount = cursorRect.bottom - containerRect.bottom + 50;
             summary1.scrollTop += scrollAmount;
         }
     },
-    
+
     // Resume streaming after pause
     resume() {
         console.log('[STREAMING] Resuming streaming');
         this.isPaused = false;
         this.processQueue();
     },
-    
+
     // Stop all streaming and clear queue
     stop() {
         console.log('[STREAMING] Stopping all streaming');
         this.queue = [];
         this.isStreaming = false;
         this.isPaused = false;
-        
+
         if (this.currentStreamController) {
             this.currentStreamController.abort();
             this.currentStreamController = null;
         }
     },
-    
+
     // Utility delay function
     delay(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -4707,7 +4707,7 @@ const streamingEngine = {
 // Utility: strip emoji/icon characters from text before rendering in summary1
 function stripSummaryEmojis(text) {
     if (!text || typeof text !== 'string') return text;
-    
+
     try {
         // Preferred: use Unicode property escapes for pictographic symbols
         const emojiRegex = /\p{Extended_Pictographic}/gu;
@@ -4743,7 +4743,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
         if (clearExisting) {
             // Stop any active streaming
             streamingEngine.stop();
-            
+
             summary1.innerHTML = '';
             // Reset scroll tracking when clearing content
             pendingScrollTarget = null;
@@ -4761,7 +4761,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
                 summary1.appendChild(spinnerDiv);
             }
         }
-        
+
         // Hide loading spinner when content is being added
         hideSummaryLoading();
 
@@ -4814,23 +4814,23 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
         // STREAMING DECISION POINT
         if (options.streamEffect === 'in-out') {
             console.log('[SUMMARY1 DEBUG] ✓ STREAM TRANSIENT PATH - appearing and disappearing by stream');
-            
+
             // Start hidden and collapsed
             newContentWrapper.style.opacity = '0';
             newContentWrapper.style.display = 'none'; // Hide from layout until streamed
-            
+
             // 1. Stream In
             streamingEngine.enqueue(
-                newContentWrapper, 
-                false, 
+                newContentWrapper,
+                false,
                 () => {
                     console.log('[SUMMARY1 DEBUG] Stream transient IN complete');
                     updateSummaryVisibility();
                     updateSummaryCriticalStatus();
-                }, 
+                },
                 { forceStream: true, action: 'streamIn' }
             );
-            
+
             // 2. Wait
             streamingEngine.enqueue(
                 null,
@@ -4838,7 +4838,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
                 null,
                 { action: 'wait', duration: options.transientDelay || 5000 }
             );
-            
+
             // 3. Stream Out
             streamingEngine.enqueue(
                 newContentWrapper,
@@ -4851,12 +4851,12 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
                 },
                 { action: 'unstream' }
             );
-            
+
         } else if (isTransient) {
             // Transient messages: show instantly, no streaming, auto-remove after delay
             console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
             newContentWrapper.style.opacity = '1';
-            
+
             // Auto-remove transient messages after 5 seconds
             setTimeout(() => {
                 if (newContentWrapper.parentNode) {
@@ -4865,7 +4865,7 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
                     newContentWrapper.style.opacity = '0';
                     newContentWrapper.style.maxHeight = '0';
                     newContentWrapper.style.overflow = 'hidden';
-                    
+
                     setTimeout(() => {
                         if (newContentWrapper.parentNode) {
                             newContentWrapper.remove();
@@ -4873,24 +4873,24 @@ function appendToSummary1(content, clearExisting = false, isTransient = false, o
                     }, 500);
                 }
             }, 5000);
-            
+
             // Don't scroll for transient messages - they're temporary
             console.log('[SUMMARY1 DEBUG] Transient content shown (no scroll)');
         } else {
             // Permanent content: use streaming engine
             console.log('[SUMMARY1 DEBUG] ✓ PERMANENT PATH - queueing for streaming');
-            
+
             // Check if content has interactive elements
             const hasInteractive = streamingEngine.isInteractiveElement(newContentWrapper) ||
-                                   newContentWrapper.querySelector('button, select, input, textarea, [onclick]');
-            
+                newContentWrapper.querySelector('button, select, input, textarea, [onclick]');
+
             const interactiveElements = newContentWrapper.querySelectorAll('button, select, input, textarea, [onclick]');
             console.log('[SUMMARY1 DEBUG] Interactive elements check:', {
                 hasInteractive,
                 elementCount: interactiveElements.length,
                 elementTypes: Array.from(interactiveElements).map(el => el.tagName)
             });
-            
+
             // Enqueue for streaming
             console.log('[SUMMARY1 DEBUG] Enqueueing content to streaming engine...');
             streamingEngine.enqueue(
@@ -4948,7 +4948,7 @@ function appendToOutputField(content, clearExisting = true, isHtml = false) {
 
     try {
         let processedContent = content;
-        
+
         if (isHtml) {
             // If isHtml is explicitly true, trust the content
             processedContent = content;
@@ -5018,10 +5018,10 @@ async function ensureAnonymisedForOutbound(originalText) {
 async function checkAgainstGuidelines(suppressHeader = false) {
     const checkGuidelinesBtn = document.getElementById('checkGuidelinesBtn');
     const originalText = checkGuidelinesBtn.textContent;
-    
+
     try {
         console.log('[DEBUG] Starting checkAgainstGuidelines...');
-        
+
         const transcript = getUserInputContent();
         if (!transcript) {
             console.log('[DEBUG] No transcript found in userInput');
@@ -5050,7 +5050,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             return;
         }
         console.log('[DEBUG] User authenticated:', { email: user.email, uid: user.uid });
-        
+
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token');
 
@@ -5101,7 +5101,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             formattedAnalysis = '## Analysis Against Guidelines\n\n';
             appendToOutputField(formattedAnalysis, true);
         }
-        
+
         let successCount = 0;
         let errorCount = 0;
 
@@ -5116,8 +5116,8 @@ async function checkAgainstGuidelines(suppressHeader = false) {
 
             // Method 2: Search by filename match
             const guidelines = Object.values(window.globalGuidelines);
-            found = guidelines.find(g => 
-                g.filename === targetGuideline.id || 
+            found = guidelines.find(g =>
+                g.filename === targetGuideline.id ||
                 (g.title && g.title === targetGuideline.id)
             );
             if (found) {
@@ -5130,33 +5130,33 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             if (targetTitle && targetTitle.length > 5) {
                 found = guidelines.find(g => {
                     if (!g.title) return false;
-                    
+
                     // Normalize titles for comparison
                     const normalizeTitle = (title) => title.toLowerCase()
                         .replace(/[^a-z0-9\s]/g, ' ')
                         .replace(/\s+/g, ' ')
                         .trim();
-                    
+
                     const normalizedTarget = normalizeTitle(targetTitle);
                     const normalizedGuideline = normalizeTitle(g.title);
-                    
+
                     // Check for exact match first
                     if (normalizedTarget === normalizedGuideline) return true;
-                    
+
                     // Check for substantial overlap (80% match)
                     const targetWords = normalizedTarget.split(' ').filter(w => w.length > 2);
                     const guidelineWords = normalizedGuideline.split(' ').filter(w => w.length > 2);
-                    
+
                     if (targetWords.length === 0 || guidelineWords.length === 0) return false;
-                    
-                    const matchedWords = targetWords.filter(word => 
+
+                    const matchedWords = targetWords.filter(word =>
                         guidelineWords.some(gWord => gWord.includes(word) || word.includes(gWord))
                     );
-                    
+
                     const similarity = matchedWords.length / Math.max(targetWords.length, guidelineWords.length);
                     return similarity >= 0.6; // 60% word overlap threshold
                 });
-                
+
                 if (found) {
                     console.log(`[DEBUG] Found guideline by title similarity: "${targetTitle}" -> "${found.title}" (${found.id})`);
                     return found;
@@ -5166,20 +5166,20 @@ async function checkAgainstGuidelines(suppressHeader = false) {
             // Method 4: Search by partial filename match (for cases like "ESHRE - PCOS - 2023.pdf" vs "ESHRE - PCOS - 2023")
             found = guidelines.find(g => {
                 if (!g.filename || !targetGuideline.id) return false;
-                
+
                 const normalizeFilename = (filename) => filename.toLowerCase()
                     .replace('.pdf', '')
                     .replace(/[^a-z0-9\s]/g, ' ')
                     .replace(/\s+/g, ' ')
                     .trim();
-                
+
                 const normalizedTarget = normalizeFilename(targetGuideline.id);
                 const normalizedFilename = normalizeFilename(g.filename);
-                
-                return normalizedTarget.includes(normalizedFilename) || 
-                       normalizedFilename.includes(normalizedTarget);
+
+                return normalizedTarget.includes(normalizedFilename) ||
+                    normalizedFilename.includes(normalizedTarget);
             });
-            
+
             if (found) {
                 console.log(`[DEBUG] Found guideline by partial filename match: ${targetGuideline.id} -> ${found.filename} (${found.id})`);
                 return found;
@@ -5190,16 +5190,16 @@ async function checkAgainstGuidelines(suppressHeader = false) {
 
         // Get most relevant guidelines (filter by category)
         const mostRelevantGuidelines = window.relevantGuidelines.filter(g => g.category === 'mostRelevant');
-        
+
         console.log('[DEBUG] Found most relevant guidelines:', {
             total: mostRelevantGuidelines.length,
             guidelines: mostRelevantGuidelines.map(g => ({ id: g.id, title: g.title, relevance: g.relevance }))
         });
-        
+
         // Determine which guidelines to process
         let guidelinesToProcess = [];
         const MAX_AUTO_PROCESS = 5;
-        
+
         if (mostRelevantGuidelines.length === 0) {
             throw new Error('No "most relevant" guidelines found. Please ensure guidelines have been properly categorized.');
         } else if (mostRelevantGuidelines.length <= MAX_AUTO_PROCESS) {
@@ -5209,7 +5209,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         } else {
             // Show selection interface if more than 5
             console.log(`[DEBUG] Found ${mostRelevantGuidelines.length} most relevant guidelines, showing selection interface`);
-            
+
             const selectionMessage = `
                 <div class="guideline-auto-selection">
                     <h4>📋 Multiple Relevant Guidelines Found</h4>
@@ -5218,10 +5218,10 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                         <p><strong>Selected for analysis:</strong></p>
                         <ul>
                             ${mostRelevantGuidelines.slice(0, MAX_AUTO_PROCESS).map(g => {
-                                const guidelineData = window.globalGuidelines[g.id];
-                                const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || g.title || g.id;
-                                return `<li>${displayTitle} <span class="relevance">(relevance: ${g.relevance || 'N/A'})</span></li>`;
-                            }).join('')}
+                const guidelineData = window.globalGuidelines[g.id];
+                const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || g.title || g.id;
+                return `<li>${displayTitle} <span class="relevance">(relevance: ${g.relevance || 'N/A'})</span></li>`;
+            }).join('')}
                         </ul>
                     </div>
                     <p><em>💡 After this analysis, you can use "Make Advice Dynamic" to select different guidelines or include additional ones.</em></p>
@@ -5259,31 +5259,31 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 }
                 </style>
             `;
-            
+
             appendToOutputField(selectionMessage, true);
-            
+
             // Use top 5 guidelines
             guidelinesToProcess = mostRelevantGuidelines.slice(0, MAX_AUTO_PROCESS);
         }
-        
+
         // Update UI to show guidelines being processed (status bar only)
         const processingStatus = `Analysing against ${guidelinesToProcess.length} most relevant guideline${guidelinesToProcess.length > 1 ? 's' : ''}...`;
         updateUser(processingStatus, true);
-        
+
         // Process guidelines in parallel for better performance
         const guidelinePromises = guidelinesToProcess.map(async (relevantGuideline, index) => {
             const guidelineData = findGuidelineInCache(relevantGuideline);
             const guidelineTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || relevantGuideline.filename || relevantGuideline.title;
-            
+
             console.log(`[DEBUG] Processing guideline ${index + 1}/${guidelinesToProcess.length}: ${guidelineTitle}`);
-            
+
             try {
                 if (!guidelineData) {
                     console.error('[DEBUG] Guideline not found in cache:', {
                         title: guidelineTitle,
                         availableGuidelines: Object.keys(window.globalGuidelines)
                     });
-                    
+
                     return {
                         guideline: guidelineTitle,
                         error: 'Guideline not found in cache. Please try finding relevant guidelines again.',
@@ -5319,7 +5319,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                         errorText,
                         guideline: guidelineTitle
                     });
-                    
+
                     // Try to parse the error message
                     let errorMessage = 'Server error';
                     try {
@@ -5328,7 +5328,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                     } catch (e) {
                         errorMessage = errorText || errorMessage;
                     }
-                    
+
                     return {
                         guideline: guidelineTitle,
                         error: errorMessage,
@@ -5367,7 +5367,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         // Wait for all guidelines to be processed
         console.log('[DEBUG] Waiting for all guideline processing to complete...');
         const results = await Promise.all(guidelinePromises);
-        
+
         // Process results
         results.forEach(result => {
             if (result.success) {
@@ -5376,12 +5376,12 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 successCount++;
                 appendToOutputField(analysisSection, true);
             } else {
-                                 const errorSection = `### ${result.guideline}\n\n⚠️ Error: ${result.error}\n\n`;
-                 formattedAnalysis += errorSection;
-                 errorCount++;
-                 appendToOutputField(errorSection, true); // Append, don't clear
-             }
-         });
+                const errorSection = `### ${result.guideline}\n\n⚠️ Error: ${result.error}\n\n`;
+                formattedAnalysis += errorSection;
+                errorCount++;
+                appendToOutputField(errorSection, true); // Append, don't clear
+            }
+        });
 
         // Add summary of results
         console.log('[DEBUG] Analysis summary:', {
@@ -5396,14 +5396,14 @@ async function checkAgainstGuidelines(suppressHeader = false) {
         const failureSection = errorCount > 0 ? `${errorCount} analysis failed.\n` : '';
         const additionalInfo = `\n*Note: Found ${window.relevantGuidelines.length} relevant guidelines total, analyzed against the top ${guidelinesToProcess.length} most relevant.*\n`;
         const finalSummary = summarySection + failureSection + additionalInfo;
-        
+
         formattedAnalysis += finalSummary;
         appendToOutputField(finalSummary, true); // Append, don't clear
 
         // Store the latest analysis result and guideline data for guideline suggestions
         if (successCount > 0) {
             console.log('[DEBUG] Storing analysis result for guideline suggestions');
-            
+
             // Store the combined analysis and the guidelines that were processed
             const processedGuidelineData = guidelinesToProcess.map(g => {
                 const guidelineData = window.globalGuidelines[g.id];
@@ -5413,7 +5413,7 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                     relevance: g.relevance || 'N/A'
                 };
             });
-            
+
             window.latestAnalysis = {
                 analysis: formattedAnalysis,
                 transcript: transcript,
@@ -5424,14 +5424,14 @@ async function checkAgainstGuidelines(suppressHeader = false) {
                 analysisResults: results, // Store all results for auto-processing
                 timestamp: new Date().toISOString()
             };
-            
+
             // If multiple guidelines were processed, automatically generate combined suggestions
             if (guidelinesToProcess.length > 1) {
                 console.log('[DEBUG] Auto-generating combined suggestions for', successCount, 'successful guidelines');
-                
+
                 // Filter to only successful results
                 const successfulResults = results.filter(r => !r.error);
-                
+
                 // Add a small delay to let the analysis display complete
                 setTimeout(async () => {
                     try {
@@ -5485,7 +5485,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             console.log('[DEBUG] dynamicAdvice: No authenticated user found');
             throw new Error('User not authenticated');
         }
-        
+
         const idToken = await user.getIdToken();
         console.log('[DEBUG] dynamicAdvice: Got ID token');
 
@@ -5496,7 +5496,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         let response;
         let retryCount = 0;
         const maxRetries = 3;
-        
+
         while (retryCount <= maxRetries) {
             try {
                 response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
@@ -5512,24 +5512,24 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
                         guidelineTitle
                     })
                 });
-                
+
                 // If successful, break out of retry loop
                 if (response.ok) {
                     break;
                 }
-                
+
                 // If 502/503/504 (server errors), retry
                 if ([502, 503, 504].includes(response.status)) {
                     throw new Error(`Server error ${response.status} - retrying...`);
                 }
-                
+
                 // For other errors, don't retry
                 break;
-                
+
             } catch (error) {
                 retryCount++;
                 console.log(`[DEBUG] dynamicAdvice: Attempt ${retryCount} failed:`, error.message);
-                
+
                 if (retryCount <= maxRetries) {
                     const waitTime = Math.min(1000 * Math.pow(2, retryCount - 1), 10000); // Exponential backoff, max 10s
                     console.log(`[DEBUG] dynamicAdvice: Waiting ${waitTime}ms before retry ${retryCount}/${maxRetries}`);
@@ -5569,12 +5569,12 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             updateUser('Error generating suggestions', false);
             throw new Error(result.error || 'Guideline suggestions generation failed');
         }
-        
+
         updateUser('Suggestions generated', false);
 
         // Store session data globally and ensure unique suggestion IDs
         currentAdviceSession = result.sessionId;
-        
+
         // Add session prefix to suggestion IDs to prevent conflicts in sequential processing
         const prefixedSuggestions = (result.suggestions || []).map(suggestion => ({
             ...suggestion,
@@ -5583,10 +5583,10 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             guidelineId: result.guidelineId, // Add guideline info for feedback tracking
             guidelineTitle: result.guidelineTitle
         }));
-        
+
         currentSuggestions = prefixedSuggestions;
         userDecisions = {};
-        
+
         // Store guideline info globally for feedback submission
         window.currentGuidelineId = result.guidelineId;
         window.currentGuidelineTitle = result.guidelineTitle;
@@ -5610,10 +5610,10 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             transcriptLength: transcript?.length,
             analysisLength: analysis?.length
         });
-        
+
         // Surface error via status bar instead of populating summary1
         updateUser(`Error generating interactive suggestions: ${error.message}`, false);
-        
+
         throw error;
     }
 }
@@ -5623,16 +5623,16 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
 // Function to get practice point suggestions using pre-extracted auditable elements
 async function getPracticePointSuggestions(transcript, guidelineId) {
     console.log('[PRACTICE-POINTS] Getting suggestions for guideline:', guidelineId);
-    
+
     try {
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
         const idToken = await user.getIdToken();
-        
+
         updateUser(`Analysing practice points...`, true);
-        
+
         const response = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
             method: 'POST',
             headers: {
@@ -5644,13 +5644,13 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
                 guidelineId
             })
         });
-        
+
         if (!response.ok) {
             const errorText = await response.text();
             console.error('[PRACTICE-POINTS] API error:', errorText);
             throw new Error(`API error: ${response.status}`);
         }
-        
+
         const result = await response.json();
         console.log('[PRACTICE-POINTS] Result:', {
             success: result.success,
@@ -5658,14 +5658,14 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
             relevantPracticePoints: result.relevantPracticePoints,
             suggestionsCount: result.suggestions?.length
         });
-        
+
         if (!result.success) {
             throw new Error(result.error || 'Failed to get practice point suggestions');
         }
-        
+
         updateUser(`Found ${result.relevantPracticePoints} relevant practice points`, false);
         return result;
-        
+
     } catch (error) {
         console.error('[PRACTICE-POINTS] Error:', error);
         updateUser(`Error: ${error.message}`, false);
@@ -5683,11 +5683,11 @@ async function displayPracticePointSuggestions(result) {
         compliant: result.compliantCount,
         nonCompliant: result.nonCompliantCount
     });
-    
+
     if (!result.suggestions || result.suggestions.length === 0) {
         const message = result.message || 'Plan aligns with guideline recommendations.';
         updateUser(message, false);
-        
+
         // Build summary of what was filtered
         let filterSummary = '';
         if (result.totalPracticePoints > 0) {
@@ -5703,7 +5703,7 @@ async function displayPracticePointSuggestions(result) {
                 </div>
             `;
         }
-        
+
         // Show the same interactive interface structure with compliant message
         const compliantHtml = `
             <div class="dynamic-advice-container" id="suggestion-review-current">
@@ -5727,7 +5727,7 @@ async function displayPracticePointSuggestions(result) {
         appendToSummary1(compliantHtml, true);
         return;
     }
-    
+
     // Convert 3-step results to suggestion format for existing UI
     // Defensive cleanup: model outputs can sometimes contain adjacent duplicated phrases.
     function dedupeAdjacentRepeatText(value) {
@@ -5762,7 +5762,7 @@ async function displayPracticePointSuggestions(result) {
         // Build context based on new 3-step format
         let contextParts = [];
         contextParts.push(`**${point.name}**`);
-        
+
         const issueText = point.issue ? dedupeAdjacentRepeatText(point.issue) : '';
         const descriptionText = point.description ? dedupeAdjacentRepeatText(point.description) : '';
 
@@ -5775,7 +5775,7 @@ async function displayPracticePointSuggestions(result) {
         if (descriptionText && (!issueText || descriptionText !== issueText)) {
             contextParts.push(`\n\n${descriptionText}`);
         }
-        
+
         return {
             id: `pp-${result.guidelineId}-${point.id || index + 1}`,
             originalId: point.id || index + 1,
@@ -5791,20 +5791,20 @@ async function displayPracticePointSuggestions(result) {
             guidelineTitle: result.guidelineTitle
         };
     });
-    
+
     // Store session data
     currentAdviceSession = `pp-${result.guidelineId}-${Date.now()}`;
     currentSuggestions = suggestions;
     userDecisions = {};
-    
+
     window.currentGuidelineId = result.guidelineId;
     window.currentGuidelineTitle = result.guidelineTitle;
-    
+
     // Display using existing one-at-a-time UI
     await displayInteractiveSuggestions(
-        suggestions, 
-        result.guidelineTitle, 
-        result.guidelineId, 
+        suggestions,
+        result.guidelineTitle,
+        result.guidelineId,
         result.guidelineFilename
     );
 }
@@ -5818,7 +5818,7 @@ window.currentSuggestionReview = null;
 async function determineInsertionPoint(suggestion, clinicalNote) {
     try {
         console.log('[DEBUG] determineInsertionPoint: Calling server API');
-        
+
         const idToken = await firebase.auth().currentUser.getIdToken();
         const response = await fetch(`${window.SERVER_URL}/determineInsertionPoint`, {
             method: 'POST',
@@ -5840,7 +5840,7 @@ async function determineInsertionPoint(suggestion, clinicalNote) {
 
         const result = await response.json();
         console.log('[DEBUG] determineInsertionPoint: Received result:', result);
-        
+
         return result.insertionPoint;
     } catch (error) {
         console.error('[DEBUG] determineInsertionPoint: Error:', error);
@@ -5856,7 +5856,7 @@ async function determineInsertionPoint(suggestion, clinicalNote) {
 // Helper function to extract section content from clinical note
 function extractSectionContent(clinicalNote, sectionName, subsectionName = null) {
     console.log('[DEBUG] extractSectionContent:', { sectionName, subsectionName });
-    
+
     // Find the main section
     const sectionPatterns = [
         new RegExp(`^${sectionName}:`, 'im'),
@@ -5864,10 +5864,10 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
         new RegExp(`^${sectionName}\\s*-`, 'im'),
         new RegExp(`${sectionName}:`, 'i')
     ];
-    
+
     let sectionStartIndex = -1;
     let matchedPattern = null;
-    
+
     for (const pattern of sectionPatterns) {
         const match = clinicalNote.match(pattern);
         if (match) {
@@ -5876,28 +5876,28 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
             break;
         }
     }
-    
+
     if (sectionStartIndex === -1) {
         console.warn('[DEBUG] extractSectionContent: Section not found:', sectionName);
         return null;
     }
-    
+
     // Get content after section header
     const afterSection = clinicalNote.slice(sectionStartIndex + matchedPattern.length);
-    
+
     // Find where this section ends (next main section or end of document)
     const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
     let nextSectionIndex = -1;
-    
+
     for (const nextSection of commonSections) {
         if (nextSection === sectionName) continue;
-        
+
         const nextPatterns = [
             new RegExp(`\n${nextSection}:`, 'i'),
             new RegExp(`\n${nextSection}\\s*$`, 'm'),
             new RegExp(`\n${nextSection}\\s*-`, 'i')
         ];
-        
+
         for (const pattern of nextPatterns) {
             const match = afterSection.match(pattern);
             if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
@@ -5905,16 +5905,16 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
             }
         }
     }
-    
+
     // Extract section content
-    let sectionContent = nextSectionIndex !== -1 
+    let sectionContent = nextSectionIndex !== -1
         ? afterSection.slice(0, nextSectionIndex)
         : afterSection;
-    
+
     // If we have a subsection, extract that specific content
     if (subsectionName) {
         console.log('[DEBUG] extractSectionContent: Looking for subsection:', subsectionName);
-        
+
         const subsectionPatterns = [
             new RegExp(`\\*\\*\\s*${subsectionName}\\s*:\\*\\*`, 'i'),
             new RegExp(`\\*\\s*\\*\\*${subsectionName}:\\*\\*`, 'i'),
@@ -5922,10 +5922,10 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
             new RegExp(`\\d+\\.\\s*\\*\\*${subsectionName}:\\*\\*`, 'i'),
             new RegExp(`${subsectionName}:`, 'i')
         ];
-        
+
         let subsectionStartIndex = -1;
         let subsectionMatchedPattern = null;
-        
+
         for (const pattern of subsectionPatterns) {
             const match = sectionContent.match(pattern);
             if (match) {
@@ -5934,21 +5934,21 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
                 break;
             }
         }
-        
+
         if (subsectionStartIndex === -1) {
             console.warn('[DEBUG] extractSectionContent: Subsection not found:', subsectionName);
             return null;
         }
-        
+
         // Find where subsection ends (next subsection or section end)
         const afterSubsection = sectionContent.slice(subsectionStartIndex + subsectionMatchedPattern.length);
         const nextSubsectionPattern = /\n[\*\-]?\s*\*\*[^:]+:\*\*/;
         const nextSubMatch = afterSubsection.match(nextSubsectionPattern);
-        
-        sectionContent = nextSubMatch 
+
+        sectionContent = nextSubMatch
             ? afterSubsection.slice(0, nextSubMatch.index)
             : afterSubsection;
-        
+
         return {
             content: sectionContent.trim(),
             startIndex: sectionStartIndex + matchedPattern.length + subsectionStartIndex + subsectionMatchedPattern.length,
@@ -5956,7 +5956,7 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
             headerPattern: subsectionMatchedPattern
         };
     }
-    
+
     // Return main section content
     return {
         content: sectionContent.trim(),
@@ -5969,36 +5969,36 @@ function extractSectionContent(clinicalNote, sectionName, subsectionName = null)
 // Helper function to replace section content in clinical note
 function replaceSectionContent(clinicalNote, sectionName, subsectionName, oldContent, newContent) {
     console.log('[DEBUG] replaceSectionContent:', { sectionName, subsectionName, oldContentLength: oldContent.length, newContentLength: newContent.length });
-    
+
     // Normalise spacing: collapse extra blank/whitespace-only lines inside the section content
     // so added items sit flush with preceding items rather than being separated by empty lines.
     // Apply to all sections to ensure consistent formatting when incorporating suggestions.
     newContent = newContent.replace(/\n\s*\n/g, '\n');
-    
+
     // Extract the section to get boundaries
     const sectionInfo = extractSectionContent(clinicalNote, sectionName, subsectionName);
     if (!sectionInfo) {
         console.error('[DEBUG] replaceSectionContent: Could not extract section');
         return clinicalNote; // Return unchanged if section not found
     }
-    
+
     // Replace the content
     const before = clinicalNote.slice(0, sectionInfo.startIndex);
     const after = clinicalNote.slice(sectionInfo.endIndex);
-    
+
     // Add appropriate spacing
     const newContentWithSpacing = '\n' + newContent.trim();
-    
+
     return before + newContentWithSpacing + after;
 }
 
 // Helper function to detect list pattern in text
 function detectListPattern(text, startPos = 0) {
     console.log('[DEBUG] detectListPattern: Analysing text from position', startPos);
-    
+
     // Get text from startPos to analyse
     const textToAnalyse = text.slice(startPos);
-    
+
     // Patterns to detect different list types
     const patterns = {
         // Numbered lists: "1. ", "2. ", "3. " etc
@@ -6008,12 +6008,12 @@ function detectListPattern(text, startPos = 0) {
         // Hyphen lists: "- "
         hyphen: /^(\s*)-\s/gm
     };
-    
+
     let detectedType = 'none';
     let lastItemNumber = null;
     let indentation = '';
     let matches = [];
-    
+
     // Check for numbered lists first (most specific)
     patterns.numbered.lastIndex = 0;
     let match;
@@ -6025,7 +6025,7 @@ function detectListPattern(text, startPos = 0) {
             index: match.index
         });
     }
-    
+
     if (matches.length > 0) {
         // Get the last numbered item
         const lastMatch = matches[matches.length - 1];
@@ -6035,7 +6035,7 @@ function detectListPattern(text, startPos = 0) {
         console.log('[DEBUG] detectListPattern: Found numbered list, last item:', lastItemNumber);
         return { type: detectedType, lastItemNumber, indentation };
     }
-    
+
     // Check for bullet points
     patterns.bullet.lastIndex = 0;
     match = null;
@@ -6043,12 +6043,12 @@ function detectListPattern(text, startPos = 0) {
         detectedType = 'bullet';
         indentation = match[1];
     }
-    
+
     if (detectedType === 'bullet') {
         console.log('[DEBUG] detectListPattern: Found bullet list');
         return { type: detectedType, lastItemNumber: null, indentation };
     }
-    
+
     // Check for hyphen lists
     patterns.hyphen.lastIndex = 0;
     match = null;
@@ -6056,12 +6056,12 @@ function detectListPattern(text, startPos = 0) {
         detectedType = 'hyphen';
         indentation = match[1];
     }
-    
+
     if (detectedType === 'hyphen') {
         console.log('[DEBUG] detectListPattern: Found hyphen list');
         return { type: detectedType, lastItemNumber: null, indentation };
     }
-    
+
     console.log('[DEBUG] detectListPattern: No list pattern detected');
     return { type: 'none', lastItemNumber: null, indentation: '' };
 }
@@ -6069,21 +6069,21 @@ function detectListPattern(text, startPos = 0) {
 // Helper function to format text as a list item
 function formatAsListItem(text, listInfo) {
     console.log('[DEBUG] formatAsListItem:', { listInfo, textLength: text.length });
-    
+
     if (!listInfo || listInfo.type === 'none') {
         // No list formatting needed
         return text;
     }
-    
+
     // Clean the text (remove leading/trailing whitespace from each line)
     const cleanedText = text.trim();
-    
+
     // Split into lines for multi-line handling
     const lines = cleanedText.split('\n');
     const indentation = listInfo.indentation || '';
-    
+
     let formattedText = '';
-    
+
     switch (listInfo.type) {
         case 'numbered':
             const nextNumber = (listInfo.lastItemNumber || 0) + 1;
@@ -6097,7 +6097,7 @@ function formatAsListItem(text, listInfo) {
                 }
             }
             break;
-            
+
         case 'bullet':
             // First line gets the bullet
             formattedText = `${indentation}* ${lines[0]}`;
@@ -6109,7 +6109,7 @@ function formatAsListItem(text, listInfo) {
                 }
             }
             break;
-            
+
         case 'hyphen':
             // First line gets the hyphen
             formattedText = `${indentation}- ${lines[0]}`;
@@ -6121,11 +6121,11 @@ function formatAsListItem(text, listInfo) {
                 }
             }
             break;
-            
+
         default:
             formattedText = text;
     }
-    
+
     console.log('[DEBUG] formatAsListItem: Formatted text:', formattedText.substring(0, 100));
     return formattedText;
 }
@@ -6169,10 +6169,10 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             new RegExp(`^${section}\\s*-`, 'im'),
             new RegExp(`${section}:`, 'i')
         ];
-        
+
         let sectionStartIndex = -1;
         let matchedPattern = null;
-        
+
         for (const pattern of sectionPatterns) {
             const match = currentContent.match(pattern);
             if (match) {
@@ -6181,26 +6181,26 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                 break;
             }
         }
-        
+
         if (sectionStartIndex !== -1) {
             console.log('[DEBUG] insertTextAtPoint: Found section', section, 'at index', sectionStartIndex);
-            
+
             // Get the section content (from section start to end)
             const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
-            
+
             // Find where this section ends
             const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
             let nextSectionIndex = -1;
-            
+
             for (const nextSection of commonSections) {
                 if (nextSection === section) continue;
-                
+
                 const nextPatterns = [
                     new RegExp(`\n${nextSection}:`, 'i'),
                     new RegExp(`\n${nextSection}\\s*$`, 'm'),
                     new RegExp(`\n${nextSection}\\s*-`, 'i')
                 ];
-                
+
                 for (const pattern of nextPatterns) {
                     const match = afterSection.match(pattern);
                     if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
@@ -6208,19 +6208,19 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                     }
                 }
             }
-            
+
             // Extract section content
-            const sectionContent = nextSectionIndex !== -1 
-                ? afterSection.slice(0, nextSectionIndex) 
+            const sectionContent = nextSectionIndex !== -1
+                ? afterSection.slice(0, nextSectionIndex)
                 : afterSection;
-            
+
             // If we have a subsection, find it within the section content
             let targetContent = sectionContent;
             let targetStartInSection = 0;
-            
+
             if (subsection) {
                 console.log('[DEBUG] insertTextAtPoint: Looking for subsection', subsection);
-                
+
                 // Look for subsection patterns (markdown bold, bullet points, etc.)
                 const subsectionPatterns = [
                     new RegExp(`\\*\\*\\s*${subsection}\\s*:\\*\\*`, 'i'),  // "** Counselling:**"
@@ -6229,10 +6229,10 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                     new RegExp(`\\d+\\.\\s*\\*\\*${subsection}:\\*\\*`, 'i'), // "1. **Counselling:**"
                     new RegExp(`${subsection}:`, 'i')                       // "Counselling:"
                 ];
-                
+
                 let subsectionStartIndex = -1;
                 let subsectionMatchedPattern = null;
-                
+
                 for (const pattern of subsectionPatterns) {
                     const match = sectionContent.match(pattern);
                     if (match) {
@@ -6241,17 +6241,17 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                         break;
                     }
                 }
-                
+
                 if (subsectionStartIndex !== -1) {
                     console.log('[DEBUG] insertTextAtPoint: Found subsection at index', subsectionStartIndex);
-                    
+
                     // Find where subsection ends (next subsection or section end)
                     const afterSubsection = sectionContent.slice(subsectionStartIndex + subsectionMatchedPattern.length);
-                    
+
                     // Look for next subsection (starts with * ** or - ** or number. **)
                     const nextSubsectionPattern = /\n[\*\-]?\s*\*\*[^:]+:\*\*/;
                     const nextSubMatch = afterSubsection.match(nextSubsectionPattern);
-                    
+
                     if (nextSubMatch) {
                         targetContent = afterSubsection.slice(0, nextSubMatch.index);
                         targetStartInSection = subsectionStartIndex + subsectionMatchedPattern.length;
@@ -6263,7 +6263,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                     console.warn('[DEBUG] insertTextAtPoint: Subsection not found, using entire section');
                 }
             }
-            
+
             // Detect list pattern in the target content or use provided listType
             let listInfo;
             if (insertionMethod === 'appendToList' && listType && listType !== 'none') {
@@ -6279,19 +6279,19 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                 listInfo = detectListPattern(targetContent, 0);
                 console.log('[DEBUG] insertTextAtPoint: Auto-detected list info:', listInfo);
             }
-            
+
             // Format the new text as a list item if applicable
             let textToInsert = cleanedNewText;
             if (listInfo.type !== 'none') {
                 textToInsert = formatAsListItem(cleanedNewText, listInfo);
                 console.log('[DEBUG] insertTextAtPoint: Formatted as list item');
             }
-            
+
             // Calculate final insertion position
             const insertPosition = sectionStartIndex + matchedPattern.length + targetStartInSection + targetContent.length;
-            
+
             console.log('[DEBUG] insertTextAtPoint: Final insertion at position', insertPosition);
-            
+
             // Insert with appropriate spacing
             // For list items or when appending to existing content, use single newline
             // For non-list additions, use double newline (blank line)
@@ -6309,7 +6309,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                 prefix = computePrefixSpacing(currentContent, insertPosition);
             }
             const suffix = nextSectionIndex !== -1 ? '' : '';
-            
+
             return currentContent.slice(0, insertPosition) + prefix + textToInsert + suffix + currentContent.slice(insertPosition);
         } else {
             console.warn('[DEBUG] insertTextAtPoint: Section not found:', section, '- appending to end');
@@ -6330,10 +6330,10 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             new RegExp(`^${section}\\s*-`, 'im'),       // "Discussion -"
             new RegExp(`${section}:`, 'i')              // "Discussion:" anywhere in line
         ];
-        
+
         let sectionStartIndex = -1;
         let matchedPattern = null;
-        
+
         for (const pattern of sectionPatterns) {
             const match = currentContent.match(pattern);
             if (match) {
@@ -6342,27 +6342,27 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                 break;
             }
         }
-        
+
         if (sectionStartIndex !== -1) {
             console.log('[DEBUG] insertTextAtPoint: Found section', section, 'at index', sectionStartIndex);
-            
+
             // Find where this section ends (start of next section or end of document)
             // Look for the next section header after this one
             const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
-            
+
             // Common section names to look for
             const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
             let nextSectionIndex = -1;
-            
+
             for (const nextSection of commonSections) {
                 if (nextSection === section) continue; // Skip current section
-                
+
                 const nextPatterns = [
                     new RegExp(`\n${nextSection}:`, 'i'),
                     new RegExp(`\n${nextSection}\\s*$`, 'm'),
                     new RegExp(`\n${nextSection}\\s*-`, 'i')
                 ];
-                
+
                 for (const pattern of nextPatterns) {
                     const match = afterSection.match(pattern);
                     if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
@@ -6370,7 +6370,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
                     }
                 }
             }
-            
+
             // Calculate insertion position
             let insertPosition;
             if (nextSectionIndex !== -1) {
@@ -6401,7 +6401,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
     // For insertAfter or insertBefore with anchor text
     if (anchorText && (insertionMethod === 'insertAfter' || insertionMethod === 'insertBefore')) {
         const anchorIndex = currentContent.indexOf(anchorText);
-        
+
         if (anchorIndex !== -1) {
             if (insertionMethod === 'insertAfter') {
                 const insertPosition = anchorIndex + anchorText.length;
@@ -6431,7 +6431,7 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
 // Helper function to extract quoted text from context
 function extractQuotedText(context) {
     if (!context) return null;
-    
+
     // Find all text within quotation marks (both single and double quotes)
     const quotePatterns = [
         /'([^']{10,})'/g,  // Single quotes with at least 10 chars
@@ -6439,40 +6439,40 @@ function extractQuotedText(context) {
         /'([^']{10,})'/g,  // Curly single quotes
         /"([^"]{10,})"/g   // Curly double quotes
     ];
-    
+
     let allQuotes = [];
-    
+
     for (const pattern of quotePatterns) {
         let match;
         while ((match = pattern.exec(context)) !== null) {
             allQuotes.push(match[1]);
         }
     }
-    
+
     if (allQuotes.length === 0) {
         return null;
     }
-    
+
     // Return the longest quote (most likely to be the actual guideline quote)
     allQuotes.sort((a, b) => b.length - a.length);
     let longestQuote = allQuotes[0];
-    
+
     // Clean the quote for PDF search - remove citation markers and formatting
     longestQuote = cleanQuoteForSearch(longestQuote);
-    
+
     console.log('[DEBUG] Extracted quote from context:', {
         totalQuotes: allQuotes.length,
         longestQuoteLength: longestQuote.length,
         quotePrevie: longestQuote.substring(0, 50) + '...'
     });
-    
+
     return longestQuote;
 }
 
 // Helper function to clean quotes for PDF search
 function cleanQuoteForSearch(quote) {
     if (!quote) return quote;
-    
+
     // Remove common citation patterns that might not be in the PDF
     let cleaned = quote
         // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], [Grade GPP], etc.
@@ -6486,22 +6486,22 @@ function cleanQuoteForSearch(quote) {
         // Remove extra whitespace and normalize
         .replace(/\s+/g, ' ')
         .trim();
-    
+
     console.log('[DEBUG] Cleaned quote for search:', {
         original: quote.substring(0, 100),
         cleaned: cleaned.substring(0, 100),
         removedChars: quote.length - cleaned.length
     });
-    
+
     return cleaned;
 }
 
 // Helper function to extract key medical terms for fallback search
 function extractKeyTermsForSearch(context, suggestedText) {
     if (!context && !suggestedText) return null;
-    
+
     const combinedText = (context || '') + ' ' + (suggestedText || '');
-    
+
     // Medical terms that are likely to be unique and searchable in guidelines
     // Priority: specific clinical terms > general medical terms
     const medicalPatterns = [
@@ -6510,7 +6510,7 @@ function extractKeyTermsForSearch(context, suggestedText) {
         /\d+(?:\.\d+)?\s*(?:ml|mg|mcg|g|kg|mmol|mm|cm)\b/gi,  // measurements
         /\d+(?:st|nd|rd|th)\s*(?:centile|percentile)/gi,  // percentiles
         /(?:>|<|≥|≤)\s*\d+/g,  // thresholds
-        
+
         // Clinical conditions (highly specific)
         /(?:vasa\s+)?praevia/gi,
         /placenta\s+(?:praevia|accreta|percreta)/gi,
@@ -6520,7 +6520,7 @@ function extractKeyTermsForSearch(context, suggestedText) {
         /gestational\s+diabetes/gi,
         /post[\-\s]?partum\s+haemorrhage/gi,
         /caesarean\s+(?:section|delivery)/gi,
-        
+
         // Procedures and investigations
         /ultrasound|USS|scan/gi,
         /amniocentesis/gi,
@@ -6528,30 +6528,30 @@ function extractKeyTermsForSearch(context, suggestedText) {
         /doppler/gi,
         /antenatal\s+steroids?/gi,
         /corticosteroids?/gi,
-        
+
         // Timing terms
         /(?:first|second|third)\s+trimester/gi,
         /elective\s+delivery/gi,
         /planned\s+delivery/gi,
         /timing\s+of\s+delivery/gi
     ];
-    
+
     let foundTerms = [];
-    
+
     for (const pattern of medicalPatterns) {
         const matches = combinedText.match(pattern);
         if (matches) {
             foundTerms.push(...matches.map(m => m.trim().toLowerCase()));
         }
     }
-    
+
     // Deduplicate and take most specific terms (longer = more specific)
     foundTerms = [...new Set(foundTerms)].sort((a, b) => b.length - a.length);
-    
+
     if (foundTerms.length === 0) {
         // Fallback: extract words with 6+ characters that are likely medical terms
-        const words = combinedText.split(/\s+/).filter(w => 
-            w.length >= 6 && 
+        const words = combinedText.split(/\s+/).filter(w =>
+            w.length >= 6 &&
             !/^(should|would|could|because|however|therefore|important|emphasizes?)$/i.test(w)
         );
         // Take first 3-4 significant words
@@ -6560,20 +6560,20 @@ function extractKeyTermsForSearch(context, suggestedText) {
             foundTerms = significantWords;
         }
     }
-    
+
     if (foundTerms.length === 0) {
         return null;
     }
-    
+
     // Build search phrase from top terms (up to 6 words for better matching)
     const searchPhrase = foundTerms.slice(0, 6).join(' ');
-    
+
     console.log('[DEBUG] extractKeyTermsForSearch: Generated fallback search phrase', {
         termsFound: foundTerms.length,
         searchPhrase: searchPhrase,
         preview: searchPhrase.substring(0, 80)
     });
-    
+
     return searchPhrase;
 }
 
@@ -6584,11 +6584,11 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     }
 
     const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
-    
+
     // Extract search text from context ONLY if hasVerbatimQuote is explicitly true
     let searchText = null;
     let searchType = null;  // Track whether this is 'verbatim' or 'fallback' search
-    
+
     if (context && hasVerbatimQuote === true) {
         const decodedContext = unescapeHtml(context);
 
@@ -6627,10 +6627,10 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     } else if (hasVerbatimQuote === false || !hasVerbatimQuote) {
         // NEW: When no verbatim quote, try to extract key medical terms for a keyword-based search
         console.log('[DEBUG] hasVerbatimQuote is false/undefined - attempting fallback keyword search');
-        
+
         const decodedContext = context ? unescapeHtml(context) : null;
         searchText = extractKeyTermsForSearch(decodedContext, suggestedText);
-        
+
         if (searchText) {
             searchType = 'fallback';
             console.log('[DEBUG] createGuidelineViewerLink: Using keyword fallback search', {
@@ -6641,17 +6641,17 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
             console.log('[DEBUG] createGuidelineViewerLink: No fallback search terms found - opening PDF to first page');
         }
     }
-    
+
     // Store search text and guideline ID for auth handler to use
     const linkData = {
         guidelineId: guidelineId,
         searchText: searchText
     };
-    
+
     // We no longer append any explanatory note after links; the guideline
     // name and context in the surrounding text provide sufficient clarity.
     const paraphraseNote = '';
-    
+
     // Create link with data-link-data; the actual click is handled by a
     // delegated listener in index.html so we don't rely on inline onclick.
     // TipTap will preserve data-link-data via the custom Link extension.
@@ -6679,7 +6679,7 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
     // and links can always display the guideline name.
     const guidelineIdMap = new Map();
     const guidelineTitleMap = new Map();
-    
+
     if (Array.isArray(guidelinesUsed)) {
         guidelinesUsed.forEach(g => {
             if (!g) return;
@@ -6698,20 +6698,20 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             }
         });
     }
-    
+
     console.log(`[DEBUG] ${callerName}: guidelineIdMap keys:`, Array.from(guidelineIdMap.keys()));
 
     // Citation regex pattern: [[CITATION:guidelineId|searchText]]
     // searchText may be empty if no verbatim quote was found
     const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
-    
+
     // Escape HTML and preserve newlines
     let processedText = escapeHtml(answerText).replace(/\n/g, '<br>');
 
     let citationCount = 0;
     let withQuotes = 0;
     let withoutQuotes = 0;
-    
+
     const formattedAnswer = processedText.replace(citationRegex, (match, guidelineId, searchText) => {
         citationCount += 1;
 
@@ -6730,7 +6730,7 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             guidelineIdMap.get(rawId) ||
             guidelineIdMap.get(rawId.toLowerCase()) ||
             rawId;
-        
+
         // Get the guideline title for display
         const displayTitle =
             guidelineTitleMap.get(canonicalId) ||
@@ -6745,11 +6745,11 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             hasQuote,
             searchPreview: decodedSearch.substring(0, 50)
         });
-        
+
         // Create the link with or without search text
         return createGuidelineViewerLink(
-            canonicalId, 
-            displayTitle, 
+            canonicalId,
+            displayTitle,
             null, // filename not needed if ID provided
             hasQuote ? decodedSearch : null,
             hasQuote
@@ -6773,10 +6773,10 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
 }
 
 // Function to prepare auth token for viewer
-window.prepareViewerAuth = async function(event, linkElement) {
+window.prepareViewerAuth = async function (event, linkElement) {
     try {
         event.preventDefault(); // Prevent default navigation
-        
+
         console.log('[DEBUG] Preparing auth token for PDF.js viewer...');
         const user = firebase.auth().currentUser;
         if (!user) {
@@ -6784,30 +6784,30 @@ window.prepareViewerAuth = async function(event, linkElement) {
             alert('Please sign in to view guidelines');
             return;
         }
-        
+
         // Get fresh ID token
         const idToken = await user.getIdToken();
-        
+
         // Get link data from data attribute
         const linkDataStr = linkElement.getAttribute('data-link-data');
         if (!linkDataStr) {
             console.error('[DEBUG] No link data found');
             return;
         }
-        
+
         const linkData = JSON.parse(linkDataStr);
         const { guidelineId, searchText } = linkData;
-        
+
         console.log('[DEBUG] Building PDF.js viewer URL:', { guidelineId, hasSearchText: !!searchText });
-        
+
         // Build the complete PDF URL with token
         // Use SERVER_URL (Render backend) for API calls, not GitHub Pages origin
         const baseUrl = window.SERVER_URL || window.location.origin;
         const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
-        
+
         // Build PDF.js viewer URL with the PDF file URL
         let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
-        
+
         // Add search hash parameters if we have quoted text
         if (searchText) {
             const searchHash = `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
@@ -6821,12 +6821,12 @@ window.prepareViewerAuth = async function(event, linkElement) {
             console.log('[Clerky] Guideline ID:', guidelineId);
             console.log('═══════════════════════════════════════════════════════════════');
         }
-        
+
         console.log('[DEBUG] Opening PDF.js viewer with full URL:', viewerUrl);
-        
+
         // Open in new window
         window.open(viewerUrl, '_blank', 'noopener,noreferrer');
-        
+
     } catch (error) {
         console.error('[DEBUG] Error preparing auth token:', error);
         alert('Failed to prepare authentication. Please try again.');
@@ -6892,7 +6892,7 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
 
         const priorityClass = `priority-${suggestion.priority || 'medium'}`;
         const categoryIcon = getCategoryIcon(suggestion.category);
-        
+
         suggestionsHtml += `
             <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
                 <div class="suggestion-header">
@@ -6959,7 +6959,7 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
     // Add apply all button (with unique IDs based on current session)
     const buttonId = `applyAllDecisionsBtn-${currentAdviceSession}`;
     const summaryId = `decisionsSummary-${currentAdviceSession}`;
-    
+
     suggestionsHtml += `
             </div>
             <div class="advice-footer">
@@ -6976,7 +6976,7 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
         currentSession: currentAdviceSession
     });
     appendToSummary1(suggestionsHtml, false);
-    
+
     // Add a data attribute to mark this as the current session's suggestions
     setTimeout(() => {
         const dynamicAdviceContainer = document.querySelector('.dynamic-advice-container:last-of-type');
@@ -6995,7 +6995,7 @@ function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
 function setSuggestionButtonApplying(buttonId, isApplying) {
     const button = document.getElementById(buttonId);
     if (!button) return;
-    
+
     if (isApplying) {
         // Store original text if not already stored
         if (!button.dataset.originalText) {
@@ -7068,7 +7068,7 @@ function updateSuggestionActionButtons() {
 
     const cancelBtn = document.getElementById('suggestionCancelBtn');
     if (cancelBtn) cancelBtn.onclick = () => cancelSuggestionReview();
-    
+
     // Ensure buttons are not in applying state when updating
     setAllSuggestionButtonsApplying(false);
 }
@@ -7150,14 +7150,14 @@ async function showCurrentSuggestion() {
     }
 }
 
-window.showModifySection = function() { document.getElementById('modify-section-current').style.display = 'block'; };
-window.hideModifySection = function() { document.getElementById('modify-section-current').style.display = 'none'; };
+window.showModifySection = function () { document.getElementById('modify-section-current').style.display = 'block'; };
+window.hideModifySection = function () { document.getElementById('modify-section-current').style.display = 'none'; };
 
-window.handleCurrentSuggestionAction = async function(action) {
+window.handleCurrentSuggestionAction = async function (action) {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const suggestion = review.suggestions[review.currentIndex];
-    
+
     // Set button to applying state
     const buttonMap = {
         'accept': 'suggestionAcceptBtn',
@@ -7168,64 +7168,64 @@ window.handleCurrentSuggestionAction = async function(action) {
     if (buttonId) {
         setSuggestionButtonApplying(buttonId, true);
     }
-    
+
     try {
         // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
-    function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
-        try {
-            const text = (suggestion?.suggestedText || '').toLowerCase();
-            const isAddPrefix = /^\s*add[:\-]/i.test(suggestion?.suggestedText || '');
-            const mentionsTumourMarkers = /(alpha[\s\-]?fetoprotein|afp|beta[\s\-]?hcg|β[\s\-]?hcg|tumou?r\s+markers?)/i.test(suggestion?.suggestedText || '');
-            const mentionsReferralOrPlan = /(refer|mdt|review|follow\s*up|counsel|consent)/i.test(suggestion?.suggestedText || '');
+        function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
+            try {
+                const text = (suggestion?.suggestedText || '').toLowerCase();
+                const isAddPrefix = /^\s*add[:\-]/i.test(suggestion?.suggestedText || '');
+                const mentionsTumourMarkers = /(alpha[\s\-]?fetoprotein|afp|beta[\s\-]?hcg|β[\s\-]?hcg|tumou?r\s+markers?)/i.test(suggestion?.suggestedText || '');
+                const mentionsReferralOrPlan = /(refer|mdt|review|follow\s*up|counsel|consent)/i.test(suggestion?.suggestedText || '');
 
-            // Prefer Plan for action-oriented additions (tests to arrange, referrals, etc.)
-            if (suggestion?.category === 'addition' && (isAddPrefix || mentionsTumourMarkers || mentionsReferralOrPlan)) {
-                // If a Plan section exists in the note, target Plan; else keep original but append at end
-                const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
-                if (hasPlanSection) {
-                    // Preserve subsection from AI if present
+                // Prefer Plan for action-oriented additions (tests to arrange, referrals, etc.)
+                if (suggestion?.category === 'addition' && (isAddPrefix || mentionsTumourMarkers || mentionsReferralOrPlan)) {
+                    // If a Plan section exists in the note, target Plan; else keep original but append at end
+                    const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
+                    if (hasPlanSection) {
+                        // Preserve subsection from AI if present
+                        return {
+                            section: 'Plan',
+                            subsection: insertionPoint.subsection || null,
+                            reasoning: 'Action-oriented addition placed under Plan by client heuristic'
+                        };
+                    }
+                    // No Plan section found – fall back to end append
                     return {
-                        section: 'Plan',
-                        subsection: insertionPoint.subsection || null,
-                        reasoning: 'Action-oriented addition placed under Plan by client heuristic'
+                        section: 'end',
+                        subsection: null,
+                        reasoning: 'No Plan section found; appending to end'
                     };
                 }
-                // No Plan section found – fall back to end append
-                return {
-                    section: 'end',
-                    subsection: null,
-                    reasoning: 'No Plan section found; appending to end'
-                };
+            } catch (e) {
+                console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
             }
-        } catch (e) {
-            console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
+            // Return insertion point with preserved metadata
+            return insertionPoint;
         }
-        // Return insertion point with preserved metadata
-        return insertionPoint;
-    }
-    
+
         // Intercept reject action to show feedback modal
         if (action === 'reject') {
             const suggestionId = `current-review-${review.currentIndex}`;
             showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
                 // Record decision with feedback
-                review.decisions.push({ 
-                    suggestion, 
+                review.decisions.push({
+                    suggestion,
                     action: 'reject',
-                    feedbackReason: feedbackReason 
+                    feedbackReason: feedbackReason
                 });
-                
+
                 console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
                     index: review.currentIndex,
                     hasFeedback: !!feedbackReason,
                     feedbackLength: feedbackReason.length
                 });
-                
+
                 // Continue to next suggestion
                 clearHighlightInEditor();
                 review.currentIndex++;
                 showCurrentSuggestion();
-                
+
                 // Restore button state after modal callback completes
                 if (buttonId) {
                     setSuggestionButtonApplying(buttonId, false);
@@ -7233,19 +7233,19 @@ window.handleCurrentSuggestionAction = async function(action) {
             });
             return; // Don't continue with normal flow - button state restored in callback
         }
-    
+
         // For non-reject actions, continue normally
         review.decisions.push({ suggestion, action });
-        
+
         if (action === 'accept' && suggestion.suggestedText) {
             const currentContent = getUserInputContent();
             let newContent;
-            
+
             // Handle additions (missing documentation) vs modifications (replacing existing text)
             if (suggestion.category === 'addition' || !suggestion.originalText) {
                 // Addition: use new AI incorporation workflow
                 console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
-                
+
                 try {
                     // Use cached insertion point if available, otherwise fetch it now
                     let insertionPoint = suggestion.cachedInsertionPoint;
@@ -7255,18 +7255,18 @@ window.handleCurrentSuggestionAction = async function(action) {
                     } else {
                         console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
                     }
-                    
+
                     // Apply client-side heuristic adjustment
                     insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
                     console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
-                    
+
                     // Extract section content
                     const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
-                    
+
                     if (!sectionInfo) {
                         console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
                         newContent = currentContent + '\n' + suggestion.suggestedText;
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
                     } else {
                         // Call AI to incorporate suggestion into section
                         console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
@@ -7284,14 +7284,14 @@ window.handleCurrentSuggestionAction = async function(action) {
                                 suggestionText: suggestion.suggestedText
                             })
                         });
-                        
+
                         if (!response.ok) {
                             throw new Error(`Failed to incorporate suggestion: ${response.status}`);
                         }
-                        
+
                         const result = await response.json();
                         console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
-                        
+
                         // Replace section content with modified version
                         newContent = replaceSectionContent(
                             currentContent,
@@ -7300,14 +7300,14 @@ window.handleCurrentSuggestionAction = async function(action) {
                             sectionInfo.content,
                             result.modifiedSectionContent
                         );
-                        
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{findText: '', replacementText: suggestion.suggestedText}]);
+
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
                     }
                 } catch (error) {
                     console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
                     // Fallback to simple append - use single newline to avoid inappropriate blank lines
                     newContent = currentContent + '\n' + suggestion.suggestedText;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{findText: '', replacementText: suggestion.suggestedText}]);
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{ findText: '', replacementText: suggestion.suggestedText }]);
                 }
             } else if (suggestion.originalText) {
                 // Modification/Deletion: try exact replacement first
@@ -7397,7 +7397,7 @@ window.handleCurrentSuggestionAction = async function(action) {
                 }
             }
         }
-        
+
         clearHighlightInEditor();
         review.currentIndex++;
         showCurrentSuggestion();
@@ -7409,24 +7409,24 @@ window.handleCurrentSuggestionAction = async function(action) {
     }
 };
 
-window.confirmCurrentModification = async function() {
+window.confirmCurrentModification = async function () {
     const review = window.currentSuggestionReview;
     if (!review) return;
     const modifyTextarea = document.getElementById('modify-textarea-current');
     if (!modifyTextarea) return;
     const modifiedText = modifyTextarea.value.trim();
     if (!modifiedText) { alert('Please enter some text.'); return; }
-    
+
     // Set modify button to applying state
     setSuggestionButtonApplying('suggestionModifyBtn', true);
-    
+
     try {
         const suggestion = review.suggestions[review.currentIndex];
         review.decisions.push({ suggestion, action: 'modify', modifiedText });
-        
+
         const currentContent = getUserInputContent();
         let newContent;
-        
+
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
             // Addition: fold the modified text into the correct section/list using the same
@@ -7447,8 +7447,8 @@ window.confirmCurrentModification = async function() {
 
                 if (!sectionInfo) {
                     console.error('[DEBUG] confirmCurrentModification (addition): Could not extract section, falling back to simple append');
-            const spacing = currentContent.trim() ? '\n\n' : '';
-            newContent = currentContent + spacing + modifiedText;
+                    const spacing = currentContent.trim() ? '\n\n' : '';
+                    newContent = currentContent + spacing + modifiedText;
                     setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (Fallback Append)', [
                         { findText: '', replacementText: modifiedText }
                     ]);
@@ -7585,7 +7585,7 @@ window.confirmCurrentModification = async function() {
                 }
             }
         }
-        
+
         clearHighlightInEditor();
         review.currentIndex++;
         showCurrentSuggestion();
@@ -7595,7 +7595,7 @@ window.confirmCurrentModification = async function() {
     }
 };
 
-window.navigateSuggestion = function(direction) {
+window.navigateSuggestion = function (direction) {
     const review = window.currentSuggestionReview;
     if (!review) return;
     clearHighlightInEditor();
@@ -7614,14 +7614,14 @@ async function completeSuggestionReview() {
     const rejected = review.decisions.filter(d => d.action === 'reject').length;
     const modified = review.decisions.filter(d => d.action === 'modify').length;
     const skipped = review.suggestions.length - review.decisions.length;
-    
+
     // Submit feedback from one-at-a-time review
     submitFeedbackFromReview(review);
-    
+
     const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = ''; // Remove review UI
-    
+
     // Summarise outcomes via status bar instead of summary1 banner
     updateUser(
         `Suggestions review complete: ${accepted} accepted, ${rejected} rejected, ${modified} modified, ${skipped} skipped.`,
@@ -7635,27 +7635,27 @@ async function completeSuggestionReview() {
     if (typeof updateSummaryVisibility === 'function') {
         updateSummaryVisibility();
     }
-    
+
     // Check if we're in sequential processing mode and need to move to next guideline
     if (window.sequentialProcessingActive) {
         console.log('[DEBUG] completeSuggestionReview: Sequential processing active, checking for next guideline');
         const queue = window.sequentialProcessingQueue || [];
         const currentIndex = window.sequentialProcessingIndex || 0;
-        
+
         console.log('[DEBUG] completeSuggestionReview: Queue status:', {
             queueLength: queue.length,
             currentIndex: currentIndex,
             hasMore: currentIndex < queue.length - 1
         });
-        
+
         if (currentIndex < queue.length - 1) {
             // Move to next guideline
             window.sequentialProcessingIndex = currentIndex + 1;
             const nextGuidelineId = queue[currentIndex + 1];
             const nextStepNumber = currentIndex + 2;
-            
+
             console.log(`[DEBUG] completeSuggestionReview: Moving to guideline ${nextStepNumber}/${queue.length}`);
-            
+
             // Update status display if it exists
             const statusDiv = document.getElementById('processing-status');
             if (statusDiv) {
@@ -7663,10 +7663,10 @@ async function completeSuggestionReview() {
                     const guideline = window.relevantGuidelines.find(g => g.id === id);
                     const title = getGuidelineDisplayName(id, guideline);
                     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-                    
+
                     let className = 'processing-step pending';
                     let emoji = '⏳';
-                    
+
                     if (index < window.sequentialProcessingIndex) {
                         className = 'processing-step completed';
                         emoji = '✅';
@@ -7674,15 +7674,15 @@ async function completeSuggestionReview() {
                         className = 'processing-step current';
                         emoji = '🔄';
                     }
-                    
+
                     return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
                 }).join('');
             }
-            
+
             // Show transition message in status bar
             const transitionMessage = 'Incorporating changes and preparing for next guideline...';
             updateUser(transitionMessage, true);
-            
+
             // Process next guideline after a short delay
             setTimeout(async () => {
                 try {
@@ -7700,13 +7700,13 @@ async function completeSuggestionReview() {
             console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
             window.sequentialProcessingActive = false;
             updateAnalyseButtonProgress('All Guidelines Complete!', false);
-            
+
             // Remove any remaining transient messages (progress indicators, processing status, etc.)
             removeTransientMessages();
-            
+
             // Wait briefly for animation to complete
             await new Promise(resolve => setTimeout(resolve, 350));
-            
+
             const finalMessage = `
                 <div class="sequential-processing-complete">
                     <h3>🎉 All Guidelines Processed!</h3>
@@ -7718,13 +7718,13 @@ async function completeSuggestionReview() {
     }
 }
 
-window.cancelSuggestionReview = function() {
+window.cancelSuggestionReview = function () {
     const review = window.currentSuggestionReview;
     if (!review) return;
-    
+
     // Set cancel button to applying state
     setSuggestionButtonApplying('suggestionCancelBtn', true);
-    
+
     try {
         clearHighlightInEditor();
         const reviewContainer = document.getElementById('suggestion-review-current');
@@ -7792,7 +7792,7 @@ function handleSuggestionAction(suggestionId, action) {
     const suggestion = currentSuggestions.find(s => s.id === suggestionId);
     if (!suggestion) {
         console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', suggestionId);
-        
+
         // Show helpful error message to user
         const errorMessage = `
             <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 15px; margin: 10px 0; color: #856404;">
@@ -7802,12 +7802,12 @@ function handleSuggestionAction(suggestionId, action) {
                 <p><small>Suggestion ID: ${suggestionId} | Current Chat: ${window.currentChatId}</small></p>
             </div>
         `;
-        
+
         // Find the suggestion container and add the error message
         const suggestionContainer = suggestionElement.closest('.suggestion-item');
         if (suggestionContainer) {
             suggestionContainer.insertAdjacentHTML('afterend', errorMessage);
-            
+
             // Remove the error message after 10 seconds
             setTimeout(() => {
                 const errorDiv = suggestionContainer.nextElementSibling;
@@ -7816,7 +7816,7 @@ function handleSuggestionAction(suggestionId, action) {
                 }
             }, 10000);
         }
-        
+
         return;
     }
 
@@ -7860,7 +7860,7 @@ function handleSuggestionAction(suggestionId, action) {
         const currentContent = getUserInputContent();
         let newContent;
         let replacements;
-        
+
         // Handle additions (missing documentation) vs modifications (replacing existing text)
         if (suggestion.category === 'addition' || !suggestion.originalText) {
             // Addition: append the suggested text to the end of the document
@@ -7882,7 +7882,7 @@ function handleSuggestionAction(suggestionId, action) {
                 replacementText: suggestion.suggestedText
             }];
         }
-        
+
         setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', replacements);
         console.log('[DEBUG] handleSuggestionAction: Applied accepted suggestion immediately');
     }
@@ -7903,10 +7903,10 @@ let currentSpeechRecognition = null;
 // Shared feedback modal function with speech-to-text capability
 function showFeedbackModal(suggestionId, suggestion, onSubmitCallback) {
     console.log('[FEEDBACK] Showing feedback modal:', suggestionId);
-    
+
     // Check speech recognition support
     const hasSpeechRecognition = 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window;
-    
+
     // Create modal HTML with speech-to-text button
     const modalHtml = `
         <div id="feedback-modal-${suggestionId}" class="feedback-modal" style="
@@ -8016,13 +8016,13 @@ function showFeedbackModal(suggestionId, suggestion, onSubmitCallback) {
             </div>
         </div>
     `;
-    
+
     // Add modal to page
     document.body.insertAdjacentHTML('beforeend', modalHtml);
-    
+
     // Store the callback for later use
     window[`feedbackCallback_${suggestionId}`] = onSubmitCallback;
-    
+
     // Focus on textarea
     setTimeout(() => {
         const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
@@ -8031,13 +8031,13 @@ function showFeedbackModal(suggestionId, suggestion, onSubmitCallback) {
 }
 
 // Toggle speech recognition
-window.toggleSpeechRecognition = function(suggestionId) {
+window.toggleSpeechRecognition = function (suggestionId) {
     const speechBtn = document.getElementById(`speech-btn-${suggestionId}`);
     const speechStatus = document.getElementById(`speech-status-${suggestionId}`);
     const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
-    
+
     if (!speechBtn || !textarea) return;
-    
+
     // If already recording, stop it
     if (currentSpeechRecognition) {
         currentSpeechRecognition.stop();
@@ -8047,32 +8047,32 @@ window.toggleSpeechRecognition = function(suggestionId) {
         if (speechStatus) speechStatus.style.display = 'none';
         return;
     }
-    
+
     // Check browser support
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognition) {
         alert('Speech recognition is not supported in your browser. Please use Chrome, Edge, or Safari.');
         return;
     }
-    
+
     // Create new recognition instance
     const recognition = new SpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.lang = 'en-GB'; // British English
-    
+
     let finalTranscript = textarea.value;
-    
+
     recognition.onstart = () => {
         console.log('[SPEECH] Recognition started');
         speechBtn.style.background = '#fee2e2';
         speechBtn.style.borderColor = '#dc2626';
         if (speechStatus) speechStatus.style.display = 'block';
     };
-    
+
     recognition.onresult = (event) => {
         let interimTranscript = '';
-        
+
         for (let i = event.resultIndex; i < event.results.length; i++) {
             const transcript = event.results[i][0].transcript;
             if (event.results[i].isFinal) {
@@ -8081,18 +8081,18 @@ window.toggleSpeechRecognition = function(suggestionId) {
                 interimTranscript += transcript;
             }
         }
-        
+
         // Update textarea with final + interim results
         textarea.value = finalTranscript + (interimTranscript ? ' ' + interimTranscript : '');
     };
-    
+
     recognition.onerror = (event) => {
         console.error('[SPEECH] Recognition error:', event.error);
         currentSpeechRecognition = null;
         speechBtn.style.background = '#f3f4f6';
         speechBtn.style.borderColor = '#d1d5db';
         if (speechStatus) speechStatus.style.display = 'none';
-        
+
         if (event.error === 'no-speech') {
             // Silent error - just stop
         } else if (event.error === 'not-allowed') {
@@ -8101,44 +8101,44 @@ window.toggleSpeechRecognition = function(suggestionId) {
             alert('Speech recognition error: ' + event.error);
         }
     };
-    
+
     recognition.onend = () => {
         console.log('[SPEECH] Recognition ended');
         currentSpeechRecognition = null;
         speechBtn.style.background = '#f3f4f6';
         speechBtn.style.borderColor = '#d1d5db';
         if (speechStatus) speechStatus.style.display = 'none';
-        
+
         // Keep the final transcript in the textarea
         textarea.value = finalTranscript;
     };
-    
+
     // Start recognition
     currentSpeechRecognition = recognition;
     recognition.start();
 };
 
 // Submit feedback from modal (shared function)
-window.submitFeedbackModal = function(suggestionId, includeFeedback) {
+window.submitFeedbackModal = function (suggestionId, includeFeedback) {
     console.log('[FEEDBACK] Submitting feedback from modal:', suggestionId, includeFeedback);
-    
+
     // Stop any ongoing speech recognition
     if (currentSpeechRecognition) {
         currentSpeechRecognition.stop();
         currentSpeechRecognition = null;
     }
-    
+
     // Get feedback text if provided
     let feedbackReason = '';
     if (includeFeedback) {
         const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
         feedbackReason = textarea ? textarea.value.trim() : '';
     }
-    
+
     // Remove modal
     const modal = document.getElementById(`feedback-modal-${suggestionId}`);
     if (modal) modal.remove();
-    
+
     // Call the stored callback
     const callback = window[`feedbackCallback_${suggestionId}`];
     if (callback) {
@@ -8152,11 +8152,11 @@ function submitFeedbackFromReview(review) {
     if (!review || !review.decisions || review.decisions.length === 0) {
         return;
     }
-    
+
     // Extract feedback entries from decisions
     const feedbackEntries = review.decisions
-        .filter(d => (d.action === 'reject' || d.action === 'modify') && 
-                     (d.feedbackReason || d.modifiedText))
+        .filter(d => (d.action === 'reject' || d.action === 'modify') &&
+            (d.feedbackReason || d.modifiedText))
         .map((d, index) => ({
             suggestionId: `review-${index}`,
             action: d.action,
@@ -8166,26 +8166,26 @@ function submitFeedbackFromReview(review) {
             suggestedText: d.suggestion.suggestedText || '',
             clinicalScenario: window.latestAnalysis?.transcript?.substring(0, 500) || ''
         }));
-    
+
     if (feedbackEntries.length === 0) {
         console.log('[FEEDBACK] No feedback to submit from review');
         return;
     }
-    
+
     // Get guideline info from the review
     const guidelineId = review.guidelineId || window.currentGuidelineId;
     const guidelineTitle = review.guidelineTitle || window.currentGuidelineTitle || 'Unknown';
-    
+
     if (!guidelineId) {
         console.log('[FEEDBACK] No guideline ID available for feedback submission');
         return;
     }
-    
+
     console.log('[FEEDBACK] Submitting feedback from one-at-a-time review:', {
         guidelineId,
         entriesCount: feedbackEntries.length
     });
-    
+
     // Submit to backend
     submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbackEntries);
 }
@@ -8199,7 +8199,7 @@ function promptForRejectionFeedback(suggestionId, suggestion) {
             console.error('[FEEDBACK] Suggestion data not found:', suggestionId);
             return;
         }
-        
+
         // Record the rejection decision with optional feedback
         userDecisions[suggestionId] = {
             action: 'reject',
@@ -8207,41 +8207,41 @@ function promptForRejectionFeedback(suggestionId, suggestion) {
             timestamp: new Date().toISOString(),
             feedbackReason: feedbackReason
         };
-        
+
         console.log('[FEEDBACK] Recorded rejection with feedback', {
             suggestionId,
             hasFeedback: !!feedbackReason,
             feedbackLength: feedbackReason.length
         });
-        
+
         // Update UI to show decision
         updateSuggestionStatus(suggestionId, 'reject');
         updateDecisionsSummary();
         debouncedSaveState();
-        
+
         // Check if all suggestions for this guideline have been processed
         checkAndSubmitGuidelineFeedback();
     });
 }
 
 // Submit rejection feedback (or skip)
-window.submitRejectionFeedback = function(suggestionId, includeFeedback) {
+window.submitRejectionFeedback = function (suggestionId, includeFeedback) {
     console.log('[FEEDBACK] Submitting rejection feedback:', suggestionId, includeFeedback);
-    
+
     // Get feedback text if provided
     let feedbackReason = '';
     if (includeFeedback) {
         const textarea = document.getElementById(`feedback-textarea-${suggestionId}`);
         feedbackReason = textarea ? textarea.value.trim() : '';
     }
-    
+
     // Find the suggestion data
     const suggestion = currentSuggestions.find(s => s.id === suggestionId);
     if (!suggestion) {
         console.error('[FEEDBACK] Suggestion data not found:', suggestionId);
         return;
     }
-    
+
     // Record the rejection decision with optional feedback
     userDecisions[suggestionId] = {
         action: 'reject',
@@ -8249,22 +8249,22 @@ window.submitRejectionFeedback = function(suggestionId, includeFeedback) {
         timestamp: new Date().toISOString(),
         feedbackReason: feedbackReason
     };
-    
+
     console.log('[FEEDBACK] Recorded rejection with feedback', {
         suggestionId,
         hasFeedback: !!feedbackReason,
         feedbackLength: feedbackReason.length
     });
-    
+
     // Remove modal
     const modal = document.getElementById(`feedback-modal-${suggestionId}`);
     if (modal) modal.remove();
-    
+
     // Update UI to show decision
     updateSuggestionStatus(suggestionId, 'reject');
     updateDecisionsSummary();
     debouncedSaveState();
-    
+
     // Check if all suggestions for this guideline have been processed
     checkAndSubmitGuidelineFeedback();
 };
@@ -8274,7 +8274,7 @@ function checkAndSubmitGuidelineFeedback() {
     if (!currentSuggestions || currentSuggestions.length === 0) {
         return;
     }
-    
+
     // Group suggestions by guideline
     const guidelineGroups = {};
     currentSuggestions.forEach(suggestion => {
@@ -8291,21 +8291,21 @@ function checkAndSubmitGuidelineFeedback() {
             guidelineGroups[guidelineId].suggestions.push(suggestion);
         }
     });
-    
+
     // Check each guideline group
     Object.keys(guidelineGroups).forEach(guidelineId => {
         const group = guidelineGroups[guidelineId];
         const allProcessed = group.suggestions.every(s => userDecisions[s.id]);
-        
+
         if (allProcessed) {
             // Collect feedback entries for this guideline
             const feedbackEntries = group.suggestions
                 .map(s => {
                     const decision = userDecisions[s.id];
                     if (!decision) return null;
-                    
+
                     // Only include rejections and modifications with feedback
-                    if ((decision.action === 'reject' || decision.action === 'modify') && 
+                    if ((decision.action === 'reject' || decision.action === 'modify') &&
                         (decision.feedbackReason || decision.modifiedText)) {
                         return {
                             suggestionId: s.originalId || s.id,
@@ -8320,7 +8320,7 @@ function checkAndSubmitGuidelineFeedback() {
                     return null;
                 })
                 .filter(entry => entry !== null);
-            
+
             if (feedbackEntries.length > 0) {
                 console.log('[FEEDBACK] Submitting feedback batch for guideline:', guidelineId, feedbackEntries.length, 'entries');
                 submitGuidelineFeedbackBatch(guidelineId, group.guidelineTitle, feedbackEntries);
@@ -8346,16 +8346,16 @@ async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbac
             guidelineId,
             entriesCount: feedbackEntries.length
         });
-        
+
         // Get user token
         const user = auth.currentUser;
         if (!user) {
             console.log('[FEEDBACK] No authenticated user, skipping feedback submission');
             return;
         }
-        
+
         const idToken = await user.getIdToken();
-        
+
         // Submit to backend (fire and forget - don't wait)
         fetch(`${window.SERVER_URL}/submitGuidelineFeedback`, {
             method: 'POST',
@@ -8370,19 +8370,19 @@ async function submitGuidelineFeedbackBatch(guidelineId, guidelineTitle, feedbac
                 transcript: window.latestAnalysis?.transcript || ''
             })
         })
-        .then(response => response.json())
-        .then(result => {
-            console.log('[FEEDBACK] Feedback submission result:', result);
-            if (result.success && result.feedbackCount > 0) {
-                // Show subtle thank you notification
-                showFeedbackThankYou();
-            }
-        })
-        .catch(error => {
-            console.error('[FEEDBACK] Error submitting feedback:', error);
-            // Fail silently - don't disrupt user workflow
-        });
-        
+            .then(response => response.json())
+            .then(result => {
+                console.log('[FEEDBACK] Feedback submission result:', result);
+                if (result.success && result.feedbackCount > 0) {
+                    // Show subtle thank you notification
+                    showFeedbackThankYou();
+                }
+            })
+            .catch(error => {
+                console.error('[FEEDBACK] Error submitting feedback:', error);
+                // Fail silently - don't disrupt user workflow
+            });
+
     } catch (error) {
         console.error('[FEEDBACK] Error in submitGuidelineFeedbackBatch:', error);
     }
@@ -8406,7 +8406,7 @@ function showFeedbackThankYou() {
     `;
     notification.innerHTML = '✅ Thank you for your feedback - helping improve future suggestions!';
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transition = 'opacity 0.3s';
@@ -8455,7 +8455,7 @@ function confirmModification(suggestionId) {
     const currentContent = getUserInputContent();
     let newContent;
     let replacements;
-    
+
     // Handle additions (missing documentation) vs modifications (replacing existing text)
     if (suggestion.category === 'addition' || !suggestion.originalText) {
         // Addition: append the modified text to the end of the document
@@ -8476,7 +8476,7 @@ function confirmModification(suggestionId) {
             replacementText: modifiedText
         }];
     }
-    
+
     setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', replacements);
     console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
 
@@ -8489,7 +8489,7 @@ function confirmModification(suggestionId) {
     updateSuggestionStatus(suggestionId, 'modify', modifiedText);
     updateDecisionsSummary();
     debouncedSaveState(); // Save state after modification
-    
+
     // Check if all suggestions for this guideline have been processed
     checkAndSubmitGuidelineFeedback();
 }
@@ -8582,11 +8582,11 @@ function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
     if (suggestionElement) {
         suggestionElement.classList.remove('decision-accepted', 'decision-rejected', 'decision-modified');
         suggestionElement.classList.add(statusClass);
-        
+
         // Hide the entire suggestion after a brief delay to let user see the status
         setTimeout(() => {
             suggestionElement.classList.add('hiding');
-            
+
             // After animation completes, completely hide the element
             setTimeout(() => {
                 suggestionElement.style.display = 'none';
@@ -8602,7 +8602,7 @@ function updateDecisionsSummary() {
     }
 
     const summaryElement = document.getElementById(`decisionsSummary-${currentAdviceSession}`);
-    
+
     if (!summaryElement) {
         // Element not found - this is OK since we removed the Apply All button
         return;
@@ -8611,7 +8611,7 @@ function updateDecisionsSummary() {
     const totalSuggestions = currentSuggestions.length;
     const totalDecisions = Object.keys(userDecisions).length;
     const decisions = Object.values(userDecisions);
-    
+
     const acceptedCount = decisions.filter(d => d.action === 'accept').length;
     const rejectedCount = decisions.filter(d => d.action === 'reject').length;
     const modifiedCount = decisions.filter(d => d.action === 'modify').length;
@@ -8635,18 +8635,18 @@ async function checkAuthenticationStatus() {
         if (!user) {
             return { isValid: false, error: 'User not authenticated' };
         }
-        
+
         // Try to get a token to verify auth is working
         await user.getIdToken(false); // Don't force refresh for this check
         return { isValid: true };
-        
+
     } catch (error) {
         console.warn('[DEBUG] Authentication check failed:', error.message);
-        return { 
-            isValid: false, 
+        return {
+            isValid: false,
             error: error.message,
-            needsRefresh: error.code === 'auth/network-request-failed' || 
-                         error.message.includes('securetoken.googleapis.com')
+            needsRefresh: error.code === 'auth/network-request-failed' ||
+                error.message.includes('securetoken.googleapis.com')
         };
     }
 }
@@ -8669,13 +8669,13 @@ async function applyAllDecisions() {
         alert('Please make some decisions on the suggestions first.');
         return;
     }
-    
+
     // Check authentication status before proceeding
     console.log('[DEBUG] applyAllDecisions: Checking authentication status...');
     const authStatus = await checkAuthenticationStatus();
     if (!authStatus.isValid) {
         console.error('[DEBUG] applyAllDecisions: Authentication check failed:', authStatus.error);
-        
+
         if (authStatus.needsRefresh) {
             const shouldRefresh = confirm(
                 'Your authentication session appears to have expired or there\'s a connectivity issue. ' +
@@ -8707,7 +8707,7 @@ async function applyAllDecisions() {
             // Find the original ID by looking up the suggestion
             const suggestion = currentSuggestions.find(s => s.id === prefixedId);
             const originalId = suggestion ? suggestion.originalId : prefixedId;
-            
+
             decisionsData[originalId] = {
                 action: decision.action,
                 modifiedText: decision.modifiedText || null
@@ -8724,20 +8724,20 @@ async function applyAllDecisions() {
         if (!user) {
             throw new Error('User not authenticated');
         }
-        
+
         let idToken;
         let tokenAttempts = 0;
         const maxTokenAttempts = 3;
-        
+
         while (tokenAttempts < maxTokenAttempts) {
             try {
                 console.log(`[DEBUG] applyAllDecisions: Getting ID token (attempt ${tokenAttempts + 1}/${maxTokenAttempts})`);
-                
+
                 // Try to get fresh token, with force refresh on retry attempts
                 idToken = await user.getIdToken(tokenAttempts > 0);
                 console.log('[DEBUG] applyAllDecisions: Got ID token successfully');
                 break;
-                
+
             } catch (tokenError) {
                 tokenAttempts++;
                 console.error(`[DEBUG] applyAllDecisions: Token attempt ${tokenAttempts} failed:`, {
@@ -8745,10 +8745,10 @@ async function applyAllDecisions() {
                     code: tokenError.code,
                     willRetry: tokenAttempts < maxTokenAttempts
                 });
-                
+
                 if (tokenAttempts >= maxTokenAttempts) {
                     // If all token attempts failed, provide a more user-friendly error
-                    if (tokenError.code === 'auth/network-request-failed' || 
+                    if (tokenError.code === 'auth/network-request-failed' ||
                         tokenError.message.includes('securetoken.googleapis.com') ||
                         tokenError.message.includes('are-blocked')) {
                         throw new Error('Authentication service temporarily unavailable. Please check your internet connection and try again in a few moments.');
@@ -8756,7 +8756,7 @@ async function applyAllDecisions() {
                         throw new Error(`Authentication failed: ${tokenError.message}. Please sign out and sign back in.`);
                     }
                 }
-                
+
                 // Wait before retry (exponential backoff)
                 const delay = Math.min(1000 * Math.pow(2, tokenAttempts - 1), 5000);
                 console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before retry...`);
@@ -8769,11 +8769,11 @@ async function applyAllDecisions() {
         let response;
         let apiAttempts = 0;
         const maxApiAttempts = 2;
-        
+
         while (apiAttempts < maxApiAttempts) {
             try {
                 console.log(`[DEBUG] applyAllDecisions: API call attempt ${apiAttempts + 1}/${maxApiAttempts}`);
-                
+
                 response = await fetch(`${window.SERVER_URL}/applyDynamicAdvice`, {
                     method: 'POST',
                     headers: {
@@ -8785,21 +8785,21 @@ async function applyAllDecisions() {
                         decisions: decisionsData
                     })
                 });
-                
+
                 // If we get a response, break out of retry loop
                 break;
-                
+
             } catch (fetchError) {
                 apiAttempts++;
                 console.error(`[DEBUG] applyAllDecisions: API attempt ${apiAttempts} failed:`, {
                     error: fetchError.message,
                     willRetry: apiAttempts < maxApiAttempts
                 });
-                
+
                 if (apiAttempts >= maxApiAttempts) {
                     throw new Error(`Network error: ${fetchError.message}. Please check your internet connection and try again.`);
                 }
-                
+
                 // Wait before retry
                 const delay = 2000;
                 console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before API retry...`);
@@ -8854,7 +8854,7 @@ async function applyAllDecisions() {
         `;
 
         appendToSummary1(summaryHtml, false); // Decision panel: shows Copy/Replace actions
-        
+
         // Replace the user input with the updated transcript text
         const transcriptOutput = `${result.updatedTranscript}`;
         appendToOutputField(transcriptOutput, true);
@@ -8872,15 +8872,15 @@ async function applyAllDecisions() {
         if (window.sequentialProcessingActive) {
             const queue = window.sequentialProcessingQueue || [];
             const currentIndex = window.sequentialProcessingIndex || 0;
-            
+
             if (currentIndex < queue.length - 1) {
                 // Move to next guideline
                 window.sequentialProcessingIndex = currentIndex + 1;
                 const nextGuidelineId = queue[currentIndex + 1];
                 const nextStepNumber = currentIndex + 2;
-                
+
                 console.log(`[DEBUG] Sequential processing: Moving to guideline ${nextStepNumber}/${queue.length}`);
-                
+
                 // Update status display
                 const statusDiv = document.getElementById('processing-status');
                 if (statusDiv) {
@@ -8888,10 +8888,10 @@ async function applyAllDecisions() {
                         const guideline = window.relevantGuidelines.find(g => g.id === id);
                         const title = getGuidelineDisplayName(id, guideline);
                         const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-                        
+
                         let className = 'processing-step pending';
                         let emoji = '⏳';
-                        
+
                         if (index < window.sequentialProcessingIndex) {
                             className = 'processing-step completed';
                             emoji = '✅';
@@ -8899,31 +8899,31 @@ async function applyAllDecisions() {
                             className = 'processing-step current';
                             emoji = '🔄';
                         }
-                        
+
                         return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
                     }).join('');
                 }
-                
+
                 // Show transition message via status bar
                 const transitionMessage = 'Incorporating changes and preparing for next guideline...';
                 updateUser(transitionMessage, true);
-                
+
                 // Update the transcript with applied changes automatically
                 if (result.updatedTranscript) {
                     setUserInputContent(result.updatedTranscript, true, 'Guideline Suggestions Update');
                     console.log('[DEBUG] Sequential processing: Updated transcript automatically');
                 }
-                
+
                 // Process next guideline after a brief delay
                 setTimeout(async () => {
                     try {
-                                const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
-        updateUser(processingStepMessage, true);
-                        
+                        const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+                        updateUser(processingStepMessage, true);
+
                         await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
                     } catch (error) {
                         console.error(`[DEBUG] Error processing next guideline ${nextGuidelineId}:`, error);
-                        
+
                         // Show detailed error with retry option
                         const errorMessage = `
                             <div class="sequential-processing-error">
@@ -8957,11 +8957,11 @@ async function applyAllDecisions() {
                         appendToOutputField(errorMessage, false);
                     }
                 }, 1000);
-                
+
             } else {
                 // All guidelines completed
                 window.sequentialProcessingActive = false;
-                
+
                 // Update final status
                 const statusDiv = document.getElementById('processing-status');
                 if (statusDiv) {
@@ -8972,7 +8972,7 @@ async function applyAllDecisions() {
                         return `<div class="processing-step completed">✅ ${index + 1}. ${shortTitle}</div>`;
                     }).join('');
                 }
-                
+
                 // Show completion message
                 const finalMessage = `
                     <div class="sequential-processing-complete">
@@ -8992,7 +8992,7 @@ async function applyAllDecisions() {
                     }
                     </style>
                 `;
-                
+
                 updateUser('Sequential processing completed for all selected guidelines.', false);
                 console.log('[DEBUG] Sequential processing completed successfully');
             }
@@ -9007,7 +9007,7 @@ async function applyAllDecisions() {
         // Provide specific guidance based on error type
         let errorGuidance = 'Please try again or contact support if the problem persists.';
         let showRefreshButton = false;
-        
+
         if (error.message.includes('Authentication service temporarily unavailable') ||
             error.message.includes('securetoken.googleapis.com') ||
             error.message.includes('are-blocked')) {
@@ -9092,7 +9092,7 @@ function replaceOriginalTranscript() {
 // Modify initializeApp to auto-sync guidelines if needed
 async function initializeApp() {
     console.log('[DEBUG] Starting initializeApp...');
-    
+
     try {
         console.log('[DEBUG] Initializing marked library...');
         await initializeMarked();
@@ -9101,7 +9101,7 @@ async function initializeApp() {
         console.log('[DEBUG] Setting up Firebase auth state listener...');
         // Auth state change handler is now in the new initializeMainApp function
         // The auth state change handler will handle showing/hiding the loading screen
-        
+
         console.log('[DEBUG] initializeApp completed successfully');
     } catch (error) {
         console.error('[ERROR] Failed to initialize app:', error);
@@ -9117,17 +9117,17 @@ function setupGoogleSignIn() {
             console.log('[DEBUG] Google Sign-in button listener already set up');
             return;
         }
-        
+
         console.log('[DEBUG] Setting up Google Sign-in button listener...');
-        
+
         let isSigningIn = false; // Prevent concurrent sign-in attempts
-        
+
         signInButton.addEventListener('click', async () => {
             if (isSigningIn) {
                 console.log('[DEBUG] Sign-in already in progress, ignoring click');
                 return;
             }
-            
+
             try {
                 isSigningIn = true;
                 console.log('[DEBUG] Google Sign-in button clicked');
@@ -9143,7 +9143,7 @@ function setupGoogleSignIn() {
                 isSigningIn = false;
             }
         });
-        
+
         // Mark that listener has been set up
         signInButton.setAttribute('data-listener-setup', 'true');
         console.log('[DEBUG] Google Sign-in button listener set up successfully');
@@ -9155,20 +9155,20 @@ function setupGoogleSignIn() {
 // Start initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, starting initialization...');
-    
+
     // Ensure mode selection page is hidden on initial load
     const modeSelectionPage = document.getElementById('modeSelectionPage');
     if (modeSelectionPage) {
         modeSelectionPage.classList.add('hidden');
         console.log('[DEBUG] Ensured mode selection page is hidden on DOM load');
     }
-    
+
     // Skip full initialization on audit page - only load functions
     if (window.AUDIT_PAGE) {
         console.log('Audit page detected, skipping DOM-dependent initialization');
         return;
     }
-    
+
     initializeApp().catch(error => {
         console.error('Failed to initialize application:', error);
         isInitialized = true;
@@ -9193,49 +9193,49 @@ document.addEventListener('DOMContentLoaded', () => {
     const askGuidelinesBtn = document.getElementById('askGuidelinesBtn');
     const auditBtnMode = document.getElementById('auditBtn');
     const learnTopicBtn = document.getElementById('learnTopicBtn');
-    
+
     if (guidelineSuggestionsBtn) {
         guidelineSuggestionsBtn.addEventListener('click', () => {
             window.selectedMode = 'guideline-suggestions';
             transitionToMainContent();
         });
     }
-    
+
     if (askGuidelinesBtn) {
         askGuidelinesBtn.addEventListener('click', () => {
             window.selectedMode = 'ask-guidelines';
             transitionToMainContent();
         });
     }
-    
+
     if (auditBtnMode) {
         auditBtnMode.addEventListener('click', () => {
             alert('Audit feature is coming soon!');
         });
     }
-    
+
     if (learnTopicBtn) {
         learnTopicBtn.addEventListener('click', () => {
             alert('Learn a Topic feature is coming soon!');
         });
     }
-    
+
     // Function to transition from mode selection to main content
     function transitionToMainContent() {
         const modeSelectionPage = document.getElementById('modeSelectionPage');
         const mainContent = document.getElementById('mainContent');
-        
+
         if (modeSelectionPage) {
             modeSelectionPage.classList.add('hidden');
         }
-        
+
         if (mainContent) {
             mainContent.classList.remove('hidden');
         }
-        
+
         console.log('[DEBUG] Transitioned to main content with mode:', window.selectedMode);
     }
-    
+
     // Make transitionToMainContent globally accessible
     window.transitionToMainContent = transitionToMainContent;
 
@@ -9296,7 +9296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Handle preferences button from left panel
     const preferencesPanelBtn = document.getElementById('preferencesPanelBtn');
     if (preferencesPanelBtn) {
@@ -9338,7 +9338,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'prompts.html';
         });
     }
-    
+
     const guidelinesPanelBtn = document.getElementById('guidelinesPanelBtn');
     if (guidelinesPanelBtn) {
         guidelinesPanelBtn.addEventListener('click', () => {
@@ -9346,7 +9346,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'guidelines.html';
         });
     }
-    
+
     const workflowsPanelBtn = document.getElementById('workflowsPanelBtn');
     if (workflowsPanelBtn) {
         workflowsPanelBtn.addEventListener('click', () => {
@@ -9354,7 +9354,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'workflows.html';
         });
     }
-    
+
     const devPanelBtn = document.getElementById('devPanelBtn');
     if (devPanelBtn) {
         devPanelBtn.addEventListener('click', () => {
@@ -9362,15 +9362,15 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'dev.html';
         });
     }
-    
+
     // Lazy-load helpful external links into the in-app Links panel
     let linksLoaded = false;
     async function loadLinksIfNeeded() {
         if (linksLoaded) return;
-        
+
         const linksList = document.getElementById('linksList');
         if (!linksList) return;
-        
+
         try {
             const response = await fetch('links.txt');
             if (!response.ok) {
@@ -9378,18 +9378,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const text = await response.text();
             linksList.innerHTML = '';
-            
+
             text.split('\n').forEach(line => {
                 const trimmed = line.trim();
                 if (!trimmed) return;
-                
+
                 const parts = trimmed.split(';');
                 if (parts.length < 2) return;
-                
+
                 const label = parts[0].trim();
                 const url = parts[1].trim();
                 if (!label || !url) return;
-                
+
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.href = url;
@@ -9399,14 +9399,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.appendChild(a);
                 linksList.appendChild(li);
             });
-            
+
             linksLoaded = true;
         } catch (error) {
             console.error('Failed to load links:', error);
             linksList.innerHTML = '<li>Failed to load links. Please try again later.</li>';
         }
     }
-    
+
     const linksPanelBtn = document.getElementById('linksPanelBtn');
     if (linksPanelBtn) {
         linksPanelBtn.addEventListener('click', () => {
@@ -9422,18 +9422,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const threeColumnView = document.getElementById('threeColumnView');
         const workflowsView = document.getElementById('workflowsView');
         const proformaView = document.getElementById('proformaView');
-        
+
         if (threeColumnView) threeColumnView.classList.add('hidden');
         if (workflowsView) workflowsView.classList.add('hidden');
         if (proformaView) proformaView.classList.add('hidden');
-        
+
         // Hide all section containers
         const sections = ['promptsSection', 'guidelinesSection', 'devSection', 'linksSection'];
         sections.forEach(id => {
             const section = document.getElementById(id);
             if (section) section.classList.add('hidden');
         });
-        
+
         // Show the requested section
         if (sectionId === 'workflowsView') {
             if (workflowsView) workflowsView.classList.remove('hidden');
@@ -9444,7 +9444,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const section = document.getElementById(sectionId);
             if (section) section.classList.remove('hidden');
         }
-        
+
         console.log('[DEBUG] Showing section:', sectionId);
     }
 
@@ -9583,11 +9583,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure spinner is hidden on initialization
         analyseSpinner.style.display = 'none';
     }
-    
+
     // Global abort controller for cancelling analysis
     window.analysisAbortController = null;
     window.isAnalysisRunning = false;
-    
+
     // Helper function to transform button to "Stop" mode
     function transformToStopButton() {
         if (!analyseBtn) return;
@@ -9598,7 +9598,7 @@ document.addEventListener('DOMContentLoaded', () => {
         analyseBtn.classList.add('stop-mode');
         window.isAnalysisRunning = true;
     }
-    
+
     // Helper function to restore button to "Analyse" mode
     function restoreAnalyseButton() {
         if (!analyseBtn) return;
@@ -9612,7 +9612,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Keep button hidden after analysis completes
         analyseBtn.style.display = 'none';
     }
-    
+
     if (analyseBtn) {
         // Prevent duplicate event listeners
         if (analyseBtn.dataset.listenerAttached === 'true') {
@@ -9620,7 +9620,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             console.log('[DEBUG] Attaching analyse button listener');
             analyseBtn.dataset.listenerAttached = 'true';
-            
+
             analyseBtn.addEventListener('click', async () => {
                 // Check if we're in stop mode
                 if (window.isAnalysisRunning && window.analysisAbortController) {
@@ -9628,88 +9628,88 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.analysisAbortController.abort();
                     window.analysisAbortController = null;
                     restoreAnalyseButton();
-                    
-        // Show cancellation message via status bar
-        const cancelMessage = 'Analysis cancelled by user.';
-        updateUser(cancelMessage, false);
+
+                    // Show cancellation message via status bar
+                    const cancelMessage = 'Analysis cancelled by user.';
+                    updateUser(cancelMessage, false);
                     hideSummaryLoading();
                     // Keep button hidden after cancellation
                     if (analyseBtn) analyseBtn.style.display = 'none';
                     return;
                 }
-                
+
                 // Check if workflow is already in progress
                 if (window.workflowInProgress) {
                     console.log('[DEBUG] Analyse button clicked but workflow already in progress, ignoring');
                     return;
                 }
-            
-            // Get user input text
-            const editor = window.editors?.userInput;
-            if (!editor) {
-                alert('Editor not available. Please try again.');
-                return;
-            }
-            
-            const inputText = editor.getHTML();
-            const plainText = editor.getText().trim();
-            
-            if (!plainText) {
-                alert('Please enter some text to analyse.');
-                return;
-            }
-            
-            // Show loading state
-            const btnIcon = analyseBtn.querySelector('.btn-icon');
-            const btnText = analyseBtn.querySelector('.btn-text');
-            if (btnIcon) btnIcon.textContent = '⏳';
-            if (btnText) btnText.textContent = 'Detecting...';
-            analyseBtn.disabled = true;
-            
-            // Detect if input is a question or clinical note using LLM
-            const isQuestion = await detectInputType(plainText);
-            console.log('[DEBUG] Analyse button clicked, detected type:', isQuestion ? 'question' : 'clinical note');
-            
-            // Restore button state
-            if (btnIcon) btnIcon.textContent = '🔍';
-            if (btnText) btnText.textContent = 'Analyse';
-            analyseBtn.disabled = false;
-            
-            // Create new abort controller for this analysis
-            window.analysisAbortController = new AbortController();
-            transformToStopButton();
-            
-            // Hide the analyse button once analysis starts
-            window.analyseButtonUsed = true;
-            if (analyseBtn) {
-                analyseBtn.style.display = 'none';
-            }
-            
-            try {
-                // Route to appropriate function based on detected type
-                if (isQuestion) {
-                    // Set mode for ask-guidelines workflow
-                    window.selectedMode = 'ask-guidelines';
-                    await askGuidelinesQuestion();
-                } else {
-                    // Set mode for guideline-suggestions (dynamic advice) workflow
-                    window.selectedMode = 'guideline-suggestions';
-                    await processWorkflow();
-                }
-            } catch (error) {
-                // Check if error is due to abort
-                if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
-                    console.log('[DEBUG] Analysis was aborted');
+
+                // Get user input text
+                const editor = window.editors?.userInput;
+                if (!editor) {
+                    alert('Editor not available. Please try again.');
                     return;
                 }
-                throw error;
-            } finally {
-                // Only restore if not already aborted
-                if (!window.analysisAbortController?.signal.aborted) {
-                    restoreAnalyseButton();
+
+                const inputText = editor.getHTML();
+                const plainText = editor.getText().trim();
+
+                if (!plainText) {
+                    alert('Please enter some text to analyse.');
+                    return;
                 }
-                window.analysisAbortController = null;
-            }
+
+                // Show loading state
+                const btnIcon = analyseBtn.querySelector('.btn-icon');
+                const btnText = analyseBtn.querySelector('.btn-text');
+                if (btnIcon) btnIcon.textContent = '⏳';
+                if (btnText) btnText.textContent = 'Detecting...';
+                analyseBtn.disabled = true;
+
+                // Detect if input is a question or clinical note using LLM
+                const isQuestion = await detectInputType(plainText);
+                console.log('[DEBUG] Analyse button clicked, detected type:', isQuestion ? 'question' : 'clinical note');
+
+                // Restore button state
+                if (btnIcon) btnIcon.textContent = '🔍';
+                if (btnText) btnText.textContent = 'Analyse';
+                analyseBtn.disabled = false;
+
+                // Create new abort controller for this analysis
+                window.analysisAbortController = new AbortController();
+                transformToStopButton();
+
+                // Hide the analyse button once analysis starts
+                window.analyseButtonUsed = true;
+                if (analyseBtn) {
+                    analyseBtn.style.display = 'none';
+                }
+
+                try {
+                    // Route to appropriate function based on detected type
+                    if (isQuestion) {
+                        // Set mode for ask-guidelines workflow
+                        window.selectedMode = 'ask-guidelines';
+                        await askGuidelinesQuestion();
+                    } else {
+                        // Set mode for guideline-suggestions (dynamic advice) workflow
+                        window.selectedMode = 'guideline-suggestions';
+                        await processWorkflow();
+                    }
+                } catch (error) {
+                    // Check if error is due to abort
+                    if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
+                        console.log('[DEBUG] Analysis was aborted');
+                        return;
+                    }
+                    throw error;
+                } finally {
+                    // Only restore if not already aborted
+                    if (!window.analysisAbortController?.signal.aborted) {
+                        restoreAnalyseButton();
+                    }
+                    window.analysisAbortController = null;
+                }
             });
         }
     }
@@ -9719,7 +9719,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (makeDynamicAdviceBtn) {
         makeDynamicAdviceBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Make Advice Dynamic button clicked...');
-            
+
             // Check if we have analysis data available
             if (!window.latestAnalysis) {
                 console.log('[DEBUG] No latest analysis found');
@@ -9736,7 +9736,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Get most relevant guidelines for selection
             const mostRelevantGuidelines = window.relevantGuidelines.filter(g => g.category === 'mostRelevant');
-            
+
             if (mostRelevantGuidelines.length === 0) {
                 console.log('[DEBUG] No most relevant guidelines found');
                 alert('No "most relevant" guidelines found. Please ensure guidelines have been properly categorized.');
@@ -9819,7 +9819,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 const response = await fetch(`${window.SERVER_URL}/updatePrompts`, {
                     method: 'POST',
-                    headers: { 
+                    headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
                     },
@@ -9870,7 +9870,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-        
+
     if (testOpenAIBtn) {
         testOpenAIBtn.addEventListener('click', async () => {
             console.log('[DEBUG] Test OpenAI button clicked...');
@@ -9942,7 +9942,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     interimTranscript += transcriptPart;
                 }
             }
-            
+
             // Append newly finalized parts to the stored final transcript
             if (currentFinalTranscript) {
                 // Add a space if the previous text doesn't end with one
@@ -9978,27 +9978,27 @@ const Logger = {
         WARN: 'warn',
         ERROR: 'error'
     },
-    
+
     _formatMessage(level, message, data = null) {
         const timestamp = new Date().toISOString();
         const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
         return data ? `${formattedMessage} ${JSON.stringify(data)}` : formattedMessage;
     },
-    
+
     debug(message, data = null) {
         if (process.env.NODE_ENV === 'development') {
             console.debug(this._formatMessage(this.levels.DEBUG, message, data));
         }
     },
-    
+
     info(message, data = null) {
         console.info(this._formatMessage(this.levels.INFO, message, data));
     },
-    
+
     warn(message, data = null) {
         console.warn(this._formatMessage(this.levels.WARN, message, data));
     },
-    
+
     error(message, data = null) {
         console.error(this._formatMessage(this.levels.ERROR, message, data));
     }
@@ -10025,7 +10025,7 @@ window.startNewChat = startNewChat;
 // Button Loading State Helper Functions
 function setButtonLoading(button, isLoading, originalText = null) {
     if (!button) return;
-    
+
     if (isLoading) {
         // Store original text if not already stored
         if (!button.dataset.originalText) {
@@ -10045,7 +10045,7 @@ function setButtonLoading(button, isLoading, originalText = null) {
 // Hospital Trust Management Functions
 async function showHospitalTrustModal() {
     console.log('[DEBUG] Showing hospital trust modal');
-    
+
     const modal = document.getElementById('hospitalTrustModal');
     const trustSelect = document.getElementById('trustSelect');
     const currentTrustDisplay = document.getElementById('currentTrustDisplay');
@@ -10053,15 +10053,15 @@ async function showHospitalTrustModal() {
     const clearTrustBtn = document.getElementById('clearTrustBtn');
     const trustSearchInput = document.getElementById('trustSearchInput');
     const closeBtn = document.getElementById('closeHospitalTrustModal');
-    
+
     if (!modal) {
         console.error('[ERROR] Hospital trust modal not found');
         return;
     }
-    
+
     // Show modal
     modal.classList.remove('hidden');
-    
+
     // Load current trust selection
     try {
         const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
@@ -10070,7 +10070,7 @@ async function showHospitalTrustModal() {
                 'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
             }
         });
-        
+
         const result = await response.json();
         if (result.success && result.hospitalTrust) {
             currentTrustDisplay.textContent = result.hospitalTrust;
@@ -10084,29 +10084,29 @@ async function showHospitalTrustModal() {
         console.error('[ERROR] Failed to load current hospital trust:', error);
         currentTrustDisplay.textContent = 'Error loading selection';
     }
-    
+
     // Load trusts list
     await loadHospitalTrustsList();
-    
+
     // Add event listeners
     if (saveTrustBtn) {
         saveTrustBtn.onclick = async () => {
             await saveHospitalTrustSelection();
         };
     }
-    
+
     if (clearTrustBtn) {
         clearTrustBtn.onclick = async () => {
             await clearHospitalTrustSelection();
         };
     }
-    
+
     if (trustSearchInput) {
         trustSearchInput.oninput = () => {
             filterTrustsList(trustSearchInput.value);
         };
     }
-    
+
     // Close button handler
     if (closeBtn) {
         closeBtn.onclick = async () => {
@@ -10118,7 +10118,7 @@ async function showHospitalTrustModal() {
             }
         };
     }
-    
+
     // Close modal when clicking outside
     modal.onclick = async (event) => {
         if (event.target === modal) {
@@ -10134,13 +10134,13 @@ async function showHospitalTrustModal() {
 
 async function loadHospitalTrustsList() {
     console.log('[DEBUG] Loading hospital trusts list');
-    
+
     const trustSelect = document.getElementById('trustSelect');
     if (!trustSelect) {
         console.error('[ERROR] Trust select element not found');
         return;
     }
-    
+
     try {
         const response = await fetch(`${window.SERVER_URL}/getHospitalTrustsList`, {
             method: 'GET',
@@ -10148,7 +10148,7 @@ async function loadHospitalTrustsList() {
                 'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
             }
         });
-        
+
         const result = await response.json();
         if (result.success && result.trusts) {
             trustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
@@ -10158,10 +10158,10 @@ async function loadHospitalTrustsList() {
                 option.textContent = trust;
                 trustSelect.appendChild(option);
             });
-            
+
             // Store full list for filtering
             window.hospitalTrustsList = result.trusts;
-            
+
             console.log('[DEBUG] Loaded', result.trusts.length, 'hospital trusts');
         } else {
             throw new Error('Failed to load trusts list');
@@ -10175,17 +10175,17 @@ async function loadHospitalTrustsList() {
 function filterTrustsList(searchTerm) {
     const trustSelect = document.getElementById('trustSelect');
     const trusts = window.hospitalTrustsList || [];
-    
+
     if (!trustSelect) return;
-    
+
     const currentValue = trustSelect.value;
     const lowerSearchTerm = searchTerm.toLowerCase();
-    
+
     // Filter trusts based on search term
-    const filteredTrusts = trusts.filter(trust => 
+    const filteredTrusts = trusts.filter(trust =>
         trust.toLowerCase().includes(lowerSearchTerm)
     );
-    
+
     // Rebuild select options
     trustSelect.innerHTML = '<option value="">-- Select a trust --</option>';
     filteredTrusts.forEach(trust => {
@@ -10194,7 +10194,7 @@ function filterTrustsList(searchTerm) {
         option.textContent = trust;
         trustSelect.appendChild(option);
     });
-    
+
     // Restore selection if it's in filtered list
     if (filteredTrusts.includes(currentValue)) {
         trustSelect.value = currentValue;
@@ -10203,21 +10203,21 @@ function filterTrustsList(searchTerm) {
 
 async function saveHospitalTrustSelection() {
     console.log('[DEBUG] Saving hospital trust selection');
-    
+
     const trustSelect = document.getElementById('trustSelect');
     const currentTrustDisplay = document.getElementById('currentTrustDisplay');
     const saveTrustBtn = document.getElementById('saveTrustBtn');
-    
+
     if (!trustSelect || !trustSelect.value) {
         alert('Please select a hospital trust');
         return;
     }
-    
+
     const selectedTrust = trustSelect.value;
-    
+
     // Show loading state on button
     setButtonLoading(saveTrustBtn, true);
-    
+
     try {
         const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
             method: 'POST',
@@ -10227,11 +10227,11 @@ async function saveHospitalTrustSelection() {
             },
             body: JSON.stringify({ hospitalTrust: selectedTrust })
         });
-        
+
         const result = await response.json();
         if (result.success) {
             currentTrustDisplay.textContent = selectedTrust;
-            
+
             // Update saved guideline scope selection if it was using local/both
             const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
@@ -10242,24 +10242,24 @@ async function saveHospitalTrustSelection() {
                 await saveGuidelineScopeSelection(updatedSelection);
                 console.log('[DEBUG] Updated guideline scope selection with new trust:', updatedSelection);
             }
-            
+
             alert(`Hospital trust updated to: ${selectedTrust}\n\nGuidelines will now be filtered and prioritised for your trust.`);
-            
+
             // Reload guidelines to reflect the new trust selection
             if (window.loadGuidelinesFromFirestore) {
                 await window.loadGuidelinesFromFirestore();
             }
-            
+
             // Refresh sidebar displays to show the new trust
             await loadAndDisplayUserPreferences();
             await loadAndDisplayUserSettings();
-            
+
             // Restore button state
             setButtonLoading(saveTrustBtn, false, 'Save Selection');
-            
+
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
-            
+
             // Reopen preferences modal if we came from there
             if (window.openedTrustModalFromPreferences) {
                 window.openedTrustModalFromPreferences = false;
@@ -10278,18 +10278,18 @@ async function saveHospitalTrustSelection() {
 
 async function clearHospitalTrustSelection() {
     console.log('[DEBUG] Clearing hospital trust selection');
-    
+
     const currentTrustDisplay = document.getElementById('currentTrustDisplay');
     const trustSelect = document.getElementById('trustSelect');
     const clearTrustBtn = document.getElementById('clearTrustBtn');
-    
+
     if (!confirm('Are you sure you want to clear your hospital trust selection?')) {
         return;
     }
-    
+
     // Show loading state on button
     setButtonLoading(clearTrustBtn, true);
-    
+
     try {
         const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
             method: 'POST',
@@ -10299,38 +10299,38 @@ async function clearHospitalTrustSelection() {
             },
             body: JSON.stringify({ hospitalTrust: null })
         });
-        
+
         const result = await response.json();
         if (result.success) {
             currentTrustDisplay.textContent = 'None selected';
             if (trustSelect) {
                 trustSelect.value = '';
             }
-            
+
             // Clear saved guideline scope selection if it was using local/both
             const savedScope = await loadGuidelineScopeSelection();
             if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
                 await clearGuidelineScopeSelection();
                 console.log('[DEBUG] Cleared guideline scope selection because trust was cleared');
             }
-            
+
             alert('Hospital trust selection cleared.\n\nYou will now see all national guidelines.');
-            
+
             // Reload guidelines
             if (window.loadGuidelinesFromFirestore) {
                 await window.loadGuidelinesFromFirestore();
             }
-            
+
             // Refresh sidebar displays to show cleared trust
             await loadAndDisplayUserPreferences();
             await loadAndDisplayUserSettings();
-            
+
             // Restore button state
             setButtonLoading(clearTrustBtn, false, 'Clear Selection');
-            
+
             // Close modal
             document.getElementById('hospitalTrustModal').classList.add('hidden');
-            
+
             // Reopen preferences modal if we came from there
             if (window.openedTrustModalFromPreferences) {
                 window.openedTrustModalFromPreferences = false;
@@ -10667,7 +10667,7 @@ function renderModelPreferencesList(modelOrder) {
         item.className = 'model-preference-item';
         item.draggable = true;
         item.dataset.modelName = modelId;
-        
+
         item.innerHTML = `
             <div class="model-preference-number">${index + 1}</div>
             <div class="model-preference-name">${model.displayName}</div>
@@ -10691,12 +10691,12 @@ function renderModelPreferencesList(modelOrder) {
         item.addEventListener('dragover', (e) => {
             e.preventDefault();
             e.dataTransfer.dropEffect = 'move';
-            
+
             if (draggedModelElement && draggedModelElement !== item) {
                 const allItems = Array.from(listContainer.querySelectorAll('.model-preference-item'));
                 const draggingIndex = allItems.indexOf(draggedModelElement);
                 const currentIndex = allItems.indexOf(item);
-                
+
                 if (draggingIndex < currentIndex) {
                     listContainer.insertBefore(draggedModelElement, item.nextSibling);
                 } else {
@@ -10736,7 +10736,7 @@ function getCurrentModelOrder() {
 
 async function showPreferencesModal() {
     console.log('[DEBUG] Showing preferences modal');
-    
+
     const modal = document.getElementById('preferencesModal');
     const closeBtn = document.getElementById('closePreferencesModal');
     const preferencesTrustDisplay = document.getElementById('preferencesTrustDisplay');
@@ -10748,15 +10748,15 @@ async function showPreferencesModal() {
     const preferencesLocalBtn = document.getElementById('preferencesLocalBtn');
     const preferencesBothBtn = document.getElementById('preferencesBothBtn');
     const preferencesSaveBtn = document.getElementById('preferencesSaveBtn');
-    
+
     if (!modal) {
         console.error('[ERROR] Preferences modal not found');
         return;
     }
-    
+
     // Show modal
     modal.classList.remove('hidden');
-    
+
     // Load current trust selection
     let currentTrust = null;
     try {
@@ -10766,7 +10766,7 @@ async function showPreferencesModal() {
                 'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
             }
         });
-        
+
         const result = await response.json();
         if (result.success && result.hospitalTrust) {
             currentTrust = result.hospitalTrust;
@@ -10784,7 +10784,7 @@ async function showPreferencesModal() {
         preferencesChangeTrustBtn.classList.add('hidden');
         preferencesSelectTrustBtn.classList.remove('hidden');
     }
-    
+
     // Load current guideline scope selection
     const savedScope = await loadGuidelineScopeSelection();
     if (savedScope) {
@@ -10797,12 +10797,12 @@ async function showPreferencesModal() {
             scopeText = `Both (National + ${savedScope.hospitalTrust || 'Trust'})`;
         }
         preferencesScopeDisplay.textContent = scopeText;
-        
+
         // Highlight selected button
         preferencesNationalBtn.classList.remove('selected');
         preferencesLocalBtn.classList.remove('selected');
         preferencesBothBtn.classList.remove('selected');
-        
+
         if (savedScope.scope === 'national') {
             preferencesNationalBtn.classList.add('selected');
         } else if (savedScope.scope === 'local') {
@@ -10816,12 +10816,12 @@ async function showPreferencesModal() {
         preferencesLocalBtn.classList.remove('selected');
         preferencesBothBtn.classList.remove('selected');
     }
-    
+
     // Keep Local/Both clickable even if no trust is set; handlers will prompt the user to select a trust.
     // Disabling these buttons caused confusing "stop" cursor and made it feel broken.
     if (preferencesLocalBtn) preferencesLocalBtn.disabled = false;
     if (preferencesBothBtn) preferencesBothBtn.disabled = false;
-    
+
     // Load and display model preferences
     try {
         const modelOrder = await fetchUserModelPreferences();
@@ -10892,7 +10892,7 @@ async function showPreferencesModal() {
         useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
         useRAGSearchInput.addEventListener('change', handleRagToggleChange);
     }
-    
+
     // Set up event handlers
     const handleChangeTrustClick = async () => {
         console.log('[DEBUG] Change Trust clicked in preferences');
@@ -10903,7 +10903,7 @@ async function showPreferencesModal() {
         // Note: showHospitalTrustModal returns immediately after showing modal,
         // preferences modal will be reopened by the trust modal's save/clear/close handlers
     };
-    
+
     const handleSelectTrustClick = async () => {
         console.log('[DEBUG] Select Trust clicked in preferences');
         modal.classList.add('hidden');
@@ -10913,13 +10913,13 @@ async function showPreferencesModal() {
         // Note: showHospitalTrustModal returns immediately after showing modal,
         // preferences modal will be reopened by the trust modal's save/clear/close handlers
     };
-    
+
     const handleClearTrustClick = async () => {
         console.log('[DEBUG] Clear Trust clicked in preferences');
         if (!confirm('Are you sure you want to clear your hospital trust selection?')) {
             return;
         }
-        
+
         try {
             const response = await fetch(`${window.SERVER_URL}/updateUserHospitalTrust`, {
                 method: 'POST',
@@ -10929,7 +10929,7 @@ async function showPreferencesModal() {
                 },
                 body: JSON.stringify({ hospitalTrust: null })
             });
-            
+
             const result = await response.json();
             if (result.success) {
                 // Clear saved guideline scope selection if it was using local/both
@@ -10937,7 +10937,7 @@ async function showPreferencesModal() {
                 if (savedScope && (savedScope.scope === 'local' || savedScope.scope === 'both')) {
                     clearGuidelineScopeSelection();
                 }
-                
+
                 // Reload preferences modal
                 await showPreferencesModal();
             } else {
@@ -10948,9 +10948,9 @@ async function showPreferencesModal() {
             alert('Failed to clear hospital trust selection. Please try again.');
         }
     };
-    
+
     let selectedScope = savedScope ? savedScope.scope : null;
-    
+
     const handleNationalClick = () => {
         console.log('[DEBUG] National scope selected in preferences');
         selectedScope = 'national';
@@ -10959,7 +10959,7 @@ async function showPreferencesModal() {
         preferencesBothBtn.classList.remove('selected');
         preferencesScopeDisplay.textContent = 'National Guidelines';
     };
-    
+
     const handleLocalClick = () => {
         if (!currentTrust) {
             alert('Please select a hospital trust first.');
@@ -10972,7 +10972,7 @@ async function showPreferencesModal() {
         preferencesBothBtn.classList.remove('selected');
         preferencesScopeDisplay.textContent = `Local Guidelines (${currentTrust})`;
     };
-    
+
     const handleBothClick = () => {
         if (!currentTrust) {
             alert('Please select a hospital trust first.');
@@ -10985,13 +10985,13 @@ async function showPreferencesModal() {
         preferencesBothBtn.classList.add('selected');
         preferencesScopeDisplay.textContent = `Both (National + ${currentTrust})`;
     };
-    
+
     const handleSaveClick = async () => {
         console.log('[DEBUG] Save Preferences clicked');
-        
+
         // Show loading state on button
         setButtonLoading(preferencesSaveBtn, true);
-        
+
         try {
             // Save guideline scope selection if one was selected
             if (selectedScope) {
@@ -11002,7 +11002,7 @@ async function showPreferencesModal() {
                 await saveGuidelineScopeSelection(scopeSelection);
                 console.log('[DEBUG] Saved guideline scope selection:', scopeSelection);
             }
-            
+
             // Save model preferences
             const modelOrder = getCurrentModelOrder();
             if (modelOrder.length > 0) {
@@ -11024,7 +11024,7 @@ async function showPreferencesModal() {
                     console.warn('[DEBUG] Failed to save model preferences');
                 }
             }
-            
+
             // Save chunk distribution provider preferences
             const chunkProviders = getSelectedChunkDistributionProviders();
             if (chunkProviders.length > 0) {
@@ -11048,17 +11048,17 @@ async function showPreferencesModal() {
                     console.warn('[RAG PREF] Failed to save Fast RAG preferences');
                 }
             }
-            
+
             // Refresh sidebar displays to show the new preferences
             await loadAndDisplayUserPreferences();
             await loadAndDisplayUserSettings();
-            
+
             // Restore button state
             setButtonLoading(preferencesSaveBtn, false, 'Save Preferences');
-            
+
             // Close modal
             modal.classList.add('hidden');
-            
+
             // Remove event listeners
             preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
             preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
@@ -11069,7 +11069,7 @@ async function showPreferencesModal() {
             preferencesSaveBtn.removeEventListener('click', handleSaveClick);
             closeBtn.removeEventListener('click', handleCloseClick);
             if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
-            
+
             alert('Preferences saved successfully!');
         } catch (error) {
             console.error('[ERROR] Failed to save preferences:', error);
@@ -11078,11 +11078,40 @@ async function showPreferencesModal() {
             alert('Failed to save preferences. Please try again.');
         }
     };
-    
+
+    // Parallel Analysis Preference
+    const enableParallelAnalysisInput = document.getElementById('enableParallelAnalysis');
+    if (enableParallelAnalysisInput) {
+        enableParallelAnalysisInput.checked = loadParallelAnalysisPreference();
+    }
+
+    // Override handleSaveClick to include our new preference
+    // Note: We are redefining the function here, but we need to make sure the event listener uses THIS version.
+    // However, since handleSaveClick is const, we can't redefine it. We need to inject our logic into the existing function body or wrap it.
+    // The previous attempt failed because I tried to replace the whole function but missed the context.
+
+    // Better approach: Since we are inside showPreferencesModal, we can add a specific listener for our new input or modify the save handler.
+    // But modifying the save handler is tricky with find-replace.
+    // Let's TRY effectively replacing the START of handleSaveClick to inject our saving logic.
+
+    const originalHandleSaveClick = handleSaveClick;
+    const newHandleSaveClick = async () => {
+        // Save Parallel Analysis Preference
+        if (enableParallelAnalysisInput) {
+            saveParallelAnalysisPreference(enableParallelAnalysisInput.checked);
+        }
+        await originalHandleSaveClick();
+    };
+
+    // Re-bind the save button
+    preferencesSaveBtn.removeEventListener('click', handleSaveClick);
+    preferencesSaveBtn.addEventListener('click', newHandleSaveClick);
+
+
     const handleCloseClick = () => {
         console.log('[DEBUG] Close preferences modal clicked');
         modal.classList.add('hidden');
-        
+
         // Remove event listeners
         preferencesChangeTrustBtn.removeEventListener('click', handleChangeTrustClick);
         preferencesSelectTrustBtn.removeEventListener('click', handleSelectTrustClick);
@@ -11094,7 +11123,7 @@ async function showPreferencesModal() {
         closeBtn.removeEventListener('click', handleCloseClick);
         if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
     };
-    
+
     // Add event listeners
     preferencesChangeTrustBtn.addEventListener('click', handleChangeTrustClick);
     preferencesSelectTrustBtn.addEventListener('click', handleSelectTrustClick);
@@ -11104,6 +11133,26 @@ async function showPreferencesModal() {
     preferencesBothBtn.addEventListener('click', handleBothClick);
     preferencesSaveBtn.addEventListener('click', handleSaveClick);
     closeBtn.addEventListener('click', handleCloseClick);
+}
+
+// Parallel Analysis Preference Functions
+function loadParallelAnalysisPreference() {
+    try {
+        const pref = localStorage.getItem('clerky_parallel_analysis');
+        return pref === 'true';
+    } catch (e) {
+        console.error('Error loading parallel analysis preference:', e);
+        return false;
+    }
+}
+
+function saveParallelAnalysisPreference(enabled) {
+    try {
+        localStorage.setItem('clerky_parallel_analysis', enabled);
+        console.log(`[PREF] Saved Parallel Analysis preference: ${enabled}`);
+    } catch (e) {
+        console.error('Error saving parallel analysis preference:', e);
+    }
 }
 
 // Guideline Scope Selection Modal Functions
@@ -11182,14 +11231,14 @@ async function detectInputType(text) {
     if (!text || text.trim().length === 0) {
         return false; // Empty text defaults to clinical note
     }
-    
+
     try {
         const user = auth.currentUser;
         if (!user) {
             console.warn('[DEBUG] Cannot detect input type, user not authenticated');
             return false; // Default to clinical note
         }
-        
+
         const token = await user.getIdToken();
         const response = await fetch(`${window.SERVER_URL}/detectInputType`, {
             method: 'POST',
@@ -11199,7 +11248,7 @@ async function detectInputType(text) {
             },
             body: JSON.stringify({ text: text.trim() })
         });
-        
+
         const result = await response.json();
         if (result.success && result.isQuestion !== undefined) {
             console.log('[DEBUG] Input type detected:', result.type, result.isQuestion);
@@ -11221,12 +11270,12 @@ async function loadAndDisplayUserPreferences() {
     const trustDisplay = document.getElementById('mainTrustDisplay');
     const scopeDisplay = document.getElementById('mainScopeDisplay');
     const modelDisplay = document.getElementById('mainModelDisplay');
-    
+
     if (!trustDisplay || !scopeDisplay || !modelDisplay) {
         console.warn('[DEBUG] Main preferences display elements not found');
         return;
     }
-    
+
     // Load hospital trust
     try {
         const user = auth.currentUser;
@@ -11238,7 +11287,7 @@ async function loadAndDisplayUserPreferences() {
                     'Authorization': `Bearer ${idToken}`
                 }
             });
-            
+
             const result = await response.json();
             if (result.success && result.hospitalTrust) {
                 // Use the short name from the database if available, otherwise fall back to client-side abbreviation
@@ -11253,7 +11302,7 @@ async function loadAndDisplayUserPreferences() {
         console.error('[ERROR] Failed to load hospital trust:', error);
         trustDisplay.textContent = 'Error loading';
     }
-    
+
     // Load guideline scope preference
     try {
         const savedScope = await loadGuidelineScopeSelection();
@@ -11276,7 +11325,7 @@ async function loadAndDisplayUserPreferences() {
         console.error('[ERROR] Failed to load guideline scope:', error);
         scopeDisplay.textContent = 'Error loading';
     }
-    
+
     // Load and display current preferred AI model
     try {
         const modelOrder = await fetchUserModelPreferences();
@@ -11296,7 +11345,7 @@ async function loadAndDisplayUserPreferences() {
         console.error('[ERROR] Failed to load model preferences:', error);
         modelDisplay.textContent = 'Error loading';
     }
-    
+
     // Setup inline editing handlers for main panel
     setupMainPreferencesEditing();
 }
@@ -11306,7 +11355,7 @@ function setupMainPreferencesEditing() {
     const trustDisplay = document.getElementById('mainTrustDisplay');
     const scopeDisplay = document.getElementById('mainScopeDisplay');
     const modelDisplay = document.getElementById('mainModelDisplay');
-    
+
     // Helper to open preferences modal
     const openPreferences = async () => {
         console.log('[DEBUG] Preference value clicked - opening preferences modal');
@@ -11314,7 +11363,7 @@ function setupMainPreferencesEditing() {
         // Reload preferences after modal closes to update display
         await loadAndDisplayUserPreferences();
     };
-    
+
     // Make preference values clickable to open preferences modal
     if (trustDisplay) {
         trustDisplay.addEventListener('click', openPreferences);
@@ -11325,7 +11374,7 @@ function setupMainPreferencesEditing() {
             }
         });
     }
-    
+
     if (scopeDisplay) {
         scopeDisplay.addEventListener('click', openPreferences);
         scopeDisplay.addEventListener('keydown', (e) => {
@@ -11335,7 +11384,7 @@ function setupMainPreferencesEditing() {
             }
         });
     }
-    
+
     if (modelDisplay) {
         modelDisplay.addEventListener('click', openPreferences);
         modelDisplay.addEventListener('keydown', (e) => {
@@ -11351,12 +11400,12 @@ function setupMainPreferencesEditing() {
 async function loadAndDisplayUserSettings() {
     const trustDisplay = document.getElementById('settingsTrustDisplay');
     const scopeDisplay = document.getElementById('settingsScopeDisplay');
-    
+
     if (!trustDisplay || !scopeDisplay) {
         console.warn('[DEBUG] Settings display elements not found');
         return;
     }
-    
+
     // Load hospital trust
     try {
         const user = auth.currentUser;
@@ -11368,7 +11417,7 @@ async function loadAndDisplayUserSettings() {
                     'Authorization': `Bearer ${idToken}`
                 }
             });
-            
+
             const result = await response.json();
             if (result.success && result.hospitalTrust) {
                 trustDisplay.textContent = abbreviateHospitalTrust(result.hospitalTrust);
@@ -11382,7 +11431,7 @@ async function loadAndDisplayUserSettings() {
         console.error('[ERROR] Failed to load hospital trust:', error);
         trustDisplay.textContent = 'Error loading';
     }
-    
+
     // Load guideline scope preference
     try {
         const savedScope = await loadGuidelineScopeSelection();
@@ -11405,7 +11454,7 @@ async function loadAndDisplayUserSettings() {
         console.error('[ERROR] Failed to load guideline scope:', error);
         scopeDisplay.textContent = 'Error loading';
     }
-    
+
     // Setup inline editing handlers
     setupInlineEditing();
 }
@@ -11424,14 +11473,14 @@ function setupInlineEditing() {
     const scopeEditMode = document.getElementById('scopeEditMode');
     const trustSettingItem = document.getElementById('trustSettingItem');
     const scopeSettingItem = document.getElementById('scopeSettingItem');
-    
+
     // Trust editing
     if (editTrustBtn && openTrustModalBtn && cancelTrustEditBtn && trustEditMode) {
         editTrustBtn.addEventListener('click', () => {
             trustEditMode.classList.remove('hidden');
             editTrustBtn.style.display = 'none';
         });
-        
+
         openTrustModalBtn.addEventListener('click', async () => {
             await showHospitalTrustModal();
             // Reload settings after trust selection
@@ -11440,17 +11489,17 @@ function setupInlineEditing() {
             trustEditMode.classList.add('hidden');
             editTrustBtn.style.display = '';
         });
-        
+
         cancelTrustEditBtn.addEventListener('click', () => {
             trustEditMode.classList.add('hidden');
             editTrustBtn.style.display = '';
         });
     }
-    
+
     // Scope editing
     if (editScopeBtn && cancelScopeEditBtn && scopeEditMode) {
         let selectedScope = null;
-        
+
         editScopeBtn.addEventListener('click', async () => {
             // Load current scope to highlight selected button
             const savedScope = await loadGuidelineScopeSelection();
@@ -11468,11 +11517,11 @@ function setupInlineEditing() {
                     scopeBothBtn.classList.add('selected');
                 }
             }
-            
+
             scopeEditMode.classList.remove('hidden');
             editScopeBtn.style.display = 'none';
         });
-        
+
         const handleScopeSelection = async (scope) => {
             // Warn user if workflow is in progress
             if (window.workflowInProgress || window.sequentialProcessingActive) {
@@ -11481,7 +11530,7 @@ function setupInlineEditing() {
                     return;
                 }
             }
-            
+
             // Get current trust
             let currentTrust = null;
             try {
@@ -11502,20 +11551,20 @@ function setupInlineEditing() {
             } catch (error) {
                 console.error('[ERROR] Failed to load hospital trust:', error);
             }
-            
+
             // Check if trust is required
             if ((scope === 'local' || scope === 'both') && !currentTrust) {
                 alert('Please select a hospital trust first.');
                 return;
             }
-            
+
             selectedScope = scope;
-            
+
             // Update button states
             scopeNationalBtn.classList.remove('selected');
             scopeLocalBtn.classList.remove('selected');
             scopeBothBtn.classList.remove('selected');
-            
+
             if (scope === 'national') {
                 scopeNationalBtn.classList.add('selected');
             } else if (scope === 'local') {
@@ -11523,13 +11572,13 @@ function setupInlineEditing() {
             } else if (scope === 'both') {
                 scopeBothBtn.classList.add('selected');
             }
-            
+
             // Save immediately
             const scopeSelection = {
                 scope: scope,
                 hospitalTrust: (scope === 'local' || scope === 'both') ? currentTrust : null
             };
-            
+
             const success = await saveGuidelineScopeSelection(scopeSelection);
             if (success) {
                 // Update display
@@ -11542,29 +11591,29 @@ function setupInlineEditing() {
                     scopeText = `Both (National + ${currentTrust})`;
                 }
                 document.getElementById('settingsScopeDisplay').textContent = scopeText;
-                
+
                 // Exit edit mode
                 scopeEditMode.classList.add('hidden');
                 editScopeBtn.style.display = '';
-                
+
                 console.log('[DEBUG] Scope selection updated (workflow will not restart):', scopeSelection);
             } else {
                 alert('Failed to save guideline scope preference. Please try again.');
             }
         };
-        
+
         if (scopeNationalBtn) {
             scopeNationalBtn.addEventListener('click', () => handleScopeSelection('national'));
         }
-        
+
         if (scopeLocalBtn) {
             scopeLocalBtn.addEventListener('click', () => handleScopeSelection('local'));
         }
-        
+
         if (scopeBothBtn) {
             scopeBothBtn.addEventListener('click', () => handleScopeSelection('both'));
         }
-        
+
         cancelScopeEditBtn.addEventListener('click', () => {
             scopeEditMode.classList.add('hidden');
             editScopeBtn.style.display = '';
@@ -11577,22 +11626,22 @@ async function showModeSelectionPage() {
     const modeSelectionPage = document.getElementById('modeSelectionPage');
     const landingPage = document.getElementById('landingPage');
     const mainContent = document.getElementById('mainContent');
-    
+
     if (!modeSelectionPage) {
         console.error('[ERROR] Mode selection page element not found');
         return;
     }
-    
+
     // Hide other views
     if (landingPage) landingPage.classList.add('hidden');
     if (mainContent) mainContent.classList.add('hidden');
-    
+
     // Show mode selection page
     modeSelectionPage.classList.remove('hidden');
-    
+
     // Load and display user settings
     await loadAndDisplayUserSettings();
-    
+
     console.log('[DEBUG] Mode selection page shown');
 }
 
@@ -11631,7 +11680,7 @@ async function clearGuidelineScopeSelection() {
 
 async function showGuidelineScopeModal() {
     console.log('[DEBUG] Showing guideline scope modal');
-    
+
     const modal = document.getElementById('guidelineScopeModal');
     const scopeTrustDisplay = document.getElementById('scopeTrustDisplay');
     const applyNationalBtn = document.getElementById('applyNationalBtn');
@@ -11640,15 +11689,15 @@ async function showGuidelineScopeModal() {
     const changeTrustBtn = document.getElementById('changeTrustBtn');
     const selectTrustBtn = document.getElementById('selectTrustBtn');
     const closeBtn = document.getElementById('closeGuidelineScopeModal');
-    
+
     if (!modal) {
         console.error('[ERROR] Guideline scope modal not found');
         return Promise.reject(new Error('Modal not found'));
     }
-    
+
     // Show modal
     modal.classList.remove('hidden');
-    
+
     // Load current trust selection
     let userHospitalTrust = null;
     try {
@@ -11658,27 +11707,27 @@ async function showGuidelineScopeModal() {
                 'Authorization': `Bearer ${await auth.currentUser.getIdToken()}`
             }
         });
-        
+
         const result = await response.json();
         if (result.success && result.hospitalTrust) {
             userHospitalTrust = result.hospitalTrust;
             scopeTrustDisplay.textContent = userHospitalTrust;
-            
+
             // Show "Change Trust" button, hide "Select Trust" button
             changeTrustBtn.classList.remove('hidden');
             selectTrustBtn.classList.add('hidden');
-            
+
             // Enable all buttons
             applyNationalBtn.disabled = false;
             applyLocalBtn.disabled = false;
             applyBothBtn.disabled = false;
         } else {
             scopeTrustDisplay.textContent = 'None selected';
-            
+
             // Show "Select Trust" button, hide "Change Trust" button
             changeTrustBtn.classList.add('hidden');
             selectTrustBtn.classList.remove('hidden');
-            
+
             // Enable national button, disable local and both buttons
             applyNationalBtn.disabled = false;
             applyLocalBtn.disabled = true;
@@ -11687,21 +11736,21 @@ async function showGuidelineScopeModal() {
     } catch (error) {
         console.error('[ERROR] Failed to load current hospital trust:', error);
         scopeTrustDisplay.textContent = 'Error loading selection';
-        
+
         // Show "Select Trust" button, hide "Change Trust" button
         changeTrustBtn.classList.add('hidden');
         selectTrustBtn.classList.remove('hidden');
-        
+
         // Enable national button, disable local and both buttons
         applyNationalBtn.disabled = false;
         applyLocalBtn.disabled = true;
         applyBothBtn.disabled = true;
     }
-    
+
     // Return a promise that resolves when user selects a scope
     return new Promise((resolve, reject) => {
         guidelineScopeResolve = resolve;
-        
+
         // Set up button click handlers
         const handleNationalClick = async () => {
             console.log('[DEBUG] User selected: National guidelines');
@@ -11710,7 +11759,7 @@ async function showGuidelineScopeModal() {
             cleanup();
             resolve(selection);
         };
-        
+
         const handleLocalClick = async () => {
             console.log('[DEBUG] User selected: Local guidelines');
             const selection = { scope: 'local', hospitalTrust: userHospitalTrust };
@@ -11718,7 +11767,7 @@ async function showGuidelineScopeModal() {
             cleanup();
             resolve(selection);
         };
-        
+
         const handleBothClick = async () => {
             console.log('[DEBUG] User selected: Both guidelines');
             const selection = { scope: 'both', hospitalTrust: userHospitalTrust };
@@ -11726,7 +11775,7 @@ async function showGuidelineScopeModal() {
             cleanup();
             resolve(selection);
         };
-        
+
         const handleChangeTrustClick = async () => {
             console.log('[DEBUG] User clicked: Change Trust');
             await showHospitalTrustModal();
@@ -11735,7 +11784,7 @@ async function showGuidelineScopeModal() {
             const newSelection = await showGuidelineScopeModal();
             resolve(newSelection);
         };
-        
+
         const handleSelectTrustClick = async () => {
             console.log('[DEBUG] User clicked: Select Trust');
             await showHospitalTrustModal();
@@ -11744,13 +11793,13 @@ async function showGuidelineScopeModal() {
             const newSelection = await showGuidelineScopeModal();
             resolve(newSelection);
         };
-        
+
         const handleCloseClick = () => {
             console.log('[DEBUG] User closed modal');
             cleanup();
             reject(new Error('User cancelled scope selection'));
         };
-        
+
         const cleanup = () => {
             modal.classList.add('hidden');
             applyNationalBtn.removeEventListener('click', handleNationalClick);
@@ -11760,7 +11809,7 @@ async function showGuidelineScopeModal() {
             selectTrustBtn.removeEventListener('click', handleSelectTrustClick);
             closeBtn.removeEventListener('click', handleCloseClick);
         };
-        
+
         // Add event listeners
         applyNationalBtn.addEventListener('click', handleNationalClick);
         applyLocalBtn.addEventListener('click', handleLocalClick);
@@ -11774,14 +11823,14 @@ async function showGuidelineScopeModal() {
 // Filter guidelines by scope
 function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
     console.log('[DEBUG] Filtering guidelines by scope:', { scope, hospitalTrust, totalGuidelines: guidelines.length });
-    
+
     if (!guidelines || guidelines.length === 0) {
         console.log('[DEBUG] No guidelines to filter');
         return [];
     }
-    
+
     let filtered = [];
-    
+
     if (scope === 'national') {
         // Only national guidelines
         filtered = guidelines.filter(g => {
@@ -11818,7 +11867,7 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
         filtered = guidelines;
         console.log('[DEBUG] No scope filtering applied, returning all guidelines');
     }
-    
+
     return filtered;
 }
 
@@ -11828,23 +11877,23 @@ window.selectedGuidelineScope = null;
 // Show clinical issues dropdown as a block within summary1 (and use bottom bar buttons)
 async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
-    
+
     try {
         // Load clinical conditions from Firebase (with fallback to JSON)
         await ClinicalConditionsService.loadConditions();
         const clinicalConditions = ClinicalConditionsService.getConditions();
-        
+
         if (!clinicalConditions) {
             throw new Error('Failed to load clinical conditions');
         }
-        
+
         console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
-        
+
         const summarySection = document.getElementById('summarySection');
         if (summarySection) {
             summarySection.classList.remove('hidden');
         }
-        
+
         // Always render a single Test panel instance (avoid stacking multiple panels off-screen)
         const panelHtml = `
 <div id=\"clinicalIssuesPanel\" class=\"clinical-issues-selector\">
@@ -11860,34 +11909,34 @@ async function showClinicalIssuesDropdown() {
     
     <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
 </div>`;
-        
+
         // Replace existing summary content so the Test panel is always visible
         appendToSummary1(panelHtml, true, false);
-        
+
         // Ensure the clinical issues panel exists inside summary1
         const clinicalPanel = document.getElementById('clinicalIssuesPanel');
-        
+
         const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
         const generateBtn = document.getElementById('generate-interaction-btn');
         const randomBtn = document.getElementById('random-issue-btn');
         const regenerateBtn = document.getElementById('regenerate-clerking-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
-        
+
         if (!clinicalPanel || !clinicalDropdown) {
             console.error('[DEBUG] Clinical issues panel elements not found after injection');
             updateUser('Error: Unable to initialise clinical issues panel.', false);
             return;
         }
-        
+
         // Show the buttons in the button container
         const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
         if (clerkingButtonsGroup) {
             clerkingButtonsGroup.style.display = 'flex';
         }
-        
+
         // Reset dropdown options
         clinicalDropdown.innerHTML = '<option value=\"\">Select a clinical issue...</option>';
-        
+
         // Add options from Firebase data
         // Note: we intentionally exclude gynaecology from the "Test" dropdown.
         const excludedTestCategories = new Set(['gynaecology', 'gynecology']);
@@ -11896,12 +11945,12 @@ async function showClinicalIssuesDropdown() {
             if (excludedTestCategories.has(categoryKey)) {
                 return;
             }
-            
+
             const categoryLabel = String(category || '').charAt(0).toUpperCase() + String(category || '').slice(1);
-            
+
             const optgroup = document.createElement('optgroup');
             optgroup.label = categoryLabel;
-            
+
             Object.entries(conditions).forEach(([conditionName, conditionData]) => {
                 const option = document.createElement('option');
                 const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
@@ -11910,10 +11959,10 @@ async function showClinicalIssuesDropdown() {
                 option.textContent = `${conditionName}${hasTranscript}`;
                 optgroup.appendChild(option);
             });
-            
+
             clinicalDropdown.appendChild(optgroup);
         });
-        
+
         // Ensure summary visibility and scroll/focus the Test panel so it’s obvious
         updateSummaryVisibility();
         updateSummaryCriticalStatus();
@@ -11928,11 +11977,11 @@ async function showClinicalIssuesDropdown() {
                 clinicalDropdown.focus();
             }
         });
-        
+
         function updateGenerateButton() {
             const selectedValue = clinicalDropdown?.value || '';
             const hasSelection = selectedValue.trim() !== '';
-            
+
             if (generateBtn) {
                 generateBtn.disabled = !hasSelection;
             }
@@ -11940,30 +11989,30 @@ async function showClinicalIssuesDropdown() {
                 regenerateBtn.disabled = !hasSelection;
             }
         }
-        
+
         if (clinicalDropdown) {
             clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
-        
+
         // Helper to completely clean up the test UI
         function hideClinicalIssuesPanel() {
             const panel = document.getElementById('clinicalIssuesPanel');
             if (panel && panel.parentNode) {
                 panel.parentNode.removeChild(panel);
             }
-            
+
             const buttonsGroup = document.getElementById('clerkingButtonsGroup');
             if (buttonsGroup) {
                 buttonsGroup.style.display = 'none';
             }
-            
+
             updateSummaryVisibility();
         }
-        
+
         if (generateBtn) {
             generateBtn.onclick = async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
-                
+
                 if (selectedIssue) {
                     await generateFakeClinicalInteraction(selectedIssue);
                     // After loading clerking, remove the test UI
@@ -11971,30 +12020,30 @@ async function showClinicalIssuesDropdown() {
                 }
             };
         }
-        
+
         if (randomBtn) {
             randomBtn.onclick = async () => {
                 if (!clinicalDropdown) return;
-                
+
                 // Get all available options from the dropdown (excluding the default option)
-                const options = Array.from(clinicalDropdown.options).filter(option => 
+                const options = Array.from(clinicalDropdown.options).filter(option =>
                     option.value && option.value.trim() !== ''
                 );
-                
+
                 if (options.length > 0) {
                     // Pick a random option
                     const randomOption = options[Math.floor(Math.random() * options.length)];
                     const randomIssue = randomOption.value;
-                    
+
                     // Set the dropdown to the random selection
                     clinicalDropdown.value = randomIssue;
-                    
+
                     // Update the generate button state
                     updateGenerateButton();
-                    
+
                     // Automatically generate the interaction
                     await generateFakeClinicalInteraction(randomIssue);
-                    
+
                     // After loading clerking, remove the test UI
                     hideClinicalIssuesPanel();
                 } else {
@@ -12003,11 +12052,11 @@ async function showClinicalIssuesDropdown() {
                 }
             };
         }
-        
+
         if (regenerateBtn) {
             regenerateBtn.onclick = async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
-                
+
                 if (selectedIssue) {
                     // Force regeneration of the transcript
                     await generateFakeClinicalInteraction(selectedIssue, true);
@@ -12016,14 +12065,14 @@ async function showClinicalIssuesDropdown() {
                 }
             };
         }
-        
+
         if (cancelBtn) {
             cancelBtn.onclick = () => {
                 hideClinicalIssuesPanel();
                 updateUser('Clinical interaction generation cancelled.', false);
             };
         }
-        
+
     } catch (error) {
         console.error('[DEBUG] Error showing clinical issues dropdown:', error);
         updateUser(`Error loading clinical issues: ${error.message}. Please try again or contact support.`, false);
@@ -12033,7 +12082,7 @@ async function showClinicalIssuesDropdown() {
 // Generate fake clinical interaction based on selected issue
 async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = false) {
     console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue, 'forceRegenerate:', forceRegenerate);
-    
+
     const generateBtn = document.getElementById('generate-interaction-btn');
     const regenerateBtn = document.getElementById('regenerate-clerking-btn');
     const generateSpinner = document.getElementById('generate-spinner');
@@ -12041,12 +12090,12 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
     const generateText = document.getElementById('generate-text');
     const regenerateText = document.getElementById('regenerate-text');
     const statusDiv = document.getElementById('generation-status');
-    
+
     try {
         // Update UI to show loading state
         if (generateBtn) generateBtn.disabled = true;
         if (regenerateBtn) regenerateBtn.disabled = true;
-        
+
         if (forceRegenerate) {
             if (regenerateSpinner) regenerateSpinner.style.display = 'inline';
             if (regenerateText) regenerateText.textContent = 'Regenerating...';
@@ -12054,30 +12103,30 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             if (generateSpinner) generateSpinner.style.display = 'inline';
             if (generateText) generateText.textContent = 'Loading...';
         }
-        
+
         if (statusDiv) {
             statusDiv.style.display = 'block';
             const action = forceRegenerate ? 'Regenerating' : 'Loading';
             statusDiv.innerHTML = `<p>📋 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
-        
+
         // Find the condition in our cached data
         const condition = ClinicalConditionsService.findCondition(selectedIssue);
-        
+
         if (!condition) {
             throw new Error(`Clinical condition not found: ${selectedIssue}`);
         }
-        
+
         console.log('[DEBUG] Found condition:', {
             id: condition.id,
             name: condition.name,
             category: condition.category,
             hasTranscript: condition.hasTranscript
         });
-        
+
         let transcript = null;
         let isGenerated = false;
-        
+
         // Check if we have a cached transcript and not forcing regeneration
         if (condition.hasTranscript && condition.transcript && !forceRegenerate) {
             transcript = condition.transcript;
@@ -12092,9 +12141,9 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             if (statusDiv) {
                 statusDiv.innerHTML = `<p>🔄 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
             }
-            
+
             const result = await ClinicalConditionsService.generateTranscript(condition.id, forceRegenerate);
-            
+
             console.log('[DEBUG] ClinicalConditionsService.generateTranscript returned:', {
                 resultExists: !!result,
                 resultKeys: result ? Object.keys(result) : 'no result',
@@ -12106,10 +12155,10 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                 transcriptPreview: result?.transcript ? result.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
                 fullResult: result
             });
-            
+
             transcript = result.transcript;
             isGenerated = !result.cached;
-            
+
             console.log('[DEBUG] Generated transcript result - processed:', {
                 transcriptAssigned: !!transcript,
                 transcriptLength: transcript?.length,
@@ -12118,17 +12167,17 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                 transcriptPreview: transcript ? transcript.substring(0, 100) + '...' : 'NO TRANSCRIPT'
             });
         }
-        
+
         if (!transcript) {
             throw new Error(`Failed to get transcript for clinical issue: ${selectedIssue}`);
         }
-        
+
         // Update status
         if (statusDiv) {
             const statusText = isGenerated ? 'Generated new' : 'Loaded cached';
             statusDiv.innerHTML = `<p>✅ ${statusText} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
-        
+
         // Put the transcript in the user input textarea
         const userInput = document.getElementById('userInput');
         console.log('[DEBUG] userInput element check:', {
@@ -12138,14 +12187,14 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
             hasTranscript: !!transcript,
             currentValue: userInput?.value?.length || 0
         });
-        
+
         if (transcript) {
             setUserInputContent(transcript, true, 'Fake Clinical Interaction');
             console.log('[DEBUG] Transcript added to user input textarea:', {
                 transcriptLength: transcript.length,
                 preview: transcript.substring(0, 100) + '...'
             });
-            
+
             // Explicitly update button visibility after programmatic content update
             setTimeout(() => {
                 updateChatbotButtonVisibility();
@@ -12156,7 +12205,7 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
                 transcriptType: typeof transcript
             });
         }
-        
+
         // Show success message via status bar instead of summary1
         const performanceText = forceRegenerate
             ? 'regenerated with updated formatting'
@@ -12165,23 +12214,23 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
         const successMessage = `${actionText} clinical interaction for ${selectedIssue} (${condition.category}); ` +
             `transcript length ~${Math.round(transcript.split(' ').length)} words, ${performanceText}.`;
         updateUser(successMessage, false);
-        
+
     } catch (error) {
         console.error('[DEBUG] Error loading fake clinical interaction:', {
             error: error.message,
             stack: error.stack,
             selectedIssue
         });
-        
+
         // Update UI to show error
         if (statusDiv) {
             statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
         }
-        
+
         // Surface error via status bar instead of summary1
         const errorMessage = `Error loading clinical interaction for ${selectedIssue}: ${error.message}`;
         updateUser(errorMessage, false);
-        
+
     } finally {
         // Reset button states
         if (generateBtn) generateBtn.disabled = false;
@@ -12190,7 +12239,7 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
         if (regenerateSpinner) regenerateSpinner.style.display = 'none';
         if (generateText) generateText.textContent = 'Load Clerking';
         if (regenerateText) regenerateText.textContent = 'Regenerate Clerking';
-        
+
         console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
     }
 }
@@ -12198,32 +12247,32 @@ async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = 
 // Comprehensive workflow processing function
 async function processWorkflow() {
     console.log('[DEBUG] processWorkflow started');
-    
+
     // Prevent multiple simultaneous workflow executions
     if (window.workflowInProgress) {
         console.log('[DEBUG] processWorkflow: Already in progress, ignoring duplicate call');
         return;
     }
-    
+
     // Prevent workflow restart if we're already processing guidelines
     if (window.sequentialProcessingActive) {
         console.log('[DEBUG] processWorkflow: Guidelines are being processed, ignoring workflow restart');
         return;
     }
-    
+
     // Set flag to prevent duplicate executions
     window.workflowInProgress = true;
-    
+
     const analyseBtn = document.getElementById('analyseBtn');
     const analyseSpinner = document.getElementById('analyseSpinner');
-    
+
     // Check for abort signal
     if (window.analysisAbortController?.signal.aborted) {
         console.log('[DEBUG] processWorkflow: Already aborted');
         window.workflowInProgress = false;
         return;
     }
-    
+
     try {
         // Check if we have transcript content
         const transcript = getUserInputContent();
@@ -12233,20 +12282,31 @@ async function processWorkflow() {
         }
 
         // Button state is already set by the click handler
-        
+
         // Use status bar for progress; avoid popping summary1 open during workflow
         updateUser('Starting complete workflow processing...', true);
+
+        // Show a visible progress indicator in summary1 to keep user informed
+        appendToSummary1(`
+            <div id="workflow-progress-indicator" style="padding: 20px; text-align: center;">
+                <div style="margin-bottom: 15px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: #3498db;"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🔍 Analyzing Clinical Note</h3>
+                <p id="workflow-status-text" style="margin: 0; color: #7f8c8d;">Checking guideline scope...</p>
+            </div>
+        `, true);
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
         updateAnalyseButtonProgress('Checking Guidelines Scope...', true);
         updateUser('Checking guideline scope...', true);
-        
+
         let scopeSelection;
-        
+
         // Check if we have a persisted selection
         const savedScopeSelection = await loadGuidelineScopeSelection();
-        
+
         if (savedScopeSelection) {
             // Verify the saved selection is still valid (check if trust still exists if local/both)
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
@@ -12285,7 +12345,7 @@ async function processWorkflow() {
             // No saved selection, show modal
             console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
             updateUser('Step 1: Select which guidelines to apply...', true);
-            
+
             try {
                 scopeSelection = await showGuidelineScopeModal();
                 console.log('[DEBUG] processWorkflow: User selected scope:', scopeSelection);
@@ -12295,41 +12355,41 @@ async function processWorkflow() {
                 return; // Exit workflow if user cancels
             }
         }
-        
+
         // Store the selection globally
         window.selectedGuidelineScope = scopeSelection;
-        
-        const scopeMessage = scopeSelection.scope === 'national' 
+
+        const scopeMessage = scopeSelection.scope === 'national'
             ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
-            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
-        
+                ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+                : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
+
         updateUser(scopeMessage, false);
 
         console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
         updateAnalyseButtonProgress('Finding Relevant Guidelines...', true);
         updateUser('Step 2: Finding relevant guidelines...', true);
-        
+
         // Check for abort before starting step 2
         if (window.analysisAbortController?.signal.aborted) {
             throw new Error('Analysis cancelled');
         }
-        
+
         try {
             await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust); // Pass scope parameters
-            
+
             // Check for abort after step 2
             if (window.analysisAbortController?.signal.aborted) {
                 throw new Error('Analysis cancelled');
             }
-            
+
             console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
             updateAnalyseButtonProgress('Guidelines Found', false);
-            
+
             const step1Complete = 'Step 2 complete: relevant guidelines identified.';
             updateUser(step1Complete, false);
-            
+
         } catch (error) {
             // Check if error is due to abort
             if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
@@ -12345,24 +12405,42 @@ async function processWorkflow() {
             guidelinesLength: window.relevantGuidelines?.length || 0,
             guidelinesArray: window.relevantGuidelines
         });
-        
+
         if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
-            console.log('[DEBUG] processWorkflow: No relevant guidelines found, cannot proceed');
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
         }
 
-        console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
-        updateAnalyseButtonProgress('Select Guidelines to Process', false);
-        
-        // Step 3: Show Guideline Selection Interface (decision UI now visible in summary1)
-        updateUser(
-            `Step 3: Select guidelines to process – found ${window.relevantGuidelines.length} relevant guidelines.`,
-            false
-        );
-        
-        // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
-        console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
-        
+        // CHECK PARALLEL ANALYSIS PREFERENCE
+        if (loadParallelAnalysisPreference()) {
+            console.log('[DEBUG] processWorkflow: Parallel Analysis ENABLED - skipping selection');
+            updateAnalyseButtonProgress('Processing Guidelines Concurrently...', true);
+
+            updateUser(
+                `Step 3: Processing ${window.relevantGuidelines.length} relevant guidelines concurrently...`,
+                true
+            );
+
+            // Execute Parallel Analysis
+            await runParallelAnalysis(window.relevantGuidelines);
+
+            // Workflow Complete for Parallel mode
+            console.log('[DEBUG] processWorkflow: Parallel workflow finished successfully');
+
+        } else {
+            // SEQUENTIAL / MANUAL SELECTION FLOW
+            console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
+            updateAnalyseButtonProgress('Select Guidelines to Process', false);
+
+            // Step 3: Show Guideline Selection Interface
+            updateUser(
+                `Step 3: Select guidelines to process – found ${window.relevantGuidelines.length} relevant guidelines.`,
+                false
+            );
+
+            // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
+            console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
+        }
+
         console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
 
     } catch (error) {
@@ -12373,27 +12451,27 @@ async function processWorkflow() {
             window.workflowInProgress = false; // Clear flag before returning
             return;
         }
-        
+
         console.error('[DEBUG] processWorkflow: Workflow failed:', {
             error: error.message,
             stack: error.stack
         });
-        
+
         // Display error in outputField
         const errorMessage = `\n❌ **Workflow Error:** ${error.message}\n\n` +
-                            `The workflow was interrupted. You can try running individual steps manually or contact support if the problem persists.\n\n`;
+            `The workflow was interrupted. You can try running individual steps manually or contact support if the problem persists.\n\n`;
         appendToOutputField(errorMessage, true);
-        
+
         alert(`Workflow failed: ${error.message}`);
-        
+
     } finally {
         // Button state is restored by the click handler's finally block
         // Hide summary loading spinner (content has been added via appendToSummary1)
         hideSummaryLoading();
-        
+
         // Clear the workflow in progress flag
         window.workflowInProgress = false;
-        
+
         console.log('[DEBUG] processWorkflow: Cleanup completed');
     }
 }
@@ -12407,20 +12485,20 @@ async function generateChatSummary(userInput) {
     if (!userInput || userInput.trim().length === 0) {
         return 'Empty chat';
     }
-    
+
     // Check if user is authenticated
     if (!window.auth || !window.auth.currentUser) {
         console.warn('[CHAT_SUMMARY] User not authenticated, using fallback');
         return userInput.substring(0, 40).replace(/\n/g, ' ') + (userInput.length > 40 ? '...' : '');
     }
-    
+
     try {
         const idToken = await window.auth.currentUser.getIdToken();
-        
+
         // Create AbortController for timeout
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-        
+
         const response = await fetch(`${window.SERVER_URL}/generateChatSummary`, {
             method: 'POST',
             headers: {
@@ -12460,7 +12538,7 @@ function formatChatDate(timestamp) {
     const month = date.toLocaleDateString('en-GB', { month: 'long' });
     const year = date.getFullYear();
     const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
-    
+
     return `${month} ${day}${suffix} (${time})`;
 }
 
@@ -12656,7 +12734,7 @@ function loadChatState(state) {
     window.currentSuggestions = state.currentSuggestions || [];
     window.userDecisions = state.userDecisions || {};
     window.lastUpdatedTranscript = state.lastUpdatedTranscript || null;
-    
+
     // Mark suggestion containers as active/inactive based on current session
     setTimeout(() => {
         markSuggestionContainersState();
@@ -12673,7 +12751,7 @@ function markSuggestionContainersState() {
         } else if (sessionId) {
             container.classList.remove('active-session');
             container.classList.add('inactive-session');
-            
+
             // Add a visual overlay to inactive sessions
             if (!container.querySelector('.inactive-overlay')) {
                 const overlay = document.createElement('div');
@@ -12714,7 +12792,7 @@ async function saveCurrentChatState() {
     }
 
     const state = getChatState();
-    
+
     // Generate summary with error handling
     let previewText = 'New chat...';
     try {
@@ -12729,11 +12807,11 @@ async function saveCurrentChatState() {
 
     chatHistory[chatIndex].state = state;
     chatHistory[chatIndex].preview = previewText;
-    
+
     // Move the current chat to the top of the list
     const currentChat = chatHistory.splice(chatIndex, 1)[0];
     chatHistory.unshift(currentChat);
-    
+
     // Save to Firestore (with fallback to localStorage)
     const firestoreSuccess = await saveChatToFirestore(currentChat);
     if (!firestoreSuccess) {
@@ -12756,7 +12834,7 @@ async function saveCurrentChatState() {
             }
         }
     }
-    
+
     renderChatHistory(); // Re-render to show updated preview and order
     console.log(`[CHAT] Saved state for chat: ${currentChatId}`);
 }
@@ -12774,7 +12852,7 @@ async function startNewChat() {
             userInputContent: ''
         }
     };
-    
+
     chatHistory.unshift(newChat);
     loadChatState(newChat.state);
 
@@ -12787,7 +12865,7 @@ async function startNewChat() {
             console.error('[CHAT] Failed to save new chat:', error);
         }
     }
-    
+
     renderChatHistory();
     document.getElementById('userInput').focus();
     console.log(`[CHAT] Started new chat: ${newChatId}`);
@@ -12816,10 +12894,10 @@ async function deleteChat(chatId, event) {
 
     // Delete from Firestore first
     await deleteChatFromFirestore(chatId);
-    
+
     // Remove from local array
     chatHistory = chatHistory.filter(c => c.id !== chatId);
-    
+
     // Update localStorage as backup
     try {
         localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
@@ -12835,7 +12913,7 @@ async function deleteChat(chatId, event) {
             await startNewChat();
         }
     }
-    
+
     renderChatHistory();
     console.log(`[CHAT] Deleted chat: ${chatId}`);
 }
@@ -12971,9 +13049,9 @@ async function initializeMainApp() {
         console.log('[DEBUG] ⏭️ Main app initialization already in progress or completed, skipping...');
         return;
     }
-    
+
     window.mainAppInitializing = true;
-    
+
     try {
         console.log('[DEBUG] Initializing main app features...');
         console.log('[DEBUG] DOM ready state:', document.readyState);
@@ -12984,24 +13062,24 @@ async function initializeMainApp() {
             userInput: !!document.getElementById('userInput'),
             summary1: !!document.getElementById('summary1')
         });
-        
+
         // Initialize chat history - COMMENTED OUT (functionality no longer used)
         // console.log('[DEBUG] Calling initializeChatHistory...');
         // await initializeChatHistory();
-        
+
         // Load clinical conditions and guidelines in parallel for faster startup
         console.log('[DEBUG] ⚡ Loading clinical conditions and guidelines in parallel...');
         const startTime = performance.now();
-        
+
         try {
             const [conditionsResult, guidelinesResult] = await Promise.allSettled([
                 ClinicalConditionsService.loadConditions(),
                 window.loadGuidelinesFromFirestore()
             ]);
-            
+
             const endTime = performance.now();
             console.log(`[DEBUG] ⚡ Parallel loading completed in ${(endTime - startTime).toFixed(0)}ms`);
-            
+
             // Check conditions result
             if (conditionsResult.status === 'fulfilled') {
                 const summary = ClinicalConditionsService.getSummary();
@@ -13009,7 +13087,7 @@ async function initializeMainApp() {
             } else {
                 console.error('[DEBUG] Failed to load clinical conditions:', conditionsResult.reason);
             }
-            
+
             // Check guidelines result
             if (guidelinesResult.status === 'fulfilled') {
                 console.log('[DEBUG] Guidelines loaded successfully during initialization');
@@ -13020,29 +13098,29 @@ async function initializeMainApp() {
             console.error('[DEBUG] Unexpected error during parallel loading:', error);
             // Don't throw - allow app to continue functioning
         }
-        
+
         window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
-        
+
         // Dispatch event to signal that critical data has loaded
         // This triggers deferred initializations like TipTap editor
         window.dispatchEvent(new CustomEvent('criticalDataLoaded'));
         console.log('[DEBUG] ⚡ Critical data loaded event dispatched');
-        
+
         // Show main content and hide loading screen immediately
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
-        
+
         if (loading) {
             loading.classList.add('hidden');
             console.log('[DEBUG] Loading screen hidden - app ready for use');
         }
-        
+
         if (mainContent) {
             mainContent.classList.remove('hidden');
             console.log('[DEBUG] Main content shown - app ready for use');
         }
-        
+
         // Start background tasks after page is interactive
         setTimeout(() => {
             console.log('[DEBUG] Starting background tasks...');
@@ -13056,16 +13134,16 @@ async function initializeMainApp() {
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
-        
+
         // Hide loading screen and show main content immediately even if there's an error
         const loading = document.getElementById('loading');
         const mainContent = document.getElementById('mainContent');
-        
+
         if (loading) {
             loading.classList.add('hidden');
             console.log('[DEBUG] Loading screen hidden due to initialization error');
         }
-        
+
         if (mainContent) {
             mainContent.classList.remove('hidden');
             console.log('[DEBUG] Main content shown despite initialization error');
@@ -13081,13 +13159,13 @@ window.auth.onAuthStateChanged(async (user) => {
     if (!window.appStartTime) {
         window.appStartTime = Date.now();
     }
-    
+
     console.log('[DEBUG] Auth state changed:', {
         hasUser: !!user,
         userEmail: user?.email,
         userDisplayName: user?.displayName
     });
-    
+
     const loading = document.getElementById('loading');
     const landingPage = document.getElementById('landingPage');
     const mainContent = document.getElementById('mainContent');
@@ -13105,19 +13183,19 @@ window.auth.onAuthStateChanged(async (user) => {
 
     if (user) {
         console.log('[DEBUG] User authenticated, checking disclaimer acceptance');
-        
+
         // Check disclaimer acceptance first
         const disclaimerAccepted = await checkDisclaimerAcceptance();
         if (!disclaimerAccepted) {
             console.log('[DEBUG] Disclaimer not accepted, user will be redirected');
             return; // The checkDisclaimerAcceptance function will handle the redirect
         }
-        
+
         console.log('[DEBUG] Disclaimer accepted, starting initialization');
         // Keep main content hidden until initialization is complete
         if (landingPage) landingPage.classList.add('hidden');
         if (mainContent) mainContent.classList.add('hidden'); // Keep hidden during initialization
-        
+
         // Update user info
         const userLabel = document.getElementById('userLabel');
         const userName = document.getElementById('userName');
@@ -13126,22 +13204,22 @@ window.auth.onAuthStateChanged(async (user) => {
             userName.classList.remove('hidden');
             console.log('[DEBUG] Updated user info display');
         }
-        
+
         // Ensure mode selection page is hidden before initialization
         const modeSelectionPagePre = document.getElementById('modeSelectionPage');
         if (modeSelectionPagePre) {
             modeSelectionPagePre.classList.add('hidden');
         }
-        
+
         // Initialize app immediately
         await initializeMainApp();
-        
+
         // Hide loading screen and show main content directly
         // Reuse existing variables declared at top of function
         const loadingAfterInit = document.getElementById('loading');
         const modeSelectionPage = document.getElementById('modeSelectionPage');
         const mainContentAfterInit = document.getElementById('mainContent');
-        
+
         if (loadingAfterInit) {
             loadingAfterInit.classList.add('hidden');
         }
@@ -13151,19 +13229,19 @@ window.auth.onAuthStateChanged(async (user) => {
         if (mainContentAfterInit) {
             mainContentAfterInit.classList.remove('hidden');
         }
-        
+
         // Load and display user preferences in the preferences panel
         await loadAndDisplayUserPreferences();
-        
+
         // Double-check mode selection page is hidden (defensive)
         if (modeSelectionPage && !modeSelectionPage.classList.contains('hidden')) {
             console.warn('[DEBUG] Mode selection page was visible, hiding it now');
             modeSelectionPage.classList.add('hidden');
         }
-        
+
     } else {
         console.log('[DEBUG] User not authenticated, showing landing page');
-        
+
         // Show landing page immediately
         if (loading) {
             loading.classList.add('hidden');
@@ -13174,7 +13252,7 @@ window.auth.onAuthStateChanged(async (user) => {
         if (landingPage) {
             landingPage.classList.remove('hidden');
         }
-        
+
         // Set up Google Sign-in button listener
         setupGoogleSignIn();
     }
@@ -13183,7 +13261,7 @@ window.auth.onAuthStateChanged(async (user) => {
 // Helper function to abbreviate hospital trust names
 function abbreviateHospitalTrust(trustName) {
     if (!trustName) return '';
-    
+
     // Common abbreviations for hospital trusts
     const mapping = {
         'University Hospitals Sussex NHS Foundation Trust': 'UHSussex',
@@ -13192,12 +13270,12 @@ function abbreviateHospitalTrust(trustName) {
         'NHS Foundation Trust': '',
         'NHS Trust': '',
     };
-    
+
     // Check for exact match first
     if (mapping[trustName]) {
         return mapping[trustName];
     }
-    
+
     // Try to find partial matches and replace
     let abbreviated = trustName;
     for (const [full, abbrev] of Object.entries(mapping)) {
@@ -13205,7 +13283,7 @@ function abbreviateHospitalTrust(trustName) {
             abbreviated = abbreviated.replace(full, abbrev).trim();
         }
     }
-    
+
     // If it contains "University Hospitals", try to extract key parts
     if (abbreviated.includes('University Hospitals')) {
         const parts = abbreviated.split('University Hospitals');
@@ -13222,29 +13300,29 @@ function abbreviateHospitalTrust(trustName) {
             }
         }
     }
-    
+
     // Remove common suffixes
     abbreviated = abbreviated.replace(/\s+NHS\s+Foundation\s+Trust$/i, '');
     abbreviated = abbreviated.replace(/\s+NHS\s+Trust$/i, '');
-    
+
     // Default: return as is if reasonable length, otherwise truncate
     if (abbreviated.length > 25) {
         return abbreviated.substring(0, 25) + '...';
     }
-    
+
     return abbreviated || trustName;
 }
 
 // Helper function to standardize guideline titles for better display
 function abbreviateOrganization(orgName) {
     if (!orgName) return '';
-    
+
     const mapping = {
         // Major International Organizations
         'World Health Organization': 'WHO',
         'World Health Organisation': 'WHO',
         'WHO': 'WHO',
-        
+
         // UK Organizations
         'Royal College of Obstetricians and Gynaecologists': 'RCOG',
         'Royal College of Obstetricians & Gynaecologists': 'RCOG',
@@ -13264,7 +13342,7 @@ function abbreviateOrganization(orgName) {
         'RCM': 'RCM',
         'Royal College of Nursing': 'RCN',
         'RCN': 'RCN',
-        
+
         // US Organizations
         'American College of Obstetricians and Gynecologists': 'ACOG',
         'American College of Obstetricians & Gynecologists': 'ACOG',
@@ -13277,7 +13355,7 @@ function abbreviateOrganization(orgName) {
         'FDA': 'FDA',
         'American Academy of Pediatrics': 'AAP',
         'AAP': 'AAP',
-        
+
         // European Organizations
         'European Society of Human Reproduction and Embryology': 'ESHRE',
         'ESHRE': 'ESHRE',
@@ -13288,7 +13366,7 @@ function abbreviateOrganization(orgName) {
         'International Federation of Gynecology and Obstetrics': 'FIGO',
         'International Federation of Gynaecology and Obstetrics': 'FIGO',
         'FIGO': 'FIGO',
-        
+
         // Hospital Trusts and Local Organizations
         'University Hospitals Sussex NHS Foundation Trust': 'University Hospitals Sussex',
         'University Hospitals Sussex': 'University Hospitals Sussex',
@@ -13298,7 +13376,7 @@ function abbreviateOrganization(orgName) {
         'Brighton & Sussex University Hospitals': 'Brighton & Sussex UH',
         'NHS Foundation Trust': 'NHS Trust',
         'Foundation Trust': 'NHS Trust',
-        
+
         // Common Abbreviations and Variations
         'Department of Health': 'DOH',
         'Department of Health and Social Care': 'DHSC',
@@ -13306,7 +13384,7 @@ function abbreviateOrganization(orgName) {
         'Health and Safety Executive': 'HSE',
         'Medicines and Healthcare products Regulatory Agency': 'MHRA',
         'MHRA': 'MHRA',
-        
+
         // Internal/Local Guidelines (make them more user-friendly)
         'Maternity Services': 'Maternity',
         'Obstetrics and Gynaecology': 'Obs & Gynae',
@@ -13317,20 +13395,20 @@ function abbreviateOrganization(orgName) {
         'Neonatal Intensive Care Unit': 'NICU',
         'Special Care Baby Unit': 'SCBU'
     };
-    
+
     // Direct mapping first
     if (mapping[orgName]) {
         return mapping[orgName];
     }
-    
+
     // Partial matching for complex names
     for (const [key, value] of Object.entries(mapping)) {
-        if (orgName.toLowerCase().includes(key.toLowerCase()) || 
+        if (orgName.toLowerCase().includes(key.toLowerCase()) ||
             key.toLowerCase().includes(orgName.toLowerCase())) {
             return value;
         }
     }
-    
+
     // Special handling for internal codes and hospital names
     // Remove common suffixes that don't add value
     let cleaned = orgName
@@ -13340,7 +13418,7 @@ function abbreviateOrganization(orgName) {
         .replace(/Hospital Trust$/i, 'Hospital')
         .replace(/^(MP|CG|SP|MD|GP)\d+\s*-?\s*/i, '') // Remove internal codes like MP053, CG12004
         .trim();
-    
+
     // If no match found, return the cleaned name (but truncated if too long)
     return cleaned.length > 25 ? cleaned.substring(0, 22) + '...' : cleaned;
 }
@@ -13376,10 +13454,10 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
         }
 
         const result = await response.json();
-        
+
         if (result.success) {
             console.log('[DEBUG] Metadata enhancement successful:', result);
-            
+
             // Check if this should be silent (from auto-enhancement) or show a detailed message
             if (result.silent || window.enhancementInProgress) {
                 // Silent mode - just log basic info
@@ -13387,7 +13465,7 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
             } else {
                 // Interactive mode - build detailed message but still just log it
                 let message = result.message + '\n\n';
-                
+
                 if (result.enhancedFields && result.enhancedFields.length > 0) {
                     message += 'Enhanced fields:\n';
                     result.enhancedFields.forEach(field => {
@@ -13395,27 +13473,27 @@ async function enhanceGuidelineMetadata(guidelineId, specificFields = null) {
                         message += `• ${action} ${field.field}: "${field.newValue}"\n`;
                     });
                 }
-                
+
                 if (result.errors && result.errors.length > 0) {
                     message += '\nWarnings:\n';
                     result.errors.forEach(error => {
                         message += `• ${error}\n`;
                     });
                 }
-                
+
                 // Log the detailed result 
                 console.log('[METADATA] Enhancement result:', message);
             }
-            
+
             // Note: Guidelines are automatically updated in Firestore via the server
             // Avoiding reload to prevent infinite enhancement loops
             console.log('[DEBUG] Metadata enhancement completed - data updated in Firestore');
-            
+
             return result;
         } else {
             throw new Error(result.error || 'Enhancement failed');
         }
-        
+
     } catch (error) {
         console.error('[DEBUG] Error enhancing metadata:', error);
         console.error(`[METADATA] Enhancement failed: ${error.message}`);
@@ -13458,10 +13536,10 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
         }
 
         const result = await response.json();
-        
+
         if (result.success) {
             console.log('[DEBUG] Batch metadata enhancement completed:', result);
-            
+
             // Display summary results
             let message = result.message + '\n\n';
             message += `Summary:\n`;
@@ -13469,23 +13547,23 @@ async function batchEnhanceMetadata(guidelineIds, fieldsToEnhance = null) {
             message += `• Successfully enhanced: ${result.summary.successful}\n`;
             message += `• Failed: ${result.summary.failed}\n`;
             message += `• Total fields enhanced: ${result.summary.totalFieldsEnhanced}\n`;
-            
+
             if (result.summary.totalErrors > 0) {
                 message += `• Total errors: ${result.summary.totalErrors}\n`;
             }
-            
+
             // Log the batch result instead of showing popup
             console.log('[METADATA] Batch enhancement result:', message);
-            
+
             // Note: Guidelines are automatically updated in Firestore via the server
             // Avoiding reload to prevent infinite enhancement loops
             console.log('[DEBUG] Batch enhancement completed - data updated in Firestore');
-            
+
             return result;
         } else {
             throw new Error(result.error || 'Batch enhancement failed');
         }
-        
+
     } catch (error) {
         console.error('[DEBUG] Error in batch enhancement:', error);
         console.error(`[METADATA] Batch enhancement failed: ${error.message}`);
@@ -13499,16 +13577,16 @@ async function triggerMetadataCompletionForAll(targetFields = null) {
         // Define default priority order - humanFriendlyName first for 100% completion goal
         const defaultFieldOrder = [
             'humanFriendlyName',
-            'organisation', 
+            'organisation',
             'yearProduced',
             'title',
             'summary',
             'keywords'
         ];
-        
+
         const fieldsToProcess = targetFields || defaultFieldOrder;
         console.log(`[METADATA_COMPLETION] Starting completion for fields: ${fieldsToProcess.join(', ')}`);
-        
+
         const response = await fetch('https://clerky-uzni.onrender.com/ensureMetadataCompletion', {
             method: 'POST',
             headers: {
@@ -13517,9 +13595,9 @@ async function triggerMetadataCompletionForAll(targetFields = null) {
             },
             body: JSON.stringify({ targetFields: fieldsToProcess })
         });
-        
+
         const result = await response.json();
-        
+
         if (result.success) {
             console.log(`[METADATA_COMPLETION] ✅ Metadata completion finished:`, {
                 total: result.total,
@@ -13527,12 +13605,12 @@ async function triggerMetadataCompletionForAll(targetFields = null) {
                 fieldsCompleted: result.fieldsCompleted,
                 overallCompletionRate: result.overallCompletionRate
             });
-            
+
             // Log field-specific completion rates
             if (result.fieldResults) {
                 result.fieldResults.forEach(fieldResult => {
                     console.log(`[METADATA_COMPLETION] ${fieldResult.field}: ${fieldResult.completionRate}% complete (${fieldResult.completed}/${fieldResult.total})`);
-                    
+
                     if (fieldResult.completionRate === 100) {
                         console.log(`[METADATA_COMPLETION] 🎉 100% ${fieldResult.field} completion achieved!`);
                     }
@@ -13541,7 +13619,7 @@ async function triggerMetadataCompletionForAll(targetFields = null) {
         } else {
             console.error('[METADATA_COMPLETION] ❌ Metadata completion failed:', result.error);
         }
-        
+
         return result;
     } catch (error) {
         console.error('[METADATA_COMPLETION] ❌ Error triggering metadata completion:', error);
@@ -13627,7 +13705,7 @@ window.triggerMetadataCompletionForAll = triggerMetadataCompletionForAll;
 window.scheduleBackgroundMetadataCompletion = scheduleBackgroundMetadataCompletion;
 
 // Testing helper - trigger completion for specific fields only
-window.testMetadataCompletion = async function(fields = ['humanFriendlyName']) {
+window.testMetadataCompletion = async function (fields = ['humanFriendlyName']) {
     console.log(`[TEST] Triggering metadata completion for: ${fields.join(', ')}`);
     return await triggerMetadataCompletionForAll(fields);
 };
@@ -13636,7 +13714,7 @@ window.testMetadataCompletion = async function(fields = ['humanFriendlyName']) {
 function showMetadataProgress(message, isComplete = false) {
     // Create or update progress notification
     let progressDiv = document.getElementById('metadata-progress');
-    
+
     if (!progressDiv) {
         progressDiv = document.createElement('div');
         progressDiv.id = 'metadata-progress';
@@ -13655,17 +13733,17 @@ function showMetadataProgress(message, isComplete = false) {
         `;
         document.body.appendChild(progressDiv);
     }
-    
+
     progressDiv.innerHTML = `
         <div style="display: flex; align-items: center; gap: 8px;">
-            ${isComplete ? 
-                '<div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>' :
-                '<div style="width: 12px; height: 12px; border: 2px solid #0ea5e9; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>'
-            }
+            ${isComplete ?
+            '<div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>' :
+            '<div style="width: 12px; height: 12px; border: 2px solid #0ea5e9; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>'
+        }
             <span>${message}</span>
         </div>
     `;
-    
+
     // Add animation keyframe if not already added
     if (!document.getElementById('metadata-progress-styles')) {
         const style = document.createElement('style');
@@ -13678,7 +13756,7 @@ function showMetadataProgress(message, isComplete = false) {
         `;
         document.head.appendChild(style);
     }
-    
+
     // Auto-hide completed messages after 5 seconds
     if (isComplete) {
         setTimeout(() => {
@@ -13723,12 +13801,12 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
             
             <div class="guidelines-selection-list">
                 ${mostRelevantGuidelines.map((guideline, index) => {
-                    const guidelineData = window.globalGuidelines[guideline.id];
-                    const displayTitle = guidelineData?.displayName || guideline.displayName || guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
-                    const organization = guidelineData?.organisation || 'Unknown';
-                    const relevanceScore = guideline.relevance || 'N/A';
-                    
-                    return `
+        const guidelineData = window.globalGuidelines[guideline.id];
+        const displayTitle = guidelineData?.displayName || guideline.displayName || guidelineData?.humanFriendlyName || guideline.humanFriendlyName || guideline.title || guideline.id;
+        const organization = guidelineData?.organisation || 'Unknown';
+        const relevanceScore = guideline.relevance || 'N/A';
+
+        return `
                         <div class="guideline-selection-item" data-guideline-id="${guideline.id}">
                             <div class="selection-checkbox">
                                 <input type="checkbox" id="guideline-${index}" checked="checked" 
@@ -13751,7 +13829,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
                             </div>
                         </div>
                     `;
-                }).join('')}
+    }).join('')}
             </div>
             
             <div class="selection-actions">
@@ -13988,7 +14066,7 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
 
     // Display the selection interface
     appendToOutputField(selectionHtml, false);
-    
+
     console.log('[DEBUG] Guideline selection interface displayed');
 }
 
@@ -13998,10 +14076,10 @@ function selectAllGuidelines(select) {
     checkboxes.forEach(checkbox => {
         checkbox.checked = select;
     });
-    
+
     // Update button text after selection change
     updateProcessButtonText();
-    
+
     console.log('[DEBUG] ' + (select ? 'Selected' : 'Deselected') + ' all guidelines');
 }
 
@@ -14018,37 +14096,37 @@ function cancelGuidelineSelection() {
 // NEW: Process selected guidelines sequentially (one-by-one)
 async function processSelectedGuidelines(event) {
     console.log('[DEBUG] processSelectedGuidelines function called!');
-    
+
     // Prevent event propagation and default behavior
     if (event) {
         event.preventDefault();
         event.stopPropagation();
     }
-    
+
     const button = event?.target?.closest('.process-selected-btn') || document.querySelector('.process-selected-btn');
-    
+
     if (!button) {
         console.error('[DEBUG] Process button not found!');
         alert('Process button not found. Please try refreshing the page.');
         return;
     }
-    
+
     // Prevent double-clicking
     if (button.disabled) {
         console.log('[DEBUG] Button already processing, ignoring click');
         return;
     }
-    
+
     const originalText = button.textContent;
-    
+
     try {
         // Get all checked guidelines
         const checkedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
         console.log('[DEBUG] Found checkboxes:', checkedCheckboxes.length);
-        
+
         const selectedGuidelineIds = Array.from(checkedCheckboxes).map(cb => cb.dataset.guidelineId);
         console.log('[DEBUG] Selected guideline IDs:', selectedGuidelineIds);
-        
+
         if (selectedGuidelineIds.length === 0) {
             alert('Please select at least one guideline to process');
             return;
@@ -14057,7 +14135,7 @@ async function processSelectedGuidelines(event) {
         // Set loading state
         button.disabled = true;
         button.innerHTML = '⏳ Processing...';
-        
+
         updateUser(`Processing ${selectedGuidelineIds.length} guidelines...`, true);
 
         console.log('[DEBUG] Starting sequential processing of selected guidelines:', selectedGuidelineIds);
@@ -14071,14 +14149,14 @@ async function processSelectedGuidelines(event) {
             guidelineInterface.style.opacity = '0';
             guidelineInterface.style.maxHeight = '0';
             guidelineInterface.style.overflow = 'hidden';
-            
+
             setTimeout(() => {
                 if (guidelineInterface.parentNode) {
                     guidelineInterface.parentNode.remove(); // Remove the wrapper too
                 }
             }, 300);
         }
-        
+
         // Hide the selection buttons from the button container
         hideSelectionButtons();
 
@@ -14133,7 +14211,7 @@ async function processSelectedGuidelines(event) {
             }
             </style>
         `;
-        
+
         appendToSummary1(sequentialProcessingMessage, false, true); // Transient structural container only
 
         // Function to update status display
@@ -14144,10 +14222,10 @@ async function processSelectedGuidelines(event) {
                     const guideline = window.relevantGuidelines.find(g => g.id === id);
                     const title = getGuidelineDisplayName(id, guideline);
                     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-                    
+
                     let className = 'processing-step pending';
                     let emoji = '⏳';
-                    
+
                     if (index < window.sequentialProcessingIndex) {
                         className = 'processing-step completed';
                         emoji = '✅';
@@ -14155,7 +14233,7 @@ async function processSelectedGuidelines(event) {
                         className = 'processing-step current';
                         emoji = '🔄';
                     }
-                    
+
                     return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
                 }).join('');
             }
@@ -14163,29 +14241,29 @@ async function processSelectedGuidelines(event) {
 
         // Process only the first guideline - rest will be handled by applyAllDecisions
         const i = 0;
-            const guidelineId = selectedGuidelineIds[i];
-            const stepNumber = i + 1;
-            
-            // Update status display for first guideline
-            updateSequentialStatus();
+        const guidelineId = selectedGuidelineIds[i];
+        const stepNumber = i + 1;
 
-            console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
-            
-            // Update status bar for first guideline
-            const processingStepMessage = `Processing guideline ${stepNumber}/${selectedGuidelineIds.length}...`;
-            updateUser(processingStepMessage, true);
+        // Update status display for first guideline
+        updateSequentialStatus();
 
-            try {
-                // Process only the first guideline - the rest will be handled in applyAllDecisions
-                await processSingleGuideline(guidelineId, stepNumber, selectedGuidelineIds.length);
-                
-            } catch (error) {
-                console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
-                const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\n`;
-                appendToOutputField(errorMessage, true);
-            }
+        console.log(`[DEBUG] Processing guideline ${stepNumber}/${selectedGuidelineIds.length}: ${guidelineId}`);
 
-            // Don't show completion message yet - will be shown when all guidelines are done
+        // Update status bar for first guideline
+        const processingStepMessage = `Processing guideline ${stepNumber}/${selectedGuidelineIds.length}...`;
+        updateUser(processingStepMessage, true);
+
+        try {
+            // Process only the first guideline - the rest will be handled in applyAllDecisions
+            await processSingleGuideline(guidelineId, stepNumber, selectedGuidelineIds.length);
+
+        } catch (error) {
+            console.error(`[DEBUG] Error processing guideline ${guidelineId}:`, error);
+            const errorMessage = `❌ **Error processing guideline ${stepNumber}:** ${error.message}\n\n`;
+            appendToOutputField(errorMessage, true);
+        }
+
+        // Don't show completion message yet - will be shown when all guidelines are done
 
     } catch (error) {
         console.error('[DEBUG] Error in processSelectedGuidelines:', error);
@@ -14193,13 +14271,13 @@ async function processSelectedGuidelines(event) {
         const errorMessage = `\n❌ **Sequential Processing Error:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
         appendToOutputField(errorMessage, true);
         alert('Error processing selected guidelines: ' + error.message);
-        
+
     } finally {
         // Reset button state
         button.disabled = false;
         button.textContent = originalText;
         if (!document.getElementById('serverStatusMessage').textContent.includes('Error')) {
-             updateUser('', false);
+            updateUser('', false);
         }
     }
 }
@@ -14210,12 +14288,12 @@ function getGuidelineDisplayName(guidelineId, guideline = null, guidelineData = 
     if (!guideline) {
         guideline = window.relevantGuidelines?.find(g => g.id === guidelineId);
     }
-    
+
     // Get guidelineData from globalGuidelines if not provided
     if (!guidelineData) {
         guidelineData = window.globalGuidelines?.[guidelineId];
     }
-    
+
     // Use the SAME logic as the selection interface (including safety guardrails)
     const safeGuideline = guideline || { id: guidelineId };
     return getCleanDisplayTitle(safeGuideline, guidelineData) || guidelineId;
@@ -14224,7 +14302,7 @@ function getGuidelineDisplayName(guidelineId, guideline = null, guidelineData = 
 // Function to process a single guideline (extracted from existing checkAgainstGuidelines logic)
 async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     console.log(`[DEBUG] processSingleGuideline called for: ${guidelineId}`);
-    
+
     const transcript = getUserInputContent();
     if (!transcript) {
         throw new Error('No transcript found');
@@ -14253,7 +14331,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const displayName = getGuidelineDisplayName(guidelineId, targetGuideline, guidelineData);
 
     console.log(`[DEBUG] Processing guideline: ${displayName}`);
-    
+
     // Update progress button
     updateAnalyseButtonProgress(`Processing Guideline ${stepNumber}/${totalSteps}`, true);
 
@@ -14274,13 +14352,13 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
         await displayPracticePointSuggestions(result);
     } catch (practicePointError) {
         console.error(`[DEBUG] Error with practice point suggestions for ${guidelineId}:`, practicePointError);
-        
+
         // Fallback to original dynamicAdvice method if practice points fail
         console.log(`[DEBUG] Falling back to dynamicAdvice for ${guidelineId}`);
         try {
             const analysisToUse = `Clinical transcript analysis for guideline compliance check against: ${displayName}. ` +
-                               `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
-            
+                `This analysis focuses on identifying areas where the clinical documentation can be improved according to the specific guideline requirements.`;
+
             await dynamicAdvice(
                 transcript,
                 analysisToUse,
@@ -14298,22 +14376,178 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
 }
 
 // Make the function globally accessible
+// Make the function globally accessible
 window.processSelectedGuidelines = processSelectedGuidelines;
 
+// PARALLEL ANALYSIS FUNCTIONS
+
+async function runParallelAnalysis(guidelines) {
+    console.log('[DEBUG] Starting Parallel Analysis for', guidelines.length, 'guidelines');
+
+    // Create a container for the aggregated results
+    const containerId = 'parallel-analysis-results-' + Date.now();
+    const resultsContainerHtml = `
+        <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
+            <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border: 1px solid #c8e6c9;">
+                <strong><i class="fas fa-layer-group"></i> Parallel Analysis in Progress</strong><br>
+                <span id="${containerId}-status-text">Starting workers...</span>
+                <div class="progress-bar-container" style="margin-top: 10px; background: #fff; height: 8px; border-radius: 4px; overflow: hidden;">
+                    <div id="${containerId}-progress" style="width: 0%; height: 100%; background: #4caf50; transition: width 0.3s ease;"></div>
+                </div>
+            </div>
+            <div id="${containerId}-output"></div>
+        </div>
+    `;
+    appendToSummary1(resultsContainerHtml, false);
+
+    const statusText = document.getElementById(`${containerId}-status-text`);
+    const progressBar = document.getElementById(`${containerId}-progress`);
+    const outputContainer = document.getElementById(`${containerId}-output`);
+
+    let completedCount = 0;
+    const total = guidelines.length;
+
+    // Map guidelines to promises
+    const analysisPromises = guidelines.map(async (guideline, index) => {
+        try {
+            // Get full data
+            const guidelineData = window.globalGuidelines[guideline.id];
+            const displayName = getGuidelineDisplayName(guideline.id, guideline, guidelineData);
+
+            // Analyze
+            const suggestions = await getPracticePointSuggestions(
+                window.editors?.userInput?.getText() || getUserInputContent(),
+                guideline.id
+            );
+
+            completedCount++;
+            if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
+            if (statusText) statusText.textContent = `Analyzed ${completedCount} of ${total}: ${displayName}`;
+
+            return {
+                status: 'fulfilled',
+                guidelineId: guideline.id,
+                displayName: displayName,
+                suggestions: suggestions,
+                relevance: guideline.relevance || 0,
+                originalIndex: index
+            };
+        } catch (error) {
+            console.error(`[PARALLEL] Error analyzing ${guideline.id}:`, error);
+            completedCount++;
+            if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
+
+            return {
+                status: 'rejected',
+                guidelineId: guideline.id,
+                error: error.message
+            };
+        }
+    });
+
+    // Wait for all
+    const results = await Promise.all(analysisPromises);
+
+    // Filter and Sort Results
+    // Note: `r.suggestions` is the full result object from getPracticePointSuggestions
+    // which has a `suggestions` array property inside it
+    const successfulResults = results
+        .filter(r => r.status === 'fulfilled' && r.suggestions && r.suggestions.suggestions && r.suggestions.suggestions.length > 0);
+
+    // Sort by relevance (descending) or original order if relevance is equal
+    successfulResults.sort((a, b) => b.relevance - a.relevance || a.originalIndex - b.originalIndex);
+
+    console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses.`);
+
+    if (statusText) {
+        const guidelinesWithSuggestions = successfulResults.length;
+        const noSuggestionCount = total - guidelinesWithSuggestions;
+        let statusMessage = `<strong>Analysis Complete</strong><br>Found ${guidelinesWithSuggestions} ${guidelinesWithSuggestions === 1 ? 'guideline' : 'guidelines'} with relevant suggestions.`;
+        if (noSuggestionCount > 0) {
+            statusMessage += `<br><small style="color: #666;">(${noSuggestionCount} ${noSuggestionCount === 1 ? 'guideline' : 'guidelines'} had no specific suggestions)</small>`;
+        }
+        statusText.innerHTML = statusMessage;
+        statusText.parentElement.style.background = '#e3f2fd';
+        statusText.parentElement.style.border = '1px solid #bbdefb';
+    }
+
+    // Display Aggregated Results
+    if (successfulResults.length === 0) {
+        outputContainer.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found for the provided clinical text based on these guidelines.</div>';
+    } else {
+        for (const result of successfulResults) {
+            // Create a wrapper for each guideline's suggestions
+            const guidelineWrapper = document.createElement('div');
+            guidelineWrapper.className = 'guideline-result-wrapper';
+            guidelineWrapper.style.marginBottom = '30px';
+            guidelineWrapper.style.borderTop = '1px solid #eee';
+            guidelineWrapper.style.paddingTop = '20px';
+
+            // Header for this guideline (relevance score removed for cleaner display)
+            guidelineWrapper.innerHTML = `
+                <h3 style="color: #2c3e50; border-left: 4px solid #3498db; padding-left: 10px; margin-bottom: 15px;">
+                    ${result.displayName}
+                </h3>
+            `;
+
+            outputContainer.appendChild(guidelineWrapper);
+
+            // Use existing display function logic but target our specific container
+            // We need to adapt displayPracticePointSuggestions to be able to render into a specific element
+            // Since displayPracticePointSuggestions writes to global 'summary1', we'll simulate it or refactor.
+            // For now, simpler: we'll render the suggestions manually here reusing the style classes.
+
+            // result.suggestions is the full API response object, which has a .suggestions array
+            const suggestionsArray = result.suggestions.suggestions || [];
+            const suggestionsHtml = suggestionsArray.map(suggestion => {
+                // Safely access suggestion properties with fallbacks
+                const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
+                const suggestionType = suggestion.type || suggestion.priority || 'info';
+                const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+
+                return `
+                <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
+                        suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
+                              style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
+                            ${suggestionType}
+                        </span>
+                    </div>
+                    <div class="suggestion-content">
+                        <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
+                        <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
+                    </div>
+                     <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee;">
+                        <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            const suggestionsContainer = document.createElement('div');
+            suggestionsContainer.innerHTML = suggestionsHtml;
+            guidelineWrapper.appendChild(suggestionsContainer);
+        }
+    }
+}
+
 // Helper functions for sequential processing error handling
-window.retryCurrentGuideline = async function() {
+window.retryCurrentGuideline = async function () {
     if (!window.sequentialProcessingActive) return;
-    
+
     const queue = window.sequentialProcessingQueue || [];
     const currentIndex = window.sequentialProcessingIndex || 0;
     const guidelineId = queue[currentIndex];
     const stepNumber = currentIndex + 1;
-    
+
     console.log('[DEBUG] Retrying current guideline:', guidelineId);
-    
+
     const retryMessage = `**🔄 Retrying Guideline ${stepNumber}...**\n\n`;
     appendToOutputField(retryMessage, true);
-    
+
     try {
         await processSingleGuideline(guidelineId, stepNumber, queue.length);
     } catch (error) {
@@ -14323,28 +14557,28 @@ window.retryCurrentGuideline = async function() {
     }
 };
 
-window.skipCurrentGuideline = function() {
+window.skipCurrentGuideline = function () {
     if (!window.sequentialProcessingActive) return;
-    
+
     const queue = window.sequentialProcessingQueue || [];
     const currentIndex = window.sequentialProcessingIndex || 0;
     const stepNumber = currentIndex + 1;
-    
+
     console.log('[DEBUG] Skipping current guideline');
-    
+
     const skipMessage = `**⏭️ Skipped Guideline ${stepNumber}**\n\n`;
     appendToOutputField(skipMessage, true);
-    
+
     // Move to next guideline or complete sequence
     if (currentIndex < queue.length - 1) {
         window.sequentialProcessingIndex = currentIndex + 1;
         const nextGuidelineId = queue[currentIndex + 1];
         const nextStepNumber = currentIndex + 2;
-        
+
         setTimeout(async () => {
             try {
-                        const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
-        updateUser(processingStepMessage, true);
+                const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+                updateUser(processingStepMessage, true);
                 await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
             } catch (error) {
                 console.error('[DEBUG] Error processing next guideline after skip:', error);
@@ -14361,37 +14595,37 @@ window.skipCurrentGuideline = function() {
 // Generate guideline suggestions for multiple selected guidelines
 async function generateMultiGuidelineAdvice() {
     // console.log('[DEBUG] generateMultiGuidelineAdvice called');
-    
+
     // Get selected guidelines
     const selectedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
     const selectedGuidelineIds = Array.from(selectedCheckboxes).map(cb => cb.dataset.guidelineId);
-    
+
     if (selectedGuidelineIds.length === 0) {
         alert('Please select at least one guideline to generate advice.');
         return;
     }
-    
+
     console.log('🔄 Processing', selectedGuidelineIds.length, 'selected guidelines');
-    
+
     // Update UI to show loading state
     const generateBtn = document.querySelector('.generate-advice-btn');
     const btnText = generateBtn.querySelector('.btn-text');
     const btnSpinner = generateBtn.querySelector('.btn-spinner');
     const btnIcon = generateBtn.querySelector('.btn-icon');
-    
+
     const originalText = btnText.textContent;
     btnText.textContent = 'Processing Guidelines...';
     btnIcon.style.display = 'none';
     btnSpinner.style.display = 'inline';
     generateBtn.disabled = true;
-    
+
     try {
         // Get the selected guidelines data
         const selectedGuidelines = selectedGuidelineIds.map(id => {
             const relevantGuideline = window.relevantGuidelines.find(g => g.id === id);
             const guidelineData = window.globalGuidelines[id];
             const displayTitle = guidelineData?.humanFriendlyTitle || guidelineData?.title || relevantGuideline?.title || id;
-            
+
             return {
                 id: id,
                 title: displayTitle,
@@ -14399,14 +14633,14 @@ async function generateMultiGuidelineAdvice() {
                 data: guidelineData
             };
         });
-        
+
         console.log('📋 Selected guidelines:', selectedGuidelines.map(g => g.title));
-        
+
         // Validate essential data
         if (!window.latestAnalysis || !window.latestAnalysis.transcript) {
             throw new Error('No clinical transcript available. Please enter a transcript first.');
         }
-        
+
         // Add progress message
         const progressHtml = `
             <div class="multi-guideline-progress">
@@ -14455,15 +14689,15 @@ async function generateMultiGuidelineAdvice() {
             }
             </style>
         `;
-        
+
         appendToOutputField(progressHtml, true);
-        
+
         // Call the multi-guideline guideline suggestions function
         await multiGuidelineDynamicAdvice(selectedGuidelines);
-        
+
     } catch (error) {
         console.error('❌ Error in generateMultiGuidelineAdvice:', error);
-        
+
         const errorHtml = `
             <div class="multi-guideline-error">
                 <h3>❌ Error Processing Guidelines</h3>
@@ -14471,10 +14705,10 @@ async function generateMultiGuidelineAdvice() {
                 <p>Please try again or select fewer guidelines.</p>
             </div>
         `;
-        
+
         appendToOutputField(errorHtml, true);
         alert(`Error generating multi-guideline advice: ${error.message}`);
-        
+
     } finally {
         // Reset button state
         btnText.textContent = originalText;
@@ -14487,21 +14721,21 @@ async function generateMultiGuidelineAdvice() {
 // Multi-guideline guideline suggestions - processes multiple guidelines in parallel
 async function multiGuidelineDynamicAdvice(selectedGuidelines) {
     console.log('🔄 Processing', selectedGuidelines.length, 'guidelines in parallel...');
-    
+
     try {
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
             throw new Error('User not authenticated');
         }
-        
+
         const idToken = await user.getIdToken();
-        
+
         // Validate essential data again
         if (!window.latestAnalysis || !window.latestAnalysis.transcript || !window.latestAnalysis.analysis) {
             throw new Error('Essential data missing. Please ensure you have entered a transcript and it has been analyzed.');
         }
-        
+
         // Update processing status for each guideline
         const updateProcessingStatus = (guidelineId, status, emoji = '⏳') => {
             const statusElement = document.querySelector(`[data-guideline-id="${guidelineId}"] .processing-status`);
@@ -14510,21 +14744,21 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 // console.log(`Updated status for ${guidelineId}: ${status}`);
             }
         };
-        
+
         // Process all guidelines in parallel with proper error handling
         console.log('⚡ Starting parallel processing...');
-        
+
         const guidelinePromises = selectedGuidelines.map(async (guideline, index) => {
             try {
                 updateProcessingStatus(guideline.id, 'processing', '🔄');
-                
+
                 console.log(`📋 Processing ${index + 1}/${selectedGuidelines.length}: ${guideline.title}`);
-                
+
                 // Validate individual guideline data
                 if (!guideline.id || !guideline.title) {
                     throw new Error(`Invalid guideline data for ${guideline.title || 'unknown guideline'}`);
                 }
-                
+
                 // Call the dynamicAdvice API for this specific guideline
                 const response = await fetch(`${window.SERVER_URL}/dynamicAdvice`, {
                     method: 'POST',
@@ -14539,32 +14773,32 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                         guidelineTitle: guideline.title
                     })
                 });
-                
+
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`API error (${response.status}): ${errorText}`);
                 }
-                
+
                 const result = await response.json();
-                
+
                 if (!result.success) {
                     throw new Error(result.error || 'Guideline suggestions generation failed');
                 }
-                
+
                 updateProcessingStatus(guideline.id, 'completed', '✅');
-                
+
                 console.log(`✅ Completed: ${guideline.title} (${result.suggestions?.length || 0} suggestions)`);
-                
+
                 return {
                     guideline: guideline,
                     result: result,
                     success: true
                 };
-                
+
             } catch (error) {
                 console.error(`❌ Error processing ${guideline.title}:`, error.message);
                 updateProcessingStatus(guideline.id, 'error', '❌');
-                
+
                 return {
                     guideline: guideline,
                     error: error.message,
@@ -14572,11 +14806,11 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 };
             }
         });
-        
+
         // Wait for all guidelines to be processed
         console.log('⏳ Waiting for all processing to complete...');
         const results = await Promise.allSettled(guidelinePromises);
-        
+
         // Process results from Promise.allSettled
         const processedResults = results.map(result => {
             if (result.status === 'fulfilled') {
@@ -14591,17 +14825,17 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
                 };
             }
         });
-        
+
         // Separate successful and failed results
         const successfulResults = processedResults.filter(r => r.success);
         const failedResults = processedResults.filter(r => !r.success);
-        
+
         console.log('📊 Processing completed:', {
             total: processedResults.length,
             successful: successfulResults.length,
             failed: failedResults.length
         });
-        
+
         // Update progress completion
         const progressContainer = document.querySelector('.multi-guideline-progress');
         if (progressContainer) {
@@ -14614,25 +14848,25 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
             `;
             progressContainer.innerHTML += completionHtml;
         }
-        
+
         if (successfulResults.length === 0) {
             throw new Error('No guidelines were successfully processed. Please check the error messages above and try again.');
         }
-        
+
         // Combine and display all suggestions from successful results
         await displayCombinedSuggestions(successfulResults, failedResults);
-        
+
         // Store session data globally (using the first successful result as base)
         const firstResult = successfulResults[0].result;
         currentAdviceSession = firstResult.sessionId;
         currentSuggestions = []; // Will be populated with combined suggestions
         userDecisions = {};
-        
+
         console.log('✅ Multi-guideline guideline suggestions completed successfully');
-        
+
     } catch (error) {
         console.error('❌ Error in multiGuidelineDynamicAdvice:', error);
-        
+
         const errorHtml = `
             <div class="multi-guideline-error">
                 <h3>❌ Error Processing Multiple Guidelines</h3>
@@ -14641,7 +14875,7 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
             </div>
         `;
         appendToOutputField(errorHtml, true);
-        
+
         throw error;
     }
 }
@@ -14649,22 +14883,22 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
 // Display combined suggestions from multiple guidelines
 async function displayCombinedSuggestions(successfulResults, failedResults) {
     console.log('📋 Combining suggestions from', successfulResults.length, 'successful guidelines');
-    
+
     // Validate input
     if (!successfulResults || !Array.isArray(successfulResults)) {
         throw new Error('Invalid successful results provided to displayCombinedSuggestions');
     }
-    
+
     // Combine all suggestions from successful results
     let allSuggestions = [];
     let suggestionCounter = 1;
-    
+
     successfulResults.forEach((result, index) => {
         if (!result || !result.result) {
             console.warn(`⚠️ Invalid result at index ${index}, skipping`);
             return;
         }
-        
+
         const suggestions = result.result.suggestions || [];
         suggestions.forEach(suggestion => {
             // Validate suggestion structure
@@ -14672,7 +14906,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                 console.warn(`⚠️ Invalid suggestion in ${result.guideline?.title || 'unknown guideline'}, skipping`);
                 return;
             }
-            
+
             // Add guideline source information and renumber
             allSuggestions.push({
                 ...suggestion,
@@ -14684,9 +14918,9 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             });
         });
     });
-    
+
     console.log('💡 Combined', allSuggestions.length, 'suggestions from', successfulResults.length, 'guidelines');
-    
+
     // Group suggestions by priority and category for better organization
     const priorityOrder = { 'high': 1, 'medium': 2, 'low': 3 };
     allSuggestions.sort((a, b) => {
@@ -14694,7 +14928,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
         const priorityB = priorityOrder[b.priority] || 2;
         return priorityA - priorityB;
     });
-    
+
     // Create the combined suggestions header
     let combinedHtml = `
         <div class="combined-advice-container">
@@ -14728,7 +14962,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             </div>
             <div class="suggestions-list">
     `;
-    
+
     if (allSuggestions.length === 0) {
         combinedHtml += `
                 <div class="no-suggestions">
@@ -14741,7 +14975,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
         allSuggestions.forEach((suggestion, index) => {
             const priorityClass = `priority-${suggestion.priority || 'medium'}`;
             const categoryIcon = getCategoryIcon(suggestion.category);
-            
+
             combinedHtml += `
                 <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
                     <div class="suggestion-header">
@@ -14811,7 +15045,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             `;
         });
     }
-    
+
     combinedHtml += `
             </div>
             
@@ -14977,19 +15211,19 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
         }
         </style>
     `;
-    
+
     try {
         // Display the combined suggestions
         appendToOutputField(combinedHtml, false);
-        
+
         // Update global suggestions for existing functionality
         currentSuggestions = allSuggestions;
-        
+
         console.log('✅ Combined suggestions displayed successfully');
-        
+
     } catch (error) {
         console.error('❌ Error displaying combined suggestions:', error);
-        
+
         const errorHtml = `
             <div class="display-error">
                 <h3>❌ Error Displaying Suggestions</h3>
@@ -14997,7 +15231,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                 <p>Please try refreshing the page or contact support if the problem persists.</p>
             </div>
         `;
-        
+
         appendToOutputField(errorHtml, false);
         throw error;
     }
@@ -15006,13 +15240,13 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
 // Bulk accept suggestions based on priority filter
 function bulkAcceptSuggestions(priorityFilter) {
     console.log('📋 Bulk accepting suggestions with filter:', priorityFilter);
-    
+
     const suggestions = document.querySelectorAll('.suggestion-item');
     let actionCount = 0;
-    
+
     suggestions.forEach(suggestionElement => {
         const suggestionId = suggestionElement.dataset.suggestionId;
-        
+
         // Check if this suggestion matches the filter
         let shouldAccept = false;
         if (priorityFilter === 'all') {
@@ -15021,21 +15255,21 @@ function bulkAcceptSuggestions(priorityFilter) {
             const priorityBadge = suggestionElement.querySelector('.priority-badge');
             shouldAccept = priorityBadge && priorityBadge.textContent.trim() === 'high';
         }
-        
+
         if (shouldAccept) {
             // Skip if already processed
             const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
             if (statusElement && statusElement.style.display !== 'none') {
                 return; // Already processed
             }
-            
+
             handleSuggestionAction(suggestionId, 'accept');
             actionCount++;
         }
     });
-    
+
     console.log(`✅ Bulk accepted ${actionCount} suggestions with filter: ${priorityFilter}`);
-    
+
     // Update decisions summary
     setTimeout(() => {
         updateDecisionsSummary();
@@ -15045,13 +15279,13 @@ function bulkAcceptSuggestions(priorityFilter) {
 // Bulk reject suggestions
 function bulkRejectSuggestions(priorityFilter) {
     console.log('📋 Bulk rejecting suggestions with filter:', priorityFilter);
-    
+
     const suggestions = document.querySelectorAll('.suggestion-item');
     let actionCount = 0;
-    
+
     suggestions.forEach(suggestionElement => {
         const suggestionId = suggestionElement.dataset.suggestionId;
-        
+
         // Check if this suggestion matches the filter
         let shouldReject = false;
         if (priorityFilter === 'all') {
@@ -15060,21 +15294,21 @@ function bulkRejectSuggestions(priorityFilter) {
             const priorityBadge = suggestionElement.querySelector('.priority-badge');
             shouldReject = priorityBadge && priorityBadge.textContent.trim() === 'high';
         }
-        
+
         if (shouldReject) {
             // Skip if already processed
             const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
             if (statusElement && statusElement.style.display !== 'none') {
                 return; // Already processed
             }
-            
+
             handleSuggestionAction(suggestionId, 'reject');
             actionCount++;
         }
     });
-    
+
     console.log(`✅ Bulk rejected ${actionCount} suggestions with filter: ${priorityFilter}`);
-    
+
     // Update decisions summary
     setTimeout(() => {
         updateDecisionsSummary();
@@ -15091,9 +15325,9 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
         if (!user) {
             throw new Error('User not authenticated');
         }
-        
+
         const idToken = await user.getIdToken();
-        
+
         // Prepare analysis data for each guideline
         const guidelineAnalyses = analysisResults.map(result => ({
             guidelineId: result.guideline,
@@ -15147,14 +15381,14 @@ async function generateCombinedInteractiveSuggestions(analysisResults) {
 
     } catch (error) {
         console.error('❌ Error generating combined suggestions:', error);
-        
+
         // Fallback to single guideline approach
         console.log('🔄 Falling back to single guideline guideline suggestions');
         const firstResult = analysisResults[0];
         await dynamicAdvice(
-            window.latestAnalysis.transcript, 
-            firstResult.analysis, 
-            firstResult.guideline, 
+            window.latestAnalysis.transcript,
+            firstResult.analysis,
+            firstResult.guideline,
             firstResult.guidelineTitle || firstResult.guideline
         );
     }
@@ -15220,11 +15454,11 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
 
         guidelineSuggestions.forEach(suggestion => {
             const suggestionId = `suggestion-${suggestionIndex}`;
-            const priorityClass = suggestion.priority === 'high' ? 'high' : 
-                                   suggestion.priority === 'medium' ? 'medium' : 'low';
+            const priorityClass = suggestion.priority === 'high' ? 'high' :
+                suggestion.priority === 'medium' ? 'medium' : 'low';
             const categoryIcon = getCategoryIcon(suggestion.category);
             const originalTextLabel = getOriginalTextLabel(suggestion.originalText, suggestion.category);
-            
+
             groupedSuggestionsHtml += `
                 <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestionId}" data-source-guideline="${guideline}">
                     <div class="suggestion-header">
@@ -15275,13 +15509,13 @@ async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, gui
                     <div class="suggestion-status" id="status-${suggestionId}"></div>
                 </div>
             `;
-            
+
             // Store suggestion data globally
             currentSuggestions.push({
                 id: suggestionId,
                 ...suggestion
             });
-            
+
             suggestionIndex++;
         });
 
@@ -15336,11 +15570,11 @@ async function diagnoseAndRepairContent() {
         console.log('[REPAIR] ⏳ Content repair already in progress, skipping...');
         return;
     }
-    
+
     window.contentRepairInProgress = true;
     console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
     console.log('[REPAIR] This will process guidelines one at a time to avoid timeouts');
-    
+
     try {
         // Get user ID token
         const user = auth.currentUser;
@@ -15348,10 +15582,10 @@ async function diagnoseAndRepairContent() {
             console.error('[REPAIR] ❌ User not authenticated');
             throw new Error('User not authenticated');
         }
-        
+
         console.log('[REPAIR] ✅ User authenticated, getting ID token...');
         const idToken = await user.getIdToken();
-        
+
         // First, get the list of guidelines needing content
         console.log('[REPAIR] 📋 Getting list of guidelines needing content...');
         const listResponse = await fetch(`${window.SERVER_URL}/getGuidelinesNeedingContent`, {
@@ -15369,28 +15603,28 @@ async function diagnoseAndRepairContent() {
 
         const listResult = await listResponse.json();
         const guidelinesNeedingContent = listResult.guidelines || [];
-        
+
         console.log(`[REPAIR] 📊 Found ${guidelinesNeedingContent.length} guidelines needing content processing`);
-        
+
         if (guidelinesNeedingContent.length === 0) {
             showMetadataProgress('✅ All guidelines already have complete content!', true);
             setTimeout(() => hideMetadataProgress(), 3000);
             return;
         }
-        
+
         // Process guidelines one at a time
         let processed = 0;
         let successful = 0;
         let failed = 0;
-        
+
         for (const guideline of guidelinesNeedingContent) {
             try {
                 processed++;
                 const progress = `🔧 Processing ${processed}/${guidelinesNeedingContent.length}: ${guideline.title}`;
                 showMetadataProgress(progress, false);
-                
+
                 console.log(`[REPAIR] 📄 Processing guideline ${processed}/${guidelinesNeedingContent.length}: ${guideline.id}`);
-                
+
                 const processResponse = await fetch(`${window.SERVER_URL}/processGuidelineContent`, {
                     method: 'POST',
                     headers: {
@@ -15415,46 +15649,46 @@ async function diagnoseAndRepairContent() {
                     const errorText = await processResponse.text();
                     console.error(`[REPAIR] ❌ Failed to process ${guideline.title}: ${errorText}`);
                 }
-                
+
                 // Small delay between requests to avoid overwhelming the server
                 await new Promise(resolve => setTimeout(resolve, 500));
-                
+
             } catch (error) {
                 failed++;
                 console.error(`[REPAIR] ❌ Error processing ${guideline.title}:`, error);
             }
         }
-        
+
         console.log(`[REPAIR] 📈 Processing complete: ${successful} successful, ${failed} failed, ${processed} total`);
-        
+
         if (failed === 0) {
             showMetadataProgress(`✅ Content repair completed! Successfully processed ${successful} guidelines.`, true);
         } else {
             showMetadataProgress(`⚠️ Content repair completed with some issues: ${successful} successful, ${failed} failed.`, true);
         }
-        
+
         // Auto-hide after 5 seconds
         setTimeout(() => {
             hideMetadataProgress();
         }, 5000);
-        
+
         // Note: Guidelines will be automatically updated via Firestore listeners
         if (successful > 0) {
             console.log('[REPAIR] ✅ Guidelines updated in Firestore, changes will reflect automatically');
         }
-        
+
     } catch (error) {
         console.error('[REPAIR] ❌ Content repair error:', error);
-        
+
         showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
-        
+
         // Auto-hide error after 10 seconds
         setTimeout(() => {
             hideMetadataProgress();
         }, 10000);
-        
+
         throw error;
-        
+
     } finally {
         console.log('[REPAIR] 🏁 Content repair process finished, flag reset');
         window.contentRepairInProgress = false;
@@ -15472,17 +15706,17 @@ function checkContentStatus(guidelines) {
         hasCondensed: 0,
         fullyPopulated: 0
     };
-    
+
     const problematicGuidelines = [];
-    
+
     guidelines.forEach(guideline => {
         const hasContent = guideline.content && guideline.content !== null && guideline.content.trim().length > 0;
         const hasCondensed = guideline.condensed && guideline.condensed !== null && guideline.condensed.trim().length > 0;
-        
+
         if (hasContent) stats.hasContent++;
         if (hasCondensed) stats.hasCondensed++;
         if (hasContent && hasCondensed) stats.fullyPopulated++;
-        
+
         if (!hasContent) {
             stats.nullContent++;
             problematicGuidelines.push({
@@ -15491,7 +15725,7 @@ function checkContentStatus(guidelines) {
                 issue: 'null_content'
             });
         }
-        
+
         if (!hasCondensed) {
             stats.nullCondensed++;
             if (!problematicGuidelines.find(p => p.id === guideline.id)) {
@@ -15506,17 +15740,17 @@ function checkContentStatus(guidelines) {
                 existing.issue = 'missing_both';
             }
         }
-        
+
         if (!hasContent && !hasCondensed) {
             stats.missingBoth++;
         }
     });
-    
+
     return { stats, problematicGuidelines };
 }
 
 // Global function for manual content repair (can be called from console)
-window.repairContent = async function() {
+window.repairContent = async function () {
     console.log('🔧 Manual content repair triggered from console...');
     try {
         await diagnoseAndRepairContent();
@@ -15531,7 +15765,7 @@ window.checkContentStatus = checkContentStatus;
 window.diagnoseAndRepairContent = diagnoseAndRepairContent;
 
 // Make chat history functions available globally for debugging
-window.testFirestoreChat = async function() {
+window.testFirestoreChat = async function () {
     console.log('🧪 Testing Firestore chat history...');
     try {
         const user = window.auth.currentUser;
@@ -15539,18 +15773,18 @@ window.testFirestoreChat = async function() {
             console.error('❌ You must be logged in to test Firestore chat history');
             return;
         }
-        
+
         console.log('📊 Current chat history status:', {
             currentChatId: currentChatId,
             chatHistoryLength: chatHistory.length,
             userAuthenticated: !!user,
             userId: user.uid
         });
-        
+
         // Test loading from Firestore
         const firestoreChats = await loadChatHistoryFromFirestore();
         console.log('📥 Loaded from Firestore:', firestoreChats.length, 'chats');
-        
+
         // Test saving current chat
         if (currentChatId) {
             const currentChat = chatHistory.find(c => c.id === currentChatId);
@@ -15559,18 +15793,18 @@ window.testFirestoreChat = async function() {
                 console.log('💾 Save test result:', saveSuccess ? '✅ Success' : '❌ Failed');
             }
         }
-        
+
         console.log('✅ Firestore chat history test completed!');
     } catch (error) {
         console.error('❌ Firestore chat history test failed:', error);
     }
 };
 
-window.clearAllChatHistory = async function() {
+window.clearAllChatHistory = async function () {
     if (!confirm('Are you sure you want to delete ALL chat history? This cannot be undone.')) {
         return;
     }
-    
+
     console.log('🗑️ Clearing all chat history...');
     try {
         const user = window.auth.currentUser;
@@ -15578,20 +15812,20 @@ window.clearAllChatHistory = async function() {
             console.error('❌ You must be logged in to clear chat history');
             return;
         }
-        
+
         // Delete all chats from Firestore
         const firestoreChats = await loadChatHistoryFromFirestore();
         for (const chat of firestoreChats) {
             await deleteChatFromFirestore(chat.id);
         }
-        
+
         // Clear local data
         chatHistory = [];
         localStorage.removeItem('chatHistory');
-        
+
         // Start fresh
         await startNewChat();
-        
+
         console.log('✅ All chat history cleared successfully!');
     } catch (error) {
         console.error('❌ Failed to clear chat history:', error);
@@ -15601,9 +15835,9 @@ window.clearAllChatHistory = async function() {
 // ========== DEBUGGING AND TROUBLESHOOTING HELPERS ==========
 
 // Comprehensive debugging helper for multi-guideline processing
-window.debugMultiGuideline = function() {
+window.debugMultiGuideline = function () {
     console.group('🔍 Multi-Guideline Debug Information');
-    
+
     // Check essential data
     console.log('📊 Essential Data Status:');
     console.log('  - window.latestAnalysis:', !!window.latestAnalysis);
@@ -15611,13 +15845,13 @@ window.debugMultiGuideline = function() {
     console.log('  - analysis available:', !!(window.latestAnalysis?.analysis));
     console.log('  - relevantGuidelines:', window.relevantGuidelines?.length || 0);
     console.log('  - globalGuidelines loaded:', !!(window.globalGuidelines && Object.keys(window.globalGuidelines).length > 0));
-    
+
     // Check user authentication
     const user = window.auth?.currentUser;
     console.log('👤 Authentication Status:');
     console.log('  - User authenticated:', !!user);
     console.log('  - User email:', user?.email || 'N/A');
-    
+
     // Check selected guidelines
     const selectedCheckboxes = document.querySelectorAll('.guideline-checkbox:checked');
     console.log('📋 Selection Status:');
@@ -15625,19 +15859,19 @@ window.debugMultiGuideline = function() {
     if (selectedCheckboxes.length > 0) {
         console.log('  - Selected IDs:', Array.from(selectedCheckboxes).map(cb => cb.dataset.guidelineId));
     }
-    
+
     // Check current session state
     console.log('🗂️ Session State:');
     console.log('  - currentAdviceSession:', currentAdviceSession);
     console.log('  - currentSuggestions:', currentSuggestions?.length || 0);
     console.log('  - userDecisions:', Object.keys(userDecisions || {}).length);
-    
+
     // Server connectivity
     console.log('🌐 Server Configuration:');
     console.log('  - SERVER_URL:', window.SERVER_URL);
-    
+
     console.groupEnd();
-    
+
     // Return summary for programmatic use
     return {
         hasEssentialData: !!(window.latestAnalysis?.transcript && window.latestAnalysis?.analysis),
@@ -15649,32 +15883,32 @@ window.debugMultiGuideline = function() {
 };
 
 // Test function to validate multi-guideline setup
-window.testMultiGuidelineSetup = async function() {
+window.testMultiGuidelineSetup = async function () {
     console.log('🧪 Testing Multi-Guideline Setup...');
-    
+
     const debug = window.debugMultiGuideline();
     const issues = [];
-    
+
     if (!debug.hasEssentialData) {
         issues.push('❌ Missing essential data (transcript/analysis). Please enter and analyze a clinical transcript first.');
     }
-    
+
     if (!debug.isUserAuthenticated) {
         issues.push('❌ User not authenticated. Please sign in first.');
     }
-    
+
     if (!debug.hasRelevantGuidelines) {
         issues.push('❌ No relevant guidelines available. Please find relevant guidelines first.');
     }
-    
+
     if (!debug.serverConfigured) {
         issues.push('❌ Server URL not configured.');
     }
-    
+
     if (debug.selectedCount === 0) {
         issues.push('⚠️ No guidelines selected. Please select at least one guideline for processing.');
     }
-    
+
     if (issues.length === 0) {
         console.log('✅ Multi-guideline setup looks good! Ready for processing.');
         return true;
@@ -15686,15 +15920,15 @@ window.testMultiGuidelineSetup = async function() {
 };
 
 // Manual trigger for multi-guideline processing with validation
-window.runMultiGuidelineAdvice = async function() {
+window.runMultiGuidelineAdvice = async function () {
     console.log('🚀 Manual Multi-Guideline Advice Trigger');
-    
+
     const isReady = await window.testMultiGuidelineSetup();
     if (!isReady) {
         console.log('❌ Setup validation failed. Please resolve the issues above.');
         return;
     }
-    
+
     try {
         await generateMultiGuidelineAdvice();
     } catch (error) {
@@ -15704,22 +15938,22 @@ window.runMultiGuidelineAdvice = async function() {
 };
 
 // Clear all current selections and state
-window.clearMultiGuidelineState = function() {
+window.clearMultiGuidelineState = function () {
     console.log('🧹 Clearing multi-guideline state...');
-    
+
     // Clear selections
     const checkboxes = document.querySelectorAll('.guideline-checkbox:checked');
     checkboxes.forEach(cb => cb.checked = false);
-    
+
     // Clear session state
     currentAdviceSession = null;
     currentSuggestions = [];
     userDecisions = {};
-    
+
     // Clear any progress displays
     const progressContainers = document.querySelectorAll('.multi-guideline-progress, .multi-guideline-error');
     progressContainers.forEach(container => container.remove());
-    
+
     console.log('✅ Multi-guideline state cleared');
 };
 
@@ -15744,11 +15978,11 @@ const ClinicalConditionsService = {
         if (clinicalConditionsFirebaseLoadPromise) {
             return clinicalConditionsFirebaseLoadPromise;
         }
-        
+
         clinicalConditionsFirebaseLoadPromise = this._fetchConditionsFromServer();
         return clinicalConditionsFirebaseLoadPromise;
     },
-    
+
     // Normalize category names (merge American/British spellings)
     _normalizeCategories(conditions) {
         // If there's both 'gynecology' and 'gynaecology', merge into 'gynaecology'
@@ -15765,7 +15999,7 @@ const ClinicalConditionsService = {
         }
         return conditions;
     },
-    
+
     async _fetchConditionsFromServer() {
         try {
             // Try to get from IndexedDB cache first
@@ -15779,16 +16013,16 @@ const ClinicalConditionsService = {
                     return normalized;
                 }
             }
-            
+
             console.log('[CLINICAL-SERVICE] Loading clinical conditions from Firebase...');
-            
+
             const user = auth.currentUser;
             if (!user) {
                 throw new Error('User not authenticated');
             }
-            
+
             const idToken = await user.getIdToken(); // Only refresh if expired (was: true - force refresh)
-            
+
             const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
                 method: 'GET',
                 headers: {
@@ -15796,23 +16030,23 @@ const ClinicalConditionsService = {
                     'Content-Type': 'application/json'
                 }
             });
-            
+
             if (!response.ok) {
                 throw new Error(`Failed to load clinical conditions: ${response.status}`);
             }
-            
+
             const data = await response.json();
-            
+
             if (!data.success) {
                 throw new Error(data.error || 'Failed to load clinical conditions');
             }
-            
+
             // Check if Firebase collection is empty
             const totalConditions = data.summary?.totalConditions || 0;
             if (totalConditions === 0) {
                 console.log('[CLINICAL-SERVICE] Firebase collection is empty, initializing...');
                 await this._initializeFirebaseCollection();
-                
+
                 // Retry loading after initialization
                 const retryResponse = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
                     method: 'GET',
@@ -15821,21 +16055,21 @@ const ClinicalConditionsService = {
                         'Content-Type': 'application/json'
                     }
                 });
-                
+
                 if (retryResponse.ok) {
                     const retryData = await retryResponse.json();
                     if (retryData.success && retryData.summary?.totalConditions > 0) {
                         // Normalize categories before caching
                         const normalizedConditions = this._normalizeCategories(retryData.conditions);
                         clinicalConditionsFirebaseCache = normalizedConditions;
-                        
+
                         // Save normalized data to IndexedDB cache in background
                         if (window.cacheManager) {
                             window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
                                 console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
                             });
                         }
-                        
+
                         console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions after initialization:', {
                             totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
                             totalConditions: retryData.summary.totalConditions,
@@ -15844,49 +16078,49 @@ const ClinicalConditionsService = {
                         return clinicalConditionsFirebaseCache;
                     }
                 }
-                
+
                 // If initialization didn't work, fall back to JSON
                 console.log('[CLINICAL-SERVICE] Initialization failed, falling back to JSON...');
                 return this._loadFromJsonFallback();
             }
-            
+
             // Normalize categories before caching
             const normalizedConditions = this._normalizeCategories(data.conditions);
             clinicalConditionsFirebaseCache = normalizedConditions;
-            
+
             // Save normalized data to IndexedDB cache in background
             if (window.cacheManager) {
                 window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
                     console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
                 });
             }
-            
+
             console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
                 totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
                 totalConditions: data.summary.totalConditions,
                 categoriesWithCounts: data.summary.categoriesWithCounts
             });
-            
+
             return clinicalConditionsFirebaseCache;
-            
+
         } catch (error) {
             console.error('[CLINICAL-SERVICE] Error loading clinical conditions:', error);
             // Fallback to JSON file if Firebase fails
             return this._loadFromJsonFallback();
         }
     },
-    
+
     async _initializeFirebaseCollection() {
         try {
             console.log('[CLINICAL-SERVICE] Initializing Firebase collection...');
-            
+
             const user = auth.currentUser;
             if (!user) {
                 throw new Error('User not authenticated');
             }
-            
+
             const idToken = await user.getIdToken();
-            
+
             const response = await fetch(`${window.SERVER_URL}/initializeClinicalConditions`, {
                 method: 'POST',
                 headers: {
@@ -15895,37 +16129,37 @@ const ClinicalConditionsService = {
                 },
                 body: JSON.stringify({})
             });
-            
+
             if (!response.ok) {
                 throw new Error(`Failed to initialize clinical conditions: ${response.status}`);
             }
-            
+
             const data = await response.json();
-            
+
             if (!data.success) {
                 throw new Error(data.error || 'Failed to initialize clinical conditions');
             }
-            
+
             console.log('[CLINICAL-SERVICE] Firebase collection initialized successfully:', data.message);
             return true;
-            
+
         } catch (error) {
             console.error('[CLINICAL-SERVICE] Error initializing Firebase collection:', error);
             throw error;
         }
     },
-    
+
     async _loadFromJsonFallback() {
         console.log('[CLINICAL-SERVICE] Falling back to JSON file...');
-        
+
         try {
             const response = await fetch('./clinical_issues.json');
             if (!response.ok) {
                 throw new Error(`Failed to load clinical issues JSON: ${response.status}`);
             }
-            
+
             const clinicalIssues = await response.json();
-            
+
             // Convert to the same format as Firebase
             const conditions = {};
             for (const [category, issues] of Object.entries(clinicalIssues)) {
@@ -15943,36 +16177,36 @@ const ClinicalConditionsService = {
                     };
                 });
             }
-            
+
             clinicalConditionsFirebaseCache = conditions;
-            
+
             console.log('[CLINICAL-SERVICE] Loaded from JSON fallback:', {
                 totalCategories: Object.keys(conditions).length,
                 totalConditions: Object.values(conditions).reduce((sum, cat) => sum + Object.keys(cat).length, 0)
             });
-            
+
             return conditions;
-            
+
         } catch (error) {
             console.error('[CLINICAL-SERVICE] Error loading JSON fallback:', error);
             throw error;
         }
     },
-    
+
     // Get all conditions (cached)
     getConditions() {
         return clinicalConditionsFirebaseCache;
     },
-    
+
     // Get conditions by category
     getConditionsByCategory(category) {
         return clinicalConditionsFirebaseCache?.[category] || {};
     },
-    
+
     // Find a specific condition
     findCondition(conditionName) {
         if (!clinicalConditionsFirebaseCache) return null;
-        
+
         for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
             if (conditions[conditionName]) {
                 return conditions[conditionName];
@@ -15980,19 +16214,19 @@ const ClinicalConditionsService = {
         }
         return null;
     },
-    
+
     // Generate transcript for a specific condition
     async generateTranscript(conditionId, forceRegenerate = false) {
         try {
             console.log('[CLINICAL-SERVICE] Generating transcript for condition:', conditionId);
-            
+
             const user = auth.currentUser;
             if (!user) {
                 throw new Error('User not authenticated');
             }
-            
+
             const idToken = await user.getIdToken();
-            
+
             const response = await fetch(`${window.SERVER_URL}/generateTranscript/${conditionId}`, {
                 method: 'POST',
                 headers: {
@@ -16001,17 +16235,17 @@ const ClinicalConditionsService = {
                 },
                 body: JSON.stringify({ forceRegenerate })
             });
-            
+
             console.log('[CLINICAL-SERVICE] Server response status:', response.status, response.statusText);
-            
+
             if (!response.ok) {
                 const errorText = await response.text();
                 console.error('[CLINICAL-SERVICE] Server error response:', errorText);
                 throw new Error(`Failed to generate transcript: ${response.status} - ${errorText}`);
             }
-            
+
             const data = await response.json();
-            
+
             console.log('[CLINICAL-SERVICE] Server response data:', {
                 success: data.success,
                 hasTranscript: !!data.transcript,
@@ -16022,16 +16256,16 @@ const ClinicalConditionsService = {
                 transcriptPreview: data.transcript ? data.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
                 fullDataKeys: Object.keys(data)
             });
-            
+
             if (!data.success) {
                 throw new Error(data.error || 'Failed to generate transcript');
             }
-            
+
             if (!data.transcript) {
                 console.error('[CLINICAL-SERVICE] No transcript in server response:', data);
                 throw new Error('No transcript received from server');
             }
-            
+
             // Update cache if transcript was generated/retrieved
             if (data.transcript && clinicalConditionsFirebaseCache) {
                 const condition = this.findConditionById(conditionId);
@@ -16049,19 +16283,19 @@ const ClinicalConditionsService = {
                     }
                 }
             }
-            
+
             return data;
-            
+
         } catch (error) {
             console.error('[CLINICAL-SERVICE] Error generating transcript:', error);
             throw error;
         }
     },
-    
+
     // Helper to find condition by ID
     findConditionById(conditionId) {
         if (!clinicalConditionsFirebaseCache) return null;
-        
+
         for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
             for (const [name, condition] of Object.entries(conditions)) {
                 if (condition.id === conditionId) {
@@ -16071,22 +16305,22 @@ const ClinicalConditionsService = {
         }
         return null;
     },
-    
+
     // Get summary statistics
     getSummary() {
         if (!clinicalConditionsFirebaseCache) return null;
-        
+
         const summary = {
             totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
             totalConditions: 0,
             conditionsWithTranscripts: 0,
             categoriesWithCounts: {}
         };
-        
+
         for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
             const categoryCount = Object.keys(conditions).length;
             const categoryWithTranscripts = Object.values(conditions).filter(c => c.hasTranscript).length;
-            
+
             summary.totalConditions += categoryCount;
             summary.conditionsWithTranscripts += categoryWithTranscripts;
             summary.categoriesWithCounts[category] = {
@@ -16094,7 +16328,7 @@ const ClinicalConditionsService = {
                 withTranscripts: categoryWithTranscripts
             };
         }
-        
+
         return summary;
     }
 };
@@ -16103,7 +16337,7 @@ const ClinicalConditionsService = {
 async function askGuidelinesQuestion() {
     const analyseBtn = document.getElementById('analyseBtn');
     const analyseSpinner = document.getElementById('analyseSpinner');
-    
+
     // Check for abort signal
     if (window.analysisAbortController?.signal.aborted) {
         console.log('[DEBUG] askGuidelinesQuestion: Already aborted');
@@ -16140,7 +16374,7 @@ async function askGuidelinesQuestion() {
         console.log('[DEBUG] askGuidelinesQuestion: Checking for saved scope preference');
         let scopeSelection;
         const savedScopeSelection = await loadGuidelineScopeSelection();
-        
+
         if (savedScopeSelection) {
             // Verify the saved selection is still valid (check if trust still exists if local/both)
             if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
@@ -16222,23 +16456,23 @@ async function askGuidelinesQuestion() {
                 return; // Exit if user cancels
             }
         }
-        
+
         // Check for abort after scope selection
         if (window.analysisAbortController?.signal.aborted) {
             updateUser('Analysis cancelled', false);
             throw new Error('Analysis cancelled');
         }
-        
+
         console.log('[DEBUG] askGuidelinesQuestion: Using scope selection:', scopeSelection);
-        
+
         // Store the selection globally
         window.selectedGuidelineScope = scopeSelection;
-        
-        const scopeMessage = scopeSelection.scope === 'national' 
+
+        const scopeMessage = scopeSelection.scope === 'national'
             ? 'National guidelines selected.'
             : scopeSelection.scope === 'local'
-            ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
-            : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
+                ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
+                : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
 
         updateUser(scopeMessage, false);
 
@@ -16251,27 +16485,27 @@ async function askGuidelinesQuestion() {
 
         // Get guidelines and summaries from Firestore (reuse existing logic)
         let guidelines = await loadGuidelinesFromFirestore();
-        
+
         // Filter guidelines by scope
         console.log('[DEBUG] Filtering guidelines by scope:', { scope: scopeSelection.scope, hospitalTrust: scopeSelection.hospitalTrust, beforeFilter: guidelines.length });
         guidelines = filterGuidelinesByScope(guidelines, scopeSelection.scope, scopeSelection.hospitalTrust);
         console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
-        
+
         if (guidelines.length === 0) {
             const noGuidelinesMsg = 'No guidelines found for the selected scope.';
             updateUser(noGuidelinesMsg, false);
             alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
             return;
         }
-        
+
         // Add scope info via status bar
-        const scopeInfo = scopeSelection.scope === 'national' 
+        const scopeInfo = scopeSelection.scope === 'national'
             ? `Searching ${guidelines.length} national guidelines...`
             : scopeSelection.scope === 'local'
-            ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
-            : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
+                ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
+                : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
         updateUser(scopeInfo, true);
-        
+
         // Format guidelines for relevancy matching
         updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
 
@@ -16282,7 +16516,7 @@ async function askGuidelinesQuestion() {
             condensed: g.condensed,
             keywords: g.keywords,
             downloadUrl: g.downloadUrl,
-            originalFilename: g.originalFilename,  
+            originalFilename: g.originalFilename,
             filename: g.filename,
             organisation: g.organisation
         }));
@@ -16303,7 +16537,7 @@ async function askGuidelinesQuestion() {
         if (window.analysisAbortController?.signal.aborted) {
             throw new Error('Analysis cancelled');
         }
-        
+
         // Use same optimised pattern as main findRelevantGuidelines function
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
@@ -16341,7 +16575,7 @@ async function askGuidelinesQuestion() {
 
         // Automatically select the top 3 most relevant guidelines
         const allGuidelines = [];
-        
+
         // Properly handle categories as an object (not array)
         const categoryKeys = ['mostRelevant', 'potentiallyRelevant', 'lessRelevant'];
         categoryKeys.forEach(categoryKey => {
@@ -16370,17 +16604,17 @@ async function askGuidelinesQuestion() {
         if (selectedGuidelines.length === 0) {
             updateUser('No relevant guidelines found for this question', false);
             const noGuidelinesMessage = `## ℹ️ No Relevant Guidelines Found\n\n` +
-                                       `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
-                                       `**"${question}"**\n\n` +
-                                       `This could happen if:\n` +
-                                       `- Your question is very specific and doesn't match available guidelines\n` +
-                                       `- The question is outside the scope of the current guideline database\n` +
-                                       `- There was an issue with the analysis process\n\n` +
-                                       `**Suggestions:**\n` +
-                                       `- Try rephrasing your question more generally\n` +
-                                       `- Include more clinical context or keywords\n` +
-                                       `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
-            
+                `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
+                `**"${question}"**\n\n` +
+                `This could happen if:\n` +
+                `- Your question is very specific and doesn't match available guidelines\n` +
+                `- The question is outside the scope of the current guideline database\n` +
+                `- There was an issue with the analysis process\n\n` +
+                `**Suggestions:**\n` +
+                `- Try rephrasing your question more generally\n` +
+                `- Include more clinical context or keywords\n` +
+                `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
+
             updateUser(
                 'No highly relevant guidelines found for this question. Try rephrasing, adding clinical context, or broadening the query.',
                 false
@@ -16392,7 +16626,7 @@ async function askGuidelinesQuestion() {
         if (window.analysisAbortController?.signal.aborted) {
             throw new Error('Analysis cancelled');
         }
-        
+
         // Process the selected guidelines
         const response2 = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
             method: 'POST',
@@ -16452,13 +16686,13 @@ async function askGuidelinesQuestion() {
             );
             return `<li>${link}</li>`;
         }).join('');
-        
+
         const answerMessage = `<h2>Guidelines Used</h2>` +
-                             `<ul>${selectedGuidelinesList}</ul>` +
-                             `<hr>` +
-                             `<h2>Answer</h2>` +
-                             `<div class="guideline-answer">${formattedAnswer}</div>`;
-        
+            `<ul>${selectedGuidelinesList}</ul>` +
+            `<hr>` +
+            `<h2>Answer</h2>` +
+            `<div class="guideline-answer">${formattedAnswer}</div>`;
+
         appendToOutputField(answerMessage, true, true); // Display in output field, clear existing content, isHtml=true
 
         // Final user status - success
@@ -16472,12 +16706,12 @@ async function askGuidelinesQuestion() {
             // Don't show error alert for user-initiated cancellation
             return;
         }
-        
+
         console.error('[DEBUG] Error in askGuidelinesQuestion:', {
             error: error.message,
             stack: error.stack
         });
-        
+
         // Surface error to top-level status instead of summary1
         const errorMessage = `Error finding relevant guidelines: ${error.message}`;
         updateUser(errorMessage, false);
@@ -16516,7 +16750,7 @@ async function processQuestionAgainstGuidelines() {
     const btnSpinner = document.querySelector('.search-guidelines-btn .btn-spinner');
     const btnText = document.querySelector('.search-guidelines-btn .btn-text');
     const originalText = btnText.textContent;
-    
+
     try {
         // Get selected guidelines
         const selectedCheckboxes = document.querySelectorAll('.question-guideline-checkbox:checked');
@@ -16612,24 +16846,24 @@ async function processQuestionAgainstGuidelines() {
         }).join('');
 
         const answerMessage = `<h2>Guidelines Used</h2>` +
-                             `<ul>${guidelinesUsedList}</ul>` +
-                             `<hr>` +
-                             `<h2>💡 Answer Based on Guidelines</h2>` +
-                             `<p><strong>Question:</strong> ${escapeHtml(question)}</p>` +
-                             `<p><strong>Guidelines Used:</strong> ${data.guidelinesUsed?.length || 0}</p>` +
-                             `<hr>` +
-                             `<div class="guideline-answer">${formattedAnswer}</div>` +
-                             `<hr>` +
-                             `<p style="font-size: 0.8em; color: #666;"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
-        
+            `<ul>${guidelinesUsedList}</ul>` +
+            `<hr>` +
+            `<h2>💡 Answer Based on Guidelines</h2>` +
+            `<p><strong>Question:</strong> ${escapeHtml(question)}</p>` +
+            `<p><strong>Guidelines Used:</strong> ${data.guidelinesUsed?.length || 0}</p>` +
+            `<hr>` +
+            `<div class="guideline-answer">${formattedAnswer}</div>` +
+            `<hr>` +
+            `<p style="font-size: 0.8em; color: #666;"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
+
         appendToOutputField(answerMessage, false, true);
 
     } catch (error) {
         console.error('[DEBUG] Error in processQuestionAgainstGuidelines:', error);
-        
+
         const errorMessage = `\n❌ **Error searching guidelines:** ${error.message}\n\nPlease try again or contact support if the problem persists.\n`;
         appendToOutputField(errorMessage, false);
-        
+
         alert('Error searching guidelines: ' + error.message);
     } finally {
         // Reset button state
@@ -16680,7 +16914,7 @@ async function triggerComplianceScoring(originalTranscript, updatedTranscript, c
 
     } catch (error) {
         console.error('[DEBUG] triggerComplianceScoring: Error:', error);
-        
+
         const errorMessage = `Compliance scoring error: ${error.message}`;
         updateUser(errorMessage, false);
     }
@@ -16708,8 +16942,8 @@ function getCurrentGuidelineInfo() {
 
     // Fallback: check relevant guidelines for the most recent one
     if (!guidelineId && window.relevantGuidelines && window.relevantGuidelines.length > 0) {
-        const mostRelevant = window.relevantGuidelines.find(g => g.category === 'mostRelevant') || 
-                            window.relevantGuidelines[0];
+        const mostRelevant = window.relevantGuidelines.find(g => g.category === 'mostRelevant') ||
+            window.relevantGuidelines[0];
         guidelineId = mostRelevant.id;
         guidelineTitle = mostRelevant.title;
     }
@@ -16727,11 +16961,11 @@ function generateRecommendedChangesSummary() {
     }
 
     let summary = 'Recommended Changes Summary:\n\n';
-    
+
     currentSuggestions.forEach((suggestion, index) => {
         const decision = userDecisions[suggestion.id];
         const status = decision ? decision.action : 'not decided';
-        
+
         summary += `${index + 1}. ${suggestion.category.toUpperCase()}: ${suggestion.context}\n`;
         summary += `   Original: "${suggestion.originalText}"\n`;
         summary += `   Suggested: "${suggestion.suggestedText}"\n`;
@@ -16780,7 +17014,7 @@ async function performComplianceScoring(originalTranscript, recommendedChanges, 
         }
 
         const result = await response.json();
-        
+
         if (!result.success) {
             throw new Error(result.error || 'Compliance scoring failed');
         }
@@ -17141,7 +17375,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
     loadingElements.forEach(el => el.remove());
 
     appendToSummary1(scoringHtml, false);
-    
+
     console.log('[DEBUG] displayComplianceScoring: Results displayed successfully');
 }
 
@@ -17170,7 +17404,7 @@ function initializeSummaryAutoHeight() {
                 // Check if it has height but no visible content (could be margin collapse or padding)
                 const style = window.getComputedStyle(el);
                 const hasHeight = el.offsetHeight > 0;
-                
+
                 // Log suspicious entries
                 if (!hasText && !hasMedia && hasHeight) {
                     console.log('[DEBUG] Suspicious empty entry found:', {
@@ -17187,8 +17421,8 @@ function initializeSummaryAutoHeight() {
                 console.log('[DEBUG] Found empty content entries:', emptyEntries.length);
                 // Hide them to fix the whitespace
                 emptyEntries.forEach(el => {
-                     el.style.display = 'none';
-                     console.log('[DEBUG] Hidden empty entry');
+                    el.style.display = 'none';
+                    console.log('[DEBUG] Hidden empty entry');
                 });
             }
         }
@@ -17201,10 +17435,10 @@ function initializeSummaryAutoHeight() {
         characterData: true,
         attributes: true
     });
-    
+
     // Initial adjustment
     adjustHeight();
-    
+
     console.log('[DEBUG] Summary1 auto-height observer initialized');
 }
 
