@@ -1918,6 +1918,7 @@ div.third-column,
 /* Transcript pane styling */
 .transcript-pane {
     background: var(--bg-secondary);
+    color: var(--text-primary);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -4236,6 +4237,7 @@ body {
     padding: 18px;
     font-size: 1em;
     background: var(--bg-secondary);
+    color: var(--text-primary);
     border: none;
     height: calc(100vh - 120px);
     /* Full height minus top bar and margins */
@@ -4246,6 +4248,7 @@ body {
 .output-pane {
     min-height: 200px;
     background: var(--bg-secondary);
+    color: var(--text-primary);
     border-radius: 0 0 8px 8px;
     border: none;
 }
