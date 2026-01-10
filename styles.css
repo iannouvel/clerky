@@ -1,13 +1,70 @@
-/* Add these CSS variables at the top of the file */
+/* CSS Variables with Dark Mode Support */
 :root {
+    /* Primary Colors */
     --primary-color: #2D3436;
     --accent-color: #00B894;
-    --background-color: #F5F6FA;
-    --card-background: #FFFFFF;
-    --text-color: #2D3436;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border-color: #ddd;
     --accent-color-rgb: 0, 184, 148;
+
+    /* Backgrounds */
+    --bg-primary: #F5F6FA;
+    --bg-secondary: #FFFFFF;
+    /* Cards, Panels */
+    --bg-tertiary: #f8f9fa;
+    /* Slight contrast areas */
+    --bg-input: #e8e9eb;
+    /* Inputs, Editors - slightly darker than white for contrast */
+
+    /* Text */
+    --text-primary: #2D3436;
+    --text-secondary: #636e72;
+    --text-muted: #b2bec3;
+    --text-inverse: #FFFFFF;
+
+    /* Borders & Dividers */
+    --border-color: #ddd;
+    --border-light: #eee;
+
+    /* Interactive */
+    --btn-hover-overlay: rgba(0, 0, 0, 0.05);
+
+    /* Shadows */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Primary Colors */
+        --primary-color: #dfe6e9;
+        /* Light grey for primary text in dark mode */
+
+        /* Backgrounds */
+        --bg-primary: #1e1e1e;
+        /* Main window background */
+        --bg-secondary: #252526;
+        /* Cards/Panels - VS Code style dark */
+        --bg-tertiary: #2d2d2d;
+        /* Slight contrast */
+        --bg-input: #3c3c3c;
+        /* Dark input background */
+
+        /* Text */
+        --text-primary: #dfe6e9;
+        --text-secondary: #b2bec3;
+        --text-muted: #636e72;
+        --text-inverse: #2d3436;
+
+        /* Borders */
+        --border-color: #444;
+        --border-light: #333;
+
+        /* Interactive */
+        --btn-hover-overlay: rgba(255, 255, 255, 0.1);
+
+        /* Shadows */
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Enhanced Loading Screen Styles */
@@ -178,8 +235,8 @@
 
 /* General body styles */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 0;
@@ -375,7 +432,7 @@ body {
     min-height: 200px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-family: 'Inter', sans-serif;
     font-size: 14px;
@@ -383,14 +440,15 @@ body {
     resize: vertical;
     flex-grow: 1;
     overflow-y: auto;
-    background-color: #fff;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
 }
 
 /* Add-issue button styling */
 .add-issue-btn {
     background: none;
-    border: 1px solid #00B894;
-    color: #00B894;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
@@ -437,7 +495,7 @@ body {
 .accordion-header {
     padding: 0px;
     margin: 0;
-    background: #f5f5f5;
+    background: var(--bg-tertiary);
     cursor: pointer;
     user-select: none;
     display: flex;
@@ -4104,7 +4162,7 @@ body {
 
 .main-column {
     flex: 1 1 0;
-    background: var(--card-background);
+    background: var(--bg-secondary);
     border-radius: 8px;
     box-shadow: var(--shadow);
     display: flex;
@@ -4138,8 +4196,8 @@ body {
 .column-header {
     padding: 12px 18px;
     font-weight: bold;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
     border-radius: 8px 8px 0 0;
     flex-shrink: 0;
     font-size: 1.1em;
@@ -4286,13 +4344,14 @@ body {
 .tiptap-editor {
     min-height: 150px;
     padding: 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-family: inherit;
     font-size: 14px;
     line-height: 1.5;
-    /* Darker off-white background to ensure the white I-beam cursor remains visible */
-    background-color: #e8e9eb;
+    /* Adapts to theme (dark in dark mode, light in light mode) */
+    background-color: var(--bg-input);
+    color: var(--text-primary);
     overflow-y: auto;
     flex: 1;
     position: relative;

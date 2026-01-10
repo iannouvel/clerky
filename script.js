@@ -14451,86 +14451,119 @@ async function runParallelAnalysis(guidelines) {
     // Filter and Sort Results
     // Note: `r.suggestions` is the full result object from getPracticePointSuggestions
     // which has a `suggestions` array property inside it
-    const successfulResults = results
-        .filter(r => r.status === 'fulfilled' && r.suggestions && r.suggestions.suggestions && r.suggestions.suggestions.length > 0);
+    // Flatten all suggestions from successful results
+    let allSuggestions = [];
 
-    // Sort by relevance (descending) or original order if relevance is equal
-    successfulResults.sort((a, b) => b.relevance - a.relevance || a.originalIndex - b.originalIndex);
+    // Priority mapping for sorting
+    const priorityMap = {
+        'critical': 4,
+        'high': 3,
+        'important': 2,
+        'medium': 2,
+        'low': 1,
+        'info': 1
+    };
 
-    console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses.`);
+    if (successfulResults.length > 0) {
+        successfulResults.forEach(r => {
+            if (r.suggestions && r.suggestions.suggestions) {
+                r.suggestions.suggestions.forEach(s => {
+                    // Add source guideline info to the suggestion object
+                    s.sourceGuidelineName = r.displayName;
+                    s.sourceGuidelineId = r.guidelineId;
+                    allSuggestions.push(s);
+                });
+            }
+        });
+
+        // Sort suggestions by priority (Critical > High > Medium > Low)
+        allSuggestions.sort((a, b) => {
+            const pA = priorityMap[(a.type || a.priority || 'info').toLowerCase()] || 0;
+            const pB = priorityMap[(b.type || b.priority || 'info').toLowerCase()] || 0;
+            return pB - pA; // Descending order
+        });
+    }
+
+    console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses. Found ${allSuggestions.length} total suggestions.`);
+
+    // Hide the selection interface now that we have results
+    const selectionInterface = document.querySelector('.guideline-selection-interface');
+    if (selectionInterface) {
+        selectionInterface.style.display = 'none';
+    }
+
+    // Calculate priority counts for status message
+    const priorityCounts = { 'High': 0, 'Medium': 0, 'Low': 0 };
+    allSuggestions.forEach(s => {
+        const type = (s.type || s.priority || 'info').toLowerCase();
+        if (type === 'critical' || type === 'high') priorityCounts['High']++;
+        else if (type === 'important' || type === 'medium') priorityCounts['Medium']++;
+        else priorityCounts['Low']++;
+    });
+
+    // Generate simplified status message
+    let statusParts = [];
+    if (priorityCounts['High'] > 0) statusParts.push(`${priorityCounts['High']} High`);
+    if (priorityCounts['Medium'] > 0) statusParts.push(`${priorityCounts['Medium']} Medium`);
+
+    if (priorityCounts['Low'] > 0) statusParts.push(`${priorityCounts['Low']} Low`);
+
+    let statusSummary = statusParts.length > 0
+        ? statusParts.join(', ') + ' priority issues found'
+        : 'No specific issues found';
 
     if (statusText) {
-        const guidelinesWithSuggestions = successfulResults.length;
-        const noSuggestionCount = total - guidelinesWithSuggestions;
-        let statusMessage = `<strong>Analysis Complete</strong><br>Found ${guidelinesWithSuggestions} ${guidelinesWithSuggestions === 1 ? 'guideline' : 'guidelines'} with relevant suggestions.`;
-        if (noSuggestionCount > 0) {
-            statusMessage += `<br><small style="color: #666;">(${noSuggestionCount} ${noSuggestionCount === 1 ? 'guideline' : 'guidelines'} had no specific suggestions)</small>`;
-        }
-        statusText.innerHTML = statusMessage;
+        statusText.innerHTML = `<strong>Analysis Complete</strong><br>${statusSummary}`;
         statusText.parentElement.style.background = '#e3f2fd';
         statusText.parentElement.style.border = '1px solid #bbdefb';
     }
 
-    // Display Aggregated Results
-    if (successfulResults.length === 0) {
+    // Display Aggregated Results (Flat List)
+    if (allSuggestions.length === 0) {
         outputContainer.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found for the provided clinical text based on these guidelines.</div>';
     } else {
-        for (const result of successfulResults) {
-            // Create a wrapper for each guideline's suggestions
-            const guidelineWrapper = document.createElement('div');
-            guidelineWrapper.className = 'guideline-result-wrapper';
-            guidelineWrapper.style.marginBottom = '30px';
-            guidelineWrapper.style.borderTop = '1px solid #eee';
-            guidelineWrapper.style.paddingTop = '20px';
+        // Clear container
+        outputContainer.innerHTML = '';
 
-            // Header for this guideline (relevance score removed for cleaner display)
-            guidelineWrapper.innerHTML = `
-                <h3 style="color: #2c3e50; border-left: 4px solid #3498db; padding-left: 10px; margin-bottom: 15px;">
-                    ${result.displayName}
-                </h3>
-            `;
+        // Create a single container for the flat list
+        const suggestionsList = document.createElement('div');
+        suggestionsList.className = 'suggestions-flat-list';
 
-            outputContainer.appendChild(guidelineWrapper);
+        const suggestionsHtml = allSuggestions.map(suggestion => {
+            // Safely access suggestion properties with fallbacks
+            const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
+            const suggestionType = suggestion.type || suggestion.priority || 'info';
+            const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+            const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
 
-            // Use existing display function logic but target our specific container
-            // We need to adapt displayPracticePointSuggestions to be able to render into a specific element
-            // Since displayPracticePointSuggestions writes to global 'summary1', we'll simulate it or refactor.
-            // For now, simpler: we'll render the suggestions manually here reusing the style classes.
-
-            // result.suggestions is the full API response object, which has a .suggestions array
-            const suggestionsArray = result.suggestions.suggestions || [];
-            const suggestionsHtml = suggestionsArray.map(suggestion => {
-                // Safely access suggestion properties with fallbacks
-                const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
-                const suggestionType = suggestion.type || suggestion.priority || 'info';
-                const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-
-                return `
-                <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                    <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                        <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
-                        suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
-                              style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
-                            ${suggestionType}
-                        </span>
-                    </div>
-                    <div class="suggestion-content">
-                        <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
-                        <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
-                    </div>
-                     <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee;">
-                        <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                    </div>
+            return `
+            <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                    <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
+                    suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
+                          style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
+                        ${suggestionType}
+                    </span>
+                    <span style="font-size: 0.8em; color: #666; max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
+                       Guideline: ${sourceName}
+                    </span>
                 </div>
-            `;
-            }).join('');
+                <div class="suggestion-content">
+                    <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
+                    <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
+                </div>
+                 <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee;">
+                    <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                    <!-- Future: Add Apply/Disregard buttons here if consistent with other workflows -->
+                </div>
+            </div>
+        `;
+        }).join('');
 
-            const suggestionsContainer = document.createElement('div');
-            suggestionsContainer.innerHTML = suggestionsHtml;
-            guidelineWrapper.appendChild(suggestionsContainer);
-        }
+        suggestionsList.innerHTML = suggestionsHtml;
+        outputContainer.appendChild(suggestionsList);
     }
 }
 
