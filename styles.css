@@ -897,7 +897,7 @@ body {
 .mode-btn.disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background: #f5f5f5;
+    background: var(--bg-tertiary);
 }
 
 .mode-btn-icon {
@@ -948,7 +948,7 @@ body {
 
 .user-settings-display h3 {
     margin: 0 0 20px 0;
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.3rem;
     font-weight: 600;
 }
@@ -964,20 +964,20 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background: #f9f9f9;
+    background: var(--bg-tertiary);
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
 }
 
 .setting-item:hover {
-    background: #f0f0f0;
+    background: var(--bg-secondary);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .setting-label {
     font-weight: 500;
-    color: #666;
+    color: var(--text-secondary);
     flex-shrink: 0;
 }
 
@@ -991,7 +991,7 @@ body {
 
 .setting-value {
     font-weight: 600;
-    color: #333;
+    color: var(--text-primary);
     transition: color 0.3s ease;
 }
 
@@ -1122,8 +1122,8 @@ body {
 .setting-cancel-btn {
     padding: 8px 16px;
     background: transparent;
-    color: #666;
-    border: 1px solid #ddd;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
@@ -1132,9 +1132,9 @@ body {
 }
 
 .setting-cancel-btn:hover {
-    background: #f5f5f5;
+    background: var(--bg-tertiary);
     border-color: #bbb;
-    color: #333;
+    color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
@@ -1178,7 +1178,7 @@ body {
 
 /* User Preferences Panel */
 .user-preferences-panel {
-    background: #f9f9f9;
+    background: var(--bg-tertiary);
     border-radius: 8px 8px 0 0;
     /* Rounded top corners only */
     padding-top: 8px;
@@ -1187,7 +1187,7 @@ body {
     padding-bottom: 16px;
     margin-top: 8px;
     margin-bottom: 16px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     border-top: 0;
     border-bottom: none;
     /* Remove bottom border */
@@ -1195,7 +1195,7 @@ body {
 
 .preferences-panel-header h3 {
     margin: 0 0 12px 0;
-    color: #333;
+    color: var(--text-primary);
     font-size: 1rem;
     font-weight: 600;
 }
@@ -1214,7 +1214,7 @@ body {
     gap: 2px;
     padding: 2px 0;
     margin-bottom: 0;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .preference-item:last-child {
@@ -1223,7 +1223,7 @@ body {
 
 .preference-label {
     font-weight: 600;
-    color: #333;
+    color: var(--text-primary);
     font-size: 0.9rem;
     margin-bottom: 0;
 }
@@ -1237,7 +1237,7 @@ body {
 
 .preference-value {
     font-weight: 500;
-    color: #222;
+    color: var(--text-primary);
     font-size: 1rem;
     font-size: 0.9rem;
     text-align: right;
@@ -1260,7 +1260,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: var(--text-muted);
     border-radius: 4px;
     transition: all 0.2s ease;
     opacity: 0.7;
@@ -1281,7 +1281,7 @@ body {
     align-items: center;
     gap: 8px;
     padding-top: 8px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     animation: slideDown 0.3s ease-out;
 }
 
@@ -1310,8 +1310,8 @@ body {
 .preference-cancel-btn {
     padding: 6px 12px;
     background: transparent;
-    color: #666;
-    border: 1px solid #ddd;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
@@ -1320,9 +1320,9 @@ body {
 }
 
 .preference-cancel-btn:hover {
-    background: #f5f5f5;
+    background: var(--bg-tertiary);
     border-color: #bbb;
-    color: #333;
+    color: var(--text-primary);
 }
 
 /* Preferences Panel Button */
@@ -1912,12 +1912,12 @@ div.third-column,
     flex-direction: column;
     height: 100%;
     overflow-y: auto;
-    background: white;
+    background: var(--bg-secondary);
 }
 
 /* Transcript pane styling */
 .transcript-pane {
-    background: white;
+    background: var(--bg-secondary);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2287,7 +2287,7 @@ div.third-column,
 
 /* Guideline Suggestions Interface Styles */
 .dynamic-advice-container {
-    background: #f8f9fa;
+    background: var(--bg-tertiary);
     border: 1px solid #e9ecef;
     border-radius: 8px;
     padding: 20px;
@@ -2346,7 +2346,7 @@ div.third-column,
 }
 
 .suggestion-item {
-    background: white;
+    background: var(--bg-secondary);
     border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 15px;
@@ -2448,7 +2448,7 @@ div.third-column,
 }
 
 .text-preview {
-    background: #f8f9fa;
+    background: var(--bg-tertiary);
     border: 1px solid #e9ecef;
     border-radius: 4px;
     padding: 10px;
@@ -2797,7 +2797,7 @@ div.third-column,
 /* Override for buttons on white backgrounds (e.g., in action-buttons containers) */
 .action-buttons .nav-btn.primary,
 .action-buttons .nav-btn.secondary {
-    background: white;
+    background: var(--bg-secondary);
     border: 2px solid #00b894;
     color: #00b894;
     text-shadow: none;
@@ -2805,7 +2805,7 @@ div.third-column,
 
 .action-buttons .nav-btn.primary:hover:not(:disabled),
 .action-buttons .nav-btn.secondary:hover:not(:disabled) {
-    background: #f8f9fa;
+    background: var(--bg-tertiary);
     color: #00a884;
     border-color: #00a884;
     text-shadow: none;
@@ -2920,21 +2920,21 @@ div.third-column,
 /* Clinical Issues Selector Styles */
 .clinical-issues-selector {
     padding: 20px;
-    background: #f8f9fa;
+    background: var(--bg-tertiary);
     border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border-color);
     margin: 10px 0;
 }
 
 .clinical-issues-selector h3 {
     margin: 0 0 10px 0;
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.3em;
 }
 
 .clinical-issues-selector p {
     margin: 0 0 20px 0;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -2944,7 +2944,7 @@ div.third-column,
 
 .issue-category h4 {
     margin: 0 0 8px 0;
-    color: #444;
+    color: var(--text-primary);
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -2955,8 +2955,8 @@ div.third-column,
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
-    background: white;
-    color: #333;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
     cursor: pointer;
 }
 
