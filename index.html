@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!-- Version: three-column-layout-v2 -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,10 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Immediately hide mode selection page on page load -->
     <script>
-        (function() {
+        (function () {
             // Hide mode selection page immediately to prevent flash
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', function() {
+                document.addEventListener('DOMContentLoaded', function () {
                     const modeSelectionPage = document.getElementById('modeSelectionPage');
                     if (modeSelectionPage) {
                         modeSelectionPage.classList.add('hidden');
@@ -36,7 +37,7 @@
         window.marked = null;
         const markedScript = document.createElement('script');
         markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-        markedScript.onload = function() {
+        markedScript.onload = function () {
             window.marked = marked;
             console.log('Marked library loaded successfully');
         };
@@ -47,7 +48,7 @@
     <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
     <script type="module" src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
-    
+
     <style>
         /* Add this to your existing styles */
         .top-bar-center {
@@ -56,13 +57,13 @@
             gap: 10px;
             flex-wrap: wrap;
         }
-        
+
         /* Make the clerky logo on landing page twice as big */
         .landing-page h1 {
             transform: scale(2);
             margin: 1em 0;
         }
-        
+
         .nav-btn {
             margin: 0 5px;
         }
@@ -82,12 +83,12 @@
             margin-left: 15px;
             font-weight: 500;
         }
-        
+
         .model-selector {
             display: flex;
             align-items: center;
         }
-        
+
         .model-select {
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -101,49 +102,49 @@
             min-width: 200px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         }
-        
+
         .model-select:hover {
             background: rgba(255, 255, 255, 0.3);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
-        
+
         .model-select:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.3);
         }
-        
+
         .model-select option {
             color: #333;
             background: white;
         }
-        
+
         /* Critical three-column layout fixes */
         #threeColumnView {
             display: flex !important;
             width: 100% !important;
             gap: 16px !important;
         }
-        
+
         #historyColumn {
             display: none !important;
         }
-        
+
         #mainContentArea {
             flex: 1 !important;
             width: 100% !important;
         }
-        
+
         #issuesColumn {
             display: none !important;
         }
-        
+
         /* Responsive override for mobile */
         @media (max-width: 768px) {
             #threeColumnView {
                 flex-direction: column !important;
             }
         }
-        
+
         /* Green border for user input section matching button color */
         .user-input-section {
             border: 2px solid #00b894;
@@ -152,26 +153,26 @@
             margin: 4px 0;
             background-color: rgba(0, 184, 148, 0.05);
         }
-        
+
         /* Summary section styling without border */
         #summary1 {
             border-radius: 8px;
             padding: 6px;
             margin: 4px 0;
         }
-        
+
         /* Zero out all spacing within summary1 for maximum visibility */
         #summary1 * {
             margin: 0 !important;
             padding: 0 !important;
             border: 0 !important;
         }
-        
+
         /* Restore minimal necessary spacing for readability */
         #summary1 p {
             margin-bottom: 4px !important;
         }
-        
+
         #summary1 h1,
         #summary1 h2,
         #summary1 h3,
@@ -181,27 +182,27 @@
             margin-top: 4px !important;
             margin-bottom: 4px !important;
         }
-        
+
         #summary1 ul,
         #summary1 ol {
             padding-left: 20px !important;
             margin-bottom: 4px !important;
         }
-        
+
         #summary1 li {
             margin-bottom: 2px !important;
         }
-        
+
         #summary1 strong {
             font-weight: 600;
         }
-        
+
         #summary1 a {
             margin-top: 4px !important;
             display: inline-block;
         }
-        
-        /* Ensure all elements in summary1 have white background */
+
+        /* Ensure all elements in summary1 have themed background */
         #summary1 code,
         #summary1 pre,
         #summary1 blockquote,
@@ -211,9 +212,9 @@
         #summary1 samp,
         #summary1 var,
         #summary1 span {
-            background: white !important;
+            background: var(--bg-secondary) !important;
         }
-        
+
         /* Make textarea fill the entire user input section */
         .user-input-section textarea {
             width: 100%;
@@ -226,6 +227,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="loading" class="loading-screen">
         <div class="loading-container">
@@ -245,20 +247,20 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Landing Page -->
     <div id="landingPage" class="landing-page hidden">
-        <h1>clerky</h1>      
+        <h1>clerky</h1>
         <button id="googleSignInBtn">Sign in with Google</button>
     </div>
-    
+
     <!-- Mode Selection Page -->
     <div id="modeSelectionPage" class="mode-selection-page hidden">
         <div class="mode-selection-container">
             <div class="mode-selection-logo">
                 <h1>clerky</h1>
             </div>
-            
+
             <div class="mode-selection-buttons">
                 <button id="guidelineSuggestionsBtn" class="mode-btn primary" data-mode="guideline-suggestions">
                     <span class="mode-btn-icon">💡</span>
@@ -279,7 +281,7 @@
                     <span class="under-development-badge">Under Development</span>
                 </button>
             </div>
-            
+
             <div class="user-settings-display">
                 <h3>Settings</h3>
                 <div class="settings-info">
@@ -287,8 +289,10 @@
                         <span class="setting-label">Hospital Trust:</span>
                         <div class="setting-value-container">
                             <span id="settingsTrustDisplay" class="setting-value editable">Loading...</span>
-                            <button class="setting-edit-btn" id="editTrustBtn" aria-label="Edit Hospital Trust" title="Click to edit">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="setting-edit-btn" id="editTrustBtn" aria-label="Edit Hospital Trust"
+                                title="Click to edit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
@@ -303,8 +307,10 @@
                         <span class="setting-label">Guideline Scope:</span>
                         <div class="setting-value-container">
                             <span id="settingsScopeDisplay" class="setting-value editable">Loading...</span>
-                            <button class="setting-edit-btn" id="editScopeBtn" aria-label="Edit Guideline Scope" title="Click to edit">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <button class="setting-edit-btn" id="editScopeBtn" aria-label="Edit Guideline Scope"
+                                title="Click to edit">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                     <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
                                 </svg>
@@ -312,7 +318,8 @@
                         </div>
                         <div class="setting-edit-mode hidden" id="scopeEditMode">
                             <div class="scope-edit-buttons">
-                                <button class="scope-edit-btn" id="scopeNationalBtn" data-scope="national">National</button>
+                                <button class="scope-edit-btn" id="scopeNationalBtn"
+                                    data-scope="national">National</button>
                                 <button class="scope-edit-btn" id="scopeLocalBtn" data-scope="local">Local</button>
                                 <button class="scope-edit-btn" id="scopeBothBtn" data-scope="both">Both</button>
                             </div>
@@ -323,7 +330,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Main Application -->
     <div id="mainContent" class="hidden">
         <div class="top-bar">
@@ -335,7 +342,8 @@
             </div>
             <div class="top-bar-center">
                 <!-- Mobile-only settings toggle (shown in mobile layout) -->
-                <button id="mobileSettingsToggleBtn" class="nav-btn mobile-settings-toggle-btn hidden" aria-label="Open settings and tools" title="Settings and tools">
+                <button id="mobileSettingsToggleBtn" class="nav-btn mobile-settings-toggle-btn hidden"
+                    aria-label="Open settings and tools" title="Settings and tools">
                     <span class="btn-icon">☰</span>
                     <span class="btn-text">Menu</span>
                 </button>
@@ -359,21 +367,26 @@
                 <div class="preferences-panel-content">
                     <div class="preference-item">
                         <span class="preference-label">Hospital Trust:</span>
-                        <span id="mainTrustDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
+                        <span id="mainTrustDisplay" class="preference-value clickable" role="button" tabindex="0"
+                            title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <span class="preference-label">Guideline Scope:</span>
-                        <span id="mainScopeDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
+                        <span id="mainScopeDisplay" class="preference-value clickable" role="button" tabindex="0"
+                            title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <span class="preference-label">AI Model:</span>
-                        <span id="mainModelDisplay" class="preference-value clickable" role="button" tabindex="0" title="Click to edit preferences">Loading...</span>
+                        <span id="mainModelDisplay" class="preference-value clickable" role="button" tabindex="0"
+                            title="Click to edit preferences">Loading...</span>
                     </div>
                     <div class="preference-item">
                         <button id="preferencesPanelBtn" class="preferences-panel-btn" title="Open Preferences">
-                            <svg width="16" height="16" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="currentColor" fill="none">
-                                <path d="M45,14.67l-2.76,2a1,1,0,0,1-1,.11L37.65,15.3a1,1,0,0,1-.61-.76l-.66-3.77a1,1,0,0,0-1-.84H30.52a1,1,0,0,0-1,.77l-.93,3.72a1,1,0,0,1-.53.65l-3.3,1.66a1,1,0,0,1-1-.08l-3-2.13a1,1,0,0,0-1.31.12l-3.65,3.74a1,1,0,0,0-.13,1.26l1.87,2.88a1,1,0,0,1,.1.89L16.34,27a1,1,0,0,1-.68.63l-3.85,1.06a1,1,0,0,0-.74,1v4.74a1,1,0,0,0,.8,1l3.9.8a1,1,0,0,1,.72.57l1.42,3.15a1,1,0,0,1-.05.92l-2.13,3.63a1,1,0,0,0,.17,1.24L19.32,49a1,1,0,0,0,1.29.09L23.49,47a1,1,0,0,1,1-.1l3.74,1.67a1,1,0,0,1,.59.75l.66,3.79a1,1,0,0,0,1,.84h4.89a1,1,0,0,0,1-.86l.58-4a1,1,0,0,1,.58-.77l3.58-1.62a1,1,0,0,1,1,.09l3.14,2.12a1,1,0,0,0,1.3-.15L50,45.06a1,1,0,0,0,.09-1.27l-2.08-3a1,1,0,0,1-.09-1l1.48-3.43a1,1,0,0,1,.71-.59L53.77,35a1,1,0,0,0,.8-1V29.42a1,1,0,0,0-.8-1l-3.72-.78a1,1,0,0,1-.73-.62l-1.45-3.65a1,1,0,0,1,.11-.94l2.15-3.14A1,1,0,0,0,50,18l-3.71-3.25A1,1,0,0,0,45,14.67Z"/>
-                                <circle cx="32.82" cy="31.94" r="9.94"/>
+                            <svg width="16" height="16" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+                                stroke-width="3" stroke="currentColor" fill="none">
+                                <path
+                                    d="M45,14.67l-2.76,2a1,1,0,0,1-1,.11L37.65,15.3a1,1,0,0,1-.61-.76l-.66-3.77a1,1,0,0,0-1-.84H30.52a1,1,0,0,0-1,.77l-.93,3.72a1,1,0,0,1-.53.65l-3.3,1.66a1,1,0,0,1-1-.08l-3-2.13a1,1,0,0,0-1.31.12l-3.65,3.74a1,1,0,0,0-.13,1.26l1.87,2.88a1,1,0,0,1,.1.89L16.34,27a1,1,0,0,1-.68.63l-3.85,1.06a1,1,0,0,0-.74,1v4.74a1,1,0,0,0,.8,1l3.9.8a1,1,0,0,1,.72.57l1.42,3.15a1,1,0,0,1-.05.92l-2.13,3.63a1,1,0,0,0,.17,1.24L19.32,49a1,1,0,0,0,1.29.09L23.49,47a1,1,0,0,1,1-.1l3.74,1.67a1,1,0,0,1,.59.75l.66,3.79a1,1,0,0,0,1,.84h4.89a1,1,0,0,0,1-.86l.58-4a1,1,0,0,1,.58-.77l3.58-1.62a1,1,0,0,1,1,.09l3.14,2.12a1,1,0,0,0,1.3-.15L50,45.06a1,1,0,0,0,.09-1.27l-2.08-3a1,1,0,0,1-.09-1l1.48-3.43a1,1,0,0,1,.71-.59L53.77,35a1,1,0,0,0,.8-1V29.42a1,1,0,0,0-.8-1l-3.72-.78a1,1,0,0,1-.73-.62l-1.45-3.65a1,1,0,0,1,.11-.94l2.15-3.14A1,1,0,0,0,50,18l-3.71-3.25A1,1,0,0,0,45,14.67Z" />
+                                <circle cx="32.82" cy="31.94" r="9.94" />
                             </svg>
                             <span>Preferences</span>
                         </button>
@@ -381,7 +394,8 @@
                     <div class="preference-item">
                         <button id="testBtn" class="preferences-panel-btn" title="Test">
                             <span id="testSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <span>Test</span>
@@ -389,7 +403,8 @@
                     </div>
                     <div class="preference-item">
                         <button id="promptsPanelBtn" class="preferences-panel-btn" title="Prompts">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
                                 <line x1="16" y1="13" x2="8" y2="13"></line>
@@ -401,7 +416,8 @@
                     </div>
                     <div class="preference-item">
                         <button id="guidelinesPanelBtn" class="preferences-panel-btn" title="Guidelines">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                             </svg>
@@ -410,7 +426,8 @@
                     </div>
                     <div class="preference-item">
                         <button id="workflowsPanelBtn" class="preferences-panel-btn" title="Workflows">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                                 <path d="M16 6v2"></path>
                                 <path d="M8 6v2"></path>
@@ -424,7 +441,8 @@
                     </div>
                     <div class="preference-item">
                         <button id="devPanelBtn" class="preferences-panel-btn" title="Dev">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
                             </svg>
@@ -433,7 +451,8 @@
                     </div>
                     <div class="preference-item">
                         <button id="linksPanelBtn" class="preferences-panel-btn" title="Links">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
                             </svg>
@@ -483,14 +502,15 @@
                             <div class="floating-input-buttons floating-input-buttons-top">
                                 <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
                                 <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
-                                <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting" style="display: none;">✓</button>
+                                <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting"
+                                    style="display: none;">✓</button>
                                 <button id="recordBtn" class="nav-btn record-btn" title="Record">
                                     <span id="recordSymbol" class="record-symbol"></span>
                                 </button>
                             </div>
                             <div id="userInput" class="expandable-input tiptap-editor"></div>
                         </div>
-                        
+
                         <!-- Summary Section (shown only when it has content) -->
                         <div id="summarySection" class="chatbot-summary-section hidden">
                             <div id="summary1" class="transcript-pane active">
@@ -502,312 +522,319 @@
                             </div>
                             <!-- Analyse button at bottom-left of summary1 -->
                         </div>
-                        
-                        </div>
+
                     </div>
-                    
-                    <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
-                    <div id="fixedButtonRow" class="fixed-button-row">
-                        <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
-                            <span id="analyseSpinner" class="spinner-icon" style="display: none;">⟳</span>
-                            <span class="btn-icon">🔍</span>
-                            <span class="btn-text">Analyse</span>
-                        </button>
+                </div>
 
-                        <!-- Server Status Message -->
-                        <div id="serverStatusMessage" class="server-status-message" style="display: none;"></div>
-                        
-                        <!-- Suggestion Actions Group (Hidden by default) -->
-                        <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">
-                            <button id="suggestionPrevBtn" class="nav-btn secondary" style="display: none;">⬅ Previous</button>
-                            <button id="suggestionAcceptBtn" class="nav-btn success">✅ Accept</button>
-                            <button id="suggestionRejectBtn" class="nav-btn danger">❌ Reject</button>
-                            <button id="suggestionModifyBtn" class="nav-btn warning">✏️ Modify</button>
-                            <button id="suggestionSkipBtn" class="nav-btn secondary">⏭ Skip</button>
-                            <button id="suggestionCancelBtn" class="nav-btn danger-outline">❌ Cancel All</button>
-                        </div>
+                <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
+                <div id="fixedButtonRow" class="fixed-button-row">
+                    <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
+                        <span id="analyseSpinner" class="spinner-icon" style="display: none;">⟳</span>
+                        <span class="btn-icon">🔍</span>
+                        <span class="btn-text">Analyse</span>
+                    </button>
 
-                        <!-- Privacy Review Actions Group (Hidden by default) -->
-                        <div id="piiActionsGroup" class="suggestion-actions-group" style="display: none;">
-                            <button id="piiPrevBtn" class="nav-btn secondary" style="display: none;" onclick="navigatePIIReview(-1)">⬅ Previous</button>
-                            <button id="piiReplaceBtn" class="nav-btn success" onclick="handlePIIDecision('replace')">✅ Replace</button>
-                            <button id="piiKeepBtn" class="nav-btn info" onclick="handlePIIDecision('keep')">📝 Keep</button>
-                            <button id="piiSkipBtn" class="nav-btn warning" onclick="handlePIIDecision('skip')">⏭ Skip</button>
-                            <button id="piiCancelBtn" class="nav-btn danger-outline" onclick="cancelPIIReview()">❌ Cancel All</button>
-                        </div>
+                    <!-- Server Status Message -->
+                    <div id="serverStatusMessage" class="server-status-message" style="display: none;"></div>
 
-                        <!-- Selection buttons group (dynamically added by JavaScript) -->
-                        
-                        <!-- Clerking Buttons Group -->
-                        <div id="clerkingButtonsGroup" class="clerking-buttons-group" style="display: none;">
-                            <button id="generate-interaction-btn" class="nav-btn primary" disabled>
-                                <span id="generate-spinner" class="spinner" style="display: none;"></span>
-                                <span id="generate-text">Load Clerking</span>
-                            </button>
-                            <button id="random-issue-btn" class="nav-btn secondary">
-                                <span id="random-spinner" class="spinner" style="display: none;"></span>
-                                <span id="random-text">Random Issue</span>
-                            </button>
-                            <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
-                                <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
-                                <span id="regenerate-text">Regenerate Clerking</span>
-                            </button>
-                            <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
-                        </div>
-                        
-                        <!-- Global Reset button (aligned to right) -->
-                        <button id="resetBtn" class="summary-analyse-btn summary-reset-btn" title="Reset transcript and summary">
-                            <span class="btn-icon">↺</span>
-                            <span class="btn-text">Reset</span>
-                        </button>
+                    <!-- Suggestion Actions Group (Hidden by default) -->
+                    <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">
+                        <button id="suggestionPrevBtn" class="nav-btn secondary" style="display: none;">⬅
+                            Previous</button>
+                        <button id="suggestionAcceptBtn" class="nav-btn success">✅ Accept</button>
+                        <button id="suggestionRejectBtn" class="nav-btn danger">❌ Reject</button>
+                        <button id="suggestionModifyBtn" class="nav-btn warning">✏️ Modify</button>
+                        <button id="suggestionSkipBtn" class="nav-btn secondary">⏭ Skip</button>
+                        <button id="suggestionCancelBtn" class="nav-btn danger-outline">❌ Cancel All</button>
                     </div>
+
+                    <!-- Privacy Review Actions Group (Hidden by default) -->
+                    <div id="piiActionsGroup" class="suggestion-actions-group" style="display: none;">
+                        <button id="piiPrevBtn" class="nav-btn secondary" style="display: none;"
+                            onclick="navigatePIIReview(-1)">⬅ Previous</button>
+                        <button id="piiReplaceBtn" class="nav-btn success" onclick="handlePIIDecision('replace')">✅
+                            Replace</button>
+                        <button id="piiKeepBtn" class="nav-btn info" onclick="handlePIIDecision('keep')">📝
+                            Keep</button>
+                        <button id="piiSkipBtn" class="nav-btn warning" onclick="handlePIIDecision('skip')">⏭
+                            Skip</button>
+                        <button id="piiCancelBtn" class="nav-btn danger-outline" onclick="cancelPIIReview()">❌ Cancel
+                            All</button>
+                    </div>
+
+                    <!-- Selection buttons group (dynamically added by JavaScript) -->
+
+                    <!-- Clerking Buttons Group -->
+                    <div id="clerkingButtonsGroup" class="clerking-buttons-group" style="display: none;">
+                        <button id="generate-interaction-btn" class="nav-btn primary" disabled>
+                            <span id="generate-spinner" class="spinner" style="display: none;"></span>
+                            <span id="generate-text">Load Clerking</span>
+                        </button>
+                        <button id="random-issue-btn" class="nav-btn secondary">
+                            <span id="random-spinner" class="spinner" style="display: none;"></span>
+                            <span id="random-text">Random Issue</span>
+                        </button>
+                        <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
+                            <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
+                            <span id="regenerate-text">Regenerate Clerking</span>
+                        </button>
+                        <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
+                    </div>
+
+                    <!-- Global Reset button (aligned to right) -->
+                    <button id="resetBtn" class="summary-analyse-btn summary-reset-btn"
+                        title="Reset transcript and summary">
+                        <span class="btn-icon">↺</span>
+                        <span class="btn-text">Reset</span>
+                    </button>
                 </div>
             </div>
-            
-            <!-- Proforma View (initially hidden) -->
-            <div id="proformaView" class="hidden">
-                <div class="left-column">
-                    <div class="column-header">Transcript</div>
-                    <textarea rows="20" id="proformaSummary"></textarea>
+        </div>
+
+        <!-- Proforma View (initially hidden) -->
+        <div id="proformaView" class="hidden">
+            <div class="left-column">
+                <div class="column-header">Transcript</div>
+                <textarea rows="20" id="proformaSummary"></textarea>
+            </div>
+            <div class="right-column">
+                <div class="column-header">
+                    <div class="proforma-header">
+                        <div class="proforma-toggle">
+                            <button id="obsProformaBtn" class="proforma-toggle-btn active">Obstetric</button>
+                            <button id="gynProformaBtn" class="proforma-toggle-btn">Gynaecology</button>
+                        </div>
+                        <button id="populateProformaBtn" class="populate-btn">
+                            <span id="populateSpinner" class="spinner" style="display: none;">&#x21BB;</span>
+                            <span id="populateText">Populate</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="right-column">
-                    <div class="column-header">
-                        <div class="proforma-header">
-                            <div class="proforma-toggle">
-                                <button id="obsProformaBtn" class="proforma-toggle-btn active">Obstetric</button>
-                                <button id="gynProformaBtn" class="proforma-toggle-btn">Gynaecology</button>
+                <div id="proformaContent">
+                    <!-- Obstetric Proforma (default) -->
+                    <div id="obsProforma" class="proforma-template">
+                        <h3>Obstetric Assessment</h3>
+                        <div class="proforma-section">
+                            <h4>Demographics</h4>
+                            <div class="form-row">
+                                <label for="obs-name">Name:</label>
+                                <input type="text" id="obs-name" class="proforma-input">
                             </div>
-                            <button id="populateProformaBtn" class="populate-btn">
-                                <span id="populateSpinner" class="spinner" style="display: none;">&#x21BB;</span>
-                                <span id="populateText">Populate</span>
-                            </button>
+                            <div class="form-row">
+                                <label for="obs-age">Age:</label>
+                                <input type="text" id="obs-age" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-hospital-no">Hospital No:</label>
+                                <input type="text" id="obs-hospital-no" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-date">Date:</label>
+                                <input type="date" id="obs-date" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-time">Time:</label>
+                                <input type="time" id="obs-time" class="proforma-input">
+                            </div>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Obstetric History</h4>
+                            <div class="form-row">
+                                <label for="obs-gravida">Gravida:</label>
+                                <input type="text" id="obs-gravida" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-para">Para:</label>
+                                <input type="text" id="obs-para" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-edd">EDD:</label>
+                                <input type="date" id="obs-edd" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-gestation">Gestation:</label>
+                                <input type="text" id="obs-gestation" class="proforma-input">
+                                <span>weeks</span>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-prev-deliveries">Previous Deliveries:</label>
+                                <textarea id="obs-prev-deliveries" class="proforma-input" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Current Pregnancy</h4>
+                            <div class="form-row">
+                                <label for="obs-antenatal-care">Antenatal Care:</label>
+                                <select id="obs-antenatal-care" class="proforma-input">
+                                    <option value="">Select...</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="irregular">Irregular</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-blood-group">Blood Group:</label>
+                                <input type="text" id="obs-blood-group" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-rhesus">Rhesus:</label>
+                                <input type="text" id="obs-rhesus" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-bmi">Booking BMI:</label>
+                                <input type="text" id="obs-bmi" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-complications">Complications:</label>
+                                <textarea id="obs-complications" class="proforma-input" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Current Assessment</h4>
+                            <div class="form-row">
+                                <label for="obs-presenting-complaint">Presenting Complaint:</label>
+                                <textarea id="obs-presenting-complaint" class="proforma-input" rows="2"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-contractions">Contractions:</label>
+                                <select id="obs-contractions" class="proforma-input">
+                                    <option value="">Select...</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-fetal-movements">Fetal Movements:</label>
+                                <select id="obs-fetal-movements" class="proforma-input">
+                                    <option value="">Select...</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="reduced">Reduced</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-vaginal-loss">Vaginal Loss:</label>
+                                <select id="obs-vaginal-loss" class="proforma-input">
+                                    <option value="">Select...</option>
+                                    <option value="none">None</option>
+                                    <option value="show">Show</option>
+                                    <option value="liquor">Liquor</option>
+                                    <option value="blood">Blood</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Examination</h4>
+                            <div class="form-row">
+                                <label for="obs-bp">BP:</label>
+                                <input type="text" id="obs-bp" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-pulse">Pulse:</label>
+                                <input type="text" id="obs-pulse" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-temp">Temp:</label>
+                                <input type="text" id="obs-temp" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-fundal-height">Fundal Height:</label>
+                                <input type="text" id="obs-fundal-height" class="proforma-input">
+                                <span>cm</span>
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-lie">Lie:</label>
+                                <input type="text" id="obs-lie" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-presentation">Presentation:</label>
+                                <input type="text" id="obs-presentation" class="proforma-input">
+                            </div>
+                            <div class="form-row">
+                                <label for="obs-fh">FH:</label>
+                                <input type="text" id="obs-fh" class="proforma-input">
+                                <span>bpm</span>
+                            </div>
                         </div>
                     </div>
-                    <div id="proformaContent">
-                        <!-- Obstetric Proforma (default) -->
-                        <div id="obsProforma" class="proforma-template">
-                            <h3>Obstetric Assessment</h3>
-                            <div class="proforma-section">
-                                <h4>Demographics</h4>
-                                <div class="form-row">
-                                    <label for="obs-name">Name:</label>
-                                    <input type="text" id="obs-name" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-age">Age:</label>
-                                    <input type="text" id="obs-age" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-hospital-no">Hospital No:</label>
-                                    <input type="text" id="obs-hospital-no" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-date">Date:</label>
-                                    <input type="date" id="obs-date" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-time">Time:</label>
-                                    <input type="time" id="obs-time" class="proforma-input">
-                                </div>
+
+                    <!-- Gynaecology Proforma (initially hidden) -->
+                    <div id="gynProforma" class="proforma-template hidden">
+                        <h3>Gynaecology Assessment</h3>
+                        <div class="proforma-section">
+                            <h4>Demographics</h4>
+                            <div class="form-row">
+                                <label for="gyn-name">Name:</label>
+                                <input type="text" id="gyn-name" class="proforma-input">
                             </div>
-                            <div class="proforma-section">
-                                <h4>Obstetric History</h4>
-                                <div class="form-row">
-                                    <label for="obs-gravida">Gravida:</label>
-                                    <input type="text" id="obs-gravida" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-para">Para:</label>
-                                    <input type="text" id="obs-para" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-edd">EDD:</label>
-                                    <input type="date" id="obs-edd" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-gestation">Gestation:</label>
-                                    <input type="text" id="obs-gestation" class="proforma-input">
-                                    <span>weeks</span>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-prev-deliveries">Previous Deliveries:</label>
-                                    <textarea id="obs-prev-deliveries" class="proforma-input" rows="3"></textarea>
-                                </div>
+                            <div class="form-row">
+                                <label for="gyn-age">Age:</label>
+                                <input type="text" id="gyn-age" class="proforma-input">
                             </div>
-                            <div class="proforma-section">
-                                <h4>Current Pregnancy</h4>
-                                <div class="form-row">
-                                    <label for="obs-antenatal-care">Antenatal Care:</label>
-                                    <select id="obs-antenatal-care" class="proforma-input">
-                                        <option value="">Select...</option>
-                                        <option value="regular">Regular</option>
-                                        <option value="irregular">Irregular</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-blood-group">Blood Group:</label>
-                                    <input type="text" id="obs-blood-group" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-rhesus">Rhesus:</label>
-                                    <input type="text" id="obs-rhesus" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-bmi">Booking BMI:</label>
-                                    <input type="text" id="obs-bmi" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-complications">Complications:</label>
-                                    <textarea id="obs-complications" class="proforma-input" rows="3"></textarea>
-                                </div>
+                            <div class="form-row">
+                                <label for="gyn-hospital-no">Hospital No:</label>
+                                <input type="text" id="gyn-hospital-no" class="proforma-input">
                             </div>
-                            <div class="proforma-section">
-                                <h4>Current Assessment</h4>
-                                <div class="form-row">
-                                    <label for="obs-presenting-complaint">Presenting Complaint:</label>
-                                    <textarea id="obs-presenting-complaint" class="proforma-input" rows="2"></textarea>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-contractions">Contractions:</label>
-                                    <select id="obs-contractions" class="proforma-input">
-                                        <option value="">Select...</option>
-                                        <option value="true">Yes</option>
-                                        <option value="false">No</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-fetal-movements">Fetal Movements:</label>
-                                    <select id="obs-fetal-movements" class="proforma-input">
-                                        <option value="">Select...</option>
-                                        <option value="normal">Normal</option>
-                                        <option value="reduced">Reduced</option>
-                                    </select>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-vaginal-loss">Vaginal Loss:</label>
-                                    <select id="obs-vaginal-loss" class="proforma-input">
-                                        <option value="">Select...</option>
-                                        <option value="none">None</option>
-                                        <option value="show">Show</option>
-                                        <option value="liquor">Liquor</option>
-                                        <option value="blood">Blood</option>
-                                    </select>
-                                </div>
+                            <div class="form-row">
+                                <label for="gyn-date">Date:</label>
+                                <input type="date" id="gyn-date" class="proforma-input">
                             </div>
-                            <div class="proforma-section">
-                                <h4>Examination</h4>
-                                <div class="form-row">
-                                    <label for="obs-bp">BP:</label>
-                                    <input type="text" id="obs-bp" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-pulse">Pulse:</label>
-                                    <input type="text" id="obs-pulse" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-temp">Temp:</label>
-                                    <input type="text" id="obs-temp" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-fundal-height">Fundal Height:</label>
-                                    <input type="text" id="obs-fundal-height" class="proforma-input">
-                                    <span>cm</span>
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-lie">Lie:</label>
-                                    <input type="text" id="obs-lie" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-presentation">Presentation:</label>
-                                    <input type="text" id="obs-presentation" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="obs-fh">FH:</label>
-                                    <input type="text" id="obs-fh" class="proforma-input">
-                                    <span>bpm</span>
-                                </div>
+                            <div class="form-row">
+                                <label for="gyn-time">Time:</label>
+                                <input type="time" id="gyn-time" class="proforma-input">
                             </div>
                         </div>
-                        
-                        <!-- Gynaecology Proforma (initially hidden) -->
-                        <div id="gynProforma" class="proforma-template hidden">
-                            <h3>Gynaecology Assessment</h3>
-                            <div class="proforma-section">
-                                <h4>Demographics</h4>
-                                <div class="form-row">
-                                    <label for="gyn-name">Name:</label>
-                                    <input type="text" id="gyn-name" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="gyn-age">Age:</label>
-                                    <input type="text" id="gyn-age" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="gyn-hospital-no">Hospital No:</label>
-                                    <input type="text" id="gyn-hospital-no" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="gyn-date">Date:</label>
-                                    <input type="date" id="gyn-date" class="proforma-input">
-                                </div>
-                                <div class="form-row">
-                                    <label for="gyn-time">Time:</label>
-                                    <input type="time" id="gyn-time" class="proforma-input">
-                                </div>
-                            </div>
-                            <div class="proforma-section">
-                                <h4>Presenting Complaint</h4>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                            </div>
-                            <div class="proforma-section">
-                                <h4>Gynaecological History</h4>
-                                <p>LMP: ___/___/___</p>
-                                <p>Menstrual Cycle: Regular □ Irregular □</p>
-                                <p>Contraception: ________________</p>
-                                <p>Previous Gynae Surgery:</p>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                            </div>
-                            <div class="proforma-section">
-                                <h4>Obstetric History</h4>
-                                <p>Gravida: _____ Para: _____</p>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                            </div>
-                            <div class="proforma-section">
-                                <h4>Examination</h4>
-                                <p>BP: _____ Pulse: _____ Temp: _____</p>
-                                <p>Abdominal Examination:</p>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                                <p>Vaginal Examination:</p>
-                                <textarea class="proforma-input" rows="2"></textarea>
-                            </div>
+                        <div class="proforma-section">
+                            <h4>Presenting Complaint</h4>
+                            <textarea class="proforma-input" rows="2"></textarea>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Gynaecological History</h4>
+                            <p>LMP: ___/___/___</p>
+                            <p>Menstrual Cycle: Regular □ Irregular □</p>
+                            <p>Contraception: ________________</p>
+                            <p>Previous Gynae Surgery:</p>
+                            <textarea class="proforma-input" rows="2"></textarea>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Obstetric History</h4>
+                            <p>Gravida: _____ Para: _____</p>
+                            <textarea class="proforma-input" rows="2"></textarea>
+                        </div>
+                        <div class="proforma-section">
+                            <h4>Examination</h4>
+                            <p>BP: _____ Pulse: _____ Temp: _____</p>
+                            <p>Abdominal Examination:</p>
+                            <textarea class="proforma-input" rows="2"></textarea>
+                            <p>Vaginal Examination:</p>
+                            <textarea class="proforma-input" rows="2"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="promptsSection" class="container hidden">
-            <div id="promptsContainer" class="prompts-container">
-                <div class="prompt-group">
-                    <label for="promptIssues">Prompt for issues:</label>
-                    <textarea id="promptIssues">
+    </div>
+    <div id="promptsSection" class="container hidden">
+        <div id="promptsContainer" class="prompts-container">
+            <div class="prompt-group">
+                <label for="promptIssues">Prompt for issues:</label>
+                <textarea id="promptIssues">
         Please determine the significant clinical issues within this clinical scenario, ie if the patient has had as BMI of 45, return: 'Morbid obesity: BMI 45'. 
         Do not list risks, this will be done by the user. 
         Please provide the issues as a list from most clinically important to least.
                     </textarea>
-                </div>
-                <div class="prompt-group">
-                    <label for="promptGuidelines">Prompt for guidelines:</label>
-                    <textarea id="promptGuidelines">
+            </div>
+            <div class="prompt-group">
+                <label for="promptGuidelines">Prompt for guidelines:</label>
+                <textarea id="promptGuidelines">
         Please provide filenames of the 3 most relevant guidelines for the following clinical text. 
         Please only list the filenames, without prior or trailing text.
         For each guideline, please format as: "filename: relevance" (using a colon as separator)
         The significant terms are listed line-by-line as filenames followed by their associated 
         significant terms:
                     </textarea>
-                </div>
-                <div class="prompt-group">
-                    <label for="promptNoteGenerator">Prompt for note generator:</label>
-                    <textarea id="promptNoteGenerator">
+            </div>
+            <div class="prompt-group">
+                <label for="promptNoteGenerator">Prompt for note generator:</label>
+                <textarea id="promptNoteGenerator">
         The following is a transcript from a clinical consultation.
         Please write a concise clinical note using medical terminology 
         suitable for healthcare professionals. 
@@ -820,39 +847,39 @@
         Thank you.
         Here follows the transcript:
                     </textarea>
+            </div>
+            <button id="savePromptsBtn">Save Prompts</button>
+        </div>
+    </div>
+    <div id="guidelinesSection" class="container hidden">
+        <div id="guidelinesContainer" class="guidelines-container">
+            <h2>Guidelines</h2>
+            <ul id="guidelinesList"></ul>
+        </div>
+    </div>
+    <div id="devSection" class="container hidden">
+        <div id="devContainer" class="dev-container">
+            <h2>Development Tools</h2>
+            <div class="dev-tools">
+                <div class="tool-group">
+                    <h3>GitHub Permissions</h3>
+                    <div id="githubPermissions"></div>
                 </div>
-                <button id="savePromptsBtn">Save Prompts</button>
-            </div>
-        </div>
-        <div id="guidelinesSection" class="container hidden">
-            <div id="guidelinesContainer" class="guidelines-container">
-                <h2>Guidelines</h2>
-                <ul id="guidelinesList"></ul>
-            </div>
-        </div>
-        <div id="devSection" class="container hidden">
-            <div id="devContainer" class="dev-container">
-                <h2>Development Tools</h2>
-                <div class="dev-tools">
-                    <div class="tool-group">
-                        <h3>GitHub Permissions</h3>
-                        <div id="githubPermissions"></div>
-                    </div>
-                    <div class="tool-group">
-                        <h3>API Tests</h3>
-                        <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
-                        <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
-                        <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
-                    </div>
+                <div class="tool-group">
+                    <h3>API Tests</h3>
+                    <button id="testServerBtn" class="dev-btn">Test Server Connection</button>
+                    <button id="testGitHubBtn" class="dev-btn">Test GitHub Access</button>
+                    <button id="testOpenAIBtn" class="dev-btn">Test OpenAI Access</button>
                 </div>
             </div>
         </div>
-        <div id="linksSection" class="container hidden">
-            <div id="linksContainer" class="links-container">
-                <h2>Links</h2>
-                <ul id="linksList"></ul>
-            </div>
+    </div>
+    <div id="linksSection" class="container hidden">
+        <div id="linksContainer" class="links-container">
+            <h2>Links</h2>
+            <ul id="linksList"></ul>
         </div>
+    </div>
     </div>
 
     <!-- Mobile Settings Overlay (reuses main preferences panel content on mobile) -->
@@ -867,7 +894,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Hospital Trust Selection Modal -->
     <div id="hospitalTrustModal" class="hospital-trust-modal hidden">
         <div class="hospital-trust-modal-content">
@@ -876,17 +903,14 @@
                 <button id="closeHospitalTrustModal" class="close-modal-btn">&times;</button>
             </div>
             <div class="hospital-trust-modal-body">
-                <p class="hospital-trust-info">Select your hospital trust to receive contextualised guidance relevant to your working environment.</p>
+                <p class="hospital-trust-info">Select your hospital trust to receive contextualised guidance relevant to
+                    your working environment.</p>
                 <div class="current-trust-display">
                     <strong>Current selection:</strong> <span id="currentTrustDisplay">None selected</span>
                 </div>
                 <div class="trust-search-container">
-                    <input 
-                        type="text" 
-                        id="trustSearchInput" 
-                        placeholder="Search for hospital trust..." 
-                        class="trust-search-input"
-                    />
+                    <input type="text" id="trustSearchInput" placeholder="Search for hospital trust..."
+                        class="trust-search-input" />
                 </div>
                 <div class="trust-list-container">
                     <select id="trustSelect" class="trust-select" size="10">
@@ -900,7 +924,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Guideline Scope Selection Modal -->
     <div id="guidelineScopeModal" class="guideline-scope-modal hidden">
         <div class="guideline-scope-modal-content">
@@ -910,7 +934,7 @@
             </div>
             <div class="guideline-scope-modal-body">
                 <p class="guideline-scope-info">Choose which guidelines to apply for your clinical scenario.</p>
-                
+
                 <div class="scope-buttons-container">
                     <button id="applyNationalBtn" class="scope-btn scope-btn-national">
                         <span class="scope-btn-title">Apply National Guidelines</span>
@@ -925,10 +949,10 @@
                         <span class="scope-btn-desc">National + Local guidelines</span>
                     </button>
                 </div>
-                
+
                 <div class="scope-trust-display">
                     <div class="scope-trust-info">
-                        <strong>Current Trust Selected:</strong> 
+                        <strong>Current Trust Selected:</strong>
                         <span id="scopeTrustDisplay">None selected</span>
                     </div>
                     <div class="scope-trust-actions">
@@ -939,7 +963,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Preferences Modal -->
     <div id="preferencesModal" class="preferences-modal hidden">
         <div class="preferences-modal-content">
@@ -951,26 +975,30 @@
                 <!-- Hospital Trust Section -->
                 <div class="preferences-section">
                     <h3>Hospital Trust</h3>
-                    <p class="preferences-section-desc">Select your hospital trust to receive contextualised guidance relevant to your working environment.</p>
+                    <p class="preferences-section-desc">Select your hospital trust to receive contextualised guidance
+                        relevant to your working environment.</p>
                     <div class="preferences-trust-display">
                         <strong>Current selection:</strong> <span id="preferencesTrustDisplay">None selected</span>
                     </div>
                     <div class="preferences-trust-actions">
                         <button id="preferencesChangeTrustBtn" class="preferences-btn">Change Trust</button>
                         <button id="preferencesSelectTrustBtn" class="preferences-btn">Select Trust</button>
-                        <button id="preferencesClearTrustBtn" class="preferences-btn preferences-btn-secondary">Clear</button>
+                        <button id="preferencesClearTrustBtn"
+                            class="preferences-btn preferences-btn-secondary">Clear</button>
                     </div>
                 </div>
-                
+
                 <!-- Guideline Suggestions Preferences Section -->
                 <div class="preferences-section">
                     <h3>Guideline Suggestions Guidelines</h3>
-                    <p class="preferences-section-desc">Choose which guidelines to apply when using Guideline Suggestions. This preference will be remembered for future sessions.</p>
+                    <p class="preferences-section-desc">Choose which guidelines to apply when using Guideline
+                        Suggestions. This preference will be remembered for future sessions.</p>
                     <div class="preferences-scope-display">
                         <strong>Current selection:</strong> <span id="preferencesScopeDisplay">Not set</span>
                     </div>
                     <div class="preferences-scope-buttons">
-                        <button id="preferencesNationalBtn" class="preferences-scope-btn preferences-scope-btn-national">
+                        <button id="preferencesNationalBtn"
+                            class="preferences-scope-btn preferences-scope-btn-national">
                             <span class="preferences-scope-btn-title">National Guidelines</span>
                             <span class="preferences-scope-btn-desc">NICE, RCOG, and other national bodies</span>
                         </button>
@@ -984,25 +1012,28 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- AI Model Preferences Section -->
                 <div class="preferences-section">
                     <h3>AI Model Preferences</h3>
-                    <p class="preferences-section-desc">Order your preferred AI models. Models are tried in order (1 = first choice) when generating responses.</p>
+                    <p class="preferences-section-desc">Order your preferred AI models. Models are tried in order (1 =
+                        first choice) when generating responses.</p>
                     <div id="modelPreferencesList" class="model-preferences-list">
                         <!-- Model items will be dynamically inserted here -->
                     </div>
                 </div>
-                
+
                 <!-- Chunk Distribution Preferences Section -->
                 <div class="preferences-section">
                     <h3>Chunk Distribution Providers</h3>
-                    <p class="preferences-section-desc">Choose which AI providers are allowed to share chunked (splittable) requests like Guideline Suggestions relevance scoring. Untick providers you want to exclude (e.g. DeepSeek).</p>
+                    <p class="preferences-section-desc">Choose which AI providers are allowed to share chunked
+                        (splittable) requests like Guideline Suggestions relevance scoring. Untick providers you want to
+                        exclude (e.g. DeepSeek).</p>
                     <div id="chunkDistributionProvidersList" class="model-preferences-list">
                         <!-- Provider checkboxes will be dynamically inserted here -->
                     </div>
                 </div>
-                
+
                 <!-- Analysis Method Preferences Section -->
                 <div class="preferences-section">
                     <h3>Analysis Method</h3>
@@ -1014,15 +1045,17 @@
                         </label>
                         <div class="option-label">
                             <span class="option-title">Enable Parallel Analysis</span>
-                            <span class="option-desc">Process all relevant guidelines concurrently without manual selection. Faster, but consumes more resources.</span>
+                            <span class="option-desc">Process all relevant guidelines concurrently without manual
+                                selection. Faster, but consumes more resources.</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- RAG Search Preferences Section -->
                 <div class="preferences-section">
                     <h3>Fast RAG Search (Beta)</h3>
-                    <p class="preferences-section-desc">Use vector similarity search for faster guideline matching. When enabled, guidelines are found in ~100ms instead of ~5 seconds.</p>
+                    <p class="preferences-section-desc">Use vector similarity search for faster guideline matching. When
+                        enabled, guidelines are found in ~100ms instead of ~5 seconds.</p>
                     <div class="rag-preferences-container">
                         <div class="rag-toggle-group">
                             <label class="rag-toggle-switch">
@@ -1034,17 +1067,18 @@
                                 <span class="rag-status" id="ragStatus">Loading...</span>
                             </div>
                         </div>
-                        
+
                         <div id="ragSubOptions" class="rag-sub-options hidden">
                             <div class="rag-option">
                                 <label class="rag-toggle-switch small">
                                     <input type="checkbox" id="ragReranking" checked />
                                     <span class="rag-slider"></span>
                                 </label>
-                                <span class="rag-option-label">AI Reranking (improves accuracy with single AI call)</span>
+                                <span class="rag-option-label">AI Reranking (improves accuracy with single AI
+                                    call)</span>
                             </div>
                         </div>
-                        
+
                         <div class="rag-info" id="ragInfo">
                             <span class="rag-info-icon">ℹ️</span>
                             <span id="ragInfoText">Vector database status: checking...</span>
@@ -1057,10 +1091,10 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Include Firebase initialization -->
     <script type="module" src="firebase-init.js"></script>
-    
+
     <!-- Auto-return to requested page after sign-in (tab-scoped using sessionStorage) -->
     <script type="module">
         import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
@@ -1101,7 +1135,7 @@
         import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
         import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
         import Link from 'https://esm.sh/@tiptap/extension-link@2.1.13';
-        
+
         // Extend TipTap's Link extension to preserve our data-link-data attribute
         const GuidelineLink = Link.extend({
             addAttributes() {
@@ -1119,10 +1153,10 @@
                 };
             }
         });
-        
+
         // Create global editors object
         window.editors = window.editors || {};
-        
+
         // Initialize userInput editor when DOM is ready
         function initUserInputEditor() {
             const element = document.getElementById('userInput');
@@ -1130,7 +1164,7 @@
                 console.warn('userInput element not found');
                 return;
             }
-            
+
             try {
                 const editor = new Editor({
                     element: element,
@@ -1165,12 +1199,12 @@
                         }
                     }
                 });
-                
+
                 // Initial visibility check
                 if (typeof updateAnalyseAndResetButtons === 'function') {
                     updateAnalyseAndResetButtons(false);
                 }
-                
+
                 // Basic editor setup
                 editor.on('create', () => {
                     console.log('[TIPTAP] Editor created, ensuring editability');
@@ -1184,31 +1218,31 @@
                         console.log('[TIPTAP] Editor made editable and focusable');
                     }
                 });
-                
+
                 window.editors.userInput = editor;
                 console.log('[TIPTAP] userInput editor initialized successfully');
-                
+
                 // Dispatch event to notify other scripts
                 window.dispatchEvent(new CustomEvent('tiptapReady'));
             } catch (error) {
                 console.error('[TIPTAP] Failed to initialize editor:', error);
             }
         }
-        
+
         // Defer initialization until after critical data loads
         // Listen for custom event from main app initialization
         window.addEventListener('criticalDataLoaded', () => {
             console.log('[TIPTAP] Critical data loaded, initializing editor...');
             initUserInputEditor();
         });
-        
+
         // Store function globally so it can be called manually if needed
         window.initTipTapEditor = initUserInputEditor;
     </script>
-    
+
     <!-- Anonymisation module -->
     <script type="module" src="anonymisation.js"></script>
-    
+
     <!-- Link Click Handler for TipTap -->
     <script>
         // Global click handler for TipTap links
@@ -1222,7 +1256,7 @@
                         console.log('[TIPTAP] Citation link clicked');
                         event.preventDefault();
                         event.stopPropagation();
-                        
+
                         // Check if prepareViewerAuth is available
                         if (typeof window.prepareViewerAuth === 'function') {
                             window.prepareViewerAuth(event, link);
@@ -1258,26 +1292,26 @@
 
     <!-- Cache Manager - Load before main script -->
     <script src="cache-manager.js"></script>
-    
+
     <!-- Main application script -->
     <script type="module" src="script.js"></script>
 
     <!-- Column layout functionality -->
     <script>
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             const fixColumnLayout = () => {
                 const threeColumnView = document.getElementById('threeColumnView');
                 const historyColumn = document.getElementById('historyColumn');
                 const transcriptColumn = document.getElementById('transcriptColumn');
                 const issuesColumn = document.getElementById('issuesColumn');
-                
+
                 if (threeColumnView && historyColumn && transcriptColumn && issuesColumn) {
                     // Force layout recalculation in case something broke it
                     threeColumnView.style.display = 'grid';
-                    const columnWidth = window.innerWidth > 768 
+                    const columnWidth = window.innerWidth > 768
                         ? ['20fr', '80fr']
                         : ['1fr'];
-                    
+
                     if (window.innerWidth > 768) {
                         threeColumnView.style.gridTemplateColumns = columnWidth.join(' ');
                         threeColumnView.style.gridTemplateAreas = '"history transcript"';
@@ -1287,13 +1321,14 @@
                     }
                 }
             };
-            
+
             // Apply layout fixes when page loads
             fixColumnLayout();
-            
+
             // Also fix layout on window resize
             window.addEventListener('resize', fixColumnLayout);
         });
     </script>
 </body>
+
 </html>

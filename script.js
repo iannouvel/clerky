@@ -14451,6 +14451,9 @@ async function runParallelAnalysis(guidelines) {
     // Filter and Sort Results
     // Note: `r.suggestions` is the full result object from getPracticePointSuggestions
     // which has a `suggestions` array property inside it
+    const successfulResults = results
+        .filter(r => r.status === 'fulfilled' && r.suggestions && r.suggestions.suggestions && r.suggestions.suggestions.length > 0);
+
     // Flatten all suggestions from successful results
     let allSuggestions = [];
 
