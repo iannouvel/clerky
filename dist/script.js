@@ -12287,15 +12287,8 @@ async function processWorkflow() {
         updateUser('Starting complete workflow processing...', true);
 
         // Show a visible progress indicator in summary1 to keep user informed
-        appendToSummary1(`
-            <div id="workflow-progress-indicator" style="padding: 20px; text-align: center;">
-                <div style="margin-bottom: 15px;">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: var(--accent-color);"></i>
-                </div>
-                <h3 style="margin: 0 0 10px 0; color: var(--text-primary);">🔍 Analyzing Clinical Note</h3>
-                <p id="workflow-status-text" style="margin: 0; color: var(--text-secondary);">Checking guideline scope...</p>
-            </div>
-        `, true);
+        // Removed per user request to save vertical space
+        // appendToSummary1(..., true);
 
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
@@ -14524,6 +14517,23 @@ async function runParallelAnalysis(guidelines) {
         statusText.innerHTML = `<strong>Analysis Complete</strong><br>${statusSummary}`;
         statusText.parentElement.style.background = 'var(--bg-tertiary)';
         statusText.parentElement.style.border = '1px solid var(--accent-color)';
+
+        // Ephemeral message: Remove after 3 seconds to save vertical space
+        setTimeout(() => {
+            if (statusText.parentElement) {
+                statusText.parentElement.style.transition = 'opacity 0.5s ease-out, height 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out';
+                statusText.parentElement.style.opacity = '0';
+                statusText.parentElement.style.height = '0';
+                statusText.parentElement.style.padding = '0';
+                statusText.parentElement.style.margin = '0';
+                statusText.parentElement.style.overflow = 'hidden';
+
+                // Remove from DOM after transition
+                setTimeout(() => {
+                    if (statusText.parentElement) statusText.parentElement.remove();
+                }, 500);
+            }
+        }, 3000);
     }
 
     // Display Aggregated Results (Flat List)
