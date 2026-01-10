@@ -14547,11 +14547,15 @@ async function runParallelAnalysis(guidelines) {
         const suggestionsList = document.createElement('div');
         suggestionsList.className = 'suggestions-flat-list';
 
+        // Add Title
+        const titleHtml = '<h3 style="margin: 20px 0 15px 0; color: var(--text-primary); font-size: 1.1em; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block;">Clinical Suggestions</h3>';
+
         const suggestionsHtml = allSuggestions.map((suggestion, index) => {
             // Safely access suggestion properties with fallbacks
             const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
             const suggestionType = suggestion.type || suggestion.priority || 'info';
-            const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+            // Use 'why' field if available, fallback to reasoning/rationale
+            const suggestionReasoning = suggestion.why || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
             const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
 
             // Create a unique ID for this suggestion card
@@ -14574,7 +14578,7 @@ async function runParallelAnalysis(guidelines) {
                 
                 <div id="${suggestionId}-content" class="suggestion-content">
                     <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
                 </div>
                 
                 <div id="${suggestionId}-edit-mode" class="suggestion-edit-mode" style="display: none; margin-bottom: 10px;">
@@ -14708,7 +14712,7 @@ async function runParallelAnalysis(guidelines) {
             }
         };
 
-        suggestionsList.innerHTML = suggestionsHtml;
+        suggestionsList.innerHTML = titleHtml + suggestionsHtml;
         outputContainer.appendChild(suggestionsList);
     }
 }
