@@ -23935,3 +23935,58 @@ Please assess the compliance of the original clinical note against this guidelin
         res.status(500).json({ success: false, error: error.message });
     }
 });
+// Endpoint to identify clinical issues from a guideline
+app.post('/api/admin/identify-clinical-issue', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineSummary, guidelineTitle, existingIssues } = req.body;
+
+        if (!guidelineSummary) {
+            return res.status(400).json({ success: false, error: 'Missing guideline summary' });
+        }
+
+        const prompt = `
+You are an expert medical taxonomist. Your goal is to maintain a clean, high-level list of clinical issues (conditions/diseases) based on clinical guidelines.
+
+ANALYSIS TARGET:
+Guideline Title: "${guidelineTitle || 'Unknown'}"
+Summary: "${guidelineSummary}"
+
+EXISTING CLINICAL ISSUES (Categorized):
+${JSON.stringify(existingIssues, null, 2)}
+
+INSTRUCTIONS:
+1. Determine if the MAIN clinical topic of this guideline is ALREADY COVERED by any of the existing issues.
+   - "Covered" means there is an exact match or a very close synonym (e.g., "Hypertension" covers "High Blood Pressure").
+   - Do NOT count it as covered if the specific nuance is important (e.g., "Gestational Diabetes" is distinct from "Diabetes").
+
+2. If COVERED, return exactly: "COVERED"
+
+3. If NOT COVERED, propose a NEW entry.
+   - Choose an appropriate category (use an existing one if possible, e.g., "obstetrics", "gynaecology").
+   - Format: "NEW: <Category>: <Issue Name>"
+   - Example: "NEW: obstetrics: Postpartum Depression"
+
+4. CRITICAL RULES:
+   - Issue Name must be a specific condition or disease, NOT a procedure or guideline type.
+   - Keep it concise (e.g., "Pre-eclampsia", not "Management of Pre-eclampsia").
+   - Use British English spelling.
+
+RESPONSE (Text only):
+`;
+
+        const messages = [{ role: 'user', content: prompt }];
+        // Use system user ID from request or fallback
+        const result = await sendToAI(messages, 'deepseek-chat', null, req.user ? req.user.uid : 'system');
+
+        res.json({
+            success: true,
+            result: result.content,
+            ai_provider: result.ai_provider,
+            ai_model: result.ai_model
+        });
+
+    } catch (error) {
+        console.error('Error in identify-clinical-issue:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});

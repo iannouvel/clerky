@@ -5853,3 +5853,205 @@ ${responseText}
         alert('An error occurred while initializing the page: ' + error.message);
     }
 }); 
+// ==========================================
+// Clinical Issues Synchronization Logic
+// ==========================================
+
+let gatheredNewIssues = [];
+let originalIssuesData = null;
+
+async function syncClinicalIssues() {
+    const statusEl = document.getElementById('syncIssuesStatus');
+    const logEl = document.getElementById('syncIssuesLog');
+    const progressContainer = document.getElementById('syncProgressContainer');
+    const progressBar = document.getElementById('syncProgressBar');
+    const progressText = document.getElementById('syncProgressText');
+    const progressPercent = document.getElementById('syncProgressPercent');
+    const downloadBtn = document.getElementById('downloadIssuesJsonBtn');
+
+    if (!statusEl || !logEl) return;
+
+    // Reset UI
+    statusEl.innerHTML = 'Initializing...';
+    logEl.style.display = 'block';
+    logEl.innerHTML = '';
+    progressContainer.style.display = 'block';
+    progressBar.style.width = '0%';
+    progressPercent.textContent = '0%';
+    downloadBtn.style.display = 'none';
+    gatheredNewIssues = [];
+
+    try {
+        // 1. Fetch existing clinical issues
+        statusEl.textContent = 'Fetching clinical_issues.json...';
+        const issuesRes = await fetch('/clinical_issues.json');
+        if (!issuesRes.ok) throw new Error('Failed to load clinical_issues.json');
+        originalIssuesData = await issuesRes.json();
+
+        // Flatten issues for quick lookup
+        const allExistingIssues = new Set();
+        Object.values(originalIssuesData).forEach(list => {
+            if (Array.isArray(list)) list.forEach(i => allExistingIssues.add(i.toLowerCase()));
+        });
+
+        // 2. Fetch guidelines from Firestore
+        statusEl.textContent = 'Fetching guidelines from Firestore...';
+        const snapshot = await db.collection('guidelines').get();
+        const guidelines = [];
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.summary && data.title) {
+                guidelines.push({ id: doc.id, ...data });
+            }
+        });
+
+        statusEl.textContent = `Found ${guidelines.length} guidelines. Starting analysis...`;
+        log('INFO', `Loaded ${allExistingIssues.size} existing issues and ${guidelines.length} guidelines.`);
+
+        // 3. Process each guideline
+        let processedCount = 0;
+        let newIssuesCount = 0;
+
+        for (const guideline of guidelines) {
+            processedCount++;
+            const pct = Math.round((processedCount / guidelines.length) * 100);
+            progressBar.style.width = `${pct}%`;
+            progressPercent.textContent = `${pct}%`;
+            progressText.textContent = `Processing ${processedCount}/${guidelines.length}`;
+
+            // Quick Client-Side Filter: Check if title matches any existing issue exactly
+            if (allExistingIssues.has(guideline.title.toLowerCase())) {
+                log('SKIP', `"${guideline.title}" - Exact title match found.`);
+                continue;
+            }
+
+            try {
+                // Call Server Endpoint
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/api/admin/identify-clinical-issue`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        guidelineTitle: guideline.title,
+                        guidelineSummary: guideline.summary,
+                        existingIssues: originalIssuesData // Send structure for context
+                    })
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.error || 'Server error');
+                }
+
+                const result = await response.json();
+                const analysis = result.result.trim();
+
+                if (analysis.startsWith('NEW:')) {
+                    // Parse "NEW: Category: Issue Name"
+                    const parts = analysis.split(':').map(s => s.trim());
+                    if (parts.length >= 3) {
+                        const category = parts[1].toLowerCase();
+                        const issueName = parts.slice(2).join(':').trim(); // Join back in case name has colons
+
+                        // Validation
+                        if (!issueName || issueName.length < 3) {
+                            log('WARN', `Invalid issue name suggested: "${issueName}"`);
+                            continue;
+                        }
+
+                        // Add to our tracked list
+                        gatheredNewIssues.push({ category, issue: issueName, source: guideline.title });
+                        newIssuesCount++;
+                        log('NEW', `[${category}] ${issueName} (Source: ${guideline.title})`, '#28a745');
+                    } else {
+                        log('WARN', `Malformed NEW response: ${analysis}`);
+                    }
+                } else if (analysis === 'COVERED') {
+                    log('OK', `"${guideline.title}" - Covered.`);
+                } else {
+                    log('UNK', `Unexpected response for "${guideline.title}": ${analysis}`);
+                }
+
+            } catch (err) {
+                log('ERR', `Error processing "${guideline.title}": ${err.message}`, 'red');
+            }
+
+            // Small delay to prevent UI freezing and generic rate limiting
+            await new Promise(r => setTimeout(r, 100));
+        }
+
+        // 4. Finish
+        statusEl.innerHTML = `Complete! Found <b>${newIssuesCount}</b> new clinical issues.`;
+        if (newIssuesCount > 0) {
+            downloadBtn.style.display = 'inline-flex';
+        }
+
+    } catch (error) {
+        console.error(error);
+        statusEl.textContent = `Error: ${error.message}`;
+        log('FATAL', error.message, 'red');
+    }
+}
+
+function log(type, message, color = null) {
+    const logEl = document.getElementById('syncIssuesLog');
+    if (!logEl) return;
+    const div = document.createElement('div');
+    div.textContent = `[${type}] ${message}`;
+    if (color) div.style.color = color;
+    logEl.appendChild(div);
+    logEl.scrollTop = logEl.scrollHeight;
+}
+
+function downloadIssuesJson() {
+    if (!originalIssuesData || gatheredNewIssues.length === 0) return;
+
+    // Deep copy original data
+    const newData = JSON.parse(JSON.stringify(originalIssuesData));
+
+    // Merge new issues
+    gatheredNewIssues.forEach(({ category, issue }) => {
+        // Normalize category (e.g., map "obstetric" to "obstetrics")
+        let targetCat = category;
+        if (targetCat === 'obstetric') targetCat = 'obstetrics';
+        if (targetCat === 'gynaecologic') targetCat = 'gynaecology';
+
+        if (!newData[targetCat]) {
+            newData[targetCat] = [];
+        }
+
+        // Check for duplicates in the target array
+        if (!newData[targetCat].includes(issue)) {
+            newData[targetCat].push(issue);
+        }
+    });
+
+    // Sort arrays
+    Object.keys(newData).forEach(key => {
+        newData[key].sort();
+    });
+
+    // Create and trigger download
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(newData, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", "clinical_issues_updated.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+}
+
+// Attach listeners safely
+const initSyncTools = () => {
+    document.getElementById('syncClinicalIssuesBtn')?.addEventListener('click', syncClinicalIssues);
+    document.getElementById('downloadIssuesJsonBtn')?.addEventListener('click', downloadIssuesJson);
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSyncTools);
+} else {
+    initSyncTools();
+}
