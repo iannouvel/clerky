@@ -17184,7 +17184,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         <style>
         .compliance-scoring-results {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             border: 2px solid #17a2b8;
             border-radius: 12px;
             padding: 25px;
@@ -17200,7 +17200,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .scoring-header p {
             margin: 0 0 20px 0;
-            color: #6c757d;
+            color: var(--text-secondary);
             font-style: italic;
         }
 
@@ -17211,7 +17211,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
             gap: 30px;
             margin: 25px 0;
             padding: 20px;
-            background: white;
+            background: var(--bg-primary);
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -17225,7 +17225,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: white;
+            background: var(--bg-primary);
         }
 
         .score-number {
@@ -17236,7 +17236,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .score-label {
             font-size: 0.9em;
-            color: #6c757d;
+            color: var(--text-secondary);
             margin-top: 5px;
         }
 
@@ -17251,7 +17251,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .dimension-scores h4 {
             margin: 0 0 15px 0;
-            color: #495057;
+            color: var(--text-primary);
         }
 
         .dimensions-grid {
@@ -17261,7 +17261,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         }
 
         .dimension-item {
-            background: white;
+            background: var(--bg-primary);
             padding: 15px;
             border-radius: 6px;
             text-align: center;
@@ -17270,7 +17270,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .dimension-name {
             font-weight: 600;
-            color: #495057;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
@@ -17283,7 +17283,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .dimension-weight {
             font-size: 0.85em;
-            color: #6c757d;
+            color: var(--text-secondary);
         }
 
         .scoring-section {
@@ -17293,18 +17293,18 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         }
 
         .strengths {
-            background: #d4edda;
+            background: rgba(40, 167, 69, 0.15);
             border-left: 4px solid #28a745;
         }
 
         .improvements {
-            background: #fff3cd;
+            background: rgba(255, 193, 7, 0.15);
             border-left: 4px solid #ffc107;
         }
 
         .scoring-section h4 {
             margin: 0 0 10px 0;
-            color: #495057;
+            color: var(--text-primary);
         }
 
         .scoring-section ul {
@@ -17320,14 +17320,14 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         .key-findings {
             margin: 20px 0;
             padding: 15px;
-            background: white;
+            background: var(--bg-primary);
             border-radius: 6px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .key-findings h4 {
             margin: 0 0 15px 0;
-            color: #495057;
+            color: var(--text-primary);
         }
 
         .findings-group {
@@ -17335,7 +17335,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         }
 
         .findings-group strong {
-            color: #495057;
+            color: var(--text-primary);
         }
 
         .findings-list {
@@ -17358,7 +17358,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         .compliance-insights {
             margin: 20px 0 0 0;
             padding: 15px;
-            background: #e3f2fd;
+            background: rgba(23, 162, 184, 0.15);
             border-radius: 6px;
             border-left: 4px solid #17a2b8;
         }
@@ -17371,11 +17371,11 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
         .compliance-insights p {
             margin: 0;
             line-height: 1.5;
-            color: #495057;
+            color: var(--text-primary);
         }
 
         .compliance-scoring-init, .compliance-scoring-error {
-            background: #f8f9fa;
+            background: var(--bg-secondary);
             border: 2px solid #17a2b8;
             border-radius: 8px;
             padding: 20px;
@@ -17385,7 +17385,7 @@ async function displayComplianceScoring(scoring, guidelineTitle) {
 
         .compliance-scoring-error {
             border-color: #dc3545;
-            background: #f8d7da;
+            background: rgba(220, 53, 69, 0.15);
         }
 
         .scoring-spinner {
