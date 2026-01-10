@@ -1425,7 +1425,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         };
 
         // Create a simple, direct link with text (emojis get stripped by DOM processing)
-        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: #333; font-size: 0.9em; margin-left: 10px !important; display: inline-block; width: auto; flex-shrink: 0;">[PDF]</a>`;
+        return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link guideline-pdf-link" rel="noopener noreferrer" title="View PDF" style="text-decoration: none; cursor: pointer; color: var(--text-primary); font-size: 0.9em; margin-left: 10px !important; display: inline-block; width: auto; flex-shrink: 0;">[PDF]</a>`;
     }
 
     // Helper function to format relevance score
@@ -5692,13 +5692,13 @@ async function displayPracticePointSuggestions(result) {
         let filterSummary = '';
         if (result.totalPracticePoints > 0) {
             filterSummary = `
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin: 15px 0;">
-                    <p style="margin: 0 0 10px 0; font-size: 0.95em; color: #166534; font-weight: 600;">📊 Analysis Summary</p>
-                    <p style="margin: 0; font-size: 0.9em; color: #15803d;">
+                <div style="background: var(--bg-tertiary); border: 1px solid #22c55e; border-radius: 6px; padding: 15px; margin: 15px 0;">
+                    <p style="margin: 0 0 10px 0; font-size: 0.95em; color: var(--text-primary); font-weight: 600;">📊 Analysis Summary</p>
+                    <p style="margin: 0; font-size: 0.9em; color: var(--text-secondary);">
                         ${result.totalPracticePoints} practice points analysed
                         → ${result.relevantPracticePoints || 0} relevant to this patient
                         → ${result.importantPracticePoints || 0} clinically important
-                        → <strong>${result.compliantCount || 0} compliant</strong>
+                        → <strong style="color: #22c55e;">${result.compliantCount || 0} compliant</strong>
                     </p>
                 </div>
             `;
@@ -12290,10 +12290,10 @@ async function processWorkflow() {
         appendToSummary1(`
             <div id="workflow-progress-indicator" style="padding: 20px; text-align: center;">
                 <div style="margin-bottom: 15px;">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: #3498db;"></i>
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: var(--accent-color);"></i>
                 </div>
-                <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🔍 Analyzing Clinical Note</h3>
-                <p id="workflow-status-text" style="margin: 0; color: #7f8c8d;">Checking guideline scope...</p>
+                <h3 style="margin: 0 0 10px 0; color: var(--text-primary);">🔍 Analyzing Clinical Note</h3>
+                <p id="workflow-status-text" style="margin: 0; color: var(--text-secondary);">Checking guideline scope...</p>
             </div>
         `, true);
 
@@ -15042,7 +15042,7 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                             <p>${suggestion.context}</p>
                         </div>
                         
-                        <div class="guideline-link-section" style="margin-top: 10px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;">
+                        <div class="guideline-link-section" style="margin-top: 10px; padding: 10px; background: var(--bg-tertiary); border-radius: 4px; border-left: 3px solid #0ea5e9;">
                             <label style="font-weight: bold;">Guideline:</label>
                             ${createGuidelineViewerLink(suggestion.sourceGuidelineId, suggestion.sourceGuideline, suggestion.sourceGuidelineFilename, suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText)}
                         </div>
@@ -16890,7 +16890,7 @@ async function processQuestionAgainstGuidelines() {
             `<hr>` +
             `<div class="guideline-answer">${formattedAnswer}</div>` +
             `<hr>` +
-            `<p style="font-size: 0.8em; color: #666;"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
+            `<p style="font-size: 0.8em; color: var(--text-secondary);"><em>Answer generated using ${data.ai_provider || 'AI'} (${data.ai_model || 'unknown model'})</em></p>`;
 
         appendToOutputField(answerMessage, false, true);
 
