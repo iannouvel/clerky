@@ -12286,6 +12286,17 @@ async function processWorkflow() {
         // Use status bar for progress; avoid popping summary1 open during workflow
         updateUser('Starting complete workflow processing...', true);
 
+        // Show a visible progress indicator in summary1 to keep user informed
+        appendToSummary1(`
+            <div id="workflow-progress-indicator" style="padding: 20px; text-align: center;">
+                <div style="margin-bottom: 15px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: #3498db;"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; color: #2c3e50;">🔍 Analyzing Clinical Note</h3>
+                <p id="workflow-status-text" style="margin: 0; color: #7f8c8d;">Checking guideline scope...</p>
+            </div>
+        `, true);
+
         // Step 1: Select Guideline Scope (check for persisted selection first)
         console.log('[DEBUG] processWorkflow: Step 1 - Check for persisted guideline scope selection');
         updateAnalyseButtonProgress('Checking Guidelines Scope...', true);
@@ -14485,26 +14496,33 @@ async function runParallelAnalysis(guidelines) {
 
             // result.suggestions is the full API response object, which has a .suggestions array
             const suggestionsArray = result.suggestions.suggestions || [];
-            const suggestionsHtml = suggestionsArray.map(suggestion => `
+            const suggestionsHtml = suggestionsArray.map(suggestion => {
+                // Safely access suggestion properties with fallbacks
+                const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
+                const suggestionType = suggestion.type || suggestion.priority || 'info';
+                const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+
+                return `
                 <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                     <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                        <span class="badge ${suggestion.type === 'critical' ? 'badge-danger' :
-                    suggestion.type === 'important' ? 'badge-warning' : 'badge-info'}" 
+                        <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
+                        suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
                               style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
-                            ${suggestion.type}
+                            ${suggestionType}
                         </span>
                     </div>
                     <div class="suggestion-content">
-                        <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestion.text}</p>
-                        <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestion.reasoning}</em></p>
+                        <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
+                        <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
                     </div>
                      <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee;">
-                        <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestion.text.replace(/'/g, "\\'")}')">
+                        <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
                             <i class="fas fa-copy"></i> Copy
                         </button>
                     </div>
                 </div>
-            `).join('');
+            `;
+            }).join('');
 
             const suggestionsContainer = document.createElement('div');
             suggestionsContainer.innerHTML = suggestionsHtml;
