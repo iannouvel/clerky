@@ -14540,22 +14540,22 @@ async function runParallelAnalysis(guidelines) {
             const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
 
             return `
-            <div class="suggestion-card" style="background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div class="suggestion-card" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                     <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
                     suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
                           style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
                         ${suggestionType}
                     </span>
-                    <span style="font-size: 0.8em; color: #666; max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
+                    <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
                        Guideline: ${sourceName}
                     </span>
                 </div>
                 <div class="suggestion-content">
                     <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
-                    <p style="margin: 0; color: #666; font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
                 </div>
-                 <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed #eee;">
+                 <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light);">
                     <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
                         <i class="fas fa-copy"></i> Copy
                     </button>
