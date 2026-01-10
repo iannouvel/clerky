@@ -1515,8 +1515,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         <style>
         .guideline-selection-interface {
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 20px;
             margin: 20px 0;
@@ -1530,13 +1530,13 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .selection-header h2 {
             margin: 0 0 10px 0;
-            color: #2c3e50;
+            color: var(--text-primary);
             font-size: 1.3em;
         }
         
         .selection-header p {
             margin: 0 0 15px 0;
-            color: #6c757d;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
         
@@ -1546,7 +1546,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .guideline-category h3 {
             margin: 0 0 10px 0;
-            color: #2c3e50;
+            color: var(--text-primary);
             font-size: 1.1em;
             border-bottom: 1px solid #dee2e6;
             padding-bottom: 5px;
@@ -1555,7 +1555,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         .guidelines-list {
             border: 1px solid #ddd;
             border-radius: 4px;
-            background: white;
+            background: var(--bg-secondary);
         }
         
         .guideline-item {
@@ -1564,7 +1564,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         }
         
         .guideline-item:hover {
-            background: #f8f9fa;
+            background: var(--bg-tertiary);
         }
         
         .guideline-item:last-child {
@@ -1598,7 +1598,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         
         .guideline-title {
             font-weight: 500;
-            color: #2c3e50;
+            color: var(--text-primary);
             line-height: 1.3;
             min-width: 0;
             word-wrap: break-word;
