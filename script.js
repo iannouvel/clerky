@@ -1813,7 +1813,7 @@ function showSelectionButtons() {
 
 // Function to hide selection buttons from the button container
 function hideSelectionButtons() {
-    const buttonsGroup = document.getElementById('selectionButtonsGroup');
+    const buttonsGroup = document.getElementById('selectionButtonsGroup') || document.querySelector('.selection-buttons-group');
     if (buttonsGroup) {
         buttonsGroup.remove();
         console.log('[DEBUG] Selection buttons removed from button container');
@@ -14384,6 +14384,11 @@ window.processSelectedGuidelines = processSelectedGuidelines;
 async function runParallelAnalysis(guidelines) {
     console.log('[DEBUG] Starting Parallel Analysis for', guidelines.length, 'guidelines');
 
+    // Hide selection buttons if they exist
+    if (typeof hideSelectionButtons === 'function') {
+        hideSelectionButtons();
+    }
+
     // Create a container for the aggregated results
     const containerId = 'parallel-analysis-results-' + Date.now();
     const resultsContainerHtml = `
@@ -14556,7 +14561,7 @@ async function runParallelAnalysis(guidelines) {
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
                 </div>
                  <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light);">
-                    <button class="btn-xs btn-outline-primary copy-suggestion-btn" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
+                    <button class="btn-xs btn-outline-primary copy-suggestion-btn" style="color: var(--text-primary); border: 1px solid var(--border-color); background: transparent;" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
                         <i class="fas fa-copy"></i> Copy
                     </button>
                     <!-- Future: Add Apply/Disregard buttons here if consistent with other workflows -->
