@@ -14388,10 +14388,10 @@ async function runParallelAnalysis(guidelines) {
     const containerId = 'parallel-analysis-results-' + Date.now();
     const resultsContainerHtml = `
         <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
-            <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border: 1px solid #c8e6c9;">
+            <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary);">
                 <strong><i class="fas fa-layer-group"></i> Parallel Analysis in Progress</strong><br>
                 <span id="${containerId}-status-text">Starting workers...</span>
-                <div class="progress-bar-container" style="margin-top: 10px; background: #fff; height: 8px; border-radius: 4px; overflow: hidden;">
+                <div class="progress-bar-container" style="margin-top: 10px; background: var(--bg-input); height: 8px; border-radius: 4px; overflow: hidden;">
                     <div id="${containerId}-progress" style="width: 0%; height: 100%; background: #4caf50; transition: width 0.3s ease;"></div>
                 </div>
             </div>
@@ -14517,8 +14517,8 @@ async function runParallelAnalysis(guidelines) {
 
     if (statusText) {
         statusText.innerHTML = `<strong>Analysis Complete</strong><br>${statusSummary}`;
-        statusText.parentElement.style.background = '#e3f2fd';
-        statusText.parentElement.style.border = '1px solid #bbdefb';
+        statusText.parentElement.style.background = 'var(--bg-tertiary)';
+        statusText.parentElement.style.border = '1px solid var(--accent-color)';
     }
 
     // Display Aggregated Results (Flat List)
