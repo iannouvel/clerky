@@ -2,7 +2,11 @@
 import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+// Updated imports to include collection and getDocs
+import { doc, getDoc, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
+// Fetch guidelines using modular Firestore API
+// Removed top-level Firestore fetch; logic moved to syncClinicalIssues function
 
 // Initialize Analytics (disabled in this environment to avoid 403 warnings)
 let analytics; // getAnalytics(app) disabled
@@ -28,11 +32,11 @@ async function initializeFirebase() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     try {
         // Initialize Firebase first
         await initializeFirebase();
-        
+
         const buttons = document.querySelectorAll('.nav-btn');
         const contents = document.querySelectorAll('.tab-content');
 
@@ -70,10 +74,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         async function fetchApiCosts() {
             const costDisplay = document.getElementById('costDisplay');
             const statusMessage = document.getElementById('costStatusMessage');
-            
+
             statusMessage.textContent = 'Fetching API usage data...';
             costDisplay.innerHTML = '<div class="loading">Loading cost data...</div>';
-            
+
             // Get the current user
             const user = auth.currentUser;
             if (!user) {
@@ -81,7 +85,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 costDisplay.innerHTML = '<div class="auth-error">Please log in to view API usage costs</div>';
                 return;
             }
-            
+
             // Get Firebase token
             let token;
             try {
@@ -92,17 +96,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                 costDisplay.innerHTML = '<div class="auth-error">Failed to authenticate. Please try logging in again.</div>';
                 return;
             }
-            
+
             // Fetch cost data with retry logic
             for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
                 try {
                     if (attempt > 0) {
-                        console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for cost data after ${RETRY_DELAYS[attempt-1]/1000} seconds...`);
+                        console.log(`Retry attempt ${attempt}/${MAX_RETRIES} for cost data after ${RETRY_DELAYS[attempt - 1] / 1000} seconds...`);
                         statusMessage.textContent = `Retry ${attempt}/${MAX_RETRIES}...`;
-                        await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt-1]));
+                        await new Promise(resolve => setTimeout(resolve, RETRY_DELAYS[attempt - 1]));
                     }
-                    
-                    console.log(`Fetching API cost data (attempt ${attempt+1}/${MAX_RETRIES+1})...`);
+
+                    console.log(`Fetching API cost data (attempt ${attempt + 1}/${MAX_RETRIES + 1})...`);
                     const response = await fetch(`${SERVER_URL}/api-usage-stats`, {
                         method: 'GET',
                         headers: {
@@ -110,29 +114,29 @@ document.addEventListener('DOMContentLoaded', async function() {
                             'Authorization': `Bearer ${token}`
                         }
                     });
-                    
+
                     // Handle unauthorized access
                     if (response.status === 401 || response.status === 403) {
                         statusMessage.textContent = 'Access denied';
                         costDisplay.innerHTML = '<div class="auth-error">You do not have permission to view API usage costs</div>';
                         return;
                     }
-                    
+
                     if (!response.ok) {
                         throw new Error(`Server returned status ${response.status}`);
                     }
-                    
+
                     const data = await response.json();
                     costData = data;
                     displayCostData(data);
-                    
+
                     // Update status message
                     const date = new Date();
                     statusMessage.textContent = `Last updated: ${date.toLocaleString()}`;
                     return;
                 } catch (error) {
-                    console.error(`Error fetching API cost data (attempt ${attempt+1}/${MAX_RETRIES+1}):`, error);
-                    
+                    console.error(`Error fetching API cost data (attempt ${attempt + 1}/${MAX_RETRIES + 1}):`, error);
+
                     // On last attempt, show error message
                     if (attempt === MAX_RETRIES) {
                         statusMessage.textContent = 'Failed to load cost data';
@@ -141,21 +145,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 }
             }
         }
-        
+
         // Function to display the cost data
         function displayCostData(data) {
             const costDisplay = document.getElementById('costDisplay');
-            
+
             // Clear previous content
             costDisplay.innerHTML = '';
-            
+
             if (!data || !data.success) {
                 costDisplay.innerHTML = '<div class="error">Failed to fetch API usage cost data</div>';
                 return;
             }
-            
+
             const { stats } = data;
-            
+
             // Create cost summary section
             const summaryCard = document.createElement('div');
             summaryCard.className = 'cost-card';
@@ -192,12 +196,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 </div>
             `;
             costDisplay.appendChild(summaryCard);
-            
+
             // Create endpoint breakdown card
             if (stats.byEndpoint && Object.keys(stats.byEndpoint).length > 0) {
                 const endpointCard = document.createElement('div');
                 endpointCard.className = 'cost-card';
-                
+
                 let tableHTML = `
                     <h3>Cost by Endpoint</h3>
                     <table class="cost-table">
@@ -211,11 +215,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                         </thead>
                         <tbody>
                 `;
-                
+
                 // Sort endpoints by cost (highest first)
                 const endpoints = Object.entries(stats.byEndpoint)
                     .sort((a, b) => b[1].estimatedCost - a[1].estimatedCost);
-                
+
                 for (const [endpoint, data] of endpoints) {
                     tableHTML += `
                         <tr>
@@ -226,16 +230,16 @@ document.addEventListener('DOMContentLoaded', async function() {
                         </tr>
                     `;
                 }
-                
+
                 tableHTML += `
                         </tbody>
                     </table>
                 `;
-                
+
                 endpointCard.innerHTML = tableHTML;
                 costDisplay.appendChild(endpointCard);
             }
-            
+
             // Add note about cost calculation
             const noteCard = document.createElement('div');
             noteCard.className = 'cost-card';
@@ -257,7 +261,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (refreshCostBtn) {
             refreshCostBtn.addEventListener('click', fetchApiCosts);
         }
-        
+
         // Tools panel toggle
         const toolsToggleBtn = document.getElementById('toolsToggleBtn');
         const toolsPanel = document.getElementById('toolsPanel');
@@ -288,7 +292,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Function to show login prompt
         function showLoginPrompt() {
             console.log('Showing login prompt');
-            
+
             // Avoid adding multiple login buttons
             if (document.getElementById('devLoginBtn')) {
                 // Also update discovery status if present
@@ -296,7 +300,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 if (status) status.textContent = 'Please sign in to scan for new guidance.';
                 return;
             }
-            
+
             // Create login button that signs in directly
             const loginButton = document.createElement('button');
             loginButton.id = 'devLoginBtn';
@@ -312,15 +316,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                     alert('Sign-in failed: ' + (err && err.message ? err.message : err));
                 }
             });
-            
+
             const topBarCenter = document.querySelector('.top-bar-center');
             if (topBarCenter) topBarCenter.appendChild(loginButton);
-            
+
             // Surface inline hint in Discovery tab
             const status = document.getElementById('discoveryStatus');
             if (status) status.textContent = 'Please sign in to scan for new guidance.';
         }
-        
+
         // Check authentication state on page load
         onAuthStateChanged(auth, (user) => {
             console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
@@ -342,11 +346,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             } else {
                 // User is signed out - redirect to login page
                 console.log('User is signed out');
-                try { 
+                try {
                     // Use sessionStorage so redirect intent is scoped to this tab only
-                    sessionStorage.setItem('returnToPage', 'dev.html'); 
+                    sessionStorage.setItem('returnToPage', 'dev.html');
                     sessionStorage.setItem('returnAfterLogin', '1');
-                } catch (_) {}
+                } catch (_) { }
                 window.location.href = 'index.html';
             }
         });
@@ -367,12 +371,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                     console.log('🔍 DEBUG: User not logged in, skipping log archiving');
                     return;
                 }
-                
+
                 // Get Firebase token
                 const token = await user.getIdToken();
-                
+
                 console.log('🔍 DEBUG: Checking if log archiving is needed...');
-                
+
                 // Call the server endpoint to archive logs if needed
                 const response = await fetch(`${SERVER_URL}/admin/archive-logs-if-needed`, {
                     method: 'POST',
@@ -381,9 +385,9 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                
+
                 const result = await response.json();
-                
+
                 if (result.success) {
                     if (result.archivedFiles > 0) {
                         console.log(`🔍 DEBUG: Archived ${result.archivedFiles} old log files (${result.archivedGroups} groups)`);
@@ -393,7 +397,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 } else {
                     console.warn('🔍 DEBUG: Log archiving failed:', result.message);
                 }
-                
+
             } catch (error) {
                 // Fail silently - don't block log fetching if archiving fails
                 console.warn('🔍 DEBUG: Log archiving error (continuing anyway):', error.message);
@@ -403,12 +407,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         // OPTIMISATION: Helper function to format optimized log data into readable content
         function formatOptimizedLog(logData) {
             if (!logData) return 'No log data available';
-            
+
             let content = '';
-            
+
             // Header with basic info
             content += `AI: ${logData.ai_provider || 'Unknown'} (${logData.ai_model || 'unknown'})\n\n`;
-            
+
             // Interaction summary
             if (logData.type) {
                 content += `Type: ${logData.type}\n`;
@@ -416,7 +420,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (logData.endpoint) {
                 content += `Endpoint: ${logData.endpoint}\n`;
             }
-            
+
             // Token usage if available
             if (logData.token_usage) {
                 content += `\nToken Usage:\n`;
@@ -430,27 +434,27 @@ document.addEventListener('DOMContentLoaded', async function() {
                     content += `  Total: ${logData.token_usage.total_tokens} tokens\n`;
                 }
             }
-            
+
             // Content summary
             content += `\nContent Summary:\n`;
             content += `  Prompt Length: ${logData.prompt_length || 0} chars\n`;
             content += `  Response Length: ${logData.response_length || 0} chars\n`;
-            
+
             // Previews
             if (logData.prompt_preview) {
                 content += `\nPrompt Preview:\n${logData.prompt_preview}\n`;
             }
-            
+
             if (logData.response_preview) {
                 content += `\nResponse Preview:\n${logData.response_preview}\n`;
             }
-            
+
             // Full data for critical interactions
             if (logData.full_data) {
                 content += `\n--- FULL DATA (Critical Interaction) ---\n`;
                 content += JSON.stringify(logData.full_data, null, 2);
             }
-            
+
             return content;
         }
 
@@ -458,13 +462,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         async function fetchLogs() {
             const logDisplay = document.getElementById('logDisplay');
             logDisplay.textContent = 'Fetching logs...';
-            
+
             try {
                 // Auto-archive old logs if needed (silent operation)
                 await archiveLogsIfNeeded();
-                
+
                 logDisplay.textContent = 'Loading recent logs...';
-                
+
                 // Use GitHub's API to get repository contents for the logs directory
                 // Add proper headers for GitHub API
                 const response = await fetch(`${GITHUB_API_BASE}/contents/logs/ai-interactions`, {
@@ -472,37 +476,37 @@ document.addEventListener('DOMContentLoaded', async function() {
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
-                
+
                 if (!response.ok) {
                     throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
                 }
-                
+
                 const files = await response.json();
-                
+
                 // DEBUG: Log raw GitHub API response
                 console.log('🔍 DEBUG: GitHub API returned files:', files.length);
                 console.log('🔍 DEBUG: First 10 files from API:', files.map(f => f.name).slice(0, 10));
-                
+
                 // Check if we got a valid response
                 if (!Array.isArray(files)) {
                     throw new Error('Invalid response from GitHub API');
                 }
-                
+
                 // OPTIMISATION: Filter for JSON log files (no more .txt files)
                 const logFiles = files
                     .filter(file => file.type === 'file' && file.name.endsWith('.json'))
                     .sort((a, b) => b.name.localeCompare(a.name))
                     .slice(0, MAX_FILES_TO_LIST);  // Limit to MAX_FILES_TO_LIST most recent files
-                
+
                 // DEBUG: Log filtered and sorted results
                 console.log('🔍 DEBUG: Filtered .txt files count:', logFiles.length);
                 console.log('🔍 DEBUG: First 10 .txt files after sort:', logFiles.map(f => f.name).slice(0, 10));
-                    
+
                 if (logFiles.length === 0) {
                     logDisplay.textContent = 'No log files found in the repository';
                     return;
                 }
-                
+
                 // Store file metadata
                 allLogFiles = logFiles.map(file => ({
                     name: file.name,
@@ -512,17 +516,17 @@ document.addEventListener('DOMContentLoaded', async function() {
                     download_url: file.download_url,
                     html_url: file.html_url
                 }));
-                
+
                 // Update the display
                 logDisplay.textContent = `Found ${allLogFiles.length} log files. Loading ${Math.min(MAX_FILES_TO_LOAD, allLogFiles.length)} most recent...`;
-                
+
                 // Load content for the first MAX_FILES_TO_LOAD files
                 logs = [];
                 const filesToLoad = allLogFiles.slice(0, MAX_FILES_TO_LOAD);
-                
+
                 // DEBUG: Log files being loaded
                 console.log('🔍 DEBUG: Loading content for files:', filesToLoad.map(f => f.name));
-                
+
                 for (const file of filesToLoad) {
                     try {
                         // Fetch individual file contents
@@ -531,13 +535,13 @@ document.addEventListener('DOMContentLoaded', async function() {
                             console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
                             continue;
                         }
-                        
+
                         // OPTIMISATION: Parse JSON content for optimized logs
                         const jsonContent = await contentResponse.json();
-                        
+
                         // Create readable content from optimized log format
                         const readableContent = formatOptimizedLog(jsonContent);
-                        
+
                         // Extract timestamp from filename (format: YYYY-MM-DDThh-mm-ss-reply.json)
                         let date = new Date();
                         const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
@@ -546,10 +550,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                             const isoTimestamp = timestampMatch[1].replace(/-/g, (m, i) => i < 13 ? '-' : ':');
                             date = new Date(isoTimestamp);
                         }
-                        
+
                         // DEBUG: Log date parsing for each file
                         console.log('🔍 DEBUG: File:', file.name, '| Parsed date:', date.toISOString(), '| Timestamp match:', timestampMatch?.[1]);
-                        
+
                         logs.push({
                             name: file.name,
                             path: file.path,
@@ -563,26 +567,26 @@ document.addEventListener('DOMContentLoaded', async function() {
                         console.error(`Error loading log file ${file.name}:`, error);
                     }
                 }
-                
+
                 // Sort logs by date (newest first)
                 logs.sort((a, b) => b.date - a.date);
-                
+
                 // DEBUG: Log final sorted logs
                 console.log('🔍 DEBUG: Final logs sorted by date (newest first):');
                 logs.slice(0, 5).forEach((log, i) => {
-                    console.log(`  ${i+1}. ${log.name} | ${log.date.toISOString()}`);
+                    console.log(`  ${i + 1}. ${log.name} | ${log.date.toISOString()}`);
                 });
-                
+
                 if (logs.length > 0) {
                     console.log('🔍 DEBUG: Displaying log at index 0:', logs[0].name);
                     displayLog(0);
                 } else {
                     logDisplay.textContent = 'Failed to load any log files. Please try again later.';
                 }
-                
+
             } catch (error) {
                 console.error('Error fetching logs:', error);
-                
+
                 // Check if this is a CORS error
                 if (error.message && error.message.includes('CORS')) {
                     logDisplay.innerHTML = 'Error fetching logs: CORS policy prevented access.<br><br>' +
@@ -597,36 +601,36 @@ document.addEventListener('DOMContentLoaded', async function() {
         // ===============================================
         // NEW LOGS FUNCTIONALITY (Firestore-based)
         // ===============================================
-        
+
         let recentLogs = []; // Store fetched logs
         let selectedLogId = null; // Currently selected log ID
-        
+
         // Fetch recent AI logs from Firestore via the new endpoint
         async function fetchRecentLogs() {
             const tableBody = document.getElementById('logsTableBody');
             const detailContent = document.getElementById('logsDetailContent');
             const detailTitle = document.getElementById('logsDetailTitle');
-            
+
             if (!tableBody) return;
-            
+
             tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Loading logs...</td></tr>';
-            
+
             try {
                 const user = auth.currentUser;
                 if (!user) {
                     tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Please log in to view logs</td></tr>';
                     return;
                 }
-                
+
                 const token = await user.getIdToken();
-                
+
                 // Get filter values
                 const timeRange = document.getElementById('logsTimeRange')?.value || '1h';
                 const endpoint = document.getElementById('logsEndpointFilter')?.value || 'all';
                 const provider = document.getElementById('logsProviderFilter')?.value || 'all';
                 const successOnly = document.getElementById('logsStatusFilter')?.value || 'all';
                 const search = document.getElementById('logsSearchInput')?.value || '';
-                
+
                 const params = new URLSearchParams({
                     limit: 100,
                     timeRange,
@@ -635,47 +639,47 @@ document.addEventListener('DOMContentLoaded', async function() {
                     ...(successOnly !== 'all' && { successOnly }),
                     ...(search && { search })
                 });
-                
+
                 const response = await fetch(`${SERVER_URL}/getRecentAILogs?${params}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
                 });
-                
+
                 if (!response.ok) {
                     throw new Error(`Server error: ${response.status}`);
                 }
-                
+
                 const data = await response.json();
-                
+
                 if (!data.success) {
                     throw new Error(data.message || 'Failed to fetch logs');
                 }
-                
+
                 recentLogs = data.logs || [];
-                
+
                 // Update filter dropdowns with available options
                 updateLogsFilterDropdowns(data.filters);
-                
+
                 // Render the table
                 renderLogsTable();
-                
+
                 // Clear detail panel
                 selectedLogId = null;
                 if (detailTitle) detailTitle.textContent = 'Select a log entry to view details';
                 if (detailContent) detailContent.innerHTML = '<div class="logs-empty">Click on a row in the table above to view the full prompt and response.</div>';
-                
+
             } catch (error) {
                 console.error('Error fetching recent logs:', error);
                 tableBody.innerHTML = `<tr><td colspan="6" class="logs-empty">Error: ${error.message}</td></tr>`;
             }
         }
-        
+
         // Update filter dropdowns with available values
         function updateLogsFilterDropdowns(filters) {
             const endpointSelect = document.getElementById('logsEndpointFilter');
             const providerSelect = document.getElementById('logsProviderFilter');
-            
+
             if (endpointSelect && filters?.endpoints) {
                 const currentValue = endpointSelect.value;
                 endpointSelect.innerHTML = '<option value="all">All Endpoints</option>';
@@ -687,7 +691,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 });
                 endpointSelect.value = currentValue || 'all';
             }
-            
+
             if (providerSelect && filters?.providers) {
                 const currentValue = providerSelect.value;
                 providerSelect.innerHTML = '<option value="all">All Providers</option>';
@@ -700,22 +704,22 @@ document.addEventListener('DOMContentLoaded', async function() {
                 providerSelect.value = currentValue || 'all';
             }
         }
-        
+
         // Render the logs table
         function renderLogsTable() {
             const tableBody = document.getElementById('logsTableBody');
             if (!tableBody) return;
-            
+
             if (recentLogs.length === 0) {
                 tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">No logs found for the selected filters</td></tr>';
                 return;
             }
-            
+
             tableBody.innerHTML = recentLogs.map(log => {
                 const time = log.timestamp ? new Date(log.timestamp).toLocaleTimeString() : 'N/A';
                 const statusClass = log.success ? 'status-success' : 'status-error';
                 const statusIcon = log.success ? '✓' : '✗';
-                
+
                 return `
                     <tr data-log-id="${log.id}" class="${log.id === selectedLogId ? 'selected' : ''}">
                         <td>${time}</td>
@@ -727,39 +731,39 @@ document.addEventListener('DOMContentLoaded', async function() {
                     </tr>
                 `;
             }).join('');
-            
+
             // Add click handlers to rows
             tableBody.querySelectorAll('tr[data-log-id]').forEach(row => {
                 row.addEventListener('click', () => {
                     const logId = row.getAttribute('data-log-id');
                     selectLogEntry(logId);
-                    
+
                     // Update row selection visuals
                     tableBody.querySelectorAll('tr').forEach(r => r.classList.remove('selected'));
                     row.classList.add('selected');
                 });
             });
         }
-        
+
         // Show details for a selected log entry
         function selectLogEntry(logId) {
             const log = recentLogs.find(l => l.id === logId);
             if (!log) return;
-            
+
             selectedLogId = logId;
-            
+
             const detailTitle = document.getElementById('logsDetailTitle');
             const detailContent = document.getElementById('logsDetailContent');
-            
+
             if (detailTitle) {
                 const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
                 detailTitle.textContent = `${log.endpoint || 'Unknown'} - ${time}`;
             }
-            
+
             if (detailContent) {
                 const statusClass = log.success ? 'success' : 'error';
                 const statusText = log.success ? 'Success' : (log.errorMessage || 'Error');
-                
+
                 detailContent.innerHTML = `
                     <div class="logs-meta">
                         <span><span class="label">Provider:</span> ${log.provider || 'N/A'}</span>
@@ -783,7 +787,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 `;
             }
         }
-        
+
         // Helper to escape HTML
         function escapeHtml(text) {
             if (!text) return '';
@@ -791,15 +795,15 @@ document.addEventListener('DOMContentLoaded', async function() {
             div.textContent = text;
             return div.innerHTML;
         }
-        
+
         // Format log content for display (handles JSON messages and plain text)
         function formatLogContent(text, type = 'prompt') {
             if (!text) return '<span style="color:#999;font-style:italic;">No content available</span>';
-            
+
             try {
                 // Try to parse as JSON (OpenAI message format)
                 const parsed = JSON.parse(text);
-                
+
                 if (Array.isArray(parsed)) {
                     // Array of messages (e.g., [{"role":"user","content":"..."}])
                     return parsed.map((msg, idx) => {
@@ -807,7 +811,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         const content = msg.content || '';
                         const roleColor = role === 'system' ? '#6c757d' : role === 'user' ? '#007bff' : role === 'assistant' ? '#28a745' : '#333';
                         const roleLabel = role.charAt(0).toUpperCase() + role.slice(1);
-                        
+
                         return `<div style="margin-bottom:${idx < parsed.length - 1 ? '16px' : '0'};">
                             <div style="font-weight:600;color:${roleColor};margin-bottom:6px;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">${escapeHtml(roleLabel)}</div>
                             <div style="white-space:pre-wrap;line-height:1.6;color:#333;">${escapeHtml(content)}</div>
@@ -824,11 +828,11 @@ document.addEventListener('DOMContentLoaded', async function() {
             } catch (e) {
                 // Not valid JSON - treat as plain text
             }
-            
+
             // Plain text - just format with proper line breaks
             return `<div style="white-space:pre-wrap;line-height:1.6;color:#333;">${escapeHtml(text)}</div>`;
         }
-        
+
         // Set up logs UI event listeners
         function initLogsUI() {
             const refreshBtn = document.getElementById('refreshLogsBtn');
@@ -837,18 +841,18 @@ document.addEventListener('DOMContentLoaded', async function() {
             const providerFilter = document.getElementById('logsProviderFilter');
             const statusFilter = document.getElementById('logsStatusFilter');
             const searchInput = document.getElementById('logsSearchInput');
-            
+
             if (refreshBtn) {
                 refreshBtn.addEventListener('click', fetchRecentLogs);
             }
-            
+
             // Auto-refresh on filter changes
             [timeRangeSelect, endpointFilter, providerFilter, statusFilter].forEach(el => {
                 if (el) {
                     el.addEventListener('change', fetchRecentLogs);
                 }
             });
-            
+
             // Debounced search
             let searchTimeout;
             if (searchInput) {
@@ -857,25 +861,25 @@ document.addEventListener('DOMContentLoaded', async function() {
                     searchTimeout = setTimeout(fetchRecentLogs, 500);
                 });
             }
-            
+
             // Copy All button
             const copyAllBtn = document.getElementById('copyAllLogsBtn');
             if (copyAllBtn) {
                 copyAllBtn.addEventListener('click', copyAllLogs);
             }
         }
-        
+
         // Copy all logs to clipboard as formatted text
         async function copyAllLogs() {
             if (!recentLogs || recentLogs.length === 0) {
                 alert('No logs to copy. Click Refresh to load logs first.');
                 return;
             }
-            
+
             const formattedLogs = recentLogs.map((log, idx) => {
                 const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
                 const divider = '='.repeat(80);
-                
+
                 // Parse prompt content if it's JSON
                 let promptText = log.fullPrompt || 'No prompt content';
                 try {
@@ -889,10 +893,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 } catch (e) {
                     // Keep as-is if not valid JSON
                 }
-                
+
                 // Response text
                 let responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
-                
+
                 return `${divider}
 LOG ${idx + 1} of ${recentLogs.length}
 ${divider}
@@ -912,7 +916,7 @@ ${promptText}
 ${responseText}
 `;
             }).join('\n\n');
-            
+
             try {
                 await navigator.clipboard.writeText(formattedLogs);
                 const copyBtn = document.getElementById('copyAllLogsBtn');
@@ -928,12 +932,12 @@ ${responseText}
                 alert('Failed to copy to clipboard. Please try again.');
             }
         }
-        
+
         // Initialize logs UI when DOM is ready
         initLogsUI();
 
         // ---- Guideline Discovery Client Logic ----
-        
+
         // URL domain validation for client-side safety check
         const ORGANIZATION_DOMAINS = {
             'RCOG': ['rcog.org.uk'],
@@ -954,23 +958,23 @@ ${responseText}
             'BMFMS': ['bmfms.org.uk'],
             'BritSPAG': ['britspag.org']
         };
-        
+
         function validateGuidelineUrl(url, organization) {
             if (!url || !organization) return true; // Allow if no organization specified
             const expectedDomains = ORGANIZATION_DOMAINS[organization];
             if (!expectedDomains) return true; // Allow unknown organizations
-            
+
             try {
                 const urlObj = new URL(url);
                 const hostname = urlObj.hostname.toLowerCase();
-                return expectedDomains.some(domain => 
+                return expectedDomains.some(domain =>
                     hostname === domain || hostname.endsWith('.' + domain)
                 );
             } catch (e) {
                 return false; // Invalid URL format
             }
         }
-        
+
         async function getAuthTokenOrPrompt() {
             const user = auth.currentUser;
             if (!user) {
@@ -997,7 +1001,7 @@ ${responseText}
                         excludedSourceUrls: data.excludedSourceUrls || []
                     };
                 }
-            } catch (_) {}
+            } catch (_) { }
         }
 
         function renderDiscoveryResults(items) {
@@ -1024,17 +1028,17 @@ ${responseText}
                 row.style.transition = 'opacity 0.4s ease, max-height 0.4s ease, margin 0.4s ease, padding 0.4s ease';
                 row.style.overflow = 'hidden';
                 row.dataset.discoveryUrl = (item.url || '').toLowerCase();
-                
+
                 // Create organization badge with color
-                const orgBadge = item.organisation ? 
+                const orgBadge = item.organisation ?
                     `<span style="display:inline-block;background:#0066cc;color:white;padding:2px 6px;border-radius:3px;font-size:11px;font-weight:600;margin-right:6px">${item.organisation}</span>` : '';
                 const metaInfo = [item.type, item.year].filter(Boolean).join(' • ');
-                
+
                 // Validate URL matches expected domain
                 const isValidUrl = validateGuidelineUrl(item.url, item.organisation);
-                const urlWarning = !isValidUrl ? 
+                const urlWarning = !isValidUrl ?
                     `<div style="background:#fff3cd;border:1px solid #ffc107;padding:4px 6px;border-radius:3px;font-size:11px;margin:4px 0">⚠️ URL domain does not match expected domain for ${item.organisation}</div>` : '';
-                
+
                 row.innerHTML = `
                     <div style="font-weight:600;margin-bottom:4px">${item.title || 'Untitled'}</div>
                     <div style="font-size:12px;color:#555;margin:4px 0">${orgBadge}${metaInfo}</div>
@@ -1206,8 +1210,8 @@ ${responseText}
                 const lastSegment = urlObj.pathname.split('/').filter(Boolean).pop() || 'guideline.pdf';
                 const ext = lastSegment.toLowerCase().endsWith('.pdf') ? '' : '.pdf';
                 const base = (item.organisation ? `${item.organisation} - ` : '') +
-                             (item.year ? `${item.year} - ` : '') +
-                             (item.title || lastSegment.replace(/\.pdf$/i, ''));
+                    (item.year ? `${item.year} - ` : '') +
+                    (item.title || lastSegment.replace(/\.pdf$/i, ''));
                 const safe = base.replace(/[\\\/:*?"<>|]+/g, ' ').trim();
                 const filename = `${safe}${ext || ''}`.replace(/\s+/g, ' ').trim() || lastSegment;
                 // 2) Server-side import to avoid CORS
@@ -1246,13 +1250,13 @@ ${responseText}
         async function runDiscovery() {
             const status = document.getElementById('discoveryStatus');
             const resultsContainer = document.getElementById('discoveryResults');
-            
+
             // Show progress indicator
             status.textContent = '🔍 Scanning all organizations for new guidance...';
             status.style.color = '#0066cc';
             status.style.fontWeight = '600';
             resultsContainer.innerHTML = '<div style="text-align:center;padding:20px;color:#666">Please wait while AI searches RCOG, NICE, FSRH, BASHH, BMS, BSH, BHIVA, BAPM, UK NSC, NHS England, and subspecialty societies...</div>';
-            
+
             try {
                 await loadUserPrefs();
                 const token = await getAuthTokenOrPrompt();
@@ -1266,17 +1270,17 @@ ${responseText}
                 });
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error || 'Discovery failed');
-                
+
                 const suggestions = data.suggestions || [];
                 renderDiscoveryResults(suggestions);
-                
+
                 // Count by organization
                 const orgCounts = {};
                 suggestions.forEach(item => {
                     const org = item.organisation || 'Unknown';
                     orgCounts[org] = (orgCounts[org] || 0) + 1;
                 });
-                
+
                 // Build detailed status message
                 let statusMsg = `✅ Found ${suggestions.length} suggestion${suggestions.length !== 1 ? 's' : ''}`;
                 if (Object.keys(orgCounts).length > 0) {
@@ -1286,13 +1290,13 @@ ${responseText}
                         .join(', ');
                     statusMsg += ` (${orgSummary})`;
                 }
-                
+
                 status.textContent = statusMsg;
                 status.style.color = '#155724';
                 status.style.fontWeight = 'normal';
             } catch (err) {
                 console.error(err);
-                
+
                 // Check if this is an authentication error
                 const isAuthError = err.message && (
                     err.message.includes('Not authenticated') ||
@@ -1301,7 +1305,7 @@ ${responseText}
                     err.message.includes('token') ||
                     err.message.includes('securetoken')
                 );
-                
+
                 if (isAuthError) {
                     // Show friendly login prompt instead of error
                     status.textContent = '🔒 Please sign in to scan for new guidance';
@@ -1348,16 +1352,16 @@ ${responseText}
             loadingIndicator.className = 'loading-indicator';
             loadingIndicator.textContent = 'Loading more logs...';
             logDisplay.appendChild(loadingIndicator);
-            
+
             try {
                 // Get the next batch of files
                 const endIndex = Math.min(startIndex + count, allLogFiles.length);
                 const filesToLoad = allLogFiles.slice(startIndex, endIndex);
-                
+
                 if (filesToLoad.length === 0) {
                     return 0;
                 }
-                
+
                 // Load each file's content
                 const newLogs = [];
                 for (const file of filesToLoad) {
@@ -1368,14 +1372,14 @@ ${responseText}
                                 'Accept': 'application/vnd.github.v3.raw'
                             }
                         });
-                        
+
                         if (!contentResponse.ok) {
                             console.error(`Failed to fetch content for ${file.name}: ${contentResponse.status}`);
                             continue;
                         }
-                        
+
                         const content = await contentResponse.text();
-                        
+
                         // Extract timestamp from filename
                         let date = new Date();
                         const timestampMatch = file.name.match(/(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2})/);
@@ -1384,7 +1388,7 @@ ${responseText}
                             const isoTimestamp = timestampMatch[1].replace(/-/g, (m, i) => i < 13 ? '-' : ':');
                             date = new Date(isoTimestamp);
                         }
-                        
+
                         newLogs.push({
                             name: file.name,
                             path: file.path,
@@ -1397,22 +1401,22 @@ ${responseText}
                         console.error(`Error loading log file ${file.name}:`, error);
                     }
                 }
-                
+
                 // Sort new logs by date
                 newLogs.sort((a, b) => b.date - a.date);
-                
+
                 // Add the new logs to the existing array
                 logs = [...logs, ...newLogs];
-                
+
                 // Resort all logs by date
                 logs.sort((a, b) => b.date - a.date);
-                
+
                 // Update the status message
                 const statusElements = document.getElementsByClassName('log-status-info');
                 if (statusElements.length > 0) {
                     statusElements[0].textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
                 }
-                
+
                 return newLogs.length;
             } catch (error) {
                 console.error('Error loading more logs:', error);
@@ -1430,10 +1434,10 @@ ${responseText}
             const logDisplay = document.getElementById('logDisplay');
             if (logs.length > 0 && index >= 0 && index < logs.length) {
                 currentLogIndex = index;
-                
+
                 // Clear previous content
                 logDisplay.innerHTML = '';
-                
+
                 // Add navigation info
                 const navInfo = document.createElement('div');
                 navInfo.className = 'log-nav-info';
@@ -1445,7 +1449,7 @@ ${responseText}
                     navInfo.textContent += ` (${logs[index].date.toLocaleString()})`;
                 }
                 logDisplay.appendChild(navInfo);
-                
+
                 // Add GitHub link
                 if (logs[index].html_url) {
                     const githubLink = document.createElement('a');
@@ -1457,7 +1461,7 @@ ${responseText}
                     githubLink.style.marginBottom = '10px';
                     logDisplay.appendChild(githubLink);
                 }
-                
+
                 // Add status info if we have more logs available
                 if (allLogFiles && allLogFiles.length > logs.length) {
                     const statusInfo = document.createElement('div');
@@ -1465,7 +1469,7 @@ ${responseText}
                     statusInfo.textContent = `Loaded ${logs.length} of ${allLogFiles.length} available log files`;
                     logDisplay.appendChild(statusInfo);
                 }
-                
+
                 // Add log content
                 const contentDiv = document.createElement('pre');
                 contentDiv.className = 'log-content';
@@ -1477,7 +1481,7 @@ ${responseText}
                 contentDiv.style.border = '1px solid #ddd';
                 contentDiv.style.borderRadius = '4px';
                 logDisplay.appendChild(contentDiv);
-                
+
                 // Load more logs if we're getting close to the end of what we've loaded
                 if (allLogFiles && index >= logs.length - 2 && logs.length < allLogFiles.length) {
                     loadMoreLogs(logs.length, MAX_FILES_TO_LOAD);
@@ -1495,19 +1499,19 @@ ${responseText}
                 // Remove active class from all buttons and hide all content
                 buttons.forEach(b => b.classList.remove('active'));
                 contents.forEach(c => c.style.display = 'none');
-                
+
                 // Add active class to clicked button and show corresponding content
                 button.classList.add('active');
                 const contentId = button.getAttribute('data-content');
                 const content = document.getElementById(contentId);
                 if (content) {
                     content.style.display = 'block';
-                    
+
                     // If it's the cost tab and we haven't loaded cost data yet, fetch it
                     if (contentId === 'costContent' && costData === null) {
                         fetchApiCosts();
                     }
-                    
+
                     // If it's the logs tab, fetch logs from Firestore
                     if (contentId === 'logsContent') {
                         fetchRecentLogs();
@@ -1515,19 +1519,19 @@ ${responseText}
                 }
             });
         });
-        
+
         // Initial setup - show the first tab
         if (buttons.length > 0) {
             buttons[0].click();
         }
-        
+
         // Set up event listeners for log navigation
         const mostRecentBtn = document.getElementById('mostRecentBtn');
         const refreshBtn = document.getElementById('refreshBtn');
         const earlierBtn = document.getElementById('earlierBtn');
         const laterBtn = document.getElementById('laterBtn');
         const deleteAllLogsBtn = document.getElementById('deleteAllLogsBtn');
-        
+
         if (mostRecentBtn) {
             mostRecentBtn.addEventListener('click', () => {
                 currentLogIndex = 0;
@@ -1549,7 +1553,7 @@ ${responseText}
                     // If we're at the last log, try to load more logs
                     const currentCount = logs.length;
                     const additionalLogsCount = await loadMoreLogs(currentCount, MAX_FILES_TO_LOAD);
-                    
+
                     if (additionalLogsCount > 0) {
                         displayLog(currentLogIndex + 1);
                     } else {
@@ -1577,7 +1581,7 @@ ${responseText}
                 if (!confirm('Are you sure you want to delete ALL log files? This action cannot be undone.')) {
                     return;
                 }
-                
+
                 try {
                     // Get the current user
                     const user = auth.currentUser;
@@ -1585,10 +1589,10 @@ ${responseText}
                         alert('You must be logged in to delete logs');
                         return;
                     }
-                    
+
                     // Get Firebase token
                     const token = await user.getIdToken();
-                    
+
                     // Call the server endpoint to delete logs
                     const response = await fetch(`${SERVER_URL}/delete-all-logs`, {
                         method: 'POST',
@@ -1597,9 +1601,9 @@ ${responseText}
                             'Authorization': `Bearer ${token}`
                         }
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success) {
                         alert(`Logs deleted successfully! ${result.message}`);
                         // Refresh the logs display
@@ -1621,7 +1625,7 @@ ${responseText}
                 if (!confirm('Are you sure you want to delete ALL summaries from Firestore? This action cannot be undone.')) {
                     return;
                 }
-                
+
                 try {
                     // Get the current user
                     const user = auth.currentUser;
@@ -1629,10 +1633,10 @@ ${responseText}
                         alert('You must be logged in to delete summaries');
                         return;
                     }
-                    
+
                     // Get Firebase token
                     const token = await user.getIdToken();
-                    
+
                     // Call the server endpoint to delete summaries
                     const response = await fetch(`${SERVER_URL}/deleteAllSummaries`, {
                         method: 'POST',
@@ -1641,9 +1645,9 @@ ${responseText}
                             'Authorization': `Bearer ${token}`
                         }
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success) {
                         alert(`Successfully deleted ${result.count} summaries from Firestore!`);
                     } else {
@@ -1663,7 +1667,7 @@ ${responseText}
                 if (!confirm('Are you sure you want to delete ALL guideline data from Firestore? This will delete all guidelines, summaries, keywords, and condensed versions. This action cannot be undone.')) {
                     return;
                 }
-                
+
                 try {
                     // Get the current user
                     const user = auth.currentUser;
@@ -1671,10 +1675,10 @@ ${responseText}
                         alert('You must be logged in to delete guideline data');
                         return;
                     }
-                    
+
                     // Get Firebase token
                     const token = await user.getIdToken();
-                    
+
                     // Call the server endpoint to delete all guideline data
                     const response = await fetch(`${SERVER_URL}/deleteAllGuidelineData`, {
                         method: 'POST',
@@ -1683,9 +1687,9 @@ ${responseText}
                             'Authorization': `Bearer ${token}`
                         }
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success) {
                         let message = `Successfully deleted ${result.totalDeleted} documents from Firestore!\n\n`;
                         message += 'Breakdown by collection:\n';
@@ -1710,27 +1714,27 @@ ${responseText}
                 if (!confirm('Are you sure you want to upload all PDFs from GitHub to Firebase Storage? This will download all PDF files from the GitHub repository and upload them to Firebase Storage for faster access. This may take several minutes.')) {
                     return;
                 }
-                
+
                 try {
                     // Update button state
                     const originalText = uploadPDFsToStorageBtn.textContent;
                     uploadPDFsToStorageBtn.textContent = '⏳ Uploading PDFs...';
                     uploadPDFsToStorageBtn.disabled = true;
-                    
+
                     console.log('🗂️ [PDF_STORAGE] Starting PDF upload to Firebase Storage...');
-                    
+
                     // Get the current user
                     const user = auth.currentUser;
                     if (!user) {
                         alert('You must be logged in to upload PDFs');
                         return;
                     }
-                    
+
                     // Get Firebase token
                     const token = await user.getIdToken();
-                    
+
                     console.log('Starting PDF upload to Firebase Storage...');
-                    
+
                     // Call the new uploadPDFsToStorage endpoint
                     const response = await fetch(`${SERVER_URL}/uploadPDFsToStorage`, {
                         method: 'POST',
@@ -1739,24 +1743,24 @@ ${responseText}
                             'Authorization': `Bearer ${token}`
                         }
                     });
-                    
+
                     if (!response.ok) {
                         const errorText = await response.text();
                         throw new Error(`Server error: ${response.status} - ${errorText}`);
                     }
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success) {
                         console.log('✅ [PDF_STORAGE] PDF upload to Firebase Storage completed successfully!', result);
-                        
+
                         let message = `🎉 PDF Upload to Firebase Storage Complete!\n\n`;
                         message += `📊 Results:\n`;
                         message += `• Total PDF files found: ${result.results.totalFiles}\n`;
                         message += `• Successfully uploaded: ${result.results.uploaded}\n`;
                         message += `• Already existed: ${result.results.results.filter(r => r.status === 'already_exists').length}\n`;
                         message += `• Errors: ${result.results.errors}\n\n`;
-                        
+
                         if (result.results.results && result.results.results.length > 0) {
                             message += `📁 Upload Details (first 10):\n`;
                             result.results.results.slice(0, 10).forEach(item => {
@@ -1772,14 +1776,14 @@ ${responseText}
                                 message += `• ... and ${result.results.results.length - 10} more\n`;
                             }
                         }
-                        
+
                         // Show success message and detailed logs
                         alert(message);
                         console.log('📊 [PDF_STORAGE] Detailed results:', result.results);
                     } else {
                         throw new Error(result.error || 'PDF upload to Firebase Storage failed');
                     }
-                    
+
                 } catch (error) {
                     console.error('Error uploading PDFs to Firebase Storage:', error);
                     alert(`❌ PDF upload to Firebase Storage failed: ${error.message}`);
@@ -1798,7 +1802,7 @@ ${responseText}
                 const resultsDiv = document.getElementById('modelHealthResults');
                 const tableBody = document.getElementById('modelHealthTableBody');
                 const summarySpan = document.getElementById('modelHealthSummary');
-                
+
                 try {
                     // Update button state
                     const originalText = testModelHealthBtn.textContent;
@@ -1806,14 +1810,14 @@ ${responseText}
                     testModelHealthBtn.disabled = true;
                     summarySpan.textContent = 'Testing all models...';
                     resultsDiv.style.display = 'none';
-                    
+
                     // Get auth token
                     const user = auth.currentUser;
                     if (!user) {
                         alert('You must be logged in to test models');
                         return;
                     }
-                    
+
                     const token = await user.getIdToken();
                     const response = await fetch(`${SERVER_URL}/testModelHealth`, {
                         method: 'GET',
@@ -1822,21 +1826,21 @@ ${responseText}
                             'Content-Type': 'application/json'
                         }
                     });
-                    
+
                     const data = await response.json();
-                    
+
                     if (!data.success) {
                         throw new Error(data.message || 'Failed to test models');
                     }
-                    
+
                     // Display results
                     tableBody.innerHTML = '';
-                    
+
                     data.results.forEach(result => {
                         const row = document.createElement('tr');
                         const statusIcon = result.status === 'OK' ? '✅' : result.status === 'SKIP' ? '⏭️' : '❌';
                         const statusColor = result.status === 'OK' ? '#28a745' : result.status === 'SKIP' ? '#ffc107' : '#dc3545';
-                        
+
                         row.innerHTML = `
                             <td style="padding:10px;text-align:center;font-size:16px;border-bottom:1px solid #eee;">${statusIcon}</td>
                             <td style="padding:10px;border-bottom:1px solid #eee;font-weight:500;">${result.name}</td>
@@ -1845,15 +1849,15 @@ ${responseText}
                         `;
                         tableBody.appendChild(row);
                     });
-                    
+
                     resultsDiv.style.display = 'block';
-                    
+
                     // Update summary
                     const { passed, failed, skipped } = data.summary;
                     summarySpan.innerHTML = `<span style="color:#28a745;">${passed} passed</span>, <span style="color:#dc3545;">${failed} failed</span>, <span style="color:#ffc107;">${skipped} skipped</span>`;
-                    
+
                     console.log('[MODEL_HEALTH] Test completed:', data.summary);
-                    
+
                 } catch (error) {
                     console.error('Error testing model health:', error);
                     summarySpan.textContent = 'Error: ' + error.message;
@@ -1996,13 +2000,13 @@ ${responseText}
                 if (!confirm('Are you sure you want to reset all processing flags? This will clear the "processing" status from all guidelines in Firestore, allowing the background scanner to pick them up again.')) {
                     return;
                 }
-                
+
                 try {
                     resetProcessingBtn.textContent = '🔄 Resetting...';
                     resetProcessingBtn.disabled = true;
-                    
+
                     console.log('🧹 [RESET_FLAGS] Requesting reset of all processing flags...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/resetProcessingFlags`, {
                         method: 'POST',
@@ -2011,16 +2015,16 @@ ${responseText}
                             'Content-Type': 'application/json'
                         }
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     alert(result.message || `Successfully reset flags`);
                     console.log('✅ [RESET_FLAGS] Done:', result);
-                    
+
                 } catch (error) {
                     console.error('Error resetting processing flags:', error);
                     alert(`❌ Reset failed: ${error.message}`);
@@ -2040,13 +2044,13 @@ ${responseText}
                 if (!confirm('Are you sure you want to migrate the database to single collection structure? This will consolidate data from summaries, keywords, and condensed collections into the main guidelines collection. This action cannot be easily undone.')) {
                     return;
                 }
-                
+
                 try {
                     migrateDatabaseBtn.textContent = '🔄 Migrating...';
                     migrateDatabaseBtn.disabled = true;
-                    
+
                     console.log('🔄 [DB_MIGRATION] Starting database migration...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/migrateToSingleCollection`, {
                         method: 'POST',
@@ -2055,15 +2059,15 @@ ${responseText}
                             'Content-Type': 'application/json'
                         }
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     console.log('✅ [DB_MIGRATION] Migration completed:', result);
-                    
+
                     // Show detailed results
                     const message = `Database migration completed successfully!\n\n` +
                         `Migrated: ${result.migrated} guidelines\n` +
@@ -2073,9 +2077,9 @@ ${responseText}
                         `- Keywords: ${result.collections.keywords}\n` +
                         `- Condensed: ${result.collections.condensed}\n\n` +
                         `All data is now consolidated in the single guidelines collection.`;
-                    
+
                     alert(message);
-                    
+
                 } catch (error) {
                     console.error('Error migrating database:', error);
                     alert('Database migration failed: ' + error.message);
@@ -2093,19 +2097,19 @@ ${responseText}
                 if (!confirm('Are you sure you want to initialize the clinical conditions collection? This will populate Firestore with all clinical conditions from the JSON file. This is needed for transcript generation to work.')) {
                     return;
                 }
-                
+
                 const originalText = initClinicalConditionsBtn.textContent;
-                
+
                 try {
                     initClinicalConditionsBtn.textContent = '⏳ Initializing...';
                     initClinicalConditionsBtn.disabled = true;
-                    
+
                     const statusDiv = document.getElementById('maintenanceStatus');
                     statusDiv.style.display = 'block';
                     statusDiv.textContent = 'Initializing clinical conditions collection...';
-                    
+
                     console.log('🏥 [CLINICAL_INIT] Starting clinical conditions initialization...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/initializeClinicalConditions`, {
                         method: 'POST',
@@ -2114,24 +2118,24 @@ ${responseText}
                             'Content-Type': 'application/json'
                         }
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     console.log('✅ [CLINICAL_INIT] Initialization completed:', result);
-                    
+
                     const categoriesText = Object.entries(result.summary.categoriesWithCounts || {})
                         .map(([cat, count]) => `- ${cat}: ${count} conditions`).join('\n');
                     const message = `Clinical conditions initialized successfully!\n\n` +
                         `Total conditions: ${result.totalConditions}\n` +
                         `Categories:\n` + categoriesText;
-                    
+
                     statusDiv.textContent = message;
                     alert(message);
-                    
+
                 } catch (error) {
                     console.error('Error initializing clinical conditions:', error);
                     const statusDiv = document.getElementById('maintenanceStatus');
@@ -2151,19 +2155,19 @@ ${responseText}
                 if (!confirm('Are you sure you want to regenerate displayName fields for all guidelines? This will use AI to generate display names in the format: name (year) - region - trust. It will remove codes, version numbers, and format dates, while preserving organization names and abbreviating trust names. This may take several minutes as it processes each guideline with AI.')) {
                     return;
                 }
-                
+
                 const originalText = populateDisplayNamesBtn.textContent;
-                
+
                 try {
                     populateDisplayNamesBtn.textContent = '⏳ Populating...';
                     populateDisplayNamesBtn.disabled = true;
-                    
+
                     const statusDiv = document.getElementById('maintenanceStatus');
                     statusDiv.style.display = 'block';
                     statusDiv.textContent = 'Regenerating displayName fields for all guidelines...';
-                    
+
                     console.log('✨ [DISPLAY_NAMES] Starting displayName regeneration...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/populateDisplayNames`, {
                         method: 'POST',
@@ -2173,15 +2177,15 @@ ${responseText}
                         },
                         body: JSON.stringify({ force: true })
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     console.log('✅ [DISPLAY_NAMES] Population completed:', result);
-                    
+
                     statusDiv.style.display = 'block';
                     statusDiv.innerHTML = `
                         <strong>✅ Success!</strong><br>
@@ -2191,9 +2195,9 @@ ${responseText}
                     statusDiv.style.backgroundColor = '#d4edda';
                     statusDiv.style.border = '1px solid #c3e6cb';
                     statusDiv.style.color = '#155724';
-                    
+
                     alert(`Successfully regenerated displayName for ${result.updated} guidelines!`);
-                    
+
                 } catch (error) {
                     console.error('❌ [DISPLAY_NAMES] Error:', error);
                     const statusDiv = document.getElementById('maintenanceStatus');
@@ -2217,19 +2221,19 @@ ${responseText}
                 if (!confirm('Regenerate displayName fields for all guidelines using simple formula?\n\nFormula:\n- If national: humanFriendlyName + organisation\n- If local: humanFriendlyName + hospitalTrust\n\nThis will update all guidelines. Continue?')) {
                     return;
                 }
-                
+
                 const originalText = regenerateDisplayNamesBtn.textContent;
-                
+
                 try {
                     regenerateDisplayNamesBtn.textContent = '⏳ Regenerating...';
                     regenerateDisplayNamesBtn.disabled = true;
-                    
+
                     const statusDiv = document.getElementById('maintenanceStatus');
                     statusDiv.style.display = 'block';
                     statusDiv.textContent = 'Regenerating displayName fields using simple formula...';
-                    
+
                     console.log('🔄 [REGENERATE_DISPLAY_NAMES] Starting displayName regeneration with simple formula...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/regenerateDisplayNames`, {
                         method: 'POST',
@@ -2239,15 +2243,15 @@ ${responseText}
                         },
                         body: JSON.stringify({ force: true })
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     console.log('✅ [REGENERATE_DISPLAY_NAMES] Regeneration completed:', result);
-                    
+
                     statusDiv.style.display = 'block';
                     statusDiv.innerHTML = `
                         <strong>✅ Success!</strong><br>
@@ -2280,25 +2284,25 @@ ${responseText}
                 if (!confirm('⚠️ WARNING: This will delete ALL displayName fields from all guidelines. This action cannot be undone. Are you absolutely sure?')) {
                     return;
                 }
-                
+
                 const confirmText = prompt('Type "yes" to confirm clearing all display names:');
                 if (confirmText !== 'yes') {
                     alert('Confirmation failed. Operation cancelled.');
                     return;
                 }
-                
+
                 const originalText = clearDisplayNamesBtn.textContent;
-                
+
                 try {
                     clearDisplayNamesBtn.textContent = '⏳ Clearing...';
                     clearDisplayNamesBtn.disabled = true;
-                    
+
                     const statusDiv = document.getElementById('maintenanceStatus');
                     statusDiv.style.display = 'block';
                     statusDiv.textContent = 'Clearing all displayName fields...';
-                    
+
                     console.log('🗑️ [CLEAR_DISPLAY_NAMES] Starting displayName clearing...');
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/clearDisplayNames`, {
                         method: 'POST',
@@ -2308,15 +2312,15 @@ ${responseText}
                         },
                         body: JSON.stringify({ confirm: 'yes' })
                     });
-                    
+
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(`Server error: ${response.status} - ${JSON.stringify(errorData)}`);
                     }
-                    
+
                     const result = await response.json();
                     console.log('✅ [CLEAR_DISPLAY_NAMES] Clearing completed:', result);
-                    
+
                     statusDiv.style.display = 'block';
                     statusDiv.innerHTML = `
                         <strong>✅ Success!</strong><br>
@@ -2326,9 +2330,9 @@ ${responseText}
                     statusDiv.style.backgroundColor = '#d4edda';
                     statusDiv.style.border = '1px solid #c3e6cb';
                     statusDiv.style.color = '#155724';
-                    
+
                     alert(`Successfully cleared ${result.cleared} displayName fields!`);
-                    
+
                 } catch (error) {
                     console.error('❌ [CLEAR_DISPLAY_NAMES] Error:', error);
                     const statusDiv = document.getElementById('maintenanceStatus');
@@ -2348,9 +2352,9 @@ ${responseText}
         // Handle enhance metadata button
         const enhanceMetadataBtn = document.getElementById('enhanceMetadataBtn');
         const enhancementStatus = document.getElementById('enhancementStatus');
-        
+
         if (enhanceMetadataBtn) {
-            enhanceMetadataBtn.addEventListener('click', async function() {
+            enhanceMetadataBtn.addEventListener('click', async function () {
                 if (!confirm('This will enhance metadata (scope, nation, hospitalTrust) for all guidelines using AI. This may take several minutes. Continue?')) {
                     return;
                 }
@@ -2386,7 +2390,7 @@ ${responseText}
 
                     const allGuidelines = guidelinesResult.guidelines;
                     const guidelineIds = allGuidelines.map(g => g.id || g.guidelineId).filter(id => id);
-                    
+
                     if (guidelineIds.length === 0) {
                         throw new Error('No guidelines found to enhance');
                     }
@@ -2438,7 +2442,7 @@ ${responseText}
                 }
             });
         }
-        
+
         // Handle guidelines editor
         let allGuidelinesData = [];
         const loadGuidelinesBtn = document.getElementById('loadGuidelinesBtn');
@@ -2494,15 +2498,15 @@ ${responseText}
         async function uploadPdfFromGitHub(guidelineId, guidelineData, token) {
             try {
                 const downloadUrl = guidelineData.downloadUrl;
-                
+
                 if (!downloadUrl || !downloadUrl.includes('github.com')) {
-                    return { 
-                        uploaded: false, 
+                    return {
+                        uploaded: false,
                         error: 'No GitHub download URL found for this guideline',
                         downloadUrl: null
                     };
                 }
-                
+
                 // Upload PDF from GitHub
                 const uploadResponse = await fetch(`${SERVER_URL}/uploadMissingPdf`, {
                     method: 'POST',
@@ -2512,23 +2516,23 @@ ${responseText}
                     },
                     body: JSON.stringify({ guidelineId })
                 });
-                
+
                 const uploadResult = await uploadResponse.json();
-                
+
                 if (uploadResult.success) {
                     return { uploaded: true, downloadUrl };
                 } else {
-                    return { 
-                        uploaded: false, 
+                    return {
+                        uploaded: false,
                         error: uploadResult.error || 'Upload failed',
-                        downloadUrl 
+                        downloadUrl
                     };
                 }
-                
+
             } catch (error) {
                 console.error('Error uploading PDF:', error);
-                return { 
-                    uploaded: false, 
+                return {
+                    uploaded: false,
                     error: error.message,
                     downloadUrl: guidelineData.downloadUrl || null
                 };
@@ -2537,7 +2541,7 @@ ${responseText}
 
         function displayGuidelinesTable(guidelines) {
             guidelinesTableBody.innerHTML = '';
-            
+
             // Collect unique organisations for the dropdown
             const organisationsSet = new Set();
             guidelines.forEach(guideline => {
@@ -2546,7 +2550,7 @@ ${responseText}
                 }
             });
             const organisations = Array.from(organisationsSet).sort();
-            
+
             // Create a datalist for organisation autocomplete (shared across all rows)
             let orgDatalist = document.getElementById('organisationDatalist');
             if (!orgDatalist) {
@@ -2560,12 +2564,12 @@ ${responseText}
                 option.value = org;
                 orgDatalist.appendChild(option);
             });
-            
+
             guidelines.forEach(guideline => {
                 const row = document.createElement('tr');
                 row.style.borderBottom = '1px solid #dee2e6';
                 row.dataset.guidelineId = guideline.id || guideline.guidelineId;
-                
+
                 const idCell = document.createElement('td');
                 idCell.style.padding = '10px';
                 idCell.style.fontSize = '12px';
@@ -2573,7 +2577,7 @@ ${responseText}
                 idCell.style.width = '8%';
                 idCell.textContent = (guideline.id || guideline.guidelineId || '').substring(0, 8) + '...';
                 idCell.title = guideline.id || guideline.guidelineId || '';
-                
+
                 const titleCell = document.createElement('td');
                 titleCell.style.padding = '10px';
                 titleCell.style.fontSize = '13px';
@@ -2581,7 +2585,7 @@ ${responseText}
                 titleCell.style.wordWrap = 'break-word';
                 titleCell.style.overflowWrap = 'break-word';
                 titleCell.textContent = guideline.title || guideline.humanFriendlyName || 'Untitled';
-                
+
                 const displayNameCell = document.createElement('td');
                 displayNameCell.style.padding = '10px';
                 displayNameCell.style.width = '35%';
@@ -2596,12 +2600,12 @@ ${responseText}
                 displayNameInput.style.fontFamily = "'Inter', sans-serif";
                 displayNameInput.style.boxSizing = 'border-box';
                 displayNameInput.dataset.originalValue = guideline.displayName || '';
-                
+
                 const orgCell = document.createElement('td');
                 orgCell.style.padding = '10px';
                 orgCell.style.fontSize = '13px';
                 orgCell.style.width = '18%';
-                
+
                 const orgInput = document.createElement('input');
                 orgInput.type = 'text';
                 orgInput.value = guideline.organisation || '';
@@ -2614,9 +2618,9 @@ ${responseText}
                 orgInput.style.fontFamily = "'Inter', sans-serif";
                 orgInput.style.boxSizing = 'border-box';
                 orgInput.dataset.originalValue = guideline.organisation || '';
-                
+
                 orgCell.appendChild(orgInput);
-                
+
                 const actionsCell = document.createElement('td');
                 actionsCell.style.padding = '10px';
                 actionsCell.style.textAlign = 'center';
@@ -2628,15 +2632,15 @@ ${responseText}
                 saveBtn.style.fontSize = '12px';
                 saveBtn.style.marginRight = '5px';
                 saveBtn.disabled = true;
-                
+
                 // Function to check for changes in either field
                 function checkForChanges() {
                     const displayNameChanged = displayNameInput.value !== displayNameInput.dataset.originalValue;
                     const orgChanged = orgInput.value !== orgInput.dataset.originalValue;
                     const hasChanges = displayNameChanged || orgChanged;
-                    
+
                     saveBtn.disabled = !hasChanges;
-                    
+
                     if (hasChanges) {
                         if (displayNameChanged) {
                             displayNameInput.style.borderColor = '#007bff';
@@ -2645,7 +2649,7 @@ ${responseText}
                             displayNameInput.style.borderColor = '#ced4da';
                             displayNameInput.style.backgroundColor = '#fff';
                         }
-                        
+
                         if (orgChanged) {
                             orgInput.style.borderColor = '#007bff';
                             orgInput.style.backgroundColor = '#f0f8ff';
@@ -2653,7 +2657,7 @@ ${responseText}
                             orgInput.style.borderColor = '#ced4da';
                             orgInput.style.backgroundColor = '#fff';
                         }
-                        
+
                         saveBtn.style.backgroundColor = '#28a745';
                         saveBtn.style.color = '#fff';
                         saveBtn.style.borderColor = '#28a745';
@@ -2667,27 +2671,27 @@ ${responseText}
                         saveBtn.style.borderColor = '';
                     }
                 }
-                
+
                 displayNameInput.addEventListener('input', checkForChanges);
                 orgInput.addEventListener('input', checkForChanges);
-                
+
                 displayNameCell.appendChild(displayNameInput);
-                
-                saveBtn.addEventListener('click', async function() {
+
+                saveBtn.addEventListener('click', async function () {
                     const guidelineId = row.dataset.guidelineId;
                     const newDisplayName = displayNameInput.value;
                     const newOrganisation = orgInput.value.trim();
-                    
+
                     saveBtn.disabled = true;
                     saveBtn.textContent = 'Saving...';
-                    
+
                     try {
                         const user = auth.currentUser;
                         if (!user) {
                             throw new Error('Please sign in first');
                         }
                         const token = await user.getIdToken();
-                        
+
                         // Build update object with only changed fields
                         const updates = {};
                         if (displayNameInput.value !== displayNameInput.dataset.originalValue) {
@@ -2696,7 +2700,7 @@ ${responseText}
                         if (orgInput.value !== orgInput.dataset.originalValue) {
                             updates.organisation = newOrganisation || null; // Allow empty string to clear
                         }
-                        
+
                         const response = await fetch(`${SERVER_URL}/guideline/${guidelineId}`, {
                             method: 'PUT',
                             headers: {
@@ -2705,16 +2709,16 @@ ${responseText}
                             },
                             body: JSON.stringify(updates)
                         });
-                        
+
                         if (!response.ok) {
                             const errorData = await response.json();
                             throw new Error(errorData.error || 'Failed to save');
                         }
-                        
+
                         // Update original values
                         displayNameInput.dataset.originalValue = newDisplayName;
                         orgInput.dataset.originalValue = newOrganisation;
-                        
+
                         // Show success feedback
                         if (updates.displayName !== undefined) {
                             displayNameInput.style.borderColor = '#28a745';
@@ -2724,11 +2728,11 @@ ${responseText}
                             orgInput.style.borderColor = '#28a745';
                             orgInput.style.backgroundColor = '#d4edda';
                         }
-                        
+
                         saveBtn.textContent = 'Saved ✓';
                         saveBtn.style.backgroundColor = '#28a745';
                         saveBtn.style.color = '#fff';
-                        
+
                         setTimeout(() => {
                             displayNameInput.style.borderColor = '#ced4da';
                             displayNameInput.style.backgroundColor = '#fff';
@@ -2739,7 +2743,7 @@ ${responseText}
                             saveBtn.style.backgroundColor = '';
                             saveBtn.style.color = '';
                         }, 2000);
-                        
+
                     } catch (error) {
                         console.error('Error saving fields:', error);
                         saveBtn.textContent = 'Error';
@@ -2754,7 +2758,7 @@ ${responseText}
                         }, 3000);
                     }
                 });
-                
+
                 // Create View PDF button
                 const viewPdfBtn = document.createElement('button');
                 viewPdfBtn.textContent = 'View PDF';
@@ -2765,25 +2769,25 @@ ${responseText}
                 viewPdfBtn.style.backgroundColor = '#007bff';
                 viewPdfBtn.style.color = '#fff';
                 viewPdfBtn.style.borderColor = '#007bff';
-                
+
                 // Store error state in row dataset
                 row.dataset.pdfError = 'false';
                 row.dataset.pdfDownloadUrl = guideline.downloadUrl || '';
-                
+
                 // Function to open PDF viewer
                 function openPdfViewer(guidelineId, token) {
                     const pdfUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(token)}`;
                     const viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
                     window.open(viewerUrl, '_blank');
                 }
-                
+
                 // Function to show error state
                 function showPdfError(message, downloadUrl) {
                     row.dataset.pdfError = 'true';
                     viewPdfBtn.textContent = 'Error';
                     viewPdfBtn.style.backgroundColor = '#dc3545';
                     viewPdfBtn.disabled = true;
-                    
+
                     // Create or update error message element
                     let errorMsg = row.querySelector('.pdf-error-msg');
                     if (!errorMsg) {
@@ -2798,7 +2802,7 @@ ${responseText}
                         actionsCell.appendChild(errorMsg);
                     }
                     errorMsg.innerHTML = message;
-                    
+
                     // Add retry and GitHub fallback buttons if not already present
                     if (!row.querySelector('.pdf-retry-btn')) {
                         const retryBtn = document.createElement('button');
@@ -2812,7 +2816,7 @@ ${responseText}
                         retryBtn.style.borderColor = '#007bff';
                         retryBtn.addEventListener('click', () => viewPdfBtn.click());
                         actionsCell.appendChild(retryBtn);
-                        
+
                         if (downloadUrl) {
                             const githubBtn = document.createElement('button');
                             githubBtn.className = 'pdf-github-btn dev-btn';
@@ -2831,14 +2835,14 @@ ${responseText}
                         }
                     }
                 }
-                
+
                 // Function to reset button state
                 function resetPdfButton() {
                     row.dataset.pdfError = 'false';
                     viewPdfBtn.textContent = 'View PDF';
                     viewPdfBtn.style.backgroundColor = '#007bff';
                     viewPdfBtn.disabled = false;
-                    
+
                     // Remove error message and retry buttons
                     const errorMsg = row.querySelector('.pdf-error-msg');
                     if (errorMsg) errorMsg.remove();
@@ -2847,28 +2851,28 @@ ${responseText}
                     const githubBtn = row.querySelector('.pdf-github-btn');
                     if (githubBtn) githubBtn.remove();
                 }
-                
-                viewPdfBtn.addEventListener('click', async function() {
+
+                viewPdfBtn.addEventListener('click', async function () {
                     const guidelineId = row.dataset.guidelineId;
                     const downloadUrl = row.dataset.pdfDownloadUrl;
-                    
+
                     try {
                         const user = auth.currentUser;
                         if (!user) {
                             alert('Please sign in first to view PDFs');
                             return;
                         }
-                        
+
                         // Reset any previous error state
                         resetPdfButton();
-                        
+
                         // Get fresh ID token
                         const idToken = await user.getIdToken();
-                        
+
                         // Show checking state
                         viewPdfBtn.textContent = 'Checking...';
                         viewPdfBtn.disabled = true;
-                        
+
                         // Check if PDF exists
                         const checkUrl = `${SERVER_URL}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
                         let checkResponse;
@@ -2882,7 +2886,7 @@ ${responseText}
                             setTimeout(() => resetPdfButton(), 1000);
                             return;
                         }
-                        
+
                         if (checkResponse.ok) {
                             // PDF exists, open viewer
                             viewPdfBtn.textContent = 'Opening...';
@@ -2893,12 +2897,12 @@ ${responseText}
                             // PDF doesn't exist, upload from GitHub
                             viewPdfBtn.textContent = 'Uploading...';
                             const uploadResult = await uploadPdfFromGitHub(guidelineId, guideline, idToken);
-                            
+
                             if (uploadResult.uploaded) {
                                 // PDF was uploaded successfully, open viewer
                                 viewPdfBtn.textContent = 'Opening...';
                                 openPdfViewer(guidelineId, idToken);
-                                
+
                                 // Reset button after a short delay
                                 setTimeout(() => {
                                     resetPdfButton();
@@ -2920,22 +2924,22 @@ ${responseText}
                             openPdfViewer(guidelineId, idToken);
                             setTimeout(() => resetPdfButton(), 1000);
                         }
-                        
+
                     } catch (error) {
                         console.error('Error opening PDF:', error);
                         showPdfError(`Error: ${error.message}`, downloadUrl);
                     }
                 });
-                
+
                 actionsCell.appendChild(saveBtn);
                 actionsCell.appendChild(viewPdfBtn);
-                
+
                 row.appendChild(idCell);
                 row.appendChild(titleCell);
                 row.appendChild(displayNameCell);
                 row.appendChild(orgCell);
                 row.appendChild(actionsCell);
-                
+
                 guidelinesTableBody.appendChild(row);
             });
         }
@@ -2945,20 +2949,20 @@ ${responseText}
                 displayGuidelinesTable(allGuidelinesData);
                 return;
             }
-            
+
             const filtered = allGuidelinesData.filter(g => {
                 const searchLower = searchTerm.toLowerCase();
                 const title = (g.title || '').toLowerCase();
                 const displayName = (g.displayName || '').toLowerCase();
                 const organisation = (g.organisation || '').toLowerCase();
                 const id = (g.id || g.guidelineId || '').toLowerCase();
-                
-                return title.includes(searchLower) || 
-                       displayName.includes(searchLower) || 
-                       organisation.includes(searchLower) ||
-                       id.includes(searchLower);
+
+                return title.includes(searchLower) ||
+                    displayName.includes(searchLower) ||
+                    organisation.includes(searchLower) ||
+                    id.includes(searchLower);
             });
-            
+
             displayGuidelinesTable(filtered);
         }
 
@@ -2967,7 +2971,7 @@ ${responseText}
         }
 
         if (guidelineSearch) {
-            guidelineSearch.addEventListener('input', function() {
+            guidelineSearch.addEventListener('input', function () {
                 filterGuidelinesTable(this.value);
             });
         }
@@ -2975,9 +2979,9 @@ ${responseText}
         // Handle fix nation classifications button
         const fixNationsBtn = document.getElementById('fixNationsBtn');
         const fixNationsStatus = document.getElementById('fixNationsStatus');
-        
+
         if (fixNationsBtn) {
-            fixNationsBtn.addEventListener('click', async function() {
+            fixNationsBtn.addEventListener('click', async function () {
                 if (!confirm('This will fix incorrect nation classifications for all national guidelines based on their organization. Guidelines incorrectly marked as Scotland will be corrected. Continue?')) {
                     return;
                 }
@@ -3040,9 +3044,9 @@ ${responseText}
 
         // Handle Ingest to Pinecone button
         const ingestToPineconeBtn = document.getElementById('ingestToPineconeBtn');
-        
+
         if (ingestToPineconeBtn) {
-            ingestToPineconeBtn.addEventListener('click', async function() {
+            ingestToPineconeBtn.addEventListener('click', async function () {
                 if (!confirm('This will re-ingest all guidelines to Pinecone vector database.\n\nThis updates the search index with current humanFriendlyName values.\n\nThis may take several minutes. Continue?')) {
                     return;
                 }
@@ -3050,7 +3054,7 @@ ${responseText}
                 ingestToPineconeBtn.disabled = true;
                 const originalText = ingestToPineconeBtn.textContent;
                 ingestToPineconeBtn.textContent = '⏳ Ingesting...';
-                
+
                 const maintenanceStatus = document.getElementById('maintenanceStatus');
                 if (maintenanceStatus) {
                     maintenanceStatus.style.display = 'block';
@@ -3211,17 +3215,17 @@ ${responseText}
         const reextractSingleBtn = document.getElementById('reextractSingleBtn');
         const reextractAllBtn = document.getElementById('reextractAllBtn');
         const reextractStatus = document.getElementById('reextractStatus');
-        
+
         // Load guidelines into the select dropdown
         async function loadGuidelinesForReextract() {
             try {
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
-                
+
                 const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                
+
                 if (response.ok) {
                     const data = await response.json();
                     // Handle both array response and object with guidelines property
@@ -3241,14 +3245,14 @@ ${responseText}
                 console.error('Error loading guidelines for re-extract:', error);
             }
         }
-        
+
         // Load guidelines when auth state changes
         auth.onAuthStateChanged(async (user) => {
             if (user) {
                 await loadGuidelinesForReextract();
             }
         });
-        
+
         // Re-extract single guideline
         if (reextractSingleBtn) {
             reextractSingleBtn.addEventListener('click', async () => {
@@ -3257,17 +3261,17 @@ ${responseText}
                     alert('Please select a guideline first');
                     return;
                 }
-                
+
                 try {
                     reextractSingleBtn.disabled = true;
                     const originalText = reextractSingleBtn.textContent;
                     reextractSingleBtn.textContent = '🔄 Re-extracting...';
-                    
+
                     if (reextractStatus) {
                         reextractStatus.style.display = 'block';
                         reextractStatus.innerHTML = `<strong>Processing:</strong> ${selectedId}...`;
                     }
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/reextractGuidelineContent`, {
                         method: 'POST',
@@ -3277,9 +3281,9 @@ ${responseText}
                         },
                         body: JSON.stringify({ guidelineId: selectedId })
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success && result.results?.length > 0) {
                         const r = result.results[0];
                         if (r.success) {
@@ -3293,10 +3297,10 @@ ${responseText}
                     } else {
                         reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
                     }
-                    
+
                     reextractSingleBtn.textContent = originalText;
                     reextractSingleBtn.disabled = false;
-                    
+
                 } catch (error) {
                     console.error('Error re-extracting content:', error);
                     if (reextractStatus) {
@@ -3307,24 +3311,24 @@ ${responseText}
                 }
             });
         }
-        
+
         // Re-extract all guidelines
         if (reextractAllBtn) {
             reextractAllBtn.addEventListener('click', async () => {
                 if (!confirm('This will re-extract content for ALL guidelines. This may take several minutes. Continue?')) {
                     return;
                 }
-                
+
                 try {
                     reextractAllBtn.disabled = true;
                     const originalText = reextractAllBtn.textContent;
                     reextractAllBtn.textContent = '🔄 Processing...';
-                    
+
                     if (reextractStatus) {
                         reextractStatus.style.display = 'block';
                         reextractStatus.innerHTML = '<strong>Processing all guidelines...</strong> This may take a while.';
                     }
-                    
+
                     const token = await auth.currentUser.getIdToken();
                     const response = await fetch(`${SERVER_URL}/reextractGuidelineContent`, {
                         method: 'POST',
@@ -3334,12 +3338,12 @@ ${responseText}
                         },
                         body: JSON.stringify({ processAll: true })
                     });
-                    
+
                     const result = await response.json();
-                    
+
                     if (result.success) {
                         let html = `<strong>Completed:</strong> ${result.successCount} success, ${result.failureCount} failed<br><br>`;
-                        
+
                         // Show successes
                         const successes = result.results.filter(r => r.success);
                         if (successes.length > 0) {
@@ -3349,7 +3353,7 @@ ${responseText}
                             });
                             html += '</ul></details>';
                         }
-                        
+
                         // Show failures
                         const failures = result.results.filter(r => !r.success);
                         if (failures.length > 0) {
@@ -3359,15 +3363,15 @@ ${responseText}
                             });
                             html += '</ul></details>';
                         }
-                        
+
                         reextractStatus.innerHTML = html;
                     } else {
                         reextractStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
                     }
-                    
+
                     reextractAllBtn.textContent = originalText;
                     reextractAllBtn.disabled = false;
-                    
+
                 } catch (error) {
                     console.error('Error re-extracting all content:', error);
                     if (reextractStatus) {
@@ -3385,7 +3389,7 @@ ${responseText}
         const auditableGuidelineSelect = document.getElementById('auditableGuidelineSelect');
         const regenerateAuditableSingleBtn = document.getElementById('regenerateAuditableSingleBtn');
         const auditableStatus = document.getElementById('auditableStatus');
-        
+
         // --- NEW BATCH REGEN LOGIC ---
         const batchRegenSearch = document.getElementById('batchRegenSearch');
         const batchRegenOrgFilter = document.getElementById('batchRegenOrgFilter');
@@ -3406,18 +3410,18 @@ ${responseText}
             try {
                 if (batchRegenLoadBtn) batchRegenLoadBtn.disabled = true;
                 if (batchRegenTableBody) batchRegenTableBody.innerHTML = '<tr><td colspan="4" style="padding:20px; text-align:center;">⌛ Loading guidelines...</td></tr>';
-                
+
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
-                
+
                 const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                
+
                 if (response.ok) {
                     const data = await response.json();
                     allGuidelinesForBatch = Array.isArray(data) ? data : (data.guidelines || []);
-                    
+
                     // Populate filters
                     const orgs = new Set();
                     const years = new Set();
@@ -3441,7 +3445,7 @@ ${responseText}
                     if (batchRegenYearFilter) {
                         const currentYear = batchRegenYearFilter.value;
                         batchRegenYearFilter.innerHTML = '<option value="">All Years</option>';
-                        Array.from(years).sort((a,b) => b-a).forEach(year => {
+                        Array.from(years).sort((a, b) => b - a).forEach(year => {
                             const opt = document.createElement('option');
                             opt.value = year;
                             opt.textContent = year;
@@ -3472,19 +3476,19 @@ ${responseText}
             const lastMonth = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
 
             filteredGuidelines = allGuidelinesForBatch.filter(g => {
-                const matchesSearch = !search || 
-                    (g.title && g.title.toLowerCase().includes(search)) || 
+                const matchesSearch = !search ||
+                    (g.title && g.title.toLowerCase().includes(search)) ||
                     (g.id && g.id.toLowerCase().includes(search)) ||
                     (g.humanFriendlyName && g.humanFriendlyName.toLowerCase().includes(search));
                 const matchesOrg = !org || g.organisation === org;
                 const matchesYear = !year || String(g.yearProduced) === String(year);
-                
+
                 let matchesDate = true;
                 if (dateFilter) {
                     const extractedAt = g.auditableElementsRegeneratedAt;
                     // Handle Firestore Timestamp or ISO string
                     const date = extractedAt ? (extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt)) : null;
-                    
+
                     if (dateFilter === 'never') {
                         matchesDate = !date;
                     } else if (dateFilter === 'today') {
@@ -3504,7 +3508,7 @@ ${responseText}
 
         function renderBatchRegenTable() {
             if (!batchRegenTableBody) return;
-            
+
             if (filteredGuidelines.length === 0) {
                 batchRegenTableBody.innerHTML = '<tr><td colspan="4" style="padding:20px; text-align:center; color:#666;">No guidelines match your filters</td></tr>';
                 if (batchRegenTotalInfo) batchRegenTotalInfo.textContent = `Showing 0 of ${allGuidelinesForBatch.length}`;
@@ -3515,17 +3519,17 @@ ${responseText}
             filteredGuidelines.forEach(g => {
                 const tr = document.createElement('tr');
                 tr.style.borderBottom = '1px solid #eee';
-                
+
                 const elementsCount = g.auditableElements?.length || 0;
                 const statusColor = elementsCount > 0 ? '#28a745' : '#6c757d';
-                
+
                 const extractedAt = g.auditableElementsRegeneratedAt;
                 let dateStr = '-';
                 if (extractedAt) {
                     const date = extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt);
                     dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                 }
-                
+
                 tr.innerHTML = `
                     <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
                     <td style="padding:8px;">
@@ -3536,7 +3540,7 @@ ${responseText}
                     <td style="padding:8px; text-align:center; color:#666;">${g.yearProduced || '-'}</td>
                     <td style="padding:8px; color:#666;">${dateStr}</td>
                 `;
-                
+
                 // Allow clicking the row to toggle checkbox
                 tr.addEventListener('click', (e) => {
                     if (e.target.type !== 'checkbox') {
@@ -3545,17 +3549,17 @@ ${responseText}
                         updateBatchSelectedCount();
                     }
                 });
-                
+
                 batchRegenTableBody.appendChild(tr);
             });
 
             if (batchRegenTotalInfo) batchRegenTotalInfo.textContent = `Showing ${filteredGuidelines.length} of ${allGuidelinesForBatch.length}`;
-            
+
             // Re-add checkbox listeners
             document.querySelectorAll('.batch-regen-cb').forEach(cb => {
                 cb.addEventListener('change', updateBatchSelectedCount);
             });
-            
+
             updateBatchSelectedCount();
         }
 
@@ -3574,7 +3578,7 @@ ${responseText}
         if (batchRegenOrgFilter) batchRegenOrgFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenYearFilter) batchRegenYearFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenDateFilter) batchRegenDateFilter.addEventListener('change', applyBatchRegenFilters);
-        
+
         if (batchRegenSelectAll) {
             batchRegenSelectAll.addEventListener('change', () => {
                 const checked = batchRegenSelectAll.checked;
@@ -3589,7 +3593,7 @@ ${responseText}
             regenerateAuditableFilteredBtn.addEventListener('click', async () => {
                 const selectedIds = Array.from(document.querySelectorAll('.batch-regen-cb:checked'))
                     .map(cb => cb.getAttribute('data-id'));
-                
+
                 if (selectedIds.length === 0) {
                     alert('Please select at least one guideline from the table');
                     return;
@@ -3616,12 +3620,12 @@ ${responseText}
             try {
                 if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = true;
                 if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = true;
-                
+
                 if (auditableStatus) {
                     auditableStatus.style.display = 'block';
                     auditableStatus.innerHTML = '<strong>Queueing guidelines for processing...</strong>';
                 }
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
                     method: 'POST',
@@ -3631,9 +3635,9 @@ ${responseText}
                     },
                     body: JSON.stringify(body)
                 });
-                
+
                 const result = await response.json();
-                
+
                 if (result.success) {
                     let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
                     html += `<strong>Queued:</strong> ${result.queued} guidelines<br>`;
@@ -3669,22 +3673,22 @@ ${responseText}
             const user = auth.currentUser;
             const summaryEl = document.getElementById('timingsSummary');
             const tbodyEl = document.getElementById('timingsTableBody');
-            
+
             if (!user) {
                 if (summaryEl) summaryEl.textContent = 'Please log in to view timings';
                 return;
             }
-            
+
             try {
                 if (summaryEl) summaryEl.textContent = 'Loading...';
-                
+
                 const token = await user.getIdToken();
                 const response = await fetch(`${SERVER_URL}/api/endpoint-timings`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                
+
                 if (!response.ok) throw new Error('Failed to fetch timings');
-                
+
                 const data = await response.json();
                 renderTimingsTable(data);
             } catch (error) {
@@ -3695,13 +3699,13 @@ ${responseText}
 
         // Toggle between summary and detail views
         let currentView = 'detail'; // 'detail' or 'summary'
-        
+
         document.getElementById('toggleViewBtn')?.addEventListener('click', () => {
             currentView = currentView === 'detail' ? 'summary' : 'detail';
             const btn = document.getElementById('toggleViewBtn');
             const summaryView = document.getElementById('summaryView');
             const detailView = document.getElementById('detailView');
-            
+
             if (currentView === 'summary') {
                 btn.textContent = '📋 Detail View';
                 summaryView.style.display = 'block';
@@ -3711,7 +3715,7 @@ ${responseText}
                 summaryView.style.display = 'none';
                 detailView.style.display = 'block';
             }
-            
+
             // Re-render if we have data
             if (window.lastTimingsData) {
                 renderTimingsTable(window.lastTimingsData);
@@ -3720,7 +3724,7 @@ ${responseText}
 
         function renderTimingsTable(data) {
             window.lastTimingsData = data; // Store for view toggle
-            
+
             const tbody = document.getElementById('timingsTableBody');
             const summaryTbody = document.getElementById('summaryTableBody');
             const summary = document.getElementById('timingsSummary');
@@ -3744,9 +3748,9 @@ ${responseText}
                             }
                             t.steps.forEach(s => {
                                 // Check if this is a chunk step (contains provider name and 'chunk')
-                                const isChunkStep = s.name.includes('chunk') && 
-                                    (s.name.includes('DeepSeek') || s.name.includes('Mistral') || 
-                                     s.name.includes('Anthropic') || s.name.includes('OpenAI') || s.name.includes('Gemini'));
+                                const isChunkStep = s.name.includes('chunk') &&
+                                    (s.name.includes('DeepSeek') || s.name.includes('Mistral') ||
+                                        s.name.includes('Anthropic') || s.name.includes('OpenAI') || s.name.includes('Gemini'));
                                 if (isChunkStep) {
                                     const provider = s.name.split(' ')[0];
                                     if (!endpointModelStats[key][provider]) {
@@ -3767,7 +3771,7 @@ ${responseText}
                         const modelStats = endpointModelStats[key];
                         const hasModelStats = modelStats && Object.keys(modelStats).length > 0;
                         const expandIcon = hasModelStats ? '<span class="summary-expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
-                        
+
                         // Build model summary row if applicable
                         let modelRowHtml = '';
                         if (hasModelStats) {
@@ -3779,7 +3783,7 @@ ${responseText}
                                     maxDuration: stats.maxDuration
                                 }))
                                 .sort((a, b) => b.avgDuration - a.avgDuration);
-                            
+
                             modelRowHtml = `
                                 <tr id="summary-model-row-${idx}" class="summary-model-row" style="display:none;background:#f0f7ff;">
                                     <td colspan="7" style="padding:12px 8px 12px 30px;">
@@ -3787,19 +3791,19 @@ ${responseText}
                                             <strong style="color:#0c5460;">🤖 Model Performance (${e.count} request${e.count > 1 ? 's' : ''})</strong>
                                             <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:8px;margin-top:8px;">
                                                 ${modelSummary.map(m => {
-                                                    const mAvgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
-                                                    return `<div style="background:#fff;padding:8px;border-radius:4px;text-align:center;border:1px solid #dee2e6;">
+                                const mAvgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
+                                return `<div style="background:#fff;padding:8px;border-radius:4px;text-align:center;border:1px solid #dee2e6;">
                                                         <div style="font-weight:bold;font-size:12px;color:#333;">${m.provider}</div>
-                                                        <div style="color:${mAvgColor};font-weight:bold;font-size:14px;">${(m.avgDuration/1000).toFixed(1)}s avg</div>
-                                                        <div style="font-size:10px;color:#666;">${m.count} chunk${m.count>1?'s':''} · max ${(m.maxDuration/1000).toFixed(1)}s</div>
+                                                        <div style="color:${mAvgColor};font-weight:bold;font-size:14px;">${(m.avgDuration / 1000).toFixed(1)}s avg</div>
+                                                        <div style="font-size:10px;color:#666;">${m.count} chunk${m.count > 1 ? 's' : ''} · max ${(m.maxDuration / 1000).toFixed(1)}s</div>
                                                     </div>`;
-                                                }).join('')}
+                            }).join('')}
                                             </div>
                                         </div>
                                     </td>
                                 </tr>`;
                         }
-                        
+
                         return `<tr style="border-bottom:1px solid #eee;cursor:${hasModelStats ? 'pointer' : 'default'};" onclick="${hasModelStats ? `toggleSummaryModelRow(${idx})` : ''}">
                             <td style="padding:6px 8px;"><code style="background:#f1f3f4;padding:2px 6px;border-radius:3px;">${e.method}</code></td>
                             <td style="padding:6px 8px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${e.endpoint}">${expandIcon}${shortEndpoint}${hasModelStats ? ' 🤖' : ''}</td>
@@ -3812,14 +3816,14 @@ ${responseText}
                     }).join('');
                 }
             }
-            
+
             // Toggle summary model row visibility
-            window.toggleSummaryModelRow = function(idx) {
+            window.toggleSummaryModelRow = function (idx) {
                 const modelRow = document.getElementById(`summary-model-row-${idx}`);
                 if (modelRow) {
                     const isHidden = modelRow.style.display === 'none';
                     modelRow.style.display = isHidden ? 'table-row' : 'none';
-                    
+
                     // Update expand icon
                     const mainRow = modelRow.previousElementSibling;
                     const expandIcon = mainRow?.querySelector('.summary-expand-icon');
@@ -3838,19 +3842,19 @@ ${responseText}
 
                 tbody.innerHTML = data.timings.map((t, idx) => {
                     const durationColor = t.duration > 10000 ? '#dc3545' :
-                                         t.duration > 3000 ? '#ff9800' : '#28a745';
+                        t.duration > 3000 ? '#ff9800' : '#28a745';
                     const statusColor = t.status >= 400 ? '#dc3545' : '#28a745';
                     const time = new Date(t.requestTime).toLocaleTimeString();
                     const shortEndpoint = t.endpoint.length > 50 ? t.endpoint.substring(0, 47) + '...' : t.endpoint;
                     const hasSteps = t.steps && t.steps.length > 0;
                     const expandIcon = hasSteps ? '<span class="expand-icon" style="margin-right:4px;font-size:10px;">▶</span>' : '';
-                    
+
                     // Create steps row HTML if steps exist
                     // Check if this is a chunk distribution request (has model steps)
                     const chunkSteps = hasSteps ? t.steps.filter(s => s.name.includes('chunk') && (s.name.includes('DeepSeek') || s.name.includes('Mistral') || s.name.includes('Anthropic') || s.name.includes('OpenAI') || s.name.includes('Gemini'))) : [];
                     const otherSteps = hasSteps ? t.steps.filter(s => !chunkSteps.includes(s)) : [];
                     const hasChunkSteps = chunkSteps.length > 0;
-                    
+
                     // Aggregate model stats from chunk steps
                     let modelSummaryHtml = '';
                     if (hasChunkSteps) {
@@ -3864,7 +3868,7 @@ ${responseText}
                             modelStats[provider].totalDuration += s.duration;
                             modelStats[provider].maxDuration = Math.max(modelStats[provider].maxDuration, s.duration);
                         });
-                        
+
                         const modelSummary = Object.entries(modelStats)
                             .map(([provider, stats]) => ({
                                 provider,
@@ -3873,46 +3877,46 @@ ${responseText}
                                 maxDuration: stats.maxDuration
                             }))
                             .sort((a, b) => b.avgDuration - a.avgDuration);
-                        
+
                         modelSummaryHtml = `
                             <div style="margin-bottom:10px;padding:8px;background:#e8f4fd;border-radius:4px;border:1px solid #bee5eb;">
                                 <strong style="color:#0c5460;">🤖 Model Performance Summary</strong>
                                 <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(120px, 1fr));gap:8px;margin-top:6px;">
                                     ${modelSummary.map(m => {
-                                        const avgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
-                                        return `<div style="background:#fff;padding:6px;border-radius:4px;text-align:center;">
+                            const avgColor = m.avgDuration > 30000 ? '#dc3545' : m.avgDuration > 15000 ? '#ff9800' : '#28a745';
+                            return `<div style="background:#fff;padding:6px;border-radius:4px;text-align:center;">
                                             <div style="font-weight:bold;font-size:11px;">${m.provider}</div>
-                                            <div style="color:${avgColor};font-weight:bold;">${(m.avgDuration/1000).toFixed(1)}s avg</div>
-                                            <div style="font-size:10px;color:#666;">${m.count} chunk${m.count>1?'s':''} · max ${(m.maxDuration/1000).toFixed(1)}s</div>
+                                            <div style="color:${avgColor};font-weight:bold;">${(m.avgDuration / 1000).toFixed(1)}s avg</div>
+                                            <div style="font-size:10px;color:#666;">${m.count} chunk${m.count > 1 ? 's' : ''} · max ${(m.maxDuration / 1000).toFixed(1)}s</div>
                                         </div>`;
-                                    }).join('')}
+                        }).join('')}
                                 </div>
                             </div>`;
                     }
-                    
+
                     const stepsRowHtml = hasSteps ? `
                         <tr id="steps-row-${idx}" class="steps-row" style="display:none;background:#f8f9fa;">
                             <td colspan="5" style="padding:8px 8px 8px 30px;">
                                 <div style="font-size:12px;color:#666;">
                                     ${modelSummaryHtml}
                                     ${otherSteps.map(s => {
-                                        const stepColor = s.duration > 5000 ? '#dc3545' : s.duration > 1000 ? '#ff9800' : '#28a745';
-                                        return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
+                        const stepColor = s.duration > 5000 ? '#dc3545' : s.duration > 1000 ? '#ff9800' : '#28a745';
+                        return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
                                             <span>${s.name}</span>
                                             <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
                                         </div>`;
-                                    }).join('')}
+                    }).join('')}
                                     ${hasChunkSteps ? `
                                         <details style="margin-top:8px;">
                                             <summary style="cursor:pointer;color:#007bff;font-size:11px;">Show ${chunkSteps.length} individual chunk timings...</summary>
                                             <div style="margin-top:4px;">
                                                 ${chunkSteps.map(s => {
-                                                    const stepColor = s.duration > 30000 ? '#dc3545' : s.duration > 15000 ? '#ff9800' : '#28a745';
-                                                    return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
+                        const stepColor = s.duration > 30000 ? '#dc3545' : s.duration > 15000 ? '#ff9800' : '#28a745';
+                        return `<div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px dotted #ddd;">
                                                         <span>${s.name}</span>
                                                         <strong style="color:${stepColor};">${s.duration.toLocaleString()}ms</strong>
                                                     </div>`;
-                                                }).join('')}
+                    }).join('')}
                                             </div>
                                         </details>
                                     ` : ''}
@@ -3930,14 +3934,14 @@ ${responseText}
                 }).join('');
             }
         }
-        
+
         // Toggle steps row visibility
-        window.toggleStepsRow = function(idx) {
+        window.toggleStepsRow = function (idx) {
             const stepsRow = document.getElementById(`steps-row-${idx}`);
             if (stepsRow) {
                 const isHidden = stepsRow.style.display === 'none';
                 stepsRow.style.display = isHidden ? 'table-row' : 'none';
-                
+
                 // Update expand icon
                 const mainRow = stepsRow.previousElementSibling;
                 const expandIcon = mainRow?.querySelector('.expand-icon');
@@ -3950,13 +3954,13 @@ ${responseText}
         // Event listeners for timing buttons
         const refreshTimingsBtn = document.getElementById('refreshTimingsBtn');
         const autoRefreshTimingsBtn = document.getElementById('autoRefreshTimingsBtn');
-        
+
         if (refreshTimingsBtn) {
             refreshTimingsBtn.addEventListener('click', fetchEndpointTimings);
         }
-        
+
         if (autoRefreshTimingsBtn) {
-            autoRefreshTimingsBtn.addEventListener('click', function() {
+            autoRefreshTimingsBtn.addEventListener('click', function () {
                 if (autoRefreshTimingsInterval) {
                     clearInterval(autoRefreshTimingsInterval);
                     autoRefreshTimingsInterval = null;
@@ -3974,17 +3978,17 @@ ${responseText}
         // ============================================
         // MODELS TAB HANDLERS
         // ============================================
-        
+
         // Store model registry data and test results
         let modelRegistry = {};
         let modelTestResults = {};
         let usageChart = null;
-        
+
         // Sorting state for model registry
         let modelRegistrySort = { column: null, direction: 'asc' };
-        
+
         // Sort model registry and re-render
-        window.sortModelRegistry = function(column) {
+        window.sortModelRegistry = function (column) {
             // Toggle direction if same column, otherwise default to ascending
             if (modelRegistrySort.column === column) {
                 modelRegistrySort.direction = modelRegistrySort.direction === 'asc' ? 'desc' : 'asc';
@@ -3992,33 +3996,33 @@ ${responseText}
                 modelRegistrySort.column = column;
                 modelRegistrySort.direction = 'asc';
             }
-            
+
             // Update sort icons
             const costInputIcon = document.getElementById('costInputSortIcon');
             const costOutputIcon = document.getElementById('costOutputSortIcon');
-            
+
             if (costInputIcon) {
-                costInputIcon.textContent = column === 'costInput' 
-                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                costInputIcon.textContent = column === 'costInput'
+                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓')
                     : '⇅';
             }
             if (costOutputIcon) {
-                costOutputIcon.textContent = column === 'costOutput' 
-                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                costOutputIcon.textContent = column === 'costOutput'
+                    ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓')
                     : '⇅';
             }
-            
+
             // Re-render the table
             renderModelRegistryTable();
         };
-        
+
         // Render model registry table (separate from fetch for re-sorting)
         function renderModelRegistryTable() {
             const tbody = document.getElementById('modelRegistryTableBody');
             const summary = document.getElementById('modelRegistrySummary');
-            
+
             if (!tbody || Object.keys(modelRegistry).length === 0) return;
-            
+
             // Flatten all models with their provider info
             let allModels = [];
             for (const [providerName, providerData] of Object.entries(modelRegistry)) {
@@ -4030,7 +4034,7 @@ ${responseText}
                     });
                 });
             }
-            
+
             // Sort if a column is selected
             if (modelRegistrySort.column) {
                 allModels.sort((a, b) => {
@@ -4042,33 +4046,33 @@ ${responseText}
                         valueA = a.costPer1kOutput;
                         valueB = b.costPer1kOutput;
                     }
-                    
+
                     const multiplier = modelRegistrySort.direction === 'asc' ? 1 : -1;
                     return (valueA - valueB) * multiplier;
                 });
             }
-            
+
             // Render the table
             let totalModels = allModels.length;
             let availableProviders = new Set();
             let html = '';
-            
+
             // When sorted, show provider for each row; when unsorted, group by provider
             const isSorted = modelRegistrySort.column !== null;
-            
+
             if (isSorted) {
                 // Sorted view: show provider for each model
                 allModels.forEach(model => {
                     if (model.hasApiKey) availableProviders.add(model.providerName);
-                    
+
                     const testResult = modelTestResults[`${model.providerName}/${model.model}`];
-                    const statusIcon = testResult ? 
-                        (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
+                    const statusIcon = testResult ?
+                        (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') :
                         (model.hasApiKey ? '⚪' : '🔒');
-                    const statusText = testResult ? 
-                        `${testResult.status} (${testResult.ms}ms)` : 
+                    const statusText = testResult ?
+                        `${testResult.status} (${testResult.ms}ms)` :
                         (model.hasApiKey ? 'Not tested' : 'No API key');
-                    
+
                     html += `<tr style="border-bottom:1px solid #eee;${!model.hasApiKey ? 'opacity:0.6;' : ''}">
                         <td style="padding:8px;font-weight:500;">${model.providerName}</td>
                         <td style="padding:8px;">
@@ -4091,16 +4095,16 @@ ${responseText}
                 // Default grouped view by provider
                 for (const [providerName, providerData] of Object.entries(modelRegistry)) {
                     if (providerData.hasApiKey) availableProviders.add(providerName);
-                    
+
                     providerData.models.forEach((model, idx) => {
                         const testResult = modelTestResults[`${providerName}/${model.model}`];
-                        const statusIcon = testResult ? 
-                            (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') : 
+                        const statusIcon = testResult ?
+                            (testResult.status === 'OK' ? '✅' : testResult.status === 'SKIP' ? '⏭️' : '❌') :
                             (providerData.hasApiKey ? '⚪' : '🔒');
-                        const statusText = testResult ? 
-                            `${testResult.status} (${testResult.ms}ms)` : 
+                        const statusText = testResult ?
+                            `${testResult.status} (${testResult.ms}ms)` :
                             (providerData.hasApiKey ? 'Not tested' : 'No API key');
-                        
+
                         html += `<tr style="border-bottom:1px solid #eee;${!providerData.hasApiKey ? 'opacity:0.6;' : ''}">
                             <td style="padding:8px;font-weight:${idx === 0 ? 'bold' : 'normal'};">${idx === 0 ? providerName : ''}</td>
                             <td style="padding:8px;">
@@ -4121,27 +4125,27 @@ ${responseText}
                     });
                 }
             }
-            
+
             tbody.innerHTML = html || '<tr><td colspan="6" style="padding:20px;text-align:center;">No models found</td></tr>';
             summary.textContent = `${totalModels} models across ${Object.keys(modelRegistry).length} providers (${availableProviders.size} with API keys)`;
         }
-        
+
         // Fetch and display model registry
         async function fetchModelRegistry() {
             const tbody = document.getElementById('modelRegistryTableBody');
             const summary = document.getElementById('modelRegistrySummary');
-            
+
             if (!tbody) return;
-            
+
             try {
                 summary.textContent = 'Loading registry...';
-                
+
                 const user = auth.currentUser;
                 if (!user) {
                     summary.textContent = 'Please log in';
                     return;
                 }
-                
+
                 const token = await user.getIdToken();
                 const response = await fetch(`${SERVER_URL}/getModelRegistry`, {
                     method: 'GET',
@@ -4150,46 +4154,46 @@ ${responseText}
                         'Content-Type': 'application/json'
                     }
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!data.success) {
                     throw new Error(data.message || 'Failed to fetch registry');
                 }
-                
+
                 modelRegistry = data.registry;
-                
+
                 // Reset sort icons when refreshing data
                 const costInputIcon = document.getElementById('costInputSortIcon');
                 const costOutputIcon = document.getElementById('costOutputSortIcon');
                 if (costInputIcon) {
-                    costInputIcon.textContent = modelRegistrySort.column === 'costInput' 
-                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                    costInputIcon.textContent = modelRegistrySort.column === 'costInput'
+                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓')
                         : '⇅';
                 }
                 if (costOutputIcon) {
-                    costOutputIcon.textContent = modelRegistrySort.column === 'costOutput' 
-                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓') 
+                    costOutputIcon.textContent = modelRegistrySort.column === 'costOutput'
+                        ? (modelRegistrySort.direction === 'asc' ? '↑' : '↓')
                         : '⇅';
                 }
-                
+
                 // Render the table using shared function
                 renderModelRegistryTable();
-                
+
             } catch (error) {
                 console.error('Error fetching model registry:', error);
                 summary.textContent = 'Error: ' + error.message;
             }
         }
-        
+
         // Test a single model
-        window.testSingleModel = async function(provider, model) {
+        window.testSingleModel = async function (provider, model) {
             const key = `${provider}/${model}`;
-            
+
             try {
                 const user = auth.currentUser;
                 if (!user) return;
-                
+
                 const token = await user.getIdToken();
                 const response = await fetch(`${SERVER_URL}/testModel`, {
                     method: 'POST',
@@ -4199,41 +4203,41 @@ ${responseText}
                     },
                     body: JSON.stringify({ provider, model })
                 });
-                
+
                 const data = await response.json();
                 modelTestResults[key] = data;
-                
+
                 // Refresh the display
                 fetchModelRegistry();
-                
+
             } catch (error) {
                 console.error('Error testing model:', error);
                 modelTestResults[key] = { status: 'FAIL', message: error.message, ms: 0 };
                 fetchModelRegistry();
             }
         };
-        
+
         // Test all models
         async function testAllModels() {
             const summary = document.getElementById('modelRegistrySummary');
             const btn = document.getElementById('testAllModelsBtn');
-            
+
             if (!btn) return;
-            
+
             try {
                 const originalText = btn.textContent;
                 btn.textContent = '🔄 Testing...';
                 btn.disabled = true;
                 summary.textContent = 'Testing all models...';
-                
+
                 const user = auth.currentUser;
                 if (!user) {
                     summary.textContent = 'Please log in';
                     return;
                 }
-                
+
                 const token = await user.getIdToken();
-                
+
                 // Collect all models to test
                 const modelsToTest = [];
                 for (const [providerName, providerData] of Object.entries(modelRegistry)) {
@@ -4243,7 +4247,7 @@ ${responseText}
                         });
                     }
                 }
-                
+
                 // Test in parallel (with some concurrency limit)
                 let completed = 0;
                 const results = await Promise.all(modelsToTest.map(async ({ provider, model }) => {
@@ -4264,19 +4268,19 @@ ${responseText}
                         return { key: `${provider}/${model}`, status: 'FAIL', message: err.message, ms: 0 };
                     }
                 }));
-                
+
                 // Store results
                 results.forEach(r => {
                     modelTestResults[r.key] = r;
                 });
-                
+
                 const passed = results.filter(r => r.status === 'OK').length;
                 const failed = results.filter(r => r.status === 'FAIL').length;
                 summary.innerHTML = `<span style="color:#28a745;">${passed} passed</span>, <span style="color:#dc3545;">${failed} failed</span>`;
-                
+
                 // Refresh display
                 fetchModelRegistry();
-                
+
             } catch (error) {
                 console.error('Error testing all models:', error);
                 summary.textContent = 'Error: ' + error.message;
@@ -4288,21 +4292,21 @@ ${responseText}
                 }
             }
         }
-        
+
         // Fetch and display usage analytics
         async function fetchUsageAnalytics() {
             const summary = document.getElementById('analyticsSummary');
             const timeRange = document.getElementById('analyticsTimeRange')?.value || '24h';
-            
+
             try {
                 summary.textContent = 'Loading analytics...';
-                
+
                 const user = auth.currentUser;
                 if (!user) {
                     summary.textContent = 'Please log in';
                     return;
                 }
-                
+
                 const token = await user.getIdToken();
                 const response = await fetch(`${SERVER_URL}/getAIUsageStats?timeRange=${timeRange}`, {
                     method: 'GET',
@@ -4311,19 +4315,19 @@ ${responseText}
                         'Content-Type': 'application/json'
                     }
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!data.success) {
                     throw new Error(data.message || 'Failed to fetch analytics');
                 }
-                
+
                 // Update summary stats
                 document.getElementById('statTotalRequests').textContent = data.aggregated.totalRequests.toLocaleString();
                 document.getElementById('statTotalTokens').textContent = data.aggregated.totalTokens.toLocaleString();
                 document.getElementById('statTotalCost').textContent = `$${data.aggregated.totalCost.toFixed(4)}`;
                 document.getElementById('statAvgLatency').textContent = `${data.aggregated.avgLatency}ms`;
-                
+
                 // Update provider breakdown
                 const providerContainer = document.getElementById('providerBreakdownContainer');
                 if (providerContainer && data.aggregated.byProvider) {
@@ -4343,12 +4347,12 @@ ${responseText}
                         providerContainer.innerHTML = '<div style="padding:15px;text-align:center;color:#666;">No usage data in this period</div>';
                     }
                 }
-                
+
                 // Update time series chart
                 if (data.timeSeries && data.timeSeries.length > 0) {
                     updateUsageChart(data.timeSeries);
                 }
-                
+
                 // Update recent logs table
                 const logsBody = document.getElementById('recentLogsTableBody');
                 if (logsBody && data.recentLogs) {
@@ -4371,30 +4375,30 @@ ${responseText}
                         logsBody.innerHTML = '<tr><td colspan="7" style="padding:20px;text-align:center;color:#666;">No logs in this period</td></tr>';
                     }
                 }
-                
+
                 summary.textContent = `${data.totalLogsInRange} interactions in ${timeRange}`;
-                
+
             } catch (error) {
                 console.error('Error fetching usage analytics:', error);
                 summary.textContent = 'Error: ' + error.message;
             }
         }
-        
+
         // Update the usage chart
         function updateUsageChart(timeSeries) {
             const ctx = document.getElementById('usageChart');
             if (!ctx) return;
-            
+
             // Destroy existing chart if any
             if (usageChart) {
                 usageChart.destroy();
             }
-            
+
             const labels = timeSeries.map(d => {
                 const date = new Date(d.hour);
                 return date.toLocaleString('en-GB', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
             });
-            
+
             usageChart = new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -4452,13 +4456,13 @@ ${responseText}
                 }
             });
         }
-        
+
         // Event listeners for Models tab
         const refreshModelRegistryBtn = document.getElementById('refreshModelRegistryBtn');
         if (refreshModelRegistryBtn) {
             refreshModelRegistryBtn.addEventListener('click', fetchModelRegistry);
         }
-        
+
         const testAllModelsBtn = document.getElementById('testAllModelsBtn');
         if (testAllModelsBtn) {
             testAllModelsBtn.addEventListener('click', async () => {
@@ -4469,12 +4473,12 @@ ${responseText}
                 await testAllModels();
             });
         }
-        
+
         const refreshAnalyticsBtn = document.getElementById('refreshAnalyticsBtn');
         if (refreshAnalyticsBtn) {
             refreshAnalyticsBtn.addEventListener('click', fetchUsageAnalytics);
         }
-        
+
         const analyticsTimeRange = document.getElementById('analyticsTimeRange');
         if (analyticsTimeRange) {
             analyticsTimeRange.addEventListener('change', fetchUsageAnalytics);
@@ -4483,28 +4487,28 @@ ${responseText}
         // ============================================
         // TRANSCRIPTS MANAGEMENT PANEL
         // ============================================
-        
+
         // Store loaded conditions
         let loadedConditions = {};
         let currentEditingConditionId = null;
-        
+
         // Load conditions button
         const loadTranscriptsBtn = document.getElementById('loadTranscriptsBtn');
         if (loadTranscriptsBtn) {
             loadTranscriptsBtn.addEventListener('click', loadAllConditions);
         }
-        
+
         // Add condition button
         const addConditionBtn = document.getElementById('addConditionBtn');
         if (addConditionBtn) {
             addConditionBtn.addEventListener('click', addNewCondition);
         }
-        
+
         // Filter and search handlers
         const transcriptCategoryFilter = document.getElementById('transcriptCategoryFilter');
         const transcriptStatusFilter = document.getElementById('transcriptStatusFilter');
         const transcriptSearchInput = document.getElementById('transcriptSearchInput');
-        
+
         if (transcriptCategoryFilter) {
             transcriptCategoryFilter.addEventListener('change', filterAndRenderConditions);
         }
@@ -4514,28 +4518,28 @@ ${responseText}
         if (transcriptSearchInput) {
             transcriptSearchInput.addEventListener('input', debounce(filterAndRenderConditions, 300));
         }
-        
+
         // Modal handlers
         const closeTranscriptEditorBtn = document.getElementById('closeTranscriptEditorBtn');
         if (closeTranscriptEditorBtn) {
             closeTranscriptEditorBtn.addEventListener('click', closeTranscriptEditor);
         }
-        
+
         const saveTranscriptBtn = document.getElementById('saveTranscriptBtn');
         if (saveTranscriptBtn) {
             saveTranscriptBtn.addEventListener('click', saveCurrentTranscript);
         }
-        
+
         const clearTranscriptBtn = document.getElementById('clearTranscriptBtn');
         if (clearTranscriptBtn) {
             clearTranscriptBtn.addEventListener('click', clearCurrentTranscript);
         }
-        
+
         const generateTranscriptBtn = document.getElementById('generateTranscriptBtn');
         if (generateTranscriptBtn) {
             generateTranscriptBtn.addEventListener('click', generateTranscriptWithAI);
         }
-        
+
         // Close modal when clicking backdrop
         const transcriptEditorModal = document.getElementById('transcriptEditorModal');
         if (transcriptEditorModal) {
@@ -4545,7 +4549,7 @@ ${responseText}
                 }
             });
         }
-        
+
         // Simple debounce function
         function debounce(func, wait) {
             let timeout;
@@ -4558,18 +4562,18 @@ ${responseText}
                 timeout = setTimeout(later, wait);
             };
         }
-        
+
         // Load all conditions from server
         async function loadAllConditions() {
             const tableBody = document.getElementById('transcriptsTableBody');
             const summary = document.getElementById('transcriptsSummary');
             const btn = document.getElementById('loadTranscriptsBtn');
-            
+
             try {
                 btn.disabled = true;
                 btn.textContent = '⏳ Loading...';
                 tableBody.innerHTML = '<tr><td colspan="5" style="padding:30px;text-align:center;color:#666;">Loading conditions...</td></tr>';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/clinicalConditions`, {
                     method: 'GET',
@@ -4578,17 +4582,17 @@ ${responseText}
                         'Content-Type': 'application/json'
                     }
                 });
-                
+
                 if (!response.ok) {
                     throw new Error(`Server error: ${response.status}`);
                 }
-                
+
                 const data = await response.json();
-                
+
                 if (!data.success) {
                     throw new Error(data.error || 'Failed to load conditions');
                 }
-                
+
                 // Store conditions in flat structure for easier filtering
                 loadedConditions = {};
                 for (const [category, conditions] of Object.entries(data.conditions)) {
@@ -4599,13 +4603,13 @@ ${responseText}
                         };
                     }
                 }
-                
+
                 const totalConditions = Object.keys(loadedConditions).length;
                 const withTranscripts = Object.values(loadedConditions).filter(c => c.hasTranscript).length;
                 summary.textContent = `${totalConditions} conditions (${withTranscripts} with transcripts)`;
-                
+
                 filterAndRenderConditions();
-                
+
             } catch (error) {
                 console.error('[TRANSCRIPTS] Error loading conditions:', error);
                 tableBody.innerHTML = `<tr><td colspan="5" style="padding:30px;text-align:center;color:#dc3545;">Error: ${error.message}</td></tr>`;
@@ -4615,34 +4619,34 @@ ${responseText}
                 btn.textContent = '🔄 Load Conditions';
             }
         }
-        
+
         // Filter and render conditions based on current filters
         function filterAndRenderConditions() {
             const tableBody = document.getElementById('transcriptsTableBody');
             const categoryFilter = document.getElementById('transcriptCategoryFilter').value;
             const statusFilter = document.getElementById('transcriptStatusFilter').value;
             const searchTerm = document.getElementById('transcriptSearchInput').value.toLowerCase().trim();
-            
+
             // Filter conditions
             let filteredConditions = Object.values(loadedConditions);
-            
+
             if (categoryFilter !== 'all') {
                 filteredConditions = filteredConditions.filter(c => c.category === categoryFilter);
             }
-            
+
             if (statusFilter === 'has-transcript') {
                 filteredConditions = filteredConditions.filter(c => c.hasTranscript);
             } else if (statusFilter === 'no-transcript') {
                 filteredConditions = filteredConditions.filter(c => !c.hasTranscript);
             }
-            
+
             if (searchTerm) {
-                filteredConditions = filteredConditions.filter(c => 
+                filteredConditions = filteredConditions.filter(c =>
                     c.name.toLowerCase().includes(searchTerm) ||
                     c.id.toLowerCase().includes(searchTerm)
                 );
             }
-            
+
             // Sort by category then name
             filteredConditions.sort((a, b) => {
                 if (a.category !== b.category) {
@@ -4650,26 +4654,26 @@ ${responseText}
                 }
                 return a.name.localeCompare(b.name);
             });
-            
+
             // Render table
             if (filteredConditions.length === 0) {
                 tableBody.innerHTML = '<tr><td colspan="5" style="padding:30px;text-align:center;color:#666;">No conditions match your filters</td></tr>';
                 return;
             }
-            
+
             tableBody.innerHTML = filteredConditions.map(condition => {
-                const categoryBadge = condition.category === 'obstetrics' 
+                const categoryBadge = condition.category === 'obstetrics'
                     ? '<span style="background:#e3f2fd;color:#1976d2;padding:2px 8px;border-radius:12px;font-size:11px;">Obstetrics</span>'
                     : '<span style="background:#fce4ec;color:#c2185b;padding:2px 8px;border-radius:12px;font-size:11px;">Gynaecology</span>';
-                
+
                 const transcriptBadge = condition.hasTranscript
                     ? '<span style="background:#d4edda;color:#155724;padding:2px 8px;border-radius:12px;font-size:11px;">✓ Yes</span>'
                     : '<span style="background:#f8f9fa;color:#6c757d;padding:2px 8px;border-radius:12px;font-size:11px;">✗ No</span>';
-                
-                const preview = condition.transcript 
+
+                const preview = condition.transcript
                     ? condition.transcript.substring(0, 80).replace(/</g, '&lt;').replace(/>/g, '&gt;') + '...'
                     : '<span style="color:#999;font-style:italic;">No transcript</span>';
-                
+
                 return `<tr style="border-bottom:1px solid #eee;">
                     <td style="padding:10px;font-weight:500;">${condition.name}</td>
                     <td style="padding:10px;">${categoryBadge}</td>
@@ -4681,39 +4685,39 @@ ${responseText}
                     </td>
                 </tr>`;
             }).join('');
-            
+
             // Attach event listeners to buttons
             document.querySelectorAll('.edit-transcript-btn').forEach(btn => {
                 btn.addEventListener('click', () => openTranscriptEditor(btn.dataset.conditionId));
             });
-            
+
             document.querySelectorAll('.delete-condition-btn').forEach(btn => {
                 btn.addEventListener('click', () => deleteCondition(btn.dataset.conditionId, btn.dataset.conditionName));
             });
         }
-        
+
         // Add new condition
         async function addNewCondition() {
             const nameInput = document.getElementById('newConditionName');
             const categorySelect = document.getElementById('newConditionCategory');
             const statusDiv = document.getElementById('addConditionStatus');
             const btn = document.getElementById('addConditionBtn');
-            
+
             const name = nameInput.value.trim();
             const category = categorySelect.value;
-            
+
             if (!name) {
                 statusDiv.style.display = 'block';
                 statusDiv.style.color = '#dc3545';
                 statusDiv.textContent = 'Please enter a condition name';
                 return;
             }
-            
+
             try {
                 btn.disabled = true;
                 btn.textContent = '⏳ Adding...';
                 statusDiv.style.display = 'none';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/addClinicalCondition`, {
                     method: 'POST',
@@ -4723,23 +4727,23 @@ ${responseText}
                     },
                     body: JSON.stringify({ name, category })
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!response.ok) {
                     throw new Error(data.error || `Server error: ${response.status}`);
                 }
-                
+
                 statusDiv.style.display = 'block';
                 statusDiv.style.color = '#28a745';
                 statusDiv.textContent = `✅ Added "${name}" successfully!`;
-                
+
                 // Clear the input
                 nameInput.value = '';
-                
+
                 // Reload the conditions list
                 await loadAllConditions();
-                
+
             } catch (error) {
                 console.error('[TRANSCRIPTS] Error adding condition:', error);
                 statusDiv.style.display = 'block';
@@ -4750,13 +4754,13 @@ ${responseText}
                 btn.textContent = '➕ Add';
             }
         }
-        
+
         // Delete condition
         async function deleteCondition(conditionId, conditionName) {
             if (!confirm(`Are you sure you want to delete "${conditionName}"?\n\nThis will also delete any associated transcript. This action cannot be undone.`)) {
                 return;
             }
-            
+
             try {
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/deleteClinicalCondition/${encodeURIComponent(conditionId)}`, {
@@ -4766,24 +4770,24 @@ ${responseText}
                         'Content-Type': 'application/json'
                     }
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!response.ok) {
                     throw new Error(data.error || `Server error: ${response.status}`);
                 }
-                
+
                 alert(`✅ Deleted "${conditionName}" successfully!`);
-                
+
                 // Reload the conditions list
                 await loadAllConditions();
-                
+
             } catch (error) {
                 console.error('[TRANSCRIPTS] Error deleting condition:', error);
                 alert(`❌ Error deleting condition: ${error.message}`);
             }
         }
-        
+
         // Open transcript editor modal
         async function openTranscriptEditor(conditionId) {
             const modal = document.getElementById('transcriptEditorModal');
@@ -4791,46 +4795,46 @@ ${responseText}
             const conditionIdInput = document.getElementById('transcriptEditorConditionId');
             const contentTextarea = document.getElementById('transcriptEditorContent');
             const statusDiv = document.getElementById('transcriptEditorStatus');
-            
+
             currentEditingConditionId = conditionId;
-            
+
             // Get condition data
             const condition = loadedConditions[conditionId];
             if (!condition) {
                 alert('Condition not found');
                 return;
             }
-            
+
             titleEl.textContent = `Edit Transcript: ${condition.name}`;
             conditionIdInput.value = conditionId;
             contentTextarea.value = condition.transcript || '';
             statusDiv.style.display = 'none';
-            
+
             modal.style.display = 'flex';
         }
-        
+
         // Close transcript editor modal
         function closeTranscriptEditor() {
             const modal = document.getElementById('transcriptEditorModal');
             modal.style.display = 'none';
             currentEditingConditionId = null;
         }
-        
+
         // Save current transcript
         async function saveCurrentTranscript() {
             if (!currentEditingConditionId) return;
-            
+
             const contentTextarea = document.getElementById('transcriptEditorContent');
             const statusDiv = document.getElementById('transcriptEditorStatus');
             const btn = document.getElementById('saveTranscriptBtn');
-            
+
             const transcript = contentTextarea.value.trim();
-            
+
             try {
                 btn.disabled = true;
                 btn.textContent = '⏳ Saving...';
                 statusDiv.style.display = 'none';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/saveTranscript/${encodeURIComponent(currentEditingConditionId)}`, {
                     method: 'PUT',
@@ -4840,29 +4844,29 @@ ${responseText}
                     },
                     body: JSON.stringify({ transcript: transcript || null })
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!response.ok) {
                     throw new Error(data.error || `Server error: ${response.status}`);
                 }
-                
+
                 statusDiv.style.display = 'block';
                 statusDiv.style.color = '#28a745';
                 statusDiv.textContent = '✅ Transcript saved successfully!';
-                
+
                 // Update the local cache
                 if (loadedConditions[currentEditingConditionId]) {
                     loadedConditions[currentEditingConditionId].transcript = transcript || null;
                     loadedConditions[currentEditingConditionId].hasTranscript = !!transcript;
                 }
-                
+
                 // Re-render the table
                 filterAndRenderConditions();
-                
+
                 // Close modal after a short delay
                 setTimeout(() => closeTranscriptEditor(), 1000);
-                
+
             } catch (error) {
                 console.error('[TRANSCRIPTS] Error saving transcript:', error);
                 statusDiv.style.display = 'block';
@@ -4873,42 +4877,42 @@ ${responseText}
                 btn.textContent = '💾 Save Transcript';
             }
         }
-        
+
         // Clear current transcript
         async function clearCurrentTranscript() {
             if (!currentEditingConditionId) return;
-            
+
             const condition = loadedConditions[currentEditingConditionId];
             if (!confirm(`Are you sure you want to clear the transcript for "${condition?.name}"?`)) {
                 return;
             }
-            
+
             const contentTextarea = document.getElementById('transcriptEditorContent');
             contentTextarea.value = '';
             await saveCurrentTranscript();
         }
-        
+
         // Generate transcript with AI
         async function generateTranscriptWithAI() {
             if (!currentEditingConditionId) return;
-            
+
             const contentTextarea = document.getElementById('transcriptEditorContent');
             const statusDiv = document.getElementById('transcriptEditorStatus');
             const btn = document.getElementById('generateTranscriptBtn');
-            
+
             const condition = loadedConditions[currentEditingConditionId];
-            
+
             if (contentTextarea.value.trim() && !confirm('This will replace the current transcript content. Continue?')) {
                 return;
             }
-            
+
             try {
                 btn.disabled = true;
                 btn.textContent = '⏳ Generating...';
                 statusDiv.style.display = 'block';
                 statusDiv.style.color = '#17a2b8';
                 statusDiv.textContent = `🤖 Generating transcript for "${condition?.name}" using AI...`;
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/generateTranscript/${encodeURIComponent(currentEditingConditionId)}`, {
                     method: 'POST',
@@ -4918,29 +4922,29 @@ ${responseText}
                     },
                     body: JSON.stringify({ forceRegenerate: true })
                 });
-                
+
                 const data = await response.json();
-                
+
                 if (!response.ok) {
                     throw new Error(data.error || `Server error: ${response.status}`);
                 }
-                
+
                 if (data.transcript) {
                     contentTextarea.value = data.transcript;
-                    
+
                     // Update the local cache
                     if (loadedConditions[currentEditingConditionId]) {
                         loadedConditions[currentEditingConditionId].transcript = data.transcript;
                         loadedConditions[currentEditingConditionId].hasTranscript = true;
                     }
-                    
+
                     // Re-render the table
                     filterAndRenderConditions();
                 }
-                
+
                 statusDiv.style.color = '#28a745';
                 statusDiv.textContent = '✅ Transcript generated and saved successfully!';
-                
+
             } catch (error) {
                 console.error('[TRANSCRIPTS] Error generating transcript:', error);
                 statusDiv.style.display = 'block';
@@ -4953,46 +4957,46 @@ ${responseText}
         }
 
         // ===== PROMPT EVOLUTION SYSTEM =====
-        
+
         // Store evolution results for later use
         let currentEvolutionResults = null;
         // Store loaded conditions for transcript generation
         let evolveConditionsCache = null;
-        
+
         // Load scenarios for evolution - uses same source as index.html clinical dropdown
         async function loadEvolveScenarios() {
             const select = document.getElementById('evolveScenarioSelect');
             const status = document.getElementById('evolveStatus');
-            
+
             if (!select) return;
-            
+
             try {
                 status.textContent = 'Loading scenarios...';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/clinicalConditions`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                
+
                 if (!response.ok) throw new Error('Failed to load conditions');
-                
+
                 const data = await response.json();
                 const conditionsByCategory = data.conditions || {};
                 evolveConditionsCache = conditionsByCategory;
-                
+
                 select.innerHTML = '';
-                
+
                 // Only show obstetrics category (same as index.html)
                 const obstetrics = conditionsByCategory.obstetrics || {};
                 let totalConditions = 0;
                 let conditionsWithTranscripts = 0;
-                
+
                 Object.entries(obstetrics).forEach(([name, condition]) => {
                     totalConditions++;
                     const option = document.createElement('option');
                     option.value = condition.id || name;
                     option.dataset.name = condition.name || name;
-                    
+
                     if (condition.transcript) {
                         option.textContent = `✓ ${condition.name || name}`;
                         option.dataset.transcript = condition.transcript;
@@ -5004,25 +5008,25 @@ ${responseText}
                     }
                     select.appendChild(option);
                 });
-                
+
                 if (totalConditions === 0) {
                     select.innerHTML = '<option value="">No obstetrics scenarios available</option>';
                     status.textContent = 'No scenarios available.';
                 } else {
                     status.textContent = `Loaded ${totalConditions} scenarios (${conditionsWithTranscripts} with transcripts)`;
                 }
-                
+
             } catch (error) {
                 console.error('[EVOLVE] Error loading scenarios:', error);
                 status.textContent = `Error: ${error.message}`;
                 select.innerHTML = '<option value="">Error loading scenarios</option>';
             }
         }
-        
+
         // Generate transcript for a condition if missing
         async function generateTranscriptForCondition(conditionId, conditionName) {
             console.log(`[EVOLVE] Generating transcript for ${conditionName}...`);
-            
+
             const token = await auth.currentUser.getIdToken();
             const response = await fetch(`${SERVER_URL}/generateTranscript/${encodeURIComponent(conditionId)}`, {
                 method: 'POST',
@@ -5032,20 +5036,20 @@ ${responseText}
                 },
                 body: JSON.stringify({ forceRegenerate: false })
             });
-            
+
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.error || 'Failed to generate transcript');
             }
-            
+
             const result = await response.json();
             return result.transcript;
         }
-        
+
         // Find most relevant guideline for a clinical note
         async function findRelevantGuidelineForNote(clinicalNote) {
             console.log('[EVOLVE] Finding relevant guidelines...');
-            
+
             const token = await auth.currentUser.getIdToken();
             const response = await fetch(`${SERVER_URL}/findRelevantGuidelines`, {
                 method: 'POST',
@@ -5059,28 +5063,28 @@ ${responseText}
                     hospitalTrust: null
                 })
             });
-            
+
             if (!response.ok) {
                 throw new Error('Failed to find relevant guidelines');
             }
-            
+
             const data = await response.json();
-            
+
             // Get the most relevant guideline
             const mostRelevant = data.categories?.mostRelevant || [];
             if (mostRelevant.length > 0) {
                 return mostRelevant[0]; // Return the top guideline
             }
-            
+
             // Fall back to potentially relevant
             const potentiallyRelevant = data.categories?.potentiallyRelevant || [];
             if (potentiallyRelevant.length > 0) {
                 return potentiallyRelevant[0];
             }
-            
+
             return null;
         }
-        
+
         // Run evolution cycle - now auto-finds guidelines
         async function runEvolutionCycle() {
             const scenarioSelect = document.getElementById('evolveScenarioSelect');
@@ -5091,31 +5095,31 @@ ${responseText}
             const progressBar = document.getElementById('evolveProgressBar');
             const resultsSection = document.getElementById('evolveResultsSection');
             const runBtn = document.getElementById('runEvolutionBtn');
-            
+
             // Get selected scenarios
             const selectedOptions = Array.from(scenarioSelect.selectedOptions);
             if (selectedOptions.length === 0) {
                 alert('Please select at least one scenario');
                 return;
             }
-            
+
             try {
                 runBtn.disabled = true;
                 progressSection.style.display = 'block';
                 resultsSection.style.display = 'none';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const scenarios = [];
-                
+
                 // Step 1: Prepare scenarios (generate transcripts if needed)
                 for (let i = 0; i < selectedOptions.length; i++) {
                     const opt = selectedOptions[i];
                     const progress = Math.round((i / selectedOptions.length) * 30);
                     progressBar.style.width = `${progress}%`;
                     progressPercent.textContent = `${progress}%`;
-                    
+
                     let transcript = opt.dataset.transcript;
-                    
+
                     if (!transcript || opt.dataset.hasTranscript === 'false') {
                         progressText.textContent = `Generating transcript for ${opt.dataset.name}...`;
                         try {
@@ -5130,23 +5134,23 @@ ${responseText}
                             continue;
                         }
                     }
-                    
+
                     scenarios.push({
                         id: opt.value,
                         name: opt.dataset.name,
                         clinicalNote: transcript
                     });
                 }
-                
+
                 if (scenarios.length === 0) {
                     throw new Error('No valid scenarios to process');
                 }
-                
+
                 // Step 2: Find relevant guidelines for each scenario
                 progressText.textContent = `Finding relevant guidelines for ${scenarios.length} scenarios...`;
                 progressBar.style.width = '40%';
                 progressPercent.textContent = '40%';
-                
+
                 const scenariosWithGuidelines = [];
                 for (let i = 0; i < scenarios.length; i++) {
                     const scenario = scenarios[i];
@@ -5154,7 +5158,7 @@ ${responseText}
                     progressBar.style.width = `${progress}%`;
                     progressPercent.textContent = `${progress}%`;
                     progressText.textContent = `Finding guidelines for ${scenario.name}...`;
-                    
+
                     try {
                         const relevantGuideline = await findRelevantGuidelineForNote(scenario.clinicalNote);
                         if (relevantGuideline) {
@@ -5170,16 +5174,16 @@ ${responseText}
                         console.error(`[EVOLVE] Error finding guidelines for ${scenario.name}:`, err);
                     }
                 }
-                
+
                 if (scenariosWithGuidelines.length === 0) {
                     throw new Error('Could not find relevant guidelines for any scenario');
                 }
-                
+
                 // Step 3: Run evolution
                 progressText.textContent = `Processing ${scenariosWithGuidelines.length} scenarios...`;
                 progressBar.style.width = '60%';
                 progressPercent.textContent = '60%';
-                
+
                 const response = await fetch(`${SERVER_URL}/evolvePrompts`, {
                     method: 'POST',
                     headers: {
@@ -5188,27 +5192,27 @@ ${responseText}
                     },
                     body: JSON.stringify({ scenariosWithGuidelines })
                 });
-                
+
                 progressBar.style.width = '90%';
                 progressPercent.textContent = '90%';
-                
+
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(errorData.error || `Server error: ${response.status}`);
                 }
-                
+
                 const result = await response.json();
                 currentEvolutionResults = result;
-                
+
                 progressBar.style.width = '100%';
                 progressPercent.textContent = '100%';
                 progressText.textContent = 'Complete!';
-                
+
                 // Display results
                 displayEvolutionResults(result);
-                
+
                 status.textContent = 'Evolution cycle complete';
-                
+
             } catch (error) {
                 console.error('[EVOLVE] Error:', error);
                 status.textContent = `Error: ${error.message}`;
@@ -5217,35 +5221,35 @@ ${responseText}
                 runBtn.disabled = false;
             }
         }
-        
+
         // Display evolution results
         function displayEvolutionResults(result) {
             const resultsSection = document.getElementById('evolveResultsSection');
-            
+
             // Update metrics using new terminology with fallback for backward compatibility
             const metrics = result.aggregatedMetrics || {};
-            
+
             // Primary metrics (Recall and Precision)
             const avgRecall = metrics.averageRecall ?? metrics.averageCompleteness ?? 0;
             const avgPrecision = metrics.averagePrecision ?? metrics.averageAccuracy ?? 0;
-            
-            document.getElementById('evolveMetricRecall').textContent = 
+
+            document.getElementById('evolveMetricRecall').textContent =
                 (avgRecall * 100).toFixed(1) + '%';
-            document.getElementById('evolveMetricPrecision').textContent = 
+            document.getElementById('evolveMetricPrecision').textContent =
                 (avgPrecision * 100).toFixed(1) + '%';
-            document.getElementById('evolveMetricLatency').textContent = 
+            document.getElementById('evolveMetricLatency').textContent =
                 (metrics.averageLatencyMs || 0).toFixed(0) + 'ms';
-            document.getElementById('evolveMetricScenarios').textContent = 
+            document.getElementById('evolveMetricScenarios').textContent =
                 metrics.totalScenarios || 0;
-            
+
             // Breakdown metrics
-            document.getElementById('evolveMetricRedundancy').textContent = 
+            document.getElementById('evolveMetricRedundancy').textContent =
                 ((metrics.averageRedundancyRate || 0) * 100).toFixed(1) + '%';
-            document.getElementById('evolveMetricFalseNegative').textContent = 
+            document.getElementById('evolveMetricFalseNegative').textContent =
                 ((metrics.averageFalseNegativeRate || 0) * 100).toFixed(1) + '%';
-            document.getElementById('evolveMetricApplicability').textContent = 
+            document.getElementById('evolveMetricApplicability').textContent =
                 ((metrics.averageApplicabilityRate || 0) * 100).toFixed(1) + '%';
-            
+
             // Display per-scenario results with new terminology
             const scenarioResultsDiv = document.getElementById('evolveScenarioResults');
             let scenarioHtml = '<table style="width:100%;border-collapse:collapse;font-size:13px;">';
@@ -5258,7 +5262,7 @@ ${responseText}
             scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Sugg.</th>';
             scenarioHtml += '<th style="padding:10px;text-align:center;border-bottom:1px solid #dee2e6;">Latency</th>';
             scenarioHtml += '</tr></thead><tbody>';
-            
+
             (result.scenarioResults || []).forEach(sr => {
                 // Use new terminology with fallback
                 const recall = ((sr.evaluation?.recallScore ?? sr.evaluation?.completenessScore ?? 0) * 100).toFixed(0);
@@ -5267,13 +5271,13 @@ ${responseText}
                 const recallColor = recall >= 80 ? '#28a745' : recall >= 60 ? '#ff9800' : '#dc3545';
                 const precisionColor = precision >= 80 ? '#28a745' : precision >= 60 ? '#ff9800' : '#dc3545';
                 const redundancyColor = redundancy <= 20 ? '#28a745' : redundancy <= 40 ? '#ff9800' : '#dc3545';
-                
+
                 // Truncate guideline title for display
                 const guidelineTitle = sr.guidelineTitle || sr.guidelineId || '-';
-                const truncatedGuideline = guidelineTitle.length > 40 
-                    ? guidelineTitle.substring(0, 37) + '...' 
+                const truncatedGuideline = guidelineTitle.length > 40
+                    ? guidelineTitle.substring(0, 37) + '...'
                     : guidelineTitle;
-                
+
                 scenarioHtml += '<tr>';
                 scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;">${sr.scenarioName}</td>`;
                 scenarioHtml += `<td style="padding:10px;border-bottom:1px solid #eee;font-size:12px;color:#555;" title="${guidelineTitle}">${truncatedGuideline}</td>`;
@@ -5283,22 +5287,22 @@ ${responseText}
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.analysisResult?.suggestionsCount || 0}</td>`;
                 scenarioHtml += `<td style="padding:10px;text-align:center;border-bottom:1px solid #eee;">${sr.latencyMs || 0}ms</td>`;
                 scenarioHtml += '</tr>';
-                
+
                 // Add assessment row if present
                 if (sr.evaluation?.overallAssessment) {
                     scenarioHtml += `<tr><td colspan="6" style="padding:6px 10px 10px 20px;border-bottom:1px solid #dee2e6;font-size:12px;color:#666;background:#fafafa;">📝 ${sr.evaluation.overallAssessment}</td></tr>`;
                 }
             });
-            
+
             scenarioHtml += '</tbody></table>';
             scenarioResultsDiv.innerHTML = scenarioHtml;
-            
+
             // Display suggested improvements
             const improvementsDiv = document.getElementById('evolveImprovementsSection');
             const improvements = result.suggestedImprovements || {};
-            
+
             let improvementsHtml = '';
-            
+
             if (improvements.error) {
                 improvementsHtml = `<div style="color:#dc3545;">Error generating improvements: ${improvements.error}</div>`;
             } else {
@@ -5306,7 +5310,7 @@ ${responseText}
                 if (improvements.analysis) {
                     improvementsHtml += '<div style="margin-bottom:15px;">';
                     improvementsHtml += '<h6 style="margin-bottom:8px;">Analysis</h6>';
-                    
+
                     if (improvements.analysis.keyPatterns?.length > 0) {
                         improvementsHtml += '<div style="margin-bottom:8px;"><strong>Key Patterns:</strong></div>';
                         improvementsHtml += '<ul style="margin:0 0 10px 20px;">';
@@ -5315,7 +5319,7 @@ ${responseText}
                         });
                         improvementsHtml += '</ul>';
                     }
-                    
+
                     if (improvements.analysis.rootCauses?.length > 0) {
                         improvementsHtml += '<div style="margin-bottom:8px;"><strong>Root Causes:</strong></div>';
                         improvementsHtml += '<ul style="margin:0 0 10px 20px;">';
@@ -5324,15 +5328,15 @@ ${responseText}
                         });
                         improvementsHtml += '</ul>';
                     }
-                    
+
                     improvementsHtml += '</div>';
                 }
-                
+
                 // Suggested changes
                 if (improvements.suggestedChanges?.length > 0) {
                     improvementsHtml += '<div style="margin-bottom:15px;">';
                     improvementsHtml += '<h6 style="margin-bottom:8px;">Suggested Changes</h6>';
-                    
+
                     improvements.suggestedChanges.forEach((change, idx) => {
                         improvementsHtml += `<div style="background:#f8f9fa;padding:10px;border-radius:4px;margin-bottom:10px;">`;
                         improvementsHtml += `<div><strong>Change ${idx + 1}:</strong> ${change.changeType} in ${change.section}</div>`;
@@ -5340,26 +5344,26 @@ ${responseText}
                         improvementsHtml += `<div style="font-size:12px;color:#007bff;margin-top:4px;">Expected impact: ${change.expectedImpact}</div>`;
                         improvementsHtml += '</div>';
                     });
-                    
+
                     improvementsHtml += '</div>';
                 }
-                
+
                 // New prompt preview
                 if (improvements.newPrompt || improvements.newSystemPrompt) {
                     improvementsHtml += '<div style="margin-bottom:15px;">';
                     improvementsHtml += '<h6 style="margin-bottom:8px;">New Prompt (Click "Copy New Prompt" to copy)</h6>';
                     improvementsHtml += '<div style="background:#1e1e1e;color:#d4d4d4;padding:10px;border-radius:4px;font-family:monospace;font-size:11px;max-height:200px;overflow:auto;white-space:pre-wrap;">';
-                    
+
                     if (improvements.newSystemPrompt) {
                         improvementsHtml += `<span style="color:#569cd6;">// System Prompt:</span>\n${improvements.newSystemPrompt}\n\n`;
                     }
                     if (improvements.newPrompt) {
                         improvementsHtml += `<span style="color:#569cd6;">// User Prompt:</span>\n${improvements.newPrompt}`;
                     }
-                    
+
                     improvementsHtml += '</div></div>';
                 }
-                
+
                 // Expected improvement (use new terminology with fallback)
                 if (improvements.expectedImprovement) {
                     improvementsHtml += '<div style="background:#d4edda;padding:10px;border-radius:4px;">';
@@ -5375,71 +5379,71 @@ ${responseText}
                     improvementsHtml += '</div>';
                 }
             }
-            
+
             if (!improvementsHtml) {
                 improvementsHtml = '<div style="color:#666;">No improvements suggested. The current prompt may already be optimal for these scenarios.</div>';
             }
-            
+
             improvementsDiv.innerHTML = improvementsHtml;
-            
+
             // Enable apply button if we have new prompts
             const applyBtn = document.getElementById('applyEvolutionBtn');
             applyBtn.disabled = !(improvements.newPrompt || improvements.newSystemPrompt);
-            
+
             resultsSection.style.display = 'block';
         }
-        
+
         // Apply evolution changes
         async function applyEvolutionChanges() {
             if (!currentEvolutionResults?.suggestedImprovements) {
                 alert('No improvements to apply');
                 return;
             }
-            
+
             const improvements = currentEvolutionResults.suggestedImprovements;
             const status = document.getElementById('evolveApplyStatus');
             const applyBtn = document.getElementById('applyEvolutionBtn');
-            
+
             if (!improvements.newPrompt && !improvements.newSystemPrompt) {
                 alert('No new prompt generated');
                 return;
             }
-            
+
             if (!confirm('This will update the analyzeGuidelineForPatient prompt. Continue?')) {
                 return;
             }
-            
+
             try {
                 applyBtn.disabled = true;
                 status.textContent = 'Saving changes...';
-                
+
                 // Load current prompts
                 const token = await auth.currentUser.getIdToken();
                 const getResponse = await fetch(`${SERVER_URL}/getPrompts`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
-                
+
                 if (!getResponse.ok) throw new Error('Failed to load current prompts');
-                
+
                 const promptsData = await getResponse.json();
                 const prompts = promptsData.prompts || {};
-                
+
                 // Update the analyzeGuidelineForPatient prompt
                 if (!prompts.analyzeGuidelineForPatient) {
                     prompts.analyzeGuidelineForPatient = {};
                 }
-                
+
                 if (improvements.newSystemPrompt) {
                     prompts.analyzeGuidelineForPatient.system_prompt = improvements.newSystemPrompt;
                 }
                 if (improvements.newPrompt) {
                     prompts.analyzeGuidelineForPatient.prompt = improvements.newPrompt;
                 }
-                
+
                 // Save updated prompts - use FormData to match prompts.html format
                 const formData = new FormData();
                 formData.append('updatedPrompts', JSON.stringify(prompts));
-                
+
                 const saveResponse = await fetch(`${SERVER_URL}/updatePrompts`, {
                     method: 'POST',
                     headers: {
@@ -5447,15 +5451,15 @@ ${responseText}
                     },
                     body: formData
                 });
-                
+
                 if (!saveResponse.ok) {
                     const errorData = await saveResponse.json();
                     throw new Error(errorData.message || 'Failed to save prompts');
                 }
-                
+
                 status.textContent = '✅ Prompt updated successfully!';
                 status.style.color = '#28a745';
-                
+
             } catch (error) {
                 console.error('[EVOLVE] Error applying changes:', error);
                 status.textContent = `❌ Error: ${error.message}`;
@@ -5464,24 +5468,24 @@ ${responseText}
                 applyBtn.disabled = false;
             }
         }
-        
+
         // Copy new prompt to clipboard
         function copyEvolutionPrompt() {
             if (!currentEvolutionResults?.suggestedImprovements) {
                 alert('No improvements to copy');
                 return;
             }
-            
+
             const improvements = currentEvolutionResults.suggestedImprovements;
             let promptText = '';
-            
+
             if (improvements.newSystemPrompt) {
                 promptText += '// System Prompt:\n' + improvements.newSystemPrompt + '\n\n';
             }
             if (improvements.newPrompt) {
                 promptText += '// User Prompt:\n' + improvements.newPrompt;
             }
-            
+
             if (promptText) {
                 navigator.clipboard.writeText(promptText).then(() => {
                     document.getElementById('evolveApplyStatus').textContent = '📋 Copied to clipboard!';
@@ -5493,40 +5497,40 @@ ${responseText}
                 alert('No new prompt to copy');
             }
         }
-        
+
         // Select 3 random scenarios with transcripts
         function selectRandomScenarios() {
             const select = document.getElementById('evolveScenarioSelect');
             if (!select) return;
-            
+
             // Get all options with transcripts
-            const optionsWithTranscripts = Array.from(select.options).filter(opt => 
+            const optionsWithTranscripts = Array.from(select.options).filter(opt =>
                 opt.dataset.hasTranscript === 'true'
             );
-            
+
             if (optionsWithTranscripts.length === 0) {
                 alert('No scenarios with transcripts available');
                 return;
             }
-            
+
             // Deselect all first
             Array.from(select.options).forEach(opt => opt.selected = false);
-            
+
             // Shuffle and pick 3 (or fewer if not enough)
             const shuffled = optionsWithTranscripts.sort(() => Math.random() - 0.5);
             const toSelect = shuffled.slice(0, Math.min(3, shuffled.length));
-            
+
             toSelect.forEach(opt => opt.selected = true);
-            
+
             const status = document.getElementById('evolveStatus');
             if (status) {
                 status.textContent = `Selected ${toSelect.length} random scenarios`;
             }
         }
-        
+
         // Store sequential evolution results
         let sequentialEvolutionResults = null;
-        
+
         // Run sequential evolution through all LLMs
         async function runSequentialEvolution() {
             const scenarioSelect = document.getElementById('evolveScenarioSelect');
@@ -5537,31 +5541,31 @@ ${responseText}
             const progressBar = document.getElementById('evolveProgressBar');
             const resultsSection = document.getElementById('evolveResultsSection');
             const runBtn = document.getElementById('runSequentialBtn');
-            
+
             // Get selected scenarios
             const selectedOptions = Array.from(scenarioSelect.selectedOptions);
             if (selectedOptions.length === 0) {
                 alert('Please select at least one scenario');
                 return;
             }
-            
+
             try {
                 runBtn.disabled = true;
                 progressSection.style.display = 'block';
                 resultsSection.style.display = 'none';
-                
+
                 const token = await auth.currentUser.getIdToken();
                 const scenarios = [];
-                
+
                 // Step 1: Prepare scenarios (generate transcripts if needed)
                 for (let i = 0; i < selectedOptions.length; i++) {
                     const opt = selectedOptions[i];
                     const progress = Math.round((i / selectedOptions.length) * 20);
                     progressBar.style.width = `${progress}%`;
                     progressPercent.textContent = `${progress}%`;
-                    
+
                     let transcript = opt.dataset.transcript;
-                    
+
                     if (!transcript || opt.dataset.hasTranscript === 'false') {
                         progressText.textContent = `Generating transcript for ${opt.dataset.name}...`;
                         try {
@@ -5574,23 +5578,23 @@ ${responseText}
                             continue;
                         }
                     }
-                    
+
                     scenarios.push({
                         id: opt.value,
                         name: opt.dataset.name,
                         clinicalNote: transcript
                     });
                 }
-                
+
                 if (scenarios.length === 0) {
                     throw new Error('No valid scenarios to process');
                 }
-                
+
                 // Step 2: Find relevant guidelines for each scenario
                 progressText.textContent = `Finding relevant guidelines for ${scenarios.length} scenarios...`;
                 progressBar.style.width = '30%';
                 progressPercent.textContent = '30%';
-                
+
                 const scenariosWithGuidelines = [];
                 for (let i = 0; i < scenarios.length; i++) {
                     const scenario = scenarios[i];
@@ -5598,7 +5602,7 @@ ${responseText}
                     progressBar.style.width = `${progress}%`;
                     progressPercent.textContent = `${progress}%`;
                     progressText.textContent = `Finding guidelines for ${scenario.name}...`;
-                    
+
                     try {
                         const relevantGuideline = await findRelevantGuidelineForNote(scenario.clinicalNote);
                         if (relevantGuideline) {
@@ -5612,16 +5616,16 @@ ${responseText}
                         console.error(`[EVOLVE-SEQ] Error finding guidelines for ${scenario.name}:`, err);
                     }
                 }
-                
+
                 if (scenariosWithGuidelines.length === 0) {
                     throw new Error('Could not find relevant guidelines for any scenario');
                 }
-                
+
                 // Step 3: Run sequential evolution (all available models)
                 progressText.textContent = `Running sequential LLM chain (all models × ${scenariosWithGuidelines.length} scenarios)...`;
                 progressBar.style.width = '45%';
                 progressPercent.textContent = '45%';
-                
+
                 const response = await fetch(`${SERVER_URL}/evolvePromptsSequential`, {
                     method: 'POST',
                     headers: {
@@ -5630,27 +5634,27 @@ ${responseText}
                     },
                     body: JSON.stringify({ scenariosWithGuidelines })
                 });
-                
+
                 progressBar.style.width = '95%';
                 progressPercent.textContent = '95%';
-                
+
                 if (!response.ok) {
                     const errorData = await response.json();
                     throw new Error(errorData.error || `Server error: ${response.status}`);
                 }
-                
+
                 const result = await response.json();
                 sequentialEvolutionResults = result;
-                
+
                 progressBar.style.width = '100%';
                 progressPercent.textContent = '100%';
                 progressText.textContent = 'Complete!';
-                
+
                 // Display results
                 displaySequentialResults(result);
-                
+
                 status.textContent = 'Sequential evolution complete';
-                
+
             } catch (error) {
                 console.error('[EVOLVE-SEQ] Error:', error);
                 status.textContent = `Error: ${error.message}`;
@@ -5659,55 +5663,55 @@ ${responseText}
                 runBtn.disabled = false;
             }
         }
-        
+
         // Display sequential evolution results with comparison table
         function displaySequentialResults(result) {
             const resultsSection = document.getElementById('evolveResultsSection');
             const scenarioResultsDiv = document.getElementById('evolveScenarioResults');
-            
+
             // Hide the standard metrics section for sequential results
             const metricsRow = document.querySelector('#evolveResultsSection > div:first-child');
             if (metricsRow) {
                 metricsRow.style.display = 'none';
             }
-            
+
             // Use llmProviders for display (array of display names) or fallback
             // Handle null/undefined values in the array
-            const rawProviders = result.llmProviders || (result.llmChain || []).map(c => 
+            const rawProviders = result.llmProviders || (result.llmChain || []).map(c =>
                 typeof c === 'string' ? c : (c?.displayName || c?.model || 'Unknown')
             );
             const llmProviders = rawProviders.map((p, i) => p || `Model ${i + 1}`);
             const numModels = llmProviders.length;
-            
+
             let html = '<h5 style="margin-bottom:15px;">Sequential LLM Refinement Results</h5>';
             html += `<p style="font-size:12px;color:#666;margin-bottom:15px;">Testing ${numModels} models. Each LLM sees the previous LLM's output + evaluation. R = Recall, P = Precision. Scroll horizontally to see all models.</p>`;
-            
+
             // Wrap table in scrollable container for many models
             html += '<div style="overflow-x:auto;max-width:100%;border:1px solid #dee2e6;border-radius:4px;">';
             html += '<table style="border-collapse:collapse;font-size:11px;white-space:nowrap;">';
             html += '<thead style="background:#f8f9fa;position:sticky;top:0;"><tr>';
             html += '<th style="padding:6px 10px;text-align:left;border:1px solid #dee2e6;position:sticky;left:0;background:#f8f9fa;z-index:2;">Scenario</th>';
-            
+
             llmProviders.forEach((llm, idx) => {
                 // Shorten display name for header (take first part before parenthesis or use model ID)
-                const shortName = typeof llm === 'string' ? 
-                    (llm.includes('(') ? llm.split('(')[0].trim() : llm.substring(0, 15)) : 
+                const shortName = typeof llm === 'string' ?
+                    (llm.includes('(') ? llm.split('(')[0].trim() : llm.substring(0, 15)) :
                     String(llm).substring(0, 15);
                 html += `<th style="padding:6px 8px;text-align:center;border:1px solid #dee2e6;min-width:70px;" title="${llm}">${idx + 1}. ${shortName}</th>`;
             });
             html += '</tr></thead><tbody>';
-            
+
             (result.scenarioResults || []).forEach(sr => {
                 html += '<tr>';
                 html += `<td style="padding:6px 10px;border:1px solid #dee2e6;font-weight:500;position:sticky;left:0;background:#fff;z-index:1;">${sr.scenarioName}<br><span style="font-size:9px;color:#888;">${sr.guidelineTitle?.substring(0, 25) || ''}...</span></td>`;
-                
+
                 let prevRecall = null, prevPrecision = null;
-                
+
                 (sr.iterations || []).forEach((iter, idx) => {
                     // Use new terminology with fallback
                     const recall = Math.round((iter.recallScore ?? iter.completenessScore ?? 0) * 100);
                     const precision = Math.round((iter.precisionScore ?? iter.accuracyScore ?? 0) * 100);
-                    
+
                     // Determine trend arrows (compact)
                     let trend = '';
                     if (prevRecall !== null && prevPrecision !== null) {
@@ -5717,11 +5721,11 @@ ${responseText}
                         else if (declining) trend = '<span style="color:#dc3545;">↓</span>';
                         else trend = '<span style="color:#888;">~</span>';
                     }
-                    
+
                     // Colour based on combined score
                     const avgScore = (recall + precision) / 2;
                     const bgColor = avgScore >= 80 ? '#d4edda' : avgScore >= 60 ? '#fff3cd' : '#f8d7da';
-                    
+
                     html += `<td style="padding:4px 6px;text-align:center;border:1px solid #dee2e6;background:${bgColor};">`;
                     html += `<strong>${recall}/${precision}</strong>${trend}`;
                     html += `<br><span style="font-size:9px;color:#666;">${Math.round(iter.latencyMs / 1000)}s</span>`;
@@ -5729,24 +5733,24 @@ ${responseText}
                         html += `<br><span style="font-size:9px;color:#dc3545;">⚠</span>`;
                     }
                     html += '</td>';
-                    
+
                     prevRecall = recall;
                     prevPrecision = precision;
                 });
-                
+
                 html += '</tr>';
             });
-            
+
             html += '</tbody></table></div>';  // Close scrollable container
-            
+
             // Add summary
             html += '<div style="margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;">';
             html += '<h5 style="margin-bottom:10px;">Summary</h5>';
-            
+
             // Calculate average improvement from first to last LLM (using new terminology)
             let totalRecallImprovement = 0, totalPrecisionImprovement = 0, count = 0;
             let bestModel = null, bestScore = 0;
-            
+
             (result.scenarioResults || []).forEach(sr => {
                 if (sr.iterations && sr.iterations.length >= 2) {
                     const first = sr.iterations[0];
@@ -5756,11 +5760,11 @@ ${responseText}
                     const lastRecall = last.recallScore ?? last.completenessScore ?? 0;
                     const firstPrecision = first.precisionScore ?? first.accuracyScore ?? 0;
                     const lastPrecision = last.precisionScore ?? last.accuracyScore ?? 0;
-                    
+
                     totalRecallImprovement += lastRecall - firstRecall;
                     totalPrecisionImprovement += lastPrecision - firstPrecision;
                     count++;
-                    
+
                     // Track best performing model
                     sr.iterations.forEach((iter, iterIdx) => {
                         const recall = iter.recallScore ?? iter.completenessScore ?? 0;
@@ -5773,14 +5777,14 @@ ${responseText}
                     });
                 }
             });
-            
+
             const firstModel = llmProviders[0] || 'First';
             const lastModel = llmProviders[llmProviders.length - 1] || 'Last';
-            
+
             if (count > 0) {
                 const avgRecallImprovement = (totalRecallImprovement / count) * 100;
                 const avgPrecisionImprovement = (totalPrecisionImprovement / count) * 100;
-                
+
                 html += `<p style="font-size:13px;"><strong>Models tested:</strong> ${numModels}</p>`;
                 html += `<p style="font-size:13px;"><strong>Best performer:</strong> ${bestModel} (${Math.round(bestScore * 50)}% avg)</p>`;
                 html += `<p style="font-size:13px;">Average improvement from first to last:</p>`;
@@ -5789,56 +5793,56 @@ ${responseText}
                 html += `Precision: <strong style="color:${avgPrecisionImprovement >= 0 ? '#28a745' : '#dc3545'}">${avgPrecisionImprovement >= 0 ? '+' : ''}${avgPrecisionImprovement.toFixed(1)}%</strong>`;
                 html += '</p>';
             }
-            
+
             html += '</div>';
-            
+
             scenarioResultsDiv.innerHTML = html;
-            
+
             // Hide the suggested improvements section for sequential mode
             const suggestedChangesSection = document.getElementById('evolveImprovementsSection');
             if (suggestedChangesSection) {
                 suggestedChangesSection.parentElement.style.display = 'none';
             }
-            
+
             resultsSection.style.display = 'block';
         }
-        
+
         // Initialize evolution tab when it becomes visible
         function initEvolveTab() {
             loadEvolveScenarios();
         }
-        
+
         // Set up evolution button handlers
         const runEvolutionBtn = document.getElementById('runEvolutionBtn');
         if (runEvolutionBtn) {
             runEvolutionBtn.addEventListener('click', runEvolutionCycle);
         }
-        
+
         const randomScenariosBtn = document.getElementById('randomScenariosBtn');
         if (randomScenariosBtn) {
             randomScenariosBtn.addEventListener('click', selectRandomScenarios);
         }
-        
+
         const runSequentialBtn = document.getElementById('runSequentialBtn');
         if (runSequentialBtn) {
             runSequentialBtn.addEventListener('click', runSequentialEvolution);
         }
-        
+
         const loadEvolveScenariosBtn = document.getElementById('loadEvolveScenariosBtn');
         if (loadEvolveScenariosBtn) {
             loadEvolveScenariosBtn.addEventListener('click', loadEvolveScenarios);
         }
-        
+
         const applyEvolutionBtn = document.getElementById('applyEvolutionBtn');
         if (applyEvolutionBtn) {
             applyEvolutionBtn.addEventListener('click', applyEvolutionChanges);
         }
-        
+
         const copyEvolutionBtn = document.getElementById('copyEvolutionBtn');
         if (copyEvolutionBtn) {
             copyEvolutionBtn.addEventListener('click', copyEvolutionPrompt);
         }
-        
+
         // Hook into tab switching to initialize evolution tab
         const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');
         if (evolveNavBtn) {
@@ -5852,7 +5856,7 @@ ${responseText}
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);
     }
-}); 
+});
 // ==========================================
 // Clinical Issues Synchronization Logic
 // ==========================================
@@ -5896,7 +5900,7 @@ async function syncClinicalIssues() {
 
         // 2. Fetch guidelines from Firestore
         statusEl.textContent = 'Fetching guidelines from Firestore...';
-        const snapshot = await db.collection('guidelines').get();
+        const snapshot = await getDocs(collection(db, 'guidelines'));
         const guidelines = [];
         snapshot.forEach(doc => {
             const data = doc.data();
