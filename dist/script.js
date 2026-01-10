@@ -429,14 +429,14 @@ function showCurrentPIIMatch() {
     const reviewHtml = `
         <div class="pii-review-container" id="pii-review-current">
             <h3 style="color: #d32f2f; margin: 0 0 15px 0;">🔒 Privacy Review (${progressText})</h3>
-            <p style="margin: 0 0 10px 0; font-size: 14px; color: #666;">
+            <p style="margin: 0 0 10px 0; font-size: 14px; color: var(--text-secondary);">
                 Personal information detected. Please choose an action:
             </p>
             
-            <div class="pii-current-match" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
+            <div class="pii-current-match" style="background: var(--bg-tertiary); border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
                 <div style="margin: 0 0 10px 0;">
                     <strong style="color: #d32f2f;">Found:</strong> 
-                    <span style="background: #fff; padding: 4px 8px; border-radius: 3px; font-family: monospace;">"${escapeHtml(currentMatch.text)}"</span>
+                    <span style="background: var(--bg-secondary); padding: 4px 8px; border-radius: 3px; font-family: monospace;">"${escapeHtml(currentMatch.text)}"</span>
                 </div>
                 <div style="margin: 15px 0;">
                     <label style="display: block; margin-bottom: 8px; cursor: pointer;">
@@ -450,7 +450,7 @@ function showCurrentPIIMatch() {
                 </div>
             </div>
             
-            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">
+            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: var(--text-secondary);">
                 ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
             </div>
         </div>
