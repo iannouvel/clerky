@@ -1486,8 +1486,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Include PDF link if available
             const pdfLinkHtml = pdfLink || '';
 
-            // Only pre-check the first (highest-scoring) guideline
-            const isChecked = index === 0 ? 'checked="checked"' : '';
+            // Pre-check all relevant guidelines for parallel analysis
+            const isChecked = 'checked="checked"';
 
             htmlContent += `
                 <div class="guideline-item">
@@ -14387,7 +14387,7 @@ async function runParallelAnalysis(guidelines) {
     // Create a container for the aggregated results
     const containerId = 'parallel-analysis-results-' + Date.now();
     const resultsContainerHtml = `
-        <div id="${containerId}" class="parallel-analysis-container">
+        <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
             <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px; border: 1px solid #c8e6c9;">
                 <strong><i class="fas fa-layer-group"></i> Parallel Analysis in Progress</strong><br>
                 <span id="${containerId}-status-text">Starting workers...</span>
@@ -14460,7 +14460,13 @@ async function runParallelAnalysis(guidelines) {
     console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses.`);
 
     if (statusText) {
-        statusText.innerHTML = `<strong>Analysis Complete</strong><br>Found ${successfulResults.length} relevant sets of suggestions from ${total} guidelines.`;
+        const guidelinesWithSuggestions = successfulResults.length;
+        const noSuggestionCount = total - guidelinesWithSuggestions;
+        let statusMessage = `<strong>Analysis Complete</strong><br>Found ${guidelinesWithSuggestions} ${guidelinesWithSuggestions === 1 ? 'guideline' : 'guidelines'} with relevant suggestions.`;
+        if (noSuggestionCount > 0) {
+            statusMessage += `<br><small style="color: #666;">(${noSuggestionCount} ${noSuggestionCount === 1 ? 'guideline' : 'guidelines'} had no specific suggestions)</small>`;
+        }
+        statusText.innerHTML = statusMessage;
         statusText.parentElement.style.background = '#e3f2fd';
         statusText.parentElement.style.border = '1px solid #bbdefb';
     }
@@ -14477,13 +14483,10 @@ async function runParallelAnalysis(guidelines) {
             guidelineWrapper.style.borderTop = '1px solid #eee';
             guidelineWrapper.style.paddingTop = '20px';
 
-            // Header for this guideline
+            // Header for this guideline (relevance score removed for cleaner display)
             guidelineWrapper.innerHTML = `
                 <h3 style="color: #2c3e50; border-left: 4px solid #3498db; padding-left: 10px; margin-bottom: 15px;">
                     ${result.displayName}
-                    <span style="font-size: 0.7em; color: #7f8c8d; font-weight: normal; margin-left: 10px;">
-                        (Relevance: ${Math.round(result.relevance * 100)}%)
-                    </span>
                 </h3>
             `;
 
