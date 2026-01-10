@@ -6,6 +6,8 @@ description: how to deploy changes to clerkyai.health
 
 This project uses **automated deployment via GitHub Actions**. Changes pushed to the `main` branch are automatically built and deployed to the live site at `clerkyai.health`.
 
+// turbo-all
+
 ## Deployment Steps
 
 1. **Make your changes** to source files (styles.css, script.js, index.html, etc.)
@@ -24,7 +26,7 @@ This project uses **automated deployment via GitHub Actions**. Changes pushed to
 4. **Push to GitHub**:
    // turbo
    ```bash
-   git push
+   git -c core.askPass= push
    ```
 
 5. **Monitor deployment**:
