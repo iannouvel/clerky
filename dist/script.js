@@ -14537,15 +14537,20 @@ async function runParallelAnalysis(guidelines) {
         const suggestionsList = document.createElement('div');
         suggestionsList.className = 'suggestions-flat-list';
 
-        const suggestionsHtml = allSuggestions.map(suggestion => {
+        const suggestionsHtml = allSuggestions.map((suggestion, index) => {
             // Safely access suggestion properties with fallbacks
             const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
             const suggestionType = suggestion.type || suggestion.priority || 'info';
             const suggestionReasoning = suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
             const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
 
+            // Create a unique ID for this suggestion card
+            const suggestionId = `suggestion-${Date.now()}-${index}`;
+            // Store text in a data attribute for easy access (escaped)
+            const escapedText = suggestionText.replace(/"/g, '&quot;');
+
             return `
-            <div class="suggestion-card" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
                 <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                     <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
                     suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
@@ -14556,19 +14561,142 @@ async function runParallelAnalysis(guidelines) {
                        Guideline: ${sourceName}
                     </span>
                 </div>
-                <div class="suggestion-content">
-                    <p style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> ${suggestionText}</p>
+                
+                <div id="${suggestionId}-content" class="suggestion-content">
+                    <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
                     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><em>Based on: ${suggestionReasoning}</em></p>
                 </div>
-                 <div class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light);">
-                    <button class="btn-xs btn-outline-primary copy-suggestion-btn" style="color: var(--text-primary); border: 1px solid var(--border-color); background: transparent;" onclick="navigator.clipboard.writeText('${suggestionText.replace(/'/g, "\\'")}')">
-                        <i class="fas fa-copy"></i> Copy
+                
+                <div id="${suggestionId}-edit-mode" class="suggestion-edit-mode" style="display: none; margin-bottom: 10px;">
+                    <textarea id="${suggestionId}-editor" class="form-control" style="width: 100%; min-height: 80px; margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary);">${suggestionText}</textarea>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-sm btn-success" onclick="saveModifiedSuggestion('${suggestionId}')">Save</button>
+                        <button class="btn-sm btn-secondary" onclick="cancelModification('${suggestionId}')">Cancel</button>
+                    </div>
+                </div>
+
+                 <div id="${suggestionId}-actions" class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light); display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button class="btn-xs btn-success" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #28a745;" onclick="acceptParallelSuggestion('${suggestionId}')">
+                        <i class="fas fa-check"></i> Accept
                     </button>
-                    <!-- Future: Add Apply/Disregard buttons here if consistent with other workflows -->
+                    <button class="btn-xs btn-warning" style="color: #212529; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #ffc107;" onclick="modifyParallelSuggestion('${suggestionId}')">
+                        <i class="fas fa-edit"></i> Modify
+                    </button>
+                    <button class="btn-xs btn-danger" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #dc3545;" onclick="rejectParallelSuggestion('${suggestionId}')">
+                        <i class="fas fa-times"></i> Reject
+                    </button>
                 </div>
             </div>
         `;
         }).join('');
+
+        // Global handlers for Parallel Analysis Suggestion interactivity
+
+        window.acceptParallelSuggestion = function (suggestionId) {
+            const card = document.getElementById(suggestionId);
+            if (!card) return;
+
+            // Get the text to accept (check if it was modified or use original)
+            // We can grab it directly from the DOM to get the most current version
+            const textElement = card.querySelector('.text-content');
+            const textToInsert = textElement ? textElement.textContent : '';
+
+            if (!textToInsert) return;
+
+            // Use the global editor instance to insert text
+            if (window.editors && window.editors.userInput) {
+                // Add a newline before if needed, or just insert block
+                // TipTap insertContent handles block nodes well
+                window.editors.userInput.commands.insertContent(`\n${textToInsert}`);
+
+                // Visual feedback
+                card.style.borderColor = '#28a745';
+                card.style.backgroundColor = 'rgba(40, 167, 69, 0.1)';
+
+                const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+                if (actionsDiv) {
+                    actionsDiv.innerHTML = `<span style="color: #28a745; font-weight: bold;"><i class="fas fa-check-circle"></i> Accepted</span>`;
+                }
+
+                // Optional: Fade out and remove after a delay? 
+                // User might want to keep record, so just marking as accepted is better.
+                // But to declutter, we could shrink it. Let's just mark it for now.
+            } else {
+                console.warn('Editor not found, cannot insert suggestion');
+                alert('Could not find the editor to insert text.');
+            }
+        };
+
+        window.rejectParallelSuggestion = function (suggestionId) {
+            const card = document.getElementById(suggestionId);
+            if (!card) return;
+
+            // Visual feedback - slide up and remove
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-10px)';
+
+            setTimeout(() => {
+                card.remove();
+
+                // interactions to check if any suggestions remain?
+                // For now just removing it is sufficient
+            }, 300);
+        };
+
+        window.modifyParallelSuggestion = function (suggestionId) {
+            const contentDiv = document.getElementById(`${suggestionId}-content`);
+            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
+            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+
+            if (contentDiv && editModeDiv && actionsDiv) {
+                contentDiv.style.display = 'none';
+                actionsDiv.style.display = 'none';
+                editModeDiv.style.display = 'block';
+
+                // Focus the textarea
+                const textarea = document.getElementById(`${suggestionId}-editor`);
+                if (textarea) textarea.focus();
+            }
+        };
+
+        window.saveModifiedSuggestion = function (suggestionId) {
+            const textarea = document.getElementById(`${suggestionId}-editor`);
+            const textSpan = document.querySelector(`#${suggestionId} .text-content`);
+            const contentDiv = document.getElementById(`${suggestionId}-content`);
+            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
+            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+
+            if (textarea && textSpan) {
+                textSpan.textContent = textarea.value;
+            }
+
+            if (contentDiv && editModeDiv && actionsDiv) {
+                contentDiv.style.display = 'block';
+                actionsDiv.style.display = 'flex';
+                editModeDiv.style.display = 'none';
+            }
+        };
+
+        window.cancelModification = function (suggestionId) {
+            const contentDiv = document.getElementById(`${suggestionId}-content`);
+            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
+            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+            // Reset textarea to current text content? Or original? 
+            // Usually Cancel means "discard changes in textarea".
+
+            // Reset textarea to matches what is currently in textSpan (which is the last saved state)
+            const textarea = document.getElementById(`${suggestionId}-editor`);
+            const textSpan = document.querySelector(`#${suggestionId} .text-content`);
+            if (textarea && textSpan) {
+                textarea.value = textSpan.textContent;
+            }
+
+            if (contentDiv && editModeDiv && actionsDiv) {
+                contentDiv.style.display = 'block';
+                actionsDiv.style.display = 'flex';
+                editModeDiv.style.display = 'none';
+            }
+        };
 
         suggestionsList.innerHTML = suggestionsHtml;
         outputContainer.appendChild(suggestionsList);
