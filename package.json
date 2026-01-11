@@ -28,7 +28,7 @@
     "winston": "^3.8.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node --max-old-space-size=4096 server.js",
     "dev": "nodemon server.js",
     "build": "node build.js",
     "bundle-libretto": "webpack --config webpack.config.js"
