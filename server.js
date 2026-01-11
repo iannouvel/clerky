@@ -21330,6 +21330,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             issue: dedupeAdjacentRepeatText(suggestion.issue || ''),
             suggestion: dedupeAdjacentRepeatText(suggestion.suggestion || ''),
             why: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
+            context: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
             priority: suggestion.priority || 'medium',
             applicable: true
         }));
