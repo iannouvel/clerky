@@ -7535,8 +7535,8 @@ async function getGuidelinesList() {
     try {
         console.log('[GET_GUIDELINES_LIST] Fetching guidelines list from Firestore');
 
-        // Fetch all guidelines from Firestore
-        const snapshot = await db.collection('guidelines').get();
+        // Fetch all guidelines from Firestore (optimized: select only needed fields)
+        const snapshot = await db.collection('guidelines').select('filename', 'originalFilename').get();
 
         // Build list in format similar to the old text file (one filename per line)
         const guidelines = [];
