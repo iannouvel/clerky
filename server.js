@@ -20733,19 +20733,19 @@ app.post('/evolvePrompts', authenticateUser, async (req, res) => {
                 guidelineTitle = scenario.guidelineTitle || guidelineData.humanFriendlyTitle || guidelineData.title || scenarioGuidelineId;
 
                 // Get guideline content
-                guidelineContent = guidelineData.condensed || guidelineData.content;
-
-                if (!guidelineContent) {
-                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
-                    if (condensedDoc.exists) {
-                        guidelineContent = condensedDoc.data()?.condensed;
-                    }
-                }
+                guidelineContent = guidelineData.content || guidelineData.condensed;
 
                 if (!guidelineContent) {
                     const fullContentDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('full').get();
                     if (fullContentDoc.exists) {
                         guidelineContent = fullContentDoc.data()?.content;
+                    }
+                }
+
+                if (!guidelineContent) {
+                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) {
+                        guidelineContent = condensedDoc.data()?.condensed;
                     }
                 }
 
@@ -20922,19 +20922,19 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
                 const guidelineData = guidelineDoc.data();
                 guidelineTitle = scenario.guidelineTitle || guidelineData.humanFriendlyTitle || guidelineData.title || scenarioGuidelineId;
 
-                guidelineContent = guidelineData.condensed || guidelineData.content;
-
-                if (!guidelineContent) {
-                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
-                    if (condensedDoc.exists) {
-                        guidelineContent = condensedDoc.data()?.condensed;
-                    }
-                }
+                guidelineContent = guidelineData.content || guidelineData.condensed;
 
                 if (!guidelineContent) {
                     const fullContentDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('full').get();
                     if (fullContentDoc.exists) {
                         guidelineContent = fullContentDoc.data()?.content;
+                    }
+                }
+
+                if (!guidelineContent) {
+                    const condensedDoc = await db.collection('guidelines').doc(scenarioGuidelineId).collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) {
+                        guidelineContent = condensedDoc.data()?.condensed;
                     }
                 }
 
