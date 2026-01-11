@@ -21125,10 +21125,13 @@ async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineCon
     const rawUserPrompt = promptConfig?.prompt;
 
     const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) ||
-        `You are a clinical advisor. Read the clinical note carefully to understand the patient's current phase of care, existing plan, and clinical context. Then read the guideline and identify ONLY recommendations that:
-1. Apply to this patient RIGHT NOW (not future phases of care)
-2. Are NOT already addressed in the clinical note
-3. Would add genuine clinical value
+        `You are a clinical advisor. Your job is to identify GAPS in care - things the guideline recommends that are genuinely NOT covered by the existing plan.
+
+CRITICAL: If the plan already includes monitoring, tests, follow-up, or treatment for a condition, do NOT suggest more of the same. Recognise clinical equivalence.
+
+CRITICAL: Do NOT assume any patient details not explicitly stated in the clinical note.
+
+CRITICAL: You MUST provide a specific, detailed 'why' field for every suggestion. This rationale must explain the clinical reasoning based on the guideline and the patient's specific context (e.g., 'Patient is 12 weeks pregnant with history of APS').
 
 Return ONLY valid JSON - no markdown, no explanations.`;
 
@@ -21141,17 +21144,13 @@ GUIDELINE TITLE: {{guidelineTitle}}
 GUIDELINE CONTENT:
 {{guidelineContent}}
 
-Read the clinical note to understand:
-- The patient's current phase of care (e.g., pregnant at X weeks, postpartum, etc.)
-- What has already been done or planned
-- The patient's specific conditions and circumstances
+STEP 1: Extract the existing plan from the clinical note.
+STEP 2: For each guideline recommendation, ask: "Is this ALREADY covered by something in the existing plan?"
+STEP 3: Only suggest things that are GENUINELY MISSING.
 
-Then read the guideline and identify any recommendations that:
-1. Apply specifically to THIS patient in their CURRENT situation
-2. Are NOT already addressed or planned in the clinical note
-3. Would genuinely improve this patient's care
+CRITICAL: Do NOT invent facts. If the condition for the recommendation isn't met in the note, do NOT suggest it.
 
-Be conservative - only suggest things that are clearly applicable and clearly missing.
+CRITICAL: Ensure the 'why' field is populated with specific clinical reasoning citing patient factors. Do not use generic text.
 
 Return JSON:
 {
@@ -21164,10 +21163,11 @@ Return JSON:
     {
       "name": "Brief name of recommendation",
       "issue": "What is missing from the current plan",
-      "why": "Detailed clinical reasoning determining specifically why this apply to this patient",
+      "why": "Detailed clinical reasoning determining specifically why this apply to this patient (MUST BE SPECIFIC - cite patient factors)",
       "suggestion": "Specific action to take",
       "verbatimQuote": "Exact quote from the guideline supporting this",
-      "priority": "high or medium or low"
+      "priority": "high or medium or low",
+      "notCoveredBy": "Explain why existing plan items do NOT cover this"
     }
   ],
   "alreadyCompliant": [
