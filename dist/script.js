@@ -14606,13 +14606,8 @@ async function runParallelAnalysis(guidelines) {
 
                 return `
                 <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                        <span class="badge ${suggestionType === 'critical' || suggestionType === 'high' ? 'badge-danger' :
-                        suggestionType === 'important' || suggestionType === 'medium' ? 'badge-warning' : 'badge-info'}" 
-                              style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
-                            ${suggestionType}
-                        </span>
-                        <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
+                    <div class="suggestion-header" style="display: flex; justify-content: flex-end; align-items: flex-start; margin-bottom: 10px;">
+                        <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 100%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
                            Guideline: ${sourceName}
                         </span>
                     </div>
