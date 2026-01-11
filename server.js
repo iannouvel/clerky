@@ -20087,6 +20087,7 @@ Return JSON:
     {
       "name": "Brief name of recommendation",
       "issue": "What is missing from the current plan",
+      "why": "Detailed clinical reasoning determining specifically why this apply to this patient",
       "suggestion": "Specific action to take",
       "verbatimQuote": "Exact quote from the guideline supporting this",
       "priority": "high or medium or low"
