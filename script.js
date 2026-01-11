@@ -1381,12 +1381,12 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return 0.5; // Default fallback
     }
 
-    // Combine ALL guidelines from all categories into a single flat array
+    // Combine ALL relevant guidelines (exclude notRelevant)
     const allGuidelinesFlat = [
         ...(categories.mostRelevant || []),
         ...(categories.potentiallyRelevant || []),
-        ...(categories.lessRelevant || []),
-        ...(categories.notRelevant || [])
+        ...(categories.lessRelevant || [])
+        // Exclude notRelevant from the selection interface entirely
     ];
 
     // Sort by relevance score descending (highest first)
@@ -1463,7 +1463,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         <div class="guideline-selection-interface">
             <div class="selection-header">
                 <h2>📋 Select Guidelines for Guideline Suggestions</h2>
-                <p>Select guidelines to check against. The most similar guideline is pre-selected.</p>
+                <p>Select guidelines to check against. Only likely relevant guidelines are pre-selected.</p>
             </div>
     `;
 
@@ -1486,8 +1486,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Include PDF link if available
             const pdfLinkHtml = pdfLink || '';
 
-            // Pre-check all relevant guidelines for parallel analysis
-            const isChecked = 'checked="checked"';
+            // Pre-check only Most Relevant and Potentially Relevant guidelines (score >= 0.6)
+            // Less Relevant (score < 0.6) are unchecked by default
+            const numericScore = extractRelevanceScoreLocal(g.relevance);
+            const shouldBeChecked = numericScore >= 0.6;
+            const isChecked = shouldBeChecked ? 'checked="checked"' : '';
 
             htmlContent += `
                 <div class="guideline-item">
@@ -1500,6 +1503,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
+                                <span style="font-size: 0.8em; color: #666; margin-left: 8px;">(${formatRelevanceScore(g.relevance)})</span>
                                 ${pdfLinkHtml}
                             </div>
                         </div>
@@ -14548,61 +14552,107 @@ async function runParallelAnalysis(guidelines) {
         suggestionsList.className = 'suggestions-flat-list';
 
         // Add Title
-        const titleHtml = '<h3 style="margin: 20px 0 15px 0; color: var(--text-primary); font-size: 1.1em; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block;">Clinical Suggestions</h3>';
 
-        const suggestionsHtml = allSuggestions.map((suggestion, index) => {
-            // Safely access suggestion properties with fallbacks
-            const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
-            const suggestionType = suggestion.type || suggestion.priority || 'info';
-            // Use 'why' field if available, fallback to reasoning/rationale
-            const suggestionReasoning = suggestion.why || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-            const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+        // Group suggestions by priority
+        const groupedSuggestions = {
+            high: [],
+            medium: [],
+            low: []
+        };
 
-            // Create a unique ID for this suggestion card
-            const suggestionId = `suggestion-${Date.now()}-${index}`;
-            // Store text in a data attribute for easy access (escaped)
-            const escapedText = suggestionText.replace(/"/g, '&quot;');
+        allSuggestions.forEach((suggestion, index) => {
+            const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
+            const suggestionItem = { ...suggestion, originalIndex: index }; // Keep track of original index if needed for IDs
 
-            return `
-            <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                    <span class="badge ${suggestionType === 'critical' ? 'badge-danger' :
-                    suggestionType === 'important' ? 'badge-warning' : 'badge-info'}" 
-                          style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
-                        ${suggestionType}
-                    </span>
-                    <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
-                       Guideline: ${sourceName}
-                    </span>
-                </div>
-                
-                <div id="${suggestionId}-content" class="suggestion-content">
-                    <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
-                </div>
-                
-                <div id="${suggestionId}-edit-mode" class="suggestion-edit-mode" style="display: none; margin-bottom: 10px;">
-                    <textarea id="${suggestionId}-editor" class="form-control" style="width: 100%; min-height: 80px; margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary);">${suggestionText}</textarea>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn-sm btn-success" onclick="saveModifiedSuggestion('${suggestionId}')">Save</button>
-                        <button class="btn-sm btn-secondary" onclick="cancelModification('${suggestionId}')">Cancel</button>
+            if (priority === 'critical' || priority === 'high') {
+                groupedSuggestions.high.push(suggestionItem);
+            } else if (priority === 'important' || priority === 'medium') {
+                groupedSuggestions.medium.push(suggestionItem);
+            } else {
+                groupedSuggestions.low.push(suggestionItem);
+            }
+        });
+
+        // Add Title with stats
+        const titleParts = [];
+        if (groupedSuggestions.high.length > 0) titleParts.push(`${groupedSuggestions.high.length} High Priority`);
+        if (groupedSuggestions.medium.length > 0) titleParts.push(`${groupedSuggestions.medium.length} Medium Priority`);
+        if (groupedSuggestions.low.length > 0) titleParts.push(`${groupedSuggestions.low.length} Low Priority`);
+
+        const titleText = `Clinical Suggestions: ${titleParts.join(' and ')}`;
+        const titleHtml = `<h3 style="margin: 20px 0 15px 0; color: var(--text-primary); font-size: 1.1em; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block;">${titleText}</h3>`;
+
+        // Function to render a list of suggestions
+        const renderSuggestionList = (suggestions, priorityLabel) => {
+            if (suggestions.length === 0) return '';
+
+            const sectionHeader = `<h4 style="margin: 15px 0 10px 0; font-size: 1em; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">${priorityLabel}</h4>`;
+
+            const cardsHtml = suggestions.map((suggestion) => {
+                // Safely access suggestion properties with fallbacks
+                const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
+                const suggestionType = suggestion.type || suggestion.priority || 'info';
+                // Use 'why' field if available, fallback to reasoning/rationale
+                const suggestionReasoning = suggestion.why || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+                const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+
+                // Create a unique ID for this suggestion card
+                // Use random number to ensure uniqueness even if re-rendered
+                const uniqueId = Math.floor(Math.random() * 100000);
+                const suggestionId = `suggestion-${Date.now()}-${uniqueId}`;
+
+                // Store text in a data attribute for easy access (escaped)
+                const escapedText = suggestionText.replace(/"/g, '&quot;');
+
+                return `
+                <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                    <div class="suggestion-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                        <span class="badge ${suggestionType === 'critical' || suggestionType === 'high' ? 'badge-danger' :
+                        suggestionType === 'important' || suggestionType === 'medium' ? 'badge-warning' : 'badge-info'}" 
+                              style="padding: 4px 8px; border-radius: 4px; font-size: 0.8em; font-weight: bold; text-transform: uppercase;">
+                            ${suggestionType}
+                        </span>
+                        <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 60%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
+                           Guideline: ${sourceName}
+                        </span>
+                    </div>
+                    
+                    <div id="${suggestionId}-content" class="suggestion-content">
+                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
+                    </div>
+                    
+                    <div id="${suggestionId}-edit-mode" class="suggestion-edit-mode" style="display: none; margin-bottom: 10px;">
+                        <textarea id="${suggestionId}-editor" class="form-control" style="width: 100%; min-height: 80px; margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary);">${suggestionText}</textarea>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn-sm btn-success" onclick="saveModifiedSuggestion('${suggestionId}')">Save</button>
+                            <button class="btn-sm btn-secondary" onclick="cancelModification('${suggestionId}')">Cancel</button>
+                        </div>
+                    </div>
+
+                     <div id="${suggestionId}-actions" class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light); display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button class="btn-xs btn-success" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #28a745;" onclick="acceptParallelSuggestion('${suggestionId}')">
+                            <i class="fas fa-check"></i> Accept
+                        </button>
+                        <button class="btn-xs btn-warning" style="color: #212529; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #ffc107;" onclick="modifyParallelSuggestion('${suggestionId}')">
+                            <i class="fas fa-edit"></i> Modify
+                        </button>
+                        <button class="btn-xs btn-danger" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #dc3545;" onclick="rejectParallelSuggestion('${suggestionId}')">
+                            <i class="fas fa-times"></i> Reject
+                        </button>
                     </div>
                 </div>
+            `;
+            }).join('');
 
-                 <div id="${suggestionId}-actions" class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light); display: flex; gap: 8px; flex-wrap: wrap;">
-                    <button class="btn-xs btn-success" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #28a745;" onclick="acceptParallelSuggestion('${suggestionId}')">
-                        <i class="fas fa-check"></i> Accept
-                    </button>
-                    <button class="btn-xs btn-warning" style="color: #212529; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #ffc107;" onclick="modifyParallelSuggestion('${suggestionId}')">
-                        <i class="fas fa-edit"></i> Modify
-                    </button>
-                    <button class="btn-xs btn-danger" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #dc3545;" onclick="rejectParallelSuggestion('${suggestionId}')">
-                        <i class="fas fa-times"></i> Reject
-                    </button>
-                </div>
-            </div>
-        `;
-        }).join('');
+            return sectionHeader + cardsHtml;
+        };
+
+        let suggestionsHtml = '';
+        if (groupedSuggestions.high.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.high, 'High Priority');
+        if (groupedSuggestions.medium.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.medium, 'Medium Priority');
+        if (groupedSuggestions.low.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.low, 'Low Priority');
+
 
         // Global handlers for Parallel Analysis Suggestion interactivity
 
