@@ -14668,14 +14668,13 @@ async function runParallelAnalysis(guidelines) {
 
                 return `
                 <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="suggestion-header" style="display: flex; justify-content: flex-end; align-items: flex-start; margin-bottom: 10px;">
-                        <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 100%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
-                           Guideline: ${sourceName}
-                        </span>
-                    </div>
-                    
                     <div id="${suggestionId}-content" class="suggestion-content">
-                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
+                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;">
+                            <strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span>
+                            <span style="float: right; font-size: 0.8em; color: var(--text-secondary); margin-left: 10px;" title="${sourceName}">
+                                Guideline: ${sourceName}
+                            </span>
+                        </p>
                         <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
                     </div>
                     

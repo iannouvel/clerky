@@ -3058,6 +3058,76 @@ function setupGuidelinesListener() {
                     }
                 }
             }
+
+
+            // When guideline count changes, trigger comprehensive metadata completion
+            if (countChanged && previousGuidelineCount > 0) {
+                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
+
+                // NOTE: Automatic metadata completion disabled to prevent server memory crashes
+                // The batch sync endpoint handles metadata extraction inline
+                // await triggerMetadataCompletionForAll();
+
+                // Invalidate cache when changes detected
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
+
+                // Refresh guidelines data after processing
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
+                }, 3000);
+            } else if (addedDocs.length > 0) {
+                // If only processing new guidelines without count change detection
+                // Invalidate cache when new guidelines are added
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
+
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
+                }, 2000);
+            }
+
+            // Update the previous count for next comparison
+            previousGuidelineCount = currentCount;
+
+            if (modifiedDocs.length > 0) {
+                console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
+
+                // Invalidate cache when guidelines are modified
+                if (window.cacheManager) {
+                    window.cacheManager.clearGuidelinesCache().catch(err => {
+                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                    });
+                }
+
+                // Update global variables with modified data
+                modifiedDocs.forEach(change => {
+                    const guidelineData = change.doc.data();
+                    const guidelineId = change.doc.id;
+
+                    if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
+                        window.globalGuidelines[guidelineId] = {
+                            ...window.globalGuidelines[guidelineId],
+                            ...guidelineData
+                        };
+                        console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
+                    }
+                });
+
+                // Reload guidelines to get fresh data
+                setTimeout(() => {
+                    window.guidelinesLoading = false; // Reset flag to allow reload
+                    loadGuidelinesFromFirestore();
+                }, 1000);
+            }
         }, (error) => {
             // Error callback for Firestore listener
             console.warn('[FIRESTORE_LISTENER] Listener encountered an error (likely network issue):', error.code, error.message);
@@ -3068,86 +3138,16 @@ function setupGuidelinesListener() {
             } else if (error.code === 'unavailable' || error.message.includes('offline')) {
                 // Network issue - offline listener will handle the UI notification
                 console.log('[FIRESTORE_LISTENER] Pausing listener logs due to network disconnection.');
+            } else {
+                console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
             }
         });
 
-        // When guideline count changes, trigger comprehensive metadata completion
-        if (countChanged && previousGuidelineCount > 0) {
-            console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
+        console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
 
-            // NOTE: Automatic metadata completion disabled to prevent server memory crashes
-            // The batch sync endpoint handles metadata extraction inline
-            // await triggerMetadataCompletionForAll();
-
-            // Invalidate cache when changes detected
-            if (window.cacheManager) {
-                window.cacheManager.clearGuidelinesCache().catch(err => {
-                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                });
-            }
-
-            // Refresh guidelines data after processing
-            setTimeout(() => {
-                window.guidelinesLoading = false; // Reset flag to allow reload
-                loadGuidelinesFromFirestore();
-            }, 3000);
-        } else if (addedDocs.length > 0) {
-            // If only processing new guidelines without count change detection
-            // Invalidate cache when new guidelines are added
-            if (window.cacheManager) {
-                window.cacheManager.clearGuidelinesCache().catch(err => {
-                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                });
-            }
-
-            setTimeout(() => {
-                window.guidelinesLoading = false; // Reset flag to allow reload
-                loadGuidelinesFromFirestore();
-            }, 2000);
-        }
-
-        // Update the previous count for next comparison
-        previousGuidelineCount = currentCount;
-
-        if (modifiedDocs.length > 0) {
-            console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
-
-            // Invalidate cache when guidelines are modified
-            if (window.cacheManager) {
-                window.cacheManager.clearGuidelinesCache().catch(err => {
-                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                });
-            }
-
-            // Update global variables with modified data
-            modifiedDocs.forEach(change => {
-                const guidelineData = change.doc.data();
-                const guidelineId = change.doc.id;
-
-                if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
-                    window.globalGuidelines[guidelineId] = {
-                        ...window.globalGuidelines[guidelineId],
-                        ...guidelineData
-                    };
-                    console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
-                }
-            });
-
-            // Reload guidelines to get fresh data
-            setTimeout(() => {
-                window.guidelinesLoading = false; // Reset flag to allow reload
-                loadGuidelinesFromFirestore();
-            }, 1000);
-        }
-    }, (error) => {
-        console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
-    });
-
-    console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
-
-} catch (error) {
-    console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
-}
+    } catch (error) {
+        console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
+    }
 }
 
 // Function to process content for a single guideline (triggered by listener)
@@ -14668,14 +14668,13 @@ async function runParallelAnalysis(guidelines) {
 
                 return `
                 <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div class="suggestion-header" style="display: flex; justify-content: flex-end; align-items: flex-start; margin-bottom: 10px;">
-                        <span style="font-size: 0.8em; color: var(--text-secondary); max-width: 100%; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${sourceName}">
-                           Guideline: ${sourceName}
-                        </span>
-                    </div>
-                    
                     <div id="${suggestionId}-content" class="suggestion-content">
-                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;"><strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span></p>
+                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;">
+                            <strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span>
+                            <span style="float: right; font-size: 0.8em; color: var(--text-secondary); margin-left: 10px;" title="${sourceName}">
+                                Guideline: ${sourceName}
+                            </span>
+                        </p>
                         <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
                     </div>
                     
