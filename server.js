@@ -20167,7 +20167,7 @@ TASK:
         // Fallback: return Step 1 suggestions with generic placeholders if Step 2 fails
         return {
             patientContext: {},
-            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            suggestions: initialSuggestions.map(s => ({ ...s, suggestion: s.name, why: 'Reasoning generation failed', verbatimQuote: '' })),
             alreadyCompliant: []
         };
     }
@@ -20187,7 +20187,7 @@ TASK:
         // Fallback: return Step 1 suggestions with generic placeholders
         return {
             patientContext: {},
-            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            suggestions: initialSuggestions.map(s => ({ ...s, suggestion: s.name, why: 'Reasoning generation failed', verbatimQuote: '' })),
             alreadyCompliant: []
         };
     }
@@ -21302,7 +21302,7 @@ TASK:
         // Fallback: return Step 1 suggestions with generic placeholders if Step 2 fails
         return {
             patientContext: {},
-            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            suggestions: initialSuggestions.map(s => ({ ...s, suggestion: s.name, why: 'Reasoning generation failed', verbatimQuote: '' })),
             alreadyCompliant: []
         };
     }
@@ -21323,7 +21323,7 @@ TASK:
         // Fallback: return Step 1 suggestions with generic placeholders
         return {
             patientContext: {},
-            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            suggestions: initialSuggestions.map(s => ({ ...s, suggestion: s.name, why: 'Reasoning generation failed', verbatimQuote: '' })),
             alreadyCompliant: []
         };
     }

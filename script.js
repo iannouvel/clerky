@@ -14590,10 +14590,10 @@ async function runParallelAnalysis(guidelines) {
 
             const cardsHtml = suggestions.map((suggestion) => {
                 // Safely access suggestion properties with fallbacks
-                const suggestionText = suggestion.text || suggestion.suggestion || suggestion.recommendation || 'No text available';
+                const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || 'No text available';
                 const suggestionType = suggestion.type || suggestion.priority || 'info';
-                // Use 'why' field if available, fallback to reasoning/rationale
-                const suggestionReasoning = suggestion.why || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+                // Use 'why' field if available, fallback to notCoveredBy or reasoning/rationale
+                const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
                 const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
 
                 // Create a unique ID for this suggestion card

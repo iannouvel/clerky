@@ -244,3 +244,10 @@ When deployment issues occur or the user asks to check deployment status:
 4. Remember: The user prefers British English spelling (analyse vs analyze, etc.)
 5. Ask one question at a time when clarification is needed
 
+## General Utility Rules
+
+### 1. Always Prefer Grep
+- ALWAYS use `grep` (via `grep_search` tool) instead of `findstr` for searching text in files
+- The user prefers `grep` syntax and functionality over Windows `findstr`
+- Only use `findstr` if specifically requested or if `grep` is absolutely unavailable (though `grep_search` is always available to you)
+
