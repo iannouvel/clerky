@@ -21105,7 +21105,7 @@ app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
 // Helper function to run analyzeGuidelineForPatient with a specific provider
 // Now accepts optional guidelineId to load interpretation hints
 async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
-    console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" with ${targetProvider}...`);
+    console.log(`[SEMANTIC-ANALYSIS] Analyzing guideline "${guidelineTitle}" with ${targetProvider} (Two-Step chain logic)...`);
 
     // Load accumulated learning if guidelineId is provided
     let hintsText = '';
@@ -21117,93 +21117,143 @@ async function analyzeGuidelineForPatientWithProvider(clinicalNote, guidelineCon
         }
     }
 
-    // Load prompt from prompts.json or Firestore cache
-    const promptConfig = global.prompts?.['analyzeGuidelineForPatient'] || require('./prompts.json')['analyzeGuidelineForPatient'];
+    // --- STEP 1: IDENTIFY GAPS (SUGGESTIONS) ---
+    console.log('[SEMANTIC-ANALYSIS] Step 1: Identifying potential suggestions...');
 
-    // Ensure prompts are strings (Firestore might return objects)
-    const rawSystemPrompt = promptConfig?.system_prompt;
-    const rawUserPrompt = promptConfig?.prompt;
-
-    const systemPrompt = (typeof rawSystemPrompt === 'string' ? rawSystemPrompt : null) ||
-        `You are a clinical advisor. Your job is to identify GAPS in care - things the guideline recommends that are genuinely NOT covered by the existing plan.
+    const step1SystemPrompt = `You are a clinical advisor. Your job is to identify GAPS in care - things the guideline recommends that are genuinely NOT covered by the existing plan.
 
 CRITICAL: If the plan already includes monitoring, tests, follow-up, or treatment for a condition, do NOT suggest more of the same. Recognise clinical equivalence.
 
-CRITICAL: Do NOT assume any patient details not explicitly stated in the clinical note.
-
-CRITICAL: You MUST provide a specific, detailed 'why' field for every suggestion. This rationale must explain the clinical reasoning based on the guideline and the patient's specific context (e.g., 'Patient is 12 weeks pregnant with history of APS').
-
-Return ONLY valid JSON - no markdown, no explanations.`;
-
-    const baseUserPrompt = ((typeof rawUserPrompt === 'string' ? rawUserPrompt : null) ||
-        `CLINICAL NOTE:
-{{clinicalNote}}
-
-GUIDELINE TITLE: {{guidelineTitle}}
-
-GUIDELINE CONTENT:
-{{guidelineContent}}
-
-STEP 1: Extract the existing plan from the clinical note.
-STEP 2: For each guideline recommendation, ask: "Is this ALREADY covered by something in the existing plan?"
-STEP 3: Only suggest things that are GENUINELY MISSING.
-
 CRITICAL: Do NOT invent facts. If the condition for the recommendation isn't met in the note, do NOT suggest it.
 
-CRITICAL: Ensure the 'why' field is populated with specific clinical reasoning citing patient factors. Do not use generic text.
-
-Return JSON:
+Return ONLY valid JSON with this structure:
 {
-  "patientContext": {
-    "phaseOfCare": "e.g., Antenatal - 16+2 weeks gestation",
-    "keyConditions": ["condition1", "condition2"],
-    "existingPlan": ["planned action 1", "planned action 2"]
-  },
   "suggestions": [
     {
       "name": "Brief name of recommendation",
-      "issue": "What is missing from the current plan",
-      "why": "Detailed clinical reasoning determining specifically why this apply to this patient (MUST BE SPECIFIC - cite patient factors)",
-      "suggestion": "Specific action to take",
-      "verbatimQuote": "Exact quote from the guideline supporting this",
+      "issue": "What is GENUINELY missing - not already covered",
       "priority": "high or medium or low",
       "notCoveredBy": "Explain why existing plan items do NOT cover this"
     }
-  ],
-  "alreadyCompliant": [
-    "Brief description of guideline recommendation already addressed in the note"
   ]
 }
 
-If the clinical note already addresses all relevant recommendations from this guideline, return an empty suggestions array.`);
+If no relevant recommendations are missing, return an empty suggestions array.`;
 
-    // Insert hints after the prompt
-    const userPrompt = (baseUserPrompt + hintsText)
-        .replace('{{clinicalNote}}', clinicalNote)
-        .replace('{{guidelineTitle}}', guidelineTitle)
-        .replace('{{guidelineContent}}', guidelineContent);
+    const step1UserPrompt = `CLINICAL NOTE:
+${clinicalNote}
 
-    const messages = [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
+GUIDELINE TITLE: ${guidelineTitle}
+
+GUIDELINE CONTENT:
+${guidelineContent}
+
+${hintsText ? `\nPREVIOUS FEEDBACK:\n${hintsText}\n` : ''}
+
+TASK: Identify any guideline recommendations NOT covered by the clinical note's plan. Return a simple JSON list of suggestions.`;
+
+    // Execute Step 1
+    const messagesStep1 = [
+        { role: 'system', content: step1SystemPrompt },
+        { role: 'user', content: step1UserPrompt }
     ];
 
-    // Force routing to the target provider
-    const result = await routeToAI({ messages }, userId, targetProvider);
+    const resultStep1 = await routeToAI({ messages: messagesStep1 }, userId, targetProvider);
 
-    if (!result || !result.content) {
-        console.error(`[SEMANTIC-ANALYSIS] No response from ${targetProvider}`);
+    if (!resultStep1 || !resultStep1.content) {
+        console.error(`[SEMANTIC-ANALYSIS] Step 1: No response from ${targetProvider}`);
         return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
     }
 
+    let initialSuggestions = [];
     try {
-        let cleanedContent = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        let cleanedContent = resultStep1.content.trim().replace(/```json\n?|\n?```/g, '');
         const parsed = JSON.parse(cleanedContent);
-        console.log(`[SEMANTIC-ANALYSIS] ${targetProvider} returned ${parsed.suggestions?.length || 0} suggestions`);
+        initialSuggestions = parsed.suggestions || [];
+        console.log(`[SEMANTIC-ANALYSIS] Step 1: Found ${initialSuggestions.length} potential suggestions`);
+    } catch (e) {
+        console.error(`[SEMANTIC-ANALYSIS] Step 1: Failed to parse response:`, e.message);
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+
+    // If no suggestions found, return early
+    if (initialSuggestions.length === 0) {
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+
+    // --- STEP 2: REASONING & EVIDENCE ---
+    console.log('[SEMANTIC-ANALYSIS] Step 2: Generating reasoning (why) and evidence...');
+
+    const step2SystemPrompt = `You are a clinical advisor perfecting a list of suggestions. 
+Your specific task is to add the "why" (clinical reasoning) and "verbatimQuote" (evidence) for each suggestion provided.
+
+CRITICAL: Ensure the 'why' field is populated with SPECIFIC clinical reasoning citing patient factors from the provided clinical note. Do not use generic text.
+CRITICAL: The 'verbatimQuote' must be an EXACT quote from the guideline text provided.
+
+Return valid JSON:
+{
+  "patientContext": {
+    "phaseOfCare": "e.g., Antenatal - 32 weeks",
+    "keyConditions": ["condition1", "condition2"],
+    "existingPlan": ["list planned actions found in note"]
+  },
+  "suggestions": [
+    {
+       // ... include all fields from input, PLUS:
+       "why": "Detailed clinical reasoning determining specifically why this apply to this patient (MUST BE SPECIFIC - cite patient factors)",
+       "verbatimQuote": "Exact quote from the guideline supporting this",
+       "suggestion": "Specific action to take (refine if needed)"
+    }
+  ],
+  "alreadyCompliant": ["List guideline recommendations that ARE covered by the note"]
+}`;
+
+    const step2UserPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+GUIDELINE CONTENT:
+${guidelineContent}
+
+DRAFT SUGGESTIONS:
+${JSON.stringify(initialSuggestions, null, 2)}
+
+TASK: 
+1. Extract the patient context and existing plan from the note.
+2. Identify recommendations that ARE already complaint.
+3. For the DRAFT SUGGESTIONS above, add the "why" (specific reasoning) and "verbatimQuote" fields.
+4. Return the complete JSON object.`;
+
+    // Execute Step 2
+    const messagesStep2 = [
+        { role: 'system', content: step2SystemPrompt },
+        { role: 'user', content: step2UserPrompt }
+    ];
+
+    const resultStep2 = await routeToAI({ messages: messagesStep2 }, userId, targetProvider);
+
+    if (!resultStep2 || !resultStep2.content) {
+        console.error(`[SEMANTIC-ANALYSIS] Step 2: No response from ${targetProvider}`);
+        // Fallback: return Step 1 suggestions with generic placeholders if Step 2 fails
+        return {
+            patientContext: {},
+            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            alreadyCompliant: []
+        };
+    }
+
+    try {
+        let cleanedContent = resultStep2.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(cleanedContent);
+        console.log(`[SEMANTIC-ANALYSIS] Step 2: Successfully generated reasoning for ${parsed.suggestions?.length || 0} suggestions`);
         return parsed;
     } catch (e) {
-        console.error(`[SEMANTIC-ANALYSIS] Failed to parse ${targetProvider} response:`, e.message);
-        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+        console.error(`[SEMANTIC-ANALYSIS] Step 2: Failed to parse response:`, e.message);
+        // Fallback: return Step 1 suggestions with generic placeholders
+        return {
+            patientContext: {},
+            suggestions: initialSuggestions.map(s => ({ ...s, why: 'Reasoning generation failed', verbatimQuote: '' })),
+            alreadyCompliant: []
+        };
     }
 }
 
