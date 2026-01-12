@@ -14673,87 +14673,149 @@ async function runParallelAnalysis(guidelines) {
             let priorityLabel = 'Suggestion';
 
             if (priority === 'critical' || priority === 'high') {
-                priorityColor = '#dc3545'; // Red
+                priorityColor = '#d32f2f'; // Softer Red (Material Design Red 700)
                 priorityLabel = 'High Priority Suggestion';
             } else if (priority === 'medium' || priority === 'important') {
-                priorityColor = '#fd7e14'; // Orange
+                priorityColor = '#f57c00'; // Darker Orange (Material Design Orange 700)
                 priorityLabel = 'Medium Priority Suggestion';
             } else {
-                priorityColor = '#28a745'; // Greenish/Grey for low
+                priorityColor = '#388e3c'; // Darker Green (Material Design Green 700)
                 priorityLabel = 'Low Priority Suggestion';
+            }
+            // Use standard text color for label as requested, use colored badge/border instead
+            const labelColor = 'var(--text-primary)';
+
+            // Calculate Counts for Header
+            let highCount = 0, medCount = 0, lowCount = 0;
+            state.queue.forEach(s => {
+                const p = (s.type || s.priority || 'info').toLowerCase();
+                if (p === 'critical' || p === 'high') highCount++;
+                else if (p === 'medium' || p === 'important') medCount++;
+                else lowCount++;
+            });
+
+            // Build Header HTML
+            let summaryParts = [];
+            if (highCount > 0) summaryParts.push(`${highCount} high`);
+            if (medCount > 0) summaryParts.push(`${medCount} medium`);
+            if (lowCount > 0) summaryParts.push(`${lowCount} low`);
+            // Fixed typo "miedium" -> "medium"
+            const summaryString = `Clinical Suggestions: ${summaryParts.join(', ')} priority`;
+
+            // Build Upcoming List HTML (Text Only)
+            let upcomingHtml = '';
+            const upcomingSuggestions = state.queue.slice(state.currentIndex + 1);
+            if (upcomingSuggestions.length > 0) {
+                upcomingHtml += `<div class="upcoming-suggestions" style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 15px;">`;
+
+                // Group by simple priority for display
+                const upcomingHigh = upcomingSuggestions.filter(s => ['critical', 'high'].includes((s.type || s.priority || '').toLowerCase()));
+                const upcomingMed = upcomingSuggestions.filter(s => ['medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
+                const upcomingLow = upcomingSuggestions.filter(s => !['critical', 'high', 'medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
+
+                const renderGroup = (title, items, color) => {
+                    if (items.length === 0) return '';
+                    let html = `<div style="margin-bottom: 15px;">
+                        <div style="font-size: 0.8em; font-weight: 600; color: ${color}; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
+                    items.forEach(item => {
+                        const text = item.suggestion || item.recommendation || item.text || 'No text';
+                        html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
+                    });
+                    html += `</div>`;
+                    return html;
+                };
+
+                upcomingHtml += renderGroup('Upcoming High Priority Advice', upcomingHigh, '#d32f2f');
+                upcomingHtml += renderGroup('Upcoming Medium Priority Advice', upcomingMed, '#f57c00');
+                upcomingHtml += renderGroup('Upcoming Low Priority Advice', upcomingLow, '#388e3c');
+
+                upcomingHtml += `</div>`;
             }
 
             // Render Wizard Card
             container.innerHTML = `
-                <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div class="suggestion-wizard-container" style="max-width: 800px; margin: 0 auto;">
                     
-                    <!-- Header with Progress -->
-                    <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.85em; font-weight: 600; color: ${priorityColor}; text-transform: uppercase; letter-spacing: 0.5px;">
-                            ${priorityLabel}
-                        </span>
-                        <span style="font-size: 0.85em; color: var(--text-secondary);">
-                            ${currentNumber} of ${total}
-                        </span>
+                    <!-- Global Summary Header -->
+                    <div class="wizard-summary-header" style="text-align: center; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
+                        ${summaryString}
                     </div>
 
-                    <!-- Main Content -->
-                    <div class="wizard-body" style="padding: 20px;">
+                    <!-- Active Card -->
+                    <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                         
-                        <!-- Suggestion Box (The Change) -->
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Suggested Action</label>
-                            <div class="text-content" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                                ${suggestionText}
-                            </div>
+                        <!-- Header with Progress -->
+                        <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
+                                ${priorityLabel}
+                            </span>
+                            <span style="font-size: 0.85em; color: var(--text-secondary);">
+                                ${currentNumber} of ${total}
+                            </span>
                         </div>
 
-                        <!-- Reasoning Box -->
-                        <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
-                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Why?</label>
-                            <div style="font-size: 0.95em; color: var(--text-secondary);">
-                                ${suggestionReasoning}
+                        <!-- Main Content -->
+                        <div class="wizard-body" style="padding: 20px;">
+                            
+                            <!-- Suggestion Box (The Change) -->
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Suggested Action</label>
+                                <div class="text-content" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
+                                    ${suggestionText}
+                                </div>
                             </div>
-                            <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: right;">
-                                Source: ${sourceName}
+
+                            <!-- Reasoning Box -->
+                            <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
+                                <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Why?</label>
+                                <div style="font-size: 0.95em; color: var(--text-secondary);">
+                                    ${suggestionReasoning}
+                                </div>
+                                <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: right;">
+                                    Source: ${sourceName}
+                                </div>
                             </div>
+
+                            <!-- Editor for Modify Mode (Hidden by default) -->
+                            <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
+                                <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
+                                <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
+                                    <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <!-- Editor for Modify Mode (Hidden by default) -->
-                        <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
-                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
-                            <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
-                            <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
-                                <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
-                            </div>
+                        <!-- Action Bar -->
+                        <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; background: var(--bg-secondary);">
+                             <!-- Navigation only -->
+                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>
+                                ⬅ Back
+                            </button>
+                            
+                            <div style="flex-grow: 1;"></div> <!-- Spacer -->
+
+                            <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
+                                 ✏️ Modify
+                            </button>
+                            <button class="btn-sm btn-secondary" onclick="skipWizardSuggestion()">
+                                 Skip ⏭
+                            </button>
+                            <button class="btn-sm btn-danger" onclick="rejectWizardSuggestion('${uniqueId}')">
+                                 Reject ❌
+                            </button>
+                            <button class="btn-sm btn-success" style="background-color: #28a745; color: white;" onclick="acceptWizardSuggestion('${uniqueId}')">
+                                 Accept & Next ✅
+                            </button>
                         </div>
 
                     </div>
 
-                    <!-- Action Bar -->
-                    <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; background: var(--bg-secondary);">
-                         <!-- Navigation only -->
-                        <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>
-                            ⬅ Back
-                        </button>
-                        
-                        <div style="flex-grow: 1;"></div> <!-- Spacer -->
-
-                        <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
-                             ✏️ Modify
-                        </button>
-                        <button class="btn-sm btn-secondary" onclick="skipWizardSuggestion()">
-                             Skip ⏭
-                        </button>
-                        <button class="btn-sm btn-danger" onclick="rejectWizardSuggestion('${uniqueId}')">
-                             Reject ❌
-                        </button>
-                        <button class="btn-sm btn-success" style="background-color: #28a745; color: white;" onclick="acceptWizardSuggestion('${uniqueId}')">
-                             Accept & Next ✅
-                        </button>
-                    </div>
-
+                    <!-- Upcoming Suggestions List -->
+                    ${upcomingHtml}
+                    
                 </div>
             `;
 
