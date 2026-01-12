@@ -19401,8 +19401,8 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
                     const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
                     const compressedData = compressedDoc.exists ? compressedDoc.data() : null;
 
-                    // Get content - prefer condensed version for better performance
-                    guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || '';
+                    // Get content - prefer full content for better accuracy, fall back to condensed
+                    guidelineContent = guidelineData.content || condensedData?.condensed || guidelineData.condensed || '';
 
                     // Store semantically compressed version for fallback if context length exceeded
                     semanticallyCompressedContent = compressedData?.semanticallyCompressed || compressedData?.compressed || '';
