@@ -1359,6 +1359,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         allRelevantGuidelinesLength: allRelevantGuidelines?.length || 0
     });
 
+    // Check parallel preference to adjust UI accordingly
+    const isParallelMode = typeof loadParallelAnalysisPreference === 'function' && loadParallelAnalysisPreference();
+
     // Helper function to extract numeric relevance score (redefined for scope)
     function extractRelevanceScoreLocal(relevanceText) {
         if (typeof relevanceText === 'number') {
@@ -1459,11 +1462,19 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     }
 
     // Create the new guideline selection interface - flat list sorted by similarity score
+    const headerTitle = isParallelMode
+        ? '📋 Guidelines Identified for Analysis'
+        : '📋 Select Guidelines for Guideline Suggestions';
+
+    const headerDesc = isParallelMode
+        ? 'The following guidelines have been identified and will be analyzed automatically.'
+        : 'Select guidelines to check against. Only likely relevant guidelines are pre-selected.';
+
     let htmlContent = `
         <div class="guideline-selection-interface">
             <div class="selection-header">
-                <h2>📋 Select Guidelines for Guideline Suggestions</h2>
-                <p>Select guidelines to check against. Only likely relevant guidelines are pre-selected.</p>
+                <h2>${headerTitle}</h2>
+                <p>${headerDesc}</p>
             </div>
     `;
 
@@ -1492,14 +1503,21 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             const shouldBeChecked = numericScore >= 0.6;
             const isChecked = shouldBeChecked ? 'checked="checked"' : '';
 
+            // Conditional checkbox rendering
+            const checkboxHtml = isParallelMode
+                ? '' // No checkbox in parallel mode
+                : `<input type="checkbox" 
+                       class="guideline-checkbox" 
+                       data-guideline-id="${g.id}" 
+                       style="margin-right: 4px;"
+                       ${isChecked}>`;
+
+            const labelStyle = isParallelMode ? 'cursor: default;' : 'cursor: pointer;';
+
             htmlContent += `
                 <div class="guideline-item">
-                    <label class="guideline-checkbox-label">
-                        <input type="checkbox" 
-                               class="guideline-checkbox" 
-                               data-guideline-id="${g.id}" 
-                               style="margin-right: 4px;"
-                               ${isChecked}>
+                    <label class="guideline-checkbox-label" style="${labelStyle}">
+                        ${checkboxHtml}
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
@@ -1667,8 +1685,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     // Append the generated HTML to the summary view - PERMANENT so it stays visible
     appendToSummary1(htmlContent, false, false); // Permanent - stays until user processes guidelines
 
-    // Show the selection buttons in the button container
-    showSelectionButtons();
+    // Show the selection buttons in the button container (only in manual mode)
+    if (!isParallelMode) {
+        showSelectionButtons();
+    }
 
     // Apply spacing styles via JavaScript (CSS gets overridden by #summary1 * reset)
     setTimeout(() => {
