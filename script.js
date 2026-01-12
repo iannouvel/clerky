@@ -14636,7 +14636,7 @@ async function runParallelAnalysis(guidelines) {
         //    though we'll define handlers globally below)
         const renderCurrentSuggestion = () => {
             const state = window.suggestionWizardState;
-            const container = document.getElementById('parallel-analysis-results-output'); // Ensure we target the right container
+            const container = outputContainer; // Use the closure variable directly
 
             if (!container) return;
 
