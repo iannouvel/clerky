@@ -299,6 +299,36 @@ if (document.readyState === 'loading') {
     initializeMobileDetection();
 }
 
+// ===== Connectivity Monitoring =====
+function initializeConnectivityConnection() {
+    window.addEventListener('online', () => {
+        console.log('[NETWORK] Connection restored');
+        updateUser('Connection restored. You are back online.', false);
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            const statusEl = document.getElementById('serverStatusMessage');
+            if (statusEl && statusEl.textContent === 'Connection restored. You are back online.') {
+                statusEl.style.display = 'none';
+            }
+        }, 5000);
+
+        // Attempt to reconnect listeners if needed or rely on Firestore auto-reconnect
+        if (window.cacheManager) {
+            // Signal cache manager we are back online if relevant
+        }
+    });
+
+    window.addEventListener('offline', () => {
+        console.log('[NETWORK] Connection lost');
+        updateUser('Connection lost. Switching to offline mode (cached data).', true); // Keep confusing/persistent message? No, keep it visible.
+        // Actually updateUser logic hides non-loading messages. Let's make it look like a persistent warning or just a notification.
+        // Re-using updateUser with isLoading=false means it auto-hides. 
+        // Let's rely on standard behavior for now.
+    });
+}
+// Initialize connectivity listeners
+initializeConnectivityConnection();
+
 // Add disclaimer check function
 async function checkDisclaimerAcceptance() {
     const user = auth.currentUser;
@@ -3028,84 +3058,96 @@ function setupGuidelinesListener() {
                     }
                 }
             }
-
-            // When guideline count changes, trigger comprehensive metadata completion
-            if (countChanged && previousGuidelineCount > 0) {
-                console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
-
-                // NOTE: Automatic metadata completion disabled to prevent server memory crashes
-                // The batch sync endpoint handles metadata extraction inline
-                // await triggerMetadataCompletionForAll();
-
-                // Invalidate cache when changes detected
-                if (window.cacheManager) {
-                    window.cacheManager.clearGuidelinesCache().catch(err => {
-                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                    });
-                }
-
-                // Refresh guidelines data after processing
-                setTimeout(() => {
-                    window.guidelinesLoading = false; // Reset flag to allow reload
-                    loadGuidelinesFromFirestore();
-                }, 3000);
-            } else if (addedDocs.length > 0) {
-                // If only processing new guidelines without count change detection
-                // Invalidate cache when new guidelines are added
-                if (window.cacheManager) {
-                    window.cacheManager.clearGuidelinesCache().catch(err => {
-                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                    });
-                }
-
-                setTimeout(() => {
-                    window.guidelinesLoading = false; // Reset flag to allow reload
-                    loadGuidelinesFromFirestore();
-                }, 2000);
-            }
-
-            // Update the previous count for next comparison
-            previousGuidelineCount = currentCount;
-
-            if (modifiedDocs.length > 0) {
-                console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
-
-                // Invalidate cache when guidelines are modified
-                if (window.cacheManager) {
-                    window.cacheManager.clearGuidelinesCache().catch(err => {
-                        console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
-                    });
-                }
-
-                // Update global variables with modified data
-                modifiedDocs.forEach(change => {
-                    const guidelineData = change.doc.data();
-                    const guidelineId = change.doc.id;
-
-                    if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
-                        window.globalGuidelines[guidelineId] = {
-                            ...window.globalGuidelines[guidelineId],
-                            ...guidelineData
-                        };
-                        console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
-                    }
-                });
-
-                // Reload guidelines to get fresh data
-                setTimeout(() => {
-                    window.guidelinesLoading = false; // Reset flag to allow reload
-                    loadGuidelinesFromFirestore();
-                }, 1000);
-            }
         }, (error) => {
-            console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
+            // Error callback for Firestore listener
+            console.warn('[FIRESTORE_LISTENER] Listener encountered an error (likely network issue):', error.code, error.message);
+
+            // If it's a permission error, it's serious. If it's a network error, we can ignore it mostly as the offline cache takes over.
+            if (error.code === 'permission-denied') {
+                updateUser('Access denied to guidelines. Please check your permissions.', false);
+            } else if (error.code === 'unavailable' || error.message.includes('offline')) {
+                // Network issue - offline listener will handle the UI notification
+                console.log('[FIRESTORE_LISTENER] Pausing listener logs due to network disconnection.');
+            }
         });
 
-        console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
+        // When guideline count changes, trigger comprehensive metadata completion
+        if (countChanged && previousGuidelineCount > 0) {
+            console.log(`[METADATA_COMPLETION] 🎯 Guideline count changed (${previousGuidelineCount} → ${currentCount}). Skipping automatic metadata completion to avoid memory issues.`);
 
-    } catch (error) {
-        console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
-    }
+            // NOTE: Automatic metadata completion disabled to prevent server memory crashes
+            // The batch sync endpoint handles metadata extraction inline
+            // await triggerMetadataCompletionForAll();
+
+            // Invalidate cache when changes detected
+            if (window.cacheManager) {
+                window.cacheManager.clearGuidelinesCache().catch(err => {
+                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                });
+            }
+
+            // Refresh guidelines data after processing
+            setTimeout(() => {
+                window.guidelinesLoading = false; // Reset flag to allow reload
+                loadGuidelinesFromFirestore();
+            }, 3000);
+        } else if (addedDocs.length > 0) {
+            // If only processing new guidelines without count change detection
+            // Invalidate cache when new guidelines are added
+            if (window.cacheManager) {
+                window.cacheManager.clearGuidelinesCache().catch(err => {
+                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                });
+            }
+
+            setTimeout(() => {
+                window.guidelinesLoading = false; // Reset flag to allow reload
+                loadGuidelinesFromFirestore();
+            }, 2000);
+        }
+
+        // Update the previous count for next comparison
+        previousGuidelineCount = currentCount;
+
+        if (modifiedDocs.length > 0) {
+            console.log(`[FIRESTORE_LISTENER] ${modifiedDocs.length} guidelines updated`);
+
+            // Invalidate cache when guidelines are modified
+            if (window.cacheManager) {
+                window.cacheManager.clearGuidelinesCache().catch(err => {
+                    console.warn('[FIRESTORE_LISTENER] Failed to clear cache:', err);
+                });
+            }
+
+            // Update global variables with modified data
+            modifiedDocs.forEach(change => {
+                const guidelineData = change.doc.data();
+                const guidelineId = change.doc.id;
+
+                if (window.globalGuidelines && window.globalGuidelines[guidelineId]) {
+                    window.globalGuidelines[guidelineId] = {
+                        ...window.globalGuidelines[guidelineId],
+                        ...guidelineData
+                    };
+                    console.log(`[FIRESTORE_LISTENER] Updated local data for: ${guidelineData.title || guidelineId}`);
+                }
+            });
+
+            // Reload guidelines to get fresh data
+            setTimeout(() => {
+                window.guidelinesLoading = false; // Reset flag to allow reload
+                loadGuidelinesFromFirestore();
+            }, 1000);
+        }
+    }, (error) => {
+        console.error('[FIRESTORE_LISTENER] Error in guidelines listener:', error);
+    });
+
+    console.log('[FIRESTORE_LISTENER] Guidelines listener set up successfully');
+
+} catch (error) {
+    console.error('[FIRESTORE_LISTENER] Failed to set up guidelines listener:', error);
+}
 }
 
 // Function to process content for a single guideline (triggered by listener)

@@ -460,6 +460,19 @@ body {
     color: white;
 }
 
+/* Fix for clinical issues dropdown in dark mode */
+#clinical-issues-dropdown,
+.clinical-dropdown {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+#clinical-issues-dropdown option,
+.clinical-dropdown option {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
 /* Accordion container styling */
 .accordion-container {
     padding: 10px;
