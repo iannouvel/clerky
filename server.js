@@ -19136,7 +19136,8 @@ app.post('/regenerateDisplayNames', authenticateUser, async (req, res) => {
             let displayName = humanFriendlyName;
 
             if (scope === 'local' && data.hospitalTrust) {
-                displayName = `${humanFriendlyName} - ${data.hospitalTrust}`;
+                const shortTrust = data.shortHospitalTrust || await getShortHospitalTrust(data.hospitalTrust);
+                displayName = `${humanFriendlyName} - ${shortTrust || data.hospitalTrust}`;
             } else if (scope === 'national' && data.organisation) {
                 displayName = `${humanFriendlyName} - ${data.organisation}`;
             } else if (data.organisation) {
@@ -19144,7 +19145,8 @@ app.post('/regenerateDisplayNames', authenticateUser, async (req, res) => {
                 displayName = `${humanFriendlyName} - ${data.organisation}`;
             } else if (data.hospitalTrust) {
                 // Fallback: use hospitalTrust if available
-                displayName = `${humanFriendlyName} - ${data.hospitalTrust}`;
+                const shortTrust = data.shortHospitalTrust || await getShortHospitalTrust(data.hospitalTrust);
+                displayName = `${humanFriendlyName} - ${shortTrust || data.hospitalTrust}`;
             }
 
             const guidelineRef = db.collection('guidelines').doc(doc.id);
