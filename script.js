@@ -14602,226 +14602,255 @@ async function runParallelAnalysis(guidelines) {
         }, 3000);
     }
 
-    // Display Aggregated Results (Flat List)
+    // Display Aggregated Results (Sequential Wizard)
     if (allSuggestions.length === 0) {
         outputContainer.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found for the provided clinical text based on these guidelines.</div>';
     } else {
         // Clear container
         outputContainer.innerHTML = '';
 
-        // Create a single container for the flat list
-        const suggestionsList = document.createElement('div');
-        suggestionsList.className = 'suggestions-flat-list';
-
-        // Add Title
-
-        // Group suggestions by priority
-        const groupedSuggestions = {
-            high: [],
-            medium: [],
-            low: []
+        // 1. Sort suggestions by priority
+        const priorityScore = {
+            'critical': 4,
+            'high': 3,
+            'important': 2,
+            'medium': 2,
+            'low': 1,
+            'info': 0
         };
 
-        allSuggestions.forEach((suggestion, index) => {
-            const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
-            const suggestionItem = { ...suggestion, originalIndex: index }; // Keep track of original index if needed for IDs
-
-            if (priority === 'critical' || priority === 'high') {
-                groupedSuggestions.high.push(suggestionItem);
-            } else if (priority === 'important' || priority === 'medium') {
-                groupedSuggestions.medium.push(suggestionItem);
-            } else {
-                groupedSuggestions.low.push(suggestionItem);
-            }
+        const sortedSuggestions = allSuggestions.sort((a, b) => {
+            const pA = (a.type || a.priority || 'info').toLowerCase();
+            const pB = (b.type || b.priority || 'info').toLowerCase();
+            return (priorityScore[pB] || 0) - (priorityScore[pA] || 0);
         });
 
-        // Add Title with stats
-        const titleParts = [];
-        if (groupedSuggestions.high.length > 0) titleParts.push(`${groupedSuggestions.high.length} High Priority`);
-        if (groupedSuggestions.medium.length > 0) titleParts.push(`${groupedSuggestions.medium.length} Medium Priority`);
-        if (groupedSuggestions.low.length > 0) titleParts.push(`${groupedSuggestions.low.length} Low Priority`);
+        // 2. Initialize global state for the wizard
+        window.suggestionWizardState = {
+            queue: sortedSuggestions,
+            currentIndex: 0,
+            total: sortedSuggestions.length
+        };
 
-        const titleText = `Clinical Suggestions: ${titleParts.join(' and ')}`;
-        const titleHtml = `<h3 style="margin: 20px 0 15px 0; color: var(--text-primary); font-size: 1.1em; border-bottom: 2px solid var(--accent-color); padding-bottom: 8px; display: inline-block;">${titleText}</h3>`;
+        // 3. Define the renderer function (local scope, but accessible to handlers via global exposing if needed, 
+        //    though we'll define handlers globally below)
+        const renderCurrentSuggestion = () => {
+            const state = window.suggestionWizardState;
+            const container = document.getElementById('parallel-analysis-results-output'); // Ensure we target the right container
 
-        // Function to render a list of suggestions
-        const renderSuggestionList = (suggestions, priorityLabel) => {
-            if (suggestions.length === 0) return '';
+            if (!container) return;
 
-            const sectionHeader = `<h4 style="margin: 15px 0 10px 0; font-size: 1em; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">${priorityLabel}</h4>`;
-
-            const cardsHtml = suggestions.map((suggestion) => {
-                // Safely access suggestion properties with fallbacks
-                const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || 'No text available';
-                const suggestionType = suggestion.type || suggestion.priority || 'info';
-                // Use 'why' field if available, fallback to notCoveredBy or reasoning/rationale
-                const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-                const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
-
-                // Create a unique ID for this suggestion card
-                // Use random number to ensure uniqueness even if re-rendered
-                const uniqueId = Math.floor(Math.random() * 100000);
-                const suggestionId = `suggestion-${Date.now()}-${uniqueId}`;
-
-                // Store text in a data attribute for easy access (escaped)
-                const escapedText = suggestionText.replace(/"/g, '&quot;');
-
-                return `
-                <div id="${suggestionId}" class="suggestion-card" data-original-text="${escapedText}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-                    <div id="${suggestionId}-content" class="suggestion-content">
-                        <p id="${suggestionId}-text" style="margin: 0 0 10px 0;">
-                            <strong>Suggestion:</strong> <span class="text-content">${suggestionText}</span>
-                            <span style="float: right; font-size: 0.8em; color: var(--text-secondary); margin-left: 10px;" title="${sourceName}">
-                                Guideline: ${sourceName}
-                            </span>
-                        </p>
-                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;"><strong>Why:</strong> ${suggestionReasoning}</p>
+            // Check for completion
+            if (state.currentIndex >= state.total) {
+                container.innerHTML = `
+                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
+                        <span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉</span>
+                        <h3 style="color: var(--text-primary);">Review Complete</h3>
+                        <p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.</p>
+                        <button class="btn btn-primary" onclick="outputContainer.innerHTML = '';" style="margin-top: 20px;">Close Review</button>
                     </div>
+                `;
+                return;
+            }
+
+            const suggestion = state.queue[state.currentIndex];
+            const currentNumber = state.currentIndex + 1;
+            const total = state.total;
+
+            // Safely access properties
+            const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || 'No text available';
+            const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+            const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+            const contextText = suggestion.evidence || ''; // For focusing
+
+            // Formatting
+            const escapedText = suggestionText.replace(/"/g, '&quot;');
+            const uniqueId = `suggestion-wizard-${Date.now()}`;
+
+            // Priority Styling
+            const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
+            let priorityColor = 'var(--text-secondary)';
+            let priorityLabel = 'Suggestion';
+
+            if (priority === 'critical' || priority === 'high') {
+                priorityColor = '#dc3545'; // Red
+                priorityLabel = 'High Priority Suggestion';
+            } else if (priority === 'medium' || priority === 'important') {
+                priorityColor = '#fd7e14'; // Orange
+                priorityLabel = 'Medium Priority Suggestion';
+            } else {
+                priorityColor = '#28a745'; // Greenish/Grey for low
+                priorityLabel = 'Low Priority Suggestion';
+            }
+
+            // Render Wizard Card
+            container.innerHTML = `
+                <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     
-                    <div id="${suggestionId}-edit-mode" class="suggestion-edit-mode" style="display: none; margin-bottom: 10px;">
-                        <textarea id="${suggestionId}-editor" class="form-control" style="width: 100%; min-height: 80px; margin-bottom: 10px; padding: 8px; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary);">${suggestionText}</textarea>
-                        <div style="display: flex; gap: 10px;">
-                            <button class="btn-sm btn-success" onclick="saveModifiedSuggestion('${suggestionId}')">Save</button>
-                            <button class="btn-sm btn-secondary" onclick="cancelModification('${suggestionId}')">Cancel</button>
-                        </div>
+                    <!-- Header with Progress -->
+                    <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.85em; font-weight: 600; color: ${priorityColor}; text-transform: uppercase; letter-spacing: 0.5px;">
+                            ${priorityLabel}
+                        </span>
+                        <span style="font-size: 0.85em; color: var(--text-secondary);">
+                            ${currentNumber} of ${total}
+                        </span>
                     </div>
 
-                     <div id="${suggestionId}-actions" class="suggestion-actions" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light); display: flex; gap: 8px; flex-wrap: wrap;">
-                        <button class="btn-xs btn-success" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #28a745;" onclick="acceptParallelSuggestion('${suggestionId}')">
-                            <i class="fas fa-check"></i> Accept
+                    <!-- Main Content -->
+                    <div class="wizard-body" style="padding: 20px;">
+                        
+                        <!-- Suggestion Box (The Change) -->
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Suggested Action</label>
+                            <div class="text-content" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
+                                ${suggestionText}
+                            </div>
+                        </div>
+
+                        <!-- Reasoning Box -->
+                        <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
+                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Why?</label>
+                            <div style="font-size: 0.95em; color: var(--text-secondary);">
+                                ${suggestionReasoning}
+                            </div>
+                            <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: right;">
+                                Source: ${sourceName}
+                            </div>
+                        </div>
+
+                        <!-- Editor for Modify Mode (Hidden by default) -->
+                        <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
+                            <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
+                            <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
+                                <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Action Bar -->
+                    <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; background: var(--bg-secondary);">
+                         <!-- Navigation only -->
+                        <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>
+                            ⬅ Back
                         </button>
-                        <button class="btn-xs btn-warning" style="color: #212529; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #ffc107;" onclick="modifyParallelSuggestion('${suggestionId}')">
-                            <i class="fas fa-edit"></i> Modify
+                        
+                        <div style="flex-grow: 1;"></div> <!-- Spacer -->
+
+                        <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
+                             ✏️ Modify
                         </button>
-                        <button class="btn-xs btn-danger" style="color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; background-color: #dc3545;" onclick="rejectParallelSuggestion('${suggestionId}')">
-                            <i class="fas fa-times"></i> Reject
+                        <button class="btn-sm btn-secondary" onclick="skipWizardSuggestion()">
+                             Skip ⏭
+                        </button>
+                        <button class="btn-sm btn-danger" onclick="rejectWizardSuggestion('${uniqueId}')">
+                             Reject ❌
+                        </button>
+                        <button class="btn-sm btn-success" style="background-color: #28a745; color: white;" onclick="acceptWizardSuggestion('${uniqueId}')">
+                             Accept & Next ✅
                         </button>
                     </div>
+
                 </div>
             `;
-            }).join('');
 
-            return sectionHeader + cardsHtml;
+            // Auto-focus logic
+            if (contextText && typeof scrollTextIntoView === 'function') {
+                setTimeout(() => {
+                    scrollTextIntoView(contextText);
+                }, 100); // Small delay to allow render
+            }
         };
 
-        let suggestionsHtml = '';
-        if (groupedSuggestions.high.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.high, 'High Priority');
-        if (groupedSuggestions.medium.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.medium, 'Medium Priority');
-        if (groupedSuggestions.low.length > 0) suggestionsHtml += renderSuggestionList(groupedSuggestions.low, 'Low Priority');
+        // Render first suggestion
+        renderCurrentSuggestion();
 
+        // 4. Global Handlers for Wizard
 
-        // Global handlers for Parallel Analysis Suggestion interactivity
+        window.nextWizardSuggestion = function () {
+            window.suggestionWizardState.currentIndex++;
+            renderCurrentSuggestion();
+        };
 
-        window.acceptParallelSuggestion = function (suggestionId) {
-            const card = document.getElementById(suggestionId);
-            if (!card) return;
+        window.prevWizardSuggestion = function () {
+            if (window.suggestionWizardState.currentIndex > 0) {
+                window.suggestionWizardState.currentIndex--;
+                renderCurrentSuggestion();
+            }
+        };
 
-            // Get the text to accept (check if it was modified or use original)
-            // We can grab it directly from the DOM to get the most current version
-            const textElement = card.querySelector('.text-content');
-            const textToInsert = textElement ? textElement.textContent : '';
+        window.acceptWizardSuggestion = function (id) {
+            const card = document.getElementById(id);
+            // Get text, handling potential modification state (though accept is usually from view mode, 
+            // the text source of truth is the .text-content div unless modified)
+            const textEl = card.querySelector('.text-content');
+            const textToInsert = textEl ? textEl.textContent.trim() : '';
 
-            if (!textToInsert) return;
-
-            // Use the global editor instance to insert text
-            if (window.editors && window.editors.userInput) {
-                // Add a newline before if needed, or just insert block
-                // TipTap insertContent handles block nodes well
+            if (textToInsert && window.editors && window.editors.userInput) {
+                // Insert text
                 window.editors.userInput.commands.insertContent(`\n${textToInsert}`);
 
-                // Visual feedback
-                card.style.borderColor = '#28a745';
-                card.style.backgroundColor = 'rgba(40, 167, 69, 0.1)';
-
-                const actionsDiv = document.getElementById(`${suggestionId}-actions`);
-                if (actionsDiv) {
-                    actionsDiv.innerHTML = `<span style="color: #28a745; font-weight: bold;"><i class="fas fa-check-circle"></i> Accepted</span>`;
-                }
-
-                // Optional: Fade out and remove after a delay? 
-                // User might want to keep record, so just marking as accepted is better.
-                // But to declutter, we could shrink it. Let's just mark it for now.
+                // Add simple visual feedback before moving on (optional, maybe purely sequential is faster)
+                // Just move next
+                window.nextWizardSuggestion();
             } else {
-                console.warn('Editor not found, cannot insert suggestion');
-                alert('Could not find the editor to insert text.');
+                alert('Editor not found or empty suggestion.');
             }
         };
 
-        window.rejectParallelSuggestion = function (suggestionId) {
-            const card = document.getElementById(suggestionId);
-            if (!card) return;
-
-            // Visual feedback - slide up and remove
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(-10px)';
-
-            setTimeout(() => {
-                card.remove();
-
-                // interactions to check if any suggestions remain?
-                // For now just removing it is sufficient
-            }, 300);
+        window.rejectWizardSuggestion = function (id) {
+            // Just move next, effectively ignoring it
+            // Could log rejection if needed
+            window.nextWizardSuggestion();
         };
 
-        window.modifyParallelSuggestion = function (suggestionId) {
-            const contentDiv = document.getElementById(`${suggestionId}-content`);
-            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
-            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+        window.skipWizardSuggestion = function () {
+            window.nextWizardSuggestion();
+        };
 
-            if (contentDiv && editModeDiv && actionsDiv) {
-                contentDiv.style.display = 'none';
-                actionsDiv.style.display = 'none';
-                editModeDiv.style.display = 'block';
+        window.enableWizardModify = function (id) {
+            const editMode = document.getElementById(`${id}-edit-mode`);
+            const actions = document.getElementById(`${id}-actions`);
 
-                // Focus the textarea
-                const textarea = document.getElementById(`${suggestionId}-editor`);
-                if (textarea) textarea.focus();
+            if (editMode && actions) {
+                editMode.style.display = 'block';
+                actions.style.display = 'none'; // Hide main actions while editing
+
+                // document.getElementById(`${id}-editor`).focus(); 
             }
         };
 
-        window.saveModifiedSuggestion = function (suggestionId) {
-            const textarea = document.getElementById(`${suggestionId}-editor`);
-            const textSpan = document.querySelector(`#${suggestionId} .text-content`);
-            const contentDiv = document.getElementById(`${suggestionId}-content`);
-            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
-            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
+        window.saveWizardModification = function (id) {
+            const editor = document.getElementById(`${id}-editor`);
+            const display = document.querySelector(`#${id} .text-content`);
+            const editMode = document.getElementById(`${id}-edit-mode`);
+            const actions = document.getElementById(`${id}-actions`);
 
-            if (textarea && textSpan) {
-                textSpan.textContent = textarea.value;
-            }
+            if (editor && display) {
+                display.textContent = editor.value; // Update display
 
-            if (contentDiv && editModeDiv && actionsDiv) {
-                contentDiv.style.display = 'block';
-                actionsDiv.style.display = 'flex';
-                editModeDiv.style.display = 'none';
+                // Restore View
+                editMode.style.display = 'none';
+                actions.style.display = 'flex';
             }
         };
 
-        window.cancelModification = function (suggestionId) {
-            const contentDiv = document.getElementById(`${suggestionId}-content`);
-            const editModeDiv = document.getElementById(`${suggestionId}-edit-mode`);
-            const actionsDiv = document.getElementById(`${suggestionId}-actions`);
-            // Reset textarea to current text content? Or original? 
-            // Usually Cancel means "discard changes in textarea".
+        window.cancelWizardModification = function (id) {
+            const editMode = document.getElementById(`${id}-edit-mode`);
+            const actions = document.getElementById(`${id}-actions`);
 
-            // Reset textarea to matches what is currently in textSpan (which is the last saved state)
-            const textarea = document.getElementById(`${suggestionId}-editor`);
-            const textSpan = document.querySelector(`#${suggestionId} .text-content`);
-            if (textarea && textSpan) {
-                textarea.value = textSpan.textContent;
-            }
-
-            if (contentDiv && editModeDiv && actionsDiv) {
-                contentDiv.style.display = 'block';
-                actionsDiv.style.display = 'flex';
-                editModeDiv.style.display = 'none';
+            if (editMode && actions) {
+                editMode.style.display = 'none';
+                actions.style.display = 'flex';
             }
         };
-
-        suggestionsList.innerHTML = titleHtml + suggestionsHtml;
-        outputContainer.appendChild(suggestionsList);
     }
 }
+
+
 
 // Helper functions for sequential processing error handling
 window.retryCurrentGuideline = async function () {
