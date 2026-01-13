@@ -594,6 +594,11 @@ body {
     background: #4d7a56;
 }
 
+/* Small button styling for suggestions */
+.btn-sm {
+    padding: 3px 6px !important;
+}
+
 /* Hidden elements */
 .hidden {
     display: none !important;

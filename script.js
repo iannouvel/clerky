@@ -13876,7 +13876,6 @@ async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
                                 <div class="guideline-content">
                                     <span class="guideline-title">${displayTitle}</span>
                                     <span class="organization">${organization}</span>
-                                    <span class="relevance-score">Relevance: ${relevanceScore}</span>
                                 </div>
                             </div>
                             <div class="guideline-actions">
@@ -14453,8 +14452,8 @@ async function runParallelAnalysis(guidelines) {
     const resultsContainerHtml = `
         <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
             <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary);">
-                <strong><i class="fas fa-layer-group"></i> Parallel Analysis in Progress</strong><br>
-                <span id="${containerId}-status-text">Starting workers...</span>
+                <strong><i class="fas fa-layer-group"></i> Parallel Analysis Underway</strong>
+                <span id="${containerId}-status-text" style="display: block; margin-top: 5px; font-size: 0.9em; color: var(--text-secondary);"></span>
                 <div class="progress-bar-container" style="margin-top: 10px; background: var(--bg-input); height: 8px; border-radius: 4px; overflow: hidden;">
                     <div id="${containerId}-progress" style="width: 0%; height: 100%; background: #4caf50; transition: width 0.3s ease;"></div>
                 </div>
@@ -14603,11 +14602,19 @@ async function runParallelAnalysis(guidelines) {
     }
 
     // Display Aggregated Results (Sequential Wizard)
+    // Re-check the outputContainer in case DOM was modified during async operations
+    let finalOutputContainer = outputContainer || document.getElementById(`${containerId}-output`);
+
+    if (!finalOutputContainer) {
+        console.error('[PARALLEL] Output container not found - cannot display results');
+        return;
+    }
+
     if (allSuggestions.length === 0) {
-        outputContainer.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found for the provided clinical text based on these guidelines.</div>';
+        finalOutputContainer.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found for the provided clinical text based on these guidelines.</div>';
     } else {
         // Clear container
-        outputContainer.innerHTML = '';
+        finalOutputContainer.innerHTML = '';
 
         // 1. Sort suggestions by priority
         const priorityScore = {
@@ -14636,7 +14643,7 @@ async function runParallelAnalysis(guidelines) {
         //    though we'll define handlers globally below)
         const renderCurrentSuggestion = () => {
             const state = window.suggestionWizardState;
-            const container = outputContainer; // Use the closure variable directly
+            const container = finalOutputContainer; // Use the validated container
 
             if (!container) return;
 
