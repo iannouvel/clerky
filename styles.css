@@ -594,7 +594,25 @@ body {
     background: #4d7a56;
 }
 
-/* Small button styling for suggestions */
+/* Wizard Suggestion Buttons */
+.wizard-suggestion-btn {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border: none;
+    padding: 3px 6px !important;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.wizard-suggestion-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Small button styling for legacy use */
 .btn-sm {
     padding: 3px 6px !important;
 }
