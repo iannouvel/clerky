@@ -14716,7 +14716,7 @@ async function runParallelAnalysis(guidelines) {
                 const renderGroup = (title, items, color) => {
                     if (items.length === 0) return '';
                     let html = `<div style="margin-bottom: 15px;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: ${color}; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
+                        <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
                     items.forEach(item => {
                         const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || '';
                         if (text) {
@@ -14738,7 +14738,7 @@ async function runParallelAnalysis(guidelines) {
                 <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
                     
                     <!-- Global Summary Header -->
-                    <div class="wizard-summary-header" style="text-align: center; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
+                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
                         ${summaryString}
                     </div>
 
@@ -14772,7 +14772,7 @@ async function runParallelAnalysis(guidelines) {
                                 <div style="font-size: 0.95em; color: var(--text-secondary);">
                                     ${suggestionReasoning}
                                 </div>
-                                <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: right;">
+                                <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
                                     Source: ${sourceName}
                                 </div>
                             </div>
@@ -14790,13 +14790,11 @@ async function runParallelAnalysis(guidelines) {
                         </div>
 
                         <!-- Action Bar -->
-                        <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; background: var(--bg-secondary);">
+                        <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
                              <!-- Navigation only -->
-                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5; background: var(--bg-tertiary); color: var(--text-muted); border: 1px solid var(--border-color);"' : 'style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);"'}>
+                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border-color);"' : 'style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);"'}>
                                 ⬅ Back
                             </button>
-                            
-                            <div style="flex-grow: 1;"></div> <!-- Spacer -->
 
                             <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
                                  ✏️ Modify
