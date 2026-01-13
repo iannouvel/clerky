@@ -14718,23 +14718,24 @@ async function runParallelAnalysis(guidelines) {
                     let html = `<div style="margin-bottom: 15px;">
                         <div style="font-size: 0.8em; font-weight: 600; color: ${color}; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
                     items.forEach(item => {
-                        const text = item.suggestion || item.recommendation || item.text || 'No text';
-                        html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
+                        const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || '';
+                        if (text) {
+                            html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
+                        }
                     });
                     html += `</div>`;
                     return html;
                 };
 
-                upcomingHtml += renderGroup('Upcoming High Priority Advice', upcomingHigh, '#d32f2f');
-                upcomingHtml += renderGroup('Upcoming Medium Priority Advice', upcomingMed, '#f57c00');
-                upcomingHtml += renderGroup('Upcoming Low Priority Advice', upcomingLow, '#388e3c');
+                upcomingHtml += renderGroup('Upcoming High Priority Suggestions', upcomingHigh, '#d32f2f');
+                upcomingHtml += renderGroup('Upcoming Medium Priority Suggestions', upcomingMed, '#f57c00');
+                upcomingHtml += renderGroup('Upcoming Low Priority Suggestions', upcomingLow, '#388e3c');
 
                 upcomingHtml += `</div>`;
             }
 
-            // Render Wizard Card
             container.innerHTML = `
-                <div class="suggestion-wizard-container" style="max-width: 800px; margin: 0 auto;">
+                <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
                     
                     <!-- Global Summary Header -->
                     <div class="wizard-summary-header" style="text-align: center; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
@@ -14791,7 +14792,7 @@ async function runParallelAnalysis(guidelines) {
                         <!-- Action Bar -->
                         <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; background: var(--bg-secondary);">
                              <!-- Navigation only -->
-                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5;"' : ''}>
+                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5; background: var(--bg-tertiary); color: var(--text-muted); border: 1px solid var(--border-color);"' : 'style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);"'}>
                                 ⬅ Back
                             </button>
                             
@@ -14800,7 +14801,7 @@ async function runParallelAnalysis(guidelines) {
                             <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
                                  ✏️ Modify
                             </button>
-                            <button class="btn-sm btn-secondary" onclick="skipWizardSuggestion()">
+                            <button class="btn-sm btn-secondary" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);" onclick="skipWizardSuggestion()">
                                  Skip ⏭
                             </button>
                             <button class="btn-sm btn-danger" onclick="rejectWizardSuggestion('${uniqueId}')">
