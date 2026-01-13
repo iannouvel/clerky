@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,8 @@
             max-width: 800px;
             margin: 50px auto;
             padding: 40px;
-            background: white;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -39,7 +41,7 @@
 
         .disclaimer-content li {
             margin-bottom: 15px;
-            color: #333;
+            color: var(--text-primary);
         }
 
         .disclaimer-actions {
@@ -70,6 +72,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="top-bar">
         <div class="top-bar-left">
@@ -83,7 +86,7 @@
             <h1>Legal Disclaimer & Daily Consent</h1>
             <p>Please read carefully before proceeding</p>
         </div>
-        
+
         <div class="disclaimer-content">
             <p>This website is an <strong>experimental prototype</strong> and is not intended for clinical use.</p>
             <p>By clicking 'Accept', you acknowledge and agree that:</p>
@@ -95,8 +98,10 @@
                 <li>You understand this is a prototype and may contain errors or inaccuracies</li>
                 <li>You accept full responsibility for any clinical decisions made</li>
             </ul>
-            <p><strong>Legal Protection:</strong> This disclaimer provides legal protection for both users and developers by clearly establishing the experimental nature of this tool.</p>
-            <p>Your acceptance of this disclaimer will be logged with your user information and timestamp. You must accept this disclaimer daily to continue using clerky.</p>
+            <p><strong>Legal Protection:</strong> This disclaimer provides legal protection for both users and
+                developers by clearly establishing the experimental nature of this tool.</p>
+            <p>Your acceptance of this disclaimer will be logged with your user information and timestamp. You must
+                accept this disclaimer daily to continue using clerky.</p>
         </div>
         <div class="disclaimer-actions">
             <button id="acceptButton">I Accept - Not For Clinical Use</button>
@@ -124,7 +129,7 @@
                     // Clear any tab-scoped redirect intent for this session
                     sessionStorage.removeItem('returnToPage');
                     sessionStorage.removeItem('returnAfterLogin');
-                } catch (e) {}
+                } catch (e) { }
                 window.location.href = 'index.html';
                 return;
             }
@@ -134,14 +139,14 @@
             console.log('Checking if disclaimer already accepted for:', user.uid);
             try {
                 const disclaimerDoc = await getDoc(disclaimerRef);
-                
+
                 if (disclaimerDoc.exists()) {
                     // Check if disclaimer was accepted today
                     const acceptanceData = disclaimerDoc.data();
                     const acceptanceTime = acceptanceData.acceptanceTime.toDate();
                     const today = new Date();
                     const isToday = acceptanceTime.toDateString() === today.toDateString();
-                    
+
                     if (isToday) {
                         console.log('Disclaimer already accepted today, redirecting to main page');
                         // If already accepted today, redirect to main page
@@ -149,7 +154,7 @@
                             // Clear any tab-scoped redirect intent for this session
                             sessionStorage.removeItem('returnToPage');
                             sessionStorage.removeItem('returnAfterLogin');
-                        } catch (e) {}
+                        } catch (e) { }
                         window.location.href = 'index.html';
                         return;
                     } else {
@@ -192,7 +197,7 @@
                         // Clear any tab-scoped redirect intent for this session
                         sessionStorage.removeItem('returnToPage');
                         sessionStorage.removeItem('returnAfterLogin');
-                    } catch (e) {}
+                    } catch (e) { }
                     window.location.href = 'index.html';
                 } catch (error) {
                     console.error('Error saving disclaimer acceptance:', error);
@@ -202,4 +207,5 @@
         });
     </script>
 </body>
-</html> 
+
+</html>
