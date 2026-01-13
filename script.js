@@ -14790,20 +14790,20 @@ async function runParallelAnalysis(guidelines) {
                         <!-- Action Bar -->
                         <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
                              <!-- Navigation only -->
-                            <button class="btn-sm btn-secondary" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5; background: var(--bg-tertiary); color: var(--text-secondary); border: 1px solid var(--border-color);"' : 'style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);"'}>
+                            <button class="btn-sm" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled style="opacity: 0.5; background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: not-allowed;"' : 'style="background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: pointer;"'}>
                                 ⬅ Back
                             </button>
 
-                            <button class="btn-sm btn-warning" onclick="enableWizardModify('${uniqueId}')">
+                            <button class="btn-sm" style="background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: pointer;" onclick="enableWizardModify('${uniqueId}')">
                                  ✏️ Modify
                             </button>
-                            <button class="btn-sm btn-secondary" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);" onclick="skipWizardSuggestion()">
+                            <button class="btn-sm" style="background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: pointer;" onclick="skipWizardSuggestion()">
                                  Skip ⏭
                             </button>
-                            <button class="btn-sm btn-danger" onclick="rejectWizardSuggestion('${uniqueId}')">
+                            <button class="btn-sm" style="background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: pointer;" onclick="rejectWizardSuggestion('${uniqueId}')">
                                  Reject ❌
                             </button>
-                            <button class="btn-sm btn-success" style="background-color: #28a745; color: white;" onclick="acceptWizardSuggestion('${uniqueId}')">
+                            <button class="btn-sm" style="background: var(--text-primary); color: var(--bg-primary); border: none; padding: 8px 16px; border-radius: 6px; font-family: inherit; font-size: 0.9em; cursor: pointer;" onclick="acceptWizardSuggestion('${uniqueId}')">
                                  Accept & Next ✅
                             </button>
                         </div>
