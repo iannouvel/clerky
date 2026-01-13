@@ -14760,17 +14760,15 @@ async function runParallelAnalysis(guidelines) {
                             
                             <!-- Suggestion Box (The Change) -->
                             <div style="margin-bottom: 20px;">
-                                <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Suggested Action</label>
                                 <div class="text-content" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                                    ${suggestionText}
+                                    <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Suggested Action:</span> ${suggestionText}
                                 </div>
                             </div>
 
                             <!-- Reasoning Box -->
                             <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
-                                <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Why?</label>
                                 <div style="font-size: 0.95em; color: var(--text-secondary);">
-                                    ${suggestionReasoning}
+                                    <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
                                 </div>
                                 <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
                                     Source: ${sourceName}
