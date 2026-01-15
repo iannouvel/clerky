@@ -979,6 +979,37 @@ app.get('/debug-prompts', authenticateUser, async (req, res) => {
     }
 });
 
+
+// Force sync prompts from local file to Firestore
+app.post('/syncPromptsToFirestore', authenticateUser, async (req, res) => {
+    try {
+        // Clear cache and load local file
+        delete require.cache[require.resolve('./prompts.json')];
+        const filePrompts = require('./prompts.json');
+
+        console.log('[SYNC] Syncing prompts.json to Firestore...');
+
+        // Update Firestore
+        await db.collection('settings').doc('prompts').set({
+            prompts: filePrompts,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedBy: req.user.uid
+        });
+
+        // Update global cache
+        global.prompts = filePrompts;
+
+        res.json({
+            success: true,
+            message: 'Successfully synced prompts.json to Firestore',
+            count: Object.keys(filePrompts).length
+        });
+    } catch (error) {
+        console.error('[SYNC] Failed to sync prompts:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 app.get('/getPrompts', authenticateUser, (req, res) => {
     try {
         res.json({
