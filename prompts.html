@@ -243,7 +243,8 @@
                     }
 
                     // Load from server (tries Firestore first, then falls back to prompts.json)
-                    const response = await fetch('/getPrompts', { headers });
+                    const serverUrl = 'https://clerky-uzni.onrender.com';
+                    const response = await fetch(`${serverUrl}/getPrompts`, { headers });
 
                     if (!response.ok) {
                         throw new Error(`Server error: ${response.status}`);
@@ -341,7 +342,7 @@
                     }
                     const token = await user.getIdToken();
 
-                    const response = await fetch('/updatePrompts', {
+                    const response = await fetch('https://clerky-uzni.onrender.com/updatePrompts', {
                         method: 'POST',
                         headers: {
                             'Authorization': `Bearer ${token}`
