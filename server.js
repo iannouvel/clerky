@@ -24182,13 +24182,38 @@ RESPONSE (Text only):
 // PROMPTS ENDPOINTS
 // ============================================================================
 
-// Endpoint to get prompts
-app.get('/getPrompts', authenticateUser, (req, res) => {
+// Endpoint to get prompts (Firestore first, prompts.json fallback)
+app.get('/getPrompts', authenticateUser, async (req, res) => {
     try {
+        let loadedPrompts = null;
+        let source = 'unknown';
+
+        // Try Firestore first
+        if (db) {
+            try {
+                const firestoreDoc = await db.collection('settings').doc('prompts').get();
+                if (firestoreDoc.exists && firestoreDoc.data()?.prompts) {
+                    loadedPrompts = firestoreDoc.data().prompts;
+                    global.prompts = loadedPrompts;
+                    source = 'firestore';
+                    console.log('[PROMPTS] Loaded prompts from Firestore for /getPrompts');
+                }
+            } catch (firestoreError) {
+                console.warn('[PROMPTS] Failed to load from Firestore:', firestoreError.message);
+            }
+        }
+
+        // Fallback to prompts.json
+        if (!loadedPrompts) {
+            loadedPrompts = prompts || require('./prompts.json');
+            source = 'prompts.json';
+            console.log('[PROMPTS] Loaded prompts from prompts.json for /getPrompts');
+        }
+
         res.json({
             success: true,
-            prompts,
-            source: 'server'
+            prompts: loadedPrompts,
+            source
         });
     } catch (error) {
         console.error('Error serving prompts:', error);
@@ -24209,21 +24234,83 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
 
         const parsedPrompts = typeof updatedPrompts === 'string' ? JSON.parse(updatedPrompts) : updatedPrompts;
 
-        // Update in-memory variable
+        // Update in-memory cache
+        global.prompts = parsedPrompts;
         prompts = parsedPrompts;
 
-        // Write to local file
+        // Write to Firestore (primary storage)
+        if (db) {
+            await db.collection('settings').doc('prompts').set({
+                prompts: parsedPrompts,
+                updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+                updatedBy: req.user?.uid || 'unknown'
+            });
+            console.log('[PROMPTS] Successfully saved prompts to Firestore');
+        }
+
+        // Also write to local file (backup)
         fs.writeFileSync(path.join(__dirname, 'prompts.json'), JSON.stringify(prompts, null, 2));
+        console.log('[PROMPTS] Successfully saved prompts to prompts.json');
 
         res.json({
             success: true,
-            message: 'Prompts updated successfully'
+            message: 'Prompts updated in Firestore and local file'
         });
     } catch (error) {
         console.error('Error updating prompts:', error);
         res.status(500).json({
             success: false,
             message: 'Failed to update prompts: ' + error.message
+        });
+    }
+});
+
+// ============================================================================
+// ONE-TIME MIGRATION: Sync prompts.json to Firestore
+// ============================================================================
+
+// Admin endpoint to sync prompts.json to Firestore (one-time migration)
+app.post('/syncPromptsToFirestore', authenticateUser, async (req, res) => {
+    try {
+        console.log('[PROMPTS-SYNC] Starting sync from prompts.json to Firestore...');
+
+        // Load fresh prompts from prompts.json
+        delete require.cache[require.resolve('./prompts.json')];
+        const filePrompts = require('./prompts.json');
+
+        const promptCount = Object.keys(filePrompts).length;
+        console.log(`[PROMPTS-SYNC] Loaded ${promptCount} prompts from prompts.json`);
+
+        if (!db) {
+            throw new Error('Firestore is not available');
+        }
+
+        // Write to Firestore
+        await db.collection('settings').doc('prompts').set({
+            prompts: filePrompts,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedBy: req.user?.uid || 'migration',
+            syncedFromFile: true,
+            syncDate: new Date().toISOString()
+        });
+
+        // Update in-memory cache
+        global.prompts = filePrompts;
+        prompts = filePrompts;
+
+        console.log(`[PROMPTS-SYNC] Successfully synced ${promptCount} prompts to Firestore`);
+
+        res.json({
+            success: true,
+            message: `Successfully synced ${promptCount} prompts from prompts.json to Firestore`,
+            promptCount,
+            promptKeys: Object.keys(filePrompts)
+        });
+    } catch (error) {
+        console.error('[PROMPTS-SYNC] Error syncing prompts:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to sync prompts: ' + error.message
         });
     }
 });
