@@ -14771,7 +14771,7 @@ async function runParallelAnalysis(guidelines) {
                                     
                                     <!-- Suggestion Box (The Change) -->
                                     <div style="margin-bottom: 20px;">
-                                        <div class="text-content" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
+                                        <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
                                             <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Suggested Action:</span> ${suggestionText}
                                         </div>
                                     </div>
@@ -14856,22 +14856,76 @@ async function runParallelAnalysis(guidelines) {
             }
         };
 
-        window.acceptWizardSuggestion = function (id) {
+        window.acceptWizardSuggestion = async function (id) {
             const card = document.getElementById(id);
-            // Get text, handling potential modification state (though accept is usually from view mode, 
-            // the text source of truth is the .text-content div unless modified)
             const textEl = card.querySelector('.text-content');
-            const textToInsert = textEl ? textEl.textContent.trim() : '';
 
-            if (textToInsert && window.editors && window.editors.userInput) {
-                // Insert text
-                window.editors.userInput.commands.insertContent(`\n${textToInsert}`);
+            // Get the raw suggestion text from data attribute (without "Suggested Action:" prefix)
+            // If user modified it, get from the editor textarea instead
+            const editorEl = document.getElementById(`${id}-editor`);
+            let textToInsert = '';
 
-                // Add simple visual feedback before moving on (optional, maybe purely sequential is faster)
-                // Just move next
+            if (editorEl && editorEl.value && editorEl.value.trim()) {
+                // User may have modified the text
+                textToInsert = editorEl.value.trim();
+            } else if (textEl && textEl.dataset.rawSuggestion) {
+                // Use the original raw suggestion without the label
+                textToInsert = textEl.dataset.rawSuggestion;
+            } else if (textEl) {
+                // Fallback: strip "Suggested Action:" prefix if present
+                textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
+            }
+
+            if (!textToInsert) {
+                alert('Empty suggestion text.');
+                return;
+            }
+
+            if (!window.editors || !window.editors.userInput) {
+                alert('Editor not found.');
+                return;
+            }
+
+            try {
+                // Get current clinical note content
+                const currentContent = getUserInputContent();
+
+                // Build a suggestion object for the insertion point API
+                const suggestionForInsertion = {
+                    suggestedText: textToInsert,
+                    category: 'addition' // Treat wizard suggestions as additions
+                };
+
+                // Determine the optimal insertion point
+                let insertionPoint = null;
+                try {
+                    insertionPoint = await determineInsertionPoint(suggestionForInsertion, currentContent);
+                    console.log('[WIZARD] Determined insertion point:', insertionPoint);
+                } catch (insertError) {
+                    console.warn('[WIZARD] Failed to determine insertion point, falling back to append:', insertError);
+                    insertionPoint = { section: 'end', insertionMethod: 'append' };
+                }
+
+                // Insert text at the determined point
+                let newContent;
+                if (insertionPoint && insertionPoint.section !== 'end') {
+                    newContent = insertTextAtPoint(currentContent, textToInsert, insertionPoint);
+                } else {
+                    // Fallback: append to end with proper spacing
+                    const spacing = currentContent.endsWith('\n') ? '' : '\n';
+                    newContent = currentContent + spacing + textToInsert;
+                }
+
+                // Update the editor with the new content
+                setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
+
+                console.log('[WIZARD] Suggestion accepted and inserted:', textToInsert.substring(0, 50) + '...');
+
+                // Move to next suggestion
                 window.nextWizardSuggestion();
-            } else {
-                alert('Editor not found or empty suggestion.');
+            } catch (error) {
+                console.error('[WIZARD] Error accepting suggestion:', error);
+                alert('Error inserting suggestion: ' + error.message);
             }
         };
 
@@ -14904,7 +14958,9 @@ async function runParallelAnalysis(guidelines) {
             const actions = document.getElementById(`${id}-actions`);
 
             if (editor && display) {
-                display.textContent = editor.value; // Update display
+                const modifiedText = editor.value.trim();
+                display.textContent = modifiedText; // Update display
+                display.dataset.rawSuggestion = modifiedText; // Update the data attribute for accept function
 
                 // Restore View
                 editMode.style.display = 'none';
