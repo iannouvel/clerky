@@ -690,7 +690,20 @@ app.use((req, res, next) => {
 });
 
 // Apply middleware
-// CORS will be configured later with specific options
+// Configure CORS to allow requests from the frontend
+app.use(cors({
+    origin: [
+        'https://clerkyai.health',
+        'https://www.clerkyai.health',
+        'http://localhost:3000',
+        'http://localhost:5000',
+        'http://127.0.0.1:3000',
+        'http://127.0.0.1:5000'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Configure helmet with proper Firebase exceptions
 app.use(helmet({
