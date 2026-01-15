@@ -939,6 +939,46 @@ app.get('/getAgentKnowledge', authenticateUser, async (req, res) => {
 });
 
 // Endpoint to get prompts
+// DEBUG ENDPOINT: Compare prompt sources
+app.get('/debug-prompts', authenticateUser, async (req, res) => {
+    try {
+        const promptKey = 'testTranscript';
+        const results = {
+            memory: global.prompts?.[promptKey]?.prompt || 'Not in memory',
+            firestore: 'Not checked',
+            file: 'Not checked'
+        };
+
+        // Check Firestore
+        try {
+            const doc = await db.collection('settings').doc('prompts').get();
+            if (doc.exists && doc.data()?.prompts?.[promptKey]) {
+                results.firestore = doc.data().prompts[promptKey].prompt;
+            } else {
+                results.firestore = 'Not found in Firestore';
+            }
+        } catch (e) {
+            results.firestore = 'Error: ' + e.message;
+        }
+
+        // Check File
+        try {
+            delete require.cache[require.resolve('./prompts.json')];
+            const filePrompts = require('./prompts.json');
+            results.file = filePrompts?.[promptKey]?.prompt || 'Not found in file';
+        } catch (e) {
+            results.file = 'Error: ' + e.message;
+        }
+
+        res.json({
+            success: true,
+            results
+        });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 app.get('/getPrompts', authenticateUser, (req, res) => {
     try {
         res.json({
