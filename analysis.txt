@@ -1,0 +1,288 @@
+892: const knowledgeRef = admin.firestore().collection('agent_knowledge');
+912: app.get('/getAgentKnowledge', authenticateUser, async (req, res) => {
+917: const userCustomizations = await admin.firestore()
+943: app.get('/debug-prompts', authenticateUser, async (req, res) => {
+984: app.post('/syncPromptsToFirestore', authenticateUser, async (req, res) => {
+995: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+1059: app.get('/', (req, res) => {
+2100: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2122: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2142: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2149: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+2168: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2184: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2205: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2262: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2287: auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+2290: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2320: processingCompletedAt: admin.firestore.FieldValue.serverTimestamp(),
+2321: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2336: vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+2403: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+2457: vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+2693: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+2713: updates.lastUpdated = admin.firestore.FieldValue.serverTimestamp();
+2833: admin.initializeApp({
+2842: db = admin.firestore();
+3348: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+3577: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+3693: guidelineScope: admin.firestore.FieldValue.delete(),
+4251: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+4466: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+4518: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+4686: app.post('/handleAction', authenticateUser, async (req, res) => {
+4742: app.post('/generateFakeClinicalInteraction', authenticateUser, [
+4818: app.post('/newActionEndpoint', authenticateUser, async (req, res) => {
+4869: app.get('/clinicalConditions', authenticateUser, async (req, res) => {
+4873: const clinicalConditionsRef = admin.firestore().collection('clinicalConditions');
+4936: app.post('/generateTranscript/:conditionId', authenticateUser, async (req, res) => {
+4948: const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+4997: lastGenerated: admin.firestore.FieldValue.serverTimestamp(),
+4998: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+4999: version: admin.firestore.FieldValue.increment(1)
+5033: app.post('/generateAllTranscripts', authenticateUser, async (req, res) => {
+5044: const clinicalConditionsRef = admin.firestore().collection('clinicalConditions');
+5147: const conditionRef = admin.firestore().collection('clinicalConditions').doc(condition.id);
+5150: lastGenerated: admin.firestore.FieldValue.serverTimestamp(),
+5151: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+5152: version: admin.firestore.FieldValue.increment(1)
+5196: app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => {
+5210: const batch = admin.firestore().batch();
+5217: const docRef = admin.firestore().collection('clinicalConditions').doc(docId);
+5224: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+5225: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+5324: app.post('/addClinicalCondition', authenticateUser, async (req, res) => {
+5358: const conditionRef = admin.firestore().collection('clinicalConditions').doc(docId);
+5375: lastGenerated: transcript ? admin.firestore.FieldValue.serverTimestamp() : null,
+5376: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+5377: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+5407: app.delete('/deleteClinicalCondition/:conditionId', authenticateUser, async (req, res) => {
+5413: const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+5457: app.put('/saveTranscript/:conditionId', authenticateUser, async (req, res) => {
+5468: const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+5482: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+5483: version: admin.firestore.FieldValue.increment(1)
+5488: updateData.lastGenerated = admin.firestore.FieldValue.serverTimestamp();
+5523: app.get('/clinicalCondition/:conditionId', authenticateUser, async (req, res) => {
+5529: const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+5783: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+5842: app.post('/handleIssues', authenticateUser, async (req, res) => {
+5933: app.post('/SendToAI', authenticateUser, async (req, res) => {
+6417: let docRef = admin.firestore().collection('guidelines').doc(id);
+6422: docRef = admin.firestore().collection('guidelines').doc(id + '-pdf');
+6428: docRef = admin.firestore().collection('guidelines').doc(id.replace(/-pdf$/, ''));
+6553: app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
+6935: app.post('/checkDuplicateFiles', authenticateUser, async (req, res) => {
+7056: app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req, res) => {
+7149: uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+7210: app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (req, res) => {
+7297: uploadedAt: admin.firestore.FieldValue.serverTimestamp(),
+7299: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+7300: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+7350: app.get('/getProcessingStatus', authenticateUser, async (req, res) => {
+7391: app.post('/processGuidelineBackground', authenticateUser, async (req, res) => {
+7441: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+7692: app.post('/triggerWorkflow', authenticateUser, async (req, res) => {
+7719: app.post('/commitChanges', authenticateUser, [
+7765: app.post('/crossCheck', authenticateUser, async (req, res) => {
+7876: app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
+7896: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+8067: app.get('/getModelPreferences', authenticateUser, async (req, res) => {
+8081: app.post('/updateModelPreferences', authenticateUser, async (req, res) => {
+8138: app.get('/getChunkDistributionProviders', authenticateUser, async (req, res) => {
+8151: app.post('/updateChunkDistributionProviders', authenticateUser, async (req, res) => {
+8183: app.get('/getPrompts', async (req, res) => {
+8262: app.get('/firebase-config', (req, res) => {
+8275: app.get('/test-logging', async (req, res) => {
+8314: app.post('/delete-all-logs', authenticateUser, async (req, res) => {
+8411: app.get('/api/endpoint-timings', authenticateUser, async (req, res) => {
+8489: app.post('/admin/archive-logs-if-needed', authenticateUser, async (req, res) => {
+8684: app.post('/admin/clean-guideline-titles', authenticateUser, async (req, res) => {
+9121: app.post('/getGuidelinesNeedingContent', authenticateUser, async (req, res) => {
+9176: app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
+9237: app.post('/ensureMetadataCompletion', authenticateUser, async (req, res) => {
+9420: vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+10226: enhancedData.lastUpdated = admin.firestore.FieldValue.serverTimestamp();
+10244: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+10284: app.post('/enhanceGuidelineMetadata', authenticateUser, async (req, res) => {
+10309: app.post('/batchEnhanceMetadata', authenticateUser, async (req, res) => {
+10410: app.post('/auditElementCheck', authenticateUser, async (req, res) => {
+10472: await admin.firestore().collection('auditElementChecks').add({
+10481: createdAt: admin.firestore.FieldValue.serverTimestamp()
+10513: app.listen(PORT, () => {
+10601: app.get('/health', (req, res) => {
+10612: app.get('/serverStatus', (req, res) => {
+10624: app.get('/testModelHealth', authenticateUser, async (req, res) => {
+10740: app.get('/getModelRegistry', authenticateUser, async (req, res) => {
+10771: app.post('/testModel', authenticateUser, async (req, res) => {
+10894: app.get('/getAIUsageStats', authenticateUser, async (req, res) => {
+11047: app.get('/getRecentAILogs', authenticateUser, async (req, res) => {
+11160: app.get('/api-usage-stats', authenticateUser, async (req, res) => {
+11395: app.post('/log-workflow-ai-usage', authenticateWorkflow, async (req, res) => {
+11501: app.post('/generateClinicalNote', authenticateUser, async (req, res) => {
+11568: app.post('/getGuidelineContent', authenticateUser, async (req, res) => {
+11616: app.post('/getRecommendations', authenticateUser, async (req, res) => {
+11686: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+11688: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+11698: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+11715: createdAt: admin.firestore.FieldValue.serverTimestamp()
+11729: createdAt: admin.firestore.FieldValue.serverTimestamp()
+11734: app.post('/checkGuidelinesCompliance', async (req, res) => {
+11825: app.post('/checkAgainstGuidelines', async (req, res) => {
+11913: createdAt: existingDoc.exists ? existingDoc.data().createdAt : admin.firestore.FieldValue.serverTimestamp(),
+11914: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+12050: app.post('/invalidateGuidelinesCache', authenticateUser, async (req, res) => {
+12184: app.post('/syncGuidelines', authenticateUser, async (req, res) => {
+12627: app.post('/resetProcessingFlags', authenticateUser, async (req, res) => {
+12648: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+12683: app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
+12800: app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
+13137: app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
+13566: app.post('/repairGuidelineContent', authenticateUser, async (req, res) => {
+13819: updates.content = admin.firestore.FieldValue.delete();  // Remove from Firestore
+13826: updates.condensed = admin.firestore.FieldValue.delete();  // Remove from Firestore
+13833: updates.summary = admin.firestore.FieldValue.delete();  // Remove from Firestore
+13843: updates.updatedAt = admin.firestore.FieldValue.serverTimestamp();
+13902: app.post('/reextractGuidelineContent', authenticateUser, async (req, res) => {
+14183: contentReextractedAt: admin.firestore.FieldValue.serverTimestamp(),
+14230: app.get('/getGuidelinesList', authenticateUser, async (req, res) => {
+14245: app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
+14296: app.get('/userGuidelinePrefs', authenticateUser, async (req, res) => {
+14322: app.post('/userGuidelinePrefs/update', authenticateUser, async (req, res) => {
+14355: addedAt: admin.firestore.FieldValue.serverTimestamp(),
+14376: app.post('/reconcileUserInclude', authenticateUser, async (req, res) => {
+14431: addedAt: admin.firestore.FieldValue.serverTimestamp(),
+14450: app.get('/guidance-exclusions', authenticateUser, async (req, res) => {
+14461: app.post('/guidance-exclusions', authenticateUser, async (req, res) => {
+14483: app.post('/addToGuidelinesList', authenticateUser, async (req, res) => {
+14497: app.post('/importGuidelineFromUrl', authenticateUser, async (req, res) => {
+14608: addedAt: admin.firestore.FieldValue.serverTimestamp(),
+14625: app.get('/proxyGuidelineView', async (req, res) => {
+14663: app.post('/discoverGuidelines', authenticateUser, async (req, res) => {
+15029: app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req, res) => {
+15086: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15146: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15186: app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
+15236: auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+15238: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15338: app.post('/cancelBackgroundJobs', authenticateUser, async (req, res) => {
+15370: app.post('/extractClinicalGuidancePoints', authenticateUser, async (req, res) => {
+15454: startedAt: currentState.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+15455: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+15462: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+15466: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15488: app.post('/crossValidateCGPs', authenticateUser, async (req, res) => {
+15574: startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+15575: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+15581: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+15586: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15609: app.post('/arbitrateCGPDisagreements', authenticateUser, async (req, res) => {
+15661: startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+15662: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+15668: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+15671: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15735: startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+15736: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+15742: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+15745: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15767: app.post('/saveCGPClinicianReview', authenticateUser, async (req, res) => {
+15813: reviewedAt: admin.firestore.FieldValue.serverTimestamp(),
+15849: startedAt: guideline.cgpApprovalState?.startedAt || admin.firestore.FieldValue.serverTimestamp(),
+15850: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+15852: approvalDate: approvalStatus === 'approved' ? admin.firestore.FieldValue.serverTimestamp() : null
+15854: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+15858: updateData.cgpApprovalState.completedAt = admin.firestore.FieldValue.serverTimestamp();
+15884: app.get('/getCGPValidationState/:guidelineId', authenticateUser, async (req, res) => {
+15946: app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
+16064: generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+16108: app.post('/generateIncorrectAuditScripts', authenticateUser, async (req, res) => {
+16207: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+16299: app.post('/generateAuditScenarios', authenticateUser, async (req, res) => {
+16380: generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+16403: app.post('/evaluateGuidance', authenticateUser, async (req, res) => {
+16530: timestamp: admin.firestore.FieldValue.serverTimestamp()
+16550: app.get('/auditTraceability', authenticateUser, async (req, res) => {
+16621: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+16640: app.post('/auditReport', authenticateUser, async (req, res) => {
+16732: generatedAt: admin.firestore.FieldValue.serverTimestamp(),
+16756: app.get('/auditMetrics', authenticateUser, async (req, res) => {
+16849: app.post('/discoverMissingGuidelines', authenticateUser, async (req, res) => {
+16883: app.post('/verifyGuidelineHash', authenticateUser, async (req, res) => {
+16962: app.get('/getMissingGuidelines', authenticateUser, async (req, res) => {
+16989: app.post('/saveGuidelineApprovals', authenticateUser, async (req, res) => {
+17021: app.post('/processApprovedGuidelines', authenticateUser, async (req, res) => {
+17058: app.get('/getAllGuidelines', authenticateUser, async (req, res) => {
+17210: app.get('/getUserHospitalTrust', authenticateUser, async (req, res) => {
+17236: app.post('/updateUserHospitalTrust', authenticateUser, async (req, res) => {
+17271: app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
+17301: app.get('/getUserRAGPreference', authenticateUser, async (req, res) => {
+17325: app.post('/updateUserRAGPreference', authenticateUser, async (req, res) => {
+17364: app.get('/getRAGStatus', authenticateUser, async (req, res) => {
+17381: app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
+17456: app.post('/reingestGuideline', authenticateUser, async (req, res) => {
+17524: vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp()
+17546: app.post('/detectInputType', authenticateUser, async (req, res) => {
+17645: app.post('/updateUserGuidelineScope', authenticateUser, async (req, res) => {
+17681: app.get('/getUserPreferences', authenticateUser, async (req, res) => {
+17731: app.post('/saveUserPreferences', authenticateUser, async (req, res) => {
+17755: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+17852: app.post('/fixNationClassifications', authenticateUser, async (req, res) => {
+17943: nationFixedAt: admin.firestore.FieldValue.serverTimestamp()
+17973: app.get('/getHospitalTrustsList', authenticateUser, async (req, res) => {
+17994: app.post('/deleteAllSummaries', authenticateUser, async (req, res) => {
+18027: app.post('/deleteAllGuidelineData', authenticateUser, async (req, res) => {
+18079: app.post('/cleanupDeletedGuidelines', authenticateUser, async (req, res) => {
+18163: app.post('/deleteGuideline', authenticateUser, async (req, res) => {
+18345: app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
+18612: app.post('/migrateGuidelineIds', authenticateUser, async (req, res) => {
+18703: app.put('/guideline/:id', authenticateUser, async (req, res) => {
+18742: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+18761: app.get('/guideline/:id', authenticateUser, async (req, res) => {
+18781: app.post('/populateDisplayNames', authenticateUser, async (req, res) => {
+18811: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+18881: app.post('/seedHospitalTrustMappings', authenticateUser, async (req, res) => {
+19055: createdAt: admin.firestore.FieldValue.serverTimestamp()
+19090: app.post('/migrateShortHospitalTrust', authenticateUser, async (req, res) => {
+19117: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+19189: app.post('/regenerateDisplayNames', authenticateUser, async (req, res) => {
+19242: updatedAt: admin.firestore.FieldValue.serverTimestamp()
+19285: app.post('/clearDisplayNames', authenticateUser, async (req, res) => {
+19313: displayName: admin.firestore.FieldValue.delete(),
+19315: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+19440: app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
+19888: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+20641: lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+20826: app.post('/evolvePrompts', authenticateUser, async (req, res) => {
+21029: app.post('/evolvePromptsSequential', authenticateUser, async (req, res) => {
+21424: app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
+21575: app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
+21732: app.get('/api/pdf/:guidelineId', async (req, res) => {
+21850: app.post('/uploadMissingPdf', authenticateUser, async (req, res) => {
+21950: app.post('/uploadAllMissingPdfs', authenticateUser, async (req, res) => {
+22051: app.get('/getGuidelinePDF', authenticateUser, async (req, res) => {
+22115: app.post('/incorporateSuggestion', authenticateUser, async (req, res) => {
+22281: app.post('/multiGuidelineDynamicAdvice', authenticateUser, async (req, res) => {
+22634: createdAt: admin.firestore.FieldValue.serverTimestamp(),
+22701: app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
+22878: completedAt: admin.firestore.FieldValue.serverTimestamp(),
+22957: app.post('/submitGuidelineFeedback', authenticateUser, async (req, res) => {
+23000: timestamp: admin.firestore.FieldValue.serverTimestamp(),
+23017: feedbackEntries: admin.firestore.FieldValue.arrayUnion(...timestampedEntries),
+23019: lastFeedbackReceived: admin.firestore.FieldValue.serverTimestamp()
+23144: feedbackLastSummarised: admin.firestore.FieldValue.serverTimestamp(),
+23164: app.post('/summariseGuidelineFeedback', authenticateUser, async (req, res) => {
+23234: app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
+23244: app.post('/saveChatHistory', authenticateUser, async (req, res) => {
+23257: lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+23273: app.get('/getChatHistory', authenticateUser, async (req, res) => {
+23299: app.delete('/deleteChatHistory', authenticateUser, async (req, res) => {
+23322: app.post('/generateChatSummary', authenticateUser, async (req, res) => {
+23374: app.post('/askGuidelinesQuestion', authenticateUser, async (req, res) => {
+23854: app.post('/scoreCompliance', authenticateUser, async (req, res) => {
+24086: createdAt: admin.firestore.FieldValue.serverTimestamp()
+24154: app.post('/api/admin/identify-clinical-issue', authenticateUser, async (req, res) => {
+24214: app.get('/getPrompts', authenticateUser, async (req, res) => {
+24256: app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
+24273: updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+24301: app.post('/syncPromptsToFirestore', authenticateUser, async (req, res) => {
+24319: updatedAt: admin.firestore.FieldValue.serverTimestamp(),

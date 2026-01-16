@@ -12,7 +12,7 @@
         .prompts-page {
             padding: 20px;
             max-width: none;
-            margin: 68px auto 0;
+            margin: 0 auto;
             width: calc(100% - 40px);
         }
 
@@ -224,9 +224,12 @@
 
             // Ensure user is authenticated
             auth.onAuthStateChanged(user => {
-                if (!user) {
+                if (user) {
+                    console.log('User authenticated, loading prompts...');
+                    loadPrompts();
+                } else {
                     alert('Please sign in first');
-                    // Redirect to sign-in page or show sign-in UI
+                    window.location.href = 'index.html';
                 }
             });
 
@@ -240,10 +243,17 @@
                     if (user) {
                         const token = await user.getIdToken();
                         headers['Authorization'] = `Bearer ${token}`;
+                    } else {
+                        throw new Error('User not authenticated');
                     }
 
                     // Load from server (tries Firestore first, then falls back to prompts.json)
-                    const response = await fetch('/getPrompts', { headers });
+                    const serverUrl = 'https://clerky-uzni.onrender.com';
+                    const response = await fetch(`${serverUrl}/getPrompts`, { headers });
+
+                    if (response.status === 401) {
+                        throw new Error('Unauthorized - please sign in again');
+                    }
 
                     if (!response.ok) {
                         throw new Error(`Server error: ${response.status}`);
@@ -255,6 +265,7 @@
                         currentPrompts = result.prompts;
                         console.log(`Loaded prompts from ${result.source}:`, currentPrompts);
                         setupPromptSelector();
+                        showStatus(`Loaded prompts from ${result.source}`, 'success');
                     } else {
                         throw new Error(result.message || 'Failed to load prompts');
                     }
@@ -270,6 +281,7 @@
                             defaultPrompts = await localResponse.json();
                             currentPrompts = defaultPrompts;
                             setupPromptSelector();
+                            showStatus('Loaded from local fallback (server error)', 'warning');
                         }
                     } catch (fallbackError) {
                         console.error('Fallback also failed:', fallbackError);
@@ -283,10 +295,13 @@
 
                 console.log('Setting up prompt selector with prompts:', currentPrompts);
                 Object.entries(currentPrompts).forEach(([key, data]) => {
-                    console.log('Adding prompt:', key, data);
+                    // Handle both simple string prompts and object prompts (compatibility)
+                    const title = data.title || key;
+
+                    console.log('Adding prompt:', key, title);
                     const option = document.createElement('option');
                     option.value = key;
-                    option.textContent = data.title || key;
+                    option.textContent = title;
                     select.appendChild(option);
                 });
             }
@@ -305,9 +320,9 @@
                 selectedPromptKey = key;
                 const data = currentPrompts[key];
 
-                title.textContent = data.title;
-                description.textContent = data.description;
-                textarea.value = data.prompt;
+                title.textContent = data.title || key;
+                description.textContent = data.description || 'No description available';
+                textarea.value = data.prompt || (typeof data === 'string' ? data : '');
                 section.style.display = 'block';
             }
 
@@ -341,7 +356,7 @@
                     }
                     const token = await user.getIdToken();
 
-                    const response = await fetch('/updatePrompts', {
+                    const response = await fetch('https://clerky-uzni.onrender.com/updatePrompts', {
                         method: 'POST',
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -384,9 +399,6 @@
                 localStorage.setItem('prompts', JSON.stringify(currentPrompts));
                 showStatus('Prompt reset to default', 'success');
             });
-
-            // Initialize
-            loadPrompts();
         });
     </script>
 </body>
