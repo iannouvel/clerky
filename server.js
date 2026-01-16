@@ -1010,50 +1010,7 @@ app.post('/syncPromptsToFirestore', authenticateUser, async (req, res) => {
     }
 });
 
-app.get('/getPrompts', authenticateUser, (req, res) => {
-    try {
-        res.json({
-            success: true,
-            prompts,
-            source: 'server'
-        });
-    } catch (error) {
-        console.error('Error serving prompts:', error);
-        res.status(500).json({
-            success: false,
-            message: 'Failed to load prompts'
-        });
-    }
-});
 
-// Endpoint to update prompts
-app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => {
-    try {
-        const { updatedPrompts } = req.body;
-        if (!updatedPrompts) {
-            return res.status(400).json({ success: false, message: 'No prompts data provided' });
-        }
-
-        const parsedPrompts = typeof updatedPrompts === 'string' ? JSON.parse(updatedPrompts) : updatedPrompts;
-
-        // Update in-memory variable
-        prompts = parsedPrompts;
-
-        // Write to local file
-        fs.writeFileSync(path.join(__dirname, 'prompts.json'), JSON.stringify(prompts, null, 2));
-
-        res.json({
-            success: true,
-            message: 'Prompts updated successfully'
-        });
-    } catch (error) {
-        console.error('Error updating prompts:', error);
-        res.status(500).json({
-            success: false,
-            message: 'Failed to update prompts: ' + error.message
-        });
-    }
-});
 
 // Override console.error
 console.error = (...args) => {
