@@ -5,7 +5,7 @@ require('dotenv').config(); // For environment variables
 const rateLimit = require('express-rate-limit');
 const { body, validationResult } = require('express-validator');
 const helmet = require('helmet');
-const admin = require('firebase-admin');
+const { db, admin } = require('./server/config/firebase');
 const upload = require('./server/middleware/upload');
 
 const promptsRouter = require('./server/routes/prompts');
@@ -15299,9 +15299,9 @@ ${trimmedText}`;
                         preferredProvider === 'Gemini' ? 'gemini-2.5-flash' :
                             preferredProvider === 'Groq' ? 'llama-3.3-70b-versatile' : 'deepseek-chat';
 
-        const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
+        // Messages formatted in sendToAI
         // Use a shorter timeout for fast UX when just detecting type
-        const aiResult = await sendToAI(formattedMessages, model, null, userId, 0.3, 15000);
+        const aiResult = await sendToAI(messages, model, null, userId, 0.3, 15000);
 
         if (!aiResult || !aiResult.content) {
             console.error('[ERROR] detectInputType: No response from AI');
