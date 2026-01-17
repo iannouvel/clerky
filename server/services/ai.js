@@ -451,7 +451,7 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
         if (learning) hintsText = formatLearningForPrompt(learning);
     }
 
-    const step1SystemPrompt = `You are a clinical advisor. Your job is to identify GAPS in care... Return ONLY valid JSON with this structure: { "suggestions": [...] }`;
+    const step1SystemPrompt = `You are a clinical advisor. Your job is to identify GAPS in care based on the provided clinical note and guideline. Identify any guideline recommendations NOT covered by the clinical note. Return ONLY valid JSON with this structure: { "suggestions": [{ "suggestion": "Concise, actionable advice", "priority": "high|medium|low", "reasoning": "Brief explanation" }] }`;
     const step1UserPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nGUIDELINE TITLE: ${guidelineTitle}\n\nGUIDELINE CONTENT:\n${guidelineContent}\n\n${hintsText ? `\nPREVIOUS FEEDBACK:\n${hintsText}\n` : ''}\n\nTASK: Identify any guideline recommendations NOT covered...`;
     const messagesStep1 = [{ role: 'system', content: step1SystemPrompt }, { role: 'user', content: step1UserPrompt }];
     const resultStep1 = await routeToAI({ messages: messagesStep1 }, userId, targetModel);
@@ -466,7 +466,7 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 
     if (initialSuggestions.length === 0) return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
 
-    const step2SystemPrompt = `You are a clinical advisor perfecting a list of suggestions. Your specific task is to add the "why" and "verbatimQuote"... Return valid JSON...`;
+    const step2SystemPrompt = `You are a clinical advisor perfecting a list of suggestions. Your specific task is to extract patient context, identify compliant points, and add "why" and "verbatimQuote" fields to each suggestion. Ensure the output is valid JSON with structure: { "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "...", "why": "...", "verbatimQuote": "..." }], "alreadyCompliant": [] }`;
     const step2UserPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nGUIDELINE CONTENT:\n${guidelineContent}\n\nDRAFT SUGGESTIONS:\n${JSON.stringify(initialSuggestions, null, 2)}\n\nTASK: 1. Extract patient context. 2. Identify already compliant. 3. Add why/verbatimQuote. 4. Return JSON.`;
     const messagesStep2 = [{ role: 'system', content: step2SystemPrompt }, { role: 'user', content: step2UserPrompt }];
     const resultStep2 = await routeToAI({ messages: messagesStep2 }, userId, targetModel);
@@ -508,7 +508,7 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
 async function generatePromptImprovements(currentPrompt, evaluationResults, avgRecall, avgPrecision, avgLatency, userId, additionalMetrics = {}) {
     const promptConfig = (global.prompts || require('../../prompts.json'))['generatePromptImprovements'];
     const systemPrompt = promptConfig?.system_prompt || `You are an expert at prompt engineering... Return ONLY valid JSON.`;
-    const evaluationSummary = evaluationResults.map((eval, idx) => ({ scenario: idx + 1, recall: eval.recallScore, precision: eval.precisionScore, assessment: eval.overallAssessment }));
+    const evaluationSummary = evaluationResults.map((evaluationItem, idx) => ({ scenario: idx + 1, recall: evaluationItem.recallScore, precision: evaluationItem.precisionScore, assessment: evaluationItem.overallAssessment }));
     const userPrompt = (promptConfig?.prompt || `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS:\n{{evaluationResults}}\n\nMETRICS:\nRecall: {{avgRecall}}\nPrecision: {{avgPrecision}}\n\nAnalyze...`)
         .replace('{{currentPrompt}}', JSON.stringify(currentPrompt)).replace('{{evaluationResults}}', JSON.stringify(evaluationSummary))
         .replace('{{avgRecall}}', avgRecall).replace('{{avgPrecision}}', avgPrecision);
