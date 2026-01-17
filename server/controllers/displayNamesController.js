@@ -1,5 +1,5 @@
 const { db } = require('../config/firebase');
-const { queueJob } = require('../services/jobQueue'); // Assuming jobQueue is or will be a module
+const { queueJob } = require('../services/job-queue'); // Assuming jobQueue is or will be a module
 const {
     generateDisplayName,
     generateSimpleDisplayName,
