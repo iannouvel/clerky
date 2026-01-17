@@ -1249,7 +1249,7 @@ const {
     queueJob,
     clearJobQueue,
     registerJobHandler
-} = require('./server/services/jobQueue');
+} = require('./server/services/job-queue');
 
 // Register job handlers (using setTimeout to ensure all functions are loaded if using declared functions)
 // Since we are in the main body, hoisted functions are available.
