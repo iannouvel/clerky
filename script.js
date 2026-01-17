@@ -14665,7 +14665,7 @@ async function runParallelAnalysis(guidelines) {
             const total = state.total;
 
             // Safely access properties
-            const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || 'No text available';
+            const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
             const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
             const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
             const contextText = suggestion.evidence || ''; // For focusing
@@ -14725,7 +14725,7 @@ async function runParallelAnalysis(guidelines) {
                     let html = `<div style="margin-bottom: 15px;">
                         <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
                     items.forEach(item => {
-                        const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || '';
+                        const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || item.title || item.description || item.content || item.advice || '';
                         if (text) {
                             html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
                         }
