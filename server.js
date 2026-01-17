@@ -1245,165 +1245,25 @@ ${text.substring(0, 6000)}`;
 // BACKGROUND JOB QUEUE SYSTEM
 // ============================================================================
 
-const jobQueue = [];
-const processingJobs = new Set();
-const MAX_CONCURRENT_JOBS = 3;
-let isProcessingQueue = false;
-let cancelJobQueue = false; // Flag to stop processing
+const {
+    queueJob,
+    clearJobQueue,
+    registerJobHandler
+} = require('./server/services/jobQueue');
 
-// Cancel all pending jobs in the queue
-function clearJobQueue() {
-    const count = jobQueue.length;
-    jobQueue.length = 0; // Clear the array
-    cancelJobQueue = true;
-    console.log(`[JOB_QUEUE] Cleared ${count} pending jobs`);
-    return count;
-}
-
-// Add job to queue
-function queueJob(jobType, guidelineId, data = {}) {
-    const job = {
-        id: `${jobType}-${guidelineId}-${Date.now()}`,
-        type: jobType,
-        guidelineId: guidelineId,
-        data: data,
-        status: 'pending',
-        createdAt: new Date().toISOString(),
-        attempts: 0,
-        maxAttempts: 3,
-        error: null
-    };
-
-    jobQueue.push(job);
-    console.log(`[JOB_QUEUE] Added job: ${job.id}, queue length: ${jobQueue.length}`);
-
-    // Start processing if not already running
-    if (!isProcessingQueue) {
-        processJobQueue();
-    }
-
-    return job.id;
-}
-
-// Process job queue
-async function processJobQueue() {
-    if (isProcessingQueue) return;
-    isProcessingQueue = true;
-
-    debugLog(`[JOB_QUEUE] Starting queue processor, ${jobQueue.length} jobs pending`);
-
-    while (jobQueue.length > 0) {
-        // Wait if we're at max concurrent jobs
-        while (processingJobs.size >= MAX_CONCURRENT_JOBS) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-
-        const job = jobQueue.shift();
-        if (!job) continue;
-
-        processingJobs.add(job.id);
-
-        // Process job asynchronously
-        processJob(job).then(() => {
-            processingJobs.delete(job.id);
-        }).catch((error) => {
-            console.error(`[JOB_QUEUE] Job ${job.id} failed:`, error);
-            processingJobs.delete(job.id);
-        });
-
-        // Small delay between job starts
-        await new Promise(resolve => setTimeout(resolve, 500));
-    }
-
-    // Wait for all jobs to complete
-    while (processingJobs.size > 0) {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-
-    isProcessingQueue = false;
-    console.log(`[JOB_QUEUE] Queue processor stopped, all jobs completed`);
-}
-
-// Process individual job
-async function processJob(job) {
-    debugLog(`[JOB_QUEUE] Processing job: ${job.id}, type: ${job.type}`);
-
-    try {
-        job.attempts++;
-        job.status = 'processing';
-
-        const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
-        const doc = await guidelineRef.get();
-
-        if (!doc.exists) {
-            throw new Error(`Guideline not found: ${job.guidelineId}`);
-        }
-
-        const guidelineData = doc.data();
-        let result;
-
-        switch (job.type) {
-            case 'extract_content':
-                result = await jobExtractContent(job, guidelineData);
-                break;
-            case 'generate_condensed':
-                result = await jobGenerateCondensed(job, guidelineData);
-                break;
-            case 'generate_summary':
-                result = await jobGenerateSummary(job, guidelineData);
-                break;
-            case 'extract_terms':
-                result = await jobExtractTerms(job, guidelineData);
-                break;
-            case 'extract_auditable':
-                result = await jobExtractAuditable(job, guidelineData);
-                break;
-            case 'generate_display_name':
-                result = await jobGenerateDisplayName(job, guidelineData);
-                break;
-            case 'regenerate_auditable':
-                result = await jobRegenerateAuditable(job, guidelineData);
-                break;
-            default:
-                throw new Error(`Unknown job type: ${job.type}`);
-        }
-
-        job.status = 'completed';
-        job.completedAt = new Date().toISOString();
-        console.log(`[JOB_QUEUE] Job completed: ${job.id}`);
-
-        return result;
-
-    } catch (error) {
-        console.error(`[JOB_QUEUE] Job ${job.id} error:`, error.message);
-
-        job.error = error.message;
-
-        // Retry if not at max attempts
-        if (job.attempts < job.maxAttempts) {
-            debugLog(`[JOB_QUEUE] Retrying job ${job.id}, attempt ${job.attempts}/${job.maxAttempts}`);
-            job.status = 'pending';
-            jobQueue.push(job); // Re-queue
-        } else {
-            console.error(`[JOB_QUEUE] Job ${job.id} failed after ${job.attempts} attempts`);
-            job.status = 'failed';
-
-            // Update Firestore with error
-            try {
-                const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
-                await guidelineRef.update({
-                    processing: false, // Ensure we clear the flag on fatal failure
-                    [`processingErrors.${job.type}`]: error.message,
-                    lastUpdated: admin.firestore.FieldValue.serverTimestamp()
-                });
-            } catch (updateError) {
-                console.error(`[JOB_QUEUE] Failed to update error in Firestore:`, updateError);
-            }
-        }
-
-        throw error;
-    }
-}
+// Register job handlers (using setTimeout to ensure all functions are loaded if using declared functions)
+// Since we are in the main body, hoisted functions are available.
+// We register them to the service.
+setTimeout(() => {
+    registerJobHandler('extract_content', jobExtractContent);
+    registerJobHandler('generate_condensed', jobGenerateCondensed);
+    registerJobHandler('generate_summary', jobGenerateSummary);
+    registerJobHandler('extract_terms', jobExtractTerms);
+    registerJobHandler('extract_auditable', jobExtractAuditable);
+    registerJobHandler('generate_display_name', jobGenerateDisplayName);
+    registerJobHandler('regenerate_auditable', jobRegenerateAuditable);
+    console.log('[JOB_QUEUE] Job handlers registered');
+}, 0);
 
 // Job handlers
 async function jobExtractContent(job, guidelineData) {
