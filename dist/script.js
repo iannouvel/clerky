@@ -3,6 +3,13 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { escapeHtml, unescapeHtml } from './js/utils/text.js';
+import { postAuthenticated } from './js/api/client.js';
+import { API_ENDPOINTS } from './js/api/config.js';
+import { showPIIReviewInterface } from './js/features/pii.js';
+import { scrollTextIntoView } from './js/utils/editor.js';
+import { initializeSuggestionWizard } from './js/features/suggestionWizard.js';
+
 
 // Make auth available globally - ADD THIS LINE
 window.auth = auth;
@@ -376,567 +383,10 @@ async function checkDisclaimerAcceptance() {
     }
 }
 
-// PII Review Interface Function - now uses Summary column instead of popup
-async function showPIIReviewInterface(originalText, piiAnalysis) {
-    return new Promise((resolve) => {
-        // Get consolidated PII matches
-        const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
+// PII Review Logic moved to js/features/pii.js
+// Text Highlighting Utilities moved to js/utils/editor.js
 
-        // Add replacement property to each match
-        consolidatedMatches.forEach(match => {
-            match.replacement = match.replacement || 'redacted';
-        });
-
-        // If there are no matches to review, return success immediately
-        if (consolidatedMatches.length === 0) {
-            console.log('[PII REVIEW] No PII matches to review, skipping interface');
-            resolve({
-                approved: true,
-                anonymisedText: originalText,
-                replacementsCount: 0
-            });
-            return;
-        }
-
-        // Show PII review in Summary column instead of popup
-        showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve);
-    });
-}
-
-// ===== One-at-a-Time PII Review Workflow =====
-
-// Global state for PII review
-window.currentPIIReview = null;
-
-// New function to handle PII review in Summary column - ONE AT A TIME
-function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve) {
-    console.log('[PII REVIEW] Starting one-at-a-time review with', consolidatedMatches.length, 'matches');
-
-    // Store the review data globally
-    window.currentPIIReview = {
-        originalText,
-        consolidatedMatches,
-        resolve,
-        currentIndex: 0,
-        decisions: [] // Track decisions for all matches
-    };
-
-    // Show the first match
-    showCurrentPIIMatch();
-}
-
-// Display the current PII match being reviewed
-function showCurrentPIIMatch() {
-    const review = window.currentPIIReview;
-    if (!review) return;
-
-    const { consolidatedMatches, currentIndex, decisions } = review;
-    const totalMatches = consolidatedMatches.length;
-
-    // Check if we're done
-    if (currentIndex >= totalMatches) {
-        completePIIReview();
-        return;
-    }
-
-    const currentMatch = consolidatedMatches[currentIndex];
-    const progressText = `${currentIndex + 1} of ${totalMatches}`;
-
-    console.log('[PII REVIEW] Showing match', progressText, ':', currentMatch.text);
-
-    // Highlight the text in blue and scroll to it
-    const highlighted = highlightTextInEditor(currentMatch.text);
-    if (highlighted) {
-        scrollTextIntoView(currentMatch.text);
-    } else {
-        console.warn('[PII REVIEW] Could not highlight text:', currentMatch.text);
-    }
-
-    // Get default action from match
-    const defaultReplacement = currentMatch.replacement || 'redacted';
-
-    // Create the review HTML for this one match
-    const reviewHtml = `
-        <div class="pii-review-container" id="pii-review-current">
-            <h3 style="color: #d32f2f; margin: 0 0 15px 0;">🔒 Privacy Review (${progressText})</h3>
-            <p style="margin: 0 0 10px 0; font-size: 14px; color: var(--text-secondary);">
-                Personal information detected. Please choose an action:
-            </p>
-            
-            <div class="pii-current-match" style="background: var(--bg-tertiary); border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
-                <div style="margin: 0 0 10px 0;">
-                    <strong style="color: #d32f2f;">Found:</strong> 
-                    <span style="background: var(--bg-secondary); padding: 4px 8px; border-radius: 3px; font-family: monospace;">"${escapeHtml(currentMatch.text)}"</span>
-                </div>
-                <div style="margin: 15px 0;">
-                    <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-                        <input type="radio" name="pii-current-action" value="replace" checked style="margin-right: 8px;">
-                        Replace with <strong style="color: #28a745;">"${escapeHtml(defaultReplacement)}"</strong>
-                    </label>
-                    <label style="display: block; cursor: pointer;">
-                        <input type="radio" name="pii-current-action" value="keep" style="margin-right: 8px;">
-                        Keep original text
-                    </label>
-                </div>
-            </div>
-            
-            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: var(--text-secondary);">
-                ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
-            </div>
-        </div>
-    `;
-
-    // Replace the review container in summary
-    const existingReview = document.getElementById('pii-review-current');
-    if (existingReview && existingReview.parentElement) {
-        existingReview.outerHTML = reviewHtml;
-        // Update critical status
-        setTimeout(() => {
-            updateSummaryCriticalStatus();
-        }, 100);
-    } else {
-        appendToSummary1(reviewHtml, true);
-        // Note: updateSummaryCriticalStatus will be called by appendToSummary1
-    }
-
-    // Show PII buttons in fixedButtonRow
-    const piiActionsGroup = document.getElementById('piiActionsGroup');
-    const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
-    const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
-    const piiPrevBtn = document.getElementById('piiPrevBtn');
-
-    if (piiActionsGroup) {
-        piiActionsGroup.style.display = 'flex';
-        if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
-        if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
-
-        // Update Previous button visibility
-        if (piiPrevBtn) {
-            piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
-        }
-    }
-}
-
-// Scroll summary1 to show the PII review buttons
-window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts = 10) {
-    const summary1 = document.getElementById('summary1');
-    const reviewContainer = document.getElementById('pii-review-current');
-
-    if (!summary1) {
-        console.warn('[PII REVIEW] Cannot scroll: summary1 not found');
-        return;
-    }
-
-    if (!reviewContainer) {
-        if (maxAttempts > 0) {
-            // Retry after a short delay if container isn't ready yet (e.g., still streaming)
-            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
-            return;
-        }
-        console.warn('[PII REVIEW] Cannot scroll: review container not found after retries');
-        return;
-    }
-
-    // Find the navigation buttons container
-    const buttonsContainer = reviewContainer.querySelector('.pii-navigation');
-    if (!buttonsContainer) {
-        if (maxAttempts > 0) {
-            // Retry after a short delay if buttons aren't ready yet
-            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
-            return;
-        }
-        console.warn('[PII REVIEW] Buttons container not found after retries');
-        return;
-    }
-
-    // Wait for buttons to be fully rendered (have dimensions)
-    const buttonsRect = buttonsContainer.getBoundingClientRect();
-    if (buttonsRect.height === 0 && maxAttempts > 0) {
-        setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
-        return;
-    }
-
-    // Calculate scroll position to show buttons
-    const summaryRect = summary1.getBoundingClientRect();
-
-    // Check if buttons are below the visible area
-    if (buttonsRect.bottom > summaryRect.bottom) {
-        // Calculate how much to scroll
-        const scrollAmount = buttonsRect.bottom - summaryRect.bottom + 20; // Add 20px padding
-        summary1.scrollTop += scrollAmount;
-        console.log('[PII REVIEW] Scrolled summary1 to show buttons');
-    } else if (buttonsRect.top < summaryRect.top) {
-        // Buttons are above visible area, scroll up to show them
-        const scrollAmount = buttonsRect.top - summaryRect.top - 20; // Add 20px padding
-        summary1.scrollTop += scrollAmount;
-        console.log('[PII REVIEW] Scrolled summary1 up to show buttons');
-    } else {
-        console.log('[PII REVIEW] Buttons are already visible');
-    }
-}
-
-// Handle user decision on current PII match
-window.handlePIIDecision = function (action) {
-    const review = window.currentPIIReview;
-    if (!review) return;
-
-    const currentMatch = review.consolidatedMatches[review.currentIndex];
-
-    // If action is from button click, use it; otherwise get from radio
-    let finalAction = action;
-    if (action === 'replace' || action === 'keep' || action === 'skip') {
-        // Use the action parameter
-    } else {
-        // Get from radio selection
-        const selectedRadio = document.querySelector('input[name="pii-current-action"]:checked');
-        finalAction = selectedRadio ? selectedRadio.value : 'keep';
-    }
-
-    console.log('[PII REVIEW] Decision:', finalAction, 'for match:', currentMatch.text);
-
-    // Record the decision
-    review.decisions.push({
-        match: currentMatch,
-        action: finalAction
-    });
-
-    // Clear the blue highlighting
-    clearHighlightInEditor();
-
-    // Move to next match
-    review.currentIndex++;
-
-    // Show next match or complete
-    showCurrentPIIMatch();
-};
-
-// Navigate between PII matches
-window.navigatePIIReview = function (direction) {
-    const review = window.currentPIIReview;
-    if (!review) return;
-
-    // Clear current highlighting
-    clearHighlightInEditor();
-
-    // If going back, remove the last decision
-    if (direction < 0 && review.currentIndex > 0) {
-        review.currentIndex--;
-        // Remove the last decision if it exists
-        if (review.decisions.length > review.currentIndex) {
-            review.decisions.pop();
-        }
-    }
-
-    // Show the match at current index
-    showCurrentPIIMatch();
-};
-
-// Complete the PII review and apply all decisions
-function completePIIReview() {
-    const review = window.currentPIIReview;
-    if (!review) return;
-
-    console.log('[PII REVIEW] Completing review with', review.decisions.length, 'decisions');
-
-    // Clear any remaining highlighting
-    clearHighlightInEditor();
-
-    // Apply all decisions
-    let anonymisedText = review.originalText;
-    let replacementsCount = 0;
-    const replacements = [];
-
-    review.decisions.forEach(({ match, action }) => {
-        if (action === 'replace') {
-            const replacement = match.replacement || 'redacted';
-            anonymisedText = anonymisedText.replace(
-                new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-                replacement
-            );
-            replacements.push({
-                findText: match.text,
-                replacementText: replacement
-            });
-            replacementsCount++;
-        }
-    });
-
-    const reviewContainer = document.getElementById('pii-review-current');
-    if (reviewContainer) {
-        reviewContainer.remove();
-    }
-
-    // Summarise outcome via status message instead of summary1 content
-    const keptOriginal = review.decisions.length - replacementsCount;
-    updateUser(
-        `Privacy review complete: ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised, ${keptOriginal} kept original.`,
-        false
-    );
-
-    // Resolve the promise
-    review.resolve({
-        approved: true,
-        anonymisedText,
-        replacementsCount
-    });
-
-    // Clean up
-    window.currentPIIReview = null;
-
-    // Hide PII buttons
-    const piiActionsGroup = document.getElementById('piiActionsGroup');
-    if (piiActionsGroup) {
-        piiActionsGroup.style.display = 'none';
-    }
-}
-
-// Cancel the entire PII review
-window.cancelPIIReview = function () {
-    const review = window.currentPIIReview;
-    if (!review) return;
-
-    console.log('[PII REVIEW] Review cancelled by user');
-
-    // Clear highlighting
-    clearHighlightInEditor();
-
-    const reviewContainer = document.getElementById('pii-review-current');
-    if (reviewContainer) {
-        reviewContainer.remove();
-    }
-
-    // Inform user via status message
-    updateUser('Privacy review cancelled – original text will be used without anonymisation.', false);
-
-    // Resolve with cancellation
-    review.resolve({
-        approved: false,
-        anonymisedText: review.originalText,
-        replacementsCount: 0
-    });
-
-    // Clean up
-    window.currentPIIReview = null;
-
-    // Hide PII buttons
-    const piiActionsGroup = document.getElementById('piiActionsGroup');
-    if (piiActionsGroup) {
-        piiActionsGroup.style.display = 'none';
-    }
-};
-
-// Helper to escape HTML entities
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
-
-// Helper to safely apply modification suggestions to the userInput content.
-// Returns { content, didReplace } and leaves it up to the caller to decide
-// how to handle cases where the original text is no longer present.
-function applySuggestionTextReplacement(currentContent, originalText, replacementText) {
-    if (!originalText || typeof originalText !== 'string') {
-        console.warn('[DEBUG] applySuggestionTextReplacement: No originalText provided');
-        return { content: currentContent, didReplace: false };
-    }
-
-    const escapedOriginal = originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(escapedOriginal, 'gi');
-
-    if (!regex.test(currentContent)) {
-        console.warn('[DEBUG] applySuggestionTextReplacement: Original text not found in current content', {
-            originalTextSnippet: originalText.slice(0, 120)
-        });
-        return { content: currentContent, didReplace: false };
-    }
-
-    const newContent = currentContent.replace(regex, replacementText);
-    return { content: newContent, didReplace: true };
-}
-
-// Helper to unescape HTML entities
-function unescapeHtml(text) {
-    const div = document.createElement('div');
-    div.innerHTML = text;
-    return div.textContent;
-}
-
-// Helper to apply colored replacements only to specific tokens
-function applyColoredReplacements(anonymisedText, replacements) {
-    // The anonymisedText already has replacements applied, so we need to color the replacement text
-    let html = escapeHtml(anonymisedText);
-
-    // Color each replacement text (not the original text)
-    replacements.forEach(({ findText, replacementText }) => {
-        const escapedReplacement = escapeHtml(replacementText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const regex = new RegExp(escapedReplacement, 'gi');
-        const coloredReplacement = `<span style="color: #D97706; font-weight: bold;">${escapeHtml(replacementText)}</span>`;
-        html = html.replace(regex, coloredReplacement);
-    });
-
-    // Convert newlines to <br> for HTML display
-    html = html.replace(/\n/g, '<br>');
-
-    return `<p>${html}</p>`;
-}
-
-// ===== Text Highlighting Utilities for Review Workflows =====
-
-/**
- * Highlight specific text in the TipTap editor with a given color
- * @param {string} text - The text to highlight
- * @param {string} color - The color to use (default: blue #3B82F6)
- * @returns {boolean} - True if text was found and highlighted, false otherwise
- */
-function highlightTextInEditor(text, color = '#3B82F6') {
-    const editor = window.editors?.userInput;
-    if (!editor) {
-        console.warn('[HIGHLIGHT] Editor not available');
-        return false;
-    }
-
-    try {
-        // Clear any existing highlights first
-        clearHighlightInEditor();
-
-        // Get the current content
-        const content = editor.getText();
-
-        // Find the text position
-        const startPos = content.toLowerCase().indexOf(text.toLowerCase());
-        if (startPos === -1) {
-            console.warn('[HIGHLIGHT] Text not found in editor:', text);
-            return false;
-        }
-
-        const endPos = startPos + text.length;
-
-        // Select the text range
-        editor.commands.setTextSelection({ from: startPos + 1, to: endPos + 1 });
-
-        // Apply the color
-        editor.commands.setColor(color);
-
-        // Deselect to show the highlighting
-        editor.commands.setTextSelection(endPos + 1);
-
-        console.log('[HIGHLIGHT] Text highlighted successfully:', text.substring(0, 50));
-        return true;
-    } catch (error) {
-        console.error('[HIGHLIGHT] Error highlighting text:', error);
-        return false;
-    }
-}
-
-/**
- * Clear all blue highlighting from the editor
- */
-function clearHighlightInEditor() {
-    const editor = window.editors?.userInput;
-    if (!editor) {
-        return;
-    }
-
-    try {
-        // Get the current JSON content to preserve structure
-        const json = editor.getJSON();
-
-        // Recursively remove blue color marks
-        const removeBlueHighlight = (node) => {
-            if (node.marks) {
-                node.marks = node.marks.filter(mark => {
-                    if (mark.type === 'textStyle' && mark.attrs?.color === '#3B82F6') {
-                        return false; // Remove blue highlights
-                    }
-                    return true;
-                });
-            }
-            if (node.content) {
-                node.content.forEach(removeBlueHighlight);
-            }
-        };
-
-        if (json.content) {
-            json.content.forEach(removeBlueHighlight);
-        }
-
-        // Update the editor content
-        editor.commands.setContent(json);
-
-        console.log('[HIGHLIGHT] Cleared blue highlighting');
-    } catch (error) {
-        console.error('[HIGHLIGHT] Error clearing highlights:', error);
-    }
-}
-
-/**
- * Scroll the specified text into view in the editor
- * @param {string} text - The text to scroll to
- * @returns {boolean} - True if scrolled successfully
- */
-function scrollTextIntoView(text) {
-    const editor = window.editors?.userInput;
-    if (!editor) {
-        console.warn('[SCROLL] Editor not available');
-        return false;
-    }
-
-    try {
-        const editorElement = document.getElementById('userInput');
-        if (!editorElement) {
-            return false;
-        }
-
-        const proseMirror = editorElement.querySelector('.ProseMirror');
-        if (!proseMirror) {
-            return false;
-        }
-
-        // Get all text nodes in the editor
-        const walker = document.createTreeWalker(
-            proseMirror,
-            NodeFilter.SHOW_TEXT,
-            null,
-            false
-        );
-
-        let node;
-        let foundNode = null;
-
-        // Find the text node containing our text
-        while (node = walker.nextNode()) {
-            if (node.textContent.toLowerCase().includes(text.toLowerCase())) {
-                foundNode = node;
-                break;
-            }
-        }
-
-        if (foundNode) {
-            // Get the parent element to scroll to
-            const parentElement = foundNode.parentElement;
-            if (parentElement) {
-                // Scroll with some padding
-                parentElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center',
-                    inline: 'nearest'
-                });
-
-                console.log('[SCROLL] Scrolled text into view:', text.substring(0, 50));
-                return true;
-            }
-        }
-
-        console.warn('[SCROLL] Text not found for scrolling:', text);
-        return false;
-    } catch (error) {
-        console.error('[SCROLL] Error scrolling text:', error);
-        return false;
-    }
-}
-
-// Helper functions for TipTap programmatic change tracking
+// Import helper functions for TipTap programmatic change tracking
 function getUserInputContent() {
     const editor = window.editors?.userInput;
     if (editor && editor.getText) {
@@ -3846,7 +3296,11 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                     console.log('[ANONYMISER] PII detected, showing review interface...');
 
                     // Show PII review interface
-                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
+                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis, {
+                        appendToSummary1: typeof appendToSummary1 !== 'undefined' ? appendToSummary1 : window.appendToSummary1,
+                        updateSummaryCriticalStatus: window.updateSummaryCriticalStatus,
+                        updateUser: typeof updateUser !== 'undefined' ? updateUser : window.updateUser
+                    });
 
                     if (reviewResult.approved) {
                         // Use the user-approved anonymised text
@@ -4179,7 +3633,11 @@ async function generateClinicalNote() {
                     console.log('[ANONYMISER] PII detected, showing review interface...');
 
                     // Show PII review interface
-                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
+                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis, {
+                        appendToSummary1: typeof appendToSummary1 !== 'undefined' ? appendToSummary1 : window.appendToSummary1,
+                        updateSummaryCriticalStatus: window.updateSummaryCriticalStatus,
+                        updateUser: typeof updateUser !== 'undefined' ? updateUser : window.updateUser
+                    });
 
                     if (reviewResult.approved) {
                         // Use the user-approved anonymised text
@@ -14632,351 +14090,13 @@ async function runParallelAnalysis(guidelines) {
             return (priorityScore[pB] || 0) - (priorityScore[pA] || 0);
         });
 
-        // 2. Initialize global state for the wizard
-        window.suggestionWizardState = {
-            queue: sortedSuggestions,
-            currentIndex: 0,
-            total: sortedSuggestions.length
-        };
-
-        // 3. Define the renderer function (local scope, but accessible to handlers via global exposing if needed, 
-        //    though we'll define handlers globally below)
-        const renderCurrentSuggestion = () => {
-            const state = window.suggestionWizardState;
-            const container = finalOutputContainer; // Use the validated container
-
-            if (!container) return;
-
-            // Check for completion
-            if (state.currentIndex >= state.total) {
-                container.innerHTML = `
-                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
-                        <span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉</span>
-                        <h3 style="color: var(--text-primary);">Review Complete</h3>
-                        <p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.</p>
-                        <button class="btn btn-primary" onclick="outputContainer.innerHTML = '';" style="margin-top: 20px;">Close Review</button>
-                    </div>
-                `;
-                return;
-            }
-
-            const suggestion = state.queue[state.currentIndex];
-            const currentNumber = state.currentIndex + 1;
-            const total = state.total;
-
-            // Safely access properties
-            const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || 'No text available';
-            const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-            const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
-            const contextText = suggestion.evidence || ''; // For focusing
-
-            // Formatting
-            const escapedText = suggestionText.replace(/"/g, '&quot;');
-            const uniqueId = `suggestion-wizard-${Date.now()}`;
-
-            // Priority Styling
-            const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
-            let priorityColor = 'var(--text-secondary)';
-            let priorityLabel = 'Suggestion';
-
-            if (priority === 'critical' || priority === 'high') {
-                priorityColor = '#d32f2f'; // Softer Red (Material Design Red 700)
-                priorityLabel = 'High Priority Suggestion';
-            } else if (priority === 'medium' || priority === 'important') {
-                priorityColor = '#f57c00'; // Darker Orange (Material Design Orange 700)
-                priorityLabel = 'Medium Priority Suggestion';
-            } else {
-                priorityColor = '#388e3c'; // Darker Green (Material Design Green 700)
-                priorityLabel = 'Low Priority Suggestion';
-            }
-            // Use standard text color for label as requested, use colored badge/border instead
-            const labelColor = 'var(--text-primary)';
-
-            // Calculate Counts for Header
-            let highCount = 0, medCount = 0, lowCount = 0;
-            state.queue.forEach(s => {
-                const p = (s.type || s.priority || 'info').toLowerCase();
-                if (p === 'critical' || p === 'high') highCount++;
-                else if (p === 'medium' || p === 'important') medCount++;
-                else lowCount++;
-            });
-
-            // Build Header HTML
-            let summaryParts = [];
-            if (highCount > 0) summaryParts.push(`${highCount} high`);
-            if (medCount > 0) summaryParts.push(`${medCount} medium`);
-            if (lowCount > 0) summaryParts.push(`${lowCount} low`);
-            // Fixed typo "miedium" -> "medium"
-            const summaryString = `Clinical Suggestions: ${summaryParts.join(', ')} priority`;
-
-            // Build Upcoming List HTML (Text Only)
-            let upcomingHtml = '';
-            const upcomingSuggestions = state.queue.slice(state.currentIndex + 1);
-            if (upcomingSuggestions.length > 0) {
-                upcomingHtml += `<div class="upcoming-suggestions" style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 15px;">`;
-
-                // Group by simple priority for display
-                const upcomingHigh = upcomingSuggestions.filter(s => ['critical', 'high'].includes((s.type || s.priority || '').toLowerCase()));
-                const upcomingMed = upcomingSuggestions.filter(s => ['medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
-                const upcomingLow = upcomingSuggestions.filter(s => !['critical', 'high', 'medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
-
-                const renderGroup = (title, items, color) => {
-                    if (items.length === 0) return '';
-                    let html = `<div style="margin-bottom: 15px;">
-                        <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
-                    items.forEach(item => {
-                        const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || '';
-                        if (text) {
-                            html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
-                        }
-                    });
-                    html += `</div>`;
-                    return html;
-                };
-
-                upcomingHtml += renderGroup('Upcoming High Priority Suggestions', upcomingHigh, '#d32f2f');
-                upcomingHtml += renderGroup('Upcoming Medium Priority Suggestions', upcomingMed, '#f57c00');
-                upcomingHtml += renderGroup('Upcoming Low Priority Suggestions', upcomingLow, '#388e3c');
-
-                upcomingHtml += `</div>`;
-            }
-
-            container.innerHTML = `
-                <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
-                    
-                    <!-- Global Summary Header -->
-                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
-                        ${summaryString}
-                    </div>
-
-                    <!-- Two-Column Layout -->
-                    <div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
-                        
-                        <!-- Left Column: Active Suggestion -->
-                        <div class="wizard-left-column" style="flex: 1; min-width: 0;">
-                            <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                                
-                                <!-- Header with Progress -->
-                                <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
-                                        ${priorityLabel}
-                                    </span>
-                                    <span style="font-size: 0.85em; color: var(--text-secondary);">
-                                        ${currentNumber} of ${total}
-                                    </span>
-                                </div>
-
-                                <!-- Main Content -->
-                                <div class="wizard-body" style="padding: 20px;">
-                                    
-                                    <!-- Suggestion Box (The Change) -->
-                                    <div style="margin-bottom: 20px;">
-                                        <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                                            <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Suggested Action:</span> ${suggestionText}
-                                        </div>
-                                    </div>
-
-                                    <!-- Reasoning Box -->
-                                    <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
-                                        <div style="font-size: 0.95em; color: var(--text-secondary);">
-                                            <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
-                                        </div>
-                                        <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
-                                            Source: ${sourceName}
-                                        </div>
-                                    </div>
-
-                                    <!-- Editor for Modify Mode (Hidden by default) -->
-                                    <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
-                                        <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
-                                        <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
-                                        <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                            <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
-                                            <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!-- Action Bar -->
-                                <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
-                                     <!-- Navigation only -->
-                                    <button class="wizard-suggestion-btn" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled' : ''}>
-                                        ⬅ Back
-                                    </button>
-
-                                    <button class="wizard-suggestion-btn" onclick="enableWizardModify('${uniqueId}')">
-                                         ✏️ Modify
-                                    </button>
-                                    <button class="wizard-suggestion-btn" onclick="skipWizardSuggestion()">
-                                         Skip ⏭
-                                    </button>
-                                    <button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
-                                         Reject ❌
-                                    </button>
-                                    <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}')">
-                                         Accept & Next ✅
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- Right Column: Upcoming Suggestions -->
-                        <div class="wizard-right-column" style="flex: 1; min-width: 0;">
-                            ${upcomingHtml || '<div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.</div>'}
-                        </div>
-                        
-                    </div>
-                </div>
-            `;
-
-            // Auto-focus logic
-            if (contextText && typeof scrollTextIntoView === 'function') {
-                setTimeout(() => {
-                    scrollTextIntoView(contextText);
-                }, 100); // Small delay to allow render
-            }
-        };
-
-        // Render first suggestion
-        renderCurrentSuggestion();
-
-        // 4. Global Handlers for Wizard
-
-        window.nextWizardSuggestion = function () {
-            window.suggestionWizardState.currentIndex++;
-            renderCurrentSuggestion();
-        };
-
-        window.prevWizardSuggestion = function () {
-            if (window.suggestionWizardState.currentIndex > 0) {
-                window.suggestionWizardState.currentIndex--;
-                renderCurrentSuggestion();
-            }
-        };
-
-        window.acceptWizardSuggestion = async function (id) {
-            const card = document.getElementById(id);
-            const textEl = card.querySelector('.text-content');
-
-            // Get the raw suggestion text from data attribute (without "Suggested Action:" prefix)
-            // If user modified it, get from the editor textarea instead
-            const editorEl = document.getElementById(`${id}-editor`);
-            let textToInsert = '';
-
-            if (editorEl && editorEl.value && editorEl.value.trim()) {
-                // User may have modified the text
-                textToInsert = editorEl.value.trim();
-            } else if (textEl && textEl.dataset.rawSuggestion) {
-                // Use the original raw suggestion without the label
-                textToInsert = textEl.dataset.rawSuggestion;
-            } else if (textEl) {
-                // Fallback: strip "Suggested Action:" prefix if present
-                textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
-            }
-
-            if (!textToInsert) {
-                alert('Empty suggestion text.');
-                return;
-            }
-
-            if (!window.editors || !window.editors.userInput) {
-                alert('Editor not found.');
-                return;
-            }
-
-            try {
-                // Get current clinical note content
-                const currentContent = getUserInputContent();
-
-                // Build a suggestion object for the insertion point API
-                const suggestionForInsertion = {
-                    suggestedText: textToInsert,
-                    category: 'addition' // Treat wizard suggestions as additions
-                };
-
-                // Determine the optimal insertion point
-                let insertionPoint = null;
-                try {
-                    insertionPoint = await determineInsertionPoint(suggestionForInsertion, currentContent);
-                    console.log('[WIZARD] Determined insertion point:', insertionPoint);
-                } catch (insertError) {
-                    console.warn('[WIZARD] Failed to determine insertion point, falling back to append:', insertError);
-                    insertionPoint = { section: 'end', insertionMethod: 'append' };
-                }
-
-                // Insert text at the determined point
-                let newContent;
-                if (insertionPoint && insertionPoint.section !== 'end') {
-                    newContent = insertTextAtPoint(currentContent, textToInsert, insertionPoint);
-                } else {
-                    // Fallback: append to end with proper spacing
-                    const spacing = currentContent.endsWith('\n') ? '' : '\n';
-                    newContent = currentContent + spacing + textToInsert;
-                }
-
-                // Update the editor with the new content
-                setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
-
-                console.log('[WIZARD] Suggestion accepted and inserted:', textToInsert.substring(0, 50) + '...');
-
-                // Move to next suggestion
-                window.nextWizardSuggestion();
-            } catch (error) {
-                console.error('[WIZARD] Error accepting suggestion:', error);
-                alert('Error inserting suggestion: ' + error.message);
-            }
-        };
-
-        window.rejectWizardSuggestion = function (id) {
-            // Just move next, effectively ignoring it
-            // Could log rejection if needed
-            window.nextWizardSuggestion();
-        };
-
-        window.skipWizardSuggestion = function () {
-            window.nextWizardSuggestion();
-        };
-
-        window.enableWizardModify = function (id) {
-            const editMode = document.getElementById(`${id}-edit-mode`);
-            const actions = document.getElementById(`${id}-actions`);
-
-            if (editMode && actions) {
-                editMode.style.display = 'block';
-                actions.style.display = 'none'; // Hide main actions while editing
-
-                // document.getElementById(`${id}-editor`).focus(); 
-            }
-        };
-
-        window.saveWizardModification = function (id) {
-            const editor = document.getElementById(`${id}-editor`);
-            const display = document.querySelector(`#${id} .text-content`);
-            const editMode = document.getElementById(`${id}-edit-mode`);
-            const actions = document.getElementById(`${id}-actions`);
-
-            if (editor && display) {
-                const modifiedText = editor.value.trim();
-                display.textContent = modifiedText; // Update display
-                display.dataset.rawSuggestion = modifiedText; // Update the data attribute for accept function
-
-                // Restore View
-                editMode.style.display = 'none';
-                actions.style.display = 'flex';
-            }
-        };
-
-        window.cancelWizardModification = function (id) {
-            const editMode = document.getElementById(`${id}-edit-mode`);
-            const actions = document.getElementById(`${id}-actions`);
-
-            if (editMode && actions) {
-                editMode.style.display = 'none';
-                actions.style.display = 'flex';
-            }
-        };
+        // 2. Initialize Suggestion Wizard
+        initializeSuggestionWizard(finalOutputContainer, sortedSuggestions, {
+            getUserInputContent: typeof getUserInputContent !== "undefined" ? getUserInputContent : window.getUserInputContent,
+            setUserInputContent: typeof setUserInputContent !== "undefined" ? setUserInputContent : window.setUserInputContent,
+            determineInsertionPoint: typeof determineInsertionPoint !== "undefined" ? determineInsertionPoint : window.determineInsertionPoint,
+            insertTextAtPoint: typeof insertTextAtPoint !== "undefined" ? insertTextAtPoint : window.insertTextAtPoint
+        });
     }
 }
 
@@ -17076,25 +16196,11 @@ async function askGuidelinesQuestion() {
         }
 
         // Process the selected guidelines
-        const response2 = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                question: question,
-                relevantGuidelines: selectedGuidelines
-            }),
-            signal: window.analysisAbortController?.signal
-        });
+        const data2 = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
+            question: question,
+            relevantGuidelines: selectedGuidelines
+        }, window.analysisAbortController?.signal);
 
-        if (!response2.ok) {
-            const errorText = await response2.text();
-            throw new Error(`Server error: ${response2.status} - ${errorText}`);
-        }
-
-        const data2 = await response2.json();
         if (!data2.success) {
             updateUser('Error answering your guideline question', false);
             console.error('[DEBUG] askGuidelinesQuestion: Server error', {
@@ -17118,6 +16224,7 @@ async function askGuidelinesQuestion() {
             data2.guidelinesUsed,
             'askGuidelinesQuestion'
         );
+
 
         // Display the answer with HTML formatting
         const selectedGuidelinesList = data2.guidelinesUsed.map(g => {
@@ -17250,24 +16357,11 @@ async function processQuestionAgainstGuidelines() {
         });
 
         // Call the new askGuidelinesQuestion endpoint
-        const response = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                question: question,
-                relevantGuidelines: selectedGuidelines
-            })
+        const data = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
+            question: question,
+            relevantGuidelines: selectedGuidelines
         });
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Server error: ${response.status} - ${errorText}`);
-        }
-
-        const data = await response.json();
         if (!data.success) {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
@@ -17278,6 +16372,7 @@ async function processQuestionAgainstGuidelines() {
             data.guidelinesUsed,
             'processQuestionAgainstGuidelines'
         );
+
 
         // Display the comprehensive answer with HTML formatting
         const guidelinesUsedList = (data.guidelinesUsed || []).map(g => {
@@ -17442,26 +16537,12 @@ async function performComplianceScoring(originalTranscript, recommendedChanges, 
         const idToken = await user.getIdToken();
 
         // Call the scoring endpoint
-        const response = await fetch(`${window.SERVER_URL}/scoreCompliance`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                originalTranscript,
-                recommendedChanges,
-                guidelineId,
-                guidelineTitle
-            })
+        const result = await postAuthenticated(API_ENDPOINTS.SCORE_COMPLIANCE, {
+            originalTranscript,
+            recommendedChanges,
+            guidelineId,
+            guidelineTitle
         });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`API error (${response.status}): ${errorText}`);
-        }
-
-        const result = await response.json();
 
         if (!result.success) {
             throw new Error(result.error || 'Compliance scoring failed');

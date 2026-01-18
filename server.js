@@ -47,6 +47,11 @@ const {
     formatMessagesForProvider
 } = require('./server/services/ai');
 
+const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guideline');
+const { processBatchGeneration } = require('./server/services/analysis/parallel');
+const { logAIInteraction } = require('./server/utils/aiLogger');
+const { getPromptText, getAllPrompts, updatePromptsCache } = require('./server/utils/promptManager');
+
 const { ORGANIZATION_DOMAINS, AI_MODEL_REGISTRY, AI_PROVIDER_PREFERENCE } = require('./server/config/constants');
 const { validateGuidelineUrl, getNextAvailableProvider } = require('./server/utils/helpers');
 const { scrapeRCOGGuidelines, scrapeNICEGuidelines } = require('./server/services/scraping');
@@ -2161,95 +2166,6 @@ app.post('/generateAllTranscripts', authenticateUser, async (req, res) => {
 });
 
 // Helper function to process batch generation
-async function processBatchGeneration(conditions, userId, maxConcurrent = 3, forceRegenerate = false) {
-    console.log('[BATCH-GENERATION] Starting processing:', {
-        totalConditions: conditions.length,
-        maxConcurrent,
-        forceRegenerate
-    });
-
-    const results = {
-        successful: [],
-        failed: [],
-        skipped: []
-    };
-
-    // Load the (editable) test transcript prompt once (Firestore/global cache first, then prompts.json)
-    const testPrompt = await getPromptText('testTranscript');
-
-    // Process conditions in chunks to limit concurrent AI calls
-    for (let i = 0; i < conditions.length; i += maxConcurrent) {
-        const chunk = conditions.slice(i, i + maxConcurrent);
-
-        console.log('[BATCH-GENERATION] Processing chunk:', {
-            chunkNumber: Math.floor(i / maxConcurrent) + 1,
-            totalChunks: Math.ceil(conditions.length / maxConcurrent),
-            chunkSize: chunk.length
-        });
-
-        // Process chunk concurrently
-        const chunkPromises = chunk.map(async (condition) => {
-            try {
-                const fullPrompt = testPrompt + condition.name;
-
-                console.log('[BATCH-GENERATION] Generating transcript for:', condition.name);
-
-                const aiResponse = await routeToAI(fullPrompt, userId);
-
-                if (!aiResponse || !aiResponse.content) {
-                    throw new Error('Failed to generate transcript from AI');
-                }
-
-                const transcript = aiResponse.content;
-
-                // Update the document in Firebase
-                const conditionRef = admin.firestore().collection('clinicalConditions').doc(condition.id);
-                await conditionRef.update({
-                    transcript: transcript,
-                    lastGenerated: admin.firestore.FieldValue.serverTimestamp(),
-                    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
-                    version: admin.firestore.FieldValue.increment(1)
-                });
-
-                results.successful.push({
-                    id: condition.id,
-                    name: condition.name,
-                    category: condition.category,
-                    transcriptLength: transcript.length
-                });
-
-                console.log('[BATCH-GENERATION] Successfully generated transcript for:', condition.name);
-
-            } catch (error) {
-                console.error('[BATCH-GENERATION] Failed to generate transcript for:', condition.name, error);
-                results.failed.push({
-                    id: condition.id,
-                    name: condition.name,
-                    category: condition.category,
-                    error: error.message
-                });
-            }
-        });
-
-        // Wait for chunk to complete before processing next chunk
-        await Promise.allSettled(chunkPromises);
-
-        // Add small delay between chunks to avoid overwhelming the AI service
-        if (i + maxConcurrent < conditions.length) {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-    }
-
-    console.log('[BATCH-GENERATION] Batch generation completed:', {
-        totalProcessed: conditions.length,
-        successful: results.successful.length,
-        failed: results.failed.length,
-        skipped: results.skipped.length
-    });
-
-    // Could optionally store results or notify admin
-    return results;
-}
 
 // Endpoint to initialize clinical conditions collection from JSON files
 app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => {
@@ -2327,53 +2243,6 @@ app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => 
     }
 });
 
-/**
- * Returns the prompt text for the given key.
- * Priority:
- * 1) `global.prompts` (server-side cache)
- * 2) Firestore `settings/prompts`
- * 3) `./prompts.json`
- */
-async function getPromptText(promptKey) {
-    // 1) Global cache (populated by /getPrompts or other code paths)
-    let loadedPrompts = global.prompts;
-
-    // 2) Firestore (only if not already cached)
-    if (!loadedPrompts) {
-        try {
-            const firestoreDoc = await db.collection('settings').doc('prompts').get();
-            if (firestoreDoc.exists && firestoreDoc.data()?.prompts) {
-                loadedPrompts = firestoreDoc.data().prompts;
-                global.prompts = loadedPrompts;
-                console.log('[PROMPTS] Loaded prompts from Firestore (for promptKey):', promptKey);
-            }
-        } catch (error) {
-            console.warn('[PROMPTS] Failed to load prompts from Firestore, falling back to prompts.json:', error.message);
-        }
-    }
-
-    // 3) prompts.json fallback
-    if (!loadedPrompts) {
-        try {
-            // Clear require cache to get fresh version (in case it changed)
-            delete require.cache[require.resolve('./prompts.json')];
-            loadedPrompts = require('./prompts.json');
-            global.prompts = loadedPrompts;
-            console.log('[PROMPTS] Loaded prompts from prompts.json (for promptKey):', promptKey);
-        } catch (error) {
-            console.error('[PROMPTS] Failed to load prompts.json:', error.message);
-        }
-    }
-
-    const promptConfig = loadedPrompts?.[promptKey];
-    const promptText = promptConfig?.prompt;
-
-    if (!promptText || typeof promptText !== 'string') {
-        throw new Error(`Prompt '${promptKey}' not found in prompts configuration`);
-    }
-
-    return promptText;
-}
 
 // ============================================
 // INDIVIDUAL CONDITION/TRANSCRIPT MANAGEMENT
@@ -2734,168 +2603,7 @@ async function testGitHubAccess() {
     }
 }
 
-// saveToGitHub has been replaced by Firestore logging in logAIInteraction
-// Fix the AI info extraction in logAIInteraction
-// Modified logAIInteraction to log to Firestore instead of GitHub
-async function logAIInteraction(prompt, response, endpoint, userId = null) {
-    try {
-        // OPTIMISATION: Only log important interactions to reduce noise
-        const importantEndpoints = [
-            'submit', 'reply', 'findRelevantGuidelines', 'checkAgainstGuidelines',
-            'generateClinicalNote', 'error', 'failure', 'handleAction', 'handleIssues'
-        ];
 
-        const shouldLog = importantEndpoints.some(important => endpoint.includes(important)) ||
-            (response && response.error) ||
-            (response && response.critical);
-
-        if (!shouldLog) {
-            // Skipping non-critical endpoint logging to reduce noise
-            return true;
-        }
-
-        // Get current timestamp
-        const timestamp = new Date().toISOString();
-
-        // Clean prompt for logging
-        let cleanedPrompt = prompt;
-        if (typeof prompt === 'object') {
-            cleanedPrompt = JSON.stringify(prompt, null, 2);
-        }
-
-        // Clean response for logging
-        let cleanedResponse = '';
-        let ai_provider = 'DeepSeek'; // Default to DeepSeek
-        let ai_model = 'deepseek-chat'; // Default model
-        let token_usage = null; // Initialize token usage
-
-        // Extract AI information if it exists in the response
-        if (response && typeof response === 'object') {
-            // Extract token usage if available
-            if (response.token_usage) {
-                token_usage = response.token_usage;
-            } else if (response.response && response.response.token_usage) {
-                token_usage = response.response.token_usage;
-            }
-
-            // If response has ai_provider and ai_model directly
-            if (response.ai_provider) {
-                ai_provider = response.ai_provider;
-                ai_model = response.ai_model || (ai_provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat');
-            }
-            // If response has nested response property with ai info
-            else if (response.response && typeof response.response === 'object') {
-                if (response.response.ai_provider) {
-                    ai_provider = response.response.ai_provider;
-                    ai_model = response.response.ai_model || (ai_provider === 'OpenAI' ? 'gpt-3.5-turbo' : 'deepseek-chat');
-                }
-            }
-
-            // Extract the actual content from the response structure
-            if (endpoint === 'handleGuidelines' || endpoint === 'handleIssues') {
-                if (response.success === true && response.response) {
-                    if (typeof response.response === 'string') {
-                        cleanedResponse = response.response;
-                    } else if (Array.isArray(response.response)) {
-                        cleanedResponse = response.response.join('\n');
-                    } else if (typeof response.response === 'object') {
-                        if ('content' in response.response) {
-                            cleanedResponse = response.response.content;
-                        } else if ('text' in response.response) {
-                            cleanedResponse = response.response.text;
-                        } else if ('message' in response.response) {
-                            cleanedResponse = response.response.message;
-                        } else {
-                            cleanedResponse = JSON.stringify(response.response, null, 2);
-                        }
-                    }
-                }
-            } else {
-                if (response.content) {
-                    cleanedResponse = response.content;
-                } else if (response.response && typeof response.response === 'string') {
-                    cleanedResponse = response.response;
-                } else if (response.response && response.response.content) {
-                    cleanedResponse = response.response.content;
-                } else if (response.text) {
-                    cleanedResponse = response.text;
-                } else if (typeof response === 'string') {
-                    cleanedResponse = response;
-                } else if (typeof response === 'object') {
-                    cleanedResponse = JSON.stringify(response, null, 2);
-                }
-            }
-        }
-
-        if (!cleanedResponse || cleanedResponse.trim() === '') {
-            cleanedResponse = '[Empty response or response extraction failed]';
-        }
-
-        // Prepare data for Firestore
-        const isError = endpoint.includes('error') || endpoint.includes('failure') || (response && response.error);
-
-        // Save to Firestore if available
-        if (db) {
-            try {
-                const MAX_CONTENT_LENGTH = 50000;
-                await db.collection('aiInteractions').add({
-                    timestamp: admin.firestore.FieldValue.serverTimestamp(),
-                    userId: userId || 'system',
-                    endpoint: endpoint,
-                    provider: ai_provider,
-                    model: ai_model,
-                    success: !isError,
-                    promptLength: cleanedPrompt.length,
-                    responseLength: cleanedResponse.length,
-                    fullPrompt: cleanedPrompt.length > MAX_CONTENT_LENGTH
-                        ? cleanedPrompt.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED]'
-                        : cleanedPrompt,
-                    fullResponse: cleanedResponse.length > MAX_CONTENT_LENGTH
-                        ? cleanedResponse.substring(0, MAX_CONTENT_LENGTH) + '\n\n[TRUNCATED]'
-                        : cleanedResponse,
-                    tokenUsage: token_usage,
-                    critical: isError
-                });
-
-                debugLog(`Successfully logged AI interaction to Firestore for endpoint: ${endpoint}`);
-                return true;
-            } catch (firestoreError) {
-                console.error('Error saving to Firestore in logAIInteraction:', firestoreError);
-            }
-        }
-
-        // Fallback: emergency local save
-        try {
-            const localLogsDir = './logs/emergency-logs';
-            if (!fs.existsSync(localLogsDir)) {
-                fs.mkdirSync(localLogsDir, { recursive: true });
-            }
-
-            const fileTimestamp = timestamp.replace(/[:.]/g, '-');
-            const emergencyLogPath = `${localLogsDir}/${fileTimestamp}-${endpoint}-emergency.json`;
-
-            fs.writeFileSync(emergencyLogPath, JSON.stringify({
-                timestamp,
-                userId: userId || 'system',
-                endpoint,
-                prompt: cleanedPrompt,
-                response: cleanedResponse,
-                ai_provider,
-                ai_model,
-                token_usage,
-                isError
-            }, null, 2));
-
-            return true;
-        } catch (emergencyError) {
-            console.error('Failed to save emergency logs:', emergencyError);
-            return false;
-        }
-    } catch (error) {
-        console.error('Unexpected error in logAIInteraction:', error);
-        return false;
-    }
-}
 
 // Update the handleIssues endpoint to use system prompt
 app.post('/handleIssues', authenticateUser, async (req, res) => {
@@ -15088,112 +14796,13 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
         const { transcript, guideline: rawGuideline } = req.body;
         const userId = req.user.uid;
 
-        if (!transcript) {
-            return res.status(400).json({ success: false, error: 'Transcript is required' });
-        }
-
-        if (!rawGuideline) {
-            return res.status(400).json({ success: false, error: 'Guideline ID is required' });
-        }
-
         // Use the clean guideline ID directly (no decoding needed for slug-based IDs)
-        const guideline = rawGuideline;
-        console.log(`[DEBUG] Received clean guideline ID: "${guideline}"`);
+        // rawGuideline is now expected to be the ID
+        const analysis = await analyzeNoteAgainstGuideline(transcript, rawGuideline, userId);
 
-        console.log(`[DEBUG] Fetching guideline data for ID: ${guideline}`);
-
-        const prompts = require('./prompts.json');
-        const promptConfig = prompts.analyzeClinicalNote; // or guidelineRecommendations
-        if (!promptConfig) {
-            return res.status(500).json({ success: false, error: 'Prompt configuration not found' });
-        }
-
-        // Fetch guideline data from database
-        console.log(`[DEBUG] Fetching guideline data for ID: ${guideline}`);
-
-        // Try to get guideline from multiple collections
-        const [guidelineDoc, condensedDoc] = await Promise.all([
-            db.collection('guidelines').doc(guideline).get(),
-            db.collection('guidelineCondensed').doc(guideline).get()
-        ]);
-
-        if (!guidelineDoc.exists) {
-            return res.status(404).json({
-                success: false,
-                error: `Guideline not found with ID: ${guideline}`
-            });
-        }
-
-        const guidelineData = guidelineDoc.data();
-        const condensedData = condensedDoc.exists ? condensedDoc.data() : null;
-
-        // Prepare guideline content for AI
-        const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.fileName || guideline;
-        const guidelineContent = condensedData?.condensed || guidelineData.content || guidelineData.condensed || 'No content available';
-
-        console.log(`[DEBUG] Retrieved guideline: ${guidelineTitle}, content length: ${guidelineContent.length}`);
-
-        // Format the messages for the AI with ID and title
-        const messages = [
-            { role: 'system', content: promptConfig.system_prompt },
-            {
-                role: 'user', content: promptConfig.prompt
-                    .replace('{{text}}', transcript)
-                    .replace('{{id}}', guideline)
-                    .replace('{{title}}', guidelineTitle)
-                    .replace('{{content}}', guidelineContent)
-            }
-        ];
-
-        // Send to AI
-        console.log(`[DEBUG] Sending to AI for guideline: ${guideline}`);
-        const aiResponse = await routeToAI({ messages }, userId);
-
-        console.log(`[DEBUG] AI response received:`, {
-            success: !!aiResponse,
-            hasContent: !!aiResponse?.content,
-            contentLength: aiResponse?.content?.length,
-            aiProvider: aiResponse?.ai_provider
-        });
-
-        if (!aiResponse || !aiResponse.content) {
-            console.error(`[DEBUG] Invalid AI response:`, aiResponse);
-            return res.status(500).json({ success: false, error: 'Invalid AI response' });
-        }
-
-        // Log the interaction
-        console.log(`[DEBUG] Logging AI interaction...`);
-        try {
-            await logAIInteraction(
-                {
-                    prompt: messages[1].content, // The user message content
-                    system_prompt: messages[0].content, // The system prompt
-                    guideline_id: guideline,
-                    guideline_title: guidelineTitle
-                },
-                {
-                    success: true,
-                    response: aiResponse.content,
-                    ai_provider: aiResponse.ai_provider,
-                    ai_model: aiResponse.ai_model,
-                    token_usage: aiResponse.token_usage
-                },
-                'analyzeNoteAgainstGuideline'
-            );
-            console.log(`[DEBUG] AI interaction logged successfully`);
-        } catch (logError) {
-            console.error(`[DEBUG] Error logging AI interaction:`, {
-                error: logError.message,
-                stack: logError.stack
-            });
-            // Don't fail the request if logging fails
-        }
-
-        // Return the analysis
-        console.log(`[DEBUG] Returning analysis result, content length: ${aiResponse.content.length}`);
         res.json({
             success: true,
-            analysis: aiResponse.content
+            analysis: analysis
         });
     } catch (error) {
         console.error('[DEBUG] Error in /analyzeNoteAgainstGuideline:', {
@@ -15202,6 +14811,15 @@ app.post('/analyzeNoteAgainstGuideline', authenticateUser, async (req, res) => {
             guideline: req.body?.guideline,
             transcript: req.body?.transcript ? `${req.body.transcript.substring(0, 100)}...` : 'undefined'
         });
+
+        // Return appropriate error status
+        if (error.message.includes('not found')) {
+            return res.status(404).json({ success: false, error: error.message });
+        }
+        if (error.message.includes('required')) {
+            return res.status(400).json({ success: false, error: error.message });
+        }
+
         res.status(500).json({ success: false, error: error.message });
     }
 });
