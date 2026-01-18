@@ -1,38 +1,6 @@
 const { debugLog } = require('../config/logger');
 
-// Step timer helper for profiling endpoint internals
-class StepTimer {
-    constructor(endpoint) {
-        this.endpoint = endpoint;
-        this.steps = [];
-        this.startTime = Date.now();
-        this.lastStep = this.startTime;
-    }
-
-    step(name) {
-        const now = Date.now();
-        const duration = now - this.lastStep;
-        this.steps.push({ name, duration, timestamp: new Date().toISOString() });
-        this.lastStep = now;
-        return duration;
-    }
-
-    getSteps() {
-        return this.steps;
-    }
-
-    getTotalTime() {
-        return Date.now() - this.startTime;
-    }
-
-    getSummary() {
-        return {
-            endpoint: this.endpoint,
-            totalTimeMs: this.getTotalTime(),
-            steps: this.steps
-        };
-    }
-}
+const { StepTimer } = require('../utils/stepTimer');
 
 // Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
 // Exporting this to be accessible by the controller if needed, or keeping it internal if only used by middleware/monitor

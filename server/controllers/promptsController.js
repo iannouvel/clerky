@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { db, admin } = require('../config/firebase');
-const { StepTimer } = require('../middleware/logging');
+const { StepTimer } = require('../utils/stepTimer');
 const {
     evaluateSuggestions,
     generatePromptImprovements,
