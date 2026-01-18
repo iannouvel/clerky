@@ -12,7 +12,7 @@ const promptsRouter = require('./server/routes/prompts');
 const systemRouter = require('./server/routes/system');
 
 // Mount system routes
-app.use('/', systemRouter);
+// Mount system routes - Moved to after app initialization
 
 const {
     getUserAIPreference,
@@ -71,6 +71,9 @@ const ragIngestion = require('./modules/rag-ingestion');
 
 // Initialize Express app
 const app = express();
+
+// Mount system routes
+app.use('/', systemRouter);
 
 // Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
 const endpointTimings = [];
