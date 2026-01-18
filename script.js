@@ -3,6 +3,10 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { escapeHtml, unescapeHtml } from './js/utils/text.js';
+import { postAuthenticated } from './js/api/client.js';
+import { API_ENDPOINTS } from './js/api/config.js';
+
 
 // Make auth available globally - ADD THIS LINE
 window.auth = auth;
@@ -725,12 +729,8 @@ window.cancelPIIReview = function () {
     }
 };
 
-// Helper to escape HTML entities
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
+// Helper to escape HTML entities - Imported from js/utils/text.js
+
 
 // Helper to safely apply modification suggestions to the userInput content.
 // Returns { content, didReplace } and leaves it up to the caller to decide
@@ -755,12 +755,8 @@ function applySuggestionTextReplacement(currentContent, originalText, replacemen
     return { content: newContent, didReplace: true };
 }
 
-// Helper to unescape HTML entities
-function unescapeHtml(text) {
-    const div = document.createElement('div');
-    div.innerHTML = text;
-    return div.textContent;
-}
+// Helper to unescape HTML entities - Imported from js/utils/text.js
+
 
 // Helper to apply colored replacements only to specific tokens
 function applyColoredReplacements(anonymisedText, replacements) {
@@ -17076,25 +17072,11 @@ async function askGuidelinesQuestion() {
         }
 
         // Process the selected guidelines
-        const response2 = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                question: question,
-                relevantGuidelines: selectedGuidelines
-            }),
-            signal: window.analysisAbortController?.signal
-        });
+        const data2 = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
+            question: question,
+            relevantGuidelines: selectedGuidelines
+        }, window.analysisAbortController?.signal);
 
-        if (!response2.ok) {
-            const errorText = await response2.text();
-            throw new Error(`Server error: ${response2.status} - ${errorText}`);
-        }
-
-        const data2 = await response2.json();
         if (!data2.success) {
             updateUser('Error answering your guideline question', false);
             console.error('[DEBUG] askGuidelinesQuestion: Server error', {
@@ -17118,6 +17100,7 @@ async function askGuidelinesQuestion() {
             data2.guidelinesUsed,
             'askGuidelinesQuestion'
         );
+
 
         // Display the answer with HTML formatting
         const selectedGuidelinesList = data2.guidelinesUsed.map(g => {
@@ -17250,24 +17233,11 @@ async function processQuestionAgainstGuidelines() {
         });
 
         // Call the new askGuidelinesQuestion endpoint
-        const response = await fetch(`${window.SERVER_URL}/askGuidelinesQuestion`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                question: question,
-                relevantGuidelines: selectedGuidelines
-            })
+        const data = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
+            question: question,
+            relevantGuidelines: selectedGuidelines
         });
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Server error: ${response.status} - ${errorText}`);
-        }
-
-        const data = await response.json();
         if (!data.success) {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
@@ -17278,6 +17248,7 @@ async function processQuestionAgainstGuidelines() {
             data.guidelinesUsed,
             'processQuestionAgainstGuidelines'
         );
+
 
         // Display the comprehensive answer with HTML formatting
         const guidelinesUsedList = (data.guidelinesUsed || []).map(g => {
@@ -17442,26 +17413,12 @@ async function performComplianceScoring(originalTranscript, recommendedChanges, 
         const idToken = await user.getIdToken();
 
         // Call the scoring endpoint
-        const response = await fetch(`${window.SERVER_URL}/scoreCompliance`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                originalTranscript,
-                recommendedChanges,
-                guidelineId,
-                guidelineTitle
-            })
+        const result = await postAuthenticated(API_ENDPOINTS.SCORE_COMPLIANCE, {
+            originalTranscript,
+            recommendedChanges,
+            guidelineId,
+            guidelineTitle
         });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`API error (${response.status}): ${errorText}`);
-        }
-
-        const result = await response.json();
 
         if (!result.success) {
             throw new Error(result.error || 'Compliance scoring failed');

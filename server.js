@@ -9,6 +9,11 @@ const { db, admin } = require('./server/config/firebase');
 const upload = require('./server/middleware/upload');
 
 const promptsRouter = require('./server/routes/prompts');
+const systemRouter = require('./server/routes/system');
+
+// Mount system routes
+app.use('/', systemRouter);
+
 const {
     getUserAIPreference,
     updateUserAIPreference,
@@ -71,39 +76,8 @@ const app = express();
 const endpointTimings = [];
 const MAX_TIMING_ENTRIES = 500; // Increased from 100 to capture more history
 
-// Step timer helper for profiling endpoint internals
-class StepTimer {
-    constructor(endpoint) {
-        this.endpoint = endpoint;
-        this.steps = [];
-        this.startTime = Date.now();
-        this.lastStep = this.startTime;
-    }
+const StepTimer = require('./server/utils/stepTimer');
 
-    step(name) {
-        const now = Date.now();
-        const duration = now - this.lastStep;
-        this.steps.push({ name, duration, timestamp: new Date().toISOString() });
-        this.lastStep = now;
-        return duration;
-    }
-
-    getSteps() {
-        return this.steps;
-    }
-
-    getTotalTime() {
-        return Date.now() - this.startTime;
-    }
-
-    getSummary() {
-        return {
-            endpoint: this.endpoint,
-            totalTimeMs: this.getTotalTime(),
-            steps: this.steps
-        };
-    }
-}
 
 // Debug logging helper - only logs when DEBUG_LOGGING env var is set
 const DEBUG_LOGGING = process.env.DEBUG_LOGGING === 'true';
@@ -156,19 +130,9 @@ app.use((req, res, next) => {
 
 // Apply middleware
 // Configure CORS to allow requests from the frontend
-app.use(cors({
-    origin: [
-        'https://clerkyai.health',
-        'https://www.clerkyai.health',
-        'http://localhost:3000',
-        'http://localhost:5000',
-        'http://127.0.0.1:3000',
-        'http://127.0.0.1:5000'
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// Apply middleware
+// CORS is configured later with centralized options
+
 
 // Configure helmet with proper Firebase exceptions
 app.use(helmet({
@@ -195,22 +159,8 @@ app.use(helmet({
     crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
-// Authentication middleware
-const authenticateUser = async (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    if (!authHeader) {
-        return res.status(401).json({ message: 'No authorization header' });
-    }
-    try {
-        // Verify Firebase token
-        const token = authHeader.split('Bearer ')[1];
-        const decodedToken = await admin.auth().verifyIdToken(token);
-        req.user = decodedToken;
-        next();
-    } catch (error) {
-        res.status(401).json({ message: 'Invalid token' });
-    }
-};
+const authenticateUser = require('./server/middleware/auth');
+
 
 // Configure logging
 const winston = require('winston');
@@ -438,11 +388,12 @@ app.use((req, res, next) => {
 
 // Serve static files (but not for /api routes)
 app.use((req, res, next) => {
-    if (req.path.startsWith('/api/')) {
+    if (req.path.startsWith('/api/') && !req.path.startsWith('/api/health') && !req.path.startsWith('/api/version')) {
         return next(); // Skip static file serving for API routes
     }
     express.static(__dirname)(req, res, next);
 });
+
 
 // Increase payload limits to handle large guideline datasets
 app.use(express.json({ limit: '500mb' }));
@@ -454,33 +405,8 @@ app.get('/', (req, res) => {
 });
 
 // --- 1. Centralized CORS Configuration with Logging ---
-const corsOptions = {
-    origin: (origin, callback) => {
-        // Commented out - too verbose for production logs
-        // console.log(`[CORS Origin Check] Request origin: ${origin}`);
-        const allowedOrigins = [
-            'https://iannouvel.github.io',
-            'http://localhost:3000',
-            'http://localhost:3001',
-            'http://localhost:5500',
-            'https://clerkyai.health'
-        ];
-        if (!origin || allowedOrigins.includes(origin)) {
-            // console.log(`[CORS Origin Check] Origin allowed: ${origin || '(no origin - server-to-server or direct)'}`);
-            callback(null, true);
-        } else {
-            console.error(`[CORS Origin Check] Origin blocked: ${origin}`);
-            callback(new Error('Not allowed by CORS policy for this server'));
-        }
-    },
-    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With'],
-    exposedHeaders: ['Content-Length', 'X-Foo', 'X-Bar'],
-    credentials: true,
-    maxAge: 86400, // 24 hours
-    preflightContinue: false,
-    optionsSuccessStatus: 204
-};
+const corsOptions = require('./server/config/cors');
+
 
 // --- 2. Global and Early Preflight Handling with Logging ---
 console.log('[CORS Setup] Applying global OPTIONS handler: app.options("*")');
@@ -537,116 +463,9 @@ app.use('/generateFakeClinicalInteraction', apiLimiter);
 app.use('/handleAction', apiLimiter);
 app.use('/SendToAI', apiLimiter);
 
-// GitHub repository details
-const githubOwner = 'iannouvel';
-const githubRepo = 'clerky';
-const githubBranch = 'main';
-const githubFolder = 'guidance';
-let githubToken = process.env.GITHUB_TOKEN; // GitHub token for authentication
+// GitHub Service
+const { getFileSha, updateHtmlFileOnGitHub } = require('./server/services/githubService');
 
-// Validate GitHub token on startup
-if (!githubToken) {
-    console.error('GITHUB_TOKEN environment variable is not set!');
-    process.exit(1);
-}
-
-// Update the token validation function
-function validateGitHubToken() {
-    debugLog('[DEBUG] validateGitHubToken: Starting GitHub token validation...');
-
-    if (!githubToken) {
-        console.error('[ERROR] validateGitHubToken: GITHUB_TOKEN is not set!');
-        process.exit(1);
-    }
-
-    // Clean the token
-    let cleanToken = githubToken.trim().replace(/\n/g, '');
-
-    // Remove Bearer prefix if it exists
-    if (cleanToken.startsWith('Bearer ')) {
-        cleanToken = cleanToken.substring(7);
-    }
-
-    // Update the global token
-    githubToken = cleanToken;
-    debugLog('[DEBUG] validateGitHubToken: Token validation complete');
-}
-
-// Call validation on startup
-validateGitHubToken();
-
-// Function to fetch the SHA of the existing file on GitHub
-async function getFileSha(filePath) {
-    try {
-        const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}?ref=${githubBranch}`;
-        const headers = {
-            'Accept': 'application/vnd.github.v3+json',
-            'Authorization': `token ${githubToken}`
-        };
-        const response = await axios.get(url, { headers });
-        return response.data.sha;
-    } catch (error) {
-        if (error.response?.status === 404) {
-            // Expected case - file doesn't exist yet, this is not an error
-            return null;
-        }
-        // Only log unexpected errors (not 404s)
-        console.error('Error fetching file SHA:', {
-            status: error.response?.status,
-            message: error.response?.data?.message
-        });
-        throw new Error(`Failed to fetch file SHA: ${error.response?.data?.message || error.message}`);
-    }
-}
-
-// Function to update the HTML file on GitHub
-async function updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha) {
-    const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/contents/${filePath}`;
-
-    const body = {
-        message: `Update ${filePath} with new content`,
-        content: Buffer.from(newHtmlContent).toString('base64'),
-        branch: githubBranch
-    };
-
-    if (fileSha) {
-        body.sha = fileSha;
-    }
-
-    try {
-        const response = await axios.put(url, body, {
-            headers: {
-                'Accept': 'application/vnd.github.v3+json',
-                'Authorization': `token ${githubToken}`
-            }
-        });
-        return {
-            commit: response.data.commit,
-            content: response.data.content
-        };
-    } catch (error) {
-        const status = error.response?.status;
-        const errorMessage = error.response?.data?.message || error.message;
-        const documentationUrl = error.response?.data?.documentation_url;
-
-        console.error('GitHub API Error:', {
-            status,
-            statusText: error.response?.statusText,
-            message: errorMessage,
-            documentation_url: documentationUrl
-        });
-
-        if (status === 404) {
-            throw new Error('Resource not found. Please check the file path and repository details.');
-        } else if (status === 409) {
-            throw new Error('Conflict detected. Please ensure no concurrent modifications are being made.');
-        } else if (status === 422) {
-            throw new Error('Validation failed. Please check the request parameters and data.');
-        } else {
-            throw new Error(`Failed to update file: ${errorMessage}`);
-        }
-    }
-}
 
 // Function to fetch condensed text from Firestore
 async function fetchCondensedFile(guidelineFilename) {
