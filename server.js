@@ -162,7 +162,7 @@ app.use(helmet({
     crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 
-const authenticateUser = require('./server/middleware/auth');
+const { authenticateUser } = require('./server/middleware/auth');
 
 
 // Configure logging
