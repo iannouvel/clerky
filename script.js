@@ -16299,6 +16299,169 @@ window.selectAllQuestionGuidelines = selectAllQuestionGuidelines;
 window.processQuestionAgainstGuidelines = processQuestionAgainstGuidelines;
 window.cancelGuidelineSelection = cancelGuidelineSelection;
 
+// New function to handle the "Ask Guidelines" flow from the main analysis button
+async function askGuidelinesQuestion() {
+    console.log('[DEBUG] askGuidelinesQuestion called');
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        alert('Editor not available.');
+        return;
+    }
+
+    const question = editor.getText().trim();
+    if (!question) {
+        alert('Please enter a question regarding the clinical case.');
+        return;
+    }
+
+    // Check if we have relevant guidelines
+    let guidelinesToQuery = [];
+    const outputPane = document.getElementById('summary1');
+
+    if (window.relevantGuidelines && window.relevantGuidelines.length > 0) {
+        // Select guidelines to query
+        // Prefer 'mostRelevant' and 'potentiallyRelevant'
+        const selectedGuidelines = window.relevantGuidelines.filter(g =>
+            g.category === 'mostRelevant' || g.category === 'potentiallyRelevant'
+        );
+
+        // fallback to all if none in top categories (unlikely if relevantGuidelines has data)
+        guidelinesToQuery = selectedGuidelines.length > 0 ? selectedGuidelines : window.relevantGuidelines;
+    } else {
+        // Auto-discover guidelines if none found (Genric Question Mode)
+        console.log('[DEBUG] No guidelines found, triggering auto-discovery for generic question');
+
+        // Show interim status
+        if (outputPane) {
+            outputPane.innerHTML = `
+                <div class="processing-status" style="text-align: center; padding: 20px;">
+                    <div class="spinner"></div>
+                    <h3>Finding Guidelines...</h3>
+                    <p>Identifying key documents for your question...</p>
+                    <p class="text-muted">"${question}"</p>
+                </div>
+            `;
+            const summarySection = document.getElementById('summarySection');
+            if (summarySection) summarySection.classList.remove('hidden');
+        }
+
+        try {
+            // Call findRelevantGuidelines directly
+            // Note: findRelevantGuidelines updates window.relevantGuidelines internally
+            // We pass true to suppressHeader to avoid overwriting our status too aggressively if possible,
+            // though findRelevantGuidelines likely controls its own UI.
+            await findRelevantGuidelines(true);
+
+            // Re-check for guidelines
+            if (window.relevantGuidelines && window.relevantGuidelines.length > 0) {
+                const selectedGuidelines = window.relevantGuidelines.filter(g =>
+                    g.category === 'mostRelevant' || g.category === 'potentiallyRelevant'
+                );
+                guidelinesToQuery = selectedGuidelines.length > 0 ? selectedGuidelines : window.relevantGuidelines;
+            } else {
+                throw new Error('No relevant guidelines could be found for this question.');
+            }
+        } catch (error) {
+            console.error('[ASK_GUIDELINES] Auto-discovery failed:', error);
+            if (outputPane) {
+                outputPane.innerHTML = `
+                    <div class="error-message">
+                        <h3>❌ Guideline Discovery Failed</h3>
+                        <p>Could not automatically find guidelines for your question.</p>
+                        <p class="text-small">${error.message}</p>
+                        <button class="btn-primary" onclick="askGuidelinesQuestion()">Try Again</button>
+                    </div>
+                `;
+            }
+            return;
+        }
+    }
+
+    // Proceed with asking the question
+    // Show loading state in the main UI
+    if (outputPane) {
+        outputPane.innerHTML = `
+            <div class="processing-status" style="text-align: center; padding: 20px;">
+                <div class="spinner"></div>
+                <h3>Asking Guidelines...</h3>
+                <p>Querying ${guidelinesToQuery.length} document(s)...</p>
+                <p class="text-muted">"${question}"</p>
+            </div>
+        `;
+        // Ensure summary section is visible
+        const summarySection = document.getElementById('summarySection');
+        if (summarySection) summarySection.classList.remove('hidden');
+    }
+
+    try {
+        const data = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
+            question: question,
+            relevantGuidelines: guidelinesToQuery
+        });
+
+        if (!data.success) {
+            throw new Error(data.error || 'Failed to get answer from guidelines');
+        }
+
+        // Use existing helper to format citations
+        // Ensure parseCitationsToLinks is available
+        let formattedAnswer = data.answer;
+        if (typeof parseCitationsToLinks === 'function') {
+            const result = parseCitationsToLinks(
+                data.answer,
+                data.guidelinesUsed,
+                'askGuidelinesQuestion'
+            );
+            formattedAnswer = result.formattedAnswer;
+        } else {
+            // Fallback formatting if helper missing
+            formattedAnswer = marked.parse(formattedAnswer);
+        }
+
+        // Display result
+        const guidelinesUsedCount = data.guidelinesUsed?.length || 0;
+
+        const answerMessage = `
+            <div class="guideline-answer-container">
+                <h2>Answer from Guidelines</h2>
+                <div class="answer-meta">
+                    <span class="badge">Based on ${guidelinesUsedCount} guideline${guidelinesUsedCount !== 1 ? 's' : ''}</span>
+                    <span class="timestamp">${new Date().toLocaleTimeString()}</span>
+                </div>
+                <div class="guideline-answer-content">
+                    ${formattedAnswer}
+                </div>
+                <div class="answer-footer">
+                    <p><em>Answer generated using ${data.ai_provider || 'AI'}</em></p>
+                    <button class="btn-secondary small" onclick="window.updateAnalyseAndResetButtons(true)">Ask Another Question</button>
+                </div>
+            </div>
+        `;
+
+        if (outputPane) {
+            outputPane.innerHTML = answerMessage;
+        }
+
+    } catch (error) {
+        console.error('[ASK_GUIDELINES] Error:', error);
+        if (outputPane) {
+            outputPane.innerHTML = `
+                <div class="error-message">
+                    <h3>❌ Error</h3>
+                    <p>${error.message}</p>
+                    <button class="btn-primary" onclick="askGuidelinesQuestion()">Try Again</button>
+                </div>
+            `;
+        }
+        alert('Error: ' + error.message);
+    } finally {
+        restoreAnalyseButton();
+    }
+}
+
+// Make it globally available
+window.askGuidelinesQuestion = askGuidelinesQuestion;
+
 // Process question against selected guidelines
 async function processQuestionAgainstGuidelines() {
     const searchBtn = document.querySelector('.search-guidelines-btn');
