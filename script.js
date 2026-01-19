@@ -13963,7 +13963,21 @@ async function runParallelAnalysis(guidelines) {
             <div id="${containerId}-output"></div>
         </div>
     `;
-    appendToSummary1(resultsContainerHtml, false);
+
+    // Use direct DOM insertion to avoid streaming engine timing issues
+    const summary1 = document.getElementById('summary1');
+    if (summary1) {
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = resultsContainerHtml;
+        summary1.appendChild(wrapper.firstElementChild);
+
+        // Ensure summary section is visible
+        const summarySection = document.getElementById('summarySection');
+        if (summarySection) summarySection.classList.remove('hidden');
+    }
+
+    // Wait a tick for DOM to update, then get references
+    await new Promise(resolve => setTimeout(resolve, 50));
 
     const statusText = document.getElementById(`${containerId}-status-text`);
     const progressBar = document.getElementById(`${containerId}-progress`);
