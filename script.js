@@ -6190,19 +6190,17 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
 
 /**
  * Shared helper function to parse [[CITATION:guidelineId|searchText]] markers in AI responses
- * and convert them to clickable PDF links.
+ * and convert them to superscript numbered citations with a references section.
  * 
  * @param {string} answerText - The raw answer text containing citation markers
  * @param {Array} guidelinesUsed - Array of guideline objects with id and title properties
  * @param {string} callerName - Name of calling function for debug logging
- * @returns {Object} - { formattedAnswer, stats: { totalCitations, withQuotes, withoutQuotes } }
+ * @returns {Object} - { formattedAnswer, referencesHtml, stats: { totalCitations, uniqueGuidelines } }
  */
 function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCitationsToLinks') {
-    // Build maps from IDs/titles to canonical IDs and titles,
-    // so citations can use either and still resolve to the correct PDF,
-    // and links can always display the guideline name.
+    // Build maps from IDs/titles to canonical IDs and full guideline data
     const guidelineIdMap = new Map();
-    const guidelineTitleMap = new Map();
+    const guidelineDataMap = new Map();
 
     if (Array.isArray(guidelinesUsed)) {
         guidelinesUsed.forEach(g => {
@@ -6212,9 +6210,7 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             if (id) {
                 guidelineIdMap.set(id, id);
                 guidelineIdMap.set(id.toLowerCase(), id);
-                if (title) {
-                    guidelineTitleMap.set(id, title);
-                }
+                guidelineDataMap.set(id, g);
             }
             if (title && id) {
                 guidelineIdMap.set(title, id);
@@ -6223,75 +6219,123 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
         });
     }
 
-    console.log(`[DEBUG] ${callerName}: guidelineIdMap keys:`, Array.from(guidelineIdMap.keys()));
+    console.log(`[DEBUG] ${callerName}: Building citation references`);
 
     // Citation regex pattern: [[CITATION:guidelineId|searchText]]
-    // searchText may be empty if no verbatim quote was found
     const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
 
-    // Escape HTML and preserve newlines
-    let processedText = escapeHtml(answerText).replace(/\n/g, '<br>');
+    // First pass: collect all unique guidelines and assign numbers
+    const guidelineRefs = new Map(); // id -> { num, id, title, downloadUrl, quotes: [] }
+    let refNum = 0;
 
-    let citationCount = 0;
-    let withQuotes = 0;
-    let withoutQuotes = 0;
+    let match;
+    const tempText = answerText;
+    while ((match = citationRegex.exec(tempText)) !== null) {
+        const rawId = match[1].trim();
+        const searchText = match[2] ? match[2].trim() : '';
 
-    const formattedAnswer = processedText.replace(citationRegex, (match, guidelineId, searchText) => {
-        citationCount += 1;
+        const canonicalId = guidelineIdMap.get(rawId) || guidelineIdMap.get(rawId.toLowerCase()) || rawId;
 
-        const rawId = guidelineId.trim();
-        const decodedSearch = searchText ? unescapeHtml(searchText).trim() : '';
-        const hasQuote = decodedSearch.length >= 5;
+        if (!guidelineRefs.has(canonicalId)) {
+            refNum++;
+            const guidelineData = guidelineDataMap.get(canonicalId) ||
+                window.globalGuidelines?.[canonicalId] || {};
+            const displayTitle = guidelineData.displayName ||
+                guidelineData.humanFriendlyName ||
+                guidelineData.title ||
+                canonicalId;
 
-        if (hasQuote) {
-            withQuotes += 1;
-        } else {
-            withoutQuotes += 1;
+            guidelineRefs.set(canonicalId, {
+                num: refNum,
+                id: canonicalId,
+                title: displayTitle,
+                downloadUrl: guidelineData.downloadUrl || null,
+                organisation: guidelineData.organisation || null,
+                quotes: []
+            });
         }
 
-        // Resolve the canonical guideline ID (handles cases where AI uses title instead of ID)
-        const canonicalId =
-            guidelineIdMap.get(rawId) ||
-            guidelineIdMap.get(rawId.toLowerCase()) ||
-            rawId;
+        // Store the quote for potential tooltip/hover use later
+        if (searchText.length >= 5) {
+            guidelineRefs.get(canonicalId).quotes.push(searchText);
+        }
+    }
 
-        // Get the guideline title for display
-        const displayTitle =
-            guidelineTitleMap.get(canonicalId) ||
-            (Array.isArray(guidelinesUsed)
-                ? (guidelinesUsed.find(g => String(g.id) === String(canonicalId))?.title || '').trim()
-                : '') ||
-            canonicalId;
+    // Reset regex for second pass
+    citationRegex.lastIndex = 0;
 
-        console.log(`[DEBUG] ${callerName}: Processing citation`, {
-            citationNum: citationCount,
-            guidelineId: canonicalId,
-            hasQuote,
-            searchPreview: decodedSearch.substring(0, 50)
-        });
+    // Second pass: replace citations with superscript numbers
+    let processedText = answerText;
+    processedText = processedText.replace(citationRegex, (fullMatch, guidelineId, searchText) => {
+        const rawId = guidelineId.trim();
+        const canonicalId = guidelineIdMap.get(rawId) || guidelineIdMap.get(rawId.toLowerCase()) || rawId;
+        const ref = guidelineRefs.get(canonicalId);
 
-        // Create the link with or without search text
-        return createGuidelineViewerLink(
-            canonicalId,
-            displayTitle,
-            null, // filename not needed if ID provided
-            hasQuote ? decodedSearch : null,
-            hasQuote
-        );
+        if (ref) {
+            // Create superscript citation link
+            return `<sup><a href="#citation-ref-${ref.num}" class="citation-link" title="${ref.title}">[${ref.num}]</a></sup>`;
+        }
+        return fullMatch; // Fallback if not found
     });
 
+    // Escape remaining HTML but preserve our superscript tags and newlines
+    // Split by our citation tags, escape the parts, rejoin
+    const parts = processedText.split(/(<sup>.*?<\/sup>)/g);
+    processedText = parts.map((part, i) => {
+        if (part.startsWith('<sup>')) {
+            return part; // Don't escape our citation tags
+        }
+        return escapeHtml(part).replace(/\n/g, '<br>');
+    }).join('');
+
+    // Build references HTML section
+    let referencesHtml = '';
+    if (guidelineRefs.size > 0) {
+        referencesHtml = `
+            <div class="citation-references" style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-color, #ddd);">
+                <h4 style="margin: 0 0 10px 0; font-size: 1em; color: var(--text-secondary, #666);">References</h4>
+                <ol style="margin: 0; padding-left: 20px; font-size: 0.9em;">
+        `;
+
+        // Sort by reference number
+        const sortedRefs = Array.from(guidelineRefs.values()).sort((a, b) => a.num - b.num);
+
+        for (const ref of sortedRefs) {
+            const orgText = ref.organisation ? ` <span style="opacity: 0.7">(${ref.organisation})</span>` : '';
+
+            // Create PDF link if available
+            let linkHtml;
+            if (ref.downloadUrl) {
+                linkHtml = `<a href="${ref.downloadUrl}" target="_blank" style="color: var(--accent-color, #0066cc);">${ref.title}</a>`;
+            } else {
+                // Try to create viewer link
+                linkHtml = createGuidelineViewerLink(ref.id, ref.title, null, null, false);
+            }
+
+            referencesHtml += `
+                <li id="citation-ref-${ref.num}" style="margin-bottom: 5px;">
+                    ${linkHtml}${orgText}
+                </li>
+            `;
+        }
+
+        referencesHtml += `
+                </ol>
+            </div>
+        `;
+    }
+
     console.log(`[DEBUG] ${callerName}: Citation processing complete`, {
-        totalCitations: citationCount,
-        withQuotes,
-        withoutQuotes
+        totalCitations: refNum,
+        uniqueGuidelines: guidelineRefs.size
     });
 
     return {
-        formattedAnswer,
+        formattedAnswer: processedText,
+        referencesHtml: referencesHtml,
         stats: {
-            totalCitations: citationCount,
-            withQuotes,
-            withoutQuotes
+            totalCitations: refNum,
+            uniqueGuidelines: guidelineRefs.size
         }
     };
 }
@@ -16067,9 +16111,9 @@ async function askGuidelinesQuestion() {
             throw new Error(data.error || 'Failed to get answer from guidelines');
         }
 
-        // Use existing helper to format citations
-        // Ensure parseCitationsToLinks is available
+        // Use existing helper to format citations with superscript numbers
         let formattedAnswer = data.answer;
+        let referencesHtml = '';
         if (typeof parseCitationsToLinks === 'function') {
             const result = parseCitationsToLinks(
                 data.answer,
@@ -16077,6 +16121,7 @@ async function askGuidelinesQuestion() {
                 'askGuidelinesQuestion'
             );
             formattedAnswer = result.formattedAnswer;
+            referencesHtml = result.referencesHtml || '';
         } else {
             // Fallback formatting if helper missing
             formattedAnswer = marked.parse(formattedAnswer);
@@ -16085,12 +16130,12 @@ async function askGuidelinesQuestion() {
         // Append result to the editor (userInput) as requested
         const guidelinesUsedCount = data.guidelinesUsed?.length || 0;
 
-        // Format the answer for the editor (plain text or simple markdown effectively)
-        const answerText = `\n\n**Answer from Guidelines** (based on ${guidelinesUsedCount} document${guidelinesUsedCount !== 1 ? 's' : ''}):\n${data.answer}\n\n`;
+        // Format the answer for the editor with superscript citations + references
+        const answerText = `\n\n**Answer from Guidelines** (based on ${guidelinesUsedCount} document${guidelinesUsedCount !== 1 ? 's' : ''}):\n${formattedAnswer}${referencesHtml}\n\n`;
 
         if (editor) {
             const currentContent = editor.getHTML();
-            editor.commands.setContent(currentContent + marked.parse(answerText));
+            editor.commands.setContent(currentContent + answerText);
             // Scroll to bottom effectively
             editor.commands.focus('end');
         }
