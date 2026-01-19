@@ -15901,383 +15901,7 @@ const ClinicalConditionsService = {
     }
 };
 
-// Ask Guidelines Question functionality
-async function askGuidelinesQuestion() {
-    const analyseBtn = document.getElementById('analyseBtn');
-    const analyseSpinner = document.getElementById('analyseSpinner');
 
-    // Check for abort signal
-    if (window.analysisAbortController?.signal.aborted) {
-        console.log('[DEBUG] askGuidelinesQuestion: Already aborted');
-        return;
-    }
-
-    try {
-        const question = getUserInputContent();
-        if (!question) {
-            alert('Please enter a question first');
-            return;
-        }
-
-        // Button state is already set by the click handler
-
-        // Update user status - starting Q&A flow
-        updateUser('Preparing to ask guidelines your question...', true);
-
-        // Question text is already visible in the input; use status bar for progress instead of summary1
-
-        // Get user ID token (needed for loading preferences)
-        const user = auth.currentUser;
-        if (!user) {
-            alert('Please sign in to use this feature');
-            return;
-        }
-
-        // Update user status - getting authentication
-        updateUser('Checking sign-in and loading your preferences...', true);
-
-        const idToken = await user.getIdToken();
-
-        // Check for saved scope preference first
-        console.log('[DEBUG] askGuidelinesQuestion: Checking for saved scope preference');
-        let scopeSelection;
-        const savedScopeSelection = await loadGuidelineScopeSelection();
-
-        if (savedScopeSelection) {
-            // Verify the saved selection is still valid (check if trust still exists if local/both)
-            if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
-                // Update user status while we verify hospital trust
-                updateUser('Checking guideline scope...', true);
-
-                // Need to verify the hospital trust is still valid
-                try {
-                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${idToken}`
-                        }
-                    });
-                    const result = await response.json();
-                    if (result.success && result.hospitalTrust) {
-                        // Trust exists, use saved selection (but update trust name in case it changed)
-                        scopeSelection = {
-                            scope: savedScopeSelection.scope,
-                            hospitalTrust: result.hospitalTrust
-                        };
-                        console.log('[DEBUG] askGuidelinesQuestion: Using saved scope selection:', scopeSelection);
-                    } else {
-                        // Trust no longer exists, need to reselect
-                        console.log('[DEBUG] askGuidelinesQuestion: Saved selection invalid (no trust), showing modal');
-                        try {
-                            updateUser('Select which guidelines to use for this question...', true);
-                            scopeSelection = await showGuidelineScopeModal();
-                        } catch (error) {
-                            // Check if error is due to abort
-                            if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-                                throw new Error('Analysis cancelled');
-                            }
-                            console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                            updateUser('Scope selection cancelled.', false);
-                            return; // Exit if user cancels
-                        }
-                    }
-                } catch (error) {
-                    // Check if error is due to abort
-                    if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-                        updateUser('Analysis cancelled', false);
-                        throw new Error('Analysis cancelled');
-                    }
-                    console.error('[ERROR] Failed to verify hospital trust, showing modal:', error);
-                    try {
-                        updateUser('Select which guidelines to use for this question...', true);
-                        scopeSelection = await showGuidelineScopeModal();
-                    } catch (modalError) {
-                        // Check if error is due to abort
-                        if (modalError.name === 'AbortError' || modalError.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-                            updateUser('Analysis cancelled', false);
-                            throw new Error('Analysis cancelled');
-                        }
-                        console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', modalError.message);
-                        updateUser('Scope selection cancelled.', false);
-                        return; // Exit if user cancels
-                    }
-                }
-            } else {
-                // National scope doesn't need trust verification
-                scopeSelection = savedScopeSelection;
-                console.log('[DEBUG] askGuidelinesQuestion: Using saved scope selection:', scopeSelection);
-            }
-        } else {
-            // No saved selection, show modal
-            console.log('[DEBUG] askGuidelinesQuestion: No saved selection, showing guideline scope selection modal');
-            try {
-                updateUser('Select which guidelines to use for this question...', true);
-                scopeSelection = await showGuidelineScopeModal();
-            } catch (error) {
-                // Check if error is due to abort
-                if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-                    updateUser('Analysis cancelled', false);
-                    throw new Error('Analysis cancelled');
-                }
-                console.log('[DEBUG] askGuidelinesQuestion: Scope selection cancelled:', error.message);
-                updateUser('Scope selection cancelled.', false);
-                return; // Exit if user cancels
-            }
-        }
-
-        // Check for abort after scope selection
-        if (window.analysisAbortController?.signal.aborted) {
-            updateUser('Analysis cancelled', false);
-            throw new Error('Analysis cancelled');
-        }
-
-        console.log('[DEBUG] askGuidelinesQuestion: Using scope selection:', scopeSelection);
-
-        // Store the selection globally
-        window.selectedGuidelineScope = scopeSelection;
-
-        const scopeMessage = scopeSelection.scope === 'national'
-            ? 'National guidelines selected.'
-            : scopeSelection.scope === 'local'
-                ? `Local guidelines selected (${scopeSelection.hospitalTrust}).`
-                : `Both national and ${scopeSelection.hospitalTrust} guidelines selected.`;
-
-        updateUser(scopeMessage, false);
-
-        // Update user status - scope confirmed
-        updateUser('Guideline scope confirmed. Loading guidelines...', true);
-
-        // Update progress (status bar only)
-        const loadingMessage = 'Loading guidelines from database...';
-        updateUser(loadingMessage, true);
-
-        // Get guidelines and summaries from Firestore (reuse existing logic)
-        let guidelines = await loadGuidelinesFromFirestore();
-
-        // Filter guidelines by scope
-        console.log('[DEBUG] Filtering guidelines by scope:', { scope: scopeSelection.scope, hospitalTrust: scopeSelection.hospitalTrust, beforeFilter: guidelines.length });
-        guidelines = filterGuidelinesByScope(guidelines, scopeSelection.scope, scopeSelection.hospitalTrust);
-        console.log('[DEBUG] After filtering:', guidelines.length, 'guidelines');
-
-        if (guidelines.length === 0) {
-            const noGuidelinesMsg = 'No guidelines found for the selected scope.';
-            updateUser(noGuidelinesMsg, false);
-            alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
-            return;
-        }
-
-        // Add scope info via status bar
-        const scopeInfo = scopeSelection.scope === 'national'
-            ? `Searching ${guidelines.length} national guidelines...`
-            : scopeSelection.scope === 'local'
-                ? `Searching ${guidelines.length} local guidelines for ${scopeSelection.hospitalTrust}...`
-                : `Searching ${guidelines.length} guidelines (National + ${scopeSelection.hospitalTrust})...`;
-        updateUser(scopeInfo, true);
-
-        // Format guidelines for relevancy matching
-        updateUser(`Analysing your question against ${guidelines.length} guidelines...`, true);
-
-        const guidelinesList = guidelines.map(g => ({
-            id: g.id,
-            title: g.title,
-            summary: g.summary,
-            condensed: g.condensed,
-            keywords: g.keywords,
-            downloadUrl: g.downloadUrl,
-            originalFilename: g.originalFilename,
-            filename: g.filename,
-            organisation: g.organisation
-        }));
-
-        // Update progress with guideline count
-        const analyzeMessage = `Analysing question against ${guidelinesList.length} available guidelines...`;
-        updateUser(analyzeMessage, true);
-
-        // Let user know we’re finding most relevant guidelines
-        updateUser('Finding the most relevant guidelines for your question...', true);
-
-        console.log('[DEBUG] Sending request to /findRelevantGuidelines for question:', {
-            questionLength: question.length,
-            guidelinesCount: guidelinesList.length
-        });
-
-        // Check for abort before fetch
-        if (window.analysisAbortController?.signal.aborted) {
-            throw new Error('Analysis cancelled');
-        }
-
-        // Use same optimised pattern as main findRelevantGuidelines function
-        const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                transcript: question,
-                guidelinesCount: guidelinesList.length, // Just send count for verification
-                loadGuidelinesOnServer: true, // Flag to load guidelines server-side
-                anonymisationInfo: null, // No anonymisation needed for questions
-                scope: scopeSelection.scope, // Include scope filtering
-                hospitalTrust: scopeSelection.hospitalTrust // Include hospital trust for local filtering
-            }),
-            signal: window.analysisAbortController?.signal
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Server error: ${response.status} - ${errorText}`);
-        }
-
-        const data = await response.json();
-        if (!data.success) {
-            updateUser('Error finding relevant guidelines', false);
-            throw new Error(data.error || 'Failed to find relevant guidelines');
-        }
-
-        // Update progress with completion
-        const completionMessage = 'Analysis complete – processing most relevant guidelines...';
-        updateUser(completionMessage, true);
-
-        updateUser('Guidelines found. Preparing detailed answer...', true);
-
-        // Automatically select the top 3 most relevant guidelines
-        const allGuidelines = [];
-
-        // Properly handle categories as an object (not array)
-        const categoryKeys = ['mostRelevant', 'potentiallyRelevant', 'lessRelevant'];
-        categoryKeys.forEach(categoryKey => {
-            if (data.categories[categoryKey] && Array.isArray(data.categories[categoryKey])) {
-                data.categories[categoryKey].forEach(guideline => {
-                    allGuidelines.push({
-                        ...guideline,
-                        relevanceScore: extractRelevanceScore(guideline.relevance)
-                    });
-                });
-            }
-        });
-
-        // Sort by relevance score and take top 3
-        const selectedGuidelines = allGuidelines
-            .sort((a, b) => b.relevanceScore - a.relevanceScore)
-            .slice(0, 3);
-
-        console.log('[DEBUG] askGuidelinesQuestion: Selected guidelines:', {
-            totalFound: allGuidelines.length,
-            selectedCount: selectedGuidelines.length,
-            selected: selectedGuidelines.map(g => ({ id: g.id, title: g.title, relevanceScore: g.relevanceScore }))
-        });
-
-        // Check if we have any guidelines to process
-        if (selectedGuidelines.length === 0) {
-            updateUser('No relevant guidelines found for this question', false);
-            const noGuidelinesMessage = `## ℹ️ No Relevant Guidelines Found\n\n` +
-                `Unfortunately, no guidelines were found to be relevant to your question:\n\n` +
-                `**"${question}"**\n\n` +
-                `This could happen if:\n` +
-                `- Your question is very specific and doesn't match available guidelines\n` +
-                `- The question is outside the scope of the current guideline database\n` +
-                `- There was an issue with the analysis process\n\n` +
-                `**Suggestions:**\n` +
-                `- Try rephrasing your question more generally\n` +
-                `- Include more clinical context or keywords\n` +
-                `- Check if your question relates to obstetrics, gynaecology, or general medical guidelines\n\n`;
-
-            updateUser(
-                'No highly relevant guidelines found for this question. Try rephrasing, adding clinical context, or broadening the query.',
-                false
-            );
-            return; // Exit early, don't try to process empty guidelines
-        }
-
-        // Check for abort before second fetch
-        if (window.analysisAbortController?.signal.aborted) {
-            throw new Error('Analysis cancelled');
-        }
-
-        // Process the selected guidelines
-        const data2 = await postAuthenticated(API_ENDPOINTS.ASK_GUIDELINES, {
-            question: question,
-            relevantGuidelines: selectedGuidelines
-        }, window.analysisAbortController?.signal);
-
-        if (!data2.success) {
-            updateUser('Error answering your guideline question', false);
-            console.error('[DEBUG] askGuidelinesQuestion: Server error', {
-                error: data2.error,
-                traceId: data2.traceId
-            });
-            throw new Error(data2.error || 'Failed to process guidelines');
-        }
-
-        // Log trace ID for debugging correlation with server logs
-        console.log('[DEBUG] askGuidelinesQuestion: Response received', {
-            traceId: data2.traceId,
-            answerLength: data2.answer?.length,
-            guidelinesUsedCount: data2.guidelinesUsed?.length,
-            aiProvider: data2.ai_provider
-        });
-
-        // Parse citations in the answer and convert to clickable links
-        const { formattedAnswer } = parseCitationsToLinks(
-            data2.answer,
-            data2.guidelinesUsed,
-            'askGuidelinesQuestion'
-        );
-
-
-        // Display the answer with HTML formatting
-        const selectedGuidelinesList = data2.guidelinesUsed.map(g => {
-            if (!g || !g.id) return '';
-            const title = g.title ? g.title : g.id;
-            // Use createGuidelineViewerLink with hasVerbatimQuote=false so the
-            // guideline link simply opens the PDF (no specific search/highlight).
-            const link = createGuidelineViewerLink(
-                String(g.id),
-                title,
-                null,
-                null,
-                false
-            );
-            return `<li>${link}</li>`;
-        }).join('');
-
-        const answerMessage = `<h2>Guidelines Used</h2>` +
-            `<ul>${selectedGuidelinesList}</ul>` +
-            `<hr>` +
-            `<h2>Answer</h2>` +
-            `<div class="guideline-answer">${formattedAnswer}</div>`;
-
-        appendToOutputField(answerMessage, true, true); // Display in output field, clear existing content, isHtml=true
-
-        // Final user status - success
-        updateUser('Answer generated from guidelines', false);
-
-    } catch (error) {
-        // Check if error is due to abort
-        if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
-            console.log('[DEBUG] askGuidelinesQuestion: Analysis was cancelled');
-            updateUser('Analysis cancelled', false);
-            // Don't show error alert for user-initiated cancellation
-            return;
-        }
-
-        console.error('[DEBUG] Error in askGuidelinesQuestion:', {
-            error: error.message,
-            stack: error.stack
-        });
-
-        // Surface error to top-level status instead of summary1
-        const errorMessage = `Error finding relevant guidelines: ${error.message}`;
-        updateUser(errorMessage, false);
-
-        alert('Error finding relevant guidelines: ' + error.message);
-    } finally {
-        // Button state is restored by the click handler's finally block
-        // Hide summary loading spinner
-        hideSummaryLoading();
-    }
-}
 
 // Helper function to extract relevance score from text
 function extractRelevanceScore(relevanceText) {
@@ -16418,28 +16042,36 @@ async function askGuidelinesQuestion() {
             formattedAnswer = marked.parse(formattedAnswer);
         }
 
-        // Display result
+        // Append result to the editor (userInput) as requested
         const guidelinesUsedCount = data.guidelinesUsed?.length || 0;
 
-        const answerMessage = `
-            <div class="guideline-answer-container">
-                <h2>Answer from Guidelines</h2>
-                <div class="answer-meta">
-                    <span class="badge">Based on ${guidelinesUsedCount} guideline${guidelinesUsedCount !== 1 ? 's' : ''}</span>
-                    <span class="timestamp">${new Date().toLocaleTimeString()}</span>
-                </div>
-                <div class="guideline-answer-content">
-                    ${formattedAnswer}
-                </div>
-                <div class="answer-footer">
-                    <p><em>Answer generated using ${data.ai_provider || 'AI'}</em></p>
-                    <button class="btn-secondary small" onclick="window.updateAnalyseAndResetButtons(true)">Ask Another Question</button>
-                </div>
-            </div>
-        `;
+        // Format the answer for the editor (plain text or simple markdown effectively)
+        const answerText = `\n\n**Answer from Guidelines** (based on ${guidelinesUsedCount} document${guidelinesUsedCount !== 1 ? 's' : ''}):\n${data.answer}\n\n`;
 
+        if (editor) {
+            const currentContent = editor.getHTML();
+            editor.commands.setContent(currentContent + marked.parse(answerText));
+            // Scroll to bottom effectively
+            editor.commands.focus('end');
+        }
+
+        // Also show a confirmation in the summary pane, but keep it brief/status-like
         if (outputPane) {
-            outputPane.innerHTML = answerMessage;
+            outputPane.innerHTML = `
+                <div class="processing-status success" style="text-align: center; padding: 20px;">
+                    <h3>✅ Answer Received</h3>
+                    <p>The answer has been added to your clinical note.</p>
+                    <p class="text-muted"><small>Based on ${guidelinesUsedCount} guideline${guidelinesUsedCount !== 1 ? 's' : ''}</small></p>
+                </div>
+            `;
+
+            // Auto-hide the success message after a few seconds
+            setTimeout(() => {
+                if (outputPane.innerHTML.includes('Answer Received')) {
+                    const summarySection = document.getElementById('summarySection');
+                    if (summarySection) summarySection.classList.add('hidden');
+                }
+            }, 3000);
         }
 
     } catch (error) {
