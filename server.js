@@ -33,6 +33,7 @@ const {
 
 const {
     routeToAI,
+    sendToAI,
     analyzeGuidelineForPatient,
     evaluateSuggestions,
     generatePromptImprovements,
