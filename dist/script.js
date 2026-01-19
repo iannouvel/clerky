@@ -16001,6 +16001,46 @@ async function askGuidelinesQuestion() {
         }
     }
 
+    // === Display discovered guidelines before asking ===
+    // Build a simple list of what was found so user can see the RAG results
+    if (outputPane && guidelinesToQuery.length > 0) {
+        const mostRelevant = guidelinesToQuery.filter(g => g.category === 'mostRelevant');
+        const potentiallyRelevant = guidelinesToQuery.filter(g => g.category === 'potentiallyRelevant');
+        const lessRelevant = guidelinesToQuery.filter(g => g.category === 'lessRelevant');
+
+        const formatGuidelineList = (guidelines) => {
+            return guidelines.map(g => {
+                const guidelineData = window.globalGuidelines?.[g.id];
+                const displayTitle = guidelineData?.displayName || guidelineData?.humanFriendlyName || g.title || g.id;
+                const org = g.organisation || guidelineData?.organisation || '';
+                const orgDisplay = org ? ` <span style="opacity: 0.7">(${org})</span>` : '';
+                return `<li>${displayTitle}${orgDisplay}</li>`;
+            }).join('');
+        };
+
+        let guidelinesHtml = '<div style="text-align: left; padding: 10px;">';
+        guidelinesHtml += '<h3 style="margin-bottom: 10px;">📚 Guidelines Found</h3>';
+
+        if (mostRelevant.length > 0) {
+            guidelinesHtml += `<strong>Most Relevant (${mostRelevant.length}):</strong><ul style="margin: 5px 0 15px 20px;">${formatGuidelineList(mostRelevant)}</ul>`;
+        }
+        if (potentiallyRelevant.length > 0) {
+            guidelinesHtml += `<strong>Potentially Relevant (${potentiallyRelevant.length}):</strong><ul style="margin: 5px 0 15px 20px;">${formatGuidelineList(potentiallyRelevant)}</ul>`;
+        }
+        if (lessRelevant.length > 0) {
+            guidelinesHtml += `<strong>Less Relevant (${lessRelevant.length}):</strong><ul style="margin: 5px 0 15px 20px;">${formatGuidelineList(lessRelevant)}</ul>`;
+        }
+
+        guidelinesHtml += '</div>';
+
+        outputPane.innerHTML = guidelinesHtml;
+        const summarySection = document.getElementById('summarySection');
+        if (summarySection) summarySection.classList.remove('hidden');
+
+        // Brief pause to let user see the results before proceeding
+        await new Promise(resolve => setTimeout(resolve, 1500));
+    }
+
     // Proceed with asking the question
     // Show loading state in the main UI
     if (outputPane) {
