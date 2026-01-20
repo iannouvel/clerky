@@ -71,6 +71,14 @@
         --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4);
     }
+
+    /* Dark mode link colors - override inline styles */
+    .citation-references a,
+    .citation-link,
+    a.guideline-link,
+    a[data-link-data] {
+        color: #4DD0E1 !important;
+    }
 }
 
 /* Enhanced Loading Screen Styles */
