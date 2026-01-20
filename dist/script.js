@@ -6185,7 +6185,7 @@ function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilenam
     // Note: we intentionally avoid target="_blank" here because if the click handler
     // isn't wired up (e.g. in non-editor surfaces), the browser would open a useless
     // index.html# tab. Our click handler opens the PDF viewer in a new tab/window.
-    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
+    return `<a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer; color: #016A52;">📄 ${escapeHtml(linkText)}</a>${paraphraseNote}`;
 }
 
 /**
@@ -6306,7 +6306,7 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             // Create PDF link if available
             let linkHtml;
             if (ref.downloadUrl) {
-                linkHtml = `<a href="${ref.downloadUrl}" target="_blank" style="color: var(--link-color, #0066cc);">${ref.title}</a>`;
+                linkHtml = `<a href="${ref.downloadUrl}" target="_blank" style="color: #016A52;">${ref.title}</a>`;
             } else {
                 // Try to create viewer link
                 linkHtml = createGuidelineViewerLink(ref.id, ref.title, null, null, false);
