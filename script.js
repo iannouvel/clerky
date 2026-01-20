@@ -6306,7 +6306,7 @@ function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCi
             // Create PDF link if available
             let linkHtml;
             if (ref.downloadUrl) {
-                linkHtml = `<a href="${ref.downloadUrl}" target="_blank" style="color: var(--accent-color, #0066cc);">${ref.title}</a>`;
+                linkHtml = `<a href="${ref.downloadUrl}" target="_blank" style="color: var(--link-color, #0066cc);">${ref.title}</a>`;
             } else {
                 // Try to create viewer link
                 linkHtml = createGuidelineViewerLink(ref.id, ref.title, null, null, false);
