@@ -24,6 +24,9 @@
     --border-color: #ddd;
     --border-light: #eee;
 
+    /* Links */
+    --link-color: #0066cc;
+
     /* Interactive */
     --btn-hover-overlay: rgba(0, 0, 0, 0.05);
 
@@ -57,6 +60,9 @@
         /* Borders */
         --border-color: #444;
         --border-light: #333;
+
+        /* Links - brighter color for dark background readability */
+        --link-color: #4DD0E1;
 
         /* Interactive */
         --btn-hover-overlay: rgba(255, 255, 255, 0.1);
@@ -556,7 +562,7 @@ body {
 }
 
 .guidelines-list a {
-    color: #0066cc;
+    color: var(--link-color, #0066cc);
     text-decoration: none;
     flex: 1;
 }
@@ -3019,7 +3025,7 @@ div.third-column,
 
 .generation-status p {
     margin: 0;
-    color: #0066cc;
+    color: var(--link-color, #0066cc);
 }
 
 .generation-status strong {
