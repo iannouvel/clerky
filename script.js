@@ -1001,7 +1001,6 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
                         <div class="guideline-info">
                             <div class="guideline-content">
                                 <span class="guideline-title">${displayTitle}${orgDisplay}</span>
-                                <span style="font-size: 0.8em; color: #666; margin-left: 8px;">(${formatRelevanceScore(g.relevance)})</span>
                                 ${pdfLinkHtml}
                             </div>
                         </div>
