@@ -1341,7 +1341,6 @@ body {
 .preference-value {
     font-weight: 500;
     color: var(--text-primary);
-    font-size: 1rem;
     font-size: 0.9rem;
     text-align: right;
     margin-right: 8px;
@@ -4478,10 +4477,6 @@ body {
 
 .tiptap-editor .ProseMirror p:last-child {
     margin-bottom: 0;
-}
-
-.tiptap-editor .ProseMirror:focus {
-    outline: none;
 }
 
 .tiptap-editor.ProseMirror-focused {
