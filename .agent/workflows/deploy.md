@@ -1,7 +1,3 @@
----
-description: how to deploy changes to clerkyai.health
----
-
 # Deployment Workflow
 
 This project uses **automated deployment via GitHub Actions**. Changes pushed to the `main` branch are automatically built and deployed to the live site at `clerkyai.health`.
@@ -12,29 +8,29 @@ This project uses **automated deployment via GitHub Actions**. Changes pushed to
 
 1. **Make your changes** to source files (styles.css, script.js, index.html, etc.)
 
-2. **Build locally** (optional, but recommended to verify):
+2. **Commit changes**:
    ```bash
-   npm run build
-   ```
-
-3. **Commit changes**:
-   ```bash
-   git add <files>
+   git add .
    git commit -m "Your commit message"
    ```
 
-4. **Push to GitHub**:
+3. **Push to GitHub**:
    // turbo
    ```bash
    git -c core.askPass= push
    ```
 
-5. **Monitor deployment**:
+4. **Monitor deployment**:
    - GitHub Actions will automatically:
-     - Run `npm run build`
+     - Run `npm run build` (creating the `dist/` folder on the server)
      - Deploy the `dist/` folder to GitHub Pages (`gh-pages` branch)
      - Update `clerkyai.health`
    - Check deployment status at: https://github.com/iannouvel/clerky/actions
+
+## Important Notes
+
+- **`dist/` Folder**: The `dist/` folder is now **ignored by Git**. You do not need to commit it. It is generated automatically during the build process on the server.
+- **Local Testing**: You can still run `npm run build` locally to test, but the generated `dist/` files will not be tracked by Git.
 
 ## Automatic Versioning
 

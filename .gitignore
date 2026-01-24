@@ -13,7 +13,7 @@ firebase-debug.*.log*
 # Firebase config
 firebase-init.js
 modules/firebase-core.js
-dist/firebase-init.js
+dist/
 
 # Environment variables
 .env
