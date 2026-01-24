@@ -609,6 +609,7 @@ body {
 }
 
 /* Wizard Suggestion Buttons */
+#summary1 .wizard-suggestion-btn,
 .wizard-suggestion-btn {
     background: var(--text-primary);
     color: var(--bg-primary);
