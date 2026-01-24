@@ -1,3 +1,31 @@
+/* ==========================================================================
+   CLERKY STYLESHEET
+   ==========================================================================
+   TABLE OF CONTENTS
+   --------------------------------------------------------------------------
+   1. CSS VARIABLES & THEMING ............. Line ~20
+   2. BASE STYLES ......................... Line ~260
+   3. LAYOUT & CONTAINERS ................. Line ~280
+   4. NAVIGATION (Top Bar) ................ Line ~660
+   5. PAGES (Landing, Mode Selection) ..... Line ~770
+   6. PANELS & PREFERENCES ................ Line ~1250
+   7. BUTTONS ............................. Line ~600
+   8. FORMS & INPUTS ...................... Line ~450
+   9. ACCORDIONS & LISTS .................. Line ~520
+   10. POPUPS & MODALS .................... Line ~1640
+   11. TRANSCRIPT & SUMMARY ............... Line ~1990
+   12. SUGGESTIONS & ADVICE ............... Line ~2360
+   13. CLINICAL FEATURES .................. Line ~2990
+   14. TIPTAP EDITOR ...................... Line ~4400
+   15. MODALS (Trust, Scope, Prefs) ....... Line ~4590
+   16. ANIMATIONS & KEYFRAMES ............. (scattered, to consolidate)
+   17. MOBILE & RESPONSIVE ................ Line ~5530
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS VARIABLES & THEMING
+   ========================================================================== */
+
 /* CSS Variables with Dark Mode Support */
 :root {
     /* Primary Colors */
@@ -80,6 +108,10 @@
         color: #4DD0E1 !important;
     }
 }
+
+/* ==========================================================================
+   5. PAGES (Loading, Landing, Mode Selection)
+   ========================================================================== */
 
 /* Enhanced Loading Screen Styles */
 .loading-screen {
@@ -247,6 +279,10 @@
     }
 }
 
+/* ==========================================================================
+   2. BASE STYLES
+   ========================================================================== */
+
 /* General body styles */
 body {
     background-color: var(--bg-primary);
@@ -258,6 +294,10 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+/* ==========================================================================
+   3. LAYOUT & CONTAINERS
+   ========================================================================== */
 
 /* Main container styles */
 .container {
@@ -637,6 +677,10 @@ body {
     display: none !important;
 }
 
+/* ==========================================================================
+   4. NAVIGATION (Top Bar)
+   ========================================================================== */
+
 /* Top bar styles */
 .top-bar {
     position: sticky;
@@ -753,6 +797,10 @@ body {
     background: rgba(255, 255, 255, 0.3);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+
+/* ==========================================================================
+   6. PAGES - Landing Page
+   ========================================================================== */
 
 /* Landing page */
 .landing-page {
@@ -1227,6 +1275,10 @@ body {
     }
 }
 
+/* ==========================================================================
+   7. PANELS & PREFERENCES
+   ========================================================================== */
+
 /* User Preferences Panel */
 .user-preferences-panel {
     background: var(--bg-tertiary);
@@ -1616,6 +1668,10 @@ button.loading {
     }
 }
 
+/* ==========================================================================
+   10. POPUPS & MODALS
+   ========================================================================== */
+
 /* Popup styles */
 .popup {
     position: fixed;
@@ -1965,6 +2021,10 @@ div.third-column,
     overflow-y: auto;
     background: var(--bg-secondary);
 }
+
+/* ==========================================================================
+   11. TRANSCRIPT & SUMMARY
+   ========================================================================== */
 
 /* Transcript pane styling */
 .transcript-pane {
@@ -2336,6 +2396,10 @@ div.third-column,
     background: rgba(220, 53, 69, 1);
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
+
+/* ==========================================================================
+   12. SUGGESTIONS & ADVICE
+   ========================================================================== */
 
 /* Guideline Suggestions Interface Styles */
 .dynamic-advice-container {
@@ -2968,6 +3032,10 @@ div.third-column,
     border-top: 2px solid #e9ecef;
     text-align: center;
 }
+
+/* ==========================================================================
+   13. CLINICAL FEATURES
+   ========================================================================== */
 
 /* Clinical Issues Selector Styles */
 .clinical-issues-selector {
@@ -4380,6 +4448,10 @@ body {
     }
 }
 
+/* ==========================================================================
+   14. TIPTAP EDITOR
+   ========================================================================== */
+
 /* TipTap Editor Styling */
 #userInput {
     display: block !important;
@@ -4570,6 +4642,10 @@ body {
     background-color: #D97706;
     color: white;
 }
+
+/* ==========================================================================
+   15. MODALS (Hospital Trust, Guideline Scope, Preferences)
+   ========================================================================== */
 
 /* Hospital Trust Modal Styles */
 .hospital-trust-modal {
@@ -5437,6 +5513,10 @@ body {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   16. MOBILE & RESPONSIVE STYLES
+   ========================================================================== */
 
 /* ===== Mobile-Friendly Styles ===== */
 
