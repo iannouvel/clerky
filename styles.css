@@ -359,14 +359,14 @@ body {
 
 /* History column hidden */
 #historyColumn {
-    display: none !important;
+    display: none;
 }
 
 /* Main content area expands to full width when history is hidden */
 #mainContentArea {
     flex: 1;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -382,14 +382,14 @@ body {
 
 /* Ensure two columns take full width */
 .main-two-column {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Force three column layout to span full width */
 #threeColumnView {
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
 }
 
 /* Show a small tab on the right edge when collapsed */
@@ -654,7 +654,7 @@ body {
     background: var(--text-primary);
     color: var(--bg-primary);
     border: none;
-    padding: 4px !important;
+    padding: 4px;
     border-radius: 6px;
     font-family: inherit;
     font-size: 0.9em;
@@ -3551,7 +3551,7 @@ body {
 
 /* Zero out all spacing within summary1 for maximum visibility
    and enforce a single, consistent font for everything in the stream */
-#summary1 * {
+#summary1 *:not(.wizard-suggestion-btn) {
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
