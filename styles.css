@@ -2232,7 +2232,7 @@ div.third-column,
 .transcript-tab,
 .tab-close,
 .new-tab {
-    display: none !important;
+    display: none;
 }
 
 .user-input-section {
@@ -5446,7 +5446,7 @@ body {
 }
 
 #mobileViewToggle.hidden {
-    display: none !important;
+    display: none;
 }
 
 .mobile-view-toggle-container {
