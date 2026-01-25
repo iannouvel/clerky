@@ -1907,14 +1907,14 @@ div.search-box {
 .third-column,
 div.third-column,
 [class*="third-column"] {
-    display: none !important;
-    width: 0 !important;
-    max-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
+    display: none;
+    width: 0;
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
 }
 
 /* Adjustments for specific columns */
