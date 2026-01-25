@@ -4661,7 +4661,7 @@ body {
 .trust-search-container label {
     display: block;
     margin-bottom: 8px;
-    color: #2D3436;
+    color: var(--text-primary);
     font-weight: 500;
 }
 
@@ -4733,7 +4733,7 @@ body {
 
 .clear-trust-btn {
     background-color: #e0e0e0;
-    color: #2D3436;
+    color: var(--text-primary);
 }
 
 .clear-trust-btn:hover {
@@ -4779,7 +4779,7 @@ body {
 
 .guideline-scope-modal-header h2 {
     margin: 0;
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 1.5rem;
 }
 
@@ -4835,7 +4835,7 @@ body {
 .scope-btn-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2D3436;
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
@@ -4868,7 +4868,7 @@ body {
 }
 
 .scope-trust-info strong {
-    color: #2D3436;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -4970,7 +4970,7 @@ body {
 
 .preferences-modal-header h2 {
     margin: 0;
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 1.5rem;
 }
 
@@ -4994,7 +4994,7 @@ body {
 
 .preferences-section h3 {
     margin: 0 0 10px 0;
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -5017,7 +5017,7 @@ body {
 
 .preferences-trust-display strong,
 .preferences-scope-display strong {
-    color: #2D3436;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -5124,7 +5124,7 @@ body {
 .preferences-scope-btn-title {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #2D3436;
+    color: var(--text-primary);
     margin-bottom: 5px;
 }
 
@@ -5193,7 +5193,7 @@ body {
 .model-preference-name {
     flex: 1;
     font-weight: 500;
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 0.95rem;
 }
 
@@ -5236,7 +5236,7 @@ body {
 }
 
 .rag-toggle-label strong {
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 1rem;
 }
 
@@ -5337,7 +5337,7 @@ body {
 
 .rag-option-label {
     font-size: 0.9rem;
-    color: #2D3436;
+    color: var(--text-primary);
 }
 
 .rag-info {
