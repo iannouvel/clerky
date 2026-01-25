@@ -3204,11 +3204,11 @@ div.third-column,
 
 /* Remove underline from logo link */
 .logo-link {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 .logo-link:hover {
-    text-decoration: none !important;
+    text-decoration: none;
 }
 
 /* Settings button icon styling */
@@ -3422,7 +3422,7 @@ body {
     height: 100%;
     border: none;
     padding: 0;
-    pointer-events: auto !important;
+    pointer-events: auto;
     position: relative;
     z-index: 1;
     font-size: 1em;
@@ -4253,7 +4253,7 @@ body {
     border: none;
     padding: 0;
     /* Remove padding for TipTap editor */
-    pointer-events: auto !important;
+    pointer-events: auto;
     position: relative;
     z-index: 1;
     font-size: 1em;
