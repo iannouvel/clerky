@@ -510,7 +510,7 @@ body {
 }
 
 .add-issue-btn:hover {
-    background: #00B894;
+    background: var(--accent-color);
     color: white;
 }
 
@@ -1351,7 +1351,7 @@ body {
 }
 
 .preference-value.clickable:hover {
-    color: #00B894;
+    color: var(--accent-color);
 }
 
 .preference-edit-btn {
@@ -2865,8 +2865,8 @@ div.third-column,
 .action-buttons .nav-btn.primary,
 .action-buttons .nav-btn.secondary {
     background: var(--bg-secondary);
-    border: 2px solid #00b894;
-    color: #00b894;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
     text-shadow: none;
 }
 
@@ -3033,8 +3033,8 @@ div.third-column,
 
 .clinical-dropdown:focus {
     outline: none;
-    border-color: #00b894;
-    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.1);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.1);
 }
 
 .clinical-dropdown option {
@@ -4849,7 +4849,7 @@ body {
 }
 
 .scope-btn-local:hover:not(:disabled) {
-    border-color: #00B894;
+    border-color: var(--accent-color);
 }
 
 .scope-btn-both:hover:not(:disabled) {
@@ -4903,7 +4903,7 @@ body {
 }
 
 .select-trust-btn {
-    background-color: #00B894;
+    background-color: var(--accent-color);
     color: white;
 }
 
@@ -5112,7 +5112,7 @@ body {
 }
 
 .preferences-scope-btn-local.selected {
-    border-color: #00B894;
+    border-color: var(--accent-color);
     background-color: #e8f8f5;
 }
 
@@ -5138,7 +5138,7 @@ body {
 }
 
 .preferences-scope-btn-local:hover:not(:disabled) {
-    border-color: #00B894;
+    border-color: var(--accent-color);
 }
 
 .preferences-scope-btn-both:hover:not(:disabled) {
@@ -5167,13 +5167,13 @@ body {
 
 .model-preference-item:hover {
     background-color: #f0f8f2;
-    border-color: #00B894;
+    border-color: var(--accent-color);
 }
 
 .model-preference-item.dragging {
     opacity: 0.5;
-    border-color: #00B894;
-    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.2);
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(var(--accent-color-rgb), 0.2);
 }
 
 .model-preference-number {
@@ -5182,7 +5182,7 @@ body {
     justify-content: center;
     width: 32px;
     height: 32px;
-    background-color: #00B894;
+    background-color: var(--accent-color);
     color: white;
     border-radius: 50%;
     font-weight: 600;
