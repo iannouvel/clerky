@@ -472,8 +472,8 @@ body {
 /* Editor styling */
 .tiptap-editor-area {
     flex: 1;
-    height: 100% !important;
-    min-height: 300px !important;
+    height: 100%;
+    min-height: 300px;
     overflow-y: auto;
     background-color: transparent;
     border-radius: 0 0 5px 5px;
@@ -1522,7 +1522,7 @@ body {
 }
 
 .mobile-settings-overlay.hidden {
-    display: none !important;
+    display: none;
 }
 
 .mobile-settings-dialog {
@@ -3970,8 +3970,8 @@ body {
 .clerking-buttons-group .nav-btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    transform: none !important;
-    box-shadow: none !important;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Suggestion actions group */
