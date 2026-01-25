@@ -3860,7 +3860,7 @@ body {
 
 .selection-buttons-group .selection-btn {
     padding: 8px 16px;
-    border: 2px solid #00b894 !important;
+    border: 2px solid var(--accent-color) !important;
     border-radius: 4px;
     background: white !important;
     color: #2c3e50 !important;
@@ -5246,7 +5246,7 @@ body {
 }
 
 .rag-status.enabled {
-    color: #00B894;
+    color: var(--accent-color);
 }
 
 .rag-status.disabled {
@@ -5293,7 +5293,7 @@ body {
 }
 
 .rag-toggle-switch input:checked+.rag-slider {
-    background-color: #00B894;
+    background-color: var(--accent-color);
 }
 
 .rag-toggle-switch input:checked+.rag-slider:before {
@@ -5321,7 +5321,7 @@ body {
     margin-left: 67px;
     padding: 12px;
     background-color: #f0f8f2;
-    border: 1px solid #00B894;
+    border: 1px solid var(--accent-color);
     border-radius: 6px;
 }
 
@@ -5387,7 +5387,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: #00B894;
+    background-color: var(--accent-color);
     color: white;
 }
 
