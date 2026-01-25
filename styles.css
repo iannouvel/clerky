@@ -6005,7 +6005,7 @@ body {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        display: flex !important;
+        display: flex;
         gap: 8px;
     }
 
@@ -6015,7 +6015,7 @@ body {
         font-weight: 600;
         min-height: 36px;
         padding: 6px 12px;
-        flex: 1 1 50% !important;
+        flex: 1 1 50%;
         box-sizing: border-box;
         margin: 0;
         width: auto;
