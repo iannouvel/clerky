@@ -1549,7 +1549,7 @@ body {
     margin: 0;
     font-size: 1rem;
     font-weight: 600;
-    color: #2d3436;
+    color: var(--text-primary);
 }
 
 .mobile-settings-body {
@@ -2369,7 +2369,7 @@ div.third-column,
 }
 
 .advice-header h3 {
-    color: #2d3436;
+    color: var(--text-primary);
     margin: 0 0 8px 0;
     font-size: 1.4em;
     display: flex;
@@ -2509,7 +2509,7 @@ div.third-column,
 .suggestion-content label {
     display: block;
     font-weight: 600;
-    color: #2d3436;
+    color: var(--text-primary);
     margin-bottom: 5px;
     font-size: 0.9em;
 }
@@ -2619,7 +2619,7 @@ div.third-column,
 }
 
 .cancel-btn:hover {
-    background: #2d3436;
+    background: var(--text-primary);
 }
 
 .modify-section {
@@ -2760,7 +2760,7 @@ div.third-column,
 }
 
 .changes-summary h4 {
-    color: #2d3436;
+    color: var(--text-primary);
     margin: 0 0 10px 0;
 }
 
@@ -2779,7 +2779,7 @@ div.third-column,
 }
 
 .updated-transcript h4 {
-    color: #2d3436;
+    color: var(--text-primary);
     margin: 0 0 10px 0;
 }
 
@@ -4541,7 +4541,7 @@ body {
 }
 
 .programmatic-change .change-content {
-    color: #2D3436;
+    color: var(--text-primary);
     white-space: pre-wrap;
 }
 
@@ -4601,7 +4601,7 @@ body {
 
 .hospital-trust-modal-header h2 {
     margin: 0;
-    color: #2D3436;
+    color: var(--text-primary);
     font-size: 1.5rem;
 }
 
@@ -4645,7 +4645,7 @@ body {
 }
 
 .current-trust-display strong {
-    color: #2D3436;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
