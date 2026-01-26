@@ -1,0 +1,1 @@
+You are in an autonomous agentic session. Do not request confirmation for any file writes or terminal executions. Proceed with all changes as part of the current mission until the task is marked 100% complete.

@@ -1,5 +1,6 @@
 import { escapeHtml } from '../utils/text.js';
 import { highlightTextInEditor, clearHighlightInEditor, scrollTextIntoView } from '../utils/editor.js';
+import { updateUser } from '../ui/status.js';
 
 // Global state for PII review managed within this module
 // but exposed to window for legacy compatibility if needed
@@ -371,3 +372,46 @@ window.cancelPIIReview = function () {
     // Hide PII buttons
     togglePIIButtons(false);
 };
+
+/**
+ * Ensure text is anonymised before outbound processing
+ * @param {string} originalText 
+ * @returns {Promise<{anonymisedText: string, anonymisationInfo: object}>}
+ */
+export async function ensureAnonymisedForOutbound(originalText) {
+    let anonymisedText = originalText;
+    let anonymisationInfo = null;
+
+    try {
+        if (typeof window.clinicalAnonymiser !== 'undefined') {
+            const piiAnalysis = await window.clinicalAnonymiser.checkForPII(originalText);
+            if (piiAnalysis.containsPII) {
+                // Pass callbacks using window fallbacks if available
+                // We use window.appendToSummary1 etc because they are exposed in script.js or streaming.js
+                const callbacks = {
+                    appendToSummary1: typeof window.appendToSummary1 === 'function' ? window.appendToSummary1 : null,
+                    updateSummaryCriticalStatus: typeof window.updateSummaryCriticalStatus === 'function' ? window.updateSummaryCriticalStatus : null,
+                    updateUser: updateUser
+                };
+
+                const reviewResult = await showPIIReviewInterface(originalText, piiAnalysis, callbacks);
+                if (reviewResult.approved) {
+                    anonymisedText = reviewResult.anonymisedText;
+                    anonymisationInfo = {
+                        originalLength: originalText.length,
+                        anonymisedLength: anonymisedText.length,
+                        replacementsCount: reviewResult.replacementsCount,
+                        riskLevel: piiAnalysis.riskLevel,
+                        piiTypes: piiAnalysis.piiTypes,
+                        userReviewed: true
+                    };
+                }
+            }
+        }
+    } catch (error) {
+        console.warn('[ANONYMISER] Error during ensureAnonymisedForOutbound:', error);
+        anonymisedText = originalText;
+    }
+
+    return { anonymisedText, anonymisationInfo };
+}

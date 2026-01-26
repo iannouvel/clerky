@@ -4,8 +4,9 @@ import { auth } from '../../firebase-init.js';
 /**
  * Helper to get the current user's ID token.
  * Throws error if user is not authenticated.
+ * @returns {Promise<string>} The Firebase ID token
  */
-async function getIdToken() {
+export async function getIdToken() {
     const user = auth.currentUser;
     if (!user) {
         throw new Error('User not authenticated');
