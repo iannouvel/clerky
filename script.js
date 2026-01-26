@@ -3,43 +3,61 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
+// Import utility modules
 import { escapeHtml, unescapeHtml } from './js/utils/text.js';
-import { postAuthenticated } from './js/api/client.js';
+import { extractRelevanceScore, formatRelevanceScore, getRelevanceCategory } from './js/utils/relevance.js';
+
+// Import API modules
+import { postAuthenticated, getIdToken } from './js/api/client.js';
 import { API_ENDPOINTS } from './js/api/config.js';
-import { showPIIReviewInterface } from './js/features/pii.js';
-import { scrollTextIntoView } from './js/utils/editor.js';
+
+// Import feature modules
+import { showPIIReviewInterface, ensureAnonymisedForOutbound } from './js/features/pii.js';
 import { initializeSuggestionWizard } from './js/features/suggestionWizard.js';
+import { autoInitializeMobile } from './js/features/mobile.js';
+import { initializeConnectivityMonitoring } from './js/features/connectivity.js';
+import { autoInitializeVersion } from './js/features/version.js';
+import { checkDisclaimerAcceptance as checkDisclaimer } from './js/features/disclaimer.js';
+import { clinicalIssues, clinicalIssuesLoaded, loadClinicalIssues } from './js/features/clinicalData.js';
+import { syncGuidelinesInBatches, repairGuidelineContent } from './js/features/guidelines.js';
+import { initializeMarked } from './js/utils/external.js';
+import { showMainContent } from './js/ui/layout.js';
+import { streamingEngine, appendToSummary1 } from './js/ui/streaming.js';
+
+// Expose UI helpers for modules (hoisted functions)
+window.hideSummaryLoading = hideSummaryLoading;
+window.updateSummaryVisibility = updateSummaryVisibility;
 
 
-// Make auth available globally - ADD THIS LINE
+// Import UI modules
+import {
+    scrollTextIntoView,
+    getUserInputContent,
+    setUserInputContent,
+    appendToOutputField,
+    updateUndoRedoButtons,
+    updateChatbotButtonVisibility
+} from './js/utils/editor.js';
+import {
+    updateUser,
+    updateAnalyseAndResetButtons,
+    showSelectionButtons as showSelectionButtonsUI,
+    hideSelectionButtons,
+    updateClearFormattingButton,
+    setButtonLoading
+} from './js/ui/status.js';
+
+// Make auth available globally
 window.auth = auth;
 
-// Load and display version number from package.json
-async function loadVersionNumber() {
-    try {
-        const response = await fetch('./package.json?v=' + Date.now());
-        const packageData = await response.json();
-        const versionElement = document.getElementById('appVersion');
-        if (versionElement && packageData.version) {
-            versionElement.textContent = packageData.version;
-            console.log('[VERSION] App version updated to:', packageData.version);
-        }
-    } catch (error) {
-        // Fail silently - version number is not critical for app functionality
-    }
-}
+// Initialize version display
+autoInitializeVersion();
 
-// Call loadVersionNumber when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadVersionNumber);
-} else {
-    loadVersionNumber();
-}
+// Initialize mobile detection
+autoInitializeMobile();
 
-// ===== Shared AI Model Preference Helpers =====
-
-// Fetch the user's current AI provider preference from the server.
-// Falls back to DeepSeek if anything goes wrong.
+// ===== Global State =====
 
 // Global variable to store relevant guidelines
 let relevantGuidelines = null;
@@ -49,466 +67,28 @@ window.programmaticChangeHistory = [];
 window.hasColoredChanges = false;
 window.currentChangeIndex = -1;
 
+// Initialize connectivity monitoring
+initializeConnectivityMonitoring(updateUser);
+
 // ===== Mobile Detection & Layout Management =====
+// Mobile functionality moved to js/features/mobile.js
 
-// Global mobile state
-window.isMobile = false;
-window.mobileView = 'userInput'; // 'userInput' or 'summary1'
+// ===== Connectivity Monitoring =====  
+// Connectivity monitoring moved to js/features/connectivity.js
 
-// Mobile settings overlay state
-let mobileSettingsInitialized = false;
-let mobileSettingsOverlayOpen = false;
-let userPreferencesOriginalParent = null;
-let userPreferencesOriginalNextSibling = null;
-
-function openMobileSettingsOverlay() {
-    if (!window.isMobile) return;
-
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const bodyContainer = document.getElementById('mobileSettingsBody');
-    const panel = document.getElementById('userPreferencesPanel');
-
-    if (!overlay || !bodyContainer || !panel) {
-        console.warn('[MOBILE] Mobile settings elements not found');
-        return;
-    }
-
-    // Remember original placement on first open
-    if (!userPreferencesOriginalParent) {
-        userPreferencesOriginalParent = panel.parentElement;
-        userPreferencesOriginalNextSibling = panel.nextSibling;
-    }
-
-    // Move preferences panel into the overlay body
-    if (panel.parentElement !== bodyContainer) {
-        bodyContainer.appendChild(panel);
-    }
-
-    overlay.classList.remove('hidden');
-    document.body.classList.add('mobile-settings-open');
-    mobileSettingsOverlayOpen = true;
-}
-
-function closeMobileSettingsOverlay() {
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const panel = document.getElementById('userPreferencesPanel');
-
-    if (overlay) {
-        overlay.classList.add('hidden');
-    }
-
-    // Move the panel back to its original location so desktop layout is unchanged
-    if (panel && userPreferencesOriginalParent) {
-        if (userPreferencesOriginalNextSibling && userPreferencesOriginalNextSibling.parentElement === userPreferencesOriginalParent) {
-            userPreferencesOriginalParent.insertBefore(panel, userPreferencesOriginalNextSibling);
-        } else {
-            userPreferencesOriginalParent.appendChild(panel);
-        }
-    }
-
-    document.body.classList.remove('mobile-settings-open');
-    mobileSettingsOverlayOpen = false;
-}
-
-function initializeMobileSettingsOverlay() {
-    if (mobileSettingsInitialized) return;
-
-    const toggleBtn = document.getElementById('mobileSettingsToggleBtn');
-    const overlay = document.getElementById('mobileSettingsOverlay');
-    const closeBtn = document.getElementById('mobileSettingsCloseBtn');
-
-    if (!toggleBtn || !overlay) {
-        // Elements may not be ready yet
-        return;
-    }
-
-    toggleBtn.addEventListener('click', () => {
-        if (mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        } else {
-            openMobileSettingsOverlay();
-        }
-    });
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            closeMobileSettingsOverlay();
-        });
-    }
-
-    // Close when clicking outside the dialog
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            closeMobileSettingsOverlay();
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        }
-    });
-
-    mobileSettingsInitialized = true;
-}
-
-// Detect if device is mobile based on viewport width and user agent
-function detectMobile() {
-    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    const isMobileWidth = viewportWidth <= 768;
-
-    // User agent detection for additional mobile device detection
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    const isMobileUA = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
-
-    const wasMobile = window.isMobile;
-    window.isMobile = isMobileWidth || (isMobileUA && viewportWidth <= 1024);
-
-    // If mobile state changed, update layout
-    if (wasMobile !== window.isMobile) {
-        applyMobileLayout();
-    }
-
-    return window.isMobile;
-}
-
-// Apply mobile layout changes
-function applyMobileLayout() {
-    const body = document.body;
-    const mainContent = document.getElementById('mainContent');
-    const chatbotLayout = document.getElementById('chatbotLayout');
-    const mobileToggleContainer = document.getElementById('mobileViewToggle');
-    const mobileSettingsToggleBtn = document.getElementById('mobileSettingsToggleBtn');
-
-    // If mainContent doesn't exist yet, try again after a short delay
-    if (!mainContent) {
-        // Retry after a short delay if elements aren't ready
-        setTimeout(() => {
-            if (document.getElementById('mainContent')) {
-                applyMobileLayout();
-            }
-        }, 100);
-        return;
-    }
-
-    if (window.isMobile) {
-        body.classList.add('mobile-mode');
-        mainContent.classList.add('mobile-mode');
-        initializeMobileSettingsOverlay();
-
-        // Hide mobile toggle buttons (not needed with chatbot layout)
-        if (mobileToggleContainer) {
-            mobileToggleContainer.classList.add('hidden');
-        }
-
-        if (mobileSettingsToggleBtn) {
-            mobileSettingsToggleBtn.classList.remove('hidden');
-        }
-    } else {
-        // Ensure any open mobile settings overlay is closed when leaving mobile mode
-        if (mobileSettingsOverlayOpen) {
-            closeMobileSettingsOverlay();
-        }
-
-        body.classList.remove('mobile-mode');
-        mainContent.classList.remove('mobile-mode');
-
-        // Hide mobile toggle buttons
-        if (mobileToggleContainer) {
-            mobileToggleContainer.classList.add('hidden');
-        }
-
-        if (mobileSettingsToggleBtn) {
-            mobileSettingsToggleBtn.classList.add('hidden');
-        }
-    }
-}
-
-// Switch between userInput and summary1 views on mobile
-function switchMobileView(view) {
-    if (!window.isMobile) return;
-
-    const userInputCol = document.querySelector('.user-input-col');
-    const summaryCol = document.querySelector('.summary-col');
-    const userInputBtn = document.getElementById('mobileViewUserInputBtn');
-    const summaryBtn = document.getElementById('mobileViewSummaryBtn');
-
-    window.mobileView = view;
-    sessionStorage.setItem('mobileView', view);
-
-    if (view === 'userInput') {
-        if (userInputCol) {
-            userInputCol.style.display = 'flex';
-            // Ensure TipTap editor is properly visible when switching to userInput
-            const editorElement = userInputCol.querySelector('.tiptap-editor');
-            if (editorElement && window.editors && window.editors.userInput) {
-                // Small delay to ensure DOM update completes
-                setTimeout(() => {
-                    try {
-                        window.editors.userInput.commands.focus();
-                    } catch (e) {
-                        // Editor might not be ready, ignore
-                    }
-                }, 100);
-            }
-        }
-        if (summaryCol) summaryCol.style.display = 'none';
-        if (userInputBtn) userInputBtn.classList.add('active');
-        if (summaryBtn) summaryBtn.classList.remove('active');
-    } else {
-        if (userInputCol) userInputCol.style.display = 'none';
-        if (summaryCol) {
-            summaryCol.style.display = 'flex';
-            // Scroll to top of summary when switching to it
-            const summaryPane = summaryCol.querySelector('#summary1');
-            if (summaryPane) {
-                setTimeout(() => {
-                    summaryPane.scrollTop = 0;
-                }, 50);
-            }
-        }
-        if (userInputBtn) userInputBtn.classList.remove('active');
-        if (summaryBtn) summaryBtn.classList.add('active');
-    }
-}
-
-// Initialize mobile detection on page load and resize
-function initializeMobileDetection() {
-    detectMobile();
-
-    // Listen for window resize
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            detectMobile();
-        }, 150);
-    });
-
-    // Set up mobile view toggle buttons
-    const userInputBtn = document.getElementById('mobileViewUserInputBtn');
-    const summaryBtn = document.getElementById('mobileViewSummaryBtn');
-
-    if (userInputBtn) {
-        userInputBtn.addEventListener('click', () => switchMobileView('userInput'));
-    }
-
-    if (summaryBtn) {
-        summaryBtn.addEventListener('click', () => switchMobileView('summary1'));
-    }
-}
-
-// Initialize mobile detection when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeMobileDetection);
-} else {
-    initializeMobileDetection();
-}
-
-// ===== Connectivity Monitoring =====
-function initializeConnectivityConnection() {
-    window.addEventListener('online', () => {
-        console.log('[NETWORK] Connection restored');
-        updateUser('Connection restored. You are back online.', false);
-        // Clear message after 5 seconds
-        setTimeout(() => {
-            const statusEl = document.getElementById('serverStatusMessage');
-            if (statusEl && statusEl.textContent === 'Connection restored. You are back online.') {
-                statusEl.style.display = 'none';
-            }
-        }, 5000);
-
-        // Attempt to reconnect listeners if needed or rely on Firestore auto-reconnect
-        if (window.cacheManager) {
-            // Signal cache manager we are back online if relevant
-        }
-    });
-
-    window.addEventListener('offline', () => {
-        console.log('[NETWORK] Connection lost');
-        updateUser('Connection lost. Switching to offline mode (cached data).', true); // Keep confusing/persistent message? No, keep it visible.
-        // Actually updateUser logic hides non-loading messages. Let's make it look like a persistent warning or just a notification.
-        // Re-using updateUser with isLoading=false means it auto-hides. 
-        // Let's rely on standard behavior for now.
-    });
-}
-// Initialize connectivity listeners
-initializeConnectivityConnection();
-
-// Add disclaimer check function
+// ===== Disclaimer Check =====
+// checkDisclaimerAcceptance moved to js/features/disclaimer.js
+// Local wrapper for backwards compatibility
 async function checkDisclaimerAcceptance() {
-    const user = auth.currentUser;
-    if (!user) {
-        console.log('[DEBUG] No user authenticated, skipping disclaimer check');
-        return true; // Allow access if no user (will be handled by auth flow)
-    }
-
-    try {
-        console.log('[DEBUG] Checking disclaimer acceptance for user:', user.uid);
-        const disclaimerRef = doc(db, 'disclaimerAcceptance', user.uid);
-        const disclaimerDoc = await getDoc(disclaimerRef);
-
-        if (!disclaimerDoc.exists()) {
-            console.log('[DEBUG] No disclaimer acceptance found, redirecting to disclaimer page');
-            window.location.href = 'disclaimer.html';
-            return false;
-        }
-
-        // Check if disclaimer was accepted today
-        const acceptanceData = disclaimerDoc.data();
-        const acceptanceTime = acceptanceData.acceptanceTime.toDate();
-        const today = new Date();
-        const isToday = acceptanceTime.toDateString() === today.toDateString();
-
-        console.log('[DEBUG] Disclaimer acceptance check:', {
-            acceptanceTime: acceptanceTime.toDateString(),
-            today: today.toDateString(),
-            isToday: isToday
-        });
-
-        if (!isToday) {
-            console.log('[DEBUG] Disclaimer not accepted today, redirecting to disclaimer page');
-            window.location.href = 'disclaimer.html';
-            return false;
-        }
-
-        console.log('[DEBUG] Disclaimer accepted today, allowing access');
-        return true;
-    } catch (error) {
-        console.error('[ERROR] Error checking disclaimer acceptance:', error);
-        // On error, redirect to disclaimer page to be safe
-        window.location.href = 'disclaimer.html';
-        return false;
-    }
+    return checkDisclaimer(auth, db);
 }
 
 // PII Review Logic moved to js/features/pii.js
 // Text Highlighting Utilities moved to js/utils/editor.js
 
-// Import helper functions for TipTap programmatic change tracking
-function getUserInputContent() {
-    const editor = window.editors?.userInput;
-    if (editor && editor.getText) {
-        return editor.getText();
-    }
-    return '';
-}
 
-function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null, isHtml = false) {
-    const editor = window.editors?.userInput;
 
-    if (!editor || !editor.commands) {
-        console.error('[PROGRAMMATIC] TipTap editor not ready');
-        return;
-    }
-
-    // Safe content handling for logging
-    const safeContent = typeof content === 'string' ? content : (content?.toString() ?? '');
-
-    // Log every programmatic change to console
-    if (isProgrammatic) {
-        console.log('═══════════════════════════════════════════════');
-        console.log('[PROGRAMMATIC CHANGE]');
-        console.log('Type:', changeType);
-        console.log('Length:', safeContent.length, 'characters');
-        console.log('Preview:', safeContent.substring(0, 150) + (safeContent.length > 150 ? '...' : ''));
-        console.log('═══════════════════════════════════════════════');
-
-        // Store the state BEFORE the change (for undo)
-        const stateBeforeChange = editor.getJSON();
-
-        // Only apply amber color for PII and Guideline Suggestions changes
-        const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
-
-        if (isHtml) {
-            // Directly set HTML content
-            editor.commands.setContent(safeContent);
-        } else if (shouldColor) {
-            // Set content with amber color
-            if (replacements && replacements.length > 0) {
-                // Only color the specific replacements
-                const html = applyColoredReplacements(safeContent, replacements);
-                editor.commands.setContent(html);
-            } else {
-                // Color the entire content (for wholesale replacements like AI generation)
-                editor.commands.setContent(`<p><span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '</span></p><p><span style="color: #D97706">')}</span></p>`);
-            }
-
-            window.hasColoredChanges = true;
-            updateClearFormattingButton();
-        } else {
-            // Set content without coloring for other programmatic changes
-            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
-            // First, normalize multiple consecutive blank lines into single blank lines
-            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-
-            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
-            const paragraphs = normalizedContent.split('\n\n');
-            const htmlContent = paragraphs
-                .filter(para => para.trim().length > 0)
-                .map(para => {
-                    // Within each paragraph, convert single newlines to <br>
-                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
-                    return `<p>${lines}</p>`;
-                })
-                .join('');
-            editor.commands.setContent(htmlContent);
-        }
-
-        // Store change in history AFTER applying the change
-        // Store stateBeforeChange for undo, and we'll use the current state for redo
-        window.programmaticChangeHistory.push({
-            type: changeType,
-            content: safeContent,
-            timestamp: new Date(),
-            editorState: editor.getJSON(), // State AFTER the change (for redo)
-            editorStateBefore: stateBeforeChange // State BEFORE the change (for undo)
-        });
-        window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
-
-        // Update undo/redo button states
-        updateUndoRedoButtons();
-    } else {
-        if (isHtml) {
-            editor.commands.setContent(safeContent);
-        } else {
-            // Regular content update without coloring
-            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
-            // First, normalize multiple consecutive blank lines into single blank lines
-            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-
-            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
-            const paragraphs = normalizedContent.split('\n\n');
-            const htmlContent = paragraphs
-                .filter(para => para.trim().length > 0)
-                .map(para => {
-                    // Within each paragraph, convert single newlines to <br>
-                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
-                    return `<p>${lines}</p>`;
-                })
-                .join('');
-            editor.commands.setContent(htmlContent);
-        }
-    }
-
-    // Manually update Analyse/Reset button visibility after programmatic content changes
-    const hasContent = safeContent.trim().length > 0;
-    updateAnalyseAndResetButtons(hasContent);
-
-    // Update button visibility after content is set (with small delay to ensure TipTap has processed)
-    setTimeout(() => {
-        updateChatbotButtonVisibility();
-    }, 100);
-}
-
-function updateClearFormattingButton() {
-    const btn = document.getElementById('clearFormattingBtn');
-    if (btn) {
-        btn.style.display = window.hasColoredChanges ? 'inline-block' : 'none';
-        console.log('[DEBUG] Clear formatting button visibility:', btn.style.display);
-    }
-}
+// updateClearFormattingButton is now imported from js/ui/status.js
 
 // Function to display relevant guidelines in the summary
 function displayRelevantGuidelines(categories) {
@@ -517,27 +97,7 @@ function displayRelevantGuidelines(categories) {
         return;
     }
 
-    // Helper function to extract numeric relevance score from descriptive format
-    function extractRelevanceScore(relevanceText) {
-        if (typeof relevanceText === 'number') {
-            return relevanceText; // Already numeric
-        }
-
-        // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
-        const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
-        if (match) {
-            return parseFloat(match[1] || match[2]);
-        }
-
-        // Fallback based on text description
-        const text = relevanceText.toLowerCase();
-        if (text.includes('high') || text.includes('most')) return 0.9;
-        if (text.includes('medium') || text.includes('potentially')) return 0.65;
-        if (text.includes('low') || text.includes('less')) return 0.35;
-        if (text.includes('not') || text.includes('irrelevant')) return 0.1;
-
-        return 0.5; // Default fallback
-    }
+    // Note: extractRelevanceScore is imported from js/utils/relevance.js
 
     // Store ALL relevant guidelines (exclude notRelevant) globally
     const allRelevantGuidelines = [
@@ -556,24 +116,7 @@ function displayRelevantGuidelines(categories) {
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         category: g.category,
         originalRelevance: g.relevance, // Keep original for display purposes
-        organisation: g.organisation // Preserve organisation for display
     }));
-
-    // Enhanced logging to verify storage
-    // console.log('[DEBUG] Stored relevant guidelines:', {
-    //     total: window.relevantGuidelines.length,
-    //     byCategory: {
-    //         mostRelevant: window.relevantGuidelines.filter(g => g.category === 'mostRelevant').length,
-    //         potentiallyRelevant: window.relevantGuidelines.filter(g => g.category === 'potentiallyRelevant').length,
-    //         lessRelevant: window.relevantGuidelines.filter(g => g.category === 'lessRelevant').length
-    //     },
-    //     samples: window.relevantGuidelines.slice(0, 3).map(g => ({
-    //         id: g.id, // Use the mapped 'id' property
-    //         title: g.title.substring(0, 50) + '...',
-    //         score: g.relevance,
-    //         category: g.category
-    //     }))
-    // });
 
     let formattedGuidelines = '';
 
@@ -695,25 +238,7 @@ function displayRelevantGuidelines(categories) {
     createGuidelineSelectionInterface(categories, allRelevantGuidelines);
 }
 
-// Central helper to manage Analyse/Reset button visibility and state
-function updateAnalyseAndResetButtons(hasContent) {
-    const analyseBtn = document.getElementById('analyseBtn');
-    const resetBtn = document.getElementById('resetBtn');
-
-    // Analyse button only appears when there is content
-    if (analyseBtn) {
-        analyseBtn.style.display = hasContent ? 'flex' : 'none';
-    }
-
-    // Reset button should remain visible at all times in the fixed bar
-    if (resetBtn) {
-        resetBtn.style.display = 'flex';
-        // Disable Reset when there is nothing meaningful to clear
-        const hasWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
-        resetBtn.disabled = !hasContent && !hasWorkflows;
-    }
-}
-
+// updateAnalyseAndResetButtons is now imported from js/ui/status.js
 // Expose helper globally so inline scripts (e.g. TipTap initialiser in index.html) can use it
 window.updateAnalyseAndResetButtons = updateAnalyseAndResetButtons;
 
@@ -842,27 +367,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
     // Check parallel preference to adjust UI accordingly
     const isParallelMode = typeof loadParallelAnalysisPreference === 'function' && loadParallelAnalysisPreference();
 
-    // Helper function to extract numeric relevance score (redefined for scope)
-    function extractRelevanceScoreLocal(relevanceText) {
-        if (typeof relevanceText === 'number') {
-            return relevanceText; // Already numeric
-        }
-
-        // Extract score from formats like "high relevance (score 0.8-1.0)" or "0.85"
-        const match = relevanceText.match(/score\s+([\d.]+)(?:-[\d.]+)?|^([\d.]+)$/);
-        if (match) {
-            return parseFloat(match[1] || match[2]);
-        }
-
-        // Fallback based on text description
-        const text = relevanceText.toLowerCase();
-        if (text.includes('high') || text.includes('most')) return 0.9;
-        if (text.includes('medium') || text.includes('potentially')) return 0.65;
-        if (text.includes('low') || text.includes('less')) return 0.35;
-        if (text.includes('not') || text.includes('irrelevant')) return 0.1;
-
-        return 0.5; // Default fallback
-    }
+    // Note: extractRelevanceScore is imported from js/utils/relevance.js
 
     // Combine ALL relevant guidelines (exclude notRelevant)
     const allGuidelinesFlat = [
@@ -1196,131 +701,12 @@ function updateProcessButtonText() {
     }
 }
 
-// Function to show update messages to the user in the fixed button row
-function updateUser(message, isLoading = false) {
-    const statusEl = document.getElementById('serverStatusMessage');
+// UI Status functions (updateUser, showSelectionButtons, hideSelectionButtons) 
+// are now imported from js/ui/status.js
 
-    if (!statusEl) {
-        console.warn('[STATUS] serverStatusMessage element not found');
-        return;
-    }
-
-    // Avoid duplicate "Finding relevant guidelines..." indicators in the fixed button row:
-    // the Analyse button already shows this progress state with a spinner/text.
-    if (message && isLoading && /finding\s+relevant\s+guidelines/i.test(message)) {
-        const analyseSpinner = document.getElementById('analyseSpinner');
-        const analyseSpinnerVisible = !!(
-            analyseSpinner &&
-            window.getComputedStyle(analyseSpinner).display !== 'none'
-        );
-
-        if (analyseSpinnerVisible) {
-            // Ensure we don't leave stale status text visible.
-            statusEl.style.display = 'none';
-            statusEl.textContent = '';
-            return;
-        }
-    }
-
-    if (message) {
-        // When loading, show spinner + message; otherwise just text
-        if (isLoading) {
-            statusEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
-        } else {
-            statusEl.textContent = message;
-        }
-
-        statusEl.style.display = 'flex';
-
-        // Auto-hide non-loading messages after a short delay
-        if (!isLoading) {
-            const currentMessage = statusEl.textContent;
-            setTimeout(() => {
-                // Only hide if nothing has changed since we scheduled the hide
-                if (statusEl.textContent === currentMessage) {
-                    statusEl.style.display = 'none';
-                    statusEl.textContent = '';
-                }
-            }, 5000);
-        }
-    } else {
-        // Explicit clear
-        statusEl.style.display = 'none';
-        statusEl.textContent = '';
-    }
-}
-
-// Function to show selection buttons in the fixed button row
+// Local wrapper for showSelectionButtons to pass updateProcessButtonText
 function showSelectionButtons() {
-    const buttonContainer = document.getElementById('fixedButtonRow');
-    if (!buttonContainer) {
-        console.warn('[DEBUG] Fixed button row not found');
-        return;
-    }
-
-    // Remove existing buttons if any (cleanup first)
-    const existingGroup = document.getElementById('selectionButtonsGroup');
-    if (existingGroup) {
-        console.log('[DEBUG] Removing existing selection buttons before adding new ones');
-        existingGroup.remove();
-    }
-
-    // Create the buttons group
-    const buttonsGroup = document.createElement('div');
-    buttonsGroup.id = 'selectionButtonsGroup';
-    buttonsGroup.className = 'selection-buttons-group';
-    buttonsGroup.style.display = 'flex'; // Force display
-    buttonsGroup.style.visibility = 'visible'; // Force visibility
-    buttonsGroup.innerHTML = `
-        <button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)" title="Process selected guidelines">
-            <span class="btn-icon">🚀</span>
-            <span class="btn-text">Process Selected Guidelines</span>
-        </button>
-        <button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)" title="Select all guidelines">
-            ✅ Select All
-        </button>
-        <button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)" title="Deselect all guidelines">
-            ❌ Deselect All
-        </button>
-    `;
-
-    // Insert after Analyse button (before clerking buttons)
-    const analyseBtn = document.getElementById('analyseBtn');
-    if (analyseBtn && analyseBtn.nextSibling) {
-        buttonContainer.insertBefore(buttonsGroup, analyseBtn.nextSibling);
-    } else {
-        buttonContainer.appendChild(buttonsGroup);
-    }
-
-    // Update button text based on initial selection count
-    updateProcessButtonText();
-
-    // Use event delegation on document to handle checkbox changes (works for dynamically created checkboxes)
-    // Remove any existing listener first to avoid duplicates
-    if (window.guidelineCheckboxChangeHandler) {
-        document.removeEventListener('change', window.guidelineCheckboxChangeHandler);
-    }
-
-    // Create and store the handler function
-    window.guidelineCheckboxChangeHandler = function (event) {
-        if (event.target && event.target.classList.contains('guideline-checkbox')) {
-            updateProcessButtonText();
-        }
-    };
-
-    // Add event listener using delegation
-    document.addEventListener('change', window.guidelineCheckboxChangeHandler);
-
-    console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
-}
-
-// Function to hide selection buttons from the button container
-function hideSelectionButtons() {
-    const buttonsGroup = document.getElementById('selectionButtonsGroup') || document.querySelector('.selection-buttons-group');
-    if (buttonsGroup) {
-        buttonsGroup.remove();
-        console.log('[DEBUG] Selection buttons removed from button container');
-    }
+    showSelectionButtonsUI(updateProcessButtonText);
 }
 
 // Global reset handler - clears input, summary, and action UIs when idle
@@ -1446,14 +832,11 @@ function createGuidelineElement(guideline) {
 
 // Application state flags
 let isInitialized = false;
-let clinicalIssuesLoaded = false;
+// clinicalIssuesLoaded is imported from js/features/clinicalData.js
 let guidanceDataLoaded = false;
 
 // Clinical data storage
-let clinicalIssues = {
-    obstetrics: [],
-    gynaecology: []
-};
+// clinicalIssues is imported from js/features/clinicalData.js
 let AIGeneratedListOfIssues = [];
 let guidelinesForEachIssue = [];
 
@@ -1478,232 +861,16 @@ let currentSuggestions = [];
 let userDecisions = {};
 
 // Initialize marked library
-function initializeMarked() {
-    console.log('Starting marked library initialization...');
-    return new Promise((resolve, reject) => {
-        if (window.marked) {
-            console.log('Marked library already loaded');
-            resolve();
-            return;
-        }
+// marked library initialization is imported from js/utils/external.js
 
-        console.log('Creating marked script element...');
-        const markedScript = document.createElement('script');
-        markedScript.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-        markedScript.onload = function () {
-            console.log('Marked script loaded successfully');
-            window.marked = marked;
-            console.log('Marked library initialized');
-            resolve();
-        };
-        markedScript.onerror = function (error) {
-            console.error('Error loading marked library:', error);
-            reject(error);
-        };
-        console.log('Appending marked script to document head...');
-        document.head.appendChild(markedScript);
-    });
-}
-
-// Make loadClinicalIssues available globally
-window.loadClinicalIssues = async function () {
-    console.log('Starting loadClinicalIssues...');
-    if (clinicalIssuesLoaded) {
-        console.log('Clinical issues already loaded');
-        return;
-    }
-
-    try {
-        console.log('Fetching clinical_issues.json...');
-        const response = await fetch('clinical_issues.json');
-        console.log('Fetch response status:', response.status);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        console.log('Parsing JSON response...');
-        const data = await response.json();
-        console.log('Clinical issues data loaded:', data);
-        clinicalIssues = data;
-        clinicalIssuesLoaded = true;
-        console.log('Clinical issues loaded successfully');
-    } catch (error) {
-        console.error('Error loading clinical issues:', error);
-        throw error;
-    }
-};
+// Make loadClinicalIssues available globally (using imported function)
+window.loadClinicalIssues = loadClinicalIssues;
 
 // Show main content
-function showMainContent() {
-    console.log('Starting showMainContent...');
-    const loading = document.getElementById('loading');
-    const landingPage = document.getElementById('landingPage');
-    const mainContent = document.getElementById('mainContent');
-
-    console.log('Elements found:', {
-        loading: !!loading,
-        landingPage: !!landingPage,
-        mainContent: !!mainContent
-    });
-
-    if (loading) {
-        console.log('Hiding loading screen...');
-        loading.classList.add('hidden');
-    }
-    if (landingPage) {
-        console.log('Hiding landing page...');
-        landingPage.classList.add('hidden');
-    }
-    if (mainContent) {
-        console.log('Showing main content...');
-        mainContent.classList.remove('hidden');
-    }
-}
+// showMainContent is imported from js/ui/layout.js
 
 // Helper to sync guidelines in batches to avoid timeout
-async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) {
-    console.log(`[BATCH_SYNC] Starting batch sync with batchSize=${batchSize}, maxBatches=${maxBatches}`);
-
-    let totalProcessed = 0;
-    let totalSucceeded = 0;
-    let totalFailed = 0;
-    let batchCount = 0;
-    let remaining = 1; // Start with 1 to enter the loop
-
-    try {
-        while (remaining > 0 && batchCount < maxBatches) {
-            batchCount++;
-            console.log(`[BATCH_SYNC] Starting batch ${batchCount}...`);
-
-            const response = await fetch(`${window.SERVER_URL}/syncGuidelinesBatch`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${idToken}`
-                },
-                body: JSON.stringify({ batchSize })
-            });
-
-            if (!response.ok) {
-                console.error(`[BATCH_SYNC] Batch ${batchCount} failed with status ${response.status}`);
-                break;
-            }
-
-            const result = await response.json();
-            console.log(`[BATCH_SYNC] Batch ${batchCount} result:`, result);
-
-            totalProcessed += result.processed || 0;
-            totalSucceeded += result.succeeded || 0;
-            totalFailed += result.failed || 0;
-            remaining = result.remaining || 0;
-
-            console.log(`[BATCH_SYNC] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
-
-            // If no more remaining, we're done
-            if (remaining === 0) {
-                console.log('[BATCH_SYNC] All guidelines synced!');
-                break;
-            }
-
-            // Small delay between batches to avoid overwhelming the server
-            if (remaining > 0) {
-                console.log(`[BATCH_SYNC] Waiting 2 seconds before next batch...`);
-                await new Promise(resolve => setTimeout(resolve, 2000));
-            }
-        }
-
-        return {
-            success: true,
-            totalProcessed,
-            totalSucceeded,
-            totalFailed,
-            batchesRun: batchCount,
-            remaining
-        };
-
-    } catch (error) {
-        console.error('[BATCH_SYNC] Error during batch sync:', error);
-        return {
-            success: false,
-            error: error.message,
-            totalProcessed,
-            totalSucceeded,
-            totalFailed
-        };
-    }
-}
-
-// Helper to repair content for guidelines with missing content/condensed
-async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
-    console.log(`[CONTENT_REPAIR] Starting content repair with batchSize=${batchSize}, maxBatches=${maxBatches}`);
-
-    let totalProcessed = 0;
-    let totalSucceeded = 0;
-    let totalFailed = 0;
-    let batchCount = 0;
-    let remaining = 1; // Start with 1 to enter the loop
-
-    try {
-        while (remaining > 0 && batchCount < maxBatches) {
-            batchCount++;
-            console.log(`[CONTENT_REPAIR] Starting batch ${batchCount}...`);
-
-            const response = await fetch(`${window.SERVER_URL}/repairGuidelineContent`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${idToken}`
-                },
-                body: JSON.stringify({ batchSize })
-            });
-
-            if (!response.ok) {
-                console.error(`[CONTENT_REPAIR] Batch ${batchCount} failed with status ${response.status}`);
-                break;
-            }
-
-            const result = await response.json();
-            console.log(`[CONTENT_REPAIR] Batch ${batchCount} result:`, result);
-
-            totalProcessed += result.processed || 0;
-            totalSucceeded += result.succeeded || 0;
-            totalFailed += result.failed || 0;
-            remaining = result.remaining || 0;
-
-            console.log(`[CONTENT_REPAIR] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
-
-            // If no more remaining, we're done
-            if (remaining === 0) {
-                console.log('[CONTENT_REPAIR] All guidelines repaired!');
-                break;
-            }
-
-            // Small delay between batches to avoid overwhelming the server
-            if (remaining > 0) {
-                console.log(`[CONTENT_REPAIR] Waiting 3 seconds before next batch...`);
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            }
-        }
-
-        return {
-            success: true,
-            totalProcessed,
-            totalSucceeded,
-            totalFailed,
-            batchesRun: batchCount,
-            remaining
-        };
-
-    } catch (error) {
-        console.error('[CONTENT_REPAIR] Error during content repair:', error);
-        return {
-            success: false,
-            error: error.message,
-            totalProcessed,
-            totalSucceeded,
-            totalFailed
-        };
-    }
-}
+// syncGuidelinesInBatches and repairGuidelineContent are imported from js/features/guidelines.js
 
 // Make repair function available globally for console use
 window.repairGuidelineContent = async function () {
@@ -2877,45 +2044,7 @@ function redo() {
     }
 }
 
-// Function to update button states
-function updateUndoRedoButtons() {
-    const undoBtn = document.getElementById('undoBtn');
-    const redoBtn = document.getElementById('redoBtn');
-    const editor = window.editors?.userInput;
 
-    // Check if we have programmatic changes to track
-    const hasProgrammaticHistory = window.programmaticChangeHistory && window.programmaticChangeHistory.length > 0;
-
-    if (hasProgrammaticHistory) {
-        // Use programmatic change history for button states
-        if (undoBtn) {
-            // Enable undo if we're at index 0 or higher (can undo to before first change)
-            // Disable only if we're already before the first change (index -1)
-            undoBtn.disabled = window.currentChangeIndex < 0;
-        }
-        if (redoBtn) {
-            // Disable redo if we're at the last change
-            // Enable redo if currentChangeIndex < length - 1 (including -1)
-            redoBtn.disabled = window.currentChangeIndex >= window.programmaticChangeHistory.length - 1;
-        }
-    } else if (editor) {
-        // Fall back to TipTap's built-in undo/redo state
-        if (undoBtn) {
-            undoBtn.disabled = !editor.can().undo();
-        }
-        if (redoBtn) {
-            redoBtn.disabled = !editor.can().redo();
-        }
-    } else {
-        // Fall back to clinical note history if no editor
-        if (undoBtn) {
-            undoBtn.disabled = window.clinicalNoteHistoryIndex <= 0;
-        }
-        if (redoBtn) {
-            redoBtn.disabled = window.clinicalNoteHistoryIndex >= window.clinicalNoteHistory.length - 1;
-        }
-    }
-}
 
 // Initialize TipTap editor integration when ready
 function initializeTipTapIntegration() {
@@ -3029,22 +2158,7 @@ function initializeTipTapIntegration() {
 // ===== Chatbot-style UX Functions =====
 
 // Show/hide action buttons based on input content
-function updateChatbotButtonVisibility() {
-    const editor = window.editors?.userInput;
-    const analyseBtn = document.getElementById('analyseBtn');
-    const summarySection = document.getElementById('summarySection');
 
-    if (!editor || !summarySection) return;
-
-    const content = editor.getText().trim();
-    const hasContent = content.length > 0;
-
-    // The analyse button visibility is controlled by the summarySection visibility
-    // Just ensure the button is enabled when content exists
-    if (analyseBtn && hasContent) {
-        analyseBtn.disabled = false;
-    }
-}
 
 // Show/hide summary section based on content
 function updateSummaryVisibility() {
@@ -3834,619 +2948,9 @@ function updateAnalyseButtonProgress(stepText = null, isActive = false) {
 
 // ==================== END ANALYSE BUTTON PROGRESS ====================
 
-// ==================== STREAMING ENGINE FOR SUMMARY1 ====================
-// Modern ChatGPT-style streaming text reveal with intelligent pausing
-
-const streamingEngine = {
-    queue: [],
-    isStreaming: false,
-    isPaused: false,
-    currentStreamController: null,
-    charDelay: 10, // milliseconds per character (very fast streaming)
-
-    // Add content to the streaming queue
-    enqueue(contentWrapper, shouldPause, onComplete, options = {}) {
-        console.log('[STREAMING] Enqueuing content for streaming', {
-            hasInteractive: shouldPause,
-            queueLength: this.queue.length,
-            options
-        });
-
-        this.queue.push({
-            wrapper: contentWrapper,
-            shouldPause,
-            onComplete,
-            options
-        });
-
-        // Start processing if not already streaming
-        if (!this.isStreaming) {
-            this.processQueue();
-        }
-    },
-
-    // Process the streaming queue
-    async processQueue() {
-        if (this.queue.length === 0) {
-            this.isStreaming = false;
-            console.log('[STREAMING] Queue empty, streaming stopped');
-            return;
-        }
-
-        if (this.isPaused) {
-            console.log('[STREAMING] Streaming paused, waiting for resume');
-            return;
-        }
-
-        this.isStreaming = true;
-        const item = this.queue.shift();
-
-        console.log('[STREAMING] Processing queue item', {
-            shouldPause: item.shouldPause,
-            remainingInQueue: this.queue.length,
-            action: item.options?.action || 'streamIn'
-        });
-
-        if (item.options?.action === 'unstream') {
-            await this.unstreamElement(item.wrapper, item.onComplete);
-        } else if (item.options?.action === 'wait') {
-            await this.delay(item.options.duration || 1000);
-            if (item.onComplete) item.onComplete();
-        } else {
-            await this.streamElement(item.wrapper, item.shouldPause, item.options);
-            if (item.onComplete) item.onComplete();
-        }
-
-        // Continue with next item unless paused
-        if (!this.isPaused) {
-            this.processQueue();
-        }
-    },
-
-    // Stream removal of an element's content (reverse typing)
-    async unstreamElement(wrapper, onComplete) {
-        console.log('[STREAMING] ◄◄◄ Starting unstream of element');
-
-        if (!wrapper || !wrapper.parentNode) {
-            console.log('[STREAMING] Wrapper missing, skipping unstream');
-            if (onComplete) onComplete();
-            return;
-        }
-
-        // Get text content to unstream
-        const textContent = wrapper.textContent || '';
-
-        // Create streaming container
-        const streamContainer = document.createElement('div');
-        streamContainer.className = 'streaming-container';
-        streamContainer.style.display = 'inline';
-
-        // Create cursor
-        const cursor = document.createElement('span');
-        cursor.className = 'streaming-cursor';
-        cursor.textContent = '▋';
-
-        // Replace content with streaming setup
-        wrapper.innerHTML = '';
-        wrapper.appendChild(streamContainer);
-        wrapper.appendChild(cursor);
-
-        let currentText = textContent;
-        streamContainer.textContent = currentText;
-
-        // Unstream character by character
-        while (currentText.length > 0) {
-            if (this.isPaused) {
-                wrapper.remove();
-                break;
-            }
-
-            currentText = currentText.slice(0, -1);
-            streamContainer.textContent = currentText;
-
-            await this.delay(this.charDelay);
-        }
-
-        // Clean up
-        cursor.remove();
-        wrapper.remove();
-
-        console.log('[STREAMING] Unstream complete');
-
-        if (onComplete) onComplete();
-    },
-
-    // Stream a single element's content
-    async streamElement(wrapper, shouldPauseAfter, options = {}) {
-        console.log('[STREAMING] ►►► Starting stream of element', {
-            willPauseAfter: shouldPauseAfter,
-            timestamp: new Date().toISOString(),
-            forceStream: options?.forceStream
-        });
-
-        // Show the wrapper immediately
-        wrapper.style.display = ''; // Restore default display (block)
-        wrapper.style.opacity = '1';
-        console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
-
-        // Extract all text content and HTML structure
-        const originalHTML = wrapper.innerHTML;
-        const textContent = wrapper.textContent || '';
-
-        // Check for interactive elements first
-        const interactiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
-        const hasInteractiveElements = interactiveElements.length > 0;
-
-        console.log('[STREAMING] Content analysis:', {
-            textLength: textContent.length,
-            hasInteractive: hasInteractiveElements,
-            interactiveCount: interactiveElements.length,
-            textPreview: textContent.substring(0, 200) + '...'
-        });
-
-        // OPTIMIZATION: Only stream short content character-by-character
-        // For long content (>200 chars), show instantly to avoid delays
-        const MAX_STREAM_LENGTH = 200;
-        const shouldStreamFully = options.forceStream || (textContent.length <= MAX_STREAM_LENGTH && textContent.length >= 20);
-
-        console.log('[STREAMING] Streaming decision:', {
-            textLength: textContent.length,
-            maxStreamLength: MAX_STREAM_LENGTH,
-            shouldStreamFully,
-            willShowInstantly: !options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)
-        });
-
-        if (!options.forceStream && (textContent.length < 20 || textContent.length > MAX_STREAM_LENGTH)) {
-            console.log('[STREAMING] ⚡ INSTANT DISPLAY MODE', {
-                reason: textContent.length < 20 ? 'too short' : 'too long for streaming',
-                length: textContent.length
-            });
-
-            // Show interactive elements if present
-            if (hasInteractiveElements && shouldPauseAfter) {
-                console.log('[STREAMING] Has interactive elements, setting up pause...');
-                // Small delay for visual effect
-                await this.delay(100);
-
-                const firstInteractive = interactiveElements[0];
-                console.log('[STREAMING] Adding highlight to first interactive:', firstInteractive.tagName);
-                firstInteractive.classList.add('streaming-paused-interactive');
-
-                // Scroll to show the first interactive element (the buttons/controls)
-                const summary1 = document.getElementById('summary1');
-                if (summary1 && firstInteractive) {
-                    requestAnimationFrame(() => {
-                        const interactiveTop = firstInteractive.getBoundingClientRect().top;
-                        const summary1Top = summary1.getBoundingClientRect().top;
-                        const relativeTop = interactiveTop - summary1Top + summary1.scrollTop;
-                        const targetScroll = Math.max(0, relativeTop - 100); // 100px buffer above
-                        summary1.scrollTop = targetScroll;
-                        console.log('[STREAMING] Scrolled to show interactive element');
-                    });
-                }
-
-                // Pause streaming
-                this.isPaused = true;
-                console.log('[STREAMING] isPaused set to TRUE');
-
-                // Set up auto-resume
-                this.setupAutoResume(firstInteractive, interactiveElements);
-
-                console.log('[STREAMING] ⏸️  PAUSED at interactive element (instant display mode)');
-            } else {
-                console.log('[STREAMING] No interactive pause needed');
-            }
-            console.log('[STREAMING] ✓✓ Instant display complete, returning');
-            return;
-        }
-
-        // Stream short content with animation
-        console.log('[STREAMING] Starting character-by-character streaming');
-
-        // Hide interactive elements initially
-        interactiveElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transition = 'opacity 0.3s ease-in';
-        });
-
-        // Create a streaming container
-        const streamContainer = document.createElement('div');
-        streamContainer.className = 'streaming-container';
-        streamContainer.style.display = 'inline';
-
-        // Create cursor
-        const cursor = document.createElement('span');
-        cursor.className = 'streaming-cursor';
-        cursor.textContent = '▋';
-
-        // Clear wrapper and add streaming elements
-        wrapper.innerHTML = '';
-        wrapper.appendChild(streamContainer);
-        wrapper.appendChild(cursor);
-
-        // Stream the text content character by character
-        let displayedText = '';
-
-        for (let i = 0; i < textContent.length; i++) {
-            if (this.isPaused) {
-                // If paused, show remaining text instantly
-                displayedText = textContent;
-                break;
-            }
-
-            displayedText += textContent[i];
-            streamContainer.textContent = displayedText;
-
-            // Smooth scroll to keep cursor visible
-            this.scrollToKeepVisible(cursor);
-
-            await this.delay(this.charDelay);
-        }
-
-        // Remove cursor
-        cursor.remove();
-
-        // Restore original HTML to preserve formatting and structure
-        wrapper.innerHTML = originalHTML;
-
-        console.log('[STREAMING] Character streaming complete');
-
-        console.log('[STREAMING] Text streaming complete, showing interactive elements');
-
-        // Show interactive elements with fade-in
-        if (hasInteractiveElements) {
-            await this.delay(100); // Small delay before showing interactive elements
-
-            const updatedInteractiveElements = wrapper.querySelectorAll('button, select, input, textarea, [onclick]');
-            updatedInteractiveElements.forEach(el => {
-                el.style.opacity = '1';
-            });
-
-            if (shouldPauseAfter) {
-                console.log('[STREAMING] Interactive elements present, pausing for user interaction');
-
-                // Highlight the first interactive element
-                if (updatedInteractiveElements.length > 0) {
-                    const firstInteractive = updatedInteractiveElements[0];
-                    firstInteractive.classList.add('streaming-paused-interactive');
-
-                    // Scroll to show the interactive element
-                    const summary1 = document.getElementById('summary1');
-                    if (summary1 && firstInteractive) {
-                        requestAnimationFrame(() => {
-                            const interactiveTop = firstInteractive.getBoundingClientRect().top;
-                            const summary1Top = summary1.getBoundingClientRect().top;
-                            const relativeTop = interactiveTop - summary1Top + summary1.scrollTop;
-                            const targetScroll = Math.max(0, relativeTop - 100); // 100px buffer above
-                            summary1.scrollTop = targetScroll;
-                            console.log('[STREAMING] Scrolled to show interactive element after streaming');
-                        });
-                    }
-
-                    // Pause streaming
-                    this.isPaused = true;
-
-                    // Set up auto-resume on any interaction
-                    this.setupAutoResume(firstInteractive, updatedInteractiveElements);
-                }
-            }
-        }
-
-        console.log('[STREAMING] ✓✓✓ Element streaming FULLY COMPLETE');
-    },
-
-    // Check if an element is interactive (requires user decision)
-    isInteractiveElement(element) {
-        const tagName = element.tagName.toLowerCase();
-
-        // Check for interactive tags
-        if (['button', 'select', 'input', 'textarea'].includes(tagName)) {
-            return true;
-        }
-
-        // Check for elements with click handlers or certain classes
-        if (element.onclick ||
-            element.getAttribute('onclick') ||
-            element.classList.contains('btn') ||
-            element.classList.contains('button') ||
-            element.classList.contains('dropdown') ||
-            element.querySelector('button, select, input')) {
-            return true;
-        }
-
-        return false;
-    },
-
-    // Set up automatic resume when user interacts with any interactive element
-    setupAutoResume(highlightedElement, allInteractiveElements) {
-        const resumeHandler = (event) => {
-            console.log('[STREAMING] User interaction detected, resuming stream');
-
-            // Remove highlight from all elements
-            allInteractiveElements.forEach(el => {
-                el.classList.remove('streaming-paused-interactive');
-            });
-
-            // Resume streaming
-            this.resume();
-
-            // Remove listeners from all elements
-            allInteractiveElements.forEach(el => {
-                el.removeEventListener('click', resumeHandler);
-                el.removeEventListener('change', resumeHandler);
-            });
-        };
-
-        // Add listeners to all interactive elements
-        allInteractiveElements.forEach(el => {
-            el.addEventListener('click', resumeHandler, { once: true });
-            el.addEventListener('change', resumeHandler, { once: true });
-        });
-    },
-
-    // Scroll to keep the streaming cursor visible
-    scrollToKeepVisible(cursor) {
-        const summary1 = document.getElementById('summary1');
-        if (!summary1 || !cursor.parentNode) return;
-
-        const cursorRect = cursor.getBoundingClientRect();
-        const containerRect = summary1.getBoundingClientRect();
-
-        // Check if cursor is below viewport
-        if (cursorRect.bottom > containerRect.bottom - 50) {
-            const scrollAmount = cursorRect.bottom - containerRect.bottom + 50;
-            summary1.scrollTop += scrollAmount;
-        }
-    },
-
-    // Resume streaming after pause
-    resume() {
-        console.log('[STREAMING] Resuming streaming');
-        this.isPaused = false;
-        this.processQueue();
-    },
-
-    // Stop all streaming and clear queue
-    stop() {
-        console.log('[STREAMING] Stopping all streaming');
-        this.queue = [];
-        this.isStreaming = false;
-        this.isPaused = false;
-
-        if (this.currentStreamController) {
-            this.currentStreamController.abort();
-            this.currentStreamController = null;
-        }
-    },
-
-    // Utility delay function
-    delay(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-};
-
-// ==================== END STREAMING ENGINE ====================
-
-// Utility: strip emoji/icon characters from text before rendering in summary1
-function stripSummaryEmojis(text) {
-    if (!text || typeof text !== 'string') return text;
-
-    try {
-        // Preferred: use Unicode property escapes for pictographic symbols
-        const emojiRegex = /\p{Extended_Pictographic}/gu;
-        return text.replace(emojiRegex, '');
-    } catch (e) {
-        // Fallback for environments without Unicode property escapes:
-        // remove common emoji/icon blocks
-        const basicEmojiRegex = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu;
-        return text.replace(basicEmojiRegex, '');
-    }
-}
-
-function appendToSummary1(content, clearExisting = false, isTransient = false, options = {}) {
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('[SUMMARY1 DEBUG] appendToSummary1 called with:', {
-        contentLength: content?.length,
-        clearExisting,
-        isTransient,
-        options,
-        timestamp: new Date().toISOString()
-    });
-    console.log('[SUMMARY1 DEBUG] Full content:', content);
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-
-    const summary1 = document.getElementById('summary1');
-    if (!summary1) {
-        console.error('[DEBUG] summary1 element not found');
-        return;
-    }
-
-    try {
-        // Clear existing content if requested
-        if (clearExisting) {
-            // Stop any active streaming
-            streamingEngine.stop();
-
-            summary1.innerHTML = '';
-            // Reset scroll tracking when clearing content
-            pendingScrollTarget = null;
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = null;
-            }
-            // Re-add loading spinner container if it was cleared
-            const loadingSpinner = document.getElementById('summaryLoadingSpinner');
-            if (!loadingSpinner) {
-                const spinnerDiv = document.createElement('div');
-                spinnerDiv.id = 'summaryLoadingSpinner';
-                spinnerDiv.className = 'summary-loading-spinner hidden';
-                spinnerDiv.innerHTML = '<div class="spinner-circle"></div><span class="loading-text">Processing...</span>';
-                summary1.appendChild(spinnerDiv);
-            }
-        }
-
-        // Hide loading spinner when content is being added
-        hideSummaryLoading();
-
-        // Normalise content for summary1: strip emojis/icons so typography stays clean
-        const sanitizedContent = typeof content === 'string' ? stripSummaryEmojis(content) : content;
-
-        // Check if content is already HTML
-        const isHtml = typeof sanitizedContent === 'string' && /<[a-z][\s\S]*>/i.test(sanitizedContent);
-        console.log('[DEBUG] Content type check:', { isHtml });
-
-        let processedContent;
-        if (isHtml) {
-            // If content is already HTML, use it directly
-            processedContent = sanitizedContent;
-        } else {
-            // If content is markdown, parse it with marked
-            if (!window.marked) {
-                console.error('[DEBUG] Marked library not loaded');
-                processedContent = sanitizedContent;
-            } else {
-                try {
-                    processedContent = window.marked.parse(sanitizedContent);
-                    console.log('[DEBUG] Marked parsing successful');
-                } catch (parseError) {
-                    console.error('[DEBUG] Error parsing with marked:', parseError);
-                    processedContent = sanitizedContent;
-                }
-            }
-        }
-
-        // Create a temporary container to sanitize the content
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = processedContent;
-
-        // Create a wrapper div for the new content
-        const newContentWrapper = document.createElement('div');
-        newContentWrapper.className = 'new-content-entry';
-        if (isTransient) {
-            newContentWrapper.setAttribute('data-transient', 'true');
-            newContentWrapper.classList.add('transient-message');
-        }
-        newContentWrapper.innerHTML = tempDiv.innerHTML;
-
-        // Append the sanitized content to DOM
-        summary1.appendChild(newContentWrapper);
-        console.log('[SUMMARY1 DEBUG] Content appended to DOM successfully', isTransient ? '(transient)' : '(permanent)');
-        console.log('[SUMMARY1 DEBUG] Wrapper innerHTML:', newContentWrapper.innerHTML);
-        console.log('[SUMMARY1 DEBUG] Wrapper textContent length:', newContentWrapper.textContent?.length);
-
-        // STREAMING DECISION POINT
-        if (options.streamEffect === 'in-out') {
-            console.log('[SUMMARY1 DEBUG] ✓ STREAM TRANSIENT PATH - appearing and disappearing by stream');
-
-            // Start hidden and collapsed
-            newContentWrapper.style.opacity = '0';
-            newContentWrapper.style.display = 'none'; // Hide from layout until streamed
-
-            // 1. Stream In
-            streamingEngine.enqueue(
-                newContentWrapper,
-                false,
-                () => {
-                    console.log('[SUMMARY1 DEBUG] Stream transient IN complete');
-                    updateSummaryVisibility();
-                    updateSummaryCriticalStatus();
-                },
-                { forceStream: true, action: 'streamIn' }
-            );
-
-            // 2. Wait
-            streamingEngine.enqueue(
-                null,
-                false,
-                null,
-                { action: 'wait', duration: options.transientDelay || 5000 }
-            );
-
-            // 3. Stream Out
-            streamingEngine.enqueue(
-                newContentWrapper,
-                false,
-                () => {
-                    // On removal complete
-                    console.log('[SUMMARY1 DEBUG] Stream transient removal complete');
-                    updateSummaryVisibility();
-                    updateSummaryCriticalStatus();
-                },
-                { action: 'unstream' }
-            );
-
-        } else if (isTransient) {
-            // Transient messages: show instantly, no streaming, auto-remove after delay
-            console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
-            newContentWrapper.style.opacity = '1';
-
-            // Auto-remove transient messages after 5 seconds
-            setTimeout(() => {
-                if (newContentWrapper.parentNode) {
-                    console.log('[SUMMARY1 DEBUG] Auto-removing transient message');
-                    newContentWrapper.style.transition = 'opacity 0.5s ease-out, max-height 0.5s ease-out';
-                    newContentWrapper.style.opacity = '0';
-                    newContentWrapper.style.maxHeight = '0';
-                    newContentWrapper.style.overflow = 'hidden';
-
-                    setTimeout(() => {
-                        if (newContentWrapper.parentNode) {
-                            newContentWrapper.remove();
-                        }
-                    }, 500);
-                }
-            }, 5000);
-
-            // Don't scroll for transient messages - they're temporary
-            console.log('[SUMMARY1 DEBUG] Transient content shown (no scroll)');
-        } else {
-            // Permanent content: use streaming engine
-            console.log('[SUMMARY1 DEBUG] ✓ PERMANENT PATH - queueing for streaming');
-
-            // Check if content has interactive elements
-            const hasInteractive = streamingEngine.isInteractiveElement(newContentWrapper) ||
-                newContentWrapper.querySelector('button, select, input, textarea, [onclick]');
-
-            const interactiveElements = newContentWrapper.querySelectorAll('button, select, input, textarea, [onclick]');
-            console.log('[SUMMARY1 DEBUG] Interactive elements check:', {
-                hasInteractive,
-                elementCount: interactiveElements.length,
-                elementTypes: Array.from(interactiveElements).map(el => el.tagName)
-            });
-
-            // Enqueue for streaming
-            console.log('[SUMMARY1 DEBUG] Enqueueing content to streaming engine...');
-            streamingEngine.enqueue(
-                newContentWrapper,
-                hasInteractive, // Should pause after streaming if interactive
-                () => {
-                    // On completion callback
-                    console.log('[SUMMARY1 DEBUG] ✓✓✓ Streaming COMPLETE for this content block');
-                    updateSummaryVisibility();
-                    updateSummaryCriticalStatus();
-                }
-            );
-        }
-
-        // Update summary visibility for transient messages
-        if (isTransient) {
-            setTimeout(() => {
-                updateSummaryVisibility();
-                updateSummaryCriticalStatus();
-            }, 100);
-        }
-
-    } catch (error) {
-        console.error('[DEBUG] Error in appendToSummary1:', error);
-        // Fallback to direct content append if something goes wrong
-        summary1.innerHTML += content;
-        // Update visibility even on error
-        setTimeout(() => {
-            updateSummaryVisibility();
-            updateSummaryCriticalStatus();
-        }, 100);
-    }
-}
+// Streaming engine and utilities moved to modules
+// appendToSummary1 is imported from js/ui/streaming.js ("un-exported" here, as it's now imported)
+window.appendToSummary1 = appendToSummary1;
 
 // Helper for decision-only UIs in summary1.
 // Use this for new code that renders interactive panels where the user must make a choice.
@@ -4455,87 +2959,7 @@ function appendDecisionUIToSummary(htmlContent, clearExisting = false, options =
 }
 
 // Function to replace content in the user input field
-function appendToOutputField(content, clearExisting = true, isHtml = false) {
-    console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
-        contentLength: content?.length,
-        clearExisting,
-        isHtml,
-        contentPreview: content?.substring(0, 100) + '...'
-    });
 
-    const userInput = document.getElementById('userInput');
-    if (!userInput) {
-        console.error('[DEBUG] userInput element not found');
-        return;
-    }
-
-    try {
-        let processedContent = content;
-
-        if (isHtml) {
-            // If isHtml is explicitly true, trust the content
-            processedContent = content;
-        } else if (/<[a-z][\s\S]*>/i.test(content)) {
-            // If HTML is detected but isHtml is false, strip tags (legacy behavior)
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = content;
-            processedContent = tempDiv.textContent || tempDiv.innerText || '';
-        }
-
-        if (clearExisting) {
-            setUserInputContent(processedContent, true, 'Content Replacement', null, isHtml);
-        } else {
-            // If appending, we need to get current content as HTML if new content is HTML
-            const editor = window.editors?.userInput;
-            if (editor) {
-                const currentContent = isHtml ? editor.getHTML() : getUserInputContent();
-                const separator = isHtml ? '<br><br>' : '\n\n';
-                const newContent = currentContent + separator + processedContent;
-                setUserInputContent(newContent, true, 'Content Addition', null, isHtml);
-            } else {
-                // Fallback
-                const currentContent = getUserInputContent();
-                setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition', null, false);
-            }
-        }
-
-        console.log('[DEBUG] Content replaced in user input successfully');
-    } catch (error) {
-        console.error('[DEBUG] Error in appendToOutputField:', error);
-        setUserInputContent(content, true, 'Error Recovery');
-    }
-}
-
-// Helper: ensure text is anonymised before outbound requests
-async function ensureAnonymisedForOutbound(originalText) {
-    let anonymisedText = originalText;
-    let anonymisationInfo = null;
-
-    try {
-        if (typeof window.clinicalAnonymiser !== 'undefined') {
-            const piiAnalysis = await window.clinicalAnonymiser.checkForPII(originalText);
-            if (piiAnalysis.containsPII) {
-                const reviewResult = await showPIIReviewInterface(originalText, piiAnalysis);
-                if (reviewResult.approved) {
-                    anonymisedText = reviewResult.anonymisedText;
-                    anonymisationInfo = {
-                        originalLength: originalText.length,
-                        anonymisedLength: anonymisedText.length,
-                        replacementsCount: reviewResult.replacementsCount,
-                        riskLevel: piiAnalysis.riskLevel,
-                        piiTypes: piiAnalysis.piiTypes,
-                        userReviewed: true
-                    };
-                }
-            }
-        }
-    } catch (error) {
-        console.warn('[ANONYMISER] Error during ensureAnonymisedForOutbound:', error);
-        anonymisedText = originalText;
-    }
-
-    return { anonymisedText, anonymisationInfo };
-}
 
 // Update checkAgainstGuidelines to use stored relevant guidelines
 async function checkAgainstGuidelines(suppressHeader = false) {
@@ -9537,45 +7961,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- End Speech Recognition ---
 });
 
-// Logging utility
-const Logger = {
-    levels: {
-        DEBUG: 'debug',
-        INFO: 'info',
-        WARN: 'warn',
-        ERROR: 'error'
-    },
-
-    _formatMessage(level, message, data = null) {
-        const timestamp = new Date().toISOString();
-        const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
-        return data ? `${formattedMessage} ${JSON.stringify(data)}` : formattedMessage;
-    },
-
-    debug(message, data = null) {
-        if (process.env.NODE_ENV === 'development') {
-            console.debug(this._formatMessage(this.levels.DEBUG, message, data));
-        }
-    },
-
-    info(message, data = null) {
-        console.info(this._formatMessage(this.levels.INFO, message, data));
-    },
-
-    warn(message, data = null) {
-        console.warn(this._formatMessage(this.levels.WARN, message, data));
-    },
-
-    error(message, data = null) {
-        console.error(this._formatMessage(this.levels.ERROR, message, data));
-    }
-};
-
-// Replace console.log calls with Logger
+// Logger is now available from js/utils/logging.js if needed
 // Example usage:
+// import { Logger } from './js/utils/logging.js';
 // Logger.debug('Starting initializeApp...');
-// Logger.info('Application initialized successfully', { userId: user.uid });
-// Logger.error('Failed to load data', { error: error.message, stack: error.stack });
 
 // Make guideline suggestions functions globally accessible for onclick handlers
 window.handleSuggestionAction = handleSuggestionAction;
@@ -9589,25 +7978,7 @@ window.switchChat = switchChat;
 window.deleteChat = deleteChat;
 window.startNewChat = startNewChat;
 
-// Button Loading State Helper Functions
-function setButtonLoading(button, isLoading, originalText = null) {
-    if (!button) return;
-
-    if (isLoading) {
-        // Store original text if not already stored
-        if (!button.dataset.originalText) {
-            button.dataset.originalText = button.innerHTML;
-        }
-        button.disabled = true;
-        button.innerHTML = '<span class="spinner-inline"></span> Saving...';
-        button.classList.add('loading');
-    } else {
-        button.disabled = false;
-        button.innerHTML = originalText || button.dataset.originalText || 'Save';
-        button.classList.remove('loading');
-        delete button.dataset.originalText;
-    }
-}
+// setButtonLoading is now imported from js/ui/status.js
 
 // Hospital Trust Management Functions
 async function showHospitalTrustModal() {
@@ -12161,7 +10532,7 @@ async function loadChatHistoryFromFirestore() {
         console.warn('Cannot load chat history from Firestore: user not authenticated');
         return [];
     }
-
+ 
     try {
         const idToken = await user.getIdToken();
         const response = await fetch(`${window.SERVER_URL}/getChatHistory`, {
@@ -12170,11 +10541,11 @@ async function loadChatHistoryFromFirestore() {
                 'Authorization': `Bearer ${idToken}`
             }
         });
-
+ 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-
+ 
         const result = await response.json();
         if (result.success) {
             const chats = result.chats || [];
@@ -12488,13 +10859,13 @@ function renderChatHistory() {
         console.error('[DEBUG] historyList element not found!');
         return;
     }
-
+ 
     console.log('[DEBUG] renderChatHistory called with:', {
         chatHistoryLength: chatHistory.length,
         currentChatId: currentChatId,
         historyListExists: !!historyList
     });
-
+ 
     historyList.innerHTML = '';
     
     if (chatHistory.length === 0) {
@@ -12583,7 +10954,7 @@ async function initializeChatHistory() {
             chatHistory = [];
         }
     }
-
+ 
     // Always start with a fresh chat on client load
     console.log('[DEBUG] Starting fresh chat on client load');
     try {
@@ -15026,168 +13397,6 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
     return displayInteractiveSuggestions(suggestions, guidelineTitle);
 }
 
-async function OLD_displayCombinedInteractiveSuggestions_UNUSED(suggestions, guidelinesSummary) {
-    console.log('[DEBUG] displayCombinedInteractiveSuggestions called', {
-        suggestionsCount: suggestions?.length,
-        guidelinesSummary: guidelinesSummary?.length
-    });
-
-    if (!suggestions || suggestions.length === 0) {
-        const noSuggestionsHtml = `
-            <div class="dynamic-advice-container">
-                <h3>💡 Combined Interactive Suggestions</h3>
-                <p>No specific suggestions were generated from the multi-guideline analysis.</p>
-                <p><em>Analyzed: ${guidelinesSummary?.length || 0} guidelines</em></p>
-            </div>
-        `;
-        updateUser('No specific suggestions were generated from the multi-guideline analysis.', false);
-        return;
-    }
-
-    // Group suggestions by source guideline
-    const suggestionsByGuideline = {};
-    suggestions.forEach(suggestion => {
-        const source = suggestion.sourceGuideline || 'Unknown Guideline';
-        if (!suggestionsByGuideline[source]) {
-            suggestionsByGuideline[source] = [];
-        }
-        suggestionsByGuideline[source].push(suggestion);
-    });
-
-    // Create bulk action controls
-    const bulkControlsHtml = `
-        <div class="bulk-actions">
-            <h4>Bulk Actions</h4>
-            <div class="bulk-buttons">
-                <button onclick="bulkAcceptSuggestions('high')" class="bulk-btn accept-btn">Accept All High Priority</button>
-                <button onclick="bulkRejectSuggestions('low')" class="bulk-btn reject-btn">Reject All Low Priority</button>
-                <button onclick="bulkAcceptSuggestions('all')" class="bulk-btn accept-btn">Accept All</button>
-                <button onclick="bulkRejectSuggestions('all')" class="bulk-btn reject-btn">Reject All</button>
-            </div>
-        </div>
-    `;
-
-    // Create suggestions HTML grouped by guideline
-    let groupedSuggestionsHtml = '';
-    let suggestionIndex = 1;
-
-    Object.entries(suggestionsByGuideline).forEach(([guideline, guidelineSuggestions]) => {
-        groupedSuggestionsHtml += `
-            <div class="guideline-group">
-                <h4 class="guideline-source">📋 From: ${guideline}</h4>
-        `;
-
-        guidelineSuggestions.forEach(suggestion => {
-            const suggestionId = `suggestion-${suggestionIndex}`;
-            const priorityClass = suggestion.priority === 'high' ? 'high' :
-                suggestion.priority === 'medium' ? 'medium' : 'low';
-            const categoryIcon = getCategoryIcon(suggestion.category);
-            const originalTextLabel = getOriginalTextLabel(suggestion.originalText, suggestion.category);
-
-            groupedSuggestionsHtml += `
-                <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestionId}" data-source-guideline="${guideline}">
-                    <div class="suggestion-header">
-                        <span class="suggestion-icon">${suggestion.category === 'gap' ? '➕' : '✏️'}</span>
-                        <span class="suggestion-number">#${suggestionIndex}</span>
-                        <span class="priority-badge ${priorityClass}">${suggestion.priority}</span>
-                        <span class="category-label">${categoryIcon} ${suggestion.category}</span>
-                    </div>
-                    
-                    <div class="suggestion-content">
-                        <h4>${suggestion.title || 'Suggestion'}</h4>
-                        
-                        ${suggestion.originalText ? `
-                            <div class="original-text">
-                                <strong>${originalTextLabel}:</strong>
-                                <div class="text-content">"${suggestion.originalText}"</div>
-                            </div>
-                        ` : `
-                            <div class="gap-identified">
-                                <strong>Gap identified:</strong> <span class="gap-content">"${suggestion.gapDescription || 'Missing documentation identified'}"</span>
-                            </div>
-                        `}
-                        
-                        <div class="suggested-text">
-                            <strong>${suggestion.category === 'gap' ? 'Suggested addition:' : 'Suggested modification:'}</strong> <span class="suggestion-text" id="suggestion-text-${suggestionId}">"${suggestion.suggestedText}"</span>
-                        </div>
-                        
-                        <div class="suggestion-reason">
-                            <strong>Why this change is suggested:</strong>
-                            <p>${suggestion.reason}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="suggestion-actions">
-                        <button onclick="handleSuggestionAction('${suggestionId}', 'accept')" class="action-btn accept-btn" id="accept-${suggestionId}">✅ Accept</button>
-                        <button onclick="handleSuggestionAction('${suggestionId}', 'reject')" class="action-btn reject-btn" id="reject-${suggestionId}">❌ Reject</button>
-                        <button onclick="handleSuggestionAction('${suggestionId}', 'modify')" class="action-btn modify-btn" id="modify-${suggestionId}">✏️ Modify</button>
-                    </div>
-                    
-                    <div class="modification-area" id="modification-${suggestionId}" style="display: none;">
-                        <textarea id="modification-text-${suggestionId}" placeholder="Enter your modified version...">${suggestion.suggestedText}</textarea>
-                        <div class="modification-buttons">
-                            <button onclick="confirmModification('${suggestionId}')" class="action-btn accept-btn">Confirm</button>
-                            <button onclick="cancelModification('${suggestionId}')" class="action-btn reject-btn">Cancel</button>
-                        </div>
-                    </div>
-                    
-                    <div class="suggestion-status" id="status-${suggestionId}"></div>
-                </div>
-            `;
-
-            // Store suggestion data globally
-            currentSuggestions.push({
-                id: suggestionId,
-                ...suggestion
-            });
-
-            suggestionIndex++;
-        });
-
-        groupedSuggestionsHtml += '</div>';
-    });
-
-    // Create the complete HTML
-    const suggestionsHtml = `
-        <div class="dynamic-advice-container multi-guideline">
-            <div class="advice-header">
-                <h3>💡 Combined Interactive Suggestions</h3>
-                <p><em>From: ${guidelinesSummary?.length || Object.keys(suggestionsByGuideline).length} guidelines analyzed</em></p>
-                <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes.</p>
-                <div class="advice-explanation">
-                    <p><strong>Note:</strong> Some suggestions identify <em>missing elements</em> (gaps in documentation) rather than existing text that needs changes. These are marked with ⚠️ and represent content that should be added to improve compliance with guidelines.</p>
-                </div>
-            </div>
-            
-            ${bulkControlsHtml}
-            
-            <div class="suggestions-list">
-                ${groupedSuggestionsHtml}
-            </div>
-            
-            <div class="decisions-summary" id="decisions-summary">
-                <div class="summary-stats">
-                    <span id="accepted-count">0</span> accepted, 
-                    <span id="rejected-count">0</span> rejected, 
-                    <span id="modified-count">0</span> modified, 
-                    <span id="pending-count">${suggestions.length}</span> pending
-                </div>
-            </div>
-            
-            <div class="apply-decisions">
-                <button onclick="applyAllDecisions()" class="apply-btn" id="apply-decisions-btn" disabled>Apply All Decisions</button>
-                <p class="apply-note">Review your decisions above, then click "Apply All Decisions" to update the transcript.</p>
-            </div>
-        </div>
-    `;
-
-    console.log('[DEBUG] displayCombinedInteractiveSuggestions: Adding suggestions HTML to summary1');
-    appendToSummary1(suggestionsHtml, false); // Decision UI: combined interactive suggestions
-
-    // Update the decisions summary
-    updateDecisionsSummary();
-}
-
 // Process guidelines one at a time for content repair
 async function diagnoseAndRepairContent() {
     // Prevent multiple simultaneous repairs
@@ -15959,12 +14168,7 @@ const ClinicalConditionsService = {
 };
 
 
-
-// Helper function to extract relevance score from text
-function extractRelevanceScore(relevanceText) {
-    const match = relevanceText.match(/Relevance:\s*(\d+(\.\d+)?)/i);
-    return match ? parseFloat(match[1]) : 0;
-}
+// Note: extractRelevanceScore is now imported from js/utils/relevance.js
 
 // Make Q&A functions globally accessible
 // Define the selectAllQuestionGuidelines function
