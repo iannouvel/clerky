@@ -99,4 +99,33 @@ if (fs.existsSync('CNAME')) {
     console.log('Copied CNAME to dist/');
 }
 
+
+
+// Helper to copy directory recursively
+function copyDirectory(src, dest) {
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+    }
+
+    const entries = fs.readdirSync(src, { withFileTypes: true });
+
+    for (const entry of entries) {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+
+        if (entry.isDirectory()) {
+            copyDirectory(srcPath, destPath);
+        } else {
+            fs.copyFileSync(srcPath, destPath);
+            // console.log(`Copied ${srcPath} to ${destPath}`); 
+        }
+    }
+    console.log(`Copied directory ${src} to ${dest}`);
+}
+
+// Copy js directory recursively
+if (fs.existsSync('js')) {
+    copyDirectory('js', path.join('dist', 'js'));
+}
+
 console.log('Build complete!'); 
