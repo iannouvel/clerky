@@ -379,8 +379,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Sort by relevance score descending (highest first)
     allGuidelinesFlat.sort((a, b) => {
-        const scoreA = extractRelevanceScoreLocal(a.relevance);
-        const scoreB = extractRelevanceScoreLocal(b.relevance);
+        const scoreA = extractRelevanceScore(a.relevance);
+        const scoreB = extractRelevanceScore(b.relevance);
         return scoreB - scoreA;
     });
 
@@ -391,7 +391,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         filename: g.filename || g.title, // Keep both for compatibility
         originalFilename: g.originalFilename || g.title, // Preserve original filename if available
         downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
-        relevance: extractRelevanceScoreLocal(g.relevance), // Convert to numeric score
+        relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         originalRelevance: g.relevance, // Keep original for display purposes
         organisation: g.organisation // Preserve organisation for display
     }));
@@ -431,7 +431,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
         // If it's a string, extract numeric score
         if (typeof relevanceValue === 'string') {
-            const numericScore = extractRelevanceScoreLocal(relevanceValue);
+            const numericScore = extractRelevanceScore(relevanceValue);
             const percentage = Math.round(numericScore * 100);
             console.log('[DEBUG] Extracted score:', {
                 original: relevanceValue,
@@ -484,7 +484,7 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
             // Pre-check only Most Relevant and Potentially Relevant guidelines (score >= 0.6)
             // Less Relevant (score < 0.6) are unchecked by default
-            const numericScore = extractRelevanceScoreLocal(g.relevance);
+            const numericScore = extractRelevanceScore(g.relevance);
             const shouldBeChecked = numericScore >= 0.6;
             const isChecked = shouldBeChecked ? 'checked="checked"' : '';
 
