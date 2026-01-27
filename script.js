@@ -25,8 +25,29 @@ import { autoInitializeMobile } from './js/features/mobile.js';
 import { initializeConnectivityMonitoring } from './js/features/connectivity.js';
 import { autoInitializeVersion } from './js/features/version.js';
 import { checkDisclaimerAcceptance as checkDisclaimer } from './js/features/disclaimer.js';
-import { clinicalIssues, clinicalIssuesLoaded, loadClinicalIssues } from './js/features/clinicalData.js';
-import { syncGuidelinesInBatches, repairGuidelineContent } from './js/features/guidelines.js';
+import { ClinicalConditionsService, loadClinicalIssues } from './js/features/clinicalData.js';
+import { showClinicalIssuesDropdown, generateFakeClinicalInteraction } from './js/features/clinicalInteraction.js';
+import { syncGuidelinesInBatches, repairGuidelineContent, diagnoseAndRepairContent, checkContentStatus, showMetadataProgress, hideMetadataProgress } from './js/features/guidelines.js';
+import {
+    handleSuggestionAction,
+    applyAllDecisions,
+    updateSuggestionStatus,
+    updateDecisionsSummary,
+    currentSuggestions,
+    userDecisions,
+    currentAdviceSession,
+    displayInteractiveSuggestions,
+    showCurrentSuggestion,
+    navigateSuggestion,
+    completeSuggestionReview,
+    cancelSuggestionReview,
+    generateCombinedInteractiveSuggestions,
+    displayCombinedInteractiveSuggestions,
+    displayCombinedSuggestions,
+    bulkAcceptSuggestions,
+    bulkRejectSuggestions,
+    confirmModification
+} from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
 import { streamingEngine, appendToSummary1 } from './js/ui/streaming.js';
@@ -871,6 +892,8 @@ let userDecisions = {};
 
 // Make loadClinicalIssues available globally (using imported function)
 window.loadClinicalIssues = loadClinicalIssues;
+window.showClinicalIssuesDropdown = showClinicalIssuesDropdown;
+window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
 
 // Show main content
 // showMainContent is imported from js/ui/layout.js
@@ -4379,162 +4402,15 @@ window.prepareViewerAuth = async function (event, linkElement) {
 };
 
 // Display interactive suggestions in outputField ONE AT A TIME
-async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidelineId, guidelineFilename) {
-    console.log('[DEBUG] displayInteractiveSuggestions called', {
-        suggestionsCount: suggestions?.length,
-        guidelineTitle,
-        guidelineId,
-        guidelineFilename
-    });
-
-    if (!suggestions || suggestions.length === 0) {
-        console.log('[DEBUG] displayInteractiveSuggestions: No suggestions to display');
-        const noSuggestionsHtml = `
-            <div class="dynamic-advice-container">
-                <h3>💡 Interactive Suggestions</h3>
-                <p>No specific suggestions were generated from the guideline analysis.</p>
-                <p><em>Guideline: ${guidelineTitle || 'Unknown'}</em></p>
-            </div>
-        `;
-        // Inform user that no suggestions were generated via status bar
-        updateUser(`No specific suggestions were generated from the guideline analysis (${guidelineTitle || 'Unknown'}).`, false);
-        return;
-    }
-
-    // Store the review data globally
-    window.currentSuggestionReview = {
-        suggestions,
-        guidelineTitle,
-        guidelineId,
-        guidelineFilename,
-        currentIndex: 0,
-        decisions: []
-    };
-
-    // Show the first suggestion
-    showCurrentSuggestion();
-}
+// displayInteractiveSuggestions is now imported from js/features/suggestions.js
 
 // TEMP PLACEHOLDER - old code follows but won't be called
-function OLD_displayInteractiveSuggestions_UNUSED(suggestions, guidelineTitle) {
-    // Create the interactive suggestions HTML
-    let suggestionsHtml = `
-        <div class="dynamic-advice-container">
-            <div class="advice-header">
-                <h3>💡 Interactive Suggestions</h3>
-                <p><em>From: ${guidelineTitle || 'Guideline Analysis'}</em></p>
-                <p class="advice-instructions">Review each suggestion below. You can <strong>Accept</strong>, <strong>Reject</strong>, or <strong>Modify</strong> the proposed changes.</p>
-                <div class="advice-explanation">
-                    <p><strong>Note:</strong> Some suggestions identify <em>missing elements</em> (gaps in documentation) rather than existing text that needs changes. These are marked with ⚠️ and represent content that should be added to improve compliance with guidelines.</p>
-                </div>
-            </div>
-            <div class="suggestions-list">
-    `;
+// OLD_displayInteractiveSuggestions_UNUSED is removed
+// Create the interactive suggestions HTML
+// Add each suggestion
+// suggestionsHtml generation block removed
+// OLD_displayInteractiveSuggestions_UNUSED legacy cleanup
 
-    // Add each suggestion
-    suggestions.forEach((suggestion, index) => {
-        // Processing each suggestion
-
-        const priorityClass = `priority-${suggestion.priority || 'medium'}`;
-        const categoryIcon = getCategoryIcon(suggestion.category);
-
-        suggestionsHtml += `
-            <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
-                <div class="suggestion-header">
-                    <div class="suggestion-info">
-                        <span class="category-icon">${categoryIcon}</span>
-                        <span class="suggestion-id">#${index + 1}</span>
-                        <span class="priority-badge ${priorityClass}">${suggestion.priority || 'medium'}</span>
-                    </div>
-                    <div class="guideline-ref">${suggestion.guidelineReference || ''}</div>
-                </div>
-                
-                <div class="suggestion-content">
-                    ${suggestion.originalText ? `
-                        <div class="original-text">
-                            <label>${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</label>
-                            <div class="text-preview ${suggestion.category === 'addition' ? 'missing-element' : ''}">"${suggestion.originalText}"</div>
-                        </div>
-                    ` : ''}
-                    
-                    <div class="suggested-text">
-                        <label>Suggested ${suggestion.category || 'change'}:</label>
-                        <div class="text-preview suggested">"${suggestion.suggestedText}"</div>
-                    </div>
-                    
-                    <div class="suggestion-context">
-                        <label>Why this change is suggested:</label>
-                        <p>${suggestion.context}</p>
-                    </div>
-                </div>
-                
-                <div class="suggestion-actions">
-                    <button class="action-btn accept-btn" style="background: #27ae60 !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'accept')">
-                        ✅ Accept
-                    </button>
-                    <button class="action-btn reject-btn" style="background: #e74c3c !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'reject')">
-                        ❌ Reject
-                    </button>
-                    <button class="action-btn modify-btn" style="background: #f39c12 !important; color: white !important;" onclick="handleSuggestionAction('${suggestion.id}', 'modify')">
-                        ✏️ Modify
-                    </button>
-                </div>
-                
-                <div class="modify-section" id="modify-${suggestion.id}" style="display: none;">
-                    <label for="modify-text-${suggestion.id}">Your modified text:</label>
-                    <textarea id="modify-text-${suggestion.id}" class="modify-textarea" 
-                              placeholder="Enter your custom text here...">${suggestion.suggestedText}</textarea>
-                    <div class="modify-actions">
-                        <button class="action-btn confirm-btn" style="background: #00b894 !important; color: white !important;" onclick="confirmModification('${suggestion.id}')">
-                            ✅ Confirm Modification
-                        </button>
-                        <button class="action-btn cancel-btn" style="background: #636e72 !important; color: white !important;" onclick="cancelModification('${suggestion.id}')">
-                            ❌ Cancel
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="decision-status" id="status-${suggestion.id}" style="display: none;">
-                    <!-- Status will be updated by JavaScript -->
-                </div>
-            </div>
-        `;
-    });
-
-    // Add apply all button (with unique IDs based on current session)
-    const buttonId = `applyAllDecisionsBtn-${currentAdviceSession}`;
-    const summaryId = `decisionsSummary-${currentAdviceSession}`;
-
-    suggestionsHtml += `
-            </div>
-            <div class="advice-footer">
-                <div class="decisions-summary" id="${summaryId}">
-                    Changes apply immediately when you Accept, Reject, or Modify each suggestion.
-                </div>
-            </div>
-        </div>
-    `;
-
-    console.log('[DEBUG] displayInteractiveSuggestions: Adding suggestions HTML to outputField', {
-        buttonId,
-        summaryId,
-        currentSession: currentAdviceSession
-    });
-    appendToSummary1(suggestionsHtml, false);
-
-    // Add a data attribute to mark this as the current session's suggestions
-    setTimeout(() => {
-        const dynamicAdviceContainer = document.querySelector('.dynamic-advice-container:last-of-type');
-        if (dynamicAdviceContainer) {
-            dynamicAdviceContainer.setAttribute('data-session-id', currentAdviceSession);
-            dynamicAdviceContainer.classList.add('active-session');
-        }
-    }, 100);
-
-    // Update the decisions summary
-    updateDecisionsSummary();
-    debouncedSaveState(); // Save state after displaying suggestions
-}
 
 // Helper function to set button applying state
 function setSuggestionButtonApplying(buttonId, isApplying) {
@@ -4619,49 +4495,49 @@ function updateSuggestionActionButtons() {
 }
 
 // Display the current suggestion being reviewed
-async function showCurrentSuggestion() {
-    const review = window.currentSuggestionReview;
-    if (!review) return;
+// showCurrentSuggestion is now imported from js/features/suggestions.js
+const review = window.currentSuggestionReview;
+if (!review) return;
 
-    const { suggestions, guidelineTitle, guidelineId, guidelineFilename, currentIndex, decisions } = review;
-    const totalSuggestions = suggestions.length;
+const { suggestions, guidelineTitle, guidelineId, guidelineFilename, currentIndex, decisions } = review;
+const totalSuggestions = suggestions.length;
 
-    if (currentIndex >= totalSuggestions) {
-        completeSuggestionReview();
-        return;
-    }
+if (currentIndex >= totalSuggestions) {
+    completeSuggestionReview();
+    return;
+}
 
-    // Update buttons in fixed row
-    updateSuggestionActionButtons();
+// Update buttons in fixed row
+updateSuggestionActionButtons();
 
-    const suggestion = suggestions[currentIndex];
-    const progressText = `${currentIndex + 1} of ${totalSuggestions}`;
-    const categoryIcon = getCategoryIcon(suggestion.category);
+const suggestion = suggestions[currentIndex];
+const progressText = `${currentIndex + 1} of ${totalSuggestions}`;
+const categoryIcon = getCategoryIcon(suggestion.category);
 
-    console.log('[ADVICE] Showing suggestion', progressText);
+console.log('[ADVICE] Showing suggestion', progressText);
 
-    if (suggestion.originalText) {
-        highlightTextInEditor(suggestion.originalText);
-        scrollTextIntoView(suggestion.originalText);
-    }
+if (suggestion.originalText) {
+    highlightTextInEditor(suggestion.originalText);
+    scrollTextIntoView(suggestion.originalText);
+}
 
-    // Pre-fetch insertion point in background for additions (to speed up acceptance)
-    if ((suggestion.category === 'addition' || !suggestion.originalText) && !suggestion.cachedInsertionPoint) {
-        console.log('[DEBUG] showCurrentSuggestion: Pre-fetching insertion point in background');
-        const currentContent = getUserInputContent();
-        determineInsertionPoint(suggestion, currentContent).then(insertionPoint => {
-            suggestion.cachedInsertionPoint = insertionPoint;
-            console.log('[DEBUG] showCurrentSuggestion: Cached insertion point:', insertionPoint);
-        }).catch(error => {
-            console.error('[DEBUG] showCurrentSuggestion: Error pre-fetching insertion point:', error);
-        });
-    }
+// Pre-fetch insertion point in background for additions (to speed up acceptance)
+if ((suggestion.category === 'addition' || !suggestion.originalText) && !suggestion.cachedInsertionPoint) {
+    console.log('[DEBUG] showCurrentSuggestion: Pre-fetching insertion point in background');
+    const currentContent = getUserInputContent();
+    determineInsertionPoint(suggestion, currentContent).then(insertionPoint => {
+        suggestion.cachedInsertionPoint = insertionPoint;
+        console.log('[DEBUG] showCurrentSuggestion: Cached insertion point:', insertionPoint);
+    }).catch(error => {
+        console.error('[DEBUG] showCurrentSuggestion: Error pre-fetching insertion point:', error);
+    });
+}
 
-    // Create guideline link with context for quote extraction
-    // Pass suggestedText for fallback keyword search when no verbatim quote is available
-    const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText);
+// Create guideline link with context for quote extraction
+// Pass suggestedText for fallback keyword search when no verbatim quote is available
+const guidelineLink = createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText);
 
-    const suggestionHtml = `
+const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 15px 0;">
                 <h3 style="color: #2563eb; margin: 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
@@ -4687,134 +4563,213 @@ async function showCurrentSuggestion() {
         </div>
     `;
 
-    const existingReview = document.getElementById('suggestion-review-current');
-    if (existingReview && existingReview.parentElement) {
-        existingReview.outerHTML = suggestionHtml;
-    } else {
-        appendToSummary1(suggestionHtml, true);
-    }
+const existingReview = document.getElementById('suggestion-review-current');
+if (existingReview && existingReview.parentElement) {
+    existingReview.outerHTML = suggestionHtml;
+} else {
+    appendToSummary1(suggestionHtml, true);
+}
 }
 
 window.showModifySection = function () { document.getElementById('modify-section-current').style.display = 'block'; };
 window.hideModifySection = function () { document.getElementById('modify-section-current').style.display = 'none'; };
 
-window.handleCurrentSuggestionAction = async function (action) {
-    const review = window.currentSuggestionReview;
-    if (!review) return;
-    const suggestion = review.suggestions[review.currentIndex];
+// handleCurrentSuggestionAction is now imported from js/features/suggestions.js
+const review = window.currentSuggestionReview;
+if (!review) return;
+const suggestion = review.suggestions[review.currentIndex];
 
-    // Set button to applying state
-    const buttonMap = {
-        'accept': 'suggestionAcceptBtn',
-        'reject': 'suggestionRejectBtn',
-        'skip': 'suggestionSkipBtn'
-    };
-    const buttonId = buttonMap[action];
-    if (buttonId) {
-        setSuggestionButtonApplying(buttonId, true);
-    }
+// Set button to applying state
+const buttonMap = {
+    'accept': 'suggestionAcceptBtn',
+    'reject': 'suggestionRejectBtn',
+    'skip': 'suggestionSkipBtn'
+};
+const buttonId = buttonMap[action];
+if (buttonId) {
+    setSuggestionButtonApplying(buttonId, true);
+}
 
-    try {
-        // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
-        function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
-            try {
-                const text = (suggestion?.suggestedText || '').toLowerCase();
-                const isAddPrefix = /^\s*add[:\-]/i.test(suggestion?.suggestedText || '');
-                const mentionsTumourMarkers = /(alpha[\s\-]?fetoprotein|afp|beta[\s\-]?hcg|β[\s\-]?hcg|tumou?r\s+markers?)/i.test(suggestion?.suggestedText || '');
-                const mentionsReferralOrPlan = /(refer|mdt|review|follow\s*up|counsel|consent)/i.test(suggestion?.suggestedText || '');
+try {
+    // Heuristic: adjust insertion target for certain additions (e.g., tumour markers → Plan)
+    function adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent) {
+        try {
+            const text = (suggestion?.suggestedText || '').toLowerCase();
+            const isAddPrefix = /^\s*add[:\-]/i.test(suggestion?.suggestedText || '');
+            const mentionsTumourMarkers = /(alpha[\s\-]?fetoprotein|afp|beta[\s\-]?hcg|β[\s\-]?hcg|tumou?r\s+markers?)/i.test(suggestion?.suggestedText || '');
+            const mentionsReferralOrPlan = /(refer|mdt|review|follow\s*up|counsel|consent)/i.test(suggestion?.suggestedText || '');
 
-                // Prefer Plan for action-oriented additions (tests to arrange, referrals, etc.)
-                if (suggestion?.category === 'addition' && (isAddPrefix || mentionsTumourMarkers || mentionsReferralOrPlan)) {
-                    // If a Plan section exists in the note, target Plan; else keep original but append at end
-                    const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
-                    if (hasPlanSection) {
-                        // Preserve subsection from AI if present
-                        return {
-                            section: 'Plan',
-                            subsection: insertionPoint.subsection || null,
-                            reasoning: 'Action-oriented addition placed under Plan by client heuristic'
-                        };
-                    }
-                    // No Plan section found – fall back to end append
+            // Prefer Plan for action-oriented additions (tests to arrange, referrals, etc.)
+            if (suggestion?.category === 'addition' && (isAddPrefix || mentionsTumourMarkers || mentionsReferralOrPlan)) {
+                // If a Plan section exists in the note, target Plan; else keep original but append at end
+                const hasPlanSection = /(^|\n)Plan\s*:|(^|\n)Plan\s*$/im.test(currentContent);
+                if (hasPlanSection) {
+                    // Preserve subsection from AI if present
                     return {
-                        section: 'end',
-                        subsection: null,
-                        reasoning: 'No Plan section found; appending to end'
+                        section: 'Plan',
+                        subsection: insertionPoint.subsection || null,
+                        reasoning: 'Action-oriented addition placed under Plan by client heuristic'
                     };
                 }
-            } catch (e) {
-                console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
+                // No Plan section found – fall back to end append
+                return {
+                    section: 'end',
+                    subsection: null,
+                    reasoning: 'No Plan section found; appending to end'
+                };
             }
-            // Return insertion point with preserved metadata
-            return insertionPoint;
+        } catch (e) {
+            console.warn('[DEBUG] adjustInsertionPointForSuggestion: error applying heuristic', e);
         }
+        // Return insertion point with preserved metadata
+        return insertionPoint;
+    }
 
-        // Intercept reject action to show feedback modal
-        if (action === 'reject') {
-            const suggestionId = `current-review-${review.currentIndex}`;
-            showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
-                // Record decision with feedback
-                review.decisions.push({
-                    suggestion,
-                    action: 'reject',
-                    feedbackReason: feedbackReason
-                });
-
-                console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
-                    index: review.currentIndex,
-                    hasFeedback: !!feedbackReason,
-                    feedbackLength: feedbackReason.length
-                });
-
-                // Continue to next suggestion
-                clearHighlightInEditor();
-                review.currentIndex++;
-                showCurrentSuggestion();
-
-                // Restore button state after modal callback completes
-                if (buttonId) {
-                    setSuggestionButtonApplying(buttonId, false);
-                }
+    // Intercept reject action to show feedback modal
+    if (action === 'reject') {
+        const suggestionId = `current-review-${review.currentIndex}`;
+        showFeedbackModal(suggestionId, suggestion, (feedbackReason) => {
+            // Record decision with feedback
+            review.decisions.push({
+                suggestion,
+                action: 'reject',
+                feedbackReason: feedbackReason
             });
-            return; // Don't continue with normal flow - button state restored in callback
-        }
 
-        // For non-reject actions, continue normally
-        review.decisions.push({ suggestion, action });
+            console.log('[FEEDBACK] Recorded rejection in one-at-a-time review', {
+                index: review.currentIndex,
+                hasFeedback: !!feedbackReason,
+                feedbackLength: feedbackReason.length
+            });
 
-        if (action === 'accept' && suggestion.suggestedText) {
-            const currentContent = getUserInputContent();
-            let newContent;
+            // Continue to next suggestion
+            clearHighlightInEditor();
+            review.currentIndex++;
+            showCurrentSuggestion();
 
-            // Handle additions (missing documentation) vs modifications (replacing existing text)
-            if (suggestion.category === 'addition' || !suggestion.originalText) {
-                // Addition: use new AI incorporation workflow
-                console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
+            // Restore button state after modal callback completes
+            if (buttonId) {
+                setSuggestionButtonApplying(buttonId, false);
+            }
+        });
+        return; // Don't continue with normal flow - button state restored in callback
+    }
 
-                try {
-                    // Use cached insertion point if available, otherwise fetch it now
-                    let insertionPoint = suggestion.cachedInsertionPoint;
-                    if (!insertionPoint) {
-                        console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
-                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-                    } else {
-                        console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+    // For non-reject actions, continue normally
+    review.decisions.push({ suggestion, action });
+
+    if (action === 'accept' && suggestion.suggestedText) {
+        const currentContent = getUserInputContent();
+        let newContent;
+
+        // Handle additions (missing documentation) vs modifications (replacing existing text)
+        if (suggestion.category === 'addition' || !suggestion.originalText) {
+            // Addition: use new AI incorporation workflow
+            console.log('[DEBUG] handleCurrentSuggestionAction: Using AI incorporation for addition');
+
+            try {
+                // Use cached insertion point if available, otherwise fetch it now
+                let insertionPoint = suggestion.cachedInsertionPoint;
+                if (!insertionPoint) {
+                    console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point, fetching now');
+                    insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                } else {
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point');
+                }
+
+                // Apply client-side heuristic adjustment
+                insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+                console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
+
+                // Extract section content
+                const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+                if (!sectionInfo) {
+                    console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
+                    newContent = currentContent + '\n' + suggestion.suggestedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
+                } else {
+                    // Call AI to incorporate suggestion into section
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
+                    const idToken = await firebase.auth().currentUser.getIdToken();
+                    const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${idToken}`
+                        },
+                        body: JSON.stringify({
+                            sectionName: insertionPoint.section,
+                            subsectionName: insertionPoint.subsection,
+                            currentSectionContent: sectionInfo.content,
+                            suggestionText: suggestion.suggestedText
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to incorporate suggestion: ${response.status}`);
                     }
 
-                    // Apply client-side heuristic adjustment
+                    const result = await response.json();
+                    console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
+
+                    // Replace section content with modified version
+                    newContent = replaceSectionContent(
+                        currentContent,
+                        insertionPoint.section,
+                        insertionPoint.subsection,
+                        sectionInfo.content,
+                        result.modifiedSectionContent
+                    );
+
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
+                }
+            } catch (error) {
+                console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
+                // Fallback to simple append - use single newline to avoid inappropriate blank lines
+                newContent = currentContent + '\n' + suggestion.suggestedText;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{ findText: '', replacementText: suggestion.suggestedText }]);
+            }
+        } else if (suggestion.originalText) {
+            // Modification/Deletion: try exact replacement first
+            let replacementResult = applySuggestionTextReplacement(
+                currentContent,
+                suggestion.originalText,
+                suggestion.suggestedText
+            );
+
+            if (replacementResult.didReplace) {
+                newContent = replacementResult.content;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [
+                    { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
+                ]);
+            } else {
+                // Fallback: use AI section-merging workflow to fold the new text into the correct section
+                try {
+                    // Reuse cached insertion point if available, otherwise fetch it now
+                    let insertionPoint = suggestion.cachedInsertionPoint;
+                    if (!insertionPoint) {
+                        console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point for modification, fetching now');
+                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+                    } else {
+                        console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point for modification');
+                    }
+
+                    // Apply client-side heuristic adjustment (same as for additions)
                     insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-                    console.log('[DEBUG] handleCurrentSuggestionAction: Insertion point:', insertionPoint);
+                    console.log('[DEBUG] handleCurrentSuggestionAction (modification): Insertion point:', insertionPoint);
 
                     // Extract section content
                     const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
 
                     if (!sectionInfo) {
-                        console.error('[DEBUG] handleCurrentSuggestionAction: Could not extract section, falling back to simple append');
+                        console.error('[DEBUG] handleCurrentSuggestionAction (modification): Could not extract section, falling back to simple append');
                         newContent = currentContent + '\n' + suggestion.suggestedText;
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (Fallback Append)', [
+                            { findText: '', replacementText: suggestion.suggestedText }
+                        ]);
                     } else {
-                        // Call AI to incorporate suggestion into section
-                        console.log('[DEBUG] handleCurrentSuggestionAction: Calling incorporateSuggestion API');
+                        console.log('[DEBUG] handleCurrentSuggestionAction (modification): Calling incorporateSuggestion API with originalText');
                         const idToken = await firebase.auth().currentUser.getIdToken();
                         const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
                             method: 'POST',
@@ -4826,16 +4781,17 @@ window.handleCurrentSuggestionAction = async function (action) {
                                 sectionName: insertionPoint.section,
                                 subsectionName: insertionPoint.subsection,
                                 currentSectionContent: sectionInfo.content,
-                                suggestionText: suggestion.suggestedText
+                                suggestionText: suggestion.suggestedText,
+                                originalText: suggestion.originalText
                             })
                         });
 
                         if (!response.ok) {
-                            throw new Error(`Failed to incorporate suggestion: ${response.status}`);
+                            throw new Error(`Failed to incorporate suggestion (modification): ${response.status}`);
                         }
 
                         const result = await response.json();
-                        console.log('[DEBUG] handleCurrentSuggestionAction: Incorporation result:', result.insertionLocation);
+                        console.log('[DEBUG] handleCurrentSuggestionAction (modification): Incorporation result:', result.insertionLocation);
 
                         // Replace section content with modified version
                         newContent = replaceSectionContent(
@@ -4846,187 +4802,187 @@ window.handleCurrentSuggestionAction = async function (action) {
                             result.modifiedSectionContent
                         );
 
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Addition', [{ findText: '', replacementText: suggestion.suggestedText }]);
-                    }
-                } catch (error) {
-                    console.error('[DEBUG] handleCurrentSuggestionAction: Error incorporating suggestion:', error);
-                    // Fallback to simple append - use single newline to avoid inappropriate blank lines
-                    newContent = currentContent + '\n' + suggestion.suggestedText;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Addition (Fallback)', [{ findText: '', replacementText: suggestion.suggestedText }]);
-                }
-            } else if (suggestion.originalText) {
-                // Modification/Deletion: try exact replacement first
-                let replacementResult = applySuggestionTextReplacement(
-                    currentContent,
-                    suggestion.originalText,
-                    suggestion.suggestedText
-                );
-
-                if (replacementResult.didReplace) {
-                    newContent = replacementResult.content;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', [
-                        { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
-                    ]);
-                } else {
-                    // Fallback: use AI section-merging workflow to fold the new text into the correct section
-                    try {
-                        // Reuse cached insertion point if available, otherwise fetch it now
-                        let insertionPoint = suggestion.cachedInsertionPoint;
-                        if (!insertionPoint) {
-                            console.log('[DEBUG] handleCurrentSuggestionAction: No cached insertion point for modification, fetching now');
-                            insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-                        } else {
-                            console.log('[DEBUG] handleCurrentSuggestionAction: Using cached insertion point for modification');
-                        }
-
-                        // Apply client-side heuristic adjustment (same as for additions)
-                        insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-                        console.log('[DEBUG] handleCurrentSuggestionAction (modification): Insertion point:', insertionPoint);
-
-                        // Extract section content
-                        const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
-
-                        if (!sectionInfo) {
-                            console.error('[DEBUG] handleCurrentSuggestionAction (modification): Could not extract section, falling back to simple append');
-                            newContent = currentContent + '\n' + suggestion.suggestedText;
-                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (Fallback Append)', [
-                                { findText: '', replacementText: suggestion.suggestedText }
-                            ]);
-                        } else {
-                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Calling incorporateSuggestion API with originalText');
-                            const idToken = await firebase.auth().currentUser.getIdToken();
-                            const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${idToken}`
-                                },
-                                body: JSON.stringify({
-                                    sectionName: insertionPoint.section,
-                                    subsectionName: insertionPoint.subsection,
-                                    currentSectionContent: sectionInfo.content,
-                                    suggestionText: suggestion.suggestedText,
-                                    originalText: suggestion.originalText
-                                })
-                            });
-
-                            if (!response.ok) {
-                                throw new Error(`Failed to incorporate suggestion (modification): ${response.status}`);
-                            }
-
-                            const result = await response.json();
-                            console.log('[DEBUG] handleCurrentSuggestionAction (modification): Incorporation result:', result.insertionLocation);
-
-                            // Replace section content with modified version
-                            newContent = replaceSectionContent(
-                                currentContent,
-                                insertionPoint.section,
-                                insertionPoint.subsection,
-                                sectionInfo.content,
-                                result.modifiedSectionContent
-                            );
-
-                            setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Section Merge)', [
-                                { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
-                            ]);
-                        }
-                    } catch (error) {
-                        console.error('[DEBUG] handleCurrentSuggestionAction (modification): Error incorporating via AI, falling back to append:', error);
-                        // Final fallback: append suggested text so it is at least present in the note
-                        // Use single newline to avoid inappropriate blank lines
-                        newContent = currentContent + '\n' + suggestion.suggestedText;
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Fallback Append)', [
-                            { findText: '', replacementText: suggestion.suggestedText }
+                        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Section Merge)', [
+                            { findText: suggestion.originalText, replacementText: suggestion.suggestedText }
                         ]);
                     }
+                } catch (error) {
+                    console.error('[DEBUG] handleCurrentSuggestionAction (modification): Error incorporating via AI, falling back to append:', error);
+                    // Final fallback: append suggested text so it is at least present in the note
+                    // Use single newline to avoid inappropriate blank lines
+                    newContent = currentContent + '\n' + suggestion.suggestedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted (AI Fallback Append)', [
+                        { findText: '', replacementText: suggestion.suggestedText }
+                    ]);
                 }
             }
         }
-
-        clearHighlightInEditor();
-        review.currentIndex++;
-        showCurrentSuggestion();
-    } finally {
-        // Restore button state (only if not reject, as reject restores in callback)
-        if (buttonId && action !== 'reject') {
-            setSuggestionButtonApplying(buttonId, false);
-        }
     }
+
+    clearHighlightInEditor();
+    review.currentIndex++;
+    showCurrentSuggestion();
+} finally {
+    // Restore button state (only if not reject, as reject restores in callback)
+    if (buttonId && action !== 'reject') {
+        setSuggestionButtonApplying(buttonId, false);
+    }
+}
 };
 
-window.confirmCurrentModification = async function () {
-    const review = window.currentSuggestionReview;
-    if (!review) return;
-    const modifyTextarea = document.getElementById('modify-textarea-current');
-    if (!modifyTextarea) return;
-    const modifiedText = modifyTextarea.value.trim();
-    if (!modifiedText) { alert('Please enter some text.'); return; }
+// confirmCurrentModification is now imported from js/features/suggestions.js
+const review = window.currentSuggestionReview;
+if (!review) return;
+const modifyTextarea = document.getElementById('modify-textarea-current');
+if (!modifyTextarea) return;
+const modifiedText = modifyTextarea.value.trim();
+if (!modifiedText) { alert('Please enter some text.'); return; }
 
-    // Set modify button to applying state
-    setSuggestionButtonApplying('suggestionModifyBtn', true);
+// Set modify button to applying state
+setSuggestionButtonApplying('suggestionModifyBtn', true);
 
-    try {
-        const suggestion = review.suggestions[review.currentIndex];
-        review.decisions.push({ suggestion, action: 'modify', modifiedText });
+try {
+    const suggestion = review.suggestions[review.currentIndex];
+    review.decisions.push({ suggestion, action: 'modify', modifiedText });
 
-        const currentContent = getUserInputContent();
-        let newContent;
+    const currentContent = getUserInputContent();
+    let newContent;
 
-        // Handle additions (missing documentation) vs modifications (replacing existing text)
-        if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: fold the modified text into the correct section/list using the same
-            // AI insertion pipeline as for accepted additions, rather than appending at the end.
+    // Handle additions (missing documentation) vs modifications (replacing existing text)
+    if (suggestion.category === 'addition' || !suggestion.originalText) {
+        // Addition: fold the modified text into the correct section/list using the same
+        // AI insertion pipeline as for accepted additions, rather than appending at the end.
+        try {
+            let insertionPoint = suggestion.cachedInsertionPoint;
+            if (!insertionPoint) {
+                console.log('[DEBUG] confirmCurrentModification: No cached insertion point for addition, fetching now');
+                insertionPoint = await determineInsertionPoint(suggestion, currentContent);
+            } else {
+                console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for addition');
+            }
+
+            insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
+            console.log('[DEBUG] confirmCurrentModification (addition): Insertion point:', insertionPoint);
+
+            const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+
+            if (!sectionInfo) {
+                console.error('[DEBUG] confirmCurrentModification (addition): Could not extract section, falling back to simple append');
+                const spacing = currentContent.trim() ? '\n\n' : '';
+                newContent = currentContent + spacing + modifiedText;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (Fallback Append)', [
+                    { findText: '', replacementText: modifiedText }
+                ]);
+            } else {
+                console.log('[DEBUG] confirmCurrentModification (addition): Calling incorporateSuggestion API with modifiedText');
+                const idToken = await firebase.auth().currentUser.getIdToken();
+                const body = {
+                    sectionName: insertionPoint.section,
+                    subsectionName: insertionPoint.subsection,
+                    currentSectionContent: sectionInfo.content,
+                    suggestionText: modifiedText
+                };
+                // If we have an original reference text (e.g. an existing bullet), pass it so
+                // the AI can update/merge that line rather than always adding a new one.
+                if (suggestion.originalText) {
+                    body.originalText = suggestion.originalText;
+                }
+
+                const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify(body)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Failed to incorporate modified addition: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('[DEBUG] confirmCurrentModification (addition): Incorporation result:', result.insertionLocation);
+
+                newContent = replaceSectionContent(
+                    currentContent,
+                    insertionPoint.section,
+                    insertionPoint.subsection,
+                    sectionInfo.content,
+                    result.modifiedSectionContent
+                );
+
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [
+                    { findText: suggestion.originalText || '', replacementText: modifiedText }
+                ]);
+            }
+        } catch (error) {
+            console.error('[DEBUG] confirmCurrentModification (addition): Error incorporating via AI, falling back to append:', error);
+            const spacing = currentContent.trim() ? '\n\n' : '';
+            newContent = currentContent + spacing + modifiedText;
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (AI Fallback Append)', [
+                { findText: '', replacementText: modifiedText }
+            ]);
+        }
+    } else if (suggestion.originalText) {
+        // Modification: try to replace existing text with user's modified version
+        let replacementResult = applySuggestionTextReplacement(
+            currentContent,
+            suggestion.originalText,
+            modifiedText
+        );
+
+        if (replacementResult.didReplace) {
+            newContent = replacementResult.content;
+            setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [
+                { findText: suggestion.originalText, replacementText: modifiedText }
+            ]);
+        } else {
+            // Fallback: use AI section-merging workflow with the user's modified text
             try {
                 let insertionPoint = suggestion.cachedInsertionPoint;
                 if (!insertionPoint) {
-                    console.log('[DEBUG] confirmCurrentModification: No cached insertion point for addition, fetching now');
+                    console.log('[DEBUG] confirmCurrentModification: No cached insertion point for modification, fetching now');
                     insertionPoint = await determineInsertionPoint(suggestion, currentContent);
                 } else {
-                    console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for addition');
+                    console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for modification');
                 }
 
                 insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-                console.log('[DEBUG] confirmCurrentModification (addition): Insertion point:', insertionPoint);
+                console.log('[DEBUG] confirmCurrentModification: Insertion point:', insertionPoint);
 
                 const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
 
                 if (!sectionInfo) {
-                    console.error('[DEBUG] confirmCurrentModification (addition): Could not extract section, falling back to simple append');
-                    const spacing = currentContent.trim() ? '\n\n' : '';
-                    newContent = currentContent + spacing + modifiedText;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (Fallback Append)', [
+                    console.error('[DEBUG] confirmCurrentModification: Could not extract section, falling back to simple append');
+                    newContent = currentContent + '\n' + modifiedText;
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (Fallback Append)', [
                         { findText: '', replacementText: modifiedText }
                     ]);
                 } else {
-                    console.log('[DEBUG] confirmCurrentModification (addition): Calling incorporateSuggestion API with modifiedText');
+                    console.log('[DEBUG] confirmCurrentModification: Calling incorporateSuggestion API with originalText and modifiedText');
                     const idToken = await firebase.auth().currentUser.getIdToken();
-                    const body = {
-                        sectionName: insertionPoint.section,
-                        subsectionName: insertionPoint.subsection,
-                        currentSectionContent: sectionInfo.content,
-                        suggestionText: modifiedText
-                    };
-                    // If we have an original reference text (e.g. an existing bullet), pass it so
-                    // the AI can update/merge that line rather than always adding a new one.
-                    if (suggestion.originalText) {
-                        body.originalText = suggestion.originalText;
-                    }
-
                     const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': `Bearer ${idToken}`
                         },
-                        body: JSON.stringify(body)
+                        body: JSON.stringify({
+                            sectionName: insertionPoint.section,
+                            subsectionName: insertionPoint.subsection,
+                            currentSectionContent: sectionInfo.content,
+                            suggestionText: modifiedText,
+                            originalText: suggestion.originalText
+                        })
                     });
 
                     if (!response.ok) {
-                        throw new Error(`Failed to incorporate modified addition: ${response.status}`);
+                        throw new Error(`Failed to incorporate modified suggestion: ${response.status}`);
                     }
 
                     const result = await response.json();
-                    console.log('[DEBUG] confirmCurrentModification (addition): Incorporation result:', result.insertionLocation);
+                    console.log('[DEBUG] confirmCurrentModification: Incorporation result:', result.insertionLocation);
 
                     newContent = replaceSectionContent(
                         currentContent,
@@ -5036,231 +4992,151 @@ window.confirmCurrentModification = async function () {
                         result.modifiedSectionContent
                     );
 
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition', [
-                        { findText: suggestion.originalText || '', replacementText: modifiedText }
+                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Section Merge)', [
+                        { findText: suggestion.originalText, replacementText: modifiedText }
                     ]);
                 }
             } catch (error) {
-                console.error('[DEBUG] confirmCurrentModification (addition): Error incorporating via AI, falling back to append:', error);
-                const spacing = currentContent.trim() ? '\n\n' : '';
-                newContent = currentContent + spacing + modifiedText;
-                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified Addition (AI Fallback Append)', [
+                console.error('[DEBUG] confirmCurrentModification: Error incorporating via AI, falling back to append:', error);
+                // Use single newline to avoid inappropriate blank lines
+                newContent = currentContent + '\n' + modifiedText;
+                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Fallback Append)', [
                     { findText: '', replacementText: modifiedText }
                 ]);
             }
-        } else if (suggestion.originalText) {
-            // Modification: try to replace existing text with user's modified version
-            let replacementResult = applySuggestionTextReplacement(
-                currentContent,
-                suggestion.originalText,
-                modifiedText
-            );
+        }
+    }
 
-            if (replacementResult.didReplace) {
-                newContent = replacementResult.content;
-                setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', [
-                    { findText: suggestion.originalText, replacementText: modifiedText }
-                ]);
-            } else {
-                // Fallback: use AI section-merging workflow with the user's modified text
-                try {
-                    let insertionPoint = suggestion.cachedInsertionPoint;
-                    if (!insertionPoint) {
-                        console.log('[DEBUG] confirmCurrentModification: No cached insertion point for modification, fetching now');
-                        insertionPoint = await determineInsertionPoint(suggestion, currentContent);
-                    } else {
-                        console.log('[DEBUG] confirmCurrentModification: Using cached insertion point for modification');
-                    }
+    clearHighlightInEditor();
+    review.currentIndex++;
+    showCurrentSuggestion();
+} finally {
+    // Restore button state
+    setSuggestionButtonApplying('suggestionModifyBtn', false);
+}
+};
 
-                    insertionPoint = adjustInsertionPointForSuggestion(suggestion, insertionPoint, currentContent);
-                    console.log('[DEBUG] confirmCurrentModification: Insertion point:', insertionPoint);
+// navigateSuggestion is now imported from js/features/suggestions.js
+const review = window.currentSuggestionReview;
+if (!review) return;
+clearHighlightInEditor();
+if (direction < 0 && review.currentIndex > 0) {
+    review.currentIndex--;
+    if (review.decisions.length > review.currentIndex) review.decisions.pop();
+}
+showCurrentSuggestion();
+};
 
-                    const sectionInfo = extractSectionContent(currentContent, insertionPoint.section, insertionPoint.subsection);
+// completeSuggestionReview is now imported from js/features/suggestions.js
+const review = window.currentSuggestionReview;
+if (!review) return;
+clearHighlightInEditor();
+const accepted = review.decisions.filter(d => d.action === 'accept').length;
+const rejected = review.decisions.filter(d => d.action === 'reject').length;
+const modified = review.decisions.filter(d => d.action === 'modify').length;
+const skipped = review.suggestions.length - review.decisions.length;
 
-                    if (!sectionInfo) {
-                        console.error('[DEBUG] confirmCurrentModification: Could not extract section, falling back to simple append');
-                        newContent = currentContent + '\n' + modifiedText;
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (Fallback Append)', [
-                            { findText: '', replacementText: modifiedText }
-                        ]);
-                    } else {
-                        console.log('[DEBUG] confirmCurrentModification: Calling incorporateSuggestion API with originalText and modifiedText');
-                        const idToken = await firebase.auth().currentUser.getIdToken();
-                        const response = await fetch(`${window.SERVER_URL}/incorporateSuggestion`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${idToken}`
-                            },
-                            body: JSON.stringify({
-                                sectionName: insertionPoint.section,
-                                subsectionName: insertionPoint.subsection,
-                                currentSectionContent: sectionInfo.content,
-                                suggestionText: modifiedText,
-                                originalText: suggestion.originalText
-                            })
-                        });
+// Submit feedback from one-at-a-time review
+submitFeedbackFromReview(review);
 
-                        if (!response.ok) {
-                            throw new Error(`Failed to incorporate modified suggestion: ${response.status}`);
-                        }
+const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
+const reviewContainer = document.getElementById('suggestion-review-current');
+if (reviewContainer) reviewContainer.outerHTML = ''; // Remove review UI
 
-                        const result = await response.json();
-                        console.log('[DEBUG] confirmCurrentModification: Incorporation result:', result.insertionLocation);
+// Summarise outcomes via status bar instead of summary1 banner
+updateUser(
+    `Suggestions review complete: ${accepted} accepted, ${rejected} rejected, ${modified} modified, ${skipped} skipped.`,
+    false
+);
+window.currentSuggestionReview = null;
 
-                        newContent = replaceSectionContent(
-                            currentContent,
-                            insertionPoint.section,
-                            insertionPoint.subsection,
-                            sectionInfo.content,
-                            result.modifiedSectionContent
-                        );
+// Update buttons state
+updateSuggestionActionButtons();
+// Re-evaluate whether summary1 should still be visible now that the review UI is gone
+if (typeof updateSummaryVisibility === 'function') {
+    updateSummaryVisibility();
+}
 
-                        setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Section Merge)', [
-                            { findText: suggestion.originalText, replacementText: modifiedText }
-                        ]);
-                    }
-                } catch (error) {
-                    console.error('[DEBUG] confirmCurrentModification: Error incorporating via AI, falling back to append:', error);
-                    // Use single newline to avoid inappropriate blank lines
-                    newContent = currentContent + '\n' + modifiedText;
-                    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified (AI Fallback Append)', [
-                        { findText: '', replacementText: modifiedText }
-                    ]);
+// Check if we're in sequential processing mode and need to move to next guideline
+if (window.sequentialProcessingActive) {
+    console.log('[DEBUG] completeSuggestionReview: Sequential processing active, checking for next guideline');
+    const queue = window.sequentialProcessingQueue || [];
+    const currentIndex = window.sequentialProcessingIndex || 0;
+
+    console.log('[DEBUG] completeSuggestionReview: Queue status:', {
+        queueLength: queue.length,
+        currentIndex: currentIndex,
+        hasMore: currentIndex < queue.length - 1
+    });
+
+    if (currentIndex < queue.length - 1) {
+        // Move to next guideline
+        window.sequentialProcessingIndex = currentIndex + 1;
+        const nextGuidelineId = queue[currentIndex + 1];
+        const nextStepNumber = currentIndex + 2;
+
+        console.log(`[DEBUG] completeSuggestionReview: Moving to guideline ${nextStepNumber}/${queue.length}`);
+
+        // Update status display if it exists
+        const statusDiv = document.getElementById('processing-status');
+        if (statusDiv) {
+            statusDiv.innerHTML = queue.map((id, index) => {
+                const guideline = window.relevantGuidelines.find(g => g.id === id);
+                const title = getGuidelineDisplayName(id, guideline);
+                const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+
+                let className = 'processing-step pending';
+                let emoji = '⏳';
+
+                if (index < window.sequentialProcessingIndex) {
+                    className = 'processing-step completed';
+                    emoji = '✅';
+                } else if (index === window.sequentialProcessingIndex) {
+                    className = 'processing-step current';
+                    emoji = '🔄';
                 }
-            }
+
+                return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
+            }).join('');
         }
 
-        clearHighlightInEditor();
-        review.currentIndex++;
-        showCurrentSuggestion();
-    } finally {
-        // Restore button state
-        setSuggestionButtonApplying('suggestionModifyBtn', false);
-    }
-};
+        // Show transition message in status bar
+        const transitionMessage = 'Incorporating changes and preparing for next guideline...';
+        updateUser(transitionMessage, true);
 
-window.navigateSuggestion = function (direction) {
-    const review = window.currentSuggestionReview;
-    if (!review) return;
-    clearHighlightInEditor();
-    if (direction < 0 && review.currentIndex > 0) {
-        review.currentIndex--;
-        if (review.decisions.length > review.currentIndex) review.decisions.pop();
-    }
-    showCurrentSuggestion();
-};
-
-async function completeSuggestionReview() {
-    const review = window.currentSuggestionReview;
-    if (!review) return;
-    clearHighlightInEditor();
-    const accepted = review.decisions.filter(d => d.action === 'accept').length;
-    const rejected = review.decisions.filter(d => d.action === 'reject').length;
-    const modified = review.decisions.filter(d => d.action === 'modify').length;
-    const skipped = review.suggestions.length - review.decisions.length;
-
-    // Submit feedback from one-at-a-time review
-    submitFeedbackFromReview(review);
-
-    const completionHtml = `<div style="background: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; margin: 10px 0; border-radius: 6px;"><strong>✅ Suggestions Review Complete</strong><br>${accepted} accepted • ${rejected} rejected • ${modified} modified • ${skipped} skipped</div>`;
-    const reviewContainer = document.getElementById('suggestion-review-current');
-    if (reviewContainer) reviewContainer.outerHTML = ''; // Remove review UI
-
-    // Summarise outcomes via status bar instead of summary1 banner
-    updateUser(
-        `Suggestions review complete: ${accepted} accepted, ${rejected} rejected, ${modified} modified, ${skipped} skipped.`,
-        false
-    );
-    window.currentSuggestionReview = null;
-
-    // Update buttons state
-    updateSuggestionActionButtons();
-    // Re-evaluate whether summary1 should still be visible now that the review UI is gone
-    if (typeof updateSummaryVisibility === 'function') {
-        updateSummaryVisibility();
-    }
-
-    // Check if we're in sequential processing mode and need to move to next guideline
-    if (window.sequentialProcessingActive) {
-        console.log('[DEBUG] completeSuggestionReview: Sequential processing active, checking for next guideline');
-        const queue = window.sequentialProcessingQueue || [];
-        const currentIndex = window.sequentialProcessingIndex || 0;
-
-        console.log('[DEBUG] completeSuggestionReview: Queue status:', {
-            queueLength: queue.length,
-            currentIndex: currentIndex,
-            hasMore: currentIndex < queue.length - 1
-        });
-
-        if (currentIndex < queue.length - 1) {
-            // Move to next guideline
-            window.sequentialProcessingIndex = currentIndex + 1;
-            const nextGuidelineId = queue[currentIndex + 1];
-            const nextStepNumber = currentIndex + 2;
-
-            console.log(`[DEBUG] completeSuggestionReview: Moving to guideline ${nextStepNumber}/${queue.length}`);
-
-            // Update status display if it exists
-            const statusDiv = document.getElementById('processing-status');
-            if (statusDiv) {
-                statusDiv.innerHTML = queue.map((id, index) => {
-                    const guideline = window.relevantGuidelines.find(g => g.id === id);
-                    const title = getGuidelineDisplayName(id, guideline);
-                    const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-
-                    let className = 'processing-step pending';
-                    let emoji = '⏳';
-
-                    if (index < window.sequentialProcessingIndex) {
-                        className = 'processing-step completed';
-                        emoji = '✅';
-                    } else if (index === window.sequentialProcessingIndex) {
-                        className = 'processing-step current';
-                        emoji = '🔄';
-                    }
-
-                    return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
-                }).join('');
+        // Process next guideline after a short delay
+        setTimeout(async () => {
+            try {
+                const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
+                updateUser(processingStepMessage, true);
+                await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
+            } catch (error) {
+                console.error('[DEBUG] Error processing next guideline after completion:', error);
+                const errorMessage = `Error processing guideline ${nextStepNumber}: ${error.message}`;
+                updateUser(errorMessage, false);
             }
+        }, 1000);
+    } else {
+        // All guidelines processed – report via status bar
+        console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
+        window.sequentialProcessingActive = false;
+        updateAnalyseButtonProgress('All Guidelines Complete!', false);
 
-            // Show transition message in status bar
-            const transitionMessage = 'Incorporating changes and preparing for next guideline...';
-            updateUser(transitionMessage, true);
+        // Remove any remaining transient messages (progress indicators, processing status, etc.)
+        removeTransientMessages();
 
-            // Process next guideline after a short delay
-            setTimeout(async () => {
-                try {
-                    const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
-                    updateUser(processingStepMessage, true);
-                    await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
-                } catch (error) {
-                    console.error('[DEBUG] Error processing next guideline after completion:', error);
-                    const errorMessage = `Error processing guideline ${nextStepNumber}: ${error.message}`;
-                    updateUser(errorMessage, false);
-                }
-            }, 1000);
-        } else {
-            // All guidelines processed – report via status bar
-            console.log('[DEBUG] completeSuggestionReview: All guidelines complete!');
-            window.sequentialProcessingActive = false;
-            updateAnalyseButtonProgress('All Guidelines Complete!', false);
+        // Wait briefly for animation to complete
+        await new Promise(resolve => setTimeout(resolve, 350));
 
-            // Remove any remaining transient messages (progress indicators, processing status, etc.)
-            removeTransientMessages();
-
-            // Wait briefly for animation to complete
-            await new Promise(resolve => setTimeout(resolve, 350));
-
-            const finalMessage = `
+        const finalMessage = `
                 <div class="sequential-processing-complete">
                     <h3>🎉 All Guidelines Processed!</h3>
                     <p>Successfully processed all ${queue.length} selected guidelines.</p>
                 </div>
             `;
-            updateUser(`All ${queue.length} selected guidelines processed successfully.`, false);
-        }
+        updateUser(`All ${queue.length} selected guidelines processed successfully.`, false);
     }
+}
 }
 
 window.cancelSuggestionReview = function () {
@@ -5960,658 +5836,11 @@ function showFeedbackThankYou() {
 }
 
 // Confirm modification with custom text
-function confirmModification(suggestionId) {
-    console.log('[DEBUG] confirmModification called', { suggestionId });
-
-    const modifyTextarea = document.getElementById(`modify-text-${suggestionId}`);
-    if (!modifyTextarea) {
-        console.error('[DEBUG] confirmModification: Modify textarea not found:', suggestionId);
-        return;
-    }
-
-    const modifiedText = modifyTextarea.value.trim();
-    if (!modifiedText) {
-        alert('Please enter some text for the modification.');
-        return;
-    }
-
-    // Find the suggestion data
-    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
-    if (!suggestion) {
-        console.error('[DEBUG] confirmModification: Suggestion data not found:', suggestionId);
-        return;
-    }
-
-    // Record the modification decision
-    userDecisions[suggestionId] = {
-        action: 'modify',
-        modifiedText: modifiedText,
-        suggestion: suggestion,
-        timestamp: new Date().toISOString()
-    };
-
-    console.log('[DEBUG] confirmModification: Recorded modification', {
-        suggestionId,
-        modifiedTextLength: modifiedText.length,
-        totalDecisions: Object.keys(userDecisions).length
-    });
-
-    // Apply the modification immediately
-    const currentContent = getUserInputContent();
-    let newContent;
-    let replacements;
-
-    // Handle additions (missing documentation) vs modifications (replacing existing text)
-    if (suggestion.category === 'addition' || !suggestion.originalText) {
-        // Addition: append the modified text to the end of the document
-        const spacing = currentContent.trim() ? '\n\n' : '';
-        newContent = currentContent + spacing + modifiedText;
-        replacements = [{
-            findText: '',
-            replacementText: modifiedText
-        }];
-    } else {
-        // Modification: replace existing text with user's modified version
-        newContent = currentContent.replace(
-            new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-            modifiedText
-        );
-        replacements = [{
-            findText: suggestion.originalText,
-            replacementText: modifiedText
-        }];
-    }
-
-    setUserInputContent(newContent, true, 'Guideline Suggestions - Modified', replacements);
-    console.log('[DEBUG] confirmModification: Applied modified suggestion immediately');
-
-    // Hide modify section and update UI
-    const modifySection = document.getElementById(`modify-${suggestionId}`);
-    if (modifySection) {
-        modifySection.style.display = 'none';
-    }
-
-    updateSuggestionStatus(suggestionId, 'modify', modifiedText);
-    updateDecisionsSummary();
-    debouncedSaveState(); // Save state after modification
-
-    // Check if all suggestions for this guideline have been processed
-    checkAndSubmitGuidelineFeedback();
-}
-
-// Cancel modification
-function cancelModification(suggestionId) {
-    console.log('[DEBUG] cancelModification called', { suggestionId });
-
-    const modifySection = document.getElementById(`modify-${suggestionId}`);
-    if (modifySection) {
-        modifySection.style.display = 'none';
-    }
-
-    // Remove any existing decision for this suggestion
-    if (userDecisions[suggestionId]) {
-        delete userDecisions[suggestionId];
-        console.log('[DEBUG] cancelModification: Removed decision for suggestion:', suggestionId);
-    }
-
-    // Reset status
-    const statusElement = document.getElementById(`status-${suggestionId}`);
-    if (statusElement) {
-        statusElement.style.display = 'none';
-        statusElement.innerHTML = '';
-    }
-
-    // Show the action buttons again since decision was cancelled
-    const actionButtonsElement = document.querySelector(`[data-suggestion-id="${suggestionId}"] .suggestion-actions`);
-    if (actionButtonsElement) {
-        actionButtonsElement.style.display = 'flex';
-        actionButtonsElement.style.opacity = '1';
-        actionButtonsElement.style.transform = 'scale(1)';
-        console.log('[DEBUG] cancelModification: Restored action buttons for suggestion:', suggestionId);
-    }
-
-    // Show the suggestion element again if it was hidden
-    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
-    if (suggestionElement) {
-        suggestionElement.classList.remove('hiding', 'decision-accepted', 'decision-rejected', 'decision-modified');
-        suggestionElement.style.display = 'block';
-        console.log('[DEBUG] cancelModification: Restored suggestion visibility for:', suggestionId);
-    }
-
-    updateDecisionsSummary();
-    debouncedSaveState(); // Save state after cancelling
-}
-
-// Update suggestion status UI
-function updateSuggestionStatus(suggestionId, action, modifiedText = null) {
-    const statusElement = document.getElementById(`status-${suggestionId}`);
-    if (!statusElement) {
-        console.error('[DEBUG] updateSuggestionStatus: Status element not found:', suggestionId);
-        return;
-    }
-
-    let statusHtml = '';
-    let statusClass = '';
-
-    switch (action) {
-        case 'accept':
-            statusHtml = '<span class="status-icon">✅</span> <strong>Accepted</strong> - This suggestion will be applied';
-            statusClass = 'decision-accepted';
-            break;
-        case 'reject':
-            statusHtml = '<span class="status-icon">❌</span> <strong>Rejected</strong> - This suggestion will be ignored';
-            statusClass = 'decision-rejected';
-            break;
-        case 'modify':
-            statusHtml = `<span class="status-icon">✏️</span> <strong>Modified</strong> - Will use your custom text: "<em>${modifiedText?.substring(0, 100)}${modifiedText?.length > 100 ? '...' : ''}</em>"`;
-            statusClass = 'decision-modified';
-            break;
-    }
-
-    statusElement.innerHTML = statusHtml;
-    statusElement.className = `decision-status ${statusClass}`;
-    statusElement.style.display = 'block';
-
-    // Hide the action buttons after decision is made with animation
-    const actionButtonsElement = document.querySelector(`[data-suggestion-id="${suggestionId}"] .suggestion-actions`);
-    if (actionButtonsElement) {
-        actionButtonsElement.style.opacity = '0';
-        actionButtonsElement.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            actionButtonsElement.style.display = 'none';
-        }, 300);
-    }
-
-    // Update suggestion item styling and then hide the entire suggestion with animation
-    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
-    if (suggestionElement) {
-        suggestionElement.classList.remove('decision-accepted', 'decision-rejected', 'decision-modified');
-        suggestionElement.classList.add(statusClass);
-
-        // Hide the entire suggestion after a brief delay to let user see the status
-        setTimeout(() => {
-            suggestionElement.classList.add('hiding');
-
-            // After animation completes, completely hide the element
-            setTimeout(() => {
-                suggestionElement.style.display = 'none';
-            }, 500);
-        }, 1500); // Wait 1.5 seconds to let user see the decision status
-    }
-}
-
-// Update decisions summary (now just shows progress since changes apply immediately)
-function updateDecisionsSummary() {
-    if (!currentAdviceSession) {
-        return;
-    }
-
-    const summaryElement = document.getElementById(`decisionsSummary-${currentAdviceSession}`);
-
-    if (!summaryElement) {
-        // Element not found - this is OK since we removed the Apply All button
-        return;
-    }
-
-    const totalSuggestions = currentSuggestions.length;
-    const totalDecisions = Object.keys(userDecisions).length;
-    const decisions = Object.values(userDecisions);
-
-    const acceptedCount = decisions.filter(d => d.action === 'accept').length;
-    const rejectedCount = decisions.filter(d => d.action === 'reject').length;
-    const modifiedCount = decisions.filter(d => d.action === 'modify').length;
-
-    // Show progress summary
-    let summaryText = '';
-    if (totalDecisions === 0) {
-        summaryText = `Changes apply immediately when you Accept, Reject, or Modify each suggestion.`;
-    } else {
-        summaryText = `Progress: ${totalDecisions}/${totalSuggestions} decisions made. `;
-        summaryText += `Accepted: ${acceptedCount}, Rejected: ${rejectedCount}, Modified: ${modifiedCount}`;
-    }
-
-    summaryElement.textContent = summaryText;
-}
-
-// Helper function to check authentication status
-async function checkAuthenticationStatus() {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            return { isValid: false, error: 'User not authenticated' };
-        }
-
-        // Try to get a token to verify auth is working
-        await user.getIdToken(false); // Don't force refresh for this check
-        return { isValid: true };
-
-    } catch (error) {
-        console.warn('[DEBUG] Authentication check failed:', error.message);
-        return {
-            isValid: false,
-            error: error.message,
-            needsRefresh: error.code === 'auth/network-request-failed' ||
-                error.message.includes('securetoken.googleapis.com')
-        };
-    }
-}
-
-// Apply all user decisions
-async function applyAllDecisions() {
-    console.log('[DEBUG] applyAllDecisions called', {
-        sessionId: currentAdviceSession,
-        totalDecisions: Object.keys(userDecisions).length
-    });
-
-    if (!currentAdviceSession) {
-        console.error('[DEBUG] applyAllDecisions: No active advice session');
-        alert('No active advice session found. Please generate suggestions first.');
-        return;
-    }
-
-    if (Object.keys(userDecisions).length === 0) {
-        console.error('[DEBUG] applyAllDecisions: No decisions to apply');
-        alert('Please make some decisions on the suggestions first.');
-        return;
-    }
-
-    // Check authentication status before proceeding
-    console.log('[DEBUG] applyAllDecisions: Checking authentication status...');
-    const authStatus = await checkAuthenticationStatus();
-    if (!authStatus.isValid) {
-        console.error('[DEBUG] applyAllDecisions: Authentication check failed:', authStatus.error);
-
-        if (authStatus.needsRefresh) {
-            const shouldRefresh = confirm(
-                'Your authentication session appears to have expired or there\'s a connectivity issue. ' +
-                'Would you like to refresh the page to re-authenticate? ' +
-                '(Click Cancel to try anyway)'
-            );
-            if (shouldRefresh) {
-                window.location.reload();
-                return;
-            }
-        }
-    }
-
-    const applyButton = document.getElementById(`applyAllDecisionsBtn-${currentAdviceSession}`);
-    const applySpinner = applyButton?.querySelector('.apply-spinner');
-    const applyText = applyButton?.querySelector('.apply-text');
-
-    try {
-        // Update UI to show loading state
-        if (applyButton) applyButton.disabled = true;
-        if (applySpinner) applySpinner.style.display = 'inline';
-        if (applyText) applyText.textContent = 'Applying decisions...';
-
-        console.log('[DEBUG] applyAllDecisions: UI updated to loading state');
-
-        // Prepare decisions data for API (map prefixed IDs back to original IDs)
-        const decisionsData = {};
-        Object.entries(userDecisions).forEach(([prefixedId, decision]) => {
-            // Find the original ID by looking up the suggestion
-            const suggestion = currentSuggestions.find(s => s.id === prefixedId);
-            const originalId = suggestion ? suggestion.originalId : prefixedId;
-
-            decisionsData[originalId] = {
-                action: decision.action,
-                modifiedText: decision.modifiedText || null
-            };
-        });
-
-        console.log('[DEBUG] applyAllDecisions: Prepared decisions data', {
-            decisionsCount: Object.keys(decisionsData).length,
-            actions: Object.values(decisionsData).map(d => d.action)
-        });
-
-        // Get user ID token with retry logic
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('User not authenticated');
-        }
-
-        let idToken;
-        let tokenAttempts = 0;
-        const maxTokenAttempts = 3;
-
-        while (tokenAttempts < maxTokenAttempts) {
-            try {
-                console.log(`[DEBUG] applyAllDecisions: Getting ID token (attempt ${tokenAttempts + 1}/${maxTokenAttempts})`);
-
-                // Try to get fresh token, with force refresh on retry attempts
-                idToken = await user.getIdToken(tokenAttempts > 0);
-                console.log('[DEBUG] applyAllDecisions: Got ID token successfully');
-                break;
-
-            } catch (tokenError) {
-                tokenAttempts++;
-                console.error(`[DEBUG] applyAllDecisions: Token attempt ${tokenAttempts} failed:`, {
-                    error: tokenError.message,
-                    code: tokenError.code,
-                    willRetry: tokenAttempts < maxTokenAttempts
-                });
-
-                if (tokenAttempts >= maxTokenAttempts) {
-                    // If all token attempts failed, provide a more user-friendly error
-                    if (tokenError.code === 'auth/network-request-failed' ||
-                        tokenError.message.includes('securetoken.googleapis.com') ||
-                        tokenError.message.includes('are-blocked')) {
-                        throw new Error('Authentication service temporarily unavailable. Please check your internet connection and try again in a few moments.');
-                    } else {
-                        throw new Error(`Authentication failed: ${tokenError.message}. Please sign out and sign back in.`);
-                    }
-                }
-
-                // Wait before retry (exponential backoff)
-                const delay = Math.min(1000 * Math.pow(2, tokenAttempts - 1), 5000);
-                console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before retry...`);
-                await new Promise(resolve => setTimeout(resolve, delay));
-            }
-        }
-
-        // Call the applyDynamicAdvice API with retry logic
-        console.log('[DEBUG] applyAllDecisions: Calling API endpoint');
-        let response;
-        let apiAttempts = 0;
-        const maxApiAttempts = 2;
-
-        while (apiAttempts < maxApiAttempts) {
-            try {
-                console.log(`[DEBUG] applyAllDecisions: API call attempt ${apiAttempts + 1}/${maxApiAttempts}`);
-
-                response = await fetch(`${window.SERVER_URL}/applyDynamicAdvice`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${idToken}`
-                    },
-                    body: JSON.stringify({
-                        sessionId: currentAdviceSession,
-                        decisions: decisionsData
-                    })
-                });
-
-                // If we get a response, break out of retry loop
-                break;
-
-            } catch (fetchError) {
-                apiAttempts++;
-                console.error(`[DEBUG] applyAllDecisions: API attempt ${apiAttempts} failed:`, {
-                    error: fetchError.message,
-                    willRetry: apiAttempts < maxApiAttempts
-                });
-
-                if (apiAttempts >= maxApiAttempts) {
-                    throw new Error(`Network error: ${fetchError.message}. Please check your internet connection and try again.`);
-                }
-
-                // Wait before retry
-                const delay = 2000;
-                console.log(`[DEBUG] applyAllDecisions: Waiting ${delay}ms before API retry...`);
-                await new Promise(resolve => setTimeout(resolve, delay));
-            }
-        }
-
-        console.log('[DEBUG] applyAllDecisions: API response received', {
-            status: response.status,
-            ok: response.ok
-        });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[DEBUG] applyAllDecisions: API error response:', {
-                status: response.status,
-                errorText
-            });
-            throw new Error(`API error: ${response.status} - ${errorText}`);
-        }
-
-        const result = await response.json();
-        console.log('[DEBUG] applyAllDecisions: API result received', {
-            success: result.success,
-            originalLength: result.originalTranscript?.length,
-            updatedLength: result.updatedTranscript?.length,
-            changesSummary: result.changesSummary
-        });
-
-        if (!result.success) {
-            throw new Error(result.error || 'Failed to apply decisions');
-        }
-
-        // Display the process results in Summary field
-        const summaryHtml = `
-            <div class="apply-results">
-                <h3>🎉 Decisions Applied Successfully!</h3>
-                <div class="changes-summary">
-                    <h4>Changes Summary:</h4>
-                    <ul>
-                        <li><strong>Accepted:</strong> ${result.changesSummary.accepted} suggestions</li>
-                        <li><strong>Modified:</strong> ${result.changesSummary.modified} suggestions</li>
-                        <li><strong>Rejected:</strong> ${result.changesSummary.rejected} suggestions</li>
-                        <li><strong>Total processed:</strong> ${result.changesSummary.total} suggestions</li>
-                    </ul>
-                </div>
-                <div class="transcript-actions">
-                    <button onclick="copyUpdatedTranscript()" class="action-btn">📋 Copy Updated Transcript</button>
-                    <button onclick="replaceOriginalTranscript()" class="action-btn">🔄 Replace Original Transcript</button>
-                </div>
-            </div>
-        `;
-
-        appendToSummary1(summaryHtml, false); // Decision panel: shows Copy/Replace actions
-
-        // Replace the user input with the updated transcript text
-        const transcriptOutput = `${result.updatedTranscript}`;
-        appendToOutputField(transcriptOutput, true);
-
-        // Store the updated transcript globally for actions
-        window.lastUpdatedTranscript = result.updatedTranscript;
-
-        console.log('[DEBUG] applyAllDecisions: Results displayed successfully');
-        debouncedSaveState();
-
-        // Trigger compliance scoring after successful application of changes
-        await triggerComplianceScoring(result.originalTranscript, result.updatedTranscript, result.changesSummary);
-
-        // Check if we're in sequential processing mode and need to continue to next guideline
-        if (window.sequentialProcessingActive) {
-            const queue = window.sequentialProcessingQueue || [];
-            const currentIndex = window.sequentialProcessingIndex || 0;
-
-            if (currentIndex < queue.length - 1) {
-                // Move to next guideline
-                window.sequentialProcessingIndex = currentIndex + 1;
-                const nextGuidelineId = queue[currentIndex + 1];
-                const nextStepNumber = currentIndex + 2;
-
-                console.log(`[DEBUG] Sequential processing: Moving to guideline ${nextStepNumber}/${queue.length}`);
-
-                // Update status display
-                const statusDiv = document.getElementById('processing-status');
-                if (statusDiv) {
-                    statusDiv.innerHTML = queue.map((id, index) => {
-                        const guideline = window.relevantGuidelines.find(g => g.id === id);
-                        const title = getGuidelineDisplayName(id, guideline);
-                        const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-
-                        let className = 'processing-step pending';
-                        let emoji = '⏳';
-
-                        if (index < window.sequentialProcessingIndex) {
-                            className = 'processing-step completed';
-                            emoji = '✅';
-                        } else if (index === window.sequentialProcessingIndex) {
-                            className = 'processing-step current';
-                            emoji = '🔄';
-                        }
-
-                        return `<div class="${className}">${emoji} ${index + 1}. ${shortTitle}</div>`;
-                    }).join('');
-                }
-
-                // Show transition message via status bar
-                const transitionMessage = 'Incorporating changes and preparing for next guideline...';
-                updateUser(transitionMessage, true);
-
-                // Update the transcript with applied changes automatically
-                if (result.updatedTranscript) {
-                    setUserInputContent(result.updatedTranscript, true, 'Guideline Suggestions Update');
-                    console.log('[DEBUG] Sequential processing: Updated transcript automatically');
-                }
-
-                // Process next guideline after a brief delay
-                setTimeout(async () => {
-                    try {
-                        const processingStepMessage = `Processing guideline ${nextStepNumber}/${queue.length}...`;
-                        updateUser(processingStepMessage, true);
-
-                        await processSingleGuideline(nextGuidelineId, nextStepNumber, queue.length);
-                    } catch (error) {
-                        console.error(`[DEBUG] Error processing next guideline ${nextGuidelineId}:`, error);
-
-                        // Show detailed error with retry option
-                        const errorMessage = `
-                            <div class="sequential-processing-error">
-                                <h4>❌ Error Processing Guideline ${nextStepNumber}</h4>
-                                <p><strong>Error:</strong> ${error.message}</p>
-                                <p>This is often due to server deployment or network issues.</p>
-                                <div class="error-actions">
-                                    <button onclick="retryCurrentGuideline()" class="retry-btn" style="background: #f39c12; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">
-                                        🔄 Retry This Guideline
-                                    </button>
-                                    <button onclick="skipCurrentGuideline()" class="skip-btn" style="background: #6c757d; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; margin: 5px;">
-                                        ⏭️ Skip This Guideline
-                                    </button>
-                                </div>
-                            </div>
-                            
-                            <style>
-                            .sequential-processing-error {
-                                background: #fff3cd;
-                                border: 1px solid #ffc107;
-                                border-radius: 6px;
-                                padding: 15px;
-                                margin: 15px 0;
-                                color: #856404;
-                            }
-                            .error-actions {
-                                margin-top: 10px;
-                            }
-                            </style>
-                        `;
-                        appendToOutputField(errorMessage, false);
-                    }
-                }, 1000);
-
-            } else {
-                // All guidelines completed
-                window.sequentialProcessingActive = false;
-
-                // Update final status
-                const statusDiv = document.getElementById('processing-status');
-                if (statusDiv) {
-                    statusDiv.innerHTML = queue.map((id, index) => {
-                        const guideline = window.relevantGuidelines.find(g => g.id === id);
-                        const title = getGuidelineDisplayName(id, guideline);
-                        const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-                        return `<div class="processing-step completed">✅ ${index + 1}. ${shortTitle}</div>`;
-                    }).join('');
-                }
-
-                // Show completion message
-                const finalMessage = `
-                    <div class="sequential-processing-complete">
-                        <h3>🎉 Sequential Processing Complete!</h3>
-                        <p>Successfully processed ${queue.length} guidelines sequentially.</p>
-                        <p><strong>All changes have been incorporated into your transcript.</strong></p>
-                    </div>
-                    
-                    <style>
-                    .sequential-processing-complete {
-                        background: #d4edda;
-                        border: 1px solid #28a745;
-                        border-radius: 6px;
-                        padding: 15px;
-                        margin: 15px 0;
-                        color: #155724;
-                    }
-                    </style>
-                `;
-
-                updateUser('Sequential processing completed for all selected guidelines.', false);
-                console.log('[DEBUG] Sequential processing completed successfully');
-            }
-        }
-
-    } catch (error) {
-        console.error('[DEBUG] applyAllDecisions: Error applying decisions:', {
-            error: error.message,
-            stack: error.stack
-        });
-
-        // Provide specific guidance based on error type
-        let errorGuidance = 'Please try again or contact support if the problem persists.';
-        let showRefreshButton = false;
-
-        if (error.message.includes('Authentication service temporarily unavailable') ||
-            error.message.includes('securetoken.googleapis.com') ||
-            error.message.includes('are-blocked')) {
-            errorGuidance = `
-                <p>This appears to be a temporary authentication service issue. You can try:</p>
-                <ul>
-                    <li>Wait a few minutes and try again</li>
-                    <li>Check your internet connection</li>
-                    <li>Refresh the page and sign in again</li>
-                    <li>Try using a different network if available</li>
-                </ul>
-            `;
-            showRefreshButton = true;
-        } else if (error.message.includes('Authentication failed')) {
-            errorGuidance = `
-                <p>Your authentication session may have expired. Please:</p>
-                <ul>
-                    <li>Sign out and sign back in</li>
-                    <li>Refresh the page</li>
-                    <li>Clear your browser cache if the issue persists</li>
-                </ul>
-            `;
-            showRefreshButton = true;
-        } else if (error.message.includes('Network error')) {
-            errorGuidance = `
-                <p>There was a network connectivity issue. Please:</p>
-                <ul>
-                    <li>Check your internet connection</li>
-                    <li>Try again in a few moments</li>
-                    <li>Contact support if the issue persists</li>
-                </ul>
-            `;
-        }
-
-        const refreshButtonHtml = showRefreshButton ? `
-            <div style="margin-top: 15px;">
-                <button onclick="window.location.reload()" class="action-btn" style="background: #007bff; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">
-                    🔄 Refresh Page
-                </button>
-            </div>
-        ` : '';
-
-        const errorHtml = `
-            <div class="apply-error">
-                <h3>❌ Error applying decisions</h3>
-                <p><strong>Error:</strong> ${error.message}</p>
-                ${errorGuidance}
-                ${refreshButtonHtml}
-            </div>
-        `;
-        updateUser('Error applying guideline decisions. Please refresh and try again.', false);
-
-    } finally {
-        // Reset UI state
-        if (applyButton) applyButton.disabled = false;
-        if (applySpinner) applySpinner.style.display = 'none';
-        if (applyText) applyText.textContent = 'Apply All Decisions';
-    }
-}
+// confirmModification, cancelModification, updateSuggestionStatus, updateDecisionsSummary, checkAuthenticationStatus, applyAllDecisions
+// confirmModification removed - imported from suggestions.js
+// confirmModification is now imported from js/features/suggestions.js
+
+// cancelModification and checkAuthenticationStatus removed
 
 // Helper function to copy updated transcript
 function copyUpdatedTranscript() {
@@ -9367,374 +8596,16 @@ function filterGuidelinesByScope(guidelines, scope, hospitalTrust) {
 window.selectedGuidelineScope = null;
 
 // Show clinical issues dropdown as a block within summary1 (and use bottom bar buttons)
-async function showClinicalIssuesDropdown() {
-    console.log('[DEBUG] showClinicalIssuesDropdown called');
+// showClinicalIssuesDropdown removed - imported from js/features/clinicalInteraction.js
 
-    try {
-        // Load clinical conditions from Firebase (with fallback to JSON)
-        await ClinicalConditionsService.loadConditions();
-        const clinicalConditions = ClinicalConditionsService.getConditions();
-
-        if (!clinicalConditions) {
-            throw new Error('Failed to load clinical conditions');
-        }
-
-        console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
-
-        const summarySection = document.getElementById('summarySection');
-        if (summarySection) {
-            summarySection.classList.remove('hidden');
-        }
-
-        // Always render a single Test panel instance (avoid stacking multiple panels off-screen)
-        const panelHtml = `
-<div id=\"clinicalIssuesPanel\" class=\"clinical-issues-selector\">
-    <h3>⚡ Load Clinical Clerking</h3>
-    <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
-    
-    <div class=\"issue-category\">
-        <h4>Clinical Issues</h4>
-        <select id=\"clinical-issues-dropdown\" class=\"clinical-dropdown\">
-            <option value=\"\">Select a clinical issue...</option>
-        </select>
-    </div>
-    
-    <div id=\"generation-status\" class=\"generation-status\" style=\"display: none;\"></div>
-</div>`;
-
-        // Replace existing summary content so the Test panel is always visible
-        appendToSummary1(panelHtml, true, false);
-
-        // Ensure the clinical issues panel exists inside summary1
-        const clinicalPanel = document.getElementById('clinicalIssuesPanel');
-
-        const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
-        const generateBtn = document.getElementById('generate-interaction-btn');
-        const randomBtn = document.getElementById('random-issue-btn');
-        const regenerateBtn = document.getElementById('regenerate-clerking-btn');
-        const cancelBtn = document.getElementById('cancel-generation-btn');
-
-        if (!clinicalPanel || !clinicalDropdown) {
-            console.error('[DEBUG] Clinical issues panel elements not found after injection');
-            updateUser('Error: Unable to initialise clinical issues panel.', false);
-            return;
-        }
-
-        // Show the buttons in the button container
-        const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
-        if (clerkingButtonsGroup) {
-            clerkingButtonsGroup.style.display = 'flex';
-        }
-
-        // Reset dropdown options
-        clinicalDropdown.innerHTML = '<option value=\"\">Select a clinical issue...</option>';
-
-        // Add options from Firebase data
-        // Note: we intentionally exclude gynaecology from the "Test" dropdown.
-        const excludedTestCategories = new Set(['gynaecology', 'gynecology']);
-        Object.entries(clinicalConditions).forEach(([category, conditions]) => {
-            const categoryKey = String(category || '').toLowerCase();
-            if (excludedTestCategories.has(categoryKey)) {
-                return;
-            }
-
-            const categoryLabel = String(category || '').charAt(0).toUpperCase() + String(category || '').slice(1);
-
-            const optgroup = document.createElement('optgroup');
-            optgroup.label = categoryLabel;
-
-            Object.entries(conditions).forEach(([conditionName, conditionData]) => {
-                const option = document.createElement('option');
-                const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
-                option.value = conditionName;
-                option.dataset.conditionId = conditionData.id;
-                option.textContent = `${conditionName}${hasTranscript}`;
-                optgroup.appendChild(option);
-            });
-
-            clinicalDropdown.appendChild(optgroup);
-        });
-
-        // Ensure summary visibility and scroll/focus the Test panel so it’s obvious
-        updateSummaryVisibility();
-        updateSummaryCriticalStatus();
-        requestAnimationFrame(() => {
-            if (summarySection && typeof summarySection.scrollIntoView === 'function') {
-                summarySection.scrollIntoView({ behavior: 'smooth', block: 'end' });
-            }
-            if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
-                clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-            if (clinicalDropdown && typeof clinicalDropdown.focus === 'function') {
-                clinicalDropdown.focus();
-            }
-        });
-
-        function updateGenerateButton() {
-            const selectedValue = clinicalDropdown?.value || '';
-            const hasSelection = selectedValue.trim() !== '';
-
-            if (generateBtn) {
-                generateBtn.disabled = !hasSelection;
-            }
-            if (regenerateBtn) {
-                regenerateBtn.disabled = !hasSelection;
-            }
-        }
-
-        if (clinicalDropdown) {
-            clinicalDropdown.addEventListener('change', updateGenerateButton);
-        }
-
-        // Helper to completely clean up the test UI
-        function hideClinicalIssuesPanel() {
-            const panel = document.getElementById('clinicalIssuesPanel');
-            if (panel && panel.parentNode) {
-                panel.parentNode.removeChild(panel);
-            }
-
-            const buttonsGroup = document.getElementById('clerkingButtonsGroup');
-            if (buttonsGroup) {
-                buttonsGroup.style.display = 'none';
-            }
-
-            updateSummaryVisibility();
-        }
-
-        if (generateBtn) {
-            generateBtn.onclick = async () => {
-                const selectedIssue = clinicalDropdown?.value || '';
-
-                if (selectedIssue) {
-                    await generateFakeClinicalInteraction(selectedIssue);
-                    // After loading clerking, remove the test UI
-                    hideClinicalIssuesPanel();
-                }
-            };
-        }
-
-        if (randomBtn) {
-            randomBtn.onclick = async () => {
-                if (!clinicalDropdown) return;
-
-                // Get all available options from the dropdown (excluding the default option)
-                const options = Array.from(clinicalDropdown.options).filter(option =>
-                    option.value && option.value.trim() !== ''
-                );
-
-                if (options.length > 0) {
-                    // Pick a random option
-                    const randomOption = options[Math.floor(Math.random() * options.length)];
-                    const randomIssue = randomOption.value;
-
-                    // Set the dropdown to the random selection
-                    clinicalDropdown.value = randomIssue;
-
-                    // Update the generate button state
-                    updateGenerateButton();
-
-                    // Automatically generate the interaction
-                    await generateFakeClinicalInteraction(randomIssue);
-
-                    // After loading clerking, remove the test UI
-                    hideClinicalIssuesPanel();
-                } else {
-                    console.error('No clinical issues available for random selection');
-                    updateUser('Error: No clinical issues available for random selection.', false);
-                }
-            };
-        }
-
-        if (regenerateBtn) {
-            regenerateBtn.onclick = async () => {
-                const selectedIssue = clinicalDropdown?.value || '';
-
-                if (selectedIssue) {
-                    // Force regeneration of the transcript
-                    await generateFakeClinicalInteraction(selectedIssue, true);
-                    // After regeneration, remove the test UI for consistency
-                    hideClinicalIssuesPanel();
-                }
-            };
-        }
-
-        if (cancelBtn) {
-            cancelBtn.onclick = () => {
-                hideClinicalIssuesPanel();
-                updateUser('Clinical interaction generation cancelled.', false);
-            };
-        }
-
-    } catch (error) {
-        console.error('[DEBUG] Error showing clinical issues dropdown:', error);
-        updateUser(`Error loading clinical issues: ${error.message}. Please try again or contact support.`, false);
-    }
-}
+// showClinicalIssuesDropdown remainder removed
 
 // Generate fake clinical interaction based on selected issue
-async function generateFakeClinicalInteraction(selectedIssue, forceRegenerate = false) {
-    console.log('[DEBUG] generateFakeClinicalInteraction called with:', selectedIssue, 'forceRegenerate:', forceRegenerate);
+// generateFakeClinicalInteraction removed - imported from js/features/clinicalInteraction.js
 
-    const generateBtn = document.getElementById('generate-interaction-btn');
-    const regenerateBtn = document.getElementById('regenerate-clerking-btn');
-    const generateSpinner = document.getElementById('generate-spinner');
-    const regenerateSpinner = document.getElementById('regenerate-spinner');
-    const generateText = document.getElementById('generate-text');
-    const regenerateText = document.getElementById('regenerate-text');
-    const statusDiv = document.getElementById('generation-status');
-
-    try {
-        // Update UI to show loading state
-        if (generateBtn) generateBtn.disabled = true;
-        if (regenerateBtn) regenerateBtn.disabled = true;
-
-        if (forceRegenerate) {
-            if (regenerateSpinner) regenerateSpinner.style.display = 'inline';
-            if (regenerateText) regenerateText.textContent = 'Regenerating...';
-        } else {
-            if (generateSpinner) generateSpinner.style.display = 'inline';
-            if (generateText) generateText.textContent = 'Loading...';
-        }
-
-        if (statusDiv) {
-            statusDiv.style.display = 'block';
-            const action = forceRegenerate ? 'Regenerating' : 'Loading';
-            statusDiv.innerHTML = `<p>📋 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
-        }
-
-        // Find the condition in our cached data
-        const condition = ClinicalConditionsService.findCondition(selectedIssue);
-
-        if (!condition) {
-            throw new Error(`Clinical condition not found: ${selectedIssue}`);
-        }
-
-        console.log('[DEBUG] Found condition:', {
-            id: condition.id,
-            name: condition.name,
-            category: condition.category,
-            hasTranscript: condition.hasTranscript
-        });
-
-        let transcript = null;
-        let isGenerated = false;
-
-        // Check if we have a cached transcript and not forcing regeneration
-        if (condition.hasTranscript && condition.transcript && !forceRegenerate) {
-            transcript = condition.transcript;
-            console.log('[DEBUG] Using cached transcript:', {
-                transcriptLength: transcript.length,
-                lastGenerated: condition.lastGenerated
-            });
-        } else {
-            // Generate new transcript using Firebase service
-            const action = forceRegenerate ? 'Regenerating' : 'Generating new';
-            console.log(`[DEBUG] ${action} transcript...`);
-            if (statusDiv) {
-                statusDiv.innerHTML = `<p>🔄 ${action} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
-            }
-
-            const result = await ClinicalConditionsService.generateTranscript(condition.id, forceRegenerate);
-
-            console.log('[DEBUG] ClinicalConditionsService.generateTranscript returned:', {
-                resultExists: !!result,
-                resultKeys: result ? Object.keys(result) : 'no result',
-                success: result?.success,
-                hasTranscript: !!result?.transcript,
-                transcriptLength: result?.transcript?.length,
-                cached: result?.cached,
-                generated: result?.generated,
-                transcriptPreview: result?.transcript ? result.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
-                fullResult: result
-            });
-
-            transcript = result.transcript;
-            isGenerated = !result.cached;
-
-            console.log('[DEBUG] Generated transcript result - processed:', {
-                transcriptAssigned: !!transcript,
-                transcriptLength: transcript?.length,
-                isGenerated: isGenerated,
-                transcriptType: typeof transcript,
-                transcriptPreview: transcript ? transcript.substring(0, 100) + '...' : 'NO TRANSCRIPT'
-            });
-        }
-
-        if (!transcript) {
-            throw new Error(`Failed to get transcript for clinical issue: ${selectedIssue}`);
-        }
-
-        // Update status
-        if (statusDiv) {
-            const statusText = isGenerated ? 'Generated new' : 'Loaded cached';
-            statusDiv.innerHTML = `<p>✅ ${statusText} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
-        }
-
-        // Put the transcript in the user input textarea
-        const userInput = document.getElementById('userInput');
-        console.log('[DEBUG] userInput element check:', {
-            elementFound: !!userInput,
-            elementId: userInput?.id,
-            elementType: userInput?.tagName,
-            hasTranscript: !!transcript,
-            currentValue: userInput?.value?.length || 0
-        });
-
-        if (transcript) {
-            setUserInputContent(transcript, true, 'Fake Clinical Interaction');
-            console.log('[DEBUG] Transcript added to user input textarea:', {
-                transcriptLength: transcript.length,
-                preview: transcript.substring(0, 100) + '...'
-            });
-
-            // Explicitly update button visibility after programmatic content update
-            setTimeout(() => {
-                updateChatbotButtonVisibility();
-            }, 200);
-        } else {
-            console.error('[DEBUG] Failed to add transcript to userInput:', {
-                hasTranscript: !!transcript,
-                transcriptType: typeof transcript
-            });
-        }
-
-        // Show success message via status bar instead of summary1
-        const performanceText = forceRegenerate
-            ? 'regenerated with updated formatting'
-            : (isGenerated ? 'generated using AI' : 'loaded instantly from cache');
-        const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
-        const successMessage = `${actionText} clinical interaction for ${selectedIssue} (${condition.category}); ` +
-            `transcript length ~${Math.round(transcript.split(' ').length)} words, ${performanceText}.`;
-        updateUser(successMessage, false);
-
-    } catch (error) {
-        console.error('[DEBUG] Error loading fake clinical interaction:', {
-            error: error.message,
-            stack: error.stack,
-            selectedIssue
-        });
-
-        // Update UI to show error
-        if (statusDiv) {
-            statusDiv.innerHTML = `<p>❌ Error: ${error.message}</p>`;
-        }
-
-        // Surface error via status bar instead of summary1
-        const errorMessage = `Error loading clinical interaction for ${selectedIssue}: ${error.message}`;
-        updateUser(errorMessage, false);
-
-    } finally {
-        // Reset button states
-        if (generateBtn) generateBtn.disabled = false;
-        if (regenerateBtn) regenerateBtn.disabled = false;
-        if (generateSpinner) generateSpinner.style.display = 'none';
-        if (regenerateSpinner) regenerateSpinner.style.display = 'none';
-        if (generateText) generateText.textContent = 'Load Clerking';
-        if (regenerateText) regenerateText.textContent = 'Regenerate Clerking';
-
-        console.log('[DEBUG] generateFakeClinicalInteraction cleanup completed');
-    }
-}
+// Put the transcript in the user input textarea
+// generateFakeClinicalInteraction remainder removed
+// generateFakeClinicalInteraction cleanup block removed
 
 // Comprehensive workflow processing function
 async function processWorkflow() {
@@ -12217,56 +11088,56 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
 }
 
 // Display combined suggestions from multiple guidelines
-async function displayCombinedSuggestions(successfulResults, failedResults) {
-    console.log('📋 Combining suggestions from', successfulResults.length, 'successful guidelines');
+// displayCombinedSuggestions is now imported from js/features/suggestions.js
+console.log('📋 Combining suggestions from', successfulResults.length, 'successful guidelines');
 
-    // Validate input
-    if (!successfulResults || !Array.isArray(successfulResults)) {
-        throw new Error('Invalid successful results provided to displayCombinedSuggestions');
+// Validate input
+if (!successfulResults || !Array.isArray(successfulResults)) {
+    throw new Error('Invalid successful results provided to displayCombinedSuggestions');
+}
+
+// Combine all suggestions from successful results
+let allSuggestions = [];
+let suggestionCounter = 1;
+
+successfulResults.forEach((result, index) => {
+    if (!result || !result.result) {
+        console.warn(`⚠️ Invalid result at index ${index}, skipping`);
+        return;
     }
 
-    // Combine all suggestions from successful results
-    let allSuggestions = [];
-    let suggestionCounter = 1;
-
-    successfulResults.forEach((result, index) => {
-        if (!result || !result.result) {
-            console.warn(`⚠️ Invalid result at index ${index}, skipping`);
+    const suggestions = result.result.suggestions || [];
+    suggestions.forEach(suggestion => {
+        // Validate suggestion structure
+        if (!suggestion || typeof suggestion !== 'object') {
+            console.warn(`⚠️ Invalid suggestion in ${result.guideline?.title || 'unknown guideline'}, skipping`);
             return;
         }
 
-        const suggestions = result.result.suggestions || [];
-        suggestions.forEach(suggestion => {
-            // Validate suggestion structure
-            if (!suggestion || typeof suggestion !== 'object') {
-                console.warn(`⚠️ Invalid suggestion in ${result.guideline?.title || 'unknown guideline'}, skipping`);
-                return;
-            }
-
-            // Add guideline source information and renumber
-            allSuggestions.push({
-                ...suggestion,
-                id: `multi_${suggestionCounter++}`,
-                sourceGuideline: result.guideline?.title || 'Unknown Guideline',
-                sourceGuidelineId: result.guideline?.id || 'unknown',
-                sourceGuidelineFilename: result.result?.guidelineFilename || null,
-                originalId: suggestion.id
-            });
+        // Add guideline source information and renumber
+        allSuggestions.push({
+            ...suggestion,
+            id: `multi_${suggestionCounter++}`,
+            sourceGuideline: result.guideline?.title || 'Unknown Guideline',
+            sourceGuidelineId: result.guideline?.id || 'unknown',
+            sourceGuidelineFilename: result.result?.guidelineFilename || null,
+            originalId: suggestion.id
         });
     });
+});
 
-    console.log('💡 Combined', allSuggestions.length, 'suggestions from', successfulResults.length, 'guidelines');
+console.log('💡 Combined', allSuggestions.length, 'suggestions from', successfulResults.length, 'guidelines');
 
-    // Group suggestions by priority and category for better organization
-    const priorityOrder = { 'high': 1, 'medium': 2, 'low': 3 };
-    allSuggestions.sort((a, b) => {
-        const priorityA = priorityOrder[a.priority] || 2;
-        const priorityB = priorityOrder[b.priority] || 2;
-        return priorityA - priorityB;
-    });
+// Group suggestions by priority and category for better organization
+const priorityOrder = { 'high': 1, 'medium': 2, 'low': 3 };
+allSuggestions.sort((a, b) => {
+    const priorityA = priorityOrder[a.priority] || 2;
+    const priorityB = priorityOrder[b.priority] || 2;
+    return priorityA - priorityB;
+});
 
-    // Create the combined suggestions header
-    let combinedHtml = `
+// Create the combined suggestions header
+let combinedHtml = `
         <div class="combined-advice-container">
             <div class="combined-header">
                 <h3>💡 Combined Interactive Suggestions</h3>
@@ -12299,20 +11170,20 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             <div class="suggestions-list">
     `;
 
-    if (allSuggestions.length === 0) {
-        combinedHtml += `
+if (allSuggestions.length === 0) {
+    combinedHtml += `
                 <div class="no-suggestions">
                     <p>No specific suggestions were generated from the processed guidelines.</p>
                     <p>This may indicate that the clinical documentation already aligns well with the guideline recommendations.</p>
                 </div>
         `;
-    } else {
-        // Add each combined suggestion
-        allSuggestions.forEach((suggestion, index) => {
-            const priorityClass = `priority-${suggestion.priority || 'medium'}`;
-            const categoryIcon = getCategoryIcon(suggestion.category);
+} else {
+    // Add each combined suggestion
+    allSuggestions.forEach((suggestion, index) => {
+        const priorityClass = `priority-${suggestion.priority || 'medium'}`;
+        const categoryIcon = getCategoryIcon(suggestion.category);
 
-            combinedHtml += `
+        combinedHtml += `
                 <div class="suggestion-item ${priorityClass}" data-suggestion-id="${suggestion.id}">
                     <div class="suggestion-header">
                         <div class="suggestion-info">
@@ -12379,10 +11250,10 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
                     </div>
                 </div>
             `;
-        });
-    }
+    });
+}
 
-    combinedHtml += `
+combinedHtml += `
             </div>
             
             ${allSuggestions.length > 0 ? `
@@ -12548,19 +11419,19 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
         </style>
     `;
 
-    try {
-        // Display the combined suggestions
-        appendToOutputField(combinedHtml, false);
+try {
+    // Display the combined suggestions
+    appendToOutputField(combinedHtml, false);
 
-        // Update global suggestions for existing functionality
-        currentSuggestions = allSuggestions;
+    // Update global suggestions for existing functionality
+    currentSuggestions = allSuggestions;
 
-        console.log('✅ Combined suggestions displayed successfully');
+    console.log('✅ Combined suggestions displayed successfully');
 
-    } catch (error) {
-        console.error('❌ Error displaying combined suggestions:', error);
+} catch (error) {
+    console.error('❌ Error displaying combined suggestions:', error);
 
-        const errorHtml = `
+    const errorHtml = `
             <div class="display-error">
                 <h3>❌ Error Displaying Suggestions</h3>
                 <p><strong>Error:</strong> ${error.message}</p>
@@ -12568,362 +11439,48 @@ async function displayCombinedSuggestions(successfulResults, failedResults) {
             </div>
         `;
 
-        appendToOutputField(errorHtml, false);
-        throw error;
-    }
+    appendToOutputField(errorHtml, false);
+    throw error;
+}
 }
 
-// Bulk accept suggestions based on priority filter
-function bulkAcceptSuggestions(priorityFilter) {
-    console.log('📋 Bulk accepting suggestions with filter:', priorityFilter);
+// bulkAcceptSuggestions, bulkRejectSuggestions, generateCombinedInteractiveSuggestions, 
+// displayCombinedInteractiveSuggestions, diagnoseAndRepairContent, checkContentStatus
+// are all moved to their respective feature modules (suggestions.js, guidelines.js).
 
-    const suggestions = document.querySelectorAll('.suggestion-item');
-    let actionCount = 0;
-
-    suggestions.forEach(suggestionElement => {
-        const suggestionId = suggestionElement.dataset.suggestionId;
-
-        // Check if this suggestion matches the filter
-        let shouldAccept = false;
-        if (priorityFilter === 'all') {
-            shouldAccept = true;
-        } else if (priorityFilter === 'high') {
-            const priorityBadge = suggestionElement.querySelector('.priority-badge');
-            shouldAccept = priorityBadge && priorityBadge.textContent.trim() === 'high';
-        }
-
-        if (shouldAccept) {
-            // Skip if already processed
-            const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
-            if (statusElement && statusElement.style.display !== 'none') {
-                return; // Already processed
-            }
-
-            handleSuggestionAction(suggestionId, 'accept');
-            actionCount++;
-        }
-    });
-
-    console.log(`✅ Bulk accepted ${actionCount} suggestions with filter: ${priorityFilter}`);
-
-    // Update decisions summary
-    setTimeout(() => {
-        updateDecisionsSummary();
-    }, 100);
-}
+// bulkAcceptSuggestions removed
 
 // Bulk reject suggestions
-function bulkRejectSuggestions(priorityFilter) {
-    console.log('📋 Bulk rejecting suggestions with filter:', priorityFilter);
-
-    const suggestions = document.querySelectorAll('.suggestion-item');
-    let actionCount = 0;
-
-    suggestions.forEach(suggestionElement => {
-        const suggestionId = suggestionElement.dataset.suggestionId;
-
-        // Check if this suggestion matches the filter
-        let shouldReject = false;
-        if (priorityFilter === 'all') {
-            shouldReject = true;
-        } else if (priorityFilter === 'high') {
-            const priorityBadge = suggestionElement.querySelector('.priority-badge');
-            shouldReject = priorityBadge && priorityBadge.textContent.trim() === 'high';
-        }
-
-        if (shouldReject) {
-            // Skip if already processed
-            const statusElement = suggestionElement.querySelector(`#status-${suggestionId}`);
-            if (statusElement && statusElement.style.display !== 'none') {
-                return; // Already processed
-            }
-
-            handleSuggestionAction(suggestionId, 'reject');
-            actionCount++;
-        }
-    });
-
-    console.log(`✅ Bulk rejected ${actionCount} suggestions with filter: ${priorityFilter}`);
-
-    // Update decisions summary
-    setTimeout(() => {
-        updateDecisionsSummary();
-    }, 100);
-}
+// bulkRejectSuggestions removed
 
 // Automatically generate combined interactive suggestions from multiple analysis results
-async function generateCombinedInteractiveSuggestions(analysisResults) {
-    console.log('🔄 Generating combined suggestions from', analysisResults.length, 'analysis results');
+// generateCombinedInteractiveSuggestions removed
 
-    try {
-        // Get user ID token
-        const user = auth.currentUser;
-        if (!user) {
-            throw new Error('User not authenticated');
-        }
+const idToken = await user.getIdToken();
 
-        const idToken = await user.getIdToken();
+// Prepare analysis data for each guideline
+const guidelineAnalyses = analysisResults.map(result => ({
+    guidelineId: result.guideline,
+    guidelineTitle: result.guidelineTitle || result.guideline,
+    analysis: result.analysis
+}));
 
-        // Prepare analysis data for each guideline
-        const guidelineAnalyses = analysisResults.map(result => ({
-            guidelineId: result.guideline,
-            guidelineTitle: result.guidelineTitle || result.guideline,
-            analysis: result.analysis
-        }));
+// generateCombinedInteractiveSuggestions body removed
+// generateCombinedInteractiveSuggestions remainder removed
 
-        console.log('📡 Sending multiple analyses to API...');
+// displayCombinedInteractiveSuggestions removed
 
-        // Send all analyses to the guideline suggestions API
-        const response = await fetch(`${window.SERVER_URL}/multiGuidelineDynamicAdvice`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                transcript: window.latestAnalysis.transcript,
-                guidelineAnalyses: guidelineAnalyses
-            })
-        });
+// diagnoseAndRepairContent removed
+// diagnoseAndRepairContent body removed
+// diagnoseAndRepairContent remainder removed
 
-        console.log('📡 API response status:', response.status);
+// checkContentStatus removed
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('❌ Multi-guideline API error:', errorText);
-            throw new Error(`API error: ${response.status} - ${errorText}`);
-        }
-
-        const result = await response.json();
-        console.log('✅ API result received:', {
-            success: result.success,
-            sessionId: result.sessionId,
-            totalSuggestions: result.combinedSuggestions?.length
-        });
-
-        if (!result.success) {
-            throw new Error(result.error || 'Multi-guideline guideline suggestions generation failed');
-        }
-
-        // Store session data globally
-        currentAdviceSession = result.sessionId;
-        currentSuggestions = result.combinedSuggestions || [];
-        userDecisions = {};
-
-        // Display combined suggestions
-        await displayCombinedInteractiveSuggestions(result.combinedSuggestions, result.guidelinesSummary);
-
-        return result;
-
-    } catch (error) {
-        console.error('❌ Error generating combined suggestions:', error);
-
-        // Fallback to single guideline approach
-        console.log('🔄 Falling back to single guideline guideline suggestions');
-        const firstResult = analysisResults[0];
-        await dynamicAdvice(
-            window.latestAnalysis.transcript,
-            firstResult.analysis,
-            firstResult.guideline,
-            firstResult.guidelineTitle || firstResult.guideline
-        );
-    }
-}
-
-// Display combined interactive suggestions from multiple guidelines
-async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSummary) {
-    // Use the same one-at-a-time approach as displayInteractiveSuggestions
-    const guidelineTitle = `${guidelinesSummary?.length || 0} Guidelines Combined`;
-    return displayInteractiveSuggestions(suggestions, guidelineTitle);
-}
-
-// Process guidelines one at a time for content repair
-async function diagnoseAndRepairContent() {
-    // Prevent multiple simultaneous repairs
-    if (window.contentRepairInProgress) {
-        console.log('[REPAIR] ⏳ Content repair already in progress, skipping...');
-        return;
-    }
-
-    window.contentRepairInProgress = true;
-    console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
-    console.log('[REPAIR] This will process guidelines one at a time to avoid timeouts');
-
-    try {
-        // Get user ID token
-        const user = auth.currentUser;
-        if (!user) {
-            console.error('[REPAIR] ❌ User not authenticated');
-            throw new Error('User not authenticated');
-        }
-
-        console.log('[REPAIR] ✅ User authenticated, getting ID token...');
-        const idToken = await user.getIdToken();
-
-        // First, get the list of guidelines needing content
-        console.log('[REPAIR] 📋 Getting list of guidelines needing content...');
-        const listResponse = await fetch(`${window.SERVER_URL}/getGuidelinesNeedingContent`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            }
-        });
-
-        if (!listResponse.ok) {
-            const errorText = await listResponse.text();
-            throw new Error(`Failed to get guidelines list: ${listResponse.status} - ${errorText}`);
-        }
-
-        const listResult = await listResponse.json();
-        const guidelinesNeedingContent = listResult.guidelines || [];
-
-        console.log(`[REPAIR] 📊 Found ${guidelinesNeedingContent.length} guidelines needing content processing`);
-
-        if (guidelinesNeedingContent.length === 0) {
-            showMetadataProgress('✅ All guidelines already have complete content!', true);
-            setTimeout(() => hideMetadataProgress(), 3000);
-            return;
-        }
-
-        // Process guidelines one at a time
-        let processed = 0;
-        let successful = 0;
-        let failed = 0;
-
-        for (const guideline of guidelinesNeedingContent) {
-            try {
-                processed++;
-                const progress = `🔧 Processing ${processed}/${guidelinesNeedingContent.length}: ${guideline.title}`;
-                showMetadataProgress(progress, false);
-
-                console.log(`[REPAIR] 📄 Processing guideline ${processed}/${guidelinesNeedingContent.length}: ${guideline.id}`);
-
-                const processResponse = await fetch(`${window.SERVER_URL}/processGuidelineContent`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${idToken}`
-                    },
-                    body: JSON.stringify({
-                        guidelineId: guideline.id
-                    })
-                });
-
-                if (processResponse.ok) {
-                    const processResult = await processResponse.json();
-                    if (processResult.success && processResult.updated) {
-                        successful++;
-                        console.log(`[REPAIR] ✅ Successfully processed: ${guideline.title}`);
-                    } else {
-                        console.log(`[REPAIR] ⏭️ No processing needed for: ${guideline.title}`);
-                    }
-                } else {
-                    failed++;
-                    const errorText = await processResponse.text();
-                    console.error(`[REPAIR] ❌ Failed to process ${guideline.title}: ${errorText}`);
-                }
-
-                // Small delay between requests to avoid overwhelming the server
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-            } catch (error) {
-                failed++;
-                console.error(`[REPAIR] ❌ Error processing ${guideline.title}:`, error);
-            }
-        }
-
-        console.log(`[REPAIR] 📈 Processing complete: ${successful} successful, ${failed} failed, ${processed} total`);
-
-        if (failed === 0) {
-            showMetadataProgress(`✅ Content repair completed! Successfully processed ${successful} guidelines.`, true);
-        } else {
-            showMetadataProgress(`⚠️ Content repair completed with some issues: ${successful} successful, ${failed} failed.`, true);
-        }
-
-        // Auto-hide after 5 seconds
-        setTimeout(() => {
-            hideMetadataProgress();
-        }, 5000);
-
-        // Note: Guidelines will be automatically updated via Firestore listeners
-        if (successful > 0) {
-            console.log('[REPAIR] ✅ Guidelines updated in Firestore, changes will reflect automatically');
-        }
-
-    } catch (error) {
-        console.error('[REPAIR] ❌ Content repair error:', error);
-
-        showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
-
-        // Auto-hide error after 10 seconds
-        setTimeout(() => {
-            hideMetadataProgress();
-        }, 10000);
-
-        throw error;
-
-    } finally {
-        console.log('[REPAIR] 🏁 Content repair process finished, flag reset');
-        window.contentRepairInProgress = false;
-    }
-}
-
-// Function to check content status during load
-function checkContentStatus(guidelines) {
-    const stats = {
-        total: guidelines.length,
-        nullContent: 0,
-        nullCondensed: 0,
-        missingBoth: 0,
-        hasContent: 0,
-        hasCondensed: 0,
-        fullyPopulated: 0
-    };
-
-    const problematicGuidelines = [];
-
-    guidelines.forEach(guideline => {
-        const hasContent = guideline.content && guideline.content !== null && guideline.content.trim().length > 0;
-        const hasCondensed = guideline.condensed && guideline.condensed !== null && guideline.condensed.trim().length > 0;
-
-        if (hasContent) stats.hasContent++;
-        if (hasCondensed) stats.hasCondensed++;
-        if (hasContent && hasCondensed) stats.fullyPopulated++;
-
-        if (!hasContent) {
-            stats.nullContent++;
-            problematicGuidelines.push({
-                id: guideline.id,
-                title: guideline.title || guideline.humanFriendlyName || 'Unknown',
-                issue: 'null_content'
-            });
-        }
-
-        if (!hasCondensed) {
-            stats.nullCondensed++;
-            if (!problematicGuidelines.find(p => p.id === guideline.id)) {
-                problematicGuidelines.push({
-                    id: guideline.id,
-                    title: guideline.title || guideline.humanFriendlyName || 'Unknown',
-                    issue: 'null_condensed'
-                });
-            } else {
-                // Update existing entry to indicate both are missing
-                const existing = problematicGuidelines.find(p => p.id === guideline.id);
-                existing.issue = 'missing_both';
-            }
-        }
-
-        if (!hasContent && !hasCondensed) {
-            stats.missingBoth++;
-        }
-    });
-
-    return { stats, problematicGuidelines };
-}
+// checkContentStatus body removed
+// checkContentStatus remainder removed
 
 // Global function for manual content repair (can be called from console)
+// repairContent is now managed via guidelines.js but keeping global hook if needed
 window.repairContent = async function () {
     console.log('🔧 Manual content repair triggered from console...');
     try {
@@ -12933,6 +11490,7 @@ window.repairContent = async function () {
         console.error('❌ Manual content repair failed:', error);
     }
 };
+// removed duplicated body braces
 
 // Make content status checking available globally for debugging
 window.checkContentStatus = checkContentStatus;
@@ -13137,375 +11695,7 @@ console.log('  - window.testMultiGuidelineSetup() - Validate setup');
 console.log('  - window.runMultiGuidelineAdvice() - Manual trigger');
 console.log('  - window.clearMultiGuidelineState() - Reset state');
 
-// ============================================
-// FIREBASE-BASED CLINICAL CONDITIONS SERVICE
-// ============================================
 
-// Global cache for clinical conditions from Firebase
-let clinicalConditionsFirebaseCache = null;
-let clinicalConditionsFirebaseLoadPromise = null;
-
-// Service to manage clinical conditions from Firebase
-const ClinicalConditionsService = {
-    // Load clinical conditions from server on startup
-    async loadConditions() {
-        if (clinicalConditionsFirebaseLoadPromise) {
-            return clinicalConditionsFirebaseLoadPromise;
-        }
-
-        clinicalConditionsFirebaseLoadPromise = this._fetchConditionsFromServer();
-        return clinicalConditionsFirebaseLoadPromise;
-    },
-
-    // Normalize category names (merge American/British spellings)
-    _normalizeCategories(conditions) {
-        // If there's both 'gynecology' and 'gynaecology', merge into 'gynaecology'
-        if (conditions.gynecology && conditions.gynaecology) {
-            console.log('[CLINICAL-SERVICE] Merging gynecology into gynaecology');
-            // Merge conditions from gynecology into gynaecology
-            conditions.gynaecology = { ...conditions.gynaecology, ...conditions.gynecology };
-            delete conditions.gynecology;
-        } else if (conditions.gynecology && !conditions.gynaecology) {
-            console.log('[CLINICAL-SERVICE] Renaming gynecology to gynaecology');
-            // Just rename if only American spelling exists
-            conditions.gynaecology = conditions.gynecology;
-            delete conditions.gynecology;
-        }
-        return conditions;
-    },
-
-    async _fetchConditionsFromServer() {
-        try {
-            // Try to get from IndexedDB cache first
-            if (window.cacheManager) {
-                const cachedConditions = await window.cacheManager.getClinicalConditions();
-                if (cachedConditions) {
-                    console.log('[CLINICAL-SERVICE] ⚡ Loaded clinical conditions from IndexedDB cache');
-                    // Normalize categories before caching
-                    const normalized = this._normalizeCategories(cachedConditions);
-                    clinicalConditionsFirebaseCache = normalized;
-                    return normalized;
-                }
-            }
-
-            console.log('[CLINICAL-SERVICE] Loading clinical conditions from Firebase...');
-
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('User not authenticated');
-            }
-
-            const idToken = await user.getIdToken(); // Only refresh if expired (was: true - force refresh)
-
-            const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${idToken}`,
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`Failed to load clinical conditions: ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            if (!data.success) {
-                throw new Error(data.error || 'Failed to load clinical conditions');
-            }
-
-            // Check if Firebase collection is empty
-            const totalConditions = data.summary?.totalConditions || 0;
-            if (totalConditions === 0) {
-                console.log('[CLINICAL-SERVICE] Firebase collection is empty, initializing...');
-                await this._initializeFirebaseCollection();
-
-                // Retry loading after initialization
-                const retryResponse = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${idToken}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (retryResponse.ok) {
-                    const retryData = await retryResponse.json();
-                    if (retryData.success && retryData.summary?.totalConditions > 0) {
-                        // Normalize categories before caching
-                        const normalizedConditions = this._normalizeCategories(retryData.conditions);
-                        clinicalConditionsFirebaseCache = normalizedConditions;
-
-                        // Save normalized data to IndexedDB cache in background
-                        if (window.cacheManager) {
-                            window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
-                                console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
-                            });
-                        }
-
-                        console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions after initialization:', {
-                            totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
-                            totalConditions: retryData.summary.totalConditions,
-                            categoriesWithCounts: retryData.summary.categoriesWithCounts
-                        });
-                        return clinicalConditionsFirebaseCache;
-                    }
-                }
-
-                // If initialization didn't work, fall back to JSON
-                console.log('[CLINICAL-SERVICE] Initialization failed, falling back to JSON...');
-                return this._loadFromJsonFallback();
-            }
-
-            // Normalize categories before caching
-            const normalizedConditions = this._normalizeCategories(data.conditions);
-            clinicalConditionsFirebaseCache = normalizedConditions;
-
-            // Save normalized data to IndexedDB cache in background
-            if (window.cacheManager) {
-                window.cacheManager.saveClinicalConditions(normalizedConditions).catch(err => {
-                    console.warn('[CLINICAL-SERVICE] Failed to cache conditions:', err);
-                });
-            }
-
-            console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
-                totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
-                totalConditions: data.summary.totalConditions,
-                categoriesWithCounts: data.summary.categoriesWithCounts
-            });
-
-            return clinicalConditionsFirebaseCache;
-
-        } catch (error) {
-            console.error('[CLINICAL-SERVICE] Error loading clinical conditions:', error);
-            // Fallback to JSON file if Firebase fails
-            return this._loadFromJsonFallback();
-        }
-    },
-
-    async _initializeFirebaseCollection() {
-        try {
-            console.log('[CLINICAL-SERVICE] Initializing Firebase collection...');
-
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('User not authenticated');
-            }
-
-            const idToken = await user.getIdToken();
-
-            const response = await fetch(`${window.SERVER_URL}/initializeClinicalConditions`, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${idToken}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({})
-            });
-
-            if (!response.ok) {
-                throw new Error(`Failed to initialize clinical conditions: ${response.status}`);
-            }
-
-            const data = await response.json();
-
-            if (!data.success) {
-                throw new Error(data.error || 'Failed to initialize clinical conditions');
-            }
-
-            console.log('[CLINICAL-SERVICE] Firebase collection initialized successfully:', data.message);
-            return true;
-
-        } catch (error) {
-            console.error('[CLINICAL-SERVICE] Error initializing Firebase collection:', error);
-            throw error;
-        }
-    },
-
-    async _loadFromJsonFallback() {
-        console.log('[CLINICAL-SERVICE] Falling back to JSON file...');
-
-        try {
-            const response = await fetch('./clinical_issues.json');
-            if (!response.ok) {
-                throw new Error(`Failed to load clinical issues JSON: ${response.status}`);
-            }
-
-            const clinicalIssues = await response.json();
-
-            // Convert to the same format as Firebase
-            const conditions = {};
-            for (const [category, issues] of Object.entries(clinicalIssues)) {
-                conditions[category] = {};
-                issues.forEach(issue => {
-                    conditions[category][issue] = {
-                        id: `${category}-${issue.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
-                        name: issue,
-                        category: category,
-                        transcript: null, // No pre-generated transcripts in fallback
-                        hasTranscript: false,
-                        metadata: {
-                            source: 'json-fallback'
-                        }
-                    };
-                });
-            }
-
-            clinicalConditionsFirebaseCache = conditions;
-
-            console.log('[CLINICAL-SERVICE] Loaded from JSON fallback:', {
-                totalCategories: Object.keys(conditions).length,
-                totalConditions: Object.values(conditions).reduce((sum, cat) => sum + Object.keys(cat).length, 0)
-            });
-
-            return conditions;
-
-        } catch (error) {
-            console.error('[CLINICAL-SERVICE] Error loading JSON fallback:', error);
-            throw error;
-        }
-    },
-
-    // Get all conditions (cached)
-    getConditions() {
-        return clinicalConditionsFirebaseCache;
-    },
-
-    // Get conditions by category
-    getConditionsByCategory(category) {
-        return clinicalConditionsFirebaseCache?.[category] || {};
-    },
-
-    // Find a specific condition
-    findCondition(conditionName) {
-        if (!clinicalConditionsFirebaseCache) return null;
-
-        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
-            if (conditions[conditionName]) {
-                return conditions[conditionName];
-            }
-        }
-        return null;
-    },
-
-    // Generate transcript for a specific condition
-    async generateTranscript(conditionId, forceRegenerate = false) {
-        try {
-            console.log('[CLINICAL-SERVICE] Generating transcript for condition:', conditionId);
-
-            const user = auth.currentUser;
-            if (!user) {
-                throw new Error('User not authenticated');
-            }
-
-            const idToken = await user.getIdToken();
-
-            const response = await fetch(`${window.SERVER_URL}/generateTranscript/${conditionId}`, {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${idToken}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ forceRegenerate })
-            });
-
-            console.log('[CLINICAL-SERVICE] Server response status:', response.status, response.statusText);
-
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error('[CLINICAL-SERVICE] Server error response:', errorText);
-                throw new Error(`Failed to generate transcript: ${response.status} - ${errorText}`);
-            }
-
-            const data = await response.json();
-
-            console.log('[CLINICAL-SERVICE] Server response data:', {
-                success: data.success,
-                hasTranscript: !!data.transcript,
-                transcriptLength: data.transcript?.length,
-                cached: data.cached,
-                generated: data.generated,
-                condition: data.condition,
-                transcriptPreview: data.transcript ? data.transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT',
-                fullDataKeys: Object.keys(data)
-            });
-
-            if (!data.success) {
-                throw new Error(data.error || 'Failed to generate transcript');
-            }
-
-            if (!data.transcript) {
-                console.error('[CLINICAL-SERVICE] No transcript in server response:', data);
-                throw new Error('No transcript received from server');
-            }
-
-            // Update cache if transcript was generated/retrieved
-            if (data.transcript && clinicalConditionsFirebaseCache) {
-                const condition = this.findConditionById(conditionId);
-                if (condition) {
-                    // Find and update the condition in cache
-                    for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
-                        for (const [name, cond] of Object.entries(conditions)) {
-                            if (cond.id === conditionId) {
-                                clinicalConditionsFirebaseCache[category][name].transcript = data.transcript;
-                                clinicalConditionsFirebaseCache[category][name].hasTranscript = true;
-                                clinicalConditionsFirebaseCache[category][name].lastGenerated = data.generated || data.lastGenerated;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            return data;
-
-        } catch (error) {
-            console.error('[CLINICAL-SERVICE] Error generating transcript:', error);
-            throw error;
-        }
-    },
-
-    // Helper to find condition by ID
-    findConditionById(conditionId) {
-        if (!clinicalConditionsFirebaseCache) return null;
-
-        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
-            for (const [name, condition] of Object.entries(conditions)) {
-                if (condition.id === conditionId) {
-                    return condition;
-                }
-            }
-        }
-        return null;
-    },
-
-    // Get summary statistics
-    getSummary() {
-        if (!clinicalConditionsFirebaseCache) return null;
-
-        const summary = {
-            totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
-            totalConditions: 0,
-            conditionsWithTranscripts: 0,
-            categoriesWithCounts: {}
-        };
-
-        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
-            const categoryCount = Object.keys(conditions).length;
-            const categoryWithTranscripts = Object.values(conditions).filter(c => c.hasTranscript).length;
-
-            summary.totalConditions += categoryCount;
-            summary.conditionsWithTranscripts += categoryWithTranscripts;
-            summary.categoriesWithCounts[category] = {
-                total: categoryCount,
-                withTranscripts: categoryWithTranscripts
-            };
-        }
-
-        return summary;
-    }
-};
 
 
 // Note: extractRelevanceScore is now imported from js/utils/relevance.js
