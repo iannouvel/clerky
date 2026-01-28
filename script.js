@@ -9254,69 +9254,7 @@ window.testMetadataCompletion = async function (fields = ['humanFriendlyName']) 
 };
 
 // Function to show metadata enhancement progress to user
-function showMetadataProgress(message, isComplete = false) {
-    // Create or update progress notification
-    let progressDiv = document.getElementById('metadata-progress');
 
-    if (!progressDiv) {
-        progressDiv = document.createElement('div');
-        progressDiv.id = 'metadata-progress';
-        progressDiv.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #f0f9ff;
-            border: 1px solid #0ea5e9;
-            border-radius: 8px;
-            padding: 12px 16px;
-            max-width: 300px;
-            z-index: 1000;
-            font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        `;
-        document.body.appendChild(progressDiv);
-    }
-
-    progressDiv.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 8px;">
-            ${isComplete ?
-            '<div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;"></div>' :
-            '<div style="width: 12px; height: 12px; border: 2px solid #0ea5e9; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>'
-        }
-            <span>${message}</span>
-        </div>
-    `;
-
-    // Add animation keyframe if not already added
-    if (!document.getElementById('metadata-progress-styles')) {
-        const style = document.createElement('style');
-        style.id = 'metadata-progress-styles';
-        style.textContent = `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    }
-
-    // Auto-hide completed messages after 5 seconds
-    if (isComplete) {
-        setTimeout(() => {
-            if (progressDiv && progressDiv.parentNode) {
-                progressDiv.remove();
-            }
-        }, 5000);
-    }
-}
-
-// Function to hide metadata progress
-function hideMetadataProgress() {
-    const progressDiv = document.getElementById('metadata-progress');
-    if (progressDiv && progressDiv.parentNode) {
-        progressDiv.remove();
-    }
-}
 
 // Show guideline selection interface for multi-guideline guideline suggestions
 async function showGuidelineSelectionInterface(mostRelevantGuidelines) {
