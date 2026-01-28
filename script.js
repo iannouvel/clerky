@@ -47,7 +47,9 @@ import {
     bulkAcceptSuggestions,
     bulkRejectSuggestions,
     confirmModification,
-    setSuggestionSession
+    setSuggestionSession,
+    getCategoryIcon,
+    getOriginalTextLabel
 } from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
@@ -4497,158 +4499,7 @@ function updateSuggestionActionButtons() {
 
 
 
-// Get category icon for suggestion type
-function getCategoryIcon(category) {
-    const icons = {
-        'addition': '➕',
-        'modification': '✏️',
-        'deletion': '🗑️',
-        'formatting': '📝',
-        'default': '💡'
-    };
-    return icons[category] || icons.default;
-}
 
-// Get appropriate label for original text based on category and content
-function getOriginalTextLabel(originalText, category) {
-    if (category === 'addition') {
-        // For additions, we're usually dealing with missing elements
-        if (originalText.toLowerCase().startsWith('no ') || originalText.toLowerCase().startsWith('did not') || originalText.toLowerCase().includes('missing')) {
-            return 'Gap identified:';
-        } else if (originalText.toLowerCase().startsWith('missing:') || originalText.toLowerCase().startsWith('gap:')) {
-            return 'Issue found:';
-        } else {
-            return 'Missing element:';
-        }
-    } else if (category === 'modification') {
-        return 'Current text:';
-    } else if (category === 'deletion') {
-        return 'Text to remove:';
-    } else {
-        return 'Current text:';
-    }
-}
-
-// Handle suggestion actions (accept, reject, modify)
-function handleSuggestionAction(suggestionId, action) {
-    console.log('[DEBUG] handleSuggestionAction called', {
-        suggestionId,
-        action,
-        currentChatId: window.currentChatId,
-        hasCurrentSuggestions: !!window.currentSuggestions,
-        currentSuggestionsCount: window.currentSuggestions?.length || 0
-    });
-
-    const suggestionElement = document.querySelector(`[data-suggestion-id="${suggestionId}"]`);
-    if (!suggestionElement) {
-        console.error('[DEBUG] handleSuggestionAction: Suggestion element not found:', suggestionId);
-        return;
-    }
-
-    // Find the suggestion data
-    const suggestion = currentSuggestions.find(s => s.id === suggestionId);
-    if (!suggestion) {
-        console.error('[DEBUG] handleSuggestionAction: Suggestion data not found:', suggestionId);
-
-        // Show helpful error message to user
-        const errorMessage = `
-            <div style="background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; padding: 15px; margin: 10px 0; color: #856404;">
-                <h4>⚠️ Action Not Available</h4>
-                <p><strong>Issue:</strong> You're trying to interact with suggestions from a different chat session.</p>
-                <p><strong>Solution:</strong> Please switch back to the original chat where these suggestions were generated, or generate new suggestions in the current chat.</p>
-                <p><small>Suggestion ID: ${suggestionId} | Current Chat: ${window.currentChatId}</small></p>
-            </div>
-        `;
-
-        // Find the suggestion container and add the error message
-        const suggestionContainer = suggestionElement.closest('.suggestion-item');
-        if (suggestionContainer) {
-            suggestionContainer.insertAdjacentHTML('afterend', errorMessage);
-
-            // Remove the error message after 10 seconds
-            setTimeout(() => {
-                const errorDiv = suggestionContainer.nextElementSibling;
-                if (errorDiv && errorDiv.innerHTML.includes('Action Not Available')) {
-                    errorDiv.remove();
-                }
-            }, 10000);
-        }
-
-        return;
-    }
-
-    console.log('[DEBUG] handleSuggestionAction: Processing action', {
-        suggestionId,
-        action,
-        suggestionFound: !!suggestion
-    });
-
-    if (action === 'modify') {
-        // Show modify section
-        const modifySection = document.getElementById(`modify-${suggestionId}`);
-        if (modifySection) {
-            modifySection.style.display = 'block';
-            console.log('[DEBUG] handleSuggestionAction: Showing modify section');
-        }
-        return;
-    }
-
-    // For reject action, prompt for optional feedback
-    if (action === 'reject') {
-        promptForRejectionFeedback(suggestionId, suggestion);
-        return;
-    }
-
-    // For accept, record the decision and apply immediately
-    userDecisions[suggestionId] = {
-        action: action,
-        suggestion: suggestion,
-        timestamp: new Date().toISOString()
-    };
-
-    console.log('[DEBUG] handleSuggestionAction: Recorded decision', {
-        suggestionId,
-        action,
-        totalDecisions: Object.keys(userDecisions).length
-    });
-
-    // Apply the change immediately if accepted
-    if (action === 'accept' && suggestion.suggestedText) {
-        const currentContent = getUserInputContent();
-        let newContent;
-        let replacements;
-
-        // Handle additions (missing documentation) vs modifications (replacing existing text)
-        if (suggestion.category === 'addition' || !suggestion.originalText) {
-            // Addition: append the suggested text to the end of the document
-            // Use single newline to avoid inappropriate blank lines between content
-            const spacing = currentContent.trim() ? '\n' : '';
-            newContent = currentContent + spacing + suggestion.suggestedText;
-            replacements = [{
-                findText: '',
-                replacementText: suggestion.suggestedText
-            }];
-        } else {
-            // Modification/Deletion: replace existing text
-            newContent = currentContent.replace(
-                new RegExp(suggestion.originalText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'),
-                suggestion.suggestedText
-            );
-            replacements = [{
-                findText: suggestion.originalText,
-                replacementText: suggestion.suggestedText
-            }];
-        }
-
-        setUserInputContent(newContent, true, 'Guideline Suggestions - Accepted', replacements);
-        console.log('[DEBUG] handleSuggestionAction: Applied accepted suggestion immediately');
-    }
-
-    // Update UI to show decision
-    updateSuggestionStatus(suggestionId, action);
-    updateDecisionsSummary();
-    debouncedSaveState(); // Save state after a decision is made
-}
 
 // ========================================
 // SHARED FEEDBACK MODAL WITH SPEECH-TO-TEXT
