@@ -1,4 +1,5 @@
-import { auth, postAuthenticated } from '../api/client.js';
+import { auth } from '../../firebase-init.js';
+import { postAuthenticated } from '../api/client.js';
 import { API_ENDPOINTS } from '../api/config.js';
 import { getUserInputContent, setUserInputContent, appendToOutputField } from '../utils/editor.js';
 import { showPIIReviewInterface, ensureAnonymisedForOutbound } from './pii.js';
