@@ -732,7 +732,7 @@ export async function performComplianceScoring(originalTranscript, recommendedCh
         const idToken = await user.getIdToken();
 
         // Call the scoring endpoint
-        constresult = await postAuthenticated(API_ENDPOINTS.SCORE_COMPLIANCE, {
+        const result = await postAuthenticated(API_ENDPOINTS.SCORE_COMPLIANCE, {
             originalTranscript,
             recommendedChanges,
             guidelineId,
