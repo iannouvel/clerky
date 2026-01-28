@@ -3179,16 +3179,20 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
         const result = await response.json();
         console.log('[PRACTICE-POINTS] Result:', {
             success: result.success,
-            totalPracticePoints: result.totalPracticePoints,
-            relevantPracticePoints: result.relevantPracticePoints,
-            suggestionsCount: result.suggestions?.length
+            suggestionsCount: result.suggestionsCount || result.suggestions?.length,
+            compliantCount: result.compliantCount
         });
 
         if (!result.success) {
             throw new Error(result.error || 'Failed to get practice point suggestions');
         }
 
-        updateUser(`Found ${result.relevantPracticePoints} relevant practice points`, false);
+        const suggestionCount = result.suggestionsCount || result.suggestions?.length || 0;
+        if (suggestionCount > 0) {
+            updateUser(`Found ${suggestionCount} relevant practice points`, false);
+        } else {
+            updateUser(`No additional suggestions - care is compliant`, false);
+        }
         return result;
 
     } catch (error) {
@@ -3201,29 +3205,27 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
 // Display practice point suggestions using the existing one-at-a-time UI
 async function displayPracticePointSuggestions(result) {
     console.log('[PRACTICE-POINTS] Displaying suggestions:', result.suggestions?.length);
-    console.log('[PRACTICE-POINTS] 3-step summary:', {
-        total: result.totalPracticePoints,
-        relevant: result.relevantPracticePoints,
-        important: result.importantPracticePoints,
-        compliant: result.compliantCount,
-        nonCompliant: result.nonCompliantCount
+    console.log('[PRACTICE-POINTS] Analysis summary:', {
+        suggestionsCount: result.suggestionsCount || result.suggestions?.length,
+        compliantCount: result.compliantCount,
+        alreadyCompliantCount: result.alreadyCompliant?.length
     });
 
     if (!result.suggestions || result.suggestions.length === 0) {
         const message = result.message || 'Plan aligns with guideline recommendations.';
         updateUser(message, false);
 
-        // Build summary of what was filtered
+        // Build summary of what was analyzed
         let filterSummary = '';
-        if (result.totalPracticePoints > 0) {
+        const alreadyCompliantCount = result.alreadyCompliant?.length || result.compliantCount || 0;
+        if (alreadyCompliantCount > 0) {
             filterSummary = `
                 <div style="background: var(--bg-tertiary); border: 1px solid #22c55e; border-radius: 6px; padding: 15px; margin: 15px 0;">
                     <p style="margin: 0 0 10px 0; font-size: 0.95em; color: var(--text-primary); font-weight: 600;">📊 Analysis Summary</p>
                     <p style="margin: 0; font-size: 0.9em; color: var(--text-secondary);">
-                        ${result.totalPracticePoints} practice points analysed
-                        → ${result.relevantPracticePoints || 0} relevant to this patient
-                        → ${result.importantPracticePoints || 0} clinically important
-                        → <strong style="color: #22c55e;">${result.compliantCount || 0} compliant</strong>
+                        Guideline analyzed against clinical note
+                        → <strong style="color: #22c55e;">${alreadyCompliantCount} items already compliant</strong>
+                        → No additional suggestions needed
                     </p>
                 </div>
             `;
