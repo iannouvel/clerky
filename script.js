@@ -50,7 +50,9 @@ import {
     setSuggestionSession,
     getCategoryIcon,
     getOriginalTextLabel,
-    cancelModification
+    cancelModification,
+    determineInsertionPoint,
+    insertTextAtPoint
 } from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
@@ -5948,6 +5950,10 @@ window.generateFakeClinicalInteraction = generateFakeClinicalInteraction;
 window.switchChat = switchChat;
 window.deleteChat = deleteChat;
 window.startNewChat = startNewChat;
+window.generateCombinedInteractiveSuggestions = generateCombinedInteractiveSuggestions;
+window.determineInsertionPoint = determineInsertionPoint;
+window.insertTextAtPoint = insertTextAtPoint;
+window.hideSelectionButtons = hideSelectionButtons;
 
 // setButtonLoading is now imported from js/ui/status.js
 
