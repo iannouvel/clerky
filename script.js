@@ -49,7 +49,8 @@ import {
     confirmModification,
     setSuggestionSession,
     getCategoryIcon,
-    getOriginalTextLabel
+    getOriginalTextLabel,
+    cancelModification
 } from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
