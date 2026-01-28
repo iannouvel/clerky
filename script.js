@@ -50,9 +50,7 @@ import {
     setSuggestionSession,
     getCategoryIcon,
     getOriginalTextLabel,
-    cancelModification,
-    determineInsertionPoint,
-    insertTextAtPoint
+    cancelModification
 } from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
