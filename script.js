@@ -5952,6 +5952,7 @@ window.generateCombinedInteractiveSuggestions = generateCombinedInteractiveSugge
 window.determineInsertionPoint = determineInsertionPoint;
 window.insertTextAtPoint = insertTextAtPoint;
 window.hideSelectionButtons = hideSelectionButtons;
+window.getPracticePointSuggestions = getPracticePointSuggestions;
 
 // setButtonLoading is now imported from js/ui/status.js
 
