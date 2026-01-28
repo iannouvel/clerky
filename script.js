@@ -46,7 +46,8 @@ import {
     displayCombinedSuggestions,
     bulkAcceptSuggestions,
     bulkRejectSuggestions,
-    confirmModification
+    confirmModification,
+    setSuggestionSession
 } from './js/features/suggestions.js';
 import { initializeMarked } from './js/utils/external.js';
 import { showMainContent } from './js/ui/layout.js';
@@ -883,9 +884,8 @@ let currentChatId = null;
 let currentSessionId = null;
 
 // Global variables for guideline suggestions
-let currentAdviceSession = null;
-let currentSuggestions = [];
-let userDecisions = {};
+// (Imported from js/features/suggestions.js)
+// currentAdviceSession, currentSuggestions, userDecisions are imported bindings.
 
 // Initialize marked library
 // marked library initialization is imported from js/utils/external.js
@@ -3097,8 +3097,6 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
         updateUser('Suggestions generated', false);
 
         // Store session data globally and ensure unique suggestion IDs
-        currentAdviceSession = result.sessionId;
-
         // Add session prefix to suggestion IDs to prevent conflicts in sequential processing
         const prefixedSuggestions = (result.suggestions || []).map(suggestion => ({
             ...suggestion,
@@ -3108,8 +3106,8 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
             guidelineTitle: result.guidelineTitle
         }));
 
-        currentSuggestions = prefixedSuggestions;
-        userDecisions = {};
+        // Store session data globally and ensure unique suggestion IDs
+        setSuggestionSession(result.sessionId, prefixedSuggestions);
 
         // Store guideline info globally for feedback submission
         window.currentGuidelineId = result.guidelineId;
@@ -3317,9 +3315,8 @@ async function displayPracticePointSuggestions(result) {
     });
 
     // Store session data
-    currentAdviceSession = `pp-${result.guidelineId}-${Date.now()}`;
-    currentSuggestions = suggestions;
-    userDecisions = {};
+    // Store session data
+    setSuggestionSession(`pp-${result.guidelineId}-${Date.now()}`, suggestions);
 
     window.currentGuidelineId = result.guidelineId;
     window.currentGuidelineTitle = result.guidelineTitle;
@@ -11678,9 +11675,8 @@ window.clearMultiGuidelineState = function () {
     checkboxes.forEach(cb => cb.checked = false);
 
     // Clear session state
-    currentAdviceSession = null;
-    currentSuggestions = [];
-    userDecisions = {};
+    // Clear session state
+    setSuggestionSession(null, []);
 
     // Clear any progress displays
     const progressContainers = document.querySelectorAll('.multi-guideline-progress, .multi-guideline-error');
