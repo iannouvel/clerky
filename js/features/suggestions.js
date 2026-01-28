@@ -597,8 +597,21 @@ export async function displayCombinedSuggestions(successfulResults, failedResult
              <button onclick="applyAllDecisions()">Apply Applied Decisions (Batch)</button>
         </div>
     </div>`;
+}
 
-    appendToOutputField(combinedHtml, false);
+// Function to handle cancelling the modification of a specific suggestion
+export function cancelModification(suggestionId) {
+    const modifySection = document.getElementById(`modify-${suggestionId}`);
+    if (modifySection) {
+        modifySection.style.display = 'none';
+
+        // Also hide status if it was showing
+        const statusDiv = document.getElementById(`status-${suggestionId}`);
+        if (statusDiv) statusDiv.innerHTML = '';
+    }
+}
+
+appendToOutputField(combinedHtml, false);
 }
 
 export function bulkAcceptSuggestions(filter) {
