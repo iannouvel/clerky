@@ -611,9 +611,6 @@ export function cancelModification(suggestionId) {
     }
 }
 
-appendToOutputField(combinedHtml, false);
-}
-
 export function bulkAcceptSuggestions(filter) {
     const items = document.querySelectorAll('.suggestion-item');
     items.forEach(el => {
