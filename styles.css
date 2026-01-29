@@ -654,7 +654,7 @@ body {
     background: var(--text-primary);
     color: var(--bg-primary);
     border: none;
-    padding: 8px 12px;
+    padding: 4px !important;
     border-radius: 6px;
     font-family: inherit;
     font-size: 0.9em;
