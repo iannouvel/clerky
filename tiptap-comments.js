@@ -1,6 +1,12 @@
 // Import TipTap modules from CDN
 import { Editor } from 'https://esm.sh/@tiptap/core@2.1.13';
-import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.1.13';
+import Document from 'https://esm.sh/@tiptap/extension-document@2.1.13';
+import Paragraph from 'https://esm.sh/@tiptap/extension-paragraph@2.1.13';
+import Text from 'https://esm.sh/@tiptap/extension-text@2.1.13';
+import Bold from 'https://esm.sh/@tiptap/extension-bold@2.1.13';
+import Italic from 'https://esm.sh/@tiptap/extension-italic@2.1.13';
+import History from 'https://esm.sh/@tiptap/extension-history@2.1.13';
+import HardBreak from 'https://esm.sh/@tiptap/extension-hard-break@2.1.13';
 import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13';
 import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
 import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
@@ -42,14 +48,21 @@ function initEditor(elementId, placeholder) {
     const editor = new Editor({
       element,
       extensions: [
-        StarterKit.configure({
-          // Disable auto-list creation to allow manual numbered lists
-          orderedList: false,
-          bulletList: false,
-          listItem: false
-        }),
+        // Core extensions (required)
+        Document,
+        Paragraph,
+        Text,
+        // Basic formatting
+        Bold,
+        Italic,
+        // History for undo/redo
+        History,
+        // Hard break for Enter key
+        HardBreak,
+        // Styling extensions
         TextStyle,
         Color,
+        // Placeholder
         Placeholder.configure({
           placeholder
         })
