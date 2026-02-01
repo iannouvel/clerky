@@ -77,3 +77,7 @@ node_modules/
 
 # dataconnect generated files
 .dataconnect
+
+# Claude Code temp files
+tmpclaude-*
+.claude/settings.local.json
