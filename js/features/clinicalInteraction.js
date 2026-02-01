@@ -148,7 +148,17 @@ export async function showClinicalIssuesDropdown() {
                 );
 
                 if (options.length > 0) {
-                    const randomOption = options[Math.floor(Math.random() * options.length)];
+                    // Prioritize issues without saved transcripts (no checkmark)
+                    const optionsWithoutTranscript = options.filter(option =>
+                        !option.textContent.includes(' ✓')
+                    );
+
+                    // Pick from options without saved transcripts first, otherwise from all
+                    const poolToChooseFrom = optionsWithoutTranscript.length > 0
+                        ? optionsWithoutTranscript
+                        : options;
+
+                    const randomOption = poolToChooseFrom[Math.floor(Math.random() * poolToChooseFrom.length)];
                     clinicalDropdown.value = randomOption.value;
                     updateGenerateButton();
                     await generateFakeClinicalInteraction(randomOption.value);
