@@ -81,42 +81,45 @@ function initEditor(elementId, placeholder) {
     // Add keyboard event listener to prevent browser auto-formatting
     const editorElement = editor.view.dom;
 
-    // Log all beforeinput events to debug what's happening
-    editorElement.addEventListener('beforeinput', (event) => {
-      // Log the event for debugging
-      if (event.data === ' ' || event.inputType.includes('delete') || event.inputType.includes('format')) {
-        console.log('[TIPTAP BEFOREINPUT]', {
-          inputType: event.inputType,
-          data: event.data,
-          dataTransfer: event.dataTransfer
-        });
-      }
+    console.log(`[TIPTAP] Attaching event listeners to editor DOM:`, editorElement);
+    console.log(`[TIPTAP] Editor DOM tag:`, editorElement.tagName, `contenteditable:`, editorElement.contentEditable);
 
-      // Prevent any list-related formatting
+    // Log ALL beforeinput events to see what's happening
+    editorElement.addEventListener('beforeinput', (event) => {
+      console.log('[TIPTAP BEFOREINPUT] <<<', {
+        inputType: event.inputType,
+        data: event.data,
+        target: event.target.tagName
+      });
+
+      // Prevent any list-related formatting or deletions
       if (event.inputType === 'insertOrderedList' ||
           event.inputType === 'insertUnorderedList' ||
           event.inputType === 'formatSetBlockTextDirection' ||
           event.inputType === 'insertReplacementText' ||
+          event.inputType === 'deleteContentBackward' ||
+          event.inputType === 'deleteContentForward' ||
+          event.inputType === 'deleteByCut' ||
           event.inputType.includes('formatSet') ||
-          event.inputType.includes('formatRemove')) {
-        console.log('[TIPTAP] ⛔ BLOCKING auto-formatting:', event.inputType);
+          event.inputType.includes('formatRemove') ||
+          event.inputType.includes('formatApply')) {
+        console.log('[TIPTAP] ⛔ ⛔ ⛔ BLOCKING:', event.inputType);
         event.preventDefault();
         event.stopPropagation();
+        event.stopImmediatePropagation();
         return false;
       }
     }, true); // Use capture phase
 
-    // Also log input events to see what actually happened
+    // Also log ALL input events
     editorElement.addEventListener('input', (event) => {
-      if (event.inputType.includes('delete') || event.inputType.includes('format') || event.inputType.includes('insert')) {
-        console.log('[TIPTAP INPUT]', {
-          inputType: event.inputType,
-          data: event.data
-        });
-      }
-    });
+      console.log('[TIPTAP INPUT] >>>', {
+        inputType: event.inputType,
+        data: event.data
+      });
+    }, true);
 
-    console.log(`Editor created successfully for: ${elementId}`);
+    console.log(`[TIPTAP] Event listeners attached successfully for: ${elementId}`);
     return editor;
   } catch (error) {
     console.error('Error initializing TipTap editor:', error);
