@@ -45,7 +45,8 @@ const {
     checkComplianceAndSuggest,
     filterImportantPracticePoints,
     filterRelevantPracticePoints,
-    formatMessagesForProvider
+    formatMessagesForProvider,
+    senseCheckSuggestions
 } = require('./server/services/ai');
 
 const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guideline');
@@ -16443,7 +16444,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         }
 
         // Format suggestions for the frontend
-        const suggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
+        const formattedSuggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
             id: index + 1,
             name: suggestion.name,
             // IMPORTANT: Frontend builds "Why" as Issue + description; if description mirrors issue,
@@ -16459,9 +16460,25 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             applicable: true
         }));
 
-        console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${suggestions.length} suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
+        console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
         console.log(`[SEMANTIC-SUGGESTIONS] Patient context: ${JSON.stringify(analysisResult.patientContext || {})}`);
 
+        // Sense-check suggestions to filter out impossible/nonsensical ones
+        const senseCheckResult = await senseCheckSuggestions(
+            formattedSuggestions,
+            transcript,
+            analysisResult.patientContext || {},
+            userId
+        );
+
+        const suggestions = senseCheckResult.validSuggestions;
+        const filteredOutSuggestions = senseCheckResult.filteredOut;
+
+        if (filteredOutSuggestions.length > 0) {
+            console.log(`[SEMANTIC-SUGGESTIONS] Sense-check filtered out ${filteredOutSuggestions.length} nonsensical suggestions`);
+        }
+
+        timer.step('Sense-check validation');
         timer.step('Format response');
         console.log('[SEMANTIC-SUGGESTIONS] Timing:', JSON.stringify(timer.getSummary()));
 
@@ -16475,6 +16492,11 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             alreadyCompliant: analysisResult.alreadyCompliant || [],
             suggestionsCount: suggestions.length,
             compliantCount: (analysisResult.alreadyCompliant || []).length,
+            filteredOutCount: filteredOutSuggestions.length,
+            filteredOutSuggestions: filteredOutSuggestions.map(f => ({
+                suggestion: f.suggestion,
+                reason: f.filterReason
+            })),
             approach: 'semantic' // Flag to indicate new approach is being used
         });
 

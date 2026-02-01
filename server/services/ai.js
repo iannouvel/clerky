@@ -571,6 +571,77 @@ async function refineSuggestions(previousSuggestions, previousEvaluation, clinic
     }
 }
 
+/**
+ * Sense-check suggestions against clinical context to filter out impossible/nonsensical recommendations
+ * @param {Array} suggestions - Array of suggestion objects
+ * @param {string} clinicalNote - The clinical note text
+ * @param {Object} patientContext - Patient context extracted by AI (gestational age, etc.)
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object>} - { validSuggestions, filteredOut }
+ */
+async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, userId) {
+    if (!suggestions || suggestions.length === 0) {
+        return { validSuggestions: [], filteredOut: [] };
+    }
+
+    console.log('[SENSE-CHECK] Checking', suggestions.length, 'suggestions for temporal/logical consistency');
+
+    // Build a concise prompt to check each suggestion
+    const systemPrompt = `You are a clinical reasoning validator. Your job is to identify suggestions that are IMPOSSIBLE or NONSENSICAL given the patient's current state.
+
+Common issues to detect:
+- Temporal impossibilities (e.g., suggesting a scan at 28 weeks when patient is already at 36 weeks)
+- Already completed actions (e.g., suggesting to check booking bloods when they've already been done)
+- Contradictory suggestions (e.g., suggesting investigation for something already ruled out)
+
+Return ONLY valid JSON with this structure:
+{
+  "validSuggestions": [<array of suggestion IDs that make sense>],
+  "filteredOut": [
+    {
+      "id": <suggestion ID>,
+      "reason": "<brief explanation why it's nonsensical>"
+    }
+  ]
+}`;
+
+    const userPrompt = `PATIENT CONTEXT:\n${JSON.stringify(patientContext, null, 2)}\n\nCLINICAL NOTE:\n${clinicalNote}\n\nSUGGESTIONS TO VALIDATE:\n${suggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}`).join('\n')}\n\nTASK: Identify which suggestions are impossible/nonsensical given the current patient state. Be conservative - only filter out suggestions that are clearly impossible or already done.`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId);
+
+        if (!result || !result.content) {
+            console.warn('[SENSE-CHECK] No response from AI, passing all suggestions through');
+            return { validSuggestions: suggestions, filteredOut: [] };
+        }
+
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const validIds = new Set(parsed.validSuggestions || []);
+        const filteredOutMap = new Map((parsed.filteredOut || []).map(f => [f.id, f.reason]));
+
+        const validSuggestions = suggestions.filter((_, idx) => validIds.has(idx));
+        const filteredOut = suggestions
+            .map((s, idx) => ({ ...s, originalIndex: idx, filterReason: filteredOutMap.get(idx) }))
+            .filter(s => s.filterReason);
+
+        console.log(`[SENSE-CHECK] Result: ${validSuggestions.length} valid, ${filteredOut.length} filtered out`);
+        if (filteredOut.length > 0) {
+            console.log('[SENSE-CHECK] Filtered out:', filteredOut.map(f => `"${f.suggestion}" (${f.filterReason})`).join('; '));
+        }
+
+        return { validSuggestions, filteredOut };
+    } catch (error) {
+        console.error('[SENSE-CHECK] Error during validation:', error);
+        // On error, pass all suggestions through rather than blocking potentially valid ones
+        return { validSuggestions: suggestions, filteredOut: [] };
+    }
+}
+
 module.exports = {
     createPromptForChunk,
     mergeChunkResults,
@@ -587,5 +658,6 @@ module.exports = {
     generatePromptImprovements,
     extractLessonsLearned,
     refineSuggestions,
+    senseCheckSuggestions,
     SEQUENTIAL_LLM_CHAIN
 };
