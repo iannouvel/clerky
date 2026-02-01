@@ -112,14 +112,22 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
             const renderGroup = (title, items, color) => {
                 if (items.length === 0) return '';
+
+                // Show only first 3 items
+                const displayItems = items.slice(0, 3);
+                const hasMore = items.length > 3;
+
                 let html = `<div style="margin-bottom: 15px;">
-                    <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${title}</div>`;
-                items.forEach(item => {
+                    <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${items.length} ${title}</div>`;
+                displayItems.forEach(item => {
                     const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || item.title || item.description || item.content || item.advice || '';
                     if (text) {
                         html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
                     }
                 });
+                if (hasMore) {
+                    html += `<div style="font-size: 0.85em; color: var(--text-tertiary); margin-top: 6px; padding-left: 10px; font-style: italic;">...and ${items.length - 3} more</div>`;
+                }
                 html += `</div>`;
                 return html;
             };
