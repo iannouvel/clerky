@@ -42,7 +42,18 @@ function initEditor(elementId, placeholder) {
     const editor = new Editor({
       element,
       extensions: [
-        StarterKit,
+        StarterKit.configure({
+          orderedList: {
+            // Keep the list numbering sequential automatically
+            keepMarks: true,
+            keepAttributes: true,
+          },
+          listItem: {
+            // Ensure list items behave consistently
+            keepMarks: true,
+            keepAttributes: true,
+          }
+        }),
         TextStyle,
         Color,
         Placeholder.configure({
