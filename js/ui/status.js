@@ -4,11 +4,30 @@
  */
 
 /**
+ * Helper function to log all changes to serverStatusMessage
+ * @param {string} action - Description of the action being taken
+ * @param {string} message - The message being set (or empty for clear)
+ * @param {boolean} isLoading - Whether loading state is active
+ */
+function logStatusChange(action, message, isLoading = false) {
+    const timestamp = new Date().toISOString().substr(11, 12);
+    const callerStack = new Error().stack.split('\n')[3]?.trim() || 'unknown';
+
+    console.log(`[STATUS ${timestamp}] ${action}`, {
+        message: message || '(clearing)',
+        isLoading,
+        hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive),
+        caller: callerStack
+    });
+}
+
+/**
  * Display a status message to the user in the fixed button row
  * @param {string} message - Message to display, or empty string/null to clear
  * @param {boolean} isLoading - Whether to show a loading spinner
+ * @param {boolean} forceClear - If true, clears message even during ongoing workflows (default: false)
  */
-export function updateUser(message, isLoading = false) {
+export function updateUser(message, isLoading = false, forceClear = false) {
     const statusEl = document.getElementById('serverStatusMessage');
 
     if (!statusEl) {
@@ -27,6 +46,7 @@ export function updateUser(message, isLoading = false) {
 
         if (analyseSpinnerVisible) {
             // Ensure we don't leave stale status text visible.
+            logStatusChange('HIDING (duplicate with analyze button)', message, isLoading);
             statusEl.style.display = 'none';
             statusEl.textContent = '';
             return;
@@ -36,8 +56,10 @@ export function updateUser(message, isLoading = false) {
     if (message) {
         // When loading, show spinner + message; otherwise just text
         if (isLoading) {
+            logStatusChange('SHOWING (loading)', message, isLoading);
             statusEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
         } else {
+            logStatusChange('SHOWING (static)', message, isLoading);
             statusEl.textContent = message;
         }
 
@@ -49,12 +71,30 @@ export function updateUser(message, isLoading = false) {
             setTimeout(() => {
                 // Only hide if nothing has changed since we scheduled the hide
                 if (statusEl.textContent === currentMessage) {
+                    logStatusChange('AUTO-HIDING (5s timeout)', currentMessage, false);
                     statusEl.style.display = 'none';
                     statusEl.textContent = '';
                 }
             }, 5000);
         }
     } else {
+        // Check if there are ongoing operations - if so, preserve message unless forceClear is true
+        const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+
+        if (hasOngoingWorkflows && !forceClear) {
+            const currentMessage = statusEl.textContent;
+            logStatusChange('PRESERVING (ongoing workflow, use forceClear to override)', currentMessage, false);
+            console.log('[STATUS] Message preserved during ongoing workflow. Current message:', currentMessage);
+            // Don't clear - preserve the current message
+            return;
+        }
+
+        if (hasOngoingWorkflows && forceClear) {
+            logStatusChange('CLEARING (forceClear=true despite ongoing workflow)', '', false);
+        } else {
+            logStatusChange('CLEARING', '', false);
+        }
+
         // Explicit clear
         statusEl.style.display = 'none';
         statusEl.textContent = '';
