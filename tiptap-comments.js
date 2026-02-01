@@ -69,7 +69,9 @@ function initEditor(elementId, placeholder) {
       ],
       content: '',
       autofocus: false,
-      editable: true
+      editable: true,
+      enableInputRules: false,
+      enablePasteRules: false
     });
     
     console.log(`Editor created successfully for: ${elementId}`);
