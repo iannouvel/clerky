@@ -2096,6 +2096,68 @@ app.post('/generateTranscript/:conditionId', authenticateUser, async (req, res) 
     }
 });
 
+// Endpoint to update a test clerking transcript
+app.post('/updateTranscript/:conditionId', authenticateUser, async (req, res) => {
+    try {
+        const { conditionId } = req.params;
+        const { transcript } = req.body;
+
+        console.log('[UPDATE-TRANSCRIPT] Request for condition:', {
+            conditionId,
+            userId: req.user.uid,
+            transcriptLength: transcript?.length
+        });
+
+        if (!transcript || transcript.trim() === '') {
+            return res.status(400).json({
+                success: false,
+                error: 'Transcript content is required'
+            });
+        }
+
+        // Get the condition document from Firebase
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+        const conditionDoc = await conditionRef.get();
+
+        if (!conditionDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Clinical condition not found',
+                conditionId
+            });
+        }
+
+        // Update the document in Firebase with the new transcript
+        const updateData = {
+            transcript: transcript,
+            lastModified: admin.firestore.FieldValue.serverTimestamp(),
+            lastModifiedBy: req.user.uid,
+            updatedAt: admin.firestore.FieldValue.serverTimestamp()
+        };
+
+        await conditionRef.update(updateData);
+
+        console.log('[UPDATE-TRANSCRIPT] Successfully updated transcript:', {
+            conditionId,
+            transcriptLength: transcript.length
+        });
+
+        res.json({
+            success: true,
+            message: 'Transcript updated successfully',
+            conditionId
+        });
+
+    } catch (error) {
+        console.error('[UPDATE-TRANSCRIPT] Error updating transcript:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to update transcript',
+            details: error.message
+        });
+    }
+});
+
 // Endpoint to batch generate all missing transcripts
 app.post('/generateAllTranscripts', authenticateUser, async (req, res) => {
     try {
