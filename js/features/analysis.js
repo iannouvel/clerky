@@ -623,6 +623,9 @@ export async function runParallelAnalysis(guidelines) {
 
     console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses. Found ${allSuggestions.length} total suggestions.`);
 
+    // Update status to show completion
+    updateUser(`Analysis complete - ${allSuggestions.length} practice points identified from ${successfulResults.length} guidelines.`, false);
+
     // Hide the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');
     if (selectionInterface) {
