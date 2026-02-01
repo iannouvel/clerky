@@ -48,24 +48,13 @@ function initEditor(elementId, placeholder) {
     const editor = new Editor({
       element,
       extensions: [
-        // Core extensions (required)
+        // Absolute minimum - only what's required for editor to work
         Document,
         Paragraph,
         Text,
-        // Basic formatting - disable any inputRules
-        Bold.configure({
-          inputRules: false
-        }),
-        Italic.configure({
-          inputRules: false
-        }),
         // History for undo/redo
         History,
-        // Hard break - disable inputRules that might interfere
-        HardBreak.configure({
-          inputRules: false
-        }),
-        // Styling extensions
+        // Styling extensions (no inputRules)
         TextStyle,
         Color,
         // Placeholder
