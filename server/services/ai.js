@@ -572,6 +572,143 @@ async function refineSuggestions(previousSuggestions, previousEvaluation, clinic
 }
 
 /**
+ * Extract gestational age in weeks from clinical note or patient context
+ * @param {string} clinicalNote - The clinical note text
+ * @param {Object} patientContext - Patient context object
+ * @returns {number|null} - Gestational age in weeks, or null if not found
+ */
+function extractGestationalAge(clinicalNote, patientContext) {
+    // Check patient context first
+    if (patientContext?.gestationalAge) {
+        const match = String(patientContext.gestationalAge).match(/(\d+)\s*\+?\s*\d*/);
+        if (match) return parseInt(match[1]);
+    }
+
+    // Look for patterns like "32+4", "32 weeks", "36+0 weeks"
+    const patterns = [
+        /(\d{1,2})\s*\+\s*\d+\s*weeks/i,
+        /(\d{1,2})\s*\+\s*\d+/,
+        /(\d{1,2})\s*weeks\s*\+\s*\d+/i,
+        /at\s*(\d{1,2})\s*weeks/i,
+        /G\d+P\d+.*?(\d{1,2})\+\d+/i
+    ];
+
+    for (const pattern of patterns) {
+        const match = clinicalNote.match(pattern);
+        if (match) {
+            const weeks = parseInt(match[1]);
+            if (weeks >= 4 && weeks <= 44) return weeks; // Sanity check
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Extract patient blood type/Rh status from clinical note
+ * @param {string} clinicalNote - The clinical note text
+ * @returns {Object} - { rhesus: 'positive'|'negative'|null }
+ */
+function extractBloodType(clinicalNote) {
+    const rhPositivePatterns = [
+        /Rh\+ve/i,
+        /Rh\s*positive/i,
+        /RhD\s*positive/i,
+        /Rhesus\s*positive/i
+    ];
+
+    const rhNegativePatterns = [
+        /Rh\-ve/i,
+        /Rh\s*negative/i,
+        /RhD\s*negative/i,
+        /Rhesus\s*negative/i
+    ];
+
+    for (const pattern of rhPositivePatterns) {
+        if (pattern.test(clinicalNote)) return { rhesus: 'positive' };
+    }
+
+    for (const pattern of rhNegativePatterns) {
+        if (pattern.test(clinicalNote)) return { rhesus: 'negative' };
+    }
+
+    return { rhesus: null };
+}
+
+/**
+ * Rule-based filters for common nonsensical patterns
+ * @param {Array} suggestions - Array of suggestion objects
+ * @param {string} clinicalNote - The clinical note text
+ * @param {Object} patientContext - Patient context
+ * @returns {Object} - { validSuggestions, filteredOut }
+ */
+function applyRuleBasedFilters(suggestions, clinicalNote, patientContext) {
+    const currentGA = extractGestationalAge(clinicalNote, patientContext);
+    const bloodType = extractBloodType(clinicalNote);
+    const filteredOut = [];
+    const validSuggestions = [];
+
+    console.log(`[SENSE-CHECK-RULES] Current GA: ${currentGA} weeks, Rhesus: ${bloodType.rhesus}`);
+
+    for (const suggestion of suggestions) {
+        const suggestionText = (suggestion.suggestion || suggestion.text || '').toLowerCase();
+        let filterReason = null;
+
+        // Rule 1: Check for temporal impossibilities (suggesting past interventions)
+        if (currentGA) {
+            // Look for "at X weeks" or "X-Y weeks" patterns in suggestion
+            const weekPatterns = [
+                /at\s*(\d{1,2})\s*weeks/i,
+                /(\d{1,2})\s*-\s*(\d{1,2})\s*weeks/i,
+                /around\s*(\d{1,2})\s*weeks/i
+            ];
+
+            for (const pattern of weekPatterns) {
+                const match = suggestionText.match(pattern);
+                if (match) {
+                    const suggestedWeek = parseInt(match[1]);
+                    // Check if suggested intervention is in the past
+                    if (suggestedWeek < currentGA - 1) { // Allow 1 week grace for rounding
+                        filterReason = `Patient is at ${currentGA} weeks - cannot schedule intervention at ${suggestedWeek} weeks (already past)`;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Rule 2: Check for Rhesus incompatibility
+        if (bloodType.rhesus === 'positive') {
+            // If patient is Rh positive, anti-D suggestions don't apply
+            if (/anti-d/i.test(suggestionText) && /rhd\s*negative/i.test(suggestionText)) {
+                filterReason = `Patient is Rhesus positive - anti-D prophylaxis only applies to Rh negative patients`;
+            }
+        }
+
+        // Rule 3: Check if action already documented as completed
+        const completedPatterns = [
+            { pattern: /booking.*blood/i, completed: /booking.*blood.*done|booking.*blood.*completed|booking.*blood.*taken/i },
+            { pattern: /dating.*scan/i, completed: /dating.*scan.*done|dating.*scan.*completed|dating.*scan.*confirmed/i },
+            { pattern: /anomaly.*scan/i, completed: /anomaly.*scan.*done|anomaly.*scan.*completed|anomaly.*scan.*normal/i }
+        ];
+
+        for (const { pattern, completed } of completedPatterns) {
+            if (pattern.test(suggestionText) && completed.test(clinicalNote)) {
+                filterReason = `Action already documented as completed in clinical note`;
+                break;
+            }
+        }
+
+        if (filterReason) {
+            filteredOut.push({ ...suggestion, filterReason });
+        } else {
+            validSuggestions.push(suggestion);
+        }
+    }
+
+    return { validSuggestions, filteredOut };
+}
+
+/**
  * Sense-check suggestions against clinical context to filter out impossible/nonsensical recommendations
  * @param {Array} suggestions - Array of suggestion objects
  * @param {string} clinicalNote - The clinical note text
@@ -586,13 +723,31 @@ async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, 
 
     console.log('[SENSE-CHECK] Checking', suggestions.length, 'suggestions for temporal/logical consistency');
 
-    // Build a concise prompt to check each suggestion
+    // First apply rule-based filters (fast, deterministic)
+    const ruleBasedResult = applyRuleBasedFilters(suggestions, clinicalNote, patientContext);
+
+    if (ruleBasedResult.filteredOut.length > 0) {
+        console.log(`[SENSE-CHECK-RULES] Filtered out ${ruleBasedResult.filteredOut.length} suggestions:`,
+            ruleBasedResult.filteredOut.map(f => `"${f.suggestion?.substring(0, 60)}..." (${f.filterReason})`));
+    }
+
+    // If all suggestions were filtered by rules, return early
+    if (ruleBasedResult.validSuggestions.length === 0) {
+        return ruleBasedResult;
+    }
+
+    // Then apply AI-based validation for more nuanced cases
+    const currentGA = extractGestationalAge(clinicalNote, patientContext);
+    const bloodType = extractBloodType(clinicalNote);
+
     const systemPrompt = `You are a clinical reasoning validator. Your job is to identify suggestions that are IMPOSSIBLE or NONSENSICAL given the patient's current state.
 
-Common issues to detect:
-- Temporal impossibilities (e.g., suggesting a scan at 28 weeks when patient is already at 36 weeks)
-- Already completed actions (e.g., suggesting to check booking bloods when they've already been done)
-- Contradictory suggestions (e.g., suggesting investigation for something already ruled out)
+CRITICAL CHECKS:
+1. TEMPORAL IMPOSSIBILITIES: If a suggestion recommends an intervention at a specific gestational age (e.g., "at 28 weeks") and the patient is ALREADY PAST that point, it MUST be filtered out.
+2. BLOOD TYPE MISMATCHES: If suggestion is for "RhD negative" patients but patient is Rh positive (or vice versa), it MUST be filtered out.
+3. COMPLETED ACTIONS: If the clinical note documents an action as already done/completed, suggesting it again is nonsensical.
+
+Be STRICT about temporal issues - suggesting past interventions is clearly wrong.
 
 Return ONLY valid JSON with this structure:
 {
@@ -605,7 +760,21 @@ Return ONLY valid JSON with this structure:
   ]
 }`;
 
-    const userPrompt = `PATIENT CONTEXT:\n${JSON.stringify(patientContext, null, 2)}\n\nCLINICAL NOTE:\n${clinicalNote}\n\nSUGGESTIONS TO VALIDATE:\n${suggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}`).join('\n')}\n\nTASK: Identify which suggestions are impossible/nonsensical given the current patient state. Be conservative - only filter out suggestions that are clearly impossible or already done.`;
+    const contextInfo = `Current gestational age: ${currentGA || 'unknown'} weeks
+Patient Rhesus status: ${bloodType.rhesus || 'unknown'}`;
+
+    const userPrompt = `${contextInfo}
+
+PATIENT CONTEXT:
+${JSON.stringify(patientContext, null, 2)}
+
+CLINICAL NOTE:
+${clinicalNote}
+
+SUGGESTIONS TO VALIDATE:
+${ruleBasedResult.validSuggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}`).join('\n')}
+
+TASK: Identify which suggestions are impossible/nonsensical given the current patient state. Pay special attention to temporal issues and blood type compatibility.`;
 
     try {
         const result = await routeToAI({
@@ -616,29 +785,31 @@ Return ONLY valid JSON with this structure:
         }, userId);
 
         if (!result || !result.content) {
-            console.warn('[SENSE-CHECK] No response from AI, passing all suggestions through');
-            return { validSuggestions: suggestions, filteredOut: [] };
+            console.warn('[SENSE-CHECK-AI] No response from AI, using only rule-based filtering');
+            return ruleBasedResult;
         }
 
         const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
         const validIds = new Set(parsed.validSuggestions || []);
         const filteredOutMap = new Map((parsed.filteredOut || []).map(f => [f.id, f.reason]));
 
-        const validSuggestions = suggestions.filter((_, idx) => validIds.has(idx));
-        const filteredOut = suggestions
+        const validSuggestions = ruleBasedResult.validSuggestions.filter((_, idx) => validIds.has(idx));
+        const aiFilteredOut = ruleBasedResult.validSuggestions
             .map((s, idx) => ({ ...s, originalIndex: idx, filterReason: filteredOutMap.get(idx) }))
             .filter(s => s.filterReason);
 
-        console.log(`[SENSE-CHECK] Result: ${validSuggestions.length} valid, ${filteredOut.length} filtered out`);
-        if (filteredOut.length > 0) {
-            console.log('[SENSE-CHECK] Filtered out:', filteredOut.map(f => `"${f.suggestion}" (${f.filterReason})`).join('; '));
+        const allFilteredOut = [...ruleBasedResult.filteredOut, ...aiFilteredOut];
+
+        console.log(`[SENSE-CHECK] Final result: ${validSuggestions.length} valid, ${allFilteredOut.length} filtered out (${ruleBasedResult.filteredOut.length} by rules, ${aiFilteredOut.length} by AI)`);
+        if (aiFilteredOut.length > 0) {
+            console.log('[SENSE-CHECK-AI] AI filtered:', aiFilteredOut.map(f => `"${f.suggestion?.substring(0, 60)}..." (${f.filterReason})`));
         }
 
-        return { validSuggestions, filteredOut };
+        return { validSuggestions, filteredOut: allFilteredOut };
     } catch (error) {
-        console.error('[SENSE-CHECK] Error during validation:', error);
-        // On error, pass all suggestions through rather than blocking potentially valid ones
-        return { validSuggestions: suggestions, filteredOut: [] };
+        console.error('[SENSE-CHECK-AI] Error during AI validation:', error);
+        // On error, return rule-based results rather than blocking
+        return ruleBasedResult;
     }
 }
 
