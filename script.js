@@ -808,12 +808,8 @@ function handleGlobalReset() {
         }
     }
 
-    // Clear server status message in the fixed button row
-    const serverStatusMessage = document.getElementById('serverStatusMessage');
-    if (serverStatusMessage) {
-        serverStatusMessage.style.display = 'none';
-        serverStatusMessage.textContent = '';
-    }
+    // Clear server status message in the fixed button row (forceClear since this is an explicit user reset)
+    updateUser('', false, true);
 
     // Clear any multi-guideline selection state if helper is available
     if (typeof window.clearMultiGuidelineState === 'function') {
@@ -9764,7 +9760,13 @@ async function processSelectedGuidelines(event) {
         // Reset button state
         button.disabled = false;
         button.textContent = originalText;
-        if (!document.getElementById('serverStatusMessage').textContent.includes('Error')) {
+        const statusEl = document.getElementById('serverStatusMessage');
+        if (statusEl && !statusEl.textContent.includes('Error')) {
+            const timestamp = new Date().toISOString().substr(11, 12);
+            console.log(`[STATUS ${timestamp}] CLEARING (processSelectedGuidelines finally block)`, {
+                previousContent: statusEl.textContent || '(empty)',
+                hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive)
+            });
             updateUser('', false);
         }
     }
