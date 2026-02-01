@@ -3184,11 +3184,17 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
         }
 
         const suggestionCount = result.suggestionsCount || result.suggestions?.length || 0;
-        if (suggestionCount > 0) {
-            updateUser(`Found ${suggestionCount} relevant practice points`, false);
-        } else {
-            updateUser(`No additional suggestions - care is compliant`, false);
+
+        // Don't show individual completion messages during parallel analysis
+        // (parallel analysis has its own progress UI)
+        if (!window.parallelAnalysisActive) {
+            if (suggestionCount > 0) {
+                updateUser(`Found ${suggestionCount} relevant practice points`, false);
+            } else {
+                updateUser(`No additional suggestions - care is compliant`, false);
+            }
         }
+
         return result;
 
     } catch (error) {
@@ -9765,7 +9771,7 @@ async function processSelectedGuidelines(event) {
             const timestamp = new Date().toISOString().substr(11, 12);
             console.log(`[STATUS ${timestamp}] CLEARING (processSelectedGuidelines finally block)`, {
                 previousContent: statusEl.textContent || '(empty)',
-                hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive)
+                hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive || window.parallelAnalysisActive)
             });
             updateUser('', false);
         }

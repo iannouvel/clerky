@@ -16,7 +16,7 @@ function logStatusChange(action, message, isLoading = false) {
     console.log(`[STATUS ${timestamp}] ${action}`, {
         message: message || '(clearing)',
         isLoading,
-        hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive),
+        hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive || window.parallelAnalysisActive),
         caller: callerStack
     });
 }
@@ -70,10 +70,18 @@ export function updateUser(message, isLoading = false, forceClear = false) {
             const currentMessage = statusEl.textContent;
             setTimeout(() => {
                 // Only hide if nothing has changed since we scheduled the hide
+                // AND there are no ongoing workflows
+                const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+
                 if (statusEl.textContent === currentMessage) {
-                    logStatusChange('AUTO-HIDING (5s timeout)', currentMessage, false);
-                    statusEl.style.display = 'none';
-                    statusEl.textContent = '';
+                    if (hasOngoingWorkflows) {
+                        logStatusChange('AUTO-HIDE BLOCKED (ongoing workflow detected)', currentMessage, false);
+                        console.log('[STATUS] Preserving message during workflow. Will remain visible.');
+                    } else {
+                        logStatusChange('AUTO-HIDING (5s timeout)', currentMessage, false);
+                        statusEl.style.display = 'none';
+                        statusEl.textContent = '';
+                    }
                 }
             }, 5000);
         }
