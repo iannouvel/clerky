@@ -10,6 +10,7 @@ import { setUserInputContent, updateChatbotButtonVisibility, getUserInputContent
 
 // Track currently loaded condition for updating
 let currentLoadedCondition = null;
+let editorChangeListener = null;
 
 // Show clinical issues dropdown as a block within summary1
 export async function showClinicalIssuesDropdown() {
@@ -303,11 +304,8 @@ export async function generateFakeClinicalInteraction(selectedIssue, forceRegene
             category: condition.category
         };
 
-        // Show the Update button
-        const updateBtn = document.getElementById('update-clerking-btn');
-        if (updateBtn) {
-            updateBtn.style.display = 'inline-block';
-        }
+        // Setup change detection to show Update button only after edits
+        setupUpdateButtonOnChange();
 
         setTimeout(() => {
             updateChatbotButtonVisibility();
@@ -341,6 +339,38 @@ export async function generateFakeClinicalInteraction(selectedIssue, forceRegene
     }
 }
 
+// Setup listener to show Update button only after user makes changes
+function setupUpdateButtonOnChange() {
+    const editor = window.editors?.userInput;
+    const updateBtn = document.getElementById('update-clerking-btn');
+
+    if (!editor || !updateBtn) {
+        console.warn('[CLINICAL] Cannot setup change listener - editor or button not found');
+        return;
+    }
+
+    // Hide the button initially
+    updateBtn.style.display = 'none';
+
+    // Remove any existing listener
+    if (editorChangeListener) {
+        editor.off('update', editorChangeListener);
+    }
+
+    // Create new listener
+    editorChangeListener = () => {
+        // Show button on first edit
+        if (updateBtn.style.display === 'none') {
+            updateBtn.style.display = 'inline-block';
+        }
+    };
+
+    // Attach listener
+    editor.on('update', editorChangeListener);
+
+    console.log('[CLINICAL] Change detection enabled for Update button');
+}
+
 // Helper to clean up the test UI
 function hideClinicalIssuesPanel() {
     const panel = document.getElementById('clinicalIssuesPanel');
@@ -351,6 +381,18 @@ function hideClinicalIssuesPanel() {
     const buttonsGroup = document.getElementById('clerkingButtonsGroup');
     if (buttonsGroup) {
         buttonsGroup.style.display = 'none';
+    }
+
+    // Hide update button and remove change listener
+    const updateBtn = document.getElementById('update-clerking-btn');
+    if (updateBtn) {
+        updateBtn.style.display = 'none';
+    }
+
+    const editor = window.editors?.userInput;
+    if (editor && editorChangeListener) {
+        editor.off('update', editorChangeListener);
+        editorChangeListener = null;
     }
 
     if (window.updateSummaryVisibility) window.updateSummaryVisibility();
