@@ -6,7 +6,10 @@
 import { ClinicalConditionsService } from './clinicalData.js';
 import { updateUser } from '../ui/status.js';
 import { appendToSummary1 } from '../ui/streaming.js';
-import { setUserInputContent, updateChatbotButtonVisibility } from '../utils/editor.js';
+import { setUserInputContent, updateChatbotButtonVisibility, getUserInputContent } from '../utils/editor.js';
+
+// Track currently loaded condition for updating
+let currentLoadedCondition = null;
 
 // Show clinical issues dropdown as a block within summary1
 export async function showClinicalIssuesDropdown() {
@@ -56,6 +59,7 @@ export async function showClinicalIssuesDropdown() {
         const generateBtn = document.getElementById('generate-interaction-btn');
         const randomBtn = document.getElementById('random-issue-btn');
         const regenerateBtn = document.getElementById('regenerate-clerking-btn');
+        const updateBtn = document.getElementById('update-clerking-btn');
         const cancelBtn = document.getElementById('cancel-generation-btn');
 
         if (!clinicalPanel || !clinicalDropdown) {
@@ -165,6 +169,46 @@ export async function showClinicalIssuesDropdown() {
             };
         }
 
+        if (updateBtn) {
+            updateBtn.onclick = async () => {
+                if (!currentLoadedCondition) {
+                    updateUser('Error: No clerking loaded to update.', false);
+                    return;
+                }
+
+                const updateSpinner = document.getElementById('update-spinner');
+                const updateText = document.getElementById('update-text');
+
+                try {
+                    // Show loading state
+                    if (updateBtn) updateBtn.disabled = true;
+                    if (updateSpinner) updateSpinner.style.display = 'inline';
+                    if (updateText) updateText.textContent = 'Updating...';
+
+                    // Get current editor content
+                    const currentContent = getUserInputContent();
+
+                    if (!currentContent || currentContent.trim() === '') {
+                        throw new Error('No content to save');
+                    }
+
+                    // Update the transcript
+                    await ClinicalConditionsService.updateTranscript(currentLoadedCondition.id, currentContent);
+
+                    updateUser(`Updated test clerking: ${currentLoadedCondition.name}`, false);
+
+                } catch (error) {
+                    console.error('[DEBUG] Error updating clerking:', error);
+                    updateUser(`Error updating clerking: ${error.message}`, false);
+                } finally {
+                    // Reset button state
+                    if (updateBtn) updateBtn.disabled = false;
+                    if (updateSpinner) updateSpinner.style.display = 'none';
+                    if (updateText) updateText.textContent = 'Update Saved Version';
+                }
+            };
+        }
+
         if (cancelBtn) {
             cancelBtn.onclick = () => {
                 hideClinicalIssuesPanel();
@@ -241,6 +285,19 @@ export async function generateFakeClinicalInteraction(selectedIssue, forceRegene
 
         // Update User Input
         setUserInputContent(transcript, true, 'Fake Clinical Interaction');
+
+        // Track the currently loaded condition for updating
+        currentLoadedCondition = {
+            id: condition.id,
+            name: selectedIssue,
+            category: condition.category
+        };
+
+        // Show the Update button
+        const updateBtn = document.getElementById('update-clerking-btn');
+        if (updateBtn) {
+            updateBtn.style.display = 'inline-block';
+        }
 
         setTimeout(() => {
             updateChatbotButtonVisibility();

@@ -136,6 +136,59 @@ export const ClinicalConditionsService = {
         }
     },
 
+    // Update transcript for a specific condition
+    async updateTranscript(conditionId, newTranscript) {
+        try {
+            console.log('[CLINICAL-SERVICE] Updating transcript for condition:', conditionId);
+
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('User not authenticated');
+            }
+
+            const idToken = await user.getIdToken();
+
+            const response = await fetch(`${SERVER_URL}/updateTranscript/${conditionId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ transcript: newTranscript })
+            });
+
+            console.log('[CLINICAL-SERVICE] Server response status:', response.status, response.statusText);
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('[CLINICAL-SERVICE] Server error response:', errorText);
+                throw new Error(`Failed to update transcript: ${response.status} - ${errorText}`);
+            }
+
+            const data = await response.json();
+
+            if (!data.success) {
+                throw new Error(data.error || 'Failed to update transcript');
+            }
+
+            // Update cache
+            if (clinicalConditionsCache) {
+                const condition = this.findConditionById(conditionId);
+                if (condition) {
+                    condition.transcript = newTranscript;
+                    condition.hasTranscript = true;
+                    condition.lastModified = new Date().toISOString();
+                }
+            }
+
+            return data;
+
+        } catch (error) {
+            console.error('[CLINICAL-SERVICE] Error updating transcript:', error);
+            throw error;
+        }
+    },
+
     // Internal methods
     _normalizeCategories(conditions) {
         // If there's both 'gynecology' and 'gynaecology', merge into 'gynaecology'
