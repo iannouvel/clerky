@@ -71,7 +71,23 @@ function initEditor(elementId, placeholder) {
       autofocus: false,
       editable: true,
       enableInputRules: false,
-      enablePasteRules: false
+      enablePasteRules: false,
+      editorProps: {
+        // Prevent browser default formatting behaviors
+        handleDOMEvents: {
+          beforeinput: (view, event) => {
+            // Don't interfere with normal typing
+            return false;
+          }
+        },
+        attributes: {
+          // Disable browser autocorrect/autocomplete
+          spellcheck: 'true',
+          autocorrect: 'off',
+          autocomplete: 'off',
+          autocapitalize: 'off'
+        }
+      }
     });
     
     console.log(`Editor created successfully for: ${elementId}`);

@@ -4473,6 +4473,19 @@ body {
 }
 
 /* Lists disabled - users type numbered lists manually as plain text */
+/* Ensure no list styling is ever applied */
+.tiptap-editor .ProseMirror ol,
+.tiptap-editor .ProseMirror ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.tiptap-editor .ProseMirror li {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+}
 
 /* Ensure empty paragraphs have the same height as text lines */
 .tiptap-editor .ProseMirror p:empty::before {
