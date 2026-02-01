@@ -4481,9 +4481,8 @@ body {
 .tiptap-editor .ProseMirror ol,
 .tiptap-editor .ProseMirror ul {
     margin: 0;
-    padding-left: 0;
-    list-style-position: inside;
-    /* Keeps numbers/bullets inline with text */
+    padding-left: 1.5em;
+    /* Minimal indentation for structural stability */
 }
 
 /* Ensure empty paragraphs have the same height as text lines */
