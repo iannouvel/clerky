@@ -43,16 +43,10 @@ function initEditor(elementId, placeholder) {
       element,
       extensions: [
         StarterKit.configure({
-          orderedList: {
-            // Keep the list numbering sequential automatically
-            keepMarks: true,
-            keepAttributes: true,
-          },
-          listItem: {
-            // Ensure list items behave consistently
-            keepMarks: true,
-            keepAttributes: true,
-          }
+          // Disable auto-list creation to allow manual numbered lists
+          orderedList: false,
+          bulletList: false,
+          listItem: false
         }),
         TextStyle,
         Color,
