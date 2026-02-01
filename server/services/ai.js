@@ -813,6 +813,133 @@ TASK: Identify which suggestions are impossible/nonsensical given the current pa
     }
 }
 
+/**
+ * Sense-check retrieved guidelines to filter out irrelevant ones
+ * @param {Object} categories - Categorized guidelines { mostRelevant: [], potentiallyRelevant: [], ... }
+ * @param {string} clinicalNote - The clinical note text
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object>} - { validCategories, filteredOut }
+ */
+async function senseCheckGuidelines(categories, clinicalNote, userId) {
+    if (!categories || (!categories.mostRelevant?.length && !categories.potentiallyRelevant?.length)) {
+        return { validCategories: categories, filteredOut: [] };
+    }
+
+    console.log('[SENSE-CHECK-GUIDELINES] Checking guidelines for relevance to patient');
+
+    // Combine mostRelevant and potentiallyRelevant for checking
+    const guidelinesToCheck = [
+        ...(categories.mostRelevant || []).map(g => ({ ...g, category: 'mostRelevant' })),
+        ...(categories.potentiallyRelevant || []).map(g => ({ ...g, category: 'potentiallyRelevant' }))
+    ];
+
+    if (guidelinesToCheck.length === 0) {
+        return { validCategories: categories, filteredOut: [] };
+    }
+
+    const systemPrompt = `You are a clinical reasoning validator. Your job is to identify guidelines that are COMPLETELY IRRELEVANT to the patient's condition.
+
+CRITICAL: Only filter out guidelines when there is a CLEAR MISMATCH between:
+1. A specific disease/condition mentioned in the guideline title
+2. The patient NOT having that disease/condition
+
+Common patterns to detect:
+- Guidelines about specific diseases (e.g., "Sickle Cell Disease", "Thalassemia", "HIV") when patient doesn't have that disease
+- Guidelines about specific procedures (e.g., "IVF", "Caesarean Section") when patient hasn't had that procedure
+- Guidelines about specific contexts (e.g., "Multiple Pregnancy") when patient isn't in that context
+
+DO NOT filter out:
+- General guidelines that could apply broadly (e.g., "Antenatal Care", "Labour Management")
+- Guidelines about screening/testing (these are often preventive)
+- Guidelines that mention complications or risks the patient COULD develop
+
+Return ONLY valid JSON with this structure:
+{
+  "validGuidelines": [<array of guideline IDs that ARE relevant or COULD BE relevant>],
+  "filteredOut": [
+    {
+      "id": "<guideline ID>",
+      "title": "<guideline title>",
+      "reason": "<brief explanation why it's completely irrelevant>"
+    }
+  ]
+}`;
+
+    const userPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+GUIDELINES TO VALIDATE:
+${guidelinesToCheck.map((g, idx) => `[ID: ${idx}] ${g.title || g.name || ''}`).join('\n')}
+
+TASK: Identify which guidelines are COMPLETELY IRRELEVANT to this patient. Only filter out guidelines when there's a clear mismatch (e.g., sickle cell guideline for patient without sickle cell). Be conservative - when in doubt, keep the guideline.`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId);
+
+        if (!result || !result.content) {
+            console.warn('[SENSE-CHECK-GUIDELINES] No response from AI, passing all guidelines through');
+            return { validCategories: categories, filteredOut: [] };
+        }
+
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const validIds = new Set(parsed.validGuidelines || []);
+        const filteredOutMap = new Map((parsed.filteredOut || []).map(f => [f.id, f]));
+
+        // Rebuild categories with only valid guidelines
+        const validMostRelevant = [];
+        const validPotentiallyRelevant = [];
+        const filteredOut = [];
+
+        guidelinesToCheck.forEach((guideline, idx) => {
+            if (validIds.has(idx)) {
+                // Keep guideline in its original category
+                if (guideline.category === 'mostRelevant') {
+                    validMostRelevant.push(guideline);
+                } else {
+                    validPotentiallyRelevant.push(guideline);
+                }
+            } else if (filteredOutMap.has(idx)) {
+                // Guideline was filtered out
+                const filterInfo = filteredOutMap.get(idx);
+                filteredOut.push({
+                    ...guideline,
+                    filterReason: filterInfo.reason
+                });
+            } else {
+                // Default: keep it if not explicitly filtered
+                if (guideline.category === 'mostRelevant') {
+                    validMostRelevant.push(guideline);
+                } else {
+                    validPotentiallyRelevant.push(guideline);
+                }
+            }
+        });
+
+        const validCategories = {
+            mostRelevant: validMostRelevant,
+            potentiallyRelevant: validPotentiallyRelevant,
+            lessRelevant: categories.lessRelevant || [],
+            notRelevant: categories.notRelevant || []
+        };
+
+        console.log(`[SENSE-CHECK-GUIDELINES] Result: ${validMostRelevant.length + validPotentiallyRelevant.length} valid, ${filteredOut.length} filtered out`);
+        if (filteredOut.length > 0) {
+            console.log('[SENSE-CHECK-GUIDELINES] Filtered out:', filteredOut.map(f => `"${f.title}" (${f.filterReason})`).join('; '));
+        }
+
+        return { validCategories, filteredOut };
+    } catch (error) {
+        console.error('[SENSE-CHECK-GUIDELINES] Error during validation:', error);
+        // On error, pass all guidelines through rather than blocking
+        return { validCategories: categories, filteredOut: [] };
+    }
+}
+
 module.exports = {
     createPromptForChunk,
     mergeChunkResults,
@@ -830,5 +957,6 @@ module.exports = {
     extractLessonsLearned,
     refineSuggestions,
     senseCheckSuggestions,
+    senseCheckGuidelines,
     SEQUENTIAL_LLM_CHAIN
 };

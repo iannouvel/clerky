@@ -46,7 +46,8 @@ const {
     filterImportantPracticePoints,
     filterRelevantPracticePoints,
     formatMessagesForProvider,
-    senseCheckSuggestions
+    senseCheckSuggestions,
+    senseCheckGuidelines
 } = require('./server/services/ai');
 
 const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guideline');
@@ -3596,20 +3597,35 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         const mergedCategories = mergeChunkResults(successfulResults);
         timer.step('Merge results');
 
+        // Sense-check the retrieved guidelines to filter out obviously irrelevant ones
+        let finalCategories = mergedCategories;
+        let filteredGuidelines = [];
+        try {
+            const senseCheckResult = await senseCheckGuidelines(mergedCategories, transcript, userId);
+            finalCategories = senseCheckResult.validCategories;
+            filteredGuidelines = senseCheckResult.filteredOut;
+            timer.step('Sense-check guidelines');
+        } catch (senseCheckError) {
+            console.error('[SENSE-CHECK-GUIDELINES] Error during sense-check, using unfiltered results:', senseCheckError);
+            // Continue with unfiltered results if sense-check fails
+        }
+
         // Log the interaction (fire-and-forget)
         try {
             logAIInteraction({
                 transcript,
                 guidelinesCount: guidelines.length,
                 chunksProcessed: successfulResults.length,
-                chunksFailed: failedChunks
+                chunksFailed: failedChunks,
+                filteredGuidelinesCount: filteredGuidelines.length
             }, {
                 success: true,
-                categoriesFound: Object.values(mergedCategories).flat().length,
-                mostRelevantCount: mergedCategories.mostRelevant.length,
-                potentiallyRelevantCount: mergedCategories.potentiallyRelevant.length,
-                lessRelevantCount: mergedCategories.lessRelevant.length,
-                notRelevantCount: mergedCategories.notRelevant.length
+                categoriesFound: Object.values(finalCategories).flat().length,
+                mostRelevantCount: finalCategories.mostRelevant.length,
+                potentiallyRelevantCount: finalCategories.potentiallyRelevant.length,
+                lessRelevantCount: finalCategories.lessRelevant.length,
+                notRelevantCount: finalCategories.notRelevant.length,
+                filteredOut: filteredGuidelines.map(f => ({ title: f.title, reason: f.filterReason }))
             }, 'findRelevantGuidelines').catch((logError) => {
                 console.error('Error logging interaction:', logError);
             });
@@ -3619,11 +3635,12 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
 
         res.json({
             success: true,
-            categories: mergedCategories,
+            categories: finalCategories,
             chunksProcessed: successfulResults.length,
             totalChunks: chunks.length,
             modelTiming: modelTimingSummary,
-            chunkTimings: chunkTimings.sort((a, b) => b.duration - a.duration) // Slowest first
+            chunkTimings: chunkTimings.sort((a, b) => b.duration - a.duration), // Slowest first
+            filteredGuidelines: filteredGuidelines.map(f => ({ title: f.title, reason: f.filterReason })) // For debugging
         });
 
     } catch (error) {
