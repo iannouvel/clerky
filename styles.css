@@ -4474,6 +4474,16 @@ body {
 
 .tiptap-editor .ProseMirror li {
     line-height: 1.5;
+    margin: 0;
+}
+
+/* Remove default list indentation and spacing to match paragraph flow */
+.tiptap-editor .ProseMirror ol,
+.tiptap-editor .ProseMirror ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-position: inside;
+    /* Keeps numbers/bullets inline with text */
 }
 
 /* Ensure empty paragraphs have the same height as text lines */
