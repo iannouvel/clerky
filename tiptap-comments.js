@@ -52,13 +52,19 @@ function initEditor(elementId, placeholder) {
         Document,
         Paragraph,
         Text,
-        // Basic formatting
-        Bold,
-        Italic,
+        // Basic formatting - disable any inputRules
+        Bold.configure({
+          inputRules: false
+        }),
+        Italic.configure({
+          inputRules: false
+        }),
         // History for undo/redo
         History,
-        // Hard break for Enter key
-        HardBreak,
+        // Hard break - disable inputRules that might interfere
+        HardBreak.configure({
+          inputRules: false
+        }),
         // Styling extensions
         TextStyle,
         Color,
@@ -73,13 +79,6 @@ function initEditor(elementId, placeholder) {
       enableInputRules: false,
       enablePasteRules: false,
       editorProps: {
-        // Prevent browser default formatting behaviors
-        handleDOMEvents: {
-          beforeinput: (view, event) => {
-            // Don't interfere with normal typing
-            return false;
-          }
-        },
         attributes: {
           // Disable browser autocorrect/autocomplete
           spellcheck: 'true',
