@@ -77,7 +77,45 @@ function initEditor(elementId, placeholder) {
         }
       }
     });
-    
+
+    // Add keyboard event listener to prevent browser auto-formatting
+    const editorElement = editor.view.dom;
+
+    // Log all beforeinput events to debug what's happening
+    editorElement.addEventListener('beforeinput', (event) => {
+      // Log the event for debugging
+      if (event.data === ' ' || event.inputType.includes('delete') || event.inputType.includes('format')) {
+        console.log('[TIPTAP BEFOREINPUT]', {
+          inputType: event.inputType,
+          data: event.data,
+          dataTransfer: event.dataTransfer
+        });
+      }
+
+      // Prevent any list-related formatting
+      if (event.inputType === 'insertOrderedList' ||
+          event.inputType === 'insertUnorderedList' ||
+          event.inputType === 'formatSetBlockTextDirection' ||
+          event.inputType === 'insertReplacementText' ||
+          event.inputType.includes('formatSet') ||
+          event.inputType.includes('formatRemove')) {
+        console.log('[TIPTAP] ⛔ BLOCKING auto-formatting:', event.inputType);
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    }, true); // Use capture phase
+
+    // Also log input events to see what actually happened
+    editorElement.addEventListener('input', (event) => {
+      if (event.inputType.includes('delete') || event.inputType.includes('format') || event.inputType.includes('insert')) {
+        console.log('[TIPTAP INPUT]', {
+          inputType: event.inputType,
+          data: event.data
+        });
+      }
+    });
+
     console.log(`Editor created successfully for: ${elementId}`);
     return editor;
   } catch (error) {
