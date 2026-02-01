@@ -486,6 +486,9 @@ export async function checkAgainstGuidelines(suppressHeader = false) {
 export async function runParallelAnalysis(guidelines) {
     console.log('[DEBUG] Starting Parallel Analysis for', guidelines.length, 'guidelines');
 
+    // Set flag to indicate parallel analysis is active
+    window.parallelAnalysisActive = true;
+
     // Hide selection buttons if they exist
     if (typeof window.hideSelectionButtons === 'function') {
         window.hideSelectionButtons();
@@ -711,6 +714,10 @@ export async function runParallelAnalysis(guidelines) {
             insertTextAtPoint: window.insertTextAtPoint
         });
     }
+
+    // Clear parallel analysis flag
+    window.parallelAnalysisActive = false;
+    console.log('[DEBUG] Parallel Analysis completed, flag cleared');
 }
 
 // Compliance / Scoring

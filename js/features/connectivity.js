@@ -20,7 +20,7 @@ export function initializeConnectivityMonitoring(updateUserFn) {
                 const timestamp = new Date().toISOString().substr(11, 12);
                 console.log(`[STATUS ${timestamp}] HIDING (connectivity: online timeout)`, {
                     message: statusEl.textContent,
-                    hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive)
+                    hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive || window.parallelAnalysisActive)
                 });
                 statusEl.style.display = 'none';
             }
