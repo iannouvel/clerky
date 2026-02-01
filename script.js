@@ -2567,7 +2567,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error('Analysis cancelled');
         }
 
-        updateUser('Finding relevant guidelines...', true);
+        updateUser('Querying server for guideline matches...', true);
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
