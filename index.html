@@ -1177,6 +1177,10 @@
                             history: {
                                 depth: 100,
                             },
+                            // Disable list extensions to prevent auto-formatting
+                            orderedList: false,
+                            bulletList: false,
+                            listItem: false,
                         }),
                         TextStyle,
                         Color,
@@ -1196,6 +1200,8 @@
                     content: '',
                     editable: true,
                     autofocus: false,
+                    enableInputRules: false,
+                    enablePasteRules: false,
                     onUpdate: ({ editor }) => {
                         const hasContent = editor.getText().trim().length > 0;
                         if (typeof updateAnalyseAndResetButtons === 'function') {
@@ -1225,6 +1231,31 @@
 
                 window.editors.userInput = editor;
                 console.log('[TIPTAP] userInput editor initialized successfully');
+
+                // Add event listeners to prevent browser auto-formatting
+                const editorDom = editor.view.dom;
+                console.log('[TIPTAP] Attaching event listeners to prevent auto-formatting');
+
+                editorDom.addEventListener('beforeinput', (event) => {
+                    console.log('[TIPTAP BEFOREINPUT] <<<', {
+                        inputType: event.inputType,
+                        data: event.data
+                    });
+
+                    // Prevent list-related formatting
+                    if (event.inputType === 'insertOrderedList' ||
+                        event.inputType === 'insertUnorderedList' ||
+                        event.inputType === 'deleteContentBackward' ||
+                        event.inputType === 'deleteContentForward' ||
+                        event.inputType.includes('format')) {
+                        console.log('[TIPTAP] ⛔ BLOCKING:', event.inputType);
+                        event.preventDefault();
+                        event.stopPropagation();
+                        return false;
+                    }
+                }, true);
+
+                console.log('[TIPTAP] Event listeners attached');
 
                 // Dispatch event to notify other scripts
                 window.dispatchEvent(new CustomEvent('tiptapReady'));
