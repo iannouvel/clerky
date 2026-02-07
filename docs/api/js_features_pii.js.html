@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/features/pii.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/features/pii.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { escapeHtml } from '../utils/text.js';
+import { highlightTextInEditor, clearHighlightInEditor, scrollTextIntoView } from '../utils/editor.js';
+import { updateUser } from '../ui/status.js';
+
+// Global state for PII review managed within this module
+// but exposed to window for legacy compatibility if needed
+window.currentPIIReview = null;
+
+/**
+ * PII Review Interface Function - now uses Summary column instead of popup
+ * @param {string} originalText 
+ * @param {object} piiAnalysis 
+ * @param {object} callbacks - { appendToSummary1, updateSummaryCriticalStatus, updateUser }
+ */
+export async function showPIIReviewInterface(originalText, piiAnalysis, callbacks) {
+    return new Promise((resolve) => {
+        // Get consolidated PII matches
+        // Assumes window.clinicalAnonymiser is available (loaded from services/anonymisation.js)
+        const consolidatedMatches = window.clinicalAnonymiser.consolidatePIIMatches(piiAnalysis.matches);
+
+        // Add replacement property to each match
+        consolidatedMatches.forEach(match => {
+            match.replacement = match.replacement || 'redacted';
+        });
+
+        // If there are no matches to review, return success immediately
+        if (consolidatedMatches.length === 0) {
+            console.log('[PII REVIEW] No PII matches to review, skipping interface');
+            resolve({
+                approved: true,
+                anonymisedText: originalText,
+                replacementsCount: 0
+            });
+            return;
+        }
+
+        // Show PII review in Summary column instead of popup
+        showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve, callbacks);
+    });
+}
+
+// ===== One-at-a-Time PII Review Workflow =====
+
+function showPIIReviewInSummary(originalText, piiAnalysis, consolidatedMatches, resolve, callbacks) {
+    console.log('[PII REVIEW] Starting one-at-a-time review with', consolidatedMatches.length, 'matches');
+
+    // Store the review data globally
+    window.currentPIIReview = {
+        originalText,
+        consolidatedMatches,
+        resolve,
+        currentIndex: 0,
+        decisions: [], // Track decisions for all matches
+        callbacks // Store callbacks for usage in other functions
+    };
+
+    // Show the first match
+    showCurrentPIIMatch();
+}
+
+// Display the current PII match being reviewed
+function showCurrentPIIMatch() {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const { consolidatedMatches, currentIndex, decisions, callbacks } = review;
+    const { appendToSummary1, updateSummaryCriticalStatus } = callbacks;
+    const totalMatches = consolidatedMatches.length;
+
+    // Check if we're done
+    if (currentIndex >= totalMatches) {
+        completePIIReview();
+        return;
+    }
+
+    const currentMatch = consolidatedMatches[currentIndex];
+    const progressText = `${currentIndex + 1} of ${totalMatches}`;
+
+    console.log('[PII REVIEW] Showing match', progressText, ':', currentMatch.text);
+
+    // Highlight the text in blue and scroll to it
+    const highlighted = highlightTextInEditor(currentMatch.text);
+    if (highlighted) {
+        scrollTextIntoView(currentMatch.text);
+    } else {
+        console.warn('[PII REVIEW] Could not highlight text:', currentMatch.text);
+    }
+
+    // Get default action from match
+    const defaultReplacement = currentMatch.replacement || 'redacted';
+
+    // Create the review HTML for this one match
+    const reviewHtml = `
+        &lt;div class="pii-review-container" id="pii-review-current">
+            &lt;h3 style="color: #d32f2f; margin: 0 0 15px 0;">🔒 Privacy Review (${progressText})&lt;/h3>
+            &lt;p style="margin: 0 0 10px 0; font-size: 14px; color: var(--text-secondary);">
+                Personal information detected. Please choose an action:
+            &lt;/p>
+            
+            &lt;div class="pii-current-match" style="background: var(--bg-tertiary); border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
+                &lt;div style="margin: 0 0 10px 0;">
+                    &lt;strong style="color: #d32f2f;">Found:&lt;/strong> 
+                    &lt;span style="background: var(--bg-secondary); padding: 4px 8px; border-radius: 3px; font-family: monospace;">"${escapeHtml(currentMatch.text)}"&lt;/span>
+                &lt;/div>
+                &lt;div style="margin: 15px 0;">
+                    &lt;label style="display: block; margin-bottom: 8px; cursor: pointer;">
+                        &lt;input type="radio" name="pii-current-action" value="replace" checked style="margin-right: 8px;">
+                        Replace with &lt;strong style="color: #28a745;">"${escapeHtml(defaultReplacement)}"&lt;/strong>
+                    &lt;/label>
+                    &lt;label style="display: block; cursor: pointer;">
+                        &lt;input type="radio" name="pii-current-action" value="keep" style="margin-right: 8px;">
+                        Keep original text
+                    &lt;/label>
+                &lt;/div>
+            &lt;/div>
+            
+            &lt;div style="margin-top: 15px; text-align: center; font-size: 13px; color: var(--text-secondary);">
+                ${decisions.length} decision${decisions.length !== 1 ? 's' : ''} made • ${totalMatches - currentIndex - 1} remaining
+            &lt;/div>
+        &lt;/div>
+    `;
+
+    // Replace the review container in summary
+    const existingReview = document.getElementById('pii-review-current');
+    if (existingReview &amp;&amp; existingReview.parentElement) {
+        existingReview.outerHTML = reviewHtml;
+        // Update critical status
+        setTimeout(() => {
+            if (typeof updateSummaryCriticalStatus === 'function') {
+                updateSummaryCriticalStatus();
+            }
+        }, 100);
+    } else {
+        if (typeof appendToSummary1 === 'function') {
+            appendToSummary1(reviewHtml, true);
+        }
+        // Note: updateSummaryCriticalStatus will be called by appendToSummary1
+    }
+
+    // Show PII buttons in fixedButtonRow
+    togglePIIButtons(true, currentIndex);
+}
+
+function togglePIIButtons(show, currentIndex = 0) {
+    const piiActionsGroup = document.getElementById('piiActionsGroup');
+    const suggestionActionsGroup = document.getElementById('suggestionActionsGroup');
+    const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
+    const piiPrevBtn = document.getElementById('piiPrevBtn');
+
+    if (piiActionsGroup) {
+        piiActionsGroup.style.display = show ? 'flex' : 'none';
+
+        if (show) {
+            if (suggestionActionsGroup) suggestionActionsGroup.style.display = 'none';
+            if (clerkingButtonsGroup) clerkingButtonsGroup.style.display = 'none';
+
+            // Update Previous button visibility
+            if (piiPrevBtn) {
+                piiPrevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+            }
+        }
+    }
+}
+
+// Scroll summary1 to show the PII review buttons
+// Exporting to window for button clicks in DOM although ideally should be event listener
+window.scrollToPIIReviewButtons = function scrollToPIIReviewButtons(maxAttempts = 10) {
+    const summary1 = document.getElementById('summary1');
+    const reviewContainer = document.getElementById('pii-review-current');
+
+    if (!summary1) {
+        console.warn('[PII REVIEW] Cannot scroll: summary1 not found');
+        return;
+    }
+
+    if (!reviewContainer) {
+        if (maxAttempts > 0) {
+            // Retry after a short delay if container isn't ready yet (e.g., still streaming)
+            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+            return;
+        }
+        console.warn('[PII REVIEW] Cannot scroll: review container not found after retries');
+        return;
+    }
+
+    // Find the navigation buttons container
+    const buttonsContainer = reviewContainer.querySelector('.pii-navigation');
+    if (!buttonsContainer) {
+        if (maxAttempts > 0) {
+            // Retry after a short delay if buttons aren't ready yet
+            setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+            return;
+        }
+        console.warn('[PII REVIEW] Buttons container not found after retries');
+        return;
+    }
+
+    // Wait for buttons to be fully rendered (have dimensions)
+    const buttonsRect = buttonsContainer.getBoundingClientRect();
+    if (buttonsRect.height === 0 &amp;&amp; maxAttempts > 0) {
+        setTimeout(() => scrollToPIIReviewButtons(maxAttempts - 1), 100);
+        return;
+    }
+
+    // Calculate scroll position to show buttons
+    const summaryRect = summary1.getBoundingClientRect();
+
+    // Check if buttons are below the visible area
+    if (buttonsRect.bottom > summaryRect.bottom) {
+        // Calculate how much to scroll
+        const scrollAmount = buttonsRect.bottom - summaryRect.bottom + 20; // Add 20px padding
+        summary1.scrollTop += scrollAmount;
+        console.log('[PII REVIEW] Scrolled summary1 to show buttons');
+    } else if (buttonsRect.top &lt; summaryRect.top) {
+        // Buttons are above visible area, scroll up to show them
+        const scrollAmount = buttonsRect.top - summaryRect.top - 20; // Add 20px padding
+        summary1.scrollTop += scrollAmount;
+        console.log('[PII REVIEW] Scrolled summary1 up to show buttons');
+    } else {
+        console.log('[PII REVIEW] Buttons are already visible');
+    }
+}
+
+// Handle user decision on current PII match
+window.handlePIIDecision = function (action) {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const currentMatch = review.consolidatedMatches[review.currentIndex];
+
+    // If action is from button click, use it; otherwise get from radio
+    let finalAction = action;
+    if (action === 'replace' || action === 'keep' || action === 'skip') {
+        // Use the action parameter
+    } else {
+        // Get from radio selection
+        const selectedRadio = document.querySelector('input[name="pii-current-action"]:checked');
+        finalAction = selectedRadio ? selectedRadio.value : 'keep';
+    }
+
+    console.log('[PII REVIEW] Decision:', finalAction, 'for match:', currentMatch.text);
+
+    // Record the decision
+    review.decisions.push({
+        match: currentMatch,
+        action: finalAction
+    });
+
+    // Clear the blue highlighting
+    clearHighlightInEditor();
+
+    // Move to next match
+    review.currentIndex++;
+
+    // Show next match or complete
+    showCurrentPIIMatch();
+};
+
+// Navigate between PII matches
+window.navigatePIIReview = function (direction) {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    // Clear current highlighting
+    clearHighlightInEditor();
+
+    // If going back, remove the last decision
+    if (direction &lt; 0 &amp;&amp; review.currentIndex > 0) {
+        review.currentIndex--;
+        // Remove the last decision if it exists
+        if (review.decisions.length > review.currentIndex) {
+            review.decisions.pop();
+        }
+    }
+
+    // Show the match at current index
+    showCurrentPIIMatch();
+};
+
+// Complete the PII review and apply all decisions
+function completePIIReview() {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const { updateUser } = review.callbacks;
+
+    console.log('[PII REVIEW] Completing review with', review.decisions.length, 'decisions');
+
+    // Clear any remaining highlighting
+    clearHighlightInEditor();
+
+    // Apply all decisions
+    let anonymisedText = review.originalText;
+    let replacementsCount = 0;
+    const replacements = [];
+
+    review.decisions.forEach(({ match, action }) => {
+        if (action === 'replace') {
+            const replacement = match.replacement || 'redacted';
+            anonymisedText = anonymisedText.replace(
+                new RegExp(match.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&amp;'), 'gi'),
+                replacement
+            );
+            replacements.push({
+                findText: match.text,
+                replacementText: replacement
+            });
+            replacementsCount++;
+        }
+    });
+
+    const reviewContainer = document.getElementById('pii-review-current');
+    if (reviewContainer) {
+        reviewContainer.remove();
+    }
+
+    // Summarise outcome via status message instead of summary1 content
+    const keptOriginal = review.decisions.length - replacementsCount;
+    if (typeof updateUser === 'function') {
+        updateUser(
+            `Privacy review complete: ${replacementsCount} item${replacementsCount !== 1 ? 's' : ''} anonymised, ${keptOriginal} kept original.`,
+            false
+        );
+    }
+
+    // Resolve the promise
+    review.resolve({
+        approved: true,
+        anonymisedText,
+        replacementsCount
+    });
+
+    // Clean up
+    window.currentPIIReview = null;
+
+    // Hide PII buttons
+    togglePIIButtons(false);
+}
+
+// Cancel the entire PII review
+window.cancelPIIReview = function () {
+    const review = window.currentPIIReview;
+    if (!review) return;
+
+    const { updateUser } = review.callbacks;
+
+    console.log('[PII REVIEW] Review cancelled by user');
+
+    // Clear highlighting
+    clearHighlightInEditor();
+
+    const reviewContainer = document.getElementById('pii-review-current');
+    if (reviewContainer) {
+        reviewContainer.remove();
+    }
+
+    // Inform user via status message
+    if (typeof updateUser === 'function') {
+        updateUser('Privacy review cancelled – original text will be used without anonymisation.', false);
+    }
+
+    // Resolve with cancellation
+    review.resolve({
+        approved: false,
+        anonymisedText: review.originalText,
+        replacementsCount: 0
+    });
+
+    // Clean up
+    window.currentPIIReview = null;
+
+    // Hide PII buttons
+    togglePIIButtons(false);
+};
+
+/**
+ * Ensure text is anonymised before outbound processing
+ * @param {string} originalText 
+ * @returns {Promise&lt;{anonymisedText: string, anonymisationInfo: object}>}
+ */
+export async function ensureAnonymisedForOutbound(originalText) {
+    let anonymisedText = originalText;
+    let anonymisationInfo = null;
+
+    try {
+        if (typeof window.clinicalAnonymiser !== 'undefined') {
+            const piiAnalysis = await window.clinicalAnonymiser.checkForPII(originalText);
+            if (piiAnalysis.containsPII) {
+                // Pass callbacks using window fallbacks if available
+                // We use window.appendToSummary1 etc because they are exposed in script.js or streaming.js
+                const callbacks = {
+                    appendToSummary1: typeof window.appendToSummary1 === 'function' ? window.appendToSummary1 : null,
+                    updateSummaryCriticalStatus: typeof window.updateSummaryCriticalStatus === 'function' ? window.updateSummaryCriticalStatus : null,
+                    updateUser: updateUser
+                };
+
+                const reviewResult = await showPIIReviewInterface(originalText, piiAnalysis, callbacks);
+                if (reviewResult.approved) {
+                    anonymisedText = reviewResult.anonymisedText;
+                    anonymisationInfo = {
+                        originalLength: originalText.length,
+                        anonymisedLength: anonymisedText.length,
+                        replacementsCount: reviewResult.replacementsCount,
+                        riskLevel: piiAnalysis.riskLevel,
+                        piiTypes: piiAnalysis.piiTypes,
+                        userReviewed: true
+                    };
+                }
+            }
+        }
+    } catch (error) {
+        console.warn('[ANONYMISER] Error during ensureAnonymisedForOutbound:', error);
+        anonymisedText = originalText;
+    }
+
+    return { anonymisedText, anonymisationInfo };
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

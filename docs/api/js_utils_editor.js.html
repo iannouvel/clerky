@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/utils/editor.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/utils/editor.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { escapeHtml } from './text.js';
+import { updateClearFormattingButton, updateAnalyseAndResetButtons } from '../ui/status.js';
+
+/**
+ * Highlight specific text in the TipTap editor with a given color
+ * @param {string} text - The text to highlight
+ * @param {string} color - The color to use (default: blue #3B82F6)
+ * @returns {boolean} - True if text was found and highlighted, false otherwise
+ */
+export function highlightTextInEditor(text, color = '#3B82F6') {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[HIGHLIGHT] Editor not available');
+        return false;
+    }
+
+    try {
+        // Clear any existing highlights first
+        clearHighlightInEditor();
+
+        // Get the current content
+        const content = editor.getText();
+
+        // Find the text position
+        const startPos = content.toLowerCase().indexOf(text.toLowerCase());
+        if (startPos === -1) {
+            console.warn('[HIGHLIGHT] Text not found in editor:', text);
+            return false;
+        }
+
+        const endPos = startPos + text.length;
+
+        // Select the text range
+        editor.commands.setTextSelection({ from: startPos + 1, to: endPos + 1 });
+
+        // Apply the color
+        editor.commands.setColor(color);
+
+        // Deselect to show the highlighting
+        editor.commands.setTextSelection(endPos + 1);
+
+        console.log('[HIGHLIGHT] Text highlighted successfully:', text.substring(0, 50));
+        return true;
+    } catch (error) {
+        console.error('[HIGHLIGHT] Error highlighting text:', error);
+        return false;
+    }
+}
+
+/**
+ * Clear all blue highlighting from the editor
+ */
+export function clearHighlightInEditor() {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        return;
+    }
+
+    try {
+        // Get the current JSON content to preserve structure
+        const json = editor.getJSON();
+
+        // Recursively remove blue color marks
+        const removeBlueHighlight = (node) => {
+            if (node.marks) {
+                node.marks = node.marks.filter(mark => {
+                    if (mark.type === 'textStyle' &amp;&amp; mark.attrs?.color === '#3B82F6') {
+                        return false; // Remove blue highlights
+                    }
+                    return true;
+                });
+            }
+            if (node.content) {
+                node.content.forEach(removeBlueHighlight);
+            }
+        };
+
+        if (json.content) {
+            json.content.forEach(removeBlueHighlight);
+        }
+
+        // Update the editor content
+        editor.commands.setContent(json);
+
+        console.log('[HIGHLIGHT] Cleared blue highlighting');
+    } catch (error) {
+        console.error('[HIGHLIGHT] Error clearing highlights:', error);
+    }
+}
+
+/**
+ * Scroll the specified text into view in the editor
+ * @param {string} text - The text to scroll to
+ * @returns {boolean} - True if scrolled successfully
+ */
+export function scrollTextIntoView(text) {
+    const editor = window.editors?.userInput;
+    if (!editor) {
+        console.warn('[SCROLL] Editor not available');
+        return false;
+    }
+
+    try {
+        const editorElement = document.getElementById('userInput');
+        if (!editorElement) {
+            return false;
+        }
+
+        const proseMirror = editorElement.querySelector('.ProseMirror');
+        if (!proseMirror) {
+            return false;
+        }
+
+        // Get all text nodes in the editor
+        const walker = document.createTreeWalker(
+            proseMirror,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let node;
+        let foundNode = null;
+
+        // Find the text node containing our text
+        while (node = walker.nextNode()) {
+            if (node.textContent.toLowerCase().includes(text.toLowerCase())) {
+                foundNode = node;
+                break;
+            }
+        }
+
+        if (foundNode) {
+            // Get the parent element to scroll to
+            const parentElement = foundNode.parentElement;
+            if (parentElement) {
+                // Scroll with some padding
+                parentElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center',
+                    inline: 'nearest'
+                });
+
+                console.log('[SCROLL] Scrolled text into view:', text.substring(0, 50));
+                return true;
+            }
+        }
+
+        console.warn('[SCROLL] Text not found for scrolling:', text);
+        return false;
+    } catch (error) {
+        console.error('[SCROLL] Error scrolling text:', error);
+        return false;
+    }
+}
+
+// Import helper functions for TipTap programmatic change tracking
+export function getUserInputContent() {
+    const editor = window.editors?.userInput;
+    if (editor &amp;&amp; editor.getText) {
+        return editor.getText();
+    }
+    return '';
+}
+
+export function setUserInputContent(content, isProgrammatic = false, changeType = 'Content Update', replacements = null, isHtml = false) {
+    const editor = window.editors?.userInput;
+
+    if (!editor || !editor.commands) {
+        console.error('[PROGRAMMATIC] TipTap editor not ready');
+        return;
+    }
+
+    // Safe content handling for logging
+    const safeContent = typeof content === 'string' ? content : (content?.toString() ?? '');
+
+    // Log every programmatic change to console
+    if (isProgrammatic) {
+        console.log('═══════════════════════════════════════════════');
+        console.log('[PROGRAMMATIC CHANGE]');
+        console.log('Type:', changeType);
+        console.log('Length:', safeContent.length, 'characters');
+        console.log('Preview:', safeContent.substring(0, 150) + (safeContent.length > 150 ? '...' : ''));
+        console.log('═══════════════════════════════════════════════');
+
+        // Store the state BEFORE the change (for undo)
+        const stateBeforeChange = editor.getJSON();
+
+        // Only apply amber color for PII and Guideline Suggestions changes
+        const shouldColor = changeType.includes('PII') || changeType.includes('Guideline Suggestions');
+
+        if (isHtml) {
+            // Directly set HTML content
+            editor.commands.setContent(safeContent);
+        } else if (shouldColor) {
+            // Set content with amber color
+            if (replacements &amp;&amp; replacements.length > 0) {
+                // Only color the specific replacements
+                const html = applyColoredReplacements(safeContent, replacements);
+                editor.commands.setContent(html);
+            } else {
+                // Color the entire content (for wholesale replacements like AI generation)
+                editor.commands.setContent(`&lt;p>&lt;span style="color: #D97706">${escapeHtml(safeContent).replace(/\n/g, '&lt;/span>&lt;/p>&lt;p>&lt;span style="color: #D97706">')}&lt;/span>&lt;/p>`);
+            }
+
+            window.hasColoredChanges = true;
+            updateClearFormattingButton();
+        } else {
+            // Set content without coloring for other programmatic changes
+            // Convert newlines to HTML - use &lt;br> for single line breaks, &lt;p> for paragraphs
+            // First, normalize multiple consecutive blank lines into single blank lines
+            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+
+            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    // Within each paragraph, convert single newlines to &lt;br>
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('&lt;br>');
+                    return `&lt;p>${lines}&lt;/p>`;
+                })
+                .join('');
+            editor.commands.setContent(htmlContent);
+        }
+
+        // Store change in history AFTER applying the change
+        // Store stateBeforeChange for undo, and we'll use the current state for redo
+        if (window.programmaticChangeHistory) {
+            window.programmaticChangeHistory.push({
+                type: changeType,
+                content: safeContent,
+                timestamp: new Date(),
+                editorState: editor.getJSON(), // State AFTER the change (for redo)
+                editorStateBefore: stateBeforeChange // State BEFORE the change (for undo)
+            });
+            window.currentChangeIndex = window.programmaticChangeHistory.length - 1;
+        }
+
+        // Update undo/redo button states
+        updateUndoRedoButtons();
+    } else {
+        if (isHtml) {
+            editor.commands.setContent(safeContent);
+        } else {
+            // Regular content update without coloring
+            // Convert newlines to HTML - use &lt;br> for single line breaks, &lt;p> for paragraphs
+            // First, normalize multiple consecutive blank lines into single blank lines
+            const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
+
+            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    // Within each paragraph, convert single newlines to &lt;br>
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('&lt;br>');
+                    return `&lt;p>${lines}&lt;/p>`;
+                })
+                .join('');
+            editor.commands.setContent(htmlContent);
+        }
+    }
+
+    // Manually update Analyse/Reset button visibility after programmatic content changes
+    const hasContent = safeContent.trim().length > 0;
+    updateAnalyseAndResetButtons(hasContent);
+
+    // Update button visibility after content is set (with small delay to ensure TipTap has processed)
+    setTimeout(() => {
+        updateChatbotButtonVisibility();
+    }, 100);
+}
+
+export function appendToOutputField(content, clearExisting = true, isHtml = false) {
+    console.log('[DEBUG] appendToOutputField called (now replacing user input) with:', {
+        contentLength: content?.length,
+        clearExisting,
+        isHtml,
+        contentPreview: content?.substring(0, 100) + '...'
+    });
+
+    const userInput = document.getElementById('userInput');
+    if (!userInput) {
+        console.error('[DEBUG] userInput element not found');
+        return;
+    }
+
+    try {
+        let processedContent = content;
+
+        if (isHtml) {
+            // If isHtml is explicitly true, trust the content
+            processedContent = content;
+        } else if (/&lt;[a-z][\s\S]*>/i.test(content)) {
+            // If HTML is detected but isHtml is false, strip tags (legacy behavior)
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = content;
+            processedContent = tempDiv.textContent || tempDiv.innerText || '';
+        }
+
+        if (clearExisting) {
+            setUserInputContent(processedContent, true, 'Content Replacement', null, isHtml);
+        } else {
+            // If appending, we need to get current content as HTML if new content is HTML
+            const editor = window.editors?.userInput;
+            if (editor) {
+                const currentContent = isHtml ? editor.getHTML() : getUserInputContent();
+                const separator = isHtml ? '&lt;br>&lt;br>' : '\n\n';
+                const newContent = currentContent + separator + processedContent;
+                setUserInputContent(newContent, true, 'Content Addition', null, isHtml);
+            } else {
+                // Fallback
+                const currentContent = getUserInputContent();
+                setUserInputContent(currentContent + '\n\n' + processedContent, true, 'Content Addition', null, false);
+            }
+        }
+
+        console.log('[DEBUG] Content replaced in user input successfully');
+    } catch (error) {
+        console.error('[DEBUG] Error in appendToOutputField:', error);
+        setUserInputContent(content, true, 'Error Recovery');
+    }
+}
+
+// Function to update button states
+export function updateUndoRedoButtons() {
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+    const editor = window.editors?.userInput;
+
+    // Check if we have programmatic changes to track
+    const hasProgrammaticHistory = window.programmaticChangeHistory &amp;&amp; window.programmaticChangeHistory.length > 0;
+
+    if (hasProgrammaticHistory) {
+        // Use programmatic change history for button states
+        if (undoBtn) {
+            // Enable undo if we're at index 0 or higher (can undo to before first change)
+            // Disable only if we're already before the first change (index -1)
+            undoBtn.disabled = window.currentChangeIndex &lt; 0;
+        }
+        if (redoBtn) {
+            // Disable redo if we're at the last change
+            // Enable redo if currentChangeIndex &lt; length - 1 (including -1)
+            redoBtn.disabled = window.currentChangeIndex >= window.programmaticChangeHistory.length - 1;
+        }
+    } else if (editor) {
+        // Fall back to TipTap's built-in undo/redo state
+        if (undoBtn) {
+            undoBtn.disabled = !editor.can().undo();
+        }
+        if (redoBtn) {
+            redoBtn.disabled = !editor.can().redo();
+        }
+    } else {
+        // Fall back to clinical note history if no editor
+        const historyIndex = window.clinicalNoteHistoryIndex ?? 0;
+        const historyLength = window.clinicalNoteHistory?.length ?? 0;
+
+        if (undoBtn) {
+            undoBtn.disabled = historyIndex &lt;= 0;
+        }
+        if (redoBtn) {
+            redoBtn.disabled = historyIndex >= historyLength - 1;
+        }
+    }
+}
+
+// Show/hide action buttons based on input content
+export function updateChatbotButtonVisibility() {
+    const editor = window.editors?.userInput;
+    const analyseBtn = document.getElementById('analyseBtn');
+    const summarySection = document.getElementById('summarySection');
+
+    if (!editor || !summarySection) return;
+
+    const content = editor.getText().trim();
+    const hasContent = content.length > 0;
+
+    // The analyse button visibility is controlled by the summarySection visibility
+    // Just ensure the button is enabled when content exists
+    if (analyseBtn &amp;&amp; hasContent) {
+        analyseBtn.disabled = false;
+    }
+}
+
+/**
+ * Helper to apply color to replacing text
+ * @param {string} text - Original text
+ * @param {Array} replacements - Array of replacement objects or strings
+ * @returns {string} HTML string
+ */
+function applyColoredReplacements(text, replacements) {
+    if (!text) return '';
+    let html = escapeHtml(text);
+    if (!replacements || replacements.length === 0) {
+        return html.replace(/\n/g, '&lt;br>');
+    }
+
+    replacements.forEach(rep => {
+        let target = '';
+        if (typeof rep === 'string') {
+            target = rep;
+        } else if (typeof rep === 'object') {
+            target = rep.replacement || rep.text || '';
+        }
+
+        if (target) {
+            const escapedTarget = escapeHtml(target);
+            // Robust check to avoid infinite recursion if target is part of span tag (unlikely due to escape, but...)
+            if (html.includes(escapedTarget)) {
+                html = html.split(escapedTarget).join(`&lt;span style="color: #D97706">${escapedTarget}&lt;/span>`);
+            }
+        }
+    });
+
+    return html.replace(/\n/g, '&lt;br>');
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: server/services/ai.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: server/services/ai.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @fileoverview AI Service - Core AI routing and clinical analysis functions.
  *
  * This module handles all AI provider interactions, including:
@@ -41,7 +69,7 @@ const SEQUENTIAL_LLM_CHAIN = AI_PROVIDER_PREFERENCE.map(p => ({
  * Creates an AI prompt for analyzing guideline relevance to a clinical case.
  *
  * @param {string} transcript - The clinical note/transcript text
- * @param {Array<Object>} guidelinesChunk - Array of guideline objects to evaluate
+ * @param {Array&lt;Object>} guidelinesChunk - Array of guideline objects to evaluate
  * @param {string} guidelinesChunk[].id - Unique guideline identifier
  * @param {string} guidelinesChunk[].title - Guideline title
  * @param {string} [guidelinesChunk[].summary] - Optional guideline summary
@@ -51,10 +79,10 @@ const SEQUENTIAL_LLM_CHAIN = AI_PROVIDER_PREFERENCE.map(p => ({
 function createPromptForChunk(transcript, guidelinesChunk) {
     const guidelinesText = guidelinesChunk.map(g => {
         let guidelineInfo = `[${g.id}] ${g.title}`;
-        if (g.summary && g.summary.trim()) {
+        if (g.summary &amp;&amp; g.summary.trim()) {
             guidelineInfo += `\nSummary: ${g.summary.trim()}`;
         }
-        if (g.keywords && Array.isArray(g.keywords) && g.keywords.length > 0) {
+        if (g.keywords &amp;&amp; Array.isArray(g.keywords) &amp;&amp; g.keywords.length > 0) {
             guidelineInfo += `\nKeywords: ${g.keywords.slice(0, 10).join(', ')}`;
         }
         return guidelineInfo;
@@ -102,9 +130,9 @@ Provide ONLY the JSON response with no additional text or explanation.`;
  * - mostRelevant: score >= 0.8
  * - potentiallyRelevant: score >= 0.6
  * - lessRelevant: score >= 0.3
- * - notRelevant: score < 0.3
+ * - notRelevant: score &lt; 0.3
  *
- * @param {Array<Object>} chunkResults - Array of chunk analysis results
+ * @param {Array&lt;Object>} chunkResults - Array of chunk analysis results
  * @param {Object} chunkResults[].categories - Categorized guidelines from each chunk
  * @returns {Object} Merged and re-sorted categories
  * @returns {Array} returns.mostRelevant - Highly relevant guidelines
@@ -121,9 +149,9 @@ function mergeChunkResults(chunkResults) {
     };
 
     chunkResults.forEach(result => {
-        if (result && result.categories) {
+        if (result &amp;&amp; result.categories) {
             Object.keys(merged).forEach(category => {
-                if (result.categories[category] && Array.isArray(result.categories[category])) {
+                if (result.categories[category] &amp;&amp; Array.isArray(result.categories[category])) {
                     merged[category].push(...result.categories[category]);
                 }
             });
@@ -173,7 +201,7 @@ function mergeChunkResults(chunkResults) {
  * guideline titles back to their IDs when the AI returns titles instead.
  *
  * @param {string} responseContent - Raw AI response text (may contain JSON)
- * @param {Array<Object>} [originalChunk=[]] - Original guidelines for ID resolution
+ * @param {Array&lt;Object>} [originalChunk=[]] - Original guidelines for ID resolution
  * @returns {Object} Parsing result
  * @returns {boolean} returns.success - Whether parsing succeeded
  * @returns {Object} [returns.categories] - Categorized guidelines if successful
@@ -186,7 +214,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
         if (jsonMatch) cleanContent = jsonMatch[1];
 
         const parsed = JSON.parse(cleanContent);
-        const categoryRoot = (parsed && typeof parsed === 'object' && parsed.categories && typeof parsed.categories === 'object')
+        const categoryRoot = (parsed &amp;&amp; typeof parsed === 'object' &amp;&amp; parsed.categories &amp;&amp; typeof parsed.categories === 'object')
             ? parsed.categories
             : parsed;
 
@@ -218,7 +246,7 @@ function parseChunkResponse(responseContent, originalChunk = []) {
                 const item = normaliseItem(raw) || {};
                 const relevance = item.relevance || '0.5';
 
-                if (item.id && byId.has(item.id)) return { id: item.id, relevance };
+                if (item.id &amp;&amp; byId.has(item.id)) return { id: item.id, relevance };
 
                 if (item.title) {
                     const { bestMatch } = stringSimilarity.findBestMatch(item.title, originalTitles);
@@ -246,11 +274,11 @@ function parseChunkResponse(responseContent, originalChunk = []) {
  * - Anthropic: System messages converted to user messages with prefix
  * - Gemini: Uses {role, parts: [{text}]} format
  *
- * @param {Array<Object>} messages - Array of chat messages
+ * @param {Array&lt;Object>} messages - Array of chat messages
  * @param {string} messages[].role - Message role ('system', 'user', 'assistant')
  * @param {string} messages[].content - Message content
  * @param {string} provider - Target provider name
- * @returns {Array<Object>} Provider-formatted messages
+ * @returns {Array&lt;Object>} Provider-formatted messages
  */
 function formatMessagesForProvider(messages, provider) {
     switch (provider) {
@@ -274,7 +302,7 @@ function formatMessagesForProvider(messages, provider) {
  * - Response logging to Firestore for analytics
  *
  * @async
- * @param {string|Array<Object>} prompt - Text prompt or array of chat messages
+ * @param {string|Array&lt;Object>} prompt - Text prompt or array of chat messages
  * @param {string} [model='deepseek-chat'] - Model identifier (determines provider)
  * @param {string|null} [systemPrompt=null] - System prompt (if prompt is string)
  * @param {string|null} [userId=null] - User ID for preference lookup and logging
@@ -282,7 +310,7 @@ function formatMessagesForProvider(messages, provider) {
  * @param {number} [timeoutMs=120000] - Request timeout in milliseconds
  * @param {boolean} [skipUserPreference=false] - Skip user's model preferences
  * @param {number} [maxTokens=4000] - Maximum tokens in response
- * @returns {Promise<Object>} AI response object
+ * @returns {Promise&lt;Object>} AI response object
  * @returns {string} returns.content - Generated text content
  * @returns {string} returns.ai_provider - Provider that handled request
  * @returns {string} returns.ai_model - Model that was used
@@ -299,16 +327,16 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         else if (model.includes('mistral')) preferredProvider = 'Mistral';
         else if (model.includes('gemini')) preferredProvider = 'Gemini';
         else if (model.startsWith('grok-')) preferredProvider = 'Grok';
-        else if (model.includes('gpt') && !model.includes('gpt-oss')) preferredProvider = 'OpenAI';
+        else if (model.includes('gpt') &amp;&amp; !model.includes('gpt-oss')) preferredProvider = 'OpenAI';
         else if (model.includes('groq/') || model.includes('llama-3') || model.includes('llama-4') || model.includes('gpt-oss') || model.includes('kimi-k2') || model.includes('qwen')) preferredProvider = 'Groq';
 
-        if (userId && !skipUserPreference) {
+        if (userId &amp;&amp; !skipUserPreference) {
             try {
                 const userModelOrder = await getUserModelPreferences(userId);
-                if (userModelOrder && userModelOrder.length > 0) {
+                if (userModelOrder &amp;&amp; userModelOrder.length > 0) {
                     const firstPreferredModelId = userModelOrder[0];
                     const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === firstPreferredModelId);
-                    if (providerConfig && providerConfig.name !== preferredProvider) {
+                    if (providerConfig &amp;&amp; providerConfig.name !== preferredProvider) {
                         preferredProvider = providerConfig.name;
                         model = providerConfig.model;
                     }
@@ -332,24 +360,24 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             if (userId) {
                 try {
                     const userModelOrder = await getUserModelPreferences(userId);
-                    if (userModelOrder && userModelOrder.length > 0) fallbackModelOrder = userModelOrder;
+                    if (userModelOrder &amp;&amp; userModelOrder.length > 0) fallbackModelOrder = userModelOrder;
                 } catch (e) { }
             }
             let nextProvider = null;
             const currentIndex = fallbackModelOrder.indexOf(model);
-            for (let i = currentIndex + 1; i < fallbackModelOrder.length; i++) {
+            for (let i = currentIndex + 1; i &lt; fallbackModelOrder.length; i++) {
                 const modelId = fallbackModelOrder[i];
                 const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === modelId);
-                if (providerConfig && availableKeys[`has${providerConfig.name}Key`]) {
+                if (providerConfig &amp;&amp; availableKeys[`has${providerConfig.name}Key`]) {
                     nextProvider = providerConfig;
                     break;
                 }
             }
             if (!nextProvider) {
-                for (let i = 0; i < currentIndex; i++) {
+                for (let i = 0; i &lt; currentIndex; i++) {
                     const modelId = fallbackModelOrder[i];
                     const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === modelId);
-                    if (providerConfig && availableKeys[`has${providerConfig.name}Key`]) {
+                    if (providerConfig &amp;&amp; availableKeys[`has${providerConfig.name}Key`]) {
                         nextProvider = providerConfig;
                         break;
                     }
@@ -406,7 +434,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             content = responseData.choices[0].message.content;
         }
 
-        if (responseData && (responseData.usage || responseData.usageMetadata)) {
+        if (responseData &amp;&amp; (responseData.usage || responseData.usageMetadata)) {
             const usage = responseData.usage || responseData.usageMetadata;
             tokenUsage = { prompt_tokens: usage.prompt_tokens || usage.promptTokenCount || 0, completion_tokens: usage.completion_tokens || usage.candidatesTokenCount || 0, total_tokens: usage.total_tokens || usage.totalTokenCount || 0 };
         }
@@ -451,7 +479,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
  * @param {string|null} [userId=null] - User ID for preference lookup
  * @param {string|null} [preferredProvider=null] - Override provider selection
  * @param {number} [maxTokens=4000] - Maximum tokens in response
- * @returns {Promise<Object>} AI response (see sendToAI for structure)
+ * @returns {Promise&lt;Object>} AI response (see sendToAI for structure)
  * @throws {Error} If AI request fails
  *
  * @example
@@ -473,7 +501,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         const defaultProvider = AI_PROVIDER_PREFERENCE[0].name;
         let provider = preferredProvider || defaultProvider;
 
-        if (!preferredProvider && userId) {
+        if (!preferredProvider &amp;&amp; userId) {
             try {
                 const userPreference = await getUserAIPreference(userId);
                 if (userPreference) provider = userPreference;
@@ -492,7 +520,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
 
         const skipUserPreference = !!preferredProvider;
         let result;
-        if (typeof prompt === 'object' && prompt.messages) {
+        if (typeof prompt === 'object' &amp;&amp; prompt.messages) {
             const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
             result = await sendToAI(prompt.messages, model, null, userId, temperature, 120000, skipUserPreference, maxTokens);
         } else {
@@ -514,11 +542,11 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
  *
  * @async
  * @param {string} clinicalNote - The clinical note text to evaluate
- * @param {Array<Object>} importantPoints - Practice points to check against
+ * @param {Array&lt;Object>} importantPoints - Practice points to check against
  * @param {number} importantPoints[].originalIndex - Original index in full list
  * @param {string} importantPoints[].point - The practice point text
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} Compliance results
+ * @returns {Promise&lt;Object>} Compliance results
  * @returns {Array} returns.compliant - Indices of compliant points
  * @returns {Array} returns.nonCompliant - Indices of non-compliant points
  */
@@ -547,10 +575,10 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
  *
  * @async
  * @param {string} clinicalNote - The clinical note text
- * @param {Array<string>} allPoints - All practice points from guidelines
+ * @param {Array&lt;string>} allPoints - All practice points from guidelines
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} Filter results
- * @returns {Array<number>} returns.relevant - Indices of relevant points (1-based)
+ * @returns {Promise&lt;Object>} Filter results
+ * @returns {Array&lt;number>} returns.relevant - Indices of relevant points (1-based)
  * @returns {Object} returns.irrelevant - Map of irrelevant point indices to reasons
  */
 async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
@@ -575,12 +603,12 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
  *
  * @async
  * @param {string} clinicalNote - The clinical note text
- * @param {Array<Object>} relevantPoints - Pre-filtered relevant points
+ * @param {Array&lt;Object>} relevantPoints - Pre-filtered relevant points
  * @param {number} relevantPoints[].originalIndex - Original index in full list
  * @param {string} relevantPoints[].point - The practice point text
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} Filter results
- * @returns {Array<number>} returns.important - Indices of important points
+ * @returns {Promise&lt;Object>} Filter results
+ * @returns {Array&lt;number>} returns.important - Indices of important points
  * @returns {Object} returns.unimportant - Map of unimportant indices to reasons
  */
 async function filterImportantPracticePoints(clinicalNote, relevantPoints, userId) {
@@ -603,7 +631,7 @@ async function filterImportantPracticePoints(clinicalNote, relevantPoints, userI
  *
  * @async
  * @param {string} guidelineId - The guideline document ID
- * @returns {Promise<Object|null>} Learning data or null if not found
+ * @returns {Promise&lt;Object|null>} Learning data or null if not found
  * @returns {string} returns.learningText - Accumulated learning prose
  * @returns {number} returns.version - Learning version number
  */
@@ -613,7 +641,7 @@ async function loadGuidelineLearning(guidelineId) {
         if (!learningDoc.exists) return null;
         const data = learningDoc.data();
         if (data.learningText) return { learningText: data.learningText, version: data.version || 1 };
-        if (data.hints && data.hints.length > 0) return { learningText: data.hints.map(h => h.hint).join(' '), version: 0 };
+        if (data.hints &amp;&amp; data.hints.length > 0) return { learningText: data.hints.map(h => h.hint).join(' '), version: 0 };
         return null;
     } catch (error) {
         return null;
@@ -647,14 +675,14 @@ function formatLearningForPrompt(learning) {
  * @param {string} userId - User ID for AI routing
  * @param {string|null} [guidelineId=null] - Guideline ID for loading learning hints
  * @param {string|null} [targetModel=null] - Specific model to use
- * @returns {Promise<Object>} Analysis results
+ * @returns {Promise&lt;Object>} Analysis results
  * @returns {Object} returns.patientContext - Extracted patient demographics/context
- * @returns {Array<Object>} returns.suggestions - Clinical suggestions
+ * @returns {Array&lt;Object>} returns.suggestions - Clinical suggestions
  * @returns {string} returns.suggestions[].suggestion - The suggestion text
  * @returns {string} returns.suggestions[].priority - 'high', 'medium', or 'low'
  * @returns {string} returns.suggestions[].why - Reasoning for the suggestion
  * @returns {string} returns.suggestions[].verbatimQuote - Relevant guideline quote
- * @returns {Array<string>} returns.alreadyCompliant - Points already addressed
+ * @returns {Array&lt;string>} returns.alreadyCompliant - Points already addressed
  */
 async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null) {
     let hintsText = '';
@@ -704,10 +732,10 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
  * @param {string} clinicalNote - The clinical note text
  * @param {string} guidelineContent - Full guideline text
  * @param {string} guidelineTitle - Guideline title
- * @param {Array<Object>} suggestions - Suggestions to evaluate
- * @param {Array<string>} alreadyCompliant - Points identified as compliant
+ * @param {Array&lt;Object>} suggestions - Suggestions to evaluate
+ * @param {Array&lt;string>} alreadyCompliant - Points identified as compliant
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} Evaluation results
+ * @returns {Promise&lt;Object>} Evaluation results
  * @returns {number} returns.recallScore - Completeness score (0-1)
  * @returns {number} returns.precisionScore - Accuracy score (0-1)
  * @returns {Object} returns.counts - Count statistics
@@ -745,13 +773,13 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
  *
  * @async
  * @param {string} currentPrompt - The current prompt being evaluated
- * @param {Array<Object>} evaluationResults - Array of evaluation results
+ * @param {Array&lt;Object>} evaluationResults - Array of evaluation results
  * @param {number} avgRecall - Average recall score across evaluations
  * @param {number} avgPrecision - Average precision score across evaluations
  * @param {number} avgLatency - Average latency in milliseconds
  * @param {string} userId - User ID for AI routing
  * @param {Object} [additionalMetrics={}] - Extra metrics to consider
- * @returns {Promise<Object>} Improvement suggestions
+ * @returns {Promise&lt;Object>} Improvement suggestions
  * @returns {Object} returns.analysis - Pattern analysis
  * @returns {Array} returns.suggestedChanges - Recommended prompt changes
  */
@@ -781,13 +809,13 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgR
  * @async
  * @param {string} guidelineTitle - Title of the evaluated guideline
  * @param {Object} evaluation - Evaluation results
- * @param {Array<Object>} suggestions - The suggestions that were evaluated
+ * @param {Array&lt;Object>} suggestions - The suggestions that were evaluated
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object|null>} Lessons learned or null if no issues found
+ * @returns {Promise&lt;Object|null>} Lessons learned or null if no issues found
  * @returns {string} returns.learningText - Prose summary of lessons
  */
 async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, userId) {
-    if ((evaluation.missedRecommendations?.length || 0) === 0 && (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) === 0) return null;
+    if ((evaluation.missedRecommendations?.length || 0) === 0 &amp;&amp; (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) === 0) return null;
     const systemPrompt = `You are an expert at analysing AI performance... Write 1-3 short paragraphs...`;
     const userPrompt = `GUIDELINE: ${guidelineTitle}\n\nEVALUATION RESULTS:\n${JSON.stringify(evaluation, null, 2)}\n\nSUGGESTIONS:\n${JSON.stringify(suggestions, null, 2)}\n\nWrite a concise prose summary of key lessons learned.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
@@ -806,7 +834,7 @@ async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, us
  * @param {string} newLearning - New lessons to incorporate
  * @param {string} guidelineTitle - Guideline title for context
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<string>} Synthesized learning text
+ * @returns {Promise&lt;string>} Synthesized learning text
  */
 async function foldLearningWithLLM(existingLearning, newLearning, guidelineTitle, userId) {
     const systemPrompt = `You are an expert at synthesising clinical guideline knowledge... Preserve existing, incorporate new. Concise.`;
@@ -827,7 +855,7 @@ async function foldLearningWithLLM(existingLearning, newLearning, guidelineTitle
  * @param {string} newLessons.learningText - The learning text content
  * @param {string} guidelineTitle - Guideline title for synthesis context
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<void>}
+ * @returns {Promise&lt;void>}
  */
 async function storeGuidelineLearning(guidelineId, newLessons, guidelineTitle, userId) {
     if (!newLessons || !newLessons.learningText) return;
@@ -852,7 +880,7 @@ async function storeGuidelineLearning(guidelineId, newLessons, guidelineTitle, u
  * addressing missed recommendations and correcting errors.
  *
  * @async
- * @param {Array<Object>} previousSuggestions - Original suggestions
+ * @param {Array&lt;Object>} previousSuggestions - Original suggestions
  * @param {Object} previousEvaluation - Evaluation of original suggestions
  * @param {string} clinicalNote - The clinical note text
  * @param {string} guidelineContent - Full guideline text
@@ -860,7 +888,7 @@ async function storeGuidelineLearning(guidelineId, newLessons, guidelineTitle, u
  * @param {string} userId - User ID for AI routing
  * @param {string|null} targetProvider - Specific provider to use
  * @param {string|null} [guidelineId=null] - Guideline ID for loading hints
- * @returns {Promise<Object>} Refined analysis results (same structure as analyzeGuidelineForPatient)
+ * @returns {Promise&lt;Object>} Refined analysis results (same structure as analyzeGuidelineForPatient)
  */
 async function refineSuggestions(previousSuggestions, previousEvaluation, clinicalNote, guidelineContent, guidelineTitle, userId, targetProvider, guidelineId = null) {
     let hintsText = '';
@@ -905,7 +933,7 @@ function extractGestationalAge(clinicalNote, patientContext) {
         const match = clinicalNote.match(pattern);
         if (match) {
             const weeks = parseInt(match[1]);
-            if (weeks >= 4 && weeks <= 44) return weeks; // Sanity check
+            if (weeks >= 4 &amp;&amp; weeks &lt;= 44) return weeks; // Sanity check
         }
     }
 
@@ -976,7 +1004,7 @@ function applyRuleBasedFilters(suggestions, clinicalNote, patientContext) {
                 if (match) {
                     const suggestedWeek = parseInt(match[1]);
                     // Check if suggested intervention is in the past
-                    if (suggestedWeek < currentGA - 1) { // Allow 1 week grace for rounding
+                    if (suggestedWeek &lt; currentGA - 1) { // Allow 1 week grace for rounding
                         filterReason = `Patient is at ${currentGA} weeks - cannot schedule intervention at ${suggestedWeek} weeks (already past)`;
                         break;
                     }
@@ -987,7 +1015,7 @@ function applyRuleBasedFilters(suggestions, clinicalNote, patientContext) {
         // Rule 2: Check for Rhesus incompatibility
         if (bloodType.rhesus === 'positive') {
             // If patient is Rh positive, anti-D suggestions don't apply
-            if (/anti-d/i.test(suggestionText) && /rhd\s*negative/i.test(suggestionText)) {
+            if (/anti-d/i.test(suggestionText) &amp;&amp; /rhd\s*negative/i.test(suggestionText)) {
                 filterReason = `Patient is Rhesus positive - anti-D prophylaxis only applies to Rh negative patients`;
             }
         }
@@ -1000,7 +1028,7 @@ function applyRuleBasedFilters(suggestions, clinicalNote, patientContext) {
         ];
 
         for (const { pattern, completed } of completedPatterns) {
-            if (pattern.test(suggestionText) && completed.test(clinicalNote)) {
+            if (pattern.test(suggestionText) &amp;&amp; completed.test(clinicalNote)) {
                 filterReason = `Action already documented as completed in clinical note`;
                 break;
             }
@@ -1022,7 +1050,7 @@ function applyRuleBasedFilters(suggestions, clinicalNote, patientContext) {
  * @param {string} clinicalNote - The clinical note text
  * @param {Object} patientContext - Patient context extracted by AI (gestational age, etc.)
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} - { validSuggestions, filteredOut }
+ * @returns {Promise&lt;Object>} - { validSuggestions, filteredOut }
  */
 async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, userId) {
     if (!suggestions || suggestions.length === 0) {
@@ -1059,11 +1087,11 @@ Be STRICT about temporal issues - suggesting past interventions is clearly wrong
 
 Return ONLY valid JSON with this structure:
 {
-  "validSuggestions": [<array of suggestion IDs that make sense>],
+  "validSuggestions": [&lt;array of suggestion IDs that make sense>],
   "filteredOut": [
     {
-      "id": <suggestion ID>,
-      "reason": "<brief explanation why it's nonsensical>"
+      "id": &lt;suggestion ID>,
+      "reason": "&lt;brief explanation why it's nonsensical>"
     }
   ]
 }`;
@@ -1126,10 +1154,10 @@ TASK: Identify which suggestions are impossible/nonsensical given the current pa
  * @param {Object} categories - Categorized guidelines { mostRelevant: [], potentiallyRelevant: [], ... }
  * @param {string} clinicalNote - The clinical note text
  * @param {string} userId - User ID for AI routing
- * @returns {Promise<Object>} - { validCategories, filteredOut }
+ * @returns {Promise&lt;Object>} - { validCategories, filteredOut }
  */
 async function senseCheckGuidelines(categories, clinicalNote, userId) {
-    if (!categories || (!categories.mostRelevant?.length && !categories.potentiallyRelevant?.length)) {
+    if (!categories || (!categories.mostRelevant?.length &amp;&amp; !categories.potentiallyRelevant?.length)) {
         return { validCategories: categories, filteredOut: [] };
     }
 
@@ -1163,12 +1191,12 @@ DO NOT filter out:
 
 Return ONLY valid JSON with this structure:
 {
-  "validGuidelines": [<array of guideline IDs that ARE relevant or COULD BE relevant>],
+  "validGuidelines": [&lt;array of guideline IDs that ARE relevant or COULD BE relevant>],
   "filteredOut": [
     {
-      "id": "<guideline ID>",
-      "title": "<guideline title>",
-      "reason": "<brief explanation why it's completely irrelevant>"
+      "id": "&lt;guideline ID>",
+      "title": "&lt;guideline title>",
+      "reason": "&lt;brief explanation why it's completely irrelevant>"
     }
   ]
 }`;
@@ -1268,3 +1296,26 @@ module.exports = {
     senseCheckGuidelines,
     SEQUENTIAL_LLM_CHAIN
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

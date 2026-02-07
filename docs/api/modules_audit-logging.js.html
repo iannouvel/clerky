@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/audit-logging.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/audit-logging.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Enhanced audit logging module for comprehensive LLM interaction capture
+// Designed for ISO 13485 compliance and fine-tuning data collection
+
+/**
+ * Logs a complete LLM interaction with full context for audit purposes
+ * @param {Object} interactionData - Complete interaction data
+ * @param {string} interactionData.guidelineId - Guideline ID if applicable
+ * @param {string} interactionData.elementId - Auditable element ID if applicable
+ * @param {string} interactionData.testId - Test scenario ID if applicable
+ * @param {Object} interactionData.promptChain - Full prompt chain with system and user prompts
+ * @param {Object} interactionData.response - Complete AI response with metadata
+ * @param {Object} interactionData.modelConfig - Model configuration (provider, model, temperature, etc.)
+ * @param {Object} interactionData.tokenUsage - Token usage details
+ * @param {string} interactionData.endpoint - API endpoint name
+ * @param {string} interactionData.userId - User ID
+ * @param {number} interactionData.processingTimeMs - Response latency in milliseconds
+ * @param {Object} interactionData.context - Additional context (scenario, audit scope, etc.)
+ * @returns {Promise&lt;Object>} - Interaction log entry with ID
+ */
+export async function logAuditInteraction(interactionData) {
+    const {
+        guidelineId,
+        elementId,
+        testId,
+        promptChain,
+        response,
+        modelConfig,
+        tokenUsage,
+        endpoint,
+        userId,
+        processingTimeMs,
+        context = {}
+    } = interactionData;
+
+    if (!promptChain || !response) {
+        throw new Error('promptChain and response are required for audit logging');
+    }
+
+    // Import Firestore admin dynamically to avoid circular dependencies
+    const admin = await import('firebase-admin');
+    const db = admin.firestore();
+
+    const timestamp = admin.firestore.FieldValue.serverTimestamp();
+    const interactionId = db.collection('auditInteractions').doc().id;
+
+    // Extract full prompt chain
+    const systemPrompt = promptChain.systemPrompt || promptChain.system || '';
+    const userPrompt = promptChain.userPrompt || promptChain.user || '';
+    const fullPrompt = promptChain.fullPrompt || `${systemPrompt}\n\n${userPrompt}`;
+    const contextPrompts = promptChain.contextPrompts || [];
+
+    // Extract response data
+    const responseContent = response.content || response.text || response.response || '';
+    const responseMetadata = {
+        ai_provider: response.ai_provider || modelConfig?.provider || 'Unknown',
+        ai_model: response.ai_model || modelConfig?.model || 'Unknown',
+        finish_reason: response.finish_reason || null,
+        created: response.created || null
+    };
+
+    // Extract model configuration
+    const modelInfo = {
+        provider: modelConfig?.provider || response.ai_provider || 'Unknown',
+        model: modelConfig?.model || response.ai_model || 'Unknown',
+        temperature: modelConfig?.temperature || null,
+        maxTokens: modelConfig?.maxTokens || modelConfig?.max_tokens || null,
+        topP: modelConfig?.topP || modelConfig?.top_p || null,
+        frequencyPenalty: modelConfig?.frequencyPenalty || modelConfig?.frequency_penalty || null,
+        presencePenalty: modelConfig?.presencePenalty || modelConfig?.presence_penalty || null
+    };
+
+    // Extract token usage
+    const tokenData = tokenUsage || response.token_usage || {};
+    const tokenInfo = {
+        prompt_tokens: tokenData.prompt_tokens || tokenData.input_tokens || 0,
+        completion_tokens: tokenData.completion_tokens || tokenData.output_tokens || 0,
+        total_tokens: tokenData.total_tokens || (tokenInfo?.prompt_tokens + tokenInfo?.completion_tokens) || 0,
+        estimated_cost_usd: tokenData.estimated_cost_usd || tokenData.estimated_cost || null
+    };
+
+    // Build complete interaction log entry
+    const interactionLog = {
+        interactionId,
+        timestamp,
+        userId: userId || 'system',
+        
+        // Test context
+        guidelineId: guidelineId || null,
+        elementId: elementId || null,
+        testId: testId || null,
+        
+        // Prompt chain (complete)
+        promptChain: {
+            systemPrompt,
+            userPrompt,
+            fullPrompt,
+            contextPrompts,
+            promptStructure: promptChain.promptStructure || null
+        },
+        
+        // Response (complete)
+        response: {
+            content: responseContent,
+            metadata: responseMetadata,
+            fullResponse: response // Store complete response object
+        },
+        
+        // Model information
+        modelConfig: modelInfo,
+        
+        // Token usage
+        tokenUsage: tokenInfo,
+        
+        // Performance metrics
+        processingTimeMs: processingTimeMs || null,
+        
+        // Endpoint and context
+        endpoint: endpoint || 'unknown',
+        context: context,
+        
+        // ISO 13485 compliance fields
+        auditPurpose: context.auditPurpose || 'guidance_validation',
+        traceability: {
+            guidelineId: guidelineId || null,
+            elementId: elementId || null,
+            testId: testId || null,
+            scenarioId: context.scenarioId || null
+        }
+    };
+
+    try {
+        // Store in Firestore
+        await db.collection('auditInteractions').doc(interactionId).set(interactionLog);
+        
+        console.log(`[AUDIT-LOG] Logged interaction ${interactionId} for endpoint: ${endpoint}`);
+        
+        return {
+            success: true,
+            interactionId,
+            logEntry: interactionLog
+        };
+    } catch (error) {
+        console.error('[AUDIT-LOG] Error logging interaction:', error);
+        throw error;
+    }
+}
+
+/**
+ * Retrieves audit interactions with filtering options
+ * @param {Object} filters - Filter criteria
+ * @param {string} filters.guidelineId - Filter by guideline ID
+ * @param {string} filters.elementId - Filter by element ID
+ * @param {string} filters.testId - Filter by test ID
+ * @param {string} filters.userId - Filter by user ID
+ * @param {Date} filters.startDate - Start date for time range
+ * @param {Date} filters.endDate - End date for time range
+ * @param {number} filters.limit - Maximum number of results
+ * @returns {Promise&lt;Array>} - Array of interaction logs
+ */
+export async function getAuditInteractions(filters = {}) {
+    const admin = await import('firebase-admin');
+    const db = admin.firestore();
+    
+    let query = db.collection('auditInteractions');
+    
+    if (filters.guidelineId) {
+        query = query.where('guidelineId', '==', filters.guidelineId);
+    }
+    
+    if (filters.elementId) {
+        query = query.where('elementId', '==', filters.elementId);
+    }
+    
+    if (filters.testId) {
+        query = query.where('testId', '==', filters.testId);
+    }
+    
+    if (filters.userId) {
+        query = query.where('userId', '==', filters.userId);
+    }
+    
+    if (filters.startDate) {
+        query = query.where('timestamp', '>=', filters.startDate);
+    }
+    
+    if (filters.endDate) {
+        query = query.where('timestamp', '&lt;=', filters.endDate);
+    }
+    
+    query = query.orderBy('timestamp', 'desc');
+    
+    if (filters.limit) {
+        query = query.limit(filters.limit);
+    }
+    
+    const snapshot = await query.get();
+    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+}
+
+/**
+ * Gets interaction statistics for an audit test
+ * @param {string} testId - Test ID
+ * @returns {Promise&lt;Object>} - Statistics object
+ */
+export async function getInteractionStatistics(testId) {
+    const admin = await import('firebase-admin');
+    const db = admin.firestore();
+    
+    const interactions = await db.collection('auditInteractions')
+        .where('testId', '==', testId)
+        .get();
+    
+    const stats = {
+        totalInteractions: interactions.size,
+        totalTokens: 0,
+        totalCost: 0,
+        averageProcessingTime: 0,
+        providers: {},
+        models: {}
+    };
+    
+    let totalProcessingTime = 0;
+    
+    interactions.forEach(doc => {
+        const data = doc.data();
+        
+        // Token usage
+        if (data.tokenUsage) {
+            stats.totalTokens += data.tokenUsage.total_tokens || 0;
+            if (data.tokenUsage.estimated_cost_usd) {
+                stats.totalCost += data.tokenUsage.estimated_cost_usd;
+            }
+        }
+        
+        // Processing time
+        if (data.processingTimeMs) {
+            totalProcessingTime += data.processingTimeMs;
+        }
+        
+        // Provider/model distribution
+        const provider = data.modelConfig?.provider || 'Unknown';
+        const model = data.modelConfig?.model || 'Unknown';
+        
+        stats.providers[provider] = (stats.providers[provider] || 0) + 1;
+        stats.models[model] = (stats.models[model] || 0) + 1;
+    });
+    
+    if (stats.totalInteractions > 0) {
+        stats.averageProcessingTime = totalProcessingTime / stats.totalInteractions;
+    }
+    
+    return stats;
+}
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

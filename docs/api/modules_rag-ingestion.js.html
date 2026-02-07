@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/rag-ingestion.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/rag-ingestion.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * RAG Ingestion Module
+ * 
+ * Processes guideline content from Firestore and uploads to Pinecone vector database.
+ * Uses the FULL guideline content for semantic search - not summaries or condensed versions.
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { upsertDocuments, deleteGuidelineChunks, getIndexStats } = require('./vector-db');
+
+// Configuration
+const CHUNK_SIZE = 1500; // Characters per chunk (optimized for medical content)
+const CHUNK_OVERLAP = 300; // Overlap between chunks for context continuity
+
+/**
+ * Split text into overlapping chunks
+ * 
+ * @param {string} text - The text to chunk
+ * @param {number} chunkSize - Maximum characters per chunk
+ * @param {number} overlap - Overlap between chunks
+ * @returns {Array&lt;string>} - Array of text chunks
+ */
+function chunkText(text, chunkSize = CHUNK_SIZE, overlap = CHUNK_OVERLAP) {
+    if (!text || text.length === 0) {
+        return [];
+    }
+
+    // If text is smaller than chunk size, return as single chunk
+    if (text.length &lt;= chunkSize) {
+        return [text.trim()];
+    }
+
+    const chunks = [];
+    let startIndex = 0;
+
+    while (startIndex &lt; text.length) {
+        let endIndex = startIndex + chunkSize;
+        
+        // Try to break at sentence boundary
+        if (endIndex &lt; text.length) {
+            // Look for sentence ending within last 20% of chunk
+            const searchStart = Math.max(startIndex, endIndex - Math.floor(chunkSize * 0.2));
+            const searchText = text.substring(searchStart, endIndex);
+            
+            // Find last sentence ending
+            const sentenceEndMatch = searchText.match(/[.!?]\s+(?=[A-Z])/g);
+            if (sentenceEndMatch) {
+                const lastMatch = searchText.lastIndexOf(sentenceEndMatch[sentenceEndMatch.length - 1]);
+                if (lastMatch !== -1) {
+                    endIndex = searchStart + lastMatch + sentenceEndMatch[sentenceEndMatch.length - 1].length;
+                }
+            }
+        }
+
+        const chunk = text.substring(startIndex, endIndex).trim();
+        if (chunk.length > 0) {
+            chunks.push(chunk);
+        }
+
+        // Move start index with overlap
+        startIndex = endIndex - overlap;
+        
+        // Prevent infinite loop
+        if (startIndex >= text.length - overlap) {
+            break;
+        }
+    }
+
+    return chunks;
+}
+
+/**
+ * Extract guideline metadata from filename
+ * 
+ * @param {string} filename - The filename
+ * @param {string} folder - The source folder (condensed, summary, etc.)
+ * @returns {Object} - Extracted metadata
+ */
+function extractMetadata(filename, folder) {
+    // Remove .txt extension
+    const baseName = filename.replace(/\.txt$/, '');
+    
+    // Try to extract organisation from common patterns
+    const orgPatterns = [
+        { regex: /^(NICE|RCOG|BASHH|FSRH|BMS|BSH|BHIVA|BAPM|BJOG|ESHRE|FIGO|WHO|NHS)/i, group: 1 },
+        { regex: /^(GTG|CG|NG|QS|PH)/i, org: 'NICE' },
+        { regex: /^(MP|GP|CG\d|SP|P\d)/i, org: 'UHSussex' }
+    ];
+
+    let organisation = 'Unknown';
+    for (const pattern of orgPatterns) {
+        const match = baseName.match(pattern.regex);
+        if (match) {
+            organisation = pattern.org || match[pattern.group];
+            break;
+        }
+    }
+
+    // Try to extract year
+    const yearMatch = baseName.match(/\b(19|20)\d{2}\b/);
+    const year = yearMatch ? parseInt(yearMatch[0]) : null;
+
+    return {
+        title: baseName,
+        organisation,
+        year,
+        sourceFolder: folder,
+        filename
+    };
+}
+
+/**
+ * Generate a unique ID for a guideline chunk
+ * 
+ * @param {string} guidelineId - Base guideline ID
+ * @param {number} chunkIndex - Chunk index
+ * @returns {string} - Unique chunk ID
+ */
+function generateChunkId(guidelineId, chunkIndex) {
+    // Create a sanitized ID (Pinecone IDs must be alphanumeric with underscores/hyphens)
+    const sanitizedId = guidelineId
+        .replace(/[^a-zA-Z0-9_-]/g, '_')
+        .substring(0, 100); // Limit length
+    
+    return `${sanitizedId}_chunk_${chunkIndex}`;
+}
+
+/**
+ * Process a single guideline file
+ * 
+ * @param {string} filePath - Path to the file
+ * @param {string} folder - Source folder name
+ * @returns {Array} - Array of document chunks ready for upsert
+ */
+function processGuidelineFile(filePath, folder) {
+    try {
+        const filename = path.basename(filePath);
+        const content = fs.readFileSync(filePath, 'utf-8');
+        
+        if (!content || content.trim().length === 0) {
+            console.warn(`[RAG-INGESTION] Empty file: ${filename}`);
+            return [];
+        }
+
+        const metadata = extractMetadata(filename, folder);
+        const guidelineId = `${folder}_${filename.replace(/\.txt$/, '')}`;
+        
+        // Chunk the content
+        const chunks = chunkText(content);
+        
+        if (chunks.length === 0) {
+            return [];
+        }
+
+        // Create documents for each chunk
+        return chunks.map((chunkText, index) => ({
+            id: generateChunkId(guidelineId, index),
+            text: chunkText,
+            metadata: {
+                guidelineId,
+                title: metadata.title,
+                organisation: metadata.organisation,
+                year: metadata.year,
+                sourceFolder: folder,
+                filename: metadata.filename,
+                chunkIndex: index,
+                totalChunks: chunks.length
+            }
+        }));
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Error processing ${filePath}:`, error.message);
+        return [];
+    }
+}
+
+/**
+ * Process all guidelines from the guidance folder
+ * 
+ * @param {string} baseDir - Base directory (usually project root)
+ * @param {Object} options - Processing options
+ * @returns {Promise&lt;Object>} - Processing results
+ */
+async function processAllGuidelines(baseDir, options = {}) {
+    const { dryRun = false, batchSize = 50, folders = GUIDANCE_FOLDERS } = options;
+    
+    const guidanceDir = path.join(baseDir, 'guidance');
+    const results = {
+        totalFiles: 0,
+        totalChunks: 0,
+        processedFiles: 0,
+        errors: [],
+        byFolder: {}
+    };
+
+    console.log(`[RAG-INGESTION] Starting ingestion from: ${guidanceDir}`);
+    console.log(`[RAG-INGESTION] Folders to process: ${folders.join(', ')}`);
+    console.log(`[RAG-INGESTION] Dry run: ${dryRun}`);
+
+    // Collect all documents first
+    const allDocuments = [];
+
+    for (const folder of folders) {
+        const folderPath = path.join(guidanceDir, folder);
+        
+        if (!fs.existsSync(folderPath)) {
+            console.warn(`[RAG-INGESTION] Folder not found: ${folderPath}`);
+            continue;
+        }
+
+        const files = fs.readdirSync(folderPath).filter(f => f.endsWith('.txt'));
+        results.byFolder[folder] = { files: files.length, chunks: 0 };
+        results.totalFiles += files.length;
+
+        console.log(`[RAG-INGESTION] Processing ${files.length} files from ${folder}/`);
+
+        for (const file of files) {
+            const filePath = path.join(folderPath, file);
+            const documents = processGuidelineFile(filePath, folder);
+            
+            if (documents.length > 0) {
+                allDocuments.push(...documents);
+                results.processedFiles++;
+                results.byFolder[folder].chunks += documents.length;
+            }
+        }
+    }
+
+    results.totalChunks = allDocuments.length;
+    console.log(`[RAG-INGESTION] Total chunks prepared: ${results.totalChunks}`);
+
+    // Upload to Pinecone (unless dry run)
+    if (!dryRun &amp;&amp; allDocuments.length > 0) {
+        console.log(`[RAG-INGESTION] Uploading to Pinecone in batches of ${batchSize}...`);
+        
+        try {
+            const upsertResult = await upsertDocuments(allDocuments);
+            results.uploaded = upsertResult.upsertedCount;
+            console.log(`[RAG-INGESTION] Upload complete: ${results.uploaded} chunks`);
+        } catch (error) {
+            console.error(`[RAG-INGESTION] Upload failed:`, error.message);
+            results.errors.push(error.message);
+        }
+    }
+
+    return results;
+}
+
+/**
+ * Re-ingest a specific guideline (after update)
+ * 
+ * @param {string} guidelineId - The guideline ID
+ * @param {string} content - The new content
+ * @param {Object} metadata - Guideline metadata
+ */
+async function reingestGuideline(guidelineId, content, metadata) {
+    console.log(`[RAG-INGESTION] Re-ingesting guideline: ${guidelineId}`);
+
+    // First, delete existing chunks
+    try {
+        await deleteGuidelineChunks(guidelineId);
+    } catch (error) {
+        console.warn(`[RAG-INGESTION] Could not delete old chunks (may not exist): ${error.message}`);
+    }
+
+    // Chunk the new content
+    const chunks = chunkText(content);
+    
+    if (chunks.length === 0) {
+        console.warn(`[RAG-INGESTION] No content to ingest for: ${guidelineId}`);
+        return { success: false, error: 'No content' };
+    }
+
+    // Create documents
+    const documents = chunks.map((chunkText, index) => ({
+        id: generateChunkId(guidelineId, index),
+        text: chunkText,
+        metadata: {
+            guidelineId,
+            title: metadata.title || guidelineId,
+            organisation: metadata.organisation || 'Unknown',
+            year: metadata.year || null,
+            chunkIndex: index,
+            totalChunks: chunks.length
+        }
+    }));
+
+    // Upsert to Pinecone
+    try {
+        const result = await upsertDocuments(documents);
+        console.log(`[RAG-INGESTION] Re-ingested ${result.upsertedCount} chunks for: ${guidelineId}`);
+        return { success: true, chunksUpserted: result.upsertedCount };
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Re-ingestion failed:`, error.message);
+        return { success: false, error: error.message };
+    }
+}
+
+/**
+ * Get ingestion status
+ */
+async function getIngestionStatus() {
+    const stats = await getIndexStats();
+    return {
+        vectorDBAvailable: stats.available,
+        totalRecords: stats.totalRecords || 0,
+        ...stats
+    };
+}
+
+/**
+ * Process a single guideline from Firestore data
+ * Uses the FULL content field - not summaries or condensed versions
+ * 
+ * @param {Object} guideline - Guideline document from Firestore
+ * @returns {Array} - Array of document chunks ready for upsert
+ */
+function processFirestoreGuideline(guideline) {
+    try {
+        const guidelineId = guideline.id;
+        
+        // Use FULL content - this is the verbatim guideline text
+        const content = guideline.content;
+        
+        if (!content || content.trim().length === 0) {
+            console.warn(`[RAG-INGESTION] No content for guideline: ${guidelineId}`);
+            return [];
+        }
+
+        // Extract metadata from guideline
+        const title = guideline.humanFriendlyName || guideline.title || guideline.filename || guidelineId;
+        const organisation = guideline.organisation || extractOrganisationFromTitle(title);
+        
+        // Chunk the FULL content
+        const chunks = chunkText(content);
+        
+        if (chunks.length === 0) {
+            return [];
+        }
+
+        console.log(`[RAG-INGESTION] Chunked "${title}" into ${chunks.length} chunks (${content.length} chars)`);
+
+        // Create documents for each chunk
+        return chunks.map((chunkContent, index) => ({
+            id: generateChunkId(guidelineId, index),
+            text: chunkContent,
+            metadata: {
+                guidelineId,
+                title,
+                organisation,
+                scope: guideline.scope || 'national',
+                hospitalTrust: guideline.hospitalTrust || null,
+                chunkIndex: index,
+                totalChunks: chunks.length
+            }
+        }));
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Error processing guideline ${guideline.id}:`, error.message);
+        return [];
+    }
+}
+
+/**
+ * Extract organisation from guideline title
+ */
+function extractOrganisationFromTitle(title) {
+    const orgPatterns = [
+        { regex: /^(NICE|RCOG|BASHH|FSRH|BMS|BSH|BHIVA|BAPM|BJOG|ESHRE|FIGO|WHO|NHS)\b/i, group: 1 },
+        { regex: /\b(NICE|RCOG|BASHH|FSRH)\b/i, group: 1 },
+        { regex: /^(GTG|Green-top)/i, org: 'RCOG' },
+        { regex: /^(CG|NG|QS|PH)\d/i, org: 'NICE' },
+        { regex: /^(MP|GP|SP|P\d)/i, org: 'UHSussex' },
+        { regex: /UHSussex|UHSx/i, org: 'UHSussex' }
+    ];
+
+    for (const pattern of orgPatterns) {
+        const match = title.match(pattern.regex);
+        if (match) {
+            return pattern.org || match[pattern.group].toUpperCase();
+        }
+    }
+    
+    return 'Unknown';
+}
+
+/**
+ * Ingest all guidelines from Firestore
+ * Uses the FULL content field for each guideline
+ * 
+ * @param {Object} db - Firestore database instance
+ * @param {Object} options - Processing options
+ * @returns {Promise&lt;Object>} - Processing results
+ */
+async function ingestFromFirestore(db, options = {}) {
+    const {
+        dryRun = false,
+        batchSize = 250,
+        limit = null,
+        /**
+         * Optional: async (guideline) => string | null
+         * Use this to fetch full guideline content from Storage when Firestore content is null.
+         */
+        fetchContent = null
+    } = options;
+    
+    const results = {
+        totalGuidelines: 0,
+        guidelinesWithContent: 0,
+        guidelinesWithoutContent: 0,
+        contentFromFirestore: 0,
+        contentFromStorage: 0,
+        totalChunks: 0,
+        processedGuidelines: 0,
+        skipped: [],
+        errors: []
+    };
+
+    console.log(`[RAG-INGESTION] Starting Firestore ingestion...`);
+    console.log(`[RAG-INGESTION] Dry run: ${dryRun}`);
+    
+    try {
+        // Get all guidelines from Firestore
+        let query = db.collection('guidelines');
+        if (limit) {
+            query = query.limit(limit);
+        }
+        
+        const snapshot = await query.get();
+        results.totalGuidelines = snapshot.size;
+        
+        console.log(`[RAG-INGESTION] Found ${results.totalGuidelines} guidelines in Firestore`);
+
+        // Upload in streaming batches to avoid huge memory usage
+        let pendingDocuments = [];
+        let uploadedCount = 0;
+
+        async function flushPending() {
+            if (dryRun) {
+                pendingDocuments = [];
+                return;
+            }
+            if (pendingDocuments.length === 0) return;
+
+            const docsToUpload = pendingDocuments;
+            pendingDocuments = [];
+
+            const upsertResult = await upsertDocuments(docsToUpload);
+            uploadedCount += upsertResult.upsertedCount || 0;
+            results.uploaded = uploadedCount;
+        }
+        
+        for (const doc of snapshot.docs) {
+            const guideline = { id: doc.id, ...doc.data() };
+            
+            // Resolve FULL content
+            let resolvedContent = guideline.content;
+            let resolvedFrom = 'firestore';
+            if (!resolvedContent || resolvedContent.trim().length === 0) {
+                if (typeof fetchContent === 'function') {
+                    try {
+                        resolvedContent = await fetchContent(guideline);
+                        resolvedFrom = 'storage';
+                    } catch (error) {
+                        results.errors.push(`Failed to fetch content for ${guideline.id}: ${error.message}`);
+                    }
+                }
+            }
+
+            if (!resolvedContent || resolvedContent.trim().length === 0) {
+                results.guidelinesWithoutContent++;
+                results.skipped.push({
+                    id: guideline.id,
+                    title: guideline.title || guideline.humanFriendlyName,
+                    reason: 'No content (Firestore/Storage)'
+                });
+                continue;
+            }
+
+            results.guidelinesWithContent++;
+            if (resolvedFrom === 'storage') results.contentFromStorage++;
+            else results.contentFromFirestore++;
+            
+            // Process the guideline
+            const chunks = processFirestoreGuideline({ ...guideline, content: resolvedContent });
+            
+            if (chunks.length > 0) {
+                results.processedGuidelines++;
+                results.totalChunks += chunks.length;
+                pendingDocuments.push(...chunks);
+
+                // Flush by doc count, not guideline count
+                if (pendingDocuments.length >= batchSize) {
+                    try {
+                        await flushPending();
+                    } catch (error) {
+                        results.errors.push(`Upsert failed: ${error.message}`);
+                    }
+                }
+            }
+        }
+
+        console.log(`[RAG-INGESTION] Prepared ${results.totalChunks} chunks from ${results.processedGuidelines} guidelines`);
+        console.log(`[RAG-INGESTION] Skipped ${results.guidelinesWithoutContent} guidelines without content`);
+
+        // Final flush
+        try {
+            await flushPending();
+        } catch (error) {
+            results.errors.push(`Final upsert failed: ${error.message}`);
+        }
+
+        if (!dryRun) {
+            console.log(`[RAG-INGESTION] Upload complete: ${results.uploaded || 0} chunks`);
+        }
+
+        return results;
+        
+    } catch (error) {
+        console.error(`[RAG-INGESTION] Firestore ingestion failed:`, error.message);
+        results.errors.push(error.message);
+        return results;
+    }
+}
+
+module.exports = {
+    chunkText,
+    extractMetadata,
+    processGuidelineFile,
+    processAllGuidelines,
+    processFirestoreGuideline,
+    ingestFromFirestore,
+    reingestGuideline,
+    getIngestionStatus,
+    CHUNK_SIZE,
+    CHUNK_OVERLAP
+};
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

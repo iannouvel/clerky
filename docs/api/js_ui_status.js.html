@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/ui/status.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/ui/status.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * UI Status and Button Management
+ * Handles status messages and button visibility/state
+ */
+
+/**
+ * Helper function to log all changes to serverStatusMessage
+ * @param {string} action - Description of the action being taken
+ * @param {string} message - The message being set (or empty for clear)
+ * @param {boolean} isLoading - Whether loading state is active
+ */
+function logStatusChange(action, message, isLoading = false) {
+    const timestamp = new Date().toISOString().substr(11, 12);
+    const callerStack = new Error().stack.split('\n')[3]?.trim() || 'unknown';
+
+    console.log(`[STATUS ${timestamp}] ${action}`, {
+        message: message || '(clearing)',
+        isLoading,
+        hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive || window.parallelAnalysisActive),
+        caller: callerStack
+    });
+}
+
+/**
+ * Display a status message to the user in the fixed button row
+ * @param {string} message - Message to display, or empty string/null to clear
+ * @param {boolean} isLoading - Whether to show a loading spinner
+ * @param {boolean} forceClear - If true, clears message even during ongoing workflows (default: false)
+ */
+export function updateUser(message, isLoading = false, forceClear = false) {
+    const statusEl = document.getElementById('serverStatusMessage');
+
+    if (!statusEl) {
+        console.warn('[STATUS] serverStatusMessage element not found');
+        return;
+    }
+
+    // Avoid duplicate "Finding relevant guidelines..." indicators in the fixed button row:
+    // the Analyse button already shows this progress state with a spinner/text.
+    if (message &amp;&amp; isLoading &amp;&amp; /finding\s+relevant\s+guidelines/i.test(message)) {
+        const analyseSpinner = document.getElementById('analyseSpinner');
+        const analyseSpinnerVisible = !!(
+            analyseSpinner &amp;&amp;
+            window.getComputedStyle(analyseSpinner).display !== 'none'
+        );
+
+        if (analyseSpinnerVisible) {
+            // Ensure we don't leave stale status text visible.
+            logStatusChange('HIDING (duplicate with analyze button)', message, isLoading);
+            statusEl.style.display = 'none';
+            statusEl.textContent = '';
+            return;
+        }
+    }
+
+    if (message) {
+        // When loading, show spinner + message; otherwise just text
+        if (isLoading) {
+            logStatusChange('SHOWING (loading)', message, isLoading);
+            statusEl.innerHTML = `&lt;span class="spinner-small">&lt;/span>&lt;span style="margin-left: 6px;">${message}&lt;/span>`;
+        } else {
+            logStatusChange('SHOWING (static)', message, isLoading);
+            statusEl.textContent = message;
+        }
+
+        statusEl.style.display = 'flex';
+
+        // Auto-hide non-loading messages after a short delay
+        if (!isLoading) {
+            const currentMessage = statusEl.textContent;
+            setTimeout(() => {
+                // Only hide if nothing has changed since we scheduled the hide
+                // AND there are no ongoing workflows
+                const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+
+                if (statusEl.textContent === currentMessage) {
+                    if (hasOngoingWorkflows) {
+                        logStatusChange('AUTO-HIDE BLOCKED (ongoing workflow detected)', currentMessage, false);
+                        console.log('[STATUS] Preserving message during workflow. Will remain visible.');
+                    } else {
+                        logStatusChange('AUTO-HIDING (5s timeout)', currentMessage, false);
+                        statusEl.style.display = 'none';
+                        statusEl.textContent = '';
+                    }
+                }
+            }, 5000);
+        }
+    } else {
+        // Check if there are ongoing operations - if so, preserve message unless forceClear is true
+        const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+
+        if (hasOngoingWorkflows &amp;&amp; !forceClear) {
+            const currentMessage = statusEl.textContent;
+            logStatusChange('PRESERVING (ongoing workflow, use forceClear to override)', currentMessage, false);
+            console.log('[STATUS] Message preserved during ongoing workflow. Current message:', currentMessage);
+            // Don't clear - preserve the current message
+            return;
+        }
+
+        if (hasOngoingWorkflows &amp;&amp; forceClear) {
+            logStatusChange('CLEARING (forceClear=true despite ongoing workflow)', '', false);
+        } else {
+            logStatusChange('CLEARING', '', false);
+        }
+
+        // Explicit clear
+        statusEl.style.display = 'none';
+        statusEl.textContent = '';
+    }
+}
+
+/**
+ * Central helper to manage Analyse/Reset button visibility and state
+ * @param {boolean} hasContent - Whether the input field has content
+ */
+export function updateAnalyseAndResetButtons(hasContent) {
+    const analyseBtn = document.getElementById('analyseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Analyse button only appears when there is content
+    if (analyseBtn) {
+        analyseBtn.style.display = hasContent ? 'flex' : 'none';
+    }
+
+    // Reset button should remain visible at all times in the fixed bar
+    if (resetBtn) {
+        resetBtn.style.display = 'flex';
+        // Disable Reset when there is nothing meaningful to clear
+        const hasWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
+        resetBtn.disabled = !hasContent &amp;&amp; !hasWorkflows;
+    }
+}
+
+/**
+ * Show selection buttons in the fixed button row
+ * @param {Function} updateProcessButtonTextFn - Function to update process button text
+ */
+export function showSelectionButtons(updateProcessButtonTextFn) {
+    const buttonContainer = document.getElementById('fixedButtonRow');
+    if (!buttonContainer) {
+        console.warn('[DEBUG] Fixed button row not found');
+        return;
+    }
+
+    // Remove existing buttons if any (cleanup first)
+    const existingGroup = document.getElementById('selectionButtonsGroup');
+    if (existingGroup) {
+        console.log('[DEBUG] Removing existing selection buttons before adding new ones');
+        existingGroup.remove();
+    }
+
+    // Create the buttons group
+    const buttonsGroup = document.createElement('div');
+    buttonsGroup.id = 'selectionButtonsGroup';
+    buttonsGroup.className = 'selection-buttons-group';
+    buttonsGroup.style.display = 'flex'; // Force display
+    buttonsGroup.style.visibility = 'visible'; // Force visibility
+    buttonsGroup.innerHTML = `
+        &lt;button type="button" class="action-btn primary process-selected-btn" onclick="processSelectedGuidelines(event)" title="Process selected guidelines">
+            &lt;span class="btn-icon">🚀&lt;/span>
+            &lt;span class="btn-text">Process Selected Guidelines&lt;/span>
+        &lt;/button>
+        &lt;button type="button" class="selection-btn select-all-btn" onclick="selectAllGuidelines(true)" title="Select all guidelines">
+            ✅ Select All
+        &lt;/button>
+        &lt;button type="button" class="selection-btn deselect-all-btn" onclick="selectAllGuidelines(false)" title="Deselect all guidelines">
+            ❌ Deselect All
+        &lt;/button>
+    `;
+
+    // Insert after Analyse button (before clerking buttons)
+    const analyseBtn = document.getElementById('analyseBtn');
+    if (analyseBtn &amp;&amp; analyseBtn.nextSibling) {
+        buttonContainer.insertBefore(buttonsGroup, analyseBtn.nextSibling);
+    } else {
+        buttonContainer.appendChild(buttonsGroup);
+    }
+
+    // Update button text based on initial selection count
+    if (updateProcessButtonTextFn) {
+        updateProcessButtonTextFn();
+    }
+
+    // Use event delegation on document to handle checkbox changes (works for dynamically created checkboxes)
+    // Remove any existing listener first to avoid duplicates
+    if (window.guidelineCheckboxChangeHandler) {
+        document.removeEventListener('change', window.guidelineCheckboxChangeHandler);
+    }
+
+    // Create and store the handler function
+    window.guidelineCheckboxChangeHandler = function (event) {
+        if (event.target &amp;&amp; event.target.classList.contains('guideline-checkbox')) {
+            if (updateProcessButtonTextFn) {
+                updateProcessButtonTextFn();
+            }
+        }
+    };
+
+    // Add event listener using delegation
+    document.addEventListener('change', window.guidelineCheckboxChangeHandler);
+
+    console.log('[DEBUG] Selection buttons added to fixed button row', buttonsGroup);
+}
+
+/**
+ * Hide selection buttons from the button container
+ */
+export function hideSelectionButtons() {
+    const buttonsGroup = document.getElementById('selectionButtonsGroup') || document.querySelector('.selection-buttons-group');
+    if (buttonsGroup) {
+        buttonsGroup.remove();
+        console.log('[DEBUG] Selection buttons removed from button container');
+    }
+}
+
+/**
+ * Update the clear formatting button visibility
+ */
+export function updateClearFormattingButton() {
+    const btn = document.getElementById('clearFormattingBtn');
+    if (btn) {
+        btn.style.display = window.hasColoredChanges ? 'inline-block' : 'none';
+        console.log('[DEBUG] Clear formatting button visibility:', btn.style.display);
+    }
+}
+
+/**
+ * Set a button to loading state
+ * @param {HTMLElement} button - The button element
+ * @param {boolean} isLoading - Whether to show loading state
+ * @param {string} originalText - The original button text to restore
+ */
+export function setButtonLoading(button, isLoading, originalText = null) {
+    if (!button) return;
+
+    if (isLoading) {
+        button.dataset.originalText = button.textContent;
+        button.disabled = true;
+        button.innerHTML = '&lt;span class="spinner-small">&lt;/span> Loading...';
+    } else {
+        button.disabled = false;
+        button.textContent = originalText || button.dataset.originalText || 'Submit';
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

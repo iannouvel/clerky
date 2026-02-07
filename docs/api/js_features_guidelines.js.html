@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/features/guidelines.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/features/guidelines.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Guidelines Management
+ * Features for syncing, repairing, and viewing guideline data
+ */
+
+import { auth } from '../../firebase-init.js';
+import { SERVER_URL } from '../api/config.js';
+import { unescapeHtml, escapeHtml } from '../utils/text.js';
+
+// Module state
+let contentRepairInProgress = false;
+
+/**
+ * Sync guidelines in batches to avoid timeout
+ * @param {string} idToken - Auth token
+ * @param {number} batchSize - Number of items per batch
+ * @param {number} maxBatches - Maximum batches to run
+ * @returns {Promise&lt;Object>} Sync result stats
+ */
+export async function syncGuidelinesInBatches(idToken, batchSize = 3, maxBatches = 20) {
+    console.log(`[BATCH_SYNC] Starting batch sync with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+
+    try {
+        while (remaining > 0 &amp;&amp; batchCount &lt; maxBatches) {
+            batchCount++;
+            console.log(`[BATCH_SYNC] Starting batch ${batchCount}...`);
+
+            const response = await fetch(`${SERVER_URL}/syncGuidelinesBatch`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+
+            if (!response.ok) {
+                console.error(`[BATCH_SYNC] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+
+            const result = await response.json();
+            console.log(`[BATCH_SYNC] Batch ${batchCount} result:`, result);
+
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+
+            console.log(`[BATCH_SYNC] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[BATCH_SYNC] All guidelines synced!');
+                break;
+            }
+
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[BATCH_SYNC] Waiting 2 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 2000));
+            }
+        }
+
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+
+    } catch (error) {
+        console.error('[BATCH_SYNC] Error during batch sync:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
+/**
+ * Repair content for guidelines with missing content/condensed
+ * @param {string} idToken - Auth token
+ * @param {number} batchSize - Number of items per batch
+ * @param {number} maxBatches - Maximum batches to run
+ * @returns {Promise&lt;Object>} Repair result stats
+ */
+export async function repairGuidelineContent(idToken, batchSize = 5, maxBatches = 10) {
+    console.log(`[CONTENT_REPAIR] Starting content repair with batchSize=${batchSize}, maxBatches=${maxBatches}`);
+
+    let totalProcessed = 0;
+    let totalSucceeded = 0;
+    let totalFailed = 0;
+    let batchCount = 0;
+    let remaining = 1; // Start with 1 to enter the loop
+
+    try {
+        while (remaining > 0 &amp;&amp; batchCount &lt; maxBatches) {
+            batchCount++;
+            console.log(`[CONTENT_REPAIR] Starting batch ${batchCount}...`);
+
+            const response = await fetch(`${SERVER_URL}/repairGuidelineContent`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({ batchSize })
+            });
+
+            if (!response.ok) {
+                console.error(`[CONTENT_REPAIR] Batch ${batchCount} failed with status ${response.status}`);
+                break;
+            }
+
+            const result = await response.json();
+            console.log(`[CONTENT_REPAIR] Batch ${batchCount} result:`, result);
+
+            totalProcessed += result.processed || 0;
+            totalSucceeded += result.succeeded || 0;
+            totalFailed += result.failed || 0;
+            remaining = result.remaining || 0;
+
+            console.log(`[CONTENT_REPAIR] Progress: ${totalSucceeded} succeeded, ${totalFailed} failed, ${remaining} remaining`);
+
+            // If no more remaining, we're done
+            if (remaining === 0) {
+                console.log('[CONTENT_REPAIR] All guidelines repaired!');
+                break;
+            }
+
+            // Small delay between batches to avoid overwhelming the server
+            if (remaining > 0) {
+                console.log(`[CONTENT_REPAIR] Waiting 3 seconds before next batch...`);
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+        }
+
+        return {
+            success: true,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed,
+            batchesRun: batchCount,
+            remaining
+        };
+
+    } catch (error) {
+        console.error('[CONTENT_REPAIR] Error during content repair:', error);
+        return {
+            success: false,
+            error: error.message,
+            totalProcessed,
+            totalSucceeded,
+            totalFailed
+        };
+    }
+}
+
+// Helper function to extract quoted text from context
+export function extractQuotedText(context) {
+    if (!context) return null;
+
+    // Find all text within quotation marks (both single and double quotes)
+    const quotePatterns = [
+        /'([^']{10,})'/g,  // Single quotes with at least 10 chars
+        /"([^"]{10,})"/g,  // Double quotes with at least 10 chars
+        /'([^']{10,})'/g,  // Curly single quotes
+        /"([^"]{10,})"/g   // Curly double quotes
+    ];
+
+    let allQuotes = [];
+
+    for (const pattern of quotePatterns) {
+        let match;
+        while ((match = pattern.exec(context)) !== null) {
+            allQuotes.push(match[1]);
+        }
+    }
+
+    if (allQuotes.length === 0) {
+        return null;
+    }
+
+    // Return the longest quote (most likely to be the actual guideline quote)
+    allQuotes.sort((a, b) => b.length - a.length);
+    let longestQuote = allQuotes[0];
+
+    // Clean the quote for PDF search - remove citation markers and formatting
+    longestQuote = cleanQuoteForSearch(longestQuote);
+
+    return longestQuote;
+}
+
+// Helper function to clean quotes for PDF search
+export function cleanQuoteForSearch(quote) {
+    if (!quote) return quote;
+
+    // Remove common citation patterns that might not be in the PDF
+    let cleaned = quote
+        // Remove evidence level citations: [Evidence level 1-3], [Grade A-D], [Grade GPP], etc.
+        .replace(/\s*\[Evidence level [^\]]+\]/gi, '')
+        .replace(/\s*\[Grade [^\]]+\]/gi, '')
+        .replace(/\s*\[Level [^\]]+\]/gi, '')
+        .replace(/\s*\[Quality: [^\]]+\]/gi, '')
+        .replace(/\s*\[Recommendation: [^\]]+\]/gi, '')
+        // Remove reference numbers like [1], [2-5], etc.
+        .replace(/\s*\[[0-9,\-–—]+\]/g, '')
+        // Remove extra whitespace and normalize
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    return cleaned;
+}
+
+// Helper function to extract key medical terms for fallback search
+export function extractKeyTermsForSearch(context, suggestedText) {
+    if (!context &amp;&amp; !suggestedText) return null;
+
+    const combinedText = (context || '') + ' ' + (suggestedText || '');
+
+    // Medical terms that are likely to be unique and searchable in guidelines
+    const medicalPatterns = [
+        // Specific measurements and thresholds (very searchable)
+        /\d+(?:\.\d+)?\s*(?:weeks?|wk|w)\b/gi,  // gestational ages like "28 weeks"
+        /\d+(?:\.\d+)?\s*(?:ml|mg|mcg|g|kg|mmol|mm|cm)\b/gi,  // measurements
+        /\d+(?:st|nd|rd|th)\s*(?:centile|percentile)/gi,  // percentiles
+        /(?:>|&lt;|≥|≤)\s*\d+/g,  // thresholds
+
+        // Clinical conditions (highly specific)
+        /(?:vasa\s+)?praevia/gi,
+        /placenta\s+(?:praevia|accreta|percreta)/gi,
+        /(?:fetal|foetal)\s+(?:growth\s+)?restriction/gi,
+        /intrauterine\s+growth\s+restriction/gi,
+        /pre[\-\s]?eclampsia/gi,
+        /gestational\s+diabetes/gi,
+        /post[\-\s]?partum\s+haemorrhage/gi,
+        /caesarean\s+(?:section|delivery)/gi,
+
+        // Procedures and investigations
+        /ultrasound|USS|scan/gi,
+        /amniocentesis/gi,
+        /cordocentesis/gi,
+        /doppler/gi,
+        /antenatal\s+steroids?/gi,
+        /corticosteroids?/gi,
+
+        // Timing terms
+        /(?:first|second|third)\s+trimester/gi,
+        /elective\s+delivery/gi,
+        /planned\s+delivery/gi,
+        /timing\s+of\s+delivery/gi
+    ];
+
+    let foundTerms = [];
+
+    for (const pattern of medicalPatterns) {
+        const matches = combinedText.match(pattern);
+        if (matches) {
+            foundTerms.push(...matches.map(m => m.trim().toLowerCase()));
+        }
+    }
+
+    // Deduplicate and take most specific terms (longer = more specific)
+    foundTerms = [...new Set(foundTerms)].sort((a, b) => b.length - a.length);
+
+    if (foundTerms.length === 0) {
+        // Fallback: extract words with 6+ characters that are likely medical terms
+        const words = combinedText.split(/\s+/).filter(w =>
+            w.length >= 6 &amp;&amp;
+            !/^(should|would|could|because|however|therefore|important|emphasizes?)$/i.test(w)
+        );
+        // Take first 3-4 significant words
+        const significantWords = words.slice(0, 4).map(w => w.toLowerCase().replace(/[^a-z]/g, ''));
+        if (significantWords.length >= 2) {
+            foundTerms = significantWords;
+        }
+    }
+
+    if (foundTerms.length === 0) {
+        return null;
+    }
+
+    // Build search phrase from top terms (up to 6 words for better matching)
+    const searchPhrase = foundTerms.slice(0, 6).join(' ');
+    console.log('[GUIDELINES] Generated fallback search phrase:', searchPhrase);
+
+    return searchPhrase;
+}
+
+// Helper function to create guideline viewer link
+export function createGuidelineViewerLink(guidelineId, guidelineTitle, guidelineFilename, context, hasVerbatimQuote, suggestedText) {
+    if (!guidelineId &amp;&amp; !guidelineFilename) {
+        return '&lt;em>Guideline reference not available&lt;/em>';
+    }
+
+    const linkText = guidelineTitle || guidelineFilename || 'View Guideline PDF';
+
+    // Extract search text from context ONLY if hasVerbatimQuote is explicitly true
+    let searchText = null;
+    let searchType = null;  // Track whether this is 'verbatim' or 'fallback' search
+
+    if (context &amp;&amp; hasVerbatimQuote === true) {
+        const decodedContext = unescapeHtml(context);
+        searchText = extractQuotedText(decodedContext);
+
+        // Fallback: if there are no explicit quotes but we were told this is a verbatim quote
+        if (!searchText) {
+            const rawContext = decodedContext.trim();
+            if (rawContext.length >= 10) {
+                const cleanedContext = cleanQuoteForSearch(rawContext);
+                if (cleanedContext &amp;&amp; cleanedContext.length >= 10) {
+                    searchText = cleanedContext;
+                    searchType = 'verbatim';
+                }
+            }
+        } else {
+            searchType = 'verbatim';
+        }
+    } else if (hasVerbatimQuote === false || typeof hasVerbatimQuote === 'undefined') {
+        // NEW: When no verbatim quote, try to extract key medical terms for a keyword-based search
+        const decodedContext = context ? unescapeHtml(context) : null;
+        searchText = extractKeyTermsForSearch(decodedContext, suggestedText);
+
+        if (searchText) {
+            searchType = 'fallback';
+        }
+    }
+
+    // Store search text and guideline ID for auth handler to use
+    const linkData = {
+        guidelineId: guidelineId,
+        searchText: searchText
+    };
+
+    const paraphraseNote = '';
+
+    // Create link with data-link-data
+    return `&lt;a href="#" data-link-data='${JSON.stringify(linkData)}' class="guideline-link" rel="noopener noreferrer" style="text-decoration: underline; font-weight: normal; cursor: pointer; color: #016A52;">📄 ${escapeHtml(linkText)}&lt;/a>${paraphraseNote}`;
+}
+
+/**
+ * Shared helper function to parse [[CITATION:guidelineId|searchText]] markers
+ * and convert them to superscript numbered citations with a references section.
+ */
+export function parseCitationsToLinks(answerText, guidelinesUsed, callerName = 'parseCitationsToLinks') {
+    // Build maps from IDs/titles to canonical IDs and full guideline data
+    const guidelineIdMap = new Map();
+    const guidelineDataMap = new Map();
+
+    if (Array.isArray(guidelinesUsed)) {
+        guidelinesUsed.forEach(g => {
+            if (!g) return;
+            const id = g.id ? String(g.id) : null;
+            const title = g.title ? String(g.title) : null;
+            if (id) {
+                guidelineIdMap.set(id, id);
+                guidelineIdMap.set(id.toLowerCase(), id);
+                guidelineDataMap.set(id, g);
+            }
+            if (title &amp;&amp; id) {
+                guidelineIdMap.set(title, id);
+                guidelineIdMap.set(title.toLowerCase(), id);
+            }
+        });
+    }
+
+    // Citation regex pattern: [[CITATION:guidelineId|searchText]]
+    const citationRegex = /\[\[CITATION:([^|]+)\|([^\]]*)\]\]/g;
+
+    // First pass: collect all unique guidelines and assign numbers
+    const guidelineRefs = new Map(); // id -> { num, id, title, downloadUrl, quotes: [] }
+    let refNum = 0;
+
+    let match;
+    const tempText = answerText;
+    while ((match = citationRegex.exec(tempText)) !== null) {
+        const rawId = match[1].trim();
+        const searchText = match[2] ? match[2].trim() : '';
+
+        const canonicalId = guidelineIdMap.get(rawId) || guidelineIdMap.get(rawId.toLowerCase()) || rawId;
+
+        if (!guidelineRefs.has(canonicalId)) {
+            refNum++;
+            // Note: relies on window.globalGuidelines if not in suggestions
+            const guidelineData = guidelineDataMap.get(canonicalId) ||
+                window.globalGuidelines?.[canonicalId] || {};
+            const displayTitle = guidelineData.displayName ||
+                guidelineData.humanFriendlyName ||
+                guidelineData.title ||
+                canonicalId;
+
+            guidelineRefs.set(canonicalId, {
+                num: refNum,
+                id: canonicalId,
+                title: displayTitle,
+                downloadUrl: guidelineData.downloadUrl || null,
+                organisation: guidelineData.organisation || null,
+                quotes: []
+            });
+        }
+
+        // Store the quote for potential tooltip/hover use later
+        if (searchText.length >= 5) {
+            guidelineRefs.get(canonicalId).quotes.push(searchText);
+        }
+    }
+
+    // Second pass: replace citations with superscript numbers
+    let processedText = answerText;
+    processedText = processedText.replace(new RegExp(citationRegex), (fullMatch, guidelineId, searchText) => {
+        const rawId = guidelineId.trim();
+        const canonicalId = guidelineIdMap.get(rawId) || guidelineIdMap.get(rawId.toLowerCase()) || rawId;
+        const ref = guidelineRefs.get(canonicalId);
+
+        if (ref) {
+            // Create superscript citation link
+            return `&lt;sup>&lt;a href="#citation-ref-${ref.num}" class="citation-link" title="${ref.title}">[${ref.num}]&lt;/a>&lt;/sup>`;
+        }
+        return fullMatch; // Fallback if not found
+    });
+
+    // Escape remaining HTML but preserve our superscript tags and newlines
+    const parts = processedText.split(/(&lt;sup>.*?&lt;\/sup>)/g);
+    processedText = parts.map((part, i) => {
+        if (part.startsWith('&lt;sup>')) {
+            return part; // Don't escape our citation tags
+        }
+        return escapeHtml(part).replace(/\n/g, '&lt;br>');
+    }).join('');
+
+    // Build references HTML section
+    let referencesHtml = '';
+    if (guidelineRefs.size > 0) {
+        referencesHtml = `
+            &lt;div class="citation-references" style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-color, #ddd);">
+                &lt;h4 style="margin: 0 0 10px 0; font-size: 1em; color: var(--text-secondary, #666);">References&lt;/h4>
+                &lt;ol style="margin: 0; padding-left: 20px; font-size: 0.9em;">
+        `;
+
+        // Sort by reference number
+        const sortedRefs = Array.from(guidelineRefs.values()).sort((a, b) => a.num - b.num);
+
+        for (const ref of sortedRefs) {
+            const orgText = ref.organisation ? ` &lt;span style="opacity: 0.7">(${ref.organisation})&lt;/span>` : '';
+
+            // Create PDF link if available
+            let linkHtml;
+            if (ref.downloadUrl) {
+                linkHtml = `&lt;a href="${ref.downloadUrl}" target="_blank" style="color: #016A52;">${ref.title}&lt;/a>`;
+            } else {
+                linkHtml = createGuidelineViewerLink(ref.id, ref.title, null, null, false);
+            }
+
+            referencesHtml += `
+                &lt;li id="citation-ref-${ref.num}" style="margin-bottom: 5px;">
+                    ${linkHtml}${orgText}
+                &lt;/li>
+            `;
+        }
+
+        referencesHtml += `
+                &lt;/ol>
+            &lt;/div>
+        `;
+    }
+
+    return {
+        formattedAnswer: processedText,
+        referencesHtml: referencesHtml,
+        stats: {
+            totalCitations: refNum,
+            uniqueGuidelines: guidelineRefs.size
+        }
+    };
+}
+
+// Function to prepare auth token for viewer
+export async function prepareViewerAuth(event, linkElement) {
+    try {
+        event.preventDefault(); // Prevent default navigation
+
+        console.log('[VIEWER] Preparing auth token for PDF.js viewer...');
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[VIEWER] No user authenticated');
+            alert('Please sign in to view guidelines');
+            return;
+        }
+
+        // Get fresh ID token
+        const idToken = await user.getIdToken();
+
+        // Get link data from data attribute
+        const linkDataStr = linkElement.getAttribute('data-link-data');
+        if (!linkDataStr) {
+            console.error('[VIEWER] No link data found');
+            return;
+        }
+
+        const linkData = JSON.parse(linkDataStr);
+        const { guidelineId, searchText } = linkData;
+
+        // Build the complete PDF URL with token, using SERVER_URL
+        const baseUrl = SERVER_URL || window.location.origin;
+        const pdfUrl = `${baseUrl}/api/pdf/${guidelineId}?token=${encodeURIComponent(idToken)}`;
+
+        // Build PDF.js viewer URL with the PDF file URL
+        let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+
+        // Add search hash parameters if we have quoted text
+        if (searchText) {
+            const searchHash = `#search=${encodeURIComponent(searchText)}&amp;phrase=true&amp;highlightAll=true&amp;caseSensitive=false`;
+            viewerUrl += searchHash;
+        }
+
+        console.log('[VIEWER] Opening PDF.js viewer:', viewerUrl);
+
+        // Open in new window
+        window.open(viewerUrl, '_blank', 'noopener,noreferrer');
+
+    } catch (error) {
+        console.error('[VIEWER] Error preparing auth token:', error);
+        alert('Failed to prepare authentication. Please try again.');
+    }
+}
+
+// Function to show metadata enhancement progress to user
+export function showMetadataProgress(message, isComplete = false) {
+    // Create or update progress notification
+    let progressDiv = document.getElementById('metadata-progress');
+
+    if (!progressDiv) {
+        progressDiv = document.createElement('div');
+        progressDiv.id = 'metadata-progress';
+        progressDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 8px;
+            padding: 12px 16px;
+            max-width: 300px;
+            z-index: 1000;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        `;
+        document.body.appendChild(progressDiv);
+    }
+
+    progressDiv.innerHTML = `
+        &lt;div style="display: flex; align-items: center; gap: 8px;">
+            ${isComplete ?
+            '&lt;div style="width: 12px; height: 12px; background: #10b981; border-radius: 50%;">&lt;/div>' :
+            '&lt;div style="width: 12px; height: 12px; border: 2px solid #0ea5e9; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;">&lt;/div>'
+        }
+            &lt;span>${message}&lt;/span>
+        &lt;/div>
+    `;
+
+    // Add animation keyframe if not already added
+    if (!document.getElementById('metadata-progress-styles')) {
+        const style = document.createElement('style');
+        style.id = 'metadata-progress-styles';
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Auto-hide completed messages after 5 seconds
+    if (isComplete) {
+        setTimeout(() => {
+            if (progressDiv &amp;&amp; progressDiv.parentNode) {
+                progressDiv.remove();
+            }
+        }, 5000);
+    }
+}
+
+// Function to hide metadata progress
+export function hideMetadataProgress() {
+    const progressDiv = document.getElementById('metadata-progress');
+    if (progressDiv &amp;&amp; progressDiv.parentNode) {
+        progressDiv.remove();
+    }
+}
+
+// Process guidelines one at a time for content repair
+export async function diagnoseAndRepairContent() {
+    // Prevent multiple simultaneous repairs
+    if (contentRepairInProgress) {
+        console.log('[REPAIR] ⏳ Content repair already in progress, skipping...');
+        return;
+    }
+
+    contentRepairInProgress = true;
+    console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
+    console.log('[REPAIR] This will process guidelines one at a time to avoid timeouts');
+
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            console.error('[REPAIR] ❌ User not authenticated');
+            throw new Error('User not authenticated');
+        }
+
+        console.log('[REPAIR] ✅ User authenticated, getting ID token...');
+        const idToken = await user.getIdToken();
+
+        // First, get the list of guidelines needing content
+        console.log('[REPAIR] 📋 Getting list of guidelines needing content...');
+        const listResponse = await fetch(`${SERVER_URL}/getGuidelinesNeedingContent`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
+        if (!listResponse.ok) {
+            const errorText = await listResponse.text();
+            throw new Error(`Failed to get guidelines list: ${listResponse.status} - ${errorText}`);
+        }
+
+        const listResult = await listResponse.json();
+        const guidelinesNeedingContent = listResult.guidelines || [];
+
+        console.log(`[REPAIR] 📊 Found ${guidelinesNeedingContent.length} guidelines needing content processing`);
+
+        if (guidelinesNeedingContent.length === 0) {
+            showMetadataProgress('✅ All guidelines already have complete content!', true);
+            setTimeout(() => hideMetadataProgress(), 3000);
+            return;
+        }
+
+        // Process guidelines one at a time
+        let processed = 0;
+        let successful = 0;
+        let failed = 0;
+
+        for (const guideline of guidelinesNeedingContent) {
+            try {
+                processed++;
+                const progress = `🔧 Processing ${processed}/${guidelinesNeedingContent.length}: ${guideline.title}`;
+                showMetadataProgress(progress, false);
+
+                console.log(`[REPAIR] 📄 Processing guideline ${processed}/${guidelinesNeedingContent.length}: ${guideline.id}`);
+
+                const processResponse = await fetch(`${SERVER_URL}/processGuidelineContent`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        guidelineId: guideline.id
+                    })
+                });
+
+                if (processResponse.ok) {
+                    const processResult = await processResponse.json();
+                    if (processResult.success &amp;&amp; processResult.updated) {
+                        successful++;
+                        console.log(`[REPAIR] ✅ Successfully processed: ${guideline.title}`);
+                    } else {
+                        console.log(`[REPAIR] ⏭️ No processing needed for: ${guideline.title}`);
+                    }
+                } else {
+                    failed++;
+                    const errorText = await processResponse.text();
+                    console.error(`[REPAIR] ❌ Failed to process ${guideline.title}: ${errorText}`);
+                }
+
+                // Small delay between requests to avoid overwhelming the server
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+            } catch (error) {
+                failed++;
+                console.error(`[REPAIR] ❌ Error processing ${guideline.title}:`, error);
+            }
+        }
+
+        console.log(`[REPAIR] 📈 Processing complete: ${successful} successful, ${failed} failed, ${processed} total`);
+
+        if (failed === 0) {
+            showMetadataProgress(`✅ Content repair completed! Successfully processed ${successful} guidelines.`, true);
+        } else {
+            showMetadataProgress(`⚠️ Content repair completed with some issues: ${successful} successful, ${failed} failed.`, true);
+        }
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            hideMetadataProgress();
+        }, 5000);
+
+        // Note: Guidelines will be automatically updated via Firestore listeners
+        if (successful > 0) {
+            console.log('[REPAIR] ✅ Guidelines updated in Firestore, changes will reflect automatically');
+        }
+
+    } catch (error) {
+        console.error('[REPAIR] ❌ Content repair error:', error);
+
+        showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
+
+        // Auto-hide error after 10 seconds
+        setTimeout(() => {
+            hideMetadataProgress();
+        }, 10000);
+
+        throw error;
+
+    } finally {
+        console.log('[REPAIR] 🏁 Content repair process finished, flag reset');
+        contentRepairInProgress = false;
+    }
+}
+
+// Function to check content status during load
+export function checkContentStatus(guidelines) {
+    const stats = {
+        total: guidelines.length,
+        nullContent: 0,
+        nullCondensed: 0,
+        missingBoth: 0,
+        hasContent: 0,
+        hasCondensed: 0,
+        fullyPopulated: 0
+    };
+
+    const problematicGuidelines = [];
+
+    guidelines.forEach(guideline => {
+        const hasContent = guideline.content &amp;&amp; guideline.content !== null &amp;&amp; guideline.content.trim().length > 0;
+        const hasCondensed = guideline.condensed &amp;&amp; guideline.condensed !== null &amp;&amp; guideline.condensed.trim().length > 0;
+
+        if (hasContent) stats.hasContent++;
+        if (hasCondensed) stats.hasCondensed++;
+        if (hasContent &amp;&amp; hasCondensed) stats.fullyPopulated++;
+
+        if (!hasContent) {
+            stats.nullContent++;
+            problematicGuidelines.push({
+                id: guideline.id,
+                title: guideline.title || guideline.humanFriendlyName || 'Unknown',
+                issue: 'null_content'
+            });
+        }
+
+        if (!hasCondensed) {
+            stats.nullCondensed++;
+            if (!problematicGuidelines.find(p => p.id === guideline.id)) {
+                problematicGuidelines.push({
+                    id: guideline.id,
+                    title: guideline.title || guideline.humanFriendlyName || 'Unknown',
+                    issue: 'null_condensed'
+                });
+            } else {
+                // Update existing entry to indicate both are missing
+                const existing = problematicGuidelines.find(p => p.id === guideline.id);
+                existing.issue = 'missing_both';
+            }
+        }
+
+        if (!hasContent &amp;&amp; !hasCondensed) {
+            stats.missingBoth++;
+        }
+    });
+
+    return { stats, problematicGuidelines };
+}
+
+// Global manual trigger (for console)
+window.repairContent = async function () {
+    console.log('🔧 Manual content repair triggered from console...');
+    try {
+        await diagnoseAndRepairContent();
+        console.log('✅ Manual content repair completed successfully!');
+    } catch (error) {
+        console.error('❌ Manual content repair failed:', error);
+    }
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

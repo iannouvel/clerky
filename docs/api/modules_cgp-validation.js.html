@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/cgp-validation.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/cgp-validation.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * ISO-Compliant Clinical Guidance Point (CGP) Validation Module
+ * 
+ * This module implements a multi-stage validation workflow for extracting
+ * and validating Clinical Guidance Points from clinical guidelines,
+ * ensuring ISO 13485 compliance for Software as a Medical Device (SaMD).
+ * 
+ * Workflow:
+ * 1. Initial extraction with clinical context (LLM 1)
+ * 2. Cross-validation and disagreement identification (LLM 2)
+ * 3. Arbitration of disagreements (LLM 3)
+ * 4. Human clinician review and approval
+ */
+
+const admin = require('firebase-admin');
+
+// Note: routeToAI and logAIInteraction will be passed as parameters
+// to avoid circular dependencies
+
+/**
+ * Attempt to repair common JSON issues from LLM responses
+ * @param {string} jsonString - Potentially malformed JSON string
+ * @returns {string} - Repaired JSON string
+ */
+function repairJSON(jsonString) {
+    let repaired = jsonString;
+    
+    // Try to fix unterminated strings at the end
+    // Count open quotes vs closed quotes
+    const openQuotes = (repaired.match(/":\s*"/g) || []).length;
+    const closeQuotes = (repaired.match(/",?\s*}/g) || []).length + (repaired.match(/",?\s*]/g) || []).length;
+    
+    // If we're in a string at the end, try to close it
+    const lastQuoteIndex = repaired.lastIndexOf('"');
+    const lastOpenBrace = repaired.lastIndexOf('{');
+    const lastOpenBracket = repaired.lastIndexOf('[');
+    const lastCloseBrace = repaired.lastIndexOf('}');
+    const lastCloseBracket = repaired.lastIndexOf(']');
+    
+    // Check if we're inside an unclosed string
+    if (lastQuoteIndex > Math.max(lastCloseBrace, lastCloseBracket)) {
+        // We might be in an unterminated string
+        // Try to find where it should end by looking for the next structural character
+        const afterQuote = repaired.substring(lastQuoteIndex + 1);
+        // If there's no comma, brace, or bracket after the quote, we might need to add a closing quote
+        if (!afterQuote.trim().match(/^[,\]\}]/)) {
+            // Find the last incomplete string field and try to close it
+            const lines = repaired.split('\n');
+            const lastLine = lines[lines.length - 1];
+            
+            // If the last line has an unclosed quote, try to close it
+            if (lastLine &amp;&amp; lastLine.includes('"') &amp;&amp; !lastLine.match(/":\s*"[^"]*",?\s*$/)) {
+                // Count quotes in the last line
+                const quoteCount = (lastLine.match(/"/g) || []).length;
+                if (quoteCount % 2 !== 0) {
+                    // Odd number of quotes means unclosed
+                    repaired = repaired.trim() + '"';
+                }
+            }
+        }
+    }
+    
+    // Try to fix unescaped newlines in strings
+    // This is a simpler approach: replace unescaped newlines with escaped ones
+    // But we need to be careful not to break valid JSON structure
+    repaired = repaired.replace(/([^\\]|^)"([^"]*)\n([^"]*)"([^,}\]]*)/g, (match, before, part1, part2, after) => {
+        // Only fix if it looks like we're inside a JSON string value
+        if (before.match(/:\s*$/) || before === '') {
+            return `${before}"${part1}\\n${part2}"${after}`;
+        }
+        return match;
+    });
+    
+    // Ensure closing brackets/braces exist
+    const openBraces = (repaired.match(/{/g) || []).length;
+    const closeBraces = (repaired.match(/}/g) || []).length;
+    const openBrackets = (repaired.match(/\[/g) || []).length;
+    const closeBrackets = (repaired.match(/\]/g) || []).length;
+    
+    if (openBraces > closeBraces) {
+        repaired += '}'.repeat(openBraces - closeBraces);
+    }
+    if (openBrackets > closeBrackets) {
+        repaired += ']'.repeat(openBrackets - closeBrackets);
+    }
+    
+    return repaired;
+}
+
+/**
+ * Parse JSON with error handling and repair attempts
+ * @param {string} content - JSON string content
+ * @returns {any} - Parsed JSON object
+ * @throws {Error} - If JSON cannot be parsed even after repair attempts
+ */
+function parseJSONSafely(content) {
+    let cleaned = content.trim();
+    
+    // Remove markdown code blocks
+    if (cleaned.startsWith('```json')) {
+        cleaned = cleaned.replace(/^```json\s*/i, '');
+    }
+    if (cleaned.startsWith('```')) {
+        cleaned = cleaned.replace(/^```\s*/, '');
+    }
+    if (cleaned.endsWith('```')) {
+        cleaned = cleaned.replace(/\s*```$/, '');
+    }
+    cleaned = cleaned.trim();
+    
+    // Try parsing as-is first
+    try {
+        return JSON.parse(cleaned);
+    } catch (error) {
+        console.warn(`[CGP] Initial JSON parse failed: ${error.message}. Attempting repair...`);
+        
+        // Try to extract JSON array/object from text
+        // Look for the first [ or { and try to extract from there
+        const firstBrace = cleaned.indexOf('{');
+        const firstBracket = cleaned.indexOf('[');
+        const startIndex = firstBrace !== -1 &amp;&amp; firstBracket !== -1 
+            ? Math.min(firstBrace, firstBracket)
+            : firstBrace !== -1 ? firstBrace : firstBracket;
+        
+        if (startIndex !== -1) {
+            cleaned = cleaned.substring(startIndex);
+        }
+        
+        // Try repair
+        try {
+            const repaired = repairJSON(cleaned);
+            return JSON.parse(repaired);
+        } catch (repairError) {
+            console.error(`[CGP] JSON repair failed: ${repairError.message}`);
+            console.error(`[CGP] Problematic content (first 500 chars): ${cleaned.substring(0, 500)}`);
+            console.error(`[CGP] Problematic content (last 500 chars): ${cleaned.substring(Math.max(0, cleaned.length - 500))}`);
+            
+            // If repair fails, try to find and extract just the array portion
+            const arrayMatch = cleaned.match(/\[\s*\{[\s\S]*\}\s*\]/);
+            if (arrayMatch) {
+                try {
+                    return JSON.parse(arrayMatch[0]);
+                } catch (arrayParseError) {
+                    // Last resort: log full content for debugging
+                    console.error(`[CGP] Failed to parse even extracted array: ${arrayParseError.message}`);
+                    throw new Error(`Failed to parse JSON after multiple repair attempts. Original error: ${error.message}. Repair error: ${repairError.message}. Please check the LLM response format.`);
+                }
+            }
+            
+            throw new Error(`Failed to parse JSON after multiple repair attempts. Original error: ${error.message}. Repair error: ${repairError.message}. Please check the LLM response format.`);
+        }
+    }
+}
+
+/**
+ * Get the next available LLM provider that's different from the ones already used
+ */
+function getNextLLMProvider(usedProviders = []) {
+    const availableProviders = ['DeepSeek', 'Anthropic', 'OpenAI', 'Mistral', 'Gemini'];
+    const available = availableProviders.filter(p => !usedProviders.includes(p));
+    
+    // Return first available, or fallback to DeepSeek if all used
+    return available.length > 0 ? available[0] : 'DeepSeek';
+}
+
+/**
+ * Step 1: Extract Clinical Guidance Points with clinical context
+ * 
+ * @param {string} guidelineContent - The full guideline content
+ * @param {string} aiProvider - The LLM provider to use (default user selection)
+ * @param {string} userId - User ID for logging
+ * @returns {Promise&lt;Object>} Extracted CGPs with metadata
+ */
+async function extractClinicalGuidancePoints(guidelineContent, aiProvider = 'DeepSeek', userId = null, routeToAIFn = null, logAIFn = null) {
+    try {
+        console.log(`[CGP] Step 1: Starting CGP extraction with ${aiProvider}`);
+        const startTime = Date.now();
+        
+        const prompt = `You are a clinical guidelines expert. Extract ALL individual pieces of clinical guidance from this guideline. Each time the guideline provides specific advice, recommendation, or instruction, that is a separate Clinical Guidance Point (CGP).
+
+CRITICAL REQUIREMENTS:
+1. Extract EVERY piece of clinical guidance - no omissions
+2. For each CGP, identify:
+   - The specific guidance statement (what action/decision is recommended)
+   - The clinical context (when/where/under what circumstances this applies)
+   - Input variables that determine when this guidance applies
+   - Any thresholds or specific conditions (e.g., gestational age >= 26 weeks, blood pressure > 140/90)
+   - The derived clinical advice/action
+
+3. Order CGPs by clinical significance (most significant first)
+4. Be comprehensive - err on the side of over-extraction rather than missing guidance
+
+OUTPUT FORMAT:
+Return a JSON array of objects, each representing one Clinical Guidance Point:
+
+[
+  {
+    "cgpId": "Unique identifier (e.g., CGP_001, CGP_002)",
+    "guidance": "The specific clinical guidance statement or recommendation",
+    "clinicalContext": "Detailed description of when/where/under what circumstances this guidance applies",
+    "inputVariables": ["variable1", "variable2"],
+    "thresholds": {
+      "variable1": "condition or threshold (e.g., '>= 26+0 weeks', '> 140/90 mmHg')"
+    },
+    "derivedAdvice": "The specific clinical action or decision that follows from this guidance",
+    "significance": "high|medium|low",
+    "guidelineSection": "Section or subsection reference if available"
+  }
+]
+
+Guideline content:
+${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[... content truncated ...]' : ''}`;
+
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a clinical guidelines expert specialized in extracting comprehensive, actionable clinical guidance. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
+            },
+            {
+                role: 'user',
+                content: prompt
+            }
+        ];
+
+        if (!routeToAIFn) {
+            throw new Error('routeToAI function not provided');
+        }
+        const aiResult = await routeToAIFn({ messages }, userId, aiProvider);
+        const processingTime = Date.now() - startTime;
+
+        if (!aiResult || !aiResult.content) {
+            throw new Error('No response from AI provider');
+        }
+
+        // Parse JSON response with error handling and repair
+        const extractedCGPs = parseJSONSafely(aiResult.content);
+        
+        if (!Array.isArray(extractedCGPs)) {
+            throw new Error('AI response is not a valid array');
+        }
+
+        // Add metadata to each CGP
+        // Note: Using Date objects instead of serverTimestamp() because Firestore
+        // doesn't allow FieldValue.serverTimestamp() inside arrays
+        const enrichedCGPs = extractedCGPs.map((cgp, index) => ({
+            cgpId: cgp.cgpId || `CGP_${String(index + 1).padStart(3, '0')}`,
+            extractedBy: 'llm1',
+            extractionTimestamp: new Date(), // Firestore will convert Date to Timestamp automatically
+            guidance: cgp.guidance || '',
+            clinicalContext: cgp.clinicalContext || '',
+            inputVariables: cgp.inputVariables || [],
+            thresholds: cgp.thresholds || {},
+            derivedAdvice: cgp.derivedAdvice || '',
+            significance: cgp.significance || 'medium',
+            guidelineSection: cgp.guidelineSection || null,
+            validationStatus: 'extracted',
+            crossValidatorAssessment: null,
+            arbitratorAssessment: null,
+            clinicianReview: null
+        }));
+
+        // Log the interaction for ISO compliance
+        if (logAIFn) {
+            try {
+                await logAIFn({
+                    prompt: prompt,
+                    systemPrompt: messages[0].content,
+                    aiProvider: aiProvider,
+                    aiModel: aiResult.ai_model || 'unknown',
+                    tokenUsage: aiResult.token_usage || {},
+                    processingTime: processingTime,
+                    endpoint: 'extractClinicalGuidancePoints',
+                    userId: userId,
+                    guidelineId: null // Will be set by caller
+                }, {
+                    success: true,
+                    cgpsExtracted: enrichedCGPs.length
+                });
+            } catch (logError) {
+                console.error('[CGP] Error logging interaction:', logError);
+            }
+        }
+
+        console.log(`[CGP] Step 1: Successfully extracted ${enrichedCGPs.length} CGPs in ${processingTime}ms`);
+
+        return {
+            success: true,
+            cgps: enrichedCGPs,
+            metadata: {
+                llmProvider: aiProvider,
+                timestamp: new Date(),
+                elementsExtracted: enrichedCGPs.length,
+                processingTime: processingTime,
+                tokenUsage: aiResult.token_usage || {}
+            }
+        };
+
+    } catch (error) {
+        console.error(`[CGP] Step 1: Error extracting CGPs:`, error);
+        return {
+            success: false,
+            error: error.message,
+            cgps: []
+        };
+    }
+}
+
+/**
+ * Step 2: Cross-validate CGPs and identify disagreements
+ * 
+ * @param {string} guidelineContent - The full guideline content
+ * @param {Array} extractedCGPs - CGPs from Step 1
+ * @param {string} aiProvider - Different LLM provider from Step 1
+ * @param {string} userId - User ID for logging
+ * @returns {Promise&lt;Object>} Validation results with disagreements
+ */
+async function crossValidateClinicalGuidancePoints(guidelineContent, extractedCGPs, aiProvider, userId = null, routeToAIFn = null, logAIFn = null) {
+    try {
+        console.log(`[CGP] Step 2: Starting cross-validation with ${aiProvider}`);
+        const startTime = Date.now();
+
+        const prompt = `You are a clinical guidelines validator. Review the extracted Clinical Guidance Points (CGPs) against the original guideline text.
+
+Your task:
+1. For each extracted CGP, assess if:
+   - The guidance is correctly extracted (matches guideline content)
+   - The clinical context is accurate and complete
+   - The input variables and thresholds are correctly identified
+   - Nothing important is missing from the CGP
+
+2. Identify any missing CGPs - pieces of guidance that should be extracted but aren't
+
+3. For each CGP, provide one of these assessments:
+   - "validated": CGP is correct and complete
+   - "missing_context": CGP is correct but missing important clinical context
+   - "incorrect_extraction": CGP doesn't accurately reflect the guideline
+   - "missing_element": This CGP doesn't exist or should be merged with another
+
+OUTPUT FORMAT:
+Return a JSON object with:
+
+{
+  "cgpAssessments": [
+    {
+      "cgpId": "CGP_001",
+      "validated": true/false,
+      "disagreements": ["missing_context"] or [],
+      "notes": "Explanation of assessment"
+    }
+  ],
+  "missingCGPs": [
+    {
+      "guidance": "Missing guidance statement",
+      "clinicalContext": "Context where it applies",
+      "reason": "Why this should be extracted"
+    }
+  ],
+  "summary": "Overall assessment summary"
+}
+
+Extracted CGPs to validate:
+${JSON.stringify(extractedCGPs, null, 2)}
+
+Guideline content:
+${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[... content truncated ...]' : ''}`;
+
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are a clinical guidelines validator. Your role is to critically assess extracted guidance points for accuracy and completeness. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
+            },
+            {
+                role: 'user',
+                content: prompt
+            }
+        ];
+
+        if (!routeToAIFn) {
+            throw new Error('routeToAI function not provided');
+        }
+        const aiResult = await routeToAIFn({ messages }, userId, aiProvider);
+        const processingTime = Date.now() - startTime;
+
+        if (!aiResult || !aiResult.content) {
+            throw new Error('No response from AI provider');
+        }
+
+        // Parse JSON response with error handling and repair
+        const validationResult = parseJSONSafely(aiResult.content);
+        
+        // Update CGPs with validation assessments
+        const validatedCGPs = extractedCGPs.map(cgp => {
+            const assessment = validationResult.cgpAssessments?.find(a => a.cgpId === cgp.cgpId);
+            
+            if (assessment) {
+                const hasDisagreement = assessment.disagreements &amp;&amp; assessment.disagreements.length > 0;
+                
+                return {
+                    ...cgp,
+                    validationStatus: assessment.validated &amp;&amp; !hasDisagreement ? 'validated' : 'disagreement',
+                    crossValidatorAssessment: {
+                        validated: assessment.validated,
+                        disagreements: assessment.disagreements || [],
+                        notes: assessment.notes || ''
+                    }
+                };
+            } else {
+                // If no assessment found, mark as validated (no disagreement)
+                return {
+                    ...cgp,
+                    validationStatus: 'validated',
+                    crossValidatorAssessment: {
+                        validated: true,
+                        disagreements: [],
+                        notes: 'No specific assessment provided'
+                    }
+                };
+            }
+        });
+
+        // Add missing CGPs as new entries
+        const missingCGPs = (validationResult.missingCGPs || []).map((missing, index) => ({
+            cgpId: `CGP_MISSING_${String(index + 1).padStart(3, '0')}`,
+            extractedBy: 'llm2',
+            extractionTimestamp: new Date(), // Will be converted to Firestore timestamp in server
+            guidance: missing.guidance || '',
+            clinicalContext: missing.clinicalContext || '',
+            inputVariables: [],
+            thresholds: {},
+            derivedAdvice: '',
+            significance: 'medium',
+            guidelineSection: null,
+            validationStatus: 'disagreement',
+            crossValidatorAssessment: {
+                validated: false,
+                disagreements: ['missing_element'],
+                notes: missing.reason || 'Identified as missing by cross-validator'
+            },
+            arbitratorAssessment: null,
+            clinicianReview: null
+        }));
+
+        const allCGPs = [...validatedCGPs, ...missingCGPs];
+        const validatedCount = validatedCGPs.filter(cgp => cgp.validationStatus === 'validated').length;
+        const disagreementCount = allCGPs.filter(cgp => cgp.validationStatus === 'disagreement').length;
+
+        // Log the interaction
+        if (logAIFn) {
+            try {
+                await logAIFn({
+                    prompt: prompt,
+                    systemPrompt: messages[0].content,
+                    aiProvider: aiProvider,
+                    aiModel: aiResult.ai_model || 'unknown',
+                    tokenUsage: aiResult.token_usage || {},
+                    processingTime: processingTime,
+                    endpoint: 'crossValidateClinicalGuidancePoints',
+                    userId: userId
+                }, {
+                    success: true,
+                    totalCGPs: allCGPs.length,
+                    validated: validatedCount,
+                    disagreements: disagreementCount
+                });
+            } catch (logError) {
+                console.error('[CGP] Error logging interaction:', logError);
+            }
+        }
+
+        console.log(`[CGP] Step 2: Validated ${validatedCount}/${validatedCGPs.length} CGPs, found ${disagreementCount} disagreements in ${processingTime}ms`);
+
+        return {
+            success: true,
+            cgps: allCGPs,
+            metadata: {
+                llmProvider: aiProvider,
+                timestamp: new Date(),
+                totalElements: allCGPs.length,
+                validated: validatedCount,
+                disagreements: disagreementCount,
+                processingTime: processingTime,
+                tokenUsage: aiResult.token_usage || {}
+            },
+            summary: validationResult.summary || ''
+        };
+
+    } catch (error) {
+        console.error(`[CGP] Step 2: Error cross-validating CGPs:`, error);
+        return {
+            success: false,
+            error: error.message,
+            cgps: extractedCGPs // Return original if validation fails
+        };
+    }
+}
+
+/**
+ * Step 3: Arbitrate disagreements between Step 1 and Step 2
+ * 
+ * @param {string} guidelineContent - The full guideline content
+ * @param {Array} llm1CGPs - CGPs from Step 1 (initial extraction)
+ * @param {Array} llm2CGPs - CGPs from Step 2 (with validation assessments)
+ * @param {string} aiProvider - Third different LLM provider
+ * @param {string} userId - User ID for logging
+ * @returns {Promise&lt;Object>} Arbitrated CGPs with resolutions
+ */
+async function arbitrateCGPDisagreements(guidelineContent, llm1CGPs, llm2CGPs, aiProvider, userId = null, routeToAIFn = null, logAIFn = null) {
+    try {
+        console.log(`[CGP] Step 3: Starting arbitration with ${aiProvider}`);
+        const startTime = Date.now();
+
+        // Filter to only CGPs with disagreements
+        const disagreementCGPs = llm2CGPs.filter(cgp => 
+            cgp.validationStatus === 'disagreement' || 
+            (cgp.crossValidatorAssessment &amp;&amp; cgp.crossValidatorAssessment.disagreements.length > 0)
+        );
+
+        if (disagreementCGPs.length === 0) {
+            console.log('[CGP] Step 3: No disagreements to arbitrate');
+            return {
+                success: true,
+                cgps: llm2CGPs,
+                metadata: {
+                    llmProvider: aiProvider,
+                    timestamp: new Date(),
+                    disagreementsResolved: 0,
+                    processingTime: Date.now() - startTime
+                }
+            };
+        }
+
+        // Match LLM1 and LLM2 CGPs for comparison
+        const cgpPairs = disagreementCGPs.map(llm2CGP => {
+            const matchingLLM1 = llm1CGPs.find(cgp => cgp.cgpId === llm2CGP.cgpId);
+            return {
+                llm1CGP: matchingLLM1 || null,
+                llm2CGP: llm2CGP
+            };
+        });
+
+        const prompt = `You are an independent clinical guidelines arbitrator. Review disagreements between two LLM extractions of Clinical Guidance Points.
+
+Your task:
+For each disagreement, review:
+1. LLM 1's extraction
+2. LLM 2's assessment and concerns
+3. The original guideline content
+
+Determine the most accurate resolution, considering:
+- Which extraction better matches the guideline text
+- Which has more complete clinical context
+- Which better identifies thresholds and conditions
+
+For each disagreement, provide ONE of these resolutions:
+- "agree_llm1": LLM 1's extraction is correct
+- "agree_llm2": LLM 2's assessment is correct (may include modifications)
+- "partial_both": Both have merit, combine them
+- "new_interpretation": Neither is fully correct, provide a better interpretation
+
+OUTPUT FORMAT:
+Return a JSON object:
+
+{
+  "arbitrations": [
+    {
+      "cgpId": "CGP_001",
+      "resolution": "agree_llm1" | "agree_llm2" | "partial_both" | "new_interpretation",
+      "resolvedGuidance": "Final guidance statement (or null if unchanged)",
+      "resolvedContext": "Final clinical context (or null if unchanged)",
+      "reasoning": "Explanation of resolution"
+    }
+  ]
+}
+
+Disagreements to arbitrate:
+${JSON.stringify(cgpPairs, null, 2)}
+
+Guideline content:
+${guidelineContent.substring(0, 20000)}${guidelineContent.length > 20000 ? '\n[... content truncated ...]' : ''}`;
+
+        const messages = [
+            {
+                role: 'system',
+                content: 'You are an independent clinical guidelines arbitrator. Your role is to resolve disagreements by carefully analyzing both extractions against the source guideline. CRITICAL: You MUST return ONLY valid, properly formatted JSON. All strings must be properly escaped, all quotes must be closed, and the JSON must be parseable. Do not include any explanatory text outside the JSON structure.'
+            },
+            {
+                role: 'user',
+                content: prompt
+            }
+        ];
+
+        if (!routeToAIFn) {
+            throw new Error('routeToAI function not provided');
+        }
+        const aiResult = await routeToAIFn({ messages }, userId, aiProvider);
+        const processingTime = Date.now() - startTime;
+
+        if (!aiResult || !aiResult.content) {
+            throw new Error('No response from AI provider');
+        }
+
+        // Parse JSON response with error handling and repair
+        const arbitrationResult = parseJSONSafely(aiResult.content);
+
+        // Apply arbitrations to CGPs
+        const arbitratedCGPs = llm2CGPs.map(cgp => {
+            const arbitration = arbitrationResult.arbitrations?.find(a => a.cgpId === cgp.cgpId);
+            
+            if (arbitration &amp;&amp; cgp.validationStatus === 'disagreement') {
+                // Apply resolution
+                const resolvedGuidance = arbitration.resolvedGuidance || cgp.guidance;
+                const resolvedContext = arbitration.resolvedContext || cgp.clinicalContext;
+                
+                return {
+                    ...cgp,
+                    guidance: resolvedGuidance,
+                    clinicalContext: resolvedContext,
+                    validationStatus: 'arbitrated',
+                    arbitratorAssessment: {
+                        resolution: arbitration.resolution,
+                        resolvedGuidance: arbitration.resolvedGuidance || null,
+                        resolvedContext: arbitration.resolvedContext || null,
+                        reasoning: arbitration.reasoning || ''
+                    }
+                };
+            }
+            
+            // If no arbitration found but has disagreement, keep as disagreement
+            return cgp;
+        });
+
+        // Log the interaction
+        if (logAIFn) {
+            try {
+                await logAIFn({
+                    prompt: prompt,
+                    systemPrompt: messages[0].content,
+                    aiProvider: aiProvider,
+                    aiModel: aiResult.ai_model || 'unknown',
+                    tokenUsage: aiResult.token_usage || {},
+                    processingTime: processingTime,
+                    endpoint: 'arbitrateCGPDisagreements',
+                    userId: userId
+                }, {
+                    success: true,
+                    disagreementsResolved: (arbitrationResult.arbitrations || []).length
+                });
+            } catch (logError) {
+                console.error('[CGP] Error logging interaction:', logError);
+            }
+        }
+
+        const resolvedCount = arbitratedCGPs.filter(cgp => cgp.validationStatus === 'arbitrated').length;
+        console.log(`[CGP] Step 3: Resolved ${resolvedCount} disagreements in ${processingTime}ms`);
+
+        return {
+            success: true,
+            cgps: arbitratedCGPs,
+            metadata: {
+                llmProvider: aiProvider,
+                timestamp: new Date(),
+                disagreementsResolved: resolvedCount,
+                processingTime: processingTime,
+                tokenUsage: aiResult.token_usage || {}
+            }
+        };
+
+    } catch (error) {
+        console.error(`[CGP] Step 3: Error arbitrating disagreements:`, error);
+        return {
+            success: false,
+            error: error.message,
+            cgps: llm2CGPs // Return validated CGPs if arbitration fails
+        };
+    }
+}
+
+module.exports = {
+    extractClinicalGuidancePoints,
+    crossValidateClinicalGuidancePoints,
+    arbitrateCGPDisagreements,
+    getNextLLMProvider
+};
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

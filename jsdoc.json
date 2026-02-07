@@ -1,0 +1,25 @@
+{
+  "source": {
+    "include": ["server/", "js/", "modules/"],
+    "includePattern": ".+\\.js$",
+    "excludePattern": "(node_modules|dist|pdfjs)"
+  },
+  "opts": {
+    "destination": "./docs/api",
+    "recurse": true,
+    "readme": "./README.md"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false
+    }
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  }
+}

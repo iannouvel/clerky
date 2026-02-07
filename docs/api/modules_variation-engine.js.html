@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: modules/variation-engine.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: modules/variation-engine.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Variation engine for generating systematic scenario variations for audit testing
+// Creates subtle variations to test guidance changes based on input parameter modifications
+
+/**
+ * Generates systematic scenario variations for an auditable element
+ * @param {Object} element - Auditable element with input variables and thresholds
+ * @param {Object} baseScenario - Base clinical scenario transcript
+ * @param {Object} options - Generation options
+ * @returns {Promise&lt;Array>} - Array of scenario variations
+ */
+export async function generateScenarioVariations(element, baseScenario, options = {}) {
+    const {
+        includeBaseline = true,
+        includeThresholdVariations = true,
+        includeOmissions = true,
+        includeEdgeCases = true,
+        maxVariations = 10
+    } = options;
+
+    const variations = [];
+
+    // 1. Baseline scenario (if requested)
+    if (includeBaseline) {
+        variations.push({
+            variationId: `${element.elementId || 'element'}-baseline`,
+            type: 'baseline',
+            description: 'Standard case where guidance should apply',
+            scenario: baseScenario,
+            expectedGuidance: element.derivedAdvice || element.expectedGuidance,
+            modifiedParameters: {},
+            expectedChange: 'none'
+        });
+    }
+
+    // 2. Threshold variations
+    if (includeThresholdVariations &amp;&amp; element.thresholds &amp;&amp; element.thresholds.length > 0) {
+        for (const threshold of element.thresholds) {
+            // Just below threshold
+            variations.push({
+                variationId: `${element.elementId || 'element'}-threshold-below-${threshold.variable}`,
+                type: 'threshold_variation',
+                threshold: threshold,
+                description: `Scenario with ${threshold.variable} just below threshold (${threshold.thresholdValue})`,
+                scenario: modifyScenarioParameter(baseScenario, threshold.variable, getValueBelowThreshold(threshold)),
+                expectedGuidance: getGuidanceForThreshold(element, threshold, 'below'),
+                modifiedParameters: {
+                    [threshold.variable]: getValueBelowThreshold(threshold)
+                },
+                expectedChange: 'different_guidance_below_threshold'
+            });
+
+            // Just above threshold
+            variations.push({
+                variationId: `${element.elementId || 'element'}-threshold-above-${threshold.variable}`,
+                type: 'threshold_variation',
+                threshold: threshold,
+                description: `Scenario with ${threshold.variable} just above threshold (${threshold.thresholdValue})`,
+                scenario: modifyScenarioParameter(baseScenario, threshold.variable, getValueAboveThreshold(threshold)),
+                expectedGuidance: getGuidanceForThreshold(element, threshold, 'above'),
+                modifiedParameters: {
+                    [threshold.variable]: getValueAboveThreshold(threshold)
+                },
+                expectedChange: 'different_guidance_above_threshold'
+            });
+        }
+    }
+
+    // 3. Variable omissions
+    if (includeOmissions &amp;&amp; element.inputVariables &amp;&amp; element.inputVariables.length > 0) {
+        for (const inputVar of element.inputVariables) {
+            if (inputVar.required) {
+                variations.push({
+                    variationId: `${element.elementId || 'element'}-omit-${inputVar.name}`,
+                    type: 'variable_omission',
+                    omittedVariable: inputVar.name,
+                    description: `Scenario missing required variable: ${inputVar.name}`,
+                    scenario: removeScenarioParameter(baseScenario, inputVar.name),
+                    expectedGuidance: 'Should flag missing information or request clarification',
+                    modifiedParameters: {
+                        [inputVar.name]: 'omitted'
+                    },
+                    expectedChange: 'missing_information_detected'
+                });
+            }
+        }
+    }
+
+    // 4. Edge cases
+    if (includeEdgeCases) {
+        variations.push(...generateEdgeCaseVariations(element, baseScenario));
+    }
+
+    // Limit to maxVariations
+    return variations.slice(0, maxVariations);
+}
+
+/**
+ * Generates edge case variations
+ */
+function generateEdgeCaseVariations(element, baseScenario) {
+    const edgeCases = [];
+
+    // Boundary conditions
+    if (element.inputVariables) {
+        for (const inputVar of element.inputVariables) {
+            // Minimum value
+            if (inputVar.type === 'numeric' &amp;&amp; inputVar.threshold) {
+                edgeCases.push({
+                    variationId: `${element.elementId || 'element'}-edge-min-${inputVar.name}`,
+                    type: 'edge_case',
+                    edgeType: 'minimum_value',
+                    description: `Minimum value for ${inputVar.name}`,
+                    scenario: modifyScenarioParameter(baseScenario, inputVar.name, getMinimumValue(inputVar)),
+                    expectedGuidance: element.derivedAdvice,
+                    modifiedParameters: {
+                        [inputVar.name]: getMinimumValue(inputVar)
+                    },
+                    expectedChange: 'boundary_condition'
+                });
+            }
+
+            // Maximum realistic value
+            if (inputVar.type === 'numeric') {
+                edgeCases.push({
+                    variationId: `${element.elementId || 'element'}-edge-max-${inputVar.name}`,
+                    type: 'edge_case',
+                    edgeType: 'maximum_value',
+                    description: `Maximum realistic value for ${inputVar.name}`,
+                    scenario: modifyScenarioParameter(baseScenario, inputVar.name, getMaximumValue(inputVar)),
+                    expectedGuidance: element.derivedAdvice,
+                    modifiedParameters: {
+                        [inputVar.name]: getMaximumValue(inputVar)
+                    },
+                    expectedChange: 'boundary_condition'
+                });
+            }
+        }
+    }
+
+    return edgeCases;
+}
+
+/**
+ * Modifies a scenario parameter value
+ */
+function modifyScenarioParameter(scenario, parameterName, newValue) {
+    // This is a simplified implementation - in practice, you'd use NLP/AI to intelligently modify
+    // For now, return scenario with modification annotation
+    return {
+        ...scenario,
+        modifications: {
+            ...(scenario.modifications || {}),
+            [parameterName]: newValue
+        },
+        modifiedText: scenario.text ? injectParameterModification(scenario.text, parameterName, newValue) : scenario.text
+    };
+}
+
+/**
+ * Removes a parameter from scenario
+ */
+function removeScenarioParameter(scenario, parameterName) {
+    return {
+        ...scenario,
+        modifications: {
+            ...(scenario.modifications || {}),
+            [parameterName]: 'omitted'
+        },
+        omittedVariables: [...(scenario.omittedVariables || []), parameterName]
+    };
+}
+
+/**
+ * Injects parameter modification into text (simplified - AI would do better)
+ */
+function injectParameterModification(text, parameterName, newValue) {
+    // Simple replacement - in practice, use AI to intelligently modify clinical text
+    const patterns = {
+        'gestational_age': /(\d{1,2}\+\d{1,2}\s*weeks?)/gi,
+        'blood_pressure': /(\d{2,3}\/\d{2,3}\s*mmHg)/gi,
+        'temperature': /(\d{2,3}\.?\d?\s*°C)/gi
+    };
+    
+    // This is a placeholder - real implementation would use AI
+    return text;
+}
+
+/**
+ * Gets value just below threshold
+ */
+function getValueBelowThreshold(threshold) {
+    // Parse threshold value and return slightly below
+    const value = parseThresholdValue(threshold.thresholdValue);
+    if (typeof value === 'number') {
+        return value - 0.1; // Small decrement
+    }
+    return threshold.thresholdValue; // Fallback
+}
+
+/**
+ * Gets value just above threshold
+ */
+function getValueAboveThreshold(threshold) {
+    const value = parseThresholdValue(threshold.thresholdValue);
+    if (typeof value === 'number') {
+        return value + 0.1; // Small increment
+    }
+    return threshold.thresholdValue; // Fallback
+}
+
+/**
+ * Parses threshold value to numeric if possible
+ */
+function parseThresholdValue(thresholdValue) {
+    // Try to extract numeric value (e.g., "26+0 weeks" -> 26)
+    const match = thresholdValue.match(/(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : thresholdValue;
+}
+
+/**
+ * Gets guidance for threshold position
+ */
+function getGuidanceForThreshold(element, threshold, position) {
+    const variationPoint = element.variationPoints?.find(vp => vp.parameter === threshold.variable);
+    if (variationPoint) {
+        if (position === 'below') return variationPoint.belowThreshold || element.derivedAdvice;
+        if (position === 'above') return variationPoint.aboveThreshold || element.derivedAdvice;
+    }
+    return element.derivedAdvice;
+}
+
+/**
+ * Gets minimum value for numeric variable
+ */
+function getMinimumValue(inputVar) {
+    if (inputVar.type === 'numeric') {
+        const threshold = parseThresholdValue(inputVar.threshold || '0');
+        return Math.max(0, threshold - 10); // Reasonable minimum
+    }
+    return null;
+}
+
+/**
+ * Gets maximum realistic value for numeric variable
+ */
+function getMaximumValue(inputVar) {
+    if (inputVar.type === 'numeric') {
+        const threshold = parseThresholdValue(inputVar.threshold || '40');
+        return threshold + 20; // Reasonable maximum
+    }
+    return null;
+}
+
+/**
+ * Creates a variation description for AI scenario generation
+ */
+export function createVariationPrompt(element, variation) {
+    return `Generate a clinical scenario transcript that satisfies this variation:
+
+AUDITABLE ELEMENT: ${element.name}
+TYPE: ${variation.type}
+DESCRIPTION: ${variation.description}
+MODIFIED PARAMETERS: ${JSON.stringify(variation.modifiedParameters)}
+BASE SCENARIO CONTEXT: ${JSON.stringify(variation.scenario)}
+
+The scenario should be clinically realistic and test whether Clerky provides the appropriate guidance for this variation.`;
+}
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,9 +1,33 @@
+/**
+ * @fileoverview PDF Service - PDF extraction and fetching utilities.
+ *
+ * Handles PDF text extraction from buffers and fetching PDFs from
+ * Firebase Storage with automatic GitHub fallback for missing files.
+ *
+ * @module server/services/pdf
+ * @requires firebase-admin
+ * @requires axios
+ * @requires pdf-parse
+ * @requires ../config/logger
+ */
+
 const admin = require('firebase-admin');
 const axios = require('axios');
 const PDFParser = require('pdf-parse');
 const { debugLog } = require('../config/logger');
 
-// Function to extract text from PDF buffer
+/**
+ * Extracts text content from a PDF buffer.
+ *
+ * Performs basic text cleanup including:
+ * - Converting form feeds to newlines
+ * - Normalizing whitespace
+ * - Trimming excess blank lines
+ *
+ * @async
+ * @param {Buffer} pdfBuffer - Raw PDF file buffer
+ * @returns {Promise<string|null>} Extracted and cleaned text, or null if extraction fails
+ */
 async function extractTextFromPDF(pdfBuffer) {
     try {
         debugLog(`[PDF_EXTRACT] Starting PDF text extraction, buffer size: ${pdfBuffer.length}`);
@@ -32,7 +56,21 @@ async function extractTextFromPDF(pdfBuffer) {
     }
 }
 
-// Function to fetch PDF from Firebase Storage (with GitHub fallback + upload)
+/**
+ * Fetches a PDF from Firebase Storage and extracts its text content.
+ *
+ * If the PDF doesn't exist in Firebase Storage, automatically falls back
+ * to fetching from GitHub and uploads to Firebase for future use.
+ *
+ * @async
+ * @param {string} pdfFileName - Name of the PDF file (e.g., 'guideline.pdf')
+ * @returns {Promise<string>} Extracted text content
+ * @throws {Error} If PDF not found in Firebase Storage and GitHub fallback fails
+ *
+ * @example
+ * const text = await fetchAndExtractPDFText('antenatal-care.pdf');
+ * console.log(text); // "Clinical guideline for antenatal care..."
+ */
 async function fetchAndExtractPDFText(pdfFileName) {
     try {
         debugLog(`[FETCH_PDF] Fetching PDF from Firebase Storage: ${pdfFileName}`);

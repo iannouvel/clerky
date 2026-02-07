@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/features/suggestionWizard.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/features/suggestionWizard.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { scrollTextIntoView } from '../utils/editor.js';
+
+/**
+ * Initialize the suggestion wizard in the given container
+ * @param {HTMLElement} container - The container element to render the wizard into
+ * @param {Array} suggestions - List of suggestions to display
+ * @param {Object} callbacks - callbacks for interacting with the main app/editor
+ */
+export function initializeSuggestionWizard(container, suggestions, callbacks) {
+    const {
+        getUserInputContent,
+        setUserInputContent,
+        determineInsertionPoint,
+        insertTextAtPoint
+    } = callbacks;
+
+    if (!container) {
+        console.error('[WIZARD] Container not found');
+        return;
+    }
+
+    if (!suggestions || suggestions.length === 0) {
+        container.innerHTML = '&lt;div class="alert alert-info">Analysis complete, but no specific suggestions were found.&lt;/div>';
+        return;
+    }
+
+    // Initialize state
+    window.suggestionWizardState = {
+        queue: suggestions,
+        currentIndex: 0,
+        total: suggestions.length
+    };
+
+    // Define Renderer
+    const renderCurrentSuggestion = () => {
+        const state = window.suggestionWizardState;
+
+        if (!container) return;
+
+        // Check for completion
+        if (state.currentIndex >= state.total) {
+            container.innerHTML = `
+                &lt;div class="suggestions-complete" style="text-align: center; padding: 30px;">
+                    &lt;span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉&lt;/span>
+                    &lt;h3 style="color: var(--text-primary);">Review Complete&lt;/h3>
+                    &lt;p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.&lt;/p>
+                    &lt;button class="btn btn-primary" onclick="window.closeSuggestionWizard('${container.id}')" style="margin-top: 20px;">Close Review&lt;/button>
+                &lt;/div>
+            `;
+            return;
+        }
+
+        const suggestion = state.queue[state.currentIndex];
+        const currentNumber = state.currentIndex + 1;
+        const total = state.total;
+
+        // Safely access properties
+        const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
+        const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
+        const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+        const contextText = suggestion.evidence || ''; // For focusing
+
+        // Formatting
+        const escapedText = suggestionText.replace(/"/g, '&amp;quot;');
+        const uniqueId = `suggestion-wizard-${Date.now()}`;
+
+        // Priority Styling
+        const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
+        let priorityColor = 'var(--text-secondary)';
+        let priorityLabel = 'Suggestion';
+
+        if (priority === 'critical' || priority === 'high') {
+            priorityColor = '#d32f2f'; // Softer Red (Material Design Red 700)
+            priorityLabel = 'High Priority Suggestion';
+        } else if (priority === 'medium' || priority === 'important') {
+            priorityColor = '#f57c00'; // Darker Orange (Material Design Orange 700)
+            priorityLabel = 'Medium Priority Suggestion';
+        } else {
+            priorityColor = '#388e3c'; // Darker Green (Material Design Green 700)
+            priorityLabel = 'Low Priority Suggestion';
+        }
+
+        const labelColor = 'var(--text-primary)';
+
+        // Calculate Counts for Header
+        let highCount = 0, medCount = 0, lowCount = 0;
+        state.queue.forEach(s => {
+            const p = (s.type || s.priority || 'info').toLowerCase();
+            if (p === 'critical' || p === 'high') highCount++;
+            else if (p === 'medium' || p === 'important') medCount++;
+            else lowCount++;
+        });
+
+        // Build Header HTML
+        let summaryParts = [];
+        if (highCount > 0) summaryParts.push(`${highCount} high`);
+        if (medCount > 0) summaryParts.push(`${medCount} medium`);
+        if (lowCount > 0) summaryParts.push(`${lowCount} low`);
+
+        const summaryString = `Clinical Suggestions: ${summaryParts.join(', ')} priority`;
+
+        // Build Upcoming List HTML (Text Only)
+        let upcomingHtml = '';
+        const upcomingSuggestions = state.queue.slice(state.currentIndex + 1);
+        if (upcomingSuggestions.length > 0) {
+            upcomingHtml += `&lt;div class="upcoming-suggestions" style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 15px;">`;
+
+            // Group by simple priority for display
+            const upcomingHigh = upcomingSuggestions.filter(s => ['critical', 'high'].includes((s.type || s.priority || '').toLowerCase()));
+            const upcomingMed = upcomingSuggestions.filter(s => ['medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
+            const upcomingLow = upcomingSuggestions.filter(s => !['critical', 'high', 'medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
+
+            const renderGroup = (title, items, color) => {
+                if (items.length === 0) return '';
+
+                // Show only first 3 items
+                const displayItems = items.slice(0, 3);
+                const hasMore = items.length > 3;
+
+                let html = `&lt;div style="margin-bottom: 15px;">
+                    &lt;div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${items.length} ${title}&lt;/div>`;
+                displayItems.forEach(item => {
+                    const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || item.title || item.description || item.content || item.advice || '';
+                    if (text) {
+                        html += `&lt;div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}&lt;/div>`;
+                    }
+                });
+                if (hasMore) {
+                    html += `&lt;div style="font-size: 0.85em; color: var(--text-tertiary); margin-top: 6px; padding-left: 10px; font-style: italic;">...and ${items.length - 3} more&lt;/div>`;
+                }
+                html += `&lt;/div>`;
+                return html;
+            };
+
+            upcomingHtml += renderGroup('Upcoming High Priority Suggestions', upcomingHigh, '#d32f2f');
+            upcomingHtml += renderGroup('Upcoming Medium Priority Suggestions', upcomingMed, '#f57c00');
+            upcomingHtml += renderGroup('Upcoming Low Priority Suggestions', upcomingLow, '#388e3c');
+
+            upcomingHtml += `&lt;/div>`;
+        }
+
+        container.innerHTML = `
+            &lt;div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
+                
+                &lt;!-- Global Summary Header -->
+                &lt;div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
+                    ${summaryString}
+                &lt;/div>
+
+                &lt;!-- Two-Column Layout -->
+                &lt;div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
+                    
+                    &lt;!-- Left Column: Active Suggestion -->
+                    &lt;div class="wizard-left-column" style="flex: 1; min-width: 0;">
+                        &lt;div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            
+                            &lt;!-- Header with Progress -->
+                            &lt;div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                                &lt;span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
+                                    ${priorityLabel}
+                                &lt;/span>
+                                &lt;span style="font-size: 0.85em; color: var(--text-secondary);">
+                                    ${currentNumber} of ${total}
+                                &lt;/span>
+                            &lt;/div>
+
+                            &lt;!-- Main Content -->
+                            &lt;div class="wizard-body" style="padding: 20px;">
+                                
+                                &lt;!-- Suggestion Box (The Change) -->
+                                &lt;div style="margin-bottom: 20px;">
+                                    &lt;div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
+                                        &lt;span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Suggested Action:&lt;/span> ${suggestionText}
+                                    &lt;/div>
+                                &lt;/div>
+
+                                &lt;!-- Reasoning Box -->
+                                &lt;div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
+                                    &lt;div style="font-size: 0.95em; color: var(--text-secondary);">
+                                        &lt;span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:&lt;/span> ${suggestionReasoning}
+                                    &lt;/div>
+                                    &lt;div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
+                                        Source: ${sourceName}
+                                    &lt;/div>
+                                &lt;/div>
+
+                                &lt;!-- Editor for Modify Mode (Hidden by default) -->
+                                &lt;div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
+                                    &lt;label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion&lt;/label>
+                                    &lt;textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}&lt;/textarea>
+                                    &lt;div style="display: flex; gap: 10px; margin-top: 10px;">
+                                        &lt;button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save &amp; Update&lt;/button>
+                                        &lt;button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel&lt;/button>
+                                    &lt;/div>
+                                &lt;/div>
+
+                            &lt;/div>
+
+                            &lt;!-- Action Bar -->
+                            &lt;div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
+                                    &lt;!-- Navigation only -->
+                                &lt;button class="wizard-suggestion-btn" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled' : ''}>
+                                    ⬅ Back
+                                &lt;/button>
+
+                                &lt;button class="wizard-suggestion-btn" onclick="enableWizardModify('${uniqueId}')">
+                                        ✏️ Modify
+                                &lt;/button>
+                                &lt;button class="wizard-suggestion-btn" onclick="skipWizardSuggestion()">
+                                        Skip ⏭
+                                &lt;/button>
+                                &lt;button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
+                                        Reject ❌
+                                &lt;/button>
+                                &lt;button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}')">
+                                        Accept &amp; Next ✅
+                                &lt;/button>
+                            &lt;/div>
+
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;!-- Right Column: Upcoming Suggestions -->
+                    &lt;div class="wizard-right-column" style="flex: 1; min-width: 0;">
+                        ${upcomingHtml || '&lt;div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.&lt;/div>'}
+                    &lt;/div>
+                    
+                &lt;/div>
+            &lt;/div>
+        `;
+
+        // Auto-focus logic
+        if (contextText &amp;&amp; typeof scrollTextIntoView === 'function') {
+            setTimeout(() => {
+                scrollTextIntoView(contextText);
+            }, 100);
+        }
+    };
+
+    // Attach Global Handlers
+    window.nextWizardSuggestion = function () {
+        window.suggestionWizardState.currentIndex++;
+        renderCurrentSuggestion();
+    };
+
+    window.prevWizardSuggestion = function () {
+        if (window.suggestionWizardState.currentIndex > 0) {
+            window.suggestionWizardState.currentIndex--;
+            renderCurrentSuggestion();
+        }
+    };
+
+    window.acceptWizardSuggestion = async function (id) {
+        const card = document.getElementById(id);
+        const textEl = card.querySelector('.text-content');
+
+        const editorEl = document.getElementById(`${id}-editor`);
+        let textToInsert = '';
+
+        if (editorEl &amp;&amp; editorEl.value &amp;&amp; editorEl.value.trim()) {
+            textToInsert = editorEl.value.trim();
+        } else if (textEl &amp;&amp; textEl.dataset.rawSuggestion) {
+            textToInsert = textEl.dataset.rawSuggestion;
+        } else if (textEl) {
+            textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
+        }
+
+        if (!textToInsert) {
+            alert('Empty suggestion text.');
+            return;
+        }
+
+        if (!window.editors || !window.editors.userInput) {
+            alert('Editor not found.');
+            return;
+        }
+
+        try {
+            const currentContent = getUserInputContent();
+
+            const suggestionForInsertion = {
+                suggestedText: textToInsert,
+                category: 'addition'
+            };
+
+            let insertionPoint = null;
+            try {
+                insertionPoint = await determineInsertionPoint(suggestionForInsertion, currentContent);
+                console.log('[WIZARD] Determined insertion point:', insertionPoint);
+            } catch (insertError) {
+                console.warn('[WIZARD] Failed to determine insertion point, falling back to append:', insertError);
+                insertionPoint = { section: 'end', insertionMethod: 'append' };
+            }
+
+            let newContent;
+            if (insertionPoint &amp;&amp; insertionPoint.section !== 'end') {
+                newContent = insertTextAtPoint(currentContent, textToInsert, insertionPoint);
+            } else {
+                const spacing = currentContent.endsWith('\n') ? '' : '\n';
+                newContent = currentContent + spacing + textToInsert;
+            }
+
+            setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
+
+            console.log('[WIZARD] Suggestion accepted and inserted:', textToInsert.substring(0, 50) + '...');
+            window.nextWizardSuggestion();
+        } catch (error) {
+            console.error('[WIZARD] Error accepting suggestion:', error);
+            alert('Error inserting suggestion: ' + error.message);
+        }
+    };
+
+    window.rejectWizardSuggestion = function (id) {
+        window.nextWizardSuggestion();
+    };
+
+    window.skipWizardSuggestion = function () {
+        window.nextWizardSuggestion();
+    };
+
+    window.enableWizardModify = function (id) {
+        const editMode = document.getElementById(`${id}-edit-mode`);
+        const actions = document.getElementById(`${id}-actions`);
+
+        if (editMode &amp;&amp; actions) {
+            editMode.style.display = 'block';
+            actions.style.display = 'none';
+        }
+    };
+
+    window.saveWizardModification = function (id) {
+        const editor = document.getElementById(`${id}-editor`);
+        const display = document.querySelector(`#${id} .text-content`);
+        const editMode = document.getElementById(`${id}-edit-mode`);
+        const actions = document.getElementById(`${id}-actions`);
+
+        if (editor &amp;&amp; display) {
+            const modifiedText = editor.value.trim();
+            display.textContent = modifiedText;
+            display.dataset.rawSuggestion = modifiedText;
+
+            editMode.style.display = 'none';
+            actions.style.display = 'flex';
+        }
+    };
+
+    window.cancelWizardModification = function (id) {
+        const editMode = document.getElementById(`${id}-edit-mode`);
+        const actions = document.getElementById(`${id}-actions`);
+
+        if (editMode &amp;&amp; actions) {
+            editMode.style.display = 'none';
+            actions.style.display = 'flex';
+        }
+    };
+
+    window.closeSuggestionWizard = function (containerId) {
+        // Find the container, or use the one we have
+        const c = document.getElementById(containerId) || container;
+        if (c) {
+            c.innerHTML = '';
+        }
+    }
+
+    // Initial render
+    renderCurrentSuggestion();
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

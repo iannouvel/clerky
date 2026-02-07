@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Clerky - Clinical Guideline Assistant</h1>
+<p>Clerky is an AI-powered clinical decision support platform that helps healthcare professionals access and apply clinical guidelines efficiently. It processes clinical guideline PDFs, extracts essential information, generates interactive algorithms, and provides real-time clinical decision support with comprehensive audit capabilities and multi-provider AI integration.</p>
+<h2>Features</h2>
+<h3>Core Clinical Decision Support</h3>
+<ul>
+<li><strong>Real-time Guideline Analysis</strong>: Analyzes clinical transcripts against comprehensive medical guidelines</li>
+<li><strong>Multi-Guideline Processing</strong>: Simultaneous analysis against multiple relevant guidelines</li>
+<li><strong>Interactive Recommendations</strong>: AI-generated suggestions with accept/reject/modify options</li>
+<li><strong>Clinical Note Generation</strong>: Automated generation of comprehensive clinical documentation</li>
+<li><strong>Audit &amp; Compliance</strong>: Comprehensive audit system with automated compliance checking</li>
+</ul>
+<h3>Advanced AI Integration</h3>
+<ul>
+<li><strong>Multi-Provider Support</strong>: 5 AI providers (DeepSeek, Mistral, Anthropic, OpenAI, Gemini)</li>
+<li><strong>Cost-Optimized Routing</strong>: Intelligent provider selection based on cost and availability</li>
+<li><strong>Automatic Fallback</strong>: Seamless switching between providers on quota/error conditions</li>
+<li><strong>Usage Analytics</strong>: Real-time cost monitoring and usage tracking across all providers</li>
+</ul>
+<h3>Data Processing &amp; Management</h3>
+<ul>
+<li><strong>PDF Processing</strong>: Extracts and condenses text from clinical guideline PDFs</li>
+<li><strong>Metadata Enhancement</strong>: Automated extraction and enhancement of guideline metadata</li>
+<li><strong>Content Repair</strong>: Intelligent content repair and validation systems</li>
+<li><strong>GitHub Integration</strong>: Version control and automated content synchronization</li>
+</ul>
+<h3>Security &amp; Privacy</h3>
+<ul>
+<li><strong>PII Anonymization</strong>: Advanced PII detection and anonymization with user review</li>
+<li><strong>Firebase Authentication</strong>: Secure authentication with JWT tokens and daily disclaimers</li>
+<li><strong>Comprehensive Logging</strong>: Structured logging with automatic archiving and monitoring</li>
+<li><strong>HIPAA Considerations</strong>: Privacy-first design with no PHI storage</li>
+</ul>
+<h2>Setup</h2>
+<h3>Prerequisites</h3>
+<ul>
+<li>Node.js (v14+)</li>
+<li>Python 3.8+</li>
+<li>npm or yarn</li>
+</ul>
+<h3>Installation</h3>
+<ol>
+<li>Clone the repository:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>git clone https://github.com/iannouvel/clerky.git
+cd clerky
+</code></pre>
+<ol start="2">
+<li>Install Node.js dependencies:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm install
+</code></pre>
+<ol start="3">
+<li>Install Python dependencies:</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>pip install -r requirements.txt
+</code></pre>
+<ol start="4">
+<li>Create a <code>.env</code> file with your API keys:</li>
+</ol>
+<pre class="prettyprint source"><code># AI Provider API Keys (at least one required)
+DEEPSEEK_API_KEY=your_deepseek_api_key_here
+MISTRAL_API_KEY=your_mistral_api_key_here
+ANTHROPIC_API_KEY=your_anthropic_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+GOOGLE_AI_API_KEY=your_gemini_api_key_here
+
+# GitHub Integration (required for guideline management)
+GITHUB_TOKEN=your_github_token_here
+
+# Firebase Configuration (required)
+FIREBASE_API_KEY=your_firebase_api_key
+FIREBASE_AUTH_DOMAIN=your_app.firebaseapp.com
+FIREBASE_PROJECT_ID=your_project_id
+FIREBASE_STORAGE_BUCKET=your_storage_bucket
+FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+FIREBASE_APP_ID=your_app_id
+
+# Firebase Admin SDK (server-side, required)
+FIREBASE_ADMIN_TYPE=service_account
+FIREBASE_ADMIN_PROJECT_ID=your_project_id
+FIREBASE_ADMIN_PRIVATE_KEY_ID=your_private_key_id
+FIREBASE_ADMIN_PRIVATE_KEY=&quot;-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n&quot;
+FIREBASE_ADMIN_CLIENT_EMAIL=your_service_account_email
+FIREBASE_ADMIN_CLIENT_ID=your_client_id
+FIREBASE_ADMIN_AUTH_URI=https://accounts.google.com/o/oauth2/auth
+FIREBASE_ADMIN_TOKEN_URI=https://oauth2.googleapis.com/token
+</code></pre>
+<h3>AI Provider System</h3>
+<p>Clerky features an intelligent multi-provider AI system with cost-optimized routing and automatic fallback capabilities.</p>
+<h4>Supported Providers</h4>
+<ol>
+<li><strong>DeepSeek</strong> (Primary) - <code>deepseek-chat</code> - $0.0005/1k tokens - Most cost-effective</li>
+<li><strong>Mistral</strong> - <code>mistral-large-latest</code> - $0.001/1k tokens - Good balance of cost and quality</li>
+<li><strong>Anthropic</strong> - <code>claude-3-sonnet-20240229</code> - $0.003/1k tokens - High quality, moderate cost</li>
+<li><strong>OpenAI</strong> - <code>gpt-3.5-turbo</code> - $0.0015/1k tokens - Reliable but can hit quota limits</li>
+<li><strong>Google Gemini</strong> - <code>gemini-1.5-pro-latest</code> - $0.0025/1k tokens - Good for specific use cases</li>
+</ol>
+<h4>Intelligent Routing</h4>
+<ul>
+<li><strong>Cost-Optimized</strong>: Automatically selects the most cost-effective available provider</li>
+<li><strong>Automatic Fallback</strong>: Seamlessly switches providers on quota/error conditions</li>
+<li><strong>User Preferences</strong>: Per-user AI provider selection with Firestore persistence</li>
+<li><strong>Real-time Monitoring</strong>: Comprehensive usage tracking and cost monitoring</li>
+</ul>
+<h4>Configuration</h4>
+<p>The system automatically tries providers in cost order. You can:</p>
+<ul>
+<li>Set individual API keys for any combination of providers</li>
+<li>Users can select their preferred provider through the web interface</li>
+<li>System falls back to next available provider if the preferred one fails</li>
+</ul>
+<h2>Usage</h2>
+<h3>Running the Server</h3>
+<p>Start the server:</p>
+<pre class="prettyprint source lang-bash"><code>npm start
+</code></pre>
+<p>The server will be available at http://localhost:3000.</p>
+<h3>Frontend Development</h3>
+<h4>Static App (Production)</h4>
+<p>The main application is served directly from the root directory via Firebase Hosting.</p>
+<h4>React App (Development)</h4>
+<p>For frontend development using the modern React interface:</p>
+<pre class="prettyprint source lang-bash"><code>cd frontend
+npm install
+npm run dev
+</code></pre>
+<p>The React development server will be available at http://localhost:5173.</p>
+<h3>Core Workflows</h3>
+<h4>1. Clinical Decision Support</h4>
+<ul>
+<li>Input clinical transcripts through the web interface</li>
+<li>System automatically finds relevant guidelines</li>
+<li>Receive AI-generated recommendations with interactive options</li>
+<li>Apply, reject, or modify suggestions as needed</li>
+<li>Generate comprehensive clinical notes</li>
+</ul>
+<h4>2. Guideline Management</h4>
+<ul>
+<li>Upload new guideline PDFs through the web interface</li>
+<li>System automatically extracts and processes content</li>
+<li>Metadata enhancement and content repair happens automatically</li>
+<li>Guidelines are synced with GitHub for version control</li>
+</ul>
+<h4>3. Audit &amp; Compliance</h4>
+<ul>
+<li>Run compliance audits against clinical documentation</li>
+<li>Generate audit reports with detailed findings</li>
+<li>Track compliance metrics over time</li>
+<li>Export audit results for quality assurance</li>
+</ul>
+<h2>Monitoring &amp; Analytics</h2>
+<h3>API Usage Tracking</h3>
+<p>Monitor AI provider usage and costs:</p>
+<pre class="prettyprint source lang-bash"><code># View real-time usage statistics
+curl http://localhost:3000/api-usage-stats
+
+# Track usage with automated scripts
+node scripts/track-api-usage.js
+</code></pre>
+<p>Usage reports are automatically generated in the <code>data/api-usage</code> directory with detailed breakdowns by:</p>
+<ul>
+<li>Provider (DeepSeek, Mistral, Anthropic, OpenAI, Gemini)</li>
+<li>Endpoint usage patterns</li>
+<li>Cost analysis and optimization recommendations</li>
+<li>Token usage trends</li>
+</ul>
+<h3>System Health</h3>
+<p>Monitor system health and performance:</p>
+<ul>
+<li>Health endpoint: <code>GET /health</code></li>
+<li>Automatic log archiving when size limits are exceeded</li>
+<li>Real-time error tracking and debugging</li>
+<li>Comprehensive audit trails for compliance</li>
+</ul>
+<h2>License</h2>
+<p>[Add your license information here]</p>
+<h2>Contact</h2>
+<p>[Add your contact information here]</p>
+<h2>Function Summaries</h2>
+<h3>Server Functions</h3>
+<ul>
+<li>
+<p><strong>getFileSha(filePath)</strong>: Fetches the SHA of an existing file on GitHub.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>filePath</code> (string) - Path to the file on GitHub.</li>
+<li><strong>Outputs:</strong> SHA of the file or null if the file does not exist.</li>
+</ul>
+</li>
+<li>
+<p><strong>updateHtmlFileOnGitHub(filePath, newHtmlContent, fileSha)</strong>: Updates an HTML file on GitHub.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>filePath</code> (string), <code>newHtmlContent</code> (string), <code>fileSha</code> (string).</li>
+<li><strong>Outputs:</strong> Commit and content details of the updated file.</li>
+</ul>
+</li>
+<li>
+<p><strong>sendToAI(prompt, model, systemPrompt, userId)</strong>: Sends prompts to AI services.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>prompt</code> (string), <code>model</code> (string), <code>systemPrompt</code> (string), <code>userId</code> (string).</li>
+<li><strong>Outputs:</strong> AI response based on the prompt and model.</li>
+</ul>
+</li>
+<li>
+<p><strong>generateAlgorithmLink(guideline)</strong>: Generates an algorithm link for a guideline.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>guideline</code> (string) - Guideline filename.</li>
+<li><strong>Outputs:</strong> HTML link for the guideline algorithm.</li>
+</ul>
+</li>
+<li>
+<p><strong>testGitHubAccess()</strong>: Tests GitHub token permissions.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Boolean indicating if access is successful.</li>
+</ul>
+</li>
+<li>
+<p><strong>verifyFilePath(filePath)</strong>: Verifies if a file path exists on GitHub.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>filePath</code> (string) - Path to the file on GitHub.</li>
+<li><strong>Outputs:</strong> Boolean indicating if the file exists.</li>
+</ul>
+</li>
+<li>
+<p><strong>getFileContents(fileName)</strong>: Gets the contents of a file from GitHub.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>fileName</code> (string) - Name of the file.</li>
+<li><strong>Outputs:</strong> Contents of the file.</li>
+</ul>
+</li>
+<li>
+<p><strong>createDefaultPrompts()</strong>: Creates default prompts for AI interactions.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Object containing default prompts.</li>
+</ul>
+</li>
+<li>
+<p><strong>createSession(userId)</strong>: Creates a new session in Firestore.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>userId</code> (string) - User ID.</li>
+<li><strong>Outputs:</strong> Session ID.</li>
+</ul>
+</li>
+</ul>
+<h3>Client Functions</h3>
+<ul>
+<li>
+<p><strong>displayGuidance()</strong>: Displays guidance for the user based on selected contexts.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with guidance.</li>
+</ul>
+</li>
+<li>
+<p><strong>updateGuidance()</strong>: Updates guidance based on user input.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with new guidance.</li>
+</ul>
+</li>
+<li>
+<p><strong>updateAIModel()</strong>: Updates the AI model based on user preference.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the AI model and UI.</li>
+</ul>
+</li>
+<li>
+<p><strong>showLoginPrompt()</strong>: Shows a login prompt if the user is not authenticated.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with a login button.</li>
+</ul>
+</li>
+<li>
+<p><strong>checkServerHealth()</strong>: Checks the health of the server.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Boolean indicating server health.</li>
+</ul>
+</li>
+<li>
+<p><strong>generateClinicalNote()</strong>: Generates a clinical note based on user input.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with a clinical note.</li>
+</ul>
+</li>
+<li>
+<p><strong>appendToSummary1(content, clearExisting)</strong>: Appends content to the summary field.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>content</code> (string), <code>clearExisting</code> (boolean).</li>
+<li><strong>Outputs:</strong> Updates the DOM with appended content.</li>
+</ul>
+</li>
+<li>
+<p><strong>checkAgainstGuidelines()</strong>: Checks a note against selected guidelines.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with guideline compliance analysis.</li>
+</ul>
+</li>
+</ul>
+<h3>Other Functions</h3>
+<ul>
+<li>
+<p><strong>setCookie(name, value, days)</strong>: Sets a cookie with a specified expiration.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>name</code> (string), <code>value</code> (string), <code>days</code> (number).</li>
+<li><strong>Outputs:</strong> None.</li>
+</ul>
+</li>
+<li>
+<p><strong>getCookie(name)</strong>: Gets the value of a cookie.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>name</code> (string).</li>
+<li><strong>Outputs:</strong> Value of the cookie or null if not found.</li>
+</ul>
+</li>
+<li>
+<p><strong>deleteCookie(name)</strong>: Deletes a cookie.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>name</code> (string).</li>
+<li><strong>Outputs:</strong> None.</li>
+</ul>
+</li>
+<li>
+<p><strong>createBanner()</strong>: Creates a cookie consent banner.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with a banner.</li>
+</ul>
+</li>
+<li>
+<p><strong>createPreferencesModal()</strong>: Creates a modal for cookie preferences.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM with a modal.</li>
+</ul>
+</li>
+<li>
+<p><strong>showPreferences()</strong>: Shows the cookie preferences modal.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Updates the DOM to show the modal.</li>
+</ul>
+</li>
+<li>
+<p><strong>getSavedConsent()</strong>: Gets saved consent preferences.</p>
+<ul>
+<li><strong>Inputs:</strong> None.</li>
+<li><strong>Outputs:</strong> Object containing consent preferences.</li>
+</ul>
+</li>
+<li>
+<p><strong>acceptConsent(consent)</strong>: Accepts consent and saves preferences.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>consent</code> (object).</li>
+<li><strong>Outputs:</strong> Updates the DOM and saves preferences.</li>
+</ul>
+</li>
+<li>
+<p><strong>applyCookieConsent(consent)</strong>: Applies cookie consent based on user preferences.</p>
+<ul>
+<li><strong>Inputs:</strong> <code>consent</code> (object).</li>
+<li><strong>Outputs:</strong> Updates the DOM and applies preferences.</li>
+</ul>
+</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-server_services_ai.html">server/services/ai</a></li><li><a href="module-server_services_pdf.html">server/services/pdf</a></li></ul><h3>Classes</h3><ul><li><a href="ClinicalDataAnonymiser.html">ClinicalDataAnonymiser</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Logger">Logger</a></li><li><a href="global.html#admin">admin</a></li><li><a href="global.html#analyzeNoteAgainstGuideline">analyzeNoteAgainstGuideline</a></li><li><a href="global.html#applyColoredReplacements">applyColoredReplacements</a></li><li><a href="global.html#applyMobileLayout">applyMobileLayout</a></li><li><a href="global.html#arbitrateCGPDisagreements">arbitrateCGPDisagreements</a></li><li><a href="global.html#assessClinicalImpact">assessClinicalImpact</a></li><li><a href="global.html#assessGuidanceFailureRisk">assessGuidanceFailureRisk</a></li><li><a href="global.html#assessRisks">assessRisks</a></li><li><a href="global.html#autoInitializeMobile">autoInitializeMobile</a></li><li><a href="global.html#autoInitializeVersion">autoInitializeVersion</a></li><li><a href="global.html#automatedGuidanceAssessment">automatedGuidanceAssessment</a></li><li><a href="global.html#batchAutomatedAssessment">batchAutomatedAssessment</a></li><li><a href="global.html#batchEvaluateGuidance">batchEvaluateGuidance</a></li><li><a href="global.html#calculateNextReviewDate">calculateNextReviewDate</a></li><li><a href="global.html#calculateOverallScore">calculateOverallScore</a></li><li><a href="global.html#calculatePassRate">calculatePassRate</a></li><li><a href="global.html#calculateRiskLevel">calculateRiskLevel</a></li><li><a href="global.html#calculateTestCoverage">calculateTestCoverage</a></li><li><a href="global.html#calculateTestCoveragePercentage">calculateTestCoveragePercentage</a></li><li><a href="global.html#categoriseByScore">categoriseByScore</a></li><li><a href="global.html#checkDisclaimerAcceptance">checkDisclaimerAcceptance</a></li><li><a href="global.html#chunkText">chunkText</a></li><li><a href="global.html#clearHighlightInEditor">clearHighlightInEditor</a></li><li><a href="global.html#clearJobQueue">clearJobQueue</a></li><li><a href="global.html#closeMobileSettingsOverlay">closeMobileSettingsOverlay</a></li><li><a href="global.html#countFailedTests">countFailedTests</a></li><li><a href="global.html#countPassedTests">countPassedTests</a></li><li><a href="global.html#createVariationPrompt">createVariationPrompt</a></li><li><a href="global.html#crossValidateClinicalGuidancePoints">crossValidateClinicalGuidancePoints</a></li><li><a href="global.html#deleteDocuments">deleteDocuments</a></li><li><a href="global.html#deleteGuidelineChunks">deleteGuidelineChunks</a></li><li><a href="global.html#detectMobile">detectMobile</a></li><li><a href="global.html#determineFailureProbability">determineFailureProbability</a></li><li><a href="global.html#determineFailureSeverity">determineFailureSeverity</a></li><li><a href="global.html#determinePriority">determinePriority</a></li><li><a href="global.html#determineSeverity">determineSeverity</a></li><li><a href="global.html#determineTestStatus">determineTestStatus</a></li><li><a href="global.html#ensureAnonymisedForOutbound">ensureAnonymisedForOutbound</a></li><li><a href="global.html#evaluateAccuracy">evaluateAccuracy</a></li><li><a href="global.html#evaluateCompleteness">evaluateCompleteness</a></li><li><a href="global.html#evaluateContextualAppropriateness">evaluateContextualAppropriateness</a></li><li><a href="global.html#evaluateGuidance">evaluateGuidance</a></li><li><a href="global.html#evaluatePrecision">evaluatePrecision</a></li><li><a href="global.html#extractClinicalGuidancePoints">extractClinicalGuidancePoints</a></li><li><a href="global.html#extractElementCount">extractElementCount</a></li><li><a href="global.html#extractIssues">extractIssues</a></li><li><a href="global.html#extractMetadata">extractMetadata</a></li><li><a href="global.html#extractOrganisationFromTitle">extractOrganisationFromTitle</a></li><li><a href="global.html#extractRelevanceScore">extractRelevanceScore</a></li><li><a href="global.html#fetchContent">fetchContent</a></li><li><a href="global.html#formatExecutionRecords">formatExecutionRecords</a></li><li><a href="global.html#formatRelevanceScore">formatRelevanceScore</a></li><li><a href="global.html#formatTestResults">formatTestResults</a></li><li><a href="global.html#fs">fs</a></li><li><a href="global.html#generateAuditScenarios">generateAuditScenarios</a></li><li><a href="global.html#generateBaseScenario">generateBaseScenario</a></li><li><a href="global.html#generateChunkId">generateChunkId</a></li><li><a href="global.html#generateDetailedFindings">generateDetailedFindings</a></li><li><a href="global.html#generateEdgeCaseVariations">generateEdgeCaseVariations</a></li><li><a href="global.html#generateElementCoverage">generateElementCoverage</a></li><li><a href="global.html#generateISOCompliantReport">generateISOCompliantReport</a></li><li><a href="global.html#generateMitigationStrategies">generateMitigationStrategies</a></li><li><a href="global.html#generateRecommendations">generateRecommendations</a></li><li><a href="global.html#generateReportId">generateReportId</a></li><li><a href="global.html#generateScenarioVariations">generateScenarioVariations</a></li><li><a href="global.html#generateScenariosForElements">generateScenariosForElements</a></li><li><a href="global.html#generateSimpleDisplayName">generateSimpleDisplayName</a></li><li><a href="global.html#generateTraceabilityMatrix">generateTraceabilityMatrix</a></li><li><a href="global.html#generateTraceabilityReport">generateTraceabilityReport</a></li><li><a href="global.html#generateTrustAcronym">generateTrustAcronym</a></li><li><a href="global.html#generateVariationTranscript">generateVariationTranscript</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getAllPrompts">getAllPrompts</a></li><li><a href="global.html#getAuditInteractions">getAuditInteractions</a></li><li><a href="global.html#getAuditInteractionsForTest">getAuditInteractionsForTest</a></li><li><a href="global.html#getAuditResultsForTest">getAuditResultsForTest</a></li><li><a href="global.html#getAuditStatistics">getAuditStatistics</a></li><li><a href="global.html#getAuditTest">getAuditTest</a></li><li><a href="global.html#getAuditTests">getAuditTests</a></li><li><a href="global.html#getElementMapping">getElementMapping</a></li><li><a href="global.html#getGuidanceForThreshold">getGuidanceForThreshold</a></li><li><a href="global.html#getIdToken">getIdToken</a></li><li><a href="global.html#getIndexStats">getIndexStats</a></li><li><a href="global.html#getIngestionStatus">getIngestionStatus</a></li><li><a href="global.html#getInteractionStatistics">getInteractionStatistics</a></li><li><a href="global.html#getMaximumValue">getMaximumValue</a></li><li><a href="global.html#getMinimumValue">getMinimumValue</a></li><li><a href="global.html#getNextLLMProvider">getNextLLMProvider</a></li><li><a href="global.html#getPromptText">getPromptText</a></li><li><a href="global.html#getRelevanceCategory">getRelevanceCategory</a></li><li><a href="global.html#getShortHospitalTrust">getShortHospitalTrust</a></li><li><a href="global.html#getTraceabilityChain">getTraceabilityChain</a></li><li><a href="global.html#getTraceabilityMatrix">getTraceabilityMatrix</a></li><li><a href="global.html#getValueAboveThreshold">getValueAboveThreshold</a></li><li><a href="global.html#getValueBelowThreshold">getValueBelowThreshold</a></li><li><a href="global.html#hideSelectionButtons">hideSelectionButtons</a></li><li><a href="global.html#highlightTextInEditor">highlightTextInEditor</a></li><li><a href="global.html#ingestFromFirestore">ingestFromFirestore</a></li><li><a href="global.html#initializeConnectivityMonitoring">initializeConnectivityMonitoring</a></li><li><a href="global.html#initializeMarked">initializeMarked</a></li><li><a href="global.html#initializeMobileDetection">initializeMobileDetection</a></li><li><a href="global.html#initializeMobileSettingsOverlay">initializeMobileSettingsOverlay</a></li><li><a href="global.html#initializePinecone">initializePinecone</a></li><li><a href="global.html#initializeSuggestionWizard">initializeSuggestionWizard</a></li><li><a href="global.html#injectParameterModification">injectParameterModification</a></li><li><a href="global.html#isOnline">isOnline</a></li><li><a href="global.html#isVectorDBAvailable">isVectorDBAvailable</a></li><li><a href="global.html#linkAuditResult">linkAuditResult</a></li><li><a href="global.html#loadHospitalTrustMappings">loadHospitalTrustMappings</a></li><li><a href="global.html#loadVersionNumber">loadVersionNumber</a></li><li><a href="global.html#logAIInteraction">logAIInteraction</a></li><li><a href="global.html#logAuditInteraction">logAuditInteraction</a></li><li><a href="global.html#logStatusChange">logStatusChange</a></li><li><a href="global.html#mapElementsToGuideline">mapElementsToGuideline</a></li><li><a href="global.html#modifyScenarioParameter">modifyScenarioParameter</a></li><li><a href="global.html#openMobileSettingsOverlay">openMobileSettingsOverlay</a></li><li><a href="global.html#parseCitationsToLinks">parseCitationsToLinks</a></li><li><a href="global.html#parseJSONSafely">parseJSONSafely</a></li><li><a href="global.html#parseThresholdValue">parseThresholdValue</a></li><li><a href="global.html#postAuthenticated">postAuthenticated</a></li><li><a href="global.html#processAllGuidelines">processAllGuidelines</a></li><li><a href="global.html#processBatchGeneration">processBatchGeneration</a></li><li><a href="global.html#processFirestoreGuideline">processFirestoreGuideline</a></li><li><a href="global.html#processGuidelineFile">processGuidelineFile</a></li><li><a href="global.html#processJob">processJob</a></li><li><a href="global.html#processJobQueue">processJobQueue</a></li><li><a href="global.html#queryDocuments">queryDocuments</a></li><li><a href="global.html#queueJob">queueJob</a></li><li><a href="global.html#registerJobHandler">registerJobHandler</a></li><li><a href="global.html#reingestGuideline">reingestGuideline</a></li><li><a href="global.html#removeScenarioParameter">removeScenarioParameter</a></li><li><a href="global.html#repairGuidelineContent">repairGuidelineContent</a></li><li><a href="global.html#repairJSON">repairJSON</a></li><li><a href="global.html#scrollTextIntoView">scrollTextIntoView</a></li><li><a href="global.html#setButtonLoading">setButtonLoading</a></li><li><a href="global.html#showMainContent">showMainContent</a></li><li><a href="global.html#showPIIReviewInterface">showPIIReviewInterface</a></li><li><a href="global.html#showSelectionButtons">showSelectionButtons</a></li><li><a href="global.html#storeAuditInteraction">storeAuditInteraction</a></li><li><a href="global.html#storeAuditResult">storeAuditResult</a></li><li><a href="global.html#storeAuditTest">storeAuditTest</a></li><li><a href="global.html#storeAuditTrace">storeAuditTrace</a></li><li><a href="global.html#storeElementMapping">storeElementMapping</a></li><li><a href="global.html#storeTraceabilityMatrix">storeTraceabilityMatrix</a></li><li><a href="global.html#switchMobileView">switchMobileView</a></li><li><a href="global.html#syncGuidelinesInBatches">syncGuidelinesInBatches</a></li><li><a href="global.html#trackRiskResolution">trackRiskResolution</a></li><li><a href="global.html#updateAnalyseAndResetButtons">updateAnalyseAndResetButtons</a></li><li><a href="global.html#updateAuditTestStatus">updateAuditTestStatus</a></li><li><a href="global.html#updateClearFormattingButton">updateClearFormattingButton</a></li><li><a href="global.html#updatePromptsCache">updatePromptsCache</a></li><li><a href="global.html#updateUser">updateUser</a></li><li><a href="global.html#upsertDocuments">upsertDocuments</a></li><li><a href="global.html#validateScenario">validateScenario</a></li><li><a href="global.html#validateTraceability">validateTraceability</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
