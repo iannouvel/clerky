@@ -5119,23 +5119,23 @@ body {
 
 .preferences-scope-btn.selected {
     border-color: #4A90E2;
-    background-color: #e8f4fd;
+    background-color: rgba(74, 144, 226, 0.15);
     border-width: 3px;
 }
 
 .preferences-scope-btn-national.selected {
     border-color: #4A90E2;
-    background-color: #e8f4fd;
+    background-color: rgba(74, 144, 226, 0.15);
 }
 
 .preferences-scope-btn-local.selected {
     border-color: var(--accent-color);
-    background-color: #e8f8f5;
+    background-color: rgba(40, 167, 69, 0.15);
 }
 
 .preferences-scope-btn-both.selected {
     border-color: #9B59B6;
-    background-color: #f4ecf7;
+    background-color: rgba(155, 89, 182, 0.15);
 }
 
 .preferences-scope-btn-title {
@@ -5337,7 +5337,7 @@ body {
     margin-top: 12px;
     margin-left: 67px;
     padding: 12px;
-    background-color: #f0f8f2;
+    background-color: rgba(40, 167, 69, 0.1);
     border: 1px solid var(--accent-color);
     border-radius: 6px;
 }
@@ -5363,10 +5363,10 @@ body {
     gap: 8px;
     margin-top: 12px;
     padding: 10px 12px;
-    background-color: #e8f4f8;
+    background-color: rgba(74, 144, 226, 0.1);
     border-radius: 6px;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 .rag-info-icon {
@@ -5374,18 +5374,18 @@ body {
 }
 
 .rag-info.success {
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
+    background-color: rgba(40, 167, 69, 0.1);
+    border: 1px solid rgba(40, 167, 69, 0.3);
 }
 
 .rag-info.warning {
-    background-color: #fff3cd;
-    border: 1px solid #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.4);
 }
 
 .rag-info.error {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid rgba(220, 53, 69, 0.3);
 }
 
 .preferences-modal-footer {
