@@ -550,6 +550,7 @@
             <button class="nav-btn" data-content="apiContent">API</button>
             <button class="nav-btn" data-content="modelsContent">Models</button>
             <button class="nav-btn" data-content="maintenanceContent">Maintenance</button>
+            <button class="nav-btn" data-content="firestoreContent">Firestore</button>
             <button class="nav-btn" data-content="discoveryContent">Discovery</button>
             <button class="nav-btn" data-content="transcriptsContent">Transcripts</button>
             <button class="nav-btn" data-content="evolveContent">Evolve</button>
@@ -1067,6 +1068,82 @@
                             </tr>
                         </thead>
                         <tbody id="guidelinesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="firestoreContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Firestore Data Viewer</h4>
+                <p style="color:var(--text-secondary);font-size:13px;margin-bottom:15px;">
+                    Browse Firestore collections and inspect document data. Select fields to show/hide and sort by values.
+                </p>
+
+                <!-- Collection Selector and Controls -->
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:15px;flex-wrap:wrap;">
+                    <div style="flex:1;min-width:200px;">
+                        <label style="font-size:12px;color:var(--text-secondary);display:block;margin-bottom:4px;">
+                            Collection
+                        </label>
+                        <select id="firestoreCollectionSelect"
+                            style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;font-size:13px;background:var(--bg-input);color:var(--text-primary);">
+                            <option value="">-- Select Collection --</option>
+                            <option value="guidelines">guidelines</option>
+                            <option value="users">users</option>
+                            <option value="aiInteractions">aiInteractions</option>
+                            <option value="clinicalConditions">clinicalConditions</option>
+                            <option value="auditLogs">auditLogs</option>
+                        </select>
+                    </div>
+                    <div style="align-self:flex-end;">
+                        <button id="firestoreLoadBtn" class="dev-btn"
+                            style="background-color:#007bff;color:#fff;border-color:#007bff;">
+                            📥 Load Data
+                        </button>
+                    </div>
+                    <div style="align-self:flex-end;">
+                        <button id="firestoreFieldsBtn" class="dev-btn"
+                            style="background-color:#6c757d;color:#fff;border-color:#6c757d;">
+                            🔧 Show/Hide Fields
+                        </button>
+                    </div>
+                    <div id="firestoreRecordCount" style="align-self:flex-end;font-size:13px;color:var(--text-secondary);padding:8px 0;">
+                    </div>
+                </div>
+
+                <!-- Field Selector Panel (hidden by default) -->
+                <div id="firestoreFieldsPanel"
+                    style="display:none;margin-bottom:15px;padding:15px;background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:6px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <h5 style="margin:0;font-size:14px;color:var(--text-primary);">Field Visibility</h5>
+                        <div style="display:flex;gap:8px;">
+                            <button id="firestoreSelectAllFieldsBtn" class="dev-btn" style="padding:4px 8px;font-size:12px;">
+                                Select All
+                            </button>
+                            <button id="firestoreDeselectAllFieldsBtn" class="dev-btn" style="padding:4px 8px;font-size:12px;">
+                                Deselect All
+                            </button>
+                        </div>
+                    </div>
+                    <div id="firestoreFieldCheckboxes"
+                        style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;max-height:200px;overflow-y:auto;padding:8px;background:var(--bg-secondary);border-radius:4px;">
+                    </div>
+                </div>
+
+                <!-- Status Message -->
+                <div id="firestoreStatus"
+                    style="margin-bottom:10px;padding:8px;background:var(--bg-tertiary);border-radius:4px;display:none;font-size:13px;color:var(--text-primary);">
+                </div>
+
+                <!-- Data Table -->
+                <div style="overflow-x:auto;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-secondary);">
+                    <table id="firestoreDataTable"
+                        style="width:100%;border-collapse:collapse;font-size:12px;color:var(--text-primary);">
+                        <thead id="firestoreTableHead"
+                            style="background:var(--bg-tertiary);position:sticky;top:0;z-index:1;">
+                        </thead>
+                        <tbody id="firestoreTableBody">
                         </tbody>
                     </table>
                 </div>
