@@ -3140,6 +3140,46 @@ function parseChunkResponse(responseContent, originalChunk = []) {
 // ============================================================================
 
 /**
+ * Build Pinecone metadata filter based on user's scope preference
+ *
+ * @param {string} scope - User's scope selection: 'national', 'local', or 'both'
+ * @param {string|null} hospitalTrust - User's hospital trust (required for 'local' and 'both')
+ * @returns {Object|null} Pinecone filter object, or null for no filtering
+ */
+function buildScopeFilter(scope, hospitalTrust) {
+    if (scope === 'national') {
+        return { scope: { $eq: 'national' } };
+    }
+
+    if (scope === 'local' && hospitalTrust) {
+        return {
+            $and: [
+                { scope: { $eq: 'local' } },
+                { hospitalTrust: { $eq: hospitalTrust } }
+            ]
+        };
+    }
+
+    if (scope === 'both' && hospitalTrust) {
+        return {
+            $or: [
+                { scope: { $eq: 'national' } },
+                {
+                    $and: [
+                        { scope: { $eq: 'local' } },
+                        { hospitalTrust: { $eq: hospitalTrust } }
+                    ]
+                }
+            ]
+        };
+    }
+
+    // No valid scope/hospitalTrust combination - return no filter
+    console.warn(`[RAG] Invalid scope configuration: scope=${scope}, hospitalTrust=${hospitalTrust}`);
+    return null;
+}
+
+/**
  * Find relevant guidelines using RAG (vector similarity search)
  * Much faster than traditional AI chunking approach
  */
@@ -3155,15 +3195,20 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
 
         timer.step('Check vector DB');
 
-        // No server-side scope filtering - return all relevant guidelines
-        // Client will filter based on user's scope preferences
-        // This ensures RAG search finds the best semantic matches regardless of scope
+        // Build scope filter based on user preferences
+        const filter = buildScopeFilter(scope, hospitalTrust);
 
-        // Query vector database
+        if (filter) {
+            console.log(`[RAG] Filtering by scope: ${scope}${hospitalTrust ? ` (${hospitalTrust})` : ''}`);
+        } else {
+            console.log(`[RAG] No scope filter applied - returning all guidelines`);
+        }
+
+        // Query vector database with scope filtering
         // Increased default topK to 50 for better coverage of diverse guidelines
         const queryResult = await vectorDB.queryDocuments(transcript, {
-            topK: ragPrefs.ragTopK || 50
-            // No filter - client handles scope filtering
+            topK: ragPrefs.ragTopK || 50,
+            filter
         });
 
         timer.step('Vector search');
