@@ -4967,7 +4967,7 @@ body {
 }
 
 .preferences-modal-content {
-    background-color: white;
+    background-color: var(--bg-secondary);
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     max-width: 800px;
@@ -4979,7 +4979,7 @@ body {
 
 .preferences-modal-header {
     padding: 20px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -5000,7 +5000,7 @@ body {
 .preferences-section {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .preferences-section:last-child {
@@ -5018,7 +5018,7 @@ body {
 
 .preferences-section-desc {
     margin-bottom: 15px;
-    color: #495057;
+    color: var(--text-secondary);
     line-height: 1.5;
     font-size: 0.95rem;
 }
@@ -5026,7 +5026,7 @@ body {
 .preferences-trust-display,
 .preferences-scope-display {
     padding: 12px 15px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-tertiary);
     border-radius: 4px;
     margin-bottom: 15px;
     border-left: 4px solid #4A90E2;
@@ -5040,7 +5040,7 @@ body {
 
 .preferences-trust-display span,
 .preferences-scope-display span {
-    color: #495057;
+    color: var(--text-secondary);
     margin-left: 8px;
 }
 
@@ -5091,9 +5091,9 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 18px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--border-color);
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--bg-secondary);
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
@@ -5102,7 +5102,7 @@ body {
 
 .preferences-scope-btn:hover:not(:disabled) {
     border-color: #4A90E2;
-    background-color: #f8f9fa;
+    background-color: var(--bg-tertiary);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
 }
@@ -5114,7 +5114,7 @@ body {
 .preferences-scope-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    background-color: #f8f9fa;
+    background-color: var(--bg-tertiary);
 }
 
 .preferences-scope-btn.selected {
@@ -5147,7 +5147,7 @@ body {
 
 .preferences-scope-btn-desc {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--text-secondary);
 }
 
 .preferences-scope-btn-national:hover:not(:disabled) {
@@ -5175,8 +5175,8 @@ body {
     align-items: center;
     gap: 12px;
     padding: 12px 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     cursor: move;
     transition: all 0.2s;
@@ -5215,13 +5215,13 @@ body {
 }
 
 .model-preference-model {
-    color: #6c757d;
+    color: var(--text-secondary);
     font-size: 0.85rem;
     font-style: italic;
 }
 
 .model-preference-drag-handle {
-    color: #6c757d;
+    color: var(--text-secondary);
     font-size: 1.2rem;
     cursor: grab;
     user-select: none;
@@ -5241,8 +5241,8 @@ body {
     align-items: center;
     gap: 15px;
     padding: 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
 }
 
@@ -5259,7 +5259,7 @@ body {
 
 .rag-status {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: var(--text-secondary);
 }
 
 .rag-status.enabled {
@@ -5366,7 +5366,7 @@ body {
     background-color: #e8f4f8;
     border-radius: 6px;
     font-size: 0.85rem;
-    color: #495057;
+    color: var(--text-secondary);
 }
 
 .rag-info-icon {
@@ -5390,7 +5390,7 @@ body {
 
 .preferences-modal-footer {
     padding: 20px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: flex-end;
     gap: 10px;

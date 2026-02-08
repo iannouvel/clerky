@@ -10669,7 +10669,7 @@ async function askGuidelinesQuestion() {
         }
         alert('Error: ' + error.message);
     } finally {
-        restoreAnalyseButton();
+        updateAnalyseButtonProgress();
     }
 }
 
