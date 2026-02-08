@@ -61,6 +61,23 @@
     /* Shadows */
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+
+    /* Selection & Highlight States */
+    --bg-selected-blue: #e8f4fd;
+    --bg-selected-green: #e8f8f5;
+    --bg-selected-purple: #f4ecf7;
+
+    /* Info Panels */
+    --bg-info: #e8f4f8;
+    --bg-success: #d4edda;
+    --bg-warning: #fff3cd;
+    --bg-error: #f8d7da;
+
+    /* Status Colors */
+    --color-success: #28a745;
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
+    --color-info: #17a2b8;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,6 +115,23 @@
         /* Shadows */
         --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+        /* Selection & Highlight States - darker for dark mode */
+        --bg-selected-blue: rgba(74, 144, 226, 0.2);
+        --bg-selected-green: rgba(40, 167, 69, 0.2);
+        --bg-selected-purple: rgba(155, 89, 182, 0.2);
+
+        /* Info Panels - darker for dark mode */
+        --bg-info: rgba(74, 144, 226, 0.15);
+        --bg-success: rgba(40, 167, 69, 0.15);
+        --bg-warning: rgba(255, 193, 7, 0.15);
+        --bg-error: rgba(220, 53, 69, 0.15);
+
+        /* Status Colors - keep same */
+        --color-success: #28a745;
+        --color-warning: #ffc107;
+        --color-error: #dc3545;
+        --color-info: #17a2b8;
     }
 
     /* Dark mode link colors - override inline styles */
@@ -5119,23 +5153,23 @@ body {
 
 .preferences-scope-btn.selected {
     border-color: #4A90E2;
-    background-color: rgba(74, 144, 226, 0.15);
+    background-color: var(--bg-selected-blue);
     border-width: 3px;
 }
 
 .preferences-scope-btn-national.selected {
     border-color: #4A90E2;
-    background-color: rgba(74, 144, 226, 0.15);
+    background-color: var(--bg-selected-blue);
 }
 
 .preferences-scope-btn-local.selected {
     border-color: var(--accent-color);
-    background-color: rgba(40, 167, 69, 0.15);
+    background-color: var(--bg-selected-green);
 }
 
 .preferences-scope-btn-both.selected {
     border-color: #9B59B6;
-    background-color: rgba(155, 89, 182, 0.15);
+    background-color: var(--bg-selected-purple);
 }
 
 .preferences-scope-btn-title {
@@ -5337,7 +5371,7 @@ body {
     margin-top: 12px;
     margin-left: 67px;
     padding: 12px;
-    background-color: rgba(40, 167, 69, 0.1);
+    background-color: var(--bg-success);
     border: 1px solid var(--accent-color);
     border-radius: 6px;
 }
@@ -5363,7 +5397,7 @@ body {
     gap: 8px;
     margin-top: 12px;
     padding: 10px 12px;
-    background-color: rgba(74, 144, 226, 0.1);
+    background-color: var(--bg-info);
     border-radius: 6px;
     font-size: 0.85rem;
     color: var(--text-primary);
@@ -5374,18 +5408,18 @@ body {
 }
 
 .rag-info.success {
-    background-color: rgba(40, 167, 69, 0.1);
-    border: 1px solid rgba(40, 167, 69, 0.3);
+    background-color: var(--bg-success);
+    border: 1px solid var(--color-success);
 }
 
 .rag-info.warning {
-    background-color: rgba(255, 193, 7, 0.1);
-    border: 1px solid rgba(255, 193, 7, 0.4);
+    background-color: var(--bg-warning);
+    border: 1px solid var(--color-warning);
 }
 
 .rag-info.error {
-    background-color: rgba(220, 53, 69, 0.1);
-    border: 1px solid rgba(220, 53, 69, 0.3);
+    background-color: var(--bg-error);
+    border: 1px solid var(--color-error);
 }
 
 .preferences-modal-footer {
