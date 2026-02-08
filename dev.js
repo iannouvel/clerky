@@ -6059,3 +6059,334 @@ if (document.readyState === 'loading') {
 } else {
     initSyncTools();
 }
+
+// ============================================================================
+// FIRESTORE DATA VIEWER
+// ============================================================================
+
+let firestoreData = [];
+let firestoreFields = [];
+let firestoreVisibleFields = new Set();
+let firestoreSortField = null;
+let firestoreSortAsc = true;
+
+/**
+ * Format a value for display in the table
+ */
+function formatFirestoreValue(value, maxLength = 100) {
+    if (value === null || value === undefined) {
+        return '<span style="color:#999;font-style:italic;">null</span>';
+    }
+
+    if (typeof value === 'boolean') {
+        return value ? '<span style="color:#28a745;">✓ true</span>' : '<span style="color:#dc3545;">✗ false</span>';
+    }
+
+    if (typeof value === 'object') {
+        // Handle Firestore Timestamp
+        if (value.toDate && typeof value.toDate === 'function') {
+            return value.toDate().toLocaleString();
+        }
+        // Handle arrays
+        if (Array.isArray(value)) {
+            if (value.length === 0) return '<span style="color:#999;">[]</span>';
+            const preview = JSON.stringify(value).substring(0, maxLength);
+            return `<span style="color:#007bff;" title="${JSON.stringify(value, null, 2)}">${preview}${preview.length < JSON.stringify(value).length ? '...' : ''}</span>`;
+        }
+        // Handle objects
+        const preview = JSON.stringify(value).substring(0, maxLength);
+        return `<span style="color:#6c757d;" title="${JSON.stringify(value, null, 2)}">${preview}${preview.length < JSON.stringify(value).length ? '...' : ''}</span>`;
+    }
+
+    if (typeof value === 'string') {
+        if (value.length > maxLength) {
+            return `<span title="${value}">${value.substring(0, maxLength)}...</span>`;
+        }
+        return value;
+    }
+
+    return String(value);
+}
+
+/**
+ * Extract all fields from documents
+ */
+function extractFields(documents) {
+    const fieldSet = new Set();
+    fieldSet.add('id'); // Always include document ID
+
+    documents.forEach(doc => {
+        Object.keys(doc).forEach(key => {
+            if (key !== 'id') {
+                fieldSet.add(key);
+            }
+        });
+    });
+
+    return Array.from(fieldSet).sort();
+}
+
+/**
+ * Get nested value from object using dot notation
+ */
+function getNestedValue(obj, path) {
+    const keys = path.split('.');
+    let value = obj;
+    for (const key of keys) {
+        if (value && typeof value === 'object' && key in value) {
+            value = value[key];
+        } else {
+            return undefined;
+        }
+    }
+    return value;
+}
+
+/**
+ * Sort firestore data
+ */
+function sortFirestoreData() {
+    if (!firestoreSortField) return;
+
+    firestoreData.sort((a, b) => {
+        let aVal = getNestedValue(a, firestoreSortField);
+        let bVal = getNestedValue(b, firestoreSortField);
+
+        // Handle null/undefined
+        if (aVal === null || aVal === undefined) return 1;
+        if (bVal === null || bVal === undefined) return -1;
+
+        // Handle Firestore Timestamps
+        if (aVal?.toDate && typeof aVal.toDate === 'function') aVal = aVal.toDate();
+        if (bVal?.toDate && typeof bVal.toDate === 'function') bVal = bVal.toDate();
+
+        // Handle objects/arrays
+        if (typeof aVal === 'object') aVal = JSON.stringify(aVal);
+        if (typeof bVal === 'object') bVal = JSON.stringify(bVal);
+
+        // String comparison
+        aVal = String(aVal).toLowerCase();
+        bVal = String(bVal).toLowerCase();
+
+        const comparison = aVal < bVal ? -1 : aVal > bVal ? 1 : 0;
+        return firestoreSortAsc ? comparison : -comparison;
+    });
+}
+
+/**
+ * Render the Firestore data table
+ */
+function renderFirestoreTable() {
+    const thead = document.getElementById('firestoreTableHead');
+    const tbody = document.getElementById('firestoreTableBody');
+
+    if (!firestoreData || firestoreData.length === 0) {
+        thead.innerHTML = '';
+        tbody.innerHTML = '<tr><td colspan="100" style="text-align:center;padding:20px;color:var(--text-secondary);">No data loaded</td></tr>';
+        return;
+    }
+
+    // Sort data if sort field is set
+    sortFirestoreData();
+
+    // Get visible fields
+    const visibleFields = Array.from(firestoreVisibleFields).sort();
+
+    // Render header
+    const headerRow = document.createElement('tr');
+    visibleFields.forEach(field => {
+        const th = document.createElement('th');
+        th.style.cssText = 'padding:10px;text-align:left;border-bottom:2px solid var(--border-light);cursor:pointer;user-select:none;white-space:nowrap;';
+        th.innerHTML = `
+            ${field}
+            ${firestoreSortField === field ? (firestoreSortAsc ? ' ▲' : ' ▼') : ''}
+        `;
+        th.addEventListener('click', () => {
+            if (firestoreSortField === field) {
+                firestoreSortAsc = !firestoreSortAsc;
+            } else {
+                firestoreSortField = field;
+                firestoreSortAsc = true;
+            }
+            renderFirestoreTable();
+        });
+        th.title = `Click to sort by ${field}`;
+        headerRow.appendChild(th);
+    });
+    thead.innerHTML = '';
+    thead.appendChild(headerRow);
+
+    // Render rows
+    tbody.innerHTML = '';
+    firestoreData.forEach((doc, index) => {
+        const row = document.createElement('tr');
+        row.style.cssText = index % 2 === 0 ? 'background:var(--bg-secondary);' : 'background:var(--bg-tertiary);';
+
+        visibleFields.forEach(field => {
+            const td = document.createElement('td');
+            td.style.cssText = 'padding:8px 10px;border-bottom:1px solid var(--border-light);max-width:300px;overflow:hidden;text-overflow:ellipsis;';
+            td.innerHTML = formatFirestoreValue(getNestedValue(doc, field));
+            row.appendChild(td);
+        });
+
+        tbody.appendChild(row);
+    });
+}
+
+/**
+ * Render field checkboxes
+ */
+function renderFieldCheckboxes() {
+    const container = document.getElementById('firestoreFieldCheckboxes');
+    container.innerHTML = '';
+
+    firestoreFields.forEach(field => {
+        const label = document.createElement('label');
+        label.style.cssText = 'display:flex;align-items:center;gap:6px;padding:4px 8px;cursor:pointer;border-radius:4px;transition:background 0.2s;font-size:12px;color:var(--text-primary);';
+        label.addEventListener('mouseenter', () => label.style.background = 'var(--bg-input)');
+        label.addEventListener('mouseleave', () => label.style.background = 'transparent');
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = firestoreVisibleFields.has(field);
+        checkbox.addEventListener('change', () => {
+            if (checkbox.checked) {
+                firestoreVisibleFields.add(field);
+            } else {
+                firestoreVisibleFields.delete(field);
+            }
+            renderFirestoreTable();
+        });
+
+        const span = document.createElement('span');
+        span.textContent = field;
+
+        label.appendChild(checkbox);
+        label.appendChild(span);
+        container.appendChild(label);
+    });
+}
+
+/**
+ * Load Firestore collection data
+ */
+async function loadFirestoreData() {
+    const collectionName = document.getElementById('firestoreCollectionSelect').value;
+    const statusDiv = document.getElementById('firestoreStatus');
+    const recordCountDiv = document.getElementById('firestoreRecordCount');
+
+    if (!collectionName) {
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#fff3cd';
+        statusDiv.style.color = '#856404';
+        statusDiv.textContent = 'Please select a collection';
+        return;
+    }
+
+    try {
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = 'var(--bg-tertiary)';
+        statusDiv.style.color = 'var(--text-primary)';
+        statusDiv.textContent = `Loading ${collectionName}...`;
+        recordCountDiv.textContent = '';
+
+        // Fetch all documents from collection
+        const collectionRef = collection(db, collectionName);
+        const querySnapshot = await getDocs(collectionRef);
+
+        firestoreData = [];
+        querySnapshot.forEach((doc) => {
+            firestoreData.push({
+                id: doc.id,
+                ...doc.data()
+            });
+        });
+
+        // Extract fields
+        firestoreFields = extractFields(firestoreData);
+
+        // Default visible fields (show first 10, always include id, scope, hospitalTrust if present)
+        firestoreVisibleFields = new Set();
+        const priorityFields = ['id', 'scope', 'hospitalTrust', 'title', 'humanFriendlyName', 'organisation', 'email', 'displayName', 'timestamp'];
+        priorityFields.forEach(field => {
+            if (firestoreFields.includes(field)) {
+                firestoreVisibleFields.add(field);
+            }
+        });
+
+        // Add remaining fields up to 10 total
+        for (const field of firestoreFields) {
+            if (firestoreVisibleFields.size >= 10) break;
+            firestoreVisibleFields.add(field);
+        }
+
+        // Reset sort
+        firestoreSortField = 'id';
+        firestoreSortAsc = true;
+
+        // Render UI
+        renderFieldCheckboxes();
+        renderFirestoreTable();
+
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#d4edda';
+        statusDiv.style.color = '#155724';
+        statusDiv.textContent = `✓ Loaded ${firestoreData.length} documents from ${collectionName}`;
+        recordCountDiv.textContent = `${firestoreData.length} records`;
+
+        // Show field panel
+        document.getElementById('firestoreFieldsPanel').style.display = 'block';
+
+    } catch (error) {
+        console.error('Error loading Firestore data:', error);
+        statusDiv.style.display = 'block';
+        statusDiv.style.background = '#f8d7da';
+        statusDiv.style.color = '#721c24';
+        statusDiv.textContent = `✗ Error: ${error.message}`;
+    }
+}
+
+/**
+ * Toggle field selector panel
+ */
+function toggleFieldsPanel() {
+    const panel = document.getElementById('firestoreFieldsPanel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+}
+
+/**
+ * Select all fields
+ */
+function selectAllFields() {
+    firestoreVisibleFields = new Set(firestoreFields);
+    renderFieldCheckboxes();
+    renderFirestoreTable();
+}
+
+/**
+ * Deselect all fields
+ */
+function deselectAllFields() {
+    firestoreVisibleFields = new Set(['id']); // Keep ID visible
+    renderFieldCheckboxes();
+    renderFirestoreTable();
+}
+
+/**
+ * Initialize Firestore viewer
+ */
+const initFirestoreViewer = () => {
+    document.getElementById('firestoreLoadBtn')?.addEventListener('click', loadFirestoreData);
+    document.getElementById('firestoreFieldsBtn')?.addEventListener('click', toggleFieldsPanel);
+    document.getElementById('firestoreSelectAllFieldsBtn')?.addEventListener('click', selectAllFields);
+    document.getElementById('firestoreDeselectAllFieldsBtn')?.addEventListener('click', deselectAllFields);
+
+    // Allow loading with Enter key on collection select
+    document.getElementById('firestoreCollectionSelect')?.addEventListener('change', loadFirestoreData);
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFirestoreViewer);
+} else {
+    initFirestoreViewer();
+}
