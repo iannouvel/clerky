@@ -1048,14 +1048,22 @@ async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, 
     const currentGA = extractGestationalAge(clinicalNote, patientContext);
     const bloodType = extractBloodType(clinicalNote);
 
-    const systemPrompt = `You are a clinical reasoning validator. Your job is to identify suggestions that are IMPOSSIBLE or NONSENSICAL given the patient's current state.
+    const systemPrompt = `You are a clinical reasoning validator. Use COMMON SENSE to identify suggestions that are genuinely impossible or nonsensical.
 
-CRITICAL CHECKS:
-1. TEMPORAL IMPOSSIBILITIES: If a suggestion recommends an intervention at a specific gestational age (e.g., "at 28 weeks") and the patient is ALREADY PAST that point, it MUST be filtered out.
-2. BLOOD TYPE MISMATCHES: If suggestion is for "RhD negative" patients but patient is Rh positive (or vice versa), it MUST be filtered out.
-3. COMPLETED ACTIONS: If the clinical note documents an action as already done/completed, suggesting it again is nonsensical.
+WHAT TO FILTER OUT (these are truly impossible):
+1. PAST-ONLY interventions: First trimester screening when patient is in third trimester (can't go back in time)
+2. BLOOD TYPE MISMATCHES: RhD-specific interventions when patient has confirmed opposite blood type
+3. COMPLETED ACTIONS: Suggesting something that the clinical note explicitly documents as ALREADY DONE
 
-Be STRICT about temporal issues - suggesting past interventions is clearly wrong.
+WHAT TO KEEP (these are still sensible):
+1. FUTURE timepoints: Patient at 28 weeks, suggestion mentions "at 36 weeks" → KEEP (still future)
+2. ONGOING care: "Screen at each appointment", "monitor throughout pregnancy" → KEEP (still applicable)
+3. GENERAL recommendations: Even if ideally done earlier, if still beneficial now → KEEP
+4. DELAYED interventions: "Best done at X weeks" doesn't mean impossible later, just not optimal → KEEP
+5. COUNSELING/DISCUSSION: Can discuss timing of birth, risks, management options at any point → KEEP
+6. UNKNOWN blood types: If Rh status is "unknown", don't filter RhD suggestions → KEEP
+
+USE COMMON SENSE: Ask yourself "Could a reasonable clinician still do/discuss this?" If YES → KEEP.
 
 Return ONLY valid JSON with this structure:
 {
@@ -1063,7 +1071,7 @@ Return ONLY valid JSON with this structure:
   "filteredOut": [
     {
       "id": <suggestion ID>,
-      "reason": "<brief explanation why it's nonsensical>"
+      "reason": "<brief explanation why it's genuinely impossible>"
     }
   ]
 }`;
