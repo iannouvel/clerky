@@ -3079,19 +3079,19 @@ div.third-column,
 .generation-status {
     margin-top: 15px;
     padding: 10px;
-    background: #e8f4fd;
-    border: 1px solid #b3d9f2;
+    background: var(--bg-info);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-size: 14px;
 }
 
 .generation-status p {
     margin: 0;
-    color: var(--link-color, #0066cc);
+    color: var(--text-primary);
 }
 
 .generation-status strong {
-    color: #004499;
+    color: var(--text-primary);
 }
 
 @media (max-width: 768px) {
